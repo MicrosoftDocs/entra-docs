@@ -25,7 +25,7 @@ Here are some benefits of integrating applications with Microsoft Entra ID via D
 * [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) prompts users during sign-in for forms of identification, such as a code on their device or a fingerprint scan.
 * [Conditional Access](~/identity/conditional-access/overview.md) provides policies as if/then statements. If a user wants to access a resource, then they must complete an action.
 * [Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) provides authentication and authorization in Microsoft Entra ID with no code. Use web applications such as Oracle JDE, Oracle EBS, Oracle Siebel, and home-grown apps.
-* Use the [Datawiza Cloud Management Console](https://console.datawiza.com) (DCMC) to manage access to applications in public clouds and on-premises.
+* Use the [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com) to manage access to applications in public clouds and on-premises.
 
 This article focuses on modern identity providers (IdPs) integrating with the legacy Oracle EBS application. The application requires a set of Oracle EBS service account credentials and an Oracle EBS database container (DBC) file.
 
@@ -44,7 +44,7 @@ To complete the steps in this article, you need:
 
 * An Azure subscription. If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free/).
 * A Microsoft Entra tenant linked to the Azure subscription.
-* A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+* A [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 * Docker and Docker Compose, to run DAP. For more information, see [Get Docker](https://docs.docker.com/get-docker/) and [Docker Compose Overview](https://docs.docker.com/compose/install/).
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory. For more information, see [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md).
 * An Oracle EBS environment.
@@ -151,7 +151,7 @@ Configuration on the management console is complete. You're prompted to deploy D
 
 To provide more security for sign-ins, you can enable multifactor authentication in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 2. Browse to **Identity** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.

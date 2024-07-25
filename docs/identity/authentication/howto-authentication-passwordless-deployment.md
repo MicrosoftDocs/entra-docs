@@ -16,13 +16,17 @@ ms.reviewer: dawoo
 
 Passwords are a primary attack vector. Bad actors use social engineering, phishing, and spray attacks to compromise passwords. A passwordless authentication strategy mitigates the risk of these attacks.
 
-Microsoft offers the following [three passwordless authentication options](concept-authentication-passwordless.md) that integrate with Microsoft Entra ID:
+Microsoft offers the following [five passwordless authentication options](concept-authentication-passwordless.md) that integrate with Microsoft Entra ID:
 
 * [Microsoft Authenticator](./concept-authentication-passwordless.md#microsoft-authenticator) - turns any iOS or Android phone into a strong, passwordless credential by allowing users to sign into any platform or browser.
 
-* [FIDO2-compliant security keys](./concept-authentication-passwordless.md#fido2-security-key-providers) - useful for users who sign in to shared machines like kiosks, in situations where use of phones is restricted, and for highly privileged identities. 
+* [FIDO2-compliant security keys](./concept-authentication-passwordless.md) - useful for users who sign in to shared machines like kiosks, in situations where use of phones is restricted, and for highly privileged identities. 
 
 * [Windows Hello for Business](./concept-authentication-passwordless.md#windows-hello-for-business) - best for users on their dedicated Windows computers. 
+
+* [Platform Credential for macOS](./concept-authentication-passwordless.md#platform-credential-for-macos) - a new capability on macOS that is enabled using the Microsoft Enterprise single sign-on extension (SSOe).
+
+* [macOS Platform single sign-on with SmartCard](./concept-authentication-passwordless.md#platform-single-sign-on-for-macos-with-smartcard) - a new capability on macOS for smart card based authentication that is enabled using the Microsoft Enterprise single sign-on extension (SSOe).
 
 > [!NOTE]
 > To create an offline version of this plan with all links, use your browsers print to pdf functionality.
@@ -39,12 +43,12 @@ The following table lists the passwordless authentication methods by device type
 
 | Device types| Passwordless authentication method |
 | - | - |
-| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys |
+| Dedicated non-windows devices| <li> ***Microsoft Authenticator*** <li> Security keys <li> ***macOS Platform single sign-on with smart card*** <li> ***Platform Credential for macOS*** |
 | Dedicated Windows 10 computers (version 1703 and later)| <li> ***Windows Hello for Business*** <li> Security keys |
 | Dedicated Windows 10 computers (before version 1703)| <li> ***Windows Hello for Business*** <li> Microsoft Authenticator app |
 | Shared devices: tablets, and mobile devices| <li> ***Microsoft Authenticator*** <li> One-time password sign-in |
-| Kiosks (Legacy)| ***Microsoft Authenticator*** |
-| Kiosks and shared computers ‎(Windows 10)| <li> ***Security keys*** <li> Microsoft Authenticator app |
+| Kiosks (Legacy)| <li> ***Microsoft Authenticator*** |
+| Kiosks and shared computers (Windows 10)| <li> ***Security keys*** <li> Microsoft Authenticator app |
 
 
 ## Prerequisites 
@@ -58,8 +62,8 @@ Here are the least privileged roles required for this deployment:
 
 | Microsoft Entra role| Description |
 | - | -|
-| User Administrator or Global Administrator| To implement combined registration experience. |
-| Authentication Administrator| To implement and manage authentication methods. |
+| User Administrator | To implement combined registration experience. |
+| Authentication Administrator | To implement and manage authentication methods. |
 | User| To configure Authenticator app on device, or to enroll security key device for web or Windows 10 sign-in. |
 
 As part of this deployment plan, we recommend that passwordless authentication be enabled for all [privileged accounts](~/id-governance/privileged-identity-management/pim-configure.md).
@@ -89,6 +93,32 @@ Select Windows Hello for Business and [complete the wizard](https://aka.ms/passw
 
 The wizard will use your inputs to craft a step-by-step plan for you to follow.
 
+### Platform Credential for macOS
+
+To enable Platform Credential for macOS; 
+- Your Mac must have an operating system of at least macOS 13 Ventura (macOS 14 Sonoma is recommended)
+- The device must be MDM enrolled with SSO extension payload configured to support Platform single sign-on (PSSO) with the UserSecureEnclaveKey.
+
+> [!NOTE]
+>
+> There is a known issue that the Authentication Strength blade currently represents both Platform Credential for macOS and Windows Hello For Business with the same Authentication method name, **Windows Hello For Business**. Work is in progress to represent Platform Credential for macOS separately. While configuring custom authentication strength that needs to use Platform Credential for macOS, you can use "Windows Hello For Business" until this is fixed.
+
+#### Enable Platform Credential for macOS as a passkey
+
+Platform Credential for macOS can be used as phishing resistant passkey, and is only available to users of the Secure Enclave authenticated method. The ability to enable Platform Credential for macOS as a passkey is available on the following browsers:
+
+- Safari 
+- Google Chrome (requires Company Portal version 5.2404.0 or later and the [Chrome extension](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji))
+
+Enabling Platform Credential for macOS as a passkey is a two-step process that needs to be completed by both the admin and the user. 
+
+1. When setting up the Platform Credential for macOS as an admin, refer to the steps in [Enable passkeys (FIDO2) for your organization](/entra/identity/authentication/how-to-enable-passkey-fido2#enable-passkey-authentication-method).
+1. As an end user, you need to enable this through the **Settings** app on your Mac. Refer to the steps in [Join a Mac device with Microsoft Entra ID using Company Portal](../devices/device-join-microsoft-entra-company-portal.md#enable-platform-credential-for-macos-for-use-as-a-passkey).
+
+### macOS Platform single sign-on with SmartCard
+
+To enable macOS Platform single sign-on (PSSO) with SmartCard, your Mac must have an operating system of at least macOS 14 Sonoma, and that the configuration steps are done through the [Microsoft Intune admin center](https://intune.microsoft.com/#home). Administrators also need to configure and enable the certificate-based authentication method using the [Authentication Methods Policies](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods/fromNav/) in the Microsoft Entra admin center. Refer to [How to configure Microsoft Entra certificate-based authentication](./how-to-certificate-based-authentication.md) for more information.
+
 ## Plan the project
 
 When technology projects fail, it's typically because of mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, [ensure that you're engaging the right stakeholders](~/architecture/deployment-plans.md) and that stakeholder roles in the project are well understood.
@@ -117,9 +147,9 @@ Users register their passwordless method as a part of the **combined security in
 
 For the first-time user who doesn't have a password, admins can provide a [Temporary Access Passcode](howto-authentication-temporary-access-pass.md) to register their security information in [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) . This is a time-limited passcode and satisfies strong authentication requirements. **Temporary Access Pass is a per-user process**.
 
-This method can also be used for easy recovery when the user has lost or forgotten their authentication factor such as security key or the Authenticator app but needs to sign in to **register a new strong authentication method**. 
+This method can also be used for easy recovery when the user has lost or forgotten their authentication factor such as security key or the Authenticator app but needs to sign in to **register a new strong authentication method**.
 
->[!NOTE] 
+>[!NOTE]
 > If you can't use the security key or the Authenticator app for some scenarios, multifactor authentication with a username and password along with another registered method can be used as a fallback option.
 
 ## Plan for and deploy Microsoft Authenticator
@@ -161,7 +191,7 @@ The following are sample test cases for passwordless authentication with the Aut
 | - |-|
 | User cannot perform combined registration.| Ensure [combined registration](concept-registration-mfa-sspr-combined.md) is enabled. |
 | User cannot enable phone sign-in authenticator app.| Ensure user is in scope for deployment. |
-| User is NOT in scope for passwordless authentication, but is presented with passwordless sign-in option, which they cannot complete.| Occurs when user has enabled phone sign in in the application prior to the policy being created. To enable sign in, add the user to a group of users enabled for passwordless sign-in. To block sign in: have the user remove their credential from that application. |
+| User is NOT in scope for passwordless authentication, but is presented with passwordless sign-in option, which they cannot complete.| Occurs when user has enabled phone sign-in in the application prior to the policy being created. To enable sign in, add the user to a group of users enabled for passwordless sign-in. To block sign in: have the user remove their credential from that application. |
 
 
 ## Plan for and deploy FIDO2-compliant security keys
@@ -200,11 +230,11 @@ There are three types of passwordless sign-in deployments available with securit
 
 * Windows 10 version 1809 supports FIDO2 sign-in and may require software from the FIDO2 key manufacturer to be deployed. We recommend you use version 1903 or later.
 
-**For hybrid Microsoft Entra domain joined devices**, use: 
+**For hybrid Microsoft Entra domain joined devices**, use:
 
-* Windows 10 version 2004 or later. 
+* Windows 10 version 2004 or later.
 
-* Fully patched domain servers running Windows Server 2016 or 2019. 
+* Fully patched domain servers running Windows Server 2016 or 2019.
 
 * Latest version of Microsoft Entra Connect.
 

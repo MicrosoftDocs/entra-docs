@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/19/2024
+ms.date: 05/13/2024
 
 ms.author: justinha
 author: justinha
@@ -19,6 +19,15 @@ ms.collection: M365-identity-device-management
 
 This article covers the sign-in experience when using passkeys in Microsoft Authenticator with Microsoft Entra ID. For more information about the availability of Microsoft Entra ID passkey (FIDO2) authentication across native applications, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
 
+| Scenario | iOS | Android |
+|------------------|---------------------------------|----------------|
+| **Same-device authentication in a browser**              | &#x2705;          | &#10060;<sup>2</sup>       |
+| **Same-device authentication in native Microsoft applications**<sup>1</sup>            | &#x2705; | &#10060;<sup>2</sup>     |
+| **Cross-device authentication**  | &#x2705;  | &#x2705;    |
+
+<sup>1</sup> For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
+
+<sup>2</sup> Support for same-device Android scenarios is coming soon.
 
 ## [**iOS**](#tab/iOS)
 
@@ -61,13 +70,13 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for iOS devices.":::
 
-   If you last used a passkey to authenticate, you will be automatically prompted to authenticate with a passkey. Otherwise, you may click on **Other ways to sign in** and then select **Face**, **fingerprint**, **PIN**, or **security key**.
+   If you last used a passkey to authenticate, you will be automatically prompted to authenticate with a passkey. Otherwise, you may click on **Other ways to sign in** and then select **Face, fingerprint, PIN, or security key**.
 
    Alternatively, click **Sign-in options** to sign in more conveniently without having to enter a username. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for iOS devices.":::
 
-   If you chose **Sign-in options**, select **Face**, **Fingerprint**, **PIN**, or **Security key**. Otherwise, skip to next step.
+   If you chose **Sign-in options**, select **Face, fingerprint, PIN, or security key**. Otherwise, skip to next step.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for iOS devices.":::
 
@@ -141,13 +150,13 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for iOS devices.":::
 
-   If you last used a passkey to authenticate, you will be automatically prompted to authenticate with a passkey. Otherwise, you may click on **Other ways to sign in** and then select **Face**, **fingerprint**, **PIN**, or **security key**.
+   If you last used a passkey to authenticate, you will be automatically prompted to authenticate with a passkey. Otherwise, you may click on **Other ways to sign in** and then select **Face, fingerprint, PIN, or security key**.
 
    Alternatively, click **Sign-in options** to sign in more conveniently without having to enter a username. 
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for Android devices.":::
 
-   If you chose **Sign-in options**, select **Face**, **Fingerprint**, **PIN**, or **Security key**. Otherwise, skip to next step.
+   If you chose **Sign-in options**, select **Face, fingerprint, PIN, or security key**. Otherwise, skip to next step.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for Android devices.":::
 

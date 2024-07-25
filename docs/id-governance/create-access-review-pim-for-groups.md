@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/28/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: jgangadhar
 ---
@@ -60,7 +60,7 @@ For more information, see [License requirements](access-reviews-overview.md#lice
 
 8. Select **Next: Reviews**.
 
-After you have reached this step, you may follow the instructions outlined under **Next: Reviews** in the [Create an access review of groups or applications](create-access-review.md#next-reviews) article to complete your access review.
+After you have reached this step, you can follow the instructions outlined under **Next: Reviews** in the [Create an access review of groups or applications](create-access-review.md#next-reviews) article to complete your access review.
 
 > [!NOTE]
 > Review of PIM for Groups will only assign active owner(s) as the reviewers. Eligible owners are not included. At least one fallback reviewer is required for a PIM for Groups review. If there are no active owner(s) when the review begins, the fallback reviewer(s) will be assigned to the review.

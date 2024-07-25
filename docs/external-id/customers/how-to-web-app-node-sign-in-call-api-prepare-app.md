@@ -14,6 +14,8 @@ ms.custom: developer, devx-track-js
 
 # Create a Node.js web app to call an API
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 In this article, you prepare the app project you created in [Tutorial: Prepare your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) to call a web API. This article is the second part of a four-part guide series.
 
 ## Prerequisites

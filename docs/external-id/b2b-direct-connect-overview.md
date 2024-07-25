@@ -5,7 +5,7 @@ description: Microsoft Entra B2B direct connect lets users from other Microsoft 
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 03/18/2024
+ms.date: 04/29/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 ---
 
 # B2B direct connect overview
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 B2B direct connect is a feature of Microsoft Entra External ID that lets you set up a mutual trust relationship with another Microsoft Entra organization for seamless collaboration. This feature currently works with Microsoft Teams shared channels. With B2B direct connect, users from both organizations can work together using their home credentials and a shared channel in Teams, without having to be added to each other’s organizations as guests. Use B2B direct connect to share resources with external Microsoft Entra organizations. Or use it to share resources across multiple Microsoft Entra tenants within your own organization.
 
@@ -107,10 +109,6 @@ In your cross-tenant access settings, you can use **Trust settings** to trust cl
 Currently, B2B direct connect enables the Teams Connect shared channels feature. B2B direct connect users can access an external organization's Teams shared channel without having to switch tenants or sign in with a different account. The B2B direct connect user’s access is determined by the shared channel’s policies.
 
 In the resource organization, the Teams shared channel owner can search within Teams for users from an external organization and add them to the shared channel. After they're added, the B2B direct connect users can access the shared channel from within their home instance of Teams, where they collaborate using features such as chat, calls, file-sharing, and app-sharing.  For details, see [Overview of teams and channels in Microsoft Teams](/microsoftteams/teams-channels-overview). For details about the resources, files, and applications that are available to the B2B direct connect user via the Teams shared channel refer to [Chat, teams, channels, & apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
-
-## B2B direct connect vs. B2B collaboration
-
-B2B collaboration and B2B direct connect are two different approaches to sharing with users outside of your organization. You can find a [feature-to-feature comparison](external-identities-overview.md#comparing-external-identities-feature-sets) in the External ID overview, where we discuss some key differences in how users are managed, and how they access resources.
 
 ### User access and management
 

@@ -17,6 +17,8 @@ ms.custom:
 
 # Add Microsoft Entra ID as an identity provider for External ID
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 Microsoft Entra ID is available as an identity provider option for B2B collaboration by default. If an external guest user has a Microsoft Entra account through work or school, they can redeem your B2B collaboration invitations or complete your sign-up user flows using their Microsoft Entra account.
 
 <a name='guest-sign-in-using-azure-active-directory-accounts'></a>

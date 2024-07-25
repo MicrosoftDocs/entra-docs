@@ -21,9 +21,21 @@ This article helps you keep track of the versions that have been released and un
 
 ## Looking for the latest versions?
 
+>[!IMPORTANT]
+>Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
+> 
+>All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
+>
+>For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#powershell-script-to-check-tls-12)
+>
+>For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
+>For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
+
+
+
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
-You can download the latest version of Microsoft Entra Connect 2.0 from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest V2.0 release](reference-connect-version-history.md#21200).
+You can download the latest version of Microsoft Entra Connect 2.x from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest release](reference-connect-version-history.md#21200).
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/aadconnectrss` into your ![RSS feed reader icon](media/reference-connect-version-history/feed-icon-16x16.png) feed reader.
 
@@ -36,38 +48,34 @@ Required permissions | For permissions required to apply an update, see [Microso
 
 <a name='retiring-azure-ad-connect-1x-versions'></a>
 
-## Retiring Microsoft Entra Connect 1.x versions
+## Non-functional Microsoft Entra Connect 1.x versions
 > [!IMPORTANT]
-> Action required: Synchronization will stop working on October 1, 2023, for any customers still running Microsoft Entra Connect Sync V1.  Customers using cloud sync or Microsoft Entra Connect V2 will remain fully operational with no action required. For more information and next step guidance, see [Decommission Azure AD Connect V1](https://aka.ms/DecommissionAADConnectV1) if an upgrade is required.
+> All Microsoft Entra Connect Sync 1.x versions are unsupported and synchronization does not function. Customers using cloud sync or supported versions of Microsoft Entra Connect 2.x remain fully operational. For more information about the retirement of all 1.x versions, see [Decommission Azure AD Connect V1](https://aka.ms/DecommissionAADConnectV1).
 
 <a name='retiring-azure-ad-connect-2x-versions'></a>
 
 ## Retiring Microsoft Entra Connect 2.x versions
 > [!IMPORTANT]
-> We will begin retiring past versions of Microsoft Entra Connect Sync 2.x 12 months from the date they are superseded by a newer version. 
-> This policy will go into effect on 15 March 2023, when we will retire all versions that are superseded by a newer version on 15 March 2022.
+> Versions of Microsoft Entra Connect Sync 2.x retire 12 months from the date that a newer version is released.
+> This policy went into effect on 15 March 2023.
 > 
-> Currently only builds 2.1.20.0 (release November 9th 2022) or later are supported.  Version 2.1.20 was superseded by build 2.2.1.0 which was released June 19th 2023.  This means that 2.1.20 will be supported until June 19th, 2024.
->
-> Build 2.1.19 was released on November 2nd, 2022.  It was superseded by 2.1.20 which was released on November 9th 2022.  Since twelves months (November 9th 2023) have past since this release, 2.1.19 is no longer supported.
-> 
-> If you are not already using the latest release version of Microsoft Entra Connect Sync, you should upgrade your Microsoft Entra Connect Sync software before that date. 
+> For new installs, always install the latest version. For upgrades, make sure you upgrade to the latest version prior to the retirement of your current version.
 
 |Version|End of support date|
 |-----|-----|
-|[2.1.20.0](#21200)|6/19/2024 (12 months after release of 2.2.1.0)|
-|[2.2.1.0](#2210)|10/11/2024 (12 months after release of 2.2.8.0)|
-|[2.2.8.0](#2280)|12/12/2024 (12 months after release of 2.3.2.0)|
-|[2.3.2.0](#2320)|2/21/2025 (12 months after release of 2.3.6.0)|
-|[2.3.6.0](#2360)|4/01/2025 (12 months after release of 2.3.8.0|
-|[2.3.8.0](#2380)|TBD|
+|[2.2.1.0](#2210)|11 Oct 2024 (12 months after release of 2.2.8.0)|
+|[2.2.8.0](#2280)|12 Dec 2024 (12 months after release of 2.3.2.0)|
+|[2.3.2.0](#2320)|21 Feb 2025(12 months after release of 2.3.6.0)|
+|[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0)|
+|[2.3.8.0](#2380)|x Jul 2025 (12 months after release of 2.3.20.0)|
+|[2.3.20.0](#23200)|TBD|
 
 **All other versions are not supported**
 
 
 If you run a retired version of Microsoft Entra Connect, it might unexpectedly stop working. You also might not have the latest security fixes, performance improvements, troubleshooting and diagnostic tools, and service enhancements. If you require support, we might not be able to provide you with the level of service your organization needs.
 
-To learn more about what has changed in V2.0 and how this change affects you, see [Microsoft Entra Connect V2.0](whatis-azure-ad-connect-v2.md).
+To learn more about what has changed in versions 2.x and how this change affects you, see [Microsoft Entra Connect v2](whatis-azure-ad-connect-v2.md).
 
 To learn more about how to upgrade Microsoft Entra Connect to the latest version, see [Microsoft Entra Connect: Upgrade from a previous version to the latest](./how-to-upgrade-previous-version.md).
 
@@ -84,10 +92,41 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+## 2.3.20.0
+
+>[!IMPORTANT]
+>Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
+> 
+>All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
+>
+>For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#powershell-script-to-check-tls-12)
+>
+>For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
+>For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
+
+
+### Release status
+7/15/2024: Released for download
+
+### Functional changes
+
+- TLS 1.2 or greater is required for Microsoft Entra Connect. Please see the prerequisites for guidance: [Microsoft Entra Connect: Prerequisites and hardware - Microsoft Entra ID](how-to-connect-install-prerequisites.md#enable-tls-12-for-microsoft-entra-connect) | Microsoft Learn
+- TLS 1.3 is supported by Microsoft Entra Connect. Support for [TLS 1.3 is being rolled out for Entra ID services](/troubleshoot/azure/entra/entra-id/ad-dmn-services/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services), However, until this is complete, it is not recommended to enforce TLS 1.3.
+
+### Other Changes
+
+- SQL related drivers shipped with Microsoft Entra Connect have been updated. ODBC to 17.10.6, OLE DB to 18.7.2.
+- Changes to SSPR handling to reduce SQL deadlocks during sync cycles.
+- Changes to what elements in the Wizard that Narrator will read to improve Accessibility.
+- Microsoft Entra Connect icon branding
+
+
+
+
 ## 2.3.8.0
 
 ### Release status
-4/01/2024: Released for download
+1 Apr 2024: Released for download
 
 ### Bug Fixes
 - Microsoft Entra Connect Health has been updated to 4.5.2466.0 to address an endpoint discovery issue that could occur in some clouds.
@@ -96,7 +135,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ## 2.3.6.0
 
 ### Release status
-2/21/2024: Released for download and autoupgrade.
+21 Feb 2024: Released for download and autoupgrade.
 
 ### Bug Fixes:
 - Improvements to auto-upgrade detection. Auto-upgrade will no longer retry if it detects the machine does not meet the OS or .NET runtime requirements.
@@ -365,7 +404,7 @@ When you upgrade to this V1.6 build or any newer builds, the group membership li
 - We added the Replicating Directory Changes permission in the Set-ADSyncBasicReadPermissions cmdlet.
 - We made a change to prevent UseExistingDatabase and import configuration from being used together because they could contain conflicting configuration settings.
 - We made a change to allow a user with the Application Admin role to change the application proxy service configuration.
-- We removed the (Preview) label from the labels of **Import/Export** settings. This functionality is generally available.
+- We removed the  label from the labels of **Import/Export** settings. This functionality is generally available.
 - We changed some labels that still referred to Company Administrator. We now use the role name Global Administrator.
 - We created new Microsoft Entra Kerberos PowerShell cmdlets (\*-AADKerberosServer) to add a Claims Transform rule to the Microsoft Entra service principal.
 

@@ -1,6 +1,6 @@
 ---
 title: Self-service password reset
-description: Learn how to self-service password reset.
+description: Learn how to implement self-service password reset (SSPR) to my iOS app using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -11,8 +11,8 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
 ms.date: 02/23/2024
-ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn how to Self-service password reset.
+ms.custom: developer
+#Customer intent: As a dev, devops, I want to learn how to implement self-service password reset (SSPR) to my iOS app using native authentication.
 ---
 
 # Tutorial: Self-service password reset in iOS app
@@ -21,8 +21,10 @@ This tutorial demonstrates how to give users the ability to change or reset thei
 
 In this tutorial, you learn how to: 
 
-- Add self-service password reset. 
-- Handle errors. 
+> [!div class="checklist"]
+>
+> - Add self-service password reset.  
+> - Handle errors. 
 
 ## Prerequisites
 
@@ -232,7 +234,7 @@ extension ViewController: CredentialsDelegate {
 
 ```
 
-## Next steps 
-
-[Tutorial: Support web fallback](tutorial-native-authentication-ios-support-web-fallback.md) 
-
+## Next step
+ 
+> [!div class="nextstepaction"]
+> [Tutorial: Support web fallback](tutorial-native-authentication-ios-support-web-fallback.md) 

@@ -5,7 +5,7 @@ description: Directly federate with a SAML or WS-Fed identity provider so guests
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 03/26/2024
+ms.date: 06/05/2024
 
 ms.author: mimart
 author: msmimart
@@ -17,19 +17,20 @@ ms.collection: M365-identity-device-management
 
 # Federation with SAML/WS-Fed identity providers for guest users
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 > [!NOTE]
->
->- *Direct federation* in Microsoft Entra External ID is now referred to as *SAML/WS-Fed identity provider (IdP) federation*.
+> *Direct federation* in Microsoft Entra External ID is now referred to as *SAML/WS-Fed identity provider (IdP) federation*.
 
 This article describes how to set up federation with any organization whose identity provider (IdP) supports the SAML 2.0 or WS-Fed protocol. When you set up federation with a partner's IdP, new guest users from that domain can use their own IdP-managed organizational account to sign in to your Microsoft Entra tenant and start collaborating with you. There's no need for the guest user to create a separate Microsoft Entra account.
 
 > [!IMPORTANT]
 >
->- You can now set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains and [configure the invitation redemption order](cross-tenant-access-overview.md#configurable-redemption) to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID. **Redemption order** settings are available in your cross-tenant access settings for inbound B2B collaboration.
+>- You can now set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains. The verified domain must be in a separate tenant from where you are setting up federation. Once configured, you can make sure users sign in with the federated IdP instead of Microsoft Entra ID by [configuring the invitation **Redemption order**](cross-tenant-access-overview.md#configurable-redemption) in your cross-tenant access settings for inbound B2B collaboration.
 >- We no longer support an allowlist of IdPs for new SAML/WS-Fed IdP federations. When you're setting up a new external federation, refer to [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
 >- In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint. For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Refer to the [SAML 2.0](#required-saml-20-attributes-and-claims) and [WS-Fed](#required-ws-fed-attributes-and-claims) required attributes and claims sections. Any existing federations configured with the global endpoint will continue to work, but new federations will stop working if your external IdP is expecting a global issuer URL in the SAML request.
-> - We've removed the single domain limitation. You can now associate multiple domains with an individual federation configuration.
-> - We've removed the limitation that required the authentication URL domain to match the target domain or be from an allowed IdP. For details, see [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
+>- We've removed the single domain limitation. You can now associate multiple domains with an individual federation configuration.
+>- We've removed the limitation that required the authentication URL domain to match the target domain or be from an allowed IdP. For details, see [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
 
 ## When is a guest user authenticated with SAML/WS-Fed IdP federation?
 
@@ -41,9 +42,9 @@ After you set up federation with an organization's SAML/WS-Fed IdP:
 
 It’s important to note that setting up federation doesn’t change the authentication method for guest users who have already redeemed an invitation from you. Here are some examples:
 
- - Guest users have already redeemed invitations from you, and then later you set up federation with the organization's SAML/WS-Fed IdP. These guest users continue to use the same authentication method they used before you set up federation.
- - You set up federation with an organization's SAML/WS-Fed IdP and invite guest users, and then the partner organization later moves to Microsoft Entra ID. The guest users who have already redeemed invitations continue to use the federated SAML/WS-Fed IdP, as long as the federation policy in your tenant exists.
- - You delete federation with an organization's SAML/WS-Fed IdP. Any guest users currently using the SAML/WS-Fed IdP are unable to sign in.
+- Guest users have already redeemed invitations from you, and then later you set up federation with the organization's SAML/WS-Fed IdP. These guest users continue to use the same authentication method they used before you set up federation.
+- You set up federation with an organization's SAML/WS-Fed IdP and invite guest users, and then the partner organization later moves to Microsoft Entra ID. The guest users who have already redeemed invitations continue to use the federated SAML/WS-Fed IdP, as long as the federation policy in your tenant exists.
+- You delete federation with an organization's SAML/WS-Fed IdP. Any guest users currently using the SAML/WS-Fed IdP are unable to sign in.
 
 In any of these scenarios, you can update a guest user’s authentication method by [resetting their redemption status](reset-redemption-status.md).
 
@@ -59,9 +60,9 @@ SAML/WS-Fed IdP federation guest users can now sign in to your multitenant or Mi
 
 SAML/WS-Fed IdP federation guest users can also use application endpoints that include your tenant information, for example:
 
-  * `https://myapps.microsoft.com/?tenantid=<your tenant ID>`
-  * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
-  * `https://portal.azure.com/<your tenant ID>`
+- `https://myapps.microsoft.com/?tenantid=<your tenant ID>`
+- `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
+- `https://portal.azure.com/<your tenant ID>`
 
 You can also give guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>`.
 
@@ -108,7 +109,11 @@ Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support se
 
 **What permissions are required to configure a SAML/Ws-Fed identity provider?**
 
-You need to be an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) or a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) in your Microsoft Entra tenant to configure a SAML/Ws-Fed identity provider.
+You need to be at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) to configure a SAML/Ws-Fed identity provider.
+
+**Does federation eliminate the need to create a guest account in my directory for the B2B collaboration user?**
+
+No. A guest account is created for a B2B collaboration user in your directory regardless of the authentication or federation method used. This user object allows you to grant access to applications, assign roles, and define membership in security groups.  
 
 ## Step 1: Determine if the partner needs to update their DNS text records
 
@@ -205,43 +210,43 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
-4. Select **New SAML/WS-Fed IdP**.
+1. Select the **Custom** tab, and then select **Add new** > **SAML/WS-Fed**.
 
-    ![Screenshot showing button for adding a new SAML or WS-Fed IdP.](media/direct-federation/new-saml-wsfed-idp.png)
+   :::image type="content" source="media/direct-federation/new-saml-wsfed-idp.png" alt-text="Screenshot showing button for adding a new SAML or WS-Fed IdP." lightbox="media/direct-federation/new-saml-wsfed-idp.png":::
 
-4. On the **New SAML/WS-Fed IdP** page, enter the following:
+1. On the **New SAML/WS-Fed IdP** page, enter the following:
    - **Display name** - Enter a name to help you identify the partner's IdP.
    - **Identity provider protocol** - Select **SAML** or **WS-Fed**.
    - **Domain name of federating IdP** - Enter your partner’s IdP target domain name for federation. During this initial configuration, enter just one domain name. You can add more domains later.
 
-    ![Screenshot showing the new SAML or WS-Fed IdP page.](media/direct-federation/new-saml-wsfed-idp-parse.png)
+    :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-parse.png" alt-text="Screenshot showing the new SAML or WS-Fed IdP page.":::
 
-5. Select a method for populating metadata. You can **Input metadata manually**, or if you have a file that contains the metadata, you can automatically populate the fields  by selecting **Parse metadata file** and browsing for the file.
-   - **Issuer URI** - The issuer URI of the partner's IdP.
-   - **Passive authentication endpoint** - The partner IdP's passive requestor endpoint.
+1. Select a method for populating metadata. If you have a file that contains the metadata, you can automatically populate the fields by selecting **Parse metadata file** and browsing for the file. Or, you can select **Input metadata manually** and enter the following information:
+   - The **Issuer URI** of the partner's SAML IdP, or the **Entity ID** of the partner's WS-Fed IdP.
+   - The **Passive authentication endpoint** of the partner's SAML IdP, or the **Passive requestor endpoint** of the partner's WS-Fed IdP.
    - **Certificate** - The signing certificate ID.
    - **Metadata URL** - The location of the IdP's metadata for automatic renewal of the signing certificate.
 
-   ![Screenshot showing metadata fields.](media/direct-federation/new-saml-wsfed-idp-input.png)
+   :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-input.png" alt-text="Screenshot showing metadata fields.":::
 
    > [!NOTE]
    > Metadata URL is optional, however we strongly recommend it. If you provide the metadata URL, Microsoft Entra ID can automatically renew the signing certificate when it expires. If the certificate is rotated for any reason before the expiration time or if you do not provide a metadata URL, Microsoft Entra ID will be unable to renew it. In this case, you'll need to update the signing certificate manually.
 
-6. Select **Save**. The identity provider is added to the **SAML/WS-Fed identity providers** list.
+1. Select **Save**. The identity provider is added to the **SAML/WS-Fed identity providers** list.
 
-   ![Screenshot showing the SAML/WS-Fed identity provider list with the new entry.](media/direct-federation/new-saml-wsfed-idp-list.png)
+      :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-list.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the new entry." lightbox="media/direct-federation/new-saml-wsfed-idp-list.png":::
 
-7. (Optional) To add more domain names to this federating identity provider:
+1. (Optional) To add more domain names to this federating identity provider:
    
    1. Select the link in the **Domains** column.
 
-      ![Screenshot showing the link for adding domains to the SAML/WS-Fed identity provider.](media/direct-federation/new-saml-wsfed-idp-add-domain.png)
+      :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-add-domain.png" alt-text="Screenshot showing the link for adding domains to the SAML/WS-Fed identity provider." lightbox="media/direct-federation/new-saml-wsfed-idp-add-domain.png":::
 
    1. Next to **Domain name of federating IdP**, type the domain name, and then select **Add**. Repeat for each domain you want to add. When you're finished, select **Done**.
-   
-      ![Screenshot showing the Add button in the domain details pane.](media/direct-federation/add-domain.png)
+
+      :::image type="content" source="media/direct-federation/add-domain.png" alt-text="Screenshot showing the Add button in the domain details pane.":::
    
 ### To configure federation using the Microsoft Graph API
 
@@ -264,12 +269,13 @@ Now test your federation setup by inviting a new B2B guest user. For details, se
 
 On the **All identity providers** page, you can view the list of SAML/WS-Fed identity providers you've configured and their certificate expiration dates. From this list, you can renew certificates and modify other configuration details.
 
-![Screenshot showing an identity provider in the SAML WS-Fed list](media/direct-federation/new-saml-wsfed-idp-list-multi.png)
+<!--TODO:::image type="content" source="media/direct-federation/new-saml-wsfed-idp-list-multi.png" alt-text="Screenshot showing an identity provider in the SAML WS-Fed list.":::-->
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
-5. Under **SAML/WS-Fed identity providers**, scroll to an identity provider in the list or use the search box.
-6. To update the certificate or modify configuration details:
+1. Select the **Custom** tab.
+1. Scroll to an identity provider in the list or use the search box.
+1. To update the certificate or modify configuration details:
    - In the **Configuration** column for the identity provider, select the **Edit** link.
    - On the configuration page, modify any of the following details:
      - **Display name** - Display name for the partner's organization.
@@ -279,7 +285,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
      - **Metadata URL** - The URL containing the partner's metadata, used for automatic renewal of the signing certificate.
    - Select **Save**.
 
-   ![Screenshot of the IDP configuration details.](media/direct-federation/modify-configuration.png)
+   :::image type="content" source="media/direct-federation/modify-configuration.png" alt-text="Screenshot of the IDP configuration details.":::
 
 1. To edit the domains associated with the partner, select the link in the **Domains** column. In the domain details pane:
 
@@ -287,7 +293,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
    - To delete a domain, select the delete icon next to the domain.
    - When you're finished, select **Done**.
 
-   ![Screenshot of the domain configuration page](media/direct-federation/edit-domains.png)
+   :::image type="content" source="media/direct-federation/edit-domains.png" alt-text="Screenshot of the domain configuration page.":::
 
    > [!NOTE]
    > To remove federation with the partner, delete all but one of the domains and follow the steps in the [next section](#how-do-i-remove-federation).
@@ -297,14 +303,14 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 You can remove your federation configuration. If you do, federation guest users who have already redeemed their invitations can no longer sign in. But you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
 To remove a configuration for an IdP in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
-1. Under **SAML/WS-Fed identity providers**, scroll to the identity provider in the list or use the search box.
+1. Select the **Custom** tab, and then scroll to the identity provider in the list or use the search box.
 1. Select the link in the **Domains** column to view the IdP's domain details.
-2. Delete all but one of the domains in the **Domain name** list.
-3. Select **Delete Configuration**, and then select **Done**.
+1. Delete all but one of the domains in the **Domain name** list.
+1. Select **Delete Configuration**, and then select **Done**.
 
-   ![Screenshot of deleting a configuration.](media/direct-federation/delete-configuration.png)
+   :::image type="content" source="media/direct-federation/delete-configuration.png" alt-text="Screenshot of deleting a configuration.":::
 
 1. Select **OK** to confirm deletion.
 

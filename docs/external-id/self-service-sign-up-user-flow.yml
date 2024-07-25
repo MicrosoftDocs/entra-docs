@@ -6,7 +6,7 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: CelesteDG
-  ms.date: 04/24/2024
+  ms.date: 06/28/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -19,8 +19,10 @@ metadata:
 title: |
   Add a self-service sign-up user flow to an app
 introduction: |
+  [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
   > [!TIP]
-  > This article applies to B2B collaboration user flows. If your tenant is configured for customer identity and access management, see [Create a sign-up and sign-in user flow for customers](customers/how-to-user-flow-sign-up-sign-in-customers.md).
+  > This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Create a sign-up and sign-in user flow](customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
   For applications you build, you can create user flows that allow a user to sign up for an app and create a new guest account. A self-service sign-up user flow defines the series of steps the user follows during sign-up, the [identity providers](identity-providers.md) you allow them to use, and the user attributes you want to collect. You can associate one or more applications with a single user flow.
 
@@ -74,10 +76,6 @@ procedureSection:
         Browse to **Identity** > **External Identities** > **User flows**, and then select **New user flow**.
 
           :::image type="content" source="media/self-service-sign-up-user-flow/new-user-flow.png" alt-text="Screenshot of the new user flow button.":::
-      - |
-        Select the user flow type (for example, **Sign up and sign in**).
-      - |  
-        Select the version (**Recommended** or **Preview**), and then select **Create**.
       - |  
         On the **Create** page, enter a **Name** for the user flow. The name is automatically prefixed with **B2X_1_**.
       - |  

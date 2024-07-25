@@ -29,7 +29,9 @@ To approve requests, a reviewer must have the [permissions required](grant-admin
 To configure the admin consent workflow, you need:
 
 - An Azure account. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- You must be a global administrator to turn on the admin consent workflow.
+- You must be a Global Administrator to turn on the admin consent workflow.
+     > [!IMPORTANT]
+     > Microsoft recommends that you use roles with the fewest permissions. This helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
 
 ## Enable the admin consent workflow
 
@@ -37,7 +39,7 @@ To configure the admin consent workflow, you need:
 
 To enable the admin consent workflow and choose reviewers:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **Admin consent settings**. 
 1. Under **Admin consent requests**,  select **Yes** for **Users can request admin consent to apps they are unable to consent to** .
 
@@ -45,7 +47,7 @@ To enable the admin consent workflow and choose reviewers:
    
 1. Configure the following settings:
 
-   - **Who can review admin consent requests** - Select users, groups, or roles that are designated as reviewers for admin consent requests. Reviewers can view, block, or deny admin consent requests, but only global administrators can approve admin consent requests for apps requesting for Microsoft Graph app roles (application permissions). People designated as reviewers can view incoming requests in the **My Pending** tab after they have been set as reviewers. Any new reviewers aren't able to act on existing or expired admin consent requests.
+   - **Who can review admin consent requests** - Select users, groups, or roles that are designated as reviewers for admin consent requests. Reviewers can view, block, or deny admin consent requests, but only Global Administrators can approve admin consent requests for apps requesting for Microsoft Graph app roles (application permissions). People designated as reviewers can view incoming requests in the **My Pending** tab after they have been set as reviewers. Any new reviewers aren't able to act on existing or expired admin consent requests.
    - **Selected users will receive email notifications for requests** - Enable or disable email notifications to the reviewers when a request is made.  
    - **Selected users will receive request expiration reminders** - Enable or disable reminder email notifications to the reviewers when a request is about to expire. The first about-to-expire reminder email is likely sent out in the middle of the configured "Consent request expires after (days)." For example, if you configure the consent request to expire in three days, the first reminder email is sent out on the second day, and the last expiration email is sent out almost immediately the consent request expires.
    - **Consent request expires after (days)** - Specify how long requests stay valid.

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 02/22/2024
+ms.date: 07/23/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -19,19 +19,21 @@ You can enable users to create and manage their own security groups or Microsoft
 
 ## Self-service group membership
 
-You can allow users to create security groups, which are used to manage access to shared resources. Users can create security groups in the Azure portal by using Azure Active Directory (Azure AD) PowerShell or from the [MyApps Groups Access Panel](https://account.activedirectory.windowsazure.com/r#/groups).  
+You can allow users to create security groups, which are used to manage access to shared resources. Users can create security groups in the Azure portal by using Azure Active Directory (Azure AD) PowerShell or from the [My Groups access panel](https://myaccount.microsoft.com/groups).  
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+:::image type="content" source="./media/groups-self-service-management/my-groups.png" alt-text="Screenshot that shows the My Groups access panel." lightbox="./media/groups-self-service-management/my-groups.png":::
 
-Only the group's owners can update membership, but you can provide group owners with the ability to approve or deny membership requests from the MyApps Groups Access Panel. Security groups created by self-service through the MyApps Groups Access Panel are available to join for all users, whether owner-approved or autoapproved. In the MyApps Groups Access Panel, you can change membership options when you create the group.
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
-Microsoft 365 groups provide collaboration opportunities for your users. You can create groups in any of the Microsoft 365 applications, such as SharePoint, Microsoft Teams, and Planner. You can also create Microsoft 365 groups in Azure portals by using Microsoft Graph PowerShell or from the MyApps Groups Access Panel. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](~/fundamentals/concept-learn-about-groups.md#what-to-know-before-creating-a-group).
+Only the group's owners can update membership, but you can provide group owners with the ability to approve or deny membership requests from the My Groups access panel. Security groups created by self-service through the My Groups access panel are available to join for all users, whether owner-approved or autoapproved. In the My Groups access panel, you can change membership options when you create the group.
+
+Microsoft 365 groups provide collaboration opportunities for your users. You can create groups in any of the Microsoft 365 applications, such as SharePoint, Microsoft Teams, and Planner. You can also create Microsoft 365 groups in Azure portals by using Microsoft Graph PowerShell or from the My Groups access panel. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](~/fundamentals/concept-learn-about-groups.md#what-to-know-before-creating-a-group).
 
 Groups created in | Security group default behavior | Microsoft 365 group default behavior
 ------------------ | ------------------------------- | ---------------------------------
 [Microsoft Graph PowerShell](/entra/identity/users/groups-settings-v2-cmdlets) | Only owners can add members.<br>Visible but not available to join in MyApp Groups Access Panel. | Open to join for all users.
-[Azure portal](https://portal.azure.com) | Only owners can add members.<br>Visible but not available to join in MyApps Groups Access Panel.<br>Owner isn't assigned automatically at group creation. | Open to join for all users.
-[MyApps Groups Access Panel](https://account.activedirectory.windowsazure.com/r#/joinGroups) | Open to join for all users.<br>Membership options can be changed when the group is created. | Open to join for all users.<br>Membership options can be changed when the group is created.
+[Azure portal](https://portal.azure.com) | Only owners can add members.<br>Visible but not available to join in My Groups access panel.<br>Owner isn't assigned automatically at group creation. | Open to join for all users.
+[My Groups access panel](https://myaccount.microsoft.com/groups) | Users can manage groups and request access to join groups here.<br>Membership options can be changed when a group is created. | Open to join for all users.<br>Membership options can be changed when a group is created.
 
 ## Self-service group management scenarios
 
@@ -43,11 +45,14 @@ In this example scenario, an administrator manages access to a software as a ser
 
 The business owner doesn't need to wait for the administrator to manage access for users. If the administrator grants the same permission to a manager in a different business group, that person can also manage access for their own group members. The business owner and the manager can't view or manage each other's group memberships. The administrator can still see all users who have access to the application and block access rights, if needed.
 
+> [!NOTE]
+> For delegated scenarios, the administrator needs to have at least a [Privileged Role Administrator Microsoft Entra](~/identity/role-based-access-control/permissions-reference.md) role.
+
 ### Self-service group management
 
 In this example scenario, two users have SharePoint Online sites that they set up independently. They want to give each other's teams access to their sites. To accomplish this task, they can create one group in Microsoft Entra ID. In SharePoint Online, each of them selects that group to provide access to their sites.
 
-When someone wants access, they request it from the MyApps Groups Access Panel. After approval, they get access to both SharePoint Online sites automatically. Later, one of them decides that all people accessing the site should also get access to a particular SaaS application. The administrator of the SaaS application can add access rights for the application to the SharePoint Online site. From then on, any requests that get approved give access to the two SharePoint Online sites and also to the SaaS application.
+When someone wants access, they request it from the [My Groups access panel](https://myaccount.microsoft.com/groups). After approval, they get access to both SharePoint Online sites automatically. Later, one of them decides that all people accessing the site should also get access to a particular SaaS application. The administrator of the SaaS application can add access rights for the application to the SharePoint Online site. From then on, any requests that get approved give access to the two SharePoint Online sites and also to the SaaS application.
 
 ## Make a group available for user self-service
 
@@ -59,10 +64,10 @@ When someone wants access, they request it from the MyApps Groups Access Panel. 
     > [!NOTE]
     > This setting only restricts access of group information in **My Groups**. It doesn't restrict access to group information via other methods like Microsoft Graph API calls or the Microsoft Entra admin center.
 
-   :::image type="content" source="./media/groups-self-service-management/groups-settings-general.png" alt-text="Screenshot that shows Microsoft Entra groups General settings.":::
+   :::image type="content" source="./media/groups-self-service-management/groups-settings-general.png" alt-text="Screenshot that shows Microsoft Entra groups General settings." lightbox="./media/groups-self-service-management/groups-settings-general.png":::
 
    > [!NOTE]
-   > In June 2024, the setting **Restrict users access to My Groups** will change to **Restrict users ability to see and edit security groups in My Groups.** If the setting is currently set to **Yes**, users will be able to access My Groups in June 2024 but won't be able to see security groups.
+   > Changes regarding the Self Service Group Management setting, initially scheduled for June 2024, are currently under review and will not take place as originally planned. A deprecation date will be announced in the future.
 
 1. Set **Owners can manage group membership requests in the Access Panel** to **Yes**.
 1. Set **Restrict user ability to access groups features in the Access Panel** to **No**.
@@ -104,7 +109,7 @@ Here are some more details about these group settings:
 
 ## Configure group settings by using Microsoft Graph
 
-To configure the **Users can create security groups in Azure portals, API or PowerShell** setting by using Microsoft Graph, configure the `EnableGroupCreation` object in the `groupSettings` object. For more information, see [Overview of group settings](/graph/group-directory-settings).
+To configure the **Users can create Microsoft 365 groups in Azure portals, API or PowerShell** setting by using Microsoft Graph, configure the `EnableGroupCreation` object in the `groupSettings` object. For more information, see [Overview of group settings](/graph/group-directory-settings).
 
 To configure the **Users can create security groups in Azure portals, API or PowerShell** setting by using Microsoft Graph, update the `allowedToCreateSecurityGroups` property of `defaultUserRolePermissions` in the [authorizationPolicy](/graph/api/resources/authorizationpolicy) object.
 

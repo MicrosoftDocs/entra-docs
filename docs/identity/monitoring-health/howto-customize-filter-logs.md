@@ -113,7 +113,7 @@ You can filter on several details. The following table describes some commonly u
 | --- | --- |
 | Request ID | Unique identifier for a sign-in request |
 | Correlation ID | Unique identifier for all sign-in requests that are part of a single sign-in attempt |
-| User | The *user principal name* (UPN) of the user |
+| User | The *user principal name (UPN)* of the user |
 | Application | The application targeted by the sign-in request |
 | Status | Options are *Success*, *Failure*, and *Interrupted* |
 | Resource | The name of the service used for the sign-in |

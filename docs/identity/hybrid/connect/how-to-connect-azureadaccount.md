@@ -33,16 +33,15 @@ The cmdlet resets the password for the service account and updates it both in Mi
 This section is a list of errors reported by customers that were fixed by a credentials reset on the Microsoft Entra Connector account.
 
 ---
-Event 6900
-The server encountered an unexpected error while processing a password change notification:
+Event 6900 The server encountered an unexpected error while processing a password change notification:  
 AADSTS70002: Error validating credentials. AADSTS50054: Old password is used for authentication.
 
 ---
-Event 659
-Error while retrieving password policy sync configuration. Microsoft.IdentityModel.Clients.ActiveDirectory.AdalServiceException:
-AADSTS70002: Error validating credentials. AADSTS50054: Old password is used for authentication.
+Event 659 Error while retrieving password policy sync configuration. Microsoft.IdentityModel.Clients.ActiveDirectory.AdalServiceException:
+AADSTS70002: Error validating credentials. AADSTS50054: Old password is used for authentication.  
 
 ## Next steps
+
 **Overview topics**
 
 * [Microsoft Entra Connect Sync: Understand and customize synchronization](how-to-connect-sync-whatis.md)

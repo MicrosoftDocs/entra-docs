@@ -16,9 +16,11 @@ ms.custom: it-pro
 
 # Add your application to the user flow
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. After you [create a user flow](how-to-user-flow-sign-up-sign-in-customers.md), you can associate it with one or more of the applications registered in your external tenant.
 
-Because you might want the same sign-in experience for all of your customer-facing apps, you can add multiple apps to the same user flow. But only one sign-in experience is needed for an application, so you can add each application to just one user flow.
+Because you might want the same sign-in experience for all of your apps, you can add multiple apps to the same user flow. But only one sign-in experience is needed for an application, so you can add each application to just one user flow.
 
 ## Prerequisites
 
@@ -55,4 +57,4 @@ You can learn more about this app [here](/azure/active-directory-b2c/extensions-
 
 - If you selected email with password sign-in, [enable password reset](how-to-enable-password-reset-customers.md).
 - Add [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) federation.
-- [Add multifactor authentication (MFA) to a customer-facing app](how-to-multifactor-authentication-customers.md).
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md).

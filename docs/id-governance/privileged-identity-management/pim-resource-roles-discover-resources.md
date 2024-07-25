@@ -33,7 +33,7 @@ You can view and manage the management groups or subscriptions to which you have
 
 ## Discover resources
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged role administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1.  Browse to **Identity governance** > **Privileged Identity Management** > **Azure Resources**.
 
@@ -58,8 +58,7 @@ You can view and manage the management groups or subscriptions to which you have
 
 1. Select any unmanaged resources that you want to manage.
 
-1. Select **Manage resource** to start managing the selected resources. The PIM service principal (MS-PIM) is 
-assigned as User Access Administrator on the resource.
+1. Select **Manage resource** to start managing the selected resources. The PIM service principal (MS-PIM) is assigned as User Access Administrator on the resource.
 
     > [!NOTE]
     > Once a management group or subscription is managed, it can't be unmanaged. This prevents another resource administrator from removing Privileged Identity Management settings.

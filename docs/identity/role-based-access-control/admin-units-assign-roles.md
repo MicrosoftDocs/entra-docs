@@ -25,7 +25,7 @@ This article describes how to assign Microsoft Entra roles with administrative u
 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Microsoft Graph PowerShell module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 

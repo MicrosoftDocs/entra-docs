@@ -14,9 +14,11 @@ ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or IT admin, I want to set up the external tenant free trial.
 ---
-# Quickstart: Get started with Microsoft Entra External ID for external-facing apps (preview)
+# Quickstart: Get started with Microsoft Entra External ID in external tenants (preview)
 
-Get started with Microsoft Entra External ID for external-facing apps (Preview), which lets you create secure, customized sign-in experiences for your customer-facing apps and services. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+Get started with Microsoft External ID for consumer and business customer apps , which lets you create secure, customized sign-in experiences for your apps and services. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
 
 In this quickstart, you'll learn how to set up an external tenant free trial. If you're a developer using Visual Studio Code, you can also set up a free trial through the Microsoft Entra External ID extension ([learn more](visual-studio-code-extension.md)). If you already have an Azure subscription, you can create a tenant with external configurations in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md).
 
@@ -40,7 +42,7 @@ During the free trial period, you'll have access to all product features with fe
 | Group and User management. |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Cloud-agnostic solution** with multi-language auth SDK support.  |  :heavy_check_mark: |  :heavy_check_mark:  | 
 
-[!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
+
 
 ## Sign up to your external tenant free trial
 
@@ -66,7 +68,7 @@ You can upgrade your 30 days free trial of a tenant with external configurations
 
 If you don't have any Azure subscriptions, follow the steps below.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. Browse to **Home** > **Tenant overview**. 
 1. Select **Upgrade**.
 
@@ -95,7 +97,7 @@ If you don't have any Azure subscriptions, follow the steps below.
 
 If your free trial belongs to an account with an existing Azure subscription, you can upgrade your free trial with the existing subscription. To associate your free trial with an existing tenant to unlock the full set of features follow the steps below.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). <!-- Should we add a role here? The user who signs up is a Global Administrator by default.-->
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. Browse to **Home** > **Tenant overview**. 
 1. Select **Add Subscription**.
 1. Select a tenant from the menu and select **Switch**.

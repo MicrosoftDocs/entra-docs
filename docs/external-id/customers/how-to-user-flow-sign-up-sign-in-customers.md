@@ -1,6 +1,6 @@
 ---
 title: Create a sign-up and sign-in user flow
-description: Learn how to create a sign-up and sign-in user flow for your customer-facing app. The user flow determines sign-in experience for my customer users.
+description: Learn how to create a sign-up and sign-in user flow for your consumer and business customer apps. The user flow determines sign-in experience for my customer users.
  
 author: msmimart
 manager: celestedg
@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 01/07/2024
+ms.date: 05/15/2024
 ms.author: mimart
 ms.reviewer: kengaderdus
 ms.custom: it-pro
@@ -16,7 +16,12 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to create and customize a user flow, which determines the sign-up and sign-i experience for my customer users.
 ---
 
-# Create a sign-up and sign-in user flow for customers  
+# Create a sign-up and sign-in user flow
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+> [!TIP]
+> This article applies to user flows in external tenants. For information about workforce tenants, see [Add a self-service sign-up user flow to an app](../self-service-sign-up-user-flow.yml).
 
 You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md)). You can also collect information from customers during sign-up by selecting from a series of built-in user attributes or adding your own custom attributes.
 

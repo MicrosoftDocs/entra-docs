@@ -30,7 +30,7 @@ To complete this tutorial, you need the following resources and privileges:
 
 * A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 or trial license enabled.
     * If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* An account with *global administrator* privileges.
+* An account with at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 * A non-administrator user with a password you know, such as *testuser*. You test a password change event using this account in this tutorial.
     * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
     * To test the password change operation using a banned password, the Microsoft Entra tenant must be [configured for self-service password reset](tutorial-enable-sspr.md).

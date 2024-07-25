@@ -276,7 +276,7 @@ Follow the steps below to verify that the key rollover logic is working.
    <issuerNameRegistry type="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry, System.IdentityModel.Tokens.ValidatingIssuerNameRegistry">
         <authority name="https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/">
           <keys>
-            <add thumbprint="3A38FA984E8560F19AADC9F86FE9594BB6AD049B" />
+            <add thumbprint="AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00" />
           </keys>
    ```
 2. In the **\<add thumbprint="">** setting, change the thumbprint value by replacing any character with a different one. Save the **Web.config** file.

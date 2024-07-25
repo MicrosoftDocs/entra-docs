@@ -82,6 +82,8 @@
       href: concept-authentication-default-enablement.md
     - name: System-preferred MFA 
       href: concept-system-preferred-multifactor-authentication.md
+    - name: External MFA provider
+      href: concept-authentication-external-method-provider.md
     - name: Prompts and session lifetime
       href: concepts-azure-multi-factor-authentication-prompts-session-lifetime.md
     - name: Understanding telephony fraud
@@ -218,7 +220,7 @@
     items:
     - name: User customization options
       href: howto-sspr-customization.md
-    - name: Pre-register authentication data
+    - name: Preregister authentication data
       href: howto-sspr-authenticationdata.md
     - name: SSPR for Windows clients
       href: howto-sspr-windows.md
@@ -234,6 +236,8 @@
       href: how-to-authentication-find-coverage-gaps.md
     - name: Enable per-user MFA
       href: howto-mfa-userstates.md
+    - name: Manage external authentication method
+      href: how-to-authentication-external-method-manage.md
     - name: Configure authentication providers
       href: concept-mfa-authprovider.md
     - name: Use app passwords
@@ -379,4 +383,4 @@
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Videos
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
+    href: phishing-resistant-authentication-videos.md

@@ -1,6 +1,6 @@
 ---
 title:  Add an on-premises application for remote access through application proxy in Microsoft Entra ID.
-description:  Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra ID account. This tutorial shows you how to prepare your environment for use with application proxy. Then, it uses the Microsoft Entra admin center to add an on-premises application to your Microsoft Entra tenant.
+description:  Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account. This tutorial shows you how to prepare your environment for use with application proxy. Then, it uses the Microsoft Entra admin center to add an on-premises application to your Microsoft Entra tenant.
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -35,7 +35,7 @@ To add an on-premises application to Microsoft Entra ID, you need:
 ## Install and verify the Microsoft Entra private network connector
 Application proxy uses the same connector as Microsoft Entra Private Access. The connector is called Microsoft Entra private network connector. To learn how to install and verify a connector, see [How to configure connectors](../../global-secure-access/how-to-configure-connectors.md).
 
-### General remarks
+## General remarks
 
 Public DNS records for Microsoft Entra application proxy endpoints are chained CNAME records pointing to an A record. Setting up the records this way ensures fault tolerance and flexibility. The Microsoft Entra private network connector always accesses host names with the domain suffixes `*.msappproxy.net` or `*.servicebus.windows.net`. However, during the name resolution the CNAME records might contain DNS records with different host names and suffixes. Due to the difference, you must ensure that the device (depending on your setup - connector server, firewall, outbound proxy) can resolve all the records in the chain and allows connection to the resolved IP addresses. Since the DNS records in the chain might be changed from time to time, we can't provide you with any list DNS records.
 
@@ -47,7 +47,7 @@ If your organization uses proxy servers to connect to the internet, you need to 
 ## Add an on-premises app to Microsoft Entra ID
 
 Add on-premises applications to Microsoft Entra ID.
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select **New application**.
 1. Select **Add an on-premises application** button, which appears about halfway down the page in the **On-premises applications** section. Alternatively, you can select **Create your own application** at the top of the page and then select **Configure application proxy for secure remote access to an on-premises application**.

@@ -1,21 +1,16 @@
 ---
 title: 'Tutorial: Configure Acunetix 360 for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Acunetix 360.
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: cb0c2e2c-ade9-4e6b-9ce5-d7c7d2743d90
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
-ms.date: 03/06/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Acunetix 360 so that I can streamline the user management process and ensure that users have the appropriate access to Acunetix 360.
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Acunetix 360 so that I can streamline the user management process and ensure that users have the appropriate access to Acunetix 360.
 ---
 
 # Tutorial: Configure Acunetix 360 for automatic user provisioning
@@ -36,7 +31,7 @@ This tutorial describes the steps you need to perform in both Acunetix 360 and M
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * An administrator account with Acunetix 360. 
 
 ## Step 1: Plan your provisioning deployment

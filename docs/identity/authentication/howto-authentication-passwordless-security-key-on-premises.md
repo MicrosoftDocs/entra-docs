@@ -5,7 +5,7 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 04/28/2024
 
 ms.author: justinha
 author: justinha
@@ -35,7 +35,7 @@ A Microsoft Entra Kerberos server object is created in your on-premises Active D
 
 ## Prerequisites
 
-Before you begin the procedures in this article, your organization must complete the instructions in [Enable passwordless security key sign-in to Windows 10 devices](howto-authentication-passwordless-security-key.md).
+Before you begin the procedures in this article, your organization must complete the instructions in [Enable passkeys (FIDO2) for your organization](howto-authentication-passwordless-security-key.md).
 
 You must also meet the following system requirements:
 
@@ -51,12 +51,12 @@ You must also meet the following system requirements:
    - An Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest. Referred to as **$domainCred**.
    - A Microsoft Entra user who is a member of the Global Administrators role. Referred to as **$cloudCred**.
 
-- Users must have the following Microsoft Entra ID attributes populated through Microsoft Entra Connect:
-   - onPremisesSamAccountName (accountName in Entra Connect)
-   - onPremisesDomainName (domainFQDN in Entra Connect)
-   - onPremisesSecurityIdentifier (objectSID in Entra Connect)
+- Users must have the following Microsoft Entra attributes populated through Microsoft Entra Connect:
+   - `onPremisesSamAccountName` (`accountName` in Microsoft Entra Connect)
+   - `onPremisesDomainName` (`domainFQDN` in Microsoft Entra Connect)
+   - `onPremisesSecurityIdentifier` (`objectSID` in Microsoft Entra Connect)
 
-  Entra Connect synchronizes these attributes by default. If you change which attributes to synchronize, make you select accountName, domainFQDN, and objectSID for synchronization.
+  Microsoft Entra Connect synchronizes these attributes by default. If you change which attributes to synchronize, make sure you select `accountName`, `domainFQDN`, and `objectSID` for synchronization.
 
 ### Supported scenarios
 
@@ -123,8 +123,10 @@ Supported Endpoints:
 ```
 Note the **numeric value** next to your desired cloud environment.
 
-To then **set** the desired cloud environment, run the following:  
-_(Example: For US Government Cloud)_  
+To then **set** the desired cloud environment, run the following:
+
+_(Example: For US Government Cloud)_
+
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
 
 ### Example 1 prompt for all credentials
@@ -134,10 +136,10 @@ _(Example: For US Government Cloud)_
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
-   # Enter an Azure Active Directory global administrator username and password.
+   # Enter an Azure Active Directory Global Administrator username and password.
    $cloudCred = Get-Credential -Message 'An Active Directory user who is a member of the Global Administrators group for Azure AD.'
 
-   # Enter a domain administrator username and password.
+   # Enter a Domain Administrator username and password.
    $domainCred = Get-Credential -Message 'An Active Directory user who is a member of the Domain Admins group.'
 
    # Create the new Azure AD Kerberos Server object in Active Directory
@@ -154,7 +156,7 @@ _(Example: For US Government Cloud)_
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
-   # Enter an Azure Active Directory global administrator username and password.
+   # Enter an Azure Active Directory Global Administrator username and password.
    $cloudCred = Get-Credential
 
    # Create the new Azure AD Kerberos Server object in Active Directory
@@ -165,19 +167,19 @@ _(Example: For US Government Cloud)_
 
 ### Example 3 prompt for all credentials using modern authentication
    > [!NOTE]
-   > If your organization protects password-based sign-in and enforces modern authentication methods such as multifactor authentication, FIDO2, or smart card technology, you must use the `-UserPrincipalName` parameter with the User Principal Name (UPN) of a global administrator.
+   > If your organization protects password-based sign-in and enforces modern authentication methods such as multifactor authentication, FIDO2, or smart card technology, you must use the `-UserPrincipalName` parameter with the User Principal Name (UPN) of a Global Administrator.
    > - Replace `contoso.corp.com` in the following example with your on-premises Active Directory domain name.
-   > - Replace `administrator@contoso.onmicrosoft.com` in the following example with the UPN of a global administrator.
+   > - Replace `administrator@contoso.onmicrosoft.com` in the following example with the UPN of a Global Administrator.
 
    ```powershell
    # Specify the on-premises Active Directory domain. A new Azure AD
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
-   # Enter a UPN of an Azure Active Directory global administrator
+   # Enter a UPN of a Global Administrator
    $userPrincipalName = "administrator@contoso.onmicrosoft.com"
 
-   # Enter a domain administrator username and password.
+   # Enter a Domain Administrator username and password.
    $domainCred = Get-Credential
 
    # Create the new Azure AD Kerberos Server object in Active Directory
@@ -188,15 +190,15 @@ _(Example: For US Government Cloud)_
 
 ### Example 4 prompt for cloud credentials using modern authentication
    > [!NOTE]
-   > If you are working on a domain-joined machine with an account that has domain administrator privileges and your organization protects password-based sign-in and enforces modern authentication methods such as multifactor authentication, FIDO2, or smart card technology, you must use the `-UserPrincipalName` parameter with the User Principal Name (UPN) of a global administrator. And you can skip the "-DomainCredential" parameter.
-      > - Replace `administrator@contoso.onmicrosoft.com` in the following example with the UPN of a global administrator.
+   > If you are working on a domain-joined machine with an account that has domain administrator privileges and your organization protects password-based sign-in and enforces modern authentication methods such as multifactor authentication, FIDO2, or smart card technology, you must use the `-UserPrincipalName` parameter with the User Principal Name (UPN) of a Global Administrator. And you can skip the "-DomainCredential" parameter.
+      > - Replace `administrator@contoso.onmicrosoft.com` in the following example with the UPN of a Global Administrator.
 
    ```powershell
    # Specify the on-premises Active Directory domain. A new Azure AD
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
-   # Enter a UPN of an Azure Active Directory global administrator
+   # Enter a UPN of a Global Administrator
    $userPrincipalName = "administrator@contoso.onmicrosoft.com"
 
    # Create the new Azure AD Kerberos Server object in Active Directory
@@ -235,7 +237,7 @@ This command outputs the properties of the Microsoft Entra Kerberos server. You 
 | CloudDomainDnsName | The *DomainDnsName* from the Microsoft Entra object. Must match the *DomainDnsName* from the second line of the table. |
 | CloudKeyVersion | The *KeyVersion* from the Microsoft Entra object. Must match the *KeyVersion* from the fifth line of the table. |
 | CloudKeyUpdatedOn | The *KeyUpdatedOn* from the Microsoft Entra object. Must match the *KeyUpdatedOn* from the sixth line of the table. |
-| | |
+
 
 <a name='rotate-the-azure-ad-kerberos-server-key'></a>
 
@@ -303,7 +305,7 @@ We are working on this capability for the general availability (GA) release of t
 
 ### Where can I go to find compliant security keys?
 
-For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-key-providers).
+For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md).
 
 ### What can I do if I lose my security key?
 

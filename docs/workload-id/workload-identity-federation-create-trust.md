@@ -203,7 +203,7 @@ The *issuer* identifies the path to the GitHub OIDC provider: `https://token.act
 - For workflows triggered by a pull request event: `repo:< Organization/Repository >:pull-request`.
 
 ```azurecli-interactive
-az ad app federated-credential create --id f6475511-fd81-4965-a00e-41e7792b7b9c --parameters credential.json
+az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 --parameters credential.json
 ("credential.json" contains the following content)
 {
     "name": "Testing",
@@ -227,11 +227,11 @@ az ad app federated-credential create --id f6475511-fd81-4965-a00e-41e7792b7b9c 
 *audiences* lists the audiences that can appear in the external token.  This field is mandatory.  The recommended value is "api://AzureADTokenExchange".
 
 ```azurecli-interactive
-az ad app federated-credential create --id f6475511-fd81-4965-a00e-41e7792b7b9c --parameters credential.json
+az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 --parameters credential.json
 ("credential.json" contains the following content)
 {
     "name": "Kubernetes-federated-credential",
-    "issuer": "https://aksoicwesteurope.blob.core.windows.net/9d80a3e1-2a87-46ea-ab16-e629589c541c/",
+    "issuer": "https://aksoicwesteurope.blob.core.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/",
     "subject": "system:serviceaccount:erp8asle:pod-identity-sa",
     "description": "Kubernetes service account federated credential",
     "audiences": [
@@ -255,7 +255,7 @@ You can configure a federated identity credential on an app and create a trust r
 *audiences*: lists the audiences that can appear in the external token.  This field is mandatory.  The recommended value is "api://AzureADTokenExchange".
 
 ```azurecli-interactive
-az ad app federated-credential create --id f6475511-fd81-4965-a00e-41e7792b7b9c --parameters credential.json
+az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 --parameters credential.json
 ("credential.json" contains the following content)
 {
     "name": "GcpFederation",
@@ -275,7 +275,7 @@ Run the [az ad app federated-credential list](/cli/azure/ad/app/federated-creden
 The *id* parameter specifies the identifier URI, application ID, or object ID of the application.
 
 ```azurecli-interactive
-az ad app federated-credential list --id f6475511-fd81-4965-a00e-41e7792b7b9c
+az ad app federated-credential list --id 00001111-aaaa-2222-bbbb-3333cccc4444
 ```
 
 ## Get a federated identity credential on an app
@@ -287,7 +287,7 @@ The *id* parameter specifies the identifier URI, application ID, or object ID of
 The *federated-credential-id* specifies the ID or name of the federated identity credential.
 
 ```azurecli-interactive
-az ad app federated-credential show --id f6475511-fd81-4965-a00e-41e7792b7b9c --federated-credential-id c79f8feb-a9db-4090-85f9-90d820caa0eb
+az ad app federated-credential show --id 00001111-aaaa-2222-bbbb-3333cccc4444 --federated-credential-id c79f8feb-a9db-4090-85f9-90d820caa0eb
 ```
 
 ## Delete a federated identity credential from an app
@@ -299,7 +299,7 @@ The *id* parameter specifies the identifier URI, application ID, or object ID of
 The *federated-credential-id* specifies the ID or name of the federated identity credential.
 
 ```azurecli-interactive
-az ad app federated-credential delete --id f6475511-fd81-4965-a00e-41e7792b7b9c --federated-credential-id c79f8feb-a9db-4090-85f9-90d820caa0eb
+az ad app federated-credential delete --id 00001111-aaaa-2222-bbbb-3333cccc4444 --federated-credential-id c79f8feb-a9db-4090-85f9-90d820caa0eb
 ```
 
 ::: zone-end
@@ -369,7 +369,7 @@ New-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -Audience api:/
 - *Audience* lists the audiences that can appear in the `aud` claim of the external token.
 
 ```azurepowershell-interactive
-New-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -Audience api://AzureADTokenExchange -Issuer 'https://aksoicwesteurope.blob.core.windows.net/9d80a3e1-2a87-46ea-ab16-e629589c541c/' -Name 'Kubernetes-federated-credential' -Subject 'system:serviceaccount:erp8asle:pod-identity-sa'
+New-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -Audience api://AzureADTokenExchange -Issuer 'https://aksoicwesteurope.blob.core.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/' -Name 'Kubernetes-federated-credential' -Subject 'system:serviceaccount:erp8asle:pod-identity-sa'
 ```
 
 ### Other identity providers example
@@ -430,18 +430,18 @@ The Microsoft Graph endpoint (`https://graph.microsoft.com`) exposes REST APIs t
 Run the following method to [create a new federated identity credential](/graph/api/application-post-federatedidentitycredentials) on your app (specified by the object ID of the app).  The *issuer* identifies GitHub as the external token issuer.  *subject* identifies the GitHub organization, repo, and environment for your GitHub Actions workflow.  When the GitHub Actions workflow requests Microsoft identity platform to exchange a GitHub token for an access token, the values in the federated identity credential are checked against the provided GitHub token.
 
 ```azurecli
-az rest --method POST --uri 'https://graph.microsoft.com/applications/f6475511-fd81-4965-a00e-41e7792b7b9c/federatedIdentityCredentials' --body '{"name":"Testing","issuer":"https://token.actions.githubusercontent.com","subject":"repo:octo-org/octo-repo:environment:Production","description":"Testing","audiences":["api://AzureADTokenExchange"]}'
+az rest --method POST --uri 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444/federatedIdentityCredentials' --body '{"name":"Testing","issuer":"https://token.actions.githubusercontent.com","subject":"repo:octo-org/octo-repo:environment:Production","description":"Testing","audiences":["api://AzureADTokenExchange"]}'
 ```
 
 And you get the response:
 ```azurecli
 {
-  "@odata.context": "https://graph.microsoft.com/$metadata#applications('f6475511-fd81-4965-a00e-41e7792b7b9c')/federatedIdentityCredentials/$entity",
+  "@odata.context": "https://graph.microsoft.com/$metadata#applications('00001111-aaaa-2222-bbbb-3333cccc4444')/federatedIdentityCredentials/$entity",
   "audiences": [
     "api://AzureADTokenExchange"
   ],
   "description": "Testing",
-  "id": "1aa3e6a7-464c-4cd2-88d3-90db98132755",
+  "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
   "issuer": "https://token.actions.githubusercontent.com",
   "name": "Testing",
   "subject": "repo:octo-org/octo-repo:environment:Production"
@@ -469,19 +469,19 @@ Run the following method to configure a federated identity credential on an app 
 - *audiences* lists the audiences that can appear in the external token.  This field is mandatory.  The recommended value is "api://AzureADTokenExchange".
 
 ```azurecli
-az rest --method POST --uri 'https://graph.microsoft.com/applications/f6475511-fd81-4965-a00e-41e7792b7b9c/federatedIdentityCredentials' --body '{"name":"Kubernetes-federated-credential","issuer":"https://aksoicwesteurope.blob.core.windows.net/9d80a3e1-2a87-46ea-ab16-e629589c541c/","subject":"system:serviceaccount:erp8asle:pod-identity-sa","description":"Kubernetes service account federated credential","audiences":["api://AzureADTokenExchange"]}'
+az rest --method POST --uri 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444/federatedIdentityCredentials' --body '{"name":"Kubernetes-federated-credential","issuer":"https://aksoicwesteurope.blob.core.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/","subject":"system:serviceaccount:erp8asle:pod-identity-sa","description":"Kubernetes service account federated credential","audiences":["api://AzureADTokenExchange"]}'
 ```
 
 And you get the response:
 ```azurecli
 {
-  "@odata.context": "https://graph.microsoft.com/$metadata#applications('f6475511-fd81-4965-a00e-41e7792b7b9c')/federatedIdentityCredentials/$entity",
+  "@odata.context": "https://graph.microsoft.com/$metadata#applications('00001111-aaaa-2222-bbbb-3333cccc4444')/federatedIdentityCredentials/$entity",
   "audiences": [
     "api://AzureADTokenExchange"
   ],
   "description": "Kubernetes service account federated credential",
   "id": "51ecf9c3-35fc-4519-a28a-8c27c6178bca",
-  "issuer": "https://aksoicwesteurope.blob.core.windows.net/9d80a3e1-2a87-46ea-ab16-e629589c541c/",
+  "issuer": "https://aksoicwesteurope.blob.core.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/",
   "name": "Kubernetes-federated-credential",
   "subject": "system:serviceaccount:erp8asle:pod-identity-sa"
 }
@@ -504,7 +504,7 @@ az rest --method POST --uri 'https://graph.microsoft.com/applications/<ObjectID>
 And you get the response:
 ```azurecli
 {
-  "@odata.context": "https://graph.microsoft.com/$metadata#applications('f6475511-fd81-4965-a00e-41e7792b7b9c')/federatedIdentityCredentials/$entity",
+  "@odata.context": "https://graph.microsoft.com/$metadata#applications('00001111-aaaa-2222-bbbb-3333cccc4444')/federatedIdentityCredentials/$entity",
   "audiences": [
     "api://AzureADTokenExchange"
   ],
@@ -521,21 +521,21 @@ And you get the response:
 Run the following method to [list the federated identity credential(s)](/graph/api/application-list-federatedidentitycredentials) for an app (specified by the object ID of the app):
 
 ```azurecli
-az rest -m GET -u 'https://graph.microsoft.com/applications/f6475511-fd81-4965-a00e-41e7792b7b9c/federatedIdentityCredentials'
+az rest -m GET -u 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444/federatedIdentityCredentials'
 ```
 
 And you get a response similar to:
 
 ```azurecli
 {
-  "@odata.context": "https://graph.microsoft.com/$metadata#applications('f6475511-fd81-4965-a00e-41e7792b7b9c')/federatedIdentityCredentials",
+  "@odata.context": "https://graph.microsoft.com/$metadata#applications('00001111-aaaa-2222-bbbb-3333cccc4444')/federatedIdentityCredentials",
   "value": [
     {
       "audiences": [
         "api://AzureADTokenExchange"
       ],
       "description": "Testing",
-      "id": "1aa3e6a7-464c-4cd2-88d3-90db98132755",
+      "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
       "issuer": "https://token.actions.githubusercontent.com/",
       "name": "Testing",
       "subject": "repo:octo-org/octo-repo:environment:Production"
@@ -549,22 +549,22 @@ And you get a response similar to:
 Run the following method to [get a federated identity credential](/graph/api/federatedidentitycredential-get) for an app (specified by the object ID of the app):
 
 ```azurecli
-az rest -m GET -u 'https://graph.microsoft.com/applications/f6475511-fd81-4965-a00e-41e7792b7b9c//federatedIdentityCredentials/1aa3e6a7-464c-4cd2-88d3-90db98132755'
+az rest -m GET -u 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444//federatedIdentityCredentials/00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 
 And you get a response similar to:
 
 ```azurecli
 {
-  "@odata.context": "https://graph.microsoft.com/$metadata#applications('f6475511-fd81-4965-a00e-41e7792b7b9c')/federatedIdentityCredentials",
+  "@odata.context": "https://graph.microsoft.com/$metadata#applications('00001111-aaaa-2222-bbbb-3333cccc4444')/federatedIdentityCredentials",
   "value": {
-      "@odata.context": "https://graph.microsoft.com/$metadata#applications('f6475511-fd81-4965-a00e-41e7792b7b9c')/federatedIdentityCredentials/$entity",
-      "@odata.id": "https://graph.microsoft.com/v2/3d1e2be9-a10a-4a0c-8380-7ce190f98ed9/directoryObjects/$/Microsoft.DirectoryServices.Application('f6475511-fd81-4965-a00e-41e7792b7b9c')/federatedIdentityCredentials('f6475511-fd81-4965-a00e-41e7792b7b9c')/f6475511-fd81-4965-a00e-41e7792b7b9c",
+      "@odata.context": "https://graph.microsoft.com/$metadata#applications('00001111-aaaa-2222-bbbb-3333cccc4444')/federatedIdentityCredentials/$entity",
+      "@odata.id": "https://graph.microsoft.com/v2/3d1e2be9-a10a-4a0c-8380-7ce190f98ed9/directoryObjects/$/Microsoft.DirectoryServices.Application('00001111-aaaa-2222-bbbb-3333cccc4444')/federatedIdentityCredentials('00001111-aaaa-2222-bbbb-3333cccc4444')/00001111-aaaa-2222-bbbb-3333cccc4444",
     "audiences": [
         "api://AzureADTokenExchange"
       ],
       "description": "Testing",
-      "id": "1aa3e6a7-464c-4cd2-88d3-90db98132755",
+      "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
       "issuer": "https://token.actions.githubusercontent.com/",
       "name": "Testing",
       "subject": "repo:octo-org/octo-repo:environment:Production"
@@ -577,7 +577,7 @@ And you get a response similar to:
 Run the following method to [delete a federated identity credential](/graph/api/federatedidentitycredential-delete) from an app (specified by the object ID of the app):
 
 ```azurecli
-az rest -m DELETE  -u 'https://graph.microsoft.com/applications/f6475511-fd81-4965-a00e-41e7792b7b9c/federatedIdentityCredentials/1aa3e6a7-464c-4cd2-88d3-90db98132755'
+az rest -m DELETE  -u 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444/federatedIdentityCredentials/00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 
 ::: zone-end

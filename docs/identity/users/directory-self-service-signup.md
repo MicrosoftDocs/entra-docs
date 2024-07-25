@@ -28,7 +28,7 @@ This article explains how to use self-service sign-up to populate an organizatio
 ## Terms and definitions
 
 * **Self-service sign-up**: This is the method by which a user signs up for a cloud service and has an identity automatically created for them in Microsoft Entra ID based on their email domain.
-* **Unmanaged Microsoft Entra tenant**: This is the tenant where that identity is created. An unmanaged tenant is a tenant that has no global administrator.
+* **Unmanaged Microsoft Entra tenant**: This is the tenant where that identity is created. An unmanaged tenant is a tenant that has no Global Administrator.
 * **Email-verified user**: This is a type of user account in Microsoft Entra ID. A user who has an identity created automatically after signing up for a self-service offer is known as an email-verified user. An email-verified user is a regular member of a tenant tagged with creationmethod=EmailVerified.
 
 ## How do I control self-service settings?

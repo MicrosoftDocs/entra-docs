@@ -1,31 +1,25 @@
 ---
-title: Sign in users and call an API in sample Node.js web application 
+title: Sign in users and call a web API in sample Node.js web application 
 description: Learn how to configure a sample web app to sign in users and call an API.
 
 author: kengaderdus
 manager: mwongerapk
-
 ms.author: kengaderdus
-ms.service: entra-external-id
- 
+ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: sample
-ms.date: 06/23/2023
+ms.date: 06/26/2024
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample web app to sign in and sign out users with my external tenant.
 ---
 
-# Sign in users and call an API in sample Node.js web application 
+# Sign in users and call a web API in sample Node.js web application 
 
-This guide uses a sample Node.js web application to show you how to add authentication and authorization. The sample application sign in users to a Node.js web app, which then calls a .NET API. You enable authentication and authorization by using your external tenant details. The sample web application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) for Node to handle authentication.
+This guide uses a code sample to show you how to add authentication and authorization in a Node.js web application. The sample application sign in users to a Node.js web app, which then calls a .NET API. You enable authentication and authorization by using your external tenant details. The sample web application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) for Node to handle authentication.
 
 In this article, you complete the following tasks:
 
 - Register and configure a web API in the Microsoft Entra admin center.
-
-- Register and configure a client web application in the Microsoft Entra admin center. 
-
-- Create a sign-up and sign-in user flow in the Microsoft Entra admin center, and then associate a client web app with it.
 
 - Update a sample Node web application and ASP.NET web API to use your external tenant details.
 
@@ -33,12 +27,13 @@ In this article, you complete the following tasks:
 
 ## Prerequisites
 
+* Complete the steps in [Sign in users and call an API in sample Node.js web application](sample-web-app-node-sign-in.md) article. This article shows you how to sign in users by using a sample Node.js web app. 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org).
 * [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
 * An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
-## Register a web application and a web API
+## Register a web API
 
 In this step, you create the web and the web API application registrations, and you specify the scopes of your web API.
 
@@ -60,26 +55,14 @@ This API needs to expose permissions, which a client needs to acquire for callin
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-optional-claims-access.md)]
 
-### Register the web app
+Use the steps in [Configure optional claims](../../identity-platform/optional-claims.md?tabs=appui) article to add idtyp claim to the access token:
 
-[!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-platform-redirect-url-node.md)]  
-
-### Create a client secret
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-app-client-secret.md)]
+- For the **Token type** select **Access**.
+- From the optional claims list, select **idtyp**.  
 
 ### Grant API permissions to the web app
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permission-call-api.md)]
-
-## Create a user flow 
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)] 
-
-##  Associate web application with the user flow
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/configure-user-flow/add-app-user-flow.md)]
 
 ##  Clone or download sample web application and web API
 

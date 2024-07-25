@@ -115,8 +115,8 @@ Get-MgRoleManagementDirectoryRoleAssignment -Filter "roleDefinitionId eq '$($rol
 Id                                            PrincipalId                          RoleDefinitionId                     DirectoryScopeId AppScop
                                                                                                                                          eId
 --                                            -----------                          ----------------                     ---------------- -------
-lAPpYvVpN0KRkAEhdxReEH2Fs3EjKm1BvSKkcYVN2to-1 71b3857d-2a23-416d-bd22-a471854ddada 62e90394-69f5-4237-9190-012177145e10 /
-lAPpYvVpN0KRkAEhdxReEMdXLf2tIs1ClhpzQPsutrQ-1 fd2d57c7-22ad-42cd-961a-7340fb2eb6b4 62e90394-69f5-4237-9190-012177145e10 /
+lAPpYvVpN0KRkAEhdxReEH2Fs3EjKm1BvSKkcYVN2to-1 aaaaaaaa-bbbb-cccc-1111-222222222222 62e90394-69f5-4237-9190-012177145e10 /
+lAPpYvVpN0KRkAEhdxReEMdXLf2tIs1ClhpzQPsutrQ-1 bbbbbbbb-cccc-dddd-2222-333333333333 62e90394-69f5-4237-9190-012177145e10 /
 ```
 
 The following example shows how to list all active role assignments across all roles, including built-in and custom roles (currently in Preview).
@@ -133,19 +133,19 @@ foreach ($role in $roles)
 Id                                            PrincipalId                          RoleDefinitionId                     DirectoryScopeId AppScop
                                                                                                                                          eId
 --                                            -----------                          ----------------                     ---------------- -------
-lAPpYvVpN0KRkAEhdxReEH2Fs3EjKm1BvSKkcYVN2to-1 71b3857d-2a23-416d-bd22-a471854ddada 62e90394-69f5-4237-9190-012177145e10 /
-lAPpYvVpN0KRkAEhdxReEMdXLf2tIs1ClhpzQPsutrQ-1 fd2d57c7-22ad-42cd-961a-7340fb2eb6b4 62e90394-69f5-4237-9190-012177145e10 /
-4-PYiFWPHkqVOpuYmLiHa3ibEcXLJYtFq5x3Kkj2TkA-1 c5119b78-25cb-458b-ab9c-772a48f64e40 88d8e3e3-8f55-4a1e-953a-9b9898b8876b /
-4-PYiFWPHkqVOpuYmLiHa2hXf3b8iY5KsVFjHNXFN4c-1 767f5768-89fc-4a8e-b151-631cd5c53787 88d8e3e3-8f55-4a1e-953a-9b9898b8876b /
-BSub0kaAukSHWB4mGC_PModww03rMgNOkpK77ePhDnI-1 4dc37087-32eb-4e03-9292-bbede3e10e72 d29b2b05-8046-44ba-8758-1e26182fcf32 /
-BSub0kaAukSHWB4mGC_PMgzOWSgXj8FHusA4iaaTyaI-1 2859ce0c-8f17-47c1-bac0-3889a693c9a2 d29b2b05-8046-44ba-8758-1e26182fcf32 /
+lAPpYvVpN0KRkAEhdxReEH2Fs3EjKm1BvSKkcYVN2to-1 aaaaaaaa-bbbb-cccc-1111-222222222222 62e90394-69f5-4237-9190-012177145e10 /
+lAPpYvVpN0KRkAEhdxReEMdXLf2tIs1ClhpzQPsutrQ-1 bbbbbbbb-cccc-dddd-2222-333333333333 62e90394-69f5-4237-9190-012177145e10 /
+4-PYiFWPHkqVOpuYmLiHa3ibEcXLJYtFq5x3Kkj2TkA-1 cccccccc-dddd-eeee-3333-444444444444 88d8e3e3-8f55-4a1e-953a-9b9898b8876b /
+4-PYiFWPHkqVOpuYmLiHa2hXf3b8iY5KsVFjHNXFN4c-1 dddddddd-eeee-ffff-4444-555555555555 88d8e3e3-8f55-4a1e-953a-9b9898b8876b /
+BSub0kaAukSHWB4mGC_PModww03rMgNOkpK77ePhDnI-1 eeeeeeee-ffff-aaaa-5555-666666666666 d29b2b05-8046-44ba-8758-1e26182fcf32 /
+BSub0kaAukSHWB4mGC_PMgzOWSgXj8FHusA4iaaTyaI-1 ffffffff-aaaa-bbbb-6666-777777777777 d29b2b05-8046-44ba-8758-1e26182fcf32 /
 ```
 
 ## Microsoft Graph API
 
 This section describes how to list role assignments with organization-wide scope. To list single-application scope role assignments using Graph API, you can use the operations in [Assign custom roles with Graph API](custom-assign-graph.md).
 
-Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to get the role assignments for a specific role definition. The following example shows how to list the role assignments for a specific role definition with the ID `3671d40a-1aac-426c-a0c1-a3821ebd8218`.
+Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to get the role assignments for a specific role definition. The following example shows how to list the role assignments for a specific role definition with the ID `00000000-0000-0000-0000-000000000000`.
 
 ```http
 GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=roleDefinitionId eq ‘<template-id-of-role-definition>’
@@ -156,9 +156,9 @@ Response
 ```http
 HTTP/1.1 200 OK
 {
-    "id": "CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1",
-    "principalId": "ab2e1023-bddc-4038-9ac1-ad4843e7e539",
-    "roleDefinitionId": "3671d40a-1aac-426c-a0c1-a3821ebd8218",
+    "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1wIiSDKQoTVJrLE9etXyrY0-1",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+    "roleDefinitionId": "00000000-0000-0000-0000-000000000000",
     "directoryScopeId": "/"
 }
 ```

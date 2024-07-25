@@ -1,6 +1,6 @@
 ---
 title: Test a user flow
-description: Learn how to use the Run user flow feature to test your sign-up and sign-in user flow for your customer-facing app.
+description: Learn how to use the Run user flow feature to test your sign-up and sign-in user flow for your consumer and business customer apps.
  
 author: msmimart
 manager: celestedg
@@ -17,6 +17,8 @@ ms.custom: it-pro
 ---
 
 # Test your sign-up and sign-in user flow  
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 The **Run user flow** feature allows you to test your user flows by simulating a user’s sign-up or sign-in experience with your application. You can use this feature to verify that your user flow is working as expected. To use this feature, you select the user flow associated with your application, run the user flow, and enter the requested sign-up or sign-in information.
 

@@ -21,7 +21,7 @@ This quickstart uses an ASP.NET Core web API code sample to demonstrate how to r
 ## Prerequisites
 
 - Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
+- A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet)
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Register the application and record identifiers
@@ -65,7 +65,7 @@ Once the API is registered, you can configure its permission by defining the sco
 
 ## Clone or download the sample application
 
-To obtain the sample application, you can either clone it from GitHub or download it as a _.zip_ file.
+To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
@@ -77,7 +77,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the ASP.NET Core sample application
 
-1. In your IDE, open the project folder, _ms-identity-docs-code-dotnet/web-api_, containing the sample.
+1. In your IDE, open the project folder, *ms-identity-docs-code-dotnet/web-api*, containing the sample.
 1. Open `appsettings.json` file, which contains the following code snippet:
 
     :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-api/appsettings.json" :::

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IWT Procurement Suite so that I can control who has access to IWT Procurement Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [IWT Procurement Suite Client support team](mailto:support@ionwave.net) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. IWT Procurement Suite application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **Emailaddress** is mapped with **user.mail**. IWT Procurement Suite application expects **Emailaddress** to be mapped with **user.userprincipalname**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. IWT Procurement Suite application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **Emailaddress** is mapped with **user.mail**. IWT Procurement Suite application expects **Emailaddress** to be mapped with **user.userprincipalname**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![image](common/default-attributes.png)
 

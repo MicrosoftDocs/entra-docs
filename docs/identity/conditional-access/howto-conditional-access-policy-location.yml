@@ -2,12 +2,12 @@
 ---
 metadata:
   title: Conditional Access - Block access by location
-  description: Create a custom Conditional Access policy to block access to resources by IP location
+  description: Create a custom Conditional Access policy to block access to resources by IP location.
   author: MicrosoftGuyJFlo
   ms.author: joflore
   manager: amycolannino
-  ms.reviewer: calebb, lhuangnorth
-  ms.date: 07/18/2023
+  ms.reviewer: lhuangnorth
+  ms.date: 05/29/2024
   ms.service: entra-id
   ms.subservice: conditional-access
   ms.topic: how-to
@@ -67,9 +67,9 @@ procedureSection:
       - |
         Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
       - |  
-        Under **Conditions** > **Location**.
+        Under **Network**.
           1. Set **Configure** to **Yes**
-          1. Under **Include**, select **Selected locations**
+          1. Under **Include**, select **Selected networks and locations**
           1. Select the blocked location you created for your organization.
           1. Click **Select**.
       - |    

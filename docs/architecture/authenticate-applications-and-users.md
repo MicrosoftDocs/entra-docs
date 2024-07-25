@@ -36,7 +36,7 @@ The best method to reduce or eliminate sign-in prompts is to use Microsoft Authe
 
 For apps running in iOS or Android, mobile platform providers have some functionality to make this experience more seamless. Google has guidance for Android applications with [Chrome Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs). Apple has guidance for [Authenticate a User Through a Web Service](https://developer.apple.com/documentation/authenticationservices/authenticating_a_user_through_a_web_service) in iOS applications. Avoid using embedded WebViews as they might not allow sharing across apps or with the system browser.
 
-The two protocols for user authentication are [Security Assertion Markup Language](auth-saml.md) 2.0 (SAML) and [OpenID Connect](auth-oidc.md) (OIDC). Microsoft Entra ID fully supports apps using both protocols, so developers can choose either one based on their requirements.
+The two protocols for user authentication are [Security Assertion Markup Language (SAML)](auth-saml.md) 2.0 and [OpenID Connect (OIDC)](auth-oidc.md). Microsoft Entra ID fully supports apps using both protocols, so developers can choose either one based on their requirements.
 
 These references detail Microsoft Entra ID SAML support.
 

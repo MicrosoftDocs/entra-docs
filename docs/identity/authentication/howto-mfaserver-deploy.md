@@ -144,7 +144,7 @@ Now that you have downloaded the server you can install and configure it. Be sur
 5. Back on the page that you downloaded the server from, click the **Generate Activation Credentials** button. Copy this information into the Azure Multi-Factor Authentication Server in the boxes provided and click **Activate**.
 
 > [!NOTE]
-> Only global administrators are able to generate activation credentials in the Microsoft Entra admin center.
+> Only Global Administrators are able to generate activation credentials in the Microsoft Entra admin center.
 
 ## Send users an email
 

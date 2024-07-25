@@ -17,10 +17,12 @@
     href: concept-conditional-access-policies.md
   - name: Assignments
     items: 
-     - name: Users and groups
+     - name: Users, groups, and roles
        href: concept-conditional-access-users-groups.md
      - name: Target resources
        href: concept-conditional-access-cloud-apps.md
+     - name: Network
+       href: concept-assignment-network.md
      - name: Conditions
        href: concept-conditional-access-conditions.md
   - name: Access controls
@@ -37,8 +39,6 @@
     href: concept-filter-for-applications.md
   - name: Token protection
     href: concept-token-protection.md
-  - name: Location conditions
-    href: location-condition.md
   - name: Authentication flows
     href: concept-authentication-flows.md    
   - name: Authentication transfer
@@ -102,6 +102,8 @@
       href: howto-conditional-access-policy-compliant-device.md
     - name: Use application enforced restrictions
       href: howto-policy-app-enforced-restriction.md
+    - name: Require auth strength for device registration
+      href: how-to-policy-mfa-device-register-join.md
     - name: Require MFA for Intune enrollment
       href: /mem/intune/enrollment/multi-factor-authentication?context=/entra/identity/conditional-access/context/conditional-access-context.json
     - name: Block access by location
@@ -138,6 +140,8 @@
     href: migrate-approved-client-app.md
 - name: Reference
   items:
+  - name: Upcoming changes
+    href: reference-resources-change.md
   - name: Office 365 application
     href: reference-office-365-application-contents.md
   - name: Microsoft Graph APIs

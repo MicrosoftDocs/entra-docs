@@ -50,7 +50,7 @@ Prior experience or knowledge of F5 BIG-IP isn't necessary, however, you need:
 - A Microsoft Entra subscription
   -  If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/trial/get-started-active-directory/)
 - User identities [synchronized from their on-premises directory](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) to Microsoft Entra ID
-- One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator
+- One of the following roles: Cloud Application Administrator, or Application Administrator
 - BIG-IP infrastructure with client traffic routing to and from the BIG-IP 
   - Or [deploy a BIG-IP Virtual Edition into Azure](f5-bigip-deployment-guide.md)
 - A record for the BIG-IP published VPN service in a public domain name server (DNS)
@@ -145,7 +145,7 @@ To complete federating the VPN service with Microsoft Entra ID, create the BIG-I
     ![Screenshot of Name and Entity entries.](media/f5-passwordless-vpn/create-new-saml-sp.png)
 
    >[!NOTE]
-  >If the entity ID isn't an exact match of the hostname of the published URL, configure SP **Name** settings, or perform this action if it isn't in hostname URL format. If entity ID is `urn:ssl-vpn:contosoonline`, provide the external scheme and hostname of the application being published.
+   >If the entity ID isn't an exact match of the hostname of the published URL, configure SP **Name** settings, or perform this action if it isn't in hostname URL format. If entity ID is `urn:ssl-vpn:contosoonline`, provide the external scheme and hostname of the application being published.
 
 5. Scroll down to select the new **SAML SP object**.
 6. Select **Bind/UnBind IDP Connectors**.
@@ -232,8 +232,6 @@ A BIG-IP connection profile is required to configure VPN client-type settings th
 
     ![Screenshot of Profile Name and Parent Name entries in Create New Connectivity Profile.](media/f5-passwordless-vpn/create-connectivity-profile.png)
 
-For more information on client support, see the F5 article, [F5 Access and BIG-IP Edge Client](https://techdocs.f5.com/kb/en-us/bigip-edge-apps.html).
-
 ## Access profile configuration
 
 An access policy enables the service for SAML authentication.
@@ -263,9 +261,6 @@ An access policy enables the service for SAML authentication.
 14. For the Successful branch of SAML auth, select **+** .
 15. From the Assignment tab, select **Advanced Resource Assign**.
 16. Select **Add Item**.
-
-    ![Screenshot of the plus button on Access Policy.](media/f5-passwordless-vpn/advance-resource-assign.png)
-
 17. In the pop-up, select **New Entry**
 18. Select **Add/Delete**.
 19. In the window, select **Network Access**.

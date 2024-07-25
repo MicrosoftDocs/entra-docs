@@ -152,7 +152,7 @@ This cmdlet requires `TenantId` of the Microsoft Entra tenant. It will verify if
 
 #### Example:
 ``` powershell
-Disable-AADCloudSyncToolsDirSyncAccidentalDeletionPrevention -tenantId "340ab039-1234-5678-9012-28fe88f83980"
+Disable-AADCloudSyncToolsDirSyncAccidentalDeletionPrevention -tenantId "aaaabbbb-0000-cccc-1111-dddd2222eeee"
 ```
 
 

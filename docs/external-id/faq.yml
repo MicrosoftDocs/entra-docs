@@ -12,6 +12,9 @@ metadata:
   ms.collection: M365-identity-device-management
 title: Microsoft Entra B2B collaboration FAQs
 summary: |
+
+  [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
   These frequently asked questions (FAQs) about Microsoft Entra business-to-business (B2B) collaboration are periodically updated to include new topics.
   
   > [!IMPORTANT]

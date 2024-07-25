@@ -5,7 +5,7 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: devx-track-csharp,  has-adal-ref, devx-track-dotnet
-ms.date: 09/09/2020
+ms.date: 06/05/2024
 ms.reviewer: saeeda, brianmel
 ms.service: identity-platform
 
@@ -22,6 +22,9 @@ When you use the Microsoft Authentication Library for .NET (MSAL.NET) on Xamarin
 - Enable token cache sharing.
 - Enable keychain access.
 - Understand known issues with iOS 12 and iOS 13 and authentication.
+
+> [!NOTE]
+> MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your Xamarin applications to modern frameworks like MAUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
 
 ## Implement OpenUrl
 

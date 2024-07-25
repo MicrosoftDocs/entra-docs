@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BlueJeans so that I can control who has access to BlueJeans, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -203,7 +203,7 @@ The objective of this section is to create a user called B.Simon in BlueJeans fo
 	![Screenshot shows part of a browser window with the Admin tab selected, with Manage Users and Add Users selected.](./media/bluejeans-tutorial/add-user.png "Admin")
 
 	> [!IMPORTANT]
-	> The **ADD USER** tab is only available if, in the **SECUTIRY tab**, **Enable automatic provisioning** is unchecked.
+	> The **ADD USER** tab is only available if, in the **SECURITY tab**, **Enable automatic provisioning** is unchecked.
 
 3. In the **ADD USER** section, perform the following steps:
 

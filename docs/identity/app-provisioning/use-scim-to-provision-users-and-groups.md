@@ -42,7 +42,7 @@ To automate provisioning to an application, it requires building and integrating
 
 ## Design your user and group schema
 
-Each application requires different attributes to create a user or group. Start your integration by identifying the required objects (users, groups) and attributes (name, manager, job title, etc.) that your application needs. 
+Each application requires different attributes to create a user or group. Start your integration by identifying the required objects (users, groups) and attributes (name, manager, job title, and so on) that your application needs. 
 
 The SCIM standard defines a schema for managing users and groups. 
 
@@ -102,7 +102,7 @@ The following JSON payload shows an example SCIM schema:
      "lastModified": "2011-05-13T04:42:34Z",
      "version": "W\/\"3694e05e9dff591\"",
      "location":
- "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646"
+ "https://example.com/v2/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
    }
 }   
 ```
@@ -209,7 +209,7 @@ Use the general guidelines when implementing a SCIM endpoint to ensure compatibi
 ### /Users:
 
 * The entitlements attribute isn't supported.
-* Any attributes that are considered for user uniqueness must be usable as part of a filtered query. (for example, if user uniqueness is evaluated for both userName and emails[type eq "work"], a GET to /Users with a filter must allow for both _userName eq "user@contoso.com"_ and _emails[type eq "work"].value eq "user@contoso.com"_ queries.
+* Any attributes that are considered for user uniqueness must be usable as part of a filtered query. (for example, if user uniqueness is evaluated for both userName and emails[type eq "work"], a GET to /Users with a filter must allow for both *userName eq "user@contoso.com"* and *emails[type eq "work"].value eq "user@contoso.com"* queries.
 
 ### /Groups:
 
@@ -289,12 +289,12 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "urn:ietf:params:scim:schemas:core:2.0:User",
         "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],
     "externalId": "0a21f0f2-8d2a-4f8e-bf98-7363c4aed4ef",
-    "userName": "Test_User_ab6490ee-1e48-479e-a20b-2d77186b5dd1",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "active": true,
     "emails": [{
         "primary": true,
         "type": "work",
-        "value": "Test_User_fd0ea19b-0777-472c-9f96-4f70d2226f2e@testuser.com"
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com"
     }],
     "meta": {
         "resourceType": "User"
@@ -321,7 +321,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "created": "2018-03-27T19:59:26.000Z",
         "lastModified": "2018-03-27T19:59:26.000Z"
     },
-    "userName": "Test_User_ab6490ee-1e48-479e-a20b-2d77186b5dd1",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": {
         "formatted": "givenName familyName",
         "familyName": "familyName",
@@ -329,7 +329,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     },
     "active": true,
     "emails": [{
-        "value": "Test_User_fd0ea19b-0777-472c-9f96-4f70d2226f2e@testuser.com",
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
         "type": "work",
         "primary": true
     }]
@@ -353,7 +353,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "created": "2018-03-27T19:59:26.000Z",
         "lastModified": "2018-03-27T19:59:26.000Z"
     },
-    "userName": "Test_User_feed3ace-693c-4e5a-82e2-694be1b39934",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": {
         "formatted": "givenName familyName",
         "familyName": "familyName",
@@ -361,7 +361,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     },
     "active": true,
     "emails": [{
-        "value": "Test_User_22370c1a-9012-42b2-bf64-86099c2a1c22@testuser.com",
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
         "type": "work",
         "primary": true
     }]
@@ -390,7 +390,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 
 ##### <a name="request-2"></a>Request
 
-*GET /Users?filter=userName eq "Test_User_dfeef4c5-5681-4387-b016-bdf221e82081"*
+*GET /Users?filter=userName eq "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee"*
 
 ##### <a name="response-2"></a>Response
 
@@ -409,14 +409,14 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
             "lastModified": "2018-03-27T19:59:26.000Z"
             
         },
-        "userName": "Test_User_dfeef4c5-5681-4387-b016-bdf221e82081",
+        "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
         "name": {
             "familyName": "familyName",
             "givenName": "givenName"
         },
         "active": true,
         "emails": [{
-            "value": "Test_User_91b67701-697b-46de-b864-bd0bbe4f99c1@testuser.com",
+            "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
             "type": "work",
             "primary": true
         }]
@@ -481,7 +481,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
         "created": "2018-03-27T19:59:26.000Z",
         "lastModified": "2018-03-27T19:59:26.000Z"
     },
-    "userName": "Test_User_fbb9dda4-fcde-4f98-a68b-6c5599e17c27",
+    "userName": "Test_User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": {
         "formatted": "givenName updatedFamilyName",
         "familyName": "updatedFamilyName",
@@ -534,7 +534,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     },
     "active": true,
     "emails": [{
-        "value": "Test_User_49dc1090-aada-4657-8434-4995c25a00f7@testuser.com",
+        "value": "Test_User_11bb11bb-cc22-dd33-ee44-55ff55ff55ff@testuser.com",
         "type": "work",
         "primary": true
     }]
@@ -919,7 +919,7 @@ TLS 1.2 Cipher Suites minimum bar:
 
 The Microsoft Entra provisioning service currently operates under the IP Ranges for Microsoft Entra ID as listed [here](https://www.microsoft.com/download/details.aspx?id=56519). You can add the IP ranges listed under the Microsoft Entra ID tag to allow traffic from the Microsoft Entra provisioning service into your application. You need to review the IP range list carefully for computed addresses. An address such as '40.126.25.32' could be represented in the IP range list as  '40.126.0.0/18'. You can also programmatically retrieve the IP range list using the following [API](/rest/api/virtualnetwork/service-tags/list).
 
-Microsoft Entra ID also supports an agent based solution to provide connectivity to applications in private networks (on-premises, hosted in Azure, hosted in AWS, etc.). Customers can deploy a lightweight agent, which provides connectivity to Microsoft Entra ID without opening any inbound ports, on a server in their private network. Learn more [here](./on-premises-scim-provisioning.md).
+Microsoft Entra ID also supports an agent based solution to provide connectivity to applications in private networks (on-premises, hosted in Azure, hosted in AWS, and so on). Customers can deploy a lightweight agent, which provides connectivity to Microsoft Entra ID without opening any inbound ports, on a server in their private network. Learn more [here](./on-premises-scim-provisioning.md).
 
 ## Build a SCIM endpoint
 
@@ -932,13 +932,13 @@ The open source .NET Core [reference code example](https://aka.ms/SCIMReferenceC
    > [!Note]
    > The reference code is intended to help you get started building your SCIM endpoint and is provided "AS IS." Contributions from the community are welcome to help build and maintain the code.
 
-The solution is composed of two projects, _Microsoft.SCIM_ and _Microsoft.SCIM.WebHostSample_.
+The solution is composed of two projects, *Microsoft.SCIM* and *Microsoft.SCIM.WebHostSample*.
 
-The _Microsoft.SCIM_ project is the library that defines the components of the web service that conforms to the SCIM specification. It declares the interface _Microsoft.SCIM.IProvider_, requests are translated into calls to the provider's methods, which would be programmed to operate on an identity store.
+The *Microsoft.SCIM* project is the library that defines the components of the web service that conforms to the SCIM specification. It declares the interface *Microsoft.SCIM.IProvider*, requests are translated into calls to the provider's methods, which would be programmed to operate on an identity store.
 
 ![Breakdown: A request translated into calls to the provider's methods](media/use-scim-to-provision-users-and-groups/scim-figure-3.png)
 
-The _Microsoft.SCIM.WebHostSample_ project is an ASP.NET Core Web Application, based on the _Empty_ template. It allows the sample code to be deployed as standalone, hosted in containers or within Internet Information Services. It also implements the _Microsoft.SCIM.IProvider_ interface keeping classes in memory as a sample identity store.
+The *Microsoft.SCIM.WebHostSample* project is an ASP.NET Core Web Application, based on the *Empty* template. It allows the sample code to be deployed as standalone, hosted in containers or within Internet Information Services. It also implements the *Microsoft.SCIM.IProvider* interface keeping classes in memory as a sample identity store.
 
 ```csharp
 public class Startup
@@ -988,8 +988,8 @@ Requests from Microsoft Entra provisioning service include an OAuth 2.0 bearer t
 - Microsoft Entra bearer token. If **Secret Token** field is left blank, Microsoft Entra ID includes an OAuth bearer token issued from Microsoft Entra ID with each request. Apps that use Microsoft Entra ID as an identity provider can validate this Microsoft Entra ID-issued token.
 
   - The application that receives requests should validate the token issuer as being Microsoft Entra ID for an expected Microsoft Entra tenant.
-  - An `iss` claim identifies the issuer of the token. For example, `"iss":"https://sts.windows.net/12345678-0000-0000-0000-000000000000/"`. In this example, the base address of the claim value, `https://sts.windows.net` identifies Microsoft Entra ID as the issuer, while the relative address segment, _12345678-0000-0000-0000-000000000000_, is a unique identifier of the Microsoft Entra tenant for which the token was issued.
-  - The audience for a token is the **Application ID** for the application in the gallery. Applications registered in a single tenant receive the same `iss` claim with SCIM requests. The application ID for all custom apps is _8adf8e6e-67b2-4cf2-a259-e3dc5476c621_. The token generated by the Microsoft Entra ID should only be used for testing. It shouldn't be used in production environments.
+  - An `iss` claim identifies the issuer of the token. For example, `"iss":"https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/"`. In this example, the base address of the claim value, `https://sts.windows.net` identifies Microsoft Entra ID as the issuer, while the relative address segment, *aaaabbbb-0000-cccc-1111-dddd2222eeee*, is a unique identifier of the Microsoft Entra tenant for which the token was issued.
+  - The audience for a token is the **Application ID** for the application in the gallery. Applications registered in a single tenant receive the same `iss` claim with SCIM requests. The application ID for all custom apps is *8adf8e6e-67b2-4cf2-a259-e3dc5476c621*. The token generated by the Microsoft Entra ID should only be used for testing. It shouldn't be used in production environments.
 
 
 
@@ -1011,7 +1011,7 @@ public void ConfigureServices(IServiceCollection services)
         })
             .AddJwtBearer(options =>
             {
-                options.Authority = " https://sts.windows.net/12345678-0000-0000-0000-000000000000/";
+                options.Authority = " https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/";
                 options.Audience = "8adf8e6e-67b2-4cf2-a259-e3dc5476c621";
                 ...
             });
@@ -1062,7 +1062,7 @@ public void ConfigureServices(IServiceCollection services)
 ...
 ```
 
-Send a GET request to the Token controller to get a valid bearer token, the method _GenerateJSONWebToken_ is responsible to create a token matching the parameters configured for development:
+Send a GET request to the Token controller to get a valid bearer token, the method *GenerateJSONWebToken* is responsible to create a token matching the parameters configured for development:
 
 ```csharp
 private string GenerateJSONWebToken()
@@ -1181,7 +1181,7 @@ In a request for user provisioning, the value of the resource argument is an ins
 Microsoft Entra ID requests the current state of the specified user from the service with a request such as: 
 
 ```
-GET ~/scim/Users/54D382A4-2050-4C03-94D1-E769F1D15682 HTTP/1.1
+GET ~/scim/Users/a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1 HTTP/1.1
 Authorization: Bearer ...
 ```
 
@@ -1200,7 +1200,7 @@ Task<Resource> RetrieveAsync(IRequest<IResourceRetrievalParameters> request);
 
 In the example of a request, to retrieve the current state of a user, the values of the properties of the object provided as the value of the parameters argument are as follows: 
   
-* Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
+* Identifier: "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
 * SchemaIdentifier: `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`
 
 ***Example 4. Query the value of a reference attribute to be updated*** 
@@ -1211,10 +1211,10 @@ In the sample code, the request is translated into a call to the QueryAsync meth
 * parameters.AlternateFilters.Count: 2
 * parameters.AlternateFilters.ElementAt(x).AttributePath: "ID"
 * parameters.AlternateFilters.ElementAt(x).ComparisonOperator: ComparisonOperator.Equals
-* parameters.AlternateFilter.ElementAt(x).ComparisonValue: "54D382A4-2050-4C03-94D1-E769F1D15682"
+* parameters.AlternateFilter.ElementAt(x).ComparisonValue: "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
 * parameters.AlternateFilters.ElementAt(y).AttributePath: "manager"
 * parameters.AlternateFilters.ElementAt(y).ComparisonOperator: ComparisonOperator.Equals
-* parameters.AlternateFilter.ElementAt(y).ComparisonValue: "2819c223-7f76-453a-919d-413861904646"
+* parameters.AlternateFilter.ElementAt(y).ComparisonValue: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 * parameters.RequestedAttributePaths.ElementAt(0): "ID"
 * parameters.SchemaIdentifier: `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`
 
@@ -1225,7 +1225,7 @@ The value of the index x can be `0` and the value of the index y can be `1`. Or 
 Here's an example of a request from Microsoft Entra ID to an SCIM endpoint to update a user: 
 
 ```http
-PATCH ~/scim/Users/54D382A4-2050-4C03-94D1-E769F1D15682 HTTP/1.1
+PATCH ~/scim/Users/a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1 HTTP/1.1
 Authorization: Bearer ...
 Content-type: application/scim+json
 {
@@ -1240,8 +1240,8 @@ Content-type: application/scim+json
         "value":
           [
             {
-              "$ref":"http://.../scim/Users/2819c223-7f76-453a-919d-413861904646",
-              "value":"2819c223-7f76-453a-919d-413861904646"}]}]}
+              "$ref":"http://.../scim/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+              "value":"00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}]}]}
 ```
 
 In the sample code, the request is translated into a call to the UpdateAsync method of the service's provider. Here's the signature of that method: 
@@ -1261,21 +1261,21 @@ In the example of a request, to update a user, the object provided as the value 
 
 |Argument|Value|
 |-|-|
-|`ResourceIdentifier.Identifier`|"54D382A4-2050-4C03-94D1-E769F1D15682"|
+|`ResourceIdentifier.Identifier`|"a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"|
 |`ResourceIdentifier.SchemaIdentifier`| `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`|
 |`(PatchRequest as PatchRequest2).Operations.Count`|1|
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).OperationName`| `OperationName.Add`|
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Path.AttributePath`| Manager|
 |`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.Count`|1|
-|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference`|`http://.../scim/Users/2819c223-7f76-453a-919d-413861904646`|
-|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value`| 2819c223-7f76-453a-919d-413861904646|
+|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference`|`http://.../scim/Users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee`|
+|`(PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value`| 00aa00aa-bb11-cc22-dd33-44ee44ee44ee|
 
 ***Example 6. Deprovision a user***
 
 To deprovision a user from an identity store fronted by an SCIM endpoint, Microsoft Entra ID sends a request such as:
 
 ```http
-DELETE ~/scim/Users/54D382A4-2050-4C03-94D1-E769F1D15682 HTTP/1.1
+DELETE ~/scim/Users/a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1 HTTP/1.1
 Authorization: Bearer ...
 ```
 
@@ -1293,7 +1293,7 @@ Task DeleteAsync(IRequest<IResourceIdentifier> request);
 
 The object provided as the value of the resourceIdentifier argument has these property values in the example of a request to deprovision a user: 
 
-* ResourceIdentifier.Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
+* ResourceIdentifier.Identifier: "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
 * ResourceIdentifier.SchemaIdentifier: `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`
 
 <a name='integrate-your-scim-endpoint-with-the-azure-ad-provisioning-service'></a>
@@ -1315,7 +1315,7 @@ Applications that support the SCIM profile described in this article can be conn
 
 **To connect an application that supports SCIM:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. A list of all configured apps is shown, including apps that were added from the gallery.
 1. Select **+ New application** > **+ Create your own application**.
@@ -1408,13 +1408,14 @@ The provisioning service supports the [authorization code grant](https://tools.i
 > [!NOTE]
 > OAuth v1 is not supported due to exposure of the client secret. OAuth v2 is supported.  
 
-It's recommended, but not required, that you support multiple secrets for easy renewal without downtime.
+When using the OAuth Code Grant flow, it's required that you support a model where each customer will submit their own client ID and Client Secret when setting up a provisioning instance. A single app wide client ID/Client Secret pair is not supported.
+
 
 #### How to set up OAuth code grant flow
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application** > **Provisioning** and select **Authorize**.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select your application and go to **Provisioning**.
 1. Select **Authorize**.
@@ -1443,7 +1444,7 @@ To help drive awareness and demand of our joint integration, we recommend you up
 > * Ensure your sales and customer support teams are aware, ready, and can speak to the integration capabilities. Brief your teams, provide them with FAQs and include the integration into your sales materials. 
 > * Craft a blog post or press release that describes the joint integration, the benefits and how to get started. [Example: Imprivata and Microsoft Entra Press Release](https://www.imprivata.com/company/press/imprivata-introduces-iam-cloud-platform-healthcare-supported-microsoft) 
 > * Leverage your social media like Twitter, Facebook or LinkedIn to promote the integration to your customers. Be sure to include @Microsoft Entra ID so we can retweet your post. [Example: Imprivata Twitter Post](https://twitter.com/azuread/status/1123964502909779968)
-> * Create or update your marketing pages/website (e.g. integration page, partner page, pricing page, etc.) to include the availability of the joint integration. [Example: Pingboard integration Page](https://pingboard.com/org-chart-for), [Smartsheet integration page](https://www.smartsheet.com/marketplace/apps/directory-integrations), [Monday.com pricing page](https://monday.com/pricing/) 
+> * Create or update your marketing pages/website (such as integration page, partner page, pricing page, and so on) to include the availability of the joint integration. [Example: Pingboard integration Page](https://pingboard.com/org-chart-for), [Smartsheet integration page](https://www.smartsheet.com/marketplace/apps/directory-integrations), [Monday.com pricing page](https://monday.com/pricing/) 
 > * Create a help center article or technical documentation on how customers can get started. [Example: Envoy + Microsoft Entra integration.](https://envoy.help/en/articles/3453335-microsoft-azure-active-directory-integration) 
 > * Alert customers of the new integration through your customer communication (monthly newsletters, email campaigns, product release notes). 
 

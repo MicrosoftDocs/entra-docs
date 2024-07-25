@@ -7,16 +7,18 @@ manager: celestedg
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: quickstart
-ms.date: 02/28/2024
+ms.date: 05/16/2024
 ms.author: mimart
 ms.custom: it-pro
 
-# Customer intent: As a dev, devops, or it admin, I want to create an external tenant and configure a customized, branded sign-in experience for my external-facing apps from within Visual Studio Code.
+# Customer intent: As a dev, devops, or it admin, I want to create an external tenant and configure a customized, branded sign-in experience for my apps from within Visual Studio Code.
 ---
 
-# Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code
+# Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code (preview)
 
-Integrating authentication into your customer-facing applications is essential for securing resources and customer data. The Microsoft Entra External ID extension for Visual Studio Code lets you quickly add authentication to applications  for customer identity and access management (CIAM) scenarios. Using the application samples provided, you can see how to set up a customized, branded sign-in experience for external users of your application without leaving the development environment.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+Integrating authentication into your consumer and business customer applications is essential for securing resources and customer data. The Microsoft Entra External ID extension for Visual Studio Code lets you quickly add authentication to applications  for customer identity and access management (CIAM) scenarios. Using the application samples provided, you can see how to set up a customized, branded sign-in experience for external users of your application without leaving the development environment.
 
 :::image type="content" source="media/visual-studio-code-extension/extension-overview.png" alt-text="Screenshot showing an overview of the extension.":::
 
@@ -29,10 +31,7 @@ External ID is a service that can be added to an Azure subscription. If you alre
 The Microsoft Entra External ID extension is available in the Visual Studio Code Marketplace.
 
 1. If you don’t already have Visual Studio Code installed, [download Visual Studio Code](https://code.visualstudio.com/Download) and complete the installation steps.
-1. Open Visual Studio Code. In the activity bar on the left, select the **Extensions** button.
-1. In the Extensions Marketplace search box, search for and select  **Microsoft Entra External ID**.
-1. On the **Get Started with Microsoft Entra External ID** overview page, select the **Install** button.
-1. Restart Visual Studio Code when prompted.
+1. Install the Microsoft Entra External ID Extension for Visual Studio Code from [aka.ms/ciam/vscode/marketplace](https://aka.ms/ciam/vscode/marketplace).
 
 After the extension is installed, you can access it using the icon on the activity bar.
 
@@ -42,7 +41,7 @@ You can also open the extension from Visual Studio Code **Welcome** page: Select
 
 ## Get started with your External ID setup
 
-The Microsoft Entra External ID extension creates a tenant in an external configuration, which contains your customer-facing app and directory of external users. You can add this new tenant to your existing Azure subscription. Or if you don’t have an Azure subscription, create a trial tenant that doesn't require one ([learn more](quickstart-trial-setup.md)).
+The Microsoft Entra External ID extension creates a tenant in an external configuration, which contains your app and directory of external users. You can add this new tenant to your existing Azure subscription. Or if you don’t have an Azure subscription, create a trial tenant that doesn't require one ([learn more](quickstart-trial-setup.md)).
 
 - On the Get Started with Microsoft Entra External ID welcome page, choose an option:
 
@@ -118,7 +117,7 @@ You can configure your app to allow users to sign in with their email and a pass
 
 ## Set up and run a sample app
 
-The extension contains several code samples that demonstrate how authentication is implemented in different application types and development languages. Choose a single page application (JavaScript, React, Angular) sample from within the extension, and the extension automatically configures the application with your sign-in experience.
+The extension contains several code samples that demonstrate how authentication is implemented in different application types and development languages. Samples are included for single page apps (JavaScript, React, Angular) and web apps (Node.js Express, ASP.NET Core, Python Django, Python Flask). Choose a sample from within the extension, and the extension automatically configures the application with your sign-in experience.
 
 1. Under select **Set up and run a sample app**, select the **Set up sample app button**.
 

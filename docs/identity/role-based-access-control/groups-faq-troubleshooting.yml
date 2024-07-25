@@ -22,17 +22,17 @@ sections:
       - question: |
           I'm a Groups Administrator but I can't see the 'Microsoft Entra roles can be assigned to the group' switch.
         answer: |
-          Only Privileged Role Administrators or Global Administrators can create a group that's eligible for role assignment. Only users in those roles see this control.
+          Privileged Role Administrators can create a group that's eligible for role assignment. Users with this role can see this switch.
 
       - question: |
           Who can modify the membership of groups that are assigned to Microsoft Entra roles?
         answer: |
-          By default, only Privileged Role Administrator and Global Administrator manage the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
+          By default, Privileged Role Administrator manage the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
 
       - question: |
           I am a Helpdesk Administrator in my organization but I can't update password of a user who is a Directory Readers. Why does that happen?
         answer: |
-          The user might have gotten Directory Readers by way of a role-assignable group. All members and owners of role-assignable groups are protected. Only users in the Privileged Authentication Administrator or Global Administrator roles can reset credentials for a protected user.
+          The user might have gotten Directory Readers by way of a role-assignable group. All members and owners of role-assignable groups are protected. Users with the Privileged Authentication Administrator role can reset credentials for a protected user.
 
       - question: |
           I can't update password of a user. They don't have any higher privileged role assigned. Why is it happening?
@@ -45,12 +45,12 @@ sections:
       - question: |
           Can I create an access review on groups that can be assigned to Microsoft Entra roles (specifically, groups with isAssignableToRole property set to true)?  
         answer: |
-          Yes, you can. Global Administrators and Privileged Role Administrators can create access reviews on role-assignable groups.
+          Yes, you can. Privileged Role Administrators can create access reviews on role-assignable groups.
           
       - question: |
           Can I create an access package and put groups that can be assigned to Microsoft Entra roles in it?
         answer: |
-          Yes, you can. Global Administrator and User Administrator have the power to put any group in an access package. Nothing changes for Global Administrator, but there's a slight change in User Administrator role permissions. To put a role-assignable group into an access package, you must be a User Administrator and also owner of the role-assignable group. Here's the full table showing who can create access package in Enterprise License Management:
+          Yes, you can. User Administrator has the permissions to put any group in an access package. Nothing changes for Global Administrator, but there's a slight change in User Administrator role permissions. To put a role-assignable group into an access package, you must be a User Administrator and also owner of the role-assignable group. Here's the full table showing who can create access package in Enterprise License Management:
           
           Microsoft Entra directory role | Entitlement management role | Can add security group\* | Can add Microsoft 365 group\* | Can add app | Can add SharePoint Online site
           ----------------------- | --------------------------- | ----------------------- | ------------------------- | ----------- |  -----------------------------

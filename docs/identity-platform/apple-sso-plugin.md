@@ -33,9 +33,9 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 - It is natively integrated with the MSAL, which provides a smooth native experience to the end user when the Microsoft Enterprise SSO plug-in is enabled. 
 
 >[!NOTE]
-> On August 2023, [Microsoft announced that platform SSO for macOS devices is coming to Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280).
+> On May 2024, [Microsoft announced that Platform SSO for macOS devices is available in public preview for Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/platform-sso-for-macos-now-in-public-preview/ba-p/4051574).
 >
-> Features are still under development, so the use of platform SSO features is not yet supported on Microsoft Entra. Limited customer support will be provided once these features enter public preview. 
+> For more information, see [macOS Platform Single Sign-on overview (preview)](/entra/identity/devices/macos-psso). 
 
 
 ## Requirements
@@ -61,10 +61,13 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
   - `login.chinacloudapi.cn`(*)(**)
   - `login.microsoftonline.us`(*)(**)
   - `login-us.microsoftonline.com`(*)(**)
+  - `config.edge.skype.com`(***)
 
   (*) Allowing Microsoft domains is only required on operating system versions released before 2022. On the latest operating system versions, Apple relies fully on its CDN. 
 
-  (**) You only need to allow sovereign cloud domains if you rely on those in your environment. 
+  (**) You only need to allow sovereign cloud domains if you rely on those in your environment.
+
+  (***) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
 
   The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device will send a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information.
 
@@ -430,7 +433,7 @@ The list below contains some common scenarios that will be impacted by these cha
 This is not an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
 
 #### Registered/Enrolled Device Conditional Access Policy Support in Chrome
-To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you will need to have the [Windows Accounts](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
+To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you will need to have the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
 
 
 ## See also

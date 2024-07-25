@@ -1,11 +1,11 @@
 ---
-title: Secure your resources with Conditional Access policy templates
+title: Simplify Conditional Access policy deployment with templates
 description: Deploy recommended Conditional Access policies from easy to use templates.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/11/2023
+ms.date: 06/20/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -51,7 +51,7 @@ These policies as a group help support a [Zero Trust architecture](/security/zer
 - [Require approved client apps or app protection policies](howto-policy-approved-app-or-app-protection.yml)
 - [Require compliant or Microsoft Entra hybrid joined device or multifactor authentication for all users](howto-conditional-access-policy-compliant-device.md)
 - [Require multifactor authentication for admins accessing Microsoft admin portals](how-to-policy-mfa-admin-portals.md)
-- [Block access for users with insider risk (Preview)](how-to-policy-insider-risk.md) **Requires Microsoft Purview**
+- [Block access for users with insider risk](how-to-policy-insider-risk.md) **Requires Microsoft Purview**
 
 # [Remote work](#tab/remote-work)
 
@@ -105,6 +105,7 @@ Organizations can select individual policy templates and:
 
 ## Other common policies
 
+- [Require multifactor authentication for device registration](how-to-policy-mfa-device-register-join.md)
 - [Block access by location](howto-conditional-access-policy-location.yml)
 - [Block access except specific apps](howto-conditional-access-policy-block-access.md)
 
@@ -114,5 +115,4 @@ Organizations can select individual policy templates and:
 ## Next steps
 
 - [Simulate sign in behavior using the Conditional Access What If tool.](troubleshoot-conditional-access-what-if.md)
-
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)

@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/20/2024
+ms.date: 05/07/2024
 
 ms.author: justinha
 author: justinha
@@ -22,6 +22,8 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Android 14 and later or iOS 17 and later
+- An active internet connection on any device that is part of the passkey registration/authentication process
+- For cross-device registration/authentication, both devices must have Bluetooth enabled
 
 > [!NOTE]
 > Users need to install the latest version of Authenticator for Android or iOS to use a passkey. 
@@ -47,6 +49,9 @@ The **Microsoft Authenticator** policy doesn't give you the option to enable pas
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
+  >[!WARNING]
+  >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs, to enable this preview. This task can be done with an automated script that analyzes logs such as registration details and sign-in logs.
+
 The following list describes other optional settings:
 
 **General**
@@ -61,14 +66,11 @@ The following list describes other optional settings:
   - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
   - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
 
-  >[!WARNING]
-  >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
-
 After you finish the configuration, select **Save**.
 
 ## Enable passkeys in Authenticator using Graph Explorer
 
-In addition to using the Microsoft Entra admin center, you can also enable passkeys in Authenticator by using Graph Explorer. **Global Administrators** and **Authentication Policy Administrators** can update the Authentication methods policy to allow the AAGUIDs for Authenticator. 
+In addition to using the Microsoft Entra admin center, you can also enable passkeys in Authenticator by using Graph Explorer. Those assigned at least the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role can update the Authentication methods policy to allow the AAGUIDs for Authenticator. 
 
 To configure the policy by using Graph Explorer:
 

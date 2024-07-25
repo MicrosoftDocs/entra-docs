@@ -2,18 +2,13 @@
 title: 'Tutorial: Configure Zoom for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom.
 
-documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
-ms.assetid: d9bd44ed-2e9a-4a1b-b33c-cb9e9fe8ff47
 ms.service: entra-id
 ms.subservice: saas-apps
-
-
 ms.topic: tutorial
-ms.date: 02/25/2024
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom so that I can streamline the user management process and ensure that users have the appropriate access to Zoom.
 ---
@@ -35,7 +30,7 @@ This tutorial describes the steps you need to perform in both Zoom and Microsoft
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (e.g. Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)). 
 * [A Zoom tenant](https://zoom.us/pricing).
 * A user account in Zoom with Admin permissions.
 
@@ -139,7 +134,7 @@ Once you've configured provisioning, use the following resources to monitor your
 ## Change log
 * 05/14/2020 - Supports for UPDATE operations  added for emails[type eq "work"] attribute.
 * 10/20/2020 - Added support for two new roles **Licensed** and **on-premises** to replace existing roles **Pro** and **Corp**. Support for roles **Pro** and **Corp** will be removed in the future.
-* 05/30/2023 - Added support for new authentication method i.e. **OAuth 2.0**.
+* 05/30/2023 - Added support for new authentication method **OAuth 2.0**.
 
 ## Additional resources
 

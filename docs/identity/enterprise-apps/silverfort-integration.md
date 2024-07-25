@@ -65,7 +65,6 @@ Set up Silverfort Microsoft Entra Adapter in your Microsoft Entra tenant:
 - An Azure account with an active subscription
   - You can create an [Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - One of the following roles in your Azure account: 
-  - Global Administrator
   - Cloud Application Administrator
   - Application Administrator
   - Service Principal Owner

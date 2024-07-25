@@ -5,7 +5,7 @@ description: Learn how the Microsoft Entra ID Protection overview provides a vie
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 03/19/2024
+ms.date: 05/02/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -44,7 +44,7 @@ As you implement more security measures such as risk-based policies, your tenant
 
 | Metric | Metric definition | Refresh frequency | Where to view detail |
 | --- | --- | --- | --- |
-| Number of attacks blocked | Number of attacks blocked for this tenant on each day. <br><br> An attack is considered blocked if the risky sign-in is interrupted by any access policy. The access control required by the policy should block the attacker from signing in, therefore blocking the attack in real-time. | Every 24 hours. | View the risk detections that determined the attacks in the **Risk detections report**, filter "Risk state" by: <br><br>- **Remediated** <br>- **Dismissed** <br>-** Confirmed safe** |
+| Number of attacks blocked | Number of attacks blocked for this tenant on each day. <br><br> An attack is considered blocked if the risky sign-in is interrupted by any access policy. The access control required by the policy should block the attacker from signing in, therefore blocking the attack in real-time. | Every 24 hours. | View the risk detections that determined the attacks in the **Risk detections report**, filter "Risk state" by: <br><br>- **Remediated** <br>- **Dismissed** <br>- **Confirmed safe** |
 | Number of users protected | Number of users in this tenant whose risk state changed from **At risk** to **Remediated** or **Dismissed** on each day. <br><br> A **Remediated** risk state indicates that the user self-remediated their user risk by completing MFA or secure password change, and their account is therefore protected. <br><br> A **Dismissed** risk state indicates that an admin dismissed the user’s risk because they identified the user’s account to be safe. | Every 24 hours. | View users protected in the **Risky users report**, filter "Risk state" by: <br><br>- **Remediated** <br>- **Dismissed** |
 | Mean time your users take to self-remediate their risks | Average time for the Risk state of risky users in your tenant to change from **At risk** to **Remediated**. <br><br> A user’s risk state changes to **Remediated** when they self-remediated their user risk through MFA or secure password change. <br><br> To reduce the self-remediation time in your tenant, deploy risk-based Conditional Access policies. | Every 24 hours. | View remediated users in the Risky users report, filter "Risk state" by: <br><br>- Remediated |
 | Number of new high-risk users detected | Number of new risky users with risk level **High** detected on each day. | Every 24 hours. | View high-risk users in the Risky users report, filter risk level by <br><br>- "High" |
@@ -59,7 +59,7 @@ The graphs provide a rolling 12 month window of data.
 
 ### Attack graphic
 
-To help you better understand your risk exposure, we're introducing an innovative Attack Graphic that displays common identity-based attack patterns detected for your tenant. The attack patterns are represented by MITRE ATT&CK techniques and are determined by our advanced risk detections. For more information, see the section [Risk detection type to MITRE attack type mapping](#risk-detection-type-to-mitre-attack-type-mapping).
+To help you better understand your risk exposure, our attack graphic displays common identity-based attack patterns detected for your tenant. The attack patterns are represented by MITRE ATT&CK techniques and are determined by our advanced risk detections. For more information, see the section [Risk detection type to MITRE attack type mapping](#risk-detection-type-to-mitre-attack-type-mapping).
 
 [![Screenshot showing the attack graphic in the dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-attack-graphic.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-attack-graphic.png)
 
@@ -67,7 +67,7 @@ To help you better understand your risk exposure, we're introducing an innovativ
 
 An attack is an event where we detect a bad actor attempting to sign-in to your environment. This event triggers a real-time sign-in [risk detection](concept-identity-protection-risks.md#what-are-risk-detections) mapped to a corresponding MITRE ATT&CK technique. Refer to the following table for the mapping between Microsoft Entra ID Protection’s real-time sign-in risk detections and attacks as categorized by MITRE ATT&CK techniques. 
 
-Since the attack graph is only illustrating real-time sign-in risk activity, [risky user activity](concept-identity-protection-risks.md#user-risk-detections) isn't included. To visualize risky user activity in your environment, you can go to the [risky users report](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/~/RiskyUsers/fromNav/).
+Since the attack graph is only illustrating real-time sign-in risk activity, [risky user activity](concept-identity-protection-risks.md#risk-detections-mapped-to-riskeventtype) isn't included. To visualize risky user activity in your environment, you can go to the [risky users report](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/~/RiskyUsers/fromNav/).
 
 #### How to interpret the attack graphic?
 

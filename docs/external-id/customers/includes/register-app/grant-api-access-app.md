@@ -31,7 +31,7 @@ For your application to access data in Microsoft Graph API, grant the registered
 
 1. Select **Grant admin consent for (your tenant name)**.
 
-1. If you are not currently signed-in with Global Administrator account, sign in with an account in your external tenant that's been assigned at least the *Cloud Application Administrator* role and then select **Grant admin consent for (your tenant name)**.
+1. If you are not currently signed-in, sign in with an account in your external tenant that's been assigned at least the [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) role and then select **Grant admin consent for (your tenant name)**.
 
 1. Select **Refresh**, and then verify that "Granted for ..." appears under **Status**. It might take a few minutes for the permissions to propagate.
 

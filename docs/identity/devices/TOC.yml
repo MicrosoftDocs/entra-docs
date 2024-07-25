@@ -9,6 +9,10 @@
   items:
   - name: Microsoft Entra join a new Windows device
     href: device-join-out-of-box.md
+  - name: Microsoft Entra join a new Mac device
+    href: device-join-macos-platform-single-sign-on.md
+  - name: Join a Mac device using Company Portal
+    href: device-join-microsoft-entra-company-portal.md
 - name: Concepts
   expanded: true
   items:
@@ -20,10 +24,12 @@
     href: concept-hybrid-join.md
   - name: Device registration flows
     href: device-registration-how-it-works.md
-  - name: single sign-on (SSO) to on-premises resources
+  - name: Single sign-on (SSO) to on-premises resources
     href: device-sso-to-on-premises-resources.md
   - name: Primary Refresh Tokens
     href: concept-primary-refresh-token.md
+  - name: macOS Platform Single Sign-on overview 
+    href: macos-psso.md
 - name: How-to guides
   expanded: false
   items:
@@ -79,6 +85,8 @@
     href: faq.yml
   - name: Troubleshoot SSO on Apple devices
     href: troubleshoot-mac-sso-extension-plugin.md
+  - name: Troubleshoot macOS PSSO on Mac
+    href: troubleshoot-macos-platform-single-sign-on-extension.md
   - name: Enterprise state roaming
     expanded: false
     items:
@@ -116,4 +124,3 @@
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Videos
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory

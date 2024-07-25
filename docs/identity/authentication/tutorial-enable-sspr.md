@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra self-serv
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 01/30/2023
+ms.date: 05/21/2024
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
@@ -28,7 +28,7 @@ In this tutorial you learn how to:
 > * Test the SSPR process as a user
 
 > [!IMPORTANT]
-> In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2024, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date.
+> In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date.
 
 
 ## Video tutorial
@@ -39,9 +39,7 @@ You can also follow along in a related video: [How to enable and configure SSPR 
 
 To finish this tutorial, you need the following resources and privileges:
 
-* A working Microsoft Entra tenant with at least a Microsoft Entra ID Free or trial license enabled. In the Free tier, SSPR only works for cloud users in Microsoft Entra ID. Password change is supported in the Free tier, but password reset is not. 
-    * For later tutorials in this series, you'll need a Microsoft Entra ID P1 or trial license for on-premises password writeback.
-    * If needed, [create an Azure account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 license is required for password reset. For more information about license requirements for password change and password reset in Entra ID, see [Licensing requirements for Microsoft Entra self-service password reset](concept-sspr-licensing.md).
 * An account with *Global Administrator* or *Authentication Policy Administrator* privileges.
 * A non-administrator user with a password you know, like *testuser*. You'll test the end-user SSPR experience using this account in this tutorial.
     * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
@@ -103,7 +101,7 @@ An administrator can manually provide this contact information, or users can go 
 
 ## Set up notifications and customizations
 
-To keep users informed about account activity, you can set up Microsoft Entra ID to send email notifications when an SSPR event happens. These notifications can cover both regular user accounts and admin accounts. For admin accounts, this notification provides another layer of awareness when a privileged administrator account password is reset using SSPR. Microsoft Entra ID will notify all global admins when someone uses SSPR on an admin account.
+To keep users informed about account activity, you can set up Microsoft Entra ID to send email notifications when an SSPR event happens. These notifications can cover both regular user accounts and admin accounts. For admin accounts, this notification provides another layer of awareness when a privileged administrator account password is reset using SSPR. Microsoft Entra ID will notify all Global Administrators when someone uses SSPR on an admin account.
 
 1. From the menu on the left side of the **Notifications** page, set up the following options:
 

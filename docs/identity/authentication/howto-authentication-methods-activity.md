@@ -5,7 +5,7 @@ description: Overview of the authentication methods that users register to sign 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 06/12/2024
 
 ms.author: justinha
 author: sopand
@@ -115,6 +115,7 @@ The registration details report shows the following information for each user:
 - SSPR Enabled (Enabled, Not Enabled)
 - SSPR Capable (Capable, Not Capable) 
 - Methods registered (Alternate Mobile Phone, Certificate-based authentication, Email, FIDO2 security key, Hardware OATH token, Microsoft Authenticator app, Microsoft Passwordless phone sign-in, Mobile phone, Office phone, Security questions, Software OATH token, Temporary Access Pass, Windows Hello for Business)
+- Last Updated Time (The date and time when the report most recently updated. This value is not related the user's authentication method registration.)
 
   ![Screenshot of user registration details](media/how-to-authentication-methods-usage-insights/registration-details.png)
 

@@ -12,6 +12,7 @@ author: justinha
 manager: amycolannino
 ms.reviewer: calui
 ---
+
 # Passwordless authentication options for Microsoft Entra ID
 
 Features like multifactor authentication (MFA) are a great way to secure your organization, but users often get frustrated with the extra security layer on top of having to remember their passwords. Passwordless authentication methods are more convenient because the password is removed and replaced with something you have or something you are or know.
@@ -20,10 +21,12 @@ Features like multifactor authentication (MFA) are a great way to secure your or
 | --- | --- | --- |
 | Passwordless | Windows 10 Device, phone, or security key | Biometric or PIN |
 
-Each organization has different needs when it comes to authentication. Microsoft Azure and Azure Government offer the following four passwordless authentication options that integrate with Microsoft Entra ID:
+Each organization has different needs when it comes to authentication. Microsoft Azure and Azure Government offer the following five passwordless authentication options that integrate with Microsoft Entra ID:
 
 - Windows Hello for Business
-- Microsoft Authenticator 
+- Platform Credential for macOS
+- Platform single sign-on (PSSO) for macOS with smart card authentication
+- Microsoft Authenticator
 - Passkeys (FIDO2)
 - Certificate-based authentication
 
@@ -48,6 +51,42 @@ The following steps show how the sign-in process works with Microsoft Entra ID:
 1. The Cloud AP provider returns a successful authentication response to Windows. The user is then able to access Windows and cloud and on-premises applications without the need to authenticate again (SSO).
 
 The Windows Hello for Business [planning guide](/windows/security/identity-protection/hello-for-business/hello-planning-guide) can be used to help you make decisions on the type of Windows Hello for Business deployment and the options you need to consider.
+
+## Platform Credential for macOS
+
+Platform Credential for macOS is a new capability on macOS that is enabled using the Microsoft Enterprise single sign-on Extension (SSOe). It provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
+
+![Screenshot showing an example of a pop up window prompting user to register their macOS account with their identity provider using Platform single sign-on.](./media/concept-authentication-passwordless/macos-platform-sso.png)
+
+Platform Credential for macOS allows users to go passwordless by configuring Touch ID to unlock the device, and uses phish-resistant credentials, based on Windows Hello for Business technology. This saves customer organizations money by removing the need for security keys and advances Zero Trust objectives using integration with the Secure Enclave.
+
+Platform Credential for macOS can also be used as a phishing resistant credential for use in WebAuthn challenges (including browser re-auth scenarios). Admins will need to enable the FIDO2 security key authentication method for this capability. If you leverage Key Restriction Policies in your FIDO policy, then you will need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`
+
+![Diagram that outlines the steps involved for user sign-in with macOS Platform SSO.](./media/concept-authentication-passwordless/macos-platform-single-sign-on-flow.png)
+
+1. A user unlocks macOS using fingerprint or password gesture, which unlocks the key bag to provide access to UserSecureEnclaveKey.
+1. The macOS requests a nonce (a random arbitrary number that can be used just once) from Microsoft Entra ID.
+1. Microsoft Entra ID returns a nonce that's valid for 5 minutes.
+1. The operating system (OS) sends a login request to Microsoft Entra ID with an embedded assertion signed with the UserSecureEnclaveKey that resides in the Secure Enclave.
+1. Microsoft Entra ID validates the signed assertion using the user's securely registered public key of UserSecureEnclave key. Microsoft Entra ID validates the signature and nonce. Once the assertion is validated, Microsoft Entra ID creates a [primary refresh token (PRT)](../devices/concept-primary-refresh-token.md) encrypted with the public key of the UserDeviceEncryptionKey that is exchanged during registration and sends the response back to the OS.
+1. The OS decrypts and validates the response, retrieves the SSO tokens, stores and shares it with the SSO extension for providing SSO. The user is able to access macOS, cloud and on-premises applications without the need to authenticate again (SSO).
+
+Refer to [macOS Platform SSO](../devices/macos-psso.md) for more information on how to configure and deploy Platform Credential for macOS.
+
+## Platform single sign-on for macOS with SmartCard
+
+Platform single sign-on (PSSO) for macOS allows users to go passwordless using the SmartCard authentication method. The user signs in to the machine using an external smart card, or smart card-compatible hard token (such as Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication using [certificate-based authentication (CBA)](#certificate-based-authentication). CBA needs to be configured and enabled for users for this feature to work. For configuring CBA, refer to [How to configure Microsoft Entra certificate-based authentication](how-to-certificate-based-authentication.md).
+
+To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. 
+
+![Diagram that outlines the steps involved for user sign-in with macOS Platform SSO.](./media/concept-authentication-passwordless/macos-platform-single-sign-on-flow.png)
+
+1. A user unlocks macOS using smart card pin which unlocks the smart card and the key bag to provide access to device registration keys present in Secure Enclave.
+1. The macOS requests a nonce (a random arbitrary number that can be used just once) from Microsoft Entra ID.
+1. Microsoft Entra ID returns a nonce that's valid for 5 minutes.
+1. The operating system (OS) sends a login request to Microsoft Entra ID with an embedded assertion signed with the user's Microsoft Entra certificate from the smart card.
+1. Microsoft Entra ID validates the signed assertion, signature and nonce. Once the assertion is validated, Microsoft Entra ID creates a [primary refresh token (PRT)](../devices/concept-primary-refresh-token.md) encrypted with the public key of the UserDeviceEncryptionKey that is exchanged during registration and sends the response back to the OS.
+1. The OS decrypts and validates the response, retrieves the SSO tokens, stores and shares it with the SSO extension for providing SSO. The user is able to access macOS, cloud and on-premises applications without the need to authenticate again (SSO).
 
 ## Microsoft Authenticator
 
@@ -103,61 +142,7 @@ The following process is used when a user signs in with a FIDO2 security key:
 8. Microsoft Entra ID verifies the signed nonce using the FIDO2 public key.
 9. Microsoft Entra ID returns PRT to enable access to on-premises resources.
 
-### FIDO2 security key providers
-
-The following providers offer FIDO2 security keys of different form factors that are known to be compatible with the passwordless experience. We encourage you to evaluate the security properties of these keys by contacting the vendor and the [FIDO Alliance](https://fidoalliance.org/).
-
-| Provider | Biometric | USB | NFC | BLE |
-|:-|:-:|:-:|:-:|:-:|
-| [AuthenTrend](https://authentrend.com/about-us/#pg-35-3) | ![y] | ![y]| ![y]| ![y]|
-| [ACS](https://www.acs.com.hk/) | ![n] | ![y]| ![y]| ![n]|
-| [ATOS](https://atos.net/en/solutions/cyber-security/iot-and-ot-security/smart-card-solution-cardos-for-iot) | ![n] | ![y]| ![y]| ![n]|
-| [Ciright](https://www.cyberonecard.com/) | ![n] | ![n]| ![y]| ![n]|
-| [Composecure](https://www.composecure.com/arculus) | ![n] | ![n]| ![y]| ![n]|
-| [Crayonic](https://www.crayonic.com/keyvault) | ![y] | ![n]| ![y]| ![y]|
-| [Cryptnox](https://cryptnox.com/) | ![n] | ![y]| ![y]| ![n]|
-| [Ensurity](https://www.ensurity.com) | ![y] | ![y]| ![n]| ![n]|
-| [Excelsecu](https://www.excelsecu.com/productdetail/esecufido2secu.html) | ![y] | ![y]| ![y]| ![y]|
-| [Feitian](https://shop.ftsafe.us/pages/microsoft) | ![y] | ![y]| ![y]| ![y]|
-| [Fortinet](https://www.fortinet.com/) | ![n] | ![y]| ![n]| ![n]|
-| [Giesecke + Devrient (G+D)](https://www.gi-de.com/en/identities/enterprise-security/hardware-based-authentication) | ![y] | ![y]| ![y]| ![y]|
-| [Google](https://store.google.com/us/product/titan_security_key) | ![n] | ![y]| ![y]| ![n]|
-| [GoTrustID Inc.](https://www.gotrustid.com/idem-key) | ![n] | ![y]| ![y]| ![y]|
-| [HID](https://www.hidglobal.com/products/crescendo-key) | ![n] | ![y]| ![y]| ![n]|
-| [HIDEEZ](https://hideez.com/products/hideez-key-4) | ![n] | ![y]| ![y]| ![y]|
-| [Hypersecu](https://www.hypersecu.com/hyperfido) | ![n] | ![y]| ![n]| ![n]|
-| [Hypr](https://www.hypr.com/true-passwordless-mfa) | ![y] | ![y]| ![n]| ![y]|
-| [Identiv](https://www.identiv.com/products/logical-access-control/utrust-fido2-security-keys/nfc) | ![n] | ![y]| ![y]| ![n]|
-| [IDmelon Technologies Inc.](https://www.idmelon.com/#idmelon) | ![y] | ![y]| ![y]| ![y]|
-| [Kensington](https://www.kensington.com/solutions/product-category/why-biometrics/) | ![y] | ![y]| ![n]| ![n]|
-| [KONA I](https://www.konai.com/main) | ![y] | ![n]| ![y]| ![y]|
-| [NeoWave](https://neowave.fr/en/products/fido-range/) | ![n] | ![y]| ![y]| ![n]|
-| [Nymi](https://www.nymi.com/nymi-band) | ![y] | ![n]| ![y]| ![n]|
-| [Octatco](https://octatco.com/) | ![y] | ![y]| ![n]| ![n]|
-| [OneSpan Inc.](https://www.onespan.com/products/fido) | ![n] | ![y]| ![n]| ![y]|
-| [PONE Biometrics](https://ponebiometrics.com/) | ![y] | ![n]| ![n]| ![y]|
-| [Precision Biometric](https://www.innait.com/product/fido/) | ![n] | ![y]| ![n]| ![n]|
-| [RSA](https://www.rsa.com/products/securid/) | ![n] | ![y]| ![n]| ![n]|
-| [Sentry](https://sentryenterprises.com/) | ![n] | ![n]| ![y]| ![n]|
-| [SmartDisplayer](https://www.smartdisplayer.com/fido) | ![y] | ![y]| ![y]| ![y]|
-| [Swissbit](https://www.swissbit.com/en/products/ishield-key/) | ![n] | ![y]| ![y]| ![n]|
-| [Thales Group](https://cpl.thalesgroup.com/access-management/authenticators/fido-devices) | ![y] | ![y]| ![y]| ![n]|
-| [Thetis](https://thetis.io/collections/fido2) | ![y] | ![y]| ![y]| ![y]|
-| [Token2 Switzerland](https://www.token2.swiss/shop/product/token2-t2f2-alu-fido2-u2f-and-totp-security-key) | ![y] | ![y]| ![y]| ![n]|
-| [Token Ring](https://www.tokenring.com/) | ![y] | ![n]| ![y]| ![n]|
-| [TrustKey Solutions](https://www.trustkeysolutions.com/en/sub/product.form) | ![y] | ![y]| ![n]| ![n]|
-| [VinCSS](https://passwordless.vincss.net) | ![n] | ![y]| ![n]| ![n]|
-| [WiSECURE Technologies](https://wisecure-tech.com/en-us/zero-trust/fido/authtron) | ![n] | ![y]| ![n]| ![n]|
-| [Yubico](https://www.yubico.com/solutions/passwordless/) | ![y] | ![y]| ![y]| ![n]|
-
-<!--Image references-->
-[y]: ./media/fido2-compatibility/yes.png
-[n]: ./media/fido2-compatibility/no.png
-
-> [!NOTE]
-> If you purchase and plan to use NFC-based security keys, you need a supported NFC reader for the security key. The NFC reader isn't an Azure requirement or limitation. Check with the vendor for your NFC-based security key for a list of supported NFC readers.
-
-If you're a vendor and want to get your device on this list of supported devices, check out our guidance on how to [become a Microsoft-compatible FIDO2 security key vendor](concept-fido2-hardware-vendor.md).
+For a list FIDO2 security key providers, see [Become a Microsoft-compatible FIDO2 security key vendor](concept-fido2-hardware-vendor.md).
 
 To get started with FIDO2 security keys, complete the following how-to:
 

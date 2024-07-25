@@ -17,8 +17,10 @@ ms.collection: M365-identity-device-management
 
 # Example: Configure SAML/WS-Fed based identity provider federation with AD FS
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 >[!NOTE]
->- *Direct federation* in Microsoft Entra External ID is now referred to as *SAML/WS-Fed identity provider (IdP) federation*.
+>*Direct federation* in Microsoft Entra External ID is now referred to as *SAML/WS-Fed identity provider (IdP) federation*.
 
 This article describes how to set up [SAML/WS-Fed IdP federation](direct-federation.md) using Active Directory Federation Services (AD FS) as either a SAML 2.0 or WS-Fed IdP. To support federation, certain attributes and claims must be configured at the IdP. To illustrate how to configure an IdP for federation, we use Active Directory Federation Services (AD FS) as an example. We show how to set up AD FS both as a SAML IdP and as a WS-Fed IdP.
 

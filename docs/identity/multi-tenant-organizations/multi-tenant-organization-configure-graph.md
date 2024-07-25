@@ -16,7 +16,7 @@ ms.custom: it-pro
 
 This article describes the key steps to configure a multitenant organization using Microsoft Graph PowerShell or Microsoft Graph API. This article uses an example owner tenant named *Cairo* and two member tenants named *Berlin* and *Athens*.
 
-If you instead want to use the Microsoft 365 admin center to configure a multitenant organization, see [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org) and [Join or leave a multitenant organization in Microsoft 365](/microsoft-365/enterprise/join-leave-multi-tenant-org). To learn how to configure Microsoft Teams for your multitenant organization, see [The new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin).
+If you instead want to use the Microsoft 365 admin center to configure a multitenant organization, see [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org) and [Join or leave a multitenant organization in Microsoft 365](/microsoft-365/enterprise/join-leave-multi-tenant-org). To learn how to configure Microsoft Teams for your multitenant organization, see the [Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin).
 
 :::image type="content" source="./media/multi-tenant-organization-configure-graph/configure-multitenant-organization-diagram.png" alt-text="Diagram that shows a multitenant organization with one owner tenant and two member tenants." lightbox="./media/multi-tenant-organization-configure-graph/configure-multitenant-organization-diagram.png":::
 
@@ -90,7 +90,6 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
 
 # [PowerShell](#tab/ms-powershell)
 
-
 1. In the owner tenant, use the [Update-MgBetaTenantRelationshipMultiTenantOrganization](/powershell/module/microsoft.graph.beta.identity.signins/update-mgbetatenantrelationshipmultitenantorganization) command to create your multitenant organization. This operation can take a few minutes.
 
     ```powershell
@@ -134,7 +133,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     ```http
     GET https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization
     ```
-    
+
     **Response**
 
     ```http
@@ -184,7 +183,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     TenantId             : <OwnerTenantId>
     TransitionDetails    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationMemberTransitionDetails
     AdditionalProperties : {[multiTenantOrgLabelType, none]}
-    
+
     AddedByTenantId      : <OwnerTenantId>
     AddedDateTime        : 1/8/2024 8:05:25 PM
     DeletedDateTime      :
@@ -196,7 +195,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     TenantId             : <MemberTenantIdB>
     TransitionDetails    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationMemberTransitionDetails
     AdditionalProperties : {[multiTenantOrgLabelType, none]}
-    
+
     AddedByTenantId      : <OwnerTenantId>
     AddedDateTime        : 1/8/2024 8:08:47 PM
     DeletedDateTime      :
@@ -408,11 +407,11 @@ You can remove any member tenant, including your own. You can't remove owner ten
 
     ```Output
     Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant_Get: Unable to read the company information from the directory.
-    
+
     Status: 404 (NotFound)
     ErrorCode: Directory_ObjectNotFound
     Date: 2024-01-08T20:35:11
-    
+
     ...
     ```
 
@@ -425,7 +424,7 @@ You can remove any member tenant, including your own. You can't remove owner ten
     ```http
     DELETE https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{memberTenantIdD}
     ```
-    
+
 1. Use the [Get multiTenantOrganizationMember](/graph/api/multitenantorganizationmember-get) API to verify the change.
 
     **Request**
@@ -433,7 +432,7 @@ You can remove any member tenant, including your own. You can't remove owner ten
     ```http
     GET https://graph.microsoft.com/beta/tenantRelationships/multiTenantOrganization/tenants/{memberTenantIdD}
     ```
-    
+
     If you check immediately after calling the remove API, it will show a response similar to the following.
 
     **Response**
@@ -469,7 +468,7 @@ You can remove any member tenant, including your own. You can't remove owner ten
             "innerError": {
                 "date": "2023-11-20T21:09:53",
                 "request-id": "75216961-c21d-49ed-8c1f-2cfe51f920f1",
-                "client-request-id": "30129b19-51e8-41ed-8ba0-1501bac03802"
+                "client-request-id": "0000aaaa-11bb-cccc-dd22-eeeeee333333"
             }
         }
     }
@@ -562,7 +561,7 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
     TenantId             : <MemberTenantIdB>
     TransitionDetails    : Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphMultiTenantOrganizationMemberTransitionDetails
     AdditionalProperties : {[multiTenantOrgLabelType, none]}
-    
+
     AddedByTenantId      : <OwnerTenantId>
     AddedDateTime        : 1/8/2024 7:47:45 PM
     DeletedDateTime      :
@@ -642,7 +641,7 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
     ```
 
     **Response**
-    
+
     ```http
     {
         "@odata.context": "https://graph.microsoft.com/beta/$metadata#tenantRelationships/multiTenantOrganization/tenants",
@@ -743,5 +742,5 @@ You delete a multitenant organization by removing all tenants. The process for r
 
 - [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org)
 - [Synchronize users in multitenant organizations in Microsoft 365](/microsoft-365/enterprise/sync-users-multi-tenant-orgs)
-- [The new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin)
+- The [new Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin)
 - [Configure multitenant organization templates using the Microsoft Graph API](./multi-tenant-organization-configure-templates.md)

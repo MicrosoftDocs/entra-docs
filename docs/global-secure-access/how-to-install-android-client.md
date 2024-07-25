@@ -1,5 +1,5 @@
 ---
-title: The Global Secure Access client for Android (preview)
+title: The Global Secure Access client for Android
 description: Install the Global Secure Access Android client.
 ms.service: global-secure-access
 ms.topic: how-to
@@ -9,7 +9,7 @@ author: kenwith
 manager: amycolannino
 ms.reviewer: dhruvinshah
 ---
-# Global Secure Access client for Android (preview)
+# Global Secure Access client for Android
 
 The Global Secure Access client can be deployed to compliant Android devices using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how your end users connect to Global Secure Access. The Global Secure Access Android client makes it easier for your end users to connect to the resources they need without having to manually configure VPN settings on their devices.
 
@@ -17,7 +17,7 @@ This article explains the prerequisites and how to deploy the client onto Androi
 
 ## Prerequisites
 
-- Global Secure Access Preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - You must enable at least one Global Secure Access [traffic forwarding profile](concept-traffic-forwarding.md).
 - Device installation permissions on the device are required for installation.
 - Android devices must be running Android 10.0 or later.

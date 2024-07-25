@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Understand user tokens in Microsoft Entra B2B collaboration
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 If you want to know what the token looks like for a B2B collaboration user, here are the bearer token details and token content for a Microsoft Entra account guest and a Microsoft account guest in the resource tenant (for tenant ID 04dcc6ab-388a-4559-b527-fbec656300ea). To see the JSON Web Token (JWT) contents, use [https://jwt.io/](https://jwt.io/) or [https://jwt.ms/](https://jwt.ms/).
 
 <a name='azure-ad-guest-token'></a>

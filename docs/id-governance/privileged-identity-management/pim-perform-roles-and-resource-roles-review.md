@@ -17,9 +17,9 @@ ms.custom: pim
 
 Privileged Identity Management (PIM) simplifies how enterprises manage privileged access to resources in Microsoft Entra ID, and other Microsoft online services like Microsoft 365 or Microsoft Intune. Follow the steps in this article to perform reviews of access to roles.
 
-If you're assigned to an administrative role, your organization's privileged role administrator may ask you to regularly confirm that you still need that role for your job. You might get an email that includes a link, or you can go straight to the [Microsoft Entra admin center](https://entra.microsoft.com) and begin.
+If you're assigned to an administrative role, your organization's Privileged Role Administrator may ask you to regularly confirm that you still need that role for your job. You might get an email that includes a link, or you can go straight to the [Microsoft Entra admin center](https://entra.microsoft.com) and begin.
 
-If you're a privileged role administrator or global administrator interested in access reviews, get more details at [How to start an access review](./pim-create-roles-and-resource-roles-review.md).
+If you're at least a Privileged Role Administrator interested in access reviews, get more details at [How to start an access review](./pim-create-roles-and-resource-roles-review.md).
 
 ## Approve or deny access
 

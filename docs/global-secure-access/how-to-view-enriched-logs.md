@@ -1,6 +1,6 @@
 ---
 title: How to use enriched Microsoft 365 logs
-description: Learn how to use enriched Microsoft 365 logs for Global Secure Access (preview).
+description: Learn how to use enriched Microsoft 365 logs for Global Secure Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -9,9 +9,9 @@ ms.date: 11/02/2023
 ms.service: global-secure-access
 ---
 
-# How to use the Global Secure Access (preview) enriched Microsoft 365 logs
+# How to use the Global Secure Access enriched Microsoft 365 logs
 
-With your Microsoft 365 traffic flowing through the Microsoft Entra Private Internet service, you want to gain insights into the performance, experience, and availability of the Microsoft 365 apps your organization uses. The enriched Microsoft 365 logs provide you with the information you need to gain these insights. You can integrate the logs with a third-party security information and event management (SIEM) tool for further analysis.
+With your Microsoft traffic flowing through the Microsoft Entra Private Internet service, you want to gain insights into the performance, experience, and availability of the Microsoft 365 apps your organization uses. The enriched Microsoft 365 logs provide you with the information you need to gain these insights. You can integrate the logs with a third-party security information and event management (SIEM) tool for further analysis.
 
 This article describes the information in the logs and how to export them.
 
@@ -22,20 +22,20 @@ To use the enriched logs, you need the following roles, configurations, and subs
 ### Roles and Permissions
 
 - A **Global Administrator** role is required to enable the enriched Microsoft 365 logs.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft 365 traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Configurations
 
-- **Microsoft 365 Profile** - Ensure the Microsoft 365 profile is enabled. Microsoft Entra Internet Access is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
+- **Microsoft Profile** - Ensure the Microsoft profile is enabled. Microsoft traffic forwarding profile is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
 - **Microsoft 365 Common and Office Online Traffic Policy** - Required for log enrichment. Ensure it's enabled. 
 - **Tenant sending data** - Confirms that traffic, as configured in forwarding profiles, is accurately tunneled to the Global Secure Access service.
 - **Diagnostic Settings Configuration** - Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace. The requirements for each endpoint differ and are outlined in the Configure Diagnostic settings section of this article.
 
 ### Subscriptions
 
-- **Microsoft Entra ID P1 License** - Required for preview access. Purchasing or obtaining trial licenses is an option if needed.
-- **Microsoft 365 E3 License** - Recommended for employing the Microsoft 365 traffic forwarding profile. 
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- **Microsoft 365 E3 License** - Recommended for employing the Microsoft traffic forwarding profile. 
 
 You must configure the endpoint for where you want to route the logs prior to configuring Diagnostic settings. The requirements for each endpoint vary and are described in the [Configure Diagnostic settings](#configure-diagnostic-settings) section.
 
@@ -63,7 +63,7 @@ Viewing the enriched Microsoft 365 logs is a two-step process. First, you need t
 To enable the Enriched Microsoft 365 logs:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator).
-1. Browse to **Global Secure Access (preview)** > **Global settings** > **Logging**.
+1. Browse to **Global Secure Access** > **Settings** > **Logging**.
 1. Select the type of Microsoft 365 logs you want to enable.
 1. Select **Save**.
 
@@ -114,11 +114,11 @@ The following example is sending the enriched logs to a Log Analytics workspace,
 
 :::image type="content" source="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the enriched logs and Log Analytics options highlighted." lightbox="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs-expanded.png":::
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 
 - [Explore the Global Secure Access logs and monitoring options](concept-global-secure-access-logs-monitoring.md)
-- [Learn about Global Secure Access audit logs](how-to-access-audit-logs.md)
+- [Learn about Global Secure Access audit logs (preview)](how-to-access-audit-logs.md)
 - [Enriched Microsoft 365 audit logs](reference-event-enrichment-logs.md)
 

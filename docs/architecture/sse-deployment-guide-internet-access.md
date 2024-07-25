@@ -12,11 +12,11 @@ ms.author: jricketts
 
 # Microsoft's Security Service Edge Solution Deployment Guide for Microsoft Entra Internet Access Proof of Concept
 
-The [Microsoft identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network and identity access controls so you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can monitor and adjust user access continuously in real time if permissions or risk levels change for private apps, SaaS apps, and Microsoft 365 endpoints.
+The [Microsoft identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network and identity access controls so you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can monitor and adjust user access continuously in real time if permissions or risk levels change for private apps, SaaS apps, and Microsoft endpoints.
 
 Protecting enterprise users and managed devices from malicious internet traffic and malware infection concerns all companies. Use [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) Secure Web Gateway functionality to block traffic based on web categories, and a fully qualified domain name (FQDN), by integrating with Microsoft Entra Conditional Access.
 
-The guidance in this article helps you to deploy [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) (Preview) as a proof-of-concept in your production or test environment. It includes setup and configuring web content filtering. You can review prerequisites in the [Microsoft's Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md), which includes how to scope your configuration and testing for specific test users and groups.
+The guidance in this article helps you to deploy [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) as a proof-of-concept in your production or test environment. It includes setup and configuring web content filtering. You can review prerequisites in the [Microsoft's Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md), which includes how to scope your configuration and testing for specific test users and groups.
 
 ## Deploy and test Microsoft Entra Internet Access
 
@@ -39,7 +39,7 @@ Microsoft Internet Access has features to configure a security profile with a pr
 
 ### Create a web filtering policy
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
 
    [ ![Screenshot of Global Secure Access Secure Web content filtering policies.](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-expanded.png#lightbox) 
 
@@ -77,7 +77,7 @@ Microsoft Internet Access has features to configure a security profile with a pr
 
 ### Create a security policy profile
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Security profiles**. Select **Create profile**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access** \> **Secure** \> **Security profiles**. Select **Create profile**.
 
    [ ![Screenshot of Global Secure Access, Security profiles.](media/sse-deployment-guide-internet-access/security-profiles-inline.png)](media/sse-deployment-guide-internet-access/security-profiles-expanded.png#lightbox)
    
@@ -132,7 +132,7 @@ Microsoft Internet Access has features to configure a security profile with a pr
 
 ### View activity in the traffic log
 
-1. In the **Microsoft Entra admin center** \> **Global Secure Access (Preview)** \> **Monitor**, select [**Traffic logs**](../global-secure-access/how-to-view-traffic-logs.md). If needed, select **Add filter**. Filter when **User principal name** contains *testuser* and **Action** set to **Block**.
+1. In the **Microsoft Entra admin center** \> **Global Secure Access** \> **Monitor**, select [**Traffic logs**](../global-secure-access/how-to-view-traffic-logs.md). If needed, select **Add filter**. Filter when **User principal name** contains *testuser* and **Action** set to **Block**.
 1. Observe the entries for your target FQDN that show traffic as blocked and then allowed. There may be a delay of up to 20 minutes for entries to appear in the log.
 
    [ ![Screenshot of Global Secure Access, Monitor, Traffic logs for baseline policy.](media/sse-deployment-guide-internet-access/global-secure-access-monitor-traffic-logs-baseline-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-monitor-traffic-logs-baseline-expanded.png#lightbox)
@@ -150,7 +150,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 
 ### Create a web filtering policy
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
 
    [ ![Screenshot of Global Secure Access, Secure, Web content filtering policies.](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-expanded.png#lightbox)
    
@@ -178,7 +178,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 
 ### Create a security policy profile
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Security profiles**. Select **Create profile**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access** \> **Secure** \> **Security profiles**. Select **Create profile**.
 
    [ ![Screenshot of Global Secure Access, Security profiles.](media/sse-deployment-guide-internet-access/security-profiles-inline.png)](media/sse-deployment-guide-internet-access/security-profiles-expanded.png#lightbox)
    
@@ -216,7 +216,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
    ![Screenshot of Conditional Access, New Conditional Access policy for Internet Access Policy.](media/sse-deployment-guide-internet-access/new-conditional-access-policy-internet-access.png)
       
 1. **Target resources**.
-   * **Select what this policy applies to** \> **Global Secure Access (Preview)**.
+   * **Select what this policy applies to** \> **Global Secure Access**.
    * **Select the traffic profiles this policy applies to** \> **Internet traffic**.
 
    ![Screenshot of Conditional Access, New Conditional Access policy for Internet Access Policy, Target resources.](media/sse-deployment-guide-internet-access/new-conditional-access-policy-internet-access-target-resources.png)
@@ -258,7 +258,7 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 
 ### View activity in the traffic log
 
-1. In the **Microsoft Entra admin center** \> **Global Secure Access (Preview)** \> **Monitor**, select **Traffic logs**.
+1. In the **Microsoft Entra admin center** \> **Global Secure Access** \> **Monitor**, select **Traffic logs**.
 1. If needed, select **Add filter**. Filter when **User principal name** contains *testuser* and **Action** set to **Block**.
 1. Observe the entries for your target FQDN that show traffic as blocked and then allowed. There can be a delay of up to 20 minutes for entries to appear in the log.
 
@@ -277,7 +277,7 @@ In some cases, it's necessary to block specific websites rather than using broad
 
 ### Create a web filtering policy
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
 
    [ ![Screenshot of Global Secure Access, Secure, Web content filtering policies.](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-expanded.png#lightbox)
    
@@ -303,7 +303,7 @@ In some cases, it's necessary to block specific websites rather than using broad
 
 ### Create a security policy profile
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Security profiles**. Select **Create profile**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access** \> **Secure** \> **Security profiles**. Select **Create profile**.
 
    [ ![Screenshot of Global Secure Access, Security profiles.](media/sse-deployment-guide-internet-access/security-profiles-inline.png)](media/sse-deployment-guide-internet-access/security-profiles-expanded.png#lightbox)
    
@@ -340,7 +340,7 @@ In some cases, it's necessary to block specific websites rather than using broad
 
    ![Screenshot of Conditional Access, New Conditional Access policy to block FQDN Internet Access Policy.](media/sse-deployment-guide-internet-access/new-conditional-access-policy-block-fqdn.png)
 
-1. **Target resources** \> **Select what this policy applies to** \> **Global Secure Access (Preview)**.
+1. **Target resources** \> **Select what this policy applies to** \> **Global Secure Access**.
 1. **Select the traffic profiles this policy applies to** \> **Internet traffic**.
 
    ![Screenshot of Conditional Access, New Conditional Access policy to block FQDN Internet Access Policy, Target resources.](media/sse-deployment-guide-internet-access/new-conditional-access-policy-block-fqdn-target-resources.png)
@@ -379,7 +379,7 @@ In some cases, it's necessary to block specific websites rather than using broad
 
 ### View activity in the traffic log
 
-1. In the **Microsoft Entra admin center** \> **Global Secure Access (Preview)** \> **Monitor**, select **Traffic logs**.
+1. In the **Microsoft Entra admin center** \> **Global Secure Access** \> **Monitor**, select **Traffic logs**.
 1. If needed, select **Add filter**. Filter when **User principal name** contains *testuser* and **Action** set to **Block**.
 1. Observe the entries for your target FQDN that show traffic as blocked and then allowed. There can be a delay of up to 20 minutes for entries to appear in the log.
 
@@ -396,7 +396,7 @@ In some cases, you might have users that require access to blocked sites for gro
 
 ### Create a web filtering policy
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access** \> **Secure** \> **Web content filtering policies** \> **Create policy** \> **[Configure Global Secure Access content filtering](../global-secure-access/how-to-configure-web-content-filtering.md)**.
 
    [ ![Screenshot of Global Secure Access, Secure, Web content filtering policies.](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-inline.png)](media/sse-deployment-guide-internet-access/web-content-filtering-policies-baseline-expanded.png#lightbox)
 
@@ -421,7 +421,7 @@ In some cases, you might have users that require access to blocked sites for gro
 
 ### Create a security policy profile
 
-1. In the **Microsoft Entra admin center**, go to **Global Secure Access (Preview)** \> **Secure** \> **Security profiles**. Select **Create profile**.
+1. In the **Microsoft Entra admin center**, go to **Global Secure Access** \> **Secure** \> **Security profiles**. Select **Create profile**.
 
    ![Screenshot of Global Secure Access, Security profiles.](media/sse-deployment-guide-internet-access/security-profiles-inline.png)](media/sse-deployment-guide-internet-access/security-profiles-expanded.png#lightbox)
 
@@ -458,7 +458,7 @@ In some cases, you might have users that require access to blocked sites for gro
 
    ![Screenshot of Conditional Access, New Conditional Access policy to allow blocked Internet Access Policy.](media/sse-deployment-guide-internet-access/new-conditional-access-policy-allow-blocked.png)
 
-1. **Target resources** \> **Select what this policy applies to** \> **Global Secure Access (Preview)**.
+1. **Target resources** \> **Select what this policy applies to** \> **Global Secure Access**.
 1. **Select the traffic profiles this policy applies to** \> **Internet traffic**.
 
    ![Screenshot of Conditional Access, New Conditional Access policy to allow blocked Internet Access Policy, Target resources.](media/sse-deployment-guide-internet-access/new-conditional-access-policy-allow-blocked-target-resources.png)
@@ -488,15 +488,13 @@ In some cases, you might have users that require access to blocked sites for gro
 
 ### View activity in the traffic log
 
-1. In the **Microsoft Entra admin center** \> **Global Secure Access (Preview)** \> **Monitor**, select **Traffic logs**. If needed, select **Add filter**. Filter when **User principal name** contains *testuser* and **Action** set to **Block**.
+1. In the **Microsoft Entra admin center** \> **Global Secure Access** \> **Monitor**, select **Traffic logs**. If needed, select **Add filter**. Filter when **User principal name** contains *testuser* and **Action** set to **Block**.
 1. Observe the entries for your target FQDN that show traffic as blocked and then allowed. There can be a delay of up to 20 minutes for entries to appear in the log.
 
    [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic to allow blocked Internet Access.](media/sse-deployment-guide-internet-access/network-traffic-allow-blocked-traffic-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-allow-blocked-traffic-expanded.png#lightbox)
-
-[!INCLUDE [Public preview important note](../global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next steps
 
 - [Introduction to Microsoft's Security Service Edge Solution Deployment Guide for Proof of Concept](sse-deployment-guide-intro.md)
 - [Deploy and verify Microsoft Entra Private Access](sse-deployment-guide-private-access.md)
-- [Deploy and verify Microsoft Entra Internet Access for Microsoft 365](sse-deployment-guide-m365.md)
+- [Deploy and verify Microsoft Entra Internet Access for Microsoft Traffic](sse-deployment-guide-microsoft-traffic.md)

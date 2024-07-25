@@ -1,17 +1,13 @@
 ---
 title: 'Tutorial: Configure N-able User Provisioning for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to N-able User Provisioning.
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: 032bad92-cefe-484d-9110-d412019dd9d4
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
-ms.date: 02/26/2024
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to N-able User Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to N-able User Provisioning.
 ---
@@ -27,12 +23,15 @@ This tutorial describes the steps you need to perform in both N-able User Provis
 > * Remove users in N-able User Provisioning when they do not require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and N-able User Provisioning.
 
+> [!NOTE]
+> To use the OAuth2 flow, users should use the https://portal.azure.com/?feature.userProvisioningV2Authentication=true url to access the Azure portal.
+
 ## Prerequisites
 
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A user account in N-able User Provisioning with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
@@ -78,9 +77,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, enter the **Tenant Url** and then click on Authorize, make sure that you enter your N-able User Provisioning account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to N-able User Provisioning. If the connection fails, ensure your N-able User Provisioning account has Admin permissions and try again.
+1. In the **Admin Credentials** section, enter your N-able User Provisioning Tenant URL, Token Endpoint, Client Identifier and Client Secret. Click **Test Connection** to ensure Microsoft Entra ID can connect to N-able User Provisioning. If the connection fails, ensure your N-able User Provisioning account has Admin permissions and try again.
+	> [!NOTE]
+	> To use the OAuth2 flow, users should use the https://portal.azure.com/?feature.userProvisioningV2Authentication=true url to access the Azure portal.
 
- 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
+ 	![Screenshot of Token.](media/n-able-user-provisioning-tutorial/admin-credentials-ui.png)
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 

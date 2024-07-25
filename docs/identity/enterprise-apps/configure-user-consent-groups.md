@@ -32,7 +32,7 @@ Before creating the app consent policy to manage your group owner consent, you n
 To configure group and team owner consent, you need:
 
 - A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- A Global Administrator role.
+- A [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 ## Manage group owner consent to apps using Microsoft Entra admin center
 
@@ -46,7 +46,7 @@ To configure group and team owner consent settings through the Microsoft Entra a
 
 Follow these steps to manage group owner consent to apps accessing group data:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **User consent settings**.
 1. Under **Group owner consent for apps accessing data** select the option you'd like to enable.
 1. Select **Save** to save your settings.
@@ -60,7 +60,7 @@ In this example, all group owners are allowed to consent to apps accessing their
 
 You can use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true) module to enable or disable group owners' ability to consent to applications accessing your organization's data for the groups they own. The cmdlets in this section are part of the [Microsoft.Graph.Identity.SignIns](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.SignIns) module.
 
-Connect to Microsoft Graph PowerShell and sign in as a [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). For reading the current user consent settings, use `Policy.Read.All` permission. For reading and changing the user consent settings, use `Policy.ReadWrite.Authorization` permission.
+Connect to Microsoft Graph PowerShell and sign in as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator). For reading the current user consent settings, use `Policy.Read.All` permission. For reading and changing the user consent settings, use `Policy.ReadWrite.Authorization` permission.
 
 1. Change the profile to beta by using the `Select-MgProfile` command.
 
@@ -121,8 +121,8 @@ There are two settings values that define which users would be able to allow an 
 
 | Setting       | Type         | Description  |
 | ------------- | ------------ | ------------ |
-| _EnableGroupSpecificConsent_   | Boolean | Flag indicating if groups owners are allowed to grant group-specific permissions. |
-| _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | If _EnableGroupSpecificConsent_ is set to "True" and this value set to a group's object ID, members of the identified group will be authorized to grant group-specific permissions to the groups they own. |
+| *EnableGroupSpecificConsent*   | Boolean | Flag indicating if groups owners are allowed to grant group-specific permissions. |
+| *ConstrainGroupSpecificConsentToMembersOfGroupId* | Guid | If *EnableGroupSpecificConsent* is set to "True" and this value set to a group's object ID, members of the identified group will be authorized to grant group-specific permissions to the groups they own. |
 
 ### Update settings values for the desired configuration using Microsoft Graph PowerShell
 
@@ -159,7 +159,7 @@ Update-MgDirectorySetting -DirectorySettingId $settings.Id -Values $settings.Val
 
 To manage group and team owner consent settings through directory setting using [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer):
 
-You need to sign in as a [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). For reading the current user consent settings, consent to `Policy.Read.All` permission. For reading and changing the user consent settings, consent to `Policy.ReadWrite.Authorization` permission.
+You need to sign in as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator). For reading the current user consent settings, consent to `Policy.Read.All` permission. For reading and changing the user consent settings, consent to `Policy.ReadWrite.Authorization` permission.
 
 ### Retrieve the current setting using Microsoft Graph API
 
@@ -343,7 +343,7 @@ You can configure which users are allowed to consent to apps accessing their gro
 
 To choose which app consent policy governs user consent for applications, you can use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true) module. The cmdlets used here are included in the [Microsoft.Graph.Identity.SignIns](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.SignIns) module.
 
-Connect to Microsoft Graph PowerShell using the least-privilege permission needed. For reading the current user consent settings, use `Policy.Read.All`. For reading and changing the user consent settings, use `Policy.ReadWrite.Authorization`. You need to sign in as a [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator)
+Connect to Microsoft Graph PowerShell using the least-privilege permission needed. For reading the current user consent settings, use `Policy.Read.All`. For reading and changing the user consent settings, use `Policy.ReadWrite.Authorization`. You need to sign in as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 ```powershell
 # change the profile to beta by using the `Select-MgProfile` command

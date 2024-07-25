@@ -52,8 +52,7 @@ In ASP.NET Core, you can use [Microsoft.Identity.Web](/entra/msal/dotnet/microso
 
 #### Verify the scopes on each controller action
 
-You can verify the scopes in the controller action by using the `[RequiredScope]` attribute. This attribute
-has several overrides. One that takes the required scopes directly, and one that takes a key to the configuration.
+You can verify the scopes in the controller action by using the `[RequiredScope]` attribute. This attribute has several overrides. One that takes the required scopes directly, and one that takes a key to the configuration.
 
 ##### Verify the scopes on a controller action with hardcoded scopes
 
@@ -255,7 +254,7 @@ For a full version of `ValidateScopes` for ASP.NET Core, refer to [_ScopesRequir
 
 ## Verify app roles in APIs called by daemon apps
 
-If your web API is called by a [daemon app](scenario-daemon-overview.md), that app should require an application permission to your web API. As shown in [Exposing application permissions (app roles)](./scenario-protected-web-api-app-registration.md#expose-application-permissions-app-roles), your API exposes such permissions. One example is the `access_as_application` app role.
+If your web API is called by a [daemon app](scenario-daemon-app-registration.md), that app should require an application permission to your web API. As shown in [Exposing application permissions (app roles)](./scenario-protected-web-api-app-registration.md#expose-application-permissions-app-roles), your API exposes such permissions. One example is the `access_as_application` app role.
 
 You now need to have your API verify that the token it receives contains the `roles` claim and that this claim has the expected value. The verification code is similar to the code that verifies delegated permissions, except that your controller action tests for roles instead of scopes:
 
@@ -349,8 +348,7 @@ Checking the inverse condition allows only apps that sign in a user to call your
 
 ### Using ACL-based authorization
 
-Alternatively to app-roles based authorization, you can
-protect your web API with an Access Control List (ACL) based authorization pattern to [control tokens without the `roles` claim](v2-oauth2-client-creds-grant-flow.md#controlling-tokens-without-the-roles-claim).
+Alternatively to app-roles based authorization, you can protect your web API with an Access Control List (ACL) based authorization pattern to [control tokens without the `roles` claim](v2-oauth2-client-creds-grant-flow.md#controlling-tokens-without-the-roles-claim).
 
 If you're using `Microsoft.Identity.Web` on ASP.NET Core, you'll need to declare that you are using ACL-based authorization, otherwise Microsoft Identity Web will throw an exception when neither roles nor scopes are in the claims provided:
 

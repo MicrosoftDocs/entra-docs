@@ -8,13 +8,15 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 03/26/2024
+ms.date: 06/19/2024
 ms.author: mimart
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Add Facebook as an identity provider
+# Add Facebook as an identity provider (preview)
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 By setting up federation with Facebook, you can allow customers to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, customers can sign-in to Microsoft Entra External ID with a Facebook account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
@@ -72,7 +74,7 @@ After you create the Facebook application, in this step you set the Facebook cli
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
-2. Select **+ Facebook**.
+2. On the **Built-in** tab, next to **Facebook**, select **Configure**.
 
    <!-- ![Screenshot that shows how to add Facebook identity provider in Microsoft Entra ID.](./media/sign-in-with-facebook/configure-facebook-idp.png)-->
 
@@ -90,7 +92,7 @@ To configure Facebook federation by using PowerShell, follow these steps:
    Connect-MgGraph -Scopes "IdentityProvider.ReadWrite.All"
    ```
 
-1. At the sign-in prompt, sign in with the managed Global Administrator account.  
+1. At the sign-in prompt, sign in as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator). 
 1. Run the following commands:
 
    ```powershell
