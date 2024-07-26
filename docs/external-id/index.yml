@@ -45,14 +45,15 @@ productDirectory:
       imageSrc: ./media/index/external-identities-icon.png
       summary: "As an IT professional, learn how to use External ID as your customer identity and access management (CIAM) solution."
       url: ./customers/overview-customers-ciam.md
-    - title: Build consumer and business customer apps for External ID
-      imageSrc: ./media/index/identity-platform-icon.png
-      summary: "As a developer, use our tutorials to learn how to integrate your consumer and business customer apps with External ID."
-      url: customers/samples-ciam-all.md?tabs=apptype
     - title: Collaborate with business guests
       imageSrc: ./media/index/b2b-icon.png
       summary: "Learn how your workforce can work securely with business guests using B2B collaboration."
       url: what-is-b2b.md
+    - title: Build consumer and business customer apps for External ID
+      imageSrc: ./media/index/identity-platform-icon.png
+      summary: "As a developer, use our tutorials to learn how to integrate your consumer and business customer apps with External ID."
+      url: customers/samples-ciam-all.md?tabs=apptype
+
 
 additionalContent:
   sections:
