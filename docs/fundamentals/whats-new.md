@@ -118,16 +118,6 @@ Once enabled, customers using Entitlement Management with Verified ID can use Ac
 
 ---
 
-### General Availability - Microsoft Entra Private Access
-
-**Type:** New feature    
-**Service category:** Private Access    
-**Product capability:** Network Access    
-
-Microsoft Entra Private Access is an identity-centric ZTNA solution that helps you secure access to all private apps and resources for your users—located anywhere. Private Access allows you to replace your legacy VPN with ZTNA to securely connect your users to any private resource and application—without providing full network access to all private resources. This solution embraces Zero Trust principles to protect against cyber threats and to mitigate lateral movement, while enforcing advanced app segmentation and adaptive least-privilege access policies. Using Microsoft’s global private network, you can give your users a fast, seamless access experience that balances security with productivity. For more information, see: [Learn about Microsoft Entra Private Access](../global-secure-access/concept-private-access.md).
-
----
-
 
 ## June 2024
 
