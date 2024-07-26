@@ -31,16 +31,130 @@ All activity performed by Microsoft Entra Identity Governance services is audite
 
 | Feature | Example alert |
 | --- | --- |
-| Provisioning | Alert an IT administrator through email when there is a spike in provisioning failures over a 24-hour period. |
-| Provisioning | Alert an IT admin when the provisioning service does not export any changes in the past month. |
 | Lifecycle workflows | Alert an IT admin through email when a specific workflow fails. |
 | Entitlement management | Alert an IT administrator through email when a new connected organization is added. |
 | Entitlement management | Alert an IT admin when a custom extension fails. |
-| Entitlement management | \*\* pending query Alert when a guest user has been added to a specific access package. |
 | Access Reviews | Alert an IT admin when an access review is deleted. |
 | Privileged Identity Management | Alert an IT admin when PIM alerts are disabled. |
 | Multi-tenant collaboration | Alert an IT amin when cross-tenant sync is enabled |
 | Multi-tenant collaboration | Alert an IT admin when a cross-tenant access policy is enabled |
+| Provisioning | Alert an IT administrator through email when there is a spike in provisioning failures over a 24-hour period. |
+| Provisioning | Alert an IT admin when the provisioning service does not export any changes in the past month. |
+
+## Lifecycle workflows
+
+**Alert an IT admin through email when a specific workflow fails.**
+
+<u>Query</u>
+
+```
+AuditLogs
+| where Category == "WorkflowManagement"
+| where ActivityDisplayName in ('On-demand workflow execution completed', 'Scheduled workflow execution completed')
+| where Result == "failure"
+| mvexpand TargetResources 
+| extend  WorkflowName=TargetResources.displayName
+| where WorkflowName in ('<input workflow name>', '<input workflow name>')
+| distinct Id
+```
+
+<u>Alert logic</u>
+
+- Based on: Number of results
+- Operator: Equal to
+- Threshold: 0
+
+## Multi-tenant collaboration
+
+**As an admin, I can get an email when a cross-tenant access policy is created.**
+
+<u>Query</u>
+
+```
+AuditLogs
+| where OperationName == "Add a partner to cross-tenant access setting"
+| where parse_json(tostring(TargetResources[0].modifiedProperties))[0].displayName == "tenantId"
+| extend initiating_user=parse_json(tostring(InitiatedBy.user)).userPrincipalName
+| extend source_ip=parse_json(tostring(InitiatedBy.user)).ipAddress
+| extend target_tenant=parse_json(tostring(TargetResources[0].modifiedProperties))[0].newValue
+| project TimeGenerated, OperationName,initiating_user,source_ip, AADTenantId,target_tenant
+| project-rename source_tenant= AADTenantId
+````
+
+**As an admin, I can get an email when an inbound cross-tenant sync policy is set to true.**
+
+<u>Query</u>
+
+```
+AuditLogs
+| where OperationName == "Update a partner cross-tenant identity sync setting"
+| extend a = tostring(TargetResources)
+| where a contains "true"
+| where parse_json(tostring(TargetResources[0].modifiedProperties))[0].newValue contains "true"
+```
+
+## Entitlement management
+
+**Alert an IT admin through email when a new connected organization is created.**
+
+<u>Query</u>
+
+```
+AuditLogs
+| where ActivityDisplayName == "Create connected organization"
+| mv-expand AdditionalDetails
+| extend key = AdditionalDetails.key, value = AdditionalDetails.value
+| extend tostring(key) == "Description"
+| where key == "Description"
+| parse value with * "\n" TenantID 
+| project TenantID
+```
+
+<u>Alert logic</u>
+
+- Based on:
+- Operator:
+- Threshold:
+
+**Alert an IT admin through email when a custom extension fails.**
+
+<u>Query</u>
+
+```
+AuditLogs
+| where ActivityDisplayName == "Execute custom extension"
+| where Result == "success"
+| mvexpand TargetResources 
+| extend  CustomExtensionName=TargetResources.displayName
+| where CustomExtensionName in ('<input custom exteionsion name>', '<input custom extension name>')
+```
+
+Access Reviews
+
+**Alert an IT admin when an access review has been deleted.**
+
+<u>Query</u>
+
+```
+AuditLogs
+| where ActivityDisplayName == " Delete access review"
+Privileged Identity Management
+```
+
+**Alert an IT admin through email when specific PIM security alerts are disabled.**
+
+<u>Query</u>
+
+```
+AuditLogs
+| where ActivityDisplayName == "Disable PIM alert"
+```
+
+<u>Alert logic</u>
+
+- Based on:
+- Operator:
+- Threshold:
 
 ## Provisioning
 
@@ -50,7 +164,7 @@ All activity performed by Microsoft Entra Identity Governance services is audite
 
 ```
 AADProvisioningLogs
-| where JobId == “<input JobId>
+| where JobId == “<input JobId>”
 | where resultType == “Failure”
 ```
 
@@ -76,150 +190,6 @@ AADProvisioningLogs
 - Operator: Equal to
 - Threshold: 0
 
-## Lifecycle workflows
-
-**Alert an IT admin through email when a specific workflow fails.**
-
-<u>Query</u>
-
-```
-AuditLogs
-| where Category == "WorkflowManagement"
-| where ActivityDisplayName in ('On-demand workflow execution completed', 'Scheduled workflow execution completed')
-| where Result == "failure"
-| mvexpand TargetResources
-| extend WorkflowName=TargetResources.displayName
-| where WorkflowName in ('&lt;input workflow name&gt;', '&lt;input workflow name&gt;')
-| distinct Id
-```
-
-<u>Alert logic</u>
-
-- Based on: Number of results
-- Operator: Equal to
-- Threshold: 0
-
-**Alert an <persona> through <medium> when <scenario>**
-
-<u>Query</u>
-
-<u>Alert logic</u>
-
-- Based on:
-- Operator:
-- Threshold:
-
-## Multi-tenant collaboration
-
-## _As an admin, I can get an email when a cross-tenant access policy is created_
-
-<u>Query</u>
-
-```
-AuditLogs
-| where OperationName == "Add a partner to cross-tenant access setting"
-
-| where parse_json(tostring(TargetResources\[0\].modifiedProperties))\[0\].displayName == "tenantId"
-
-| extend initiating_user=parse_json(tostring(InitiatedBy.user)).userPrincipalName
-
-| extend source_ip=parse_json(tostring(InitiatedBy.user)).ipAddress
-
-| extend target_tenant=parse_json(tostring(TargetResources\[0\].modifiedProperties))\[0\].newValue
-
-| project TimeGenerated, OperationName,initiating_user,source_ip, AADTenantId,target_tenant
-
-| project-rename source_tenant= AADTenantId
-
-````
-
-**As an admin, I can get an email when an inbound cross-tenant sync policy is set to true**
-
-**Query**
-
-```
-AuditLogs
-
-| where OperationName == "Update a partner cross-tenant identity sync setting"
-
-| extend a = tostring(TargetResources)
-
-| where a contains "true"
-
-| where parse_json(tostring(TargetResources\[0\].modifiedProperties))\[0\].newValue contains "true"
-```
-
-## Entitlement management
-
-**Alert an IT admin through email when a new connected organization is created.**
-
-<u>Query</u>
-
-```
-AuditLogs
-| where ActivityDisplayName == "Create connected organization"_
-| mv-expand AdditionalDetails_
-| extend key = AdditionalDetails.key, value = AdditionalDetails.value_
-
-_| extend tostring(key) == "Description"_
-
-_| where key == "Description"_
-
-_| parse value with \* "\\n" TenantID_
-
-_| project TenantID_
-```
-
-<u>Alert logic</u>
-
-- Based on:
-- Operator:
-- Threshold:
-
-**Alert an IT admin through email when a custom extension fails.**
-
-<u>Query</u>
-
-```
-AuditLogs_
-
-_| where ActivityDisplayName == "Execute custom extension"_
-
-_| where Result == "success"_
-
-_| mvexpand TargetResources_
-
-_| extend CustomExtensionName=TargetResources.displayName_
-
-_| where CustomExtensionName in ('&lt;input custom exteionsion name&gt;', '&lt;input custom extension name&gt;')_
-```
-
-Access Reviews
-
-**Alert an IT admin when an access review has been deleted.**
-
-Query
-
-AuditLogs
-
-| where ActivityDisplayName == " Delete access review"
-
-Privileged Identity Management
-
-**Alert an IT admin through email when specific PIM security alerts are disabled.**
-
-Query
-
-AuditLogs
-
-| where ActivityDisplayName == "Disable PIM alert"
-
-Alert logic
-
-- Based on:
-- Operator:
-- Threshold:
-
 **Next steps**
 
 - [Log analytics](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics)
@@ -228,4 +198,3 @@ Alert logic
 - [Install and use the log analytics views for Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
 
 <https://learn.microsoft.com/en-us/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta>
-
