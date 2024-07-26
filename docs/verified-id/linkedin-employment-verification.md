@@ -23,9 +23,6 @@ If your organization wants its employees to get their place of work verified on 
 1. Use [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials) to issue your VerifiedEmployee credentials.
 1. Send your Verified ID setup details along with your organization DID (decentralized identity), your LinkedIn profile, and LinkedIn company page to [ownyouridentity@microsoft.com](mailto:ownyouridentity@microsoft.com). We'll review your submission and follow up with next steps if accepted.
 
->[!IMPORTANT]
-> The form requires that you provide your Microsoft account manager as the contact. The app version required is Android **4.1.813** or newer, or iOS we require **9.27.2173** or newer. Keep in mind that inside the app, the version number shows **9.27.2336**, but in the App store the version number would be **9.1.312** or higher.
-
 >[!NOTE]
 > Review LinkedIn's documentation for information on [verifications on LinkedIn profiles.](https://www.linkedin.com/help/linkedin/answer/a1359065).
 
