@@ -499,33 +499,33 @@ For production, you should use [a setting](https://flask-session.readthedocs.io/
 
 ---
 
-## Next steps
+## Next step
 
 At this point, when the user signs in, a token is stored in the token cache. Let's see how it's then used in other parts of the web app.
 
 # [ASP.NET Core](#tab/aspnetcore)
 
-Move on to the next article in this scenario,
-[Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=aspnetcore).
+> [!div class="nextstepaction"]
+> [Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=aspnetcore).
 
 # [ASP.NET](#tab/aspnet)
 
-Move on to the next article in this scenario,
-[Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=aspnet).
+> [!div class="nextstepaction"]
+> [Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=aspnet).
 
 # [Java](#tab/java)
 
-Move on to the next article in this scenario,
-[Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=java).
+> [!div class="nextstepaction"]
+> [Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=java).
 
 # [Node.js](#tab/nodejs)
 
-Move on to the next article in this scenario,
-[Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=nodejs).
+> [!div class="nextstepaction"]
+> [Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=nodejs).
 
 # [Python](#tab/python)
 
-Move on to the next article in this scenario,
-[Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=python).
+> [!div class="nextstepaction"]
+> [Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=python).
 
 ---

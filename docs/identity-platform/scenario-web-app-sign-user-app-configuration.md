@@ -318,33 +318,31 @@ Then the code constructs an [`auth` object](https://identity-library.readthedocs
 
 ---
 
-## Next steps
-
-In the next article, you'll learn how to trigger sign-in and sign-out.
+## Next step
 
 # [ASP.NET Core](#tab/aspnetcore)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnetcore).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnetcore).
 
 # [ASP.NET](#tab/aspnet)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnet).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnet).
 
 # [Java](#tab/java)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=java).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=java).
 
 # [Node.js](#tab/nodejs)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=nodejs).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=nodejs).
 
 # [Python](#tab/python)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=python).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=python).
 
 ---

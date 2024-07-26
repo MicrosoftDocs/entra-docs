@@ -247,7 +247,7 @@ The On-behalf-of (OBO) flow is used to obtain a token to call the downstream web
 
 The code below uses Spring Security framework's `SecurityContextHolder` in the web API to get the validated bearer token. It then uses the MSAL Java library to obtain a token for downstream API using the `acquireToken` call with `OnBehalfOfParameters`. MSAL caches the token so that subsequent calls to the API can use `acquireTokenSilently` to get the cached token.
 
-```Java
+```java
 @Component
 class MsalAuthHelper {
 
@@ -326,7 +326,7 @@ You can also see an example of OBO flow implementation in [Node.js and Azure Fun
 
 For more information about the OBO protocol, see the [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](./v2-oauth2-on-behalf-of-flow.md).
 
-## Next steps
+## Next step
 
-Move on to the next article in this scenario,
-[Acquire a token for the app](scenario-web-api-call-api-acquire-token.md).
+> [!div class="nextstepaction"]
+> [Acquire a token for the app](scenario-web-api-call-api-acquire-token.md).
