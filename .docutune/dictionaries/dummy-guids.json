@@ -1,4 +1,4 @@
-// List of the dummy GUIDs used in the documentation, and the sensitive term list that they are associated with.
+// List of the dummy GUIDs used in the documentation, and the sensitive term list that they are associated with. Refer to Learn Plaford for more information.
 // Used as part of docutune-1.5.2/dictionaries/Dictionary-Security-GUIDs.ps1 workflow.
 {
   "appId|applicationId|clientId|audience|aud": [
