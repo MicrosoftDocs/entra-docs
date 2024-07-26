@@ -1,6 +1,6 @@
 ---
 title: 'Identity Governance Alerting'
-description: This article shows how to create custom alerts with Microsoft Entra Identity Governance
+description: This article shows how to create custom alerts with Microsoft Entra ID Governance
 author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
@@ -10,44 +10,46 @@ ms.author: billmath
 ms.custom:
 ---
 
-# Microsoft Entra Identity Governance Alerting
+# Microsoft Entra ID Governance Alerting
 
-Microsoft Entra Identity Governance makes it easy to alert people in your organization when they need to take action (ex: approve a request for access to a resource) or when a business process is not functioning properly (ex: new hires are not getting provisioned).
+Microsoft Entra ID Governance makes it easy to alert people in your organization when they need to take action (ex: approve a request for access to a resource) or when a business process is not functioning properly (ex: new hires are not getting provisioned).
 
-The following table outlines some of the standard notifications that Microsoft Entra Identity Governance provides, the target persona in an organization, where they would expect to be alerted, and how quickly they would be alerted.
+The following table outlines some of the standard notifications that Microsoft Entra ID Governance provides, the target persona in an organization, where they would expect to be alerted, and how quickly they would be alerted.
+
+**Sample of existing standard notifications**
 
 | Persona | Alert method | Timeliness | Example alert |
 | --- | --- | --- | --- |
 | IT operations | Email | Hours | Newly hired employees are not being imported from Workday. [Learn more](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-quarantine-status) |
 | GRC specialist | Email | Days | Application access requests are being denied because approvers are not approving the requests. |
-| Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-ticketed-provisioning) |
+| Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-ticketed-provisioning) |
 | End user | Teams | Minutes | You need to approve or deny this request for access;  <br>The access you requested has been approved, go use your new app<br><br>[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-process#email-notifications-table) |
 | End user | Teams | Days | The access you requested is going to expire next week, please renew<br><br>[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-process#email-notifications-table) |
-| End user | Email | Days | Welcome to Woodgrove, here is your temporary access pass. [Learn more.](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#generate-temporary-access-pass-and-send-via-email-to-users-manager) |
+| End user | Email | Days | Welcome to Woodgrove, here is your temporary access pass. [Learn more.](https://learn.microsoft.com/entra/id-governance/lifecycle-workflow-tasks#generate-temporary-access-pass-and-send-via-email-to-users-manager) |
 
-# Custom email notifications
+# Custom alert notifications
 
-In addition to the standard notifications provided by Microsoft Entra Identity Governance, organizations can create custom alerts to meet their needs. 
+In addition to the standard notifications provided by Microsoft Entra ID Governance, organizations can create custom alerts to meet their needs. 
 
-All activity performed by the Microsoft Entra Identity Governance services is audited in the Microsoft Entra [Audit Logs](https://learn.microsoft.com/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](https://learn.microsoft.com/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics), organization can create [custom alerts](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs). 
+All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](https://learn.microsoft.com/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](https://learn.microsoft.com/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics), organizations can create [custom alerts](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs). 
 
-The following section provides examples of custom alerts that customers can create by integrating Entra Identity Governance with Azure Monitor.
+The following section provides examples of custom alerts that customers can create by integrating Entra ID Governance with Azure Monitor.
 
 | Feature | Example alert |
 | --- | --- |
-| Lifecycle workflows | Alert an IT admin through email when a specific workflow fails. |
-| Entitlement management | Alert an IT administrator through email when a new connected organization is added. |
+| Lifecycle workflows | Alert an IT admin when a specific workflow fails. |
+| Entitlement management | Alert an IT admin when a new connected organization is added. |
 | Entitlement management | Alert an IT admin when a custom extension fails. |
 | Access Reviews | Alert an IT admin when an access review is deleted. |
 | Privileged Identity Management | Alert an IT admin when PIM alerts are disabled. |
-| Multi-tenant collaboration | Alert an IT amin when cross-tenant sync is enabled |
+| Multi-tenant collaboration | Alert an IT admin when cross-tenant sync is enabled |
 | Multi-tenant collaboration | Alert an IT admin when a cross-tenant access policy is enabled |
-| Provisioning | Alert an IT administrator through email when there is a spike in provisioning failures over a 24-hour period. |
+| Provisioning | Alert an IT admin when there is a spike in provisioning failures over a 24-hour period. |
 | Provisioning | Alert an IT admin when the provisioning service does not export any changes in the past month. |
 
 ## Lifecycle workflows
 
-**Alert an IT admin through email when a specific lifecycle workflow fails.**
+**Alert an IT admin when a specific lifecycle workflow fails.**
 
 <u>Query</u>
 
@@ -85,7 +87,7 @@ AuditLogs
 | project-rename source_tenant= AADTenantId
 ````
 
-**As an admin, I can get an email when an inbound cross-tenant sync policy is set to true. This allows your organization to detect when an organization is authorized to synchronize identities into your tenant.**
+**As an admin, I can get an alert when an inbound cross-tenant sync policy is set to true. This allows your organization to detect when an organization is authorized to synchronize identities into your tenant.**
 
 <u>Query</u>
 
@@ -100,7 +102,7 @@ AuditLogs
 
 ## Entitlement management
 
-**Alert an IT admin through email when a new connected organization is created. Users from this organization can now request access to resources made available to all connected organizations.**
+**Alert an IT admin when a new connected organization is created. Users from this organization can now request access to resources made available to all connected organizations.**
 
 <u>Query</u>
 
@@ -115,7 +117,7 @@ AuditLogs
 | project TenantID
 ```
 
-**Alert an IT admin through email when a entitlement management custom extension fails.**
+**Alert an IT admin when a entitlement management custom extension fails.**
 
 <u>Query</u>
 
@@ -140,7 +142,7 @@ AuditLogs
 Privileged Identity Management
 ```
 
-**Alert an IT admin through email when specific PIM security alerts are disabled.**
+**Alert an IT admin when specific PIM security alerts are disabled.**
 
 <u>Query</u>
 
@@ -151,7 +153,7 @@ AuditLogs
 
 ## Provisioning
 
-**Alert an IT administrator through email when there is a spike in provisioning failures over a 24 hour period.**
+**Alert an IT administrator when there is a spike in provisioning failures over a 24 hour period.**
 
 <u>Query</u>
 
@@ -183,5 +185,5 @@ AADProvisioningLogs
 - [Get started with queries in Azure Monitor logs](https://learn.microsoft.com/azure/azure-monitor/logs/get-started-queries)
 - [Create and manage alert groups in the Azure portal](https://learn.microsoft.com/azure/azure-monitor/alerts/action-groups)
 - [Install and use the log analytics views for Microsoft Entra ID](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
+- [Microsoft Entra audit logs Provisioning object summary](https://learn.microsoft.com/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta)
 
-<https://learn.microsoft.com/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta>
