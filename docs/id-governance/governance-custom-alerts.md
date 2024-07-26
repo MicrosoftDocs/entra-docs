@@ -43,7 +43,7 @@ All activity performed by Microsoft Entra Identity Governance services is audite
 
 ## Lifecycle workflows
 
-**Alert an IT admin through email when a specific workflow fails.**
+**Alert an IT admin through email when a specific lifecycle workflow fails.**
 
 <u>Query</u>
 
@@ -66,7 +66,7 @@ AuditLogs
 
 ## Multi-tenant collaboration
 
-**As an admin, I can get an email when a cross-tenant access policy is created.**
+**Alert an IT admin when a new cross-tenant access policy is created. This allows your organization to detect when a relationship has been formed with a new organization.**
 
 <u>Query</u>
 
@@ -81,7 +81,7 @@ AuditLogs
 | project-rename source_tenant= AADTenantId
 ````
 
-**As an admin, I can get an email when an inbound cross-tenant sync policy is set to true.**
+**As an admin, I can get an email when an inbound cross-tenant sync policy is set to true. This allows your organization to detect when an organization is authorized to synchronize identities into your tenant.**
 
 <u>Query</u>
 
@@ -95,7 +95,7 @@ AuditLogs
 
 ## Entitlement management
 
-**Alert an IT admin through email when a new connected organization is created.**
+**Alert an IT admin through email when a new connected organization is created. Users from this organization can now request access to resources made available to all connected organizations.**
 
 <u>Query</u>
 
@@ -116,7 +116,7 @@ AuditLogs
 - Operator:
 - Threshold:
 
-**Alert an IT admin through email when a custom extension fails.**
+**Alert an IT admin through email when a entitlement management custom extension fails.**
 
 <u>Query</u>
 
@@ -129,7 +129,7 @@ AuditLogs
 | where CustomExtensionName in ('<input custom exteionsion name>', '<input custom extension name>')
 ```
 
-Access Reviews
+##Access Reviews##
 
 **Alert an IT admin when an access review has been deleted.**
 
