@@ -118,7 +118,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Fullstory SAML SSO
 
-To configure single sign-on on **Fullstory SAML** side, you need to the downloaded the **Federated Certificate (XML)**  copy and paste the contents of your IdP-generated metadata.xml file into Fullstory to complete the configuration. For more information, please refer [this](https://help.fullstory.com/hc/articles/360020623014-How-do-I-configure-SSO) document.
+To configure single sign-on on **Fullstory SAML** side, you need to the download the **Federated Certificate (XML)** to copy and paste the contents of your IdP-generated metadata.xml file into Fullstory to complete the configuration. For more information, please refer [this](https://help.fullstory.com/hc/articles/360020623014-How-do-I-configure-SSO) document.
 
 ### Create Fullstory SAML test user
 
