@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 07/24/2024
+ms.date: 07/26/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -33,7 +33,7 @@ The advanced diagnostics **Overview** tab shows general configuration details ab
 - **Client version**: The version of the Global Secure Access client that is currently installed on the device.
 
 ## Health check tab
-The **Health check** tab executes common tests to verify that the client works correctly and that its components are running. For deeper coverage of the **Health check** tab, see [Troubleshoot the Global Secure Access client: Health check tab](troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md).
+The **Health check** tab executes common tests to verify that the client works correctly and that its components are running. For deeper coverage of the **Health check** tab, see [Troubleshoot the Global Secure Access client: Health check tab](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
 ## Forwarding profile tab
 The **Forwarding profile** tab shows the list of current, active rules that are set for the forwarding profile. The tab contains the following information:
@@ -84,29 +84,27 @@ The traffic tab allows for the collection of a live list of connections opened b
 For each connection, the available columns include:
 - **Timestamp begin**: The time when the operating system opened the connection.
 - **Timestamp end**: The time when the operating system closed the connection.
-- **Connection status**: Indication if the connection is still active or is already closed.
+- **Connection status**: Indicates whether the connection is still active or is already closed.
 - **Protocol**: The network protocol for the connection; either TCP or UDP.
 - **Destination FQDN**: The destination FQDN for the connection.
 - **Source port**: The source port for the connection.
 - **Destination IP**: The destination IP for the connection.
 - **Destination port**: The destination port for the connection.
-- Correlation vector ID - a unique ID attributed to each connection that can be correlated with Global Secure Access traffic logs in the portal. This ID can also be used by Microsoft's support to investigate internal logs related for a specific connection.
-- Process name - The name of the process that opened the connection.
-- Process ID - the PID of the process that opened the connection.
-- Bytes sent - the number of bytes sent from the device to the destination.
-- Bytes received - the number of bytes received by the device from the destination.
-- Channel - the channel to which the connection was tunneled: M365, Private Access, Internet Access.
-- Flow ID - internal ID for the connection.
-- Rule ID - The rule ID in the forwarding profile that was used to determine the action taken for this connection.
-- Action - The action that was taken for this connection:
-- tunnel - the connection is tunneled by the client the Global Secure Access service in the cloud.
-- bypass - the connection goes directly to the destination through the device's network with no intervention of the client.
-- block - the connection is blocked by the client - possible only in hardening mode.
-- Hardening - Yes/No - whether hardening was applied on this connection. Hardening applies when the Global Secure Access service is not reachable from the device.
-- Tunnel ID - The ID of the tunnel that was used in order to tunnel the connection to Global Secure Access.
+- **Correlation vector ID**: a unique ID attributed to each connection that can be correlated with Global Secure Access traffic logs in the portal. This ID can also be used by Microsoft's support to investigate internal logs related for a specific connection.
+- **Process name**: The name of the process that opened the connection.
+- **Process ID**: The ID number for the process that opened the connection.
+- **Bytes sent**: The number of bytes sent from the device to the destination.
+- **Bytes received**: The number of bytes received by the device from the destination.
+- **Channel**: The channel to which the connection was tunneled; can be M365, Private Access, or Internet Access.
+- **Flow ID**: The internal ID number for the connection.
+- **Rule ID**: The identifer for the forwarding profile rule used to determine the actions for this connection.
+- **Action**: The action that was taken for this connection; posible actions are:
+    - **Tunnel**: The connection is tunneled by the client to the Global Secure Access service in the cloud.
+    - **Bypass**: The connection goes directly to the destination through the device's network with no intervention by the client.
+    - **Block**: The connection is blocked by the client. This is only possible in Hardening mode.
+- **Hardening**: Indicates whether hardening was applied to this connection; can be Yes or No. Hardening applies when the Global Secure Access service is not reachable from the device.
 
 ## Advanced log collection tab
-The advanced log collection tab allows to collect verbose logs of the client, the operating systems and the network traffic during a specific period. The logs collected are archived in a ZIP file that can be sent to the administrator or Microsoft Support for investigation.
-
-Start recording - Starts recording verbose logs. The user needs to reproduce the issue.
-Stop recording - After the issue was reproduced, stop the recording. All the collected logs will be archived in a ZIP file ready to be sent to the support.
+The advanced log collection tab allows for the collection of verbose logs of the client, the operating systems, and the network traffic during a specific period. The logs are archived to a ZIP file that can be sent to the administrator or Microsoft Support for investigation.
+- **Start recording**: Select to begin recording the verbose logs. You need to reproduce the issue while recording.
+- **Stop recording**: After the issue us reproduced, select this button to stop the recording and save the collected logs to a ZIP file. Share the ZIP file with support for troubleshooting assistance.

@@ -1,9 +1,9 @@
 ---
 title: "Troubleshoot the Global Secure Access client: Health check"
-description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.\
+description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 07/24/2024
+ms.date: 07/26/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -16,7 +16,7 @@ ms.reviewer: lirazb
 This document provides troubleshooting guidance for the Global Secure Access client using the **Health check** tab in the Advanced diagnostics utility.
 
 ## Introduction
-The Advanced diagnostics Health check executes tests to verify that the Global Secure Access client is working correctly and that its components are running.
+The Advanced diagnostics Health check runs tests to verify that the Global Secure Access client is working correctly and that its components are running.
 
 ## Run the health check
 To run a health check for the Global Secure Access client:
@@ -26,10 +26,10 @@ To run a health check for the Global Secure Access client:
 
 ### Resolution process
 Most of the Health check tests depend on one another. If tests fail:
-1. Resolve the first failed test.
+1. Resolve the first failed test in the list.
 1. Select **Refresh** to view the updated test status.
 1. Repeat until you have resolved all failed tests.
-:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics-health-check/troubleshoot-health-check-refresh.png" alt-text="Screenshot of the Global Secure Access Health check tab with the Refresh button highlighted.":::
+:::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-refresh.png" alt-text="Screenshot of the Global Secure Access Health check tab with the Refresh button highlighted.":::
 
 ### Check the Event Viewer
 As part of the troubleshooting process, it can be useful to check the Event Viewer for the Global Secure Access client. The log contains valuable events regarding errors and their cause.
@@ -44,7 +44,7 @@ The following checks verify the health of the Global Secure Access client.
 ### Device is Microsoft Entra joined
 The Windows client authenticates the user and the device to Global Secure Access services. The device authentication, based on a device token, requires that the device is either Microsoft Entra joined or Microsoft Entra hybrid joined. Microsoft Entra registered devices are currently not supported.
 To check the status of your device, enter the following command in the Command Prompt: `dsregcmd.exe /status`.
-:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics-health-check/troubleshoot-health-entra-joined.png" alt-text="Screenshot of the Command Prompt with the Device State, AzureAdJoined : Yes, highlighted.":::
+:::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-entra-joined.png" alt-text="Screenshot of the Command Prompt with the Device State, AzureAdJoined : Yes, highlighted.":::
 
 To join your device to a Microsoft Entra tenant, see [Join your Windows machine to Azure Active Directory](https://identitydivision.visualstudio.com/IdentityWiki/_wiki/wikis/IdentityWiki.wiki/44817/Join-your-windows-machine-to-AAD).
 > [!WARNING]
@@ -123,7 +123,7 @@ The client should recieve the updated forwarding profile within 1 hour after you
 For each channel activated in the forwarding profile, this test checks that the configuration contains a URI to probe the service's health. 
 
 To view the health status, double-click the Global Secure Access client system tray icon.
-:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics-health-check/troubleshoot-health-client-status.png" alt-text="Screenshot of the Global Secure Access client system tray icon along with the current health status of Connected.":::
+:::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-client-status.png" alt-text="Screenshot of the Global Secure Access client system tray icon along with the current health status of Connected.":::
 
 If this test fails, it's usually an internal problem with Global Secure Access. Contact Microsoft Support.
 
@@ -136,7 +136,7 @@ If this test fails, enroll in a new certificate by completing the following step
 1. Enter the following command in the Command Prompt: `certlm.msc` to launch the Microsoft Management console.
 1. In the **certlm** window, navigate to **Personal** > **Certificates**.
 1. Delete the certificate that ends with **gsa.client**.
-:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics-health-check/troubleshoot-health-check-gsa-client.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
+:::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-gsa-client.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
 1. Delete the following registry key: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName`.
 1. Restart the Global Secure Access Management Service in the services MMC.
 1. Refresh the certificates MMC to verify that a new certificate was created. *The refresh might take few minutes.*
@@ -152,7 +152,7 @@ If this test fails, enroll in a new certificate by completing the following step
 1. Enter the following command in the Command Prompt: `certlm.msc` to launch the Microsoft Management console.
 1. In the **certlm** window, navigate to **Personal** > **Certificates**.
 1. Delete the certificate that ends with **gsa.client**.
-:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics-health-check/troubleshoot-health-check-gsa-client.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
+:::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-gsa-client.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
 1. Delete the following registry key: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName`.
 1. Restart the Global Secure Access Management Service in the services MMC.
 1. Refresh the certificates MMC to verify that a new certificate was created. *The refresh might take few minutes.*
@@ -272,7 +272,7 @@ Try the PowerShell command from another device connected to the internet from a 
 This test checks whether the proxy is configured on the device. If the end-user device is configured to use a proxy for outgoing traffic to the internet, the destination IPs/FQDNs acquired by the client need to be excluded by a Proxy Auto-Configuration (PAC) file or with the Web Proxy Auto-Discovery (WPAD) protocol.
 
 #### Change the PAC file
-Add the FQDNs/IPs to be tunneled to Global Secure Access edge as exclusions in the PAC file, so that HTTP requests for these destinations won’t be redirected to the proxy. (These FQDNs/IPs are also set to be tunneled to Global Secure Access in the forwarding profile).
+Add the FQDNs/IPs to be tunneled to Global Secure Access edge as exclusions in the PAC file, so that HTTP requests for these destinations won’t be redirected to the proxy. (These FQDNs/IPs are also set to be tunneled to Global Secure Access in the forwarding profile.)
 For the client's status health to be shown properly, add the FQDN used for health probing to the exclusions list: edgediagnostic.globalsecureaccess.microsoft.com 
 
 Example PAC file containing exclusions:

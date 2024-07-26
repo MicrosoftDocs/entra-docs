@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/24/2024
+ms.date: 07/25/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -33,7 +33,7 @@ This article describes how to download and install the Global Secure Access clie
 ### Known limitations
 This is a list of the known limitations of the current version of the Global Secure Access client.
 
-- **Secure DNS**: Secure DNS in its different versions (DNS over HTTPS, DNS over TLS, DNSSEC) is currently not supported. For the client to work correctly and acquire network traffic, Secure DNS must be disabled. To disable DNS, see [DNS over HTTPS not supported](troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md#dns-over-https-not-supported).
+- **Secure DNS**: Secure DNS in its different versions (DNS over HTTPS, DNS over TLS, DNSSEC) is currently not supported. For the client to work correctly and acquire network traffic, Secure DNS must be disabled. To disable DNS, see [DNS over HTTPS not supported](troubleshoot-global-secure-access-client-diagnostics-health-check.md#dns-over-https-not-supported).
 - **DNS over TCP**: DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. Currently the client doesn't support DNS port 53 TCP. As a mitigation, disable the browser's DNS client by setting the following registry values:
     - **Edge**
     ``[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
@@ -41,7 +41,7 @@ This is a list of the known limitations of the current version of the Global Sec
     - **Chrome** 
     ``[HKEY_CURRENT_USER\Software\Policies\Google\Chrome]
       "BuiltInDnsClientEnabled"=dword:00000000``
-- **IPv6 is not supported**: The client tunnels only IPv4 traffic. IPv6 traffic is not acquired by the client and therefore transferred directly to the network. To prefer IPv4 over IPV6, so all relevant traffic will be tunneled, set network adapter properties, see [IPv4 preferred](troubleshoot-global-secure-access-client-advanced-diagnostics-health-check.md#ipv4-preferred).
+- **IPv6 is not supported**: The client tunnels only IPv4 traffic. IPv6 traffic is not acquired by the client and therefore transferred directly to the network. To prefer IPv4 over IPV6, so all relevant traffic will be tunneled, set network adapter properties, see [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
 - **Connection fallback**: If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
 - **Geolocation**: For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This might affect services that rely on geolocation.
 > [!TIP]
@@ -186,7 +186,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "BuiltInDns
 
 Example proxy PAC file containing exclusions:
 
-```
+```http
 function FindProxyForURL(url, host) {  // basic function; do not change
    if (isPlainHostName(host) ||
       dnsDomainIs(host, ".contoso.com") || //tunneled
