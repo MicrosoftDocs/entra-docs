@@ -27,7 +27,7 @@ The following table outlines some of the standard notifications that Microsoft E
 
 # Custom email notifications
 
-All activity performed by Microsoft Entra Identity Governance services is audited in the Microsoft Entra Audit Logs. By pushing the logs to Azure Monitor, customers can create custom notifications that are tailored to meet their organization's needs. The following section provides examples of custom alerts that customers can create by integrating Entra Identity Governance with Azure Monitor.
+All activity performed by Microsoft Entra Identity Governance services is audited in the Microsoft Entra [Audit Logs](https://learn.microsoft.com/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to [Azure Monitor](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), customers can create custom notifications that are tailored to meet their organization's needs. The following section provides examples of custom alerts that customers can create by integrating Entra Identity Governance with Azure Monitor.
 
 | Feature | Example alert |
 | --- | --- |
@@ -192,9 +192,9 @@ AADProvisioningLogs
 
 **Next steps**
 
-- [Log analytics](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics)
-- [Get started with queries in Azure Monitor logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries)
-- [Create and manage alert groups in the Azure portal](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups)
-- [Install and use the log analytics views for Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
+- [Log analytics](https://learn.microsoft.com/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics)
+- [Get started with queries in Azure Monitor logs](https://learn.microsoft.com/azure/azure-monitor/logs/get-started-queries)
+- [Create and manage alert groups in the Azure portal](https://learn.microsoft.com/azure/azure-monitor/alerts/action-groups)
+- [Install and use the log analytics views for Microsoft Entra ID](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
 
-<https://learn.microsoft.com/en-us/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta>
+<https://learn.microsoft.com/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta>
