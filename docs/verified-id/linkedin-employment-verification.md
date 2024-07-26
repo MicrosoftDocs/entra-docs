@@ -21,9 +21,7 @@ If your organization wants its employees to get their place of work verified on 
 1. Set up your Microsoft Entra Verified ID service by following the [quick setup instructions](verifiable-credentials-configure-tenant-quick.md).
 1. The quick setup creates the VerifiedEmployee credential type automatically. But if you did set up Verified ID using the [manual setup instructions](verifiable-credentials-configure-tenant.md), then you need to manually [create](how-to-use-quickstart-verifiedemployee.md#create-a-verified-employee-credential) a Verified ID Employee credential.
 1. Use [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials) to issue your VerifiedEmployee credentials.
-1. Configure the LinkedIn company page  with your organization DID (decentralized identity) and URL of the custom Webapp. You can't self-service the LinkedIn company page.
-1. Today, you need to fill in [this form](https://aka.ms/enablelinkedin) and we can enable your organization.
-1. Once you deploy the updated LinkedIn mobile app your employees can get verified.
+1. Send your Verified ID setup details along with your organization DID (decentralized identity), your LinkedIn profile as well as LinkedIn company page to [ownyouridentity@microsoft.com](mailto:ownyouridentity@microsoft.com). We'll review your submission and follow up with next steps if accepted.
 
 >[!IMPORTANT]
 > The form requires that you provide your Microsoft account manager as the contact. The app version required is Android **4.1.813** or newer, or iOS we require **9.27.2173** or newer. Keep in mind that inside the app, the version number shows **9.27.2336**, but in the App store the version number would be **9.1.312** or higher.
