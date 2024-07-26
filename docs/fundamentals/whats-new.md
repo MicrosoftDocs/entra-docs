@@ -49,6 +49,22 @@ For example, if Purview detects unusual activity from a user, Conditional Access
 
 ---
 
+### General Availability - New Federated Apps available in Microsoft Entra Application gallery - July 2024
+
+**Type:** New feature   
+**Service category:** Enterprise Apps                
+**Product capability:** 3rd Party Integration          
+
+In February 2024 we added the following 10 new applications in our App gallery with Federation support:
+
+[Fullstory SAML](../identity/saas-apps/fullstory-saml-tutorial.md), [LSEG Workspace](https://azuremarketplace.microsoft.com/en-US/marketplace/apps/aad.lsegworkspace?tab=Overview)
+
+You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
+
+For listing your application in the Microsoft Entra ID app gallery, read the details here https://aka.ms/AzureADAppRequest.
+
+---
+
 ### General Availability - Device based conditional access to Microsoft 365/Azure resources on Red Hat Enterprise Linux
 
 **Type:** New feature    
