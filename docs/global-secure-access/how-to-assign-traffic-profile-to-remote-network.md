@@ -47,7 +47,7 @@ To assign a remote network to a traffic forwarding profile to, you must have:
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Select **Add/edit assignments** for **Microsoft traffic profile**. 
 
-![Screenshot of add/edit assignment on the Microsoft traffic profile.](media/how-to-assign-traffic-profile-to-remote-network/microsoft-traffic-profile-remote-network-button.png)
+![Screenshot of add/edit assignment on the Microsoft traffic profile.](media/how-to-assign-traffic-profile-to-remote-network/microsoft-traffic-profile-remote-network.png)
 
 ### Assign a traffic profile to a remote network using the Microsoft Graph API
 
