@@ -120,6 +120,9 @@ The following table lists the tasks that the entitlement management roles can do
 
 To determine the least privileged role for a task, you can also reference [Administrator roles by admin task in Microsoft Entra ID](~/identity/role-based-access-control/delegate-by-task.md#entitlement-management).
 
+> [!NOTE]
+> Users that have been assigned the Access package assignment manager role will no longer be able to bypass approval settings when directly assigning a user if the access package policy requires approval. If you have a scenario in which you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to users who need access.
+
 ## Required roles to add resources to a catalog
 
 A Global Administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog.
