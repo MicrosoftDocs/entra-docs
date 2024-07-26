@@ -18,75 +18,73 @@ The tables list information about deployment status.
 
 - The locations the Global Secure Access service is deployed. 
 - The locations that Remote Network connectivity gateways are active. 
-- The locations that the Private Access service is deployed.
-
 
 ### Asia Pacific (APAC)
 The table lists the deployment status for the APAC region.
 
-|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | Private Access service deployed |
-| ---                        | --- | --- | --- |
-|Busan, South Korea          | ✅ | ✅ | ✅ |
-|Chennai, India              | ✅ | ✅ | ✅ |
-|Melbourne, Australia        | ✅ | ✅ | ✅ |
-|Osaka, Japan                | ✅ | ✅ | ✅ |
-|Pune, India                 | ✅ |    | ✅ |
-|Seoul, South Korea          | ✅ | ✅ |   |
-|Singapore, Singapore        | ✅ |    | ✅ |
-|Sydney, Australia           | ✅ | ✅ | ✅ |
-|Taipei, Taiwan              | ✅ |    |   |
-|Tokyo, Japan                | ✅ | ✅ | ✅ |
+|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | 
+| ---                        | --- | --- | 
+|Busan, South Korea          | ✅ | ✅ |
+|Chennai, India              | ✅ | ✅ |
+|Melbourne, Australia        | ✅ | ✅ |
+|Osaka, Japan                | ✅ | ✅ |
+|Pune, India                 | ✅ |    |
+|Seoul, South Korea          | ✅ | ✅ |
+|Singapore, Singapore        | ✅ |    |
+|Sydney, Australia           | ✅ | ✅ |
+|Taipei, Taiwan              | ✅ |    |
+|Tokyo, Japan                | ✅ | ✅ |
 
 
 ### Europe Middle East Africa (EMEA)
 The table lists the deployment status for the EMEA region.
 
-|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | Private Access service deployed |
-| ---                        | --- | --- | --- |
-|Amsterdam, Netherlands      | ✅ | ✅ | ✅ |
-|Berlin, Germany             | ✅ |    |     |
-|Cape Town, South Africa     | ✅ | ✅ |    |
-|Dubai, UAE                  | ✅ | ✅ | ✅ |
-|Dublin, Ireland             | ✅ | ✅ | ✅ |
-|Frankfurt, Germany          | ✅ | ✅ | ✅ |
-|Gavle, Sweden               | ✅ | ✅ |    |
-|Johannesburg, South Africa  | ✅ | ✅ |    |
-|London, UK                  | ✅ | ✅ |    |
-|Madrid, Spain               | ✅ |    |     |
-|Milan, Italy                | ✅ | ✅ |    |
-|Marseille, France           | ✅ | ✅ |    |
-|Paris, France               | ✅ | ✅ | ✅ |
-|Tel Aviv, Israel            | ✅ | ✅ | ✅ |
-|Warsaw, Poland              | ✅ | ✅ |    |
-|Zurich, Switzerland         | ✅ | ✅ |    |
+|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | 
+| ---                        | --- | --- |
+|Amsterdam, Netherlands      | ✅ | ✅ |
+|Berlin, Germany             | ✅ |    |
+|Cape Town, South Africa     | ✅ | ✅ | 
+|Dubai, UAE                  | ✅ | ✅ |
+|Dublin, Ireland             | ✅ | ✅ |
+|Frankfurt, Germany          | ✅ | ✅ |
+|Gavle, Sweden               | ✅ | ✅ | 
+|Johannesburg, South Africa  | ✅ | ✅ | 
+|London, UK                  | ✅ | ✅ |
+|Madrid, Spain               | ✅ |    | 
+|Milan, Italy                | ✅ | ✅ |
+|Marseille, France           | ✅ | ✅ |
+|Paris, France               | ✅ | ✅ |
+|Tel Aviv, Israel            | ✅ | ✅ |
+|Warsaw, Poland              | ✅ | ✅ |
+|Zurich, Switzerland         | ✅ | ✅ |
 
 
 ### Latin America (LATAM)
 The table lists the deployment status for the LATAM region.
 
-|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | Private Access service deployed |
-| ---                        | --- | --- | --- |
-|Campinas, Brazil            | ✅ |   | ✅ |
-|Rio de Janeiro, Brazil      | ✅ |   | ✅ |
+|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | 
+| ---                        | --- | --- | 
+|Campinas, Brazil            | ✅ |   | 
+|Rio de Janeiro, Brazil      | ✅ |   | 
 
 
 ### North America (NA)
 The table lists the deployment status for the NA region.
 
-|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | Private Access service deployed |
-| ---                        | --- | --- | --- |
-|Boydton, Virginia, USA      | ✅ | ✅ |     |
-|Cheyenne, Wyoming, USA      | ✅ | ✅ |     |
-|Chicago, Illinois, USA      | ✅ | ✅ |     |
-|Des Moines, Iowa, USA       | ✅ | ✅ | ✅ |
-|Manassas, Virginia, USA     | ✅ | ✅ | ✅ |
-|Montreal, Quebec, Canada    | ✅ | ✅ |     |
-|Phoenix, Arizona, USA       | ✅ | ✅ |     |
-|Queretaro, Mexico           | ✅ |    |     |
-|Quincy, Washington, USA     | ✅ | ✅ |     |
-|San Antonio, Texas, USA     | ✅ | ✅ | ✅ |
-|San Jose, California, USA   | ✅ | ✅ | ✅ |
-|Toronto, Ontario, Canada    | ✅ | ✅ |     |
+|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | 
+| ---                        | --- | --- |
+|Boydton, Virginia, USA      | ✅ | ✅ | 
+|Cheyenne, Wyoming, USA      | ✅ | ✅ | 
+|Chicago, Illinois, USA      | ✅ | ✅ | 
+|Des Moines, Iowa, USA       | ✅ | ✅ |
+|Manassas, Virginia, USA     | ✅ | ✅ | 
+|Montreal, Quebec, Canada    | ✅ | ✅ | 
+|Phoenix, Arizona, USA       | ✅ | ✅ | 
+|Queretaro, Mexico           | ✅ |    | 
+|Quincy, Washington, USA     | ✅ | ✅ | 
+|San Antonio, Texas, USA     | ✅ | ✅ | 
+|San Jose, California, USA   | ✅ | ✅ | 
+|Toronto, Ontario, Canada    | ✅ | ✅ | 
 
 
 ## IP addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service
