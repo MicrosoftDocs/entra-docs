@@ -86,6 +86,9 @@ $sp | Export-Csv -Encoding UTF8 -NoTypeInformation -Path ".\assignments.csv"
 
 In some cases, you might want to directly assign specific users to an access package so that users don't have to go through the process of requesting the access package. To directly assign users, the access package must have a policy that allows administrator direct assignments.
 
+> [!NOTE]
+> When assigning users to an access package, administrators will need to verify that the users are eligible for that access package based on the existing policy requirements. Otherwise, the users won't successfully be assigned to the access package.
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner, Access Package manager, and the Access Package assignment manager.
@@ -121,7 +124,7 @@ In some cases, you might want to directly assign specific users to an access pac
     After a few moments, select **Refresh** to see the users in the Assignments list.
     
 > [!NOTE]
-> When assigning users to an access package, administrators will need to verify that the users are eligible for that access package based on the existing policy requirements. Otherwise, the users won't successfully be assigned to the access package. If the access package contains a policy that requires user requests to be approved, users can't be directly assigned to the package without necessary approval(s) from the designated approver(s).
+> Access package assignment managers will no longer be able to bypass approval settings if the policy requires approval. This means users can't be directly assigned to the package without necessary approval(s) from the designated approver(s). In the case that you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to users who need access.
 
 ## Directly assign any user (Preview)
 
