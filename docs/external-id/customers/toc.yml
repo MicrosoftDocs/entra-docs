@@ -292,6 +292,8 @@ items:
       href: concept-user-attributes.md
     - name: Authentication methods and identity providers
       href: concept-authentication-methods-customers.md
+    - name: Multifactor authentication (MFA)
+      href: concept-multifactor-authentication-customers.md
     - name: Native authentication
       items:
         - name: Native authentication

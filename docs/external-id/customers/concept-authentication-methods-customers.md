@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 05/15/2024
+ms.date: 07/26/2024
 ms.author: mimart
 ms.custom: it-pro
 ---
@@ -20,7 +20,7 @@ ms.custom: it-pro
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with their own social account. You can also add a layer of security by enforcing multifactor authentication (MFA) so that each time a user signs in, they're required to provide a one-time passcode for verification.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with their own social account. You can also add a layer of security by enforcing multifactor authentication (MFA) so that each time a user signs in, they're required to provide an email one-time passcode or an SMS text code for verification.
 
 This article describes the authentication methods and identity providers available in external tenants.
 
@@ -44,14 +44,24 @@ Email with one-time passcode is an option in your local account identity provide
 
 - **Sign-up**: Customers can sign up with their email address and request a temporary code, which is sent to their email address. Then they enter this code to continue signing in.
 
-- **Sign-in**: After the customer signs up and creates an account, each time they sign they'll enter their email address and receive a temporary passcode.
+- **Sign-in**: After the customer signs up and creates an account, each time they sign in they'll enter their email address and receive a temporary passcode.
 
    :::image type="content" source="media/concept-authentication-methods-customers/email-passcode-sign-in.png" alt-text="Screenshots of the email with one-time passcode sign-in screens." border="false":::
 
-> [!IMPORTANT]
-> If you want to enable [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md), set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, other verification methods aren't available for customer scenarios.
+You can also configure options for showing, hiding, or customizing the self-service password reset link on the sign-in page ([learn more](how-to-customize-branding-customers.md#to-customize-self-service-password-reset)).
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email one-time passcode** is one of the local account options.
+
+## Multifactor authentication (MFA)
+
+[Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support both email one-time passcodes and [SMS-based authentication](how-to-sms-mfa.md) for second-factor verification.
+
+The local email account options we've discussed, such as using an email with a password or an email one-time passcode, serve as first-factor authentication methods for sign-up and sign-in user flows. Depending on which of these options you choose as the first factor, the following second-factor authentication methods are available in external tenants:
+
+- Email one-time passcode
+- SMS-based authentication
+
+For details, see [multifactor authentication (MFA) in external tenants](concept-multifactor-authentication-customers.md).
 
 ## Social identity providers: Facebook and Google
 
