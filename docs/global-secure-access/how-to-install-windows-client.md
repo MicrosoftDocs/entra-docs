@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/25/2024
+ms.date: 07/26/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -54,8 +54,6 @@ This is a list of the known limitations of the current version of the Global Sec
 
 - **Proxy**: If a proxy is configured at the application level (ex. browser) or at the OS level, a PAC file should be configured to allow correct functioning of the client. The PAC file should be configured to exclude all FQDNs and IPs that are expected to be tunneled by the client.
 
-- 
-- 
 - 
 - Multiple user sessions on the same device, like those from a Remote Desktop Server (RDP), aren't supported.
 - Networks that use a captive portal, like some guest wireless network solutions, might cause the client connection to fail. As a workaround you can [pause the Global Secure Access client](#troubleshooting).
