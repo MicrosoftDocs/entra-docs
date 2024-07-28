@@ -37,5 +37,3 @@ The guest user is federated to a home tenant that is also a Microsoft Entra tena
 - Guest users have their administrators remediate their risk. In this case, the administrator resets a password (temporary password generation). The guest user's administrator can go to https://aka.ms/RiskyUsers and select **Reset password**.
 
 - Guest users have their administrators dismiss their risk. The admin can go to https://aka.ms/RiskyUsers and select **Dismiss user risk**. However, the administrator must do the due diligence to make sure the risk assessment was a false positive before dismissing the user risk. Otherwise, resources are put at risk by suppressing a risk assessment without investigation.
-
-If you have any issues with access, contact the [Microsoft Entra SSO Integration Team](mailto:SaaSApplicationIntegrations@service.microsoft.com).
