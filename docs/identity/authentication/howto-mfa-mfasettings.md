@@ -80,26 +80,9 @@ To enable **Report suspicious activity** from the Authentication methods policy 
 >[!NOTE]
 >If you enable **Report suspicious activity** and specify a custom voice reporting value while the tenant still has **Fraud Alert** enabled in parallel with a custom voice reporting number configured, the **Report suspicious activity** value will be used instead of **Fraud Alert**.
 
-### View suspicious activity events 
-
-When a user reports a MFA prompt as suspicious, the event shows up in the Sign-ins report (as a sign-in that was rejected by the user), in the Audit logs, and in the Risk detections report.   
-
-- To view the risk detections report, select **Protection** > **Identity Protection** > **Risk detection**.  The risk event is part of the standard **Risk Detections** report, and will appear as Detection Type **User Reported Suspicious Activity**, Risk level **High**, Source **End user reported**. 
-
-- To view fraud reports in the Sign-ins report, select **Identity** > **Monitoring & health** > **Sign-in logs** > **Authentication Details**. The fraud report is part of the standard **Microsoft Entra sign-ins** report and appears in the Result Detail as MFA denied, Fraud Code Entered. 
-
-- To view fraud reports in the Audit logs, select **Identity** > **Monitoring & health** > **Audit logs**. The fraud report appears under Activity type Fraud reported - user is blocked for MFA or Fraud reported - no action taken based on the tenant-level settings for fraud report.  
-
->[!NOTE]
->A user is not reported as High Risk if they perform passwordless authentication.
-
-### Manage suspicious activity events 
-
-Once a user has reported a prompt as suspicious, the risk should be investigated and remediated with [Identity Protection](~/id-protection/howto-identity-protection-remediate-unblock.md). 
-
 ### Remediating risk for tenants with Microsoft Entra ID P1 license
 
-There are three places in the Microsoft Entra admin center where you can view and investigate suspicious activity events.
+When a user reports a MFA prompt as suspicious, the event shows up in the Sign-ins report (as a sign-in that was rejected by the user), in the Audit logs, and in the Risk detections report.   
 
 | Report | Admin center | Details |
 |--------------|--------|---------|
@@ -107,6 +90,8 @@ There are three places in the Microsoft Entra admin center where you can view an
 | Sign-ins report | **Identity** > **Monitoring & health** > **Sign-in logs** > **Authentication details** | Result detail will show as **MFA denied, fraud code entered** |
 | Audit logs   | **Identity** > **Monitoring & health** > **Audit logs** | The fraud report will appear under Activity type **Fraud reported** |
 
+>[!NOTE]
+>A user isn't reported as High Risk if they perform passwordless authentication.
 
 You can also query for risk detections and users flagged as risky by using Microsoft Graph.
 
@@ -116,6 +101,22 @@ You can also query for risk detections and users flagged as risky by using Micro
 | [List riskyUsers](/graph/api/riskyuser-list) | riskLevel = **high** |
 
 For manual remediation, administrators or helpdesk can ask the users to reset their password by using self-service password reset (SSPR), or do so on their behalf. For automated remediation, use the Microsoft Graph APIs, or use PowerShell to create a script that changes the user’s password,  forces SSPR, revokes sign-in sessions, or temporarily disables the user account.
+
+### Remediating risk for tenants with Microsoft Entra ID P2 license
+
+Tenants with a Microsoft Entra ID P2 license can use risk-based Conditional Access policies to automatically remediate user risk, in addition to the options Microsoft Entra ID P2 license.
+
+Configure a policy that looks at user risk under **Conditions** > **User risk**. Look for users where risk = high to either block them from sign in or require them to reset their password.
+
+:::image type="content" border="true" source="media/howto-mfa-mfasettings/risk-based-conditional-access.png" alt-text="Screenshot of how to enable a risk-based Conditional Access policy.":::
+
+For more information, see [Sign-in risk-based Conditional Access policy](~/id-protection/concept-identity-protection-policies.md#sign-in-risk-based-conditional-access-policy).
+
+### Manage suspicious activity events 
+
+Once a user has reported a prompt as suspicious, the risk should be investigated and remediated with [Identity Protection](~/id-protection/howto-identity-protection-remediate-unblock.md). 
+
+
 
 ### Report suspicious activity and fraud alert 
 
