@@ -5,7 +5,7 @@ description: Create Conditional Access policies using signals from Adaptive prot
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 06/20/2024
+ms.date: 07/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,7 +14,7 @@ ms.reviewer: poulomib
 ---
 # Common Conditional Access policy: Block access for users with insider risk
 
-Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You may want to block that user or maybe just ask them to review a [terms of use policy](terms-of-use.md). Microsoft Purview can provide an [insider risk signal](concept-conditional-access-conditions.md#insider-risk) to Conditional Access to refine access control decisions. Insider risk management is part of [Microsoft Purview](/purview/insider-risk-management-adaptive-protection). You must enable it before you can use the signal in Conditional Access.
+Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You might want to block that user or ask them to review a specific [terms of use policy](terms-of-use.md). Microsoft Purview can provide an [insider risk signal](concept-conditional-access-conditions.md#insider-risk) to Conditional Access to refine access control decisions. Insider risk management is part of [Microsoft Purview](/purview/insider-risk-management-adaptive-protection). You must enable it before you can use the signal in Conditional Access.
 
 :::image type="content" source="media/how-to-policy-insider-risk/insider-risk-based-conditional-access-policy.png" alt-text="Screenshot of an example Conditional Access policy using insider risk as a condition." lightbox="media/how-to-policy-insider-risk/insider-risk-based-conditional-access-policy.png":::
 
@@ -51,7 +51,9 @@ Most users have a normal behavior that can be tracked, when they fall outside of
 
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
-## Next steps
+Some administrators might create other Conditional Access policies that use other access controls, like terms of use on lower levels of insider risk.
+
+## Related content
 
 - [Dynamically mitigate risks with adaptive protection](/purview/insider-risk-management-adaptive-protection)
 - [Insider risk as a condition](concept-conditional-access-conditions.md#insider-risk)

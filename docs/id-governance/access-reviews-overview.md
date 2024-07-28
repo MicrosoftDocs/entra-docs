@@ -18,7 +18,7 @@ Access reviews in Microsoft Entra ID, part of Microsoft Entra, enable organizati
 
 Here's a video that provides a quick overview of access reviews:
 
->[!VIDEO https://www.youtube.com/embed/kDRjQQ22Wkk]
+>[!VIDEO https://www.youtube.com/embed/VSl1TVITcQ8]
 
 ## Why are access reviews important?
 
