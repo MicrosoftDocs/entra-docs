@@ -22,9 +22,9 @@ The following Microsoft Entra MFA settings are available:
 | Feature | Description |
 | ------- | ----------- |
 | [Account lockout (MFA Server only)](#account-lockout-mfa-server-only) | Temporarily lock accounts from using Microsoft Entra MFA if there are too many denied authentication attempts in a row. This feature applies only to users who use MFA Server to enter a PIN to authenticate. |
-| [Block/unblock users](#block-and-unblock-users) | Block specific users from being able to receive Microsoft Entra MFA requests. Any authentication attempts for blocked users are automatically denied. The user isn't challenged with MFA for 90 days from the time they're blocked |
-| [Fraud alert](#fraud-alert) | Configure settings that allow users to report fraudulent verification requests. |
-| [Report suspicious activity](#report-suspicious-activity) | Configure settings that allow users to report fraudulent verification requests. |
+| [Report suspicious activity](#report-suspicious-activity) | Configure settings that allow users to report fraudulent verification requests. Report suspicious activity replaces Block/unblock users, Fraud alert, and Notifications from MFA Server.|
+| [Block/unblock users](#block-and-unblock-users) | This  [Report suspicious activity](#report-suspicious-activity) to block specific users from being able to receive Microsoft Entra MFA requests. Any authentication attempts for blocked users are automatically denied. The user isn't challenged with MFA for 90 days from the time they're blocked. |
+| [Fraud alert](#fraud-alert) | Use [Report suspicious activity](#report-suspicious-activity) to configure settings that allow users to report fraudulent verification requests. |
 | [Notifications](#notifications) | Enable notifications of events from MFA Server. |
 | [OATH tokens](concept-authentication-oath-tokens.md) | Used in cloud-based Microsoft Entra MFA environments to manage OATH tokens for users. |
 | [Phone call settings](#phone-call-settings) | Configure settings related to phone calls and greetings for cloud and on-premises environments. |
@@ -53,6 +53,47 @@ To configure account lockout settings, complete these steps:
 1. Enter the values for your environment, and then select **Save**.
 
     ![Screenshot that shows the account lockout settings.](./media/howto-mfa-mfasettings/account-lockout-settings.png)
+
+## Report suspicious activity
+
+**Report suspicious activity**, the updated **MFA Fraud Alert** feature, is now available. When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using Microsoft Authenticator or through their phone. These alerts are integrated with [Identity Protection](~/id-protection/overview-identity-protection.md) for more comprehensive coverage and capability. 
+
+Users who report an MFA prompt as suspicious are set to **High User Risk**. Administrators can use risk-based policies to limit access for these users, or enable self-service password reset (SSPR) for users to remediate problems on their own. If you previously used the **Fraud Alert** automatic blocking feature and don't have a Microsoft Entra ID P2 license for risk-based policies, you can use risk detection events to identify and disable impacted users and automatically prevent their sign-in. For more information about using risk-based policies, see [Risk-based access policies](~/id-protection/concept-identity-protection-policies.md).  
+
+To enable **Report suspicious activity** from the Authentication methods **Settings**:   
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Protection** > **Authentication Methods** > **Settings**. 
+1. Set **Report suspicious activity** to **Enabled**. The feature remains disabled if you choose **Microsoft managed**. For more information about Microsoft managed values, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
+1. Select **All users** or a specific group. 
+1. If you also upload custom greetings for your tenant, select a **Reporting code**. The reporting code is the number that users enter into their phone to report suspicious activity. The reporting code is only applicable if custom greetings are also uploaded by an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator). Otherwise, the default code is 0, regardless of any value specified in the policy.
+1. Click **Save**. 
+
+>[!NOTE]
+>If you enable **Report suspicious activity** and specify a custom voice reporting value while the tenant still has **Fraud Alert** enabled in parallel with a custom voice reporting number configured, the **Report suspicious activity** value will be used instead of **Fraud Alert**.
+
+### View suspicious activity events 
+
+When a user reports a MFA prompt as suspicious, the event shows up in the Sign-ins report (as a sign-in that was rejected by the user), in the Audit logs, and in the Risk detections report.   
+
+- To view the risk detections report, select **Protection** > **Identity Protection** > **Risk detection**.  The risk event is part of the standard **Risk Detections** report, and will appear as Detection Type **User Reported Suspicious Activity**, Risk level **High**, Source **End user reported**. 
+
+- To view fraud reports in the Sign-ins report, select **Identity** > **Monitoring & health** > **Sign-in logs** > **Authentication Details**. The fraud report is part of the standard **Microsoft Entra sign-ins** report and appears in the Result Detail as MFA denied, Fraud Code Entered. 
+
+- To view fraud reports in the Audit logs, select **Identity** > **Monitoring & health** > **Audit logs**. The fraud report appears under Activity type Fraud reported - user is blocked for MFA or Fraud reported - no action taken based on the tenant-level settings for fraud report.  
+
+>[!NOTE]
+>A user is not reported as High Risk if they perform passwordless authentication.
+
+### Manage suspicious activity events 
+
+Once a user has reported a prompt as suspicious, the risk should be investigated and remediated with [Identity Protection](~/id-protection/howto-identity-protection-remediate-unblock.md). 
+
+### Report suspicious activity and fraud alert 
+
+**Report suspicious activity** and the legacy **Fraud Alert** implementation can operate in parallel. You can keep your tenant-wide **Fraud Alert** functionality in place while you start to use **Report suspicious activity** with a targeted test group. 
+
+If **Fraud Alert** is enabled with Automatic Blocking, and **Report suspicious activity** is enabled, the user will be added to the blocklist and set as high-risk and in-scope for any other policies configured. These users will need to be removed from the blocklist and have their risk remediated to enable them to sign in with MFA. 
 
 ## Block and unblock users
 
@@ -98,46 +139,6 @@ To enable and configure fraud alerts, complete the following steps:
 1. Configure the **Automatically block users who report fraud** or **Code to report fraud during initial greeting** setting as needed.
 1. Select **Save**.
 
-## Report suspicious activity
-
-**Report suspicious activity**, the updated **MFA Fraud Alert** feature, is now available. When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using Microsoft Authenticator or through their phone. These alerts are integrated with [Identity Protection](~/id-protection/overview-identity-protection.md) for more comprehensive coverage and capability. 
-
-Users who report an MFA prompt as suspicious are set to **High User Risk**. Administrators can use risk-based policies to limit access for these users, or enable self-service password reset (SSPR) for users to remediate problems on their own. If you previously used the **Fraud Alert** automatic blocking feature and don't have a Microsoft Entra ID P2 license for risk-based policies, you can use risk detection events to identify and disable impacted users and automatically prevent their sign-in. For more information about using risk-based policies, see [Risk-based access policies](~/id-protection/concept-identity-protection-policies.md).  
-
-To enable **Report suspicious activity** from the Authentication methods **Settings**:   
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication Methods** > **Settings**. 
-1. Set **Report suspicious activity** to **Enabled**. The feature remains disabled if you choose **Microsoft managed**. For more information about Microsoft managed values, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
-1. Select **All users** or a specific group. 
-1. If you also upload custom greetings for your tenant, select a **Reporting code**. The reporting code is the number that users enter into their phone to report suspicious activity. The reporting code is only applicable if custom greetings are also uploaded by an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator). Otherwise, the default code is 0, regardless of any value specified in the policy.
-1. Click **Save**. 
-
->[!NOTE]
->If you enable **Report suspicious activity** and specify a custom voice reporting value while the tenant still has **Fraud Alert** enabled in parallel with a custom voice reporting number configured, the **Report suspicious activity** value will be used instead of **Fraud Alert**.
-
-### View suspicious activity events 
-
-When a user reports a MFA prompt as suspicious, the event shows up in the Sign-ins report (as a sign-in that was rejected by the user), in the Audit logs, and in the Risk detections report.   
-
-- To view the risk detections report, select **Protection** > **Identity Protection** > **Risk detection**.  The risk event is part of the standard **Risk Detections** report, and will appear as Detection Type **User Reported Suspicious Activity**, Risk level **High**, Source **End user reported**. 
-
-- To view fraud reports in the Sign-ins report, select **Identity** > **Monitoring & health** > **Sign-in logs** > **Authentication Details**. The fraud report is part of the standard **Microsoft Entra sign-ins** report and appears in the Result Detail as MFA denied, Fraud Code Entered. 
-
-- To view fraud reports in the Audit logs, select **Identity** > **Monitoring & health** > **Audit logs**. The fraud report appears under Activity type Fraud reported - user is blocked for MFA or Fraud reported - no action taken based on the tenant-level settings for fraud report.  
-
->[!NOTE]
->A user is not reported as High Risk if they perform passwordless authentication.
-
-### Manage suspicious activity events 
-
-Once a user has reported a prompt as suspicious, the risk should be investigated and remediated with [Identity Protection](~/id-protection/howto-identity-protection-remediate-unblock.md). 
-
-### Report suspicious activity and fraud alert 
-
-**Report suspicious activity** and the legacy **Fraud Alert** implementation can operate in parallel. You can keep your tenant-wide **Fraud Alert** functionality in place while you start to use **Report suspicious activity** with a targeted test group. 
-
-If **Fraud Alert** is enabled with Automatic Blocking, and **Report suspicious activity** is enabled, the user will be added to the blocklist and set as high-risk and in-scope for any other policies configured. These users will need to be removed from the blocklist and have their risk remediated to enable them to sign in with MFA. 
 
 ## Notifications
 
