@@ -126,11 +126,11 @@
         items:
         - name: Enable passkeys for an organization
           href: how-to-enable-passkey-fido2.md
-        - name: Register passkey (preview)
+        - name: Register passkey 
           href: how-to-register-passkey.md
-        - name: Register passkey with a mobile device (preview)
+        - name: Register passkey with a mobile device 
           href: how-to-register-passkey-mobile.md
-        - name: Sign in with passkey (preview)
+        - name: Sign in with passkey 
           href: how-to-sign-in-passkey.md  
         - name: Passkey (FIDO2) compatibility matrix
           href: concept-fido2-compatibility.md
@@ -138,13 +138,15 @@
           href: concept-fido2-hardware-vendor.md  
       - name: Microsoft Authenticator
         items:
-        - name: Enable passkeys in Authenticator (preview)
+        - name: Enable passkeys in Authenticator 
           href: how-to-enable-authenticator-passkey.md
-        - name: Register passkeys in Authenticator (preview)
+        - name: Support passkeys in Authenticator 
+          href: how-to-enable-authenticator-passkey.md
+        - name: Register passkeys in Authenticator 
           href: how-to-register-passkey-authenticator.md
-        - name: Sign in with passkeys in Authenticator (preview)
+        - name: Sign in with passkeys in Authenticator 
           href: how-to-sign-in-passkey-authenticator.md
-        - name: Passkeys in Authenticator FAQs (preview)
+        - name: Passkeys in Authenticator FAQs
           href: passkey-authenticator-faq.yml
         - name: Enable Authenticator authentication method
           href: howto-authentication-passwordless-phone.md
