@@ -43,14 +43,9 @@ To configure Quick Access, you need to have a connector group with at least one 
 To summarize, the overall process is as follows:
 
 1. [Create a connector group with at least one active private network connector](#create-a-private-network-connector-group).
-    - If you already have a connector group, make sure you're on the latest version.
-
 1. [Configure Quick Access](#configure-quick-access).
-
 1. [Assign users and groups to the app](#assign-users-and-groups).
-
 1. [Configure Conditional Access policies](#link-conditional-access-policies).
-
 1. [Enable the Private access traffic forwarding profile](#enable-microsoft-entra-private-access).
 
 ## Create a private network connector group
