@@ -120,7 +120,7 @@ To configure the policy by using Graph Explorer:
 
 ## Delete a passkey 
 
-To remove a passkey associated with a user account, delete the key from the user’s authentication methods.
+If a user deletes a passkey in Authenticator, the passkey is also removed from the user's sign-in methods. An Authentication Policy Administrator can also follow these steps to delete a passkey from the user’s authentication methods, but it won't remove the passkey from Authenticator.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user whose passkey needs to be removed.
 1. Select **Authentication methods** > right-click **FIDO2 security key** and select **Delete**. 
@@ -128,7 +128,7 @@ To remove a passkey associated with a user account, delete the key from the user
     ![Screenshot of View Authentication Method details.](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
 > [!NOTE]
-> Users also need to remove the passkey in Authenticator on their device.
+> Unless the user initiated the passkey deletion themselves in Authenticator, they need to also remove the passkey in Authenticator on their device.
 
 ## Enforce sign-in with passkeys in Authenticator 
 
