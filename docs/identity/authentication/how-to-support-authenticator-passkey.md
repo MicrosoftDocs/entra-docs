@@ -1,6 +1,6 @@
 ---
-title: Deploy passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant
-description: Deploy passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant.
+title: Support passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant
+description: Support passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant.
 
 ms.service: entra-id 
 ms.subservice: authentication
@@ -16,12 +16,10 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users can register a passkey in Microsoft Authenticator 
 
 ---
-# Deploy passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant 
+# Support passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant
 
-Checklist
 
-Make sure users are enabled
-Make sure AAGUIDS are allowed
-Make sure Bluettoth is enabled.
+## Authentication strength policy
 
-## Templates
+
+## Restrict Bluetooth usage to passkeys
