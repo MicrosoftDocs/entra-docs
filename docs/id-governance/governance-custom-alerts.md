@@ -12,7 +12,7 @@ ms.custom:
 
 # Microsoft Entra ID Governance Alerting
 
-Microsoft Entra ID Governance makes it easy to alert people in your organization when they need to take action (ex: approve a request for access to a resource) or when a business process is not functioning properly (ex: new hires are not getting provisioned).
+Microsoft Entra ID Governance makes it easy to alert people in your organization when they need to take action (ex: approve a request for access to a resource) or when a business process isn't functioning properly (ex: new hires aren't getting provisioned).
 
 The following table outlines some of the standard notifications that Microsoft Entra ID Governance provides, the target persona in an organization, where they would expect to be alerted, and how quickly they would be alerted.
 
@@ -20,11 +20,10 @@ The following table outlines some of the standard notifications that Microsoft E
 
 | Persona | Alert method | Timeliness | Example alert |
 | --- | --- | --- | --- |
-| IT operations | Email | Hours | Newly hired employees are not being imported from Workday. [Learn more](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-quarantine-status) |
-| GRC specialist | Email | Days | Application access requests are being denied because approvers are not approving the requests. |
-| Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-ticketed-provisioning) |
+| IT operations | Email | Hours | Newly hired employees aren't being imported from Workday. [Learn more](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-quarantine-status) |
+| Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](entitlement-management-ticketed-provisioning.md) |
 | End user | Teams | Minutes | You need to approve or deny this request for access;  <br>The access you requested has been approved, go use your new app<br><br>[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-process#email-notifications-table) |
-| End user | Teams | Days | The access you requested is going to expire next week, please renew<br><br>[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-process#email-notifications-table) |
+| End user | Teams | Days | The access you requested is going to expire next week, please renew.[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-process#email-notifications-table) |
 | End user | Email | Days | Welcome to Woodgrove, here is your temporary access pass. [Learn more.](https://learn.microsoft.com/entra/id-governance/lifecycle-workflow-tasks#generate-temporary-access-pass-and-send-via-email-to-users-manager) |
 
 # Custom alert notifications
@@ -42,10 +41,10 @@ The following section provides examples of custom alerts that customers can crea
 | Entitlement management | Alert an IT admin when a custom extension fails. |
 | Access Reviews | Alert an IT admin when an access review is deleted. |
 | Privileged Identity Management | Alert an IT admin when PIM alerts are disabled. |
-| Multi-tenant collaboration | Alert an IT admin when cross-tenant sync is enabled |
-| Multi-tenant collaboration | Alert an IT admin when a cross-tenant access policy is enabled |
+| Multitenant collaboration | Alert an IT admin when cross-tenant sync is enabled |
+| Multitenant collaboration | Alert an IT admin when a cross-tenant access policy is enabled |
 | Provisioning | Alert an IT admin when there is a spike in provisioning failures over a 24-hour period. |
-| Provisioning | Alert an IT admin when the provisioning service does not export any changes in the past month. |
+| Provisioning | Alert an IT admin when the provisioning service doesn't export any changes in the past month. |
 
 ## Lifecycle workflows
 
@@ -70,7 +69,7 @@ AuditLogs
 - Operator: Equal to
 - Threshold: 0
 
-## Multi-tenant collaboration
+## Multitenant collaboration
 
 **Alert an IT admin when a new cross-tenant access policy is created. This allows your organization to detect when a relationship has been formed with a new organization.**
 
@@ -114,10 +113,10 @@ AuditLogs
 | extend tostring(key) == "Description"
 | where key == "Description"
 | parse value with * "\n" TenantID 
-| project TenantID
+| distinct TenantID
 ```
 
-**Alert an IT admin when a entitlement management custom extension fails.**
+**Alert an IT admin when an entitlement management custom extension fails.**
 
 <u>Query</u>
 
@@ -139,9 +138,9 @@ AuditLogs
 ```
 AuditLogs
 | where ActivityDisplayName == " Delete access review"
-Privileged Identity Management
 ```
 
+## Privileged Identity Management ##
 **Alert an IT admin when specific PIM security alerts are disabled.**
 
 <u>Query</u>
@@ -170,7 +169,7 @@ AADProvisioningLogs
 - Operator: Greater than
 - Threshold value: 10
 
-**Alert an IT admin when the provisioning service does not export any changes in the past month.**
+**Alert an IT admin when the provisioning service doesn't export any changes in the past month.**
 
 <u>Query</u>
 
