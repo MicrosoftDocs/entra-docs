@@ -67,8 +67,6 @@ To enable the Enriched Microsoft 365 logs:
 1. Select the type of Microsoft 365 logs you want to enable.
 1. Select **Save**.
 
-    :::image type="content" source="media/how-to-view-enriched-logs/enriched-logs-sharepoint.png" alt-text="Screenshot of the Logging area of Global Secure Access." lightbox="media/how-to-view-enriched-logs/enriched-logs-sharepoint-expanded.png":::
-
 The enriched logs take up to 72 hours to fully integrate with the service.
 
 ### Configure Diagnostic settings
@@ -112,7 +110,7 @@ With your endpoint created, you can configure Diagnostic settings.
 
 The following example is sending the enriched logs to a Log Analytics workspace, which requires selecting the Subscription and Log Analytics workspace from the menus that appear.
 
-:::image type="content" source="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the enriched logs and Log Analytics options highlighted." lightbox="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs-expanded.png":::
+:::image type="content" source="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the enriched logs and Log Analytics options highlighted." lightbox="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png":::
 
 
 
