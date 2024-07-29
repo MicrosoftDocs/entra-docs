@@ -56,7 +56,7 @@ Assign the [Application Developer role](~/identity/role-based-access-control/per
 
 Assigning owners is a simple way to grant the ability to manage all aspects of Microsoft Entra configuration for a specific application registration or enterprise application. For more information, see [Assign enterprise application owners](~/identity/enterprise-apps/assign-app-owners.md).
 
-## Assign built-in application admin roles
+## Assign built-in Application Administrator roles
 
 Microsoft Entra ID has a set of built-in admin roles for granting access to manage configuration in Microsoft Entra ID for all applications. These roles are the recommended way to grant IT experts access to manage broad application configuration permissions without granting access to manage other parts of Microsoft Entra not related to application configuration.
 

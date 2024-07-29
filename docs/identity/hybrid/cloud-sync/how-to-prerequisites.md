@@ -21,7 +21,7 @@ This article provides guidance on using Microsoft Entra Cloud Sync as your ident
 You need the following to use Microsoft Entra Cloud Sync:
 
 - Domain Administrator or Enterprise Administrator credentials to create the Microsoft Entra Connect cloud sync gMSA (group managed service account) to run the agent service.
-- A hybrid identity administrator account for your Microsoft Entra tenant that isn't a guest user.
+- A Hybrid Identity Administrator account for your Microsoft Entra tenant that isn't a guest user.
 - An on-premises server for the provisioning agent with Windows 2016 or later. This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
     - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
 - High availability refers to the Microsoft Entra Cloud Sync's ability to operate continuously without failure for a long time. By having multiple active agents installed and running, Microsoft Entra Cloud Sync can continue to function even if one agent should fail. Microsoft recommends having 3 active agents installed for high availability.
@@ -75,7 +75,7 @@ For more information on how to prepare your Active Directory for group Managed S
 
 ## In the Microsoft Entra admin center
 
-1. Create a cloud-only hybrid identity administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant if your on-premises services fail or become unavailable. Learn about how to [add a cloud-only hybrid identity administrator account](~/fundamentals/add-users.md). Finishing this step is critical to ensure that you don't get locked out of your tenant.
+1. Create a cloud-only Hybrid Identity Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant if your on-premises services fail or become unavailable. Learn about how to [add a cloud-only Hybrid Identity Administrator account](~/fundamentals/add-users.md). Finishing this step is critical to ensure that you don't get locked out of your tenant.
 1. Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ## In your directory in Active Directory
