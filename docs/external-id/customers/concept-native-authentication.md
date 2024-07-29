@@ -49,9 +49,16 @@ The following table compares the two authentication methods to help you decide t
 | **Applicability**  | Suitable for workforce, B2B, and B2C apps, it can be used for native apps, single-page applications, and web apps. | For customer first-party mobile apps, when the same entity operates the authorization server and the app and the user perceives them both as the same entity.|
 | **Go live effort** |  Low. Use it straight out of the box.  |High. The developer builds, owns, and maintains the authentication experience. |
 | **Maintenance effort** | Low. |High. For each feature that Microsoft releases, you need to update the SDK to use it.  |
-| **Security** | Most secure option. |Security responsibility is shared with developers, and best practices need to be followed. It's prone to phishing attacks. |
+| **Security** | Most secure option. |Security responsibility is shared with developers, and [best security practices](#best-security-practices) need to be followed. |
 | **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS (Swift, Objective-C)</li></ul> For other languages and platforms, you can use our [native authentication API](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).  |
 
+## Best security practices
+When using the native authentication APIs:
+- **Store tokens securely**: Tokens should be treated as other credentials and need to be stored safely. Specifically, refresh token, which is a long-lived credential that can be used to obtain new access tokens when it expires. 
+- **Use HTTPS for all requests**: The native authentication APIs requires HTTPS for all requests, but you should also make sure that any other requests to your backend or third-party services are made over HTTPS as well. This will prevent man-in-the-middle attacks and protect the data in transit.
+- **Validate the ID token**: The ID token is a JSON Web Token (JWT) that contains information about the user and the authentication event. You should validate the ID token to verify its signature, issuer, audience, and expiration time. This will prevent spoofing and replay attacks.
+
+When using the Microsoft Authentication Library (MSAL) SDK for Android and iOS, there's a risk of phishing attack. This vulnerability exists for all mobile applications that provide in-app authentication, as they can be impersonated. Attackers might create a fake app, publish it on an app store, and trick users into giving away their credentials. The best way to prevent mobile app from this risk is to monitor app stores for any potential clones of your app and to educate your customers how to identify a legitimate app.
 
 ## Feature availability
 
