@@ -136,6 +136,9 @@ When you configure Quick Access, a new enterprise app is created on your behalf.
 
 You can view the properties from **Quick Access** or navigate to **Enterprise applications** and search for your Quick Access app.
 
+> [!TIP]
+> To find an app on the **Enterprise applications** page, clear all filters so that you don't filter out the app you are looking for.
+
 1. Select **Edit application settings** from Quick Access. 
 
     ![Screenshot of edit application settings.](media/how-to-configure-quick-access/edit-application-settings.png)
