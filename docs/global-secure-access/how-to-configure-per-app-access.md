@@ -91,16 +91,10 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise applications**.
 1. Select **New application**.
 1. Select **Add application segment**.
-
-    ![Screenshot of the Add application segment button.](media/how-to-configure-per-app-access/enterprise-app-add-application-segment.png)
-
 1. In the **Create application segment** panel that opens, select a **Destination type**.
-
-    ![Screenshot of the create app segment panel.](media/how-to-configure-per-app-access/app-segment-destination-type.png)
-
 1. Enter the appropriate details for the selected destination type. Depending on what you select, the subsequent fields change accordingly.
     - **IP address**:
-        - Internet Protocol version 4 (IPv4) address, such as 192.0.2.1, that identifies a device on the network.
+        - Internet Protocol version 4 (IPv4) address, such as 192.168.2.1, that identifies a device on the network.
         - Provide the ports that you want to include.
     - **Fully qualified domain name** (including wildcard FQDNs):
         - Domain name that specifies the exact location of a computer or a host in the Domain Name System (DNS).
@@ -108,10 +102,10 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
         - NetBIOS isn't supported. For example, use `contoso.local/app1` instead of `contoso/app1.`
     - **IP address range (CIDR)**:
         - Classless Inter-Domain Routing (CIDR) represents a range of IP addresses where an IP address is followed by a suffix that indicates the number of network bits in the subnet mask.
-        - For example, 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
+        - For example, 192.168.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
         - Provide the starting address, network mask, and ports.
     - **IP address range (IP to IP)**:
-        - Range of IP addresses from start IP (such as 192.0.2.1) to end IP (such as 192.0.2.10).
+        - Range of IP addresses from start IP (such as 192.168.2.1) to end IP (such as 192.168.2.10).
         - Provide the IP address start, end, and ports.
 
 1. Enter the ports and select the **Apply** button.
