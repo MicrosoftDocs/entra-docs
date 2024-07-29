@@ -1,5 +1,5 @@
 ---
-title: 'Identity Governance Alerting'
+title: 'Identity Governance Custom alerts'
 description: This article shows how to create custom alerts with Microsoft Entra ID Governance
 author: billmath
 manager: amycolannino
@@ -10,7 +10,7 @@ ms.author: billmath
 ms.custom:
 ---
 
-# Microsoft Entra ID Governance Alerting
+# Microsoft Entra ID Governance Custom Alerts
 
 Microsoft Entra ID Governance makes it easy to alert people in your organization when they need to take action (ex: approve a request for access to a resource) or when a business process isn't functioning properly (ex: new hires aren't getting provisioned).
 
