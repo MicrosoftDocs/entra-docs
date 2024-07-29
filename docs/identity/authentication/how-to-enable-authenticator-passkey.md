@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/07/2024
+ms.date: 07/29/2024
 
 ms.author: justinha
 author: justinha
@@ -32,17 +32,17 @@ To learn more about where you can use passkeys in Authenticator to sign in, see 
 
 ## Enable passkeys in Authenticator in the admin center
 
-The **Microsoft Authenticator** policy doesn't give you the option to enable passkeys in Authenticator. Instead, to enable passkeys in Authenticator, you must edit the **FIDO2 security key** Authentication methods policy. 
+To enable passkeys in Authenticator, edit the **Passkey (FIDO2)** authentication method policy. The **Microsoft Authenticator** policy doesn't have an option to enable passkeys. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
-1. Under the method **FIDO2 security key**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
+1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 1. On the **Configure** tab, set:
    - **Allow self-service set up** to **Yes**
    - **Enforce attestation** to **No**
    - **Enforce key restrictions** to **Yes**
    - **Restrict specific keys** to **Allow**
-   - Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This setting automatically populates the Authenticator app AAGUIDs for you in the key restriction list. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
+   - Select **Microsoft Authenticator (Preview)** if the checkbox is displayed in the admin center. This setting automatically populates the Authenticator app AAGUIDs for you in the key restriction list. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
 
       - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
       - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
@@ -52,21 +52,28 @@ The **Microsoft Authenticator** policy doesn't give you the option to enable pas
   >[!WARNING]
   >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs, to enable this preview. This task can be done with an automated script that analyzes logs such as registration details and sign-in logs.
 
-The following list describes other optional settings:
+## Optional settings
 
-**General**
+### Allow self-service set up
 
-- **Allow self-service set up** should remain set to **Yes**. If set to no, your users aren't able to register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
-- **Enforce attestation** Should be set to **No** for preview. Attestation support is planned for General Availability.
+Set to **Yes** (default). If set to no, your users aren't able to register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
 
-**Key Restriction Policy**
+### Enforce attestation
 
-- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain passkeys, which are identified by their Authenticator Attestation GUID (AAGUID). If you want, you can manually enter the Authenticator app AAGUIDs or specifically restrict only Android or iOS devices. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
+Should be set to **No** for preview. Attestation support is planned for General Availability.
 
-  - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
-  - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
+What kind of attestation is supported?
 
-After you finish the configuration, select **Save**.
+What are the implications for choosing attestation?
+
+### Key restriction policy
+
+Set **Enforce key restrictions** to **Yes** if your organization wants to only allow or disallow certain passkeys, which are identified by their Authenticator Attestation GUID (AAGUID). If you want, you can select **Microsoft Authenticator (Preview)** to add AAGUIDs to specifically restrict Authenticator on iOS and Android, or you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
+
+- **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
+- **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
+
+After you finish optional settings, select **Save**.
 
 ## Enable passkeys in Authenticator using Graph Explorer
 
