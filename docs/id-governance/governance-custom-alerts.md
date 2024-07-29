@@ -37,6 +37,7 @@ The following section provides examples of custom alerts that customers can crea
 | Feature | Example alert |
 | --- | --- |
 | Access Reviews | Alert an IT admin when an access review is deleted. |
+| Entitlement management | Alert an IT admin when a user is directly added to a group, without using an access package.|
 | Entitlement management | Alert an IT admin when a new connected organization is added. |
 | Entitlement management | Alert an IT admin when a custom extension fails. |
 | Lifecycle workflows | Alert an IT admin when a specific workflow fails. |
@@ -58,6 +59,17 @@ AuditLogs
 ```
 
 ## Entitlement management
+
+**Alert an IT admin when a user is directly added to a group, without using an access package.**
+<u>Query</u>
+
+```
+AuditLogs
+| where parse_json(tostring(TargetResources[1].id)) in ("InputGroupID", "InputGroupID")
+| where ActivityDisplayName == "Add member to group"
+| extend ActorName = tostring(InitiatedBy.user.displayName)
+| where ActorName != "Azure AD Identity Governance - User Management"
+```
 
 **Alert an IT admin when a new connected organization is created. Users from this organization can now request access to resources made available to all connected organizations.**
 
