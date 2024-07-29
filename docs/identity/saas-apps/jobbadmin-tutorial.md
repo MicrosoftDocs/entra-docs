@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<instancename>.jobbnorge.no/auth/saml2/login.ashx`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Jobbadmin Client support team](https://www.jobbnorge.no/om-oss/kontakt-oss) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Jobbadmin Client support team](https://grade.zammad.com/help/en-us/216) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -129,11 +129,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Jobbadmin SSO
 
-To configure single sign-on on **Jobbadmin** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Jobbadmin support team](https://www.jobbnorge.no/om-oss/kontakt-oss). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Jobbadmin** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Jobbadmin support team](https://grade.zammad.com/help/en-us/216). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Jobbadmin test user
 
-In this section, you create a user called Britta Simon in Jobbadmin. Work with [Jobbadmin support team](https://www.jobbnorge.no/om-oss/kontakt-oss) to add the users in the Jobbadmin platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Jobbadmin. Work with [Jobbadmin support team](https://grade.zammad.com/help/en-us/216) to add the users in the Jobbadmin platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
