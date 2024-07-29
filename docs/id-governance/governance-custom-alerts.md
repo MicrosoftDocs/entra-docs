@@ -26,7 +26,7 @@ The following table outlines some of the standard notifications that Microsoft E
 | Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](entitlement-management-ticketed-provisioning.md) |
 | IT operations | Email | Hours | Newly hired employees aren't being imported from Workday. [Learn more](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-quarantine-status) |
 
-# Custom alert notifications
+## Custom alert notifications
 
 In addition to the standard notifications provided by Microsoft Entra ID Governance, organizations can create custom alerts to meet their needs. 
 
@@ -45,11 +45,13 @@ The following section provides examples of custom alerts that customers can crea
 | Multitenant collaboration | Alert an IT admin when a cross-tenant access policy is enabled |
 | Privileged Identity Management | Alert an IT admin when PIM alerts are disabled. |
 | Provisioning | Alert an IT admin when there is a spike in provisioning failures over a 24-hour period. |
+| Provisioning| Alert an IT admin when someone starts, stops, disables, restarts, or deletes a provisioning configuration.|
 
 
 ## Access Reviews ##
 
 **Alert an IT admin when an access review has been deleted.**
+
 
 <u>Query</u>
 
@@ -180,6 +182,14 @@ AADProvisioningLogs
 - Based on: Number of results
 - Operator: Greater than
 - Threshold value: 10
+
+**Alert an IT admin when someone starts, stops, disables, restarts, or deletes a provisioning configuration.**
+<u>Query</u>
+
+```
+AuditLogs
+| where ActivityDisplayName in ('Add provisioning configuration','Delete provisioning configuration','Disable/pause provisioning configuration', 'Enable/restart provisioning configuration', 'Enable/start provisioning configuration')
+```
 
 
 **Next steps**
