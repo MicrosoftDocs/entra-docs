@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/25/2024
+ms.date: 07/29/2024
 ms.author: jfields
 ---
 
@@ -281,7 +281,7 @@ Here is a generic example of how the Oracle HCM attributes could map to attribut
 
 Once you format the [SCIM bulk request](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md#bulk-request-with-scim-enterprise-user-schema), you can then send the data to the [bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint via API-driven provisioning.
 
-Before enabling the integration, run manual tests and verifications to validate the SCIM bulk request payload structure. You may use tools, such as [Postman](~/identity/app-provisioning/inbound-provisioning-api-postman.md) or [Graph Explorer](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md) to confirm that the bulk request payloads are processed as expected.
+Before enabling the integration, run manual tests and verifications to validate the SCIM bulk request payload structure. You may use tools, such as [cURL](~identity/app-provisioning/inbound-provisioning-api-curl-tutorial.md) or [Graph Explorer](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md) to confirm that the bulk request payloads are processed as expected.
 
 > [!NOTE]
 > If you don't want to engage a partner or build your own custom module, we recommend using the **HCM Extract tool** described in the next section.
