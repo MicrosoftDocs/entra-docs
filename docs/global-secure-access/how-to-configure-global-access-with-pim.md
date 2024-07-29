@@ -62,26 +62,15 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
 1. Browse to **Identity Governance**  > **Privileged Identity Management**.
 1. Select **Groups**, then **Discover groups**. 
-
-   :::image type="content" border="true" source="./media/pim-global-secure-access/discover-groups.png" alt-text="Screenshot of the Groups screen with Discover groups selected." lightbox="./media/pim-global-secure-access/discover-groups.png":::
-
 1. Select the group that you created; for example, `FinReport-SeniorAnalyst-SecureAccess`, then select **Manage groups**. 
 1. When prompted for onboarding, select **OK**. 
-
-    :::image type="content" border="true" source="./media/pim-global-secure-access/manage-groups.png" alt-text="Screenshot of the Managed groups screen with a group selected." lightbox="./media/pim-global-secure-access/manage-groups.png":::
 
 ### Update PIM policy role settings (optional step)
 
 1. Select **Setting**, then select **Member**. 
-
-   :::image type="content" border="true" source="./media/pim-global-secure-access/choose-member-role.png" alt-text="Screenshot of Member Role screen." lightbox="./media/pim-global-secure-access/choose-member-role.png":::
-
 1. Adjust any other settings you want in the **Activation** tab.
-
 1. Set the **Activation Max Duration**; for example, 0.5 hours. 
 1. In the **On activation** option, require **Azure MFA**, and select **Update**.
-
-   :::image type="content" border="true" source="./media/pim-global-secure-access/activation-tab.png" alt-text="Screenshot of the Activation tab options." lightbox="./media/pim-global-secure-access/activation-tab.png":::
 
 ### Assign eligible membership
 
@@ -91,20 +80,13 @@ To begin, we configure and assign groups by creating a Microsoft Entra ID group,
 
 1. In the **Role** option, select **Member**, then select **Next**.
 1. Add the selected members that you would like to include for the role.
- 
-   :::image type="content" border="true" source="./media/pim-global-secure-access/eligible-assignment.png" alt-text="Screenshot of the eligible member." lightbox="./media/pim-global-secure-access/eligible-assignment.png":::
-
 1. In the **Assignment Type** option, select **Eligible**, then select **Assign**.
-
-   :::image type="content" border="true" source="./media/pim-global-secure-access/eligible-member.png" alt-text="Screenshot of the Eligible member screen." lightbox="./media/pim-global-secure-access/eligible-member.png":::
 
 ### Quick Access assignment
 
 1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
 1. Browse to **Global Secure Access** > **Quick Access** > **Users and groups**. 
 1. Select **Add user/group**, then specify the group that you created; for example, `FinReport-SeniorAnalyst-SecureAccess`.  
-
-   :::image type="content" border="true" source="./media/pim-global-secure-access/quick-access.png" alt-text="Screenshot of the Quick Access screen." lightbox="./media/pim-global-secure-access/quick-access.png":::
 
 > [!NOTE]  
 > This scenario is most effective when you choose **Per-app Access**, as **Quick Access** is used here for reference only. Apply the same steps if you choose **Enterprise Applications**.
