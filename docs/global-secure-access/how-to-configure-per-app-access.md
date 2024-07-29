@@ -78,7 +78,8 @@ To create a new app, you provide a name, select a connector group, and then add 
 
 1. Enter a name for the app.
 1. Select a Connector group from the dropdown menu.
-    - Existing connector groups appear in the dropdown menu.
+    > [!IMPORTANT]
+    > You must have at least one active connector in order to create an application. To learn more about connectors, see [Understand the Microsoft Entra private network connector](concept-connectors.md).
 1. Select the **Save** button at the bottom of the page to create your app without adding private resources.
 
 ### Add application segment
