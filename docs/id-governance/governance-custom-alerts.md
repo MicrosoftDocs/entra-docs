@@ -20,11 +20,11 @@ The following table outlines some of the standard notifications that Microsoft E
 
 | Persona | Alert method | Timeliness | Example alert |
 | --- | --- | --- | --- |
-| IT operations | Email | Hours | Newly hired employees aren't being imported from Workday. [Learn more](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-quarantine-status) |
-| Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](entitlement-management-ticketed-provisioning.md) |
 | End user | Teams | Minutes | You need to approve or deny this request for access;  <br>The access you requested has been approved, go use your new app<br><br>[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-process#email-notifications-table) |
 | End user | Teams | Days | The access you requested is going to expire next week, please renew.[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-process#email-notifications-table) |
 | End user | Email | Days | Welcome to Woodgrove, here is your temporary access pass. [Learn more.](https://learn.microsoft.com/entra/id-governance/lifecycle-workflow-tasks#generate-temporary-access-pass-and-send-via-email-to-users-manager) |
+| Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](entitlement-management-ticketed-provisioning.md) |
+| IT operations | Email | Hours | Newly hired employees aren't being imported from Workday. [Learn more](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-quarantine-status) |
 
 # Custom alert notifications
 
@@ -36,15 +36,56 @@ The following section provides examples of custom alerts that customers can crea
 
 | Feature | Example alert |
 | --- | --- |
-| Lifecycle workflows | Alert an IT admin when a specific workflow fails. |
+| Access Reviews | Alert an IT admin when an access review is deleted. |
 | Entitlement management | Alert an IT admin when a new connected organization is added. |
 | Entitlement management | Alert an IT admin when a custom extension fails. |
-| Access Reviews | Alert an IT admin when an access review is deleted. |
-| Privileged Identity Management | Alert an IT admin when PIM alerts are disabled. |
+| Lifecycle workflows | Alert an IT admin when a specific workflow fails. |
 | Multitenant collaboration | Alert an IT admin when cross-tenant sync is enabled |
 | Multitenant collaboration | Alert an IT admin when a cross-tenant access policy is enabled |
+| Privileged Identity Management | Alert an IT admin when PIM alerts are disabled. |
 | Provisioning | Alert an IT admin when there is a spike in provisioning failures over a 24-hour period. |
-| Provisioning | Alert an IT admin when the provisioning service doesn't export any changes in the past month. |
+
+
+## Access Reviews ##
+
+**Alert an IT admin when an access review has been deleted.**
+
+<u>Query</u>
+
+```
+AuditLogs
+| where ActivityDisplayName == " Delete access review"
+```
+
+## Entitlement management
+
+**Alert an IT admin when a new connected organization is created. Users from this organization can now request access to resources made available to all connected organizations.**
+
+<u>Query</u>
+
+```
+AuditLogs
+| where ActivityDisplayName == "Create connected organization"
+| mv-expand AdditionalDetails
+| extend key = AdditionalDetails.key, value = AdditionalDetails.value
+| extend tostring(key) == "Description"
+| where key == "Description"
+| parse value with * "\n" TenantID 
+| distinct TenantID
+```
+
+**Alert an IT admin when an entitlement management custom extension fails.**
+
+<u>Query</u>
+
+```
+AuditLogs
+| where ActivityDisplayName == "Execute custom extension"
+| where Result == "success"
+| mvexpand TargetResources 
+| extend  CustomExtensionName=TargetResources.displayName
+| where CustomExtensionName in ('<input custom exteionsion name>', '<input custom extension name>')
+```
 
 ## Lifecycle workflows
 
@@ -99,47 +140,6 @@ AuditLogs
 ```
 <u>Alert logic</u>
 
-## Entitlement management
-
-**Alert an IT admin when a new connected organization is created. Users from this organization can now request access to resources made available to all connected organizations.**
-
-<u>Query</u>
-
-```
-AuditLogs
-| where ActivityDisplayName == "Create connected organization"
-| mv-expand AdditionalDetails
-| extend key = AdditionalDetails.key, value = AdditionalDetails.value
-| extend tostring(key) == "Description"
-| where key == "Description"
-| parse value with * "\n" TenantID 
-| distinct TenantID
-```
-
-**Alert an IT admin when an entitlement management custom extension fails.**
-
-<u>Query</u>
-
-```
-AuditLogs
-| where ActivityDisplayName == "Execute custom extension"
-| where Result == "success"
-| mvexpand TargetResources 
-| extend  CustomExtensionName=TargetResources.displayName
-| where CustomExtensionName in ('<input custom exteionsion name>', '<input custom extension name>')
-```
-
-## Access Reviews ##
-
-**Alert an IT admin when an access review has been deleted.**
-
-<u>Query</u>
-
-```
-AuditLogs
-| where ActivityDisplayName == " Delete access review"
-```
-
 ## Privileged Identity Management ##
 **Alert an IT admin when specific PIM security alerts are disabled.**
 
@@ -169,14 +169,6 @@ AADProvisioningLogs
 - Operator: Greater than
 - Threshold value: 10
 
-**Alert an IT admin when the provisioning service doesn't export any changes in the past month.**
-
-<u>Query</u>
-
-```
-AADProvisioningLogs
-| take 1
-```
 
 **Next steps**
 
