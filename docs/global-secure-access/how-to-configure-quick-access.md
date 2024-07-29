@@ -68,11 +68,8 @@ On the Quick Access page, you provide a name for the Quick Access app, select a 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with the appropriate roles.
 1. Browse to **Global Secure Access** > **Applications** > **Quick access**.
 1. Enter a name. *We recommend using the name Quick Access*.
-1. Select a Connector group from the dropdown menu. Existing connector groups appear in the dropdown menu.
-
-    ![Screenshot of the Quick Access app name.](media/how-to-configure-quick-access/new-quick-access-name.png)
-
-1. Select **Save** at the bottom of the page to create your "Quick Access" app without FQDNs, IP addresses, and private DNS suffixes.
+1. Select a Connector group from the dropdown menu.
+1. Select **Save** to create your "Quick Access" app without FQDNs, IP addresses, and private DNS suffixes.
 
 ### Add Quick Access application segment
 
@@ -83,16 +80,10 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access** > **Applications** > **Quick Access**.
 1. Select **Add Quick Access application segment**.
-
-    ![Screenshot of the Added Quick Access application segment.](media/how-to-configure-quick-access/add-quick-access-application-segment.png)
-
 1. In the **Create application segment** panel that opens, select a **Destination type**.
-
-    ![Screenshot of the create app segment panel.](media/how-to-configure-quick-access/app-segment-destination-type.png)
-
 1. Enter the appropriate details for the selected destination type. Depending on what you select, the subsequent fields change accordingly.
     - **IP address**:
-        - Internet Protocol version 4 (IPv4) address, such as 192.0.2.1, that identifies a device on the network.
+        - Internet Protocol version 4 (IPv4) address, such as 192.168.2.1, that identifies a device on the network.
         - Provide the ports that you want to include.
     - **Fully qualified domain name** (including wildcard FQDNs):
         - Domain name that specifies the exact location of a computer or a host in the Domain Name System (DNS).
@@ -100,13 +91,13 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
         - NetBIOS isn't supported. For example, use `contoso.local/app1` instead of `contoso/app1`.
     - **IP address range (CIDR)**:
         - Classless Inter-Domain Routing (CIDR) represents a range of IP addresses. An IP address is followed by a suffix indicating the number of network bits in the subnet mask.
-        - For example, 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
+        - For example, 192.168.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
         - Provide the starting address, network mask, and ports.
     - **IP address range (IP to IP)**:
-        - Range of IP addresses from start IP (such as 192.0.2.1) to end IP (such as 192.0.2.10).
+        - Range of IP addresses from start IP (such as 192.168.2.1) to end IP (such as 192.168.2.10).
         - Provide the IP address start, end, and ports.
 
-1. Enter the ports and select **Apply**.
+1. Enter the ports and protocol and select **Apply**.
     - Separate multiple ports with a comma.
     - Specify port ranges with a hyphen.
     - Spaces between values are removed when you apply the changes.
@@ -138,15 +129,6 @@ Add a DNS suffix to use for private DNS.
 1. Select the checkbox to **enable private DNS**.
 1. Select **Add DNS suffix**.
 1. Enter the DNS suffix and then select **Add**.
-
-### Update Quick Access application segments
-
-You can add or edit application segments after the initial setup is complete.
-
-From **Global Secure Access** > **Applications** > **Quick Access**:
-
-- Select **Add Quick Access application segment** to add an FQDN or IP address.
-- Select the application segment you wish to edit from the **Destination type** column.
 
 ## Assign users and groups
 
