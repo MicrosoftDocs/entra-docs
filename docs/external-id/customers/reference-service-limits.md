@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: reference
-ms.date: 04/10/2024
+ms.date: 07/28/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -86,6 +86,16 @@ The following table lists the administrative configuration limits in the Microso
 |Total number of objects (user accounts and applications) per tenant | 13 million |
 |Number of [custom authentication extensions](/entra/identity-platform/custom-extension-overview)    |100         |
 |Number of event listener policies    |249         |
+
+## Telephony throttling limits
+
+The following table lists the service limits we implement to prevent outages and slowdowns.
+
+|Limit                        |Texts every 15 minutes|Texts every 60 minutes|
+|-----------------------------|----------------------|----------------------|
+|Limits based on IP address   |10,000 texts          |10,000 texts          |
+|Limits based on phone  number|200                   |400                   |
+|Limits based on tenant       |2,000                 |4,000                 |
 
 ## Next steps
 
