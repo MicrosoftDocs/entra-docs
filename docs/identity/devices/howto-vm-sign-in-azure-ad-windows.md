@@ -149,6 +149,7 @@ az vm create \
 
 It takes a few minutes to create the VM and supporting resources.
 
+### Add Extension to Azure VM 
 Finally, install the Microsoft Entra login VM extension to enable Microsoft Entra login for Windows VMs. VM extensions are small applications that provide post-deployment configuration and automation tasks on Azure Virtual Machines. Use [az vm extension](/cli/azure/vm/extension#az-vm-extension-set) set to install the AADLoginForWindows extension on the VM named `myVM` in the `myResourceGroup` resource group.
 
 You can install the AADLoginForWindows extension on an existing Windows Server 2019 or Windows 10 1809 and later VM to enable it for Microsoft Entra authentication. The following example uses the Azure CLI to install the extension:
