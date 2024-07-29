@@ -1,5 +1,5 @@
 ---
-title: 'Identity Governance Custom alerts'
+title: 'Identity Governance custom alerts'
 description: This article shows how to create custom alerts with Microsoft Entra ID Governance
 author: billmath
 manager: amycolannino
@@ -10,7 +10,7 @@ ms.author: billmath
 ms.custom:
 ---
 
-# Microsoft Entra ID Governance Custom Alerts
+# Microsoft Entra ID Governance custom alerts
 
 Microsoft Entra ID Governance makes it easy to alert people in your organization when they need to take action (ex: approve a request for access to a resource) or when a business process isn't functioning properly (ex: new hires aren't getting provisioned).
 
@@ -32,7 +32,7 @@ In addition to the standard notifications provided by Microsoft Entra ID Governa
 
 All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](https://learn.microsoft.com/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](https://learn.microsoft.com/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics), organizations can create [custom alerts](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs). 
 
-The following section provides examples of custom alerts that customers can create by integrating Entra ID Governance with Azure Monitor.
+The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor.
 
 | Feature | Example alert |
 | --- | --- |
@@ -48,12 +48,12 @@ The following section provides examples of custom alerts that customers can crea
 | Provisioning| Alert an IT admin when someone starts, stops, disables, restarts, or deletes a provisioning configuration.|
 
 
-## Access Reviews ##
+## Access reviews ##
 
 **Alert an IT admin when an access review has been deleted.**
 
 
-<u>Query</u>
+*Query*
 
 ```
 AuditLogs
@@ -63,7 +63,7 @@ AuditLogs
 ## Entitlement management
 
 **Alert an IT admin when a user is directly added to a group, without using an access package.**
-<u>Query</u>
+*Query*
 
 ```
 AuditLogs
@@ -75,7 +75,7 @@ AuditLogs
 
 **Alert an IT admin when a new connected organization is created. Users from this organization can now request access to resources made available to all connected organizations.**
 
-<u>Query</u>
+*Query*
 
 ```
 AuditLogs
@@ -90,7 +90,7 @@ AuditLogs
 
 **Alert an IT admin when an entitlement management custom extension fails.**
 
-<u>Query</u>
+*Query*
 
 ```
 AuditLogs
@@ -105,7 +105,7 @@ AuditLogs
 
 **Alert an IT admin when a specific lifecycle workflow fails.**
 
-<u>Query</u>
+*Query*
 
 ```
 AuditLogs
@@ -128,7 +128,7 @@ AuditLogs
 
 **Alert an IT admin when a new cross-tenant access policy is created. This allows your organization to detect when a relationship has been formed with a new organization.**
 
-<u>Query</u>
+*Query*
 
 ```
 AuditLogs
@@ -143,7 +143,7 @@ AuditLogs
 
 **As an admin, I can get an alert when an inbound cross-tenant sync policy is set to true. This allows your organization to detect when an organization is authorized to synchronize identities into your tenant.**
 
-<u>Query</u>
+*Query*
 
 ```
 AuditLogs
@@ -154,10 +154,10 @@ AuditLogs
 ```
 <u>Alert logic</u>
 
-## Privileged Identity Management ##
+## Privileged identity management ##
 **Alert an IT admin when specific PIM security alerts are disabled.**
 
-<u>Query</u>
+*Query*
 
 ```
 AuditLogs
@@ -168,7 +168,7 @@ AuditLogs
 
 **Alert an IT administrator when there is a spike in provisioning failures over a 24 hour period.**
 
-<u>Query</u>
+*Query*
 
 ```
 AADProvisioningLogs
@@ -184,7 +184,8 @@ AADProvisioningLogs
 - Threshold value: 10
 
 **Alert an IT admin when someone starts, stops, disables, restarts, or deletes a provisioning configuration.**
-<u>Query</u>
+
+*Query*
 
 ```
 AuditLogs
