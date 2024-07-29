@@ -96,6 +96,20 @@ The Active Directory Federation Services (AD FS) application migration wizard al
 
 ---
 
+### General Availability -  Attacker in the Middle detection alert in Identity Protection
+
+**Type:** New feature    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+The Attacker in the Middle detection is now Generally Available for users in Identity Protection. 
+
+This high precision detection will be triggered on a user account that has been compromised by an adversary that has intercepted the user's credentials, including tokens that were issued to the user. The risk is identified through Microsoft 365 Defender and will raise the user with High risk to trigger the configured Conditional Access policy.
+
+For more information on this feature, see: [What are risk detections?](..//id-protection/concept-identity-protection-risks.md)
+
+---
+
 ### General Availability - Easy authentication with Azure App Service and Microsoft Entra External ID
 
 **Type:** Changed feature    
@@ -103,18 +117,6 @@ The Active Directory Federation Services (AD FS) application migration wizard al
 **Product capability:** B2B/B2C    
 
 An improved experience when using Microsoft Entra External ID as an identity provider for Azure App Service’s built-in authentication, simplifying the process of configuring authentication and authorization for external-facing apps. You can complete initial configuration directly from the App Service authentication setup without switching into the external tenant. For more information, see: [Quickstart: Add app authentication to your web app running on Azure App Service](/azure/app-service/scenario-secure-app-authentication-app-service?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=external-configuration).
-
----
-
-### General Availability - Enabling public publishing of custom credentials via the Admin portal UI
-
-**Type:** New feature    
-**Service category:** Verified ID    
-**Product capability:** Decentralized Identities    
-
-The Verified ID Admin portal now supports public publishing of custom credentials, in addition to VerifiedEmployee, to the VC network via the Admin portal UI. For any given Verifiable Credential, the Admin can now select the "*Publish credential to Verified ID network*" checkbox from the "*Issue a credential*" page to enable this. 
-
-Once enabled, customers using Entitlement Management with Verified ID can use Access Packages to ask for identity verification by selecting the required custom VC using the VCNetwork picker. For more information, see: [Verify credentials by using the Microsoft Entra Verified ID Network](../verified-id/how-use-vcnetwork.md).
 
 ---
 
