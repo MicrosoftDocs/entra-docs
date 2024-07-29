@@ -118,6 +118,10 @@ To configure the policy by using Graph Explorer:
    ```
 
 
+## Restrict Bluetooth usage to passkeys in Authenticator
+
+Some organizations restrict Bluetooth usage, which includes the use of passkeys. In such cases, organizations can allow passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. for more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](https://review.learn.microsoft.com/en-us/windows/security/identity-protection/passkeys/?branch=pr-en-us-10051&tabs=windows#passkeys-in-bluetooth-restricted-environments).
+
 ## Delete a passkey 
 
 If a user deletes a passkey in Authenticator, the passkey is also removed from the user's sign-in methods. An Authentication Policy Administrator can also follow these steps to delete a passkey from the user’s authentication methods, but it won't remove the passkey from Authenticator.
