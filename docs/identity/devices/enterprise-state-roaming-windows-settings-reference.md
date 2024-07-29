@@ -5,7 +5,7 @@ description: Settings that can roam or backed up in Windows with ESR
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: reference
-ms.date: 07/16/2024
+ms.date: 07/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,20 +14,16 @@ ms.reviewer: guovivian
 ---
 # Windows roaming settings reference
 
-The following lists the settings that can roam or be backed up in Windows 10 or newer.
+This is the list of settings that can be configured to sync across Windows. Other Microsoft products the user signs into can access them to enable a cohesive experience.
 
-## Windows Settings details
-
-List of settings that can be configured to sync in recent Windows versions.
-
-| Settings | Windows 10 (21H1 or newer) |
+| Settings | Windows 10 (21H1 or newer) <br> Windows 11 (22H2 or newer)|
 | --- | --- |
 | Date, Time, and Region: country/region | sync |
 | Date, Time, and Region: region format (locale) | sync |
 | Inking & typing: Custom dictionary | sync (Windows 11 only) |
 | Keyboard: turn on toggle keys | sync|
 | Language: language profile | sync |
-| Language: Windows Display language <br> Allows other Microsoft products to be more personalized. | sync (to account only) |
+| Language: Windows Display language \* | sync <br> (to account only) |
 | Mouse: Primary Mouse Button | sync |
 | Passwords: Web Credentials | sync |
 | Pen: Choose which hand you write with | sync |
@@ -41,6 +37,8 @@ List of settings that can be configured to sync in recent Windows versions.
 | Voice Typing: Voice typing launcher | sync (Windows 11 only) |
 | Voice Typing: Automatic punctuation | sync (Windows 11 only) |
 | Wi-Fi: Wi-Fi profiles (only WPA) | sync |
+
+\* Display Language setting on Windows won't be impacted by changes from other devices or Microsoft products. 
 
 Control over these settings can be found in Windows 10 under **Settings** > **Accounts** > **Sync your settings** or in Windows 11 under **Settings** > **Accounts** > **Windows backup** > **Remember my preferences**.
 
