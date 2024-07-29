@@ -23,7 +23,7 @@ This is the list of settings that can be configured to sync across Windows. Ot
 | Inking & typing: Custom dictionary | sync (Windows 11 only) |
 | Keyboard: turn on toggle keys | sync|
 | Language: language profile | sync |
-| Language: Windows Display language \* | sync <br> (to account only) |
+| Language: Windows Display language \* | sync (to account only) |
 | Mouse: Primary Mouse Button | sync |
 | Passwords: Web Credentials | sync |
 | Pen: Choose which hand you write with | sync |
