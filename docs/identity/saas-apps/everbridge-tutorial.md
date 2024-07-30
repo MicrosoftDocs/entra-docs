@@ -58,8 +58,8 @@ To configure and test Microsoft Entra SSO with EverBridge, perform the following
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure EverBridge SSO](#configure-EverBridge-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create EverBridge test user](#create-EverBridge-test-user)** - to have a counterpart of B.Simon in EverBridge that is linked to the Microsoft Entra representation of user.
+1. **[Configure EverBridge SSO](#configure-Everbridge-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create EverBridge test user](#create-Everbridge-test-user)** - to have a counterpart of B.Simon in EverBridge that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -81,28 +81,28 @@ Follow these steps to enable Microsoft Entra SSO.
 4. To configure the **EverBridge** application as the **EverBridge manager portal**, in the **Basic SAML Configuration** section, follow these steps:
 
     a. In the **Identifier** box, enter a URL that follows the pattern.
-    `https://sso.EverBridge.net/<API_Name>`
+    `https://sso.Everbridge.net/<API_Name>`
 
     b. In the **Reply URL** box, enter a URL that follows the pattern.
-    `https://manager.EverBridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
+    `https://manager.Everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier and Reply URL values. To get these values, contact the [EverBridge support team](mailto:support@EverBridge.com). You also can refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Reply URL values. To get these values, contact the [EverBridge support team](mailto:support@Everbridge.com). You also can refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. To configure the **EverBridge** application as the **EverBridge member portal**, in the **Basic SAML Configuration** section, follow these steps:
 
   * If you want to configure the application in IDP-initiated mode, follow these steps:
 
-    a. In the **Identifier** box, enter a URL that follows the pattern `https://sso.EverBridge.net/<API_Name>/<Organization_ID>`
+    a. In the **Identifier** box, enter a URL that follows the pattern `https://sso.Everbridge.net/<API_Name>/<Organization_ID>`
 
-    b. In the **Reply URL** box, enter a URL that follows the pattern `https://member.EverBridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`
+    b. In the **Reply URL** box, enter a URL that follows the pattern `https://member.Everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`
 
    * If you want to configure the application in SP-initiated mode, select **Set additional URLs** and follow this step:
 
-     a. In the **Sign on URL** box, enter a URL that follows the pattern `https://member.EverBridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
+     a. In the **Sign on URL** box, enter a URL that follows the pattern `https://member.Everbridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
 
      > [!NOTE]
-     > These values aren't real. Update these values with the actual Identifier, Reply URL, and Sign on URL values. To get these values, contact the [EverBridge support team](mailto:support@EverBridge.com). You also can refer to the patterns shown in the **Basic SAML Configuration** section.
+     > These values aren't real. Update these values with the actual Identifier, Reply URL, and Sign on URL values. To get these values, contact the [EverBridge support team](mailto:support@Everbridge.com). You also can refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML**. Save it on your computer.
 
@@ -150,7 +150,7 @@ To configure SSO on **EverBridge** as an **EverBridge manager portal** applicati
 
 1. In the menu on the top, select the **Settings** tab. Under **Security**, select **Single Sign-On for Manager Portal**.
    
-     ![Configure single sign-on](./media/EverBridge-tutorial/settings.png)
+     ![Configure single sign-on](./media/Everbridge-tutorial/settings.png)
    
      a. In the **Name** box, enter the name of the identifier provider. An example is your company name.
    
@@ -168,11 +168,11 @@ To configure SSO on **EverBridge** as an **EverBridge manager portal** applicati
 
 ## Configure EverBridge as EverBridge member portal SSO
 
-To configure single sign-on on **EverBridge** as an **EverBridge member portal**, send the downloaded **Federation Metadata XML** to the [EverBridge support team](mailto:support@EverBridge.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **EverBridge** as an **EverBridge member portal**, send the downloaded **Federation Metadata XML** to the [EverBridge support team](mailto:support@Everbridge.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create EverBridge test user
 
-In this section, you create the test user Britta Simon in EverBridge. To add users in the EverBridge platform, work with the [EverBridge support team](mailto:support@EverBridge.com). Users must be created and activated in EverBridge before you use single sign-on. 
+In this section, you create the test user Britta Simon in EverBridge. To add users in the EverBridge platform, work with the [EverBridge support team](mailto:support@Everbridge.com). Users must be created and activated in EverBridge before you use single sign-on. 
 
 ## Test SSO
 
