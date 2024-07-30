@@ -126,7 +126,9 @@ foreach ($group in $groups) {
 
 ## Step 3 - Create a custom group inbound rule
 
-In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out groups that have NULL for the mail attribute. The inbound sync rule is a join rule with a target attribute of cloudNoFlow. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. 
+In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out groups that have NULL for the mail attribute. The inbound sync rule is a join rule with a target attribute of cloudNoFlow. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. To create this sync rule, you can opt to use the user interface or via PowerShell with the provided script.
+
+### Create a custom group inbound rule in the user interface
 
  1. Launch the **Synchronization Rules Editor** from the start menu.
  2. Select **Inbound** from the drop-down list for Direction and select **Add new rule**.
@@ -158,15 +160,77 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
      :::image type="content" source="media/migrate-group-writeback/migrate-7.png" alt-text="Screenshot of transformation." lightbox="media/migrate-group-writeback/migrate-7.png":::
 
+### Create a custom group inbound rule in PowerShell
+
+1. Launch a PowerShell window with "Run as administrator".
+2. Import the module and provide the value for the sync rule precedence [0-99].
+
+   ``` PowerShell 
+   Import-Module ADSync
+   
+   # Enter a unique sync rule precedence value [0-99]
+   [int] $inboundSyncRulePrecedence = 88
+
+   ```
+3. Execute the following script.
+
+   ``` PowerShell 
+    New-ADSyncRule  `
+    -Name 'In from AAD - Group SOAinAAD coexistence with Cloud Sync' `
+    -Identifier 'e4eae1c9-b9bc-4328-ade9-df871cdd3027' `
+    -Description 'https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-group-writeback' `
+    -Direction 'Inbound' `
+    -Precedence $inboundSyncRulePrecedence `
+    -PrecedenceAfter '00000000-0000-0000-0000-000000000000' `
+    -PrecedenceBefore '00000000-0000-0000-0000-000000000000' `
+    -SourceObjectType 'group' `
+    -TargetObjectType 'group' `
+    -Connector 'b891884f-051e-4a83-95af-2544101c9083' `
+    -LinkType 'Join' `
+    -SoftDeleteExpiryInterval 0 `
+    -ImmutableTag '' `
+    -OutVariable syncRule
+
+    Add-ADSyncAttributeFlowMapping  `
+    -SynchronizationRule $syncRule[0] `
+    -Source @('true') `
+    -Destination 'cloudNoFlow' `
+    -FlowType 'Constant' `
+    -ValueMergeType 'Update' `
+    -OutVariable syncRule
+
+    New-Object  `
+    -TypeName 'Microsoft.IdentityManagement.PowerShell.ObjectModel.ScopeCondition' `
+    -ArgumentList 'cloudMastered','true','EQUAL' `
+    -OutVariable condition0
+
+    New-Object  `
+    -TypeName 'Microsoft.IdentityManagement.PowerShell.ObjectModel.ScopeCondition' `
+    -ArgumentList 'mail','','ISNULL' `
+    -OutVariable condition1
+
+    Add-ADSyncScopeConditionGroup  `
+    -SynchronizationRule $syncRule[0] `
+    -ScopeConditions @($condition0[0],$condition1[0]) `
+    -OutVariable syncRule
+
+    Add-ADSyncRule  `
+    -SynchronizationRule $syncRule[0]
+
+    Get-ADSyncRule  `
+    -Identifier 'e4eae1c9-b9bc-4328-ade9-df871cdd3027'
+
+   ``` 
+
 
 ## Step 4 - Create a custom group outbound rule
 
-You also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. 
+You also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. To create this sync rule, you can opt to use the user interface or via PowerShell with the provided script.
+
+### Create a custom group inbound rule in the user interface
 
  1. Select **Outbound** from the drop-down list for Direction and select **Add rule**.
  2. On the **Description** page, enter the following and select **Next**:
-
-
 
     - **Name:** Give the rule a meaningful name
     - **Description:** Add a meaningful description
@@ -187,6 +251,24 @@ You also need an outbound sync rule with a link type of JoinNoFlow and the scopi
 4. On the **Join** rules page, select **Next**.
 5. On the **Transformations** page, select **Add**.
 
+### Create a custom group inbound rule in PowerShell
+
+1. Launch a PowerShell window with "Run as administrator".
+2. Import the module and provide the value for the sync rule precedence [0-99].
+
+   ``` PowerShell 
+   Import-Module ADSync
+   
+   # Enter a unique sync rule precedence value [0-99]
+   [int] $outboundSyncRulePrecedence = 89
+
+   ```
+3. Execute the following script.
+
+   ``` PowerShell 
+
+
+   ``` 
 
 ## Step 5 - Use PowerShell to finish configuration
 
@@ -194,7 +276,7 @@ You also need an outbound sync rule with a link type of JoinNoFlow and the scopi
 2. Import the ADSync module:
 
    ``` PowerShell 
-   Import-Module  'C:\Program Files\Microsoft Azure Active Directory Connect\Tools\ADSyncTools.psm1' 
+   Import-Module ADSync
    ``` 
 
 3. Run a full sync cycle:
