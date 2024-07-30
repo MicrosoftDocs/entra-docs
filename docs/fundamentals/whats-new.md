@@ -65,27 +65,6 @@ For listing your application in the Microsoft Entra ID app gallery, read the det
 
 ---
 
-### General Availability - Device based conditional access to Microsoft 365/Azure resources on Red Hat Enterprise Linux
-
-**Type:** New feature    
-**Service category:** Conditional Access    
-**Product capability:** SSO    
-
-Since October 2022, users on Ubuntu Desktop 20.04 LTS & Ubuntu 22.04 LTS with Microsoft Edge browser could register their devices with Microsoft Entra ID, enroll into Intune management, and securely access corporate resources using device-based Conditional Access policies.
-
-This release extends support to Red Hat Enterprise Linux 8.x and 9.x (LTS) which makes these capabilities possible:
-
-- Microsoft Entra ID registration & enrollment of RedHat LTS (8/9) desktops.
-- Conditional Access policies protecting web applications via Microsoft Edge.
-- Provides SSO for native & web applications (ex: Azure CLI, Microsoft Edge Browser, Teams PWA, etc.) to access M365/Azure protected resources.
-- Standard Intune compliance policies.
-- Support for Bash scripts with custom compliance policies.
-- Package Manager now supports RHEL "RPM" packages in addition to Debian "DEB" packages.
-
-For more information, see: [Microsoft Entra registered devices](../identity/devices/concept-device-registration.md).
-
----
-
 ### General Availability - Active Directory Federation Services (AD FS) Application Migration Wizard
 
 **Type:** New feature    
