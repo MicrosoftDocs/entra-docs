@@ -15,10 +15,17 @@ ms.topic: concept-article
 
 # A web API that calls web APIs: Code configuration
 
-Once registration for a Web API is complete, the application code can be configured. Configuring a web API to call a downstream web API builds on the code that's used in protecting a web API. For more information, see [Protected web API: App configuration](scenario-protected-web-api-app-configuration.md).
-## Microsoft.Identity.Web
+In the [previous article](./scenario-web-api-call-api-app-registration.md), you registered an application in Microsoft Entra, and the application code can now be configured. Configuring a web API to call a downstream web API builds on the code that's used in protecting a web API. For more information, see [Protected web API: App configuration](scenario-protected-web-api-app-configuration.md).
 
 Microsoft recommends that you use the [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web) NuGet package when developing an ASP.NET Core protected API calling downstream web APIs. See [Protected web API: Code configuration | Microsoft.Identity.Web](scenario-protected-web-api-app-configuration.md#microsoftidentityweb) for a quick presentation of that library in the context of a web API.
+
+## Prerequisites
+
+- [Register a web API that calls web APIs](scenario-web-api-call-api-app-registration.md)
+
+## Configure the app
+
+Use the table below to choose the appropriate code configuration for your app.
 
 # [ASP.NET Core](#tab/aspnetcore)
 
@@ -243,6 +250,8 @@ Here's the code:
 
 # [Java](#tab/java)
 
+## Using On-behalf-of (OBO) flow
+
 The On-behalf-of (OBO) flow is used to obtain a token to call the downstream web API. In this flow, your web API receives a bearer token with user delegated permissions from the client application and then exchanges this token for another access token to call the downstream web API.
 
 The code below uses Spring Security framework's `SecurityContextHolder` in the web API to get the validated bearer token. It then uses the MSAL Java library to obtain a token for downstream API using the `acquireToken` call with `OnBehalfOfParameters`. MSAL caches the token so that subsequent calls to the API can use `acquireTokenSilently` to get the cached token.
@@ -311,6 +320,8 @@ class MsalAuthHelper {
 ```
 
 # [Python](#tab/python)
+
+## Using On-behalf-of (OBO) flow
 
 The On-behalf-of (OBO) flow is used to obtain a token to call the downstream web API. In this flow, your web API receives a bearer token with user delegated permissions from the client application and then exchanges this token for another access token to call the downstream web API.
 

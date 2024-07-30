@@ -15,11 +15,10 @@ ms.topic: concept-article
 
 # Web app that signs in users: Code configuration
 
-Learn how to configure the code for your web app that signs in users.
+In the [previous article](./scenario-web-app-sign-user-app-registration.md), you registered an application in Microsoft Entra. In this article, you'll learn how to configure the code for your web app that signs in users.
 
 ## Microsoft libraries supporting web apps
 
-<!-- This section can be in an include for web app and web APIs -->
 The following Microsoft libraries are used to protect a web app (and a web API):
 
 [!INCLUDE [develop-libraries-webapp](./includes/libraries/libraries-webapp.md)]
@@ -129,6 +128,7 @@ In ASP.NET Core, another file ([properties\launchSettings.json](https://github.c
 In the Azure portal, the redirect URIs that you register on the **Authentication** page for your application need to match these URLs. For the two preceding configuration files, they would be `https://localhost:44321/signin-oidc`. The reason is that `applicationUrl` is `http://localhost:3110`, but `sslPort` is specified (`44321`). `CallbackPath` is `/signin-oidc`, as defined in `appsettings.json`.
 
 In the same way, the sign-out URI would be set to `https://localhost:44321/signout-oidc`.
+
 > [!NOTE]
 > SignedOutCallbackPath should set either to portal or the application to avoid conflict while handling the event.
 
@@ -190,7 +190,6 @@ Those environment variables are referenced in *app_config.py*:
 The *.env* file should never be checked into source control, since it contains secrets. The quickstart sample includes a *.gitignore* file that prevents the *.env* file from being checked in.
 
 :::code language="text" source="~/../ms-identity-python-webapp-tutorial/.gitignore" range="84-85" highlight="2":::
-
 
 ---
 

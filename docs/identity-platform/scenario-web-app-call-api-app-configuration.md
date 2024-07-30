@@ -15,12 +15,14 @@ ms.topic: concept-article
 
 # A web app that calls web APIs: Code configuration
 
-As shown in the [Web app that signs in users](scenario-web-app-sign-user-app-registration.md) scenario, the web app uses the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) to sign the user in. This flow has two steps:
+In the [previous article](./scenario-web-app-call-api-app-registration.md), you registered an application in Microsoft Entra. This article will show you how to configure the application code, and modify your web app so that it not only signs users in but also now calls web APIs. The application you create uses the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) to sign the user in. This flow has two steps:
 
 1. Request an authorization code. This part delegates a private dialogue with the user to the Microsoft identity platform. During that dialogue, the user signs in and consents to the use of web APIs. When the private dialogue ends successfully, the web app receives an authorization code on its redirect URI.
 1. Request an access token for the API by redeeming the authorization code.
 
-The [Web app that signs in users](scenario-web-app-sign-user-app-registration.md) scenarios covered only the first step. Here you learn how to modify your web app so that it not only signs users in but also now calls web APIs.
+## Prerequisites
+
+- [A web app that calls web APIs: App registration](./scenario-web-app-call-api-app-registration.md)
 
 ## Microsoft libraries supporting web apps
 
@@ -36,7 +38,7 @@ Select the tab for the platform you're interested in:
 
 [!INCLUDE [web-app-client-credentials.md](./includes/web-app-client-credentials.md)]
 
-## Startup.cs
+## Modify the *Startup.cs* file
 
 Your web app needs to acquire a token for the downstream API. You specify it by adding the `.EnableTokenAcquisitionToCallDownstreamApi()` line after `.AddMicrosoftIdentityWebApp(Configuration)`. This line exposes the `IAuthorizationHeaderProvider` service that you can use in your controller and page actions. However, as you see in the following two options, it can be done more simply. You also need to choose a token cache implementation, for example `.AddInMemoryTokenCaches()`, in *Startup.cs*:
 
@@ -255,10 +257,14 @@ Code examples in this article and the following one are extracted from the [ASP.
 
 # [Java](#tab/java)
 
+## Implement the Java code sample
+
 Code examples in this article and the following one are extracted from the [Java web application that calls Microsoft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp), a web-app sample that uses MSAL for Java.
 The sample currently lets MSAL for Java produce the authorization-code URL and handles the navigation to the authorization endpoint for the Microsoft identity platform. It's also possible to use Sprint security to sign the user in. You might want to refer to the sample for full implementation details.
 
 # [Node.js](#tab/nodejs)
+
+## Implement the Node.js code sample
 
 Code examples in this article and the following one are extracted from the [Node.js & Express.js web application that calls Microsoft Graph](https://github.com/Azure-Samples/ms-identity-node), a web app sample that uses MSAL Node.
 
@@ -268,7 +274,9 @@ The sample currently lets MSAL Node produce the authorization-code URL and handl
 
 # [Python](#tab/python)
 
-Code snippets in this article and the following are extracted from the [Python web application calling Microsoft graph](https://github.com/Azure-Samples/ms-identity-python-webapp) sample using the [identity package](https://pypi.org/project/identity/) (a wrapper around MSAL Python).
+## Implement the Python code sample
+
+Code snippets in this article and the following are extracted from the [Python web application calling Microsoft Graph](https://github.com/Azure-Samples/ms-identity-python-webapp) sample using the [identity package](https://pypi.org/project/identity/) (a wrapper around MSAL Python).
 
 The sample uses the identity package to produce the authorization-code URL and handles the navigation to the authorization endpoint for the Microsoft identity platform. You might want to refer to the sample for full implementation details.
 
@@ -367,7 +375,7 @@ The Microsoft sign-in screen sends the authorization code to the `/getAToken` UR
 
 :::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="36-41":::
 
-See `app.py` for the full context of that code.
+See *app.py* for the full context of that code.
 
 ---
 
