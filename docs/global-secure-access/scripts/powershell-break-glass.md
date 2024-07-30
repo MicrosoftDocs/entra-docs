@@ -212,5 +212,5 @@ Write-Host "`nDisabled Forwarding Profiles have been exported to C:\BreakGlass\D
 
 ## Next steps
 
-- [Recover from Break glass scenario](./powershell-compliant-network-breakglass-recovery.md)
+- [Recover from Break glass scenario](./powershell-break-glass-recovery.md)
 - [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
