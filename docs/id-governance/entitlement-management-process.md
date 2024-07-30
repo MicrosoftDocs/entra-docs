@@ -156,4 +156,3 @@ Here's a sample email notification that is sent to a requestor when their access
 - [Create custom alerts for entitlement management](governance-custom-alerts.md)
 - [Request access to an access package](entitlement-management-request-access.md)
 - [Approve or deny access requests](entitlement-management-request-approve.md)
-
