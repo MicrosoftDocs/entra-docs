@@ -87,8 +87,6 @@ The following table lists the administrative configuration limits in the Microso
 |Number of [custom authentication extensions](/entra/identity-platform/custom-extension-overview)    |100         |
 |Number of event listener policies    |249         |
 
-*To go beyond the default quota, you must contact Microsoft Support.
-
 ## Next steps
 
 - [Start a free trial without an Azure subscription](quickstart-trial-setup.md)
