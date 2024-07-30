@@ -18,7 +18,7 @@ Below you can view a script that can help you quickly regain the security value 
 
 ## Implement break glass recovery
 
-The PowerShell script enables any forwarding profiles and any Conditional Access policies using the compliant network condition that were disabled in the [break glass](./powershell-break-glass.mde) script. 
+The PowerShell script enables any forwarding profiles and any Conditional Access policies using the compliant network condition that were disabled in the [break glass](./powershell-break-glass.md) script. 
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
