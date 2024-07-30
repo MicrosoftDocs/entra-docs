@@ -5,14 +5,14 @@ description: Deploy recommended Conditional Access policies from easy to use tem
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 06/20/2024
+ms.date: 07/24/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Conditional Access templates
+# Conditional Access policy templates
 
 Conditional Access templates provide a convenient method to deploy new policies aligned with Microsoft recommendations. These templates are designed to provide maximum protection aligned with commonly used policies across various customer types and locations. 
 

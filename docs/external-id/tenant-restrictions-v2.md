@@ -357,6 +357,10 @@ To ensure sign-ins are restricted on all devices and apps in your corporate netw
 
    This header enforces your tenant restrictions v2 policy on all sign-ins on your network. This header doesn't block anonymous access to Teams meetings, SharePoint files, or other resources that don't require authentication.
 
+> [!IMPORTANT]
+> **Decrypting Microsoft URLs** - Tenant restrictions (v1 and v2) on the proxy requires decryption of requests to login URLs such as login.microsoftonline.com. Doing decryption of traffic for those login domains for the
+> purpose of TR header insertion is supported by Microsoft and is a valid exception from policies at [Use third-party network devices or solutions with Microsoft 365](/microsoft-365/troubleshoot/miscellaneous/office-365-third-party-network-devices).
+
 #### Tenant restrictions v2 with no support for break and inspect
 
 For non-Windows platforms, you can break and inspect traffic to add the tenant restrictions v2 parameters into the header via proxy. However, some platforms don't support break and inspect, so tenant restrictions v2 don't work. For these platforms, the following features of Microsoft Entra ID can provide protection:
