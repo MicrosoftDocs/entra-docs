@@ -1,6 +1,6 @@
 ---
-title: Add sign-up in native iOS app
-description: Learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in an iOS mobile app using native authentication.
+title: Add sign-up in native iOS/macOS app
+description: Learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in an iOS/macOS app using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,12 +12,12 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 06/18/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in an iOS mobile app using native authentication.
+#Customer intent: As a dev, devops, I want to learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in an iOS/macOS app using native authentication.
 ---
 
-# Tutorial: Add sign-up in an iOS mobile app using native authentication
+# Tutorial: Add sign-up in an iOS/macOS app using native authentication
 
-This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collects user attributes in your iOS mobile app using native authentication.
+This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collects user attributes in your iOS/macOS app using native authentication.
 
 > [!div class="checklist"]
 >
@@ -272,9 +272,9 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 
 ## Optional: Sign in after a sign-up flow
 
-After a successful sign-up flow, you can sign-in a user without initiating a sign-in flow. Learn more in the [Tutorial: Sign in user automatically after sign-up in an iOS app](tutorial-native-authentication-ios-sign-in-user-after-sign-up.md) article.
+After a successful sign-up flow, you can sign-in a user without initiating a sign-in flow. Learn more in the [Tutorial: Sign in user automatically after sign-up in an iOS/macOS app](tutorial-native-authentication-ios-sign-in-user-after-sign-up.md) article.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add sign-in and sign-out in iOS app by using native authentication](tutorial-native-authentication-ios-sign-in-sign-out.md). 
+> [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-sign-in-sign-out.md). 
