@@ -63,6 +63,7 @@ AuditLogs
 ## Entitlement management
 
 **Alert an IT admin when a user is directly added to a group, without using an access package.**
+
 *Query*
 
 ```
