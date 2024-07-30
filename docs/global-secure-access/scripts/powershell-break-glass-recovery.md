@@ -12,19 +12,19 @@ ms.reviewer: frankgomulka
 
 # Restore compliant network requirement after a break glass operation
 
-After an outage is resolved, you need to make a fast and accurate recovery from a [break glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) operation.
+After an outage is resolved, you need to make a fast and accurate recovery from a [break glass](./powershell-break-glass.md) operation.
 
 Below you can view a script that can help you quickly regain the security value of [Global Secure Access](../overview-what-is-global-secure-access.md) and [Compliant Network](../how-to-compliant-network.md) for your users.
 
 ## Implement break glass recovery
 
-The PowerShell script enables any Conditional Access policies using the Compliant Network condition that were disabled in the [break glass](./powershell-compliant-network-breakglass.md#step-2-switch-listed-policies-into-report-only-mode) script. 
+The PowerShell script enables any forwarding profiles and any Conditional Access policies using the compliant network condition that were disabled in the [break glass](./powershell-break-glass.mde) script. 
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ```powershell
 # recoveryscript.ps1 enables any Conditional Access policies using the Compliant Network condition that were disabled in a breakglass scenario. 
-# This script is the recovery method once the GSA service is back up after running .\breakglass.ps1
+# This script is the recovery method once the GSA service is back up after running .\gsabreakglass.ps1
 #
 # Version 1.0
 #
