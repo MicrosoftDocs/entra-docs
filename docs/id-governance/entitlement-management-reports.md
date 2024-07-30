@@ -7,7 +7,7 @@ editor: jocastel-MSFT
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/30 /2024
+ms.date: 07/30/2024
 ms.author: owinfrey
 ms.reviewer: jocastel
 #Customer intent: As an administrator, I want view resources a user has access to and view request logs for auditing purposes.
