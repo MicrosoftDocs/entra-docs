@@ -91,7 +91,7 @@ procedureSection:
     summary: |
       [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-      [Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) can require other users to reset their password, re-register for MFA, or revoke existing MFA sessions from their user object. Users can't update their own user object. To change or reset their own security methods, users can go to [Security info](https://aka.ms/security-info) for security methods update, and [self-service password reset](https://aka.ms/sspr) to reset their password. To manage user settings, complete the following steps:
+      [Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) can require other users to reset their password, re-register for MFA, or revoke existing MFA sessions from their user object. Users can't update their own user object. To change or reset their own security methods, users can go to [Security info](https://aka.ms/security-info), or go to [self-service password reset](https://aka.ms/sspr) to reset their password. To manage user settings, complete the following steps:
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
