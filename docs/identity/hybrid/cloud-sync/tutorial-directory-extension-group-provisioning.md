@@ -215,7 +215,7 @@ You need to make sure that you have consented to `Group.ReadWrite.All`. You can 
 1. Navigate to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)
 2. Sign-in using your tenant administrator account. This may need to be a Global Administrator account. A Global Administrator account was used in creating this scenario. A Hybrid Identity Administrator account may be sufficient.
 3. At the top, change the **GET** to **PATCH**
-4. In the address box enter: https://graph.microsoft.com/v1.0/groups/&lt;group id&gt;
+4. In the address box enter: `https://graph.microsoft.com/v1.0/groups/<Group Id>`
 5. In the Request body enter:
    ```
    {
