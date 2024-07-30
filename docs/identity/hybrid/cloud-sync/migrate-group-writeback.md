@@ -162,17 +162,18 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
 ### Create a custom group inbound rule in PowerShell
 
-1. Launch a PowerShell window with "Run as administrator".
-2. Import the module and provide the value for the sync rule precedence [0-99].
+1. On your Microsoft Entra Connect server, open a PowerShell prompt as an administrator. 
+2. Import the module.
 
    ``` PowerShell 
    Import-Module ADSync
-   
-   # Enter a unique sync rule precedence value [0-99]
-   [int] $inboundSyncRulePrecedence = 88
-
    ```
-3. Execute the following script.
+3. Provide a unique value for the sync rule precedence [0-99].
+
+   ``` PowerShell 
+   [int] $inboundSyncRulePrecedence = 88
+   ```
+4. Execute the following script:
 
    ``` PowerShell 
     New-ADSyncRule  `
@@ -219,9 +220,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
     Get-ADSyncRule  `
     -Identifier 'e4eae1c9-b9bc-4328-ade9-df871cdd3027'
-
    ``` 
-
 
 ## Step 4 - Create a custom group outbound rule
 
@@ -253,21 +252,58 @@ You also need an outbound sync rule with a link type of JoinNoFlow and the scopi
 
 ### Create a custom group inbound rule in PowerShell
 
-1. Launch a PowerShell window with "Run as administrator".
-2. Import the module and provide the value for the sync rule precedence [0-99].
+1. On your Microsoft Entra Connect server, open a PowerShell prompt as an administrator. 
+2. Import the module.
 
    ``` PowerShell 
    Import-Module ADSync
-   
-   # Enter a unique sync rule precedence value [0-99]
-   [int] $outboundSyncRulePrecedence = 89
-
    ```
-3. Execute the following script.
+3. Provide a unique value for the sync rule precedence [0-99].
 
    ``` PowerShell 
+   [int] $outboundSyncRulePrecedence = 89
+   ```
 
+4. Get the Active Directory Connector for Group Writeback.
 
+   ``` PowerShell 
+   $connectorAD = Get-ADSyncConnector -Name "Contoso.com"
+   ``` 
+
+5. Execute the following script:
+
+   ``` PowerShell 
+    New-ADSyncRule  `
+    -Name 'Out to AD - Group SOAinAAD coexistence with Cloud Sync' `
+    -Identifier '419fda18-75bb-4e23-b947-8b06e7246551' `
+    -Description 'https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-group-writeback' `
+    -Direction 'Outbound' `
+    -Precedence $outboundSyncRulePrecedence `
+    -PrecedenceAfter '00000000-0000-0000-0000-000000000000' `
+    -PrecedenceBefore '00000000-0000-0000-0000-000000000000' `
+    -SourceObjectType 'group' `
+    -TargetObjectType 'group' `
+    -Connector $connectorAD.Identifier `
+    -LinkType 'JoinNoFlow' `
+    -SoftDeleteExpiryInterval 0 `
+    -ImmutableTag '' `
+    -OutVariable syncRule
+
+    New-Object  `
+    -TypeName 'Microsoft.IdentityManagement.PowerShell.ObjectModel.ScopeCondition' `
+    -ArgumentList 'cloudNoFlow','true','EQUAL' `
+    -OutVariable condition0
+
+    Add-ADSyncScopeConditionGroup  `
+    -SynchronizationRule $syncRule[0] `
+    -ScopeConditions @($condition0[0]) `
+    -OutVariable syncRule
+
+    Add-ADSyncRule  `
+    -SynchronizationRule $syncRule[0]
+
+    Get-ADSyncRule  `
+    -Identifier '419fda18-75bb-4e23-b947-8b06e7246551'
    ``` 
 
 ## Step 5 - Use PowerShell to finish configuration
