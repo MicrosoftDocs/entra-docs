@@ -30,7 +30,7 @@ The following table outlines some of the standard notifications that Microsoft E
 
 In addition to the standard notifications provided by Microsoft Entra ID Governance, organizations can create custom alerts to meet their needs. 
 
-All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](https://learn.microsoft.com/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](https://learn.microsoft.com/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics), organizations can create [custom alerts](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs). 
+All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](https://learn.microsoft.com/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), organizations can create [custom alerts](https://learn.microsoft.com/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics#set-up-alerts). 
 
 The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor.
 
@@ -199,5 +199,5 @@ AuditLogs
 - [Get started with queries in Azure Monitor logs](https://learn.microsoft.com/azure/azure-monitor/logs/get-started-queries)
 - [Create and manage alert groups in the Azure portal](https://learn.microsoft.com/azure/azure-monitor/alerts/action-groups)
 - [Install and use the log analytics views for Microsoft Entra ID](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
-- [Microsoft Entra audit logs Provisioning object summary](https://learn.microsoft.com/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta)
+- [Archive logs and reporting on entitlement management in Azure Monitor](https://learn.microsoft.com/entra/id-governance/entitlement-management-logs-and-reporting)
 
