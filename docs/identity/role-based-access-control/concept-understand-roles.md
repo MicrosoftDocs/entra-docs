@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: conceptual
-ms.date: 04/22/2022
+ms.date: 07/30/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -54,8 +54,8 @@ Microsoft 365 has a number of role-based access control systems that developed i
 Microsoft Entra built-in roles differ in where they can be used, which fall into the following three broad categories.
 
 - **Microsoft Entra ID-specific roles**: These roles grant permissions to manage resources within Microsoft Entra-only. For example, User Administrator, Application Administrator, Groups Administrator all grant permissions to manage resources that live in Microsoft Entra ID.
-- **Service-specific roles**: For major Microsoft 365 services (non-Azure AD), we have built service-specific roles that grant permissions to manage all features within the service.  For example, Exchange Administrator, Intune Administrator, SharePoint Administrator, and Teams Administrator roles can manage features with their respective services. Exchange Administrator can manage mailboxes, Intune Administrator can manage device policies, SharePoint Administrator can manage site collections, Teams Administrator can manage call qualities and so on.
-- **Cross-service roles**: There are some roles that span services. We have two global roles - Global Administrator and Global Reader. All Microsoft 365 services honor these two roles. Also, there are some security-related roles like Security Administrator and Security Reader that grant access across multiple security services within Microsoft 365. For example, using Security Administrator roles in Microsoft Entra ID, you can manage Microsoft 365 Defender portal, Microsoft Defender Advanced Threat Protection, and Microsoft Defender for Cloud Apps. Similarly, in the Compliance Administrator role you can manage Compliance-related settings in Compliance portal, Exchange, and so on.
+- **Service-specific roles in Microsoft Entra ID**: Microsoft services such as Microsoft 365 that define roles in Microsoft Entra ID for service-specific privileges to manage all features within the service. For example, Exchange Administrator, Intune Administrator, SharePoint Administrator, and Teams Administrator roles can manage features with their respective services. Exchange Administrator can manage mailboxes, Intune Administrator can manage device policies, SharePoint Administrator can manage site collections, Teams Administrator can manage call qualities and so on.
+- **Cross-service roles in Microsoft Entra ID**: There are some roles that span services. We have two global roles - Global Administrator and Global Reader. All Microsoft 365 services honor these two roles. Also, there are some security-related roles like Security Administrator and Security Reader that grant access across multiple security services within Microsoft 365. For example, using Security Administrator roles in Microsoft Entra ID, you can manage Microsoft 365 Defender portal, Microsoft Defender Advanced Threat Protection, and Microsoft Defender for Cloud Apps. Similarly, in the Compliance Administrator role you can manage Compliance-related settings in Compliance portal, Exchange, and so on.
 
 ![The three categories of Microsoft Entra built-in roles](./media/concept-understand-roles/role-overlap-diagram.png)
 
