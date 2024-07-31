@@ -83,7 +83,7 @@ The following table lists the administrative configuration limits in the Microso
 |String limit per attribute      |250 Chars          |
 |Number of external tenants per subscription      |20         |
 |Total number of objects (user accounts and applications) per trial tenant (can't be extended)| 10000 |
-|Total number of objects (user accounts and applications) per tenant. To increase this limit [contact Microsoft Support](/entra/fundamentals/how-to-get-support#to-open-a-support-request-in-microsoft-entra-id) | 300,000 |
+|Total number of objects (user accounts and applications) per tenant. To increase this limit [contact Microsoft Support](/entra/identity-platform/developer-support-help-options?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json#create-an-azure-support-request) | 300,000 |
 |Number of [custom authentication extensions](/entra/identity-platform/custom-extension-overview)    |100         |
 |Number of event listener policies    |249         |
 
