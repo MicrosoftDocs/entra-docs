@@ -77,8 +77,6 @@ If your team has determined that native authentication is necessary for your app
 1. Navigate to **Authentication** and select the **Settings** tab.
 1. Select the **Allow native authentication** and the **Allow public client flow** field.
 
-:::image type="content" source="media/common/placeholder.png" alt-text="Screenshot of the enable native authentication button.":::
-
 Once you have enabled both **Allow native authentication** and **Allow public client flow**, update your configuration code accordingly.
 
 ## Update your configuration code
