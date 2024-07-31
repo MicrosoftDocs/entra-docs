@@ -33,7 +33,7 @@ Learn about tenants and securing apps for consumers and customers with [Microsof
 
 ## Enable custom URL domains
 
-The first step is to enable custom domains with AFD. Use the instructions in, [Enable custom URL domains for apps in external tenants (Preview)](../external-id/customers/how-to-custom-url-domain.md). 
+The first step is to enable custom domains with AFD. Use the instructions in, [Enable custom URL domains for apps in external tenants (Preview)](../customers/how-to-custom-url-domain.md). 
 
 ## Create a Cloudflare account
 
