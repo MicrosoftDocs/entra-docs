@@ -17,13 +17,13 @@ ms.author: jeedes
 
 # Tutorial: Microsoft Entra SSO integration with Qlik Sense Enterprise Client-Managed
 
-In this tutorial, you'll learn how to integrate Qlik Sense Enterprise Client-Managed with Microsoft Entra ID. When you integrate Qlik Sense Enterprise Client-Managed with Microsoft Entra ID, you can:
+In this tutorial, you learn how to integrate Qlik Sense Enterprise Client-Managed with Microsoft Entra ID. When you integrate Qlik Sense Enterprise Client-Managed with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Qlik Sense Enterprise.
 * Enable your users to be automatically signed-in to Qlik Sense Enterprise with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-Note that there are two versions of Qlik Sense Enterprise. While this tutorial covers integration with the client-managed releases, a different process is required for Qlik Sense Enterprise SaaS (Qlik Cloud version).
+There are two versions of Qlik Sense Enterprise. While this tutorial covers integration with the client-managed releases, a different process is required for Qlik Sense Enterprise SaaS (Qlik Cloud version).
 
 ## Prerequisites
 
@@ -49,7 +49,7 @@ To configure the integration of Qlik Sense Enterprise into Microsoft Entra ID, y
 1. In the **Add from the gallery** section, type **Qlik Sense Enterprise** in the search box.
 1. Select **Qlik Sense Enterprise** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-qlik-sense-enterprise'></a>
 
@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Qlik Sense Enterprise** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
-1. On the **Set up Single Sign-On with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
     ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -106,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called Britta Simon.
+In this section, you create a test user called Britta Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -114,7 +114,7 @@ In this section, you'll create a test user called Britta Simon.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
    1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
+   1. Select the **Show password** check box, and then write down the value that is displayed in the **Password** box.
    1. Select **Review + create**.
 1. Select **Create**.
 
@@ -122,25 +122,25 @@ In this section, you'll create a test user called Britta Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable Britta Simon to use Azure single sign-on by granting access to Qlik Sense Enterprise.
+In this section, you enable Britta Simon to use Azure single sign-on by granting access to Qlik Sense Enterprise.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Qlik Sense Enterprise**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
-1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-1. In the **Users and groups** dialog, select **Britta Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-1. In the **Add Assignment** dialog, click the **Assign** button.
+1. Select **Add user**, then select **Users and groups** in the **Added Assignment** dialog.
+1. In the **Users and groups** dialog, select **Britta Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+1. In the **Added Assignment** dialog, select the **Assign** button.
 
 ## Configure Qlik Sense Enterprise SSO
 
 1. Navigate to the Qlik Sense Qlik Management Console (QMC) as a user who can create virtual proxy configurations.
 
-2. In the QMC, click on the **Virtual Proxies** menu item.
+2. In the QMC, select on the **Virtual Proxies** menu item.
 
     ![Screenshot shows Virtual proxies selected from CONFIGURE SYSTEM.][qs6]
 
-3. At the bottom of the screen, click the **Create new** button.
+3. At the bottom of the screen, select the **Create new** button.
 
     ![Screenshot shows the Create new option.][qs7]
 
@@ -154,7 +154,7 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 
     a. The **Description** field is a friendly name for the virtual proxy configuration.  Enter a value for a description.
 
-    b. The **Prefix** field identifies the virtual proxy endpoint for connecting to Qlik Sense with Microsoft Entra Single Sign-On.  Enter a unique prefix name for this virtual proxy.
+    b. The **Prefix** field identifies the virtual proxy endpoint for connecting to Qlik Sense with Microsoft Entra single sign-on.  Enter a unique prefix name for this virtual proxy.
 
     c. **Session inactivity timeout (minutes)** is the timeout for connections through this virtual proxy.
 
@@ -166,13 +166,13 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 
     a. The **Anonymous access mode** dropdown list determines if anonymous users may access Qlik Sense through the virtual proxy. The default option is **No anonymous user**.
 
-    b. The **Authentication method** dropdown list determines the authentication scheme the virtual proxy will use. Select SAML from the dropdown list. More options appear as a result.
+    b. The **Authentication method** dropdown list determines the authentication scheme the virtual proxy uses. Select SAML from the dropdown list. More options appear as a result.
 
     c. In the **SAML host URI field**, input the host name that users enter to access Qlik Sense through this SAML virtual proxy. The host name is the URI of the Qlik Sense server.
 
     d. In the **SAML entity ID**, enter the same value entered for the SAML host URI field.
 
-    e. The **SAML IdP metadata** is the file edited earlier in the **Edit Federation Metadata from Microsoft Entra Configuration** section.  **Before uploading the IdP metadata, the file needs to be edited** to remove information to ensure proper operation between Microsoft Entra ID and Qlik Sense server.  **Please refer to the instructions above if the file has yet to be edited.**  If the file has been edited click on the Browse button and select the edited metadata file to upload it to the virtual proxy configuration.
+    e. The **SAML IdP metadata** is the file edited earlier in the **Edit Federation Metadata from Microsoft Entra Configuration** section.  **Before uploading the IdP metadata, the file needs to be edited** to remove information to ensure proper operation between Microsoft Entra ID and Qlik Sense server.  **Please refer to the instructions above if the file has yet to be edited.**  If the file has been edited select on the Browse button and select the edited metadata file to upload it to the virtual proxy configuration.
 
     f. Enter the attribute name or schema reference for the SAML attribute representing the **UserID** Microsoft Entra ID sends to the Qlik Sense server.  Schema reference information is available in the Azure app screens post configuration.  To use the name attribute, enter `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
@@ -180,73 +180,73 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 
     h. The **SAML signing algorithm** sets the service provider (in this case Qlik Sense server) certificate signing for the virtual proxy configuration.  If Qlik Sense server uses a trusted certificate generated using Microsoft Enhanced RSA and AES Cryptographic Provider, change the SAML signing algorithm to **SHA-256**.
 
-    i. The SAML attribute mapping section allows for additional attributes like groups to be sent to Qlik Sense for use in security rules.
+    i. The SAML attribute mapping section allows for other attributes like groups to be sent to Qlik Sense for use in security rules.
 
-7. Click on the **LOAD BALANCING** menu option to make it visible.  The Load Balancing screen appears.
+7. Select on the **LOAD BALANCING** menu option to make it visible.  The Load Balancing screen appears.
 
     ![Screenshot shows the Virtual proxy edit screen for LOAD BALANCING where you can select Add new server node.][qs11]
 
-8. Click on the **Add new server node** button, select engine node or nodes Qlik Sense will send sessions to for load balancing purposes, and click the **Add** button.
+8. Select on the **Add new server node** button, select engine node or nodes Qlik Sense send sessions to for load balancing purposes, and select the **Add** button.
 
     ![Screenshot shows the Add server nodes to load balance on dialog button where you can Add servers.][qs12]
 
-9. Click on the Advanced menu option to make it visible. The Advanced screen appears.
+9. Select on the Advanced menu option to make it visible. The Advanced screen appears.
 
     ![Screenshot shows the Edit virtual proxy Advanced screen.][qs13]
 
-    The Host allow list identifies host names that are accepted when connecting to the Qlik Sense server. **Enter the host name that users will specify when connecting to Qlik Sense server.** The host name is the same value as the SAML host URI without the `https://`.
+    The Host allowlist identifies host names that are accepted when connecting to the Qlik Sense server. **Enter the host name that users will specify when connecting to Qlik Sense server.** The host name is the same value as the SAML host URI without the `https://`.
 
-10. Click the **Apply** button.
+10. Select the **Apply** button.
 
     ![Screenshot shows the Apply button.][qs14]
 
-11. Click OK to accept the warning message that states proxies linked to the virtual proxy will be restarted.
+11. Select OK to accept the warning message that states proxy linked to the virtual proxy will be restarted.
 
     ![Screenshot shows the Apply changes to virtual proxy confirmation message.][qs15]
 
-12. On the right side of the screen, the Associated items menu appears.  Click on the **Proxies** menu option.
+12. On the right side of the screen, the Associated items menu appears.  Select on the **Proxies** menu option.
 
     ![Screenshot shows Proxies selected from Associated items.][qs16]
 
-13. The proxy screen appears.  Click the **Link** button at the bottom to link a proxy to the virtual proxy.
+13. The proxy screen appears.  Select the **Link** button at the bottom to link a proxy to the virtual proxy.
 
     ![Screenshot shows the Link button.][qs17]
 
-14. Select the proxy node that will support this virtual proxy connection and click the **Link** button.  After linking, the proxy will be listed under associated proxies.
+14. Select the proxy node that supports this virtual proxy connection and select the **Link** button.  After linking, the proxy will be listed under associated proxies.
 
     ![Screenshot shows Select proxy services.][qs18]
   
     ![Screenshot shows Associated proxies in the Virtual proxy associated items dialog box.][qs19]
 
-15. After about five to ten seconds, the Refresh QMC message will appear.  Click the **Refresh QMC** button.
+15. After about five to 10 seconds, the Refreshed QMC message will appear.  Select the **Refresh QMC** button.
 
     ![Screenshot shows the message Your session has ended.][qs20]
 
-16. When the QMC refreshes, click on the **Virtual proxies** menu item. The new SAML virtual proxy entry is listed in the table on the screen.  Single click on the virtual proxy entry.
+16. When the QMC refreshes, select on the **Virtual proxies** menu item. The new SAML virtual proxy entry is listed in the table on the screen.  Single select on the virtual proxy entry.
 
     ![Screenshot shows Virtual proxies with a single entry.][qs51]
 
-17. At the bottom of the screen, the Download SP metadata button will activate.  Click the **Download SP metadata** button to save the metadata to a file.
+17. At the bottom of the screen, the Download SP metadata button activates.  Select the **Download SP metadata** button to save the metadata to a file.
 
     ![Screenshot shows the Download S P metadata button.][qs52]
 
-18. Open the sp metadata file.  Observe the **entityID** entry and the **AssertionConsumerService** entry.  These values are equivalent to the **Identifier**, **Sign on URL** and the **Reply URL** in the Microsoft Entra application configuration. Paste these values in the **Qlik Sense Enterprise Domain and URLs** section in the Microsoft Entra application configuration if they are not matching, then you should replace them in the Microsoft Entra App configuration wizard.
+18. Open the sp metadata file.  Observe the **entityID** entry and the **AssertionConsumerService** entry.  These values are equivalent to the **Identifier**, **Sign on URL** and the **Reply URL** in the Microsoft Entra application configuration. Paste these values in the **Qlik Sense Enterprise Domain and URLs** section in the Microsoft Entra application configuration if they aren't matching, then you should replace them in the Microsoft Entra App configuration wizard.
 
     ![Screenshot shows a plain text editor with an EntityDescriptor with entityID and AssertionConsumerService called out.][qs53]
 
 ### Create Qlik Sense Enterprise test user
 
-Qlik Sense Enterprise supports **just-in-time provisioning**, Users automatically added to the 'USERS' repository of Qlik Sense Enterprise as they use the SSO feature. In addition, clients can use the QMC and create a UDC (User Directory Connector) for pre-populating users in Qlik Sense Enterprise from their LDAP of choice such as Active Directory, and others.
+Qlik Sense Enterprise supports **just-in-time provisioning**, Users automatically added to the 'USERS' repository of Qlik Sense Enterprise as they use the SSO feature. In addition, clients can use the QMC and create a UDC (User Directory Connector) for prepopulating users in Qlik Sense Enterprise from their LDAP of choice such as Active Directory, and others.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Qlik Sense Enterprise Sign-on URL where you can initiate the login flow. 
+* Select on **Test this application**, this will redirect to Qlik Sense Enterprise Sign-on URL where you can initiate the sign-in flow. 
 
-* Go to Qlik Sense Enterprise Sign-on URL directly and initiate the login flow from there.
+* Go to Qlik Sense Enterprise Sign-on URL directly and initiate the sign-in flow from there.
 
-* You can use Microsoft My Apps. When you click the Qlik Sense Enterprise tile in the My Apps, this will redirect to Qlik Sense Enterprise Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Qlik Sense Enterprise tile in the My Apps, this will redirect to Qlik Sense Enterprise Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 
