@@ -141,7 +141,28 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure ProdPad SSO
 
-To configure single sign-on on **ProdPad** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [ProdPad support team](mailto:help@prodpad.com). They set this setting to have the SAML SSO connection set properly on both sides.
+1. Go to Account Settings and select the Security tab.
+1. Now select the SSO/SAML sub-tab.
+1. Click the "Add authentication type" button and select Microsoft Entra from the dropdown.
+1. Click the Next button on the Microsoft Entra modal.
+1. Copy into the field labelled "IdP Entity ID/URL" in ProdPad, the URL from the field "Microsoft Entra Identifier" in Microsoft Entra.
+1. Copy into the field "IdP SAML Single Sign-On URL" in ProdPad, the URL in the field "Login URL" in Microsoft Entra.
+1. Copy into the field "Logout URL" in ProdPad, the URL in the field "Logout URL" in Microsoft Entra.
+1. Paste the text of X.509 certificate (public key generated above) into the X.509 certificate field.
+
+Now you must decide whether you want your users to login by IdP initiated login only or by IdP and SP initiated login. 
+
+1. If you select IdP only, you users must login from the Microsoft Entra dashboard, rather than the ProdPad login page. 
+
+   1. Click save. Your users can now use the ProdPad app link on their Microsoft Entra dashboard.
+
+1. If you opt for IdP & SP initiated login
+   1. you must set up the Domains that your users can login from, more about this [here](https://help.prodpad.com/article/704-domain-verification)
+   1. Once set up and verified, select the domain from the Domains list.
+   1. Hit save.
+
+**Note: for a domain to appear as an option here it must be verified under the Domains tab.**
+
 
 ### Create ProdPad test user
 
