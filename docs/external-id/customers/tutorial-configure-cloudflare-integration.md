@@ -13,7 +13,7 @@ ms.custom: it-pro
 
 # Tutorial: Configure Cloudflare Web Application Firewall with Microsoft Entra External ID
 
-In this tutorial, learn how to configure Cloudflare Web Applcation Firewall ([Cloudflare WAF](https://www.cloudflare.com/application-services/products/waf/)) to protect your organization from a attacks, such as distributed denial of service (DDoS), malicious bots, Open Worldwide Application Seucurity Project [(OWASP) Top-10](https://owasp.org/www-project-top-ten/) security risks, and others. 
+In this tutorial, learn how to configure Cloudflare Web Applcation Firewall ([Cloudflare WAF](https://www.cloudflare.com/application-services/products/waf/)) to protect your organization from attacks, such as distributed denial of service (DDoS), malicious bots, Open Worldwide Application Security Project [(OWASP) Top-10](https://owasp.org/www-project-top-ten/) security risks, and others. 
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ Learn about tenants and securing apps for consumers and customers with [Microsof
 ### Scenario description
 
 * **Microsoft Entra External ID tenant** – The identity provider (IdP) and authorization server that verifies user credentials with custom policies defined for the tenant. 
-* **Azure Front Door** – Enables custom URL domains for Microsoft Entra External ID. Traffic to custom URL domains goes through Cloudflare WAF, then goes to AFD, an then the Microsoft Entra External ID tenant. 
+* **Azure Front Door** – Enables custom URL domains for Microsoft Entra External ID. Traffic to custom URL domains goes through Cloudflare WAF, it then goes to AFD, and then to the Microsoft Entra External ID tenant. 
 * **Cloudflare WAF** – Security controls to protect traffic to the authorization server. 
 
 ## Enable custom URL domains
@@ -90,7 +90,7 @@ We recommend you block traffic orginating from the Tor proxy network, unless you
 3. Select **WAF**.
 4. Select **Create rule**.
 5. For **Rule name**, enter a relevant name.
-6. For **If incomine requests match**, for **Field**, select **Continent**.
+6. For **If incoming requests match**, for **Field**, select **Continent**.
 7. For **Operator**, select **equals**.
 8. For **Value**, select **Tor**.
 9. For **Then take action**, select **Block**.
@@ -116,7 +116,7 @@ We recommended strict security controls on traffic from countries or regions whe
 3. Select **WAF**.
 4. Select **Create rule**.
 5. For **Rule name**, enter a relevant name.
-6. For **If incomeing requests match**, for **Field**, select **Country** or **Continent**.
+6. For **If incoming requests match**, for **Field**, select **Country** or **Continent**.
 7. For **Operator**, select **equals**.
 8. For **Value**, select the country or continent to block.
 9. For **Then take action**, select **Block**.
