@@ -20,7 +20,7 @@ To customize the end-user experience for Microsoft Entra multifactor authenticat
 >[!NOTE]
 >[Report suspicious activity](#report-suspicious-activity) replaces the Block/unblock users, Fraud alert, and Notifications legacy features. On March 1, 2025, the legacy features will be removed. 
  
-The following table describes Microsoft Entra MFA settings, and subsections cover each in detail.
+The following table describes Microsoft Entra MFA settings, and subsections cover each setting in more detail.
 
 | Feature | Description |
 | ------- | ----------- |
