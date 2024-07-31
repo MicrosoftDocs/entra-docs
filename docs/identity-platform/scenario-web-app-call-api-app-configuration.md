@@ -197,7 +197,7 @@ If you want to call an API other than Microsoft Graph, *Microsoft.Identity.Web* 
 
 1. Add the [Microsoft.Identity.Web.DownstreamApi](https://www.nuget.org/packages/Microsoft.Identity.Web.DownstreamApi) NuGet package to your project.
 1. Add `.AddDownstreamApi()` after `.EnableTokenAcquisitionToCallDownstreamApi()` in the *Startup.cs* file. `.AddDownstreamApi()` has two arguments:
-   - The name of a service (api): you use this name in your controller actions to reference the corresponding configuration
+   - The name of a service (API): you use this name in your controller actions to reference the corresponding configuration
    - a configuration section representing the parameters used to call the downstream web API.
 
 Here's the code:
