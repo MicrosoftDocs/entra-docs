@@ -75,7 +75,7 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > | ----------- | ----------- |----------- |
 > | ASP.NET Core MAUI | &#8226; [Sign in users](how-to-mobile-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)|
 > | Android (Kotlin) | &#8226; [Sign in users](sample-mobile-app-android-kotlin-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-android-kotlin-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-android-kotlin-prepare-tenant.md) |
-> | iOS (Swift) | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-swift-prepare-tenant.md) |
+> | iOS (Swift) | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-macos-swift-prepare-tenant.md) |
 
 
 ### Mobile: Native authentication
@@ -86,7 +86,7 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > |Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-android-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
-> |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+> |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
 
 ### Daemon
 
@@ -152,7 +152,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > | Mobile: Browser delegated authentication | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-swift-prepare-tenant.md) |
-> |Mobile: Native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+> |Mobile: Native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
 
 ### JavaScript, Vanilla
 
