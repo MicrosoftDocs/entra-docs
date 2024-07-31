@@ -23,7 +23,7 @@ To get started, you need:
 * Microsoft [Azure Front Door (AFD)](/azure/frontdoor/front-door-overview)
 * Cloudflare account with WAF
 
-Learn about tenants and securing apps for consumers and customers with [Microsoft Entra External ID](/external-id/external-identities-overview.md).
+Learn about tenants and securing apps for consumers and customers with [Microsoft Entra External ID](../external-id/external-identities-overview.md).
 
 ### Scenario description
 
@@ -33,7 +33,7 @@ Learn about tenants and securing apps for consumers and customers with [Microsof
 
 ## Enable custom URL domains
 
-The first step is to enable custom domains with AFD. Use the instructions in, [Enable custom URL domains for apps in external tenants (Preview)](/external-id/customers/how-to-custom-url-domain.md). 
+The first step is to enable custom domains with AFD. Use the instructions in, [Enable custom URL domains for apps in external tenants (Preview)](../external-id/customers/how-to-custom-url-domain.md). 
 
 ## Create a Cloudflare account
 
