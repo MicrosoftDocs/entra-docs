@@ -120,4 +120,4 @@ Use the steps in [Call a protected web API in a sample iOS mobile app by using n
 
 ## Next steps 
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md). 
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md). 
