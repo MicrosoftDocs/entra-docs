@@ -111,7 +111,7 @@ We recommended strict security controls on traffic from countries or regions whe
 
 ### Block traffic from countries or regions
 
-1. Go to the [Cloudflare dashboard](https://developers.cloudflare.com/workers/get-started/dashboard/). 
+1. Go to the [Cloudflare dashboard](https://developers.cloudflare.com/workers/get-started/dashboard/).
 2. Expand the Security section.
 3. Select **WAF**.
 4. Select **Create rule**.
