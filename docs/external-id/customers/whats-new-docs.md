@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 07/01/2024
+ms.date: 07/31/2024
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: whats-new
@@ -14,6 +14,14 @@ manager: CelesteDG
 # What's new in docs: External ID in external tenants
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
+
+## July 2024
+
+### Updated articles
+
+- [Call an API in a sample Node.js daemon application](sample-daemon-node-call-api.md) - Editorial updates
+- [Sign in users in a sample Electron desktop application](how-to-desktop-app-electron-sample-sign-in.md) - Added user flow testing instructions
+- [Sign in users and edit profile in a sample Node.js web application](sample-web-app-node-sign-in-edit-profile.md) - Editorial updates
 
 ## June 2024
 
