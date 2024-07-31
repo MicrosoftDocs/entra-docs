@@ -419,7 +419,7 @@ items:
         href: how-to-use-app-roles-customers.md
       - name: Web Application Firewall partners
         items: 
-        - name: Cloudfare
+        - name: Cloudflare
           href: tutorial-configure-cloudflare-integration.md
     - name: Manage users
       items:
