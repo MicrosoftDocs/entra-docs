@@ -1,6 +1,6 @@
 ---
-title: Add sign in and sign out in native iOS app
-description: Learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS app by using native authentication.
+title: Add sign in and sign out in native iOS/macOS app
+description: Learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS/macOS app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,12 +12,12 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 06/20/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS app by using native authentication.
+#Customer intent: As a dev, devops, I want to learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS/macOS app by using native authentication.
 ---
 
-# Tutorial: Add sign-in and sign-out in iOS app by using native authentication
+# Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication
 
-This tutorial demonstrates how to sign-in and sign-out a user with email one-time passcode or username and password in your iOS mobile app by using native authentication. 
+This tutorial demonstrates how to sign-in and sign-out a user with email one-time passcode or username and password in your iOS/macOS app by using native authentication. 
 
 In this tutorial, you learn how to: 
 
@@ -262,4 +262,4 @@ You have successfully completed all the necessary steps to sign out a user on yo
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Self-service password reset in iOS app](tutorial-native-authentication-ios-self-service-password-reset.md).
+> [Tutorial: Self-service password reset in iOS/macOS app](tutorial-native-authentication-ios-macos-self-service-password-reset.md).
