@@ -56,10 +56,11 @@ Starting April 2023, organizations that use auto-acceleration or smart links mig
 
 When you see the Domain Confirmation Dialog, you should:
 
-- Check the domain: Look at the domain name listed on the screen. You should see the domain of the account's home tenant. If you:
+- **Check the domain**: Look at the domain name listed on the screen. You should see the domain of the account's home tenant, for example, `contoso.com`:
 
-- **Recognize the domain** and it matches the organization you are trying to sign in to, select **Confirm** to proceed.
-- **Don't recognize the domain** cancel the sign-in process and contact your IT Admin (if applicable) for assistance.
+  - **If you recognize the domain** and it matches the organization you are trying to sign in to, select **Confirm** to proceed.
+  - **If you don't recognize the domain** cancel the sign-in process and contact your IT Admin (if applicable) for assistance.
+  
 This step helps ensure that you are signing in to the correct organization and protects your account from unauthorized access. 
 
 ### Components of the Domain Confirmation Dialog
