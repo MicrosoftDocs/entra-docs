@@ -59,7 +59,7 @@ For optimal protection, we recommend you enable Cloudflare security controls.
 
 ### DDoS protection
 
-1. Go to the [Cloudflare dashboard](https://developers.cloudflare.com/workers/get-started/dashboard/). 
+1. Go to the [Cloudflare dashboard](https://developers.cloudflare.com/workers/get-started/dashboard/).
 2. Expand the Security section.
 3. Select **DDoS**.
 4. A message appears. 
@@ -68,8 +68,8 @@ For optimal protection, we recommend you enable Cloudflare security controls.
 
 ### Bot protection
 
-1. Go to the [Cloudflare dashboard](https://developers.cloudflare.com/workers/get-started/dashboard/). 
-2. Expand the Security section. 
+1. Go to the [Cloudflare dashboard](https://developers.cloudflare.com/workers/get-started/dashboard/).
+2. Expand the Security section.
 3. Under **Configure Super Bot Fight Mode**, for **Definitely automated**, select **Block**.
 4. For **Likely automated**, select **Managed Challenge**.
 5. For **Verified bots**, select **Allow**.
