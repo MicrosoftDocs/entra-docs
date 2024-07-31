@@ -97,7 +97,7 @@ We recommend you block traffic that originates from the Tor proxy network, unles
 10. For **Place at**, select **First**.
 11. Select **Deploy**.
 
-   ![Screenshot of the create rule dialog.](media/tutorial-configure-cloudflare-integration/create-rule.png)
+    ![Screenshot of the create rule dialog.](media/tutorial-configure-cloudflare-integration/create-rule.png)
 
    > [!NOTE]
    > You can add custom HTML pages for visitors.
