@@ -19,7 +19,7 @@ Welcome to what's new in documentation for Microsoft Entra External ID in workfo
 
 ### Updated articles
 
-- [Microsoft Entra External ID documentation](/entra/external-id.md) - Editorial updates
+- [Microsoft Entra External ID documentation](index.yml) - Editorial updates
 
 ## June 2024
 
