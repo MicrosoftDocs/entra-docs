@@ -74,7 +74,7 @@ For optimal protection, we recommend you enable Cloudflare security controls.
 4. For **Likely automated**, select **Managed Challenge**.
 5. For **Verified bots**, select **Allow**.
 
-   ![Screenshot of bot protection options.](../media/tutorial-configure-cloudflare-integration/bot-protection.png)
+   ![Screenshot of bot protection options.](media/tutorial-configure-cloudflare-integration/bot-protection.png)
 
 ## Firewall rules: Traffic from the Tor network
 
@@ -97,7 +97,7 @@ We recommend you block traffic orginating from the Tor proxy network, unless you
 10. For **Place at**, select **First**.
 11. Select **Deploy**.
 
-   ![Screenshot of the create rule dialog.](../media/tutorial-configure-cloudflare-integration/create-rule.png)
+   ![Screenshot of the create rule dialog.](media/tutorial-configure-cloudflare-integration/create-rule.png)
 
    > [!NOTE]
    > You can add custom HTML pages for visitors.
@@ -132,7 +132,7 @@ We recommended strict security controls on traffic from countries or regions whe
 2. For **Cloudflare Managed Ruleset**, select **Enabled**.
 3. For **Cloudflare OWASP Core Ruleset**, select **Enabled**.
 
-   [ ![Screenshot of rule sets.](media/tutorial-configure-cloudflare-integration/rulesets.png)](media/tutorial-configure-cloudflare-integration/rulesets-expanded.png#lightbox)
+   [ ![Screenshot of rule sets.](media/tutorial-configure-cloudflare-integration/rulesets.png)](media/tutorial-configure-cloudflare-integration/ruleset-expanded.png#lightbox)
    
 
 
