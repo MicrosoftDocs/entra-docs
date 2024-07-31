@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 03/11/2024
+ms.date: 07/31/2024
 ms.author: jricketts
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -133,20 +133,14 @@ Additionally, while you can use the following Conditional Access conditions, be 
 
 ## Securing your multitenant environment
 
-Review the [security checklist](/azure/security/fundamentals/steps-secure-identity) and [best practices](/azure/security/fundamentals/operational-best-practices) for guidance on securing your tenant. Ensure these best practices are followed and review them with any tenants that you collaborate closely with.
+Securing a multitenant environment starts by ensuring each tenant adheres to security best practices. Review the [security checklist](/azure/security/fundamentals/steps-secure-identity) and [best practices](/azure/security/fundamentals/operational-best-practices) for guidance on securing your tenant. Ensure these best practices are followed and review them with any tenants that you collaborate closely with.
 
-### Conditional Access
+### Protect admin accounts and ensure least privilege
+- Find and address gaps in [strong authentication coverage](~/identity/authentication/how-to-authentication-find-coverage-gaps.md) for your administrators
+- Enhance security with the principle of least privilege for both [users](~/identity/role-based-access-control/best-practices.md) and [applications](~/identity-platform/secure-least-privileged-access.md). Review the least privilege [roles](~/identity/role-based-access-control/delegate-by-task.md) by task in Microsoft Entra ID.
+- Minimize persistent administrator access by enabling [Privileged Identity Management](/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management).
 
-The following are considerations for configuring access control.
-
-- Define [access control policies](~/external-id/authentication-conditional-access.md) to control access to resources.
-- Design Conditional Access policies with external users in mind.
-- Create policies specifically for external users.
-- Create dedicated Conditional Access policies for external accounts.
-
-<a name='monitoring-your-multi-tenant-environment'></a>
-
-### Monitoring your multitenant environment
+### Monitor your multitenant environment
 
 - Monitor for changes to cross-tenant access policies using the [audit logs UI](~/identity/monitoring-health/concept-audit-logs.md), [API](/graph/api/resources/azure-ad-auditlog-overview), or [Azure Monitor integration](~/identity/monitoring-health/tutorial-configure-log-analytics-workspace.md) (for proactive alerts). The audit events use the categories "CrossTenantAccessSettings" and "CrossTenantIdentitySyncSettings." By monitoring for audit events under these categories, you can identify any cross-tenant access policy changes in your tenant and take action. When creating alerts in Azure Monitor, you can create a query such as the following one to identify any cross-tenant access policy changes.
 
@@ -155,21 +149,49 @@ AuditLogs
 | where Category contains "CrossTenant"
 ```
 
+- Monitor for any new partners added to cross-tenant access settings.
+
+```
+AuditLogs
+| where OperationName == "Add a partner to cross-tenant access setting"
+| where parse_json(tostring(TargetResources[0].modifiedProperties))[0].displayName == "tenantId"
+| extend initiating_user=parse_json(tostring(InitiatedBy.user)).userPrincipalName
+| extend source_ip=parse_json(tostring(InitiatedBy.user)).ipAddress
+| extend target_tenant=parse_json(tostring(TargetResources[0].modifiedProperties))[0].newValue
+| project TimeGenerated, OperationName,initiating_user,source_ip, AADTenantId,target_tenant
+| project-rename source_tenant= AADTenantId
+````
+
+  - Montior for changes to cross-tenant access policies allowing / disallowing sync. 
+
+```
+AuditLogs
+| where OperationName == "Update a partner cross-tenant identity sync setting"
+| extend a = tostring(TargetResources)
+| where a contains "true"
+| where parse_json(tostring(TargetResources[0].modifiedProperties))[0].newValue contains "true"
+```
+
 - Monitor application access in your tenant using the [cross-tenant access activity](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) dashboard. This allows you to see who is accessing resources in your tenant and where those users are coming from.
 
-### Dynamic groups
+### Deny by default
+- Require user assignment for applications. If an application has the **User assignment required?** property set to **No**, external users can access the application. Application admins must understand access control impacts, especially if the application contains sensitive information. [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md) explains how registered applications in a Microsoft Entra tenant are, by default, available to all users of the tenant who successfully authenticate.
 
-If your organization is using the [**all users** dynamic group](~/external-id/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
+### Keep it simple
+- Use cross-tenant access settings instead of [External Collaboration Settings](~/external-id/external-collaboration-settings-configure.md). This ensures that you have one set of policies governing cross-tenant collaboration. 
 
-### Require user assignment for applications
+### Defense in Depth
 
-If an application has the **User assignment required?** property set to **No**, external users can access the application. Application admins must understand access control impacts, especially if the application contains sensitive information. [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md) explains how registered applications in a Microsoft Entra tenant are, by default, available to all users of the tenant who successfully authenticate.
+**Conditional access**.
 
-### Privileged Identity Management
+- Define [access control policies](~/external-id/authentication-conditional-access.md) to control access to resources.
+- Design Conditional Access policies with external users in mind.
+- Create policies specifically for external users.
+- Create dedicated Conditional Access policies for external accounts. If your organization is using the [**all users** dynamic group](~/external-id/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
 
-Minimize persistent administrator access by enabling [Privileged Identity Management](/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management).
+<a name='monitoring-your-multi-tenant-environment'></a>
 
-### Restricted Management Units
+**Restricted Management Units**
 
 When you're using security groups to control who is in scope for cross-tenant synchronization, you will want to limit who can make changes to the security group. Minimize the number of owners of the security groups assigned to the cross-tenant synchronization job and include the groups in a [restricted management unit](~/identity/role-based-access-control/admin-units-restricted-management.md). This will limit the number of people that can add or remove group members and provision accounts across tenants.
 
