@@ -92,4 +92,4 @@ To build and run your app, follow these steps:
 
 ## Next steps
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
