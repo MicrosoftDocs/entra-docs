@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 04/20/2023
+ms.date: 07/19/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -15,11 +15,10 @@ ms.topic: concept-article
 
 # Web app that signs in users: Code configuration
 
-Learn how to configure the code for your web app that signs in users.
+This article describes how to configure code for a web app that signs in users.
 
 ## Microsoft libraries supporting web apps
 
-<!-- This section can be in an include for web app and web APIs -->
 The following Microsoft libraries are used to protect a web app (and a web API):
 
 [!INCLUDE [develop-libraries-webapp](./includes/libraries/libraries-webapp.md)]
@@ -129,6 +128,7 @@ In ASP.NET Core, another file ([properties\launchSettings.json](https://github.c
 In the Azure portal, the redirect URIs that you register on the **Authentication** page for your application need to match these URLs. For the two preceding configuration files, they would be `https://localhost:44321/signin-oidc`. The reason is that `applicationUrl` is `http://localhost:3110`, but `sslPort` is specified (`44321`). `CallbackPath` is `/signin-oidc`, as defined in `appsettings.json`.
 
 In the same way, the sign-out URI would be set to `https://localhost:44321/signout-oidc`.
+
 > [!NOTE]
 > SignedOutCallbackPath should set either to portal or the application to avoid conflict while handling the event.
 
@@ -190,7 +190,6 @@ Those environment variables are referenced in *app_config.py*:
 The *.env* file should never be checked into source control, since it contains secrets. The quickstart sample includes a *.gitignore* file that prevents the *.env* file from being checked in.
 
 :::code language="text" source="~/../ms-identity-python-webapp-tutorial/.gitignore" range="84-85" highlight="2":::
-
 
 ---
 
@@ -318,33 +317,31 @@ Then the code constructs an [`auth` object](https://identity-library.readthedocs
 
 ---
 
-## Next steps
-
-In the next article, you'll learn how to trigger sign-in and sign-out.
+## Next step
 
 # [ASP.NET Core](#tab/aspnetcore)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnetcore).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnetcore).
 
 # [ASP.NET](#tab/aspnet)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnet).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnet).
 
 # [Java](#tab/java)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=java).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=java).
 
 # [Node.js](#tab/nodejs)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=nodejs).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=nodejs).
 
 # [Python](#tab/python)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=python).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=python).
 
 ---
