@@ -78,7 +78,7 @@ For optimal protection, we recommend you enable Cloudflare security controls.
 
 ## Firewall rules: Traffic from the Tor network
 
-We recommend you block traffic orginating from the Tor proxy network, unless your organization needs to support the traffic. To block the traffic.
+We recommend you block traffic that originates from the Tor proxy network, unless your organization needs to support the traffic. 
 
    > [!NOTE]
    > If you can't block Tor traffic, select **Interactive Challenge**, not **Block**.
