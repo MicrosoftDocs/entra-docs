@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites 
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
+- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
 - If you want to sign in using **Email with password**, configure your user flow to use **Email with password** when you [create your sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Sign in user
