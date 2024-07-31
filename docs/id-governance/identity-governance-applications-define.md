@@ -15,7 +15,7 @@ ms.reviewer: markwahl-msft
 
 Once you've identified one or more applications that you want to use Microsoft Entra ID to [govern access](identity-governance-applications-prepare.md), write down the organization's policies for determining which users should have access, and any other constraints that the system should provide.
 
-## Identifies applications and their roles in scope
+## Identify applications and their roles in scope
 
 Organizations with compliance requirements or risk management plans have sensitive or business-critical applications. If this application is an existing application in your environment, you may already have documented the access policies for who 'should have access' to this application. If not, you may need to consult with various stakeholders, such as compliance and risk management teams, to ensure that the policies being used to automate access decisions are appropriate for your scenario.
 
