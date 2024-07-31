@@ -33,8 +33,6 @@ The following table describes Microsoft Entra MFA settings, and subsections cove
 | [Phone call settings](#phone-call-settings) | Configure settings related to phone calls and greetings for cloud and on-premises environments. |
 | Providers | This will show any existing authentication providers that you've associated with your account. Adding new providers is disabled as of September 1, 2018. |
 
-![Microsoft Entra multifactor authentication settings](./media/howto-mfa-mfasettings/multi-factor-authentication-settings-portal.png)
-
 ## Account lockout (MFA Server only)
 
 
