@@ -134,36 +134,21 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 
 ## Configure Qlik Sense Enterprise SSO
 
-1. Prepare the Federation Metadata XML file so that you can upload that to Qlik Sense server.
+1. Navigate to the Qlik Sense Qlik Management Console (QMC) as a user who can create virtual proxy configurations.
 
-    > [!NOTE]
-    > Before uploading the IdP metadata to the Qlik Sense server, the file needs to be edited to remove information to ensure proper operation between Microsoft Entra ID and Qlik Sense server.
-
-    ![Screenshot shows a Visual Studio Code window with the Federation Metadata X M L file.][qs24]
-
-    a. Open the FederationMetaData.xml file, which you have downloaded from Azure portal in a text editor.
-
-    b. Search for the value **RoleDescriptor**.  There are four entries (two pairs of opening and closing element tags).
-
-    c. Delete the RoleDescriptor tags and all information in between from the file.
-
-    d. Save the file and keep it nearby for use later in this document.
-
-2. Navigate to the Qlik Sense Qlik Management Console (QMC) as a user who can create virtual proxy configurations.
-
-3. In the QMC, click on the **Virtual Proxies** menu item.
+2. In the QMC, click on the **Virtual Proxies** menu item.
 
     ![Screenshot shows Virtual proxies selected from CONFIGURE SYSTEM.][qs6]
 
-4. At the bottom of the screen, click the **Create new** button.
+3. At the bottom of the screen, click the **Create new** button.
 
     ![Screenshot shows the Create new option.][qs7]
 
-5. The Virtual proxy edit screen appears.  On the right side of the screen is a menu for making configuration options visible.
+4. The Virtual proxy edit screen appears.  On the right side of the screen is a menu for making configuration options visible.
 
     ![Screenshot shows Identification selected from Properties.][qs9]
 
-6. With the Identification menu option checked, enter the identifying information for the Azure virtual proxy configuration.
+5. With the Identification menu option checked, enter the identifying information for the Azure virtual proxy configuration.
 
     ![Screenshot shows Edit virtual proxy Identification section where you can enter the values described.][qs8]  
 
@@ -175,7 +160,7 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 
     d. The **Session cookie header name** is the cookie name storing the session identifier for the Qlik Sense session a user receives after successful authentication.  This name must be unique.
 
-7. Click on the Authentication menu option to make it visible.  The Authentication screen appears.
+6. Click on the Authentication menu option to make it visible.  The Authentication screen appears.
 
     ![Screenshot shows Edit virtual proxy Authentication section where you can enter the values described.][qs10]
 
@@ -197,55 +182,55 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 
     i. The SAML attribute mapping section allows for additional attributes like groups to be sent to Qlik Sense for use in security rules.
 
-8. Click on the **LOAD BALANCING** menu option to make it visible.  The Load Balancing screen appears.
+7. Click on the **LOAD BALANCING** menu option to make it visible.  The Load Balancing screen appears.
 
     ![Screenshot shows the Virtual proxy edit screen for LOAD BALANCING where you can select Add new server node.][qs11]
 
-9. Click on the **Add new server node** button, select engine node or nodes Qlik Sense will send sessions to for load balancing purposes, and click the **Add** button.
+8. Click on the **Add new server node** button, select engine node or nodes Qlik Sense will send sessions to for load balancing purposes, and click the **Add** button.
 
     ![Screenshot shows the Add server nodes to load balance on dialog button where you can Add servers.][qs12]
 
-10. Click on the Advanced menu option to make it visible. The Advanced screen appears.
+9. Click on the Advanced menu option to make it visible. The Advanced screen appears.
 
     ![Screenshot shows the Edit virtual proxy Advanced screen.][qs13]
 
     The Host allow list identifies host names that are accepted when connecting to the Qlik Sense server. **Enter the host name that users will specify when connecting to Qlik Sense server.** The host name is the same value as the SAML host URI without the `https://`.
 
-11. Click the **Apply** button.
+10. Click the **Apply** button.
 
     ![Screenshot shows the Apply button.][qs14]
 
-12. Click OK to accept the warning message that states proxies linked to the virtual proxy will be restarted.
+11. Click OK to accept the warning message that states proxies linked to the virtual proxy will be restarted.
 
     ![Screenshot shows the Apply changes to virtual proxy confirmation message.][qs15]
 
-13. On the right side of the screen, the Associated items menu appears.  Click on the **Proxies** menu option.
+12. On the right side of the screen, the Associated items menu appears.  Click on the **Proxies** menu option.
 
     ![Screenshot shows Proxies selected from Associated items.][qs16]
 
-14. The proxy screen appears.  Click the **Link** button at the bottom to link a proxy to the virtual proxy.
+13. The proxy screen appears.  Click the **Link** button at the bottom to link a proxy to the virtual proxy.
 
     ![Screenshot shows the Link button.][qs17]
 
-15. Select the proxy node that will support this virtual proxy connection and click the **Link** button.  After linking, the proxy will be listed under associated proxies.
+14. Select the proxy node that will support this virtual proxy connection and click the **Link** button.  After linking, the proxy will be listed under associated proxies.
 
     ![Screenshot shows Select proxy services.][qs18]
   
     ![Screenshot shows Associated proxies in the Virtual proxy associated items dialog box.][qs19]
 
-16. After about five to ten seconds, the Refresh QMC message will appear.  Click the **Refresh QMC** button.
+15. After about five to ten seconds, the Refresh QMC message will appear.  Click the **Refresh QMC** button.
 
     ![Screenshot shows the message Your session has ended.][qs20]
 
-17. When the QMC refreshes, click on the **Virtual proxies** menu item. The new SAML virtual proxy entry is listed in the table on the screen.  Single click on the virtual proxy entry.
+16. When the QMC refreshes, click on the **Virtual proxies** menu item. The new SAML virtual proxy entry is listed in the table on the screen.  Single click on the virtual proxy entry.
 
     ![Screenshot shows Virtual proxies with a single entry.][qs51]
 
-18. At the bottom of the screen, the Download SP metadata button will activate.  Click the **Download SP metadata** button to save the metadata to a file.
+17. At the bottom of the screen, the Download SP metadata button will activate.  Click the **Download SP metadata** button to save the metadata to a file.
 
     ![Screenshot shows the Download S P metadata button.][qs52]
 
-19. Open the sp metadata file.  Observe the **entityID** entry and the **AssertionConsumerService** entry.  These values are equivalent to the **Identifier**, **Sign on URL** and the **Reply URL** in the Microsoft Entra application configuration. Paste these values in the **Qlik Sense Enterprise Domain and URLs** section in the Microsoft Entra application configuration if they are not matching, then you should replace them in the Microsoft Entra App configuration wizard.
+18. Open the sp metadata file.  Observe the **entityID** entry and the **AssertionConsumerService** entry.  These values are equivalent to the **Identifier**, **Sign on URL** and the **Reply URL** in the Microsoft Entra application configuration. Paste these values in the **Qlik Sense Enterprise Domain and URLs** section in the Microsoft Entra application configuration if they are not matching, then you should replace them in the Microsoft Entra App configuration wizard.
 
     ![Screenshot shows a plain text editor with an EntityDescriptor with entityID and AssertionConsumerService called out.][qs53]
 
