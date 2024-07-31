@@ -15,7 +15,7 @@ ms.topic: concept-article
 
 # Web app that signs in users: Code configuration
 
-In the [previous article](./scenario-web-app-sign-user-app-registration.md), you registered an application in Microsoft Entra. In this article, you'll learn how to configure the code for your web app that signs in users.
+This article describes how to configure code for a web app that signs in users.
 
 ## Microsoft libraries supporting web apps
 
