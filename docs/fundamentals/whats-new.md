@@ -33,6 +33,73 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## July 2024
+
+### General Availability - Insider Risk condition in Conditional Access is GA
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+**Insider Risk condition in Conditional Access is now GA**
+
+Insider Risk condition, in Conditional Access, is a new feature that leverages signals from Microsoft Purview's Adaptive Protection capability to enhance the detection and automatic mitigation of Insider threats. This integration allows organizations to more effectively manage, and respond, to potential insider risks by using advanced analytics and real-time data.
+
+For example, if Purview detects unusual activity from a user, Conditional Access can enforce extra security measures such as requiring multifactor authentication (MFA) or blocking access. This is a premium feature and requires a P2 license. For more information, see: [Common Conditional Access policy: Block access for users with insider risk](../identity/conditional-access/how-to-policy-insider-risk.md).
+
+---
+
+### General Availability - New Federated Apps available in Microsoft Entra Application gallery - July 2024
+
+**Type:** New feature   
+**Service category:** Enterprise Apps                
+**Product capability:** 3rd Party Integration          
+
+In February 2024 we added the following 10 new applications in our App gallery with Federation support:
+
+[Fullstory SAML](../identity/saas-apps/fullstory-saml-tutorial.md), [LSEG Workspace](https://azuremarketplace.microsoft.com/en-US/marketplace/apps/aad.lsegworkspace?tab=Overview)
+
+You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
+
+For listing your application in the Microsoft Entra ID app gallery, read the details here https://aka.ms/AzureADAppRequest.
+
+---
+
+### General Availability - Active Directory Federation Services (AD FS) Application Migration Wizard
+
+**Type:** New feature    
+**Service category:** AD FS Application Migration    
+**Product capability:** Platform    
+
+The Active Directory Federation Services (AD FS) application migration wizard allows the user to quickly identify which AD FS relying party applications are compatible with being migrated to Microsoft Entra ID. The tool shows the migration readiness of each application, highlights issues and the suggested actions to remediate, guides the user through preparing an individual application for migration, and configuring their new Microsoft Entra application. For more information on how to use this feature, see: [Use AD FS application migration to move AD FS apps to Microsoft Entra ID](../identity/enterprise-apps/migrate-ad-fs-application-howto.md).
+
+---
+
+### General Availability -  Attacker in the Middle detection alert in Identity Protection
+
+**Type:** New feature    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+The Attacker in the Middle detection is now Generally Available for users in Identity Protection. 
+
+This high precision detection will be triggered on a user account that has been compromised by an adversary that has intercepted the user's credentials, including tokens that were issued to the user. The risk is identified through Microsoft 365 Defender and will raise the user with High risk to trigger the configured Conditional Access policy.
+
+For more information on this feature, see: [What are risk detections?](..//id-protection/concept-identity-protection-risks.md)
+
+---
+
+### General Availability - Easy authentication with Azure App Service and Microsoft Entra External ID
+
+**Type:** Changed feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C    
+
+An improved experience when using Microsoft Entra External ID as an identity provider for Azure App Service’s built-in authentication, simplifying the process of configuring authentication and authorization for external-facing apps. You can complete initial configuration directly from the App Service authentication setup without switching into the external tenant. For more information, see: [Quickstart: Add app authentication to your web app running on Azure App Service](/azure/app-service/scenario-secure-app-authentication-app-service?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=external-configuration).
+
+---
+
+
 ## June 2024
 
 
