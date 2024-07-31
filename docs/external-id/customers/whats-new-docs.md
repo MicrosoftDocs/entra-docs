@@ -61,19 +61,4 @@ This month, we announced the general availability of Microsoft Entra External ID
 - [Add and manage admin accounts](how-to-manage-admin-accounts.md) - Updated the least privileged role
 - [Microsoft Entra External ID frequently asked questions](faq-customers.md) - Updates some FAQs
 
-## April 2024
-
-This month, we made updates to our table of contents to make navigation easier for you. Additionally, we revised the terminology used to describe the external tenant in Microsoft Entra External ID.
-
-### New articles
-
-- [Microsoft Entra ID and data residency](/entra/fundamentals/data-residency)
-- [Workforce and external tenant configurations in Microsoft Entra External ID](/entra/external-id/tenant-configurations)
-
-### Updated articles
-
-- [Supported features in workforce and external tenants](/entra/external-id/customers/concept-supported-features-customers) - Supported features for external tenants updated
-- [Overview: Secure your apps using External ID in an external tenant](/entra/external-id/customers/overview-customers-ciam) - Image and terminology updates
-- [Microsoft Entra External ID frequently asked questions](/entra/external-id/customers/faq-customers) - Updated pricing information
-- [Default user permissions in external tenants](/entra/external-id/customers/reference-user-permissions) - Updated user types
 
