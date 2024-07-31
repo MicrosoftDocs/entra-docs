@@ -23,7 +23,7 @@ To get started, you need:
 * Microsoft [Azure Front Door (AFD)](/azure/frontdoor/front-door-overview)
 * Cloudflare account with WAF
 
-Learn about tenants and securing apps for consumers and customers with [Microsoft Entra External ID](../external-id/external-identities-overview.md).
+Learn about tenants and securing apps for consumers and customers with [Microsoft Entra External ID](../external-identities-overview.md).
 
 ### Scenario description
 
