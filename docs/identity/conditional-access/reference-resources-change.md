@@ -42,7 +42,7 @@ In October 2024, Microsoft will update any remaining policy using the older sche
 
 ### Global Secure Access - Service principals
 
-As part of this change, between July and September 2024, Microsoft is provisioning new service principles in tenants that enabled the Global Secure Access. Tenants that enabled Global Secure Access in the past, will see audit logs for the creation of these service principles (Activity: Add service principal) with the following app IDs. 
+As part of this change, between July and September 2024, Microsoft is provisioning new service principals in tenants that enabled the Global Secure Access. Tenants that enabled Global Secure Access in the past, will see audit logs for the creation of these service principals (Activity: Add service principal) with the following app IDs.
 
 #### New Global Secure Access App IDs
 

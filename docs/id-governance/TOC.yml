@@ -381,6 +381,8 @@
     href: /graph/api/resources/accessreviewsv2-overview
   - name: Entitlement management - Microsoft Graph API
     href: /graph/api/resources/entitlementmanagement-overview
+  - name: Custom Alerts
+    href: governance-custom-alerts.md
   - name: Lifecycle Workflows
     items:
     - name: Lifecycle Workflows - Microsoft Graph API

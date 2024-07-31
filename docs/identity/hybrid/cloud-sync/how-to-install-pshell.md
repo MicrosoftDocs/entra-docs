@@ -49,7 +49,7 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
        ```
  9. Connect to Microsoft Entra ID by using an account with the hybrid identity role. You can customize this section to fetch a password from a secure store. 
        ```
-       $hybridAdminPassword = ConvertTo-SecureString -String "Hybrid identity admin password" -AsPlainText -Force 
+       $hybridAdminPassword = ConvertTo-SecureString -String "Hybrid Identity Administrator password" -AsPlainText -Force 
     
        $hybridAdminCreds = New-Object System.Management.Automation.PSCredential -ArgumentList ("HybridIDAdmin@contoso.onmicrosoft.com", $hybridAdminPassword) 
        

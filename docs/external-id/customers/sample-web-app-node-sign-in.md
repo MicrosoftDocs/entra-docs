@@ -10,9 +10,9 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: sample
-ms.date: 06/23/2023
+ms.date: 07/29/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Node.js web app to sign in and sign out users with my external tenant
+#Customer intent: As a developer, devops, I want to learn about how to configure a sample Node.js web app to sign in and sign out users using my external tenant details
 ---
 
 # Sign in users in a sample Node.js web application
@@ -61,7 +61,7 @@ In this article, you do the following tasks:
 
 ## Clone or download sample web application
 
-To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file:
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
@@ -69,7 +69,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
+- Alternatively, [download the sample .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip), then extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Install project dependencies
 
@@ -129,7 +129,6 @@ If you want to build an app similar to the sample you've run, complete the steps
 
 ## Related content
 
-- [Enable password reset](how-to-enable-password-reset-customers.md)
 - [Customize the default branding](how-to-customize-branding-customers.md)
 - [Configure sign-in with Google](how-to-google-federation-customers.md)
 - [Sign in users in your Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant.md)
