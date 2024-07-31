@@ -177,9 +177,6 @@ AuditLogs
 ### Deny by default
 - Require user assignment for applications. If an application has the **User assignment required?** property set to **No**, external users can access the application. Application admins must understand access control impacts, especially if the application contains sensitive information. [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md) explains how registered applications in a Microsoft Entra tenant are, by default, available to all users of the tenant who successfully authenticate.
 
-### Keep it simple
-- Use cross-tenant access settings instead of [External Collaboration Settings](~/external-id/external-collaboration-settings-configure.md). This ensures that you have one set of policies governing cross-tenant collaboration. 
-
 ### Defense in Depth
 
 **Conditional access**.
