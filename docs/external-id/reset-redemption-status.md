@@ -33,7 +33,7 @@ To manage these scenarios previously, you had to manually delete the guest userâ
 
 ## Required Microsoft Entra roles
 
-To reset a user's redemption status, you'll need one of the following roles:
+To reset a user's redemption status, you'll need one of the following roles assigned at the directory scope:
 
 - [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md#helpdesk-administrator) (least privileged)
 - [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator)
