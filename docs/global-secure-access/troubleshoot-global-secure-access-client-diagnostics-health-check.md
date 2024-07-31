@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 07/26/2024
+ms.date: 07/30/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -28,7 +28,7 @@ To run a health check for the Global Secure Access client:
 Most of the Health check tests depend on one another. If tests fail:
 1. Resolve the first failed test in the list.
 1. Select **Refresh** to view the updated test status.
-1. Repeat until you have resolved all failed tests.
+1. Repeat until you resolve all failed tests.
 :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-refresh.png" alt-text="Screenshot of the Global Secure Access Health check tab with the Refresh button highlighted.":::
 
 ### Check the Event Viewer
@@ -46,7 +46,7 @@ The Windows client authenticates the user and the device to Global Secure Access
 To check the status of your device, enter the following command in the Command Prompt: `dsregcmd.exe /status`.
 :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-entra-joined.png" alt-text="Screenshot of the Command Prompt with the Device State, AzureAdJoined : Yes, highlighted.":::
 
-To join your device to a Microsoft Entra tenant, see [Join your Windows machine to Azure Active Directory](https://identitydivision.visualstudio.com/IdentityWiki/_wiki/wikis/IdentityWiki.wiki/44817/Join-your-windows-machine-to-AAD).
+To join your device to a Microsoft Entra tenant, see [Join a new Windows 11 device to Microsoft Entra ID](/entra/identity/devices/device-join-out-of-box#join-a-new-windows-11-device-to-microsoft-entra-id).
 
 ### Can Connect to the internet
 This check indicates whether or not the device is connected to the internet. An internet connection is obligatory to connect to Global Secure Access.
@@ -100,7 +100,7 @@ If the registry key doesn't exist, try to force forwarding policy retrieval:
 1. If not, look for errors in the Event Viewer.
 
 ### Forwarding profile matches expected schema
-This test verifies that the forwarding profile in the registry has a valid format that can be read by the client.
+This test verifies that the forwarding profile in the registry has a valid format that the client can read.
 
 If this test fails, make sure you're using the most updated forwarding profile of your tenant by following these steps:
 
@@ -110,26 +110,26 @@ If this test fails, make sure you're using the most updated forwarding profile o
 1. Restart the service, `Global Secure Access Policy Retriever Service`.
 1. Restart the Global Secure Access client.
 1. Run the health check again.
-1. If the steps above don't solve the problem, upgrade the Global Secure Access client to the latest version.
+1. If the previous steps don't solve the problem, upgrade the Global Secure Access client to the latest version.
 1. If the problem still exists, contact Microsoft Support.
 
-### Breakglass mode disabled
+### Break-glass mode disabled
 Break-glass mode prevents the Global Secure Access client from tunneling network traffic to the Global Secure Access cloud service. In Break-glass mode, all traffic profiles in the Global Secure Access portal have been unchecked and the Global Secure Access client isn't expected to tunnel any traffic. 
 
 To set the client to acquire traffic and tunnel that traffic to the Global Secure Access service:
-1. Sign in to the Micorsoft Entra portal as a tenant administrator.
+1. Sign in to the Microsoft Microsoft Entra admin center as a tenant administrator.
 1. Navigate to Global Secure **Access** > **Connect** > **Traffic forwarding**.
 1. Enable at least one of the traffic profiles to match your organization's needs.
 
-The Global Secure Access client should recieve the updated forwarding profile within one hour after you make changes in the portal.
+The Global Secure Access client should receive the updated forwarding profile within one hour after you make changes in the portal.
 
 ### Diagnostic URLs in forwarding profile
-For each channel activated in the forwarding profile, this test checks that the configuration contains a URI to probe the service's health. 
+For each channel activated in the forwarding profile, this test checks that the configuration contains a URL to probe the service's health. 
 
 To view the health status, double-click the Global Secure Access client system tray icon.
 :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-client-status.png" alt-text="Screenshot of the Global Secure Access client system tray icon along with the current health status of Connected.":::
 
-If this test fails, it's usually becasue of an internal problem with Global Secure Access. Contact Microsoft Support.
+If this test fails, it's usually because of an internal problem with Global Secure Access. Contact Microsoft Support.
 
 ### Authentication certificate exists
 This test verifies that a certificate exists on the device for the Mutual Transport Layer Security (MTLS) connection to the Global Secure Access cloud service.
@@ -144,7 +144,8 @@ If this test fails, enroll in a new certificate by completing the following step
 1. Delete the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName`
 1. Restart the Global Secure Access Management Service in the services MMC.
-1. Refresh the certificates MMC to verify that a new certificate was created. *The refresh might take a few minutes.*
+1. Refresh the certificates MMC to verify that a new certificate was created.   
+*The refresh might take a few minutes.*
 1. Check the Global Secure Access client event log for errors.
 1. Run the Health check tests again.
 
@@ -161,7 +162,8 @@ If this test fails, enroll in a new certificate by completing the following step
 1. Delete the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName`
 1. Restart the Global Secure Access Management Service in the services MMC.
-1. Refresh the certificates MMC to verify that a new certificate was created. *The refresh might take a few minutes.*
+1. Refresh the certificates MMC to verify that a new certificate was created.   
+*The refresh might take a few minutes.*
 1. Check the Global Secure Access client event log for errors.
 1. Run the Health check tests again.
 
@@ -254,7 +256,7 @@ To verify that the hostname resolution works correctly:
 1. Run the PowerShell command: `Resolve-DnsName -Name <edge's FQDN>`
 1. If the hostname resolution fails, try running: `Resolve-DnsName -Name microsoft.com`
 1. Verify that the DNS servers are configured for this machine: `ipconfig /all`
-1. If the previous steps do not resolve the issue, consider setting another public DNS server.
+1. If the previous steps don't resolve the issue, consider setting another public DNS server.
 
 ### Private access edge is reachable
 If this test fails, the device doesn't have a network connection to the Global Secure Access cloud service.
@@ -290,50 +292,53 @@ function FindProxyForURL(url, host) {  
  
 #### Add a system variable
 Configuring the Global Secure Access client to route Global Secure Access traffic through a proxy:
-1. Set a system environment variable in Windows named `grpc_proxy` to the value of the proxy address. For example, 'http://10.1.0.10:8080'.
+1. Set a system environment variable in Windows named `grpc_proxy` to the value of the proxy address. For example, `http://10.1.0.10:8080`.
 1. Restart the Global Secure Access client.
 
 ### Tunneling succeeded Private Access
-This test is conducted for each active traffic profile in the forwarding profile (M366, Private Access, internet Access), verifying that connections to the health service of the corresponding channel are tunneled successfully.
-In case of a failure:
+This test checks each active traffic profile in the forwarding profile (M366, Private Access, internet Access) to verify that connections to the health service of the corresponding channel are tunneled successfully.
 
-Check the Event Viewer for errors.
-Restart the client and try again.
+In case of a failure:
+1. Check the Event Viewer for errors.
+1. Restart the client and try again.
 
 ### Global Secure Access processes healthy (last 24h)
-This indicates that at least one process of the client crashed in the last 24 hours.
-If all other tests pass, the client should be currently functioning but investigating the dump file of the process should be helpful to gain more stability in the future and to better understand why the process crashed.
-First, we need to ask Windows to generate dump files when a process crashes.
+If this test fails, it means that at least one process of the client crashed in the last 24 hours.
 
- Configure user mode dumps:
-Add the following registry key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps
-Add a REG_SZ DumpFolder registry value, and set its data to an existing folder where you want the dump files to be created.
- Reproduce the issue and expect a .dmp file to be created in the dumpFolder.
- Open a ticket for Microsoft support attaching the dump files and the steps to reproduce.
- Access Application Event Viewer logs and filter crash events (Filter current logs: Event ID = 1000)
- Save filtered log as file (add it to the logs attached to the ticket)
+If all other tests pass, the client should be currently functioning. However, it can be helpful to investigate the process dump file to increase future stability and to better understand why the process crashed.
+
+To investigate the process dump file when a process crashes:
+1. Configure user mode dumps:
+    - Add the following registry key: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps`
+    - Add a `REG_SZ DumpFolder` registry value and set its data to the **existing** DumpFolder where you want to save the dump file.
+ 1. Reproduce the issue. This creates a new dump file in the selected DumpFolder.
+ 1. Open a ticket for Microsoft Support and attach the dump file and the steps to reproduce the issue.
+ 1. Review the Event Viewer logs and filter for crash events (Filter current logs: Event ID = 1000).
+ :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-filtered-logs.png" alt-text="Screenshot of the Event Viewer showing a filtered log list.":::
+ 1. Save the filtered log as a file and attach the log file to the support ticket.
 
 ### QUIC not supported for internet Access
-Since QUIC isn't yet supported for internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled 
+Since QUIC isn't yet supported for internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
 > [!TIP]
 > QUIC is currently supported in Private Access and Microsoft 365 workloads.
 
-Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP which is fully supported in internet Access.
+Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in internet Access.
 
 #### QUIC disabled in Microsoft Edge
 To disable QUIC in Microsoft Edge:
-Open Microsoft Edge
-Access to: edge://flags/#enable-quic
-Choose Disable
+1. Open Microsoft Edge.
+1. Paste `edge://flags/#enable-quic` in the Address bar.
+1. Set the **Experimental QUIC protocol** drop-down to **Disabled**.
 
 #### QUIC disabled in Chrome
 To disable QUIC in Google Chrome:
-Open Google Chrome
-Access to: chrome://flags/#enable-quic
-Choose Disable
+1. Open Google Chrome.
+1. Paste `chrome://flags/#enable-quic` in the Address bar.
+1. Set the **Experimental QUIC protocol** drop-down to **Disabled**.
 
 #### QUIC disabled in Mozilla Firefox
 To disable QUIC in Mozilla Firefox:
-Open Firefox
-Access to: about:config
-Turn off network.http.http3.enable
+1. Open Firefox.
+1. Paste `about:config` in the Address bar.
+1. In the **Search preference name field**, paste `network.http.http3.enable`.
+1. Toggle the **network.http.http3.enable** option to **false**.

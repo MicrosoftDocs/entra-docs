@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 07/26/2024
+ms.date: 07/30/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -44,14 +44,14 @@ The **Forwarding profile** tab shows the list of current, active rules that are 
 - **Add filter**: Select to set filters to see only a subset of the rules according to a specific set of filter properties.
 - **Columns**: Select to choose the columns to display in the table.
 
-The rules section shows the list of rules grouped by each workload (**M365 rules**, **Private access rules**, **Internet access rules**). You will only see rules for the workloads activated in your tenant.
+The rules section shows the list of rules grouped by each workload (**M365 rules**, **Private access rules**, **Internet access rules**). You'll only see rules for the workloads activated in your tenant.
 > [!TIP]
 > If a rule contains several destinations (fully qualified domain name (FQDN) or IP range), the rule will span several rows, with one row for each destination.
 
 For each rule, the available columns include:
 - **Priority**: The priority of the rule. Rules with higher priority (smaller numerical value) take precedence over rules with lower priority.
 - **Destination (IP/FQDN)**: The destination of the traffic by FQDN or by IP.
-- **Protocol**: The network protocol for the traffic, TCP or UDP.
+- **Protocol**: The network protocol for the traffic: TCP or UDP.
 - **Port**: The destination port of the traffic.
 - **Action**: The action that the client takes when outgoing traffic from the device matches the destination, protocol and port. The supported actions are tunnel (route to Global Secure Access) or bypass (go directly to the destination).
 - **Hardening**: The action when traffic should be tunneled (routed to Global Secure Access) but the connection to the cloud service fails. The supported hardening actions are block (drop the connection) or bypass (let the connection go directly to the network).
@@ -95,14 +95,14 @@ For each connection, the available columns include:
 - **Process ID**: The ID number for the process that opened the connection.
 - **Bytes sent**: The number of bytes sent from the device to the destination.
 - **Bytes received**: The number of bytes received by the device from the destination.
-- **Channel**: The channel to which the connection was tunneled; can be M365, Private Access, or Internet Access.
+- **Channel**: The channel to which the connection was tunneled; can be Microsoft 365, Private Access, or Internet Access.
 - **Flow ID**: The internal ID number for the connection.
 - **Rule ID**: The identifer for the forwarding profile rule used to determine the actions for this connection.
-- **Action**: The action that was taken for this connection; posible actions are:
+- **Action**: The action that was taken for this connection; possible actions are:
     - **Tunnel**: The connection is tunneled by the client to the Global Secure Access service in the cloud.
     - **Bypass**: The connection goes directly to the destination through the device's network with no intervention by the client.
-    - **Block**: The connection is blocked by the client. This is only possible in Hardening mode.
-- **Hardening**: Indicates whether hardening was applied to this connection; can be Yes or No. Hardening applies when the Global Secure Access service is not reachable from the device.
+    - **Block**: The connection is blocked by the client (only possible in Hardening mode).
+- **Hardening**: Indicates whether hardening was applied to this connection; can be Yes or No. Hardening applies when the Global Secure Access service isn't reachable from the device.
 
 ## Advanced log collection tab
 The advanced log collection tab allows for the collection of verbose logs of the client, the operating systems, and the network traffic during a specific period. The logs are archived to a ZIP file that can be sent to the administrator or Microsoft Support for investigation.

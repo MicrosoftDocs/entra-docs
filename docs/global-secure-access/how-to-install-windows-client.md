@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/26/2024
+ms.date: 07/30/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
