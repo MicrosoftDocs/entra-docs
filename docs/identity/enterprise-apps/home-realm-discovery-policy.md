@@ -61,7 +61,7 @@ When you see the Domain Confirmation Dialog, you should:
   - **If you recognize the domain** and it matches the organization you are trying to sign in to, select **Confirm** to proceed.
   - **If you don't recognize the domain** cancel the sign-in process and contact your IT Admin (if applicable) for assistance.
   
-This step helps ensure that you are signing in to the correct organization and protects your account from unauthorized access. 
+This step helps ensure that you are signing in to the correct organization. 
 
 ### Components of the Domain Confirmation Dialog
 
