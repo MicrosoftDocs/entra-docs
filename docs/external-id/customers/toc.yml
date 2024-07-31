@@ -417,6 +417,10 @@ items:
         href: how-to-identity-protection-customers.md
       - name: Use application roles to manage access
         href: how-to-use-app-roles-customers.md
+      - name: Web Application Firewall partners
+        items:
+        - name: Cloudflare
+          href: tutorial-configure-cloudflare-integration.md
     - name: Manage users
       items:
         - name: Manage admin accounts
