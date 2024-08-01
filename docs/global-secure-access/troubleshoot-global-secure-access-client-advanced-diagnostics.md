@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 07/30/2024
+ms.date: 07/31/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -53,7 +53,7 @@ For each rule, the available columns include:
 - **Destination (IP/FQDN)**: The destination of the traffic by FQDN or by IP.
 - **Protocol**: The network protocol for the traffic: TCP or UDP.
 - **Port**: The destination port of the traffic.
-- **Action**: The action that the client takes when outgoing traffic from the device matches the destination, protocol and port. The supported actions are tunnel (route to Global Secure Access) or bypass (go directly to the destination).
+- **Action**: The action that the client takes when outgoing traffic from the device matches the destination, protocol, and port. The supported actions are tunnel (route to Global Secure Access) or bypass (go directly to the destination).
 - **Hardening**: The action when traffic should be tunneled (routed to Global Secure Access) but the connection to the cloud service fails. The supported hardening actions are block (drop the connection) or bypass (let the connection go directly to the network).
 - **Rule ID**: The unique identifier of the rule in the forwarding profile.
 - **Application ID**: The ID of the private application associated with the rule. This column is relevant only for private applications.

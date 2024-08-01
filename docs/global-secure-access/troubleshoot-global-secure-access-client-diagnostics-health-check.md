@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 07/30/2024
+ms.date: 07/31/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -46,11 +46,8 @@ The Windows client authenticates the user and the device to Global Secure Access
 To check the status of your device, enter the following command in the Command Prompt: `dsregcmd.exe /status`.
 :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-entra-joined.png" alt-text="Screenshot of the Command Prompt with the Device State, AzureAdJoined : Yes, highlighted.":::
 
-To join your device to a Microsoft Entra tenant, see [Join a new Windows 11 device to Microsoft Entra ID](/entra/identity/devices/device-join-out-of-box#join-a-new-windows-11-device-to-microsoft-entra-id).
-
 ### Can Connect to the internet
-This check indicates whether or not the device is connected to the internet. An internet connection is obligatory to connect to Global Secure Access.
-This test is based on the [Network Connectivity Status Indicator (NCSI)](/windows-server/networking/ncsi/ncsi-overview) feature. 
+This check indicates whether or not the device is connected to the internet. The Global Secure Access client requires an internet connection. This test is based on the [Network Connectivity Status Indicator (NCSI)](/windows-server/networking/ncsi/ncsi-overview) feature. 
 
 ### Tunneling service running
 Global Secure Access Tunneling service must be running.
@@ -117,7 +114,7 @@ If this test fails, make sure you're using the most updated forwarding profile o
 Break-glass mode prevents the Global Secure Access client from tunneling network traffic to the Global Secure Access cloud service. In Break-glass mode, all traffic profiles in the Global Secure Access portal have been unchecked and the Global Secure Access client isn't expected to tunnel any traffic. 
 
 To set the client to acquire traffic and tunnel that traffic to the Global Secure Access service:
-1. Sign in to the Microsoft Microsoft Entra admin center as a tenant administrator.
+1. Sign in to the Microsoft Entra admin center as a tenant administrator.
 1. Navigate to Global Secure **Access** > **Connect** > **Traffic forwarding**.
 1. Enable at least one of the traffic profiles to match your organization's needs.
 
@@ -248,7 +245,7 @@ For more information, see [Guidance for configuring IPv6 in Windows for advanced
 
 
 ### Private access edge hostname resolved by DNS
-If this test fails, the hostnames of the Global Secure Access cloud service can't be resolved by the DNS and therefore the service isn't reachable. This could be due to an internet connectivity problem or a DNS server that doesn't resolve public internet hostnames.
+If this test fails, the hostnames of the Global Secure Access cloud service can't be resolved by the DNS, and therefore the service isn't reachable. This could be due to an internet connectivity problem or a DNS server that doesn't resolve public internet hostnames.
 This test checks all active traffic types: Microsoft 365, Private Access, and Internet Access.
 
 To verify that the hostname resolution works correctly:
@@ -298,7 +295,7 @@ Configuring the Global Secure Access client to route Global Secure Access traffi
 ### Tunneling succeeded Private Access
 This test checks each active traffic profile in the forwarding profile (M366, Private Access, internet Access) to verify that connections to the health service of the corresponding channel are tunneled successfully.
 
-In case of a failure:
+If this test fails:
 1. Check the Event Viewer for errors.
 1. Restart the client and try again.
 
