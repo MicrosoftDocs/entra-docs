@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 07/30/2024
+ms.date: 08/01/2024
 ms.author: gasinh
 ms.custom: it-pro
 ---
@@ -112,19 +112,18 @@ We recommended strict security controls on traffic from countries or regions whe
 ## Block traffic from countries or regions
 
 1. Go to the [Cloudflare dashboard](https://developers.cloudflare.com/workers/get-started/dashboard/). 
-2. Expand the Security section.
-3. Select **WAF**.
-4. Select **Create rule**.
-5. For **Rule name**, enter a relevant name.
-6. For **If incoming requests match**, for **Field**, select **Country** or **Continent**.
-7. For **Operator**, select **equals**.
-8. For **Value**, select select the country or continent to block.
-9. For **Then take action**, select **Block**.
-10. For **Place at**, select **Last**.
-11. Select **Deploy**.
+1. Expand the Security section.
+1. Select **WAF**.
+1. Select **Create rule**.
+1. For **Rule name**, enter a relevant name.
+1. For **If incoming requests match**, for **Field**, select **Country** or **Continent**.
+1. For **Operator**, select **equals**.
+1. For **Value**, select select the country or continent to block.
+1. For **Then take action**, select **Block**.
+1. For **Place at**, select **Last**.
+1. Select **Deploy**.
 
-   > [!NOTE]
-   > You can add custom HTML pages for visitors.
+   ![Screenshot of the create rule dialog.](media/tutorial-configure-cloudflare-integration/create-rule-name.png)
 
 ### OWASP and managed rulesets
 
