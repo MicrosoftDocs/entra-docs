@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     ![Screenshot shows the image of the attributes.](common/default-attributes.png "Image")
 
     > [!Note]
-    > Please delete **name** and **emailaddress** manually from the above default attributes in Entra portal as per application requirements. 
+    > Please delete **name** and **emailaddress** manually from the above default attributes in the Microsoft Entra admin center as per application requirements. 
 
 1. In addition to above, Docker application supports optional attributes to be passed back in SAML response, which are shown below. These attributes can be added to manage the provisioning of users in specific teams and their roles within the Docker Organization. To learn more about all attributes that Docker SSO supports, please refer [Docker SSO](https://docs.docker.com/security/for-admins/single-sign-on/configure/configure-idp/#sso-attributes) document.
 

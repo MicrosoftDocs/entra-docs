@@ -44,7 +44,7 @@ After verification, users are issued a reusable identity credential, which exped
 
 To configure IDEMIA as your identity verification proofing solution, follow these steps:
 
-1. In the Entra portal, locate **Verified ID** in the left hand menu and select `Overview`.
+1. In the Microsoft Entra admin center, locate **Verified ID** in the left hand menu and select `Overview`.
 1. Select `Explore` and click `Verification request`.
 1. Choose `Select issuer(s)` and click `Select first issuer`.
 1. Look for `IDEMIA` in the search/select issuers drop down.

@@ -149,7 +149,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. Enter a valid Name in the **Name** field and select Type as **Identity Provider**.
 
-    1. Paste the **App Federation Metadata Url** in the **Metadata Link**  textbox, which you have copied from the Microsoft Entra Admin Center.
+    1. Paste the **App Federation Metadata Url** in the **Metadata Link**  textbox, which you have copied from the Microsoft Entra admin center.
 
     1. Click **Validate**.
     
