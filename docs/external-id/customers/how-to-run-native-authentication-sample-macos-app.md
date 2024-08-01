@@ -84,11 +84,11 @@ In this article, you learn how to:
 
 To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator. 
 
-:::image type="content" source="media/native-authentication/ios/native-auth-sign-in-sign-up.png" alt-text="Screenshot of user prompt to enter email and password in macOS app." lightbox="media/native-authentication/ios/native-auth-sign-in-sign-up-expanded.png"::: 
+:::image type="content" source="media/native-authentication/macos/native-auth-sign-in-sign-up-password-macos.png" alt-text="Screenshot of user prompt to enter email and password in macOS app." lightbox="media/macos/native-auth-sign-in-sign-up-password-expanded-macos.png"::: 
 
 This guide tests **Email and password** usage. Enter a valid email address and password, select **Sign Up**, and launch the submit code screen: 
 
-:::image type="content" source="media/native-authentication/ios/enter-one-time-pass-code.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in macOS app." lightbox="media/native-authentication/ios/enter-one-time-pass-code-expanded.png"::: 
+:::image type="content" source="media/native-authentication/macos/enter-one-time-pass-code-expanded-macos.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in macOS app." lightbox="media/native-authentication/macos/enter-one-time-pass-code-macos.png"::: 
  
 After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application takes you back to the previous screen and automatically signs you in.  
 
