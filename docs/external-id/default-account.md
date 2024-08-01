@@ -1,9 +1,8 @@
 ---
-
 title: Use Microsoft Entra Accounts
-Enable your external business partners and guest users to use their Microsoft Entra work or school accounts to sign in to your apps for B2B collaboration.
-
+description: Enable your external business partners and guest users to use their Microsoft Entra work or school accounts to sign in to your apps for B2B collaboration.
  
+
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/23/2024
