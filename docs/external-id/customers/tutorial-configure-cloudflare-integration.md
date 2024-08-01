@@ -133,6 +133,12 @@ We recommended strict security controls on traffic from countries or regions whe
 3. For **Cloudflare OWASP Core Ruleset**, select **Enabled**.
 
    [ ![Screenshot of rule sets.](media/tutorial-configure-cloudflare-integration/rulesets.png)](media/tutorial-configure-cloudflare-integration/ruleset-expanded.png#lightbox)
+
+## Next steps
+
+* [Tutorial: Configure Cloudflare WAF with Azure AD B2C](../active-directory-b2c/partner-cloudflare.md)
+* [What is Azure Web Application Firewall on Azure Application Gateway?](../azure/web-application-firewall/ag/ag-overview.md)
+* [Integrate with Cloudflare Zero Trust to build policies for identity and group membership](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/azuread/)
    
 
 
