@@ -136,9 +136,9 @@ We recommended strict security controls on traffic from countries or regions whe
 
 ## Next steps
 
-* [Tutorial: Configure Cloudflare WAF with Azure AD B2C](../active-directory-b2c/partner-cloudflare.md)
-* [What is Azure Web Application Firewall on Azure Application Gateway?](../azure/web-application-firewall/ag/ag-overview.md)
-* [Integrate with Cloudflare Zero Trust to build policies for identity and group membership](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/azuread/)
+* [Tutorial: Configure Cloudflare WAF with Azure AD B2C](../azure/active-directory-b2c/partner-cloudflare.md)
+* [What is Azure Web Application Firewall on Azure Application Gateway?](/azure/web-application-firewall/ag/ag-overview)
+* Go to Cloudflare Docs for [Cloudflare Zero Trust: Azure AD](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/azuread/)
    
 
 
