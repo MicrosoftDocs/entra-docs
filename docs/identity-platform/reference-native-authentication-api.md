@@ -1770,4 +1770,4 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ## Related content
 
-- [Configure a custom claim provider](custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
+- [Configure a custom claims provider](custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
