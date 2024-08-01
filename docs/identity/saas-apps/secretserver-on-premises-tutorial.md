@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx`
 
     > [!NOTE]
-	> The Entity ID shown above is an example only and you are free to choose any unique value that identifies your Secret Server instance in Microsoft Entra ID. You need to send this Entity ID to [Secret Server (On-Premises) Client support team](https://support.delinea.com/s/) and they configure it on their side. For more details, please read [this article](https://docs.delinea.com/secrets/current/authentication/configuring-saml-sso/index.md).
+	> The Entity ID shown above is an example only and you are free to choose any unique value that identifies your Secret Server instance in Microsoft Entra ID. You need to send this Entity ID to [Secret Server (On-Premises) Client support team](https://support.delinea.com/s/) and they configure it on their side. For more details, please read [this article](https://docs.delinea.com/online-help/library/start.htm).
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
