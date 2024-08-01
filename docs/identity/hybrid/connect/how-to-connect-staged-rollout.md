@@ -238,7 +238,7 @@ To test the sign-in with *password hash sync* or *pass-through authentication* (
 
 To test sign-in with *seamless SSO*:
 
-1. On the intranet, go to the [Apps page](https://myapps.microsoft.com) in a private browser session, and then enter the UserPrincipalName (UPN) of the user account that's selected for Staged Rollout.
+1. On the intranet, go to the [Apps page](https://myapps.microsoft.com) using a browser session, and then enter the UserPrincipalName (UPN) of the user account that's selected for Staged Rollout.
 
    Users who have been targeted for Staged Rollout of *seamless SSO* are presented with a "Trying to sign you in ..." message before they're silently signed in.
 
