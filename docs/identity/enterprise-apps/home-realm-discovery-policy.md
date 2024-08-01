@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 04/29/2024
+ms.date: 07/31/2024
 ms.author: jomondi
 ms.reviewer: sreyanth, ludwignick
 ms.custom: enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -48,9 +48,24 @@ There are three ways to control auto-acceleration to a federated IdP:
 - Configure an HRD policy to [force auto-acceleration](configure-authentication-for-federated-users-portal.md).
 - Configure an HRD policy to [ignore domain hints](prevent-domain-hints-with-home-realm-discovery.md) from specific applications or for certain domains.
 
-### Domain Confirmation Dialog
+## Domain Confirmation Dialog
 
-Starting April 2023, organizations who use auto-acceleration or smart links might begin to see a new screen added to the sign-in UI. This screen termed the Domain Confirmation Dialog, is part of Microsoft's general commitment to security hardening and requires the user to confirm the domain of the tenant in which they're signing in to. Cancel the authentication flow and contact your IT admin (if applicable) if you see the Domain Confirmation Dialog and don't recognize the tenant domain listed. Here's an example of what the domain confirmation dialog could look like for you:
+Starting April 2023, organizations that use auto-acceleration or smart links might begin to see a new screen added to the sign-in UI. This screen, termed the Domain Confirmation Dialog, is part of Microsoft's general commitment to security hardening and requires the user to confirm the domain of the tenant they are signing in to.
+
+### What you need to do
+
+When you see the Domain Confirmation Dialog, you should:
+
+- **Check the domain**: Look at the domain name listed on the screen. You should see the domain of the account's home tenant, for example, `contoso.com`:
+
+  - **If you recognize the domain** and it matches the organization you are trying to sign in to, select **Confirm** to proceed.
+  - **If you don't recognize the domain** cancel the sign-in process and contact your IT Admin (if applicable) for assistance.
+  
+This step helps ensure that you are signing in to the correct organization. 
+
+### Components of the Domain Confirmation Dialog
+
+The following screenshot shows an example of what the domain confirmation dialog could look like for you:
 
 :::image type="content" source="media/home-realm-discovery-policy/domain-confirmation-dialog-new.png" alt-text="Screenshot of the domain confirmation dialog listing the sign-in identifier '<kelly@contoso.com>' with a tenant domain of 'contoso.com'.":::
 

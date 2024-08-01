@@ -7,7 +7,7 @@ metadata:
   ms.author: joflore
   manager: amycolannino
   ms.reviewer: lhuangnorth
-  ms.date: 05/29/2024
+  ms.date: 07/30/2024
   ms.service: entra-id
   ms.subservice: conditional-access
   ms.topic: how-to
@@ -55,9 +55,9 @@ procedureSection:
       - |  
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
       - |
-        Browse to **Protection** > **Conditional Access**.
+        Browse to **Protection** > **Conditional Access** > **Policies**.
       - |  
-        Select **Create new policy**.
+        Select **New policy**.
       - |  
         Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
       - |
