@@ -151,6 +151,17 @@ To unblock an account based on sign-in risk, administrators have the following o
 1. **Exclude the user from policy** - If you think that the current configuration of your sign-in policy is causing issues for specific users, you can exclude the users from it. For more information, see the section Exclusions in the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md#policy-exclusions).
 1. **Disable policy** - If you think that your policy configuration is causing issues for all your users, you can disable the policy. For more information, see the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
 
+### Automatic blocking due to high confidence risk
+
+Entra ID Protection automatically blocks sign-ins that have a very high confidence of being risky. This block most commonly occurs on sign-ins performed via legacy authentication protocols, and displaying properties of a malicious attempt.
+
+When a user is blocked with this mechanism they will receive a 50053 authentication error. Investigation of the sign-in logs will display the following block reason: "Sign-in was blocked by built-in protections due to high confidence of risk."
+
+To unblock an account based on high confidence sign-in risk, administrators have the following options:
+
+1. **Add the IP's being used to sign-in to the Trusted location settings** - If the sign-in is performed from a known location for your company, you can add the IP to be trusted. For more information, see the Trusted Locations section in article [Conditional Access: Network assignment](/entra/identity/conditional-access/concept-assignment-מetwork#trusted-locations).
+1. **Use a modern authentication protocol** - If the sign-in is performed via a legacy protocol, switching to modern will unblock the attempt.
+
 ## Token theft related detections
 
 With a recent update to our detection architecture, we no longer autoremediate sessions with MFA claims when a token theft related or the Microsoft Threat Intelligence Center (MSTIC) Nation State IP detection triggers during sign-in. 
