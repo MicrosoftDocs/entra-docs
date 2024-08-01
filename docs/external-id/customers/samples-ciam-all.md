@@ -73,7 +73,7 @@ These samples and how-to guides demonstrate how to write a public client desktop
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> macOS (Swift) | &#8226; [Sign in users](sample-mobile-app-macos-swift-sign-in.md)| &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+> macOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-macos-app.md)| &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
 
 ### Mobile: Browser delegated authentication
 
