@@ -110,9 +110,9 @@ The next sections cover specific migration guidance for each method.
 
 There are two controls for **Email one-time passcode**:
 
-Targeting using include and exclude in the configuration's **Enable and target** section is used to enable email OTP for members of a tenant for use in **Password reset**.
+Under the **Enable and Target** section: Tenant members may be enabled to allow Email OTP for use in **Password Reset** with specific groups included or excluded (or enabled for all member users).
 
-There's a separate **Allow external users to use email OTP** control in the **Configure** section that controls use of email OTP for sign-in by B2B users. The authentication method can't be disabled if this control is enabled.
+Under the **Configure** section: A separate **Allow external users to use email OTP** control enables use of email OTP for **sign-in** by B2B users. The Email OTP authentication method can't be disabled if this setting is enabled.
 
 ### Microsoft Authenticator
 
