@@ -159,16 +159,8 @@ Creating a Conditional Access policy is covered in detail in [How to create a Co
 
 ## Enable Microsoft Entra Private Access
 
-Once you have your Quick Access app configured, your private resources added, users assigned to the app, you can enable the Private access profile from the **Traffic forwarding** area of Global Secure Access. You can enable the profile before configuring Quick Access, but without the app and profile configured, there's no traffic to forward.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. Select the toggle for **Private access profile**.
+Once you have your Quick Access app configured, your private resources added, users assigned to the app, you can enable the Private access profile from the **Traffic forwarding** area of Global Secure Access. You can enable the profile before configuring Quick Access, but without the app and profile configured, there's no traffic to forward. To learn how to enable the Private Access traffic forwarding profile, see [How to manage the Private Access traffic forwarding profile](how-to-manage-private-access-profile.md).
 
 ## Next steps
-
-The next step for getting started with Microsoft Entra Private Access is to [enable the Private Access traffic forwarding profile](how-to-manage-private-access-profile.md).
-
-For more information about Private Access, see the following articles:
 - [Learn about traffic profiles](concept-traffic-forwarding.md)
 - [Configure per-app access](how-to-configure-per-app-access.md)
