@@ -18,7 +18,7 @@ adobe-target: true
 # Customer intent: As a Microsoft Entra B2B collaboration or B2B direct connect user, I want to leave an organization, so that I can stop using apps from that organization and end any association with it.
 ---
 
-# Leave an organization where you have a guest account
+# Leave an organization as an external user
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
