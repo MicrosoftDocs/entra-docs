@@ -5,12 +5,12 @@ description: Settings that can roam or backed up in Windows with ESR
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: reference
-ms.date: 07/29/2024
+ms.date: 08/01/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: guovivian
+ms.reviewer: sempofu, micrider
 ---
 # Windows roaming settings reference
 
