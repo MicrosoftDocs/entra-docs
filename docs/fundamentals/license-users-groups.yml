@@ -23,6 +23,9 @@ procedureSection:
   - title: |
       Available license plans
     summary: |
+      
+      [!INCLUDE [licensing updates](~/includes/licensing-change.md)]
+
       There are several Microsoft Entra ID license plans:
 
       - Microsoft Entra ID Free
