@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/31/2024
+ms.date: 08/01/2024
 
 ms.author: justinha
 author: justinha
@@ -28,7 +28,7 @@ The following table describes Microsoft Entra MFA settings, and subsections cove
 | [Report suspicious activity](#report-suspicious-activity) | Configure settings that allow users to report fraudulent verification requests. Report suspicious activity replaces these features: Block/unblock users, Fraud alert, and Notifications.|
 | [Fraud alert](#fraud-alert) | This feature will be removed on March 1, 2025. Use [Report suspicious activity](#report-suspicious-activity) to allow users to report fraudulent verification requests.  |
 | [Block/unblock users](#block-and-unblock-users) | This feature will be removed on March 1, 2025. Use [Report suspicious activity](#report-suspicious-activity) to allow users to report fraudulent verification requests. These alerts are integrated with [Identity Protection](~/id-protection/overview-identity-protection.md). You can use [risk based policies](~/id-protection/concept-identity-protection-policies.md#user-risk-based-conditional-access-policy) or create your own workflows by using [risk detection events](/graph/api/resources/riskdetection) to temporarily limit user access and remediate risk. |
-| [Notifications](#notifications) | This feature will be removed on March 1, 2025. Use [Report suspicious activity](#report-suspicious-activity) to allow users to report fraudulent verification requests. You can use [risk notifications](~/docs/id-protection/howto-identity-protection-configure-notifications.md) or create your own workflows by using [risk detection events](/graph/api/resources/riskdetection) to enable email notifications for user reported fraud events.  |
+| [Notifications](#notifications) | This feature will be removed on March 1, 2025. Use [Report suspicious activity](#report-suspicious-activity) to allow users to report fraudulent verification requests. You can use [risk notifications](~/id-protection/howto-identity-protection-configure-notifications.md) or create your own workflows by using [risk detection events](/graph/api/resources/riskdetection) to enable email notifications for user reported fraud events.  |
 | [OATH tokens](concept-authentication-oath-tokens.md) | Used in cloud-based Microsoft Entra MFA environments to manage OATH tokens for users. |
 | [Phone call settings](#phone-call-settings) | Configure settings related to phone calls and greetings for cloud and on-premises environments. |
 | Providers | This will show any existing authentication providers that you've associated with your account. Adding new providers is disabled as of September 1, 2018. |
