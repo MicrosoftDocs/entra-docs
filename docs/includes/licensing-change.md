@@ -12,4 +12,4 @@ ms.topic: include
 > - [Assign or Unassign Licenses for Users in the Microsoft 365 Admin Center](/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide&preserve-view=true)
 > - [Add Users and Assign Licenses in Microsoft 365](/microsoft-365/admin/add-users/add-users?view=o365-worldwide&preserve-view=true)
 > - [Assign Licenses to a Group Using the Microsoft 365 Admin Center](~/identity/users/licensing-admin-center.md)
-> </br>We encourage all administrators to familiarize themselves with the new procedures to ensure a smooth transition. For any further assistance or inquiries, please contact our [support team](https://support.microsoft.com/contactus).
+ </br>We encourage all administrators to familiarize themselves with the new procedures to ensure a smooth transition. For any further assistance or inquiries, please contact our [support team](https://support.microsoft.com/contactus).
