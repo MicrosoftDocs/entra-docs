@@ -5,11 +5,11 @@ metadata:
   ms.service: entra-id
   ms.subservice: devices
   ms.topic: faq
-  ms.date: 01/04/2024
+  ms.date: 08/01/2024
   ms.author: joflore
   author: MicrosoftGuyJFlo
   manager: amycolannino
-  ms.reviewer: guovivian, nahafez
+  ms.reviewer: sempofu, micrider
 title: Settings and data roaming FAQ for administrators
 summary: This article answers some questions IT administrators might have about settings and app data sync.
 
@@ -61,20 +61,6 @@ sections:
              **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\SettingSync\WinMSIPC\<tenant ID GUID>**.
              From the **tenant ID GUID** key, create a new Multi-String value (REG-MULTI-SZ) named **AllowedRMSServerUrls**. For its data, specify the licensing distribution point URLs of the other Azure tenants that the device accesses.
           3. You can find the licensing distribution point URLs by running the **Get-AadrmConfiguration** cmdlet from the AADRM module. If the values for the **LicensingIntranetDistributionPointUrl** and **LicensingExtranetDistributionPointUrl** are different, specify both values. If the values are the same, specify the value once.
-          
-      - question: |
-          What are the roaming settings options for existing Windows desktop applications?
-        answer: |
-          Roaming only works for Universal Windows apps. There are two options available for enabling roaming on an existing Windows desktop application:
-          
-          * The [Desktop Bridge](/windows/msix/desktop/source-code-overview) helps you bring your existing Windows desktop apps to the Universal Windows Platform. From here, minimal code changes are required to take advantage of Microsoft Entra app data roaming. The Desktop Bridge provides your apps with an app identity, which is needed to enable app data roaming for existing desktop apps.
-          * [User Experience Virtualization (UE-V)](/previous-versions//dn458947(v=vs.85)) helps you create a custom settings template for existing Windows desktop apps and enable roaming for Win32 apps. This option doesn't require the app developer to change code of the app. UE-V is limited to on-premises Active Directory roaming for customers who have the Microsoft Desktop Optimization Pack.
-          
-          Administrators can configure UE-V to roam Windows desktop app data by changing roaming of Windows OS settings and Universal app data through [UE-V group policies](/microsoft-desktop-optimization-pack/uev-v2/configuring-ue-v-2x-with-group-policy-objects-both-uevv2), including:
-          
-          * Roam Windows settings group policy
-          * Don't synchronize Windows Apps group policy
-          * Internet Explorer roaming in the applications section
           
       - question: |
           Can I store synced settings and data on-premises?
