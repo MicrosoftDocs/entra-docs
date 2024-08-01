@@ -1,6 +1,6 @@
 ---
-title: Quickstart - Set up a tenant
-description: In this quickstart, you learn how to create a tenant with external configurations.
+title: External Tenant Quickstart
+description: In this quickstart, learn how to create an external tenant for customer identity and access management (CIAM). Customize a sign-in experience and try it out with a sample app.
  
 author: csmulligan
 manager: CelesteDG
@@ -10,11 +10,11 @@ ms.subservice: customers
 ms.topic: quickstart
 ms.date: 04/30/2024
 ms.author: cmulligan
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or IT admin, I want to create a tenant with external configurations.
 ---
-# Quickstart: Create a tenant 
+# Quickstart: Use your Azure subscription to create an external tenant
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
