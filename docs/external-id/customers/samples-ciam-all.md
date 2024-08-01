@@ -163,6 +163,13 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | Mobile: Browser delegated authentication | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-swift-prepare-tenant.md) |
 > |Mobile: Native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
 
+### macOS (Swift)
+
+> [!div class="mx-tdCol2BreakAll"]
+> | App type | Code sample guide | Build and integrate guide |
+> | ----------- | ----------- |----------- |
+> |Desktop: Native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-macos-app.md)| &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+> 
 ### JavaScript, Vanilla
 
 > [!div class="mx-tdCol2BreakAll"]
