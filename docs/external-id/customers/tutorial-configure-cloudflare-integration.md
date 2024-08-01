@@ -111,6 +111,8 @@ We recommended strict security controls on traffic from countries or regions whe
 
 ## Block traffic from countries or regions
 
+For the following instructions, you can add custom HTML pages for visitors. 
+
 1. Go to the [Cloudflare dashboard](https://developers.cloudflare.com/workers/get-started/dashboard/). 
 1. Expand the Security section.
 1. Select **WAF**.
@@ -118,12 +120,12 @@ We recommended strict security controls on traffic from countries or regions whe
 1. For **Rule name**, enter a relevant name.
 1. For **If incoming requests match**, for **Field**, select **Country** or **Continent**.
 1. For **Operator**, select **equals**.
-1. For **Value**, select select the country or continent to block.
+1. For **Value**, select the country or continent to block.
 1. For **Then take action**, select **Block**.
 1. For **Place at**, select **Last**.
 1. Select **Deploy**.
 
-   ![Screenshot of the create rule dialog.](media/tutorial-configure-cloudflare-integration/create-rule-name.png)
+   ![Screenshot of the name field on the create rule dialog.](media/tutorial-configure-cloudflare-integration/create-rule-name.png)
 
 ### OWASP and managed rulesets
 
