@@ -17,6 +17,8 @@ ms.custom: it-pro
 
 # Identify and resolve license assignment problems for a group in Microsoft Entra ID
 
+[!INCLUDE [licensing updates](~/includes/licensing-change.md)]
+
 Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, introduces the concept of users in a licensing error state. This article explains the reasons why users might end up in this state.
 
 When you assign licenses directly to individual users, without using group-based licensing, the assignment operation might fail for reasons that are related to business logic. For example, there might be an insufficient number of licenses or a conflict between two service plans that can't be assigned at the same time. The problem is immediately reported back to you.

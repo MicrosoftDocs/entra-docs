@@ -16,6 +16,8 @@ ms.custom: it-pro
 
 # Change license assignments for a user or group in Microsoft Entra ID
 
+[!INCLUDE [licensing updates](~/includes/licensing-change.md)]
+
 This article describes how to move users and groups between service license plans in Microsoft Entra ID, part of Microsoft Entra. The goal Microsoft Entra ID's approach is to ensure that there's no loss of service or data during the license change. Users should switch between services seamlessly. The license plan assignment steps in this article describe changing a user or group on Office 365 E1 to Office 365 E3, but the steps apply to all license plans. When you update license assignments for a user or group, the license assignment removals and new assignments are made simultaneously so that users do not lose access to their services during license changes or see license conflicts between plans.
 
 ## Before you begin
