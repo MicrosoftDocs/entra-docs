@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 03/05/2024
+ms.date: 08/01/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -32,7 +32,7 @@ Avoid overlapping app segments between Quick Access and per-app access.
 
 Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
 
-At this time, Private access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
+At this time, Private access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private Access traffic forwarding profile.
 
 ## High level steps
 
