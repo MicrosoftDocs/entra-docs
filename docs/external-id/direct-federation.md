@@ -1,6 +1,6 @@
 ---
 title: SAML/WS-Fed Federation
-description: Set up direct federation with any organization whose identity provider (IdP) supports SAML 2.0 or WS-Fed protocol. Learn about attributes and claims required for federation.
+description: Set up direct federation with SAML 2.0 or WS-Fed identity providers (IdP) so guests can sign in with their own work accounts. Understand attributes and claims required for federation.
 
  
 ms.service: entra-external-id
