@@ -84,7 +84,7 @@ In this article, you learn how to:
 
 To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator. 
 
-:::image type="content" source="media/native-authentication/macos/native-auth-sign-in-sign-up-password-macos.png" alt-text="Screenshot of user prompt to enter email and password in macOS app." lightbox="media/macos/native-auth-sign-in-sign-up-password-expanded-macos.png"::: 
+:::image type="content" source="media/native-authentication/macos/native-auth-sign-in-sign-up-password-macos.png" alt-text="Screenshot of user prompt to enter email and password in macOS app." lightbox="media/native-authentication/macos/native-auth-sign-in-sign-up-password-expanded-macos.png"::: 
 
 This guide tests **Email and password** usage. Enter a valid email address and password, select **Sign Up**, and launch the submit code screen: 
 
