@@ -66,6 +66,15 @@ These samples and how-to guides demonstrate how to write a desktop application t
 > | JavaScript, Electron | &#8226; [Sign in users](how-to-desktop-app-electron-sample-sign-in.md) | ---   |
 > | ASP.NET (MAUI) | &#8226; [Sign in users](how-to-desktop-app-maui-sample-sign-in.md) |&#8226; [Sign in users](tutorial-desktop-app-maui-sign-in-prepare-tenant.md)|
 
+### Desktop: Native Authentication
+
+These samples and how-to guides demonstrate how to write a public client desktop application with native authentication that integrates with Microsoft Entra External ID.
+
+> [!div class="mx-tdCol2BreakAll"]
+> | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
+> | ------- | -------- | ------------- |
+> macOS (Swift) | &#8226; [Sign in users](sample-mobile-app-macos-swift-sign-in.md)| &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-macos-swift-prepare-tenant.md) |
+
 ### Mobile: Browser delegated authentication
 
 These samples and how-to guides demonstrate how to write a public client mobile application with browser delegated authentication that integrates with Microsoft Entra External ID.
@@ -75,7 +84,7 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > | ----------- | ----------- |----------- |
 > | ASP.NET Core MAUI | &#8226; [Sign in users](how-to-mobile-app-maui-sample-sign-in.md) | &#8226; [Sign in users](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)|
 > | Android (Kotlin) | &#8226; [Sign in users](sample-mobile-app-android-kotlin-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-android-kotlin-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-android-kotlin-prepare-tenant.md) |
-> | iOS (Swift) | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-swift-prepare-tenant.md) |
+> | iOS (Swift) | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-macos-swift-prepare-tenant.md) |
 
 
 ### Mobile: Native authentication
