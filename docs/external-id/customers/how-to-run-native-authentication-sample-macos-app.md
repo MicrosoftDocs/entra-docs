@@ -47,7 +47,7 @@ In this article, you learn how to:
 
 ## Create a user flow 
 
-[!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
+[!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow-password.md)]
 
 ## Associate the application with the user flow 
  
