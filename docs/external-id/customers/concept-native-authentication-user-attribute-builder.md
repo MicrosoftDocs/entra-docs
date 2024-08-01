@@ -1,13 +1,13 @@
 ---
 title: Native authentication SDK attribute builder
-description: Learn how to use native authentication SDK attribute builder for built-in and custom attributes. 
+description: Learn how to use native authentication Android and iOS SDK attribute builders to prepare built-in and custom attributes. 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 05/11/2024
+ms.date: 08/01/2024
 
 #Customer intent: As a dev, devops, I want to learn how to use native authentication SDK attribute builder to build attribute variables for both built-in and custom attributes, so that I can use them in my app.
 ---
@@ -31,7 +31,7 @@ To build user attributes in the Android SDK:
 
     ```kotlin
         //build the user attributes, both built-in and custom attributes
-        val userAttributes = UserAttributes.Builder
+        val userAttributes = UserAttributes.Builder()
             .country(country)
             .city(city)
             .displayName(displayName)
@@ -55,7 +55,7 @@ To build user attributes in the Android SDK:
 - To build [custom attributes](concept-user-attributes.md#custom-user-attributes), use `UserAttribute.Builder` class `customAttribute()` method. The method accepts the custom attribute's programmable name, and the value of the attribute:
 
      ```kotlin
-        val userAttributes = UserAttributes.Builder
+        val userAttributes = UserAttributes.Builder()
             .customAttribute("extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber", loyaltyNumber)
             .build() 
     
