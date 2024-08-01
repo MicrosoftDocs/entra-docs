@@ -1,6 +1,6 @@
 ---
-title: Register an app in Microsoft Entra External ID
-description: Learn about how to register an app in the external tenant. 
+title: Register an App
+description: Learn how to register your application with External ID for customer identity and access management (CIAM). Choose your app type and get detailed steps. 
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
@@ -8,11 +8,13 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: how-to
 ms.date: 02/29/2024
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to register an app on the Microsoft Entra admin center.
 ---
-# Register your app in the external tenant
+# Register an app in your external tenant
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 Microsoft Entra External ID enables your organization to manage customers’ identities, and securely control access to your public facing applications and APIs. Applications where your customers can buy your products, subscribe to your services, or access their account and data.  Your customers only need to sign in on a device or a web browser once and have access to all your applications you granted them permissions.
 
@@ -59,8 +61,7 @@ The following steps show you how to register your SPA in the Microsoft Entra adm
 
 [!INCLUDE [add about redirect URI](../customers/includes/register-app/about-redirect-url.md)]  
 
-### Grant delegated permissions
-This app signs in users. You can add delegated permissions to it, by following the steps below:
+### Grant admin consent
 
 [!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)] 
 
@@ -101,12 +102,12 @@ The following steps show you how to register your web app in the Microsoft Entra
 
 [!INCLUDE [add about redirect URI](../customers/includes/register-app/about-redirect-url.md)] 
 
-### Add delegated permissions
-This app signs in users. You can add delegated permissions to it, by following the steps below:
+### Grant admin consent
 
 [!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)] 
 
-### Create a client secret 
+### Create a client secret
+ 
 [!INCLUDE [add a client secret](../customers/includes/register-app/add-app-client-secret.md)]
 
 ### Grant API permissions (optional)
@@ -154,7 +155,8 @@ The following steps show you how to register your app in the Microsoft Entra adm
 
 1. The application's **Overview pane** is displayed when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in your application source code.
 
-### Add delegated permissions
+### Grant admin consent
+
 [!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ### Grant API permissions (optional)
@@ -187,8 +189,7 @@ A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/
 ## Register a native authentication application
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
 
-### Add delegated permissions
-This app signs in users. You can add delegated permissions to it, by following the steps below:
+### Grant admin consent
 
 [!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -202,5 +203,3 @@ This app signs in users. You can add delegated permissions to it, by following t
 ## Next steps
  
 - [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
-
-

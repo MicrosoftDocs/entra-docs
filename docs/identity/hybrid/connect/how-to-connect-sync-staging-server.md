@@ -127,7 +127,7 @@ We need to ensure that only one Sync Server is syncing changes at any given time
    > [!div class="mx-imgBorder"]
    > ![Screenshot shows Staging Mode highlighted in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-menu.png)
 
-2. You will need to sign into Microsoft Entra ID with Global Administrator or Hybrid Identity Admin credentials:  
+2. You will need to sign into Microsoft Entra ID with Global Administrator or Hybrid Identity Administrator credentials:  
 
    > [!div class="mx-imgBorder"]
    > ![Screenshot shows Sign in prompt in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-sign-in.png)
@@ -156,7 +156,7 @@ Import-Module ADSync
 Get-ADSyncScheduler
 ``` 
   
-From the results, verify the value of the "StagingModeEnabled" setting. If the server was successfully switched to staging mode the value of this setting should be _**True**_ like in the example below:  
+From the results, verify the value of the "StagingModeEnabled" setting. If the server was successfully switched to staging mode the value of this setting should be ***True*** like in the example below:  
 
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Sync Service console on the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-verification.png)

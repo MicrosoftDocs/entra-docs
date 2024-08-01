@@ -1,9 +1,9 @@
 ### YamlMime:Hub
 
 ## FRONT MATTER START
-title: Microsoft Entra External ID documentation # < 60 chars
+title: Documentation # < 60 chars
 summary: >
-  With Microsoft Entra External ID, you can secure all the external identities you work with. Collaborate on your workforce apps and resources with business guests, or secure external user access to your customer and consumer facing apps. 
+  Learn how to use Microsoft Entra External ID to manage your external identities scenarios, including guest user access and customer identity and access management (CIAM) for apps. 
 brand: azure
 
 metadata:
@@ -18,7 +18,7 @@ metadata:
   author: msmimart
   ms.author: mimart
   ms.date: 04/30/2024
-
+  ms.custom: seo-july-2024
 ## FRONT MATTER END
 
 ## BAND 1 - HIGHLIGHTED CONTENT START #############################################################################################################################
@@ -53,6 +53,7 @@ productDirectory:
       imageSrc: ./media/index/identity-platform-icon.png
       summary: "As a developer, use our tutorials to learn how to integrate your consumer and business customer apps with External ID."
       url: customers/samples-ciam-all.md?tabs=apptype
+
 
 additionalContent:
   sections:

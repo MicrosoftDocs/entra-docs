@@ -16,7 +16,7 @@ ms.custom: enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Disable auto-acceleration sign-in
 
-Home Realm Discovery Policy (HRD) offers administrators multiple ways to control how and where their users authenticate. The `domainHintPolicy` section of the HRD policy is used to help migrate federated users to cloud managed credentials like [FIDO](~/identity/authentication/howto-authentication-passwordless-security-key.md), by ensuring that they always visit the Microsoft Entra sign-in page and aren't auto-accelerated to a federated IDP because of domain hints. To learn more about HRD policy, see [Home Realm Discovery](home-realm-discovery-policy.md).
+Home Realm Discovery (HRD) policy offers administrators multiple ways to control how and where their users authenticate. The `domainHintPolicy` section of the HRD policy is used to help migrate federated users to cloud managed credentials like [FIDO](~/identity/authentication/howto-authentication-passwordless-security-key.md), by ensuring that they always visit the Microsoft Entra sign-in page and aren't auto-accelerated to a federated IDP because of domain hints. To learn more about HRD policy, see [Home Realm Discovery](home-realm-discovery-policy.md).
 
 This policy is needed in situations where and admins can't control or update domain hints during sign-in.  For example, `outlook.com/contoso.com` sends the user to a sign-in page with the `&domain_hint=contoso.com` parameter appended, to auto-accelerate the user directly to the federated IDP for the `contoso.com` domain. Users with managed credentials sent to a federated IDP can't sign in using their managed credentials, reducing security, and frustrating users with randomized sign-in experiences. Admins rolling out managed credentials [should also set up this policy](#suggested-use-within-a-tenant) to ensure that users can always use their managed credentials.
 
@@ -48,7 +48,7 @@ Once a user has entered a username at the sign-in page, they can use their manag
 To disable auto-acceleration sign-in for an application in Microsoft Entra ID, you need:
 
 - An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 ::: zone pivot="powershell-hrd"
 - [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
 ::: zone-end

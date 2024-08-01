@@ -20,14 +20,14 @@ ms.custom: enterprise-apps
 
 # Assign enterprise application owners
 
-An [owner of an enterprise application](overview-assign-app-owners.md) in Microsoft Entra ID can manage the organization-specific configuration of the application, such as single sign-on, provisioning, and user assignments. An owner can also add or remove other owners. Unlike Global Administrators, owners can manage only the enterprise applications they own. In this article, you learn how to assign an owner of an application.
+An [owner of an enterprise application](overview-assign-app-owners.md) in Microsoft Entra ID can manage the organization-specific configuration of the application, such as single sign-on, provisioning, and user assignments. An owner can also add or remove other owners. Unlike other application administrators, owners can manage only the enterprise applications they own. In this article, you learn how to assign an owner of an application.
 
 ## Prerequisites
 
 To add an enterprise application to your Microsoft Entra tenant, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+- One of the following roles: Cloud Application Administrator, or Application Administrator.
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Assign an owner
@@ -49,7 +49,7 @@ To assign an owner to an enterprise application:
 
 To add an owner to an enterprise application using Microsoft Graph PowerShell, you need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and consent to the `Application.ReadWrite.All` permission.
 
-In the following example, the user's object ID is 8afc02cb-4d62-4dba-b536-9f6d73e9be26 and the applicationId is 46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b.
+In the following example, the user's object ID is aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb and the applicationId is 00001111-aaaa-2222-bbbb-3333cccc4444.
 
 ```powershell
 1. Connect-MgGraph -Scopes 'Application.ReadWrite.All'
@@ -57,10 +57,10 @@ In the following example, the user's object ID is 8afc02cb-4d62-4dba-b536-9f6d73
 1. Import-Module Microsoft.Graph.Applications
 
 $params = @{
-    "@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/8afc02cb-4d62-4dba-b536-9f6d73e9be26"
+    "@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 }
 
-New-MgServicePrincipalOwnerByRef -ServicePrincipalId '46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b' -BodyParameter $params
+New-MgServicePrincipalOwnerByRef -ServicePrincipalId '00001111-aaaa-2222-bbbb-3333cccc4444' -BodyParameter $params
 ```
 
 :::zone-end
@@ -71,14 +71,14 @@ To assign an owner to an application using Microsoft Graph API, sign in to [Grap
 
 You need to consent to the `Application.ReadWrite.All` permission.
 
-Run the following Microsoft Graph query to assign an owner to an application. You need the object ID of the user you want to assign the application to. In the following example, the user's object ID is 8afc02cb-4d62-4dba-b536-9f6d73e9be26 and the appId is 46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b.
+Run the following Microsoft Graph query to assign an owner to an application. You need the object ID of the user you want to assign the application to. In the following example, the user's object ID is aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb and the appId is 00001111-aaaa-2222-bbbb-3333cccc4444.
 
 ```http
-POST https://graph.microsoft.com/v1.0/servicePrincipals(appId='46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b')/owners/$ref
+POST https://graph.microsoft.com/v1.0/servicePrincipals(appId='00001111-aaaa-2222-bbbb-3333cccc4444')/owners/$ref
 Content-Type: application/json
 
 {
-    "@odata.id": "https://graph.microsoft.com/v1.0/directoryObjects/8afc02cb-4d62-4dba-b536-9f6d73e9be26"
+    "@odata.id": "https://graph.microsoft.com/v1.0/directoryObjects/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 }
 ```
 

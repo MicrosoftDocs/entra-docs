@@ -70,9 +70,7 @@ Your load balancer aggregate might have failed, causing it to hit the alert thre
 
 ## Download the Risky IP report 
 
-Using the **Download** functionality, the whole risky IP address list in the past 30 days can be exported from the Connect Health Portal
-The export result will include all the failed AD FS sign-in activities in each detection time window, so you can customize the filtering after the export. 
-Besides the highlighted aggregations in the portal, the export result also shows more details about failed sign-in activities per IP address:
+Using the **Download** functionality, the whole risky IP address list in the past 30 days can be exported from the Connect Health Portal. The export result will include all the failed AD FS sign-in activities in each detection time window, so you can customize the filtering after the export. Besides the highlighted aggregations in the portal, the export result also shows more details about failed sign-in activities per IP address:
 
 |  Report Item  |  Description  | 
 | ------- | ----------- | 
@@ -85,7 +83,7 @@ Besides the highlighted aggregations in the portal, the export result also shows
 
 You can update the report's administrator contacts through the **Notification Settings**. By default, the risky IP alert email notification is in an *off* state. You can enable the notification by toggling the button under **Get email notifications for IP addresses exceeding failed activity threshold report**.
 
-Like generic alert notification settings in Connect Health, it allows you to customize the designated notification recipient list about the Risky IP report from here. You can also notify all hybrid identity administrators while you're making the change. 
+Like generic alert notification settings in Connect Health, it allows you to customize the designated notification recipient list about the Risky IP report from here. You can also notify all Hybrid Identity Administrators while you're making the change. 
 
 ## Configure threshold settings
 

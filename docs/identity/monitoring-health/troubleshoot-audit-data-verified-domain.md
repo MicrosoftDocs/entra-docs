@@ -116,7 +116,7 @@ For synchronized users, the UserPrincipalName is set to a verified domain suffix
 
 For cloud-only users, consistency means that the `proxyAddresses` match a verified domain suffix. When an inconsistent proxyAddresses is processed, the backend operation converts it to the default `*.onmicrosoft.com` domain suffix, for example: `SMTP:username@Contoso.onmicrosoft.com`.
 
-For synchronized users, consistency means that the proxyAddresses match the on-premises proxyAddresses value (i.e ShadowProxyAddresses). The proxyAddresses are expected to be in sync with ShadowProxyAddresses. If the synchronized user has an Exchange license assigned, then the cloud and on-premises values must match. These values must also match a verified domain suffix.
+For synchronized users, consistency means that the proxyAddresses match the on-premises proxyAddresses value (that is, ShadowProxyAddresses). The proxyAddresses are expected to be in sync with ShadowProxyAddresses. If the synchronized user has an Exchange license assigned, then the cloud and on-premises values must match. These values must also match a verified domain suffix.
 
 In this scenario, the backend operation sanitizes the inconsistent proxyAddresses with an unverified domain suffix and is removed from the object in Microsoft Entra ID. If that unverified domain is verified later, the backend operation recomputes and adds the proxyAddresses from ShadowProxyAddresses back to the object in Microsoft Entra ID.  
 

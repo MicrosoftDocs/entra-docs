@@ -133,7 +133,7 @@ Let's say there is a pre-hire with employeeId "1234" in SuccessFactors Employee 
 > [!NOTE] 
 > For a  pre-hire who has no history with the organization, both the [0] and [-1:] index will work for `startDate`. For a pre-hire who is a re-hire or conversion, we cannot deterministically tell the order and this may cause certain rehire/converted workers to get processed on their actual start date. This is a known limitation in the connector.
 
-During full sync or incremental sync or on-demand provisioning, when the provisioning service encounters a pre-hire record, it sends the following OData query to SuccessFactors with "asOfDate" filter set to the startDate of the user (e.g., asOfDate=2023-06-01). 
+During full sync or incremental sync or on-demand provisioning, when the provisioning service encounters a pre-hire record, it sends the following OData query to SuccessFactors with "asOfDate" filter set to the startDate of the user (such as asOfDate=2023-06-01). 
 
 ``` 
 https://[SuccessFactorsAPIEndpoint]/odata/v2/PerPerson?$format=json&$

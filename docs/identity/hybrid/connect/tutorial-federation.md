@@ -218,7 +218,7 @@ To create a certificate:
 
 ## Create a Microsoft Entra tenant
 
-If you dont have one, follow the steps in the article [Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md) to create a new tenant.
+If you don't have one, follow the steps in the article [Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md) to create a new tenant.
 
 <a name='create-a-hybrid-identity-administrator-account-in-azure-ad'></a>
 

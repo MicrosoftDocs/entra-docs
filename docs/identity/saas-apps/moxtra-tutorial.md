@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Moxtra so that I can control who has access to Moxtra, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -164,7 +164,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
    
     ![Screenshot shows the SAML page where you can enter the values described.](./media/moxtra-tutorial/admin.png "Administrator")   
  
-    a. In the **Name** textbox, type a name for your configuration (e.g.: **SAML**). 
+    a. In the **Name** textbox, type a name for your configuration (such as **SAML**). 
   
     b. In the **IdP Entity ID** textbox, paste the value of **Microsoft Entra Identifier**.. 
  

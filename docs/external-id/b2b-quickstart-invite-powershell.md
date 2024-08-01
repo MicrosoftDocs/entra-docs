@@ -15,6 +15,8 @@ ms.collection: M365-identity-device-management
 
 # Quickstart: Add a guest user with PowerShell
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 There are many ways you can invite external partners to your apps and services with Microsoft Entra B2B collaboration. In the previous quickstart, you saw how to add guest users directly in the Microsoft Entra admin center. You can also use PowerShell to add guest users, either one at a time or in bulk. In this quickstart, you’ll use the New-MgInvitation command to add one guest user to your Microsoft Entra tenant.
 
 If you don’t have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.

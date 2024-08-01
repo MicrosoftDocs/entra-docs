@@ -1,6 +1,6 @@
 ---
-title: How to configure Global Secure Access (preview) web content filtering
-description: Learn how to configure web content filtering in Microsoft Entra Internet Access (preview).
+title: How to configure Global Secure Access web content filtering
+description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
 author: kenwith    
 ms.author: kenwith
 manager: amycolannino
@@ -11,7 +11,7 @@ ms.subservice: entra-internet-access
 ms.reviewer: frankgomulka
 ---
 
-# How to configure Global Secure Access (preview) web content filtering
+# How to configure Global Secure Access web content filtering
 
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
@@ -21,14 +21,16 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 
 ## Prerequisites
 
-- Administrators who interact with **Global Secure Access (preview)** features must have one or more of the following role assignments depending on the tasks they're performing.
-  - The **Global Secure Access Administrator** role to manage the Global Secure Access preview features.
-  - [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) or [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create and interact with Conditional Access policies. 
+- Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
+   - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
+   - The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
 - Complete the [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md) guide. 
 - [Install the Global Secure Access client](how-to-install-windows-client.md) on end user devices.
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
-- User Datagram Protocol (UDP) traffic isn't supported in the current preview. If you plan to tunnel Exchange Online traffic, disable the QUIC protocol (443 UDP). For more information, see [Block QUIC when tunneling Exchange Online traffic](how-to-install-windows-client.md#block-quic-when-tunneling-exchange-online-traffic).
+- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to TCP when QUIC cannot be established. For improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
+ 
+
 - Review web content filtering concepts. For more information, see [web content filtering](concept-internet-access.md).
 
 ## High level steps
@@ -39,14 +41,10 @@ There are several steps to configuring web content filtering. Take note of where
 1. [Create a web content filtering policy.](#create-a-web-content-filtering-policy)
 1. [Create a security profile.](#create-a-security-profile)
 1. [Link the security profile to a Conditional Access policy.](#create-and-link-conditional-access-policy)
+1. [Assign users or groups to the traffic forwarding profile.](#user-and-group-assignments)
 
 ## Enable internet traffic forwarding
-
-To enable the Microsoft Entra Internet Access forwarding profile to forward user traffic:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. Enable the **Internet access profile**. Internet traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you configure granular security policies.
+The first step is to enable the Internet Access traffic forwarding profile. To learn more about the profile and how to enable it, see [How to manage the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md).
 
 ## Create a web content filtering policy
 
@@ -83,12 +81,15 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. Browse to **Identity** > **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
-1. Select **Target resources** and **Global Secure Access (Preview)** from the drop-down menu to set what the policy applies to.
+1. Select **Target resources** and **Global Secure Access** from the drop-down menu to set what the policy applies to.
 1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
 1. Select **Session** > **Use Global Secure Access security profile** and choose a security profile.
 1. Select **Select**.
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
+
+## User and group assignments
+You can scope the Internet Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 ## Verify end user policy enforcement
 
@@ -96,32 +97,17 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 1. Right-click on the Global Secure Access client icon in the task manager tray and open **Advanced Diagnostics** > **Forwarding profile**. Ensure that the Internet access acquisition rules are present. Also, check if the hostname acquisition and flows for the users Internet traffic are being acquired while browsing.
 
-1. Navigate to an allowed site and check if it loads properly.
+1. Navigate to allowed and blocked sites and check if they behave properly. Browse to **Global Secure Access** > **Monitor** > **Traffic logs** to confirm traffic is blocked or allowed appropriately.
 
-1. Navigate to a blocked site and confirm the site is blocked.
+The current blocking experience for all browsers includes a plaintext browser error for HTTP traffic and a "Connection Reset" browser error for HTTPS traffic.
 
-1. Browse to **Global Secure Access** > **Monitor** > **Traffic logs** to confirm traffic if blocked or allowed appropriately. It takes approximately 15 minutes for new entries to appear.
+![Screenshot showing a plaintext browser error for HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
+
+![Screenshot showing a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
+
 
 > [!NOTE]
 > Configuration changes in the Global Secure Access experience related to web content filtering typically take effect in less than 5 minutes. Configuration changes in Conditional Access related to web content filtering take effect in approximately one hour.
-> Additionally, the current blocking experience for all browsers and processes includes a "Connection Reset" browser error for HTTPS traffic and a "DeniedTraffic" browser error for HTTP traffic.
-
-## Known limitations
-
-- End-user notification on blocks, either from the client or the browser, aren't provided.
-- Internet traffic acquisition profiles for the client can't be configured.
-- The client traffic acquisition policy includes Transmission Control Protocol (TCP) ports 80/443.
-- Standard ports for HTTP/S traffic (ports 80 and 443).
-- *microsoft.com is currently acquired by the Microsoft 365 access profile.
-- IPv6 isn't supported on this platform.
-- Hyper-V isn't supported on this platform.
-- Remote network connectivity for Internet Access is in development.
-- Open Systems Intercommunication (OSI) network layer 3 and 4 filtering isn't supported.
-- No captive portal support. Connecting to public WiFi via captive portal access fails because these endpoints are currently acquired by the client.
-- Transport Layer Security (TLS) termination is in development.
-- No URL path based filtering or URL categorization for HTTP and HTTPS traffic.
-- Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
-  - These initial limits are placeholders until more features are added to this platform.
 
 ## Next steps
 

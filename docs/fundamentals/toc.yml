@@ -4,6 +4,8 @@ items:
 - name: Overview
   expanded: true
   items:
+  - name: What is Microsoft Entra?
+    href: what-is-entra.md
   - name: What is Microsoft Entra ID?
     href: whatis.md
   - name: New name for Azure AD
@@ -12,10 +14,12 @@ items:
     href: identity-fundamental-concepts.md
   - name: Introduction to identity and access management (IAM)
     href: introduction-identity-access-management.md
+  - name: Microsoft Entra admin center
+    href: entra-admin-center.md
 - name: First steps
   expanded: true
   items:
-  - name: Create a Directory
+  - name: Create a tenant
     href: create-new-tenant.md
   - name: Add a custom domain name
     href: add-custom-domain.yml
@@ -67,7 +71,7 @@ items:
       href: ./concept-group-based-licensing.md
     - name: Microsoft Entra ID preview program
       href: licensing-preview-info.md
-    - name: Microsoft Entra ID licensing
+    - name: Microsoft Entra licensing
       href: licensing.md
     - name: Sign up for Microsoft Entra ID P1 or P2
       href: get-started-premium.md
@@ -124,6 +128,8 @@ items:
     href: faq.yml
   - name: Company branding CSS template reference guide
     href: reference-company-branding-css-template.md
+  - name: Bulk operations
+    href: bulk-operations-service-limitations.md
   - name: Compliance
     expanded: false
     items:
@@ -158,6 +164,8 @@ items:
       href: ~/identity/enterprise-apps/custom-security-attributes-apps.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
     - name: Troubleshoot attributes
       href: custom-security-attributes-troubleshoot.md
+  - name: Microsoft Graph API reference
+    href: /graph/api/resources/identity-network-access-overview?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Microsoft Graph extensions
     href: /graph/extensibility-overview?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Frontline worker management

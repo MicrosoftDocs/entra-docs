@@ -9,7 +9,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 04/29/2024
+ms.date: 07/30/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -79,7 +79,7 @@ When assign licenses to a group, Microsoft Entra ID processes all existing membe
 
    - Activity: `Finish applying group based license to users`. This is logged when the system finishes processing all users in the group. It contains a summary of how many users were successfully processed and how many users couldn't be assigned group licenses.
 
-   [Read this section](licensing-group-advanced.md#use-audit-logs-to-monitor-group-based-licensing-activity) to learn more about how audit logs can be used to analyze changes made by group-based licensing.
+   See [Use audit logs to monitor group-based licensing activity](licensing-group-advanced.md#use-audit-logs-to-monitor-group-based-licensing-activity) to learn more about how audit logs can be used to analyze changes made by group-based licensing.
 
 ## Step 3: Check for license problems and resolve them
 
@@ -103,5 +103,5 @@ To learn more about the feature set for license assignment using groups, see the
 - [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
 - [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](licensing-groups-migrate-users.md)
 - [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](licensing-groups-change-licenses.md)
-- [Microsoft Entra group-based licensing additional scenarios](licensing-group-advanced.md)
+- [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](licensing-group-advanced.md)
 - [PowerShell examples for group-based licensing in Microsoft Entra ID](licensing-ps-examples.md)

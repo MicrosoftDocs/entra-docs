@@ -20,7 +20,7 @@ This article describes how to configure a custom claims provider for a [token is
 ## Prerequisites
 
 - An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
-- An Azure Function app with an HTTP trigger function configured for a token issuance start event. If you don't have one, follow the steps in [create a token issuance start event HTTP trigger function](./custom-extension-tokenissuancestart-setup.md).
+- An HTTP trigger function configured for a token issuance event deployed to Azure Functions. If you don't have one, follow the steps in [create a REST API for a token issuance start event in Azure Functions](./custom-extension-tokenissuancestart-setup.md).
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
     - For external tenants, use a [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
@@ -43,7 +43,7 @@ You'll now configure a custom authentication extension, which will be used by Mi
 1. In **Basics**, select the **TokenIssuanceStart** event type and select **Next**.
 1. In **Endpoint Configuration**, fill in the following properties:
     - **Name** - A name for your custom authentication extension. For example, *Token issuance event*.
-    - **Target Url** - The `{Function_Url}` of your Azure Function URL. Navigate to the **Overview** page of your Azure Function app, then select the function you created. In the function **Overview** page, select **Get Function Url** and use the copy icon to copy the URL.
+    - **Target Url** - The `{Function_Url}` of your Azure Function URL. Navigate to the **Overview** page of your Azure Function app, then select the function you created. In the function **Overview** page, select **Get Function Url** and use the copy icon to copy the **customauthenticationextension_extension (System key)** URL.
     - **Description** - A description for your custom authentication extensions.
 1. Select **Next**.
 1. In **API Authentication**, select the **Create new app registration** option to create an app registration that represents your *function app*.  
@@ -55,7 +55,7 @@ You'll now configure a custom authentication extension, which will be used by Mi
     - apiVersion
     - correlationId
 1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
-1. Note the **App ID** under **API Authentication**, which is needed for [setting environment variables](./custom-extension-tokenissuancestart-setup.md#set-up-environment-variables-for-your-azure-function-optional) in your Azure Function app.
+1. Note the **App ID** under **API Authentication**, which is needed to [configure authentication for your Azure Function](./custom-extension-tokenissuancestart-setup.md#configure-authentication-for-your-azure-function) in your Azure Function app.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
@@ -394,7 +394,7 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a external tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png":::
+    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in an external tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png":::
 
 ---
 

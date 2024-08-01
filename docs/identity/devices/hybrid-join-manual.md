@@ -90,7 +90,7 @@ The **$scp.Keywords** output shows the Microsoft Entra tenant information. Here'
 
    ```powershell
    azureADName:microsoft.com
-   azureADId:72f988bf-86f1-41af-91ab-2d7cd011db47
+   azureADId:a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1
    ```
 
 ### Set up issuance of claims

@@ -41,8 +41,7 @@ At a high level, there are two types of identities: human and machine/non-human 
 
 More and more, solutions are reliant on non-human entities to complete vital tasks and the number of non-human identities is increasing dramatically. Recent cyber attacks show that adversaries are increasingly targeting non-human identities over human identities.
 
-Human users typically have a single identity used to access a broad range of resources. Unlike a human user, a software workload may deal with multiple credentials to access different resources and those credentials need to be stored
-securely. It’s also hard to track when a workload identity is created or when it should be revoked. Enterprises risk their applications or services being exploited or breached because of difficulties in securing workload identities.
+Human users typically have a single identity used to access a broad range of resources. Unlike a human user, a software workload may deal with multiple credentials to access different resources and those credentials need to be stored securely. It’s also hard to track when a workload identity is created or when it should be revoked. Enterprises risk their applications or services being exploited or breached because of difficulties in securing workload identities.
 
 :::image type="content" source="media/workload-identities-overview/pain-points.png" alt-text="Diagram that shows pain points in securing workload identities." border="false":::
 

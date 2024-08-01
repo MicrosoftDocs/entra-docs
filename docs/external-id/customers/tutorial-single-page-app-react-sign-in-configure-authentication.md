@@ -287,7 +287,7 @@ Functional components are the building blocks of React apps, and are used to bui
                     populateClaim(
                         key,
                         claims[key],
-                        'The oid (user's object id) is the only claim that should be used to uniquely identify a user in an Azure AD tenant. The token might have one or more of the following claim, that might seem like a unique identifier, but is not and should not be used as such.',
+                        "The oid (user's object id) is the only claim that should be used to uniquely identify a user in an Azure AD tenant. The token might have one or more of the following claim, that might seem like a unique identifier, but is not and should not be used as such.",
                         index,
                         claimsObj
                     );
@@ -327,7 +327,7 @@ Functional components are the building blocks of React apps, and are used to bui
                     populateClaim(
                         key,
                         claims[key],
-                        'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual's access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
+                        "Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual's access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).",
                         index,
                         claimsObj
                     );

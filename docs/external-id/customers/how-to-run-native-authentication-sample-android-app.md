@@ -40,9 +40,9 @@ In this article, you learn how to:
 
 [!INCLUDE [Enable public client and native authentication](../customers/includes/native-auth/enable-native-authentication.md)]
  
-## Grant API permissions
+## Grant admin consent
  
-[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
+[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Create a user flow
  

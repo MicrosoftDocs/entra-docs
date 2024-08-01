@@ -109,13 +109,13 @@ The following JSON demonstrates a complete *appsettings.json* file:
     "Endpoint": "https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/",
     "VCServiceScope": "3db474b9-6a0c-4840-96ac-1fceb342124f/.default",
     "Instance": "https://login.microsoftonline.com/",
-    "TenantId": "12345678-0000-0000-0000-000000000000",
-    "ClientId": "33333333-0000-0000-0000-000000000000",
-    "ClientSecret": "123456789012345678901234567890",
+    "TenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "ClientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+    "ClientSecret": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
     "CertificateName": "[Or instead of client secret: Enter here the name of a certificate (from the user cert store) as registered with your application]",
     "DidAuthority": "did:web:...your-decentralized-identifier...",
     "CredentialType": "VerifiedCredentialExpert",
-    "CredentialManifest":  "https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/VerifiedCredentialExpert"
+    "CredentialManifest":  "https://verifiedid.did.msidentity.com/v1.0/aaaabbbb-0000-cccc-1111-dddd2222eeee/verifiableCredentials/contracts/VerifiedCredentialExpert"
   }
 }
 ```

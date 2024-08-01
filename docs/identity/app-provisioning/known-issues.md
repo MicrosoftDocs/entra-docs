@@ -1,13 +1,13 @@
 ---
 title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
-author: kenwith
-ms.author: kenwith
+author: jenniferf-skc
+ms.author: jfields
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 02/02/2024
+ms.date: 07/17/2024
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -32,13 +32,9 @@ This article discusses known issues to be aware of when you work with app provis
 
 ### Updating proxyAddresses
 
-ProxyAddresses is a [read-only property in Microsoft Graph](https://learn.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&preserve-view=true#mail-and-proxyaddresses-properties). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
+ProxyAddresses is a [read-only property in Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2272551). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
 
-### Microsoft Teams
-
-External / B2B users of type `member` created by cross-tenant synchronization can be added to a shared channel in Microsoft Teams. However, external member users created outside of cross-tenant sync cannot be added to a Teams shared channel.  
-
- ### Provisioning users
+### Provisioning users
 
 An external user from the source (home) tenant can't be provisioned into another tenant. Internal guest users from the source tenant can't be provisioned into another tenant. Only internal member users from the source tenant can be provisioned into the target tenant. For more information, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
@@ -100,7 +96,7 @@ Attribute-mapping expressions can have a maximum of 10,000 characters.
 
 #### Unsupported scoping filters
 
-The **appRoleAssignments**, **userType**, and **accountExpires** attributes aren't supported as scoping filters.
+The **appRoleAssignments**, **userType**, **manager**, and **date-type** attributes (for example, StatusHireDate, startDate, endDate, StatusTerminationDate, accountExpires) aren't supported as scoping filters.
 
 ::: zone pivot="cross-tenant-synchronization"
 #### OtherMails should not be included in your attribute mappings as a target attribute
@@ -112,14 +108,20 @@ The otherMails property is automatically computed in the target tenant. Changes 
 
 Multivalue directory extensions can't be used in attribute mappings or scoping filters. 
 
+#### Attribute targetAddress not available to select
+
+Attribute **targetAddress** (which maps to the ExternalEmailAddress property in Microsoft Exchange Online) isn't available as an attribute you can choose. If you need to change this attribute, you have to do it manually over the required object.  
+
+
 ## Service issues 
 
 #### Unsupported scenarios
 
 - Provisioning passwords isn't supported. 
-- Provisioning nested groups isn't supported. 
-- Provisioning to B2C tenants isn't supported because of the size of the tenants.
-- Not all provisioning apps are available in all clouds. For example, Atlassian isn't yet available in the Government cloud. We're working with app developers to onboard their apps to all clouds.
+- Provisioning nested groups beyond the first level is not supported. 
+- Provisioning is not supported for B2C tenants, including into or out of the tenant.
+- Provisioning is not supported for External ID tenants, including into or out of the tenant.
+- Not all provisioning apps are available in all clouds. 
 
 ::: zone pivot="app-provisioning"
 #### Automatic provisioning isn't available on my OIDC-based application
@@ -163,7 +165,7 @@ Credentials, including the secret token, notification email, and SSO certificate
 
 ::: zone pivot="app-provisioning"
 ## On-premises application provisioning
-The following information is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
+This is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
 
 ### Application and directories
 The following applications and directories aren't yet supported.

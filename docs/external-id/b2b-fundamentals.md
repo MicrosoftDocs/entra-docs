@@ -17,6 +17,9 @@ ms.collection: M365-identity-device-management
 ---
 
 # Microsoft Entra B2B best practices
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 This article contains recommendations and best practices for business-to-business (B2B) collaboration in Microsoft Entra External ID.
 
 > [!IMPORTANT]

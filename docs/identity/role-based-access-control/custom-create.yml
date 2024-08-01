@@ -7,7 +7,7 @@ metadata:
   ms.author: rolyon
   manager: amycolannino
   ms.reviewer: vincesm
-  ms.date: 01/27/2024
+  ms.date: 06/24/2024
   ms.service: entra-id
   ms.subservice: role-based-access-control
   ms.topic: how-to
@@ -27,7 +27,7 @@ introduction: |
 prerequisites:
   summary: |
     - Microsoft Entra ID P1 or P2 license
-    - Privileged Role Administrator or Global Administrator
+    - Privileged Role Administrator
     - Microsoft.Graph module when using PowerShell
     - Admin consent when using Graph explorer for Microsoft Graph API
 
@@ -49,7 +49,9 @@ procedureSection:
 
           ![Create or edit roles from the Roles and administrators page](./media/custom-create/new-custom-role.png)
       - |
-        On the **Basics** tab, provide a name and description for the role and then click **Next**.
+        On the **Basics** tab, provide a name and description for the role.
+
+          You can clone the baseline permissions from a custom role but you can't clone a built-in role.
 
           ![provide a name and description for a custom role on the Basics tab](./media/custom-create/basics-tab.png)
       - |

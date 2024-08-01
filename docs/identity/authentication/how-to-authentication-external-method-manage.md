@@ -6,7 +6,7 @@ description: Learn how to manage an external authentication method (EAM) for Mic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/29/2024
+ms.date: 05/03/2024
 
 ms.author: justinha
 author: gregkmsft
@@ -20,7 +20,7 @@ ms.reviewer: gkinasewitz, gustavosa
 
 An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign to Microsoft Entra ID. An EAM can satisfy MFA requirements from Conditional Access policies, Identity Protection sign-in risk policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA. 
 
-EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider.
+EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider. EAMs require at least a Microsoft Entra ID P1 license.
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
@@ -31,6 +31,8 @@ To create an EAM, you need the following information from your external authenti
 - A **Client ID** is an identifier from your provider used as part of the authentication integration to identify Microsoft Entra ID requesting authentication.  
 - A **Discovery URL** is the OpenID Connect (OIDC) discovery endpoint for the external authentication provider. 
  
+   >[!NOTE]
+   >See [Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider.md#configure-a-new-external-authentication-provider-with-microsoft-entra-id) to set up the App registration.
 
 ## Manage an EAM in the Microsoft Entra admin center
 
@@ -48,16 +50,16 @@ Before you create an EAM in the admin center, make sure you have the [metadata t
    Add method properties based on configuration information from your provider. For example:
    
    - Name: Adatum
-   - Client ID: 06a011bd-ec92-4404-80fb-db6d5ada8ee2
+   - Client ID: 00001111-aaaa-2222-bbbb-3333cccc4444
    - Discovery Endpoint: `https://adatum.com/.well-known/openid-configuration`
-   - App ID: 2f3d5a67-7441-4f1e-aa92-e77ca6b5a5ca
+   - App ID: 11112222-bbbb-3333-cccc-4444dddd5555
 
    >[!IMPORTANT]
    >The display name is the name that's shown to the user in the method picker. It can't be changed after the method is created. Display names must be unique.
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/method-properties.png" alt-text="Screenshot of how to add EAM properties.":::
 
-   You need the Privileged Role Administrator or Global Administrator role to grant admin consent for the provider’s application. If you don't have the role required to grant consent, you can still save your authentication method, but you can't enable it until consent is granted.
+   You need at least the [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) role to grant admin consent for the provider’s application. If you don't have the role required to grant consent, you can still save your authentication method, but you can't enable it until consent is granted.
 
    After you enter the values from your provider, press the button to request for admin consent to be granted to the application so that it can read the required info from the user to authenticate correctly. You're prompted to sign in with an account with admin permissions and grant the provider’s application with the required permissions.
 

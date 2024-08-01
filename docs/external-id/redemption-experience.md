@@ -1,7 +1,7 @@
 ---
 
-title: Invitation redemption in B2B collaboration
-description: Describes the Microsoft Entra B2B collaboration invitation redemption experience for end users, including the agreement to privacy terms.
+title: B2B Invitation Redemption
+description: Learn about Microsoft Entra B2B collaboration invitation redemption and sign-in experiences for guest users, including the consent process and privacy terms agreement.
 
  
 ms.service: entra-external-id
@@ -10,13 +10,15 @@ ms.date: 03/26/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-
+ms.custom: seo-july-2024
 ms.collection: M365-identity-device-management
 
 # Customer intent: As a Microsoft Entra B2B administrator, I want to understand the redemption process for guest users, so that I can ensure they can access our resources and complete the consent process smoothly.
 ---
 
-# Microsoft Entra B2B collaboration invitation redemption
+# B2B collaboration invitation redemption
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 This article describes the ways guest users can access your resources and the consent process they'll encounter. If you send an invitation email to the guest, the invitation includes a link the guest can redeem to get access to your app or portal. The invitation email is just one of the ways guests can get access to your resources. As an alternative, you can add guests to your directory and give them a direct link to the portal or app you want to share. Regardless of the method they use, guests are guided through a first-time consent process. This process ensures that your guests agree to privacy terms and accept any [terms of use](~/identity/conditional-access/terms-of-use.md) you've set up.
 

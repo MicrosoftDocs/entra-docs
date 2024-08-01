@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 
 # Add an API connector to a user flow
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 To use an [API connector](api-connectors-overview.md), you first create the API connector and then enable it in a user flow.
 
 > [!IMPORTANT]

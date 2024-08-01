@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 12/08/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://admin.workplace.bedore.jp?organization=<ORGANIZATION_CODE>`
 
     > [!Note]
-    > These values are not the real. Update these values with the actual Identifer, Reply URL and Sign on URL. Contact [PKSHA Chatbot Client support team](mailto:bedore-support@pkshatech.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values are not the real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [PKSHA Chatbot Client support team](mailto:bedore-support@pkshatech.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

@@ -87,7 +87,7 @@ Token protection (sometimes referred to as token binding in the industry) attemp
 
 The preview works for specific scenarios only. For more information, see the article [Conditional Access: Token protection (preview)](concept-token-protection.md).
 
-## Use Global Secure Access security profile (preview)
+## Use Global Secure Access security profile
 
 Using a security profile with Conditional Access unifies identity controls with network security in Microsoft's Security Service Edge (SSE) product, [Microsoft Entra Internet Access](../../global-secure-access/concept-internet-access.md#security-profiles). Selecting this Session control allows you to bring identity and context awareness to security profiles, which are groupings of various policies created and managed in Global Secure Access. 
 

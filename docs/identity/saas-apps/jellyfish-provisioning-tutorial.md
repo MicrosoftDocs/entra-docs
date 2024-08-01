@@ -2,16 +2,14 @@
 title: 'Tutorial: Configure Jellyfish for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Jellyfish.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: 9978eb16-7ec2-4906-8608-e24906402dea
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 04/15/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Jellyfish so that I can streamline the user management process and ensure that users have the appropriate access to Jellyfish.
 ---

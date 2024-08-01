@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 09/07/2023
+ms.date: 06/19/2024
 ms.author: jomondi
 ms.reviewer: ergreenl, lenalepa
 ms.collection: M365-identity-device-management
@@ -26,8 +26,8 @@ Learn how to hide enterprise applications in Microsoft Entra ID. When an applica
 To hide an application from the My Apps portal and Microsoft 365 launcher, you need:
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator.
-- Global administrator is required to hide all Microsoft 365 applications.
+- One of the following roles: Cloud Application Administrator, Application Administrator.
+- Global Administrator is required to hide all Microsoft 365 applications.
 
 ## Hide an application from the end user
 
@@ -86,12 +86,12 @@ Run the following queries.
 1. Get the application you want to hide.
 
    ```http
-   GET https://graph.microsoft.com/v1.0/servicePrincipals/5f214ccd-3f74-41d7-b683-9a6d845eea4d
+   GET https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444
    ```
 1. Update the application to hide it from users.
 
    ```http
-   PATCH https://graph.microsoft.com/v1.0/servicePrincipals/5f214ccd-3f74-41d7-b683-9a6d845eea4d/
+   PATCH https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444/
    ```
 
     Supply the following request body.
@@ -117,12 +117,14 @@ Run the following queries.
 
 Use the following steps to hide all Microsoft 365 applications from the My Apps portal. The applications are still visible in the Office 365 portal.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+   > [!IMPORTANT]
+   > Microsoft recommends that you use roles with the fewest permissions. This helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. Select **App launchers**.
-2. Select **Settings**.
-3. Enable the option of **Users can only see Microsoft 365 apps in the Microsoft 365 portal**.
-4. Select **Save**.
+1. Select **App launchers** under **Manage** menu items.
+1. Select **Settings**.
+1. Enable the option of **Users can only see Microsoft 365 apps in the Microsoft 365 portal**.
+1. Select **Save**.
 
 :::zone-end
 ## Next steps

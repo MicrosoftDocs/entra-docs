@@ -14,6 +14,8 @@ ms.custom: it-pro
 
 # Default user permissions in external tenants
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 A Microsoft Entra tenant in an *external* configuration is used exclusively for [Microsoft Entra External ID](overview-customers-ciam.md) scenarios. An external tenant provides clear separation between your corporate workforce directory and your customer-facing app directory. Furthermore, users created in your external tenant are restricted from accessing information about other users in the external tenant. By default, customers can’t access information about other users, groups, or devices.
 
 An external tenant can contain the following user types:
@@ -26,7 +28,7 @@ An external tenant can contain the following user types:
 
 ## Default permissions
 
-The following table describes the default permissions assigned to a user in an external tenant customer:
+The following table describes the default permissions assigned to a user in an external tenant, including:
 
 - Users who use self-service sign-up
 - Users who are created by administrators

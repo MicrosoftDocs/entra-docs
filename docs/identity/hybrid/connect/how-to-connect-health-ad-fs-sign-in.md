@@ -21,7 +21,7 @@ The Connect Health for AD FS agent correlates multiple Event IDs from AD FS, dep
 
 ## Prerequisites
 * Microsoft Entra Connect Health for AD FS installed and upgraded to latest version (3.1.95.0 or later).
-* Global administrator or reports reader role to view the Microsoft Entra sign-ins
+* Global Administrator or Reports Reader role to view the Microsoft Entra sign-ins
 
 ## What data is displayed in the report?
 The data available mirrors the same data available for Microsoft Entra sign-ins. Five tabs with information will be available based on the type of sign-in, either Microsoft Entra ID or AD FS. Connect Health correlates events from AD FS, dependent on the server version, and matches them to the AD FS schema. 
@@ -80,8 +80,8 @@ The sign-in report supports sign-ins through O-Auth, WS-Fed, SAML, and WS-Trust 
 
 ***How are different types of sign-ins shown in the sign-in report?***
 If a Seamless SSO sign-in is performed, there will be one row for the sign-in with one correlation ID.
-If a single factor authentication is performed, two rows will be populated with the same correlation ID, but with two different authentication methods (i.e. Forms, SSO).
-In cases of Multi Factor Authentication, there will be three rows with a shared correlation ID and three corresponding Authentication Methods (i.e. Forms, AzureMFA, Multifactor). In this particular example, the multifactor in this case shows that the SSO has an MFA.
+If a single factor authentication is performed, two rows will be populated with the same correlation ID, but with two different authentication methods (that is, Forms, SSO).
+In cases of Multi Factor Authentication, there will be three rows with a shared correlation ID and three corresponding Authentication Methods (that is, Forms, AzureMFA, Multifactor). In this particular example, the multifactor in this case shows that the SSO has an MFA.
 
 ***What are the errors that I can see in the report?***
 For a full list of AD FS related errors that are populated in the sign-in report and descriptions, visit [AD FS Help Error Code Reference](https://adfshelp.microsoft.com/References/ConnectHealthErrorCodeReference)
@@ -89,8 +89,7 @@ For a full list of AD FS related errors that are populated in the sign-in report
 ***I am seeing “00000000-0000-0000-0000-000000000000” in the “User” section of a sign-in. What does that 
 mean?***
 If the sign-in failed and the attempted UPN does not match an existing UPN, the “User”, “Username”, and “User ID” 
-fields will be “00000000-0000-0000-0000-000000000000” and the “Sign-in Identifier” will be populated with 
-the attempted value the user entered. In these cases, the user attempting to sign-in does not exist.
+fields will be “00000000-0000-0000-0000-000000000000” and the “Sign-in Identifier” will be populated with the attempted value the user entered. In these cases, the user attempting to sign-in does not exist.
 
 ***How can I correlate my on-premises events to the Microsoft Entra sign-ins report?***
 The Microsoft Entra Connect Health agent for AD FS correlates event IDs from AD FS dependent on server version. The events will be available on the Security Log of the AD FS servers. 

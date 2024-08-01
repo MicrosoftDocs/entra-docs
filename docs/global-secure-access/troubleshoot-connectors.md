@@ -153,8 +153,8 @@ The updater service is healthy if it’s running and there are no errors recorde
 
 To manually upgrade a connector:
 
-- Download the latest version of the connector. (You can find it under application proxy on the Microsoft Entra admin center.
-- The installer restarts the Microsoft Entra private network connector services. In some cases, a reboot of the server might be required if the installer cannot replace all files. Therefore we recommend closing all applications (i.e. Event Viewer) before you start the upgrade.
+- Download the latest version of the connector. (Find it in the Microsoft Entra admin center at **Global Secure Access** > **Connect** > **Connectors**)
+- The installer restarts the Microsoft Entra private network connector services. In some cases, a reboot of the server might be required if the installer cannot replace all files. Therefore we recommend closing all applications (that is, Event Viewer) before you start the upgrade.
 - Run the installer. The upgrade process is quick and does not require providing any credentials and the connector is not re-registered.
     
 **Can private network connector services run in a different user context than the default?**
@@ -185,7 +185,7 @@ Yes, this scenario is supported starting from the connector version 1.5.1526.0. 
     
 **Should I create a dedicated account to register the connector with Microsoft Entra application proxy?**
 
-There's no reason to. Any Global Administrator or application administrator account works. The credentials entered during installation aren't used after the registration process. Instead, a certificate is issued to the connector, which is used for authentication from that point on.
+There's no reason to create a dedicated account. Any account with the Application Administrator role works. The credentials entered during installation aren't used after the registration process. Instead, a certificate is issued to the connector, which is used for authentication from that point on.
 
 **How can I monitor the performance of the Microsoft Entra private network connector?**
 
@@ -197,7 +197,7 @@ There are Performance Monitor counters that are installed along with the connect
     
 **Does the Microsoft Entra private network connector have to be on the same subnet as the resource?**
 
-The connector isn't required to be on the same subnet. However, it needs name resolution (DNS, hosts file) to the resource and the necessary network connectivity (routing to the resource, ports open on the resource, etc.). For recommendations, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
+The connector isn't required to be on the same subnet. However, it needs name resolution (DNS, hosts file) to the resource and the necessary network connectivity (routing to the resource, ports open on the resource, and so on). For recommendations, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
     
 **Why is the connector still showing in Microsoft Entra admin center after I uninstalled the connector from the Server?**
 

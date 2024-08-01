@@ -69,6 +69,8 @@ items:
   - name: Recommendations
     expanded: false
     items:
+      - name: Enable insider risk Conditional Access condition
+        href: recommendation-insider-risk-condition.md
       - name: Migrate ADAL to MSAL
         href: recommendation-migrate-from-adal-to-msal.md
       - name: Migrate apps from AD FS to Microsoft Entra ID

@@ -33,7 +33,7 @@ The **Reports** dashboard provides a table of information with both system repor
 
 ## Available system reports
 
-Permissions Management offers the following reports for management associated with the authorization systems noted in parenthesis:
+Permissions Management offers the following reports for management associated with the authorization systems noted in parentheses:
 
 - **Access Key Entitlements And Usage**:
     - **Summary of report**: Provides information about access key, for example, permissions, usage, and rotation date.

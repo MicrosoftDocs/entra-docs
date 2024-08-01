@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 02/28/2024
+ms.date: 05/06/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -78,15 +78,15 @@ This feature is available with Microsoft Entra ID P1, P2, and Microsoft Entra ID
 
 ### API usage guidance
 
-The ```/bulkUpload``` API endpoint expands the number of ways that you can manage users in Entra ID. To help you determine if the ```/bulkUpload``` API endpoint is right for your integration scenario, refer to this table that compares it with other API-based integration options.
+The `/bulkUpload` API endpoint expands the number of ways that you can manage users in Microsoft Entra ID. To help you determine if the `/bulkUpload` API endpoint is right for your integration scenario, refer to this table that compares it with other API-based integration options.
 
 | Use Case Scenario to API mapping | User creation API | HR inbound bulk API |  User invitation API | Direct assignment API |
 |-------|-------|-------|-------|-------|
-| *When your identity creation scenario is...*  | Ad-hoc user creation in Entra ID for a user not associated with any worker in an HR source | Sourcing employee records from an authoritative HR source, and you want those employees to have "member" accounts in Entra ID or on-premises Active Directory  | Ad-hoc guest user creation in Entra ID, for sharing purposes, where the guest has unique access rights  | Access assignment for existing users, and (preview) guest creation in Entra ID, to give the new guest standardized access |
+| *When your identity creation scenario is...*  | Ad-hoc user creation in Microsoft Entra ID for a user not associated with any worker in an HR source | Sourcing employee records from an authoritative HR source, and you want those employees to have "member" accounts in Microsoft Entra ID or on-premises Active Directory  | Ad-hoc guest user creation in Microsoft Entra ID, for sharing purposes, where the guest has unique access rights  | Access assignment for existing users, and (preview) guest creation in Microsoft Entra ID, to give the new guest standardized access |
 | *...use the API...* | [Create user](https://go.microsoft.com/fwlink/?linkid=2261811) | [Perform bulkUpload](https://go.microsoft.com/fwlink/?linkid=2261471). | [Create invitation](https://go.microsoft.com/fwlink/?linkid=2261635) | [Create accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&tabs=http&preserve-view=true) |
-| *The resulting user is first created in...* | Entra ID | On-premises Active Directory or Entra ID | Entra ID | Entra ID |
-| *The resulting user authenticates to...* | Entra ID, with the password you supply | On-premises Active Directory of Entra ID, with a [Temporary Access Pass provided by Entra Lifecycle workflows](https://go.microsoft.com/fwlink/?linkid=2261542) | Home tenant or other identity provider | Home tenant or other identity provider | 
-| *Subsequent updates to the user can be done via* | Graph API or Entra portal | Graph API or HR inbound bulk API or Entra portal | Graph API or Entra portal | Graph API or Entra portal |
+| *The resulting user is first created in...* | Microsoft Entra ID | On-premises Active Directory or Microsoft Entra ID | Microsoft Entra ID | Microsoft Entra ID |
+| *The resulting user authenticates to...* | Microsoft Entra ID, with the password you supply | On-premises Active Directory of Microsoft Entra ID, with a [Temporary Access Pass provided by Entra Lifecycle workflows](https://go.microsoft.com/fwlink/?linkid=2261542) | Home tenant or other identity provider | Home tenant or other identity provider | 
+| *Subsequent updates to the user can be done via* | Graph API or Microsoft Entra admin center | Graph API or HR inbound bulk API or Microsoft Entra admin center | Graph API or Microsoft Entra admin center | Graph API or Microsoft Entra admin center |
 | *The lifecycle of user when their employment starts, is determined by...* | Manual processes | [Entra onboarding Lifecycle workflows](~/id-governance/tutorial-onboard-custom-workflow-portal.md) that trigger based on the ```employeeHireDate``` attribute | Entitlement management | [Automatic assignment](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md) using Entitlement management access packages |
 | *The lifecycle of user when their employment is terminated is determined by...* | Manual processes | [Entra offboarding lifecycle workflows](~/id-governance/tutorial-scheduled-leaver-portal.md) that trigger based on the ```employeeLeaveDateTime``` attribute | Access reviews | Entitlement management when the user loses their last access package assignment, they're removed |
 

@@ -49,19 +49,19 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
     "value": [ 
         { 
             "@odata.type": "#microsoft.graph.unifiedRoleAssignmentScheduleRequest", 
-            "id": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "status": "PendingApproval", 
             "createdDateTime": "2021-07-15T19:57:17.76Z", 
             "completedDateTime": "2021-07-15T19:57:17.537Z", 
-            "approvalId": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "approvalId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "customData": null, 
             "action": "SelfActivate", 
-            "principalId": "d96ea738-3b95-4ae7-9e19-78a083066d5b", 
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222", 
             "roleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b", 
             "directoryScopeId": "/", 
             "appScopeId": null, 
             "isValidationOnly": false, 
-            "targetScheduleId": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "targetScheduleId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "justification": "test", 
             "createdBy": { 
                 "application": null, 
@@ -165,10 +165,10 @@ Here's some information about workflow notifications:
 - Approvers are notified by email when a request for a role is pending their review. Email notifications include a direct link to the request, where the approver can approve or deny.
 - Requests are resolved by the first approver who approves or denies.
 - When an approver responds to the request, all approvers are notified of the action.
-- Global admins and Privileged role admins are notified when an approved user becomes active in their role.
+- Global Administrators and Privileged Role Administrators are notified when an approved user becomes active in their role.
 
 >[!NOTE]
->A Global Administrator or Privileged role admin who believes that an approved user should not be active can remove the active role assignment in Privileged Identity Management. Although administrators are not notified of pending requests unless they are an approver, they can view and cancel any pending requests for all users by viewing pending requests in Privileged Identity Management.
+>A Global Administrator or Privileged Role Admin who believes that an approved user should not be active can remove the active role assignment in Privileged Identity Management. Although administrators are not notified of pending requests unless they are an approver, they can view and cancel any pending requests for all users by viewing pending requests in Privileged Identity Management.
 
 ## Next steps
 

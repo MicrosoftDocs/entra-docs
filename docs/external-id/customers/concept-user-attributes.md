@@ -16,6 +16,8 @@ ms.custom: it-pro
 
 # User profile attributes
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 The user attributes you collect during sign-up are stored with the user's profile in your directory. You can choose from built-in user attributes or create custom user attributes.
 
 - [Built-in user attributes](#built-in-user-attributes), such as city, country/region, email address, and so on, are available in Microsoft Entra External ID. You can choose the built-in user attributes you want to collect during sign-up.

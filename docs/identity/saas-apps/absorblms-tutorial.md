@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Absorb LMS so that I can control who has access to Absorb LMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -101,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
     > [!NOTE]
     > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Absorb LMS Client support team](https://support.absorblms.com/hc/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**.
+1. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**.
 
     ![image](common/edit-attribute.png)
 

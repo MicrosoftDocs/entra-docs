@@ -84,7 +84,7 @@ Next, you create an app registration in Microsoft Entra ID, so that Microsoft En
 
 **Prerequisite role**: Global Administrator or other administrator who can consent applications to application permissions
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
 
 1. Browse to > **Identity** > **Applications** > **App registrations**.
 
@@ -193,7 +193,7 @@ Once you [configure runbook input parameters](/azure/automation/runbook-input-pa
 
 ## Parse the output of an Azure Automation account in Logic Apps (optional)
 
-Once your runbook is published, your can create a schedule in Azure Automation, and link your runbook to that schedule to run automatically.  Scheduling runbooks from Azure Automation is suitable for runbooks that don't need to interact with other Azure or Office 365 services that don't have PowerShell interfaces.
+Once your runbook is published, you can create a schedule in Azure Automation, and link your runbook to that schedule to run automatically.  Scheduling runbooks from Azure Automation is suitable for runbooks that don't need to interact with other Azure or Office 365 services that don't have PowerShell interfaces.
 
 If you wish to send the output of your runbook to another service, then you might wish to consider using [Azure Logic Apps](/azure/logic-apps/logic-apps-overview) to start your Azure Automation runbook, as Logic Apps can also parse the results.
 

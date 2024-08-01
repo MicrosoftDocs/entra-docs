@@ -1,11 +1,11 @@
 ---
 title: Mark an app as publisher verified
-description: Describes how to mark an app as publisher verified. When an application is marked as publisher verified, it means that the publisher (application developer) has verified the authenticity of their organization using a Cloud Partner Program (CPP) account that has completed the verification process and has associated this CPP account with that application registration.
+description: Describes how to mark an app as publisher verified. When an application is marked as publisher verified, it means that the publisher (application developer) verified the authenticity of their organization using a Cloud Partner Program (CPP) account that completed the verification process and associated this CPP account with that application registration.
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 08/17/2023
+ms.date: 05/31/2024
 ms.reviewer: 
 ms.service: identity-platform
 
@@ -31,11 +31,11 @@ If you're already enrolled in the [Cloud Partner Program (CPP)](/partner-center/
 For more details on specific benefits, requirements, and frequently asked questions see the [overview](publisher-verification-overview.md).
 
 ## Mark your app as publisher verified
-Make sure you meet the [prerequisites](publisher-verification-overview.md#requirements), then follow these steps to mark your app(s) as Publisher Verified.  
+Make sure you meet the [prerequisites](publisher-verification-overview.md#requirements), then follow these steps to mark your app as Publisher Verified.  
 
 1. Sign in using [multifactor authentication](~/identity/authentication/concept-mfa-licensing.md) to an organizational (Microsoft Entra) account authorized to make changes to the app you want to mark as Publisher Verified and on the CPP Account in Partner Center.
 
-    - The Microsoft Entra user must have one of the following [roles](~/identity/role-based-access-control/permissions-reference.md): Application Admin, Cloud Application Admin, or Global Administrator. 
+    - The Microsoft Entra user must have one of the following [roles](~/identity/role-based-access-control/permissions-reference.md): Application Administrator, Cloud Application Administrator, or Global Administrator. 
 
     - The user in Partner Center must have the following [roles](/partner-center/permissions-overview): CPP Admin, Accounts Admin, or a Global Administrator (a shared role mastered in Microsoft Entra ID). 
 
@@ -65,7 +65,7 @@ Make sure you meet the [prerequisites](publisher-verification-overview.md#requir
 
 1. Test this functionality by signing into your application and ensuring the verified badge shows up on the consent screen. If you're signed in as a user who has already granted consent to the app, you can use the *prompt=consent* query parameter to force a consent prompt. This parameter should be used for testing only, and never hard-coded into your app's requests.
 
-1. Repeat these steps as needed for any more apps you would like the badge to be displayed for. You can use Microsoft Graph to do this more quickly in bulk, and PowerShell cmdlets will be available soon. See [Making Microsoft API Graph calls](troubleshoot-publisher-verification.md#making-microsoft-graph-api-calls) for more info. 
+1. Repeat these steps as needed for any more apps you would like the badge to be displayed for. You can use Microsoft Graph to do this more quickly in bulk, and PowerShell cmdlets are available soon. See [Making Microsoft API Graph calls](troubleshoot-publisher-verification.md#making-microsoft-graph-api-calls) for more info. 
 
 That’s it! Let us know if you have any feedback about the process, the results, or the feature in general. 
 

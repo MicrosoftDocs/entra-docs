@@ -15,7 +15,7 @@ ms.reviewer: michmcla
 ---
 # Features and licenses for Microsoft Entra multifactor authentication
 
-To protect user accounts in your organization, multifactor authentication should be used. This feature is especially important for accounts that have privileged access to resources. Basic multifactor authentication features are available to Microsoft 365 and Microsoft Entra users and global administrators for no extra cost. If you want to upgrade the features for your admins or extend multifactor authentication to the rest of your users with more authentication methods and greater control, you can purchase Microsoft Entra multifactor authentication in several ways.
+To protect user accounts in your organization, multifactor authentication should be used. This feature is especially important for accounts that have privileged access to resources. Basic multifactor authentication features are available to Microsoft 365 and Microsoft Entra users and Global Administrators for no extra cost. If you want to upgrade the features for your admins or extend multifactor authentication to the rest of your users with more authentication methods and greater control, you can purchase Microsoft Entra multifactor authentication in several ways.
 
 > [!IMPORTANT]
 > This article details the different ways that Microsoft Entra multifactor authentication can be licensed and used. For specific details about pricing and billing, see the [Microsoft Entra pricing page](https://www.microsoft.com/en-us/security/business/identity-access-management/azure-ad-pricing).

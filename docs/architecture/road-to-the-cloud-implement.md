@@ -70,7 +70,7 @@ Client workstations are traditionally joined to Active Directory and managed via
 
 [Windows Autopilot](/autopilot/windows-autopilot) can help you establish a streamlined onboarding and device provisioning, which can enforce these directives.
 
-[Windows Local Administrator Password Solution](~/identity/devices/howto-manage-local-admin-passwords.md) (LAPS) enables a cloud-first solution to manage the passwords of local administrator accounts.
+[Windows Local Administrator Password Solution (LAPS)](~/identity/devices/howto-manage-local-admin-passwords.md) enables a cloud-first solution to manage the passwords of local administrator accounts.
 
 For more information, see [Learn more about cloud-native endpoints](/mem/solutions/cloud-native-endpoints/cloud-native-endpoints-overview).
 

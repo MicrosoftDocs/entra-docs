@@ -21,7 +21,7 @@ With Microsoft Entra ID P1 or P2, you can create role-assignable groups and assi
 
 ## Why assign roles to groups?
 
-Consider the example where the Contoso company has hired people across geographies to manage and reset passwords for employees in its Microsoft Entra organization. Instead of asking a Privileged Role Administrator or Global Administrator to assign the Helpdesk Administrator role to each person individually, they can create a Contoso_Helpdesk_Administrators group and assign the role to the group. When people join the group, they're assigned the role indirectly. Your existing governance workflow can then take care of the approval process and auditing of the group's membership to ensure that only legitimate users are members of the group and are thus assigned the Helpdesk Administrator role.
+Consider the example where the Contoso company has hired people across geographies to manage and reset passwords for employees in its Microsoft Entra organization. Instead of asking a Privileged Role Administrator to assign the Helpdesk Administrator role to each person individually, they can create a Contoso_Helpdesk_Administrators group and assign the role to the group. When people join the group, they're assigned the role indirectly. Your existing governance workflow can then take care of the approval process and auditing of the group's membership to ensure that only legitimate users are members of the group and are thus assigned the Helpdesk Administrator role.
 
 ## How role assignments to groups work
 
@@ -46,11 +46,11 @@ Only groups that have the `isAssignableToRole` property set to `true` at creatio
 
 Role-assignable groups are designed to help prevent potential breaches by having the following restrictions:
 
-- Only Global Administrators and Privileged Role Administrators can create a role-assignable group.
+- You must be assigned at least the Privileged Role Administrator role to create a role-assignable group.
 - The membership type for role-assignable groups must be Assigned and can't be a Microsoft Entra dynamic group. Automated population of dynamic groups could lead to an unwanted account being added to the group and thus assigned to the role.
-- By default, only Global Administrators and Privileged Role Administrators can manage the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
+- By default, Privileged Role Administrators can manage the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
 - For Microsoft Graph, the *RoleManagement.ReadWrite.Directory* permission is required to be able to manage the membership of role-assignable groups. The *Group.ReadWrite.All* permission won't work.
-- To prevent elevation of privilege, only a Privileged Authentication Administrator or a Global Administrator can change the credentials or reset MFA or modify sensitive attributes for members and owners of a role-assignable group.
+- To prevent elevation of privilege, you must be assigned at least the Privileged Authentication Administrator role to change the credentials or reset MFA or modify sensitive attributes for members and owners of a role-assignable group.
 - Group nesting isn't supported. A group can't be added as a member of a role-assignable group.
 
 ## Use PIM to make a group eligible for a role assignment

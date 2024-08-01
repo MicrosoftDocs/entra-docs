@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 05/21/2024
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
@@ -20,7 +20,7 @@ After you've configured [API-driven inbound provisioning app](inbound-provisioni
 
 Depending on how your API client authenticates with Microsoft Entra ID, you can select between two configuration options: 
 
-* [Configure a service principal](#configure-a-service-principal): Follow these instructions if your API client plans to use a service principal of an [Microsoft Entra registered app](~/identity-platform/howto-create-service-principal-portal.md) and authenticate using OAuth client credentials grant flow. 
+* [Configure a service principal](#configure-a-service-principal): Follow these instructions if your API client plans to use a service principal of a [Microsoft Entra registered app](~/identity-platform/howto-create-service-principal-portal.md) and authenticate using OAuth client credentials grant flow. 
 * [Configure a managed identity](#configure-a-managed-identity): Follow these instructions if your API client plans to use a Microsoft Entra [managed identity](~/identity/managed-identities-azure-resources/overview.md).
 
 ## Configure a service principal 
@@ -60,7 +60,6 @@ This section describes how you can assign the necessary permissions to a managed
       Install-Module Microsoft.Graph -Scope CurrentUser
 
       Connect-MgGraph -Scopes "Application.Read.All","AppRoleAssignment.ReadWrite.All,RoleManagement.ReadWrite.Directory"
-      Select-MgProfile Beta
       $graphApp = Get-MgServicePrincipal -Filter "AppId eq '00000003-0000-0000-c000-000000000000'"
   
       $PermissionName = "SynchronizationData-User.Upload"

@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/16/2023
+ms.date: 07/30/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -75,5 +75,5 @@ Learn about other scenarios for license management through groups in the followi
 - [Assigning licenses to a group in Microsoft Entra ID](licensing-groups-assign.md)
 - [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
 - [How to migrate individual licensed users to group licensing in Microsoft Entra ID](licensing-groups-migrate-users.md)
-- [Microsoft Entra group licensing additional scenarios](licensing-group-advanced.md)
+- [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](licensing-group-advanced.md)
 - [PowerShell examples for group licensing in Microsoft Entra ID](licensing-ps-examples.md)

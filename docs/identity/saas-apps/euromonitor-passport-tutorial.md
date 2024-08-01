@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 06/12/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Euromonitor International so that I can control who has access to Euromonitor International, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -35,9 +35,6 @@ To get started, you need the following items:
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Euromonitor International supports **SP and IDP** initiated SSO.
-
-> [!NOTE]
-> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
 
 ## Add Euromonitor International from the gallery
 
@@ -78,30 +75,40 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, perform the following steps:
 
-1. If you wish to configure the application in **SP** initiated mode, you need to get the Sign-on URL from the [Euromonitor International support team](mailto:passport.support@euromonitor.com). After you get the Sign-on URL from the Euromonitor International support team, click **Set additional URLs** and perform the following step:
+    a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
+    `https://auth.euromonitor.com/<CustomerID>`
 
-    Paste the obtained Sign-on URL value from the Euromonitor International support team into the Sign-on URL textbox.
+    b. In the **Reply URL** text box, type the URL:
+    `https://auth.euromonitor.com/saml20/sp/acs`
 
-1. Click **Save**.
+1. If you wish to configure the application in **SP** initiated mode, then perform the following step:
+
+    In the **Sign on URL** textbox, type a URL using the following pattern:
+    `https://login.euromonitor.com/Account/ExternalLogin?provider=<PROVIDER>&returnUrl=<PROVIDER>-signin-oidc&login_hint=<CustomerID>`
+
+	> [!NOTE]
+	> These values are not real. Update these values with the actual Identifier and Sign-on URL. Contact [Euromonitor International support team](mailto:passport.support@euromonitor.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. Euromonitor International application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
-	![image](common/default-attributes.png)
+	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
 1. In addition to above, Euromonitor International application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 
 	| Name | Source Attribute|
 	| ---------------| --------- |
-	| Name identifier value | user.userprincipalname |
-
-	> [!NOTE]
-	> Client admins can add/change attributes as per their need.
-
+	| city | user.city |
+	| department | user.department |
+	| country | user.country |
+	| telephonenumber | user.telephonenumber |
+	| jobtitle | user.jobtitle |
+	| companyname | user.companyname |
+	
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
-	![The Certificate download link](common/copy-metadataurl.png)
+	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
 <a name='create-an-azure-ad-test-user'></a>
 

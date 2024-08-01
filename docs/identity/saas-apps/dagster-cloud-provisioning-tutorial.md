@@ -2,16 +2,14 @@
 title: 'Tutorial: Configure Dagster Cloud for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Dagster Cloud.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: bb2db717-b16a-45f9-a76d-502bfc077e95
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 06/16/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Dagster Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Dagster Cloud.
 ---

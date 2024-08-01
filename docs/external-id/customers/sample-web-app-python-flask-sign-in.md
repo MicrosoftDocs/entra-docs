@@ -31,9 +31,7 @@ In this article, you explore a Python Flask web app that is secured by Microsoft
 
 [!INCLUDE [add-client-secret](./includes/register-app/add-app-client-secret.md)]
 
-## Grant API permissions
-
-Since this app signs in users, add delegated permissions:
+## Grant admin consent
 
 [!INCLUDE [grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 

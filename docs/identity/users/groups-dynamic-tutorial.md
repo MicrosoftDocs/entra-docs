@@ -29,7 +29,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisites
 
-This feature requires one Microsoft Entra ID P1 or P2 license for you as the global administrator of the organization. If you don't have one, in Microsoft Entra ID, select **Licenses** > **Products** > **Try/Buy**.
+This feature requires one Microsoft Entra ID P1 or P2 license for the administrator of the organization. If you don't have one, in Microsoft Entra ID, select **Licenses** > **Products** > **Try/Buy**.
 
 You're not required to assign licenses to the users for them to be members in dynamic groups. You only need the minimum number of available Microsoft Entra ID P1 licenses in the organization to cover all such users. 
 
@@ -39,7 +39,7 @@ You're not required to assign licenses to the users for them to be members in dy
 
 First, you'll create a group for your guest users who all are from a single partner company. They need special licensing, so it's often more efficient to create a group for this purpose.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 2. Select **Groups** > **All groups** > **New group**.
 
@@ -65,7 +65,7 @@ First, you'll create a group for your guest users who all are from a single part
    * In the **Property** field, select **companyName**.
    * Verify that the **Operator** field has **Equals** selected.
    * In the **Value** field, enter **Contoso**.
-   * Click **Get custom extention properties** to enter an application ID to retrieve all available custom extension properties for creating a rule. 
+   * Click **Get custom extension properties** to enter an application ID to retrieve all available custom extension properties for creating a rule. 
    * When you're done, click **Save** to close **Dynamic membership rules**.
    
 8. To finish and create the group, select **Create** on the **Group** pane.

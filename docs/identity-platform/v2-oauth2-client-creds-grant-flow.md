@@ -24,7 +24,7 @@ In the client credentials flow, permissions are granted directly to the applicat
 
 This article describes how to program directly against the protocol in your application. When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows). You can also refer to the [sample apps that use MSAL](sample-v2-code.md). As a side note, refresh tokens will never be granted with this flow as `client_id` and `client_secret` (which would be required to obtain a refresh token) can be used to obtain an access token instead.
 
-For a higher level of assurance, the Microsoft identity platform also allows the calling service to authenticate using a [certificate](#second-case-access-token-request-with-a-certificate) or federated credential instead of a shared secret.  Because the application's own credentials are being used, these credentials must be kept safe. _Never_ publish that credential in your source code, embed it in web pages, or use it in a widely distributed native application. 
+For a higher level of assurance, the Microsoft identity platform also allows the calling service to authenticate using a [certificate](#second-case-access-token-request-with-a-certificate) or federated credential instead of a shared secret.  Because the application's own credentials are being used, these credentials must be kept safe. *Never* publish that credential in your source code, embed it in web pages, or use it in a widely distributed native application. 
 
 ## Protocol diagram
 
@@ -150,7 +150,7 @@ Content-Type: application/x-www-form-urlencoded
 
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
-&client_secret=sampleCredentials
+&client_secret=qWgdYAmab0YSkuL1qKv5bPX
 &grant_type=client_credentials
 ```
 
@@ -264,12 +264,12 @@ Now that you've acquired a token, use the token to make requests to the resource
 ```HTTP
 GET /v1.0/users HTTP/1.1
 Host: graph.microsoft.com:443
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...
 ```
 Try the following command in your terminal, ensuring to replace the token with your own.
 
 ```bash
-curl -X GET -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...." 'https://graph.microsoft.com/v1.0/users'
+curl -X GET -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG..." 'https://graph.microsoft.com/v1.0/users'
 ```
 
 ## Code samples and other documentation

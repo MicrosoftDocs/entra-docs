@@ -35,7 +35,7 @@ When you synchronize users, use a Microsoft Entra Connect server if your organiz
 - Support for more than 150,000 objects
 - Support for writeback
 
-To use Microsoft Entra Connect, you need to sign in with one of the following roles: Global Administrator, or Hybrid Identity Administrator.
+To use Microsoft Entra Connect, you need to sign in with a Hybrid Identity Administrator role.
 
 >[!NOTE]
 >Take all prerequisites into consideration when you install Microsoft Entra Connect or Microsoft Entra cloud provisioning. Before you continue with installation, see [Prerequisites for Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-prerequisites.md).
@@ -44,8 +44,7 @@ To use Microsoft Entra Connect, you need to sign in with one of the following ro
 
 The ImmutableID attribute ties synchronized objects to their on-premises counterparts. Okta takes the Active Directory objectGUID of an on-premises object and converts it to a Base-64-encoded string. By default, it then stamps that string to the ImmutableID field in Microsoft Entra ID.
 
-You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run
-it in an administrative session before you run commands:
+You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run it in an administrative session before you run commands:
 
 If you have the module, a warning might appear to update to the latest version.
 
@@ -179,7 +178,7 @@ After you disable Okta provisioning, the Microsoft Entra Connect server can sync
 2. Select **Configure**.
 3. Select **Configure staging mode** 
 4. Select **Next**. 
-5. Enter the credentials of the Global administrator account for your environment.
+5. Enter the credentials of the Hybrid Identity Administrator account for your environment.
 6. Clear **Enable staging mode**.
 7. Select **Next**.
 8. Select **Configure**.

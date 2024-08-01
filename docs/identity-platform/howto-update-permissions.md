@@ -30,7 +30,7 @@ Updating permissions for your app isn't only a security best practice, but also 
 To update an app's requested permissions, you need:
 
 - A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
+- One of the following roles: Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
 
 ## Scenarios for updating permissions
 
@@ -84,7 +84,7 @@ You can add permissions to static consent in two different ways in the Microsoft
 
 To complete the following steps of adding permissions, you need the following resources and privileges:
 
-- Run the HTTP requests in a tool of your choice, for example, in your app, through Graph Explorer, or Postman.
+- Run the HTTP requests in a tool of your choice, for example, in your app, or through Graph Explorer.
 - Run the APIs as a user with at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or as an owner of the target app registration.
 - The app used to make these changes must be granted the `Application.ReadWrite.All` permission.
 
@@ -93,7 +93,7 @@ To complete the following steps of adding permissions, you need the following re
    The following example calls the [Update application](/graph/api/application-update) API to add the required Microsoft Graph permissions to an app registration identified by object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId`.
 
    ```http
-   PATCH https://graph.microsoft.com/v1.0/applications/581088ba-83c5-4975-b8af-11d2d7a76e98
+   PATCH https://graph.microsoft.com/v1.0/applications/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
    Content-Type: application/json
     {
         "requiredResourceAccess": [
@@ -153,7 +153,7 @@ After permissions are added to your application, users or admins need to grant c
 
 When the added permissions require admin consent, the required actions vary based on app type:
 
-- **Single tenant app and multitenant app in home tenant**: The user must sign in as a Global Administrator and [grant tenant-wide consent](~/identity/enterprise-apps/grant-admin-consent.md).
+- **Single tenant app and multitenant app in home tenant**: The user must sign in as at least a [Privileged Role Administrator role](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) and [grant tenant-wide consent](~/identity/enterprise-apps/grant-admin-consent.md).
 - **Multi-tenant apps in customer's tenants**: User sees new consent prompts on their next sign-in attempt. If the permissions only require user consent, the user can grant consent. If the permissions require admin consent, the user must contact their administrator to grant consent.
 
 ### Stop requesting unused permissions
@@ -197,7 +197,7 @@ You can remove permissions from static consent in two different ways in the Micr
 
 To complete the following steps of removing permissions, you need the following resources and privileges:
 
-- Run the HTTP requests in a tool of your choice, for example, in your app, through Graph Explorer, or Postman.
+- Run the HTTP requests in a tool of your choice, for example, in your app, or through Graph Explorer.
 - Call the APIs as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or as an owner of the target app registration.
 - The app used to make these changes must be granted the `Application.ReadWrite.All` permission.
 

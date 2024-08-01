@@ -39,7 +39,7 @@ To proceed with these steps, make sure these permissions are available and confi
 
 ### Prerequisites
 
-- Access to Microsoft Entra Permissions Management with Permissions Management admin role or Global Administrator role
+- Access to Microsoft Entra Permissions Management as a Permissions Management Administrator
 - Microsoft Entra admin who can create Applications
 - ServiceNow admin
 

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 
 ms.topic: overview
-ms.date: 10/24/2023
+ms.date: 06/12/2024
 ms.author: barclayn
 ms.reviewer: 
 ---
@@ -18,7 +18,7 @@ In today's world, our digital and physical lives are becoming increasingly inter
 
 This increased connectivity introduces a greater risk of identity theft and data breaches. These breaches can have a devastating impact on our personal and professional lives. But there is hope. Microsoft is working with a diverse community to create a Decentralized Identity solution that puts individuals in control of their own digital identities, providing a secure and private way to manage identity data without relying on centralized authorities or intermediaries.
 
-## Why we need Decentralized Identity
+## Why we need decentralized identity
 
 Today we use our digital identity at work, at home, and across every app, service, and device we use. It’s made up of everything we say, do, and experience in our lives—purchasing tickets for an event, checking into a hotel, or even ordering lunch. Currently, our identity and all our digital interactions are owned and controlled by other parties, in some cases, even without our knowledge.
 
@@ -28,7 +28,9 @@ We believe a standards-based Decentralized Identity system can unlock a new set 
 
 ## Lead with open standards
 
-We’re committed to working closely with customers, partners, and the community to unlock the next generation of Decentralized Identity–based experiences, and we’re excited to partner with the individuals and organizations that are making incredible contributions in this space. If the DID ecosystem is to grow, standards, technical components, and code deliverables must be open source and accessible to all.
+We’re committed to working closely with customers, partners, and the community to unlock the next generation of decentralized identity–based experiences, and we’re excited to partner with the individuals and organizations that are making incredible contributions in this space. 
+
+Decentralized identifiers (DIDs) are a new type of identifier that enables verifiable, decentralized digital identity. If the DID ecosystem is to grow, standards, technical components, and code deliverables must be open source and accessible to all.
 
 Microsoft is actively collaborating with members of the Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. We’ve worked with these groups to identify and develop critical standards, and the following standards have been implemented in our services.
 

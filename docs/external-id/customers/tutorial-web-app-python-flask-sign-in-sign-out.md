@@ -313,6 +313,11 @@ At this stage, you create your web app endpoints and add the business logic to y
 
 [!INCLUDE [python-flask-web-app-run-app](./includes/run-app/flask-web-app.md)]
 
+
+## Use custom URL domain (Optional)
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-python.md)]
+
 ## Reference material
 
 Whereas the [identity library](https://identity-library.readthedocs.io/en/latest/) abstracts the details of the MSAL library, you can refer to the [MSAL Python documentation](/entra/msal/python/) for more information on the MSAL library. This reference material helps you understand how you initialize an app and acquire tokens using MSAL Python.

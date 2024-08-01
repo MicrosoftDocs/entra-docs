@@ -48,7 +48,7 @@ To disable group creation for nonadmin users in PowerShell:
    ```
 
 **I received a max groups allowed error when trying to create a Dynamic Group in PowerShell**  
-If you receive a message in PowerShell indicating _Dynamic group policies max allowed groups count reached_, this means you have reached the max limit for Dynamic groups in your organization. The max number of Dynamic groups per organization is 5,000.
+If you receive a message in PowerShell indicating *Dynamic group policies max allowed groups count reached*, this means you have reached the max limit for Dynamic groups in your organization. The max number of Dynamic groups per organization is 5,000.
 
 To create any new Dynamic groups, you'll first need to delete some existing Dynamic groups. There's no way to increase the limit.
 

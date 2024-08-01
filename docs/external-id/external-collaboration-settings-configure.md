@@ -18,6 +18,8 @@ ms.collection: M365-identity-device-management
 
 # Configure external collaboration settings
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 External collaboration settings let you specify what roles in your organization can invite external users for B2B collaboration. These settings also include options for [allowing or blocking specific domains](allow-deny-list.md), and options for restricting what external guest users can see in your Microsoft Entra directory. The following options are available:
 
 - **Determine guest user access**: Microsoft Entra External ID allows you to restrict what external guest users can see in your Microsoft Entra directory. For example, you can limit guest users' view of group memberships, or allow guests to view only their own profile information.
@@ -58,7 +60,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
    - **Anyone in the organization can invite guest users including guests and non-admins (most inclusive)**: To allow guests in the organization to invite other guests including users who aren't members of an organization, select this radio button.
    - **Member users and users assigned to specific admin roles can invite guest users including guests with member permissions**: To allow member users and users who have specific administrator roles to invite guests, select this radio button.
-   - **Only users assigned to specific admin roles can invite guest users**: To allow only those users with administrator roles to invite guests, select this radio button. The administrator roles include [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator), [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator), and [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter).
+   - **Only users assigned to specific admin roles can invite guest users**: To allow only those users with [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) roles to invite guests, select this radio button.
    - **No one in the organization can invite guest users including admins (most restrictive)**: To deny everyone in the organization from inviting guests, select this radio button.
 
 1. Under **Enable guest self-service sign up via user flows**, select **Yes** if you want to be able to create user flows that let users sign up for apps. For more information about this setting, see [Add a self-service sign-up user flow to an app](self-service-sign-up-user-flow.yml).
@@ -89,7 +91,7 @@ External collaboration settings can be configured by using the Microsoft Graph A
 
 ## Assign the Guest Inviter role to a user
 
-With the [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) role, you can give individual users the ability to invite guests without assigning them a Global Administrator or other admin role. Users with the Guest Inviter role are able to invite guests even when the option **Only users assigned to specific admin roles can invite guest users** is selected (under **Guest invite settings**).
+With the [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) role, you can give individual users the ability to invite guests without assigning them a higher privilege administrator role. Users with the Guest Inviter role are able to invite guests even when the option **Only users assigned to specific admin roles can invite guest users** is selected (under **Guest invite settings**).
 
 Here's an example that shows how to use Microsoft Graph PowerShell to add a user to the `Guest Inviter` role:
 

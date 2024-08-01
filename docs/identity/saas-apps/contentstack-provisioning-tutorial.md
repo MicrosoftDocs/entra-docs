@@ -2,16 +2,14 @@
 title: 'Tutorial: Configure Contentstack for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentstack.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: 1898e52a-94da-4512-ab88-25ce81cd226b
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 02/12/2024
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentstack so that I can streamline the user management process and ensure that users have the appropriate access to Contentstack.
 ---
@@ -44,7 +42,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Configure Contentstack to support provisioning with Microsoft Entra ID
 
-Contact [Contentstack support](https://Contentstack.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Contentstack to support provisioning with Microsoft Entra ID. Ensure to provide the Contentstack network domain (e.g. acme.Contentstack.com) you want to enable user provisioning for. You will then get provided with the Tenant URL and Secret Token for authorization.
+Contact [Contentstack support](https://Contentstack.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Contentstack to support provisioning with Microsoft Entra ID. Ensure to provide the Contentstack network domain (such as acme.Contentstack.com) you want to enable user provisioning for. You will then get provided with the Tenant URL and Secret Token for authorization.
 
 ## Contentstack from the Microsoft Entra application gallery
 

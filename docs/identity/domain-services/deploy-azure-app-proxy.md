@@ -27,7 +27,7 @@ To complete this article, you need the following resources and privileges:
     * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
-    * An **Microsoft Entra ID P1 or P2 license** is required to use the Microsoft Entra application proxy.
+    * A **Microsoft Entra ID P1 or P2 license** is required to use the Microsoft Entra application proxy.
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.
     * If needed, [create and configure a Microsoft Entra Domain Services managed domain][create-azure-ad-ds-instance].
 
@@ -64,12 +64,12 @@ With a VM ready to be used as the Microsoft Entra private network connector, now
 1. Copy the Microsoft Entra private network connector setup file to your VM.
 1. Run the setup file, such as *MicrosoftEntraPrivateNetworkConnectorInstaller.exe*. Accept the software license terms.
 1. During the install, you're prompted to register the connector with the Application Proxy in your Microsoft Entra directory.
-   * Provide the credentials for a global administrator in your Microsoft Entra directory. The Microsoft Entra Global Administrator credentials may be different from your  Azure credentials in the portal
+   * Provide the credentials for a Global Administrator in your Microsoft Entra directory. The Microsoft Entra Global Administrator credentials may be different from your  Azure credentials in the portal
 
         > [!NOTE]
-        > The global administrator account used to register the connector must belong to the same directory where you enable the Application Proxy service.
+        > The Global Administrator account used to register the connector must belong to the same directory where you enable the Application Proxy service.
         >
-        > For example, if the Microsoft Entra domain is *contoso.com*, the global administrator should be `admin@contoso.com` or another valid alias on that domain.
+        > For example, if the Microsoft Entra domain is *contoso.com*, the Global Administrator should be `admin@contoso.com` or another valid alias on that domain.
 
    * If Internet Explorer Enhanced Security Configuration is turned on for the VM where you install the connector, the registration screen might be blocked. To allow access, follow the instructions in the error message, or turn off Internet Explorer Enhanced Security during the install process.
    * If connector registration fails, see [Troubleshoot Application Proxy](/azure/active-directory/app-proxy/application-proxy-troubleshoot).

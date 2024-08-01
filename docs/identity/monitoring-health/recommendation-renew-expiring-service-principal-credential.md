@@ -1,5 +1,5 @@
 ---
-title: Recommendation to renew expiring service principal credentials
+title: Renew expiring service principal credentials recommendation
 description: Learn how the Microsoft Entra recommendation to renew expiring service principal credentials work and why it's important.
 
 author: shlipsey3
@@ -7,11 +7,13 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/01/2024
+ms.date: 07/16/2024
 ms.author: sarahlipsey
 ms.reviewer: saumadan
+
+# Customer intent: As an IT admin, I want to understand why it's important to renew expiring service principals so I can make sure my applications continue to function.
 ---
-# Microsoft Entra recommendation: Renew expiring service principal credentials
+# Microsoft Entra recommendation: Renew expiring service principal credentials (preview)
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
@@ -25,9 +27,15 @@ This recommendation shows up if your tenant has service principals with credenti
 
 ## Value 
 
-Renewing the service principal credential(s) before expiration ensures the application continues to function and reduces the possibility of downtime due to an expired credential.
+Renewing service principal credentials before expiration ensures the application continues to function and reduces the possibility of downtime due to an expired credential.
 
 ## Action plan
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#search-administrator).
+
+1. Browse to **Identity** > **Overview**.
+
+1. Select the **Recommendations** tab and select the **Renew expiring service principal credentials** recommendation.
 
 1. Select the name of the application from the list of **Impacted resources** to go directly to the **Enterprise applications - Single sign-on** page for the selected application.
 

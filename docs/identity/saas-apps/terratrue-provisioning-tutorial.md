@@ -2,19 +2,13 @@
 title: 'Tutorial: Configure TerraTrue for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to TerraTrue.
 
-documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
-
-ms.assetid: 80547381-3f42-4e18-b737-20b43402e31e
 ms.service: entra-id
 ms.subservice: saas-apps
-
-
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TerraTrue so that I can streamline the user management process and ensure that users have the appropriate access to TerraTrue.
 ---

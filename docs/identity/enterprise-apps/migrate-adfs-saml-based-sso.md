@@ -18,7 +18,7 @@ ms.reviewer: gasinh
 
 In this article, you learn how to configure an application for SAML-based single sign-on (SSO) with Microsoft Entra ID. This article covers mapping users to specific application roles based on rules, and limitations to keep in mind when mapping attributes. It also covers SAML signing certificates, SAML token encryption, SAML request signature verification, and custom claims providers.
 
-Apps that use SAML 2.0 for authentication can be configured for [SAML-based single sign-on](what-is-single-sign-on.md) (SSO). With SAML-based SSO, you can map users to specific application roles based on rules that you define in your SAML claims.
+Apps that use SAML 2.0 for authentication can be configured for [SAML-based single sign-on (SSO)](what-is-single-sign-on.md). With SAML-based SSO, you can map users to specific application roles based on rules that you define in your SAML claims.
 
 To configure a SaaS application for SAML-based SSO, see [Quickstart: Set up SAML-based single sign-on](add-application-portal-setup-sso.md).
 
@@ -42,8 +42,6 @@ If your users sign in to SaaS apps such as Salesforce, ServiceNow, or Workday, a
 Most SaaS applications can be configured in Microsoft Entra ID. Microsoft has many preconfigured connections to SaaS apps in the  [Microsoft Entra app gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), which makes your transition easier. SAML 2.0 applications can be integrated with Microsoft Entra ID via the Microsoft Entra app gallery or as [non-gallery applications](add-application-portal.md).
 
 Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](/entra/identity/app-proxy) to authenticate with Microsoft Entra ID.
-
-For any issues with onboarding your SaaS apps, you can contact the [SaaS Application Integration support alias](mailto:SaaSApplicationIntegrations@service.microsoft.com).
 
 ## SAML signing certificates for SSO
 

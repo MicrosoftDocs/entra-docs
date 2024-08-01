@@ -15,10 +15,7 @@ ms.custom: aaddev
 
 # Frequently asked questions about Microsoft Entra Workload ID
 
-[Microsoft Entra Workload ID](workload-identities-overview.md) is now available in two editions: **Free** and **Microsoft Entra Workload ID Premium**. The free edition of workload identities is included with a subscription of a commercial online service such as [Azure](https://azure.microsoft.com/) and [Power Platform](https://powerplatform.microsoft.com/). The Workload
-ID Premium offering is available through a Microsoft representative, the [Open Volume License
-Program](https://www.microsoft.com/licensing/how-to-buy/how-to-buy), and the [Cloud Solution Providers program](/azure/lighthouse/concepts/cloud-solution-provider). Azure and Microsoft 365 subscribers can also purchase Workload
-ID Premium online.
+[Microsoft Entra Workload ID](workload-identities-overview.md) is now available in two editions: **Free** and **Microsoft Entra Workload ID Premium**. The free edition of workload identities is included with a subscription of a commercial online service such as [Azure](https://azure.microsoft.com/) and [Power Platform](https://powerplatform.microsoft.com/). The Workload ID Premium offering is available through a Microsoft representative, the [Open Volume License Program](https://www.microsoft.com/licensing/how-to-buy/how-to-buy), and the [Cloud Solution Providers program](/azure/lighthouse/concepts/cloud-solution-provider). Azure and Microsoft 365 subscribers can also purchase Workload ID Premium online.
 
 For more information, see [what are workload identities?](workload-identities-overview.md)
 
@@ -54,7 +51,7 @@ The free features, for example managed identities and workload identity federati
 
 ## What is the cost of Workload ID Premium plan? 
 
-The [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz) is priced at $3/workload identity/month. There is a lead status SKU (Workload ID P1) at $2/workload identity/month, which is available only to sellers for discounting but not visible to customers. 
+The [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz) is priced at $3/workload identity/month. There is a lead status SKU (Workload ID P1) available. 
 
 >[!Note]
 >The lead status SKU can only provide the [Conditional Access](~/identity/conditional-access/workload-identity.md) feature.
@@ -87,8 +84,7 @@ Unfortunately, we don’t provide a dashboard to track that information. You can
 
 ## Can I get a free trial of Workload ID Premium? 
 
-Yes. You can get a [90-day free trial](https://entra.microsoft.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade). In the Modern channel, a 30-day only trial is available. Free trial is
-unavailable in [Microsoft Azure Government](https://azure.microsoft.com/global-infrastructure/government/) clouds.
+Yes. You can get a [90-day free trial](https://entra.microsoft.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade). In the Modern channel, a 30-day only trial is available. Free trial is unavailable in [Microsoft Azure Government](https://azure.microsoft.com/global-infrastructure/government/) clouds.
 
 ## Is the Workload ID Premium plan available on Azure Government clouds? 
 

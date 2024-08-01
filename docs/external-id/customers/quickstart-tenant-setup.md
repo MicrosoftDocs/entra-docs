@@ -1,6 +1,6 @@
 ---
-title: Quickstart - Set up a tenant
-description: In this quickstart, you learn how to create a tenant with external configurations.
+title: External Tenant Quickstart
+description: In this quickstart, learn how to create an external tenant for customer identity and access management (CIAM). Customize a sign-in experience and try it out with a sample app.
  
 author: csmulligan
 manager: CelesteDG
@@ -10,11 +10,13 @@ ms.subservice: customers
 ms.topic: quickstart
 ms.date: 04/30/2024
 ms.author: cmulligan
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or IT admin, I want to create a tenant with external configurations.
 ---
-# Quickstart: Create a tenant (preview)
+# Quickstart: Use your Azure subscription to create an external tenant
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 Microsoft Entra External ID offers a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your apps and services. You'll need to create a tenant with external configurations in the Microsoft Entra admin center to get started. Once the tenant with external configurations is created, you can access it in both the Microsoft Entra admin center and the Azure portal.
 
@@ -25,7 +27,7 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 - An Azure subscription. 
 - An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription or to a resource group within the subscription.
 
-[!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
+
 
 ## Create a new tenant with external configurations 
 
@@ -82,22 +84,6 @@ Our guide will walk you through the process of setting up a user and configuring
 
 This link will take you to the [guide](quickstart-get-started-guide.md), where you can customize your tenant in three easy steps.
 
-## Clean up resources
-
-If you're not going to continue to use this tenant, you can delete it using the following steps:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Overview** > **Manage tenants**.
-1. Select the tenant you want to delete, and then select **Delete**.
-
-    :::image type="content" source="media/how-to-create-external-tenant-portal/delete-tenant.png" alt-text="Screenshot that shows how to delete the tenant.":::
-
-1. You might need to complete required actions before you can delete the tenant. For example, you might need to delete all user flows in the tenant. If you're ready to delete the tenant, select **Delete**.
-
-The tenant and its associated information are deleted.
-
-
-## Next steps
-
-To learn more about the set-up guide and how to customize your tenant, see the [Get started guide](quickstart-get-started-guide.md) article.
+## Related content
+- To learn more about the set-up guide and how to customize your tenant, see the [Get started guide](quickstart-get-started-guide.md) article.
+- To learn how to delete your tenant, see the [Delete an external tenant](how-to-delete-external-tenant-portal.md) article. 

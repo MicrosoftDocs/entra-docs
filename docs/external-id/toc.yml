@@ -1,22 +1,23 @@
 items:
 - name: Microsoft Entra External ID documentation
   href: index.yml
-- name: Introduction to Microsoft Entra External ID
-  href: external-identities-overview.md
-- name: What are workforce and external configurations?
-  href: tenant-configurations.md
+- name: Overview
+  expanded: true
+  items:
+  - name: Introduction to Microsoft Entra External ID
+    href: external-identities-overview.md
+  - name: What are workforce and external configurations?
+    href: tenant-configurations.md
+  - name: Supported features
+    href: customers/concept-supported-features-customers.md
 - name: External ID in external tenants
   href: customers/toc.yml
   expanded: true
 - name: External ID in workforce tenants
   expanded: true
   items:
-  - name: Overview
-    items:
-    - name: B2B collaboration
-      href: what-is-b2b.md
-    - name: What's new in docs?
-      href: whats-new-docs.md
+  - name: Overview of B2B collaboration
+    href: what-is-b2b.md
   - name: Quickstarts
     items:
     - name: Add a guest and send an invitation
@@ -79,9 +80,11 @@ items:
     - name: Authentication and Conditional Access
       href: authentication-conditional-access.md
     - name: Azure AD B2C (link to documentation)
-      href: /azure/active-directory-b2c/overview?context=/external-id/context/external-id-context.json
+      href: /azure/active-directory-b2c/overview?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Multitenant organizations documentation (link to documentation)
       href: /entra/identity/multi-tenant-organizations/overview?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: B2B collaboration FAQ
+      href: ./faq.yml
   - name: How-to guides
     expanded: false
     items:
@@ -173,25 +176,29 @@ items:
       href: customize-invitation-api.md
     - name: Government and national clouds
       href: b2b-government-national-clouds.md
-  - name: Resources
-    items:
-    - name: FAQ
-      href: ./faq.yml
-    - name: Getting support
-      href: ~/fundamentals/how-to-get-support.md
-    - name: Azure feedback forum
-      href: https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789
-    - name: Azure Roadmap
-      href: https://azure.microsoft.com/roadmap/?category=security-identity
-    - name: Microsoft Q&A page
-      href: /answers/topics/azure-active-directory.html
-    - name: Pricing
-      href: https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing
-    - name: Pricing calculator
-      href: https://azure.microsoft.com/pricing/calculator/
-    - name: Service updates
-      href: https://azure.microsoft.com/updates/?product=active-directory
-    - name: Stack Overflow
-      href: https://stackoverflow.com/questions/tagged/azure-active-directory
-    - name: Videos
-      href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
+- name: Resources
+  items:
+  - name: What's new in docs for external tenants?
+    href: customers/whats-new-docs.md
+  - name: What's new in docs for workforce tenants?
+    href: whats-new-docs.md
+  - name: Help and support for developers
+    href: ~/identity-platform/developer-support-help-options.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+  - name: Microsoft Entra ID help and support options
+    href: ~/fundamentals/how-to-get-support.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+  - name: Azure feedback forum
+    href: https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789
+  - name: Azure Roadmap
+    href: https://azure.microsoft.com/roadmap/?category=security-identity
+  - name: Microsoft Q&A page
+    href: /answers/topics/azure-active-directory.html
+  - name: Pricing
+    href: https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing
+  - name: Pricing calculator
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Service updates
+    href: https://azure.microsoft.com/updates/?product=active-directory
+  - name: Stack Overflow
+    href: https://stackoverflow.com/questions/tagged/azure-active-directory
+  - name: Videos
+    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory

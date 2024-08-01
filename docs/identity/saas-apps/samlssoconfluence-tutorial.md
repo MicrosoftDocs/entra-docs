@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Confluence by resolution GmbH so that I can control who has access to SAML SSO for Confluence by resolution GmbH, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -174,9 +174,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
  
 	a. Set **Microsoft Entra ID** as the IdP type.
 	
-	b. Add **Name** of the Identity Provider (e.g Microsoft Entra ID).
+	b. Add **Name** of the Identity Provider (such as Microsoft Entra ID).
 	
-	c. Add **Description** of the Identity Provider (e.g Microsoft Entra ID).
+	c. Add **Description** of the Identity Provider (such as Microsoft Entra ID).
 	
 	d. Click **Next**.
 	

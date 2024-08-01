@@ -21,7 +21,9 @@ When signed in to the [Microsoft Entra admin center](https://entra.microsoft.com
 
 **Cause**
 
-You don't have permissions to add an attribute set. To add an attribute set and custom security attributes, you must be assigned the [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) role. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes.
+You don't have permissions to add an attribute set. To add an attribute set and custom security attributes, you must be assigned the [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) role. 
+
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 **Solution**
 
@@ -38,7 +40,9 @@ This account does not have the necessary admin privileges to change custom secur
 
 **Cause**
 
-You don't have permissions to assign custom security attributes. To assign custom security attributes, you must be assigned the [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes.
+You don't have permissions to assign custom security attributes. To assign custom security attributes, you must be assigned the [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role.
+
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 **Solution**
 
@@ -48,7 +52,9 @@ Make sure that you're assigned the [Attribute Assignment Administrator](~/identi
 
 **Cause 1**
 
-You don't have permissions to filter custom security attributes. To read and filter custom security attributes for users or enterprise applications, you must be assigned the [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) or [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes.
+You don't have permissions to filter custom security attributes. To read and filter custom security attributes for users or enterprise applications, you must be assigned the [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) or [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role. 
+
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 **Solution 1**
 
@@ -123,7 +129,9 @@ Open the Permissions panel, select the appropriate custom security attribute per
 
 **Cause 2**
 
-You aren't assigned the required custom security attribute role to make the API call. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes.
+You aren't assigned the required custom security attribute role to make the API call. 
+
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 **Solution 2**
 

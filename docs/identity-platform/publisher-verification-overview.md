@@ -61,7 +61,7 @@ App developers must meet a few requirements to complete the publisher verificati
 
 - The user who initiates verification must be authorized to make changes both to the app registration in Microsoft Entra ID and to the CPP account in Partner Center.  The user who initiates the verification must have one of the required roles in both Microsoft Entra ID and Partner Center.
 
-  - In Microsoft Entra ID, this user must be a member of one of the following [roles](~/identity/role-based-access-control/permissions-reference.md): Application Admin, Cloud Application Admin, or Global Administrator.
+  - In Microsoft Entra ID, this user must be a member of one of the following [roles](~/identity/role-based-access-control/permissions-reference.md): Application Administrator, Cloud Application Administrator, or Global Administrator.
 
   - In Partner Center, this user must have one of the following [roles](/partner-center/permissions-overview): CPP Partner Admin, Account Admin, or Global Administrator (a shared role that's mastered in Microsoft Entra ID).
   

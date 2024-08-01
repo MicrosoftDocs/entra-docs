@@ -6,14 +6,13 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: overview
 ms.subservice: monitoring-health
-ms.date: 02/05/2024
+ms.date: 07/12/2024
 ms.author: sarahlipsey
 ms.reviewer: deawari  
 
 # Customer intent: As a Microsoft Entra administrator, I want guidance to so that I can keep my Microsoft Entra tenant in a healthy state.
 
 ---
-
 # What are Microsoft Entra recommendations?
 
 Keeping track of all the settings and resources in your tenant can be overwhelming. The Microsoft Entra recommendations feature helps monitor the status of your tenant so you don't have to. These recommendations help ensure your tenant is in a secure and healthy state while also helping you maximize the value of the features available in Microsoft Entra ID.
@@ -52,6 +51,7 @@ The recommendations listed in the following table are currently available in pub
 
 | Recommendation  | Impacted resources | Required license | Availability |
 |---- |---- |---- |---- |
+| [Enable Microsoft Purview Adaptive Protection and the Insider Risk condition in Conditional Access](recommendation-insider-risk-condition.md) | Users | Microsoft Entra Premium P2 | Generally available |
 | [Convert per-user MFA to Conditional Access MFA](recommendation-turn-off-per-user-mfa.md) | Users | All licenses | Generally available |
 | [Migrate applications from AD FS to Microsoft Entra ID](recommendation-migrate-apps-from-adfs-to-azure-ad.md) | Applications | All licenses | Generally available |
 | [Migrate apps and service principals from Azure AD Graph to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | All licenses | Public preview |
@@ -59,10 +59,9 @@ The recommendations listed in the following table are currently available in pub
 | [Migrate from MFA server to Microsoft Entra MFA](recommendation-migrate-to-microsoft-entra-mfa.md) | Tenant level | All licenses | Generally Available |
 | [Migrate to Microsoft Authenticator](recommendation-migrate-to-authenticator.md) | Users | All licenses | Preview |
 | [Minimize MFA prompts from known devices](recommendation-mfa-from-known-devices.md)  | Users | All licenses | Generally available |
-| [Remove unused applications](recommendation-remove-unused-apps.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Generally Available |
-| [Remove unused credentials from applications](recommendation-remove-unused-credential-from-apps.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Generally Available |
-| [Renew expiring application credentials](recommendation-renew-expiring-application-credential.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Generally Available |
-| [Renew expiring service principal credentials](recommendation-renew-expiring-service-principal-credential.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Generally Available |
-
+| [Remove unused applications](recommendation-remove-unused-apps.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Public preview |
+| [Remove unused credentials from applications](recommendation-remove-unused-credential-from-apps.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Public preview |
+| [Renew expiring application credentials](recommendation-renew-expiring-application-credential.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Public preview |
+| [Renew expiring service principal credentials](recommendation-renew-expiring-service-principal-credential.md) | Applications | [Microsoft Entra Workload ID Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-id) | Public preview |
 
 Microsoft Entra only displays the recommendations that apply to your tenant, so you might not see all supported recommendations listed.

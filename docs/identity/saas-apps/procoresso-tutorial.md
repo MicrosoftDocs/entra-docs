@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Procore SSO so that I can control who has access to Procore SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -137,7 +137,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. Click on **Save Changes**.
 
-5. After these settings, you needs to send the **domain name** (e.g **contoso.com**) through which you are logging into Procore to the [Procore Support team](https://support.procore.com/) and they will activate federated SSO for that domain.
+5. After these settings, you needs to send the **domain name** (suh as `contoso.com`) through which you are logging into Procore to the [Procore Support team](https://support.procore.com/) and they will activate federated SSO for that domain.
 
 ### Create Procore SSO test user
 

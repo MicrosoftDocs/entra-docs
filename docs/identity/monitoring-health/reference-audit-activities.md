@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 04/15/2024
+ms.date: 05/09/2024
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ---
@@ -110,24 +110,24 @@ With [Microsoft Entra ID Governance access reviews](~/id-governance/manage-user-
 
 ## Account provisioning
 
-Each time an account is provisioned in your Microsoft Entra tenant, a log for that account is captured. Automated provisioning, such as with [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md), is found in this log. The Account provisioning service only has one audit category in the logs.
+Configuration changes for application provisioning, HR provisioning, cross-tenant synchronization, and [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md), are found in this log. The provisioning service only has one audit category in the logs. For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](~/identity/monitoring-health/concept-audit-logs.md).
 
-|Audit Category|Activity|
-|---|---|
-|ProvisioningManagement|Add provisioning configuration|
-|ProvisioningManagement|Delete provisioning configuration|
-|ProvisioningManagement|Disable/pause provisioning configuration|
-|ProvisioningManagement|Enable/restart provisioning configuration|
-|ProvisioningManagement|Enable/start provisioning configuration|
-|ProvisioningManagement|Export|
-|ProvisioningManagement|Import|
-|ProvisioningManagement|Other|
-|ProvisioningManagement|Process escrow|
-|ProvisioningManagement|Quarantine|
-|ProvisioningManagement|Synchronization rule action|
-|ProvisioningManagement|Update attribute mappings or scope|
-|ProvisioningManagement|Update provisioning setting or credentials|
-|ProvisioningManagement|User Provisioning|
+|Audit Category|Activity|Description| 
+|---|---|---|
+|ProvisioningManagement|Add provisioning configuration|A new provisioning configuration has been created.|
+|ProvisioningManagement|Delete provisioning configuration|The provisioning configuration has been deleted.|
+|ProvisioningManagement|Disable/pause provisioning configuration|The provisioning job has been disabled / paused.|
+|ProvisioningManagement|Enable/restart provisioning configuration|The provisioning job as been restarted.|
+|ProvisioningManagement|Enable/start provisioning configuration|The provisioning job has been started.|
+|ProvisioningManagement|Export|The provisioning job has exported a change to the target system (ex: create a user).|
+|ProvisioningManagement|Import|The provisioning job imported the object from the source system (ex: import the user properties in Entra before provisioning the account into Salesforce).|
+|ProvisioningManagement|Other||
+|ProvisioningManagement|Process escrow|The provisioning service was unable to export a change to the target application and is retrying the operation.|
+|ProvisioningManagement|Quarantine|The provisioning job is executing at a reduced frequency due to issues such as a lack of connectivity to the target application. [Learn more](~/identity/app-provisioning/application-provisioning-quarantine-status.md)|
+|ProvisioningManagement|Synchronization rule action|The provisioning service evaluated the object and did not export a change to the target system. This even is most often emitted when a user is skipped due to being out of scope for provisioning.|
+|ProvisioningManagement|Update attribute mappings or scope|The attribute mappings or scoping rules for the provisioning job have been updated.|
+|ProvisioningManagement|Update provisioning setting or credentials|The settings on your provisioning job (ex: notification email change, sync all vs. sync assigned users and groups, accidental deletions prevention) have been updated. The credentials for your provisioning job (ex: add a new bearer token) have been updated.|
+|ProvisioningManagement|User Provisioning|The schema for the provisioning job has been restored to the default.|
 
 ## Application proxy
 
@@ -291,7 +291,7 @@ Audit events related to GDPR and data protection are also found in this service 
 
 <a name='azure-ad-mfa-azure-mfa'></a>
 
-## Microsoft Entra multifactor authentication (Azure MFA)
+## Microsoft Entra multifactor authentication
 
 The Microsoft Entra multifactor authentication audit logs can help you track trends in suspicious activity or when fraud was reported. Use the [Microsoft Entra sign-in logs](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/SignIns) to see each time a user signs in when MFA is required.
 
@@ -792,10 +792,10 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |MultiTenantOrg|Create a MultiTenantOrg|
 |MultiTenantOrg|Hard Delete MultiTenantOrg|
 |MultiTenantOrg|Update a MultiTenantOrg|
-|MultiTenantOrgIdentitySyncPolicyUpdate|Reset a multitenant org identity sync policy template|
-|MultiTenantOrgIdentitySyncPolicyUpdate|Update a multitenant org identity sync policy template|
-|MultiTenantOrgPartnerConfigurationTemplate|Reset a multitenant org partner configuration template|
-|MultiTenantOrgPartnerConfigurationTemplate|Update a multitenant org partner configuration template|
+|MultiTenantOrgIdentitySyncPolicyUpdate|Reset a multi tenant org identity sync policy template|
+|MultiTenantOrgIdentitySyncPolicyUpdate|Update a multi tenant org identity sync policy template|
+|MultiTenantOrgPartnerConfigurationTemplate|Reset a multi tenant org partner configuration template|
+|MultiTenantOrgPartnerConfigurationTemplate|Update a multi tenant org partner configuration template|
 |MultiTenantOrgTenant|Add MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Delete MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Hard Delete MultiTenantOrg tenant|
@@ -951,7 +951,7 @@ Use these logs to monitor changes to Entitlement Management settings. Entitlemen
 |EntitlementManagement|User requests to extend access package assignment|
 |EntitlementManagement|User requests to remove access package assignment|
 
-## Global Secure Access (preview)
+## Global Secure Access
 
 If you're using Microsoft Entra Internet Access or Microsoft Entra Private Access to acquire and secure network traffic to your corporate resources, these logs can help identify when changes were made to your network policies. These logs capture changes to traffic forwarding policies and remote networks, such as branch office locations. For more information, see [What is Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access).
 

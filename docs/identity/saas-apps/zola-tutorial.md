@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -87,10 +87,10 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://zola-prod.auth.eu-west-3.amazoncognito.com/saml2/idpresponse`
 
     b. In the **Sign-on URL** textbox, type the URL provided by Zola:
-    `https://app.zola.fr?company=<MYCOMPANYID>`
+    `https://app.zola.fr/?company=<MYCOMPANYID>`
 
     c. In the **Relay State** textbox, type the URL:
-    `https://app.zola.fr/dashboard-v2`
+    `https://app.zola.fr/dashboard`
 
     > [!NOTE]
 	> The Sign-on URL value is not real. Update the value with the actual Sign on URL. Contact [Zola support team](mailto:tech@zola.fr) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.

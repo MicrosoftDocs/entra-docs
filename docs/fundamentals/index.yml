@@ -1,15 +1,14 @@
 ### YamlMime:Landing
 
 title: Microsoft Entra fundamentals documentation 
-summary: Learn basic Microsoft Entra concepts and processes, including how to create a basic environment, basic users, and groups, to get started.
+summary: Learn about Microsoft Entra concepts and processes, such as creating a basic environment, adding users, applying licenses, and managing groups. 
 
 metadata:
   title: Microsoft Entra fundamentals documentation 
-  description: "Learn basic Microsoft Entra concepts and processes, including how to create a basic environment, basic users, and groups, to get started."
+  description: Microsoft Entra fundamentals, such as users, groups, licenses, company branding, subscriptions, tenants, and more.
   manager: amycolannino
   ms.author: barclayn
-  ms.collection: na
-  ms.date: 08/27/2019
+  ms.date: 05/31/2024
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: landing-page
@@ -78,3 +77,13 @@ landingContent:
             url: ./how-subscriptions-associated-directory.yml
           - text: Assign licenses to users
             url: license-users-groups.yml
+
+   # Card
+  - title: Microsoft Copilot for Security + Microsoft Entra
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Respond to identity threads using risky user summarization
+            url: copilot-entra-risky-user-summarization.md
+          - text: Investigate incidents using Microsoft Copilot for Security
+            url: copilot-security-entra-investigate-incident.md

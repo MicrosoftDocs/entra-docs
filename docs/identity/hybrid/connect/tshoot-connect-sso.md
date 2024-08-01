@@ -73,7 +73,7 @@ Use the following checklist to troubleshoot Seamless SSO problems:
 - Ensure that the Seamless SSO feature is enabled in Microsoft Entra Connect. If you can't enable the feature (for example, due to a blocked port), ensure that you have all the [prerequisites](how-to-connect-sso-quick-start.md#step-1-check-the-prerequisites) in place.
 - If you have enabled both [Microsoft Entra join](~/identity/devices/overview.md) and Seamless SSO on your tenant, ensure that the issue is not with Microsoft Entra join. SSO from Microsoft Entra join takes precedence over Seamless SSO if the device is both registered with Microsoft Entra ID and domain-joined. With SSO from Microsoft Entra join the user sees a sign-in tile that says "Connected to Windows".
 - Ensure that the Microsoft Entra URL (`https://autologon.microsoftazuread-sso.com`) is part of the user's Intranet zone settings.
-- Ensure that the corporate device is joined to the Active Directory domain. The device _doesn't_ need to be [Microsoft Entra joined](~/identity/devices/overview.md) for Seamless SSO to work.
+- Ensure that the corporate device is joined to the Active Directory domain. The device *doesn't* need to be [Microsoft Entra joined](~/identity/devices/overview.md) for Seamless SSO to work.
 - Ensure that the user is logged on to the device through an Active Directory domain account.
 - Ensure that the user's account is from an Active Directory forest where Seamless SSO has been set up.
 - Ensure that the device is connected to the corporate network.
@@ -109,7 +109,7 @@ If troubleshooting didn't help, you can manually reset the feature on your tenan
 
 ### Step 2: Get the list of Active Directory forests on which Seamless SSO has been enabled
 
-1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. When prompted, enter your tenant's Hybrid Identity Administrator or hybrid identity administrator credentials.
+1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. When prompted, enter your tenant's Hybrid Identity Administrator credentials.
 2. Call `Get-AzureADSSOStatus`. This command provides you with the list of Active Directory forests (look at the "Domains" list) on which this feature has been enabled.
 
 ### Step 3: Disable Seamless SSO for each Active Directory forest where you've set up the feature

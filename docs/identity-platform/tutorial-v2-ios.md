@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 06/27/2023
+ms.date: 05/29/2024
 ms.reviewer: oldalton
 ms.service: identity-platform
 
@@ -23,7 +23,7 @@ In this tutorial:
 
 > [!div class="checklist"]
 >
-> - Create an iOS or macOS app project in _Xcode_
+> - Create an iOS or macOS app project in *Xcode*
 > - Register the app in the Microsoft Entra admin center
 > - Add code to support user sign-in and sign-out
 > - Add code to call the Microsoft Graph API
@@ -31,7 +31,7 @@ In this tutorial:
 
 ## Prerequisites
 
-- [Xcode 11.x+](https://developer.apple.com/xcode/)
+- [Xcode](https://developer.apple.com/xcode/)
 
 ## How tutorial app works
 
@@ -85,7 +85,7 @@ Choose one of the following ways to install the MSAL library in your app:
 
 ### CocoaPods
 
-1. If you're using [CocoaPods](https://cocoapods.org/), install `MSAL` by first creating an empty file called _podfile_ in the same folder as your project's _.xcodeproj_ file. Add the following to _podfile_:
+1. If you're using [CocoaPods](https://cocoapods.org/), install `MSAL` by first creating an empty file called *podfile* in the same folder as your project's *.xcodeproj* file. Add the following to *podfile*:
 
    ```
    use_frameworks!
@@ -96,18 +96,18 @@ Choose one of the following ways to install the MSAL library in your app:
    ```
 
 2. Replace `<your-target-here>` with the name of your project.
-3. In a terminal window, navigate to the folder that contains the _podfile_ you created and run `pod install` to install the MSAL library.
+3. In a terminal window, navigate to the folder that contains the *podfile* you created and run `pod install` to install the MSAL library.
 4. Close Xcode and open `<your project name>.xcworkspace` to reload the project in Xcode.
 
 ### Carthage
 
-If you're using [Carthage](https://github.com/Carthage/Carthage), install `MSAL` by adding it to your _Cartfile_:
+If you're using [Carthage](https://github.com/Carthage/Carthage), install `MSAL` by adding it to your *Cartfile*:
 
 ```
 github "AzureAD/microsoft-authentication-library-for-objc" "master"
 ```
 
-From a terminal window, in the same directory as the updated _Cartfile_, run the following command to have Carthage update the dependencies in your project.
+From a terminal window, in the same directory as the updated *Cartfile*, run the following command to have Carthage update the dependencies in your project.
 
 iOS:
 
@@ -129,13 +129,13 @@ You can also use Git Submodule, or check out the latest release to use as a fram
 
 Next, we add your app registration to your code.
 
-First, add the following import statement to the top of the _ViewController.swift_ file and either _AppDelegate.swift_ or _SceneDelegate.swift_:
+First, add the following import statement to the top of the *ViewController.swift* file and either *AppDelegate.swift* or *SceneDelegate.swift*:
 
 ```swift
 import MSAL
 ```
 
-Next, add the following code to _ViewController.swift_ before to `viewDidLoad()`:
+Next, add the following code to *ViewController.swift* before to `viewDidLoad()`:
 
 ```swift
 // Update the below to your client ID. The below is for running the demo only
@@ -163,7 +163,7 @@ Add a new keychain group to your project **Signing & Capabilities**. The keychai
 
 In this step, you'll register `CFBundleURLSchemes` so that the user can be redirected back to the app after sign in. By the way, `LSApplicationQueriesSchemes` also allows your app to make use of Microsoft Authenticator.
 
-In Xcode, open _Info.plist_ as a source code file, and add the following inside of the `<dict>` section. Replace `[BUNDLE_ID]` with the value you previously used. If you downloaded the code, the bundle identifier is `com.microsoft.identitysample.MSALiOS`. If you're creating your own project, select your project in Xcode and open the **General** tab. The bundle identifier appears in the **Identity** section.
+In Xcode, open *Info.plist* as a source code file, and add the following inside of the `<dict>` section. Replace `[BUNDLE_ID]` with the value you previously used. If you downloaded the code, the bundle identifier is `com.microsoft.identitysample.MSALiOS`. If you're creating your own project, select your project in Xcode and open the **General** tab. The bundle identifier appears in the **Identity** section.
 
 ```xml
 <key>CFBundleURLTypes</key>
@@ -410,7 +410,7 @@ func initWebViewParams() {
 
 ### Handle the sign-in callback (iOS only)
 
-Open the _AppDelegate.swift_ file. To handle the callback after sign-in, add `MSALPublicClientApplication.handleMSALResponse` to the `appDelegate` class like this:
+Open the *AppDelegate.swift* file. To handle the callback after sign-in, add `MSALPublicClientApplication.handleMSALResponse` to the `appDelegate` class like this:
 
 ```swift
 // Inside AppDelegate...
@@ -421,7 +421,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 ```
 
-**If you are using Xcode 11**, you should place MSAL callback into the _SceneDelegate.swift_ instead.
+**If you are using Xcode 11**, you should place MSAL callback into the *SceneDelegate.swift* instead.
 If you support both UISceneDelegate and UIApplicationDelegate for compatibility with older iOS, MSAL callback would need to be placed into both files.
 
 ```swift
@@ -559,7 +559,7 @@ func acquireTokenInteractively() {
 
 The `promptType` property of `MSALInteractiveTokenParameters` configures the authentication and consent prompt behavior. The following values are supported:
 
-- `.promptIfNecessary` (default) - The user is prompted only if necessary. The SSO experience is determined by the presence of cookies in the webview, and the account type. If multiple users are signed in, account selection experience is presented. _This is the default behavior_.
+- `.promptIfNecessary` (default) - The user is prompted only if necessary. The SSO experience is determined by the presence of cookies in the webview, and the account type. If multiple users are signed in, account selection experience is presented. *This is the default behavior*.
 - `.selectAccount` - If no user is specified, the authentication webview presents a list of currently signed-in accounts for the user to select from.
 - `.login` - Requires the user to authenticate in the webview. Only one account may be signed-in at a time if you specify this value.
 - `.consent` - Requires the user to consent to the current set of scopes for the request.
@@ -855,4 +855,4 @@ After you sign in, the app will display the data returned from the Microsoft Gra
 Learn more about building mobile apps that call protected web APIs in our multi-part scenario series.
 
 > [!div class="nextstepaction"] 
-> [Scenario: Mobile application that calls web APIs](scenario-mobile-overview.md)
+> [Scenario: Mobile application that calls web APIs](scenario-mobile-app-registration.md)

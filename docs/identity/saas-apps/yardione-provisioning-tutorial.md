@@ -1,17 +1,13 @@
 ---
 title: 'Tutorial: Configure YardiOne for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to YardiOne.
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: 38124826-99ad-4571-8efc-8eabe2af2a25
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
-ms.date: 10/27/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to YardiOne so that I can streamline the user management process and ensure that users have the appropriate access to YardiOne.
 ---

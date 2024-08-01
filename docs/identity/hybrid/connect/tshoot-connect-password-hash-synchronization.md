@@ -252,7 +252,10 @@ Follow these steps to determine why no passwords are synchronized:
 3. If the feature is not enabled in Microsoft Entra ID or if the sync channel status is not enabled, run the Connect installation wizard. Select **Customize synchronization options**, and unselect password sync. This change temporarily disables the feature. Then run the wizard again and re-enable password sync. Run the script again to verify that the configuration is correct.
 
 4. Look in the event log for errors. Look for the following events, which would indicate a problem:
-    * Source: "Directory synchronization" ID: 0, 611, 652, 655
+    
+    Source: "Directory synchronization"  
+    ID: 0, 611, 652, 655
+
     If you see these events, you have a connectivity problem. The event log message contains forest information where you have a problem.
 
 5. If you see no heartbeat or if nothing else worked, run [Trigger a full sync of all passwords](#trigger-a-full-sync-of-all-passwords). Run the script only once.

@@ -149,7 +149,7 @@ The following additional information and reports are available for MFA events, i
 | Bypassed User History | Microsoft Entra ID > Security > MFA > One-time bypass | Provides a history of MFA Server requests to bypass MFA for a user. |
 | Server status | Microsoft Entra ID > Security > MFA > Server status | Displays the status of MFA Servers associated with your account. |
 
-Cloud MFA sign-in events from an on-premises AD FS adapter or NPS extension won't have all fields in the sign-in logs populated due to limited data returned by the on-premises component. You can identify these events by the resourceID _adfs_ or _radius_ in the event properties. They include:
+Cloud MFA sign-in events from an on-premises AD FS adapter or NPS extension won't have all fields in the sign-in logs populated due to limited data returned by the on-premises component. You can identify these events by the resourceID *adfs* or *radius* in the event properties. They include:
 - resultSignature
 - appID
 - deviceDetail

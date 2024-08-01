@@ -19,9 +19,9 @@ title: |
 introduction: |
   Microsoft Entra Privileged Identity Management (PIM) simplifies how enterprises manage privileged access to resources in Microsoft Entra ID and other Microsoft online services like Microsoft 365 or Microsoft Intune.  
 
-  If you have been made *eligible* for an administrative role, then you must *activate* the role assignment when you need to perform privileged actions. For example, if you occasionally manage Microsoft 365 features, your organization's privileged role administrators might not make you a permanent Global Administrator, since that role impacts other services, too. Instead, they would make you eligible for Microsoft Entra roles such as Exchange Online Administrator. You can request to activate that role when you need its privileges, and then have administrator control for a predetermined time period.
+  If you have been made *eligible* for an administrative role, then you must *activate* the role assignment when you need to perform privileged actions. For example, if you occasionally manage Microsoft 365 features, your organization's Privileged Role Administrators might not make you a permanent Global Administrator, since that role impacts other services, too. Instead, they would make you eligible for Microsoft Entra roles such as Exchange Online Administrator. You can request to activate that role when you need its privileges, and then have administrator control for a predetermined time period.
 
-  This article is for administrators who need to activate their Microsoft Entra role in Privileged Identity Management.
+  This article is for administrators who need to activate their Microsoft Entra role in Privileged Identity Management. Although any user can submit a request for the role they need through PIM without having the Privileged Role Administrator (PRA) role, this role is required for managing and assigning roles to others within the organization.
 
   >[!IMPORTANT]
   >When a role is activated, Microsoft Entra PIM temporarily adds active assignment for the role. Microsoft Entra PIM creates active assignment (assigns user to a role) within seconds. When deactivation (manual or through activation time expiration) happens, Microsoft Entra PIM removes the active assignment within seconds as well.
@@ -38,7 +38,7 @@ procedureSection:
       > PIM is now available in the Azure mobile app (iOS | Android) for Microsoft Entra ID and Azure resource roles. Easily activate eligible assignments, request renewals for ones that are expiring, or check the status of pending requests. [Read more below](#activate-pim-roles-using-the-azure-mobile-app)
     steps:
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged role administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
       - |
         Browse to **Identity governance** > **Privileged Identity Management** > **My roles**.  For information about how to add the Privileged Identity Management tile to your dashboard, see [Start using Privileged Identity Management](pim-getting-started.md).
       - |
@@ -105,7 +105,7 @@ procedureSection:
                     "approvalId": null,
                     "customData": null,
                     "action": "adminAssign",
-                    "principalId": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5",
+                    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                     "roleDefinitionId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
                     "directoryScopeId": "/",
                     "appScopeId": null,
@@ -117,7 +117,7 @@ procedureSection:
                         "device": null,
                         "user": {
                             "displayName": null,
-                            "id": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5"
+                            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
                         }
                     },
                     "scheduleInfo": {
@@ -147,7 +147,7 @@ procedureSection:
 
         {
             "action": "selfActivate",
-            "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
             "roleDefinitionId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
             "directoryScopeId": "/",
             "justification": "I need access to the Attribute Administrator role to manage attributes to be assigned to restricted AUs",
@@ -180,7 +180,7 @@ procedureSection:
             "approvalId": null,
             "customData": null,
             "action": "selfActivate",
-            "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
             "roleDefinitionId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
             "directoryScopeId": "/",
             "appScopeId": null,
@@ -217,7 +217,7 @@ procedureSection:
       You can view the status of your pending requests to activate.
     steps:
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged role administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
       - |
         Browse to **Identity governance** > **Privileged Identity Management** > **My requests**.
       - |
@@ -233,7 +233,7 @@ procedureSection:
       If you don't require activation of a role that requires approval, you can cancel a pending request at any time.
     steps:
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged role administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
       - |
         Browse to **Identity governance** > **Privileged Identity Management** > **My requests**.
       - |

@@ -1,9 +1,9 @@
 ---
-title: Simulate remote networks with Azure virtual networks
+title: Simulate remote network connectivity using Azure VNG
 description: Configure Azure resources to simulate remote network connectivity to Microsoft's Security Edge Solutions with Global Secure Access.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 03/27/2024
+ms.date: 07/01/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -11,7 +11,7 @@ ms.reviewer: absinh
 
 # Customer intent: As an IT administrator, I want to configure Global Secure Access with an Azure virtual network so I can better understand how the service can be implemented in my organization.
 ---
-# Create a remote network using Azure virtual networks
+# Simulate remote network connectivity using Azure VNG
 
 Organizations might want to extend the capabilities of Microsoft Entra Internet Access to entire networks not just individual devices they can [install the Global Secure Access Client](how-to-install-windows-client.md) on. This article shows how to extend these capabilities to an Azure virtual network hosted in the cloud. Similar principles might be applied to a customer's on-premises network equipment.
 
@@ -150,7 +150,7 @@ For this article, we choose the zone redundancy path.
 >Refer to the [**valid BGP addresses**](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Remote networks**.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 1. Select the **Create remote network** button and provide the following details on the **Basics** tab:
     - **Name**
     - **Region**
@@ -183,7 +183,7 @@ For this article, we choose the zone redundancy path.
 
 After you create a remote network and add a device link, the configuration details are available in the Microsoft Entra admin center. You need several details from this configuration to complete the next step.
 
-1. Browse to **Global Secure Access (Preview)** > **Connect** > **Remote networks**.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 1. In the last column on the right in the table, select **View configuration** for the remote network you created. The configuration is shown as a JSON blob.
 1. Locate and save Microsoft's public IP address `endpoint`, `asn`, and `bgpAddress` from the pane that opens.
   
@@ -276,7 +276,7 @@ To verify connectivity, you need to simulate the traffic flow. One method is to 
 
 ### Simulate traffic with a virtual machine
 
-This step creates a VM and initiates traffic to Microsoft 365 services. Leave all settings set to the default value unless noted.
+This step creates a VM and initiates traffic to Microsoft services. Leave all settings set to the default value unless noted.
 
 1. From the Azure portal, browse to **Virtual machines**.
 1. Select **Create** > **Azure virtual machine**.
@@ -305,7 +305,7 @@ After you create the remote networks and connections in the previous steps, it m
 
 :::image type="content" source="media/how-to-simulate-remote-network/verify-connectivity.png" alt-text="Screenshot showing how to find the connection status for your virtual network gateway." lightbox="media/how-to-simulate-remote-network/verify-connectivity.png" :::
 
-You can use the virtual machine you created to validate that traffic is flowing to Microsoft 365 locations like SharePoint Online. Browsing to resources in SharePoint or Exchange Online should result in traffic on your virtual network gateway. This traffic can be seen by browsing to [Metrics on the virtual network gateway](/azure/vpn-gateway/monitor-vpn-gateway#analyzing-metrics) or by [Configuring packet capture for VPN gateways](/azure/vpn-gateway/packet-capture).
+You can use the virtual machine you created to validate that traffic is flowing to Microsoft services. Browsing to resources in SharePoint or Exchange Online should result in traffic on your virtual network gateway. This traffic can be seen by browsing to [Metrics on the virtual network gateway](/azure/vpn-gateway/monitor-vpn-gateway#analyzing-metrics) or by [Configuring packet capture for VPN gateways](/azure/vpn-gateway/packet-capture).
 
 > [!TIP]
 > If you're using this article for testing Microsoft Entra Internet Access, clean up all related Azure resources by deleting the new resource group after you're done.

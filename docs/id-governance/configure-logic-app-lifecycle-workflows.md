@@ -230,7 +230,7 @@ If the security token type is **Proof of Possession (POP)** for your custom task
     |Claim  |Value  |
     |---------|---------|
     |Issuer     |  https://sts.windows.net/(Tenant ID)/       |
-    |appid     |  ce79fdc4-cd1d-4ea5-8139-e74d7dbe0bb7   |
+    |appid     |  00001111-aaaa-2222-bbbb-3333cccc4444   |
     |m     |  POST   |
     |u     |  management.azure.com   |
     |p     |  /subscriptions/(subscriptionId)/resourceGroups/(resourceGroupName)/providers/Microsoft.Logic/workflows/(LogicApp name)   |
@@ -261,7 +261,7 @@ If the security token type is **Normal** for your custom task extension, you'd s
     |---------|---------|
     |Issuer     |  https://sts.windows.net/(Tenant ID)/       |
     |Audience     | Application ID of your Logic Apps Managed Identity       |
-    |appid     |  ce79fdc4-cd1d-4ea5-8139-e74d7dbe0bb7   |
+    |appid     |  00001111-aaaa-2222-bbbb-3333cccc4444   |
 
     Policy name: `AzureADLifecycleWorkflowsAuthPolicyV2App`
 

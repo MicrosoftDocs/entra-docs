@@ -63,7 +63,7 @@ You can use the **Enterprise applications** page in the Microsoft Entra admin ce
 
 ## Relationship between application objects and service principals
 
-The application object is the _global_ representation of your application for use across all tenants, and the service principal is the _local_ representation for use in a specific tenant. The application object serves as the template from which common and default properties are _derived_ for use in creating corresponding service principal objects.
+The application object is the *global* representation of your application for use across all tenants, and the service principal is the *local* representation for use in a specific tenant. The application object serves as the template from which common and default properties are *derived* for use in creating corresponding service principal objects.
 
 An application object has:
 

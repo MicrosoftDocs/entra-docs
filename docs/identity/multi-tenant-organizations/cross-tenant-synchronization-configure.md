@@ -46,7 +46,7 @@ By the end of this article, you'll be able to:
 
 1. Learn about [how the provisioning service works](../app-provisioning/how-provisioning-works.md).
 
-1. Determine who will be in [scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+1. Determine who will be in [Scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 1. Determine what data to [map between tenants](../app-provisioning/customize-application-attributes.md).
 
@@ -57,7 +57,7 @@ By the end of this article, you'll be able to:
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the target tenant.
- 
+
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
 
 1. On the **Organization settings** tab, select **Add organization**.
@@ -70,9 +70,9 @@ By the end of this article, you'll be able to:
 
 1. Select  the **Cross-tenant sync** tab.
 
-1. Check the **Allow users sync into this tenant** check box.
+1. Select the **Allow users sync into this tenant** checkbox.
 
-    :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the  Cross-tenant sync tab with the Allow users sync into this tenant check box." lightbox="../../media/external-identities/access-settings-users-sync.png":::
+    :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the  Cross-tenant sync tab with the Allow users sync into this tenant checkbox." lightbox="../../media/external-identities/access-settings-users-sync.png":::
 
 1. Select **Save**.
 
@@ -90,13 +90,13 @@ In this step, you automatically redeem invitations so users from the source tena
 
 1. In the target tenant, on the same **Inbound access settings** page, select the **Trust settings** tab.
 
-1. Check the **Automatically redeem invitations with the tenant** &lt;tenant&gt; check box. 
+1. Check the **Automatically redeem invitations with the tenant** &lt;tenant&gt; checkbox.
 
     This box might already be checked if you previously selected **Yes** in the **Enable cross-tenant sync and auto-redemption** dialog box.
 
-    :::image type="content" source="../../media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the inbound Automatic redemption check box." lightbox="../../media/external-identities/inbound-consent-prompt-setting.png":::
+    :::image type="content" source="../../media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the inbound Automatic redemption checkbox." lightbox="../../media/external-identities/inbound-consent-prompt-setting.png":::
 
-1. Select **Save**. 
+1. Select **Save**.
 
 ## Step 4: Automatically redeem invitations in the source tenant
 
@@ -118,11 +118,11 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Select  the **Trust settings** tab.
 
-1. Check the **Automatically redeem invitations with the tenant** &lt;tenant&gt; check box.
+1. Check the **Automatically redeem invitations with the tenant** &lt;tenant&gt; checkbox.
 
-    :::image type="content" source="../../media/external-identities/outbound-consent-prompt-setting.png" alt-text="Screenshot that shows the outbound Automatic redemption check box." lightbox="../../media/external-identities/outbound-consent-prompt-setting.png":::
+    :::image type="content" source="../../media/external-identities/outbound-consent-prompt-setting.png" alt-text="Screenshot that shows the outbound Automatic redemption checkbox." lightbox="../../media/external-identities/outbound-consent-prompt-setting.png":::
 
-1. Select **Save**. 
+1. Select **Save**.
 
 ## Step 5: Create a configuration in the source tenant
 
@@ -142,7 +142,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
-1. In the source tenant, you should see your new configuration. If not, in the configuration list, select your configuration. 
+1. In the source tenant, you should see your new configuration. If not, in the configuration list, select your configuration.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-select.png" alt-text="Screenshot that shows the Cross-tenant synchronization Configurations page and a new configuration." lightbox="./media/cross-tenant-synchronization-configure/configuration-select.png":::
 
@@ -152,7 +152,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Under the **Admin Credentials** section, change the **Authentication Method** to **Cross Tenant Synchronization Policy**.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-policy.png" alt-text="Screenshot that shows the Provisioning page with the Cross Tenant Synchronization Policy selected." lightbox="./media/cross-tenant-synchronization-configure/provisioning-policy.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-policy.png" alt-text="Screenshot that shows the Provisioning page with the Cross-tenant Synchronization Policy selected." lightbox="./media/cross-tenant-synchronization-configure/provisioning-policy.png":::
 
 1. In the **Tenant Id** box, enter the tenant ID of the target tenant.
 
@@ -227,7 +227,7 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
 1. On the **Source Object Scope** page, select **Add scoping filter**.
 
-1. Add any scoping filters to define which users are in scope for provisioning. 
+1. Add any scoping filters to define which users are in scope for provisioning.
 
     To configure scoping filters, refer to the instructions provided in [Scoping users or groups to be provisioned with scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
@@ -251,7 +251,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
 1. On the **Attribute Mapping** page, scroll down to review the user attributes that are synchronized between tenants in the **Attribute Mappings** section.
 
-    The first attribute, alternativeSecurityIdentifier, is an internal attribute used to uniquely identify the user across tenants, match users in the source tenant with existing users in the target tenant, and ensure that each user only has one account. The matching attribute cannot be changed. Attempting to change the matching attribute or adding additional matching attributes will result in a `schemaInvalid` error. 
+    The first attribute, alternativeSecurityIdentifier, is an internal attribute used to uniquely identify the user across tenants, match users in the source tenant with existing users in the target tenant, and ensure that each user only has one account. The matching attribute cannot be changed. Attempting to change the matching attribute or adding additional matching attributes will result in a `schemaInvalid` error.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping.png" alt-text="Screenshot of the Attribute Mapping page that shows the list of Microsoft Entra attributes." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping.png":::
 
@@ -268,9 +268,9 @@ Attribute mappings allow you to define how data should flow between the source t
 
     > [!NOTE]
     > If the B2B user already exists in the target tenant then **Member (userType)** will not changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
-    
+
     The user type you choose has the following limitations for apps or services (but aren't limited to):
-    
+
     [!INCLUDE [user-type-workload-limitations-include](../../includes/user-type-workload-limitations-include.md)]
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-member.png" alt-text="Screenshot of the Edit Attribute page that shows the Member attribute." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-member.png":::
@@ -299,7 +299,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-settings-edit.png" alt-text="Screenshot of the Provisioning page that shows the Settings section with the Scope and Provisioning Status options." lightbox="./media/cross-tenant-synchronization-configure/provisioning-settings-edit.png":::
 
-1. Check the **Send an email notification when a failure occurs** check box.
+1. Select the **Send an email notification when a failure occurs** checkbox.
 
 1. In the **Notification Email** box, enter the email address of a person or group who should receive provisioning error notifications.
 
@@ -417,6 +417,8 @@ Follows these steps to delete a configuration on the **Configurations** page.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configurations-delete.png" alt-text="Screenshot of the Configurations page showing how to delete a configuration." lightbox="./media/cross-tenant-synchronization-configure/configurations-delete.png":::
 
+## Common scenarios and solutions
+
 #### Symptom - Test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure
 
 When configuring cross-tenant synchronization in the source tenant and you test the connection, it fails with the following error message:
@@ -435,13 +437,13 @@ This error indicates the policy to automatically redeem invitations in both the 
 
 **Solution**
 
-Follow the steps in [Step 3: Automatically redeem invitations in the target tenant](#step-3-automatically-redeem-invitations-in-the-target-tenant) and [Step 4: Automatically redeem invitations in the source tenant](#step-4-automatically-redeem-invitations-in-the-source-tenant). 
+Follow the steps in [Step 3: Automatically redeem invitations in the target tenant](#step-3-automatically-redeem-invitations-in-the-target-tenant) and [Step 4: Automatically redeem invitations in the source tenant](#step-4-automatically-redeem-invitations-in-the-source-tenant).
 
-#### Symptom - Automatic redemption check box is disabled
+#### Symptom - Automatic redemption checkbox is disabled
 
-When configuring cross-tenant synchronization, the **Automatic redemption** check box is disabled.
+When configuring cross-tenant synchronization, the **Automatic redemption** checkbox is disabled.
 
-:::image type="content" source="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png" alt-text="Screenshot that shows the Automatic redemption check box as disabled." lightbox="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png":::
+:::image type="content" source="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png" alt-text="Screenshot that shows the Automatic redemption checkbox as disabled." lightbox="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png":::
 
 **Cause**
 
@@ -472,7 +474,7 @@ If SMS sign-in is enabled for a user, they will be skipped by the provisioning s
 
 **Solution**
 
-Disable SMS Sign-in for the users. The script below shows how you can disable SMS Sign-in using PowerShell. 
+Disable SMS Sign-in for the users. The script below shows how you can disable SMS Sign-in using PowerShell.
 
 ```powershell
 ##### Disable SMS Sign-in options for the users
@@ -490,7 +492,7 @@ $phoneAuthenticationMethodId = "3179e48a-750b-4051-897c-87b9720928f7"
 
 #### Get the User Details
 
-$userId = "objectid_of_the_user_in_Azure_AD"
+$userId = "objectid_of_the_user_in_Entra_ID"
 
 #### validate the value for SmsSignInState
 
@@ -499,7 +501,7 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 {
     if($smssignin.SmsSignInState -eq "ready"){   
       #### Disable Sms Sign-In for the user is set to ready
-       
+
       Disable-MgUserAuthenticationPhoneMethodSmsSignIn -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId
       Write-Host "SMS sign-in disabled for the user" -ForegroundColor Green
     }
@@ -512,13 +514,11 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 ##### End the script
 ```
 
-#### Symptom - Users fail to provision with error "AzureActiveDirectoryForbidden"
+#### Symptom - Users fail to provision with error AzureActiveDirectoryForbidden
 
 Users in scope fail to provision. The provisioning logs details include the following error message:
 
-```
-Guest invitations not allowed for your company. Contact your company administrator for more details.
-```
+`Guest invitations not allowed for your company. Contact your company administrator for more details.`
 
 **Cause**
 
@@ -527,6 +527,33 @@ This error indicates the Guest invite settings in the target tenant are configur
 **Solution**
 
 Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md).
+
+#### Symptom - User Principal Name does not update for existing B2B users in pending acceptance state
+
+When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a user principal name (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
+
+The issue raises when then the source object is put in scope for cross-tenant sync and the expectation is that besides other properties, the UPN prefix of the target guest user **would be updated to match the UPN of the source user** (using the example above the value would be: *user.upn_otherdomain.com#EXT#@contoso.onmicrosoft.com*). However, that's not happening during incremental sync cycles, and the change is ignored.
+
+**Cause**
+
+This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user does not have an alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and will not update the UPN value. The user principal name is not updated in the following scenarios:
+
+1. The UPN and mail are different for a user when was manually invited.
+1. The user was invited prior to enabling cross-tenant sync.
+1. The user never accepted the invitation, so they are in "pending acceptance state".
+1. The user is brought into scope for cross-tenant sync.
+
+**Solution**
+
+To resolve the issue, run on-demand provisioning for the affected users to update the UPN. You can also restart provisioning to update the UPN for all affected users. Please note that this triggers an initial cycle, which can take a long time for large tenants. To get a list of manual invited users in pending acceptance state, you can use a script, please see the below sample.
+
+```powershell
+Connect-MgGraph -Scopes "User.Read.All"
+$users = Get-MgUser -Filter "userType eq 'Guest' and externalUserState eq 'PendingAcceptance'" 
+$users | Select-Object DisplayName, UserPrincipalName | Export-Csv "C:\Temp\GuestUsersPending.csv"
+```
+
+Then you can use [provisionOnDemand with PowerShell](/graph/api/synchronization-synchronizationjob-provisionondemand?tabs=powershell#request) for each user. The rate limit for this API is 5 requests per 10 seconds. For more information, see [Known limitations for on-demand provisioning](/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization#known-limitations).
 
 ## Next steps
 

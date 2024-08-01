@@ -1,17 +1,13 @@
 ---
 title: 'Tutorial: Configure Templafy SAML2 for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Templafy SAML2.
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
-ms.assetid: 8a966ef5-e364-435b-9e29-3caf27ffb498
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Templafy SAML2 so that I can streamline the user management process and ensure that users have the appropriate access to Templafy SAML2.
 ---
@@ -85,7 +81,7 @@ To configure Templafy SAML2 for automatic user provisioning with Microsoft Entra
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Templafy SAML2 based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Templafy, following the instructions provided in the [Templafy Single sign-on tutorial](templafy-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Templafy, following the instructions provided in the [Templafy Single sign-on tutorial](templafy-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-templafy-saml2-in-azure-ad'></a>
 

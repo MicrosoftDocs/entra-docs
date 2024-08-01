@@ -5,14 +5,13 @@ description: Increasing the resilience of the authentication plane with the back
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 06/02/2023
+ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: joroja
 ---
-
 # Microsoft Entra ID's backup authentication system
 
 Organizations around the world depend on the high availability of Microsoft Entra authentication for users and services 24 hours a day, seven days a week. We promise a 99.99% service level availability for authentication, and we continuously seek to improve it by enhancing the resilience of our authentication service. To further improve resilience during outages, we implemented a backup system in 2021.
@@ -24,10 +23,10 @@ During an outage of the primary service, users are able to continue working with
 In addition to Microsoft applications, we support:
 
 - Native email clients on iOS and Android.
-- software as a service (SaaS) applications available in the app gallery, like ADP, Atlassian, AWS, GoToMeeting, Kronos, Marketo, SAP, Trello, Workday, and more.
+- Software as a service (SaaS) applications available in the app gallery, like ADP, Atlassian, AWS, GoToMeeting, Kronos, Marketo, SAP, Trello, Workday, and more.
 - Selected line of business applications, based on their authentication patterns.
 
-Service to service authentication that relies on managed identities for Azure resources or are built on Azure services, like virtual machines, cloud storage, Azure AI services, and App Service, receives increased resilience from the back up authentication system.
+Service to service authentication that relies on managed identities for Azure resources or are built on Azure services, like virtual machines, cloud storage, Azure AI services, and App Service, receives increased resilience from the backup authentication system.
 
 Microsoft is continuously expanding the number of supported scenarios.
 
@@ -50,7 +49,7 @@ The following auth patterns aren't currently supported:
 
 During an outage, a user can authenticate using the backup authentication system if the following conditions are met:
 
-1. The user has successfully authenticated using the same app and device in the last three days.
+1. The user successfully authenticated using the same app and device in the last three days.
 1. The user isn't required to authenticate interactively
 1. The user is accessing a resource as a member of their home tenant, rather than exercising a B2B or B2C scenario.
 1. The user isn't subject to Conditional Access policies that limit the backup authentication system, like disabling [resilience defaults](~/identity/conditional-access/resilience-defaults.md).
@@ -58,7 +57,7 @@ During an outage, a user can authenticate using the backup authentication system
 
 ### How does interactive authentication and user activity affect resilience?
 
-The backup authentication system relies on metadata from a prior authentication to reauthenticate the user during an outage. For this reason, a user must have authenticated in the last three days using the same app on the same device for the backup service to be effective. Users who are inactive or haven't yet authenticated to a given app can't use the backup authentication system for that application.
+The backup authentication system relies on metadata from a prior authentication to reauthenticate the user during an outage. For this reason, a user must have authenticated in the last three days using the same app on the same device for the backup service to be effective. Users who are inactive or haven't authenticated to a given app can't use the backup authentication system for that application.
 
 ### How do Conditional Access policies affect resilience?
 
@@ -86,10 +85,10 @@ The backup authentication system is supported in all cloud environments except M
 
 | Azure environment | Identities protected |
 | --- | --- |
-| Azure Commercial | Users, managed identities |
-| Azure Government | Users, managed identities |
-| Azure Government Secret | managed identities |
-| Azure Government Top Secret | managed identities |
+| Azure Commercial | Users and managed identities |
+| Azure Government | Users and managed identities |
+| Azure Government Secret | Managed identities |
+| Azure Government Top Secret | Managed identities |
 | Azure operated by 21Vianet | Not available |
 
 ## Appendix
@@ -224,11 +223,11 @@ The backup authentication system is supported in all cloud environments except M
 | Microsoft.RecommendationsService | Azure AI services Recommendations API | Protected |
 | Microsoft.RecoveryServices | Azure Site Recovery | Protected |
 | Microsoft.ResourceConnector | Azure Resource Connector | Protected |
-| Microsoft.Scom | System Center Operations Manager (SCOM) | Protected |
+| Microsoft.Scom | System Center Operations Manager | Protected |
 | Microsoft.Search | Azure Cognitive Search | Not protected |
 | Microsoft.Security | Microsoft Defender for Cloud | Not protected |
 | Microsoft.SecurityDetonation | Microsoft Defender for Endpoint Detonation Service | Protected |
-| Microsoft.ServiceBus | Service Bus messaging service and Event Grid Domain Topics | Protected |
+| Microsoft.ServiceBus | Service Bus messaging service and Event Grid domain topics | Protected |
 | Microsoft.ServiceFabric | Azure Service Fabric | Protected |
 | Microsoft.SignalRService | Azure SignalR Service | Protected |
 | Microsoft.Solutions | Azure Solutions | Protected |

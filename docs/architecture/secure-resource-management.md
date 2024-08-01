@@ -37,7 +37,7 @@ The following are some of the terms you should be familiar with:
 
 ## Azure Resource Management Model
 
-Each Azure subscription is associated with controls used by [Azure Resource Manager](/azure/azure-resource-manager/management/overview) (ARM). Resource Manager is the deployment and management service for Azure, it has a trust relationship with Microsoft Entra ID for identity management for organizations, and the Microsoft Account (MSA) for individuals. Resource Manager provides a management layer that enables you to create, update, and delete resources in your Azure subscription. You use management features like access control, locks, and tags, to secure and organize your resources after deployment.
+Each Azure subscription is associated with controls used by [Azure Resource Manager](/azure/azure-resource-manager/management/overview). Resource Manager is the deployment and management service for Azure, it has a trust relationship with Microsoft Entra ID for identity management for organizations, and the Microsoft Account (MSA) for individuals. Resource Manager provides a management layer that enables you to create, update, and delete resources in your Azure subscription. You use management features like access control, locks, and tags, to secure and organize your resources after deployment.
 
 >[!NOTE]
 >Prior to ARM, there was another deployment model named Azure Service Manager (ASM) or "classic". To learn more, see [Azure Resource Manager vs. classic deployment](/azure/azure-resource-manager/management/deployment-models). Managing environments with the ASM model is out of scope of this content.
@@ -105,7 +105,7 @@ To learn more, visit [Azure roles, Microsoft Entra roles, and classic subscripti
 
 ### Microsoft Customer Agreement
 
-Customers enrolled with a [Microsoft Customer Agreement](/azure/cost-management-billing/understand/mca-overview) (MCA) have a different billing management system with its own roles.
+Customers enrolled with a [Microsoft Customer Agreement (MCA)](/azure/cost-management-billing/understand/mca-overview) have a different billing management system with its own roles.
 
 A [billing account](/azure/cost-management-billing/manage/understand-mca-roles) for the Microsoft Customer Agreement contains one or more [billing profiles](/azure/cost-management-billing/manage/understand-mca-roles) that allow managing invoices and payment methods. Each billing profile contains one or more [invoice sections](/azure/cost-management-billing/manage/understand-mca-roles) to organize costs on the billing profile's invoice.
 
@@ -167,7 +167,7 @@ Microsoft Entra Domain Services provides a managed domain to facilitate authenti
 
 An Azure AD B2C tenant is linked to an Azure subscription for billing and communication purposes. Azure AD B2C tenants have a self-contained role structure in the directory, which is independent from the Azure RBAC privileged roles of the Azure subscription.
 
-When the Azure AD B2C tenant is initially provisioned, the user creating the B2C tenant must have contributor or owner permissions in the subscription. Upon creation, that user becomes the first Azure AD B2C tenant global administrator and they can later create other accounts and assign them to directory roles.
+When the Azure AD B2C tenant is initially provisioned, the user creating the B2C tenant must have contributor or owner permissions in the subscription. Upon creation, that user becomes the first Azure AD B2C tenant [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) and they can later create other accounts and assign them to directory roles.
 
 It's important to note that the owners and contributors of the linked Microsoft Entra subscription can remove the link between the subscription and the directory, which will affect the ongoing billing of the Azure AD B2C usage.
 

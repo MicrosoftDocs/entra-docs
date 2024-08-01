@@ -8,7 +8,7 @@ ms.custom: azureday1
 ms.date: 09/15/2023
 ms.devlang: csharp
 ms.reviewer: stsoneff
-ms.service: app-service
+ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
 services: microsoft-graph, app-service-web
@@ -217,8 +217,8 @@ public class Startup
   "AzureAd": {
     "Instance": "https://login.microsoftonline.com/",
     "Domain": "[Enter the domain of your tenant, e.g. contoso.onmicrosoft.com]",
-    "TenantId": "[Enter 'common', or 'organizations' or the Tenant Id (Obtained from the Entra admin center. Select 'Endpoints' from the 'App registrations' blade and use the GUID in any of the URLs), e.g. da41245a5-11b3-996c-00a8-4d99re19f292]",
-    "ClientId": "[Enter the Client Id (Application ID obtained from the Microsoft Entra admin center), e.g. ba74781c2-53c2-442a-97c2-3d60re42f403]",
+    "TenantId": "[Enter 'common', or 'organizations' or the Tenant Id (Obtained from the Entra admin center. Select 'Endpoints' from the 'App registrations' blade and use the GUID in any of the URLs), e.g. aaaabbbb-0000-cccc-1111-dddd2222eeee]",
+    "ClientId": "[Enter the Client Id (Application ID obtained from the Microsoft Entra admin center), e.g. 00001111-aaaa-2222-bbbb-3333cccc4444]",
     "ClientSecret": "[Copy the client secret added to the app from the Microsoft Entra admin center]",
     "ClientCertificates": [
     ],

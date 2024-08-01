@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Salesforce Sandbox so that I can control who has access to Salesforce Sandbox, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![image](common/both-replyurl.png)
 
 	> [!Note]
-	> If the **Reply URL** value do not get auto polulated, then fill in the value manually according to your requirement.
+	> If the **Reply URL** value do not get auto populated, then fill in the value manually according to your requirement.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Metadata XML** from the given options as per your requirement and save it on your computer.
 

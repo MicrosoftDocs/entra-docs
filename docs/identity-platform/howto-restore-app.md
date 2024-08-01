@@ -25,7 +25,6 @@ Neither you nor Microsoft customer support can restore a permanently deleted app
 
 You must have one of the following roles to permanently delete applications.
 
-- Global Administrator
 - Application Administrator
 - Cloud Application Administrator
 - Hybrid Identity Administrator
@@ -33,7 +32,6 @@ You must have one of the following roles to permanently delete applications.
 
 You must have one of the following roles to restore applications.
 
-- Global Administrator
 - Application Owner
 
 ## View your deleted applications

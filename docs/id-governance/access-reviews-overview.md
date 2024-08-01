@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: overview
-ms.date: 04/09/2024
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -18,7 +18,7 @@ Access reviews in Microsoft Entra ID, part of Microsoft Entra, enable organizati
 
 Here's a video that provides a quick overview of access reviews:
 
->[!VIDEO https://www.youtube.com/embed/kDRjQQ22Wkk]
+>[!VIDEO https://www.youtube.com/embed/VSl1TVITcQ8]
 
 ## Why are access reviews important?
 

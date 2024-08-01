@@ -2,18 +2,13 @@
 title: 'Tutorial: Configure Tableau Cloud for automatic user provisioning with Microsoft Entra ID'
 
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Tableau Cloud.
-
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: b4038c18-2bfd-47cb-8e74-3873dc85a796
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tableau Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Tableau Cloud.
 ---
@@ -91,10 +86,10 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 Tableau Cloud will only store the highest privileged role that is assigned to a user. In other words, if a user is assigned to two groups, the user’s role will reflect the highest privileged role.
 
 
-To keep track of role assignments, you can create two purpose-specific groups for role assignments. For example, you can create groups such as Tableau – Creator, and Tableau – Explorer, etc. Assignment would then look like:
+To keep track of role assignments, you can create two purpose-specific groups for role assignments. For example, you can create groups such as Tableau – Creator, and Tableau – Explorer, and so on. Assignment would then look like:
 * Tableau – Creator: Creator
 * Tableau – Explorer: Explorer
-* Etc.
+* And so on.
 
 Once provisioning is set up, you will want to edit role changes directly in Microsoft Entra ID. Otherwise, you may end up with role inconsistencies between Tableau Cloud and Microsoft Entra ID.
 

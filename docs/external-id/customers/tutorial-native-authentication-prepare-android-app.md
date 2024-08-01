@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 04/02/2024
+ms.date: 05/30/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to add Microsoft Authentication Library (MSAL) native authentication SDK to my Android mobile app so that I can sign-in users.
 ---
@@ -100,7 +100,14 @@ Use these steps to create configuration file:
    - Replace the `Enter_the_Application_Id_Here` placeholder with the application (client) ID of the app you registered earlier.   
    - Replace the `Enter_the_Tenant_Subdomain_Here` with the directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
-    The challenge types are a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. Learn more [challenge types](concept-native-authentication-challenge-types.md).  
+    The challenge types are a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. 
+    
+    - For sign-up and sign-in flows with email one-time passcode, use `["oob"]`.
+    - For sign-up and sign-in flows with email and password, use `["oob","password"]`.
+    - For self-service password reset (SSPR), use `["oob"]`.
+  
+
+    Learn more [challenge types](concept-native-authentication-challenge-types.md). 
 
 ### Optional: Logging configuration 
 
@@ -203,6 +210,7 @@ Your code should look something similar to the following snippet:
  
 Make sure you include the import statements. Android Studio should include the import statements for you automatically.
  
-## Next steps  
- 
-- [Tutorial: Add sign-up with email one-time passcode in Android mobile app](tutorial-native-authentication-android-sign-up.md) 
+## Next step 
+
+> [!div class="nextstepaction"]
+>  [Tutorial: Add sign-up in an Android mobile app using native authentication](tutorial-native-authentication-android-sign-up.md)

@@ -1,12 +1,12 @@
 ---
-title: Secure hybrid access with F5
-description: F5 BIG-IP Access Policy Manager and Microsoft Entra integration for Secure Hybrid Access
+title: Integrate F5 BIG-IP with Microsoft Entra ID
+description: Integrate F5 BIG-IP with Microsoft Entra ID for secure hybrid access (SHA) to improve access and security.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.date: 04/19/2024
+ms.date: 06/28/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
@@ -67,8 +67,8 @@ With integration, you achieve the protocol transition to secure legacy, or other
 
 In the scenario, a BIG-IP is a reverse proxy that hands off service preauthentication and authorization to Microsoft Entra ID. The integration is based on a standard federation trust between the APM and Microsoft Entra ID. This scenario is common with SHA. Learn more: [Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO](f5-passwordless-vpn.md). With SHA you can secure Security Assertion Markup Language (SAML), Open Authorization (OAuth), and OpenID Connect (OIDC) resources. 
 
-> [!NOTE]
-> When used for local and remote access, a BIG-IP can be a choke point for Zero Trust access to services, including software as a service (SaaS) apps.
+   > [!NOTE]
+   > When used for local and remote access, a BIG-IP can be a choke point for Zero Trust access to services, including software as a service (SaaS) apps.
 
 The following diagram illustrates the front-end preauthentication exchange between a user, a BIG-IP, and Microsoft Entra ID, in a service provider (SP) initiated flow. It then shows subsequent APM session enrichment, and SSO to individual back-end services.
 
@@ -115,8 +115,8 @@ Integrating an F5 BIG-IP with Microsoft Entra ID for SHA has the following prere
   - Hypervisor Virtual Edition such as Microsoft Hyper-V, VMware ESXi, Linux kernel-based virtual machine (KVM), and Citrix Hypervisor
   - Cloud Virtual Edition such as Azure, VMware, KVM, Community Xen, MS Hyper-V, AWS, OpenStack, and Google Cloud
 
-> [!NOTE]
-> The BIG-IP instance location can be on-premises or a supported cloud platform including Azure. The instance has internet connectivity, resources being published, and any services such as Active Directory.  
+   > [!NOTE]
+   > The BIG-IP instance location can be on-premises or a supported cloud platform including Azure. The instance has internet connectivity, resources being published, and other services.  
 
 - An active F5 BIG-IP APM license:
   - F5 BIG-IP&reg; Best bundle
@@ -124,7 +124,7 @@ Integrating an F5 BIG-IP with Microsoft Entra ID for SHA has the following prere
   - F5 BIG-IP Access Policy Manager&trade; (APM) add-on license on an existing BIG-IP F5 BIG-IP&reg; Local Traffic Manager&trade; (LTM)
   - A 90-day BIG-IP Access Policy Manager&trade; (APM) [trial license](https://www.f5.com/trial/big-ip-trial.php)
 - Microsoft Entra ID licensing:
-  - An [Azure free account](https://azure.microsoft.com/free/active-directory/) has minimum core requirements for SHA with password-less authentication
+  - An [Azure free account](https://azure.microsoft.com/free/) has minimum core requirements for SHA with password-less authentication
   - A [Premium subscription](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) has [Conditional Access](~/identity/conditional-access/overview.md), [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md), and [Identity Protection](~/id-protection/overview-identity-protection.md)
 
 ## Configuration scenarios
@@ -138,15 +138,10 @@ The advanced approach is a flexible way to implement SHA. You manually create al
 Advanced configuration tutorials:
 
 - [F5 BIG-IP in Azure deployment walk-through](f5-bigip-deployment-guide.md)
-
 - [F5 BIG-IP SSL-VPN with Microsoft Entra SHA](f5-passwordless-vpn.md)
-
 - [Azure AD B2C protects applications using F5 BIG-IP](/azure/active-directory-b2c/partner-f5)
-
 - [F5 BIG-IP APM and Microsoft Entra SSO to Kerberos applications](f5-big-ip-kerberos-advanced.md)
-
 - [F5 BIG-IP APM and Microsoft Entra SSO to header-based applications](f5-big-ip-header-advanced.md)
-
 - [F5 BIG-IP APM and Microsoft Entra SSO to forms-based applications](f5-big-ip-forms-advanced.md)
 
 ### Guided Configuration and Easy Button templates
@@ -155,23 +150,15 @@ The BIG-IP version 13.1 Guided Configuration wizard, minimizes time and effort t
 
 Guided Configuration version 16.x has the Easy Button feature. Administrators don't back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The APM Guided Configuration wizard and Microsoft Graph handle deployment and policy management. This integration between BIG-IP APM and Microsoft Entra ID ensures applications support identity federation, SSO, and Microsoft Entra Conditional Access, without the management overhead of doing so for each app. 
 
-Tutorials for using Easy Button templates, *F5 BIG-IP Easy Button for SSO to*:
+Tutorials for using Easy Button templates, F5 BIG-IP Easy Button for SSO to:
 
 - [Kerberos applications](f5-big-ip-kerberos-easy-button.md)
-
 - [Header-based applications](f5-big-ip-headers-easy-button.md)
-
-- [Header-based and LDAP applications](f5-big-ip-ldap-header-easybutton.md)
-
-- [Oracle EBS (Enterprise Business Suite)](f5-big-ip-oracle-enterprise-business-suite-easy-button.md)
-
+- [Header-based and Lightweight Directory Access Protocol (LDAP) applications](f5-big-ip-ldap-header-easybutton.md)
+- [Oracle Enterprise Business Suite (EBS)](f5-big-ip-oracle-enterprise-business-suite-easy-button.md)
 - [Oracle JD Edwards](f5-big-ip-oracle-jde-easy-button.md)
-
 - [Oracle PeopleSoft](f5-big-ip-oracle-peoplesoft-easy-button.md)
-
-- [SAP ERP](f5-big-ip-sap-erp-easy-button.md)
-
-<a name='azure-ad-b2b-guest-access'></a>
+- [SAP Enterprise Resource Planning (ERP)](f5-big-ip-sap-erp-easy-button.md)
 
 ## Microsoft Entra B2B guest access
 
@@ -181,14 +168,14 @@ Learn more: [Grant B2B users in Microsoft Entra ID access to your on-premises ap
 
 ## Next steps
 
-You can conduct a proof-of-concept for SHA using your BIG-IP infrastructure, or by [Deploying a BIG-IP Virtual Edition virtual machine into Azure](f5-bigip-deployment-guide.md). To deploy a VM in Azure takes approximately 30 minutes. The result is:
+You can conduct a proof-of-concept (POC) for SHA using your BIG-IP infrastructure, or by [Deploying a BIG-IP Virtual Edition virtual machine into Azure](f5-bigip-deployment-guide.md). It takes approximately 30 minutes to deploy a virtual machine (VM) in Azure. The result is:
 
 - A secured platform to model a pilot for SHA
-- A preproduction instance for testing new BIG-IP system updates and hotfixes
+- A preproduction instance to test new BIG-IP system updates and hotfixes
 
 Identify one or two applications to be published with BIG-IP and protected with SHA.
 
-Our recommendation is to start with an application that isn't published via a BIG-IP. This action avoids potential disruption to production services. The guidelines in this article can help you learn about the procedure to create BIG-IP configuration objects and setting up SHA. You can then convert BIG-IP published services to SHA with minimal effort.
+Our recommendation is to start with an application that isn't published via a BIG-IP. This action avoids potential disruption to production services. The guidelines in this article can help you learn about the procedure to create BIG-IP configuration objects and setting up SHA. You can then convert BIG-IP published services to SHA.
 
 ## Resources
 

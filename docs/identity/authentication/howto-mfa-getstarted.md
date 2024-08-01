@@ -15,7 +15,7 @@ ms.reviewer: jpettere
 
 Microsoft Entra multifactor authentication helps safeguard access to data and applications, providing another layer of security by using a second form of authentication. Organizations can enable multifactor authentication with [Conditional Access](~/identity/conditional-access/overview.md) to make the solution fit their specific needs.
 
-This deployment guide shows you how to plan and implement an [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md) roll-out.
+This deployment guide shows you how to plan and implement a [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md) roll-out.
 
 <a name='prerequisites-for-deploying-azure-ad-multi-factor-authentication'></a>
 
@@ -98,7 +98,7 @@ Common use cases to require Microsoft Entra multifactor authentication include:
 
 ### Named locations
 
-To manage your Conditional Access policies, the location condition of a Conditional Access policy enables you to tie access controls settings to the network locations of your users. We recommend using [Named Locations](~/identity/conditional-access/location-condition.md) so that you can create logical groupings of IP address ranges or countries and regions. This creates a policy for all apps that blocks sign-in from that named location. Be sure to exempt your administrators from this policy.
+To manage your Conditional Access policies, the location condition of a Conditional Access policy enables you to tie access controls settings to the network locations of your users. We recommend using [Named Locations](../conditional-access/concept-assignment-network.md) so that you can create logical groupings of IP address ranges or countries and regions. This creates a policy for all apps that blocks sign-in from that named location. Be sure to exempt your administrators from this policy.
 
 ### Risk-based policies
 
@@ -188,7 +188,7 @@ Others might include:
   [Citrix Gateway](https://docs.citrix.com/en-us/advanced-concepts/implementation-guides/citrix-gateway-microsoft-azure.html#microsoft-azure-mfa-deployment-methods) supports both RADIUS and NPS extension integration, and a SAML integration.
 
 - Cisco VPN
-  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-anyconnect.md).
+  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-secure-firewall-secure-client.md).
   - By moving from RADIUS authentication to SAML, you can integrate the Cisco VPN without deploying the NPS extension.
 
 - All VPNs

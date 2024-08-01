@@ -19,9 +19,9 @@ The Global Secure Access client acquires traffic using a lightweight filter (LWF
 
 ## Available clients
 
-You install the client on a device, such as computer or phone, and then use Global Secure Access settings in the Microsoft Entra admin center to secure the device. Clients are currently available for Windows and Android. To learn how to install the Windows client, see [Global Secure Access client for Windows (preview)](how-to-install-windows-client.md). To learn how to install the Android client, see [Global Secure Access client for Android](./how-to-install-android-client.md).
+You install the client on a device, such as computer or phone, and then use Global Secure Access settings in the Microsoft Entra admin center to secure the device. Clients are currently available for Windows and Android. To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md). To learn how to install the Android client, see [Global Secure Access client for Android](./how-to-install-android-client.md).
 
 ## Related content
 
-- [Global Secure Access client for Windows (preview)](how-to-install-windows-client.md)
-- [Global Secure Access client for Android (preview)](how-to-install-android-client.md)
+- [Global Secure Access client for Windows](how-to-install-windows-client.md)
+- [Global Secure Access client for Android](how-to-install-android-client.md)
