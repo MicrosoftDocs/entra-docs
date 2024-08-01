@@ -1,6 +1,6 @@
 ---
-title: Supported features in external tenants
-description: Learn about supported features in external tenants.
+title: External Tenant Features
+description: Compare the features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
  
 author: msmimart
 manager: celestedg
@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.topic: concept-article
 ms.date: 06/26/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
 ---

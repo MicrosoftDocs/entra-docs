@@ -1,6 +1,6 @@
 ---
-title: Overview - External ID in external tenants
-description: Learn about customer identity access management (CIAM), a solution that lets you create secure, customized sign-in experiences for your apps and services.
+title: External Tenant Overview
+description: Learn how Microsoft Entra External ID provides to manage your external identities scenarios, including guest user access and customer identity and access management (CIAM) for apps.
  
 author: msmimart
 manager: celestedg
@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.topic: overview
 ms.date: 04/29/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for apps for consumers and business customers.
 ---
