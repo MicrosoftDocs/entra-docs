@@ -73,7 +73,7 @@ These samples and how-to guides demonstrate how to write a public client desktop
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> macOS (Swift) | &#8226; [Sign in users](sample-mobile-app-macos-swift-sign-in.md)| &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-macos-swift-prepare-tenant.md) |
+> macOS (Swift) | &#8226; [Sign in users](sample-mobile-app-macos-swift-sign-in.md)| &#8226; [Sign in users, call an API](tutorial-app-ios-macos-swift-prepare-tenant.md) |
 
 ### Mobile: Browser delegated authentication
 
@@ -161,7 +161,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > | Mobile: Browser delegated authentication | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-swift-prepare-tenant.md) |
-> |Mobile: Native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+> |Mobile: Native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 ### JavaScript, Vanilla
 
