@@ -109,8 +109,19 @@ We recommended strict security controls on traffic from countries or regions whe
    > [!NOTE]
    > If you can't block traffic from a country or region, select **Interactive Challenge**, not **Block**.
 
-### Block traffic from countries or regions
+## Block traffic from countries or regions
 
+1. Go to the [Cloudflare dashboard](https://developers.cloudflare.com/workers/get-started/dashboard/). 
+2. Expand the Security section.
+3. Select **WAF**.
+4. Select **Create rule**.
+5. For **Rule name**, enter a relevant name.
+6. For **If incoming requests match**, for **Field**, select **Country** or **Continent**.
+7. For **Operator**, select **equals**.
+8. For **Value**, select select the country or continent to block.
+9. For **Then take action**, select **Block**.
+10. For **Place at**, select **Last**.
+11. Select **Deploy**.
 
    > [!NOTE]
    > You can add custom HTML pages for visitors.
