@@ -36,6 +36,7 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 - The `memberOf` attribute can't be used with other rules. For example, a rule that states dynamic group A should contain members of group B and also should contain only users located in Redmond will fail.
 - The dynamic group rule builder and validate feature can't be used for `memberOf` at this time.
 - The `memberOf` attribute can't be used with other operators. For example, you can't create a rule that states "Members Of group A can't be in Dynamic group B."
+- The `memberOf` attribute is not yet supported in National clouds.
 
 ## Get started
 
