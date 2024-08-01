@@ -36,7 +36,7 @@ procedureSection:
         > - [Assign or Unassign Licenses for Users in the Microsoft 365 Admin Center](https://learn.microsoft.com/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide)
         > - [Add Users and Assign Licenses in Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/add-users?view=o365-worldwide)
         > - [Assign Licenses to a Group Using the Microsoft 365 Admin Center](../identity/users/licensing-admin-center.md) </br>
-        We encourage all administrators to familiarize themselves with the new procedures to ensure a smooth transition. For any further assistance or inquiries, please contact our support team.
+        > We encourage all administrators to familiarize themselves with the new procedures to ensure a smooth transition. For any further assistance or inquiries, please contact our support team.
 
 
       For specific information about each license plan and the associated licensing details, see [What license do I need?](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing). To sign up for Microsoft Entra ID P1 or P2 license plans see [here](./get-started-premium.md).
