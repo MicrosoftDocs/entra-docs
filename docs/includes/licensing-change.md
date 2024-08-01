@@ -12,5 +12,4 @@ ms.topic: include
     - [Assign or Unassign Licenses for Users in the Microsoft 365 Admin Center](https://learn.microsoft.com/microsoft-365/admin/manage/assign-licenses-to-users)
     - [Add Users and Assign Licenses in Microsoft 365](https://learn.microsoft.com/microsoft-365/admin/add-users/add-users)
     - [Assign Licenses to a Group Using the Microsoft 365 Admin Center](https://learn.microsoft.com/azure/active-directory/users-groups-roles/licensing-groups-assign)
-    
-    We encourage all administrators to familiarize themselves with the new procedures to ensure a smooth transition. For any further assistance or inquiries, please contact our support team.
+We encourage all administrators to familiarize themselves with the new procedures to ensure a smooth transition. For any further assistance or inquiries, please contact our support team.
