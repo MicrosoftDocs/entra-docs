@@ -1,6 +1,6 @@
 ---
-title: Configure B2B collaboration Microsoft cloud settings
-description: Use Microsoft cloud settings to enable cross-cloud B2B collaboration between sovereign (national) Microsoft Azure clouds.
+title: Cross Cloud Settings
+description: Enable secure cross-cloud B2B collaboration between organizations in different sovereign (national) Microsoft Azure clouds by configuring Microsoft cloud settings.
  
 ms.service: entra-external-id
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.date: 02/05/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: "it-pro"
+ms.custom: "it-pro", seo-july-2024
 ms.collection: M365-identity-device-management
 #customer intent: As an admin configuring B2B collaboration between partner organizations in different Microsoft Azure clouds, I want to enable collaboration with the partner's cloud, add the partner to my organizational settings, and configure inbound and outbound settings, so that Microsoft Entra B2B collaboration between the organizations is enabled.
 ---
 
-# Configure Microsoft cloud settings for B2B collaboration
+# Enable B2B collaboration across Microsoft clouds
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 

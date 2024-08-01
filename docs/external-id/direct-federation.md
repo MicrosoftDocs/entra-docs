@@ -1,6 +1,6 @@
 ---
-title: Federation with a SAML/WS-Fed identity provider (IdP) for B2B
-description: Directly federate with a SAML or WS-Fed identity provider so guests can sign in to your Microsoft Entra apps
+title: SAML/WS-Fed Federation
+description: Set up direct federation with any organization whose identity provider (IdP) supports SAML 2.0 or WS-Fed protocol. Learn about attributes and claims required for federation.
 
  
 ms.service: entra-external-id
@@ -10,12 +10,12 @@ ms.date: 06/05/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
-# Federation with SAML/WS-Fed identity providers for guest users
+# Federation with SAML/WS-Fed identity providers
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
