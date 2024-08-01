@@ -98,7 +98,7 @@ items:
                   href: how-to-run-native-authentication-sample-ios-app.md
                 - name: Sign in users and call an API
                   href: sample-native-authentication-ios-sample-app-call-web-api.md
-             - name: macOS (Swift)
+            - name: macOS (Swift)
               items:
                 - name: Sign in users
                   href: how-to-run-native-authentication-sample-macos-app.md
