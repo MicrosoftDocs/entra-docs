@@ -274,7 +274,6 @@ private fun handleSubmitPasswordError(error: ResetPasswordSubmitPasswordError) {
     }
 }
 ```
-[!INCLUDE [Custom claims provider](../customers/includes/native-auth/support-custom-claims-provider.md)]
 
 ## Next steps
  
