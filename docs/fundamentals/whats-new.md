@@ -49,6 +49,18 @@ For example, if Purview detects unusual activity from a user, Conditional Access
 
 ---
 
+### General Availability - New SAML applications can't receive tokens through OAuth2/OIDC protocols
+
+**Type:** Plan for change    
+**Service category:** Enterprise Apps    
+**Product capability:** Developer Experience    
+
+Starting late September 2024, applications indicated as '*SAML*' applications (via the 'preferredSingleSignOnMode' property of the service principal) can't be issued JWT tokens. This means they can't be the resource application in OIDC, OAuth2.0, or other protocols using JWTs. This change will only affect SAML applications attempting to take a new dependency on JWT-based protocols; existing SAML applications already using these flows won't be affected.  This will improve the security of apps.  
+
+For more information, see: [SAML authentication with Microsoft Entra ID](/entra/architecture/auth-saml).
+
+---
+
 ### General Availability - New Federated Apps available in Microsoft Entra Application gallery - July 2024
 
 **Type:** New feature   
