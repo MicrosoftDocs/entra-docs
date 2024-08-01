@@ -1,8 +1,8 @@
 ### YamlMime:HowTo
 
 metadata:
-  title: Add a self-service sign-up user flow
-  description: Create user flows for apps that your organization builds. Then, users who visit that app can gain a guest account using the options configured in the user flow.
+  title: Add B2B Guest Sign-in
+  description: Create sign-up and sign-in user flows for apps you build. Users with external identities can sign up, submit user attributes, and create a B2B collaboration guest account.
   author: msmimart
   ms.author: mimart
   manager: CelesteDG
@@ -13,11 +13,12 @@ metadata:
   ms.custom:
     - it-pro
     - ge-structured-content-pilot
+    - seo-july-2024
 
 #customer intent: As a developer building an application with B2B collaboration user flows, I want to add a self-service sign-up user flow to my app, so that users can sign up for the app and create a new guest account.
 
 title: |
-  Add a self-service sign-up user flow to an app
+  Add self-service sign-up user flows for B2B collaboration
 introduction: |
   [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
