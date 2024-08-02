@@ -173,8 +173,8 @@ AuditLogs
 
 ```
 AADProvisioningLogs
-| where JobId == “<input JobId>”
-| where resultType == “Failure”
+| where JobId == "<input JobId>"
+| where resultType == "Failure"
 ```
 
 
