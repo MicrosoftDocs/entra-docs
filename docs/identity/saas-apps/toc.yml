@@ -2467,6 +2467,8 @@
         href: sds-chemical-information-management-tutorial.md
       - name: SeattleTimesSSO
         href: seattletimessso-tutorial.md
+      - name: Second Nature AI
+        href: second-nature-ai-tutorial.md
       - name: Secret Server (On-Premises)
         href: secretserver-on-premises-tutorial.md
       - name: Sectigo Certificate Manager
@@ -2837,6 +2839,8 @@
         href: thirdlight-tutorial.md
       - name: ThirdPartyTrust
         href: thirdpartytrust-tutorial.md
+      - name: Thomson Reuters Account
+        href: thomson-reuters-account-tutorial.md
       - name: Thoughtworks Mingle
         href: thoughtworks-mingle-tutorial.md
       - name: ThousandEyes
@@ -3005,6 +3009,8 @@
         href: vergesense-tutorial.md  
       - name: Veritas Enterprise Vault.cloud SSO
         href: veritas-tutorial.md
+      - name: Verity
+        href: verity-tutorial.md
       - name: Verkada Command
         href: verkada-command-tutorial.md
       - name: Verme
