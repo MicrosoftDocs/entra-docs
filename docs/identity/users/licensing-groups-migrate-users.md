@@ -16,6 +16,8 @@ ms.custom: it-pro
 
 # How to migrate users with individual licenses to groups for licensing
 
+[!INCLUDE [licensing updates](~/includes/licensing-change.md)]
+
 In Microsoft Entra ID, part of Microsoft Entra, you can have licenses deployed to users in your tenant organizations by direct assignment, using PowerShell scripts or other tools to assign individual user licenses. Before you begin using group-based licensing to manage licenses in your organization, you can use this migration plan to seamlessly replace existing solutions with group-based licensing.
 
 The most important thing to keep in mind is that you should avoid a situation where migrating to group-based licensing results in users temporarily losing their currently assigned licenses. Any process that could result in removal of licenses should be avoided to remove the risk of users losing access to services and their data.
