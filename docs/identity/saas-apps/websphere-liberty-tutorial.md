@@ -19,9 +19,9 @@ ms.author: jeedes
 
 In this tutorial, you'll learn how to integrate WebSphere Liberty (OIDC) with Microsoft Entra ID. When you integrate WebSphere Liberty (OIDC) with Microsoft Entra ID, you can:
 
-Use Microsoft Entra ID to control who can access WebSphere Liberty (OIDC).
-Enable your users to be automatically signed in to WebSphere Liberty (OIDC) with their Microsoft Entra accounts.
-Manage your accounts in one central location: the Azure portal.
+- Use Microsoft Entra ID to control who can access WebSphere Liberty (OIDC).
+- Enable your users to be automatically signed in to WebSphere Liberty (OIDC) with their Microsoft Entra accounts.
+- Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
 
