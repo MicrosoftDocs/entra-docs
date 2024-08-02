@@ -17,6 +17,8 @@ ms.custom: it-pro
 
 # Assign licenses to users by group membership in Microsoft Entra ID
 
+[!INCLUDE [licensing updates](~/includes/licensing-change.md)]
+
 This article walks you through assigning product licenses to a group of users and verifying that they're licensed correctly in Microsoft Entra ID, part of Microsoft Entra.
 
 In this example, the Microsoft Entra organization contains a security group called **HR Department**. This group includes all members of the human resources department (around 1,000 users). You want to assign Office 365 Enterprise E3 licenses to the entire department. The Yammer Enterprise service that's included in the product must be temporarily disabled until the department is ready to start using it. You also want to deploy Enterprise Mobility + Security licenses to the same group of users.
