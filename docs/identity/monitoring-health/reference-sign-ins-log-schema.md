@@ -1,5 +1,5 @@
 ---
-title: Sign-in log schemas
+title: Sign-in log schemas reference
 description: Reference information for Microsoft Entra sign-in logs schema, including field descriptions and examples.
 
 author: shlipsey3
@@ -23,6 +23,13 @@ You can download the sign-in log schema from the Microsoft Entra admin center.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Select the **Download** button and select **JSON**.
+1. Open the downloaded file to view the schema.
+    - You may need to clean up the formatting to make the schema more readable.
+
+
+### Sample JSON schema
+
+Some properties were removed from the sample for brevity. Many of the values are placeholders and don't represent real data.
 
 
 ```json
@@ -35,9 +42,11 @@ You can download the sign-in log schema from the Microsoft Entra admin center.
   "appId": "bbbbbbbb-1111-aaaaa-0000-aaaaaaaa",
   "appDisplayName": "Azure Portal",
   "ipAddress": "10.1.1.1",
+  "clientAppUsed": "Browser",
   "correlationId": "aaaaaaa-0000-bbbb-1111-bbbbbbb",
   "conditionalAccessStatus": "success",
   "riskDetail": "none",
+  "riskLevelAggregated": "none",  
   "resourceId": "bbbbbbbb-1111-aaaaa-0000-aaaaaaaa",
   "resourceTenantId": "000000-aaaa-bbbb-1111-00000000",
   "homeTenantId": "111111-aaaaa-bbbb-000000000",
@@ -179,32 +188,17 @@ You can download the sign-in log schema from the Microsoft Entra admin center.
 
 ## Field descriptions
 
-| Field name | Key | Description |
-| --- | --- | --- | 
-| Time |  - | The date and time, in UTC. |
-| ResourceId | - | This value is unmapped, and you can safely ignore this field.  |
-| OperationName | - | For sign-ins, this value is always *Sign-in activity*. |
-| OperationVersion | - | The REST API version that's requested by the client. |
-| Category | - | For sign-ins, this value is always *SignIn*. | 
-| TenantId | - | The tenant GUID that's associated with the logs. |
-| ResultType | - | The result of the sign-in operation can be `0` for success or an *error code* for failure. | 
-| ResultSignature | - | This value is always *None*. |
-| ResultDescription | N/A or blank | Provides the error description for the sign-in operation. |
-| riskDetail | riskDetail | Provides the 'reason' behind a specific state of a risky user, sign-in or a risk detection. The possible values are: `none`, `adminGeneratedTemporaryPassword`, `userPerformedSecuredPasswordChange`, `userPerformedSecuredPasswordReset`, `adminConfirmedSigninSafe`, `aiConfirmedSigninSafe`, `userPassedMFADrivenByRiskBasedPolicy`, `adminDismissedAllRiskForUser`, `adminConfirmedSigninCompromised`, `unknownFutureValue`. The value `none` means that no action has been performed on the user or sign-in so far. <br>**Note:** Details for this property require a Microsoft Entra ID P2 license. Other licenses return the value `hidden`. |
-| riskEventTypes | riskEventTypes | Risk detection types associated with the sign-in. The possible values are: `unlikelyTravel`, `anonymizedIPAddress`, `maliciousIPAddress`, `unfamiliarFeatures`, `malwareInfectedIPAddress`, `suspiciousIPAddress`, `leakedCredentials`, `investigationsThreatIntelligence`,  `generic`, and `unknownFutureValue`. |
-| authProcessingDetails	| Azure Active Directory Authentication Library | Contains Family, Library, and Platform information in format: "Family: Microsoft Authentication Library: ADAL.JS 1.0.0 Platform: JS" |
-| authProcessingDetails	| IsCAEToken | Values are True or False |
-| riskLevelAggregated | riskLevel | Aggregated risk level. The possible values are: `none`, `low`, `medium`, `high`, `hidden`, and `unknownFutureValue`. The value `hidden` means the user or sign-in wasn't enabled for Microsoft Entra ID Protection. **Note:** Details for this property are only available for Microsoft Entra ID P2 customers. All other customers will be returned `hidden`. |
-| riskLevelDuringSignIn | riskLevel | Risk level during sign-in. The possible values are: `none`, `low`, `medium`, `high`, `hidden`, and `unknownFutureValue`. The value `hidden` means the user or sign-in wasn't enabled for Microsoft Entra ID Protection. **Note:** Details for this property are only available for Microsoft Entra ID P2 customers. All other customers will be returned `hidden`. |
-| riskState | riskState | Reports status of the risky user, sign-in, or a risk detection. The possible values are: `none`, `confirmedSafe`, `remediated`, `dismissed`, `atRisk`, `confirmedCompromised`, `unknownFutureValue`. |
-| DurationMs | - | This value is unmapped, and you can safely ignore this field. |
-| CallerIpAddress | - | The IP address of the client that made the request. | 
-| CorrelationId | - | The optional GUID that's passed by the client. This value can help correlate client-side operations with server-side operations, and it's useful when you're tracking logs that span services. |
-| Identity | - | The identity from the token that was presented when you made the request. It can be a user account, system account, or service principal. |
-| Level | - | Provides the type of message. For audit, it's always *Informational*. |
-| Location | - | Provides the location of the sign-in activity. |
-| Properties | - | Lists all the properties that are associated with sign-ins.|
-| ResultType | - | Contains the Microsoft Entra error code for the sign-in event (if an error code was present).|
+| Property | Description |
+| --- | --- | 
+| createdDateTime | The date and time, in UTC. |
+| resourceId | ID of the resource that the user signed into. |
+| resourceTenantId | The tenant that owns the resource being accessed. Might be the same as the homeTenantId. |
+| homeTenantId | The tenant that owns the user account that is signing in. |
+| riskDetail | Provides the reason behind a specific state of a risky user, sign-in, or risk detection. Possible values are: `none`, `adminGeneratedTemporaryPassword`, `userPerformedSecuredPasswordChange`, `userPerformedSecuredPasswordReset`, `adminConfirmedSigninSafe`, `aiConfirmedSigninSafe`, `userPassedMFADrivenByRiskBasedPolicy`, `adminDismissedAllRiskForUser`, `adminConfirmedSigninCompromised`, `unknownFutureValue`. The value `none` means that no action has been performed on the user or sign-in so far.<br>**Note:** Details for this property require a Microsoft Entra ID P2 license. Other licenses return the value `hidden`. |
+| riskEventTypes_v2 | Risk detection types associated with the sign-in. Possible values are: `unlikelyTravel`, `anonymizedIPAddress`, `maliciousIPAddress`, `unfamiliarFeatures`, `malwareInfectedIPAddress`, `suspiciousIPAddress`, `leakedCredentials`, `investigationsThreatIntelligence`,  `generic`, and `unknownFutureValue`. |
+| riskLevelAggregated | Aggregated risk level. Possible values are: `none`, `low`, `medium`, `high`, `hidden`, and `unknownFutureValue`. The value `hidden` means the user or sign-in wasn't enabled for Microsoft Entra ID Protection. **Note:** Details for this property are only available for Microsoft Entra ID P2 customers. All other customers will be returned `hidden`. |
+| CorrelationId | The request ID sent from the client when the sign-in is initiated. Used to troubleshoot sign-in activity. |
+
 
 
 
