@@ -1298,7 +1298,7 @@ Users with this role **cannot** do the following:
 >- [Teams admin center](/microsoftteams/manage-teams-in-modern-portal) - Global Reader cannot read **Teams lifecycle**, **Analytics & reports**, **IP phone device management**, and **App catalog**. For more information, see [Use Microsoft Teams administrator roles to manage Teams](/microsoftteams/using-admin-roles).
 >- [Privileged Access Management](/microsoft-365/compliance/privileged-access-management) doesn't support the Global Reader role.
 >- [Azure Information Protection](/azure/information-protection/what-is-information-protection) - Global Reader is supported [for central reporting](/azure/information-protection/reports-aip) only, and when your Microsoft Entra organization isn't on the [unified labeling platform](/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
-> - [SharePoint](/sharepoint/get-started-new-admin-center) - Global Reader currently can't access SharePoint using PowerShell.
+> - [SharePoint](/sharepoint/get-started-new-admin-center) - Global Reader has read access to SharePoint Online PowerShell cmdlets and Read APIs.
 > - [Power Platform admin center](/power-platform/admin/admin-documentation) - Global Reader is not yet supported in the Power Platform admin center.
 > - Microsoft Purview doesn't support the Global Reader role.
 
