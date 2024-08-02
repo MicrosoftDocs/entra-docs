@@ -1351,6 +1351,8 @@
         href: kenexasurvey-tutorial.md
       - name: IBM OpenPages
         href: ibmopenpages-tutorial.md
+      - name: IBM Storage Virtualize (OIDC)
+        href: ibm-storage-virtualize-oidc-tutorial.md
       - name: IBM TRIRIGA on Cloud
         href: ibm-tririga-on-cloud-tutorial.md
       - name: ice Contact Center
@@ -1665,6 +1667,8 @@
         href: lessonly-tutorial.md
       - name: Lexonis TalentScape
         href: lexonis-talentscape-tutorial.md
+      - name: LifeBalance Program (OIDC)
+        href: lifebalance-program-oidc-tutorial.md
       - name: LifeSight
         href: lifesight-tutorial.md
       - name: Lifesize Cloud
@@ -3085,6 +3089,8 @@
         href: webce-tutorial.md
       - name: webMethods Integration Suite
         href: webmethods-integration-cloud-tutorial.md
+      - name: WebSphere Liberty (OIDC)
+        href: websphere-liberty-tutorial.md
       - name: WebTMA
         href: webtma-tutorial.md
       - name: WebXT Recognition
