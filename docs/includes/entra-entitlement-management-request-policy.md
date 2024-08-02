@@ -239,7 +239,7 @@ Also, requests can't be forwarded on the last day of the request duration. So in
 
 Use the following steps if you want to add a verified ID requirement to your access package policy. Users who want access to the access package need to present the required verified IDs before successfully submitting their request. To learn how to configure your tenant with the Microsoft Entra Verified ID service, see [Introduction to Microsoft Entra Verified ID](~/verified-id/decentralized-identifier-overview.md).
 
-You need a Global Administrator role to add verified ID requirements to an access package. An Identity Governance administrator, user administrator, catalog owner, or access package manager can't yet add verified ID requirements.
+You need a Global Administrator role to add verified ID requirements to an access package in a request policy. An Identity Governance administrator, user administrator, catalog owner, or access package manager can't yet add verified ID requirements.
 
 1. Select **+ Add issuer**, and then select an issuer from the Microsoft Entra Verified ID network. If you want to issue your own credentials to users, you can find instructions in [Issue Microsoft Entra Verified ID credentials from an application](~/verified-id/verifiable-credentials-configure-issuer.md).
 

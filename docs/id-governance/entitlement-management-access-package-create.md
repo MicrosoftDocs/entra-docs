@@ -119,7 +119,7 @@ On the **Review + create** tab, you can review your settings and check for any v
 
     ![Screenshot that shows a summary of access package configuration.](./media/entitlement-management-access-package-create/review-create.png)
 
-1. Select **Create** to create the access package.
+1. Select **Create** to create the access package and its initial policy.
 
     The new access package appears in the list of access packages.
 
