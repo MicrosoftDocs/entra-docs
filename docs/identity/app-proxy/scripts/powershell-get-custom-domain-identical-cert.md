@@ -75,9 +75,10 @@ Write-Host " "
 
 foreach ($item in $allApps) {
 
- $aadapApp, $aadapAppConf, $aadapAppConf1 = $null, $null, $null
- 
- $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
+ $itemAppId, $aadapAppId, $aadapAppConf, $aadapAppConf1 = $null, $null, $null, $null
+
+ $itemAppId = $item.AppId
+ $aadapAppId =  Get-MgBetaApplication -Filter "AppId eq '$itemAppId'"
  $aadapAppConf = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
  $aadapAppConf1 = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing `
   | select verifiedCustomDomainCertificatesMetadata -expand verifiedCustomDomainCertificatesMetadata 
