@@ -59,6 +59,9 @@ Support is available online and by phone for Microsoft paid and trial subscripti
 
 Explore the range of [support options and choose the plan](https://azure.microsoft.com/support/plans) that best fits your scenario, whether you're an IT admin managing your organization's tenant, a developer just starting your cloud journey, or a large organization deploying business-critical, strategic applications. Microsoft customers can create and manage support requests in the Azure portal and the Microsoft Entra admin center.
 
+> [!NOTE]
+> If you're using Microsoft Entra External ID in an external tenant, these steps don't apply. The support request feature is currently unavailable for external tenant technical issues. However, you can use the **Give Feedback** link on the **New support request** page to provide feedback. Or, you can switch to your Microsoft Entra workforce tenant and [open a support request](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
+
 ### To open a support request in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Service Support Administrator](~/identity/role-based-access-control/permissions-reference.md#service-support-administrator).
