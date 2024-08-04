@@ -172,10 +172,8 @@ An end-user can disable and enable Private Access through the system tray menu.
 > [!TIP]
 > This option is available on the menu only if it is not hidden (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)) and Private Access is enabled for this tenant.
 
-Administrators can disable and enable Private Access for the user by setting the registry key:
-
-`Computer\HKEY_CURRENT_USER\Software\Microsoft\Global Secure Access Client
-IsPrivateAccessDisabledByUser REG_DWORD`
+Administrators can disable and enable Private Access for the user by setting the registry key:   
+`Computer\HKEY_CURRENT_USER\Software\Microsoft\Global Secure Access Client IsPrivateAccessDisabledByUser REG_DWORD`
 
 |Data  |Description  |
 |---------|---------|
@@ -185,10 +183,8 @@ IsPrivateAccessDisabledByUser REG_DWORD`
 If the value doesn't exist, the default value is 0x0, Private Access is enabled.
 
 ### Hide or unhide system tray menu buttons
-The administrator can show or hide specific buttons in the client system tray icon menu.
-
-`Create the values under the following registry key:
-Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client`
+The administrator can show or hide specific buttons in the client system tray icon menu. Create the values under the following registry key:   
+`Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client`
 
 |Value  |Type  |Data  |Default behavior  |Description  |
 |---------|---------|---------|---------|---------|
