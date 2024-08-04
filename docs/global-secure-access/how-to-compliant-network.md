@@ -17,7 +17,7 @@ Organizations who use Conditional Access along with the Global Secure Access, ca
 The Global Secure Access Client installed on devices or users behind configured remote networks allows administrators to secure resources behind a compliant network with advanced Conditional Access controls. This compliant network feature makes it easier for administrators to manage access policies, without having to maintain a list of egress IP addresses. This removes the requirement to hairpin traffic through organization's VPN.
 
 ## Compliant network check enforcement
-Compliant network enforcement happens at authentication plane (generally available) and at the data plane (preview). Authentication plane enforcement is performed by Microsoft Entra ID at the time of user authentication. Data plane enforcement works with services that support Continuous Access Evaluation (CAE) - currently, Exchange Online and SharePoint Online. With CAE, you can enforce defense-in-depth with token theft replay protection.
+Compliant network enforcement reduces the risk of token theft/replay attacks. Compliant network enforcement happens at the authentication plane (generally available) and at the data plane (preview). Authentication plane enforcement is performed by Microsoft Entra ID at the time of user authentication. If an adversary has stolen a session token and attempts to replay it from a device that is not connected to your organization’s compliant network (for example, requesting an access token with a stolen refresh token), Entra ID will immediately deny the request and further access will be blocked. Data plane enforcement works with services that support Continuous Access Evaluation (CAE) - currently, only SharePoint Online. With apps that support CAE, stolen access tokens that are replayed outside your tenant’s compliant network will be rejected by the application in near-real time. Without CAE, a stolen access token will last up to its full lifetime (default 60-90 minutes). 
 
 This compliant network check is specific to each tenant.
 
@@ -40,15 +40,14 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 - Compliant network check data plane enforcement (preview) with Continuous Access Evaluation is supported for SharePoint Online and Exchange Online.
 - Enabling Global Secure Access Conditional Access signaling enables signaling for both authentication plane (Microsoft Entra ID) and data plane signaling (preview). It is not currently possible to enable these settings separately.
 - Compliant network check is currently not supported for Private Access applications.
-- The compliant network location condition isn't supported for devices that aren't enrolled in mobile device management (MDM). If you configure a Conditional Access policy using the compliant network location condition, users with devices that aren't yet MDM-enrolled might be affected. Users on these devices might fail the Conditional Access policy check, and be blocked. 
-   - Ensure that you exclude the affected users or devices when using the compliant network location condition.     
+ 
 
 ## Enable Global Secure Access signaling for Conditional Access
 
 To enable the required setting to allow the compliant network check, an administrator must take the following steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
-1. Browse to **Global Secure Access** > **Global settings** > **Session management** **Adaptive access**.
+1. Browse to **Global Secure Access** > **Settings** > **Session management** > **Adaptive access**.
 1. Select the toggle to **Enable CA Signaling for Entra ID (covering all cloud apps)**. This will automatically enable CAE signaling for Office 365 (preview).
 1. Browse to **Protection** > **Conditional Access** > **Named locations**.
    1. Confirm you have a location called **All Compliant Network locations** with location type **Network Access**. Organizations can optionally mark this location as trusted.
@@ -69,15 +68,12 @@ The compliant network Conditional Access policy can be used to protect your Micr
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's [emergency access or break-glass accounts](#user-exclusions).
-1. Under **Target resources** > **Include**, and select **Select apps**.
-   1. Choose **Office 365 Exchange Online**, and/or **Office 365 SharePoint Online**, and/or any of your third-party SaaS apps.
-   1. The specific *Office 365* cloud app in the app picker is currently NOT supported, so don't select this cloud app.
-1. Under **Conditions** > **Location**.
+1. Under **Target resources** > **Include**, and select **All cloud apps**.
+   1. If your organization is enrolling devices into Microsoft Intune, it is recommended to exclude the applications **Microsoft Intune Enrollment** and **Microsoft Intune** from your Conditional Access policy to avoid a circular dependency.
+1. Under **Network**.
    1. Set **Configure** to **Yes**.
    1. Under **Include**, select **Any location**.
-   1. Under **Exclude**, select **Selected locations**.
-      1. Select the **All Compliant Network locations** location.
-   1. Select **Select**.
+   1. Under **Exclude**, select the **All Compliant Network locations** location.
 1. Under **Access controls**:
    1. **Grant**, select **Block Access**, and select **Select**.
 1. Confirm your settings and set **Enable policy** to **On**.

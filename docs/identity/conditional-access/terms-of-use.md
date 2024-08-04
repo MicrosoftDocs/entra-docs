@@ -277,7 +277,7 @@ A: Administrators might see two sign-ins when users haven't yet accepted a terms
 
 One sign-in is interrupted since the user can't provide proof of acceptance of the terms of use policy in their token. The **additional details** field in the sign-in log includes the following message:
 
-> The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone does not indicate a failure on your users part to sign in. The sign in logs may indicate that this challenge was succesfully passed or failed.
+> The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone does not indicate a failure on your users part to sign in. The sign in logs may indicate that this challenge was successfully passed or failed.
 
 If the user accepts the terms of use policy, the other sign-in is successful. 
 

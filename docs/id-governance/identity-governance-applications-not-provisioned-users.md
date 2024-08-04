@@ -75,9 +75,9 @@ Now that you have a list of all the users obtained from the application, you'll 
 If the application is already registered in Microsoft Entra ID, then continue to the next step.
 
 The account you're using must have permission to manage applications in Microsoft Entra ID. Any of the following Microsoft Entra roles include the required permissions:
-  - [Application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
-  - [Application developer](~/identity/role-based-access-control/permissions-reference.md#application-developer)
-  - [Cloud application administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
+  - [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
+  - [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer)
+  - [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
 
 1. Create the application and service principal.
 

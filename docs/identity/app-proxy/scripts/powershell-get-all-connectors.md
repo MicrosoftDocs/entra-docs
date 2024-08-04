@@ -20,7 +20,7 @@ The PowerShell script example lists all Microsoft Entra private network connecto
 
 [!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
-Thie sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
+This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
@@ -35,7 +35,7 @@ Thie sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 #
 # Before you begin:
 #    
-#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
+#    Required Microsoft Entra role at least Application Administrator or Application Developer 
 #    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
 #
 # 

@@ -5,12 +5,12 @@ description: Provides answers to some questions IT administrators might have abo
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 01/04/2024
+ms.date: 08/01/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: guovivian
+ms.reviewer: sempofu, micrider
 ---
 # Troubleshooting Enterprise State Roaming settings in Microsoft Entra ID
 
@@ -68,65 +68,6 @@ Under certain conditions, Enterprise State Roaming can fail to sync data if Micr
 ### Event Viewer
 
 For advanced troubleshooting, Event Viewer can be used to find specific errors. The events can be found under Event Viewer > **Applications and Services Logs** > **Microsoft** > **Windows** > **SettingSync-Azure** and for identity-related issues with sync **Applications and Services Logs** > **Microsoft** > **Windows** > **Microsoft Entra ID**.
-
-## Known issues
-
-### Sync does not work on devices that have apps side-loaded using MDM software
-
-Affects devices running the Windows 10 Anniversary Update (Version 1607). In Event Viewer under the SettingSync-Azure logs, the Event ID 6013 with error 80070259 is frequently seen.
-
-**Recommended action**  
-Make sure the Windows 10 v1607 client has the August 23, 2016 Cumulative Update ([KB3176934](https://support.microsoft.com/kb/3176934) OS Build 14393.82).
-
----
-
-### Date, Time, and Region settings do not sync on domain-joined device
-  
-Devices that are domain-joined don't sync the setting Date, Time, and Region: automatic time. Using automatic time might override the other Date, Time, and Region settings and cause those settings not to sync.
-
-**Recommended action**  
-None.
-
----
-
-### Domain-joined device is not syncing after leaving corporate network
-
-Domain-joined devices registered to Microsoft Entra ID might experience sync failure if the device is off-site for extended periods of time, and domain authentication can't complete.
-
-**Recommended action**  
-Connect the device to a corporate network so that sync can resume.
-
----
-
-### Microsoft Entra joined device is not syncing and the user has a mixed case User Principal Name
-
-If the user has a mixed case UPN (for example, UserName instead of username) and the user is on a Microsoft Entra joined device, which upgraded from Windows 10 Build 10586 to 14393, the user's device might fail to sync.
-
-**Recommended action**  
-The user needs to unjoin and rejoin the device to the cloud. To do this process, sign-in as the Local Administrator user and unjoin the device by going to **Settings** > **System** > **About** and select "Manage or disconnect from work or school". Clean up the following files, and then Microsoft Entra join the device again in **Settings** > **System** > **About** and selecting "Connect to Work or School". Continue to join the device to Microsoft Entra ID and complete the flow.
-
-In the cleanup step, clean up the following files:
-
-* Settings.dat in `C:\Users\<Username>\AppData\Local\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\Settings\`
-* All the files under the folder `C:\Users\<Username>\AppData\Local\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\AC\TokenBroker\Account`
-
----
-
-### Event ID 6065: 80070533 This user can’t sign in because this account is currently disabled
-
-In Event Viewer under the SettingSync/Debug logs, this error can be seen when the user's credentials expire. In addition, it can occur when the tenant didn't automatically have AzureRMS provisioned.
-
-**Recommended action**  
-In the first case, have the user update their credentials and sign-in to the device with the new credentials. To solve the AzureRMS issue, proceed with the steps listed in [KB3193791](https://support.microsoft.com/kb/3193791).
-
----
-
-### Event ID 1098: Error: 0xCAA5001C Token broker operation failed
-
-In Event Viewer under the AAD/Operational logs, this error might be seen with `Event 1104: AAD Cloud AP plugin call Get token returned error: 0xC000005F`. This issue occurs if there are missing permissions or ownership attributes.
-
-**Recommended action**  
-Proceed with the steps listed [KB3196528](https://support.microsoft.com/kb/3196528).  
 
 ## Next steps
 

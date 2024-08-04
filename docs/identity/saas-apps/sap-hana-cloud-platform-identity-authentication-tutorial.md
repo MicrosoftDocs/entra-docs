@@ -112,7 +112,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![Screenshot showing URLs.](common/idp-intiated.png)
 
 	> [!Note]
-	> If the **Identifier** and **Reply URL** values do not get auto polulated, then fill in the values manually according to your requirement.
+	> If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
 
 1. If you wish to configure the application in **SP** initiated mode:
 

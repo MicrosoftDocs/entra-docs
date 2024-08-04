@@ -1,8 +1,8 @@
 ---
 
-title: Leave an organization as a guest user
+title: Leave an Organization
 titleSuffix: Microsoft Entra External ID
-description: Shows how a Microsoft Entra B2B guest user can leave an organization by using the Access Panel.
+description: As a B2B collaboration user, learn how to leave an organization if you no longer need guest user access to apps. If you're an admin, see how to allow external users to leave.
 
 ms.service: entra-external-id
 ms.topic: how-to
@@ -18,7 +18,7 @@ adobe-target: true
 # Customer intent: As a Microsoft Entra B2B collaboration or B2B direct connect user, I want to leave an organization, so that I can stop using apps from that organization and end any association with it.
 ---
 
-# Leave an organization as an external user
+# Leave an organization where you have a guest account
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 

@@ -74,7 +74,7 @@ You can manage the on-premises B2B user objects through lifecycle management pol
 
 ### Create B2B guest user objects through a Microsoft Entra B2B script
 
-You can use an [Microsoft Entra B2B sample script](https://github.com/Azure-Samples/B2B-to-AD-Sync) to create shadow Microsoft Entra accounts synced from Microsoft Entra B2B accounts. You can then use the shadow accounts for on-premises apps that use KCD.
+You can use a [Microsoft Entra B2B sample script](https://github.com/Azure-Samples/B2B-to-AD-Sync) to create shadow Microsoft Entra accounts synced from Microsoft Entra B2B accounts. You can then use the shadow accounts for on-premises apps that use KCD.
 
 ### Create B2B guest user objects through MIM
 

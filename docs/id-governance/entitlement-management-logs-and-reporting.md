@@ -204,3 +204,4 @@ order by ActivityDateTime desc
 
 ## Next steps
 - [Create interactive reports with Azure Monitor workbooks](/azure/azure-monitor/visualize/workbooks-overview)
+- [Create custom alerts for Microsoft Entra ID Governance](governance-custom-alerts.md)

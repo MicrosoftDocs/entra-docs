@@ -53,7 +53,7 @@ Organizations can choose to block access when risk is detected. Blocking sometim
 
 ## Enable policies
 
-Organizations can choose to deploy risk-based policies in Conditional Access using the following steps or use [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md#conditional-access-templates).
+Organizations can choose to deploy risk-based policies in Conditional Access using the following steps or use [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
 Before organizations enable these policies, they should take action to [investigate](howto-identity-protection-investigate-risk.md) and [remediate](howto-identity-protection-remediate-unblock.md) any active risks.
 

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/05/2024
+ms.date: 07/16/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -40,6 +40,7 @@ The challenge of this method is to define what *for a while* means for your envi
 The last sign-in provides potential insights into a user's continued need for access to resources. It can help with determining if group membership or app access is still needed or could be removed. For external user management, you can understand if an external user is still active within the tenant or should be cleaned up.
 
 ## Detect inactive user accounts with Microsoft Graph
+
 <a name="how-to-detect-inactive-user-accounts"></a>
 
 You can detect inactive accounts by evaluating several properties, some of which are available on the `beta` endpoint of the Microsoft Graph API. We don't recommend using the beta endpoints in production, but invite you to try them out.

@@ -80,7 +80,8 @@ You can create a policy using Microsoft Graph. A user in an appropriate role wit
 
 You can also create a policy in PowerShell with the cmdlets from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 1.16.0 or later.
 
-This following script illustrates using the `v1.0` profile, to create a policy for automatic assignment to an access package. See [create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true) for more examples.
+This following script illustrates using the `v1.0` profile, to create a policy for automatic assignment to an access package. See [create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true) and [Create an access package in entitlement management for an application with a single role using PowerShell](entitlement-management-access-package-create-app.md) for more examples.
+
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"

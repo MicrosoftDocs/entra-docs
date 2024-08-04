@@ -365,9 +365,9 @@ Add assignments of existing users, who already have access to the application, t
    }
    ```
 
-## Add any additional users who should have access to the application
+## Add assignments for any additional users who should have access to the application
 
-This script illustrates using the Microsoft Graph PowerShell cmdlets to add additional users to the application. If you don't have any users that need access, and wouldn't receive it automatically, then continue in the next section.
+This script illustrates using the Microsoft Graph PowerShell cmdlets to add assignments for additional users so they will have access to the application. If you don't have any users that need access, and wouldn't receive it automatically, then continue in the next section.
 
 This script assumes you have an input CSV file containing one column, `UserPrincipalName`, to assign those users to the access package via its direct assignment policy.
 
