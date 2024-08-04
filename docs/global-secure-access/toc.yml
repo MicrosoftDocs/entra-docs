@@ -154,6 +154,10 @@ items:
     items:
       - name: Troubleshoot connectors
         href: troubleshoot-connectors.md
+      - name: "Troubleshoot the Global Secure Access client: Advanced diagnostics"
+        href: troubleshoot-global-secure-access-client-advanced-diagnostics.md
+      - name: "Troubleshoot the Global Secure Access client: Health check tab"
+        href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
   - name: Partner ecosystem
     expanded: false
     items:

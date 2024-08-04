@@ -12,7 +12,7 @@ ms.reviewer: lirazb
 
 # Customer intent: I want to troubleshoot the Global Secure Access client using the Advanced diagnostics utility.
 ---
-# Troubleshoot the Global Secure Access client: advanced diagnostics
+# Troubleshoot the Global Secure Access client: Advanced diagnostics
 This document provides troubleshooting guidance for the Global Secure Access client. It explores each tab of the Advanced diagnostics utility.
 
 ## Introduction

@@ -69,7 +69,7 @@ To view the available client menu actions, right-click the Global Secure Access 
 ## Client status indicators
 ### Status notification
 Double-click the Global Secure Access icon to open the client status notification and view the status of each channel configured for the client.
-:::image type="content" source="media/how-to-install-windows-client/install-windows-client-client-status.png" alt-text="Screenshot showing the client is connected.":::
+:::image type="content" source="media/how-to-install-windows-client/install-windows-client-client-status.png" alt-text="Screenshot showing the client status is connected.":::
 
 ### Client statuses in system tray icon
 
