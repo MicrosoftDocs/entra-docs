@@ -7,7 +7,7 @@ ms.author: ryanwi
 ms.custom: azureday1
 ms.date: 02/17/2024
 ms.reviewer: stsoneff
-ms.service: app-service
+ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
 services: storage, app-service-web

@@ -119,7 +119,7 @@ public class HomeController : Controller
   // Get an authorization header.
   ITokenAcquirer tokenAcquirer = TokenAcquirerFactory.GetDefaultInstance().GetTokenAcquirer();
   string[] scopes = new string[]{"user.read"};
-  string token = await await tokenAcquirer.GetTokenForUserAsync(scopes);
+  string token = await tokenAcquirer.GetTokenForUserAsync(scopes);
 
   // Use the access token to call a protected web API.
   HttpClient client = new HttpClient();

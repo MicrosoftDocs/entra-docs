@@ -88,7 +88,7 @@ If you aren't planning to delegate the administration of the access packages, th
 
 Now that you have the catalogs identified, then [add the applications, groups or sites](entitlement-management-catalog-create.md#add-resources-to-a-catalog) that are included in the access packages representing the organization roles to the catalogs.
 
-If you have many resources, you can use a PowerShell script to [add each resource to a catalog](entitlement-management-catalog-create.md#add-a-resource-to-a-catalog-with-powershell).
+If you have many resources, you can use a PowerShell script to [add each resource to a catalog](entitlement-management-catalog-create.md#add-a-resource-to-a-catalog-with-powershell).  For more information, see [Create an access package in entitlement management for an application with a single role using PowerShell](entitlement-management-access-package-create-app.md).
 
 ### Create access packages corresponding to organizational role definitions
 

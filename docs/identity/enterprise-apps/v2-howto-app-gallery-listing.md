@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 07/01/2024
+ms.date: 07/24/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: kr2b-contr-experiment, enterprise-apps-article
@@ -69,10 +69,9 @@ For OIDC application, there is no application specific documentation, we have on
 
 ## Submit your application
 
-After you've tested that your application works with Microsoft Entra ID, submit your application request in the [Microsoft Application Network portal](https://microsoft.sharepoint.com/teams/apponboarding/Apps). The first time you try to sign in to the portal you're presented with one of two screens.
+After you've tested that your application works with Microsoft Entra ID, submit your application request in the [Microsoft Application Network portal](https://microsoft.sharepoint.com/teams/apponboarding/Apps).
 
-- If you receive the message "That didn't work", then you need to contact the [Microsoft Entra SSO Integration Team](mailto:SaaSApplicationIntegrations@service.microsoft.com). Provide the email account that you want to use for submitting the request. A business email address such as `name@yourbusiness.com` is preferred. The Microsoft Entra team then adds the account in the Microsoft Application Network portal.
-- If you see a "Request Access" page, then fill in the business justification and select **Request Access**.
+If you see a "Request Access" page, then fill in the business justification and select **Request Access**.
 
 After your account is added, you can sign in to the Microsoft Application Network portal and submit the request by selecting the **Submit Request (ISV)** tile on the home page. If you see the "Your sign-in was blocked" error while logging in, see [Troubleshoot sign-in to the Microsoft Application Network portal](troubleshoot-app-publishing.md).
 
@@ -107,15 +106,11 @@ Here's the flow of customer-requested applications.
 
 :::image type="content" source="./media/howto-app-gallery-listing/customer-request-2.png" alt-text="Screenshot that shows the customer-requested apps flow.":::
 
-To escalate issues of any kind, send an email to the [Microsoft Entra SSO Integration Team](mailto:SaaSApplicationIntegrations@service.microsoft.com). A response is typically sent as soon as possible.
-
 ## Update or Remove the application from the Gallery
 
-You can submit your application update request in the [Microsoft Application Network portal](https://microsoft.sharepoint.com/teams/apponboarding/Apps). The first time you try to sign into the portal you're presented with one of two screens. 
+You can submit your application update request in the [Microsoft Application Network portal](https://microsoft.sharepoint.com/teams/apponboarding/Apps).
 
-- If you receive the message "That didn't work", then you need to contact the [Microsoft Entra SSO Integration Team](mailto:SaaSApplicationIntegrations@service.microsoft.com). Provide the email account that you want to use for submitting the request. A business email address such as `name@yourbusiness.com` is preferred. The Microsoft Entra team then adds the account in the Microsoft Application Network portal.
-
-- If you see a "Request Access" page, then fill in the business justification and select **Request Access**.
+If you see a "Request Access" page, then fill in the business justification and select **Request Access**.
 
 After the account is added, you can sign in to the Microsoft Application Network portal and submit the request by selecting the **Submit Request (ISV)** tile on the home page and select **Update my application’s listing in the gallery** and select one of the following options as per your choice -
 

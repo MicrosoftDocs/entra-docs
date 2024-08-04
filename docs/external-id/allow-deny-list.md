@@ -1,6 +1,6 @@
 ---
-title: Allow or block invites to specific organizations
-description: Shows how an administrator can use the Microsoft Entra admin center or PowerShell to set an access or blocklist to allow or block B2B users from certain domains.
+title: Allow or Block Invitations
+description: Learn how an administrator create a list to allow or block B2B collaboration with specific domains by using the Microsoft Entra admin center or PowerShell.
 
  
 ms.service: entra-external-id
@@ -10,12 +10,12 @@ ms.date: 06/21/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin managing B2B collaboration, I want to configure an allowlist or blocklist for specific organizations, so that I can control  where B2B invitations can be sent by users in my organization.
 ---
 
-# Allow or block invitations to B2B users from specific organizations
+# Allow or block B2B collaboration with organizations
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 

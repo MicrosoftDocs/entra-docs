@@ -341,9 +341,9 @@ To ensure sign-ins are restricted on all devices and apps in your corporate netw
 
 1. Configure the tenant restrictions v2 header as follows:
 
-   |Header name  |Header Value  |
-   |---------|---------|
-   |`sec-Restrict-Tenant-Access-Policy`     |  `<TenantId>:<policyGuid>`       |
+   |Header name  |Header Value  | Sample Value |
+   |---------|---------|-----------------|
+   |`sec-Restrict-Tenant-Access-Policy`     |  `<TenantId>:<policyGuid>`       | 08b6c708-60ce-4da8-b457-4328119ff3cd:26222fa0-3632-45e7-b579-5b259c70f73c
 
    - `TenantID` is your Microsoft Entra tenant ID. Find this value by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator and browsing to **Identity** > **Overview** and selecting the **Overview** tab.
    - `policyGUID` is the object ID for your cross-tenant access policy. Find this value by calling `/crosstenantaccesspolicy/default` and using the “id” field returned.
@@ -356,6 +356,10 @@ To ensure sign-ins are restricted on all devices and apps in your corporate netw
    - login.windows.net
 
    This header enforces your tenant restrictions v2 policy on all sign-ins on your network. This header doesn't block anonymous access to Teams meetings, SharePoint files, or other resources that don't require authentication.
+
+> [!IMPORTANT]
+> **Decrypting Microsoft URLs** - Tenant restrictions (v1 and v2) on the proxy requires decryption of requests to login URLs such as login.microsoftonline.com. Doing decryption of traffic for those login domains for the
+> purpose of TR header insertion is supported by Microsoft and is a valid exception from policies at [Use third-party network devices or solutions with Microsoft 365](/microsoft-365/troubleshoot/miscellaneous/office-365-third-party-network-devices).
 
 #### Tenant restrictions v2 with no support for break and inspect
 
@@ -579,6 +583,9 @@ Use Microsoft Graph to get policy information:
     }
 }
 ```
+
+## Known limitation
+Tenant Restrictions v2 will not be enforced with request going across cross clouds. 
 
 ## Next steps
 

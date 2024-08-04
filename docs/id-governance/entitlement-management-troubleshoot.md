@@ -18,7 +18,7 @@ This article describes some items you should check to help you troubleshoot enti
 
 ## Administration
 
-* If you get an access denied message when configuring entitlement management, and you're a Global Administrator, ensure that your directory has an [Microsoft Entra ID P2 or Microsoft Entra ID Governance (or EMS E5) license](entitlement-management-overview.md#license-requirements). If you've recently renewed an expired Microsoft Entra ID P2 or Microsoft Entra ID Governance subscription, then it may take 8 hours for this license renewal to be visible.
+* If you get an access denied message when configuring entitlement management, and you're a Global Administrator, ensure that your directory has a [Microsoft Entra ID P2 or Microsoft Entra ID Governance (or EMS E5) license](entitlement-management-overview.md#license-requirements). If you've recently renewed an expired Microsoft Entra ID P2 or Microsoft Entra ID Governance subscription, then it may take 8 hours for this license renewal to be visible.
 
 * If your tenant's Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires, then you won't be able to process new access requests or perform access reviews.  
 
@@ -34,7 +34,7 @@ This article describes some items you should check to help you troubleshoot enti
 
 * For a group to be a resource in an access package, it must be able to be modifiable in Microsoft Entra ID. Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID.   Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either. 
 
-* SharePoint Online document libraries and individual documents can't be added as resources. Instead, create an [Microsoft Entra security group](~/fundamentals/how-to-manage-groups.yml), include that group and a site role in the access package, and in SharePoint Online use that group to control access to the document library or document.
+* SharePoint Online document libraries and individual documents can't be added as resources. Instead, create a [Microsoft Entra security group](~/fundamentals/how-to-manage-groups.yml), include that group and a site role in the access package, and in SharePoint Online use that group to control access to the document library or document.
 
 * If there are users that have already been assigned to a resource that you want to manage with an access package, be sure that the users are assigned to the access package with an appropriate policy. For example, you might want to include a group in an access package that already has users in the group. If those users in the group require continued access, they must have an appropriate policy for the access packages so that they don't lose their access to the group. You can assign the access package by either asking the users to request the access package containing that resource, or by directly assigning them to the access package. For more information, see [Change request and approval settings for an access package](entitlement-management-access-package-request-policy.md).
 

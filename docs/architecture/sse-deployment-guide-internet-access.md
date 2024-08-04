@@ -16,7 +16,7 @@ The [Microsoft identity-centric Security Service Edge solution](../global-secure
 
 Protecting enterprise users and managed devices from malicious internet traffic and malware infection concerns all companies. Use [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) Secure Web Gateway functionality to block traffic based on web categories, and a fully qualified domain name (FQDN), by integrating with Microsoft Entra Conditional Access.
 
-The guidance in this article helps you to deploy [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) (Preview) as a proof-of-concept in your production or test environment. It includes setup and configuring web content filtering. You can review prerequisites in the [Microsoft's Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md), which includes how to scope your configuration and testing for specific test users and groups.
+The guidance in this article helps you to deploy [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md) as a proof-of-concept in your production or test environment. It includes setup and configuring web content filtering. You can review prerequisites in the [Microsoft's Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md), which includes how to scope your configuration and testing for specific test users and groups.
 
 ## Deploy and test Microsoft Entra Internet Access
 
@@ -492,8 +492,6 @@ In some cases, you might have users that require access to blocked sites for gro
 1. Observe the entries for your target FQDN that show traffic as blocked and then allowed. There can be a delay of up to 20 minutes for entries to appear in the log.
 
    [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic to allow blocked Internet Access.](media/sse-deployment-guide-internet-access/network-traffic-allow-blocked-traffic-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-allow-blocked-traffic-expanded.png#lightbox)
-
-[!INCLUDE [Public preview important note](../global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next steps
 

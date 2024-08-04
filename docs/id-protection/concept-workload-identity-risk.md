@@ -71,7 +71,7 @@ You can also query risky workload identities [using the Microsoft Graph API](/gr
 
 ### Export risk data 
 
-Organizations can export data by configurating [diagnostic settings in Microsoft Entra ID](howto-export-risk-data.md) to send risk data to a Log Analytics workspace, archive it to a storage account, stream it to an event hub, or send it to a SIEM solution. 
+Organizations can export data by configuring [diagnostic settings in Microsoft Entra ID](howto-export-risk-data.md) to send risk data to a Log Analytics workspace, archive it to a storage account, stream it to an event hub, or send it to a SIEM solution. 
 
 ## Enforce access controls with risk-based Conditional Access
 
