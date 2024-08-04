@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/02/2024
+ms.date: 08/03/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -16,7 +16,7 @@ ms.reviewer: lirazb
 This document provides troubleshooting guidance for the Global Secure Access client. It explores each tab of the Advanced diagnostics utility.
 
 ## Introduction
-The Global Secure Access client runs in the background and routes relevant network traffic to Global Secure Access. It doesn't require user interaction. The advanced diagnostics tool makes the client's behavior visible to the administrator and helps in troubleshooting.
+The Global Secure Access client runs in the background and routes relevant network traffic to Global Secure Access. It doesn't require user interaction. The advanced diagnostics tool makes the client's behavior visible to the administrator and helps with troubleshooting.
 
 ## Launch the advanced diagnostics tool
 To launch the advanced diagnostics tool:
