@@ -90,7 +90,7 @@ For each connection, the available columns include:
 - **Source port**: The source port for the connection.
 - **Destination IP**: The destination IP for the connection.
 - **Destination port**: The destination port for the connection.
-- **Correlation vector ID**: a unique ID attributed to each connection that can be correlated with Global Secure Access traffic logs in the portal. This ID can also be used by Microsoft's support to investigate internal logs related for a specific connection.
+- **Correlation vector ID**: a unique ID attributed to each connection that can be correlated with Global Secure Access traffic logs in the portal. Microsoft Support can also use this ID to investigate internal logs related to a specific connection.
 - **Process name**: The name of the process that opened the connection.
 - **Process ID**: The ID number for the process that opened the connection.
 - **Bytes sent**: The number of bytes sent from the device to the destination.

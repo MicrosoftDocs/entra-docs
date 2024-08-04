@@ -231,7 +231,7 @@ If the cached token test fails:
 ### IPv4 preferred
 Global Secure Access doesn't yet support traffic acquisition for destinations with IPv6 addresses. We recommend that you configure the client to prefer IPv4 over IPv6, if:
 1. The forwarding profile is set to acquire traffic by IPv4 (as opposed to by FQDN).
-1. The FQDN that's resolved to this IP is also resolved to an IPv6 address.
+1. The FQDN resolved to this IP is also resolved to an IPv6 address.
 
 To configure the client to prefer IPv4 over IPv6, set the following registry key:   
 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\
