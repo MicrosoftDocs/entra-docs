@@ -85,7 +85,7 @@ There are two ways to get your AAGUID. You can either ask your security key or p
 
 ## Provision FIDO2 security keys using Microsoft Graph API (preview)
 
-Currently in preview, administrators can use Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users. Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
+Currently in preview, administrators can use [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision). Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
 
 - The ability to request WebAuthn **creation Options** from Entra ID
 - The ability to register the provisioned security key directly with Entra ID
@@ -192,6 +192,8 @@ If a user's UPN changes, you can no longer modify passkeys to account for the ch
 [FIDO2 security key Windows 10 sign in](howto-authentication-passwordless-security-key-windows.md)
 
 [Enable FIDO2 authentication to on-premises resources](howto-authentication-passwordless-security-key-on-premises.md)
+
+[Register security keys on behalf of users](how-to-enable-passkey-fido2.md)
 
 [Learn more about device registration](~/identity/devices/overview.md)
 
