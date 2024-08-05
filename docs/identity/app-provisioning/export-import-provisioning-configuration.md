@@ -55,7 +55,7 @@ You can use the Microsoft Graph API and the Microsoft Graph Explorer to export y
 ### Step 2: Sign into Microsoft Graph Explorer
 
 1. Launch [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)
-1. Click on the "Sign-In with Microsoft" button and sign-in using Microsoft Entra Global Administrator or App Admin credentials.
+1. Click on the "Sign-In with Microsoft" button and sign-in as at least an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator).
 
     ![Microsoft Graph Sign-in](./media/export-import-provisioning-configuration/wd_export_02.png)
 
