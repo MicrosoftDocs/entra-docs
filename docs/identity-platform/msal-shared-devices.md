@@ -29,13 +29,13 @@ Enabling Shared Device Mode provides several benefits for multi-user and guest W
 - **Single sign out:** Enable users to sign out of the device without needing to sign out individually from each SDM supported app. Signing out assures users that their data won’t be shown to subsequent device users, provided apps ensure cleaning up of any cached user data and App Protection Policies are applied.
 - **Security via Conditional Access policies support:** Provide admins the ability to target specific conditional access policies on shared devices, ensuring that employees only have access to company data when their shared device meets internal compliance standards.
 
-## Supported and unsupported Scenarios
+## Supported and unsupported scenarios
 
 Microsoft Entra ID introduced the **Shared Device Mode** feature to support multiple scenarios such as: 
 
 - A user signs in to a Shared Device Mode supported app (Line of business app, third-party launcher app, or Microsoft app) on an Android or iOS/iPadOS device using Microsoft Entra ID credentials and is automatically signed-on to all Shared Device Mode supported apps on the device.
 - A User signs out of a Shared Device Mode supported app (Line of business, third-party launcher, or Microsoft app) on an Android or iOS/iPadOS device and is logged out of all SDM supported apps on the device.
-- If an admin has set up a Conditional Access policy with the grant that requires devices to be enrolled in mobile device management (MDM) and compliant, the user can only sign-in to an SDM-supported app if the device is compliant.
+- If an admin sets up a Conditional Access policy with the grant that requires devices to be enrolled in mobile device management (MDM) and compliant, the user can only sign in to an SDM-supported app if the device is compliant.
 
 **Note:** If a user signs into an app that doesn't support shared device mode, they don't receive the benefits of single sign-on and single sign out.
 
