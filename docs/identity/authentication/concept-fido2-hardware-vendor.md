@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 07/11/2024
+ms.date: 08/05/2024
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -27,12 +27,12 @@ During FIDO2 registration, Microsoft Entra ID requires security keys to provide 
 
 The specific requirements vary based on how an administrator configures the FIDO2 authentication methods policy.
 
->[!NOTE]
->Vendors are responsible to publish all root attestation certificates to the FIDO Alliance MDS; otherwise, attestation verification can fail.
-
 | Enforce attestation set to Yes | Enforce attestation set to No |
 |--------------------------------|-------------------------------|
 |It must provide a valid 'packed' attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide a valid 'packed' attestation statement (but Microsoft will ignore attestation verification results) and a complete certificate (which doesn’t need to be associated with a particular certificate chain). |
+
+>[!NOTE]
+>Vendors are responsible to publish all root attestation certificates to the FIDO Alliance MDS; otherwise, attestation verification can fail.
 
 Additionally, if attestation is enforced, the following requirements apply:
 - Your authenticator needs to have a FIDO2 certification. This can be at 'any' level. To learn more about the certification, visit the FIDO Alliance Certification Overview [website](https://fidoalliance.org/certification/). 
@@ -162,4 +162,4 @@ The following table lists FIDO2 security key models listed in MDS version 53. Th
 
 ## Next steps
 
-For more information about enabling browsers, native apps, and operating systems to support passwordless authentication with FIDO2 security keys and Microsoft Entra ID, see [FIDO2 compatibility](fido2-compatibility.md).
+For more information about Microsoft Entra ID support for phishing-resistant authentication with FIDO2 security keys in browsers and native apps, see [FIDO2 compatibility](fido2-compatibility.md).
