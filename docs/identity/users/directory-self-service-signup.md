@@ -40,16 +40,16 @@ Admins have two self-service controls today. They can control whether:
 
 ### How can I control these capabilities?
 
-An admin can configure these capabilities using the following Microsoft Entra cmdlet Set-MsolCompanySettings parameters:
+An admin can configure these capabilities using the following Microsoft Entra cmdlet Update-MgPolicyAuthorizationPolicy parameters:
 
-* **AllowEmailVerifiedUsers** controls whether users can join the tenant by email validation. To join, the user must have an email address in a domain that matches one of the verified domains in the tenant. This setting is applied company-wide for all domains in the tenant. If you set that parameter to $false, no email-verified user can join the tenant.
-* **AllowAdHocSubscriptions** controls the ability for users to perform self-service sign-up. If you set that parameter to $false, no user can perform self-service sign-up.
+* **allowEmailVerifiedUsersToJoinOrganization** controls whether users can join the tenant by email validation. To join, the user must have an email address in a domain that matches one of the verified domains in the tenant. This setting is applied company-wide for all domains in the tenant. If you set that parameter to $false, no email-verified user can join the tenant.
+* **allowedToSignUpEmailBasedSubscriptions** controls the ability for users to perform self-service sign-up. If you set that parameter to $false, no user can perform self-service sign-up.
   
-AllowEmailVerifiedUsers and AllowAdHocSubscriptions are tenant-wide settings that can be applied to a managed or unmanaged tenant. Here's an example where:
+allowEmailVerifiedUsersToJoinOrganization and allowedToSignUpEmailBasedSubscriptions are tenant-wide settings that can be applied to a managed or unmanaged tenant. Here's an example where:
 
 * You administer a tenant with a verified domain such as contoso.com
 * You use B2B collaboration from a different tenant to invite a user that doesn't already exist (userdoesnotexist@contoso.com) in the home tenant of contoso.com
-* The home tenant has the AllowEmailVerifiedUsers turned on
+* The home tenant has the allowedToSignUpEmailBasedSubscriptions turned on
 
 If the preceding conditions are true, then a member user is created in the home tenant, and a B2B guest user is created in the inviting tenant.
 
@@ -78,7 +78,7 @@ The following flowchart explains the different combinations for these parameters
 
 :::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="flowchart of self-service sign-up controls.":::
 
-This setting's details may be retrieved using the PowerShell cmdlet Get-MsolCompanyInformation. For more information on this, see [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation).
+This setting's details may be retrieved using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information on this, see [Get-MgPolicyAuthorizationPolicy]([/powershell/module/msonline/get-msolcompanyinformation](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy?view=graph-powershell-1.0)).
 
 ```powershell
 Get-MgPolicyAuthorizationPolicy | Select-Object AllowedToSignUpEmailBasedSubscriptions, AllowEmailVerifiedUsersToJoinOrganization
@@ -92,5 +92,5 @@ For more information and examples of how to use these parameters, see [Update-Mg
 * [How to install and configure Azure PowerShell](/powershell/azure/)
 * [Azure PowerShell](/powershell/azure/)
 * [Azure Cmdlet Reference](/powershell/azure/get-started-azureps)
-* [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings)
+* [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy?view=graph-powershell-1.0).
 * [Close your work or school account in an unmanaged tenant](users-close-account.md)
