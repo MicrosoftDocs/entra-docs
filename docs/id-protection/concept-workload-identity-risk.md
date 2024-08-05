@@ -92,7 +92,7 @@ Some of the key questions to answer during your investigation include:
 
 The [Microsoft Entra security operations guide for Applications](~/architecture/security-operations-applications.md) provides detailed guidance on the above investigation areas.
 
-Once you determine if the workload identity was compromised, dismiss the account’s risk, or confirm the account as compromised in the Risky workload identities report. You can also select “Disable service principal” if you want to block the account from further sign-ins.
+Once you determine if the workload identity was compromised, dismiss the account’s risk, or confirm the account as compromised in the Risky workload identities report. You can also select "Disable service principal" if you want to block the account from further sign-ins.
 
 :::image type="content" source="media/concept-workload-identity-risk/confirm-compromise-or-dismiss-risk.png" alt-text="Confirm workload identity compromise or dismiss the risk." lightbox="media/concept-workload-identity-risk/confirm-compromise-or-dismiss-risk.png":::
 

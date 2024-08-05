@@ -91,7 +91,7 @@ sections:
           
           When using both Enterprise State Roaming and UE-V, Enterprise State Roaming is the primary roaming agent on the device. UE-V is being used to supplement Win32 applications.
           
-          * Enterprise State Roaming is the primary roaming agent on the device. UE-V is being used to supplement the “Win32 gap.”
+          * Enterprise State Roaming is the primary roaming agent on the device. UE-V is being used to supplement the "Win32 gap."
           * UE-V roaming for Windows settings and modern UWP app data should be disabled when using the UE-V group policies. These settings are already covered by Enterprise State Roaming.
           
       - question: |
