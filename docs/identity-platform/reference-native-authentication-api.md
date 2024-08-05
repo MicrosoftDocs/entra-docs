@@ -1768,6 +1768,6 @@ Here are the possible errors you can encounter (possible values of the `error` p
 | `invalid_request`  |  Request parameter validation failed such as validation of *continuation token* failed.   |
 |`expired_token`|The *continuation token* is expired.    |
 
-## Next steps
+## Related content
 
-- [Native authentication email OTP API reference](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- [Configure a custom claims provider](custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).

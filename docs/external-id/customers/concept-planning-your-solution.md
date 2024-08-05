@@ -1,6 +1,6 @@
 ---
-title: Plan CIAM deployment
-description: Learn how to plan your CIAM deployment.
+title: Plan a CIAM Deployment
+description: Discover the steps for setting up a customer identity and access management (CIAM) solution in an external tenant, including creating a tenant, registering apps, and setting up user flows for sign-in.
  
 author: msmimart
 manager: celestedg
@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.topic: concept-article
 ms.date: 05/09/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 ---
 

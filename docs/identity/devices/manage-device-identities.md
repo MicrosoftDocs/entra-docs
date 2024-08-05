@@ -80,7 +80,7 @@ There are two ways to delete a device:
 > - Deleting a device:
 >    - Prevents it from accessing your Microsoft Entra resources.
 >    - Removes all details attached to the device. For example, BitLocker keys for Windows devices.  
->    - Is a nonrecoverable activity. We don't recommended it unless it's required.
+>    - Is a nonrecoverable activity. We don't recommend it unless it's required.
 
 If a device is managed in another management authority, like Microsoft Intune, be sure it's wiped or retired before you delete it. See [How to manage stale devices](manage-stale-devices.md) before you delete a device.
 

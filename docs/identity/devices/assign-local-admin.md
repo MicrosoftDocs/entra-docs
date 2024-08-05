@@ -30,7 +30,7 @@ At the time of Microsoft Entra join, the following security principals are added
 > [!NOTE]
 > This is done during the join operation only. If an administrator makes changes after this point they will need to update the group membership on the device.
 
-By adding Microsoft Entra roles to the local administrators group, you can update the users that can manage a device anytime in Microsoft Entra ID without modifying anything on the device. Microsoft Entra ID also adds the Microsoft Entra Joined Device Local Administrator role to the local administrators group to support the principle of least privilege (PoLP). In addition to users with the Global Administrator role, you can also enable users assigned only the Microsoft Entra Joined Device Local Administrator role to manage a device.
+By adding users to the Microsoft Entra Joined Device Local Administrator role, you can update the users that can manage a device anytime in Microsoft Entra ID without modifying anything on the device. The Microsoft Entra Joined Device Local Administrator role is added to the local administrators group to support the principle of least privilege.
 
 ## Manage administrator roles
 

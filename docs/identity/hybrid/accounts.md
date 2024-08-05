@@ -22,7 +22,7 @@ The following article describes the accounts that are required for each of the t
 |Requirement|Description and more requirements|
 |-----|-----|
 |Domain/Enterprise administrator|Required to install the agent on the server and create the gMSA service account.|
-|Hybrid Identity administrator|Required to configure cloud sync.  This account cannot be a guest account.|
+|Hybrid Identity Administrator|Required to configure cloud sync.  This account cannot be a guest account.|
 |gMSA service account|Required to run the agent.| 
 
 For more information, on cloud sync accounts, and how to set up a custom gMSA account, see [Cloud sync prerequisites](cloud-sync/how-to-prerequisites.md).

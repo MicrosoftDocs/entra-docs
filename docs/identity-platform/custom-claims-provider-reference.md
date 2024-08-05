@@ -146,6 +146,10 @@ The following table shows the data types supported by Custom claims providers fo
 | Boolean      | False     |
 | JSON         | False     |
 
+### Claim size limitations
+
+The maximum claim size that a claims provider can return is limited to 3KB. This is the sum of all the key and value pairs returned by the REST API.
+
 ### Claims mapping policy
 
 In Microsoft Entra ID, a claims mapping policy modifies the claims emitted in tokens issued for specific applications. It includes claims from your custom claims provider, and issuing them into the token.

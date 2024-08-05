@@ -16,7 +16,7 @@ ms.author: billmath
 # Provisioning insights workbook
 The Provisioning workbook provides a flexible canvas for data analysis. This workbook brings together all of the provisioning logs from various sources and allows you to gain insight, in a single area.  The workbook allows you to create rich visual reports within the Azure portal. To learn more, see [Microsoft Entra Workbooks overview](../monitoring-health/overview-workbooks.md).
 
-This workbook is intended for Hybrid Identity Admins who use provisioning to sync users from various data sources to various data repositories.  It allows admins to gain insights into sync status and details.
+This workbook is intended for Hybrid Identity Administrators who use provisioning to sync users from various data sources to various data repositories.  It allows admins to gain insights into sync status and details.
 
 This workbook:
 

@@ -68,7 +68,7 @@ procedureSection:
       [app protection policy created in Microsoft Intune](/mem/intune/apps/app-protection-policies).
 
       Organizations can choose to deploy this policy using the following steps or using the
-      [Conditional Access templates](concept-conditional-access-policy-common.md#conditional-access-templates).
+      [Conditional Access templates](concept-conditional-access-policy-common.md).
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).

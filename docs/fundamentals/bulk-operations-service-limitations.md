@@ -188,7 +188,7 @@ foreach ($group in $groups) {
 } 
 
  # Specify the output CSV file path 
- $outputCsvPath = "C:\\Users\\cewu\\Documents\\Groups.csv" 
+ $outputCsvPath = "C:\\Users\\<YourUsername>\\Documents\\Groups.csv" 
 
  $groupData| Export-Csv -Path $outputCsvPath -NoTypeInformation 
  
