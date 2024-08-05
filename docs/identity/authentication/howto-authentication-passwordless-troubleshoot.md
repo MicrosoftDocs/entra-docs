@@ -80,8 +80,8 @@ The following events logs and registry key info is collected:
 **Registry keys**
 
 * *HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FIDO [\*]*
-* *HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PasswordForWork\* [\*]*
-* *HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Policies\PasswordForWork\* [\*]*
+* *HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PassportForWork\* [\*]*
+* *HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Policies\PassportForWork\* [\*]*
 
 **Diagnostic information**
 
