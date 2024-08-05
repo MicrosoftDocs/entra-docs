@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/20/2024
+ms.date: 08/05/2024
 
 ms.author: justinha
 author: justinha

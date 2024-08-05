@@ -14,10 +14,10 @@ ms.topic: conceptual
 
 FIDO2 security keys enable phishing-resistant authentication. They can replace weak credentials with strong hardware-backed public/private-key credentials that can't be reused, replayed, or shared across services. Security keys support shared device scenarios, allowing you to carry your credential with you and safely authenticate on any supported device.
 
-In Microsoft Entra ID authentication methods policy, admins have the option to enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires additional metadata from FIDO2 security keys that are being registered with the tenant. As a vendor, your FIDO2 security key will be usable when attestation is enforced, if the following requirements are met.
+In Microsoft Entra ID Authentication methods policy, administrators can enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires additional metadata from FIDO2 security keys that are being registered with the tenant. As a vendor, your FIDO2 security key is usable when attestation is enforced, if the following requirements are met.
 
 >[!NOTE]
->Entra ID does not support third-party passkey providers on desktop and mobile devices yet.
+>Microsoft Entra ID does not support third-party passkey providers on desktop and mobile devices yet.
 
 ## Attestation requirements
 
@@ -38,12 +38,12 @@ Additionally, if attestation is enforced, the following requirements apply:
 - Your authenticator needs to have a FIDO2 certification. This can be at 'any' level. To learn more about the certification, visit the FIDO Alliance Certification Overview [website](https://fidoalliance.org/certification/). 
 - Your product metadata needs to be uploaded to the FIDO Alliance MDS, and you need to verify your metadata is in the MDS. The metadata must indicate that your authenticator supports: 
   - FIDO 2.0 or higher. 
-  - User verification or client PIN - Entra ID requires user verification with biometrics or PIN for all FIDO2 authentication attempts.
-  - Resident keys (or discoverable credentials) - These are required for using a security key to sign in to Entra ID without entering a username.
+  - User verification or client PIN - Microsoft Entra ID requires user verification with biometrics or PIN for all FIDO2 authentication attempts.
+  - Resident keys (or discoverable credentials) - These are required for using a security key to sign in to Microsoft Entra ID without entering a username.
   - Hash-Based Message Authenticator Codes (HMAC) secret extension or PRF Extension - This is required for using a security key to unlock Windows in offline scenarios.
 
 ## Timelines
-Microsoft ingests the latest version of the FIDO Alliance MDS every month, so there may be a maximum 4-week delay from the time that your FIDO2 security key appears in FIDO Alliance MDS to when Microsoft recognizes the key model. If your key meets the Microsoft attestation requirements, it will automatically be listed on the Microsoft FIDO2 partner page.
+Microsoft ingests the latest version of the FIDO Alliance MDS every month, so there may be a maximum four-week delay from the time that your FIDO2 security key appears in FIDO Alliance MDS to when Microsoft recognizes the key model. If your key meets the Microsoft attestation requirements, it's automatically listed on the Microsoft FIDO2 partner page.
 
 ## FIDO2 security keys eligible for attestation with Microsoft Entra ID
 
