@@ -95,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<subdomain>.awmdm.com/AirWatch/Login?gid=companycode`
 
 	> [!NOTE]
-	> These values are not the real. Update these values with the actual Reply URL and Sign-on URL. Contact [AirWatch Client support team](https://www.vmware.com/in/support/acquisitions/airwatch.html) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not the real. Update these values with the actual Reply URL and Sign-on URL. Contact [AirWatch Client support team](https://support.broadcom.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. AirWatch application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, click **Edit** button to open **User Attributes** dialog.
 

@@ -276,8 +276,8 @@ Microsoft advocates the principle of granting the least possible privilege to pe
 |---|---|---|
 | Help desk admin | Typically limited to qualifying end user reported issues and performing limited tasks such as changing users’ passwords, invalidating refresh tokens, and monitoring service health. | Helpdesk Administrator |
 | Identity admin| Read Microsoft Entra sign-in reports and audit logs to debug application proxy related issues.| Security reader |
-| Application owner| Create and manage all aspects of enterprise applications, application registrations, and application proxy settings.| Application Admin |
-| Infrastructure admin | Certificate Rollover Owner | Application Admin |
+| Application owner| Create and manage all aspects of enterprise applications, application registrations, and application proxy settings.| Application Administrator |
+| Infrastructure admin | Certificate Rollover Owner | Application Administrator |
 
 Minimizing the number of people who have access to secure information or resources will help in reducing the chance of a malicious actor obtaining unauthorized access, or an authorized user inadvertently impacting a sensitive resource.
 

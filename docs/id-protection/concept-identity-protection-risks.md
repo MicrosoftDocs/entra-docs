@@ -128,7 +128,7 @@ Calculated offline. This detection is discovered using information provided byâ€
 
 #### Password spray 
 
-Calculated offline. A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. This risk detection is triggered when an account's password is correctly used by an attacker during a password spray attack. This detection signals that the user's password has correctly been identified through a password spray attack, not that the attacker was able to access any resources. 
+Calculated offline. A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has had an attempted sign in. This detection signals that the user's password has correctly been identified through a password spray attack, not that the attacker was able to access any resources.
 
 #### Suspicious browser	 
 

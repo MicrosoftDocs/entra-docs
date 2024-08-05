@@ -160,10 +160,6 @@ Update-MgDirectoryOnPremiseSynchronization `
 ```
 
 > [!NOTE]
-> Forcing a user to change their password on next logon requires a password change at the same time.  Microsoft Entra Connect will not pick up the force password change flag by itself; it's supplemental to the detected password change that occurs during password hash sync.
-> 
-> If the user has the option "Password never expires" set in Active Directory (AD), the force password change flag will not be set in Active Directory (AD), so the user will not be prompted to change the password during the next sign-in.
->
 > A new user created in Active Directory with "User must change password at next logon" flag will always be provisioned in Microsoft Entra ID with a password policy to "Force change password on next sign-in", irrespective of the *ForcePasswordChangeOnLogOn* feature being true or false. This is a Microsoft Entra internal logic since the new user is provisioned without a password, whereas *ForcePasswordChangeOnLogOn* feature only affects admin password reset scenarios.
 >
 > If a user was created in Active Directory with "User must change password at next logon" before the feature was enabled, the user will receive an error while signing in. To remediate this issue, un-check and re-check the field "User must change password at next logon" in Active Directory Users and Computers. After synchronizing the user object changes, the user will receive the expected prompt in Microsoft Entra ID to update their password. 
