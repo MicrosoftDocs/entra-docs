@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with Qlik Sense Enterprise, perform th
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
-1. **[Configure Qlik Sense Enterprise SSO](#configure-qlik-sense-enterprise-sso)** - to configure the Single Sign-On settings on application side.
+1. **[Configure Qlik Sense Enterprise SSO](#configure-qlik-sense-enterprise-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Qlik Sense Enterprise test user](#create-qlik-sense-enterprise-test-user)** - to have a counterpart of Britta Simon in Qlik Sense Enterprise that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
