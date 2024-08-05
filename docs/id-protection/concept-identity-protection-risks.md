@@ -5,7 +5,7 @@ description: Explaining risk detections in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 07/22/2024
+ms.date: 08/05/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -116,7 +116,7 @@ Calculated offline. This detection is discovered using information provided byâ€
 
 #### Malicious IP address 
 
-Calculated offline. This detection indicates sign-in from a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. 
+Calculated offline. This detection indicates sign-in from a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. In some instances, this detection triggers on previous malicious activity.
 
 #### Mass access to sensitive files 
 
