@@ -48,7 +48,7 @@ Properties that are defined for an application can affect how the user interacts
 
 - **Enabled for users to sign in?** – If this property is set to **Yes**, then assigned users are able to sign into the application from the My Apps portal.
 - **Name** - The name of the application that users see on the My Apps portal. Administrators see the name when they manage access to the application.
-- **Homepage URL** -The URL that is launched when the application is selected in the My Apps portal.
+- **Homepage URL** -The URL that is launched when the application is selected in the My Apps portal. If this property is not set, then My Apps portal cannot properly redirect the application with the error  "Undefined Sign-On URL for application".
 - **Logo** - The application logo that users see on the My Apps portal.
 - **Visible to users** - Makes the application visible in the My Apps portal. When this value is set to **Yes**, applications still don't appear in the My Apps portal if they don’t yet have users or groups assigned to it. Only assigned users are able to see the application in the My Apps portal.
 
