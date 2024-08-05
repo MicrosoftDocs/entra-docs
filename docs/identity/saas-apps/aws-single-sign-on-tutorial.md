@@ -18,22 +18,27 @@ ms.author: jeedes
 
 # Tutorial: Microsoft Entra SSO integration with AWS IAM Identity Center
 
-In this tutorial, you'll learn how to integrate AWS IAM Identity Center (successor to AWS Single Sign-On) with Microsoft Entra ID. When you integrate AWS IAM Identity Center with Microsoft Entra ID, you can:
+In this tutorial, you will learn how to integrate AWS IAM Identity Center (successor to AWS Single Sign-On) with Microsoft Entra ID. When you integrate AWS IAM Identity Center with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AWS IAM Identity Center.
 * Enable your users to be automatically signed-in to AWS IAM Identity Center with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
+
+**Note:** When using AWS Organizations, it's important to delegate another account as the Identity Center Administration account, enable the IAM Identity Center on it, and set up the Entra ID SSO with that account, not the root management account. This ensures a more secure and manageable setup.
 
 ## Prerequisites
 
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* AWS IAM Identity Center enabled subscription.
+* An AWS Organizations setup with another account delegated as the Identity Center Administration account.
+* AWS IAM Identity Center enabled on the delegated Identity Center Administration account.
 
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+
+**Note:** Ensure you delegated another account as the Identity Center Administration account and enabled IAM Identity Center on it before proceeding with the following steps.
 
 * AWS IAM Identity Center supports **SP and IDP** initiated SSO.
 
@@ -48,7 +53,7 @@ To configure the integration of AWS IAM Identity Center into Microsoft Entra ID,
 1. In the **Add from the gallery** section, type **AWS IAM Identity Center** in the search box.
 1. Select **AWS IAM Identity Center** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-aws-iam-identity-center'></a>
 
@@ -82,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	a. Click **Upload metadata file**.
 
-	b. Click on **folder logo**  to select metadata file which is explained to download in **[Configure AWS IAM Identity Center SSO](#configure-aws-iam-identity-center-sso)** section and click **Add**.
+	b. Click on **folder logo**  to select the metadata file which is explained to download in **[Configure AWS IAM Identity Center SSO](#configure-aws-iam-identity-center-sso)** section and click **Add**.
 
 	![image2](common/browse-upload-metadata.png)
 
@@ -137,7 +142,7 @@ In this section, you'll create a test user called B.Simon.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
    1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
+   1. Select the **Show password** check box, and then write down the value that is displayed in the **Password** box.
    1. Select **Review + create**.
 1. Select **Create**.
 
@@ -145,14 +150,14 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to AWS IAM Identity Center.
+In this section, you will enable B.Simon to use single sign-on by granting access to AWS IAM Identity Center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AWS IAM Identity Center**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role was set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure AWS IAM Identity Center SSO
@@ -178,7 +183,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     b. Copy **AWS access portal sign-in URL** value, paste this value into the **Sign on URL** text box in the **Basic SAML Configuration section**.
 
-    c. In the **Identity provider metadata** section, select **Choose file** to upload the metadata file which you have downloaded.
+    c. In the **Identity provider metadata** section, select **Choose file** to upload the metadata file that you downloaded.
 
     d. Choose **Next: Review**.
 
@@ -202,7 +207,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     b. In the **Email address** field, enter the `username@companydomain.extension`. For example, `B.Simon@contoso.com`.
 
-    c. In the **Confirm email address** field, re-enter the email address from the previous step.
+    c. In the **Confirmed email address** field, reenter the email address from the previous step.
 
     d. In the First name field, enter `Britta`.
 
@@ -216,9 +221,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     > Make sure the username and email address entered in AWS IAM Identity Center  matches the user’s Microsoft Entra sign-in name. This will you help avoid any authentication problems.
 
 5. Choose **Add user**.
-6. Next, you will assign the user to your AWS account. To do so, in the left navigation pane of the AWS IAM Identity Center console, choose **AWS accounts**.
+6. Next, you'll assign the user to your AWS account. To do so, in the left navigation pane of the AWS IAM Identity Center console, choose **AWS accounts**.
 7. On the AWS Accounts page, select the AWS organization tab, check the box next to the AWS account you want to assign to the user. Then choose **Assign users**.
-8. On the Assign Users page, find and check the box next to the user B.Simon. Then choose **Next:
+8. On the Assign Users page, find, and check the box next to the user B.Simon. Then choose **Next:
 Permission sets**.
 9. Under the select permission sets section, check the box next to the permission set you want to assign to the user B.Simon. If you don’t have an existing permission set, choose **Create new permission set**.
 
@@ -236,7 +241,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to AWS IAM Identity Center sign-in URL where you can initiate the login flow.  
+* Click on **Test this application**, this will redirect to AWS IAM Identity Center sign-in URL where you can initiate the login flow. 
 
 * Go to AWS IAM Identity Center sign-in URL directly and initiate the login flow from there.
 
