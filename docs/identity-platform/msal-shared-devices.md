@@ -5,8 +5,8 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 03/22/2024
-ms.reviewer: brianmel
+ms.date: 08/02/2024
+ms.reviewer: brianmel, akgoel, dmwendia
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -15,61 +15,52 @@ ms.topic: concept-article
 
 # Overview of shared device mode
 
-Shared device mode is a feature of Microsoft Entra ID that allows you to build and deploy applications that support frontline workers and educational scenarios that require shared Android and iOS devices.
+Shared Device Mode (SDM) is a Microsoft Entra ID feature that enables organizations to configure an iOS, iPadOS, or Android device for shared use among multiple employees, a common practice in frontline worker environments. With SDM, employees sign in once to access their data across all supported applications, without accessing other employees’ data. When employees sign out after completing their shift or task, they're automatically signed out of the device and all supported apps, making it ready for the next user.
 
-## Supporting multiple users on devices designed for one user
+## Why Shared Device Mode?
 
-Because mobile devices running iOS or Android were designed for single users, most applications optimize their experience for use by a single user. Part of this optimized experience means enabling single sign-on (SSO) across applications and keeping users signed in on their device. When a user removes their account from an application, the app typically doesn't consider it a security-related event. Many apps even keep a user's credentials around for quick sign-in. You might have experienced this yourself when you've deleted an application from your mobile device and then reinstalled it, only to discover you're still signed in.
+Most applications optimize their experience for single users because mobile devices running iOS, iPadOS, or Android are designed for individual use. Part of the optimized experience means enabling single sign-on (SSO) across applications and keeping users signed in on their devices. 
 
-## Automatic single sign-in and single sign-out
+To allow employees to use an organization's apps across shared devices, developers should facilitate a streamlined and secure user experience. Employees should be able to pick a device from the shared pool and sign in with a single gesture, making the device "theirs" during their shift. At the end of their shift, employees can perform another gesture to globally sign out of the device before returning it to the shared device pool. This removes all personal and company information from the device, ensuring the next user cannot access their data. 
 
-To allow an organization's employees to use its apps across a pool of devices shared by those employees, developers need to enable the opposite experience. Employees should be able to pick a device from the pool and perform a single gesture to "make it theirs" during their shift. At the end of their shift, they should be able to perform another gesture to sign out globally on the device, with all their personal and company information removed so they can return it to the device pool. Furthermore, if an employee forgets to sign out, the device should be automatically signed out at the end of their shift and/or after a period of inactivity.
+Microsoft Entra ID introduced the **Shared Device Mode** feature to support these scenarios. Enabling Shared Device Mode provides several benefits for multi-user and guest Windows devices, including:
 
-Microsoft Entra ID enables these scenarios with a feature called **shared device mode**.
+- **Single sign-on:** Allow users to sign into one of the apps that support shared device mode and gain seamless authentication across all other SDM supported apps without having to re-enter their credentials. An exemption here is users on First Run Experience (FRE) screens on shared devices. 
+- **Single sign out:** Enable users to sign out from the device without needing to sign out individually from each SDM supported app. This assures users that their data won’t be inappropriately shown to subsequent users, provided apps ensure cleaning up of any cached user data and App Protection Policies are applied.
+- **Security via Conditional Access policies support:** Provide admins the ability to target specific conditional access policies on shared devices, ensuring that employees only have access to company data when their shared device meets internal compliance standards.
 
-## Introducing shared device mode
+## Supported Scenarios
 
-As mentioned, shared device mode is a feature of Microsoft Entra ID that enables you to:
+Here are three supported scenarios:
 
-- Build applications that support frontline workers.
-- Deploy devices to frontline workers with apps that support shared device mode.
+- User signs in to a Shared Device Mode supported app (Line of business app, third-party launcher app, or Microsoft app) on an Android or iOS/iPadOS device using Microsoft Entra ID credentials and is automatically signed-on to all Shared Device Mode supported apps on the device.
+- User sign out from a Shared Device Mode supported app (Line of business, third-party launcher, or Microsoft app) on an Android or iOS/iPadOS device and is logged out from all shared device mode supported apps on the device.
+- If an admin has set up a Conditional Access policy with the grant that requires devices to be enrolled in mobile device management (MDM) and compliant, the user can sign-in to a shared device mode enabled app only if the device is compliant.
 
-### Build applications that support frontline workers
+## Unsupported Scenarios
 
-You can support frontline workers in your applications by using the Microsoft Authentication Library (MSAL) and [Microsoft Authenticator app](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) to enable a device state called *shared device mode*. When a device is in shared device mode, Microsoft provides your application with information to allow it to modify its behavior based on the state of the user on the device, protecting user data.
+If a user signs into a non-Shared Device Mode supported app on the device, they won't receive the benefits of single sign-on and single sign out.
 
-Supported features are:
+## Enable Shared Device Mode
 
-- **Sign in a user device-wide** through any supported application.
-- **Sign out a user device-wide** through any supported application.
-- **Query the state of the device** to determine if your application is on a device that's in shared device mode.
-- **Query the device state of the user** on the device to determine if anything has changed since the last time your application was used.
+To take advantage of shared device mode feature, cloud device admins and app developers work together:
 
-Supporting shared device mode should be considered a feature upgrade for your application, and can help increase its adoption in environments where the same device is used among multiple users.
+- **Device administrators** prepare the devices to be shared by setting up the devices in shared device mode manually or via a mobile device management (MDM) provider like Microsoft Intune. The preferred option is using an MDM as it allows the device setup in shared device mode at scale via zero-touch provisioning. The MDM is configured to push the Microsoft Authenticator app to the device with shared device mode turned on. On iOS devices, MDM also enables the Microsoft Enterprise SSO plug-in that is required for shared device mode. For details on how to set up a device in shared device mode via Intune, see [Set up Intune enrollment of Android Enterprise dedicated devices](/mem/intune/enrollment/android-kiosk-enroll) and [Set up enrollment for devices in shared device mode](/mem/intune/enrollment/automated-device-enrollment-shared-device-mode).
 
-Your users depend on you to ensure their data isn't leaked to another user. Share Device Mode provides helpful signals to indicate to your application that a change you should manage has occurred. Your application is responsible for checking the state of the user on the device every time the app is used, clearing the previous user's data. This includes if it's reloaded from the background in multi-tasking. On a user change, you should ensure both the previous user's data is cleared and that any cached data being displayed in your application is removed.
+    Manual setup is a useful tool for pilot programs and small-scale deployments. It requires the Cloud Device Administrator access and needs to be done on each device. For more information of how to set up shared device mode manually, see [links to be added here].
+    
+    You can also set up devices in shared device mode using an Intune compliance partner. The list of third-party MDMs that support shared device mode on Android can be found in [Third-party MDMs that support shared device mode](/entra/identity-platform/msal-android-shared-devices#third-party-mdms-that-support-shared-device-mode). For iOS and iPadOS, see [Add link here]
 
-To support all data loss prevention scenarios, we also recommend you integrate with the [Intune App SDK](/mem/intune/developer/app-sdk). By using the Intune App SDK, you can allow your application to support Intune [App Protection Policies](/mem/intune/apps/app-protection-policy). In particular, we recommend that you integrate with Intune's [selective wipe](/mem/intune/developer/app-sdk-android-phase5#selective-wipe) capabilities and [deregister the user on iOS](/mem/intune/developer/app-sdk-ios#deregister-user-accounts) during a sign-out.
+- **Application developers** add shared device mode to [single account public client application](single-multi-account.md#single-account-public-client-application) using the Microsoft Authentication Library (MSAL). MSAL allows the apps to modify their behavior based on the signals on the state of the device and user on the device. For example, the application checks the state of the user on the device every time the app is used and clears the previous user's data if the user has changed. On a user change, the application should ensure both the previous user's data is cleared and that any cached data being displayed in the application is removed.
 
-Lastly, we recommend you always perform a thorough security review process after adding shared device mode capability to your app.
+    Application developers can optionally integrate with the [Intune App SDK](/mem/intune/developer/app-sdk) to support all data loss prevention scenarios, which is highly recommended. Applications can support [Intune App Protection Policies](/mem/intune/apps/app-protection-policy) by using the Intune App SDK. We recommend integrating with Intune's [selective wipe](/mem/intune/developer/app-sdk-android-phase5#selective-wipe) capabilities and [deregistering the user on iOS](/mem/intune/developer/app-sdk-ios-phase1#deregister-user-accounts) during sign out.
 
-For details on how to modify your applications to support shared device mode, see the [Related content](#related-content) section at the end of this article.
+Supporting shared device mode should be considered a feature upgrade for the application and can help increase its adoption in environments where the same device is used among multiple users. For more information on how to modify applications to support shared device mode, see [Add links here].
 
-### Deploy devices to frontline workers and turn on shared device mode
-
-Once your applications support shared device mode and include the required data and security changes, you can advertise them as being usable by frontline workers.
-
-An organization's device administrators are able to deploy their devices and your applications to their stores and workplaces through a mobile device management (MDM) solution like Microsoft Intune. Part of the provisioning process is marking the device as a *Shared Device*. Administrators configure shared device mode by deploying the [Microsoft Authenticator app](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) and setting shared device mode through configuration parameters. Upon completing these steps, all applications that support shared device mode will use the Microsoft Authenticator application to manage its user state and provide security features for the device and organization.
-
-### Use App Protection Policies to provide data loss prevention between users.
-
-For data protection capabilities along with shared device mode, Microsoft’s supported data protection solution for Microsoft 365 applications on Android and iOS is Microsoft Intune Application Protection Policies. For more information about the policies, see [App protection policies overview - Microsoft Intune | Microsoft Learn](/mem/intune/apps/app-protection-policy).
-
-When setting up App protection policies for shared devices, we recommend using [level 2 enterprise enhanced data protection](/mem/intune/apps/app-protection-framework#level-2-enterprise-enhanced-data-protection). With level 2 data protection, you can restrict data transfer scenarios that may cause data to move to parts of the device that aren't cleared with shared device mode.
+Microsoft applications that support shared device mode don't require any further changes and just need to be installed on a shared device mode enabled device to get the benefits that come with shared device mode.
 
 ## Related content
-
-We support iOS and Android platforms for shared device mode. For more information, see:
+Microsoft Entra ID supports shared device mode in iOS and Android platforms. For more information, see:
 
 - [Supporting shared device mode for iOS](/entra/msal/objc/shared-devices-ios)
 - [Supporting shared device mode for Android](msal-android-shared-devices.md)
