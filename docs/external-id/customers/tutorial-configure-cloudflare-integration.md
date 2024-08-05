@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 08/01/2024
+ms.date: 08/05/2024
 ms.author: gasinh
 ms.custom: it-pro
 ---
