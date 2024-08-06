@@ -1,5 +1,5 @@
 ---
-title: SMS MFA in external tenants
+title: MFA in external tenants
 description: Learn about using MFA to secure apps in your external tenant and enabling email one-time passcodes (EOTP) or SMS as a second verification method for sign-up and sign-in.
  
 author: msmimart

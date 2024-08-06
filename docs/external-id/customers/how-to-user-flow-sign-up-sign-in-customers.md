@@ -60,7 +60,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 1. On the **Create** page, enter a **Name** for the user flow (for example, "SignUpSignIn").
 
 1. Under **Identity providers**, select the **Email Accounts** check box, and then select one of these options:
-<!-- TODO: Verify additions -->
+
    - **Email with password**: Allows new users to sign up and sign in using an email address as the sign-in name and a password as their first-factor authentication method. You can also configure options for showing, hiding, or customizing the self-service password reset link on the sign-in page ([learn more](how-to-customize-branding-customers.md#to-customize-self-service-password-reset)). If you plan to require multifactor authentication, this option lets you choose from email one-time passcodes, SMS text codes, or both as second-factor methods.
 
    - **Email one-time passcode**: Allows new users to sign up and sign in using an email address as the sign-in name and email one-time passcode as their first-factor authentication method. If you plan to require multifactor authentication, you can enable SMS text codes as a second-factor method.

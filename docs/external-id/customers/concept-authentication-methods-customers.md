@@ -54,9 +54,7 @@ When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-
 
 ## Multifactor authentication (MFA)
 
-[Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support both email one-time passcodes and [SMS-based authentication](how-to-sms-mfa.md) for second-factor verification.
-
-The local email account options we've discussed, such as using an email with a password or an email one-time passcode, serve as first-factor authentication methods for sign-up and sign-in user flows. Depending on which of these options you choose as the first factor, the following second-factor authentication methods are available in external tenants:
+Local email account options, like using an email with a password or a one-time passcode, act as first-factor authentication methods for application sign-up and sign-in. To enhance security, external tenants support [Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md), which requires users to provide a second method to verify their identity during sign-up or sign-in. The following second-factor authentication methods are available in external tenants:
 
 - Email one-time passcode
 - SMS-based authentication
