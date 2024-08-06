@@ -1,6 +1,6 @@
 ---
 title: Rules for dynamic membership groups in Microsoft Entra ID
-description: How to create dynamic membership rules to automatically populate groups and rule references.
+description: How to create rules for dynamic membership groups to automatically populate group members and rule references.
 
 author: barclayn
 manager: amycolannino
