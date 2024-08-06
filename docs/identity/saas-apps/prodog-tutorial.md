@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     | `https://u.leanwo.com/api/saml/sso/a`|
     
 
-    c. In the **Sign on URL** text box, type ine fo teh following URLs:
+    c. In the **Sign on URL** text box, type ine fo the following URLs:
 
     | Sign on URL |
     |------|
