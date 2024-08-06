@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/03/2024
+ms.date: 08/06/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -190,3 +190,7 @@ The administrator can show or hide specific buttons in the client system tray ic
 |---------|---------|---------|---------|---------|
 |HideSignOutButton   |REG_DWORD         |0x0 - shown   0x1 - hidden         |hidden         |Configure this setting to show or hide the **Sign out** action. This option is for specific scenarios when a user needs to sign in to the client with a different Entra user than the one used to sign in to Windows. Note: You must sign in to the client with a user in the same Entra tenant to which the device is joined. You can also use the **Sign out** action to reauthenticate the existing user.         |
 |HideDisablePrivateAccessButton     |REG_DWORD         |0x0 - shown   0x1 - hidden         |hidden         |Configure this setting to show or hide the **Disable Private Access** action. This option is for a scenario when the device is directly connected to the corporate network and the user prefers accessing private applications directly through the network instead of through the Global Secure Access.         |   
+
+> [!IMPORTANT]
+> Changes to registry values require a computer restart. 
+For more information, see [Guidance for configuring IPv6 in Windows for advanced users](/troubleshoot/windows-server/networking/configure-ipv6-in-windows).
