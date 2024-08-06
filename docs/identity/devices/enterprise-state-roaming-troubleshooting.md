@@ -35,7 +35,7 @@ Before you start troubleshooting, verify that the user and device are configured
 
 This section gives suggestions on how to troubleshoot and diagnose problems related to Enterprise State Roaming.
 
-## Verify sync, and the “Sync your settings” settings page
+## Verify sync, and the "Sync your settings" settings page
 
 1. After joining your Windows 10 or newer PC to a domain that is configured to allow Enterprise State Roaming, sign on with your work account. Go to **Settings** > **Accounts** > **Sync Your Settings** and confirm that sync and the individual settings are on, and that the top of the settings page indicates that you're syncing with your work account. Confirm the same account is also used as your account in **Settings** > **Accounts** > **Your Info**.
 1. Verify that sync works across multiple machines by making some changes on the original machine, such as moving the taskbar around the screen. Watch the change propagate to the second machine within five minutes.
@@ -43,19 +43,19 @@ This section gives suggestions on how to troubleshoot and diagnose problems rela
    * Locking and unlocking the screen (Win + L) can help trigger a sync.
    * You must be signing in with the same account on both PCs for sync to work – as Enterprise State Roaming is tied to the user account and not the machine account.
 
-**Potential issue**: If the controls in the **Settings** page aren't available, and you see the message “Some Windows features are only available if you're using a Microsoft account or work account.” This issue might arise for devices that are set up to be domain-joined and registered to Microsoft Entra ID, but the device hasn't authenticated to Microsoft Entra ID yet. A possible cause is that the device policy must be applied, but this application happens asynchronously, and might take a few hours.
+**Potential issue**: If the controls in the **Settings** page aren't available, and you see the message "Some Windows features are only available if you're using a Microsoft account or work account." This issue might arise for devices that are set up to be domain-joined and registered to Microsoft Entra ID, but the device hasn't authenticated to Microsoft Entra ID yet. A possible cause is that the device policy must be applied, but this application happens asynchronously, and might take a few hours.
 
 ### Verify the device registration status
 
 Enterprise State Roaming requires the device to be registered with Microsoft Entra ID. Although not specific to Enterprise State Roaming, using the following instructions can help confirm that the Windows 10 or newer Client is registered, and confirm thumbprint, Microsoft Entra settings URL, NGC status, and other information.
 
-1. Open the command prompt unelevated. To do this in Windows, open the Run launcher (Win + R) and type “cmd” to open.
+1. Open the command prompt unelevated. To do this in Windows, open the Run launcher (Win + R) and type "cmd" to open.
 1. Once the command prompt is open, type `*dsregcmd.exe /status*`.
 1. For expected output, the **AzureAdJoined** field value should be `YES`, **WamDefaultSet** field value should be `YES`, and the **WamDefaultGUID** field value should be a GUID with `(AzureAD)` at the end.
 
-**Potential issue**: **WamDefaultSet** and **AzureAdJoined** both have “NO” in the field value, the device was domain-joined and registered with Microsoft Entra ID, and the device doesn't sync. If it's showing this, the device might need to wait for policy to be applied or the authentication for the device failed when connecting to Microsoft Entra ID. The user might have to wait a few hours for the policy to be applied. Other troubleshooting steps might include retrying autoregistration by signing out and back in, or launching the task in Task Scheduler. In some cases, running “*dsregcmd.exe /leave*” in an elevated command prompt window, rebooting, and trying registration again might help with this issue.
+**Potential issue**: **WamDefaultSet** and **AzureAdJoined** both have "NO" in the field value, the device was domain-joined and registered with Microsoft Entra ID, and the device doesn't sync. If it's showing this, the device might need to wait for policy to be applied or the authentication for the device failed when connecting to Microsoft Entra ID. The user might have to wait a few hours for the policy to be applied. Other troubleshooting steps might include retrying autoregistration by signing out and back in, or launching the task in Task Scheduler. In some cases, running "*dsregcmd.exe /leave*" in an elevated command prompt window, rebooting, and trying registration again might help with this issue.
 
-**Potential issue**: The field for **SettingsUrl** is empty and the device doesn't sync. The user might have last logged in to the device before Enterprise State Roaming was enabled. Restart the device and have the user sign-in. Optionally, in the portal, try having the IT Admin navigate to **Identity** > **Devices** > **Overview** > **Enterprise State Roaming** disable and re-enable **Users may sync settings and app data across devices**. Once re-enabled, restart the device and have the user sign-in. If this doesn't resolve the issue, **SettingsUrl** might be empty if there's a bad device certificate. In this case, running “*dsregcmd.exe /leave*” in an elevated command prompt window, rebooting, and trying registration again might help with this issue.
+**Potential issue**: The field for **SettingsUrl** is empty and the device doesn't sync. The user might have last logged in to the device before Enterprise State Roaming was enabled. Restart the device and have the user sign-in. Optionally, in the portal, try having the IT Admin navigate to **Identity** > **Devices** > **Overview** > **Enterprise State Roaming** disable and re-enable **Users may sync settings and app data across devices**. Once re-enabled, restart the device and have the user sign-in. If this doesn't resolve the issue, **SettingsUrl** might be empty if there's a bad device certificate. In this case, running "*dsregcmd.exe /leave*" in an elevated command prompt window, rebooting, and trying registration again might help with this issue.
 
 ## Enterprise State Roaming and multifactor authentication
 

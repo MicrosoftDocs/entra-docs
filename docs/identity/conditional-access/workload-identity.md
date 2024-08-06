@@ -88,7 +88,7 @@ The sign-in logs are used to review how policy is enforced for service principal
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs** > **Service principal sign-ins**.
 1. Select a log entry and choose the **Conditional Access** tab to view evaluation information.
 
-Failure reason when Conditional Access blocks a Service Principal: “Access has been blocked due to Conditional Access policies.”
+Failure reason when Conditional Access blocks a Service Principal: "Access has been blocked due to Conditional Access policies."
 
 ### Report-only mode
 
