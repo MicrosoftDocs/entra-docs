@@ -119,7 +119,7 @@
       href: lifecycle-workflow-audits.md
     - name: Workflow History
       href: lifecycle-workflow-history.md
-    - name: Synced AD FS users (Preview)
+    - name: Synced AD DS users (Preview)
       href: lifecycle-workflow-on-premises.md         
     - name: Workflow Insights (preview)
       href: lifecycle-workflow-insights.md        
@@ -280,7 +280,7 @@
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
-        - name: Manage synced on-premises users (Preview)
+        - name: Manage synced AD DS users (Preview)
           href: manage-workflow-on-premises.md              
         - name: Check Workflow Insights (preview)
           href: manage-workflow-insights.md            
