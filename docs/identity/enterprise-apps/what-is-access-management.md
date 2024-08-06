@@ -55,7 +55,7 @@ When user assignment is required, only those users you assign to the application
 
 When user assignment isn't required, unassigned users don't see the app on their My Apps, but they can still sign in to the application itself (also known as SP-initiated sign-on) or they can use the **User Access URL** in the application’s **Properties** page (also known as IDP-initiated sign on). For more information on requiring user assignment configurations, See [Configure an application](add-application-portal-configure.md)
 
-This setting doesn't affect whether or not an application appears on My Apps. Applications appear on users' My Apps access panels once you assign a user or group to the application.
+This setting doesn't affect whether or not an application appears on My Apps. Applications appear on users' My Apps portal once you assign a user or group to the application.
 
 > [!NOTE]
 > When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](~/identity/enterprise-apps/grant-admin-consent.md) to apps that require assignment.
