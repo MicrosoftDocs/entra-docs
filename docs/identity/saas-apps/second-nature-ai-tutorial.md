@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign on URL** text box, type the URL:
-    `https://app.secondnature.ai/`
+    `https://app.secondnature.ai/?sso-name=<ID>`
 
 1. Second Nature AI application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
