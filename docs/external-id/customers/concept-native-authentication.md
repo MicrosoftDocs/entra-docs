@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: concept-article
-ms.date:  04/08/2024
+ms.date:  07/23/2024
 ms.author: cmulligan
 
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
@@ -62,6 +62,7 @@ The following table shows the availability of features for browser-delegated and
 | **Sign-up and sign-in with email one-time passcode (OTP)** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Sign-up and sign-in with email and password** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Self-service password reset (SSPR)** | :heavy_check_mark:  | :heavy_check_mark:  |
+| **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Social identity provider sign-in** | :heavy_check_mark:  | :x: |
 | **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :x:  |
 | **Multifactor authentication with SMS**| :heavy_check_mark:  | :x:  |
@@ -84,4 +85,4 @@ If you're planning to create a mobile app on a framework currently not supported
 
 - [Android native authentication tutorials](how-to-run-native-authentication-sample-android-app.md).
 - [iOS native authentication tutorials](how-to-run-native-authentication-sample-ios-app.md).
-- [Native authentication API documentation](../../identity-platform/reference-native-authentication-overview.md).
+- [Native authentication API documentation](/entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).

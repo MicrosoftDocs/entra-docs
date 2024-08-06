@@ -181,7 +181,7 @@ To confirm the connector installed and registered correctly:
 1. Select the **Windows** key and enter `services.msc` to open the Windows Services Manager.
 1. Check to see if the status for the following services **Running**.
     * *Microsoft Entra private network connector* enables connectivity.
-    * *Microsoft Entra private network connector Updater* is an automated update service.
+    * *Microsoft Entra private network connector updater* is an automated update service.
     * The updater checks for new versions of the connector and updates the connector as needed.
 
     ![Screenshot of the private network connector and connector updater services in Windows Services Manager.](media/how-to-configure-connectors/app-proxy-services.png)

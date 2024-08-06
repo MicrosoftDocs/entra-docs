@@ -43,7 +43,7 @@ If your organization enabled self-remediation as described in the article, [User
 
 As an administrator, you can set:
 
-- **The user risk level that triggers the generation of this email** - By default, the risk level is set to “High” risk.
+- **The user risk level that triggers the generation of this email** - By default, the risk level is set to "High" risk.
 - **The recipients of this email**
    - Optionally you can **Add custom email here** users defined must have the appropriate permissions to view the linked reports.
 

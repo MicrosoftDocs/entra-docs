@@ -30,6 +30,10 @@ items:
     href: powershell-samples.md
   - name: Get token for connector
     href: ./scripts/powershell-get-token.md
+  - name: Restore productivity in a break glass scenario
+    href: ./scripts/powershell-break-glass.md
+  - name: Restore traffic forwarding and compliant network requirement after a break glass operation
+    href: ./scripts/powershell-break-glass-recovery.md
 - name: Concepts
   expanded: true
   items: 

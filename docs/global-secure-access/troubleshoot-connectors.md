@@ -163,7 +163,7 @@ No, this scenario isn't supported. The default settings are:
 - Microsoft Entra private network connector - WAPCSvc - Network Service
 - Microsoft Entra private network connector Updater - WAPCUpdaterSvc - NT Authority\System
     
-**Can a guest user with the Global Administrator or the Application Administrator role register the connector for the (guest) tenant?**
+**Can a guest user with an active administrator role assignment register the connector for the (guest) tenant?**
 
 No, currently, this isn't possible. The registration attempt is always made on the user's home tenant.
 

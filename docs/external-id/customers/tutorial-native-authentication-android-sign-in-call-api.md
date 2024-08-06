@@ -165,7 +165,10 @@ To make an API call, use the access token you acquired in [Acquire an access tok
     }
     ```
 
+[!INCLUDE [Custom claims provider](../customers/includes/native-auth/support-custom-claims-provider.md)]
+
 ## Related content
 
 - [Explore native authentication API reference](/entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
+- [Configure a custom claim provider](/entra/identity-platform/custom-extension-tokenissuancestart-configuration?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
 - [Customize the look and feel of the authentication experience for the external tenant](concept-branding-customers.md).
