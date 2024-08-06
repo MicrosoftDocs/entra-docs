@@ -15,7 +15,7 @@ ms.custom: template-how-to
 
 ---
 
-# Manage users synchronized from Active Directory Domain Serviceswith workflows (Preview)
+# Manage users synchronized from Active Directory Domain Services with workflows (Preview)
 
 Workflows created by Lifecycle workflows can be used to manage the lifecycle of users synchronized from Active Directory Domain Services (AD DS). Synced Active Directory Domain Services support allows you to use workflow tasks to enable, disable, and delete users. In this article, you're walked through the steps of enabling a user account task to be run for users synchronized from Active Directory Domain Services.
 
@@ -23,7 +23,7 @@ Workflows created by Lifecycle workflows can be used to manage the lifecycle of 
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-While most Lifecycle workflow tasks can manage users synchronized from Active Directory Domain Services without any extra configuration, certain tasks such as enabling,disabling, and deleting tasks require some additional configuration. For more information on setting these prerequisites, see:  [User account tasks (preview)](lifecycle-workflow-on-premises.md#user-account-tasks-preview).
+While most Lifecycle workflow tasks can manage users synchronized from Active Directory Domain Services without any extra configuration, certain tasks such as enabling, disabling, and deleting tasks require some extra configuration. For more information on setting these prerequisites, see:  [User account tasks (preview)](lifecycle-workflow-on-premises.md#user-account-tasks-preview).
 
 ## Configure a user account task to manage users synchronized from Active Directory Domain Services using the Microsoft Entra admin center
 
@@ -39,7 +39,7 @@ Account related tasks within workflows can be quickly edited to apply to users s
 
 1. On the Tasks screen, either select an existing task you want to run for users synchronized from Active Directory Domain Services, or create a new one by selecting **Add task**.
 
-1. On the individual task screen, enable the checkbox that corresponds to running for a synchronized Active Directory Domain Services uer . The following image shows it being enabled for a delete user account task.
+1. On the individual task screen, enable the checkbox that corresponds to running for a synchronized Active Directory Domain Services user. The following image shows it being enabled for a delete user account task.
     :::image type="content" source="media/manage-workflow-on-premises/delete-user-account-task-flag.png" alt-text="Screenshot of setting on-premises flag to delete account.":::
 1. Select **Save**.
 
