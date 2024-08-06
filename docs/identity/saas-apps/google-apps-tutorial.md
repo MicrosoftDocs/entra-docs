@@ -17,7 +17,7 @@ ms.author: jeedes
 
 # Tutorial: Microsoft Entra SSO integration with Google Cloud / G Suite Connector by Microsoft
 
-In this tutorial, you'll learn how to integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID. When you integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID, you can:
+In this tutorial, you learn how to integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID. When you integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Google Cloud / G Suite Connector by Microsoft.
 * Enable your users to be automatically signed-in to Google Cloud / G Suite Connector by Microsoft with their Microsoft Entra accounts.
@@ -36,8 +36,11 @@ To get started, you need the following items:
 
 To test the steps in this tutorial, you should follow these recommendations:
 
-* Do not use your production environment, unless it is necessary.
+* Don't use your production environment, unless it's necessary.
 * If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+
+## Recent Changes
+Recent updates from Google now allow the addition of user groups to Third-Party SSO profiles. This enables more granular control over the assignment of SSO settings. You can now create SSO Profile Assignments, allowing you to migrate users in stages rather than moving the entire company at once. In this area, you're given SP details with an Entity ID and ACS URL, which you'll now need to add into Azure Apps for reply and Entity.
 
 ## Frequently Asked Questions
 
@@ -55,11 +58,11 @@ To test the steps in this tutorial, you should follow these recommendations:
 
 4. **Q: Can I enable single sign-on for only a subset of my Google Cloud / G Suite Connector by Microsoft users?**
 
-    A: Yes, the SSO profiles can be selected per User, Organizational Unit or Group in the Google Workspace.
+    A: Yes, the SSO profiles can be selected per User, Organizational Unit, or Group in the Google Workspace.
 
     ![Screenshot for SSO profile assignment.](./media/google-apps-tutorial/profile-assignment.png)
 
-    Select the SSO profile as "none" for the Google Workspace group. This prevents members of this (Google Workspace group) from being redirected to Microsoft Entra ID for logon.
+    Select the SSO profile as "none" for the Google Workspace group. This prevents members of this (Google Workspace group) from being redirected to Microsoft Entra ID for sign-in.
 
 5. **Q: If a user is signed in through Windows, are they automatically authenticate to Google Cloud / G Suite Connector by Microsoft without getting prompted for a password?**
 
@@ -67,9 +70,9 @@ To test the steps in this tutorial, you should follow these recommendations:
 
 6. **Q: What should I do when I get an "invalid email" error message?**
 
-	A: For this setup, the email attribute is required for the users to be able to sign-in. This attribute cannot be set manually.
+	A: For this setup, the email attribute is required for the users to be able to sign-in. This attribute can't be set manually.
 
-	The email attribute is autopopulated for any user with a valid Exchange license. If user is not email-enabled, this error will be received as the application needs to get this attribute to give access.
+	The email attribute is autopopulated for any user with a valid Exchange license. If user isn't email-enabled, this error will be received as the application needs to get this attribute to give access.
 
 	You can go to portal.office.com with an Admin account, then click in the Admin center, billing, subscriptions, select your Microsoft 365 Subscription and then click on assign to users, select the users you want to check their subscription and in the right pane, click on edit licenses.
 
@@ -213,7 +216,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure Google Cloud/G Suite Connector by Microsoft SSO

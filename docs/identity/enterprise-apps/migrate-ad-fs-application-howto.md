@@ -135,7 +135,7 @@ You can use the sign-in data to identify the impact of each application and sele
 
 This tab shows list of all the Microsoft Entra applications that were previously migrated using AD FS application migration wizard.
 
-The **Application name** is the name of new Microsoft Entra application. **Application identifier** is same as of AD FS relying party application identifier that can be used to corelate the application with your AD FS environment. The **Configure application in Microsoft Entra** link enables you to navigate to the newly configured Microsoft Entra application within the **Enterprise application** section.
+The **Application name** is the name of new Microsoft Entra application. **Application identifier** is same as of AD FS relying party application identifier that can be used to correlate the application with your AD FS environment. The **Configure application in Microsoft Entra** link enables you to navigate to the newly configured Microsoft Entra application within the **Enterprise application** section.
 
 ## Migrate an app from AD FS to Microsoft Entra ID using AD FS application migration wizard
 

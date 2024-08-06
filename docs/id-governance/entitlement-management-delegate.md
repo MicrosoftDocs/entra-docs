@@ -120,12 +120,15 @@ The following table lists the tasks that the entitlement management roles can do
 
 To determine the least privileged role for a task, you can also reference [Administrator roles by admin task in Microsoft Entra ID](~/identity/role-based-access-control/delegate-by-task.md#entitlement-management).
 
+> [!NOTE]
+> Users that have been assigned the Access package assignment manager role will no longer be able to bypass approval settings when directly assigning a user if the access package policy requires approval. If you have a scenario in which you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to users who need access.
+
 ## Required roles to add resources to a catalog
 
 A Global Administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog.
 
 > [!NOTE]
-> Users that have been assigned the User administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own.  A User administrator who is a catalog owner can add or remove any group or application in the catalog they own, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). If users in your organization have been assigned the User administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the **Identity Governance administrator** role.
+> Users that have been assigned the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own.  A User Administrator who is a catalog owner can add or remove any group or application in the catalog they own, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). If users in your organization have been assigned the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the **Identity Governance Administrator** role.
 
 For a user who isn't a Global Administrator, to add groups, applications, or SharePoint Online sites to a catalog, that user must have *both* the ability to perform actions on that resource, and be a catalog owner role in entitlement management for the catalog. The most common way a user can have the ability to perform actions for a resource is by being in a Microsoft Entra directory role that allows them to administer the resource. Or for resources that have owners, the user can have the ability to perform actions by having been assigned as an owner of the resource.
 
@@ -167,7 +170,7 @@ You can also configure what happens when an external user brought in by entitlem
 
 You can prevent users who aren't in administrative roles from inviting individual guests, in the [external collaboration settings](~/external-id/external-collaboration-settings-configure.md), by changing the **Guest invite settings** setting to specific admin roles, and have **Enable guest self-service sign up** set to **No**.
 
-To prevent delegated users from configuring entitlement management to let external users request for external collaboration, then be sure to communicate this constraint to all Global Administrators, identity governance administrators, catalog creators, and catalog owners, as they're able to change catalogs, so that they don't inadvertently permit new collaboration in new or updated catalogs. They should ensure that catalogs are set with **Enabled for external users** to **No**, and don't have any access packages with policies for allowing a user not in the directory to request.
+To prevent delegated users from configuring entitlement management to let external users request for external collaboration, then be sure to communicate this constraint to all Global Administrators, Identity Governance Administrators, catalog creators, and catalog owners, as they're able to change catalogs, so that they don't inadvertently permit new collaboration in new or updated catalogs. They should ensure that catalogs are set with **Enabled for external users** to **No**, and don't have any access packages with policies for allowing a user not in the directory to request.
 
 You can view the list of catalogs currently enabled for external users in the Microsoft Entra admin center.
 

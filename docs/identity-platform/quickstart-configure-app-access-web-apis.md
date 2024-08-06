@@ -134,6 +134,14 @@ After granting consent, the permissions that required admin consent are shown as
 
 The **Grant admin consent** button is *disabled* if you aren't an admin or if no permissions have been configured for the application. If you have permissions that have been granted but not yet configured, the admin consent button prompts you to handle these permissions. You can add them to configured permissions or remove them.
 
+### Remove application permissions
+
+It's important not to give an application too many permissions than is necessary. To revoke admin consent for a permission in your application;
+
+1. Navigate to your application and select **API permissions**.
+2. Under **Configured permissions**, select the three dots next to the permission you wish to remove, and select **Remove permission**
+3. In the pop-up that appears, select **Yes, remove** to revoke the admin consent for the permission.
+
 ## Related content
 
 Advance to the next quickstart in the series to learn how to configure which account types can access your application. For example, you might want to limit access only to those users in your organization (single-tenant) or allow users in other Microsoft Entra tenants (multitenant) and those with personal Microsoft accounts (MSA).

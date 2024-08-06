@@ -23,7 +23,7 @@ These JSON Web tokens (JWT) used by OIDC and OAuth applications contain pieces o
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-To view or edit the claims issued in the JWT to the application:
+Optional JWT claims can be configured in the the original application registration, however they can also be configured in the enterprise application. To view or edit the claims issued in the JWT to the application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.

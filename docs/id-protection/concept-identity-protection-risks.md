@@ -5,7 +5,7 @@ description: Explaining risk detections in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 05/06/2024
+ms.date: 08/05/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -116,7 +116,7 @@ Calculated offline. This detection is discovered using information provided byâ€
 
 #### Malicious IP address 
 
-Calculated offline. This detection indicates sign-in from a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. 
+Calculated offline. This detection indicates sign-in from a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. In some instances, this detection triggers on previous malicious activity.
 
 #### Mass access to sensitive files 
 
@@ -128,7 +128,7 @@ Calculated offline. This detection is discovered using information provided byâ€
 
 #### Password spray 
 
-Calculated offline. A password spray attack is where multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. This risk detection is triggered when a password spray attack is performed. For example, the attacker is successfully authenticated, in the detected instance. 
+Calculated offline. A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has had an attempted sign in. This detection signals that the user's password has correctly been identified through a password spray attack, not that the attacker was able to access any resources.
 
 #### Suspicious browser	 
 
@@ -168,7 +168,7 @@ Calculated offline. This risk detection baselines normal administrative user beh
 
 #### Attacker in the Middle 
 
-Calculated offline. Also known as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team leverages Microsoft 365 Defender to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
+Calculated offline. Also known as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team uses Microsoft 365 Defender to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
 
 #### Possible attempt to access Primary Refresh Token (PRT) 
 
@@ -234,7 +234,7 @@ Risk detections like leaked credentials require the presence of password hashes 
 
 ### Why are risk detections generated for disabled accounts? 
 
-User accounts in a disabled state can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against these disabled accounts to alert customers about potential account compromise. If an account is no longer in use and wont be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
+User accounts in a disabled state can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against these disabled accounts to alert customers about potential account compromise. If an account is no longer in use and won't be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
 
 ### Common leaked credentials questions
 

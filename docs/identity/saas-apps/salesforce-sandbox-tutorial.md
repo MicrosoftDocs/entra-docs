@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![image](common/both-replyurl.png)
 
 	> [!Note]
-	> If the **Reply URL** value do not get auto polulated, then fill in the value manually according to your requirement.
+	> If the **Reply URL** value do not get auto populated, then fill in the value manually according to your requirement.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Metadata XML** from the given options as per your requirement and save it on your computer.
 
