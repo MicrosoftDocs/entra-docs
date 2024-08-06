@@ -124,7 +124,7 @@ If after investigation, an account is confirmed compromised:
    1. [Disable any devices](~/identity/devices/manage-device-identities.md) that are considered compromised.
    1. If using [continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md), revoke all access tokens.
 
-For more information about what happens when confirming compromise, see the section [How should I give risk feedback and what happens under the hood?](howto-identity-protection-risk-feedback.md#how-should-i-give-risk-feedback-and-what-happens-under-the-hood).
+For more information about what happens when confirming compromise, see the section [How to give risk feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
 
 ### Deleted users
 
@@ -150,6 +150,17 @@ To unblock an account based on sign-in risk, administrators have the following o
 1. **Sign in from a familiar location or device** - A common reason for blocked suspicious sign-ins are sign-in attempts from unfamiliar locations or devices. Your users can quickly determine whether this reason is the blocking reason by trying to sign-in from a familiar location or device.
 1. **Exclude the user from policy** - If you think that the current configuration of your sign-in policy is causing issues for specific users, you can exclude the users from it. For more information, see the section Exclusions in the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md#policy-exclusions).
 1. **Disable policy** - If you think that your policy configuration is causing issues for all your users, you can disable the policy. For more information, see the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
+
+### Automatic blocking due to high confidence risk
+
+Microsoft Entra ID Protection automatically blocks sign-ins that have a very high confidence of being risky. This block most commonly occurs on sign-ins performed via legacy authentication protocols, and displaying properties of a malicious attempt.
+
+When a user is blocked with this mechanism they will receive a 50053 authentication error. Investigation of the sign-in logs will display the following block reason: "Sign-in was blocked by built-in protections due to high confidence of risk."
+
+To unblock an account based on high confidence sign-in risk, administrators have the following options:
+
+1. **Add the IP's being used to sign-in to the Trusted location settings** - If the sign-in is performed from a known location for your company, you can add the IP to be trusted. For more information, see the Trusted Locations section in article [Conditional Access: Network assignment](/entra/identity/conditional-access/concept-assignment-network#trusted-locations).
+1. **Use a modern authentication protocol** - If the sign-in is performed via a legacy protocol, switching to modern will unblock the attempt.
 
 ## Token theft related detections
 

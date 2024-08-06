@@ -7,12 +7,12 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 04/16/2024
+ms.date: 07/23/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
  
-# Create an access review of groups and applications in Microsoft Entra ID
+# Create an access review of groups and applications in Microsoft Entra ID 
 
 Access to groups and applications for employees and guests changes over time. To reduce the risk associated with stale access assignments, administrators can use Microsoft Entra ID to create access reviews for group members or application access.
 
@@ -20,12 +20,12 @@ Microsoft 365 and Security group owners can also use Microsoft Entra ID to creat
 
 Watch a short video that talks about enabling access reviews.
 
->[!VIDEO https://www.youtube.com/embed/X1SL2uubx9M]
+   >[!VIDEO https://www.youtube.com/embed/VSl1TVITcQ8]
 
 This article describes how to create one or more access reviews for group members or application access.
 
 - To review access package assignments, see [configure an access review in entitlement management](entitlement-management-access-reviews-create.md).
-- To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in PIM](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
+- To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
 - For reviews of PIM for Groups, see [create an access review of PIM for Groups](create-access-review-pim-for-groups.md).
 
 ## Prerequisites
@@ -41,7 +41,7 @@ For more information, see [License requirements](access-reviews-overview.md#lice
 > [!NOTE]
 > Following least privilege access, we recommend using the Identity Governance Administrator role.
 
-If you're reviewing access to an application, then before creating the review, see the article on how to [prepare for an access review of users' access to an application](access-reviews-application-preparation.md) to ensure the application is integrated with Microsoft Entra ID in your tenant.
+If you're reviewing access to an application, then before you create the review, see the article on how to [prepare for an access review of users' access to an application](access-reviews-application-preparation.md) to ensure the application is integrated with Microsoft Entra ID in your tenant.
 
 > [!NOTE]
 > Access reviews capture a snapshot of access at the beginning of each review instance. Any changes made during the review process will be reflected in the subsequent review cycle. Essentially, with the commencement of each new recurrence, pertinent data regarding the users, resources under review, and their respective reviewers is retrieved.
@@ -205,7 +205,7 @@ A multi-stage review allows the administrator to define two or three sets of rev
  
 1. By default, you see two stages when you create a multi-stage review. However, you can add up to three stages. If you want to add a third stage, select **+ Add a stage** and complete the required fields.  
 
-1. You can decide to allow 2nd and 3rd stage reviewers to the see decisions made in the previous stage(s). If you want to allow them to see the decisions made prior, select the box next to **Show previous stage(s) decisions to later stage reviewers** under **Reveal review results**. Leave the box unchecked to disable this setting if you’d like your reviewers to review independently. 
+1. You can decide to allow 2nd and 3rd stage reviewers to see decisions made in the previous stage(s). If you want to allow them to see the decisions made prior, select the box next to **Show previous stage(s) decisions to later stage reviewers** under **Reveal review results**. Leave the box unchecked to disable this setting if you’d like your reviewers to review independently. 
 
     ![Screenshot that shows duration and show previous stages setting enabled for multi-stage review.](./media/create-access-review/reveal-multi-stage-results-and-duration.png)
 

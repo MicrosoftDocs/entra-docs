@@ -29,7 +29,7 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
 
 ## Install and configure the Microsoft Entra Connect Provisioning Agent
 
- 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+ 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
  2. Browse to **Identity** > **Applications** > **Enterprise applications**.
  3. Search for the **On-premises SCIM app** application, give the app a name, and select **Create** to add it to your tenant.
  4. From the menu, navigate to the **Provisioning** page of your application.
@@ -52,7 +52,7 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
 
 ## Configure the connection via the provisioning agent
 
- 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+ 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
  2. Browse to **Identity** > **Applications** > **Enterprise applications**.
  3. Search for the application created earlier.
  4. From the menu, navigate to the **Provisioning** page of your application.

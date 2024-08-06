@@ -20,6 +20,8 @@ Organizations can take advantage of the Microsoft Graph API integrations to aggr
 
 The three reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Protection** > **Identity Protection**.
 
+> [!VIDEO https://www.youtube.com/embed/5mf72Vf40WU?si=RrM-CUEQPSQb8m5l]
+
 ## Navigating the reports
 
 Each report launches with a list of all detections for the period shown at the top of the report. Each report allows for the addition or removal of columns based on administrator preference. Administrators can choose to download the data in .CSV or .JSON format. Reports can be filtered using the filters across the top of the report.
@@ -41,9 +43,9 @@ A user becomes a risky user when:
 
 ### How to investigate risky users? 
 
-To view and investigate a user’s risky sign-ins, select the “Recent risky sign-ins” tab or the “Users risky sign-ins” link. 
+To view and investigate a user’s risky sign-ins, select the "Recent risky sign-ins" tab or the "Users risky sign-ins" link. 
 
-To view and investigate risks on a user’s account, select the “Detections not linked to a sign-in” tab or the “User’s risk detections” link. 
+To view and investigate risks on a user’s account, select the "Detections not linked to a sign-in" tab or the "User’s risk detections" link. 
 
 The Risk history tab also shows all the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user’s risk and admin remediation actions that lowered the user’s risk. View it to understand how the user’s risk changed. 
 
@@ -115,7 +117,7 @@ With the information provided by the risk detections report, administrators can 
 Administrators can then choose to return to the user's risk or sign-ins report to take actions based on information gathered.
 
 > [!NOTE] 
-> Our system might detect that the risk event that contributed to the risk user risk score was a false positives or the user risk was remediated with policy enforcement such as completing an MFA prompt or secure password change. Therefore our system will dismiss the risk state and a risk detail of “AI confirmed sign-in safe” will surface and it will no longer contribute to the user’s risk. 
+> Our system might detect that the risk event that contributed to the risk user risk score was a false positives or the user risk was remediated with policy enforcement such as completing an MFA prompt or secure password change. Therefore our system will dismiss the risk state and a risk detail of "AI confirmed sign-in safe" will surface and it will no longer contribute to the user’s risk. 
 
 ## Investigation framework
 

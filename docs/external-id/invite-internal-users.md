@@ -51,7 +51,7 @@ You can use the Microsoft Entra admin center, PowerShell, or the invitation API 
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Find the user in the list or use the search box. Then select the user.
 1. In the **Overview** tab, under **My Feed**, select **Convert to external user**. 

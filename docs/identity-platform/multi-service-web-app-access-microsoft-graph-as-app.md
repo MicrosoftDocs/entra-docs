@@ -8,7 +8,7 @@ ms.custom: azureday1
 ms.date: 02/17/2024
 ms.devlang: csharp
 ms.reviewer: stsoneff
-ms.service: app-service
+ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
 services: microsoft-graph, app-service-web

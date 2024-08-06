@@ -19,19 +19,19 @@ The Global Secure Access dashboard provides you with visualizations of the traff
 
 For more information, see [Global Secure Access dashboard](concept-traffic-dashboard.md).
 
-## Audit logs
+## Audit logs (preview)
 
 The Microsoft Entra audit log is a valuable source of information when researching or troubleshooting changes to your Microsoft Entra environment. Changes related to Global Secure Access are captured in the audit logs in several categories, such as filtering policy, forwarding profiles, remote network management, and more.
 
 For more information, see [Global Secure Access audit logs (preview)](how-to-access-audit-logs.md).
 
-## Traffic logs
+## Traffic logs (preview)
 
-The Global Secure Access traffic logs (preview) provide a summary of the network connections and transactions that are occurring in your environment. These logs look at *who* accessed *what* traffic from *where* to *where* and with what *result*. The traffic logs provide a snapshot of all connections in your environment and breaks that down into traffic that applies to your traffic forwarding profiles. The logs details provide the traffic type destination, source IP, and more.
+The Global Secure Access traffic logs provide a summary of the network connections and transactions that are occurring in your environment. These logs look at *who* accessed *what* traffic from *where* to *where* and with what *result*. The traffic logs provide a snapshot of all connections in your environment and breaks that down into traffic that applies to your traffic forwarding profiles. The logs details provide the traffic type destination, source IP, and more.
 
 For more information, see [Global Secure Access traffic logs (preview)](how-to-view-traffic-logs.md).
 
-## Enriched Office 365 logs
+## Enriched Office 365 logs (preview)
 
 The *Enriched Office 365 logs* provide you with the information you need to gain insights into the performance, experience, and availability of the Microsoft 365 apps your organization uses. You can integrate the logs with a Log Analytics workspace or third-party SIEM tool for further analysis.
 
@@ -43,7 +43,7 @@ For more information, see [Enriched Office 365 logs](how-to-view-enriched-logs.m
 
 **Traffic Logs and Remote Network Health Logs:** These logs are retained within the system for 30 days. This duration allows for ample time to review and analyze recent activities and network health status.
 
-**Audit Logs:** The retention period for Audit Logs varies depending on your Microsoft Entra ID license. The table provides e breakdown:
+**Audit Logs:** The retention period for Audit Logs varies depending on your Microsoft Entra ID license. The table provides a breakdown:
 
 |Report Type	| Microsoft Entra ID Free	| Microsoft Entra ID P1	| Microsoft Entra ID P2 |
 |----------|-----------|------------|------------|
@@ -52,10 +52,6 @@ For more information, see [Enriched Office 365 logs](how-to-view-enriched-logs.m
 **Office Logs:** Office Logs are maintained for a shorter duration, up to only 24 hours. 
 
 **Exporting and Storing Logs for Longer Durations:** As a customer, you have the flexibility to export these logs through the diagnostic settings feature. Exporting logs allows you to maintain records for more extended periods beyond the default retention times. This can be crucial for compliance, auditing, and in-depth analysis purposes. 
-
-
-
-
 
 ## Next steps
 

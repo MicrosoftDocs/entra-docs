@@ -26,7 +26,8 @@
     "*-mvp-*",
     "*september-october-november*",
     "product-azure-app-service",
-    "invalid-product-microsoft-visual-studio-vs"
+    "invalid-product-microsoft-visual-studio-vs",
+    "casing-prefixes-0026"
   ],
   "PreloadTOCFiles": [
   ],

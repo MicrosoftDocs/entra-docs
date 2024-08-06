@@ -23,7 +23,7 @@ Complete the [Configure initial product](sse-deployment-guide-intro.md#configure
 
 The connector server communicates with Microsoft's Security Service Edge Solution as the gateway to your corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). 
 
-1. On the connector server, open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Global Secure Access (Preview)** > **Connect** > **Connectors**  and then click **Enable Private Network connectors**. Click **Download connector service**.
+1. On the connector server, open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Global Secure Access** > **Connect** > **Connectors**  and then click **Enable Private Network connectors**. Click **Download connector service**.
    
      :::image type="content" source="media/sse-deployment-guide-private-access/enable-private-network-connectors.png" alt-text="Screenshot of Global Secure Access, Connect, Connectors, Private Network Connector, Private Network Connector Download window." lightbox="media/sse-deployment-guide-private-access/enable-private-network-connectors-extended.png"::: 
 1. Create a new connector group for your Private Network Connector.
@@ -36,7 +36,7 @@ In this guide, we use a new connector group with one connector server. In a prod
 
 Microsoft Entra Private Access supports transmission control protocol (TCP) applications using any ports. To connect to the application server using RDP (TCP port 3389) over the internet, complete the following steps:
 1. From the connector server, verify that you can remote desktop into the application server.
-1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) and then go to **Global Secure Access (preview)** > **Applications** > **Enterprise applications** > **+ New Application**.
+1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) and then go to **Global Secure Access** > **Applications** > **Enterprise applications** > **+ New Application**.
                                            
      :::image type="content" source="media/sse-deployment-guide-private-access/enterprise-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications window." lightbox="media/sse-deployment-guide-private-access/enterprise-applications-extended.png":::
 1. Enter a **Name** (such as Server1) and select the new connector group. Click **+Add application segment**. Enter the **IP address** of the application server and port 3389.
@@ -122,8 +122,6 @@ You can monitor applications accessed via Microsoft Entra Private Access via the
 
  > [!NOTE]
  > The IP Address listed in the **sourceIp** section is the public IP address of the client and not the IP Address of the Microsoft's Security Service Edge Solution Network.
-
-[!INCLUDE [Public preview important note](~/global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
-title: Group-based licensing additional scenarios
-description: More scenarios for Microsoft Entra group-based licensing
+title: Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID
+description: More scenarios limitations, and known issues for Microsoft Entra group-based licensing
 
 keywords: Azure AD licensing
 author: barclayn
@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 07/30/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -44,9 +44,9 @@ You can use group-based licensing with any security group, including dynamic gro
 You can assign the attribute on-premises and sync it with Microsoft Entra ID, or you can manage the attribute directly in the cloud. 
 
 > [!WARNING]
-> Use caution when modifying an existing group’s membership rule. When a rule is changed, the membership of the group will be re-evaluated and users who no longer match the new rule will be removed (users who still match the new rule will not be affected during this process). Those users will have their licenses removed during the process which may result in loss of service, or in some cases, loss of data.
+> Use caution when modifying an existing group’s membership rule. When a rule is changed, the membership of the group is re-evaluated and users who no longer match the new rule are removed (users who still match the new rule aren't affected during this process). Those users will have their licenses removed during the process which may result in loss of service, or in some cases, loss of data.
 >
-> If you have a large dynamic group you depend on for license assignment, consider validating any major changes on a smaller test group before applying them to the main group.
+> If you have a large dynamic group you depend on for license assignment, consider validating any major changes on a smaller test group before applying them to the main group. If you encounter errors during your test, see [Resolve group license problems](licensing-groups-resolve-problems.md).
 
 ## Multiple groups and multiple licenses
 

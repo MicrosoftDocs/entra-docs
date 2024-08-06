@@ -1,6 +1,6 @@
 ---
-title: Overview - External ID in workforce tenants
-description: Microsoft Entra B2B collaboration supports guest user access so you can securely share resources and collaborate with external partners.
+title: Workforce Tenant Overview
+description: Learn about B2B collaboration for sharing apps with external identities, business partners, and guests, using External ID for authentication and identity access management.
 
 ms.service: entra-external-id
 ms.topic: overview
@@ -8,12 +8,12 @@ ms.date: 04/29/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 ms.collection: M365-identity-device-management
 # Customer intent: As an administrator managing B2B collaboration, I want to easily invite guest users from the Microsoft Entra admin center, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.
 ---
 
-# Overview: Collaborate with guests using External ID in your workforce tenant
+# Overview: B2B collaboration with external guests for your workforce
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 

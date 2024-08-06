@@ -91,7 +91,6 @@ Find the latest version and release notes:
 * [`microsoft-authentication-library-for-java`](https://github.com/AzureAD/microsoft-authentication-library-for-java/releases)
 * [`microsoft-authentication-library-for-objc`](https://github.com/AzureAD/microsoft-authentication-library-for-objc/releases)
 * [`microsoft-authentication-library-for-android`](https://github.com/AzureAD/microsoft-authentication-library-for-android/releases)
-* [`microsoft-authentication-library-for-js`](https://github.com/AzureAD/microsoft-authentication-library-for-js/releases)
 * [`microsoft-identity-web`](https://github.com/AzureAD/microsoft-identity-web/releases)
 
 ## Resilient patterns for token handling

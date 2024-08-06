@@ -1,6 +1,6 @@
 ---
-title: Federation with a SAML/WS-Fed identity provider (IdP) for B2B
-description: Directly federate with a SAML or WS-Fed identity provider so guests can sign in to your Microsoft Entra apps
+title: SAML/WS-Fed Federation
+description: Set up direct federation with SAML 2.0 or WS-Fed identity providers (IdP) so guests can sign in with their own work accounts. Understand attributes and claims required for federation.
 
  
 ms.service: entra-external-id
@@ -10,12 +10,12 @@ ms.date: 06/05/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
-# Federation with SAML/WS-Fed identity providers for guest users
+# Federation with SAML/WS-Fed identity providers
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
@@ -210,7 +210,7 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then select **Add new** > **SAML/WS-Fed**.
 
@@ -271,7 +271,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 
 <!--TODO:::image type="content" source="media/direct-federation/new-saml-wsfed-idp-list-multi.png" alt-text="Screenshot showing an identity provider in the SAML WS-Fed list.":::-->
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab.
 1. Scroll to an identity provider in the list or use the search box.
@@ -303,7 +303,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 You can remove your federation configuration. If you do, federation guest users who have already redeemed their invitations can no longer sign in. But you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
 To remove a configuration for an IdP in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then scroll to the identity provider in the list or use the search box.
 1. Select the link in the **Domains** column to view the IdP's domain details.

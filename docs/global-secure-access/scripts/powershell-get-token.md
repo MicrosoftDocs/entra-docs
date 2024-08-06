@@ -43,7 +43,7 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 Set-ExecutionPolicy UnRestricted -Force
 #
 Write-Output "------------------------------------------------------------------"
-Write-Output "Access Token that you will aquire will be available in C:\token.txt."
+Write-Output "Access Token that you will acquire will be available in C:\token.txt."
 Write-Output "------------------------------------------------------------------"
 # The script will use a temp folder on C Drive. First it will remove the folder and create a new folder to ensure its empty.
 $tempPath = "C:\temp"
@@ -63,7 +63,7 @@ Invoke-WebRequest https://download.msappproxy.net/Subscription/d3c8b69d-6bf7-42b
 # Set the prompt path to C:\temp
 cd "C:\temp"
 
-# Quiet Registration of the Connector. This step will provide the required Module for aquiring the token. 
+# Quiet Registration of the Connector. This step will provide the required Module for acquiring the token. 
 # At the end of this step, you should see 2 folders under C:\Program Files. 1) Microsoft Entra private network connector 2) Microsoft Entra private network connector updater
 # These folders contains the required modules needed for getting the token. 
 .\MicrosoftEntraPrivateNetworkConnectorInstaller.exe REGISTERCONNECTOR="false" /q
@@ -132,10 +132,11 @@ Write-Output "Please ensure no additional spaces are introduced when copying tok
 Write-Output "---------------------------------------"
 
 # Set the prompt path to C:\
+
 cd "C:\"
 
 # Uninstall the Connector from your machine.
-# You can do so programatically (below) or manually by double clicking C:\temp\MicrosoftEntraPrivateNetworkConnectorInstaller.exe and choose Uninstall. 
+# You can do so programmatically (below) or manually by double clicking C:\temp\MicrosoftEntraPrivateNetworkConnectorInstaller.exe and choose Uninstall. 
 # Note that if the Connector service is not uninstalled properly, next iteration can fail on this machine.  
 
 Write-Output "---------------------------------------"
@@ -153,7 +154,7 @@ Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector" -
 Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector updater" -Recurse
 
 Write-Output "---------------------------------------"
-Write-Output "Access Token that you aquired is available in C:\token.txt. "
+Write-Output "Access Token that you acquired is available in C:\token.txt. "
 Write-Output "---------------------------------------"
 
 } else {

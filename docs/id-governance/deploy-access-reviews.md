@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 04/09/2024
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As an IT admin, I want to ensure access to resources is appropriate and governed.
@@ -24,7 +24,7 @@ ms.reviewer: markwahl-msft
 
   ![Diagram that shows the access reviews flow.](./media/deploy-access-review/1-planning-review.png)
 
-Access reviews are an [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md), lifecycle workflows, provisioning, and [terms of use](../identity/conditional-access/terms-of-use.md). Together, they help you address these four questions:
+Access reviews are a [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md), lifecycle workflows, provisioning, and [terms of use](../identity/conditional-access/terms-of-use.md). Together, they help you address these four questions:
 
 * Which users should have access to which resources?
 * What are those users doing with that access?
@@ -33,7 +33,7 @@ Access reviews are an [Microsoft Entra ID Governance](identity-governance-overvi
 
 Planning your access reviews deployment is essential to make sure you achieve your desired governance strategy for users in your organization.
 
-### Key benefits
+## Key benefits
 
 The key benefits of enabling access reviews are:
 
@@ -46,7 +46,7 @@ The key benefits of enabling access reviews are:
 
 The following videos help you learn about access reviews:
 
-* [What are access reviews in Microsoft Entra ID?](https://youtu.be/kDRjQQ22Wkk)
+* [What are access reviews in Microsoft Entra ID?](https://youtu.be/VSl1TVITcQ8)
 * [How to create access reviews in Microsoft Entra ID](https://youtu.be/6KB3TZ8Wi40)
 * [How to create automatic access reviews for all guest users with access to Microsoft 365 groups in Microsoft Entra ID](https://www.youtube.com/watch?v=3D2_YW2DwQ8)
 * [How to enable access reviews in Microsoft Entra ID](https://youtu.be/X1SL2uubx9M)
@@ -396,7 +396,7 @@ Follow the instructions in the articles listed in the table.
 
 | How-to articles | Description |
 | - | - |
- [Create access reviews](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| Create access reviews for privileged Microsoft Entra roles in PIM. |
+| [Create access reviews](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| Create access reviews for privileged Microsoft Entra roles in PIM. |
 | [Self-review your access](../id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| If you're assigned to an administrative role, approve or deny access to your role. |
 | [Complete an access review](../id-governance/privileged-identity-management/pim-complete-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| View an access review and apply the results. |
 

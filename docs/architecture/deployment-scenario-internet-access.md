@@ -61,7 +61,7 @@ This section defines the requirements for the scenario solution.
 
 ### Permissions
 
-Administrators who interact with Global Secure Access preview features require the Global Secure Access Administrator and Application Administrator roles.
+Administrators who interact with Global Secure Access features require the Global Secure Access Administrator and Application Administrator roles.
 
 Conditional Access (CA) policy configuration requires the Conditional Access Administrator or Security Administrator role. Some features might require more roles.
 
@@ -69,7 +69,7 @@ Identity Governance configuration requires at least the Identity Governance Admi
 
 ### Licenses
 
-To implement all the steps in this scenario, you need Microsoft Entra ID P1 for Global Secure Access (while the product is in Public Preview) and Microsoft Entra ID Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+To implement all the steps in this scenario, you need Global Secure Access and Microsoft Entra ID Governance licenses. You can [purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about Global Secure Access licensing, see the licensing section of [What is Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md).
 
 ### Users and devices prerequisites
 
@@ -89,8 +89,8 @@ To successfully deploy and test this scenario, configure for these prerequisites
 In this section, we activate Global Secure Access through the Microsoft Entra admin center. We then set up the required initial configurations for the scenario.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
-1. Browse to **Global Secure Access (preview)** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features.
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
+1. Browse to **Global Secure Access** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features.
+1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**. Toggle on **Private access profile**. Traffic forwarding enables you to configure the type of network traffic to tunnel through Microsoft's Security Service Edge Solution services. Set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage traffic types.
    - The **Microsoft 365 access profile** is for Microsoft Entra Internet Access for Microsoft 365.
    - The **Private access profile** is for Microsoft Entra Private Access.
    - The **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices with Global Secure Access Client installation.
@@ -104,7 +104,7 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 1. Ensure that the Windows device is Microsoft Entra joined or hybrid joined.
 1. Sign in to the Windows device with a Microsoft Entra user with local admin privileges.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
-1. Browse to **Global Secure Access (preview)** > **Connect** > **Client Download**. Select **Download client**. Complete the installation.
+1. Browse to **Global Secure Access** > **Connect** > **Client Download**. Select **Download client**. Complete the installation.
 
    :::image type="content" source="media/deployment-scenario-internet-access/client-download-inline.png" alt-text="Screenshot of Client download showing the Windows Download Client control." lightbox="media/deployment-scenario-internet-access/client-download-expanded.png":::
 
@@ -127,7 +127,7 @@ In this section, we block access to inappropriate sites for all users in the org
 ### Create baseline web filtering policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
-1. Browse to **Global Secure Access (Preview)** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
+1. Browse to **Global Secure Access** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
 
    [ ![Screenshot of Web content filtering policies with a red box highlighting the Create policy control to create baseline web filtering policy.](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-inline.png)](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-expanded.png#lightbox)
 
@@ -172,7 +172,7 @@ In this section, we block access to inappropriate sites for all users in the org
 ### Configure baseline security profile
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
-1. Browse to **Global Secure Access (Preview)** > **Secure** > **Security profiles**.
+1. Browse to **Global Secure Access** > **Secure** > **Security profiles**.
 1. Select **Baseline Profile**.
 1. On **Basics**, set **State** to enabled.
 1. Select **Save**.
@@ -191,7 +191,7 @@ In this section, we create a security profile that allows access to social netwo
 ### Create social networking web filtering policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
-1. Browse to **Global Secure Access (Preview)** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
+1. Browse to **Global Secure Access** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
 
    [ ![Screenshot of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png#lightbox)
 
@@ -218,7 +218,7 @@ In this section, we create a security profile that allows access to social netwo
 ### Create social networking security policy profile
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
-1. Browse to **Global Secure Access (Preview)** > **Secure** > **Security profiles**. Select **Create profile**.
+1. Browse to **Global Secure Access** > **Secure** > **Security profiles**. Select **Create profile**.
 
    [ ![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 
@@ -257,7 +257,7 @@ In this section, we create a Conditional Access (CA) policy that enforces the **
    - **Include** > **Select users and groups** > Users and groups
 1. Select your test group (such as *Internet Access -- Allow Social Networking sites*). Select **Select**.
 1. **Target resources**
-   - **Select what this policy applies to** > Global Secure Access (Preview)
+   - **Select what this policy applies to** > Global Secure Access
    - **Select the traffic profiles this policy applies to** > Internet traffic
 1. Leave **Grant** at its default settings to grant access so that your defined security profile defines block functionality.
 1. In **Session**, select **Use Global Secure Access security profile**.
@@ -272,7 +272,7 @@ In this section, we create a new security profile that allows access to hacking 
 ### Create hacking web filtering policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
-1. Browse to **Global Secure Access (Preview)** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
+1. Browse to **Global Secure Access** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
 
    [ ![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 
@@ -300,7 +300,7 @@ In this section, we create a new security profile that allows access to hacking 
 ### Create hacking security policy profile
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (Preview)** > **Secure** > **Security profiles**. Select **Create profile**.
+1. Browse to **Global Secure Access** > **Secure** > **Security profiles**. Select **Create profile**.
 
    [ ![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 
@@ -339,7 +339,7 @@ In this section, we create a Conditional Access policy that enforces the **Allow
 1. **Include** > **Select users and groups** > Users and groups
 1. Select your test group (such as *Internet Access -- Allow Hacking sites*) > select **Select**.
 1. **Target resources**
-   - **Select what this policy applies to** > Global Secure Access (Preview)
+   - **Select what this policy applies to** > Global Secure Access
    - **Select the traffic profiles this policy applies to** > Internet traffic
 1. Leave **Grant** at its default settings to grant access so that your defined security profile defines block functionality.
 1. In the **Session** dialog box, select **Use Global Secure Access security profile**.

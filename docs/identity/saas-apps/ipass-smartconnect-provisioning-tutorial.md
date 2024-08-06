@@ -71,7 +71,7 @@ To configure iPass SmartConnect for automatic user provisioning with Microsoft E
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in iPass SmartConnect based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
->  You may also choose to enable SAML-based single sign-on for iPass SmartConnect, following the instructions provided in the [iPass SmartConnect Single sign-on tutorial](ipasssmartconnect-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+>  You may also choose to enable SAML-based single sign-on for iPass SmartConnect, following the instructions provided in the [iPass SmartConnect Single sign-on tutorial](ipasssmartconnect-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-ipass-smartconnect-in-azure-ad'></a>
 
