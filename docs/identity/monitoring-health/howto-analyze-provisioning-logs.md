@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 04/15/2024
+ms.date: 08/06/2024
 ms.author: sarahlipsey
 ms.reviewer: arvinh
 
@@ -151,6 +151,7 @@ Use the following table to better understand how to resolve errors that you find
 
 | Error code | Cause | Solution |
 | --- | --- | --- |
+|AzureActiveDirectoryCannotUpdateObjectsOriginatedInExternalService|The source of authority for the user is Exchange Online. The provisioning service cannot update one or more exchange attributes on the user (ex: extensionAttribute 1 - 15). This impacts users that existed in the tenant when the dirSyncEnabled property changed from "True" to "False." |Update the attribute directly in [exchange online](https://learn.microsoft.com/powershell/module/exchange/set-mailuser?view=exchange-ps). For example: ```Set-MailUser -Identity CloudMailUser5 -CustomAttribute2 "Updated with EXO PowerShell"``` |
 | Microsoft Entra ID<br/>CannotUpdateObjectsOriginated<br/>InExternalService | The synchronization engine couldn't update one or more user properties in the target tenant.<br/><br/>The operation failed in Microsoft Graph API because of Source of Authority (SOA) enforcement. Currently, the following properties show up in the list:<br/>`Mail`<br/>`showInAddressList` | In some cases (for example when `showInAddressList` property is part of the user update), the synchronization engine might automatically retry the (user) update without the offending property. Otherwise, you'll need to update the property directly in the target tenant. |
 | AzureDirectory<br/>B2BManagementPolicy<br/>CheckFailure | The cross-tenant synchronization policy allowing automatic redemption failed.<br/><br/>The synchronization engine checks to ensure that the administrator of the target tenant created an inbound cross-tenant synchronization policy allowing automatic redemption. The synchronization engine also checks if the administrator of the source tenant enabled an outbound policy for automatic redemption. | Ensure that the automatic redemption setting was enabled for both the source and target tenants. For more information, see [Automatic redemption setting](../multi-tenant-organizations/cross-tenant-synchronization-overview.md#automatic-redemption-setting). |
 | Microsoft Entra ID<br/>QuotaLimitExceeded | The number of objects in the tenant exceeds the directory limit.<br/><br/>Microsoft Entra ID has limits for the number of objects that can be created in a tenant. | Check whether the quota can be increased. For information about the directory limits and steps to increase the quota, see [Microsoft Entra service limits and restrictions](../users/directory-service-limits-restrictions.md). |
