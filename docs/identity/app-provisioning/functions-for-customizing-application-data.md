@@ -1122,7 +1122,10 @@ When **source** value matches a **key**, returns **value** for that **key**. If 
 
 > [!CAUTION] 
 > Issue: The provisioning service incorrectly set an attribute value to null in the target system. <br>
-> Root cause: If an attribute on a user is updated in the source system (Microsoft Entra ID), the provisioning service will make the necessary updates in the target system. However, if there is an attribute mapping that uses a switch statement and there is no change to the attribute in the source tenant, but there is a change to another attribute in the mappings, the switch statement is evaluated as "null." <br>
+> Root cause: If an attribute on a user is updated in the source system (Microsoft Entra ID), the provisioning service will make the necessary updates in the target system. However, if there is an attribute mapping that uses a switch statement and there is no change to the attribute in the source tenant, but there is a change to another attribute in the mappings, the switch statement is evaluated as "null." For example: <br>
+1. Create a direct mapping of displayName to displayName <br>
+2. Create an expression using a switch statement on the companyName. <br>
+3. If there is an update to the displayName of the user, but not the companyName, the switch statement will be evaluated to null and the companyName will be set to null for the user in the target tenant. <br>
 > Resolution: Use an IIF statement instead of a switch statement to prevent unexpected null values. switch([companyName], "External", "Company A", "A", "Company B", "B") --> IIF([companyName] = "Company A", "A", IIF([companyName] = "Company B", "B", "External"))
 
 **Parameters:** 
