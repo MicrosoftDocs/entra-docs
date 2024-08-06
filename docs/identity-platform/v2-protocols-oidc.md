@@ -15,7 +15,7 @@ ms.topic: reference
 
 # OpenID Connect on the Microsoft identity platform
 
-OpenID Connect (OIDC) extends the OAuth 2.0 authorization protocol for use as an additional authentication protocol. You can use OIDC to enable single sign-on (SSO) between your OAuth-enabled applications by using a security token called an *ID token*. 
+OpenID Connect (OIDC) extends the OAuth 2.0 authorization protocol for use as another authentication protocol. You can use OIDC to enable single sign-on (SSO) between your OAuth-enabled applications by using a security token called an *ID token*. 
 
 The full specification for OIDC is available on the OpenID Foundation's website at [OpenID Connect Core 1.0 specification](https://openid.net/specs/openid-connect-core-1_0.html).
 
@@ -43,7 +43,7 @@ Or:
 1. Select **Identity** > **Applications** > **App registrations** > *\<your application\>* > **Manifest**.
 1. Set `oauth2AllowIdTokenImplicitFlow` to `true` in the app registration's [application manifest](reference-app-manifest.md).
 
-If ID tokens are not enabled for your app and one is requested, the Microsoft identity platform returns an `unsupported_response` error similar to:
+If ID tokens aren't enabled for your app and one is requested, the Microsoft identity platform returns an `unsupported_response` error similar to:
 
 > *The provided value for the input parameter 'response_type' isn't allowed for this client. Expected value is 'code'*.
 
@@ -138,12 +138,12 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `tenant` | Required | You can use the `{tenant}` value in the path of the request to control who can sign in to the application. The allowed values are `common`, `organizations`, `consumers`, and tenant identifiers. For more information, see [protocol basics](./v2-protocols.md#endpoints). Critically, for guest scenarios where you sign a user from one tenant into another tenant, you *must* provide the tenant identifier to correctly sign them into the resource tenant.|
 | `client_id` | Required | The **Application (client) ID** that the [Microsoft Entra admin center – App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) experience assigned to your app. |
 | `response_type` | Required | Must include `id_token` for OpenID Connect sign-in. |
-| `redirect_uri` | Recommended | The redirect URI of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect URIs you registered in the portal, except that it must be URL-encoded. If not present, the endpoint will pick one registered `redirect_uri` at random to send the user back to. |
+| `redirect_uri` | Recommended | The redirect URI of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect URIs you registered in the portal, except that it must be URL-encoded. If not present, the endpoint picks one registered `redirect_uri` at random to send the user back to. |
 | `scope` | Required | A space-separated list of scopes. For OpenID Connect, it must include the scope `openid`, which translates to the **Sign you in** permission in the consent UI. You might also include other scopes in this request for requesting consent. |
 | `nonce` | Required | A value generated and sent by your app in its request for an ID token. The same `nonce` value is included in the ID token returned to your app by the Microsoft identity platform. To mitigate token replay attacks, your app should verify the `nonce` value in the ID token is the same value it sent when requesting the token. The value is typically a unique, random string. |
 | `response_mode` | Recommended | Specifies the method that should be used to send the resulting authorization code back to your app. Can be `form_post` or `fragment`. For web applications, we recommend using `response_mode=form_post`, to ensure the most secure transfer of tokens to your application. |
-| `state` | Recommended | A value included in the request that also will be returned in the token response. It can be a string of any content you want. A randomly generated unique value typically is used to [prevent cross-site request forgery attacks](https://tools.ietf.org/html/rfc6749#section-10.12). The state also is used to encode information about the user's state in the app before the authentication request occurred, such as the page or view the user was on. |
-| `prompt` | Optional | Indicates the type of user interaction that is required. The only valid values at this time are `login`, `none`, `consent`, and `select_account`. The `prompt=login` claim forces the user to enter their credentials on that request, which negates single sign-on. The `prompt=none` parameter is the opposite, and should be paired with a `login_hint` to indicate which user must be signed in. These parameters ensure that the user isn't presented with any interactive prompt at all. If the request can't be completed silently via single sign-on, the Microsoft identity platform returns an error. Causes include no signed-in user, the hinted user isn't signed in, or multiple users are signed in but no hint was provided. The `prompt=consent` claim triggers the OAuth consent dialog after the user signs in. The dialog asks the user to grant permissions to the app. Finally, `select_account` shows the user an account selector, negating silent SSO but allowing the user to pick which account they intend to sign in with, without requiring credential entry. You can't use both `login_hint` and `select_account`.|
+| `state` | Recommended | A value included in the request that is also returned in the token response. It can be a string of any content you want. A randomly generated unique value typically is used to [prevent cross-site request forgery attacks](https://tools.ietf.org/html/rfc6749#section-10.12). The state also is used to encode information about the user's state in the app before the authentication request occurred, such as the page or view the user was on. |
+| `prompt` | Optional | Indicates the type of user interaction that is required. The only valid values at this time are `login`, `none`, `consent`, and `select_account`. The `prompt=login` claim forces the user to enter their credentials on that request, which negates single sign-on. The `prompt=none` parameter is the opposite, and should be paired with a `login_hint` to indicate which user must be signed in. These parameters ensure that the user isn't presented with any interactive prompt at all. If the request can't be completed silently via single sign-on, the Microsoft identity platform returns an error. Causes include no signed-in user, the hinted user isn't signed in, or multiple users are signed in but no hint was provided. The `prompt=consent` claim triggers the OAuth consent dialog after the user signs in. The dialog asks the user to grant permissions to the app. Finally, `select_account` shows the user an account selector, negating single sign-out but allowing the user to pick which account they intend to sign in with, without requiring credential entry. You can't use both `login_hint` and `select_account`.|
 | `login_hint` | Optional | You can use this parameter to prefill the username and email address field of the sign-in page for the user, if you know the username ahead of time. Often, apps use this parameter during reauthentication, after already extracting the `login_hint` [optional claim](./optional-claims.md) from an earlier sign-in. |
 | `domain_hint` | Optional | The realm of the user in a federated directory.  This skips the email-based discovery process that the user goes through on the sign-in page, for a slightly more streamlined user experience. For tenants that are federated through an on-premises directory like AD FS, this often results in a seamless sign-in because of the existing login session. |
 
@@ -273,7 +273,7 @@ Response parameters mean the same thing regardless of the flow used to acquire t
 
 | Parameter | Description |
 | --- | --- |
-| `access_token` | The token that will be used to call the UserInfo endpoint.|
+| `access_token` | The token that is used to call the UserInfo endpoint.|
 | `token_type` | Always "Bearer" |
 | `expires_in`| How long until the access token expires, in seconds. |
 | `scope` | The permissions granted on the access token. Because the UserInfo endpoint is hosted on Microsoft Graph, it's possible for `scope` to contain others previously granted to the application (for example, `User.Read`). |
@@ -329,44 +329,43 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 | `logout_hint` | Optional | Enables sign-out to occur without prompting the user to select an account. To use `logout_hint`, enable the `login_hint` [optional claim](./optional-claims.md) in your client application and use the value of the `login_hint` optional claim as the `logout_hint` parameter. Don't use UPNs or phone numbers as the value of the `logout_hint` parameter. 
 
 > [!NOTE]
-> After successful sign-out, the active sessions will be set to inactive. If a valid Primary Refresh Token (PRT) exists for the signed-out user and a new sign-in is executed, SSO will be interrupted and user will see a prompt with an account picker. If the option selected is the connected account that refers to the PRT, sign-in will proceed automatically without the need to insert fresh credentials.  
+> After successful sign-out, the active sessions will be set to inactive. If a valid Primary Refresh Token (PRT) exists for the signed-out user and a new sign-in is executed, single sign-out will be interrupted and user will see a prompt with an account picker. If the option selected is the connected account that refers to the PRT, sign-in will proceed automatically without the need to insert fresh credentials.  
 
 ## Single sign-out
 
-When you redirect the user to the `end_session_endpoint` in an application, the Microsoft identity platform will end the user session for this application. However, the user may still be signed in to other applications that use the same Microsoft accounts for authentication. 
+When you redirect the user to the `end_session_endpoint` in an application, the Microsoft identity platform ends the user session for this application. However, the user may still be signed in to other applications that use the same Microsoft accounts for authentication. 
 
-When a user has signed into multiple web or SPA applications registered in this directory (also known as a tenant) SSO allows this user to sign out of all applications instantly by signing out in either one of the applications.
+When a user has signed into multiple web or SPA applications registered in this directory (also known as a tenant) single sign-out allows this user to sign out of all applications instantly by signing out in either one of the applications.
 
-To enable SSO for your Entra application, you should use the OpenID Connect front channel logout feature. This feature allows an application to notify other applications that the user has logged out. When the user logs out of one application, the Microsoft identity platform will send an HTTP GET request to the front-channel logout URL of every application that the user is currently signed in to. 
+To enable single sign-out for your Entra application, you should use the OpenID Connect front channel logout feature. This feature allows an application to notify other applications that the user has logged out. When the user logs out of one application, the Microsoft identity platform sends an HTTP GET request to the front-channel logout URL of every application that the user is currently signed in to. 
 
-These applications must respond to this request by performing the following two actions for SSO to be successful:
+These applications must respond to this request by performing the following two actions for single sign-out to be successful:
 
 1. Clear any session that identifies the user.
 1. Applications must respond to this request by clearing any session that identifies the user and returning a `200` response.
 
 ### What is a front channel logout URL?
 
-A front channel logout URL is where your web or SPA application receives the sign out request from the Entra authentication server and performs SSO functionality. Each application has one front channel logout URL.
+A front channel logout URL is where your web or SPA application receives the sign out request from the Entra authentication server and performs single sign-out functionality. Each application has one front channel logout URL.
 
 ### When should you set a front channel logout URL?
 
-If you or your developer has determined SSO is required for an application, you must set the front channel logout URL for this application’s app registration. Once the front channel logout URL is set for this application’s app registration, the Microsoft identity platform will send an HTTP GET request to the front-channel logout URL of this application when the signed in user has signed out of another application.
+If you or your developer has determined single sign-out is required for an application, you must set the front channel logout URL for this application’s app registration. Once the front channel logout URL is set for this application’s app registration, the Microsoft identity platform sends an HTTP GET request to the front-channel logout URL of this application when the signed in user has signed out of another application.
 
 ## How to set up single sign out using front channel logout feature
 
 To use the front channel logout feature for a set of applications, you must complete the following two tasks:
 
--	Set the front channel logout URL in the [Microsoft entra admin center](https://entra.microsoft.com) for all the applications that should be signed out simultaneously. Each application typically has its own dedicated front channel logout URL.
+-	Set the front channel logout URL in the [Microsoft Entra admin center](https://entra.microsoft.com) for all the applications that should be signed out simultaneously. Each application typically has its own dedicated front channel logout URL.
 -	Edit the applications code so that they listen for an HTTP GET request sent by the Microsoft identity platform to the front channel logout URL, and respond to this request by clearing any session that identifies the user and returning a 200 response.
 
 ### How to choose a front channel logout URL
 
-The front channel logout URL should be a URL that is capable of receiving and responding to HTTP GET requests and should be able to clear any session that identifies the user. Examples of a front channel logout URL could be, but are not limited to, the following:
+The front channel logout URL should be a URL that is capable of receiving and responding to HTTP GET requests and should be able to clear any session that identifies the user. Examples of a front channel logout URL could be, but aren't limited to, the following:
 
 * https://example.com/frontchannel_loout
 * https://example.com/signout
 * https://example.com/logout
-
 
 ## Next steps
 
