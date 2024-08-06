@@ -8,11 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: reference
-<<<<<<< HEAD
-ms.date: 07/28/2024
-=======
 ms.date: 07/19/2024
->>>>>>> ed6c05e74c8d798b33760103aacba0e65ccb57a1
 ms.author: cmulligan
 ms.custom: it-pro
 
