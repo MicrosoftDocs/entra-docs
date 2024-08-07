@@ -98,7 +98,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| purity_roles | user.assignedroles |
 
     > [!NOTE]
-    > Please click [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID and also add Value to your roles manually in Entra side.
+    > Please click [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID and also add Value to your roles manually in Entra side. Edit default roles in the app and update their values as "storage_admin", "ops_admin", "readonly", "array_admin" respectively.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
