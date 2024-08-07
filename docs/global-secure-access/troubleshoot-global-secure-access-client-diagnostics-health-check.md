@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/06/2024
+ms.date: 08/07/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -21,7 +21,7 @@ The Advanced diagnostics Health check runs tests to verify that the Global Secur
 ## Run the health check
 To run a health check for the Global Secure Access client:
 1. Right-click the Global Secure Access client system tray icon and select **Advanced Diagnostics**.
-1. A User Account Control dialog box opens. Select **Yes** to allow the client application to make changes to your device.
+1. The User Account Control dialog box opens. Select **Yes** to allow the client application to make changes to your device.
 1. In the **Global Secure Access Client - Advanced diagnostics** dialog box, select the **Health check** tab. Switching tabs runs the health check.
 
 ### Resolution process
@@ -111,12 +111,12 @@ If this test fails, make sure you're using the most updated forwarding profile o
 1. If the problem still exists, contact Microsoft Support.
 
 ### Break-glass mode disabled
-Break-glass mode prevents the Global Secure Access client from tunneling network traffic to the Global Secure Access cloud service. In Break-glass mode, all traffic profiles in the Global Secure Access portal have been unchecked and the Global Secure Access client isn't expected to tunnel any traffic. 
+Break-glass mode prevents the Global Secure Access client from tunneling network traffic to the Global Secure Access cloud service. In Break-glass mode, all traffic profiles in the Global Secure Access portal are unchecked and the Global Secure Access client isn't expected to tunnel any traffic. 
 
 To set the client to acquire traffic and tunnel that traffic to the Global Secure Access service:
 1. Sign in to the Microsoft Entra admin center as a tenant administrator.
 1. Navigate to Global Secure **Access** > **Connect** > **Traffic forwarding**.
-1. Enable at least one of the traffic profiles to match your organization's needs.
+1. Enable at least one of the traffic profiles that match your organization's needs.
 
 The Global Secure Access client should receive the updated forwarding profile within one hour after you make changes in the portal.
 
@@ -164,8 +164,8 @@ If this test fails, enroll in a new certificate by completing the following step
 1. Check the Global Secure Access client event log for errors.
 1. Run the Health check tests again.
 
-### DNS over HTTPS not supported
-For the Global Secure Access client to acquire network traffic by a fully qualified domain name (FQDN) destination (as opposed to an IP destination), the client needs to read the DNS requests sent by the device to the DNS server. This means that DNS over HTTPS must be *disabled* if the forwarding profile contains FQDN rules.
+### Domain Name System (DNS) over HTTPS not supported
+For the Global Secure Access client to acquire network traffic by a fully qualified domain name (FQDN) destination (as opposed to an IP destination), the client needs to read the DNS requests sent by the device to the DNS server. This means that if the forwarding profile contains FQDN rules, you must disable DNS over HTTPS.
 
 #### Secure DNS disabled in OS
 To disable DNS over HTTPS in Windows, refer to [Secure DNS Client over HTTPS (DoH)](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh.md).
@@ -212,7 +212,7 @@ This check verifies that the client is able to acquire traffic from a fully qual
 
 If the test fails:
 1. Restart the client and test again.
-1. Restart Windows. This might be necessary in rare cases to delete volatile cache.
+1. Restart Windows. This step might be necessary in rare cases to delete volatile cache.
 
 ### Cached token
 This test verifies that the client successfully authenticated to Microsoft Entra.
@@ -223,7 +223,7 @@ If the cached token test fails:
 1. If the sign-in notification appears, select **Sign in**.
 1. If the sign-in notification doesn't appear, check if it is in the Notification Center and select **Sign in**.
 1. Complete the Entra sign-in process using the same tenant that the device is joined to.
-1. Make sure you're connected to the network.
+1. Verify the network connection.
 1. Hover over the system tray icon and verify that the client is **not** disabled by your organization.
 1. Restart the client and wait for a few seconds.
 1. Look for errors in the Event Viewer.
@@ -245,7 +245,7 @@ For more information, see [Guidance for configuring IPv6 in Windows for advanced
 
 
 ### Private access edge hostname resolved by DNS
-If this test fails, the DNS can't resolve the hostnames of the Global Secure Access cloud service, and therefore the service isn't reachable. This could be due to an internet connectivity problem or a DNS server that doesn't resolve public internet hostnames.
+If this test fails, the DNS can't resolve the hostnames of the Global Secure Access cloud service, and therefore the service isn't reachable. This failed test could be due to an internet connectivity problem or a DNS server that doesn't resolve public internet hostnames.
 This test checks all active traffic types: Microsoft 365, Private Access, and Internet Access.
 
 To verify that the hostname resolution works correctly:
@@ -267,11 +267,11 @@ If the test fails:
 1. Try the PowerShell command from another device connected to the internet from a public network.
 
 ### Proxy disabled
-This test checks whether the proxy is configured on the device. If the end-user device is configured to use a proxy for outgoing traffic to the internet, the destination IPs/FQDNs acquired by the client need to be excluded by a Proxy Auto-Configuration (PAC) file or with the Web Proxy Auto-Discovery (WPAD) protocol.
+This test checks whether the proxy is configured on the device. If the end-user device is configured to use a proxy for outgoing traffic to the internet, you must exclude the destination IPs/FQDNs acquired by the client with a Proxy Auto-Configuration (PAC) file or with the Web Proxy Auto-Discovery (WPAD) protocol.
 
 #### Change the PAC file
 Add the FQDNs/IPs to be tunneled to Global Secure Access edge as exclusions in the PAC file, so that HTTP requests for these destinations won’t be redirected to the proxy. (These FQDNs/IPs are also set to be tunneled to Global Secure Access in the forwarding profile.)
-For the client's status health to be shown properly, add the FQDN used for health probing to the exclusions list: edgediagnostic.globalsecureaccess.microsoft.com 
+To show the client's health status properly, add the FQDN used for health probing to the exclusions list: `.edgediagnostic.globalsecureaccess.microsoft.com`.
 
 Example PAC file containing exclusions:
 
@@ -299,7 +299,7 @@ If this test fails:
 1. Check the Event Viewer for errors.
 1. Restart the client and try again.
 
-### Global Secure Access processes healthy (last 24h)
+### Global Secure Access processes healthy (last 24 h)
 If this test fails, it means that at least one process of the client crashed in the last 24 hours.
 
 If all other tests pass, the client should be currently functioning. However, it can be helpful to investigate the process dump file to increase future stability and to better understand why the process crashed.
@@ -308,7 +308,7 @@ To investigate the process dump file when a process crashes:
 1. Configure user mode dumps:
     - Add the following registry key: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps`
     - Add a `REG_SZ DumpFolder` registry value and set its data to the **existing** DumpFolder where you want to save the dump file.
- 1. Reproduce the issue. This creates a new dump file in the selected DumpFolder.
+ 1. Reproduce the issue to create a new dump file in the selected DumpFolder.
  1. Open a ticket for Microsoft Support and attach the dump file and the steps to reproduce the issue.
  1. Review the Event Viewer logs and filter for crash events (Filter current logs: Event ID = 1000).
  :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-filtered-logs.png" alt-text="Screenshot of the Event Viewer showing a filtered log list.":::

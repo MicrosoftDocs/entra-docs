@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/06/2024
+ms.date: 08/07/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -31,6 +31,7 @@ The advanced diagnostics **Overview** tab shows general configuration details ab
 - **Forwarding Profile ID**: The ID of the forwarding profile currently in use by the client.
 - **Forwarding Profile last checked**: The time when the client last checked for an updated forwarding profile.
 - **Client version**: The version of the Global Secure Access client that is currently installed on the device.
+   
 :::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/global-secure-access-client-advanced-diagnostics-overview-tab.png" alt-text="Screenshot showing the Global Secure Access Client - Advanced diagnostics dialog box on the Overview tab.":::
 
 ## Health check tab
@@ -44,9 +45,10 @@ The **Forwarding profile** tab shows the list of current, active rules that are 
 - **Policy tester**: Select to show the active rule for a connection to a specific destination.
 - **Add filter**: Select to set filters to see only a subset of the rules according to a specific set of filter properties.
 - **Columns**: Select to choose the columns to display in the table.
+
 :::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/global-secure-access-client-advanced-diagnostics-forwarding-profile-tab.png" alt-text="Screenshot showing the Global Secure Access Client - Advanced diagnostics dialog box on the Forwarding profile tab.":::
 
-The rules section shows the list of rules grouped by each workload (**M365 rules**, **Private access rules**, **Internet access rules**). You'll only see rules for the workloads activated in your tenant.
+The rules section shows the list of rules grouped by each workload (**M365 rules**, **Private access rules**, **Internet access rules**). This list only includes rules for the workloads activated in your tenant.
 > [!TIP]
 > If a rule contains several destinations (fully qualified domain name (FQDN) or IP range), the rule will span several rows, with one row for each destination.
 
@@ -101,12 +103,14 @@ For each connection, the available columns include:
 - **Flow ID**: The internal ID number for the connection.
 - **Rule ID**: The identifer for the forwarding profile rule used to determine the actions for this connection.
 - **Action**: The action that was taken for this connection; possible actions are:
-    - **Tunnel**: The connection is tunneled by the client to the Global Secure Access service in the cloud.
+    - **Tunnel**: The client tunneled the connection to the Global Secure Access service in the cloud.
     - **Bypass**: The connection goes directly to the destination through the device's network with no intervention by the client.
-    - **Block**: The connection is blocked by the client (only possible in Hardening mode).
+    - **Block**: The client blocked the connection (only possible in Hardening mode).
 - **Hardening**: Indicates whether hardening was applied to this connection; can be Yes or No. Hardening applies when the Global Secure Access service isn't reachable from the device.
 
 ## Advanced log collection tab
 The advanced log collection tab allows for the collection of verbose logs of the client, the operating systems, and the network traffic during a specific period. The logs are archived to a ZIP file that can be sent to the administrator or Microsoft Support for investigation.
 - **Start recording**: Select to begin recording the verbose logs. You need to reproduce the issue while recording.
 - **Stop recording**: After the issue us reproduced, select this button to stop the recording and save the collected logs to a ZIP file. Share the ZIP file with support for troubleshooting assistance.
+
+:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/global-secure-access-client-advanced-advanced-log-collection-tab.png" alt-text="Screenshot showing the Global Secure Access Client - Advanced diagnostics dialog box on the Advanced log collection tab.":::

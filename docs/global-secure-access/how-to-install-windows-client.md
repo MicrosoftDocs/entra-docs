@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/06/2024
+ms.date: 08/07/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -47,7 +47,7 @@ To manually install the Global Secure Access client:
 1. Run the *GlobalSecureAccessClient.exe* setup file. Accept the software license terms.
 1. The client installs and prompts you to sign in with your Microsoft Entra credentials.
 1. Sign in. The connection icon turns green. 
-1. Hover over the connection icon to open the client status notification, which should show as **Connected**.
+1. Hover over the connection icon to open the client status notification, which should show as **Connected**.   
 :::image type="content" source="media/how-to-install-windows-client/global-secure-access-client-installed-connected.png" alt-text="Screenshot showing the client is connected.":::
 
 ## Client actions
@@ -88,7 +88,7 @@ Double-click the Global Secure Access icon to open the client status notificatio
 Known limitations for the current version of the Global Secure Access client include:
 
 ### Secure Domain Name System (DNS)
-The client doesn't currently support secure DNS in its different versions (DNS over HTTPS, DNS over TLS, DNSSEC). For the client to work correctly and acquire network traffic, Secure DNS must be disabled. To disable DNS in the browser, see [DNS over HTTPS not supported](troubleshoot-global-secure-access-client-diagnostics-health-check.md#dns-over-https-not-supported).
+The Global Secure Access client doesn't currently support secure DNS in its different versions, such as DNS over HTTPS (DoH), DNS over TLS (DoT), or DNS Security Extensions (DNSSEC). To configure the client so it can acquire network traffic, you must disable secure DNS. To disable DNS in the browser, see [DNS over HTTPS not supported](troubleshoot-global-secure-access-client-diagnostics-health-check.md#dns-over-https-not-supported).
 
 ### DNS over TCP
 DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. Currently the Global Secure Access client doesn't support DNS port 53 TCP. As a mitigation, disable the browser's DNS client by setting the following registry values:
