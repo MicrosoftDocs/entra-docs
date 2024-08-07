@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 07/26/2024
+ms.date: 08/07/2024
 ms.author: billmath
 ms.custom:
 ---
@@ -70,7 +70,7 @@ AuditLogs
 AuditLogs
 | where parse_json(tostring(TargetResources[1].id)) in ("InputGroupID", "InputGroupID")
 | where ActivityDisplayName == "Add member to group"
-| extend ActorName = tostring(InitiatedBy.user.displayName)
+| extend ActorName = tostring(InitiatedBy.app.displayName)
 | where ActorName != "Azure AD Identity Governance - User Management"
 ```
 
