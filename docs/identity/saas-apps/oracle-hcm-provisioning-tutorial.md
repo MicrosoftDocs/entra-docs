@@ -42,7 +42,7 @@ In this tutorial, we guide you through the steps and best practices for integrat
 
 Before you start integrating Oracle HCM with Microsoft Entra ID using the Inbound Provisioning API, you need to ensure that you have the following prerequisites:
 
-- An [Oracle HCM (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23d/faohb/Human-Capital-Management-Integration-Specialist-JR-16.html#Human_Capital_Management_Integration_Specialist_JR_16_d1e51970) account with privileges to:
+- An Oracle HCM (oracle.com) account with privileges to:
 
   - View and export HCM data.
   - Access the Oracle HCM REST APIs. For this tutorial, we referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
