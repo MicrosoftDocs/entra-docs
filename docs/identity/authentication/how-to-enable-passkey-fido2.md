@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/17/2024
+ms.date: 08/06/2024
 
 ms.author: justinha
 author: justinha
@@ -31,7 +31,7 @@ For more information about passkey authentication, see [Support for FIDO2 authen
 ## Requirements
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md).
-- Compatible [FIDO2 security keys](/entra/identity/authentication/concept-fido2-hardware-vendor) or Microsoft Authenticator.
+- [FIDO2 security keys eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor) or Microsoft Authenticator.
 - Devices that support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
 Passkeys are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).
@@ -87,14 +87,16 @@ There are two ways to get your AAGUID. You can either ask your security key or p
 
 Currently in preview, administrators can use [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision). Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
 
-- The ability to request WebAuthn **creation Options** from Entra ID
-- The ability to register the provisioned security key directly with Entra ID
+- The ability to request WebAuthn **creation Options** from Microsoft Entra ID
+- The ability to register the provisioned security key directly with Microsoft Entra ID
 
 With these new APIs, organizations can build their own clients to provision passkey (FIDO2) credentials on security keys on behalf of a user. To simplify this process, three main steps are required. 
 
-1. **Request** creationOptions for a user: Entra ID returns the necessary data for your client to provision a passkey (FIDO2) credential. This includes information such as user information, relying party ID, credential policy requirements, algorithms, registration challenge and more. 
+1. **Request** creationOptions for a user: Microsoft Entra ID returns the necessary data for your client to provision a passkey (FIDO2) credential. This includes information such as user information, relying party ID, credential policy requirements, algorithms, registration challenge and more. 
 2. **Provision** the passkey (FIDO2) credential with the creation Options: Use the `creationOptions` and a client that supports the Client to Authenticator Protocol (CTAP) to provision the credential. During this step, you need to insert you will need to insert the security key and set a PIN.
-3. **Register** the provisioned credential with Entra ID: Use the formatted output from the provisioning process to provide Microsoft Entra ID the necessary data to register the passkey (FIDO2) credential for the targeted user. 
+3. **Register** the provisioned credential with Microsoft Entra ID: Use the formatted output from the provisioning process to provide Microsoft Entra ID the necessary data to register the passkey (FIDO2) credential for the targeted user. 
+
+:::image type="content" border="true" source="media/how-to-enable-passkey-fido2/provision.png" alt-text="Conceptual diagram that shows the steps required to provision passkeys (FIDO2)." :::
 
 ## Enable passkeys using Microsoft Graph API
 
@@ -157,7 +159,7 @@ To make users sign in with a passkey when they access a sensitive resource, you 
   
 - Create a custom authentication strength
 
-The following steps show how to create a custom authentication strength Conditional Access policy that allows passkey sign-in for only a specific security key model or passkey provider. For a list of FIDO2 providers, see [Current FIDO2 hardware vendor partners](concept-fido2-hardware-vendor.md#current-partners).
+The following steps show how to create a custom authentication strength Conditional Access policy that allows passkey sign-in for only a specific security key model or passkey provider. For a list of FIDO2 providers, see [FIDO2 security keys eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
