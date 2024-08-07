@@ -164,7 +164,7 @@ If this test fails, enroll in a new certificate by completing the following step
 1. Check the Global Secure Access client event log for errors.
 1. Run the Health check tests again.
 
-### Domain Name System (DNS) over HTTPS not supported
+### DNS over HTTPS not supported
 For the Global Secure Access client to acquire network traffic by a fully qualified domain name (FQDN) destination (as opposed to an IP destination), the client needs to read the DNS requests sent by the device to the DNS server. This means that if the forwarding profile contains FQDN rules, you must disable DNS over HTTPS.
 
 #### Secure DNS disabled in OS
