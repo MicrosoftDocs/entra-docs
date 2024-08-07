@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/17/2024
+ms.date: 08/06/2024
 
 ms.author: justinha
 author: justinha
@@ -95,6 +95,8 @@ With these new APIs, organizations can build their own clients to provision pass
 1. **Request** creationOptions for a user: Entra ID returns the necessary data for your client to provision a passkey (FIDO2) credential. This includes information such as user information, relying party ID, credential policy requirements, algorithms, registration challenge and more. 
 2. **Provision** the passkey (FIDO2) credential with the creation Options: Use the `creationOptions` and a client that supports the Client to Authenticator Protocol (CTAP) to provision the credential. During this step, you need to insert you will need to insert the security key and set a PIN.
 3. **Register** the provisioned credential with Entra ID: Use the formatted output from the provisioning process to provide Microsoft Entra ID the necessary data to register the passkey (FIDO2) credential for the targeted user. 
+
+:::image type="content" border="true" source="media/how-to-enable-passkey-fido2/provision.png" alt-text="Conceptual diagram that shows the steps required to provision passkeys (FIDO2)." :::
 
 ## Enable passkeys using Microsoft Graph API
 
