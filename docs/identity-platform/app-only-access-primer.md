@@ -63,6 +63,8 @@ Once an app has been assigned to one or more app roles (app-only permissions), i
 
 In some scenarios, the application identity may determine whether access is granted, similarly to user rights in a delegated call. For example, the `Application.ReadWrite.OwnedBy` app role grants an app the ability to manage service principals that the app itself owns.
 
+In the scenario where both resource and client app are the same, consent prompt will not be triggered since the token is being consumed by the client. Decision is made based on delegation and entitlement entries for client-resource-user combination.
+
 ## Application-only access example - Automated email notification via Microsoft Graph
 
 The following example illustrates a realistic automation scenario.
