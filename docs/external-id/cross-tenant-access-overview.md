@@ -313,4 +313,5 @@ The Microsoft Entra audit logs capture all activity around cross-tenant access s
 ## Next steps
 
 [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml)
+
 [Configure cross-tenant access settings for B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md)
