@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/03/2024
+ms.date: 08/06/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -245,7 +245,7 @@ For more information, see [Guidance for configuring IPv6 in Windows for advanced
 
 
 ### Private access edge hostname resolved by DNS
-If this test fails, the hostnames of the Global Secure Access cloud service can't be resolved by the DNS, and therefore the service isn't reachable. This could be due to an internet connectivity problem or a DNS server that doesn't resolve public internet hostnames.
+If this test fails, the DNS can't resolve the hostnames of the Global Secure Access cloud service, and therefore the service isn't reachable. This could be due to an internet connectivity problem or a DNS server that doesn't resolve public internet hostnames.
 This test checks all active traffic types: Microsoft 365, Private Access, and Internet Access.
 
 To verify that the hostname resolution works correctly:

@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/03/2024
+ms.date: 08/06/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -31,6 +31,7 @@ The advanced diagnostics **Overview** tab shows general configuration details ab
 - **Forwarding Profile ID**: The ID of the forwarding profile currently in use by the client.
 - **Forwarding Profile last checked**: The time when the client last checked for an updated forwarding profile.
 - **Client version**: The version of the Global Secure Access client that is currently installed on the device.
+:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/global-secure-access-client-advanced-diagnostics-overview-tab.png" alt-text="Screenshot showing the Global Secure Access Client - Advanced diagnostics dialog box on the Overview tab.":::
 
 ## Health check tab
 The **Health check** tab executes common tests to verify that the client works correctly and that its components are running. For deeper coverage of the **Health check** tab, see [Troubleshoot the Global Secure Access client: Health check tab](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
@@ -43,6 +44,7 @@ The **Forwarding profile** tab shows the list of current, active rules that are 
 - **Policy tester**: Select to show the active rule for a connection to a specific destination.
 - **Add filter**: Select to set filters to see only a subset of the rules according to a specific set of filter properties.
 - **Columns**: Select to choose the columns to display in the table.
+:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/global-secure-access-client-advanced-diagnostics-forwarding-profile-tab.png" alt-text="Screenshot showing the Global Secure Access Client - Advanced diagnostics dialog box on the Forwarding profile tab.":::
 
 The rules section shows the list of rules grouped by each workload (**M365 rules**, **Private access rules**, **Internet access rules**). You'll only see rules for the workloads activated in your tenant.
 > [!TIP]
