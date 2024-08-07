@@ -31,6 +31,7 @@ In addition to policies for users to request access, you can also have policies 
 | Scenario | Number of policies |
 | --- | --- |
 | I want all users in my directory to have the same request and approval settings for an access package | One |
+| I want managers to be able to request an access package on behalf of their employees in my directory | One |
 | I want all users in certain connected organizations to be able to request an access package | One |
 | I want to allow users in my directory and also users outside my directory to request an access package | Two |
 | I want to specify different approval settings for some users | One for each group of users |
@@ -191,6 +192,8 @@ To change the request and approval settings for an access package, you need to o
     If you selected **None (administrator direct assignments only)** and you set enable to **No**, then administrators can't directly assign this access package.
 
     ![Access package - Policy- Enable policy setting](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
+
+1. When new requests are enabled, you can specify whether you want to **Allow managers to request on behalf of their employees**. Enabling this setting will also give you the option to **Bypass approval stage if manager is the requestor and the approver**. Bypassing an approval stage when the manager is both the requestor and the approver for that stage streamlines the request process by reducing redundancy.
 
 1. Select **Next**.
 
