@@ -8,7 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 07/23/2024
+ms.date: 08/07/2024
 ms.custom: template-concept 
 
 #CustomerIntent: As an IT administrator, I want to learn about managing users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
@@ -16,26 +16,26 @@ ms.custom: template-concept
 
 # Managing Users synchronized from Active Directory Domain Services to Microsoft Entra ID with Lifecycle Workflows
 
-Lifecycle Workflows supports governing the identity lifecycle for user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra ID. For Lifecycle Workflows, it's essential that a user account exists in Microsoft Entra ID, but how the account was created or how lifecycle relevant changes are being made to the account plays a minor role when it comes to processing workflows and associated tasks for the user account. The support includes accounts and changes made via paths such as [HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md), Microsoft Graph APIs, the Microsoft Entra Admin Portal as well as changes synchronized by Microsoft Entra Connect and MicrosoftCloud Sync.
+Lifecycle Workflows supports governing the identity lifecycle for user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra ID. For Lifecycle Workflows, it's essential that a user account exists in Microsoft Entra ID, but how the account was created or how lifecycle relevant changes are being made to the account plays a minor role when it comes to processing workflows and associated tasks for the user account. This support includes accounts, and changes, made via options such as [HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md), Microsoft Graph APIs, and the Microsoft Entra Admin Portal as well as changes synchronized by Microsoft Entra Connect and Microsoft Cloud Sync.
 
-The following table lists common automation scenarios for synchronized users from Active Directory Domain Services using Microsoft Entra ID Governance:
+The following table lists common automation scenarios for synchronized users from AD DS using Microsoft Entra ID Governance:
 
 |Scenario to automate  |Microsoft Entra ID Governance solution  |
 |---------|---------|
 |Creating the user account in Active Directory Domain Services    |   [HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md)      |
 |Providing initial credentials or password for user accounts  |  The [Generate Temporary Access Pass and send via email to user's manager](../id-governance/lifecycle-workflow-tasks.md#generate-temporary-access-pass-and-send-via-email-to-users-manager) task can be used to set up password-less credentials. For setting up a regular Active Directory password, you can use [Microsoft Entra self-service password reset](../identity/authentication/concept-sspr-howitworks.md).      |
-|Assigning licenses     |  The [Assign licenses to user (Preview)](../id-governance/lifecycle-workflow-tasks.md#assign-licenses-to-user-preview) Lifecycle Workflow task can be used to assign licenses. You're also able to assign licenses to to user via [a group](../fundamentals/license-users-groups.yml).    |
+|Assigning licenses     |  The [Assign licenses to user (Preview)](../id-governance/lifecycle-workflow-tasks.md#assign-licenses-to-user-preview) Lifecycle Workflow task can be used to assign licenses. You're also able to assign licenses to user via [a group](../fundamentals/license-users-groups.yml).    |
 |Give user access to Active Directory group-based applications     |  [Govern on-premises Active Directory (Kerberos) application access](../identity/hybrid/cloud-sync/govern-on-premises-groups.md)       |
 |Update user attributes in Active Directory as they move organizations     |  [Plan scoping filters and attribute mapping](../identity/app-provisioning/plan-cloud-hr-provision.md#plan-scoping-filters-and-attribute-mapping)       |
 |Move the user to different OUs as they move organizations     | [Configure Active Directory OU container assignment](../identity/app-provisioning/plan-cloud-hr-provision.md#configure-active-directory-ou-container-assignment)        |
 |Disable users on last day     |   The [Disable user account](../id-governance/lifecycle-workflow-tasks.md#disable-user-account) Lifecycle Workflow task can be used to disable a user account on their last day.     |
-|Deleting users some days after termination     |   The [Delete User](../id-governance/lifecycle-workflow-tasks.md#delete-user) Lifecycle Workflow task can be used within a workflow template to delete users a set number of days after their termination.      |
+|Deleting users on a set number of days after termination     |   The [Delete User](../id-governance/lifecycle-workflow-tasks.md#delete-user) Lifecycle Workflow task can be used within a workflow template to delete users a set number of days after their termination.      |
 
 In this article, you learn what needs to be considered if you want to use Lifecycle Workflows for user accounts that are synchronized from AD DS to Microsoft Entra ID.
 
 ## Workflow execution conditions with Users synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra ID
 
-Lifecycle Workflows are processed for user accounts when they meet the workflows execution conditions. Executing conditions are composed of a trigger and scope. The trigger describes the event that occurs for a user account. The scope allows you to further define for whom the workflow starts when the event occurs.
+Lifecycle Workflows are processed for user accounts when they meet the workflow's execution conditions. Executing conditions are composed of a trigger and scope. The trigger describes the event that occurs for a user account. The scope allows you to further define for whom the workflow starts when the event occurs.
 
 ### Workflow triggers
 
@@ -59,7 +59,7 @@ All Lifecycle workflow tasks work for both cloud, and synchronized from Active D
 
 ### Tasks to govern group memberships
 
-**Scenario:** When you have synchronized users from Active Directory Domain Services to Microsoft Entra ID, you're able to add, or remove, users from cloud-based security groups via Lifecycle Workflow's group tasks. This allows you to govern group membership of the synchronized users in the cloud, and to also add this group back to Active Directory using [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+**Scenario:** When you synchronize users from Active Directory Domain Services to Microsoft Entra ID, you're able to add, or remove, users from cloud-based security groups via Lifecycle Workflow's group tasks. This allows you to govern group membership of the synchronized users in the cloud, and to also add this group back to Active Directory using [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 For groups that are synchronized from AD DS to Microsoft Entra ID, you wouldn't be able to use Lifecycle Workflow group tasks as mentioned in the scenario. However, Microsoft Entra ID Governance can be used to [govern on-premises Active Directory (Kerberos) application access](../identity/hybrid/cloud-sync/govern-on-premises-groups.md) with groups from the cloud, which are supported within Lifecycle Workflows.
 
