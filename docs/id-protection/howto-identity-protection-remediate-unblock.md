@@ -153,7 +153,7 @@ To unblock an account based on sign-in risk, administrators have the following o
 
 ### Automatic blocking due to high confidence risk
 
-Entra ID Protection automatically blocks sign-ins that have a very high confidence of being risky. This block most commonly occurs on sign-ins performed via legacy authentication protocols, and displaying properties of a malicious attempt.
+Microsoft Entra ID Protection automatically blocks sign-ins that have a very high confidence of being risky. This block most commonly occurs on sign-ins performed via legacy authentication protocols, and displaying properties of a malicious attempt.
 
 When a user is blocked with this mechanism they will receive a 50053 authentication error. Investigation of the sign-in logs will display the following block reason: "Sign-in was blocked by built-in protections due to high confidence of risk."
 
