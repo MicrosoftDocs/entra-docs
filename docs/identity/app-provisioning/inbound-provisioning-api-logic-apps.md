@@ -98,30 +98,30 @@ The steps documented in this section are optional. If you already have an existi
 1. Ensure that the deployment of the Azure Function as an App Service is successful. 
 1. Go to the resource group and open the WebApp configuration. Ensure it is in "Running" state. Copy the default domain name associated with the Web App.
      :::image type="content" source="media/inbound-provisioning-api-logic-apps/web-app-domain-name.png" alt-text="Screenshot of Azure Function Web App domain name." lightbox="media/inbound-provisioning-api-logic-apps/web-app-domain-name.png":::  
-1. Run the following PowerShell script to test if the CSVtoJSON endpoint works as expected. Set the correct values for the variables $csvFilePath and $uri in the script. 
+1. Run the following PowerShell script to test if the CSVtoJSON endpoint works as expected. Set the correct values for the variables `$csvFilePath` and `$uri` in the script. 
      
-```
-# Step 1: Read the CSV file 
-$csvFilePath = "C:\Path-to-CSV-file\hr-user-data.csv" 
-$csvContent = Get-Content -Path $csvFilePath 
+     ```powershell
+     # Step 1: Read the CSV file 
+     $csvFilePath = "C:\Path-to-CSV-file\hr-user-data.csv" 
+     $csvContent = Get-Content -Path $csvFilePath 
 
-# Step 2: Set up the request 
-$uri = "https://az-function-webapp-your-domain/csvtojson" 
-$headers = @{ 
-     "Content-Type" = "text/csv" 
-} 
-$body = $csvContent -join "`n"  # Join the CSV lines into a single string 
+     # Step 2: Set up the request 
+     $uri = "https://az-function-webapp-your-domain/csvtojson" 
+     $headers = @{ 
+          "Content-Type" = "text/csv" 
+     } 
+     $body = $csvContent -join "`n"  # Join the CSV lines into a single string 
 
-# Step 3: Send the POST request 
-$response = Invoke-WebRequest -Uri $uri -Method POST -Headers $headers -Body $body 
+     # Step 3: Send the POST request 
+     $response = Invoke-WebRequest -Uri $uri -Method POST -Headers $headers -Body $body 
 
-# Output and format the JSON response 
-$response.Content | ConvertFrom-JSON | ConvertTo-JSON 
-```
+     # Output and format the JSON response 
+     $response.Content | ConvertFrom-JSON | ConvertTo-JSON 
+     ```
 
 7. If the Azure Function deployment is successful, then the last line of the script outputs the JSON version of the CSV file.
 
-     :::image type="content" source="media/inbound-provisioning-api-logic-apps/azure-function-response.png" alt-text="Screenshot of Azure Function response." lightbox="media/inbound-provisioning-api-logic-apps/azure-function-response.png":::  
+     :::image type="content" source="media/inbound-provisioning-api-logic-apps/azure-function-response.png" alt-text="Screenshot of Azure Function response." lightbox="media/inbound-provisioning-api-logic-apps/azure-function-response.png":::. 
 8. To allow Logic Apps to invoke this Azure Function, in the CORS setting for the WebApp enter asterisk (*) and "Save" the configuration.
      :::image type="content" source="media/inbound-provisioning-api-logic-apps/azure-function-cors-setting.png" alt-text="Screenshot of Azure Function CORS setting." lightbox="media/inbound-provisioning-api-logic-apps/azure-function-cors-setting.png":::  
 
