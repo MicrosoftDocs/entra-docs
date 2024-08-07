@@ -59,7 +59,7 @@ All Lifecycle workflow tasks work for both cloud, and synchronized from Active D
 
 ### Tasks to govern group memberships
 
-**Scenario:** When you synchronize users from Active Directory Domain Services to Microsoft Entra ID, you're able to add, or remove, users from cloud-based security groups via Lifecycle Workflow's group tasks. This allows you to govern group membership of the synchronized users in the cloud, and to also add this group back to Active Directory using [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+**Scenario:** When you synchronize users from AD DS to Microsoft Entra ID, you're able to add, or remove, users from cloud-based security groups via Lifecycle Workflow's group tasks. This allows you to govern group membership of the synchronized users in the cloud, and to also add this group back to Active Directory using [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 For groups that are synchronized from AD DS to Microsoft Entra ID, you wouldn't be able to use Lifecycle Workflow group tasks as mentioned in the scenario. However, Microsoft Entra ID Governance can be used to [govern on-premises Active Directory (Kerberos) application access](../identity/hybrid/cloud-sync/govern-on-premises-groups.md) with groups from the cloud, which are supported within Lifecycle Workflows.
 
