@@ -29,6 +29,7 @@ To integrate Microsoft Entra ID with Pure Storage SSO, you need:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Pure Storage SSO single sign-on (SSO) enabled subscription.
+* **[Optional]** If you intend to use Signing Certificate & Encrypting Assertion features, should import your certificate & private key into Pure Stotage FlashArray using **purecert create --certificate --key "cert-name"**. Use preferred mode of certificate creation, for self signed cert follow section **purecert** in [doc](https://support-be.purestorage.com/bundle/m_flasharray_admin_and_cli_reference_guides/page/FlashArray/PurityFA/library/resources/PurityFA_6.6.8_FlashArray_CLIRefGuide.pdf). 
 
 ## Scenario description
 
@@ -57,7 +58,6 @@ To configure and test Microsoft Entra SSO with Pure Storage SSO, perform the fol
     1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Pure Storage SSO](#configure-pure-storage-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Pure Storage SSO test user](#create-pure-storage-sso-test-user)** - to have a counterpart of B.Simon in Pure Storage SSO that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -131,7 +131,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. Should select any role out of **"storage_admin_role", "ops_admin_role", "readonly_role", "array_admin_role"**
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure Pure Storage SSO
@@ -158,11 +158,14 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. In the **Metadata URL** textbox, paste the **App Federation Metadata Url** value, which you have copied from Microsoft Entra admin center.
 
+    1. **[Optional]** Fill in **Signing Credential** and **Decrption Credential** with **cert-name** imported into Pure Storage FlashArray.
+       Toggle and enable **Sign Request** and **Encrypt Assertion**
+
     1. Click **Save**.
 
-### Create Pure Storage SSO test user
+    > [!NOTE]
+    > Perform this on Entra app side, only if you intend to enable Encypt Assertions. Import certificates and enable **Token Encryption** by following this [link](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/howto-saml-token-encryption?tabs=azure-portal)
 
-In this section, you create a user called B.Simon in Pure Storage SSO. Work with [Pure Storage SSO support team](mailto:security-solutions-support@purestorage.com) to add the users in the Pure Storage SSO platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
