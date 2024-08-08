@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 08/06/2024
+ms.date: 08/08/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -25,18 +25,30 @@ The integration of customer capabilities into Microsoft Entra ID means that your
 
 ## Baseline security features
 
-Microsoft Entra External ID external tenants include several baseline security features to help immediately secure customer data. These initial protections are in place by default to serve as a starting point for organizations as they develop their own identity security measures.
+Microsoft Entra External ID external tenants include several baseline security features to help immediately secure customer data. Default settings provide initial protection against threats like brute force attacks (such as denial of service or password spray attacks) and network layer attacks. These protections serve as a starting point as you develop your own identity security plan and incorporate additional Microsoft Entra premium security features.
 
-|Attack vector   |Feature  |Notes    |
-|----------------|---------|---------|
-|Brute force (DDoS, Password Spray, etc.) |IP level throttling     |Detects when a bad actor tries to overwhelm the system with requests. |
-|Brute force (DDoS, Password Spray, etc.) |Application and tenant level throttling      |Detects unusually high traffic spikes from specific applications in your tenant, and applies rate-limiting to protect your other applications.         |
-|Brute force (DDoS, Password Spray, etc.) |Feature level throttling      |Ensures the availability of critical sign-in functionality by prioritizing it during times of high demand.         |
-|Brute force (DDoS, Password Spray, etc.) |User creation level throttling      |Allows for a steady increate in user sign-ups while protecting against misuse of tenant resources.         |
-|Brute force (DDoS, Password Spray, etc.) |Smart Lockout           |Blocks attackers who attempt to guess passwords or use brute force methods to gain access, while allowing legitimate users to retain access to their accounts.     |
-|Account Protection and Access Control    |Conditional Access      |Allows organizations to set rules around user access to applications and data, preventing unauthorized access.</br>**Note:** Default settings are provided, but some Identity Protection features require configuration.      |
-|Account Protection and Access Control    |Risk detections         |Reports Risk Events based on numerous parameters and can be used in CA for Risked Based access control. </br>**Note:** Default settings are provided, but premium risk event detection requires configuration. |
-|Common networking protection             |HTTP protection         |Network-layer attacks, such as those targeting common L3/L4 vulnerabilities and timing-based attacks are blocked with only minimal processing |
+### Brute force protection
+
+|Feature                                 |Notes     |
+|----------------------------------------|----------|
+|IP level throttling                     |Detects when a bad actor tries to overwhelm the system with requests.|
+|Application and tenant level throttling |Detects unusually high traffic spikes from specific applications in your tenant, and applies rate-limiting to protect your other applications.|
+|Feature level throttling                |Ensures the availability of critical sign-in functionality by prioritizing it during times of high demand.|
+|User creation level throttling          |Allows for a steady increate in user sign-ups while protecting against misuse of tenant resources.|
+|Smart Lockout                           |Blocks attackers who attempt to guess passwords or use brute force methods to gain access, while allowing legitimate users to retain access to their accounts.|
+
+### Account protection and access control
+
+|Feature            |Notes     |
+|-------------------|----------|
+|Conditional Access |Allows organizations to set rules around user access to applications and data, preventing unauthorized access. [Learn more](~/identity/conditional-access/overview) </br>**Note:** Default settings are provided, but some Identity Protection features require configuration.      |
+|Risk detections    |Reports Risk Events based on numerous parameters and can be used in CA for Risked Based access control. [Learn more](~/id-protection/concept-identity-protection-risks#risk-detections-mapped-to-riskeventtype) </br>**Note:** Default settings are provided, but premium risk event detection requires configuration. |
+
+### Common networking protection
+
+|Feature         |Notes     |
+|----------------|----------|
+|HTTP protection |Network-layer attacks, such as those targeting common L3/L4 vulnerabilities and timing-based attacks are blocked with only minimal processing |
 
 ## Conditional Access
 
