@@ -63,7 +63,7 @@ The following deployment scenarios provide detailed guidance on how to combine a
 
 To get the most out of your trial, get started by walking through the following user scenarios. 
 
-1. [Scenario: Automate user onboarding and lifecycle with access to all apps](#scenario-1-workforce-and-guest-onboarding-identity-and-access-lifecycle-governance-across-all-your-apps) 
+1. [Scenario: Automate user onboarding and lifecycle with access to all apps](#scenario-1-automate-user-onboarding-and-lifecycle-with-access-to-all-apps)
 1. [Scenario: Modernize remote access to on-premises apps with MFA per app](#scenario-2-modernize-remote-access-to-on-premises-apps-with-mfa-per-app) 
 1. [Scenario: Secure internet access based on business needs](#scenario-3-secure-internet-access-based-on-business-needs) 
 
