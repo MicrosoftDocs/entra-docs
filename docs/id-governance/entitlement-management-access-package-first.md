@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 07/15/2024
+ms.date: 08/08/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.
@@ -144,7 +144,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 
     ![Screenshots of the requests tab approval and enable requests settings.](./media/entitlement-management-access-package-first/requests-approval-enable.png)
 
-1. On the **Requestor information** tab, you can ask questions to collect more information from the requestor. The questions are shown on the request form and can be either required or optional. In this scenario, you haven't been asked to include requestor information for the access package, so you can leave these boxes empty. Select **Next** to open the **Lifecycle** tab.
+1. On the **Requestor information** tab, you can ask questions to collect more information from the requestor. The questions are shown on the request form and can be either required or optional. You are also able to specify whether or not an employees manager can request on their behalf, and if approval is required if they do so. In this scenario, you haven't been asked to include requestor information for the access package, so you can leave these boxes empty. Select **Next** to open the **Lifecycle** tab.
 
 1. On the **Lifecycle** tab, you specify when a user's assignment to the access package expires. You can also specify whether users can extend their assignments. In the **Expiration** section:
     1. Set the **Access package assignments expire** to **Number of days**.
