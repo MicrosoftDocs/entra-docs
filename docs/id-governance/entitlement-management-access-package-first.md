@@ -252,5 +252,6 @@ In this step, you remove the changes you made and delete the **Marketing Campaig
 ## Next steps
 
 Advance to the next article to learn about common scenario steps in entitlement management.
+
 > [!div class="nextstepaction"]
 > [Common scenarios](entitlement-management-scenarios.md)
