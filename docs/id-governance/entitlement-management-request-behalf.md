@@ -23,13 +23,13 @@ Expanding self-service request flows to allow requests on behalf of employees en
 
 ## Scenarios for managers requesting on behalf of employees
 
-Imagine your organization hires hundreds of new employees each year and you’re tasked with training new hires on IT processes, including how to request access for resources in My Access. Training sessions are only at the beginning of each month, so managers of new hires who start later in the month often reach out for ad-hoc training. This is becoming increasingly common.
+Imagine your organization hires hundreds of new employees each year and being tasked with training new hires on IT processes, including how to request access for resources in My Access. Training sessions are only at the beginning of each month, so managers of new hires who start later in the month often reach out for ad-hoc training. This is becoming increasingly common.
 
-Instead of conducting numerous ad-hoc training sessions to ensure new hires know how to request access in their first week(s) at the organization, you can set up access package policies that allow managers to request access on behalf of their employees.
+Instead of conducting numerous ad-hoc training sessions to ensure new hires know how to request access in their first week or weeks at the organization, you can set up access package policies that allow managers to request access on behalf of their employees.
 
 :::image type="content" source="media/entitlement-management-request-behalf/enable-manager-requests.png" alt-text="Screenshot of request on behalf of options.":::
 
-Now, managers are empowered to request access on behalf of new hires who have not gone through the IT training. This ensures that employees have the tools and resources necessary to start on day one, and increases new hire satisfaction as they don’t need to wait for access or navigate the request process on their own.
+Now, managers are empowered to request access on behalf of new hires who haven't gone through the IT training. This ensures that employees have the tools and resources necessary to start on day one, and increases new hire satisfaction as they don’t need to wait for access or navigate the request process on their own.
 
 :::image type="content" source="media/entitlement-management-request-behalf/myaccess-approval-request.png" alt-text="Screenshot of the approval page for a requested access package in my access.":::
 
@@ -54,7 +54,7 @@ Follow these steps to change the list of incompatible groups or other access pac
 1. On the **Requests** tab, set **Enable new requests** to Yes. This should show you the option **Allow managers to request on behalf of employees (preview)**. Set that option to Yes.  
     :::image type="content" source="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" alt-text="Screenshot of editing an access package;s request on behalf of policy.":::
     > [!NOTE]
-    > : If approval is required, you will also see the option to **Bypass approval stage if manager is the requestor and approver (preview)**.
+    > If approval is required, you will also see the option to **Bypass approval stage if manager is the requestor and approver (preview)**.
 1. Save your policy. 
 
 ## Request access on behalf of your employees
