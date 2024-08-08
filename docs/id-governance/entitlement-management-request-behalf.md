@@ -70,20 +70,11 @@ As a manager of an employee assigned an access package, you'd do the following s
 
 1. Either approve, or deny, the request on behalf of your employee.
 
-## Next step
+## Next steps
 
-TODO: Add your next step link(s)
+- [Approve or deny access requests - entitlement management](entitlement-management-request-approve.md)
+- [Request process and email notifications](entitlement-management-process.md)
 
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
-
-## Related content
-
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
 
 <!--
 Remove all the comments in this template before you sign-off or merge to the main branch.
