@@ -49,6 +49,7 @@ To know the patterns preconfigured for the application:
     - In the tutorial for the application, you can also get information about the supported patterns. Under the **Configure Microsoft Entra single sign-on** section. Go to the step for configured the values under the **Domain and URLs** section.
 
 If the values don’t match with the patterns preconfigured in Microsoft Entra ID, you can Work with the application vendor to get values that match the pattern preconfigured in Microsoft Entra ID.
+If the application is multi-tenant, a single identifier is allowed when the principal object isn't the primary instance of the app.
 
 ## Where do I set the EntityID (User Identifier) format
 
