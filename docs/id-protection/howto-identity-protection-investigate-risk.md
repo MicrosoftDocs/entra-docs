@@ -14,77 +14,72 @@ ms.reviewer: chuqiaoshi
 ---
 # How To: Investigate risk
 
-Identity Protection provides organizations with reporting they can use to investigate identity risks in their environment. These reports include **risky users**, **risky sign-ins**, **risky workload identities**, and **risk detections**. Investigation of events is key to better understanding and identifying any weak points in your security strategy. All of these reports allow for downloading of events in .CSV format or integration with other security solutions like a dedicated SIEM tool for further analysis.
-
-Organizations can take advantage of the Microsoft Graph API integrations to aggregate data with other sources they might have access to as an organization.
-
-The three reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Protection** > **Identity Protection**.
-
-> [!VIDEO https://www.youtube.com/embed/5mf72Vf40WU?si=RrM-CUEQPSQb8m5l]
+Microsoft Entra ID Protection provides organizations with reporting they can use to investigate identity risks in their environment. These reports include risky users, risky sign-ins, risky workload identities, and risk detections. Investigation of events is key to better understanding and identifying any weak points in your security strategy. All these reports allow for downloading of events in .CSV format or integration with other security solutions like a dedicated Security Information and Event Management (SIEM) tool for further analysis. Organizations can also take advantage of Microsoft Defender and Microsoft Graph API integrations to aggregate data with other sources.
 
 ## Navigating the reports
 
-Each report launches with a list of all detections for the period shown at the top of the report. Each report allows for the addition or removal of columns based on administrator preference. Administrators can choose to download the data in .CSV or .JSON format. Reports can be filtered using the filters across the top of the report.
+The risk reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Identity Protection**. You can navigate directly to the reports or view a summary of important insights in the dashboard view and navigate to the corresponding reports from there.
 
-Selecting individual entries might enable more entries at the top of the report such as the ability to confirm a sign-in as compromised or safe, confirm a user as compromised, or dismiss user risk.
+![X]()
 
-Selecting individual entries expands a details window below the detections. The details view allows administrators to investigate and take action on each detection. 
+Each report launches with a list of all detections for the period shown at the top of the report along with the option to filter and add or remove columns based on administrator preference. Administrators can also choose to download the data in .CSV or .JSON format.
 
-## Risky users
+When administrators select one or multiple entries, options to confirm or dismiss the risks appear at the top of the report. Selecting an individual risk event opens a pane with more details to assist with investigations.
 
-The risky users report lists all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. 
+![X]()
 
-### Why is a user at risk?  
+### Risky users report
+
+The risky users report includes all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. We recommend starting with high risk users due to the high confidence of compromise. Learn more about what the levels signify: Risk levels https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks#risk-levels
+
+#### Why is a user at risk?
 
 A user becomes a risky user when:
 
 - They have one or more risky sign-ins.
-- There are one or more [risks](concept-identity-protection-risks.md) detected on the user’s account, like Leaked Credentials. 
+- There are one or more risks detected on the user's account, like leaked credentials. https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks
 
-### How to investigate risky users? 
+#### How to investigate risky users?
 
-To view and investigate a user’s risky sign-ins, select the "Recent risky sign-ins" tab or the "Users risky sign-ins" link. 
+To view and investigate risky users, navigate to the Risky users report and use the filters to manage the results. There's an option at the top of the page to add other columns such as risk level, status, and risk detail.
 
-To view and investigate risks on a user’s account, select the "Detections not linked to a sign-in" tab or the "User’s risk detections" link. 
+![X]()
 
-The Risk history tab also shows all the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user’s risk and admin remediation actions that lowered the user’s risk. View it to understand how the user’s risk changed. 
+When administrators select an individual user, the Risky user details pane appears providing information such as user ID and office location, recent risky sign-in, detections not linked to a sign and risk history for that user. The Risk history tab shows all the events that have led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-without-details.png" alt-text="Screenshot of the Risky users report.":::
+![X]()
 
-With the information provided by the risky users report, administrators can find:
+If you have Copilot for Security, you have access to a summary in natural language including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. https://learn.microsoft.com/en-us/entra/fundamentals/copilot-entra-risky-user-summarization
 
-- Which users are at risk, had risk remediated, or had risk dismissed?
+![X]()
+
+With the information provided by the Risky users report, administrators can view:
+
+- User risk, which has been remediated, dismissed, or is still currently at risk and needs investigation
 - Details about detections
-- History of all risky sign-ins
+- Risky sign-ins associated to a given user
 - Risk history
- 
-Administrators can then choose to take action on these events. Administrators can choose to:
 
-- Reset the user password
-- Confirm user compromise
-- Dismiss user risk
-- Block user from signing in
-- [Investigate further using Microsoft Defender for Identity](#investigate-risk-with-microsoft-365-defender)
+Administrators can then choose to take action on these events and choose to:
 
-#### Understand the scope
+- Reset the user password, which revokes user's current sessions
+- Confirm user compromise if the user risk is a true positive. ID Protection sets the user risk to high and adds a new detection, Admin confirmed user compromised.
+- Confirm user safe if the user risk is a false positive. ID Protection moves the user risk to none.
+- Dismiss user risk for benign positive user risk.
+- Block user from signing in if attacker has access to password or ability to perform MFA
+- Investigate further using Microsoft Defender for Identity by selecting a user and clicking on the ellipsis (...) in the top right hand corner of the Risky User Details pane. https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-investigate-risk#investigate-risk-with-microsoft-365-defender
 
-1. Consider creating a known traveler database for updated organizational travel reporting and use it to cross-reference travel activity.
-1. Add corporate VPNs and IP Address ranges to named locations to reduce false positives.
-1. Review the logs to identify similar activities with the same characteristics. This signal could be an indication of more compromised accounts.
-   1. If there are common characteristics, like IP address, geography, success/failure, and so on..., consider blocking these conditions with a Conditional Access policy.
-   1. Review which resource might be compromised, such as potential data downloads or administrative modifications.
-   1. Enable self-remediation policies through Conditional Access
-1. If you see that the user performed other risky activities, such as downloading a large volume of files from a new location, this signal is a strong indication of a possible compromise.
+![X]()
 
-## Risky sign-ins
+## Risky sign-ins report
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-sign-ins-without-details.png" alt-text="Screenshot of the Risky sign-ins report." lightbox="media/howto-identity-protection-investigate-risk/risky-sign-ins-with-details.png":::
+The risky sign-ins report contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. Use the "sign-in type" filter to modify this view.
 
-The risky sign-ins report contains filterable data for up to the past 30 days (one month).
+![X]()
 
-With the information provided by the risky sign-ins report, administrators can find:
+With the information provided by the Risky sign-ins report, administrators can view:
 
-- Which sign-ins are classified as at risk, confirmed compromised, confirmed safe, dismissed, or remediated.
+- Sign-ins that are at risk, confirmed compromised, confirmed safe, dismissed, or remediated.
 - Real-time and aggregate risk levels associated with sign-in attempts.
 - Detection types triggered
 - Conditional Access policies applied
@@ -93,62 +88,83 @@ With the information provided by the risky sign-ins report, administrators can f
 - Application information
 - Location information
 
-Administrators can then choose to take action on these events. Administrators can choose to:
+Administrators can then choose to take action on these events which helps provide feedback. Administrators can choose to:
 
-- Confirm sign-in compromise
-- Confirm sign-in safe
+- Confirm sign-in or user risk as compromised if risk is a true positive.
+- Confirm sign-in or user risk as safe if the risk is a false positive. Similar sign-ins shouldn't be considered risky in the future.
+- Dismiss sign-in or user risk if risk is a benign true positive. Similar sign-ins should continue being evaluated for risk going forward. You might use this option during an internal security penetration test.
 
-> [!NOTE] 
-> Identity Protection evaluates risk for all authentication flows, whether it be interactive or non-interactive. The risky sign-in report now shows both interactive and non-interactive sign-ins. Use the "sign-in type" filter to modify this view.
+To learn more about when to take each of these actions visit How does Microsoft use my risk feedback? https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-risk-feedback#how-does-microsoft-use-my-risk-feedback
 
-## Risk detections
+## Risk detections report
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risk-detections-without-details.png" alt-text="Screenshot of the Risk detections report." lightbox="media/howto-identity-protection-investigate-risk/risk-detections-with-details.png":::
+The Risk detections report contains filterable data for up to the past 90 days (three months).
 
-The risk detections report contains filterable data for up to the past 90 days (three months).
+![X]()
 
-With the information provided by the risk detections report, administrators can find:
+With the information provided by the Risk detections report, administrators can find:
 
-- Information about each risk detection including type.
+- Information about each risk detection
+- Attack type based on MITRE ATT&CK framework
 - Other risks triggered at the same time
 - Sign-in attempt location
 - Link out to more detail from Microsoft Defender for Cloud Apps.
 
 Administrators can then choose to return to the user's risk or sign-ins report to take actions based on information gathered.
 
-> [!NOTE] 
-> Our system might detect that the risk event that contributed to the risk user risk score was a false positives or the user risk was remediated with policy enforcement such as completing an MFA prompt or secure password change. Therefore our system will dismiss the risk state and a risk detail of "AI confirmed sign-in safe" will surface and it will no longer contribute to the user’s risk. 
+> [!NOTE]
+> Our system might detect that the risk event that contributed to the user risk score was a false positive or the user risk was remediated with policy enforcement such as completing an MFA prompt or secure password change. Therefore, our system will dismiss the risk state and a risk detail of “AI confirmed sign-in safe” will surface and it will no longer contribute to the user's risk.
 
-## Investigation framework
+## Initial triage
 
-Organizations might use the following frameworks to begin their investigation into any suspicious activity. Investigations might require having a conversation with the user in question, review of the [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md), or review of the [audit logs](~/identity/monitoring-health/concept-audit-logs.md) to name a few.
+When starting the initial triage, we recommend the following actions:
 
-1. Check the logs and validate whether the suspicious activity is normal for the given user.
-   1. Look at the user’s past activities including at least the following properties to see if they're normal for the given user. 
+1. Review the ID Protection dashboard to visualize number of attacks, number of high risk users and other important metrics based on detections in your environment.
+1. Review the Impact analysis workbook to understand the scenarios where risk is evident in your environment and risk-based access policies should be enabled to manage high-risk users and sign-ins.
+1. Add corporate VPNs and IP Address ranges to named locations to reduce false positives.
+1. Consider creating a known traveler database for updated organizational travel reporting and use it to cross-reference travel activity.
+1. Review the logs to identify similar activities with the same characteristics. This could be an indication of more compromised accounts.
+   1. If there are common characteristics, like IP address, geography, success/failure, etc., consider blocking these with a Conditional Access policy.
+   1. Review which resource might have been compromised, such as potential data downloads or administrative modifications.
+   1. Enable self-remediation policies through Conditional Access
+1. If you see that the user performed other risky activities, such as downloading a large volume of files from a new location, this is a strong indication of a possible compromise.
+1. If you suspect an attacker can impersonate the user, you should require the user to reset their password and perform MFA or block the user and revoke all refresh and access tokens.
+
+## Investigation and risk remediation framework
+
+Organizations can use the following framework to begin their investigation into any suspicious activity. If self-remediation is an option, this is the first recommended step. Self-remediation can take place through self-service password reset or through remediation flow of a risk-based Conditional Access policy.
+
+If self-remediation isn't an option, the Admin will need to remediate the risk by invoking a password reset, requiring user to re-register for MFA, blocking the user, or revoking user sessions depending on the scenario. The following flow chart shows the recommended flow once a risk is detected:
+
+![X]()
+
+Once the risk is contained, additional investigation might be required to mark the risk as safe, compromised or to dismiss it. To come to a confident conclusion, it might be necessary to have a conversation with the user in question, review of the sign-in logs, review of the audit logs or querying risk logs in Log Analytics to name a few. The following outlines recommended actions during this phase of the investigation:
+
+1. Check the logs and validate whether the activity is normal for the given user.
+   1. Look at the user's past activities including the following properties to see if they're normal for the given user.
       1. Application
       1. Device - Is the device registered or compliant?
       1. Location - Is the user traveling to a different location or accessing devices from multiple locations?
-      1. IP address 
+      1. IP address
       1. User agent string
-   1. If you have access to other security tools like [Microsoft Sentinel](/azure/sentinel/overview), check for corresponding alerts that might indicate a larger issue.
-   1. Organizations with access to [Microsoft 365 Defender](/defender-for-identity/understanding-security-alerts) can follow a user risk event through other related alerts and incidents and the MITRE ATT&CK chain. 
-       1. Select the user in the Risky users report.
-       1. Select the **ellipsis (...)** in the toolbar then choose **Investigate with Microsoft 365 Defender**.
-1. Reach out to the user to confirm if they recognize the sign-in. Methods such as email or Teams might be compromised.
+   1. If you have access to other security tools like Microsoft Sentinel, check for corresponding alerts that might indicate a larger issue.
+   1. Organizations with access to Microsoft 365 Defender can follow a user risk event through other related alerts, incidents, and the MITRE ATT&CK chain.
+      1. To navigate from the Risky users report, select the user in the Risky users report and select the ellipsis (...) in the toolbar then choose Investigate with Microsoft 365 Defender.
+1. Reach out to the user to confirm if they recognize the sign-in; however, consider methods such as email or Teams might be compromised.
    1. Confirm the information you have such as:
+      1. Timestamp
       1. Application
-      1. Device 
-      1. Location 
-      1. IP address 
+      1. Device
+      1. Location
+      1. IP address
+1. Depending on the results of the investigation, mark the user or sign-in as confirmed compromised, confirmed safe, or dismiss the risk.
+1. Enable or edit Risk-based Conditional Access policies to prevent similar attacks or to address any gaps in coverage.
 
-> [!IMPORTANT]
-> If you suspect an attacker can impersonate the user, reset their password, and perform MFA; you should block the user and revoke all refresh and access tokens.
+### Investigate specific detections
 
-### Investigate Microsoft Entra threat intelligence detections
+#### Microsoft Entra threat intelligence
 
-To investigate a Microsoft Entra Threat Intelligence risk detection, follow these steps: 
-
-If more information is shown for the detection:
+To investigate a Microsoft Entra Threat Intelligence risk detection, follow these steps based on the information provided in the "additional info" field of the Risk Detection Details pane:
 
 1. Sign-in was from a suspicious IP Address:
    1. Confirm if the IP address shows suspicious behavior in your environment.
@@ -167,40 +183,55 @@ If more information is shown for the detection:
    1. Validate that no other users in your directory are targets of the same attack. This can be found by the TI_RI_#### number assigned to the rule.
    1. Real-time rules protect against novel attacks identified by Microsoft's threat intelligence. If multiple users in your directory were targets of the same attack, investigate unusual patterns in other attributes of the sign in.
 
-## Investigate risk with Microsoft 365 Defender
+#### Investigating atypical travel detections
 
-Organizations who have [Microsoft 365 Defender](/microsoft-365/security/defender/microsoft-365-defender) and [Microsoft Defender for Identity](/defender-for-identity/what-is) gain extra value from Identity Protection signals. This value comes in the form of enhanced correlation with other data from other parts of the organization and extra [automated investigation and response](/microsoft-365/security/defender/m365d-autoir).
+1. If you're able to confirm the activity wasn't performed by a legitimate user:
+   1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block user if attacker has access to reset password or perform MFA and reset password.
+1. If a user is known to use the IP address in the scope of their duties:
+   1. **Recommended action**: Confirm sign-in as safe
+1. If you're able to confirm that the user recently traveled to the destination mentioned detailed in the alert:
+   1. **Recommended action**: Confirm sign-in as safe
+1. If you're able to confirm that the IP address range is from a sanctioned VPN.
+   1. **Recommended action**: Confirm sign-in as safe and add the VPN IP address range to named locations in Microsoft Entra ID and Microsoft Defender for Cloud Apps.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/investigate-user-in-microsoft-365-defender.png" alt-text="Screenshot showing alerts for a risky user in the Microsoft 365 Defender portal." lightbox="media/howto-identity-protection-investigate-risk/investigate-user-in-microsoft-365-defender.png":::
+#### Investigating anomalous token and token issuer anomaly detections
 
-In Microsoft 365 Defender Security Professionals and Administrators can make connections to suspicious activity from areas like: 
+1. If you're able to confirm that the activity wasn't performed by a legitimate user using a combination of risk alert, location, application, IP address, User Agent, or other characteristics that are unexpected for the user:
+   1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform.
+   1. **Recommended action**: Set up Risk-based Conditional Access policy to require password reset, perform MFA, or block access for all high-risk sign-ins.
+1. If you're able to confirm location, application, IP address, User Agent, or other characteristics are expected for the user and there aren't other indications of compromise:
+   1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
+1. For further investigation of token based detections, see the article Token tactics: How to prevent, detect, and respond to cloud token theft and the Token theft investigation playbook.
 
-- Alerts in Defender for Identity 
-- Microsoft Defender for Endpoint
-- Microsoft Defender for Cloud
-- Microsoft Defender for Cloud Apps
- 
-For more information about how to investigate suspicious activity using Microsoft 365 Defender, see the articles [Investigate assets in Microsoft Defender for Identity](/defender-for-identity/investigate-assets#investigation-steps-for-suspicious-users) and [Investigate incidents in Microsoft 365 Defender](/microsoft-365/security/defender/investigate-incidents).
+#### Investigating suspicious browser detections
 
-For more information about these alerts and their structure, see the article [Understanding security alerts](/defender-for-identity/understanding-security-alerts).
+- Browser isn't commonly used by the user or activity within the browser doesn't match the users normally behavior.
+   - **Recommended action**: Confirm the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA.
+   - **Recommended action**: Set up Risk-based Conditional Access policy to require password reset, perform MFA, or block access for all high-risk sign-ins.
 
-### Investigation status
+#### Investigating malicious IP address detections
 
-When security personnel investigate risks in Microsoft 365 Defender and Defender for Identity the following states and reasons are returned to Identity Protection in the portal and APIs.
+1. If you're able to confirm that the activity wasn't performed by a legitimate user:
+   1. **Recommended action**: Confirm the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
+   1. **Recommended action**: Set up Risk-based Conditional Access policy to require password reset or perform MFA for all high-risk sign-ins.
+1. If a user is known to use the IP address in the scope of their duties:
+   1. **Recommended action**: Confirm sign-in as safe
 
-| Microsoft 365 Defender status | [Microsoft 365 Defender classification](/defender-for-identity/understanding-security-alerts#security-alert-classifications) | Microsoft Entra ID Protection risk state |  Risk detail in Microsoft Entra ID Protection |
-| --- | --- | --- | --- |
-| New | False positive | Confirmed safe | `M365DAdminDismissedDetection` |
-| New | Benign true positive | Confirmed safe | `M365DAdminDismissedDetection` |
-| New | True positive | Confirmed compromised | `M365DAdminDismissedDetection` |
-| In Progress | Not set | At risk |  |
-| In Progress | False positive | Confirmed safe | `M365DAdminDismissedDetection` |
-| In Progress | Benign true positive | Confirmed safe | `M365DAdminDismissedDetection` |
-| In Progress | True positive | Confirmed compromised | `M365DAdminDismissedDetection` |
-| Resolved | Not set | Dismissed | `M365DAdminDismissedDetection` |
-| Resolved | False positive | Confirmed safe | `M365DAdminDismissedDetection` |
-| Resolved | Benign true positive | Confirmed safe | `M365DAdminDismissedDetection` |
-| Resolved | True positive | Remediated | `M365DAdminDismissedDetection` |
+#### Investigating password spray detections
+
+1. If you're able to confirm that the activity wasn't performed by a legitimate user:
+   1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
+1. If a user is known to use the IP address in the scope of their duties:
+   1. **Recommended action**: Confirm sign-in safe
+1. If you're able to confirm that the account hasn't been compromised and can see no brute force or password spray indicators against the account.
+   1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
+
+For further investigation of password spray risk detections, see the article Guidance for identifying and investigating password spray attacks.
+
+#### Investigating leaked credentials detections
+
+- If this detection signal has alerted for a leaked credential for a user:
+   - **Recommended action**: Confirm the user as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
 
 ## Next steps
 
