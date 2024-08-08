@@ -43,7 +43,7 @@ In addition, users that are enabled for SMS sign-in cannot be synchronized throu
 
 ### Updating the showInAddressList property fails
 
-For existing B2B collaboration users, the showInAddressList attribute will be updated as long as the B2B collaboration user doesn't have a mailbox enabled in the target tenant. If the mailbox is enabled in the target tenant, use the [Set-MailUser](/powershell/module/exchange/set-mailuser) PowerShell cmdlet to set the HiddenFromAddressListsEnabled property to a value of $false.
+For existing B2B collaboration users, the showInAddressList attribute is updated as long as the B2B collaboration user doesn't have a mailbox enabled in the target tenant. If the mailbox is enabled in the target tenant, use the [Set-MailUser](/powershell/module/exchange/set-mailuser) PowerShell cmdlet to set the HiddenFromAddressListsEnabled property to a value of $false.
 
 `Set-MailUser [GuestUserUPN] -HiddenFromAddressListsEnabled:$false`
 
@@ -55,11 +55,11 @@ For more information, see [About the Exchange Online PowerShell module](/powersh
 
 ### Configuring synchronization from target tenant
 
-Configuring synchronization from the target tenant isn't supported. All configurations must be done in the source tenant. Note that the target administrator is able to turn off cross-tenant synchronization at any time.
+Configuring synchronization from the target tenant isn't supported. All configurations must be done in the source tenant. The target administrator is able to turn off cross-tenant synchronization at any time.
 
 ### Two users in the source tenant matched with the same user in the target tenant
 
-When two users in the source tenant have the same mail, and they both need to be created in the target tenant, one user will be created in the target and linked to the two users in the source. Please ensure that the mail attribute is not shared among users in the source tenant. In addition, please ensure that the mail of the user in the source tenant is from a verified domain. The external user will not be created successfully if the mail is from an unverified domain. 
+When two users in the source tenant have the same mail, and they both need to be created in the target tenant, one user is created in the target and linked to the two users in the source. Ensure that the mail attribute is not shared among users in the source tenant. In addition, please ensure that the mail of the user in the source tenant is from a verified domain. The external user will not be created successfully if the mail is from an unverified domain. 
 
 <a name='usage-of-azure-ad-b2b-collaboration-for-cross-tenant-access'></a>
 
@@ -74,7 +74,7 @@ When two users in the source tenant have the same mail, and they both need to be
 
 #### Unable to change provisioning mode back to manual
 
-After you've configured provisioning for the first time, you'll notice that the provisioning mode has switched from manual to automatic. You can't change it back to manual. But you can turn off provisioning through the UI. Turning off provisioning in the UI effectively does the same as setting the dropdown to manual.
+On configuring provisioning for the first time, you'll notice that the provisioning mode has switched from manual to automatic. You can't change it back to manual. But you can turn off provisioning through the UI. Turning off provisioning in the UI effectively does the same as setting the dropdown to manual.
 
 ## Attribute mappings 
 
@@ -88,11 +88,11 @@ Extensions to your schema can sometimes be missing from the source attribute dro
 
 #### Null attribute can't be provisioned
 
-Microsoft Entra ID currently can't provision null attributes. If an attribute is null on the user object, it will be skipped. 
+Microsoft Entra ID currently can't provision null attributes. If an attribute is null on the user object, it is skipped. 
 
 #### Special characters are not supported on joining properties
 
-Microsoft Entra ID currently can't perform filter queries on values containing special characters. Therefore a provisioning attempt on a resource (user or group) with a special character on filter attributes will fail. An example is a group will special character on the name can be created on Entra ID but cannot be synced to target system
+Microsoft Entra ID currently can't perform filter queries on values containing special characters. Therefore a provisioning attempt on a resource (user or group) with a special character on filter attributes fails. An example is a group will special character on the name can be created on Entra ID but cannot be synced to target system
 
 #### Maximum characters for attribute-mapping expressions
 
