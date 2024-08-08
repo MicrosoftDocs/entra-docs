@@ -376,5 +376,4 @@ Once you have confirmed that everything is working correctly with Azure AD, you 
 4. **Updating any remaining applications or services that still rely on ADFS.**
 
 ### More Resources
-- [Microsoft Documentation on Azure AD SSO](https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/single-sign-on-portal-integration)
-- [Azure AD SSO Best Practices](https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/what-is-single-sign-on)
+- [Azure AD SSO Best Practices](https://learn.microsoft.com/entra/identity/enterprise-apps/what-is-single-sign-on)
