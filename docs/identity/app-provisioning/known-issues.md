@@ -90,6 +90,10 @@ Extensions to your schema can sometimes be missing from the source attribute dro
 
 Microsoft Entra ID currently can't provision null attributes. If an attribute is null on the user object, it will be skipped. 
 
+#### Special characters are not supported on joining properties
+
+Microsoft Entra ID currently can't perform filter queries on values containing special characters. Therefore a provisioning attempt on a resource (user or group) with a special character on filter attributes will fail. An example is a group will special character on the name can be created on Entra ID but cannot be synced to target system
+
 #### Maximum characters for attribute-mapping expressions
 
 Attribute-mapping expressions can have a maximum of 10,000 characters. 
