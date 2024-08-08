@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/25/2024
+ms.date: 07/29/2024
 ms.author: jfields
 ---
 
@@ -42,7 +42,7 @@ In this tutorial, we guide you through the steps and best practices for integrat
 
 Before you start integrating Oracle HCM with Microsoft Entra ID using the Inbound Provisioning API, you need to ensure that you have the following prerequisites:
 
-- An [Oracle HCM (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23d/faohb/Human-Capital-Management-Integration-Specialist-JR-16.html#Human_Capital_Management_Integration_Specialist_JR_16_d1e51970) account with privileges to:
+- An Oracle HCM (oracle.com) account with privileges to:
 
   - View and export HCM data.
   - Access the Oracle HCM REST APIs. For this tutorial, we referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
@@ -281,7 +281,7 @@ Here is a generic example of how the Oracle HCM attributes could map to attribut
 
 Once you format the [SCIM bulk request](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md#bulk-request-with-scim-enterprise-user-schema), you can then send the data to the [bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint via API-driven provisioning.
 
-Before enabling the integration, run manual tests and verifications to validate the SCIM bulk request payload structure. You may use tools, such as [Postman](~/identity/app-provisioning/inbound-provisioning-api-postman.md) or [Graph Explorer](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md) to confirm that the bulk request payloads are processed as expected.
+Before enabling the integration, run manual tests and verifications to validate the SCIM bulk request payload structure. You may use tools, such as [cURL](https://go.microsoft.com/fwlink/?linkid=2281068) or [Graph Explorer](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md) to confirm that the bulk request payloads are processed as expected.
 
 > [!NOTE]
 > If you don't want to engage a partner or build your own custom module, we recommend using the **HCM Extract tool** described in the next section.
@@ -537,3 +537,6 @@ We thank the following partners for their help reviewing and contributing to thi
 ## Next steps
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
+
+
+[inboundProvisioningCurlTutorial]: ~identity/app-provisioning/inbound-provisioning-api-curl-tutorial
