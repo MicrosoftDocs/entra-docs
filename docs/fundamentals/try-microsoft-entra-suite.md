@@ -14,15 +14,17 @@ ms.collection: M365-identity-device-management
 # Customer intent: As a new administrator, I want to try the Microsoft Entra Suite, to determine which license is right for me and what features are available.
 ---
 
+# Trial user guide: Microsoft Entra Suite
+
 Welcome to the Microsoft Entra Suite trial user guide. Make the most of your free trial by discovering the robust and comprehensive capabilities of [Microsoft Entra](what-is-entra.md).
 
 ## What is the Microsoft Entra Suite? 
 
-[Microsoft Entra Suite](/security/blog/2024/07/11/simplified-zero-trust-security-with-the-microsoft-entra-suite-and-unified-security-operations-platform-now-generally-available/) is the product SKU for identity and network access solutions from Microsoft. It delivers a complete cloud-based solution for workforce access. 
+[Microsoft Entra Suite](https://microsoft.com/security/blog/2024/07/11/simplified-zero-trust-security-with-the-microsoft-entra-suite-and-unified-security-operations-platform-now-generally-available/) is the product SKU for identity and network access solutions from Microsoft. It delivers a complete cloud-based solution for workforce access. 
 
 With Microsoft Entra Suite, you can protect and verify any identity, provide secure access from anywhere to any app or resource (cloud or on-premises), keep users and organizations safe by filtering out malicious content, and ensure that only the right identities have access to your organization's apps and resources.
 
-:::image type="content" border="true" source="./media/entra-suite-trial/entra-trial.png" alt-text="Screenshot of the Microsoft Entra Suite zero trust strategy steps.":::
+:::image type="content" border="true" source="./media/entra-suite-trial/entra-suite-trial.png" alt-text="Screenshot of the Microsoft Entra Suite zero trust strategy steps.":::
 
 ## Trial licensing prerequisites
 
