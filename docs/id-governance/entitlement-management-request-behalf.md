@@ -1,0 +1,91 @@
+---
+title: Request access packages on-behalf-of other users(Preview)
+description: This article describes how to set up an access package so that managers can approve, or deny, requests for users reporting to them.
+author: owinfreyATL
+ms.author: owinfrey
+ms.service: entra-id-governance
+ms.subservice: entitlement-management
+ms.topic: how-to 
+ms.date: 08/08/2024
+
+#CustomerIntent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
+---
+
+
+# Request access package on-behalf-of other users(Preview)
+
+Entitlement Management enables admins to create access packages to manage their organization’s resources. Admins can either directly assign users to an access package or configure an access package policy that allows users and groups to request access. This option to create self-service processes is great, especially as organizations scale and hire more employees. However, new employees joining an organization might not always know what they need access to or how they can request access. In this case, a new employee would likely rely on their manager to guide them through the access request process.
+
+Instead of having new employees navigate the request process, managers can request access packages for their employees, making onboarding faster and more seamless. To enable this functionality for managers, admins can select an option when setting up an access package policy that allows managers to request access on their employees' behalf.
+
+Expanding self-service request flows to allow requests on behalf of employees ensures that users have timely access to necessary resources and increases productivity.
+
+
+## Scenarios for managers requesting on behalf of employees
+
+Imagine your organization hires hundreds of new employees each year and you’re tasked with training new hires on IT processes, including how to request access for resources in My Access. Training sessions are only at the beginning of each month, so managers of new hires who start later in the month often reach out for ad-hoc training. This is becoming increasingly common.
+
+Instead of conducting numerous ad-hoc training sessions to ensure new hires know how to request access in their first week(s) at the organization, you can set up access package policies that allow managers to request access on behalf of their employees.
+
+:::image type="content" source="media/entitlement-management-request-behalf/enable-manager-requests.png" alt-text="Screenshot of request on behalf of options.":::
+
+Now, managers are empowered to request access on behalf of new hires who have not gone through the IT training. This ensures that employees have the tools and resources necessary to start on day one, and increases new hire satisfaction as they don’t need to wait for access or navigate the request process on their own.
+
+:::image type="content" source="media/entitlement-management-request-behalf/myaccess-approval-request.png" alt-text="Screenshot of the approval page for a requested access package in my access.":::
+
+## Prerequisites
+
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
+
+
+
+## Configure an access package policy allowing on behalf of requests
+
+Follow these steps to change the list of incompatible groups or other access packages for an existing access package:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+
+1. Browse to **Identity governance** > **Entitlement management** > **Access packages**. 
+
+1. Select the access package you want to set up for on behalf of requests.  
+
+1. Select the policy you wish to edit or create a new policy. 
+
+1. On the **Requests** tab, set **Enable new requests** to Yes. This should show you the option **Allow managers to request on behalf of employees (preview)**. Set that option to Yes.  
+    :::image type="content" source="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" alt-text="Screenshot of editing an access package;s request on behalf of policy.":::
+    > [!NOTE]
+    > : If approval is required, you will also see the option to **Bypass approval stage if manager is the requestor and approver (preview)**.
+1. Save your policy. 
+
+## Request access on behalf of your employees
+
+As a manager of an employee assigned an access package, you'd do the following steps to request access on their behalf:
+
+1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com). For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
+
+1. In the left menu, select **Approvals** to see a list of access requests pending approval.
+
+1. On the **Pending** tab, find the request.
+    :::image type="content" source="media/entitlement-management-request-behalf/myaccess-approval-request.png" alt-text="Screenshot of the pending approval requests in my access.":::
+
+1. Either approve, or deny, the request on behalf of your employee.
+
+## Next step
+
+TODO: Add your next step link(s)
+
+> [!div class="nextstepaction"]
+> [Write concepts](article-concept.md)
+
+<!-- OR -->
+
+## Related content
+
+TODO: Add your next step link(s)
+
+- [Write concepts](article-concept.md)
+
+<!--
+Remove all the comments in this template before you sign-off or merge to the main branch.
+-->
+
