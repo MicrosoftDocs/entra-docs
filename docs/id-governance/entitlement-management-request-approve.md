@@ -58,7 +58,7 @@ If you don't have the email, you can find the access requests pending your appro
 1. Based on the information the requestor provided, you can then approve or deny the request. See the steps in Approve or deny request for guidance.
 
 > [!NOTE]
-> If the manager of the user the request is for is the approver, and also the requestor, of the the access package then the approval stage might be bypassed depending on policy settings. For more information, see: **INSERT LINK**
+> If the manager of the user the request is for is the approver, and also the requestor, of the the access package then the approval stage might be bypassed depending on policy settings. For more information, see: [Configure an access package policy allowing on behalf of requests](entitlement-management-request-behalf.md).
 
 ## Approve or deny request
 

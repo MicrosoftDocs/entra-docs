@@ -74,9 +74,3 @@ As a manager of an employee assigned an access package, you'd do the following s
 
 - [Approve or deny access requests - entitlement management](entitlement-management-request-approve.md)
 - [Request process and email notifications](entitlement-management-process.md)
-
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
-
