@@ -1255,6 +1255,8 @@
         href: hashicorp-tutorial.md
       - name: Hawkeye Platform
         href: hawkeyebsb-tutorial.md
+      - name: Haystack
+        href: haystack-tutorial.md
       - name: HCL BigFix Platform
         href: hcl-bigfix-platform-tutorial.md
       - name: hCaptcha Enterprise
@@ -1757,6 +1759,8 @@
         href: mapiq-essentials-tutorial.md  
       - name: Maptician
         href: maptician-tutorial.md 
+      - name: Marker.io
+        href: marker-io-tutorial.md
       - name: Marketo
         href: marketo-tutorial.md
       - name: Maverics Identity Orchestrator SAML Connector
@@ -2207,6 +2211,8 @@
         href: processunity-tutorial.md  
       - name: Procore SSO
         href: procoresso-tutorial.md
+      - name: Prodog
+        href: prodog-tutorial.md
       - name: ProdPad
         href: prodpad-tutorial.md
       - name: productboard
