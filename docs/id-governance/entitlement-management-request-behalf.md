@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 08/08/2024
 
 #CustomerIntent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
+
 ---
 
 
