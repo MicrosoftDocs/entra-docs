@@ -92,7 +92,7 @@ Microsoft Entra ID currently can't provision null attributes. If an attribute is
 
 #### Special characters are not supported on joining properties
 
-Microsoft Entra ID currently can't perform filter queries on values containing special characters. Therefore a provisioning attempt on a resource (user or group) with a special character on filter attributes fails. An example is a group will special character on the name can be created on Entra ID but cannot be synced to target system
+Microsoft Entra ID currently can't perform filter queries on values containing special characters. Therefore a provisioning attempt on a resource (user or group) with a special character on filter attributes fails. An example is a group will special character on the name can be created on Microsoft Entra ID but cannot be synced to target system
 
 #### Maximum characters for attribute-mapping expressions
 
