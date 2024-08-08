@@ -91,7 +91,7 @@ Verify the attributes have `YES` as values.
  
 `PRT` should be present. To learn more about `PRT`, see [Troubleshoot primary refresh token issues on Windows devices](../identity/devices/troubleshoot-primary-refresh-token.md).
 
-`CloudTGT` is present if you configured cloud Kerberos trust correctly. To learn more about configuring cloud Kerberos trust, see[Passwordless security key sign-in to on-premises resources](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
+`CloudTGT` is present if you configured cloud Kerberos trust correctly. To learn more about configuring cloud Kerberos trust, see [Passwordless security key sign-in to on-premises resources](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
 
 Run the `klist` command.
 
