@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 
 ms.topic: concept-article
-ms.date: 07/25/2024
+ms.date: 08/08/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -49,9 +49,9 @@ While SMS isn't an option for first factor authentication, it's available as a s
 
 ## SMS based authentication for MFA
 
-When a user attempts to sign in, your Conditional Access policy requires the user to satisfy the MFA requirement. The user is prompted to complete verification with SMS. Our SMS MFA includes automatic fraud checks. If we suspect fraud, we'll ask the user to complete a CAPTCHA before sending them the SMS OTP for verification. The user receives an SMS text similar to the following:
+When a user attempts to sign in, your Conditional Access policy requires the user to satisfy the MFA requirement. The user is prompted to complete verification with SMS. Our SMS MFA includes automatic fraud checks. If we suspect fraud, we'll ask the user to complete a CAPTCHA before sending them the SMS OTP for verification. The user enters their phone number, and then receives an SMS text with a verification code.
 
-   :::image type="content" source="media/concept-multifactor-authentication-customers/sms-text-sent.png" alt-text="Screenshot of the SMS text for MFA.":::
+   :::image type="content" source="media/concept-multifactor-authentication-customers/sms-text.png" alt-text="Screenshot of the SMS text for MFA." border="false":::
 
 ## SMS pricing tiers by country/region
 
