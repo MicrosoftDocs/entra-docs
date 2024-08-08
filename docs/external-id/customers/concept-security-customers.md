@@ -41,8 +41,8 @@ Microsoft Entra External ID external tenants include several baseline security f
 
 |Feature            |Notes     |
 |-------------------|----------|
-|Conditional Access |Allows organizations to set rules around user access to applications and data, preventing unauthorized access. [Learn more](~/identity/conditional-access/overview) </br>**Note:** Default settings are provided, but some Identity Protection features require configuration.      |
-|Risk detections    |Reports Risk Events based on numerous parameters and can be used in CA for Risked Based access control. [Learn more](~/id-protection/concept-identity-protection-risks#risk-detections-mapped-to-riskeventtype) </br>**Note:** Default settings are provided, but premium risk event detection requires configuration. |
+|Conditional Access |Allows organizations to set rules around user access to applications and data, preventing unauthorized access. [Learn more](~/identity/conditional-access/overview.md) </br>**Note:** Default settings are provided, but some Identity Protection features require configuration.      |
+|Risk detections    |Reports Risk Events based on numerous parameters and can be used in CA for Risked Based access control. [Learn more](~/id-protection/concept-identity-protection-risks.md#risk-detections-mapped-to-riskeventtype) </br>**Note:** Default settings are provided, but premium risk event detection requires configuration. |
 
 ### Common networking protection
 
