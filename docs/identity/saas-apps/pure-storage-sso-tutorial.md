@@ -164,7 +164,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
     1. Click **Save**.
 
     > [!NOTE]
-    > Perform this on Entra app side, only if you intend to enable Encypt Assertions. Import certificates and enable **Token Encryption** by following this [link](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/howto-saml-token-encryption?tabs=azure-portal)
+    > Perform this on Entra app side, only if you intend to enable Encypt Assertions. Import certificates and enable **Token Encryption** by following this [link](https://learn.microsoft.com/entra/identity/enterprise-apps/howto-saml-token-encryption)
 
 
 ## Test SSO 
