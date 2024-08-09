@@ -52,7 +52,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Customer LockBox Access Approver](#customer-lockbox-access-approver) | Can approve Microsoft support requests to access customer organizational data. | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91 |
 > | [Desktop Analytics Administrator](#desktop-analytics-administrator) | Can access and manage Desktop management tools and services. | 38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4 |
 > | [Directory Readers](#directory-readers) | Can read basic directory information. Commonly used to grant directory read access to applications and guests. | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b |
-> | [Directory Synchronization Accounts](#directory-synchronization-accounts) | Only used by Microsoft Entra Connect and Microsoft Entra Cloud Sync services.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | d29b2b05-8046-44ba-8758-1e26182fcf32 |
+> | [Directory Synchronization Accounts](#directory-synchronization-accounts) | Only used by Microsoft Entra Connect service. | d29b2b05-8046-44ba-8758-1e26182fcf32 |
 > | [Directory Writers](#directory-writers) | Can read and write basic directory information. For granting access to applications, not intended for users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9360feb5-f418-4baa-8175-e2a00bac4301 |
 > | [Domain Name Administrator](#domain-name-administrator) | Can manage domain names in cloud and on-premises.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 8329153b-31d0-4727-b945-745eb3bc5f31 |
 > | [Dynamics 365 Administrator](#dynamics-365-administrator) | Can manage all aspects of the Dynamics 365 product. | 44367163-eba1-44c3-98af-f5787879f96a |
@@ -817,61 +817,12 @@ Users in this role can read basic directory information. This role should be use
 
 ## Directory Synchronization Accounts
 
-[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
-
-This is a [privileged role](privileged-roles-permissions.md). Do not use. This role is automatically assigned to the Microsoft Entra Connect and Microsoft Entra Cloud Sync services, and is not intended or supported for any other use.
+Do not use. This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/applications/create | Create all types of applications |
-> | microsoft.directory/applications/delete | Delete all types of applications |
-> | microsoft.directory/applications/appRoles/update | Update the appRoles property on all types of applications |
-> | microsoft.directory/applications/audience/update | Update the audience property for applications |
-> | microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
-> | microsoft.directory/applications/basic/update | Update basic properties for applications |
-> | microsoft.directory/applications/credentials/update | Update application credentials<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/applications/notes/update | Update notes of applications |
-> | microsoft.directory/applications/owners/update | Update owners of applications |
-> | microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |
-> | microsoft.directory/applications/policies/update | Update policies of applications |
-> | microsoft.directory/applications/tag/update | Update tags of applications |
-> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
-> | microsoft.directory/hybridAuthenticationPolicy/allProperties/allTasks | Manage hybrid authentication policy in Microsoft Entra ID<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/organization/dirSync/update | Update the organization directory sync property |
-> | microsoft.directory/passwordHashSync/allProperties/allTasks | Manage all aspects of Password Hash Synchronization (PHS) in Microsoft Entra ID |
-> | microsoft.directory/policies/create | Create policies in Microsoft Entra ID |
-> | microsoft.directory/policies/delete | Delete policies in Microsoft Entra ID |
-> | microsoft.directory/policies/standard/read | Read basic properties on policies |
-> | microsoft.directory/policies/owners/read | Read owners of policies |
-> | microsoft.directory/policies/policyAppliedTo/read | Read policies.policyAppliedTo property |
-> | microsoft.directory/policies/basic/update | Update basic properties on policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/policies/owners/update | Update owners of policies |
-> | microsoft.directory/policies/tenantDefault/update | Update default organization policies |
-> | microsoft.directory/servicePrincipals/create | Create service principals |
-> | microsoft.directory/servicePrincipals/delete | Delete service principals |
-> | microsoft.directory/servicePrincipals/enable | Enable service principals |
-> | microsoft.directory/servicePrincipals/disable | Disable service principals |
-> | microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials | Manage password single sign-on credentials on service principals |
-> | microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials | Read password single sign-on credentials on service principals |
-> | microsoft.directory/servicePrincipals/appRoleAssignedTo/read | Read service principal role assignments |
-> | microsoft.directory/servicePrincipals/appRoleAssignments/read | Read role assignments assigned to service principals |
-> | microsoft.directory/servicePrincipals/standard/read | Read basic properties of service principals |
-> | microsoft.directory/servicePrincipals/memberOf/read | Read the group memberships on service principals |
-> | microsoft.directory/servicePrincipals/oAuth2PermissionGrants/read | Read delegated permission grants on service principals |
-> | microsoft.directory/servicePrincipals/owners/read | Read owners of service principals |
-> | microsoft.directory/servicePrincipals/ownedObjects/read | Read owned objects of service principals |
-> | microsoft.directory/servicePrincipals/policies/read | Read policies of service principals |
-> | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
-> | microsoft.directory/servicePrincipals/audience/update | Update audience properties on service principals |
-> | microsoft.directory/servicePrincipals/authentication/update | Update authentication properties on service principals |
-> | microsoft.directory/servicePrincipals/basic/update | Update basic properties on service principals |
-> | microsoft.directory/servicePrincipals/credentials/update | Update credentials of service principals<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/servicePrincipals/notes/update | Update notes of service principals |
-> | microsoft.directory/servicePrincipals/owners/update | Update owners of service principals |
-> | microsoft.directory/servicePrincipals/permissions/update | Update permissions of service principals |
-> | microsoft.directory/servicePrincipals/policies/update | Update policies of service principals |
-> | microsoft.directory/servicePrincipals/tag/update | Update the tag property for service principals |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read standard on-premises directory synchronization information |
 
 ## Directory Writers
 
