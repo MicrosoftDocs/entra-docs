@@ -50,7 +50,7 @@ You also need the following accounts to *install* Microsoft Entra Connect:
 > [!NOTE]
 > You can manage the administrative accounts that are used in Microsoft Entra Connect by using an *enterprise access model*. An organization can use an enterprise access model to host administrative accounts, workstations, and groups in an environment that has stronger security controls than a production environment. For more information, see [Enterprise access model](/security/privileged-access-workstations/privileged-access-access-model#esae-administrative-forest-design-approach).
 >
-> The Global Administrator role isn't required after initial setup. After setup, the only required account is the Directory Synchronization Accounts role account. Instead of removing the account that has the Global Administrator role, we recommend that you change the role to a role that has a lower level of permissions. Completely removing the account might introduce issues if you ever need to run the wizard again. You can add permissions if you need to use the Microsoft Entra Connect wizard again.
+> The Global Administrator role isn't required after initial setup. After setup, the only required account is the [Directory Synchronization Accounts role](~/identity/role-based-access-control/permissions-reference.md#directory-synchronization-accounts) account. Instead of removing the account that has the Global Administrator role, we recommend that you change the role to a role that has a lower level of permissions. Completely removing the account might introduce issues if you ever need to run the wizard again. You can add permissions if you need to use the Microsoft Entra Connect wizard again.
 
 <a name='azure-ad-connect-installation'></a>
 
@@ -267,7 +267,7 @@ An account in Microsoft Entra ID is created for the sync service to use. You can
 
 The name of the server the account is used on can be identified in the second part of the username. In the preceding figure, the server name is DC1. If you have staging servers, each server has its own account.
 
-A server account is created with a long, complex password that doesn't expire. The account is granted a special Directory Synchronization Accounts role that has permissions to perform only directory synchronization tasks. This special built-in role can't be granted outside of the Microsoft Entra Connect wizard. The [Microsoft Entra admin center](https://entra.microsoft.com) shows this account with the User role.
+A server account is created with a long, complex password that doesn't expire. The account is granted a special [Directory Synchronization Accounts role](~/identity/role-based-access-control/permissions-reference.md#directory-synchronization-accounts) that has permissions to perform only directory synchronization tasks. This special built-in role can't be granted outside of the Microsoft Entra Connect wizard. The [Microsoft Entra admin center](https://entra.microsoft.com) shows this account with the User role.
 
 Microsoft Entra ID has a limit of 20 sync service accounts.
 
