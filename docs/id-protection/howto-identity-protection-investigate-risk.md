@@ -5,12 +5,12 @@ description: Learn how to investigate risky users, detections, and sign-ins in M
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 08/09/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: chuqiaoshi
+ms.reviewer: cokoopma
 ---
 # How To: Investigate risk
 
@@ -20,7 +20,7 @@ Microsoft Entra ID Protection provides organizations with reporting they can use
 
 The risk reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Identity Protection**. You can navigate directly to the reports or view a summary of important insights in the dashboard view and navigate to the corresponding reports from there.
 
-![X]()
+:::image type="content" source="media/howto-identity-protection-investigate-risk/view-high-risk-users-from-id-protection-dashboard.png" alt-text="Screenshot shoing the number of high risk users widget from the ID Protection dashboard.":::
 
 Each report launches with a list of all detections for the period shown at the top of the report along with the option to filter and add or remove columns based on administrator preference. Administrators can also choose to download the data in .CSV or .JSON format.
 
