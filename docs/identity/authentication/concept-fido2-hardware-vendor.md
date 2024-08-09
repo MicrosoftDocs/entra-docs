@@ -54,7 +54,7 @@ The following table lists FIDO2 security key models listed in MDS version 77. Th
 |ACS FIDO Authenticator|50a45b0c-80e7-f944-bf29-f552bfa2e048|![n]|![y]|![n]|![n]|
 |ACS FIDO Authenticator Card|973446ca-e21c-9a9b-99f5-9b985a67af0f|![n]|![n]|![y]|![n]|
 |Allthenticator App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers|5ca1ab1e-1337-fa57-f1d0-a117e71ca702|![y]|![y]|![n]|![n]|
-|Arculus FIDO 2.1 Key Card \[P71]|3f59672f-20aa-4afe-b6f4-7e5e916b6d98|![n]|![y]|![n]|![n]|
+|Arculus FIDO 2.1 Key Card \[P71\]|3f59672f-20aa-4afe-b6f4-7e5e916b6d98|![n]|![y]|![n]|![n]|
 |Arculus FIDO2/U2F Key Card|9d3df6ba-282f-11ed-a261-0242ac120002|![n]|![y]|![n]|![n]|
 |ATKey.Card CTAP2.0|d41f5a69-b817-4144-a13c-9ebd6d9254d6|![y]|![n]|![n]|![n]|
 |ATKey.Card NFC|da1fa263-8b25-42b6-a820-c0036f21ba7f|![y]|![y]|![y]|![n]|
