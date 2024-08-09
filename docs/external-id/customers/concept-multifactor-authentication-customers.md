@@ -20,40 +20,47 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-[Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. In your external tenant, you can use Microsoft Entra Conditional Access policies to require MFA during the sign-in or sign-in process. External tenants support two methods for authentication as a second factor:
+[Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
 
 - Email one-time passcode
-- SMS based authentication
+- SMS based authentication (add-on, see [details below](#sms-based-authentication))
 
-During the sign-up or sign-in process, users are prompted to register for an MFA method. Depending on how you've configured the user flow and which methods you've enabled, the user can choose either the email one-time passcode or SMS verification method.
+Enforcing MFA enhances your organization's security by adding an extra layer of verification, making it more difficult for unauthorized users to gain access.
 
-## Setting up MFA in an external tenant
+## Creating an MFA policy
 
-External tenants support both email one-time passcodes and SMS-based authentication for second-factor verification. The local email account options that you configure in your user flows, including using an email with a password or an email one-time passcode, serve as first-factor authentication methods for sign-up and sign-in. Depending on which of these options you choose as the first factor, you'll have different second-factor authentication methods available for [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md).
+In an external tenant, you can use Microsoft Entra Conditional Access to create a policy that prompts users for MFA when they sign up or sign in to your app. You create this policy in the Microsoft Entra admin center under Conditional Access in the Protection section. You can specify which users and groups the policy will apply to, including all users and excluding any emergency access or break-glass accounts.
 
-- **Email with password**: Users can create a local account using their email as the username and a password. When enabling MFA, you can offer second-factor verification through email one-time passcodes, SMS-based authentication, or both.
-- **Email one-time passcode**: Users can set up a local account with their email as the username and a one-time passcode sent to their email. For MFA, second-factor verification is limited to SMS-based authentication only. Because the one-time passcode is the primary sign-in method, it can't be used for secondary verification.
+In the policy, you define the applications that will require MFA. You have the option to apply the policy to all cloud apps or select specific apps, while excluding any applications that do not require MFA. Then you configure the policy to grant access only if users complete the MFA requirement.
 
-For details, see [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md).
+For details, see [how to create a Conditional Access policy in an external tenant](how-to-multifactor-authentication-customers.md#create-a-conditional-access-policy).
+
+## Enabling MFA methods
+
+When you select identity provider options in your user flows, you define the first-factor authentication methods for sign-up and sign-in. Second-factor verification methods for MFA are configured in a separate section of the Microsoft Entra admin center, under **Authentication methods** in the **Protection** section.
+
+Depending on which option you choose as the first factor, different second-factor verification methods are available for [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md).
+
+- **Email with password and social identity providers**: For any of these first-factor methods, you can enable email one-time passcode, SMS, or both as second-factor verification methods for MFA.
+- **Email one-time passcode**: When email with one-time passcode is selected as the first-factor authentication method, it can't be used for second-factor verification. Therefore, only SMS-based verification can be enable for MFA.
+
+For details, see [how to enable MFA methods in an external tenant](how-to-multifactor-authentication-customers.md#enable-email-one-time-passcode-as-an-mfa-method).
 
 ## Email one-time passcode
 
 Email one-time passcode authentication is available in an external tenant both as a first- and second-factor verification method. To allow the use of email one-time passcodes for MFA, your local account authentication method must be set to *Email with password*. If you choose *Email with one-time passcode*, customers who use this method for primary sign-in won't be able to use it for MFA secondary verification.
 
-When email one-time passcode is enabled for MFA, the user first signs in with their primary sign-in method. Then a message in the browser indicates that a code will be sent to the user's email address. The user chooses to send the code, retrieves the passcode from their email inbox, and enters it in the browser window.
+When email one-time passcode is enabled for MFA, the user signs in with their primary sign-in method and is notified that a code will be sent to the user's email address. The user chooses to send the code, retrieves the passcode from their email inbox, and enters it in the sign-in window.
 
 ## SMS-based authentication
 
-While SMS isn't an option for first factor authentication, it's available as a second factor for MFA. Users who sign in with email and password, email and one-time passcode, or social identities like Google or Facebook, are prompted for second verification using SMS. Our SMS MFA includes automatic fraud checks. If we suspect fraud, we'll ask the user to complete a CAPTCHA to confirm they're not a robot before sending the SMS code for verification.
+SMS is available at an additional cost for second-factor verification in external tenants. Currently, SMS isn't available in external tenants for first-factor authentication.
 
-
-## SMS based authentication for MFA
-
-When a user attempts to sign in, your Conditional Access policy requires the user to satisfy the MFA requirement. The user is prompted to complete verification with SMS. Our SMS MFA includes automatic fraud checks. If we suspect fraud, we'll ask the user to complete a CAPTCHA before sending them the SMS OTP for verification. The user enters their phone number, and then receives an SMS text with a verification code.
+When SMS is enabled for MFA, the user signs in with their primary sign-in method and is prompted to complete verification using a code send to their phone via text. SMS MFA includes automatic fraud checks. If fraud is detected, the user is blocked from signing in and is asked to complete a CAPTCHA to confirm they're not a robot before sending the SMS code for verification. The user enters their phone number, and then receives an SMS text with a verification code.
 
    :::image type="content" source="media/concept-multifactor-authentication-customers/sms-text.png" alt-text="Screenshot of the SMS text for MFA." border="false":::
 
-## SMS pricing tiers by country/region
+### SMS pricing tiers by country/region
 
 The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions.
 

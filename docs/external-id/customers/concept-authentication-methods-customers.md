@@ -8,21 +8,21 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 07/26/2024
+ms.date: 08/09/2024
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 ---
 
-# Sign-in options and identity providers for external tenants
+# Identity providers for external tenants
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with their own social account. You can also add a layer of security by enforcing multifactor authentication (MFA) so that each time a user signs in, they're required to provide an email one-time passcode or an SMS text code for verification.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with their own social account.
 
-This article describes the authentication methods and identity providers available in external tenants.
+This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
 ## Email and password sign-in
 
@@ -52,15 +52,6 @@ You can also configure options for showing, hiding, or customizing the self-serv
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email one-time passcode** is one of the local account options.
 
-## Multifactor authentication (MFA)
-
-Local email account options, like using an email with a password or a one-time passcode, act as first-factor authentication methods for application sign-up and sign-in. To enhance security, external tenants support [Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md), which requires users to provide a second method to verify their identity during sign-up or sign-in. The following second-factor authentication methods are available in external tenants:
-
-- Email one-time passcode
-- SMS-based authentication
-
-For details, see [multifactor authentication (MFA) in external tenants](concept-multifactor-authentication-customers.md).
-
 ## Social identity providers: Facebook and Google
 
 For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your customers a seamless sign-up and sign-in experience. In an external tenant, you can allow a customer to sign up and sign in using their own Facebook or Google account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
@@ -87,7 +78,7 @@ The following screenshots show the sign-in with Facebook experience. In the sign
 
 Learn how to [add Facebook as an identity provider](how-to-facebook-federation-customers.md).
 
-### Updating sign-in methods
+## Updating sign-in methods
 
 At any time, you can update the sign-in options for an app. For example, you can add social identity providers or change the local account sign-in method.
 
