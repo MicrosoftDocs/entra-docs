@@ -37,7 +37,7 @@ The risky users report includes all users whose accounts are currently or were c
 A user becomes a risky user when:
 
 - They have one or more risky sign-ins.
-- There are one or more risks detected on the user's account, like leaked credentials. https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks
+- There are one or more [risks](concept-identity-protection-risks.md) detected on the user's account, like leaked credentials. 
 
 #### How to investigate risky users?
 
@@ -45,7 +45,7 @@ To view and investigate risky users, navigate to the Risky users report and use 
 
 ![X]()
 
-When administrators select an individual user, the Risky user details pane appears providing information such as user ID and office location, recent risky sign-in, detections not linked to a sign and risk history for that user. The Risk history tab shows all the events that have led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
+When administrators select an individual user, the Risky user details pane appears. Risky user details provide information like: user ID, office location, recent risky sign-in, detections not linked to a sign, and risk history. The Risk history tab shows the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
 
 ![X]()
 
@@ -55,7 +55,7 @@ If you have Copilot for Security, you have access to a summary in natural langua
 
 With the information provided by the Risky users report, administrators can view:
 
-- User risk, which has been remediated, dismissed, or is still currently at risk and needs investigation
+- User risk that was remediated, dismissed, or is still currently at risk and needs investigation
 - Details about detections
 - Risky sign-ins associated to a given user
 - Risk history
@@ -73,7 +73,7 @@ Administrators can then choose to take action on these events and choose to:
 
 ## Risky sign-ins report
 
-The risky sign-ins report contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. Use the "sign-in type" filter to modify this view.
+The risky sign-ins report contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
 
 ![X]()
 
@@ -88,7 +88,7 @@ With the information provided by the Risky sign-ins report, administrators can v
 - Application information
 - Location information
 
-Administrators can then choose to take action on these events which helps provide feedback. Administrators can choose to:
+Administrators can then choose to take action on these events and provide feedback. Administrators can choose to:
 
 - Confirm sign-in or user risk as compromised if risk is a true positive.
 - Confirm sign-in or user risk as safe if the risk is a false positive. Similar sign-ins shouldn't be considered risky in the future.
@@ -121,24 +121,25 @@ When starting the initial triage, we recommend the following actions:
 
 1. Review the ID Protection dashboard to visualize number of attacks, number of high risk users and other important metrics based on detections in your environment.
 1. Review the Impact analysis workbook to understand the scenarios where risk is evident in your environment and risk-based access policies should be enabled to manage high-risk users and sign-ins.
-1. Add corporate VPNs and IP Address ranges to named locations to reduce false positives.
+1. To reduce false positives, add corporate VPNs and IP address ranges to named locations.
 1. Consider creating a known traveler database for updated organizational travel reporting and use it to cross-reference travel activity.
-1. Review the logs to identify similar activities with the same characteristics. This could be an indication of more compromised accounts.
-   1. If there are common characteristics, like IP address, geography, success/failure, etc., consider blocking these with a Conditional Access policy.
-   1. Review which resource might have been compromised, such as potential data downloads or administrative modifications.
+1. Review the logs to identify similar activities with the same characteristics. This activity could be an indication of more compromised accounts.
+   1. If there are common characteristics, like IP address, geography, success/failure, etc., consider blocking them with a Conditional Access policy.
+   1. Review which resources might be compromised, including potential data downloads or administrative modifications.
    1. Enable self-remediation policies through Conditional Access
-1. If you see that the user performed other risky activities, such as downloading a large volume of files from a new location, this is a strong indication of a possible compromise.
-1. If you suspect an attacker can impersonate the user, you should require the user to reset their password and perform MFA or block the user and revoke all refresh and access tokens.
+1. Check to see if the user performed other risky activities, such as downloading a large volume of files from a new location. This behavior is a strong indication of a possible compromise.
+
+If you suspect an attacker can impersonate the user, you should require the user to reset their password and perform MFA or block the user and revoke all refresh and access tokens.
 
 ## Investigation and risk remediation framework
 
-Organizations can use the following framework to begin their investigation into any suspicious activity. If self-remediation is an option, this is the first recommended step. Self-remediation can take place through self-service password reset or through remediation flow of a risk-based Conditional Access policy.
+Organizations can use the following framework to begin their investigation into any suspicious activity. The recommended first step is self-remediation, if it's an option. Self-remediation can take place through self-service password reset or through remediation flow of a risk-based Conditional Access policy.
 
-If self-remediation isn't an option, the Admin will need to remediate the risk by invoking a password reset, requiring user to re-register for MFA, blocking the user, or revoking user sessions depending on the scenario. The following flow chart shows the recommended flow once a risk is detected:
+If self-remediation isn't an option, an administrator needs to remediate the risk. Remediation is done by invoking a password reset, requiring user to reregister for MFA, blocking the user, or revoking user sessions depending on the scenario. The following flow chart shows the recommended flow once a risk is detected:
 
 ![X]()
 
-Once the risk is contained, additional investigation might be required to mark the risk as safe, compromised or to dismiss it. To come to a confident conclusion, it might be necessary to have a conversation with the user in question, review of the sign-in logs, review of the audit logs or querying risk logs in Log Analytics to name a few. The following outlines recommended actions during this phase of the investigation:
+Once the risk is contained, more investigation might be required to mark the risk as safe, compromised or to dismiss it. To come to a confident conclusion, it might be necessary to: have a conversation with the user in question, review the sign-in logs, review the audit logs, or query risk logs in Log Analytics. The following outlines recommended actions during this phase of the investigation:
 
 1. Check the logs and validate whether the activity is normal for the given user.
    1. Look at the user's past activities including the following properties to see if they're normal for the given user.
@@ -180,7 +181,7 @@ To investigate a Microsoft Entra Threat Intelligence risk detection, follow thes
       1. Ranges of IPs/ASNs
       1. Time and frequency of sign-ins
 1. This detection was triggered by a real-time rule:
-   1. Validate that no other users in your directory are targets of the same attack. This can be found by the TI_RI_#### number assigned to the rule.
+   1. Validate that no other users in your directory are targets of the same attack. This information can be found using the TI_RI_#### number assigned to the rule.
    1. Real-time rules protect against novel attacks identified by Microsoft's threat intelligence. If multiple users in your directory were targets of the same attack, investigate unusual patterns in other attributes of the sign in.
 
 #### Investigating atypical travel detections
@@ -223,14 +224,14 @@ To investigate a Microsoft Entra Threat Intelligence risk detection, follow thes
    1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
 1. If a user is known to use the IP address in the scope of their duties:
    1. **Recommended action**: Confirm sign-in safe
-1. If you're able to confirm that the account hasn't been compromised and can see no brute force or password spray indicators against the account.
+1. If you're able to confirm that the account isn't compromised and see no brute force or password spray indicators against the account.
    1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
 
 For further investigation of password spray risk detections, see the article Guidance for identifying and investigating password spray attacks.
 
 #### Investigating leaked credentials detections
 
-- If this detection signal has alerted for a leaked credential for a user:
+- If this detection identified a leaked credential for a user:
    - **Recommended action**: Confirm the user as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
 
 ## Next steps
