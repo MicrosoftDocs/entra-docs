@@ -179,8 +179,8 @@ The following table lists FIDO2 security key models listed in MDS version 77. Th
 
 
 <!--Image references-->
-![y]: ./media/fido2-compatibility/yes.png
-![n]: ./media/fido2-compatibility/no.png
+[y]: ./media/fido2-compatibility/yes.png
+[n]: ./media/fido2-compatibility/no.png
 
 ## Next steps
 
