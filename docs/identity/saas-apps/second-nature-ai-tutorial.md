@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 08/02/2024
+ms.date: 08/08/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -80,13 +80,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://secondnature.auth0.com/login/callback?connection=<ID>`
 
-    > [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Second Nature AI support team](mailto:support@secondnature.ai) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
-
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign on URL** text box, type the URL:
-    `https://app.secondnature.ai/`
+    In the **Sign on URL** text box, type a URL using the following pattern:
+    `https://app.secondnature.ai/?sso-name=<ID>`
+
+    > [!NOTE]
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Second Nature AI support team](mailto:support@secondnature.ai) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. Second Nature AI application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
