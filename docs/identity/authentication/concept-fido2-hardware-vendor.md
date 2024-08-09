@@ -127,12 +127,9 @@ The following table lists FIDO2 security key models listed in MDS version 77. Th
 |VALMIDO PRO FIDO|5626bed4-e756-430b-a7ff-ca78c8b12738|
 |VeriMark Guard Fingerprint Key|d94a29d9-52dd-4247-9c2d-8b818b610389|
 |VinCSS FIDO2 Authenticator|5fdb81b8-53f0-4967-a881-f5ec26fe4d18|
-|Windows Hello Hardware Authenticator|08987058-cadc-4b81-b6e1-30de50dcbe96|
-|Windows Hello Hardware Authenticator|08987058-cadc-4b81-b6e1-30de50dcbe96|
-|Windows Hello Software Authenticator|6028b017-b1d4-4c02-b4b3-afcdafc96bb2|
-|Windows Hello Software Authenticator|6028b017-b1d4-4c02-b4b3-afcdafc96bb2|
-|Windows Hello VBS Hardware Authenticator|9ddd1817-af5a-4672-a2b9-3e3dd95000a9|
-|Windows Hello VBS Hardware Authenticator|9ddd1817-af5a-4672-a2b9-3e3dd95000a9|
+|Windows Hello Hardware Authenticator||
+|Windows Hello Software Authenticator||
+|Windows Hello VBS Hardware Authenticator||
 |WiSECURE AuthTron USB FIDO2 Authenticator|504d7149-4e4c-3841-4555-55445a677357|
 |YubiKey 5 FIPS Series|73bb0cd4-e502-49b8-9c6f-b59445bf720b|
 |YubiKey 5 FIPS Series with Lightning|85203421-48f9-4355-9bc8-8a53846e5083|
@@ -149,7 +146,7 @@ The following table lists FIDO2 security key models listed in MDS version 77. Th
 |Excelsecu eSecu FIDO2 Fingerprint Key|6002f033-3c07-ce3e-d0f7-0ffe5ed42543|
 |Feitian BioPass FIDO2 Plus Authenticator|b6ede29c-3772-412c-8a78-539c1f4c62d2|
 |Feitian ePass FIDO2 Authenticator|833b721a-ff5f-4d00-bb2e-bdda3ec01e29|
-|Feitian ePass FIDO2-NFC Series (CTAP2.1, CTAP2.0, U2F)|234cd403-35a2-4cc2-8015-77ea280c77f5|
+|Feitian ePass FIDO2-NFC Series</br>(CTAP2.1, CTAP2.0, U2F)|234cd403-35a2-4cc2-8015-77ea280c77f5|
 |Feitian iePass FIDO Authenticator|3e22415d-7fdf-4ea4-8a0c-dd60c4249b9d|
 |FIDO KeyPass S3|f4c63eff-d26c-4248-801c-3736c7eaa93a|
 |FT-JCOS FIDO Fingerprint Card|8c97a730-3f7b-41a6-87d6-1e9b62bda6f0|
@@ -160,7 +157,7 @@ The following table lists FIDO2 security key models listed in MDS version 77. Th
 |IDPrime 941 Fido|2ffd6452-01da-471f-821b-ea4bf6c8676a|
 |ImproveID Authenticator|4c50ff10-1057-4fc6-b8ed-43a529530c3c|
 |KEY-ID FIDO2 Authenticator|d91c5288-0ef0-49b7-b8ae-21ca0aa6b3f3|
-|NXP Semiconductros FIDO2 Conformance Testing CTAP2 Authenticator|07a9f89c-6407-4594-9d56-621d5f1e358b|
+|NXP Semiconductros FIDO2 Conformance Testing</br>CTAP2 Authenticator|07a9f89c-6407-4594-9d56-621d5f1e358b|
 |OpenSK authenticator|664d9f67-84a2-412a-9ff7-b4f7d8ee6d05|
 |SafeNet eToken Fusion|74820b05-a6c9-40f9-8fb0-9f86aca93998|
 |SafeNet eToken Fusion CC|23786452-f02d-4344-87ed-aaf703726881|
