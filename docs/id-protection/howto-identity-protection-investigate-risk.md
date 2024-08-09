@@ -26,7 +26,7 @@ Each report launches with a list of all detections for the period shown at the t
 
 When administrators select one or multiple entries, options to confirm or dismiss the risks appear at the top of the report. Selecting an individual risk event opens a pane with more details to assist with investigations.
 
-![X]()
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-heading.png" alt-text="Screenshot...":::
 
 ### Risky users report
 
@@ -43,15 +43,15 @@ A user becomes a risky user when:
 
 To view and investigate risky users, navigate to the Risky users report and use the filters to manage the results. There's an option at the top of the page to add other columns such as risk level, status, and risk detail.
 
-![X]()
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report.png" alt-text="Screenshot...":::
 
 When administrators select an individual user, the Risky user details pane appears. Risky user details provide information like: user ID, office location, recent risky sign-in, detections not linked to a sign, and risk history. The Risk history tab shows the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
 
-![X]()
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png" alt-text="Screenshot...":::
 
 If you have Copilot for Security, you have access to a summary in natural language including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. https://learn.microsoft.com/en-us/entra/fundamentals/copilot-entra-risky-user-summarization
 
-![X]()
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png" alt-text="Screenshot...":::
 
 With the information provided by the Risky users report, administrators can view:
 
@@ -69,13 +69,13 @@ Administrators can then choose to take action on these events and choose to:
 - Block user from signing in if attacker has access to password or ability to perform MFA
 - Investigate further using Microsoft Defender for Identity by selecting a user and clicking on the ellipsis (...) in the top right hand corner of the Risky User Details pane. https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-investigate-risk#investigate-risk-with-microsoft-365-defender
 
-![X]()
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png" alt-text="Screenshot...":::
 
 ## Risky sign-ins report
 
 The risky sign-ins report contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
 
-![X]()
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png" alt-text="Screenshot...":::
 
 With the information provided by the Risky sign-ins report, administrators can view:
 
@@ -100,7 +100,7 @@ To learn more about when to take each of these actions visit How does Microsoft 
 
 The Risk detections report contains filterable data for up to the past 90 days (three months).
 
-![X]()
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risk-detections-report.png" alt-text="Screenshot...":::
 
 With the information provided by the Risk detections report, administrators can find:
 
