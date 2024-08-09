@@ -66,10 +66,10 @@ There are some optional settings on the **Configure** tab to help manage how pas
 - **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their Authenticator Attestation GUID (AAGUID). You can work with your security key vendor to determine the AAGUID of the passkey. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
 - Select **Microsoft Authenticator (Preview)** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following Authenticator Attestation GUIDs (AAGUIDs) to enable the Authenticator passkey preview:
 
-      - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
-      - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
+  - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
+  - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
    
-       >[!WARNING]
+  >[!WARNING]
   >Key restrictions set the usability of specific models or providers for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
   If you turn off key retrictions, make sure you clear the **Microsoft Authenticator (Preview)** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://aka.ms/mysecurityinfo).
