@@ -822,7 +822,7 @@ Do not use. This role is automatically assigned to the Microsoft Entra Connect s
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/onPremisesSynchronization/standard/read | Read standard on-premises directory synchronization information |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read and manage objects to enable on-premises directory synchronization. |
 
 ## Directory Writers
 
