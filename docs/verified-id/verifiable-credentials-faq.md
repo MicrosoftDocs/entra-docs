@@ -1,12 +1,12 @@
 ---
-title: Frequently asked questions - Azure Verifiable Credentials
-description: Find answers to common questions about Verifiable Credentials.
+title: Frequently asked questions - Microsoft Entra Verified ID
+description: Find answers to common questions about Microsoft Entra Verified ID.
 author: barclayn
 manager: amycolannino
 ms.service: entra-verified-id
 
 ms.topic: faq
-ms.date: 08/11/2022
+ms.date: 08/08/2024
 ms.author: barclayn
 # Customer intent: As a developer I am looking for information on how to enable my users to control their own information 
 ---
