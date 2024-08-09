@@ -3610,6 +3610,8 @@
         href: lanschool-air-provisioning-tutorial.md
       - name: LawVu
         href: lawvu-provisioning-tutorial.md
+      - name: LDAP directory
+        href: ~/identity/app-provisioning/on-premises-ldap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Lexonis TalentScape
         href: lexonis-talentscape-provisioning-tutorial.md
       - name: LimbleCMMS
@@ -3772,6 +3774,8 @@
         href: sap-analytics-cloud-provisioning-tutorial.md
       - name: SAP Cloud Identity Services
         href: sap-cloud-platform-identity-authentication-provisioning-tutorial.md
+      - name: SAP ECC (formerly SAP R/3)
+        href: ~/identity/app-provisioning/on-premises-sap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SAP SuccessFactors to Active Directory
         href: sap-successfactors-inbound-provisioning-tutorial.md
       - name: SAP SuccessFactors to Microsoft Entra ID
@@ -3782,6 +3786,8 @@
         href: sas-viya-sso-provisioning-tutorial.md
       - name: SchoolStream ASA
         href: schoolstream-asa-provisioning-tutorial.md
+      - name: SCIM (on-premises)
+        href: ~/identity/app-provisioning/on-premises-scim-provisioning.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: ScreenSteps
         href: screensteps-provisioning-tutorial.md
       - name: SecureLogin
@@ -3820,6 +3826,8 @@
         href: spaceiq-provisioning-tutorial.md
       - name: Splashtop
         href: splashtop-provisioning-tutorial.md
+      - name: SQL database
+        href: ~/identity/app-provisioning/on-premises-sql-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: StarLeaf
         href: starleaf-provisioning-tutorial.md
       - name: Starmind
