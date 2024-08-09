@@ -3,11 +3,11 @@ title: "Troubleshoot the Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/07/2024
+ms.date: 08/08/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
-ms.reviewer: lirazb
+ms.reviewer: lirazbarak
 
 
 # Customer intent: I want to troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
