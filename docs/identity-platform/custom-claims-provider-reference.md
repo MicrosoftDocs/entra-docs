@@ -79,7 +79,7 @@ POST https://your-api.com/endpoint
                 "displayName": "My Test application"
             },
             "user": {
-                "companyName": "Casey Jensen"
+                "companyName": "Casey Jensen",
                 "createdDateTime": "2016-03-01T15:23:40Z",
                 "displayName": "Casey Jensen",
                 "givenName": "Casey",
