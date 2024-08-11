@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 08/09/2024
+ms.date: 08/11/2024
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -125,9 +125,6 @@ The following table lists FIDO2 security key models listed in MDS version 77. Th
 |VALMIDO</br>PRO FIDO|5626bed4-e756-430b-a7ff-ca78c8b12738|
 |VeriMark Guard</br>Fingerprint Key|d94a29d9-52dd-4247-9c2d-8b818b610389|
 |VinCSS</br>FIDO2 Authenticator|5fdb81b8-53f0-4967-a881-f5ec26fe4d18|
-|Windows Hello</br>Hardware Authenticator||
-|Windows Hello</br>Software Authenticator||
-|Windows Hello</br>VBS Hardware Authenticator||
 |WiSECURE AuthTron</br>USB FIDO2 Authenticator|504d7149-4e4c-3841-4555-55445a677357|
 |YubiKey 5</br>FIPS Series|73bb0cd4-e502-49b8-9c6f-b59445bf720b|
 |YubiKey 5</br>FIPS Series with Lightning|85203421-48f9-4355-9bc8-8a53846e5083|
