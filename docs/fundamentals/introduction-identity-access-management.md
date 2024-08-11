@@ -18,7 +18,7 @@ In this article, you learn some of the fundamental concepts of Identity and Acce
 
 Identity and access management ensures that the right people, machines, and software components get access to the right resources at the right time. First, the person, machine, or software component proves they're who or what they claim to be. Then, the person, machine, or software component is allowed or denied access to or use of certain resources.
 
-To learn about the basic terms and concepts, see [Identity fundamentals](./identity-fundamental-concepts).
+To learn about the basic terms and concepts, see [Identity fundamentals](./identity-fundamental-concepts.md).
 
 ## What does IAM do?
 
