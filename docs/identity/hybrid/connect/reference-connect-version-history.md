@@ -403,7 +403,7 @@ When you upgrade to this V1.6 build or any newer builds, the group membership li
 - We added a check to enforce autoupgrade for V2.0 to require Windows Server 2016 or newer.
 - We added the Replicating Directory Changes permission in the Set-ADSyncBasicReadPermissions cmdlet.
 - We made a change to prevent UseExistingDatabase and import configuration from being used together because they could contain conflicting configuration settings.
-- We made a change to allow a user with the Application Admin role to change the application proxy service configuration.
+- We made a change to allow a user with the Application Administrator role to change the application proxy service configuration.
 - We removed the  label from the labels of **Import/Export** settings. This functionality is generally available.
 - We changed some labels that still referred to Company Administrator. We now use the role name Global Administrator.
 - We created new Microsoft Entra Kerberos PowerShell cmdlets (\*-AADKerberosServer) to add a Claims Transform rule to the Microsoft Entra service principal.

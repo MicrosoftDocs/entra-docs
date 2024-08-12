@@ -25,3 +25,4 @@ For the customer users to see the sign-up or sign-in experience when they use yo
 1. Choose **Select**. 
 
 Once you associate your app with a user flow, you can test your user flow by simulating a user’s sign-up or sign-in experience with your application from within the Microsoft Entra admin center. To do so, use the steps in [Test your sign-up and sign-in user flow](../../how-to-test-user-flows.md). 
+

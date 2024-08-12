@@ -185,7 +185,7 @@ Complete the following steps to configure groups optional claims through the app
 
    Some applications require group information about the user in the role claim. To change the claim type from a group claim to a role claim, add `emit_as_roles` to `additionalProperties`.  The group values are emitted in the role claim.
 
-   If `emit_as_roles` is used, any application roles configured that the user is assigned aren't in the role claim.
+   If `emit_as_roles` is used, any application roles configured that the user (or a resource application) is assigned aren't in the role claim.
 
 The following examples show the manifest configuration for group claims:
 

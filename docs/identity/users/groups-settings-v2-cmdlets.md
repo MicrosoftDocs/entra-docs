@@ -269,7 +269,7 @@ The value returned is a list of groups of which this user is a member. You can a
 
 ## Disable group creation by your users
 
-You can prevent non-admin users from creating security groups. The default behavior in Microsoft Online Directory Services (MSODS) is to allow non-admin users to create groups, whether or not self-service group management (SSGM) is also enabled. The SSGM setting  controls behavior only in the My Apps access panel.
+You can prevent non-admin users from creating security groups. The default behavior in Microsoft Online Directory Services (MSODS) is to allow non-admin users to create groups, whether or not self-service group management (SSGM) is also enabled. The SSGM setting  controls behavior only in the My Groups portal.
 
 To disable group creation for non-admin users:
 

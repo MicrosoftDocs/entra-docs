@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: conceptual
-ms.date: 01/16/2024
+ms.date: 07/30/2024
 ms.author: rolyon
 ms.custom: it-pro
 ---
@@ -463,7 +463,7 @@ The following table is for roles assigned at the scope of a tenant. For roles as
 | User Admin | &nbsp; | &nbsp; | &nbsp; | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | User Experience Success Manager | &nbsp; | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Usage Summary Reports Reader | &nbsp; | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| All custom roles |  |  |  |  | :white_check_mark: | :white_check_mark: |
+| All other built-in and custom roles |  |  |  |  | :white_check_mark: | :white_check_mark: |
 
 > [!IMPORTANT]
 > The [Partner Tier2 Support](permissions-reference.md#partner-tier2-support) role can reset passwords and invalidate refresh tokens for all non-administrators and administrators (including Global Administrators). The [Partner Tier1 Support](permissions-reference.md#partner-tier1-support) role can reset passwords and invalidate refresh tokens for only non-administrators. These roles should not be used because they are deprecated.
@@ -511,7 +511,7 @@ The following table is for roles assigned at the scope of a tenant. For roles as
 | User Admin | &nbsp; | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | User Experience Success Manager | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Usage Summary Reports Reader | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| All custom roles |  |  | :white_check_mark: | :white_check_mark: |
+| All other built-in and custom roles |  |  | :white_check_mark: | :white_check_mark: |
 
 ## Next steps
 

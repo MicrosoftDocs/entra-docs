@@ -51,8 +51,8 @@ Depending on what you want to review, you either create your access review in ac
 | --- | --- | --- | --- |
 | Security group members</br>Office group members | Specified reviewers</br>Group owners</br>Self-review | access reviews</br>Microsoft Entra groups | Access panel |
 | Assigned to a connected app | Specified reviewers</br>Self-review | access reviews</br>Microsoft Entra enterprise apps | Access panel |
-| Microsoft Entra role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
-| Azure resource role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
+| Microsoft Entra role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra admin center |
+| Azure resource role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra admin center |
 | Access package assignments | Specified reviewers</br>Group members</br>Self-review | entitlement management | Access panel |
 
 ## License requirements

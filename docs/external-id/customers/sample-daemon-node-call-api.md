@@ -10,14 +10,14 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: sample
-ms.date: 06/23/2023
+ms.date: 07/29/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected by my external tenant.
+#Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected using my external tenant details.
 ---
 
 # Call an API in a sample Node.js daemon application 
 
-This guide uses a sample Node.js daemon application to show you how a daemon app acquires a token to call a web API. Microsoft Entra protects the Web API.
+This guide uses a sample Node.js daemon application to show you how a daemon app acquires an access token to call a web API.
 
 A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID.
 
@@ -68,8 +68,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
 
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip).
-Extract it to a file path where the length of the name is fewer than 260 characters.
+- Alternatively, [download the samples .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip), then extract it to a file path where the length of the name is fewer than 260 characters.
 
 ##  Install project dependencies
 
@@ -161,5 +160,3 @@ A Web API endpoint should be prepared to accept calls from both users and applic
 
 - [Acquire an access token, then call a web API in your own Node.js daemon app](tutorial-daemon-node-call-api-prepare-tenant.md).
 - [Use a client certificate instead of a secret for authentication in your Node.js confidential app](how-to-web-app-node-use-certificate.md).
-- [Enable password reset](how-to-enable-password-reset-customers.md).
-- [Customize the default branding](how-to-customize-branding-customers.md).

@@ -7,10 +7,11 @@ keywords:
 author: rwike77
 ms.author: ryanwi
 manager: celestedg
-ms.date: 03/26/2024
+ms.date: 08/08/2024
 ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
+ms.collection: ce-skilling-ai-copilot
 
 # Customer intent: As a SOC analyst or IT admin, I want to learn how to use the Microsoft Entra skills in Microsoft Copilot for Security so that I can quickly respond to a potential identity-based security incident.
 ---

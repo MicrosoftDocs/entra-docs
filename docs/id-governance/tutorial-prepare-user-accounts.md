@@ -156,7 +156,7 @@ Once your user or users are successfully created in Microsoft Entra ID, you can 
 
 ## Other steps for prehire scenario
 
-There are some other steps that you should be aware of when testing either the [On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra Admin Center](tutorial-onboard-custom-workflow-portal.md) tutorial or the [On-boarding users to your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-onboard-custom-workflow) tutorial.
+There are some other steps that you should be aware of when testing either the [On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md) tutorial or the [On-boarding users to your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-onboard-custom-workflow) tutorial.
 
 ### Edit the users attributes using the Microsoft Entra admin center
 
@@ -257,5 +257,5 @@ A user with groups and Teams memberships is required before you begin the tutori
 ## Next steps
 - [On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md)
 - [On-boarding users to your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-onboard-custom-workflow)
-- [Tutorial: Off-boarding users from your organization using Lifecycle workflows with The Microsoft Entra Admin Center](tutorial-offboard-custom-workflow-portal.md)
+- [Tutorial: Off-boarding users from your organization using Lifecycle workflows with The Microsoft Entra admin center](tutorial-offboard-custom-workflow-portal.md)
 - [Tutorial: Off-boarding users from your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-offboard-custom-workflow)
