@@ -124,8 +124,8 @@ On the Workflow basics screen you also get to set the first detail, the trigger,
 The trigger of a workflow defines when a scheduled workflow runs for users in scope for the workflow. The trigger of a workflow depends on the type of workflow you want to run. 
 
 The supported scheduled triggers are:
-- Attribute Changes (preview)
-- Group Membership change (preview)
+- Attribute Changes
+- Group Membership change
 - Time based
 
 Depending on which type of workflow you choose will determine which trigger you use for it.
