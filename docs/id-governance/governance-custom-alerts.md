@@ -20,17 +20,17 @@ The following table outlines some of the standard notifications that Microsoft E
 
 | Persona | Alert method | Timeliness | Example alert |
 | --- | --- | --- | --- |
-| End user | Teams | Minutes | You need to approve or deny this request for access;  <br>The access you requested has been approved, go use your new app<br><br>[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-process#email-notifications-table) |
-| End user | Teams | Days | The access you requested is going to expire next week, please renew.[Learn more](https://learn.microsoft.com/entra/id-governance/entitlement-management-process#email-notifications-table) |
-| End user | Email | Days | Welcome to Woodgrove, here is your temporary access pass. [Learn more.](https://learn.microsoft.com/entra/id-governance/lifecycle-workflow-tasks#generate-temporary-access-pass-and-send-via-email-to-users-manager) |
+| End user | Teams | Minutes | You need to approve or deny this request for access;  <br>The access you requested has been approved, go use your new app<br><br>[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
+| End user | Teams | Days | The access you requested is going to expire next week, please renew.[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
+| End user | Email | Days | Welcome to Woodgrove, here is your temporary access pass. [Learn more.](/entra/id-governance/lifecycle-workflow-tasks#generate-temporary-access-pass-and-send-via-email-to-users-manager) |
 | Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](entitlement-management-ticketed-provisioning.md) |
-| IT operations | Email | Hours | Newly hired employees aren't being imported from Workday. [Learn more](https://learn.microsoft.com/entra/identity/app-provisioning/application-provisioning-quarantine-status) |
+| IT operations | Email | Hours | Newly hired employees aren't being imported from Workday. [Learn more](/entra/identity/app-provisioning/application-provisioning-quarantine-status) |
 
 ## Custom alert notifications
 
 In addition to the standard notifications provided by Microsoft Entra ID Governance, organizations can create custom alerts to meet their needs. 
 
-All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](https://learn.microsoft.com/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](https://learn.microsoft.com/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), organizations can create [custom alerts](https://learn.microsoft.com/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics#set-up-alerts). 
+All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), organizations can create [custom alerts](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics#set-up-alerts). 
 
 The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor.
 
@@ -196,9 +196,9 @@ AuditLogs
 
 **Next steps**
 
-- [Log analytics](https://learn.microsoft.com/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics)
-- [Get started with queries in Azure Monitor logs](https://learn.microsoft.com/azure/azure-monitor/logs/get-started-queries)
-- [Create and manage alert groups in the Azure portal](https://learn.microsoft.com/azure/azure-monitor/alerts/action-groups)
-- [Install and use the log analytics views for Microsoft Entra ID](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
-- [Archive logs and reporting on entitlement management in Azure Monitor](https://learn.microsoft.com/entra/id-governance/entitlement-management-logs-and-reporting)
+- [Log analytics](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics)
+- [Get started with queries in Azure Monitor logs](/azure/azure-monitor/logs/get-started-queries)
+- [Create and manage alert groups in the Azure portal](/azure/azure-monitor/alerts/action-groups)
+- [Install and use the log analytics views for Microsoft Entra ID](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
+- [Archive logs and reporting on entitlement management in Azure Monitor](/entra/id-governance/entitlement-management-logs-and-reporting)
 
