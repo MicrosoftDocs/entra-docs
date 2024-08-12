@@ -302,7 +302,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 1. Prepare Microsoft Entra ID Environment
    1. Verify Microsoft Entra ID Premium Subscription
-    Ensure you have an Microsoft Entra ID Premium subscription, which is required for single sign-on (SSO) and other advanced features.
+    Ensure you have a Microsoft Entra ID Premium subscription, which is required for single sign-on (SSO) and other advanced features.
 
 1. Register the Application in Microsoft Entra ID
    1. Navigate to Microsoft Entra ID in the Azure portal.
@@ -358,5 +358,5 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 Once you configure Amazon Business you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 
-### More Resources
+### More resources
 - [Microsoft Entra ID SSO Best Practices](https://learn.microsoft.com/entra/identity/enterprise-apps/what-is-single-sign-on)
