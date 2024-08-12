@@ -94,7 +94,7 @@ Conditional Access Administrators can also create custom authentication strength
 
 - **Conditional Access policies are only evaluated after the initial authentication** - As a result, authentication strength doesn't restrict a user's initial authentication. Suppose you are using the built-in phishing-resistant MFA strength. A user can still type in their password, but they are required to sign in with a phishing-resistant method such as FIDO2 security key before they can continue.
 
-- **Require multifactor authentication and Require authentication strength can't be used together in the same Conditional Access policy** - These two Conditional Access grant controls can't be used together because the built-in authentication strength **Multifactor authentication** is equivalent to the **Require multifactor authentication** grant control.
+- **Require multifactor authentication and Require authentication strength can't be used together in the same Conditional Access policy** - These two Conditional Access grant controls can't be used together because the built-in authentication strength **Multifactor authentication** is similar to the **Require multifactor authentication** grant control. Also when using more than 1 auth method for SSPR registration (combined registration) this will be ignored as auth strength's use an "OR" logic so for example if the number of auth methods is set to 2 under SSPR then only 1 auth method will be prompted if using auth strengths.
 
 - **Authentication methods that aren't currently supported by authentication strength** - The **Email one-time pass (Guest)** authentication method isn't included in the available combinations.
 
@@ -105,6 +105,8 @@ Conditional Access Administrators can also create custom authentication strength
 - **FIDO2 security key Advanced options** - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
 
 - **Authentication strength blade double representation** - Platform credentials, such as Windows Hello for Business and **Platform Credential for macOS** are both represented in authentication strength under **Windows Hello For Business**. To configure a custom authentication strength that allows the use of **Platform Credential for macOS**, use **Windows Hello For Business**.
+
+  
 
 ## FAQ
 
