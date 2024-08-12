@@ -1,5 +1,5 @@
 ---
-title: Manage users synchronized from Active Directory Domain Services with workflows (Preview)
+title: Manage users synchronized from Active Directory Domain Services with workflows
 description: An how to article on how to edit a user account related task to run for users synchronized from Active Directory Domain Services (AD DS) with Lifecycle workflows.
 author: owinfreyATL
 ms.author: owinfrey
@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.workload: identity
 ms.topic: how-to 
-ms.date: 08/06/2024
+ms.date: 08/12/2024
 ms.subservice: lifecycle-workflows
 ms.custom: template-how-to 
 
@@ -15,7 +15,7 @@ ms.custom: template-how-to
 
 ---
 
-# Manage users synchronized from Active Directory Domain Services with workflows (Preview)
+# Manage users synchronized from Active Directory Domain Services with workflows
 
 Workflows created by Lifecycle workflows can be used to manage the lifecycle of users synchronized from Active Directory Domain Services (AD DS). Synced AD DS support allows you to use workflow tasks to enable, disable, and delete synchronized users. In this article, you're walked through the steps of enabling a user account task to be run for users synchronized from AD DS.
 
