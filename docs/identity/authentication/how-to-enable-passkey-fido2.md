@@ -75,7 +75,7 @@ There are some optional settings on the **Configure** tab to help manage how pas
   If you turn off key retrictions, make sure you clear the **Microsoft Authenticator (Preview)** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://aka.ms/mysecurityinfo).
 
   >[!NOTE]
-  >If you don't enforce key restrictions and don't select **Microsoft Authenticator (Preview)**, users won't see an option to set up passkeys in the Authenticator when they go to [Security info](https://aka.ms/mysecurityinfo). Depending upon their operating system and browser, users who continue with passkey (FIDO2) registration might see a WebAuthn flow with a QR code to set up passkey in Authenticator. This is because when no key restrictions are set, any device-bound passkey can be set up by using the WebAuthn flow. To explicitly disable passkeys in the Authenticator app, use the key restrictions to block the Authenticator app AAGUIDs.
+  >If you don't enforce key restrictions and don't select **Microsoft Authenticator (Preview)**, users won't see an option to set up passkeys in Authenticator when they go to [Security info](https://aka.ms/mysecurityinfo). Depending upon their operating system and browser, users who continue with passkey (FIDO2) registration might see a WebAuthn flow with a QR code to set up passkey in Authenticator. This is because when no key restrictions are set, any device-bound passkey can be set up by using the WebAuthn flow. To explicitly disable passkeys in Authenticator, use the key restrictions to block the Authenticator app AAGUIDs.
 
 ## Passkey Authenticator Attestation GUID (AAGUID)
 
