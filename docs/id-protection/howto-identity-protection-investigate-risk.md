@@ -202,7 +202,7 @@ To investigate a Microsoft Entra Threat Intelligence risk detection, follow thes
    1. **Recommended action**: [Set up risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#enable-policies) to require password reset, perform MFA, or block access for all high-risk sign-ins.
 1. If you're able to confirm location, application, IP address, User Agent, or other characteristics are expected for the user and there aren't other indications of compromise:
    1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
-1. For further investigation of token based detections, see the article Token tactics: How to prevent, detect, and respond to cloud token theft and the Token theft investigation playbook.
+1. For further investigation of token based detections, see the blog post [Token tactics: How to prevent, detect, and respond to cloud token theft](https://www.microsoft.com/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft) the [Token theft investigation playbook](/security/operations/token-theft-playbook).
 
 #### Investigating suspicious browser detections
 
