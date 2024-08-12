@@ -107,7 +107,7 @@ MSAL native authentication SDK can store multiple access tokens. After signing i
     }
     ```
 
-    The `protectedApi1Pressed` and `protectedApi2Pressed` methods manage the process of acquiring access tokens for two distinct set of scopes. They first ensure that each API's URL and scopes are properly configured. If an access token for the API is already available, it directly accesses the API. Otherwise, it requests an access token and informs the user about the ongoing token retrieval process.
+    The `protectedApi1Pressed` and `protectedApi2Pressed` methods manage the process of acquiring access tokens for two distinct sets of scopes. They first ensure that each API's URL and scopes are properly configured. If an access token for the API is already available, it directly accesses the API. Otherwise, it requests an access token and informs the user about the ongoing token retrieval process.
 
     ```swift
     func onAccessTokenRetrieveCompleted(result: MSALNativeAuthTokenResult) {
