@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 08/08/2024
+ms.date: 08/12/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.
@@ -117,7 +117,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 
 1. Select **Next** to open the **Requests** tab. On the Requests tab, you create a request policy. A *policy* defines the rules or guardrails to access an access package. You create a policy that allows a specific user in the resource directory to request this access package.
 
-1. In the **Users who can request access** section, select **For users in your directory** and then select **Specific users and groups**.
+1. In the **Users who can request access** section, select **For users in your directory**, and then select **Specific users and groups**.
 
     :::image type="content" source="./media/entitlement-management-access-package-first/new-access-package-requests.png" alt-text="Screenshot of the access package requests tab." lightbox="./media/entitlement-management-access-package-first/new-access-package-requests.png":::
 
@@ -144,7 +144,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 
     ![Screenshots of the requests tab approval and enable requests settings.](./media/entitlement-management-access-package-first/requests-approval-enable.png)
 
-1. On the **Requestor information** tab, you can ask questions to collect more information from the requestor. The questions are shown on the request form and can be either required or optional. You're also able to specify whether or not an employee's manager can request on their behalf, and if approval is required if they do so. In this scenario, you haven't been asked to include requestor information for the access package, so you can leave these boxes empty. Select **Next** to open the **Lifecycle** tab.
+1. On the **Requestor information** tab, you can ask questions to collect more information from the requestor. The questions are shown on the request form and can be either required or optional. You're also able to specify whether or not an employee's manager can request on their behalf, and if approval is required if they do so. For more information on this option, see: [Request access package on-behalf-of other users(Preview)](entitlement-management-request-behalf.md) In this scenario, you haven't been asked to include requestor information for the access package, so you can leave these boxes empty. Select **Next** to open the **Lifecycle** tab.
 
 1. On the **Lifecycle** tab, you specify when a user's assignment to the access package expires. You can also specify whether users can extend their assignments. In the **Expiration** section:
     1. Set the **Access package assignments expire** to **Number of days**.
