@@ -18,66 +18,61 @@ At Microsoft, we're committed to providing our customers with the highest level 
 
 ## Scope of enforcement 
 
-Applications 
+This section covers applications and accounts that have mandatory MFA requirement.
 
-Application Name 
+### Applications 
 
-App ID 
+| Application Name | App ID | 
+|------------------|---------------------------------------|
+| Azure portal     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  |
+| Microsoft Entra admin center | c44b4083-3bb0-49c1-b47d-974e53cbdf3c |
+| Microsoft Intune admin center | c44b4083-3bb0-49c1-b47d-974e53cbdf3c |
+| Azure Command Line Interface (CLI) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 |
+| Azure PowerShell  | 1950a258-227b-4e31-a9cf-717495945fc2 |
+| Azure mobile app  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa |
+| Infrastructure as Code (IaC) tools | Use Azure CLI or Azure PowerShell IDs |
 
-Azure portal  
+### Accounts 
 
-c44b4083-3bb0-49c1-b47d-974e53cbdf3c 
+All users who sign into the [applications](#applications) listed previously to perform any Create, Read, Update, or Delete (CRUD) operation will require MFA when the enforcement begins. End users who access application, websites, or services hosted on Azure, but don't sign into the listed applications, aren't required to use MFA. The authentication requirements for end users is controlled by the application, website, or service owner. 
 
-Microsoft Entra admin center 
+Workload identities, such as managed identities and service principals, aren't impacted by MFA enforcement. If user identities sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to workload identities. 
 
-c44b4083-3bb0-49c1-b47d-974e53cbdf3c 
+Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend updating these accounts to use passkey (FIDO2) or configure certificate-based authentication for MFA. Both methods satisfy the MFA requirement. 
 
-Microsoft Intune admin center 
+## Enforcement phases 
 
-c44b4083-3bb0-49c1-b47d-974e53cbdf3c 
+The enforcement of MFA will roll out in two phases: 
 
-Azure Command Line Interface (CLI) 
+- **Phase 1**: Starting in the second half of 2024, MFA will be required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. This phase will not impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
-04b07795-8ddb-461a-bbee-02f9e1bf7b46 
+- **Phase 2**: Beginning in early 2025, MFA enforcement gradually begins for sign in to Azure Command Line Interface (CLI), Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Entra ID as a service account. It is recommended to migrate these user-based service accounts to secure cloud based service accounts with workload identities. 
 
-Azure PowerShell  
-
-1950a258-227b-4e31-a9cf-717495945fc2 
-
-Azure mobile app  
-
-0c1307d4-29d6-4389-a11c-5cbe7f65d7fa 
-
-Infrastructure as Code (IaC) tools 
-
-CLI or PowerShell app ids are used 
-
- 
-
-Accounts 
-
-All users who sign into the applications mentioned above to perform any Create, Read, Update, or Delete (CRUD) operation will require MFA when the enforcement begins. End users who are accessing apps, websites or services hosted on Azure, but not signing into the listed applications, are not subject to this requirement from Microsoft. Authentication requirements for end users will still be controlled by the app, website or service owners. 
-
-Workload Identities, such as managed identities and service principals, will not be impacted by this enforcement. If you are leveraging user identities as a service account running automation (including scripts or other automated tasks), those will be required to use MFA once enforcement begins. Our guidance is that user identities are not recommended for automation and customers should migrate those to Workload Identities. 
-
-Break glass or emergency access accounts will also be required to sign in with multifactor authentication once enforcement begins. We recommend updating these accounts to use FIDO2 or certificate-based authentication (when configured as MFA).  Both methods will satisfy the MFA requirements. 
-
-TimingEnforcement phases 
-
-The enforcement of MFA will roll out in phases:  
-
-Phase 1: Starting in the 2nd half of calendar year 2024, MFA will be required to sign-in to the Azure portal, Microsoft Entra admin center and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. This phase will not impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app and Infrastructure as Code (IaC) tools.  
-
-Phase 2: Beginning in early 2025, gradual enforcement for MFA at sign-in for  Azure Command Line Interface (CLI), Azure PowerShell, Azure mobile app and Infrastructure as Code (IaC) tools will commence.  Some customers may currently have deployed user accounts in Entra ID as a service account. It is recommended to migrate these user-based service accounts to secure cloud based service accounts with workload identities. 
-
-Notification channels 
+## Notification channels 
 
 Microsoft will notify all Microsoft Entra Global Administrators through the following channels: 
 
-Email: Global Administrators who have configured an email address will be informed by email of the upcoming MFA enforcement and the actions required to be prepared. 
+- Email: Global Administrators who have configured an email address will be informed by email of the upcoming MFA enforcement and the actions required to be prepared. 
 
-Service health notification: Global Administrators will receive a service health notification through the Azure portal, with the tracking ID of 4V20-VX0. This notification will contain the same information as the email. Global Administrators can also subscribe to receive service health notifications through email by following the instructions <here>. 
+- Service health notification: Global Administrators will receive a service health notification through the Azure portal, with the tracking ID of **4V20-VX0**. This notification will contain the same information as the email. Global Administrators can also subscribe to receive service health notifications through email. 
 
-Portal notification: Global Administrators will see a notification in the Azure portal, Microsoft Entra admin center and Microsoft Intune admin center at login. The portal notification links to this page for more information about the mandatory MFA enforcementrequirement. 
+- Portal notification: Global Administrators will see a notification in the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center when they sign in. The portal notification links to this topic for more information about the mandatory MFA enforcement. 
 
-Microsoft 365 message center: Global Administrators will also see a message in the Microsoft 365 message center with the same information as the email and service health notification. 
+- Microsoft 365 message center: Global Administrators will also see a message in the Microsoft 365 message center with the same information as the email and service health notification. 
+
+
+## External authentication methods and identity providers 
+
+Support for external MFA solutions is in public preview with external authentication methods, and can be used to meet the MFA requirement. The deprecated Conditional Access custom controls preview will not satisfy the MFA requirement, and you should migrate to the external authentication methods preview to use an external solution with Microsoft Entra ID.  
+
+If you are using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated identity provider, the Federated identity provider must be configured to send an MFA claim. 
+
+## Requesting additional time to prepare for enforcement 
+
+We understand that some customers may need additional time to prepare for this MFA requirement. Therefore, Microsoft will allow grace periods for customers with complex environments or technical barriers. 
+
+Between 8/15/2024 and 10/15/2024, Global Administrators can go to this page in the Azure portal to postpone the start date of enforcement for their tenant to 3/15/2025: https://aka.ms/managemfaforazure.  Global Administrators must have elevated access before postponing the start date of MFA enforcement on this page.  
+
+Global Administrators must perform this action for every tenant for which they would like to postpone the start date of enforcement. Elevated access 
+
+By postponing the start date of enforcement, you are taking additional risk as accounts that access Microsoft services like the Azure portal are high value targets for threat actors. We recommend setting up MFA now to secure your cloud resources.  
