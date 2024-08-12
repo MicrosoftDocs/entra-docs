@@ -199,7 +199,7 @@ To investigate a Microsoft Entra Threat Intelligence risk detection, follow thes
 
 1. If you're able to confirm that the activity wasn't performed by a legitimate user using a combination of risk alert, location, application, IP address, User Agent, or other characteristics that are unexpected for the user:
    1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform.
-   1. **Recommended action**: Set up Risk-based Conditional Access policy to require password reset, perform MFA, or block access for all high-risk sign-ins.
+   1. **Recommended action**: [Set up risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#enable-policies) to require password reset, perform MFA, or block access for all high-risk sign-ins.
 1. If you're able to confirm location, application, IP address, User Agent, or other characteristics are expected for the user and there aren't other indications of compromise:
    1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
 1. For further investigation of token based detections, see the article Token tactics: How to prevent, detect, and respond to cloud token theft and the Token theft investigation playbook.
@@ -208,13 +208,13 @@ To investigate a Microsoft Entra Threat Intelligence risk detection, follow thes
 
 - Browser isn't commonly used by the user or activity within the browser doesn't match the users normally behavior.
    - **Recommended action**: Confirm the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA.
-   - **Recommended action**: Set up Risk-based Conditional Access policy to require password reset, perform MFA, or block access for all high-risk sign-ins.
+   - **Recommended action**: [Set up risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#enable-policies) to require password reset, perform MFA, or block access for all high-risk sign-ins.
 
 #### Investigating malicious IP address detections
 
 1. If you're able to confirm that the activity wasn't performed by a legitimate user:
    1. **Recommended action**: Confirm the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
-   1. **Recommended action**: Set up Risk-based Conditional Access policy to require password reset or perform MFA for all high-risk sign-ins.
+   1. **Recommended action**: [Set up risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#enable-policies) to require password reset or perform MFA for all high-risk sign-ins.
 1. If a user is known to use the IP address in the scope of their duties:
    1. **Recommended action**: Confirm sign-in as safe
 
@@ -227,7 +227,7 @@ To investigate a Microsoft Entra Threat Intelligence risk detection, follow thes
 1. If you're able to confirm that the account isn't compromised and see no brute force or password spray indicators against the account.
    1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
 
-For further investigation of password spray risk detections, see the article Guidance for identifying and investigating password spray attacks.
+For further investigation of password spray risk detections, see the article [Password spray investigation](/security/operations/incident-response-playbook-password-spray).
 
 #### Investigating leaked credentials detections
 
