@@ -348,7 +348,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Assign licenses to user (Preview)
+### Assign licenses to user
 
 Allows Licenses to be assigned to users. For a license to be assigned to the user, they must have a "*usageLocation*" attribute set.
 
@@ -370,7 +370,7 @@ Example of usage within the workflow:
             "category": "joiner,mover",
             "continueOnError": false,
             "description": "Assign selected licenses to the user",
-            "displayName": "Assign licenses to user (Preview)",
+            "displayName": "Assign licenses to user",
             "isEnabled": true,
             "taskDefinitionId": "683c87a4-2ad4-420b-97d4-220d90afcd24",
             "arguments": [
@@ -809,7 +809,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Remove selected license assignments from user (Preview)
+### Remove selected license assignments from user
 
 Remove selected license assignments from a user.
 
