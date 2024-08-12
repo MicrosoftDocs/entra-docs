@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 08/09/2024
+ms.date: 08/11/2024
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -21,29 +21,29 @@ In Microsoft Entra ID Authentication methods policy, administrators can enforce 
 
 ## Attestation requirements
 
-Microsoft relies on the [FIDO Alliance Metadata Service (MDS)](https://fidoalliance.org/metadata/) to determine security key compatibility with Windows, Microsoft Edge browser, and online Microsoft accounts. Data in the FIDO MDS is self-reported by vendors.
+Microsoft relies on the [FIDO Alliance Metadata Service (MDS)](https://fidoalliance.org/metadata/) to determine security key compatibility with Windows, Microsoft Edge browser, and online Microsoft accounts. Vendors report data to the FIDO MDS.
 
-During FIDO2 registration, Microsoft Entra ID requires security keys to provide an attestation statement. For vendors, the expected attestation format is 'packed', as defined by [the FIDO standard](https://www.w3.org/TR/webauthn-2/#sctn-packed-attestation).
+During FIDO2 registration, Microsoft Entra ID requires security keys to provide an attestation statement. For vendors, the expected attestation format is *packed*, as defined by [the FIDO standard](https://www.w3.org/TR/webauthn-2/#sctn-packed-attestation).
 
 The specific requirements vary based on how an administrator configures the FIDO2 authentication methods policy.
 
 | Enforce attestation set to Yes | Enforce attestation set to No |
 |--------------------------------|-------------------------------|
-|It must provide a valid 'packed' attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide a valid 'packed' attestation statement (but Microsoft will ignore attestation verification results) and a complete certificate (which doesn’t need to be associated with a particular certificate chain). |
+|It must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide a valid *packed* attestation statement (but Microsoft will ignore attestation verification results) and a complete certificate (which doesn’t need to be associated with a particular certificate chain). |
 
 >[!NOTE]
 >Vendors are responsible to publish all root attestation certificates to the FIDO Alliance MDS; otherwise, attestation verification can fail.
 
 Additionally, if attestation is enforced, the following requirements apply:
-- Your authenticator needs to have a FIDO2 certification. This can be at 'any' level. To learn more about the certification, visit the FIDO Alliance Certification Overview [website](https://fidoalliance.org/certification/). 
+- Your authenticator needs to have a FIDO2 certification. This can be at *any* level. To learn more about the certification, visit the FIDO Alliance Certification Overview [website](https://fidoalliance.org/certification/). 
 - Your product metadata needs to be uploaded to the FIDO Alliance MDS, and you need to verify your metadata is in the MDS. The metadata must indicate that your authenticator supports: 
   - FIDO 2.0 or higher. 
   - User verification or client PIN - Microsoft Entra ID requires user verification with biometrics or PIN for all FIDO2 authentication attempts.
-  - Resident keys (or discoverable credentials) - These are required for using a security key to sign in to Microsoft Entra ID without entering a username.
-  - Hash-Based Message Authenticator Codes (HMAC) secret extension or PRF Extension - This is required for using a security key to unlock Windows in offline scenarios.
+  - Resident keys (or discoverable credentials) - Resident keys are required for using a security key to sign in to Microsoft Entra ID without entering a username.
+  - Hash-Based Message Authenticator Codes (HMAC) secret extension or Pseudo-Random Function (PRF) extension - An HMAC secret extension or PRF extension is required for using a security key to unlock Windows in offline scenarios.
 
 ## Timelines
-Microsoft ingests the latest version of the FIDO Alliance MDS every month, so there may be a maximum four-week delay from the time that your FIDO2 security key appears in FIDO Alliance MDS to when Microsoft recognizes the key model. If your key meets the Microsoft attestation requirements, it automatically appears on the Microsoft FIDO2 partner page.
+Microsoft ingests the latest version of the FIDO Alliance MDS every month. There may be a maximum four-week delay from the time that your FIDO2 security key appears in FIDO Alliance MDS to when Microsoft recognizes the key model. If your key meets the Microsoft attestation requirements, it automatically appears on the Microsoft FIDO2 partner page.
 
 ## FIDO2 security keys eligible for attestation with Microsoft Entra ID
 
@@ -53,7 +53,7 @@ The following table lists FIDO2 security key models listed in MDS version 77. Th
 |---|---|
 |ACS</br>FIDO Authenticator|50a45b0c-80e7-f944-bf29-f552bfa2e048|
 |ACS</br>FIDO Authenticator Card|973446ca-e21c-9a9b-99f5-9b985a67af0f|
-|Allthenticator App</br>Roaming BLE FIDO2 Allthenticator</br>for Windows, Mac, Linux,</br>and Allthenticate door readers|5ca1ab1e-1337-fa57-f1d0-a117e71ca702|
+|Allthenticator App</br>Roaming BLE FIDO2 Allthenticator</br>for Windows, Mac, Linux, </br>and Allthenticate door readers|5ca1ab1e-1337-fa57-f1d0-a117e71ca702|
 |Arculus</br>FIDO 2.1 Key Card \[P71\]|3f59672f-20aa-4afe-b6f4-7e5e916b6d98|
 |Arculus</br>FIDO2/U2F Key Card|9d3df6ba-282f-11ed-a261-0242ac120002|
 |ATKey.Card</br>CTAP2.0|d41f5a69-b817-4144-a13c-9ebd6d9254d6|
@@ -125,9 +125,6 @@ The following table lists FIDO2 security key models listed in MDS version 77. Th
 |VALMIDO</br>PRO FIDO|5626bed4-e756-430b-a7ff-ca78c8b12738|
 |VeriMark Guard</br>Fingerprint Key|d94a29d9-52dd-4247-9c2d-8b818b610389|
 |VinCSS</br>FIDO2 Authenticator|5fdb81b8-53f0-4967-a881-f5ec26fe4d18|
-|Windows Hello</br>Hardware Authenticator||
-|Windows Hello</br>Software Authenticator||
-|Windows Hello</br>VBS Hardware Authenticator||
 |WiSECURE AuthTron</br>USB FIDO2 Authenticator|504d7149-4e4c-3841-4555-55445a677357|
 |YubiKey 5</br>FIPS Series|73bb0cd4-e502-49b8-9c6f-b59445bf720b|
 |YubiKey 5</br>FIPS Series with Lightning|85203421-48f9-4355-9bc8-8a53846e5083|
