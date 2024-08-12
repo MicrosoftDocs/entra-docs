@@ -60,7 +60,11 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 - Microsoft 365 message center: Global Administrators will also see a message in the Microsoft 365 message center with the same information as the email and service health notification. 
 
+<<<<<<< Updated upstream
 ## Prepare for Multifactor Authentication 
+=======
+## Prepare for multifactor authentication 
+>>>>>>> Stashed changes
 
 All users who access the admin portals and Azure clients listed in [applications](#applications) must be set up to use MFA. Other Microsoft administration portals are also planning to roll out a similar MFA requirement in the coming months. Administrators are encouraged to consider setting up an MFA requirement for their tenant users that access any administration portal. 
 
