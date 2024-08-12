@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 ---
 # Sign in with a passkey (FIDO2)
 
-This article covers how users can sign in to Microsoft Entra ID with a passkey stored on a FIDO2 security key. For how to sign in with a passkey in Microsoft Authenticator, see [Sign in with passkeys in Authenticator for Android and iOS devices](~/identity/authentication/how-to-sign-in-passkey-authenticator.md)
+This article covers how users can sign in to Microsoft Entra ID with a passkey stored on a FIDO2 security key. For how to sign in with a passkey in Microsoft Authenticator, see [Sign in with passkeys in Authenticator for Android and iOS devices](~/identity/authentication/how-to-sign-in-passkey-authenticator.md).
 
 For more information on the availability of Microsoft Entra ID passkey (FIDO2) authentication across native apps, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
