@@ -8,12 +8,12 @@ ms.author: henrymbugua
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/09/2024
+ms.date: 08/12/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to acquire multiple access tokens so that I call a web API in an iOS mobile app by using native authentication
 ---
 
-# Tutorial: Call an API in iOS app by using native authentication
+# Tutorial: Call multiple APIs in iOS app by using native authentication
 
 In this tutorial, you learn how to acquire an access token and call an API in your iOS mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for iOS allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
 
@@ -29,26 +29,27 @@ In this tutorial, you learn how to:
 - Complete the steps in [Tutorial: Add sign-in and sign-out in iOS app by using native authentication](tutorial-native-authentication-ios-sign-in-sign-out.md). This tutorial shows you how to sign in users in your iOS app by using native authentication.
 - Complete the steps in [Sign in users and call an API in sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md)
 
-## Acquire an access token
-
-Once the user signs in, you acquire an access token by specifying the scopes for which the access token is valid. 
+## Acquire one or multiple access tokens
 
 MSAL native authentication SDK can store multiple access tokens. After signing in, you can obtain an access token by using the `getAccessToken(scope:)` function and specifying the scopes for the new access token you wish to grant.
 
 1. Declare and set values for a set of API scopes by using the following code snippet:
 
     ```swift
-    let protectedAPIUrl1: String? = nil // Developers should set the URL of their first web API resource here
-    let protectedAPIUrl2: String? = nil // Developers should set the URL of their second web API resource here
-    // Developers should set the respective scopes for their web API resources here, for example: ["api://<Resource_App_ID>/ToDoList.Read", "api://<Resource_App_ID>/ToDoList.ReadWrite"]
+    let protectedAPIUrl1: String? = nil
+    let protectedAPIUrl2: String? = nil 
     let protectedAPIScopes1: [String] = []
     let protectedAPIScopes2: [String] = []
+
+    var accessTokenAPI1: String?
+    var accessTokenAPI2: String?
     ```
 
     - Initialize `protectedAPIUrl1` with the URL of your first web API.
     - Initialize `protectedAPIUrl2` with the URL of your second web API.
     - Define `protectedAPIScopes1` with scopes for your first API, like `["api://<Resource_App_ID>/ToDoList.Read", "api://<Resource_App_ID>/ToDoList.ReadWrite"]`.
     - Define `protectedAPIScopes2` with scopes for your second API, similar to `protectedAPIScopes1`.
+    - Declare the optional string variables `accessTokenAPI1` and `accessTokenAPI2`.
     
 
 1. Signs in user by using the following code snippet:
@@ -68,7 +69,7 @@ MSAL native authentication SDK can store multiple access tokens. After signing i
     }
     ```
 
-    The `signInPressed` method handles the sign-in button press. It checks if the email and password fields are filled. If either is empty, it shows "Email or password not set." If both fields are filled, it logs the email, displays "Signing in...", and initiates the sign-in using the `signIn` method from `nativeAuth` with the provided email and password.
+    The `signInPressed` method handles the sign-in button press. It checks if the email and password fields are filled. If either is empty, it shows "Email or password not set." If both fields are filled, it logs the email, displays "Signing in...", and initiates the sign-in using the `signIn` method from `nativeAuth` with the provided email and password. The SDK retrieves a token valid for the default OIDC scopes (openid, offline_access, profile) because no scopes are specified.
 
 1. Acquire one or multiple access tokens by using the following code snippet:
 
@@ -107,7 +108,37 @@ MSAL native authentication SDK can store multiple access tokens. After signing i
     ```
 
     The `protectedApi1Pressed` and `protectedApi2Pressed` methods manage the process of acquiring access tokens for two distinct set of scopes. They first ensure that each API's URL and scopes are properly configured. If an access token for the API is already available, it directly accesses the API. Otherwise, it requests an access token and informs the user about the ongoing token retrieval process.
-    
+
+    ```swift
+    func onAccessTokenRetrieveCompleted(result: MSALNativeAuthTokenResult) {
+        print("Access Token: \(result.accessToken)")
+
+        if protectedAPIScopes1.allSatisfy(result.scopes.contains),
+           let url = protectedAPIUrl1
+        {
+            accessTokenAPI1 = result.accessToken
+            accessProtectedAPI(apiUrl: url, accessToken: result.accessToken)
+        }
+        
+        if protectedAPIScopes2.allSatisfy(result.scopes.contains(_:)),
+           let url = protectedAPIUrl2
+        {
+            accessTokenAPI2 = result.accessToken
+            accessProtectedAPI(apiUrl: url, accessToken: result.accessToken)
+        }
+        
+        showResultText("Signed in." + "\n\n" + "Scopes:\n\(result.scopes)" + "\n\n" + "Access Token:\n\(result.accessToken)")
+        updateUI()
+    }
+
+    func onAccessTokenRetrieveError(error: MSAL.RetrieveAccessTokenError) {
+        showResultText("Error retrieving access token: \(error.errorDescription ?? "No error description")")
+    }
+    ```
+
+    The `onAccessTokenRetrieveCompleted` method prints the access token to the console. It then checks if `protectedAPIScopes1` are included in the result's scopes and if `protectedAPIUrl1` is available; if so, it sets `accessTokenAPI1` and calls `accessProtectedAPI` with the URL and token. It performs a similar check for `protectedAPIScopes2` and `protectedAPIUrl2`, updating `accessTokenAPI2` and making the API call if conditions are met. Finally, the method displays a message with the signed-in status, scopes, and access token, and updates the UI.
+
+    The `onAccessTokenRetrieveError` method displays an error message with the description of the access token retrieval error or a default message if no description is provided.
 
 ## Call an API
 
