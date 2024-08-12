@@ -196,7 +196,7 @@ func accessProtectedAPI(apiUrl: String, accessToken: String) {
 }
 ```
 
-The `accessProtectedAPI` method performs a GET request to an API endpoint using the provided access token. It sets up the request with the token in the Authorization header. Upon receiving a successful response (HTTP status code 200-299), it deserializes the JSON response and updates the UI with the HTTP status code and response body. If there are any errors during the request or response handling, it displays the error message in the UI accordingly. This method facilitates accessing either API 1 or API 2 based on the specified URL and access token passed to it.
+The `accessProtectedAPI` method sends a GET request to the specified API endpoint using the provided access token. It configures the request with the token in the Authorization header. When it receives a successful response (HTTP status code 200-299), it deserializes the JSON data and updates the UI with the HTTP status code and response body. If an error occurs during the request or response handling, it displays the error message in the UI. This method allows access to either API 1 or API 2, depending on the URL and access token provided.
 
 ## Related content
 
