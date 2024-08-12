@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/12/2024
 ms.author: owinfrey
 ms.reviewer: jgangadhar
 ---
@@ -19,7 +19,7 @@ This article describes how to create one or more access reviews for PIM for Grou
 ## Prerequisites
 
 - Microsoft Entra ID Governance License.
-- Only users in the Global Administrator role or Privileged Role Administrator role can create reviews on PIM for Groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
+- Only users in the Global Administrator, Identity Governance Administrator, or Privileged Role Administrator role can create reviews on PIM for Groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
 
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
 
@@ -41,7 +41,7 @@ For more information, see [License requirements](access-reviews-overview.md#lice
 
     ![Screenshot that shows creating an access review.](./media/create-access-review/select-what-review.png)
 
-1. Select **Teams + Groups** and then select **Select Teams + groups** under **Review Scope**. A list of groups to choose from appears on the right.
+1. Select **Teams + Groups** and then select **Select Teams + groups** under **Review Scope**. A list of groups to choose from appears on the screen.
 
      ![Screenshot that shows selecting Teams + Groups.](./media/create-access-review/create-pim-review.png)
 
@@ -53,14 +53,14 @@ For more information, see [License requirements](access-reviews-overview.md#lice
     - **Everyone**: This option scopes the access review to all user objects associated with the resource.
 
 
-7. If you're conducting group membership review, you can create access reviews for only the inactive users in the group. In the *Users scope* section, check the box next to **Inactive users (on tenant level)**. If you check the box, the scope of the review focuses on inactive users only, those who haven't signed in either interactively or non-interactively to the tenant. Then, specify **Days inactive**  with many days inactive up to 730 days (two years). Users in the group inactive for the specified number of days are the only users in the review.
+7. If you're conducting group membership review, you can create access reviews for only the inactive users in the group. In the *Users scope* section, check the box next to **Inactive users (on tenant level)**. If you check the box, the scope of the review focuses on inactive users only, users who haven't signed in either interactively or non-interactively to the tenant. Then, specify **Days inactive**  with many days inactive up to 730 days (two years). Users in the group inactive for the specified number of days are the only users in the review.
 
 > [!NOTE]
 > Recently created users are not affected when configuring the inactivity time. The Access Review will check if a user has been created in the time frame configured and disregard users who haven’t existed for at least that amount of time. For example, if you set the inactivity time as 90 days and a guest user was created or invited less than 90 days ago, the guest user will not be in scope of the Access Review. This ensures that a user can sign in at least once before being removed.
 
 8. Select **Next: Reviews**.
 
-After you have reached this step, you can follow the instructions outlined under **Next: Reviews** in the [Create an access review of groups or applications](create-access-review.md#next-reviews) article to complete your access review.
+After you reach this step, you can follow the instructions outlined under **Next: Reviews** in the [Create an access review of groups or applications](create-access-review.md#next-reviews) article to complete your access review.
 
 > [!NOTE]
 > Review of PIM for Groups will only assign active owner(s) as the reviewers. Eligible owners are not included. At least one fallback reviewer is required for a PIM for Groups review. If there are no active owner(s) when the review begins, the fallback reviewer(s) will be assigned to the review.
