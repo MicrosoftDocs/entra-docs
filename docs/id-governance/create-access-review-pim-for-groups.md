@@ -19,7 +19,7 @@ This article describes how to create one or more access reviews for PIM for Grou
 ## Prerequisites
 
 - Microsoft Entra ID Governance License.
-- Only users in the Global Administrator role or Privileged Role Administrator role can create reviews on PIM for Groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
+- Only users in the Global Administrator, Identity Governance Administrator, or Privileged Role Administrator role can create reviews on PIM for Groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
 
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
 
