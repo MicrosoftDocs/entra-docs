@@ -138,6 +138,8 @@
           href: concept-fido2-hardware-vendor.md  
       - name: Microsoft Authenticator
         items:
+        - name: Deploy passkeys in Authenticator 
+          href: how-to-enable-authenticator-passkey.md
         - name: Enable passkeys in Authenticator 
           href: how-to-enable-authenticator-passkey.md
         - name: Support passkeys in Authenticator 
