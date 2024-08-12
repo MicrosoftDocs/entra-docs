@@ -115,6 +115,10 @@
       items:
       - name: Migrate from SAP IDM
         href: scenarios/migrate-from-sap-idm.md
+      - name: Author SAP ECC 7 Template for ECMA2Host
+        href: scenarios/migrate-from-sap-idm.md
+      - name: Deploy SAP NetWeaver AS ABAP 7
+        href: scenarios/deploy-sap-netweaver.md
 - name: Tutorials
   expanded: true
   items:
