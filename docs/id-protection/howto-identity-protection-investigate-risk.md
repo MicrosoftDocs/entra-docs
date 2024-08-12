@@ -148,8 +148,8 @@ Once the risk is contained, more investigation might be required to mark the ris
       1. Location - Is the user traveling to a different location or accessing devices from multiple locations?
       1. IP address
       1. User agent string
-   1. If you have access to other security tools like Microsoft Sentinel, check for corresponding alerts that might indicate a larger issue.
-   1. Organizations with access to Microsoft 365 Defender can follow a user risk event through other related alerts, incidents, and the MITRE ATT&CK chain.
+   1. If you have access to other security tools like [Microsoft Sentinel](/azure/sentinel/overview), check for corresponding alerts that might indicate a larger issue.
+   1. Organizations with access to [Microsoft 365 Defender](/defender-for-identity/understanding-security-alerts) can follow a user risk event through other related alerts, incidents, and the MITRE ATT&CK chain.
       1. To navigate from the Risky users report, select the user in the Risky users report and select the ellipsis (...) in the toolbar then choose Investigate with Microsoft 365 Defender.
 1. Reach out to the user to confirm if they recognize the sign-in; however, consider methods such as email or Teams might be compromised.
    1. Confirm the information you have such as:
@@ -159,7 +159,7 @@ Once the risk is contained, more investigation might be required to mark the ris
       1. Location
       1. IP address
 1. Depending on the results of the investigation, mark the user or sign-in as confirmed compromised, confirmed safe, or dismiss the risk.
-1. Enable or edit Risk-based Conditional Access policies to prevent similar attacks or to address any gaps in coverage.
+1. [Set up risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#enable-policies) to prevent similar attacks or to address any gaps in coverage.
 
 ### Investigate specific detections
 
