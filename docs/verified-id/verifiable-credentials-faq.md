@@ -1,12 +1,12 @@
 ---
-title: Frequently asked questions - Microsoft Entra Verified ID
-description: Find answers to common questions about Microsoft Entra Verified ID.
+title: Frequently asked questions - Azure Verifiable Credentials
+description: Find answers to common questions about Verifiable Credentials.
 author: barclayn
 manager: amycolannino
 ms.service: entra-verified-id
 
 ms.topic: faq
-ms.date: 08/08/2024
+ms.date: 08/11/2022
 ms.author: barclayn
 # Customer intent: As a developer I am looking for information on how to enable my users to control their own information 
 ---
@@ -46,6 +46,12 @@ There are multiple ways of offering a recovery mechanism to users, each with the
 ### How can a user trust a request from an issuer or verifier? How do they know a DID is the real DID for an organization?
 
 We implement [the Decentralized Identity Foundation's Well Known DID Configuration spec](https://identity.foundation/.well-known/resources/did-configuration/) in order to connect a DID to a highly known existing system, domain names. Each DID created using the Microsoft Entra Verified ID has the option of including a root domain name that is encoded in the DID Document. Follow the article titled [Link your Domain to your Distributed Identifier](how-to-dnsbind.md) to learn more.  
+
+### What are the size limitations for a Verifiable Credential in Verified ID?
+
+- For issuance request - 1MB
+- Photo in the Verifiable credential - 1MB
+- Callback result 10 MB without receipt
 
 ### What are the licensing requirements?
 
