@@ -29,7 +29,7 @@ This section covers applications and accounts that have a mandatory MFA requirem
 | [Microsoft Intune admin center](https://aka.ms/IntunePortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c |
 | [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 |
 | [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 |
-| [Azure mobile app](/get-started/azure-portal/mobile-app/)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa |
+| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa |
 | [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs |
 
 ### Accounts 
@@ -74,7 +74,7 @@ Use the resources below to set up MFA for your users:
     - All users 
       - While in report-only mode don't configure exceptions. This will more closely mirror the enforcement pattern of Azure MFA program. 
     - [Microsoft administration portals](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals) (includes portals in scope for this Azure MFA enforcement) 
-    - [Require multifactor authentication](~/identity/conditional-access/concept-conditional-access-grant.md#require-multifactor-authentication) or if you want more granular control, use [authentication strengths](~/entra/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength)
+    - [Require multifactor authentication](~/identity/conditional-access/concept-conditional-access-grant.md#require-multifactor-authentication) or if you want more granular control, use [authentication strengths](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength)
   - Enable [Security defaults](~/fundamentals/security-defaults.md)
 - Review information to help configure and deploy MFA:
   - [Secure sign-in events with Microsoft Entra multifactor ](~/identity/authentication/tutorial-enable-azure-mfa.md)
@@ -83,7 +83,7 @@ Use the resources below to set up MFA for your users:
   - Use the [MFA wizard for Microsoft Entra ID](https://aka.ms/EntraIDMFAWizard)
 - Use the resources below to help you identify which users are signing into Azure with and without MFA: 
   - Use [PowerShell](https://aka.ms/AzMFA) to export a list of users and their authentication methods 
-  - Use the [Multifactor Authentication Gaps workbook](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/workbook-mfa-gaps) 
+  - Use the [Multifactor Authentication Gaps workbook](~/identity/monitoring-health/workbook-mfa-gaps.md) 
   - Use these application IDs in your queries: 
     - Azure portal: c44b4083-3bb0-49c1-b47d-974e53cbdf3c 
     - Azure CLI: 04b07795-8ddb-461a-bbee-02f9e1bf7b46 
