@@ -23,7 +23,7 @@ Workflows created by Lifecycle workflows can be used to manage the lifecycle of 
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-While most Lifecycle workflow tasks can manage users synchronized from Active Directory Domain Services without any extra configuration, certain tasks such as enabling, disabling, and deleting tasks require some extra configuration. For more information on setting these prerequisites, see:  [User account tasks (preview)](lifecycle-workflow-on-premises.md#user-account-tasks-preview).
+While most Lifecycle workflow tasks can manage users synchronized from Active Directory Domain Services without any extra configuration, certain tasks such as enabling, disabling, and deleting tasks require some extra configuration. For more information on setting these prerequisites, see:  [User account tasks](lifecycle-workflow-on-premises.md#user-account-tasks).
 
 ## Configure a user account task to manage users synchronized from Active Directory Domain Services using the Microsoft Entra admin center
 
