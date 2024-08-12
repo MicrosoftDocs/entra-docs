@@ -5,12 +5,12 @@ description: Management settings for Enterprise State Roaming
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: reference
-ms.date: 01/04/2024
+ms.date: 08/01/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: guovivian
+ms.reviewer: sempofu, micrider
 ---
 # Group Policy and MDM settings
 

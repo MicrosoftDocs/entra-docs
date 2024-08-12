@@ -87,7 +87,7 @@ sections:
           Follow these steps on the on-premises server where you're running Microsoft Entra Connect:
           
              > [!NOTE]
-             >You need domain administrator and hybrid identity administrator credentials for the steps.
+             >You need domain administrator and Hybrid Identity Administrator credentials for the steps.
              >If you're not a domain admin and you were assigned permissions by the domain admin, you should call `Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDesktopSsoAccount`
           
              **Step 1. Get list of AD forests where Seamless SSO is enabled**

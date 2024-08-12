@@ -87,7 +87,7 @@ The authentication agents use the following steps to register themselves with Mi
 
 :::image type="content" source="media/how-to-connect-pta-security-deep-dive/pta1.png" border="false" alt-text="Diagram that depicts authentication agent registration with Azure AD.":::
 
-1. Microsoft Entra first requests that a hybrid identity administrator sign in to Microsoft Entra ID with their credentials. During sign-in, the authentication agent acquires an access token that it can use on behalf of the user.
+1. Microsoft Entra first requests that a Hybrid Identity Administrator sign in to Microsoft Entra ID with their credentials. During sign-in, the authentication agent acquires an access token that it can use on behalf of the user.
 1. The authentication agent then generates a key pair: a public key and a private key.
     - The key pair is generated through standard RSA 2,048-bit encryption.
     - The private key stays on the on-premises server where the authentication agent resides.
@@ -95,7 +95,7 @@ The authentication agents use the following steps to register themselves with Mi
     - The access token that the agent acquired.
     - The public key that was generated.
     - A Certificate Signing Request (*CSR* or *Certificate Request*). This request applies for a digital identity certificate, with Microsoft Entra ID as its certificate authority (CA).
-1. Microsoft Entra ID validates the access token in the registration request and verifies that the request came from a hybrid identity administrator.
+1. Microsoft Entra ID validates the access token in the registration request and verifies that the request came from a Hybrid Identity Administrator.
 1. Microsoft Entra ID then signs a digital identity certificate and sends it back to the authentication agent.
     - The root CA in Microsoft Entra ID is used to sign the certificate.
 
@@ -179,7 +179,7 @@ To renew an authentication agent's trust with Microsoft Entra ID:
     - A CSR. This request applies for a new digital identity certificate, with Microsoft Entra ID as its CA.
 1. Microsoft Entra ID validates the existing certificate in the certificate renewal request. Then it verifies that the request came from an authentication agent that's registered on your tenant.
 1. If the existing certificate is still valid, Microsoft Entra ID signs a new digital identity certificate and issues the new certificate back to the authentication agent.
-1. If the existing certificate has expired, Microsoft Entra ID deletes the authentication agent from your tenant’s list of registered authentication agents. Then a Global Administrator or a hybrid identity administrator must manually install and register a new authentication agent.
+1. If the existing certificate has expired, Microsoft Entra ID deletes the authentication agent from your tenant’s list of registered authentication agents. Then a Global Administrator or a Hybrid Identity Administrator must manually install and register a new authentication agent.
     - Use the Microsoft Entra ID root CA to sign the certificate.
     - Set the certificate’s DN to your tenant ID, a GUID that uniquely identifies your tenant. The DN scopes the certificate to your tenant only.
 1. Microsoft Entra ID stores the new public key of the authentication agent in a database in Azure SQL Database that only it has access to. It also invalidates the old public key associated with the authentication agent.

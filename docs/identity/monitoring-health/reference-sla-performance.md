@@ -17,6 +17,9 @@ As an identity admin, you might need to track the Microsoft Entra service-level 
 
 You can use this article in discussions with app or business owners to help them understand the performance they can expect from Microsoft Entra ID.
 
+> [!NOTE]
+> This article applies to both workforce and external tenants. (Learn more about [tenant configurations](~/external-id/tenant-configurations.md)).
+
 ## How is SLA measured for Microsoft Entra ID?
 
 Details on how downtime is defined and how uptime percentage is calculated are provided in the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
@@ -43,8 +46,8 @@ The numbers in the table are a global total of Microsoft Entra authentications a
 | March     | 99.568% | 99.998% | 99.999% | 99.999% |
 | April     | 99.999% | 99.999% | 99.999% | 99.999% |
 | May       | 99.999% | 99.999% | 99.999% | 99.999% |
-| June      | 99.999% | 99.999% | 99.999% |
-| July      | 99.999% | 99.999% | 99.999% |
+| June      | 99.999% | 99.999% | 99.999% | 99.999% |
+| July      | 99.999% | 99.999% | 99.999% | 99.999% |
 | August    | 99.999% | 99.999% | 99.999% |
 | September | 99.999% | 99.998% | 99.999% |
 | October   | 99.999% | 99.999% | 99.999% |

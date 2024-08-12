@@ -18,10 +18,16 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
+## August 2024
+
+- [FaceCheck](using-facecheck.md) is generally available starting August 12.
+
 ## June 2024
+
 - [FaceCheck](using-facecheck.md) introducing the Face Check Addon as an incremental update to the Face Check public preview. Face Check is a premium feature within Entra Verified ID free to use during the public preview period ending on June 30.
 
 ## April 2024
+
 - [Quick setup](verifiable-credentials-configure-tenant-quick.md) Generally available, it enables an admin to onboard Entra Verified ID in an Entra tenant with just one click of a button.
 
 ## March 2024
