@@ -64,7 +64,7 @@ MSAL native authentication SDK can store multiple access tokens. After signing i
 
         showResultText("Signing in...")
 
-        nativeAuth.signIn(username: email, password: password, scopes: [], delegate: self)
+        nativeAuth.signIn(username: email, password: password, delegate: self)
     }
     ```
 
