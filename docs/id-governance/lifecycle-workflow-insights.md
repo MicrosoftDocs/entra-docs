@@ -1,19 +1,19 @@
 ---
-title: Lifecycle workflow Insights (preview)
+title: Lifecycle workflow Insights
 description: Conceptual article about Lifecycle Workflows reporting and history capabilities.
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 05/03/2024
+ms.date: 08/12/2024
 ms.author: owinfrey
 ms.reviewer: krbain
 
 #CustomerIntent: As a system administrator, I want to learn what workflow insights can view across my environment so that I know which workflows, or tasks, are being used the most.
 ---
 
-# Workflow Insights (preview)
+# Workflow Insights
 
 Workflows created using Lifecycle Workflows allow for the automation of lifecycle task for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. With Lifecycle workflow's Workflow Insights feature, you're able to see aggregate information about all workflows across your tenant.
 
@@ -26,7 +26,7 @@ With Workflow Insights, you're also able to view aggregate workflow information 
 - Top Tasks
 - Workflow by Category
 
-More details about insights found in these sections are discussed in the following sections of this article. For a step by step guide on checking the insights for workflows in your tenant, see: [Check Workflow Insights (preview)](manage-workflow-insights.md).
+More details about insights found in these sections are discussed in the following sections of this article. For a step by step guide on checking the insights for workflows in your tenant, see: [Check Workflow Insights](manage-workflow-insights.md).
 
 
 ## Workflow Insights summary
