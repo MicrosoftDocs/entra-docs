@@ -78,7 +78,7 @@ Tenant restrictions are not enforced when a user (or a guest user) tries to acce
 1. Use your browser to navigate to `https://myapps.microsoft.com/` and sign in with the identity from a tenant different than yours that isn't allow-listed in a tenant restrictions v2 policy. Note that you may need to use a private browser window and/or log out of your primary account to perform this step.
    1. For example, if your tenant is Contoso, sign in as a Fabrikam user in the Fabrikam tenant. 
    1. The Fabrikam user should be able to access the MyApps portal, since Tenant Restrictions signaling is disabled in Global Secure Access.
-1. Turn on universal tenant restrictions in the Microsoft Entra Portal -> Global Secure Access -> Session Management -> Universal Tenant Restrictions.
+1. Turn on universal tenant restrictions in the Microsoft Entra admin center -> Global Secure Access -> Session Management -> Universal Tenant Restrictions.
 1. Sign out from the MyApps portal and restart your browser.
 1. As an end-user, with the Global Secure Access client running, access `https://myapps.microsoft.com/` using the same identity (Fabrikam user in the Fabrikam tenant).
    1. The Fabrikam user should be blocked from authenticating to MyApps with the error message: **Access is blocked, The Contoso IT department has restricted which organizations can be accessed. Contact the Contoso IT department to gain access.**
@@ -92,7 +92,7 @@ Tenant restrictions are not enforced when a user (or a guest user) tries to acce
 1. Optionally, in the same browser with SharePoint Online open, open Developer Tools, or press F12 on the keyboard. Start capturing the network logs. You should see HTTP requests returning status `200` as you navigate SharePoint when everything is working as expected. 
 1. Ensure the **Preserve log** option is checked before continuing.
 1. Keep the browser window open with the logs.  
-1. Turn on Universal Tenant Restrictions in the Microsoft Entra Portal -> Global Secure Access -> Session Management -> Universal Tenant Restrictions.
+1. Turn on Universal Tenant Restrictions in the Microsoft Entra admin center -> Global Secure Access -> Session Management -> Universal Tenant Restrictions.
 1. As the Fabrikam user, in the browser with SharePoint Online open, within a few minutes, new logs appear. Also, the browser may refresh itself based on the request and responses happening in the back-end. If the browser doesn't automatically refresh after a couple of minutes, refresh the page.
    1. The Fabrikam user sees that their access is now blocked with the message: **Access is blocked, The Contoso IT department has restricted which organizations can be accessed. Contact the Contoso IT department to gain access.**
 1. In the logs, look for a **Status** of `302`. This row shows universal tenant restrictions being applied to the traffic. 

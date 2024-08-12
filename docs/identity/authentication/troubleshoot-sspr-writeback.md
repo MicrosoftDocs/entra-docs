@@ -5,7 +5,7 @@ description: Learn how to troubleshoot common problems and resolution steps for 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 06/21/2024
+ms.date: 06/06/2024
 
 ms.author: justinha
 author: justinha
@@ -23,8 +23,8 @@ If you have problems with SSPR writeback, the following troubleshooting steps an
 If you have problems with password writeback for Microsoft Entra Connect, review the following steps that may help resolve the problem. To recover your service, we recommend that you follow these steps in order:
 
 * [Confirm network connectivity](#confirm-network-connectivity)
-* Check TLS 1.2
-* Update Microsoft .NET 4.8
+* [Check TLS 1.2](#check-if-tls-12-is-enabled)
+* [Update Microsoft .NET 4.8](#make-sure-microsoft-net-framework-48-or-higher-is-enabled-sync-server)
 * [Restart the Microsoft Entra Connect Sync service](#restart-the-azure-ad-connect-sync-service)
 * [Disable and re-enable the password writeback feature](#disable-and-re-enable-the-password-writeback-feature)
 * [Install the latest Microsoft Entra Connect release](#install-the-latest-azure-ad-connect-release)

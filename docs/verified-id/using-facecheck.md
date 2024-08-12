@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Using Face Check (Preview) with Entra Verified ID and unlocking high assurance verifications at scale
+title: Tutorial - Using Face Check with Entra Verified ID and unlocking high assurance verifications at scale
 description: In this tutorial, you learn how to use Face Check with Entra Verified ID
 ms.service: entra-verified-id
 
@@ -12,24 +12,25 @@ ms.date: 10/06/2023
 
 ---
 
-# Using Face Check (Preview) with Entra Verified ID and unlocking high assurance verifications at scale
-
+# Using Face Check with Entra Verified ID and unlocking high assurance verifications at scale
 
 Face Check is a privacy-respecting facial matching. It allows enterprises to perform high-assurance verifications securely, simply, and at scale. Face Check adds a critical layer of trust by performing facial matching between a user’s real-time selfie and a photo. The facial matching is powered by Azure AI services. By sharing only the match results and not any sensitive identity data, Face Check protects user privacy while allowing organizations to be sure the person claiming an identity is really them.
 
 :::image type="content" source="media/using-facecheck/verify-confirm-review.png" alt-text="Screenshot of using Face Check.":::
 
 ## Prerequisites
+
 Face Check is a premium feature within Verified ID. You need to enable the Face Check Add-on in your Entra Verified ID setup before doing Face Check verifications.
 
 > [!IMPORTANT]
-> The Face Check Add-on can only be enable from the Entra portal. Admin API support for this feature. 
+> The Face Check Add-on can only be enabled from the Microsoft Entra admin center. Admin API support for this feature. 
 
 - If this is the first time using Entra Verified ID, [set up your tenant](./verifiable-credentials-configure-tenant-quick.md).
 - [Associate or add an Azure subscription to your Microsoft Entra tenant](/entra/fundamentals/how-subscriptions-associated-directory)
 - Make sure the user setting up Face Check has [Contributor role for the Azure subscription](/azure/role-based-access-control/built-in-roles/general#contributor)
 
 ### Setting up the Face Check with Entra Verified ID
+
 1. In the Verified ID overview page, scroll down to the new Add-ons section and `Enable` the Face Check add-on.
 
 :::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of the Face Check add-on.":::
@@ -57,6 +58,7 @@ When the Microsoft Authenticator gets a presentation request including a Face Ch
 ## Get started with Face Check using Request Service API
 
 Apps can use [Request Service API](get-started-request-api.md?tabs=http%2Cissuancerequest%2Cfacecheck#presentation-request-example) to create request for users to perform a Face Check against a `VerifiedEmployee` credential, State Issued Government ID or a custom digital credential with a trusted photo. For example, a help desk service can request a Face Check against a `VerifiedEmployee` credential to verify the identity quickly and securely to enable a wide variety of self-service scenarios including activating a Passkey or resetting a password. To reduce compliance risk, apps receive a confidence score for match against the photo from the desired credential, without gaining access to liveness data. 
+
 ### Issuing a Verified ID credential with a photo
 
 Custom credential types using the [idTokenHint](how-to-use-quickstart.md) attestation flow can also issue a Verified ID credential containing a photo. The credential definition needs to have the display and rules definition for the photo claim. 
@@ -154,7 +156,6 @@ Microsoft Entra Verified ID is a managed verifiable credential service that lets
 
 Face Check with Microsoft Entra Verified ID is a premium feature within Verified ID used for privacy-respecting facial matching. It allows enterprises to perform high-assurance verifications securely, simply, and at scale. Face Check adds a critical layer of trust by performing facial matching between a user’s real-time selfie and a photo. The facial matching is powered by Azure AI services.
 
-
 ### What is the difference between Face Check and Face ID?
 
 Face ID is a vision based biometric security option offer on Apple products for unlocking a device to access to a mobile app. Face Check is a Microsoft Entra Verified ID feature that also uses vision based AI technology, but compares the user to the presented Verified ID. Face Check determines the user identity across a wide range of online scenarios where high-assurance access is required. Some examples of that are high value business processes or access to sensitive company information. Both mechanisms require a user to face a camera in the process but operate in different ways.
@@ -177,7 +178,8 @@ Data and privacy for Azure AI Services can be found [here](/legal/cognitive-serv
 ### How much does Face Check cost?
 For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
-## Frequently asked questions for Face Check Developers 
+## Frequently asked questions for Face Check Developers
+
 ### Does Face Check Require MS Authenticator?
 
 Yes. Face Check is limited to Verified ID usage with MS Authenticator. This limitation is in place to prevent injection attack on Face Check. For non-Face Check scenarios, a Wallet SDK is available other Verified ID solutions. More info [here](using-wallet-library.md)
@@ -196,6 +198,7 @@ Microsoft has conducted fairness testing of the Face API. The Azure AI services 
 View the [Face API Fairness report](https://visionstudio-dev-8.azurewebsites.net/responsibleAI/face-fairness/information).
 
 ### What if I can't find a subscription?
+
 If no subscriptions are available in the Link a subscription pane, here are some possible reasons:
 
 You don't have the appropriate permissions. Be sure to sign in with an Azure account that's assigned at least the Contributor role within the subscription or a resource group within the subscription.
@@ -207,10 +210,6 @@ No subscription exists. In the Link a subscription pane, you can create a subscr
 ### Are you iBeta Level 2 conformant?
 
 Yes. Azure Face API AI and Face Check are iBeta Level 2 conformant to be resistant to various presentation styles of attack to impersonate a user. [Learn more](https://www.ibeta.com/iso-30107-3-presentation-attack-detection-confirmation-letters/) about iBeta’s ISO Presentation Attack Detection testing.
-
-### How fair is Azure AI Vision Face API?
-
-Microsoft conducted fairness testing of the Face API. The Azure AI Services team is continuously striving to ensure responsible and inclusive use of biometric AI. The Face API Fairness report is available [here](https://visionstudio-dev-8.azurewebsites.net/responsibleAI/face-fairness/information).
 
 ### What are the requirements for the photo in the Verified ID?
 

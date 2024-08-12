@@ -33,7 +33,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)). 
 * A valid [Tensor license](https://www.teamviewer.com/de/teamviewer-tensor/) for TeamViewer.
-* A valid custom identifier from the [Single Sign-On](https://community.teamviewer.com/t5/Knowledge-Base/Single-Sign-On-with-Azure-Active-Directory/ta-p/60209#toc-hId--473669723) configuration available.
+* A valid custom identifier from the [Single Sign-On](https://community.teamviewer.com/English/kb/articles/110134-single-sign-on-for-microsoft-entra-id) configuration available.
 
 > [!NOTE]
 > This requires a Microsoft Entra Premium license subscription.

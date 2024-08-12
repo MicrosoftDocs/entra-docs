@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/15/2023
+ms.date: 07/30/2024
 ms.author: kenwith
 ms.reviewer: arvinh, chmutali
 ---
@@ -40,7 +40,7 @@ This section describes the steps required to enable pronoun data in Workday. We 
     >[!div class="mx-imgBorder"] 
     >![Screenshot of enabling pronoun display option.](./media/workday-pronoun-data/enable-pronoun-display-preference.png)
 
-1. Use Workday Studio or Postman to invoke [Get_Workers API version 38.1](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v38.1/Get_Workers.html) for the test user using the Workday Microsoft Entra integration system user. In the SOAP request header, specify the option Include_Reference_Descriptors_In_Response. 
+1. Use Workday Studio to invoke [Get_Workers API version 38.1](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v38.1/Get_Workers.html) for the test user using the Workday Microsoft Entra integration system user. In the SOAP request header, specify the option Include_Reference_Descriptors_In_Response. 
     ```
       <bsvc:Workday_Common_Header>
          <bsvc:Include_Reference_Descriptors_In_Response>true</bsvc:Include_Reference_Descriptors_In_Response>

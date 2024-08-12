@@ -29,7 +29,7 @@ There are three ways to resolve this issue. The choices are in listed in increas
     If you change the internal URL but don’t want to change the landing page for users, change the Home page URL to the previously published internal URL. Navigate to **Microsoft Entra ID** > **App Registrations** and select the application **Branding**. In the branding section, set the **Home Page URL** field to the desired landing page. 
     
     > [!IMPORTANT]
-    > In order to make the above changes you require rights to modify application objects in Microsoft Entra ID. The user needs to be assigned [Application Administrator](~/identity/role-based-access-control/delegate-app-roles.md#assign-built-in-application-admin-roles) role which grants application modification rights in Microsoft Entra ID to the user.
+    > In order to make the above changes you require rights to modify application objects in Microsoft Entra ID. The user needs to be assigned [Application Administrator](~/identity/role-based-access-control/delegate-app-roles.md#assign-built-in-application-administrator-roles) role which grants application modification rights in Microsoft Entra ID to the user.
 
 2.  If your applications use fully qualified domain names (FQDNs), use [custom domains](how-to-configure-custom-domain.md) to publish your applications. This feature allows the same URL to be used both internally and externally.
 

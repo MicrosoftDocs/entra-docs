@@ -102,7 +102,7 @@ if ($clientSp.AppRoles | ? { $_.AllowedMemberTypes -contains "User" }) {
     Write-Warning ("A default app role assignment cannot be created because the " `
                  + "client application exposes user-assignable app roles. You must " `
                  + "assign the user a specific app role for the app to be listed " `
-                 + "in the user's My Apps access panel.")
+                 + "in the user's My Apps portal.")
 } else {
     # The app role ID 00000000-0000-0000-0000-000000000000 is the default app role
     # indicating that the app is assigned to the user, but not for any specific 

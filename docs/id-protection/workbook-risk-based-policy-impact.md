@@ -88,7 +88,7 @@ Sign-in scenario 5, **IP addresses not trusted**, surfaces the IP addresses from
 
 #### Federated sign-in risk policy scenarios
 
-For customers using multiple identity providers, the next section will be useful to see if there are any risky sessions being redirected to those external providers for MFA or for other forms of remediation. This section can give you insight into where remediation is taking place and if it's happening as expected. For this data to populate, “federatedIdpMfaBehavior” needs to be set in your federated environment to enforce MFA coming from a federated identity provider. 
+For customers using multiple identity providers, the next section will be useful to see if there are any risky sessions being redirected to those external providers for MFA or for other forms of remediation. This section can give you insight into where remediation is taking place and if it's happening as expected. For this data to populate, "federatedIdpMfaBehavior" needs to be set in your federated environment to enforce MFA coming from a federated identity provider. 
 
 :::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-federated.png" alt-text="Screenshot showing the federated sign-in risk policy scenarios of the workbook." lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-federated.png":::
 
