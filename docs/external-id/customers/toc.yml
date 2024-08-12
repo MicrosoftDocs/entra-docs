@@ -272,6 +272,8 @@ items:
                   href: tutorial-native-authentication-ios-self-service-password-reset.md
                 - name: Support web fallback
                   href: tutorial-native-authentication-ios-support-web-fallback.md
+                - name: Call an API
+                  href: tutorial-native-authentication-ios-sign-in-call-api.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
