@@ -103,7 +103,7 @@ Follow these steps to enable Microsoft Entra SSO.
        > [!NOTE]
        > The Reply URL value is not real. Update this value with the actual Reply URL. You will get the `<idpid>` value from the Amazon Business SSO configuration section, which is explained later in the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. If you want to configure the application in **SP** initiated mode, you'll need to add the full URL provided in the Amazon Business configuration to the **Sign-on URL** in the **Set additional URLs** section.
+1. If you want to configure the application in **SP** initiated mode, you need to add the full URL provided in the Amazon Business configuration to the **Sign-on URL** in the **Set additional URLs** section.
 
 1. The following screenshot shows the list of default attributes. Edit the attributes by clicking on the **pencil** icon in the **User Attributes & Claims** section.
 
@@ -133,7 +133,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![The Certificate download link](common/copy-metadataurl.png)
 
-1. On the **Set up Amazon Business** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Amazon Business** section, copy the appropriate URLs based on your requirement.
 
     ![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -168,7 +168,7 @@ In this section, you create a test user called B.Simon.
 
     ![Screenshot shows the New group button.](./media/amazon-business-tutorial/new-group-tab.png)
 
-1. Fill in **Group type**, **Group name**, **Group description**, **Membership type**. Select on the arrow to select members, then search for or select on the member you'll like to add to the group. Select on **Select** to add the selected members, then select on **Create**.
+1. Fill in **Group type**, **Group name**, **Group description**, **Membership type**. Select on the arrow to select members, then search for or select on the member you like to add to the group. Select on **Select** to add the selected members, then select on **Create**.
 
     ![Screenshot shows the Group pane with options, including selecting members and inviting external users.](./media/amazon-business-tutorial/group-information.png)
 
@@ -230,7 +230,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
     ![Screenshot shows New user account defaults with Microsoft S S O, Requisitioner, and Next selected.](media/amazon-business-tutorial/group.png)
 
-1. On the **Upload your metadata file** wizard, choose **Paste XML Link** option to paste the **App Federation Metadata URL** value,. and select **Validate**.
+1. On the **Upload your metadata file** wizard, choose **Paste XML Link** option to paste the **App Federation Metadata URL** value, and select **Validate**.
 
     ![Screenshot shows Upload your metadata file, which allows you to browse to an x m l file and upload it.](media/amazon-business-tutorial/connection-data.png)
 
@@ -298,82 +298,65 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you select the Amazon Business tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the sign-in flow and if configured in IDP mode, you should be automatically signed in to the Amazon Business for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
+## Reconfiguring Service Provider Settings from ADFS to Microsoft Entra ID
+
+1. Prepare Microsoft Entra ID Environment
+   1. Verify Microsoft Entra ID Premium Subscription
+    Ensure you have an Microsoft Entra ID Premium subscription, which is required for single sign-on (SSO) and other advanced features.
+
+1. Register the Application in Microsoft Entra ID
+   1. Navigate to Microsoft Entra ID in the Azure portal.
+   1. Select "App registrations" > "New registration".
+   1. Fill in the required details: 
+      1. Name: Enter a meaningful name for the application.
+      1. Supported account types: Choose the appropriate option for your environment.
+      1. Redirect URI: Enter the necessary redirect URIs (usually your application’s sign-in URL).
+      
+1. Configure Microsoft Entra ID SSO
+   1. Set Up single sign-on in Microsoft Entra ID. 
+   1. In the Azure portal, go to Microsoft Entra ID > Enterprise applications.
+   1. Select your application from the list.
+   1. Under "Manage", select "Single sign-on".
+   1. Choose "SAML" as the Single Sign-On method.
+   1. Edit the Basic SAML Configuration:
+      1. Identifier (Entity ID): Enter the SP Entity ID.
+      1. Reply URL (Assertion Consumer Service URL): Enter the SP ACS URL.
+      1. Sign on URL: Enter the application sign-on URL if applicable.
+
+1. Configure User Attributes & Claims
+   1. In the SAML-based Sign-On settings, select "User Attributes & Claims".
+   1. Edit and configure claims to match those required by your SP. Typically, this includes:
+      1. NameIdentifier
+      1. Email
+      1. GivenName
+      1. Surname
+      1. etc.
+
+1. Download Microsoft Entra ID SSO Metadata
+1. In the SAML Signing Certificate section, download the Federation Metadata XML. This is used to configure your SP.
+
+1. Reconfigure Service Provider (SP)
+   1. Update SP to Use Microsoft Entra ID Metadata
+   1. Access your SP’s configuration settings.
+   1. Update the IdP metadata URL or upload the Microsoft Entra ID Metadata XML.
+   1. Update the Assertion Consumer Service (ACS) URL, Entity ID, and any other required fields to match the Microsoft Entra ID configuration.
+
+1. Configure SAML Certificates
+1. Ensure that the SP is configured to trust the signing certificate from Microsoft Entra ID. This can be found in the SAML Signing Certificate section of the Microsoft Entra ID SSO configuration.
+1. Test SSO Configuration
+1. Initiate a test login from the SP.
+1. Verify that the authentication redirects to Microsoft Entra ID and successfully logs in the user.
+1. Check the claims being passed to ensure they match what the SP expects.
+1. Update DNS and Network Settings (If Applicable). If your SP or application uses DNS settings specific to ADFS, you might need to update these settings to point to Microsoft Entra ID endpoints.
+1. Roll out and Monitor
+   1. Communicate with Users
+      Notify your users of the change and provide any necessary instructions or documentation. 
+   1. Monitor Authentication Logs
+      Keep an eye on the Microsoft Entra ID sign-in logs to monitor for any authentication issues and address them promptly.
+
 ## Next steps
 
 Once you configure Amazon Business you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 
-## Reconfiguring Service Provider Settings from ADFS to Azure AD
-
-### 1. Prepare Azure AD Environment
-
-#### a. Verify Azure AD Premium Subscription
-Ensure you have an Azure AD Premium subscription, which is required for single sign-on (SSO) and other advanced features.
-
-#### b. Register the Application in Azure AD
-1. **Navigate to Azure AD in the Azure Portal.**
-2. **Select "App registrations" > "New registration".**
-3. **Fill in the required details:**
-   - Name: Enter a meaningful name for the application.
-   - Supported account types: Choose the appropriate option for your environment.
-   - Redirect URI: Enter the necessary redirect URIs (usually your application’s sign-in URL).
-
-### 2. Configure Azure AD SSO
-
-#### a. Set Up single sign-on in Azure AD
-1. **In the Azure portal, go to Azure AD > Enterprise applications.**
-2. **Select your application from the list.**
-3. **Under "Manage", select "Single sign-on".**
-4. **Choose "SAML" as the Single Sign-On method.**
-5. **Edit the Basic SAML Configuration:**
-   - Identifier (Entity ID): Enter the SP Entity ID.
-   - Reply URL (Assertion Consumer Service URL): Enter the SP ACS URL.
-   - Sign on URL: Enter the application sign-on URL if applicable.
-
-#### b. Configure User Attributes & Claims
-1. **In the SAML-based Sign-On settings, select "User Attributes & Claims".**
-2. **Edit and configure claims to match those required by your SP.** Typically, this includes:
-   - NameIdentifier
-   - Email
-   - GivenName
-   - Surname
-   - etc.
-
-#### c. Download Azure AD SSO Metadata
-1. **In the SAML Signing Certificate section, download the Federation Metadata XML.** This is used to configure your SP.
-
-### 3. Reconfigure Service Provider (SP)
-
-#### a. Update SP to Use Azure AD Metadata
-1. **Access your SP’s configuration settings.**
-2. **Update the IdP metadata URL or upload the Azure AD Metadata XML.**
-3. **Update the Assertion Consumer Service (ACS) URL, Entity ID, and any other required fields to match the Azure AD configuration.**
-
-#### b. Configure SAML Certificates
-1. **Ensure that the SP is configured to trust the signing certificate from Azure AD.** This can be found in the SAML Signing Certificate section of the Azure AD SSO configuration.
-
-#### c. Test SSO Configuration
-1. **Initiate a test login from the SP.**
-2. **Verify that the authentication redirects to Azure AD and successfully logs in the user.**
-3. **Check the claims being passed to ensure they match what the SP expects.**
-
-### 4. Update DNS and Network Settings (If Applicable)
-If your SP or application uses DNS settings specific to ADFS, you might need to update these settings to point to Azure AD endpoints.
-
-### 5. Rollout and Monitor
-
-#### a. Communicate with Users
-Notify your users of the change and provide any necessary instructions or documentation.
-
-#### b. Monitor Authentication Logs
-Keep an eye on the Azure AD sign-in logs to monitor for any authentication issues and address them promptly.
-
-### 6. Decommission ADFS (Optional)
-Once you have confirmed that everything is working correctly with Azure AD, you may consider decommissioning your ADFS infrastructure. This involves:
-
-1. **Backing up your ADFS configuration.**
-2. **Shutting down ADFS servers.**
-3. **Removing ADFS DNS entries.**
-4. **Updating any remaining applications or services that still rely on ADFS.**
-
 ### More Resources
-- [Azure AD SSO Best Practices](https://learn.microsoft.com/entra/identity/enterprise-apps/what-is-single-sign-on)
+- [Microsoft Entra ID SSO Best Practices](https://learn.microsoft.com/entra/identity/enterprise-apps/what-is-single-sign-on)
