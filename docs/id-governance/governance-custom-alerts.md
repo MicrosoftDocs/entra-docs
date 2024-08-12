@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 08/07/2024
+ms.date: 08/12/2024
 ms.author: billmath
 ms.custom:
 ---
@@ -163,6 +163,18 @@ AuditLogs
 ```
 AuditLogs
 | where ActivityDisplayName == "Disable PIM alert"
+```
+
+**Alert an IT admin when a user is added to a role outside of PIM**
+
+The query below is based on a templateId. You can find a list of template IDs [here](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference).
+
+*Query*
+
+```
+AuditLogs
+| where ActivityDisplayName == "Add member to role"
+| where parse_json(tostring(TargetResources[0].modifiedProperties))[2].newValue in ("\"INPUT GUID\"")
 ```
 
 ## Provisioning
