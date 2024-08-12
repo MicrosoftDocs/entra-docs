@@ -91,6 +91,7 @@ The Microsoft Entra middleware has built-in capabilities for validating access t
 The following examples suppose that your application is validating a v2.0 access token (and therefore reference the v2.0 versions of the OIDC metadata documents and keys). Just remove the "/v2.0" in the URL if you validate v1.0 tokens.
 
 ### Validate the issuer
+A special note needs placed in here that the issuer of the access token with be https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/. Access tokens are issued by our STS service
 
 [OpenID Connect Core](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation) says "The Issuer Identifier \[...\] MUST exactly match the value of the iss (issuer) Claim." For applications which use a tenant-specific metadata endpoint (like `https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/v2.0/.well-known/openid-configuration` or `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`), this is all that is needed.
 
