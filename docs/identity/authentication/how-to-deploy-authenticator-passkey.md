@@ -18,9 +18,10 @@ ms.collection: M365-identity-device-management
 ---
 # Deploy Microsoft Authenticator passkeys in your Microsoft Entra ID tenant
 
-Checklist? 
+Checklist
 
 - Make sure users are enabled
 - Make sure Auth app passkeys are allowed
 - Configure Bluetooth restrictions to allow passkeys
 
+## Templates

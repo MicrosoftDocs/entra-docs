@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/13/2024
+ms.date: 07/29/2024
 
 ms.author: justinha
 author: justinha
@@ -22,12 +22,10 @@ This article covers the sign-in experience when using passkeys in Microsoft Auth
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
 | **Same-device authentication in a browser**              | &#x2705;          | &#10060;<sup>2</sup>       |
-| **Same-device authentication in native Microsoft applications**<sup>1</sup>            | &#x2705; | &#10060;<sup>2</sup>     |
+| **Same-device authentication in native Microsoft applications**<sup>1</sup>            | &#x2705; | &#x2705;     |
 | **Cross-device authentication**  | &#x2705;  | &#x2705;    |
 
 <sup>1</sup> For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
-
-<sup>2</sup> Support for same-device Android scenarios is coming soon.
 
 ## [**iOS**](#tab/iOS)
 
@@ -101,7 +99,7 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
 ### Same-device authentication in native Microsoft applications (iOS)
 
-You can use Authenticator on your iOS device to seamlessly sign in with a passkey to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. Similar support for Android devices is coming during preview. 
+You can use Authenticator on your iOS device to seamlessly sign in with a passkey to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. 
 
 
 ## [**Android**](#tab/Android)
@@ -176,6 +174,5 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
 ### Same-device authentication in native Microsoft applications (Android)
 
-You can't use passkeys in Authenticator on your Android device to sign in to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. Support for Android devices is coming later during preview. 
-
+You can use passkeys in Authenticator on your Android device to sign in to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. 
 ---
