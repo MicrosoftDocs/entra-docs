@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	c. After the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values get auto populated in Basic SAML Configuration section.
 
 	> [!Note]
-	> If the **Identifier** and **Reply URL** values do not get auto poplulated, then fill in the values manually according to your requirement.
+	> If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 

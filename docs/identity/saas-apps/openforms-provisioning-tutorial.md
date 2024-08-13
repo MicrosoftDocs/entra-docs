@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure OpenForms for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to OpenForms.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 8a9a7be2-9e2f-4da5-9619-1382b6e17a4a
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

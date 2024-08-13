@@ -1,6 +1,6 @@
 ---
-title: Register an app in Microsoft Entra External ID
-description: Learn about how to register an app in the external tenant. 
+title: Register an App
+description: Learn how to register your application with External ID for customer identity and access management (CIAM). Choose your app type and get detailed steps. 
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
@@ -8,11 +8,11 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: how-to
 ms.date: 02/29/2024
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to register an app on the Microsoft Entra admin center.
 ---
-# Register your app in the external tenant
+# Register an app in your external tenant
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 

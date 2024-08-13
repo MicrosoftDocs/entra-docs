@@ -5,7 +5,7 @@ author: kenwith
 manager: amycolannino
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 04/24/2024
+ms.date: 07/08/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -39,27 +39,7 @@ Use the following steps to install the connector without registering it:
    ```
 
 ## Register the connector with Microsoft Entra ID
-There are two methods you can use to register the connector:
-
-- Register the connector using a Windows PowerShell credential object.
-- Register the connector using a token created offline.
-
-### Register the connector using a Windows PowerShell credential object
-1. Create a Windows PowerShell Credentials object `$cred` that contains an administrative username and password for your directory. Run the following command, replacing `<username>`, `<password>`, and `<tenantid>`:
-
-   ```powershell
-   $User = "<username>"
-   $PlainPassword = '<password>'
-   $TenantId = '<tenantid>'
-   $SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force
-   $cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $User, $SecurePassword
-   ```
-1. Go to `C:\Program Files\Microsoft Entra private network connector` and run the following script using the `$cred` object that you created:
-
-   ```powershell
-   .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Entra private network connector\Modules\" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature ApplicationProxy -TenantId $TenantId
-   ```
-1. The script contains sensitive credential information. Store the script in a secure location.
+Register the connector using a token created offline.
 
 ### Register the connector using a token created offline
 1. Create an offline token using the `AuthenticationContext` class using the values in this code snippet or PowerShell cmdlets:
@@ -134,9 +114,15 @@ There are two methods you can use to register the connector:
 
    **Using PowerShell:**
    ```powershell
-   # Load MSAL (Tested with version 4.7.1) 
+   # Loading DLLs
 
-   Add-Type -Path "..\MSAL\Microsoft.Identity.Client.dll"
+   Find-PackageProvider -Name NuGet| Install-PackageProvider -Force
+   Register-PackageSource -Name nuget.org -Location https://www.nuget.org/api/v2 -ProviderName NuGet
+   Install-Package Microsoft.IdentityModel.Abstractions  -ProviderName Nuget -RequiredVersion 6.22.0.0 
+   Install-Module Microsoft.Identity.Client
+ 
+   add-type -path "C:\Program Files\PackageManagement\NuGet\Packages\Microsoft.IdentityModel.Abstractions.6.22.0\lib\net461\Microsoft.IdentityModel.Abstractions.dll"
+   add-type -path "C:\Program Files\WindowsPowerShell\Modules\Microsoft.Identity.Client\4.53.0\Microsoft.Identity.Client.dll"
 
    # The AAD authentication endpoint uri
 

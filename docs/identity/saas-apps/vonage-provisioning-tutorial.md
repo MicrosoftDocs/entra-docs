@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Vonage for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Vonage.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: dfb7e9bb-c29e-4476-adad-4ab254658e83
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

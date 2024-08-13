@@ -12,7 +12,7 @@ ms.author: jricketts
 
 # Introduction to Microsoft's Security Service Edge Solution Deployment Guide for Proof of Concept
 
-This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md), [Microsoft Entra Internet Access for Microsoft Traffic](../global-secure-access/how-to-manage-microsoft-profile.md) and [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md). Note that this solution is in Public Preview.
+This Proof of Concept (PoC) Deployment Guide helps you to deploy Microsoft's Security Service Edge (SSE) solution that features [Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md), [Microsoft Entra Internet Access for Microsoft Traffic](../global-secure-access/how-to-manage-microsoft-profile.md) and [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md).
 
 ## Overview
 
@@ -99,7 +99,7 @@ For the Proof of Concept in this guide, you need about six hours. Plan across th
 
 ### Obtain permissions
 
-Administrators who interact with [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md)  preview features require the Global Secure Access Administrator and Application Administrator [roles](~/identity/role-based-access-control/permissions-reference.md).
+Administrators who interact with [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md) features require the Global Secure Access Administrator and Application Administrator [roles](~/identity/role-based-access-control/permissions-reference.md).
 
 Universal tenant restrictions require the Conditional Access Administrator or Security Administrator role to create and interact with Conditional Access policies and named locations. Some features may also require other roles. 
 
@@ -140,10 +140,10 @@ Follow the steps in this section to configure SSE through the Microsoft Entra ad
 Activate Microsoft SSE through the Microsoft Entra admin center and make initial configurations that are requirements for this PoC.
 
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) using an identity assigned the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role.
-1. Go to **Global Secure Access (preview)** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
+1. Go to **Global Secure Access** > **Get started** > **Activate Global Secure Access in your tenant**. Select **Activate** to enable SSE features in your tenant.
 
    :::image type="content" source="media/sse-deployment-guide-intro/global-secure-access-main-inline.png" alt-text="Diagram that shows initial activation page for Microsoft's Security Service Edge Solution." lightbox="media/sse-deployment-guide-intro/global-secure-access-main-expanded.png"::: 
-1. Go to **Global Secure Access (preview)** > **Connect** > **Traffic forwarding**. Turn on **Microsoft profile**, **Private access profile**, and **Internet access profile**.
+1. Go to **Global Secure Access** > **Connect** > **Traffic forwarding**. Turn on **Microsoft profile**, **Private access profile**, and **Internet access profile**.
 Traffic forwarding enables you to configure the type of network traffic to tunnel through the Microsoft's Security Service Edge Solution services. You set up [traffic forwarding profiles](../global-secure-access/concept-traffic-forwarding.md) to manage types of traffic. The **Microsoft traffic profile** is for Microsoft Entra Internet Access for Microsoft Traffic. The **Private access profile** is for Microsoft Entra Private Access, and the **Internet access profile** is for Microsoft Entra Internet Access. Microsoft's Security Service Edge solution only captures traffic on client devices that have Global Secure Access Client installed.
 
    > [!NOTE]
@@ -151,7 +151,7 @@ Traffic forwarding enables you to configure the type of network traffic to tunne
 
    :::image type="content" source="media/sse-deployment-guide-intro/traffic-forwarding-profile-enabled.png" alt-text="Diagram that shows how to enable Microsoft Traffic and Private access profiles." lightbox="media/sse-deployment-guide-intro/traffic-forwarding-profile-enabled-expanded.png"::: 
 
-1. To enable source IP restoration, go to **Global Secure Access (preview)** > **Connect** > **Global settings** > **Session management** > **Adaptive Access** and turn on **Enable Global Secure Access signaling in Conditional Access**. Source IP restoration is required to for Conditional Access policies that you will configure as part of this proof of concept.
+1. To enable source IP restoration, go to **Global Secure Access** > **Connect** > **Settings** > **Session management** > **Adaptive Access** and turn on **Enable Global Secure Access signaling in Conditional Access**. Source IP restoration is required to for Conditional Access policies that you will configure as part of this proof of concept.
 
    :::image type="content" source="media/sse-deployment-guide-intro/session-management-adaptive-access-inline.png" alt-text="Diagram that shows how to enable Conditional Access policies for Microsoft's Security Service Edge Solution." lightbox="media/sse-deployment-guide-intro/session-management-adaptive-access-expanded.png":::
 
@@ -162,7 +162,7 @@ Microsoft Entra Internet Access for Microsoft Traffic and Microsoft Entra Privat
 1. Make sure your Windows device is Microsoft Entra joined or hybrid joined.
 1. Sign in to the Windows device with a Microsoft Entra user role that has local admin privileges.
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) using an identity assigned the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role.
-1. Go to **Global Secure Access (preview)** > **Connect** > **Client Download**. Select **Download client** and complete the installation.
+1. Go to **Global Secure Access** > **Connect** > **Client Download**. Select **Download client** and complete the installation.
 
    :::image type="content" source="media/sse-deployment-guide-intro/global-secure-access-clients-inline.png" alt-text="Diagram that shows where to download the Global Secure Access client software." lightbox="media/sse-deployment-guide-intro/global-secure-access-clients-expanded.png":::
 
@@ -173,8 +173,6 @@ Microsoft Entra Internet Access for Microsoft Traffic and Microsoft Entra Privat
 1. In the Window taskbar, right-click the Global Secure Access Client.
 
 1. Select **Advanced Diagnostics** to view **Global Secure Access Client Connection Diagnostics**. Click **Health check** and verify that all checks show **Yes** status.
-
-[!INCLUDE [Public preview important note](../global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next steps
 

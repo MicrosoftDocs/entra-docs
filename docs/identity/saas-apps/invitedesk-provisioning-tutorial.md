@@ -3,7 +3,6 @@ title: 'Tutorial: Configure InviteDesk for automatic user provisioning with Micr
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to InviteDesk.
 author: thomasakelo
 manager: jeedes
-ms.assetid: d3291257-0dc0-4ed7-ae21-29249ce664df
 ms.service: entra-id
 ms.subservice: saas-apps
 

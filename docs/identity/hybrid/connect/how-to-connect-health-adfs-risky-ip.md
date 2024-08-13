@@ -83,7 +83,7 @@ Using the **Download** functionality, the whole risky IP address list in the pas
 
 You can update the report's administrator contacts through the **Notification Settings**. By default, the risky IP alert email notification is in an *off* state. You can enable the notification by toggling the button under **Get email notifications for IP addresses exceeding failed activity threshold report**.
 
-Like generic alert notification settings in Connect Health, it allows you to customize the designated notification recipient list about the Risky IP report from here. You can also notify all hybrid identity administrators while you're making the change. 
+Like generic alert notification settings in Connect Health, it allows you to customize the designated notification recipient list about the Risky IP report from here. You can also notify all Hybrid Identity Administrators while you're making the change. 
 
 ## Configure threshold settings
 

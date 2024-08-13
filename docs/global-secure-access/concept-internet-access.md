@@ -41,6 +41,17 @@ Once you link a security profile to a Conditional Access (CA) policy, if multipl
 > [!IMPORTANT]
 > The baseline security profile applies to all traffic even without linking it to a Conditional Access policy. It enforces policy at the lowest priority in the policy stack, applying to all Internet Access traffic routed through the service as a 'catch-all' policy.
 
+## Known limitations
+
+- Platform assumes standard ports for HTTP/S traffic (ports 80 and 443).
+- IPv6 isn't supported on this platform yet.
+- UDP isn't supported on this platform yet.
+- User-friendly end-user notifications are in development.
+- Remote network connectivity for Internet Access is in development.
+- Transport Layer Security (TLS) termination is in development.
+- URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
+- Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
+
 ## Next steps
 
 - [Configure Web content filtering](how-to-configure-web-content-filtering.md)

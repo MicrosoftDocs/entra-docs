@@ -76,7 +76,7 @@ The following scenarios are supported for cloud sync.
  ![Existing hybrid](media/tutorial-existing-forest/existing-forest-new-forest-2.png)
 - **New hybrid customer**:      Microsoft Entra Connect Sync isn't used. Cloud sync is used for provisioning from an AD forest.  For more information, see the tutorial [here](tutorial-single-forest.md).
  
- ![New customers](media/tutorial-single-forest/diagram-2.png)
+ ![New customers](~/includes/governance/media/tutorial-single-forest/diagram-2.png)
 
 - **Existing hybrid customer**: Microsoft Entra Connect Sync is used for primary forests. Cloud sync is piloted for a small set of users in the primary forests [here](tutorial-existing-forest.md).
 

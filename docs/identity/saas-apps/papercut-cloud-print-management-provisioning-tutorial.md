@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure PaperCut Cloud Print Management for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to PaperCut Cloud Print Management.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 7e65d727-2951-4aec-a7a3-7bde49ed09e2
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

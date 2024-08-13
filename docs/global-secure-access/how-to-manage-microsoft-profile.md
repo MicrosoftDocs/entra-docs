@@ -14,7 +14,7 @@ ms.subservie: entra-internet-access
 With the Microsoft profile enabled, Microsoft Entra Internet Access acquires the traffic going to Microsoft services. The **Microsoft** profile manages the following policy groups:
 
 - Exchange Online
-- SharePoint Online and OneDrive for Business
+- SharePoint Online and Microsoft OneDrive. 
 - Microsoft 365 Common and Office Online (only Microsoft Entra ID and Microsoft Graph)
 
 ## Prerequisites
@@ -36,6 +36,7 @@ To enable the Microsoft traffic forwarding profile for your tenant, you must hav
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Enable the **Microsoft traffic profile**.
+    Microsoft traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you can configure advanced security features specific to Microsoft traffic.
 
     :::image type="content" source="media/how-to-manage-microsoft-profile/microsoft-traffic-profile.png" alt-text="Screenshot of the traffic forwarding page with the Microsoft access profile enabled." lightbox="media/how-to-manage-microsoft-profile/microsoft-traffic-profile-expanded.png":::
 
@@ -97,7 +98,7 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
 ## User and group assignments
 You can scope the Microsoft profile to specific users and groups instead of applying the traffic profile to all users. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

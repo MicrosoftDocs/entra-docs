@@ -103,7 +103,7 @@ private fun displayAccount(accountState: AccountState) {
     }
 }
 ``` 
- 
+
 ## Next steps
 
 - [Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)

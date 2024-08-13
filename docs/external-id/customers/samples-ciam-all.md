@@ -1,6 +1,6 @@
 ---
-title: Code samples for external tenants
-description: Find code samples for applications you can run in an external tenant. Find samples by app type or language.
+title: App samples
+description: Learn how build and integrate apps with external tenants. Use code samples to test authentication scenarios such as sign up, sign in, and getting an access token to call an API.
  
 author: msmimart
 manager: celestedg
@@ -10,11 +10,11 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 05/20/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 ---
 
-# Samples for External ID developers
+# Samples and guides for integrating apps with External ID
 
 Microsoft maintains code samples that demonstrate how to integrate various application types with Microsoft Entra External ID. We provide instructions for downloading and using samples or building your own app based on common authentication and authorization scenarios, development languages, and platforms. Included are instructions for building the project (if applicable) and running the sample application. Within the sample code, comments help you understand how these libraries are used in the application to perform authentication and authorization in an external tenant.
 

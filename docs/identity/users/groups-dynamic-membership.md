@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 12/04/2023
+ms.date: 07/24/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -106,7 +106,7 @@ dirSyncEnabled |true false |user.dirSyncEnabled -eq true
 | jobTitle |Any string value or *null* | user.jobTitle -eq "value" |
 | mail |Any string value or *null* (SMTP address of the user) | user.mail -eq "value" |
 | mailNickName |Any string value (mail alias of the user) | user.mailNickName -eq "value" |
-| memberOf | Any string value (valid group object ID) | user.memberof -any (group.objectId -in ['value']) |
+| memberOf | Any string value (valid group object ID) | user.memberOf -any (group.objectId -in ['value']) |
 | mobile |Any string value or *null* | user.mobile -eq "value" |
 | objectId |GUID of the user object | user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" |
 | onPremisesDistinguishedName | Any string value or *null* | user.onPremisesDistinguishedName -eq "value" |
@@ -197,7 +197,8 @@ The values used in an expression can consist of several types, including:
 When specifying a value within an expression, it's important to use the correct syntax to avoid errors. Some syntax tips are:
 
 - Double quotes are optional unless the value is a string.
-- String and regex operations aren't case sensitive.
+- Regex and string operations are not case sensitive.
+- Ensure that property names are correctly formatted as shown, as they're case sensitive.
 - When a string value contains double quotes, both quotes should be escaped using the \` character, for example, user.department -eq \`"Sales\`" is the proper syntax when "Sales" is the value. Single quotes should be escaped by using two single quotes instead of one each time.
 - You can also perform Null checks, using null as a value, for example, `user.department -eq null`.
 
@@ -390,15 +391,15 @@ For more information, see [Use the attributes in dynamic groups](~/identity/hybr
 You can also create a rule that selects device objects for membership in a group. You can't have both users and devices as group members. 
 
 > [!NOTE]
-> The **organizationalUnit** attribute is no longer listed and should not be used. This string is set by Intune in specific cases but is not recognized by Microsoft Entra ID, so no devices are added to groups based on this attribute.
-
-> [!NOTE]
-> systemlabels is a read-only attribute that cannot be set with Intune.
+> The `organizationalUnit` attribute is no longer listed and should not be used. This string is set by Intune in specific cases but is not recognized by Microsoft Entra ID, so no devices are added to groups based on this attribute.
 >
-> For Windows 10, the correct format of the deviceOSVersion attribute is as follows: (device.deviceOSVersion -startsWith "10.0.1"). The formatting can be validated with the Get-MgDevice PowerShell cmdlet:
-> ```
-> Get-MgDevice -Search "displayName:YourMachineNameHere" -ConsistencyLevel eventual | Select-Object -ExpandProperty 'OperatingSystemVersion'
-> ```
+> The `systemlabels` attribute is read-only and cannot be set with Intune.
+
+For Windows 10, the correct format of the `deviceOSVersion` attribute is as follows: (device.deviceOSVersion -startsWith "10.0.1"). The formatting can be validated with the Get-MgDevice PowerShell cmdlet:
+
+```
+Get-MgDevice -Search "displayName:YourMachineNameHere" -ConsistencyLevel eventual | Select-Object -ExpandProperty 'OperatingSystemVersion'
+```
 
 The following device attributes can be used.
 
@@ -436,16 +437,17 @@ The following device attributes can be used.
  extensionAttribute15 | any string value | device.extensionAttribute15 -eq "some string value"
  isRooted | true false | device.isRooted -eq true
  managementType | MDM (for mobile devices) | device.managementType -eq "MDM"
- memberOf | Any string value (valid group object ID) | device.memberof -any (group.objectId -in ['value']) 
+ memberOf | Any string value (valid group object ID) | device.memberOf -any (group.objectId -in ['value']) 
  objectId | a valid Microsoft Entra object ID | device.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
  profileType | a valid [profile type](/graph/api/resources/device?view=graph-rest-1.0&preserve-view=true#properties) in Microsoft Entra ID | device.profileType -eq "RegisteredDevice"
- systemLabels | any string matching the Intune device property for tagging Modern Workplace devices | device.systemLabels -startsWith "M365Managed"
+ systemLabels | a read-only string matching the Intune device property for tagging Modern Workplace devices | device.systemLabels -startsWith "M365Managed" SystemLabels
 
 <!-- docutune:enable -->
 
 > [!NOTE]
-> When using `deviceOwnership` to create Dynamic Groups for devices, you need to set the value equal to `Company`. On Intune the device ownership is represented instead as Corporate. For more information, see [OwnerTypes](/mem/intune/developer/reports-ref-devices#ownertypes) for more details. 
-> When using `deviceTrustType` to create Dynamic Groups for devices, you need to set the value equal to `AzureAD` to represent Microsoft Entra joined devices, `ServerAD` to represent Microsoft Entra hybrid joined devices or `Workplace` to represent Microsoft Entra registered devices.
+> When using `systemLabels`, a read-only attribute that is used in various contexts, such as device management and sensitivity labeling, is not editable through Intune.<br>
+> When using `deviceOwnership` to create Dynamic Groups for devices, you need to set the value equal to `Company`. On Intune the device ownership is represented instead as Corporate. For more information, see [OwnerTypes](/mem/intune/developer/reports-ref-devices#ownertypes) for more details. <br>
+> When using `deviceTrustType` to create Dynamic Groups for devices, you need to set the value equal to `AzureAD` to represent Microsoft Entra joined devices, `ServerAD` to represent Microsoft Entra hybrid joined devices or `Workplace` to represent Microsoft Entra registered devices.<br>
 > When using `extensionAttribute1-15` to create Dynamic Groups for devices you need to set the value for `extensionAttribute1-15` on the device. Learn more on [how to write `extensionAttributes` on a Microsoft Entra device object](/graph/api/device-update?view=graph-rest-1.0&tabs=http&preserve-view=true#example-2--write-extensionattributes-on-a-device)
 
 ## Next steps

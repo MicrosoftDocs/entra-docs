@@ -2,10 +2,9 @@
 title: 'Tutorial: Configure Atlassian Cloud for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Atlassian Cloud.
 
-documentationcenter: ''
+
 author: thomasakelo
 manager: jeedes
-ms.assetid: 53b804ba-b632-4c4b-a77e-ec6468536898
 ms.service: entra-id
 ms.subservice: saas-apps
 

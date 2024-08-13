@@ -33,11 +33,6 @@ String[] SCOPES = {"https://graph.microsoft.com/.default"};
 let scopes = ["https://graph.microsoft.com/.default"]
 ```
 
-### Xamarin
-```csharp
-var scopes = new [] {"https://graph.microsoft.com/.default"};
-```
-
 ## Get tokens
 
 ### Acquire tokens via MSAL
@@ -176,27 +171,6 @@ MSAL for iOS and macOS supports various modifiers to get a token interactively o
 * [Common parameters for getting a token](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALTokenParameters.html#/Configuration%20parameters)
 * [Parameters for getting an interactive token](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALInteractiveTokenParameters.html#/Configuring%20MSALInteractiveTokenParameters)
 * [Parameters for getting a silent token](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALSilentTokenParameters.html)
-
-#### Xamarin
-
-The following example shows the minimal code to get a token interactively. The example uses Microsoft Graph to read the user's profile.
-
-```csharp
-string[] scopes = new string[] {"user.read"};
-var app = PublicClientApplicationBuilder.Create(clientId).Build();
-var accounts = await app.GetAccountsAsync();
-AuthenticationResult result;
-try
-{
- result = await app.AcquireTokenSilent(scopes, accounts.FirstOrDefault())
-             .ExecuteAsync();
-}
-catch(MsalUiRequiredException)
-{
- result = await app.AcquireTokenInteractive(scopes)
-             .ExecuteAsync();
-}
-```
 
 #### Mandatory parameters in MSAL.NET
 
