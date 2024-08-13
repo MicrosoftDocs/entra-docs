@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: quickstart
-ms.date: 03/26/2024
+ms.date: 08/13/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
