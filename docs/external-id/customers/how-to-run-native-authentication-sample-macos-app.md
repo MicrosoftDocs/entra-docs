@@ -88,7 +88,7 @@ To build and run your code, select **Run** from the **Product** menu in Xcode. A
 
 This guide tests **Email and password** usage. Enter a valid email address and password, select **Sign Up**, and launch the submit code screen: 
 
-:::image type="content" source="media/native-authentication/macos/enter-one-time-pass-code-expanded-macos.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in macOS app." lightbox="media/native-authentication/macos/enter-one-time-pass-code-macos.png"::: 
+:::image type="content" source="media/native-authentication/macos/enter-one-time-pass-code-macos.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in macOS app." lightbox="media/native-authentication/macos/enter-one-time-pass-code-expanded-macos.png"::: 
  
 After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application takes you back to the previous screen and automatically signs you in.  
 
