@@ -27,8 +27,6 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 - An Azure subscription. 
 - An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription or to a resource group within the subscription.
 
-
-
 ## Create a new tenant with external configurations 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
