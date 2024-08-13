@@ -58,7 +58,7 @@ The following section provides examples of custom alerts that customers can crea
 
 ```
 AuditLogs
-| where ActivityDisplayName == " Delete access review"
+| where ActivityDisplayName == "Delete access review"
 ```
 
 ## Entitlement management
