@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: conditional-access
 
 ms.topic: conceptual
-ms.date: 07/18/2023
+ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -66,7 +66,7 @@ Policy 1: All users with an administrator role, accessing the Windows Azure Serv
 
 Policy 2: All users with an administrator role, accessing the Windows Azure Service Management API cloud app, excluding a filter for devices using rule expression device.extensionAttribute1 equals SAW and for Access controls, Block.
 
-1. Select **Create new policy**.
+1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **Directory roles**, then all roles with administrator in the name
@@ -91,7 +91,7 @@ Policy 2: All users with an administrator role, accessing the Windows Azure Serv
 
 ### Setting attribute values
 
-Setting extension attributes is made possible through the Graph API. For more information about setting device attributes, see the article [Update device](/graph/api/device-update?tabs=http#example-2--write-extensionattributes-on-a-device).
+Setting extension attributes is made possible through the Microsoft Graph API. For more information about setting device attributes, see the article [Update device](/graph/api/device-update?tabs=http#example-2--write-extensionattributes-on-a-device).
 
 ### Filter for devices Graph API
 
@@ -119,12 +119,12 @@ The following device attributes can be used with the filter for devices conditio
 
 | Supported device attributes | Supported operators | Supported values | Example |
 | --- | --- | --- | --- |
-| deviceId | Equals, NotEquals, In, NotIn | A valid deviceId that is a GUID | (device.deviceid -eq "498c4de7-1aee-4ded-8d5d-000000000000") |
+| deviceId | Equals, NotEquals, In, NotIn | A valid deviceId that is a GUID | (device.deviceid -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb") |
 | displayName | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | Any string | (device.displayName -contains "ABC") |
 | deviceOwnership | Equals, NotEquals | Supported values are "Personal" for bring your own devices and "Company" for corporate owned devices  | (device.deviceOwnership -eq "Company") |
 | isCompliant | Equals, NotEquals | Supported values are "True" for compliant devices and "False" for non compliant devices  | (device.isCompliant -eq "True") |
 | manufacturer | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | Any string | (device.manufacturer -startsWith "Microsoft") |
-| mdmAppId | Equals, NotEquals, In, NotIn | A valid MDM application ID | (device.mdmAppId -in ["00001111-aaaa-2222-bbbb-3333cccc4444"] |
+| mdmAppId | Equals, NotEquals, In, NotIn | A valid MDM application ID | (device.mdmAppId -in ["00001111-aaaa-2222-bbbb-3333cccc4444"]) |
 | model | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | Any string | (device.model -notContains "Surface") |
 | operatingSystem | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | A valid operating system (like Windows, iOS, or Android) | (device.operatingSystem -eq "Windows") |
 | operatingSystemVersion | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | A valid operating system version (like 6.1 for Windows 7, 6.2 for Windows 8, or 10.0 for Windows 10 and Windows 11) | (device.operatingSystemVersion -in ["10.0.18363", "10.0.19041", "10.0.19042", "10.0.22000"]) |
@@ -141,13 +141,13 @@ The following device attributes can be used with the filter for devices conditio
 > The `Contains` and the `NotContains` operators work differently depending on attribute types. For string attributes such as `operatingSystem` and `model`, the `Contains` operator indicates whether a specified substring occurs within the attribute. For string collection attributes such as `physicalIds` and `systemLabels`, the `Contains` operator indicates whether a specified string matches one of the whole strings in the collection.
 
 > [!WARNING] 
-> Devices must be Microsoft Intune managed, compliant, or Microsoft Entra hybrid joined for a value to be available in extensionAttributes1-15 at the time of the Conditional Access Policy evaluation.
+> Devices must be Microsoft Intune managed, compliant, or Microsoft Entra hybrid joined for a value to be available in extensionAttributes1-15 at the time of the Conditional Access policy evaluation.
 
 ## Policy behavior with filter for devices
 
 The filter for devices condition in Conditional Access evaluates policy based on device attributes of a registered device in Microsoft Entra ID and hence it's important to understand under what circumstances the policy is applied or not applied. The following table illustrates the behavior when a filter for devices condition is configured. 
 
-| Filter for devices condition | Device registration state | Device filter Applied 
+| Filter for devices condition | Device registration state | Device filter Applied |
 | --- | --- | --- |
 | Include/exclude mode with positive operators (Equals, StartsWith, EndsWith, Contains, In) and use of any attributes | Unregistered device | No |
 | Include/exclude mode with positive operators (Equals, StartsWith, EndsWith, Contains, In) and use of attributes excluding extensionAttributes1-15 | Registered device | Yes, if criteria are met |
@@ -158,7 +158,7 @@ The filter for devices condition in Conditional Access evaluates policy based on
 | Include/exclude mode with negative operators (NotEquals, NotStartsWith, NotEndsWith, NotContains, NotIn) and use of any attributes including extensionAttributes1-15 | Registered device managed by Intune | Yes, if criteria are met |
 | Include/exclude mode with negative operators (NotEquals, NotStartsWith, NotEndsWith, NotContains, NotIn) and use of any attributes including extensionAttributes1-15 | Registered device not managed by Intune | Yes, if criteria are met. When extensionAttributes1-15 are used, the policy applies if device is compliant or Microsoft Entra hybrid joined |
 
-## Next steps
+## Related content
 
 - [Back to school – Using Boolean algebra correctly in complex filters](https://techcommunity.microsoft.com/t5/intune-customer-success/back-to-school-using-boolean-algebra-correctly-in-complex/ba-p/3422765)
 - [Update device Graph API](/graph/api/device-update?tabs=http)
