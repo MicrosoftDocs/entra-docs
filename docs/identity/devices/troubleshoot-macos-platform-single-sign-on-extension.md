@@ -193,7 +193,7 @@ fi
 cp /Applications/Company\ Portal.app/Contents/Resources/com.microsoft.browsercore.json ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/
 
 # For Edge (user-specific, default path, not channel specific)
-# See: https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/developer-guide/native-messaging?tabs=v3%2Cmacos
+# See: https://learn.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/native-messaging?tabs=v3%2Cmacos
 
 if [ ! -d ~/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts ]; then
   mkdir ~/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts

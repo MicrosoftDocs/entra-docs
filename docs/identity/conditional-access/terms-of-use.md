@@ -43,7 +43,7 @@ Once you complete your terms of use policy document, use the following procedure
 
 1. In the **Name** box, enter a name for the terms of use policy.
 1. For **Terms of use document**, browse to your finalized terms of use policy PDF and select it.
-1. Select the language for your terms of use policy document. The language option allows you to upload multiple terms of use policies, each with a different language. The version of the terms of use policy that an end user sees is based on their browser preferences.
+1. Select the language for your terms of use policy document. The language option allows you to upload multiple terms of use documents, each with a different language. The version of the terms of use policy that an end user sees is based on their browser preferences.
 1. In the **Display name** box, enter a title that users see when they sign in.
 1. To require end users to view the terms of use policy before accepting them, set **Require users to expand the terms of use** to **On**.
 1. To require end users to accept your terms of use policy on every device they're accessing from, set **Require users to consent on every device** to **On**. Users might be required to install other applications if this option is enabled. For more information, see [Per-device terms of use](#per-device-terms-of-use).

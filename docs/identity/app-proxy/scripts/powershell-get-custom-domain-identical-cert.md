@@ -38,7 +38,7 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 # Before you begin:
 #    
 #    Required Microsoft Entra role at least Application Administrator or Application Developer 
-#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#    or appropriate custom permissions as documented https://learn.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions
 #
 # 
 

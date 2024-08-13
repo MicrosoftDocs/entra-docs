@@ -31,7 +31,7 @@ In this how-to guide, you learn how to call Microsoft Graph API for profile edit
     ```JavaScript
     //...
     const GRAPH_API_ENDPOINT = process.env.GRAPH_API_ENDPOINT || "https://graph.microsoft.com/";
-    // https://learn.microsoft.com/en-us/graph/api/user-update?view=graph-rest-1.0&tabs=http
+    // https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0&tabs=http
     const GRAPH_ME_ENDPOINT = GRAPH_API_ENDPOINT + "v1.0/me";
     const mfaProtectedResourceScope = process.env.MFA_PROTECTED_SCOPE || 'api://{clientId}/User.MFA';
     
@@ -164,7 +164,7 @@ In your code editor, open the *routes/users.js* file, add the following routes:
                   const graphEndpoint = GRAPH_ME_ENDPOINT;
                   // API that calls for a single singed in user.
                   // Finf more information for this endpoint found here
-                  // https://learn.microsoft.com/en-us/graph/api/user-update?view=graph-rest-1.0&tabs=http
+                  // https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0&tabs=http
                   fetch(graphEndpoint, req.session.accessToken, "PATCH", {
                     displayName: body.displayName,
                     givenName: body.givenName,
