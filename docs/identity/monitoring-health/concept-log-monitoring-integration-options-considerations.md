@@ -27,7 +27,7 @@ The following logs can be integrated with one of many endpoints:
 * With the [**sign-in activity report**](concept-sign-ins.md), you can see when users attempt to sign in to your applications or troubleshoot sign-in errors.
 * With the [**provisioning logs**](~/identity/app-provisioning/application-provisioning-log-analytics.md), you can monitor which users were, updated, and deleted in all your third-party applications.
 * The [**risky users logs**](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users-report) helps you monitor changes in user risk level and remediation activity.
-* With the [**risk detections logs**](~/id-protection/howto-identity-protection-investigate-risk.md#risk-detections), you can monitor user's risk detections and analyze trends in risk activity detected in your organization.
+* With the [**risk detections logs**](~/id-protection/howto-identity-protection-investigate-risk.md#risk-detections-report), you can monitor user's risk detections and analyze trends in risk activity detected in your organization.
 
 ## Integration options
 
