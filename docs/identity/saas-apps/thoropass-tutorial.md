@@ -72,17 +72,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, perform the following steps:
-
-    a. In the **Identifier** text box, type the URL:
-    `https://www.okta.com/saml2/service-provider/sprxnvmpqtuokwonymbt`
-
-    b. In the **Reply URL** text box, type the URL:
-    `https://auth.thoropass.com/sso/saml2`
+1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Microsoft Entra. The user needs to save the configuration by clicking the **Save** button.
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type a URL using the following pattern:
+    In the **Sign-on URL** text box, type the URL:
     `https://login.thoropass.com`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
@@ -140,8 +134,6 @@ In this section, you test your Microsoft Entra single sign-on configuration usin
 You can also use Microsoft My Apps to test the application in any mode. When you click the Thoropass tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to Thoropass for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](
 https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-
 ## Next steps
 
 Once you configure Thoropass you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
-
