@@ -1,5 +1,5 @@
-title: One-click, single sign-on (SSO) configuration of your Azure Marketplace application
-description: Steps for one-click configuration of  SSO for your application from the Azure Marketplace.
+---
+title: Secure JBoss EAP apps with Microsoft Entra ID & OpenID Connect
 
 author: deewhyweb
 ms.service: entra-id
@@ -11,117 +11,85 @@ ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
 
-#customer intent: As a developer, I want to make my JBoss EAP Java app us Microsoft Entra ID and OpenID Connect verify a user's identity.
+#customer intent: As a developer, I want to make my JBoss EAP Java app use Microsoft Entra ID and OpenID Connect verify a user's identity.
 ---
 
-<!-- --------------------------------------
+# Secure JBoss EAP apps with Microsoft Entra ID & OpenID Connect
 
-- Use this template with pattern instructions for:
+The recent release of Red Hat JBoss EAP 8.0 includes native support for OpenID Connect (OIDC) via the elytron-oidc-client subsystem. OIDC is an identity layer that enables clients, such as JBoss EAP, to verify a user’s identity based on authentication performed by an OpenID provider. For example, you can secure your JBoss EAP applications using the Red Hat build of Keycloak as the OpenID provider.
 
-How To
+In this article, we will use the elytron-oidc-subsystem to secure a simple web application using Microsoft Entra ID (formerly Azure Active Directory) as the OpenID provider.
 
-- Before you sign off or merge:
-
-Remove all comments except the customer intent.
-
-- Feedback:
-
-https://aka.ms/patterns-feedback
-
--->
-
-# "[verb] * [noun]"
-
-<!-- Required: Article headline - H1
-
-Identify the product or service and the task the
-article describes.
-
--->
-
-[Introduce and explain the purpose of the article.]
-
-<!-- Required: Introductory paragraphs (no heading)
-
-Write a brief introduction that can help the user
-determine whether the article is relevant for them
-and to describe the task the article covers.
-
--->
 
 ## Prerequisites
 
-<!-- Optional: Prerequisites - H2
+* A local installation of JBoss EAP 8.0. [Download the installation manager from Red Hat Developer.](https://developers.redhat.com/content-gateway/file/eap/8.0.0/jboss-eap-8.0.0-installation-manager.zip)
+* JBOSS_HOME environment variable set as the installation folder for JBoss EAP 8.0.
+* A Microsoft Azure account with an active subscription.
 
-If included, "Prerequisites" must be the first H2 in the article.
+## Connect a web application to Microsoft Entra ID
 
-List any items that are needed to complete the How To,
-such as permissions or software.
+In this section we're going to configure the connection to Microsoft Entra ID.
 
-If you need to sign in to a portal to complete the How To, 
-provide instructions and a link.
+1. Check out the sample application here.
+2. Create a file src/main/webapp/WEB-INF/oidc.json with the following contents:
+    ```
+    {
+        "client-id" : "<<from azure>",
+        "provider-url" : "<<from azure>",
+        "ssl-required" : "EXTERNAL",
+        "credentials" : {
+            "secret" : "<<from azure>>"
+        }
+    }
+    ```
+3. In the Azure portal, go to the All Services page and click Microsoft Entra ID.
+4. In the left-hand menu, select App registrations and click New Registration. You will see the Register an application page shown in the following screenshot.
+    ![Register a new application.](./media/connect-web-application-to-microsoft-entra-id/azure-register-app.jpg)
+5. Enter a name (e.g., jboss) and click the Register button. This brings you to the App registrations overview page for your application.
+6. Click Add a Redirect URL, then click Add a Platform.
+7. Select Web; you will see the Configure Web page, as shown in the image below.
+    ![Configure a web application.](./media/connect-web-application-to-microsoft-entra-id/app-register.jpg)
+8. Enter the following URL:
+    ```
+    http://localhost:8080/simple-webapp-oidc/secured
+    ```
+9. Click the Configure button.
+10. Go back to the Overview page and click Add a certificate or secret.
+11. Select + New Client secret. This brings you to the Add a client secret page as shown below:
+    ![Create a new secret.](./media/connect-web-application-to-microsoft-entra-id/add-secret.jpg)
+12. Enter a description (e.g., EAP) and click the Add button.
+13. Copy the value shown on the next page and paste this value into src/main/webapp/WEB-INF/oidc.json as the secret value.
+14. Return to the Overview page and click on Endpoints.
+15. Copy the value from OpenID Connect metadata document and paste it into src/main/webapp/WEB-INF/oidc.json as the provider-url. Be sure to remove the text /.well-known/openid-configuration.
+16. Return to the Overview page. Copy the Application (client) ID and paste this value in src/main/webapp/WEB-INF/oidc.json as the client-id.
+17. Save the changes to the oidc.json file.
 
--->
+Our connection to Microsoft Entra ID is now configured, and we can deploy our application to JBoss EAP 8.0 and test the authentication.
 
-## "[verb] * [noun]"
+## Test the Azure authentication
+In this section we're going to depoy our application to a local instance of JBoss EAP and test integration to Microsoft Entra ID
 
-[Introduce the procedure.]
+1. First, we're going to start our JBoss EAP 8.0 instance. Run the following command to start JBoss EAP 8.0:
+    ```
+    $JBOSS_HOME/bin/standalone.sh 
+    ```
+2. We can now deploy our app. From the folder containing the sample application source code, enter:
+    ```
+    mvn wildfly:deploy 
+    ```
+3. We can access our application using http://localhost:8080/simple-webapp-oidc/.
+4. Click Access Secured Servlet. Now you'll be redirected to the Azure login page as shown below. Log in with your Azure credentials.
 
-1. Procedure step
-1. Procedure step
-1. Procedure step
+    ![Azure Login Page](./media/connect-web-application-to-microsoft-entra-id/azure-login.jpg)
 
-<!-- Required: Steps to complete the task - H2
+5. Next, you'll be redirected back to our application and you should see the Secured Servlet page:
+    Secured Servlet
+    Current Principal 'xxxx'
 
-In one or more H2 sections, organize procedures. A section
-contains a major grouping of steps that help the user complete
-a task.
+We were able to successfully log in to our application via the Microsoft Entra ID provider!
 
-Begin each section with a brief explanation for context, and
-provide an ordered list of steps to complete the procedure.
+With JBoss EAP 8.0, OpenID Connect support is provided by the included elytron-oidc-subsytem. In this article, we demonstrated how to secure a simple JBoss EAP 8.0 web application with Azure authentication via Open ID Connect.
 
-If it applies, provide sections that describe alternative tasks or
-procedures.
-
--->
-
-## Clean up resources
-
-<!-- Optional: Steps to clean up resources - H2
-
-Provide steps the user can take to clean up resources that
-they might no longer need.
-
--->
-
-## Next step -or- Related content
-
-> [!div class="nextstepaction"]
-> [Next sequential article title](link.md)
-
--or-
-
-* [Related article title](link.md)
-* [Related article title](link.md)
-* [Related article title](link.md)
-
-<!-- Optional: Next step or Related content - H2
-
-Consider adding one of these H2 sections (not both):
-
-A "Next step" section that uses 1 link in a blue box 
-to point to a next, consecutive article in a sequence.
-
--or- 
-
-A "Related content" section that lists links to 
-1 to 3 articles the user might find helpful.
-
--->
-
-<!--
-
-Remove all comments except the customer intent
-before you sign off or merge to the main branch.
-
--->
+## Next steps
+For further information on JBoss EAP 8.0 OpenID support, refer to the [JBoss EAP product documentation](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/8.0/html/using_single_sign-on_with_jboss_eap/single-sign-on-in-server_default)
