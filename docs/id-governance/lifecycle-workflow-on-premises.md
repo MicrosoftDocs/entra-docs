@@ -8,7 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 08/12/2024
+ms.date: 08/13/2024
 ms.custom: template-concept 
 
 #CustomerIntent: As an IT administrator, I want to learn about managing users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
@@ -81,4 +81,4 @@ For a step by step guide on setting the flag so that user account tasks run for 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Manage synchronized from Active Directory Domain Services (AD DS) with workflows](manage-workflow-on-premises.md)
+> [Manage synchronized users from Active Directory Domain Services (AD DS) with workflows](manage-workflow-on-premises.md)

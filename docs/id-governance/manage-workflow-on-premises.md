@@ -1,6 +1,6 @@
 ---
 title: Manage users synchronized from Active Directory Domain Services with workflows
-description: An how to article on how to edit a user account related task to run for users synchronized from Active Directory Domain Services (AD DS) with Lifecycle workflows.
+description: A how to article on how to edit a user account related task to run for users synchronized from Active Directory Domain Services (AD DS) with Lifecycle workflows.
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
