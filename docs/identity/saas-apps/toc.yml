@@ -816,7 +816,7 @@
         href: dlg-learning-center-tutorial.md
       - name: dmarcian
         href: dmarcian-tutorial.md
-      - name: Docker
+      - name: Docker Business
         href: docker-tutorial.md
       - name: Document360
         href: document360-tutorial.md
@@ -2093,8 +2093,8 @@
         href: patentsquare-tutorial.md
       - name: Pavaso Digital Close
         href: pavaso-digital-close-tutorial.md
-      - name: PayCargo
-        href: paycargo-tutorial.md
+      - name: PayCargo Classic
+        href: paycargo-classic-tutorial.md
       - name: Paylocity
         href: paylocity-tutorial.md
       - name: Peakon
@@ -2859,6 +2859,8 @@
         href: thoughtworks-mingle-tutorial.md
       - name: ThousandEyes
         href: thousandeyes-tutorial.md
+      - name: Thoropass
+        href: thoropass-tutorial.md
       - name: ThreatQ Platform
         href: threatq-platform-tutorial.md
       - name: Thrive LXP
