@@ -262,7 +262,7 @@ items:
                 - name: Call an API
                   href: tutorial-native-authentication-android-sign-in-call-api.md
                   displayName: multiple access token 
-            - name: iOS (Swift)
+            - name: iOS and macOS (Swift)
               items:
                 - name: Prepare iOS app
                   href: tutorial-native-authentication-prepare-ios-app.md
