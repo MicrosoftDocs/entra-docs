@@ -142,12 +142,12 @@ The Global Secure Access client doesn't support concurrent sessions on the same 
 ### Arm64
 The Global Secure Access client doesn't support Arm64 architecture.
 
-### QUIC not supported for internet Access
-Since QUIC isn't yet supported for internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
+### QUIC not supported for Internet Access
+Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
 > [!TIP]
 > QUIC is currently supported in Private Access and Microsoft 365 workloads.
 
-Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in internet Access. For more information, see [QUIC not supported for internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).
+Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).
 
 ## Troubleshooting
 To troubleshoot the Global Secure Access client, right-click the client icon in the taskbar and select one of the troubleshooting options: **Collect logs** or **Advanced diagnostics**.
