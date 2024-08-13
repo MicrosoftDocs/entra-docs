@@ -33,6 +33,21 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## August 2024
+
+### Plan for change - My Security-Info Add sign-in method picker UX update
+
+**Type:** Plan for change     
+**Service category:** MFA   
+**Product capability:** End User Experiences    
+
+Starting late August 2024, the "*add sign-in method*" dialog on the My Security-Info page will be updated with improved sign-in method descriptions, and a modern look and feel. With this change when users select "*add sign-in method*", they'll initially be recommended to register the strongest method available to them which is allowed by organizational authentication method policy. Users have the ability to select "*show more options*", and choose from all available sign-in methods allowed by their policy. 
+
+This change occurs automatically, and admins won't need to take any action.
+
+---
+
+
 ## July 2024
 
 ### General Availability - Insider Risk condition in Conditional Access is GA
