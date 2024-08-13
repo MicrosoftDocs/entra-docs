@@ -42,20 +42,38 @@ Before you can design import and export workflows, you need to create a template
 
  1. From the "C:\Program Files\Microsoft ECMA2Host\Web Service Configuration Tool" folder start the Web Service Configuration tool **wsconfigTool.exe**
  2. From the File-New menu choose Create new SOAP Project 
- 3. Click on SOAP Project and choose Add new Web Service. 
+ :::image type="content" source="media/sap-ecma-template/sap-ecma-template-1.png" alt-text="Screenshot of create SOAP project." lightbox="media/deploy-sap-netweaver/sap-ecma-template-1.png":::
+ 3. Click on SOAP Project and choose Add new Web Service.
+  :::image type="content" source="media/sap-ecma-template/sap-ecma-template-12.png" alt-text="Screenshot of add new web service." lightbox="media/deploy-sap-netweaver/sap-ecma-template-12.png":::
  4. Name your web service SAPECC, provide a URL to download WSDL published, enter SAPECC as namespace. 
-     Web Service name will help you to distinguish this web service in your template from others. Namespace defines a name of the .Net namespace that will be used to generate classes. Choose Basic authentication mode unless instructed otherwise by SAP administrator. Click Next. 
+ Web Service name will help you to distinguish this web service in your template from others. Namespace defines a name of the .Net namespace that will be used to generate classes. Choose Basic authentication mode unless instructed otherwise by SAP administrator. Click Next.
+   :::image type="content" source="media/sap-ecma-template/sap-ecma-template-23.png" alt-text="Screenshot of naming web service." lightbox="media/deploy-sap-netweaver/sap-ecma-template-23.png"::: 
  5. Provide credentials to connect to SAP ECC endpoint. Click Next. 
  6. On the endpoints and operations page ensure that the BAPIs are displayed and click Finish 
-     >[!NOTE]
-     >if you see more than one endpoint, then you have both SOAP 1.2 and SOAP 1.1 bindings enabled. This will cause the connector to fail. Modify your binding definition in SOAMANAGER and keep only one. Then re-add a web service. 
+ >[!NOTE]
+ >if you see more than one endpoint, then you have both SOAP 1.2 and SOAP 1.1 bindings enabled. This will cause the connector to fail. Modify your binding definition in SOAMANAGER and keep only one. Then re-add a web service. 
+  :::image type="content" source="media/sap-ecma-template/sap-ecma-template-45.png" alt-text="Screenshot of BAPIs." lightbox="media/deploy-sap-netweaver/sap-ecma-template-45.png":::
  7. Save the project into C:\Program Files\Microsoft ECMA2Host\Service\ECMA folder. 
  8. Click on Object Types tab and choose to add User object type. Click Ok. 
  9. Expand Object Types tab and click on User type definition. 
+  :::image type="content" source="media/sap-ecma-template/sap-ecma-template-46.png" alt-text="Screenshot of object types." lightbox="media/deploy-sap-netweaver/sap-ecma-template-46.png":::
  10. Add the following attributes into schema and choose userName as the anchor. 
+   :::image type="content" source="media/sap-ecma-template/sap-ecma-template-47.png" alt-text="Screenshot of adding attributes." lightbox="media/deploy-sap-netweaver/sap-ecma-template-47.png":::
  11. Save your project. 
 
- 
+ |Name|Type|Anchor|
+ |-----|-----|-----|
+ |city|string||
+ |company|string||
+ |department|string||
+ |email|string||
+ |expirationTime|string||
+ |firstName|string||
+ |lastName|string||
+ |middleName|string||
+ |telephoneNumber|string||
+ |jobTitle|string||
+ |userName|string|checked|
 
 ## Creating Full Import workflow 
 
@@ -79,27 +97,27 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
  3. Add the following variables. To select a variable type generated from the SAP WSDL, click to Browse for Types and expand �generated� and then expand SAPECC namespace. Your Full Import workflow will look like this: 
  4. From the Toolbox drag and drop four Assign activities inside your Sequence activity and set these values: 
 
-     ```
-     selRangeTable.item(0).PARAMETER = "USERNAME" 
-     selRangeTable.item(0).SIGN = "I" selRangeTable.item(0).OPTION = "GT" selRangeTable.item(0).LOW = ""   
-    ```
-     These parameters will be used to call the BAPI_USER_GETLIST function and to implement pagination. 
-     Your Full Import workflow will look like this: 
+ ```
+ selRangeTable.item(0).PARAMETER = "USERNAME" 
+ selRangeTable.item(0).SIGN = "I" selRangeTable.item(0).OPTION = "GT" selRangeTable.item(0).LOW = ""   
+```
+ These parameters will be used to call the BAPI_USER_GETLIST function and to implement pagination. 
+ Your Full Import workflow will look like this: 
  5. To implement pagination, from the Toolbox drag and drop the DoWhile activity inside your Sequence activity after the last Assign operation. 
  6. On the right pane switch to the Properties tab and enter this condition for the DoWhile 
-     - cycle: returnedSize = pageSize 
-     Your Full Import workflow will look like this: 
+ - cycle: returnedSize = pageSize 
+ Your Full Import workflow will look like this: 
  7. Click on the Variables and add currentPageNumber property of int32 type within DoWhile cycle with default value of 0. Your list of variables will look like this: 
  8. Optional step: if you plan to implement Delta Import workflow, then from the Toolbox drag and drop Assign activity inside your Sequence activity after DoWhile cycle. Set this value: 
-     - customData(schemaType.Name + "_lastImportTime") = DateTimeOffset.UtcNow.Ticks.ToString() 
-     This will save the date and time of the last full import run and this timestamp can later be used in Delta Import workflow. Your Full Import workflow will look like this: 
+ - customData(schemaType.Name + "_lastImportTime") = DateTimeOffset.UtcNow.Ticks.ToString() 
+ This will save the date and time of the last full import run and this timestamp can later be used in Delta Import workflow. Your Full Import workflow will look like this: 
  9. From the Toolbox drag and drop Sequence activity inside your DoWhile activity. Drag and drop WebServiceCall activity inside that Sequence activity and select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_GETLIST operation.  Your Full Import workflow will look like this: 
  10. Click on ... Arguments button to define parameters for web service call as follows: 
 
  11. Click OK. The warning sign will disappear. 
-     The list of users will be stored in the usersTable variable. As SAP will not return a complete list of users in one single response, we need to implement pagination and call this function several times while switching pages. Then for every user imported we will need to get that user�s details by making a separate call. 
-     That means that for a landscape with 1000 users and a page size of 200, Web Service connector will make 5 calls to retrieve a list of users and 1000 individual calls to retrieve users' details. 
-     To improve performance ask you SAP team to develop a custom BAPI program that will list all uses with their properties to avoid the need of making 1000 individual calls and expose that BAPI function over SOAP WS endpoint. 
+ The list of users will be stored in the usersTable variable. As SAP will not return a complete list of users in one single response, we need to implement pagination and call this function several times while switching pages. Then for every user imported we will need to get that user�s details by making a separate call. 
+ That means that for a landscape with 1000 users and a page size of 200, Web Service connector will make 5 calls to retrieve a list of users and 1000 individual calls to retrieve users' details. 
+ To improve performance ask you SAP team to develop a custom BAPI program that will list all uses with their properties to avoid the need of making 1000 individual calls and expose that BAPI function over SOAP WS endpoint. 
  12. From the Toolbox drag and drop IF activity inside your DoWhile activity after WebServiceCall activity. Specify this condition to check for non-empty response and an absense of errors: ```IsNothing(getListRetTable.item) OrElse getListRetTable.item.Count(Function(errItem) errItem.TYPE.Equals("E") = True) = 0``` 
  13. From the Toolbox drag and drop Throw activity into Else branch of your IF activity to throw an error on unsuccessful import. Switch to the Properties tab and enter this expression for Exception property of the Throw activity: ```New Exception(getListRetTable.item.First(Function(retItem) retItem.TYPE.Equals("E")).MESSAGE)``` Your Full Import workflow will look like this: 
  14. To process a list of imported users, drag and drop ForEachWithBodyFactory activity from the Toolbox into Then branch of your IF activity. Switch to Properties tab and select SAPECC.BAPIUSNAME as TypeArgument. Click on ... button and type this expression for values property: ```if(usersTable.item,Enumerable.Empty(of BAPIUSNAME)())``` Your IF activity will look like this: 
@@ -143,7 +161,7 @@ There is no need to implement pagination in export workflows. There is only one 
  12. Click on Add new case area of Switch activity and type a case value of **city**. 
  13. Drag and drop Assign activity into the body of this case. Assign ```attributeChange.ValueChanges(0).Value.ToString()``` to address.city. Your Export Add workflow will look like this: 
  14. Add other missing cases and assignments. Use this mapping table as a guide: 
-     Here export_password is a special virtual attribute that is always defined in the schema and can be used to pass an initial password of user being created. Your Export Add workflow will look like this: 
+ Here export_password is a special virtual attribute that is always defined in the schema and can be used to pass an initial password of user being created. Your Export Add workflow will look like this: 
 
  
 
