@@ -189,9 +189,9 @@ To investigate a Microsoft Entra Threat Intelligence risk detection, follow thes
 1. If you're able to confirm the activity wasn't performed by a legitimate user:
    1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block user if attacker has access to reset password or perform MFA and reset password.
 1. If a user is known to use the IP address in the scope of their duties:
-   1. **Recommended action**: Confirm sign-in as safe
+   1. **Recommended action**: Confirm sign-in as safe.
 1. If you're able to confirm that the user recently traveled to the destination mentioned detailed in the alert:
-   1. **Recommended action**: Confirm sign-in as safe
+   1. **Recommended action**: Confirm sign-in as safe.
 1. If you're able to confirm that the IP address range is from a sanctioned VPN.
    1. **Recommended action**: Confirm sign-in as safe and add the VPN IP address range to named locations in Microsoft Entra ID and Microsoft Defender for Cloud Apps.
 
@@ -201,7 +201,7 @@ To investigate a Microsoft Entra Threat Intelligence risk detection, follow thes
    1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform.
    1. **Recommended action**: [Set up risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#enable-policies) to require password reset, perform MFA, or block access for all high-risk sign-ins.
 1. If you're able to confirm location, application, IP address, User Agent, or other characteristics are expected for the user and there aren't other indications of compromise:
-   1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
+   1. **Recommended action**: Allow the user to self-remediate with a risk-based Conditional Access policy or have an admin confirm sign-in as safe.
 1. For further investigation of token based detections, see the blog post [Token tactics: How to prevent, detect, and respond to cloud token theft](https://www.microsoft.com/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft) the [Token theft investigation playbook](/security/operations/token-theft-playbook).
 
 #### Investigating suspicious browser detections
@@ -216,16 +216,16 @@ To investigate a Microsoft Entra Threat Intelligence risk detection, follow thes
    1. **Recommended action**: Confirm the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
    1. **Recommended action**: [Set up risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#enable-policies) to require password reset or perform MFA for all high-risk sign-ins.
 1. If a user is known to use the IP address in the scope of their duties:
-   1. **Recommended action**: Confirm sign-in as safe
+   1. **Recommended action**: Confirm sign-in as safe.
 
 #### Investigating password spray detections
 
 1. If you're able to confirm that the activity wasn't performed by a legitimate user:
    1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
 1. If a user is known to use the IP address in the scope of their duties:
-   1. **Recommended action**: Confirm sign-in safe
+   1. **Recommended action**: Confirm sign-in safe.
 1. If you're able to confirm that the account isn't compromised and see no brute force or password spray indicators against the account.
-   1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
+   1. **Recommended action**: Allow the user to self-remediate with a risk-based Conditional Access policy or have an admin confirm sign-in as safe.
 
 For further investigation of password spray risk detections, see the article [Password spray investigation](/security/operations/incident-response-playbook-password-spray).
 
