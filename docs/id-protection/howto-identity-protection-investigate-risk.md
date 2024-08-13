@@ -26,7 +26,7 @@ Each report launches with a list of all detections for the period shown at the t
 
 When administrators select one or multiple entries, options to confirm or dismiss the risks appear at the top of the report. Selecting an individual risk event opens a pane with more details to assist with investigations.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-heading.png" alt-text="Screenshot..." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-heading.png":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-heading.png" alt-text="Screenshot of the heading of the Risky users report showing the options available to administrators." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-heading.png":::
 
 ### Risky users report
 
@@ -43,7 +43,7 @@ A user becomes a risky user when:
 
 To view and investigate risky users, navigate to the Risky users report and use the filters to manage the results. There's an option at the top of the page to add other columns such as risk level, status, and risk detail.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report.png" alt-text="Screenshot..." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report.png":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report.png" alt-text="Screenshot of the Risky users report showing examples of users at risk." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report.png":::
 
 When administrators select an individual user, the Risky user details pane appears. Risky user details provide information like: user ID, office location, recent risky sign-in, detections not linked to a sign, and risk history. The Risk history tab shows the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
 
@@ -94,7 +94,7 @@ Administrators can then choose to take action on these events and provide feedba
 - Confirm sign-in or user risk as safe.
 - Dismiss sign-in or user risk.
 
-To learn more about when to take each of these actions, see [How does Microsoft use my risk feedback](howto-identity-protection-risk-feedback#how-does-microsoft-use-my-risk-feedback)
+To learn more about when to take each of these actions, see [How does Microsoft use my risk feedback](howto-identity-protection-risk-feedback.md#how-does-microsoft-use-my-risk-feedback)
 
 ## Risk detections report
 
