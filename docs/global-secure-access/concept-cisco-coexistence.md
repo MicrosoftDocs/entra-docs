@@ -22,7 +22,7 @@ This document contains steps to deploy these solutions side by side, specificall
 In Microsoft Entra, you enable the Private Access traffic forwarding profile and disable the Internet Access and Microsoft 365 traffic forwarding profiles. You also enable and configure the Private DNS feature of Private Access. In Cisco, you capture Internet Access traffic.
 
 > [!NOTE]
-> The clients must be installed on a Windows 10 or Windows 11 Entra joined device or Microsoft Entra hybrid joined.
+> The clients must be installed on a Windows 10 or Windows 11 Microsoft Entra joined device or Microsoft Entra hybrid joined device.
 
 ## Microsoft Entra Private Access configuration
 
