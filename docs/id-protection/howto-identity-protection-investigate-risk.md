@@ -137,7 +137,7 @@ Organizations can use the following framework to begin their investigation into 
 
 If self-remediation isn't an option, an administrator needs to remediate the risk. Remediation is done by invoking a password reset, requiring user to reregister for MFA, blocking the user, or revoking user sessions depending on the scenario. The following flow chart shows the recommended flow once a risk is detected:
 
-![X]()
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risk-remediation-flow.png" alt-text="Diagram showing the risk remediation flow." lightbox="media/howto-identity-protection-investigate-risk/risk-remediation-flow.png":::
 
 Once the risk is contained, more investigation might be required to mark the risk as safe, compromised or to dismiss it. To come to a confident conclusion, it might be necessary to: have a conversation with the user in question, review the sign-in logs, review the audit logs, or query risk logs in Log Analytics. The following outlines recommended actions during this phase of the investigation:
 
