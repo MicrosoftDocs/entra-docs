@@ -24,7 +24,7 @@ This article lists the latest features, improvements, and changes in the Microso
 
 ## June 2024
 
-- [FaceCheck](using-facecheck.md) introducing the Face Check Addon as an incremental update to the Face Check public preview. Face Check is a premium feature within Entra Verified ID free to use during the public preview period ending on June 30.
+- [FaceCheck](using-facecheck.md) introducing the Face Check Addon as an incremental update to the Face Check public preview. Face Check is a premium feature within Entra Verified ID free to use during the public preview period ending on Aug 12.
 
 ## April 2024
 
