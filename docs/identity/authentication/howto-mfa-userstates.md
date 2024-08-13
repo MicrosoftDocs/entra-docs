@@ -79,12 +79,10 @@ To get the `userTenantID`, copy the tenant ID on the **Overview** page in the Mi
 
 To change the per-user Microsoft Entra multifactor authentication state for a user, complete the following steps:
 
-1. Use the previous steps to [view the status for a user](#view-the-status-for-a-user) to get to the Microsoft Entra multifactor authentication **users** page.
-1. Find the user you want to enable for per-user Microsoft Entra multifactor authentication. You might need to change the view at the top to **users**.
-   ![Select the user to change status for from the users tab](./media/howto-mfa-userstates/enable1.png)
-1. Check the box next to the name(s) of the user(s) to change the state for.
-1. On the right-hand side, under **quick steps**, choose **Enable** or **Disable**. In the following example, the user *John Smith* has a check next to their name and is being enabled for use:
-   ![Enable selected user by clicking Enable on the quick steps menu](./media/howto-mfa-userstates/user1.png)
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Browse to **Identity** > **Users** > **All users**.
+1. Select a user account, and click **Enable MFA**. 
+   :::image type="content" border="true" source="./media/howto-mfa-userstates/new-enable.png" alt-text="Screenshot that shows how to enable a user for Microsoft Entra multifactor authentication.":::
 
    > [!TIP]
    > *Enabled* users are automatically switched to *Enforced* when they register for Microsoft Entra multifactor authentication. Don't manually change the user state to *Enforced* unless the user is already registered or if it is acceptable for the user to experience interruption in connections to legacy authentication protocols.
