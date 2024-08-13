@@ -12,7 +12,7 @@ ms.reviewer: sumi
 
 # Get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace or AWS Marketplace
 
-The PowerShell script helps you get the Auth Token for registering your Microsoft Entra private network connector through [Azure Marketplace](https://azuremarketplace.microsoft.com/en-US/marketplace/apps/microsoftcorporation1687208452115.entraprivatenetworkconnector?tab=overview) or [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cgpbjiaphamuc). 
+The PowerShell script helps you get the Auth Token for registering your Microsoft Entra private network connector through [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftcorporation1687208452115.entraprivatenetworkconnector?tab=overview) or [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cgpbjiaphamuc). 
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
@@ -20,11 +20,11 @@ The PowerShell script helps you get the Auth Token for registering your Microsof
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
-## Important Considerations
+## Important considerations
 - Run the PowerShell script as an Administrator from an elevated PowerShell ISE.
-- Please don't run the script on a windows computer where the private network connector is already installed. 
-- Make sure there in no C:\temp folder on the machine. If you have some files stored in C:\temp folder, please move those before running the script.
-- Once the script executes successfully, Access Token will available at C:\token.txt
+- Don't run the script on a Windows computer where the private network connector is already installed. 
+- Make sure there is no C:\temp folder on the machine. If you have some files stored in a C:\temp folder, move them before you run the script.
+- After the script runs successfully, the Access Token is available at C:\token.txt.
 
 ## Sample script
 
