@@ -95,11 +95,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Parkable SSO
 
-To configure single sign-on on **Parkable** side, you need to send the downloaded **Certificate (PEM)** and appropriate copied URLs from the application configuration to [Parkable support team](mailto:support@parkable.com). They set this setting to have the SAML SSO connection set properly on both sides.
-
-### Create Parkable test user
-
-In this section, a user called B.Simon is created in Parkable. Parkable supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Parkable, a new one is created after authentication.
+To configure single sign-on on **Parkable**, you need to follow the steps outlined in [this document](https://admin.parkable.com/s/article/Set-up-SSP-SAML) to continue the setup on the Parkable admin panel.
 
 ## Test SSO 
 
