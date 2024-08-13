@@ -30,7 +30,7 @@ This document contains steps to deploy the two solutions side by side. Specifica
 In Microsoft Entra, you enable the Microsoft 365 traffic forwarding profile and disable the Internet Access and Private Access traffic forwarding profiles. Only Microsoft 365 traffic is captured. In Palo Alto Networks, you capture Internet Access traffic and exclude Microsoft 365 traffic.
 
 > [!NOTE]
-> The clients must be installed on a Windows 10 or Windows 11 Entra joined device.
+> The clients must be installed on a Windows 10 or Windows 11 Entra joined device or Microsoft Entra hybrid joined.
 
 ## Microsoft Entra Internet Access for Microsoft 365 configuration
 
