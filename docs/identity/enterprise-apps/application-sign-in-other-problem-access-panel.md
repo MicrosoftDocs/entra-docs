@@ -188,6 +188,12 @@ To check if you have the correct deep link, follow these steps:
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Find the label **User Access URL**. Your deep link should match this URL.
 
+## Launching an application from the MyApps portal results in an "App Launch Failed" error
+Issue: When accessing the application through My Apps Portal the error “App launch failed” is presented. “App with ID xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx failed to launch. For more help, contact your admin.”
+
+Solution: The solution is to add the application Home page URL on the App Registration --> Properties blade. This would be the URL on the third-party application side where the user would begin the authentication flow with Entra ID. 
+
+
 ## Contact support
 
 Open a support ticket with the following information if available:
