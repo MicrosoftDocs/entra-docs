@@ -356,9 +356,9 @@
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
-        - name: Manage synced AD DS users (Preview)
+        - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md              
-        - name: Check Workflow Insights (preview)
+        - name: Check Workflow Insights
           href: manage-workflow-insights.md            
       - name: Delete
         items: 
