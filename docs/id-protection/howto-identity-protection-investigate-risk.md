@@ -30,7 +30,7 @@ When administrators select one or multiple entries, options to confirm or dismis
 
 ### Risky users report
 
-The risky users report includes all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. We recommend starting with high risk users due to the high confidence of compromise. Learn more about what the levels signify: Risk levels https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks#risk-levels
+The risky users report includes all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. We recommend starting with high risk users due to the high confidence of compromise. [Learn more about what the levels signify](concept-identity-protection-risks.md#risk-levels)
 
 #### Why is a user at risk?
 
@@ -49,7 +49,7 @@ When administrators select an individual user, the Risky user details pane appea
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png" alt-text="Screenshot..." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png":::
 
-If you have Copilot for Security, you have access to a summary in natural language including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. https://learn.microsoft.com/en-us/entra/fundamentals/copilot-entra-risky-user-summarization
+If you have Copilot for Security, you have access to a [summary in natural language](../fundamentals/copilot-entra-risky-user-summarization.md) including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. 
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png" alt-text="Screenshot..." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png":::
 
@@ -67,7 +67,7 @@ Administrators can then choose to take action on these events and choose to:
 - Confirm user safe if the user risk is a false positive. ID Protection moves the user risk to none.
 - Dismiss user risk for benign positive user risk.
 - Block user from signing in if attacker has access to password or ability to perform MFA
-- Investigate further using Microsoft Defender for Identity by selecting a user and clicking on the ellipsis (...) in the top right hand corner of the Risky User Details pane. https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-investigate-risk#investigate-risk-with-microsoft-365-defender
+- Investigate further using Microsoft Defender for Identity by selecting a user and clicking on the ellipsis (...) in the top right hand corner of the Risky User Details pane.
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png" alt-text="Screenshot..." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png":::
 
