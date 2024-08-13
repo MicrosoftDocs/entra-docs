@@ -47,11 +47,11 @@ To view and investigate risky users, navigate to the Risky users report and use 
 
 When administrators select an individual user, the Risky user details pane appears. Risky user details provide information like: user ID, office location, recent risky sign-in, detections not linked to a sign, and risk history. The Risk history tab shows the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png" alt-text="Screenshot..." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png" alt-text="Screenshot showing the Risky User Details flyout with samples of Risk history." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png":::
 
 If you have Copilot for Security, you have access to a [summary in natural language](../fundamentals/copilot-entra-risky-user-summarization.md) including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. 
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png" alt-text="Screenshot..." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png" alt-text="Screenshot showing the summary of risk provided by Copilot in the Risky User Details flyout." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png":::
 
 With the information provided by the Risky users report, administrators can view:
 
@@ -69,13 +69,13 @@ Administrators can then choose to take action on these events and choose to:
 - Block user from signing in if attacker has access to password or ability to perform MFA
 - Investigate further using Microsoft Defender for Identity by selecting a user and clicking on the ellipsis (...) in the top right hand corner of the Risky User Details pane.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png" alt-text="Screenshot..." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png" alt-text="Screenshot showing the Risky User Details flyout and the additional actions an administrator might take." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png":::
 
 ## Risky sign-ins report
 
 The risky sign-ins report contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png" alt-text="Screenshot..." lightbox="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png" alt-text="Screenshot showing the Risky sign-ins report." lightbox="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png":::
 
 With the information provided by the Risky sign-ins report, administrators can view:
 
@@ -100,7 +100,7 @@ To learn more about when to take each of these actions, see [How does Microsoft 
 
 The Risk detections report contains filterable data for up to the past 90 days (three months).
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risk-detections-report.png" alt-text="Screenshot..." lightbox="media/howto-identity-protection-investigate-risk/risk-detections-report.png":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risk-detections-report.png" alt-text="Screenshot showing the Risk detections report." lightbox="media/howto-identity-protection-investigate-risk/risk-detections-report.png":::
 
 With the information provided by the Risk detections report, administrators can find:
 
