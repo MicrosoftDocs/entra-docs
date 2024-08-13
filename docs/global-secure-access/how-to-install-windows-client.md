@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/08/2024
+ms.date: 08/13/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -45,7 +45,7 @@ Organizations can install the Global Secure Access client silently with the `/qu
 ### Manual installation
 To manually install the Global Secure Access client:
 1. Run the *GlobalSecureAccessClient.exe* setup file. Accept the software license terms.
-1. The client installs and prompts you to sign in with your Microsoft Entra credentials.
+1. The client installs and silently signs you in with your Microsoft Entra credentials. If the silent sign-in fails, the installer prompts you to sign in manually.
 1. Sign in. The connection icon turns green. 
 1. Hover over the connection icon to open the client status notification, which should show as **Connected**.   
 :::image type="content" source="media/how-to-install-windows-client/global-secure-access-client-installed-connected.png" alt-text="Screenshot showing the client is connected.":::
@@ -59,7 +59,7 @@ To view the available client menu actions, right-click the Global Secure Access 
 
 |Action   |Description  |
 |---------|---------|
-|**Sign out**   |*Hidden by default*. Use the **Sign out** action when you need to sign in to the Global Secure Access client with an Entra user other than the one use dto sign in to Windows. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
+|**Sign out**   |*Hidden by default*. Use the **Sign out** action when you need to sign in to the Global Secure Access client with an Entra user other than the one used to sign in to Windows. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
 |**Pause**   |Select the **Pause** action to temporarily pause the client. The client remains paused until you either resume the client or restart the machine.         |
 |**Resume**   |Resumes the paused client.         |
 |**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you wish to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
@@ -88,7 +88,7 @@ Double-click the Global Secure Access icon to open the client status notificatio
 Known limitations for the current version of the Global Secure Access client include:
 
 ### Secure Domain Name System (DNS)
-The Global Secure Access client doesn't currently support secure DNS in its different versions, such as DNS over HTTPS (DoH), DNS over TLS (DoT), or DNS Security Extensions (DNSSEC). To configure the client so it can acquire network traffic, you must disable secure DNS. To disable DNS in the browser, see [Secure DNS disabled in browsers](troubleshoot-global-secure-access-client-diagnostics-health-check.md#secure-dns-disabled-in-browsers-microsoft-edge-chrome-firefox). 
+The Global Secure Access client doesn't currently support secure DNS in its different versions, such as DNS over HTTPS (DoH), DNS over TLS (DoT), or DNS Security Extensions (DNSSEC). To configure the client so it can acquire network traffic, you must disable secure DNS. To disable secure DNS in the browser, see [Secure DNS disabled in browsers](troubleshoot-global-secure-access-client-diagnostics-health-check.md#secure-dns-disabled-in-browsers-microsoft-edge-chrome-firefox). 
 
 ### DNS over TCP
 DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. Currently the Global Secure Access client doesn't support DNS port 53 TCP. As a mitigation, disable the browser's DNS client by setting the following registry values:
@@ -195,6 +195,4 @@ The administrator can show or hide specific buttons in the client system tray ic
 
 :::image type="content" source="media/how-to-install-windows-client/global-secure-access-registry-key-private-hide-signout.png" alt-text="Screenshot showing the Registry Editor with the HideSignOutButton and HideDisablePrivateAccessButton registry keys highlighted.":::
 
-> [!IMPORTANT]
-> Changes to registry values may require a computer restart. 
 For more information, see [Guidance for configuring IPv6 in Windows for advanced users](/troubleshoot/windows-server/networking/configure-ipv6-in-windows).

@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/08/2024
+ms.date: 08/13/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -91,7 +91,7 @@ This test verifies that the following registry key exists:
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfile`
 
 If the registry key doesn't exist, try to force forwarding policy retrieval:
-1. Delete the `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfileVersion` registry key, if it exists.
+1. Delete the `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfileTimestamp` registry key, if it exists.
 1. Restart the service, `Global Secure Access Policy Retriever Service`.
 1. Check if the two registry keys are created.
 1. If not, look for errors in the Event Viewer.
@@ -103,7 +103,7 @@ If this test fails, make sure you're using the most updated forwarding profile o
 
 1. Delete the following registry keys:   
     - `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfile`
-    - `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfileVersion`
+    - `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\ForwardingProfileTimestamp`
 1. Restart the service, `Global Secure Access Policy Retriever Service`.
 1. Restart the Global Secure Access client.
 1. Run the health check again.
@@ -129,25 +129,25 @@ To view the health status, double-click the Global Secure Access client system t
 If this test fails, it's usually because of an internal problem with Global Secure Access. Contact Microsoft Support.
 
 ### Authentication certificate exists
-This test verifies that a certificate exists on the device for the Mutual Transport Layer Security (MTLS) connection to the Global Secure Access cloud service.
+This test verifies that a certificate exists on the device for the Mutual Transport Layer Security (mTLS) connection to the Global Secure Access cloud service.
 > [!TIP]
 > This test doesn't appear if mTLS isn't enabled for your tenant yet.
 
 If this test fails, enroll in a new certificate by completing the following steps:
 1. Launch the Microsoft Management console by entering the following command in the Command Prompt: `certlm.msc`.
 1. In the **certlm** window, navigate to **Personal** > **Certificates**.
-1. Delete the certificate that ends with **gsa.client**.
+1. Delete the certificate that ends with **gsa.client**, if it exists.
 :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-gsa-client.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
 1. Delete the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName`
 1. Restart the Global Secure Access Management Service in the services MMC.
 1. Refresh the certificates MMC to verify that a new certificate was created.   
-*The refresh might take a few minutes.*
+*Provisioning a new certificate might take a few minutes.*
 1. Check the Global Secure Access client event log for errors.
 1. Run the Health check tests again.
 
 ### Authentication certificate is valid
-This test verifies that the authentication certificate used for the MTLS connection to the Global Secure Access cloud service is valid.
+This test verifies that the authentication certificate used for the mTLS connection to the Global Secure Access cloud service is valid.
 > [!TIP]
 > This test doesn't appear if mTLS isn't enabled for your tenant yet.
 
@@ -160,7 +160,7 @@ If this test fails, enroll in a new certificate by completing the following step
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName`
 1. Restart the Global Secure Access Management Service in the services MMC.
 1. Refresh the certificates MMC to verify that a new certificate was created.   
-*The refresh might take a few minutes.*
+*Provisioning a new certificate might take a few minutes.*
 1. Check the Global Secure Access client event log for errors.
 1. Run the Health check tests again.
 
@@ -222,7 +222,7 @@ If the cached token test fails:
 1. Verify that the system tray icon is visible.
 1. If the sign-in notification appears, select **Sign in**.
 1. If the sign-in notification doesn't appear, check if it is in the Notification Center and select **Sign in**.
-1. Complete the Entra sign-in process using the same tenant that the device is joined to.
+1. Sign in with a user that is a member of the same Entra tenant that the device is joined to.
 1. Verify the network connection.
 1. Hover over the system tray icon and verify that the client is **not** disabled by your organization.
 1. Restart the client and wait for a few seconds.
@@ -244,9 +244,9 @@ Value: 0x20 (Hex)`
 For more information, see [Guidance for configuring IPv6 in Windows for advanced users](/troubleshoot/windows-server/networking/configure-ipv6-in-windows).
 
 
-### Private access edge hostname resolved by DNS
+### Edge hostname resolved by DNS
+This test checks all active traffic types: **Microsoft 365**, **Private Access**, and **Internet Access**.
 If this test fails, the DNS can't resolve the hostnames of the Global Secure Access cloud service, and therefore the service isn't reachable. This failed test could be due to an internet connectivity problem or a DNS server that doesn't resolve public internet hostnames.
-This test checks all active traffic types: Microsoft 365, Private Access, and Internet Access.
 
 To verify that the hostname resolution works correctly:
 1. Pause the client.
@@ -255,9 +255,9 @@ To verify that the hostname resolution works correctly:
 1. Verify that the DNS servers are configured for this machine: `ipconfig /all`
 1. If the previous steps don't resolve the issue, consider setting another public DNS server.
 
-### Private access edge is reachable
+### Edge is reachable
+This test checks all active traffic types: **Microsoft 365**, **Private Access**, and **Internet Access**.
 If this test fails, the device doesn't have a network connection to the Global Secure Access cloud service.
-This test checks all active traffic types: Microsoft 365, Private Access, and Internet Access.
 
 If the test fails:
 1. Verify that the device has an internet connection.
@@ -292,8 +292,8 @@ Configuring the Global Secure Access client to route Global Secure Access traffi
 1. Set a system environment variable in Windows named `grpc_proxy` to the value of the proxy address. For example, `http://10.1.0.10:8080`.
 1. Restart the Global Secure Access client.
 
-### Tunneling succeeded Private Access
-This test checks each active traffic profile in the forwarding profile (M366, Private Access, internet Access) to verify that connections to the health service of the corresponding channel are tunneled successfully.
+### Tunneling succeeded
+This test checks each active traffic profile in the forwarding profile (**Microsoft 365**, **Private Access**, and **Internet Access**) to verify that connections to the health service of the corresponding channel are tunneled successfully.
 
 If this test fails:
 1. Check the Event Viewer for errors.
@@ -314,26 +314,26 @@ To investigate the process dump file when a process crashes:
  :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-filtered-logs.png" alt-text="Screenshot of the Event Viewer showing a filtered log list.":::
  1. Save the filtered log as a file and attach the log file to the support ticket.
 
-### QUIC not supported for internet Access
-Since QUIC isn't yet supported for internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
+### QUIC not supported for Internet Access
+Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
 > [!TIP]
 > QUIC is currently supported in Private Access and Microsoft 365 workloads.
 
-Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in internet Access.
+Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access.
 
-#### QUIC disabled in Microsoft Edge
+### QUIC disabled in Microsoft Edge
 To disable QUIC in Microsoft Edge:
 1. Open Microsoft Edge.
 1. Paste `edge://flags/#enable-quic` in the Address bar.
 1. Set the **Experimental QUIC protocol** drop-down to **Disabled**.
 
-#### QUIC disabled in Chrome
+### QUIC disabled in Chrome
 To disable QUIC in Google Chrome:
 1. Open Google Chrome.
 1. Paste `chrome://flags/#enable-quic` in the Address bar.
 1. Set the **Experimental QUIC protocol** drop-down to **Disabled**.
 
-#### QUIC disabled in Mozilla Firefox
+### QUIC disabled in Mozilla Firefox
 To disable QUIC in Mozilla Firefox:
 1. Open Firefox.
 1. Paste `about:config` in the Address bar.

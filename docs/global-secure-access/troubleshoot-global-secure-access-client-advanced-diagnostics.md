@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/08/2024
+ms.date: 08/13/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -25,7 +25,7 @@ To launch the advanced diagnostics tool:
 
 ## Overview tab
 The advanced diagnostics **Overview** tab shows general configuration details about the Global Secure Access client:
-- **Username**: The Microsoft Entra user principal name of the user who authenticated to the client. To change the authenticated user.
+- **Username**: The Microsoft Entra user principal name of the user who authenticated to the client.
 - **Device ID**: The ID of the device in Microsoft Entra. The device must be joined to the tenant.
 - **Tenant ID**: The ID of the tenant that the client points to, which is the same tenant the device is joined to.
 - **Forwarding Profile ID**: The ID of the forwarding profile currently in use by the client.
@@ -111,6 +111,6 @@ For each connection, the available columns include:
 ## Advanced log collection tab
 The advanced log collection tab allows for the collection of verbose logs of the client, the operating systems, and the network traffic during a specific period. The logs are archived to a ZIP file that can be sent to the administrator or Microsoft Support for investigation.
 - **Start recording**: Select to begin recording the verbose logs. You need to reproduce the issue while recording.
-- **Stop recording**: After the issue us reproduced, select this button to stop the recording and save the collected logs to a ZIP file. Share the ZIP file with support for troubleshooting assistance.
+- **Stop recording**: After reproducing the issue, select this button to stop the recording and save the collected logs to a ZIP file. Share the ZIP file with support for troubleshooting assistance.
 
 :::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/global-secure-access-client-advanced-advanced-log-collection-tab.png" alt-text="Screenshot showing the Global Secure Access Client - Advanced diagnostics dialog box on the Advanced log collection tab.":::
