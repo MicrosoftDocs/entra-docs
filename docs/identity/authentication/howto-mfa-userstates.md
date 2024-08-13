@@ -73,7 +73,7 @@ To get the `userTenantID`, copy the tenant ID on the **Overview** page in the Mi
 1. Select **Per-user MFA**. 
    :::image type="content" border="true" source="./media/howto-mfa-userstates/selectmfa-cropped.png" alt-text="Screenshot of select per-user multifactor authentication.":::
 1. A new page opens that displays the user state, as shown in the following example.
-   :::image type="content" border="true" source="./media/howto-mfa-userstates/user-state.png" alt-text="Screenshot that shows example user state information for Microsoft Entra multifactor authentication.":::
+   :::image type="content" border="true" source="./media/howto-mfa-userstates/legacy-user-state.png" alt-text="Screenshot that shows example user state information for Microsoft Entra multifactor authentication.":::
 
 ## Change the status for a user
 
