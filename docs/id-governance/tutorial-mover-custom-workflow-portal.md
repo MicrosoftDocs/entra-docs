@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.date: 08/12/2024
+ms.date: 08/13/2024
 ms.author: owinfrey
 ms.custom: template-tutorial
 
