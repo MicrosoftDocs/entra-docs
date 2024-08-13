@@ -84,9 +84,10 @@ In this section we're going to depoy our application to a local instance of JBos
     ![Azure Login Page](./media/connect-web-application-to-microsoft-entra-id/azure-login.jpg)
 
 5. Next, you'll be redirected back to our application and you should see the Secured Servlet page:
+    ```
     Secured Servlet
     Current Principal 'xxxx'
-
+    ```
 We were able to successfully log in to our application via the Microsoft Entra ID provider!
 
 With JBoss EAP 8.0, OpenID Connect support is provided by the included elytron-oidc-subsytem. In this article, we demonstrated how to secure a simple JBoss EAP 8.0 web application with Azure authentication via Open ID Connect.
