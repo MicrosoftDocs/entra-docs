@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 07/20/2024
+ms.date: 08/13/2024
 
 
 ms.author: justinha
@@ -54,7 +54,7 @@ To use passwordless authentication in Microsoft Entra ID, first enable the combi
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Microsoft Entra ID lets you choose which authentication methods can be used during the sign-in process. Users then register for the methods they'd like to use. The **Microsoft Authenticator** authentication method policy manages both the traditional push MFA method and the passwordless authentication method. 
+Microsoft Entra ID lets [Authentication Policy Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) choose which authentication methods can be used to sign in. They can enable **Microsoft Authenticator** in the Authentication methods policy to manage both the traditional push MFA method and the passwordless authentication method. After they enable **Microsoft Authenticator** as an authentication method, users can go to their [Security info](https://aka.ms/mysecurityinfo) to register Microsoft Authenticator as a way to sign in. 
 
 To enable the authentication method for passwordless phone sign-in, complete the following steps:
 
