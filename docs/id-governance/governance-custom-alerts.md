@@ -113,11 +113,19 @@ AuditLogs
 AuditLogs
 | where Category == "WorkflowManagement"
 | where ActivityDisplayName in ('On-demand workflow execution completed', 'Scheduled workflow execution completed')
-| where Result == "failure"
+| where Result != "success"
 | mvexpand TargetResources 
 | extend  WorkflowName=TargetResources.displayName
-| where WorkflowName in ('<input workflow name>', '<input workflow name>')
-| distinct Id
+| where WorkflowName in ('input workflow name', 'input workflow name')
+| extend WorkflowType = AdditionalDetails[0].value 
+| extend DisplayName = AdditionalDetails[1].value 
+| extend ObjectId = AdditionalDetails[2].value 
+| extend UserCount = AdditionalDetails[3].value 
+| extend Users = AdditionalDetails[4].value 
+| extend RequestId = AdditionalDetails[5].value 
+| extend InitiatedBy = InitiatedBy.app.displayName 
+| extend Result = Result 
+| project WorkflowType, DisplayName, ObjectId, UserCount, Users, RequestId, Id, Result,ActivityDisplayName
 ```
 
 <u>Alert logic</u>
