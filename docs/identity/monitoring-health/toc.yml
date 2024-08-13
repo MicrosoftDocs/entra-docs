@@ -93,6 +93,15 @@ items:
         href: recommendation-renew-expiring-application-credential.md
       - name: Renew expiring service principal credentials
         href: recommendation-renew-expiring-service-principal-credential.md
+  - name: Health scenarios
+    expanded: false
+    items:
+    - name: Sign-ins requiring a compliant device
+      href: scenario-health-sign-ins-managed-device.md
+    - name: Sign-ins requiring a managed device
+      href: scenario-health-sign-ins-compliant-device.md
+    - name: Sign-ins requiring MFA
+      href: scenario-health-sign-ins-mfa.md
   - name: Workbooks
     expanded: false
     items:

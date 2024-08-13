@@ -14,7 +14,11 @@ ms.reviewer: sarbar
 
 # What is Microsoft Entra Health?
 
-Microsoft Entra Health (preview) provides you with the ability to view the health of your Microsoft Entra tenant through a report of service level agreement (SLA) attainment and a set of health metrics you can monitor for key Microsoft Entra ID scenarios. All the data is provided at the tenant level. The scenario monitoring solution is currently in public preview and can be enabled or disabled in the Preview Hub; the SLA Attainment report is available by default.
+Microsoft Entra Health (preview) provides you with the ability to view the health of your Microsoft Entra tenant through a report of service level agreement (SLA) attainment and a set of health metrics you can monitor for key Microsoft Entra ID scenarios. In addition to viewing the health metrics, you can now receive alerts when a potential issue or failure condition is detected within the health scenarios.
+
+Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Health Scenario Monitoring. These signals are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change to that pattern, such as a spike in sign-ins requiring multifactor authentication (MFA), it triggers an alert. 
+
+All the data is provided at the tenant level. The scenario monitoring solution is currently in public preview and can be enabled or disabled in the Preview Hub; the SLA Attainment report is available by default.
 
 ## How to access Microsoft Entra Health
 
@@ -58,39 +62,21 @@ The data associated with each of these scenarios is aggregated into a view that'
 
 Data is aggregated every 15 minutes, for low latency insights into your tenant's health. Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
 
-Select **View details** on a tile to view the metrics for that scenario. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
+Select **View details** on a tile to view the metrics and alerts for that scenario. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true). At this time, alerts are only available through the Microsoft Graph API.
+
+For detailed information on each scenario, see the following articles:
+
+- [Sign-ins requiring a compliant device]()
+- [Sign-ins requiring a managed device]()
+- [Sign-ins requiring multifactor authentication (MFA)]()
 
 ![Screenshot of the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
 
-### Sign-ins requiring a compliant device
 
-This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device.
 
-- [Create a compliance policy in Microsoft Intune](/mem/intune/protect/create-compliance-policy).
-- [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access).
-- [Learn about Microsoft Entra joined devices](../devices/concept-directory-join.md).
 
-![Screenshot of the compliant device scenario.](media/concept-microsoft-entra-health/scenario-monitoring-compliant-device.png)
 
-### Sign-ins requiring a managed device
 
-This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a managed device.
-
-- [What is device management](/mem/intune/fundamentals/what-is-device-management)?
-- [Learn about Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md).
-
-![Screenshot of the managed device scenario.](media/concept-microsoft-entra-health/scenario-monitoring-managed-device.png)
-
-### Sign-ins requiring multifactor authentication (MFA)
-
-This scenario provides two aggregated data graphs. The first displays the number of users who successfully completed an interactive MFA sign-in using a Microsoft Entra cloud MFA service. The metric excludes instances when a user refreshes the session without completing the interactive MFA or using passwordless sign-in methods.
-
-This scenario also provides an aggregated look at failures of interactive MFA sign-in attempts. The same type of refreshed sessions and passwordless methods are excluded from this metric.
-
-- [Configure Conditional Access for MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md).
-- [Troubleshoot common sign-in errors](howto-troubleshoot-sign-in-errors.md).
-
-![Screenshot of the MFA scenario.](media/concept-microsoft-entra-health/scenario-monitoring-MFA.png)
 
 ### Sign-ins to applications using SAML authentication
 
