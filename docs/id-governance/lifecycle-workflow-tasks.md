@@ -49,7 +49,7 @@ Emails, sent from tasks, are able to be customized. If you choose to customize t
 
 :::image type="content" source="media/lifecycle-workflow-task/customize-email-concept.png" alt-text="Screenshot of the customization email options.":::
 
-For a step by step guide on this, see: [Customize emails sent out by workflow tasks](customize-workflow-email.md).
+For a step by step guide on this process, see: [Customize emails sent out by workflow tasks](customize-workflow-email.md).
 
 ### Dynamic attributes within email
 
