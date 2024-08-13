@@ -20,9 +20,9 @@ Microsoft Entra ID Protection provides organizations with reporting they can use
 
 The risk reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Identity Protection**. You can navigate directly to the reports or view a summary of important insights in the dashboard view and navigate to the corresponding reports from there.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/view-high-risk-users-from-id-protection-dashboard.png" alt-text="Screenshot shoing the number of high risk users widget from the ID Protection dashboard.":::
+:::image type="content" source="media/howto-identity-protection-investigate-risk/view-high-risk-users-from-id-protection-dashboard.png" alt-text="Screenshot showing the number of high risk users widget from the ID Protection dashboard.":::
 
-Each report launches with a list of all detections for the period shown at the top of the report along with the option to filter and add or remove columns based on administrator preference. Administrators can also choose to download the data in .CSV or .JSON format.
+Each report launches with a list of all detections for the period shown at the top of the report. Administrators can optionally filter and add or remove columns based on their preference. Administrators can download the data in .CSV or .JSON format for further processing.
 
 When administrators select one or multiple entries, options to confirm or dismiss the risks appear at the top of the report. Selecting an individual risk event opens a pane with more details to assist with investigations.
 
@@ -37,7 +37,7 @@ The risky users report includes all users whose accounts are currently or were c
 A user becomes a risky user when:
 
 - They have one or more risky sign-ins.
-- There are one or more [risks](concept-identity-protection-risks.md) detected on the user's account, like leaked credentials. 
+- They have one or more [risks](concept-identity-protection-risks.md) detected on their account, like leaked credentials. 
 
 #### How to investigate risky users?
 
@@ -90,11 +90,11 @@ With the information provided by the Risky sign-ins report, administrators can v
 
 Administrators can then choose to take action on these events and provide feedback. Administrators can choose to:
 
-- Confirm sign-in or user risk as compromised if risk is a true positive.
-- Confirm sign-in or user risk as safe if the risk is a false positive. Similar sign-ins shouldn't be considered risky in the future.
-- Dismiss sign-in or user risk if risk is a benign true positive. Similar sign-ins should continue being evaluated for risk going forward. You might use this option during an internal security penetration test.
+- Confirm sign-in or user risk as compromised.
+- Confirm sign-in or user risk as safe.
+- Dismiss sign-in or user risk.
 
-To learn more about when to take each of these actions visit How does Microsoft use my risk feedback? https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-risk-feedback#how-does-microsoft-use-my-risk-feedback
+To learn more about when to take each of these actions, see [How does Microsoft use my risk feedback](howto-identity-protection-risk-feedback#how-does-microsoft-use-my-risk-feedback)
 
 ## Risk detections report
 
@@ -121,7 +121,7 @@ When starting the initial triage, we recommend the following actions:
 
 1. Review the ID Protection dashboard to visualize number of attacks, number of high risk users and other important metrics based on detections in your environment.
 1. Review the Impact analysis workbook to understand the scenarios where risk is evident in your environment and risk-based access policies should be enabled to manage high-risk users and sign-ins.
-1. To reduce false positives, add corporate VPNs and IP address ranges to named locations.
+1. Add corporate VPNs and IP address ranges to named locations to reduce false positives.
 1. Consider creating a known traveler database for updated organizational travel reporting and use it to cross-reference travel activity.
 1. Review the logs to identify similar activities with the same characteristics. This activity could be an indication of more compromised accounts.
    1. If there are common characteristics, like IP address, geography, success/failure, etc., consider blocking them with a Conditional Access policy.
