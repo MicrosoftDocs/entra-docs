@@ -58,7 +58,7 @@ The following how-to guides are expanded upon in this section:
 
 - [Step 1: Deploy identify protection](#step-1-deploy-identity-protection): Deploy security controls to enhance identification and protection of risky users.  
 - [Step 2: Enact access reviews](#step-2-enact-access-reviews): Conduct an access review to ensure appropriate system access within your enterprise. 
-- [Step 3: Utilize internet access provisions](#step-3-utilize-internet-access-provisions): Protect internet traffic with secure web gateways.
+- [Step 3: Utilize Internet Access provisions](#step-3-utilize-internet-access-provisions): Protect internet traffic with secure web gateways.
 - [Step 4: Enable private access gateways](#step-4-enable-private-access-gateways): Depreciate costly VPN systems through Quick Access.
 - [Step 5: Onboard customer workflow portal](#step-5-onboard-customer-workflow-portal): Automate employee onboarding with lifecycle workflows. 
 
@@ -87,17 +87,17 @@ Microsoft Entra access reviews are a Microsoft Entra ID Governance capability th
 
 To view the complete how-to guide, see [Enact access reviews](~/id-governance/deploy-access-reviews.md).
 
-### Step 3: Utilize Internet access provisions 
+### Step 3: Utilize Internet Access provisions 
 
 Microsoft Entra Internet Access protects enterprise users and managed devices from malicious internet traffic and malware infection concerns all companies. Using the Secure Web Gateway functionality enables you to block traffic based on web categories, and a fully qualified domain name (FQDN), by integrating with Microsoft Entra Conditional Access.
 
 1. Deploy and test Microsoft Entra Internet Access 
-1. Create a baseline policy applying to all internet access traffic routed through the service 
+1. Create a baseline policy applying to all internet traffic routed through the service 
 1. Block a group from accessing websites based on category
 1. Block a group from accessing websites based on FQDN 
 1. Allow a user to access a blocked website 
 
-To view the complete how-to guide, see [Utilize internet access provisions](~/architecture/sse-deployment-guide-internet-access.md).
+To view the complete how-to guide, see [Utilize Internet Access provisions](~/architecture/sse-deployment-guide-internet-access.md).
 
 ### Step 4: Enable Private Access gateways 
 
@@ -134,7 +134,7 @@ During your Microsoft Entra Suite’s trial period, be sure for taking advantage
 
 The following table shows which of the five Microsoft Entra Suite products are covered in each scenario.
 
-| Customer scenario     | Entra ID Governance | Entra ID Protection | Entra Verified ID | Entra Internet Access | Entra Private Access |
+| Customer scenario     | Microsoft Entra ID Governance | Microsoft Entra ID Protection | Microsoft Entra Verified ID | Microsoft Entra Internet Access | Microsoft Entra Private Access |
 |------------------------|---------------------|---------------------|-------------------|-----------------------|----------------------|
 |1 – Automate user onboarding and lifecycle with access to all apps | Included            | Included            | Included          |                       | Included             |
 |2 – Modernize traditional VPN to on-premises resources with MFA per app  | Included            | Included            |                   |                       | Included             |
