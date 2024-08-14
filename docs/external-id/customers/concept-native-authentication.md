@@ -76,7 +76,7 @@ For more information on native authentication samples and tutorials, see the fol
 | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 | ----------- | ----------- |----------- |
 |Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
-|iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+|iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
 
 If you're planning to create a mobile app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](/entra/identity-platform/reference-native-authentication-overview).
 
