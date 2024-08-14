@@ -127,7 +127,7 @@ We need to ensure that only one Sync Server is syncing changes at any given time
    > [!div class="mx-imgBorder"]
    > ![Screenshot shows Staging Mode highlighted in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-menu.png)
 
-2. You will need to sign into Microsoft Entra ID with Global Administrator or Hybrid Identity Administrator credentials:  
+2. You will need to sign into Microsoft Entra ID with  Hybrid Identity Administrator credentials:  
 
    > [!div class="mx-imgBorder"]
    > ![Screenshot shows Sign in prompt in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-sign-in.png)

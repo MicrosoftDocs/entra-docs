@@ -179,13 +179,13 @@ To renew an authentication agent's trust with Microsoft Entra ID:
     - A CSR. This request applies for a new digital identity certificate, with Microsoft Entra ID as its CA.
 1. Microsoft Entra ID validates the existing certificate in the certificate renewal request. Then it verifies that the request came from an authentication agent that's registered on your tenant.
 1. If the existing certificate is still valid, Microsoft Entra ID signs a new digital identity certificate and issues the new certificate back to the authentication agent.
-1. If the existing certificate has expired, Microsoft Entra ID deletes the authentication agent from your tenant’s list of registered authentication agents. Then a Global Administrator or a Hybrid Identity Administrator must manually install and register a new authentication agent.
+1. If the existing certificate has expired, Microsoft Entra ID deletes the authentication agent from your tenant’s list of registered authentication agents. Then a  a Hybrid Identity Administrator must manually install and register a new authentication agent.
     - Use the Microsoft Entra ID root CA to sign the certificate.
     - Set the certificate’s DN to your tenant ID, a GUID that uniquely identifies your tenant. The DN scopes the certificate to your tenant only.
 1. Microsoft Entra ID stores the new public key of the authentication agent in a database in Azure SQL Database that only it has access to. It also invalidates the old public key associated with the authentication agent.
 1. The new certificate (issued in step 5) is then stored on the server in the Windows certificate store (specifically, in the [CERT_SYSTEM_STORE_CURRENT_USER](/windows/win32/seccrypto/system-store-locations#CERT_SYSTEM_STORE_CURRENT_USER) location).
 
-   Because the trust renewal procedure happens non-interactively (without the presence of the Global Administrator or Hybrid Identity Administrator), the authentication agent no longer has access to update the existing certificate in the CERT_SYSTEM_STORE_LOCAL_MACHINE location.
+   Because the trust renewal procedure happens non-interactively (without the presence of the  Hybrid Identity Administrator), the authentication agent no longer has access to update the existing certificate in the CERT_SYSTEM_STORE_LOCAL_MACHINE location.
 
    > [!NOTE]
    > This procedure does not remove the certificate itself from the CERT_SYSTEM_STORE_LOCAL_MACHINE location.

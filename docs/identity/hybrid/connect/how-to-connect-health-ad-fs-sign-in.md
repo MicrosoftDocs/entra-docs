@@ -21,7 +21,7 @@ The Connect Health for AD FS agent correlates multiple Event IDs from AD FS, dep
 
 ## Prerequisites
 * Microsoft Entra Connect Health for AD FS installed and upgraded to latest version (3.1.95.0 or later).
-* Global Administrator or Reports Reader role to view the Microsoft Entra sign-ins
+*  Reports Reader role to view the Microsoft Entra sign-ins
 
 ## What data is displayed in the report?
 The data available mirrors the same data available for Microsoft Entra sign-ins. Five tabs with information will be available based on the type of sign-in, either Microsoft Entra ID or AD FS. Connect Health correlates events from AD FS, dependent on the server version, and matches them to the AD FS schema. 
