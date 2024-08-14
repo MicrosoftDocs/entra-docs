@@ -79,7 +79,7 @@ POST https://your-api.com/endpoint
                 "displayName": "My Test application"
             },
             "user": {
-                "companyName": "Casey Jensen"
+                "companyName": "Casey Jensen",
                 "createdDateTime": "2016-03-01T15:23:40Z",
                 "displayName": "Casey Jensen",
                 "givenName": "Casey",
@@ -145,6 +145,10 @@ The following table shows the data types supported by Custom claims providers fo
 | String array | True      |
 | Boolean      | False     |
 | JSON         | False     |
+
+### Claim size limitations
+
+The maximum claim size that a claims provider can return is limited to 3KB. This is the sum of all the key and value pairs returned by the REST API.
 
 ### Claims mapping policy
 

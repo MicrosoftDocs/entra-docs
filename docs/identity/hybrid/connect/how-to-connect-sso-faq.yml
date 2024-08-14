@@ -87,7 +87,7 @@ sections:
           Follow these steps on the on-premises server where you're running Microsoft Entra Connect:
           
              > [!NOTE]
-             >You need domain administrator and hybrid identity administrator credentials for the steps.
+             >You need domain administrator and Hybrid Identity Administrator credentials for the steps.
              >If you're not a domain admin and you were assigned permissions by the domain admin, you should call `Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDesktopSsoAccount`
           
              **Step 1. Get list of AD forests where Seamless SSO is enabled**
@@ -98,7 +98,7 @@ sections:
              4. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
              5. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command provides a list of AD forests (look at the "Domains" list) on which this feature has been enabled.
           
-             **Step 2. Update the Kerberos decryption key on each AD forest that it was set it up on**
+             **Step 2. Update the Kerberos decryption key on each AD forest that it was set up on**
           
              1. Call `$creds = Get-Credential`. When prompted, enter the Domain Administrator credentials for the intended AD forest.
           
@@ -149,7 +149,10 @@ sections:
           
              >[!IMPORTANT]
              >Disabling Seamless SSO using PowerShell won't change the state in Microsoft Entra Connect. Seamless SSO shows as enabled in the **Change user sign-in** page.
-          
+
+             > [!NOTE]
+             >If you don’t have a Microsoft Entra Connect Sync server, you can download one and run the initial installation. This will not set up the server but it will unpack the necessary files required to disable SSO. Once the MSI installation completes, close the Microsoft Entra Connect wizard and run the steps to disable Seamless SSO using PowerShell.
+             
              **Step 2. Get list of AD forests where Seamless SSO has been enabled**
           
              Follow tasks 1 through 4 if you have disabled Seamless SSO using Microsoft Entra Connect. If you have disabled Seamless SSO using PowerShell instead, jump ahead to task 5.

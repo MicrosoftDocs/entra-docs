@@ -76,8 +76,6 @@ The connectivity tab is where you add the device links for the remote network. Y
 
 The details required to complete this tab can be complex, so this process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
 
-![Screenshot of the general tab of the create device link process.](media/how-to-create-remote-networks/add-device-link.png)
-
 ### Traffic forwarding profiles
 
 You can assign the remote network to a traffic forwarding profile when you create the remote network. You can also assign the remote network at a later time. For more information, see [Traffic forwarding profiles](concept-traffic-forwarding.md).
@@ -204,7 +202,7 @@ There are a few things to consider and verify when creating remote networks. You
     - As a result, phase 1 of IKE negotiation fails and the tunnel isn't established.
     - To remediate this failure, complete the port forwarding on your device, which tells the ISP router to not change the port and forward it as-is.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

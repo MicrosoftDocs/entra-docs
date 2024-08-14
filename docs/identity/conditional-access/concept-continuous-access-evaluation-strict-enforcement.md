@@ -19,7 +19,7 @@ Strictly enforce location policies is a new enforcement mode for continuous acce
 | Location enforcement mode | Recommended network topology | If the IP address detected by the Resource isn't in the allowed list | Benefits | Configuration |
 | --- | --- | --- | --- | --- |
 | Standard (Default) | Suitable for all topologies | A short-lived token is issued only if Microsoft Entra ID detects an allowed IP address. Otherwise, access is blocked | Falls back to the pre-CAE location detection mode in split tunnel network deployments where CAE enforcement would affect productivity. CAE still enforces other events and policies. | None (Default Setting) |
-| Strictly enforced location policies | Egress IP addresses are dedicated and enumerable for both Microsoft Entra ID and all resource provider traffic | Access blocked | Most secure, but requires well understood network paths | 1. Test IP address assumptions with a small population <br><br> 2. Enable “Strictly enforce” under Session controls |
+| Strictly enforced location policies | Egress IP addresses are dedicated and enumerable for both Microsoft Entra ID and all resource provider traffic | Access blocked | Most secure, but requires well understood network paths | 1. Test IP address assumptions with a small population <br><br> 2. Enable "Strictly enforce" under Session controls |
 
 ## Configure strictly enforced location policies
 

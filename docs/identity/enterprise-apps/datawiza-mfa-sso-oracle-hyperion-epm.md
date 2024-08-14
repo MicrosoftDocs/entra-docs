@@ -158,7 +158,7 @@ To provide more security for sign-ins, you can enforce Microsoft Entra multifact
 
 Learn more in the [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](../authentication/tutorial-enable-azure-mfa.md)
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as a [Application Administrator role.](../role-based-access-control/permissions-reference.md)
+1. Sign in to the [Azure portal](https://portal.azure.com) as an [Application Administrator role.](../role-based-access-control/permissions-reference.md)
 2. Select **Microsoft Entra ID** > **Manage** > **Properties**.
 3. Under **Properties** select **Manage security defaults**.
 4. Under **Enable Security Defaults**, select **Yes**.

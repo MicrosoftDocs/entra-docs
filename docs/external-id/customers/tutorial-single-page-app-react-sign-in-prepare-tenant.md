@@ -1,14 +1,12 @@
 ---
 title: "Tutorial: Prepare your external tenant to authenticate users in a React SPA"
 description: Learn how to configure your external tenant for authentication with a React single-page app (SPA).
-
 author: garrodonnell
 manager: celestedg
-
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 05/23/2023
+ms.date: 07/03/2024
 ms.author: godonnell
 
 #Customer intent: As a dev I want to prepare my external tenant for building a single-page app (SPA) with React

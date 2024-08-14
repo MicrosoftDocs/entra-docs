@@ -47,7 +47,7 @@ Most browser-based applications use session tokens instead of access and refresh
 
 ## Revoke access for a user in the hybrid environment
 
-For a hybrid environment with on-premises Active Directory synchronized with Microsoft Entra ID, Microsoft recommends IT admins to take the following actions. If you have an **Microsoft Entra-only environment**, skip to the [Microsoft Entra environment](#azure-active-directory-environment) section.
+For a hybrid environment with on-premises Active Directory synchronized with Microsoft Entra ID, Microsoft recommends IT admins to take the following actions. If you have a **Microsoft Entra-only environment**, skip to the [Microsoft Entra environment](#azure-active-directory-environment) section.
 
 
 ### On-premises Active Directory environment
@@ -115,12 +115,12 @@ Once admins have taken the above steps, the user can't gain new tokens for any a
 
 ## Best practices
 
-- Deploy an automated provisioning and deprovisioning solution. Deprovisioning users from applications is an effective way of revoking access, especially for applications that use sessions tokens. Develop a process to deprovision users to apps that don't support automatic provisioning and deprovisioning. Ensure applications revoke their own session tokens and stop accepting Microsoft Entra access tokens even if they're still valid.
+- Deploy an automated provisioning and deprovisioning solution. Deprovisioning users from applications is an effective way of revoking access, especially for applications that use sessions tokens or allow users to sign in directly without a Microsoft Entra or Windows Server AD token. Develop a process to also deprovision users to apps that don't support automatic provisioning and deprovisioning. Ensure applications revoke their own session tokens and stop accepting Microsoft Entra access tokens even if they're still valid.
 
-  - Use [Microsoft Entra SaaS App Provisioning](~/identity/app-provisioning/user-provisioning.md). Microsoft Entra SaaS App Provisioning typically runs automatically every 20-40 minutes. [Configure Microsoft Entra provisioning](~/identity/saas-apps/tutorial-list.md) to deprovision or deactivate disabled users in applications.
+  - Use [Microsoft Entra app provisioning](~/identity/app-provisioning/user-provisioning.md). Microsoft Entra app provisioning typically runs automatically every 20-40 minutes. [Configure Microsoft Entra provisioning](~/identity/saas-apps/tutorial-list.md) to deprovision or deactivate users in SaaS and on-premises applications. If you were using [Microsoft Identity Manager](/microsoft-identity-manager/mim-how-provision-users-adds) to automate the deprovisioning of users from on-premises applications, you can use Microsoft Entra app provisioning to reach on-premises applications with a [SQL database](~/identity/app-provisioning/on-premises-sql-connector-configure.md), [non-AD directory server](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) or [other connectors](~/identity/app-provisioning/on-premises-custom-connector.md).
+  - For on-premises applications using Windows Server AD, you can configure Microsoft Entra Lifecycle Workflows to [update users in AD (preview)](~/id-governance/lifecycle-workflow-on-premises.md) when employees leave.
   
-  - For applications that don't use Microsoft Entra SaaS App Provisioning, use [Identity Manager (MIM)](/microsoft-identity-manager/mim-how-provision-users-adds) or a third party solution to automate the deprovisioning of users.  
-  - Identify and develop a process for applications that requires manual deprovisioning. Ensure admins can quickly run the required manual tasks to deprovision the user from these apps when needed.
+  - Identify and develop a process for applications that requires manual deprovisioning, such as the [automated ServiceNow ticket creation with Microsoft Entra Entitlement Management](~/id-governance/entitlement-management-ticketed-provisioning.md) to open a ticket when employees lose access. Ensure admins and application owners can quickly run the required manual tasks to deprovision the user from these apps when needed.
   
 - [Manage your devices and applications with Microsoft Intune](/mem/intune/remote-actions/device-management). Intune-managed [devices can be reset to factory settings](/mem/intune/remote-actions/devices-wipe). If the device is unmanaged, you can [wipe the corporate data from managed apps](/mem/intune/apps/apps-selective-wipe). These processes are effective for removing potentially sensitive data from end users' devices. However, for either process to be triggered, the device must be connected to the internet. If the device is offline, the device will still have access to any locally stored data.
 

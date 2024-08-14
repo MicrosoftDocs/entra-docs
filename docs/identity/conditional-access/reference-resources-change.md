@@ -14,17 +14,17 @@ ms.reviewer: inbarc
 ---
 # Planned change to Conditional Access target resources assignment
 
-Starting in September 2024, we're consolidating the Conditional Access **Target resources** assignments **Cloud apps** and **Global Secure Access (Preview)** options under a new name of **Resources**. Customers are then able to target **All internet resources with Global Secure Access**, **All resources (formerly all cloud apps)** or **Select specific resources (formerly select apps)**. Some of the Global Secure Access (Preview) attributes in the Conditional Access beta API are being deprecated. 
+Starting in September 2024, we're consolidating the Conditional Access **Target resources** assignments **Cloud apps** and **Global Secure Access** options under a new name of **Resources**. Customers are then able to target **All internet resources with Global Secure Access**, **All resources (formerly all cloud apps)** or **Select specific resources (formerly select apps)**. Some of the Global Secure Access attributes in the Conditional Access beta API are being deprecated. 
 
 There's no change to the behavior of existing Conditional Access policies. Administrators don't need to make changes to their existing policies.
 
-:::image type="content" source="media/reference-resources-change/target-resources.png" alt-text="Screenshot showing a Conditional Access policy with the Global Secure Access (Preview) controls selected.":::
+:::image type="content" source="media/reference-resources-change/target-resources.png" alt-text="Screenshot showing a Conditional Access policy with the Global Secure Access controls selected.":::
 
 ## What's changing?
 
 ### All internet resources with Global Secure Access
 
-This option combines the former **Microsoft 365 traffic** and **Internet traffic** options from **Global Secure Access (Preview)**. 
+This option combines the former **Microsoft 365 traffic** and **Internet traffic** options from **Global Secure Access**. 
 
 Customers are able to target **All internet resources with Global Secure Access** and **Microsoft apps with Global Secure Access** from **All resources (formerly 'all cloud apps')**.
 
@@ -42,7 +42,7 @@ In October 2024, Microsoft will update any remaining policy using the older sche
 
 ### Global Secure Access - Service principals
 
-As part of this change, between July and September 2024, Microsoft is provisioning new service principles in tenants that enabled the Global Secure Access (Preview). Tenants that enabled Global Secure Access in the past, will see audit logs for the creation of these service principles (Activity: Add service principal) with the following app IDs. 
+As part of this change, between July and September 2024, Microsoft is provisioning new service principals in tenants that enabled the Global Secure Access. Tenants that enabled Global Secure Access in the past, will see audit logs for the creation of these service principals (Activity: Add service principal) with the following app IDs.
 
 #### New Global Secure Access App IDs
 

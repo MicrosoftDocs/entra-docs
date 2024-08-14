@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 04/09/2024
+ms.date: 07/15/2024
 ms.author: owinfrey
 ---
 
@@ -16,7 +16,7 @@ With access reviews, you can create a downloadable review history to help your o
  
 ## Who can access and request review history
 
-Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed). Global Administrator and Global Reader  can see history reports for all access reviews. All other users are only allowed to see reports on access reviews that they generate.
+Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed). Global Administrator and Global Reader can see history reports for all access reviews. All other users are only allowed to see reports on access reviews that they generate.
 
 ## How to create a review history report
 

@@ -80,7 +80,7 @@ There are two ways to delete a device:
 > - Deleting a device:
 >    - Prevents it from accessing your Microsoft Entra resources.
 >    - Removes all details attached to the device. For example, BitLocker keys for Windows devices.  
->    - Is a nonrecoverable activity. We don't recommended it unless it's required.
+>    - Is a nonrecoverable activity. We don't recommend it unless it's required.
 
 If a device is managed in another management authority, like Microsoft Intune, be sure it's wiped or retired before you delete it. See [How to manage stale devices](manage-stale-devices.md) before you delete a device.
 
@@ -105,7 +105,7 @@ To view or copy BitLocker keys, you need to be the owner of the device or have o
 - [Security Reader](../role-based-access-control/permissions-reference.md#security-reader)
   
 > [!NOTE]
-> When devices that utilize [Windows Autopilot](/mem/autopilot/windows-autopilot) are reused, **and there is a new device owner**, that new device owner must contact an administrator to acquire the BitLocker recovery key for that device. Administrative unit scoped administrators will lose access to BitLocker recovery keys after device ownership changes. These scoped administrators will need to contact a non-scoped administrator for the recovery keys. For more information, see the article [Find the primary user of an Intune device](/mem/intune/remote-actions/find-primary-user#change-a-devices-primary-user).
+> When devices that utilize [Windows Autopilot](/mem/autopilot/windows-autopilot) are reused, **and there is a new device owner**, that new device owner must contact an administrator to acquire the BitLocker recovery key for that device. Custom role or administrative unit scoped administrators will lose access to BitLocker recovery keys for those devices that have undergone device ownership changes. These scoped administrators will need to contact a non-scoped administrator for the recovery keys. For more information, see the article [Find the primary user of an Intune device](/mem/intune/remote-actions/find-primary-user#change-a-devices-primary-user).
 
 ## View and filter your devices
 
@@ -186,6 +186,9 @@ Device activities are visible in the activity logs. These logs include activitie
 - Device creation and adding owners/users on the device
 - Changes to device settings
 - Device operations like deleting or updating a device
+- Bulk operations like downloading all devices 
+
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 The entry point to the auditing data is **Audit logs** in the **Activity** section of the **Devices** page.
 

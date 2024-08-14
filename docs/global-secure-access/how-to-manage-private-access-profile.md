@@ -37,9 +37,6 @@ To enable the Private Access forwarding profile for your tenant, you must have:
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Select the checkbox for **Private Access profile**.
 
-:::image type="content" source="media/how-to-manage-private-access-profile/private-access-traffic-profile.png" alt-text="Screenshot of the traffic forwarding page with the Private Access profile enabled." lightbox="media/how-to-manage-private-access-profile/private-access-traffic-profile-expanded.png":::
-
-
 ## Private Access policies
 
 To enable the Private Access traffic forwarding profile, we recommend you first configure Quick Access. Quick Access includes the IP addresses, IP ranges, and fully qualified domain names (FQDNs) for the private resources you want to include in the policy. For more information, see [Configure Quick Access](how-to-configure-quick-access.md).
@@ -68,7 +65,7 @@ You can scope the Private Access profile to specific users and groups. The users
 
 To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

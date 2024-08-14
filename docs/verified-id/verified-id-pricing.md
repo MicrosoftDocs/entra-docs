@@ -23,7 +23,7 @@ Face Check with Microsoft Entra Verified ID pricing is based on unique Face Chec
 In this article, learn about the Face Check billing model and linking your Verified ID authority to an Azure subscription.
 
 > [!IMPORTANT]
-> This article does not contain pricing details. For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+> This article provides information on how the Verified ID service emits billing services on Face Check usage. For the latest information on pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 ## What do I need to do?
 
@@ -36,7 +36,16 @@ To take advantage of the consumptive billing, your Verified ID authority must be
 
 ## About monthly Face Check verifications billing
 
-In your Microsoft Verified ID, you can verify credentials from issuer authorities that you trust. In addition with Face Check, your organization can perform high-assurance verifications securely, simply, and at scale by performing facial matching between a user’s real-time selfie and a photo. Verified ID generates individual billing events for each unique verification performed by the platform. Whether that verification succeeds or fails.
+In your Microsoft Verified ID, you can verify credentials from issuer authorities that you trust. In addition with Face Check, your organization can perform high-assurance verifications securely, simply, and at scale by performing facial matching between a user’s real-time selfie and a photo. 
+
+Verified ID generates individual billing events for each unique verification performed by the platform. Whether that verification succeeds or fails. The following matrix provides further clarity on Face Check verification scenarios that are billed:
+
+|Face Check Verification scenario  |Emits billing event </br>(yes/no)  |
+|---------|---------|
+| Verification request fails after reading QR Code     | No|
+| Verification request returns service error     |    No     |
+| Verification request returns failed face matching     |    Yes     |
+| Verification request returns any face matching score     |    Yes     |
 
 ## Link your Verified ID authority to a subscription
 

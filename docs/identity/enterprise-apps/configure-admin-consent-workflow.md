@@ -39,7 +39,7 @@ To configure the admin consent workflow, you need:
 
 To enable the admin consent workflow and choose reviewers:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **Admin consent settings**. 
 1. Under **Admin consent requests**,  select **Yes** for **Users can request admin consent to apps they are unable to consent to** .
 

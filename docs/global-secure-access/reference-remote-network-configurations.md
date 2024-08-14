@@ -180,4 +180,4 @@ The following values can be used for the IKE, IPSec, DH group, and PFS group pro
 | PFS24 | 7 |
 | PFS14 | 8 |
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+

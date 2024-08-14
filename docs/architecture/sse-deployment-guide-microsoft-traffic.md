@@ -51,7 +51,7 @@ This section describes how to enforce compliant network access to Microsoft traf
 1. Create a second Conditional Access policy that requires controls to allow the Global Secure Access Client to connect to the SSE solution (such as MFA, compliant device, TOU). Configure your Conditional Access policy as follows:
    1. **Users**: Select your test user or a pilot group.
    1. **Target resources**:
-     1. For **Select what this policy applies to**, select **Global Secure Access (Preview)**.
+     1. For **Select what this policy applies to**, select **Global Secure Access**.
      1. For **Select the traffic profiles this policy applies to**, select **Microsoft traffic**.
 
         :::image type="content" source="media/sse-deployment-guide-microsoft-traffic/conditional-access-policy-options.png" alt-text="Screenshot of Conditional Access policy options.":::
@@ -134,8 +134,6 @@ To test source IP address restoration, Global Secure Access signaling for Condit
       :::image type="content" source="media/sse-deployment-guide-microsoft-traffic/sign-in-logs-location-tab-inline.png" alt-text="Screenshot of sign-in logs showing Location tab for an item." lightbox="media/sse-deployment-guide-microsoft-traffic/sign-in-logs-location-tab-expanded.png":::
 
       :::image type="content" source="media/sse-deployment-guide-microsoft-traffic/sign-in-logs-report-only-failure-inline.png" alt-text="Screenshot of sign-in logs showing Report-only tab for an item with Report-only: Failure in the Result column." lightbox="media/sse-deployment-guide-microsoft-traffic/sign-in-logs-report-only-failure-expanded.png":::
-
-[!INCLUDE [Public preview important note](~/global-secure-access/includes/public-preview-important-note.md)]
 
 ## Next Steps
 [Deploy and verify Microsoft Entra Private Access](sse-deployment-guide-private-access.md)

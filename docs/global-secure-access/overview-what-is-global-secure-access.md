@@ -5,12 +5,16 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: overview
-ms.date: 03/04/2024
+ms.date: 08/01/2024
 ms.service: global-secure-access
 ms.custom: references_regions
 ---
 
 # What is Global Secure Access?
+
+> [!IMPORTANT]
+> Some features of Global Secure Access are currently in PREVIEW.
+> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to features that are in beta, preview, or otherwise not yet released into general availability.
 
 The way people work changed. Instead of working in traditional offices, people now work from nearly anywhere. With applications and data moving to the cloud, an identity-aware, cloud-delivered network perimeter for the modern workforce is needed. This new network security category is called Security Service Edge (SSE).
 
@@ -30,16 +34,14 @@ Microsoft Entra Internet Access secures access to Microsoft services, SaaS, and 
 
 ### Key features
 
-- Prevent stolen tokens from being replayed with the compliant network check-in Conditional Access.
-- Apply universal tenant restrictions to prevent data exfiltration to other tenants or personal accounts including anonymous access.
-- Enriched logs with network and device signals currently supported for SharePoint Online traffic.
-- Improve the precision of risk assessments on users, locations, and devices.
-- Deploy side-by-side with non-Microsoft SSE solutions.
-- Acquire network traffic from the desktop client or from a remote network, such as a branch location.
-- Dedicated public internet traffic forwarding profile.
-- Protect user access to the public internet while using Microsoft's cloud-delivered, identity-aware SWG solution.
-- Enable web content filtering to regulate access to websites based on their content categories and domain names.
-- Apply universal Conditional Access policies for all internet destinations, even if not federated with Microsoft Entra ID, through integration with Conditional Access session controls.
+- Acquire network traffic from the desktop client or from a remote network, such as a branch location. Deploy side-by-side with non-Microsoft SSE solutions. User aware public internet traffic forwarding profile. Pre-populated Microsoft 365 traffic forwarding profile. 
+- Leverage rich context awareness (user, device, location, risk, and compliance policy) while applying network security policies through integration with Conditional Access. Protect user access to the public internet while using Microsoft's cloud-delivered, identity-aware SWG solution. 
+- Enable web content filtering to regulate access to internet destinations based on their web-content categories and/or FQDN-domain names. 
+- Apply universal Conditional Access policies for all internet destinations, even if not federated with Microsoft Entra ID, through integration with Conditional Access session controls. 
+- Prevent stolen tokens from being replayed with the compliant network check for your tenant (built into Conditional Access). Avoid the need to hairpin users, while compromising productivity to achieve location-based security checks. Also prevent SSE bypass for SaaS applications.   
+- Apply universal tenant restrictions to prevent data exfiltration to unauthorized foreign tenants or personal accounts.
+- Restore original user Source IP in Conditional Access policies, Identity Protection scores/risk assessment and Entra ID sign-in logs. 
+- Detailed network traffic logs (including enforced policy details). Dashboards such as relationship maps between users, devices and endpoints, cross tenant access, and top network destination in use.
 
 ## Microsoft Entra Private Access
 
@@ -50,17 +52,21 @@ Remote users connect to private apps across hybrid and multicloud environments, 
 ### Key features
 
 - Zero Trust based access to a range of IP addresses and/or Fully Qualified Domain Names (FQDNs) without requiring a legacy VPN. This feature is known as Quick Access.
-- Per-app access for Transmission Control Protocol (TCP) apps (User Datagram Protocol (UDP) support in development).
+- Per-app access for Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) applications.
 - Modernize legacy app authentication with deep Conditional Access integration.
 - Provide a seamless end-user experience by acquiring network traffic from the desktop client and deploying side-by-side with your existing non-Microsoft SSE solutions.
 
 ## Licensing overview 
-Microsoft Entra Internet Access and Microsoft Entra Private Access are now generally available. Use of internet access features requires Microsoft Entra Internet Access licenses and use of private access features require Microsoft Entra Private Access licenses. Use of the Microsoft traffic profile is included with the Secure Access Essentials license.  
+Microsoft Entra Internet Access and Microsoft Entra Private Access are now generally available. Use of internet access features require a Microsoft Entra Internet Access license and use of private access features require a Microsoft Entra Private Access license. Both licenses are available as part of the Microsoft Entra Suite. To learn more about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about purchasing individual license, see the Microsoft Entra Suite standalone products tab of the licensing page. Use of the Microsoft traffic profile is included with the Secure Access Essentials license, which will soon be included in the Microsoft 365 E3 license. 
+
+Prerequisite to use Microsoft Entra Private Access, Microsoft Entra Internet Access and Secure Access Essentials is Microsoft Entra ID P1 or Microsoft Entra ID P2.
+
+**Remote Network licensing**
+
+While we are still determining the licensing model for remote networks, we want to provide you with the most up-to-date guidance and recommendations to ensure optimal performance for your Microsoft traffic deployment. Microsoft recommends a 250 Mbps bandwidth for Microsoft traffic of 1250 users. In cases of usage exceeding the recommended limits, additional charges may apply. To learn more about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
 
 
-Use of Microsoft Entra Private Access, Microsoft Entra Internet Access and Secure Access Essentials also require Microsoft Entra ID P1 or Microsoft Entra ID P2.  
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
 ## Next steps
 

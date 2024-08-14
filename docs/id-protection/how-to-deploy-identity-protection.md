@@ -5,7 +5,7 @@ description: Create a plan to deploy Microsoft Entra ID Protection.
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 03/10/2023
+ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,9 +14,9 @@ ms.reviewer: jhenders, tracyyu, chuqiaoshi
 ---
 # Plan an ID Protection deployment
 
-Microsoft Entra ID Protection detects identity-based risks, reports them, and allows administrators to investigate and remediate these risks to keep organizations safe and secure. The risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation. 
+Microsoft Entra ID Protection detects identity-based risks, reports them, and allows administrators to investigate and remediate these risks to keep organizations safe and secure. Risk data can be further fed into tools like Conditional Access to make access decisions or fed to a security information and event management (SIEM) tool for further analysis and investigation. 
 
-:::image type="content" source="media/how-to-deploy-identity-protection/identity-protection-overview.png" alt-text="Screenshot showing the Identity Protection Overview page showing some risky users and sign-ins." lightbox="media/how-to-deploy-identity-protection/identity-protection-overview.png":::
+> [!VIDEO https://www.youtube.com/embed/SFkrjA48J5E?si=QMjm83V151vxZx7W]
 
 This deployment plan extends concepts introduced in the [Conditional Access deployment plan](~/identity/conditional-access/plan-conditional-access.md).
 
@@ -56,7 +56,7 @@ For efficiency, we recommend allowing users to self-remediate through policies t
 
 ## Step 2: Plan for Conditional Access risk policies
 
-Identity Protection sends risk signals to Conditional Access, to make decisions and enforce organizational policies like requiring multifactor authentication or password change. There are several items organizations should plan for before creating their policies.
+ID Protection sends risk signals to Conditional Access, to make decisions and enforce organizational policies. These policies might require users perform multifactor authentication or secure password change. There are several items organizations should plan for before creating their policies.
 
 ### Policy exclusions
 
@@ -68,7 +68,7 @@ For users to self-remediate risk though, they must register for Microsoft Entra 
 
 ### Known network locations
 
-It's important to configure named locations in Conditional Access and add your VPN ranges to [Defender for Cloud Apps](/defender-cloud-apps/ip-tags#create-an-ip-address-range). Sign-ins from named locations, marked as trusted or known, improve the accuracy of Microsoft Entra ID Protection risk calculations. These sign-ins lower a user's risk when they authenticate from a location marked as trusted or known. This practice reduces false positives for some detections in your environment.
+It's important to configure [named locations in Conditional Access](../identity/conditional-access/concept-assignment-network.md#how-are-these-locations-defined) and add your VPN ranges to [Defender for Cloud Apps](/defender-cloud-apps/ip-tags#create-an-ip-address-range). Sign-ins from named locations that are marked as trusted or known, improve the accuracy of ID Protection risk calculations. These sign-ins lower a user's risk when they authenticate from a location marked as trusted or known. This practice reduces false positives for some detections in your environment.
 
 ### Report only mode 
 
@@ -76,9 +76,9 @@ It's important to configure named locations in Conditional Access and add your V
 
 ## Step 3: Configure your policies
 
-### Identity Protection MFA registration policy
+### ID Protection MFA registration policy
 
-Use the Identity Protection multifactor authentication registration policy to help get your users registered for Microsoft Entra multifactor authentication before they need to use it. Follow the steps in the article [How To: Configure the Microsoft Entra multifactor authentication registration policy](howto-identity-protection-configure-mfa-policy.md) to enable this policy.
+Use the ID Protection multifactor authentication registration policy to help get your users registered for Microsoft Entra multifactor authentication before they need to use it. Follow the steps in the article [How To: Configure the Microsoft Entra multifactor authentication registration policy](howto-identity-protection-configure-mfa-policy.md) to enable this policy.
 
 ### Conditional Access policies
 
@@ -92,11 +92,13 @@ The article [Configure and enable risk policies](howto-identity-protection-confi
 
 ### Email notifications
 
-[Enable notifications](howto-identity-protection-configure-notifications.md) so you can respond when a user is flagged as at risk so you can start investigating immediately. You can also set up weekly digest emails giving you an overview of risk for that week.
+[Enable notifications](howto-identity-protection-configure-notifications.md) so you can respond when a user is flagged as at risk. These notifications allow you to start investigating immediately. You can also set up weekly digest emails giving you an overview of risk for that week.
 
 ### Monitor and investigate
 
-The [Identity Protection workbook](~/identity/monitoring-health/workbook-risk-analysis.md) can help monitor and look for patterns in your tenant. Monitor this workbook for trends and also Conditional Access Report Only mode results to see if there are any changes that need to be made, for example, additions to named locations.
+The [Impact analysis of risk-based access policies workbook](workbook-risk-based-policy-impact.md) helps administrators understand user impact before creating risk-based Conditional Access policies.
+
+The [ID Protection workbook](~/identity/monitoring-health/workbook-risk-analysis.md) can help monitor and look for patterns in your tenant. Monitor this workbook for trends and also Conditional Access Report Only mode results to see if there are any changes that need to be made, for example, additions to named locations.
  
 Microsoft Defender for Cloud Apps provides an investigation framework organizations can use as a starting point. For more information, see the article [How to investigate anomaly detection alerts](/defender-cloud-apps/investigate-anomaly-alerts).
 

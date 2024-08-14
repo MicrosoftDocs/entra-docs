@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Vault Platform for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Vault Platform.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 019f3aa5-f32f-40a0-9efc-f6f159450093
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

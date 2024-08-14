@@ -68,7 +68,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > Open a [support ticket](https://help.zscaler.com/) to create a domain on Zscaler.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Zscaler, following the instructions provided in the [Zscaler single sign-on tutorial](zscaler-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Zscaler, following the instructions provided in the [Zscaler single sign-on tutorial](zscaler-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 > [!NOTE]
 > When users and groups are provisioned or de-provisioned we recommend to periodically restart provisioning to ensure that group memberships are properly updated. Doing a restart will force our service to re-evaluate all the groups and update the memberships. Please be aware that the restart can take time if you are syncing all users and groups in your tenant or have assigned large groups with 50K+ members. 
@@ -85,7 +85,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Set the **Provisioning Mode** to **Automatic**.
 
-	![Screenshot of the Provisioning page with the provisioning Mode set to Automatic.](./media/zscaler-provisioning-tutorial/provisioning-credentials.png)
+	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
 1. Under the **Admin Credentials** section, input the **Tenant URL** and **Secret Token** of your Zscaler account as described in Step 6.
 
@@ -93,15 +93,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Authentication Settings page.](./media/zscaler-provisioning-tutorial/secret-token-1.png)
 
-	Click on **Configure SAML** to open **Configuration SAML** options.
+1. Click on **Configure SAML** to open **Configuration SAML** options.
 
-	![Screenshot of the Configure S A M L dialog box with the Base U R L and Bearer Token text boxes called out.](./media/zscaler-provisioning-tutorial/secret-token-2.png)
+	![Screenshot of the Configure SAML dialog box with the Base URL and Bearer Token text boxes called out.](./media/zscaler-provisioning-tutorial/secret-token-2.png)
 
-	Select **Enable SCIM-Based Provisioning** to retrieve **Base URL** and **Bearer Token**, then save the settings. Copy the **Base URL** to **Tenant URL**, and **Bearer Token**  to **Secret Token**.
+1. Select **Enable SCIM-Based Provisioning** to retrieve **Base URL** and **Bearer Token**, then save the settings. Copy the **Base URL** to **Tenant URL**, and **Bearer Token**  to **Secret Token**.
 
 1. Upon populating the fields shown in Step 5, click **Test Connection** to ensure Microsoft Entra ID can connect to Zscaler. If the connection fails, ensure your Zscaler account has Admin permissions and try again.
 
-	![Screenshot of the Admin Credentials section with the Test Connection option called out.](./media/zscaler-provisioning-tutorial/test-connection.png)
+ 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox **Send an email notification when a failure occurs**.
 
@@ -111,19 +111,27 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler**.
 
-	![Screenshot of the Mappings section with the Synchronize Microsoft Entra users to Zscaler option highlighted.](./media/zscaler-provisioning-tutorial/user-mappings.png)
-
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler for update operations. Select the **Save** button to commit any changes.
 
-	![Screenshot of the Attribute Mappings section with seven mappings displayed.](./media/zscaler-provisioning-tutorial/user-attribute-mappings.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler|
+   |---|---|---|---|
+   |userName|String|&check;|&check;
+   |externalId|String||&check;
+   |active|Boolean||&check;
+   |name.givenName|String||
+   |name.familyName|String||
+   |displayName|String||&check;
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||&check;
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler**.
 
-	![Screenshot of the Mappings section with the Synchronize Microsoft Entra groups to Zscaler option highlighted.](./media/zscaler-provisioning-tutorial/group-mappings.png)
-
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler for update operations. Select the **Save** button to commit any changes.
 
-	![Screenshot of the Attribute Mappings section with three mappings displayed.](./media/zscaler-provisioning-tutorial/group-attribute-mappings.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler|
+   |---|---|---|---|
+   |displayName|String|&check;|&check;
+   |members|Reference||
+   |externalId|String||&check;
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -137,7 +145,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. When you are ready to provision, click **Save**.
 
-	![Screenshot of the Zscaler - Provisioning Enterprise Application sidebar with the Save option called out.](./media/zscaler-provisioning-tutorial/save-provisioning.png)
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Zscaler.
 

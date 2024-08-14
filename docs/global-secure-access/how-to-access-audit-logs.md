@@ -36,14 +36,14 @@ You can access the audit logs from **Global Secure Access** and from **Microsoft
 
 **From Global Secure Access:**
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using one of the required roles.
-1. Browse to **Global Secure Access** > **Audit logs**. The filters are pre-populated with the categories and activities related to Global Secure Access.
+1. Browse to **Global Secure Access** > **Monitor** > **Audit logs**. The filters are pre-populated with the categories and activities related to Global Secure Access.
 
 **From Microsoft Entra monitoring and health:**
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using one of the required roles.
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
 1. Select the **Date** range you want to query.
-1. Open the **Service** filter, select **Global Secure Access**, and select the **Apply** button.
-1. Open the **Category** filter, select at least one of the available options, and select the **Apply** button.
+1. Open the **Service** filter, select **Global Secure Access**, and select **Apply**.
+1. Open the **Category** filter, select at least one of the available options, and select **Apply**.
 
 ## Save audit logs
 
@@ -53,7 +53,7 @@ Audit log data is only kept for 30 days by default, which may not be long enough
 - [Export activity logs for storage](/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account).
 - [Monitor activity in real-time with Microsoft Sentinel](/azure/sentinel/quickstart-onboard).
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

@@ -68,6 +68,7 @@ To configure and test Microsoft Entra SSO with SAP NetWeaver, perform the follow
     1. **[Create SAP NetWeaver test user](#create-sap-netweaver-test-user)** to have a counterpart of B.Simon in SAP NetWeaver that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** to verify whether the configuration works.
 1. **[Configure SAP NetWeaver for OAuth​](#configure-sap-netweaver-for-oauth)** to configure the OAuth settings on application side.
+1. **[Request Access Token from Azure AD](#request-access-token-from-azure-ad)** to use Azure AD as the Identity Provider (IdP).
 
 <a name='configure-azure-ad-sso'></a>
 
@@ -400,6 +401,69 @@ In this section, you create a user called B.simon in SAP NetWeaver. Please work 
     ![scope assignment](./media/sapnetweaver-tutorial/oauth10.png)
 
 5. Click **finish**.
+
+## Request Access Token from Azure AD
+
+To request an access token from the SAP system using Azure Active Directory (Azure AD) as the Identity Provider (IdP), follow these steps:
+
+### Step 1: Register Application in Azure AD
+1. **Log into the Azure portal**: Navigate to the Azure portal at [portal.azure.com](https://portal.azure.com).
+2. **Register a new application**:
+   - Go to "Azure Active Directory".
+   - Select "App registrations" > "New registration".
+   - Fill in the application details such as Name, Redirect URI, etc.
+   - Click "Register".
+3. **Configure API permissions**:
+   - After registration, navigate to "API permissions".
+   - Click "Add a permission" and select "APIs my organization uses".
+   - Search for the SAP system or relevant API and add the necessary permissions.
+   - Grant admin consent for the permissions.
+
+### Step 2: Create Client Secret
+1. **Navigate to the registered application**: Go to "Certificates & secrets".
+2. **Create a new client secret**:
+   - Click on "New client secret".
+   - Provide a description and set an expiry period.
+   - Click "Add" and note down the client secret value as it will be needed for authentication.
+
+### Step 3: Configure SAP System for Azure AD Integration
+1. **Access SAP Cloud Platform**: Log into your SAP Cloud Platform Cockpit.
+2. **Set up trust configuration**:
+   - Go to "Security" > "Trust Configuration".
+   - Add Azure AD as a trusted IdP by importing the federation metadata XML from Azure AD. This can be found in the "Endpoints" section of the Azure AD app registration (under Federation Metadata Document).
+3. **Configure OAuth2 client**:
+   - In the SAP system, configure an OAuth2 client using the client ID and client secret obtained from Azure AD.
+   - Set the token endpoint and other relevant OAuth2 parameters.
+
+### Step 4: Request Access Token
+1. **Prepare the token request**:
+   - Construct a token request using the following details:
+     - **Token Endpoint**: This is typically `https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token`.
+     - **Client ID**: The Application (client) ID from Azure AD.
+     - **Client Secret**: The client secret value from Azure AD.
+     - **Scope**: The required scopes (e.g., `https://your-sap-system.com/.default`).
+     - **Grant Type**: Use `client_credentials` for server-to-server authentication.
+
+2. **Make the token request**:
+   - Use a tool like Postman or a script to send a POST request to the token endpoint.
+   - Example request (in cURL):
+     ```sh
+     curl -X POST \
+       https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token \
+       -H 'Content-Type: application/x-www-form-urlencoded' \
+       -d 'client_id={client_id}&scope=https://your-sap-system.com/.default&client_secret={client_secret}&grant_type=client_credentials'
+     ```
+
+3. **Extract the access token**:
+   - The response will contain an access token if the request is successful. Use this access token to authenticate API requests to the SAP system.
+
+### Step 5: Use the Access Token for API Requests
+1. **Include the access token in API requests**:
+   - For each request to the SAP system, include the access token in the `Authorization` header.
+   - Example header:
+     ```
+     Authorization: Bearer {access_token}
+     ```
 
 ## Next Steps
 
