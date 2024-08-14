@@ -14,7 +14,7 @@ ms.reviewer: nashahid
 ---
 # Planning for mandatory multifactor authentication for Azure and other administration portals 
 
-At Microsoft, we're committed to providing our customers with the highest level of security. That's why, starting in 2024, we'll enforce mandatory multifactor authentication (MFA) for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). The rest of this topic covers which applications are affected and how to prepare for manadatory MFA. 
+At Microsoft, we're committed to providing our customers with the highest level of security. That's why, starting in 2024, we'll enforce mandatory multifactor authentication (MFA) for all Azure sign-in attempts. This topic covers which applications are affected and how to prepare for manadatory MFA. 
 
 ## Scope of enforcement 
 
