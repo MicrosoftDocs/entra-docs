@@ -53,7 +53,7 @@ To apply this method, follow these steps:
 #### Prepare
 
 1. Install Microsoft Entra Connect, select **staging mode**, and unselect **start synchronization** on the last page in the installation wizard. This mode allows you to run the sync engine manually.
-  ![Screenshot shows the Ready to configure page in the Microsoft Entra Connect dialog box.](./media/how-to-connect-sync-staging-server/readytoconfigure.png)
+ ![Screenshot shows the Ready to configure page in the Microsoft Entra Connect dialog box.](./media/how-to-connect-sync-staging-server/readytoconfigure.png)
 2. Sign off/sign in and from the start menu select **Synchronization Service**.
 
 #### Configuration
@@ -73,7 +73,7 @@ You have now staged export changes to Microsoft Entra ID and on-premises AD (if 
 
 1. Start a cmd prompt and go to `%ProgramFiles%\Microsoft Azure AD Sync\bin`
 2. Run: `csexport "Name of Connector" %temp%\export.xml /f:x`
-  The name of the Connector can be found in Synchronization Service. It has a name similar to "contoso.com – Microsoft Entra ID" for Microsoft Entra ID.
+ The name of the Connector can be found in Synchronization Service. It has a name similar to "contoso.com – Microsoft Entra ID" for Microsoft Entra ID.
 3. Run: `CSExportAnalyzer %temp%\export.xml > %temp%\export.csv`
 You have a file in %temp% named export.csv that can be examined in Microsoft Excel. This file contains all changes that are about to be exported.
 4. Make necessary changes to the data or configuration and run these steps again (Import and Synchronize and Verify) until the changes that are about to be exported are expected.
@@ -124,23 +124,23 @@ We need to ensure that only one Sync Server is syncing changes at any given time
 
 1. For the currently active Microsoft Entra Connect server, open the Microsoft Entra Connect wizard and click "Configure staging mode" then Next: 
 
-  > [!div class="mx-imgBorder"]
-  > ![Screenshot shows Staging Mode highlighted in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-menu.png)
+ > [!div class="mx-imgBorder"]
+ > ![Screenshot shows Staging Mode highlighted in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-menu.png)
 
 2. You'll need to sign into Microsoft Entra ID with Hybrid Identity Administrator credentials: 
 
-  > [!div class="mx-imgBorder"]
-  > ![Screenshot shows Sign in prompt in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-sign-in.png)
+ > [!div class="mx-imgBorder"]
+ > ![Screenshot shows Sign in prompt in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-sign-in.png)
 
 3. Tick the box for Staging Mode and click Next: 
 
-  > [!div class="mx-imgBorder"]
-  > ![Screenshot shows Staging Mode configuration in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-staging-mode.png)
+ > [!div class="mx-imgBorder"]
+ > ![Screenshot shows Staging Mode configuration in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-staging-mode.png)
 
 4. The Microsoft Entra Connect server checks for installed components and then prompt you whether you want to start the sync process when the configuration change completes: 
 
-  > [!div class="mx-imgBorder"]
-  > ![Screenshot shows Ready to Configure screen in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-config.png) 
+ > [!div class="mx-imgBorder"]
+ > ![Screenshot shows Ready to Configure screen in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-config.png) 
 
 Since the server is in staging mode, it won't write changes to Microsoft Entra ID, but retain any changes to the AD in its Connector Space, ready to write them. 
 It is recommended to leave the sync process on for the server in Staging Mode, so if it becomes active, it will quickly take over and won't have to do a large sync to catch up to the current state of the Active Directory / Microsoft Entra objects in scope.
@@ -168,38 +168,38 @@ We can now move our Staging Sync Server to Active mode and actively sync changes
 
 1. Now move to the Microsoft Entra Connect server that was originally in Staging Mode and open the Microsoft Entra Connect wizard. 
 
-  Click on "Configure staging mode" and click Next: 
+ Click on "Configure staging mode" and click Next: 
 
-  > [!div class="mx-imgBorder"]
-  > ![Screenshot shows Staging Mode highlighted in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-menu.png) 
+ > [!div class="mx-imgBorder"]
+ > ![Screenshot shows Staging Mode highlighted in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-menu.png) 
 
-  The message at the bottom of the wizard indicates this server is in Staging Mode.
+ The message at the bottom of the wizard indicates this server is in Staging Mode.
 
 2. Sign into Microsoft Entra ID, then go to the Staging Mode screen.
 
-  Untick the box for Staging Mode and click Next 
+ Untick the box for Staging Mode and click Next 
 
-  > [!div class="mx-imgBorder"]
-  > ![Screenshot shows Staging Mode configuration in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-staging-mode.png) 
+ > [!div class="mx-imgBorder"]
+ > ![Screenshot shows Staging Mode configuration in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-staging-mode.png) 
 
-  As per the warning on this page, it is important to ensure no other Microsoft Entra Connect server is actively syncing. 
+ As per the warning on this page, it is important to ensure no other Microsoft Entra Connect server is actively syncing. 
 
-  There should only be one active Microsoft Entra Connect Sync server at any time.
+ There should only be one active Microsoft Entra Connect Sync server at any time.
 
 3. When you're prompted to start the sync process, tick this box and click Configure: 
 
-  > [!div class="mx-imgBorder"]
-  > ![Screenshot shows Ready to Configure screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-config.png)
+ > [!div class="mx-imgBorder"]
+ > ![Screenshot shows Ready to Configure screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-config.png)
 
 4. Once the process is finished you should get the below confirmation screen where you can click Exit to finish: 
 
-  > [!div class="mx-imgBorder"]
-  > ![Screenshot shows Confirmation screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-confirmation.png)
+ > [!div class="mx-imgBorder"]
+ > ![Screenshot shows Confirmation screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-confirmation.png)
 
 5. You can confirm that this process is working by opening the Sync Service Console and checking if Export jobs are running:
  
-  > [!div class="mx-imgBorder"]
-  > ![Screenshot shows Sync Service console on the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-sync-server-mgmr.png)
+ > [!div class="mx-imgBorder"]
+ > ![Screenshot shows Sync Service console on the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-sync-server-mgmr.png)
 
 ## Disaster recovery
 
@@ -245,10 +245,10 @@ See the section [verify](#verify) on how to use this script.
 
 ```powershell
 Param(
-  [Parameter(Mandatory=$true, HelpMessage="Must be a file generated using csexport 'Name of Connector' export.xml /f:x)")]
-  [string]$xmltoimport="%temp%\exportedStage1a.xml",
-  [Parameter(Mandatory=$false, HelpMessage="Maximum number of users per output file")][int]$batchsize=1000,
-  [Parameter(Mandatory=$false, HelpMessage="Show console output")][bool]$showOutput=$false
+ [Parameter(Mandatory=$true, HelpMessage="Must be a file generated using csexport 'Name of Connector' export.xml /f:x)")]
+ [string]$xmltoimport="%temp%\exportedStage1a.xml",
+ [Parameter(Mandatory=$false, HelpMessage="Maximum number of users per output file")][int]$batchsize=1000,
+ [Parameter(Mandatory=$false, HelpMessage="Show console output")][bool]$showOutput=$false
 )
 
 #LINQ isn't loaded automatically, so force it
@@ -270,122 +270,122 @@ $result=$reader = [System.Xml.XmlReader]::Create($resolvedXMLtoimport) 
 $result=$reader.ReadToDescendant('cs-object')
 if($result)
 {
-  do 
+ do 
+ {
+  #create the object placeholder
+  #adding them up here means we can enforce consistency
+  $objOutputUser=New-Object psobject
+  Add-Member -InputObject $objOutputUser -MemberType NoteProperty -Name ID -Value ""
+  Add-Member -InputObject $objOutputUser -MemberType NoteProperty -Name Type -Value ""
+  Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name DN -Value ""
+  Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name operation -Value ""
+  Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name UPN -Value ""
+  Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name displayName -Value ""
+  Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name sourceAnchor -Value ""
+  Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name alias -Value ""
+  Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name primarySMTP -Value ""
+  Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name onPremisesSamAccountName -Value ""
+  Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name mail -Value ""
+
+  $user = [System.Xml.Linq.XElement]::ReadFrom($reader)
+  if ($showOutput) {Write-Host Found an exported object... -ForegroundColor Green}
+
+  #object id
+  $outID=$user.Attribute('id').Value
+  if ($showOutput) {Write-Host ID: $outID}
+  $objOutputUser.ID=$outID
+
+  #object type
+  $outType=$user.Attribute('object-type').Value
+  if ($showOutput) {Write-Host Type: $outType}
+  $objOutputUser.Type=$outType
+
+  #dn
+  $outDN= $user.Element('unapplied-export').Element('delta').Attribute('dn').Value
+  if ($showOutput) {Write-Host DN: $outDN}
+  $objOutputUser.DN=$outDN
+
+  #operation
+  $outOperation= $user.Element('unapplied-export').Element('delta').Attribute('operation').Value
+  if ($showOutput) {Write-Host Operation: $outOperation}
+  $objOutputUser.operation=$outOperation
+
+  #now that we have the basics, go get the details
+
+  foreach ($attr in $user.Element('unapplied-export-hologram').Element('entry').Elements("attr"))
   {
-    #create the object placeholder
-    #adding them up here means we can enforce consistency
-    $objOutputUser=New-Object psobject
-    Add-Member -InputObject $objOutputUser -MemberType NoteProperty -Name ID -Value ""
-    Add-Member -InputObject $objOutputUser -MemberType NoteProperty -Name Type -Value ""
-    Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name DN -Value ""
-    Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name operation -Value ""
-    Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name UPN -Value ""
-    Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name displayName -Value ""
-    Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name sourceAnchor -Value ""
-    Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name alias -Value ""
-    Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name primarySMTP -Value ""
-    Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name onPremisesSamAccountName -Value ""
-    Add-Member -inputobject $objOutputUser -MemberType NoteProperty -Name mail -Value ""
+   $attrvalue=$attr.Attribute('name').Value
+   $internalvalue= $attr.Element('value').Value
 
-    $user = [System.Xml.Linq.XElement]::ReadFrom($reader)
-    if ($showOutput) {Write-Host Found an exported object... -ForegroundColor Green}
-
-    #object id
-    $outID=$user.Attribute('id').Value
-    if ($showOutput) {Write-Host ID: $outID}
-    $objOutputUser.ID=$outID
-
-    #object type
-    $outType=$user.Attribute('object-type').Value
-    if ($showOutput) {Write-Host Type: $outType}
-    $objOutputUser.Type=$outType
-
-    #dn
-    $outDN= $user.Element('unapplied-export').Element('delta').Attribute('dn').Value
-    if ($showOutput) {Write-Host DN: $outDN}
-    $objOutputUser.DN=$outDN
-
-    #operation
-    $outOperation= $user.Element('unapplied-export').Element('delta').Attribute('operation').Value
-    if ($showOutput) {Write-Host Operation: $outOperation}
-    $objOutputUser.operation=$outOperation
-
-    #now that we have the basics, go get the details
-
-    foreach ($attr in $user.Element('unapplied-export-hologram').Element('entry').Elements("attr"))
+   switch ($attrvalue)
+   {
+    "userPrincipalName"
     {
-      $attrvalue=$attr.Attribute('name').Value
-      $internalvalue= $attr.Element('value').Value
-
-      switch ($attrvalue)
-      {
-        "userPrincipalName"
-        {
-          if ($showOutput) {Write-Host UPN: $internalvalue}
-          $objOutputUser.UPN=$internalvalue
-        }
-        "displayName"
-        {
-          if ($showOutput) {Write-Host displayName: $internalvalue}
-          $objOutputUser.displayName=$internalvalue
-        }
-        "sourceAnchor"
-        {
-          if ($showOutput) {Write-Host sourceAnchor: $internalvalue}
-          $objOutputUser.sourceAnchor=$internalvalue
-        }
-        "alias"
-        {
-          if ($showOutput) {Write-Host alias: $internalvalue}
-          $objOutputUser.alias=$internalvalue
-        }
-        "proxyAddresses"
-        {
-          if ($showOutput) {Write-Host primarySMTP: ($internalvalue -replace "SMTP:","")}
-          $objOutputUser.primarySMTP=$internalvalue -replace "SMTP:",""
-        }
-      }
+     if ($showOutput) {Write-Host UPN: $internalvalue}
+     $objOutputUser.UPN=$internalvalue
     }
-
-    $objOutputUsers += $objOutputUser
-
-    Write-Progress -activity "Processing ${xmltoimport} in batches of ${batchsize}" -status "Batch ${outputfilecount}: " -percentComplete (($objOutputUsers.Count / $batchsize) * 100)
-
-    #every so often, dump the processed users in case we blow up somewhere
-    if ($count % $batchsize -eq 0)
+    "displayName"
     {
-      Write-Host Hit the maximum users processed without completion... -ForegroundColor Yellow
-
-      #export the collection of users as a CSV
-      Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
-      $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
-
-      #increment the output file counter
-      $outputfilecount+=1
-
-      #reset the collection and the user counter
-      $objOutputUsers = $null
-      $count=0
+     if ($showOutput) {Write-Host displayName: $internalvalue}
+     $objOutputUser.displayName=$internalvalue
     }
-
-    $count+=1
-
-    #need to bail out of the loop if no more users to process
-    if ($reader.NodeType -eq [System.Xml.XmlNodeType]::EndElement)
+    "sourceAnchor"
     {
-      break
+     if ($showOutput) {Write-Host sourceAnchor: $internalvalue}
+     $objOutputUser.sourceAnchor=$internalvalue
     }
+    "alias"
+    {
+     if ($showOutput) {Write-Host alias: $internalvalue}
+     $objOutputUser.alias=$internalvalue
+    }
+    "proxyAddresses"
+    {
+     if ($showOutput) {Write-Host primarySMTP: ($internalvalue -replace "SMTP:","")}
+     $objOutputUser.primarySMTP=$internalvalue -replace "SMTP:",""
+    }
+   }
+  }
 
-  } while ($reader.Read)
+  $objOutputUsers += $objOutputUser
 
-  #need to write out any users that didn't get picked up in a batch of 1000
-  #export the collection of users as CSV
-  Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
-  $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
+  Write-Progress -activity "Processing ${xmltoimport} in batches of ${batchsize}" -status "Batch ${outputfilecount}: " -percentComplete (($objOutputUsers.Count / $batchsize) * 100)
+
+  #every so often, dump the processed users in case we blow up somewhere
+  if ($count % $batchsize -eq 0)
+  {
+   Write-Host Hit the maximum users processed without completion... -ForegroundColor Yellow
+
+   #export the collection of users as a CSV
+   Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
+   $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
+
+   #increment the output file counter
+   $outputfilecount+=1
+
+   #reset the collection and the user counter
+   $objOutputUsers = $null
+   $count=0
+  }
+
+  $count+=1
+
+  #need to bail out of the loop if no more users to process
+  if ($reader.NodeType -eq [System.Xml.XmlNodeType]::EndElement)
+  {
+   break
+  }
+
+ } while ($reader.Read)
+
+ #need to write out any users that didn't get picked up in a batch of 1000
+ #export the collection of users as CSV
+ Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
+ $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
 }
 else
 {
-  Write-Host "Imported XML file is empty. No work to do." -ForegroundColor Red
+ Write-Host "Imported XML file is empty. No work to do." -ForegroundColor Red
 }
 ```
 
