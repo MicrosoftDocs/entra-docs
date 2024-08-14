@@ -20,7 +20,7 @@ To take full advantage of Lifecycle Workflows, user provisioning should be autom
 
 The following table shows the scheduling (trigger) relevant attributes and the methods of  synchronization that are supported.
 
-|Attribute|Type|Supported in HR Inbound Provisioning|Supports in Microsoft Entra Connect cloud sync|Supports in Microsoft Entra Connect Sync| 
+|Attribute|Type|Supported in HR Inbound Provisioning|Supported in Microsoft Entra Connect cloud sync|Supported in Microsoft Entra Connect Sync| 
 |-----|-----|-----|-----|-----|
 |employeeHireDate|DateTimeOffset|Yes|Yes|Yes|
 |employeeLeaveDateTime|DateTimeOffset|Yes|Yes|Yes|
