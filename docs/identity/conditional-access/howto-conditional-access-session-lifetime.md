@@ -5,7 +5,7 @@ description: Customize Microsoft Entra authentication session configuration incl
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 01/08/2024
+ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -41,7 +41,6 @@ To make sure that your policy works as expected, the recommended best practice i
    > ![Screenshot showing a Conditional Access policy configured for sign-in frequency.](media/howto-conditional-access-session-lifetime/conditional-access-policy-session-sign-in-frequency.png)
 
 1. Save your policy.
-
 
 ### Policy 2: Persistent browser session
 
