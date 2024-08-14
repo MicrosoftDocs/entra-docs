@@ -73,7 +73,7 @@ Use the resources below to set up MFA for your users:
   - Use [Conditional Access](~/identity/conditional-access/overview.md) policies (in [report-only mode](~/identity/conditional-access/concept-conditional-access-report-only.md) to start) targeting: 
     - All users 
       - While in report-only mode, don't configure exceptions. This configuration more closely mirrors the enforcement pattern of Microsoft Entra MFA program. 
-    - [Microsoft administration portals](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals) (includes portals in scope for this Microsft Entra MFA enforcement) 
+    - [Microsoft administration portals](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals) (includes portals in scope for this Microsoft Entra MFA enforcement) 
     - [Require multifactor authentication](~/identity/conditional-access/concept-conditional-access-grant.md#require-multifactor-authentication) or if you want more granular control, use [authentication strengths](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength)
   - Enable [Security defaults](~/fundamentals/security-defaults.md)
 - Review information to help configure and deploy MFA:
