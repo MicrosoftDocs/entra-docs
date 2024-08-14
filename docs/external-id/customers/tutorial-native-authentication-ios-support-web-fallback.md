@@ -1,6 +1,6 @@
 ---
 title: Support web fallback
-description: Learn how to implement web fallback in an iOS application by using native authentication to ensure stability in authentication flow.
+description: Learn how to implement web fallback in an iOS/macOS application by using native authentication to ensure stability in authentication flow.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -38,7 +38,7 @@ To ensure stability of your application and avoid interruption of the authentica
 
 When we initialize the SDK, we need to specify which challenge types our mobile application can support. Here are the list of challenge types that the SDK accepts: 
 
-- OOB (out of band): add this challenge type when your iOS application can handle a one-time-passcode, in this case an email code. 
+- OOB (out of band): add this challenge type when your iOS/macOS application can handle a one-time-passcode, in this case an email code. 
 - Password: add this challenge type when your application is able to handle password based authentication. 
 
 When Microsoft Entra requires capabilities that the client can't provide the `BrowserRequired` error will be returned. For example, suppose we initialize the SDK instance specifying only the challenge type OOB, but in Microsoft Entra admin center, the application is configured with an **Email with password** user flow. When we call the **signUp(username)** method from the SDK instance, we get a `BrowserRequired` error, because Microsoft Entra requires different challenge type (password in this case) than the one configured in the SDK. 

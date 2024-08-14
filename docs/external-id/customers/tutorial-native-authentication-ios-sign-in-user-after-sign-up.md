@@ -1,6 +1,6 @@
 ---
-title: Sign in user automatically after sign-up in an iOS app
-description: Learn how to automatically sign-in a user after sign-up in an iOS app by using native authentication.
+title: Sign in user automatically after sign-up in iOS/macOS app
+description: Learn how to automatically sign-in a user after sign-up in an iOS/macOS app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,12 +12,12 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 06/21/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to automatically sign-in a user after sign-up in an iOS app by using native authentication.
+#Customer intent: As a dev, devops, I want to learn how to automatically sign-in a user after sign-up in an iOS/macOS app by using native authentication.
 ---
 
-# Tutorial: Sign in user automatically after sign-up in an iOS app
+# Tutorial: Sign in user automatically after sign-up in an iOS/macOS app
 
-This tutorial demonstrates how to sign in user automatically after sign-up in an iOS app by using native authentication. 
+This tutorial demonstrates how to sign in user automatically after sign-up in an iOS/macOS app by using native authentication. 
 
 In this tutorial, you learn how to:  
 

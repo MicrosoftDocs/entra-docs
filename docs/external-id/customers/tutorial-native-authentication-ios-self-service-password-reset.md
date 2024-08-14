@@ -1,6 +1,6 @@
 ---
 title: Self-service password reset
-description: Learn how to implement self-service password reset (SSPR) to my iOS app using native authentication.
+description: Learn how to implement self-service password reset (SSPR) to my iOS/macOS app using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to implement self-service password reset (SSPR) to my iOS app using native authentication.
 ---
 
-# Tutorial: Self-service password reset in iOS app
+# Tutorial: Self-service password reset in iOS/macOS app
 
 This tutorial demonstrates how to give users the ability to change or reset their password, with no administrator or help desk involvement. 
 
