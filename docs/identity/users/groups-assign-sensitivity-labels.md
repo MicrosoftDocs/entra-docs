@@ -26,6 +26,9 @@ Sensitivity labels can be applied to groups across apps and services such as Out
 
 To apply published labels to groups, you must first enable the feature. These steps enable the feature in Microsoft Entra ID. The Microsoft Graph PowerShell SDK comes in two modules, `Microsoft.Graph` and `Microsoft.Graph.Beta`.
 
+  >[!IMPORTANT]
+  >If you are performing these M365 operations from 21Vianet you need to follow the second set of steps.
+
 1. Open a PowerShell prompt on your computer and run the following commands to prepare to run the cmdlets.
 
     ```powershell
@@ -38,13 +41,13 @@ To apply published labels to groups, you must first enable the feature. These st
     ```powershell
     Connect-MgGraph -Scopes "Directory.ReadWrite.All"
     ```
+  
 
 1. Fetch the current group settings for the Microsoft Entra organization and display the current group settings.
 
     ```powershell
     $grpUnifiedSetting = Get-MgBetaDirectorySetting -Search DisplayName:"Group.Unified"
     ```
-
    
     If no group settings were created for this Microsoft Entra organization, you get an empty screen. In this case, you must first create the settings. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this Microsoft Entra organization.
     
@@ -79,6 +82,26 @@ If you receive a `Request_BadRequest` error, it's because the settings already e
 1. Issue the `Update-MgBetaDirectorySetting` cmdlet by using the ID that you retrieved.
 
 You also need to synchronize your sensitivity labels to Microsoft Entra ID. For instructions, see [Enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
+
+### 21Vianet steps
+
+If you are performing these M365 operations from 21Vianet:
+
+- Register a Microsoft Entra ID application in Microsoft Entra ID.
+- Grant your application  API permissions to access Microsoft Graph including ```Directory.ReadWriteAll``` and ```Group.ReadWriteAll```, you may need to get tenant admin's explicit consent to grant the application access to Microsft Graph.
+- Generate a client secret. copy the value of newly created client secret in clipboard used to connect to MS Graph;
+- Run PowerShell as administrator:
+
+```PowerShell
+$ClientSecretCredential = Get-Credential -Credential```
+
+"Client id of the newly registered Entra ID application";
+
+After commands run, you will be prompted to enter a password, which is the new client secret's value just copied in previous step.
+Run the following command to get access to MS Graph:
+
+```PowerShell
+Connect-MgGraph -TenantId "Current tenant id" - ClientSecretCredential $ClientSecretCredential -Environment China```
 
 ## Assign a label to a new group in the Microsoft Entra admin center
 
