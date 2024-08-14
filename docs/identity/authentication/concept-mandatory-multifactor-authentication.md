@@ -54,11 +54,11 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 - Email: Global Administrators who have configured an email address will be informed by email of the upcoming MFA enforcement and the actions required to be prepared. 
 
-- Service health notification: Global Administrators will receive a service health notification through the Azure portal, with the tracking ID of **4V20-VX0**. This notification will contain the same information as the email. Global Administrators can also subscribe to receive service health notifications through email. 
+- Service health notification: Global Administrators will receive a service health notification through the Azure portal, with the tracking ID of **4V20-VX0**. This notification contains the same information as the email. Global Administrators can also subscribe to receive service health notifications through email. 
 
-- Portal notification: Global Administrators will see a notification in the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center when they sign in. The portal notification links to this topic for more information about the mandatory MFA enforcement. 
+- Portal notification: A notification appears in the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center when they sign in. The portal notification links to this topic for more information about the mandatory MFA enforcement. 
 
-- Microsoft 365 message center: Global Administrators will also see a message in the Microsoft 365 message center with the same information as the email and service health notification. 
+- Microsoft 365 message center: A message appears in the Microsoft 365 message center with the same information as the email and service health notification. 
 
 ## Prepare for multifactor authentication 
 
