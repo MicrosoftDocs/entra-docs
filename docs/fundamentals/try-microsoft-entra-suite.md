@@ -23,7 +23,7 @@ Welcome to the Microsoft Entra Suite trial user guide. Make the most of your fre
 
 ## What is the Microsoft Entra Suite? 
 
-[Microsoft Entra Suite](https://microsoft.com/security/blog/2024/07/11/simplified-zero-trust-security-with-the-microsoft-entra-suite-and-unified-security-operations-platform-now-generally-available/) is the product edition for identity and network access solutions from Microsoft. It delivers a complete cloud-based solution for workforce access. 
+[Microsoft Entra Suite](https://microsoft.com/security/blog/2024/07/11/simplified-zero-trust-security-with-the-microsoft-entra-suite-and-unified-security-operations-platform-now-generally-available/) is the product edition for identity and network access solutions from Microsoft. This edition delivers a complete cloud-based solution for workforce access. 
 
 With Microsoft Entra Suite, you can protect and verify any identity, provide secure access from anywhere to any app or resource (cloud or on-premises), keep users and organizations safe by filtering out malicious content, and ensure that only the right identities have access to your organization's apps and resources.
 
@@ -59,10 +59,10 @@ The following how-to guides are expanded upon in this section:
 - [Step 1: Deploy identify protection](#step-1-deploy-identity-protection): Deploy security controls to enhance identification and protection of risky users.  
 - [Step 2: Enact access reviews](#step-2-enact-access-reviews): Conduct an access review to ensure appropriate system access within your enterprise. 
 - [Step 3: Utilize Internet Access provisions](#step-3-utilize-internet-access-provisions): Protect internet traffic with secure web gateways.
-- [Step 4: Enable private access gateways](#step-4-enable-private-access-gateways): Depreciate costly VPN systems through Quick Access.
+- [Step 4: Enable private access gateways](#step-4-enable-private-access-gateways): Depreciate costly VPN systems with Quick Access.
 - [Step 5: Onboard customer workflow portal](#step-5-onboard-customer-workflow-portal): Automate employee onboarding with lifecycle workflows. 
 
-Each of the following sections includes the process steps to take for each feature. Each of these steps is fully documented in a separate how-to guide that you can access by clicking the link at the end of each step.  
+The following sections include process steps to walk you through each feature. Each of these steps is fully documented in a separate how-to guide that you can access by clicking the link at the end of each step.  
 
 ### Step 1: Deploy identity protection 
 
@@ -130,7 +130,7 @@ To get the most out of your trial, get started by walking through the following 
 1. [Scenario: Modernize remote access to on-premises apps with MFA per app](#scenario-2-modernize-remote-access-to-on-premises-apps-with-mfa-per-app) 
 1. [Scenario: Secure internet access based on business needs](#scenario-3-secure-internet-access-based-on-business-needs) 
 
-During your Microsoft Entra Suite’s trial period, be sure for taking advantage of the better together security strategy by implementing automated user onboarding and lifecycle management, modernizing from traditional VPN to on-premises resources with multifactor authentication (MFA) all the way down to the app level, and securing internet access based on the rules of your business.  
+During your Microsoft Entra Suite’s trial period, be sure you take advantage of the better together security strategy by implementing automated user onboarding and lifecycle management, modernizing from traditional VPN to on-premises resources with multifactor authentication (MFA) all the way down to the app level, and securing internet access based on the rules of your business.  
 
 The following table shows which of the five Microsoft Entra Suite products are covered in each scenario.
 
