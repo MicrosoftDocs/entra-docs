@@ -15,6 +15,8 @@ ms.custom: developer
 
 # Tutorial: Call multiple APIs in iOS app by using native authentication
 
+[!INCLUDE [applies-to-ios-only](../includes/applies-to-ios-only.md)]
+
 In this tutorial, you learn how to acquire an access token and call an API in your iOS mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for iOS allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
 
 In this tutorial, you learn how to: 

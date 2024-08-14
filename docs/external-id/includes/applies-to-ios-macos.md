@@ -2,7 +2,7 @@
 author: henrymbuguakiarie
 ms.service: entra-external-id
 ms.topic: include
-ms.date: 05/24/2024
+ms.date: 08/14/2024
 ms.author: henrymbugua
 ms.manager: celested
 ---

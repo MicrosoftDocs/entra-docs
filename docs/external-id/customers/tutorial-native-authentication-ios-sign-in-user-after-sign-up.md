@@ -17,6 +17,8 @@ ms.custom: developer
 
 # Tutorial: Sign in user automatically after sign-up in an iOS/macOS app
 
+[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
+
 This tutorial demonstrates how to sign in user automatically after sign-up in an iOS/macOS app by using native authentication. 
 
 In this tutorial, you learn how to:  

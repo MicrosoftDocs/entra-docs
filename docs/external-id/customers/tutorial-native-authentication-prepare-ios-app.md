@@ -17,6 +17,8 @@ ms.custom: developer
 
 # Tutorial: Prepare your iOS/macOS app for native authentication
 
+[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
+
 This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your iOS Swift app.
 
 In this tutorial, you learn how to:
