@@ -44,6 +44,7 @@ The following section provides examples of custom alerts that customers can crea
 | Multitenant collaboration | Alert an IT admin when cross-tenant sync is enabled |
 | Multitenant collaboration | Alert an IT admin when a cross-tenant access policy is enabled |
 | Privileged Identity Management | Alert an IT admin when PIM alerts are disabled. |
+| Privileged Identity Management | Alert an IT admin when a role is granted outside of PIM.|
 | Provisioning | Alert an IT admin when there is a spike in provisioning failures over a 24-hour period. |
 | Provisioning| Alert an IT admin when someone starts, stops, disables, restarts, or deletes a provisioning configuration.|
 
