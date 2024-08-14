@@ -68,9 +68,9 @@ To build user attributes in the Android SDK:
         }  
      ```
 
-### [iOS (Swift)](#tab/ios-swift)
+### [iOS/macOS (Swift)](#tab/ios-macos-swift)
 
-To build user attributes in the iOS MSAL SDK:
+To build user attributes in the iOS/macOS MSAL SDK:
 
  - Identify the user attributes that you want to build, then create a dictionary variable, where:
     - the `key` is the programmable name of the user attribute, as a string. The programmable name can be for built-in or custom attribute. 
@@ -109,5 +109,5 @@ To learn more about the programmable names of user profile attributes, see the [
 ## Related content
 
 - [Native authentication challenge types](concept-native-authentication-challenge-types.md)
-- [iOS native authentication tutorials](tutorial-native-authentication-prepare-ios-app.md)
+- [iOS/macOS native authentication tutorials](tutorial-native-authentication-prepare-ios-app.md)
 - [Android native authentication tutorials](tutorial-native-authentication-prepare-android-app.md) 
