@@ -168,7 +168,7 @@ The secure internet access based on business needs scenario describes these 
 
 The step-by-step guidance focuses on Microsoft Entra Internet Access, Microsoft Entra ID Governance, Conditional Access, and Global Secure Access. For more information, see [Microsoft Entra deployment scenario - Secure internet access](~/architecture/deployment-scenario-internet-access.md).  
 
-## Related topics 
+## Related content 
 
 - [Microsoft Entra Suite now generally available - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-suite-now-generally-available/ba-p/2520427) 
 - [Microsoft Entra licensing - Microsoft Entra | Microsoft Learn](licensing.md) 
