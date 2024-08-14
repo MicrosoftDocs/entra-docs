@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 08/08/2024
+ms.date: 08/14/2024
 ms.author: barclayn
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
@@ -18,9 +18,12 @@ ms.collection: M365-identity-device-management
 
 Welcome to the Microsoft Entra Suite trial user guide. Make the most of your free trial by discovering the robust and comprehensive capabilities of [Microsoft Entra](what-is-entra.md).
 
+> [!Tip]
+> Save this trial user guide to your browser favorites. When links in the trial user guide take you away from this location, it'll be easier to return to this guide to continue.
+
 ## What is the Microsoft Entra Suite? 
 
-[Microsoft Entra Suite](https://microsoft.com/security/blog/2024/07/11/simplified-zero-trust-security-with-the-microsoft-entra-suite-and-unified-security-operations-platform-now-generally-available/) is the product SKU for identity and network access solutions from Microsoft. It delivers a complete cloud-based solution for workforce access. 
+[Microsoft Entra Suite](https://microsoft.com/security/blog/2024/07/11/simplified-zero-trust-security-with-the-microsoft-entra-suite-and-unified-security-operations-platform-now-generally-available/) is the product edition for identity and network access solutions from Microsoft. It delivers a complete cloud-based solution for workforce access. 
 
 With Microsoft Entra Suite, you can protect and verify any identity, provide secure access from anywhere to any app or resource (cloud or on-premises), keep users and organizations safe by filtering out malicious content, and ensure that only the right identities have access to your organization's apps and resources.
 
@@ -31,9 +34,9 @@ With Microsoft Entra Suite, you can protect and verify any identity, provide sec
 - Microsoft Entra ID P1
 - Any product that includes Microsoft Entra ID P1 (for example, Microsoft 365 Business Premium/E3/F1/F3 or Enterprise Mobility + Security E3)
 
-When you start a trial or purchase Microsoft Entra Suite, your first step is to determine which licensing option is best suited for your organization. For more information see [What are the Microsoft Entra ID licenses?](whatis.md#what-are-the-microsoft-entra-id-licenses)
+When you start a trial or purchase Microsoft Entra Suite, your first step is to determine which licensing option is best suited for your organization. For more information, see [What are the Microsoft Entra ID licenses?](whatis.md#what-are-the-microsoft-entra-id-licenses)
 
-## What's included in the Microsoft Entra Suite trial? 
+## What is included in the Microsoft Entra Suite trial? 
 
 The Microsoft Entra Suite includes the following features: 
 
@@ -41,25 +44,85 @@ The Microsoft Entra Suite includes the following features:
 
 [**Microsoft Entra ID Governance**](~/id-governance/identity-governance-overview.md): Manages user identities, access rights, and entitlements across IT environments to ensure proper access controls, mitigate risk, and maintain compliance with regulatory requirements. 
 
-[**Microsoft Entra Internet Access**](~/global-secure-access/concept-internet-access.md): Secures global access to all Internet, SaaS, and Microsoft 365 apps and resources while protecting organizations against internet threats, malicious network traffic, and unsafe or non-compliant content with an identity-centric Secure Web Gateway (SWG). 
+[**Microsoft Entra Internet Access**](~/global-secure-access/concept-internet-access.md): Secures global access to all Internet, SaaS, and Microsoft 365 apps and resources while protecting organizations against internet threats, malicious network traffic, and unsafe or noncompliant content with an identity-centric Secure Web Gateway (SWG). 
 
 [**Microsoft Entra Private Access**](~/global-secure-access/concept-private-access.md): Removes the risk and operational complexity of legacy VPNs while boosting user productivity. Quickly and securely connects remote users from any device and any global network to private apps—on-premises, across clouds, and anywhere in between. 
 
 [**Microsoft Entra Verified ID**](~/verified-id/decentralized-identifier-overview.md): Issues and verifies workplace credentials, citizenship, education status, certifications, or any unique identity attributes in a global ecosystem designed for more secure interaction between people, organizations, and devices.
 
-### Microsoft Entra Suite feature guides
+## Microsoft Entra Suite feature guides
 
-To help you get the most out of your Microsoft Entra Suite trial, we recommend you review the following how-to guides to help ensure a more secure environment for your organization:
+To help you get the most out of your Microsoft Entra Suite trial, we recommend you review the following how-to guides to help ensure a more secure environment for your organization. 
 
-- [Deploy identify protection](~/id-protection/how-to-deploy-identity-protection.md): Deploy security controls to enhance identification and protection of risky users.  
-- [Enact access reviews](~/id-governance/deploy-access-reviews.md): Conduct an access review to ensure appropriate system access within your enterprise. 
-- [Utilize internet access provisions](~/architecture/sse-deployment-guide-internet-access.md): Protect internet traffic with secure web gateways.
-- [Enable private access gateways](~/architecture/sse-deployment-guide-private-access.md): Depreciate costly VPN systems through Quick Access.
-- [Onboard customer workflow portal](~/id-governance/tutorial-onboard-custom-workflow-portal.md): Automate employee onboarding with lifecycle workflows. 
+The following how-to guides are expanded upon in this section: 
+
+- [Step 1: Deploy identify protection](#step-1-deploy-identity-protection): Deploy security controls to enhance identification and protection of risky users.  
+- [Step 2: Enact access reviews](#step-2-enact-access-reviews): Conduct an access review to ensure appropriate system access within your enterprise. 
+- [Step 3: Utilize internet access provisions](#step-3-utilize-internet-access-provisions): Protect internet traffic with secure web gateways.
+- [Step 4: Enable private access gateways](#step-4-enable-private-access-gateways): Depreciate costly VPN systems through Quick Access.
+- [Step 5: Onboard customer workflow portal](#step-5-onboard-customer-workflow-portal): Automate employee onboarding with lifecycle workflows. 
+
+Each of the following sections includes the process steps to take for each feature. Each of these steps is fully documented in a separate how-to guide that you can access by clicking the link at the end of each step.  
+
+### Step 1: Deploy identity protection 
+
+Microsoft Entra ID Protection detects identity-based risks, reports them, and allows administrators to investigate and remediate these risks to keep organizations safe and secure. Risk data can be further fed into tools like Conditional Access to make access decisions or fed to a security information and event management (SIEM) tool for further analysis and investigation.
+
+1. Review existing reports
+1. Plan for Conditional Access risk policies
+1. Configure your policies 
+1. Monitoring and continuous operational needs
+
+To view the complete how-to guide, see [Deploy identify protection](~/id-protection/how-to-deploy-identity-protection.md).
+
+### Step 2: Enact access reviews
+
+Microsoft Entra access reviews are a Microsoft Entra ID Governance capability that help your organization keep the Enterprise more secure by managing its resource access lifecycle. The other capabilities are entitlement management, Privileged Identity Management (PIM), lifecycle workflows, provisioning, and terms of use.
+
+1. Plan access reviews for access packages, groups, and applications 
+1. Plan review of Microsoft Entra ID and Azure resource roles 
+1. Deploy access reviews 
+1. Use the Access Reviews API 
+1. Monitor access reviews 
+
+To view the complete how-to guide, see [Enact access reviews](~/id-governance/deploy-access-reviews.md).
+
+### Step 3: Utilize Internet access provisions 
+
+Microsoft Entra Internet Access protects enterprise users and managed devices from malicious internet traffic and malware infection concerns all companies. Using the Secure Web Gateway functionality enables you to block traffic based on web categories, and a fully qualified domain name (FQDN), by integrating with Microsoft Entra Conditional Access.
+
+1. Deploy and test Microsoft Entra Internet Access 
+1. Create a baseline policy applying to all internet access traffic routed through the service 
+1. Block a group from accessing websites based on category
+1. Block a group from accessing websites based on FQDN 
+1. Allow a user to access a blocked website 
+
+To view the complete how-to guide, see [Utilize internet access provisions](~/architecture/sse-deployment-guide-internet-access.md).
+
+### Step 4: Enable Private Access gateways 
+
+Microsoft Entra Private Access converges network and identity access controls so you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. 
+
+1. Deploy and test Microsoft Entra Private Access 
+1. Apply Conditional Access 
+1. Control access by multiple users to multiple apps 
+
+To view the complete how-to guide, see [Enable private access gateways](~/architecture/sse-deployment-guide-private-access.md).
+
+### Step 5: Onboard customer workflow portal 
+
+The Microsoft Entra admin portal enables you to automate prehire tasks with Lifecycle workflows through an HR provisioning process. Provisioning creates an identity in a target system based on certain conditions. Deprovisioning removes the identity from the target system, when conditions are no longer met. These processes are part of identity lifecycle management.
+
+1. Create a workflow using prehire template 
+1. Run the workflow 
+1. Check tasks and workflow status 
+1. Enable the workflow schedule 
+
+To view the complete how-to guide, see [Onboard customer workflow portal](~/id-governance/tutorial-onboard-custom-workflow-portal.md).
 
 ## Customer scenarios for using the Microsoft Entra Suite trial 
 
-The following deployment scenarios provide detailed guidance on how to combine and test all five Microsoft Entra Suite products. Each scenario below includes a link to the step-by-step instructions available on *learn.microsoft.com*.  
+The following deployment scenarios provide detailed guidance on how to combine and test all five Microsoft Entra Suite products. Each scenario in this section includes separate step-by-step instructions that you can access by clicking the link at the end of each scenario.
 
 To get the most out of your trial, get started by walking through the following user scenarios. 
 
@@ -67,15 +130,15 @@ To get the most out of your trial, get started by walking through the following 
 1. [Scenario: Modernize remote access to on-premises apps with MFA per app](#scenario-2-modernize-remote-access-to-on-premises-apps-with-mfa-per-app) 
 1. [Scenario: Secure internet access based on business needs](#scenario-3-secure-internet-access-based-on-business-needs) 
 
-During your Microsoft Entra Suite’s trial period, be sure to take advantage of the *better together* security strategy by implementing automated user onboarding and lifecycle management, modernizing from traditional VPN to on-premises resources with multifactor authentication (MFA) all the way down to the app level, and securing internet access based on the rules of your business.  
+During your Microsoft Entra Suite’s trial period, be sure for taking advantage of the better together security strategy by implementing automated user onboarding and lifecycle management, modernizing from traditional VPN to on-premises resources with multifactor authentication (MFA) all the way down to the app level, and securing internet access based on the rules of your business.  
 
 The following table shows which of the five Microsoft Entra Suite products are covered in each scenario.
 
 | Customer scenario     | Entra ID Governance | Entra ID Protection | Entra Verified ID | Entra Internet Access | Entra Private Access |
 |------------------------|---------------------|---------------------|-------------------|-----------------------|----------------------|
 |1 – Automate user onboarding and lifecycle with access to all apps | Included            | Included            | Included          |                       | Included             |
-|2 - Modernize traditional VPN to on-premises resources with MFA per app  | Included            | Included            |                   |                       | Included             |
-|3 - Secure internet access based on business rules  | Included            | Included            |                   | Included              |                      |
+|2 – Modernize traditional VPN to on-premises resources with MFA per app  | Included            | Included            |                   |                       | Included             |
+|3 – Secure internet access based on business rules  | Included            | Included            |                   | Included              |                      |
 
 ### Scenario 1: Automate user onboarding and lifecycle with access to all apps 
 
@@ -88,9 +151,9 @@ The step-by-step guidance focuses on Microsoft Entra Verified ID, Microsoft Entr
 
 ### Scenario 2: Modernize remote access to on-premises apps with MFA per app 
 
-The modernize remote access to on-premises apps with MFA per app scenarios describe these goals: 
+The modernized remote access to on-premises apps with MFA per app scenarios describe these goals: 
 
-- Upgrade existing VPN to a scalable cloud-based solution that helps to move towards Secure Access Service Edge (SASE). 
+- Upgrade existing VPN to a scalable cloud-based solution that helps to move towards Secure Access Service Microsoft Edge (SASE). 
 - Resolve issues where business application access relies on corporate network connectivity. 
 
 The step-by-step guidance focuses on Microsoft Entra Private Access, Microsoft Entra ID Protection, and Microsoft Entra ID Governance. For more information, see [Microsoft Entra deployment scenario - Modernize remote access](~/architecture/deployment-scenario-remote-access.md).  
@@ -105,7 +168,7 @@ The secure internet access based on business needs scenario describes these 
 
 The step-by-step guidance focuses on Microsoft Entra Internet Access, Microsoft Entra ID Governance, Conditional Access, and Global Secure Access. For more information, see [Microsoft Entra deployment scenario - Secure internet access](~/architecture/deployment-scenario-internet-access.md).  
 
-## Additional resources 
+## Related topics 
 
 - [Microsoft Entra Suite now generally available - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-suite-now-generally-available/ba-p/2520427) 
 - [Microsoft Entra licensing - Microsoft Entra | Microsoft Learn](licensing.md) 
