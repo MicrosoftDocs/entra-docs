@@ -87,21 +87,21 @@ You also need to synchronize your sensitivity labels to Microsoft Entra ID. For 
 
 If you are performing these M365 operations from 21Vianet:
 
-- Register a Microsoft Entra ID application in Microsoft Entra ID.
-- Grant your application  API permissions to access Microsoft Graph including ```Directory.ReadWriteAll``` and ```Group.ReadWriteAll```, you may need to get tenant admin's explicit consent to grant the application access to Microsft Graph.
-- Generate a client secret. copy the value of newly created client secret in clipboard used to connect to MS Graph;
-- Run PowerShell as administrator:
+1. Register a Microsoft Entra ID application in Microsoft Entra ID.
+1. Grant your application  API permissions to access Microsoft Graph including ```Directory.ReadWriteAll``` and ```Group.ReadWriteAll```, you may need to get tenant admin's explicit consent to grant the application access to Microsft Graph.
+1. Generate a client secret and copy it. You will need the client secret to connect to MS Graph;
+1. Run PowerShell as administrator:
 
-```PowerShell
-$ClientSecretCredential = Get-Credential -Credential```
+    ```PowerShell
+    $ClientSecretCredential = Get-Credential -Credential
+    ```
+     After commands run, you will be prompted to enter a password. The password is the new client secret you copied in earlier step.
 
-"Client id of the newly registered Entra ID application";
+1. Run the following command to get access to MS Graph:
 
-After commands run, you will be prompted to enter a password, which is the new client secret's value just copied in previous step.
-Run the following command to get access to MS Graph:
-
-```PowerShell
-Connect-MgGraph -TenantId "Current tenant id" - ClientSecretCredential $ClientSecretCredential -Environment China```
+    ```PowerShell
+    Connect-MgGraph -TenantId "Current tenant id" - ClientSecretCredential $ClientSecretCredential -Environment China
+    ```
 
 ## Assign a label to a new group in the Microsoft Entra admin center
 
