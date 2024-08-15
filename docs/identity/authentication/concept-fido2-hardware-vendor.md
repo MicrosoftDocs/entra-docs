@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 08/11/2024
+ms.date: 08/14/2024
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -17,7 +17,7 @@ FIDO2 security keys enable phishing-resistant authentication. They can replace w
 In Microsoft Entra ID Authentication methods policy, administrators can enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires extra metadata from FIDO2 security keys that are registered with the tenant. As a vendor, your FIDO2 security key is usable when attestation is enforced, if the following requirements are met.
 
 >[!NOTE]
->Microsoft Entra ID does not support third-party passkey providers on desktop and mobile devices yet.
+>Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
 
 ## Attestation requirements
 
@@ -50,7 +50,7 @@ Microsoft ingests the latest version of the FIDO Alliance MDS every month. There
 The following table lists FIDO2 security key models listed in MDS version 77. These models are eligible for attestation with Microsoft Entra ID. 
 
 |Model|AAGUID|
-|---|---|
+|---|---:|
 |ACS</br>FIDO Authenticator|50a45b0c-80e7-f944-bf29-f552bfa2e048|
 |ACS</br>FIDO Authenticator Card|973446ca-e21c-9a9b-99f5-9b985a67af0f|
 |Allthenticator App</br>Roaming BLE FIDO2 Allthenticator</br>for Windows, Mac, Linux, </br>and Allthenticate door readers|5ca1ab1e-1337-fa57-f1d0-a117e71ca702|
@@ -91,7 +91,6 @@ The following table lists FIDO2 security key models listed in MDS version 77. Th
 |Hyper</br>FIDO Pro|9f77e279-a6e2-4d58-b700-31e5943c6a98|
 |HYPR</br>FIDO2 Authenticator|0076631b-d4a0-427f-5773-0ec71c9e0279|
 |IDmelon</br>Android Authenticator|39a5647e-1853-446c-a1f6-a79bae9f5bc7|
-|IDmelon</br>iOS Authenticator|820d89ed-d65a-409e-85cb-f73f0578f82a|
 |IDmelon</br>iOS Authenticator|820d89ed-d65a-409e-85cb-f73f0578f82a|
 |IDPrime</br>3940 FIDO|b50d5e0a-7f81-4959-9b12-f45407407503|
 |KeyXentic</br>FIDO2 Secp256R1</br>FIDO2 CTAP2 Authenticator|4b3f8944-d4f2-4d21-bb19-764a986ec160|
