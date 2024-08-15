@@ -122,7 +122,9 @@ If you're reviewing access to an application, then before you create the review,
 1. Select **Next: Settings**.
 
 > [!NOTE]
-> When creating an access review, you are able to specify the start date, but the exact start time on this date is automatically determined by the UTC time of the access review creation. For example, if you create an access review at 03:00 UTC on 09/09 that is set to run on 09/12, then the review wil, at its earliest, run on 03:00 UTC on 09/12. Depending on the size of the review the start time may differ by a few hours.
+> When creating an access review, you are able to specify the start date, but the start time may vary a few hours based on system processing. For example, if you create an access review at 03:00 UTC on 09/09 that is set to run on 09/12, then the review will be scheduled to run at 03:00 UTC on the start date, but could be subject to previously mentioned delays.
+
+you are able to specify the start date, but the start time may vary a few hours based on system processing 
 
 ### Next: Settings
 
