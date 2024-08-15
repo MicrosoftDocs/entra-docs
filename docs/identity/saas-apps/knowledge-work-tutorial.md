@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 08/13/2024
 ms.author: jeedes
 
 
@@ -72,7 +72,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<CustomerName>.kwork.cloud/saml`
 
     b. In the **Reply URL** textbox, type the URL:
-    `https://knowledgework-prd.firebaseapp.com/__/auth/handle`
+    `https://auth.kwork.cloud/_auth/saml/callback`
 
     c. In the **Sign on URL** textbox, type a URL using the following pattern:
     `https://<CustomerName>.kwork.cloud/login`

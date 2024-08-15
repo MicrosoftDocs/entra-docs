@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.date: 04/08/2024
+ms.date: 08/13/2024
 ms.author: owinfrey
 ms.reviewer: krbain
 ms.custom: template-tutorial, has-azure-ad-ps-ref
@@ -65,7 +65,7 @@ First we create our employee, Melva Prince.
      "userPrincipalName": "mprince@<your tenant name here>",
      "passwordProfile" : {
        "forceChangePasswordNextSignIn": true,
-       "password": "xWwvJ]6NMw+bWH-d"
+       "password": "<Generated Password>"
      }
    }
    ```
@@ -90,7 +90,7 @@ Next, we create Britta Simon.  This account is used as our manager.
       "userPrincipalName": "bsimon@<your tenant name here>",
       "passwordProfile" : {
         "forceChangePasswordNextSignIn": true,
-        "password": "xWwvJ]6NMw+bWH-d"
+        "password": "<Generated Password>"
       }
     }
     ```

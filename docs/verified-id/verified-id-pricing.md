@@ -1,5 +1,5 @@
 ---
-title: Face Check (Preview) with Microsoft Entra Verified ID pricing
+title: Face Check with Microsoft Entra Verified ID pricing
 description: Learn about Face Check with Microsoft Entra Verified ID billing model. Learn how to enable the Face Check add-on in your tenant by linking your Microsoft Azure subscription.
 ms.service: entra-verified-id
 
@@ -12,10 +12,7 @@ ms.date: 06/19/2024
 
 ---
 
-# Billing model for Face Check (Preview) with Microsoft Entra Verified ID
-
-> [!IMPORTANT]
-> Face Check with Microsoft Verified ID is free to use during the preview period. Billing enforcement will start when the preview period ends.
+# Billing model for Face Check with Microsoft Entra Verified ID
 
 Face Check with Microsoft Entra Verified ID pricing is based on unique Face Check verifications performed by the verifying authority during the billing cycle. There are two options to enable Face Check add-on on a workforce tenant:
 
@@ -26,7 +23,7 @@ Face Check with Microsoft Entra Verified ID pricing is based on unique Face Chec
 In this article, learn about the Face Check billing model and linking your Verified ID authority to an Azure subscription.
 
 > [!IMPORTANT]
-> This article does not contain pricing details. For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+> This article provides information on how the Verified ID service emits billing services on Face Check usage. For the latest information on pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 ## What do I need to do?
 
@@ -39,7 +36,16 @@ To take advantage of the consumptive billing, your Verified ID authority must be
 
 ## About monthly Face Check verifications billing
 
-In your Microsoft Verified ID, you can verify credentials from issuer authorities that you trust. In addition with Face Check, your organization can perform high-assurance verifications securely, simply, and at scale by performing facial matching between a user’s real-time selfie and a photo. Verified ID generates individual billing events for each unique verification performed by the platform. Whether that verification succeeds or fails.
+In your Microsoft Verified ID, you can verify credentials from issuer authorities that you trust. In addition with Face Check, your organization can perform high-assurance verifications securely, simply, and at scale by performing facial matching between a user’s real-time selfie and a photo. 
+
+Verified ID generates individual billing events for each unique verification performed by the platform. Whether that verification succeeds or fails. The following matrix provides further clarity on Face Check verification scenarios that are billed:
+
+|Face Check Verification scenario  |Emits billing event </br>(yes/no)  |
+|---------|---------|
+| Verification request fails after reading QR Code     | No|
+| Verification request returns service error     |    No     |
+| Verification request returns failed face matching     |    Yes     |
+| Verification request returns any face matching score     |    Yes     |
 
 ## Link your Verified ID authority to a subscription
 
