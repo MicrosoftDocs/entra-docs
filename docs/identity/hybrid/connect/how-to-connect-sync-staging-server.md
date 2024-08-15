@@ -111,7 +111,7 @@ You may need to perform a failover of the Sync Servers for several reasons, such
 
 - One currently active Microsoft Entra Connect Sync Server
 - One staging Microsoft Entra Connect Sync Server
-- The staging server have synchronization scheduler enabled and has synchronized with Microsoft Entra ID recently
+- The staging server has the synchronization scheduler enabled and has synchronized with Microsoft Entra ID recently
 - In case of any updates in synchronization rules or in sync scope, run an initial sync cycle
 - Confirm that your Microsoft Entra Connect Sync Server is configured to [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-deletes.md) 
 - [Verify ](#verify)the pending exports and confirm that there aren't significant updates, and such updates are expected
@@ -142,7 +142,7 @@ We need to ensure that only one Sync Server is syncing changes at any given time
  > [!div class="mx-imgBorder"]
  > ![Screenshot shows Ready to Configure screen in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-config.png) 
 
-Since the server is in staging mode, it won't write changes to Microsoft Entra ID, but retain any changes to the AD in its Connector Space, ready to write them. 
+Since the server is in staging mode, it won't write changes to Microsoft Entra ID, but retains any changes to the AD in its Connector Space, ready to write them. 
 It is recommended to leave the sync process on for the server in Staging Mode, so if it becomes active, it will quickly take over and won't have to do a large sync to catch up to the current state of the Active Directory / Microsoft Entra objects in scope.
 
 5. After selecting to start the sync process and clicking Configure, the Microsoft Entra Connect server is configured into Staging Mode. 
@@ -177,7 +177,7 @@ We can now move our Staging Sync Server to Active mode and actively sync changes
 
 2. Sign into Microsoft Entra ID, then go to the Staging Mode screen.
 
- Untick the box for Staging Mode and click Next 
+ Untick the box for Staging Mode and click Next. 
 
  > [!div class="mx-imgBorder"]
  > ![Screenshot shows Staging Mode configuration in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-staging-mode.png) 
@@ -219,7 +219,7 @@ If you don't use the built-in SQL Express database, then you should also review 
 
 ### Rebuild when needed
 
-A viable strategy is to plan for a server rebuild when needed. Usually, installing the sync engine and do the initial import and sync can be completed within a few hours. If there'sn’t a spare server available, it is possible to temporarily use a domain controller to host the sync engine.
+A viable strategy is to plan for a server rebuild when needed. Usually, installing the sync engine and do the initial import and sync can be completed within a few hours. If there isn’t a spare server available, it is possible to temporarily use a domain controller to host the sync engine.
 
 The sync engine server doesn't store any state about the objects so the database can be rebuilt from the data in Active Directory and Microsoft Entra ID. The **sourceAnchor** attribute is used to join the objects from on-premises and the cloud. If you rebuild the server with existing objects on-premises and the cloud, then the sync engine matches those objects together again on reinstallation. The things you need to document and save are the configuration changes made to the server, such as filtering and synchronization rules. These custom configurations must be reapplied before you start synchronizing.
 

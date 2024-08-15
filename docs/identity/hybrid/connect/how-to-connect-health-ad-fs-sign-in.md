@@ -81,7 +81,7 @@ The sign-in report supports sign-ins through O-Auth, WS-Fed, SAML, and WS-Trust 
 ***How are different types of sign-ins shown in the sign-in report?***
 If a Seamless SSO sign-in is performed, there is one row for the sign-in with one correlation ID.
 If a single factor authentication is performed, two rows are populated with the same correlation ID, but with two different authentication methods (that is, Forms, SSO).
-In cases of Multi Factor Authentication, there are three rows with a shared correlation ID and three corresponding Authentication Methods (that is, Forms, AzureMFA, Multifactor). In this particular example, the multifactor in this case shows that the SSO has an MFA.
+In cases of multifactor authentication, there are three rows with a shared correlation ID and three corresponding Authentication Methods (that is, Forms, Microsoft Entra multifactor authentication, Multifactor). In this particular example, the multifactor in this case shows that the SSO has an MFA.
 
 ***What are the errors that I can see in the report?***
 For a full list of AD FS related errors that are populated in the sign-in report and descriptions, visit [AD FS Help Error Code Reference](https://adfshelp.microsoft.com/References/ConnectHealthErrorCodeReference)
@@ -95,7 +95,7 @@ fields are “00000000-0000-0000-0000-000000000000” and the “Sign-in Identif
 The Microsoft Entra Connect Health agent for AD FS correlates event IDs from AD FS dependent on server version. The events are available on the Security Log of the AD FS servers. 
 
 ***Why do I see NotSet or NotApplicable in the Application ID/Name for some AD FS sign-ins?***
-The AD FS sign-in report displays OAuth Ids in the Application ID field for OAuth sign-ins. In the WS-Fed, WS-Trust sign-in scenarios, the application ID are NotSet or NotApplicable and the Resource IDs and Relying Party identifiers are present in the Resource ID field.
+The AD FS sign-in report displays OAuth Ids in the Application ID field for OAuth sign-ins. In the WS-Fed, WS-Trust sign-in scenarios, the application ID is NotSet or NotApplicable and the Resource IDs and Relying Party identifiers are present in the Resource ID field.
 
 ***Why do I see Resource ID and Resource Name fields as "Not Set"?***
 The ResourceId/Name fields are "NotSet" in some error cases, such as "Username and Password incorrect" and in WSTrust based failed sign-ins.
