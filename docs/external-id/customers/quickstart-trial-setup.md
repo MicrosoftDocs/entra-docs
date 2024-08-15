@@ -64,9 +64,6 @@ Once your external tenant free trial is ready, the next step is to personalize y
 
 You can upgrade your 30 days free trial of a tenant with external configurations to unlock the full set of features. 
 
-   > [!NOTE]
-   > During the preview period, linking a subscription to your trial tenant will not result in any charges. However, prices will apply once this product is generally available (GA).
-
 ### Upgrade your free trial with a new Azure subscription
 
 If you don't have any Azure subscriptions, follow the steps below.
