@@ -3097,6 +3097,7 @@
   "Azure Stack HCI VM Contributor": "874d1c73-6003-4e60-a13a-cb31ea190a85",
   "Azure Stack HCI VM Reader": "4b3fe76c-f777-4d24-a2d7-b027b0f7b273",
   "Azure Stack Registration Owner": "6f12a6df-dd06-4f3e-bcb1-ce8be600526a",
+  "Windows Cloud Login" : "270efc09-cd0d-444b-a71f-39af4910ec45",
   "App proxy service": "55747057-9b5d-4bd4-b387-abf52a8bd489",
   "Cosmos DB Built-in Data Reader": "00000000-0000-0000-0000-000000000001",
   "Cosmos DB Built-in Data Contributor": "00000000-0000-0000-0000-000000000002",
