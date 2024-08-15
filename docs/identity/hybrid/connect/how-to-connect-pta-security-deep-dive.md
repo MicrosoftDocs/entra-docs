@@ -89,21 +89,22 @@ The authentication agents use the following steps to register themselves with Mi
 
  1. Microsoft Entra first requests that a Hybrid Identity Administrator sign in to Microsoft Entra ID with their credentials. During sign-in, the authentication agent acquires an access token that it can use on behalf of the user.
  2. The authentication agent then generates a key pair: a public key and a private key.
-  - The key pair is generated through standard RSA 2,048-bit encryption.
-  - The private key stays on the on-premises server where the authentication agent resides.
+   - The key pair is generated through standard RSA 2,048-bit encryption.
+   - The private key stays on the on-premises server where the authentication agent resides.
  3. The authentication agent makes a registration request to Microsoft Entra ID over HTTPS, with the following components included in the request:
-  - The access token that the agent acquired.
-  - The public key that was generated.
-  - A Certificate Signing Request (*CSR* or *Certificate Request*). This request applies for a digital identity certificate, with Microsoft Entra ID as its certificate authority (CA).
+   - The access token that the agent acquired.
+   - The public key that was generated.
+   - A Certificate Signing Request (*CSR* or *Certificate Request*). This request applies for a digital identity certificate, with Microsoft Entra ID as its certificate authority (CA).
  4. Microsoft Entra ID validates the access token in the registration request and verifies that the request came from a Hybrid Identity Administrator.
  5. Microsoft Entra ID then signs a digital identity certificate and sends it back to the authentication agent.
-  - The root CA in Microsoft Entra ID is used to sign the certificate.
+   - The root CA in Microsoft Entra ID is used to sign the certificate.
 
    > [!NOTE]
    > This CA is *not* in the Windows Trusted Root Certificate Authorities store.
-  - The CA is used only by the pass-through authentication feature. The CA is used only to sign CSRs during the authentication agent registration.
-  - No other Microsoft Entra service uses this CA.
-  - The certificate’s subject (also called *Distinguished Name* or *DN*) is set to your tenant ID. This DN is a GUID that uniquely identifies your tenant. This DN scopes the certificate for use only with your tenant.
+  
+   - The CA is used only by the pass-through authentication feature. The CA is used only to sign CSRs during the authentication agent registration.
+   - No other Microsoft Entra service uses this CA.
+   - The certificate’s subject (also called *Distinguished Name* or *DN*) is set to your tenant ID. This DN is a GUID that uniquely identifies your tenant. This DN scopes the certificate for use only with your tenant.
  6. Microsoft Entra ID stores the public key of the authentication agent in a database in Azure SQL Database. Only Microsoft Entra ID can access the database.
  7. The certificate that's issued is stored on the on-premises server in the Windows certificate store (specifically, in [CERT_SYSTEM_STORE_LOCAL_MACHINE](/windows/win32/seccrypto/system-store-locations#CERT_SYSTEM_STORE_LOCAL_MACHINE)). The certificate is used by both the authentication agent and the Updater application.
 
@@ -143,8 +144,8 @@ How pass-through authentication handles a user sign-in request:
  9. Because the initialized authentication agents are persistently connected to the Service Bus queue, one of the available authentication agents retrieves the password validation request.
  10. The authentication agent uses an identifier to locate the encrypted password value that's specific to its public key. It decrypts the public key by using its private key.
  11. The authentication agent attempts to validate the username and the password against Windows Server AD by using the [Win32 LogonUser API](/windows/win32/api/winbase/nf-winbase-logonusera) with the `dwLogonType` parameter set to `LOGON32_LOGON_NETWORK`.
-  - This API is the same API that's used by Active Directory Federation Services (AD FS) to sign in users in a federated sign-in scenario.
-  - This API relies on the standard resolution process in Windows Server to locate the domain controller.
+   - This API is the same API that's used by Active Directory Federation Services (AD FS) to sign in users in a federated sign-in scenario.
+   - This API relies on the standard resolution process in Windows Server to locate the domain controller.
  12. The authentication agent receives the result from Windows Server AD, such as success, username or password is incorrect, or password is expired.
    > [!NOTE]
    > If the authentication agent fails during the sign-in process, the entire sign-in request is dropped. Sign-in requests aren't handed off from one on-premises authentication agent to another on-premises authentication agent. These agents communicate only with the cloud, and not with each other.
@@ -165,17 +166,17 @@ To renew an authentication agent's trust with Microsoft Entra ID:
 
  1. The authentication agent pings Microsoft Entra every few hours to check if it's time to renew its certificate. The certificate is renewed 30 days before it expires. This check is done over a mutually authenticated HTTPS channel and uses the same certificate that was issued during registration.
  2. If the service indicates that it's time to renew, the authentication agent generates a new key pair: a public key and a private key.
-  - These keys are generated through standard RSA 2,048-bit encryption.
-  - The private key never leaves the on-premises server.
+   - These keys are generated through standard RSA 2,048-bit encryption.
+   - The private key never leaves the on-premises server.
  3. The authentication agent then makes a certificate renewal request to Microsoft Entra ID over HTTPS. The following components are included in the request:
-  - The existing certificate that's retrieved from the CERT_SYSTEM_STORE_LOCAL_MACHINE location in the Windows certificate store. No Global Administrator is involved in this procedure, so no access token is required for a Global Administrator.
-  - The public key generated in step 2.
-  - A CSR. This request applies for a new digital identity certificate, with Microsoft Entra ID as its CA.
+   - The existing certificate that's retrieved from the CERT_SYSTEM_STORE_LOCAL_MACHINE location in the Windows certificate store. No Global Administrator is involved in this procedure, so no access token is required for a Global Administrator.
+   - The public key generated in step 2.
+   - A CSR. This request applies for a new digital identity certificate, with Microsoft Entra ID as its CA.
  4. Microsoft Entra ID validates the existing certificate in the certificate renewal request. Then it verifies that the request came from an authentication agent that's registered on your tenant. 
  5. If the existing certificate is still valid, Microsoft Entra ID signs a new digital identity certificate and issues the new certificate back to the authentication agent.
  6. If the existing certificate has expired, Microsoft Entra ID deletes the authentication agent from your tenant’s list of registered authentication agents. Then a Hybrid Identity Administrator must manually install and register a new authentication agent.
-  - Use the Microsoft Entra ID root CA to sign the certificate.
-  - Set the certificate’s DN to your tenant ID, a GUID that uniquely identifies your tenant. The DN scopes the certificate to your tenant only.
+   - Use the Microsoft Entra ID root CA to sign the certificate.
+   - Set the certificate’s DN to your tenant ID, a GUID that uniquely identifies your tenant. The DN scopes the certificate to your tenant only.
  7. Microsoft Entra ID stores the new public key of the authentication agent in a database in Azure SQL Database that only it has access to. It also invalidates the old public key associated with the authentication agent.
  8. The new certificate (issued in step 5) is then stored on the server in the Windows certificate store (specifically, in the [CERT_SYSTEM_STORE_CURRENT_USER](/windows/win32/seccrypto/system-store-locations#CERT_SYSTEM_STORE_CURRENT_USER) location).
 
