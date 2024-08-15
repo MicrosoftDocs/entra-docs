@@ -55,7 +55,8 @@ Before you can design import and export workflows, you need to create a template
  6. On the endpoints and operations page ensure that the BAPIs are displayed and click Finish 
  >[!NOTE]
  >if you see more than one endpoint, then you have both SOAP 1.2 and SOAP 1.1 bindings enabled. This will cause the connector to fail. Modify your binding definition in SOAMANAGER and keep only one. Then re-add a web service. 
-  :::image type="content" source="media/sap-template/sap-template-45.png" alt-text="Screenshot of BAPIs." lightbox="media/sap-template/sap-template-45.png":::
+ 
+ :::image type="content" source="media/sap-template/sap-template-45.png" alt-text="Screenshot of BAPIs." lightbox="media/sap-template/sap-template-45.png":::
  
  7. Save the project into C:\Program Files\Microsoft ECMA2Host\Service\ECMA folder. 
  8. Click on Object Types tab and choose to add User object type. Click Ok. 
