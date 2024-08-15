@@ -42,7 +42,7 @@ The failed sign-in activity client IP addresses are aggregated through Web Appli
 
 The report provides the following information:
 
- :::image type="content" source="cloud-sync/media/how-to-connect-health-adfs/report4a.png" alt-text="Screenshot that shows a Risky IP report with column headings highlighted." lightbox="cloud-sync/media/how-to-connect-health-adfs/report4a.png":::
+ :::image type="content" source="./cloud-sync/media/how-to-connect-health-adfs/report4a.png" alt-text="Screenshot that shows a Risky IP report with column headings highlighted." lightbox="./cloud-sync/media/how-to-connect-health-adfs/report4a.png":::
 
 | Report&nbsp;item | Description |
 | ------- | ----------- |
@@ -56,14 +56,14 @@ The report provides the following information:
 For example, the following report item indicates that during the 6 PM to 7 PM window on February 28, 2018, the IP address *104.2XX.2XX.9* had no bad password errors and 284 extranet lockout errors. Fourteen unique users were affected within the criteria. The activity event exceeded the designated report's hourly threshold. 
 
 
- :::image type="content" source="cloud-sync/media/how-to-connect-health-adfs/report4b.png" alt-text="Screenshot that shows an example of a Risky IP report entry." lightbox="cloud-sync/media/how-to-connect-health-adfs/report4b.png":::
+ :::image type="content" source="./cloud-sync/media/how-to-connect-health-adfs/report4b.png" alt-text="Screenshot that shows an example of a Risky IP report entry." lightbox="./cloud-sync/media/how-to-connect-health-adfs/report4b.png":::
 
 > [!NOTE]
 > - Only activities that exceed the designated threshold are displayed in the report list. 
 > - This report tracks the past 30 days at most.
 > - This alert report doesn't show Exchange IP addresses or private IP addresses. They are still included in the export list. 
 
- :::image type="content" source="cloud-sync/media/how-to-connect-health-adfs/report4c.png" alt-text="Screenshot that shows the Risky IP report with the Download, Notification Settings, and Threshold Settings buttons highlighted." lightbox="cloud-sync/media/how-to-connect-health-adfs/report4c.png":::
+ :::image type="content" source="./cloud-sync/media/how-to-connect-health-adfs/report4c.png" alt-text="Screenshot that shows the Risky IP report with the Download, Notification Settings, and Threshold Settings buttons highlighted." lightbox="./cloud-sync/media/how-to-connect-health-adfs/report4c.png":::
 
 ## Load balancer IP addresses in the list
 
