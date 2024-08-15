@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 08/15/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
