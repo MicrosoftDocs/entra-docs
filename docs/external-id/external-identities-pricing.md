@@ -5,7 +5,7 @@ description: Learn about Microsoft Entra External ID monthly active users (MAU) 
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 07/24/2024
+ms.date: 08/14/2024
 
 ms.author: mimart
 author: msmimart
@@ -21,34 +21,20 @@ ms.collection: M365-identity-device-management
 
 ## External ID pricing and licensing
 
-Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique external users with authentication activity within a calendar month. This billing model applies to all External ID scenarios, including B2B collaboration in workforce tenants and identity and access management in external tenants. It also applies to [Azure AD B2C tenants](/azure/active-directory-b2c/billing). To determine the total number of MAUs, we combine MAUs from all your tenants (both External ID and Azure AD B2C) that are linked to the same subscription. MAU billing helps you reduce costs by offering a free tier and flexible, predictable pricing. You can get started for free and only pay for what you use as your business grows. 
+Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique external users with authentication activity within a calendar month. This billing model applies to all External ID scenarios, including B2B collaboration in workforce tenants and identity and access management in external tenants. It also applies to [Azure AD B2C tenants](/azure/active-directory-b2c/billing). 
 
-## Core offer
+To determine the total number of MAUs, we combine MAUs from all your tenants (both External ID and Azure AD B2C) that are linked to the same subscription. MAU billing helps you reduce costs by offering a free tier and flexible, predictable pricing. You can get started for free and only pay for what you use as your business grows.
 
-The Microsoft Entra External ID core offering is free for the first 50,000 MAU, and additional active users are priced at $0.03 USD per MAU (with a launch discounted price of $0.01625 USD per MAU until May 2025).
-
-|MAU  | Core offer pricing        |
-|------------|---------|
-|1-50 K MAU   |External tenants: Free<br/>Workforce tenants: Free for both Premium P1 and Premium P2 features        |
-|50 K+ MAU    |Discounted rate: $0.01625 USD per MAU until May 2025<br/>Standard rate: $0.03 USD per MAU |
-
-## Premium add-ons
-
-Certain External ID premium features are available as add-ons. These premium features don't have a free tier.
-
-|Premium add-on feature  | Add-on pricing          |
-|---------------------|------------------|
-|ID Governance        |Free while the ID Governance feature is in preview for External ID<br/>Standard rate: $0.75 USD per MAU
-
-### Phone authentication via SMS
-
-Phone authentication via SMS is currently available in workforce configurations. Once it is supported in external configurations, it will be offered as an add-on for External ID. We will release pricing details soon.
+> [!IMPORTANT]
+> This article does not contain pricing details. For the latest information about usage billing and pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing) and our [Microsoft Entra External ID frequently asked questions](/customers/faq-customers.md).
 
 <a name='link-your-azure-ad-tenant-to-a-subscription'></a>
 
 ## Link your Microsoft Entra tenant to a subscription
 
 Microsoft Entra tenants, both workforce and external, must be linked to a resource group within an Azure subscription for proper billing and access to features. To link your tenant to a subscription, follow these steps.
+
+### To link a workforce tenant to a subscription
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that's assigned at least the Contributor role within the subscription or a resource group within the subscription.
 
@@ -68,7 +54,25 @@ Microsoft Entra tenants, both workforce and external, must be linked to a resour
 
 After you complete these steps, your Azure subscription is billed based on your Azure Direct or Enterprise Agreement details, if applicable.
 
-### What if I can't find a subscription?
+### To link an external tenant to a subscription
+
+Depending on how you created your external tenant, it might already be linked to a subscription. To find out, follow these steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
+
+1. Make sure your external tenant is selected: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. On the **Portal settings | Directories + subscriptions** page, find your external tenant in the **Directory name** list, and then select **Switch**.
+
+1. Select **Home** and find the **Billing** section:
+
+   - If your tenant is linked to a subscription, the subscription ID will appear in this section. You can select the ID to view subscription details.
+   
+       :::image type="content" source="media/external-identities-pricing/billing-section-subscription.png" alt-text="Screenshot of how to link a subscription.":::
+
+   - If your tenant is not yet linked to a subscription, in the **Billing** section, select the **Click here to upgrade** link, and then select the **Add Subscription** button. Follow the steps in [Upgrade your free trial by adding an Azure subscription](customers/quickstart-trial-setup.md#upgrade-your-free-trial-by-adding-an-azure-subscription).
+
+       :::image type="content" source="media/external-identities-pricing/billing-section-no-subscription.png" alt-text="Screenshot of how to link a subscription.":::
+
+## What if I can't find a subscription?
 
 If no subscriptions are available in the **Link a subscription** pane, here are some possible reasons:
 
