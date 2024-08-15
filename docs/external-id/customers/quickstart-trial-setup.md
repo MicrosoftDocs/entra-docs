@@ -14,7 +14,7 @@ ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or IT admin, I want to set up the external tenant free trial.
 ---
-# Quickstart: Get started with Microsoft Entra External ID in external tenants
+# Quickstart: Get started with Microsoft Entra External ID free trial
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
