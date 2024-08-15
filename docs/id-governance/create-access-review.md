@@ -121,6 +121,9 @@ If you're reviewing access to an application, then before you create the review,
 
 1. Select **Next: Settings**.
 
+> [!NOTE]
+> When creating an access review, you are able to specify the start date, but the exact start time on this date is automatically determined by the UTC time of the access review creation.
+
 ### Next: Settings
 
 1. In the **Upon completion settings** section, you can specify what happens after the review finishes.
