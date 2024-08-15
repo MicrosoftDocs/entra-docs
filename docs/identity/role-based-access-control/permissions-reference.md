@@ -2262,7 +2262,7 @@ In | Can do
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports
 Azure Advanced Threat Protection | Monitor and respond to suspicious security activity
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | Assign roles<br>Manage machine groups<br>Configure endpoint threat detection and automated remediation<br>View, investigate, and respond to alerts<br/>View machines/device inventory
-[Intune](/intune/role-based-access-control) | Views user, device, enrollment, configuration, and application information<br>Cannot make changes to Intune
+[Intune](/intune/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference#endpoint-security-manager)
 [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Add admins, add policies and settings, upload logs and perform governance actions
 [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services
 [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) | Define the threshold and duration for lockouts when failed sign-in events happen.
