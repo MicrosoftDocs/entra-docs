@@ -2401,8 +2401,8 @@
         href: safetynet-tutorial.md
       - name: Sage Intacct
         href: intacct-tutorial.md
-      - name: SailPoint IdentityNow
-        href: sailpoint-identitynow-tutorial.md
+      - name: SailPoint Identity Security Cloud
+        href: sailpoint-identity-security-cloud-tutorial.md
       - name: Sakon Device Platform
         href: sakon-device-platform-tutorial.md
       - name: Salesforce
