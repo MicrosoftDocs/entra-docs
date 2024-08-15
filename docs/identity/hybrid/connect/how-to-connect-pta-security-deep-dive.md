@@ -91,10 +91,12 @@ The authentication agents use the following steps to register themselves with Mi
  2. The authentication agent then generates a key pair: a public key and a private key.
    - The key pair is generated through standard RSA 2,048-bit encryption.
    - The private key stays on the on-premises server where the authentication agent resides.
+ 
  3. The authentication agent makes a registration request to Microsoft Entra ID over HTTPS, with the following components included in the request:
    - The access token that the agent acquired.
    - The public key that was generated.
    - A Certificate Signing Request (*CSR* or *Certificate Request*). This request applies for a digital identity certificate, with Microsoft Entra ID as its certificate authority (CA).
+ 
  4. Microsoft Entra ID validates the access token in the registration request and verifies that the request came from a Hybrid Identity Administrator.
  5. Microsoft Entra ID then signs a digital identity certificate and sends it back to the authentication agent.
    - The root CA in Microsoft Entra ID is used to sign the certificate.
