@@ -21,12 +21,12 @@ ms.collection: M365-identity-device-management
 
 ## External ID pricing and licensing
 
-Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique external users with authentication activity within a calendar month. This billing model applies to all External ID scenarios, including B2B collaboration in workforce tenants and identity and access management in external tenants. It also applies to [Azure AD B2C tenants](/azure/active-directory-b2c/billing). 
+Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique external users with authentication activity within a calendar month. This billing model applies to all External ID scenarios, including B2B collaboration in workforce tenants and identity and access management in external tenants. It also applies to [Azure AD B2C tenants](/azure/active-directory-b2c/billing).
 
 To determine the total number of MAUs, we combine MAUs from all your tenants (both External ID and Azure AD B2C) that are linked to the same subscription. MAU billing helps you reduce costs by offering a free tier and flexible, predictable pricing. You can get started for free and only pay for what you use as your business grows.
 
 > [!IMPORTANT]
-> This article does not contain pricing details. For the latest information about usage billing and pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing) and our [Microsoft Entra External ID frequently asked questions](/customers/faq-customers.md).
+> This article does not contain pricing details. For the latest information about usage billing and pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing) and our [Microsoft Entra External ID frequently asked questions](customers/faq-customers.md).
 
 <a name='link-your-azure-ad-tenant-to-a-subscription'></a>
 
@@ -50,7 +50,7 @@ Microsoft Entra tenants, both workforce and external, must be linked to a resour
 
 7. In the **Link a subscription** pane, select a **Subscription** and a **Resource group**. Then select **Apply**. (If there are no subscriptions listed, see [What if I can't find a subscription?](#what-if-i-cant-find-a-subscription).)
 
-    :::image type="content" source="media/external-identities-pricing/link-subscription-resource.png" alt-text="Screenshot of how to link a subscription.":::
+    :::image type="content" source="media/external-identities-pricing/link-subscription-resource.png" alt-text="Screenshot of how to link a workforce tenant to a subscription.":::
 
 After you complete these steps, your Azure subscription is billed based on your Azure Direct or Enterprise Agreement details, if applicable.
 
@@ -66,11 +66,11 @@ Depending on how you created your external tenant, it might already be linked to
 
    - If your tenant is linked to a subscription, the subscription ID will appear in this section. You can select the ID to view subscription details.
    
-       :::image type="content" source="media/external-identities-pricing/billing-section-subscription.png" alt-text="Screenshot of how to link a subscription.":::
+       :::image type="content" source="media/external-identities-pricing/billing-section-subscription.png" alt-text="Screenshot of how to link an external tenant to a subscription.":::
 
    - If your tenant is not yet linked to a subscription, in the **Billing** section, select the **Click here to upgrade** link, and then select the **Add Subscription** button. Follow the steps in [Upgrade your free trial by adding an Azure subscription](customers/quickstart-trial-setup.md#upgrade-your-free-trial-by-adding-an-azure-subscription).
 
-       :::image type="content" source="media/external-identities-pricing/billing-section-no-subscription.png" alt-text="Screenshot of how to link a subscription.":::
+       :::image type="content" source="media/external-identities-pricing/billing-section-no-subscription.png" alt-text="Screenshot of how to upgrade and link a subscription.":::
 
 ## What if I can't find a subscription?
 
