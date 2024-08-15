@@ -91,4 +91,4 @@ extension ViewController: CredentialsDelegate {
 ## Next step 
 
 > [!div class="nextstepaction"]
-> [Tutorial: Self-service password reset](tutorial-native-authentication-ios-self-service-password-reset.md) 
+> [Tutorial: Self-service password reset](tutorial-native-authentication-ios-macos-self-service-password-reset.md) 

@@ -95,4 +95,4 @@ Upon completion, it checks for any errors during the request. If an error occurs
 
 - [Sign in users in sample iOS (Swift) mobile app](sample-mobile-app-ios-swift-sign-in.md)
 - [Sign in users and call an API in sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md)
-- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md)
+- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md)

@@ -104,4 +104,4 @@ This outputs all debug logs from MSAL, which can be helpful in diagnosing issues
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add sign-up in an iOS/macOS mobile app using native authentication](tutorial-native-authentication-ios-sign-up.md)
+> [Tutorial: Add sign-up in an iOS/macOS mobile app using native authentication](tutorial-native-authentication-ios-macos-sign-up.md)

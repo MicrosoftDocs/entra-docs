@@ -29,7 +29,7 @@ This tutorial demonstrates how to sign up a user using email one-time passcode o
 
 ## Prerequisites 
 
-- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
+- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
 - If you want to collect user attributes during sign-up, configure the user attributes when you [create your sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Sign up a user
@@ -274,9 +274,9 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 
 ## Optional: Sign in after a sign-up flow
 
-After a successful sign-up flow, you can sign-in a user without initiating a sign-in flow. Learn more in the [Tutorial: Sign in user automatically after sign-up in an iOS/macOS app](tutorial-native-authentication-ios-sign-in-user-after-sign-up.md) article.
+After a successful sign-up flow, you can sign-in a user without initiating a sign-in flow. Learn more in the [Tutorial: Sign in user automatically after sign-up in an iOS/macOS app](tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md) article.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-sign-in-sign-out.md). 
+> [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md). 

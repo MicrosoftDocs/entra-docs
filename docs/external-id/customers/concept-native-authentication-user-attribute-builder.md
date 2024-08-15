@@ -109,5 +109,5 @@ To learn more about the programmable names of user profile attributes, see the [
 ## Related content
 
 - [Native authentication challenge types](concept-native-authentication-challenge-types.md)
-- [iOS/macOS native authentication tutorials](tutorial-native-authentication-prepare-ios-app.md)
+- [iOS/macOS native authentication tutorials](tutorial-native-authentication-prepare-ios-macos-app.md)
 - [Android native authentication tutorials](tutorial-native-authentication-prepare-android-app.md) 

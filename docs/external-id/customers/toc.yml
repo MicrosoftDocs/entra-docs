@@ -265,17 +265,17 @@ items:
             - name: iOS/macOS (Swift)
               items:
                 - name: Prepare iOS app
-                  href: tutorial-native-authentication-prepare-ios-app.md
+                  href: tutorial-native-authentication-prepare-ios-macos-app.md
                 - name: Sign up
-                  href: tutorial-native-authentication-ios-sign-up.md
+                  href: tutorial-native-authentication-ios-macos-sign-up.md
                 - name: Sign in and sign out
-                  href: tutorial-native-authentication-ios-sign-in-sign-out.md
+                  href: tutorial-native-authentication-ios-macos-sign-in-sign-out.md
                 - name: Auto-sign in after sign-up
-                  href: tutorial-native-authentication-ios-sign-in-user-after-sign-up.md
+                  href: tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md
                 - name: Self-service password reset
-                  href: tutorial-native-authentication-ios-self-service-password-reset.md
+                  href: tutorial-native-authentication-ios-macos-self-service-password-reset.md
                 - name: Support web fallback
-                  href: tutorial-native-authentication-ios-support-web-fallback.md
+                  href: tutorial-native-authentication-ios-macos-support-web-fallback.md
                 - name: Call an API
                   href: tutorial-native-authentication-ios-sign-in-call-api.md
     - name: Command-line interface (CLI) app

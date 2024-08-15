@@ -94,4 +94,4 @@ After you enter your email address on the previous screen, the application will 
 
 ## Next steps 
 
-- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
+- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
