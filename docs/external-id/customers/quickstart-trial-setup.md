@@ -24,7 +24,9 @@ In this quickstart, you'll learn how to set up an external tenant free trial. If
 If you already have an Azure subscription, you can create a tenant with external configurations in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md).
 
 Your free trial of a tenant with external configurations provides you with the opportunity to try new features and build applications and processes during the free trial period. Organization (tenant) admins can invite other users. Each user account can only have one active free trial tenant at a time. 
+
 The free trial is intended only for evaluation purposes and should not be used for scale testing or production workloads. It is currently in preview mode.
+
 Trial tenant will support up to 10K resources, learn more about Microsoft Entra service limits [here](~/identity/users/directory-service-limits-restrictions.md). During your free trial, you'll have the option to unlock the full set of features by upgrading to [Azure free account](https://azure.microsoft.com/free/).
 
    > [!NOTE]
@@ -45,7 +47,7 @@ During the free trial period, you'll have access to all product features with fe
 | Group and User management. |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Cloud-agnostic solution** with multi-language auth SDK support.  |  :heavy_check_mark: |  :heavy_check_mark:  | 
 
-## Sign up to your external tenant free trial
+## Sign up to your external tenant free trial (preview)
 
 1. Open your browser and visit <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">https://aka.ms/ciam-free-trial</a>.
 1. You can sign in to the external trial tenant using your personal account, and your Microsoft account (MSA) or GitHub account.  
