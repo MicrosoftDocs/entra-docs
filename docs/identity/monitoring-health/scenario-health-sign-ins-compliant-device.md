@@ -15,7 +15,7 @@ ms.reviewer: sarbar
 
 # Sign-ins requiring a compliant device
 
-Microsoft Entra Health (preview) provides a set of health metrics you can monitor and receive alerts when a potential issue or failure condition is detected within the health scenarios.
+Microsoft Entra Health (preview) provides a set of health metrics you can monitor and receive alerts when a potential issue or failure condition is detected. Tenant health monitoring aggregates several health signals and alerts across different services and scenarios.
 
 This article describes these health metrics and how to troubleshoot the issue when you receive an alert.
 
@@ -23,12 +23,15 @@ This article describes these health metrics and how to troubleshoot the issue wh
 
 To view the Scenario monitoring dashboards, you need:
 
-- A user with the [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role for the tenant.
+- The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role needed to view tenant health monitoring.
+- The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is needed to view and modify Conditional Access policies.
 - A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
+- The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
+- The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
 
 ## How it works
 
-1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Health Scenario Monitoring.
+1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Tenant health monitoring.
     - This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device.
     - All the data is provided at the tenant level.
 
@@ -37,16 +40,69 @@ To view the Scenario monitoring dashboards, you need:
 1. These signals are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant.
 
 1. When the anomaly detection service identifies a significant change to that pattern, such as a spike in sign-ins requiring a compliant device, it triggers an alert. 
+    - Anomaly specifics for the scenario
+    - Define threshold
 
 1. An alert is sent by email to the [tenant's important role] when the anomaly detection service identifies a significant change to the pattern of sign-ins requiring a compliant device. 
 
-After receiving an alert, you need to research possible root causes, determine the next steps, and take action to mitigate the root cause. This article provides guidance on how to troubleshoot the issue.
+After receiving an alert, you need to research possible root causes, determine the next steps, and take action to mitigate the root cause.
 
-## Possible root causes
+## Gather data
 
-Describe scenarios.
+For this scenario, there are three main data sets to investigate:
+
+- The signal details from the API
+- The impact summary from the alerts API
+- Sign-in logs
+
+Microsoft Entra tenant health monitoring can be viewed and managed using Microsoft Graph on the `/beta` endpoint. For more information, see the [Microsoft Graph documentation for Microsoft Entra health monitoring](/graph/api/resources/healthmonitoring-alert).
+
+To get started, follow these instructions to work with tenant health monitoring using Microsoft Graph in Graph Explorer.
+
+1. Sign in to [Graph Explorer](https://aka.ms/ge).
+1. Select **GET** as the HTTP method from the dropdown.
+1. Set the API version to **beta**.
+
+### View the signal and impact summary
+
+Add the following query to retrieve all alerts for your tenant, then select the **Run query** button.
+
+```http
+GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
+```
+
+To view the impact summary for a specific alert, you need to save the `id` of the alert you want to investigate. Add the following query, using `id` as the `alertId`, then select the **Run query** button.
+
+```http
+GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
+```
+
+- The portion of the response after `impacts` make up the impact summary for the alert.
+- The `supportingData` portion includes the full query used to generate the alert.
+
+
+Query used is provided in the API response.
+
+What is the seriousness of the alert? Perhaps there's only a handful of resources/users impacted. Perhaps it's a widespread issue.
+
+Pull both from Graph.
+
+Signal itself may not be as specific as the internal detection service. It can be correlated, but the signal may display everything that's included in the detection service. 
+
+Look at the data set that was the basis for the signal. Sign-in logs, using a specific filter to generate the observation. Date range, device, etc.
+
+
+
+Regular monitoring - pull daily API for alerts.
+
+
+
+### Common data sets to investigate
+
+
 
 ## Research root causes in your tenant
+
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Steps to find data.
