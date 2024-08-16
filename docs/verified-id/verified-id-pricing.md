@@ -43,9 +43,9 @@ Verified ID generates individual billing events for each unique verification per
 |Face Check Verification scenario  |Emits billing event </br>(yes/no)  |
 |---------|---------|
 | Verification request fails after reading QR Code     | No|
-| Verification request returns service error     |    No     |
-| Verification request returns failed face matching     |    Yes     |
-| Verification request returns any face matching score     |    Yes     |
+| Verification request returns service error: The Verified ID service is unable to process the verification request     |    No     |
+| Verification request returns failed face matching: Processing the face matching between the biometric data and the credential data failed     |    Yes     |
+| Verification request returns a face matching score     |    Yes     |
 
 ## Link your Verified ID authority to a subscription
 
