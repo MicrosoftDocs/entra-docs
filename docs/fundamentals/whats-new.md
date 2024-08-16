@@ -33,6 +33,51 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
+## August 2024
+
+### Change announcement - Upcoming MFA Enforcement on Microsoft Entra admin center
+
+**Type:** Plan for change     
+**Service category:** MFA   
+**Product capability:** Identity Security & Protection    
+
+As part of our commitment to providing our customers with the highest level of security, we previously [announced](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/update-on-mfa-requirements-for-azure-sign-in/ba-p/4177584) that Microsoft will require multifactor authentication (MFA) for users signing into Azure.
+
+We'd like to share an update that the scope of MFA enforcement includes [Microsoft Entra admin center](https://entra.microsoft.com/) in addition to the Azure portal and Intune admin center. This change will be rolled out in phases, allowing organizations time to plan their implementation:
+
+**Phase 1**: Starting in the second half of the calendar year 2024, MFA will be required to sign in to the Microsoft Entra admin center, Azure portal, and Intune admin center. This enforcement will gradually roll out to all tenants worldwide. This phase won't impact other Azure clients such as the Azure Command Line Interface, Azure PowerShell, Azure mobile app, and Infrastructure as Code (IaC) tools.
+
+**Phase 2**: Beginning in early 2025, gradual enforcement of MFA at sign-in for the Azure CLI, Azure PowerShell, Azure mobile app, and Infrastructure as Code (IaC) tools will commence.
+
+Microsoft will send a 60-day advance notice to all Entra Global Administrators by email, and through Azure Service Health Notifications, to notify them of the start date of enforcement and required actions. Additional notifications will be sent through the Azure portal, Microsoft Entra admin center, and the Microsoft 365 message center.
+
+We understand that some customers might need additional time to prepare for this MFA requirement. Therefore, Microsoft will allow extended time for customers with complex environments or technical barriers. The notification from us will also include details about how customers can postpone the start date of enforcement for their tenants, the duration of the postponement, and a link to apply. Visit [here](https://learn.microsoft.com/entra/identity/authentication/concept-mandatory-multifactor-authentication) to learn more.
+
+---
+
+### General Availability - restricted permissions on Directory Synchronization Accounts (DSA) role in Microsoft Entra Connect Sync and Microsoft Entra Cloud Sync
+
+**Type:** Changed feature     
+**Service category:** Provisioning   
+**Product capability:** Entra Connect    
+
+As part of ongoing security hardening, we have removed unused permissions from the privileged "*Directory Synchronization Accounts*" role. This role is exclusively used by Microsoft Entra Connect Sync, and Microsoft Entra Cloud Sync, to synchronize Active Directory objects with Microsoft Entra ID. There's no action required by customers to benefit from this hardening, and the revised role permissions are documented here: [Directory Synchronization Accounts](../identity/role-based-access-control/permissions-reference.md#directory-synchronization-accounts).
+
+---
+
+### Plan for change - My Security-Info Add sign-in method picker UX update
+
+**Type:** Plan for change     
+**Service category:** MFA   
+**Product capability:** End User Experiences    
+
+Starting late August 2024, the "*add sign-in method*" dialog on the My Security-Info page will be updated with improved sign-in method descriptions, and a modern look and feel. With this change when users select "*add sign-in method*", they'll initially be recommended to register the strongest method available to them which is allowed by organizational authentication method policy. Users have the ability to select "*show more options*", and choose from all available sign-in methods allowed by their policy. 
+
+This change occurs automatically, and admins won't need to take any action.
+
+---
+
+
 ## July 2024
 
 ### General Availability - Insider Risk condition in Conditional Access is GA
