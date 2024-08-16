@@ -885,7 +885,9 @@
       - name: EBSCO
         href: ebsco-tutorial.md
       - name: Eccentex AppBase for Azure
-        href: eccentex-appbase-for-azure-tutorial.md   
+        href: eccentex-appbase-for-azure-tutorial.md 
+      - name: ecFreight2 (OIDC)
+        href: ecfreight2-tutorial.md  
       - name: EchoSpan
         href: echospan-tutorial.md
       - name: eCornell
