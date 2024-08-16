@@ -222,7 +222,7 @@ After creating the project, you'll need to install the required NuGet packages a
 
 ### Add the sample code
 
-The function API is the source of extra claims for your token. For the purposes of this article, we're hardcoding the values for the sample app. In production, you can fetch information about the user from external data store.
+The function API is the source of extra claims for your token. For the purposes of this article, we're hardcoding the values for the sample app. In production, you can fetch information about the user from external data store. Refer to the [WebJobsAuthenticationEventsContext Class](/dotnet/api/microsoft.azure.webjobs.extensions.authenticationevents.tokenissuancestart.webjobsauthenticationeventscontext#properties) for existing properties.
 
 In your *AuthEventsTrigger.cs* file, replace the entire contents of the file with the following code:
 
@@ -388,7 +388,7 @@ By default, the code has been set up for authentication in the Azure portal usin
    | Name | Value |
    | ---- | ----- | 
    | *AuthenticationEvents__AudienceAppId* | *Custom authentication extension app ID* which is set up in [Configure a custom claim provider for a token issuance event](./custom-extension-tokenissuancestart-configuration.md) |
-   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; External tenant `https://<mydomain>.ciamlogin.com` | 
+   | *AuthenticationEvents__AuthorityUrl* | &#8226; Workforce tenant `https://login.microsoftonline.com/<tenantID>` <br> &#8226; External tenant `https://<mydomain>.ciamlogin.com/<tenantID>` | 
    | *AuthenticationEvents__AuthorizedPartyAppId* | `99045fe1-7639-4a75-9d4a-577b6ca3810f` or another authorized party | 
 
 ### [Set up authentication in Azure portal](#tab/azure-portal)

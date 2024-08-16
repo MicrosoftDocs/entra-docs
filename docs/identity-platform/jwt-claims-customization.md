@@ -4,7 +4,7 @@ description: Learn how to customize the claims issued by Microsoft identity plat
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: curation-claims, devx-track-dotnet
+ms.custom: curation-claims
 ms.date: 05/30/2024
 ms.reviewer: rahulnagraj, alamaral
 ms.service: identity-platform
@@ -23,7 +23,7 @@ These JSON Web tokens (JWT) used by OIDC and OAuth applications contain pieces o
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-To view or edit the claims issued in the JWT to the application:
+Optional JWT claims can be configured in the the original application registration, however they can also be configured in the enterprise application. To view or edit the claims issued in the JWT to the application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
@@ -212,7 +212,7 @@ Extract the private and public key base-64 encoded from the PFX file export of y
 The following example shows the format of the HTTP PATCH request to add a custom signing key to a service principal. The "key" value in the `keyCredentials` property is shortened for readability. The value is base-64 encoded. For the private key, the property usage is `Sign`. For the public key, the property usage is `Verify`.
 
 ```JSON
-PATCH https://graph.microsoft.com/v1.0/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 
 Content-type: servicePrincipals/json
 Authorization: Bearer {token}
@@ -220,30 +220,30 @@ Authorization: Bearer {token}
 {
     "keyCredentials":[
         {
-            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=", 
+            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=", 
             "endDateTime": "2021-04-22T22:10:13Z",
             "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "X509CertAndPassword",
             "usage": "Sign",
-            "key":"MIIKIAIBAz.....BRFVNXeZmAAgIH0A==",
+            "key":"cD2eF3gH4iJ5kL6mN7-oP8qR9sT==",
             "displayName": "CN=contoso"
         },
         {
-            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=",
+            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",
             "endDateTime": "2021-04-22T22:10:13Z",
             "keyId": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444",
             "startDateTime": "2020-04-22T21:50:13Z",
             "type": "AsymmetricX509Cert",
             "usage": "Verify",
-            "key": "MIIDJzCCAg+gAw......N3bafeesMSueR83hlCSyg==",
+            "key": "cD2eF3gH4iJ5kL6mN7-oP8qR9sT==",
             "displayName": "CN=contoso"
         }
 
     ],
     "passwordCredentials": [
         {
-            "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=",
+            "customKeyIdentifier": "aB1cD2eF3gH4iJ5kL6-mN7oP8qR=",
             "keyId": "cccccccc-2d2d-3e3e-4f4f-555555555555",
             "endDateTime": "2022-01-27T19:40:33Z",
             "startDateTime": "2020-04-20T19:40:33Z",
@@ -266,7 +266,6 @@ To run this script, you need:
 - A user who logs in to get the Microsoft Graph access token. The user should be one of the following Microsoft Entra administrative roles (required to update the service principal):
   - Cloud Application Administrator
   - Application Administrator
-  - Global Administrator
 - A certificate to configure as a custom signing key for our application. You can either create a self-signed certificate or obtain one from your trusted certificate authority. The following certificate components are used in the script:
   - public key (typically a *.cer* file)
   - private key in PKCS#12 format (in *.pfx* file)
@@ -276,14 +275,22 @@ To run this script, you need:
 > The private key must be in PKCS#12 format since Microsoft Entra ID doesn't support other format types. Using the wrong format can result in the error "Invalid certificate: Key value is invalid certificate" when using Microsoft Graph to PATCH the service principal with a `keyCredentials` containing the certificate information.
 
 ```powershell
-$fqdn="fourthcoffeetest.onmicrosoft.com" # this is used for the 'issued to' and 'issued by' field of the certificate
-$pwd="mypassword" # password for exporting the certificate private key
-$location="C:\\temp" # path to folder where both the pfx and cer file will be written to
+##########################################################
+# Replace the variables below with the appropriate values 
+
+$fqdn="yourDomainHere" # This is used for the 'issued to' and 'issued by' field of the certificate
+$pwd="password" # password for exporting the certificate private key
+$tenantId   = "aaaabbbb-0000-cccc-1111-dddd2222eeee" # Replace with your Tenant ID
+$appObjId = "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" # Replace with the Object ID of the App Registration
+
+##########################################################
 
 # Create a self-signed cert
+
 $cert = New-SelfSignedCertificate -certstorelocation cert:\currentuser\my -DnsName $fqdn
 $pwdSecure = ConvertTo-SecureString -String $pwd -Force -AsPlainText
 $path = 'cert:\currentuser\my\' + $cert.Thumbprint
+$location="C:\\temp" # path to folder where both the pfx and cer file will be written to
 $cerFile = $location + "\\" + $fqdn + ".cer"
 $pfxFile = $location + "\\" + $fqdn + ".pfx"
  
@@ -291,68 +298,20 @@ $pfxFile = $location + "\\" + $fqdn + ".pfx"
 Export-PfxCertificate -cert $path -FilePath $pfxFile -Password $pwdSecure
 Export-Certificate -cert $path -FilePath $cerFile
 
-$ClientID = "<app-id>"
-$loginURL       = "https://login.microsoftonline.com"
-$tenantdomain   = "fourthcoffeetest.onmicrosoft.com"
-$redirectURL = "http://localhost" # this reply URL is needed for PowerShell Core 
-[string[]] $Scopes = "https://graph.microsoft.com/.default"
 $pfxpath = $pfxFile # path to pfx file
 $cerpath = $cerFile # path to cer file
-$SPOID = "<service-principal-id>"
-$graphuri = "https://graph.microsoft.com/v1.0/serviceprincipals/$SPOID"
 $password = $pwd  # password for the pfx file
  
- 
-# choose the correct folder name for MSAL based on PowerShell version 5.1 (.Net) or PowerShell Core (.Net Core)
+# Check PowerShell version (minimum 5.1) (.Net) or PowerShell Core (.Net Core) and read the certificate file accordingly
  
 if ($PSVersionTable.PSVersion.Major -gt 5)
     { 
         $core = $true
-        $foldername =  "netcoreapp2.1"
     }
 else
     { 
         $core = $false
-        $foldername = "net45"
     }
- 
-# Load the MSAL/microsoft.identity/client assembly -- needed once per PowerShell session
-[System.Reflection.Assembly]::LoadFrom((Get-ChildItem C:/Users/<username>/.nuget/packages/microsoft.identity.client/4.32.1/lib/$foldername/Microsoft.Identity.Client.dll).fullname) | out-null
-  
-$global:app = $null
-  
-$ClientApplicationBuilder = [Microsoft.Identity.Client.PublicClientApplicationBuilder]::Create($ClientID)
-[void]$ClientApplicationBuilder.WithAuthority($("$loginURL/$tenantdomain"))
-[void]$ClientApplicationBuilder.WithRedirectUri($redirectURL)
- 
-$global:app = $ClientApplicationBuilder.Build()
-  
-Function Get-GraphAccessTokenFromMSAL {
-    [Microsoft.Identity.Client.AuthenticationResult] $authResult  = $null
-    $AquireTokenParameters = $global:app.AcquireTokenInteractive($Scopes)
-    [IntPtr] $ParentWindow = [System.Diagnostics.Process]::GetCurrentProcess().MainWindowHandle
-    if ($ParentWindow)
-    {
-        [void]$AquireTokenParameters.WithParentActivityOrWindow($ParentWindow)
-    }
-    try {
-        $authResult = $AquireTokenParameters.ExecuteAsync().GetAwaiter().GetResult()
-    }
-    catch {
-        $ErrorMessage = $_.Exception.Message
-        Write-Host $ErrorMessage
-    }
-     
-    return $authResult
-}
-  
-$myvar = Get-GraphAccessTokenFromMSAL
-if ($myvar)
-{
-    $GraphAccessToken = $myvar.AccessToken
-    Write-Host "Access Token: " $myvar.AccessToken
-    #$GraphAccessToken = "eyJ0eXAiOiJKV1QiL ... iPxstltKQ"
-    
  
     #  this is for PowerShell Core
     $Secure_String_Pwd = ConvertTo-SecureString $password -AsPlainText -Force
@@ -368,11 +327,10 @@ if ($myvar)
     {
         $pfx_cert = get-content $pfxpath -Encoding Byte
         $cer_cert = get-content $cerpath -Encoding Byte
-        # Write-Host "Enter password for the pfx file..."
-        # calling Get-PfxCertificate in PowerShell 5.1 prompts for password
-        # $cert = Get-PfxCertificate -FilePath $pfxpath
+        # calling Get-PfxCertificate in PowerShell 5.1 prompts for password - using alternative method
         $cert = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($pfxpath, $password)
     }
+
  
     # base 64 encode the private key and public key
     $base64pfx = [System.Convert]::ToBase64String($pfx_cert)
@@ -399,10 +357,10 @@ if ($myvar)
             endDateTime = $endDateTime
             keyId = $guid1
             startDateTime = $startDateTime 
-            type = "X509CertAndPassword"
+            type = "AsymmetricX509Cert"
             usage = "Sign"
             key = $base64pfx
-            displayName = "CN=fourthcoffeetest" 
+            displayName = "CN=$fqdn" 
         },
         [ordered]@{            
             customKeyIdentifier = $customKeyIdentifier
@@ -412,47 +370,29 @@ if ($myvar)
             type = "AsymmetricX509Cert"
             usage = "Verify"
             key = $base64cer
-            displayName = "CN=fourthcoffeetest"   
+            displayName = "CN=$fqdn"   
         }
         )  
     passwordCredentials = @(
         [ordered]@{
             customKeyIdentifier = $customKeyIdentifier
+            displayName = "CN=$fqdn"
             keyId = $guid1           
             endDateTime = $endDateTime
             startDateTime = $startDateTime
             secretText = $password
+            hint = $null
         }
     )
     }
  
+Connect-MgGraph -tenantId $tenantId -Scopes Application.ReadWrite.All
+$graphuri = "https://graph.microsoft.com/v1.0/applications/$appObjId"
+Invoke-MgGraphRequest -Method PATCH -Uri $graphuri -Body $object
+
     $json = $object | ConvertTo-Json -Depth 99
     Write-Host "JSON Payload:"
     Write-Output $json
- 
-    # Request Header
-    $Header = @{}
-    $Header.Add("Authorization","Bearer $($GraphAccessToken)")
-    $Header.Add("Content-Type","application/json")
- 
-    try 
-    {
-        Invoke-RestMethod -Uri $graphuri -Method "PATCH" -Headers $Header -Body $json
-    } 
-    catch 
-    {
-        # Dig into the exception to get the Response details.
-        # Note that value__ is not a typo.
-        Write-Host "StatusCode:" $_.Exception.Response.StatusCode.value__ 
-        Write-Host "StatusDescription:" $_.Exception.Response.StatusDescription
-    }
- 
-    Write-Host "Complete Request"
-}
-else
-{
-    Write-Host "Fail to get Access Token"
-}
 ```
 
 ## Validate token signing key

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: troubleshooting
-ms.date: 05/30/2024
+ms.date: 07/05/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -92,7 +92,7 @@ The limitations described in this article have the following scope.
 
 ## Global address list managed in the host tenant
 
-- The [showInAddressList](/graph/api/resources/user#properties) property of a B2B user can be updated with [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator) privileges in Graph Explorer or Microsoft Graph PowerShell.
+- The [showInAddressList](/graph/api/resources/user#properties) property of a B2B user can be updated with [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator) privileges in Microsoft Graph Explorer or Microsoft Graph PowerShell.
 
 - Updating the [showInAddressList](/graph/api/resources/user#properties) property on the user object will also update the hide recipients from address lists setting in Microsoft Exchange Online.
 
@@ -109,7 +109,7 @@ The limitations described in this article have the following scope.
 
 ## Microsoft apps
 
-- In [SharePoint OneDrive](/sharepoint/) user interfaces, when sharing a file with *People in Fabrikam*, the current user interfaces might be counterintuitive, because B2B members in Fabrikam from Contoso count towards *People in Fabrikam*.
+- In [SharePoint OneDrive](/sharepoint/) user interfaces, when sharing a file with *People in Fabrikam*, the current user interfaces might be counterintuitive, because B2B members in Fabrikam from Contoso count toward *People in Fabrikam*.
 
 - In Microsoft 365 admin center, [Microsoft Forms](/office365/servicedescriptions/microsoft-forms-service-description), Microsoft OneNote, and Microsoft Planner, B2B member users might not be supported.
 
@@ -128,6 +128,8 @@ The limitations described in this article have the following scope.
 - The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects is currently not supported.
 
 - Using cross-tenant synchronization to target hybrid identities that have been converted to B2B users hasn't been tested in source of authority conflicts and isn't supported.
+
+- Signed-in users are able to read basic attributes of a multitenant organization, and of the multitenant organization member tenants, without being assigned roles, such as [Security Reader](../role-based-access-control/permissions-reference.md#security-reader) or [Global Reader](../role-based-access-control/permissions-reference.md#global-reader).
 
 ## Cross-tenant synchronization deprovisioning
 

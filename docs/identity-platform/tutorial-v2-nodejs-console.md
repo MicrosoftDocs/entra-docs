@@ -294,4 +294,4 @@ The scope to request for a client credential flow is the name of the resource fo
 If you'd like to dive deeper into Node.js daemon application development on the Microsoft identity platform, see our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Daemon application](scenario-daemon-overview.md)
+> [Scenario: Daemon application](scenario-daemon-app-registration.md)

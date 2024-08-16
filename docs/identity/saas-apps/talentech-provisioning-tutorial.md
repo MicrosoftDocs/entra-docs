@@ -2,19 +2,14 @@
 title: 'Tutorial: Configure Talentech for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Talentech.
 
-documentationcenter: ''
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-
-ms.assetid: 0a83529b-b150-4af8-bc5b-a0f4345c3356
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Talentech so that I can streamline the user management process and ensure that users have the appropriate access to Talentech.
 ---

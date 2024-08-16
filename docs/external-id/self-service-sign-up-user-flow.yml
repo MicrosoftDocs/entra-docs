@@ -1,23 +1,24 @@
 ### YamlMime:HowTo
 
 metadata:
-  title: Add a self-service sign-up user flow
-  description: Create user flows for apps that your organization builds. Then, users who visit that app can gain a guest account using the options configured in the user flow.
+  title: Add B2B Guest Sign-in
+  description: Create sign-up and sign-in user flows for apps you build. Users with external identities can sign up, submit user attributes, and create a B2B collaboration guest account.
   author: msmimart
   ms.author: mimart
   manager: CelesteDG
-  ms.date: 05/15/2024
+  ms.date: 06/28/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
   ms.custom:
     - it-pro
     - ge-structured-content-pilot
+    - seo-july-2024
 
 #customer intent: As a developer building an application with B2B collaboration user flows, I want to add a self-service sign-up user flow to my app, so that users can sign up for the app and create a new guest account.
 
 title: |
-  Add a self-service sign-up user flow to an app
+  Add self-service sign-up user flows for B2B collaboration
 introduction: |
   [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
@@ -76,10 +77,6 @@ procedureSection:
         Browse to **Identity** > **External Identities** > **User flows**, and then select **New user flow**.
 
           :::image type="content" source="media/self-service-sign-up-user-flow/new-user-flow.png" alt-text="Screenshot of the new user flow button.":::
-      - |
-        Select the user flow type (for example, **Sign up and sign in**).
-      - |  
-        Select the version (**Recommended** or **Preview**), and then select **Create**.
       - |  
         On the **Create** page, enter a **Name** for the user flow. The name is automatically prefixed with **B2X_1_**.
       - |  

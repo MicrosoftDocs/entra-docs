@@ -2,16 +2,11 @@
 title: 'Tutorial: Configure myday for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to myday.
 
-documentationcenter: ''
 author: twimmers
-writer: twimmers
 manager: jeedes
-
-ms.assetid: 59b4150a-9530-479b-9f62-a16c3d005dbe
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thwimmer

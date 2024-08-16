@@ -67,7 +67,8 @@ To read more about securing your Active Directory environment, see [Best practic
 - The minimum .NET Framework version required is 4.6.2, and newer versions of .NET are also supported.  .NET version 4.8 and greater offers the best accessibility compliance.
 - Microsoft Entra Connect can't be installed on Small Business Server or Windows Server Essentials before 2019 (Windows Server Essentials 2019 is supported). The server must be using Windows Server standard or better. 
 - The Microsoft Entra Connect server must have a full GUI installed. Installing Microsoft Entra Connect on Windows Server Core isn't supported. 
-- The Microsoft Entra Connect server must not have PowerShell Transcription Group Policy enabled if you use the Microsoft Entra Connect wizard to manage Active Directory Federation Services (AD FS) configuration. You can enable PowerShell transcription if you use the Microsoft Entra Connect wizard to manage sync configuration. 
+- The Microsoft Entra Connect server must not have PowerShell Transcription Group Policy enabled if you use the Microsoft Entra Connect wizard to manage Active Directory Federation Services (AD FS) configuration. You can enable PowerShell transcription if you use the Microsoft Entra Connect wizard to manage sync configuration.
+- Ensure that MS Online PowerShell (MSOL) is not blocked at the tenant level.
 - If AD FS is being deployed: 
     - The servers where AD FS or Web Application Proxy are installed must be Windows Server 2012 R2 or later. Windows remote management must be enabled on these servers for remote installation. You may require [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for Windows Server 2016 and older.
     - You must configure TLS/SSL certificates. For more information, see [Managing SSL/TLS protocols and cipher suites for AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs) and [Managing SSL certificates in AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap).
@@ -117,6 +118,17 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
   * If you're using the Microsoft cloud in Germany or the Microsoft Azure Government cloud, see [Microsoft Entra Connect Sync service instances considerations](reference-connect-instances.md) for URLs.
 * Microsoft Entra Connect (version 1.1.614.0 and after) by default uses TLS 1.2 for encrypting communication between the sync engine and Microsoft Entra ID. If TLS 1.2 isn't available on the underlying operating system, Microsoft Entra Connect incrementally falls back to older protocols (TLS 1.1 and TLS 1.0). From Microsoft Entra Connect version 2.0 onwards. TLS 1.0 and 1.1 are no longer supported and installation will fail if TLS 1.2 is not enabled.
 * Prior to version 1.1.614.0, Microsoft Entra Connect by default uses TLS 1.0 for encrypting communication between the sync engine and Microsoft Entra ID. To change to TLS 1.2, follow the steps in [Enable TLS 1.2 for Microsoft Entra Connect](#enable-tls-12-for-azure-ad-connect).
+
+>[!IMPORTANT]
+>Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
+> 
+>All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
+>
+>For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#powershell-script-to-check-tls-12)
+>
+>For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
+>For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
+
 * If you're using an outbound proxy for connecting to the internet, the following setting in the **C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config** file must be added for the installation wizard and Microsoft Entra Connect Sync to be able to connect to the internet and Microsoft Entra ID. This text must be entered at the bottom of the file. In this code, *&lt;PROXYADDRESS&gt;* represents the actual proxy IP address or host name.
 
     ```
@@ -161,6 +173,18 @@ Microsoft Entra Connect depends on Microsoft PowerShell 5.0 and .NET Framework 4
 <a name='enable-tls-12-for-azure-ad-connect'></a>
 
 ### Enable TLS 1.2 for Microsoft Entra Connect
+
+>[!IMPORTANT]
+>Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
+> 
+>All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
+>
+>For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#powershell-script-to-check-tls-12)
+>
+>For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
+>For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
+
+
 Prior to version 1.1.614.0, Microsoft Entra Connect by default uses TLS 1.0 for encrypting the communication between the sync engine server and Microsoft Entra ID. You can configure .NET applications to use TLS 1.2 by default on the server. For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
 
 1. Make sure you have the .NET 4.5.1 hotfix installed for your operating system. For more information, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358). You might have this hotfix or a later release installed on your server already.
@@ -171,6 +195,8 @@ Prior to version 1.1.614.0, Microsoft Entra Connect by default uses TLS 1.0 for 
     "SchUseStrongCrypto"=dword:00000001
     ```
 1. If you also want to enable TLS 1.2 between the sync engine server and a remote SQL Server, make sure you have the required versions installed for [TLS 1.2 support for Microsoft SQL Server](https://support.microsoft.com/kb/3135244).
+
+For more information, see [how to enable TLS 1.2](/mem/configmgr/core/plan-design/security/enable-tls-1-2-server)
 
 ### DCOM prerequisites on the synchronization server
 During the installation of the synchronization service, Microsoft Entra Connect checks for the presence of the following registry key:

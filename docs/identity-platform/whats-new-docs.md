@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 06/03/2024
+ms.date: 08/09/2024
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -15,6 +15,28 @@ ms.topic: whats-new
 # Microsoft identity platform docs: What's new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
+
+## July 2024
+
+### Updated articles
+
+
+- [A web API that calls web APIs: Code configuration](scenario-web-api-call-api-app-configuration.md) - Added clarity to the content
+- [A web app that calls web APIs: Code configuration](scenario-web-app-call-api-app-configuration.md) - Added clarity to the content
+- [Customize claims issued in the JSON web token (JWT) for enterprise applications](jwt-claims-customization.md) - Updating the script with a working version
+- [Troubleshoot publisher verification](troubleshoot-publisher-verification.md) - Removed reference to Postman
+- [Restrict a Microsoft Entra app to a set of users](howto-restrict-your-app-to-a-set-of-users.md) - Added clarity to the content
+
+
+## June 2024
+
+### Updated articles
+
+- [Microsoft identity platform code samples](sample-v2-code.md) - Removed archived samples from code sample page and articles
+- [Quickstart: Configure a client application to access a web API](quickstart-configure-app-access-web-apis.md) - Added clarity to the content
+- [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md) - Added clarity to the content
+- [Quickstart: Sign in users and call Microsoft Graph from an Android app](quickstart-mobile-app-android-sign-in.md) - Added clarity to the content
+- [Redirect URI (reply URL) outline and restrictions](reply-url.md) - Added clarity to the content
 
 ## May 2024
 
@@ -34,35 +56,4 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Troubleshoot your custom claims provider API](custom-extension-troubleshoot.md) - Rework token issuance setup
 - [What's new for authentication?](reference-breaking-changes.md) - Added clarity to the content
 
-## April 2024
-
-### New articles
-
-- [Quickstart: .NET console app that accesses a protected web API](quickstart-daemon-dotnet-acquire-token.md) - Quickstart daemon console update
-- [Quickstart: Sign in users and call Microsoft Graph from a Python Flask web app](quickstart-web-app-python-flask.md) - Build MSAL Python content - Sign in with Microsoft to a Python web app
-- [Tutorial: Register a Python web app with the Microsoft identity platform](tutorial-web-app-python-register-app.md) - Build MSAL Python content - Register an application
-- [Prepare a Python web app for authentication](tutorial-web-app-python-prepare-app.md) - Build MSAL Python content - Prepare Python web app
-- [Tutorial: Add sign in to a Python Flask web app](tutorial-web-app-python-sign-in-users.md) - Build MSAL Python content - Add sign in to the web app
-- [Tutorial: Call a protected API and display the results](tutorial-web-app-python-call-api.md) - Build MSAL Python content - Call a protected web API
-
-### Updated articles
-
-- [Acquire tokens to call a web API using a daemon application](scenario-daemon-acquire-token.md) - Quickstart daemon console update
-- [Claims challenges, claims requests and client capabilities](claims-challenge.md) - Remove remaining sensitive GUIDs from identity platform docs
-- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Remove remaining sensitive GUIDs from identity platform docs
-- [Microsoft Enterprise SSO plug-in for Apple devices](apple-sso-plugin.md) - [macOS] Upcoming changes to Enterprise SSO device identity
-
-## March 2024
-
-### New articles
-
-- [Create a REST API with a token issuance start event for Azure Functions (preview)](custom-extension-tokenissuancestart-setup.md) - Custom authentication extensions NuGet libraries
-- [Microsoft account (MSA) Server Side API Reference](reference-msa-server-side-api.md) - API reference for EU regulation
-- [Microsoft Entra ID Windows Account Manager (WAM) API Reference](reference-entra-id-wam-api.md) - API reference for EU regulation
-
-### Updated articles
-
-- [Configure a custom claim provider for a token issuance event (preview)](custom-extension-tokenissuancestart-configuration.md) - Custom authentication extensions NuGet libraries
-- [Custom claims provider (preview)](custom-claims-provider-overview.md) - Custom authentication extensions NuGet libraries
-- [Troubleshoot your custom claims provider API (preview)](custom-extension-troubleshoot.md) - Custom authentication extensions NuGet libraries
 

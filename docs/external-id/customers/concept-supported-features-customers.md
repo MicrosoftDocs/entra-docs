@@ -1,6 +1,6 @@
 ---
-title: Supported features in external tenants
-description: Learn about supported features in external tenants.
+title: External Tenant Features
+description: Compare the features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
  
 author: msmimart
 manager: celestedg
@@ -8,12 +8,13 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 05/21/2024
+ms.date: 06/26/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
 ---
+
 # Supported features in workforce and external tenants
 
 There are two ways to configure a Microsoft Entra tenant, depending on how the organization intends to use the tenant and the resources they want to manage:
@@ -22,8 +23,6 @@ There are two ways to configure a Microsoft Entra tenant, depending on how the o
 - An **external** tenant configuration is used exclusively for External ID scenarios where you want to publish apps to consumers or business customers.
 
 This article gives a detailed comparison of the features and capabilities available in [workforce and external tenants](../tenant-configurations.md).
-
-
 
 > [!NOTE]
 > During preview, features or capabilities that require a premium license are unavailable in external tenants.
@@ -87,7 +86,7 @@ The following table compares the features available for [Application registratio
 | **Authentication** > **Redirect URIs**| The URIs Microsoft Entra ID accepts as destinations when returning authentication responses (tokens) after successfully authenticating or signing out users. | Same as workforce.|
 | **Authentication** > **Front-channel logout URL**| This URL is where Microsoft Entra ID sends a request to have the application clear the user's session data. The Front-channel logout URL is required for single sign-out to work correctly.| Same as workforce.|
 | **Authentication** > **Implicit grant and hybrid flows**| Request a token directly from the authorization endpoint. | Same as workforce.|
-| **Certificates & secrets** | <ul><li>[Certificate](../../identity-platform/quickstart-register-app.md#add-a-certificate)</li><li>[Client secrets](../../identity-platform/quickstart-register-app.md#add-a-client-secret)</li><li>[Federated credentials](../../identity-platform/quickstart-register-app.md#add-a-federated-credential)</li></ul>| Same as workforce.|
+| **Certificates & secrets** | <ul><li>[Certificate](../../identity-platform/quickstart-register-app.md?tabs=certificate)</li><li>[Client secrets](../../identity-platform/quickstart-register-app.md?tabs=client-secret)</li><li>[Federated credentials](../../identity-platform/quickstart-register-app.md?tabs=federated-credential)</li></ul>| Same as workforce.|
 | **API permissions** | Add, remove, and replace permissions to an application. After permissions are added to your application, users or admins need to grant consent to the new permissions. Learn more about [updating an app's requested permissions in Microsoft Entra ID](../../identity-platform/howto-update-permissions.md).  | The following are the allowed permissions: Microsoft Graph `offline_access`, `openid`, and `User.Read` and your **My APIs** delegated permissions. Only an admin can consent on behalf of the organization.  |
 | **Expose an API** | [Define custom scopes](../../identity-platform/quickstart-configure-app-expose-web-apis.md) to restrict access to data and functionality protected by the API. An application that requires access to parts of this API can request that a user or admin consent to one or more of these scopes. | Define custom scopes to restrict access to data and functionality protected by the API. An application that requires access to parts of this API can request that admin consent to one or more of these scopes. |
 | **App roles**| App roles are [custom roles](../../identity-platform/howto-add-app-roles-in-apps.md) to assign permissions to users or apps. The application defines and publishes the app roles and interprets them as permissions during authorization.| Same as workforce. Learn more about [using role-based access control for applications](how-to-use-app-roles-customers.md) in an external tenant. |
@@ -104,7 +103,7 @@ The following table compares the features available for OAuth 2.0 and OpenID Con
 |[OpenID Connect](../../identity-platform/v2-protocols-oidc.md)| Yes| Yes|
 |[Authorization code](../../identity-platform/v2-oauth2-auth-code-flow.md)| Yes| Yes|
 |[Authorization code with Code Exchange (PKCE)](../../identity-platform/v2-oauth2-auth-code-flow.md)|Yes| Yes|
-|[Client credentials](../../identity-platform/v2-oauth2-client-creds-grant-flow.md)|Yes| [v2.0 applications](../../identity-platform/reference-app-manifest.md)|
+|[Client credentials](../../identity-platform/v2-oauth2-client-creds-grant-flow.md)|Yes| [v2.0 applications](../../identity-platform/reference-app-manifest.md) (preview)|
 |[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| No |
 |[On-Behalf-Of flow](../../identity-platform/v2-oauth2-on-behalf-of-flow.md)| Yes| Yes|
 |[Implicit grant](../../identity-platform/v2-oauth2-implicit-grant-flow.md)| Yes| Yes|

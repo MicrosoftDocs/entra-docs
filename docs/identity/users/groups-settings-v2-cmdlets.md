@@ -241,8 +241,8 @@ To get the existing members of a group, use the Get-MgGroupMember cmdlet, as in 
 
 Id                                   DeletedDateTime
 --                                   ---------------
-71b3857d-2a23-416d-bd22-a471854ddada
-fd2d57c7-22ad-42cd-961a-7340fb2eb6b4
+aaaaaaaa-bbbb-cccc-1111-222222222222
+bbbbbbbb-cccc-dddd-2222-333333333333
 ```
 
 ### Remove members
@@ -269,7 +269,7 @@ The value returned is a list of groups of which this user is a member. You can a
 
 ## Disable group creation by your users
 
-You can prevent non-admin users from creating security groups. The default behavior in Microsoft Online Directory Services (MSODS) is to allow non-admin users to create groups, whether or not self-service group management (SSGM) is also enabled. The SSGM setting  controls behavior only in the My Apps access panel.
+You can prevent non-admin users from creating security groups. The default behavior in Microsoft Online Directory Services (MSODS) is to allow non-admin users to create groups, whether or not self-service group management (SSGM) is also enabled. The SSGM setting  controls behavior only in the My Groups portal.
 
 To disable group creation for non-admin users:
 

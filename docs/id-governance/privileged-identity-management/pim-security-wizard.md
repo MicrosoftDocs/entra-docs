@@ -29,7 +29,7 @@ Also, keep role assignments permanent if a user has a Microsoft account (in othe
 
 ## Open Discovery and insights (preview)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged role administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles** >**Discovery and insights (Preview)**.
 
@@ -37,9 +37,9 @@ Also, keep role assignments permanent if a user has a Microsoft account (in othe
 
     :::image type="content" source="./media/pim-security-wizard/new-preview-link.png" alt-text="Screenshot showing Microsoft Entra roles Discovery and insights page.":::
 
-1. Select **Reduce global administrators**.
+1. Select **Reduce Global Administrators**.
 
-    :::image type="content" source="./media/pim-security-wizard/new-preview-page.png" alt-text="Screenshot that shows the Discovery and insights (Preview) with the Reduce global administrators action selected.":::
+    :::image type="content" source="./media/pim-security-wizard/new-preview-page.png" alt-text="Screenshot that shows the Discovery and insights (Preview) with the Reduce Global Administrators action selected.":::
 
 1. Review the list of Global Administrator role assignments.
 
@@ -49,9 +49,9 @@ Also, keep role assignments permanent if a user has a Microsoft account (in othe
 
     :::image type="content" source="./media/pim-security-wizard/new-global-administrator-buttons.png" alt-text="Screenshot showing how to convert members to eligible page with options to select members you want to make eligible for roles.":::
 
-1. You can also require all global administrators to review their own access.
+1. You can also require all Global Administrators to review their own access.
 
-    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-access-review.png" alt-text="Screenshot showing the Global administrators page showing the access reviews section.":::
+    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-access-review.png" alt-text="Screenshot showing the Global Administrators page showing the access reviews section.":::
 
 1. After you select any of these changes, you'll see an Azure notification.
 

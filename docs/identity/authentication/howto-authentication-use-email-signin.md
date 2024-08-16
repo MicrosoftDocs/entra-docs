@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 06/19/2024
 
 ms.author: justinha
 author: calui
@@ -42,7 +42,7 @@ Here's what you need to know about email as an alternate login ID:
     * If the non-UPN email in use becomes stale (no longer belongs to the user), these claims will return the UPN instead.
 * The feature supports managed authentication with Password Hash Sync (PHS) or Pass-Through Authentication (PTA).
 * There are two options for configuring the feature:
-    * [Home Realm Discovery (HRD) policy](#enable-user-sign-in-with-an-email-address) - Use this option to enable the feature for the entire tenant. Global Administrator, Application Administrator, or Cloud Application Administrator role is required.
+    * [Home Realm Discovery (HRD) policy](#enable-user-sign-in-with-an-email-address) - Use this option to enable the feature for the entire tenant. At least the [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role is required.
     * [Staged rollout policy](#enable-staged-rollout-to-test-user-sign-in-with-an-email-address) - Use this option to test the feature with specific Microsoft Entra groups. Global Administrator privileges required. When you first add a security group for staged rollout, you're limited to 200 users to avoid a UX time-out. After you've added the group, you can add more users directly to it, as required.
 
 ## Preview limitations
@@ -320,7 +320,7 @@ You need *Global Administrator* permissions to complete the following steps:
 1. Find the directoryObject ID for the group to be added to the staged rollout policy. Note the value returned for the *Id* parameter, because it will be used in the next step.
 
    ```powershell
-   Get-MgGroup -Filter "DisplayName eq 'Name of group to be added to the staged rollout policy'"
+   Get-MgBetaGroup -Filter "DisplayName eq 'Name of group to be added to the staged rollout policy'"
    ```
 
 1. Add the group to the staged rollout policy as shown in the following example. Replace the value in the *-FeatureRolloutPolicyId* parameter with the value returned for the policy ID in step 4 and replace the value in the *-OdataId* parameter with the *Id* noted in step 5. It may take up to 1 hour before users in the group can sign in to Microsoft Entra ID with email as an alternate login ID.

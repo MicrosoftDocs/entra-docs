@@ -87,7 +87,7 @@ When you invite a guest user, you became their sponsor by default. If you need t
 
 10. Once you selected sponsor users or groups, save the changes on the **Job Information** tab.
 
-## Next steps
+## Related content
 
 - [Add and invite guest users](add-users-administrator.yml)
 - [Create a new access package](~/id-governance/entitlement-management-access-package-create.md)

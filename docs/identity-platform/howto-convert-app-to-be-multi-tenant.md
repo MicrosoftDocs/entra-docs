@@ -143,7 +143,6 @@ Multitenant applications can also get access tokens to call APIs that are protec
 ## See also
 
 * [Multitenant application sample](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-3-Multi-Tenant/README.md)
-* [Multi-tier multitenant application sample](https://github.com/Azure-Samples/ms-identity-javascript-angular-tutorial/blob/main/6-AdvancedScenarios/2-call-api-mt/README.md)
 * [Application objects and service principal objects](app-objects-and-service-principals.md)
 * [Integrating applications with Microsoft Entra ID](./quickstart-register-app.md)
 * [Overview of the Consent Framework](./application-consent-experience.md)

@@ -15,7 +15,7 @@ ms.topic: concept-article
 
 # Authentication vs. authorization
 
-This article defines authentication and authorization. It also briefly covers Multi-Factor Authentication and how you can use the Microsoft identity platform to authenticate and authorize users in your web apps, web APIs, or apps that call protected web APIs. If you see a term you aren't familiar with, try our [glossary](developer-glossary.md) or our [Microsoft identity platform videos](identity-videos.md), which cover basic concepts.
+This article defines authentication and authorization. It also briefly covers multifactor authentication and how you can use the Microsoft identity platform to authenticate and authorize users in your web apps, web APIs, or apps that call protected web APIs. If you see a term you aren't familiar with, try our [glossary](developer-glossary.md) or our [Microsoft identity platform videos](identity-videos.md), which cover basic concepts.
 
 ## Authentication
 
@@ -23,7 +23,7 @@ This article defines authentication and authorization. It also briefly covers Mu
 
 ## Authorization
 
-*Authorization* is the act of granting an authenticated party permission to do something. It specifies what data you're allowed to access and what you can do with that data. Authorization is sometimes shortened to *AuthZ*. The Microsoft identity platform uses the [OAuth 2.0](https://oauth.net/2/) protocol for handling authorization.
+*Authorization* is the act of granting an authenticated party permission to do something. It specifies what data you're allowed to access and what you can do with that data. Authorization is sometimes shortened to *AuthZ*. The Microsoft identity platform provides resource owners the ability to use the [OAuth 2.0](https://oauth.net/2/) protocol for handling authorization, but the Microsoft cloud also has other authorization systems such as [Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Azure RBAC](/azure/role-based-access-control/overview), and [Exchange RBAC](/exchange/permissions-exo/application-rbac).
 
 ## Multifactor authentication
 
@@ -36,7 +36,7 @@ Creating apps that each maintain their own username and password information inc
 Microsoft Entra ID is a centralized identity provider in the cloud. Delegating authentication and authorization to it enables scenarios such as:
 
 - Conditional Access policies that require a user to be in a specific location.
-- Multi-Factor Authentication which requires a user to have a specific device.
+- Multifactor authentication which requires a user to have a specific device.
 - Enabling a user to sign in once and then be automatically signed in to all of the web apps that share the same centralized directory. This capability is called *single sign-on (SSO)*.
 
 The Microsoft identity platform simplifies authorization and authentication for application developers by providing identity as a service. It supports industry-standard protocols and open-source libraries for different platforms to help you start coding quickly. It allows developers to build applications that sign in all Microsoft identities, get tokens to call [Microsoft Graph](https://developer.microsoft.com/graph/), access Microsoft APIs, or access other APIs that developers have built.

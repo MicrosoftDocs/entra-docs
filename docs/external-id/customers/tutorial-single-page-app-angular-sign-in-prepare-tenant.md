@@ -66,7 +66,7 @@ In this tutorial:
       - **Email one-time-passcode:** Allows new users to sign up and sign in using an email address as the sign-in name and email one-time passcode as their first factor credential.
 
          > [!NOTE]
-         > Email one-time passcode must be enabled at the tenant level (**All Identity Providers** > **Email One-time-passcode**) for this option to be available at the user flow level.
+         > Email one-time passcode must be enabled at the tenant level (**All Identity Providers** > **Email one-time-passcode**) for this option to be available at the user flow level.
 
 1. Select **Create**. The new user flow appears in the **User flows** list. If necessary, refresh the page.
 

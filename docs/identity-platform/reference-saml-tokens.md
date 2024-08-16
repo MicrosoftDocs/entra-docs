@@ -56,25 +56,25 @@ This is a sample of a typical SAML token.
         </EndpointReference>
     </wsp:AppliesTo>
     <t:RequestedSecurityToken>
-        <Assertion xmlns="urn:oasis:names:tc:SAML:2.0:assertion" ID="_3ef08993-846b-41de-99df-b7f3ff77671b" IssueInstant="2014-12-24T05:20:47.060Z" Version="2.0">
+        <Assertion xmlns="urn:oasis:names:tc:SAML:2.0:assertion" ID="_aaaaaaaa-0b0b-1c1c-2d2d-333333333333" IssueInstant="2014-12-24T05:20:47.060Z" Version="2.0">
             <Issuer>https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/</Issuer>
             <ds:Signature xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
                 <ds:SignedInfo>
                     <ds:CanonicalizationMethod Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#" />
                     <ds:SignatureMethod Algorithm="https://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
-                    <ds:Reference URI="#_3ef08993-846b-41de-99df-b7f3ff77671b">
+                    <ds:Reference URI="#_aaaaaaaa-0b0b-1c1c-2d2d-333333333333">
                         <ds:Transforms>
                             <ds:Transform Algorithm="https://www.w3.org/2000/09/xmldsig#enveloped-signature" />
                             <ds:Transform Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#" />
                         </ds:Transforms>
                         <ds:DigestMethod Algorithm="https://www.w3.org/2001/04/xmlenc#sha256" />
-                        <ds:DigestValue>cV1J580U1pD24hEyGuAxrbtgROVyghCqI32UkER/nDY=</ds:DigestValue>
+                        <ds:DigestValue>E3fH4iJ5kL6mN7oP8qR9sT0uV1wX2y/nDY=</ds:DigestValue>
                     </ds:Reference>
                 </ds:SignedInfo>
-                <ds:SignatureValue>j+zPf6mti8Rq4Kyw2NU2nnu0pb{lots of characters}ut93UTyTAIGOs5fvP9ZfK2vNeMVJW7Xg==</ds:SignatureValue>
+                <ds:SignatureValue>aB1cD2eF3gH4i...J5kL6-mN7oP8qR==</ds:SignatureValue>
                 <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
                     <X509Data>
-                        <X509Certificate>MIIDPjCCAabcAwIBAgIQsRiM0jheFZhKk49YD0SK1TAJBgUrDg{lots of characters}OBcXWLAIarZ</X509Certificate>
+                        <X509Certificate>C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w</X509Certificate>
                     </X509Data>
                 </KeyInfo>
             </ds:Signature>
@@ -131,12 +131,12 @@ This is a sample of a typical SAML token.
     </t:RequestedSecurityToken>
     <t:RequestedAttachedReference>
         <SecurityTokenReference xmlns="https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:d3p1="https://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd" d3p1:TokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0">
-            <KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">_3ef08993-846b-41de-99df-b7f3ff77671b</KeyIdentifier>
+            <KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">_aaaaaaaa-0b0b-1c1c-2d2d-333333333333</KeyIdentifier>
         </SecurityTokenReference>
     </t:RequestedAttachedReference>
     <t:RequestedUnattachedReference>
         <SecurityTokenReference xmlns="https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:d3p1="https://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd" d3p1:TokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0">
-            <KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">_3ef08993-846b-41de-99df-b7f3ff77671b</KeyIdentifier>
+            <KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">_aaaaaaaa-0b0b-1c1c-2d2d-333333333333</KeyIdentifier>
         </SecurityTokenReference>
     </t:RequestedUnattachedReference>
     <t:TokenType>http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0</t:TokenType>

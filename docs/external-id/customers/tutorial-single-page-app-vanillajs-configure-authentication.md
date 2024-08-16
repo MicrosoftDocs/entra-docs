@@ -16,7 +16,7 @@ ms.date: 08/17/2023
 
 # Tutorial: Handle authentication flows in a Vanilla JavaScript SPA
 
-This tutorial is part 3 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication. In [part 2 of this series](./tutorial-single-page-app-vanillajs-prepare-app.md), you created a Vanilla JS SPA and prepared it for authentication with your external tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
+This tutorial is part 3 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication. In [part 2 of this series](./tutorial-single-page-app-vanillajs-prepare-app.md), you created a Vanilla JS SPA and prepared it for authentication with your external tenant. In this tutorial, you learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 
@@ -99,9 +99,11 @@ The application uses the [Implicit Grant Flow](~/identity-platform/v2-oauth2-imp
       - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 2. Save the file.
 
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
+
 ## Adding code to the redirection file
 
-A redirection file is required to handle the response from the sign-in page. It is used to extract the access token from the URL fragment and use it to call the protected API. It is also used to handle errors that occur during the authentication process.
+A redirection file is required to handle the response from the sign-in page. It's used to extract the access token from the URL fragment and use it to call the protected API. It's also used to handle errors that occur during the authentication process.
 
 1. Open *public/authRedirect.js* and add the following code snippet:
 

@@ -29,7 +29,7 @@ This article describes several methods for accessing and analyzing the remote ne
 To view the remote network health logs in the Microsoft Entra admin center, you need:
 
 - One of the following roles: [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator), or [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
-- The Global Secure Access preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - Separate roles are required for accessing the logs with the Microsoft Graph API and integrating with Log Analytics and Azure Workbooks.
 
 ## View the logs
@@ -41,7 +41,7 @@ To view the **Remote network health logs**, you can use either the Microsoft Ent
 To view Remote network health logs in Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
-1. Browse to **Global Secure Access (preview)** > **Monitor** > **Remote network health logs**.
+1. Browse to **Global Secure Access** > **Monitor** > **Remote network health logs**.
 
     ![Screenshot of the Remote network health logs.](media/how-to-remote-network-health-logs/remote-network-health-logs.png)
 
@@ -184,4 +184,4 @@ The following table describes each of the fields in the Remote network health lo
 ## Next steps
 
 - [Enable enriched Microsoft 365 logs](how-to-view-enriched-logs.md)
-- [Explore Global Secure Access traffic logs](how-to-view-traffic-logs.md)
+- [Explore Global Secure Access traffic logs (preview)](how-to-view-traffic-logs.md)

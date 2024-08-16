@@ -118,7 +118,7 @@ Your specific use cases determine your credential design. The use case determine
 
 With Microsoft Entra Verified ID, the most common credential use cases are:
 
-**Identity Verification**: a credential is issued based on multiple criteria. Multiple criteria may include verifying the authenticity of government-issued documents like a passport or driver’s license and corelating the information in that document with other information such as:
+**Identity Verification**: a credential is issued based on multiple criteria. Multiple criteria may include verifying the authenticity of government-issued documents like a passport or driver’s license and correlating the information in that document with other information such as:
 
 * a user’s selfie 
 

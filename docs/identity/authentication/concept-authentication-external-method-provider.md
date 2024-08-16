@@ -183,12 +183,12 @@ http://customcaserver.azurewebsites.net/.well-known/jwks
     {
       "kty": "RSA",
       "use": "sig",
-      "kid": "CEYm9GmLvfIqrl0zBJc9-Chk_LM",
-      "x5t": "CEYm9GmLvfIqrl0zBJc9-Chk_LM",
-      "n": "jq277LRoE6WKM0awT3b-—redacted--vt8J6MZvmgboVB9S5CMQ",
+      "kid": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+      "x5t": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+      "n": "jq277LRoE6WKM0awT3b...vt8J6MZvmgboVB9S5CMQ",
       "e": "AQAB",
       "x5c": [
-        "cZa3jEzEd0nvztzAVM6Uy—redacted--Z0HBHjTZq9IWiPHSWo0rzA="
+        "cZa3jz...Wo0rzA="
       ]
     }
   ]
@@ -327,7 +327,7 @@ Here's an example of an id_token_hint for a directory member:
 {
   "typ": "JWT",
   "alg": "RS256",
-  "kid": "7_Zuf1tvkwLxYaHS3q6lUjUYIGw"
+  "kid": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w"
 }.{
   "ver": "2.0",
   "iss": "https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/v2.0",
@@ -350,12 +350,12 @@ Here's an example of the id_token hint for a guest user in the tenant:
 {
   "typ": "JWT",
   "alg": "RS256",
-  "kid": "7_Zuf1tvkwLxYaHS3q6lUjUYIGw"
+  "kid": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w"
 }.{
   "ver": "2.0",
   "iss": "https://login.microsoftonline.com/9122040d-6c67-4c5b-b112-36a304b66dad/v2.0",
   "sub": "mBfcvuhSHkDWVgV72x2ruIYdSsPSvcj2R0qfc6mGEAA",
-  "aud": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
+  "aud": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "exp": 1536093790,
   "iat": 1536093791,
   "nbf": 1536093791,
@@ -512,7 +512,7 @@ Term | Description
 MFA  | Multifactor authentication.
 EAM  | An external authentication method is an authentication method from a provider other than Microsoft Entra ID that is used as part of authenticating a user.
 OIDC | Open ID Connect is an authentication protocol based on OAuth 2.0.
-600b719b-3766-4dc5-95a6-3c4a8dc31885 | An example of an appid integrated for an external authentication method.
+00001111-aaaa-2222-bbbb-3333cccc4444 | An example of an appid integrated for an external authentication method.
 
 ## Next steps
 

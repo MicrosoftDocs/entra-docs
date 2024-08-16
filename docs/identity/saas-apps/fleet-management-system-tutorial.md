@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 06/20/2024
 ms.author: jeedes
 
 
@@ -95,11 +95,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Fleet Management System SSO
 
-To configure single sign-on on **Fleet Management System** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Fleet Management System support team](mailto:fms-datashare@navagis.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Fleet Management System** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Fleet Management System support team](mailto:msfms-support@navagis.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Fleet Management System test user
 
-In this section, you create a user called Britta Simon at Fleet Management System. Work with [Fleet Management System support team](mailto:fms-datashare@navagis.com) to add the users in the Fleet Management System platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon at Fleet Management System. Work with [Fleet Management System support team](mailto:msfms-support@navagis.com) to add the users in the Fleet Management System platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 

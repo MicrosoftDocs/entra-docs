@@ -98,6 +98,7 @@ Managed identities use certificate-based authentication. Each managed identityâ€
 
 - If system assigned managed identity is enabled and no identity is specified in the request, Azure Instance Metadata Service (IMDS) defaults to the system assigned managed identity.
 - If system assigned managed identity isn't enabled, and only one user assigned managed identity exists, IMDS defaults to that single user assigned managed identity.
+    > If another user assigned managed identity is assigned to the resource for any reason, your requests to IMDS will start failing with the error `Multiple user assigned identities exist, please specify the clientId / resourceId of the identity in the token request`. We highly recommend you explicitly specify an identity in your request, even if only one user assigned managed identity currently exists for the resource.
 - If system assigned managed identity isn't enabled, and multiple user assigned managed identities exist, then you are required to specify a managed identity in the request.
 
 ## Limitations

@@ -23,7 +23,6 @@ The following list is provided as a reference and includes a detailed list of se
 - Connectors
 - Device Management Service
 - EnrichmentSvc
-- ESign
 - IC3 Gateway
 - M365 Admin Services
 - M365 Auditing Public Protected Web API app
@@ -107,6 +106,7 @@ The following list is provided as a reference and includes a detailed list of se
 - ProjectWorkManagement_USGov
 - Reply at mention
 - Security & Compliance Center
+- SharePoint eSignature
 - SharePoint Online Web Client Extensibility
 - SharePoint Online Web Client Extensibility Isolated
 - Skype and Teams Tenant Admin API

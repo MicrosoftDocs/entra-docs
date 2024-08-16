@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: conceptual
-ms.date: 05/31/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
@@ -18,8 +18,8 @@ ms.reviewer: mwahl
 In Microsoft Entra ID, you can use role models to manage access at scale through identity governance.
 
  * You can use access packages to represent [organizational roles](identity-governance-organizational-roles.md) in your organization, such as "sales representative". An access package representing that organizational role would include all the access rights that a sales representative might typically need, across multiple resources.
- * Applications [can define their own roles](~/identity-platform/howto-add-app-roles-in-apps.md). For example, if you had a sales application, and that application included the app role "salesperson" in its manifest, you could then [include that role from the app manifest in an access package](entitlement-management-access-package-resources.md).  Applications can also use security groups in scenarios where a user could have multiple application-specific roles simultaneously.
- * You can use roles for delegating administrative access.  If you have a catalog for all the access packages needed by sales, you could assign someone to be responsible for that catalog, by assigning them a catalog-specific role.
+ * Applications [can define their own roles](~/identity-platform/howto-add-app-roles-in-apps.md). For example, if you had a sales application, and that application included the app role "salesperson" in its manifest, you could then [include that role from the app manifest in an access package](entitlement-management-access-package-resources.md). Applications can also use security groups in scenarios where a user could have multiple application-specific roles simultaneously.
+ * You can use roles for delegating administrative access. If you have a catalog for all the access packages needed by sales, you could assign someone to be responsible for that catalog, by assigning them a catalog-specific role.
 
 This article discusses how to use roles to manage aspects within Microsoft Entra entitlement management, for controlling access to the entitlement management resources.
 
@@ -63,7 +63,7 @@ After delegation, the marketing department might have roles similar to the follo
 
 | User | Organizational role | Microsoft Entra role | Entitlement management role |
 | --- | --- | --- | --- |
-| Hana | IT administrator | Global administrator or Identity Governance administrator  |  |
+| Hana | IT administrator | Global Administrator or Identity Governance Administrator  |  |
 | Mamta | Marketing manager | User | Catalog creator and Catalog owner |
 | Bob | Marketing lead | User | Catalog owner |
 | Jessica | Marketing project manager | User | Access package manager |
@@ -74,7 +74,7 @@ Entitlement management has the following roles, with permissions for administeri
 
 | Entitlement management role | Role definition ID | Description |
 | --- | --- | -- |
-| Catalog creator | `ba92d953-d8e0-4e39-a797-0cbedb0a89e8` | Create and manage catalogs. Typically an IT administrator who isn't a Global administrator, or a resource owner for a collection of resources. The person that creates a catalog automatically becomes the catalog's first catalog owner, and can add more catalog owners. A catalog creator can’t manage or see catalogs that they don’t own and can’t add resources they don’t own to a catalog. If the catalog creator needs to manage another catalog or add resources they don’t own, they can request to be a co-owner of that catalog or resource. |
+| Catalog creator | `ba92d953-d8e0-4e39-a797-0cbedb0a89e8` | Create and manage catalogs. Typically an IT administrator who isn't a Global Administrator, or a resource owner for a collection of resources. The person that creates a catalog automatically becomes the catalog's first catalog owner, and can add more catalog owners. A catalog creator can’t manage or see catalogs that they don’t own and can’t add resources they don’t own to a catalog. If the catalog creator needs to manage another catalog or add resources they don’t own, they can request to be a co-owner of that catalog or resource. |
 
 Entitlement management has the following roles that are defined for each particular catalog, for administering access packages and other configuration within a catalog. An administrator or a catalog owner can add users, groups of users, or service principals to these roles.
 
@@ -120,14 +120,17 @@ The following table lists the tasks that the entitlement management roles can do
 
 To determine the least privileged role for a task, you can also reference [Administrator roles by admin task in Microsoft Entra ID](~/identity/role-based-access-control/delegate-by-task.md#entitlement-management).
 
+> [!NOTE]
+> Users that have been assigned the Access package assignment manager role will no longer be able to bypass approval settings when directly assigning a user if the access package policy requires approval. If you have a scenario in which you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to users who need access.
+
 ## Required roles to add resources to a catalog
 
-A Global administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog.
+A Global Administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog.
 
 > [!NOTE]
-> Users that have been assigned the User administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own.  A User administrator who is a catalog owner can add or remove any group or application in the catalog they own, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). If users in your organization have been assigned the User administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the **Identity Governance administrator** role.
+> Users that have been assigned the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own.  A User Administrator who is a catalog owner can add or remove any group or application in the catalog they own, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). If users in your organization have been assigned the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the **Identity Governance Administrator** role.
 
-For a user who isn't a global administrator, to add groups, applications, or SharePoint Online sites to a catalog, that user must have *both* the ability to perform actions on that resource, and be a catalog owner role in entitlement management for the catalog. The most common way a user can have the ability to perform actions for a resource is by being in a Microsoft Entra directory role that allows them to administer the resource. Or for resources that have owners, the user can have the ability to perform actions by having been assigned as an owner of the resource.
+For a user who isn't a Global Administrator, to add groups, applications, or SharePoint Online sites to a catalog, that user must have *both* the ability to perform actions on that resource, and be a catalog owner role in entitlement management for the catalog. The most common way a user can have the ability to perform actions for a resource is by being in a Microsoft Entra directory role that allows them to administer the resource. Or for resources that have owners, the user can have the ability to perform actions by having been assigned as an owner of the resource.
 
 The actions that entitlement management checks when a user adds a resource to a catalog are:
 
@@ -157,7 +160,7 @@ Typically, a user in a role with Guest Inviter privileges can invite individual 
 For managing external collaboration, where the individual external users for a collaboration project might not be known in advance, assigning users who are working with external organizations into  entitlement management roles can allow them to configure catalogs, access packages and policies for their external collaboration. These configurations allow the external users they're collaborating with to request and be added to your organization's directory and access packages.
 
 * To allow users in external directories from connected organizations to be able to request access packages in a catalog, the catalog setting of **Enabled for external users** needs to be set to **Yes**. Changing this setting can be done by an administrator or a catalog owner of the catalog.
-* The access package must also have a policy set [for users not in your directory](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory).  This policy can be created by an administrator, catalog owner or access package manager of the catalog.
+* The access package must also have a policy set [for users not in your directory](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory). This policy can be created by an administrator, catalog owner or access package manager of the catalog.
 * An access package with that policy allows users in scope to be able to request access, including users not already in your directory. If their request is approved, or doesn't require approval, then the user is automatically added to your directory.
 * If the policy setting was for **All users**, and the user wasn't part of an existing connected organization, then a new proposed connected organization is automatically created. You can [view the list of connected organizations](entitlement-management-organization.md#view-the-list-of-connected-organizations) and remove organizations that are no longer needed.
 
@@ -167,7 +170,7 @@ You can also configure what happens when an external user brought in by entitlem
 
 You can prevent users who aren't in administrative roles from inviting individual guests, in the [external collaboration settings](~/external-id/external-collaboration-settings-configure.md), by changing the **Guest invite settings** setting to specific admin roles, and have **Enable guest self-service sign up** set to **No**.
 
-To prevent delegated users from configuring entitlement management to let external users request for external collaboration, then be sure to communicate this constraint to all global administrators, identity governance administrators, catalog creators, and catalog owners, as they're able to change catalogs, so that they don't inadvertently permit new collaboration in new or updated catalogs. They should ensure that catalogs are set with **Enabled for external users** to **No**, and don't have any access packages with policies for allowing a user not in the directory to request.
+To prevent delegated users from configuring entitlement management to let external users request for external collaboration, then be sure to communicate this constraint to all Global Administrators, Identity Governance Administrators, catalog creators, and catalog owners, as they're able to change catalogs, so that they don't inadvertently permit new collaboration in new or updated catalogs. They should ensure that catalogs are set with **Enabled for external users** to **No**, and don't have any access packages with policies for allowing a user not in the directory to request.
 
 You can view the list of catalogs currently enabled for external users in the Microsoft Entra admin center.
 
@@ -184,7 +187,7 @@ You can view the list of catalogs currently enabled for external users in the Mi
 
 You can also view and update catalog creators and entitlement management catalog-specific role assignments using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the Graph API to [list the role definitions](/graph/api/rbacapplication-list-roledefinitions) of entitlement management, and [list role assignments](/graph/api/rbacapplication-list-roleassignments) to those role definitions.
 
-For example, to view the entitlement management-specific roles that a particular user or group has been assigned, use the Graph query to list role assignments, and provide the user or group's ID as the value of the `principalId` query filter, as in
+For example, to view the entitlement management-specific roles that a particular user or group is assigned to, use the Graph query to list role assignments, and provide the user or group's ID as the value of the `principalId` query filter, as in
 
 ```http
 GET https://graph.microsoft.com/v1.0/roleManagement/entitlementManagement/roleAssignments?$filter=principalId eq 'aaaaaaaa-bbbb-cccc-1111-222222222222'&$expand=roleDefinition&$select=id,appScopeId,roleDefinition

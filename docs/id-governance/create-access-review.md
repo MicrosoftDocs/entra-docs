@@ -7,12 +7,12 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 04/16/2024
+ms.date: 07/23/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
  
-# Create an access review of groups and applications in Microsoft Entra ID
+# Create an access review of groups and applications in Microsoft Entra ID 
 
 Access to groups and applications for employees and guests changes over time. To reduce the risk associated with stale access assignments, administrators can use Microsoft Entra ID to create access reviews for group members or application access.
 
@@ -20,12 +20,12 @@ Microsoft 365 and Security group owners can also use Microsoft Entra ID to creat
 
 Watch a short video that talks about enabling access reviews.
 
->[!VIDEO https://www.youtube.com/embed/X1SL2uubx9M]
+   >[!VIDEO https://www.youtube.com/embed/VSl1TVITcQ8]
 
 This article describes how to create one or more access reviews for group members or application access.
 
 - To review access package assignments, see [configure an access review in entitlement management](entitlement-management-access-reviews-create.md).
-- To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in PIM](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
+- To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
 - For reviews of PIM for Groups, see [create an access review of PIM for Groups](create-access-review-pim-for-groups.md).
 
 ## Prerequisites
@@ -33,7 +33,7 @@ This article describes how to create one or more access reviews for group member
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance licenses.  
 - Creating a review on inactive users, or with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations, requires a Microsoft Entra ID Governance license.
 - Global Administrator or Identity Governance Administrator to create reviews on groups or applications.
-- Users must be in the Global administrator role or the Privileged Role administrator role to create reviews on role-assignable groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
+- Users must be at least a Privileged Role Administrator to create reviews on role-assignable groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
 - Microsoft 365 and Security group owner.
 
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
@@ -41,7 +41,7 @@ For more information, see [License requirements](access-reviews-overview.md#lice
 > [!NOTE]
 > Following least privilege access, we recommend using the Identity Governance Administrator role.
 
-If you're reviewing access to an application, then before creating the review, see the article on how to [prepare for an access review of users' access to an application](access-reviews-application-preparation.md) to ensure the application is integrated with Microsoft Entra ID in your tenant.
+If you're reviewing access to an application, then before you create the review, see the article on how to [prepare for an access review of users' access to an application](access-reviews-application-preparation.md) to ensure the application is integrated with Microsoft Entra ID in your tenant.
 
 > [!NOTE]
 > Access reviews capture a snapshot of access at the beginning of each review instance. Any changes made during the review process will be reflected in the subsequent review cycle. Essentially, with the commencement of each new recurrence, pertinent data regarding the users, resources under review, and their respective reviewers is retrieved.
@@ -107,7 +107,7 @@ If you're reviewing access to an application, then before creating the review, s
     > In a team or group access review, only the group owners (at the time a review starts) are considered as reviewers. During the course of a review, if the list of group owners is updated, new group owners will not be considered reviewers as well as old group owners will still be considered reviewers. However, in the case of a recurring review, any changes on the group owners list will be considered in the next instance of that review.
 
     >[!IMPORTANT]
-    > For PIM for Groups (Preview), you must select **Group owner(s)**. It is mandatory to assign at least one fallback reviewer to the review. The review will only assign active owner(s) as the reviewer(s). Eligible owners are not included. If there are no active owners when the review begins, the fallback reviewer(s) will be assigned to the review.
+    > For access reviews of PIM for Groups (preview), when selecting the group owner as the reviewer, it is mandatory to assign at least one fallback reviewer. The review will only assign active owner(s) as the reviewer(s). Eligible owners are not included. If there are no active owners when the review begins, the fallback reviewer(s) will be assigned to the review.
 
       ![Screenshot that shows New access review.](./media/create-access-review/new-access-review.png)
 
@@ -120,6 +120,11 @@ If you're reviewing access to an application, then before creating the review, s
      ![Screenshot that shows choosing how often the review should happen.](./media/create-access-review/frequency.png)
 
 1. Select **Next: Settings**.
+
+> [!NOTE]
+> When creating an access review, you are able to specify the start date, but the start time may vary a few hours based on system processing. For example, if you create an access review at 03:00 UTC on 09/09 that is set to run on 09/12, then the review will be scheduled to run at 03:00 UTC on the start date, but could be delayed due to system processing.
+
+You are able to specify the start date, but the start time may vary a few hours based on system processing. 
 
 ### Next: Settings
 
@@ -205,7 +210,7 @@ A multi-stage review allows the administrator to define two or three sets of rev
  
 1. By default, you see two stages when you create a multi-stage review. However, you can add up to three stages. If you want to add a third stage, select **+ Add a stage** and complete the required fields.  
 
-1. You can decide to allow 2nd and 3rd stage reviewers to the see decisions made in the previous stage(s). If you want to allow them to see the decisions made prior, select the box next to **Show previous stage(s) decisions to later stage reviewers** under **Reveal review results**. Leave the box unchecked to disable this setting if you’d like your reviewers to review independently. 
+1. You can decide to allow 2nd and 3rd stage reviewers to see decisions made in the previous stage(s). If you want to allow them to see the decisions made prior, select the box next to **Show previous stage(s) decisions to later stage reviewers** under **Reveal review results**. Leave the box unchecked to disable this setting if you’d like your reviewers to review independently. 
 
     ![Screenshot that shows duration and show previous stages setting enabled for multi-stage review.](./media/create-access-review/reveal-multi-stage-results-and-duration.png)
 

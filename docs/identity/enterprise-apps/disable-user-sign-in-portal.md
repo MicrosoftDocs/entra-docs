@@ -112,7 +112,7 @@ You need to consent to the `Application.ReadWrite.All` permission.
 Run the following query to disable user sign-in to an application.
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/servicePrincipals/2a8f9e7a-af01-413a-9592-c32ec0e5c1a7
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444
 
 Content-type: application/json
 

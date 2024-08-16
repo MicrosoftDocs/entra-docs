@@ -1,6 +1,6 @@
 ---
-title: Authentication methods and identity providers for external tenants
-description: Learn how to use different authentication methods for your customer sign-in and sign-up in CIAM. 
+title: Identity Providers
+description: Learn about sign-in and MFA options for customer identity and access management (CIAM) in external tenants, including email, one-time passcodes, Google and Facebook. 
  
 author: msmimart
 manager: celestedg
@@ -10,10 +10,10 @@ ms.subservice: customers
 ms.topic: concept-article
 ms.date: 05/15/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 ---
 
-# Authentication methods and identity providers in external tenants
+# Sign-in options and identity providers for external tenants
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 

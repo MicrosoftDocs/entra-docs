@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Sign-on URL** text box, type the URL:
     `https://app.animaker.com/login/samlsuccess/<Anyone_Home_Provided_Unique_Value>`
 
-1. Animaker application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**. Appraisd application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Animaker application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Appraisd application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![Screenshot shows the User Attributes pane with the edit icon highlighted.](common/edit-attribute.png)
 

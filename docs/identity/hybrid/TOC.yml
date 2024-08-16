@@ -45,6 +45,8 @@
       href:  decommission-connect-sync-v1.md
     - name:  Verify your version of sync
       href:  verify-sync-tool-version.md
+    - name:  Security improvements to autoupgrade and alerts 
+      href:  connect/security-updates-pks.md
   - name: Managing users and groups
     items: 
     - name:  Provision users on-demand
@@ -175,6 +177,8 @@
       href: cloud-sync/how-to-accidental-deletes.md
     - name: Agent registry options
       href: cloud-sync/how-to-manage-registry-options.md
+    - name: Cloud sync gMSA 
+      href: cloud-sync/gmsa-cloud-sync.md
     - name: Agent gMSA PowerShell cmdlets
       href: cloud-sync/how-to-gmsa-cmdlets.md
     - name: How to map usertype with cloud sync
@@ -325,6 +329,8 @@
         href: connect/how-to-connect-health-agent-install.md
       - name: Automatic upgrade
         href: connect/how-to-connect-install-automatic-upgrade.md
+      - name: Security update to the auto-upgrade process 
+        href: connect/security-updates-pks.md
       - name: Running the installation wizard a second time
         href: connect/how-to-connect-installation-wizard.md
       - name: Upgrade to a new version of Microsoft Entra Connect

@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Workgrid  for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Workgrid.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workgrid so that I can streamline the user management process and ensure that users have the appropriate access to Workgrid.
 ---
@@ -78,7 +77,7 @@ To configure Workgrid  for automatic user provisioning with Microsoft Entra ID, 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Workgrid  based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Workgrid , following the instructions provided in the [Workgrid  Single sign-on tutorial](Workgrid-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other
+> You may also choose to enable SAML-based single sign-on for Workgrid , following the instructions provided in the [Workgrid  Single sign-on tutorial](Workgrid-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-workgrid--in-azure-ad'></a>
 
@@ -113,19 +112,42 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Workgrid**.
 
-	![Screenshot of the Mappings section with the Synchronize Microsoft Entra users to Workgrid option called out.](media/Workgrid-provisioning-tutorial/usermapping.png)
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Workgrid  in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Workgrid  for update operations. Select the **Save** button to commit any changes.
 
-	![Workgrid  User Attributes](media/Workgrid-provisioning-tutorial/userattribute.png)
+   |Attribute|Type|Supported for filtering|Required by Workgrid|
+   |---|---|---|---|
+   |userName|String|&check;|&check;
+   |active|Boolean||
+   |displayName|String||
+   |title|String||
+   |emails[type eq "work"].value|String||
+   |preferredLanguage|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |phoneNumbers[type eq "fax"].value|String||
+   |externalId|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
+   |addresses[type eq "work"].locality|String||
+   |addresses[type eq "work"].postalCode|String||
+   |addresses[type eq "work"].formatted|String||
+   |addresses[type eq "work"].region|String||
+   |addresses[type eq "work"].streetAddress|String||
+
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Workgrid**
 
-	![Screenshot of the Mappings section with the Synchronize Microsoft Entra groups to Workgrid option called out.](media/Workgrid-provisioning-tutorial/groupmapping.png)
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Workgrid  in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Workgrid  for update operations. Select the **Save** button to commit any changes.
 
-	![Screenshot of the Attribute Mappings section with three mappings displayed.](media/Workgrid-provisioning-tutorial/groupattribute.png)
+   |Attribute|Type|Supported for filtering|Required by Workgrid
+   |---|---|---|---|
+   |displayName|String|&check;|&check;
+   |externalId|String||&check;
+   |members|Reference||
+
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

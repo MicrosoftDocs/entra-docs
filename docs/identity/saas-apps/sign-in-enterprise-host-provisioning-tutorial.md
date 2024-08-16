@@ -1,17 +1,13 @@
 ---
 title: 'Tutorial: Configure Sign In Enterprise for automatic host provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision hosts from Microsoft Entra ID to Sign In Enterprise.
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: beatrizd
-ms.assetid: 9032d0da-f472-4e8d-a14d-d84f472411ee
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Sign In Enterprise Host Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Sign In Enterprise Host Provisioning.
 ---

@@ -112,7 +112,7 @@ landingContent:
       - linkListType: get-started
         links:
         - text: Migrate to Microsoft Entra Cloud Sync from Connect sync
-          url: cloud-sync/tutorial-pilot-aadc-aadccp.md
+          url: cloud-sync/migrate-azure-ad-connect-to-cloud-sync.md
         - text: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
           url: cloud-sync/migrate-group-writeback.md
 

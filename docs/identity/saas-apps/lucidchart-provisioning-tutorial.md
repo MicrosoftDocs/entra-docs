@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Lucidchart for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Lucidchart.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Lucidchart so that I can streamline the user management process and ensure that users have the appropriate access to Lucidchart.
 ---
@@ -46,7 +45,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure Lucidchart to support provisioning with Microsoft Entra ID
 
-1. Login to [Lucidchart admin console](https://www.lucidchart.com). Navigate to **Team > App Integration**.
+1. Login to [Lucidchart admin console](https://lucid.app/). Navigate to **Team > App Integration**.
 
       :::image type="content" source="./media/lucidchart-provisioning-tutorial/team1.png" alt-text="Screenshot of the Lucidchart admin console. The Team menu is highlighted and open. Under Admin, App Integration is highlighted." border="false":::
 

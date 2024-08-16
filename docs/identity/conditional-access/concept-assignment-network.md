@@ -63,7 +63,7 @@ If you have these trusted IPs configured, they show up as **MFA Trusted IPs** in
 
 ### All Compliant Network locations
 
-Organizations with access to Global Secure Access preview features have another location listed that is made up of users and devices that comply with your organization's security policies. For more information, see the section [Enable Global Secure Access signaling for Conditional Access](/entra/global-secure-access/how-to-compliant-network#enable-global-secure-access-signaling-for-conditional-access). It can be used with Conditional Access policies to perform a compliant network check for access to resources.
+Organizations with access to Global Secure Access features have another location listed that is made up of users and devices that comply with your organization's security policies. For more information, see the section [Enable Global Secure Access signaling for Conditional Access](/entra/global-secure-access/how-to-compliant-network#enable-global-secure-access-signaling-for-conditional-access). It can be used with Conditional Access policies to perform a compliant network check for access to resources.
 
 ### Selected networks and locations
 
@@ -181,7 +181,7 @@ A policy that uses the location condition to block access is considered restrict
 <!--- 
 ## Define locations
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Named locations**.
 1. Choose **IP ranges location** or **Countries location**.
 1. Give your location a name.

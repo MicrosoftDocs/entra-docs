@@ -27,6 +27,8 @@
 - name: Concepts
   expanded: true
   items:
+  - name: Face Check pricing
+    href: verified-id-pricing.md
   - name: OpenID Connect protocol details
     href: issuer-openid.md
   - name: Plan and design 

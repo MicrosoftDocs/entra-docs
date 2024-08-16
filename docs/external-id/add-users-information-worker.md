@@ -4,7 +4,7 @@ title: Add B2B collaboration users as an information worker
 description: B2B collaboration allows information workers and app owners to add guest users to Microsoft Entra ID for access.
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 04/24/2024
+ms.date: 06/13/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -28,24 +28,6 @@ Self-service app management for gallery and SAML-based apps requires some initia
 > [!NOTE]
 > * This article describes how to set up self-service management for gallery and SAML-based apps that you’ve added to your Microsoft Entra tenant. You can also [set up self-service Microsoft 365 groups](~/identity/users/groups-self-service-management.md) so your users can manage access to their own Microsoft 365 groups. For more ways users can share Office files and apps with guest users, see [Guest access in Microsoft 365 groups](https://support.office.com/article/guest-access-in-office-365-groups-bfc7a840-868f-4fd6-a390-f347bf51aff6) and [Share SharePoint files or folders](https://support.office.com/article/share-sharepoint-files-or-folders-1fe37332-0f9a-4719-970e-d2578da4941c).
 > * Users are only able to invite guests if they have the **Guest inviter** role.
-
-## Invite a guest user to an app from the Access Panel
-
-After an app is configured for self-service, application owners can use their own Access Panel to invite a guest user to the app they want to share. The guest user doesn't necessarily need to be added to Microsoft Entra ID in advance. 
-
-1. Open your Access Panel by going to `https://myapps.microsoft.com`.
-2. Point to the app, select the ellipses (**...**), and then select **Manage your application**.
-
-:::image type="content" source="media/add-users-iw/access-panel-manage-app.png" alt-text="Screenshot showing the Manage app sub-menu for the Salesforce app.":::
-
-3. At the top of the users list, select **+** on the right-hand side.
-   
-4. In the **Add members** search box, type the email address for the guest user. Optionally, include a welcome message.
-   
-:::image type="content" source="media/add-users-iw/access-panel-invitation.png" alt-text="Screenshot showing the Add members window for adding a guest.":::
-
-   
-5. Select **Add** to send an invitation to the guest user. After you send the invitation, the user account is automatically added to the directory as a guest.
 
 ## Invite someone to join a group that has access to the app
 After an app is configured for self-service, application owners can invite guest users to the groups they manage that have access to the apps they want to share. The guest users don't have to already exist in the directory. The application owner follows these steps to invite a guest user to the group so that they can access the app.

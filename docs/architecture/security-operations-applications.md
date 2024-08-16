@@ -218,7 +218,7 @@ Alert when these changes are detected outside approved change management procedu
 
 * Azure Key Vault security overview and security guidance - [Azure Key Vault security overview](/azure/key-vault/general/security-features)
 
-* Solorgate risk information and tools - [Microsoft Entra workbook to help you access Solorigate risk](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azure-ad-workbook-to-help-you-assess-solorigate-risk/ba-p/2010718)
+* Solorigate risk information and tools - [Microsoft Entra workbook to help you access Solorigate risk](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azure-ad-workbook-to-help-you-assess-solorigate-risk/ba-p/2010718)
 
 * OAuth attack detection guidance - [Unusual addition of credentials to an OAuth app](/defender-cloud-apps/investigate-anomaly-alerts)
 

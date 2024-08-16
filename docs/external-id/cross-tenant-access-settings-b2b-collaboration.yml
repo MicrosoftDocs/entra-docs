@@ -6,7 +6,7 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: celestedg
-  ms.date: 04/29/2024
+  ms.date: 06/07/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -192,7 +192,7 @@ procedureSection:
 
       The following apps are part of the Microsoft Admin Portals app group: 
       - Azure portal (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
-      - Microsoft Entra Admin Center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
+      - Microsoft Entra admin center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
       - Microsoft 365 Defender Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
       - Microsoft Intune Admin Center (80ccca67-54bd-44ab-8625-4b79c4dc7775)
       - Microsoft Purview Compliance Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
@@ -205,9 +205,9 @@ procedureSection:
 
       2. Select **External Identities** > **Cross-tenant access settings**.
 
-      3. Under **Organizational settings** select the link in the **Inbound access** column and the **B2B collaboration** tab.
-
-      4. Select the **Redemption order** tab.
+      3. On the **Default settings** tab, under **Inbound access settings**, select **Edit inbound defaults**.
+      
+      4. On the **B2B collaboration** tab, select the **Redemption order** tab.
 
       5. Move the identity providers up or down to change the order in which your guest users can sign in when they accept your invitation. You can also reset the redemption order to the default settings here.
 

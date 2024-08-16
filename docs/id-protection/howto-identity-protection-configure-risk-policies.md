@@ -5,7 +5,7 @@ description: Enable and configure risk policies in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 05/02/2024
+ms.date: 06/17/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,10 +14,10 @@ ms.reviewer: cokoopma
 ---
 # Configure and enable risk policies
 
-As we learned in the article, [Risk-based access policies](concept-identity-protection-policies.md), there are two types of risk policies in Microsoft Entra Conditional Access you can set up. You can use these policies to automate the response to risks allowing users to self-remediate when risk is detected:
+There are two types of [risk policies](concept-identity-protection-policies.md) in Microsoft Entra Conditional Access you can set up. You can use these policies to automate the response to risks allowing users to self-remediate when risk is detected:
 
-- Sign-in risk policy
-- User risk policy
+- [Sign-in risk policy](#sign-in-risk-policy-in-conditional-access)
+- [User risk policy](#user-risk-policy-in-conditional-access)
 
 ![Screenshot of a Conditional Access policy showing risk as conditions.](./media/howto-identity-protection-configure-risk-policies/sign-in-risk-conditions.png)
 
@@ -44,32 +44,16 @@ Requiring access control when risk level is low introduces more friction and use
 
 ### Risk remediation
 
-Organizations can choose to block access when risk is detected. Blocking sometimes stops legitimate users from doing what they need to. A better solution is to [allow self-remediation using Microsoft Entra multifactor authentication and secure password change](howto-identity-protection-remediate-unblock.md#self-remediation-with-risk-based-policy).
+Organizations can choose to block access when risk is detected. Blocking sometimes stops legitimate users from doing what they need to. A better solution is to configure [user](#user-risk-policy-in-conditional-access) and [sign-in](#sign-in-risk-policy-in-conditional-access) risk-based Conditional Access policies that [allow users to self-remediate](howto-identity-protection-remediate-unblock.md#self-remediation-with-risk-based-policy).
 
 > [!WARNING]
-> Users must register for Microsoft Entra multifactor authentication before they face a situation requiring remediation. For hybrid users that are synced from on-premises to cloud, password writeback must have been enabled on them. Users not registered are blocked and require administrator intervention.
+> Users must register for Microsoft Entra multifactor authentication before they face a situation requiring remediation. For hybrid users that are synced from on-premises, password writeback must be enabled. Users not registered are blocked and require administrator intervention.
 > 
 > Password change (I know my password and want to change it to something new) outside of the risky user policy remediation flow does not meet the requirement for secure password change.
 
-## Migrate risk policies to Conditional Access
-
-If you have legacy risk policies enabled in Microsoft Entra ID Protection, you should plan to migrate them to Conditional Access:
-
-> [!WARNING]
-> The legacy risk policies configured in Microsoft Entra ID Protection will be retired on **October 1, 2026**.
-
-### Migrating to Conditional Access
-
-1. **Create an equivalent** [user risk-based](#user-risk-policy-in-conditional-access) and [sign-in risk-based](#sign-in-risk-policy-in-conditional-access) policy in Conditional Access in report-only mode. You can create a policy with the previous steps or using [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md) based on Microsoft's recommendations and your organizational requirements.
-   1. After administrators confirm the settings using [report-only mode](../identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
-1. **Disable** the old risk policies in ID Protection.
-   1. Browse to **Protection** > **Identity Protection** > Select the **User risk** or **Sign-in risk** policy.
-   1. Set **Enforce policy** to **Disabled**.
-1. Create other risk policies if needed in [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md).
-
 ## Enable policies
 
-Organizations can choose to deploy risk-based policies in Conditional Access using the following steps or use [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md#conditional-access-templates).
+Organizations can choose to deploy risk-based policies in Conditional Access using the following steps or use [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
 Before organizations enable these policies, they should take action to [investigate](howto-identity-protection-investigate-risk.md) and [remediate](howto-identity-protection-remediate-unblock.md) any active risks.
 
@@ -84,6 +68,22 @@ Before organizations enable these policies, they should take action to [investig
 ### Sign-in risk policy in Conditional Access
 
 [!INCLUDE [conditional-access-policy-sign-in-risk](../includes/conditional-access-policy-sign-in-risk.md)]
+
+## Migrate risk policies to Conditional Access
+
+If you have legacy risk policies enabled in Microsoft Entra ID Protection, you should plan to migrate them to Conditional Access:
+
+> [!WARNING]
+> The legacy risk policies configured in Microsoft Entra ID Protection will be retired on **October 1, 2026**.
+
+### Migrate to Conditional Access
+
+1. **Create equivalent** [user risk-based](#user-risk-policy-in-conditional-access) and [sign-in risk-based](#sign-in-risk-policy-in-conditional-access) policies in Conditional Access in report-only mode. You can create a policy with the previous steps or using [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md) based on Microsoft's recommendations and your organizational requirements.
+   1. After administrators confirm the settings using [report-only mode](../identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+1. **Disable** the old risk policies in ID Protection.
+   1. Browse to **Protection** > **Identity Protection** > Select the **User risk** or **Sign-in risk** policy.
+   1. Set **Enforce policy** to **Disabled**.
+1. Create other risk policies if needed in [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
 ## Related content
 

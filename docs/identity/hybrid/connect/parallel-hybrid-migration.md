@@ -30,7 +30,7 @@ This scenario provides a solution using existing Microsoft toolset to set up Hyb
 ## Prerequisites
 - For each tenant you're migrating to, there needs to be one Microsoft Entra Connect server.
 - You should create virtual machines for each of the Microsoft Entra Connect servers and they need to be domain joined.
-- Users, in your on-premises Active Directory, should be in their own organizational unit (OU).
+- Users in your on-premises Active Directory should be in their own organizational unit (OU).
 - Each Microsoft Entra Connect Server has its synchronization rules scoped to individual OUs.
 - All of the migrating tenants primary domains must be added and verified in Microsoft 365.
 - You should be familiar with [Exchange hybrid deployments](/exchange/exchange-hybrid).
@@ -56,7 +56,7 @@ The following outlines the steps for the multi-organizational on-premises Exchan
 6. Verify all of the users are synchronized to the target tenant.  
 
 ### Step 2 - Hybrid Configuration Wizard
-Once you've configured the Microsoft Entra Connect servers, and synchronization has completed, use the following steps to download and configure the Exchange Hybrid Configuration Wizard.
+Once you've configured the Microsoft Entra Connect servers and synchronization has completed, use the following steps to download and configure the Exchange Hybrid Configuration Wizard.
 
 1. On each of the virtual machines, [download](https://aka.ms/hybridwizard) and install the [Hybrid Configuration Wizard](/exchange/hybrid-deployment/deploy-hybrid).
 2. On the installation, select [Minimal Hybrid](/exchange/mailbox-migration/use-minimal-hybrid-to-quickly-migrate).

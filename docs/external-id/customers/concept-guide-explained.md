@@ -30,7 +30,7 @@ The get started guide set up the below features for you automatically. This arti
 
 An external tenant is the first resource you need to create to get started with Microsoft Entra External ID. If you have an Azure subscription, you can create your new tenant in the Microsoft Entra admin center by following [these steps](how-to-create-external-tenant-portal.md). 
 
-If you don’t have an Azure subscription, you can sign up for a [free trial](quickstart-trial-setup.md#sign-up-to-your-external-tenant-free-trial). The trial gives you access to a tenant for 30 days. During the free trial period, you have access to all product features, with few exceptions. For more information, see the [Start a free trial without Azure subscription](quickstart-trial-setup.md). 
+If you don’t have an Azure subscription, you can sign up for a [free trial](quickstart-trial-setup.md#sign-up-to-your-external-tenant-free-trial-preview). The trial gives you access to a tenant for 30 days. During the free trial period, you have access to all product features, with few exceptions. For more information, see the [Start a free trial without Azure subscription](quickstart-trial-setup.md). 
 
 ## App registration
 

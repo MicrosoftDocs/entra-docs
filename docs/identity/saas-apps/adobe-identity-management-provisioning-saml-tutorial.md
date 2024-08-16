@@ -2,23 +2,17 @@
 title: 'Tutorial: Configure Adobe Identity Management (SAML) for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Adobe Identity Management (SAML).
 
-documentationcenter: ''
 author: twimmers
-writer: twimmers
 manager: jeedes
-
-ms.assetid: 6ae05dc7-1265-44b4-a20c-512b5218b9d1
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Adobe Identity Management (SAML) so that I can streamline the user management process and ensure that users have the appropriate access to Adobe Identity Management (SAML).
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Adobe Identity Management (SAML) so that I can streamline the user management process and ensure that users have the appropriate access to Adobe Identity Management (SAML).
 ---
 
 # Tutorial: Configure Adobe Identity Management (SAML) for automatic user provisioning

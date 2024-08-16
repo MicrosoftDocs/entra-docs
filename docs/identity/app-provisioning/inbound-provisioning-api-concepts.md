@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 05/06/2024
+ms.date: 07/29/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -98,7 +98,7 @@ The `/bulkUpload` API endpoint expands the number of ways that you can manage us
 | 1. | You want to learn more about the inbound provisioning API specs. | Refer to [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API spec document. |
 | 2. | You want to get more familiar with the API-driven provisioning concepts, scenarios and limitations. | Refer to  [Frequently asked questions about API-driven inbound provisioning](inbound-provisioning-api-faqs.md). |
 | 3. | As an *Admin user*, you want to quickly test the inbound provisioning API. | * Create [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md) <br> * [Test API using Graph Explorer](inbound-provisioning-api-graph-explorer.md) |
-| 4. | With a service account or managed identity, you want to quickly test the inbound provisioning API. | * Create [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md) <br> * Grant [API permissions](inbound-provisioning-api-grant-access.md) <br> * [Test API using cURL](inbound-provisioning-api-curl-tutorial.md) or [Postman](inbound-provisioning-api-postman.md) |
+| 4. | With a service account or managed identity, you want to quickly test the inbound provisioning API. | * Create [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md) <br> * Grant [API permissions](inbound-provisioning-api-grant-access.md) <br> * [Test API using cURL](inbound-provisioning-api-curl-tutorial.md) |
 | 5. | You want to extend the API-driven provisioning app to process more custom attributes. | Refer to the tutorial [Extend API-driven provisioning to sync custom attributes](inbound-provisioning-api-custom-attributes.md) |
 | 6. | You want to automate data upload from your system of record to the inbound provisioning API endpoint. | Refer to the tutorials <br> * [Quick start with PowerShell](inbound-provisioning-api-powershell.md) <br> * [Quick start with Azure Logic Apps](inbound-provisioning-api-logic-apps.md) |
 | 7. | You want to troubleshoot inbound provisioning API issues | Refer to the [Troubleshooting guide](inbound-provisioning-api-issues.md). | 

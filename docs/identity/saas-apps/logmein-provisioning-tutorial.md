@@ -2,19 +2,14 @@
 title: 'Tutorial: Configure LogMeIn for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to LogMeIn.
 
-documentationcenter: ''
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-
-ms.assetid: cf38e6ad-6391-4e5d-98f7-fbdaf3de54f5
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LogMeIn so that I can streamline the user management process and ensure that users have the appropriate access to LogMeIn.
 ---
@@ -57,7 +52,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 3. You can verify ownership of your domain using either of the following methods:
 
    **Method 1:  Add a DNS record to your domain zone file.**  
-   To use the DNS method, you place a DNS record at the level of the email domain within your DNS zone.  Examples using "main.com" as the domain would resemble:  `@ IN TXT "logmein-verification-code=668e156b-f5d3-430e-9944-f1d4385d043e"` OR `main.com. IN TXT “logmein-verification-code=668e156b-f5d3-430e-9944-f1d4385d043e”`
+   To use the DNS method, you place a DNS record at the level of the email domain within your DNS zone.  Examples using "main.com" as the domain would resemble:  `@ IN TXT "logmein-verification-code=00aa00aa-bb11-cc22-dd33-44ee44ee44ee"` OR `main.com. IN TXT “logmein-verification-code=00aa00aa-bb11-cc22-dd33-44ee44ee44ee”`
 
    Detailed instructions are as follows:
      1. Sign in to your domain's account at your domain host.
@@ -73,7 +68,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
    Upload a plain-text file to your web server root containing a verification string without any blank spaces or special characters outside of the string.
    
       * Location: `http://<yourdomain>/logmein-verification-code.txt`
-      * Contents: `logmein-verification-code=668e156b-f5d3-430e-9944-f1d4385d043e`
+      * Contents: `logmein-verification-code=00aa00aa-bb11-cc22-dd33-44ee44ee44ee`
 
 4. Once you have added the DNS record or TXT file, return to [Organization Center](https://organization.logmeininc.com) and click **Verify**.
 

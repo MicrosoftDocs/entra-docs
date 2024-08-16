@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: reference
-ms.date: 04/10/2024
+ms.date: 07/19/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -80,29 +80,12 @@ The following table lists the administrative configuration limits in the Microso
 |Number of custom attributes per user      |100         |
 |Number of redirect URLs per application       |100         |
 |Number of sign-out URLs per application        |1          |
-|String Limit per Attribute      |250 Chars          |
+|String limit per attribute      |250 Chars          |
 |Number of external tenants per subscription      |20         |
 |Total number of objects (user accounts and applications) per trial tenant (can't be extended)| 10000 |
-|Total number of objects (user accounts and applications) per tenant | 300000 |
-|Maximum policy file size      |1,024 KB          |
-|Number of API connectors per tenant     |20         |
-|Number of custom authentication extensions     |100         |
+|Total number of objects (user accounts and applications) per tenant. If you want to increase this limit, please contact [Microsoft Support](/entra/identity-platform/developer-support-help-options?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json#create-an-azure-support-request). | 300,000 |
+|Number of [custom authentication extensions](/entra/identity-platform/custom-extension-overview)    |100         |
 |Number of event listener policies    |249         |
-
-<!-- Reviewed by SME in the word doc. The numbers are correct.
-
-## Throttle limits for Microsoft Entra ID for external configuration tenants
-
-Microsoft Entra ID for customers uses throttling to protect the cloud service from denial-of-service (DoS) attacks. The following table lists the throttle limits for the Microsoft Entra ID for customers service.
-
-|Throttling identifier |Limit per tenant |
-|---------|---------|
-|Application (gateway level)        | - Region: US - 2,500,000 requests per minute <br>- Region: EU - 1,500,000 requests per minute <br>- Region: APAC - 2,000,000 requests per minute <br>- Region: OC - 350000 requests per minute |
-|Tenant + Application + Fault Domain (gateway level)        |1,200,000 requests per minute       |
-|Tenant (gateway level)        |200 requests per second       |
-|IP  (gateway level)        |20 requests per second        |
-|IP + Tenant (gateway level)        |20 requests per second        |
---> 
 
 ## Next steps
 

@@ -26,7 +26,7 @@ In Microsoft Entra ID, part of Microsoft Entra, each Microsoft Entra organizatio
 
 If a non-administrative user of organization 'Contoso' creates a test organization 'Test,' then:
 
-* By default, the user who creates an organization adds as an external user in that new organization, and assigned the Global Administrator role in that organization.
+* By default, the user who creates an organization is added as an external user to that new organization, and assigned the Global Administrator role.
 * The administrators of organization 'Contoso' have no direct administrative privileges to organization 'Test,' unless an administrator of 'Test' specifically grants them these privileges.
 * If you add or remove a Microsoft Entra role for a user in one organization, the change doesn't affect other roles. For example, roles that the user assigns in any other Microsoft Entra organization.
 
@@ -38,8 +38,8 @@ You can configure each Microsoft Entra organization independently to get data sy
 
 ## Add a Microsoft Entra organization
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select Microsoft Entra ID.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator).
+1. Browse to **Identity** > **Overview**.
 1. Select **Manage tenants**.
 1. Choose **Create**.
 1. Select **Workforce** and provide the requested information. Microsoft Entra ID creates a new organization and appears in the list of organizations.

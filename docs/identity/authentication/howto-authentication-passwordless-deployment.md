@@ -62,8 +62,8 @@ Here are the least privileged roles required for this deployment:
 
 | Microsoft Entra role| Description |
 | - | -|
-| User Administrator or Global Administrator| To implement combined registration experience. |
-| Authentication Administrator| To implement and manage authentication methods. |
+| User Administrator | To implement combined registration experience. |
+| Authentication Administrator | To implement and manage authentication methods. |
 | User| To configure Authenticator app on device, or to enroll security key device for web or Windows 10 sign-in. |
 
 As part of this deployment plan, we recommend that passwordless authentication be enabled for all [privileged accounts](~/id-governance/privileged-identity-management/pim-configure.md).
@@ -191,7 +191,7 @@ The following are sample test cases for passwordless authentication with the Aut
 | - |-|
 | User cannot perform combined registration.| Ensure [combined registration](concept-registration-mfa-sspr-combined.md) is enabled. |
 | User cannot enable phone sign-in authenticator app.| Ensure user is in scope for deployment. |
-| User is NOT in scope for passwordless authentication, but is presented with passwordless sign-in option, which they cannot complete.| Occurs when user has enabled phone sign in in the application prior to the policy being created. To enable sign in, add the user to a group of users enabled for passwordless sign-in. To block sign in: have the user remove their credential from that application. |
+| User is NOT in scope for passwordless authentication, but is presented with passwordless sign-in option, which they cannot complete.| Occurs when user has enabled phone sign-in in the application prior to the policy being created. To enable sign in, add the user to a group of users enabled for passwordless sign-in. To block sign in: have the user remove their credential from that application. |
 
 
 ## Plan for and deploy FIDO2-compliant security keys

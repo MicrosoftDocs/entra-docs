@@ -2,19 +2,14 @@
 title: 'Tutorial: Configure PrinterLogic SaaS for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to PrinterLogic SaaS.
 
-documentationcenter: ''
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-
-ms.assetid: 001cfccf-b8a4-46e6-b355-94e8b694b122
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to PrinterLogic SaaS so that I can streamline the user management process and ensure that users have the appropriate access to PrinterLogic SaaS.
 ---

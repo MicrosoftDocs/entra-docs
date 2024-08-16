@@ -64,7 +64,7 @@ To efficiently cleanup stale devices in your environment, you should define a re
 > [!CAUTION]
 > If your organization uses BitLocker drive encryption, you should ensure that BitLocker recovery keys are either backed up or no longer needed before deleting devices. Failure to do this may cause loss of data.
 
-If you use features like [Autopilot](/autopilot/registration-overview#deregister-from-autopilot-using-intune) or [Universal Print](/universal-print/portal/register-unregister-printers), those devices should be cleaned up in their respective admin portals.
+If you use features like [Autopilot](/autopilot/registration-overview#deregister-from-autopilot-using-intune) or [Universal Print](/universal-print/reference/portal/register-unregister-printers), those devices should be cleaned up in their respective admin portals.
 
 ### Cleanup account
 
@@ -206,7 +206,7 @@ When configured, BitLocker keys for Windows 10 or newer devices are stored on th
 When you delete a Microsoft Entra device that was associated with a Windows Autopilot object the following three scenarios can occur if the device will be repurposed in future:
 
 - With Windows Autopilot user-driven deployments without using pre-provisioning, a new Microsoft Entra device is created, but isn’t be tagged with the ZTDID.
-- With Windows Autopilot self-deploying mode deployments, they'll fail because an associate Microsoft Entra device can’t be found. (This failure is a security mechanism to make sure that no "imposter" devices try to join Microsoft Entra ID with no credentials.) The failure indicates a ZTDID mismatch.
+- With Windows Autopilot self-deploying mode deployments, they'll fail because an associate Microsoft Entra device can’t be found. (This failure is a security mechanism to make sure that no "impostor" devices try to join Microsoft Entra ID with no credentials.) The failure indicates a ZTDID mismatch.
 - With Windows Autopilot pre-provisioning deployments, they fail because an associated Microsoft Entra device can’t be found. (Behind the scenes, pre-provisioning deployments use the same self-deploying mode process, so they enforce the same security mechanisms.)
 
 Use the [Get-MgDeviceManagementWindowsAutopilotDeviceIdentity](/powershell/module/microsoft.graph.devicemanagement.enrollment/get-mgdevicemanagementwindowsautopilotdeviceidentity) to list of Windows Autopilot devices in your organization and compare it to the list of devices to clean up.

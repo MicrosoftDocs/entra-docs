@@ -5,7 +5,7 @@ description: Microsoft-managed policies take action to require multifactor authe
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 05/22/2024
+ms.date: 06/10/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -45,7 +45,7 @@ As threats evolve over time, Microsoft might change these policies in the future
 
 ### Multifactor authentication for admins accessing Microsoft Admin Portals
 
-This policy covers 14 admin roles that we consider to be highly privileged, who are accessing the [Microsoft Admin Portals group](how-to-policy-mfa-admin-portals.md), and requires them to perform multifactor authentication.
+This policy covers [14 admin roles](#what-administrator-roles-are-covered-by-these-policies) that we consider to be highly privileged, who are accessing the [Microsoft Admin Portals group](how-to-policy-mfa-admin-portals.md), and requires them to perform multifactor authentication.
 
 This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled.
 
@@ -66,6 +66,38 @@ This policy covers all users and requires MFA and reauthentication when we detec
 
 This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled and there are enough licenses for each user. Microsoft doesn't allow risky users to register for MFA. To avoid locking out users, this policy is only available to organizations where every user is already registered for MFA. 
 
+## Security defaults policies
+The following policies are available for when you upgrade from using security defaults.
+
+### Block legacy authentication
+
+This policy blocks legacy authentication protocols from accessing applications. Legacy authentication refers to an authentication request made by:
+
+- Clients that don't use modern authentication (for example, an office 2010 client)
+- Any client that uses older mail protocols such as IMAP, SMTP, or POP3
+- Any sign in attempt using legacy authentication is blocked. 
+ 
+Most observed compromising sign-in attempts come from legacy authentication. Since legacy authentication doesn't support multifactor authentication, an attacker can bypass your MFA requirements by using an older protocol.
+
+### Require multifactor authentication for Azure management
+
+This policy covers all users when they're trying to access various Azure services managed through the Azure Resource Manager API including:
+
+- Azure portal
+- Microsoft Entra admin center
+- Azure PowerShell
+- Azure CLI
+
+When trying to access any of these resources, the user is required to complete MFA before they can gain access. 
+
+### Require multifactor authentication for admins
+
+This policy covers any user with one of [14 admin roles](#what-administrator-roles-are-covered-by-these-policies) we consider to be highly privileged. Because of the power these highly privileged accounts have, they're required to MFA whenever they sign into any application. 
+
+### Require multifactor authentication for all users
+
+This policy covers all users in your organization and requires them to MFA whenever they sign in. In most cases, the session persists on the device and users don't have to complete MFA when they interact with another application. 
+
 ## How do I see the effects of these policies?
 
 Administrators can look at the Policy impact on sign-ins section to see a quick summary of the effect of the policy in their environment.
@@ -77,7 +109,7 @@ Administrators can go deeper and look through the Microsoft Entra sign-in logs t
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Find the specific sign-in you want to review. Add or remove filters and columns to filter out unnecessary information.
-   1. Add filters to narrow the scope:
+   1. To narrow the scope, add filters like:
       1. **Correlation ID** when you have a specific event to investigate.
       1. **Conditional Access** to see policy failure and success. Scope your filter to show only failures to limit results.
       1. **Username** to see information related to specific users.
@@ -98,6 +130,10 @@ These policies can be thought of as logical if then statements.
 ## What if I want to make more changes?
 
 Administrators might choose to make further changes to these policies by duplicating them using the **Duplicate** button in the policy list view. This new policy can be configured in the same way as any other Conditional Access policy with starting from a Microsoft recommended position.
+
+## What administrator roles are covered by these policies?
+
+[!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
 
 ## What if I use a different solution for multifactor authentication?
 

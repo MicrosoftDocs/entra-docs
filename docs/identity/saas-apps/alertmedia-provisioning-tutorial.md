@@ -2,23 +2,20 @@
 title: 'Tutorial: Configure AlertMedia for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to AlertMedia.
 
-documentationcenter: ''
-author: twimmers
-writer: twimmers
+
+author: thomasakelo
 manager: jeedes
 
-ms.assetid: a5df0dd7-05a3-4744-9d51-ec33e89a934f
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
+
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AlertMedia so that I can streamline the user management process and ensure that users have the appropriate access to AlertMedia.
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AlertMedia so that I can streamline the user management process and ensure that users have the appropriate access to AlertMedia.
 ---
 
 # Tutorial: Configure AlertMedia for automatic user provisioning

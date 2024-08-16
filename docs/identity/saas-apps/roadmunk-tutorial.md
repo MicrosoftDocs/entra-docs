@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-Roadmunk supports SSO that's started by the *service provider* (SP) and by the *identity provider* (IDP).
+Roadmunk supports SSO that's started by the *service provider* (SP) and by the *identity provider (IDP)*.
 
 ## Add Roadmunk from the gallery
 

@@ -6,7 +6,7 @@ description: In this tutorial, you learn how to use PowerShell and a CSV file to
  
 ms.service: entra-external-id
 ms.topic: tutorial
-ms.date: 01/03/2024
+ms.date: 06/05/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -86,7 +86,7 @@ Run the following command to connect to the tenant:
 Connect-MgGraph -TenantId "<YOUR_TENANT_ID>"
 ```
 
-For example, `Connect-MgGraph -TenantId "11111111-aaaa-2222-bbbb-33333333"`. You can also use the tenant domain, but the parameter remains the `-TenantId`. For example, `Connect-MgGraph -TenantId "contoso.onmicrosoft.com"`.
+For example, `Connect-MgGraph -TenantId "aaaabbbb-0000-cccc-1111-dddd2222eeee"`. You can also use the tenant domain, but the parameter remains the `-TenantId`. For example, `Connect-MgGraph -TenantId "contoso.onmicrosoft.com"`.
  
 When prompted, enter your credentials.
 
@@ -97,18 +97,18 @@ To send the invitations, run the following PowerShell script (where **c:\bulkinv
 ```powershell
 $invitations = import-csv c:\bulkinvite\invitations.csv
 
-$messageInfo = New-Object Microsoft.Open.MSGraph.Model.InvitedUserMessageInfo
+$messageInfo = New-Object Microsoft.Graph.PowerShell.Models.MicrosoftGraphInvitedUserMessageInfo
 
 $messageInfo.customizedMessageBody = "Hello. You are invited to the Contoso organization."
 
-foreach ($email in $invitations)
-   {New-MgInvitation `
+foreach ($email in $invitations) {
+	New-MgInvitation 
       -InvitedUserEmailAddress $email.InvitedUserEmailAddress `
-      -InvitedUserDisplayName $email.Name `
-      -InviteRedirectUrl https://myapps.microsoft.com `
-      -InvitedUserMessageInfo $messageInfo `
-      -SendInvitationMessage $true
-   }
+		-InvitedUserDisplayName $email.Name `
+		-InviteRedirectUrl https://myapplications.microsoft.com/?tenantid=aaaabbbb-0000-cccc-1111-dddd2222eeee `
+		-InvitedUserMessageInfo $messageInfo `
+		-SendInvitationMessage
+}
 ```
 
 The script sends an invitation to the email addresses in the Invitations.csv file. You should see output similar to the following for each user:
@@ -133,7 +133,7 @@ When no longer needed, you can delete the test user accounts in the directory. R
  Remove-MgUser -UserId "<String>"
 ```
 
-For example: `Remove-MgUser -UserId "11111111-aaaa-2222-bbbb-33333333"`
+For example: `Remove-MgUser -UserId "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"`
 
 ## Next steps
 

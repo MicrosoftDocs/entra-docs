@@ -38,7 +38,7 @@ To complete this tutorial, you need the following resources and privileges:
 * A working Microsoft Entra tenant with Microsoft Entra ID P1 or trial licenses enabled.
     * If you need to, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-* An account with *Conditional Access Administrator*, *Security Administrator*, or *Global Administrator* privileges. Some MFA settings can also be managed by an *Authentication Policy Administrator*. For more information, see [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+* An account with at least the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role. Some MFA settings can also be managed by an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 
 * A non-administrator account with a password that you know. For this tutorial, we created such an account, named *testuser*. In this tutorial, you test the end-user experience of configuring and using Microsoft Entra multifactor authentication.
     * If you need information about creating a user account, see [Add or delete users using Microsoft Entra ID](~/fundamentals/add-users.md).

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 05/21/2024
+ms.date: 08/06/2024
 ms.author: jfields
 ms.reviewer: arvinh
 ---
@@ -413,7 +413,7 @@ The function Guid generates a new random GUID
 
 **Example:** <br>
 `Guid()`<br>
-Sample output: "1088051a-cd4b-4288-84f8-e02042ca72bc"
+Sample output: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 
 ---
 ### IgnoreFlowIfNullOrEmpty
@@ -436,7 +436,7 @@ The above expression drops the department attribute from the provisioning flow i
 **Example 2: Don't flow an attribute if the expression mapping evaluates to empty string or null** <br>
 Let's say the SuccessFactors attribute *prefix* is mapped to the on-premises Active Directory attribute *personalTitle* using the following expression mapping: <br>
 `IgnoreFlowIfNullOrEmpty(Switch([prefix], "", "3443", "Dr.", "3444", "Prof.", "3445", "Prof. Dr."))` <br>
-The above expression first evaluates the [Switch](#switch) function. If the *prefix* attribute doesn't have any of the values listed within the *Switch* function, then *Switch* returns an empty string and the attribute *personalTitle* is not included in the provisioning flow to on-premises Active Directory.
+The above expression first evaluates the [Switch](#switch) function. If the *prefix* attribute doesn't have any of the values listed within the *Switch* function, then ** returns an empty string and the attribute *personalTitle* is not included in the provisioning flow to on-premises Active Directory.
 
 ---
 ### IIF
@@ -1120,6 +1120,11 @@ When **source** value matches a **key**, returns **value** for that **key**. If 
 > For the **source** parameter, do not use the nested functions IsPresent, IsNull or IsNullOrEmpty. Instead use a literal empty string as one of the key values.   
 > Example: `Switch([statusFlag], "Default Value", "true", "1", "", "0")`. In this example, if the **source** attribute `statusFlag` is empty, the Switch function returns the value 0. 
 
+> [!CAUTION] 
+> **Issue:** The provisioning service incorrectly set an attribute value to null in the target system when using a switch statement. <br>
+> **Resolution:** Use an IIF statement instead of a switch statement to prevent unexpected null values or use the IgnoreFlowIfNullOrEmpty function with the switch statement. For example, switch([companyName], "External", "Company A", "A", "Company B", "B") should be represented as IIF([companyName] = "Company A", "A", IIF([companyName] = "Company B", "B", "External")). In cases where the default value is an attribute, use an expression such as IgnoreFlowIfNullOrEmpty(switch([companyName], [companyName], "Company A", "A", "Company B", "B")). <br>
+> **Root cause:** This issue is specific to scenarios where Microsoft Entra ID is the source system and the switch statement contains a default value.
+
 **Parameters:** 
 
 | Name | Required/ Repeating | Type | Notes |
@@ -1268,7 +1273,7 @@ Join("", 1000, Replace(ConvertToUTF8Hex([objectId]), , "[a-zA-Z_]*", , "", , ))
 
 **Sample input/output:** 
 
-* **INPUT**: "d05e47b1-3909-445a-ba5e-ca60cbc0e4b4"
+* **INPUT**: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 * **OUTPUT**:  "100064303565343762312333930392343435612626135652636136306362633065346234"
 
 ## Related Articles

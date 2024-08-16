@@ -1,5 +1,5 @@
 ---
-title: Use the AD FS application migration (preview) to move AD FS apps to Microsoft Entra ID
+title: Use the AD FS application migration to move AD FS apps to Microsoft Entra ID
 description: Learn how to use the AD FS application migration to migrate AD FS relying party applications from ADFS to Microsoft Entra ID. This guided experience provides one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate the application with Microsoft Entra ID.
 
 author: omondiatieno
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 10/26/2023
+ms.date: 06/10/2024
 ms.author: jomondi
 ms.reviewer: smriti3
 ms.custom: not-enterprise-apps
@@ -16,11 +16,11 @@ ms.custom: not-enterprise-apps
 #customer intent: As an IT admin currently using AD FS to access applications, I want to migrate my AD FS applications to Microsoft Entra ID using the AD FS application migration wizard, so that I can have a unified experience to discover, evaluate, and configure new Microsoft Entra applications.
 ---
 
-# Use AD FS application migration (preview) to move AD FS apps to Microsoft Entra ID
+# Use AD FS application migration to move AD FS apps to Microsoft Entra ID
 
 In this article, you learn how to migrate your Active Directory Federation Services (AD FS) applications to Microsoft Entra ID using the AD FS application migration.
 
-The AD FS application migration provides IT Admins guided experience to migrate AD FS relying party applications from AD FS to Microsoft Entra ID. The wizard gives you a unified experience to discover, evaluate and configure new Microsoft Entra application. It provides one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate the application with Microsoft Entra ID.
+The AD FS application migration provides IT Admins guided experience to migrate AD FS relying party applications from AD FS to Microsoft Entra ID. The wizard gives you a unified experience to discover, evaluate, and configure new Microsoft Entra application. It provides one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate the application with Microsoft Entra ID.
 
 The AD FS application migration tool is designed to provide end-to-end support to migrate your on-premises AD FS applications to Microsoft Entra ID.
 
@@ -68,7 +68,7 @@ From **Monitoring & health** section:
 
 The AD FS application migration dashboard shows the list of all your AD FS relying party applications that have actively had sign-in traffic in the last 30 days period.
 
-The dashboard has the date range filter. The filter allows you to select all the active AD FS relying party application as per selected time range. The filter supports last 1 day, 7 days and 30 days period.
+The dashboard has the date range filter. The filter allows you to select all the active AD FS relying party application as per selected time range. The filter supports last 1 day, 7 days, and 30 days period.
 
 There are three tabs that give the complete list of applications, configurable applications, and previously configured applications. From this dashboard, you see an overview of overall progress of your migration work.
 
@@ -135,7 +135,7 @@ You can use the sign-in data to identify the impact of each application and sele
 
 This tab shows list of all the Microsoft Entra applications that were previously migrated using AD FS application migration wizard.
 
-The **Application name** is the name of new Microsoft Entra application. **Application identifier** is same as of AD FS relying party application identifier that can be used to corelate the application with your AD FS environment. The **Configure application in Microsoft Entra** link enables you to navigate to the newly configured Microsoft Entra application within the **Enterprise application** section.
+The **Application name** is the name of new Microsoft Entra application. **Application identifier** is same as of AD FS relying party application identifier that can be used to correlate the application with your AD FS environment. The **Configure application in Microsoft Entra** link enables you to navigate to the newly configured Microsoft Entra application within the **Enterprise application** section.
 
 ## Migrate an app from AD FS to Microsoft Entra ID using AD FS application migration wizard
 
@@ -160,7 +160,7 @@ The assisted AD FS application migration supports the following configurations:
 
 The AD FS application migration doesn't support the following configurations:
 
-- OIDC (OpenID Connect), OAuth and WS-Fed configurations aren't supported.
+- OIDC (OpenID Connect), OAuth, and WS-Fed configurations aren't supported.
 - Auto configuration of Conditional Access policies isn't supported, however, user can configure the same after configuration of new application into their tenant.
 - The signing certificate isn't migrated from the AD FS relying party application.
 The following tabs exist in the AD FS application migration wizard:
@@ -176,7 +176,7 @@ Let's look at the details of each tab in the assisted one-click application migr
 
 The on-click configuration automatically assigns the users and groups to your Microsoft Entra application that are same as of your on-premises configuration.
 
-All the groups are extracted from the access control policies of the AD FS relying party application. Groups should be synced into your Microsoft Entra tenant using Microsoft Entra Connect agents. In case groups are mapped with AD FS relying party application, but aren't synced with Microsoft Entra tenant, those groups are skipped from configuration.
+All the groups are extracted from the access control policies of the AD FS relying party application. Groups should be synced into your Microsoft Entra tenant using Microsoft Entra Connect agents. In case groups are mapped with AD FS relying party application, but aren't synced with Microsoft Entra tenant. Those groups are skipped from configuration.
 
 Assisted users and groups configuration supports the following configurations from the on-premises AD FS environment:
 

@@ -2,19 +2,14 @@
 title: 'Tutorial: Configure TravelPerk for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TravelPerk.
 
-documentationcenter: ''
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-
-ms.assetid: 3e40f87d-8624-4b14-b098-80ff916103c3
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TravelPerk so that I can streamline the user management process and ensure that users have the appropriate access to TravelPerk.
 ---

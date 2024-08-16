@@ -271,7 +271,7 @@ Let's create a security group.
   
 ### Grant permissions to the security group in SharePoint
 
-Microsoft Entra security groups are identified with their attribute `Id`, which is a GUID (for example, `E89EF0A3-46CC-45BF-93A4-E078FCEBFC45`).  
+Microsoft Entra security groups are identified with their attribute `Id`, which is a GUID (for example, `00aa00aa-bb11-cc22-dd33-44ee44ee44ee`).  
 Without a custom claims provider, users need to type the exact value (`Id`) of the group in the people picker, and select the corresponding claim type. This is not user-friendly nor reliable.  
 To avoid this, this article uses third-party claims provider [EntraCP](https://entracp.yvand.net/) to find the group in a friendly way in SharePoint:
 

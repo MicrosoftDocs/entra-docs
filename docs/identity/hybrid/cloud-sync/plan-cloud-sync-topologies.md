@@ -37,7 +37,7 @@ The information below should be kept in mind, when selecting a solution.
 The following topologies are supported for provisioning from Active Directory to Microsoft Entra ID.
 
 ### Single forest, single Microsoft Entra tenant
-![Diagram that shows the topology for a single forest and a single tenant.](media/tutorial-single-forest/diagram-2.png)
+![Diagram that shows the topology for a single forest and a single tenant.](~/includes/governance/media/tutorial-single-forest/diagram-2.png)
 
 The simplest topology is a single on-premises forest, with one or multiple domains, and a single Microsoft Entra tenant.  For an example of this scenario see [Tutorial: A single forest with a single Microsoft Entra tenant](tutorial-single-forest.md)
 
@@ -53,7 +53,7 @@ Multiple AD forests are a common topology, with one or multiple domains, and a s
 ### Existing forest with Microsoft Entra Connect, new forest with cloud Provisioning
 ![Diagram that shows the topology for an existing forest and a new forest.](media/tutorial-existing-forest/existing-forest-new-forest-2.png)
 
-This scenario is topology is similar to the multi-forest scenario, however this one involves an existing Microsoft Entra Connect environment and then bringing on a new forest using Microsoft Entra Cloud Sync.  For an example of this scenario see [Tutorial: An existing forest with a single Microsoft Entra tenant](tutorial-existing-forest.md)
+This scenario topology is similar to the multi-forest scenario, however this one involves an existing Microsoft Entra Connect environment and then bringing on a new forest using Microsoft Entra Cloud Sync.  For an example of this scenario see [Tutorial: An existing forest with a single Microsoft Entra tenant](tutorial-existing-forest.md)
 
 
 

@@ -23,12 +23,12 @@ This article assumes that you already understand the different device states ava
 
 The following Windows components play a key role in requesting and using a PRT:
 
-- **Cloud Authentication Provider** (CloudAP): CloudAP is the modern authentication provider for Windows sign in, that verifies users logging to a Windows 10 or newer device. CloudAP provides a plugin framework that identity providers can build on to enable authentication to Windows using that identity provider's credentials.
-- **Web Account Manager** (WAM): WAM is the default token broker on Windows 10 or newer devices. WAM also provides a plugin framework that identity providers can build on and enable SSO to their applications relying on that identity provider.
-- **Microsoft Entra CloudAP plugin:** a Microsoft Entra specific plugin built on the CloudAP framework that verifies user credentials with Microsoft Entra ID during Windows sign in.
-- **Microsoft Entra WAM plugin:** a Microsoft Entra specific plugin built on the WAM framework that enables SSO to applications that rely on Microsoft Entra ID for authentication.
-- **Dsreg:** a Microsoft Entra specific component on Windows 10 or newer, that handles the device registration process for all device states.
-- **Trusted Platform Module** (TPM): A TPM is a hardware component built into a device that provides hardware-based security functions for user and device secrets. More details can be found in the article [Trusted Platform Module Technology Overview](/windows/security/hardware-security/tpm/trusted-platform-module-overview).
+- **Cloud Authentication Provider (CloudAP)**: CloudAP is the modern authentication provider for Windows sign in, that verifies users logging to a Windows 10 or newer device. CloudAP provides a plugin framework that identity providers can build on to enable authentication to Windows using that identity provider's credentials.
+- **Web Account Manager (WAM)**: WAM is the default token broker on Windows 10 or newer devices. WAM also provides a plugin framework that identity providers can build on and enable SSO to their applications relying on that identity provider.
+- **Microsoft Entra CloudAP plugin**: A Microsoft Entra specific plugin built on the CloudAP framework that verifies user credentials with Microsoft Entra ID during Windows sign in.
+- **Microsoft Entra WAM plugin**: A Microsoft Entra specific plugin built on the WAM framework that enables SSO to applications that rely on Microsoft Entra ID for authentication.
+- **Dsreg**: A Microsoft Entra specific component on Windows 10 or newer, that handles the device registration process for all device states.
+- **Trusted Platform Module (TPM)**: A TPM is a hardware component built into a device that provides hardware-based security functions for user and device secrets. More details can be found in the article [Trusted Platform Module Technology Overview](/windows/security/hardware-security/tpm/trusted-platform-module-overview).
 
 ## What does the PRT contain?
 

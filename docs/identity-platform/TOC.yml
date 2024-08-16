@@ -81,7 +81,7 @@
           href: app-objects-and-service-principals.md
         - name: How and why apps are added
           href: how-applications-are-added.md
-        - name: Single-tenant and multi-tenant apps
+        - name: Single-tenant and multitenant apps
           href: single-and-multi-tenant-apps.md
     - name: Custom Authentication Extensions
       displayName: Custom Authentication Extensions
@@ -147,8 +147,6 @@
             href: tutorial-single-page-app-react-call-api.md
         - name: Angular
           href: tutorial-v2-angular-auth-code.md
-        - name: JavaScript
-          href: tutorial-v2-javascript-auth-code.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -176,14 +174,12 @@
           href: quickstart-web-app-aspnet-sign-in.md
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
-        - name: Node.js - MSAL
+        - name: Node.js
           href: quickstart-web-app-nodejs-msal-sign-in.md
         - name: Java
           href: quickstart-web-app-java-sign-in.md
-        - name: Python
-          items:
-            - name: Flask
-              href: quickstart-web-app-python-flask.md
+        - name: Python Flask
+          href: quickstart-web-app-python-flask.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
@@ -208,7 +204,7 @@
             href: tutorial-web-app-python-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-webapp-msal.md
-        - name: Spring
+        - name: Java Spring
           href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Secure web app accesses storage and Microsoft Graph
           items:
@@ -249,7 +245,7 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-        - name: Deploy and set-up App Service auth in a pipeline
+        - name: Deploy and set up App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
   items:
@@ -306,19 +302,18 @@
       items:
         - name: Node.js Electron
           href: quickstart-desktop-app-nodejs-electron-sign-in.md
-        - name: Universal Windows Platform
+        - name: Universal Windows Platform (UWP)
           href: quickstart-desktop-app-uwp-sign-in.md
-        - name: Windows Presentation Foundation
+        - name: Windows Presentation Foundation (WPF)
           href: quickstart-desktop-app-wpf-sign-in.md
     - name: Tutorials
       items:
+        - name: Node.js Electron
+          href: tutorial-v2-nodejs-desktop.md
         - name: Universal Windows Platform (UWP)
           href: tutorial-v2-windows-uwp.md
         - name: Windows Presentation Foundation (WPF)
           href: tutorial-v2-windows-desktop.md
-        - name: Electron
-          displayName: Node.js
-          href: tutorial-v2-nodejs-desktop.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#desktop
@@ -326,16 +321,12 @@
       items:
         - name: Desktop app that calls an API
           items:
-            - name: Overview
-              href: scenario-desktop-overview.md
             - name: App registration
               href: scenario-desktop-app-registration.md
             - name: Code configuration
               href: scenario-desktop-app-configuration.md
             - name: Acquire token
               items:
-                - name: Overview
-                  href: scenario-desktop-acquire-token.md
                 - name: Interactively
                   href: scenario-desktop-acquire-token-interactive.md
                 - name: Interactive with WAM
@@ -348,8 +339,6 @@
                   href: scenario-desktop-acquire-token-device-code-flow.md
             - name: Call a web API
               href: scenario-desktop-call-api.md
-            - name: Move to production
-              href: scenario-desktop-production.md
 - name: Mobile
   items:
     - name: Mobile app authentication
@@ -375,8 +364,6 @@
       items:
         - name: Mobile app that calls an API
           items:
-            - name: Overview
-              href: scenario-mobile-overview.md
             - name: App registration
               href: scenario-mobile-app-registration.md
             - name: Code configuration
@@ -387,16 +374,12 @@
                   items:
                     - name: System browser on Android
                       href: msal-net-system-browser-android-considerations.md
-                    - name: Xamarin Android
-                      href: msal-net-xamarin-android-considerations.md
                     - name: Shared device mode for Android devices
                       href: msal-android-shared-devices.md
                 - name: iOS
                   items:
                     - name: Microsoft Enterprise SSO plug-in for Apple devices
                       href: apple-sso-plugin.md
-                    - name: Xamarin iOS
-                      href: msal-net-xamarin-ios-considerations.md
                     - name: Shared device mode for iOS devices
                       href: msal-ios-shared-devices.md
             - name: Acquire token
@@ -406,12 +389,6 @@
               href: msal-net-use-brokers-with-xamarin-apps.md
             - name: Calling a web API
               href: scenario-mobile-call-api.md
-            - name: Move to production
-              href: scenario-mobile-production.md
-        - name: Migrate broker-enabled Xamarin Android app MSAL.NET
-          href: msal-net-migration-android-broker.md
-        - name: Migrate broker-enabled Xamarin iOS app MSAL.NET
-          href: msal-net-migration-ios-broker.md
 - name: Service, daemon, script
   items:
     - name: Service/daemon authentication
@@ -438,8 +415,6 @@
       items:
         - name: Non-interactive app that calls a web API
           items:
-            - name: Overview
-              href: scenario-daemon-overview.md
             - name: App registration
               href: scenario-daemon-app-registration.md
             - name: Code configuration
@@ -448,8 +423,6 @@
               href: scenario-daemon-acquire-token.md
             - name: Call a web API
               href: scenario-daemon-call-api.md
-            - name: Move to production
-              href: scenario-daemon-production.md
 - name: Scenarios
   items:
     - name: Build
@@ -500,8 +473,10 @@
               href: jwt-claims-customization.md
             - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
-            - name: Customize claims using PowerShell
+            - name: Customize claims using Claims Mapping Policy
               href: claims-customization-powershell.md
+            - name: Customize claims using Custom Claims Policy
+              href: claims-customization-custom-claims-policy.md
             - name: Set an access token lifetime policy
               href: configure-token-lifetimes.yml    
             - name: Configure app multi-instancing
@@ -522,10 +497,6 @@
           items:
             - name: Create attribute collection start and submit events
               href: custom-extension-attribute-collection.md
-            - name: OnAttributeCollectionStart event reference
-              href: custom-extension-OnAttributeCollectionStart-reference.md
-            - name: OnAttributeCollectionSubmit event reference
-              href: custom-extension-OnAttributeCollectionSubmit-reference.md
         - name: Handle browser cookie restrictions
           items:
             - name: How to handle third-party cookie blocking in browsers
@@ -578,9 +549,9 @@
           href: howto-authenticate-service-principal-powershell.md
     - name: Publish
       items:
-        - name: Prepare app for multi-tenant access
+        - name: Prepare app for multitenant access
           items:
-            - name: Enable multi-tenant log-ins
+            - name: Enable multitenant log-ins
               href: howto-convert-app-to-be-multi-tenant.md
             - name: Modify accounts supported by an app
               href: ./howto-modify-supported-accounts.md
@@ -619,6 +590,8 @@
           href: howto-get-list-of-all-auth-library-apps.md
         - name: Migrate off email-based authorization
           href: migrate-off-email-claim-authorization.md
+        - name: Azure Active Directory Graph app manifest deprecation
+          href: azure-active-directory-graph-app-manifest-deprecation.md
     - name: Deprecate
       items:
         - name: Remove an app registration
@@ -632,7 +605,7 @@
         - name: Access token
           href: access-token-claims-reference.md
         - name: Claims mapping policy type
-          href: reference-claims-mapping-policy-type.md
+          href: reference-claims-customization.md
         - name: ID token
           href: id-token-claims-reference.md 
         - name: Optional claims
@@ -782,39 +755,48 @@
             href: federation-metadata.md
     - name: App registration reference
       items:
-        - name: Application manifest
+        - name: App manifest (Azure AD Graph format)
           displayName: app manifest
           href: reference-app-manifest.md
+        - name: App manifest (Microsoft Graph format)
+          displayName: Microsoft Graph app manifest
+          href: reference-microsoft-graph-app-manifest.md
         - name: Redirect URI (reply URL) best practices and limitations
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md
-    - name: Spring Cloud Azure
-      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
-    - name: Configured permissions limits troubleshooting
-      href: troubleshoot-required-resource-access-limits.md
+    - name: Custom authentication extensions reference
+      items:
+        - name: Custom claims provider reference
+          href: custom-claims-provider-reference.md
+        - name: Attribute collection start custom extension reference
+          href: custom-extension-OnAttributeCollectionStart-reference.md
+        - name: Attribute collection submit custom extension reference
+          href: custom-extension-OnAttributeCollectionSubmit-reference.md
+    - name: Endpoint reference
+      items: 
+        - name: Admin consent URI
+          href: v2-admin-consent.md
+        - name: National and public cloud URIs
+          displayName: china, germany, gov, 21vianet
+          href: authentication-national-cloud.md
+    - name: API reference
+      items:
+        - name: Microsoft Graph API reference (identity operations)
+          href: /graph/api/resources/azure-ad-overview
+        - name: MSA Server side API reference 
+          href: reference-msa-server-side-api.md
+        - name: Microsoft Entra ID WAM API reference
+          href: reference-entra-id-wam-api.md
     - name: Microsoft auth libraries by app type
       displayName: MSAL, auth client library, SDK, token validation
       href: reference-v2-libraries.md
     - name: AADSTS error code reference
       href: reference-error-codes.md
-    - name: "Endpoint reference: Admin consent URI"
-      href: v2-admin-consent.md
-    - name: "Endpoint reference: National and public cloud URIs"
-      displayName: china, germany, gov, 21vianet
-      href: authentication-national-cloud.md
-    - name: Microsoft Graph API reference (identity operations)
-      href: /graph/api/resources/azure-ad-overview
-    - name: Custom claims provider reference
-      href: custom-claims-provider-reference.md
-    - name: MSA Server side API reference 
-      href: reference-msa-server-side-api.md
-    - name: Microsoft Entra ID WAM API reference
-      href: reference-entra-id-wam-api.md
-    - name: Attribute collection start custom extension reference
-      href: custom-extension-OnAttributeCollectionStart-reference.md
-    - name: Attribute collection submit custom extension reference
-      href: custom-extension-OnAttributeCollectionSubmit-reference.md
+    - name: Spring Cloud Azure
+      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
+    - name: Configured permissions limits troubleshooting
+      href: troubleshoot-required-resource-access-limits.md
 - name: Resources
   items:
     - name: Help and support options

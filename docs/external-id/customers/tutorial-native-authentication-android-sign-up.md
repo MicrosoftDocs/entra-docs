@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 05/30/2024
+ms.date: 08/01/2024
 ms.custom: developer
 
 #Customer intent: As a dev, devops, I want to add sign-up with email one-time passcode or email and password, and collect user attributes in your Android mobile app using native authentication.
@@ -100,7 +100,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
 - The Android SDK provides a utility class `UserAttribute.Builder` that you use to create user attributes. For example, to submit *city* and *country* user attributes, use the following code snippet to build the `userAttributes` variable: 
 
     ```kotlin
-         val userAttributes = UserAttributes.Builder 
+         val userAttributes = UserAttributes.Builder ()
         .country(country) 
         .city(city) 
         .build()   

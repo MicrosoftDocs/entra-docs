@@ -21,7 +21,7 @@ ms.custom: enterprise-apps
 
 In this article, we cover common questions and information related to certificates that Microsoft Entra ID creates to establish federated single sign-on (SSO) to your software as a service (SaaS) applications. Add applications from the Microsoft Entra application gallery or by using a non-gallery application template. Configure the application by using the federated SSO option.
 
-This tutorial is relevant only to apps that are configured to use Microsoft Entra SSO through [Security Assertion Markup Language](https://wikipedia.org/wiki/Security_Assertion_Markup_Language) (SAML) federation.
+This tutorial is relevant only to apps that are configured to use Microsoft Entra SSO through [Security Assertion Markup Language (SAML)](https://wikipedia.org/wiki/Security_Assertion_Markup_Language) federation.
 
 In this tutorial, an administrator of the application learns how to:
 

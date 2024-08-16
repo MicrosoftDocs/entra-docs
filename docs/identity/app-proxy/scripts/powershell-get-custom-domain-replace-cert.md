@@ -37,8 +37,8 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 #
 # Before you begin:
 #    
-#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
-#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#    Required Microsoft Entra role at least Application Administrator or Application Developer 
+#    or appropriate custom permissions as documented https://learn.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions
 #
 # 
 
@@ -112,7 +112,8 @@ foreach ($item in $allApps) {
                 type="X509CertAndPassword";
                 value = [convert]::ToBase64String((Get-Content $certPfxFilePath -Encoding byte));
             };
-            verifiedCustomDomainPasswordCredential = @{ value = $securePassword };
+            verifiedCustomDomainPasswordCredential = @{
+                value = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)) };
          }
       }
 

@@ -417,7 +417,7 @@ Let's say you want to retrieve the following data sets from Workday and use them
 The above data sets aren't included by default. 
 To retrieve these data sets:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select your Workday to Active Directory / Microsoft Entra user provisioning application.
 1. Select **Provisioning**.

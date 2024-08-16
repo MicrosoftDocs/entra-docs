@@ -2,19 +2,17 @@
 title: 'Tutorial: Configure BlogIn for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BlogIn.
 
-documentationcenter: ''
-author: twimmers
-writer: twimmers
+
+author: thomasakelo
 manager: jeedes
 
-ms.assetid: 4b2ef46c-97a1-450d-bbc8-b2fa76280219
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
+
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thwimmer
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BlogIn so that I can streamline the user management process and ensure that users have the appropriate access to BlogIn.
 ---

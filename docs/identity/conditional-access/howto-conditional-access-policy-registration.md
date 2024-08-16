@@ -27,9 +27,9 @@ Some organizations in the past might have used trusted network location or devic
 
 The following policy applies to the selected users, who attempt to register using the combined registration experience. The policy requires users to be in a trusted network location and do multifactor authentication, or use Temporary Access Pass credentials.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
-1. Select **Create new policy**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
 1. In Name, Enter a Name for this policy. For example, **Combined Security Info Registration with TAP**.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
@@ -65,9 +65,9 @@ Organizations might choose to require other grant controls with or in place of *
 
 For [guest users](~/external-id/what-is-b2b.md) who need to register for multifactor authentication in your directory you might choose to block registration from outside of [trusted network locations](concept-conditional-access-conditions.md#locations) using the following guide.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
-1. Select **Create new policy**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
 1. In Name, Enter a Name for this policy. For example, **Combined Security Info Registration on Trusted Networks**.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All guest and external users**.

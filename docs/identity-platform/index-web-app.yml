@@ -27,7 +27,7 @@ landingContent:
             url: quickstart-web-app-java-sign-in.md
           - text: Node.js with MSAL
             url: quickstart-web-app-nodejs-msal-sign-in.md
-          - text: Python
+          - text: Python Flask
             url: quickstart-web-app-python-flask.md
   - title: "Learn by building"
     linkLists:
@@ -39,6 +39,8 @@ landingContent:
             url: tutorial-v2-nodejs-webapp-msal.md
           - text: Spring
             url: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+          - text: Python Flask
+            url: tutorial-web-app-python-register-app.md
   - title: "Web apps in depth"
     linkLists:
       - linkListType: how-to-guide

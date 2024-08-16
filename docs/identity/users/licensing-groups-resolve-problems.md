@@ -9,7 +9,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 05/03/2024
+ms.date: 07/30/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -17,13 +17,16 @@ ms.custom: it-pro
 
 # Identify and resolve license assignment problems for a group in Microsoft Entra ID
 
+[!INCLUDE [licensing updates](~/includes/licensing-change.md)]
+
 Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, introduces the concept of users in a licensing error state. This article explains the reasons why users might end up in this state.
 
 When you assign licenses directly to individual users, without using group-based licensing, the assignment operation might fail for reasons that are related to business logic. For example, there might be an insufficient number of licenses or a conflict between two service plans that can't be assigned at the same time. The problem is immediately reported back to you.
 
 ## Find license assignment errors
 
-When you're using group-based licensing, the same errors can occur, but they happen in the background while the Microsoft Entra service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object and then reported via the administrative portal. The original intent to license the user is never lost, but is recorded in an error state for future investigation and resolution.
+When you're using group-based licensing, the same errors can occur, but they happen in the background while the Microsoft Entra service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object and then reported via the administrative portal. The original intent to license the user is never lost, but is recorded in an error state for future investigation and resolution. You can also [use audit logs to monitor group-based licensing activity](licensing-group-advanced.md#use-audit-logs-to-monitor-group-based-licensing-activity).
+
 
 ### To find users in an error state in a group
 
@@ -92,7 +95,19 @@ To solve this problem, remove users from unsupported locations from the licensed
 **PowerShell:** PowerShell cmdlets report this error as *ProhibitedInUsageLocationViolation*.
 
 > [!NOTE]
-> When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. Microsoft recommends that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations.
+> - When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. Microsoft recommends that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations.
+> - The attributes of First name, Last name, Other email address, and User type are not mandatory for license assignment.
+
+
+## License removal of dynamic groups with rules based on licenses with an initial static group
+
+This error happens due to users being added and removed from another batch of dynamic groups, due to the cascading setup of dynamic groups with rules based on licenses on an initial static group. This error can impact multiple dynamic groups and require extensive reprocessing to restore access. 
+
+> [!WARNING]
+> When changing an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, be aware that the original members might lose access until the membership rule is fully processed.
+>
+> We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see [Use audit logs to monitor group-based licensing activity](licensing-group-advanced.md#use-audit-logs-to-monitor-group-based-licensing-activity).
+
 
 ## Duplicate proxy addresses
 
@@ -118,7 +133,7 @@ Updating license assignment on a user causes the proxy address calculation to be
 
 ## LicenseAssignmentAttributeConcurrencyException in audit logs
 
-**Problem:** User has LicenseAssignmentAttributeConcurrencyException for license assignment in audit logs.
+**Problem:** User has `LicenseAssignmentAttributeConcurrencyException` for license assignment in audit logs.
 When group-based licensing tries to process concurrent license assignment of the same license to a user, this exception is recorded on the user. This usually happens when a user is a member of more than one group with same assigned license. Microsoft Entra ID retries processing the user license until the issue is resolved. There's no action required from the customer to fix this issue.
 
 ## More than one product license assigned to a group
@@ -184,5 +199,5 @@ To learn more about other scenarios for license management through groups, see t
 * [Assigning licenses to a group in Microsoft Entra ID](./licensing-groups-assign.md)
 * [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](licensing-groups-migrate-users.md)
 * [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](licensing-groups-change-licenses.md)
-* [Microsoft Entra group-based licensing additional scenarios](./licensing-group-advanced.md)
+* [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](./licensing-group-advanced.md)
 * [PowerShell examples for group-based licensing in Microsoft Entra ID](licensing-ps-examples.md)

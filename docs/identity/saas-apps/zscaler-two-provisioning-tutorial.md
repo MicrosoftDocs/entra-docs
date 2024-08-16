@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Zscaler Two for automatic user provisioning with Microsoft Entra ID'
 description: In this tutorial, you'll learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler Two.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Two so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Two.
 ---
@@ -72,7 +71,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. Set the **Provisioning Mode** to **Automatic**:
 
-	![Set the Provisioning Mode](./media/zscaler-two-provisioning-tutorial/provisioning-credentials.png)
+	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
 1. In the **Admin Credentials** section, enter the **Tenant URL** and **Secret Token** of your Zscaler Two account, as described in the next step.
 
@@ -80,15 +79,15 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 	![Zscaler Two Authentication Settings](./media/zscaler-two-provisioning-tutorial/secret-token-1.png)
 
-	Select **Configure SAML** to open the **Configure SAML** window:
+1. Select **Configure SAML** to open the **Configure SAML** window:
 
-	![Configure SAML window](./media/zscaler-two-provisioning-tutorial/secret-token-2.png)
+	![Screenshot of Configure SAML window](./media/zscaler-two-provisioning-tutorial/secret-token-2.png)
 
-	Select **Enable SCIM-Based Provisioning** and copy the **Base URL** and **Bearer Token**, and then save the settings. In the Azure portal, paste the **Base URL** into the **Tenant URL** box and the **Bearer Token** into the **Secret Token** box.
+1. Select **Enable SCIM-Based Provisioning** and copy the **Base URL** and **Bearer Token**, and then save the settings. In the Azure portal, paste the **Base URL** into the **Tenant URL** box and the **Bearer Token** into the **Secret Token** box.
 
 1. After you enter the values in the **Tenant URL** and **Secret Token** boxes, select **Test Connection** to make sure Microsoft Entra ID can connect to Zscaler Two. If the connection fails, make sure your Zscaler Two account has admin permissions and try again.
 
-	![Test the connection](./media/zscaler-two-provisioning-tutorial/test-connection.png)
+ 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
 1. In the **Notification Email** box, enter the email address of a person or group that should receive the provisioning error notifications. Select **Send an email notification when a failure occurs**:
 
@@ -96,21 +95,29 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. Select **Save**.
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra users to ZscalerTwo**:
-
-	![Synchronize Microsoft Entra users](./media/zscaler-two-provisioning-tutorial/user-mappings.png)
+1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler Two**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler Two in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler Two for update operations. Select **Save** to commit any changes.
 
-	![Screenshot of the Attribute Mappings section with seven mappings displayed.](./media/zscaler-two-provisioning-tutorial/user-attribute-mappings.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler Two|
+   |---|---|---|---|
+   |userName|String|&check;|&check;
+   |externalId|String||&check;
+   |active|Boolean||&check;
+   |name.givenName|String||
+   |name.familyName|String||
+   |displayName|String||&check;
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||&check;
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra groups to ZscalerTwo**:
-
-	![Synchronize Microsoft Entra groups](./media/zscaler-two-provisioning-tutorial/group-mappings.png)
+1. In the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler Two**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler Two in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler Two for update operations. Select **Save** to commit any changes.
 
-	![Screenshot of the Attribute Mappings section with three mappings displayed.](./media/zscaler-two-provisioning-tutorial/group-attribute-mappings.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler Two|
+   |---|---|---|---|
+   |displayName|String|&check;|&check;
+   |members|Reference||
+   |externalId|String||&check;
 
 1. To configure scoping filters, refer to the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -124,7 +131,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. When you're ready to provision, select **Save**:
 
-	![Select Save](./media/zscaler-two-provisioning-tutorial/save-provisioning.png)
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization of all users and groups defined under **Scope** in the **Settings** section. The initial sync takes longer than subsequent syncs, which occur about every 40 minutes, as long as the Microsoft Entra provisioning service is running. You can monitor progress in the **Synchronization Details** section. You can also follow links to a provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Zscaler Two.
 
