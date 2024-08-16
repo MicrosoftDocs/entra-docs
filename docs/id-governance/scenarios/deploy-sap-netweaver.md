@@ -13,25 +13,25 @@ ms.author: billmath
 ---
 
 # Deploy SAP NetWeaver AS ABAP 7.51
-This document will guide you in setting up a lab environment with SAP ECC for testing.
+This document guides you in setting up a lab environment with SAP ECC for testing.
 
 ## Deploying SAP NetWeaver AS ABAP 7.51 on ASE test environment from the SAP Cloud Appliance Library 
 
  1. Navigate to the SAP Cloud Appliance Library: https://cal.sap.com/. 
- 2. Create an account for yourself in the SAP CAL and login to the SAP Cloud Appliance Library. https://calstatic.hana.ondemand.com/res/docEN/042bb15ad2324c3c9b7974dbde389640.html 
+ 2. Create an account for yourself in the SAP CAL and log in to the SAP Cloud Appliance Library. https://calstatic.hana.ondemand.com/res/docEN/042bb15ad2324c3c9b7974dbde389640.html 
  3. Navigate to the [Appliance Templates - SAP Cloud Appliance Library](https://cal.sap.com/console/tenant_QMOV0I8VZP4H#/applianceTemplates) page 
  4. Search for the **7.51** appliance template and click the Create Appliance button to create a **SAP NetWeaver AS ABAP 7.51 SP02 on ASE** appliance. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-1.png" alt-text="Screenshot of SAP Appliance Templates." lightbox="media/deploy-sap-netweaver/sap-1.png":::
  
  5. Choose Create a new account. 
  Using the **Standard Authorization for Authorization** Type requires the following permissions: 
- The standard authorization includes permissions to create and manage appliances. Note that the roles required by the Microsoft Azure user who grants permissions to SAP Cloud Appliance Library are: 
- - Option 1: You are an administrator of the subscription, that is, your user has the role Owner and has access to scope /subscriptions/. 
+ The standard authorization includes permissions to create and manage appliances. The roles required by the Microsoft Azure user who grants permissions to SAP Cloud Appliance Library are: 
+ - Option 1: An administrator of the subscription, that is, your user has the role Owner and has access to scope /subscriptions/. 
  - Option 2: Your Microsoft Azure user has the roles Contributor and User Access Administrator and has access to scope /subscriptions/. You must also have the role of Global Administrator for the Azure Active Directory. 
  Using the **Authorization with Application** for Authorization Type requires you to manually register an application in your Azure AD tenant and grant it the Contributor role to your subscription. 
  You must create an application registration and assign the role Contributor to the corresponding application for your subscription. For more information on how to use this option, see this document and the question How to authorize an application in the Microsoft Azure portal? 
 
- In this guide we will use **Authorization with Application**: 
+ In this guide, we'll use **Authorization with Application**: 
  :::image type="content" source="media/deploy-sap-netweaver/sap-3.png" alt-text="Screenshot of account creation." lightbox="media/deploy-sap-netweaver/sap-3.png":::
  
  6. Click the Test Connection button. Enter the name of your appliance and choose a master password to access your SAP instance. Click Create to provision resources into Azure AD tenant
@@ -41,10 +41,10 @@ This document will guide you in setting up a lab environment with SAP ECC for te
  :::image type="content" source="media/deploy-sap-netweaver/sap-5.png" alt-text="Screenshot of private key generation." lightbox="media/deploy-sap-netweaver/sap-5.png":::
  
  8. SAP CAL will start provisioning and activating resources into your subscription. It may take up to several hours to complete. 
- 9. The next step is to logon into the SAP GUI, get a developer license, and install it to be able to save packages and update the SAP instance, e.g., publish a web service. 
- Once you create the appliance in the SAP Cloud Appliance Library, the SAP system will generate a temporary license key that is sufficient to logon to the system. As a first step, before using the system, you need to install a Minisap license as described in the Community Wiki page: How to request and install Minisap license keys. 
+ 9. The next step is to log on into the SAP GUI, get a developer license, and install it to be able to save packages and update the SAP instance, e.g., publish a web service. 
+ Once you create the appliance in the SAP Cloud Appliance Library, the SAP system generates a temporary license key that is sufficient to log on to the system. As a first step, before using the system, you need to install a Minisap license as described in the Community Wiki page: How to request and install Minisap license keys. 
 
- Installing the Minisap license will change the installation number from INITIAL to DEMOSYSTEM. The developer access key for user DEVELOPER and installation number DEMOSYSTEM is already in the system, and you can start developing in the customer's name range (Z*, Y*). 
+ Installing the Minisap license changes the installation number from INITIAL to DEMOSYSTEM. The developer access key for user DEVELOPER and installation number DEMOSYSTEM is already in the system, and you can start developing in the customer's name range (Z*, Y*). 
 
  
 
@@ -54,14 +54,14 @@ The Web Service Configuration Tool discovers the Web service through WSDL (Web S
 
 For a web service to be discovered, it must be exposed in SAP ECC 7.51. This article describes the process of exposing the web service from SAP ECC 7\.51 workbench. 
 
-Login to SAP ECC 7 and enter the ABAP workbench using Transaction Code SE80. This will open the Object Navigator screen, where you maintain different SAP application components like packages, viewing function groups, BSP programs, etc. 
+Log in to SAP ECC 7 and enter the ABAP workbench using Transaction Code SE80. This opens the Object Navigator screen, where you maintain different SAP application components like packages, viewing function groups, BSP programs, etc. 
 
-To create a web service that can be utilized by Web Service Configuration Tool, you must first create a package so that all the objects can easily navigate through different systems. 
+To create a web service utilized by Web Service Configuration Tool, you must first create a package so that all the objects can easily navigate through different systems. 
 
  1. From the dropdown, select Package, give the new package a name and press enter. The following screen appears if the object is not available in the system. Click Yes to proceed with the package creation. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-7.png" alt-text="Screenshot of create pack." lightbox="media/deploy-sap-netweaver/sap-7.png":::
  
- 2. Provide the required details with the Create Package screen and click the Create button. You can choose to specify the Application Component. This would restrict the scope of object created only to the application (SAP module, for ex: ABAP, MM, PS, LW, etc.) specified. Note: It is recommended that you do not specify the application component which makes the object global. 
+ 2. Provide the required details with the Create Package screen and click the Create button. You can choose to specify the Application Component. This action restricts the scope of object created only to the application (SAP module, for ex: ABAP, MM, PS, LW, etc.) specified. Note: It's recommended that you don't specify the application component that makes the object global. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-8.png" alt-text="Screenshot of package creation." lightbox="media/deploy-sap-netweaver/sap-8.png":::
  
  3. The system prompts for a transport request. Click the button next to Request to generate a new transport request. 
@@ -76,7 +76,7 @@ To create a web service that can be utilized by Web Service Configuration Tool, 
  6. After workbench request is selected, click the Create button to create a package. 
   :::image type="content" source="media/deploy-sap-netweaver/sap-12.png" alt-text="Screenshot of request creation." lightbox="media/deploy-sap-netweaver/sap-12.png":::
  
- 7. Once the package is created, under Object Name, to start creating the web service, rightclick on the Package name, and select Create -> Enterprise Service 
+ 7. Once the package is created, under Object Name, to start creating the web service, right-click on the Package name, and select Create -> Enterprise Service 
   :::image type="content" source="media/deploy-sap-netweaver/sap-13.png" alt-text="Screenshot of object navigator." lightbox="media/deploy-sap-netweaver/sap-13.png":::
  
  8. The screen to select Object Type is displayed. Select Service Provider as object type and click Continue. 
@@ -94,7 +94,7 @@ To create a web service that can be utilized by Web Service Configuration Tool, 
  12. On the Endpoint Function Group screen, select the required Function Group name, and press Continue. The function group chosen in the example is already defined and encapsulates the BAPIs related to users. 
   :::image type="content" source="media/deploy-sap-netweaver/sap-18.png" alt-text="Screenshot of endpoint function group." lightbox="media/deploy-sap-netweaver/sap-18.png":::
  
- 13. On the Function Group screen, select all the required BAPIs and add the BAPIs that are not included in the function group. Click Continue. In this example, all BAPIs from SU\_USER function groups are selected. Consult your SAP administrator regarding the BAPIs to be used in your project. 
+ 13. On the Function Group screen, select all the required BAPIs and add the BAPIs that aren't included in the function group. Click Continue. In this example, all BAPIs from SU\_USER function groups are selected. Consult your SAP administrator regarding the BAPIs to be used in your project. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-19.png" alt-text="Screenshot of function group." lightbox="media/deploy-sap-netweaver/sap-19.png":::
  To implement basic user management scenarios, you may want to limit a list of BAPIs published to: 
 
@@ -111,7 +111,7 @@ To create a web service that can be utilized by Web Service Configuration Tool, 
  - Authentication with User and Password and Transport Guarantee 
  - No Authentication and No Transport Guarantee 
 
- 15. In this example we use Authentication with User and Password and no Transport Guarantee (no HTTPs) option. Click Continue. 
+ 15. In this example, we use Authentication with User and Password and no Transport Guarantee (no HTTPs) option. Click Continue. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-20.png" alt-text="Screenshot of configure service." lightbox="media/deploy-sap-netweaver/sap-20.png":::
  
  16. On the Transport screen, click on the icon next to Request/Task name, and select your Local Workbench request. Click Continue. 
@@ -139,7 +139,7 @@ Follow the steps below to configure the Web Service.
  3. Click Back and Navigate to Service Administration tab. Select Web Service Configuration link. 
   :::image type="content" source="media/deploy-sap-netweaver/sap-27.png" alt-text="Screenshot of web service configuration." lightbox="media/deploy-sap-netweaver/sap-27.png":::
  
- 4. In the Object Name input field type ZSAPCONNECTORWEBSERVICE and click Search. 
+ 4. In the Object Name input field, type ZSAPCONNECTORWEBSERVICE and click Search. 
   :::image type="content" source="media/deploy-sap-netweaver/sap-28.png" alt-text="Screenshot of search results." lightbox="media/deploy-sap-netweaver/sap-28.png":::
  
  5. Click to select ZSAPCONNECTORWEBSERVICE Service Definition. 
@@ -176,7 +176,7 @@ Follow the steps below to configure the Web Service.
 
 ## Activating Web Service for SAP ECC 7.51 Connector 
 
- 1. Login to SAP ECC 7 and enter the ABAP workbench using Transaction Code SICF. Mention Hierarchy Type as Service and click Execute button. 
+ 1. Log in to SAP ECC 7 and enter the ABAP workbench using Transaction Code SICF. Mention Hierarchy Type as Service and click Execute button. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-37.png" alt-text="Screenshot of hierarchy type." lightbox="media/deploy-sap-netweaver/sap-37.png":::
  
  2. On the Define Services page, type ZSAPCONNECTORWS Service Name, and click Apply. 
@@ -194,8 +194,8 @@ Follow the steps below to configure the Web Service.
 
 ## Connecting to Web Service from MIM or the ECMA2Host machine 
 
- 1. To avoid publishing your SAP Web Service endpoint to the Internet, set up peering between your SAP demo lab network and your MIM or ECMA2Host machine. This will allow you to reach your Web Service by its internal IP address. 
- 2. Add the SAP host name and IP address into the �hosts� file on MIM or ECMA2Host machine. 
+ 1. To avoid publishing your SAP Web Service endpoint to the Internet, set up peering between your SAP demo lab network and your MIM or ECMA2Host machine. This setup allows you to reach your Web Service by its internal IP address. 
+ 2. Add the SAP host name and IP address into the hosts file on MIM or ECMA2Host machine. 
  3. Test opening the WSDL URL on the MIM or ECMA2Host machine from a browser to check connectivity to SAP Web Service. 
 
  
