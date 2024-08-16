@@ -91,9 +91,9 @@ You can add Microsoft Entra roles as resources in an access package using Micros
 
 You can also add Microsoft Entra roles as resources in access packages in PowerShell with the cmdlets from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/2.15.0) module version 1.16.0 or later. 
 
-The following script illustrates using the `Beta` profile of Graph to add a Microsoft Entra role as a resource in an access package:
+The following script illustrates adding a Microsoft Entra role as a resource in an access package:
 
-First, retrieve the ID of the catalog, and of the resource in that catalog and its scopes and roles, that you want to include in the access package. Use a script similar to the following example. This assumes there's a single application resource in the catalog.
+First, retrieve the ID of the catalog, and of the resource in that catalog and its scopes and roles, that you want to include in the access package. Use a script similar to the following example. This assumes there's a Microsoft Entra role resource in the catalog.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
