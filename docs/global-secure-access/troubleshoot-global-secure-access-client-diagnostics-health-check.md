@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/13/2024
+ms.date: 08/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -270,7 +270,7 @@ If the test fails:
 This test checks whether the proxy is configured on the device. If the end-user device is configured to use a proxy for outgoing traffic to the internet, you must exclude the destination IPs/FQDNs acquired by the client with a Proxy Auto-Configuration (PAC) file or with the Web Proxy Auto-Discovery (WPAD) protocol.
 
 #### Change the PAC file
-Add the FQDNs/IPs to be tunneled to Global Secure Access edge as exclusions in the PAC file, so that HTTP requests for these destinations won’t be redirected to the proxy. (These FQDNs/IPs are also set to be tunneled to Global Secure Access in the forwarding profile.)
+Add the IPs/FQDNs to be tunneled to Global Secure Access edge as exclusions in the PAC file, so that HTTP requests for these destinations won't redirect to the proxy. (These IPs/FQDNs are also set to tunnel to Global Secure Access in the forwarding profile.)
 To show the client's health status properly, add the FQDN used for health probing to the exclusions list: `.edgediagnostic.globalsecureaccess.microsoft.com`.
 
 Example PAC file containing exclusions:
