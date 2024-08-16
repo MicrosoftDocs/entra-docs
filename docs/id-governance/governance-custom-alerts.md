@@ -47,6 +47,7 @@ The following section provides examples of custom alerts that customers can crea
 | Privileged Identity Management | Alert an IT admin when a role is granted outside of PIM.|
 | Provisioning | Alert an IT admin when there is a spike in provisioning failures over a 24-hour period. |
 | Provisioning| Alert an IT admin when someone starts, stops, disables, restarts, or deletes a provisioning configuration.|
+| Provisioning| Alert an IT admin when a provisioning job goes into quarantine.|
 
 
 ## Access reviews ##
@@ -206,6 +207,14 @@ AuditLogs
 | where ActivityDisplayName in ('Add provisioning configuration','Delete provisioning configuration','Disable/pause provisioning configuration', 'Enable/restart provisioning configuration', 'Enable/start provisioning configuration')
 ```
 
+**Alert an IT admin when a provisioning job goes into [quarantine](/entra/identity/app-provisioning/application-provisioning-quarantine-status)**
+
+*Query*
+
+```
+AuditLogs
+| where ActivityDisplayName == "Quarantine"
+```
 
 **Next steps**
 
