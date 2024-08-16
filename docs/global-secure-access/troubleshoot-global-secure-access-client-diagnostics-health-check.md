@@ -46,7 +46,7 @@ The Windows client authenticates the user and the device to Global Secure Access
 To check the status of your device, enter the following command in the Command Prompt: `dsregcmd.exe /status`.
 :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-entra-joined.png" alt-text="Screenshot of the Command Prompt with the Device State, AzureAdJoined : Yes, highlighted.":::
 
-### Can Connect to the internet
+### Can connect to the internet
 This check indicates whether or not the device is connected to the internet. The Global Secure Access client requires an internet connection. This test is based on the [Network Connectivity Status Indicator (NCSI)](/windows-server/networking/ncsi/ncsi-overview) feature. 
 
 ### Tunneling service running
@@ -137,7 +137,7 @@ If this test fails, enroll in a new certificate by completing the following step
 1. Launch the Microsoft Management console by entering the following command in the Command Prompt: `certlm.msc`.
 1. In the **certlm** window, navigate to **Personal** > **Certificates**.
 1. Delete the certificate that ends with **gsa.client**, if it exists.
-:::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-gsa-client.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
+:::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-certificates-registry-key.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
 1. Delete the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName`
 1. Restart the Global Secure Access Management Service in the services MMC.
@@ -155,7 +155,7 @@ If this test fails, enroll in a new certificate by completing the following step
 1. Launch the Microsoft Management console by entering the following command in the Command Prompt: `certlm.msc`.
 1. In the **certlm** window, navigate to **Personal** > **Certificates**.
 1. Delete the certificate that ends with **gsa.client**.
-:::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-gsa-client.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
+:::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-certificates-registry-key.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
 1. Delete the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName`
 1. Restart the Global Secure Access Management Service in the services MMC.
