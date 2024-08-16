@@ -95,7 +95,7 @@ If you do not create an import workflow, then your connector is operating in Exp
 
 SAP ECC doesn't offer a built-in mechanism for reading changes made since the last read. 
 
-Therefore, we're implementing the Full Import workflow only. Should you need to implement Delta Imports for performance reasons, consult your SAP administrator for a list of BAPIs to be used and have them published as a SOAP webservice. Then implement the Delta Import workflow using the below described approach and a customData property that contains a timestamp of the previous successful run. 
+Therefore, we're implementing the Full Import workflow only. Should you need to implement Delta Imports for performance reasons, consult your SAP administrator for a list of BAPIs and have them published as a SOAP webservice. Then implement the Delta Import workflow using the below described approach and a customData property that contains a timestamp of the previous successful run. 
 
 SAP ECC offers several BAPI functions to get a list of users with their properties: 
 
@@ -254,7 +254,7 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
 
 ## Creating Export Add workflow 
 
-To create a user in SAP ECC you can call BAPI_USER_CREATE1 program and provide all the parameters including, an account name, and an initial password. If you need an account name to be generated on the SAP side, consult with your SAP administrator and use a custom BAPI function that returns a userName property of a newly created user account. 
+To create a user in SAP ECC you can call BAPI_USER_CREATE1 program and provide all the parameters including an account name and an initial password. If you need an account name to be generated on the SAP side, consult with your SAP administrator and use a custom BAPI function that returns a userName property of a newly created user account. 
 
 This guide doesn't demonstrate assignment of licenses, local or global activity groups, systems or profiles. Consult with your SAP administrator and modify this workflow accordingly. 
 
@@ -323,7 +323,7 @@ There's no need to implement pagination in export workflows. There's only one ob
  15. Collapse your ForEach activity and drag and drop the IF activity into the Sequence activity, after the second ForEach activity, to validate the user properties, before submitting the create user request. We need at least 3 non-empty values: username, last name, initial password. Enter this condition: ```(String.IsNullOrEmpty(address.lastname) = False ) AND (String.IsNullOrEmpty(userName) = False) AND (String.IsNullOrEmpty(password.BAPIPWD1) = False)```
  16. In the Else branch of IF activity add one more IF activity as we want to throw different errors depending on what is missing. Enter condition value: String.IsNullOrEmpty(userName). Drag and Drop ```CreateCSEntryChangeResult``` activities into both branches of the second IF activity and set up ErrorCode of ```ExportErrorMissingAnchorComponent``` and ```ExportErrorMissingProvisioningAttribute```. 
 
-:::image type="content" source="media/sap-template/sap-template-24.png" alt-text="Screenshot of IF activity." lightbox="media/sap-template/sap-template-24.png":::
+:::image type="content" source="media/sap-template/sap-template-24.png" alt-text="Screenshot of second IF activity." lightbox="media/sap-template/sap-template-24.png":::
 
  17. Drag and drop Sequence activity in the empty Then branch of the first IF activity. Drag and drop WebSeviceCall activity inside the Sequence activity. Select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_CREATE1 operation. Click on ... Arguments button to define parameters for web service call as follows:
 
@@ -353,7 +353,7 @@ There's no need to implement pagination in export workflows. There's only one ob
  25. Drag and drop Switch activity inside the Sequence activity after Log activity. In the popup window select String type of the switch value. Enter the following expression: ```bapiret2Table.item.First(Function(retItem) retItem.TYPE.Equals("E")).NUMBER```
  26. Click on Default case and drag and drop CreateCSEntryChangeResult activity into the body of this case. Choose ExportErrorInvalidProvisioningAttributeValue error code. 
     
-    :::image type="content" source="media/sap-template/sap-template-27.png" alt-text="Screenshot of new update to workflow." lightbox="media/sap-template/sap-template-27.png":::
+:::image type="content" source="media/sap-template/sap-template-27.png" alt-text="Screenshot of new update to workflow." lightbox="media/sap-template/sap-template-27.png":::
  
  27. Click on the Add new case area and type a case value of 224. Drag and drop ```CreateCSEntryChangeResult``` activity into the body of this case. Choose ```ExportErrorCustomContinueRun``` error code. 
 
@@ -404,7 +404,7 @@ There's no need to implement pagination in export workflows. There's only one ob
 :::image type="content" source="media/sap-template/sap-template-31.png" alt-text="Screenshot of export delete workflow." lightbox="media/sap-template/sap-template-31.png":::
 
  10. The last step in the Export Delete workflow is to handle and log export errors. Drag and drop Sequence activity into the empty Then branch of your IF activity. 
- 11. Drag and drop Log activity into Sequence activity. Switch to Properties tab and enter LogText value of: ```bapiRetTable.item.First(Function(retItem) retItem.TYPE.Equals("E")= True).MESSAGE```. Keep High logging level and Trace tag. This logs an error message details into ConnectorsLog or ECMA2Host event log when verbose tracing is enabled. 
+ 11. Drag and drop Log activity into Sequence activity. Switch to Properties tab and enter LogText value of: ```bapiRetTable.item.First(Function(retItem) retItem.TYPE.Equals("E")= True).MESSAGE```. Keep High logging level and Trace tag. This logs an error message into the ConnectorsLog or ECMA2Host event log when verbose tracing is enabled. 
  12. Drag and drop Switch activity inside the Sequence activity after Log activity. In the popup window select String type of the switch value. Enter the following expression: ```bapiret2Table.item.First(Function(retItem) retItem.TYPE.Equals("E")).NUMBER``` 
  13. Click on Default case and drag and drop CreateCSEntryChangeResult activity into the body of this case. Choose ExportErrorSyntaxViolation error code.  
 
@@ -482,7 +482,7 @@ jobTitle|addressX.function = "X" address.function = xValue|
 
 Your Export Replace workflow looks like this: 
 
-:::image type="content" source="media/sap-template/sap-template-41.png" alt-text="Screenshot of drag and drop switch activity." lightbox="media/sap-template/sap-template-41.png":::
+:::image type="content" source="media/sap-template/sap-template-41.png" alt-text="Screenshot of second drag and drop switch activity." lightbox="media/sap-template/sap-template-41.png":::
 
 
  11. Before calling BAPI_USER_CHANGE program, we need to check for non-empty username. Collapse both ForEach activities and drag and drop IF activity after the second ForEach activity. Enter the following condition: ```String.IsNullOrEmpty(userName ) = False``` 
