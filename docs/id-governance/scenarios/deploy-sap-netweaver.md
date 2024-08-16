@@ -59,43 +59,43 @@ Log in to SAP ECC 7 and enter the ABAP workbench using Transaction Code SE80. Th
 To create a web service utilized by Web Service Configuration Tool, you must first create a package so that all the objects can easily navigate through different systems. 
 
  1. From the dropdown, select Package, give the new package a name and press enter. The following screen appears if the object is not available in the system. Click Yes to proceed with the package creation. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-7.png" alt-text="Screenshot of create pack." lightbox="media/deploy-sap-netweaver/sap-7.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-7.png" alt-text="Screenshot of create pack." lightbox="media/deploy-sap-netweaver/sap-7.png":::
  
  2. Provide the required details with the **Create Package** screen and click the Create button. You can choose to specify the Application Component. This action restricts the scope of object created only to the application (SAP module, for ex: ABAP, MM, PS, LW, etc.) specified. Note: It's recommended that you don't specify the application component that makes the object global. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-8.png" alt-text="Screenshot of package creation." lightbox="media/deploy-sap-netweaver/sap-8.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-8.png" alt-text="Screenshot of package creation." lightbox="media/deploy-sap-netweaver/sap-8.png":::
  
  3. The system prompts for a transport request. Click the button next to Request to generate a new transport request. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-9.png" alt-text="Screenshot of request prompt." lightbox="media/deploy-sap-netweaver/sap-9.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-9.png" alt-text="Screenshot of request prompt." lightbox="media/deploy-sap-netweaver/sap-9.png":::
  
  4. Create a new local request. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-10.png" alt-text="Screenshot of Workbench request." lightbox="media/deploy-sap-netweaver/sap-10.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-10.png" alt-text="Screenshot of Workbench request." lightbox="media/deploy-sap-netweaver/sap-10.png":::
  
  5. Double click on request name (NPL*) to select it. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-11.png" alt-text="Screenshot of NPL." lightbox="media/deploy-sap-netweaver/sap-11.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-11.png" alt-text="Screenshot of NPL." lightbox="media/deploy-sap-netweaver/sap-11.png":::
  
  6. After workbench request is selected, click the Create button to create a package. 
-  :::image type="content" source="media/deploy-sap-netweaver/sap-12.png" alt-text="Screenshot of request creation." lightbox="media/deploy-sap-netweaver/sap-12.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-12.png" alt-text="Screenshot of request creation." lightbox="media/deploy-sap-netweaver/sap-12.png":::
  
  7. Once the package is created, under Object Name, to start creating the web service, right-click on the Package name, and select Create -> Enterprise Service 
-  :::image type="content" source="media/deploy-sap-netweaver/sap-13.png" alt-text="Screenshot of object navigator." lightbox="media/deploy-sap-netweaver/sap-13.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-13.png" alt-text="Screenshot of object navigator." lightbox="media/deploy-sap-netweaver/sap-13.png":::
  
  8. The screen to select Object Type is displayed. Select Service Provider as object type and click Continue. 
-  :::image type="content" source="media/deploy-sap-netweaver/sap-14.png" alt-text="Screenshot of object type creation." lightbox="media/deploy-sap-netweaver/sap-14.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-14.png" alt-text="Screenshot of object type creation." lightbox="media/deploy-sap-netweaver/sap-14.png":::
  
  9. On the Kind of Service Provider screen, select Existing ABAP Objects (Inside Out) and press Continue. With inside out you start at the backend with an existing application and enable the service for a particular functionality. It means that you start with the implementation and move out towards the interface.
-  :::image type="content" source="media/deploy-sap-netweaver/sap-15.png" alt-text="Screenshot of Kind of Service Provider." lightbox="media/deploy-sap-netweaver/sap-15.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-15.png" alt-text="Screenshot of Kind of Service Provider." lightbox="media/deploy-sap-netweaver/sap-15.png":::
  
  10. Provide the Service Definition name and description for the selected Object Type. Click Continue. 
-  :::image type="content" source="media/deploy-sap-netweaver/sap-16.png" alt-text="Screenshot of service definition." lightbox="media/deploy-sap-netweaver/sap-16.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-16.png" alt-text="Screenshot of service definition." lightbox="media/deploy-sap-netweaver/sap-16.png":::
  
  11. On the Endpoint Type screen, select Function Group and press Continue. You must choose Function Group since the Web Service configuration tool for MIM requires a single URL for all the selected BAPIs. 
-  :::image type="content" source="media/deploy-sap-netweaver/sap-17.png" alt-text="Screenshot of endpoint type." lightbox="media/deploy-sap-netweaver/sap-17.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-17.png" alt-text="Screenshot of endpoint type." lightbox="media/deploy-sap-netweaver/sap-17.png":::
  
  12. On the Endpoint Function Group screen, select the required Function Group name, and press Continue. The function group chosen in the example is already defined and encapsulates the BAPIs related to users. 
-  :::image type="content" source="media/deploy-sap-netweaver/sap-18.png" alt-text="Screenshot of endpoint function group." lightbox="media/deploy-sap-netweaver/sap-18.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-18.png" alt-text="Screenshot of endpoint function group." lightbox="media/deploy-sap-netweaver/sap-18.png":::
  
  13. On the Function Group screen, select all the required BAPIs and add the BAPIs that aren't included in the function group. Click Continue. In this example, all BAPIs from SU\_USER function groups are selected. Consult your SAP administrator regarding the BAPIs to be used in your project. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-19.png" alt-text="Screenshot of function group." lightbox="media/deploy-sap-netweaver/sap-19.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-19.png" alt-text="Screenshot of function group." lightbox="media/deploy-sap-netweaver/sap-19.png":::
  To implement basic user management scenarios, you may want to limit a list of BAPIs published to: 
 
  - BAPI_USER_GETLIST
@@ -112,19 +112,19 @@ To create a web service utilized by Web Service Configuration Tool, you must fir
  - No Authentication and No Transport Guarantee 
 
  15. In this example, we use Authentication with User and Password and no Transport Guarantee (no HTTPs) option. Click Continue. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-20.png" alt-text="Screenshot of configure service." lightbox="media/deploy-sap-netweaver/sap-20.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-20.png" alt-text="Screenshot of configure service." lightbox="media/deploy-sap-netweaver/sap-20.png":::
  
  16. On the Transport screen, click on the icon next to Request/Task name, and select your Local Workbench request. Click Continue. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-21.png" alt-text="Screenshot of transport." lightbox="media/deploy-sap-netweaver/sap-21.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-21.png" alt-text="Screenshot of transport." lightbox="media/deploy-sap-netweaver/sap-21.png":::
  
  17. On the **Finish** screen, click Complete button. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-22.png" alt-text="Screenshot of the finish screen." lightbox="media/deploy-sap-netweaver/sap-22.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-22.png" alt-text="Screenshot of the finish screen." lightbox="media/deploy-sap-netweaver/sap-22.png":::
  
  18. After the Web Service is created, you must change the Profile settings of the Service definition. Under Configuration Tab, select Stateful communication properties, and activate Stateful profile. Click the Save button (diskette icon) in the toolbar. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-23.png" alt-text="Screenshot of profile change." lightbox="media/deploy-sap-netweaver/sap-23.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-23.png" alt-text="Screenshot of profile change." lightbox="media/deploy-sap-netweaver/sap-23.png":::
  
  19. In the Repository Browser expand the ZSAPCONNECTORWS package, right click on the ZSAPCONNECTORWEBSERVICE service definition, and select Activate. 
-:::image type="content" source="media/deploy-sap-netweaver/sap-24.png" alt-text="Screenshot of ZSAPCONNECTORWEBSERVICE service definition." lightbox="media/deploy-sap-netweaver/sap-24.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-24.png" alt-text="Screenshot of ZSAPCONNECTORWEBSERVICE service definition." lightbox="media/deploy-sap-netweaver/sap-24.png":::
 
 ## Configuring Web Service using SOA Manager 
 
