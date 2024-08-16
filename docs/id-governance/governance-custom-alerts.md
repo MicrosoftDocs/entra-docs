@@ -32,7 +32,7 @@ In addition to the standard notifications provided by Microsoft Entra ID Governa
 
 All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), organizations can create [custom alerts](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics#set-up-alerts). 
 
-The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor.
+The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor. By using Azure Monitor, organizations can customize what alerts are generated, who receives the alerts, and how they receive the alert (email, SMS, [help desk ticket](https://learn.microsoft.com/azure/azure-monitor/alerts/itsm-connector-secure-webhook-connections-azure-configuration), etc.). 
 
 | Feature | Example alert |
 | --- | --- |
@@ -52,7 +52,7 @@ The following section provides examples of custom alerts that customers can crea
 
 ## Access reviews ##
 
-**Alert an IT admin when an access review has been deleted.**
+**Alert an IT admin when an [access review](/entra/id-governance/access-reviews-overview) has been deleted.**
 
 
 *Query*
@@ -64,7 +64,7 @@ AuditLogs
 
 ## Entitlement management
 
-**Alert an IT admin when a user is directly added to a group, without using an access package.**
+**Alert an IT admin when a user is directly added to a group, without using an [access package](/entra/id-governance/entitlement-management-access-package-create).**
 
 *Query*
 
@@ -76,7 +76,7 @@ AuditLogs
 | where ActorName != "Azure AD Identity Governance - User Management"
 ```
 
-**Alert an IT admin when a new connected organization is created. Users from this organization can now request access to resources made available to all connected organizations.**
+**Alert an IT admin when a new [connected organization](/entra/id-governance/entitlement-management-organization) is created. Users from this organization can now request access to resources made available to all connected organizations.**
 
 *Query*
 
@@ -91,7 +91,7 @@ AuditLogs
 | distinct TenantID
 ```
 
-**Alert an IT admin when an entitlement management custom extension fails.**
+**Alert an IT admin when an entitlement management [custom extension](/entra/id-governance/entitlement-management-logic-apps-integration) fails.**
 
 *Query*
 
@@ -106,7 +106,7 @@ AuditLogs
 
 ## Lifecycle workflows
 
-**Alert an IT admin when a specific lifecycle workflow fails.**
+**Alert an IT admin when a specific [lifecycle workflow](/entra/id-governance/what-are-lifecycle-workflows) fails.**
 
 *Query*
 
@@ -129,7 +129,7 @@ AuditLogs
 
 ## Multitenant collaboration
 
-**Alert an IT admin when a new cross-tenant access policy is created. This allows your organization to detect when a relationship has been formed with a new organization.**
+**Alert an IT admin when a new [cross-tenant access policy](/entra/external-id/cross-tenant-access-overview) is created. This allows your organization to detect when a relationship has been formed with a new organization.**
 
 *Query*
 
@@ -144,7 +144,7 @@ AuditLogs
 | project-rename source_tenant= AADTenantId
 ````
 
-**As an admin, I can get an alert when an inbound cross-tenant sync policy is set to true. This allows your organization to detect when an organization is authorized to synchronize identities into your tenant.**
+**As an admin, I can get an alert when an [inbound cross-tenant sync policy](/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure) is set to true. This allows your organization to detect when an organization is authorized to synchronize identities into your tenant.**
 
 *Query*
 
@@ -158,7 +158,7 @@ AuditLogs
 <u>Alert logic</u>
 
 ## Privileged identity management ##
-**Alert an IT admin when specific PIM security alerts are disabled.**
+**Alert an IT admin when specific [PIM security alerts](/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts) are disabled.**
 
 *Query*
 
