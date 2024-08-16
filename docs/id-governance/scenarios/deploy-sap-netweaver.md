@@ -61,7 +61,7 @@ To create a web service utilized by Web Service Configuration Tool, you must fir
  1. From the dropdown, select Package, give the new package a name and press enter. The following screen appears if the object is not available in the system. Click Yes to proceed with the package creation. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-7.png" alt-text="Screenshot of create pack." lightbox="media/deploy-sap-netweaver/sap-7.png":::
  
- 2. Provide the required details with the Create Package screen and click the Create button. You can choose to specify the Application Component. This action restricts the scope of object created only to the application (SAP module, for ex: ABAP, MM, PS, LW, etc.) specified. Note: It's recommended that you don't specify the application component that makes the object global. 
+ 2. Provide the required details with the **Create Package** screen and click the Create button. You can choose to specify the Application Component. This action restricts the scope of object created only to the application (SAP module, for ex: ABAP, MM, PS, LW, etc.) specified. Note: It's recommended that you don't specify the application component that makes the object global. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-8.png" alt-text="Screenshot of package creation." lightbox="media/deploy-sap-netweaver/sap-8.png":::
  
  3. The system prompts for a transport request. Click the button next to Request to generate a new transport request. 
@@ -105,7 +105,7 @@ To create a web service utilized by Web Service Configuration Tool, you must fir
  - BAPI_USER_CHANGE 
  
   
- 14. On the Configure Service screen, choose a profile for Security Settings. There are four profiles defined by SAP for selection. Select one profile as per requirement. 
+ 14. On the **Configure Service** screen, choose a profile for Security Settings. There are four profiles defined by SAP for selection. Select one profile as per requirement. 
  - Authentication with Certificates and Transport Guarantee 
  - Authentication with User and Password, No Transport Guarantee 
  - Authentication with User and Password and Transport Guarantee 
@@ -117,8 +117,8 @@ To create a web service utilized by Web Service Configuration Tool, you must fir
  16. On the Transport screen, click on the icon next to Request/Task name, and select your Local Workbench request. Click Continue. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-21.png" alt-text="Screenshot of transport." lightbox="media/deploy-sap-netweaver/sap-21.png":::
  
- 17. On the Finish screen, click Complete button. 
- :::image type="content" source="media/deploy-sap-netweaver/sap-22.png" alt-text="Screenshot of finish." lightbox="media/deploy-sap-netweaver/sap-22.png":::
+ 17. On the **Finish** screen, click Complete button. 
+ :::image type="content" source="media/deploy-sap-netweaver/sap-22.png" alt-text="Screenshot of the finish screen." lightbox="media/deploy-sap-netweaver/sap-22.png":::
  
  18. After the Web Service is created, you must change the Profile settings of the Service definition. Under Configuration Tab, select Stateful communication properties, and activate Stateful profile. Click the Save button (diskette icon) in the toolbar. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-23.png" alt-text="Screenshot of profile change." lightbox="media/deploy-sap-netweaver/sap-23.png":::
@@ -156,7 +156,7 @@ Follow the steps below to configure the Web Service.
    :::image type="content" source="media/deploy-sap-netweaver/sap-32.png" alt-text="Screenshot of SOAP protocol page." lightbox="media/deploy-sap-netweaver/sap-32.png":::
  
  10. On the Operation Settings page, click Finish. 
-   :::image type="content" source="media/deploy-sap-netweaver/sap-33.png" alt-text="Screenshot of operation settings finish ." lightbox="media/deploy-sap-netweaver/sap-33.png":::
+   :::image type="content" source="media/deploy-sap-netweaver/sap-33.png" alt-text="Screenshot of operation settings finish screen." lightbox="media/deploy-sap-netweaver/sap-33.png":::
  
  11. Once the Service is created click on web page icon to open WSDL generation parameters. 
    :::image type="content" source="media/deploy-sap-netweaver/sap-34.png" alt-text="Screenshot of WSDL parameters." lightbox="media/deploy-sap-netweaver/sap-34.png":::
@@ -179,14 +179,14 @@ Follow the steps below to configure the Web Service.
  1. Log in to SAP ECC 7 and enter the ABAP workbench using Transaction Code SICF. Mention Hierarchy Type as Service and click Execute button. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-37.png" alt-text="Screenshot of hierarchy type." lightbox="media/deploy-sap-netweaver/sap-37.png":::
  
- 2. On the Define Services page, type ZSAPCONNECTORWS Service Name, and click Apply. 
+ 2. On the **Define Services** page, type ZSAPCONNECTORWS Service Name, and click Apply. 
  3. Select the ZSAPCONNECTORWS service and choose Activate Service. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-38.png" alt-text="Screenshot of activate service." lightbox="media/deploy-sap-netweaver/sap-38.png":::
  
  4. Confirm Activation of ICF Service. Click Yes. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-39.png" alt-text="Screenshot of confirm activation." lightbox="media/deploy-sap-netweaver/sap-39.png":::
  
- 5. On the Define Services page, type WSDL Service Name, and click Apply. Choose to Activate Service for both WSDL services. 
+ 5. On the **Define Services** page, type WSDL Service Name, and click Apply. Choose to Activate Service for both WSDL services. 
  :::image type="content" source="media/deploy-sap-netweaver/sap-40.png" alt-text="Screenshot of active services." lightbox="media/deploy-sap-netweaver/sap-40.png":::
  
  6. Test the web service deployed using your favorite SOAP client tool to ensure that it does return proper data before configuring the Web Services Connector Template 
