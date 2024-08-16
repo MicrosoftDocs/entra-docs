@@ -51,7 +51,7 @@ We'd like to share an update that the scope of MFA enforcement includes [Microso
 
 Microsoft will send a 60-day advance notice to all Entra Global Administrators by email, and through Azure Service Health Notifications, to notify them of the start date of enforcement and required actions. Additional notifications will be sent through the Azure portal, Microsoft Entra admin center, and the Microsoft 365 message center.
 
-We understand that some customers might need additional time to prepare for this MFA requirement. Therefore, Microsoft will allow extended time for customers with complex environments or technical barriers. The notification from us will also include details about how customers can postpone the start date of enforcement for their tenants, the duration of the postponement, and a link to apply. Visit [here](/identity/authentication/concept-mandatory-multifactor-authentication) to learn more.
+We understand that some customers might need additional time to prepare for this MFA requirement. Therefore, Microsoft will allow extended time for customers with complex environments or technical barriers. The notification from us will also include details about how customers can postpone the start date of enforcement for their tenants, the duration of the postponement, and a link to apply. Visit [here](https://learn.microsoft.com/entra/identity/authentication/concept-mandatory-multifactor-authentication) to learn more.
 
 ---
 
