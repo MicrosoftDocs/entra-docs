@@ -476,5 +476,12 @@ Your Export Replace workflow will look like this:
 
  
 
-The next step is to configure ECMA2Host Webservice connector using this template. 
+The next step is to configure [ECMA2Host Webservice connector](~/identity/app-provisioning/on-premises-sap-connector-configure.md) using this template. 
 
+## Next steps
+
+
+
+* [Migrate identity management scenarios from SAP IDM to Microsoft Entra](migrate-from-sap-idm.md)
+* [Deploy SAP NetWeaver AS ABAP 7.51](deploy-sap-netweaver.md)
+* [Configuring Microsoft Entra ID to provision users into SAP ECC with NetWeaver AS ABAP 7.0 or later](~/identity/app-provisioning/on-premises-sap-connector-configure.md)
