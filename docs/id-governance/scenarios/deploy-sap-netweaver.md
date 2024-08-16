@@ -30,7 +30,7 @@ This document guides you in setting up a lab environment with SAP ECC for testin
  - Option 1: An administrator of the subscription, that is, your user has the role Owner and has access to scope /subscriptions/. 
  - Option 2: Your Microsoft Azure user has the roles Contributor and User Access Administrator and has access to scope /subscriptions/. You must also have the role of Global Administrator for the Azure Active Directory. 
  Using the **Authorization with Application** for Authorization Type requires you to manually register an application in your Azure AD tenant and grant it the Contributor role to your subscription. 
- You must create an application registration and assign the role Contributor to the corresponding application for your subscription.In this guide, we'll use **Authorization with Application**: 
+ You must create an application registration and assign the role Contributor to the corresponding application for your subscription.In this guide, we'll use **Authorization with Application**. 
 
  6. Click the Test Connection button. Enter the name of your appliance and choose a master password to access your SAP instance. Click Create to provision resources into Azure AD tenant
  
