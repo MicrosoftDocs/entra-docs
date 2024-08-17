@@ -29,7 +29,7 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 
 ## Preview limitations
 
-- Each Microsoft Entra tenant is limited to 500 dynamic groups using the `memberOf` attribute. The `memberOf` groups count toward the total dynamic group member quota of 15,000.
+- Each Microsoft Entra tenant is limited to 500 dynamic groups using the `memberOf` attribute. The `memberOf` groups count toward the total dynamic group quota of 15,000.
 - Each dynamic group can have up to 50 member groups.
 - When you add members of security groups to `memberOf` dynamic groups, only direct members of the security group become members of the dynamic group.
 - You can't use one `memberOf` dynamic group to define the membership of another `memberOf` dynamic group. For example, Dynamic Group A, with members of group B and C in it, can't be a member of Dynamic Group D.
