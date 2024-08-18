@@ -69,8 +69,7 @@ Follow these steps to create a Microsoft Entra Application Registration for your
 	b. EU: https://login.icims.ca/login/callback
 	c. CA: https://login.icims.eu/login/callback
 
-> [!NOTE] 
-    > If you are not sure about which redirect URI to use, navigate to your iCIMS ATS domain without being logged in.  The domain is in the format <customernickname>.icims.com, for example notacustomer.icims.com.  You will be redirected to a login page whose domain will match one of the options datacenter domains listed on step 6.
+> [!NOTE] If you are not sure about which redirect URI to use, navigate to your iCIMS ATS domain without being logged in.  The domain is in the format <customernickname>.icims.com, for example notacustomer.icims.com.  You will be redirected to a login page whose domain will match one of the options datacenter domains listed on step 6.
 
 7. Make not of your application/client_id.
 
@@ -81,17 +80,17 @@ Follow these steps to create a Microsoft Entra Application Registration for your
  2. Select Certificates & secrets > Client secrets > New client secret.
  3. Add a description for your client secret.
  4. Select an expiration for the secret or specify a custom lifetime.
- > [!NOTE]  
-    > Client secret lifetime is limited to two years (24 months) or less. You can't specify a custom lifetime longer than 24 months.  Microsoft recommends that you set an expiration value of less than 12 months.
+ > [!NOTE] 
+ > Client secret lifetime is limited to two years (24 months) or less. You can't specify a custom lifetime longer than 24 months.  Microsoft recommends that you set an expiration value of less than 12 months.
  
- > [!NOTE]
-    > You must contact iCIMS Technical Support at least 30 days in advance of expiration to provide a new secret and avoid a service interruption.
+ > [!NOTE] 
+ > You must contact iCIMS Technical Support at least 30 days in advance of expiration to provide a new secret and avoid a service interruption.
  
  5. Record the Client secret and expiration date to provide to the iCIMS 
  support team.
 
  > [!NOTE] 
-    > if your organization does not want to configure a client secret, you can leverage an OpenID Connect integration and utilize front-channel authentication with the implicit grant flow.
+ > If your organization does not want to configure a client secret, you can leverage an OpenID Connect integration and utilize front-channel authentication with the implicit grant flow.
 
 ### Add permissions to your Entra Application
  In this section, you'll add a permissions to your application to sign in users and read the signed-in users' profiles.
@@ -102,7 +101,7 @@ Follow these steps to create a Microsoft Entra Application Registration for your
  4. Under Select permissions, select the following permissions
  	a. Delegated Users > User.Read
  > [!NOTE] 
-    > iCIMS recommends that you grant Admin Consent to User.Read to avoid prompting users to trust the Azure AD Application.
+ > iCIMS recommends that you grant Admin Consent to User.Read to avoid prompting users to trust the Azure AD Application.
   	
 ### Create a Microsoft Entra test user
 
