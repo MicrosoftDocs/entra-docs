@@ -69,7 +69,8 @@ Follow these steps to create a Microsoft Entra Application Registration for your
 	b. EU: https://login.icims.ca/login/callback
 	c. CA: https://login.icims.eu/login/callback
 
-> [!NOTE] If you are not sure about which redirect URI to use, navigate to your iCIMS ATS domain without being logged in.  The domain is in the format <customernickname>.icims.com, for example notacustomer.icims.com.  You will be redirected to a login page whose domain will match one of the options datacenter domains listed on step 6.
+> [!NOTE]  
+> If you are not sure about which redirect URI to use, navigate to your iCIMS ATS domain without being logged in.  The domain is in the format <customernickname>.icims.com, for example notacustomer.icims.com.  You will be redirected to a login page whose domain will match one of the options datacenter domains listed on step 6.
 
 7. Make not of your application/client_id.
 
@@ -80,16 +81,16 @@ Follow these steps to create a Microsoft Entra Application Registration for your
  2. Select Certificates & secrets > Client secrets > New client secret.
  3. Add a description for your client secret.
  4. Select an expiration for the secret or specify a custom lifetime.
- > [!NOTE] 
+ > [!NOTE]  
  > Client secret lifetime is limited to two years (24 months) or less. You can't specify a custom lifetime longer than 24 months.  Microsoft recommends that you set an expiration value of less than 12 months.
  
- > [!NOTE] 
+ > [!NOTE]  
  > You must contact iCIMS Technical Support at least 30 days in advance of expiration to provide a new secret and avoid a service interruption.
  
  5. Record the Client secret and expiration date to provide to the iCIMS 
  support team.
 
- > [!NOTE] 
+ > [!NOTE]  
  > If your organization does not want to configure a client secret, you can leverage an OpenID Connect integration and utilize front-channel authentication with the implicit grant flow.
 
 ### Add permissions to your Entra Application
@@ -100,7 +101,7 @@ Follow these steps to create a Microsoft Entra Application Registration for your
  3. Select Delegated permissions.
  4. Under Select permissions, select the following permissions
  	a. Delegated Users > User.Read
- > [!NOTE] 
+ > [!NOTE]  
  > iCIMS recommends that you grant Admin Consent to User.Read to avoid prompting users to trust the Azure AD Application.
   	
 ### Create a Microsoft Entra test user
@@ -142,8 +143,9 @@ The Match From setting indicates which Azure AD attribute to match against an AT
 1. **Subject / NameID**: An immutable identifier for the user, unique with respect to the Azure AD application used to authenticate the user. If a single user signs into two different apps using two different client IDs, those apps will receive two different values for the subject claim.
 2. **OID**: The immutable identifier for an object in the Microsoft identity system, in this case, a user account. This ID uniquely identifies the user across applications. Two different applications signing in the same user will receive the same value in the oid claim. The Microsoft Graph will return this ID as the id property for a given user account.
 3. **Email**: The email of the user. Emails are mutable and only need to match during the first login, at which point the account is bound with an ATS user.  This option is not recommended for mutable email addresses.
- > [!NOTE] 
-    > iCIMS recommends that you verify the Azure AD user’s email address before accessing iCIMS ATS via Corporate SSO. This prevents linking an account with an invalid email address.
+
+> [!NOTE]  
+> iCIMS recommends that you verify the Azure AD user’s email address before accessing iCIMS ATS via Corporate SSO. This prevents linking an account with an invalid email address.
 
 #### Match To setting options:
 1. **Login**: The ATS person record’s login field, also known as the username.
@@ -160,20 +162,20 @@ The Match From setting indicates which Azure AD attribute to match against an AT
     - Provide the **client secret**.
 	- Provide the **Microsoft Azure AD Domain**.
 	- Provide the **IdP Domain(s)** - Typically, the domain of your organization’s corporate email addresses (e.g., corporate-domain.com is the domain of name@corporate-domain.com.).  Your organization can leverage multiple IdP domains.
-     >  [!NOTE]
-        > The domain must be unique within the region (e.g, gmail.com is an invalid domain.)
+>  [!NOTE]  
+> The domain must be unique within the region (e.g, gmail.com is an invalid domain.)
 
 	- Provide the **display name** for the integration. This is the name that displays for your organization’s employee users.
 	- Provide your organization’s **logo URL** for the integration. It is displayed as a 20x20 pixel square.  
-    >  [!NOTE]
-        > The logo displays as a 20x20 pixel square on your organization’s iCIMS Universal Login page.
+> [!NOTE]  
+> The logo displays as a 20x20 pixel square on your organization’s iCIMS Universal Login page.
 	- Disclose whether you are enforcing Two-step Verification or **Multi-Factor Authentication**. Answer yes or no.
 	- Provide the user **Match From** and **Match To** settings you selected in the previous step.
 
 ### Create ICIMS test user
 In this section, you'll enable B.Simon to use single sign-on by creating a record in ICIMS for that user.
 
-1. Browser to your ATS application at **\<customernickname\>**.icims.com
+1. Browser to your ATS application at `<customernickname>.icims.com`
 1. Login as a user admin.
 1. Select Create > People > Employee
 1. Provided details for this employee including name, email, 
