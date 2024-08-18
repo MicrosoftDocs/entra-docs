@@ -70,7 +70,7 @@ Follow these steps to create a Microsoft Entra Application Registration for your
 	c. CA: https://login.icims.eu/login/callback
 
 > [!NOTE]  
-> If you are not sure about which redirect URI to use, navigate to your iCIMS ATS domain without being logged in.  The domain is in the format <customernickname>.icims.com, for example notacustomer.icims.com.  You will be redirected to a login page whose domain will match one of the options datacenter domains listed on step 6.
+> If you are not sure about which redirect URI to use, navigate to your iCIMS ATS domain without being logged in.  The domain is in the format `<customernickname>.icims.com`, for example notacustomer.icims.com.  You will be redirected to a login page whose domain will match one of the options datacenter domains listed on step 6.
 
 7. Make not of your application/client_id.
 
@@ -161,14 +161,9 @@ The Match From setting indicates which Azure AD attribute to match against an AT
     - Provide the **application (client) id**.
     - Provide the **client secret**.
 	- Provide the **Microsoft Azure AD Domain**.
-	- Provide the **IdP Domain(s)** - Typically, the domain of your organization’s corporate email addresses (e.g., corporate-domain.com is the domain of name@corporate-domain.com.).  Your organization can leverage multiple IdP domains.
->  [!NOTE]  
-> The domain must be unique within the region (e.g, gmail.com is an invalid domain.)
-
-	- Provide the **display name** for the integration. This is the name that displays for your organization’s employee users.
-	- Provide your organization’s **logo URL** for the integration. It is displayed as a 20x20 pixel square.  
-> [!NOTE]  
-> The logo displays as a 20x20 pixel square on your organization’s iCIMS Universal Login page.
+	- Provide the **IdP Domain(s)** - Typically, the domain of your organization’s corporate email addresses (e.g., corporate-domain.com is the domain of name@corporate-domain.com.).  Your organization can leverage multiple IdP domains.  The domain must be unique within the region (e.g, gmail.com is an invalid domain.)
+    - Provide the **display name** for the integration. This is the name that displays for your organization’s employee users.
+    - Provide your organization’s **logo URL** for the integration. It is displayed as a 20x20 pixel square.  
 	- Disclose whether you are enforcing Two-step Verification or **Multi-Factor Authentication**. Answer yes or no.
 	- Provide the user **Match From** and **Match To** settings you selected in the previous step.
 
