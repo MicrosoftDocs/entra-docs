@@ -34,8 +34,11 @@ There are a couple different workarounds:
 
 - You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All cloud apps** to specific applications. Start with a review of applications that are used in their tenant and use filters to tag Microsoft Authenticator and other applications.
 
-
 - To further reduce support costs, you can run an internal campaign to help users adopt passkeys. When you're ready to enforce passkey usage, create two Conditional Access policies that each require different authentication strengths for mobile and desktop operating systems. This workaround requires the tenant to allow use of a Temporary Access Pass (TAP) or other authentication methods. 
+
+  For desktop operating systems, users who can’t satisfy the requirement to sign-in with a passkey in Authenticator are directed to My Sign-ins wizard mode, and then asked to sign in to Authenticator on their mobile device.  
+
+  You'll need to provision a TAP as part of this process. Optionally, you can enable and ensure the user has other MFA methods available to use, but TAP is recommended for secure onboarding. Use the following settings for the desktop operating system Conditional Access policy. 
 
   | Desktop policy    | Value |
   |-------------------|-------|
@@ -45,6 +48,12 @@ There are a couple different workarounds:
   | Targeted resource | All cloud apps |
   | Grant control     | Authentication strength |
   | Methods           | Passkey in Microsoft Authenticator |
+
+  For iOS and Android mobile operating systems, when the user signs into Authenticator with a TAP or another allowed method, direct registration occurs in Authenticator. No loop occurs because the user meets the authentication requirements.  
+
+  The TAP is valid only a short time and ideally used only for registration. The user still needs to use Authenticator passkeys for every sign in on mobile, except initial registration. You can also exclude the user from the TAP policy after they complete registration of the Authenticator passkey. 
+
+  Use the following settings for the mobile operating system Conditional Access policy.
 
   | Mobile policy     | Value |
   |-------------------|-------|
@@ -57,16 +66,8 @@ There are a couple different workarounds:
 
   <sup>1</sup>Make sure your grant control for the mobile policy matches your Conditional Access policy to register [Security info](https://mysignins.microsoft.com/security-info) so users can register new sign-in methods. 
 
-  On desktop operating systems, if the user can’t satisfy the requirement to sign-in with a passkey in Authenticator, they're sent to My Sign-ins wizard mode and asked to sign in to Authenticator on their mobile device.  
-
-  You'll need to provision a TAP as part of this process. Optionally, you can enable and ensure the user has other MFA methods available to use, but TAP is recommended for secure onboarding.  
-
-  On iOS and Android mobile operating systems, when the user signs into Authenticator with a TAP or another allowed method, direct registration occurs in Authenticator. No loop occurs because the user meets the authentication requirements.  
-
-  The TAP is valid only a short time and ideally used only for registration. The user still needs to use Authenticator passkeys for every sign in on mobile, except initial registration. You can also exclude the user from the TAP policy after they complete registration of the Authenticator passkey. 
-
-  >[!NOTE]
-  >Users must also satisfy any Conditional Access policy that targets **Register security info**, or they can't sign in.  
+>[!NOTE]
+>With either workaround, users must also satisfy any Conditional Access policy that targets **Register security info**, or they can't sign in.  
 
 ## Restrict Bluetooth usage to passkeys in Authenticator
 
