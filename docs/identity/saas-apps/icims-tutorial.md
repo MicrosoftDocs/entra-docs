@@ -2,7 +2,7 @@
 title: 'Tutorial: Microsoft Entra integration with ICIMS'
 description: Learn how to configure single sign-on between Microsoft Entra ID and ICIMS.
 
-author: kschmi-icims
+author: jeevansd
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
