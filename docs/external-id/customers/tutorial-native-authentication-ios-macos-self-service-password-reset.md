@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 02/23/2024
+ms.date: 08/19/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to implement self-service password reset (SSPR) to my iOS app using native authentication.
 ---

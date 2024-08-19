@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 06/18/2024
+ms.date: 08/19/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in an iOS/macOS mobile app using native authentication.
 ---
