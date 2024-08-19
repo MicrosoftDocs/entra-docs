@@ -1,18 +1,17 @@
 ---
 title: "Tutorial: Use shared-device mode with the Microsoft Authentication Library (MSAL) for Android"
-description: In this tutorial, you learn how to prepare an Android device to run in shared mode and run a frontline worker app.
-author: henrymbuguakiarie
+description: In this tutorial, you learn how to set up an Android application to run in shared device mode.
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 10/24/2023
-ms.reviewer: negoe
+ms.date: 08/19/2024
+ms.reviewer: negoe, dmwendia, akgoel
 ms.service: identity-platform
 
 ms.topic: tutorial
 #Customer intent: As an Android developer, I want to learn how to enable shared-device mode for an Android app, so that I can configure Android devices to be shared by multiple employees and provide Microsoft Identity backed management of the device.
 ---
 
-# Tutorial: Use shared-device mode in your Android application
+# Tutorial: Setup an Android device to run applications in Shared Device Mode  Use shared-device mode in your Android application
 
 In this tutorial, Android developers and Microsoft Entra tenant administrators learn about the code, Authenticator app, and tenant settings required to enable shared-device mode for an Android app.
 
