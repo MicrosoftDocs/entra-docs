@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/16/2024
+ms.date: 08/19/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
