@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-js
-ms.date: 10/24/2023
+ms.date: 08/19/2024
 ms.reviewer: joarroyo
 ms.service: identity-platform
 
@@ -15,7 +15,7 @@ ms.topic: tutorial
 
 # Tutorial: Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA) using auth code flow
 
-In this tutorial, you'll build an Angular single-page application (SPA) that signs in users and calls the Microsoft Graph API by using the authorization code flow with PKCE. The SPA you build uses the Microsoft Authentication Library (MSAL) for Angular v2.
+In this tutorial, you build an Angular single-page application (SPA) that signs in users and calls the Microsoft Graph API by using the authorization code flow with Proof Key for Code Exchange (PKCE). The SPA you build uses the Microsoft Authentication Library (MSAL) for Angular v2.
 
 In this tutorial:
 
@@ -27,7 +27,7 @@ In this tutorial:
 > - Add code to call Microsoft Graph API
 > - Test the app
 
-MSAL Angular v2 improves on MSAL Angular v1 by supporting the authorization code flow with PKCE in the browser instead of the implicit grant flow. We recommend using the authorization code flow with PKCE for single-page applications (SPAs) because it's more secure than the implicit flow. MSAL Angular v2 does **NOT** support the implicit flow.
+MSAL Angular v2 uses the authorization code flow with PKCE in the browser, improving on MSAL Angular v1, which used the implicit grant flow. We recommend using the authorization code flow with PKCE for single-page applications (SPAs) because it's more secure than the implicit flow. MSAL Angular v2 does **NOT** support the implicit flow.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ MSAL Angular v2 improves on MSAL Angular v1 by supporting the authorization code
 
 The sample application created in this tutorial enables an Angular SPA to query the Microsoft Graph API or a web API that accepts tokens issued by the Microsoft identity platform. It uses the Microsoft Authentication Library (MSAL) for Angular v2, a wrapper of the MSAL.js v2 library. MSAL Angular enables Angular 9+ applications to authenticate enterprise users by using Microsoft Entra ID, and also users with Microsoft accounts and social identities like Facebook, Google, and LinkedIn. The library also enables applications to get access to Microsoft cloud services and Microsoft Graph.
 
-In this scenario, after a user signs in, an access token is requested and added to HTTP requests through the authorization header. Token acquisition and renewal are handled by MSAL.
+In this scenario, after a user signs in, an access token is requested and added to HTTP requests through the authorization header. MSAL handles token acquisition and renewal.
 
 ### Libraries
 
@@ -61,7 +61,7 @@ Do you prefer to download the completed sample project for this tutorial instead
 git clone https://github.com/Azure-Samples/ms-identity-javascript-angular-spa.git
 ```
 
-To continue with the tutorial and build the application yourself, move on to the next section, [Register the application and record identifiers](#register-the-application-and-record-identifiers).
+To continue with the tutorial and build the application yourself, move on to the next section, [Register the application, and record identifiers](#register-the-application-and-record-identifiers).
 
 ## Register the application and record identifiers
 
@@ -81,7 +81,8 @@ To complete registration, provide the application a name, specify the supported 
 
 ## Create your project
 
-1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
+1. Open Visual Studio Code.
+1. Select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
    1. You may need to switch terminal types. Select the down arrow next to the **+** icon in the terminal and select **Command Prompt**.
 1. Run the following commands to create a new Angular project with the name `msal-angular-tutorial`, install Angular Material component libraries, MSAL Browser, MSAL Angular and generate home and profile components.
@@ -98,7 +99,8 @@ To complete registration, provide the application a name, specify the supported 
 
 ## Configure the application and edit the base UI
 
-1. Open *src/app/app.module.ts*. The `MsalModule` and `MsalInterceptor` need to be added to `imports` along with the `isIE` constant. You'll also add the material modules. Replace the entire contents of the file with the following snippet:
+1. Open *src/app/app.module.ts*. The `MsalModule` and `MsalInterceptor` need to be added to `imports` along with the `isIE` constant. 
+You also add the material modules. Replace the entire contents of the file with the following snippet:
 
    ```javascript
    import { BrowserModule } from "@angular/platform-browser";
@@ -198,7 +200,7 @@ To complete registration, provide the application a name, specify the supported 
    export class AppRoutingModule {}
    ```
 
-1. Open *src/app/app.component.html* and replace the existing code with the following:
+1. Open *src/app/app.component.html* and replace the existing code with the following snippet:
 
    ```HTML
    <mat-toolbar color="primary">
@@ -249,7 +251,7 @@ To complete registration, provide the application a name, specify the supported 
 
 ## Sign in using pop-ups
 
-1. Open *src/app/app.component.ts* and replace the contents of the file to the following to sign in a user using a pop-up window:
+1. Open *src/app/app.component.ts* and replace the contents of the file with the following snippet to sign in a user using a pop-up window:
 
    ```javascript
    import { MsalService } from '@azure/msal-angular';
@@ -319,7 +321,7 @@ To complete registration, provide the application a name, specify the supported 
    </html>
    ```
 
-3. Open *src/app/app.component.ts* and replace the code with the following to sign in a user using a full-frame redirect:
+3. Open *src/app/app.component.ts* and replace the code with the following snippet, to sign in a user using a full-frame redirect:
 
    ```javascript
    import { MsalService } from '@azure/msal-angular';
@@ -494,7 +496,7 @@ The `MsalGuard` class is one you can use to protect routes and require authentic
 
 `MsalGuard` is a convenience class you can use to improve the user experience, but it shouldn't be relied upon for security. Attackers can potentially get around client-side guards, and you should ensure that the server doesn't return any data the user shouldn't access.
 
-1. Add the `MsalGuard` class as a provider in your application in *src/app/app.module.ts*, and add the configurations for the `MsalGuard`. Scopes needed for acquiring tokens later can be provided in the `authRequest`, and the type of interaction for the Guard can be set to `Redirect` or `Popup`. Your code should look like the following:
+1. Add the `MsalGuard` class as a provider in your application in *src/app/app.module.ts*, and add the configurations for the `MsalGuard`. Scopes needed for acquiring tokens later can be provided in the `authRequest`, and the type of interaction for the Guard can be set to `Redirect` or `Popup`. Your code should look like the following snippet:
 
    ```javascript
    import { BrowserModule } from "@angular/platform-browser";
@@ -602,7 +604,7 @@ The `MsalGuard` class is one you can use to protect routes and require authentic
    export class AppRoutingModule {}
    ```
 
-3. Adjust the login calls in *src/app/app.component.ts* to take the `authRequest` set in the guard configurations into account. Your code should now look like the following:
+3. Adjust the sign-in calls in *src/app/app.component.ts* to take the `authRequest` set in the guard configurations into account. Your code should now look like the following snippet:
 
    ```javascript
    import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
@@ -662,7 +664,7 @@ The `MsalGuard` class is one you can use to protect routes and require authentic
 
 MSAL Angular provides an `Interceptor` class that automatically acquires tokens for outgoing requests that use the Angular `http` client to known protected resources.
 
-1. Add the `Interceptor` class as a provider to your application in *src/app/app.module.ts*, with its configurations. Your code should now look like the following:
+1. Add the `Interceptor` class as a provider to your application in *src/app/app.module.ts*, with its configurations. Your code should now look like the following snippet:
 
    ```javascript
    import { BrowserModule } from "@angular/platform-browser";
@@ -979,11 +981,11 @@ MSAL Angular provides an `Interceptor` class that automatically acquires tokens 
 
    :::image type="content" source="media/tutorial-v2-angular-auth-code/angular-01-not-signed-in.png" alt-text="Web browser displaying sign-in dialog":::
 
-1. Select **Accept** to grant the app permissions to your profile. This will happen the first time that you start to sign in.
+1. Select **Accept** to grant the app permissions to your profile. This happens the first time that you start to sign in.
 
    :::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-02-consent-dialog.png" alt-text="Content dialog displayed in web browser":::
 
-1. After consenting, the following If you consent to the requested permissions, the web application shows a successful login page.
+1. If you consent to the requested permissions, the web application shows a successful login page.
 
    :::image type="content" source="media/tutorial-v2-angular-auth-code/angular-02-signed-in.png" alt-text="Results of a successful sign-in in the web browser":::
 
