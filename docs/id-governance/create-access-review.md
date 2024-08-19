@@ -121,6 +121,11 @@ If you're reviewing access to an application, then before you create the review,
 
 1. Select **Next: Settings**.
 
+> [!NOTE]
+> When creating an access review, you are able to specify the start date, but the start time may vary a few hours based on system processing. For example, if you create an access review at 03:00 UTC on 09/09 that is set to run on 09/12, then the review will be scheduled to run at 03:00 UTC on the start date, but could be delayed due to system processing.
+
+You are able to specify the start date, but the start time may vary a few hours based on system processing. 
+
 ### Next: Settings
 
 1. In the **Upon completion settings** section, you can specify what happens after the review finishes.
