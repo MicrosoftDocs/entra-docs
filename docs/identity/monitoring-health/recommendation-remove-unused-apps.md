@@ -19,7 +19,7 @@ This article covers the recommendation to investigate unused applications. This 
 
 ## Description
 
-This recommendation shows up if your tenant has applications that haven't been used in more than 30 days, so haven't been issued any tokens. Applications or service principals that were added but never used show up as unused apps, which will also trigger this recommendation.
+This recommendation shows up if your tenant has applications that haven't been used in more than 90 days, so haven't been issued any tokens. Applications or service principals that were added but never used show up as unused apps, which will also trigger this recommendation.
 
 ## Value 
 
@@ -36,7 +36,7 @@ Applications that the recommendation identified appear in the list of **Impacted
 
 1. Determine if the identified application is needed.
     - If the application is no longer needed, remove it from your tenant.
-    - If the application is needed, we suggest you take appropriate steps to ensure the application is used in intervals of less than 30 days.
+    - If the application is needed, we suggest you take appropriate steps to ensure the application is used in intervals of less than 90 days.
 
 ## Known limitations
 
@@ -51,7 +51,7 @@ Take note of the following common scenarios or known limitations of the "Remove 
     - App proxy
     - Add-in apps
 
-* The current unused app processor identifies any apps that were created recently. In some instances newly created apps might need more time to deploy the code that uses the application registration. Progress is underway to filter out apps that were created within the past 60 days so they don't show as unused.
+* The current unused app processor identifies any apps that were created recently. In some instances newly created apps might need more time to deploy the code that uses the application registration. Progress is underway to filter out apps that were created within the past 90 days so they don't show as unused.
 
 ## Next steps
 

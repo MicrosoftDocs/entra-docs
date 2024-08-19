@@ -8,7 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 08/12/2024
+ms.date: 08/13/2024
 ms.custom: template-concept 
 
 #CustomerIntent: As an IT administrator, I want to learn about managing users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
@@ -24,7 +24,7 @@ The following table lists common automation scenarios for synchronized users fro
 |---------|---------|
 |Creating the user account in Active Directory Domain Services    |   [HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md)      |
 |Providing initial credentials or password for user accounts  |  The [Generate Temporary Access Pass and send via email to user's manager](../id-governance/lifecycle-workflow-tasks.md#generate-temporary-access-pass-and-send-via-email-to-users-manager) task can be used to set up password-less credentials. For setting up a regular Active Directory password, you can use [Microsoft Entra self-service password reset](../identity/authentication/concept-sspr-howitworks.md).      |
-|Assigning licenses     |  The [Assign licenses to user (Preview)](../id-governance/lifecycle-workflow-tasks.md#assign-licenses-to-user-preview) Lifecycle Workflow task can be used to assign licenses. You're also able to assign licenses to users via [a group](../fundamentals/license-users-groups.yml).    |
+|Assigning licenses     |  The [Assign licenses to user](../id-governance/lifecycle-workflow-tasks.md#assign-licenses-to-user) Lifecycle Workflow task can be used to assign licenses. You're also able to assign licenses to users via [a group](../fundamentals/license-users-groups.yml).    |
 |Give users access to Active Directory group-based applications     |  [Govern on-premises Active Directory (Kerberos) application access](../identity/hybrid/cloud-sync/govern-on-premises-groups.md)       |
 |Update user attributes in Active Directory as they move organizations     |  [Plan scoping filters and attribute mapping](../identity/app-provisioning/plan-cloud-hr-provision.md#plan-scoping-filters-and-attribute-mapping)       |
 |Move users to different OUs as they move organizations     | [Configure Active Directory OU container assignment](../identity/app-provisioning/plan-cloud-hr-provision.md#configure-active-directory-ou-container-assignment)        |
@@ -43,8 +43,8 @@ The following table shows what should be considered for each workflow trigger wh
 
 |Workflow Trigger  | Requirements  |
 |---------|---------|
-|Attribute changes (preview)     | No further configuration needed as long as attributes are synced. For information on synced attributes, see: [Attribute mapping in Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) and [Microsoft Entra Connect Sync: Directory extensions](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). When a change is made in Active Directory, the synchronization via Microsoft Entra Cloud Sync or Microsoft Entra Connect Sync needs to occur before changes can be picked up from Lifecycle Workflows.      |
-|Group membership based  (preview)   | As any type of group is supported, no further configuration is required. If the group originates from Active Directory, it must be synchronized to Microsoft Entra. The Microsoft Entra Cloud Sync, or Microsoft Entra Connect Sync, synchronization needs to occur before changes can be picked up from Lifecycle Workflows.       |
+|Attribute changes     | No further configuration needed as long as attributes are synced. For information on synced attributes, see: [Attribute mapping in Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) and [Microsoft Entra Connect Sync: Directory extensions](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). When a change is made in Active Directory, the synchronization via Microsoft Entra Cloud Sync or Microsoft Entra Connect Sync needs to occur before changes can be picked up from Lifecycle Workflows.      |
+|Group membership based   | As any type of group is supported, no further configuration is required. If the group originates from Active Directory, it must be synchronized to Microsoft Entra. The Microsoft Entra Cloud Sync, or Microsoft Entra Connect Sync, synchronization needs to occur before changes can be picked up from Lifecycle Workflows.       |
 |On-demand     |   No further configuration needed.      |
 |Time based    |  **employeeHireDate**, **employeeLeaveDateTime**: These attributes must be synced before being used. For more information on this process, see: [How to synchronize attributes for Lifecycle workflows](./how-to-lifecycle-workflow-sync-attributes.md).<br></br>**createdDateTime**: No further configuration needed. This date is the day the user account is synced to Microsoft Entra ID, not when they were created within Active Directory.       |
 
@@ -63,7 +63,7 @@ All Lifecycle workflow tasks work for both cloud, and synchronized from Active D
 
 For groups that are synchronized from AD DS to Microsoft Entra ID, you wouldn't be able to use Lifecycle Workflow group tasks as mentioned in the scenario. However, Microsoft Entra ID Governance can be used to [govern on-premises Active Directory (Kerberos) application access](../identity/hybrid/cloud-sync/govern-on-premises-groups.md) with groups from the cloud, which are supported within Lifecycle Workflows.
 
-## User account tasks (preview)
+## User account tasks
 
 Additional configuration is required for the Lifecycle Workflow tasks to enable, disable, and delete user accounts to work with synchronized from AD DS. The following prerequisites must be completed before you can configure the tasks to perform actions in Active Directory.
 
@@ -76,9 +76,9 @@ Additional configuration is required for the Lifecycle Workflow tasks to enable,
 
 - To delete users accounts, you must enable the Active Directory recycle bin. For a step-by-step guide on enabling the recycle bin, see: [Active Directory Recycle Bin step-by-step](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).
 
-For a step by step guide on setting the flag so that user account tasks run for users synchronized from Active Directory Domain Services, see: [Manage synchronized from Active Directory Domain Services (AD DS) with workflows (preview)](./manage-workflow-on-premises.md).
+For a step by step guide on setting the flag so that user account tasks run for users synchronized from Active Directory Domain Services, see: [Manage synchronized from Active Directory Domain Services (AD DS) with workflows](./manage-workflow-on-premises.md).
 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Manage synchronized from Active Directory Domain Services (AD DS) with workflows (preview)](manage-workflow-on-premises.md)
+> [Manage synchronized users from Active Directory Domain Services (AD DS) with workflows](manage-workflow-on-premises.md)
