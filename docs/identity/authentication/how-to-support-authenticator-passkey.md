@@ -29,4 +29,6 @@ If you configure an authentication strength Conditional Access policy with the f
 
 The policy requires targeted users to sign in with a passkey to access all cloud applications, which includes Microsoft Authenticator. As a result, when a user tries to add a passkey in Authenticator, they are redirected to [Security info](https://mysignins.microsoft.com/security-info). But [Security info](https://mysignins.microsoft.com/security-info) provides only **Passkey in Microsoft Authenticator** as a registration option because of the authentication strength requirement. 
 
-## Restrict Bluetooth usage to passkeys
+## Restrict Bluetooth usage to passkeys in Authenticator
+
+Some organizations restrict Bluetooth usage, which includes the use of passkeys. In such cases, organizations can allow passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. for more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](https://review.learn.microsoft.com/en-us/windows/security/identity-protection/passkeys/?branch=pr-en-us-10051&tabs=windows#passkeys-in-bluetooth-restricted-environments).
