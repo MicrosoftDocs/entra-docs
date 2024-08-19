@@ -816,7 +816,7 @@
         href: dlg-learning-center-tutorial.md
       - name: dmarcian
         href: dmarcian-tutorial.md
-      - name: Docker
+      - name: Docker Business
         href: docker-tutorial.md
       - name: Document360
         href: document360-tutorial.md
@@ -885,7 +885,9 @@
       - name: EBSCO
         href: ebsco-tutorial.md
       - name: Eccentex AppBase for Azure
-        href: eccentex-appbase-for-azure-tutorial.md   
+        href: eccentex-appbase-for-azure-tutorial.md 
+      - name: ecFreight2 (OIDC)
+        href: ecfreight2-tutorial.md  
       - name: EchoSpan
         href: echospan-tutorial.md
       - name: eCornell
@@ -2093,8 +2095,8 @@
         href: patentsquare-tutorial.md
       - name: Pavaso Digital Close
         href: pavaso-digital-close-tutorial.md
-      - name: PayCargo
-        href: paycargo-tutorial.md
+      - name: PayCargo Classic
+        href: paycargo-classic-tutorial.md
       - name: Paylocity
         href: paylocity-tutorial.md
       - name: Peakon
@@ -2859,6 +2861,8 @@
         href: thoughtworks-mingle-tutorial.md
       - name: ThousandEyes
         href: thousandeyes-tutorial.md
+      - name: Thoropass
+        href: thoropass-tutorial.md
       - name: ThreatQ Platform
         href: threatq-platform-tutorial.md
       - name: Thrive LXP
@@ -3209,6 +3213,8 @@
         href: zengine-tutorial.md  
       - name: ZenQMS
         href: zenqms-tutorial.md
+      - name: Zenvoices IMAP (OIDC)
+        href: zenvoices-imap-tutorial.md
       - name: Zenya
         href: zenya-tutorial.md
       - name: ZephyrSSO

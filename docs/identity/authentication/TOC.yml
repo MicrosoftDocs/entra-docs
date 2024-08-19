@@ -82,6 +82,8 @@
       href: concept-authentication-default-enablement.md
     - name: System-preferred MFA 
       href: concept-system-preferred-multifactor-authentication.md
+    - name: Mandatory MFA 
+      href: concept-mandatory-multifactor-authentication.md
     - name: External MFA provider
       href: concept-authentication-external-method-provider.md
     - name: Prompts and session lifetime

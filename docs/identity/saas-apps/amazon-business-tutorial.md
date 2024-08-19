@@ -359,4 +359,4 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 Once you configure Amazon Business you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 
 ### More resources
-- [Microsoft Entra ID SSO Best Practices](https://learn.microsoft.com/entra/identity/enterprise-apps/what-is-single-sign-on)
+- [Microsoft Entra ID SSO Best Practices](/entra/identity/enterprise-apps/what-is-single-sign-on)
