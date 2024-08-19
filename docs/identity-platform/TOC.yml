@@ -352,9 +352,13 @@
     - name: Tutorials
       items:
         - name: Android
-          href: tutorial-v2-android.md
-        - name: Android - Shared-device mode
-          href: tutorial-v2-shared-device-mode.md
+          items:
+            - name: Sign in users and call a web API
+              href: tutorial-v2-android.md
+            - name: Enable Shared Device Mode using MSAL
+              href: tutorial-v2-shared-device-mode.md
+            - name: Set up device in Shared device mode
+              href: tutoriakl-mobile-android-device-shared-mode.md
         - name: iOS and macOS
           href: tutorial-v2-ios.md
     - name: Samples
