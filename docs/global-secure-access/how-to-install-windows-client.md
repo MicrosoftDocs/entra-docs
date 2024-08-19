@@ -188,10 +188,10 @@ If the registry value doesn't exist, the default value is 0x0, Private Access is
 The administrator can show or hide specific buttons in the client system tray icon menu. Create the values under the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client`
 
-|Value  |Type  |Data  |Default behavior  |Description  |
+|Value   |Type   |Data   |Default behavior   |Description   |
 |---------|---------|---------|---------|---------|
-|HideSignOutButton   |REG_DWORD         |0x0 - shown   0x1 - hidden         |hidden         |Configure this setting to show or hide the **Sign out** action. This option is for specific scenarios when a user needs to sign in to the client with a different Entra user than the one used to sign in to Windows. Note: You must sign in to the client with a user in the same Entra tenant to which the device is joined. You can also use the **Sign out** action to reauthenticate the existing user.         |
-|HideDisablePrivateAccessButton     |REG_DWORD         |0x0 - shown   0x1 - hidden         |hidden         |Configure this setting to show or hide the **Disable Private Access** action. This option is for a scenario when the device is directly connected to the corporate network and the user prefers accessing private applications directly through the network instead of through the Global Secure Access.         |   
+|HideSignOutButton   |REG_DWORD   |0x0 - shown   0x1 - hidden   |hidden   |Configure this setting to show or hide the **Sign out** action. This option is for specific scenarios when a user needs to sign in to the client with a different Entra user than the one used to sign in to Windows. Note: You must sign in to the client with a user in the same Entra tenant to which the device is joined. You can also use the **Sign out** action to reauthenticate the existing user.         |
+|HideDisablePrivateAccessButton   |REG_DWORD   |0x0 - shown   0x1 - hidden   |hidden   |Configure this setting to show or hide the **Disable Private Access** action. This option is for a scenario when the device is directly connected to the corporate network and the user prefers accessing private applications directly through the network instead of through the Global Secure Access.   |   
 
 :::image type="content" source="media/how-to-install-windows-client/global-secure-access-registry-key-private-hide-signout.png" alt-text="Screenshot showing the Registry Editor with the HideSignOutButton and HideDisablePrivateAccessButton registry keys highlighted.":::
 
