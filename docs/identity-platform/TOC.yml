@@ -355,7 +355,7 @@
           items:
             - name: Sign in users and call a web API
               href: tutorial-v2-android.md
-            - name: Enable Shared Device Mode in your application using MSAL
+            - name: Enable Shared Device Mode in your app using MSAL
               href: tutorial-v2-shared-device-mode.md
             - name: Set up an Android device in Shared Device Mode
               href: tutorial-mobile-android-device-shared-mode.md
