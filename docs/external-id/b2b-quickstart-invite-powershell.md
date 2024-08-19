@@ -58,7 +58,7 @@ When prompted, enter your credentials.
    ```Output
    Id                                   InviteRedeemUrl                                                                                                   
    --                                   ---------------                                                                                                   
-   aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb https://login.microsoftonline.com/redeem?...
+   00aa00aa-bb11-cc22-dd33-44ee44ee44ee https://login.microsoftonline.com/redeem?...
    ```
 
 ## Verify the user exists in the directory
@@ -74,7 +74,7 @@ When prompted, enter your credentials.
    ```Output
    Id                                   DisplayName              Mail                           UserPrincipalName        
    --                                   -----------              ----                           -----------------               
-   aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb Henry Ross           henry@contoso.com           henry@contoso.com
+   00aa00aa-bb11-cc22-dd33-44ee44ee44ee Henry Ross           henry@contoso.com           henry@contoso.com
    ```
 
 ## Clean up resources
