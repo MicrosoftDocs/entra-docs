@@ -358,7 +358,7 @@
             - name: Enable Shared Device Mode using MSAL
               href: tutorial-v2-shared-device-mode.md
             - name: Set up device in Shared device mode
-              href: tutoriakl-mobile-android-device-shared-mode.md
+              href: tutorial-mobile-android-device-shared-mode.md
         - name: iOS and macOS
           href: tutorial-v2-ios.md
     - name: Samples

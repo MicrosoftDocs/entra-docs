@@ -2,6 +2,7 @@
 title: "Tutorial: Implement shared-device mode with the Microsoft Authentication Library (MSAL) for Android"
 description: In this tutorial, you learn how to set up an Android application to run in shared device mode.
 manager: CelesteDG
+author: henrymbuguakiarie
 ms.author: henrymbugua
 ms.date: 08/19/2024
 ms.reviewer: negoe, dmwendia, akgoel
