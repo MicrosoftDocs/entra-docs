@@ -995,7 +995,7 @@ MSAL Angular provides an `Interceptor` class that automatically acquires tokens 
 
 ## Add scopes and delegated permissions
 
-The Microsoft Graph API requires the *User.Read* scope to read a user's profile. The *User.Read* scope is added automatically to every app registration. Other APIs for Microsoft Graph, and custom APIs for your back-end server, might require other scopes. For example, the Microsoft Graph API requires the *Mail.Read* scope in order to list the user's email.
+The Microsoft Graphs API requires the *User.Read* scope to read a user's profile. The *User.Read* scope is added automatically to every app registration. Other APIs for Microsoft Graph, and custom APIs for your back-end server, might require other scopes. For example, the Microsoft Graphs API requires the *Mail.Read* scope in order to list the user's email.
 
 As you add scopes, your users might be prompted to provide extra consent for the added scopes.
 
