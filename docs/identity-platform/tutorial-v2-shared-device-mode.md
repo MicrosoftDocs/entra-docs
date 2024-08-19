@@ -44,6 +44,55 @@ dependencies{
 }
 ```
 
+### Add support for single account mode 
+
+Applications written using the Microsoft Authentication Library (MSAL) SDK can manage a single account or multiple accounts. For details, see [single-account mode or multiple-account mode](single-multi-account.md).
+
+The Microsoft identity platform features available to your app vary depending on whether the application is running in single-account mode or multiple-account mode.
+
+**Shared device mode apps only work in single-account mode**.
+
+> [!IMPORTANT]
+> Applications that only support multiple-account mode can't run on a shared device. If an employee loads an app that doesn't support single-account mode, it won't run on the shared device.
+>
+> Apps written before the MSAL SDK was released run in multiple-account mode and must be updated to support single-account mode before they can run on a shared mode device.
+**Supporting both single-account and multiple-accounts**
+
+Your app can be built to support running on both personal devices and shared devices. If your app currently supports multiple accounts and you want to support shared device mode, add support for single account mode.
+
+You may also want your app to change its behavior depending on the type of device it's running on. Use `ISingleAccountPublicClientApplication.isSharedDevice()` to determine when to run in single-account mode.
+
+There are two different interfaces that represent the type of device your application is on. When you request an application instance from MSAL's application factory, the correct application object is provided automatically.
+
+The following object model illustrates the type of object you may receive and what it means in the context of a shared device:
+
+![public client application inheritance model](media/v2-shared-device-mode/ipublic-client-app-inheritance.png)
+
+You need to do a type check and cast to the appropriate interface when you get your `PublicClientApplication` object. The following code checks for multiple account modes or single account modes, and casts the application object appropriately:
+
+```java
+private IPublicClientApplication mApplication;
+
+        // Running in personal-device mode?
+        if (mApplication instanceOf IMultipleAccountPublicClientApplication) {
+          IMultipleAccountPublicClientApplication multipleAccountApplication = (IMultipleAccountPublicClientApplication) mApplication;
+          ...
+        // Running in shared-device mode?
+        } else if (mApplication instanceOf ISingleAccountPublicClientApplication) {
+           ISingleAccountPublicClientApplication singleAccountApplication = (ISingleAccountPublicClientApplication) mApplication;
+            ...
+        }
+```
+
+The following differences apply depending on whether your app is running on a shared or personal device:
+
+|                             | Shared mode device | Personal device                                                                                     |
+| --------------------------- | ------------------ | --------------------------------------------------------------------------------------------------- |
+| **Accounts**                | Single account     | Multiple accounts                                                                                   |
+| **Sign-in**                 | Global             | Global                                                                                              |
+| **Sign-out**                | Global             | Each application can control if the sign-out is local to the app. |
+| **Supported account types** | Work accounts only | Personal and work accounts supported                                                                |
+
 ### Configure your app to use shared-device mode
 
 Refer to the [configuration documentation](./msal-configuration.md) for more information on setting up your config file.
