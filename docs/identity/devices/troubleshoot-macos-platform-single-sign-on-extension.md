@@ -126,7 +126,7 @@ If you're experiencing issues with PSSO, you can report them on Company Portal.
 You can check the current PSSO state on your machine at any time by opening the **Terminal** app. Run the following command.
 
     ```console
-    sudo log config --mode "level:debug,persist:debug" --subsystem com.apple.AppSSO"
+    app-sso platform -s
     ```
 
 ### Contact us
