@@ -3213,6 +3213,8 @@
         href: zengine-tutorial.md  
       - name: ZenQMS
         href: zenqms-tutorial.md
+      - name: Zenvoices IMAP (OIDC)
+        href: zenvoices-imap-tutorial.md
       - name: Zenya
         href: zenya-tutorial.md
       - name: ZephyrSSO
