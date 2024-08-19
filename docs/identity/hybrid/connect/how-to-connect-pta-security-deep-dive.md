@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 08/15/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -33,9 +33,9 @@ Pass-through authentication has these key security capabilities:
 - On-premises passwords are never stored in the cloud in any form.
 - On-premises authentication agents that listen for and respond to password validation requests make only outbound connections from within your network. There's no requirement to install these authentication agents in a perimeter network (also known as *DMZ*, *demilitarized zone*, and *screened subnet*). As a best practice, treat all servers that are running authentication agents as Tier 0 systems (see [reference](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)).
 - Only standard ports (port 80 and port 443) are used for outbound communication from the authentication agents to Microsoft Entra ID. You don't need to open inbound ports on your firewall.
-  - Port 443 is used for all authenticated outbound communication.
-  - Port 80 is used only for downloading certificate revocation lists (CRLs) to ensure that none of the certificates this feature uses have been revoked.
-  - For the complete list of the network requirements, see the [Microsoft Entra pass-through authentication quickstart](how-to-connect-pta-quick-start.md#step-1-check-the-prerequisites).
+ - Port 443 is used for all authenticated outbound communication.
+ - Port 80 is used only for downloading certificate revocation lists (CRLs) to ensure that none of the certificates this feature uses have been revoked.
+ - For the complete list of the network requirements, see the [Microsoft Entra pass-through authentication quickstart](how-to-connect-pta-quick-start.md#step-1-check-the-prerequisites).
 - Passwords that users provide during sign-in are encrypted in the cloud before the on-premises authentication agents accept them for validation against Windows Server Active Directory (Windows Server AD).
 - The HTTPS channel between Microsoft Entra ID and the on-premises authentication agent is secured by using mutual authentication.
 - Pass-through authentication protects your user accounts by working seamlessly with [Microsoft Entra Conditional Access policies](~/identity/conditional-access/overview.md), including multifactor authentication (MFA), [blocking legacy authentication](~/identity/conditional-access/concept-conditional-access-conditions.md), and by [filtering out brute force password attacks](~/identity/authentication/howto-password-smart-lockout.md).
@@ -87,25 +87,29 @@ The authentication agents use the following steps to register themselves with Mi
 
 :::image type="content" source="media/how-to-connect-pta-security-deep-dive/pta1.png" border="false" alt-text="Diagram that depicts authentication agent registration with Azure AD.":::
 
-1. Microsoft Entra first requests that a Hybrid Identity Administrator sign in to Microsoft Entra ID with their credentials. During sign-in, the authentication agent acquires an access token that it can use on behalf of the user.
-1. The authentication agent then generates a key pair: a public key and a private key.
-    - The key pair is generated through standard RSA 2,048-bit encryption.
-    - The private key stays on the on-premises server where the authentication agent resides.
-1. The authentication agent makes a registration request to Microsoft Entra ID over HTTPS, with the following components included in the request:
-    - The access token that the agent acquired.
-    - The public key that was generated.
-    - A Certificate Signing Request (*CSR* or *Certificate Request*). This request applies for a digital identity certificate, with Microsoft Entra ID as its certificate authority (CA).
-1. Microsoft Entra ID validates the access token in the registration request and verifies that the request came from a Hybrid Identity Administrator.
-1. Microsoft Entra ID then signs a digital identity certificate and sends it back to the authentication agent.
-    - The root CA in Microsoft Entra ID is used to sign the certificate.
+ 1. Microsoft Entra first requests that a Hybrid Identity Administrator sign in to Microsoft Entra ID with their credentials. During sign-in, the authentication agent acquires an access token that it can use on behalf of the user.
+ 
+ 2. The authentication agent then generates a key pair: a public key and a private key.
+     - The key pair is generated through standard RSA 2,048-bit encryption.
+     - The private key stays on the on-premises server where the authentication agent resides.
+ 
+ 3. The authentication agent makes a registration request to Microsoft Entra ID over HTTPS, with the following components included in the request:
+     - The access token that the agent acquired.
+     - The public key that was generated.
+     - A Certificate Signing Request (*CSR* or *Certificate Request*). This request applies for a digital identity certificate, with Microsoft Entra ID as its certificate authority (CA).
+ 
+ 4. Microsoft Entra ID validates the access token in the registration request and verifies that the request came from a Hybrid Identity Administrator.
+ 5. Microsoft Entra ID then signs a digital identity certificate and sends it back to the authentication agent.
+     - The root CA in Microsoft Entra ID is used to sign the certificate.
 
-      > [!NOTE]
-      > This CA is *not* in the Windows Trusted Root Certificate Authorities store.
-    - The CA is used only by the pass-through authentication feature. The CA is used only to sign CSRs during the authentication agent registration.
-    - No other Microsoft Entra service uses this CA.
-    - The certificate’s subject (also called *Distinguished Name* or *DN*) is set to your tenant ID. This DN is a GUID that uniquely identifies your tenant. This DN scopes the certificate for use only with your tenant.
-1. Microsoft Entra ID stores the public key of the authentication agent in a database in Azure SQL Database. Only Microsoft Entra ID can access the database.
-1. The certificate that's issued is stored on the on-premises server in the Windows certificate store (specifically, in [CERT_SYSTEM_STORE_LOCAL_MACHINE](/windows/win32/seccrypto/system-store-locations#CERT_SYSTEM_STORE_LOCAL_MACHINE)). The certificate is used by both the authentication agent and the Updater application.
+     > [!NOTE]
+     > This CA is *not* in the Windows Trusted Root Certificate Authorities store.
+  
+     - The CA is used only by the pass-through authentication feature. The CA is used only to sign CSRs during the authentication agent registration.
+     - No other Microsoft Entra service uses this CA.
+     - The certificate’s subject (also called *Distinguished Name* or *DN*) is set to your tenant ID. This DN is a GUID that uniquely identifies your tenant. This DN scopes the certificate for use only with your tenant.
+ 6. Microsoft Entra ID stores the public key of the authentication agent in a database in Azure SQL Database. Only Microsoft Entra ID can access the database.
+ 7. The certificate that's issued is stored on the on-premises server in the Windows certificate store (specifically, in [CERT_SYSTEM_STORE_LOCAL_MACHINE](/windows/win32/seccrypto/system-store-locations#CERT_SYSTEM_STORE_LOCAL_MACHINE)). The certificate is used by both the authentication agent and the Updater application.
 
 ### Authentication agent initialization
 
@@ -115,11 +119,10 @@ When the authentication agent starts, either for the first time after registrati
 
 Here's how authentication agents are initialized:
 
-1. The authentication agent makes an outbound bootstrap request to Microsoft Entra ID.
-
-    This request is made over port 443 and is over a mutually authenticated HTTPS channel. The request uses the same certificate that was issued during authentication agent registration.
-1. Microsoft Entra ID responds to the request by providing an access key to a Service Bus queue that's unique to your tenant, and which is identified by your tenant ID.
-1. The authentication agent makes a persistent outbound HTTPS connection (over port 443) to the queue.
+ 1. The authentication agent makes an outbound bootstrap request to Microsoft Entra ID.
+   This request is made over port 443 and is over a mutually authenticated HTTPS channel. The request uses the same certificate that was issued during authentication agent registration.
+ 2. Microsoft Entra ID responds to the request by providing an access key to a Service Bus queue that's unique to your tenant, and which is identified by your tenant ID.
+ 3. The authentication agent makes a persistent outbound HTTPS connection (over port 443) to the queue.
 
 The authentication agent is now ready to retrieve and handle password validation requests.
 
@@ -133,29 +136,26 @@ The following diagram shows how pass-through authentication processes user sign-
 
 How pass-through authentication handles a user sign-in request:
 
-1. A user tries to access an application, for example, [Outlook Web App](https://outlook.office365.com/owa).
-1. If the user isn't already signed in, the application redirects the browser to the Microsoft Entra sign-in page.
-1. The Microsoft Entra STS service responds back with the **User sign-in** page.
-1. The user enters their username in the **User sign-in** page, and then selects the **Next** button.
-1. The user enters their password in the **User sign-in** page, and then selects the **Sign-in** button.
-1. The username and password are submitted to Microsoft Entra STS in an HTTPS POST request.
-1. Microsoft Entra STS retrieves public keys for all the authentication agents that are registered on your tenant from Azure SQL Database and encrypts the password by using the keys.
-
-   It produces one encrypted password value for each authentication agent registered on your tenant.
-1. Microsoft Entra STS places the password validation request, which consists of the username and the encrypted password values, in the Service Bus queue that's specific to your tenant.
-1. Because the initialized authentication agents are persistently connected to the Service Bus queue, one of the available authentication agents retrieves the password validation request.
-1. The authentication agent uses an identifier to locate the encrypted password value that's specific to its public key. It decrypts the public key by using its private key.
-1. The authentication agent attempts to validate the username and the password against Windows Server AD by using the [Win32 LogonUser API](/windows/win32/api/winbase/nf-winbase-logonusera) with the `dwLogonType` parameter set to `LOGON32_LOGON_NETWORK`.
-    - This API is the same API that's used by Active Directory Federation Services (AD FS) to sign in users in a federated sign-in scenario.
-    - This API relies on the standard resolution process in Windows Server to locate the domain controller.
-1. The authentication agent receives the result from Windows Server AD, such as success, username or password is incorrect, or password is expired.
-
+ 1. A user tries to access an application, for example, [Outlook Web App](https://outlook.office365.com/owa).
+ 2. If the user isn't already signed in, the application redirects the browser to the Microsoft Entra sign-in page.
+ 3. The Microsoft Entra STS service responds back with the **User sign-in** page.
+ 4. The user enters their username in the **User sign-in** page, and then selects the **Next** button.
+ 5. The user enters their password in the **User sign-in** page, and then selects the **Sign-in** button.
+ 6. The username and password are submitted to Microsoft Entra STS in an HTTPS POST request.
+ 7. Microsoft Entra STS retrieves public keys for all the authentication agents that are registered on your tenant from Azure SQL Database and encrypts the password by using the keys. It produces one encrypted password value for each authentication agent registered on your tenant.
+ 8. Microsoft Entra STS places the password validation request, which consists of the username and the encrypted password values, in the Service Bus queue that's specific to your tenant.
+ 9. Because the initialized authentication agents are persistently connected to the Service Bus queue, one of the available authentication agents retrieves the password validation request.
+ 10. The authentication agent uses an identifier to locate the encrypted password value that's specific to its public key. It decrypts the public key by using its private key.
+ 11. The authentication agent attempts to validate the username and the password against Windows Server AD by using the [Win32 LogonUser API](/windows/win32/api/winbase/nf-winbase-logonusera) with the `dwLogonType` parameter set to `LOGON32_LOGON_NETWORK`.
+     - This API is the same API that's used by Active Directory Federation Services (AD FS) to sign in users in a federated sign-in scenario.
+     - This API relies on the standard resolution process in Windows Server to locate the domain controller.
+ 12. The authentication agent receives the result from Windows Server AD, such as success, username or password is incorrect, or password is expired.
    > [!NOTE]
    > If the authentication agent fails during the sign-in process, the entire sign-in request is dropped. Sign-in requests aren't handed off from one on-premises authentication agent to another on-premises authentication agent. These agents communicate only with the cloud, and not with each other.
 
-1. The authentication agent forwards the result back to Microsoft Entra STS over an outbound mutually authenticated HTTPS channel over port 443. Mutual authentication uses the certificate that was issued to the authentication agent during registration.
-1. Microsoft Entra STS verifies that this result correlates with the specific sign-in request on your tenant.
-1. Microsoft Entra STS continues with the sign-in procedure as configured. For example, if the password validation was successful, the user might be challenged for MFA or be redirected back to the application.
+ 13. The authentication agent forwards the result back to Microsoft Entra STS over an outbound mutually authenticated HTTPS channel over port 443. Mutual authentication uses the certificate that was issued to the authentication agent during registration.
+ 14. Microsoft Entra STS verifies that this result correlates with the specific sign-in request on your tenant.
+ 15. Microsoft Entra STS continues with the sign-in procedure as configured. For example, if the password validation was successful, the user might be challenged for MFA or be redirected back to the application.
 
 <a name="operational-security-of-the-authentication-agents"></a>
 
@@ -167,29 +167,27 @@ To ensure that pass-through authentication remains operationally secure, Microso
 
 To renew an authentication agent's trust with Microsoft Entra ID:
 
-1. The authentication agent pings Microsoft Entra every few hours to check if it's time to renew its certificate. The certificate is renewed 30 days before it expires.
+ 1. The authentication agent pings Microsoft Entra every few hours to check if it's time to renew its certificate. The certificate is renewed 30 days before it expires. This check is done over a mutually authenticated HTTPS channel and uses the same certificate that was issued during registration.
+ 2. If the service indicates that it's time to renew, the authentication agent generates a new key pair: a public key and a private key.
+     - These keys are generated through standard RSA 2,048-bit encryption.
+     - The private key never leaves the on-premises server.
+ 3. The authentication agent then makes a certificate renewal request to Microsoft Entra ID over HTTPS. The following components are included in the request:
+     - The existing certificate that's retrieved from the CERT_SYSTEM_STORE_LOCAL_MACHINE location in the Windows certificate store. No Global Administrator is involved in this procedure, so no access token is required for a Global Administrator.
+     - The public key generated in step 2.
+     - A CSR. This request applies for a new digital identity certificate, with Microsoft Entra ID as its CA.
+ 4. Microsoft Entra ID validates the existing certificate in the certificate renewal request. Then it verifies that the request came from an authentication agent that's registered on your tenant. 
+ 5. If the existing certificate is still valid, Microsoft Entra ID signs a new digital identity certificate and issues the new certificate back to the authentication agent.
+ 6. If the existing certificate has expired, Microsoft Entra ID deletes the authentication agent from your tenant’s list of registered authentication agents. Then a Hybrid Identity Administrator must manually install and register a new authentication agent.
+     - Use the Microsoft Entra ID root CA to sign the certificate.
+     - Set the certificate’s DN to your tenant ID, a GUID that uniquely identifies your tenant. The DN scopes the certificate to your tenant only.
+ 7. Microsoft Entra ID stores the new public key of the authentication agent in a database in Azure SQL Database that only it has access to. It also invalidates the old public key associated with the authentication agent.
+ 8. The new certificate (issued in step 5) is then stored on the server in the Windows certificate store (specifically, in the [CERT_SYSTEM_STORE_CURRENT_USER](/windows/win32/seccrypto/system-store-locations#CERT_SYSTEM_STORE_CURRENT_USER) location).
 
-   This check is done over a mutually authenticated HTTPS channel and uses the same certificate that was issued during registration.
-1. If the service indicates that it's time to renew, the authentication agent generates a new key pair: a public key and a private key.
-    - These keys are generated through standard RSA 2,048-bit encryption.
-    - The private key never leaves the on-premises server.
-1. The authentication agent then makes a certificate renewal request to Microsoft Entra ID over HTTPS. The following components are included in the request:
-    - The existing certificate that's retrieved from the CERT_SYSTEM_STORE_LOCAL_MACHINE location in the Windows certificate store. No Global Administrator is involved in this procedure, so no access token is required for a Global Administrator.
-    - The public key generated in step 2.
-    - A CSR. This request applies for a new digital identity certificate, with Microsoft Entra ID as its CA.
-1. Microsoft Entra ID validates the existing certificate in the certificate renewal request. Then it verifies that the request came from an authentication agent that's registered on your tenant.
-1. If the existing certificate is still valid, Microsoft Entra ID signs a new digital identity certificate and issues the new certificate back to the authentication agent.
-1. If the existing certificate has expired, Microsoft Entra ID deletes the authentication agent from your tenant’s list of registered authentication agents. Then a Global Administrator or a Hybrid Identity Administrator must manually install and register a new authentication agent.
-    - Use the Microsoft Entra ID root CA to sign the certificate.
-    - Set the certificate’s DN to your tenant ID, a GUID that uniquely identifies your tenant. The DN scopes the certificate to your tenant only.
-1. Microsoft Entra ID stores the new public key of the authentication agent in a database in Azure SQL Database that only it has access to. It also invalidates the old public key associated with the authentication agent.
-1. The new certificate (issued in step 5) is then stored on the server in the Windows certificate store (specifically, in the [CERT_SYSTEM_STORE_CURRENT_USER](/windows/win32/seccrypto/system-store-locations#CERT_SYSTEM_STORE_CURRENT_USER) location).
+  Because the trust renewal procedure happens non-interactively (without the presence of the Hybrid Identity Administrator), the authentication agent no longer has access to update the existing certificate in the CERT_SYSTEM_STORE_LOCAL_MACHINE location.
 
-   Because the trust renewal procedure happens non-interactively (without the presence of the Global Administrator or Hybrid Identity Administrator), the authentication agent no longer has access to update the existing certificate in the CERT_SYSTEM_STORE_LOCAL_MACHINE location.
-
-   > [!NOTE]
-   > This procedure does not remove the certificate itself from the CERT_SYSTEM_STORE_LOCAL_MACHINE location.
-1. From this point, the new certificate is used for authentication. Every subsequent renewal of the certificate replaces the certificate in the CERT_SYSTEM_STORE_LOCAL_MACHINE location.
+  > [!NOTE]
+  > This procedure does not remove the certificate itself from the CERT_SYSTEM_STORE_LOCAL_MACHINE location.
+ 9. From this point, the new certificate is used for authentication. Every subsequent renewal of the certificate replaces the certificate in the CERT_SYSTEM_STORE_LOCAL_MACHINE location.
 
 ## Authentication agent auto update
 
@@ -201,22 +199,18 @@ Microsoft Entra ID hosts the new version of the software as a signed Windows Ins
 
 To auto update an authentication agent:
 
-1. The Updater application pings Microsoft Entra every hour to check if a new version of the authentication agent is available.
-
-   This check is done over a mutually authenticated HTTPS channel by using the same certificate that was issued during registration. The authentication agent and the Updater share the certificate that is stored on the server.
-1. If a new version is available, Microsoft Entra ID returns the signed MSI back to the Updater.
-1. The Updater verifies that the MSI is signed by Microsoft.
-1. The Updater runs the MSI. In this process, the Updater application:
-
+ 1. The Updater application pings Microsoft Entra every hour to check if a new version of the authentication agent is available. This check is done over a mutually authenticated HTTPS channel by using the same certificate that was issued during registration. The authentication agent and the Updater share the certificate that is stored on the server.
+ 2. If a new version is available, Microsoft Entra ID returns the signed MSI back to the Updater.
+ 3. The Updater verifies that the MSI is signed by Microsoft.
+ 4. The Updater runs the MSI. In this process, the Updater application:
    > [!NOTE]
    > The Updater runs with [Local System](/windows/win32/services/localsystem-account) privileges.
-
-   1. Stops the authentication agent service.
-   1. Installs the new version of the authentication agent on the server.
-   1. Restarts the authentication agent service.
-
-> [!NOTE]
-> If you have multiple authentication agents registered on your tenant, Microsoft Entra ID doesn't renew their certificates or update them at the same time. Instead, Microsoft Entra ID renews the certificates one at a time to ensure high availability for sign-in requests.
+ 
+ 5. Stops the authentication agent service.
+ 6. Installs the new version of the authentication agent on the server.
+ 7. Restarts the authentication agent service.
+   > [!NOTE]
+   > If you have multiple authentication agents registered on your tenant, Microsoft Entra ID doesn't renew their certificates or update them at the same time. Instead, Microsoft Entra ID renews the certificates one at a time to ensure high availability for sign-in requests.
 
 ## Next steps
 
