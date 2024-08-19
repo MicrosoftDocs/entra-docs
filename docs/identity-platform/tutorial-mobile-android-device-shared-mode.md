@@ -110,4 +110,4 @@ The following the third-party Mobile Device Management (MDM) tools support Micro
 ## Related content
 
 - [Shared device mode for Android devices reference](./msal-android-handling-exceptions.md)
-- [Set up iOS/iPadOS device enrollment with Apple Configurator](/mem/intune/enrollment/apple-configurator-enroll-ios
+- [Set up iOS/iPadOS device enrollment with Apple Configurator](/mem/intune/enrollment/apple-configurator-enroll-ios)
