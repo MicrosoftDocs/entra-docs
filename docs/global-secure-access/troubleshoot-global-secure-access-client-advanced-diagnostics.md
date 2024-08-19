@@ -10,6 +10,7 @@ manager: amycolannino
 ms.reviewer: lirazbarak
 
 
+
 # Customer intent: I want to troubleshoot the Global Secure Access client using the Advanced diagnostics utility.
 ---
 # Troubleshoot the Global Secure Access client: Advanced diagnostics
