@@ -292,7 +292,7 @@ You also add the material modules. Replace the entire contents of the file with 
 
 ## Sign in using redirects
 
-1. Update *src/app/app.module.ts* to bootstrap the `MsalRedirectComponent`. This is a dedicated redirect component, which handles redirects. Change the `MsalModule` import and `AppComponent` bootstrap to resemble the following:
+1. Update *src/app/app.module.ts* to bootstrap the `MsalRedirectComponent`. This is a dedicated redirect component, which handles redirects. Change the `MsalModule` import and `AppComponent` bootstrap to resemble the following snippet:
 
    ```javascript
    ...
@@ -353,7 +353,7 @@ You also add the material modules. Replace the entire contents of the file with 
    }
    ```
 
-4. Navigate to *src/app/home/home.component.ts* and replace the entire contents of the file with the following snippet to subscribe to the `LOGIN_SUCCESS` event:
+4. Open *src/app/home/home.component.ts* and replace the entire contents of the file with the following snippet to subscribe to the `LOGIN_SUCCESS` event:
 
    ```javascript
    import { Component, OnInit } from '@angular/core';
@@ -383,7 +383,7 @@ You also add the material modules. Replace the entire contents of the file with 
 
 ## Conditional rendering
 
-In order to render certain User Interface (UI) only for authenticated users, components have to subscribe to the `MsalBroadcastService` to see if users have been signed in, and interaction has completed.
+To ensure that certain User Interface (UI) components are displayed only for authenticated users, components must subscribe to the MsalBroadcastService to check if users are signed in and if the interaction is complete.
 
 1. Add the `MsalBroadcastService` to *src/app/app.component.ts* and subscribe to the `inProgress$` observable to check if interaction is complete and an account is signed in before rendering UI. Your code should now look like this:
 
