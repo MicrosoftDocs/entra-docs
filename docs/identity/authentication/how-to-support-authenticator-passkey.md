@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 ---
 # Support passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant
 
-This topic covers some support issues that administrators see after they enable users to sign in with passkeys in Aithenticator.
+This topic covers some support issues that administrators might see after they enable users to sign in with passkeys in Aithenticator.
 
 ## Authentication strength policy
 
@@ -32,7 +32,7 @@ The policy creates a loop for the user because the authentication strength requi
 
 There are a couple different workarounds:
 
-- You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications) and transition the policy target from **All cloud apps** to specific applications. Start with a review of applications that are used in their tenant and use filters to tag Microsoft Authenticator and other applications.
+- You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All cloud apps** to specific applications. Start with a review of applications that are used in their tenant and use filters to tag Microsoft Authenticator and other applications.
 
 
 - To further reduce support costs, you can run an internal campaign to help users adopt passkeys. When you're ready to enforce passkey usage, create two Conditional Access policies that each require different authentication strengths for mobile and desktop operating systems. This workaround requires the tenant to allow use of a Temporary Access Pass (TAP) or other authentication methods. 
@@ -75,3 +75,4 @@ Some organizations restrict Bluetooth usage, which includes the use of passkeys.
 ## Next steps 
 
 For more information about passkeys in Authenticator, see [Microsoft Authenticator authentication method](concept-authentication-authenticator-app.md).
+To enable passkeys in Authenticator as a way for users to sign in, see []

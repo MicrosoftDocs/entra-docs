@@ -1,11 +1,11 @@
 ---
-title: How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID (preview)
+title: How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID
 description: Learn about how to enable passkeys in Microsoft Authenticator for Microsoft Entra ID.
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/29/2024
+ms.date: 08/19/2024
 
 ms.author: justinha
 author: justinha
@@ -14,7 +14,7 @@ ms.reviewer: mjsantani
 
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys in Authenticator sign in for end users.
 ---
-# Enable passkeys in Microsoft Authenticator (preview)
+# Enable passkeys in Microsoft Authenticator
 
 This article lists steps to enable and enforce use of passkeys in Authenticator for Microsoft Entra ID. First, you update the Authentication methods policy to allow end users to register and sign in with passkeys in Authenticator. Then you can use Conditional Access authentication strengths policies to enforce passkey sign-in when users access a sensitive resource.
 
@@ -23,7 +23,7 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Android 14 and later or iOS 17 and later
 - An active internet connection on any device that is part of the passkey registration/authentication process
-- For cross-device registration/authentication, both devices must have Bluetooth enabled
+- For cross-device registration and authentication, both devices must have Bluetooth enabled. For more information about how to allow Bluetooth usage only for passkey in Microsoft Authenticator, see [Restrict Bluetooth usage to passkeys in Authenticator](how-to-support-authenticator-passkey.md#restrict-bluetooth-usage-to-passkeys-in-authenticator).
 
 > [!NOTE]
 > Users need to install the latest version of Authenticator for Android or iOS to use a passkey. 

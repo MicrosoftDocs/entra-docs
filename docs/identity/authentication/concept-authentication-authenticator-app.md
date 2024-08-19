@@ -21,9 +21,6 @@ The Microsoft Authenticator app provides another level of security to your Micro
 
 You can now apply passkeys for user authentication. Users can then receive a notification through their mobile app for approving or denying the Authenticator app to generate an OATH verification code. This code can then be entered in a sign-in interface. If you enable both a notification and verification code, users who register the Authenticator app can use either method to verify their identity using passkeys.
 
-> [!NOTE]
-> In preparation of passkey support in Microsoft Authenticator, users may see Authenticator as a passkey provider on iOS and Android devices. For more information, see [Passkey sign-in (preview)](#passkey-sign-in-preview).
-
 To use the Authenticator app at a sign-in prompt rather than a username and password combination, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
 > [!NOTE]
