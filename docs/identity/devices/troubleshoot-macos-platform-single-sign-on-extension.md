@@ -125,9 +125,9 @@ If you're experiencing issues with PSSO, you can report them on Company Portal.
 
 You can check the current PSSO state on your machine at any time by opening the **Terminal** app. Run the following command.
 
-    ```console
-    app-sso platform -s
-    ```
+```console
+app-sso platform -s
+```
 
 ### Contact us
 
