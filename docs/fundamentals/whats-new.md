@@ -61,7 +61,7 @@ We understand that some customers might need additional time to prepare for this
 **Service category:** Provisioning   
 **Product capability:** Entra Connect    
 
-As part of ongoing security hardening, we have removed unused permissions from the privileged "*Directory Synchronization Accounts*" role. This role is exclusively used by Microsoft Entra Connect Sync, and Microsoft Entra Cloud Sync, to synchronize Active Directory objects with Microsoft Entra ID. There's no action required by customers to benefit from this hardening, and the revised role permissions are documented here: [Directory Synchronization Accounts](../identity/role-based-access-control/permissions-reference.md#directory-synchronization-accounts).
+As part of ongoing security hardening, we've removed unused permissions from the privileged "*Directory Synchronization Accounts*" role. This role is exclusively used by Microsoft Entra Connect Sync, and Microsoft Entra Cloud Sync, to synchronize Active Directory objects with Microsoft Entra ID. There's no action required by customers to benefit from this hardening, and the revised role permissions are documented here: [Directory Synchronization Accounts](../identity/role-based-access-control/permissions-reference.md#directory-synchronization-accounts).
 
 ---
 
@@ -74,6 +74,58 @@ As part of ongoing security hardening, we have removed unused permissions from t
 Starting late August 2024, the "*add sign-in method*" dialog on the My Security-Info page will be updated with improved sign-in method descriptions, and a modern look and feel. With this change when users select "*add sign-in method*", they'll initially be recommended to register the strongest method available to them which is allowed by organizational authentication method policy. Users have the ability to select "*show more options*", and choose from all available sign-in methods allowed by their policy. 
 
 This change occurs automatically, and admins won't need to take any action.
+
+---
+
+### Public Preview - Provisioning UX Updates
+
+**Type:** Plan for change    
+**Service category:** Provisioning    
+**Product capability:** Outbound to SaaS Applications    
+
+We'll start releasing user experience updates for application provisioning, HR provisioning, and cross-tenant synchronization next month. This includes a new overview page, user experience to configure connectivity to your application, and new create provisioning experience. The new experiences include all functionality available to customers today. 
+
+---
+
+### Public Preview - Passkey authentication in brokered Microsoft apps on Android
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Microsoft Entra ID users can now use a passkey to sign into Microsoft apps on Android devices where an authentication broker like Microsoft Authenticator or Microsoft Intune Company Portal is installed. For more information, see: [Support for FIDO2 authentication with Microsoft Entra ID](../identity/authentication/concept-fido2-compatibility.md).
+
+---
+
+### Public Preview - Improved user experience when adding account to a Windows device
+
+**Type:** Changed feature    
+**Service category:** Device Registration and Management    
+**Product capability:** User Authentication    
+
+This feature change helps users better understand the choices they can make during the consent experience for adding an account to a Windows device. We want customers to be aware of all the implications of adding their account to a Windows device.
+
+---
+
+### Change announcement - Upcoming license enforcement for Microsoft Entra Internet Access and Microsoft Entra Private Access
+
+**Type:** Changed feature
+**Service category:** Internet Access
+**Product capability:** Network Access
+
+Starting early October 2024, license enforcement begins in the Microsoft Entra admin center, for [Microsoft Entra Internet Access](https://www.microsoft.com/security/business/identity-access/microsoft-entra-internet-access) and [Microsoft Entra Private Access](https://www.microsoft.com/security/business/identity-access/microsoft-entra-private-access). This is following a 90-day notification period, starting with the General Availability of Internet Access and Private Access, which began in June 2024. Lean more [here](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview).
+
+30-day trials are available for both licenses. [Learn more on pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing#xadbf722cc18146868c4f76c16a1b3c42).
+
+---
+
+### General Availability - New SAML applications can't receive tokens through OAuth2/OIDC protocols
+
+**Type:** Plan for change    
+**Service category:** Enterprise Apps    
+**Product capability:** Developer Experience    
+
+Starting late September 2024, applications indicated as '*SAML*' applications,  the '*preferredSingleSignOnMode*' property of the service principal, can't be issued JWT tokens. This means they can't be the resource application in OIDC, OAuth2.0, or other protocols using JWTs. This change will only affect SAML applications attempting to take a new dependency on JWT-based protocols. Existing SAML applications already using these flows won't be affected. This improves the security of apps. For more information, see: [SAML authentication with Microsoft Entra ID](../architecture/auth-saml.md).
 
 ---
 
