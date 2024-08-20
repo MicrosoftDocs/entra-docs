@@ -69,7 +69,7 @@ You can add the public cert to your application configuration within the Microso
 1. On the application's page, select **Token encryption**.
 
     > [!NOTE]
-    > The **Token encryption** option is only available for SAML applications that have been set up from the **Enterprise applications** blade in the Microsoft Entra admin center, either from the application gallery or a non-gallery app. For other applications, this menu option is disabled. 
+    > The **Token encryption** option is only available for SAML applications that have been set up from the **Enterprise applications** pane in the Microsoft Entra admin center, either from the application gallery or a non-gallery app. For other applications, this option is disabled. 
 
 1. On the **Token encryption** page, select **Import Certificate** to import the .cer file that contains your public X.509 certificate.
 
@@ -83,7 +83,7 @@ You can add the public cert to your application configuration within the Microso
 
 ### To deactivate token encryption in the Microsoft Entra admin center
 
-1. In the Microsoft Entra admin center, go to **Identity** > **Applications** > **Enterprise applications** > **All applications**, and then select the application that has SAML token encryption enabled.
+1. In the Microsoft Entra admin center, browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, and then select the application that has SAML token encryption enabled.
 
 1. On the application's page, select **Token encryption**, find the certificate, and then select the **...** option to show the dropdown menu.
 
@@ -250,5 +250,5 @@ To configure token encryption for an application registration, follow these step
 
 ## Next steps
 
-* Find out [How Microsoft Entra ID uses the SAML protocol](~/identity-platform/saml-protocol-reference.md)
-* Learn the format, security characteristics, and contents of [SAML tokens in Microsoft Entra ID](~/identity-platform/reference-saml-tokens.md)
+- Find out [How Microsoft Entra ID uses the SAML protocol](~/identity-platform/saml-protocol-reference.md)
+- Learn the format, security characteristics, and contents of [SAML tokens in Microsoft Entra ID](~/identity-platform/reference-saml-tokens.md)
