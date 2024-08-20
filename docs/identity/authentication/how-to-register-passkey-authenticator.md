@@ -1,6 +1,6 @@
 ---
-title: Register passkeys in Authenticator on Android and iOS devices in MySecurityInfo (preview)
-description: Registration and management of passkey with Authenticator on iOS in MySecurityInfo (preview).
+title: Register passkeys in Authenticator on Android and iOS devices in Security info
+description: Registration and management of passkey with Authenticator on iOS in Security info.
 
 ms.service: entra-id 
 ms.subservice: authentication
@@ -16,21 +16,19 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users can register a passkey in Microsoft Authenticator 
 
 ---
-# Register passkeys in Authenticator on Android or iOS devices (preview)
+# Register passkeys in Authenticator on Android or iOS devices
 
-This article shows how to register a passkey using Microsoft Authenticator on your iOS or Android device by directly signing into the Authenticator app or by using [My Security info](https://aka.ms/mysecurityinfo). For more information on the availability of Microsoft Entra ID passkey (FIDO2) authentication across native apps, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
+This article shows how to register a passkey using Microsoft Authenticator on your iOS or Android device by directly signing into the Authenticator app or by using [Security info](https://aka.ms/mysecurityinfo). For more information on the availability of Microsoft Entra ID passkey (FIDO2) authentication across native apps, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
 
 **The *easiest and fastest way* to add a passkey is to add it directly in the Authenticator app.**
 
-Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. 
+Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. Support for earlier versions of Android is coming soon. 
 
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
 | **Same-device registration by signing into Authenticator**              | &#x2705;          | &#x2705;       |
-| **Same-device registration in a browser**            | &#x2705; | &#10060;<sup>1</sup>     |
+| **Same-device registration in a browser**            | &#x2705; | &#x2705;     |
 | **Cross-device registration**  | &#x2705;  | &#x2705;    |
-
-<sup>1</sup> Support for same-device registration in a browser on Android is coming soon.
 
 ## [**iOS**](#tab/iOS)
 

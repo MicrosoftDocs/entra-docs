@@ -118,9 +118,9 @@ Microsoft Authenticator: Passwordless phone sign-in   | <img width="43" alt="Mic
 Microsoft Authenticator: (Notification/Code) | <img width="43" alt="Microsoft Authenticator MFA Capable" src="https://user-images.githubusercontent.com/50213291/211921054-d11983ad-4e0d-4612-9a14-0fef625a9a2a.png">
 
 
-### MySecurityInfo links
+### SecurityInfo links
 
-Cloud | MySecurityInfo URL | 
+Cloud | Security info URL | 
 ------ | ------ | ------
 Azure commercial (includes GCC)   | https://aka.ms/MySecurityInfo 
 Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityInfo-us 
