@@ -60,14 +60,7 @@ With the information provided by the Risky users report, administrators can view
 - Risky sign-ins associated to a given user
 - Risk history
 
-Administrators can then choose to take action on these events and choose to:
-
-- Reset the user password, which revokes user's current sessions
-- Confirm user compromise if the user risk is a true positive. ID Protection sets the user risk to high and adds a new detection, Admin confirmed user compromised.
-- Confirm user safe if the user risk is a false positive. ID Protection moves the user risk to none.
-- Dismiss user risk for benign positive user risk.
-- Block user from signing in if attacker has access to password or ability to perform MFA
-- Investigate further using Microsoft Defender for Identity by selecting a user and clicking on the ellipsis (...) in the top right hand corner of the Risky User Details pane.
+[!INCLUDE [id-protection-admin-action-user](../includes/id-protection-admin-action-user.md)]
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png" alt-text="Screenshot showing the Risky User Details flyout and the additional actions an administrator might take." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png":::
 
@@ -88,11 +81,7 @@ With the information provided by the Risky sign-ins report, administrators can v
 - Application information
 - Location information
 
-Administrators can then choose to take action on these events and provide feedback. Administrators can choose to:
-
-- Confirm sign-in or user risk as compromised.
-- Confirm sign-in or user risk as safe.
-- Dismiss sign-in or user risk.
+[!INCLUDE [id-protection-admin-action-sign-in](../includes/id-protection-admin-action-sign-in.md)]
 
 To learn more about when to take each of these actions, see [How does Microsoft use my risk feedback](howto-identity-protection-risk-feedback.md#how-does-microsoft-use-my-risk-feedback)
 
