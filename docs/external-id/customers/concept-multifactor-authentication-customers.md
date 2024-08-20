@@ -54,7 +54,7 @@ When email one-time passcode is enabled for MFA, the user signs in with their pr
 
 ## SMS-based authentication
 
-SMS is available at additional cost for second-factor verification in external tenants. Currently, SMS is not available for first-factor authentication in external tenants.
+SMS is available at additional cost for second-factor verification in external tenants. Currently, SMS is not available for first-factor authentication or self-service password reset in external tenants.
 
 When SMS is enabled for MFA, users sign in with their primary method and are prompted to verify their identity with a code sent via text. They enter their phone number and receive an SMS with the verification code.
 
@@ -63,7 +63,7 @@ When SMS is enabled for MFA, users sign in with their primary method and are pro
 External ID mitigates fraudulent sign-ups via SMS by enforcing the following measures:
 
 - Telephony throttling limits help prevent outages and slowdowns. See [Service limits and restrictions](reference-service-limits.md).
-- CAPTCHA for SMS MFA helps prevent automated attacks by distinguishing human users from automated bots. If an attack is detected, users are blocked from signing in, and an SMS verification code is sent only after they complete a CAPTCHA.
+- CAPTCHA for SMS MFA helps prevent automated attacks by distinguishing human users from automated bots. If a risky user is detected, we block the user from signing in or ask the user to complete a CAPTCHA before sending an SMS verification code.
 
 ### SMS pricing tiers by country/region
 
