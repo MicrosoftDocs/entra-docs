@@ -63,7 +63,7 @@ There are some optional settings on the **Configure** tab to help manage how pas
 
 **Key Restriction Policy**
 
-- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their Authenticator Attestation GUID (AAGUID). You can work with your security key vendor to determine the AAGUID of the passkey. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
+- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their Authenticator Attestation GUID (AAGUID). To determine the AAGUID of the passkey, you can work with your security key vendor or see [FIDO2 security keys eligible for attestation with Microsoft Entra ID](concept-fido2-hardware-vendor.md). If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
 - When **Enforce key restrictions** is set to **Yes**, you can select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This will automatically populate the Authenticator app AAGUIDs for you in the key restriction list. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
     - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
     - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
