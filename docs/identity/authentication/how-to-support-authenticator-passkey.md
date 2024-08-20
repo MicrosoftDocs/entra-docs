@@ -18,9 +18,9 @@ ms.collection: M365-identity-device-management
 ---
 # Support passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant
 
-This topic covers some support issues that administrators might see after they enable users to sign in with passkeys in Aithenticator.
+This topic covers issues that users might see when they use passkeys in Microsoft Authenticator, and possible ways for administrators to resolve them.
 
-## Authentication strength policy
+## Workarounds for an authentication strength Conditional Access policy loop
 
 If you configure an authentication strength Conditional Access policy with the following conditions, users can get caught in a loop when they try to sign in: 
 
