@@ -1,16 +1,16 @@
 ### YamlMime:FAQ
 metadata:
-  title: Passkeys in Authenticator FAQs (preview)
+  title: Passkeys in Authenticator FAQs
   description: Frequently asked questions and answers related to passkey support in Microsoft Authenticator. 
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 04/25/2024
+  ms.date: 08/19/2024
   ms.author: justinha
   author: justinha
   manager: amycolannino
   ms.reviewer: mjsantani
-title: Frequently asked questions about passkey support in Microsoft Authenticator (preview)
+title: Frequently asked questions about passkey support in Microsoft Authenticator
 summary: |
   This article addresses frequently asked questions about passkey support in Microsoft Authenticator. 
   Keep checking back for updated content.
