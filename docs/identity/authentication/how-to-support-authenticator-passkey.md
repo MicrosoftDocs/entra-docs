@@ -47,7 +47,7 @@ There are a couple workarounds:
   | Methods           | Passkey in Microsoft Authenticator |TAP, passkey in Microsoft Authenticator, or other methods allowed for MFA |
   | Policy result     | Users who can’t sign-in with a passkey in Authenticator are directed to My Sign-ins wizard mode. After registration, they're asked to sign in to Authenticator on their mobile device. You'll need to provision a TAP as part of this process.</br>Another option is to enable other MFA methods and make them available to users.  | Users who sign in to Authenticator with a TAP or another allowed method can register a passkey directly in Authenticator. No loop occurs because the user meets the authentication requirements. |
 
-  <sup>1</sup>Make sure your grant control for the mobile policy matches your Conditional Access policy to register [Security info](https://mysignins.microsoft.com/security-info) so users can register new sign-in methods. 
+  <sup>1</sup>For users to register new sign-in methods, your grant control for the mobile policy needs to match your Conditional Access policy to register [Security info](https://mysignins.microsoft.com/security-info). 
 
 >[!NOTE]
 >With either workaround, users must also satisfy any Conditional Access policy that targets **Register security info**, or they can't sign in.  
