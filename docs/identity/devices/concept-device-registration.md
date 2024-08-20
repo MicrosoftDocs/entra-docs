@@ -26,7 +26,7 @@ The goal of Microsoft Entra registered - also known as Workplace joined - device
 | **Provisioning** | <li>Windows 10 or newer – Settings</li><li>iOS/Android – Company Portal or Microsoft Authenticator app</li><li>macOS – Company Portal</li><li>Linux - Intune Agent</li> |
 | **Device sign in options** | <li>End-user local credentials</li><li>Password</li><li>Windows Hello</li><li>PIN</li><li>Biometrics or pattern for other devices</li> |
 | **Device management** | <li>Mobile Device Management (example: Microsoft Intune)</li><li>Mobile Application Management</li> |
-| **Key capabilities** | <li>single sign-on (SSO) to cloud resources</li><li>Conditional Access when enrolled into Intune</li><li>Conditional Access via App protection policy</li><li>Enables Phone sign in with Microsoft Authenticator app</li> |
+| **Key capabilities** | <li>Single sign-on (SSO) to cloud resources</li><li>Conditional Access when enrolled into Intune</li><li>Conditional Access via App protection policy</li><li>Enables Phone sign in with Microsoft Authenticator app</li> |
 
 ![Microsoft Entra registered devices](./media/concept-device-registration/azure-ad-registered-device.png)
 
