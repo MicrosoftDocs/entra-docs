@@ -19,9 +19,7 @@ ms.custom: include file
 
 ## Test your code
 
-To run your project, in Visual Studio, select **F5**. Your application **MainWindow** is displayed, as shown here:
-
-![Test your application.](../media/guidedsetup-windesktop-test/sample-screenshot.png)
+To run your project, in Visual Studio, select **F5**. Your application **MainWindow** is displayed.
 
 The first time that you run the application and select the **Call Microsoft Graph API** button, you're prompted to sign in. Use a Microsoft Entra account (work or school account) or a Microsoft account (live.com, outlook.com) to test it.
 
