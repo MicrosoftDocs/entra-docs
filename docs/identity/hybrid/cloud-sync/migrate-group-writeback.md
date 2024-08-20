@@ -179,7 +179,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
     New-ADSyncRule  `
     -Name 'In from AAD - Group SOAinAAD coexistence with Cloud Sync' `
     -Identifier 'e4eae1c9-b9bc-4328-ade9-df871cdd3027' `
-    -Description 'https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-group-writeback' `
+    -Description 'https://learn.microsoft.com/entra/identity/hybrid/cloud-sync/migrate-group-writeback' `
     -Direction 'Inbound' `
     -Precedence $inboundSyncRulePrecedence `
     -PrecedenceAfter '00000000-0000-0000-0000-000000000000' `
@@ -276,7 +276,7 @@ You also need an outbound sync rule with a link type of JoinNoFlow and the scopi
     New-ADSyncRule  `
     -Name 'Out to AD - Group SOAinAAD coexistence with Cloud Sync' `
     -Identifier '419fda18-75bb-4e23-b947-8b06e7246551' `
-    -Description 'https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/migrate-group-writeback' `
+    -Description 'https://learn.microsoft.com/entra/identity/hybrid/cloud-sync/migrate-group-writeback' `
     -Direction 'Outbound' `
     -Precedence $outboundSyncRulePrecedence `
     -PrecedenceAfter '00000000-0000-0000-0000-000000000000' `
