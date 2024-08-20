@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 3/13/2024
+ms.date: 08/20/2024
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
@@ -28,7 +28,7 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 - [Install the Global Secure Access client](how-to-install-windows-client.md) on end user devices.
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
-- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to TCP when QUIC cannot be established. For improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
+- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to TCP when QUIC can't be established. For improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
  
 
 - Review web content filtering concepts. For more information, see [web content filtering](concept-internet-access.md).
@@ -55,6 +55,8 @@ The first step is to enable the Internet Access traffic forwarding profile. To l
 1. Enter a name, select a [web category](reference-web-content-filtering-categories.md) or a valid FQDN, and then select **Add**.
      - Valid FQDNs in this feature can also include wildcards using the asterisk symbol, *.
 1. Select **Next** to review the policy and then select **Create policy**.
+> [!IMPORTANT]
+> Changes to web content filtering can take up to one hour to deploy.
 
 ## Create a security profile
 
