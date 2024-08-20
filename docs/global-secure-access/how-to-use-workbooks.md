@@ -19,7 +19,7 @@ Workbooks combine text, log queries, metrics, and parameters into rich interacti
 ## Prerequisites
 - Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
-   - The [Security Administrator](/azure/active-directory/roles/permissions-reference##security-administrator) to create, edit, and use workbooks.
+   - The [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create, edit, and use workbooks.
 - An existing Log Analytics workspace. To learn more about Log Analytics, see [Overview of Log Analytics in Azure Monitor](/azure/azure-monitor/logs/log-analytics-overview).
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
@@ -41,7 +41,7 @@ The Global Secure Access categories are:
 
 :::image type="content" source="media/how-to-use-workbooks/add-diagnostic-setting.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the Global Secure Access logs categories selected." lightbox="media/how-to-use-workbooks/add-diagnostic-setting.png":::
 
-## Available workbooks
+## Global Secure Access workbooks
 
 In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Monitor** > **Workbooks** to view predefined workbooks. Note that you won't see the workbooks unless logging data has been captured. Also, it takes time from when you first set up logging to Log Analytics for workbooks to appear.
 
