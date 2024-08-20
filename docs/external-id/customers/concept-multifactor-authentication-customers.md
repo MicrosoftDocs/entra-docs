@@ -11,7 +11,7 @@ ms.subservice: customers
 ms.topic: concept-article
 ms.date: 08/14/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, references_regions
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about ways to secure apps in my external tenant by adding multifactor authentication and enabling SMS and email one-time passcodes.
 ---
