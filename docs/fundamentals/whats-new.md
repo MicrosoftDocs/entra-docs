@@ -83,7 +83,7 @@ This change occurs automatically, and admins won't need to take any action.
 **Service category:** Provisioning    
 **Product capability:** Outbound to SaaS Applications    
 
-We'll start releasing user experience updates for application provisioning, HR provisioning, and cross-tenant synchronization next month. This includes a new overview page, user experience to configure connectivity to your application, and new create provisioning experience. The new experiences include all functionality available to customers today. 
+We'll start releasing user experience updates for application provisioning, HR provisioning, and cross-tenant synchronization next month. This includes a new overview page, user experience to configure connectivity to your application, and new create provisioning experience. The new experiences include all functionality available to customers today, and no customer action is required.
 
 ---
 
