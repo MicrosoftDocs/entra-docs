@@ -109,9 +109,9 @@ This feature change helps users better understand the choices they can make duri
 
 ### Change announcement - Upcoming license enforcement for Microsoft Entra Internet Access and Microsoft Entra Private Access
 
-**Type:** Changed feature
-**Service category:** Internet Access
-**Product capability:** Network Access
+**Type:** Changed feature    
+**Service category:** Internet Access    
+**Product capability:** Network Access    
 
 Starting early October 2024, license enforcement begins in the Microsoft Entra admin center, for [Microsoft Entra Internet Access](https://www.microsoft.com/security/business/identity-access/microsoft-entra-internet-access) and [Microsoft Entra Private Access](https://www.microsoft.com/security/business/identity-access/microsoft-entra-private-access). This is following a 90-day notification period, starting with the General Availability of Internet Access and Private Access, which began in June 2024. Lean more [here](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview).
 
