@@ -12,7 +12,7 @@ ms.reviewer: lirazbarak
 
 # Customer intent: Windows users, I want to download and install the Global Secure Access client.
 ---
-# Global Secure Access client for Windows
+# Global Secure Access client for Microsoft Windows
 The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
 
 This article describes how to download and install the Global Secure Access client for Windows.
