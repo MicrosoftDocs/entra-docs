@@ -377,7 +377,10 @@ Open PowerShell command prompt and run the following commands:
 
 ```powershell
 Connect-MgGraph -Scopes 'Application.Read.All'
-(Get-MgServicePrincipal -Filter "appid eq '00001111-aaaa-2222-bbbb-3333cccc4444'" -Property "KeyCredentials").KeyCredentials | Format-List KeyId, DisplayName, StartDateTime, EndDateTime, @{Name = "Key"; Expression = {[System.Convert]::ToBase64String($_.Key)}}, @{Name = "Thumbprint"; Expression = {$Cert = New-object System.Security.Cryptography.X509Certificates.X509Certificate2; $Cert.Import([System.Text.Encoding]::UTF8.GetBytes([System.Convert]::ToBase64String($_.Key))); $Cert.Thumbprint}}
+(Get-MgServicePrincipal -Filter "appid eq '00001111-aaaa-2222-bbbb-3333cccc4444'" -Property "KeyCredentials").KeyCredentials | 
+Format-List KeyId, DisplayName, StartDateTime, EndDateTime, 
+@{Name = "Key"; Expression = {[System.Convert]::ToBase64String($_.Key) }}, 
+@{Name = "Thumbprint"; Expression = { [Convert]::ToBase64String($_.CustomKeyIdentifier)}}
 ```
 
 These commands print all the certificates associating your tenant with your instance of the NPS extension in your PowerShell session. Look for your certificate by exporting your client cert as a *Base-64 encoded X.509(.cer)* file without the private key, and compare it with the list from PowerShell. Compare the thumbprint of the certificate installed on the server to this one. The certificate thumbprints should match.
