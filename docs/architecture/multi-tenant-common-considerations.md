@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 07/31/2024
+ms.date: 08/20/2024
 ms.author: jricketts
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -19,7 +19,7 @@ This article is the third in a series of articles that provide guidance for conf
 - [Multitenant user management scenarios](multi-tenant-user-management-scenarios.md) describes three scenarios for which you can use multitenant user management features: end user-initiated, scripted, and automated.
 - [Common solutions for multitenant user management](multi-tenant-common-solutions.md) when single tenancy doesn't work for your scenario, this article provides guidance for these challenges:  automatic user lifecycle management and resource allocation across tenants, sharing on-premises apps across tenants.
 
-The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+The guidance helps to you achieve a consistent state of user lifecycle management. Lifecycle management includes provisioning, managing, and deprovisioning users across tenants using the available Azure tools that include [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) (B2B) and [cross-tenant synchronization](Dmulti-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 Synchronization requirements are unique to your organization's specific needs. As you design a solution to meet your organization's requirements, the following considerations in this article will help you identify your best options.
 
@@ -136,6 +136,7 @@ Additionally, while you can use the following Conditional Access conditions, be 
 Securing a multitenant environment starts by ensuring each tenant adheres to security best practices. Review the [security checklist](/azure/security/fundamentals/steps-secure-identity) and [best practices](/azure/security/fundamentals/operational-best-practices) for guidance on securing your tenant. Ensure these best practices are followed and review them with any tenants that you collaborate closely with.
 
 ### Protect admin accounts and ensure least privilege
+
 - Find and address gaps in [strong authentication coverage](~/identity/authentication/how-to-authentication-find-coverage-gaps.md) for your administrators
 - Enhance security with the principle of least privilege for both [users](~/identity/role-based-access-control/best-practices.md) and [applications](~/identity-platform/secure-least-privileged-access.md). Review the least privilege [roles](~/identity/role-based-access-control/delegate-by-task.md) by task in Microsoft Entra ID.
 - Minimize persistent administrator access by enabling [Privileged Identity Management](/azure/security/fundamentals/steps-secure-identity#implement-privilege-access-management).
@@ -175,7 +176,13 @@ AuditLogs
 - Monitor application access in your tenant using the [cross-tenant access activity](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) dashboard. This allows you to see who is accessing resources in your tenant and where those users are coming from.
 
 ### Deny by default
-- Require user assignment for applications. If an application has the **User assignment required?** property set to **No**, external users can access the application. Application admins must understand access control impacts, especially if the application contains sensitive information. [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md) explains how registered applications in a Microsoft Entra tenant are, by default, available to all users of the tenant who successfully authenticate.
+- Require user assignment for applications. If an application has the **User assignment required?** property set to **No**, external users can access the application. [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md) explains how registered applications in a Microsoft Entra tenant are, by default, available to all users of the tenant who successfully authenticate.
+- Update your external collaboration settings so that only "Member users and users assigned to specific admin roles can invite guest users including guests with member permissions." This prevents guests in your tenant from inviting other users.
+- Only enable cross-tenant synchronization or cross-tenant access policies trusting MFA with tenants that you have a high level of trust in.
+- Create a default block outbound policy and only allow users to sign in as guests to approved tenants with their corporate identity. This will ensure isolation of tenants and cross flow of information between tenants.
+- Limit external user access to a pre-defined list of tenants using [tenant restrictions](/entra/external-id/tenant-restrictions-v2).
+- Verify guest access restriction is not set to ‘Guest users have the same access as members (most inclusive).
+- Check if ‘Enable guest self-service sign up via user flows’ is disabled. Self-service sign up flow allows creation of guest identities in the tenant without initiation from internal users. 
 
 ### Defense in Depth
 
@@ -183,14 +190,20 @@ AuditLogs
 
 - Define [access control policies](~/external-id/authentication-conditional-access.md) to control access to resources.
 - Design Conditional Access policies with external users in mind.
-- Create policies specifically for external users.
 - Create dedicated Conditional Access policies for external accounts. If your organization is using the [**all users** dynamic group](~/external-id/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
+- Check if a sign in frequency CA policy is applied to all guest sign ins. The sign in frequency should be limited to a maximum of 24 hours. Tokens of guests signing in from unmanaged devices are at a higher risk of token exfiltration and token replay attacks. Limiting the token lifetime reduces the exposure from this risk. 
+
+This will ensure that even if a token is exfiltrated the threat actor has a limited window of usage. 
 
 <a name='monitoring-your-multi-tenant-environment'></a>
 
+**Govern cross-tenant access**
+
+- [Govern](~/identity/multi-tenant-organizations/cross-tenant-synchronization-governance.md) cross-tenant access using entitlement management, access reviews, and lifecycle workflows. 
+
 **Restricted Management Units**
 
-When you're using security groups to control who is in scope for cross-tenant synchronization, you will want to limit who can make changes to the security group. Minimize the number of owners of the security groups assigned to the cross-tenant synchronization job and include the groups in a [restricted management unit](~/identity/role-based-access-control/admin-units-restricted-management.md). This will limit the number of people that can add or remove group members and provision accounts across tenants.
+When using security groups to control who is in scope for cross-tenant synchronization, limit who can make changes to the security group. Minimize the number of owners of the security groups assigned to the cross-tenant synchronization job and include the groups in a [restricted management unit](~/identity/role-based-access-control/admin-units-restricted-management.md). This will limit the number of people that can add or remove group members and provision accounts across tenants.
 
 ## Other access control considerations
 
