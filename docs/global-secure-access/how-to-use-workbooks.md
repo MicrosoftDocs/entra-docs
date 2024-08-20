@@ -14,7 +14,7 @@ ms.service: global-secure-access
 
 # How to use workbooks with Global Secure Access
 
-Workbooks combine text, log queries, metrics, and parameters into rich interactive reports. Any team member who has access to the required Azure resources create and edit workbooks. To learn more about Azure Workbooks, see [Overview of Azure Workbooks](/azure/azure-monitor/visualize/workbooks-overview).
+Workbooks combine text, log queries, metrics, and parameters into rich interactive reports. Any team member with access to the required Azure resources can create and edit workbooks. To learn more about Azure Workbooks, see [Overview of Azure Workbooks](/azure/azure-monitor/visualize/workbooks-overview).
 
 ## Prerequisites
 - Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
@@ -24,26 +24,26 @@ Workbooks combine text, log queries, metrics, and parameters into rich interacti
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 
-## Exporting information to Log Analytics
+## Export Global Secure Access information to Log Analytics
 
-Global Secure Access workbooks must be integarted with with Log Analytics. This integration allows you to monitor and analyze logs effectively.
+Global Secure Access workbooks integrate with Log Analytics. This integration allows you to monitor and analyze logs effectively. To learn more about Global Secure Access log integration with Log Analytics, see [Integrate Microsoft Entra logs with Azure Monitor logs](../identity//monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
 
-Configure diagnostic settings for log export:
-1. Sign in to the Microsoft Entra admin center with a user account that has one of the required roles. 
-1. Navigate to Identity > Monitoring & Health > Diagnostic Settings. 
-1. To modify existing settings, select Edit settings. To create new settings, select Add diagnostic setting. 
-1. Choose the GSA categories and any other logs to include: 
+To learn how to send log information to Log Analytics, see [Send logs to Azure Monitor](../identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md#send-logs-to-azure-monitor).
 
-    |Log type   |Diagnostic settings category   |
-    |----------|-----------|
-    |Traffic logs     |`NetworkAccessTrafficLogs`       |
-    |Audit logs (Preview) | `AuditLogs` |
-    |Enriched Microsoft 365 logs (Preview) |`EnrichedOffice365AuditLogs`   |
-    |Remote Network Health Logs (Preview) |`RemoteNetworkHealthLogs` |
+The Global Secure Access categories are: 
 
-1. Navigate to the workbook page and view predefined workbooks.
+|Log type   |Diagnostic settings category   |
+|----------|-----------|
+|Traffic logs     |`NetworkAccessTrafficLogs`       |
+|Audit logs (Preview) | `AuditLogs` |
+|Enriched Microsoft 365 logs (Preview) |`EnrichedOffice365AuditLogs`   |
+|Remote Network Health Logs (Preview) |`RemoteNetworkHealthLogs` |
+
+:::image type="content" source="media/how-to-use-workbooks/add-diagnostic-setting.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the Global Secure Access logs categories selected." lightbox="media/how-to-use-workbooks/add-diagnostic-setting.png":::
 
 ## Available workbooks
+
+In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Monitor** > **Workbooks** to view predefined workbooks. Note that you won't see the workbooks unless logging data has been captured. Also, it takes time from when you first set up logging to Log Analytics for workbooks to appear.
 
 **Traffic Logs workbook**
 Provides an overview of all traffic logs within your network, offering insights into data transfer, anomalies, and potential threats. 
