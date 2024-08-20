@@ -34,11 +34,16 @@ There are a couple workarounds:
 
 - You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All cloud apps** to specific applications. Start with a review of applications that are used in their tenant and use filters to tag Microsoft Authenticator and other applications.
 
-- To further reduce support costs, you can run an internal campaign to help users adopt passkeys. When you're ready to enforce passkey usage, create two Conditional Access policies: one for mobile operating system (OS) versions, and another for desktop OS versions. Make each policy require a different authentication strength. This workaround requires the tenant to allow use of a Temporary Access Pass (TAP) or other authentication methods. 
+- To further reduce support costs, you can run an internal campaign to help users adopt passkeys. When you're ready to enforce passkey usage, create two Conditional Access policies: 
+
+  - A policy for mobile operating system (OS) versions
+  - A policy for desktop OS versions 
+  
+  Require a different authentication strength for each policy, and configure other policy settings listed in the following table. You'll need to [enable the use of a Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md), or enable other authentication methods. 
 
   | Conditional Access policy | Desktop OS     | Mobile OS     |
-  |-------------------|----------------|---------------|
-  | Name              | Require a passkey in Authenticator to access a desktop operating system | Require a TAP, a passkey in Microsoft Authenticator, or another specified authentication method to access a mobile operating system |
+  |---------------------------|----------------|---------------|
+  | Name              | Require a passkey in Authenticator to access a desktop OS | Require a TAP, a passkey in Microsoft Authenticator, or another specified authentication method to access a mobile OS |
   | Condition         | Specific devices (desktop operating systems) | Specific devices (mobile operating systems) |
   | Devices           | N/A                                          | Android, iOS            | 
   | Exclude devices   | Android, iOS                                 | N/A                     |
