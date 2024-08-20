@@ -26,9 +26,9 @@ Workbooks combine text, log queries, metrics, and parameters into rich interacti
 
 ## Export Global Secure Access information to Log Analytics
 
-Global Secure Access workbooks integrate with Log Analytics. This integration allows you to monitor and analyze logs effectively. To learn more about Global Secure Access log integration with Log Analytics, see [Integrate Microsoft Entra logs with Azure Monitor logs](../identity//monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+Global Secure Access workbooks integrate with Log Analytics. This integration allows you to monitor and analyze logs effectively. To learn more about Global Secure Access log integration with Log Analytics, see [Integrate Microsoft Entra logs with Azure Monitor logs](../identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
-To learn how to send log information to Log Analytics, see [Send logs to Azure Monitor](../identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md#send-logs-to-azure-monitor).
+To learn how to send log information to Log Analytics, see [Send logs to Azure Monitor](../identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml#send-logs-to-azure-monitor).
 
 The Global Secure Access categories are: 
 
