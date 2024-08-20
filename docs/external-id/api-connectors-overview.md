@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 
 # Use API connectors to customize and extend self-service sign-up 
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 ## Overview 
 As a developer or IT administrator, you can use [API connectors](self-service-sign-up-add-api-connector.md#create-an-api-connector) to integrate your [self-service sign-up user flows](self-service-sign-up-overview.md) with web APIs to customize the sign-up experience and integrate with external systems. For example, with API connectors, you can:
 

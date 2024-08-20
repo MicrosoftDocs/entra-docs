@@ -129,7 +129,7 @@ Microsoft Online Services:
 
 ### Azure resources
 
-Any Azure resources needed by trusting applications may also be deployed. For example, databases, virtual machines, containers, Azure functions, etc. For your sandbox environment, you must weigh the cost savings of using less-expensive SKUs for products and services with the less security features available.
+Any Azure resources needed by trusting applications may also be deployed. For example, databases, virtual machines, containers, Azure functions, and so on. For your sandbox environment, you must weigh the cost savings of using less-expensive SKUs for products and services with the less security features available.
 
 The RBAC model for access control should still be employed in a non-production environment in case changes are replicated to production after tests have concluded. Failure to do so allows security flaws in the non-production environment to propagate to your production tenant.  
 

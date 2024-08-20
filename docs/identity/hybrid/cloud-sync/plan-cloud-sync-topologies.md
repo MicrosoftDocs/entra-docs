@@ -37,7 +37,7 @@ The information below should be kept in mind, when selecting a solution.
 The following topologies are supported for provisioning from Active Directory to Microsoft Entra ID.
 
 ### Single forest, single Microsoft Entra tenant
-![Diagram that shows the topology for a single forest and a single tenant.](media/tutorial-single-forest/diagram-2.png)
+![Diagram that shows the topology for a single forest and a single tenant.](~/includes/governance/media/tutorial-single-forest/diagram-2.png)
 
 The simplest topology is a single on-premises forest, with one or multiple domains, and a single Microsoft Entra tenant.  For an example of this scenario see [Tutorial: A single forest with a single Microsoft Entra tenant](tutorial-single-forest.md)
 
@@ -53,19 +53,24 @@ Multiple AD forests are a common topology, with one or multiple domains, and a s
 ### Existing forest with Microsoft Entra Connect, new forest with cloud Provisioning
 ![Diagram that shows the topology for an existing forest and a new forest.](media/tutorial-existing-forest/existing-forest-new-forest-2.png)
 
-This scenario is topology is similar to the multi-forest scenario, however this one involves an existing Microsoft Entra Connect environment and then bringing on a new forest using Microsoft Entra Cloud Sync.  For an example of this scenario see [Tutorial: An existing forest with a single Microsoft Entra tenant](tutorial-existing-forest.md)
+This scenario topology is similar to the multi-forest scenario, however this one involves an existing Microsoft Entra Connect environment and then bringing on a new forest using Microsoft Entra Cloud Sync.  For an example of this scenario see [Tutorial: An existing forest with a single Microsoft Entra tenant](tutorial-existing-forest.md)
 
 
 
 ### Piloting Microsoft Entra Cloud Sync in an existing hybrid AD forest
+
 ![Topology for a single forest and a single tenant](media/tutorial-migrate-aadc-aadccp/diagram-2.png)
+
 The piloting scenario involves the existence of both Microsoft Entra Connect and Microsoft Entra Cloud Sync in the same forest and scoping the users and groups accordingly. NOTE: An object should be in scope in only one of the tools. 
 
 For an example of this scenario see [Tutorial: Pilot Microsoft Entra Cloud Sync in an existing synced AD forest](tutorial-pilot-aadc-aadccp.md)
 
 ### Merging objects from disconnected sources 
+
 #### (Public Preview)
+
 ![Diagram for merging objects from disconnected sources](media/plan-cloud-provisioning-topologies/attributes-multiple-sources.png)
+
 In this scenario, the attributes of a user are contributed to by two disconnected Active Directory forests. 
 
 An example would be:
@@ -86,6 +91,7 @@ This configuration is advanced and there are a few caveats to this topology:
  7. If you delete the object from the first forest, it will be soft deleted from Microsoft Entra ID.  The object won't be restored unless a change is made to the object in the second forest. After 30 days the object will be hard deleted from Microsoft Entra ID and if a change is made to the object in the second forest it will be created as a new object in Microsoft Entra ID. 
 
 ## Microsoft Entra ID to Active Directory supported topologies
+
 The following topologies are supported for provisioning from Microsoft Entra ID to Active Directory.
 
 ### Single forest group provisioning to Active Directory

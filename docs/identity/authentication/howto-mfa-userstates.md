@@ -6,12 +6,12 @@ description: Learn how to enable per-user Microsoft Entra multifactor authentica
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 06/19/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: michmcla
+ms.reviewer: lvandenende
 
 
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -22,7 +22,7 @@ To secure user sign-in events in Microsoft Entra ID, you can require multifactor
 
 For Microsoft Entra ID Free tenants without Conditional Access, you can [use security defaults to protect users](~/fundamentals/security-defaults.md). Users are prompted for MFA as needed, but you can't define your own rules to control the behavior.
 
-If needed, you can instead enable each account for per-user Microsoft Entra multifactor authentication. When users are enabled individually, they perform multifactor authentication each time they sign in (with some exceptions, such as when they sign in from trusted IP addresses or when the _remember MFA on trusted devices_ feature is turned on).
+If needed, you can instead enable each account for per-user Microsoft Entra multifactor authentication. When users are enabled individually, they perform multifactor authentication each time they sign in (with some exceptions, such as when they sign in from trusted IP addresses or when the *remember MFA on trusted devices* feature is turned on).
 
 Changing [user states](#azure-ad-multi-factor-authentication-user-states) isn't recommended unless your Microsoft Entra ID licenses don't include Conditional Access and you don't want to use security defaults. For more information on the different ways to enable MFA, see [Features and licenses for Microsoft Entra multifactor authentication](concept-mfa-licensing.md).
 
@@ -53,8 +53,6 @@ All users start out *Disabled*. When you enroll users in per-user Microsoft Entr
 
 ## View the status for a user
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 To view and manage user states, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
@@ -81,6 +79,60 @@ To change the per-user Microsoft Entra multifactor authentication state for a us
 1. Confirm your selection in the pop-up window that opens.
 
 After you enable users, notify them via email. Tell the users that a prompt is displayed to ask them to register the next time they sign in. Also, if your organization uses non-browser apps that don't support modern authentication, they need to create app passwords. For more information, see the [Microsoft Entra multifactor authentication end-user guide](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) to help them get started.
+
+## Use Microsoft Graph to manage per-user MFA
+
+You can manage per-user MFA settings by using the Microsoft Graph REST API Beta. You can use the [authentication resource type](/graph/api/resources/authentication?view=graph-rest-beta) to expose authentication method states for users. 
+
+To manage per-user MFA, use the perUserMfaState property within users/id/authentication/requirements. For more information, see [strongAuthenticationRequirements resource type](/graph/api/resources/strongauthenticationrequirements?view=graph-rest-beta).
+
+### View per-user MFA state 
+
+To retrieve the per-user multifactor authentication state for a user:
+
+``` http
+GET /users/{id | userPrincipalName}/authentication/requirements
+```
+
+For example:
+
+``` http
+GET https://graph.microsoft.com/beta/users/071cc716-8147-4397-a5ba-b2105951cc0b/authentication/requirements
+```
+
+If the user is enabled for per-user MFA, the response is:
+
+``` http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "perUserMfaState": "enforced"
+}
+```
+
+For more information, see [Get authentication method states](/graph/api/authentication-get?view=graph-rest-beta).
+
+### Change MFA state for a user
+
+To change multifactor authentication state for a user, use the user's strongAuthenticationRequirements. For example:
+
+``` http
+PATCH https://graph.microsoft.com/beta/users/071cc716-8147-4397-a5ba-b2105951cc0b/authentication/requirements
+Content-Type: application/json
+
+{
+  "perUserMfaState": "disabled"
+}
+```
+
+If successful, the response is:
+
+```http
+HTTP/1.1 204 No Content
+```
+
+For more information, see [Update authentication method states](/graph/api/authentication-update?view=graph-rest-beta).
 
 ## Next steps
 

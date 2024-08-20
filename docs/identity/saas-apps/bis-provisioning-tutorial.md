@@ -2,16 +2,14 @@
 title: 'Tutorial: Configure BIS for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BIS.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: d76e2482-4228-4907-8b4c-c75aa495a2ae
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/24/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BIS so that I can streamline the user management process and ensure that users have the appropriate access to BIS.
 ---
@@ -33,7 +31,7 @@ This tutorial describes the steps you need to perform in both BIS and Microsoft 
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * An administrator account with BIS.
 * Country/region should be passed as 2 or 3 letter code and not full name.
 * Make sure all existing account in BIS has data in sync with Microsoft Entra ID to avoid duplicate account creation (for example, email in Microsoft Entra ID should match with email in BIS).

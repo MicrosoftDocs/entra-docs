@@ -27,7 +27,7 @@ Before you begin, you'll need to:
 
 ## Create a new group
 
-Create a new group, named _MDM policy - West_. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.yml).
+Create a new group, named *MDM policy - West*. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.yml).
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -63,7 +63,7 @@ A user must exist before being added as a group member, so you'll need to create
 
 ## Add a group member
 
-Now that you have a group and a user, you can add _Alain Charon_ as a member to the _MDM policy - West_ group. For more information about adding group members, see the [Manage groups](how-to-manage-groups.yml) article.
+Now that you have a group and a user, you can add *Alain Charon* as a member to the *MDM policy - West* group. For more information about adding group members, see the [Manage groups](how-to-manage-groups.yml) article.
 
 1. Browse to **Identity** > **Groups** > **All groups**.
 1. Select the **MDM policy - West** group created earlier.

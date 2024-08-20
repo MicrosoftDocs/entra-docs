@@ -5,7 +5,7 @@ description: In this quickstart, you learn how to use PowerShell to send an invi
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
-ms.date: 09/29/2023
+ms.date: 08/19/2024
 ms.topic: quickstart
 ms.service: entra-external-id
 ms.custom: it-pro, mode-api, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -14,6 +14,8 @@ ms.collection: M365-identity-device-management
 ---
 
 # Quickstart: Add a guest user with PowerShell
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 There are many ways you can invite external partners to your apps and services with Microsoft Entra B2B collaboration. In the previous quickstart, you saw how to add guest users directly in the Microsoft Entra admin center. You can also use PowerShell to add guest users, either one at a time or in bulk. In this quickstart, you’ll use the New-MgInvitation command to add one guest user to your Microsoft Entra tenant.
 
@@ -45,25 +47,35 @@ When prompted, enter your credentials.
 
 ## Send an invitation
 
-1. To send an invitation to your test email account, run the following PowerShell command (replace **"John Doe"** and **john\@contoso.com** with your test email account name and email address):
+1. To send an invitation to your test email account, run the following PowerShell command (replace **"Henry Ross"** and **<henry@contoso.com>** with your test email account name and email address):
 
    ```powershell
-   New-MgInvitation -InvitedUserDisplayName "John Doe" -InvitedUserEmailAddress John@contoso.com -InviteRedirectUrl "https://myapplications.microsoft.com" -SendInvitationMessage:$true
+   New-MgInvitation -InvitedUserDisplayName "Henry Ross" -InvitedUserEmailAddress henry@contoso.com -InviteRedirectUrl "https://myapplications.microsoft.com" -SendInvitationMessage:$true
    ```
+
 1. The command sends an invitation to the email address specified. Check the output, which should look similar to the following example:
 
-   ![PowerShell output of the invitation command](media/quickstart-invite-powershell/powershell-mginvitation-result.png)
+   ```Output
+   Id                                   InviteRedeemUrl                                                                                                   
+   --                                   ---------------                                                                                                   
+   00aa00aa-bb11-cc22-dd33-44ee44ee44ee https://login.microsoftonline.com/redeem?...
+   ```
 
 ## Verify the user exists in the directory
 
-1. To verify that the invited user was added to Microsoft Entra ID, run the following command (replace **john@contoso.com** with your invited email):
- 
-   ```powershell
-   Get-MgUser -Filter "Mail eq 'John@contoso.com'"
-   ```
-1. Check the output to make sure the user you invited is listed, with a user principal name (UPN) in the format *emailaddress*#EXT#\@*domain*. For example, *john_contoso.com#EXT#\@fabrikam.onmicrosoft.com*, where fabrikam.onmicrosoft.com is the organization from which you sent the invitations.
+1. To verify that the invited user was added to Microsoft Entra ID, run the following command (replace **henry@contoso.com** with your invited email):
 
-   ![PowerShell output showing guest user added](media/quickstart-invite-powershell/powershell-mginvitation-guest-user-add.png)
+   ```powershell
+   Get-MgUser -Filter "Mail eq 'henry@contoso.com'"
+   ```
+
+1. Check the output to make sure the user you invited is listed, with a user principal name (UPN) in the format *emailaddress*#EXT#\@*domain*. For example, *henry_contoso.com#EXT#\@fabrikam.onmicrosoft.com*, where fabrikam.onmicrosoft.com is the organization from which you sent the invitations.
+
+   ```Output
+   Id                                   DisplayName              Mail                           UserPrincipalName        
+   --                                   -----------              ----                           -----------------               
+   00aa00aa-bb11-cc22-dd33-44ee44ee44ee Henry Ross               henry@contoso.com              henry@contoso.com
+   ```
 
 ## Clean up resources
 
@@ -72,15 +84,18 @@ When no longer needed, you can delete the test user account in the directory. Ru
 ```powershell
  Remove-MgUser -UserId '<String>'
 ```
-For example: 
-```powershell 
-Remove-MgUser -UserId 'john_contoso.com#EXT#@fabrikam.onmicrosoft.com'
-``` 
-or 
-```powershell 
-Remove-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
+
+For example:
+
+```powershell
+Remove-MgUser -UserId 'henry_contoso.com#EXT#@fabrikam.onmicrosoft.com'
 ```
 
+or
+
+```powershell
+Remove-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
+```
 
 ## Next steps
 In this quickstart, you invited and added a single guest user to your directory using PowerShell. You can also invite a guest user using the [Microsoft Entra admin center](b2b-quickstart-add-guest-users-portal.md). Additionally you can [invite guest users in bulk using PowerShell](tutorial-bulk-invite.md). 

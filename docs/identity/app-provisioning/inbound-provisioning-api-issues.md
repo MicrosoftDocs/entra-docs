@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 02/28/2024
+ms.date: 05/23/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -22,7 +22,7 @@ This document covers commonly encountered errors and issues with inbound provisi
 ### Invalid data format 
 
 **Issue description**
-* You're getting the error message 'Invalid Data Format" with HTTP 400 (Bad Request) response code.
+* You're getting the error message ```Invalid Data Format``` with HTTP 400 (Bad Request) response code.
 
 **Probable causes**
 1. You're sending a valid bulk request as per the provisioning [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API specs, but you have not set the HTTP Request Header 'Content-Type' to `application/scim+json`. 
@@ -49,6 +49,16 @@ This document covers commonly encountered errors and issues with inbound provisi
 1. Expect 5 to 10-minute delay between processing the request and writing to the provisioning logs. If your API client is sending data to the provisioning /bulkUpload API endpoint, then introduce a time delay between the request invocation and provisioning logs query. 
 
 ### Forbidden 403 response code 
+
+
+### Too many requests 429 response code
+
+The bulkUpload API endpoint enforces the following throttling limits and returns a 429 response code if these limits are breached. 
+
+- 40 API calls per 5 seconds – if the number of calls go beyond this limit in a 5-second range, then the client gets a 429 response. One way to avoid this is by *pacing* the request submission using delays in the client request submission logic. 
+
+- 6000 API calls over a 24-hour period – if the number of calls go beyond this limit, then the client gets a 429 response. One way to prevent this is to make sure that your SCIM bulk payload is optimized to use the max 50 records per API call. With this approach, you can send 300K records every 24 hours. 
+
 
 **Issue description**
 * You sent a request to the provisioning /bulkUpload API endpoint and you got HTTP 403 (Forbidden) response code. 

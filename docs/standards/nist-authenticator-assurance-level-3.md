@@ -30,7 +30,7 @@ Use Microsoft authentication methods to meet required NIST authenticator types.
 | Microsoft Entra authentication methods| NIST authenticator type |
 | - | -|
 | **Recommended methods**|    |
-| Hardware protected certificate (smartcard/security key/TPM) <br> FIDO 2 security key<br>Windows Hello for Business with hardware TPM| Multi-factor cryptographic hardware |
+| Hardware protected certificate (smartcard/security key/TPM) <br> FIDO 2 security key<br>Windows Hello for Business with hardware TPM <br> Platform credentials for macOS| Multi-factor cryptographic hardware |
 | **Additional methods**||
 |Password<br>**AND**<br>- Microsoft Entra joined with hardware TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with hardware TPM|Memorized secret <br>**AND**<br>Single-factor cryptographic hardware|
 |Password<br>**AND**<br>OATH hardware tokens (Preview) <br>**AND**<br>- Single-factor software certificate<br>- **OR**<br>- Microsoft Entra hybrid joined or compliant device with software TPM |Memorized secret<br>**AND**<br>Single-factor OTP hardware <br>**AND**<br>Single-factor cryptographic software|
@@ -96,6 +96,10 @@ FIPS 140 requires the cryptographic boundary, including software, firmware, and 
 * Choose a **Trusted Platform Module (TPM)** that's FIPS 140 Level 2 Overall, and FIPS 140 Level 3 Physical Security. Your organization ensures hardware TPM meets the AAL level requirements you want.
 
 To determine the TPMs that meet current standards, go to [NIST Computer Security Resource Center Cryptographic Module Validation Program](https://csrc.nist.gov/Projects/cryptographic-module-validation-program/validated-modules/Search). In the **Module Name** box, enter **Trusted Platform Module** for a list of hardware TPMs that meet standards.
+
+**MacOS Platform SSO**
+
+FIPS 140 Security Level 2 is implemented for macOS 13 at a minimum, with most new devices implementing Level 3. We recommend referring to the [Apple Platform Certifications](https://support.apple.com/guide/certifications/apc3a7433eb89/web). It is important for you to be aware the security level on your device.
 
 ## Reauthentication
 

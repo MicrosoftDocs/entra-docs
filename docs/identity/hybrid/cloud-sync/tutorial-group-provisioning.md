@@ -34,7 +34,7 @@ To begin, we create two groups in Microsoft Entra ID.  One group is Sales and th
 
 To create two groups, follow these steps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Identity** > **Groups** > **All groups**.
 3.  At the top, click **New group**.
 4.  Make sure the **Group type** is set to **security**.
@@ -45,7 +45,7 @@ To create two groups, follow these steps.
 
 
 ## Add users to the newly created groups
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Identity** > **Groups** > **All groups**.
 3. At the top, in the search box, enter **Sales**.
 4. Click on the new **Sales** group.

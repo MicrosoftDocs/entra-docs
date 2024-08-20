@@ -7,9 +7,9 @@ manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 11/21/2022
+ms.workload: identity
+ms.topic: how-to
+ms.date: 04/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - GlobalProtect so that I can control who has access to Palo Alto Networks - GlobalProtect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -25,7 +25,7 @@ In this tutorial, you'll learn how to integrate Palo Alto Networks - GlobalProte
 
 ## Prerequisites
 
-To get started, you need the following items:
+To integrate Microsoft Entra ID with Bugcrowd, you need:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Palo Alto Networks - GlobalProtect single sign-on (SSO) enabled subscription.
@@ -46,9 +46,7 @@ To configure the integration of Palo Alto Networks - GlobalProtect into Microsof
 1. In the **Add from the gallery** section, type **Palo Alto Networks - GlobalProtect** in the search box.
 1. Select **Palo Alto Networks - GlobalProtect** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
-
-<a name='configure-and-test-azure-ad-sso-for-palo-alto-networks---globalprotect'></a>
+Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 ## Configure and test Microsoft Entra SSO for Palo Alto Networks - GlobalProtect
 
@@ -56,14 +54,12 @@ Configure and test Microsoft Entra SSO with Palo Alto Networks - GlobalProtect u
 
 To configure and test Microsoft Entra SSO with Palo Alto Networks - GlobalProtect, perform the following steps:
 
-1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
+    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Palo Alto Networks - GlobalProtect SSO](#configure-palo-alto-networks---globalprotect-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Palo Alto Networks - GlobalProtect test user](#create-palo-alto-networks---globalprotect-test-user)** - to have a counterpart of B.Simon in Palo Alto Networks - GlobalProtect that is linked to the Microsoft Entra representation of user.
+    1. **[Create Palo Alto Networks - GlobalProtect test user](#create-palo-alto-networks---globalprotect-test-user)** - to have a counterpart of B.Simon in Palo Alto Networks - GlobalProtect that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
-
-<a name='configure-azure-ad-sso'></a>
 
 ## Configure Microsoft Entra SSO
 
@@ -74,32 +70,33 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, enter the values for the following fields:
+1. On the **Basic SAML Configuration** section, perform the following steps:
 
-	a. In the **Sign on URL** text box, type a URL using the following pattern:
-    `https://<Customer Firewall URL>`
-
-    b. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
+    a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
     `https://<Customer Firewall URL>/SAML20/SP`
 
+    b. In the **Reply URL (Assertion Consumer Service URL)** text box, type a URL using the following pattern:
+   `https://<Customer Firewall URL>/SAML20/SP/ACS`
+
+	c. In the **Sign on URL** text box, type a URL using the following pattern:
+    `https://<Customer Firewall URL>`
+
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Palo Alto Networks - GlobalProtect Client support team](https://support.paloaltonetworks.com/support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Palo Alto Networks - GlobalProtect Client support team](https://support.paloaltonetworks.com/support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the XML file (which also contains the SAML certificate) and save it on your computer.
 
-	![The Certificate download link](common/metadataxml.png)
+	![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
 1. On the **Set up Palo Alto Networks - GlobalProtect** section, copy the appropriate URL(s) based on your requirement.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
-
-<a name='create-an-azure-ad-test-user'></a>
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -111,11 +108,9 @@ In this section, you'll create a test user called B.Simon.
    1. Select **Review + create**.
 1. Select **Create**.
 
-<a name='assign-the-azure-ad-test-user'></a>
-
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Palo Alto Networks - GlobalProtect.
+In this section, you'll enable B.Simon to use  Microsoft Entra single sign-on by granting access to Palo Alto Networks - GlobalProtect.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Palo Alto Networks - GlobalProtect**.
@@ -141,11 +136,16 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Configure Palo Alto Single Sign-on 3](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoadmin_admin3.png)
 
-	a. In the **Profile Name** textbox, provide a name e.g Microsoft Entra GlobalProtect.
+	a. In the **Profile Name** textbox, provide a name, such as Microsoft Entra GlobalProtect.
 
-	b. In **Identity Provider Metadata**, click **Browse** and select the metadata.xml file which you have downloaded from Azure portal
+    b. In **Identity Provider Metadata**, click **Browse** and select the Federation Metadata XML file which you have downloaded from Microsoft Entra admin center.
 
-	c. Click **OK**
+	c. **Optional:** Uncheck Validate Identity Provider certificate. If checked, the Certificate from Microsoft Entra needs to be uploaded on firewall as well.
+
+	d. Click **OK**
+
+	> [!NOTE]
+	> If the upload fails with the error message `Failed to parse IDP Metadata` check that you have the required administrator privileges on the system and that the profile name doesn't exceed 31 characters.
 
 ### Create Palo Alto Networks - GlobalProtect test user
 

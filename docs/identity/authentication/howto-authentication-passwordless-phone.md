@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 10/05/2023
+ms.date: 08/13/2024
 
 
 ms.author: justinha
@@ -30,9 +30,9 @@ People who enabled phone sign-in from Microsoft Authenticator see a message that
 1. Choose **Approve**.
 1. Provide their PIN or biometric.
 
-## Multiple accounts on iOS 
+## Multiple accounts
 
-You can enable passwordless phone sign-in for multiple accounts in Microsoft Authenticator on any supported iOS device. Consultants, students, and others with multiple accounts in Microsoft Entra ID can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same iOS device. 
+You can enable passwordless phone sign-in for multiple accounts in Microsoft Authenticator on any supported Android or iOS device. Consultants, students, and others with multiple accounts in Microsoft Entra ID can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same device. 
 
 Previously, admins might not require passwordless sign-in for users with multiple accounts because it requires them to carry more devices for sign-in. By removing the limitation of one user sign-in from a device, admins can more confidently encourage users to register passwordless phone sign-in and use it as their default sign-in method.
 
@@ -44,8 +44,7 @@ To use passwordless phone sign-in with Microsoft Authenticator, the following pr
 
 - Recommended: Microsoft Entra multifactor authentication, with push notifications allowed as a verification method. Push notifications to your smartphone or tablet help the Authenticator app to prevent unauthorized access to accounts and stop fraudulent transactions. The Authenticator app automatically generates codes when set up to do push notifications. A user has a backup sign-in method even if their device doesn't have connectivity. 
 - Latest version of Microsoft Authenticator installed on devices running iOS or Android.
-- For Android, the device that runs Microsoft Authenticator must be registered to an individual user. We're actively working to enable multiple accounts on Android. 
-- For iOS, the device must be registered with each tenant where it's used to sign in. For example, the following device must be registered with Contoso and Wingtiptoys to allow all accounts to sign in:
+- The device must be registered with each tenant where it's used to sign in. For example, the following device must be registered with Contoso and Wingtiptoys to allow all accounts to sign in:
   - balas@contoso.com
   - balas@wingtiptoys.com and bsandhu@wingtiptoys
 
@@ -55,10 +54,9 @@ To use passwordless authentication in Microsoft Entra ID, first enable the combi
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Microsoft Entra ID lets you choose which authentication methods can be used during the sign-in process. Users then register for the methods they'd like to use. The **Microsoft Authenticator** authentication method policy manages both the traditional push MFA method and the passwordless authentication method. 
+Microsoft Entra ID lets [Authentication Policy Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) choose which authentication methods can be used to sign in. They can enable **Microsoft Authenticator** in the Authentication methods policy to manage both the traditional push MFA method and the passwordless authentication method. 
 
-> [!NOTE]
-> If you enabled Microsoft Authenticator passwordless sign-in using PowerShell, it was enabled for your entire directory. If you enable using this new method, it supersedes the PowerShell policy. We recommend you enable for all users in your tenant via the new **Authentication Methods** menu, otherwise users who aren't in the new policy can't sign in without a password.
+After **Microsoft Authenticator** is enabled as an authentication method, users can go to their [Security info](https://aka.ms/mysecurityinfo) to register Microsoft Authenticator as a way to sign in. They'll see Microsoft Authenticator listed as a method in the Security Info. For example, they'll see **Microsoft Authenticator-Passwordless** or **Microsoft Authenticator-MFA Push** depending on what is enabled and registered.
 
 To enable the authentication method for passwordless phone sign-in, complete the following steps:
 

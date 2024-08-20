@@ -94,18 +94,19 @@ When you target the Windows Azure Service Management API application, policy is 
 
 Because the policy is applied to the Azure management portal and API, services, or clients with an Azure API service dependency, can indirectly be impacted. For example:
 
-- Classic deployment model APIs
-- Azure PowerShell
 - Azure CLI
-- Azure DevOps
 - Azure Data Factory portal
+- Azure DevOps
 - Azure Event Hubs
+- Azure PowerShell
 - Azure Service Bus
 - Azure SQL Database
-- SQL Managed Instance
 - Azure Synapse
-- Visual Studio subscriptions administrator portal
+- Classic deployment model APIs
+- Microsoft 365 admin center
 - Microsoft IoT Central
+- SQL Managed Instance
+- Visual Studio subscriptions administrator portal
 
 > [!NOTE]
 > The Windows Azure Service Management API application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It does not apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
@@ -176,7 +177,9 @@ User actions are tasks that a user performs. Currently, Conditional Access suppo
 - **Register or join devices**: This user action enables administrators to enforce Conditional Access policy when users [register](~/identity/devices/concept-device-registration.md) or [join](~/identity/devices/concept-directory-join.md) devices to Microsoft Entra ID. It provides granularity in configuring multifactor authentication for registering or joining devices instead of a tenant-wide policy that currently exists. There are three key considerations with this user action:
    - `Require multifactor authentication` is the only access control available with this user action and all others are disabled. This restriction prevents conflicts with access controls that are either dependent on Microsoft Entra device registration or not applicable to Microsoft Entra device registration. 
    - `Client apps`, `Filters for devices`, and `Device state` conditions aren't available with this user action since they're dependent on Microsoft Entra device registration to enforce Conditional Access policies.
-   - When a Conditional Access policy is enabled with this user action, you must set **Identity** > **Devices** > **Overview** > **Device Settings** - `Devices to be Microsoft Entra joined or Microsoft Entra registered require multifactor authentication` to **No**. Otherwise, the Conditional Access policy with this user action isn't properly enforced. More information about this device setting can found in [Configure device settings](~/identity/devices/manage-device-identities.md#configure-device-settings).
+
+> [!WARNING]
+> When a Conditional Access policy is configured with the **Register or join devices** user action, you must set **Identity** > **Devices** > **Overview** > **Device Settings** - `Require Multifactor Authentication to register or join devices with Microsoft Entra` to **No**. Otherwise, Conditional Access policies with this user action aren't properly enforced. More information about this device setting can found in [Configure device settings](~/identity/devices/manage-device-identities.md#configure-device-settings).
 
 ## Traffic forwarding profiles
 

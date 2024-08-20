@@ -8,15 +8,17 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: quickstart
-ms.date: 03/26/2024
+ms.date: 08/13/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or IT admin, I want to personalize the external tenant.
 ---
-# Quickstart: Get started with our guide to run a sample app and sign in your users (preview)
+# Quickstart: Get started with our guide to run a sample app and sign in your users 
 
-In this quickstart, we'll guide you through customizing the look and feel of your apps in the external tenant, setting up a user and configuring a sample app in only a few minutes. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+In this quickstart, we'll guide you through customizing the look and feel of your apps in the external tenant. We'll also help you set up a user to test the sign-up flow and configure a sample app in just a few minutes. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
 
 ## Prerequisites
 
@@ -35,7 +37,7 @@ When you set up an external tenant free trial, the guide will start automaticall
 
 You can customize your customer's sign-in and sign-up experience in the external tenant. Follow the guide that will help you set up the tenant in three easy steps. First you must specify how would you like your customer to sign in. At this step you can choose between two options: **Email and password** or **Email and one-time passcode**. You can configure social accounts later, which would allow your customers to sign in using their [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) account. You can also [define custom attributes](how-to-define-custom-attributes.md) to collect from the user during sign-up.
 
-If you prefer, you can add your company logo, change the background color or adjust the sign-in layout. These optional changes will apply to the look and feel of all your apps in this tenant with external configurations. After you have the created tenant, additional branding options are available. You can [customize the default branding](how-to-customize-branding-customers.md) and [add languages](how-to-customize-languages-customers.md). Once you're finished with the customization, select **Continue**.
+If you prefer, you can add your company logo, change the background color or adjust the sign-in layout. These optional changes will apply to the look and feel of all your apps in this tenant with external configurations. After you have the created tenant, other branding options are available. You can [customize the default branding](how-to-customize-branding-customers.md) and [add languages](how-to-customize-languages-customers.md). Once you're finished with the customization, select **Continue**.
 
 :::image type="content" source="media/quickstart-trial-setup/customize-branding-in-trial-wizard.png" alt-text="Screenshot of customizing the sign-in experience in the guide.":::
 
@@ -52,14 +54,14 @@ If you prefer, you can add your company logo, change the background color or adj
 
 ## Set up a sample app
 
-The get started guide will automatically configure sample apps for the below app types and languages:
+The get started guide will automatically configure sample apps for the following app types and languages:
 
 - Single Page Application (SPA): JavaScript, React, Angular
 - Web app: Node.js (Express), ASP.NET Core
 - Desktop app: .NET (MAUI)
 - Mobile app: .NET (MAUI)
 
-Follow the steps below, to download and run the sample app.
+Follow the next steps, to download and run the sample app.
 
 1. Proceed to set up the sample app by selecting the app type.
 1. Select your language and **Download sample app** on your machine.

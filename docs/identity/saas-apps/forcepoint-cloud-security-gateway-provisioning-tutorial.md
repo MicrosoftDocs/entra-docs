@@ -2,16 +2,14 @@
 title: 'Tutorial: Configure Forcepoint Cloud Security Gateway - User Authentication for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Forcepoint Cloud Security Gateway - User Authentication.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: 415b2ba3-a9a5-439a-963a-7c2c0254ced1
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 08/16/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Forcepoint Cloud Security Gateway - User Authentication so that I can streamline the user management process and ensure that users have the appropriate access to Forcepoint Cloud Security Gateway - User Authentication.
 ---
@@ -34,7 +32,7 @@ This tutorial describes the steps you need to perform in both Forcepoint Cloud S
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Forcepoint Cloud Security Gateway - User Authentication tenant.
 * A user account in Forcepoint Cloud Security Gateway - User Authentication with Admin permissions.
 

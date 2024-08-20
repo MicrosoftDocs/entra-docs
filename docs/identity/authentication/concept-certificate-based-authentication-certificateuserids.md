@@ -18,13 +18,13 @@ ms.custom: has-adal-ref
 
 User objects in Microsoft Entra ID have an attribute named certificateUserIds.
 
-- The certificateUserIds attribute is multivalued and can hold up to 5 values.
+- The certificateUserIds attribute is multivalued and can hold up to 10 values.
 - Each value can be no more than 1024 characters.
-- Each value must be unique. Once a value is present on one user account, it can't be written to any other user account in the same Entra ID tenant.
-- The value doesn't need to be in email ID format. The certificateUserIds attribute can store nonroutable user principal names (UPNs) like _bob@woodgrove_ or _bob@local_.
+- Each value must be unique. Once a value is present on one user account, it can't be written to any other user account in the same Microsoft Entra tenant.
+- The value doesn't need to be in email ID format. The certificateUserIds attribute can store nonroutable user principal names (UPNs) like *bob@woodgrove* or *bob@local*.
 
 > [!NOTE]
-> Although each value must be unique in Entra ID, you can map a single certificate to multiple accounts by implementing multiple username bindings. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
+> Although each value must be unique in Microsoft Entra ID, you can map a single certificate to multiple accounts by implementing multiple username bindings. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
  
 ## Supported patterns for certificate user IDs
  
@@ -37,9 +37,9 @@ The values stored in certificateUserIds should be in the format described in the
 |RFC822Name	| `X509:<RFC822>user@woodgrove.com` |
 |IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` |
 |Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  |
-|SKI | `X509:<SKI>123456789abcdef` |
-|SHA1PublicKey |`X509:<SHA1-PUKEY>123456789abcdef` |
-|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in certificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` |
+|SKI | `X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR` |
+|SHA1PublicKey |`X509:<SHA1-PUKEY>cD2eF3gH4iJ5kL6mN7oP8qR9sT` |
+|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>eF3gH4iJ5kL6mN7oP8qR9sT0uV` <br> To get the correct value for serial number, run this command and store the value shown in certificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` |
 
 ## Roles to update certificateUserIds
 
@@ -154,12 +154,12 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
    ```powershell
      #Create a new variable to prepare the change. Ensure that you list any existing values you want to keep as this operation will overwrite the existing value
      $params = @{
-           authorizationInfo = @{
-                 certificateUserIds = @(
-                 "X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", 
-                 "X509:<PN>user@contoso.com"
-                 )
-           }
+           authorizationInfo = @{
+                 certificateUserIds = @(
+                 "X509:<SKI>gH4iJ5kL6mN7oP8qR9sT0uV1wX", 
+                 "X509:<PN>user@contoso.com"
+                 )
+           }
      }
    ```
 1. Update the certificateUserIds attribute.
@@ -173,14 +173,14 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
 1. Get the user object.
 
    ```powershell
-     $userObjectId = "6b2d3bd3-b078-4f46-ac53-f862f35e10b6"
+     $userObjectId = "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
      $user = Get-MgUser -UserId $userObjectId -Property AuthorizationInfo
    ```
 
 1. Update the certificateUserIds attribute of the user object.
 
    ```powershell
-      $user.AuthorizationInfo.certificateUserIds = @("X509:<SKI>eec6b88788d2770a01e01775ce71f1125cd6ad0f", "X509:<PN>user1@contoso.com") 
+      $user.AuthorizationInfo.certificateUserIds = @("X509:<SKI>iJ5kL6mN7oP8qR9sT0uV1wX2yZ", "X509:<PN>user1@contoso.com") 
       Update-MgUser -UserId $userObjectId -AuthorizationInfo $user.AuthorizationInfo
    ```
    
@@ -188,7 +188,7 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
 
 ## Update certificateUserIds using Microsoft Entra Connect
 
-Microsoft Entra connect supports synchronizing values to certificateUserIds from an on-premises Active Directory environment. On-premises Active Directory supports certificate-based authentication and multiple username bindings. Make sure you use the latest version of [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594).
+Microsoft Entra Connect supports synchronizing values to certificateUserIds from an on-premises Active Directory environment. On-premises Active Directory supports certificate-based authentication and multiple username bindings. Make sure you use the latest version of [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594).
 
 To use these mapping methods, you need to populate the altSecurityIdentities attribute of user objects in the on-premises Active Directory. 
 In addition, after you apply certificate-based authentication changes on Windows domain controllers as described in [KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16), you may have implemented some of the non-reusable mapping methods (Type=strong) mapping methods to meet the on-premise Active Directory strong certificate binding enforcement requirements. 
@@ -198,19 +198,19 @@ To prevent synchronization errors, make sure the values being synchronized follo
 Before you begin, make sure all user accounts that are synchronized from on-premises Active Directory have:
 
 - 5 or fewer values in their altSecurityIdentities attributes 
-- No value with more then 1024 characters
+- No value with more than 1024 characters
 - No duplicate values
   
   Carefully consider if a duplicate value is meant to map a single certificate to multiple on-premises Active Directory accounts. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
 
   >[!NOTE]
-  >In specific scenarios, a subset of users might have a valid business justification to map a single certificate to more than one on-premises Active Directory account. Review these scenarios and where needed, implement separate mapping methods to map to more then one account in both the on-premises Active Directory and Entra ID.
+  >In specific scenarios, a subset of users might have a valid business justification to map a single certificate to more than one on-premises Active Directory account. Review these scenarios and where needed, implement separate mapping methods to map to more then one account in both the on-premises Active Directory and Microsoft Entra ID.
 
 **Considerations for ongoing synchronization of certificateUserIds**
 
 - Ensure that the provisioning process for populating the values in on-premises Active Directory implements proper hygiene. Only values associated with current valid certificates are populated.
 - Values are removed when the corresponding certificate is expired or revoked.
-- Values larger then 1024 characters aren't populated.
+- Values larger than 1024 characters aren't populated.
 - Duplicate values aren't provisioned.
 - Use Microsoft Entra Connect Health to monitor synchronization.
 
@@ -259,16 +259,18 @@ To synchronize X509:\<RFC822>RFC822Name, create an outbound synchronization rule
 1. Click **OK** to confirm. 
 
 >[!IMPORTANT]
-> The preceding examples use userPrincipalName atribute as a source attribute in the transform rule. You can use any available attribute with the appropriate value. For example, some organizations use the mail attribute. For more complex transform rules, see [Microsoft Entra Connect Sync: Understanding Declarative Provisioning Expressions](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md)
+> The preceding examples use userPrincipalName attribute as a source attribute in the transform rule. You can use any available attribute with the appropriate value. For example, some organizations use the mail attribute. For more complex transform rules, see [Microsoft Entra Connect Sync: Understanding Declarative Provisioning Expressions](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md)
 
 
 For more information about declarative provisioning expressions, see [Microsoft Entra Connect: Declarative Provisioning Expressions](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md).
 
 <a name='synchronize-alternativesecurityid-attribute-from-ad-to-azure-ad-cba-certificateuserids'></a>
 
-## Synchronize altSecurityIdentities attribute from Active Directory to Microsoft Entra ID certificateUserIds
+<a name='synchronize-altsecurityidentities-attribute-from-active-directory-to-microsoft-entra-id-certificateuserids'></a>
 
-The altSecurityIdentities attribute isn't part of the default attributes set. An administrator needs to add a new attribute to the person object in the Metaverse, and then create the appropriate synchronization rules to relay this data to certificateUserIds in Entra ID.
+## Synchronize altSecurityIdentities attribute from Active Directory to Microsoft Entra certificateUserIds
+
+The altSecurityIdentities attribute isn't part of the default attributes set. An administrator needs to add a new attribute to the person object in the Metaverse, and then create the appropriate synchronization rules to relay this data to certificateUserIds in Microsoft Entra ID.
 
 1. Open Metaverse Designer and select the person object. To create the alternativeSecurityId attribute, click **New attribute**. Select **String (non-indexable)** to create an attribute size up to 1024 characters, which is the maximum supported length for certificateUserIds. If you select **String (indexable)**, the maximum size of an attribute value is 448 characters. Make sure you select **Multi-valued**.
  
@@ -294,7 +296,7 @@ The altSecurityIdentities attribute isn't part of the default attributes set. An
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-inbound.png" alt-text="Screenshot of how to transform from altSecurityIdentities to alternateSecurityId attribute.":::
 
-1. Create an outbound synchronization rule to transform from the alternativeSecurityId attribute to the certificateUserIds attribute in Entra ID.
+1. Create an outbound synchronization rule to transform from the alternativeSecurityId attribute to the certificateUserIds attribute in Microsoft Entra ID.
 
    |Option | Value |
    |-------|-------|
@@ -309,7 +311,7 @@ The altSecurityIdentities attribute isn't part of the default attributes set. An
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-outbound.png" alt-text="Screenshot of outbound synchronization rule to transform from alternateSecurityId attribute to certificateUserIds.":::
 
 1. Run the synchronization to populate data to the certificateUserIds attribute.
-1. To verify success, view the Authorization info of a user in Entra ID.
+1. To verify success, view the Authorization info of a user in Microsoft Entra ID.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/auth-info.png" alt-text="Screenshot of successful synchronization.":::
 
@@ -337,4 +339,3 @@ Administrators can filter values from altSecurityIdentities that align with the 
 - [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
 - [How to migrate federated users](concept-certificate-based-authentication-migration.md)
 - [FAQ](certificate-based-authentication-faq.yml)
-

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -148,23 +148,20 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1.  Enter a **Description** for the IdP.
 
-1.  Enter a **Service Provider Name**, this
-should be a unique name for both the service and identity providers.
+1.  Enter a **Service Provider Name**, this should be a unique name for both the service and identity providers.
 
 1.  Upload the IdP metadata into **Identity Provider Metadata**. 
 
 1.  Choose the appropriate **Signature Hashing Algorithm** that matches the IdP.
 
-1.  Click **Test This Configuration** in the top-right side of the dialog to verify that the
-configuration is valid or not.
+1.  Click **Test This Configuration** in the top-right side of the dialog to verify that the configuration is valid or not.
 
 1. Click **Done** after successfully signing in to close the configuration dialog.
 
 1. If you want the new IdP's sign-in page to be the default, set the **Default Sign-In Page**
 accordingly.
 
-1.  Click **Verify My Access** once the dialog is closed to ensure that you can still sign in to
-Appian. This time, you have to sign in with the current user.
+1.  Click **Verify My Access** once the dialog is closed to ensure that you can still sign in to Appian. This time, you have to sign in with the current user.
 
 1.  Once you have successfully verified that you can still sign in, click **Save Changes**.
 

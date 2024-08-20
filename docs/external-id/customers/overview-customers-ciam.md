@@ -1,6 +1,6 @@
 ---
-title: Overview - External ID in external tenants
-description: Learn about customer identity access management (CIAM), a solution that lets you create secure, customized sign-in experiences for your apps and services.
+title: External Tenant Overview
+description: Learn how Microsoft Entra External ID provides to manage your external identities scenarios, including guest user access and customer identity and access management (CIAM) for apps.
  
 author: msmimart
 manager: celestedg
@@ -10,18 +10,20 @@ ms.subservice: customers
 ms.topic: overview
 ms.date: 04/29/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for apps for consumers and business customers.
 ---
 
 # Overview: Secure your apps using External ID in an external tenant
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 Microsoft Entra External ID includes Microsoft's customer identity and access management (CIAM) solution. For organizations and businesses that want to make their apps available to consumers and business customers, External ID makes it easy to add CIAM features like self-service registration, personalized sign-in experiences, and customer account management. Because these CIAM capabilities are built into Microsoft Entra ID, you also benefit from platform features like enhanced security, compliance, and scalability.
 
 :::image type="content" source="media/overview-customers-ciam/overview-ciam.png" alt-text="Diagram showing an overview customer identity and access management." border="true":::
 
-[!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)] 
+ 
 
 ## Create a dedicated external tenant
 
@@ -103,13 +105,13 @@ Learn more about the [security and governance](concept-security-customers.md) fe
 
 ## Analyze user activity and engagement
 
-The Application user activity (Preview) feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
+The Application user activity  feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
 Learn more about the [application user activity dashboards](how-to-user-insights.md) that are available in an external tenant.
 
 ## About Azure AD B2C
 
-If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID (preview). Opt for the current Azure AD B2C product if:
+If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID . Opt for the current Azure AD B2C product if:
 
 - You have an immediate need to deploy a production ready build.
   

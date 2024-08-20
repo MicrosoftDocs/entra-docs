@@ -82,6 +82,8 @@
       href: concept-authentication-default-enablement.md
     - name: System-preferred MFA 
       href: concept-system-preferred-multifactor-authentication.md
+    - name: Mandatory MFA 
+      href: concept-mandatory-multifactor-authentication.md
     - name: External MFA provider
       href: concept-authentication-external-method-provider.md
     - name: Prompts and session lifetime
@@ -220,7 +222,7 @@
     items:
     - name: User customization options
       href: howto-sspr-customization.md
-    - name: Pre-register authentication data
+    - name: Preregister authentication data
       href: howto-sspr-authenticationdata.md
     - name: SSPR for Windows clients
       href: howto-sspr-windows.md
@@ -383,4 +385,4 @@
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Videos
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
+    href: phishing-resistant-authentication-videos.md

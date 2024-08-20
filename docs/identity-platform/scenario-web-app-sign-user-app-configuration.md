@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 04/20/2023
+ms.date: 07/19/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -15,11 +15,10 @@ ms.topic: concept-article
 
 # Web app that signs in users: Code configuration
 
-Learn how to configure the code for your web app that signs in users.
+This article describes how to configure code for a web app that signs in users.
 
 ## Microsoft libraries supporting web apps
 
-<!-- This section can be in an include for web app and web APIs -->
 The following Microsoft libraries are used to protect a web app (and a web API):
 
 [!INCLUDE [develop-libraries-webapp](./includes/libraries/libraries-webapp.md)]
@@ -40,7 +39,7 @@ You might want to refer to this sample for full implementation details.
 
 # [Java](#tab/java)
 
-Code snippets in this article and the following are extracted from the [Java web application calling Microsoft graph](https://github.com/Azure-Samples/ms-identity-java-webapp) sample in MSAL Java.
+Code snippets in this article and the following are extracted from the [Java web application calling Microsoft graph](https://github.com/Azure-Samples/ms-identity-docs-code-java/tree/main/webapp) sample in MSAL Java.
 
 You might want to refer to this sample for full implementation details.
 
@@ -129,6 +128,7 @@ In ASP.NET Core, another file ([properties\launchSettings.json](https://github.c
 In the Azure portal, the redirect URIs that you register on the **Authentication** page for your application need to match these URLs. For the two preceding configuration files, they would be `https://localhost:44321/signin-oidc`. The reason is that `applicationUrl` is `http://localhost:3110`, but `sslPort` is specified (`44321`). `CallbackPath` is `/signin-oidc`, as defined in `appsettings.json`.
 
 In the same way, the sign-out URI would be set to `https://localhost:44321/signout-oidc`.
+
 > [!NOTE]
 > SignedOutCallbackPath should set either to portal or the application to avoid conflict while handling the event.
 
@@ -191,12 +191,11 @@ The *.env* file should never be checked into source control, since it contains s
 
 :::code language="text" source="~/../ms-identity-python-webapp-tutorial/.gitignore" range="84-85" highlight="2":::
 
-
 ---
 
 ## Initialization code
 
-The initialization code differences are platform dependant. For ASP.NET Core and ASP.NET, signing in users is delegated to the OpenID Connect middleware. The ASP.NET or ASP.NET Core template generates web applications for the Azure AD v1.0 endpoint. Some configuration is required to adapt them to the Microsoft identity platform. 
+The initialization code differences are platform dependent. For ASP.NET Core and ASP.NET, signing in users is delegated to the OpenID Connect middleware. The ASP.NET or ASP.NET Core template generates web applications for the Azure AD v1.0 endpoint. Some configuration is required to adapt them to the Microsoft identity platform. 
 
 # [ASP.NET Core](#tab/aspnetcore)
 
@@ -270,7 +269,7 @@ For more information about how Microsoft.Identity.Web enables you to create web 
 
 # [ASP.NET](#tab/aspnet)
 
-The code related to authentication in an ASP.NET web app and web APIs is located in the [App_Start/Startup.Auth.cs](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/master/WebApp/App_Start/Startup.Auth.cs) file.
+The code related to authentication in an ASP.NET web app and web APIs is located in the [App_Start/Startup.Auth.cs](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/archive/WebApp/App_Start/Startup.Auth.cs) file.
 
 ```c#
  public void ConfigureAuth(IAppBuilder app)
@@ -293,7 +292,7 @@ The filter processes the OAuth 2.0 authorization code flow and checks if the use
 
 When the response arrives, containing the authorization code, it acquires the token by using MSAL Java. When it finally receives the token from the token endpoint (on the redirect URI), the user is signed in.
 
-For details, see the `doFilter()` method in [AuthFilter.java](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/master/msal-java-webapp-sample/src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java).
+For details, see the `doFilter()` method in [AuthFilter.java](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/archive/msal-java-webapp-sample/src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java).
 
 > [!NOTE]
 > The code of the `doFilter()` is written in a slightly different order, but the flow is the one described.
@@ -318,33 +317,31 @@ Then the code constructs an [`auth` object](https://identity-library.readthedocs
 
 ---
 
-## Next steps
-
-In the next article, you'll learn how to trigger sign-in and sign-out.
+## Next step
 
 # [ASP.NET Core](#tab/aspnetcore)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnetcore).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnetcore).
 
 # [ASP.NET](#tab/aspnet)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnet).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=aspnet).
 
 # [Java](#tab/java)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=java).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=java).
 
 # [Node.js](#tab/nodejs)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=nodejs).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=nodejs).
 
 # [Python](#tab/python)
 
-Move on to the next article in this scenario,
-[Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=python).
+> [!div class="nextstepaction"]
+> [Sign in and sign out](./scenario-web-app-sign-user-sign-in.md?tabs=python).
 
 ---

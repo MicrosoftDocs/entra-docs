@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
 ## Prerequisites  
  
 - Complete the steps [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
-- [Tutorial: Add sign up with email one-time passcode in Android mobile app](tutorial-native-authentication-android-sign-up.md) or [Tutorial: Sign up user with username and password in Android app by using native authentication](tutorial-native-authentication-android-sign-up-user-with-username-password.md). The steps in this tutorial should work whether you sign up with email and password or email one-time passcode.
+- [Tutorial: Add sign-up in an Android mobile app using native authentication](tutorial-native-authentication-android-sign-up.md). The steps in this tutorial should work whether you sign up with email and password or email one-time passcode.
  
 ## Sign in after sign-up
  
@@ -103,7 +103,7 @@ private fun displayAccount(accountState: AccountState) {
     }
 }
 ``` 
- 
+
 ## Next steps
 
 - [Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)

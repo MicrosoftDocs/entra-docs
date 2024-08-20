@@ -6,7 +6,7 @@ description: Learn how to configure an external authentication method (EAM) prov
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/29/2024
+ms.date: 05/03/2024
 
 ms.author: justinha
 author: gregkmsft
@@ -18,7 +18,7 @@ ms.reviewer: gkinasewitz, gustavosa
 ---
 # Microsoft Entra multifactor authentication external method provider reference (Preview)
 
-This topic describes how an external authentication provider connects to Microsoft Entra multifactor authentication (MFA). An external authentication provider can integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An EAM can satisfy the second factor of an MFA requirement for access to a resource or application.  
+This topic describes how an external authentication provider connects to Microsoft Entra multifactor authentication (MFA). An external authentication provider can integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An EAM can satisfy the second factor of an MFA requirement for access to a resource or application. EAMs require at least a Microsoft Entra ID P1 license. 
 
 When a user signs in, that tenant policies are evaluated. The authentication requirements are determined based on the resource that the user tries to access. 
 
@@ -75,7 +75,7 @@ To configure a multitenant application, the provider admin must first:
 1. Create an Microsoft Entra ID tenant if they don't have one yet.
 1. Register an application in their tenant. 
 1. Set the Supported Account types of the application to: Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant). 
-1. Add the delegated permission `openid` and profile of Microsoft Graph to the application.
+1. Add the delegated permission `openid` and `profile` of Microsoft Graph to the application.
 1. Don't publish any scopes in this application. 
 1. Add the external identity provider’s valid authorization_endpoint URLs to that application as Reply URLs. 
    
@@ -183,12 +183,12 @@ http://customcaserver.azurewebsites.net/.well-known/jwks
     {
       "kty": "RSA",
       "use": "sig",
-      "kid": "CEYm9GmLvfIqrl0zBJc9-Chk_LM",
-      "x5t": "CEYm9GmLvfIqrl0zBJc9-Chk_LM",
-      "n": "jq277LRoE6WKM0awT3b-—redacted--vt8J6MZvmgboVB9S5CMQ",
+      "kid": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+      "x5t": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+      "n": "jq277LRoE6WKM0awT3b...vt8J6MZvmgboVB9S5CMQ",
       "e": "AQAB",
       "x5c": [
-        "cZa3jEzEd0nvztzAVM6Uy—redacted--Z0HBHjTZq9IWiPHSWo0rzA="
+        "cZa3jz...Wo0rzA="
       ]
     }
   ]
@@ -230,6 +230,9 @@ For information about how to validate the tokens issued by Microsoft Entra ID, s
 Microsoft’s [token validation library](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) has all the details on the specifics of token validation that are documented, or they can be ascertained from browsing the source code. For a sample, see [Azure Samples](https://github.com/Azure-Samples/active-directory-dotnet-webapi-manual-jwt-validation).
 
 Once validation succeeds, you can work with the claims payload to get details of the user, and their tenant.
+
+>[!NOTE]
+>It is important to validate the id_token_hint to ensure the id_token_hint is from a Microsoft tenant and represents your integration. The id_token_hint should be fully validated, particularly the signature, issuer, audience as well as the other claim values. 
 
 ### Microsoft Entra ID call to the external identity provider
 
@@ -324,19 +327,19 @@ Here's an example of an id_token_hint for a directory member:
 {
   "typ": "JWT",
   "alg": "RS256",
-  "kid": "7_Zuf1tvkwLxYaHS3q6lUjUYIGw"
+  "kid": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w"
 }.{
   "ver": "2.0",
-  "iss": "https://login.microsoftonline.com/9122040d-6c67-4c5b-b112-36a304b66dad/v2.0",
+  "iss": "https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/v2.0",
   "sub": "mBfcvuhSHkDWVgV72x2ruIYdSsPSvcj2R0qfc6mGEAA",
-  "aud": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
+  "aud": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "exp": 1536093790,
   "iat": 1536093791,
   "nbf": 1536093791,
   "name": "Test User 2",
   "preferred_username": "testuser2@contoso.com"
-  "oid": "951ddb04-b16d-45f3-bbf7-b0fa18fa7aee",
-  "tid": "14c2f153-90a7-4689-9db7-9543bf084dad"
+  "oid": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+  "tid": "aaaabbbb-0000-cccc-1111-dddd2222eeee"
   }.
 
 ```
@@ -347,19 +350,19 @@ Here's an example of the id_token hint for a guest user in the tenant:
 {
   "typ": "JWT",
   "alg": "RS256",
-  "kid": "7_Zuf1tvkwLxYaHS3q6lUjUYIGw"
+  "kid": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w"
 }.{
   "ver": "2.0",
   "iss": "https://login.microsoftonline.com/9122040d-6c67-4c5b-b112-36a304b66dad/v2.0",
   "sub": "mBfcvuhSHkDWVgV72x2ruIYdSsPSvcj2R0qfc6mGEAA",
-  "aud": "600b719b-3766-4dc5-95a6-3c4a8dc31885",
+  "aud": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "exp": 1536093790,
   "iat": 1536093791,
   "nbf": 1536093791,
   "name": "External Test User (Hotmail)",
   "preferred_username": "externaltestuser@hotmail.com",
-  "oid": "951ddb04-b16d-45f3-bbf7-b0fa18fa7aee",
-  "tid": "14c2f153-90a7-4689-9db7-9543bf084dad"
+  "oid": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+  "tid": "aaaabbbb-0000-cccc-1111-dddd2222eeee"
   }.
 
 
@@ -475,9 +478,9 @@ When you reach out to Microsoft support or a similar service, provide the value 
 
 For example:
 
->ENTRA IDSTS70002: Error validating credentials. ENTRA IDSTS50012: External ID token from issuer 'https://sts.XXXXXXXXX.com/auth/realms/XXXXXXXXXmfa' failed signature verification. KeyID of token is 'Rk3vlP4vD3OMJzBvrig81pnvaMqA'
->Trace ID: 01c2cd09-8997-45bf-bfe4-18fdf9d1a101
->**Correlation ID**: 72826bb4-abb7-4221-b253-100f530b4b0a
+>ENTRA IDSTS70002: Error validating credentials. ENTRA IDSTS50012: External ID token from issuer 'https://sts.XXXXXXXXX.com/auth/realms/XXXXXXXXXmfa' failed signature verification. KeyID of token is 'A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u'
+>Trace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333
+>**Correlation ID**: aaaa0000-bb11-2222-33cc-444444dddddd
 >Timestamp: 2023-07-24 16:51:34Z
 
 
@@ -509,7 +512,7 @@ Term | Description
 MFA  | Multifactor authentication.
 EAM  | An external authentication method is an authentication method from a provider other than Microsoft Entra ID that is used as part of authenticating a user.
 OIDC | Open ID Connect is an authentication protocol based on OAuth 2.0.
-600b719b-3766-4dc5-95a6-3c4a8dc31885 | An example of an appid integrated for an external authentication method.
+00001111-aaaa-2222-bbbb-3333cccc4444 | An example of an appid integrated for an external authentication method.
 
 ## Next steps
 

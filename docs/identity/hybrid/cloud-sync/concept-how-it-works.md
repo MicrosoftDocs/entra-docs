@@ -55,7 +55,9 @@ The [SCIM specification](https://tools.ietf.org/html/draft-scim-core-schema-01) 
 The Microsoft Entra Connect cloud provisioning agent uses SCIM with Microsoft Entra ID to provision and deprovision users and groups.
 
 ## Synchronization flow
+
 ![provisioning](media/concept-how-it-works/provisioning-4.png)
+
 Once you've installed the agent and enabled provisioning, the following flow occurs.
 
 1.  Once configured, the Microsoft Entra provisioning service calls the Microsoft Entra hybrid service to add a request to the Service bus. The agent constantly maintains an outbound connection to the Service Bus listening for requests and picks up the System for Cross-domain Identity Management (SCIM) request immediately. 
@@ -74,7 +76,7 @@ The following scenarios are supported for cloud sync.
  ![Existing hybrid](media/tutorial-existing-forest/existing-forest-new-forest-2.png)
 - **New hybrid customer**:      Microsoft Entra Connect Sync isn't used. Cloud sync is used for provisioning from an AD forest.  For more information, see the tutorial [here](tutorial-single-forest.md).
  
- ![New customers](media/tutorial-single-forest/diagram-2.png)
+ ![New customers](~/includes/governance/media/tutorial-single-forest/diagram-2.png)
 
 - **Existing hybrid customer**: Microsoft Entra Connect Sync is used for primary forests. Cloud sync is piloted for a small set of users in the primary forests [here](tutorial-existing-forest.md).
 

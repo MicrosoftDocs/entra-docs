@@ -6,7 +6,7 @@ description: Learn how to enforce multifactor authentication policies for Micros
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: concept-article
-ms.date: 02/05/2024
+ms.date: 05/15/2024
 
 ms.author: mimart
 author: msmimart
@@ -18,10 +18,12 @@ ms.collection: M365-identity-device-management
 
 # Authentication and Conditional Access for External ID
 
-> [!TIP]
-> This article applies to B2B collaboration and B2B direct connect. If your tenant is configured for customer identity and access management, see [Security and governance in Microsoft Entra External ID](customers/concept-security-customers.md).
+  [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-When an external user accesses resources in your organization, the authentication flow is determined by the collaboration method (B2B collaboration or B2B direct connect), user's identity provider (an external Microsoft Entra tenant, social identity provider, etc.), Conditional Access policies, and the [cross-tenant access settings](cross-tenant-access-overview.md) configured both in the user's home tenant and the tenant hosting resources.
+> [!TIP]
+> This article applies to B2B collaboration and B2B direct connect in workforce tenants. For information about external tenants, see [Security and governance in Microsoft Entra External ID](customers/concept-security-customers.md).
+
+When an external user accesses resources in your organization, the authentication flow is determined by the collaboration method (B2B collaboration or B2B direct connect), user's identity provider (an external Microsoft Entra tenant, social identity provider, and so on), Conditional Access policies, and the [cross-tenant access settings](cross-tenant-access-overview.md) configured both in the user's home tenant and the tenant hosting resources.
 
 This article describes the authentication flow for external users who are accessing resources in your organization. Organizations can enforce multiple Conditional Access policies for their external users, which can be enforced at the tenant, app, or individual user level in the same way that they're enabled for full-time employees and members of the organization.
 
@@ -93,7 +95,7 @@ When configuring a Conditional Access policy, you have granular control over the
 - **Other external users** - Applies to any users who don't fall into these categories, but who aren't considered internal members of your organization, meaning they don't authenticate internally via Microsoft Entra ID, and the user object created in the resource Microsoft Entra directory doesn't have a UserType of Member.
 
 >[!NOTE]
-> The "All guest and external users" selection has now been replaced with "Guest and external users" and all its sub types. For customers who previously had a Condtional Access policy with "All guest and external users" selected will now see "Guest and external users" along with all sub types being selected. This change in UX does not have any functional impact on how policy is evaluated by Conditional Access backend. The new selection provides customers the needed granularity to choose specifc types of guest and external users to include/exclude from user scope when creating their Conditional Access policy.
+> The "All guest and external users" selection has now been replaced with "Guest and external users" and all its sub types. For customers who previously had a Conditional Access policy with "All guest and external users" selected will now see "Guest and external users" along with all sub types being selected. This change in UX does not have any functional impact on how policy is evaluated by Conditional Access backend. The new selection provides customers the needed granularity to choose specific types of guest and external users to include/exclude from user scope when creating their Conditional Access policy.
 
 Learn more about [Conditional Access user assignments](~/identity/conditional-access/concept-conditional-access-users-groups.md).
 
@@ -210,12 +212,12 @@ In external user scenarios, the authentication methods that are acceptable for f
 |SMS as second factor                         | &#x2705;        | &#x2705; |
 |Voice call                                   | &#x2705;        | &#x2705; |
 |Microsoft Authenticator push notification    | &#x2705;        | &#x2705; |
-|Microsoft Authenticator phone sign-in        | &#x2705;        | &#x2705; |
+|Microsoft Authenticator phone sign-in        | &#x2705;        |          |
 |OATH software token                          | &#x2705;        | &#x2705; |
 |OATH hardware token                          | &#x2705;        |          |
 |FIDO2 security key                           | &#x2705;        |          |
 |Windows Hello for Business                   | &#x2705;        |          |
-
+|Certificate-based authentication             | &#x2705;        |          |
 
 To configure a Conditional Access policy that applies authentication strength requirements to external users or guests, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
 

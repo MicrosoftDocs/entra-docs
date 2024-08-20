@@ -43,7 +43,7 @@ Before creating a service account, or registering an application, document the s
 
 ## Principle of least privileges
 
-Grant the service account permissions needed to perform tasks, and no more. If a service account needs high-level permissions, for example a Global Administrator, evaluate why and try to reduce permissions.
+Grant the service account permissions needed to perform tasks, and no more. If a service account needs high-level permissions, evaluate why and try to reduce permissions.
 
 We recommend the following practices for service account privileges.
 

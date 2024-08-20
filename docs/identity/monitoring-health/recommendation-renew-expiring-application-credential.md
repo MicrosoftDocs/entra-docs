@@ -7,11 +7,12 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/01/2024
+ms.date: 05/06/2024
 ms.author: sarahlipsey
 ms.reviewer: saumadan
 ---
-# Microsoft Entra recommendation: Renew expiring application credentials
+# Microsoft Entra recommendation: Renew expiring application credentials (preview)
+
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
 This article covers the recommendation to renew expiring application credentials. This recommendation is called `applicationCredentialExpiry` in the recommendations API in Microsoft Graph. 

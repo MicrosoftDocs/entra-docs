@@ -41,7 +41,7 @@ Ensure that the following prerequisites are in place.
 
 ### In the Microsoft Entra admin center
 
-1. Create a cloud-only Hybrid Identity Administrator account or a Hybrid Identity administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Hybrid Identity Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
+1. Create a cloud-only Hybrid Identity Administrator account or a Hybrid Identity Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Hybrid Identity Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
 2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your on-premises environment
@@ -50,24 +50,24 @@ Ensure that the following prerequisites are in place.
 2. Install the [latest version of Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) on the server identified in the preceding step. If you already have Microsoft Entra Connect running, ensure that the version is supported.
 
     >[!NOTE]
-    >Microsoft Entra Connect versions 1.1.557.0, 1.1.558.0, 1.1.561.0, and 1.1.614.0 have a problem related to password hash synchronization. If you _don't_ intend to use password hash synchronization in conjunction with Pass-through Authentication, read the [Microsoft Entra Connect release notes](./reference-connect-version-history.md).
+    >Microsoft Entra Connect versions 1.1.557.0, 1.1.558.0, 1.1.561.0, and 1.1.614.0 have a problem related to password hash synchronization. If you *don't* intend to use password hash synchronization in conjunction with Pass-through Authentication, read the [Microsoft Entra Connect release notes](./reference-connect-version-history.md).
 
 3. Identify one or more additional servers (running Windows Server 2016 or later, with TLS 1.2 enabled) where you can run standalone Authentication Agents. These additional servers are needed to ensure the high availability of requests to sign in. Add the servers to the same Active Directory forest as the users whose passwords you need to validate.
 
     >[!IMPORTANT]
     >In production environments, we recommend that you have a minimum of 3 Authentication Agents running on your tenant. There is a system limit of 40 Authentication Agents per tenant. And as best practice, treat all servers running Authentication Agents as Tier 0 systems (see [reference](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)).
 
-4. If there is a firewall between your servers and Microsoft Entra ID, configure the following items:
+1. If there is a firewall between your servers and Microsoft Entra ID, configure the following items:
    - Ensure that Authentication Agents can make *outbound* requests to Microsoft Entra ID over the following ports:
 
      | Port number | How it's used |
      | --- | --- |
      | **80** | Downloads the certificate revocation lists (CRLs) while validating the TLS/SSL certificate |
      | **443** | Handles all outbound communication with the service |
-     | **8080** (optional) | Authentication Agents report their status every ten minutes over port 8080, if port 443 is unavailable. This status is displayed on the [Microsoft Entra admin center](https://entra.microsoft.com). Port 8080 is _not_ used for user sign-ins. |
+     | **8080** (optional) | Authentication Agents report their status every ten minutes over port 8080, if port 443 is unavailable. This status is displayed on the [Microsoft Entra admin center](https://entra.microsoft.com). Port 8080 is *not* used for user sign-ins. |
      
      If your firewall enforces rules according to the originating users, open these ports for traffic from Windows services that run as a network service.
-   - If your firewall or proxy lets you add DNS entries to an allowlist, add connections to **\*.msappproxy.net** and **\*.servicebus.windows.net**. If not, allow access to the [Azure datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653), which are updated weekly.
+   - If your firewall or proxy lets you add DNS entries to an allowlist, add connections to **\*.msappproxy.net** and **\*.servicebus.windows.net**. If not, allow access to the [Azure datacenter IP ranges](https://www.microsoft.com/en-us/download/details.aspx?id=56519), which are updated weekly.
    - Avoid all forms of inline inspection and Termination on outbound TLS communications between Azure Passthrough Agent and Azure Endpoint. 
    - If you have an outgoing HTTP proxy,  make sure this URL, autologon.microsoftazuread-sso.com, is on the allowed list. You should specify this URL explicitly since wildcard may not be accepted. 
    - Your Authentication Agents need access to **login.windows.net** and **login.microsoftonline.com** for initial registration. Open your firewall for those URLs as well.
@@ -94,7 +94,7 @@ If you have already installed Microsoft Entra Connect by using the [express inst
 ![Microsoft Entra Connect: Change user sign-in](./media/how-to-connect-pta-quick-start/changeusersignin.png)
 
 >[!IMPORTANT]
->Pass-through Authentication is a tenant-level feature. Turning it on affects the sign-in for users across _all_ the managed domains in your tenant. If you're switching from Active Directory Federation Services (AD FS) to Pass-through Authentication, you should wait at least 12 hours before shutting down your AD FS infrastructure. This wait time is to ensure that users can keep signing in to Exchange ActiveSync during the transition. For more help on migrating from AD FS to Pass-through Authentication, check out our deployment plans published [here](~/identity/enterprise-apps/migration-resources.md).
+>Pass-through Authentication is a tenant-level feature. Turning it on affects the sign-in for users across *all* the managed domains in your tenant. If you're switching from Active Directory Federation Services (AD FS) to Pass-through Authentication, you should wait at least 12 hours before shutting down your AD FS infrastructure. This wait time is to ensure that users can keep signing in to Exchange ActiveSync during the transition. For more help on migrating from AD FS to Pass-through Authentication, check out our deployment plans published [here](~/identity/enterprise-apps/migration-resources.md).
 
 ## Step 3: Test the feature
 
@@ -104,17 +104,17 @@ Follow these instructions to verify that you have enabled Pass-through Authentic
 2. Select **Microsoft Entra ID**.
 3. Select **Microsoft Entra Connect**.
 4. Verify that the **Pass-through authentication** feature appears as **Enabled**.
-5. Select **Pass-through authentication**. The **Pass-through authentication** pane lists the servers where your Authentication Agents are installed.
+1. Select **Pass-through authentication**. The **Pass-through authentication** pane lists the servers where your Authentication Agents are installed.
 
    ![Screenhot shows Microsoft Entra admin center: Microsoft Entra Connect pane.](./media/how-to-connect-pta-quick-start/azure-ad-connect-blade.png)
-
+   
    ![Screenshot shows Microsoft Entra admin center: Pass-through Authentication pane.](./media/how-to-connect-pta-quick-start/pta-server-list.png)
-
+   
 At this stage, users from all the managed domains in your tenant can sign in by using Pass-through Authentication. However, users from federated domains continue to sign in by using AD FS or another federation provider that you have previously configured. If you convert a domain from federated to managed, all users from that domain automatically start signing in by using Pass-through Authentication. The Pass-through Authentication feature does not affect cloud-only users.
 
 ## Step 4: Ensure high availability
 
-If you plan to deploy Pass-through Authentication in a production environment, you should install additional standalone Authentication Agents. Install these Authentication Agent(s) on server(s) _other_ than the one running Microsoft Entra Connect. This setup provides you with high availability for user sign-in requests.
+If you plan to deploy Pass-through Authentication in a production environment, you should install additional standalone Authentication Agents. Install these Authentication Agent(s) on server(s) *other* than the one running Microsoft Entra Connect. This setup provides you with high availability for user sign-in requests.
 
 >[!IMPORTANT]
 >In production environments, we recommend that you have a minimum of 3 Authentication Agents running on your tenant. There is a system limit of 40 Authentication Agents per tenant. And as best practice, treat all servers running Authentication Agents as Tier 0 systems (see [reference](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)).
@@ -132,21 +132,21 @@ To begin, follow these instructions to download the Authentication Agent softwar
 1. To download the latest version of the Authentication Agent (version 1.5.193.0 or later), sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with your tenant's Hybrid Identity Administrator credentials.
 2. Select **Microsoft Entra ID**.
 3. Select **Microsoft Entra Connect**, select **Pass-through authentication**, and then select **Download Agent**.
-4. Select the **Accept terms & download** button.
+1. Select the **Accept terms & download** button.
 
    [![Screenshot shows Microsoft Entra admin center: Download Authentication Agent button.](./media/how-to-connect-pta-quick-start/download-agent.png)](./media/how-to-connect-pta-quick-start/download-agent.png#lightbox)
-
+   
 >[!NOTE]
->You can also directly [download the Authentication Agent software](https://aka.ms/getauthagent). Review and accept the Authentication Agent's [Terms of Service](https://aka.ms/authagenteula) _before_ installing it.
+>You can also directly [download the Authentication Agent software](https://aka.ms/getauthagent). Review and accept the Authentication Agent's [Terms of Service](https://aka.ms/authagenteula) *before* installing it.
 
 There are two ways to deploy a standalone Authentication Agent:
 
-First, you can do it interactively by just running the downloaded Authentication Agent executable and providing your tenant's global administrator credentials when prompted.
+First, you can do it interactively by just running the downloaded Authentication Agent executable and providing your tenant's Global Administrator credentials when prompted.
 
 Second, you can create and run an unattended deployment script. This is useful when you want to deploy multiple Authentication Agents at once, or install Authentication Agents on Windows servers that don't have user interface enabled, or that you can't access with Remote Desktop. Here are the instructions on how to use this approach:
 
 1. Run the following command to install an Authentication Agent: `AADConnectAuthAgentSetup.exe REGISTERCONNECTOR="false" /q`.
-2. You can register the Authentication Agent with our service via PowerShell. Create a PowerShell Credentials object `$cred` that contains a global administrator username and password for your tenant. Run the following command, replacing `<username>` and `<password>`:
+2. You can register the Authentication Agent with our service via PowerShell. Create a PowerShell Credentials object `$cred` that contains a Global Administrator username and password for your tenant. Run the following command, replacing `<username>` and `<password>`:
 
   ```powershell
   $User = "<username>"

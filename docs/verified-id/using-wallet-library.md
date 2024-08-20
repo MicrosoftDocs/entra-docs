@@ -131,8 +131,7 @@ In order to test the demo app, you need a webapp that issues credentials and mak
 
 On your developer machine with Android Studio, do the following:
 
-1. Download or clone the Android Wallet Library [GitHub repo](https://github.com/microsoft/entra-verifiedid-wallet-library-android/tree/dev)
-You don’t need the walletlibrary folder and you can delete it if you like.
+1. Download or clone the Android Wallet Library [GitHub repo](https://github.com/microsoft/entra-verifiedid-wallet-library-android/tree/dev). You don’t need the walletlibrary folder and you can delete it if you like.
 1. Start Android Studio and open the parent folder of walletlibrarydemo
 
     :::image type="content" source="media/using-wallet-library/androidstudio-screenshot.png" alt-text="Screenshot of Android Studio.":::

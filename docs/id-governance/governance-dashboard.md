@@ -1,5 +1,5 @@
 ---
-title: 'Identity Governance dashboard (Preview)'
+title: 'Identity Governance dashboard'
 description: This article shows how to use the new identity governance dashboard
 author: billmath
 manager: amycolannino
@@ -9,7 +9,7 @@ ms.date: 06/20/2023
 ms.author: billmath
 ms.custom:
 ---
-# Identity Governance dashboard (Preview)
+# Identity Governance dashboard
 
 In this article, we provide guidance on how to use the Microsoft Identity Governance dashboard. 
 
@@ -31,7 +31,7 @@ The dashboard experience is made up of the following main components:
 * **Highlights**: Use the content in this section to stay informed about the latest Identity Governance features and learn how customers are using Identity Governance to improve their security and compliance posture. 
 
 >[!NOTE]
->The Graph APIs on the dashboard will operate in the context of the logged in user using delegated permission model. To view the dashboard with full fidelity, we recommend using the Global administrator / Global reader role. 
+>The Graph APIs on the dashboard will operate in the context of the logged in user using delegated permission model. To view the dashboard with full fidelity, we recommend using the Global Administrator / Global Reader role. 
 
 ## Troubleshooting dashboard errors
 

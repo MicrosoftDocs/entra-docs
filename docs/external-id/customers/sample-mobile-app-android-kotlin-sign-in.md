@@ -44,11 +44,9 @@ In this article, you do the following tasks:
 
 [!INCLUDE [Enable public client](../customers/includes/register-app/enable-public-client-flow.md)]
 
-## Delegated permission to Microsoft Graph
-
-Configure delegated permission to Microsoft Graph to enable your client application to perform operations on behalf of the logged-in user, for example reading their email or modifying their profile. By default, users of your client app are asked when they sign in to consent to the delegated permissions you've configured for it.
+## Grant admin consent
  
-[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
+[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Clone sample Android mobile application  
 
@@ -78,10 +76,10 @@ To enable authentication and access to Microsoft Graph resources, configure the 
     - `ENTER_YOUR_SIGNATURE_HASH_HERE` and replace it with the **Signature Hash** that you generated earlier when you added the platform redirect URL.
 
 1. Open */app/src/main/java/com/azuresamples/msaldelegatedandroidkotlinsampleapp/MainActivity.kt* file.
-1. Find property named `scopes` and set the scopes recorded in [Delegated permission to Microsoft Graph](#delegated-permission-to-microsoft-graph).
+1. Find property named `scopes` and set the scopes recorded in [Grant admin consent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
 
     ```kotlin
-    private const val scopes = "" // Developers should set the respective scopes of their wMicrosoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
+    private const val scopes = "" // Developers should set the respective scopes of their Microsoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
     ```
    
 You've configured the app and it's ready to run. 

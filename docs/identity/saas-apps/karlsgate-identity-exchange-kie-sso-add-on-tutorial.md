@@ -34,7 +34,7 @@ You'll configure and test Microsoft Entra single sign-on for Karlsgate Identity 
 To integrate Microsoft Entra ID with Karlsgate Identity Exchange (KIE) SSO Add-on, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * An existing Karlsgate Identity Exchange (KIE) SSO Add-on single sign-on (SSO) eligible account.
 
@@ -95,7 +95,7 @@ To configure single sign-on on the **Karlsgate Identity Exchange (KIE) SSO Add-o
 
 1. Your configured **App Federation Metadata Url**.
 
-1. A list of one (or more) **email domain(s)** (min. 1) for users who will be accessing the Karlsgate Identity Exchange (KIE) SSO Add-on, e.g: northwind.com, de.contoso.com, fr.contoso.com, etc. (See note below.)
+1. A list of one (or more) **email domain(s)** (min. 1) for users who will be accessing the Karlsgate Identity Exchange (KIE) SSO Add-on, such as `northwind.com`, `de.contoso.com`, `fr.contoso.com`, and so on. (See note below.)
 
     > [!NOTE] 
     > Many organizations have one (1) email domain configured for their users. For example, at the fictitious company Northwind, the user "jane.smith@northwind.com" has an email domain of "northwind.com". Some organizations have multiple (2+) email domains configured for their users. For example, at the fictitious company Contoso, the user "erika.mustermann@de.contoso.com" has an email domain of "de.contoso.com", while the user "jean.dupont@fr.contoso.com" has an email domain of "fr.contoso.com".

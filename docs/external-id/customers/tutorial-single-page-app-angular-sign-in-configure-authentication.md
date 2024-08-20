@@ -9,7 +9,7 @@ ms.author: godonnell
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 10/27/2023
+ms.date: 06/27/2024
 
 #Customer intent: As a developer, I want to learn how to configure an Angular single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
@@ -78,7 +78,7 @@ In this tutorial;
      * Scopes you add here will be prompted for user consent during sign-in.
      * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
      * For more information about OIDC scopes, visit:
-     * https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
+     * https://learn.microsoft.com/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
      */
     export const loginRequest = {
       scopes: [],
@@ -89,6 +89,8 @@ In this tutorial;
     - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
     - In **authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 1. Save the file.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
 
 ## Import MSAL components
 

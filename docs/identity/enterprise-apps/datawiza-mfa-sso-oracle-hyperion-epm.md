@@ -29,7 +29,7 @@ Benefits of integrating applications with Microsoft Entra ID by using DAP:
 * [How it works: Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md) - users are prompted during sign-in for forms of identification, such as a code on their cellphone, or a fingerprint scan
 * [What is Conditional Access?](../conditional-access/overview.md) - policies are if-then statements, if a user wants to access a resource, then they must complete an action
 * [Easy authentication and authorization in Microsoft Entra ID with no-code Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) - use web applications such as: [Oracle JDE](./datawiza-sso-oracle-jde.md), [Oracle E-Business Suite](./datawiza-sso-oracle-peoplesoft.md), [Oracle Siebel](https://www.datawiza.com/enable-sso-mfa-for-oracle-siebel-crm-in-minutes/), and home-grown apps
-* Use the [Datawiza Cloud Management Console](https://console.datawiza.com) (DCMC) - manage access to applications in public clouds and on-premises
+* Use the [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com) - manage access to applications in public clouds and on-premises
 
 ## Scenario description
 
@@ -68,7 +68,7 @@ Ensure the following prerequisites are met:
 
 To integrate Oracle Hyperion EMP with Microsoft Entra ID:
 
-1. Sign in to [Datawiza Cloud Management Console](https://console.datawiza.com/) (DCMC).
+1. Sign in to [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com/).
 2. The Welcome page appears.
 3. Select the orange **Getting started** button. 
 
@@ -158,7 +158,7 @@ To provide more security for sign-ins, you can enforce Microsoft Entra multifact
 
 Learn more in the [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](../authentication/tutorial-enable-azure-mfa.md)
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as a [Global Administrator role.](../role-based-access-control/permissions-reference.md)
+1. Sign in to the [Azure portal](https://portal.azure.com) as an [Application Administrator role.](../role-based-access-control/permissions-reference.md)
 2. Select **Microsoft Entra ID** > **Manage** > **Properties**.
 3. Under **Properties** select **Manage security defaults**.
 4. Under **Enable Security Defaults**, select **Yes**.

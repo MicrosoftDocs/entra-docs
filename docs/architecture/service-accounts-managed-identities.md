@@ -22,7 +22,7 @@ Benefits of using managed identities:
 
 * With managed identities, credentials are fully managed, rotated, and protected by Azure. Identities are provided and deleted with Azure resources. Managed identities enable Azure resources to communicate with services that support Microsoft Entra authentication.
 
-* No one, including the Global Administrator, has access to the credentials, which can't be accidentally leaked by being included in code.
+* No one, including those assigned privileged roles, have access to the credentials, which can't be accidentally leaked by being included in code.
 
 ## Using managed identities
 

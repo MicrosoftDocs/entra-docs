@@ -6,7 +6,7 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: celestedg
-  ms.date: 04/29/2024
+  ms.date: 06/07/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -17,7 +17,11 @@ metadata:
 title: |
   Configure cross-tenant access settings for B2B collaboration
 introduction: |
+  [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
   Use External Identities cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of *inbound* access users in external Microsoft Entra organizations have to your resources, and the level of *outbound* access your users have to external organizations. They also let you trust multifactor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations. For details and planning considerations, see [Cross-tenant access in Microsoft Entra External ID](cross-tenant-access-overview.md).
+  
+  **Collaboration across clouds:** Partner organizations in different Microsoft clouds can set up B2B collaboration with each other. First, both organizations must enable collaboration with each other as described in [Configure Microsoft cloud settings](cross-cloud-settings.md). Then each organization can optionally modify their [inbound access settings](#modify-inbound-access-settings) and [outbound access settings](#modify-outbound-access-settings), as described below.
 
   > [!IMPORTANT]
   > Microsoft is beginning to move customers using cross-tenant access settings to a new storage model on August 30, 2023. You may notice an entry in your audit logs informing you that your cross-tenant access settings were updated as our automated task migrates your settings. For a brief window while the migration processes, you will be unable to make changes to your settings. If you are unable to make a change, you should wait a few moments and try the change again. Once the migration completes, [you will no longer be capped with 25kb of storage space](./faq.yml#how-many-organizations-can-i-add-in-cross-tenant-access-settings-) and there will be no more limits on the number of partners you can add.
@@ -34,7 +38,7 @@ prerequisites:
     - If you want to apply access settings to specific users, groups, or applications in an external organization, you need to contact the organization for information before configuring your settings. Obtain their user object IDs, group object IDs, or application IDs (*client app IDs* or *resource app IDs*) so you can target your settings correctly.
     - If you want to set up B2B collaboration with a partner organization in an external Microsoft Azure cloud, follow the steps in [Configure Microsoft cloud settings](cross-cloud-settings.md). An admin in the partner organization needs to do the same for your tenant.
     - Both allow/block list and cross-tenant access settings are checked at the time of invitation. If a user's domain is on the allowlist, they can be invited, unless the domain is explicitly blocked in the cross-tenant access settings. If a user's domain is on the blocklist, they can't be invited regardless of the cross-tenant access settings. If a user isn't on either list, we check the cross-tenant access settings to determine whether they can be invited.  
-
+    
 procedureSection:
   - title: |
       Configure default settings
@@ -187,8 +191,8 @@ procedureSection:
       You can't directly add the [Microsoft Admin Portals app](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#microsoft-admin-portals) to the inbound and outbound cross-tenant access settings in the Microsoft Entra admin center. However, you can add the apps listed below individually by using the [Microsoft Graph API](/graph/api/crosstenantaccesspolicy-post-partners).
 
       The following apps are part of the Microsoft Admin Portals app group: 
-      - Azure Portal (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
-      - Microsoft Entra Admin Center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
+      - Azure portal (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
+      - Microsoft Entra admin center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
       - Microsoft 365 Defender Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
       - Microsoft Intune Admin Center (80ccca67-54bd-44ab-8625-4b79c4dc7775)
       - Microsoft Purview Compliance Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
@@ -197,13 +201,13 @@ procedureSection:
 
       To customize the order of identity providers that your guest users can use to sign in when they accept your invitation, follow these steps.
 
-      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global Administrator or Security Administrator account. Then open the **Identity** service on the left hand side.
+      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator). Then open the **Identity** service on the left hand side.
 
       2. Select **External Identities** > **Cross-tenant access settings**.
 
-      3. Under **Organizational settings** select the link in the **Inbound access** column and the **B2B collaboration** tab.
-
-      4. Select the **Redemption order** tab.
+      3. On the **Default settings** tab, under **Inbound access settings**, select **Edit inbound defaults**.
+      
+      4. On the **B2B collaboration** tab, select the **Redemption order** tab.
 
       5. Move the identity providers up or down to change the order in which your guest users can sign in when they accept your invitation. You can also reset the redemption order to the default settings here.
 
@@ -215,7 +219,7 @@ procedureSection:
 
       1. Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
-      2. Sign in with a Global Administrator or Security Administrator account to your resource tenant.
+      2. Sign in as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) to your resource tenant.
 
       3. Run the following query to get the current redemption order:
 
@@ -263,7 +267,7 @@ procedureSection:
 
       To prevent your B2B guest users from redeeming their invite using their existing Microsoft accounts or creating a new one to accept the invitation, follow the steps below.
 
-      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) using a Global Administrator or Security Administrator account. Then open the **Identity** service on the left hand side.
+      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator). Then open the **Identity** service on the left hand side.
 
       2. Select **External Identities** > **Cross-tenant access settings**.
 
@@ -291,7 +295,7 @@ procedureSection:
 
       3. Select one or more of the following options:
 
-          - **Trust multi-factor authentication from Microsoft Entra tenants**: Select this checkbox to allow your Conditional Access policies to trust MFA claims from external organizations. During authentication, Microsoft Entra ID checks a user's credentials for a claim that the user completed MFA. If not, an MFA challenge is initiated in the user's home tenant.  
+          - **Trust multifactor authentication from Microsoft Entra tenants**: Select this checkbox to allow your Conditional Access policies to trust MFA claims from external organizations. During authentication, Microsoft Entra ID checks a user's credentials for a claim that the user completed MFA. If not, an MFA challenge is initiated in the user's home tenant.  
 
           - **Trust compliant devices**: Allows your Conditional Access policies to trust [compliant device claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) from an external organization when their users access your resources.
 

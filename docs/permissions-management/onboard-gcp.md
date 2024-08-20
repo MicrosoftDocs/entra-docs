@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/20/2023
+ms.date: 05/13/2024
 ms.author: jfields
 ---
 
@@ -15,7 +15,7 @@ ms.author: jfields
 This article describes how to onboard a Google Cloud Platform (GCP) project in Microsoft Entra Permissions Management.
 
 > [!NOTE]
-> You must have the Global Administrator role assignment to perform the tasks in this article.
+> You must be a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) to perform the tasks in this article.
 
 ## Explanation
 
@@ -45,7 +45,7 @@ There are several moving parts across GCP and Azure, which should be configured 
 
 1. On the **Permissions Management Onboarding - Microsoft Entra OIDC App Creation** page, enter the **OIDC Azure App Name**.
 
-    This app is used to set up an OpenID Connect (OIDC) connection to your GCP project. OIDC is an interoperable authentication protocol based on the OAuth 2.0 family of specifications. The scripts generated creates the app of this specified name in your Microsoft Entra tenant with the right configuration.
+    This app is used to set up an OpenID Connect (OIDC) connection to your GCP project. OIDC is an interoperable authentication protocol based on the OAuth 2.0 family of specifications. The scripts generated create the app of this specified name in your Microsoft Entra tenant with the right configuration.
 
 1. To create the app registration, copy the script and run it in your command-line app.
 

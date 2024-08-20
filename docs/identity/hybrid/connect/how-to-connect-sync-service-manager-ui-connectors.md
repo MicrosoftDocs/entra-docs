@@ -26,7 +26,7 @@ The Connectors tab is used to manage all systems the sync engine is connected to
 | --- | --- |
 | Create |Do not use. For connecting to additional AD forests, use the installation wizard. |
 | Properties |Used for domain and OU filtering. |
-| [Delete](#delete) |Used to either delete the data in the connector space or to delete connection to a forest. |
+| Delete |Do not use. |
 | [Configure Run Profiles](#configure-run-profiles) |Except for domain filtering, nothing to configure here. You can use this action to see already configured run profiles. |
 | Run |Used to start a one-off run of a profile. |
 | Stop |Stops a Connector currently running a profile. |
@@ -36,15 +36,7 @@ The Connectors tab is used to manage all systems the sync engine is connected to
 | Refresh Schema |Refreshes the cached schema. It is preferred to use the option in the installation wizard instead, since that also updates sync rules. |
 | [Search Connector Space](#search-connector-space) |Used to find objects and to Follow an object and its data through the system. |
 
-### Delete
-The delete action is used for two different things.  
-![Screenshot that shows the "Delete Connector" window with "Delete connector space only" selected.](./media/how-to-connect-sync-service-manager-ui-connectors/connectordelete.png)
 
-The option **Delete connector space only** removes all data, but keep the configuration.
-
-The option **Delete Connector and connector space** removes the data, the configuration and all the sync rules associated with the connector. This option is used when you do not want to connect to a forest anymore.
-
-Both options sync all objects and update the metaverse objects. This action is a long running operation.
 
 ### Configure Run Profiles
 This option allows you to see the run profiles configured for a Connector.

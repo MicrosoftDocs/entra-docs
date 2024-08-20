@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Settling music so that I can control who has access to Settling music, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -95,8 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	> [!NOTE]
 	> Please use the below URL for the Logout URL.
-	```Logout URL
-    https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
+	```Logout URL https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
     ```
 
 <a name='create-an-azure-ad-test-user'></a>

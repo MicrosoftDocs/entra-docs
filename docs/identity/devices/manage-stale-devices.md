@@ -64,7 +64,7 @@ To efficiently cleanup stale devices in your environment, you should define a re
 > [!CAUTION]
 > If your organization uses BitLocker drive encryption, you should ensure that BitLocker recovery keys are either backed up or no longer needed before deleting devices. Failure to do this may cause loss of data.
 
-If you use features like [Autopilot](/autopilot/registration-overview#deregister-from-autopilot-using-intune) or [Universal Print](/universal-print/portal/register-unregister-printers), those devices should be cleaned up in their respective admin portals.
+If you use features like [Autopilot](/autopilot/registration-overview#deregister-from-autopilot-using-intune) or [Universal Print](/universal-print/reference/portal/register-unregister-printers), those devices should be cleaned up in their respective admin portals.
 
 ### Cleanup account
 
@@ -106,7 +106,7 @@ To clean up Microsoft Entra ID:
 > - Deleting devices in your on-premises Active Directory or Microsoft Entra ID does not remove registration on the client. It will only prevent access to resources using device as an identity (such as Conditional Access). Read additional information on how to [remove registration on the client](faq.yml).
 > - Deleting a Windows 10 or newer device only in Microsoft Entra ID will re-synchronize the device from your on-premises using Microsoft Entra Connect but as a new object in "Pending" state. A re-registration is required on the device.
 > - Removing the device from sync scope for Windows 10 or newer /Server 2016 devices will delete the Microsoft Entra device. Adding it back to sync scope will place a new object in "Pending" state. A re-registration of the device is required.
-> - If you are not using Microsoft Entra Connect for Windows 10 or newer devices to synchronize (e.g. ONLY using AD FS for registration), you must manage lifecycle similar to Windows 7/8 devices.
+> - If you are not using Microsoft Entra Connect for Windows 10 or newer devices to synchronize (such as ONLY using AD FS for registration), you must manage lifecycle similar to Windows 7/8 devices.
 
 <a name='azure-ad-joined-devices'></a>
 
@@ -115,7 +115,7 @@ To clean up Microsoft Entra ID:
 Disable or delete Microsoft Entra joined devices in the Microsoft Entra ID.
 
 > [!NOTE]
-> - Deleting a Microsoft Entra device does not remove registration on the client. It will only prevent access to resources using device as an identity (e.g Conditional Access). 
+> - Deleting a Microsoft Entra device does not remove registration on the client. It will only prevent access to resources using device as an identity (such as Conditional Access). 
 > - Read more on [how to unjoin on Microsoft Entra ID](faq.yml) 
 
 <a name='azure-ad-registered-devices'></a>
@@ -125,7 +125,7 @@ Disable or delete Microsoft Entra joined devices in the Microsoft Entra ID.
 Disable or delete Microsoft Entra registered devices in the Microsoft Entra ID.
 
 > [!NOTE]
-> - Deleting a Microsoft Entra registered device in Microsoft Entra ID does not remove registration on the client. It will only prevent access to resources using device as an identity (e.g. Conditional Access).
+> - Deleting a Microsoft Entra registered device in Microsoft Entra ID does not remove registration on the client. It will only prevent access to resources using device as an identity (such as Conditional Access).
 > - Read more on [how to remove a registration on the client](faq.yml)
 
 ## Clean up stale devices  
@@ -206,7 +206,7 @@ When configured, BitLocker keys for Windows 10 or newer devices are stored on th
 When you delete a Microsoft Entra device that was associated with a Windows Autopilot object the following three scenarios can occur if the device will be repurposed in future:
 
 - With Windows Autopilot user-driven deployments without using pre-provisioning, a new Microsoft Entra device is created, but isn’t be tagged with the ZTDID.
-- With Windows Autopilot self-deploying mode deployments, they'll fail because an associate Microsoft Entra device can’t be found. (This failure is a security mechanism to make sure that no "imposter" devices try to join Microsoft Entra ID with no credentials.) The failure indicates a ZTDID mismatch.
+- With Windows Autopilot self-deploying mode deployments, they'll fail because an associate Microsoft Entra device can’t be found. (This failure is a security mechanism to make sure that no "impostor" devices try to join Microsoft Entra ID with no credentials.) The failure indicates a ZTDID mismatch.
 - With Windows Autopilot pre-provisioning deployments, they fail because an associated Microsoft Entra device can’t be found. (Behind the scenes, pre-provisioning deployments use the same self-deploying mode process, so they enforce the same security mechanisms.)
 
 Use the [Get-MgDeviceManagementWindowsAutopilotDeviceIdentity](/powershell/module/microsoft.graph.devicemanagement.enrollment/get-mgdevicemanagementwindowsautopilotdeviceidentity) to list of Windows Autopilot devices in your organization and compare it to the list of devices to clean up.

@@ -6,8 +6,8 @@ metadata:
   author: MicrosoftGuyJFlo
   ms.author: joflore
   manager: amycolannino
-  ms.reviewer: calebb, lhuangnorth, spunukol
-  ms.date: 07/18/2023
+  ms.reviewer: lhuangnorth
+  ms.date: 05/29/2024
   ms.service: entra-id
   ms.subservice: conditional-access
   ms.topic: how-to
@@ -35,7 +35,7 @@ introduction: |
   > application protection policies. For a list of some common client apps, see
   > [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy).
   > If your application is not listed there, contact the application developer.
-  > In order to require approved client apps for iOS and Android devices, these
+  > In order to require approved client apps or to enforce app protection policies for iOS and Android devices, these
   > devices must first register in Microsoft Entra ID.
 
   > [!NOTE]
@@ -60,16 +60,15 @@ procedureSection:
   - title: |
       Require approved client apps or app protection policy with mobile devices.
     summary: |
-      The following steps will help create a Conditional Access policy requiring
+      The following steps help create a Conditional Access policy requiring
       an approved client app **or** an app protection policy when using an
-      iOS/iPadOS or Android device. This policy will also prevent the use of
+      iOS/iPadOS or Android device. This policy prevents the use of
       Exchange ActiveSync clients using basic authentication on mobile devices.
       This policy works in tandem with an
       [app protection policy created in Microsoft Intune](/mem/intune/apps/app-protection-policies).
 
-      Organizations can choose to deploy this policy using the steps outlined
-      below or using the
-      [Conditional Access templates](concept-conditional-access-policy-common.md#conditional-access-templates).
+      Organizations can choose to deploy this policy using the following steps or using the
+      [Conditional Access templates](concept-conditional-access-policy-common.md).
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
@@ -112,7 +111,7 @@ procedureSection:
   - title: |
       Block Exchange ActiveSync on all devices
     summary: |
-      This policy will block all Exchange ActiveSync clients using basic
+      This policy blocks all Exchange ActiveSync clients using basic
       authentication from connecting to Exchange Online.
     steps: 
       - |

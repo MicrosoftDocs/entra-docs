@@ -53,7 +53,7 @@ You can retrieve the risky users and their risky histories in ID Protection.
 Get-MgRiskyUser -Filter "RiskLevel eq 'high'" | Format-Table UserDisplayName, RiskDetail, RiskLevel, RiskLastUpdatedDateTime
 
 #  List history of a specific user with detailed risk detection
-Get-MgRiskyUserHistory -RiskyUserId 375844b0-2026-4265-b9f1-ee1708491e05| Format-Table RiskDetail, RiskLastUpdatedDateTime, @{N="RiskDetection";E={($_). Activity.RiskEventTypes}}, RiskState, UserDisplayName
+Get-MgRiskyUserHistory -RiskyUserId 00aa00aa-bb11-cc22-dd33-44ee44ee44ee | Format-Table RiskDetail, RiskLastUpdatedDateTime, @{N="RiskDetection";E={($_). Activity.RiskEventTypes}}, RiskState, UserDisplayName
 
 ```
 
@@ -63,7 +63,7 @@ You can confirm users compromised and flag them as high risky users in ID Protec
 
 ```powershell
 # Confirm Compromised on two users
-Confirm-MgRiskyUserCompromised -UserIds "577e09c1-5f26-4870-81ab-6d18194cbb51","bf8ba085-af24-418a-b5b2-3fc71f969bf3"
+Confirm-MgRiskyUserCompromised -UserIds "11bb11bb-cc22-dd33-ee44-55ff55ff55ff","22cc22cc-dd33-ee44-ff55-66aa66aa66aa"
 ```
 
 ## Dismiss risky users using PowerShell

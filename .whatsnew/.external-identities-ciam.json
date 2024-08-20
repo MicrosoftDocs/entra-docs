@@ -11,8 +11,8 @@
         "minAdditionsToFile" : 10,
         "maxFilesChanged": 50,
         "labels": [
-            "label:active-directory/svc",
-            "label:ciam/subsvc"
+            "label:entra-external-id/svc",
+            "label:customers/subsvc"
         ]
     },
     "areas": [

@@ -6,7 +6,7 @@ description: Learn how admins can use a Conditional Access Policy to require spe
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/19/2024
+ms.date: 05/13/2024
 
 ms.author: justinha
 author: inbarckms
@@ -76,6 +76,8 @@ When a user accesses a resource protected by an authentication strength Conditio
 Let's suppose they next access a resource protected by Phishing-resistant MFA authentication strength. At this point, they'll be prompted to provide a phishing-resistant authentication method, such as Windows Hello for Business. 
 
 If the user hasn't registered for any methods that satisfy the authentication strength, they're redirected to [combined registration](concept-registration-mfa-sspr-combined.md#interrupt-mode). <!-- making this a comment for now because we have a limitation. Once it is fixed we can remove the comment::: Only users who satisfy MFA are redirected to register another strong authentication method.-->
+
+Users are required to register only one authentication method that satisfies the authentication strength requirement. 
 
 If the authentication strength doesn't include a method that the user can register and use, the user is blocked from sign-in to the resource. 
 

@@ -1,17 +1,13 @@
 ---
 title: 'Tutorial: Configure Postman for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Postman.
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: f3687101-9bec-4f18-9884-61833f4f58c3
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
-ms.date: 08/16/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Postman so that I can streamline the user management process and ensure that users have the appropriate access to Postman.
 ---
@@ -34,7 +30,7 @@ This tutorial describes the steps you need to perform in both Postman and Micros
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Postman tenant on the [Enterprise plan](https://www.postman.com/pricing/).
 * A user account in Postman with Admin permissions.
 

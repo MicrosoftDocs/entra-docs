@@ -54,17 +54,17 @@ ms.topic: quickstart
 > 
 > #### Step 3: Admin consent
 > 
-> If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires Admin consent: a Global Administrator of your directory must give consent to your application. Select one of the options below depending on your role:
+> If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires admin consent: A Cloud Application Administrator of your directory must give consent to your application. Select one of the options below depending on your role:
 > 
-> ##### Global tenant administrator
+> ##### Cloud Application Administrator
 > 
-> If you are a Global Administrator, go to **API Permissions** page select **Grant admin consent for Enter_the_Tenant_Name_Here**.
+> If you're a Cloud Application Administrator of your tenant, go to **API Permissions** page select **Grant admin consent for Enter_the_Tenant_Name_Here**.
 > > [!div id="apipermissionspage"]
 > > [Go to the API Permissions page]()
 > 
 > ##### Standard user
 > 
-> If you're a standard user of your tenant, then you need to ask a Global Administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
+> If you're a standard user of your tenant, then you need to ask a Cloud Application Administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
 > 
 > ```url
 > https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here
@@ -94,7 +94,7 @@ ms.topic: quickstart
 > 
 > ### MSAL Java
 > 
-> [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by using the application own identity instead of delegated permissions. The authentication flow used in this case is known as *[client credentials oauth flow](v2-oauth2-client-creds-grant-flow.md)*. For more information on how to use MSAL Java with daemon apps, see [this article](scenario-daemon-overview.md).
+> [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by using the application own identity instead of delegated permissions. The authentication flow used in this case is known as *[client credentials oauth flow](v2-oauth2-client-creds-grant-flow.md)*. For more information on how to use MSAL Java with daemon apps, see [this article](scenario-daemon-app-registration.md).
 > 
 > Add MSAL4J to your application by using Maven or Gradle to manage your dependencies by making the following changes to the application's pom.xml (Maven) or build.gradle (Gradle) file.
 > 
@@ -185,4 +185,4 @@ ms.topic: quickstart
 > To learn more about daemon applications, see the scenario landing page.
 > 
 > > [!div class="nextstepaction"]
-> > [Daemon application that calls web APIs](scenario-daemon-overview.md)
+> > [Daemon application that calls web APIs](scenario-daemon-app-registration.md)

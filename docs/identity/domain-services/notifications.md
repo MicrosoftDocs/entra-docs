@@ -44,7 +44,7 @@ The list of email recipients for Domain Services should be composed of people wh
 
 You can add up to five more recipients for email notifications. If you want more than five recipients for email notifications, create a distribution list and add that to the notification list instead.
 
-You can also choose to have all *Global Administrators* of the Microsoft Entra directory and every member of the *AAD DC Administrators* group receive email notifications. Domain Services only sends notification to up to 100 email addresses, including the list of global administrators and AAD DC Administrators.
+You can also choose to have all *Global Administrators* of the Microsoft Entra directory and every member of the *AAD DC Administrators* group receive email notifications. Domain Services only sends notification to up to 100 email addresses, including the list of Global Administrators and AAD DC Administrators.
 
 ## Configure email notifications
 
@@ -68,7 +68,7 @@ If an alert is resolved, the alert is cleared from the Microsoft Entra admin cen
 
 ### Why can I not edit the notification settings?
 
-If you're unable to access the notification settings page in the Microsoft Entra admin center, you don't have the permissions to edit the managed domain. Contact a global administrator to either get permissions to edit Domain Services resource or be removed from the recipient list.
+If you're unable to access the notification settings page in the Microsoft Entra admin center, you don't have the permissions to edit the managed domain. Contact a Global Administrator to either get permissions to edit Domain Services resource or be removed from the recipient list.
 
 ### I don't seem to be receiving email notifications even though I provided my email address. Why?
 

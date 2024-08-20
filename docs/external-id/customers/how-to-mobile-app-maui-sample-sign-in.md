@@ -17,6 +17,8 @@ ms.custom: developer, devx-track-dotnet
 
 # Sign in users in a sample .NET MAUI Android application
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 This how-to guide uses a sample .NET Multi-platform App UI (.NET MAUI) to show how to add authentication to an Android application by using an external tenant. The sample application enables users to sign in and sign out. The sample .NET MAUI Android application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for .NET to handle authentication.
 
 In this article, you do the following tasks:
@@ -40,7 +42,7 @@ In this article, you do the following tasks:
 [!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
 [!INCLUDE [active-directory-b2c-app-integration-add-platform](./includes/register-app/add-platform-redirect-url-dotnet-maui.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -74,13 +76,13 @@ git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
 
 .NET MAUI apps are designed to run on multiple operating systems and devices. You'll need to select which target you want to test and debug your app with.
 
-Set the **Debug Target** in the Visual Studio toolbar to the device you want to debug and test with. The following steps demonstrate setting the **Debug Target** to _Android_:
+Set the **Debug Target** in the Visual Studio toolbar to the device you want to debug and test with. The following steps demonstrate setting the **Debug Target** to *Android*:
 
 1. Select **Debug Target** drop-down.
 1. Select **Android Emulators**. 
 1. Select emulator device.
 
-Run the app by pressing _F5_ or select the _play button_ at the top of Visual Studio.
+Run the app by pressing *F5* or select the *play button* at the top of Visual Studio.
 
 1. You can now test the sample .NET MAUI Android app. After you run the app, the Android app window appears in an emulator:
 

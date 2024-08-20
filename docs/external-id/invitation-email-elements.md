@@ -1,25 +1,27 @@
 ---
-title: Elements of the B2B invitation email
-description: Microsoft Entra B2B collaboration invitation email template
+title: About B2B Invitations
+description: Learn about the B2B collaboration invitation email you can send to business partners and external guest users who need to authenticate and access your apps.
 
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 10/06/2023
+ms.date: 06/07/2024
 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 ms.collection: M365-identity-device-management
 # Customer intent: As a B2B collaboration user, I want to understand the elements of the invitation email, so that I can effectively invite partners to join my organization and provide them with the necessary information to make an informed decision.
 ---
 
-# The elements of the B2B collaboration invitation email
+# B2B invitation email layout and language settings
 
-Invitation emails are a critical component to bring partners on board as Microsoft Entra B2B collaboration users. It’s [not required that you send an email to invite someone using B2B collaboration](redemption-experience.md#redemption-process-through-a-direct-link), but it gives the user all the information they need to decide if they accept your invite or not. It also gives them a link they can always refer to in the future when they need to return to your resources.
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-![Screenshot showing the B2B invitation email](media/invitation-email-elements/invitation-email.png)
+Invitation emails play a key role in welcoming partners as Microsoft Entra B2B collaboration users. While [not mandatory](redemption-experience.md#redemption-process-through-a-direct-link), these emails provide essential information to help recipients make an informed decision about accepting your invitation. They also include a link for easy future access to your resources.
+
+:::image type="content" source="media/invitation-email-elements/invitation-email.png" alt-text="Screenshot showing the B2B invitation email.":::
 
 ## Explaining the email
 
@@ -45,47 +47,33 @@ The reply-to email is set to the inviter's email when available, so that replyin
 
 ### Phishing warning
 
-The email starts with a brief warning to the user about phishing, alerting them that they should only accept invitations they're expecting. It’s good practice to make sure the partners you’re inviting won't be surprised by your invitation by mentioning it to them ahead of time.
+The email starts with a brief warning to the user about phishing, alerting them that they should only accept invitations they're expecting. It’s good practice to let partners know in advance to expect your invitation.
 
-![Image of the phishing warning in the email](media/invitation-email-elements/phishing-warning.png)
+![Screenshot of the phishing warning in the email.](media/invitation-email-elements/phishing-warning.png)
 
 ### Inviter's information and invitation message
 
-The email includes the name and primary domain associated with the organization sending the invitation. This information should help the invitee make an informed decision about accepting the invitation. The inviter can include a message as part of their invitation to the [directory, group, or app](add-users-administrator.yml), or when they [use the invitation API](customize-invitation-api.md). The message is highlighted in the main section of the email. The inviter’s name and profile image are also included if they’ve set one. The message itself is a text area, so for security reasons, it doesn't process HTML tags.
+The email includes the name and primary domain associated with the organization sending the invitation. This information should help the invitee make an informed decision about accepting the invitation. The inviter can include a message as part of their invitation to the [directory, group, or app](add-users-administrator.yml), or when they [use the invitation API](customize-invitation-api.md). The message is highlighted in the main section of the email. The inviter’s name and profile image are also included if they have one. The message itself is a text area, so for security reasons, it doesn't process HTML tags.
 
-![Image of the invitation message in the email](media/invitation-email-elements/invitation-message-inviters-info.png)
+![Screenshot of the invitation message in the email.](media/invitation-email-elements/invitation-message-inviters-info.png)
 
 ### Accept invitation button or link and redirect URL
 
-The next section of the email contains information about where the invitee will be taken after they accept the invitation, and a button or link to do so.  In the future, the invitee can always use this link to return to your resources directly.
+The next section of the email contains information about where the invitee will be taken after they accept the invitation, and a button or link to do so. In the future, the invitee can always use this link to return to your resources directly.
 
-![Image of the accept button and redirect URL in the email](media/invitation-email-elements/accept-button.png)
+![Screenshot of the accept button and redirect URL in the email.](media/invitation-email-elements/accept-button.png)
 
 ### Footer section
 
-The footer contains more information about the invitation being sent. There's always an option for the invitee to block future invitations. If the organization has [set a privacy statement](~/fundamentals/properties-area.yml), the link to the statement is displayed here.  Otherwise, a note indicates the organization hasn't set a privacy statement.
+The footer contains more information about the invitation being sent. If the organization [configured a privacy statement](~/fundamentals/properties-area.yml), the link to the statement is displayed here. Otherwise, a note indicates the organization's privacy statement isn't available.
 
-![Image of the footer section in the email](media/invitation-email-elements/footer-section.png)
-
-### Blocking an organization (unsubscribing)
-
-In the invitation from an organization, the footer contains an option to **Block future invitations**. A guest user can select this link to block any future invitations from the organization. This action also adds the organization to the user's unsubscribed list at [https://invitations.microsoft.com/unsubscribe/manage](https://invitations.microsoft.com/unsubscribe/manage).
-
-### Viewing organizations you've blocked
-
-A guest user can follow these steps to view or export the organizations they've blocked:
-
-1. Go to [https://invitations.microsoft.com/unsubscribe/manage](https://invitations.microsoft.com/unsubscribe/manage).
-2. Enter your email and follow the sign-in steps for email one-time passcode authentication.
-3. View the organizations you've blocked, or export the names using copy and paste.
-   > [!NOTE]
-   > If you want to allow an organization you’ve blocked to invite you again, you can choose the organization and select **Next**.
+:::image type="content" source="media/invitation-email-elements/footer-section.png" alt-text="Screenshot showing the footer section in the email.":::
 
 ## How the language is determined
 
-The language presented to the guest user in the invitation email is determined by the following settings. These settings are listed in order of precedence. If a setting isn’t configured, the next setting in the list determines the language.
+The following settings determine the language that is presented to the guest user in the invitation email. These settings are listed in order of precedence. If a setting isn’t configured, the next setting in the list determines the language.
 
-- The **messageLanguage** property of the [invitedUserMessageInfo](/graph/api/resources/invitedusermessageinfo) object if the Create invitation API is used
+- The **messageLanguage** property of the [invitedUserMessageInfo](/graph/api/resources/invitedusermessageinfo) object if the [Create invitation API](/graph/api/invitation-post) is used
 -	The **preferredLanguage** property specified in the guest's [user object](/graph/api/resources/user)
 -	The **Notification language** set in the properties of the guest user’s home tenant (for Microsoft Entra tenants only)
 -	The **Notification language** set in the properties of the resource tenant

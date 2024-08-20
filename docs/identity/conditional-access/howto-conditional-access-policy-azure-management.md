@@ -1,16 +1,16 @@
 ---
 title: Require MFA for Azure management with Conditional Access
-description: Create a custom Conditional Access policy to require multifactor authentication for Azure management tasks
+description: Create a custom Conditional Access policy to require multifactor authentication for Azure management tasks.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/18/2023
+ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: calebb, lhuangnorth
+ms.reviewer: lhuangnorth
 ---
 # Common Conditional Access policy: Require MFA for Azure management
 
@@ -35,14 +35,14 @@ To protect these privileged resources, Microsoft recommends requiring multifacto
 
 ## Create a Conditional Access policy
 
-The following steps will help create a Conditional Access policy to require users who access the [Windows Azure Service Management API](concept-conditional-access-cloud-apps.md#windows-azure-service-management-api) suite do multifactor authentication.
+The following steps help create a Conditional Access policy to require users who access the [Windows Azure Service Management API](concept-conditional-access-cloud-apps.md#windows-azure-service-management-api) suite do multifactor authentication.
 
 > [!CAUTION]
 > Make sure you understand how Conditional Access works before setting up a policy to manage access to Windows Azure Service Management API. Make sure you don't create conditions that could block your own access to the portal.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
-1. Select **Create new policy**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.

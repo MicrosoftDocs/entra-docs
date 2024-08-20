@@ -38,7 +38,7 @@ Deploying your application to production (for instance in Azure Web apps) normal
 
 ### Running locally
 
-To debug your application locally, temporarily disable Internet Explorer's _Protected Mode_ during your debugging session.
+To debug your application locally, temporarily disable Internet Explorer's *Protected Mode* during your debugging session.
 
   1. In Internet Explorer, select **Tools** > **Internet Options** > **Security** tab > **Internet** zone.
   1. Clear the **Enable Protected Mode (requires restarting Internet Explorer)** checkbox.

@@ -73,7 +73,7 @@ The following screenshot is conditions and actions for the four rules, on the Si
 Configure Conditional Access policies to match Okta conditions. However, in some scenarios, you might need more setup:
 
 * Okta network locations to named locations in Microsoft Entra ID 
-  *  [Using the location condition in a Conditional Access policy](~/identity/conditional-access/location-condition.md)
+  *  [Using the location condition in a Conditional Access policy](../conditional-access/concept-assignment-network.md)
 * Okta device trust to device-based Conditional Access (two options to evaluate user devices):
   * See the following section, **Microsoft Entra hybrid join configuration** to synchronize Windows devices, such as Windows 10, Windows Server 2016 and 2019, to Microsoft Entra ID
   * See the following section, **Configure device compliance**
@@ -128,7 +128,7 @@ If you deployed Microsoft Entra hybrid join, you can deploy another group policy
 
 Before you convert to Conditional Access, confirm the base MFA tenant settings for your organization.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). 
 2. Browse to **Identity** > **Users** > **All users**.
 3. Select **Per-user MFA** on the top menu of the **Users** pane.
 4. The legacy Microsoft Entra multifactor authentication portal appears. Or select [Microsoft Entra multifactor authentication portal](https://aka.ms/mfaportal).
@@ -167,7 +167,7 @@ Before you get started:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. Browse to **Identity**.
-3. To to learn how to create a policy in Microsoft Entra ID. See, [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md).
+3. To learn how to create a policy in Microsoft Entra ID. See, [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md).
 4. Create a device trust-based Conditional Access rule.
 
    ![Screenshot of entries for Require Trusted Devices for Access, under Conditional Access.](media/migrate-okta-sign-on-policies-conditional-access/test-user.png)

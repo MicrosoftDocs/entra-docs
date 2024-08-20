@@ -11,13 +11,10 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
-ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux
+ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux, linux-related-content
 ---
 
 # Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
-
-> [!CAUTION]
-> This article references CentOS, a Linux distribution that is nearing End Of Life (EOL) status. Please consider your use and plan accordingly. For more information, see the [CentOS End Of Life guidance](/azure/virtual-machines/workloads/centos/centos-end-of-life).
 
 To improve the security of Linux virtual machines (VMs) in Azure, you can integrate with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication. This functionality allows organizations to manage access to VMs with Azure role-based access control (RBAC) and Conditional Access policies.
 
@@ -42,13 +39,15 @@ The following Linux distributions are currently supported for deployments in a s
 | Distribution | Version |
 | --- | --- |
 | Common Base Linux Mariner (CBL-Mariner) | CBL-Mariner 1, CBL-Mariner 2 |
+| AlmaLinux | AlmaLinux 8, AlmaLinux 9 |
 | CentOS | CentOS 7, CentOS 8 |
 | Debian | Debian 9, Debian 10, Debian 11, Debian 12 |
 | openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1+ |
 | Oracle | Oracle Linux 8, Oracle Linux 9 |
-| RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+ |
+| RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+, RHEL 9.0+ |
+| Rocky | Rocky 8, Rocky 9 |
 | SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1+ |
-| Ubuntu Server | Ubuntu Server 16.04 to Ubuntu Server 22.04, all minor version after Ubuntu 22.04 |
+| Ubuntu | Ubuntu 16.04 to Ubuntu 24.04 |
 
 The following Azure regions are currently supported for this feature:
 
@@ -455,7 +454,7 @@ To uninstall old packages:
 
 1. Log in as a local user with admin privileges.
 1. Make sure there are no logged-in Microsoft Entra users. Call the `who -u` command to see who is logged in. Then use `sudo kill <pid>` for all session processes that the previous command reported.
-1. Run `sudo apt remove --purge aadlogin` (Ubuntu/Debian), `sudo yum remove aadlogin` (RHEL or CentOS), or `sudo zypper remove aadlogin` (openSUSE or SLES).
+1. Run `sudo apt remove --purge aadlogin` (Ubuntu/Debian), `sudo yum remove aadlogin` (RHEL), or `sudo zypper remove aadlogin` (openSUSE or SLES).
 1. If the command fails, try the low-level tools with scripts disabled:
    1. For Ubuntu/Debian, run `sudo dpkg --purge aadlogin`. If it's still failing because of the script, delete the `/var/lib/dpkg/info/aadlogin.prerm` file and try again.
    1. For everything else, run `rpm -e --noscripts aadogin`.
@@ -532,7 +531,7 @@ One solution is to remove `AllowGroups` and `DenyGroups` statements from *sshd_c
 
 Another solution is to move `AllowGroups` and `DenyGroups` to a `match user` section in *sshd_config*. Make sure the match template excludes Microsoft Entra users.
 
-### Getting Permission Denied when trying to connect from Azure Shell to Linux Red Hat/Oracle/CentOS 7.X VM.
+### Getting Permission Denied when trying to connect from Azure Shell to Linux Red Hat/Oracle 7.X VM.
 
 The OpenSSH server version in the target VM 7.4 is too old. Version incompatible with OpenSSH client version 8.8. Refer to [RSA SHA256 certificates no longer work](https://bugzilla.mindrot.org/show_bug.cgi?id=3351) for more information.
 

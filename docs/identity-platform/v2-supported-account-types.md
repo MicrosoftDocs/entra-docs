@@ -15,7 +15,7 @@ ms.topic: concept-article
 
 # Supported account types
 
-This article explains what account types (sometimes called _audiences_) are supported in the Microsoft identity platform applications.
+This article explains what account types (sometimes called *audiences*) are supported in the Microsoft identity platform applications.
 
 <!-- This section can be in an include for many of the scenarios (SPA, web app signing-in users, protecting a web API, Desktop (depending on the flows), Mobile -->
 
@@ -23,10 +23,10 @@ This article explains what account types (sometimes called _audiences_) are supp
 
 In the Microsoft Azure public cloud, most types of apps can sign in users with any audience:
 
-- If you're writing a line-of-business (LOB) application, you can sign in users in your own organization. Such an application is sometimes called _single-tenant_.
+- If you're writing a line-of-business (LOB) application, you can sign in users in your own organization. Such an application is sometimes called *single-tenant*.
 - If you're an independent software vendor (ISV), you can write an application that signs in users:
 
-  - In any organization. Such an application is called a _multitenant_ web application. You'll sometimes read that it signs in users with their work or school accounts.
+  - In any organization. Such an application is called a *multitenant* web application. You'll sometimes read that it signs in users with their work or school accounts.
   - With their work or school or personal Microsoft accounts.
   - With only personal Microsoft accounts.
 

@@ -14,7 +14,7 @@ titleSuffix: Microsoft identity platform
 
 # Custom Extension for OnAttributeCollectionSubmit event reference (preview)
 
-**Applies to:** Microsoft Entra External ID customer configurations
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 To modify the sign-up experience for your customer self-service sign-up user flows, you can create a custom authentication extension and invoke it at specific points in the user flow. The OnAttributeCollectionSubmit event occurs after the user enters and submits attributes and can be used to validate the information provided by the user. For example, you can validate an invitation code or partner number, modify an address format, allow the user to continue, or show a validation or block page. The following actions can be configured:
 

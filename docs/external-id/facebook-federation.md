@@ -6,7 +6,7 @@ description: Federate with Facebook to enable external users (guests) to sign in
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 03/26/2024
+ms.date: 06/19/2024
 
 ms.author: mimart
 author: msmimart
@@ -18,8 +18,10 @@ ms.collection: M365-identity-device-management
 
 # Add Facebook as an identity provider for External ID
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 > [!TIP]
-> This article describes adding Facebook as an identity provider for B2B collaboration. If your tenant is configured for customer identity and access management, see [Add Facebook as an identity provider](customers/how-to-facebook-federation-customers.md) for customers.
+> This article describes adding Facebook as an identity provider for B2B collaboration in workforce tenants. For instructions for external tenants, see [Add Facebook as an identity provider](customers/how-to-facebook-federation-customers.md).
 
 You can add Facebook to your self-service sign-up user flows so that users can sign in to your applications using their own Facebook accounts. To allow users to sign in using Facebook, you first need to [enable self-service sign-up](self-service-sign-up-user-flow.yml) for your tenant. After you add Facebook as an identity provider, set up a user flow for the application and select Facebook as one of the sign-in options.
 
@@ -78,14 +80,15 @@ Now you set the Facebook client ID and client secret, either by entering it in t
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **External Identities** > **All identity providers**, then select **Facebook**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Browse to **Identity** > **External Identities** > **All identity providers**, then on the **Facebook** line, select **Configure**.
 1. For the **Client ID**, enter the **App ID** of the Facebook application that you created earlier.
 1. For the **Client secret**, enter the **App secret** that you recorded.
 
    :::image type="content" source="media/facebook-federation/add-social-identity-provider-page.png" alt-text="Screenshot showing the Add social identity provider page.":::
 
 1. Select **Save**.
+
 ### To configure Facebook federation by using PowerShell
 
 1. Install the latest version of the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation).
@@ -95,7 +98,7 @@ Now you set the Facebook client ID and client secret, either by entering it in t
    Connect-MgGraph -Scopes "IdentityProvider.ReadWrite.All"
    ```
 
-1. At the sign-in prompt, sign in with the managed Global Administrator account.  
+1. At the sign-in prompt, sign in as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Run the following commands:
 
    ```powershell
@@ -116,13 +119,14 @@ Now you set the Facebook client ID and client secret, either by entering it in t
    > Use the client ID and client secret from the app you created in the Facebook developer console. For more information, see the [New-MgIdentityProvider](/powershell/microsoftgraph/authentication-commands) article.
 
 ## How do I remove Facebook federation?
+
 You can delete your Facebook federation setup. If you do so, any users who have signed up through user flows with their Facebook accounts will no longer be able to sign in. 
 
 ### To delete Facebook federation in the Microsoft Entra admin center: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
-1. Select the **Facebook** line, and then select **Delete**. 
+1. Select the **Facebook** line. Select **Configured**, and then select **Delete**.
 1. Select **Yes** to confirm deletion.
 
 ### To delete Facebook federation by using PowerShell: 
@@ -134,7 +138,7 @@ You can delete your Facebook federation setup. If you do so, any users who have 
    Connect-MgGraph -Scopes "IdentityProvider.ReadWrite.All"
    ```
 
-1. In the sign-in prompt, sign in with the managed Global Administrator account.  
+1. In the sign-in prompt, sign in as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).  
 1. Enter the following command:
 
    ```powershell
@@ -144,8 +148,7 @@ You can delete your Facebook federation setup. If you do so, any users who have 
    > [!NOTE]
    > For more information, see [Remove-MgIdentityProvider](/powershell/module/microsoft.graph.identity.signins/remove-mgidentityprovider).
 
-## Next steps
+## Related content
 
-- [Add self-service sign-up to an app](self-service-sign-up-user-flow.yml)
 - [SAML/WS-Fed IdP federation](direct-federation.md)
 - [Google federation](google-federation.md)

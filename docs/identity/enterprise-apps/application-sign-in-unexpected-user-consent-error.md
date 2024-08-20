@@ -30,7 +30,7 @@ Certain conditions must be true for a user to consent to the permissions an appl
 * **AADSTS90093:** &lt;clientAppDisplayName&gt; is requesting one or more permissions that you aren't authorized to grant. Contact an administrator, who can consent to this application on your behalf.
 * **AADSTS90094:** &lt;clientAppDisplayName&gt; needs permission to access resources in your organization that only an admin can grant. Ask an admin to grant permission to this app before you can use it.
 
-This error occurs when a user who isn't a Global Administrator attempts to use an application that is requesting permissions that only an administrator can grant. This error can be resolved by an administrator granting access to the application on behalf of their organization.
+This error occurs when a user who isn't an administrator attempts to use an application that is requesting permissions that only an administrator can grant. This error can be resolved by an administrator granting access to the application on behalf of their organization.
 
 This error can also occur when a user is prevented from consenting to an application due to Microsoft detecting that the permissions request is risky. In this case, an audit event will also be logged with a Category of "ApplicationManagement", Activity Type of "Consent to application" and Status Reason of "Risky application detected".
 
@@ -40,7 +40,7 @@ Another scenario in which this error might occur is when the user assignment is 
 
 * **AADSTS90093:** An administrator of &lt;tenantDisplayName&gt; has set a policy that prevents you from granting &lt;name of app&gt; the permissions it's requesting. Contact an administrator of &lt;tenantDisplayName&gt;, who can grant permissions to this app on your behalf.
 
-This error can occur when a Global Administrator turns off the ability for users to consent to applications, then a non-administrator user attempts to use an application that requires consent. This error can be resolved by an administrator granting access to the application on behalf of their organization.
+This error can occur when an administrator turns off the ability for users to consent to applications, then a non-administrator user attempts to use an application that requires consent. This error can be resolved by an administrator granting access to the application on behalf of their organization.
 
 ## Intermittent problem error
 

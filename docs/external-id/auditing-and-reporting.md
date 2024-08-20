@@ -16,6 +16,9 @@ ms.collection: M365-identity-device-management
 ---
 
 # Auditing and reporting a B2B collaboration user
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 With guest users, you have auditing capabilities similar to with member users.
 
 ## Access reviews

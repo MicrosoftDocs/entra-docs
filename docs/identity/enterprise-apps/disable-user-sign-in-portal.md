@@ -28,7 +28,7 @@ In this article, you learn how to prevent users from signing in to an applicatio
 To disable user sign-in, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
 :::zone pivot="portal"
 
@@ -112,7 +112,7 @@ You need to consent to the `Application.ReadWrite.All` permission.
 Run the following query to disable user sign-in to an application.
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/servicePrincipals/2a8f9e7a-af01-413a-9592-c32ec0e5c1a7
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444
 
 Content-type: application/json
 

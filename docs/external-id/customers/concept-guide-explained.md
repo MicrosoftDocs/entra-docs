@@ -16,9 +16,11 @@ ms.custom: it-pro
 ---
 # Get started guide features
 
-After completing the [get started guide](/entra/external-id/customers/quickstart-get-started-guide), you can recreate, edit, and customize the initial configuration to meet your company’s needs. This helps you become familiar with the features and functions of Microsoft Entra External ID, better understand how to use them, and appreciate the value they provide. During this process, you may even discover new features that you want to use. 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-The get started guide set up the below features for you automatically. This article explains these features and guide you on how to configure them manually.
+After completing the [get started guide](/entra/external-id/customers/quickstart-get-started-guide), you can recreate, edit, and customize the initial configuration to meet your company’s needs. This helps you become familiar with the features and functions of Microsoft Entra External ID, better understand how to use them, and appreciate the value they provide. During this process, you might even discover new features that you want to use.
+
+The get started guide set up the below features for you automatically. This article explains these features and guides you on how to configure them manually.
 
 :::image type="content" source="media/concept-guide-explained/guide-flow.png" alt-text="Flowchart that shows the steps in the guide.":::
 
@@ -28,7 +30,7 @@ The get started guide set up the below features for you automatically. This arti
 
 An external tenant is the first resource you need to create to get started with Microsoft Entra External ID. If you have an Azure subscription, you can create your new tenant in the Microsoft Entra admin center by following [these steps](how-to-create-external-tenant-portal.md). 
 
-If you don’t have an Azure subscription, you can sign up for a [free trial](quickstart-trial-setup.md#sign-up-to-your-external-tenant-free-trial). The trial gives you access to a tenant for 30 days. During the free trial period, you have access to all product features, with few exceptions. For more information, see the [Start a free trial without Azure subscription](quickstart-trial-setup.md). 
+If you don’t have an Azure subscription, you can sign up for a [free trial](quickstart-trial-setup.md#get-started-with-trying-out-external-id). The trial gives you access to a tenant for 30 days. During the free trial period, you have access to all product features, with few exceptions. For more information, see the [Start a free trial without Azure subscription](quickstart-trial-setup.md). 
 
 ## App registration
 
@@ -44,7 +46,7 @@ If you register your app manually, you can also grant API permission if your app
 
 The get started guide automatically creates the user flow for you. A user flow defines the authentication methods a customer can use to sign in to your application and the information they need to provide during sign-up. You can configure the existing user flow or create a new one. If you want the same sign-in experience for all of your apps, you can add multiple apps to the same user flow. However, only one sign-in experience is needed for an application, so you can add each application to just one user flow.
 
-You can find more information on how to create a user flow [here](how-to-user-flow-sign-up-sign-in-customers.md) and how to add an application to the user flow [here](how-to-user-flow-add-application.md). Once you have created the user flow, you can test your sign-up and sign-in experience with the [Run user flow feature](how-to-test-user-flows.md).
+You can find more information on how to create a user flow [here](how-to-user-flow-sign-up-sign-in-customers.md) and how to add an application to the user flow [here](how-to-user-flow-add-application.md). After you create the user flow, you can test your sign-up and sign-in experience with the [Run user flow feature](how-to-test-user-flows.md).
 
 If your app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as custom user attributes. You can create custom user attributes manually and add them to your user flow. You can find more information on how to create custom attributes [here](how-to-define-custom-attributes.md#create-custom-user-attributes).
 
@@ -75,9 +77,9 @@ For more information on how to configure these options, visit the [Authenticatio
 
 The get started guide provides a downloadable sample app to test the features of your new tenant. When you register your app manually, Microsoft Entra ID generates a unique identifier known as an **Application (client) ID**. This value is used to identify your app when creating authentication requests, enabling a trusted relationship between your app and your tenant. The samples are automatically configured with your **clientId** and the **authority** is set to `<trialtenant>.ciamlogin.com`.
 
-You can find the comprehensive list of app samples and guides [here](samples-ciam-all.md) that explains the process in detail. 
+You can find the comprehensive list of app samples and guides [here](samples-ciam-all.md) that explains the process in detail.
 
-The **Code sample guide** links will point to the relevant sample articles and will guide you through the process of registering your app, creating a user flow, associating your app with the user flow, and running your project to sign in. In some cases, it will also guide you on how to call an API.
+The **Code sample guide** links point to the relevant sample articles and guide you through the process of registering your app, creating a user flow, associating your app with the user flow, and running your project to sign in. In some cases, it also guides you on how to call an API.
 
-For more information on configuring your app for authentication, see the **Build and integrate guide** links. These tutorials will assist you in building and integrating your own apps with Microsoft Entra External ID. You can also add [custom authentication extensions](concept-custom-extensions.md) at specific points within the authentication flow. 
+For more information on configuring your app for authentication, see the **Build and integrate guide** links. These tutorials assist you in building and integrating your own apps with Microsoft Entra External ID. You can also add [custom authentication extensions](concept-custom-extensions.md) at specific points within the authentication flow.
 

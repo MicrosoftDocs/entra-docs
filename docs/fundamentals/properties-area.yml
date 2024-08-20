@@ -23,7 +23,7 @@ introduction: |
 
   We strongly recommend you add both your global privacy contact and your organization's privacy statement, so your internal employees and external guests can review your policies. Because privacy statements are uniquely created and tailored for each business, we strongly recommend you contact a lawyer for assistance.
 
-  [!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-dsr-and-stp-note.md)]
+  [!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 
 procedureSection:
   - title: | 
@@ -56,7 +56,7 @@ procedureSection:
 
           :::image type="content" source="media/properties-area/no-privacy-statement-or-contact.png" alt-text="Screenshot showing the B2B Collaboration Review Permissions box with message.":::
       - |
-        Select **Save**.
+        Select **Accept**.
 
 relatedContent:
   - text: Microsoft Entra B2B collaboration invitation redemption

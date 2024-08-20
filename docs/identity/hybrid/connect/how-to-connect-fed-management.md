@@ -172,7 +172,7 @@ It's easy to add a domain to be federated with Microsoft Entra ID by using Micro
 
    ![Screenshot of the "Additional tasks" pane for selecting "Add an additional Microsoft Entra domain".](./media/how-to-connect-fed-management/AdditionalDomain1.PNG)
 
-1. On the next page of the wizard, provide the global administrator credentials for Microsoft Entra ID.
+1. On the next page of the wizard, provide the Hybrid Administrator credentials for Microsoft Entra ID.
 
    ![Screenshot that shows the "Additional tasks" pane for selecting "Add an additional Microsoft Entra domain".](./media/how-to-connect-fed-management/AdditionalDomain2.PNG)
 

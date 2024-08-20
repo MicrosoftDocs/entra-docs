@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/07/2023
+ms.date: 06/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -15,21 +15,32 @@ ms.topic: how-to
 
 # Configure optional claims
 
-You can configure optional claims for your application through the Azure portal or application manifest.
+Tokens that Microsoft Entra returns are kept smaller to ensure optimal performance by clients that request them. As a result, several claims are no longer present in the token by default and must be asked for specifically on a per-application basis.
+
+You can configure optional claims for your application through the Microsoft Entra admin center's applications UI or manifest.
+
+## Prerequisites
+
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Completion of [Quickstart: Register an application](quickstart-register-app.md)
+
+## Configure optional claims in your application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Choose the application for which you want to configure optional claims based on your scenario and desired outcome.
+
+# [Proceed with app UI](#tab/appui)
+
 1. Under **Manage**, select **Token configuration**.
-   - The UI option **Token configuration** blade isn't available for apps registered in an Azure AD B2C tenant, which can be configured by modifying the application manifest. For more information, see  [Add claims and customize user input using custom policies in Azure Active Directory B2C](/azure/active-directory-b2c/configure-user-input)  
-
-Configure claims using the manifest:
-
 1. Select **Add optional claim**.
-1. Select the token type you want to configure.
+1. Select the token type you want to configure, such as *Access*.
 1. Select the optional claims to add.
 1. Select **Add**.
-1. Under **Manage**, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** and edit the manifest locally, and then use **Upload** to reapply it to your application.
+
+# [Proceed with manifest](#tab/manifest)
+
+1. Under **Manage**, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** and edit the manifest locally, and then use **Upload** to reapply it to your application. If the file doesn't contain `optionalClaims` property, you can add it.
 
     The following application manifest entry adds the `auth_time`, `ipaddr`, and `upn` optional claims to ID, access, and SAML tokens.
 
@@ -63,6 +74,8 @@ Configure claims using the manifest:
 
 1. When finished, select **Save**. Now the specified optional claims are included in the tokens for your application.
 
+---
+
 The `optionalClaims` object declares the optional claims requested by an application. An application can configure optional claims that are returned in ID tokens, access tokens, and SAML 2 tokens. The application can configure a different set of optional claims to be returned in each token type.
 
 | Name | Type | Description |
@@ -79,6 +92,8 @@ If supported by a specific claim, you can also modify the behavior of the option
 | `source` | Edm.String | The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object. |
 | `essential` | Edm.Boolean | If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false. |
 | `additionalProperties` | Collection (Edm.String) | Other properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property. |
+
+---
 
 ## Configure directory extension optional claims
 
@@ -170,7 +185,7 @@ Complete the following steps to configure groups optional claims through the app
 
    Some applications require group information about the user in the role claim. To change the claim type from a group claim to a role claim, add `emit_as_roles` to `additionalProperties`.  The group values are emitted in the role claim.
 
-   If `emit_as_roles` is used, any application roles configured that the user is assigned aren't in the role claim.
+   If `emit_as_roles` is used, any application roles configured that the user (or a resource application) is assigned aren't in the role claim.
 
 The following examples show the manifest configuration for group claims:
 
@@ -298,13 +313,9 @@ Configure claims in the manifest:
 
 1. When you're finished updating the manifest, select **Save** to save the manifest.
 
-## See also
+## Related content
 
 - [Access tokens](access-tokens.md)
 - [Application manifest](reference-app-manifest.md)
 - [ID tokens](id-tokens.md)
 - [Optional claims reference](optional-claims-reference.md)
-
-## Next steps
-
-- Learn more about the [tokens and claims](security-tokens.md) in the Microsoft identity platform.

@@ -52,7 +52,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Customer LockBox Access Approver](#customer-lockbox-access-approver) | Can approve Microsoft support requests to access customer organizational data. | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91 |
 > | [Desktop Analytics Administrator](#desktop-analytics-administrator) | Can access and manage Desktop management tools and services. | 38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4 |
 > | [Directory Readers](#directory-readers) | Can read basic directory information. Commonly used to grant directory read access to applications and guests. | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b |
-> | [Directory Synchronization Accounts](#directory-synchronization-accounts) | Only used by Microsoft Entra Connect service.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | d29b2b05-8046-44ba-8758-1e26182fcf32 |
+> | [Directory Synchronization Accounts](#directory-synchronization-accounts) | Only used by Microsoft Entra Connect service. | d29b2b05-8046-44ba-8758-1e26182fcf32 |
 > | [Directory Writers](#directory-writers) | Can read and write basic directory information. For granting access to applications, not intended for users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9360feb5-f418-4baa-8175-e2a00bac4301 |
 > | [Domain Name Administrator](#domain-name-administrator) | Can manage domain names in cloud and on-premises.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 8329153b-31d0-4727-b945-745eb3bc5f31 |
 > | [Dynamics 365 Administrator](#dynamics-365-administrator) | Can manage all aspects of the Dynamics 365 product. | 44367163-eba1-44c3-98af-f5787879f96a |
@@ -110,15 +110,18 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Security Reader](#security-reader) | Can read security information and reports in Microsoft Entra ID and Office 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 5d6b6bb7-de71-4623-b4af-96380a352509 |
 > | [Service Support Administrator](#service-support-administrator) | Can read service health information and manage support tickets. | f023fd81-a637-4b56-95fd-791ac0226033 |
 > | [SharePoint Administrator](#sharepoint-administrator) | Can manage all aspects of the SharePoint service. | f28a1f50-f6e7-4571-818b-6a12f2af6b6c |
+> | [SharePoint Embedded Administrator](#sharepoint-embedded-administrator) | Manage all aspects of SharePoint Embedded containers. | 1a7d78b6-429f-476b-b8eb-35fb715fffd4 |
 > | [Skype for Business Administrator](#skype-for-business-administrator) | Can manage all aspects of the Skype for Business product. | 75941009-915a-4869-abe7-691bff18279e |
 > | [Teams Administrator](#teams-administrator) | Can manage the Microsoft Teams service. | 69091246-20e8-4a56-aa4d-066075b2a7a8 |
 > | [Teams Communications Administrator](#teams-communications-administrator) | Can manage calling and meetings features within the Microsoft Teams service. | baf37b3a-610e-45da-9e62-d9d1e5e8914b |
 > | [Teams Communications Support Engineer](#teams-communications-support-engineer) | Can troubleshoot communications issues within Teams using advanced tools. | f70938a0-fc10-4177-9e90-2178f8765737 |
 > | [Teams Communications Support Specialist](#teams-communications-support-specialist) | Can troubleshoot communications issues within Teams using basic tools. | fcf91098-03e3-41a9-b5ba-6f0ec8188a12 |
 > | [Teams Devices Administrator](#teams-devices-administrator) | Can perform management related tasks on Teams certified devices. | 3d762c5a-1b6c-493f-843e-55a3b42923d4 |
+> | [Teams Telephony Administrator](#teams-telephony-administrator) | Manage voice and telephony features and troubleshoot communication issues within the Microsoft Teams service. | aa38014f-0993-46e9-9b45-30501a20909d |
 > | [Tenant Creator](#tenant-creator) | Create new Microsoft Entra or Azure AD B2C tenants. | 112ca1a2-15ad-4102-995e-45b0bc479a6a |
 > | [Usage Summary Reports Reader](#usage-summary-reports-reader) | Read Usage reports and Adoption Score, but can't access user details. | 75934031-6c7e-415a-99d7-48dbd49e875e |
 > | [User Administrator](#user-administrator) | Can manage all aspects of users and groups, including resetting passwords for limited admins.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | fe930be7-5e62-47db-91af-98c3a49a38b1 |
+> | [User Experience Success Manager](#user-experience-success-manager) | View product feedback, survey results, and reports to find training and communication opportunities. | 27460883-1df1-4691-b032-3b79643e5e63 |
 > | [Virtual Visits Administrator](#virtual-visits-administrator) | Manage and share Virtual Visits information and metrics from admin centers or the Virtual Visits app. | e300d9e7-4a2b-4295-9eff-f1c78b36cc98 |
 > | [Viva Goals Administrator](#viva-goals-administrator) | Manage and configure all aspects of Microsoft Viva Goals. | 92b086b3-e367-4ef2-b869-1de128fb986e |
 > | [Viva Pulse Administrator](#viva-pulse-administrator) | Can manage all settings for Microsoft Viva Pulse app. | 87761b17-1ed2-4af3-9acd-92a150038160 |
@@ -370,13 +373,14 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Authent
 
 - Set or reset any authentication method (including passwords) for non-administrators and some roles. For a list of the roles that an Authentication Administrator can read or update authentication methods, see [Who can reset passwords](privileged-roles-permissions.md#who-can-reset-passwords).
 - Require users who are non-administrators or assigned to some roles to re-register against existing non-password credentials (for example, MFA or FIDO), and can also revoke **remember MFA on the device**, which prompts for MFA on the next sign-in.
+- Manage MFA settings in the legacy MFA management portal.
 - Perform sensitive actions for some users. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
 - Create and manage support tickets in Azure and the Microsoft 365 admin center.
 
 Users with this role **cannot** do the following:
 
 - Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](groups-concept.md).
-- Cannot manage MFA settings in the legacy MFA management portal or Hardware OATH tokens.
+- Cannot manage Hardware OATH tokens.
 
 [!INCLUDE [authentication-table-include](./includes/authentication-table-include.md)]
 
@@ -439,6 +443,7 @@ Assign the Authentication Policy Administrator role to users who need to do the 
 
 - Configure the authentication methods policy, tenant-wide MFA settings, and password protection policy that determine which methods each user can register and use.
 - Manage Password Protection settings: smart lockout configurations and updating the custom banned passwords list.
+- Manage MFA settings in the legacy MFA management portal.
 - Create and manage verifiable credentials.
 - Create and manage Azure support tickets.
 
@@ -446,7 +451,7 @@ Users with this role **cannot** do the following:
 
 - Cannot update sensitive properties. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
 - Cannot delete or restore users. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
-- Cannot manage MFA settings in the legacy MFA management portal or Hardware OATH tokens.
+- Cannot manage Hardware OATH tokens.
 
 [!INCLUDE [authentication-table-include](./includes/authentication-table-include.md)]
 
@@ -749,7 +754,7 @@ Users in this role can manage the Desktop Analytics service. This includes the a
 Users in this role can read basic directory information. This role should be used for:
 
 * Granting a specific set of guest users read access instead of granting it to all guest users.
-* Granting a specific set of non-admin users access to Azure portal when "Restrict access to Azure portal to admins only" is set to "Yes".
+* Granting a specific set of non-admin users access to Entra portal when "Restrict access to Microsoft Entra admin center" is set to "Yes".
 * Granting service principals access to directory where Directory.Read.All is not an option.
 
 > [!div class="mx-tableFixed"]
@@ -812,61 +817,12 @@ Users in this role can read basic directory information. This role should be use
 
 ## Directory Synchronization Accounts
 
-[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
-
-This is a [privileged role](privileged-roles-permissions.md). Do not use. This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.
+Do not use. This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/applications/create | Create all types of applications |
-> | microsoft.directory/applications/delete | Delete all types of applications |
-> | microsoft.directory/applications/appRoles/update | Update the appRoles property on all types of applications |
-> | microsoft.directory/applications/audience/update | Update the audience property for applications |
-> | microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
-> | microsoft.directory/applications/basic/update | Update basic properties for applications |
-> | microsoft.directory/applications/credentials/update | Update application credentials<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/applications/notes/update | Update notes of applications |
-> | microsoft.directory/applications/owners/update | Update owners of applications |
-> | microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |
-> | microsoft.directory/applications/policies/update | Update policies of applications |
-> | microsoft.directory/applications/tag/update | Update tags of applications |
-> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
-> | microsoft.directory/hybridAuthenticationPolicy/allProperties/allTasks | Manage hybrid authentication policy in Microsoft Entra ID<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/organization/dirSync/update | Update the organization directory sync property |
-> | microsoft.directory/passwordHashSync/allProperties/allTasks | Manage all aspects of Password Hash Synchronization (PHS) in Microsoft Entra ID |
-> | microsoft.directory/policies/create | Create policies in Microsoft Entra ID |
-> | microsoft.directory/policies/delete | Delete policies in Microsoft Entra ID |
-> | microsoft.directory/policies/standard/read | Read basic properties on policies |
-> | microsoft.directory/policies/owners/read | Read owners of policies |
-> | microsoft.directory/policies/policyAppliedTo/read | Read policies.policyAppliedTo property |
-> | microsoft.directory/policies/basic/update | Update basic properties on policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/policies/owners/update | Update owners of policies |
-> | microsoft.directory/policies/tenantDefault/update | Update default organization policies |
-> | microsoft.directory/servicePrincipals/create | Create service principals |
-> | microsoft.directory/servicePrincipals/delete | Delete service principals |
-> | microsoft.directory/servicePrincipals/enable | Enable service principals |
-> | microsoft.directory/servicePrincipals/disable | Disable service principals |
-> | microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials | Manage password single sign-on credentials on service principals |
-> | microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials | Read password single sign-on credentials on service principals |
-> | microsoft.directory/servicePrincipals/appRoleAssignedTo/read | Read service principal role assignments |
-> | microsoft.directory/servicePrincipals/appRoleAssignments/read | Read role assignments assigned to service principals |
-> | microsoft.directory/servicePrincipals/standard/read | Read basic properties of service principals |
-> | microsoft.directory/servicePrincipals/memberOf/read | Read the group memberships on service principals |
-> | microsoft.directory/servicePrincipals/oAuth2PermissionGrants/read | Read delegated permission grants on service principals |
-> | microsoft.directory/servicePrincipals/owners/read | Read owners of service principals |
-> | microsoft.directory/servicePrincipals/ownedObjects/read | Read owned objects of service principals |
-> | microsoft.directory/servicePrincipals/policies/read | Read policies of service principals |
-> | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
-> | microsoft.directory/servicePrincipals/audience/update | Update audience properties on service principals |
-> | microsoft.directory/servicePrincipals/authentication/update | Update authentication properties on service principals |
-> | microsoft.directory/servicePrincipals/basic/update | Update basic properties on service principals |
-> | microsoft.directory/servicePrincipals/credentials/update | Update credentials of service principals<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/servicePrincipals/notes/update | Update notes of service principals |
-> | microsoft.directory/servicePrincipals/owners/update | Update owners of service principals |
-> | microsoft.directory/servicePrincipals/permissions/update | Update permissions of service principals |
-> | microsoft.directory/servicePrincipals/policies/update | Update policies of service principals |
-> | microsoft.directory/servicePrincipals/tag/update | Update the tag property for service principals |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read and manage objects to enable on-premises directory synchronization. |
 
 ## Directory Writers
 
@@ -1289,12 +1245,11 @@ Users with this role **cannot** do the following:
 > Global Reader role has the following limitations:
 >
 >- OneDrive admin center - OneDrive admin center does not support the Global Reader role
->- [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview) - Global Reader can't read integrated apps. You won't find the **Integrated apps** tab under **Settings** in the left pane of Microsoft 365 admin center.
 >- [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) - Global Reader can't read SCC audit logs, do content search, or see Secure Score.
 >- [Teams admin center](/microsoftteams/manage-teams-in-modern-portal) - Global Reader cannot read **Teams lifecycle**, **Analytics & reports**, **IP phone device management**, and **App catalog**. For more information, see [Use Microsoft Teams administrator roles to manage Teams](/microsoftteams/using-admin-roles).
 >- [Privileged Access Management](/microsoft-365/compliance/privileged-access-management) doesn't support the Global Reader role.
 >- [Azure Information Protection](/azure/information-protection/what-is-information-protection) - Global Reader is supported [for central reporting](/azure/information-protection/reports-aip) only, and when your Microsoft Entra organization isn't on the [unified labeling platform](/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
-> - [SharePoint](/sharepoint/get-started-new-admin-center) - Global Reader currently can't access SharePoint using PowerShell.
+> - [SharePoint](/sharepoint/get-started-new-admin-center) - Global Reader has read access to SharePoint Online PowerShell cmdlets and Read APIs.
 > - [Power Platform admin center](/power-platform/admin/admin-documentation) - Global Reader is not yet supported in the Power Platform admin center.
 > - Microsoft Purview doesn't support the Global Reader role.
 
@@ -2307,7 +2262,7 @@ In | Can do
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports
 Azure Advanced Threat Protection | Monitor and respond to suspicious security activity
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | Assign roles<br>Manage machine groups<br>Configure endpoint threat detection and automated remediation<br>View, investigate, and respond to alerts<br/>View machines/device inventory
-[Intune](/intune/role-based-access-control) | Views user, device, enrollment, configuration, and application information<br>Cannot make changes to Intune
+[Intune](/intune/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference#endpoint-security-manager)
 [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Add admins, add policies and settings, upload logs and perform governance actions
 [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services
 [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) | Define the threshold and duration for lockouts when failed sign-in events happen.
@@ -2532,6 +2487,30 @@ Users with this role have global permissions within Microsoft SharePoint Online,
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
+## SharePoint Embedded Administrator
+
+Assign the SharePoint Embedded Administrator role to users who need to do the following tasks:
+
+- Perform all tasks using PowerShell, Microsoft Graph API, or SharePoint admin center
+- Manage, configure, and maintain SharePoint Embedded containers
+- Enumerate and manage SharePoint Embedded containers
+- Enumerate and manage permissions for SharePoint Embedded containers
+- Manage storage of SharePoint Embedded containers in a tenant
+- Assign security and compliance policies on SharePoint Embedded containers
+- Apply security and compliance policies on SharePoint Embedded containers in a tenant
+
+[Learn more](/sharepoint/dev/embedded/concepts/admin-exp/cta)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.office365.fileStorageContainers/allEntities/allProperties/allTasks | Manage all aspects of SharePoint Embedded containers |
+> | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
 ## Skype for Business Administrator
 
 Users with this role have global permissions within Microsoft Skype for Business, when the service is present, as well as manage Skype-specific user attributes in Microsoft Entra ID. Additionally, this role grants the ability to manage support tickets and monitor service health, and to access the Teams and Skype for Business admin center. The account must also be licensed for Teams or it can't run Teams PowerShell cmdlets. For more information, see [Skype for Business Online Admin](/skypeforbusiness/skype-for-business-online) and Teams licensing information at [Skype for Business add-on licensing](/skypeforbusiness/skype-for-business-and-microsoft-teams-add-on-licensing/skype-for-business-and-microsoft-teams-add-on-licensing).
@@ -2647,12 +2626,36 @@ Users with this role can manage [Teams-certified devices](https://www.microsoft.
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.teams/devices/standard/read | Manage all aspects of Teams-certified devices including configuration policies |
 
+## Teams Telephony Administrator
+
+Assign the Teams Telephony Administrator role to users who need to do the following tasks: 
+
+- Manage voice and telephony, including calling policies, phone number management and assignment, and voice applications
+- Access to only Public Switched Telephone Network (PSTN) usage reports from Teams admin center
+- View user profile page
+- Create and manage support tickets in Azure and the Microsoft 365 admin center
+
+[Learn more](/microsoftteams/using-admin-roles)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.skypeForBusiness/allEntities/allTasks | Manage all aspects of Skype for Business Online |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+> | microsoft.teams/voice/allProperties/allTasks | Manage voice including calling policies and phone number inventory and assignment |
+
 ## Tenant Creator
 
 Assign the Tenant Creator role to users who need to do the following tasks:
 -	Create both Microsoft Entra and Azure Active Directory B2C tenants even if the tenant creation toggle is turned off in the user settings
 > [!NOTE]
->The tenant creators will be assigned the Global administrator role on the new tenants they create.
+>The tenant creators will be assigned the Global Administrator role on the new tenants they create.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2706,6 +2709,7 @@ Users with this role **cannot** do the following:
 - Cannot manage MFA.
 - Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](groups-concept.md).
 - Cannot manage shared mailboxes.
+- Cannot modify security questions for password reset operation.
 
 > [!IMPORTANT]
 > Users with this role can change passwords for people who may have access to sensitive or private information or critical configuration inside and outside of Microsoft Entra ID. Changing the password of a user may mean the ability to assume that user's identity and permissions. For example:
@@ -2772,6 +2776,27 @@ Users with this role **cannot** do the following:
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## User Experience Success Manager
+
+Assign the User Experience Success Manager role to users who need to do the following tasks:
+
+- Read organizational-level usage reports for Microsoft 365 Apps and services, but not user details
+- View your organization's product feedback, Net Promoter Score (NPS) survey results, and help article views to identify communication and training opportunities
+- Read message center posts and service health data
+
+[Learn more](/microsoft-365/admin/add-users/about-admin-roles)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.commerce.billing/purchases/standard/read | Read purchase services in M365 Admin Center. |
+> | microsoft.office365.organizationalMessages/allEntities/allProperties/read | Read all aspects of Microsoft 365 Organizational Messages |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+> | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.usageReports/allEntities/standard/read | Read tenant-level aggregated Office 365 usage reports |
+> | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 
 ## Virtual Visits Administrator
 

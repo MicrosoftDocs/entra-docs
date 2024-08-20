@@ -34,7 +34,7 @@ POST /{tenant}/oauth2/v2.0/token HTTP/1.1           //Line breaks for clarity
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=3db474b9-6a0c-4840-96ac-1fceb342124f/.default
 &client_secret=sampleCredentia1s
 &grant_type=client_credentials
@@ -151,7 +151,7 @@ POST /{tenant}/oauth2/v2.0/token HTTP/1.1   //Line breaks for clarity
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=12345678-0000-0000-00000000000000000
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=3db474b9-6a0c-4840-96ac-1fceb342124f/.default
 &client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
 &client_assertion=eyJhbGciOiJSUzI1NiIsIng1dCI6Imd4OHRHeXN5amNScUtqRlBuZDdSRnd2d1pJMCJ9.eyJ{a lot of characters here}M8U3bSUKKJDEg
@@ -321,7 +321,7 @@ Issuance request using the `idTokenHint` attestation flow:
         "clientName": "Verifiable Credential Expert Sample"
     },
     "type": "VerifiedCredentialExpert",
-    "manifestUrl": "https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/VerifiedCredentialExpert1",
+    "manifestUrl": "https://verifiedid.did.msidentity.com/v1.0/00001111-aaaa-2222-bbbb-3333cccc4444/verifiableCredentials/contracts/VerifiedCredentialExpert1",
     "pin": {
         "value": "3539",
         "length": 4
@@ -351,7 +351,7 @@ Issuance request using the `idTokenHint` attestation flow that [sets the expiry 
         "clientName": "Verifiable Credential Expert Sample"
     },
     "type": "VerifiedCredentialExpert",
-    "manifestUrl": "https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/VerifiedCredentialExpert1",
+    "manifestUrl": "https://verifiedid.did.msidentity.com/v1.0/00001111-aaaa-2222-bbbb-3333cccc4444/verifiableCredentials/contracts/VerifiedCredentialExpert1",
     "pin": {
         "value": "3539",
         "length": 4

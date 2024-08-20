@@ -204,7 +204,7 @@ Monitor the following key scenarios, in addition to any scenarios specific to yo
 
   Monitor all Microsoft Entra risk events for suspicious activity. See [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md). Microsoft Entra ID Protection is natively integrated with [Microsoft Defender for Identity](/defender-for-identity/what-is).
 
-  Define network named locations to avoid noisy detections on location-based signals. See [Using the location condition in a Conditional Access policy](~/identity/conditional-access/location-condition.md).
+  Define network named locations to avoid noisy detections on location-based signals. See [Using the location condition in a Conditional Access policy](../identity/conditional-access/concept-assignment-network.md).
 
 - **User and Entity Behavioral Analytics (UEBA) alerts**
 

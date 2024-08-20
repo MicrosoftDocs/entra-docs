@@ -8,7 +8,7 @@ ms.custom: azureday1, devx-track-azurecli, devx-track-azurepowershell, subject-r
 ms.date: 02/07/2024
 ms.devlang: csharp
 ms.reviewer: stsoneff
-ms.service: app-service
+ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
 services: storage, app-service-web

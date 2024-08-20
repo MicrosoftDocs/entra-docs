@@ -15,6 +15,8 @@ ms.custom: it-pro
 
 # Using role-based access control for applications
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 Role-based access control (RBAC) is a popular mechanism to enforce authorization in applications. When an organization uses RBAC, an application developer defines roles for the application. An administrator can then assign roles to different users and groups to control who has access to content and functionality in the application.
 
 Applications typically receive user role information as claims in a security token. Developers have the flexibility to provide their own implementation for how role claims are to be interpreted as application permissions. This interpretation of permissions can involve using middleware or other options provided by the platform of the applications or related libraries.

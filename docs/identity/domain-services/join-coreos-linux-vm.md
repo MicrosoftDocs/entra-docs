@@ -7,6 +7,8 @@ manager: amycolannino
 ms.assetid: 5db65f30-bf69-4ea3-9ea5-add1db83fdb8
 ms.service: entra-id
 ms.subservice: domain-services
+ms.custom:
+  - linux-related-content
 ms.topic: how-to
 ms.date: 09/23/2023
 ms.author: justinha

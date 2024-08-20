@@ -25,7 +25,7 @@ In this tutorial, you'll learn how to migrate your applications from Okta to Mic
 To manage the application in Microsoft Entra ID, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
 
 ## Create an inventory of current Okta applications
@@ -105,7 +105,7 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
 
     ![Screenshot of applications in the Microsoft Entra Gallery.](media/migrate-applications-from-okta/salesforce-application.png)
 
-4. After the application is created, on the **Single sign-on** (SSO) tab, select **SAML**.
+4. After the application is created, on the **Single sign-on (SSO)** tab, select **SAML**.
 
     ![Screenshot of the SAML option on Single sign-on.](media/migrate-applications-from-okta/saml-application.png)
 
@@ -197,8 +197,6 @@ To complete the migration, repeat configuration for all applications in the Okta
 >Depending on the [application scenario](~/identity-platform/authentication-flows-app-scenarios.md), there are various configuration actions. Most scenarios require an app client secret.
 
 8. On the **Overview** page, record the **Application (client) ID**. You use this ID in your application.
-
-    ![Screenshot of the Application client ID entry on Migration Tenant.](media/migrate-applications-from-okta/application-client-id.png)
 
 9. On the left, select **Certificates & secrets**. Then select **+ New client secret**. Name the client secret and set its expiration.
 

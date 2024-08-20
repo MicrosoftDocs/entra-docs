@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for header-based SSO so that I can control who has access to F5 BIG-IP Easy Button for header-based SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -80,7 +80,7 @@ Prior BIG-IP experience isn’t necessary, but you’ll need:
 
 * User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID.
 
-* An account with Microsoft Entra application admin [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator).
+* An account with Microsoft Entra Application Administrator [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator).
 
 * An [SSL Web certificate](~/identity/enterprise-apps/f5-bigip-deployment-guide.md#ssl-profile) for publishing services over HTTPS, or use default BIG-IP certs while testing.
 
@@ -231,7 +231,7 @@ For this example, you can include one more attribute:
 
 #### Additional User Attributes
 
-In the **Additional User Attributes tab**, you can enable session augmentation required by a variety of distributed systems such as Oracle, SAP, and other JAVA based implementations requiring attributes stored in other directories. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, etc. 
+In the **Additional User Attributes tab**, you can enable session augmentation required by a variety of distributed systems such as Oracle, SAP, and other JAVA based implementations requiring attributes stored in other directories. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, and so on. 
 
    ![Screenshot for additional user attributes.](./media/f5-big-ip-headers-easy-button/additional-user-attributes.png)
 

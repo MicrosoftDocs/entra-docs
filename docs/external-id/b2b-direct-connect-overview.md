@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # B2B direct connect overview
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 B2B direct connect is a feature of Microsoft Entra External ID that lets you set up a mutual trust relationship with another Microsoft Entra organization for seamless collaboration. This feature currently works with Microsoft Teams shared channels. With B2B direct connect, users from both organizations can work together using their home credentials and a shared channel in Teams, without having to be added to each other’s organizations as guests. Use B2B direct connect to share resources with external Microsoft Entra organizations. Or use it to share resources across multiple Microsoft Entra tenants within your own organization.
 
 :::image type="content" source="media/b2b-direct-connect-overview/b2b-direct-connect-overview.png" alt-text="Diagram illustrating B2B direct connect.":::

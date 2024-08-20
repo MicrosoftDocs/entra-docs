@@ -32,15 +32,15 @@ sections:
       - question: |
           Can I see last month's data after getting a Microsoft Entra ID P1 or P2 license?
         answer: |
-          If you've recently switched to a Premium version (including a trial version), you can see data up to seven days initially. When data accumulates, you can see data for the past 30 days.
+          If you recently switched to a Premium version (including a trial version), you can see data up to seven days initially. When data accumulates, you can see data for the past 30 days.
 
 
   - name: Activity logs
     questions:
       - question: |
-          Do I need to be a Global Administrator to see the activity logs in the Microsoft Entra admin center?
+          What role do I need to see the activity logs in the Microsoft Entra admin center?
         answer: |
-          No. The [least privilege role](../../identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
+          The [least privilege role](../../identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
 
       - question: |
           What logs can I integrate with Azure Monitor?
@@ -55,9 +55,9 @@ sections:
       - question: |
           How many records I can download from the Microsoft Entra admin center?
         answer: |
-          How many logs you can download from the Microsoft Entra admin center is determined by a few factors, including browser memory size, network speeds, and current load on Microsoft Entra reporting APIs. Generally, data sets smaller than 250,000 for audit logs and 100,000 for sign-in and provisioning logs work well with the browser download feature. Depending on the number of fields you included, this number could vary. If you face issues completing large downloads in the browser, use the [**reporting API**](/graph/api/resources/azure-ad-auditlog-overview) to download the data or [**send the logs to an endpoint through diagnostic settings**](howto-configure-diagnostic-settings.md).
+          Several factors determine the number of logs you can download from the Microsoft Entra admin center, such as browser memory size, network speeds, and Microsoft Entra reporting APIs loads. Generally, data sets smaller than 250,000 for audit logs and 100,000 for sign-in and provisioning logs work well with the browser download feature. Depending on the number of fields you included, this number could vary. If you face issues completing large downloads in the browser, use the [**reporting API**](/graph/api/resources/azure-ad-auditlog-overview) to download the data or [**send the logs to an endpoint through diagnostic settings**](howto-configure-diagnostic-settings.md).
           
-          The specific set of logs you can download is determined by the filters active in the Microsoft Entra admin center when you begin the download. For example, filtering to a specific user in the Microsoft Entra admin center mean your download pulls logs for that specific user. The columns in the downloaded logs do *not* change. The output contains all details of the audit or sign-in log, *regardless of the columns you customized in the Microsoft Entra admin center*.
+          The active filters in the Microsoft Entra admin center when you begin the download determine the specific set of logs you can download. For example, filtering to a specific user in the Microsoft Entra admin center mean your download pulls logs for that specific user. The columns in the downloaded logs do *not* change. The output contains all details of the audit or sign-in log, *regardless of the columns you customized in the Microsoft Entra admin center*.
 
       - question: |
           How long does Microsoft Entra ID store activity logs? What is the data retention?
@@ -130,9 +130,9 @@ sections:
         answer: |
           There are several reasons why sign-in entries might display User IDs, Object IDs, or GUIDs in the username field.
           - With passwordless authentication, User IDs appear as the username. To confirm this scenario, look at the details of the sign-in event in question. The *authenticationDetail* field says *passwordless*.
-          - The user authenticated but has not yet signed in. To confirm, there is an *error code 50058* that correlates with an interrupt.
+          - The user authenticated but has not yet signed in. To confirm, there's an *error code 50058* that correlates with an interrupt.
           - If the username field shows *000000-00000-0000-0000* or something similar, there could be tenant restrictions in place, preventing the user from signing in to the selected tenant.
-          - Multifactor authentication sign-in attempts are aggregated with multiple data entries, which might take longer to display properly. Data might take up to two hours to fully aggregate, but is usually quicker. 
+          - Multifactor authentication sign-in attempts are aggregated with multiple data entries, which might take longer to display properly. Data might take up to two hours to fully aggregate, but rarely takes that long. 
 
       - question: |
           I see a 90025 error in the sign in logs. Does this mean my user failed to sign in? Has my tenant hit a throttling limit?
@@ -144,7 +144,7 @@ sections:
         answer: |
           If the Service Principal ID has the value “0000000-0000-0000-0000-000000000000" there's no Service Principal for the client application in that instance of authentication. Microsoft Entra no longer issues access tokens without a client Service Principal, except for a few Microsoft and non-Microsoft applications.
 
-          If the Resource Service Principal ID has the value “0000000-0000-0000-0000-000000000000", there's no Service Principal for the resource application in that instance of authentication.
+          If the Resource Service Principal ID has the value “0000000-0000-0000-0000-000000000000," there's no Service Principal for the resource application in that instance of authentication.
 
           This behavior is currently allowed only for a limited number of resource apps.
  
@@ -163,7 +163,7 @@ sections:
           - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
           - Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
           - Select **Service Principal Sign-ins**. 
-          - Select an appropriate time frame in the Date field (last 24 hours, 7 days etc.).
+          - Select an appropriate time frame in the Date field (last 24 hours, 7 days, and so on).
           - Add a filter and select **Service Principal ID** and provide the value '00000000-0000-0000-0000-000000000000' to get instances of authentication with no client Service Principal.
             
       - question: |
@@ -227,7 +227,12 @@ sections:
       - question: |
           My sign-in was blocked due to a Conditional Access policy, but the sign-in log shows that the sign-in succeeded. Why?
         answer: |
-          Currently the sign-in log might not show accurate results for Exchange ActiveSync scenarios when Conditional Access is applied. There can be cases when the sign-in result in the report shows a successful sign-in, but the sign-in actually failed due to a  policy.
+          Currently the sign-in log might not show accurate results for Exchange ActiveSync scenarios when Conditional Access is applied. There can be cases when the sign-in result in the report shows a successful sign-in, but the sign-in actually failed due to a policy.
+
+      - question: |
+          Why does Windows Sign-in or Windows Hello for Business show as "out of scope" or "not applicable" on the Conditional Access tab in the sign-in log details?
+        answer: |
+          Conditional Access policies don't apply to Windows Sign-in or Windows Hello for Business. Conditional Access policies protect sign-in attempts to cloud resources, not the Windows sign-in process.
 
   - name: Microsoft Graph APIs
     questions:

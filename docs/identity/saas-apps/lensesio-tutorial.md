@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Lenses.io so that I can control who has access to Lenses.io, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -122,7 +122,7 @@ You can find out how Lenses uses group membership mapping for authorization in t
    1. In the **Group type** box, select **Security**.
    1. In the **Group Name** box, enter **LensesUsers**.
    1. Select **Create**.
-1. Select the group **LensesUsers** and copy the **Object ID** (for example, f8b5c1ec-45de-4abd-af5c-e874091fb5f7). You'll use this ID in Lenses to map users of the group to the [correct permissions](https://docs.lenses.io/install_setup/configuration/security.html#id3).  
+1. Select the group **LensesUsers** and copy the **Object ID** (for example, aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb). You'll use this ID in Lenses to map users of the group to the [correct permissions](https://docs.lenses.io/install_setup/configuration/security.html#id3).  
 
 **To assign the group to the test user:**
 

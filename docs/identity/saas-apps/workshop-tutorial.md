@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 08/13/2024
 ms.author: jeedes
 
 
@@ -38,8 +38,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 * Workshop supports **SP and IDP** initiated SSO.
 * Workshop supports **Just In Time** user provisioning.
 
-
-## Adding Workshop from the gallery
+## Add Workshop from the gallery
 
 To configure the integration of Workshop into Microsoft Entra ID, you need to add Workshop from the gallery to your list of managed SaaS apps.
 
@@ -82,18 +81,18 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
 
     a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://<Your Subdomain>.useworkshop.com/auth/auth/saml/metadata`
+    `https://app.useworkshop.com/auth/auth/saml/metadata?id=<ID>`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://<Your Subdomain>.useworkshop.com/auth/auth/saml/callback`
+    `https://app.useworkshop.com/auth/auth/saml/callback?id=<ID>`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<Your Subdomain>.useworkshop.com/auth/auth/saml`
+    In the **Sign on URL** text box, type a URL using the following pattern:
+    `https://app.useworkshop.com/auth/auth/saml?id=<ID>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Workshop Client support team](mailto:help@useworkshop.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Workshop support team](mailto:help@useworkshop.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Workshop application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -177,7 +176,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * Click on **Test this application**, and you should be automatically signed in to the Workshop for which you set up the SSO 
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Workshop tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Workshop for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
-
 
 ## Next steps
 

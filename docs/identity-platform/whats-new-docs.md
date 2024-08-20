@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 04/02/2024
+ms.date: 08/09/2024
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -16,37 +16,44 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
-## March 2024
+## July 2024
+
+### Updated articles
+
+
+- [A web API that calls web APIs: Code configuration](scenario-web-api-call-api-app-configuration.md) - Added clarity to the content
+- [A web app that calls web APIs: Code configuration](scenario-web-app-call-api-app-configuration.md) - Added clarity to the content
+- [Customize claims issued in the JSON web token (JWT) for enterprise applications](jwt-claims-customization.md) - Updating the script with a working version
+- [Troubleshoot publisher verification](troubleshoot-publisher-verification.md) - Removed reference to Postman
+- [Restrict a Microsoft Entra app to a set of users](howto-restrict-your-app-to-a-set-of-users.md) - Added clarity to the content
+
+
+## June 2024
+
+### Updated articles
+
+- [Microsoft identity platform code samples](sample-v2-code.md) - Removed archived samples from code sample page and articles
+- [Quickstart: Configure a client application to access a web API](quickstart-configure-app-access-web-apis.md) - Added clarity to the content
+- [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md) - Added clarity to the content
+- [Quickstart: Sign in users and call Microsoft Graph from an Android app](quickstart-mobile-app-android-sign-in.md) - Added clarity to the content
+- [Redirect URI (reply URL) outline and restrictions](reply-url.md) - Added clarity to the content
+
+## May 2024
 
 ### New articles
 
-- [Create a REST API with a token issuance start event for Azure Functions (preview)](custom-extension-tokenissuancestart-setup.md) - Custom authentication extensions NuGet libraries
-- [Microsoft account (MSA) Server Side API Reference](reference-msa-server-side-api.md) - API reference for EU regulation
-- [Microsoft Entra ID Windows Account Manager (WAM) API Reference](reference-entra-id-wam-api.md) - API reference for EU regulation
+- [Call an ASP.NET Core web API with Insomnia](howto-call-a-web-api-with-rest-client.md) - Test a protected Web API using Insomnia
 
 ### Updated articles
 
-- [Configure a custom claim provider for a token issuance event (preview)](custom-extension-tokenissuancestart-configuration.md) - Custom authentication extensions NuGet libraries
-- [Custom claims provider (preview)](custom-claims-provider-overview.md) - Custom authentication extensions NuGet libraries
-- [Troubleshoot your custom claims provider API (preview)](custom-extension-troubleshoot.md) - Custom authentication extensions NuGet libraries
+- [Create a REST API for a token issuance start event in Azure Functions](custom-extension-tokenissuancestart-setup.md) - Rework token issuance setup
+- [Get a complete list of apps using ADAL in your tenant](howto-get-list-of-all-auth-library-apps.md) - Sign-in workbook and recommendations updates
+- [Microsoft identity platform and OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) - Redirect URI page updated 
+- [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - Redirect URI page updated
+- [Register a Microsoft Entra app and create a service principal](howto-create-service-principal-portal.md) - Added clarity to the content
+- [Redirect URI (reply URL) outline and restrictions](reply-url.md) - Redirect URI page updated
+- [Single-page application: sign-in and sign-out](scenario-spa-sign-in.md) - Added clarity to the content
+- [Troubleshoot your custom claims provider API](custom-extension-troubleshoot.md) - Rework token issuance setup
+- [What's new for authentication?](reference-breaking-changes.md) - Added clarity to the content
 
-## February 2024
 
-### Updated articles
-
-- [Custom authentication extensions for attribute collection start and submit events (preview)](custom-extension-attribute-collection.md) - Adding custom authentication extensions: Split issuer
-- [Configure a custom claim provider token issuance event (preview)](custom-extension-get-started.md) - Adding custom authentication extensions: Split issuer
-- [Microsoft identity platform app types and authentication flows](authentication-flows-app-scenarios.md) - Update to enhance the article's technical accuracy
-- [Overview of the Microsoft Authentication Library (MSAL)](msal-overview.md) - Update to enhance the article's technical accuracy
-- [Use Microsoft Authenticator or Intune Company Portal on Xamarin applications](msal-net-use-brokers-with-xamarin-apps.md) - Removing the android signature digest for the latest android version
-
-## January 2024
-
-### New articles
-
-- [Customize claims emitted in tokens for a specific app in a tenant using PowerShell](claims-customization-powershell.md) - Adding claims customization using PowerShell page
-
-### Updated articles
-
-- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md) - Adding clarity to the article
-- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](quickstart-web-api-aspnet-core-protect-api.md) - Updated the article with the new code sample.

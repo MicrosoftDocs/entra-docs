@@ -36,6 +36,7 @@ With Microsoft Entra monitoring, you can route logs to:
 
 * an Azure storage account for archival purposes.
 * Azure Monitor logs, where you can analyze the data, create dashboards, and alert on specific events.
+* [Microsoft Sentinel](/azure/sentinel/connect-azure-active-directory).
 * an Azure event hub where you can integrate with your existing SIEM tools such as Splunk, Sumologic, or QRadar.
 
 ### Prerequisites
@@ -95,7 +96,7 @@ To better prioritize the use cases and solutions, organize the options by "requi
 
 * **Retention** - Log retention: store audit logs and sign in logs of Microsoft Entra longer than 30 days
 * **Analytics** - Logs are searchable with analytic tools
-* **Operational and security insights** - Provide access to application usage, sign-in errors, self-service usage, trends, etc.
+* **Operational and security insights** - Provide access to application usage, sign-in errors, self-service usage, trends, and so on.
 * **SIEM integration** - Integrate and stream Microsoft Entra sign-in logs and audit logs to SIEM systems
 
 ### Monitoring solution architecture

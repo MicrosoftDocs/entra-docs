@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/10/2023
+ms.date: 07/30/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -20,11 +20,11 @@ You can change a group's membership from static to dynamic (or vice-versa) In Mi
 > [!WARNING]
 > When changing an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, be aware that the original members might lose access until the membership rule is fully processed.
 >
-> We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected.
+> We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see [Resolve group license problems](licensing-groups-resolve-problems.md).
 
 ## Change the membership type for a group
 
-The following steps can be performed using an account that has either the Global administrator, user administrator or groups administrator roles assigned. 
+The following steps can be performed using an account that has at least the Groups Administrator role assigned. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select Microsoft Entra ID.
