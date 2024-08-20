@@ -1,5 +1,5 @@
 ---
-title: How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID (preview)
+title: How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID 
 description: Learn about how to enable passkeys in Microsoft Authenticator for Microsoft Entra ID.
 
 ms.service: entra-id
@@ -14,7 +14,7 @@ ms.reviewer: mjsantani
 
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys in Authenticator sign in for end users.
 ---
-# Enable passkeys in Microsoft Authenticator (preview)
+# Enable passkeys in Microsoft Authenticator
 
 This article lists steps to enable and enforce use of passkeys in Authenticator for Microsoft Entra ID. First, you update the Authentication methods policy to allow end users to register and sign in with passkeys in Authenticator. Then you can use Conditional Access authentication strengths policies to enforce passkey sign-in when users access a sensitive resource.
 
@@ -42,7 +42,7 @@ To enable passkeys in Authenticator, edit the **Passkey (FIDO2)** authentication
    - **Enforce attestation** to **No**
    - **Enforce key restrictions** to **Yes**
    - **Restrict specific keys** to **Allow**
-   - Select **Microsoft Authenticator (Preview)** if the checkbox is displayed in the admin center. This setting automatically populates the Authenticator app AAGUIDs for you in the key restriction list. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
+   - Select **Microsoft Authenticator** checkbox. This setting automatically populates the Authenticator app AAGUIDs for you in the key restriction list. Or you can manually add the following AAGUIDs to enable the Authenticator passkey:
 
       - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
       - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
@@ -50,7 +50,7 @@ To enable passkeys in Authenticator, edit the **Passkey (FIDO2)** authentication
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
   >[!WARNING]
-  >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs, to enable this preview. This task can be done with an automated script that analyzes logs such as registration details and sign-in logs.
+  >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs. This task can be done with an automated script that analyzes logs such as registration details and sign-in logs.
 
 ## Optional settings
 

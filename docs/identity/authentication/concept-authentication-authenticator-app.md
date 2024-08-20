@@ -5,7 +5,7 @@ description: Learn about using the Microsoft Authenticator in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/14/2024
+ms.date: 08/20/2024
 
 ms.author: justinha
 author: justinha
@@ -43,7 +43,18 @@ Passkeys in the Authenticator app are device-bound to ensure that they never lea
 
 ### How passkey attestation works with Authenticator
 
-For now, passkeys in Authenticator are unattested. Attestation support for passkeys in Authenticator is planned for a future release.
+When attestation is enabled in the passkey (FIDO) policy, Microsoft Entra ID tries to verify the legitimacy of the passkey being created. When the user is registering a passkey in the Authenticator, attestation verifies that the legitimate Microsoft Authenticator app created the passkey by using Apple and Google services. Here’s more details: 
+
+- iOS: Authenticator attestation uses the [iOS App Attest service](https://developer.apple.com/documentation/devicecheck/preparing-to-use-the-app-attest-service) to ensure the legitimacy of the Authenticator app before registering the passkey.  
+
+- Android: 
+  - For Play Integrity attestation, Authenticator attestation uses the [Play Integrity API](https://developer.android.com/google/play/integrity/overview) to ensure the legitimacy of the Authenticator app before registering the passkey.  
+  - For Key attestation, Authenticator attestation uses [key attestation by Android](https://developer.android.com/privacy-and-security/security-key-attestation) to verify that the passkey being registered is hardware-backed.     
+
+>[!NOTE]
+>For both iOS and Android, Authenticator attestation relies upon Apple and Google servers to verify the authenticity of the Authenticator app. Heavy server usage can make passkey registration fail, and users may need to try again. If Apple and Google servers are down, Authenticator attestation blocks registrations that require attestation until servers are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/).
+
+For more information about how to configure attestation, see [How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID](how-to-enable-authenticator-passkey.md).
 
 ### Back up and restore passkeys in Authenticator
 
@@ -122,7 +133,7 @@ Microsoft will also periodically retire older versions of the Authenticator App 
 
 ## Next steps
 
-- To get started with passkeys, see [Enable passkeys in Microsoft Authenticator sign in (preview)](how-to-enable-authenticator-passkey.md).
+- To get started with passkeys, see [How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID](how-to-enable-authenticator-passkey.md).
 
 - For more information about passwordless sign-in, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
