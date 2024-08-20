@@ -124,7 +124,7 @@ Use the following Microsoft Graph PowerShell script to revoke all permissions gr
 Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "DelegatedPermissionGrant.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
 
 # Get Service Principal using objectId
-$sp = Get-MgServicePrincipal -ServicePrincipalID "$ServicePrincipalID"
+$sp = Get-MgServicePrincipal -ServicePrincipalID "<ServicePrincipal objectID>"
 
 Example: Get-MgServicePrincipal -ServicePrincipalId 'aaaaaaaa-bbbb-cccc-1111-222222222222'
 
@@ -134,7 +134,7 @@ $spOAuth2PermissionsGrants= Get-MgOauth2PermissionGrant -All| Where-Object { $_.
 # Remove all delegated permissions
 $spOauth2PermissionsGrants |ForEach-Object {
   Remove-MgOauth2PermissionGrant -OAuth2PermissionGrantId $_.Id
-  }
+}
 
 # Get all application permissions for the service principal
 $spApplicationPermissions = Get-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $Sp.Id -All | Where-Object { $_.PrincipalType -eq "ServicePrincipal" }
@@ -142,7 +142,7 @@ $spApplicationPermissions = Get-MgServicePrincipalAppRoleAssignment -ServicePrin
 # Remove all application permissions
 $spApplicationPermissions | ForEach-Object {
 Remove-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $Sp.Id  -AppRoleAssignmentId $_.Id
- }
+}
 ``` 
 
 ## Invalidate the refresh tokens
@@ -153,7 +153,7 @@ Remove appRoleAssignments for users or groups to the application using the follo
 Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
 
 # Get Service Principal using objectId
-$sp = Get-MgServicePrincipal -ServicePrincipalID "$ServicePrincipalID"
+$sp = Get-MgServicePrincipal -ServicePrincipalID "<ServicePrincipal objectID>"
 
 Example: Get-MgServicePrincipal -ServicePrincipalId 'aaaaaaaa-bbbb-cccc-1111-222222222222'
 
@@ -163,7 +163,7 @@ $spApplicationPermissions = Get-MgServicePrincipalAppRoleAssignedTo -ServicePrin
 # Revoke refresh token for all users assigned to the application
   $spApplicationPermissions | ForEach-Object {
   Remove-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $_.PrincipalId -AppRoleAssignmentId $_.Id
-  }
+}
 ```
 
 :::zone-end

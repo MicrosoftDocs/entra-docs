@@ -1735,8 +1735,6 @@
         href: luum-tutorial.md
       - name: Lynda.com
         href: lynda-tutorial.md
-      - name: Lytx DriveCam
-        href: lytx-drivecam-tutorial.md
       - name: Lyve Cloud
         href: lyve-cloud-tutorial.md
       - name: M-Files
@@ -3213,6 +3211,8 @@
         href: zengine-tutorial.md  
       - name: ZenQMS
         href: zenqms-tutorial.md
+      - name: Zenvoices IMAP (OIDC)
+        href: zenvoices-imap-tutorial.md
       - name: Zenya
         href: zenya-tutorial.md
       - name: ZephyrSSO
