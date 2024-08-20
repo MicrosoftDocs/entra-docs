@@ -28,14 +28,13 @@ In this tutorial, you'll learn how to integrate Navan with Microsoft Entra ID. W
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* Navan single sign-on (SSO) enabled subscription.
+* Navan [single sign-on (SSO)](https://app.navan.com/app/helpcenter/articles/travel/admin/sso-integrations/universal-saml-sso) enabled subscription.
 
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Navan supports both **SP and IDP** initiated SSO.
-* Navan supports **Just In Time** user provisioning.
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -79,12 +78,14 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Microsoft Entra. The user needs to save the configuration by clicking the **Save** button.
+1. On the **Basic SAML Configuration** section, Copy the Entity ID and ACS Url fields from Navan and paste them into the Identifier and Reply URL fields in your SAML app.
+**Entity ID = Identifier**
+**ACS URL = Reply URL**  
+2. From **Navan** > **Admin** > **Configuration** > **Integrations** > **Add Single Sign-On Integration** > Copy your unique **ACS Url** and **Entity ID** [As noted in Step 8](https://app.navan.com/app/helpcenter/articles/travel/admin/sso-integrations/universal-saml-sso)
+3. On the **Basic SAML Configuration** section, Paste them into **Identifier** and **Reply URL** fields in your SAML app.
 
-1. If you wish to configure the application in **SP** initiated mode, then perform the following step:
 
-    In the **Sign-on URL** text box, type the URL:
-    `https://app.tripactions.com`
+1. If you wish to configure the application in **SP** initiated mode, no additional work should be required
 
 1. Click **Save**.
 
