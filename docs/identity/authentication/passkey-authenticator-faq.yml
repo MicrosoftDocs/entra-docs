@@ -45,7 +45,7 @@ sections:
           For same-device scenarios, the mobile device that contains the passkey must be connected to the internet. 
           For cross-device scenarios, both the device with the passkey and the secondary device you are authenticating on must be connected to the internet.  
       - question: |
-          Users get caught in a loop when they try to add a passkey in Authenticator. They're redirected to add the passkey in their Security info, but their Security info provides only an option to add a passkey in Authenticator. What are possible workarounds?
+          How can I prevent users from being looped between Authenticator and Security info when they add a passkey?
         answer: |
           This loop occurs if you configure an authentication strength Conditional Access policy with the following conditions:
 
