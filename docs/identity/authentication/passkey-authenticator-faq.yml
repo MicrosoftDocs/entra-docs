@@ -24,9 +24,12 @@ sections:
         answer: |
           Authenticator uses operating system APIs as a passkey provider. These APIs are available only on devices that run Android 14 and iOS 17 or later. As a result, passkeys in Authenticator are only available on devices that run Android 14 or iOS 17 and later.
       - question: |
-          Do I need to enable bluetooth to perform cross-device authentication?
+          Do I need to enable Bluetooth to perform cross-device authentication?
         answer: |
-          To complete cross-device authentication using passkeys in Authenticator, you must enable bluetooth on both the laptop and the mobile device, and both devices must also be connected to the internet. 
+          To complete cross-device registration or authentication using passkeys in Authenticator, you must enable Bluetooth on both the laptop and the mobile device, and both devices must also be connected to the internet. 
+          Some organizations restrict Bluetooth usage, which includes the use of passkeys. 
+          In such cases, organizations can allow passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. 
+          For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](https://review.learn.microsoft.com/en-us/windows/security/identity-protection/passkeys/?branch=pr-en-us-10051&tabs=windows#passkeys-in-bluetooth-restricted-environments).
       - question: |
           Can I have multiple passkeys in Authenticator?
         answer: |        
@@ -41,3 +44,17 @@ sections:
           You can't use passkeys without an internet connection. 
           For same-device scenarios, the mobile device that contains the passkey must be connected to the internet. 
           For cross-device scenarios, both the device with the passkey and the secondary device you are authenticating on must be connected to the internet.  
+      - question: |
+          Users get caught in a loop when they try to add a passkey in Authenticator. They're redirected to add the passkey in their Security info, but their Security info provides only an option to add a passkey in Authenticator. What are possible workarounds?
+        answer: |
+          This loop occurs if you configure an authentication strength Conditional Access policy with the following conditions:
+
+          - Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
+          - Targeted resource: **All cloud apps** 
+          - Grant control: **Authentication strength - Require passkey in Authenticator** 
+
+          The policy creates a loop for the user because the authentication strength requires Authenticator, and the targeted resource is **All cloud apps**, which includes Authenticator. 
+          As a result, when a user tries to add a passkey in Authenticator, they are directed to [Security info](https://mysignins.microsoft.com/security-info) for passkey registration. 
+          But they only can add **Passkey in Microsoft Authenticator** as a registration option because of the authentication strength requirement. 
+          For more information about how to workaround the loop, see [Workarounds for an authentication strength Conditional Access policy loop](how-to-support-authenticator-passkey.md).
+
