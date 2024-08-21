@@ -26,7 +26,7 @@ Sensitivity labels can be applied to groups across apps and services such as Out
 
 To apply published labels to groups, you must first enable the feature. These steps enable the feature in Microsoft Entra ID. The Microsoft Graph PowerShell SDK comes in two modules, `Microsoft.Graph` and `Microsoft.Graph.Beta`.
 
-#### [Basic process](#tab/basic-process)
+#### [Standard](#tab/standard)
 1. Open a PowerShell prompt on your computer and run the following commands to prepare to run the cmdlets.
 
     ```powershell
