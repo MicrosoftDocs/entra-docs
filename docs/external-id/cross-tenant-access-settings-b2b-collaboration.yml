@@ -6,7 +6,7 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: celestedg
-  ms.date: 06/07/2024
+  ms.date: 08/21/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -295,7 +295,7 @@ procedureSection:
 
       3. Select one or more of the following options:
 
-          - **Trust multifactor authentication from Microsoft Entra tenants**: Select this checkbox to allow your Conditional Access policies to trust MFA claims from external organizations. During authentication, Microsoft Entra ID checks a user's credentials for a claim that the user completed MFA. If not, an MFA challenge is initiated in the user's home tenant.  
+          - **Trust multifactor authentication from Microsoft Entra tenants**: Select this checkbox to allow your Conditional Access policies to trust MFA claims from external organizations. During authentication, Microsoft Entra ID checks a user's credentials for a claim that the user completed MFA. If not, an MFA challenge is initiated in the user's home tenant. this setting is not applied if an external user signs in using [granular delegated admin privileges (GDAP)](/partner-center/customers/gdap-introduction), such as used by a technician at a Cloud Service Provider that administer services in your tenant. When an external user signs in using GDAP, multifactor authentication is always required in the user's home tenant, and always trusted in the resource tenant.
 
           - **Trust compliant devices**: Allows your Conditional Access policies to trust [compliant device claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) from an external organization when their users access your resources.
 
