@@ -141,6 +141,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/whitesource-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/mend-io-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/karlsgate-identity-exchange-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/karlsgate-identity-exchange-kie-sso-add-on-tutorial",
       "redirect_document_id": false
