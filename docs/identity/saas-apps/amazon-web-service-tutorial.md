@@ -131,10 +131,6 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In the **Basic SAML Configuration** section, update both **Identifier (Entity ID)** and **Reply URL** with the same default value: `https://signin.aws.amazon.com/saml`. You must select **Save** to save the configuration changes.
 
-1. When you are configuring more than one instance, provide an identifier value. From second instance onwards, use the following format, including a **#** sign to specify a unique SPN value.
-
-    `https://signin.aws.amazon.com/saml#2`
-
 1. AWS application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![Screenshot showing default attributes.](common/default-attributes.png)
