@@ -100,7 +100,7 @@ Next, you create an app registration in Microsoft Entra ID, so that Microsoft En
 
 ### Grant admin consent
 
-The application created in the previous section has permissions that require someone with at least the Privileged Role Administrator role to approve before it will work as intended.
+The application created in the previous section has permissions that require someone with at least the Privileged Role Administrator role to approve before it works as intended.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator). 
 1. Browse to > **Identity** > **Applications** > **App registrations** > **All applications**.
