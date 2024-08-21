@@ -22,12 +22,12 @@ Get started with Microsoft External ID for consumer and business customer apps, 
 
 Microsoft Entra External ID is now generally available. To get started, you have two options:
 
-- **Set up a tenant with a subscription:** Create a tenant with an external tenant configuration in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md). 
-- **Free trial with no payment or subscription required:** Create a free trial tenant with an external configuration. This free trial provides you the opportunity to try new features and build applications and processes during the 30-day trial period.  Each user account can only have one active free trial tenant at a time. Organization (tenant) admins can invite other users.  
+- **Set up a tenant with a subscription:** Create a tenant with an external tenant configuration in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md).
+- **Free trial with no payment or subscription required:** Create a free trial tenant with an external configuration. This free trial provides you with the opportunity to try new features and build applications and processes during the 30-day trial period.  Each user account can only have one active free trial tenant at a time. Organization (tenant) admins can invite other users.  
 If you're a developer using Visual Studio Code, you can also set up a free trial through the Microsoft Entra External ID extension ([learn more](visual-studio-code-extension.md)).  
-This free trial sign-up, where no payment information is required, is currently in preview and designed for testing and evaluation purposes only. It is not suitable for scale testing or production use. 
+This free trial sign-up, where no payment information is required, is currently in preview and designed for testing and evaluation purposes only. It isn't suitable for scale testing or production use.
 
-The trial tenant will support up to 10K resources, learn more about Microsoft Entra service limits [here](~/identity/users/directory-service-limits-restrictions.md). During your free trial, you'll have the option to unlock the full set of features by upgrading to [Azure free account](https://azure.microsoft.com/free/).
+The trial tenant supports up to 10K resources, learn more about Microsoft Entra service limits [here](~/identity/users/directory-service-limits-restrictions.md). During your free trial, you have the option to unlock the full set of features by upgrading to [Azure free account](https://azure.microsoft.com/free/).
 
    > [!NOTE]
    > At the end of the free trial period, your free trial tenant will be disabled and deleted. You can always come back and register for another trial using this link: https://aka.ms/ciam-free-trial. 
