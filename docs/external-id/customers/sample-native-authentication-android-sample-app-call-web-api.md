@@ -71,7 +71,7 @@ You need to host your web API for the Android sample app to call it. Follow [Qui
 
 ## Configure sample Android mobile app to call web API
 
-The sample enables you to configure multiple Web API URL endpoints and sets of scopes. For this case, you configure just one Web API URL endpoint and its associated scopes.
+The sample allows you to configure multiple Web API URL endpoints and sets of scopes. In this case, you configure only one Web API URL endpoint and its associated scopes.
 
 1. In your Android Studio, open `/app/src/main/java/com/azuresamples/msalnativeauthandroidkotlinsampleapp/AccessApiFragment.kt` file.
 1. Find property named `WEB_API_URL_1` and set the URL to your web API.
