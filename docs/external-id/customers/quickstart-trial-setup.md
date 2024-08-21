@@ -32,7 +32,7 @@ The trial tenant supports up to 10K resources, learn more about Microsoft Entra 
    > [!NOTE]
    > At the end of the free trial period, your free trial tenant will be disabled and deleted. You can always come back and register for another trial using this link: https://aka.ms/ciam-free-trial. 
     
-During the free trial period, you'll have access to all product features with few exceptions. See the following table for comparison: 
+During the free trial period, you have access to all product features with few exceptions. See the following table for comparison: 
 
 |  Features | Microsoft Entra External ID Trial (without credit card) | Microsoft Entra account includes Partners (needs credit card)  | 
 |----------|:-----------:|:------------:|
@@ -58,7 +58,7 @@ During the free trial period, you'll have access to all product features with fe
 
 ## Get started guide
 
-Once your external tenant free trial is ready, the next step is to personalize your customer's sign-in and sign-up experience, set up a user in your tenant, and configure a sample app. The [get started guide](https://aka.ms/ciam/free-trial-hero) will walk you through all of these steps in just a few minutes. For more information about the next steps, see the [get started guide](quickstart-get-started-guide.md) article. 
+Once your external tenant free trial is ready, the next step is to personalize your customer's sign-in and sign-up experience, set up a user in your tenant, and configure a sample app. The [get started guide](https://aka.ms/ciam/free-trial-hero) walks you through all of these steps in just a few minutes. For more information about the next steps, see the [get started guide](quickstart-get-started-guide.md) article. 
 
 ## Upgrade your free trial by adding an Azure subscription
 
