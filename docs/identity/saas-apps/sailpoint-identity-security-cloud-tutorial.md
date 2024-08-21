@@ -51,7 +51,7 @@ To configure the integration of SailPoint Identity Security Cloud into Microsoft
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
-<a name='configure-and-test-azure-ad-sso-for-sailpoint- Identity Security Cloud'></a>
+<a name='configure-and-test-azure-ad-sso-for-sailpoint-identitysecuritycloud'></a>
 
 ## Configure and test Microsoft Entra SSO for SailPoint Identity Security Cloud
 
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
     a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://<TENANT_NAME>. Identity Security Cloud.com/sp`
+    `https://<TENANT_NAME>.identitynow.com/sp`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<TENANT_NAME>.login.sailpoint.com/saml/SSO/alias/<TENANT_NAME>-sp`
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<TENANT_NAME>. Identity Security Cloud.com/`
+    `https://<TENANT_NAME>.identitynow.com/`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [SailPoint Identity Security Cloud Client support team](mailto:support@sailpoint.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
@@ -139,7 +139,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Go to **Global -> Security Settings -> Service Provider** make the following configuration changes.
 
-    [![Screenshot of sailpoint sso configuration.](./media/sailpoint- Identity Security Cloud-tutorial/configuration.png "sailpoint")](./media/sailpoint- Identity Security Cloud-tutorial/configuration.png#lightbox)
+    [![Screenshot of sailpoint sso configuration.](./media/sailpoint-identitynow-tutorial/configuration.png "sailpoint")](./media/sailpoint-identitynow-tutorial/configuration.png#lightbox)
 
     a. Enable Remote Identity Provider.
 
