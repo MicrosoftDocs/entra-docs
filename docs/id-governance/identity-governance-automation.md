@@ -103,7 +103,7 @@ Next, you create an app registration in Microsoft Entra ID, so that Microsoft En
 The application created in the previous section has permissions that require someone with at least the Privileged Role Administrator role to approve before it works as intended.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator). 
-1. Browse to > **Identity** > **Applications** > **App registrations** > **All applications**.
+1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
 1. Select the app that was created in the previous section.
 1. Select **API permissions** and review the permissions required.
 1. If appropriate, select **Grant admin consent for "Your Tenant Name"** to give the application those permissions.
