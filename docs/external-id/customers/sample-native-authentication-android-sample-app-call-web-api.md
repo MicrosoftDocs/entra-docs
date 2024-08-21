@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: sample
-ms.date: 03/06/2024
+ms.date: 08/21/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to call a web API from a sample Android mobile app so that I can experience how Microsoft Entra's native authentication works.
 ---
@@ -71,17 +71,19 @@ You need to host your web API for the Android sample app to call it. Follow [Qui
 
 ## Configure sample Android mobile app to call web API
 
+The samples enable you to configure multiple Web API URL endpoints and sets of scopes. For this case, you configure just one Web API URL endpoint and its associated scopes.
+
 1. In your Android Studio, open `/app/src/main/java/com/azuresamples/msalnativeauthandroidkotlinsampleapp/AccessApiFragment.kt` file.
-1. Find property named `WEB_API_BASE_URL` and set the URL to your web API.
+1. Find property named `WEB_API_URL_1` and set the URL to your web API.
 
     ```kotlin
-    private const val WEB_API_BASE_URL = "" // Developers should set the respective URL of their web API here
+    private const val WEB_API_URL_1 = "" // Developers should set the respective URL of their web API here
     ```
     
-1. Find property named `scopes` and set the scopes recorded in [Grant API permissions to the Android sample app](#grant-api-permissions-to-the-android-sample-app).
+1. Find property named `scopesForAPI1` and set the scopes recorded in [Grant API permissions to the Android sample app](#grant-api-permissions-to-the-android-sample-app).
 
     ```kotlin
-    private val scopes = listOf<String>() // Developers should set the respective scopes of their web API here. For example, private val scopes = listOf<String>("api://{clientId}/{ToDoList.Read}", "api://{clientId}/{ToDoList.ReadWrite}")
+    private val scopesForAPI1 = listOf<String>() // Developers should set the respective scopes of their web API here. For example, private val scopes = listOf<String>("api://{clientId}/{ToDoList.Read}", "api://{clientId}/{ToDoList.ReadWrite}")
     ```
     
 ## Run Android sample app and call web API
