@@ -59,8 +59,8 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Portal
-            url: howto-assign-access-portal.md
+            url: how-to-configure-managed-identities-scale-sets?pivots=identity-mi-methods-azp
           - text: CLI
-            url: howto-assign-access-cli.md
+            url: how-to-assign-access-azure-resource?pivots=identity-mi-access-cli
           - text: PowerShell
-            url: howto-assign-access-powershell.md
+            url: hhow-to-assign-access-azure-resource?pivots=identity-mi-access-powershell
