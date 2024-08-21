@@ -25,6 +25,7 @@ Sensitivity labels can be applied to groups across apps and services such as Out
 ## Enable sensitivity label support in PowerShell
 
 To apply published labels to groups, you must first enable the feature. These steps enable the feature in Microsoft Entra ID. The Microsoft Graph PowerShell SDK comes in two modules, `Microsoft.Graph` and `Microsoft.Graph.Beta`.
+All Microsoft operated regions should choose standard. All other regions should choose their respective operator.
 
 #### [Standard](#tab/standard)
 1. Open a PowerShell prompt on your computer and run the following commands to prepare to run the cmdlets.
@@ -81,7 +82,7 @@ If you receive a `Request_BadRequest` error, it's because the settings already e
 
 You also need to synchronize your sensitivity labels to Microsoft Entra ID. For instructions, see [Enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
 
-#### [21Vianet steps](#tab/21Vianet)
+#### [21Vianet](#tab/21Vianet)
 
 If you are performing these M365 operations from 21Vianet:
 
