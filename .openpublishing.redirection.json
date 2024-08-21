@@ -116,6 +116,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/lytx-drivecam-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/cisco-umbrella-user-management-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/cisco-user-management-for-secure-access-provisioning-tutorial",
       "redirect_document_id": false
@@ -133,6 +138,11 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/neotalogicstudio-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/neota-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/whitesource-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/mend-io-tutorial",
       "redirect_document_id": false
     },
     {
@@ -274,7 +284,7 @@
       "source_path_from_root": "/docs/identity/app-provisioning/application-provisioning-config-problem.md",
       "redirect_url": "/entra/identity",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path_from_root": "/docs/identity/app-provisioning/inbound-provisioning-api-postman.md",
       "redirect_url": "/entra/identity/app-provisioning/inbound-provisioning-api-curl-tutorial",

@@ -1735,8 +1735,6 @@
         href: luum-tutorial.md
       - name: Lynda.com
         href: lynda-tutorial.md
-      - name: Lytx DriveCam
-        href: lytx-drivecam-tutorial.md
       - name: Lyve Cloud
         href: lyve-cloud-tutorial.md
       - name: M-Files
@@ -1779,6 +1777,8 @@
         href: mdcomune-business-tutorial.md
       - name: MemoMeister
         href: memomeister-tutorial.md
+      - name: Mend.io
+        href: mend-io-tutorial.md
       - name: Menlo Security
         href: menlosecurity-tutorial.md
       - name: Meraki Dashboard
@@ -3117,8 +3117,6 @@
         href: whatfix-tutorial.md
       - name: Whimsical
         href: whimsical-tutorial.md
-      - name: Whitesource
-        href: whitesource-tutorial.md
       - name: WhosOff
         href: whosoff-tutorial.md
       - name: WhosOffice
