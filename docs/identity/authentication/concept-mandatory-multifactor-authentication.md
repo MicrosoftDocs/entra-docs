@@ -16,7 +16,7 @@ ms.reviewer: nashahid
 
 At Microsoft, we're committed to providing our customers with the highest level of security. That's why, starting in 2024, we'll enforce mandatory multifactor authentication (MFA) for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications are affected and how to prepare for mandatory MFA. 
 
-If you created a Microsoft Entra ID directory previously, you were assigned the [Global Administrator role](~/identity~/role-based-access-control/permissions-reference#global-administrator.md). An email to notify Global Administrators about enforcement of mandatory MFA refers to the tenant ID of the directory. You can confirm the tenant ID on the Overview page in the [Microsoft Entra admin center](https://entra.microsoft.com). For more information about others ways Microsoft notifies Global Administrators, see [Notification channels](#notification-channels).
+If you created a Microsoft Entra ID directory previously, you were assigned the [Global Administrator role](~/identity/role-based-access-control/permissions-reference#global-administrator.md). An email to notify Global Administrators about enforcement of mandatory MFA refers to the tenant ID of the directory. You can confirm the tenant ID on the Overview page in the [Microsoft Entra admin center](https://entra.microsoft.com). For more information about others ways Microsoft notifies Global Administrators, see [Notification channels](#notification-channels).
 
 ## Scope of enforcement 
 
