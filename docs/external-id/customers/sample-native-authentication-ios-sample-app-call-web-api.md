@@ -70,7 +70,7 @@ You need to host your web API for the iOS sample app to call it. Follow [Quickst
 
 ## Configure sample iOS mobile app to call web API
 
-The samples enable you to configure multiple Web API URL endpoints and sets of scopes. For this case, you configure just one Web API URL endpoint and its associated scopes.
+The sample enables you to configure multiple Web API URL endpoints and sets of scopes. For this case, you configure just one Web API URL endpoint and its associated scopes.
 
 1. In your Xcode, open `/NativeAuthSampleApp/ProtectedAPIViewController.swift` file.
 1. Find `protectedAPIUrl1` and enter your web API URL as its value.
