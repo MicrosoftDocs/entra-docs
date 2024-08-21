@@ -83,7 +83,7 @@ By default, Azure Automation doesn't have any PowerShell modules preloaded for M
 Next, you create an app registration in Microsoft Entra ID, so that Microsoft Entra ID recognizes your Azure Automation runbook's certificate for authentication.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator). 
-1. Browse to > **Identity** > **Applications** > **App registrations**.
+1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select **New registration**.
 1. Type a name for the application and select **Register**.
    1. Once the application registration is created, take note of the **Application (client) ID** and **Directory (tenant) ID** as you need these items later.
