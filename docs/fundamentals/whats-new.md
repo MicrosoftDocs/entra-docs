@@ -129,6 +129,16 @@ Starting late September 2024, applications indicated as '*SAML*' applications,  
 
 ---
 
+### Change Announcement - Deferred Changes to My Groups Admin Controls
+
+**Type:** Plan for change    
+**Service category:** Group Management    
+**Product capability:** AuthZ/Access Delegation        
+
+In [October 2023](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/what-s-new-in-microsoft-entra/ba-p/3796395) we shared that, starting June 2024, the existing Self Service Group Management setting in the Microsoft Entra Admin Center which states "*restrict user ability to access groups features in My Groups*" will be retired. These changes are under review, and will not take place as originally planned. A new deprecation date will be announced in the future.
+
+---
+
 
 ## July 2024
 
