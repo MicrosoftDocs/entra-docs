@@ -106,7 +106,7 @@ The application created in the previous section has permissions that require som
 1. Browse to > **Identity** > **Applications** > **App registrations** > **All applications**.
 1. Select the app that was created in the previous section.
 1. Select **API permissions** and review the permissions required.
-1. If appropriate, select **Grant admin permissions** to give the application those permissions.
+1. If appropriate, select **Grant admin consent for "Your Tenant Name"** to give the application those permissions.
 
 ## Create Azure Automation variables
 
