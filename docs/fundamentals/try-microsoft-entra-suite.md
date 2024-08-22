@@ -56,7 +56,7 @@ The following how-to guides are expanded upon in this section:
 - [Step 2: Enact access reviews](#step-2-enact-access-reviews): Conduct an access review to ensure appropriate system access within your enterprise. 
 - [Step 3: Secure access to the internet](#step-3-secure-access-to-the-internet): Protect internet traffic with secure web gateways.
 - [Step 4: Enable private access gateways](#step-4-enable-private-access-gateways): Depreciate costly VPN systems with Quick Access.
-- [Step 5: Onboard customers with a workflow portal](#step-5-onboard-customer-workflow-portal): Automate employee onboarding with lifecycle workflows. 
+- [Step 5: Onboard customers with a workflow portal](#step-5-onboard-customers-with-a-workflow-portal): Automate employee onboarding with lifecycle workflows. 
 
 :::image type="content" border="true" source="./media/entra-suite-trial/entra-suite-trial.png" alt-text="Screenshot of the Microsoft Entra Suite zero trust strategy steps.":::
 
