@@ -2133,6 +2133,8 @@
         href: periscope-data-tutorial.md
       - name: PetroVue
         href: petrovue-tutorial.md
+      - name: Pexip Service (MMV legacy app) 
+        href: pexip-service-mmv-legacy-app.md
       - name: Phenom TXM
         href: phenom-txm-tutorial.md
       - name: Phraseanet

@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Pexip'
-description: Learn how to configure single sign-on between Microsoft Entra ID and Pexip.
+title: 'Tutorial: Microsoft Entra integration with Pexip Service (MMV legacy app)'
+description: Learn how to configure single sign-on between Microsoft Entra ID and Pexip Service (MMV legacy app).
 
 author: jeevansd
 manager: CelesteDG
@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: jeedes
 ---
-# Tutorial: Microsoft Entra integration with Pexip
+# Tutorial: Microsoft Entra integration with Pexip Service (MMV legacy app)
 
-In this tutorial, you'll learn how to integrate Pexip with Microsoft Entra ID. When you integrate Pexip with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate Pexip Service (MMV legacy app) with Microsoft Entra ID. When you integrate Pexip Service (MMV legacy app) with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to Pexip.
-* Enable your users to be automatically signed-in to Pexip with their Microsoft Entra accounts.
+* Control in Microsoft Entra ID who has access to Pexip Service (MMV legacy app).
+* Enable your users to be automatically signed-in to Pexip Service (MMV legacy app) with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
@@ -25,41 +25,41 @@ In this tutorial, you'll learn how to integrate Pexip with Microsoft Entra ID. W
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* Pexip single sign-on (SSO) enabled subscription.
+* Pexip Service (MMV legacy app) single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
 In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
 
-* Pexip supports **SP** initiated SSO.
+* Pexip Service (MMV legacy app) supports **SP** initiated SSO.
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
 
-## Add Pexip from the gallery
+## Add Pexip Service (MMV legacy app) from the gallery
 
-To configure the integration of Pexip into Microsoft Entra ID, you need to add Pexip from the gallery to your list of managed SaaS apps.
+To configure the integration of Pexip Service (MMV legacy app) into Microsoft Entra ID, you need to add Pexip Service (MMV legacy app) from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Pexip** in the search box.
-1. Select **Pexip** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Add from the gallery** section, type **Pexip Service (MMV legacy app)** in the search box.
+1. Select **Pexip Service (MMV legacy app)** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
-<a name='configure-and-test-azure-ad-sso-for-pexip'></a>
+<a name='configure-and-test-azure-ad-sso-for-pexip-service-mmv-legacy-app)'></a>
 
-## Configure and test Microsoft Entra SSO for Pexip
+## Configure and test Microsoft Entra SSO for Pexip Service (MMV legacy app)
 
-Configure and test Microsoft Entra SSO with Pexip using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Pexip.
+Configure and test Microsoft Entra SSO with Pexip Service (MMV legacy app) using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Pexip Service (MMV legacy app).
 
-To configure and test Microsoft Entra SSO with Pexip, perform the following steps:
+To configure and test Microsoft Entra SSO with Pexip Service (MMV legacy app), perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Pexip SSO](#configure-pexip-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Pexip test user](#create-pexip-test-user)** - to have a counterpart of B.Simon in Pexip that is linked to the Microsoft Entra representation of user.
+1. **[Configure Pexip Service (MMV legacy app) SSO](#configure-pexip-service-mmv-legacy-app-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create Pexip Service (MMV legacy app) test user](#create-pexip-service-mmv-legacy-app-test-user)** - to have a counterpart of B.Simon in Pexip Service (MMV legacy app) that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -69,7 +69,7 @@ To configure and test Microsoft Entra SSO with Pexip, perform the following step
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Pexip** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Pexip Service (MMV legacy app)** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up Pexip** section, copy the appropriate URL(s) as per your requirement.
+1. On the **Set up Pexip Service (MMV legacy app)** section, copy the appropriate URL(s) as per your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -107,34 +107,34 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Pexip.
+In this section, you'll enable B.Simon to use single sign-on by granting access to Pexip Service (MMV legacy app).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Pexip**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Pexip Service (MMV legacy app)**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure Pexip SSO
+## Configure Pexip Service (MMV legacy app) SSO
 
-To configure single sign-on on **Pexip** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Pexip support team](https://support.videxio.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Pexip Service (MMV legacy app)** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Pexip Service (MMV legacy app) support team](https://support.videxio.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
-### Create Pexip test user
+### Create Pexip Service (MMV legacy app) test user
 
-In this section, you create a user called Britta Simon in Pexip. Work with [Pexip support team](https://support.videxio.com) to add the users in the Pexip platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Pexip Service (MMV legacy app). Work with [Pexip Service (MMV legacy app) support team](https://support.videxio.com) to add the users in the Pexip Service (MMV legacy app) platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Pexip Sign-on URL where you can initiate the login flow. 
+* Click on **Test this application**, this will redirect to Pexip Service (MMV legacy app) Sign-on URL where you can initiate the login flow. 
 
-* Go to Pexip Sign-on URL directly and initiate the login flow from there.
+* Go to Pexip Service (MMV legacy app) Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Pexip tile in the My Apps, this will redirect to Pexip Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you click the Pexip Service (MMV legacy app) tile in the My Apps, this will redirect to Pexip Service (MMV legacy app) Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 
-Once you configure Pexip you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+Once you configure Pexip Service (MMV legacy app) you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
