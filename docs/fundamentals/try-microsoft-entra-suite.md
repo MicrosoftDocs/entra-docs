@@ -124,9 +124,9 @@ The following deployment scenarios provide detailed guidance on how to combine a
 
 To get the most out of your trial, get started by walking through the following user scenarios. 
 
-1. [Scenario: Automate user onboarding and lifecycle with access to all apps](#scenario-1-automate-user-onboarding-and-lifecycle-with-access-to-all-apps)
-1. [Scenario: Modernize remote access to on-premises apps with MFA per app](#scenario-2-modernize-remote-access-to-on-premises-apps-with-mfa-per-app) 
-1. [Scenario: Secure internet access based on business needs](#scenario-3-secure-internet-access-based-on-business-needs) 
+- [Scenario 1: Automate user onboarding and lifecycle with access to all apps](#scenario-1-automate-user-onboarding-and-lifecycle-with-access-to-all-apps)
+- [Scenario 2: Modernize remote access to on-premises apps with MFA per app](#scenario-2-modernize-remote-access-to-on-premises-apps-with-mfa-per-app) 
+- [Scenario 3: Secure internet access based on business needs](#scenario-3-secure-internet-access-based-on-business-needs) 
 
 During your Microsoft Entra Suite’s trial period, be sure you take advantage of the better together security strategy by implementing automated user onboarding and lifecycle management, modernizing from traditional VPN to on-premises resources with multifactor authentication (MFA) all the way down to the app level, and securing internet access based on the rules of your business.  
 
