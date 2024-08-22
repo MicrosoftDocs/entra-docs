@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 07/29/2024
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
@@ -166,10 +166,9 @@ To illustrate the procedure, let's use the CSV file `Samples/csv-with-2-records.
 
 1. You can open the contents of the file `BulkRequestPayload.json` to verify if the SCIM attributes are set as per mapping defined in the file `AttributeMapping.psd1`.
 
-1. You can post the file generated above as-is to the [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint associated with your provisioning app using Graph Explorer or Postman or cURL. Reference: 
+1. You can post the file generated above as-is to the [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint associated with your provisioning app using Graph Explorer or cURL. Reference: 
 
    - [Quick start with Graph Explorer](inbound-provisioning-api-graph-explorer.md) 
-   - [Quick start with Postman](inbound-provisioning-api-postman.md)
    - [Quick start with cURL](inbound-provisioning-api-curl-tutorial.md)
 
 1. To directly upload the generated payload to the API endpoint using the same PowerShell script refer to the next section. 

@@ -24,12 +24,12 @@ Two configurations are covered in this article.
 In the first configuration, you enable the Microsoft 365 and Internet Access traffic forwarding profiles in the Microsoft Entra admin center. You disable the Private Access traffic forwarding profile in the Microsoft Entra admin center. The Global Secure Access client captures Microsoft 365 and Internet traffic. The Zscaler client captures Private Access traffic.
 
 > [!NOTE]
-> The clients must be installed on a Windows 10 or Windows 11 Entra joined device.
+> The clients must be installed on a Windows 10 or Windows 11 Microsoft Entra joined device or Microsoft Entra hybrid joined device.
 
 In the second configuration, you enable the Microsoft 365 forwarding profile and disable the Internet Access and Private Access traffic forwarding profiles in the Microsoft Entra admin center. The Global Secure Access client captures Microsoft 365 traffic. The Zscaler client captures Internet Access traffic.
 
 > [!NOTE]
-> The clients must be installed on Windows 10 or Windows 11 Entra joined device or a macOS Monterey device registered to Entra with Intune Company Portal. 
+> The clients must be installed on Windows 10 or Windows 11 Microsoft Entra joined device, Microsoft Entra hybrid joined device, or a macOS Monterey device registered to Entra with Intune Company Portal. 
 
 ## Microsoft Entra Internet Access and Microsoft Entra Private Access configuration
 

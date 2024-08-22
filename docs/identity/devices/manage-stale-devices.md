@@ -64,7 +64,7 @@ To efficiently cleanup stale devices in your environment, you should define a re
 > [!CAUTION]
 > If your organization uses BitLocker drive encryption, you should ensure that BitLocker recovery keys are either backed up or no longer needed before deleting devices. Failure to do this may cause loss of data.
 
-If you use features like [Autopilot](/autopilot/registration-overview#deregister-from-autopilot-using-intune) or [Universal Print](/universal-print/portal/register-unregister-printers), those devices should be cleaned up in their respective admin portals.
+If you use features like [Autopilot](/autopilot/registration-overview#deregister-from-autopilot-using-intune) or [Universal Print](/universal-print/reference/portal/register-unregister-printers), those devices should be cleaned up in their respective admin portals.
 
 ### Cleanup account
 

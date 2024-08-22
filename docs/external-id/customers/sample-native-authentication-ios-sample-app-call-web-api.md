@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: sample
-ms.date: 03/06/2024
+ms.date: 08/21/2024
 ms.custom: developer
 #Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an iOS sample app.
 ---
@@ -70,17 +70,19 @@ You need to host your web API for the iOS sample app to call it. Follow [Quickst
 
 ## Configure sample iOS mobile app to call web API
 
+The sample allows you to configure multiple Web API URL endpoints and sets of scopes. In this case, you configure only one Web API URL endpoint and its associated scopes.
+
 1. In your Xcode, open `/NativeAuthSampleApp/ProtectedAPIViewController.swift` file.
-1. Find `Enter_the_Protected_API_Full_URL_Here` and replace this value with your web API URL.
+1. Find `protectedAPIUrl1` and enter your web API URL as its value.
 
     ```swift
-    let protectedAPIUrl = "Enter_the_Protected_API_Full_URL_Here" // Developers should set the respective URL of their web API here
+    let protectedAPIUrl1: String? = nil // Developers should set the respective URL of their web API here. For example let protectedAPIUrl1: String? = "https://api.example.com/v1/resource"
     ```
     
-1. Find `Enter_the_Protected_API_Scopes_Here` and set the scopes recorded in [Grant API permissions to the iOS sample app](#grant-api-permissions-to-the-ios-sample-app).
+1. Find `protectedAPIScopes1` and set the scopes recorded in [Grant API permissions to the iOS sample app](#grant-api-permissions-to-the-ios-sample-app).
 
     ```swift
-    let protectedAPIScopes = ["Enter_the_Protected_API_Scopes_Here"] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["api://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
+    let protectedAPIScopes1: [String] = [] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["api://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
     ```
     
 ## Run iOS sample app and call web API 

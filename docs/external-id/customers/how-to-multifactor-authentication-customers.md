@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 06/26/2024
+ms.date: 08/08/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -19,11 +19,12 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-[Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications. With MFA, customers who sign in with a username and password are prompted for a one-time passcode as a second verification method. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
-In a Microsoft Entra External ID external tenant, you can add a layer of security to your consumer- and business customer-facing applications by enforcing multifactor authentication (MFA). With MFA, each time a user signs in, they're required to provide an email one-time passcode. This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
+[Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
 
-> [!IMPORTANT]
-> If you want to enable MFA, set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, one-time passcode is the only method available for MFA in external tenants.
+- **Email one-time passcode**: After the user signs in with their email and password, they are prompted for a passcode that is sent to their email. To allow the use of email one-time passcodes for MFA, set your local account authentication method to *Email with password*. If you choose *Email with one-time passcode*, customers who use this method for primary sign-in won't be able to use it for MFA secondary verification.
+- **SMS-based authentication**: While SMS isn't an option for first factor authentication, it's available as a second factor for MFA. Users who sign in with email and password, email and one-time passcode, or social identities like Google or Facebook, are prompted for second verification using SMS. Our SMS MFA includes automatic fraud checks. If we suspect fraud, we'll ask the user to complete a CAPTCHA to confirm they're not a robot before sending the SMS code for verification.
+
+This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=MFA)
@@ -32,9 +33,10 @@ In a Microsoft Entra External ID external tenant, you can add a layer of securit
 
 ## Prerequisites
 
-- A Microsoft Entra external tenant (if you don't have a tenant, you can start a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>).
-- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) with the local account authentication method set to **Email with password**.
-- An app that's registered in your external tenant, added to the sign-up and sign-in user flow, and updated to point to the user flow for authentication.
+- A Microsoft Entra external tenant.
+- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md). If you want to use email one-time passcode for MFA, set the user flow's **Email Accounts** setting to **Email with password**.
+
+- An app that's registered in your external tenant and added to the sign-up and sign-in user flow.
 - An account with at least the Security Administrator role to configure Conditional Access policies and MFA.
 
 ## Create a Conditional Access policy
@@ -99,7 +101,28 @@ Enable the email one-time passcode authentication method in your external tenant
 
 1. Select **Save**.
 
+## Enable SMS as an MFA method
+
+Enable the SMS authentication method in your external tenant for all users.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
+
+1. Browse to **Protection** > **Authentication methods**.
+
+1. In the **Method** list, select **SMS**.
+
+   :::image type="content" source="media/how-to-multifactor-authentication-customers/auth-methods-sms.png" alt-text="Screenshot of the SMS option." lightbox="media/how-to-multifactor-authentication-customers/auth-methods-sms.png":::
+
+1. Under **Enable and Target**, turn the **Enable** toggle on.
+
+1. Under **Include**, next to **Target**, select **All users**.
+
+1. Disable the **Use for sign-in** check box. SMS is not supported in external tenants for first-factor authentication.
+
+   :::image type="content" source="media/how-to-multifactor-authentication-customers/enable-sms.png" alt-text="Screenshot of enabling SMS." lightbox="media/how-to-multifactor-authentication-customers/enable-sms.png":::
+
+1. Select **Save**.
+
 ## Test the sign-in
 
 In a private browser, open your application and select **Sign-in**. You should be prompted for another authentication method.
- 

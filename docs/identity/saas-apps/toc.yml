@@ -816,7 +816,7 @@
         href: dlg-learning-center-tutorial.md
       - name: dmarcian
         href: dmarcian-tutorial.md
-      - name: Docker
+      - name: Docker Business
         href: docker-tutorial.md
       - name: Document360
         href: document360-tutorial.md
@@ -885,7 +885,9 @@
       - name: EBSCO
         href: ebsco-tutorial.md
       - name: Eccentex AppBase for Azure
-        href: eccentex-appbase-for-azure-tutorial.md   
+        href: eccentex-appbase-for-azure-tutorial.md 
+      - name: ecFreight2 (OIDC)
+        href: ecfreight2-tutorial.md  
       - name: EchoSpan
         href: echospan-tutorial.md
       - name: eCornell
@@ -1255,6 +1257,8 @@
         href: hashicorp-tutorial.md
       - name: Hawkeye Platform
         href: hawkeyebsb-tutorial.md
+      - name: Haystack
+        href: haystack-tutorial.md
       - name: HCL BigFix Platform
         href: hcl-bigfix-platform-tutorial.md
       - name: hCaptcha Enterprise
@@ -1731,8 +1735,6 @@
         href: luum-tutorial.md
       - name: Lynda.com
         href: lynda-tutorial.md
-      - name: Lytx DriveCam
-        href: lytx-drivecam-tutorial.md
       - name: Lyve Cloud
         href: lyve-cloud-tutorial.md
       - name: M-Files
@@ -1757,6 +1759,8 @@
         href: mapiq-essentials-tutorial.md  
       - name: Maptician
         href: maptician-tutorial.md 
+      - name: Marker.io
+        href: marker-io-tutorial.md
       - name: Marketo
         href: marketo-tutorial.md
       - name: Maverics Identity Orchestrator SAML Connector
@@ -1773,6 +1777,8 @@
         href: mdcomune-business-tutorial.md
       - name: MemoMeister
         href: memomeister-tutorial.md
+      - name: Mend.io
+        href: mend-io-tutorial.md
       - name: Menlo Security
         href: menlosecurity-tutorial.md
       - name: Meraki Dashboard
@@ -2089,8 +2095,8 @@
         href: patentsquare-tutorial.md
       - name: Pavaso Digital Close
         href: pavaso-digital-close-tutorial.md
-      - name: PayCargo
-        href: paycargo-tutorial.md
+      - name: PayCargo Classic
+        href: paycargo-classic-tutorial.md
       - name: Paylocity
         href: paylocity-tutorial.md
       - name: Peakon
@@ -2207,6 +2213,8 @@
         href: processunity-tutorial.md  
       - name: Procore SSO
         href: procoresso-tutorial.md
+      - name: Prodog
+        href: prodog-tutorial.md
       - name: ProdPad
         href: prodpad-tutorial.md
       - name: productboard
@@ -2395,8 +2403,8 @@
         href: safetynet-tutorial.md
       - name: Sage Intacct
         href: intacct-tutorial.md
-      - name: SailPoint IdentityNow
-        href: sailpoint-identitynow-tutorial.md
+      - name: SailPoint Identity Security Cloud
+        href: sailpoint-identity-security-cloud-tutorial.md
       - name: Sakon Device Platform
         href: sakon-device-platform-tutorial.md
       - name: Salesforce
@@ -2853,6 +2861,8 @@
         href: thoughtworks-mingle-tutorial.md
       - name: ThousandEyes
         href: thousandeyes-tutorial.md
+      - name: Thoropass
+        href: thoropass-tutorial.md
       - name: ThreatQ Platform
         href: threatq-platform-tutorial.md
       - name: Thrive LXP
@@ -3107,8 +3117,6 @@
         href: whatfix-tutorial.md
       - name: Whimsical
         href: whimsical-tutorial.md
-      - name: Whitesource
-        href: whitesource-tutorial.md
       - name: WhosOff
         href: whosoff-tutorial.md
       - name: WhosOffice
@@ -3203,6 +3211,8 @@
         href: zengine-tutorial.md  
       - name: ZenQMS
         href: zenqms-tutorial.md
+      - name: Zenvoices IMAP (OIDC)
+        href: zenvoices-imap-tutorial.md
       - name: Zenya
         href: zenya-tutorial.md
       - name: ZephyrSSO
@@ -3604,6 +3614,8 @@
         href: lanschool-air-provisioning-tutorial.md
       - name: LawVu
         href: lawvu-provisioning-tutorial.md
+      - name: LDAP directory
+        href: ~/identity/app-provisioning/on-premises-ldap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Lexonis TalentScape
         href: lexonis-talentscape-provisioning-tutorial.md
       - name: LimbleCMMS
@@ -3766,6 +3778,8 @@
         href: sap-analytics-cloud-provisioning-tutorial.md
       - name: SAP Cloud Identity Services
         href: sap-cloud-platform-identity-authentication-provisioning-tutorial.md
+      - name: SAP ECC (formerly SAP R/3)
+        href: ~/identity/app-provisioning/on-premises-sap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SAP SuccessFactors to Active Directory
         href: sap-successfactors-inbound-provisioning-tutorial.md
       - name: SAP SuccessFactors to Microsoft Entra ID
@@ -3776,6 +3790,8 @@
         href: sas-viya-sso-provisioning-tutorial.md
       - name: SchoolStream ASA
         href: schoolstream-asa-provisioning-tutorial.md
+      - name: SCIM (on-premises)
+        href: ~/identity/app-provisioning/on-premises-scim-provisioning.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: ScreenSteps
         href: screensteps-provisioning-tutorial.md
       - name: SecureLogin
@@ -3814,6 +3830,8 @@
         href: spaceiq-provisioning-tutorial.md
       - name: Splashtop
         href: splashtop-provisioning-tutorial.md
+      - name: SQL database
+        href: ~/identity/app-provisioning/on-premises-sql-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: StarLeaf
         href: starleaf-provisioning-tutorial.md
       - name: Starmind

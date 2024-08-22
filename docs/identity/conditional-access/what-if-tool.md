@@ -5,7 +5,7 @@ description: Learn how you can understand the possible result of Conditional Acc
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,7 +14,7 @@ ms.reviewer: nigu
 ---
 # Use the What If tool to troubleshoot Conditional Access policies
 
-The **Conditional Access What If policy tool** allows you to understand the result of [Conditional Access](./overview.md) policies in your environment. Instead of test driving your policies by performing multiple sign-ins manually, this tool enables you to evaluate a simulated sign-in of a user. The simulation estimates the result this sign-in has on your policies and generates a report.
+The **Conditional Access What If policy tool** allows you to understand the result of [Conditional Access](overview.md) policies in your environment. Instead of test driving your policies by performing multiple sign-ins manually, this tool enables you to evaluate a simulated sign-in of a user. The simulation estimates the result this sign-in has on your policies and generates a report.
 
 The **What If** tool provides a way to quickly determine the policies that apply to a specific user. You can use the information, for example, if you need to troubleshoot an issue.
 
@@ -64,7 +64,7 @@ On the list of policies that apply, you can also find a list of [grant controls]
 
 On the list of policies that don't apply, you can find the reasons why these policies don't apply. For each listed policy, the reason represents the first condition that wasn't satisfied.
 
-## Next steps
+## Related content
 
 - More information about Conditional Access policy application can be found using the policies report-only mode using [Conditional Access insights and reporting](howto-conditional-access-insights-reporting.md).
 - If you're ready to configure Conditional Access policies for your environment, see the [Conditional Access common policies](concept-conditional-access-policy-common.md).
