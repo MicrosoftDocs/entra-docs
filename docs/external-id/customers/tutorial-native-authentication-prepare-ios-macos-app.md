@@ -1,6 +1,6 @@
 ---
 title: Prepare your iOS/macOS app for native authentication
-description:  Learn how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your iOS application.
+description: Learn how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your iOS/macOS application.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,14 +12,14 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 08/19/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn about how to configure prepare your iOS app for native authentication using Microsoft Entra External ID.
+#Customer intent: As a dev, devops, I want to learn about how to configure prepare your iOS/macOS app for native authentication using Microsoft Entra External ID.
 ---
 
 # Tutorial: Prepare your iOS/macOS app for native authentication
 
 [!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
 
-This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your iOS Swift app.
+This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your iOS/macOS Swift app.
 
 In this tutorial, you learn how to:
 
@@ -37,7 +37,7 @@ In this tutorial, you learn how to:
     - Grant API permissions.
     - Create a user flow.
     - Associate the app with the user flow.
-- iOS project
+- iOS/macOS project
 
 ## Add the MSAL framework to an iOS/macOS app
 
@@ -104,4 +104,4 @@ This outputs all debug logs from MSAL, which can be helpful in diagnosing issues
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add sign-up in an iOS/macOS mobile app using native authentication](tutorial-native-authentication-ios-macos-sign-up.md)
+> [Tutorial: Add sign-up in an iOS/macOS app using native authentication](tutorial-native-authentication-ios-macos-sign-up.md)

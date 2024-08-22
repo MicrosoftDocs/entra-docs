@@ -12,7 +12,7 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 08/19/2024
 ms.custom: developer
-#Customer intent: As a developer, I want to support web fallback in my iOS app's native authentication flow so that I can ensure stability of my app's authentication flow.
+#Customer intent: As a developer, I want to support web fallback in my iOS/macOS app's native authentication flow so that I can ensure stability of my app's authentication flow.
 ---
 
 # Tutorial: Support web fallback 

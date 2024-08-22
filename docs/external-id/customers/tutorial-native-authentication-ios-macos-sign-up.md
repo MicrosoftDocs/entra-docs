@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in an iOS/macOS mobile app using native authentication.
 ---
 
-# Tutorial: Add sign-up in an iOS/macOS mobile app using native authentication
+# Tutorial: Add sign-up in an iOS/macOS app using native authentication
 
 [!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
 

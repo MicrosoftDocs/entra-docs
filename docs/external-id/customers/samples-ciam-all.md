@@ -65,6 +65,7 @@ These samples and how-to guides demonstrate how to write a desktop application t
 > | ------- | -------- | ------------- | 
 > | JavaScript, Electron | &#8226; [Sign in users](how-to-desktop-app-electron-sample-sign-in.md) | ---   |
 > | ASP.NET (MAUI) | &#8226; [Sign in users](how-to-desktop-app-maui-sample-sign-in.md) |&#8226; [Sign in users](tutorial-desktop-app-maui-sign-in-prepare-tenant.md)|
+> macOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-macos-app.md)| &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
 
 ### Mobile: Browser delegated authentication
 
@@ -87,7 +88,7 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > | ----------- | ----------- |----------- |
 > |Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-android-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
 > |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
-> macOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-macos-app.md)| &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+
 
 ### Daemon
 

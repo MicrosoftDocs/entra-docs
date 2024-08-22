@@ -264,7 +264,7 @@ items:
                   displayName: multiple access token 
             - name: iOS/macOS (Swift)
               items:
-                - name: Prepare iOS app
+                - name: Prepare iOS/macOS app
                   href: tutorial-native-authentication-prepare-ios-macos-app.md
                 - name: Sign up
                   href: tutorial-native-authentication-ios-macos-sign-up.md
