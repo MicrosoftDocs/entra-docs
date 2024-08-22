@@ -473,7 +473,7 @@ You can configure the tenant restrictions v2 policy to allow specific users or g
 |Anonymous (no authenticated session) <br></br> Example: A user tries to use an unauthenticated session, for example in an InPrivate browser window, to access a Teams meeting. | Not authenticated |  Tenant restrictions v2 blocks access to the Teams meeting.  |
 |Externally issued identity (authenticated session)<br></br> Example: A user uses any identity other than their home identity (for example, user@externaltenant.com) | Authenticated as an externally issued identity |  Allow or block access to the Teams meeting per Tenant restrictions v2 policy. If allowed by the policy, the user can join the meeting. Otherwise access is blocked. |   
 
-## Tenant restrictions v2 and SharePoint Online
+## Tenant restrictions v2 and SharePoint Online (preview)
 
 SharePoint Online supports tenant restrictions v2 on both the authentication plane and the data plane.
 
@@ -487,7 +487,7 @@ If a user tries to access an anonymous file using their home tenant/corporate id
 
 For example, say a user is using a managed device configured with tenant restrictions v2 for Tenant A. If they select an anonymous access link generated for a Tenant A resource, they should be able to access the resource anonymously. But if they select an anonymous access link generated for Tenant B SharePoint Online, they're prompted to sign-in. Anonymous access to resources using an externally issued identity is always blocked.
 
-## Tenant restrictions v2 and OneDrive
+## Tenant restrictions v2 and OneDrive (preview)
 
 ### Authenticated sessions
 
