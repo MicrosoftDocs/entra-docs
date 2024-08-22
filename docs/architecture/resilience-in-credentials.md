@@ -13,7 +13,7 @@ ms.author: jricketts
 
 When a credential is presented to Microsoft Entra ID in a token request, there are multiple dependencies that must be available for validation. The first authentication factor relies on Microsoft Entra authentication and, in some cases, on on-premises infrastructure. For more information on hybrid authentication architectures, see [Build resilience in your hybrid infrastructure](resilience-in-hybrid.md). 
 
-The most resilient credential strategy is to use passwordless authentication. Windows Hello for Business and Passkey (FIDO 2.0) security keys have fewer dependencies than other MFA methods. Passkey sign-in with Microsoft Authenticator app, Windows Hello for Business, and FIDO 2.0 security keys are the most secure. When you implement these methods users are able to perform strong passwordless and **phishing-resistant** Multi-Factor authentication (MFA).
+The most resilient credential strategy is to use passwordless authentication. Windows Hello for Business and Passkey (FIDO 2.0) security keys have fewer dependencies than other MFA methods. Passkeys (Both Passkey Sign-In with Microsoft Authenticator app & FIDO2 Security Keys), Windows Hello for Business are the most secure. When you implement these methods users are able to perform strong passwordless and **phishing-resistant** Multi-Factor authentication (MFA). For video series deep dive on deploying these authentication methods, see [Phishing-resistant authentication in Microsoft Entra ID](~/identity/authentication/phishing-resistant-authentication-videos.md)
 
 ![Image of preferred authentication methods and dependencies](./media/resilience-in-credentials/best-pr.png)
 
