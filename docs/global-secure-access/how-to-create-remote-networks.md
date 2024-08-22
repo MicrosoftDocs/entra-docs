@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 03/22/2024
+ms.date: 08/21/2024
 ms.service: global-secure-access
 # Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
 ---
@@ -66,15 +66,15 @@ The first step is to provide the name and location of your remote network. Compl
 1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 1. Select the **Create remote network** button and provide the details.
     - **Name**
-    - **Region**
+    - **Region**   
 
-    ![Screenshot of the basics tab of the create device link process.](media/how-to-create-remote-networks/create-basics-tab.png)
+:::image type="content" source="media/how-to-create-remote-networks/create-basics-tab.png" alt-text="Screenshot of the basics tab of the create device link process.":::
 
 ### Connectivity
 
-The connectivity tab is where you add the device links for the remote network. You can add device links *after* creating the remote network. You need to provide the device type, public IP address of your CPE, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. 
+The **Connectivity** tab is where you add the device links for the remote network. You can add device links *after* creating the remote network. You need to provide the device type, public IP address of your CPE, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. 
 
-The details required to complete this tab can be complex, so this process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
+The details required to complete the **Connectivity** tab can be complex. For more information, see [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
 
 ### Traffic forwarding profiles
 
@@ -92,7 +92,7 @@ All your remote networks appear on the **Remote network** page. Select the **Vie
 
 These details contain the connectivity information from Microsoft's side of the bidirectional communication channel that you use to set up your CPE.
 
-This process is covered in detail in the [How to configure your customer premise equipment](how-to-configure-customer-premises-equipment.md).
+This process is covered in detail in the [How to configure your customer premises equipment](how-to-configure-customer-premises-equipment.md).
 
 ### Set up your CPE
 
@@ -169,7 +169,7 @@ There are a few things to consider and verify when creating remote networks. You
 
 - **Verify IKE crypto profile**: The crypto profile (IKE phase 1 and phase 2 algorithms) set for a device link should match what is set on the CPE. If you chose the **default IKE policy**, ensure that your CPE is set up with the crypto profile specified in the [Remote network configurations](reference-remote-network-configurations.md) reference article.
 
-- **Verify pre shared key**: Compare the pre shared key (PSK) you specified when creating the device link in Microsoft Global Secure Access with the PSK you specified on your CPE. This detail is added on the **Security** tab during the **Add a link** process. For more information, see [How to manage remote network device links.](how-to-manage-remote-network-device-links.md#add-a-link---security-tab).
+- **Verify pre-shared key**: Compare the pre-shared key (PSK) you specified when creating the device link in Microsoft Global Secure Access with the PSK you specified on your CPE. This detail is added on the **Security** tab during the **Add a link** process. For more information, see [How to manage remote network device links.](how-to-manage-remote-network-device-links.md#add-a-link---security-tab).
 
 - **Verify local and peer BGP IP addresses**: The public IP and BGP address you use to configure the CPE must match what you use when you create a device link in Microsoft Global Secure Access.
     - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.

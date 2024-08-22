@@ -1,14 +1,14 @@
 ---
-title: How to create a remote network with a custom IKE policy
+title: Create a remote network with a custom IKE policy
 description: Learn how to set up the bidirectional communication tunnel between Global Secure Access and your router.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 03/22/2024
+ms.date: 08/21/2024
 ms.service: global-secure-access
 
-# Customer intent: As an IT admin, I need to be able to create a custom IKE policy to set up the communication tunnel with Global Secure Access.
+# Customer intent: As an IT admin, I need to be able to create a custom Internet Key Exchange (IKE) policy to set up the communication tunnel with Global Secure Access.
 ---
 # Create a remote network with a custom IKE policy for Global Secure Access
 
@@ -44,7 +44,7 @@ To create a remote network with a custom IKE policy in the Microsoft Entra admin
 
 There are several details to enter on the General tab. Pay close attention to the Peer and Local BGP addresses. *The peer and local details are reversed, depending on where the configuration is completed.*
 
-![Screenshot of the General tab with examples in each field.](./media/how-to-create-remote-network-custom-ike-policy/add-device-link.png)
+:::image type="content" source="./media/how-to-create-remote-network-custom-ike-policy/add-device-link.png" alt-text="Screenshot of the General tab with examples in each field.":::
 
 1. Enter the following details:
     - **Link name**: Name of your CPE.
@@ -57,7 +57,7 @@ There are several details to enter on the General tab. Pay close attention to th
         - Refer to the [valid ASN values](reference-remote-network-configurations.md#valid-asn) list for reserved values that can't be used.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
     - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
-        - Enter a BGP IP address that is *not* part of your on-premises network where your CPE resides *and* is different from **Local BGP address**.
+        - Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides *and* is different from **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1000 Mbps.
     - **Local BGP address**: Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides.
         - For example, if your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address.
@@ -75,10 +75,10 @@ There are several details to enter on the General tab. Pay close attention to th
 
 1. Change the **IPSec/IKE policy** to **Custom**.
 
-1. Select your Phase 1 combination details for **Encryption**, **IKEv2 integrity** and **DHGroup**.
+1. Select your Phase 1 combination details for **Encryption**, **IKEv2 integrity**, and **DHGroup**.
     - The combination of details you select must align with the available options listed in the [Remote network valid configurations](reference-remote-network-configurations.md) reference article.
 
-1. Select your Phase 2 combinations for **IPsec encryption**, **IPsec integrity**, **PFS group** and **SA lifetime (seconds)**.
+1. Select your Phase 2 combinations for **IPsec encryption**, **IPsec integrity**, **PFS group**, and **SA lifetime (seconds)**.
     - The combination of details you select must align with the available options listed in the [Remote network valid configurations](reference-remote-network-configurations.md) reference article.
 
 1. Whether you choose Default or Custom, the IPSec/IKE policy you specify must match the crypto policy on your CPE.

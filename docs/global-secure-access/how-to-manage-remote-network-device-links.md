@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 03/22/2024
+ms.date: 08/21/2024
 ms.service: global-secure-access
 
 # Customer intent: As an IT admin, I need to manage the router devices that connect to the Global Secure Access service so my customers can connect to the service.
@@ -43,22 +43,22 @@ You can add a device link to a remote network at any time.
 
 There are several details to enter on the General tab. Pay close attention to the Peer and Local Border Gateway Protocol (BGP) addresses. *The peer and local details are reversed, depending on where the configuration is completed.*
 
-![Screenshot of the general tab of the create device link process.](media/how-to-manage-remote-network-device-links/add-device-link.png)
+:::image type="content" source="media/how-to-manage-remote-network-device-links/add-device-link.png" alt-text="Screenshot of the General tab with examples in each field.":::
 
 1. Enter the following details.
     - **Link name**: Name of your Customer Premises Equipment (CPE).
     - **Device type**: Choose a device option from the dropdown list.
-    - **Device IP address**: Public IP address of your device.
+    - **Device IP address**: Public IP address of your CPE (customer premise equipment) device.
     - **Device BGP address**: Enter the BGP IP address of your CPE.
         - This address is entered as the *local* BGP IP address on the CPE.
     - **Device ASN**: Provide the autonomous system number (ASN) of the CPE.
-        - A BGP-enabled connection between two network gateways requires that they have different Autonomous System Number (ASN).
+        - A BGP-enabled connection between two network gateways requires that they have different ASNs.
         - For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md#valid-asn) article.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
-    - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
-        - Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
+    - **Zone redundancy local BGP address**: This optional field shows up only when you select **Zone redundancy**.
+        - Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides and is different from the **Device BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1,000 Mbps.
-    - **Local BGP address**: Enter a BGP IP address that isn't* part of your on-premises network where your CPE resides.
+    - **Local BGP address**: Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides.
         - For example, if your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address.
         - This address is entered as the *peer* BGP​​ IP address on your CPE.
         - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
@@ -78,7 +78,7 @@ The **Details** tab is where you establish the bidirectional communication chann
 
 ### Add a link - Security tab
 
-1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE. Note that the Zone Redundancy Pre-shared key (PSK) field only appears if you set up redundancy on the first page in creating the link.
+1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE. The Zone Redundancy Pre-shared key (PSK) field only appears if you set up redundancy on the first page in creating the link.
 1. Select the **Save** button.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
