@@ -39,11 +39,16 @@ Microsoft Entra ID introduced the **Shared Device Mode** feature to support mult
 
 **Note:** If a user signs into an app that doesn't support shared device mode, they don't receive the benefits of single sign-on and single sign out.
 
-## Enable Shared Device Mode
+## Roles of admins and developers in implementing Shared Device Mode
 
 To take advantage of the shared device mode feature, cloud device admins and app developers work together:
 
-**Device administrators** prepare the devices to be shared by setting up the devices in shared device mode manually or via a mobile device management (MDM) provider like Microsoft Intune. The preferred option is using an MDM as it allows the device setup in shared device mode at scale via zero-touch provisioning. The MDM is configured to push the Microsoft Authenticator app to the device with shared device mode turned on. On iOS devices, MDM also enables the Microsoft Enterprise SSO plug-in that is required for shared device mode. For details on how to set up a device in shared device mode via Intune, see [Set up Intune enrollment of Android Enterprise dedicated devices](/mem/intune/enrollment/android-kiosk-enroll) and [Set up enrollment for devices in shared device mode](/mem/intune/enrollment/automated-device-enrollment-shared-device-mode).
+**Device administrators** prepare the devices to be shared by setting up the devices in shared device mode manually or via a mobile device management (MDM) provider like Microsoft Intune. The preferred option is using an MDM as it allows the device setup in shared device mode at scale via zero-touch provisioning. The MDM is configured to push the Microsoft Authenticator app to the device with shared device mode turned on. On iOS devices, MDM also enables the Microsoft Enterprise SSO plug-in that is required for shared device mode. 
+
+The following guides provide more details on how to set up devices in shared device mode via Intune:
+
+- [Set up Intune enrollment of Android Enterprise dedicated devices](/mem/intune/enrollment/android-kiosk-enroll) 
+- [Set up enrollment for iOS and iPadOS devices in shared device mode](/mem/intune/enrollment/automated-device-enrollment-shared-device-mode).
 
 Manual setup is a useful tool for pilot programs and small-scale deployments. It requires the Cloud Device Administrator access and needs to be done on each device. 
     
