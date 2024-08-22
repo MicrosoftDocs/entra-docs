@@ -58,17 +58,6 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     ![Screenshot of application client values.](./media/ilogon-mha-tutorial/application-id.png)
 
-1. Navigate to **Authentication** tab on the left menu and perform the following steps:
-
-    a. Enable the **Access tokens (used for implicit flows)** and **ID tokens (used for implicit and hybrid flows)**.
-
-    [![Screenshot showing the Access tokens.](./media/ilogon-mha-tutorial/access-token.png)](./media/ilogon-mha-tutorial/access-token.png#lightbox)
-
-    b. click **Save**.
-
-    >[!NOTE]
-    > The **Redirect URIs** value is auto populate, you don't need to perform any manual configuration here.
-
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
     1. Go to **Client secrets** tab and click **+New client secret**.
@@ -79,6 +68,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the iLOGON_MHA OIDC side configuration.
 
         [![Screenshot showing how to add a client secret.](common/client.png)](common/client.png#lightbox)
+
+>[!NOTE]
+> In the Authentication section, the **Redirect URIs** value will auto populate, you don't need to perform any manual configuration here.
 
 ### Create a Microsoft Entra test user
 
