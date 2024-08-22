@@ -13,23 +13,28 @@ ms.author: jricketts
 
 When a credential is presented to Microsoft Entra ID in a token request, there are multiple dependencies that must be available for validation. The first authentication factor relies on Microsoft Entra authentication and, in some cases, on on-premises infrastructure. For more information on hybrid authentication architectures, see [Build resilience in your hybrid infrastructure](resilience-in-hybrid.md). 
 
-If you implement a second factor, the dependencies for the second factor are added to the dependencies for the first. For example, if your first factor is via PTA and your second factor is SMS, your dependencies are as follows.
+The most resilient credential strategy is to use passwordless authentication. Windows Hello for Business and Passkey (FIDO 2.0) security keys have fewer dependencies than other MFA methods. Passkey sign-in with Microsoft Authenticator app, Windows Hello for Business, and FIDO 2.0 security keys are the most secure. When you implement these methods users are able to perform strong passwordless and **phishing-resistant** Multi-Factor authentication (MFA).
+
+![Image of preferred authentication methods and dependencies](./media/resilience-in-credentials/best-pr.png)
+
+
+If you implement a second factor, the dependencies for the second factor are added to the dependencies for the first. For example, if your first factor is via Pass Thru Authentication (PTA) and your second factor is SMS, your dependencies are as follows.
 
 * Microsoft Entra authentication services
 * Microsoft Entra multifactor authentication service
 * On-premises infrastructure
 * Phone carrier
 * The user's device (not pictured)
- 
-![Image of authentication methods and dependencies](./media/resilience-in-credentials/admin-resilience-credentials.png)
 
+![Image of remaining authentication methods and dependencies](./media/resilience-in-credentials/updated-admin-resilience-credentials.png)
+ 
 Your credential strategy should consider the dependencies of each authentication type and provision methods that avoid a single point of failure. 
 
 Because authentication methods have different dependencies, it's a good idea to enable users to register for as many second factor options as possible. Be sure to include second factors with different dependencies, if possible. For example, Voice call and SMS as second factors share the same dependencies, so having them as the only options doesn't mitigate risk.
 
-The most resilient credential strategy is to use passwordless authentication. Windows Hello for Business and FIDO 2.0 security keys have fewer dependencies than strong authentication with two separate factors. The Microsoft Authenticator app, Windows Hello for Business, and FIDO 2.0 security keys are the most secure. 
-
 For second factors, the Microsoft Authenticator app or other authenticator apps using time-based one time passcode (TOTP) or OAuth hardware tokens have the fewest dependencies and are, therefore, more resilient.
+
+
 
 ## How do multiple credentials help resilience?
 
