@@ -22,10 +22,10 @@ This tutorial shows you how to configure Platform SSO to support Kerberos-based 
 
 ## Prerequisites
 
-- A minimum version of **macOS 14.5 Sonoma**. Earlier versions of macOS will not support Kerberos SSO combined with Platform SSO or are known to have bugs.
-- [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later
-- A Mac device enrolled in mobile device management (MDM) with Microsoft Intune.
-- A configured SSO extension MDM payload with Platform SSO settings in Intune by an administrator, already deployed to the device. Refer to the [Platform SSO documentation](./macos-psso.md) or [Intune deployment guide](/mem/intune/configuration/platform-sso-macos) if Intune is your MDM.
+- A minimum version of **macOS 14.6 Sonoma**.
+- [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2408.0 or later
+- A Mac device enrolled in mobile device management (MDM).
+- A configured SSO extension MDM payload with Platform SSO settings by an administrator, already deployed to the device. Refer to the [Platform SSO documentation](./macos-psso.md) or [Intune deployment guide](/mem/intune/configuration/platform-sso-macos) if Intune is your MDM.
 
 ## Set up your macOS device
 
