@@ -8,8 +8,6 @@ items:
     href: what-is-entra.md
   - name: What is Microsoft Entra ID?
     href: whatis.md
-  - name: Try Microsoft Entra for free
-    href: https://microsoft.com/security/business/identity-access/azure-active-directory-pricing  
   - name: Trial user guide for Microsoft Entra Suite
     href: try-microsoft-entra-suite.md
   - name: New name for Azure AD

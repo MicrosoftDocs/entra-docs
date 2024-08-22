@@ -64,10 +64,10 @@ The following sections include process steps to walk you through each product. E
 
 ### Step 1: Deploy identity protection 
 
-Microsoft Entra ID Protection detects identity-based risks, reports them, and allows administrators to investigate and remediate these risks to keep organizations safe and secure. Risk data can be further fed into tools like Conditional Access to make access decisions or fed to a security information and event management (SIEM) tool for further analysis and investigation.
+Microsoft Entra ID Protection detects identity-based risks, reports them, and allows administrators to investigate and remediate these risks to keep organizations safe and secure. Risk data can be further fed into tools like conditional access to make access decisions or fed to a security information and event management (SIEM) tool for further analysis and investigation.
 
 1. Review existing reports
-1. Plan for Conditional Access risk policies
+1. Plan for conditional access risk policies
 1. Configure your policies 
 1. Monitoring and continuous operational needs
 
@@ -102,7 +102,7 @@ To view the complete how-to guide, see [Deployment guide for Microsoft Entra Int
 Microsoft Entra Private Access converges network and identity access controls so you can secure access to any app or resource from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. 
 
 1. Deploy and test Microsoft Entra Private Access 
-1. Apply Conditional Access 
+1. Apply Microsoft Entra Conditional Access 
 1. Control access by multiple users to multiple apps 
 
 To view the complete how-to guide, see [Deployment guide for Microsoft Entra Private Access](~/architecture/sse-deployment-guide-private-access.md).
@@ -145,7 +145,7 @@ The workforce and guest onboarding, identity, and access lifecycle governance�
 - Provide remote employees with secure and seamless access to necessary apps and resources. 
 - Collaborate with external users by providing them with access to relevant apps and resources. 
 
-The step-by-step guidance focuses on Microsoft Entra Verified ID, Microsoft Entra ID Governance, Microsoft Entra ID Protection, and Conditional Access. For more information, see [Microsoft Entra deployment scenario - Workforce and guest lifecycle](~/architecture/deployment-scenario-workforce-guest.md). 
+The step-by-step guidance focuses on Microsoft Entra Verified ID, Microsoft Entra ID Governance, Microsoft Entra ID Protection, and Microsoft Entra Conditional Access. For more information, see [Microsoft Entra deployment scenario - Workforce and guest lifecycle](~/architecture/deployment-scenario-workforce-guest.md). 
 
 ### Scenario 2: Modernize remote access to on-premises apps with MFA per app 
 
@@ -164,7 +164,7 @@ The secure internet access based on business needs scenario describes these 
 
 - Allow users to request access to prohibited sites in My Access. The approval process adds users to a group that grants them access. Examples include marketing department access to social networking sites and security department access to high-risk internet destinations while investigating incidents. 
 
-The step-by-step guidance focuses on Microsoft Entra Internet Access, Microsoft Entra ID Governance, Conditional Access, and Global Secure Access. For more information, see [Microsoft Entra deployment scenario - Secure internet access](~/architecture/deployment-scenario-internet-access.md).  
+The step-by-step guidance focuses on Microsoft Entra Internet Access, Microsoft Entra ID Governance, Microsoft Entra Conditional Access, and Global Secure Access. For more information, see [Microsoft Entra deployment scenario - Secure internet access](~/architecture/deployment-scenario-internet-access.md).  
 
 ## Related content 
 
