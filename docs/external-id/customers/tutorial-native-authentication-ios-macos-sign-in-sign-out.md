@@ -19,7 +19,7 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
 
-This tutorial demonstrates how to sign-in and sign-out a user with email one-time passcode or username and password in your iOS/macOS mobile app by using native authentication. 
+This tutorial demonstrates how to sign-in and sign-out a user with email one-time passcode or username and password in your iOS/macOS app by using native authentication. 
 
 In this tutorial, you learn how to: 
 

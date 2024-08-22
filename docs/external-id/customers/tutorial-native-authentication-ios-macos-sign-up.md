@@ -19,7 +19,7 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
 
-This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collects user attributes in your iOS/macOS mobile app using native authentication.
+This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collects user attributes in your iOS/macOS app using native authentication.
 
 > [!div class="checklist"]
 >
