@@ -11,7 +11,7 @@ ms.date: 08/22/2024
 ms.author: barclayn
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-# Customer intent: As a new administrator, I want to try the Microsoft Entra Suite, to determine which license is right for me and what features are available.
+# Customer intent: As a new administrator, I want to try the Microsoft Entra Suite, to determine which license is right for me and what products are relevant to my organization's needs.
 ---
 
 # Trial user guide: Microsoft Entra Suite
@@ -46,7 +46,7 @@ The Microsoft Entra Suite includes these products:
 
 [**Microsoft Entra Verified ID**](~/verified-id/decentralized-identifier-overview.md): Validate users with secure verification methods to ensure secure identity authentication scenarios like user onboarding, securing access to sensitive resources, and account recovery processes.
 
-## Microsoft Entra Suite feature guides
+## Microsoft Entra Suite product guides
 
 To help you get the most out of your Microsoft Entra Suite trial, we recommend you review the following how-to guides to help ensure a more secure environment for your organization. 
 
@@ -60,7 +60,7 @@ The following how-to guides are expanded upon in this section:
 
 :::image type="content" border="true" source="./media/entra-suite-trial/entra-suite-trial.png" alt-text="Screenshot of the Microsoft Entra Suite zero trust strategy steps.":::
 
-The following sections include process steps to walk you through each feature. Each of these steps is fully documented in a separate how-to guide that you can access by clicking the link at the end of each step.  
+The following sections include process steps to walk you through each product. Each of these steps is fully documented in a separate how-to guide that you can access by clicking the link at the end of each step.  
 
 ### Step 1: Deploy identity protection 
 
@@ -145,7 +145,7 @@ Theâ€¯workforce and guest onboarding, identity, and access lifecycle governanceâ
 - Provide remote employees with secure and seamless access to necessary apps and resources. 
 - Collaborate with external users by providing them with access to relevant apps and resources. 
 
-The step-by-step guidance focuses on Microsoft Entra Verified ID, Microsoft Entra ID Governance, Microsoft Entra ID Protection, and Conditional Access (CA). For more information, see [Microsoft Entra deployment scenario - Workforce and guest lifecycle](~/architecture/deployment-scenario-workforce-guest.md). 
+The step-by-step guidance focuses on Microsoft Entra Verified ID, Microsoft Entra ID Governance, Microsoft Entra ID Protection, and Conditional Access. For more information, see [Microsoft Entra deployment scenario - Workforce and guest lifecycle](~/architecture/deployment-scenario-workforce-guest.md). 
 
 ### Scenario 2: Modernize remote access to on-premises apps with MFA per app 
 
