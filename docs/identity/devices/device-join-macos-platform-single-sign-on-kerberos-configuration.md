@@ -157,7 +157,7 @@ If you use Intune as your MDM you can perform the following steps to deploy the 
 
 The next time the device checks for configuration updates, the settings you configured are applied.
 
-## Testing Kerberos SSO
+### Testing Kerberos SSO
 
 Once the profile has been assigned to the device you can check that your device has Kerberos tickets by running the following command in the Terminal app:
 
