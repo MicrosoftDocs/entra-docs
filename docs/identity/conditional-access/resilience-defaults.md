@@ -5,7 +5,7 @@ description: Resilience defaults and the Microsoft Entra Backup Authentication S
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -85,7 +85,7 @@ You can configure Conditional Access resilience defaults from the Microsoft Entr
 1. Select Disable resilience defaults to disable the setting for this policy. Sign-ins in scope of the policy are blocked during a Microsoft Entra outage
 1. Save changes to the policy
 
-### MS Graph APIs
+### Microsoft Graph APIs
 
 You can also manage resilience defaults for your Conditional Access policies using the MS Graph API and the [Microsoft Graph Explorer](/graph/graph-explorer/graph-explorer-overview).
 

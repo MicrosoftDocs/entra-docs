@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: quickstart
-ms.date: 04/30/2024
+ms.date: 08/13/2024
 ms.author: cmulligan
 ms.custom: it-pro, seo-july-2024
 
@@ -27,8 +27,6 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 - An Azure subscription. 
 - An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription or to a resource group within the subscription.
 
-
-
 ## Create a new tenant with external configurations 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
@@ -37,12 +35,11 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/create-tenant.png" alt-text="Screenshot of the create tenant option.":::
 
-1. Select **Customer**, and then select **Continue**. 
+1. Select **External**, and then select **Continue**. 
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/select-tenant-type.png" alt-text="Screenshot of the select tenant type screen.":::
 
-1. Select **Use an Azure Subscription**.
-1. On the **Basics** tab, in the **Create a tenant for customers** page, enter the following information:
+1. On the **Basics** tab, in the **Create a tenant** page, enter the following information:
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/add-basics-to-external-tenant.png" alt-text="Screenshot of the Basics tab.":::
 
@@ -64,7 +61,7 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/add-subscription.png" alt-text="Screenshot that shows the subscription settings.":::
 
-1. Select **Next: Review + Create**. If the information that you entered is correct, select **Create**. The tenant creation process can take up to 30 minutes. You can monitor the progress of the tenant creation process in the **Notifications** pane. Once the tenant is created, you can access it in both the Microsoft Entra admin center and the Azure portal.
+1. Select **Next: Review + create**. If the information that you entered is correct, select **Create**. The tenant creation process can take up to 30 minutes. You can monitor the progress of the tenant creation process in the **Notifications** pane. Once the tenant is created, you can access it in both the Microsoft Entra admin center and the Azure portal.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/tenant-successfully-created.png" alt-text="Screenshot that shows the link to the new tenant.":::
 

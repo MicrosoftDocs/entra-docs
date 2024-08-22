@@ -48,7 +48,7 @@ Microsoft Entra ID supports two signing algorithms, or secure hash algorithms (S
 To change an application's SAML certificate signing options and the certificate signing algorithm, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator.
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 

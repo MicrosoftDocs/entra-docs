@@ -49,8 +49,6 @@ items:
         href: inbound-provisioning-api-custom-attributes.md
       - name: Quickstart using cURL
         href: inbound-provisioning-api-curl-tutorial.md
-      - name: Quickstart with Postman
-        href: inbound-provisioning-api-postman.md
       - name: Quickstart with Graph Explorer
         href: inbound-provisioning-api-graph-explorer.md
       - name: Quickstart with PowerShell
