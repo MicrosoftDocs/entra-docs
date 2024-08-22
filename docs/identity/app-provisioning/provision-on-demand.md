@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 07/30/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
@@ -69,7 +69,7 @@ The provisioning service attempts to authorize access to the target system by ma
 
 * Ensure that you've provided valid credentials, such as the secret token and tenant URL, to the target system. The required credentials vary by application. For detailed configuration tutorials, see the [tutorial list](~/identity/saas-apps/tutorial-list.md). 
 * Make sure that the target system supports filtering on the matching attributes defined in the **Attribute mappings** pane. You might need to check the API documentation provided by the application developer to understand the supported filters.
-* For System for Cross-domain Identity Management (SCIM) applications, you can use a tool like Postman. Such tools help you ensure that the application responds to authorization requests in the way that the Microsoft Entra provisioning service expects. Have a look at an [example request](./use-scim-to-provision-users-and-groups.md#request-3).
+* For System for Cross-domain Identity Management (SCIM) applications, use a REST API tool like cURL. Such tools help you ensure that the application responds to authorization requests in the way that the Microsoft Entra provisioning service expects. Have a look at an [example request](./use-scim-to-provision-users-and-groups.md#request-3).
 
 ### Step 2: Import user
 

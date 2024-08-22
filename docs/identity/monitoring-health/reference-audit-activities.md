@@ -689,7 +689,7 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |CrossTenantAccessSettings|Migrated partner cross-tenant access settings to the scalable model|
 |CrossTenantAccessSettings|Reset the cross-tenant access default setting|
 |CrossTenantAccessSettings|Update a partner cross-tenant access setting|
-|CrossTenantIdentitySyncSettings|Update the company default cross-tenant access setting|
+|CrossTenantAccessSettings|Update the company default cross-tenant access setting|
 |CrossTenantIdentitySyncSettings|Create a partner cross-tenant identity sync setting|
 |CrossTenantIdentitySyncSettings|Delete a partner cross-tenant identity sync setting|
 |CrossTenantIdentitySyncSettings|Update a partner cross-tenant identity sync setting|

@@ -55,7 +55,7 @@ Explicit deletion is when an administrator deletes a user, directory, or request
 
 ### Stale data deletion
 
-Data that isn't accessed for one year (“the retention period”) is treated as stale and might be deleted from the Microsoft cloud. The retention period is subject to change but isn't less than 90 days. The stale data might be a specific set of Windows/application settings or all settings for a user. For example:
+Data that isn't accessed for one year ("the retention period") is treated as stale and might be deleted from the Microsoft cloud. The retention period is subject to change but isn't less than 90 days. The stale data might be a specific set of Windows/application settings or all settings for a user. For example:
 
 * If no devices access a particular settings collection like language, then that collection becomes stale after the retention period and might be deleted.
 * If a user turned off settings sync on all their devices, then none of the settings data is accessed. All the settings data for that user will become stale and might be deleted after the retention period.

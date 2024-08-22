@@ -78,7 +78,7 @@ In this tutorial;
      * Scopes you add here will be prompted for user consent during sign-in.
      * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
      * For more information about OIDC scopes, visit:
-     * https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
+     * https://learn.microsoft.com/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
      */
     export const loginRequest = {
       scopes: [],

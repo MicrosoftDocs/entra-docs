@@ -5,7 +5,7 @@ description: Customize Microsoft Entra authentication session configuration incl
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 01/08/2024
+ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -42,7 +42,6 @@ To make sure that your policy works as expected, the recommended best practice i
 
 1. Save your policy.
 
-
 ### Policy 2: Persistent browser session
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
@@ -52,13 +51,13 @@ To make sure that your policy works as expected, the recommended best practice i
 1. Choose all required conditions.
 
    > [!NOTE]
-   > This control requires to choose “All Cloud Apps” as a condition. Browser session persistence is controlled by authentication session token. All tabs in a browser session share a single session token and therefore they all must share persistence state.
+   > This control requires to choose "All Cloud Apps" as a condition. Browser session persistence is controlled by authentication session token. All tabs in a browser session share a single session token and therefore they all must share persistence state.
 
 1. Under **Access controls** > **Session**.
    1. Select **Persistent browser session**.
 
       > [!NOTE]
-      > Persistent Browser Session configuration in Microsoft Entra Conditional Access overrides the “Stay signed in?” setting in the company branding pane for the same user if you have configured both policies.
+      > Persistent Browser Session configuration in Microsoft Entra Conditional Access overrides the "Stay signed in?" setting in the company branding pane for the same user if you have configured both policies.
 
    1. Select a value from dropdown.
 1. Save your policy.
@@ -88,7 +87,7 @@ Use the [What If tool](what-if-tool.md) to simulate a sign-in from the user to t
 
 ## Prompt tolerance
 
-We factor for five minutes of clock skew when **every time** is selected in policy, so that we don’t prompt users more often than once every five minutes. If the user completed MFA in the last 5 minutes, and they hit another Conditional Access policy that requires reauthentication, we don't prompt the user. Over-prompting users for reauthentication can impact their productivity and increase the risk of users approving MFA requests they didn’t initiate. Use “Sign-in frequency – every time” only for specific business needs.
+We factor for five minutes of clock skew when **every time** is selected in policy, so that we don’t prompt users more often than once every five minutes. If the user completed MFA in the last 5 minutes, and they hit another Conditional Access policy that requires reauthentication, we don't prompt the user. Over-prompting users for reauthentication can impact their productivity and increase the risk of users approving MFA requests they didn’t initiate. Use "Sign-in frequency – every time" only for specific business needs.
 
 ## Known issues
 
