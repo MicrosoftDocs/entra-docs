@@ -23,7 +23,7 @@ Welcome to the Microsoft Entra Suite trial user guide. Make the most of your fre
 
 ## What is the Microsoft Entra Suite? 
 
-[Microsoft Entra Suite](licensing.md) is the solution to deliver unified Zero Trust user access, enabling your employees to securely access any cloud and on-premises application. The suite does this by providing least privilege access across public and private networks, inside and outside your corporate perimeter. By combining network access, identity protection, governance, and identity verification solutions, the Microsoft Entra Suite extends conditional access across identities and network controls, filters out malicious content, and ensures least privilege access for a simple and consistent user experience, whether employees are in the office or remote.
+[Microsoft Entra Suite](licensing.md) is the solution to deliver unified Zero Trust user access, enabling your employees to securely access cloud and on-premises applications. The suite does this by providing least privilege access across public and private networks, inside and outside of your corporate perimeter. By combining network access, identity protection, governance, and identity verification solutions, the Microsoft Entra Suite extends conditional access across identities and network controls, filtering out malicious content, and ensuring least privilege access for a simple and consistent user experience, whether employees are in the office or remote.
 
 ## Trial licensing prerequisites
 
@@ -44,7 +44,7 @@ The Microsoft Entra Suite includes these products:
 
 [**Microsoft Entra ID Protection**](~/id-protection/overview-identity-protection.md): Blocks identity takeover in real time by analyzing user and sign-in patterns based on integrated risk scores from various sources. Protects against identity-based attacks, such as phishing, infected devices, and leaked credentials. 
 
-[**Microsoft Entra Verified ID**](~/verified-id/decentralized-identifier-overview.md): Validate users with secure verification methods to ensure secure identity authentication scenarios like user onboarding, securing access to sensitive resources, and account recovery processes.
+[**Microsoft Entra Verified ID**](~/verified-id/decentralized-identifier-overview.md): Validate users with secure verification methods to ensure secure identity authentication scenarios like user onboarding, and secure access to sensitive resources and account recovery processes.
 
 ## Microsoft Entra Suite product guides
 
@@ -64,7 +64,7 @@ The following sections include process steps to walk you through each product. E
 
 ### Step 1: Deploy identity protection 
 
-Microsoft Entra ID Protection detects identity-based risks, reports them, and allows administrators to investigate and remediate these risks to keep organizations safe and secure. Risk data can be further fed into tools like conditional access to make access decisions or fed to a security information and event management (SIEM) tool for further analysis and investigation.
+Microsoft Entra ID Protection detects identity-based risks and reports them, allowing administrators to investigate and remediate these risks to keep organizations safe and secure. Risk data can be further fed into tools like conditional access to make access decisions or fed to a security information and event management (SIEM) tool for further analysis and investigation.
 
 1. Review existing reports
 1. Plan for conditional access risk policies
@@ -75,7 +75,7 @@ To view the complete how-to guide, see [Plan a Microsoft Entra ID Protection dep
 
 ### Step 2: Enact access reviews
 
-Microsoft Entra access reviews are a Microsoft Entra ID Governance capability that help your organization keep the Enterprise more secure by managing its resource access lifecycle. The other capabilities are entitlement management, Privileged Identity Management (PIM), lifecycle workflows, provisioning, and terms of use.
+Microsoft Entra access reviews are a Microsoft Entra ID Governance capability that help your organization keep the enterprise more secure by managing its resource access lifecycle. The other capabilities are entitlement management, Privileged Identity Management (PIM), lifecycle workflows, provisioning, and terms of use.
 
 1. Plan access reviews for access packages, groups, and applications 
 1. Plan review of Microsoft Entra ID and Azure resource roles 
@@ -87,7 +87,7 @@ To view the complete how-to guide, see [Plan a Microsoft Entra access reviews de
 
 ### Step 3: Secure access to the internet 
 
-Microsoft Entra Internet Access protects enterprise users and managed devices from malicious internet traffic and malware infection concerns all companies. Using the Secure Web Gateway functionality enables you to block traffic based on web categories, and a fully qualified domain name (FQDN), by integrating with Microsoft Entra Conditional Access.
+Microsoft Entra Internet Access protects enterprise users and managed devices from malicious internet traffic and malware infection concerns all companies. Using the Secure Web Gateway functionality enables you to block traffic based on web categories, and a fully qualified domain name (FQDN) by integrating with Microsoft Entra Conditional Access.
 
 1. Deploy and test Microsoft Entra Internet Access 
 1. Create a baseline policy applying to all internet traffic routed through the service 
