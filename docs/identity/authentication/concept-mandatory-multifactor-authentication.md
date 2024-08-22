@@ -4,8 +4,8 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/21/2024
-ms.author: justinha
+ms.date: 08/22/2024
+ms.author: nashahid_microsoft
 author: justinha
 manager: amycolannino
 ms.reviewer: nashahid
@@ -16,7 +16,7 @@ ms.reviewer: nashahid
 
 At Microsoft, we're committed to providing our customers with the highest level of security. That's why, starting in 2024, we'll enforce mandatory multifactor authentication (MFA) for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications are affected and how to prepare for mandatory MFA. 
 
-If you created a Microsoft Entra ID directory previously, you were assigned the [Global Administrator role](~/identity/role-based-access-control/permissions-reference.md#global-administrator). An email to notify Global Administrators about enforcement of mandatory MFA refers to the tenant ID of the directory. You can confirm the tenant ID on the Overview page in the [Microsoft Entra admin center](https://entra.microsoft.com). If you multiple tenants, click **Manage tenants** to see the tenant ID for each one. For more information about others ways Microsoft notifies Global Administrators, see [Notification channels](#notification-channels).
+If you created a Microsoft Entra ID directory previously, you were assigned the [Global Administrator role](~/identity/role-based-access-control/permissions-reference.md#global-administrator). An email to notify users about enforcement of mandatory MFA refers to the globally unique identifier (GUID) for any user who is assigned the Global Administrator role. For more information about others ways Microsoft notifies Global Administrators, see [Notification channels](#notification-channels).
 
 ## Scope of enforcement 
  
@@ -54,7 +54,7 @@ The enforcement of MFA will roll out in two phases:
 
 Microsoft will notify all Microsoft Entra Global Administrators through the following channels: 
 
-- Email: Global Administrators who have configured an email address will be informed by email of the upcoming MFA enforcement and the actions required to be prepared. The email refers to the tenant ID of Microsoft Entra ID. You can confirm the tenant ID on the Overview page in the [Microsoft Entra admin center](https://entra.microsoft.com).
+- Email: Global Administrators who have configured an email address will be informed by email of the upcoming MFA enforcement and the actions required to be prepared. The email refers to the globally unique identifier (GUID) for any user who is assigned the Global Administrator role. .
 
 - Service health notification: Global Administrators will receive a service health notification through the Azure portal, with the tracking ID of **4V20-VX0**. This notification contains the same information as the email. Global Administrators can also subscribe to receive service health notifications through email. 
 
