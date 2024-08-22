@@ -5,7 +5,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 08/22/2024
-ms.author: nashahid_microsoft
+ms.author: nashahid
 author: justinha
 manager: amycolannino
 ms.reviewer: nashahid
