@@ -23,7 +23,7 @@ Welcome to the Microsoft Entra Suite trial user guide. Make the most of your fre
 
 ## What is the Microsoft Entra Suite? 
 
-[Microsoft Entra Suite](https://microsoft.com/security/blog/2024/07/11/simplified-zero-trust-security-with-the-microsoft-entra-suite-and-unified-security-operations-platform-now-generally-available/) is the solution to deliver unified Zero Trust user access, enabling your employees to securely access any cloud and on-premises application. The suite does this by providing least privilege access across public and private networks, inside and outside your corporate perimeter. By combining network access, identity protection, governance, and identity verification solutions, the Microsoft Entra Suite extends conditional access across identities and network controls, filters out malicious content, and ensures least privilege access for a simple and consistent user experience, whether employees are in the office or remote.
+[Microsoft Entra Suite](licensing.md) is the solution to deliver unified Zero Trust user access, enabling your employees to securely access any cloud and on-premises application. The suite does this by providing least privilege access across public and private networks, inside and outside your corporate perimeter. By combining network access, identity protection, governance, and identity verification solutions, the Microsoft Entra Suite extends conditional access across identities and network controls, filters out malicious content, and ensures least privilege access for a simple and consistent user experience, whether employees are in the office or remote.
 
 ## Trial licensing prerequisites
 
@@ -171,3 +171,4 @@ The step-by-step guidance focuses on Microsoft Entra Internet Access, Microsoft 
 - [Microsoft Entra Suite now generally available - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-suite-now-generally-available/ba-p/2520427)
 - [Microsoft Entra plans & pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 - [Learn how to simplify your Zero Trust strategy with the Microsoft Entra Suite](https://info.microsoft.com/ww-ondemand-zero-trust-in-the-age-of-ai.html?lcid=en-us/?ocid=cmmvobsb34b)
+- [Simplified Zero Trust security with the Microsoft Entra Suite](https://microsoft.com/security/blog/2024/07/11/simplified-zero-trust-security-with-the-microsoft-entra-suite-and-unified-security-operations-platform-now-generally-available)
