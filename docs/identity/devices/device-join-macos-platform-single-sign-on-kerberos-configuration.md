@@ -156,5 +156,27 @@ If you use Intune as your MDM you can perform the following steps to deploy the 
 1. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
 
 The next time the device checks for configuration updates, the settings you configured are applied.
-2. Test Microsoft Entra ID Kerberos functionality by accessing an Azure Files share enabled for Microsoft Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
-2. Test Microsoft Entra ID Kerberos functionality by accessing an Azure Files share enabled for Microsoft Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
+
+## Testing Kerberos SSO
+
+Once the profile has been assigned to the device you can check that your device has Kerberos tickets by running the following command in the Terminal app:
+
+> ```console
+> app-sso platform -s
+> ```
+
+You should have two Kerberos tickets, one for your on-premises AD with the ticketKeyPath value of **tgt_ad** and one for your Entra ID tenant with the ticketKeyPath value of **tgt_cloud**. The output should resemble the following:
+
+:::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-kerberos-terminal-output.png" alt-text="Screenshot of the output of app-sso platform -s in the macOS Terminal app.":::
+
+Validate your configuration is working by testing with appropriate Kerberos-capable resources:
+
+1. Test on-premises Active Directory functionality by accessing an on-premises AD-integrated file server using Finder or a web application using Safari. The user should be able to access the file share without being challenged for interactive credentials.
+2. Test Entra ID Kerberos functionality by accessing an Azure Files share enabled for Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
+
+## See also
+
+- [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md)
+- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
+- [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
+- [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)
