@@ -63,4 +63,4 @@ landingContent:
           - text: CLI
             url: how-to-assign-access-azure-resource.md?pivots=identity-mi-access-cli
           - text: PowerShell
-            url: hhow-to-assign-access-azure-resource.md?pivots=identity-mi-access-powershell
+            url: how-to-assign-access-azure-resource.md?pivots=identity-mi-access-powershell
