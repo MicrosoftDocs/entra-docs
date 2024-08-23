@@ -1,6 +1,6 @@
 ---
 title: 'Deploy SAP NetWeaver AS ABAP 7'
-description: This article describes how toset up a lab environment with SAP ECC for testing.
+description: This article describes how to set up a lab environment with SAP ECC for testing.
 services: active-directory
 documentationcenter: ''
 author: billmath
@@ -34,7 +34,7 @@ This document guides you in setting up a lab environment with SAP ECC for testin
 
  6. Click the Test Connection button. Enter the name of your appliance and choose a master password to access your SAP instance. Click Create to provision resources into Azure AD tenant
  
-:::image type="content" source="media/deploy-sap-netweaver/sap-4.png" alt-text="Screenshot of connection test." lightbox="media/deploy-sap-netweaver/sap-4.png":::
+:::image type="content" source="media/deploy-sap-netweaver/sap-update-4.png" alt-text="Screenshot of connection test." lightbox="media/deploy-sap-netweaver/sap-update-4.png":::
  
  7. Download and store the private key needed to access the appliance. 
  
@@ -109,6 +109,7 @@ To create a web service utilized by Web Service Configuration Tool, you must fir
  13. On the Function Group screen, select all the required BAPIs and add the BAPIs that aren't included in the function group. Click Continue. In this example, all BAPIs from SU\_USER function groups are selected. Consult your SAP administrator regarding the BAPIs to be used in your project. 
 
 :::image type="content" source="media/deploy-sap-netweaver/sap-19.png" alt-text="Screenshot of function group." lightbox="media/deploy-sap-netweaver/sap-19.png":::
+ 
  To implement basic user management scenarios, you may want to limit a list of BAPIs published to: 
 
  - BAPI_USER_GETLIST
@@ -189,12 +190,12 @@ Follow the steps below to configure the Web Service.
 
 :::image type="content" source="media/deploy-sap-netweaver/sap-34.png" alt-text="Screenshot of WSDL parameters." lightbox="media/deploy-sap-netweaver/sap-34.png":::
  
- Configure WSDL Flavours as: 
+ Configure WSDL Flavors as: 
 - WSP Version: No Policy 
 - SOAP Version: SOAP 1.1
 - SOAP Style: Document 
 - WSDL Section: AllInOne 
- 12. Click to save WSDL Flavour as: SOAP 1.1. Only 
+ 12. Click to save WSDL Flavor as: SOAP 1.1. Only 
 
 :::image type="content" source="media/deploy-sap-netweaver/sap-35.png" alt-text="Screenshot of save." lightbox="media/deploy-sap-netweaver/sap-35.png":::
  
@@ -232,8 +233,6 @@ Follow the steps below to configure the Web Service.
  1. To avoid publishing your SAP Web Service endpoint to the Internet, set up peering between your SAP demo lab network and your MIM or ECMA2Host machine. This setup allows you to reach your Web Service by its internal IP address. 
  2. Add the SAP host name and IP address into the hosts file on MIM or ECMA2Host machine. 
  3. Test opening the WSDL URL on the MIM or ECMA2Host machine from a browser to check connectivity to SAP Web Service. 
-
- 
 
 The next step is to create a [webservice connector template](sap-ecma-template.md) to manage SAP ECC users using this SOAP endpoint and BAPIs published. 
 

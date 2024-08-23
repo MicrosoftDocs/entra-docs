@@ -14,7 +14,7 @@ ms.author: billmath
 
 # Authoring the SAP ECC 7.51 Web Service connector template for the ECMA2Host 
 
-This guide walks you through the process of creating a template for the Web Service ECMA connector to manage SAP ECC users. 
+This guide walks you through the process of creating a template for the Web Service Extensibility Connectivity Management Agent (ECMA) connector to manage SAP ECC users. 
 
 ## Limitations and assumptions 
 
@@ -50,7 +50,7 @@ Before you can design import and export workflows, you need to create a template
 :::image type="content" source="media/sap-template/sap-template-12.png" alt-text="Screenshot of add new web service." lightbox="media/sap-template/sap-template-12.png":::
  
  4. Name your web service SAPECC, provide a URL to download WSDL published, enter SAPECC as namespace. 
- Web Service name helps you to distinguish this web service in your template from others. Namespace defines a name of the Microsoft .Net namespace used to generate classes. Choose Basic authentication mode unless instructed otherwise by SAP administrator. Click Next.
+ Web Service name helps you to distinguish this web service in your template from others. Namespace defines a name of the Microsoft .NET namespace used to generate classes. Choose Basic authentication mode unless instructed otherwise by SAP administrator. Click Next.
 
 :::image type="content" source="media/sap-template/sap-template-23.png" alt-text="Screenshot of naming web service." lightbox="media/sap-template/sap-template-23.png"::: 
  
@@ -286,6 +286,7 @@ There's no need to implement pagination in export workflows. There's only one ob
  6. Click on Add new case area of Switch activity. Type userName as Case Value. Drag and drop Assign activity into userName case body and assign anchor.Value.ToString() to userName variable. 
 
 :::image type="content" source="media/sap-template/sap-template-19.png" alt-text="Screenshot of new case." lightbox="media/sap-template/sap-template-19.png":::
+ 
  7. Now that we extracted userName value from exported object anchor property, we need to populate other structures like company, defaults, address, logon data that contain other SAP user details. We do this by cycling through collection of attribute changes. 
  8. Collapse your ForEach activity and drag and drop another ForEachWithBothFactory activity inside your Sequence activity after the existing ForEach activity. Replace **item** variable name with **attributeChange**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.AttributeChange```. In the Value field type ```objectToExport.AttributeChanges```. 
 
@@ -301,7 +302,7 @@ There's no need to implement pagination in export workflows. There's only one ob
  
  14. Add other missing cases and assignments. Use this mapping table as a guide: 
 
- |Case|Assignment|
+|Case|Assignment|
 |-----|-----| 
 |city|address.city = attributeChange.ValueChanges(0)Value.ToString()| 
 |company|company.company = attributeChange.ValueChanges(0)Value.ToString()| 
