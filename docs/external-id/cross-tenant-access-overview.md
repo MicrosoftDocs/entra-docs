@@ -150,11 +150,7 @@ Microsoft cloud settings let you collaborate with organizations from different M
 > [!NOTE]
 > B2B direct connect is not supported for collaboration with Microsoft Entra tenants in a different Microsoft cloud.
 
-For more information, see [Configure Microsoft cloud settings for B2B collaboration](cross-cloud-settings.md).
-
-### Default settings in cross-cloud scenarios
-
-To collaborate with a partner tenant in a different Microsoft Azure cloud, both organizations need to mutually enable B2B collaboration with each other. The first step is to enable the partner's cloud in your cross-tenant settings. When you first enable another cloud, B2B collaboration is blocked for all tenants in that cloud. You need to add the tenant you want to collaborate with to your Organizational settings, and at that point your default settings go into effect for that tenant only. You can allow the default settings to remain in effect, or you can modify the organizational settings for the tenant.
+For more information, see the [Configure Microsoft cloud settings for B2B collaboration](cross-cloud-settings.md) article.
 
 ## Important considerations
 
