@@ -197,7 +197,7 @@ Several tools are available to help you identify the access your users and partn
 
 |Tool  |Method  |
 |---------|---------|
-|PowerShell script for cross-tenant sign-in activity    | To review user sign-in activity associated with external organizations, use the [cross-tenant user sign-in activity](https://aka.ms/cross-tenant-signins-ps) PowerShell script.       |
+|PowerShell script for cross-tenant sign-in activity    | To review user sign-in activity associated with external organizations, use the [cross-tenant user sign-in activity](https://www.powershellgallery.com/packages/MSIdentityTools/2.0.1/Content/Get-MSIDCrossTenantAccessActivity.ps1) PowerShell script from the [MSIdentityTools](https://www.powershellgallery.com/packages/MSIdentityTools).       |
 |PowerShell script for sign-in logs    |  To determine your users' access to external Microsoft Entra organizations, use the [Get-MgAuditLogSignIn](/powershell/module/microsoft.graph.reports/get-mgauditlogsignin) cmdlet.       |
 |Azure Monitor     |  If your organization subscribes to the Azure Monitor service, use the [Cross-tenant access activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md).       |
 |Security Information and Event Management (SIEM) systems    |  If your organization exports sign-in logs to a Security Information and Event Management (SIEM) system, you can retrieve the required information from your SIEM system.       |
