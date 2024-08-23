@@ -87,48 +87,6 @@ We'll start releasing user experience updates for application provisioning, HR p
 
 ---
 
-### Public Preview - Passkey authentication in brokered Microsoft apps on Android
-
-**Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
-
-Microsoft Entra ID users can now use a passkey to sign into Microsoft apps on Android devices where an authentication broker like Microsoft Authenticator or Microsoft Intune Company Portal is installed. For more information, see: [Support for FIDO2 authentication with Microsoft Entra ID](../identity/authentication/concept-fido2-compatibility.md).
-
----
-
-### Public Preview - Improved user experience when adding account to a Windows device
-
-**Type:** Changed feature    
-**Service category:** Device Registration and Management    
-**Product capability:** User Authentication    
-
-This feature change helps users better understand the choices they can make during the consent experience for adding an account to a Windows device. We want customers to be aware of all the implications of adding their account to a Windows device.
-
----
-
-### Change announcement - Upcoming license enforcement for Microsoft Entra Internet Access and Microsoft Entra Private Access
-
-**Type:** Changed feature    
-**Service category:** Internet Access    
-**Product capability:** Network Access    
-
-Starting early October 2024, license enforcement begins in the Microsoft Entra admin center, for [Microsoft Entra Internet Access](https://www.microsoft.com/security/business/identity-access/microsoft-entra-internet-access) and [Microsoft Entra Private Access](https://www.microsoft.com/security/business/identity-access/microsoft-entra-private-access). This is following a 90-day notification period, starting with the General Availability of Internet Access and Private Access, which began in June 2024. Lean more [here](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview).
-
-30-day trials are available for both licenses. [Learn more on pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing#xadbf722cc18146868c4f76c16a1b3c42).
-
----
-
-### General Availability - New SAML applications can't receive tokens through OAuth2/OIDC protocols
-
-**Type:** Plan for change    
-**Service category:** Enterprise Apps    
-**Product capability:** Developer Experience    
-
-Starting late September 2024, applications indicated as '*SAML*' applications,  the '*preferredSingleSignOnMode*' property of the service principal, can't be issued JWT tokens. This means they can't be the resource application in OIDC, OAuth2.0, or other protocols using JWTs. This change will only affect SAML applications attempting to take a new dependency on JWT-based protocols. Existing SAML applications already using these flows won't be affected. This improves the security of apps. For more information, see: [SAML authentication with Microsoft Entra ID](../architecture/auth-saml.md).
-
----
-
 ### Change Announcement - Deferred Changes to My Groups Admin Controls
 
 **Type:** Plan for change    
@@ -147,6 +105,60 @@ In [October 2023](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/wh
 
 Microsoft Entra Id now supports FIDO2 provisioning via API, allowing organizations to pre-provision security keys (passkeys) for users. These new APIs can simplify user onboarding, and provide seamless phishing-resistant authentication on day one for employees. 
 For more information on how to use this feature, see: [Provision FIDO2 security keys using Microsoft Graph API (preview)](../identity/authentication/how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+
+---
+
+### General Availability - Enable, Disable, and Delete synchronized users accounts with Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management            
+
+Lifecycle Workflows is now able to enable, disable, and delete user accounts which are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra. This allows you to complete the employee offboarding process by deleting the user account after a retention period.
+
+To learn more, see: [Manage users synchronized from Active Directory Domain Services with workflows](../id-governance/manage-workflow-on-premises.md).
+
+---
+
+### General Availability - Configure Lifecycle Workflow Scope Using Custom Security Attributes
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management            
+
+Customers can now leverage their confidential HR data, stored in custom security attributes, in addition to other attributes to define the scope of their workflows in Lifecycle Workflows for automating joiner, mover, and leaver scenarios.
+
+To learn more, see: [Use custom security attributes to scope a workflow](..//id-governance/manage-workflow-custom-security-attribute.md).
+
+---
+
+### General Availability - Workflow History Insights in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management              
+
+With this feature, customers can now monitor workflow health, and get insights across all their workflows in Lifecycle Workflows including viewing workflow processing data across workflows, tasks, and workflow categories.
+
+To learn more, see: [Lifecycle workflow Insights](../id-governance/lifecycle-workflow-insights.md).
+
+
+---
+
+### General Availability - Configure custom workflows to run mover tasks when a user's job profile changes
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management           
+
+Lifecycle Workflows now supports the ability to trigger workflows based on job change events like changes to an employee's department, job role, or location, and see them executed on the workflow schedule. With this feature, customers can leverage new workflow triggers to create custom workflows for their executing tasks associated with employees moving within the organization including:
+
+- Trigger workflows when a specified attribute changes
+- Triggering workflows when a user is added or removed from a group's membership
+- Tasks to notify a user's manager about a move
+- Task to assign licenses or remove selected licenses from a user
+
+To learn more, see the [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center tutorial](../id-governance/tutorial-mover-custom-workflow-portal.md).
 
 ---
 
