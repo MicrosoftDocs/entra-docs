@@ -92,7 +92,7 @@ If SSPR is done on another machine users will be allowed to sign-in to the Mac d
 ### What should I do if I forget my password?
 
 #### Password Sync
-If Users are at lock screen or login screen they can reset their password from there. If the user received a temporary password from an IT admin they should use another device to log in, set up a new password and use that new password at to log in to their own device. 
+If users are at lock screen or login screen they can reset their password from there. If the user received a temporary password from an IT admin they should use another device to log in, set up a new password and use that new password at to log in to their own device. 
 
 > [!NOTE] 
 > If the device is booted and there is FileVault encryption the new Entra password will work on macOS15 only. 
