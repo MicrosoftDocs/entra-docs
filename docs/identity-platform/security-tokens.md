@@ -71,13 +71,10 @@ Depending on how your client is built, it can use one or several of the authenti
 | Flow | Requires | ID token | Access token | Refresh token | Authorization code |
 |------|----------|----------|--------------|---------------|--------------------|
 | [Authorization code flow](v2-oauth2-auth-code-flow.md) | | x | x | x | x |
-| [Implicit flow](v2-oauth2-implicit-grant-flow.md) | | x | x | | |
 | [Hybrid OIDC flow](v2-protocols-oidc.md#protocol-diagram-access-token-acquisition)| | x | | | x |
 | [Refresh token redemption](v2-oauth2-auth-code-flow.md#refresh-the-access-token) | Refresh token | x | x | x | |
 | [On-behalf-of flow](v2-oauth2-on-behalf-of-flow.md) | Access token | x | x| x | |
 | [Client credentials](v2-oauth2-client-creds-grant-flow.md) | | | x (App only) | | |
-
-Tokens issued using the implicit flow have a length limitation because they're passed back to the browser using the URL, where `response_mode` is `query` or `fragment`. Some browsers have a limit on the size of the URL that can be put in the browser bar and fail when it's too long. As a result, these tokens don't have `groups` or `wids` claims.
 
 ## See also
 
