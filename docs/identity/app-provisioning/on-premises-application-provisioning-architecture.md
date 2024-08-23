@@ -100,7 +100,13 @@ You can define one or more matching attribute(s) and prioritize them based on th
 ## High availability
 The following information is provided for high availability / failover scenarios.
 
-For on-premises apps using the ECMA connector: The recommendation is having 1 active agent and 1 passive agent (configured, but stopped, not assigned to the enterprise app in Entra) per data center. When doing a failover, stop the active agent, restart the passive agent, and assign the passive and assign the active agent. This allows the passive agent to perform a full import of identities in the target application before provisioning accounts.
+For on-premises apps using the ECMA connector: The recommendation is having 1 active agent and 1 passive agent (configured, but stopped, not assigned to the enterprise app in Entra) per data center. 
+
+When doing a failover, it is recommended to do the following:
+ 1. Stop the active agent (A).
+ 2. Unassign agent A from the enterprise application.
+ 3. Restart the passive agent (B).
+ 4. Assign agent B to the enterprise application.   
 
  :::image type="content" source="media/on-premises-application-provisioning-architecture/high-availability-1.png" alt-text="Diagram of high availability with ECMA connector." lightbox="media/on-premises-application-provisioning-architecture/high-availability-1.png":::
 
