@@ -226,8 +226,6 @@ Follow the steps below to configure the Web Service.
  
  6. Test the web service deployed using your favorite SOAP client tool to ensure that it does return proper data before configuring the Web Services Connector Template 
 
-:::image type="content" source="media/deploy-sap-netweaver/sap-41.png" alt-text="Screenshot of test web service deployment." lightbox="media/deploy-sap-netweaver/sap-41.png":::
-
 ## Connecting to Web Service from MIM or the ECMA2Host machine 
 
  1. To avoid publishing your SAP Web Service endpoint to the Internet, set up peering between your SAP demo lab network and your MIM or ECMA2Host machine. This setup allows you to reach your Web Service by its internal IP address. 
