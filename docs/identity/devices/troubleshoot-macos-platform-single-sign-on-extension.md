@@ -83,6 +83,23 @@ Confirm that a previously registered device (with a Workplace Join key in Keycha
 
 No, macOS PSSO is only supported in Microsoft Entra join deployments. There are no plans to support hybrid-join deployments, as we recommend that Mac users go fully cloud based.
 
+### How can I change my password when using Platform SSO?
+
+Users can change their password using Self-Service Password Reset (SSPR) on their device. 
+
+If SSPR is done on another machine users will be allowed to sign-in to the Mac device using either the old or the new password. Using the old password will unlock the device and then prompt the user for the new password to continue syncing data. Using the new password will unlock the device and sync data immediately.
+
+### What should I do if I forget my password?
+
+#### [Password Sync](#tab/PasswordSync)
+If Users are at lock screen or login screen they can reset their password from there. If the user received a temporary password from an IT admin they should use another device to log in, set up a new password and use that new password at to log in to their own device. 
+
+> [!NOTE] 
+> If the device is booted and there is FileVault encryption the new Entra password will work on macOS15 only. 
+
+#### [Secure Enclave](#tab/PasswordSync)
+Users can reset the local password via Apple ID or an admin recovery key. 
+
 ## Known issues
 
 ### Passcode policy complexity mismatches
