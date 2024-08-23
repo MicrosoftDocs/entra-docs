@@ -11,7 +11,7 @@ ms.reviewer: ashishj
 ---
 
 # Microsoft Entra private network connector: version release history
-This article lists the versions and features of the Microsoft Entra private network connector. The Microsoft Entra ID team regularly updates the private network connector with new features and functionality. Microsoft Entra private network connectors are updated automatically when a new major version is released.
+This article lists the versions and features of the Microsoft Entra private network connector. The Microsoft Entra ID team regularly updates the private network connector with new features and functionality. Microsoft Entra private network connectors are updated automatically when a new major version is released.  Major Private Network Connector releases are marked below. ##This document should signify which releases are considered "major" so that Systems Engineers can have a clear expectation of which connectors were/are updated automatically.
 
 > [!IMPORTANT]
 > Microsoft Entra application proxy and Microsoft Entra Private Access use the private network connector.
