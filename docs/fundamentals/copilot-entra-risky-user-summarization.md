@@ -56,5 +56,5 @@ Suggested help and documentation are:
 
 ## Next steps
 
-- Learn more about [risky users](/entra/id-protection/howto-identity-protection-investigate-risk#risky-users).
+- Learn more about [risky users](/entra/id-protection/howto-identity-protection-investigate-risk#risky-users-report).
 

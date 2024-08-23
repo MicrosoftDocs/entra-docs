@@ -68,7 +68,7 @@ The `RiskyUsers` logs identify users who are at risk based on their sign-in acti
 
 ### User risk events
 
-The `UserRiskEvents` logs are part of Microsoft Entra ID Protection. These logs capture details about risky sign-in events. For more information, see [How to investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins).
+The `UserRiskEvents` logs are part of Microsoft Entra ID Protection. These logs capture details about risky sign-in events. For more information, see [How to investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins-report).
 
 ### Network access traffic logs
 
