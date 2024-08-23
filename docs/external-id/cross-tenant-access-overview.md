@@ -23,8 +23,7 @@ Microsoft Entra organizations can use External ID cross-tenant access settings t
 
 This article covers cross-tenant access settings for managing B2B collaboration and B2B direct connect with external Entra organizations, including across Microsoft clouds. Other settings are available for B2B collaboration with non-Microsoft Entra identities (for example, social identities or non-IT managed external accounts). These [external collaboration settings](external-collaboration-settings-configure.md) include options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
 
-> [!IMPORTANT]
-> Microsoft started to move customers using cross-tenant access settings to a new storage model on August 30, 2023. You may notice an entry in your audit logs informing you that your cross-tenant access settings were updated as our automated task migrates your settings. For a brief window while the migration processes, you'll be unable to make changes to your settings. If you're unable to make a change, wait a few moments and try the change again. Once the migration completes, [you'll no longer be capped with 25kb of storage space](./faq.yml#how-many-organizations-can-i-add-in-cross-tenant-access-settings-) and there will be no more limits on the number of partners you can add.
+There are no limits to the number of organizations you can add in cross-tenant access settings.
  
 ## Manage external access with inbound and outbound settings
 
