@@ -56,7 +56,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     b. Copy **Application (client) ID** and **Directory (tenant) ID**, use it later in the iLOGON_MHA OIDC side configuration.
 
-    ![Screenshot of application client values.](./media/ilogon-mha-tutorial/application-id.png)
+    [![Screenshot of application client values.](./media/ilogon-mha-tutorial/application-id.png)](./media/ilogon-mha-tutorial/application-id.png#lightbox)
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
