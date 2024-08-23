@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/09/2024
+ms.date: 08/23/2024
 
 ms.author: justinha
 author: justinha
@@ -17,7 +17,7 @@ ms.reviewer: calui, tilarso
 ---
 # Enable passkeys (FIDO2) for your organization
 
-For enterprises that use passwords today, passkeys (FIDO2) provide a seamless way for workers to authenticate without entering a username or password. Passkeys provide improved productivity for workers, and have better security.
+For enterprises that use passwords today, passkeys (FIDO2) provide a seamless way for workers to authenticate without entering a username or password. Passkeys (FIDO2) provide improved productivity for workers, and have better security.
 
 This article lists requirements and steps to enable passkeys in your organization. After completing these steps, users in your organization can then register and sign in to their Microsoft Entra account using a passkey stored on a FIDO2 security key or in Microsoft Authenticator.
 
@@ -34,59 +34,62 @@ For more information about passkey authentication, see [Support for FIDO2 authen
 - [FIDO2 security keys eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor) or Microsoft Authenticator.
 - Devices that support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
-Passkeys are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).
+Passkeys (FIDO2) are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).
 
-## Enable passkey authentication method 
+## Passkey (FIDO2) Authenticator Attestation GUID (AAGUID)
+
+The FIDO2 specification requires each security key vendor to provide an Authenticator Attestation GUID (AAGUID) during registration. An AAGUID is a 128-bit identifier indicating the key type, such as the make and model. Passkey (FIDO2) providers on desktop and mobile devices are also expected to provide an AAGUID during registration.
+
+>[!NOTE]
+>The vendor must ensure that the AAGUID is identical across all substantially identical security keys or passkey (FIDO2) providers made by that vendor, and different (with high probability) from the AAGUIDs of all other types of security keys or passkey (FIDO2) providers. To ensure this, the AAGUID for a given security key model or passkey (FIDO2) provider should be randomly generated. For more information, see [Web Authentication: An API for accessing Public Key Credentials - Level 2 (w3.org)](https://w3c.github.io/webauthn/).
+
+You can work with your security key vendor to determine the AAGUID of the passkey (FIDO2), or see [FIDO2 security keys eligible for attestation with Microsoft Entra ID](~/identity/authentication/concept-fido2-hardware-vendor.md#fido2-security-keys-eligible-for-attestation-with-microsoft-entra-id). If the passkey (FIDO2) is already registered, you can find the AAGUID by viewing the authentication method details of the passkey (FIDO2) for the user.
+
+![Screenshot of View AAGUID for passkey.](media/howto-authentication-passwordless-deployment/security-key-aaguid-details.png)
+
+## Enable passkey (FIDO2) authentication method 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **Passkey (FIDO2)**, set the toggle to **Enable**. Select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
-1. **Save** the configuration.
+1. On the **Configure** tab, set:
+
+   - **Allow self-service set up** to **Yes**. If set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys (FIDO2) are enabled by the Authentication methods policy.  
+   - **Enforce attestation** should be set to **Yes** if your organization wants to be assured that a FIDO2 security key model or passkey provider is genuine and comes from the legitimate vendor.
+       - For FIDO2 security keys, we require security key metadata to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's another set of validation testing. For more information, see [Become a Microsoft-compatible FIDO2 security key vendor](/entra/identity/authentication/concept-fido2-hardware-vendor).
+       - For passkeys in Microsoft Authenticator, attestation support is planned for General Availability.
+
+     >[!WARNING]
+     >Attestation enforcement governs whether a passkey (FIDO2) is allowed only during registration. Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.
+
+      - **Enforce key restrictions** to **Yes** to only allow or block certain passkeys (FIDO2), which are identified by their AAGUIDs. This setting must be **Yes** and add the Microsoft Authenticator AAGUIDs listed below to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page. 
+
+        [Security info](https://mysignins.microsoft.com/security-info) doesn't require this setting be **Yes** to add a passkey in Authenticator. If you choose **No**, users may still be able to add a passkey in Microsoft Authenticator by going through the security key/passkey WebAuthn registration flow depending upon their operating system and browser. However, this is a flow we don't expect most users to stumble on and users will not be provided any instructions on how to set up the Authenticator app through this flow. 
+
+        Key restrictions set the usability of specific passkeys (FIDO2) for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
+     
+        If your organization doesn't currently enforce key restrictions and already has active passkey (FIDO2) usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs, to enable this preview. This task can be done with an automated script that analyzes logs, such as registration details and sign-in logs.
+
+      - **Restrict specific keys** to **Allow** if you plan to allow passkeys in Microsoft Authenticator.
+      - Select **Microsoft Authenticator (Preview)** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following AAGUIDs to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page:
+
+        - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
+        - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
+   
+     >[!NOTE]
+     >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator (Preview)** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
+
+     Two more AAGUIDs may be listed. 
+     They are `b6879edc-2a86-4bde-9c62-c1cac4a8f8e5` and `257fa02a-18f3-4e34-8174-95d454c2e9ad`. 
+     These AAGUIDs appear in advance of an upcoming feature. 
+     You can remove them from the list of allowed AAGUIDs. 
+
+   :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
+
+1. After you finish the configuration, select **Save**.
 
    >[!NOTE]
-   >If you see an error when you try to save, the cause might be due to the number of users or groups being added. As a workaround, replace the users and groups you are trying to add with a single group, in the same operation, and then click **Save** again.
-
-
-### Passkey optional settings 
-
-There are some optional settings on the **Configure** tab to help manage how passkeys can be used for sign-in.
-
-:::image type="content" border="true" source="media/howto-authentication-passwordless-security-key/optional-settings-with-aaguid.png" alt-text="Screenshot of FIDO2 security key options.":::
-
-- **Allow self-service set up** should remain set to **Yes**. If set to no, your users can't register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
-- **Enforce attestation** should be set to **Yes** if your organization wants to be assured that a FIDO2 security key model or passkey provider is genuine and comes from the legitimate vendor.
-    - For FIDO2 security keys, we require security key metadata to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's another set of validation testing. For more information, see [Become a Microsoft-compatible FIDO2 security key vendor](/entra/identity/authentication/concept-fido2-hardware-vendor).
-    - For passkeys in Microsoft Authenticator, we don't currently support attestation.
-
-  >[!WARNING]
-  >Attestation enforcement governs whether a passkey is allowed during registration only. Users who are able to register a passkey without attestation will not be blocked during sign-in if **Enforce attestation** is set to **Yes** at a later time.
-
-**Key Restriction Policy**
-
-- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their Authenticator Attestation GUID (AAGUID). You can work with your security key vendor to determine the AAGUID of the passkey. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
-- Select **Microsoft Authenticator (Preview)** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following Authenticator Attestation GUIDs (AAGUIDs) to enable the Authenticator passkey preview:
-
-  - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
-  - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
-   
-  >[!WARNING]
-  >Key restrictions set the usability of specific models or providers for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
-
-  If you turn off key retrictions, make sure you clear the **Microsoft Authenticator (Preview)** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://aka.ms/mysecurityinfo).
-
-  >[!NOTE]
-  >If you don't enforce key restrictions and don't select **Microsoft Authenticator (Preview)**, users won't see an option to set up passkeys in Authenticator when they go to [Security info](https://aka.ms/mysecurityinfo). Depending upon their operating system and browser, users who continue with passkey (FIDO2) registration might see a WebAuthn flow with a QR code to set up passkey in Authenticator. This is because when no key restrictions are set, any device-bound passkey can be set up by using the WebAuthn flow. To explicitly disable passkeys in Authenticator, use the key restrictions to block the Authenticator app AAGUIDs.
-
-## Passkey Authenticator Attestation GUID (AAGUID)
-
-The FIDO2 specification requires each security key vendor to provide an Authenticator Attestation GUID (AAGUID) during registration. An AAGUID is a 128-bit identifier indicating the key type, such as the make and model. Passkey providers on desktop and mobile devices are also expected to provide an AAGUID during registration.
-
->[!NOTE]
->The vendor must ensure that the AAGUID is identical across all substantially identical security keys or passkey providers made by that vendor, and different (with high probability) from the AAGUIDs of all other types of security keys or passkey providers. To ensure this, the AAGUID for a given security key model or passkey provider should be randomly generated. For more information, see [Web Authentication: An API for accessing Public Key Credentials - Level 2 (w3.org)](https://w3c.github.io/webauthn/).
-
-There are two ways to get your AAGUID. You can either ask your security key or passkey provider vendor, or view the authentication method details of the key per user.
-
-![Screenshot of View AAGUID for passkey.](media/howto-authentication-passwordless-deployment/security-key-aaguid-details.png)
+   >If you see an error when you try to save, replace multiple groups with a single group in one operation, and then click **Save** again.
 
 
 ## Provision FIDO2 security keys using Microsoft Graph API (preview)
@@ -104,9 +107,9 @@ With these new APIs, organizations can build their own clients to provision pass
 
 :::image type="content" border="true" source="media/how-to-enable-passkey-fido2/provision.png" alt-text="Conceptual diagram that shows the steps required to provision passkeys (FIDO2)." :::
 
-## Enable passkeys using Microsoft Graph API
+## Enable passkeys (FIDO2) using Microsoft Graph API
 
-In addition to using the Microsoft Entra admin center, you can also enable passkeys by using the Microsoft Graph API. To enable passkeys, you need to update the Authentication methods policy as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator). 
+In addition to using the Microsoft Entra admin center, you can also enable passkeys (FIDO2) by using the Microsoft Graph API. To enable passkeys (FIDO2), you need to update the Authentication methods policy as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator). 
 
 To configure the policy using Graph Explorer:
 
@@ -146,18 +149,18 @@ To configure the policy using Graph Explorer:
    ```
 
 
-## Delete a passkey 
+## Delete a passkey (FIDO2)
 
-To remove a passkey associated with a user account, delete the key from the user's authentication method.
+To remove a passkey (FIDO2) associated with a user account, delete it from the user's authentication method.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user whose passkey needs to be removed.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user whose passkey (FIDO2) needs to be removed.
 1. Select **Authentication methods** > right-click **Passkey (device-bound)** and select **Delete**. 
 
     ![Screenshot of View Authentication Method details.](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
 
-## Enforce passkey sign-in
+## Enforce passkey (FIDO2) sign-in
 
-To make users sign in with a passkey when they access a sensitive resource, you can: 
+To make users sign in with a passkey (FIDO2) when they access a sensitive resource, you can: 
 
 - Use a built-in phishing-resistant authentication strength 
 
@@ -165,7 +168,7 @@ To make users sign in with a passkey when they access a sensitive resource, you 
   
 - Create a custom authentication strength
 
-The following steps show how to create a custom authentication strength Conditional Access policy that allows passkey sign-in for only a specific security key model or passkey provider. For a list of FIDO2 providers, see [FIDO2 security keys eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor).
+The following steps show how to create a custom authentication strength Conditional Access policy that allows passkey (FIDO2) sign-in for only a specific security key model or passkey (FIDO2) provider. For a list of FIDO2 providers, see [FIDO2 security keys eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
@@ -180,15 +183,11 @@ The following steps show how to create a custom authentication strength Conditio
 
 ### B2B collaboration users 
 
-Registration of FIDO2 credentials isn't supported for B2B collaboration users in the resource tenant.
-
-### Security key provisioning
-
-Administrator provisioning and deprovisioning of security keys isn't available.
+Registration of passkey (FIDO2) credentials isn't supported for B2B collaboration users in the resource tenant.
 
 ### UPN changes
 
-If a user's UPN changes, you can no longer modify passkeys to account for the change. If the user has a passkey, they need to sign in to [My Security info](https://aka.ms/mysecurityinfo), delete the old passkey, and add a new one.
+If a user's UPN changes, you can no longer modify passkeys (FIDO2) to account for the change. If the user has a passkey (FIDO2), they need to sign in to [Security info](https://mysignins.microsoft.com/security-info), delete the old passkey (FIDO2), and add a new one.
 
 ## Next steps
 

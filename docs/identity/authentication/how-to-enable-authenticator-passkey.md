@@ -38,7 +38,7 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 1. On the **Configure** tab, set:
-   - **Allow self-service set up** to **Yes**. If set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys are enabled by Authentication methods policy.  
+   - **Allow self-service set up** to **Yes**. If set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys (FIDO2) are enabled by the Authentication methods policy.  
    - **Enforce attestation** to **No** for preview. Attestation support is planned for General Availability.
    - **Enforce key restrictions** to **Yes** to only allow or block certain passkeys, which are identified by their AAGUIDs. This setting must be **Yes** and add the Microsoft Authenticator AAGUIDs listed below to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page. 
 
@@ -65,6 +65,10 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
 1. After you finish the configuration, select **Save**.
+
+   >[!NOTE]
+   >If you see an error when you try to save, replace multiple groups with a single group in one operation, and then click **Save** again.
+
 
 ## Enable passkeys in Authenticator using Graph Explorer
 
