@@ -39,8 +39,6 @@ When you want to use External ID to add customer identity and access management 
 
 The external tenant is where you'll register your apps, create sign-up and sign-in user flows, and manage the users of your apps. The consumers and business customers who sign up for your apps are added to the tenant directory, but with [limited default permissions](customers/reference-user-permissions.md).
 
-[!INCLUDE [preview-alert](customers/includes/preview-alert/preview-alert-ciam.md)]
-
 ## When do I need to create an external tenant?
 
 If you plan to use External ID for apps for consumers or business customers, the first resource you need to create is a new tenant with an external tenant configuration.
