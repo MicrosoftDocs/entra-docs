@@ -12,7 +12,7 @@
     items:
     - name: Compare Azure and Microsoft Entra roles    
       href: /azure/role-based-access-control/rbac-and-directory-admin-roles?toc=/entra/identity/role-based-access-control/TOC.yml&bc=/entra/identity/role-based-access-control/breadcrumb/toc.yml
-    - name: Microsoft 365 roles
+    - name: Roles across Microsoft services
       href: m365-workload-docs.md
   - name: Use groups to manage role assignments
     href: groups-concept.md
