@@ -1389,6 +1389,8 @@
         href: illumio-sso-tutorial.md
       - name: iLMS
         href: ilms-tutorial.md
+      - name: iLOGON_MHA OIDC
+        href: ilogon-mha-tutorial.md
       - name: Imagen
         href: imagen-tutorial.md
       - name: Image Relay
