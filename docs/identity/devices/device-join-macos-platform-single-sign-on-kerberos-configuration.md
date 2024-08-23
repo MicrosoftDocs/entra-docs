@@ -148,11 +148,8 @@ If you use Intune as your MDM you can perform the following steps to deploy the 
 1. In **Scope tags** (optional), assign a tag to filter the profile to specific IT groups, such as `US-NC IT Team` or `JohnGlenn_ITDepartment`. Select **Next**.
   - For more information about scope tags, see [Use RBAC roles and scope tags for distributed IT](/mem/intune/fundamentals/scope-tags).
 1. In **Assignments**, select the users or user groups that will receive your profile. Platform SSO policies are user-based policies. Don't assign the platform SSO policy to devices.
-
-    For more information on assigning profiles, see [Assign user and device profiles](/mem/intune/configuration/device-profile-assign).
-
-    Select **Next**.
-
+    - For more information on assigning profiles, see [Assign user and device profiles](/mem/intune/configuration/device-profile-assign).
+1. Select **Next**.
 1. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
 
 The next time the device checks for configuration updates, the settings you configured are applied.
