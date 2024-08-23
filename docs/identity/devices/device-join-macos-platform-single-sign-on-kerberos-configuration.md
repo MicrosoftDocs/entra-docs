@@ -1,6 +1,6 @@
 ---
-title: Enable Kerberos SSO to On-Premises Active Directory and Entra ID Kerberos Resources in Platform SSO
-description: How administrators can set up macOS Platform Single Sign-on to support Kerberos authentication to on-premises Active Directory and Entra ID kerberos-integrated resources.
+title: Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos Resources in Platform SSO
+description: How administrators can set up macOS Platform Single Sign-on to support Kerberos authentication to on-premises Active Directory and Microsoft Entra ID kerberos-integrated resources.
 
 ms.service: entra-id
 ms.subservice: devices
@@ -18,7 +18,7 @@ ms.reviewer: brianmel
 
 Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password.
 
-This tutorial shows you how to configure Platform SSO to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Entra ID. This is an optional capability within Platform SSO, but it is recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
+This tutorial shows you how to configure Platform SSO to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Microsoft Entra ID. This is an optional capability within Platform SSO, but it is recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
 
 ## Prerequisites
 
@@ -132,25 +132,25 @@ Once you have updated the configuration to use the proper values for your enviro
 If you use Intune as your MDM you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#kerberos-sso-mdm-profile-configuration) about replacing **contoso.com** values with the proper values for your organization.
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
-1. Select **Devices** > **Configuration** > **Create** > **New policy**.
-1. Enter the following properties:
+2. Select **Devices** > **Configuration** > **Create** > **New policy**.
+3. Enter the following properties:
     - **Platform**: Select **macOS**.
     - **Profile type**: Select **Templates**.
-1. Choose the **Custom** template and select **Create**.
-1. In **Basics**, enter the following properties:
+4. Choose the **Custom** template and select **Create**.
+5. In **Basics**, enter the following properties:
     - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, name the policy **macOS - Platform SSO Kerberos**.
     - **Description**: Enter a description for the policy. This setting is optional, but recommended.
-1. Select **Next**.
-1. Enter a name in the **Custom configuration profile name** box.
-1. Choose a **Deployment channel**. Device channel is recommended.
-1. Click the folder icon to upload your **Configuration profile file**. Choose the *kerberos.mobileconfig* file you [saved previously](#kerberos-sso-mdm-profile-configuration) after customizing the template.
-1. Select **Next**.
-1. In **Scope tags** (optional), assign a tag to filter the profile to specific IT groups, such as `US-NC IT Team` or `JohnGlenn_ITDepartment`. Select **Next**.
+6. Select **Next**.
+7. Enter a name in the **Custom configuration profile name** box.
+8. Choose a **Deployment channel**. Device channel is recommended.
+9. Click the folder icon to upload your **Configuration profile file**. Choose the *kerberos.mobileconfig* file you [saved previously](#kerberos-sso-mdm-profile-configuration) after customizing the template.
+10. Select **Next**.
+11. In **Scope tags** (optional), assign a tag to filter the profile to specific IT groups, such as `US-NC IT Team` or `JohnGlenn_ITDepartment`. Select **Next**.
   - For more information about scope tags, see [Use RBAC roles and scope tags for distributed IT](/mem/intune/fundamentals/scope-tags).
-1. In **Assignments**, select the users or user groups that will receive your profile. Platform SSO policies are user-based policies. Don't assign the platform SSO policy to devices.
+12. In **Assignments**, select the users or user groups that will receive your profile. Platform SSO policies are user-based policies. Don't assign the platform SSO policy to devices.
     - For more information on assigning profiles, see [Assign user and device profiles](/mem/intune/configuration/device-profile-assign).
-1. Select **Next**.
-1. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
+13. Select **Next**.
+14. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
 
 The next time the device checks for configuration updates, the settings you configured are applied.
 
@@ -158,18 +158,18 @@ The next time the device checks for configuration updates, the settings you conf
 
 Once the profile has been assigned to the device you can check that your device has Kerberos tickets by running the following command in the Terminal app:
 
-> ```console
-> app-sso platform -s
-> ```
+```console
+app-sso platform -s
+```
 
-You should have two Kerberos tickets, one for your on-premises AD with the ticketKeyPath value of **tgt_ad** and one for your Entra ID tenant with the ticketKeyPath value of **tgt_cloud**. The output should resemble the following:
+You should have two Kerberos tickets, one for your on-premises AD with the ticketKeyPath value of **tgt_ad** and one for your Microsoft Entra ID tenant with the ticketKeyPath value of **tgt_cloud**. The output should resemble the following:
 
-:::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-kerberos-terminal-output.png" alt-text="Screenshot of the output of app-sso platform -s in the macOS Terminal app.":::
+:::image type="content" source="media/device-registration-macos-platform-single-sign-on/platform-sso-kerberos-terminal-output.png" alt-text="Screenshot of the output of app-sso platform -s in the macOS Terminal app.":::
 
 Validate your configuration is working by testing with appropriate Kerberos-capable resources:
 
 1. Test on-premises Active Directory functionality by accessing an on-premises AD-integrated file server using Finder or a web application using Safari. The user should be able to access the file share without being challenged for interactive credentials.
-2. Test Entra ID Kerberos functionality by accessing an Azure Files share enabled for Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
+2. Test Microsoft Entra ID Kerberos functionality by accessing an Azure Files share enabled for Microsoft Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
 
 ## See also
 
