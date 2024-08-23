@@ -16,9 +16,9 @@ ms.reviewer: brianmel
 
 # Enable Kerberos SSO to on-premises Active Directory and Entra ID Kerberos resources in Platform SSO
 
-Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password.
+Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card, or their Microsoft Entra ID password.
 
-This tutorial shows you how to configure Platform SSO to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Microsoft Entra ID. This is an optional capability within Platform SSO, but it is recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
+This tutorial shows you how to configure Platform SSO to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Microsoft Entra ID. Kerberos SSO is an optional capability within Platform SSO, but it's recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ This tutorial shows you how to configure Platform SSO to support Kerberos-based 
 
 ## Set up your macOS device
 
-Refer to the [Microsoft Entra ID macOS Platform SSO documentation](./macos-psso.md) to learn how to configure and deploy Platform SSO. This must be performed regardless of whether you choose to deploy Kerberos SSO using this guide.
+Refer to the [Microsoft Entra ID macOS Platform SSO documentation](./macos-psso.md) to learn how to configure and deploy Platform SSO. Platform SSO should be deployed on Enterprise-managed Macs regardless of whether you choose to deploy Kerberos SSO using this guide.
 
 ## Kerberos SSO MDM profile configuration
 
@@ -125,11 +125,11 @@ You must configure a Kerberos SSO MDM profile. Use the following settings, ensur
 </plist>
 ```
 
-Once you have updated the configuration to use the proper values for your environment, save the configuration using a text editor with the *.mobileconfig* file extension (e.g., *kerberos.mobileconfig*).
+Save the configuration using a text editor with the *.mobileconfig* file extension (for example, *kerberos.mobileconfig*) after you have updated the configuration with the proper values for your environment.
 
 ### Intune configuration steps
 
-If you use Intune as your MDM you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#kerberos-sso-mdm-profile-configuration) about replacing **contoso.com** values with the proper values for your organization.
+If you use Intune as your MDM, you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#kerberos-sso-mdm-profile-configuration) about replacing **contoso.com** values with the proper values for your organization.
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Select **Devices** > **Configuration** > **Create** > **New policy**.
@@ -156,7 +156,7 @@ The next time the device checks for configuration updates, the settings you conf
 
 ### Testing Kerberos SSO
 
-Once the profile has been assigned to the device you can check that your device has Kerberos tickets by running the following command in the Terminal app:
+Once the profile has been assigned to the device, you can check that your device has Kerberos tickets by running the following command in the Terminal app:
 
 ```console
 app-sso platform -s
