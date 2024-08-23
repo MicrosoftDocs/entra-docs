@@ -99,7 +99,7 @@ If Users are at lock screen or login screen they can reset their password from t
 
 IT Admins can also enable keyvault recovery to ensure data can be recovered in case of a forgotten password. To learn more refer to [Configure Platform SSO for macOS devices in Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#password).
 
-#### [Secure Enclave](#tab/PasswordSync)
+#### [Secure Enclave](#tab/SecureEnclave)
 Users can reset the local password via Apple ID or an admin recovery key. 
 
 ## Known issues
