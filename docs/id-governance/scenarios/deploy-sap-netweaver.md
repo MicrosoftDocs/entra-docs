@@ -30,12 +30,10 @@ This document guides you in setting up a lab environment with SAP ECC for testin
  - Option 1: An administrator of the subscription, that is, your user has the role Owner and has access to scope /subscriptions/. 
  - Option 2: Your Microsoft Azure user has the roles Contributor and User Access Administrator and has access to scope /subscriptions/. You must also have the role of Global Administrator for the Azure Active Directory. 
  Using the **Authorization with Application** for Authorization Type requires you to manually register an application in your Azure AD tenant and grant it the Contributor role to your subscription. 
- You must create an application registration and assign the role Contributor to the corresponding application for your subscription.In this guide, we'll use **Authorization with Application**. 
+ You must create an application registration and assign the role Contributor to the corresponding application for your subscription. In this guide, we'll use **Authorization with Application**. 
 
  6. Click the Test Connection button. Enter the name of your appliance and choose a master password to access your SAP instance. Click Create to provision resources into Azure AD tenant
- 
-:::image type="content" source="media/deploy-sap-netweaver/sap-update-4.png" alt-text="Screenshot of connection test." lightbox="media/deploy-sap-netweaver/sap-update-4.png":::
- 
+  
  7. Download and store the private key needed to access the appliance. 
  
 :::image type="content" source="media/deploy-sap-netweaver/sap-5.png" alt-text="Screenshot of private key generation." lightbox="media/deploy-sap-netweaver/sap-5.png":::
@@ -232,11 +230,11 @@ Follow the steps below to configure the Web Service.
  2. Add the SAP host name and IP address into the hosts file on MIM or ECMA2Host machine. 
  3. Test opening the WSDL URL on the MIM or ECMA2Host machine from a browser to check connectivity to SAP Web Service. 
 
-The next step is to create a [webservice connector template](sap-ecma-template.md) to manage SAP ECC users using this SOAP endpoint and BAPIs published. 
+The next step is to create a [webservice connector template](sap-template.md) to manage SAP ECC users using this SOAP endpoint and BAPIs published. 
 
  
 ## Next steps
 
 * [Migrate identity management scenarios from SAP IDM to Microsoft Entra](migrate-from-sap-idm.md)
-* [Author SAP ECC 7 Template for ECMA2Host](sap-ecma-template.md)
+* [Author SAP ECC 7 Template for ECMA2Host](sap-template.md)
 * [Configuring Microsoft Entra ID to provision users into SAP ECC with NetWeaver AS ABAP 7.0 or later](~/identity/app-provisioning/on-premises-sap-connector-configure.md)
