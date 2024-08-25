@@ -98,9 +98,9 @@ After you enable users, notify them via email. Tell the users that a prompt is d
 
 ## Use Microsoft Graph to manage per-user MFA
 
-You can manage per-user MFA settings by using the Microsoft Graph REST API Beta. You can use the [authentication resource type](/graph/api/resources/authentication?view=graph-rest-beta) to expose authentication method states for users. 
+You can manage per-user MFA settings by using the Microsoft Graph REST API Beta. You can use the [authentication resource type](/graph/api/resources/authentication) to expose authentication method states for users. 
 
-To manage per-user MFA, use the perUserMfaState property within users/id/authentication/requirements. For more information, see [strongAuthenticationRequirements resource type](/graph/api/resources/strongauthenticationrequirements?view=graph-rest-beta).
+To manage per-user MFA, use the perUserMfaState property within users/id/authentication/requirements. For more information, see [strongAuthenticationRequirements resource type](/graph/api/resources/strongauthenticationrequirements).
 
 ### View per-user MFA state 
 
@@ -127,7 +127,7 @@ Content-Type: application/json
 }
 ```
 
-For more information, see [Get authentication method states](/graph/api/authentication-get?view=graph-rest-beta).
+For more information, see [Get authentication method states](/graph/api/authentication-get).
 
 ### Change MFA state for a user
 
@@ -148,7 +148,7 @@ If successful, the response is:
 HTTP/1.1 204 No Content
 ```
 
-For more information, see [Update authentication method states](/graph/api/authentication-update?view=graph-rest-beta).
+For more information, see [Update authentication method states](/graph/api/authentication-update).
 
 ## Next steps
 
