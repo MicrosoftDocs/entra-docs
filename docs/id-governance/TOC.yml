@@ -115,6 +115,10 @@
       items:
       - name: Migrate from SAP IDM
         href: scenarios/migrate-from-sap-idm.md
+      - name: Author SAP ECC 7 Template for ECMA2Host
+        href: scenarios/sap-template.md
+      - name: Deploy SAP NetWeaver AS ABAP 7
+        href: scenarios/deploy-sap-netweaver.md
 - name: Tutorials
   expanded: true
   items:
@@ -205,9 +209,9 @@
       href: lifecycle-workflow-audits.md
     - name: Workflow History
       href: lifecycle-workflow-history.md
-    - name: Synced AD DS users (Preview)
+    - name: Synced AD DS users
       href: lifecycle-workflow-on-premises.md         
-    - name: Workflow Insights (preview)
+    - name: Workflow Insights
       href: lifecycle-workflow-insights.md        
 - name: How-to guides
   expanded: true
@@ -356,9 +360,9 @@
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
-        - name: Manage synced AD DS users (Preview)
+        - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md              
-        - name: Check Workflow Insights (preview)
+        - name: Check Workflow Insights
           href: manage-workflow-insights.md            
       - name: Delete
         items: 

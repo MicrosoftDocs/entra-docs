@@ -5,7 +5,7 @@ description: Learn about using the Microsoft Authenticator in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/25/2024
+ms.date: 08/14/2024
 
 ms.author: justinha
 author: justinha
@@ -98,7 +98,7 @@ For more information about the FIPS 140 validated cryptographic modules being us
 
 
 >[!NOTE]
->In new updates from the previous version of this article: Microsoft Authenticator isn't yet FIPS 140 compliant on Android. Microsoft Authenticator on Android is currently pending FIPS compliance certification to support our customers that may require FIPS validated cryptography.
+>Microsoft Authenticator is working to add support for a FIPS 140 validated cryptography module on Android. Microsoft plans to release an application update with FIPS support, estimated by October 2024.
 
 
 ## Determining Microsoft Authenticator registration type in Security info 

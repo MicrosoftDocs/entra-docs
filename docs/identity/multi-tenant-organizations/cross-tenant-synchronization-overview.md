@@ -174,7 +174,7 @@ I have existing B2B collaboration users. What will happen to them?
 What user attributes can be synchronized?
 
 - Cross-tenant synchronization will sync commonly used attributes on the user object in Microsoft Entra ID, including (but not limited to) displayName, userPrincipalName, and directory extension attributes.
-- Cross-tenant synchronization supports provisioning the manager attribute in the commercial cloud (public preview). Manager synchronization is not yet supported in the US Government cloud. Both the user and their manager must be in scope for cross-tenant synchronization, in order to provision the manager attribute.
+- Cross-tenant synchronization supports provisioning the manager attribute in the commercial cloud. Manager synchronization is not yet supported in the US Government cloud. Both the user and their manager must be in scope for cross-tenant synchronization, in order to provision the manager attribute.
   - For cross-tenant synchronization configurations created before January 2024 with the default schema / attribute mappings:
     - The manager attribute will automatically be added to the attribute mappings.
     - Manager updates will apply on the incremental cycle for users that are undergoing changes (ex: manager change). The sync engine doesn't automatically update all existing users that were provisioned previously.
