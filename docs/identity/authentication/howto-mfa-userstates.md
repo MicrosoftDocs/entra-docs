@@ -63,7 +63,7 @@ The per-user MFA administration experience in the Microsoft Entra admin center i
    :::image type="content" border="true" source="./media/howto-mfa-userstates/user-states.png" alt-text="Screenshot that shows an example of MFA settings for a user.":::
 
    If you try to sort thousands of users, the result might gracefully return **There are no users to display**.
-   To narrow the searchg, enter more specific search criteria, or apply specific Status or View filters.
+   Try to enter more specific search criteria to narrow the search, or apply specific **Status** or **View** filters.
 
    :::image type="content" border="true" source="./media/howto-mfa-userstates/sort.png" alt-text="Screenshot that shows an example of how to filter a large user sort.":::
 
