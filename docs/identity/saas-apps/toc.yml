@@ -1389,6 +1389,8 @@
         href: illumio-sso-tutorial.md
       - name: iLMS
         href: ilms-tutorial.md
+      - name: iLOGON_MHA OIDC
+        href: ilogon-mha-tutorial.md
       - name: Imagen
         href: imagen-tutorial.md
       - name: Image Relay
@@ -1777,6 +1779,8 @@
         href: mdcomune-business-tutorial.md
       - name: MemoMeister
         href: memomeister-tutorial.md
+      - name: Mend.io
+        href: mend-io-tutorial.md
       - name: Menlo Security
         href: menlosecurity-tutorial.md
       - name: Meraki Dashboard
@@ -2401,8 +2405,8 @@
         href: safetynet-tutorial.md
       - name: Sage Intacct
         href: intacct-tutorial.md
-      - name: SailPoint IdentityNow
-        href: sailpoint-identitynow-tutorial.md
+      - name: SailPoint Identity Security Cloud
+        href: sailpoint-identity-security-cloud-tutorial.md
       - name: Sakon Device Platform
         href: sakon-device-platform-tutorial.md
       - name: Salesforce
@@ -3115,8 +3119,6 @@
         href: whatfix-tutorial.md
       - name: Whimsical
         href: whimsical-tutorial.md
-      - name: Whitesource
-        href: whitesource-tutorial.md
       - name: WhosOff
         href: whosoff-tutorial.md
       - name: WhosOffice
