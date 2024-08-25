@@ -5,7 +5,7 @@ description: Learn about the different Microsoft Entra self-service password res
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/19/2023
+ms.date: 08/25/2024
 
 ms.author: justinha
 author: justinha
@@ -57,6 +57,13 @@ If you enable *EnforceCloudPasswordPolicyForPasswordSyncedUsers*, the Microsoft 
 
 The user is prompted to change their password again. But if the change still includes a unicode character, they could get locked out if [smart lockout](howto-password-smart-lockout.md) is also enabled. 
 
+## Risk based password reset policy limitations
+
+If you enable [EnforceCloudPasswordPolicyForPasswordSyncedUsers](~/identity/conditional-access/howto-conditional-access-policy-risk-user.md), a cloud password change is required once a high risk is identified. The user is prompted to change their password when they sign in to Microsoft Entra ID. The new password must comply with both the cloud and on-premises password policies. 
+ 
+If a password change meets on-premises requirements but fails to meet cloud requirements, the password change succeeds if password hash synchronization is enabled. For example, if the new password includes a Unicode character, the password change can be updated on-premises but not in the cloud. 
+
+If the password didn't comply with the cloud password requirements, it isn't updated in the cloud, and the account risk doesn't decrease. The user still receives an access token for cloud resources, but they're prompted to change their password again the next time they access cloud resources. The user won't see any error or notification that their chosen password failed to meet the cloud requirements.
 
 ## Administrator reset policy differences
 
