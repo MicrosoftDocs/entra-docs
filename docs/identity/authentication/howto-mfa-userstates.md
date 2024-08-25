@@ -6,7 +6,7 @@ description: Learn how to enable per-user Microsoft Entra multifactor authentica
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/13/2024
+ms.date: 08/25/2024
 
 ms.author: justinha
 author: justinha
@@ -61,6 +61,11 @@ The per-user MFA administration experience in the Microsoft Entra admin center i
 1. After you make any changes, click **Save**.
 
    :::image type="content" border="true" source="./media/howto-mfa-userstates/user-states.png" alt-text="Screenshot that shows an example of MFA settings for a user.":::
+
+   If you try to sort thousands of users, the result might gracefully return **There are no users to display**.
+   To narrow the searchg, enter more specific search criteria, or apply specific Status or View filters.
+
+   :::image type="content" border="true" source="./media/howto-mfa-userstates/sort.png" alt-text="Screenshot that shows an example of how to filter a large user sort.":::
 
 During transition to the new per-user MFA experience, you can also access the lagacy per-user MFA experience. The format is:
  
