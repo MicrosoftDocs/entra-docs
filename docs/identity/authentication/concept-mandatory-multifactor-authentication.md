@@ -14,9 +14,9 @@ ms.reviewer: nashahid
 ---
 # Planning for mandatory multifactor authentication for Azure and other administration portals 
 
-At Microsoft, we're committed to providing our customers with the highest level of security. That's why, starting in 2024, we'll enforce mandatory multifactor authentication (MFA) for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications are affected and how to prepare for mandatory MFA. 
+At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is Microsoft Entra multifactor authentication (MFA). [Research by Microsoft](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW166lD) shows that MFA can block more than 99.2% of account compromise attacks. 
 
-If you created a Microsoft Entra ID directory previously, you were assigned the [Global Administrator role](~/identity/role-based-access-control/permissions-reference.md#global-administrator). An email to notify users about enforcement of mandatory MFA refers to the globally unique identifier (GUID) for any user who is assigned the Global Administrator role. For more information about others ways Microsoft notifies Global Administrators, see [Notification channels](#notification-channels).
+To better protect identities, Microsoft plans to enforce best-in-class standards for user and application authentication and authorization. Starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications are affected and how to prepare for mandatory MFA. 
 
 ## Scope of enforcement 
  
@@ -54,7 +54,7 @@ The enforcement of MFA will roll out in two phases:
 
 Microsoft will notify all Microsoft Entra Global Administrators through the following channels: 
 
-- Email: Global Administrators who have configured an email address will be informed by email of the upcoming MFA enforcement and the actions required to be prepared. The email refers to the globally unique identifier (GUID) for any user who is assigned the Global Administrator role. .
+- Email: Global Administrators who have configured an email address will be informed by email of the upcoming MFA enforcement and the actions required to be prepared. 
 
 - Service health notification: Global Administrators will receive a service health notification through the Azure portal, with the tracking ID of **4V20-VX0**. This notification contains the same information as the email. Global Administrators can also subscribe to receive service health notifications through email. 
 
@@ -64,7 +64,7 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 ## Prepare for multifactor authentication 
 
-All users who access the admin portals and Azure clients listed in [applications](#applications) must be set up to use MFA. All users who access any administration portal should use MFA.
+All users who access the administration portals and Azure clients listed in [applications](#applications) must be set up to use MFA. All users who access any administration portal should use MFA.
 
 Use the resources below to set up MFA for your users: 
 
