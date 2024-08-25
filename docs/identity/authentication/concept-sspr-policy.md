@@ -23,9 +23,9 @@ This article describes the password policy settings and complexity requirements 
 
 ## Username policies
 
-Every account that signs in to Microsoft Entra ID must have a unique user principal name (UPN) attribute value associated with their account. In hybrid environments with an on-premises Active Directory Domain Services (AD DS) environment synchronized to Microsoft Entra ID using Microsoft Entra Connect, by default the Microsoft Entra ID UPN is set to the on-premises UPN.
+Every account that signs in to Microsoft Entra ID must have a unique user principal name (UPN) attribute value associated with their account. In hybrid environments with an on-premises Active Directory Domain Services environment synchronized to Microsoft Entra ID using Microsoft Entra Connect, by default the Microsoft Entra ID UPN is set to the on-premises UPN.
 
-The following table outlines the username policies that apply to both on-premises AD DS accounts that are synchronized to Microsoft Entra ID, and for cloud-only user accounts created directly in Microsoft Entra ID:
+The following table outlines the username policies that apply to both on-premises accounts that are synchronized to Microsoft Entra ID, and for cloud-only user accounts created directly in Microsoft Entra ID:
 
 | Property | UserPrincipalName requirements |
 | --- | --- |
@@ -39,7 +39,7 @@ The following table outlines the username policies that apply to both on-premise
 
 A password policy is applied to all user accounts that are created and managed directly in Microsoft Entra ID. Some of these password policy settings can't be modified, though you can [configure custom banned passwords for Microsoft Entra password protection](tutorial-configure-custom-password-protection.md) or account lockout parameters.
 
-By default, an account is locked out after 10 unsuccessful sign-in attempts with the wrong password. The user is locked out for one minute. The lockout duration increases after further incorrect sign-in attempts. [Smart lockout](howto-password-smart-lockout.md) tracks the last three bad password hashes to avoid incrementing the lockout counter for the same password. If someone enters the same bad password multiple times, they won't get locked out. You can define the smart lockout threshold and duration.
+By default, an account is locked out after 10 unsuccessful sign-in attempts with the wrong password. The user is locked out for one minute. The lockout duration increases after further incorrect sign-in attempts. [Smart lockout](howto-password-smart-lockout.md) tracks the last three bad password hashes to avoid incrementing the lockout counter for the same password. If someone enters the same bad password multiple times, they aren't locked out. You can define the smart lockout threshold and duration.
 
 The following Microsoft Entra password policy options are defined. Unless noted, you can't change these settings:
 
@@ -53,7 +53,7 @@ The following Microsoft Entra password policy options are defined. Unless noted,
 | Password change history | The last password *can't* be used again when the user changes a password. |
 | Password reset history | The last password *can* be used again when the user resets a forgotten password. |
 
-If you enable *EnforceCloudPasswordPolicyForPasswordSyncedUsers*, the Microsoft Entra password policy applies to user accounts synchronized from an on-premises AD DS environment using Microsoft Entra Connect. In addition, if a user changes a password on-premises to include a unicode character, the password change may succeed on-premises but not in Microsoft Entra ID. If password hash synchronization is enabled with Microsoft Entra Connect, the user can still receive an access token for cloud resources. But if the tenant enables [User risk-based password change](~/identity/conditional-access/howto-conditional-access-policy-risk-user), the password change is reported as high risk. 
+If you enable *EnforceCloudPasswordPolicyForPasswordSyncedUsers*, the Microsoft Entra password policy applies to user accounts synchronized from on-premises using Microsoft Entra Connect. In addition, if a user changes a password on-premises to include a unicode character, the password change may succeed on-premises but not in Microsoft Entra ID. If password hash synchronization is enabled with Microsoft Entra Connect, the user can still receive an access token for cloud resources. But if the tenant enables [User risk-based password change](~/identity/conditional-access/howto-conditional-access-policy-risk-user.md), the password change is reported as high risk. 
 
 The user is prompted to change their password again. But if the change still includes a unicode character, they could get locked out if [smart lockout](howto-password-smart-lockout.md) is also enabled. 
 
@@ -63,11 +63,11 @@ If you enable [EnforceCloudPasswordPolicyForPasswordSyncedUsers](~/identity/cond
  
 If a password change meets on-premises requirements but fails to meet cloud requirements, the password change succeeds if password hash synchronization is enabled. For example, if the new password includes a Unicode character, the password change can be updated on-premises but not in the cloud. 
 
-If the password didn't comply with the cloud password requirements, it isn't updated in the cloud, and the account risk doesn't decrease. The user still receives an access token for cloud resources, but they're prompted to change their password again the next time they access cloud resources. The user won't see any error or notification that their chosen password failed to meet the cloud requirements.
+If the password didn't comply with the cloud password requirements, it isn't updated in the cloud, and the account risk doesn't decrease. The user still receives an access token for cloud resources, but they're prompted to change their password again the next time they access cloud resources. The user doesn't see any error or notification that their chosen password failed to meet the cloud requirements.
 
 ## Administrator reset policy differences
 
-By default, administrator accounts are enabled for self-service password reset, and a strong default *two-gate* password reset policy is enforced. This policy may be different from the one you have defined for your users, and this policy can't be changed. You should always test password reset functionality as a user without any Azure administrator roles assigned.
+By default, administrator accounts are enabled for self-service password reset, and a strong default *two-gate* password reset policy is enforced. This policy may be different from the one you defined for your users, and this policy can't be changed. You should always test password reset functionality as a user without any Azure administrator roles assigned.
 
 The two-gate policy requires two pieces of authentication data, such as an email address, authenticator app, or a phone number, and it prohibits security questions. Office and mobile voice calls are also prohibited for trial or free versions of Microsoft Entra ID. 
 
@@ -128,7 +128,7 @@ A one-gate policy requires one piece of authentication data, such as an email ad
 
 ## Password expiration policies
 
-Those assigned at least the [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator) role can use the [Microsoft Graph](/powershell/microsoftgraph/) to set user passwords not to expire.
+[User Administrators](../role-based-access-control/permissions-reference.md#user-administrator) can use the [Microsoft Graph](/powershell/microsoftgraph/) to set user passwords not to expire.
 
 You can also use PowerShell cmdlets to remove the never-expires configuration or to see which user passwords are set to never expire.
 
