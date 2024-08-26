@@ -347,7 +347,7 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
 1. Tap **Android**.   
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-device.png" alt-text="Screenshot that lets user choose iOS or Android. Choose Android.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-device-android.png" alt-text="Screenshot that lets user choose iOS or Android. Choose Android.":::
 
 1. Follow the steps to turn on Authenticator as a passkey provider in **Settings** on your Android device:
    - On your Android device, open **Settings**.
