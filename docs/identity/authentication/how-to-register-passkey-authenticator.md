@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on iOS in
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/20/2024
+ms.date: 08/26/2024
 
 ms.author: justinha
 author: justinha
@@ -360,12 +360,10 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
       :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/turn-on-passkey-android.png" alt-text="Screenshot that notifies user to turn on Authenticator in Settings app on their Android device.":::
 
-1. Open the system camera app on your mobile device, or tap **Add work or school account** > **Scan QR Code** to use the camera in the Authenticator.  
+1. Make sure Bluetooth is enabled on both devices, and click **I'm ready**.
 
-1. When ready, read the reminder that you must save the passkey in Authenticator, and tap **Next** to continue. 
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/bluetooth-ready.png" alt-text="Screenshot that notifies user to save another way for Android devices.":::
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/scan.png" alt-text="Screenshot that notifies user to save another way for Android devices.":::
-   
 1. In the security dialog that opens on your device, tap **iPhone, iPad, or Android device**, and tap **Next**.   
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-where-to-save.png" alt-text="Screenshot that lets user choose where to save their passkey for Android devices.":::
@@ -373,12 +371,12 @@ You can also save a passkey in Authenticator from your computer or another mobil
    > [!NOTE]
    > The displayed options can vary on different browsers and devices. If the device where you started the registration process supports passkeys, you're asked to save the passkey to that device. Select **Use another device** or **More options** to see other ways you can save the passkey.
 
-1. Use the camera you have opened to scan the QR code, and then tap **Use passkey**.
+1. Open the system camera app on your mobile device, or tap **Add work or school account** > **Scan QR Code** to use the camera in the Authenticator.  
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/scan-code.png" alt-text="Screenshot of QR code for Android devices.":::
 
-      > [!NOTE]
-      > For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option, and you'll receive a notification on your mobile device to continue the passkey authentication.
+   > [!NOTE]
+   > For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option, and you'll receive a notification on your mobile device to continue the passkey authentication.
 
 1. Your Android device should now connect over Bluetooth to the device you started registration with.
 
