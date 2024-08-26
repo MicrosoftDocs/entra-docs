@@ -140,6 +140,7 @@ Most of the public methods in ADAL Node have equivalents in MSAL Node:
 | `acquireTokenWithClientCredentials` | `acquireTokenByClientCredential` |                                   |
 | `acquireTokenWithRefreshToken`      | `acquireTokenByRefreshToken`      | Useful for migrating valid [refresh tokens](#remove-logic-around-refresh-tokens)              |
 | `acquireTokenWithDeviceCode`        | `acquireTokenByDeviceCode`        | Now abstracts user code acquisition (see below) |
+| `acquireTokenWithUsernamePassword`  | `acquireTokenByUsernamePassword`  |                                   |
 
 However, some methods in ADAL Node are deprecated, while MSAL Node offers new methods:
 

@@ -71,6 +71,7 @@ Depending on how your client is built, it can use one or several of the authenti
 | Flow | Requires | ID token | Access token | Refresh token | Authorization code |
 |------|----------|----------|--------------|---------------|--------------------|
 | [Authorization code flow](v2-oauth2-auth-code-flow.md) | | x | x | x | x |
+| [Implicit flow](v2-oauth2-implicit-grant-flow.md) | | x | x | | |
 | [Hybrid OIDC flow](v2-protocols-oidc.md#protocol-diagram-access-token-acquisition)| | x | | | x |
 | [Refresh token redemption](v2-oauth2-auth-code-flow.md#refresh-the-access-token) | Refresh token | x | x | x | |
 | [On-behalf-of flow](v2-oauth2-on-behalf-of-flow.md) | Access token | x | x| x | |
