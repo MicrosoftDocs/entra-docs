@@ -47,7 +47,7 @@ During the free trial period, you'll have access to all product features with fe
 | Group and User management. |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Cloud-agnostic solution** with multi-language auth SDK support.  |  :heavy_check_mark: |  :heavy_check_mark:  | 
 
-## Sign up to your external tenant free trial (preview)
+## Get started with trying out External ID
 
 1. Open your browser and visit <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">https://aka.ms/ciam-free-trial</a>.
 1. You can sign in to the external trial tenant using your personal account, and your Microsoft account (MSA) or GitHub account.  

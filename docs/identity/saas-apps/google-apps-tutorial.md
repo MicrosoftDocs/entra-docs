@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/25/2024
+ms.date: 08/20/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector so that I can control who has access to Google Cloud / G Suite Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -185,9 +185,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
-    ```Logout URL
-    https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
-    ```
+    > [!NOTE]
+    > The default logout URL listed in the app is incorrect. The correct URL is: `https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0`
+
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -241,7 +241,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     e. Check/Uncheck the **Use a domain specific issuer** option as per the note mentioned in the above **Basic SAML Configuration** section in the Microsoft Entra ID.
 
-	f. In the **Change password URL** field in Google Cloud / G Suite Connector by Microsoft, enter the value as `https://account.activedirectory.windowsazure.com/changepassword.aspx`
+	f. In the **Change password URL** field in Google Cloud / G Suite Connector by Microsoft, enter the value as `https://mysignins.microsoft.com/security-info/password/change`
 
     g. Click **Save**.
 
