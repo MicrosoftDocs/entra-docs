@@ -151,7 +151,7 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
 1. Tap **iOS**.   
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-device.png" alt-text="Screenshot that lets user choose iOS or Android.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-device-ios.png" alt-text="Screenshot that lets user choose iOS or Android.":::
 
 1. Follow the steps to turn on Authenticator as a passkey provider in **Settings** of your iOS device:
    - On your iOS device, open **Settings**.
