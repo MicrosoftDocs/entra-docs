@@ -89,4 +89,4 @@ Microsoft Entra join can be deployed by using any of the following methods:
 - [How to manage the local administrators group on Microsoft Entra joined devices](assign-local-admin.md)
 - [Manage device identities](manage-device-identities.md)
 - [Manage stale devices in Microsoft Entra ID](manage-stale-devices.md)
-- [macOS Platform Single Sign-on (preview)](macos-psso)
+- [macOS Platform Single Sign-on (preview)](macos-psso.md)
