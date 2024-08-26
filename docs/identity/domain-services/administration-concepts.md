@@ -100,7 +100,7 @@ The backup frequency determines how often a snapshot of the managed domain is ta
 
 As the SKU level increases, the frequency of those backup snapshots increases. Review your business requirements and recovery point objective (RPO) to determine the required backup frequency for your managed domain. If your business or application requirements change and you need more frequent backups, you can switch to a different SKU.
 
-Domain Services provides the following support guidance based on the type of issue you to recover from:
+Domain Services provides the following guidance for recovery timespans for different types of issues:
 
 - Recovery point objective (RPO) is the maximum timespan in which there is a potential data or transaction loss from an incident.
 - Recovery time object (RTO) is the targeted timespan that occurs before service levels return to operational after an incident.   
