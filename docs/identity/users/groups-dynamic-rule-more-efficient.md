@@ -1,5 +1,5 @@
 ---
-title: Create simpler and faster rules for dynamic groups
+title: Create simpler and faster rules for dynamic membership groups
 description: How to optimize your membership rules to automatically populate groups.
 
 author: barclayn
@@ -7,17 +7,18 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 11/07/2023
+ms.date: 08/25/2024
 ms.author: barclayn
 ms.reviewer: jordandahl
 ms.custom: it-pro
 ---
 
 
-# Create simpler, more efficient rules for dynamic groups in Microsoft Entra ID
+# Create simpler, more efficient rules for dynamic membership groups in Microsoft Entra ID
 
-The team for Microsoft Entra ID, part of Microsoft Entra, receives reports of incidents related to dynamic groups and the processing time for their membership rules. This article uses that reported information to present the most common methods by which our engineering team helps customers to simplify their membership rules. Simpler and more efficient rules result in better dynamic group processing times. When writing membership rules for dynamic groups, follow these steps to ensure that your rules are as efficient as possible.
+The Microsoft Entra ID engineering team, part of Microsoft Entra, receives reports of incidents related to dynamic membership groups and the processing time for their membership rules. The information that is reported is presented in this article. This article also discusses the most common methods by which Microsoft helps customers to simplify their rules for dynamic membership groups. Simpler and more efficient rules result in better dynamic group processing times. 
 
+When writing membership rules for dynamic membership groups, follow the steps in this article to ensure that you create these rules as efficiently as possible.
 
 ## Minimize use of MATCH
 
@@ -36,7 +37,7 @@ Or, best of all:
 
 ## Minimize use of CONTAINS
 
-Similar to the use of MATCH. Minimize the usage of the `contains` operator in rules as much as possible. Instead, explore if it's possible to use the `startswith` or `-eq` operators. Utilizing CONTAINS can increase processing times, especially for tenants with many dynamic groups.
+Similar to the use of MATCH. Minimize the usage of the `contains` operator in rules as much as possible. Instead, explore if it's possible to use the `startswith` or `-eq` operators. Utilizing CONTAINS can increase processing times, especially for tenants with many dynamic membership groups.
 
 ## Use fewer OR operators
 
@@ -53,7 +54,6 @@ In your rule, identify when it uses various values for the same property linked 
 It's better to have a rule like this:
 
 - `user.department -eq "Accounts" -and user.city -in ["Lagos", "Ibadan", "Kaduna", "Abuja", "Port Harcourt"]`
-
 
 Conversely, identify similar sub criteria with the same property not equal to various values, that are linked with `-and` operators. Then use the `-notin` operator to group them into a single criterion to make the rule easier to understand and evaluate. For example, instead of using a rule like this:
 

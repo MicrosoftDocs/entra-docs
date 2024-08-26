@@ -1,29 +1,30 @@
 ---
-title: Validate rules for dynamic group membership (preview)
-description: How to test members against a membership rule for a dynamic group in Microsoft Entra ID.
+title: Validate rules for dynamic membership groups membership (preview)
+description: How to test members against a rule for a dynamic membership groups in Microsoft Entra ID.
 
 author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/14/2023
+ms.date: 08/25/2024
 ms.author: barclayn
 ms.reviewer: yukarppa
 ms.custom: it-pro
 ---
 
-# Validate a dynamic group membership rule (preview) in Microsoft Entra ID
+# Validate rules for dynamic membership groups in Microsoft Entra ID (preview) 
 
-Microsoft Entra ID provides the means to validate dynamic group rules (in public preview). On the **Validate rules** tab, you can validate your dynamic rule against sample group members to confirm the rule is working as expected. When you create or update dynamic group rules, you want to know whether a user or a device will be a member of the group. This knowledge helps you evaluate whether a user or device meets the rule criteria and help you troubleshoot when membership isn't expected.
+Microsoft Entra ID provides the means to validate rules for dynamic membership groups (in public preview). On the **Validate rules** tab, you can validate that rule against sample group members to confirm the rule is working as expected. When you create or update rules for dynamic membership groups, you want to know whether a user or a device is a member of the group. This knowledge helps you evaluate whether a user or device meets the rule criteria and help you troubleshoot when membership isn't expected.
 
 ## Prerequisites
-To evaluate the dynamic group rule membership feature, the administrator must be at least a Groups Administrator.
+
+To evaluate the rule for dynamic membership groups, the administrator must be at least a Groups Administrator.
 
 > [!TIP]
-> Assigning one of required roles via indirect group membership is not yet supported.
+> Assigning one of required roles via indirect dynamic membership groups is not yet supported.
 
-## To validate a dynamic group membership rule
+## To validate a rule for dynamic membership groups
 
 To get started, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
@@ -48,4 +49,4 @@ To get started, sign in to the [Microsoft Entra admin center](https://entra.micr
 
 ## Next steps
 
-- [Dynamic membership rules for groups](groups-dynamic-membership.md)
+- [Rulues for dynamic membership groups](groups-dynamic-membership.md)

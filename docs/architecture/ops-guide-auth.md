@@ -6,7 +6,7 @@ manager: travisgr
 ms.service: entra
 ms.topic: conceptual
 ms.subservice: architecture
-ms.date: 08/17/2022
+ms.date: 08/25/2024
 ms.author: martinco
 ---
 
@@ -170,11 +170,11 @@ Finally, if you have a Microsoft Entra app gallery and use applications that sup
 
 ### Assign users to applications
 
-[Assigning users to applications](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) is best mapped by using groups because they allow greater flexibility and ability to manage at scale. The benefits of using groups include [attribute-based dynamic group membership](~/identity/users/groups-dynamic-membership.md) and [delegation to app owners](~/fundamentals/how-to-manage-groups.yml). Therefore, if you're already using and managing groups, we recommend you take the following actions to improve management at scale:
+[Assigning users to applications](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) is best mapped by using groups because they allow greater flexibility and ability to manage at scale. The benefits of using groups include [attribute-based dynamic membership groups](~/identity/users/groups-dynamic-membership.md) and [delegation to app owners](~/fundamentals/how-to-manage-groups.yml). Therefore, if you're already using and managing groups, we recommend you take the following actions to improve management at scale:
 
 - Delegate group management and governance to application owners.
 - Allow self-service access to the application.
-- Define dynamic groups if user attributes can consistently determine access to applications.
+- Define dynamic membership groups if user attributes can consistently determine access to applications.
 - Implement attestation to groups used for application access using [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).
 
 On the other hand, if you find applications that have assignment to individual users, be sure to implement [governance](~/id-governance/index.yml) around those applications.

@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 01/18/2024
+ms.date: 08/25/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -193,7 +193,7 @@ To configure Staged Rollout, follow these steps:
    
 
    >[!NOTE]
-   >The members in a group are automatically enabled for Staged Rollout. Nested and dynamic groups are not supported for Staged Rollout.
+   >The members in a group are automatically enabled for Staged Rollout. Nested and dynamic membership groups are not supported for Staged Rollout.
    >When adding a new group, users in the group (up to 200 users for a new group) will be updated to use managed auth immediately. 
    >Editing a group (adding or removing users), it can take up to 24 hours for changes to take effect.
    >Seamless SSO will apply only if users are in the Seamless SSO group and also in either a PTA or PHS group.

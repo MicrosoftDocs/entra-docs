@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 01/05/2024
+ms.date: 08/25/2024
 ms.author: sarahlipsey
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -53,8 +53,8 @@ This option also lets you give people outside of your organization access to the
 ### Membership types:
 
 - **Assigned:** Lets you add specific users as members of a group and have unique permissions.
-- **Dynamic user:** Lets you use dynamic membership rules to automatically add and remove members. If a member's attributes change, the system looks at your dynamic group rules for the directory to see whether the member meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
-- **Dynamic device:** Lets you use dynamic group rules to automatically add and remove devices. If a device's attributes change, the system looks at your dynamic group rules for the directory to see whether the device meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
+- **Dynamic user:** Lets you use rules for dynamic membership groups to automatically add and remove members. If a member's attributes change, the system looks at your rules for dynamic membership groups for the directory to see whether the member meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
+- **Dynamic device:** Lets you use rules for dynamic membership groups to automatically add and remove devices. If a device's attributes change, the system looks at your rules for dynamic membership groups for the directory to see whether the device meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
 
     > [!IMPORTANT]
     > You can create a dynamic group for either devices or users, but not for both. You can't create a device group based on the device owners' attributes. Device membership rules can only reference device attributions. For more info about creating a dynamic group for users and devices, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md).
@@ -96,5 +96,5 @@ After a user requests to join a group, the request is forwarded to the group own
 - [Create and manage Microsoft Entra groups and group membership](how-to-manage-groups.yml)
 - [Learn about group-based licensing in Microsoft Entra ID](./concept-group-based-licensing.md)
 - [Manage access to SaaS apps using groups](~/identity/users/groups-saasapps.md)
-- [Manage dynamic rules for users in a group](~/identity/users/groups-create-rule.md)
+- [Manage rules for dynamic membership groups](~/identity/users/groups-create-rule.md)
 - Learn about [Privileged Identity Management (PIM) for Microsoft Entra roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)

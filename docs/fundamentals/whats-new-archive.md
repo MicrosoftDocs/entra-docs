@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: whats-new
-ms.date: 02/01/2024
+ms.date: 08/25/2024
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref
@@ -145,7 +145,7 @@ With configurable redemption, you can customize the order of identity providers 
 **Service category:** Group Management                     
 **Product capability:**  Directory             
 
-The dynamic group rule builder is updated to no longer include the '*contains*' and '*notContains*' operators, as they're less performant. If needed, you can still create dynamic group rules with those operators by typing directly into the text box. For more information, see: [Rule builder in the Azure portal](../identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
+The dynamic group rule builder is updated to no longer include the '*contains*' and '*notContains*' operators, as they're less performant. If needed, you can still create rules for dynamic membership groups with those operators by typing directly into the text box. For more information, see: [Rule builder in the Azure portal](../identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
 
 ---
 
@@ -691,7 +691,7 @@ This new feature, part of the Microsoft Entra ID Governance SKU, allows admins t
 **Service category:** Entitlement Management                          
 **Product capability:** Entitlement Management                
 
-Microsoft Entra ID Governance includes the ability for a customer to configure an assignment policy in an entitlement management access package that includes an attribute-based rule, similar to dynamic groups, of the users who should be assigned access. For more information, see: [Configure an automatic assignment policy for an access package in entitlement management](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md).
+Microsoft Entra ID Governance includes the ability for a customer to configure an assignment policy in an entitlement management access package that includes an attribute-based rule, similar to dynamic membership groups, of the users who should be assigned access. For more information, see: [Configure an automatic assignment policy for an access package in entitlement management](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md).
 
 ---
 
@@ -821,7 +821,7 @@ With API-driven inbound provisioning, Microsoft Entra ID provisioning service no
 **Service category:** Group Management                                
 **Product capability:** Directory                    
 
-This feature enables admins to create dynamic group rules based on the user objects' employeeHireDate attribute. For more information, see: [Properties of type string](~/identity/users/groups-dynamic-membership.md#properties-of-type-string).
+This feature enables admins to create rules for dynamic membership groups based on the user objects' employeeHireDate attribute. For more information, see: [Properties of type string](~/identity/users/groups-dynamic-membership.md#properties-of-type-string).
 
 ---
 
@@ -964,7 +964,7 @@ The Entitlement Management service can now be targeted in the Conditional Access
 **Service category:** Azure Mobile App                             
 **Product capability:** End User Experiences                  
 
-The Azure Mobile app now includes a section for Azure Active Directory. Within Azure Active Directory on mobile, user can search for and view more details about user and groups. Additionally, permitted users can invite guest users to their active tenant, assign group memberships and ownerships for users, and view user sign-in logs. For more information, see: [Get the Azure mobile app](https://azure.microsoft.com/get-started/azure-portal/mobile-app/).
+The Azure Mobile app now includes a section for Azure Active Directory. Within Azure Active Directory on mobile, user can search for and view more details about user and groups. Additionally, permitted users can invite guest users to their active tenant, assign group membership and ownership for users, and view user sign-in logs. For more information, see: [Get the Azure mobile app](https://azure.microsoft.com/get-started/azure-portal/mobile-app/).
 
 ---
 
@@ -1520,7 +1520,7 @@ For more information, see:
 **Service category:** Group Management                   
 **Product capability:** End User Experiences          
 
-A new and improved My Groups experience is now available at `https://www.myaccount.microsoft.com/groups`. My Groups enables end users to easily manage groups, such as finding groups to join, managing groups they own, and managing existing group memberships. Based on customer feedback, the new My Groups support sorting and filtering on lists of groups and group members, a full list of group members in large groups, and an actionable overview page for membership requests.
+A new and improved My Groups experience is now available at `https://www.myaccount.microsoft.com/groups`. My Groups enables end users to easily manage groups, such as finding groups to join, managing groups they own, and managing existing dynamic membership groups. Based on customer feedback, the new My Groups support sorting and filtering on lists of groups and group members, a full list of group members in large groups, and an actionable overview page for membership requests.
 This experience replaces the existing My Groups experience at `https://www.mygroups.microsoft.com` in May.  
 
 

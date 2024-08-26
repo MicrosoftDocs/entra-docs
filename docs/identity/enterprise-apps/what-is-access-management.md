@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
-ms.date: 07/19/2024
+ms.date: 08/25/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
@@ -36,7 +36,7 @@ Microsoft Entra application assignment focuses on two primary assignment modes:
 
 * **Individual assignment** An IT admin with directory Cloud Application Administrator permissions can select individual user accounts and grant them access to the application.
 
-* **Group-based assignment (requires Microsoft Entra ID P1 or P2)** An IT admin with directory Cloud Application permissions can assign a group to the application. Specific users' access is determined by whether they're members of the group at the time they try to access the application. In other words, an administrator can effectively create an assignment rule stating "any current member of the assigned group has access to the application." With this assignment option, administrators can benefit from any of Microsoft Entra group management options, including [attribute-based dynamic groups](~/fundamentals/how-to-manage-groups.yml), external system groups (for example, on-premises Active Directory or Workday), or Administrator-managed or self-service-managed groups. A single group can be easily assigned to multiple apps, making sure that applications with assignment affinity can share assignment rules, reducing the overall management complexity.
+* **Group-based assignment (requires Microsoft Entra ID P1 or P2)** An IT admin with directory Cloud Application permissions can assign a group to the application. Specific users' access is determined by whether they're members of the group at the time they try to access the application. In other words, an administrator can effectively create an assignment rule stating "any current member of the assigned group has access to the application." With this assignment option, administrators can benefit from any of Microsoft Entra group management options, including attribute-based [dynamic membership groups](~/fundamentals/how-to-manage-groups.yml), external system groups (for example, on-premises Active Directory or Workday), or Administrator-managed or self-service-managed groups. A single group can be easily assigned to multiple apps, making sure that applications with assignment affinity can share assignment rules, reducing the overall management complexity.
 
   >[!NOTE]
   >[Nested group](~/fundamentals/how-to-manage-groups.yml) memberships aren't supported for group-based assignment to applications at this time.

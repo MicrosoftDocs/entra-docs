@@ -7,7 +7,7 @@ manager: martinco
 ms.service: entra
 ms.topic: how-to
 ms.subservice: architecture
-ms.date: 07/27/2023
+ms.date: 08/25/2024
 ms.author: jricketts
 ms.custom: references_regions
 ---
@@ -48,7 +48,7 @@ Additional considerations include:
 
 To transform groups and distribution lists:
 
-* For security groups, use your existing business logic that assigns users to security groups. Migrate the logic and capability to Microsoft Entra ID and dynamic groups.
+* For security groups, use your existing business logic that assigns users to security groups. Migrate the logic and capability to Microsoft Entra ID and dynamic membership groups.
 
 * For self-managed group capabilities provided by Microsoft Identity Manager, replace the capability with self-service group management.
 

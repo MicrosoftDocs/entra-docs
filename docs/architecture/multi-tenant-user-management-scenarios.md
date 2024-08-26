@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 04/19/2023
+ms.date: 08/25/2024
 ms.author: jricketts
 ms.custom: it-pro, seodec18, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -104,7 +104,7 @@ For example, a company acquires a competitor. Each company has a single Microsof
 - Use single sign-on to all provisioned resources.
 - Find each other and resources in a unified GAL.
 - Determine each other's presence and initiate chat.
-- Access applications based on dynamic group membership.
+- Access applications based on dynamic membership groups.
 
 In this scenario, each organization's tenant is the home tenant for its existing employees while being the resource tenant for the other organization's employees.
 
@@ -263,7 +263,7 @@ In a single resource tenant topology, users and their attributes synchronize to 
 
 ### Managing accounts
 
-This solution detects and syncs attribute changes from source tenant users to resource tenant external users. You can use these attributes to make authorization decisions (such as when you're using dynamic groups).
+This solution detects and syncs attribute changes from source tenant users to resource tenant external users. You can use these attributes to make authorization decisions (such as when you're using dynamic membership groups).
 
 ### Deprovisioning accounts
 

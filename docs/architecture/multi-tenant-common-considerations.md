@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 07/31/2024
+ms.date: 08/25/2024
 ms.author: jricketts
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -174,6 +174,10 @@ AuditLogs
 
 - Monitor application access in your tenant using the [cross-tenant access activity](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) dashboard. This allows you to see who is accessing resources in your tenant and where those users are coming from.
 
+## Dynamic membership groups
+
+If your organization is using the [**all users** dynamic membership group](~/external-id/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
+
 ### Deny by default
 - Require user assignment for applications. If an application has the **User assignment required?** property set to **No**, external users can access the application. Application admins must understand access control impacts, especially if the application contains sensitive information. [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md) explains how registered applications in a Microsoft Entra tenant are, by default, available to all users of the tenant who successfully authenticate.
 
@@ -184,7 +188,7 @@ AuditLogs
 - Define [access control policies](~/external-id/authentication-conditional-access.md) to control access to resources.
 - Design Conditional Access policies with external users in mind.
 - Create policies specifically for external users.
-- Create dedicated Conditional Access policies for external accounts. If your organization is using the [**all users** dynamic group](~/external-id/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
+- Create dedicated Conditional Access policies for external accounts. If your organization is using the [**all users** dynamic membership group](~/external-id/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
 
 <a name='monitoring-your-multi-tenant-environment'></a>
 

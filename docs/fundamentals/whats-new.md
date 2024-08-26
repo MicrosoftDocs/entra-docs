@@ -9,7 +9,7 @@ ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: whats-new
-ms.date: 02/01/2024
+ms.date: 08/20/2024
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -419,9 +419,9 @@ Custom authentication extensions allow you to customize the Microsoft Entra auth
 **Service category:** Group Management    
 **Product capability:** Directory    
 
-Microsoft Entra organizations could previously have a maximum of 5,000 dynamic groups and dynamic administrative units combined. 
+Microsoft Entra organizations could previously have a maximum of 15,000 dynamic membership groups and dynamic administrative units combined. 
 
-We have increased this quota to 15000. For example, you can now have 5,000 dynamic groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - its available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
+We have increased this quota to 15000. For example, you can now have 15,000 dynamic membership groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - its available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
 
 ---
 

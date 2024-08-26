@@ -1,19 +1,19 @@
 ---
-title: Rules for dynamic membership groups in Microsoft Entra ID
-description: How to create rules for dynamic membership groups to automatically populate group members and rule references.
+title: Manage rules for dynamic membership groups in Microsoft Entra ID
+description: How to manage rules for dynamic membership groups to automatically populate group members and rule references.
 
 author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 08/06/2024
+ms.date: 08/23/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 ---
 
-# Rules for dynamic membership groups in Microsoft Entra ID
+# Manage rules for dynamic membership groups in Microsoft Entra ID
 
 You can create user or device attribute-based rules to enable membership for dynamic membership groups in Microsoft Entra ID, part of Microsoft Entra. You can add and remove dynamic membership groups automatically using membership rules based on member attributes. This article details the properties and syntax to create rules for dynamic membership groups based on users or devices. 
 
@@ -21,12 +21,12 @@ You can create user or device attribute-based rules to enable membership for dyn
 > Security groups can be used for either devices or users, but Microsoft 365 groups can include only users. 
 
 When the attributes of a user or a device change, the system evaluates all rules for dynamic membership groups in a directory to see if the change would trigger any group adds or removes. If a user or device satisfies a rule on a group, they're added as a member of that group. If they no longer satisfy the rule, they're removed. You can't manually add or remove a member of a dynamic membership group.
-- You can create a dynamic membership group for users or devices, but you can't create a rule that contains both users and devices.
+- You can create a dynamic membership groups for users or devices, but you can't create a rule that contains both users and devices.
 - You can't create a device membership group based on the user attributes of the device owner. Device membership rules can reference only device attributes.
 
 > [!NOTE]
 > This feature requires a Microsoft Entra ID P1 license or Intune for Education for each unique user that is a member of one or more dynamic membership groups. You don't have to assign licenses to users for them to be members of dynamic membership groups, but you must have the minimum number of licenses in the Microsoft Entra organization to cover all such users. For example, if you had a total of 1,000 unique users in all dynamic membership groups in your organization, you would need at least 1,000 licenses for Microsoft Entra ID P1 to meet the license requirement.
-> No license is required for devices that are members of a dynamic membership group based on a device.
+> No license is required for devices that are members of a dynamic membership groups based on a device.
 
 ## Rule builder in the Azure portal
 
@@ -221,7 +221,7 @@ The correct way to reference the null value is as follows:
 
 ## Rules with multiple expressions
 
-A group membership rule can consist of more than one single expression connected by the -and, -or, and -not logical operators. Logical operators can also be used in combination.
+Manage rules for dynamic membership groups can consist of more than one single expression connected by the -and, -or, and -not logical operators. Logical operators can also be used in combination.
 
 The following are examples of properly constructed membership rules with multiple expressions:
 
@@ -387,7 +387,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
 
 Custom extension properties are also called directory or Microsoft Entra extension properties.
 
-The custom property name can be found in the directory by querying a user's property using Graph Explorer and searching for the property name. Also, you can now select **Get custom extension properties** link in the dynamic membership group rule builder to enter a unique app ID and receive the full list of custom extension properties to use when creating a rule for dynamic membership groups. This list can also be refreshed to get any new custom extension properties for that app. Extension attributes and custom extension properties must be from applications in your tenant.  
+The custom property name can be found in the directory by querying a user's property using Graph Explorer and searching for the property name. Also, you can now select **Get custom extension properties** link in the dynamic membership groups rule builder to enter a unique app ID and receive the full list of custom extension properties to use when creating a rule for dynamic membership groups. This list can also be refreshed to get any new custom extension properties for that app. Extension attributes and custom extension properties must be from applications in your tenant.  
 
 For more information, see [Use the attributes in dynamic membership groups](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md#use-the-attributes-in-dynamic-groups) in the article [Microsoft Entra Connect Sync: Directory extensions](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md).
 

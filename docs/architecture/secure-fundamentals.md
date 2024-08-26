@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 7/5/2022
+ms.date: 08/25/2024
 ms.author: gasinh
 ms.reviewer: ajburnle
 ---
@@ -93,9 +93,9 @@ Some legacy scenarios required a human identity to be used in *non-human* scenar
 
 * **Group objects** contain objects for the purposes of assigning resource access, applying controls, or configuration. Group objects contain attributes that have the required information about the group including the name, description, group members, group owners, and the group type. Groups in Microsoft Entra ID take multiple forms based on an organization's requirements and can be mastered in Microsoft Entra ID or synchronized from on-premises Active Directory Domain Services (AD DS).
 
-  * **Assigned groups**. In Assigned groups, users are added to or removed from the group manually, synchronized from on-premises AD DS, or updated as part of an automated scripted workflow. An assigned group can be synchronized from on-premises AD DS or can be homed in Microsoft Entra ID.
+  * **Assigned groups**. In assigned groups, users are added to or removed from the group manually, synchronized from on-premises AD DS, or updated as part of an automated scripted workflow. An assigned group can be synchronized from on-premises AD DS or can be homed in Microsoft Entra ID.
 
-  * **Dynamic membership groups**. In Dynamic groups, users are assigned to the group automatically based on defined attributes. This allows group membership to be dynamically updated based on data held within the user objects. A dynamic group can only be homed in Microsoft Entra ID.
+  * **Dynamic membership groups**. In dynamic membership groups, users are assigned to the group automatically based on defined attributes. This allows group memberships to be dynamically updated based on data held within the user objects. A dynamic membership group can only be homed in Microsoft Entra ID.
 
 **Microsoft Account (MSA)**. You can create Azure subscriptions and tenants using Microsoft Accounts (MSA). A Microsoft Account is a personal account (as opposed to an organizational account) and is commonly used by developers and for trial scenarios. When used, the personal account is always made a guest in a Microsoft Entra tenant.
 

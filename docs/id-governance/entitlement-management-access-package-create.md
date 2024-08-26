@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/25/2024
 ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about the options available when I'm creating a new access package so that the access package can be managed with minimal effort.
 ---
@@ -73,7 +73,7 @@ On the **Basics** tab, you give the access package a name and specify which cata
 
 ## Select resource roles
 
-On the **Resource roles** tab, you select the resources to include in the access package. Users who request and receive the access package receive all the resource roles, such as group membership, in the access package.
+On the **Resource roles** tab, you select the resources to include in the access package. Users who request and receive the access package receive all the resource roles, such as group membership in the access package.
 
 If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](entitlement-management-access-package-resources.md) later.
 
@@ -86,7 +86,7 @@ If you're not sure which resource roles to include, you can skip adding them whi
     If you're creating the access package in the general catalog or a new catalog, you can choose any resource from the directory that you own. You must be at least an Identity Governance Administrator, or catalog creator.
 
     >[!NOTE]
-    >You can add dynamic groups to a catalog and to an access package. However, you can select only the owner role when you're managing a dynamic group resource in an access package.
+    >You can add dynamic membership groups to a catalog and to an access package. However, you can select only the owner role when you're managing a dynamic group resource in an access package.
 
     If you're creating the access package in an existing catalog, you can select any resource that's already in the catalog without needing to be an owner of that resource.
 
