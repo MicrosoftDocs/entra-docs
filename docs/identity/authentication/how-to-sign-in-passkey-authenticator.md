@@ -114,7 +114,7 @@ To sign in with a passkey in Microsoft Authenticator, your Android device needs 
 
 Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft Authenticator on your Android device.
 
-1. On your Android device, open your browser and navigate to the resource you're trying to access at [My Security info](https://aka.ms/mysecurityinfo).
+1. On your Android device, open your browser and navigate to the resource you're trying to access at [Security info](https://mysignins.microsoft.com/security-info).
 
 1. When prompted to sign in, you have two options. The *usernameless* option can be easier than entering your username.
 

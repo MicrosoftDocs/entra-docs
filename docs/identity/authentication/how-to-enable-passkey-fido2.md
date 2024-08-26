@@ -182,7 +182,7 @@ Administrator provisioning and deprovisioning of security keys isn't available.
 
 ### UPN changes
 
-If a user's UPN changes, you can no longer modify passkeys to account for the change. If the user has a passkey, they need to sign in to [My Security info](https://aka.ms/mysecurityinfo), delete the old passkey, and add a new one.
+If a user's UPN changes, you can no longer modify passkeys to account for the change. If the user has a passkey, they need to sign in to [Security info](https://mysignins.microsoft.com/security-info), delete the old passkey, and add a new one.
 
 ## Next steps
 

@@ -110,7 +110,7 @@ For more information about the FIPS 140 validated cryptographic modules being us
 
 
 ## Determining Microsoft Authenticator registration type in Security info 
-Users can access [My Security info](https://aka.ms/mysecurityinfo) (see the URLs in the next section) or by selecting Security info from MyAccount to manage and add more Microsoft Authenticator registrations. Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 
+Users can access [Security info](https://mysignins.microsoft.com/security-info) (see the URLs in the next section) or by selecting Security info from MyAccount to manage and add more Microsoft Authenticator registrations. Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 
 
 Authenticator registration type | Icon
 ------ | ------
