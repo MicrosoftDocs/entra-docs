@@ -74,7 +74,7 @@ Follow these steps to create administrative units with rules for dynamic members
 
 1. Select **Yes** to continue.
 
-For steps on how to edit your rule, see the following [Edit rules for dynamic membership groups](#edit-dynamic-membership-rules) section.
+For steps on how to edit your rule, see the following [Edit rules for dynamic membership groups](#edit-rules-for-dynamic-membership-groups) section.
 
 ### PowerShell
 

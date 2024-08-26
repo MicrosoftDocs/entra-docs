@@ -158,7 +158,7 @@ Use the following guidelines to define service plans to users:
 
 #### Lifecycle management
 
-If you're currently using a tool, such as [Microsoft Identity Manager](/microsoft-identity-manager/) or third-party system that relies on an on-premises infrastructure, we recommend you offload assignment from the existing tool, implement group-based licensing and define a group lifecycle management based on [dynamic membership groups](~/identity/users/licensing-group-advanced.md#use-group-based-licensing-with-dynamic-groups). 
+If you're currently using a tool, such as [Microsoft Identity Manager](/microsoft-identity-manager/) or third-party system that relies on an on-premises infrastructure, we recommend you offload assignment from the existing tool, implement group-based licensing and define a group lifecycle management based on [dynamic membership groups](~/identity/users/licensing-group-advanced.md).
 
 If your existing process doesn't account for new employees or employees that leave the organization, you should deploy group-based licensing based on dynamic membership groups and define a dynamic membership groups lifecycle. Finally, if group-based licensing is deployed against on-premises groups that lack lifecycle management, consider using cloud groups to enable capabilities such as delegated ownership or attribute-based dynamic membership groups.
 
