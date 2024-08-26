@@ -31,4 +31,4 @@ The policy requires targeted users to sign in with a passkey to access all cloud
 
 ## Restrict Bluetooth usage to passkeys in Authenticator
 
-Some organizations restrict Bluetooth usage, which includes the use of passkeys. In such cases, organizations can allow passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. for more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](https://review.learn.microsoft.com/en-us/windows/security/identity-protection/passkeys/?branch=pr-en-us-10051&tabs=windows#passkeys-in-bluetooth-restricted-environments).
+Some organizations restrict Bluetooth usage, which includes the use of passkeys. In such cases, organizations can allow passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. for more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
