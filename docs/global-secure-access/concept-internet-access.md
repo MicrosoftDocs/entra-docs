@@ -39,7 +39,7 @@ Within a security profile, policies are enforced according to priority ordering 
 Once you link a security profile to a Conditional Access (CA) policy, if multiple CA policies match, both security profiles are processed in priority ordering of the matching security profiles.
 
 > [!IMPORTANT]
-> The baseline security profile applies to all traffic even without linking it to a Conditional Access policy. It enforces policy at the lowest priority in the policy stack, applying to all Internet Access traffic routed through the service as a 'catch-all' policy.
+> The baseline security profile applies to all traffic even without linking it to a Conditional Access policy. It enforces policy at the lowest priority in the policy stack, applying to all Internet Access traffic routed through the service as a 'catch-all' policy. The baseline security profile executes even if a Conditional Access policy matches another security profile.
 
 ## Known limitations
 

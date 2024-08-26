@@ -270,7 +270,11 @@ Microsoft Entra includes multiple interfaces for integration and extension acros
 
 ## Next steps
 
+
 * [Plan deploying Microsoft Entra for user identity provisioning with SAP source and target applications](~/identity/app-provisioning/plan-sap-user-source-and-target.md)
 * [Manage access to your SAP applications](~/id-governance/sap.md)
 * Guidance for [migrating from ADFS](~/identity/enterprise-apps/migrate-ad-fs-application-howto.md)
 * Guidance for [migrating from MIM](/microsoft-identity-manager/migrate-entra-id)
+* [Deploy SAP NetWeaver AS ABAP 7.51](deploy-sap-netweaver.md)
+* [Author SAP ECC 7 Template for ECMA2Host](sap-template.md)
+* [Configuring Microsoft Entra ID to provision users into SAP ECC with NetWeaver AS ABAP 7.0 or later](~/identity/app-provisioning/on-premises-sap-connector-configure.md)
