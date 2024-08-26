@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/25/2024
+ms.date: 08/05/2024
 
 ms.author: justinha
 author: justinha
@@ -80,5 +80,6 @@ This article shows how to register a passkey as an authentication method.
 ## Next steps
 
 - [Choosing authentication methods for your organization](concept-authentication-methods.md)
+- [Register security keys on behalf of users](how-to-enable-passkey-fido2.md)
 
 

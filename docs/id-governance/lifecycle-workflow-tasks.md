@@ -7,20 +7,22 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 01/26/2023
+ms.date: 08/13/2024
 ---
 
 # Lifecycle Workflow built-in tasks
 
-Lifecycle Workflows come with many pre-configured tasks that are designed to automate common lifecycle management scenarios. These built-in tasks can be utilized to make customized workflows to suit your organization's needs. These tasks can be configured within seconds to create new workflows. These tasks also have categories based on the Joiner-Mover-Leaver model so that they can be easily placed into workflows based on need. In this article you get the complete list of tasks, information on common parameters each task has, and a list of unique parameters needed for each specific task.
+Lifecycle Workflows come with many pre-configured tasks that are designed to automate common lifecycle management scenarios. These built-in tasks can be utilized to make customized workflows to suit your organization's needs. These tasks can be configured within seconds to create new workflows. These tasks also have categories based on the Joiner-Mover-Leaver model so that they can be easily placed into workflows based on need. In this article, you get the complete list of tasks, information on common parameters each task has, and a list of unique parameters needed for each specific task.
 
 
 ## Supported tasks
  
 Lifecycle Workflow's built-in tasks each include an identifier, known as **taskDefinitionID**, and can be used to create either new workflows from scratch, or inserted into workflow templates so that they fit the needs of your organization. For more information on templates available for use with Lifecycle Workflows, see: [Lifecycle Workflow Templates](lifecycle-workflow-templates.md).
 
+> [!NOTE]
+> Lifecycle Workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, Lifecycle Workflows provide additional automation of tasks.
 
-[!INCLUDE [Lifecylce Workflows tasks table](../includes/lifecycle-workflows-tasks-table.md)]
+[!INCLUDE [Lifecycle Workflows tasks table](../includes/lifecycle-workflows-tasks-table.md)]
 
 ## Common task parameters
 
@@ -47,7 +49,7 @@ Emails, sent from tasks, are able to be customized. If you choose to customize t
 
 :::image type="content" source="media/lifecycle-workflow-task/customize-email-concept.png" alt-text="Screenshot of the customization email options.":::
 
-For a step by step guide on this, see: [Customize emails sent out by workflow tasks](customize-workflow-email.md).
+For a step by step guide on this process, see: [Customize emails sent out by workflow tasks](customize-workflow-email.md).
 
 ### Dynamic attributes within email
 
@@ -63,7 +65,7 @@ With customized emails, you're able to include dynamic attributes within the sub
 |temporaryAccessPass     |  The generated Temporary Access Pass. Only available with the **Generate TAP And Send Email** task.       |
 |userPrincipalName     |  The user’s userPrincipalName.       |
 |managerEmail     |  The manager’s email.        |
-|userSurname     |  User’s last name.       |
+|userSurname     |  User’s family name.       |
 |userGivenName     | User’s first name.        |
 
 
@@ -95,7 +97,7 @@ For Microsoft Graph, the parameters for the **Send welcome email to new hire** t
 |displayName     | Send Welcome Email (Customizable by user)        |
 |description     | Send welcome email to new hire (Customizable by user)      |
 |taskDefinitionId     |   70b29d51-b59a-4773-9280-8841dfd3f2ea     |
-|arguments     |  The optional common email task parameters can be specified; if they are not included, the default behavior takes effect.    |
+|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
 
 
 Example of usage within the workflow:
@@ -136,7 +138,7 @@ Lifecycle Workflows allow you to automate the sending of onboarding reminder ema
 :::image type="content" source="media/lifecycle-workflow-task/send-onboarding-reminder-email.png" alt-text="Screenshot of Workflows task: Send onboarding reminder email task.":::
 
 
-The Microsoft Entra prerequisite to run the **Send onboarding reminder email** task is:
+The Microsoft Entra prerequisites to run the **Send onboarding reminder email** task are:
 
 - A populated manager attribute for the user.
 - A populated manager's mail attribute for the user.
@@ -150,7 +152,7 @@ For Microsoft Graph, the parameters for the **Send onboarding reminder email** t
 |displayName     | Send onboarding reminder email (Customizable by user)        |
 |description     | Send onboarding reminder email to user’s manager (Customizable by user)      |
 |taskDefinitionId     |   3C860712-2D37-42A4-928F-5C93935D26A1     |
-|arguments     |  The optional common email task parameters can be specified; if they are not included, the default behavior takes effect.    |
+|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -185,7 +187,7 @@ Example of usage within the workflow:
 
 ### Generate Temporary Access Pass and send via email to user's manager
 
-When a compatible user joins your organization, Lifecycle Workflows allow you to automatically generate a Temporary Access Pass (TAP), and have it sent to the new user's manager. You're also able to customize the email that is sent to the user's manager.
+Microsoft Entra allows you to use a [Temporary Access Pass (TAP)](..//identity/authentication/howto-authentication-temporary-access-pass.md) to set up password-less credentials for users. You can also use [Microsoft Entra self-service password reset](../identity/authentication/concept-sspr-howitworks.md) to set a regular password. With this task, Lifecycle workflows allow you to automatically generate a Temporary Access Pass (TAP), and have it sent to the new user's manager. You're also able to customize the email that is sent to the user's manager.
 
 > [!NOTE]
 > The user's employee hire date is used as the start time for the Temporary Access Pass. Please make sure that the TAP lifetime task setting and the [time portion of your user's hire date](how-to-lifecycle-workflow-sync-attributes.md#importance-of-time) are set appropriately so that the TAP is still valid when the user starts their first day. If the hire date at the time of workflow execution is already in the past, the current time is used as the start time.
@@ -213,7 +215,7 @@ For Microsoft Graph, the parameters for the **Generate Temporary Access Pass and
 |displayName     | GenerateTAPAndSendEmail (Customizable by user)      |
 |description     | Generate Temporary Access Pass and send via email to user's manager (Customizable by user)       |
 |taskDefinitionId     |   1b555e50-7f65-41d5-b514-5894a026d10d     |
-|arguments     |  Argument contains the name parameter "tapLifetimeInMinutes", which is the lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days). The argument also contains the tapIsUsableOnce parameter, which determines whether the passcode is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime. Additionally, the optional common email task parameters can be specified; if they are not included, the default behavior takes effect.    |
+|arguments     |  Argument contains the name parameter "tapLifetimeInMinutes", which is the lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days). The argument also contains the tapIsUsableOnce parameter, which determines whether the passcode is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime. Additionally, the optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -256,11 +258,11 @@ Example of usage within the workflow:
 
 ### Send email to notify manager of user move
 
-When a user moves within your organization Lifecycle Workflows allow you to send an email to the users manager notifying them of the move. You're also able to customize the email that is sent to the user's manager.
+When a user moves within your organization Lifecycle Workflows allow you to send an email to the user's manager notifying them of the move. You're also able to customize the email that is sent to the user's manager.
 
 :::image type="content" source="media/lifecycle-workflow-task/notify-user-move-task.png" alt-text="Screenshot of the notify manager of user move task.":::
 
-The Microsoft Entra prerequisite to run the **Send email to notify manager of user move** task are:
+The Microsoft Entra prerequisites to run the **Send email to notify manager of user move** task are:
 
 - A populated manager attribute for the user.
 - A populated manager's mail attribute for the user.
@@ -346,7 +348,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Assign licenses to user (Preview)
+### Assign licenses to user
 
 Allows Licenses to be assigned to users. For a license to be assigned to the user, they must have a "*usageLocation*" attribute set.
 
@@ -359,7 +361,7 @@ Allows Licenses to be assigned to users. For a license to be assigned to the use
 |displayName     |  Assign licenses to user (Customizable by user)        |
 |description     |  Assign selected licenses to the user (Customizable by user)       |
 |taskDefinitionId     |   683c87a4-2ad4-420b-97d4-220d90afcd24      |
-|arguments     |  Argument contains one parameter that has the name "*licenses*" that accepts a "*Sku id*" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
+|arguments     |  Argument contains one parameter that has the name "*licenses*" that accepts a "*Sku ID*" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
 
 Example of usage within the workflow:
 
@@ -368,7 +370,7 @@ Example of usage within the workflow:
             "category": "joiner,mover",
             "continueOnError": false,
             "description": "Assign selected licenses to the user",
-            "displayName": "Assign licenses to user (Preview)",
+            "displayName": "Assign licenses to user",
             "isEnabled": true,
             "taskDefinitionId": "683c87a4-2ad4-420b-97d4-220d90afcd24",
             "arguments": [
@@ -459,7 +461,7 @@ For Microsoft Graph, the parameters for the **Add user to teams** task are as fo
 
 ### Enable user account
 
-Allows user accounts to be enabled. For prerequisites on running this task for synced on-premises users, see: [User account tasks (preview)](../id-governance/lifecycle-workflow-on-premises.md#user-account-tasks-preview). Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can also utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](../identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+Allows user accounts to be enabled. For prerequisites on running this task for synced on-premises users, see: [User account tasks](../id-governance/lifecycle-workflow-on-premises.md#user-account-tasks). Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can also utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](../identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 
 :::image type="content" source="media/lifecycle-workflow-task/enable-task.png" alt-text="Screenshot of Workflows task: enable user account.":::
 
@@ -539,7 +541,7 @@ For more information on setting up a Logic app to run with Lifecycle Workflows, 
 
 ### Disable user account
 
-Allows user accounts to be disabled. For prerequisites on running this task for synced on-premises users, see: [User account tasks (preview)](../id-governance/lifecycle-workflow-on-premises.md#user-account-tasks-preview). Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](../identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+Allows user accounts to be disabled. For prerequisites on running this task for synced on-premises users, see: [User account tasks](../id-governance/lifecycle-workflow-on-premises.md#user-account-tasks). Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](../identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 
 :::image type="content" source="media/lifecycle-workflow-task/disable-task.png" alt-text="Screenshot of Workflows task: disable user account.":::
 
@@ -616,7 +618,6 @@ For Microsoft Graph, the parameters for the **Remove user from selected groups**
 ### Remove users from all groups
 
 Allows users to be removed from every Microsoft 365 and cloud-only security group they're a member of. Mail-enabled, distribution, dynamic and role-assignable groups aren't supported. To control access to on-premises AD-group-based applications and resources, you need to enable group writeback. For more information, see [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
-
 
 
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
@@ -808,7 +809,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Remove selected license assignments from user (Preview)
+### Remove selected license assignments from user
 
 Remove selected license assignments from a user.
 
@@ -823,7 +824,7 @@ For Microsoft Graph, the parameters for the **Remove selected license assignment
 |displayName     |  Remove licenses from user (Customizable by user)        |
 |description     |  Remove selected licenses assigned to the user (Customizable by user)        |
 |taskDefinitionId     |   5fc402a8-daaf-4b7b-9203-da868b05fc5f      |
-|arguments     |  Argument contains one parameter that has the name "*licenses*" that accepts a "Sku id" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
+|arguments     |  Argument contains one parameter that has the name "*licenses*" that accepts a "Sku ID" value. For a full list of these values, see: [Product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md).  |
 
 Example of usage within the workflow:
 
@@ -877,7 +878,7 @@ For Microsoft Graph, the parameters for the **Remove all license assignment from
 
 ### Delete User
 
-Allows user accounts to be deleted. For prerequisites on running this task for synced on-premises users, see: [User account tasks (preview)](../id-governance/lifecycle-workflow-on-premises.md#user-account-tasks-preview). Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+Allows user accounts to be deleted. For prerequisites on running this task for synced on-premises users, see: [User account tasks](../id-governance/lifecycle-workflow-on-premises.md#user-account-tasks). Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/delete-user-task.png" alt-text="Screenshot of Workflows task: Delete user account.":::
 
 
@@ -917,7 +918,7 @@ Allows an email to be sent to a user's manager before their last day. You're abl
 :::image type="content" source="media/lifecycle-workflow-task/send-email-before-last-day.png" alt-text="Screenshot of Workflows task: send email before user last day task.":::
 
 
-The Microsoft Entra prerequisite to run the **Send email before user's last day** task are:
+The Microsoft Entra prerequisites to run the **Send email before user's last day** task are:
 
 - A populated manager attribute for the user.
 - A populated manager's mail attribute for the user.
@@ -930,7 +931,7 @@ For Microsoft Graph the parameters for the **Send email before user's last day**
 |displayName     |  Send email before user’s last day (Customizable by user)       |
 |description     |  Send offboarding email to user’s manager before the last day of work (Customizable by user)        |
 |taskDefinitionId     |   52853a3e-f4e5-4eb8-bb24-1ac09a1da935      |
-|arguments     |  The optional common email task parameters can be specified; if they are not included, the default behavior takes effect.    |
+|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -968,7 +969,7 @@ Example of usage within the workflow:
 Allows an email to be sent to a user's manager on their last day. You're able to customize the task name and the description for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/send-email-last-day.png" alt-text="Screenshot of Workflows task: task to send email last day.":::
 
-The Microsoft Entra prerequisite to run the **Send email on user last day** task are:
+The Microsoft Entra prerequisites to run the **Send email on user last day** task are:
 
 - A populated manager attribute for the user.
 - A populated manager's mail attribute for the user.
@@ -981,7 +982,7 @@ For Microsoft Graph, the parameters for the **Send email on user last day** task
 |displayName     |  Send email on user’s last day (Customizable by user)       |
 |description     |  Send offboarding email to user’s manager on the last day of work (Customizable by user)        |
 |taskDefinitionId     |   9c0a1eaf-5bda-4392-9d9e-6e155bb57411      |
-|arguments     |  The optional common email task parameters can be specified; if they are not included, the default behavior takes effect.    |
+|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -1017,23 +1018,23 @@ Example of usage within the workflow:
 ### Send email to user's manager after their last day
 
 Allows an email containing off-boarding information to be sent to the user's manager after their last day. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
-:::image type="content" source="media/lifecycle-workflow-task/offboard-email-manager.png" alt-text="Screenshot of Workflows task: send off-boarding email to users manager after their last day.":::
+:::image type="content" source="media/lifecycle-workflow-task/offboard-email-manager.png" alt-text="Screenshot of Workflows task: send off-boarding email to user's manager after their last day.":::
 
-The Microsoft Entra prerequisite to run the **Send email to users manager after their last day** task are:
+The Microsoft Entra prerequisites to run the **Send email to user's manager after their last day** task are:
 
 - A populated manager attribute for the user.
 - A populated manager's mail attribute for the user.
 
 
-For Microsoft Graph, the parameters for the **Send email to users manager after their last day** task are as follows:
+For Microsoft Graph, the parameters for the **Send email to user's manager after their last day** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver      |
-|displayName     |  Send email to users manager after their last day      |
+|displayName     |  Send email to user's manager after their last day      |
 |description     |  Send offboarding email to user’s manager after the last day of work (Customizable by user)        |
 |taskDefinitionId     |   6f22ddd4-b3a5-47a4-a846-0d7c201a49ce      |
-|arguments     |  The optional common email task parameters can be specified; if they are not included, the default behavior takes effect.    |
+|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 

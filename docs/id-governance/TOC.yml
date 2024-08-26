@@ -73,14 +73,28 @@
  
   - name: Govern access to applications
     items:
-    - name: Govern access for applications in your environment
-      href: identity-governance-applications-prepare.md
-    - name: Define organizational policies for governing access
-      href: identity-governance-applications-define.md
-    - name: Integrating applications with Microsoft Entra ID
-      href: identity-governance-applications-integrate.md
-    - name: Deploying organizational policies for governing access
-      href: identity-governance-applications-deploy.md
+    - name: Get started with governing application access
+      items:
+      - name: Govern access for applications in your environment
+        href: identity-governance-applications-prepare.md
+      - name: Define organizational policies for governing access
+        href: identity-governance-applications-define.md
+      - name: Integrating applications with Microsoft Entra ID
+        href: identity-governance-applications-integrate.md
+      - name: Deploying organizational policies for governing access
+        href: identity-governance-applications-deploy.md
+      - name: Connected applications
+        href: apps.md
+    - name: Govern application access
+      items: 
+      - name: Automate identity governance tasks - PowerShell
+        href: identity-governance-automation.md
+      - name: Governing an application's existing users - PowerShell
+        href: identity-governance-applications-existing-users.md
+      - name: Governing a nonprovisionable application's users - PowerShell
+        href: identity-governance-applications-not-provisioned-users.md
+      - name: Manage access to SAP applications
+        href: sap.md
   - name: Migrations
     items:
     - name: Transform your cloud posture
@@ -101,21 +115,13 @@
       items:
       - name: Migrate from SAP IDM
         href: scenarios/migrate-from-sap-idm.md
+      - name: Author SAP ECC 7 Template for ECMA2Host
+        href: scenarios/sap-template.md
+      - name: Deploy SAP NetWeaver AS ABAP 7
+        href: scenarios/deploy-sap-netweaver.md
 - name: Tutorials
   expanded: true
   items:
-    - name: Govern access to applications
-      items:
-      - name: Connected applications
-        href: apps.md
-      - name: Automate identity governance tasks - PowerShell
-        href: identity-governance-automation.md
-      - name: Governing an application's existing users - PowerShell
-        href: identity-governance-applications-existing-users.md
-      - name: Governing a nonprovisionable application's users - PowerShell
-        href: identity-governance-applications-not-provisioned-users.md
-      - name: Manage access to SAP applications
-        href: sap.md
     - name: Entitlement Management
       items:
       - name: Manage access to resources
@@ -203,23 +209,13 @@
       href: lifecycle-workflow-audits.md
     - name: Workflow History
       href: lifecycle-workflow-history.md
-    - name: Synced on-premises users (Preview)
+    - name: Synced AD DS users
       href: lifecycle-workflow-on-premises.md         
-    - name: Workflow Insights (preview)
+    - name: Workflow Insights
       href: lifecycle-workflow-insights.md        
 - name: How-to guides
   expanded: true
   items:
-  - name: Govern access to applications
-    items:
-    - name: Prepare
-      href: identity-governance-applications-prepare.md
-    - name: Define
-      href: identity-governance-applications-define.md
-    - name: Integrate
-      href: identity-governance-applications-integrate.md
-    - name: Deploy
-      href: identity-governance-applications-deploy.md
   - name: Entitlement management
     items:
     - name: Common scenarios
@@ -364,9 +360,9 @@
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
-        - name: Manage synced on-premises users (Preview)
+        - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md              
-        - name: Check Workflow Insights (preview)
+        - name: Check Workflow Insights
           href: manage-workflow-insights.md            
       - name: Delete
         items: 
@@ -389,6 +385,8 @@
     href: /graph/api/resources/accessreviewsv2-overview
   - name: Entitlement management - Microsoft Graph API
     href: /graph/api/resources/entitlementmanagement-overview
+  - name: Custom Alerts
+    href: governance-custom-alerts.md
   - name: Lifecycle Workflows
     items:
     - name: Lifecycle Workflows - Microsoft Graph API

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/21/2023
+ms.date: 07/15/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -80,13 +80,14 @@ You can edit properties by selecting the pencil icon next to any category, which
 
 ## Next steps
 
-User operations
+**User operations**
 
 - [Add or change profile information](~/fundamentals/how-to-manage-user-profile-info.yml)
 - [Add or delete users](~/fundamentals/add-users.md)
 
-Bulk operations
+**Bulk operations**
 
+- [Bulk operations service limitations](~/fundamentals/bulk-operations-service-limitations.md)
 - [Download list of users](users-bulk-download.md)
 - [Bulk add users](users-bulk-add.md)
 - [Bulk delete users](users-bulk-delete.md)

@@ -99,13 +99,13 @@ If you're not sure which resource roles to include, you can skip adding them whi
 1. Select **Next: Requests**.
 
 
-## Create request policies
+## Create the initial policy
 
-On the **Requests** tab, you create the first policy to specify who can request the access package. You also configure approval settings. Later, you can create more request policies to allow additional groups of users to request the access package with their own approval settings.
+On the **Requests** tab, you create the first policy to specify who can request the access package. You also configure approval settings for that policy. Later, after creating the access package with this initial policy, you can [add more policies](entitlement-management-access-package-request-policy.md) to allow additional groups of users to request the access package with their own approval settings, or to assign access automatically.
 
 ![Screenshot that shows the Requests tab for a new access package.](./media/entitlement-management-access-package-create/requests.png)
 
-Depending on which users you want to be able to request this access package, perform the steps in one of the following sections.
+Depending on which users you want to be able to request this access package, perform the steps in one of the following sections [Allow users in your directory to request the access package](#allow-users-in-your-directory-to-request-the-access-package), [Allow users not in your directory to request the access package](#allow-users-not-in-your-directory-to-request-the-access-package) or [Allow administrator direct assignments only](#allow-administrator-direct-assignments-only). If you're not sure which request or approval settings you'll need, you plan to create assignments for users who already have access to the underlying resources, or you plan to use access package automatic assignment polices to automate access, then select the [direct assignment policy](#allow-administrator-direct-assignments-only) as the initial policy.
 
 [!INCLUDE [Entitlement management request policy](../includes/entra-entitlement-management-request-policy.md)]
 
@@ -119,11 +119,13 @@ On the **Review + create** tab, you can review your settings and check for any v
 
     ![Screenshot that shows a summary of access package configuration.](./media/entitlement-management-access-package-create/review-create.png)
 
-1. Select **Create** to create the access package.
+1. Select **Create** to create the access package and its initial policy.
 
     The new access package appears in the list of access packages.
 
 1. If the access package is intended to be visible to everyone in scope of the policies, then leave the **Hidden** setting of the access package at **No**. Optionally, if you intend to only allow users with the direct link to request the access package, [edit the access package](entitlement-management-access-package-edit.md#change-the-hidden-setting) to change the **Hidden** setting to **Yes**. Then [copy the link to request the access package](entitlement-management-access-package-settings.md#share-link-to-request-an-access-package) and share it with users who need access.
+
+1. You can next [add more policies](entitlement-management-access-package-request-policy.md) to the access package, [configure separation of duties checks](entitlement-management-access-package-incompatible.md), or [directly assign a user](entitlement-management-access-package-assignments.md#directly-assign-a-user).
 
 ## Create an access package programmatically
 
@@ -154,7 +156,7 @@ if ($catalog -eq $null) { throw "catalog not found" }
 $rsc = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter "originSystem eq 'AadApplication'" -ExpandProperty scopes
 if ($rsc -eq $null) { throw "resource not found" }
 $filt = "(id eq '" + $rsc.Id + "')"
-$rrs = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter $filt -ExpandProperty roles,scopes
+$rrs = Get-MgEntitlementManagementCatalogResourceRole -AccessPackageCatalogId $catalog.id -Filter $filt -ExpandProperty roles,scopes
 ```
 
 Then, create the access package:
@@ -239,6 +241,8 @@ $pparams = @{
 New-MgEntitlementManagementAssignmentPolicy -BodyParameter $pparams
 
 ```
+
+For more information, see [Create an access package in entitlement management for an application with a single role using PowerShell](entitlement-management-access-package-create-app.md).
 
 ## Next steps
 

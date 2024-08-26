@@ -1,6 +1,6 @@
 ---
-title: Authentication methods and identity providers for external tenants
-description: Learn how to use different authentication methods for your customer sign-in and sign-up in CIAM. 
+title: Identity Providers
+description: Learn about sign-in and MFA options for customer identity and access management (CIAM) in external tenants, including email, one-time passcodes, Google and Facebook. 
  
 author: msmimart
 manager: celestedg
@@ -8,21 +8,21 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 05/15/2024
+ms.date: 08/09/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 ---
 
-# Authentication methods and identity providers in external tenants
+# Identity providers for external tenants
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with their own social account. You can also add a layer of security by enforcing multifactor authentication (MFA) so that each time a user signs in, they're required to provide a one-time passcode for verification.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with their own social account.
 
-This article describes the authentication methods and identity providers available in external tenants.
+This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
 ## Email and password sign-in
 
@@ -44,12 +44,11 @@ Email with one-time passcode is an option in your local account identity provide
 
 - **Sign-up**: Customers can sign up with their email address and request a temporary code, which is sent to their email address. Then they enter this code to continue signing in.
 
-- **Sign-in**: After the customer signs up and creates an account, each time they sign they'll enter their email address and receive a temporary passcode.
+- **Sign-in**: After the customer signs up and creates an account, each time they sign in they'll enter their email address and receive a temporary passcode.
 
    :::image type="content" source="media/concept-authentication-methods-customers/email-passcode-sign-in.png" alt-text="Screenshots of the email with one-time passcode sign-in screens." border="false":::
 
-> [!IMPORTANT]
-> If you want to enable [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md), set your local account authentication method to **Email with password**. If you set your local account option to **Email with one-time passcode**, customers who use this method won't be able to sign in because the one-time passcode is already their first-factor sign-in method and can't be used as a second factor. Currently, other verification methods aren't available for customer scenarios.
+You can also configure options for showing, hiding, or customizing the self-service password reset link on the sign-in page ([learn more](how-to-customize-branding-customers.md#to-customize-self-service-password-reset)).
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email one-time passcode** is one of the local account options.
 
@@ -79,7 +78,7 @@ The following screenshots show the sign-in with Facebook experience. In the sign
 
 Learn how to [add Facebook as an identity provider](how-to-facebook-federation-customers.md).
 
-### Updating sign-in methods
+## Updating sign-in methods
 
 At any time, you can update the sign-in options for an app. For example, you can add social identity providers or change the local account sign-in method.
 

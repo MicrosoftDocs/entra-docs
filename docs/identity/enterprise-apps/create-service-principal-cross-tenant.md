@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 07/26/2022
+ms.date: 07/19/2024
 ms.author: jomondi
 ms.reviewer: karavar
 ms.custom: mode-other, devx-track-azurecli
@@ -65,14 +65,16 @@ Where:
 
    ```powershell
    Remove-MgServicePrincipal
-      -ServicePrincipalId <objectID>
+      -ServicePrincipalId bbbbbbbb-1111-2222-3333-cccccccccccc
+
    ```
 :::zone-end
+
 :::zone pivot="ms-graph"
 
 You can use an API client such as [Graph Explorer](https://aka.ms/ge) to work with Microsoft Graph.
 
-1. Grant the client app the *Application.ReadWrite.All* permission.
+1. Grant the client app the `Application.ReadWrite.All` permission.
 
 1. To create the enterprise application, run the following query. The appId is the client ID of the application.
    
@@ -92,7 +94,9 @@ You can use an API client such as [Graph Explorer](https://aka.ms/ge) to work wi
     DELETE https://graph.microsoft.com/v1.0/servicePrincipals(appId='00001111-aaaa-2222-bbbb-3333cccc4444')
     ```	
 :::zone-end
+
 :::zone pivot="azure-cli"
+
 1. To create the enterprise application, run the following command:
    
    ```azurecli
@@ -102,7 +106,8 @@ You can use an API client such as [Graph Explorer](https://aka.ms/ge) to work wi
 1. To  delete the enterprise application you created, run the command:
 
    ```azurecli
-   az ad sp delete --id
+   az ad sp delete --id bbbbbbbb-1111-2222-3333-cccccccccccc
+
    ```
 
 :::zone-end

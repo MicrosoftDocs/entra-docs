@@ -116,6 +116,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/lytx-drivecam-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/cisco-umbrella-user-management-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/cisco-user-management-for-secure-access-provisioning-tutorial",
       "redirect_document_id": false
@@ -133,6 +138,21 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/neotalogicstudio-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/neota-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/whitesource-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/mend-io-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/sailpoint-identitynow-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/sailpoint-identity-security-cloud-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/pexip-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/pexip-service-mmv-legacy-app",
       "redirect_document_id": false
     },
     {
@@ -163,6 +183,11 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/querylayer-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/trustworks-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/paycargo-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/paycargo-classic-tutorial",
       "redirect_document_id": false
     },
     {
@@ -268,6 +293,11 @@
     {
       "source_path_from_root": "/docs/identity/app-provisioning/application-provisioning-config-problem.md",
       "redirect_url": "/entra/identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/app-provisioning/inbound-provisioning-api-postman.md",
+      "redirect_url": "/entra/identity/app-provisioning/inbound-provisioning-api-curl-tutorial",
       "redirect_document_id": false
     },
     {
@@ -965,6 +995,11 @@
     {
       "source_path_from_root": "/docs/identity-platform/msal-net-migration-ios-broker.md",
       "redirect_url": "/entra/identity-platform/quickstart-mobile-app-android-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/global-secure-access/how-to-get-started-with-global-secure-access.md",
+      "redirect_url": "/entra/global-secure-access/quickstart-access-admin-center",
       "redirect_document_id": false
     }
   ]

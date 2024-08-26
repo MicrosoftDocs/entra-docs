@@ -82,7 +82,7 @@ The following table compares the features in each version.
 |  |Tenant restrictions v1  |Tenant restrictions v2  |
 |----------------------|---------|---------|
 |**Policy enforcement**    | The corporate proxy enforces the tenant restriction policy in the Microsoft Entra ID control plane.         |     Options: <br></br>- Universal tenant restrictions in Global Secure Access, which uses policy signaling to tag all traffic, providing both authentication and data plane support on all platforms. <br></br>- Authentication plane-only protection, where the corporate proxy sets tenant restrictions v2 signals on all traffic. <br></br>- Windows device management, where devices are configured to point Microsoft traffic to the tenant restriction policy, and the policy is enforced in the cloud.     |
-|**Policy enforcement limitation**    | Manage corporate proxies by adding tenants to the Microsoft Entra traffic allowlist. The character limit of the header value in Restrict-Access-To-Tenants: `<allowed-tenant-list>` limits the number of tenants that can be added. |     Managed by a cloud policy in the cross-tenant access policy. A partner policy is created for each external tenant. Currently, the configuration for all external tenants is contained in one policy with a 25KB size limit.  |
+|**Policy enforcement limitation**    | Manage corporate proxies by adding tenants to the Microsoft Entra traffic allowlist. The character limit of the header value in Restrict-Access-To-Tenants: `<allowed-tenant-list>` limits the number of tenants that can be added. |     Managed by a cloud policy in the cross-tenant access policy. Default policy at tenant level and a partner policy is created for each external tenant.  |
 |**Malicious tenant requests** | Microsoft Entra ID blocks malicious tenant authentication requests to provide authentication plane protection.         |    Microsoft Entra ID blocks malicious tenant authentication requests to provide authentication plane protection.     |
 |**Granularity**           | Limited to tenant and all Microsoft Accounts.        |   Tenant, user, group, and application granularity. (User-level granularity isn't supported with Microsoft Accounts.)      |
 |**Anonymous access**      | Anonymous access to Teams meetings and file sharing is allowed.         |   Anonymous access to Teams meetings is blocked. Access to anonymously shared resources (“Anyone with the link”) is blocked.      |
@@ -324,7 +324,7 @@ Suppose you use tenant restrictions to block access by default, but you want to 
 
 There are three options for enforcing tenant restrictions v2 for clients:
 
-- [Option 1](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access): Universal tenant restrictions v2 as part of Microsoft Entra Global Secure Access
+- [Option 1](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access): Universal tenant restrictions v2 as part of Microsoft Entra Global Secure Access (preview)
 - [Option 2](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy): Set up tenant restrictions v2 on your corporate proxy
 - [Option 3](#option-3-enable-tenant-restrictions-on-windows-managed-devices-preview): Enable tenant restrictions on Windows managed devices (preview)
 
@@ -341,9 +341,9 @@ To ensure sign-ins are restricted on all devices and apps in your corporate netw
 
 1. Configure the tenant restrictions v2 header as follows:
 
-   |Header name  |Header Value  |
-   |---------|---------|
-   |`sec-Restrict-Tenant-Access-Policy`     |  `<TenantId>:<policyGuid>`       |
+   |Header name  |Header Value  | Sample Value |
+   |---------|---------|-----------------|
+   |`sec-Restrict-Tenant-Access-Policy`     |  `<TenantId>:<policyGuid>`       | 08b6c708-60ce-4da8-b457-4328119ff3cd:26222fa0-3632-45e7-b579-5b259c70f73c
 
    - `TenantID` is your Microsoft Entra tenant ID. Find this value by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator and browsing to **Identity** > **Overview** and selecting the **Overview** tab.
    - `policyGUID` is the object ID for your cross-tenant access policy. Find this value by calling `/crosstenantaccesspolicy/default` and using the “id” field returned.
@@ -356,6 +356,10 @@ To ensure sign-ins are restricted on all devices and apps in your corporate netw
    - login.windows.net
 
    This header enforces your tenant restrictions v2 policy on all sign-ins on your network. This header doesn't block anonymous access to Teams meetings, SharePoint files, or other resources that don't require authentication.
+
+> [!IMPORTANT]
+> **Decrypting Microsoft URLs** - Tenant restrictions (v1 and v2) on the proxy requires decryption of requests to login URLs such as login.microsoftonline.com. Doing decryption of traffic for those login domains for the
+> purpose of TR header insertion is supported by Microsoft and is a valid exception from policies at [Use third-party network devices or solutions with Microsoft 365](/microsoft-365/troubleshoot/miscellaneous/office-365-third-party-network-devices).
 
 #### Tenant restrictions v2 with no support for break and inspect
 
@@ -469,7 +473,7 @@ You can configure the tenant restrictions v2 policy to allow specific users or g
 |Anonymous (no authenticated session) <br></br> Example: A user tries to use an unauthenticated session, for example in an InPrivate browser window, to access a Teams meeting. | Not authenticated |  Tenant restrictions v2 blocks access to the Teams meeting.  |
 |Externally issued identity (authenticated session)<br></br> Example: A user uses any identity other than their home identity (for example, user@externaltenant.com) | Authenticated as an externally issued identity |  Allow or block access to the Teams meeting per Tenant restrictions v2 policy. If allowed by the policy, the user can join the meeting. Otherwise access is blocked. |   
 
-## Tenant restrictions v2 and SharePoint Online
+## Tenant restrictions v2 and SharePoint Online (preview)
 
 SharePoint Online supports tenant restrictions v2 on both the authentication plane and the data plane.
 
@@ -483,7 +487,7 @@ If a user tries to access an anonymous file using their home tenant/corporate id
 
 For example, say a user is using a managed device configured with tenant restrictions v2 for Tenant A. If they select an anonymous access link generated for a Tenant A resource, they should be able to access the resource anonymously. But if they select an anonymous access link generated for Tenant B SharePoint Online, they're prompted to sign-in. Anonymous access to resources using an externally issued identity is always blocked.
 
-## Tenant restrictions v2 and OneDrive
+## Tenant restrictions v2 and OneDrive (preview)
 
 ### Authenticated sessions
 
@@ -579,6 +583,9 @@ Use Microsoft Graph to get policy information:
     }
 }
 ```
+
+## Known limitation
+Tenant Restrictions v2 will not be enforced with request going across cross clouds. 
 
 ## Next steps
 

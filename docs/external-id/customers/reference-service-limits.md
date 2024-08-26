@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: reference
-ms.date: 04/10/2024
+ms.date: 08/09/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -45,26 +45,26 @@ Microsoft Entra External ID is compliant with [OAuth 2.0](https://datatracker.ie
 
 ## Token issuance rate
 
-Each type of User Flow provides a unique user experience and will consume a different number of requests.
-The token issuance rate of a User Flow is dependent on the number of requests consumed by both the static and dynamic endpoints. The below table shows the number of requests consumed at a dynamic endpoint for each User Flow.
+Each type of user flow provides a unique user experience and consumes a different number of requests.
+The token issuance rate of a user flow is dependent on the number of requests consumed by both the static and dynamic endpoints. The following table shows the number of requests consumed at a dynamic endpoint for each user flow.
 <!-- Add MS Graph limits here.-->
-|User Flow |Requests consumed    |
+|User flow |Requests consumed    |
 |---------|---------|
 |Sign up        |6  |
 |Sign in        |4   |
 |Password reset |4   |
 
-When you add more features to a User Flow, such as multifactor authentication, more requests are consumed. The below table shows how many additional requests are consumed when a user interacts with one of these features.
+When you add more features to a user flow, such as multifactor authentication, more requests are consumed. The following table shows how many additional requests are consumed when a user interacts with one of these features.
 
 |Feature |Additional requests consumed    |
 |---------|---------|
 |Email one-time password      |2   |
 
-To obtain the token issuance rate per second for your User Flow:
+To obtain the token issuance rate per second for your user flow:
 
-1. Use the tables above to add the total number of requests consumed at the dynamic endpoint.
+1. Use the previous tables to add the total number of requests consumed at the dynamic endpoint.
 2. Add the number of requests expected at the static endpoints based on your application type.
-3. Use the formula below to calculate the token issuance rate per second.
+3. Use the following formula to calculate the token issuance rate per second.
 
 ```
 Tokens/sec = 200/requests-consumed
@@ -83,9 +83,19 @@ The following table lists the administrative configuration limits in the Microso
 |String limit per attribute      |250 Chars          |
 |Number of external tenants per subscription      |20         |
 |Total number of objects (user accounts and applications) per trial tenant (can't be extended)| 10000 |
-|Total number of objects (user accounts and applications) per tenant | 13 million |
+|Total number of objects (user accounts and applications) per tenant. If you want to increase this limit, contact [Microsoft Support](/entra/identity-platform/developer-support-help-options?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json#create-an-azure-support-request). | 300,000 |
 |Number of [custom authentication extensions](/entra/identity-platform/custom-extension-overview)    |100         |
 |Number of event listener policies    |249         |
+
+## Telephony throttling limits
+
+The following table lists the service limits we implement to prevent outages and slowdowns. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md)
+
+|Limit                        |Texts every 15 minutes|Texts every 60 minutes|Texts every 24 hours                                 |Texts every 7 days |
+|-----------------------------|----------------------|----------------------|-----------------------------------------------------|-------------------|
+|Limits based on IP address   |20 texts              |60 texts              |100 texts without a proxy</br>200 texts with a proxy |No limit           |
+|Limits based on phone number |4 texts               |10 texts              |20 texts                                             |40 texts           |
+|Limits based on tenant       |100 texts             |300 texts             |1,000 texts                                           |No limit           |
 
 ## Next steps
 

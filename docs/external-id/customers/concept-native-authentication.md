@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: concept-article
-ms.date:  04/08/2024
+ms.date:  07/23/2024
 ms.author: cmulligan
 
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
@@ -62,9 +62,33 @@ The following table shows the availability of features for browser-delegated and
 | **Sign-up and sign-in with email one-time passcode (OTP)** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Sign-up and sign-in with email and password** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Self-service password reset (SSPR)** | :heavy_check_mark:  | :heavy_check_mark:  |
+| **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Social identity provider sign-in** | :heavy_check_mark:  | :x: |
 | **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :x:  |
+| **Multifactor authentication with SMS**| :heavy_check_mark:  | :x:  |
 | **Single sign-on (SSO)** | :heavy_check_mark:  | :x:  |
+
+## How to enable native authentication
+
+First, review the guidelines above on [when to use native authentication](/entra/external-id/customers/concept-native-authentication#when-to-use-native-authentication). Then, have an internal discussion with your application's business owner, designer, and development team to determine if native authentication is necessary.
+
+If your team has determined that native authentication is necessary for your application, follow these steps to enable native authentication in the Microsoft Entra admin center:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to **Applications** > **App registrations** and select your app.
+1. Navigate to **Authentication** and select the **Settings** tab.
+1. Select the **Allow native authentication** and the **Allow public client flow** field.
+
+Once you have enabled both **Allow native authentication** and **Allow public client flow**, update your configuration code accordingly.
+
+## Update your configuration code
+
+After enabling the native authentication APIs in the admin center, you still need to update your application’s configuration code to support native authentication flows for Android or iOS. To do so, you need to add the challenge type field to your configuration. Challenge types are a list of values that the app uses to notify Microsoft Entra about the authentication method it supports. You can find more information about native authentication challenge types [here](/entra/external-id/customers/concept-native-authentication-challenge-types). 
+If the configuration isn’t updated to integrate native authentication components, the native authentication SDKs and APIs won’t be usable. 
+
+## Risk of enabling native authentication
+
+Microsoft Entra's native authentication doesn't support single sign-on (SSO), and the responsibility for ensuring the security of the app lies with your development team.
 
 ## How to use native authentication
 
@@ -84,3 +108,4 @@ If you're planning to create a mobile app on a framework currently not supported
 - [Android native authentication tutorials](how-to-run-native-authentication-sample-android-app.md).
 - [iOS native authentication tutorials](how-to-run-native-authentication-sample-ios-app.md).
 - [Native authentication API documentation](../../identity-platform/reference-native-authentication-overview.md).
+

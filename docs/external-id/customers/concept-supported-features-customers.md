@@ -1,6 +1,6 @@
 ---
-title: Supported features in external tenants
-description: Learn about supported features in external tenants.
+title: External Tenant Features
+description: Compare the features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
  
 author: msmimart
 manager: celestedg
@@ -10,7 +10,7 @@ ms.subservice: customers
 ms.topic: concept-article
 ms.date: 06/26/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
 ---
@@ -68,11 +68,10 @@ Custom authentication extensions allow you to customize the Microsoft Entra auth
 
 The following table compares the [identity providers](../identity-providers.md) and methods available for primary authentication and multifactor authentication (MFA) in workforce and external tenants.
 
-
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 | **Identity providers for external users** | For self-service sign-up guests:</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>For invited guests:</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | For self-service sign-up users (consumers, business customers):</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation (preview)](./how-to-google-federation-customers.md)</br>- [Facebook federation (preview)](./how-to-facebook-federation-customers.md) |
-|   **Authentication methods**  | For internal users (employees and admins): </br>- [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </br>For guests (invited or self-service sign-up): </br>- [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  For self-service sign-up users (consumers, business customers):</br>- [Email one-time passcode for MFA](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)    |
+|   **Authentication methods**  | For internal users (employees and admins): </br>- [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </br>For guests (invited or self-service sign-up): </br>- [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  For self-service sign-up users (consumers, business customers):</br>- [Email one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</br>- [SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication)    |
 
 ## Application registration
 

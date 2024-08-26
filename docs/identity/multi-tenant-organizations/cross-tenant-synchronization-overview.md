@@ -14,13 +14,13 @@ ms.custom: it-pro
 
 # What is cross-tenant synchronization?
 
-*Cross-tenant synchronization* automates creating, updating, and deleting [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) users across tenants in an organization. It enables users to access applications and collaborate across tenants, while still allowing the organization to evolve. 
+*Cross-tenant synchronization* automates creating, updating, and deleting [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) users across tenants in an organization. It enables users to access applications and collaborate across tenants, while still allowing the organization to evolve.
 
 Here are the primary goals of cross-tenant synchronization:
 
 - Seamless collaboration for a multitenant organization
 - Automate lifecycle management of B2B collaboration users in a multitenant organization
-- Automatically remove B2B accounts when a user leaves the organization 
+- Automatically remove B2B accounts when a user leaves the organization
 
 > [!VIDEO https://www.youtube.com/embed/7B-PQwNfGBc]
 
@@ -97,7 +97,7 @@ Cross-tenant synchronization provides a flexible solution to enable collaboratio
 
 #### Step 2: Enable cross-tenant synchronization in the target tenants
 
-In the target tenant where users are created, navigate to the **Cross-tenant access settings** page. Here you enable cross-tenant synchronization and the B2B automatic redemption settings by selecting the respective check boxes. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
+In the target tenant where users are created, navigate to the **Cross-tenant access settings** page. Here you enable cross-tenant synchronization and the B2B automatic redemption settings by selecting the respective checkboxes. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
 
 :::image type="content" source="./media/cross-tenant-synchronization-overview/configure-target.png" alt-text="Diagram that shows cross-tenant synchronization enabled in the target tenant.":::
 
@@ -109,7 +109,7 @@ In any source tenant, navigate to the **Cross-tenant access settings** page and 
 - What attributes you want to include
 - Any transformations
 
-For anyone that has used Microsoft Entra ID to [provision identities into a SaaS application](~/identity/app-provisioning/user-provisioning.md), this experience will be familiar. Once you have synchronization configured, you can start testing with a few users and make sure they're created with all the attributes that you need. When testing is complete, you can quickly add additional users to synchronize and roll out across your organization. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
+For anyone that has used Microsoft Entra ID to [provision identities into a SaaS application](~/identity/app-provisioning/user-provisioning.md), this experience will be familiar. Once you have synchronization configured, you can start testing with a few users and make sure they're-created with all the attributes that you need. When testing is complete, you can quickly add additional users to synchronize and roll out across your organization. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
 
 :::image type="content" source="./media/cross-tenant-synchronization-overview/configure-source.png" alt-text="Diagram that shows a cross-tenant synchronization job configured in the source tenant.":::
 
@@ -117,7 +117,7 @@ For anyone that has used Microsoft Entra ID to [provision identities into a SaaS
 
 In the source tenant: Using this feature requires Microsoft Entra ID P1 licenses. Each user who is synchronized with cross-tenant synchronization must have a P1 license in their home/source tenant. To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
-In the target tenant: Cross-tenant sync relies on the Microsoft Entra External ID billing model. To understand the external identities licensing model, see [MAU billing model for Microsoft Entra External ID](~/external-id/external-identities-pricing.md). You will also need at least one Microsoft Entra ID P1 license in the target tenant to enable auto-redemption. 
+In the target tenant: Cross-tenant sync relies on the Microsoft Entra External ID billing model. To understand the external identities licensing model, see [MAU billing model for Microsoft Entra External ID](~/external-id/external-identities-pricing.md). You will also need at least one Microsoft Entra ID P1 license in the target tenant to enable auto-redemption.
 
 ## Frequently asked questions
 
@@ -125,8 +125,8 @@ In the target tenant: Cross-tenant sync relies on the Microsoft Entra External I
 
 Which clouds can cross-tenant synchronization be used in?
 
-- Cross-tenant synchronization is supported within the commercial cloud and Azure Government. 
-- Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet cloud. 
+- Cross-tenant synchronization is supported within the commercial cloud and Azure Government.
+- Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet cloud.
 - Synchronization is only supported between two tenants in the same cloud.
 - Cross-cloud (such as public cloud to Azure Government) isn't currently supported.
 
@@ -174,15 +174,14 @@ I have existing B2B collaboration users. What will happen to them?
 What user attributes can be synchronized?
 
 - Cross-tenant synchronization will sync commonly used attributes on the user object in Microsoft Entra ID, including (but not limited to) displayName, userPrincipalName, and directory extension attributes.
-- Cross-tenant synchronization supports provisioning the manager attribute in the commercial cloud (public preview). Manager synchronization is not yet supported in the US Government cloud. Both the user and their manager must be in scope for cross-tenant synchronization, in order to provision the manager attribute. 
+- Cross-tenant synchronization supports provisioning the manager attribute in the commercial cloud. Manager synchronization is not yet supported in the US Government cloud. Both the user and their manager must be in scope for cross-tenant synchronization, in order to provision the manager attribute.
   - For cross-tenant synchronization configurations created before January 2024 with the default schema / attribute mappings:
-    - The manager attribute will automatically be added to the attribute mappings. 
-    - Manager updates will apply on the incremental cycle for users that are undergoing changes (ex: manager change). The sync engine doesn’t automatically update all existing users that were provisioned previously. 
-    - To update the manager for existing users that are in scope for provisioning, you can use on-demand provisioning for specific users or do a restart to provision the manager for all users. 
+    - The manager attribute will automatically be added to the attribute mappings.
+    - Manager updates will apply on the incremental cycle for users that are undergoing changes (ex: manager change). The sync engine doesn't automatically update all existing users that were provisioned previously.
+    - To update the manager for existing users that are in scope for provisioning, you can use on-demand provisioning for specific users or do a restart to provision the manager for all users.
   - For cross-tenant synchronization configurations created before January 2024 with a custom schema / attribute mappings (ex: you added an attribute to the mappings or changed the default mappings):
     - You need to add the manager attribute to your attribute mappings. This will trigger a restart and update all users that are in scope for provisioning. This should be a direct mapping of the manager attribute in the source tenant to the manager in the target tenant.
   - If the manager of a user is removed in the source tenant and no new manager is assigned in the source tenant, the manager attribute will not be updated in the target tenant.
-
 
 What attributes can't be synchronized?
 
@@ -199,7 +198,7 @@ What happens if attributes for a synced user are changed in the target tenant?
 
 Can the target tenant manually block sign-in for a specific home/source tenant user that is synced?
 
-- If no changes are made to the synced user in the source tenant, then the block sign-in setting in the target tenant will persist. If a change is detected for the user in the source tenant, cross-tenant synchronization will re-enable that user blocked from sign-in in the target tenant.
+- If no changes are made to the synced user in the source tenant, then the block sign-in setting in the target tenant will persist. If a change is detected for the user in the source tenant, cross-tenant synchronization will reenable that user blocked from sign-in in the target tenant.
 
 #### Structure
 
@@ -211,11 +210,11 @@ Can I sync a mesh between multiple tenants?
 
 Can I use cross-tenant synchronization across organizations (outside my multitenant organization)?
 
--  For privacy reasons, cross-tenant synchronization is intended for use within an organization. We recommend using [entitlement management](~/id-governance/entitlement-management-overview.md) for inviting B2B collaboration users across organizations.
+- For privacy reasons, cross-tenant synchronization is intended for use within an organization. We recommend using [entitlement management](~/id-governance/entitlement-management-overview.md) for inviting B2B collaboration users across organizations.
 
 Can cross-tenant synchronization be used to migrate users from one tenant to another tenant?
 
--  No. Cross-tenant synchronization isn't a migration tool because the source tenant is required for synchronized users to authenticate. In addition, tenant migrations would require migrating user data such as SharePoint and OneDrive.
+- No. Cross-tenant synchronization isn't a migration tool because the source tenant is required for synchronized users to authenticate. In addition, tenant migrations would require migrating user data such as SharePoint and OneDrive.
 
 #### B2B collaboration
 
@@ -261,41 +260,40 @@ What federation options are supported for users in the target tenant back to the
 
 - For each internal user in the source tenant, cross-tenant synchronization creates a federated external user (commonly used in B2B) in the target. It supports syncing internal users. This includes internal users federated to other identity systems using domain federation (such as [Active Directory Federation Services](/windows-server/identity/ad-fs/ad-fs-overview)). It doesn't support syncing external users.
 
-Does cross-tenant synchronization use System for Cross-Domain Identity Management (SCIM)?
+Does cross-tenant synchronization use System for Cross-domain Identity Management (SCIM)?
 
 - No. Currently, Microsoft Entra ID supports a SCIM client, but not a SCIM server. For more information, see [SCIM synchronization with Microsoft Entra ID](~/architecture/sync-scim.md).
 
 #### Deprovisioning
 Does cross-tenant synchronization support deprovisioning users?
 
-- Yes, when the below actions occur in the source tenant, the user will be [soft deleted](~/architecture/recover-from-deletions.md#soft-deletions) in the target tenant. 
+- Yes, when the below actions occur in the source tenant, the user will be [soft deleted](~/architecture/recover-from-deletions.md#soft-deletions) in the target tenant.
 
   - Delete the user in the source tenant
   - Unassign the user from the cross-tenant synchronization configuration
   - Remove the user from a group that is assigned to the cross-tenant synchronization configuration
-  - An attribute on the user changes such that they do not meet the scoping filter conditions defined on the cross-tenant synchronization configuration anymore 
+  - An attribute on the user changes such that they do not meet the scoping filter conditions defined on the cross-tenant synchronization configuration anymore
 
 - If the user is blocked from sign-in in the source tenant (accountEnabled = false) they will be blocked from sign-in in the target. This is not a deletion, but an updated to the accountEnabled property.
 - Users are not soft deleted from the target tenant in this scenario:
-  1. Add a user to a group and assign it to the cross-tenant synchronization configuration in the source tenant. 
-  2. Provision the user on-demand or through the incremental cycle. 
+  1. Add a user to a group and assign it to the cross-tenant synchronization configuration in the source tenant.
+  2. Provision the user on-demand or through the incremental cycle.
   3. Update the account enabled status to false on the user in the source tenant.
-  4. Provision the user on-demand or through the incremental cycle. The account enabled status is changed to false in the target tenant.  
+  4. Provision the user on-demand or through the incremental cycle. The account enabled status is changed to false in the target tenant.
   5. Remove the user from the group in the source tenant.
 
-Does cross-tenant synchronization support restoring users? 
+Does cross-tenant synchronization support restoring users?
 
 - If the user in the source tenant is restored, reassigned to the app, meets the scoping condition again within 30 days of soft deletion, it will be restored in the target tenant.
 - IT admins can also manually [restore](~/fundamentals/users-restore.yml) the user directly in the target tenant.
 
-How can I deprovision all the users that are currently in scope of cross-tenant synchronization? 
+How can I deprovision all the users that are currently in scope of cross-tenant synchronization?
 
-- Unassign all users and / or groups from the cross-tenant synchronization configuration. This will trigger all the users that were unassigned, either directly or through group membership, to be deprovisioned in subsequent sync cycles. Please note that the target tenant will need to keep the inbound policy for sync enabled until deprovisioning is complete. If the scope is set to **Sync all users and groups**, you will also need to change it to **Sync only assigned users and groups**. The users will be automatically soft deleted by cross-tenant synchronization. The users will be automatically hard deleted after 30 days or you can choose to hard delete the users directly from the target tenant. You can choose to hard delete the users directly in the target tenant or wait 30 days for the users to be automatically hard deleted. 
+- Unassign all users or groups from the cross-tenant synchronization configuration. This will trigger all the users that were unassigned, either directly or through group membership, to be deprovisioned in subsequent sync cycles. Please note that the target tenant will need to keep the inbound policy for sync enabled until deprovisioning is complete. If the scope is set to **Sync all users and groups**, you will also need to change it to **Sync only assigned users and groups**. The users will be automatically soft deleted by cross-tenant synchronization. The users will be automatically hard deleted after 30 days or you can choose to hard delete the users directly from the target tenant. You can choose to hard delete the users directly in the target tenant or wait 30 days for the users to be automatically hard deleted.
 
 If the sync relationship is severed, are external users previously managed by cross-tenant synchronization deleted in the target tenant?
 
 - No. No changes are made to the external users previously managed by cross-tenant synchronization if the relationship is severed (for example, if the cross-tenant synchronization policy is deleted).
-
 
 ## Next steps
 

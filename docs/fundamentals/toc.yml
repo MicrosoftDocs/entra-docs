@@ -8,6 +8,8 @@ items:
     href: what-is-entra.md
   - name: What is Microsoft Entra ID?
     href: whatis.md
+  - name: Trial user guide for Microsoft Entra Suite
+    href: try-microsoft-entra-suite.md
   - name: New name for Azure AD
     href: new-name.md
   - name: Identity fundamentals
@@ -128,6 +130,8 @@ items:
     href: faq.yml
   - name: Company branding CSS template reference guide
     href: reference-company-branding-css-template.md
+  - name: Bulk operations
+    href: bulk-operations-service-limitations.md
   - name: Compliance
     expanded: false
     items:

@@ -272,6 +272,8 @@ items:
                   href: tutorial-native-authentication-ios-self-service-password-reset.md
                 - name: Support web fallback
                   href: tutorial-native-authentication-ios-support-web-fallback.md
+                - name: Call an API
+                  href: tutorial-native-authentication-ios-sign-in-call-api.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
@@ -290,8 +292,10 @@ items:
       href: overview-solutions-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
-    - name: Authentication methods and identity providers
+    - name: Identity providers
       href: concept-authentication-methods-customers.md
+    - name: Multifactor authentication (MFA)
+      href: concept-multifactor-authentication-customers.md
     - name: Native authentication
       items:
         - name: Native authentication
@@ -417,6 +421,10 @@ items:
         href: how-to-identity-protection-customers.md
       - name: Use application roles to manage access
         href: how-to-use-app-roles-customers.md
+      - name: Web Application Firewall partners
+        items: 
+        - name: Cloudflare
+          href: tutorial-configure-cloudflare-integration.md
     - name: Manage users
       items:
         - name: Manage admin accounts

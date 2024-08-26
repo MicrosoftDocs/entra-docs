@@ -69,7 +69,7 @@ If you want to manually configure your application and code sample, use the foll
    We recommend extracting the archive into a directory near the root of your drive to avoid errors caused by path length limitations on Windows.
 2. Open the solution in Visual Studio (*AppModelv2-WebApp-OpenIDConnect-DotNet.sln*).
 3. Depending on the version of Visual Studio, you might need to right-click the project **AppModelv2-WebApp-OpenIDConnect-DotNet** and then select **Restore NuGet packages**.
-4. Open the Package Manager Console by selecting **View** > **Other Windows** > **Package Manager Console**. Then run `Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r`.
+4. Open the Package Manager Console by selecting **View** > **Other Windows** > **Package Manager Console**. Then run `Update-Package`.
 
 5. Edit *appsettings.json* and replace the parameters `ClientId`, `Tenant`, and `redirectUri` with:
    ```json

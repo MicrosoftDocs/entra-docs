@@ -1,6 +1,6 @@
 ---
-title: PowerShell sample - Get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace. 
-description: PowerShell example that gets the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace. 
+title: PowerShell sample - Get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace or AWS Marketplace. 
+description: PowerShell example that gets the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace or AWS Marketplace. 
 author: kenwith
 manager: amycolannino
 ms.service: global-secure-access
@@ -10,15 +10,21 @@ ms.author: kenwith
 ms.reviewer: sumi
 ---
 
-# Get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace
+# Get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace or AWS Marketplace
 
-The PowerShell script helps you get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace. 
+The PowerShell script helps you get the Auth Token for registering your Microsoft Entra private network connector through [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftcorporation1687208452115.entraprivatenetworkconnector?tab=overview) or [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cgpbjiaphamuc). 
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
+
+## Important considerations
+- Run the PowerShell script as an Administrator from an elevated PowerShell ISE.
+- Don't run the script on a Windows computer where the private network connector is already installed. 
+- Make sure there is no C:\temp folder on the machine. If you have some files stored in a C:\temp folder, move them before you run the script.
+- After the script runs successfully, the Access Token is available at C:\token.txt.
 
 ## Sample script
 
@@ -132,6 +138,7 @@ Write-Output "Please ensure no additional spaces are introduced when copying tok
 Write-Output "---------------------------------------"
 
 # Set the prompt path to C:\
+
 cd "C:\"
 
 # Uninstall the Connector from your machine.

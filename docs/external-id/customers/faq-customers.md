@@ -38,7 +38,7 @@ No, External ID add-ons don't have a free tier. However, while the ID Governance
 
 ### Does External ID have phone authentication via SMS?
 
-Yes, this feature is currently available in workforce configurations. Once it is supported in external configurations, it will be offered as an add-on for External ID. We will release pricing details soon.
+Yes, this feature is now available in workforce and [external](concept-multifactor-authentication-customers.md) configurations.
 
 ## About External ID
 

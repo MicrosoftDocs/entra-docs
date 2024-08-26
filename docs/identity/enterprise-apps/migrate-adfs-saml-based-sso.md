@@ -1,6 +1,6 @@
 ---
 title: 'SAML-based single sign-on: Configuration and Limitations'
-description: This article explains how to configure an application for SAML-based SSO with Microsoft Entra ID, including user mapping, limitations, SAML signing certificates, token encryption, request signature verification, and custom claims providers.
+description: Learn concepts around configuring SAML-based SSO with Microsoft Entra ID such as user mapping, limitations, SAML certificates, token encryption, signature verification, and custom claims.
 
 author: omondiatieno
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 05/31/2023
+ms.date: 08/20/2024
 ms.author: jomondi
 ms.reviewer: gasinh
 
@@ -16,17 +16,19 @@ ms.reviewer: gasinh
 ---
 # SAML-based single sign-on: Configuration and Limitations
 
-In this article, you learn how to configure an application for SAML-based single sign-on (SSO) with Microsoft Entra ID. This article covers mapping users to specific application roles based on rules, and limitations to keep in mind when mapping attributes. It also covers SAML signing certificates, SAML token encryption, SAML request signature verification, and custom claims providers.
+In this article, you learn how to configure an application for SAML-based single sign-on (SSO) with Microsoft Entra ID. If focuses on configuring SAML SSO for apps that are migrated from Active Directory Federation Services (ADFS) to Microsoft Entra ID.
+
+The concepts covered include mapping users to specific application roles based on rules, and limitations to keep in mind when mapping attributes. It also covers SAML signing certificates, SAML token encryption, SAML request signature verification, and custom claims providers.
 
 Apps that use SAML 2.0 for authentication can be configured for [SAML-based single sign-on (SSO)](what-is-single-sign-on.md). With SAML-based SSO, you can map users to specific application roles based on rules that you define in your SAML claims.
 
 To configure a SaaS application for SAML-based SSO, see [Quickstart: Set up SAML-based single sign-on](add-application-portal-setup-sso.md).
 
-:::image type="content" source="media/migrate-adfs-saml-based-sso/sso-saml-user-attributes-claims.png" alt-text="Screenshot of the SAML SSO settings blade.":::
+:::image type="content" source="media/migrate-adfs-saml-based-sso/sso-saml-user-attributes-claims.png" alt-text="Screenshot of the SAML SSO settings pane.":::
 
 Many SaaS applications have an [application-specific tutorial](~/identity/saas-apps/tutorial-list.md) that steps you through the configuration for SAML-based SSO.
 
-Some apps can be migrated easily. Apps with more complex requirements, such as custom claims, may require extra configuration in Microsoft Entra ID and/or [Microsoft Entra Connect Health](~/identity/hybrid/connect/whatis-azure-ad-connect.md). For information about supported claims mappings, see [How to: Customize claims emitted in tokens for a specific app in a tenant (Preview)](~/identity-platform/saml-claims-customization.md).
+Some apps can be migrated easily. Apps with more complex requirements, such as custom claims, might require extra configuration in Microsoft Entra ID and/or [Microsoft Entra Connect Health](~/identity/hybrid/connect/whatis-azure-ad-connect.md). For information about supported claims mappings, see [How to: Customize claims emitted in tokens for a specific app in a tenant (Preview)](~/identity-platform/saml-claims-customization.md).
 
 Keep in mind the following limitations when mapping attributes:
 
@@ -43,11 +45,9 @@ Most SaaS applications can be configured in Microsoft Entra ID. Microsoft has ma
 
 Apps that use OAuth 2.0 or OpenID Connect can be similarly integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Apps that use legacy protocols can use [Microsoft Entra application proxy](/entra/identity/app-proxy) to authenticate with Microsoft Entra ID.
 
-For any issues with onboarding your SaaS apps, you can contact the [SaaS Application Integration support alias](mailto:SaaSApplicationIntegrations@service.microsoft.com).
-
 ## SAML signing certificates for SSO
 
-Signing certificates are an important part of any SSO deployment. Microsoft Entra ID creates the signing certificates to establish SAML-based federated SSO to your SaaS applications. Once you add either gallery or non-gallery applications, you'll configure the added application using the federated SSO option. See [Manage certificates for federated single sign-on in Microsoft Entra ID](./tutorial-manage-certificates-for-federated-single-sign-on.md).
+Signing certificates are an important part of any SSO deployment. Microsoft Entra ID creates the signing certificates to establish SAML-based federated SSO to your SaaS applications. Once you add either gallery or non-gallery applications, you configure the added application using the federated SSO option. See [Manage certificates for federated single sign-on in Microsoft Entra ID](./tutorial-manage-certificates-for-federated-single-sign-on.md).
 
 ## SAML token encryption
 
@@ -79,7 +79,7 @@ Apps that you can move easily today include SAML 2.0 apps that use the standard 
 
 The following require more configuration steps to migrate to Microsoft Entra ID:
 
-* Custom authorization or multi-factor authentication (MFA) rules in AD FS. You configure them using the [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) feature.
+* Custom authorization or multifactor authentication (MFA) rules in AD FS. You configure them using the [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) feature.
 * Apps with multiple Reply URL endpoints. You configure them in Microsoft Entra ID using PowerShell or the Microsoft Entra admin center interface.
 * WS-Federation apps such as SharePoint apps that require SAML version 1.1 tokens. You can configure them manually using PowerShell. You can also add a preintegrated generic template for SharePoint and SAML 1.1 applications from the gallery. We support the SAML 2.0 protocol.
 * Complex claims issuance transforms rules. For information about supported claims mappings, see:
@@ -115,11 +115,11 @@ The following table describes some of the most common mapping of settings betwee
 | Configuration setting| AD FS| How to configure in Microsoft Entra ID| SAML Token |
 | - | - | - | - |
 | **App sign-on URL** <p> The URL for the user to sign in to the app in a SAML flow initiated by a Service Provider (SP).| N/A| Open Basic SAML Configuration from SAML based sign-on| N/A |
-| **App reply URL** <p> The URL of the app from the perspective of the identity provider (IdP). The IdP sends the user and token here after the user has signed in to the IdP. This is also known as **SAML assertion consumer endpoint**.| Select the **Endpoints** tab| Open Basic SAML Configuration from SAML based sign-on| Destination element in the SAML token. Example value: `https://contoso.my.salesforce.com` |
-| **App sign-out URL** <p> This is the URL to which sign-out cleanup requests are sent when a user signs out from an app. The IdP sends the request to sign out the user from all other apps as well.| Select the **Endpoints** tab| Open Basic SAML Configuration from SAML based sign-on| N/A |
-| **App identifier** <p> This is the app identifier from the IdP's perspective. The sign-on URL value is often used for the identifier (but not always). Sometimes the app calls this the *entity ID.* | Select the **Identifiers** tab|Open Basic SAML Configuration from SAML based sign-on| Maps to the **Audience** element in the SAML token. |
-| **App federation metadata** <p> This is the location of the app's federation metadata. The IdP uses it to automatically update specific configuration settings, such as endpoints or encryption certificates.| Select the **Monitoring** tab| N/A. Microsoft Entra ID doesn't support consuming application federation metadata directly. You can manually import the federation metadata.| N/A |
-| **User Identifier/ Name ID** <p> Attribute that is used to uniquely indicate the user identity from Microsoft Entra ID or AD FS to your app. This attribute is typically either the UPN or the email address of the user.| Claim rules. In most cases, the claim rule issues a claim with a type that ends with the **NameIdentifier**.| You can find the identifier under the header **User Attributes and Claims**. By default, the UPN is used| Maps to the **NameID** element in the SAML token. |
+| **App reply URL** <p> The URL of the app from the perspective of the identity provider (IdP). The IdP sends the user and token here after the user signs in to the IdP. Also known as **SAML assertion consumer endpoint**.| Select the **Endpoints** tab| Open Basic SAML Configuration from SAML based sign-on| Destination element in the SAML token. Example value: `https://contoso.my.salesforce.com` |
+| **App sign-out URL** <p> The URL to which sign-out cleanup requests are sent when a user signs out from an app. The IdP sends the request to sign out the user from all other apps as well.| Select the **Endpoints** tab| Open Basic SAML Configuration from SAML based sign-on| N/A |
+| **App identifier** <p> The app identifier from the IdP's perspective. The sign-on URL value is often used for the identifier (but not always). Sometimes the app calls it the *entity ID.* | Select the **Identifiers** tab|Open Basic SAML Configuration from SAML based sign-on| Maps to the **Audience** element in the SAML token. |
+| **App federation metadata** <p> The location of the app's federation metadata. The IdP uses it to automatically update specific configuration settings, such as endpoints or encryption certificates.| Select the **Monitoring** tab| N/A. Microsoft Entra ID doesn't support consuming application federation metadata directly. You can manually import the federation metadata.| N/A |
+| **User Identifier/ Name ID** <p> Attribute that is used to uniquely indicate the user identity from Microsoft Entra ID or AD FS to your app. This attribute is typically either the UPN or the email address of the user.| Claim rules. In most cases, the claim rule issues a claim with a type that ends with the **NameIdentifier**.| You can find the identifier under the header **User Attributes and Claims**. By default, the UPN is applied| Maps to the **NameID** element in the SAML token. |
 | **Other claims** <p> Examples of other claim information that is commonly sent from the IdP to the app include first name, last name, email address, and group membership.| In AD FS, you can find this as other claim rules on the relying party.| You can find the identifier under the header **User Attributes & Claims**. Select **View** and edit all other user attributes.| N/A |
 
 ### Map Identity Provider (IdP) settings

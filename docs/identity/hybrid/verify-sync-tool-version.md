@@ -17,12 +17,12 @@ ms.author: billmath
 This article describes the steps to verify the installed version of the provisioning agent and connect sync.
 
 ## Verify the provisioning agent
-To see what version of the provisioning agent your using, use the following steps:
+To see what version of the provisioning agent you're using, use the following steps:
 
 [!INCLUDE [active-directory-cloud-sync-how-to-verify-installation](~/includes/entra-cloud-sync-how-to-verify-installation.md)]
 
 ## Verify connect sync
-To see what version of connect sync your using, use the following steps:
+To see what version of connect sync you're using, use the following steps:
 
 ### On the local server
 
@@ -35,7 +35,7 @@ To verify that the agent is running, follow these steps:
 
 ### Verify the connect sync version
 
-To verify that the version of the agent running, follow these steps:
+To verify the version of the agent that is running, follow these steps:
 
 1.  Navigate to 'C:\Program Files\Microsoft Azure AD Connect'
 2.  Right-click on **AzureADConnect.exe** and select **properties**.
