@@ -107,7 +107,7 @@ Domain Services provides the following guidance for recovery timespans for diffe
 
 | Issues | RPO | RTO |
 |--------|-----|-----|
-| Issues caused by data loss or corruption to Domain Services domain controllers, dependent services, an exploit that compromised the domains, or other incident that requires restoring a domain controller.  | Five days before the occurrence of the event | Two hours to four days, depending on tenant size |
+| Issues caused by data loss or corruption to Domain Services domain controllers, dependent services, an exploit that compromised the domain, or other incident that requires restoring a domain controller.  | Five days before the occurrence of the event | Two hours to four days, depending on tenant size |
 | Issues identified by our domain diagnostics. | Zero (0 minutes) | Two hours to four days, depending on tenant size |
 
 
