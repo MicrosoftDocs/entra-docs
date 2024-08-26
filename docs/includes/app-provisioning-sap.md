@@ -60,13 +60,13 @@ If you have already downloaded the provisioning agent and configured it for anot
  
 ## 2. Expose the necessary SAP APIs
 
-Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) file named `Deploying SAP NetWeaver AS ABAP 7.pdf` walks through how you can expose the necessary APIs.
+Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Deploy SAP NetWeaver AS ABAP 7.51](/entra/id-governance/scenarios/deploy-sap-netweaver.md) document walks through how you can expose the necessary APIs.
 
 ## 3. Create a web services connector template
 
 If you are not migrating from an existing Web Services Connector in MIM, then you will need to create a web services connector template for the ECMA host. If you already have a web services connector template from MIM, then continue at the next section.
 
-You can use the [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) guide `Authoring SAP ECC 7 Template for ECMA2Host.pdf` as a reference to build your template. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) also provides a template `sapecc.wsconfig` as a reference. Before deploying in production, you will need to customize the template to meet the needs of your specific environment. Make sure that the **ServiceName**, **EndpointName**, and the **OperationName** are correct.
+You can use the [Authoring the SAP ECC 7.51 Web Service connector template for the ECMA2Host](/entra/id-governance/scenarios/sap-template.md) document as a reference to build your template. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) also provides a template `sapecc.wsconfig` as a reference. Before deploying in production, you will need to customize the template to meet the needs of your specific environment. Make sure that the **ServiceName**, **EndpointName**, and the **OperationName** are correct.
 
 ## 4. Configure the On-premises ECMA app
 
