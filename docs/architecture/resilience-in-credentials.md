@@ -34,7 +34,13 @@ Because authentication methods have different dependencies, it's a good idea to 
 
 For second factors, the Microsoft Authenticator app or other authenticator apps using time-based one time passcode (TOTP) or OAuth hardware tokens have the fewest dependencies and are, therefore, more resilient.
 
-
+## Additional Detail on External (Non-Entra) Dependencies
+|Authentication Method|External (Non-Entra) Dependency|More Information|
+|---------------------|-------------------------------|---|
+|Certificate Based Authentication (CBA)|In most cases (depending on configuration) CBA will require a revocation check. This adds an external dependency on the CRL distribution point (CDP) |[Understanding the certificate revocation process](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#understanding-the-certificate-revocation-process.md)
+|Pass Through Authentication (PTA)|PTA uses on-premise agents to process the password authentication.|[How does Microsoft Entra pass-through authentication work?](~/entra/identity/hybrid/connect/how-to-connect-pta-how-it-works#how-does-microsoft-entra-pass-through-authentication-work.md)
+|Federation| Federation server(s) must be online and available to process the authentication attempt|[High availability cross-geographic AD FS deployment in Azure with Azure Traffic Manager](..\..\windows-server/identity/ad-fs/deployment/active-directory-adfs-in-azure-with-azure-traffic-manager.md)
+|External Authentication Methods (EAM)| EAM provides a path for customers to use external MFA providers.|[Manage an external authentication method in Microsoft Entra ID (Preview)](~/identity/authentication/how-to-authentication-external-method-manage.md)
 
 ## How do multiple credentials help resilience?
 
