@@ -67,7 +67,7 @@ If you want to increase the security of the user sign-in experience, you can opt
 
 To provide this capability, a Network Policy Server (NPS) is installed in your environment along with the Microsoft Entra multifactor authentication NPS extension. This extension integrates with Microsoft Entra ID to request and return the status of multifactor authentication prompts.
 
-Users must be [registered to use Microsoft Entra multifactor authentication][user-mfa-registration], which may require other Microsoft Entra ID licenses. For more information, see 
+Users must be [registered to use Microsoft Entra multifactor authentication][user-mfa-registration], which may require other Microsoft Entra ID licenses. For more information, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
 To integrate Microsoft Entra multifactor authentication in to your Remote Desktop environment, create an NPS Server and install the extension:
 
