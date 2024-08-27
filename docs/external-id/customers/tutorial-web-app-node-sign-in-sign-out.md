@@ -10,7 +10,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 06/27/2024
+ms.date: 08/27/2024
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
 ---
