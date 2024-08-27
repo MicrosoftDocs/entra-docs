@@ -427,6 +427,17 @@ The screenshot below shows the configuration page and settings for enabling Secu
 
 :::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin centre showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
 
+### Recognize app incompatibilities with Secure Enclave based device identity
+After enabling Secure Enclave based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
+
+:::image type="content" source="./media/apple-sso-plugin/device-mgmt-reqd.png" alt-text="Screenshot of a Conditional Access error message informing the user that the device must be managed before this resource can be accessed." lightbox="./media/apple-sso-plugin/device-mgmt-reqd.png":::
+
+This error will appear in Microsoft Entra ID sign-in logs with the following details: 
+- **Sign-in error code:** `530003`
+- **Failure reason:** `Device is required to be managed to access this resource.`
+
+If you see this error message during testing, first, ensure you have successfully enabled the SSO extension as well as have installed any requisite application-specific extensions (e.g., [Microsoft Single Sign On for Chrome](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji)). If you continue to see this message, it is recommended that you contact the vendor of the application to alert them to the incompatibility with the new storage location. 
+
 ### Scenarios impacted
 The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
 
