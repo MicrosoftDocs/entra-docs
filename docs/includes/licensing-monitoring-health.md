@@ -5,7 +5,7 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.topic: include
-ms.date: 01/17/2024
+ms.date: 08/27/2024
 ms.author: barclayn
 ms.custom: include file,licensing
 ---
@@ -16,6 +16,7 @@ The required roles and licenses vary based on the report. Separate permissions a
 |--|--|--|
 | Audit | [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)<br>[Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)<br>[Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader)<br>| All editions of Microsoft Entra ID |
 | Sign-ins | [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)<br>[Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)<br>[Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader)<br> | All editions of Microsoft Entra ID |
+| Sign-ups | [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)<br>[Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)<br>[Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader)<br> | Microsoft Entra External ID |
 | Provisioning | [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)<br>[Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)<br>[Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader)<br>[Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator)<br>[Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator)<br>[Cloud App Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)<br> | Microsoft Entra ID P1 or P2 |
 | Custom security attribute audit logs* | [Attribute Log Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator)<br>[Attribute Log Reader](../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) | All editions of Microsoft Entra ID |
 | Usage and insights | [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)<br>[Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) | Microsoft Entra ID P1 or P2 |

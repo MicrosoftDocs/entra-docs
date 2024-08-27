@@ -1,36 +1,46 @@
 ---
-title: Sign-in logs in Microsoft Entra ID
-description: Learn about the different types of sign-in logs that are available in Microsoft Entra monitoring and health.
-author: shlipsey3
-manager: amycolannino
+title: Sign-up logs in Microsoft Entra External ID
+description: Learn about the sign-up logs that are available in Microsoft Entra External ID monitoring and health.
+author: msmimart
+manager: celestedg
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
 ms.date: 03/01/2024
-ms.author: sarahlipsey
-ms.reviewer: egreenberg14
+ms.author: mimart
+ms.reviewer: celested
 
-# Customer intent: As an IT admin, I need to know what information is available in the sign-in logs so that I can use the logs to monitor the health of my tenant and troubleshoot issues.
+# Customer intent: As an IT admin for an external tenant, I need to know what information is available in the sign-up logs so that I can use the logs to monitor all sign-up attempts and troubleshoot issues.
 ---
-# What are Microsoft Entra sign-in logs?
+# What are External ID sign-up logs?
 
-Microsoft Entra logs all sign-ins into an Azure tenant, which includes your internal apps and resources. As an IT administrator, you need to know what the values in the sign-in logs mean, so that you can interpret the log values correctly.
+Microsoft Entra External ID logs all self-service sign-up events, including both successful sign-ups and failed attempts. The logs include information that helps IT admins uncover valuable insights such as:
 
-Reviewing sign-in errors and patterns provides valuable insight into how your users access applications and services. The sign-in logs provided by Microsoft Entra ID are a powerful type of [activity log](overview-monitoring-health.md) that you can analyze. This article explains how to access and utilize the sign-in logs.
+- The percentage of sign-up attempts that result in account creation.
+- The stage in the sign-up process with the highest drop-off rate.
+- How drop-off rates compare between social sign-ups and local account sign-ups.
+- The percentage of sign-ups blocked by risk evaluation or CAPTCHA (note: this feature is not yet supported, and risk evaluation/mitigation steps must be added to sign-up logs).
+ 
+Using this information, organizations can optimize their sign-up processes, enhance user experience, and improve overall customer engagement. The sign-up logs provided by Microsoft Entra External ID are a powerful type of [activity log](overview-monitoring-health.md) that you can analyze.
 
-The preview view of the sign-in logs includes interactive and non-interactive user sign-ins as well as service principal and managed identity sign-ins. You can still view the classic sign-in logs, which only include interactive sign-ins.
+This article explains how to access and use the sign-up logs. In addition to the External ID sign-up logs, three other activity logs are also available to help monitor the health of your external tenant:
 
-Two other activity logs are also available to help monitor the health of your tenant:
-
+- **[Sign-ins](concept-sign-ins.md)** – Information about sign-ins and how your resources are used by your users.
 - **[Audit](concept-audit-logs.md)** – Information about changes applied to your tenant, such as users and group management or updates applied to your tenant’s resources.
-- **[Sign-ups](concept-sign-ups.md)** - For [external tenants](../../external-id/tenant-configurations.md) only, information about all self-service sign-up attempts, including successful sign-ups and failed attempts.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by a provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
 
 ## License and role requirements
 
-[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
+The following roles and licenses are required for self-service sign-up logs:
 
-## What can you do with sign-in logs?
+- [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)
+- [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)
+- [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)
+- [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader)
+
+Separate permissions are required to access monitoring and health data in [Microsoft Graph](/graph/permissions-overview). We recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
+
+## What can you do with sign-up logs?
 
 You can use the sign-in logs to answer questions such as:
 

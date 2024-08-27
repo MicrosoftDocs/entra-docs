@@ -23,6 +23,8 @@ items:
       href: concept-sign-ins.md
     - name: Sign-in log activity details
       href: concept-sign-in-log-activity-details.md
+    - name: Sign-up logs
+      href: concept-sign-ups.md
     - name: Provisioning logs
       href: concept-provisioning-logs.md
     - name: Microsoft Graph activity logs

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 03/08/2024
+ms.date: 08/27/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -18,9 +18,10 @@ ms.reviewer: egreenberg14
 
 Microsoft Entra activity logs include audit logs, which is a comprehensive report on every logged event in Microsoft Entra ID. Changes to applications, groups, users, and licenses are all captured in the Microsoft Entra audit logs.
 
-Two other activity logs are also available to help monitor the health of your tenant:
+Three other activity logs are also available to help monitor the health of your tenant:
 
 - **[Sign-ins](concept-sign-ins.md)** – Information about sign-ins and how your resources are used by your users.
+- **[Sign-ups](concept-sign-ups.md)** - For [external tenants](../../external-id/tenant-configurations.md) only, information about all self-service sign-up attempts, including successful sign-ups and failed attempts.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by the provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
 
 This article gives you an overview of the audit logs, including what's required to access them and what information they provide.
