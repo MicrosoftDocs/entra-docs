@@ -4,7 +4,7 @@ description: This is a reference guide on best practices when securing custom ex
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
-ms.topic: best-practice #Required; leave this attribute/value as-is
+ms.topic: best-practice
 ms.date: 08/14/2024
 
 #CustomerIntent: As an administrator I want to learn the best practices for securing custom extension extensibility to Azure Logic Apps.
@@ -48,7 +48,7 @@ If you created a Logic App via the Microsoft Entra ID Governance custom extensio
 The management of secrets, credentials, certificates, and keys used to secure communication between services is a common challenge and [managed identities](../identity/managed-identities-azure-resources/overview.md) eliminate the need to manage these credentials. If you're leveraging the custom extension ‘*launch and wait*’ pattern([entitlement management reference](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes); [Lifecycle Workflow reference](lifecycle-workflow-extensibility.md#custom-task-extension-deployment-scenarios)), we highly recommend you enable the Azure Logic Apps managed identity to authenticate the resume calls([taskProcessingResult: resume](/graph/api/identitygovernance-taskprocessingresult-resume); [accessPackageAssignmentRequest: resume](/graph/api/accesspackageassignmentrequest-resume)) to Microsoft Entra ID Governance. If your scenario requires the Logic App to call other Microsoft Graph endpoints, or even other Microsoft Entra integrated services, you can also use the managed identity to authenticate calls against these services.
 
 
-**Entitlement Management**: You will have to enable the managed identity yourself. For information on this process, see: [Enable system-assigned identity in the Azure portal](/azure/logic-apps/authenticate-with-managed-identity?tabs=consumption#enable-system-assigned-identity-in-the-azure-portal) and then [authorize it](custom-extension-security.md#authorize-with-least-privileged-permissions).
+**Entitlement Management**: You will have to enable the managed identity yourself. For information on this process, see: [Enable system-assigned identity in the Azure portal](/azure/logic-apps/authenticate-with-managed-identity?tabs=consumption#enable-system-assigned-identity-in-the-azure-portal) and then [authorize it](custom-extension-security.md#assigning-least-privileged-permissions-with-entitlement-management).
 
 **Lifecycle Workflows**: The managed identity is automatically enabled and authorized for ‘*launch and wait*’ custom extensions. If your Logic App needs to call other services, you can use and authorize the same managed identity. For ‘*launch and continue*’ custom extensions, you will have to enable the managed identity yourself.
 
@@ -110,37 +110,13 @@ For a subset of Entitlement Management custom extensions, you can use the ‘Upd
 1. On the catalog overview page, select **Custom extensions**.
 
 1. On the custom extensions page find a custom extension whose token security says *Regular* and select the 3 lines next to it.
-
+    :::image type="content" source="media/custom-extension-security/update-to-new-type.png" alt-text="Screenshot of the update to new type of token security.":::
 1. Select **Update to new extension type**.  
 
 > [!NOTE]
 > If the update function fails, a new custom extension must be created and configured in the corresponding access package assignment policies.
-> 
-
-<!-- 5. Next step/Related content------------------------------------------------------------------------
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
-
--->
-
-## Next step
-
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
 
 ## Related content
 
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
-
+- [Lifecycle Workflows custom task extension](lifecycle-workflow-extensibility.md)
+- [Trigger Logic Apps with custom extensions in entitlement management](entitlement-management-logic-apps-integration.md)
