@@ -26,7 +26,7 @@ This article introduces an administrator for Microsoft Entra ID, part of Microso
 
 You can use groups in Microsoft Entra ID to assign licenses, or deployed enterprise apps, to large numbers of users. You can also use groups to assign all administrator roles except for Microsoft Entra Global Administrator, or you can grant access to external resources, such as SaaS applications or SharePoint sites.
 
-You can use [dynamic membership groups](groups-create-rule.md) in Microsoft Entra ID to expand and contract dynamic membership groups automatically. Dynamic groups give you greater flexibility and they reduce dynamic membership groups management work. 
+You can use [dynamic membership groups](groups-create-rule.md) in Microsoft Entra ID to expand and contract dynamic membership groups automatically. Dynamic groups give you greater flexibility and they reduce dynamic membership group management work. 
 
 > [!NOTE]
 > You need a Microsoft Entra ID P1 license for each unique user that is a member of one or more dynamic membership groups.

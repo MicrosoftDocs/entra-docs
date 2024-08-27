@@ -15,7 +15,9 @@ ms.custom: it-pro
 
 # Manage rules for dynamic membership groups in Microsoft Entra ID
 
-You can create user or device attribute-based rules to enable membership for dynamic membership groups in Microsoft Entra ID, part of Microsoft Entra. You can add and remove dynamic membership groups automatically using membership rules based on member attributes. This article details the properties and syntax to create rules for dynamic membership groups based on users or devices. 
+You can create user or device attribute-based rules to enable membership for dynamic membership groups in Microsoft Entra ID, part of Microsoft Entra. You can add and remove dynamic membership groups automatically using membership rules based on member attributes. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
+
+This article details the properties and syntax to create rules for dynamic membership groups based on users or devices. 
 
 > [!NOTE]
 > Security groups can be used for either devices or users, but Microsoft 365 groups can include only users. 
@@ -26,7 +28,7 @@ When the attributes of a user or a device change, the system evaluates all rules
 
 > [!NOTE]
 > This feature requires a Microsoft Entra ID P1 license or Intune for Education for each unique user that is a member of one or more dynamic membership groups. You don't have to assign licenses to users for them to be members of dynamic membership groups, but you must have the minimum number of licenses in the Microsoft Entra organization to cover all such users. For example, if you had a total of 1,000 unique users in all dynamic membership groups in your organization, you would need at least 1,000 licenses for Microsoft Entra ID P1 to meet the license requirement.
-> No license is required for devices that are members of a dynamic membership groups based on a device.
+> No license is required for devices that are members of a dynamic membership group based on a device.
 
 ## Rule builder in the Azure portal
 
@@ -463,4 +465,4 @@ These articles provide additional information on groups in Microsoft Entra ID.
 - [Create a new group and adding members](~/fundamentals/how-to-manage-groups.yml)
 - [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage rules for dynamic membership groups based on users](groups-create-rule.md)
+- [Manage rules for dynamic membership groups for users](groups-create-rule.md)

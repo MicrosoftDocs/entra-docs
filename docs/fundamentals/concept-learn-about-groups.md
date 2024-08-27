@@ -52,9 +52,9 @@ This option also lets you give people outside of your organization access to the
 
 ### Membership types:
 
-- **Assigned:** Lets you add specific users as members of a group and have unique permissions.
-- **Dynamic user:** Lets you use rules for dynamic membership groups to automatically add and remove members. If a member's attributes change, the system looks at your rules for dynamic membership groups for the directory to see whether the member meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
-- **Dynamic device:** Lets you use rules for dynamic membership groups to automatically add and remove devices. If a device's attributes change, the system looks at your rules for dynamic membership groups for the directory to see whether the device meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
+- **Assigned groups:** Lets you add specific users as members of a group and have unique permissions.
+- **Dynamic membership group for users:** Lets you use rules for users to automatically add and remove users as members. If a member's attributes change, the system looks at your rules for dynamic membership groups for the directory to see whether the member meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
+- **Dynamic membership group for devices:** Lets you use rules for devices to automatically add and remove devices as members. If a device's attributes change, the system looks at your rules for dynamic membership groups for the directory to see whether the device meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
 
     > [!IMPORTANT]
     > You can create a dynamic group for either devices or users, but not for both. You can't create a device group based on the device owners' attributes. Device membership rules can only reference device attributions. For more info about creating a dynamic group for users and devices, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md).

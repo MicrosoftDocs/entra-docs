@@ -60,17 +60,17 @@ Follow these steps to create administrative units with rules for dynamic members
 
 1. Select **Add dynamic query**.
 
-1. Use the rule builder to specify the dynamic membership groups rule. For more information, see [Rule builder in the Azure portal](~/identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
+1. Use the rule builder to specify the rule for dynamic membership groups. For more information, see [Rule builder in the Azure portal](~/identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
 
     ![Screenshot of Dynamic membership rules page showing rule builder with property, operator, and value.](./media/admin-units-members-dynamic/dynamic-membership-rules-builder.png)
 
-1. When finished, select **Save** to save the dynamic membership groups rule.
+1. When finished, select **Save** to save the rule for dynamic membership groups.
 
 1. On the **Properties** page, select **Save** to save the membership type and query.
 
     The following message is displayed:
 
-    After changing the administrative unit type, the existing membership might change based on the dynamic membership groups rule you provide.
+    After changing the administrative unit type, the existing membership might change based on the rule for dynamic membership groups that you provide.
 
 1. Select **Yes** to continue.
 
@@ -86,7 +86,7 @@ For steps on how to edit your rule, see the following [Edit rules for dynamic me
     Connect-MgGraph -Scopes "AdministrativeUnit.ReadWrite.All"
     ```
 
-1. Use the [New-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunit) command to create a new administrative unit with a dynamic membership groups rule using the following parameters:
+1. Use the [New-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunit) command to create a new administrative unit with a rule for dynamic membership groups using the following parameters:
 
     - `MembershipType`: `Dynamic` or `Assigned`
     - `MembershipRule`: Dynamic membership rule you created in a previous step
@@ -107,11 +107,11 @@ For steps on how to edit your rule, see the following [Edit rules for dynamic me
 
 ### Microsoft Graph API
 
-1. Create a dynamic membership groups rule. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
+1. Create a rule for dynamic membership groups. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
-1. Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true) API to create a new administrative unit with a dynamic membership groups rule.
+1. Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true) API to create a new administrative unit with a rule for dynamic membership groups.
 
-    The following shows an example of a dynamic membership groups rule that applies to Windows devices.
+    The following shows an example of a rule for dynamic membership groups that applies to Windows devices.
 
     Request
 
@@ -156,7 +156,7 @@ When an administrative unit has been configured for dynamic membership groups, t
 Use the [Update-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryadministrativeunit) command to edit the dynamic membership groups rule.
 
 ```powershell
-# Set a new dynamic membership groups rule for an administrative unit
+# Set a new rules for dynamic membership groups for an administrative unit
 $adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayName eq 'Example Admin Unit'"
 $params = @{
    membershipRule = "(user.country -eq 'Germany')"
@@ -167,7 +167,7 @@ Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnit.Id -BodyPa
 
 ### Microsoft Graph API
 
-Use the [Update administrativeUnit](/graph/api/administrativeunit-update?view=graph-rest-beta&preserve-view=true) API to edit the dynamic membership groups rule.
+Use the [Update administrativeUnit](/graph/api/administrativeunit-update?view=graph-rest-beta&preserve-view=true) API to edit the rule for dynamic membership groups.
 
 Request
 
@@ -213,7 +213,7 @@ Follow these steps to change an administrative unit with rules for dynamic membe
 
 ### PowerShell
 
-Use the [Update-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryadministrativeunit) command to edit the dynamic membership groups rule.
+Use the [Update-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryadministrativeunit) command to edit the rule for dynamic membership groups.
 
 ```powershell
 # Change an administrative unit to assigned

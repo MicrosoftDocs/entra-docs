@@ -107,7 +107,7 @@ When the provisioning service is started, the first cycle will:
 
 7. Persist a watermark at the end of the initial cycle, which provides the starting point for the later incremental cycles.
 
-Some applications such as ServiceNow, G Suite, and Box support not only provisioning users, but also provisioning groups and their members. In those cases, if group provisioning is enabled in the [mappings](customize-application-attributes.md), the provisioning service synchronizes the users and the groups, and then later synchronizes the dynamic membership groups.
+Some applications such as ServiceNow, G Suite, and Box support not only provisioning users, but also provisioning groups and their members. In those cases, if group provisioning is enabled in the [mappings](customize-application-attributes.md), the provisioning service synchronizes the users and the groups, and then later synchronizes the dynamic membership group.
 
 ### Incremental cycles
 

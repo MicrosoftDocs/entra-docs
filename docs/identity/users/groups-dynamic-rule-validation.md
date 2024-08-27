@@ -1,5 +1,5 @@
 ---
-title: Validate rules for dynamic membership groups membership (preview)
+title: Validate rules for dynamic membership groups membership (Preview)
 description: How to test members against a rule for a dynamic membership groups in Microsoft Entra ID.
 
 author: barclayn
@@ -13,7 +13,7 @@ ms.reviewer: yukarppa
 ms.custom: it-pro
 ---
 
-# Validate rules for dynamic membership groups in Microsoft Entra ID (preview) 
+# Validate rules for dynamic membership groups in Microsoft Entra ID (Preview) 
 
 Microsoft Entra ID provides the means to validate rules for dynamic membership groups (in public preview). On the **Validate rules** tab, you can validate that rule against sample group members to confirm the rule is working as expected. When you create or update rules for dynamic membership groups, you want to know whether a user or a device is a member of the group. This knowledge helps you evaluate whether a user or device meets the rule criteria and help you troubleshoot when membership isn't expected.
 
@@ -49,4 +49,4 @@ To get started, sign in to the [Microsoft Entra admin center](https://entra.micr
 
 ## Next steps
 
-- [Rulues for dynamic membership groups](groups-dynamic-membership.md)
+- [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

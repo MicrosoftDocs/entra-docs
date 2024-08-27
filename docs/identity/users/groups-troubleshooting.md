@@ -53,7 +53,7 @@ If you receive a message in PowerShell indicating *Dynamic group policies max al
 
 To create any new Dynamic groups, you'll first need to delete some existing Dynamic groups. There's no way to increase the limit.
 
-## Troubleshooting dynamic membership groups
+## Troubleshoot dynamic membership groups
 
 **I configured a rule on a group but no memberships get updated in the group**  
 1. Verify the values for user or device attributes in the rule. Ensure there are users that satisfy the rule.
@@ -72,7 +72,7 @@ Dedicated membership evaluation is done periodically in an asynchronous backgrou
 Currently, there's no way to automatically trigger the group to be processed on demand. However, you can manually trigger the reprocessing by updating the membership rule to add a whitespace at the end.
 
 **I encountered a rule processing error**  
-The following table lists common dynamic membership group rule errors and how to correct them.
+The following table lists common rule errors for dynamic membership groups and how to correct them.
 
 | Rule parser error | Error usage | Corrected usage |
 | --- | --- | --- |

@@ -150,7 +150,7 @@ The following permissions are available to read assignments and memberships of u
 > | ---------- | ----------- |
 > | microsoft.directory/users/appRoleAssignments/read | Read application role assignments for users |
 > | microsoft.directory/users/scopedRoleMemberOf/read | Read user's membership of a Microsoft Entra role, that is scoped to an administrative unit |
-> | microsoft.directory/users/memberOf/read | Read the dynamic membership group of users |
+> | microsoft.directory/users/memberOf/read | Read the dynamic membership group for users |
 
 ## Full list of permissions
 
@@ -169,7 +169,7 @@ The following permissions are available to read assignments and memberships of u
 > | microsoft.directory/users/licenseDetails/read | Read license details of users |
 > | microsoft.directory/users/manager/read | Read manager of users |
 > | microsoft.directory/users/manager/update | Update manager for users |
-> | microsoft.directory/users/memberOf/read | Read the dynamic membership group of users |
+> | microsoft.directory/users/memberOf/read | Read the dynamic membership group for users |
 > | microsoft.directory/users/ownedDevices/read | Read owned devices of users |
 > | microsoft.directory/users/parentalControls/update | Update parental controls of users |
 > | microsoft.directory/users/passwordPolicies/update | Update password policies properties of users |

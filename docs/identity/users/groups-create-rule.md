@@ -18,7 +18,7 @@ ms.custom: it-pro
 
 You can use rules to determine dynamic membership groups based on user or device properties In Microsoft Entra ID, part of Microsoft Entra. This article tells how to set up a rule for a dynamic membership groups in the Azure portal. 
 
-Group membership based on user or device properties is supported for security groups and Microsoft 365 groups. When you apply a rule for a dynamic membership group, user and device attributes are evaluated for matches with the membership rule. When an attribute changes for a user or device, all rules for dynamic membership groups in the organization are processed for changes. Users and devices are added or removed if they meet the conditions for a dynamic membership group. 
+Group membership based on user or device properties is supported for security groups and Microsoft 365 groups. When you apply a rule for a dynamic membership group, user and device attributes are evaluated for matches with the membership rule. When an attribute changes for a user or device, all rules for dynamic membership groups in the organization are processed for changes. Users and devices are added or removed if they meet the conditions for a dynamic membership group. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
 > [!NOTE]
 > Security groups can be used for either devices or users, but Microsoft 365 groups can include only users. 
@@ -88,7 +88,7 @@ When a new Microsoft 365 group is created, a welcome email notification is sent 
 
 You can see the rule processing status and the last membership change date on the **Overview** page for the dynamic membership group.
   
-  :::image type="content" source="./media/groups-create-rule/group-status.png" alt-text="Screenshot of a diagram of the dynamic membership grouptatus.":::
+  :::image type="content" source="./media/groups-create-rule/group-status.png" alt-text="Screenshot of a diagram of the dynamic membership group status.":::
 
 The following status messages can be shown for **Dynamic rule processing** status:
 
@@ -100,7 +100,7 @@ The following status messages can be shown for **Dynamic rule processing** statu
 - **Not started**: Processing not started yet.
 
 >[!NOTE]
->In this screen you now may also choose to **Pause processing**. Previously, this option was only available through the modification of the membershipRuleProcessingState property. Those assigned at least the [Groups Administrator](/entra/identity/role-based-access-control/permissions-reference#groups-administrator) role can manage this setting and can pause and resume dynamic membership groups processing. Group owners without the correct roles do not have the rights needed to edit this setting.
+>In this screen you now may also choose to **Pause processing**. Previously, this option was only available through the modification of the membershipRuleProcessingState property. Those assigned at least the [Groups Administrator](/entra/identity/role-based-access-control/permissions-reference#groups-administrator) role can manage this setting and can pause and resume dynamic membership group processing. Group owners without the correct roles do not have the rights needed to edit this setting.
 
 The following status messages can be shown for **Last membership change** status:
 

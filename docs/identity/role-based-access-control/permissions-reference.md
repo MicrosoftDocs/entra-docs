@@ -840,7 +840,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users in this role
 > | microsoft.directory/groups/reprocessLicenseAssignment | Reprocess license assignments for group-based licensing |
 > | microsoft.directory/groups/basic/update | Update basic properties on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/classification/update | Update the classification property on Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/dynamicMembershipRule/update | Update the rule for dynamic membership groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/dynamicMembershipRule/update | Update rules for dynamic membership groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/groupType/update | Update properties that would affect the group type of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/onPremWriteBack/update | Update Microsoft Entra groups to be written back to on-premises with Microsoft Entra Connect |
@@ -1402,7 +1402,7 @@ Users in this role can create/manage groups and its settings like naming and exp
 > | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/groups/basic/update | Update basic properties on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/classification/update | Update the classification property on Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/dynamicMembershipRule/update | Update the rule for dynamic membership groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/dynamicMembershipRule/update | Update rules for dynamic membership groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/groupType/update | Update properties that would affect the group type of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/onPremWriteBack/update | Update Microsoft Entra groups to be written back to on-premises with Microsoft Entra Connect |
@@ -1645,7 +1645,7 @@ This role can create and manage all security groups. However, Intune Administrat
 > | microsoft.directory/groups.security/delete | Delete Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/basic/update | Update basic properties on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/classification/update | Update the classification property on Security groups, excluding role-assignable groups |
-> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update the rule for dynamic membership groups, excluding role-assignable groups |
+> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update rules for dynamic membership groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/members/update | Update members of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/owners/update | Update owners of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/visibility/update | Update the visibility property on Security groups, excluding role-assignable groups |
@@ -2744,7 +2744,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/groups/basic/update | Update basic properties on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/classification/update | Update the classification property on Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/dynamicMembershipRule/update | Update the rule for dynamic membership groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/dynamicMembershipRule/update | Update rules for dynamic membership groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/groupType/update | Update properties that would affect the group type of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/onPremWriteBack/update | Update Microsoft Entra groups to be written back to on-premises with Microsoft Entra Connect |
@@ -2890,7 +2890,7 @@ Assign the Windows 365 Administrator role to users who need to do the following 
 > | microsoft.directory/groups.security/delete | Delete Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/basic/update | Update basic properties on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/classification/update | Update the classification property on Security groups, excluding role-assignable groups |
-> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update the rule for dynamic membership groups, excluding role-assignable groups |
+> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update rules for dynamic membership groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/members/update | Update members of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/owners/update | Update owners of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/visibility/update | Update the visibility property on Security groups, excluding role-assignable groups |

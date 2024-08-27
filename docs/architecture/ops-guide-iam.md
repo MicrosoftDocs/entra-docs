@@ -137,7 +137,7 @@ Microsoft Entra ID streamlines the management of licenses through [group-based l
 
 - **Synchronized from on-premises** - Groups can come from on-premises directories, which could be a good fit for organizations that have established group management processes that can be extended to assign licenses in Microsoft 365.
 
-- **Attribute-based / dynamic membership groups** - Groups can be created in the cloud based on an expression based on user attributes, for example, Department equals "sales". Microsoft Entra ID maintains the members of the group, keeping it consistent with the expression defined. Using this kind of group for license assignment enables an attribute-based license assignment, which is a good fit for organizations that have high data quality in their directory.
+- **Dynamic membership groups** - Attribute-based groups can be created in the cloud based on an expression based on user attributes, for example, Department equals "sales". Microsoft Entra ID maintains the members of the group, keeping it consistent with the expression defined. Using dynamic membership groups for license assignment enables an attribute-based license assignment, which is a good fit for organizations that have high data quality in their directory.
 
 - **Delegated ownership** - Groups can be created in the cloud and can be designated owners. This way, you can empower business owners, for example, Collaboration team or BI team, to define who should have access.
 
@@ -160,7 +160,7 @@ Use the following guidelines to define service plans to users:
 
 If you're currently using a tool, such as [Microsoft Identity Manager](/microsoft-identity-manager/) or third-party system that relies on an on-premises infrastructure, we recommend you offload assignment from the existing tool, implement group-based licensing and define a group lifecycle management based on [dynamic membership groups](~/identity/users/licensing-group-advanced.md).
 
-If your existing process doesn't account for new employees or employees that leave the organization, you should deploy group-based licensing based on dynamic membership groups and define a dynamic membership groups lifecycle. Finally, if group-based licensing is deployed against on-premises groups that lack lifecycle management, consider using cloud groups to enable capabilities such as delegated ownership or attribute-based dynamic membership groups.
+If your existing process doesn't account for new employees or employees that leave the organization, you should deploy group-based licensing based on dynamic membership groups and define their lifecycle. Finally, if group-based licensing is deployed against on-premises groups that lack lifecycle management, consider using cloud groups to enable capabilities such as delegated ownership or attribute-based dynamic membership groups.
 
 ### Assignment of apps with "All users" group
 

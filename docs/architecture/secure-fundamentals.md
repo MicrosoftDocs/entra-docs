@@ -95,7 +95,7 @@ Some legacy scenarios required a human identity to be used in *non-human* scenar
 
   * **Assigned groups**. In assigned groups, users are added to or removed from the group manually, synchronized from on-premises AD DS, or updated as part of an automated scripted workflow. An assigned group can be synchronized from on-premises AD DS or can be homed in Microsoft Entra ID.
 
-  * **Dynamic membership groups**. In dynamic membership groups, users are assigned to the group automatically based on defined attributes. This allows group memberships to be dynamically updated based on data held within the user objects. A dynamic membership group can only be homed in Microsoft Entra ID.
+  * **Dynamic membership groups**. In attribute-based dynamic membership groups, users are assigned to the group automatically based on defined attributes. This allows group memberships to be dynamically updated based on data held within the user objects. A dynamic membership group can only be homed in Microsoft Entra ID.
 
 **Microsoft Account (MSA)**. You can create Azure subscriptions and tenants using Microsoft Accounts (MSA). A Microsoft Account is a personal account (as opposed to an organizational account) and is commonly used by developers and for trial scenarios. When used, the personal account is always made a guest in a Microsoft Entra tenant.
 
