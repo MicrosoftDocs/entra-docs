@@ -97,7 +97,7 @@ If Users are at lock screen or login screen they can reset their password from t
 > [!NOTE] 
 > If the device is booted and there is FileVault encryption the new Entra password will work on macOS15 only. 
 
-IT Admins can also enable keyvault recovery to ensure data can be recovered in case of a forgotten password. To learn more refer to [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos#password).
+IT Admins should enable keyvault recovery to ensure data can be recovered in case of a forgotten password. To learn more refer to [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos#password).
 
 #### Secure Enclave
 Users can reset the local password via Apple ID or an admin recovery key. 
