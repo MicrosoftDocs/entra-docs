@@ -57,8 +57,6 @@ To search for specific activity log entries, use the $filter and createdDateTime
 - [Sign-up log properties](/graph/api/resources/signup#properties)
 - [Audit log properties](/graph/api/resources/directoryaudit#properties)
 
-#### Sign-in examples
-
 Try using the following queries for sign-in activity:
 
 - For sign-in attempts where Conditional Access failed:
@@ -87,50 +85,6 @@ Try using the following queries for sign-in activity:
 - For the registration details of specific user:
   - GET `https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails/{userId}`
   - Requires `UserAuthenticationMethod.Read.All` permission
-
-#### Sign-up examples
-
-Try using the following queries for sign-up activity:
-
-- For sign-up attempts that failed (at any stage): 
-   - Need Graph call 
-
-- For signup attempts where user object creation failed (i.e. signup failed at the “create user” stage): 
-   -Need Graph call 
-
-- For sign up attempts where email validation failed (i.e. signup failed at the “credential validation step” (note: applicable only for local accounts): 
-   - Need Graph call 
-
-- For sign-ups occurring in a specific date range: 
-   - GET https://graph.microsoft.com/v1.0/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) 
-
-- For sign-ups related to a specific application: 
-   - GET https://graph.microsoft.com/v1.0/signupLogs/signIns?&$filter=appId eq 'APP ID' 
-
-- For local account sign-ups: 
-   - Need Graph call 
-
-- For Social account sign-ups: 
-   - Need Graph call 
-
-- To get the authentication method or IdP that a user (email address) signed up with: 
-   - Need Graph call 
-
-   > [!NOTE]
-   > You can also query the user object itself.
-
-   - GET https://graph.microsoft.com/beta/users/{userObjectId}/authentication/methods 
-
-   - Requires UserAuthenticationMethod.Read.All permission 
-
-- To find the sign-in log entries with the same correlation id: 
-   - Need Graph call 
-
-- For sign-up attempts that included calls to token augmentation custom extension 
-   - Need Graph call 
-
-- For sign-up attempts related to a specific user flow 
-   - May require getting list of apps related to a user flow first? 
 
 ### Related APIs
 
