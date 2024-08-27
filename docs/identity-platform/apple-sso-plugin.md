@@ -430,7 +430,7 @@ The screenshot below shows the configuration page and settings for enabling Secu
 ### Recognize app incompatibilities with Secure Enclave based device identity
 After enabling Secure Enclave based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
 
-:::image type="content" source="./media/device-mgmt-reqd.png" alt-text="Screenshot of a Conditional Access error message informing the user that the device must be managed before this resource can be accessed." lightbox="./media/device-mgmt-reqd.png":::
+:::image type="content" source="./media/apple-sso-plugin/device-mgmt-reqd.png" alt-text="Screenshot of a Conditional Access error message informing the user that the device must be managed before this resource can be accessed." lightbox="./media/apple-sso-plugin/device-mgmt-reqd.png":::
 
 This error will appear in Entra ID sign-in logs with the following details: 
 - **Sign-in error code:** `530003`
