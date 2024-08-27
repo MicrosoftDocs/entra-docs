@@ -1,5 +1,5 @@
 ---
-author: joflore
+author: MicrosoftGuyJFlo
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: include
