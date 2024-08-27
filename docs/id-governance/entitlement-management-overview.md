@@ -14,7 +14,7 @@ ms.reviewer: markwahl-msft
 ---
 # What is entitlement management?
 
-Entitlement management is an [identity governance](identity-governance-overview.md) feature that  enables organizations to manage identity and access lifecycle at scale, by automating access request workflows, access assignments, reviews, and expiration.
+Entitlement management is an [identity governance](identity-governance-overview.md) feature that enables organizations to manage identity and access lifecycle at scale, by automating access request workflows, access assignments, reviews, and expiration.
 
 People in organizations need access to various groups, applications, and SharePoint Online sites to perform their job. Managing this access is challenging, as requirements change. New applications are added or users need more access rights. This scenario gets more complicated when you collaborate with outside organizations. You might not know who in the other organization needs access to your organization's resources, and they won't know what applications, groups, or sites your organization is using.
 
