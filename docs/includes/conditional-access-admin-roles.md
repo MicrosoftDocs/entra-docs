@@ -1,10 +1,10 @@
 ---
-author: HyperGeil
+author: joflore
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: include
 ms.date: 08/27/2024
-ms.author: HyperGeil
+ms.author: joflore
 ---
 
 - Global Administrator
