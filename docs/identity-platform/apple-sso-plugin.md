@@ -432,7 +432,7 @@ After enabling Secure Enclave based storage, you may encounter an error message 
 
 :::image type="content" source="./media/apple-sso-plugin/device-mgmt-reqd.png" alt-text="Screenshot of a Conditional Access error message informing the user that the device must be managed before this resource can be accessed." lightbox="./media/apple-sso-plugin/device-mgmt-reqd.png":::
 
-This error will appear in Entra ID sign-in logs with the following details: 
+This error will appear in Microsoft Entra ID sign-in logs with the following details: 
 - **Sign-in error code:** `530003`
 - **Failure reason:** `Device is required to be managed to access this resource.`
 
