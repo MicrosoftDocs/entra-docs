@@ -430,7 +430,7 @@ The screenshot below shows the configuration page and settings for enabling Secu
 ### Recognize app incompatibilities with Secure Enclave based device identity
 After enabling secure enclave-based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
 
-![device-requires-mgmt](media/v2-shared-device-mode/ipublic-client-app-inheritance.png)
+![device-requires-mgmt](media/device-mgmt-reqd.png)
 
 This error will appear in Entra ID sign-in logs with the following details: 
 - **Sign-in error code:** `530003`
