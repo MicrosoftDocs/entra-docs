@@ -23,9 +23,6 @@ The best practices described in this article include:
 -	Authorize with least privileged permissions
 -	Ensure Proof-of-Possession (PoP) usage
 
-
-
-
 ## Secure administrative access to the subscription
 
 The administrative access to the Azure Subscriptions hosting your Logic Apps should be secured. We recommend following the Cloud Adoption Framework, and if possible, placing the Logic Apps in the Identity Subscription. For more information, see:[What is an Azure landing zone?](/azure/cloud-adoption-framework/ready/landing-zone/#azure-landing-zone-architecture)
@@ -39,25 +36,25 @@ Inbound calls to Logic Apps can use only one authorization scheme, [Microsoft En
 
 All Logic Apps created via the Microsoft Entra ID Governance custom extensions user interfaces after April 29, 2024 have the shared access signature (SAS) authorization scheme disabled by default.
 
-If you created a Logic App via the Microsoft Entra ID Governance custom extensions user interfaces on, or before, April 29th 2024, please follow the guidance to disable the shared access signature (SAS) authorization scheme located here: [Disable shared access signature (SAS) authentication (Consumption only)](/azure/logic-apps/logic-apps-securing-a-logic-app?tabs=azure-portal#disable-shared-access-signature-sas-authentication-consumption-only).
+If you created a Logic App via the Microsoft Entra ID Governance custom extensions user interfaces on, or before, April 29, 2024,  follow the guidance to disable the shared access signature (SAS) authorization scheme located here: [Disable shared access signature (SAS) authentication (Consumption only)](/azure/logic-apps/logic-apps-securing-a-logic-app?tabs=azure-portal#disable-shared-access-signature-sas-authentication-consumption-only).
 
 
 
 ## Use managed identities for authentication 
 
-The management of secrets, credentials, certificates, and keys used to secure communication between services is a common challenge and [managed identities](../identity/managed-identities-azure-resources/overview.md) eliminate the need to manage these credentials. If you're leveraging the custom extension ‘*launch and wait*’ pattern([entitlement management reference](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes); [Lifecycle Workflow reference](lifecycle-workflow-extensibility.md#custom-task-extension-deployment-scenarios)), we highly recommend you enable the Azure Logic Apps managed identity to authenticate the resume calls([taskProcessingResult: resume](/graph/api/identitygovernance-taskprocessingresult-resume); [accessPackageAssignmentRequest: resume](/graph/api/accesspackageassignmentrequest-resume)) to Microsoft Entra ID Governance. If your scenario requires the Logic App to call other Microsoft Graph endpoints, or even other Microsoft Entra integrated services, you can also use the managed identity to authenticate calls against these services.
+The management of secrets, credentials, certificates, and keys used to secure communication between services is a common challenge and [managed identities](../identity/managed-identities-azure-resources/overview.md) eliminate the need to manage these credentials. If you're using the custom extension "launch and wait" pattern([entitlement management reference](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes); [Lifecycle Workflow reference](lifecycle-workflow-extensibility.md#custom-task-extension-deployment-scenarios)), we highly recommend you enable the Azure Logic Apps managed identity to authenticate the resume calls([taskProcessingResult: resume](/graph/api/identitygovernance-taskprocessingresult-resume); [accessPackageAssignmentRequest: resume](/graph/api/accesspackageassignmentrequest-resume)) to Microsoft Entra ID Governance. If your scenario requires the Logic App to call other Microsoft Graph endpoints, or even other Microsoft Entra integrated services, you can also use the managed identity to authenticate calls against these services.
 
 
-**Entitlement Management**: You will have to enable the managed identity yourself. For information on this process, see: [Enable system-assigned identity in the Azure portal](/azure/logic-apps/authenticate-with-managed-identity?tabs=consumption#enable-system-assigned-identity-in-the-azure-portal) and then [authorize it](custom-extension-security.md#assigning-least-privileged-permissions-with-entitlement-management).
+**Entitlement Management**: You'll have to enable the managed identity yourself. For information on this process, see: [Enable system-assigned identity in the Azure portal](/azure/logic-apps/authenticate-with-managed-identity?tabs=consumption#enable-system-assigned-identity-in-the-azure-portal) and then [authorize it](custom-extension-security.md#assigning-least-privileged-permissions-with-entitlement-management).
 
-**Lifecycle Workflows**: The managed identity is automatically enabled and authorized for ‘*launch and wait*’ custom extensions. If your Logic App needs to call other services, you can use and authorize the same managed identity. For ‘*launch and continue*’ custom extensions, you will have to enable the managed identity yourself.
+**Lifecycle Workflows**: The managed identity is automatically enabled and authorized for "launch and wait" custom extensions. If your Logic App needs to call other services, you can use and authorize the same managed identity. For ‘*launch and continue*’ custom extensions, you'll have to enable the managed identity yourself.
 
 For steps on how to use the managed identity with a Logic Apps action, see: [Authenticate access with managed identity.](/azure/logic-apps/authenticate-with-managed-identity?tabs=consumption#authenticate-access-with-managed-identity).
 
 
 ## Authorize with least privileged permissions
 
-The resume calls from Logic Apps to Microsoft Entra ID Governance can be authorized directly within Lifecycle Workflows and Entitlement Management. When authorized directly, you are **NOT** required to assign the managed identity application permissions such as LifecycleWorkflows.ReadWrite.All or Entitlement Management.ReadWrite.All. 
+The resume calls from Logic Apps to Microsoft Entra ID Governance can be authorized directly within Lifecycle Workflows and Entitlement Management. When authorized directly, you're **NOT** required to assign the managed identity application permissions such as LifecycleWorkflows.ReadWrite.All or Entitlement Management.ReadWrite.All. 
 
 Guidance for assigning the least privileged permissions:
 
@@ -68,14 +65,14 @@ Assign the managed identity the ‘**access package assignment manager**’ role
 
 ### Assigning least privileged permissions with lifecycle workflows
 
-The managed identity can be directly authorized for the resume call within the custom extension settings. Lifecycle workflows automatically sets this up for you during the custom extension creation process. For more information, see: [Response authorization](lifecycle-workflow-extensibility.md#response-authorization).
+The managed identity can be directly authorized for the resume call within the custom extension settings. Lifecycle workflows automatically set this up for you during the custom extension creation process. For more information, see: [Response authorization](lifecycle-workflow-extensibility.md#response-authorization).
 
 ### Assigning least privileged permissions with other services and scenarios
 
-If you need to authorize the Logic App to call other services integrated with Microsoft Entra, such as other Microsoft Graph APIs, consider that the managed identity can also get privileges through role assignments in various role-based access control systems, which often allows you to follow the principle of least privilege. Non-exhaustive list of examples include:
+If you need to authorize the Logic App to call other services integrated with Microsoft Entra, such as other Microsoft Graph APIs, consider that the managed identity can also get privileges through role assignments in various role-based access control systems, which often allow you to follow the principle of least privilege. Nonexhaustive list of examples include:
 
 - If your Entitlement Management custom extension needs to query additional information from Entitlement Management you can assign the Logic App one of the [roles](entitlement-management-delegate.md) in Entitlement Management, such as catalog reader, for a given catalog. This allows you to reduce the permissions and scope compared to the tenant-wide EntitlementManagement.Read.All and/or EntitlementManagement.ReadWrite.All application permissions. 
-- If you want to use a Lifecycle Workflow custom extension to generate a temporary access pass opposed to the [built-in task](lifecycle-workflow-tasks.md#generate-temporary-access-pass-and-send-via-email-to-users-manager), you can assign the managed identity the authentication administrators Microsoft Entra built-in role scoped to an administrative unit, opposed to assigning it the UserAuthenticationMethod.ReadWrite.All application permissions which would drastically increase the blast radius if the Logic App would get compromised.
+- If you want to use a Lifecycle Workflow custom extension to generate a temporary access pass opposed to the [built-in task](lifecycle-workflow-tasks.md#generate-temporary-access-pass-and-send-via-email-to-users-manager), you can assign the managed identity the authentication administrators Microsoft Entra built-in role scoped to an administrative unit, opposed to assigning it the UserAuthenticationMethod.ReadWrite.All application permissions, which would drastically increase the blast radius if the Logic App would get compromised.
 
 For more information regarding Microsoft Graph authorization, see: [Get access without a user](/graph/auth-v2-service).
 
@@ -97,7 +94,7 @@ To determine the authorization scheme currently used by your custom extensions, 
 |Bearer     |  Regular        |
 |Proof-of-Possession (PoP)     |  Proof-of-possession       |
 
-Lifecycle Workflows custom extensions cannot be migrated from bearer to proof-of-possession type access tokens, you will have to create new custom extensions and configure them in the corresponding workflows.
+Lifecycle Workflows custom extensions can't be migrated from bearer to proof-of-possession type access tokens. You have to create new custom extensions and configure them in the corresponding workflows.
 
 For a subset of Entitlement Management custom extensions, you can use the ‘Update to new extension type’ option available via the Entitlement Management user interface. To complete this you'd do the following:
 
@@ -109,7 +106,7 @@ For a subset of Entitlement Management custom extensions, you can use the ‘Upd
 
 1. On the catalog overview page, select **Custom extensions**.
 
-1. On the custom extensions page find a custom extension whose token security says *Regular* and select the 3 lines next to it.
+1. On the custom extensions page, find a custom extension whose token security says *Regular* and select the three lines next to it.
     :::image type="content" source="media/custom-extension-security/update-to-new-type.png" alt-text="Screenshot of the update to new type of token security.":::
 1. Select **Update to new extension type**.  
 
