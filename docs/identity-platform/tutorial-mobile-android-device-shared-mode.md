@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Set up an Android device in Shared Device Mode"
-description: In this tutorial, learn how to set up an Android device in Shared Device Mode using Microsoft Authenticator App or Intune
+title: "Tutorial: Add Shared Device Mode support to an Android device"
+description: In this tutorial, learn how add Shared Device Mode support to an Android device using the Microsoft Authenticator App or Intune
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
@@ -11,46 +11,35 @@ ms.topic: tutorial
 #Customer intent: As an application developer, I want to learn how to setup an Android device in Shared Device Mode using Microsoft Authenticator App.
 ---
 
-# Tutorial: Setup an Android device in Shared Device Mode
+# Add Shared Device Mode support to an Android device
 
-In this tutorial, you learn how to set up an Android device in Shared Device Mode (SDM) with the Microsoft Authenticator App or a Mobile Device Management (MDM) tool like Microsoft Intune. Employees sign in once for single sign-on (SSO) to all SDM-supported apps and sign out to make the device ready for the next user with no access to previous data.
+In this tutorial, you learn how to add shared device mode support to an Android device with the Microsoft Authenticator App or a Mobile Device Management (MDM) tool like Microsoft Intune. Employees sign in once for single sign-on (SSO) to all SDM-supported apps and sign out to make the device ready for the next user with no access to previous data.
 
 In this tutorial:
 
 > [!div class="checklist"]
 >
-> - Set up tenant and register the application
-> - Manual setup with the Microsoft Authenticator app
 > - Zero-touch set up via Microsoft Intune
+> - Manual setup with the Microsoft Authenticator app
 > - Setup via third-party MDMs
 > - Run the sample app
 
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/free/).
-- Completion of steps in [Tutorial: Implement shared-device mode in your Android application](./tutorial-v2-shared-device-mode.md)
 - An Android device with Android OS version 8.0 or later that isn't registered with Microsoft Entra ID. If it's registered, reset it to factory settings.
-- [Microsoft Authenticator app](https://play.google.com/store/apps/details/Microsoft_Authenticator?id=com.azure.authenticator&hl=en_NZ) installed on the device.
+- [Microsoft Authenticator app](https://play.google.com/store/apps/details/Microsoft_Authenticator?id=com.azure.authenticator&hl=en_NZ) latest version installed on the device.
+- For setup via MDM, the device should be managed by an MDM supporting shared device mode such as  Microsoft Intune.  
 
-### Register the application and set up your tenant for testing
+## Zero-touch setup via Intune
 
-Before you can set up your application and put your device into shared-device mode, you need to register the application within your organizational tenant. You then provide these values in *auth_config.json* for your application to run correctly.
+Microsoft Intune supports zero-touch provisioning for devices in Microsoft Entra SDM, which means that the device can be set up and enrolled in Intune with minimal interaction from the frontline worker. 
 
-For information on how to do this, refer to [Register your application](./tutorial-v2-android.md).
+To set up device in shared device mode when using Microsoft Intune as the MDM, first step is to enroll the shared device into Intune and install Authenticator app with SDM enabled. For more information on how to set up the SDM using Microsoft Intune, see [Set up Intune enrollment for Android Enterprise dedicated devices](/mem/intune/enrollment/android-kiosk-enroll)
 
-> [!NOTE]
-> When you register your app, please use the quickstart guide on the left-hand side and then select **Android**. This will lead you to a page where you'll be asked to provide the **Package Name** and **Signature Hash** for your app. These are very important to ensure your app configuration will work. You'll then receive a configuration object that you can use for your app that you'll cut and paste into your auth_config.json file.
+Once enrolled, switch on the device to initiate standard Android device setup, which automatically triggers device registration with Entra ID and get it ready for use. 
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/register-app.png" alt-text="Configure your Android app page":::
-
-You should select **Make this change for me** and then provide the values the quickstart asks for. When done, Microsoft Entra ID generates all the configuration files you need.
-
-:::image type="content" source="media/tutorial-v2-shared-device-mode/config-info.png" alt-text="Configure your project page":::
-
-For testing purposes, set up the following roles in your tenant - at least two employees and a Cloud Device Administrator. To set the Cloud Device Administrator, you need to modify Organizational Roles. From the Microsoft Entra admin center, go to your Organizational Roles by selecting **Identity** > **Roles & admins** > **Roles & admins** > **All roles**, and then select **Cloud Device Administrator**. Add the users that can put a device into shared mode.
-
-
-## Configure Authenticator app settings to register the device with Entra
+## Manual setup with the Microsoft Authenticator app
 
 Launch the Authenticator App and navigate to main account page where you can see the **Add Account** option, as shown:
 
@@ -88,22 +77,12 @@ The sample application is a simple app that will call the Graph API of your orga
 
 :::image type="content" source="media/tutorial-v2-shared-device-mode/run-app-permissions-requested.png" alt-text="Application configuration info screen":::
 
-
-## Zero-touch setup via Intune
-
-Microsoft Intune supports zero-touch provisioning for devices in Microsoft Entra SDM, which means that the device can be set up and enrolled in Intune with minimal interaction from the frontline worker. 
-
-To set up device in shared device mode when using Microsoft Intune as the MDM, first step is to enroll the shared device into Intune and install Authenticator app with SDM enabled. For more information on how to set up the SDM using Microsoft Intune, see [Set up Intune enrollment for Android Enterprise dedicated devices](/mem/intune/enrollment/android-kiosk-enroll)
-
-Once enrolled, switch on the device to initiate standard Android device setup, which automatically triggers device registration with Entra ID and get it ready for use. 
-
-
 ## Setup via third-party MDM 
 
 The following the third-party Mobile Device Management (MDM) tools support Microsoft Entra shared device mode: 
 
 - [VMware Workspace ONE](https://docs.omnissa.com/bundle/UEMSharedDevicesVSaaS/page/UEMSharedDeviceConditionalAccess.html)
-- SOTI MobiControl 
+- [SOTI MobiControl](https://soti.net/resources/blog/2023/soti-mobicontrol-supports-microsoft-shared-device-mode/)
 
 **Note:** VMware supports conditional access capabilities but currently doesn’t support global sign-in and global sign-out with shared device mode.      
 

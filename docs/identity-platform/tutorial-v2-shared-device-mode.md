@@ -12,9 +12,9 @@ ms.topic: tutorial
 #Customer intent: As an Android developer, I want to learn how to enable shared-device mode for an Android app, so that I can configure Android devices to be shared by multiple employees and provide Microsoft Identity backed management of the device.
 ---
 
-# Tutorial: Implement shared-device mode in your Android application
+# Tutorial: Add shared-device mode support to your Android application
 
-In this tutorial, Android developers learn how to implement shared-device mode in an Android application using the Microsoft Authentication Library (MSAL) for Android.
+In this tutorial, Android developers learn how to add shared device mode support in an Android application using the Microsoft Authentication Library (MSAL) for Android.
  
 In this tutorial:
 
@@ -26,13 +26,10 @@ In this tutorial:
 > - Detect a user switch
 > - Enable global sign-in and sign-out
 
-## Prerequisites
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+### Create or modify an existing Android application
 
-### Create or modify an existing Android application project.
-
-To complete the rest of the tutorial, you need to create or modify an existing Android application project. If you haven't already, see the [MSAL Android tutorial](./tutorial-v2-android.md) for guidance on how to integrate MSAL with your Android app, sign in a user, call Microsoft graph, and sign out a user.  If you prefer using a completed code sample for learning and testing, clone the [sample application](https://github.com/Azure-Samples/ms-identity-android-java/) from GitHub. The sample has the capability to work in [single or multi account mode](./single-multi-account.md).
+To complete the rest of the tutorial, you need to create a new or modify an existing Android application. If you haven't already, see the [MSAL Android tutorial](./tutorial-v2-android.md) for guidance on how to integrate MSAL with your Android app, sign in a user, call Microsoft graph, and sign out a user.  If you prefer using a completed code sample for learning and testing, clone the [sample application](https://github.com/Azure-Samples/ms-identity-android-java/) from GitHub. The sample has the capability to work in [single or multi account mode](./single-multi-account.md).
 
 ### Add the MSAL SDK to your local Maven repository
 
@@ -269,6 +266,22 @@ private void registerAccountChangeBroadcastReceiver(){
     this.registerReceiver(mAccountChangedBroadcastReceiver, filter);
 }
 ```
+### Register the application and set up your tenant for testing
+
+Before you can set up your application and put your device into shared-device mode, you need to register the application within your organizational tenant. You then provide these values in *auth_config.json* for your application to run correctly.
+
+For information on how to do this, refer to [Register your application](./tutorial-v2-android.md).
+
+> [!NOTE]
+> When you register your app, please use the quickstart guide on the left-hand side and then select **Android**. This will lead you to a page where you'll be asked to provide the **Package Name** and **Signature Hash** for your app. These are very important to ensure your app configuration will work. You'll then receive a configuration object that you can use for your app that you'll cut and paste into your auth_config.json file.
+
+:::image type="content" source="media/tutorial-v2-shared-device-mode/register-app.png" alt-text="Configure your Android app page":::
+
+You should select **Make this change for me** and then provide the values the quickstart asks for. When done, Microsoft Entra ID generates all the configuration files you need.
+
+:::image type="content" source="media/tutorial-v2-shared-device-mode/config-info.png" alt-text="Configure your project page":::
+
+For testing purposes, set up the following roles in your tenant - at least two employees and a Cloud Device Administrator. To set the Cloud Device Administrator, you need to modify Organizational Roles. From the Microsoft Entra admin center, go to your Organizational Roles by selecting **Identity** > **Roles & admins** > **Roles & admins** > **All roles**, and then select **Cloud Device Administrator**. Add the users that can put a device into shared mode.
 
 ## Next steps
 
