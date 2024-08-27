@@ -22,7 +22,7 @@ The Multifactor Authentication Gaps workbook helps with identifying user sign-in
 * Provides several filters such as trusted locations and device states to narrow down the users/applications. 
 * Provides filters to scope the workbook for a subset of users and applications.
 
-This article gives you an overview of the **Multifactor authentication caps** workbook.
+This article gives you an overview of the **Multifactor authentication gaps** workbook.
 
 ## Prerequisites
 
