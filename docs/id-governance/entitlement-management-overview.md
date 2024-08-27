@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: overview
-ms.date: 07/15/2024
+ms.date: 08/27/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As an administrator, I want learn about entitlement management so that see how I can use it to manage access to resources in my organization.
