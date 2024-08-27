@@ -436,7 +436,7 @@ This error will appear in Microsoft Entra ID sign-in logs with the following det
 - **Sign-in error code:** `530003`
 - **Failure reason:** `Device is required to be managed to access this resource.`
 
-If you see this error message during testing, first, ensure you have successfully enabled the SSO extension as well as have installed any requisite application-specific extensions (e.g., [Microsoft Single Sign On for Chrome](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji)). If you continue to see this message, is recommended that you contact the vendor of the application to alert them to the incompatibility with the new storage location. 
+If you see this error message during testing, first, ensure you have successfully enabled the SSO extension as well as have installed any requisite application-specific extensions (e.g., [Microsoft Single Sign On for Chrome](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji)). If you continue to see this message, it is recommended that you contact the vendor of the application to alert them to the incompatibility with the new storage location. 
 
 ### Scenarios impacted
 The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
