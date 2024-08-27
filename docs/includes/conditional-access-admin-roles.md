@@ -1,10 +1,10 @@
 ---
-author: joflore
+author: HyperGeil
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: include
-ms.date: 05/02/2024
-ms.author: joflore
+ms.date: 08/27/2024
+ms.author: HyperGeil
 ---
 
 - Global Administrator
@@ -20,4 +20,5 @@ ms.author: joflore
 - Privileged Role Administrator
 - Security Administrator
 - SharePoint Administrator
+- Teams Administrator
 - User Administrator
