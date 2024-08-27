@@ -73,7 +73,7 @@ You can connect application workloads hosted in other Azure virtual networks usi
 
 ### Virtual network peering
 
-Virtual network peering is a mechanism that connects two virtual networks in the same region through the Azure backbone network. Global virtual network peering can connect virtual network across Azure regions. Once peered, the two virtual networks let resources, such as VMs, communicate with each other directly using private IP addresses. Using virtual network peering lets you deploy a managed domain with your application workloads deployed in other virtual networks.
+Virtual network peering is a mechanism that connects two virtual networks through the Azure backbone network, allowing resources such as virtual machines (VMs) to communicate with each other directly using private IP addresses. Virtual network peering supports both regional peering, which connects VNets within the same Azure region, and global virtual network peering, which connects VNets across different Azure regions. This flexibility allows you to deploy a managed domain with your application workloads across multiple virtual networks, regardless of their regional locations.
 
 ![Virtual network connectivity using peering](./media/entra-domain-services-design-guide/vnet-peering.png)
 
