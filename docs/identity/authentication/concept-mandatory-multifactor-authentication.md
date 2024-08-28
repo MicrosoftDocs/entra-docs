@@ -58,7 +58,7 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 - Portal notification: A notification appears in the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center when they sign in. The portal notification links to this topic for more information about the mandatory MFA enforcement. 
 
-- Microsoft 365 message center: A message appears in the Microsoft 365 message center with the same information as the email and service health notification. 
+- Microsoft 365 message center: A message appears in the Microsoft 365 message center (message ID: **MC862873**) with the same information as the email and service health notification. 
 
 ## Prepare for multifactor authentication 
 
