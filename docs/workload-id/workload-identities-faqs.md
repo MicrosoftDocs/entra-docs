@@ -86,7 +86,7 @@ Yes. For Azure Government cloud customers, contact your account manager to proce
 
 ## Can I have Microsoft Entra ID P1, P2, and Workload ID Premium licenses in one tenant?
 
-Yes, customers can have a mixture of SKUs in one tenant.
+Yes, customers can have a mix of licenses in one tenant.
 
 ## Next steps
 
