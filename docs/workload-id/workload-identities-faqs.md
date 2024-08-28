@@ -17,8 +17,8 @@ ms.custom: aaddev
 
 For more information, see [what are workload identities?](workload-identities-overview.md)
 
->[!NOTE]
-> Workload ID Premium is a standalone product and isn't included in other premium product plans. All subscribers require a license to use Workload ID Premium features.
+   >[!NOTE]
+   > Workload ID Premium is a standalone product and isn't included in other premium product plans. All subscribers require a license to use Workload ID Premium features.
 
 Learn more about [Workload ID pricing](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz).
 
@@ -72,7 +72,7 @@ No, license assignment isn't required. One license in the tenant unlocks all fea
 
 Unfortunately, we don’t provide a dashboard to track that information. You can track enabled Conditional Access policies targeting workload identities in the **Insights and reporting** area. 
 
-   ![Screenshot of the impact summary under Service Principal sign-ins.](media/insights-and-reportin.png)
+   ![Screenshot of the impact summary under Service Principal sign-ins.](media/workload-identities-faqs/insights-and-reportin.png)
 
 ## Can I get a free trial of Workload ID Premium? 
 
