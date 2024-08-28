@@ -88,6 +88,8 @@
       href: howto-conditional-access-policy-risk-user.md
     - name: Block users with elevated insider risk
       href: how-to-policy-insider-risk.md
+    - name: Require compliant devices
+      href: how-to-policy-require-device-compliance
     - name: Require compliant or hybrid joined devices for admins
       href: howto-conditional-access-policy-compliant-device-admin.md
     - name: Block access for unknown or unsupported device platform
