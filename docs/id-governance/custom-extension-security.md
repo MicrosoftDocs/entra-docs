@@ -96,7 +96,7 @@ To determine the authorization scheme currently used by your custom extensions, 
 
 Lifecycle Workflow's custom extensions can't be migrated from bearer to proof-of-possession type access tokens. You have to create new custom extensions and configure them in the corresponding workflows.
 
-For a subset of entitlement management custom extensions, you can use the ‘Update to new extension type’ option available via the entitlement management user interface. To complete this you'd do the following:
+For a subset of entitlement management custom extensions, you can use the ‘*Update to new extension type*’ option available via the entitlement management user interface. To update to a new extension type, you'd do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
