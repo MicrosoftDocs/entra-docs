@@ -76,7 +76,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
     `https://<Sub-DomainName>/idp/shibboleth`
 
-    b. In the **Reply URL** text box, type the URL:
+    b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<Sub-DomainName>/idp/shibboleth`
     
     c. In the **Sign on URL** text box, type a URL using the following pattern:
