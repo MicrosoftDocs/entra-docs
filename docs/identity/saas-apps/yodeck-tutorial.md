@@ -82,14 +82,13 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Identifier** text box, type the URL:
     `https://app.yodeck.com/api/v1/account/metadata/`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
-
-    In the **Sign-on URL** text box, type the URL:
-    `https://app.yodeck.com/login`
-
 1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
+
+1. Your Yodeck application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Yodeck expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
+
+    ![Screenshot shows the image of attributes.](common/default-attributes.png "attributes")
 
 <a name='create-an-azure-ad-test-user'></a>
 
