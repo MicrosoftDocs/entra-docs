@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/19/2024
+ms.date: 08/28/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -22,7 +22,7 @@ This article describes how to download and install the Global Secure Access clie
 - An Entra tenant onboarded to Global Secure Access.
 - A managed device joined to the onboarded tenant. The device must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
    - Microsoft Entra registered devices aren't supported.
-- The Global Secure Access client requires a 64-bit versions of Windows 10 or Windows 11.
+- The Global Secure Access client requires a 64-bit version of Windows 10 or Windows 11.
    - Azure Virtual Desktop single-session is supported.
    - Azure Virtual Desktop multi-session isn't supported.
    - Windows 365 is supported.
@@ -60,10 +60,10 @@ To view the available client menu actions, right-click the Global Secure Access 
 |Action   |Description  |
 |---------|---------|
 |**Sign out**   |*Hidden by default*. Use the **Sign out** action when you need to sign in to the Global Secure Access client with an Entra user other than the one used to sign in to Windows. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
-|**Pause**   |Select the **Pause** action to temporarily pause the client. The client remains paused until you either resume the client or restart the machine.         |
-|**Resume**   |Resumes the paused client.         |
+|**Disable**   |Select the **Disable** action to disable the client. The client remains disabled until you either enable the client or restart the machine.         |
+|**Enable**   |Enables the disabled client.         |
 |**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you wish to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
-|**Collect logs**   |Select this action to collect client logs (information about the client machine, the related event logs for the services, and registry values) and archive them in a zip file to share with Microsoft Support for investigation. The default location for the logs is `C:\Program Files\Global Secure Access Client\Logs`.         |
+|**Collect logs**   |Select this action to collect client logs (information about the client machine, the related event logs for the services, and registry values) and archive them in a zip file to share with Microsoft Support for investigation. The default location for the logs is `C:\Program Files\Global Secure Access Client\Logs`.   You can also collect client logs on Windows by entering the following command in the Command Prompt: `C:\Program Files\Global Secure Access Client\LogsCollector\LogsCollector.exe" <username> <user>`.      |
 |**Advanced diagnostics**   |Select this action to launch the Advanced diagnostics utility and access an assortment of [troubleshooting](#troubleshooting) tools.         |
 
 ## Client status indicators
@@ -75,12 +75,12 @@ Double-click the Global Secure Access icon to open the client status notificatio
 
 |Icon    |Message    |Description    |
 |---------|---------|---------|
-|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-initializing.png":::	|Global Secure Access Client	|The client is initializing and checking its connection to Global Secure Access.    |
-|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-connected.png":::	|Global Secure Access Client - Connected	|The client is connected to Global Secure Access.    |
-|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-disabled.png":::   |Global Secure Access Client - Disabled	|The client is disabled because services are offline or the user disabled the client.    |
-|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-disconnected.png":::	|Global Secure Access Client - Disconnected	|The client failed to connect to Global Secure Access.    |
-|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Some channels are unreachable	|The client is partially connected to Global Secure Access (that is, the connection to at least one channel failed: Entra, Microsoft 365, Private Access, Internet Access).    |
-|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Disabled by your organization	|Your organization has disabled the client (that is, all traffic forwarding profiles are disabled).    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-initializing.png":::	|Global Secure Access |The client is initializing and checking its connection to Global Secure Access.    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-connected.png":::	|Global Secure Access - Connected	|The client is connected to Global Secure Access.    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-disabled.png":::   |Global Secure Access - Disabled	|The client is disabled because services are offline or the user disabled the client.    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-disconnected.png":::	|Global Secure Access - Disconnected	|The client failed to connect to Global Secure Access.    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Some channels are unreachable	|The client is partially connected to Global Secure Access (that is, the connection to at least one channel failed: Entra, Microsoft 365, Private Access, Internet Access).    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Disabled by your organization	|Your organization has disabled the client (that is, all traffic forwarding profiles are disabled).    |
 |:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Private Access is disabled	 |The user disabled Private Access on this device.    |
 |:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - could not connect to the Internet	|The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
 
@@ -163,6 +163,16 @@ For more detailed information on troubleshooting the Global Secure Access client
 The Global Secure Access client uses specific registry keys to enable or disable different functionalities. Administrators can use a Mobile Device Management (MDM) solutions, such as Microsoft Intune or Group Policy to control the registry values.
 > [!CAUTION] 
 > Do not change other registry values unless instructed by Microsoft Support.
+
+### Restrict non-privileged users
+The administrator can prevent non-privileged users on the Windows device from disabling or enabling the client by setting the following registry key:   
+`Computer\HKEY_LOCAL_MACHINE\Software\Microsoft\Global Secure Access Client`   
+`RestrictNonPrivilegedUsers REG_DWORD`
+
+|Data|Description|
+|--|--|
+| 0x0 | Non-privileged users on the Windows device can disable and enable the client. |
+| 0x1 | Non-privileged users on the Windows device are restricted from disabling and enabling the client. A UAC prompt requires local administrator credentials for disable and enable options. The administrator may also hide the disable button (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)).  |
 
 ### Disable or enable Private Access on the client
 This registry value controls whether Private Access is enabled or disabled for the client. If a user is connected to the corporate network, they can choose to bypass Global Secure Access and directly access private applications.
