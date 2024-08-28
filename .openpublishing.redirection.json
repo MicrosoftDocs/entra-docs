@@ -682,6 +682,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/permissions-management/training-videos.md",
+      "redirect_url": "/entra/permissions-management/permissions-management-quickstart-guide",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/hybrid/connect/reference-connect-dirsync-deprecated.md",
       "redirect_url": "/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2",
       "redirect_document_id": false
