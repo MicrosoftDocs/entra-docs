@@ -168,6 +168,10 @@ The following table compares the features available for token customization in e
 |**Security groups**| [Configure groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims). |[Configure groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims) are limited to the group object ID.|
 | **Token lifetimes**| You can [specify the lifetime](../../identity-platform/configurable-token-lifetimes.md) of security tokens issued by the Microsoft Entra ID.| Same as workforce.|
 
+## Microsoft Graph APIs
+
+All features that are supported in external tenants are also supported for automation through Microsoft Graph APIs. Some features that are in preview in external tenants might be generally available through Microsoft Graph. For more information, see [Manage Microsoft Entra identity and network access by using Microsoft Graph](/graph/api/resources/identity-network-access-overview).
+
 
 ## Next steps
 
