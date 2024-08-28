@@ -5,7 +5,7 @@ description: Require devices accessing resources be marked as compliant with you
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 08/14/2024
+ms.date: 08/28/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -23,7 +23,10 @@ Microsoft Intune and Microsoft Entra work together to secure your organization t
 
 ## Create a Conditional Access policy
 
-The following steps help create a Conditional Access policy to require devices accessing resources be marked as compliant with your organization's [Intune compliance policies](/mem/intune/protect/create-compliance-policy).
+The following steps help create a Conditional Access policy to require devices accessing resources be marked as compliant with your organization's [Intune compliance policies](/mem/intune/protect/create-compliance-policy). 
+
+> [!WARNING]
+> Without a compliance policy created in Microsoft Intune this Conditional Access policy will not function as intended. Create a compliance policy first and ensure you have at least one compliant device before proceeding.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
@@ -53,3 +56,6 @@ On Windows 7, iOS, Android, macOS, and some non-Microsoft web browsers, Microsof
 Organizations that use the [Subscription Activation](/windows/deployment/windows-10-subscription-activation) feature to enable users to "step-up" from one version of Windows to another, might want to exclude the Windows Store for Business, AppID 45a330b1-b1ec-4cc1-9161-9f03992aa49f from their device compliance policy.
 
 ## Related content
+
+- [Create a compliance policy in Microsoft Intune](/mem/intune/protect/create-compliance-policy)
+- [Conditional Access grant controls](/entra/identity/conditional-access/concept-conditional-access-grant#require-device-to-be-marked-as-compliant)
