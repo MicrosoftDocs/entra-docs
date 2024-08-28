@@ -72,16 +72,11 @@ No, license assignment isn't required. One license in the tenant unlocks all fea
 
 Unfortunately, we don’t provide a dashboard to track that information. You can track enabled Conditional Access policies targeting workload identities in the **Insights and reporting** area. 
 
-:::image type="content" source="media/workload-identities-faqs/insights-and-reportin.png" alt-text="Screenshot showing Insights and Reporting in Conditional Access." border="false":::
-
-- Total: Number of service principals in the Last 24 hours.
-- Success: Number of service principals where the selected polic(ies) granted access and the required controls were satisfied. 
-- Failure: Number of service principals where the selected polic(ies) denied access and the required controls weren't satisfied.
-- Not applied: Number of service principals that are bypassing the selected polic(ies) because the sign-in didn't match at least one of the assignments or conditions. 
+   ![Screenshot of the impact summary under Service Principal sign-ins.](media/insights-and-reportin.png)
 
 ## Can I get a free trial of Workload ID Premium? 
 
-Yes. You can get a [90-day free trial](https://entra.microsoft.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade). In the Modern channel, a 30-day only trial is available. Free trial is unavailable in [Microsoft Azure Government](https://azure.microsoft.com/global-infrastructure/government/) clouds.
+Yes. You can get a [90-day free trial](https://entra.microsoft.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade). In the Modern channel, a 30-day trial is available. Free trial is unavailable in [Microsoft Azure Government](https://azure.microsoft.com/global-infrastructure/government/) clouds.
 
 ## Is the Workload ID Premium plan available on Azure Government clouds? 
 
@@ -89,7 +84,7 @@ Yes. For Azure Government cloud customers, contact your account manager to proce
 
 <a name='is-it-possible-to-have-a-mix-of-azure-ad-premium-p1-azure-ad-premium-p2-and-workload-identities-premium-licenses-in-one-tenant'></a>
 
-## Is it possible to have a mix of Microsoft Entra ID P1, P2, and Workload ID Premium licenses in one tenant?
+## Can I have Microsoft Entra ID P1, P2, and Workload ID Premium licenses in one tenant?
 
 Yes, customers can have a mixture of SKUs in one tenant.
 
