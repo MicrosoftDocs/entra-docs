@@ -18,7 +18,7 @@ The most resilient credential strategy is to use passwordless authentication. [W
 ![Image of preferred authentication methods and dependencies](./media/resilience-in-credentials/passwordless-pr.png)
 
 > [!tip]
-> For a video series deep dive on deploying these authentication methods, see [Phishing-resistant authentication in Microsoft Entra ID]
+> For a video series deep dive on deploying these authentication methods, see [Phishing-resistant authentication in Microsoft Entra ID](~/identity/authentication/phishing-resistant-authentication-videos.md)
 
 If you implement a second factor, the dependencies for the second factor are added to the dependencies for the first. For example, if your first factor is via [Pass Through Authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta.md) and your second factor is [SMS](~/identity/authentication/howto-authentication-sms-signin.md), your dependencies are as follows.
 
@@ -72,6 +72,3 @@ In addition to individual user resiliency described above, enterprises should pl
 
 * [Build IAM resilience in your applications](resilience-app-development-overview.md)
 * [Build resilience in your CIAM systems](resilience-b2c.md)
-
-
-[def]: ~/identity/authentication/phishing-resistant-authentication-videos.md
