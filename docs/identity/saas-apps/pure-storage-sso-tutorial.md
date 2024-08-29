@@ -99,7 +99,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| purity_roles | user.assignedroles |
 
     > [!NOTE]
-    > Please click [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID and also add Value to your roles manually in Entra side. Edit default roles in the app and update their values as **"storage_admin", "ops_admin", "readonly", "array_admin"** respectively.
+    > Edit default roles in the Entra app and update their values as **"storage_admin", "ops_admin", "readonly", "array_admin"** respectively. Please refer **"App roles UI - section for updating values"** and **"Assign users and groups to Microsoft Entra roles - section for role assignment" [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui)** for more details.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
@@ -160,6 +160,8 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
     1. In the **Metadata URL** textbox, paste the **App Federation Metadata Url** value, which you have copied from Microsoft Entra admin center.
 
     1. **[Optional]** Fill in **Signing Credential** and **Decryption Credential** with **cert-name** imported into Pure Storage FlashArray. Toggle and enable **Sign Request** and **Encrypt Assertion**.
+
+    1. Get verification certificate from Entra app and update in FlashArray SSO Configuration for **Verification Certificate** field. You can follow the steps shown in the [document](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on) to get a relevant certificate.
 
     1. Click **Save**.
 
