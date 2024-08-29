@@ -91,7 +91,7 @@ Authentication using Global Administrator account fails when installing or upgra
 
 *Authenticate-MSAL: unexpected exception [Unspecified-Authentication-Failure] - extendedMessage: An error occurred while sending the request. | The underlying connection was closed: An unexpected error occurred on a receive. | The client and server cannot communicate, because they do not possess a common algorithm webException: The underlying connection was closed: An unexpected error occurred on a receive. STS endpoint: `HTTPS://LOGIN.MICROSOFTONLINE.COM/XXXXXXXX.ONMICROSOFT.COM`*
 
-If you see the message above, make sure that TLS 1.2 is enabled on the server. For more information, see [TLS 1.2 enforcement for Microsoft Entra Connect](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/reference-connect-tls-enforcement).
+If you see the message above, make sure that TLS 1.2 is enabled on the server. For more information, see [TLS 1.2 enforcement for Microsoft Entra Connect](https://learn.microsoft.com/entra/identity/hybrid/connect/reference-connect-tls-enforcement).
 
 ### The password can't be verified
 
