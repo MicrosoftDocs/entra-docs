@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/29/2024
+ms.date: 08/29/2024
 
 ms.author: justinha
 author: justinha
@@ -107,7 +107,6 @@ You can use Authenticator on your iOS device to seamlessly sign in with a passke
 To sign in with a passkey in Microsoft Authenticator, your Android device needs to run Android 14 or later.
 
 ### Same-device authentication in a browser (Android)
-[!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
 
 <!--- 
 ### Same-device authentication (Android)
