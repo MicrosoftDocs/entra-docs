@@ -2275,6 +2275,8 @@
         href: qliksense-enterprise-tutorial.md
       - name: Qmarkets Idea & Innovation Management
         href: qmarkets-idea-innovation-management-tutorial.md
+      - name: Qminder
+        href: qminder-tutorial.md
       - name: QPrism
         href: qprism-tutorial.md
       - name: QRadar SOAR
