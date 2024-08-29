@@ -38,15 +38,15 @@ Check this article regularly to learn about:
 
 **Change**
 
-Previously, when matching the Federated Identity Credential (FIC) `issuer`, `subject`, and `audience` values against the corresponding `issuer`, `subject`, and `audience` values contained in the token sent to Microsoft Entra ID by an external IdP, case-insensitive matching was used. To provide more fine-grained control to customers, we will be switching to enforcing case-sensitive matching. 
+Previously, when matching the Federated Identity Credential (FIC) `issuer`, `subject`, and `audience` values against the corresponding `issuer`, `subject`, and `audience` values contained in the token sent to Microsoft Entra ID by an external IdP, case-insensitive matching was used. To provide more fine-grained control to customers, we are switching to enforcing case-sensitive matching. 
 
 Invalid example: 
 - Token subject: `repo:contoso/contoso-org:ref:refs/heads/main`
 - FIC subject: `repo:Contoso/Contoso-Org:ref:refs/heads/main`
 
-These two subject values do not case-sensitively match, so validation will fail. The same mechanism will be applied to `issuer` and `audience` validation. 
+These two subject values do not case-sensitively match, so validation fails. The same mechanism is applied to `issuer` and `audience` validation. 
 
-This change will be applied initially to applications or managed identities created after `August 14th, 2024`.  Inactive applications or managed identities, determined by there being zero Workload Identity Federation requests made by said application or managed identity between the period `August 1st, 2024` to `August 31st, 2024`, will be required to use case-sensitive matching starting `September 27th, 2024`. For active applications, case-insensitive matching will come at a later date to be communicated.  
+This change will be applied initially to applications or managed identities created after `August 14th, 2024`.  Inactive applications or managed identities, determined by there being zero Workload Identity Federation requests made by said application or managed identity between the period `August 1st, 2024` to `August 31st, 2024`, will be required to use case-sensitive matching starting `September 27th, 2024`. For active applications, case-insensitive matching comes at a later date to be communicated.  
 
 To better highlight failures due to case-insensitivity, we are revamping the error message for `AADSTS700213`. It will now state `AADSTS700213: No matching federated identity record found for presented assertion subject '{subject}'. Please note that matching is done using a case-sensitive comparison. Check your federated identity credential Subject, Audience, and Issuer against the presented assertion.`, where `'{subject}'` provides the value of the subject claim contained in the token being sent from the external IdP to Microsoft Entra ID. This error template will also be used for case-insensitive failures surrounding `issuer` and `audience` validation. If you encounter this error, you should find the Federated Identity Credential that corresponds to the `issuer`, `subject`, or `audience` listed in the error and confirm that the corresponding values are equivalent from a case-sensitive perspective. If there is a mismatch, you need to replace the current `issuer`, `subject`, or `audience` value in the FIC with the `issuer`, `subject`, or `audience` value that was contained in the error message.
 
