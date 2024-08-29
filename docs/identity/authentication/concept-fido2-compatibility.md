@@ -33,9 +33,11 @@ The following tables lists which authentication brokers are supported for differ
 |------------------|---------------------------------|----------------|
 | **iOS**              | Microsoft Authenticator         | &#x2705;       |
 | **macOS**            | Microsoft Intune Company Portal <sup>1</sup> | &#x2705;       |
-| **Android** | Authenticator or Company Portal | &#x2705;    |
+| **Android**<sup>2</sup> | Authenticator or Company Portal | &#10060;    |
 
 <sup>1</sup>On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. For FIDO2 authentication, make sure that you run the latest version of native applications. 
+
+<sup>2</sup>Native application support for FIDO2 on Android is in development.
 
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
