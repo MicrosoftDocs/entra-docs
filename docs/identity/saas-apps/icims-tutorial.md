@@ -39,7 +39,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 ## Add ICIMS from the gallery
 
-To configure the integration of ICIMS into Microsoft Entra ID, you need to use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)  Configure and test Microsoft Entra SSO with ICIMS using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in ICIMS.
+To configure the integration of ICIMS into Microsoft Entra ID, you need to use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)  Configure and test Microsoft Entra SSO with ICIMS using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in ICIMS.
 
 To configure and test Microsoft Entra SSO with ICIMS, perform the following steps:
 
@@ -99,7 +99,7 @@ In this section, you'll add a client secret for your application.
 
 ### Add permissions to your Entra Application
 
-In this section, you'll add a permissions to your application to sign in users and read the signed-in users' profiles.
+In this section, you'll add a permission to your application to sign in users and read the signed-in users' profiles.
 
 1. In the Microsoft Entra admin center, in App registrations, select your application.
 2. From the Overview page of your client application, select **API permissions** > **Add a permission** > **Microsoft Graph**.
@@ -147,20 +147,20 @@ The Match From setting indicates which Microsoft Entra ID attribute to match aga
 
 #### Match From setting options:
 1. **Subject / NameID**: An immutable identifier for the user, unique with respect to the Microsoft Entra ID application used to authenticate the user. If a single user signs into two different apps using two different client IDs, those apps will receive two different values for the subject claim.
-2. **OID**: The immutable identifier for an object in the Microsoft identity system, in this case, a user account. This ID uniquely identifies the user across applications. Two different applications signing in the same user will receive the same value in the oid claim. The Microsoft Graph will return this ID as the id property for a given user account.
+2. **OID**: The immutable identifier for an object in the Microsoft identity system, in this case, a user account. This ID uniquely identifies the user across applications. Two different applications signing in the same user will receive the same value in the oid claim. The Microsoft Graphs will return this ID as the id property for a given user account.
 3. **Email**: The email of the user. Emails are mutable and only need to match during the first login, at which point the account is bound with an ATS user.  This option is not recommended for mutable email addresses.
 
 > [!NOTE]  
 > iCIMS recommends that you verify the Microsoft Entra ID user’s email address before accessing iCIMS ATS via Corporate SSO. This prevents linking an account with an invalid email address.
 
 #### Match To setting options:
-1. **Login**: The ATS person record’s login field, also known as the username.
+1. **Login**: The ATS person record’s log in field, also known as the username.
 2. **Email**: The ATS person record’s email field.
 3. **ExternalID**: The ATS person record’s external ID field.
 
 ### Submit a support ticket for your SSO integration
  
-In this section, you'll submit a support ticket to request iCIMS technical support setup your SSO integration.
+In this section, you'll submit a support ticket to request iCIMS technical support set up your SSO integration.
 
 1. Ask your iCIMS user admin to visit https://community.icims.com/login.
 2. Click Support > Create a Case.
