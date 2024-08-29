@@ -66,11 +66,11 @@ Follow these steps to create a Microsoft Entra Application Registration for your
 5. Specify who can use the application, sometimes called its sign-in audience as **Accounts in this organizational directory only**.
 6. Specify a Redirect URI based on your ICIMS datacenter:
 
-    a. US: https://login.icims.com/login/callback
+    a. US: `https://login.icims.com/login/callback`
 
-	b. EU: https://login.icims.ca/login/callback
+	b. EU: `https://login.icims.ca/login/callback`
 
-	c. CA: https://login.icims.eu/login/callback
+	c. CA: `https://login.icims.eu/login/callback`
 
 > [!NOTE]  
 > If you are not sure about which redirect URI to use, navigate to your iCIMS ATS domain without being logged in.  The domain is in the format `<customernickname>.icims.com`, for example notacustomer.icims.com. You will be redirected to a login page whose domain will match one of the options datacenter domains listed on step 6.

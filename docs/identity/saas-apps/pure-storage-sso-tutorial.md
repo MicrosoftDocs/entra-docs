@@ -30,7 +30,7 @@ To integrate Microsoft Entra ID with Pure Storage SSO, you need:
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Pure Storage SSO single sign-on (SSO) enabled subscription.
 
-* **[Optional]** If you intend to use Signing Certificate & Encrypting Assertion features, you should import your certificate & private key into Pure Stotage FlashArray using **purecert create --certificate --key "cert-name"**. Use preferred mode of certificate creation, for self signed cert follow section **purecert** in [doc](https://support-be.purestorage.com/bundle/m_flasharray_admin_and_cli_reference_guides/page/FlashArray/PurityFA/library/resources/PurityFA_6.6.8_FlashArray_CLIRefGuide.pdf). 
+* **[Optional]** If you intend to use Signing Certificate & Encrypting Assertion features, you should import your certificate & private key into Pure Stotage FlashArray using **purecert create --certificate --key "cert-name"**. Use preferred mode of certificate creation, for self signed cert please contact [Pure Storage SSO support team](mailto:security-solutions-support@purestorage.com) for more details.
 
 ## Scenario description
 
