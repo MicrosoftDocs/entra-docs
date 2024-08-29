@@ -324,7 +324,7 @@ Suppose you use tenant restrictions to block access by default, but you want to 
 
 There are three options for enforcing tenant restrictions v2 for clients:
 
-- [Option 1](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access): Universal tenant restrictions v2 as part of Microsoft Entra Global Secure Access
+- [Option 1](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access): Universal tenant restrictions v2 as part of Microsoft Entra Global Secure Access (preview)
 - [Option 2](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy): Set up tenant restrictions v2 on your corporate proxy
 - [Option 3](#option-3-enable-tenant-restrictions-on-windows-managed-devices-preview): Enable tenant restrictions on Windows managed devices (preview)
 

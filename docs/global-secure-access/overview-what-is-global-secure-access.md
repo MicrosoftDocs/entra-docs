@@ -62,7 +62,7 @@ Microsoft Entra Internet Access and Microsoft Entra Private Access are now gener
 Prerequisite to use Microsoft Entra Private Access, Microsoft Entra Internet Access and Secure Access Essentials is Microsoft Entra ID P1 or Microsoft Entra ID P2.
 
 > [!IMPORTANT]
-> Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to rollout on October 1, 2024. This is following a 90-day trial period that began with General Availability on July 1st, 2024.
+> Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to roll out on October 1, 2024. This is following a 90-day trial period that began with General Availability on July 1st, 2024.
 
 **Remote Network licensing**
 
