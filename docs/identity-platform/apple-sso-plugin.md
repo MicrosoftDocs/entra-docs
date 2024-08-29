@@ -368,7 +368,7 @@ For more information, see the [Deploy the Microsoft Enterprise SSO plug-in for A
 
 ## Use the SSO plug-in in your application
 
-[MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later supports the Microsoft Enterprise SSO plug-in for Apple devices. It's the recommended way to add support for the Microsoft Enterprise SSO plug-in. It ensures you get the full capabilities of the Microsoft identity platform.
+[MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later support the Microsoft Enterprise SSO plug-in for Apple devices. It's the recommended way to add support for the Microsoft Enterprise SSO plug-in. It ensures you get the full capabilities of the Microsoft identity platform.
 
 If you're building an application for frontline-worker scenarios, see [Shared device mode for iOS devices](/entra/msal/objc/shared-devices-ios) for setup information.
 
