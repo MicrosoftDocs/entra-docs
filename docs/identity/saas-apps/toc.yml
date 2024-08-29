@@ -1635,6 +1635,8 @@
       items:
       - name: LabLog
         href: lablog-tutorial.md
+      - name: Labelbox OIDC
+        href: labelbox-tutorial.md
       - name: LambdaTest Single Sign on
         href: lambda-test-single-sign-on-tutorial.md
       - name: Land Gorilla Client
