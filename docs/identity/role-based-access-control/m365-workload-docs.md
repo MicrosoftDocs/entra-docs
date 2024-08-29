@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 08/26/2024
+ms.date: 08/31/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
@@ -116,7 +116,7 @@ Includes Defender suite, Secure Score, Cloud App Security, and Threat Intelligen
 > | --- | --- |
 > | Overview | [Microsoft Defender XDR Unified role-based access control (RBAC)](/defender-xdr/manage-rbac) |
 > | Management API reference | **Defender-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• The following roles have permissions ([reference](/microsoft-365/security/defender/m365d-permissions)): Security Administrator, Security Operator, Security Reader, Global Administrator, and Global Reader<br/><br/>**Defender-specific roles**<br/>Workloads must be activated to use Defender unified RBAC. See [Activate Microsoft Defender XDR Unified role-based access control (RBAC)](/microsoft-365/security/defender/activate-defender-rbac). Activating defender Unified RBAC will turn off individual Defender solution roles.<br/>• Can only be managed via security.microsoft.com portal. |
-> | Audit and monitoring reference | **Defender-specific roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with `RoleManagement` category<br/><br/>**Defender-specific roles**<br/>No audit logs available. |
+> | Audit and monitoring reference | **Defender-specific roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with `RoleManagement` category |
 
 ### Viva Engage
 
@@ -124,7 +124,7 @@ Includes Defender suite, Secure Score, Cloud App Security, and Threat Intelligen
 > | Area | Content |
 > | --- | --- |
 > | Overview | [Manage administrator roles in Viva Engage](/viva/engage/eac-key-admin-roles-permissions) |
-> | Management API reference | **Viva Engage-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• See roles with permissions starting with `microsoft.office365.yammer`.<br/><br/>**Viva Engage-specific roles**<br/>• Verified admin and Network admin roles can be managed via the Yammer admin center.<br/>• Corporate communicator role can be assigned via the Viva Engage admin center.<br/>• [Yammer Data Export API](/rest/api/yammer/network-data-export) can be used to export admins.csv to read the list of admins<br/>• No APIs available for create/update/delete. |
+> | Management API reference | **Viva Engage-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• See roles with permissions starting with `microsoft.office365.yammer`.<br/><br/>**Viva Engage-specific roles**<br/>• Verified admin and Network admin roles can be managed via the Yammer admin center.<br/>• Corporate communicator role can be assigned via the Viva Engage admin center.<br/>• [Yammer Data Export API](/rest/api/yammer/network-data-export) can be used to export admins.csv to read the list of admins |
 > | Audit and monitoring reference | **Viva Engage-specific roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with `RoleManagement` category<br/><br/>**Viva Engage-specific roles**<br/>• Use [Yammer Data Export API](/rest/api/yammer/network-data-export) to incrementally export admins.csv for a list of admins |
 
 ### Viva Connections
@@ -226,8 +226,7 @@ Services related to purchasing and billing.
 > | Area | Content |
 > | --- | --- |
 > | Overview | [Manage volume licensing user roles Frequently Asked Questions](/microsoft-365/commerce/licenses/user-roles-faq) |
-> | Management API reference | **Volume Licensing-specific roles in Microsoft Entra ID**<br/>Volume Licensing does not support Microsoft Entra roles.<br/><br/>**Volume Licensing-specific roles**<br/>[VL users and roles](/microsoft-365/commerce/licenses/user-roles-faq#how-do-i-manage-vl-users-and-roles) are managed in the M365 Admin Center. No API available. |
-> | Audit and monitoring reference | No audit logs available. |
+> | Management API reference | **Volume Licensing-specific roles in Microsoft Entra ID**<br/>Volume Licensing does not support Microsoft Entra roles.<br/><br/>**Volume Licensing-specific roles**<br/>[VL users and roles](/microsoft-365/commerce/licenses/user-roles-faq#how-do-i-manage-vl-users-and-roles) are managed in the M365 Admin Center. |
 
 ### Partner Center
 
@@ -235,8 +234,8 @@ Services related to purchasing and billing.
 > | Area | Content |
 > | --- | --- |
 > | Overview | [Roles, permissions, and workspace access for users](/partner-center/permissions-overview) |
-> | Management API reference | **Partner Center-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• The following roles have permissions: Global Administrator, User Administrator.<br/><br/>**Partner Center-specific roles**<br/>[Partner Center-specific roles](/partner-center/permissions-overview#microsoft-entra-tenant-roles-and-non-azure-ad-roles) can only be managed via Partner Center. No API available. |
-> | Audit and monitoring reference | **Partner Center-specific roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with category `RoleManagement`<br/><br/>**Partner Center-specific roles**<br/>No audit log available. |
+> | Management API reference | **Partner Center-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• The following roles have permissions: Global Administrator, User Administrator.<br/><br/>**Partner Center-specific roles**<br/>[Partner Center-specific roles](/partner-center/permissions-overview#microsoft-entra-tenant-roles-and-non-azure-ad-roles) can only be managed via Partner Center. |
+> | Audit and monitoring reference | **Partner Center-specific roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with category `RoleManagement` |
 
 ## Other services
 
@@ -268,8 +267,7 @@ Includes Unified Support Portal and Services Hub.
 > | Area | Content |
 > | --- | --- |
 > | Overview | [Services Hub roles and permissions](/services-hub/unified/getting-started/roles-permissions) |
-> | Management API reference | Manage these roles in the Services Hub portal, https://serviceshub.microsoft.com.<br/>No API available to manage these roles. |
-> | Audit and monitoring reference | No audit log available. |
+> | Management API reference | Manage these roles in the Services Hub portal, https://serviceshub.microsoft.com. |
 
 ## Microsoft Graph application permissions
 
