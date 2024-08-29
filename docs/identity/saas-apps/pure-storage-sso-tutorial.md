@@ -161,7 +161,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. **[Optional]** Fill in **Signing Credential** and **Decryption Credential** with **cert-name** imported into Pure Storage FlashArray. Toggle and enable **Sign Request** and **Encrypt Assertion**.
 
-    1. Get verification certificate from Entra app and update in FlashArray SSO Configuration for **Verification Certificate** field. You can follow the steps shown in the [document](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on) to get a relevant certificate.
+    1. Get verification certificate from Entra app and update in FlashArray SSO Configuration for **Verification Certificate** field. You can follow the steps shown in the [document](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md) to get a relevant certificate.
 
     1. Click **Save**.
 
