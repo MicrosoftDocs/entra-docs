@@ -61,7 +61,7 @@ We understand that some customers might need additional time to prepare for this
 **Service category:** Provisioning   
 **Product capability:** Entra Connect    
 
-As part of ongoing security hardening, we have removed unused permissions from the privileged "*Directory Synchronization Accounts*" role. This role is exclusively used by Microsoft Entra Connect Sync, and Microsoft Entra Cloud Sync, to synchronize Active Directory objects with Microsoft Entra ID. There's no action required by customers to benefit from this hardening, and the revised role permissions are documented here: [Directory Synchronization Accounts](../identity/role-based-access-control/permissions-reference.md#directory-synchronization-accounts).
+As part of ongoing security hardening, we've removed unused permissions from the privileged "*Directory Synchronization Accounts*" role. This role is exclusively used by Microsoft Entra Connect Sync, and Microsoft Entra Cloud Sync, to synchronize Active Directory objects with Microsoft Entra ID. There's no action required by customers to benefit from this hardening, and the revised role permissions are documented here: [Directory Synchronization Accounts](../identity/role-based-access-control/permissions-reference.md#directory-synchronization-accounts).
 
 ---
 
@@ -74,6 +74,112 @@ As part of ongoing security hardening, we have removed unused permissions from t
 Starting late August 2024, the "*add sign-in method*" dialog on the My Security-Info page will be updated with improved sign-in method descriptions, and a modern look and feel. With this change when users select "*add sign-in method*", they'll initially be recommended to register the strongest method available to them which is allowed by organizational authentication method policy. Users have the ability to select "*show more options*", and choose from all available sign-in methods allowed by their policy. 
 
 This change occurs automatically, and admins won't need to take any action.
+
+---
+
+### Public Preview - Provisioning UX Updates
+
+**Type:** Plan for change    
+**Service category:** Provisioning    
+**Product capability:** Outbound to SaaS Applications    
+
+We'll start releasing user experience updates for application provisioning, HR provisioning, and cross-tenant synchronization next month. This includes a new overview page, user experience to configure connectivity to your application, and new create provisioning experience. The new experiences include all functionality available to customers today, and no customer action is required.
+
+---
+
+### Change Announcement - Deferred Changes to My Groups Admin Controls
+
+**Type:** Plan for change    
+**Service category:** Group Management    
+**Product capability:** AuthZ/Access Delegation        
+
+In [October 2023](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/what-s-new-in-microsoft-entra/ba-p/3796395) we shared that, starting June 2024, the existing Self Service Group Management setting in the Microsoft Entra Admin Center which states "*restrict user ability to access groups features in My Groups*" will be retired. These changes are under review, and will not take place as originally planned. A new deprecation date will be announced in the future.
+
+---
+
+### Public Preview - Microsoft Entra ID FIDO2 provisioning APIs
+
+**Type:** New feature    
+**Service category:** MFA    
+**Product capability:** Identity Security & Protection            
+
+Microsoft Entra Id now supports FIDO2 provisioning via API, allowing organizations to pre-provision security keys (passkeys) for users. These new APIs can simplify user onboarding, and provide seamless phishing-resistant authentication on day one for employees. 
+For more information on how to use this feature, see: [Provision FIDO2 security keys using Microsoft Graph API (preview)](../identity/authentication/how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+
+---
+
+### General Availability - Enable, Disable, and Delete synchronized users accounts with Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management            
+
+Lifecycle Workflows is now able to enable, disable, and delete user accounts which are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra. This allows you to complete the employee offboarding process by deleting the user account after a retention period.
+
+To learn more, see: [Manage users synchronized from Active Directory Domain Services with workflows](../id-governance/manage-workflow-on-premises.md).
+
+---
+
+### General Availability - Configure Lifecycle Workflow Scope Using Custom Security Attributes
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management            
+
+Customers can now leverage their confidential HR data, stored in custom security attributes, in addition to other attributes to define the scope of their workflows in Lifecycle Workflows for automating joiner, mover, and leaver scenarios.
+
+To learn more, see: [Use custom security attributes to scope a workflow](..//id-governance/manage-workflow-custom-security-attribute.md).
+
+---
+
+### General Availability - Workflow History Insights in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management              
+
+With this feature, customers can now monitor workflow health, and get insights across all their workflows in Lifecycle Workflows including viewing workflow processing data across workflows, tasks, and workflow categories.
+
+To learn more, see: [Lifecycle workflow Insights](../id-governance/lifecycle-workflow-insights.md).
+
+
+---
+
+### General Availability - Configure custom workflows to run mover tasks when a user's job profile changes
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management           
+
+Lifecycle Workflows now supports the ability to trigger workflows based on job change events like changes to an employee's department, job role, or location, and see them executed on the workflow schedule. With this feature, customers can leverage new workflow triggers to create custom workflows for their executing tasks associated with employees moving within the organization including:
+
+- Trigger workflows when a specified attribute changes
+- Triggering workflows when a user is added or removed from a group's membership
+- Tasks to notify a user's manager about a move
+- Task to assign licenses or remove selected licenses from a user
+
+To learn more, see the [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center tutorial](../id-governance/tutorial-mover-custom-workflow-portal.md).
+
+---
+
+### General Availability -  Device based conditional access to M365/Azure resources on Red Hat Enterprise Linux
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** SSO              
+
+Since October 2022, users on Ubuntu Desktop 20.04 LTS & Ubuntu 22.04 LTS with Microsoft Edge browser could register their devices with Entra ID, enroll into Intune management, and securely access corporate resources using device-based Conditional Access policies.
+
+This release extends support to Red Hat Enterprise Linux 8.x and 9.x (LTS) which makes these capabilities possible:
+
+- Entra ID registration & enrollment of RedHat LTS (8/9) desktops.
+- Conditional Access policies protecting web applications via Microsoft Edge.
+-Provides SSO for native & web applications (ex: Azure CLI, Edge Browser, Teams PWA, etc.) to access M365/Azure protected resources.
+- Standard Intune compliance policies.
+- Support for Bash scripts with custom compliance policies.
+- Package Manager now supports RHEL "RPM" packages in addition to Debian "DEB" packages.
+
+To learn more, see: [Microsoft Entra registered devices](..//identity/devices/concept-device-registration.md).
 
 ---
 
