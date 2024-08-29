@@ -2397,8 +2397,6 @@
         href: rootly-tutorial.md
       - name: RunMyProcess
         href: runmyprocess-tutorial.md
-    - name: S
-      items:
       - name: Saba Cloud
         href: saba-cloud-tutorial.md
       - name: Saba TalentSpace
@@ -2567,6 +2565,8 @@
         href: shucchonavi-tutorial.md
       - name: Shutterstock
         href: shutterstock-tutorial.md
+      - name: SIFULAN Connect
+        href: sifulan-connect-tutorial.md
       - name: Sigma Computing
         href: sigma-computing-tutorial.md
       - name: Signagelive
