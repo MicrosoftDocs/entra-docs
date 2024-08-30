@@ -459,7 +459,7 @@ An Authentication Policy Administrator can exempt a CA if its CRL has issues tha
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/exempt-validation.png" alt-text="Screenshot of how to exempt CAs from CRL validation." :::  
 
-The CAs in the exempted list aren't required to have CRL configured and the end uer certificates that they issue don't fail authentication.
+The CAs in the exempted list aren't required to have CRL configured and the end-user certificates that they issue don't fail authentication.
 
 >[!NOTE]
 >There's a known issue with the object picker where the selected items aren't displayed correctly. Use the **Certificate Authorities** tab to select or remove CAs.
