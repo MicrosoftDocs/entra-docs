@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Labelbox OIDC'
-description: Learn how to configure single sign-on between Microsoft Entra and Labelbox OIDC.
+title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Labelbox'
+description: Learn how to configure single sign-on between Microsoft Entra and Labelbox.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -13,12 +13,12 @@ ms.date: 08/28/2024
 ms.author: jeedes
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Labelbox OIDC
+# Tutorial: Microsoft Entra single sign-on (SSO) integration with Labelbox
 
-In this tutorial, you'll learn how to integrate Labelbox OIDC with Microsoft Entra ID. When you integrate Labelbox OIDC with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate Labelbox with Microsoft Entra ID. When you integrate Labelbox with Microsoft Entra ID, you can:
 
-Use Microsoft Entra ID to control who can access Labelbox OIDC.
-Enable your users to be automatically signed in to Labelbox OIDC with their Microsoft Entra accounts.
+Use Microsoft Entra ID to control who can access Labelbox.
+Enable your users to be automatically signed in to Labelbox with their Microsoft Entra accounts.
 Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
@@ -26,19 +26,19 @@ Manage your accounts in one central location: the Azure portal.
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* Labelbox OIDC single sign-on (SSO) enabled subscription.
+* Labelbox single sign-on (SSO) enabled subscription.
 
-## Add Labelbox OIDC from the gallery
+## Add Labelbox from the gallery
 
-To configure the integration of Labelbox OIDC into Microsoft Entra ID, you need to add Labelbox OIDC from the gallery to your list of managed SaaS apps.
+To configure the integration of Labelbox into Microsoft Entra ID, you need to add Labelbox from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 1. Browse to **Identity > Applications > Enterprise applications > New application**.
 
-1. In the **Add from the gallery** section, enter **Labelbox OIDC** in the search box.
+1. In the **Add from the gallery** section, enter **Labelbox** in the search box.
 
-1. Select **Labelbox OIDC** in the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. Select **Labelbox** in the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
 ## Configure Microsoft Entra SSO
 
@@ -46,7 +46,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Labelbox OIDC** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Labelbox** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 
@@ -80,7 +80,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         ![Screenshot showing the client secrets value.](common/client-secret.png "Days")
 
-    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the Labelbox OIDC side configuration.
+    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the Labelbox side configuration.
 
         ![Screenshot showing how to add a client secret.](common/client.png "Secret")
 
@@ -100,16 +100,16 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Labelbox OIDC.
+In this section, you'll enable B.Simon to use single sign-on by granting access to Labelbox.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Labelbox OIDC**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Labelbox**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure Labelbox OIDC SSO
+## Configure Labelbox SSO
 
-To complete the OAuth/OIDC federation setup on **Labelbox OIDC** side, you need to send the copied values like Client ID, Client Secret and OIDC Metadata file from Entra to [Labelbox OIDC support team](mailto:support@labelbox.com). They set this setting to have the OIDC connection set properly on both sides.
+To complete the OAuth/OIDC federation setup on **Labelbox** side, you need to send the copied values like Client ID, Client Secret and OIDC Metadata file from Entra to [Labelbox support team](mailto:support@labelbox.com). They set this setting to have the OIDC connection set properly on both sides.
