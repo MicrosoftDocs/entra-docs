@@ -161,7 +161,7 @@ The Match From setting indicates which Microsoft Entra ID attribute to match aga
 
 ### Submit a support ticket for your SSO integration
  
-In this section, you'll submit a support ticket to request iCIMS technical support setup your SSO integration.
+In this section, you'll submit a support ticket to request iCIMS technical support to set up your SSO integration.
 
 1. Ask your iCIMS user admin to visit https://community.icims.com/login.
 2. Click Support > Create a Case.
