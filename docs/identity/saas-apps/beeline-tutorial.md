@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
@@ -94,16 +94,16 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. The Beeline Enterprise application expects the SAML assertions in a specific format. Please work with [Beeline Enterprise support team](mailto:support@beeline.com) first to identify the correct user identifier which will be mapped into the application. Also please take the guidance from [Beeline Enterprise support team](mailto:support@beeline.com) about the attribute which they want to use for this mapping. You can manage the value of this attribute from the **User Attributes** tab of the application. The following screenshot shows an example for this. Here we have mapped the **User Identifier** claim with the **userprincipalname** attribute, which provides unique user ID, which will be sent to the Beeline Enterprise application in every successful SAML response.
 
-    ![image](common/edit-attribute.png)
+    ![Screenshot shows the image of default attributes.](common/edit-attribute.png "Image")
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Beeline Enterprise** > **Manage** > **Single sign-on**.
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
-	![The Certificate download link](common/certificatebase64.png)
+	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
 1. In the **Set up Beeline Enterprise** section, copy the **Login URL** and **Logout URL**.
     
-    ![Copy configuration URLs](common/copy-configuration-urls.png)
+    ![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -139,9 +139,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 To configure single sign-on on **Beeline Enterprise** side, you need to send the following items that you gathered from a step earlier in this tutorial to the [Beeline Enterprise support team](mailto:support@beeline.com). They will configure single sign-on on the **Beeline Enterprise** side.
 
-1. **Certificate (Base64)**
-1. **Login URL**
-1. **Logout URL**
+* **Certificate (Base64)**
+* **Login URL**
+* **Logout URL**
 
 ### Create Beeline Enterprise test user
 

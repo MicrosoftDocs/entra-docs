@@ -146,21 +146,22 @@ You must determine the  Match From and Match To settings to map your organizatio
 The Match From setting indicates which Microsoft Entra ID attribute to match against an ATS user account. The Match To setting indicates the ATS user attribute to match against.
 
 #### Match From setting options:
-1. **Subject / NameID**: An immutable identifier for the user, unique with respect to the Microsoft Entra ID application used to authenticate the user. If a single user signs into two different apps using two different client IDs, those apps will receive two different values for the subject claim.
-2. **OID**: The immutable identifier for an object in the Microsoft identity system, in this case, a user account. This ID uniquely identifies the user across applications. Two different applications signing in the same user will receive the same value in the oid claim. The Microsoft Graphs will return this ID as the id property for a given user account.
-3. **Email**: The email of the user. Emails are mutable and only need to match during the first login, at which point the account is bound with an ATS user.  This option is not recommended for mutable email addresses.
+
+* **Subject / NameID**: An immutable identifier for the user, unique with respect to the Microsoft Entra ID application used to authenticate the user. If a single user signs into two different apps using two different client IDs, those apps will receive two different values for the subject claim.
+* **OID**: The immutable identifier for an object in the Microsoft identity system, in this case, a user account. This ID uniquely identifies the user across applications. Two different applications signing in the same user will receive the same value in the oid claim. The Microsoft Graphs will return this ID as the ID property for a given user account.
+* **Email**: The email of the user. Emails are mutable and only need to match during the first login, at which point the account is bound with an ATS user.  This option is not recommended for mutable email addresses.
 
 > [!NOTE]  
 > iCIMS recommends that you verify the Microsoft Entra ID user’s email address before accessing iCIMS ATS via Corporate SSO. This prevents linking an account with an invalid email address.
 
 #### Match To setting options:
-1. **Login**: The ATS person record’s log in field, also known as the username.
-2. **Email**: The ATS person record’s email field.
-3. **ExternalID**: The ATS person record’s external ID field.
+* **Login**: The ATS person record’s log in field, also known as the username.
+* **Email**: The ATS person record’s email field.
+* **ExternalID**: The ATS person record’s external ID field.
 
 ### Submit a support ticket for your SSO integration
  
-In this section, you'll submit a support ticket to request iCIMS technical support set up your SSO integration.
+In this section, you'll submit a support ticket to request iCIMS technical support setup your SSO integration.
 
 1. Ask your iCIMS user admin to visit https://community.icims.com/login.
 2. Click Support > Create a Case.
@@ -188,8 +189,8 @@ In this section, you'll enable B.Simon to use single sign-on by creating a recor
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-1. Once iCIMS support has setup the SSO integration they will provide a test url.
-1. The url will be in the format, https://iam-federated-testing-bff.production.env.icims.tools/login/hs-#####-azure. The digits in the url are your unique icims ATS customer ID.
+* Once iCIMS support has setup the SSO integration they will provide a test url.
+* The url will be in the format, https://iam-federated-testing-bff.production.env.icims.tools/login/hs-#####-azure. The digits in the url are your unique icims ATS customer ID.
 
 ## Next steps
 
