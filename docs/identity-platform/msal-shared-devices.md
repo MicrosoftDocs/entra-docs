@@ -14,15 +14,11 @@ ms.topic: concept-article
 
 # Overview of shared device mode
 
-Shared Device Mode (SDM) is a Microsoft Entra ID feature that enables organizations to configure an iOS, iPadOS, or Android device for shared use among multiple employees, a common practice in frontline worker environments. With SDM, employees sign in once to access their data across all supported applications, without accessing other employees’ data. When employees sign out after completing their shift or task, they're automatically signed out of the device and all supported apps, making it ready for the next user.
+Shared Device Mode (SDM) is a Microsoft Entra ID feature that enables organizations to configure an iOS, iPadOS, or Android device for shared use among multiple employees, a common practice in frontline worker environments. With SDM, employees sign in once to access their data across all supported applications, without accessing other employees’ data. When employees sign out after completing their shift or task, they're automatically signed out of the device and all supported applications, making the device ready for the next user.
 
 ## Why Shared Device Mode?
 
-Most applications optimize their experience for single users because mobile devices running iOS, iPadOS, or Android are designed for individual use. Part of the optimized experience means enabling single sign-on (SSO) across applications and keeping users signed in on their devices. 
-
-To allow employees to use an organization's apps across shared devices, developers should facilitate a streamlined and secure user experience. Employees should be able to pick a device from the shared pool and sign in with a single gesture, making the device "theirs" during their shift. At the end of their shift, employees can perform another gesture to globally sign out of the device before returning it to the shared device pool. This removes all personal and company information from the device, ensuring the next user can't access their data. 
-
-Enabling Shared Device Mode provides several benefits, including:
+To allow employees to use an organization's apps across shared devices, developers should facilitate a streamlined and secure user experience. Employees should be able to pick a device from the shared pool and sign in with a single gesture, making the device "theirs" during their shift. At the end of their shift, employees can perform another gesture to globally sign out of the device before returning it to the shared device pool. Enabling Shared Device Mode provides several benefits, including:
 
 - **Single sign-on:** Allow users to sign into one of the apps that support shared device mode and gain seamless authentication across all other SDM supported apps without having to reenter their credentials. Exempt users from First Run Experience (FRE) screens on shared devices. 
 - **Single sign out:** Enable users to sign out of the device without needing to sign out individually from each SDM supported application. Signing out assures users that their data won’t be shown to subsequent device users, provided apps ensure cleaning up of any cached user data.
@@ -53,7 +49,7 @@ You can also set up devices in shared device mode using a supported third-party 
 
 Manual setup is a useful tool for pilot programs and small-scale deployments. It requires the Cloud Device Administrator access and needs to be done on each device.
 
-**Application developers** add shared device mode to support [single account public client application](single-multi-account.md#single-account-public-client-application) using the Microsoft Authentication Library (MSAL). MSAL allows the apps to modify their behavior based on the signals on the state of the device and user on the device. For example, the application checks the state of the user on the device every time the application is used and clears the previous user's data if the user has changed. On a user change, the application should ensure both the previous user's data is cleared and that any cached data being displayed in the application is removed.
+**Application developers** add shared device mode support to [single account public client application](single-multi-account.md#single-account-public-client-application) using the Microsoft Authentication Library (MSAL). MSAL allows the apps to modify their behavior based on the signals on the state of the device and user on the device. For example, the application checks the state of the user on the device every time the application is used and clears the previous user's data if the user has changed. On a user change, the application should ensure both the previous user's data is cleared and that any cached data being displayed in the application is removed.
 
 Application developers can also integrate with the [Intune App SDK](/mem/intune/developer/app-sdk) to support all data loss prevention scenarios, which is highly recommended. The Intune App SDK enables developers to support [Intune App Protection Policies](/mem/intune/apps/app-protection-policy) in their applications. Microsoft recommends integrating with Intune's [selective wipe](/mem/intune/developer/app-sdk-android-phase5#selective-wipe) capabilities and [deregistering the user on iOS](/mem/intune/developer/app-sdk-ios-phase1#deregister-user-accounts) during sign out.
 
