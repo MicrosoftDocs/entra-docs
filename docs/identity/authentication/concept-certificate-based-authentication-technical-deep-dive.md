@@ -5,7 +5,7 @@ description: Learn how Microsoft Entra certificate-based authentication works
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/28/2024
+ms.date: 08/30/2024
 
 
 ms.author: justinha
@@ -439,6 +439,32 @@ As of now, there's no way to manually force or retrigger the download of the CRL
 ### How to configure revocation
 
 [!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
+
+### Understanding CRL validation
+
+A CRL is a record of digital certificates that have been revoked before the end of their validity period by a certificate authority (CA).
+When CAs are uploaded to the Microsoft Entra trust store, a CRL, or more specifically the CrlDistributionPoint attribute, isn't required. A CA can be uploaded without a CRL endpoint, and certificate-based authentication won't fail if an issuing CA doesn't have a CRL specified. 
+
+To strengthen security and avoid misconfigurations, an Authentication Policy Administrator can require CBA authentication to fail if no CRL is configured for a CA that issues an end user certificate.
+
+### Enable CRL validation
+
+To enable CRL validation, click **Require CRL validation (recommended)**. 
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/require-validation.png" alt-text="Screenshot of how to require CRL validation." :::  
+
+Once enabled, any CBA will fail is the end user certificate was issued by a CA with no CRL configured.
+
+An Authentication Policy Administrator can exempt a CA if its CRL has issues that should be fixed. Click **Add Exemption** and select any CAs that should be exempted.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/exempt-validation.png" alt-text="Screenshot of how to exempt CAs from CRL validation." :::  
+
+The CAs in the exempted list aren't required to have CRL configured and the end uer certificates that they issue don't fail authentication.
+
+>[!NOTE]
+>There's a known issue with the object picker where the selected items aren't displayed correctly. Use the **Certificate Authorities** tab to select or remove CAs.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/exempted.png" alt-text="Screenshot of CAs that are exempted from CRL validation." :::  
 
 
 ## How CBA works with a Conditional Access authentication strength policy
