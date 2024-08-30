@@ -387,8 +387,8 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 1. Under **Settings**, select **Authentication**.
 1. Select **Add Identity provider**.  
 1. Select **Microsoft** as the identity provider.
-1. Select **Customer** as the tenant type.
-1. Under **App registration**, enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-1-register-a-custom-authentication-extension) when registering the custom claims provider.
+1. Select **External configuration** as the tenant type.
+1. Under **App registration**, select **Provide the details of an existing app registration** for the **App registration type**, and enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-1-register-a-custom-authentication-extension) when registering the custom claims provider.
 1. For the **Issuer URL**, enter the following URL `https://{domainName}.ciamlogin.com/{tenant_id}/v2.0`, where
     - `{domainName}` is the domain name of your external tenant, in the form `{domainName}.contoso.com`.
     - `{tenantId}` is the tenant ID of your external tenant.
