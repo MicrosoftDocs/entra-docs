@@ -46,7 +46,8 @@ All Microsoft operated regions should choose Microsoft. All other regions should
 1. Fetch the current group settings for the Microsoft Entra organization and display the current group settings.
 
     ```powershell
-    $grpUnifiedSetting = Get-MgBetaDirectorySetting -Search DisplayName:"Group.Unified"
+    $grpUnifiedSetting = Get-MgBetaDirectorySetting | Where-Object { $_.DisplayName -eq "Group.Unified" }
+    $grpUnifiedSetting
     ```
    
     If no group settings were created for this Microsoft Entra organization, you get an empty screen. In this case, you must first create the settings. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this Microsoft Entra organization.
@@ -78,7 +79,7 @@ All Microsoft operated regions should choose Microsoft. All other regions should
 
 If you receive a `Request_BadRequest` error, it's because the settings already exist in the tenant. When you try to create a new `property:value` pair, the result is an error. In this case, follow these steps:
 
-1. Issue a `Get-MgBetaDirectorySetting | FL` cmdlet and check the ID. If several ID values are present, use the one where you see the `EnableMIPLabels` property on the **Values** settings.
+1. Issue a `Get-MgBetaDirectorySetting | Where-Object { $_.Values.Name -eq "EnableMIPLabels" }` cmdlet and check the ID.
 1. Issue the `Update-MgBetaDirectorySetting` cmdlet by using the ID that you retrieved.
 
 You also need to synchronize your sensitivity labels to Microsoft Entra ID. For instructions, see [Enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
