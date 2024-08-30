@@ -368,7 +368,7 @@ For more information, see the [Deploy the Microsoft Enterprise SSO plug-in for A
 
 ## Use the SSO plug-in in your application
 
-[MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later supports the Microsoft Enterprise SSO plug-in for Apple devices. It's the recommended way to add support for the Microsoft Enterprise SSO plug-in. It ensures you get the full capabilities of the Microsoft identity platform.
+[MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later support the Microsoft Enterprise SSO plug-in for Apple devices. It's the recommended way to add support for the Microsoft Enterprise SSO plug-in. It ensures you get the full capabilities of the Microsoft identity platform.
 
 If you're building an application for frontline-worker scenarios, see [Shared device mode for iOS devices](/entra/msal/objc/shared-devices-ios) for setup information.
 
@@ -408,13 +408,13 @@ Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSA
 The end user sees the familiar experience and doesn't have to sign in again in each application. For example, instead of displaying the native account picker, the SSO plug-in adds SSO sessions to the web-based account picker experience. 
 
 ## Upcoming changes to device identity key storage
-Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2025, all new device registrations will use Apple’s Secure Enclave by default. 
+Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2025, all new device registrations will use Apple’s Secure Enclave. There will be no opt-out of this storage location.
 
 Applications and MDM integrations that have a dependency on accessing Workplace Join keys via Keychain will need to start using MSAL and the Enterprise SSO plug-in to ensure compatibility with the Microsoft identity platform. 
 
 ### Enable Secure Enclave based storage of device identity keys
 
-If you would like to enable Secure Enclave based storage of device identity keys before it becomes the default, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
+If you would like to enable Secure Enclave based storage of device identity keys before it becomes mandatory, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
 
 > [!NOTE]
 > For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
@@ -426,6 +426,17 @@ If you would like to enable Secure Enclave based storage of device identity keys
 The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
 
 :::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin centre showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
+
+### Recognize app incompatibilities with Secure Enclave based device identity
+After enabling Secure Enclave based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
+
+:::image type="content" source="./media/apple-sso-plugin/device-mgmt-reqd.png" alt-text="Screenshot of a Conditional Access error message informing the user that the device must be managed before this resource can be accessed." lightbox="./media/apple-sso-plugin/device-mgmt-reqd.png":::
+
+This error will appear in Microsoft Entra ID sign-in logs with the following details: 
+- **Sign-in error code:** `530003`
+- **Failure reason:** `Device is required to be managed to access this resource.`
+
+If you see this error message during testing, first, ensure you have successfully enabled the SSO extension as well as have installed any requisite application-specific extensions (e.g., [Microsoft Single Sign On for Chrome](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji)). If you continue to see this message, it is recommended that you contact the vendor of the application to alert them to the incompatibility with the new storage location. 
 
 ### Scenarios impacted
 The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.

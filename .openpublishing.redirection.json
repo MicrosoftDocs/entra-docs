@@ -151,6 +151,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/pexip-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/pexip-service-mmv-legacy-app",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/karlsgate-identity-exchange-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/karlsgate-identity-exchange-kie-sso-add-on-tutorial",
       "redirect_document_id": false
@@ -674,6 +679,11 @@
     {
       "source_path_from_root": "/docs/permissions-management/how-to-notifications-rule.md",
       "redirect_url": "/entra/permissions-management/ui-autopilot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/permissions-management/training-videos.md",
+      "redirect_url": "/entra/permissions-management/permissions-management-quickstart-guide",
       "redirect_document_id": false
     },
     {

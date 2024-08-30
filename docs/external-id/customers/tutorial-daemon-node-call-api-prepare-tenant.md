@@ -10,8 +10,10 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/26/2023
+ms.date: 08/27/2024
 ms.custom: developer, devx-track-js
+
+#Customer intent: As a developer, devops, I want to learn how to set up my external tenant so that I can call a web API from my Node.js daemon application
 ---
 
 # Tutorial: Prepare your external tenant to authorize a Node.js daemon application
