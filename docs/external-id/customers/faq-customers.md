@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: faq
-ms.date: 08/15/2024
+ms.date: 08/31/2024
 ms.author: mimart
 ms.custom: it-pro
 ---
@@ -35,6 +35,10 @@ No, External ID add-ons don't have a free tier. However, the ID Governance premi
 ### Does External ID have phone authentication via SMS?
 
 Yes, this feature is now available in workforce and [external](concept-multifactor-authentication-customers.md) configurations.
+
+### I linked my external tenant to a subscription, but the license status still shows "free"
+
+After you link your external tenant to a subscription, the licensing status (**Identity** > **Overview** > **Overview** > **License**) incorrectly displays as Microsoft Entra ID Free. This is a known issue that we’re working to resolve.
 
 ## About External ID
 
