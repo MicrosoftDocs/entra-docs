@@ -39,23 +39,23 @@ There are a couple workarounds:
   - A policy for mobile operating system (OS) versions
   - A policy for desktop OS versions 
   
-  Require a different authentication strength for each policy, and configure other policy settings listed in the following table. You'll need to [enable the use of a Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md), or enable other authentication methods. 
+  Require a different authentication strength for each policy, and configure other policy settings listed in the following table. You'll likely want to [enable the use of a Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md), or enable other authentication methods that users can use to register the passkey. By issuing a TAP to a user only when they are registering a credential, you can ensure that users are using permitted authentication methods for all flows and using TAP only for a limited amount of time during registration.
 
   | Conditional Access policy | Desktop OS     | Mobile OS     |
   |---------------------------|----------------|---------------|
-  | Name              | Require a passkey in Authenticator to access a desktop OS | Require a TAP, a passkey in Microsoft Authenticator, or another specified authentication method to access a mobile OS |
+  | Name              | Require a passkey in Authenticator to access a desktop OS | Require a TAP, a phishing-resistant credential, or any other specified authentication method to access a mobile OS |
   | Condition         | Specific devices (desktop operating systems) | Specific devices (mobile operating systems) |
   | Devices           | N/A                                          | Android, iOS            | 
   | Exclude devices   | Android, iOS                                 | N/A                     |
   | Targeted resource | All cloud apps                               | All cloud apps          |
   | Grant control     | Authentication strength                      | Authentication strength<sup>1</sup> |
   | Methods           | Passkey in Microsoft Authenticator |TAP, passkey in Microsoft Authenticator, or other methods allowed for MFA |
-  | Policy result     | Users who can’t sign-in with a passkey in Authenticator are directed to My Sign-ins wizard mode. After registration, they're asked to sign in to Authenticator on their mobile device. You'll need to provision a TAP as part of this process.</br>Another option is to enable other MFA methods and make them available to users.  | Users who sign in to Authenticator with a TAP or another allowed method can register a passkey directly in Authenticator. No loop occurs because the user meets the authentication requirements. |
+  | Policy result     | Users who can’t sign-in with a passkey in Authenticator are directed to My Sign-ins wizard mode. After registration, they're asked to sign in to Authenticator on their mobile device. | Users who sign in to Authenticator with a TAP or another allowed method can register a passkey directly in Authenticator. No loop occurs because the user meets the authentication requirements. |
 
   <sup>1</sup>For users to register new sign-in methods, your grant control for the mobile policy needs to match your Conditional Access policy to register [Security info](https://mysignins.microsoft.com/security-info). 
 
 >[!NOTE]
->With either workaround, users must also satisfy any Conditional Access policy that targets **Register security info**, or they can't sign in.  
+>With either workaround, users must also satisfy any Conditional Access policy that targets **Register security info**, or they can't register the passkey. Additionally, if you have other conditions set up with the **All cloud apps* policies, those will have to be met when registering the passkey.  
 
 ## Restrict Bluetooth usage to passkeys in Authenticator
 
