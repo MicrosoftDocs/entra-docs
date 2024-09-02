@@ -20,8 +20,9 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 ### Updated articles
 
-- [Tutorial: Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA) using auth code flow](tutorial-v2-angular-auth-code.md) - Added clarity to the content
 - [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - SSO Public Client flow updates
+- [Tutorial: Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA) using auth code flow](tutorial-v2-angular-auth-code.md) - Added clarity to the content
+
 
 ## July 2024
 
