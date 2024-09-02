@@ -28,8 +28,9 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
+- Complete the steps in [Sign in users and call an API in sample iOS/macOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md).
 - Complete the steps in [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md). This tutorial shows you how to sign in users in your iOS/macOS app by using native authentication.
-- For iOS/macOS complete the steps in [Sign in users and call an API in sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md).
+
 
 ## Acquire one or multiple access tokens
 
