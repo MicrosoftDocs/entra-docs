@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 08/19/2024
+ms.date: 09/02/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to support web fallback in my iOS/macOS app's native authentication flow so that I can ensure stability of my app's authentication flow.
 ---
@@ -30,7 +30,8 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- [Sign in users in a sample native iOS mobile application](how-to-run-native-authentication-sample-ios-app.md) 
+- If you’re using macOS, follow the steps in [Sign in users in sample macOS (Swift) app by using native authentication](how-to-run-native-authentication-sample-macos-app).
+- If you’re using iOS, follow the steps in [Sign in users in a sample native iOS mobile application](how-to-run-native-authentication-sample-ios-app.md).
 
 ## Browser required 
 
