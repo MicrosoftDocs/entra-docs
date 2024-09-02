@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 07/01/2024
+ms.date: 09/02/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to learn how to add edit profile to a Node.js web app so that customer users can update their profile after a successful sign-in to external-facing app.
 ---
@@ -26,29 +26,29 @@ In this how-to guide, you learn how to call Microsoft Graph API for profile edit
 
 ## Update authConfig.js file
 
-1. In your code editor, open *authConfig.js* file, then add three new variables, `GRAPH_API_ENDPOINT`, `GRAPH_ME_ENDPOINT` and `mfaProtectedResourceScope`. Make sure to export the three variables:
+1. In your code editor, open *authConfig.js* file, then add three new variables, `GRAPH_API_ENDPOINT`, `GRAPH_ME_ENDPOINT` and `editProfileScope`. Make sure to export the three variables:
 
     ```JavaScript
     //...
     const GRAPH_API_ENDPOINT = process.env.GRAPH_API_ENDPOINT || "https://graph.microsoft.com/";
     // https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0&tabs=http
     const GRAPH_ME_ENDPOINT = GRAPH_API_ENDPOINT + "v1.0/me";
-    const mfaProtectedResourceScope = process.env.MFA_PROTECTED_SCOPE || 'api://{clientId}/User.MFA';
+    const editProfileScope = process.env.EDIT_PROFILE_FOR_CLIENT_WEB_APP || 'api://{clientId}/EditProfileService.ReadWrite';
     
     module.exports = {
         //...
-        mfaProtectedResourceScope,
+        editProfileScope,
         GRAPH_API_ENDPOINT,
         GRAPH_ME_ENDPOINT,
         //...
     };
     ```
 
-    - The `mfaProtectedResourceScope` variable represents MFA protected resource, that's the MFA web API.
+    - The `editProfileScope` variable represents MFA protected resource, that's the edit profile service app.
 
     - The `GRAPH_ME_ENDPOINT` is the Microsoft Graph API endpoint. 
     
-1. Replace the placeholder `{clientId}` with the Application (client) ID of the MFA web API that you registered earlier.
+1. Replace the placeholder `{clientId}` with the Application (client) ID of the edit profile service app that you registered earlier.
 
 ## Acquire access token
 
@@ -120,13 +120,13 @@ In your code editor, open the *routes/users.js* file, add the following routes:
     //...
     
     var { fetch } = require("../fetch");
-    const { GRAPH_ME_ENDPOINT, mfaProtectedResourceScope } = require('../authConfig');
+    const { GRAPH_ME_ENDPOINT, editProfileScope } = require('../authConfig');
     //...
     
     router.get(
         '/gatedUpdateProfile',
         isAuthenticated, // check if user is authenticated
-        authProvider.getToken(["User.ReadWrite"]),
+        authProvider.getToken(["User.Read"]),
         async function (req, res, next) {
             const graphResponse = await fetch(
                 GRAPH_ME_ENDPOINT,
@@ -141,7 +141,7 @@ In your code editor, open the *routes/users.js* file, add the following routes:
     router.get(
       '/updateProfile',
       isAuthenticated, // check if user is authenticated
-      authProvider.getToken(["User.ReadWrite", mfaProtectedResourceScope], 
+      authProvider.getToken(["User.ReadWrite", editProfileScope], 
                             "http://localhost:3000/users/updateProfile"),
       async function (req, res, next) {
           const graphResponse = await fetch(
@@ -193,13 +193,13 @@ In your code editor, open the *routes/users.js* file, add the following routes:
 ```
 
 - You trigger the `/gatedUpdateProfile` route when the customer user selects the **Edit profile** link. The app:
-    1. Acquires an access token with the *User.ReadWrite* permission.
+    1. Acquires an access token with the *User.Read* permission.
     1. Makes a call to Microsoft Graph API to read the signed-in user's profile.
     1. Displays the user details in the *gatedUpdateProfile.hbs* UI.
 
 - You trigger the `/updateProfile` route when the user wants to update their display name, that's, they select the **Edit** button. The app:
-    1. Acquires an access token with the *User.ReadWrite* and *mfaProtectedResourceScope* permissions. By including the *mfaProtectedResourceScope* permission, the user must complete an MFA challenge if they've not already done so.
-    1. Makes a call to Microsoft Graph API to read the signed-in user's profile.
+    1. Makes a call to edit profile service using *editProfileScope* permission. By making a call to the edit profile service, the user must complete an MFA challenge if they've not already done so. 
+    1. The edit profile service makes a call to MicroSoft Graph API on behalf of the client web app using the *User.ReadWrite* permission and updates the signed-in user's profile.
     1. Displays the user details in the *updateProfile.hbs* UI.
 
 - You trigger the `/update` route when the user selects the **Save** button in either *gatedUpdateProfile.hbs* or *updateProfile.hbs*. The app:

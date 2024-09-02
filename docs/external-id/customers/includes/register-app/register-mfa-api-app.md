@@ -18,7 +18,7 @@ ms.manager: mwongerapk
 
 1. In the **Register an application** page that appears, enter your application's registration information:
 
-    1. In the Name section, enter a meaningful application name, for example *mfa-api-app*.
+    1. In the Name section, enter a meaningful application name, for example *edit-profile-service*.
 
     1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 

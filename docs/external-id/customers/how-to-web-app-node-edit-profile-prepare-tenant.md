@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 07/01/2024
+ms.date: 09/02/2024
 ms.custom: developer
 #Customer intent: As a developer, or IT admin, I want to learn how to configure my external tenant for profile editing with multifactor authentication protection, so that my customer users can edit their profile in external-facing app. 
 ---
@@ -30,9 +30,9 @@ To customize the fields your customer users can edit in their profile, choose fr
 
 - Complete the steps in [Tutorial: Set up your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. The tutorial shows you how to register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app.
 
-## Register MFA web API
+## Register edit profile service
 
-In this step, you register the MFA web API application, which provides a mechanism to protect the edit profile operation with MFA. 
+In this step, you register the edit profile service application, which provides a mechanism to protect the edit profile operation with MFA. 
 
 ### Register a web API application
 
@@ -49,13 +49,13 @@ This API needs to expose permissions, which a client needs to acquire for callin
 In this section, you grant API permissions to the client web app that you registered earlier (from the prerequisites). You grant two permissions: 
 
 - *User.ReadWrite* - a Microsoft Graph APIs permission that enables user to update their profile.
-- *api://{clientId}/User.MFA* - the MFA web API permission that protects the update profile operation with MFA.
+- *api://{clientId}/EditProfileService.ReadWrite* - the edit profile service app permission that protects the update profile operation with MFA.
 
-### Grant Microsoft Graph API User.ReadWrite permission
+### Grant User.ReadWrite permission to the client web app
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permission-edit-profile.md)]
 
-### Grant MFA web API permission
+### ### Grant EditProfileService.ReadWrite permission to the client web app
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-mfa-api-app.md)]
 
@@ -69,11 +69,11 @@ At this point, you've assigned the permissions correctly. However, since the ten
 
 ## Create CA MFA policy
 
-Your MFA web API app that you registered earlier is the resource that you protect with MFA. 
+Your edit profile service app that you registered earlier is the resource that you protect with MFA. 
 
 Use the steps in [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md) to create an MFA CA policy and choose your MFA method, such as email. Use the following settings when you create your policy:
 - For the **Name**, use *MFA policy*.
-- For the **Target resources**, select the MFA web API app that you registered earlier, such as *mfa-api-app*.
+- For the **Target resources**, select the edit profile service app that you registered earlier, such as *edit-profile-service*.
 
 ## Next step
 

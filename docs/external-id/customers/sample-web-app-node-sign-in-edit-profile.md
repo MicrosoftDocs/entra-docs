@@ -1,6 +1,6 @@
 ---
-title: Sign in users and edit profile in a sample Node.js web application 
-description: Learn how to configure a sample web application to sign in and edit user's profile. The edit profile operation requires a customer user to complete multifactor authentication (MFA)
+title: Sign in users and edit profile in a sample Node.js web app
+description: Learn how to configure a sample web app to sign in and edit user's profile. The edit profile operation requires user to complete multifactor authentication
  
 author: kengaderdus
 manager: mwongerapk
@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: sample
-ms.date: 07/01/2024
+ms.date: 09/02/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, or IT admin, I want to configure a sample Node.js web application so that customer users can sign in and edit profile in their external tenant
 ---
@@ -27,9 +27,9 @@ In this article, you complete the following tasks:
 
 - Complete the steps in [Sign in users and call an API in sample Node.js web application](sample-web-app-node-sign-in.md) article. This article shows you how to sign in users by using a sample Node.js web app. 
 
-## Register MFA web API
+## Register edit profile service
 
-In this step, you register the MFA web API application, which provides a mechanism to protect the edit profile operation with MFA. 
+In this step, you register the edit profile service application, which provides a mechanism to protect the edit profile operation by requiring MFA. 
 
 ### Register a web API application
 
@@ -46,13 +46,13 @@ This API needs to expose permissions, which a client needs to acquire for callin
 In this section, you grant API permissions to the client web app that you registered earlier (from the prerequisites). You grant two permissions: 
 
 - *User.ReadWrite* - a Microsoft Graph APIs permission that enables user to update their profile.
-- *api://{clientId}/User.MFA* - the MFA web API permission that protects the update profile operation with MFA.
+- *api://{clientId}/EditProfileService.ReadWrite* - the edit profile service app permission that protects the update profile operation with MFA.
 
-### Grant Microsoft Graph API User.ReadWrite permission
+### Grant User.ReadWrite permission to the client web app
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permission-edit-profile.md)]
 
-### Grant MFA web API permission
+### Grant EditProfileService.ReadWrite permission to the client web app
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-mfa-api-app.md)]
 
@@ -66,11 +66,11 @@ At this point, you've assigned the permissions correctly. However, since the ten
 
 ## Create CA MFA policy
 
-Your MFA web API app that you registered earlier is the resource that you protect with MFA. 
+Your edit profile service app that you registered earlier is the resource that you protect with MFA. 
 
 Use the steps in [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md) to create an MFA CA policy. Use the following settings when you create your policy:
 - For the **Name**, use *MFA policy*.
-- For the Target resources, select the MFA web API that you registered earlier, such as *mfa-api-app*.
+- For the Target resources, select the edit profile service app that you registered earlier, such as *edit-profile-service*.
 
 ## Clone or download sample web application
 
@@ -97,13 +97,13 @@ git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.
 
 ## Configure the sample web app
 
-To use your MFA web API app registration in the app sample:
+To use your edit profile service app registration in the app sample:
 
 1. In your code editor, open `App\authConfig.js` file.
 
 1. Find the placeholder:
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's *https://graph.microsoft.com/*.
-    - `Add_your_protected_scope_here` and replace it with the MFA web API scope. The values looks similar to *api://{clientId}/User.MFA*. `{clientId}` is the Application (client) ID value of the MFA web API.
+    - `Add_your_protected_scope_here` and replace it with the edit profile service app scope. The values looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the edit profile service app.
 
 ## Run and test web app
 
