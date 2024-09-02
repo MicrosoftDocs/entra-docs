@@ -1635,6 +1635,8 @@
       items:
       - name: LabLog
         href: lablog-tutorial.md
+      - name: Labelbox
+        href: labelbox-tutorial.md
       - name: LambdaTest Single Sign on
         href: lambda-test-single-sign-on-tutorial.md
       - name: Land Gorilla Client
@@ -1997,6 +1999,8 @@
         href: onetrust-tutorial.md
       - name: Onit
         href: onit-tutorial.md
+      - name: OnPage (SSO)
+        href: onpage-sso-tutorial.md
       - name: Onshape
         href: onshape-tutorial.md
       - name: OnTrack
@@ -2135,6 +2139,8 @@
         href: periscope-data-tutorial.md
       - name: PetroVue
         href: petrovue-tutorial.md
+      - name: Pexip Service (MMV legacy app) 
+        href: pexip-service-mmv-legacy-app.md
       - name: Phenom TXM
         href: phenom-txm-tutorial.md
       - name: Phraseanet
@@ -2393,8 +2399,6 @@
         href: rootly-tutorial.md
       - name: RunMyProcess
         href: runmyprocess-tutorial.md
-    - name: S
-      items:
       - name: Saba Cloud
         href: saba-cloud-tutorial.md
       - name: Saba TalentSpace
@@ -2563,6 +2567,8 @@
         href: shucchonavi-tutorial.md
       - name: Shutterstock
         href: shutterstock-tutorial.md
+      - name: SIFULAN Connect
+        href: sifulan-connect-tutorial.md
       - name: Sigma Computing
         href: sigma-computing-tutorial.md
       - name: Signagelive
