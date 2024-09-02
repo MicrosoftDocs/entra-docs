@@ -41,7 +41,7 @@ This sample demonstrates how to configure iOS/macOS sample application to call a
 
 [!INCLUDE [add-optional-claims-access](./includes/register-app/add-optional-claims-access.md)]
 
-## Grant API permissions to the iOS sample app
+## Grant API permissions to the sample app
 
 Once you've registered both your client app and web API and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
 
@@ -68,7 +68,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     - `Enter_the_Tenant_Id_Here` and replace it with the **Directory (tenant) ID** you copied earlier.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
-You need to host your web API for the iOS sample app to call it. Follow [Quickstart: Deploy an ASP.NET web app](/azure/app-service/quickstart-dotnetcore) to deploy your web API.
+You need to host your web API for the iOS/macOS sample app to call it. Follow [Quickstart: Deploy an ASP.NET web app](/azure/app-service/quickstart-dotnetcore) to deploy your web API.
 
 ## Configure sample iOS/macOS mobile app to call web API
 
