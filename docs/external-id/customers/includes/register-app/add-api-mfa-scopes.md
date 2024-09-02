@@ -23,8 +23,8 @@ An API needs to publish a minimum of one scope, also called [Delegated Permissio
     |----------|-------|
     | Scope name | *EditProfileService.ReadWrite* |
     | Who can consent | **Admins only** |
-    | Admin consent display name | *Client edits profile through edit-profile-service* |
-    | Admin consent description | *The scope to allow client web app to edit profile through calling the edit-profile-service*. |
+    | Admin consent display name | *Client edits profile through edit profile service* |
+    | Admin consent description | *The scope to allow client web app to edit profile through calling the edit profile service*. |
     | State | **Enabled** |
     
 1. Under **Manage**, select **Manifest** to open the API manifest editor.
