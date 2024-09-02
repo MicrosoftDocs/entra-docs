@@ -41,7 +41,7 @@ This sample demonstrates how to configure iOS/macOS sample application to call a
 
 [!INCLUDE [add-optional-claims-access](./includes/register-app/add-optional-claims-access.md)]
 
-## Grant API permissions to the sample app
+## Grant API permissions to the iOS sample app
 
 Once you've registered both your client app and web API and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
 
@@ -79,7 +79,7 @@ You need to host your web API for the iOS/macOS sample app to call it. Follow [Q
     let protectedAPIUrl = "Enter_the_Protected_API_Full_URL_Here" // Developers should set the respective URL of their web API here
     ```
     
-1. Find `Enter_the_Protected_API_Scopes_Here` and set the scopes recorded in [Grant API permissions to the iOS sample app](#grant-api-permissions-to-the-sample-app).
+1. Find `Enter_the_Protected_API_Scopes_Here` and set the scopes recorded in [Grant API permissions to the iOS sample app](#grant-api-permissions-to-the-ios-sample-app).
 
     ```swift
     let protectedAPIScopes = ["Enter_the_Protected_API_Scopes_Here"] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["api://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
