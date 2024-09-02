@@ -1,5 +1,5 @@
 ---
-title: Sign in users and call an API in sample iOS mobile app by using native authentication
+title: Sign in users and call an API in sample iOS/macOS mobile app by using native authentication
 description: Learn how sign in users and call an API in sample iOS mobile app by using native authentication
 
 author: henrymbuguakiarie
@@ -12,12 +12,14 @@ ms.subservice: customers
 ms.topic: sample
 ms.date: 03/06/2024
 ms.custom: developer
-#Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an iOS sample app.
+#Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an iOS/macOS sample app.
 ---
 
-# Sign in users and call an API in sample iOS mobile app by using native authentication
+# Sign in users and call an API in sample iOS/macOS mobile app by using native authentication
 
-This sample demonstrates how to configure iOS sample application to call an ASP.NET Core web API.
+[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
+
+This sample demonstrates how to configure iOS/macOS sample application to call an ASP.NET Core web API.
 
 ## Prerequisites
 
@@ -68,7 +70,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 You need to host your web API for the iOS sample app to call it. Follow [Quickstart: Deploy an ASP.NET web app](/azure/app-service/quickstart-dotnetcore) to deploy your web API.
 
-## Configure sample iOS mobile app to call web API
+## Configure sample iOS/macOS mobile app to call web API
 
 1. In your Xcode, open `/NativeAuthSampleApp/ProtectedAPIViewController.swift` file.
 1. Find `Enter_the_Protected_API_Full_URL_Here` and replace this value with your web API URL.
@@ -83,7 +85,7 @@ You need to host your web API for the iOS sample app to call it. Follow [Quickst
     let protectedAPIScopes = ["Enter_the_Protected_API_Scopes_Here"] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["api://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
     ```
     
-## Run iOS sample app and call web API 
+## Run iOS/macOS sample app and call web API 
  
 To build and run your app, follow these steps:
  

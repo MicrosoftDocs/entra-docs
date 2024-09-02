@@ -1,6 +1,6 @@
 ---
-title: Call an API in iOS app by using native authentication
-description: Learn how to acquire multiple access tokens and call an API in iOS app by using native authentication.
+title: Call an API in iOS/macOS app by using native authentication
+description: Learn how to acquire multiple access tokens and call an API in iOS/macOS app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -10,14 +10,14 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 08/12/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to acquire multiple access tokens so that I call a web API in an iOS mobile app by using native authentication
+#Customer intent: As a dev, devops, I want to acquire multiple access tokens so that I call a web API in an iOS/macOS mobile app by using native authentication
 ---
 
-# Tutorial: Call multiple APIs in iOS app by using native authentication
+# Tutorial: Call multiple APIs in iOS/macOS app by using native authentication
 
-[!INCLUDE [applies-to-ios-only](../includes/applies-to-ios-only.md)]
+[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
 
-In this tutorial, you learn how to acquire an access token and call an API in your iOS mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for iOS allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
+In this tutorial, you learn how to acquire an access token and call an API in your iOS/macOS mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for iOS/macOS allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
 
 In this tutorial, you learn how to: 
 
@@ -28,8 +28,8 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- Complete the steps in [Tutorial: Add sign-in and sign-out in iOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md). This tutorial shows you how to sign in users in your iOS app by using native authentication.
-- Complete the steps in [Sign in users and call an API in sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md)
+- Complete the steps in [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md). This tutorial shows you how to sign in users in your iOS/macOS app by using native authentication.
+- For iOS/macOS complete the steps in [Sign in users and call an API in sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md).
 
 ## Acquire one or multiple access tokens
 
