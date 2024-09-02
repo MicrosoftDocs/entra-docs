@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 08/09/2024
+ms.date: 09/02/2024
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -15,6 +15,13 @@ ms.topic: whats-new
 # Microsoft identity platform docs: What's new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
+
+## August 2024
+
+### Updated articles
+
+- [Tutorial: Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA) using auth code flow](tutorial-v2-angular-auth-code.md) - Added clarity to the content
+- [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - SSO Public Client flow updates
 
 ## July 2024
 
@@ -37,23 +44,4 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md) - Added clarity to the content
 - [Quickstart: Sign in users and call Microsoft Graph from an Android app](quickstart-mobile-app-android-sign-in.md) - Added clarity to the content
 - [Redirect URI (reply URL) outline and restrictions](reply-url.md) - Added clarity to the content
-
-## May 2024
-
-### New articles
-
-- [Call an ASP.NET Core web API with Insomnia](howto-call-a-web-api-with-rest-client.md) - Test a protected Web API using Insomnia
-
-### Updated articles
-
-- [Create a REST API for a token issuance start event in Azure Functions](custom-extension-tokenissuancestart-setup.md) - Rework token issuance setup
-- [Get a complete list of apps using ADAL in your tenant](howto-get-list-of-all-auth-library-apps.md) - Sign-in workbook and recommendations updates
-- [Microsoft identity platform and OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) - Redirect URI page updated 
-- [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - Redirect URI page updated
-- [Register a Microsoft Entra app and create a service principal](howto-create-service-principal-portal.md) - Added clarity to the content
-- [Redirect URI (reply URL) outline and restrictions](reply-url.md) - Redirect URI page updated
-- [Single-page application: sign-in and sign-out](scenario-spa-sign-in.md) - Added clarity to the content
-- [Troubleshoot your custom claims provider API](custom-extension-troubleshoot.md) - Rework token issuance setup
-- [What's new for authentication?](reference-breaking-changes.md) - Added clarity to the content
-
 
