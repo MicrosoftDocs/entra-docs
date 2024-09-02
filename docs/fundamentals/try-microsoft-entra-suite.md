@@ -23,7 +23,7 @@ Welcome to the Microsoft Entra Suite trial user guide. Make the most of your fre
 
 ## What is the Microsoft Entra Suite? 
 
-[Microsoft Entra Suite](licensing.md) is the solution to deliver unified Zero Trust user access, enabling your employees to securely access cloud and on-premises applications. The suite does this by providing least privilege access across public and private networks, inside and outside of your corporate perimeter. By combining network access, identity protection, governance, and identity verification solutions, the Microsoft Entra Suite extends conditional access across identities and network controls, filtering out malicious content, and ensuring least privilege access for a simple and consistent user experience, whether employees are in the office or remote.
+[Microsoft Entra Suite](licensing.md) is the solution to deliver unified Zero Trust user access, enabling your employees to securely access cloud and on-premises applications. The suite does this by providing least privilege access across public and private networks, inside and outside of your corporate perimeter. By combining network access, ID Protection, governance, and identity verification solutions, the Microsoft Entra Suite extends Conditional Access across identities and network controls, filtering out malicious content, and ensuring least privilege access for a simple and consistent user experience, whether employees are in the office or remote.
 
 ## Trial licensing prerequisites
 
@@ -52,7 +52,7 @@ To help you get the most out of your Microsoft Entra Suite trial, we recommend y
 
 The following how-to guides are expanded upon in this section: 
 
-- [Step 1: Deploy identify protection](#step-1-deploy-identity-protection): Deploy security controls to enhance identification and protection of risky users.  
+- [Step 1: Deploy ID Protection](#step-1-deploy-microsoft-entra-id-protection): Deploy security controls to enhance identification and protection of risky users.  
 - [Step 2: Enact access reviews](#step-2-enact-access-reviews): Conduct an access review to ensure appropriate system access within your enterprise. 
 - [Step 3: Secure access to the internet](#step-3-secure-access-to-the-internet): Protect internet traffic with secure web gateways.
 - [Step 4: Enable private access gateways](#step-4-enable-private-access-gateways): Depreciate costly VPN systems with Quick Access.
@@ -62,12 +62,12 @@ The following how-to guides are expanded upon in this section:
 
 The following sections include process steps to walk you through each product. Each of these steps is fully documented in a separate how-to guide that you can access by clicking the link at the end of each step.  
 
-### Step 1: Deploy identity protection 
+### Step 1: Deploy Microsoft Entra ID Protection
 
-Microsoft Entra ID Protection detects identity-based risks and reports them, allowing administrators to investigate and remediate these risks to keep organizations safe and secure. Risk data can be further fed into tools like conditional access to make access decisions or fed to a security information and event management (SIEM) tool for further analysis and investigation.
+Microsoft Entra ID Protection detects identity-based risks and reports them, allowing administrators to investigate and remediate these risks to keep organizations safe and secure. Risk data can be further fed into tools like Conditional Access to make access decisions or fed to a security information and event management (SIEM) tool for further analysis and investigation.
 
 1. Review existing reports
-1. Plan for conditional access risk policies
+1. Plan for Conditional Access risk policies
 1. Configure your policies 
 1. Monitoring and continuous operational needs
 
