@@ -373,8 +373,8 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 1. Select **Workforce** as the tenant type.
 1. Under **App registration** select **Pick an existing app registration in this directory** for the **App registration type**, and pick the *Azure Functions authentication events API* app registration you [previously created](#step-1-register-a-custom-authentication-extension) when registering the custom claims provider.
 1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0`, where `{tenantId}` is the tenant ID of your workforce tenant.
-1. Under **Client application requirement** select **Allow requests from specific client applications** and enter `99045fe1-7639-4a75-9d4a-577b6ca3810f`.
-1. Under **Tenant requirement** select **Allow requests from specific tenants** and enter your workforce tenant ID.
+1. Under **Client application requirement**, select **Allow requests from specific client applications** and enter `99045fe1-7639-4a75-9d4a-577b6ca3810f`.
+1. Under **Tenant requirement**, select **Allow requests from specific tenants** and enter your workforce tenant ID.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
@@ -392,8 +392,8 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 1. For the **Issuer URL**, enter the following URL `https://{domainName}.ciamlogin.com/{tenant_id}/v2.0`, where
     - `{domainName}` is the domain name of your external tenant, in the form `{domainName}.contoso.com`.
     - `{tenantId}` is the tenant ID of your external tenant.
-1. Under **Client application requirement** select **Allow requests from specific client applications** and enter `99045fe1-7639-4a75-9d4a-577b6ca3810f`.
-1. Under **Tenant requirement** select **Allow requests from specific tenants** and enter your external tenant ID.
+1. Under **Client application requirement**, select **Allow requests from specific client applications** and enter `99045fe1-7639-4a75-9d4a-577b6ca3810f`.
+1. Under **Tenant requirement**, select **Allow requests from specific tenants** and enter your external tenant ID.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
