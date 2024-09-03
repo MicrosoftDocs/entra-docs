@@ -103,7 +103,7 @@ To use your edit profile service app registration in the app sample:
 
 1. Find the placeholder:
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's *https://graph.microsoft.com/*.
-    - `Add_your_protected_scope_here` and replace it with the edit profile service app scope. The values looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the edit profile service app.
+    - `Add_your_protected_scope_here` and replace it with the edit profile service app scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the edit profile service app.
 
 ## Run and test web app
 

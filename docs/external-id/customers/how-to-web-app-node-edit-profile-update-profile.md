@@ -114,7 +114,7 @@ The `getToken` method uses specified scope to acquire a token. The `redirectUri`
 
 ## Update the users.js file
 
-In your code editor, open the *routes/users.js* file, add the following routes:
+In your code editor, open the *routes/users.js* file, then add the following routes:
 
 ```JavaScript
     //...
@@ -212,7 +212,7 @@ In your code editor, open the *routes/users.js* file, add the following routes:
 
 The app uses the *fetch.js* file to make the actual API call. 
 
-In your code editor, open *fetch.js* file, then add the PATCH operation option. After you update the file, the resulting file should looks similar to the following code:
+In your code editor, open *fetch.js* file, then add the PATCH operation option. After you update the file, the resulting file should look similar to the following code:
 
 ```JavaScript
 var axios = require('axios');
