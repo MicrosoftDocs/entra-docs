@@ -30,7 +30,7 @@ To customize the fields your customer users can edit in their profile, choose fr
 
 - Complete the steps in [Tutorial: Set up your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. The tutorial shows you how to register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app.
 
-## Register edit profile service
+## Register edit profile service app
 
 In this step, you register the edit profile service application, which provides a mechanism to protect the edit profile operation with MFA. 
 
@@ -55,13 +55,13 @@ In this section, you grant API permissions to the client web app that you regist
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permission-edit-profile.md)]
 
-### ### Grant EditProfileService.ReadWrite permission to the client web app
+### Grant EditProfileService.ReadWrite permission to the client web app
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-mfa-api-app.md)]
 
 ### Grant admin consent
 
-At this point, you've assigned the permissions correctly. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. To address this problem, you as the administrator must consent to these permissions on behalf of all the users in the tenant:
+At this point, you've assigned the permissions correctly. However, since we're in an external tenant, the customer users themselves can't consent to these permissions. To address this problem, you as the administrator must consent to these permissions on behalf of all the users in the tenant:
     
 1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
 
