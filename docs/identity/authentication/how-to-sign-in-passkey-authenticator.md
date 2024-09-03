@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/13/2024
+ms.date: 09/03/2024
 
 ms.author: justinha
 author: justinha
@@ -25,9 +25,9 @@ This article covers the sign-in experience when using passkeys in Microsoft Auth
 | **Same-device authentication in native Microsoft applications**<sup>1</sup>            | &#x2705; | &#10060;<sup>2</sup>     |
 | **Cross-device authentication**  | &#x2705;  | &#x2705;    |
 
-<sup>1</sup> For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
+<sup>1</sup>For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
 
-<sup>2</sup> Support for same-device Android scenarios is coming soon.
+<sup>2</sup>Support for same-device registration in Edge on Android is coming soon.
 
 ## [**iOS**](#tab/iOS)
 
@@ -109,12 +109,11 @@ You can use Authenticator on your iOS device to seamlessly sign in with a passke
 To sign in with a passkey in Microsoft Authenticator, your Android device needs to run Android 14 or later.
 
 ### Same-device authentication in a browser (Android)
-[!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
-
-<!--- 
-### Same-device authentication (Android)
 
 Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft Authenticator on your Android device.
+
+>[!NOTE]
+>Support for same-device registration in Edge on Android is coming soon.
 
 1. On your Android device, open your browser and navigate to the resource you're trying to access at [My Security info](https://aka.ms/mysecurityinfo).
 
