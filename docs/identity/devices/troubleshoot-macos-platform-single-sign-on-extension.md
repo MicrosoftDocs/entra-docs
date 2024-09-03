@@ -89,15 +89,20 @@ Users can change their password using Self-Service Password Reset (SSPR) on thei
 
 If SSPR is done on another machine users will be allowed to sign-in to the Mac device using either the old or the new password. Using the old password will unlock the device and then prompt the user for the new password to continue syncing data. Using the new password will unlock the device and sync data immediately.
 
+We recommend that IT Admins should use [Managed Apple IDs](https://support.apple.com/guide/deployment/depcaa668a58/web) where possible as this does give organizations more options for password management.
+
 ### What should I do if I forget my password?
 
 #### Password Sync
-If users are at lock screen or login screen they can reset their password from there. If the user received a temporary password from an IT admin they should use another device to log in, set up a new password and use that new password at to log in to their own device. 
+If users are at lock screen or login screen they can reset their password from there. If the user received a temporary password from an IT admin they should use another device to log in, set up a new password and use that new password at to log in to their own device. For more info refer [Apple's documentation on forgotten passwords](https://support.apple.com/102633).
+
+> [!IMPORTANT] 
+> There is currently a known issue with PSSO that is causing registration removal during recovery and may prompt users to re-register after recovery. This is expected behavior.
+
+IT Admins should also enable keyvault recovery to ensure data can be recovered in case of a forgotten password. To learn more refer to [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos#password).
 
 > [!NOTE] 
 > If the device is booted and there is FileVault encryption the new Entra password will work on macOS15 only. 
-
-IT Admins can also enable keyvault recovery to ensure data can be recovered in case of a forgotten password. To learn more refer to [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos#password).
 
 #### Secure Enclave
 Users can reset the local password via Apple ID or an admin recovery key. 
