@@ -260,8 +260,10 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
 ## Same-device registration from a browser (Android)
 
+Alternatively, users can set up a passkey in the Authenticator by navigating to a browser and initiating the flow from Security info. 
 
-Alternatively, users can set up a passkey in the Authenticator by navigating to a browser and initiating the flow from My Security info.
+>[!NOTE]
+>Support for passkeys in Authenticator using Edge on Android is coming soon. 
 
 1. Using your Android device, open a web browser and sign-in to [Security info](https://mysignins.microsoft.com/security-info).
 
