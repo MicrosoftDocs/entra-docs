@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/23/2024
+ms.date: 09/03/2024
 
 ms.author: justinha
 author: justinha
@@ -36,6 +36,9 @@ For more information about passkey authentication, see [Support for FIDO2 authen
 
 Passkeys (FIDO2) are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).
 
+>[!NOTE]
+>Support for same-device registration in Edge on Android is coming soon.
+
 ## Passkey (FIDO2) Authenticator Attestation GUID (AAGUID)
 
 The FIDO2 specification requires each security key vendor to provide an Authenticator Attestation GUID (AAGUID) during registration. An AAGUID is a 128-bit identifier indicating the key type, such as the make and model. Passkey (FIDO2) providers on desktop and mobile devices are also expected to provide an AAGUID during registration.
@@ -52,29 +55,31 @@ You can work with your security key vendor to determine the AAGUID of the passke
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **Passkey (FIDO2)**, set the toggle to **Enable**. Select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
-1. On the **Configure** tab, set:
+1. On the **Configure** tab:
 
-   - **Allow self-service set up** to **Yes**. If set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys (FIDO2) are enabled by the Authentication methods policy.  
-   - **Enforce attestation** should be set to **Yes** if your organization wants to be assured that a FIDO2 security key model or passkey provider is genuine and comes from the legitimate vendor.
-       - For FIDO2 security keys, we require security key metadata to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's another set of validation testing. For more information, see [Become a Microsoft-compatible FIDO2 security key vendor](/entra/identity/authentication/concept-fido2-hardware-vendor).
-       - For passkeys in Microsoft Authenticator, attestation support is planned for General Availability.
+   - Set **Allow self-service set up** to **Yes**. If set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys (FIDO2) are enabled by the Authentication methods policy.  
+   - Set **Enforce attestation** to **Yes** if your organization wants to be assured that a FIDO2 security key model or passkey provider is genuine and comes from the legitimate vendor.
+     - For FIDO2 security keys, we require security key metadata to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's another set of validation testing. For more information, see [Become a Microsoft-compatible FIDO2 security key vendor](/entra/identity/authentication/concept-fido2-hardware-vendor).
+     - For passkeys in Microsoft Authenticator, attestation support is planned for General Availability.
 
      >[!WARNING]
      >Attestation enforcement governs whether a passkey (FIDO2) is allowed only during registration. Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.
 
-      - **Enforce key restrictions** to **Yes** to only allow or block certain passkeys (FIDO2), which are identified by their AAGUIDs. This setting must be **Yes** and add the Microsoft Authenticator AAGUIDs listed below to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page. 
+   - Key restrictions set the usability of specific passkeys for both registration and authentication. Set **Enforce key restrictions** to **Yes** to only allow or block certain passkeys (FIDO2), which are identified by their AAGUIDs. 
+   
+     This setting must be **Yes** and you need to add the Microsoft Authenticator AAGUIDs to allow users to register passkeys in the Authenticator, either by signing into the Authenticator app, or by adding **Passkey in Microsoft Authenticator** from their Security info. 
 
-        [Security info](https://mysignins.microsoft.com/security-info) doesn't require this setting be **Yes** to add a passkey in Authenticator. If you choose **No**, users may still be able to add a passkey in Microsoft Authenticator by going through the security key/passkey WebAuthn registration flow depending upon their operating system and browser. However, this is a flow we don't expect most users to stumble on and users will not be provided any instructions on how to set up the Authenticator app through this flow. 
-
-        Key restrictions set the usability of specific passkeys (FIDO2) for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
+     [Security info](https://mysignins.microsoft.com/security-info) doesn't require this setting be **Yes** to add a passkey in Authenticator. If you choose **No**, users may still be able to add a passkey in Microsoft Authenticator by choosing the **Passkey** method, depending upon their operating system and browser.  
      
-        If your organization doesn't currently enforce key restrictions and already has active passkey (FIDO2) usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs, to enable this preview. This task can be done with an automated script that analyzes logs, such as registration details and sign-in logs.
+     If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs, to enable this preview. This task can be done with an automated script that analyzes logs, such as registration details and sign-in logs.
 
-      - **Restrict specific keys** to **Allow** if you plan to allow passkeys in Microsoft Authenticator.
-      - Select **Microsoft Authenticator (Preview)** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following AAGUIDs to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page:
+     If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
-        - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
-        - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
+   - Set **Restrict specific keys** to **Allow** if you plan to allow passkeys in Microsoft Authenticator.
+   - Select **Microsoft Authenticator (Preview)** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following AAGUIDs to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page:
+
+     - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
+     - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
    
      >[!NOTE]
      >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator (Preview)** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
