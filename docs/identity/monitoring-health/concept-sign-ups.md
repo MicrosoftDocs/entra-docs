@@ -28,14 +28,13 @@ The sign-up logs provided by Microsoft Entra External ID are a powerful type of 
 
 ## What can you do with sign-up logs?
 
-You can use the sign-in logs to answer questions such as:
+You can use the sign-in logs to find the following information:
 
 - The percentage of sign-up attempts that result in account creation.
 - The stage in the sign-up process with the highest drop-off rate.
 - How drop-off rates compare between social sign-ups and local account sign-ups.
-- The percentage of sign-ups blocked by risk evaluation or CAPTCHA (note: this feature is not yet supported, and risk evaluation/mitigation steps must be added to sign-up logs).
 
-You can also describe the activity associated with a sign-in request by identifying the following details:
+You can also describe the activity associated with a sign-up request by identifying the following details:
 
 - **Who** – The identity (User) performing the sign-in.
 - **How** – The client (Application) used for the sign-in.  
