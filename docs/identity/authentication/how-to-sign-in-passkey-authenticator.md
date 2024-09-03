@@ -21,6 +21,7 @@ This article covers the sign-in experience when using passkeys in Microsoft Auth
 
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
+<<<<<<< Updated upstream
 | **Same-device authentication in a browser**              | &#x2705;          | &#10060;<sup>2</sup>       |
 | **Same-device authentication in native Microsoft applications**<sup>1</sup>            | &#x2705; | &#10060;<sup>2</sup>     |
 | **Cross-device authentication**  | &#x2705;  | &#x2705;    |
@@ -28,6 +29,15 @@ This article covers the sign-in experience when using passkeys in Microsoft Auth
 <sup>1</sup>For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
 
 <sup>2</sup>Support for same-device registration in Edge on Android is coming soon.
+=======
+| **Same-device authentication in a browser**              | &#x2705;          | &#10060;<sup>1</sup>       |
+| **Same-device authentication in native Microsoft applications**<sup>2</sup>            | &#x2705; | &#x2705;     |
+| **Cross-device authentication**  | &#x2705;  | &#x2705;    |
+
+<sup>1</sup>Support for passkeys in Authenticator using Edge on Android is coming soon.
+
+<sup>2</sup> For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
+>>>>>>> Stashed changes
 
 ## [**iOS**](#tab/iOS)
 
