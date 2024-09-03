@@ -28,8 +28,8 @@ The trigger you choose depends on what type of workflow you want to run for user
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/trigger-details.png" alt-text="Screenshot of the trigger details section of a workflow's execution conditions.":::
 
 - **Time based attribute**: The workflow is triggered on schedule when a time value is met.
-- **Attribute changes (Preview)**: The workflow is triggered on schedule when a change to an attribute happens.
-- **Group membership change (Preview)**: The workflow is triggered on schedule when a group membership change is met.
+- **Attribute changes**: The workflow is triggered on schedule when a change to an attribute happens.
+- **Group membership change**: The workflow is triggered on schedule when a group membership change is met.
 - **On-demand only**: The workflow is only triggered manually.
 
 > [!NOTE]
@@ -68,7 +68,7 @@ When setting the scope of the time based attribute trigger, the following detail
 >[!NOTE]
 > The rule evaluation is case-sensitive.
 
-## Attribute change trigger (Preview)
+## Attribute change trigger
 
 The **Attribute change** trigger allows you to set a trigger based on when an attribute changes for users.
 
@@ -96,7 +96,7 @@ When setting the scope of the attribute changes trigger, the following details a
 >[!NOTE]
 > The rule evaluation is case-sensitive.
 
-## Group membership change trigger (Preview)
+## Group membership change trigger
 
 For workflows that are triggered based on a group membership change, the workflow runs on a schedule when a user is added to, or removed from, a group.
 
