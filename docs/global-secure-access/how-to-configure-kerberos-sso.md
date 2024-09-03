@@ -76,7 +76,8 @@ Once the enterprise application is created, browse back to the app and select **
 Configure private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on premises resources. To learn more about Private DNS with Quick Access, see [how-to-configure-quick-access.md#add-private-dns-suffixes](how-to-configure-quick-access.md).
 
 1. Browse to **Global Secure Access** > **Applications** > **Quick Access**.
-1. Select **Enable Name Private DNS** and select **Add DNS suffix**. At a minimum, add the top level suffixes of your Active Directory forests hosting users synchronized to Microsoft Entra ID.
+1. Select the **Private DNS** tab and then select **Enable Private DNS**.
+1. Select **Add DNS suffix**. At a minimum, add the top level suffixes of your Active Directory forests hosting users synchronized to Microsoft Entra ID.
 1. Select **Save**.
 
 ## Troubleshoot
