@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 08/01/2024
+ms.date: 09/03/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -123,9 +123,11 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 > Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
 
 ### Add private DNS suffixes
-With Private DNS Support for Entra Private Access, customers can query their own internal DNS servers to resolve IP addresses for internal domain names. For example, with Private DNS Support, an admin can specify an IP range (e.g., 10.8.0.0 – 10.8.255.255) in their Quick Access application definition. If the admin wants to allow users access to https://benefits  (with an IP of 10.8.0.5), but does not want to specify the FQDN in the application definition, Private DNS Support will resolve a user’s request to https://benefits  to the IP address of 10.8.0.5 and allow the user access to the requested site, if they have configured a corresponding DNS Suffix that is used by the Global Secure Access client to conclude that the DNS request should be treated as a Private DNS request.
+Private DNS support for Microsoft Entra Private Access lets you query your own internal DNS servers to resolve IP addresses for internal domain names. Let’s look at an example. Let’s say you have an internal IP range of 10.8.0.0 to 10.8.255.255. You configure this range in your Quick Access application definition. You want users to access a web application responding on IP 10.8.0.5 when they type
+https://benefits
+in their web browser. But you don’t want to configure a FQDN for the application. Using Private DNS, you configure a corresponding DNS Suffix so that the Global Secure Access client knows how to route the request correctly.
 
-Additionally, admins can now configure Kerberos Authentication to Domain Controllers, with Private DNS, allowing for a single sign on experience to access Kerberos resources.
+Additionally, you can provide a single sign-on experience for Kerberos resources by configuring Kerberos Authentication to domain controllers using Private DNS.
 
 Add a DNS suffix to use for private DNS.
 
