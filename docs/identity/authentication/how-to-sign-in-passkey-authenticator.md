@@ -1,12 +1,12 @@
 ---
-title: Sign in with passkeys in Authenticator for Android and iOS devices (preview)
-description: Learn how to sign in with passkeys for Android and iOS devices with Microsoft Authenticator (preview.
+title: Sign in with passkeys in Authenticator for Android and iOS devices 
+description: Learn how to sign in with passkeys for Android and iOS devices with Microsoft Authenticator.
 
 services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/29/2024
+ms.date: 09/03/2024
 
 ms.author: justinha
 author: justinha
@@ -15,17 +15,19 @@ ms.reviewer: mjsantani, calui
 
 ms.collection: M365-identity-device-management
 ---
-# Sign in with passkeys in Authenticator for Android and iOS devices (preview)
+# Sign in with passkeys in Authenticator for Android and iOS devices
 
 This article covers the sign-in experience when using passkeys in Microsoft Authenticator with Microsoft Entra ID. For more information about the availability of Microsoft Entra ID passkey (FIDO2) authentication across native applications, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
 
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
-| **Same-device authentication in a browser**              | &#x2705;          | &#10060;<sup>2</sup>       |
-| **Same-device authentication in native Microsoft applications**<sup>1</sup>            | &#x2705; | &#x2705;     |
+| **Same-device authentication in a browser**              | &#x2705;          | &#x2705;<sup>1</sup>      |
+| **Same-device authentication in native Microsoft applications**<sup>2</sup>            | &#x2705; | &#x2705;     |
 | **Cross-device authentication**  | &#x2705;  | &#x2705;    |
 
-<sup>1</sup> For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
+<sup>1</sup>Support for passkeys in Authenticator using Edge on Android is coming soon.
+
+<sup>2</sup>For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
 
 ## [**iOS**](#tab/iOS)
 
@@ -108,10 +110,13 @@ To sign in with a passkey in Microsoft Authenticator, your Android device needs 
 
 ### Same-device authentication in a browser (Android)
 
-<!--- 
+
 ### Same-device authentication (Android)
 
 Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft Authenticator on your Android device.
+
+>[!NOTE]
+>Support for passkeys in Authenticator using Edge on Android is coming soon. 
 
 1. On your Android device, open your browser and navigate to the resource you're trying to access at [Security info](https://mysignins.microsoft.com/security-info).
 
@@ -140,6 +145,8 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 ### Cross-device authentication (Android)
 
 Follow these steps to sign in to Microsoft Entra ID on another device with a passkey in Microsoft Authenticator on your Android device.
+
+This sign-in option requires Bluetooth and an internet connection for both devices. If your organizations restricts Bluetooth usage, an administrator can allow cross-device sign-in for passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
 1. On the other device where you're looking to sign in to Microsoft Entra ID, navigate to the resource you're trying to access such as [Office](https://www.office.com).
 
