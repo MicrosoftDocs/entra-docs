@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 08/22/2024
+ms.date: 09/03/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -73,7 +73,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 Once the enterprise application is created, browse back to the app and select **Users and Groups**. Add all users synchronized from Active Directory.
 
 ## Publish DNS suffixes
-Configure private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on premises resources.
+Configure private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on premises resources. To learn more about Private DNS with Quick Access, see [how-to-configure-quick-access.md#add-private-dns-suffixes](how-to-configure-quick-access.md).
 
 1. Browse to **Global Secure Access** > **Applications** > **Quick Access**.
 1. Select **Enable Name Private DNS** and select **Add DNS suffix**. At a minimum, add the top level suffixes of your Active Directory forests hosting users synchronized to Microsoft Entra ID.
