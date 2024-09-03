@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 04/25/2024
+  ms.date: 09/03/2024
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -22,7 +22,9 @@ sections:
       - question: |
           Can I use Authenticator as a passkey provider on devices earlier than Android 14 or iOS 17?
         answer: |
-          Support for earlier versions of Android is coming soon. Authenticator uses operating system APIs as a passkey provider. These APIs are currently available only on devices that run Android 14 and iOS 17 or later. 
+          Authenticator uses operating system APIs as a passkey provider. 
+          These APIs are currently available only on devices that run Android 14 and iOS 17 or later. 
+          Support for FIDO2 security keys on earlier versions of Android is coming soon.
       - question: |
           Do I need to enable bluetooth to perform cross-device authentication?
         answer: |
