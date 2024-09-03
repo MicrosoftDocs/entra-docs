@@ -45,7 +45,7 @@ Use the following steps to hide an application from My Apps portal and Microsoft
 :::zone-end
 
 > [!NOTE]
-> These instructions apply only to non first-party Microsoft Enterprise Applications. To learn more about first party Microsoft applications see this [link](https://learn.microsoft.com/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in). Administrators also need to keep in mind that hiding the application from the end user does not prevent users signing in these applications via other then My Apps portal means (shared links, services dependencies, etc.).  
+> These instructions apply only to non first-party Microsoft Enterprise Applications. To learn more about first-party Microsoft applications see [First-party Microsoft applications in sign-in reports](/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in). Administrators also need to keep in mind that hiding the application from the end user does not prevent users signing in these applications via other then My Apps portal means (shared links, services dependencies, etc). 
 
 :::zone pivot="aad-powershell"
 
