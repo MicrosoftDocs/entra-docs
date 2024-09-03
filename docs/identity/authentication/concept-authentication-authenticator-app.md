@@ -5,7 +5,7 @@ description: Learn about using the Microsoft Authenticator in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/20/2024
+ms.date: 08/03/2024
 
 ms.author: justinha
 author: justinha
@@ -52,7 +52,7 @@ When attestation is enabled in the passkey (FIDO) policy, Microsoft Entra ID tri
   - For Key attestation, Authenticator attestation uses [key attestation by Android](https://developer.android.com/privacy-and-security/security-key-attestation) to verify that the passkey being registered is hardware-backed.     
 
 >[!NOTE]
->For both iOS and Android, Authenticator attestation relies upon Apple and Google servers to verify the authenticity of the Authenticator app. Heavy server usage can make passkey registration fail, and users may need to try again. If Apple and Google servers are down, Authenticator attestation blocks registrations that require attestation until servers are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/).
+>For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users may need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
 
 For more information about how to configure attestation, see [How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID](how-to-enable-authenticator-passkey.md).
 

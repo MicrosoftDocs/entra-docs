@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on iOS in
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/26/2024
+ms.date: 09/03/2024
 
 ms.author: justinha
 author: justinha
@@ -260,8 +260,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
 ## Same-device registration from a browser (Android)
 
-[!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
-<!---
+
 Alternatively, users can set up a passkey in the Authenticator by navigating to a browser and initiating the flow from My Security info.
 
 1. Using your Android device, open a web browser and sign-in to [Security info](https://mysignins.microsoft.com/security-info).
@@ -325,7 +324,6 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
 1. You can now see the passkeys in Authenticator along with your other registered security info options.
 
--->
 
 ## Cross-device registration (Android)
 
