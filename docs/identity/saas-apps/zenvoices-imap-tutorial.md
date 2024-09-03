@@ -17,7 +17,7 @@ ms.author: jeedes
 
 # Tutorial: Microsoft Entra single sign-on (SSO) integration with Zenvoices IMAP
 
-In this tutorial, you'll learn how to integrate Zenvoices IMAP with Microsoft Entra ID. When you integrate Zenvoices IMAP with Microsoft Entra ID, you can:
+In this tutorial, you learn how to integrate Zenvoices IMAP with Microsoft Entra ID. When you integrate Zenvoices IMAP with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access Zenvoices IMAP.
 Enable your users to be automatically signed in to Zenvoices IMAP with their Microsoft Entra accounts.
@@ -50,7 +50,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zenvoices IMAP** > **Single sign-on**.
 
-1. Perform the following steps in the below section:
+1. Perform the following steps in the following section:
 
     1. Click **Go to application**.
 
@@ -80,13 +80,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         ![Screenshot of showing the client secrets value.](common/client-secret.png)
 
-    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the Zenvoices IMAP side configuration.
+    1. Once you add a client secret, **Value** is generated. Copy the value and use it later in the Zenvoices IMAP side configuration.
 
         ![Screenshot of showing how to add a client secret.](common/client.png)
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -100,7 +100,7 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Zenvoices IMAP.
+In this section, you enable B.Simon to use single sign-on by granting access to Zenvoices IMAP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zenvoices IMAP**.
