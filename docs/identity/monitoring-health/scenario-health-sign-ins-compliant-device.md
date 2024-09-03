@@ -55,7 +55,7 @@ For this scenario, there are three main data sets to investigate:
 - The impact summary from the alerts API
 - Sign-in logs
 
-Microsoft Entra tenant health monitoring can be viewed and managed using Microsoft Graph on the `/beta` endpoint. For more information, see the [Microsoft Graph documentation for Microsoft Entra health monitoring](/graph/api/resources/healthmonitoring-alert).
+Microsoft Entra tenant health monitoring can be viewed and managed using Microsoft Graph on the `/beta` endpoint. For more information, see the [Microsoft Graph documentation for Microsoft Entra health monitoring](/graph/api/resources/healthmonitoring-overview).
 
 To get started, follow these instructions to work with tenant health monitoring using Microsoft Graph in Graph Explorer.
 
@@ -77,32 +77,19 @@ To view the impact summary for a specific alert, you need to save the `id` of th
 GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
 ```
 
+Important details to note:
+
 - The portion of the response after `impacts` make up the impact summary for the alert.
 - The `supportingData` portion includes the full query used to generate the alert.
-
-
-Query used is provided in the API response.
-
-What is the seriousness of the alert? Perhaps there's only a handful of resources/users impacted. Perhaps it's a widespread issue.
-
-Pull both from Graph.
-
-Signal itself may not be as specific as the internal detection service. It can be correlated, but the signal may display everything that's included in the detection service. 
-
-Look at the data set that was the basis for the signal. Sign-in logs, using a specific filter to generate the observation. Date range, device, etc.
-
-
-
-Regular monitoring - pull daily API for alerts.
-
-
+- Think about the seriousness of the alert. Are only a handful of users affected, or is it a widespread issue?
+- The results of the query include everything identified by the detection service, but there might be results that aren't directly related to the alert.
+- We recommend pulling the API daily for regular monitoring of the alerts.
 
 ### Common data sets to investigate
 
 
 
 ## Research root causes in your tenant
-
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Steps to find data.
