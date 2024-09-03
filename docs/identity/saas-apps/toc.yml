@@ -88,6 +88,8 @@
         href: adra-by-trintech-tutorial.md
       - name: Adstream
         href: adstream-tutorial.md
+      - name: AfterShip
+        href: aftership-tutorial.md
       - name: Agile Provisioning
         href: agile-provisioning-tutorial.md
       - name: Agiloft Contract Management Suite
@@ -2277,6 +2279,8 @@
         href: qliksense-enterprise-tutorial.md
       - name: Qmarkets Idea & Innovation Management
         href: qmarkets-idea-innovation-management-tutorial.md
+      - name: Qminder
+        href: qminder-tutorial.md
       - name: QPrism
         href: qprism-tutorial.md
       - name: QRadar SOAR
