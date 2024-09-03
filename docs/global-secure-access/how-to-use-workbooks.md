@@ -45,13 +45,13 @@ The Global Secure Access categories are:
 
 In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Monitor** > **Workbooks** to view predefined workbooks. Note that you won't see the workbooks unless logging data has been captured.
 
-**Traffic Logs workbook** - 
+**Network Traffic Insights workbook** - 
 Provides an overview of all traffic logs within your network, offering insights into data transfer, anomalies, and potential threats. 
 
 **Remote Network Health workbook** - 
 Monitors the health and performance of remote networks, ensuring that all remote connections are reliable and secure. 
 
-**Clients workbook** - 
+**Clients Activity and Status workbook** - 
 Offers an overview of the clients connected to your network, including their health status and activity levels. 
 
 **Discovered Application Segments workbook** - 
