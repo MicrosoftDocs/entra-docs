@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.custom: devx-track-terraform
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Terraform Cloud so that I can control who has access to Terraform Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.

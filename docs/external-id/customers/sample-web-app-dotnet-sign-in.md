@@ -1,6 +1,6 @@
 ---
-title: Sign in users to a sample ASP.NET web application
-description: Learn how to configure a sample ASP.NET web app to sign in and sign out users by using a Microsoft Entra ID for customers tenant.
+title: Sign in users to a sample ASP.NET Core web application
+description: Learn how to configure a sample ASP.NET Core web app to sign in and sign out users by using an external tenant.
  
 author: cilwerner
 manager: celestedg
@@ -10,22 +10,22 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: sample
-ms.date: 06/23/2023
+ms.date: 04/23/2024
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample ASP.NET web app to sign in and sign out users with my Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample ASP.NET Core web app to sign in and sign out users with my external tenant
 ---
 
-# Sign in users for a sample ASP.NET web app in a Microsoft Entra ID for customers tenant
+# Sign in users for a sample ASP.NET Core web app in an external tenant
 
-This how-to guide uses a sample ASP.NET web application to show the fundamentals of modern authentication using the [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) and [Microsoft Identity Web](https://github.com/AzureAD/microsoft-identity-web/) for ASP.NET to handle authentication.
+This how-to guide uses a sample ASP.NET Core web application to show the fundamentals of modern authentication using the [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) and [Microsoft Identity Web](https://github.com/AzureAD/microsoft-identity-web/) for ASP.NET Core to handle authentication.
 
-In this article, you'll register a web application in the Microsoft Entra admin center and create a sign in and sign out user flow. You'll associate your web application with the user flow, download and update a sample ASP.NET web application using your own Microsoft Entra ID for customers tenant details. Finally, you'll run and test the sample web application.
+In this article, you'll register a web application in the Microsoft Entra admin center and create a sign in and sign out user flow. You'll associate your web application with the user flow, download and update a sample ASP.NET Core web application using your own external tenant details. Finally, you'll run and test the sample web application.
 
 ## Prerequisites
 
-- Although any IDE that supports ASP.NET applications can be used, Visual Studio Code is used for this guide. It can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads/) page.
+- Although any IDE that supports ASP.NET Core applications can be used, Visual Studio Code is used for this guide. It can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads/) page.
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet).
-- Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register the web app
 
@@ -43,7 +43,7 @@ In this article, you'll register a web application in the Microsoft Entra admin 
 
 [!INCLUDE [ciam-add-client-secret](./includes/register-app/add-app-client-secret.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [ciam-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -57,20 +57,21 @@ In this article, you'll register a web application in the Microsoft Entra admin 
 
 ## Clone or download sample web application
 
-To get the web app sample code, you can do either of the following tasks:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
-- Clone the sample web application from GitHub by running the following command:
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-    ```powershell
+    ```console
     git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
     ```
 
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters. 
+
 ## Configure the application
 
-1. Navigate to the root folder of the sample you have downloaded and directory that contains the ASP.NET sample app:
+1. Navigate to the root folder of the sample you have downloaded and directory that contains the ASP.NET Core sample app:
 
-    ```powershell
+    ```console
     cd 1-Authentication\1-sign-in-aspnet-core-mvc
     ```
 
@@ -83,23 +84,24 @@ To get the web app sample code, you can do either of the following tasks:
 
 1. From your shell or command line, execute the following commands:
 
-    ```powershell
+    ```console
     dotnet run
     ```
 
 1. Open your web browser and navigate to `https://localhost:7274`.
 
-1. Sign-in with an account registered to the customer tenant.
+1. Sign-in with an account registered to the external tenant.
 
 1. Once signed in the display name is shown next to the **Sign out** button as shown in the following screenshot.
 
-    :::image type="content" source="media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png" alt-text="Screenshot of sign in into a ASP.NET web app.":::
+    :::image type="content" source="media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png" alt-text="Screenshot of sign in into a ASP.NET Core web app.":::
 
-1. To sign-out from the application, select the **Sign out** button.
+1. To sign out from the application, select the **Sign out** button.
 
-## Next steps
+## See also
 
+- [Use our multi-part tutorial series to build this ASP.NET web application from scratch](tutorial-web-app-dotnet-sign-in-prepare-app.md)
 - [Enable password reset](how-to-enable-password-reset-customers.md)
 - [Customize the default branding](how-to-customize-branding-customers.md)
 - [Configure sign-in with Google](how-to-google-federation-customers.md)
-- [Sign in users in your own ASP.NET web application by using a Microsoft Entra ID for customers tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md)
+- [Sign in users in your own ASP.NET Core web application by using an external tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md)

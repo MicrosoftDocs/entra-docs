@@ -9,7 +9,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 07/17/2023
+ms.date: 07/30/2024
 ms.author: barclayn
 ---
 
@@ -24,7 +24,7 @@ This article shows you how to use the Microsoft 365 license center to assign lic
 
 ## Assign a license
 
-1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/) with a license administrator account. To manage licenses, the account must be a License Administrator, User Administrator, or Global Administrator.
+1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/) as at least a [License Administrator](/entra/identity/role-based-access-control/permissions-reference#license-administrator).
    
       :::image type="content" source="./media/licensing-admin-center/admin-center.png" alt-text="Screenshot of the Microsoft admin Center landing page.":::
 
@@ -67,3 +67,4 @@ To learn more about the feature set for license assignment using groups, see the
 
 - [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
 - [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
+- [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](licensing-group-advanced.md)

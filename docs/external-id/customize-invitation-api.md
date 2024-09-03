@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 ---
 # Microsoft Entra B2B collaboration API and customization
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 [With the Microsoft Graph REST API](/graph/api/resources/invitation), you can customize the invitation process in a way that works best for your organization.
 
 ## Capabilities of the invitation API
@@ -127,5 +129,5 @@ Check out the invitation API reference in [https://developer.microsoft.com/graph
 ## Next steps
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
-- [Add and invite guest users](add-users-administrator.md)
+- [Add and invite guest users](add-users-administrator.yml)
 - [The elements of the B2B collaboration invitation email](invitation-email-elements.md)

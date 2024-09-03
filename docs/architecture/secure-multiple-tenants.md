@@ -58,7 +58,7 @@ Developers require access to the sandbox tenant during the development lifecycle
 
 In this example, Contoso uses [Microsoft Entra B2B Collaboration](~/external-id/what-is-b2b.md) to provision users from the corporate tenant to enable users that can manage and access resources in applications in the sandbox tenant without managing multiple credentials. This capability is primarily oriented to cross-organization collaboration scenarios. However, enterprises with multiple tenants like Contoso can use this capability to avoid additional credential lifecycle administration and user experience complexities.
 
-Use [External Identities cross-tenant access](~/external-id/cross-tenant-access-settings-b2b-collaboration.md) settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. They also let you trust multifactor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations. For details and planning considerations, see [Cross-tenant access in Microsoft Entra External ID](~/external-id/cross-tenant-access-overview.md).
+Use [External Identities cross-tenant access](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. They also let you trust multifactor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations. For details and planning considerations, see [Cross-tenant access in Microsoft Entra External ID](~/external-id/cross-tenant-access-overview.md).
 
 Another approach could have been to utilize the capabilities of Microsoft Entra Connect to sync the same on-premises Microsoft Entra credentials to multiple tenants, keeping the same password but differentiating on the users UPN domain.
 
@@ -129,7 +129,7 @@ Microsoft Online Services:
 
 ### Azure resources
 
-Any Azure resources needed by trusting applications may also be deployed. For example, databases, virtual machines, containers, Azure functions, etc. For your sandbox environment, you must weigh the cost savings of using less-expensive SKUs for products and services with the less security features available.
+Any Azure resources needed by trusting applications may also be deployed. For example, databases, virtual machines, containers, Azure functions, and so on. For your sandbox environment, you must weigh the cost savings of using less-expensive SKUs for products and services with the less security features available.
 
 The RBAC model for access control should still be employed in a non-production environment in case changes are replicated to production after tests have concluded. Failure to do so allows security flaws in the non-production environment to propagate to your production tenant.  
 

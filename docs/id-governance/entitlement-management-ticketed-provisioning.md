@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 05/31/2023
+ms.date: 07/15/2024
 ms.custom: template-tutorial
 ---
 
@@ -33,21 +33,23 @@ In this tutorial, you learn how to:
 - A [ServiceNow instance](https://www.servicenow.com/) of Rome or higher
 - SSO integration with ServiceNow. If this isn't already configured, see:[Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceNow](~/identity/saas-apps/servicenow-tutorial.md) before continuing.
 
+> [!NOTE]
+> It is recommended to use a least privilege role when completing these steps.
+
 ## Adding Logic App Workflow to an existing Catalog for Entitlement Management
 
-Prerequisite roles: Global administrator, Identity Governance administrator, or Catalog owner and Resource Group Owner.
-
-To add a Logic App workflow to an existing catalog, you use an ARM template for the Logic App creation here: 
+To add a Logic App workflow to an existing catalog use the ARM template for the Logic App creation here: 
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Figaelmprodportalhosting.blob.core.windows.net%2Farm-deployment-template%2FLogicAppServiceNowIntegration.json).
 
 :::image type="content" source="media/entitlement-management-servicenow-integration/logic-app-arm-template.png" alt-text="Screenshot of Logic App ARM template." lightbox="media/entitlement-management-servicenow-integration/logic-app-arm-template.png":::
 
-Provide the Azure subscription, resource group details, along with the Logic App name and the Catalog ID to associate the Logic App with and select purchase. For more information on how to create a new catalog, please follow the steps in this document: [Create and manage a catalog of resources in entitlement management](entitlement-management-catalog-create.md).
+Provide the Azure subscription, resource group details, along with the Logic App name and the Catalog ID to associate the Logic App with and select purchase. For more information on how to create a new catalog, see: [Create and manage a catalog of resources in entitlement management](entitlement-management-catalog-create.md).
 
 
-1. Navigate To Microsoft Entra admin center [Identity Governance - Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_ERM/DashboardBlade/~/elmEntitlement)
-
+1. Navigate To Microsoft Entra admin center [Identity Governance - Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_ERM/DashboardBlade/~/elmEntitlement) as at least the role of [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and Resource group owner.
 1. In the left menu, select **Catalogs**. 
 
 1. Select the catalog for which you want to add a custom extension and then in the left menu, select **Custom Extensions**.
@@ -73,10 +75,9 @@ Provide the Azure subscription, resource group details, along with the Logic App
 
 After setting up custom extensibility in the catalog, administrators can create an access package with a policy to trigger the custom extension when the request has been approved. This enables them to define specific access requirements and tailor the access review process to meet their organization's needs.  
 
-**Prerequisite roles**: Global administrator, Identity Governance administrator, Catalog owner, or Access package manager
-
-1. In Identity Governance portal, select **Access packages**.
-
+1. In Identity Governance portal as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator), select **Access packages**.
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and Access package manager.
 1. Select the access package you want to add a custom extension (Logic App) to from the list of access packages that have already been created.
 
 1. Change to the policy tab, select the policy, and select **Edit**.
@@ -239,7 +240,7 @@ When an end user requests access to an access package, the request is sent to th
 
 ## Receiving access to the requested access package as an end-user 
 
-The IT Support team works on the ticket create above to do necessary provisions and  close the ServiceNow ticket. When the ticket is closed, ServiceNow triggers a call to resume the Entitlement Management workflow. Once the request is completed, the requestor receives a notification from entitlement management that the request has been fulfilled. This streamlined workflow ensures that access requests are fulfilled efficiently, and users are notified promptly.
+The IT Support team works on the previous ticket created to do necessary provisions, and close the ServiceNow ticket. When the ticket is closed, ServiceNow triggers a call to resume the Entitlement Management workflow. Once the request is completed, the requestor receives a notification from entitlement management that the request has been fulfilled. This streamlined workflow ensures that access requests are fulfilled efficiently, and users are notified promptly.
 
 :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-myaccess-request-history.png" alt-text="Screenshot of My Access request history." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-myaccess-request-history.png":::
 

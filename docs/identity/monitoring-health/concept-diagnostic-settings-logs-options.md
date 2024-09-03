@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 02/13/2024
+ms.date: 09/01/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -25,7 +25,7 @@ Setting up an endpoint, such as an event hub or storage account, might require d
 
 To help decide which log routing option is best for you, see [How to access activity logs](howto-access-activity-logs.md). The overall process and requirements for each endpoint type are covered in the following articles:
 
-- [Send logs to a Log Analytics workspace to integrate with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [Send logs to a Log Analytics workspace to integrate with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 - [Archive logs to a storage account](howto-archive-logs-to-storage-account.md)
 - [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)
 - [Send to a partner solution](/azure/partner-solutions/overview)
@@ -68,7 +68,7 @@ The `RiskyUsers` logs identify users who are at risk based on their sign-in acti
 
 ### User risk events
 
-The `UserRiskEvents` logs are part of Microsoft Entra ID Protection. These logs capture details about risky sign-in events. For more information, see [How to investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins).
+The `UserRiskEvents` logs are part of Microsoft Entra ID Protection. These logs capture details about risky sign-in events. For more information, see [How to investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins-report).
 
 ### Network access traffic logs
 
@@ -88,7 +88,7 @@ The `EnrichedOffice365AuditLogs` are associated with the enriched logs you can e
 
 ### Microsoft Graph activity logs
 
-The `MicrosoftGraphActivityLogs` provide administrators full visibility into all HTTP requests accessing your tenant's resources through the Microsoft Graph API. You can use these logs to identify activities that a compromised user account conducted in your tenant or to investigate problematic or unexpected behaviors for client applications, such as extreme call volumes. Route these logs to the same Log Analytics workspace with `SignInLogs` to cross-reference details of token requests for sign-in logs. For more information, see [Access Microsoft Graph activity logs (preview)](/graph/microsoft-graph-activity-logs-overview).
+The `MicrosoftGraphActivityLogs` provide administrators full visibility into all HTTP requests accessing your tenant's resources through the Microsoft Graph API. You can use these logs to identify activities that a compromised user account conducted in your tenant or to investigate problematic or unexpected behaviors for client applications, such as extreme call volumes. Route these logs to the same Log Analytics workspace with `SignInLogs` to cross-reference details of token requests for sign-in logs. For more information, see [Access Microsoft Graph activity logs](/graph/microsoft-graph-activity-logs-overview).
 
 ### Remote network health logs
 

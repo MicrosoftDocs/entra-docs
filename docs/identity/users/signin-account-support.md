@@ -29,4 +29,4 @@ You can tell if the sign-in page your organization uses supports Microsoft accou
 
 ## Next steps
 
-[Customize your sign-in branding](~/fundamentals/add-custom-domain.md)
+[Customize your sign-in branding](~/fundamentals/add-custom-domain.yml)

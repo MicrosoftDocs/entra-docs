@@ -10,12 +10,12 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
-ms.date: 07/26/2023
+ms.date: 06/27/2024
 ---
 
 # Tutorial: Authenticate users to your WPF desktop application
 
-This tutorial is the final part of a series that demonstrates building a Windows Presentation Form (WPF) desktop app and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to build your .NET WPF desktop app and sign in and sign out a user using Microsoft Entra ID for customers.
+This tutorial is the final part of a series that demonstrates building a Windows Presentation Form (WPF) desktop app and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to build your .NET WPF desktop app and sign in and sign out a user using Microsoft Entra External ID.
 
 In this tutorial, you'll:
 
@@ -26,7 +26,7 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to sign in user in .NET WPF application](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md).
+- [Tutorial: Prepare your external tenant to sign in user in .NET WPF application](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md).
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
 - Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 
@@ -87,6 +87,8 @@ dotnet add package Microsoft.Identity.Client.Broker
         }
     }
     ```
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-wpf.md)]
 
 ## Modify the project file
 
@@ -442,6 +444,6 @@ Run your app and sign in to test the application
 
 ## See also
 
-- [Sign in users in a sample Electron desktop application by using Microsoft Entra ID for customers](./how-to-desktop-app-electron-sample-sign-in.md)
-- [Sign in users in a sample .NET MAUI desktop application by using Microsoft Entra ID for customers](./how-to-desktop-app-maui-sample-sign-in.md)
+- [Sign in users in a sample Electron desktop application by using Microsoft Entra External ID](./how-to-desktop-app-electron-sample-sign-in.md)
+- [Sign in users in a sample .NET MAUI desktop application by using Microsoft Entra External ID](./how-to-desktop-app-maui-sample-sign-in.md)
 - [Customize branding for your sign-in experience](./how-to-customize-branding-customers.md)

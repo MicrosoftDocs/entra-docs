@@ -30,14 +30,22 @@
       href: concept-authentication-methods.md
     - name: Manage 
       href: concept-authentication-methods-manage.md
-    - name: Microsoft Authenticator app
-      href: concept-authentication-authenticator-app.md
-    - name: OATH tokens
-      href: concept-authentication-oath-tokens.md
+    - name: Temporary Access Pass
+      href: howto-authentication-temporary-access-pass.md
     - name: Passwordless
       href: concept-authentication-passwordless.md
+    - name: Microsoft Authenticator
+      href: concept-authentication-authenticator-app.md
+    - name: Certificates
+      href: concept-certificate-based-authentication.md
+    - name: OATH tokens
+      href: concept-authentication-oath-tokens.md
     - name: Phone options
       href: concept-authentication-phone-options.md
+    - name: Text
+      href: howto-authentication-sms-signin.md
+    - name: Email
+      href: howto-authentication-use-email-signin.md
     - name: Security questions
       href: concept-authentication-security-questions.md
   - name: Conditional Access authentication strength
@@ -74,6 +82,10 @@
       href: concept-authentication-default-enablement.md
     - name: System-preferred MFA 
       href: concept-system-preferred-multifactor-authentication.md
+    - name: Mandatory MFA 
+      href: concept-mandatory-multifactor-authentication.md
+    - name: External MFA provider
+      href: concept-authentication-external-method-provider.md
     - name: Prompts and session lifetime
       href: concepts-azure-multi-factor-authentication-prompts-session-lifetime.md
     - name: Understanding telephony fraud
@@ -106,38 +118,56 @@
   items:
   - name: Manage authentication methods
     href: how-to-authentication-methods-manage.md      
+  - name: Temporary Access Pass
+    href: howto-authentication-temporary-access-pass.md
   - name: Passwordless
     items: 
-      - name: Deploying passwordless
+      - name: Deploying passwordless authentication
         href: howto-authentication-passwordless-deployment.md
-      - name: Passwordless FIDO2 security keys
+      - name: Passkey (FIDO2) authentication
         items:
-          - name: Enable FIDO2 security keys 
-            href: howto-authentication-passwordless-security-key.md
-          - name: Sign in to Windows 10 devices
-            href: howto-authentication-passwordless-security-key-windows.md
-          - name: SSO to on-premises resources
-            href: howto-authentication-passwordless-security-key-on-premises.md
-          - name: Hybrid FAQs
-            href: howto-authentication-passwordless-faqs.md
-          - name: Troubleshoot hybrid
-            href: howto-authentication-passwordless-troubleshoot.md
+        - name: Enable passkeys for an organization
+          href: how-to-enable-passkey-fido2.md
+        - name: Register passkey (preview)
+          href: how-to-register-passkey.md
+        - name: Register passkey with a mobile device (preview)
+          href: how-to-register-passkey-mobile.md
+        - name: Sign in with passkey (preview)
+          href: how-to-sign-in-passkey.md  
+        - name: Passkey (FIDO2) compatibility matrix
+          href: concept-fido2-compatibility.md
+        - name: Become a FIDO2 security key vendor
+          href: concept-fido2-hardware-vendor.md  
       - name: Microsoft Authenticator
         items:
-        - name: Manage
+        - name: Enable passkeys in Authenticator (preview)
+          href: how-to-enable-authenticator-passkey.md
+        - name: Register passkeys in Authenticator (preview)
+          href: how-to-register-passkey-authenticator.md
+        - name: Sign in with passkeys in Authenticator (preview)
+          href: how-to-sign-in-passkey-authenticator.md
+        - name: Passkeys in Authenticator FAQs (preview)
+          href: passkey-authenticator-faq.yml
+        - name: Enable Authenticator authentication method
           href: howto-authentication-passwordless-phone.md
-        - name: Run a registration campaign
-          href: how-to-mfa-registration-campaign.md
-        - name: Use number matching 
+        - name: How number matching works
           href: how-to-mfa-number-match.md
         - name: Use additional context 
           href: how-to-mfa-additional-context.md
-        - name: Use Authenticator Lite 
+        - name: Use Authenticator Lite
           href: how-to-mfa-authenticator-lite.md
-        - name: Use Microsoft managed settings 
-          href: ./concept-authentication-default-enablement.md
-      - name: Windows Hello for Business
-        href: /windows/security/identity-protection/hello-for-business/hello-identity-verification
+      - name: Hybrid
+        items:
+        - name: Register passkey with a security key
+          href: how-to-register-passkey-with-security-key.md
+        - name: Enable security key sign-in to Windows
+          href: howto-authentication-passwordless-security-key-windows.md
+        - name: SSO to on-premises resources
+          href: howto-authentication-passwordless-security-key-on-premises.md
+        - name: Hybrid FAQs
+          href: howto-authentication-passwordless-faqs.md
+        - name: Troubleshoot hybrid
+          href: howto-authentication-passwordless-troubleshoot.md
       - name: Certificate-based authentication
         items:
         - name: Microsoft Entra CBA
@@ -168,8 +198,6 @@
             href: certificate-based-authentication-federation-android.md
           - name: Use on iOS Devices
             href: certificate-based-authentication-federation-ios.md
-  - name: Use a Temporary Access Pass
-    href: howto-authentication-temporary-access-pass.md
   - name: Use SMS-based authentication
     items:  
     - name: Manage
@@ -180,11 +208,21 @@
       href: how-to-authentication-two-way-sms-unsupported.md
   - name: Use email address sign-in
     href: howto-authentication-use-email-signin.md
+  - name: Use Microsoft managed settings 
+    href: concept-authentication-default-enablement.md
+  - name: Security info registration
+    items:
+    - name: Combined MFA and SSPR registration
+      href: howto-registration-mfa-sspr-combined.md
+    - name: Troubleshoot combined registration
+      href: howto-registration-mfa-sspr-combined-troubleshoot.md
+    - name: Run a registration campaign
+      href: how-to-mfa-registration-campaign.md
   - name: Self-service password reset
     items:
     - name: User customization options
       href: howto-sspr-customization.md
-    - name: Pre-register authentication data
+    - name: Preregister authentication data
       href: howto-sspr-authenticationdata.md
     - name: SSPR for Windows clients
       href: howto-sspr-windows.md
@@ -195,18 +233,20 @@
     - name: Configure settings
       href: howto-mfa-mfasettings.md
     - name: Configure users
-      href: howto-mfa-userdevicesettings.md
+      href: howto-mfa-userdevicesettings.yml
     - name: Find coverage gaps
       href: how-to-authentication-find-coverage-gaps.md
     - name: Enable per-user MFA
       href: howto-mfa-userstates.md
+    - name: Manage external authentication method
+      href: how-to-authentication-external-method-manage.md
     - name: Configure authentication providers
       href: concept-mfa-authprovider.md
     - name: Use app passwords
       href: howto-mfa-app-passwords.md
     - name: Directory Federation
       items:
-      - name: Windows Server 2016 AD FS Adapter
+      - name: AD FS Adapter
         href: /windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa
       - name: Federation Services
         href: multi-factor-authentication-get-started-adfs.md
@@ -224,12 +264,6 @@
         href: howto-mfa-nps-extension-rdg.md
       - name: VPN
         href: howto-mfa-nps-extension-vpn.md
-  - name: Security info registration
-    items:
-    - name: Enable combined registration
-      href: howto-registration-mfa-sspr-combined.md
-    - name: Troubleshoot combined registration
-      href: howto-registration-mfa-sspr-combined-troubleshoot.md
   - name: On-premises password protection
     items:
     - name: Plan and deploy
@@ -336,10 +370,6 @@
     href: /graph/api/resources/authenticationmethodspolicies-overview
   - name: Service limits and restrictions
     href: ~/identity/users/directory-service-limits-restrictions.md
-  - name: FIDO2 compatibility
-    href: fido2-compatibility.md
-  - name: Become a FIDO2 provider
-    href: concept-fido2-hardware-vendor.md  
 - name: Resources
   items:
   - name: Azure feedback forum
@@ -347,7 +377,7 @@
   - name: Microsoft Q&A question page
     href: /answers/topics/azure-active-directory.html
   - name: Pricing
-    href: https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing
+    href: https://www.microsoft.com/security/business/microsoft-entra-pricing
   - name: Feature availability
     href: feature-availability.md
   - name: Service updates
@@ -355,4 +385,4 @@
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Videos
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
+    href: phishing-resistant-authentication-videos.md

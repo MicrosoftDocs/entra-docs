@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 05/19/2023
+ms.date: 08/19/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
@@ -23,7 +23,7 @@ Linked-based SSO doesn't provide sign-on functionality through Microsoft Entra I
 
 Some common scenarios where linked-based SSO is valuable include:
 
-- Add a link to a custom web application that currently uses federation, such as Active Directory Federation Services (AD FS).
+- Add a link to a custom web application that currently uses federation, such as Active Directory Federation Services (ADFS).
 - Add deep links to specific web pages that you want to appear on your user's access pages.
 - Add a link to an application that doesn't require authentication. The linked option doesn't provide sign-on functionality through Microsoft Entra credentials, but you can still use some of the other features of enterprise applications. For example, you can use audit logs and add a custom logo and application name.
 
@@ -32,8 +32,8 @@ Some common scenarios where linked-based SSO is valuable include:
 ## Prerequisites
 
 To configure linked-based SSO in your Microsoft Entra tenant, you need:
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - An application that supports linked-based SSO.
 
 ## Configure linked-based single sign-on

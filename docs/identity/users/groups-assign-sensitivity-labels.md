@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/08/2023
+ms.date: 08/20/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -26,6 +26,9 @@ Sensitivity labels can be applied to groups across apps and services such as Out
 
 To apply published labels to groups, you must first enable the feature. These steps enable the feature in Microsoft Entra ID. The Microsoft Graph PowerShell SDK comes in two modules, `Microsoft.Graph` and `Microsoft.Graph.Beta`.
 
+All Microsoft operated regions should choose Microsoft. All other regions should choose their operator if listed below.
+
+#### [Microsoft](#tab/microsoft)
 1. Open a PowerShell prompt on your computer and run the following commands to prepare to run the cmdlets.
 
     ```powershell
@@ -38,18 +41,18 @@ To apply published labels to groups, you must first enable the feature. These st
     ```powershell
     Connect-MgGraph -Scopes "Directory.ReadWrite.All"
     ```
+  
 
 1. Fetch the current group settings for the Microsoft Entra organization and display the current group settings.
 
     ```powershell
     $grpUnifiedSetting = Get-MgBetaDirectorySetting -Search DisplayName:"Group.Unified"
     ```
-
    
     If no group settings were created for this Microsoft Entra organization, you get an empty screen. In this case, you must first create the settings. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this Microsoft Entra organization.
     
     > [!NOTE]
-    > If the sensitivity label was enabled previously, you see **EnableMIPLabels** = **True**. In this case, you don't need to do anything.
+    > If the sensitivity label was enabled previously, you see `EnableMIPLabels = True`. In this case, you don't need to do anything. Also make sure that `EnableGroupCreation = False` if you don't want non-admin users to be able to create groups. See [Template settings](~/identity/users/groups-settings-cmdlets.md#template-settings) for details.
 
 1. Apply the new settings.
 
@@ -80,9 +83,70 @@ If you receive a `Request_BadRequest` error, it's because the settings already e
 
 You also need to synchronize your sensitivity labels to Microsoft Entra ID. For instructions, see [Enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
 
+#### [21Vianet](#tab/21Vianet)
+
+If you are performing these M365 operations from 21Vianet:
+
+1. Register a Microsoft Entra ID application in Microsoft Entra ID.
+1. Grant your application  API permissions to access Microsoft Graph including ```Directory.ReadWriteAll``` and ```Group.ReadWriteAll```, you may need to get tenant admin's explicit consent to grant the application access to Microsft Graph.
+1. Generate a client secret and copy it. You will need the client secret to connect to MS Graph;
+1. Run PowerShell as administrator:
+
+    ```PowerShell
+    $ClientSecretCredential = Get-Credential -Credential
+    ```
+     After commands run, you will be prompted to enter a password. The password is the new client secret you copied in earlier step.
+
+1. Run the following command to get access to MS Graph:
+
+    ```PowerShell
+    Connect-MgGraph -TenantId "Current tenant id" - ClientSecretCredential $ClientSecretCredential -Environment China
+    ```
+1. Fetch the current group settings for the Microsoft Entra organization and display the current group settings.
+
+    ```powershell
+    $grpUnifiedSetting = Get-MgBetaDirectorySetting -Search DisplayName:"Group.Unified"
+    ```
+   
+    If no group settings were created for this Microsoft Entra organization, you get an empty screen. In this case, you must first create the settings. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this Microsoft Entra organization.
+    
+    > [!NOTE]
+    > If the sensitivity label was enabled previously, you see `EnableMIPLabels = True`. In this case, you don't need to do anything. Also make sure that `EnableGroupCreation = False` if you don't want non-admin users to be able to create groups. See [Template settings](~/identity/users/groups-settings-cmdlets.md#template-settings) for details.
+
+1. Apply the new settings.
+
+    ```powershell
+    $params = @{
+	    Values = @(
+		    @{
+			    Name = "EnableMIPLabels"
+			    Value = "True"
+		    }
+	    )
+    }
+
+    Update-MgBetaDirectorySetting -DirectorySettingId $grpUnifiedSetting.Id -BodyParameter $params
+    ```
+
+1. Verify that the new value is present.
+
+    ```powershell
+    $Setting = Get-MgBetaDirectorySetting -DirectorySettingId $grpUnifiedSetting.Id
+    $Setting.Values
+    ```
+
+If you receive a `Request_BadRequest` error, it's because the settings already exist in the tenant. When you try to create a new `property:value` pair, the result is an error. In this case, follow these steps:
+
+1. Issue a `Get-MgBetaDirectorySetting | FL` cmdlet and check the ID. If several ID values are present, use the one where you see the `EnableMIPLabels` property on the **Values** settings.
+1. Issue the `Update-MgBetaDirectorySetting` cmdlet by using the ID that you retrieved.
+
+You also need to synchronize your sensitivity labels to Microsoft Entra ID. For instructions, see [Enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
+
+---
+
 ## Assign a label to a new group in the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups** > **New group**.
 1. On the **New Group** page, select **Microsoft 365**. Then fill out the required information for the new group and select a sensitivity label from the list.
@@ -95,7 +159,7 @@ Your group is created and the site and group settings associated with the select
 
 ## Assign a label to an existing group in the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups**.
 1. From the **All groups** page, select the group that you want to label.
@@ -107,7 +171,7 @@ Your group is created and the site and group settings associated with the select
 
 ## Remove a label from an existing group in the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups**.
 1. On the **All groups** page, select the group that you want to remove the label from.
@@ -121,7 +185,7 @@ Your group is created and the site and group settings associated with the select
 
 After you enable this feature, the "classic" classifications for groups appear only on existing groups and sites. You should use them for new groups only if you create groups in apps that don't support sensitivity labels. Your admin can convert them to sensitivity labels later, if needed. Classic classifications are the old classifications you set up by defining values for the `ClassificationList` setting in Azure AD PowerShell. When this feature is enabled, those classifications aren't applied to groups.
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ## Troubleshooting issues
 
@@ -138,7 +202,7 @@ The sensitivity label option appears for groups only when all the following cond
 1. The [sensitivity label scope](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide#label-scopes) must be configured for Groups & Sites.
 1. The group is a Microsoft 365 group.
 1. The current signed-in user:
-    1. Has sufficient privileges to assign sensitivity labels. The user must be a Global Administrator, Group Administrator, or the group owner.
+    1. Has sufficient privileges to assign sensitivity labels. The user must be the group owner or at least a Groups Administrator.
     1. Must be within the scope of the [sensitivity label publishing policy](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide#what-label-policies-can-do).
 
 Make sure all the preceding conditions are met to assign labels to a group.
@@ -154,7 +218,7 @@ If the label you're looking for isn't in the list:
 
 Labels can be swapped at any time by using the same steps as assigning a label to an existing group:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups**, and then select the group that you want to label.
 1. On the selected group's page, select **Properties** and select a new sensitivity label from the list.
@@ -170,5 +234,5 @@ If you must make a change, use a [PowerShell script](https://github.com/microsof
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Update groups after label policy change manually with Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
-- [Edit your group settings](~/fundamentals/how-to-manage-groups.md)
+- [Edit your group settings](~/fundamentals/how-to-manage-groups.yml)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)

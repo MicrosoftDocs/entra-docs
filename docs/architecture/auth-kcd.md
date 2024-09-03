@@ -17,7 +17,7 @@ Based on service principal Names, Kerberos Constrained Delegation (KCD) provides
 
 Microsoft Entra application proxy can provide single sign-on (SSO) and remote access to KCD-based applications that require a Kerberos ticket for access and Kerberos Constrained Delegation (KCD).
 
-To enable SSO to your on-premises KCD applications that use integrated Windows authentication (IWA), give Application Proxy connectors permission to impersonate users in Active Directory. The Application Proxy connector uses this permission to send and receive tokens on the users' behalf.
+To enable SSO to your on-premises KCD applications that use integrated Windows authentication (IWA), give private network connectors permission to impersonate users in Active Directory. The private network connector uses this permission to send and receive tokens on the users' behalf.
 
 ## When to use KCD
 
@@ -31,9 +31,9 @@ Use KCD when there's a need to provide remote access, protect with pre-authentic
 - **Web browser:** The component that the user interacts with to access the external URL of the application.
 - **Microsoft Entra ID:** Authenticates the user.
 - **Application Proxy service:** Acts as reverse proxy to send requests from the user to the on-premises application. It sits in Microsoft Entra ID. Application Proxy can enforce Conditional Access policies.
-- **Application Proxy connector:** Installed on Windows on-premises servers to provide connectivity to the application. Returns the response to Microsoft Entra ID. Performs KCD negotiation with Active Directory, impersonating the user to get a Kerberos token to the application.
-- **Active Directory:** Sends the Kerberos token for the application to the Application Proxy connector.
-- **Legacy applications:** Applications that receive user requests from Application Proxy. The legacy applications return the response to the Application Proxy connector.
+- **Private network connector:** Installed on Windows on-premises servers to provide connectivity to the application. Returns the response to Microsoft Entra ID. Performs KCD negotiation with Active Directory, impersonating the user to get a Kerberos token to the application.
+- **Active Directory:** Sends the Kerberos token for the application to the private network connector.
+- **Legacy applications:** Applications that receive user requests from Application Proxy. The legacy applications return the response to the private network connector.
 
 <a name='implement-windows-authentication-kcd-with-azure-ad'></a>
 

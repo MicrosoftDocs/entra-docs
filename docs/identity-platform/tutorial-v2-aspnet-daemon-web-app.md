@@ -39,7 +39,7 @@ The app is built as an ASP.NET MVC application. It uses the OWIN OpenID Connect 
 
 The "daemon" component in this sample is an API controller, `SyncController.cs`. When the controller is called, it pulls in a list of users in the customer's Microsoft Entra tenant from Microsoft Graph. `SyncController.cs` is triggered by an AJAX call in the web application. It uses the [Microsoft Authentication Library (MSAL) for .NET](msal-overview.md) to acquire an access token for Microsoft Graph.
 
-Because the app is a multitenant app for Microsoft business customers, it must provide a way for customers to "sign up" or "connect" the application to their company data. During the connection flow, a Global Administrator first grants *application permissions* directly to the app so that it can access company data in a non-interactive fashion, without the presence of a signed-in user. The majority of the logic in this sample shows how to achieve this connection flow by using the identity platform's [admin consent](./permissions-consent-overview.md#administrator-consent) endpoint.
+Because the app is a multitenant app for Microsoft business customers, it must provide a way for customers to "sign up" or "connect" the application to their company data. During the connection flow, an Application Developer first grants *application permissions* directly to the app so that it can access company data in a non-interactive fashion, without the presence of a signed-in user. The majority of the logic in this sample shows how to achieve this connection flow by using the identity platform's [admin consent](./permissions-consent-overview.md#administrator-consent) endpoint.
 
 ![Diagram shows UserSync App with three local items connecting to Azure, with Start dot Auth acquiring a token interactively to connect to Microsoft Entra ID, AccountController getting admin consent to connect to Microsoft Entra ID, and SyncController reading user to connect to Microsoft Graph.](./media/tutorial-v2-aspnet-daemon-webapp/topology.png)
 
@@ -244,4 +244,4 @@ To provide a recommendation, go to the [User Voice page](https://feedback.azure.
 Learn more about building daemon apps that use the Microsoft identity platform to access protected web APIs:
 
 > [!div class="nextstepaction"]
-> [Scenario: Daemon application that calls web APIs](scenario-daemon-overview.md)
+> [Scenario: Daemon application that calls web APIs](scenario-daemon-app-registration.md)

@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Create a Vanilla JavaScript SPA for authentication in a customer tenant"
-description: Learn how to prepare a Vanilla JavaScript single-page app (SPA) for authentication and authorization with your Microsoft Entra ID for customers tenant.
+title: "Tutorial: Create a Vanilla JavaScript SPA for authentication in an external tenant"
+description: Learn how to prepare a Vanilla JavaScript single-page app (SPA) for authentication and authorization with your external tenant.
 
 author: OwenRichards1
 manager: CelesteDG
@@ -11,12 +11,12 @@ ms.subservice: customers
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 08/17/2023
-#Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my Microsoft Entra ID for customers tenant.
+#Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
-# Tutorial: Create a Vanilla JavaScript SPA for authentication in a customer tenant
+# Tutorial: Create a Vanilla JavaScript SPA for authentication in an external tenant
 
-This tutorial is part 2 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](tutorial-single-page-app-vanillajs-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create a Vanilla JavaScript SPA using `npm` and create files needed for authentication and authorization.
+This tutorial is part 2 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](tutorial-single-page-app-vanillajs-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to create a Vanilla JavaScript SPA using `npm` and create files needed for authentication and authorization.
 
 In this tutorial;
 
@@ -27,7 +27,7 @@ In this tutorial;
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
+- [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
 - Although any integrated development environment (IDE) that supports Vanilla JavaScript applications can be used, **Visual Studio Code** is recommended for this guide. It can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads) page.
 - [Node.js](https://nodejs.org/en/download/).
 

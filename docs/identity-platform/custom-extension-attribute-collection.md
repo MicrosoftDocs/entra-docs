@@ -1,5 +1,5 @@
 ---
-title: Create attribute collection events (preview)
+title: Create a custom authentication extension for attribute collection start and submit events (preview)
 description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.  
 author: msmimart
 manager: CelesteDG
@@ -12,9 +12,9 @@ titleSuffix: Microsoft identity platform
 #customer intent: As a Microsoft Entra External ID customer, I want to extend the user sign-up experience by adding custom actions before and after attribute collection, so that I can customize the attribute collection process and validate user entries.
 ---
 
-# Custom authentication extensions for attribute collection start and submit events (preview)
+# Create a custom authentication extension for attribute collection start and submit events (preview)
 
-**Applies to:** Microsoft Entra External ID customer configurations
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 This article describes how to extend the user sign-up experience in Microsoft Entra External ID for customers. In customer sign-up user flows, event listeners can be used to extend the attribute collection process before attribute collection and at the time of attribute submission:
 
@@ -633,7 +633,7 @@ Now you can associate the custom authentication extension with one or more of yo
 ### 3.1 Add the custom authentication extension to an existing user flow
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator)
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/custom-extension-attribute-collection/settings-icon.png" border="false"::: in the top menu to switch to your customer tenant.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/custom-extension-attribute-collection/settings-icon.png" border="false"::: in the top menu to switch to your external tenant.
 1. Browse to **Identity** > **External Identities** > **User flows**.
 1. Select the user flow from the list.
 1. Select **Custom authentication extensions**.
@@ -692,13 +692,13 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 1. Select **Customer** as the tenant type.
 1. Under **App registration**, enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-2-create-and-register-a-custom-authentication-extension) when registering the custom claims provider.
 1. For the **Issuer URL**, enter the following URL `https://{domainName}.ciamlogin.com/{tenant_id}/v2.0`, where
-    - `{domainName}` is the domain name of your customer tenant.
-    - `{tenantId}` is the tenant ID of your customer tenant. Your custom authentication extension should be registered here.
+    - `{domainName}` is the domain name of your external tenant.
+    - `{tenantId}` is the tenant ID of your external tenant. Your custom authentication extension should be registered here.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    :::image type="content" border="true"  source="media/custom-extension-attribute-collection/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a customer tenant." lightbox="media/custom-extension-attribute-collection/add-identity-provider-auth-function-app-customer.png":::
+    :::image type="content" border="true"  source="media/custom-extension-attribute-collection/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a external tenant." lightbox="media/custom-extension-attribute-collection/add-identity-provider-auth-function-app-customer.png":::
 
 ### 5.2 Using OpenID Connect identity provider
 
@@ -738,7 +738,7 @@ To test your custom authentication extension, follow these steps:
     https://<domainName>.ciamlogin.com/<tenant_id>/oauth2/v2.0/authorize?client_id=<client_id>&response_type=code+id_token&redirect_uri=https://jwt.ms&scope=openid&state=12345&nonce=12345
     ```
 
-   - Replace `<domainName>` with your customer tenant name, and replace `<tenant-id>` with your customer tenant ID.
+   - Replace `<domainName>` with your external tenant name, and replace `<tenant-id>` with your external tenant ID.
    - Replace `<client_id>` with the ID for the application you added to the user flow.
 
 1. After signing in, you'll be presented with your decoded token at `https://jwt.ms`.

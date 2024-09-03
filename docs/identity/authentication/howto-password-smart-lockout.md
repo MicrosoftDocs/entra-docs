@@ -5,7 +5,7 @@ description: Learn how Microsoft Entra smart lockout helps protect your organiza
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/21/2023
+ms.date: 08/09/2023
 
 ms.author: justinha
 author: justinha
@@ -37,7 +37,10 @@ Smart lockout is always on, for all Microsoft Entra customers, with these defaul
 Using smart lockout doesn't guarantee that a genuine user is never locked out. When smart lockout locks a user account, we try our best to not lock out the genuine user. The lockout service attempts to ensure that bad actors can't gain access to a genuine user account. The following considerations apply:
 
 * Lockout state across Microsoft Entra data centers is synchronized. However, the total number of failed sign-in attempts allowed before an account is locked out will have slight variance from the configured lockout threshold. Once an account is locked out, it's locked out everywhere across all Microsoft Entra data centers.
-* Smart Lockout uses familiar location vs unfamiliar location to differentiate between a bad actor and the genuine user. Both unfamiliar and familiar locations have separate lockout counters.
+* Smart Lockout uses familiar location versus unfamiliar location to differentiate between a bad actor and the genuine user. Both unfamiliar and familiar locations have separate lockout counters.
+
+  To refrain the system from locking out a user signing in from an unfamiliar location, they must use the correct password to avoid being locked out and have a low number of previous lockout attempts from unfamiliar locations. If the user is locked out from an unfamiliar location, the user should consider SSPR to reset the lockout counter.
+
 * After an account lockout, the user can initiate self-service password reset (SSPR) to sign in again. If the user chooses **I forgot my password** during SSPR, the duration of the lockout is reset to 0 seconds. If the user chooses **I know my password** during SSPR, the lockout timer continues, and the duration of the lockout isn't reset. To reset the duration and sign in again, the user needs to change their password.
 
 Smart lockout can be integrated with hybrid deployments that use password hash sync or pass-through authentication to protect on-premises Active Directory Domain Services (AD DS) accounts from being locked out by attackers. By setting smart lockout policies in Microsoft Entra ID appropriately, attacks can be filtered out before they reach on-premises AD DS.
@@ -50,7 +53,7 @@ When using [pass-through authentication](~/identity/hybrid/connect/how-to-connec
 For example, if you want your Microsoft Entra smart lockout duration to be higher than AD DS, then Microsoft Entra ID would be 120 seconds (2 minutes) while your on-premises AD is set to 1 minute (60 seconds). If you want your Microsoft Entra lockout threshold to be 5, then you want your on-premises AD DS lockout threshold to be 10.  This configuration would ensure smart lockout prevents your on-premises AD DS accounts from being locked out by brute force attacks on your Microsoft Entra accounts.
 
 > [!IMPORTANT]
-> An administrator can unlock the users' cloud account if they have been locked out by the Smart Lockout capability, without the need of waiting for the lockout duration to expire. For more information, see [Reset a user's password using Microsoft Entra ID](~/fundamentals/users-reset-password-azure-portal.md).
+> An administrator can unlock the users' cloud account if they have been locked out by the Smart Lockout capability, without the need of waiting for the lockout duration to expire. For more information, see [Reset a user's password using Microsoft Entra ID](~/fundamentals/users-reset-password-azure-portal.yml).
 
 ## Verify on-premises account lockout policy
 

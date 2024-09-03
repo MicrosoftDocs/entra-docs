@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 12/08/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -31,7 +31,7 @@ You'll configure and test Microsoft Entra single sign-on for ChartDesk SSO in a 
 To integrate Microsoft Entra ID with ChartDesk SSO, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * ChartDesk SSO single sign-on (SSO) enabled subscription.
 
@@ -72,17 +72,17 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
     | **Identifier** |
     |---------------|
-    |`https://<CustomerTenantID>.staging-api.chartdesk.net/saml/metadata` |
-    | `https://<CustomerTenantID>.prod-api.chartdesk.net/saml/metadata` |
-    | `https://<CustomerTenantID>.prod-api.chartdesk.de/saml/metadata` |
+    |`https://<externaltenantid>.staging-api.chartdesk.net/saml/metadata` |
+    | `https://<externaltenantid>.prod-api.chartdesk.net/saml/metadata` |
+    | `https://<externaltenantid>.prod-api.chartdesk.de/saml/metadata` |
 
     b. In the **Reply URL** textbox, type a URL using one of the following patterns:
 
     | **Reply URL** |
     |------------|
-    |`https://<CustomerTenantID>.staging-api.chartdesk.net/saml/consume` |
-    | `https://<CustomerTenantID>.prod-api.chartdesk.net/saml/consume` |
-    | `https://<CustomerTenantID>.prod-api.chartdesk.de/saml/consume` |
+    |`https://<externaltenantid>.staging-api.chartdesk.net/saml/consume` |
+    | `https://<externaltenantid>.prod-api.chartdesk.net/saml/consume` |
+    | `https://<externaltenantid>.prod-api.chartdesk.de/saml/consume` |
 
     > [!Note]
     > These values are not the real. Update these values with the actual Identifier and Reply URL. Contact [ChartDesk SSO Client support team](mailto:support@chartdesk.pro) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.

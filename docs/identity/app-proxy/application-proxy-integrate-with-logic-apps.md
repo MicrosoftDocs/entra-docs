@@ -35,7 +35,7 @@ To follow this tutorial, you need:
 
 - Admin access to an Azure directory, with an account that can create and register apps
 - The *Logic App Contributor* role (or higher) in an active tenant
-- Azure application proxy connector deployed and an application configured as detailed in [Add an on premises  app - application proxy in Microsoft Entra ID](./application-proxy-add-on-premises-application.md)
+- Azure private network connector deployed and an application configured as detailed in [Add an on premises  app - application proxy in Microsoft Entra ID](./application-proxy-add-on-premises-application.md)
 
 > [!NOTE]
 > While granting a user entitlement and testing the sign on is recommended, it's not required for this guide.
@@ -44,7 +44,7 @@ To follow this tutorial, you need:
 
 When a new Enterprise Application is created, a matching App Registration is also created. The App Registration allows configuration of secure programmatic access using certificates, secrets, or federated credentials. For integration with a Logic App, configure a client secret key, and configure the API permissions.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 
@@ -124,7 +124,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
     7. Select *Add new parameter*, then check *Authentication*.
 
-    8. From the *Authentication type*, select *Active Directory OAuth*.
+    8. From the *Authentication type*, select *Microsoft Entra ID OAuth*.
 
     9. For the authentication, fill the following details.
 

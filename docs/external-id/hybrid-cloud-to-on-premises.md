@@ -18,6 +18,8 @@ ms.collection: M365-identity-device-management
 
 # Grant Microsoft Entra B2B users access to your on-premises applications
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 As an organization that uses Microsoft Entra B2B collaboration capabilities to invite guest users from partner organizations, you can now provide these B2B users access to on-premises apps. These on-premises apps can use SAML-based authentication or integrated Windows authentication (IWA) with Kerberos constrained delegation (KCD).
 
 ## Access to SAML apps
@@ -66,13 +68,13 @@ The following diagram provides a high-level overview of how Microsoft Entra appl
 You can manage the on-premises B2B user objects through lifecycle management policies. For example:
 
 - You can set up multifactor authentication (MFA) policies for the Guest user so that MFA is used during Application Proxy authentication. For more information, see [Conditional Access for B2B collaboration users](authentication-conditional-access.md).
-- Any sponsorships, access reviews, account verifications, etc. that are performed on the cloud B2B user applies to the on-premises users. For example, if the cloud user is deleted through your lifecycle management policies, the on-premises user is also deleted by MIM Sync or through the Microsoft Entra B2B script. For more information, see [Manage guest access with Microsoft Entra access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
+- Any sponsorships, access reviews, account verifications, and so on. that are performed on the cloud B2B user applies to the on-premises users. For example, if the cloud user is deleted through your lifecycle management policies, the on-premises user is also deleted by MIM Sync or through the Microsoft Entra B2B script. For more information, see [Manage guest access with Microsoft Entra access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
 
 <a name='create-b2b-guest-user-objects-through-an-azure-ad-b2b-script'></a>
 
 ### Create B2B guest user objects through a Microsoft Entra B2B script
 
-You can use an [Microsoft Entra B2B sample script](https://github.com/Azure-Samples/B2B-to-AD-Sync) to create shadow Microsoft Entra accounts synced from Microsoft Entra B2B accounts. You can then use the shadow accounts for on-premises apps that use KCD.
+You can use a [Microsoft Entra B2B sample script](https://github.com/Azure-Samples/B2B-to-AD-Sync) to create shadow Microsoft Entra accounts synced from Microsoft Entra B2B accounts. You can then use the shadow accounts for on-premises apps that use KCD.
 
 ### Create B2B guest user objects through MIM
 

@@ -22,7 +22,7 @@ In the Azure portal, when the parent domain is federated and the admin tries to 
 
 Because subdomains inherit the authentication type of the root domain by default, you must promote the subdomain to a root domain in Microsoft Entra ID using the Microsoft Graph so you can set the authentication type to your desired type.
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 > [!WARNING]
 > This code is provided as an example for demonstration purposes. If you intend to use it in your environment, consider testing it first on a small scale, or in a separate test organization. You may have to adjust the code to meet the specific needs of your environment.
@@ -91,6 +91,7 @@ Invoking API with a federated verified subdomain with user references | POST | 4
 1. Use the following command to change the subdomain authentication type:
 
    ```powershell
+   Connect-MGGraph -Scopes "Domain.ReadWrite.All", "Directory.AccessAsUser.All"
    Update-MgDomain -DomainId "test.contoso.com" -BodyParameter @{AuthenticationType="Managed"}
    ```
 
@@ -124,6 +125,6 @@ Invoking API with a federated verified subdomain with user references | POST | 4
 ## Next steps
 
 - [Upgrade from Azure AD PowerShell to Microsoft Graph PowerShell](/powershell/microsoftgraph/migration-steps)
-- [Add custom domain names](~/fundamentals/add-custom-domain.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+- [Add custom domain names](~/fundamentals/add-custom-domain.yml?context=azure/active-directory/users-groups-roles/context/ugr-context)
 - [Manage domain names](domains-manage.md)
 - [ForceDelete a custom domain name with Microsoft Graph API](/graph/api/domain-forcedelete)

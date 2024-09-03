@@ -33,9 +33,9 @@ You can use [dynamic groups](groups-create-rule.md) in Microsoft Entra ID to exp
 
 ## Assign licenses to groups
 
-Managing user license assignments individually is time consuming and error prone. If you [assign licenses to groups](~/fundamentals/license-users-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context) instead, you experience easier large-scale license management.
+Managing user license assignments individually is time consuming and error prone. If you [assign licenses to groups](~/fundamentals/license-users-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context) instead, you experience easier large-scale license management.
 
-Microsoft Entra users who join a licensed group are automatically assigned the appropriate licenses. When users leave the group, Microsoft Entra ID removes their license assignments. Without Microsoft Entra groups, you'd have to write a PowerShell script or use Graph API to bulk add or remove user licenses for users joining or leaving the organization.
+Microsoft Entra users who join a licensed group are automatically assigned the appropriate licenses. When users leave the group, Microsoft Entra ID removes their license assignments. Without Microsoft Entra groups, you'd have to write a PowerShell script or use Graph API to bulk add or remove user licenses for users joining or leaving the organization. For more information about group bulk operations, see [Bulk upload to add or create members of a group](~/identity/users/groups-bulk-import-members.md).
 
 If there aren't enough licenses available, or an issue occurs like service plans that can't be assigned at the same time, you can see the status of any licensing issue for the group in the Azure portal.
 
@@ -67,4 +67,5 @@ Microsoft Entra ID also gives you specific control of the data that flows betwee
 
 If you're a beginning Microsoft Entra administrator, get the basics down in [Microsoft Entra Fundamentals](~/fundamentals/index.yml).
 
-Or you can start [creating groups](~/fundamentals/how-to-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning licenses](~/fundamentals/license-users-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning app access](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context) or [assigning administrator roles](~/identity/role-based-access-control/permissions-reference.md).
+Or you can start [creating groups](~/fundamentals/how-to-manage-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning licenses](~/fundamentals/license-users-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning app access](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context) or [assigning administrator roles](~/identity/role-based-access-control/permissions-reference.md).
+

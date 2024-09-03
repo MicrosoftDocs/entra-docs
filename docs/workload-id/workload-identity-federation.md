@@ -8,7 +8,7 @@ manager: CelesteDG
 ms.service: entra-workload-id
 
 ms.topic: concept-article
-ms.date: 11/6/2023
+ms.date: 04/26/2024
 ms.author: ryanwi
 ms.reviewer: ludwicknick
 ms.custom: aaddev
@@ -48,7 +48,7 @@ The following scenarios are supported for accessing Microsoft Entra protected re
 
 Create a trust relationship between the external IdP and a [user-assigned managed identity](workload-identity-federation-create-trust-user-assigned-managed-identity.md) or [application](workload-identity-federation-create-trust.md) in Microsoft Entra ID. The federated identity credential is used to indicate which token from the external IdP should be trusted by your application or managed identity. You configure a federated identity either:
 
-- On a user-assigned managed identity through the [Microsoft Entra admin center](https://entra.microsoft.com), Azure CLI, Azure PowerShell, Azure SDK, and Azure Resource Manager (ARM) templates. The external workload uses the access token to access Microsoft Entra protected resources without needing to manage secrets (in supported scenarios). The [steps for configuring the trust relationship](workload-identity-federation-create-trust-user-assigned-managed-identity.md) will differ, depending on the scenario and external IdP.
+- On a user-assigned managed identity through the [Microsoft Entra admin center](https://entra.microsoft.com), Azure CLI, Azure PowerShell, Azure SDK, and Azure Resource Manager (ARM) templates. The external workload uses the access token to access Microsoft Entra protected resources without needing to manage secrets (in supported scenarios). The [steps for configuring the trust relationship](workload-identity-federation-create-trust-user-assigned-managed-identity.md) differs, depending on the scenario and external IdP.
 - On an app registration in the [Microsoft Entra admin center](https://entra.microsoft.com) or through Microsoft Graph. This configuration allows you to get an access token for your application without needing to manage secrets outside Azure. For more information, learn how to [configure an app to trust an external identity provider](workload-identity-federation-create-trust.md).
 
 The workflow for exchanging an external token for an access token is the same, however, for all scenarios. The following diagram shows the general workflow of a workload exchanging an external token for an access token and then accessing Microsoft Entra protected resources.
@@ -57,7 +57,7 @@ The workflow for exchanging an external token for an access token is the same, h
 
 1. The external workload (such as a GitHub Actions workflow) requests a token from the external IdP (such as GitHub).
 1. The external IdP issues a token to the external workload.
-1. The external workload (the login action in a GitHub workflow, for example) [sends the token to Microsoft identity platform](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) and requests an access token.
+1. The external workload (the sign in action in a GitHub workflow, for example) [sends the token to Microsoft identity platform](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) and requests an access token.
 1. Microsoft identity platform checks the trust relationship on the [user-assigned managed identity](workload-identity-federation-create-trust-user-assigned-managed-identity.md) or [app registration](workload-identity-federation-create-trust.md) and validates the external token against the OpenID Connect (OIDC) issuer URL on the external IdP.
 1. When the checks are satisfied, Microsoft identity platform issues an access token to the external workload.
 1. The external workload accesses Microsoft Entra protected resources using the access token from Microsoft identity platform. A GitHub Actions workflow, for example, uses the access token to publish a web app to Azure App Service.

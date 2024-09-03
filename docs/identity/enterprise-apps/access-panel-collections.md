@@ -29,7 +29,7 @@ Your users can use the My Apps portal to view and start the cloud-based applicat
 To create collections on the My Apps portal, you need:
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
 ## Create a collection
 

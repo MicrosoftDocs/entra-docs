@@ -1,17 +1,17 @@
 ---
-title: "Tutorial: Create and configure a Python web app for authentication"
-description: "Create new Python web app project, add UI templates, and add required configurations."
+title: "Tutorial: Create and configure a Python Flask web app for authentication"
+description: "Create new Python Flask web app project, add UI templates, and add required configurations."
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 04/03/2024
+ms.date: 04/18/2024
 ms.service: identity-platform
 
 ms.topic: tutorial
-#Customer intent: As an application developer, I want to create a Python web app project, then configure it in such a way that I can add authentication with Microsoft Entra ID.
+#Customer intent: As an application developer, I want to create a Python Flask web app project, then configure it in such a way that I can add authentication with Microsoft Entra ID.
 ---
 
-# Prepare a Python web app for authentication
+# Prepare a Python Flask web app for authentication
 
 This tutorial is part 2 of a series that demonstrates building a Python Flask web app and adding sign in support using the Microsoft identity platform. In [part 1 of this series](tutorial-web-app-python-register-app.md), you registered and configured the application in your Microsoft Entra ID tenant.
 
@@ -22,8 +22,7 @@ In this tutorial, you:
 > - Create a new Python Flask web app project
 > - Install app dependencies
 > - Add the application's UI components
-> - Create the configuration file
-> - Create a .env file to store configuration settings.
+> - Configure your Flask web app to use Microsoft Entra ID for authentication
 
 ## Prerequisites
 
@@ -33,7 +32,7 @@ In this tutorial, you:
 
 ## Create a new Python web app project
 
-To complete the rest of the tutorial, you need to create a Python Flask web app project. If you prefer using a completed code sample for learning, download the [Python Flask web app sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/tree/main/flask-web-appp) from GitHub. 
+To complete the rest of the tutorial, you need to create a Python Flask web app project. If you prefer using a completed code sample for learning, download the [Python Flask web app sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) from GitHub. 
 
 To build the Python Flask web app from scratch, follow these steps:
 
@@ -47,8 +46,6 @@ After you create the files, your project's file and directory should be similar 
 ```
 python-webapp/
 ├── templates/
-│     ├── auth_error.html
-│     ├── config_error.html
 │     ├── display.html
 │     ├── index.html
 │     ├── login.html
@@ -73,7 +70,7 @@ python-dotenv<0.22
 
 ## Add application UI components
 
-Flask uses the helper function `render_template()` for rendering HTML templates containing both static and dynamic content. In this section, you create HTML templates for each of the routes you define in the app, including sign-in, sign-out, API calls, and error templates. Follow these steps to create templates for each of these pages:
+In this section, you create HTML templates for each of the routes you define in the app, including sign-in, sign-out, API calls, and error templates. Follow these steps to create templates for each of these pages:
 
 #### Login templates
 
@@ -99,10 +96,6 @@ In the templates folder, create an HTML file named *login.html* and add the foll
     </ol>
     {% else %}
     <ul><li><a href='{{ auth_uri }}'>Sign In</a></li></ul>
-    {% endif %}
-
-    {% if config.get("B2C_RESET_PASSWORD_AUTHORITY") %}
-    <a href='{{Auth(session={}, authority=config["B2C_RESET_PASSWORD_AUTHORITY"], client_id=config["CLIENT_ID"]).log_in(redirect_uri=url_for("auth_response", _external=True))["auth_uri"]}}'>Reset Password</a>
     {% endif %}
 
     <hr>
@@ -131,10 +124,6 @@ In the templates folder, create an HTML file named *index.html* and add the foll
     <ul>
     {% if config.get("ENDPOINT") %}
       <li><a href='/call_downstream_api'>Call a downstream API</a></li>
-    {% endif %}
-
-    {% if config.get("B2C_PROFILE_AUTHORITY") %}
-      <li><a href='{{Auth(session={}, authority=config["B2C_PROFILE_AUTHORITY"], client_id=config["CLIENT_ID"]).log_in(redirect_uri=url_for("auth_response", _external=True))["auth_uri"]}}'>Edit Profile</a></li>
     {% endif %}
 
     <li><a href="/logout">Logout</a></li>
@@ -177,10 +166,6 @@ In the templates folder, create an HTML file called *auth_error.html* that displ
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% if config.get("B2C_RESET_PASSWORD_AUTHORITY") and "AADB2C90118" in result.get("error_description") %} <!-- This will be reached when user forgot their password -->
-      <!-- See also https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-policies#linking-user-flows -->
-      <meta http-equiv="refresh" content='0;{{config.get("B2C_RESET_PASSWORD_AUTHORITY")}}?client_id={{config.get("CLIENT_ID")}}'>
-    {% endif %}
     <title>Microsoft Identity Python Web App: Error</title>
 </head>
 <body>
@@ -230,12 +215,13 @@ In your code editor, open *app_config.py*, which holds the configuration paramet
 
 ```python
 import os
-AUTHORITY= "https://login.microsoftonline.com/common"
+AUTHORITY= os.getenv("AUTHORITY")
 
 # Application (client) ID of app registration
-CLIENT_ID = "80977fed-1946-4cac-a25a-c8dd1d5636ce" 
+CLIENT_ID = os.getenv("CLIENT_ID")
 # Application's generated client secret: never check this into source control!
-CLIENT_SECRET = "ADO8Q~wEwKnSkg4xfH4Hgq~yp4OYlJR80k9i_anw" 
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+ 
 REDIRECT_PATH = "/getAToken"  # Used for forming an absolute URL to your redirect URI.
 
 ENDPOINT = 'https://graph.microsoft.com/v1.0/me'  
@@ -253,13 +239,14 @@ In this sample, you use an .env file to store and manage the application's confi
 # The following variables are required for the app to run.
 CLIENT_ID=<client id>
 CLIENT_SECRET=<client secret>
-AUTHORITY=<your authority url>
+AUTHORITY=<Enter_your_authority_url>
 ```
 
-In your *.env.sample* file, find the placeholders:
+In your *.env.sample* file, replace the placeholders for:
 
-- `client id` and replace it with the Application (client) ID of the app you registered earlier.
-
+-   * `CLIENT_ID` with the **Application (client) ID** available on the app registration overview page.
+    * `CLIENT_SECRET` with the client secret you created in the **Certificates & Secrets** 
+    * `AUTHORITY` with `https://login.microsoftonline.com/<TENANT_GUID>`. The **Directory (tenant) ID** is available on the app registration overview page.
 
 ## Next step
 

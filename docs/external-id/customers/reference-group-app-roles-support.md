@@ -1,6 +1,6 @@
 ---
-title: Groups and app roles support in customer tenants
-description: Find out which core Microsoft Entra features related to the user and group management model and application assignment are available in customer tenants.
+title: Groups and app roles support in external tenants
+description: Find out which core Microsoft Entra features related to the user and group management model and application assignment are available in external tenants.
  
 author: msmimart
 manager: celestedg
@@ -15,7 +15,9 @@ ms.custom: it-pro
 
 # Groups and application roles support
 
-A customer tenant follows the Microsoft Entra user and group management model and application assignment. Many of the core Microsoft Entra features are being phased into customer tenants. The following table shows which features are currently available.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+An external tenant follows the Microsoft Entra user and group management model and application assignment. Many of the core Microsoft Entra features are being phased into external tenants. The following table shows which features are currently available.
 
 | **Feature** | **Currently available?** |
 | ------------ | --------- |
@@ -29,7 +31,7 @@ A customer tenant follows the Microsoft Entra user and group management model an
 | Create/update/delete a customer (local user) via the Microsoft Entra admin center | Yes |
 | Reset a password for a customer (local user) via the Microsoft Entra admin center | Yes |
 | Create/update/delete a customer (local user) via Microsoft Graph | Yes |
-| Reset a password for a customer (local user) via Microsoft Graph | Yes, only if the service principal is added to the Global administrator role |
+| Reset a password for a customer (local user) via Microsoft Graph | Yes, only if the service principal is added to the Global Administrator role |
 | Create/update/delete a security group via the Microsoft Entra admin center | Yes |
 | Create/update/delete a security group via the Microsoft Graph API | Yes |
 | Change security group members using the Microsoft Entra admin center | Yes |

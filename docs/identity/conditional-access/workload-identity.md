@@ -4,7 +4,7 @@ description: Protecting workload identities with Conditional Access policies
 
 ms.service: entra-workload-id
 ms.topic: how-to
-ms.date: 11/09/2023
+ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -30,7 +30,11 @@ These differences make workload identities harder to manage and put them at high
 > [!NOTE]
 > Policy can be applied to single tenant service principals that have been registered in your tenant. Third party SaaS and multi-tenanted apps are out of scope. Managed identities are not covered by policy.
 
-Conditional Access for workload identities enables blocking service principals from outside of trusted public IP ranges, based on risk detected by Microsoft Entra ID Protection, or in combination with [authentication contexts](concept-conditional-access-cloud-apps.md#authentication-context).
+Conditional Access for workload identities enables blocking service principals:
+
+- From outside of known public IP ranges.
+- Based on risk detected by Microsoft Entra ID Protection.
+- In combination with [authentication contexts](concept-conditional-access-cloud-apps.md#authentication-context).
 
 ## Implementation
 
@@ -38,9 +42,9 @@ Conditional Access for workload identities enables blocking service principals f
 
 Create a location based Conditional Access policy that applies to service principals.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
-1. Select **Create new policy**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **What does this policy apply to?**, select **Workload identities**.
@@ -57,9 +61,9 @@ Create a risk-based Conditional Access policy that applies to service principals
 
 :::image type="content" source="media/workload-identity/conditional-access-workload-identity-risk-policy.png" alt-text="Creating a Conditional Access policy with a workload identity and risk as a condition." lightbox="media/workload-identity/conditional-access-workload-identity-risk-policy.png":::
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
-1. Select **Create new policy**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **What does this policy apply to?**, select **Workload identities**.
@@ -84,7 +88,7 @@ The sign-in logs are used to review how policy is enforced for service principal
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs** > **Service principal sign-ins**.
 1. Select a log entry and choose the **Conditional Access** tab to view evaluation information.
 
-Failure reason when Conditional Access blocks a Service Principal: “Access has been blocked due to Conditional Access policies.”
+Failure reason when Conditional Access blocks a Service Principal: "Access has been blocked due to Conditional Access policies."
 
 ### Report-only mode
 
@@ -143,6 +147,5 @@ Sample JSON for location-based configuration using the Microsoft Graph beta endp
 
 ## Next steps
 
-- [Using the location condition in a Conditional Access policy](location-condition.md)
-- [Conditional Access: Programmatic access](howto-conditional-access-apis.md)
+- [Using network location in a Conditional Access policy](concept-assignment-network.md)
 - [What is Conditional Access report-only mode?](concept-conditional-access-report-only.md)

@@ -57,6 +57,9 @@ if let application = try? MSALPublicClientApplication(configuration: config){ /*
 
 This section explains how to instantiate the application for Xamarin.iOS, Xamarin.Android, and UWP apps.
 
+> [!NOTE]
+> MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your Xamarin applications to modern frameworks like MAUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
+
 #### Instantiate the application
 
 In Xamarin or UWP, the simplest way to instantiate the application is by using the following code. In this code, `ClientId` is the GUID of your registered app.
@@ -96,24 +99,13 @@ For a list of all methods that are available on `PublicClientApplicationBuilder`
 
 For a description of all options that are exposed in `PublicClientApplicationOptions`, see the [reference documentation](/dotnet/api/microsoft.identity.client.publicclientapplicationoptions).
 
-## Tasks for Xamarin iOS
-
-If you use MSAL.NET on Xamarin iOS, do the following tasks.
-
-* [Override and implement the `OpenUrl` function in `AppDelegate`](msal-net-xamarin-ios-considerations.md#implement-openurl)
-* [Enable keychain groups](msal-net-xamarin-ios-considerations.md#enable-keychain-access)
-* [Enable token cache sharing](msal-net-xamarin-ios-considerations.md#enable-token-cache-sharing-across-ios-applications)
-* [Enable keychain access](msal-net-xamarin-ios-considerations.md#enable-keychain-access)
-
-For more information, see [Xamarin iOS considerations](msal-net-xamarin-ios-considerations.md).
-
 ## Tasks for MSAL for iOS and macOS
 
 These tasks are necessary when you use MSAL for iOS and macOS:
 
 * [Implement the `openURL` callback](#brokered-authentication-for-msal-for-ios-and-macos)
-* [Enable keychain access groups](howto-v2-keychain-objc.md)
-* [Customize browsers and WebViews](customize-webviews.md)
+* [Enable keychain access groups](/entra/msal/objc/howto-v2-keychain-objc)
+* [Customize browsers and WebViews](/entra/msal/objc/customize-webviews)
 
 ## Tasks for Xamarin.Android
 

@@ -184,6 +184,7 @@ To optimize the performance of your Microsoft Entra Connect implementation, cons
 - Use the [recommended hardware configuration](how-to-connect-install-prerequisites.md) based on your implementation size for the Microsoft Entra Connect server.
 - When upgrading Microsoft Entra Connect in large-scale deployments, consider using [swing migration method](./how-to-upgrade-previous-version.md#swing-migration), to make sure you have the least downtime and best reliability. 
 - Use SSD for the SQL database for best writing performance.
+- Back-up of ADSync Database using Azure Backup is not recommended.
 - Filter the Active Directory scope to only include objects that need to be provisioned in Microsoft Entra ID, using domain, OU, or attribute filtering.
 - If you require to change the default attribute flow rules, first copy the rule, then change the copy and disable the original rule. Remember to rerun a full sync.
 - Plan adequate time for the initial full sync run profile.

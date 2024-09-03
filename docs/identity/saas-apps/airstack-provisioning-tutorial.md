@@ -2,19 +2,17 @@
 title: 'Tutorial: Configure Airstack for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Airstack.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airstack so that I can streamline the user management process and ensure that users have the appropriate access to Airstack.
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airstack so that I can streamline the user management process and ensure that users have the appropriate access to Airstack.
 ---
 
 # Tutorial: Configure Airstack for automatic user provisioning
@@ -30,7 +28,7 @@ The objective of this tutorial is to demonstrate the steps to be performed in Ai
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
-* [An Airstack tenant](https://airstack.com/pricing/)
+* An Airstack tenant.
 * A user account in Airstack with Admin permissions.
 
 ## Assigning users to Airstack
@@ -77,7 +75,7 @@ Before configuring Airstack for automatic user provisioning with Microsoft Entra
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Airstack based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Airstack, following the instructions provided in the [Airstack Single sign-on tutorial](./airstack-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other
+> You may also choose to enable SAML-based single sign-on for Airstack, following the instructions provided in the [Airstack Single sign-on tutorial](./airstack-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-airstack-in-azure-ad'></a>
 

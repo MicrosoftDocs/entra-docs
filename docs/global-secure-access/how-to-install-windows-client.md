@@ -1,190 +1,198 @@
 ---
-title: The Global Secure Access client for Windows (preview)
-description: Install the Global Secure Access client for Windows.
+title: The Global Secure Access client for Windows
+description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 04/08/2024
-ms.author: kenwith
-author: kenwith
+ms.date: 08/16/2024
+ms.author: jayrusso
+author: HULKsmashGithub
 manager: amycolannino
-ms.reviewer: lirazb
----
-# Global Secure Access client for Windows (preview)
+ms.reviewer: lirazbarak
 
-Learn how to install the Global Secure Access client for Windows.
+
+# Customer intent: Windows users, I want to download and install the Global Secure Access client.
+---
+# Global Secure Access client for Windows
+The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
+
+This article describes how to download and install the Global Secure Access client for Windows.
 
 ## Prerequisites
 
-- The Global Secure Access client is supported on 64-bit versions of Windows 11 or Windows 10.
+- An Entra tenant onboarded to Global Secure Access.
+- A managed device joined to the onboarded tenant. The device must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
+   - Microsoft Entra registered devices aren't supported.
+- The Global Secure Access client requires a 64-bit versions of Windows 10 or Windows 11.
    - Azure Virtual Desktop single-session is supported.
    - Azure Virtual Desktop multi-session isn't supported.
    - Windows 365 is supported.
-- Devices must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
-   - Microsoft Entra registered devices aren't supported.
-- Local administrator credentials are required for installation.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-
-### Known limitations
-
-- Multiple user sessions on the same device, like those from a Remote Desktop Server (RDP), aren't supported.
-- Networks that use a captive portal, like some guest wireless network solutions, might cause the client connection to fail. As a workaround you can [pause the Global Secure Access client](#troubleshooting).
-- Virtual machines where both the host and guest Operating Systems have the Global Secure Access client installed aren't supported. Individual virtual machines with the client installed are supported.
-- The service *bypasses* the traffic if the Global Secure Access client isn't able to connect to the service (for example due to an authorization or Conditional Access failure). Traffic is sent direct-and-local instead of being blocked. In this scenario, you can create a Conditional Access policy for the [compliant network check](how-to-compliant-network.md), to block traffic if the client isn't able to connect to the service.
-- The Global Secure Access client on ARM64 architecture isn't yet supported. However, ARM64 is on the roadmap.
-
-
-There are several other limitations based on the traffic forwarding profile in use:
-
-| Traffic forwarding profile | Limitation |
-| --- | --- |
-| [Microsoft 365](how-to-manage-microsoft-365-profile.md) | Tunneling [IPv6 traffic isn't currently supported](#disable-ipv6-and-secure-dns). |
-| [Microsoft 365](how-to-manage-microsoft-365-profile.md) and [Private access](how-to-manage-private-access-profile.md) | To tunnel network traffic based on rules of FQDNs (in the forwarding profile), [Domain Name System (DNS) over HTTPS (Secure DNS) needs to be disabled](#disable-ipv6-and-secure-dns). |
-| [Microsoft 365](how-to-manage-microsoft-365-profile.md) | The Global Secure Access client currently only supports Transmission Control Protocol (TCP) traffic. Exchange Online uses the QUIC protocol for some traffic over User Datagram Protocol (UDP) port 443 force this traffic to use HTTPS (443 TCP) by [blocking the QUIC traffic with a local firewall rule](#block-quic-when-tunneling-exchange-online-traffic). Non-HTTP protocols, such as POP3, IMAP, SMTP, aren't acquired from the client and are sent direct-and-local. |
-| [Microsoft 365](how-to-manage-microsoft-365-profile.md) and [Private access](how-to-manage-private-access-profile.md) | If the end-user device is configured to use a proxy server, locations that you wish to tunnel using the Global Secure Access client must be excluded from that configuration. For examples, see [Proxy configuration example](#proxy-configuration-example). |
-| [Private access](how-to-manage-private-access-profile.md) | Single label domains, like `https://contosohome` for private apps aren't supported. Instead use a fully qualified domain name (FQDN), like `https://contosohome.contoso.com`. Administrators can also choose to append DNS suffixes via Windows. |
+- Local administrator credentials are required to install or upgrade the client.
+- The Global Secure Access client requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Download the client
 
-The most current version of the Global Secure Access client can be downloaded from the Microsoft Entra admin center.
+The most current version of the Global Secure Access client is available to download from the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access (Preview)** > **Connect** > **Client download**.
+1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
-
-    ![Screenshot of the download Windows client button.](media/how-to-install-windows-client/client-download-screen.png)
+:::image type="content" source="media/how-to-install-windows-client/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
     
-## Install the client
+## Install the Global Secure Access client
+### Automated installation
+Organizations can install the Global Secure Access client silently with the `/quiet` switch, or use Mobile Device Management (MDM) solutions, such as [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) to deploy the client to their devices.
 
-Organizations can install the client interactively, silently with the `/quiet` switch, or use mobile device management platforms like [Microsoft Intune to deploy it](/mem/intune/apps/apps-win32-app-management) to their devices.
-
-1. Copy the Global Secure Access client setup file to your client machine.
+### Manual installation
+To manually install the Global Secure Access client:
 1. Run the *GlobalSecureAccessClient.exe* setup file. Accept the software license terms.
-1. The client is installed and users are prompted to sign in with their Microsoft Entra credentials.
+1. The client installs and silently signs you in with your Microsoft Entra credentials. If the silent sign-in fails, the installer prompts you to sign in manually.
+1. Sign in. The connection icon turns green. 
+1. Hover over the connection icon to open the client status notification, which should show as **Connected**.   
+:::image type="content" source="media/how-to-install-windows-client/global-secure-access-client-installed-connected.png" alt-text="Screenshot showing the client is connected.":::
 
-    ![Screenshot showing the sign-in box appears after client installation completes.](media/how-to-install-windows-client/client-install-first-sign-in.png)
+## Client actions
+To view the available client menu actions, right-click the Global Secure Access system tray icon.
+:::image type="content" source="media/how-to-install-windows-client/client-install-all-actions.png" alt-text="Screenshot showing the complete list of Global Secure Access client actions.":::
 
-1. Users sign in and the connection icon turns green. Double-clicking on the connection icon opens a notification with client information showing a connected state.
+> [!TIP]
+> The Global Secure Access client menu actions will vary according to your [Client registry keys](#client-registry-keys) configuration.
 
-    :::image type="content" source="media/how-to-install-windows-client/client-install-connected.png" alt-text="Screenshot showing the client is connected.":::
+|Action   |Description  |
+|---------|---------|
+|**Sign out**   |*Hidden by default*. Use the **Sign out** action when you need to sign in to the Global Secure Access client with an Entra user other than the one used to sign in to Windows. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
+|**Pause**   |Select the **Pause** action to temporarily pause the client. The client remains paused until you either resume the client or restart the machine.         |
+|**Resume**   |Resumes the paused client.         |
+|**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you wish to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
+|**Collect logs**   |Select this action to collect client logs (information about the client machine, the related event logs for the services, and registry values) and archive them in a zip file to share with Microsoft Support for investigation. The default location for the logs is `C:\Program Files\Global Secure Access Client\Logs`.         |
+|**Advanced diagnostics**   |Select this action to launch the Advanced diagnostics utility and access an assortment of [troubleshooting](#troubleshooting) tools.         |
 
+## Client status indicators
+### Status notification
+Double-click the Global Secure Access icon to open the client status notification and view the status of each channel configured for the client.   
+:::image type="content" source="media/how-to-install-windows-client/install-windows-client-client-status.png" alt-text="Screenshot showing the client status is connected.":::
+
+### Client statuses in system tray icon
+
+|Icon    |Message    |Description    |
+|---------|---------|---------|
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-initializing.png":::	|Global Secure Access Client	|The client is initializing and checking its connection to Global Secure Access.    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-connected.png":::	|Global Secure Access Client - Connected	|The client is connected to Global Secure Access.    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-disabled.png":::   |Global Secure Access Client - Disabled	|The client is disabled because services are offline or the user disabled the client.    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-disconnected.png":::	|Global Secure Access Client - Disconnected	|The client failed to connect to Global Secure Access.    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Some channels are unreachable	|The client is partially connected to Global Secure Access (that is, the connection to at least one channel failed: Entra, Microsoft 365, Private Access, Internet Access).    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Disabled by your organization	|Your organization has disabled the client (that is, all traffic forwarding profiles are disabled).    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Private Access is disabled	 |The user disabled Private Access on this device.    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - could not connect to the Internet	|The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
+
+## Known limitations
+Known limitations for the current version of the Global Secure Access client include:
+
+### Secure Domain Name System (DNS)
+The Global Secure Access client doesn't currently support secure DNS in its different versions, such as DNS over HTTPS (DoH), DNS over TLS (DoT), or DNS Security Extensions (DNSSEC). To configure the client so it can acquire network traffic, you must disable secure DNS. To disable secure DNS in the browser, see [Secure DNS disabled in browsers](troubleshoot-global-secure-access-client-diagnostics-health-check.md#secure-dns-disabled-in-browsers-microsoft-edge-chrome-firefox). 
+
+### DNS over TCP
+DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. Currently the Global Secure Access client doesn't support DNS port 53 TCP. As a mitigation, disable the browser's DNS client by setting the following registry values:
+- Microsoft Edge   
+``[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]   
+"BuiltInDnsClientEnabled"=dword:00000000``
+- Chrome   
+``[HKEY_CURRENT_USER\Software\Policies\Google\Chrome]   
+"BuiltInDnsClientEnabled"=dword:00000000``   
+Also add browsing `chrome://flags` and disabling `Async DNS resolver`.
+
+### IPv6 not supported
+The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
+
+### Connection fallback
+If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
+
+### Geolocation
+For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This scenario might affect services that rely on geolocation.
+> [!TIP]
+> For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md).
+
+### Virtualization support
+You can't install the Global Secure Access client on a device that hosts virtual machines. However, you can install the Global Secure Access client on a virtual machine, as long as the client isn't installed on the host machine. For the same reason, a Windows Subsystem for Linux (WSL) doesn't acquire traffic from a client installed on the host machine.
+
+### Proxy
+If a proxy is configured at the application level (such as a browser) or at the OS level, configure a proxy auto configuration (PAC) file to exclude all FQDNs and IPs that you expect the client to tunnel.
+
+To prevent HTTP requests for specific FQDNs/IPs from tunneling to the proxy, add the FQDNs/IPs to the PAC file as exceptions. (These FQDNs/IPs are in the forwarding profile of Global Secure Access for tunneling). For example:
+
+```http
+function FindProxyForURL(url, host) {   
+        if (isPlainHostName(host) ||   
+            dnsDomainIs(host, ".microsoft.com") || // tunneled 
+            dnsDomainIs(host, ".msn.com")) // tunneled 
+           return "DIRECT";                    // If true, sets "DIRECT" connection 
+        else                                   // If not true... 
+           return "PROXY 10.1.0.10:8080";  // forward the connection to the proxy
+}
+```
+If a direct internet connection isn't possible, configure the client to connect to the Global Secure Access service through a proxy. For example, set the `grpc_proxy` system variable to match the value of the proxy, such as `http://proxy:8080`.
+
+To apply the configuration changes, restart the Global Secure Access client Windows services.
+
+### Packet injection
+The client only tunnels traffic sent using sockets. It doesn't tunnel traffic injected to the network stack using a driver (for example, some of the traffic generated by Network Mapper (Nmap)). Injected packets go directly to the network.
+
+### Multi-session
+The Global Secure Access client doesn't support concurrent sessions on the same machine. This limitation applies to RDP servers and VDI solutions like Azure Virtual Desktop (AVD) that are configured for multi-session.
+
+### Arm64
+The Global Secure Access client doesn't support Arm64 architecture.
+
+### QUIC not supported for Internet Access
+Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
+> [!TIP]
+> QUIC is currently supported in Private Access and Microsoft 365 workloads.
+
+Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).
 
 ## Troubleshooting
+To troubleshoot the Global Secure Access client, right-click the client icon in the taskbar and select one of the troubleshooting options: **Collect logs** or **Advanced diagnostics**.
 
-To troubleshoot the Global Secure Access client, right-click the client icon in the taskbar.
+> [!TIP]
+> Administrators can modify the Global Secure Access client menu options by revising the [Client registry keys](#client-registry-keys).
 
-:::image type="content" source="media/how-to-install-windows-client/client-install-menu-options.png" alt-text="Screenshot showing the context menu of the Global Secure Access client.":::
+For more detailed information on troubleshooting the Global Secure Access client, see the following articles:
+- [Troubleshoot the Global Secure Access client: advanced diagnostics](troubleshoot-global-secure-access-client-advanced-diagnostics.md)
+- [Troubleshoot the Global Secure Access client: Health check tab](troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 
-- **Login as different user**
-   - Forces sign-in screen to change user or reauthenticate the existing user.
-- **Pause**
-   - This option can be used to temporarily disable traffic tunneling. As this client is part of your organization's security posture we recommend leaving it running always.
-   - This option stops the Windows services related to client. When these services are stopped, traffic is no longer tunneled from the client machine to the cloud service. Network traffic behaves as if the client isn't installed while the client is paused. If the client machine is restarted, the services automatically restart with it.
-- **Resume**
-   - This option starts the underlying services related to the Global Secure Access client. This option would be used to resume after temporarily pausing the client for troubleshooting. Traffic resumes tunneling from the client to the cloud service.
-- **Restart**
-   - This option stops and starts the Windows services related to client.
-- **Collect logs**
-   - Collect logs for support and further troubleshooting. These logs are collected and stored in `C:\Program Files\Global Secure Access Client\Logs` by default.
-      - These logs include information about the client machine, the related event logs for the services, and registry values including the traffic forwarding profiles applied.
-- **Client Checker**
-   - Runs a script to test client components ensuring the client is configured and working as expected. 
-- **Connection Diagnostics** provides a live display of client status and connections tunneled by the client to the Global Secure Access service
-   - **Summary** tab shows general information about the client configuration including: policy version in use, last policy update date and time, and the ID of the tenant the client is configured to work with.
-      - Hostname acquisition state changes to green when new traffic acquired by FQDN is tunneled successfully based on a match of the destination FQDN in a traffic forwarding profile.
-   - **Flows** show a live list of connections initiated by the end-user device and tunneled by the client to the Global Secure Access edge. Each connection is new row.
-      - **Timestamp** is the time when the connection was first established.
-      - **Fully Qualified Domain Name (FQDN)** of the destination of the connection. If the decision to tunnel the connection was made based on an IP rule in the forwarding policy not by an FQDN rule, the FQDN column shows N/A.
-      - **Source** port of the end-user device for this connection. 
-      - **Destination IP** is the destination of the connection.
-      - **Protocol** only TCP is supported currently.
-      - **Process** name that initiated the connection. 
-      - **Flow** active provides a status of whether the connection is still open.
-      - **Sent data** provides the number of bytes sent by the end-user device over the connection. 
-      - **Received data** provides the number of bytes received by the end-user device over the connection. 
-      - **Correlation ID** is provided to each connection tunneled by the client. This ID allows tracing of the connection in the client logs. The client logs consist of event viewer, event trace (ETL), and the [Global Secure Access traffic logs](how-to-view-traffic-logs.md).
-      - **Flow ID** is the internal ID of the connection used by the client shown in the ETL file.
-      - **Channel name** identifies the traffic forwarding profile to which the connection is tunneled. This decision is taken according to the rules in the forwarding profile. 
-   - **HostNameAcquisition** provides a list of hostnames that the client acquired based on the FQDN rules in the forwarding profile. Each hostname is shown in a new row. Future acquisition of the same hostname creates another row if DNS resolves the hostname (FQDN) to a different IP address.
-      - **Timestamp** is the time when the connection was first established.
-      - **FQDN** that is resolved.
-      - **Generated IP address** is an IP address generated by the client for internal purposes. This IP is shown in flows tab for connections that are established to the relative FQDN.
-      - **Original IP address** is the first IPv4 address in the DNS response when querying the FQDN. If the DNS server that the end-user device points to doesn’t return an IPv4 address for the query, the original IP address shows `0.0.0.0`.
-   - **Services** shows the status of the Windows services related to the Global Secure Access client. Services that are started have a green status icon, services that are stopped show a red status icon. All three Windows services must be started for the client to function.
-   - **Channels** list the traffic forwarding profiles assigned to the client and the state of the connection to the Global Secure Access edge.
+## Client registry keys
+The Global Secure Access client uses specific registry keys to enable or disable different functionalities. Administrators can use a Mobile Device Management (MDM) solutions, such as Microsoft Intune or Group Policy to control the registry values.
+> [!CAUTION] 
+> Do not change other registry values unless instructed by Microsoft Support.
 
-### Event logs
+### Disable or enable Private Access on the client
+This registry value controls whether Private Access is enabled or disabled for the client. If a user is connected to the corporate network, they can choose to bypass Global Secure Access and directly access private applications.
 
-Event logs related to the Global Secure Access client can be found in the Event Viewer under `Applications and Services/Microsoft/Windows/Global Secure Access Client/Operational`. These events provide useful detail regarding the state, policies, and connections made by the client.
+Users can disable and enable Private Access through the system tray menu.
 
-### Disable IPv6 and secure DNS
+> [!TIP]
+> This option is available on the menu only if it is not hidden (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)) and Private Access is enabled for this tenant.
 
-If you need assistance disabling IPv6 or secure DNS on Windows devices you're trying the preview with, the following script provides assistance.
+Administrators can disable or enable Private Access for the user by setting the registry key:   
+`Computer\HKEY_CURRENT_USER\Software\Microsoft\Global Secure Access Client`
 
-```powershell
-function CreateIfNotExists
-{
-    param($Path)
-    if (-NOT (Test-Path $Path))
-    {
-        New-Item -Path $Path -Force | Out-Null
-    }
-}
+|Value  |Type  |Data  |Description  |
+|---------|---------|---------|---------|
+|IsPrivateAccessDisabledByUser  |REG_DWORD  |0x0  |Private Access is enabled on this device. Network traffic to private applications goes through Global Secure Access.  |
+|IsPrivateAccessDisabledByUser  |REG_DWORD  |0x1  |Private Access is disabled on this device. Network traffic to private applications goes directly to the network.  |
 
-$disableBuiltInDNS = 0x00
+:::image type="content" source="media/how-to-install-windows-client/global-secure-access-registry-key-private-access-enabled.png" alt-text="Screenshot showing the Registry Editor with the IsPrivateAccessDisabledByUser registry key highlighted.":::
+	
+If the registry value doesn't exist, the default value is 0x0, Private Access is enabled.
 
-# Prefer IPv4 over IPv6 with 0x20, disable  IPv6 with 0xff, revert to default with 0x00. 
-# This change takes effect after reboot. 
-$setIpv6Value = 0x20
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters" -Name "DisabledComponents" -Type DWord -Value $setIpv6Value
+### Hide or unhide system tray menu buttons
+The administrator can show or hide specific buttons in the client system tray icon menu. Create the values under the following registry key:   
+`Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client`
 
-# This section disables browser based secure DNS lookup.
-# For the Microsoft Edge browser.
-CreateIfNotExists "HKLM:\SOFTWARE\Policies\Microsoft"
-CreateIfNotExists "HKLM:\SOFTWARE\Policies\Microsoft\Edge"
+|Value  |Type  |Data  |Default behavior  |Description  |
+|---------|---------|---------|---------|---------|
+|HideSignOutButton   |REG_DWORD         |0x0 - shown   0x1 - hidden         |hidden         |Configure this setting to show or hide the **Sign out** action. This option is for specific scenarios when a user needs to sign in to the client with a different Entra user than the one used to sign in to Windows. Note: You must sign in to the client with a user in the same Entra tenant to which the device is joined. You can also use the **Sign out** action to reauthenticate the existing user.         |
+|HideDisablePrivateAccessButton     |REG_DWORD         |0x0 - shown   0x1 - hidden         |hidden         |Configure this setting to show or hide the **Disable Private Access** action. This option is for a scenario when the device is directly connected to the corporate network and the user prefers accessing private applications directly through the network instead of through the Global Secure Access.         |   
 
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "DnsOverHttpsMode" -Value "off"
+:::image type="content" source="media/how-to-install-windows-client/global-secure-access-registry-key-private-hide-signout.png" alt-text="Screenshot showing the Registry Editor with the HideSignOutButton and HideDisablePrivateAccessButton registry keys highlighted.":::
 
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "BuiltInDnsClientEnabled" -Type DWord -Value $disableBuiltInDNS
-
-# For the Google Chrome browser.
-
-CreateIfNotExists "HKLM:\SOFTWARE\Policies\Google"
-CreateIfNotExists "HKLM:\SOFTWARE\Policies\Google\Chrome"
-
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "DnsOverHttpsMode" -Value "off"
-
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "BuiltInDnsClientEnabled" -Type DWord -Value $disableBuiltInDNS
-```
-
-### Proxy configuration example
-
-Example proxy PAC file containing exclusions:
-
-```
-function FindProxyForURL(url, host) {  // basic function; do not change
-   if (isPlainHostName(host) ||
-      dnsDomainIs(host, ".contoso.com") || //tunneled
-      dnsDomainIs(host, ".fabrikam.com"))  // tunneled
-      return "DIRECT";                     // If true, sets "DIRECT" connection
-      else                                 // for all other destinations  
-      return "PROXY 10.1.0.10:8080";  // transfer the traffic to the proxy. 
-}
-```
-
-Organizations must then create a system variable named `grpc_proxy` with a value like `http://10.1.0.10:8080` that matches your proxy server's configuration on end-user machines to allow the Global Secure Access client services to use the proxy by configuring the following.
-
-### Block QUIC when tunneling Exchange Online traffic 
-
-Since UDP traffic isn't supported in the current preview, organizations that plan to tunnel their Exchange Online traffic should disable the QUIC protocol (443 UDP). Administrators can disable this protocol triggering clients to fall back to HTTPS (443 TCP) with the following Windows Firewall rule:
-
-```powershell
-New-NetFirewallRule -DisplayName "Block QUIC for Exchange Online" -Direction Outbound -Action Block -Protocol UDP -RemoteAddress 13.107.6.152/31,13.107.18.10/31,13.107.128.0/22,23.103.160.0/20,40.96.0.0/13,40.104.0.0/15,52.96.0.0/14,131.253.33.215/32,132.245.0.0/16,150.171.32.0/22,204.79.197.215/32,6.6.0.0/16 -RemotePort 443 
-```
-
-This list of IPv4 addresses is based on the [Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges#exchange-online) and the IPv4 block used by the Global Secure Access client. For Global Secure Access service address information, see [points of presence and service addresses](reference-points-of-presence.md).
-
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
-
-## Next steps
-
-The next step for getting started with Microsoft Entra Internet Access is to [enable universal tenant restrictions](how-to-universal-tenant-restrictions.md).
+For more information, see [Guidance for configuring IPv6 in Windows for advanced users](/troubleshoot/windows-server/networking/configure-ipv6-in-windows).

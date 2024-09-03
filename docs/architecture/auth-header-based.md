@@ -34,7 +34,7 @@ Remote users need to securely single sign-on (SSO) into to on-premises applicati
 
 - **Application Proxy service:** Acts as reverse proxy to send request from the user to the on-premises application. It resides in Microsoft Entra ID and can also enforce any Conditional Access policies.
 
-- **Application Proxy connector:** Installed on-premises on Windows servers to provide connectivity to the applications. It only uses outbound connections. Returns the response to Microsoft Entra ID.
+- **Private network connector:** Installed on-premises on Windows servers to provide connectivity to the applications. It only uses outbound connections. Returns the response to Microsoft Entra ID.
 
 - **Legacy applications:** Applications that receive user requests from Application Proxy. The legacy application receives the required HTTP headers to set up a session and return a response.
 

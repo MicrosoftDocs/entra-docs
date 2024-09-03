@@ -1,22 +1,20 @@
 ---
-title: "Tutorial: Prepare your customer tenant to authenticate users in a React SPA"
-description: Learn how to configure your Microsoft Entra ID for customers tenant for authentication with a React single-page app (SPA).
-
+title: "Tutorial: Prepare your external tenant to authenticate users in a React SPA"
+description: Learn how to configure your external tenant for authentication with a React single-page app (SPA).
 author: garrodonnell
 manager: celestedg
-
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 05/23/2023
+ms.date: 07/03/2024
 ms.author: godonnell
 
-#Customer intent: As a dev I want to prepare my customer tenant for building a single-page app (SPA) with React
+#Customer intent: As a dev I want to prepare my external tenant for building a single-page app (SPA) with React
 ---
 
-# Tutorial: Prepare your customer tenant to authenticate users in a React SPA
+# Tutorial: Prepare your external tenant to authenticate users in a React SPA
 
-This tutorial series demonstrates how to build a React single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
+This tutorial series demonstrates how to build a React single-page application (SPA) and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your external tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
 In this tutorial;
 
@@ -30,7 +28,7 @@ In this tutorial;
 
 ## Prerequisites
 
-- A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- An external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     - Application Administrator
     - Application Developer
@@ -44,7 +42,7 @@ In this tutorial;
 
 [!INCLUDE [add-platform-redirect-url-react](./includes/register-app/add-platform-redirect-url-react.md)]
 
-## Grant sign-in permissions
+## Grant admin consent
 
 [!INCLUDE [grant-api-permission-sign-in](./includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -59,4 +57,4 @@ In this tutorial;
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 2: Create a React SPA project for authentication in a customer tenant](./tutorial-single-page-app-react-sign-in-prepare-app.md)
+> [Part 2: Create a React SPA project for authentication in an external tenant](./tutorial-single-page-app-react-sign-in-prepare-app.md)

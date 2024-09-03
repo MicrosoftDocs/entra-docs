@@ -47,6 +47,12 @@ There are multiple ways of offering a recovery mechanism to users, each with the
 
 We implement [the Decentralized Identity Foundation's Well Known DID Configuration spec](https://identity.foundation/.well-known/resources/did-configuration/) in order to connect a DID to a highly known existing system, domain names. Each DID created using the Microsoft Entra Verified ID has the option of including a root domain name that is encoded in the DID Document. Follow the article titled [Link your Domain to your Distributed Identifier](how-to-dnsbind.md) to learn more.  
 
+### What are the size limitations for a Verifiable Credential in Verified ID?
+
+- For issuance request - 1MB
+- Photo in the Verifiable credential - 1MB
+- Callback result 10 MB without receipt
+
 ### What are the licensing requirements?
 
 There are no special licensing requirements to issue Verifiable credentials.

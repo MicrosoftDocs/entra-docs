@@ -15,7 +15,7 @@ ms.date: 07/27/2023
 
 # Tutorial: Call a protected web API from your .NET daemon app
 
-This tutorial is the final part of a series that demonstrates how to call a protected web API from a .NET daemon app. In [part 1 of this series](./tutorial-daemon-dotnet-call-api-prepare-tenant.md), you prepared your customer tenant to authorize a .NET daemon app. In this tutorial, you build your client daemon app and call a protected web API. You enable the client daemon app to acquire an access token using its own identity, then call the web API.
+This tutorial is the final part of a series that demonstrates how to call a protected web API from a .NET daemon app. In [part 1 of this series](./tutorial-daemon-dotnet-call-api-prepare-tenant.md), you prepared your external tenant to authorize a .NET daemon app. In this tutorial, you build your client daemon app and call a protected web API. You enable the client daemon app to acquire an access token using its own identity, then call the web API.
 
 In this tutorial;
 
@@ -26,7 +26,7 @@ In this tutorial;
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to authorize a .NET daemon application](./tutorial-daemon-dotnet-call-api-prepare-tenant.md)
+- [Tutorial: Prepare your external tenant to authorize a .NET daemon application](./tutorial-daemon-dotnet-call-api-prepare-tenant.md)
 
 
 ##  Create a .NET daemon app
@@ -208,7 +208,8 @@ Posting a to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 1
-User ID: f4e54f8b-acec-4ef4-90e9-5bb358c8770b
+User ID: 00001111-aaaa-2222-bbbb-3333cccc4444
+
 Message: Bake bread
 ```
 

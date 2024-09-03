@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Handle authentication flows in a React SPA"
-description: Learn how to configure authentication for a React single-page app (SPA) with your Microsoft Entra ID for customers tenant.
+description: Learn how to configure authentication for a React single-page app (SPA) with your external tenant.
 
 author: garrodonnell
 manager: CelesteDG
@@ -11,12 +11,12 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 06/09/2023
 
-#Customer intent: As a developer, I want to learn how to configure a React single-page app (SPA) to sign in and sign out users with my Microsoft Entra ID for customers tenant.
+#Customer intent: As a developer, I want to learn how to configure a React single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
 # Tutorial: Handle authentication flows in a React SPA
 
-This tutorial is part 3 of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication. In [Part 2 of this series](./tutorial-single-page-app-react-sign-in-prepare-app.md), you created a React SPA and prepared it for authentication with your Microsoft Entra ID for customers tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
+This tutorial is part 3 of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication. In [Part 2 of this series](./tutorial-single-page-app-react-sign-in-prepare-app.md), you created a React SPA and prepared it for authentication with your external tenant. In this tutorial, you'll learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 
@@ -29,7 +29,7 @@ In this tutorial;
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
+- [Tutorial: Prepare your external tenant to authenticate users in a React SPA](./tutorial-single-page-app-react-sign-in-prepare-tenant.md).
 
 ## Add components to the application
 
@@ -287,7 +287,7 @@ Functional components are the building blocks of React apps, and are used to bui
                     populateClaim(
                         key,
                         claims[key],
-                        'The oid (user's object id) is the only claim that should be used to uniquely identify a user in an Azure AD tenant. The token might have one or more of the following claim, that might seem like a unique identifier, but is not and should not be used as such.',
+                        "The oid (user's object id) is the only claim that should be used to uniquely identify a user in an Azure AD tenant. The token might have one or more of the following claim, that might seem like a unique identifier, but is not and should not be used as such.",
                         index,
                         claimsObj
                     );
@@ -327,7 +327,7 @@ Functional components are the building blocks of React apps, and are used to bui
                     populateClaim(
                         key,
                         claims[key],
-                        'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual's access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
+                        "Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual's access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).",
                         index,
                         claimsObj
                     );

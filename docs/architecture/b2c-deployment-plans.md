@@ -75,7 +75,7 @@ Help set realistic expectations and make contingency plans to meet key milestone
 - For authorization, use the Identity Experience Framework (IEF) sample user journeys
   - See, [Azure Active Directory B2C: Custom CIAM User Journeys](https://github.com/azure-ad-b2c/samples#local-account-policy-enhancements)
 - Use policy-based control for cloud-native environments
-  - Go to openpolicyagent.org to learn about [Open Policy Agent](https://www.openpolicyagent.org/) (OPA)
+  - Go to `openpolicyagent.org` to learn about [Open Policy Agent (OPA)](https://www.openpolicyagent.org/)
 
 Learn more with the Microsoft Identity PDF, [Gaining expertise with Azure AD B2C](https://aka.ms/learnaadb2c), a course for developers.
 
@@ -149,7 +149,7 @@ Use the following checklist for delivery.
 |Protocol information| Gather the base path, policies, and metadata URL of both variants. </br>Specify attributes such as sample sign-in, client application ID, secrets, and redirects.|
 |Application samples | See, [Azure Active Directory B2C code samples](/azure/active-directory-b2c/integrate-with-app-code-samples).|
 |Penetration testing | Inform your operations team about pen tests, then test user flows including the OAuth implementation. </br>See, [Penetration testing](/azure/security/fundamentals/pen-testing) and [Penetration testing rules of engagement](https://www.microsoft.com/msrc/pentest-rules-of-engagement).
-| Unit testing  | Unit test and generate tokens. </br>See, [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](~/identity-platform/v2-oauth-ropc.md). </br>If you reach the Azure AD B2C token limit, see [Azure AD B2C: File Support Requests](/azure/active-directory-b2c/find-help-open-support-ticket). </br>Reuse tokens to reduce investigation on your infrastructure. </br>[Set up a resource owner password credentials flow in Azure Active Directory B2C](/azure/active-directory-b2c/add-ropc-policy?pivots=b2c-user-flow&tabs=app-reg-ga).|
+| Unit testing  | Unit test and generate tokens. </br>See, [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](~/identity-platform/v2-oauth-ropc.md). </br>If you reach the Azure AD B2C token limit, see [Azure AD B2C: File Support Requests](/azure/active-directory-b2c/find-help-open-support-ticket). </br>Reuse tokens to reduce investigation on your infrastructure. </br>[Set up a resource owner password credentials flow in Azure Active Directory B2C](/azure/active-directory-b2c/add-ropc-policy?pivots=b2c-user-flow&tabs=app-reg-ga). You shouldn't use ROPC flow to authenticate users in your apps.|
 | Load testing | Learn about [Azure AD B2C service limits and restrictions](/azure/active-directory-b2c/service-limits). </br>Calculate the expected authentications and user sign-ins per month. </br>Assess high load traffic durations and business reasons: holiday, migration, and event. </br>Determine expected peak rates for sign-up, traffic, and geographic distribution, for example per second.
 
 ### Security

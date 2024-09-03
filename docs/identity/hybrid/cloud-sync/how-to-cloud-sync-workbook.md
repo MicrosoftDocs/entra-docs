@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/26/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -17,7 +17,7 @@ ms.author: billmath
 # Microsoft Entra Connect cloud sync insights workbook
 The cloud sync workbook provides a flexible canvas for data analysis. The workbook allows you to create rich visual reports within the Microsoft Entra admin center. To learn more, see Azure Monitor Workbooks overview.
 
-This workbook is intended for Hybrid Identity Admins who use cloud sync to sync users from AD to Microsoft Entra ID.  It allows admins to gain insights into sync status and details.
+This workbook is intended for Hybrid Identity Administrators who use cloud sync to sync users from AD to Microsoft Entra ID.  It allows admins to gain insights into sync status and details.
 
 The workbook can be accessed by select **Insights** on the left hand side of the cloud sync page.
 

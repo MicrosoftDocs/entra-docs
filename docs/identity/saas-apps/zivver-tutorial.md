@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zivver so that I can control who has access to Zivver, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Identifier** text box, type the URL:
     `https://app.zivver.com/SAML/Zivver`
 
-1. Zivver application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**. Zivver application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Zivver application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Zivver application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![Screenshot shows User Attributes with the Edit icon selected.](common/edit-attribute.png)
 
@@ -103,7 +103,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	b. In the **Name** textbox, type the attribute name shown for that row.
 
-	c. Leave the **Namespace** blank.
+	c. In the **Namespace** textbox, type `https://zivver.com/SAML/Attributes`.
 
 	d. Select Source as **Attribute**.
 

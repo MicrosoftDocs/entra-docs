@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: dhivyag
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JIRA SAML SSO by Microsoft (V5.2) so that I can control who has access to JIRA SAML SSO by Microsoft (V5.2), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -186,7 +186,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	e. If you select **User ID is in an Attribute element** option, then in **Attribute name** textbox type the name of the attribute where User ID is expected. 
 
-	f. If you are using the federated domain (like ADFS etc.) with Microsoft Entra ID, then click on the **Enable Home Realm Discovery** option and configure the **Domain Name**.
+	f. If you are using the federated domain (like ADFS, and so on) with Microsoft Entra ID, then click on the **Enable Home Realm Discovery** option and configure the **Domain Name**.
 
 	g. In **Domain Name** type the domain name here in case of the ADFS-based login.
 

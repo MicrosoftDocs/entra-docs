@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 
 # Add an API connector to a user flow
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 To use an [API connector](api-connectors-overview.md), you first create the API connector and then enable it in a user flow.
 
 > [!IMPORTANT]
@@ -31,7 +33,7 @@ To use an [API connector](api-connectors-overview.md), you first create the API 
 1. Browse to **Identity** > **External Identities** > **Overview**.
 1. Select **All API connectors**, and then select **New API connector**.
 
-    :::image type="content" source="media/self-service-sign-up-add-api-connector/api-connector-new.png" alt-text="Screenshot of adding a new API connector to External Identities.":::
+    :::image type="content" source="media/self-service-sign-up-add-api-connector/api-connector-new.png" alt-text="Screenshot of adding a new API connector to External ID.":::
 
 1. Provide a display name for the call. For example, **Check approval status**.
 1. Provide the **Endpoint URL** for the API call.

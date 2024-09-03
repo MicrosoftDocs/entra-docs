@@ -2,18 +2,16 @@
 title: 'Tutorial: Configure Atlassian Cloud for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Atlassian Cloud.
 
-documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+
+author: thomasakelo
 manager: jeedes
-ms.assetid: 53b804ba-b632-4c4b-a77e-ec6468536898
 ms.service: entra-id
 ms.subservice: saas-apps
 
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Atlassian Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Atlassian Cloud.
 ---
@@ -36,7 +34,7 @@ This tutorial describes the steps you need to perform in both Atlassian Cloud an
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (e.g. Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)).
 * Make sure you're an admin for an Atlassian organization. See [Organization administration.](https://support.atlassian.com/organization-administration/docs/explore-an-atlassian-organization).
 * Verify one or more or your domains in your organization. See [Domain verification](https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts).
 * Subscribe to Atlassian Access from your organization. See [Atlassian Access security policies and features](https://support.atlassian.com/security-and-access-policies/docs/understand-atlassian-access).

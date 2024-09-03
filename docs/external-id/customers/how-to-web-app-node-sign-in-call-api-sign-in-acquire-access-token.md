@@ -10,16 +10,18 @@ ms.subservice: customers
 ms.topic: how-to
 ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a developer, I want to learn about how to acquire an access token in my Node.js client web app, so that I can call a web API that's protected by Microsoft Entra ID for customers.
+#Customer intent: As a developer, I want to learn about how to acquire an access token in my Node.js client web app, so that I can call a web API that's protected by Microsoft Entra External ID.
 ---
 
 # Acquire an access token in your Node.js web app
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 In this article, you update your code, to enable your web app to acquire an access token. You use [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authentication and authorization to your node web application. This article is the third part of a four-part guide series.
 
 ## Prerequisites
 
-- Complete the steps in the first part of this guide series, [Prepare customer tenant to call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md).
+- Complete the steps in the first part of this guide series, [Prepare external tenant to call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md).
 - Complete the steps in the second part of this guide series, [Prepare app to call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-app.md).
 
 ## Update MSAL configuration object
@@ -49,7 +51,7 @@ In your code editor, open *authConfig.js* file, then update the code by adding t
 
 In your *authConfig.js* file, replace `Enter_the_Web_Api_Application_Id_Here` with the Application (client) ID of the web API app that you registered in your customer's tenant.
 
-The `todolistReadScope` and `todolistReadWriteScope` variables hold the web API full scope URLs that you set in your customer tenant. Make sure you export the `protectedResources` object.
+The `todolistReadScope` and `todolistReadWriteScope` variables hold the web API full scope URLs that you set in your external tenant. Make sure you export the `protectedResources` object.
 
 ## Acquire access token
 

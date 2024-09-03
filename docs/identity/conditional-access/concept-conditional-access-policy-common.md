@@ -1,18 +1,18 @@
 ---
-title: Secure your resources with Conditional Access policy templates
+title: Simplify Conditional Access policy deployment with templates
 description: Deploy recommended Conditional Access policies from easy to use templates.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/11/2023
+ms.date: 08/28/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Conditional Access templates
+# Conditional Access policy templates
 
 Conditional Access templates provide a convenient method to deploy new policies aligned with Microsoft recommendations. These templates are designed to provide maximum protection aligned with commonly used policies across various customer types and locations. 
 
@@ -33,6 +33,7 @@ Microsoft recommends these policies as the base for all organizations. We recomm
 - [Require multifactor authentication for all users](howto-conditional-access-policy-all-users-mfa.md)
 - [Require multifactor authentication for Azure management](howto-conditional-access-policy-azure-management.md)
 - [Require compliant or Microsoft Entra hybrid joined device or multifactor authentication for all users](howto-conditional-access-policy-compliant-device.md)
+- [Require compliant device](how-to-policy-require-device-compliance.md)
 
 # [Zero Trust](#tab/zero-trust)
 
@@ -48,10 +49,10 @@ These policies as a group help support a [Zero Trust architecture](/security/zer
 - [Require password change for high-risk users](howto-conditional-access-policy-risk-user.md) **Requires Microsoft Entra ID P2**
 - [Block access for unknown or unsupported device platform](howto-policy-unknown-unsupported-device.md)
 - [No persistent browser session](howto-policy-persistent-browser-session.md)
-- [Require approved client apps or app protection policies](howto-policy-approved-app-or-app-protection.md)
+- [Require approved client apps or app protection policies](howto-policy-approved-app-or-app-protection.yml)
 - [Require compliant or Microsoft Entra hybrid joined device or multifactor authentication for all users](howto-conditional-access-policy-compliant-device.md)
 - [Require multifactor authentication for admins accessing Microsoft admin portals](how-to-policy-mfa-admin-portals.md)
-- [Block access for users with insider risk (Preview)](how-to-policy-insider-risk.md) **Requires Microsoft Purview**
+- [Block access for users with insider risk](how-to-policy-insider-risk.md) **Requires Microsoft Purview**
 
 # [Remote work](#tab/remote-work)
 
@@ -66,7 +67,8 @@ These policies help secure organizations with remote workers.
 - [Require compliant or Microsoft Entra hybrid joined device for administrators](howto-conditional-access-policy-compliant-device-admin.md)
 - [Block access for unknown or unsupported device platform](howto-policy-unknown-unsupported-device.md)
 - [No persistent browser session](howto-policy-persistent-browser-session.md)
-- [Require approved client apps or app protection policies](howto-policy-approved-app-or-app-protection.md)
+- [Require compliant device](how-to-policy-require-device-compliance.md)
+- [Require approved client apps or app protection policies](howto-policy-approved-app-or-app-protection.yml)
 - [Use application enforced restrictions for unmanaged devices](howto-policy-app-enforced-restriction.md)
 
 # [Protect administrator](#tab/protect-administrator)
@@ -77,6 +79,7 @@ These policies are directed at highly privileged administrators in your environm
 - [Block legacy authentication](howto-conditional-access-policy-block-legacy.md)
 - [Require multifactor authentication for Azure management](howto-conditional-access-policy-azure-management.md)
 - [Require compliant or Microsoft Entra hybrid joined device for administrators](howto-conditional-access-policy-compliant-device-admin.md)
+- [Require compliant device](how-to-policy-require-device-compliance.md)
 - [Require phishing-resistant multifactor authentication for administrators](how-to-policy-phish-resistant-admin-mfa.md)
 
 # [Emerging threats](#tab/emerging-threats)
@@ -105,7 +108,8 @@ Organizations can select individual policy templates and:
 
 ## Other common policies
 
-- [Block access by location](howto-conditional-access-policy-location.md)
+- [Require multifactor authentication for device registration](how-to-policy-mfa-device-register-join.md)
+- [Block access by location](howto-conditional-access-policy-location.yml)
 - [Block access except specific apps](howto-conditional-access-policy-block-access.md)
 
 ## User exclusions
@@ -114,5 +118,4 @@ Organizations can select individual policy templates and:
 ## Next steps
 
 - [Simulate sign in behavior using the Conditional Access What If tool.](troubleshoot-conditional-access-what-if.md)
-
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)

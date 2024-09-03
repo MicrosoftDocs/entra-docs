@@ -94,7 +94,7 @@ The structure defines the following constants:
   This option drives MSAL to send `prompt=select_account` to the identity provider. It provides the best possible experience based on available information, such as the account and the presence of a session for the user. Don't change it unless you have a good reason.
 - `Consent` enables you to force the user to be prompted for consent, even if the application granted consent before. In this case, MSAL sends `prompt=consent` to the identity provider. You can use this option in some security-focused applications where the organization's governance demands that the consent dialog box appears each time the user opens the application.
 - `ForceLogin` enables you to have the application prompt the user for credentials, even if this user prompt might not be needed. This option can be useful to let the user sign in again if token acquisition fails. In this case, MSAL sends `prompt=login` to the identity provider. Organizations sometimes use this option in security-focused applications where governance demands that users sign in each time they access specific parts of an application.
-- `Create` triggers a sign-up experience for external identities by sending `prompt=create` to the identity provider. Azure Active Directory B2C (Azure AD B2C) apps shouldn't send this prompt. For more information, see [Add a self-service sign-up user flow to an app](~/external-id/self-service-sign-up-user-flow.md).
+- `Create` triggers a sign-up experience for external identities by sending `prompt=create` to the identity provider. Azure Active Directory B2C (Azure AD B2C) apps shouldn't send this prompt. For more information, see [Add a self-service sign-up user flow to an app](~/external-id/self-service-sign-up-user-flow.yml).
 - `Never` (for .NET 4.5 and Windows Runtime only) doesn't prompt the user. Instead, it tries to use the cookie stored in the hidden embedded web view.
 
   Use of this option might fail. In that case, `AcquireTokenInteractive` throws an exception to notify you that you need a UI interaction. Then, use another `Prompt` parameter.
@@ -114,7 +114,7 @@ var result = await app.AcquireTokenInteractive(scopes)
 
 #### WithExtraScopeToConsent
 
-This modifier is for advanced scenarios where you want the user to consent to several resources up front and you don't want to use incremental consent. Developers normally use incremental consent with MSAL.NET and the Microsoft identity platform. For more information, see [Have the user consent up front for several resources](scenario-desktop-production.md#have-the-user-consent-upfront-for-several-resources).
+This modifier is for advanced scenarios where you want the user to consent to several resources up front and you don't want to use incremental consent. Developers normally use incremental consent with MSAL.NET and the Microsoft identity platform.
 
 ```csharp
 var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
@@ -340,7 +340,8 @@ if not result:
 ```
 
 ---
-### Next steps
+## Next steps
 
-Move on to the next article in this scenario,
-[Call a web API from the desktop app](scenario-desktop-call-api.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+
+- Explore Microsoft identity platform [desktop  code samples](sample-v2-code.md) 

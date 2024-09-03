@@ -22,10 +22,9 @@ This article covers the manual configuration of requirements for Microsoft Entra
 
 ## Prerequisites
 
-- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version 1.1.819.0 or later.
+- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
    - To get device registration sync join to succeed, as part of the device registration configuration, don't exclude the default device attributes from your Microsoft Entra Connect Sync configuration. To learn more about default device attributes synced to Microsoft Entra ID, see [Attributes synchronized by Microsoft Entra Connect](~/identity/hybrid/connect/reference-connect-sync-attributes-synchronized.md#windows-10).
    - If the computer objects of the devices you want to be Microsoft Entra hybrid joined belong to specific organizational units (OUs), configure the correct OUs to sync in Microsoft Entra Connect. To learn more about how to sync computer objects by using Microsoft Entra Connect, see [Organizational unit–based filtering](~/identity/hybrid/connect/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering).
-- Global Administrator credentials for your Microsoft Entra tenant.
 - Enterprise administrator credentials for each of the on-premises Active Directory Domain Services forests.
 - (**For federated domains**) Windows Server with Active Directory Federation Services installed.
 - Users can register their devices with Microsoft Entra ID. More information about this setting can be found under the heading **Configure device settings**, in the article, [Configure device settings](manage-device-identities.md#configure-device-settings).
@@ -59,7 +58,7 @@ You can configure Microsoft Entra hybrid joined devices for various types of Win
 - For managed and federated domains, you must [configure a service connection point (SCP)](#configure-a-service-connection-point).
 - For federated domains, you must ensure that your [federation service is configured to issue the appropriate claims](#set-up-issuance-of-claims).
 
-After these configurations are complete, follow the guidance to [verify registration](how-to-hybrid-join-verify.md).
+After these configurations are complete, follow the guidance to [verify registration](how-to-hybrid-join-verify.yml).
 
 ### Configure a service connection point
 
@@ -91,7 +90,7 @@ The **$scp.Keywords** output shows the Microsoft Entra tenant information. Here'
 
    ```powershell
    azureADName:microsoft.com
-   azureADId:72f988bf-86f1-41af-91ab-2d7cd011db47
+   azureADId:a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1
    ```
 
 ### Set up issuance of claims
@@ -250,7 +249,7 @@ The `http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid` claim mus
 
 In the preceding claim, `<verified-domain-name>` is a placeholder. Replace it with one of your verified domain names in Microsoft Entra ID. For example, use `Value = "http://contoso.com/adfs/services/trust/"`.
 
-For more information about verified domain names, see [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
+For more information about verified domain names, see [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).  
 
 To get a list of your verified company domains, you can use the [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain) cmdlet.
 
@@ -427,6 +426,6 @@ If you experience issues completing Microsoft Entra hybrid join for domain-joine
 
 ## Related content
 
-- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.md)
+- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.yml)
 - [Plan your Microsoft Entra hybrid join implementation](hybrid-join-plan.md)
 - [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)

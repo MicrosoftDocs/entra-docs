@@ -1,6 +1,6 @@
 ---
 title: Sign in users in a sample .NET MAUI desktop application
-description: Learn how to configure a sample .NET MAUI desktop application to sign in and sign out users by using Microsoft Entra ID for customers tenant.
+description: Learn how to configure a sample .NET MAUI desktop application to sign in and sign out users by using an external tenant.
  
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,19 +12,21 @@ ms.subservice: customers
 ms.topic: how-to
 ms.date: 05/22/2023
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample .NET MAUI desktop app to sign in and sign out users with the Microsoft Entra ID for customers tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample .NET MAUI desktop app to sign in and sign out users with the external tenant
 ---
 
 # Sign in users in a sample .NET MAUI desktop application
 
-This how-to guide uses a sample .NET Multi-platform App UI (.NET MAUI) to show how to add authentication to a desktop application by using Microsoft Entra ID for customers tenant. The sample application enables users to sign in and sign out. The sample .NET MAUI desktop application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for .NET to handle authentication.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+This how-to guide uses a sample .NET Multi-platform App UI (.NET MAUI) to show how to add authentication to a desktop application by using an external tenant. The sample application enables users to sign in and sign out. The sample .NET MAUI desktop application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for .NET to handle authentication.
 
 In this article, you do the following tasks:
 
-- Register a .NET MAUI desktop application in the Microsoft Entra ID for customers tenant.
-- Create a sign-in and sign-out user flow in the Microsoft Entra ID for customers tenant.
+- Register a .NET MAUI desktop application in the external tenant.
+- Create a sign-in and sign-out user flow in the external tenant.
 - Associate your .NET MAUI desktop application with the user flow.
-- Update a sample .NET MAUI desktop application to use your own Microsoft Entra ID for customers tenant details.
+- Update a sample .NET MAUI desktop application to use your own external tenant details.
 - Run and test the sample .NET MAUI desktop application.
 
 ## Prerequisites
@@ -33,14 +35,14 @@ In this article, you do the following tasks:
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
   - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
   - [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
-- Microsoft Entra ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ## Register .NET MAUI desktop application
 
 [!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
 [!INCLUDE [active-directory-b2c-app-integration-add-platform](./includes/register-app/add-platform-redirect-url-dotnet-maui.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -64,20 +66,20 @@ git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
 
 1. In Visual Studio, open *ms-identity-ciam-dotnet-tutorial-main/1-Authentication/2-sign-in-maui/appsettings.json* file.
 1. Find the placeholder:
-    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
    1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
 ## Run and test sample .NET MAUI desktop application
 
 .NET MAUI apps are designed to run on multiple operating systems and devices. You'll need to select which target you want to test and debug your app with.
 
-Set the **Debug Target** in the Visual Studio toolbar to the device you want to debug and test with. The following steps demonstrate setting the **Debug Target** to _Windows_:
+Set the **Debug Target** in the Visual Studio toolbar to the device you want to debug and test with. The following steps demonstrate setting the **Debug Target** to *Windows*:
 
 1. Select **Debug Target** drop-down.
 1. Select **Framework** 
 1. Select **net7.0-windows...**
 
-Run the app by pressing _F5_ or select the _play button_ at the top of Visual Studio.
+Run the app by pressing *F5* or select the *play button* at the top of Visual Studio.
 
 1. You can now test the sample .NET MAUI desktop application. After you run the application, the desktop application window appears automatically:
 

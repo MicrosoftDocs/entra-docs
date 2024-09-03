@@ -17,9 +17,6 @@ ms.custom: microsoft-copilot
 
 # Respond to identity threats using risky user summarization
 
-> [!IMPORTANT]
-> The information in this article applies to the Microsoft Security Copilot Early Access Program, which is an invite-only paid preview program. Some information in this article relates to prereleased product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided in this article.
-
 Microsoft Entra ID Protection applies the capabilities of [Microsoft Copilot for Microsoft Entra](/security-copilot/microsoft-security-copilot) to summarize a user's risk level, provide insights relevant to the incident at hand, and provide recommendations for rapid mitigation. Identity risk investigation is a crucial step to defend an organization. Copilot for Microsoft Entra helps reduce the time to resolution by providing IT admins and security operations center (SOC) analysts the right context to investigate and remediate identity risk and identity-based incidents. Risky user summarization provides admins and responders quick access to the most critical information in context to aid their investigation.
 
 Respond to identity threats quickly:
@@ -59,5 +56,5 @@ Suggested help and documentation are:
 
 ## Next steps
 
-- Learn more about [risky users](/entra/id-protection/howto-identity-protection-investigate-risk#risky-users).
+- Learn more about [risky users](/entra/id-protection/howto-identity-protection-investigate-risk#risky-users-report).
 

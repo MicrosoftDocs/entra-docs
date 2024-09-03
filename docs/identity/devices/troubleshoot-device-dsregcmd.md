@@ -80,10 +80,10 @@ The state is displayed only when the device is Microsoft Entra joined or Microso
 | Device Details                                                       |
 +----------------------------------------------------------------------+
 
-                  DeviceId : e92325d0-xxxx-xxxx-xxxx-94ae875dxxxx
-                Thumbprint : D293213EF327483560EED8410CAE36BB67208179
+                  DeviceId : 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+                Thumbprint : AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
  DeviceCertificateValidity : [ 2019-01-11 21:02:50.000 UTC -- 2029-01-11 21:32:50.000 UTC ]
-            KeyContainerId : 13e68a58-xxxx-xxxx-xxxx-a20a2411xxxx
+            KeyContainerId : 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
                KeyProvider : Microsoft Software Key Storage Provider
               TpmProtected : NO
           DeviceAuthStatus : SUCCESS
@@ -107,14 +107,14 @@ The tenant details are displayed only when the device is Microsoft Entra joined 
 +----------------------------------------------------------------------+
 
                 TenantName : HybridADFS
-                  TenantId : 96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+                  TenantId : aaaabbbb-0000-cccc-1111-dddd2222eeee
                        Idp : login.windows.net
-               AuthCodeUrl : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/authorize
-            AccessTokenUrl : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/token
+               AuthCodeUrl : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/authorize
+            AccessTokenUrl : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/token
                     MdmUrl : https://enrollment.manage-beta.microsoft.com/EnrollmentServer/Discovery.svc
                  MdmTouUrl : https://portal.manage-beta.microsoft.com/TermsOfUse.aspx
           MdmComplianceUrl : https://portal.manage-beta.microsoft.com/?portalAction=Compliance
-               SettingsUrl : eyJVxxxxIjpbImh0dHBzOi8va2FpbGFuaS5vbmUubWljcm9zb2Z0LmNvbS8iLCJodHRwczovL2thaWxhbmkxLm9uZS5taWNyb3NvZnQuY29tLyxxxx==
+               SettingsUrl : eyJVx{lots of characters}xxxx==
             JoinSrvVersion : 1.0
                 JoinSrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/device/
                  JoinSrvId : urn:ms-drs:enterpriseregistration.windows.net
@@ -122,10 +122,10 @@ The tenant details are displayed only when the device is Microsoft Entra joined 
                  KeySrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/key/
                   KeySrvId : urn:ms-drs:enterpriseregistration.windows.net
         WebAuthNSrvVersion : 1.0
-            WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/
+            WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/aaaabbbb-0000-cccc-1111-dddd2222eeee/
              WebAuthNSrvId : urn:ms-drs:enterpriseregistration.windows.net
     DeviceManagementSrvVer : 1.0
-    DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/
+    DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/aaaabbbb-0000-cccc-1111-dddd2222eeee/
      DeviceManagementSrvId : urn:ms-drs:enterpriseregistration.windows.net
 +----------------------------------------------------------------------+
 ```
@@ -155,7 +155,7 @@ This section lists the statuses of various attributes for users who are currentl
 +----------------------------------------------------------------------+
 
                     NgcSet : YES
-                  NgcKeyId : {FA0DB076-A5D7-4844-82D8-50A2FB42EC7B}
+                  NgcKeyId : {aaaaaaaa-0b0b-1c1c-2d2d-333333333333}
                   CanReset : DestructiveAndNonDestructive
            WorkplaceJoined : NO
              WamDefaultSet : YES
@@ -177,8 +177,7 @@ You can ignore this section for Microsoft Entra registered devices.
 - **AzureAdPrtUpdateTime**: Set the state to the time, in Coordinated Universal Time (UTC), when the [PRT was last updated](concept-primary-refresh-token.md#how-is-a-prt-renewed).
 - **AzureAdPrtExpiryTime**: Set the state to the time, in UTC, when the PRT is going to expire if it isn't renewed.
 - **AzureAdPrtAuthority**: The Microsoft Entra authority URL
-- **EnterprisePrt**: Set the state to *YES* if the device has a PRT from on-premises 
-Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined devices, the device could have a PRT from both Microsoft Entra ID and on-premises Active Directory simultaneously. On-premises joined devices have only an Enterprise PRT.
+- **EnterprisePrt**: Set the state to *YES* if the device has a PRT from on-premises Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined devices, the device could have a PRT from both Microsoft Entra ID and on-premises Active Directory simultaneously. On-premises joined devices have only an Enterprise PRT.
 - **EnterprisePrtUpdateTime**: Set the state to the time, in UTC, when the Enterprise PRT was last updated.
 - **EnterprisePrtExpiryTime**: Set the state to the time, in UTC, when the PRT is going to expire if it isn't renewed.
 - **EnterprisePrtAuthority**: The AD FS authority URL
@@ -222,14 +221,14 @@ Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined 
 +----------------------------------------------------------------------+
 
                 AzureAdPrt : NO
-       AzureAdPrtAuthority : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+       AzureAdPrtAuthority : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee
      AcquirePrtDiagnostics : PRESENT
       Previous Prt Attempt : 2020-07-18 20:10:33.789 UTC
             Attempt Status : 0xc000006d
              User Identity : john@contoso.com
            Credential Type : Password
-            Correlation ID : 63648321-fc5c-46eb-996e-ed1f3ba7740f
-              Endpoint URI : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/token/
+            Correlation ID : 0000aaaa-11bb-cccc-dd22-eeeeee333333
+              Endpoint URI : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/token/
                HTTP Method : POST
                 HTTP Error : 0x0
                HTTP status : 400
@@ -332,7 +331,7 @@ The following example shows that diagnostics tests are passing but the registrat
                Error Phase : join
           Client ErrorCode : 0x801c03f2
           Server ErrorCode : DirectoryError
-            Server Message : The device object by the given id (e92325d0-7ac4-4714-88a1-94ae875d5245) isn't found.
+            Server Message : The device object by the given id (aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb) isn't found.
               Https Status : 400
                 Request Id : 6bff0bd9-820b-484b-ab20-2a4f7b76c58e
 

@@ -20,7 +20,7 @@ Requiring multifactor authentication (MFA) for the administrators in your tenant
 
 ## Detect current usage for Microsoft Entra Built-in administrator roles
 
-The [Microsoft Entra ID Secure Score](~/identity/monitoring-health/concept-identity-secure-score.md) provides a score for **Require MFA for administrative roles** in your tenant. This improvement action tracks the MFA usage of Global administrator, Security administrator, Exchange administrator, and SharePoint administrator. 
+The [Microsoft Entra ID Secure Score](~/identity/monitoring-health/concept-identity-secure-score.md) provides a score for **Require MFA for administrative roles** in your tenant. This improvement action tracks the MFA usage of those with [administrator roles](../role-based-access-control/permissions-reference.md). 
 
 There are different ways to check if your admins are covered by an MFA policy. 
 
@@ -53,7 +53,7 @@ If you find administrators who aren't protected by multifactor authentication, y
 After your admins are enforced for multifactor authentication and have been using it for a while, it is time to raise the bar on strong authentication and use Passwordless and phishing resistant authentication method: 
 
 - [Phone Sign-in (with Microsoft Authenticator)](concept-authentication-authenticator-app.md)
-- [FIDO2](concept-authentication-passwordless.md#fido2-security-keys)
+- [FIDO2](concept-authentication-passwordless.md)
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/)
 
 You can read more about these authentication methods and their security considerations in [Microsoft Entra authentication methods](concept-authentication-methods.md).

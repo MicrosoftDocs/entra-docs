@@ -5,7 +5,7 @@ description: Shows how an admin can add sponsors to guest users in Microsoft Ent
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/04/2024
+ms.date: 05/03/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 ---
 # Sponsors field for B2B users
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 To ensure proper governance of B2B users in their directory, organizations need to have a system in place for tracking who oversees each guest user. Currently, [Entitlement Management](/entra/id-governance/entitlement-management-overview) provides this capability for guests within specified domains, but it doesn't extend to guests outside of these domains.
 By implementing the sponsor feature, you can identify a responsible individual or group for each guest user. This allows you to track who invited the guest user and to help with accountability.
 
@@ -23,7 +25,7 @@ This article provides an overview of the sponsor feature and explains how to use
 
 ## Sponsors field on the user object
 
-The **Sponsors** field on the user object refers to the person or a group who invited the guest user to the organization. You can use this field to track who invited the guest user and to help with accountability.
+The **Sponsors** field on the user object refers to the person or group who manages and monitors the lifecycle of the user, ensuring they have access to the appropriate resources. 
 Being a sponsor doesn't grant administrative powers for the sponsor user or the group, but it can be used for approval processes in Entitlement Management. You can also use it for custom solutions, but it doesn't provide any other built-in directory powers.
 
 :::image type="content" source="media/b2b-sponsors/single-sponsor.png" alt-text="Screenshot of the sponsors' name.":::
@@ -41,11 +43,11 @@ When a sponsor leaves the organization, as part of the offboarding process the t
 The Microsoft Entra B2B collaboration sponsor feature serves as a foundation for other scenarios that aim to provide a full governance lifecycle for external partners. These scenarios aren't part of the sponsor feature but rely on it for managing guest users:
 
 - Administrators can transfer sponsorship to another user or group, if the guest user starts working on a different project.
-- When requesting new access packages, sponsors can be added as approvers to provide additional support in Entitlement Management, which can help reduce the workload on existing reviewers.
+- When requesting new access packages, sponsors can be added as approvers to provide extra support in Entitlement Management, which can help reduce the workload on existing reviewers.
 
 ## Add sponsors when inviting a new guest user 
 
-You can add up to five sponsors when inviting a new guest user. If you don’t specify a sponsor, the inviter will be added as a sponsor. To invite a guest user, you need to have the Global Administrator role or a limited administrator directory role such as Guest Inviter or User Administrator. 
+You can add up to five sponsors when inviting a new guest user. If you don’t specify a sponsor, the inviter will be added as a sponsor. To invite a guest user, you need to have at least the [Guest Inviter](/entra/identity/role-based-access-control/permissions-reference#guest-inviter) or [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) role. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -58,6 +60,8 @@ You can add up to five sponsors when inviting a new guest user. If you don’t s
 
 You can also add sponsors with the Microsoft Graph API, using invitation manager for any new guest users, by passing through the payload. If there are no sponsors in the payload, the inviter will be stamped as the sponsor. To learn more about adding guest users with the Microsoft Graph API, see [Assign sponsors](/graph/api/user-post-sponsors).
  
+   > [!NOTE]
+   > Currently, if an external user is invited through SharePoint (for example, when sharing a file with a non-existing external user), sponsors will not be added to that external user. This is a known issue. For now, you can manually add sponsors to these external users by following the steps outlined above.
 
 ## Edit the Sponsors field
 
@@ -83,8 +87,8 @@ When you invite a guest user, you became their sponsor by default. If you need t
 
 10. Once you selected sponsor users or groups, save the changes on the **Job Information** tab.
 
-## Next steps
+## Related content
 
-- [Add and invite guest users](add-users-administrator.md)
+- [Add and invite guest users](add-users-administrator.yml)
 - [Create a new access package](~/id-governance/entitlement-management-access-package-create.md)
-- [Manage user profile info](~/fundamentals/how-to-manage-user-profile-info.md)
+- [Manage user profile info](~/fundamentals/how-to-manage-user-profile-info.yml)

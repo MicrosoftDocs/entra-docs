@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Sign in users in .NET MAUI shell app using a customer tenant"
+title: "Tutorial: Sign in users in .NET MAUI shell app using an external tenant"
 description: This tutorial demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) and how to run the app on the Android platform.
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -9,10 +9,10 @@ ms.service: entra-external-id
 ms.topic: tutorial
 ms.subservice: customers
 ms.custom: devx-track-dotnet
-ms.date: 06/05/2023
+ms.date: 06/27/2024
 ---
 
-# Tutorial: Sign in users in .NET MAUI shell app using a customer tenant
+# Tutorial: Sign in users in .NET MAUI shell app using an external tenant
 
 This tutorial is the final part of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [Part 2 of this series](./tutorial-mobile-app-maui-sign-in-prepare-app.md) you added a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource. This final step demonstrates how to add sign-in and sign-out code in .NET MAUI and run the shell app on the Android platform.
 
@@ -28,7 +28,7 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Tutorial: Register and configure .NET MAUI mobile app in a customer tenant](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
+- [Tutorial: Register and configure .NET MAUI mobile app in an external tenant](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
 
 ## Add sign-in and sign-out code
 
@@ -184,8 +184,10 @@ To create `appsettings.json`, follow these steps:
 
 1. In the `appsettings.json`, find the placeholder:
 
-   1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+   1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
    1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net.md)]
 
 ## Run and test .NET MAUI mobile app
 

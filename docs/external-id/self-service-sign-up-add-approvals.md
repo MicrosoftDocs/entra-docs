@@ -1,6 +1,6 @@
 ---
 title: Add custom approvals to self-service sign-up flows
-description: Add API connectors for custom approval workflows in External Identities self-service sign-up
+description: Add API connectors for custom approval workflows in External ID self-service sign-up
  
 ms.service: entra-external-id
 ms.topic: how-to
@@ -16,6 +16,8 @@ ms.collection: M365-identity-device-management
 ---
 
 # Add a custom approval workflow to self-service sign-up
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 With [API connectors](api-connectors-overview.md), you can integrate with your own custom approval workflows with self-service sign-up so you can manage which guest user accounts are created in your tenant.
 
@@ -37,7 +39,7 @@ You need to register your approval system as an application in your Microsoft En
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Applications** > **App registrations**, and then select **New registration**.
-1. Enter a **Name** for the application, for example, _Sign-up Approvals_.
+1. Enter a **Name** for the application, for example, *Sign-up Approvals*.
 1. Select **Register**. You can leave other fields at their defaults.
 
 :::image type="content" source="media/self-service-sign-up-add-approvals/register-approvals-app.png" alt-text="Screenshot that highlights the Register button.":::
@@ -50,7 +52,7 @@ You need to register your approval system as an application in your Microsoft En
 
 9. On the **API permissions** page, select **Grant admin consent for (your tenant name)**, and then select **Yes**.
 10. Under **Manage** in the left menu, select **Certificates & secrets**, and then select **New client secret**.
-11. Enter a **Description** for the secret, for example _Approvals client secret_, and select the duration for when the client secret **Expires**. Then select **Add**.
+11. Enter a **Description** for the secret, for example *Approvals client secret*, and select the duration for when the client secret **Expires**. Then select **Add**.
 12. Copy the value of the client secret. Client secret values can be viewed only immediately after creation. Make sure to save the secret when created, before leaving the page.
 
 :::image type="content" source="media/self-service-sign-up-add-approvals/client-secret-value-copy.png" alt-text="Screenshot of copying the client secret. ":::
@@ -79,8 +81,8 @@ Now you'll add the API connectors to a self-service sign-up user flow with these
 1. Browse to **Identity** > **External identities** > **User flows**, and then select the user flow you want to enable the API connector for.
 1. Select **API connectors**, and then select the API endpoints you want to invoke at the following steps in the user flow:
 
-   - **After federating with an identity provider during sign-up**: Select your approval status API connector, for example _Check approval status_.
-   - **Before creating the user**: Select your approval request API connector, for example _Request approval_.
+   - **After federating with an identity provider during sign-up**: Select your approval status API connector, for example *Check approval status*.
+   - **Before creating the user**: Select your approval request API connector, for example *Request approval*.
 
 :::image type="content" source="media/self-service-sign-up-add-approvals/api-connectors-user-flow-api.png" alt-text="Screenshot of API connector in a user flow.":::
 
@@ -385,7 +387,7 @@ Content-type: application/json
 
 ## Next steps
 
-- [Add a self-service sign-up user flow](self-service-sign-up-user-flow.md)
+- [Add a self-service sign-up user flow](self-service-sign-up-user-flow.yml)
 - [Add an API connector](self-service-sign-up-add-api-connector.md)
 - [Secure your API connector](self-service-sign-up-secure-api-connector.md)
 - [self-service sign-up for guest users with manual approval sample](code-samples-self-service-sign-up.md#custom-approval-workflows).

@@ -6,17 +6,17 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 06/28/2023
+ms.date: 08/15/2024
 ms.author: owinfrey
 ---
 
 # Create and manage downloadable access review history report in Microsoft Entra access reviews
 
-With access reviews, you can create a downloadable review history to help your organization gain more insight. The report pulls the decisions that are taken by reviewers when a report is created. These reports can be constructed to include specific access reviews, for a specific time frame, and can be filtered to include different review types and review results.
+With access reviews, you can create a downloadable review history to help your organization gain more insight. The report pulls the decisions taken by reviewers when a report is created. These reports can be constructed to include specific access reviews, for a specific time frame, and can be filtered to include different review types and review results.
  
 ## Who can access and request review history
 
-Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed). Global Administrator and Global Reader  can see history reports for all access reviews. All other users are only allowed to see reports on access reviews that they've generated.
+Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed). Global Administrator, Identity Governance Administrator, and Global Reader can see history reports for all access reviews. All other users are only allowed to see reports on access reviews that they generate.
 
 ## How to create a review history report
 
@@ -40,7 +40,7 @@ Review history and request review history are available for any user if they're 
 
 Once a review history report is created, you can download it. All reports that are created are available for download for 30 days in CSV format.
 
-1. Select **Review History** under **Identity Governance**. All review history reports that you created will be available. 
+1. Select **Review History** under **Identity Governance**. All review history reports that you created are available. 
 1. Select the report you wish to download. 
 
 ## What is included in a review history report?

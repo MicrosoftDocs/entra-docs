@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/20/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Lookout Secure Access so that I can control who has access to Lookout Secure Access, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -149,7 +149,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. Enter a valid Name in the **Name** field and select Type as **Identity Provider**.
 
-    1. Paste the **App Federation Metadata Url** in the **Metadata Link**  textbox, which you have copied from the Microsoft Entra Admin Center.
+    1. Paste the **App Federation Metadata Url** in the **Metadata Link**  textbox, which you have copied from the Microsoft Entra admin center.
 
     1. Click **Validate**.
     

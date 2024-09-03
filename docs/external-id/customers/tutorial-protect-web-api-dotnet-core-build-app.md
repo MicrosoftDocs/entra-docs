@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Secure an ASP.NET web API registered in a customer tenant"
-description: Learn how to secure a ASP.NET web API registered in the Microsoft Entra External ID for customers tenant
+title: "Tutorial: Secure an ASP.NET web API registered in an external tenant"
+description: Learn how to secure a ASP.NET web API registered in the external tenant
 
 author: SHERMANOUKO
 manager: mwongerapk
@@ -10,14 +10,14 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/27/2023
+ms.date: 06/27/2024
 ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, I want to secure my ASP.NET Core web API registered in the Microsoft Entra ID for customers tenant.
+#Customer intent: As a dev, I want to secure my ASP.NET Core web API registered in the external tenant.
 ---
 
-# Tutorial: Secure an ASP.NET Core web API registered in a customer tenant
+# Tutorial: Secure an ASP.NET Core web API registered in an external tenant
 
-This tutorial series demonstrates how to secure a registered web API in the Microsoft Entra External ID for customers tenant. In this tutorial, you'll build an ASP.NET Core web API that publishes both delegated permissions (scopes) and application permissions (app roles).
+This tutorial series demonstrates how to secure a registered web API in the external tenant. In this tutorial, you'll build an ASP.NET Core web API that publishes both delegated permissions (scopes) and application permissions (app roles).
 
 In this tutorial;
 
@@ -31,7 +31,7 @@ In this tutorial;
 - An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, [register an API in the Microsoft Entra admin center](how-to-register-ciam-app.md?tabs=webapi&preserve-view=true) by following the registration steps. Ensure you have the following:
     - Application (client) ID of the Web API
     - Directory (tenant) ID of the Web API is registered
-    - Directory (tenant) subdomain of where the Web API is registered. For example, if your [primary domain](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details) is *contoso.onmicrosoft.com*, your Directory (tenant) subdomain is *contoso*.
+    - Directory (tenant) subdomain of where the Web API is registered. For example, if your [primary domain](how-to-create-external-tenant-portal.md#get-the-external-tenant-details) is *contoso.onmicrosoft.com*, your Directory (tenant) subdomain is *contoso*.
     - *ToDoList.Read* and *ToDoList.ReadWrite* as the [delegated permissions (scopes) exposed by the Web API](./how-to-register-ciam-app.md?tabs=webapi&preserve-view=true#expose-permissions).
     - *ToDoList.Read.All* and *ToDoList.ReadWrite.All* as the [application permissions (app roles) exposed by the Web API](how-to-register-ciam-app.md?tabs=webapi&preserve-view=true#add-app-roles).
 
@@ -83,6 +83,9 @@ Replace the following placeholders as shown:
 - Replace `Enter_the_Application_Id_Here` with your application (client) ID.
 - Replace `Enter_the_Tenant_Id_Here` with your Directory (tenant) ID.
 - Replace `Enter_the_Tenant_Subdomain_Here` with your Directory (tenant) subdomain.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-core.md)]
+
 
 ## Add app role and scope
 

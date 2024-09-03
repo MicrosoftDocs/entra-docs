@@ -1,11 +1,11 @@
 ---
 title: Microsoft Enterprise SSO plug-in for Apple devices
-description: Learn about the Microsoft Entra SSO plug-in for iOS, iPadOS, and macOS devices.
+description: Learn about the Microsoft Entra SSO plug-in for Apple devices using iOS, iPadOS, and macOS devices.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 09/05/2023
+ms.date: 03/22/2024
 ms.reviewer: brianmel
 ms.service: identity-platform
 
@@ -33,9 +33,9 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 - It is natively integrated with the MSAL, which provides a smooth native experience to the end user when the Microsoft Enterprise SSO plug-in is enabled. 
 
 >[!NOTE]
-> On August 2023, [Microsoft announced that platform SSO for macOS devices is coming to Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280).
+> On May 2024, [Microsoft announced that Platform SSO for macOS devices is available in public preview for Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/platform-sso-for-macos-now-in-public-preview/ba-p/4051574).
 >
-> Features are still under development, so the use of platform SSO features is not yet supported on Microsoft Entra. Limited customer support will be provided once these features enter public preview. 
+> For more information, see [macOS Platform Single Sign-on overview (preview)](/entra/identity/devices/macos-psso). 
 
 
 ## Requirements
@@ -61,10 +61,13 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
   - `login.chinacloudapi.cn`(*)(**)
   - `login.microsoftonline.us`(*)(**)
   - `login-us.microsoftonline.com`(*)(**)
+  - `config.edge.skype.com`(***)
 
   (*) Allowing Microsoft domains is only required on operating system versions released before 2022. On the latest operating system versions, Apple relies fully on its CDN. 
 
-  (**) You only need to allow sovereign cloud domains if you rely on those in your environment. 
+  (**) You only need to allow sovereign cloud domains if you rely on those in your environment.
+
+  (***) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
 
   The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device will send a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information.
 
@@ -365,9 +368,9 @@ For more information, see the [Deploy the Microsoft Enterprise SSO plug-in for A
 
 ## Use the SSO plug-in in your application
 
-[MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later supports the Microsoft Enterprise SSO plug-in for Apple devices. It's the recommended way to add support for the Microsoft Enterprise SSO plug-in. It ensures you get the full capabilities of the Microsoft identity platform.
+[MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later support the Microsoft Enterprise SSO plug-in for Apple devices. It's the recommended way to add support for the Microsoft Enterprise SSO plug-in. It ensures you get the full capabilities of the Microsoft identity platform.
 
-If you're building an application for frontline-worker scenarios, see [Shared device mode for iOS devices](msal-ios-shared-devices.md) for setup information.
+If you're building an application for frontline-worker scenarios, see [Shared device mode for iOS devices](/entra/msal/objc/shared-devices-ios) for setup information.
 
 ## Understand how the SSO plug-in works
 
@@ -382,7 +385,7 @@ Native applications can also implement custom operations and communicate directl
 
 [MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later supports the Microsoft Enterprise SSO plug-in for Apple devices natively for work and school accounts. 
 
-You don't need any special configuration if you followed [all recommended steps](./quickstart-v2-ios.md) and used the default [redirect URI format](./redirect-uris-ios.md). On devices that have the SSO plug-in, MSAL automatically invokes it for all interactive and silent token requests. It also invokes it for account enumeration and account removal operations. Because MSAL implements a native SSO plug-in protocol that relies on custom operations, this setup provides the smoothest native experience to the end user. 
+You don't need any special configuration if you followed [all recommended steps](./quickstart-v2-ios.md) and used the default [redirect URI format](/entra/msal/objc/redirect-uris-ios). On devices that have the SSO plug-in, MSAL automatically invokes it for all interactive and silent token requests. It also invokes it for account enumeration and account removal operations. Because MSAL implements a native SSO plug-in protocol that relies on custom operations, this setup provides the smoothest native experience to the end user. 
 
 On iOS and iPadOS devices, if the SSO plug-in isn't enabled by MDM but the Microsoft Authenticator app is present on the device, MSAL instead uses the Authenticator app for any interactive token requests. The Microsoft Enterprise SSO plug-in shares SSO with the Authenticator app.
 
@@ -404,8 +407,49 @@ Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSA
 
 The end user sees the familiar experience and doesn't have to sign in again in each application. For example, instead of displaying the native account picker, the SSO plug-in adds SSO sessions to the web-based account picker experience. 
 
-## Next steps
+## Upcoming changes to device identity key storage
+Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2025, all new device registrations will use Apple’s Secure Enclave. There will be no opt-out of this storage location.
 
-Learn about [Shared device mode for iOS devices](msal-ios-shared-devices.md).
+Applications and MDM integrations that have a dependency on accessing Workplace Join keys via Keychain will need to start using MSAL and the Enterprise SSO plug-in to ensure compatibility with the Microsoft identity platform. 
+
+### Enable Secure Enclave based storage of device identity keys
+
+If you would like to enable Secure Enclave based storage of device identity keys before it becomes mandatory, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
+
+> [!NOTE]
+> For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
+
+- **Key**: `use_most_secure_storage`
+- **Type**: `Boolean`
+- **Value**: True
+
+The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
+
+:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin centre showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
+
+### Recognize app incompatibilities with Secure Enclave based device identity
+After enabling Secure Enclave based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
+
+:::image type="content" source="./media/apple-sso-plugin/device-mgmt-reqd.png" alt-text="Screenshot of a Conditional Access error message informing the user that the device must be managed before this resource can be accessed." lightbox="./media/apple-sso-plugin/device-mgmt-reqd.png":::
+
+This error will appear in Microsoft Entra ID sign-in logs with the following details: 
+- **Sign-in error code:** `530003`
+- **Failure reason:** `Device is required to be managed to access this resource.`
+
+If you see this error message during testing, first, ensure you have successfully enabled the SSO extension as well as have installed any requisite application-specific extensions (e.g., [Microsoft Single Sign On for Chrome](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji)). If you continue to see this message, it is recommended that you contact the vendor of the application to alert them to the incompatibility with the new storage location. 
+
+### Scenarios impacted
+The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
+
+This is not an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
+
+#### Registered/Enrolled Device Conditional Access Policy Support in Chrome
+To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you will need to have the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
+
+
+## See also
+
+Learn about [Shared device mode for iOS devices](/entra/msal/objc/shared-devices-ios).
 
 Learn about [troubleshooting the Microsoft Enterprise SSO Extension](~/identity/devices/troubleshoot-mac-sso-extension-plugin.md).
+

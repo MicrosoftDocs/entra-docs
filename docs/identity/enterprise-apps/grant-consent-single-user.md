@@ -33,7 +33,7 @@ When a user grants consent for themselves, the following events occur more often
 
 To grant consent to an application on behalf of one user, you need:
 
-- A user account with Global Administrator, Application Administrator, or Cloud Application Administrator
+- A user account with a Privileged Role Administrator, Application Administrator, or Cloud Application Administrator
 
 ## Grant consent on behalf of a single user
 
@@ -102,7 +102,7 @@ if ($clientSp.AppRoles | ? { $_.AllowedMemberTypes -contains "User" }) {
     Write-Warning ("A default app role assignment cannot be created because the " `
                  + "client application exposes user-assignable app roles. You must " `
                  + "assign the user a specific app role for the app to be listed " `
-                 + "in the user's My Apps access panel.")
+                 + "in the user's My Apps portal.")
 } else {
     # The app role ID 00000000-0000-0000-0000-000000000000 is the default app role
     # indicating that the app is assigned to the user, but not for any specific 
@@ -127,7 +127,7 @@ You need to consent to the following permissions:
 
 In the following example, you grant delegated permissions defined by a resource API to a client enterprise application on behalf of a single user.
 
-In the example, the resource enterprise application is Microsoft Graph of object ID `7ea9e944-71ce-443d-811c-71e8047b557a`. The Microsoft Graph defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `Principal`, indicating that you're consenting on behalf of a single user in the tenant. The object ID of the client enterprise application is `b0d9b9e3-0ecf-4bfd-8dab-9273dd055a941`. The principalId of the user is `3fbd929d-8c56-4462-851e-0eb9a7b3a2a5`.
+In the example, the resource enterprise application is Microsoft Graph of object ID `11112222-bbbb-3333-cccc-4444dddd5555`. The Microsoft Graph defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `Principal`, indicating that you're consenting on behalf of a single user in the tenant. The object ID of the client enterprise application is `00001111-aaaa-2222-bbbb-3333cccc4444`. The principalId of the user is `aaaaaaaa-bbbb-cccc-1111-222222222222`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically are not subject to review or confirmation. They take effect immediately.
@@ -145,10 +145,10 @@ In the example, the resource enterprise application is Microsoft Graph of object
    
    Request body
    {
-      "clientId": "b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94",
+      "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
       "consentType": "Principal",
-      "resourceId": "7ea9e944-71ce-443d-811c-71e8047b557a",
-      "principalId": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5",
+      "resourceId": "11112222-bbbb-3333-cccc-4444dddd5555",
+      "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
       "scope": "User.Read.All Group.Read.All"
    }
    ```
@@ -156,7 +156,7 @@ In the example, the resource enterprise application is Microsoft Graph of object
 1. Confirm that you've granted consent to the user by running the following request.
 
    ```http
-   GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants?$filter=clientId eq 'b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94' and consentType eq 'Principal'
+   GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants?$filter=clientId eq '00001111-aaaa-2222-bbbb-3333cccc4444' and consentType eq 'Principal'
    ```
 
 1. Assign the app to the user. This assignment ensures that the user can sign in if assignment is required, and ensures that app is available through the user's My Apps portal. In the following example, `resourceId`represents the client app to which the user is being assigned. The user is assigned the default app role that is `00000000-0000-0000-0000-000000000000`.
@@ -165,8 +165,8 @@ In the example, the resource enterprise application is Microsoft Graph of object
         POST /servicePrincipals/resource-servicePrincipal-id/appRoleAssignedTo
 
         {
-        "principalId": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5",
-        "resourceId": "b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94",
+        "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+        "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
         "appRoleId": "00000000-0000-0000-0000-000000000000"
         }
     ```

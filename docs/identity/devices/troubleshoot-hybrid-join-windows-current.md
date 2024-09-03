@@ -46,20 +46,20 @@ This article assumes that you have [Microsoft Entra hybrid joined devices](hybri
     AzureAdJoined: YES
  EnterpriseJoined: NO
          DeviceId: 5820fbe9-60c8-43b0-bb11-44aee233e4e7
-       Thumbprint: B753A6679CE720451921302CA873794D94C6204A
+       Thumbprint: AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
    KeyContainerId: bae6a60b-1d2f-4d2a-a298-33385f6d05e9
       KeyProvider: Microsoft Platform Crypto Provider
      TpmProtected: YES
      KeySignTest: : MUST Run elevated to test.
               Idp: login.windows.net
-         TenantId: 72b988bf-xxxx-xxxx-xxxx-2d7cd011xxxx
+         TenantId: aaaabbbb-0000-cccc-1111-dddd2222eeee
        TenantName: Contoso
       AuthCodeUrl: https://login.microsoftonline.com/msitsupp.microsoft.com/oauth2/authorize
    AccessTokenUrl: https://login.microsoftonline.com/msitsupp.microsoft.com/oauth2/token
            MdmUrl: https://enrollment.manage-beta.microsoft.com/EnrollmentServer/Discovery.svc
         MdmTouUrl: https://portal.manage-beta.microsoft.com/TermsOfUse.aspx
   dmComplianceUrl: https://portal.manage-beta.microsoft.com/?portalAction=Compliance
-      SettingsUrl: eyJVcmlzIjpbImh0dHBzOi8va2FpbGFuaS5vbmUubWljcm9zb2Z0LmNvbS8iLCJodHRwczovL2thaWxhbmkxLm9uZS5taWNyb3NvZnQuY29tLyJdfQ==
+      SettingsUrl: eyJVc{lots of characters}JdfQ==
    JoinSrvVersion: 1.0
        JoinSrvUrl: https://enterpriseregistration.windows.net/EnrollmentServer/device/
         JoinSrvId: urn:ms-drs:enterpriseregistration.windows.net
@@ -74,7 +74,7 @@ This article assumes that you have [Microsoft Entra hybrid joined devices](hybri
 +----------------------------------------------------------------------+
 
              NgcSet: YES
-           NgcKeyId: {C7A9AEDC-780E-4FDA-B200-1AE15561A46B}
+           NgcKeyId: {aaaaaaaa-0b0b-1c1c-2d2d-333333333333}
     WorkplaceJoined: NO
       WamDefaultSet: YES
 WamDefaultAuthority: organizations
@@ -278,7 +278,7 @@ The "Registration Type" field denotes the type of join.
                Error Phase : join
           Client ErrorCode : 0x801c03f2
           Server ErrorCode : DirectoryError
-            Server Message : The device object by the given id (e92325d0-7ac4-4714-88a1-94ae875d5245) is not found.
+            Server Message : The device object by the given id (aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb) is not found.
               Https Status : 400
                 Request Id : 6bff0bd9-820b-484b-ab20-2a4f7b76c58e
 +----------------------------------------------------------------------+
@@ -374,7 +374,7 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
                 AzureAdPrt : YES
       AzureAdPrtUpdateTime : 2020-07-12 22:57:53.000 UTC
       AzureAdPrtExpiryTime : 2019-07-26 22:58:35.000 UTC
-       AzureAdPrtAuthority : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+       AzureAdPrtAuthority : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee
              EnterprisePrt : YES
    EnterprisePrtUpdateTime : 2020-07-12 22:57:54.000 UTC
    EnterprisePrtExpiryTime : 2020-07-26 22:57:54.000 UTC
@@ -398,14 +398,14 @@ The "Attempt Status" field under the "AzureAdPrt" field provides the status of t
 +----------------------------------------------------------------------+
 
                 AzureAdPrt : NO
-       AzureAdPrtAuthority : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+       AzureAdPrtAuthority : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee
      AcquirePrtDiagnostics : PRESENT
       Previous Prt Attempt : 2020-07-18 20:10:33.789 UTC
             Attempt Status : 0xc000006d
              User Identity : john@contoso.com
            Credential Type : Password
-            Correlation ID : 63648321-fc5c-46eb-996e-ed1f3ba7740f
-              Endpoint URI : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/token/
+            Correlation ID : aaaa0000-bb11-2222-33cc-444444dddddd
+              Endpoint URI : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/token/
                HTTP Method : POST
                 HTTP Error : 0x0
                HTTP status : 400
@@ -417,7 +417,9 @@ The "Attempt Status" field under the "AzureAdPrt" field provides the status of t
 
 Use Event Viewer to look for the log entries logged by the Microsoft Entra CloudAP plug-in during PRT acquisition. 
 
-1. In Event Viewer, open the Microsoft Entra Operational event logs. They're stored under **Applications and Services Log** > **Microsoft** > **Windows** > **Microsoft Entra ID**. 
+<!-- docutune:disable -->
+1. In Event Viewer, open the Microsoft Entra Operational event logs. They're stored under **Applications and Services Log** > **Microsoft** > **Windows** > **AAD**. 
+<!-- docutune:enable -->
 
    > [!NOTE]
    > The CloudAP plug-in logs error events in the operational logs, and it logs the info events in the analytics logs. The analytics and operational log events are both required to troubleshoot issues. 

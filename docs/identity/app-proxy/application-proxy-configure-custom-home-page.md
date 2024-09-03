@@ -1,6 +1,6 @@
 ---
 title: Custom home page for published apps - Microsoft Entra application proxy
-description: Covers the basics about Microsoft Entra application proxy connectors
+description: Covers the basics about Microsoft Entra private network connectors
 author: kenwith
 manager: amycolannino
 ms.service: entra-id
@@ -42,7 +42,7 @@ You can set the home page URL either through the Microsoft Entra admin center or
 ## Change the home page in the Microsoft Entra admin center
 
 To change the home page URL of your app through the Microsoft Entra admin center, follow these steps:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
 1. Browse to **Identity** > **Applications** > **App registrations**. The list of registered apps appears.
 1. Choose your app from the list. A page showing the details of the registered app appears.
@@ -104,7 +104,7 @@ You get the ObjectId of the app by searching for the app by its display name or 
    ```console
    DisplayName : SharePoint
    Homepage    : https://sharepoint-iddemo.msappproxy.net/
-   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
+   ObjectId    : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
    ```
 
    Alternatively, you could just pull the list of all apps, search the list for the app with a specific display name or home page, and copy the app's ObjectId once the app is found.
@@ -158,7 +158,7 @@ Create the home page URL, and update your app with that value. Continue using th
    ```console
    DisplayName : SharePoint
    Homepage    : https://sharepoint-iddemo.msappproxy.net/hybrid/
-   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
+   ObjectId    : bbbbbbbb-1111-2222-3333-cccccccccccc
    ```
 
 1. Restart the app to confirm that the home page appears as the first screen, as expected.

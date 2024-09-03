@@ -38,7 +38,6 @@ To make use of workload identity risk, including the new **Risky workload identi
    - Security Administrator
    - Security Operator
    - Security Reader Users assigned the Conditional Access administrator role can create policies that use risk as a condition.
-   - Global Administrator
 
 ## Workload identity risk detections
 
@@ -72,7 +71,7 @@ You can also query risky workload identities [using the Microsoft Graph API](/gr
 
 ### Export risk data 
 
-Organizations can export data by configurating [diagnostic settings in Microsoft Entra ID](howto-export-risk-data.md) to send risk data to a Log Analytics workspace, archive it to a storage account, stream it to an event hub, or send it to a SIEM solution. 
+Organizations can export data by configuring [diagnostic settings in Microsoft Entra ID](howto-export-risk-data.md) to send risk data to a Log Analytics workspace, archive it to a storage account, stream it to an event hub, or send it to a SIEM solution. 
 
 ## Enforce access controls with risk-based Conditional Access
 
@@ -93,7 +92,7 @@ Some of the key questions to answer during your investigation include:
 
 The [Microsoft Entra security operations guide for Applications](~/architecture/security-operations-applications.md) provides detailed guidance on the above investigation areas.
 
-Once you determine if the workload identity was compromised, dismiss the account’s risk, or confirm the account as compromised in the Risky workload identities report. You can also select “Disable service principal” if you want to block the account from further sign-ins.
+Once you determine if the workload identity was compromised, dismiss the account’s risk, or confirm the account as compromised in the Risky workload identities report. You can also select "Disable service principal" if you want to block the account from further sign-ins.
 
 :::image type="content" source="media/concept-workload-identity-risk/confirm-compromise-or-dismiss-risk.png" alt-text="Confirm workload identity compromise or dismiss the risk." lightbox="media/concept-workload-identity-risk/confirm-compromise-or-dismiss-risk.png":::
 

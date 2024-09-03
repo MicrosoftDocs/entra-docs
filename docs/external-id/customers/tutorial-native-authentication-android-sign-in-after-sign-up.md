@@ -1,6 +1,6 @@
 ---
-title: Sign in user after sign-up in Android
-description: Learn how to implement user sign-in after sign-up in native authentication Android app.
+title: Sign in user automatically after sign-up in Android by using native authentication
+description: Learn how to automatically sign-in a user after sign-up in an Android app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -10,33 +10,34 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 02/29/2024
+ms.date: 03/20/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to sign in user after sign up.
+#Customer intent: As a dev, devops, I want to automatically sign in user after a sign-up flow by using native authentication so that I don't start a fresh sign-in flow.
 ---
 
-# Tutorial: Sign in user after sign-up in Android 
+# Tutorial: Sign in user automatically after sign-up in an Android app
  
-This tutorial demonstrates how to sign in user after sign-up.  
+This tutorial demonstrates how to sign in user automatically after sign-up in an Android app by using native authentication. 
  
 In this tutorial, you learn how to:  
- 
-- Sign in after sign-up. 
-- Handle errors. 
+
+> [!div class="checklist"]
+>
+> - Sign in after sign-up. 
+> - Handle errors. 
  
 ## Prerequisites  
  
-- Reference to SDK doc  
-- [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md)  
-- [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md)  
+- Complete the steps [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
+- [Tutorial: Add sign-up in an Android mobile app using native authentication](tutorial-native-authentication-android-sign-up.md). The steps in this tutorial should work whether you sign up with email and password or email one-time passcode.
  
-## Sign in after sign-up  
+## Sign in after sign-up
  
-This is an advanced version of the sign in flows [earlier described](tutorial-native-authentication-android-sign-in-user-with-username-password.md), which has the added benefit of automatically signing in after successfully signing up.
+After a successful sign-up flow, you can automatically sign in your users without initiating a fresh sign-in flow. 
  
-The `SignUpResult.Complete` returns `SignInContinuationState` object. And `SignInContinuationState` provides access to `signIn()` method.  
+The `SignUpResult.Complete` returns `SignInContinuationState` object. The `SignInContinuationState` object provides access to `signIn()` method.  
  
-To sign up a user with email and password and then sign them in, you can use the following code snippet:  
+To sign up a user with email and password, then automatically sign them in, use the following code snippet:  
  
 ```kotlin 
 CoroutineScope(Dispatchers.Main).launch { 
@@ -66,10 +67,12 @@ CoroutineScope(Dispatchers.Main).launch {
     } 
 }
 ``` 
- 
-## Handle errors 
 
-The `SignInContinuationState.signIn()` method can return `SignInResult.Complete` after successfully signing in, or if there is an error. 
+To retrieve ID token claims after sign-in, use the steps in [Read ID token claims](tutorial-native-authentication-android-sign-in-user-with-username-password.md#read-id-token-claims).
+ 
+## Handle sign-in errors 
+
+The `SignInContinuationState.signIn()` method returns `SignInResult.Complete` after a successful sign-in. It can also return an error. 
  
 To handle errors in `SignInContinuationState.signIn()`, use the following code snippet:  
  
@@ -100,7 +103,7 @@ private fun displayAccount(accountState: AccountState) {
     }
 }
 ``` 
- 
+
 ## Next steps
 
-[Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)  
+- [Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)

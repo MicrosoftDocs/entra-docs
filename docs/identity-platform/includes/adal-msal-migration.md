@@ -36,9 +36,7 @@ manager: CelesteDG
    :::column span="":::
       **Mobile app**
         - [ADAL.Android to MSAL.Android](../migrate-android-adal-msal.md)
-        - [ADAL.iOS to MSAL.iOS](../migrate-objc-adal-msal.md)
-        - [Xamarin Android using brokers to MSAL.NET](../msal-net-migration-android-broker.md)
-        - [Xamarin iOS using brokers to MSAL.NET](../msal-net-migration-ios-broker.md)
+        - [ADAL.iOS to MSAL.iOS](/entra/msal/objc/migrate-objc-adal-msal)
    :::column-end:::
    :::column span="":::
       **Service / daemon app**

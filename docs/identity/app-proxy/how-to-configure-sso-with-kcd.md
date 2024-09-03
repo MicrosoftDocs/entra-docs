@@ -18,7 +18,7 @@ You can provide single sign-on for on-premises applications published through ap
 
 To learn more about single sign-on (SSO), see [What is single sign-on?](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
-You can enable single sign-on to your applications using integrated Windows authentication (IWA) by giving application proxy connectors permission in Active Directory to impersonate users. The connectors use this permission to send and receive tokens on their behalf.
+You can enable single sign-on to your applications using integrated Windows authentication (IWA) by giving private network connectors permission in Active Directory to impersonate users. The connectors use this permission to send and receive tokens on their behalf.
 
 ## How single sign-on with KCD works
 This diagram explains the flow when a user attempts to access an on-premises application that uses IWA.
@@ -40,10 +40,10 @@ Before you get started with single sign-on for IWA applications, make sure your 
 * Your apps, like SharePoint Web apps, are set to use integrated Windows authentication. For more information, see [Enable Support for Kerberos Authentication](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759186(v=ws.11)), or for SharePoint see [Plan for Kerberos authentication in SharePoint 2013](/SharePoint/security-for-sharepoint-server/kerberos-authentication-planning).
 * All your apps have [Service Principal Names](/windows/win32/ad/service-principal-names).
 * The server running the Connector and the server running the app are domain joined and part of the same domain or trusting domains. For more information on domain join, see [Join a Computer to a Domain](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807102(v=ws.11)).
-* The server running the Connector has access to read the TokenGroupsGlobalAndUniversal attribute for users. This default setting might have been impacted by security hardening the environment.
+* The server running the Connector has access to read the TokenGroupsGlobalAndUniversal attribute for users. This default setting might have been impacted by security hardening the environment. Adding the Connector servers to the "Windows Authorization Access Group" will normally do this.
 
 ### Configure Active Directory
-The Active Directory configuration varies, depending on whether your application proxy connector and the application server are in the same domain or not.
+The Active Directory configuration varies, depending on whether your private network connector and the application server are in the same domain or not.
 
 #### Connector and application server in the same domain
 1. In Active Directory, go to **Tools** > **Users and Computers**.
@@ -51,7 +51,7 @@ The Active Directory configuration varies, depending on whether your application
 3. Right-click and select **Properties** > **Delegation**.
 4. Select **Trust this computer for delegation to specified services only**. 
 5. Select **Use any authentication protocol**.
-6. Under **Services to which this account can present delegated credentials** add the value for the SPN identity of the application server. This enables the application proxy connector to impersonate users in AD against the applications defined in the list.
+6. Under **Services to which this account can present delegated credentials** add the value for the SPN identity of the application server. This enables the private network connector to impersonate users in AD against the applications defined in the list.
 
    ![Connector-SVR Properties window screenshot](./media/application-proxy-configure-single-sign-on-with-kcd/properties.jpg)
 
@@ -90,7 +90,7 @@ The Active Directory configuration varies, depending on whether your application
 
 ## SSO for non-Windows apps
 
-The Kerberos delegation flow in Microsoft Entra application proxy starts when Microsoft Entra authenticates the user in the cloud. Once the request arrives on-premises, the Microsoft Entra application proxy connector issues a Kerberos ticket on behalf of the user by interacting with the local Active Directory. This process is referred to as Kerberos Constrained Delegation (KCD). 
+The Kerberos delegation flow in Microsoft Entra application proxy starts when Microsoft Entra authenticates the user in the cloud. Once the request arrives on-premises, the Microsoft Entra private network connector issues a Kerberos ticket on behalf of the user by interacting with the local Active Directory. This process is referred to as Kerberos Constrained Delegation (KCD). 
 
 In the next phase, a request is sent to the backend application with this Kerberos ticket. 
 
@@ -105,7 +105,7 @@ To enable SPNEGO:
 2. From the command prompt, run the following commands on the connector servers that need SPNEGO.
 
     ```
-    REG ADD "HKLM\SOFTWARE\Microsoft\Microsoft AAD App Proxy Connector" /v UseSpnegoAuthentication /t REG_DWORD /d 1
+    REG ADD "HKLM\SOFTWARE\Microsoft\Microsoft Entra private network connector" /v UseSpnegoAuthentication /t REG_DWORD /d 1
     net stop WAPCSvc & net start WAPCSvc
     ```
 

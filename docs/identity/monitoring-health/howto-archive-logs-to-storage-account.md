@@ -6,16 +6,15 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/27/2024
+ms.date: 07/16/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
 # Customer intent: As an IT administrator, I want to learn how to archive Microsoft Entra logs to an Azure storage account so I can retain it for longer than the default retention period.
-
 ---
 # How to archive Microsoft Entra activity logs to an Azure storage account
 
-If you need to store Microsoft Entra activity logs for longer than the [default retention period](reference-reports-data-retention.md), you can archive your logs to a storage account. We recommend that you use a general storage account and not a Blob storage account. We recommend that you use a general storage account and not a Blob storage account. For storage pricing information, see the [Azure Storage pricing calculator](https://azure.microsoft.com/pricing/calculator/?service=storage).
+If you need to store Microsoft Entra activity logs for longer than the [default retention period](reference-reports-data-retention.md), you can archive your logs to a storage account. We recommend that you use a general storage account and not a Blob storage account. For storage pricing information, see the [Azure Storage pricing calculator](https://azure.microsoft.com/pricing/calculator/?service=storage).
 
 ## Prerequisites
 
@@ -48,5 +47,5 @@ To use this feature, you need:
 
 * [Learn about other ways to access activity logs](howto-access-activity-logs.md)
 * [Manually download activity logs](howto-download-logs.md)
-* [Integrate activity logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.md)
+* [Integrate activity logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 * [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)

@@ -5,14 +5,14 @@ description: Diagnose changes to Conditional Access policy with the Microsoft En
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 01/03/2024
+ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, martinco
 ---
-# Troubleshooting Conditional Access policy changes
+# Use audit logs to troubleshoot Conditional Access policy changes
 
 The Microsoft Entra audit log is a valuable source of information when troubleshooting why and how Conditional Access policy changes happened in your environment.
 
@@ -27,14 +27,14 @@ Find these options under **Identity** > **Monitoring & health** > **Diagnostic s
 
 ## Use the audit log
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
 1. Select the **Date** range you want to query.
 1. From the **Service** filter, select **Conditional Access** and select the **Apply** button.
 
    The audit logs display all activities, by default. Open the **Activity** filter to narrow down the activities. For a full list of the audit log activities for Conditional Access, see the [Audit log activities](~/identity/monitoring-health/reference-audit-activities.md#conditional-access).
 
-1. Select a row to view the details. The **Modified Properties** tab lists the modified JSON values for the selected audit activity.
+1. To view the details, select a row. The **Modified Properties** tab lists the modified JSON values for the selected audit activity.
 
 :::image type="content" source="media/troubleshoot-policy-changes-audit-log/old-and-new-policy-properties.png" alt-text="Audit log entry showing old and new JSON values for Conditional Access policy" lightbox="media/troubleshoot-policy-changes-audit-log/old-and-new-policy-properties.png":::
 
@@ -184,12 +184,7 @@ Updated policy example:
 
 In the previous example, the updated policy doesn't include terms of use in grant controls.
 
-### Restoring Conditional Access policies
-
-For more information about programmatically updating your Conditional Access policies using the Microsoft Graph API, see the article [Conditional Access: Programmatic access](howto-conditional-access-apis.md).
-
-## Next steps
+## Related content
 
 - [What is Microsoft Entra monitoring?](~/identity/monitoring-health/overview-monitoring-health.md)
 - [Install and use the log analytics views for Microsoft Entra ID](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)
-- [Conditional Access: Programmatic access](howto-conditional-access-apis.md)

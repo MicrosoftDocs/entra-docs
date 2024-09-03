@@ -17,10 +17,10 @@ ms.custom: pim
 
 In Privileged Identity Management (PIM) for groups in Microsoft Entra ID, role settings define membership or ownership assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 
-You need group management permissions to manage settings. For role-assignable groups, you must have a Global Administrator or Privileged Role Administrator role or be an owner of the group. For non-role assignable groups, you must have a Global Administrator, Directory Writer, Groups Administrator, Identity Governance Administrator, or User Administrator role or be an owner of the group. Role assignments for administrators should be scoped at directory level (not at the administrative unit level).
+You need group management permissions to manage settings. For role-assignable groups, you must have at least the Privileged Role Administrator role or be an owner of the group. For non-role assignable groups, you must have at least the Directory Writer, Groups Administrator, Identity Governance Administrator, or User Administrator role or be an owner of the group. Role assignments for administrators should be scoped at directory level (not at the administrative unit level).
 
 > [!NOTE]
-> Other roles with permissions to manage groups (such as Exchange administrators for non-role-assignable Microsoft 365 groups) and administrators with assignments scoped at the administrative unit level can manage groups through the Groups API/UX and override changes made in Microsoft Entra Privileged Identity Management.
+> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable Microsoft 365 groups) and administrators with assignments scoped at the administrative unit level can manage groups through the Groups API/UX and override changes made in Microsoft Entra Privileged Identity Management.
 
 Role settings are defined per role per group. All assignments for the same role (member or owner) for the same group follow the same role settings. Role settings of one group are independent from the role settings of another group. Role settings for one role (member) are independent from role settings for another role (owner).
 
@@ -86,7 +86,7 @@ To enforce this requirement, you create Conditional Access authentication contex
 
 If PIM settings have **On activation, require Microsoft Entra Conditional Access authentication context** configured, Conditional Access policies define what conditions users must meet to satisfy the access requirements.
 
-This means that security principals with permissions to manage Conditional Access policies, such as Conditional Access administrators or security administrators, can change requirements, remove them, or block eligible users from activating their group membership/ownership. Security principals that can manage Conditional Access policies should be considered highly privileged and protected accordingly.
+This means that security principals with permissions to manage Conditional Access policies, such as Conditional Access Administrators or Security Administrators, can change requirements, remove them, or block eligible users from activating their group membership/ownership. Security principals that can manage Conditional Access policies should be considered highly privileged and protected accordingly.
 
 We recommend that you create and enable a Conditional Access policy for the authentication context before the authentication context is configured in PIM settings. As a backup protection mechanism, if there are no Conditional Access policies in the tenant that target authentication context configured in PIM settings, during group membership/ownership activation, the multifactor authentication feature in Microsoft Entra ID is required as the [On activation, require multifactor authentication](groups-role-settings.md#on-activation-require-multifactor-authentication) setting would be set.
 

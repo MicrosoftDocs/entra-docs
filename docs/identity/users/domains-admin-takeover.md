@@ -20,11 +20,14 @@ This article describes two ways to take over a DNS domain name in an unmanaged d
 
 ## Decide how you want to take over an unmanaged directory
 
-During the process of admin takeover, you can prove ownership as described in [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md). The next sections explain the admin experience in more detail, but here's a summary:
+During the process of admin takeover, you can prove ownership as described in [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml). The next sections explain the admin experience in more detail, but here's a summary:
 
-* When you perform an ["internal" admin takeover](#internal-admin-takeover) of an unmanaged Azure directory, you're added as the global administrator of the unmanaged directory. No users, domains, or service plans are migrated to any other directory you administer.
+* When you perform an ["internal" admin takeover](#internal-admin-takeover) of an unmanaged Azure directory, you're added as the Global Administrator of the unmanaged directory. No users, domains, or service plans are migrated to any other directory you administer.
 
 * When you perform an ["external" admin takeover](#external-admin-takeover) of an unmanaged Azure directory, you add the DNS domain name of the unmanaged directory to your managed Azure directory. When you add the domain name, a mapping of users to resources is created in your managed Azure directory so that users can continue to access services without interruption. 
+
+> [!NOTE]
+> An ["internal" admin takeover](#internal-admin-takeover) requires you to have some level of access to the unmanaged directory. If you are unable to access the directory that you're attempting to takeover, you will need to perform an ["external" admin takeover](#external-admin-takeover).
 
 ## Internal admin takeover
 
@@ -50,7 +53,7 @@ Some products that include SharePoint and OneDrive, such as Microsoft 365, don't
 
 When the DNS TXT records are verified at your domain name registrar, you can manage the Microsoft Entra organization.
 
-When you complete the preceding steps, you're now the global administrator of the Fourth Coffee organization in Microsoft 365. To integrate the domain name with your other Azure services, you can remove it from Microsoft 365 and add it to a different managed organization in Azure.
+When you complete the preceding steps, you're now the Global Administrator of the Fourth Coffee organization in Microsoft 365. To integrate the domain name with your other Azure services, you can remove it from Microsoft 365 and add it to a different managed organization in Azure.
 
 <a name='adding-the-domain-name-to-a-managed-organization-in-entra-id'></a>
 
@@ -67,7 +70,7 @@ When you complete the preceding steps, you're now the global administrator of th
   
 5. If you have any users or groups in Microsoft 365 that reference the removed domain name, they must be renamed to the .onmicrosoft.com domain. If you force delete the domain name, all users are automatically renamed, in this example to *user\@fourthcoffeexyz.onmicrosoft.com*.
   
-6. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+6. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 7. In the search box at the top of the page, search for **Domain Names**.
 
 8. Select **+ Add custom domain names**, then add the domain name. You'll have to enter the DNS TXT records to verify ownership of the domain name. 
@@ -79,7 +82,7 @@ When you complete the preceding steps, you're now the global administrator of th
 
 ## External admin takeover
 
-If you already manage an organization with Azure services or Microsoft 365, you can't add a custom domain name if it's already verified in another Microsoft Entra organization. However, from your managed organization in Microsoft Entra ID you can take over an unmanaged organization as an external admin takeover. The general procedure follows the article [Add a custom domain to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
+If you already manage an organization with Azure services or Microsoft 365, you can't add a custom domain name if it's already verified in another Microsoft Entra organization. However, from your managed organization in Microsoft Entra ID you can take over an unmanaged organization as an external admin takeover. The general procedure follows the article [Add a custom domain to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).
 
 When you verify ownership of the domain name, Microsoft Entra ID removes the domain name from the unmanaged organization and moves it to your existing organization. External admin takeover of an unmanaged directory requires the same DNS TXT validation process as internal admin takeover. The difference is that the following are also moved over with the domain name:
 
@@ -120,7 +123,7 @@ Although RMS for individuals is designed to support Microsoft Entra authenticati
 
 You can see these cmdlets used in [PowerShell example](#powershell-example).
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 cmdlet | Usage
 ------- | -------
@@ -185,7 +188,7 @@ A successful challenge returns you to the prompt without an error.
 
 ## Next steps
 
-* [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md)
+* [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml)
 * [How to install and configure Azure PowerShell](/powershell/azure/)
 * [Azure PowerShell](/powershell/azure/)
 * [Azure Cmdlet Reference](/powershell/azure/get-started-azureps)

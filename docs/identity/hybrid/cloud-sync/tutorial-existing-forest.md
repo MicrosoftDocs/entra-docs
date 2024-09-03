@@ -27,8 +27,8 @@ In this scenario, there's an existing forest synced using Microsoft Entra Connec
 
 ### In the Microsoft Entra admin center
 
-1. Create a cloud-only Global Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Global Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
-2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
+1. Create a cloud-only Hybrid Identity Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Hybrid Identity Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
+2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your on-premises environment
 
@@ -87,7 +87,7 @@ You'll now verify that the users that you had in our on-premises directory have 
 1. Browse to [https://myapps.microsoft.com](https://myapps.microsoft.com)
 2. Sign in with a user account that was created in our new tenant.  You'll need to sign in using the following format: (user@domain.onmicrosoft.com). Use the same password that the user uses to sign in on-premises.
 
-   ![Screenshot that shows the my apps portal with a signed in users.](media/tutorial-single-forest/verify-1.png)
+   ![Screenshot that shows the my apps portal with a signed in users.](~/includes/governance/media/tutorial-single-forest/verify-1.png)
 
 You have now successfully set up a hybrid identity environment that you can use to test and familiarize yourself with what Azure has to offer.
 

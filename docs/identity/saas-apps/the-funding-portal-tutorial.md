@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and The Funding Portal so that I can control who has access to The Funding Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -130,7 +130,7 @@ To configure single sign-on on **The Funding Portal** side, you need to send the
 
 ### Create The Funding Portal test user
 
-In this section, you create a user called Britta Simon in The Funding Portal. Work with [The Funding Portal support team](mailto:info@regenteducation.com) to add the users in the The Funding Portal platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in The Funding Portal. Work with [The Funding Portal support team](mailto:info@regenteducation.com) to add the users in the Funding Portal platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
@@ -140,7 +140,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Go to The Funding Portal Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the The Funding Portal tile in the My Apps, this will redirect to The Funding Portal Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you click the Funding Portal tile in the My Apps, this will redirect to The Funding Portal Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Next steps
 

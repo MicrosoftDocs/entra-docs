@@ -1,20 +1,18 @@
 ---
 title: Configure F5 BIG-IP SSL-VPN solution in Microsoft Entra ID
-description: Tutorial to configure F5's BIG-IP based  Secure socket layer Virtual private network (SSL-VPN) solution with Microsoft Entra ID for Secure Hybrid Access (SHA) 
-
+description: Tutorial to configure F5 BIG-IP based secure socket layer virtual private network (SSL-VPN) solution with Microsoft Entra ID for secure hybrid access (SHA).
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 12/13/2022
+ms.date: 04/19/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.reviewer: v-nisba
 ms.custom: not-enterprise-apps
 
-#customer intent: As an IT admin, I want to integrate F5 BIG-IP SSL-VPN with Microsoft Entra SSO, so that I can provide improved zero trust governance, passwordless authentication, and manage identities and access from a single control plane.
+#customer intent: I'm an IT admin, and I want to integrate F5 BIG-IP SSL-VPN with Microsoft Entra SSO. I want to provide improved Zero Trust governance, passwordless authentication. My goal is to manage identities and access from a single control plane.
 ---
 
 # Tutorial: Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO
@@ -23,39 +21,39 @@ In this tutorial, learn how to integrate F5 BIG-IP based secure socket layer vir
 
 Enabling a BIG-IP SSL-VPN for Microsoft Entra single sign-on (SSO) provides many benefits, including:
 
-- Improved Zero trust governance through Microsoft Entra pre-authentication and Conditional Access.
-  - [What is Conditional Access?](~/identity/conditional-access/overview.md)
+- Zero Trust governance through Microsoft Entra preauthentication and Conditional Access.
+  - [Conditional Access](~/identity/conditional-access/overview.md)
 - [Passwordless authentication](https://www.microsoft.com/security/business/identity/passwordless) to the VPN service
-- Manage identities and access from a single control plane, the [Microsoft Entra admin center](https://entra.microsoft.com)
+- Identity and access management from a single control plane, the [Microsoft Entra admin center](https://entra.microsoft.com)
 
 To learn about more benefits, see 
 
-* [Integrate F5 BIG-IP with Microsoft Entra ID](./f5-integration.md)
-* [What is single sign-on in Microsoft Entra ID?](./what-is-single-sign-on.md)
+* [F5 BIG-IP integration with Microsoft Entra ID](./f5-integration.md)
+* [SSO in Microsoft Entra ID](./what-is-single-sign-on.md)
 
->[!NOTE]
->Classic VPNs remain network orientated, often providing little to no fine-grained access to corporate applications. We encourage a more identity-centric approach to achieve Zero Trust. Learn more: [Five steps for integrating all your apps with Microsoft Entra ID](~/fundamentals/five-steps-to-full-application-integration.md).
+   >[!NOTE]
+   >Classic VPNs remain network orientated, often providing little to no fine-grained access to corporate applications. We encourage a more identity-centric approach to achieve Zero Trust. Learn more: [Five steps for integrating all your apps with Microsoft Entra ID](~/fundamentals/five-steps-to-full-application-integration.md).
 
 ## Scenario description
 
-In this scenario, the BIG-IP APM instance of the SSL-VPN service is configured as a SAML service provider (SP) and Microsoft Entra ID is the trusted SAML IDP. SSO from Microsoft Entra ID is provided through claims-based authentication to the BIG-IP APM, a seamless VPN access experience.
+In this scenario, the BIG-IP Access Policy Manager (APM) instance of the SSL-VPN service is configured as a Security Assertion Markup Language (SAML) service provider (SP) and Microsoft Entra ID is the trusted SAML identity provider (IdP). Single sign-on (SSO) from Microsoft Entra ID is through claims-based authentication to the BIG-IP APM, a seamless virtual private network (VPN) access experience.
 
    ![Diagram of integration architecture.](media/f5-passwordless-vpn/ssl-vpn-architecture.png)
 
->[!NOTE]
->Replace example strings or values in this guide with those in your environment.
+   >[!NOTE]
+   >Replace example strings or values in this guide with those in your environment.
 
 ## Prerequisites
 
-Prior experience or knowledge of F5 BIG-IP isn't necessary, however, you'll need:
+Prior experience or knowledge of F5 BIG-IP isn't necessary, however, you need:
 
 - A Microsoft Entra subscription
-  -  If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/trial/get-started-active-directory/) or above
-- User identities [synchronized from their on-premises directory](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) to Microsoft Entra ID.
-- One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+  -  If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/trial/get-started-active-directory/)
+- User identities [synchronized from their on-premises directory](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) to Microsoft Entra ID
+- One of the following roles: Cloud Application Administrator, or Application Administrator
 - BIG-IP infrastructure with client traffic routing to and from the BIG-IP 
   - Or [deploy a BIG-IP Virtual Edition into Azure](f5-bigip-deployment-guide.md)
-- A record for the BIG-IP published VPN service in public DNS
+- A record for the BIG-IP published VPN service in a public domain name server (DNS)
   - Or a test client localhost file while testing
 - The BIG-IP provisioned with the needed SSL certificates for publishing services over HTTPS
 
@@ -68,11 +66,11 @@ To improve the tutorial experience, you can learn industry-standard terminology 
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Set up a SAML federation trust between the BIG-IP to allow the Microsoft Entra BIG-IP to hand off the pre-authentication and [Conditional Access](~/identity/conditional-access/overview.md) to Microsoft Entra ID, before it grants access to the published VPN service.
+Set up a SAML federation trust between the BIG-IP to allow the Microsoft Entra BIG-IP to hand off the preauthentication and [Conditional Access](~/identity/conditional-access/overview.md) to Microsoft Entra ID, before it grants access to the published VPN service.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
-3. In the gallery, search for *F5* and select **F5 BIG-IP APM Azure AD integration**.
+3. In the gallery, search for *F5* and select **F5 BIG-IP APM Microsoft Entra ID integration**.
 4. Enter a name for the application.
 5. Select **Add** then **Create**. 
 6. The name, as an icon, appears in the Microsoft Entra admin center and Office 365 portal. 
@@ -88,19 +86,19 @@ Set up a SAML federation trust between the BIG-IP to allow the Microsoft Entra B
 5. Replace the **Identifier URL** with your BIG-IP published service URL. For example, `https://ssl-vpn.contoso.com`.
 6. Replace the **Reply URL**, and the SAML endpoint path. For example, `https://ssl-vpn.contoso.com/saml/sp/profile/post/acs`.
 
->[!NOTE]
->In this configuration, the application operates in an IdP-initiated mode: Microsoft Entra ID issues a SAML assertion before redirecting to the BIG-IP SAML service. 
+   >[!NOTE]
+   >In this configuration, the application operates in an IdP-initiated mode: Microsoft Entra ID issues a SAML assertion before redirecting to the BIG-IP SAML service. 
 
 7. For apps that don't support IdP-initiated mode, for the BIG-IP SAML service, specify the **Sign-on URL**, for example, `https://ssl-vpn.contoso.com`.
-8. For the Logout URL, enter the BIG-IP APM Single logout (SLO) endpoint pre-pended by the host header of the service being published. For example, `https://ssl-vpn.contoso.com/saml/sp/profile/redirect/slr`
+8. For the Logout URL, enter the BIG-IP APM Single logout (SLO) endpoint prepended by the host header of the service being published. For example, `https://ssl-vpn.contoso.com/saml/sp/profile/redirect/slr`
 
->[!NOTE]
->An SLO URL ensures a user session terminates, at BIG-IP and Microsoft Entra ID, after the user signs out. BIG-IP APM has an option to terminate all sessions when calling an application URL. Learn more on the F5 article, [K12056: Overview of the Logout URI Include option](https://support.f5.com/csp/article/K12056).
+   >[!NOTE]
+   >An SLO URL ensures a user session terminates, at BIG-IP and Microsoft Entra ID, after the user signs out. BIG-IP APM has an option to terminate all sessions when calling an application URL. Learn more on the F5 article, [K12056: Overview of the Logout URI Include option](https://support.f5.com/csp/article/K12056).
 
   ![Screenshot of basic SAML configuration URLs.](media/f5-passwordless-vpn/basic-saml-configuration.png).
 
->[!NOTE]
->From TMOS v16, the SAML SLO endpoint has changed to /saml/sp/profile/redirect/slo.
+  >[!NOTE]
+  >From TMOS v16, the SAML SLO endpoint has changed to /saml/sp/profile/redirect/slo.
 
 9. Select **Save**
 10. Skip the SSO test prompt.
@@ -128,7 +126,7 @@ By default, Microsoft Entra ID issues tokens to users with granted access to a s
 
     ![Screenshot of the Add User option.](media/f5-passwordless-vpn/add-user-link.png)
 
-You can set up BIG-IP APM to publish the SSL-VPN service. Configure it with corresponding properties to complete the trust for SAML pre-authentication.
+You can set up BIG-IP APM to publish the SSL-VPN service. Configure it with corresponding properties to complete the trust for SAML preauthentication.
 
 ## BIG-IP APM configuration
 
@@ -142,12 +140,12 @@ To complete federating the VPN service with Microsoft Entra ID, create the BIG-I
     ![Screenshot of the Create option on the Local SP Services page.](media/f5-passwordless-vpn/bigip-saml-configuration.png)
 
 3. Enter a **Name** and the **Entity ID** defined in Microsoft Entra ID.
-4. Enter the Host FQDN to connect to the application.
+4. Enter the Host fully qualified domain name (FQDN) to connect to the application.
 
     ![Screenshot of Name and Entity entries.](media/f5-passwordless-vpn/create-new-saml-sp.png)
 
->[!NOTE]
->If the entity ID isn't an exact match of the hostname of the published URL, configure SP **Name** settings, or perform this action if it isn't in hostname URL format. If entity ID is `urn:ssl-vpn:contosoonline`, provide the external scheme and hostname of the application being published.
+   >[!NOTE]
+   >If the entity ID isn't an exact match of the hostname of the published URL, configure SP **Name** settings, or perform this action if it isn't in hostname URL format. If entity ID is `urn:ssl-vpn:contosoonline`, provide the external scheme and hostname of the application being published.
 
 5. Scroll down to select the new **SAML SP object**.
 6. Select **Bind/UnBind IDP Connectors**.
@@ -160,7 +158,7 @@ To complete federating the VPN service with Microsoft Entra ID, create the BIG-I
     ![Screenshot of the From Metadata option on the Edit SAML IdPs page.](media/f5-passwordless-vpn/create-new-idp-connector.png)
 
 9. Browse to the federation metadata XML file you downloaded. 
-10. For the APM object,provide an **Identity Provider Name** that represents the external SAML IdP.
+10. For the APM object, provide an **Identity Provider Name** that represents the external SAML IdP.
 11. To select the new Microsoft Entra external IdP connector, select **Add New Row**.
 
     ![Screenshot of SAML IdP Connectors option on the Edit SAML IdP page.](media/f5-passwordless-vpn/external-idp-connector.png)
@@ -212,8 +210,8 @@ A Network access list provisions the service with IP and DNS settings from the V
 
     ![Screenshot of the IPV4 Lease Pool entry in General Settings.](media/f5-passwordless-vpn/contoso-vpn-pool.png)
 
->[!NOTE]
->Use the Client Settings options to enforce restrictions for how client traffic is routed in an established VPN.
+   >[!NOTE]
+   >Use the Client Settings options to enforce restrictions for how client traffic is routed in an established VPN.
 
 8. Select **Finished**.
 9. Go to the **DNS/Hosts** tab.
@@ -222,8 +220,8 @@ A Network access list provisions the service with IP and DNS settings from the V
 
     ![Screenshot of entries for IPV4 Primary Server Name and DNS Default Domain Suffix.](media/f5-passwordless-vpn/domain-suffix.png)
 
->[!NOTE]
->See the F5 article, [Configuring Network Access Resources](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-network-access-11-5-0/2.html) for other settings.
+   >[!NOTE]
+   >See the F5 article, [Configuring Network Access Resources](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-network-access-11-5-0/2.html) for other settings.
 
 A BIG-IP connection profile is required to configure VPN client-type settings the VPN service needs to support. For example, Windows, OSX, and Android.
 
@@ -233,8 +231,6 @@ A BIG-IP connection profile is required to configure VPN client-type settings th
 4. Set the parent profile to **/Common/connectivity**, for example, Contoso_VPN_Profile.
 
     ![Screenshot of Profile Name and Parent Name entries in Create New Connectivity Profile.](media/f5-passwordless-vpn/create-connectivity-profile.png)
-
-For more information on client support, see the F5 article, [F5 Access and BIG-IP Edge Client](https://techdocs.f5.com/kb/en-us/bigip-edge-apps.html).
 
 ## Access profile configuration
 
@@ -252,7 +248,7 @@ An access policy enables the service for SAML authentication.
 7. In the new access profile, on the Per-Session Policy field, select **Edit**. 
 8. The visual policy editor opens in a new tab.
 
-    ![Screenshot of the Edit option on Access Profiles, pre-session policies.](media/f5-passwordless-vpn/per-session-policy.png)
+    ![Screenshot of the Edit option on Access Profiles, presession policies.](media/f5-passwordless-vpn/per-session-policy.png)
 
 9. Select the **+** sign.
 10. In the menu, select **Authentication** > **SAML Auth**.
@@ -265,9 +261,6 @@ An access policy enables the service for SAML authentication.
 14. For the Successful branch of SAML auth, select **+** .
 15. From the Assignment tab, select **Advanced Resource Assign**.
 16. Select **Add Item**.
-
-    ![Screenshot of the plus button on Access Policy.](media/f5-passwordless-vpn/advance-resource-assign.png)
-
 17. In the pop-up, select **New Entry**
 18. Select **Add/Delete**.
 19. In the window, select **Network Access**.
@@ -327,8 +320,8 @@ Your SSL-VPN service is published and accessible via SHA, either with its URL or
 
     ![Screenshot of the Contoso Network Portal page with network access indicator.](media/f5-passwordless-vpn/vpn-launcher.png)
 
->[!NOTE]
->Select the VPN tile to install the BIG-IP Edge client and establish a VPN connection configured for SHA. The F5 VPN application is visible as a target resource in Microsoft Entra Conditional Access. See [Conditional Access policies](~/identity/conditional-access/concept-conditional-access-policies.md) to enable users for Microsoft Entra ID [password-less authentication](https://www.microsoft.com/security/business/identity/passwordless).
+   >[!NOTE]
+   >Select the VPN tile to install the BIG-IP Edge client and establish a VPN connection configured for SHA. The F5 VPN application is visible as a target resource in Microsoft Entra Conditional Access. See [Conditional Access policies](~/identity/conditional-access/concept-conditional-access-policies.md) to enable users for Microsoft Entra ID [password-less authentication](https://www.microsoft.com/security/business/identity/passwordless).
 
 
 ## Resources

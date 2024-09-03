@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 07/08/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -16,7 +16,7 @@ ms.reviewer: arvinh
 
 Automatic provisioning refers to creating user identities and roles in the cloud applications that users need to access. In addition to creating user identities, automatic provisioning includes the maintenance and removal of user identities as status or roles change. Before you start a deployment, you can review this article to learn how Microsoft Entra provisioning works and get configuration recommendations. 
 
-The **Microsoft Entra provisioning service** provisions users to SaaS apps and other systems by connecting to a System for Cross-Domain Identity Management (SCIM) 2.0 user management API endpoint provided by the application vendor. This SCIM endpoint allows Microsoft Entra ID to programmatically create, update, and remove users. For selected applications, the provisioning service can also create, update, and remove extra identity-related objects, such as groups and roles. The channel used for provisioning between Microsoft Entra ID and the application is encrypted using HTTPS TLS 1.2 encryption.
+The **Microsoft Entra provisioning service** provisions users to SaaS apps and other systems by connecting to a System for Cross-Domain Identity Management (SCIM) 2.0 user management API endpoint provided by the application vendor or an on-premises provisioning agent. This SCIM endpoint allows Microsoft Entra ID to programmatically create, update, and remove users. For selected applications, the provisioning service can also create, update, and remove extra identity-related objects, such as groups. The channel used for provisioning between Microsoft Entra ID and the application is encrypted using HTTPS TLS 1.2 encryption.
 
 
 ![Microsoft Entra provisioning service](./media/how-provisioning-works/provisioning0.PNG)
@@ -30,7 +30,7 @@ The **Microsoft Entra provisioning service** provisions users to SaaS apps and o
 
 ## Provisioning using SCIM 2.0
 
-The Microsoft Entra provisioning service uses the [SCIM 2.0 protocol](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/provisioning-with-scim-getting-started/ba-p/880010) for automatic provisioning. The service connects to the SCIM endpoint for the application, and uses SCIM user object schema and REST APIs to automate the provisioning and deprovisioning of users and groups. A SCIM-based provisioning connector is provided for most applications in the Microsoft Entra gallery. Developers use the SCIM 2.0 user management API in Microsoft Entra ID to build endpoints for their apps that integrate with the provisioning service. For details, see [Build a SCIM endpoint and configure user provisioning](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
+The Microsoft Entra provisioning service uses the [SCIM 2.0 protocol](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/provisioning-with-scim-getting-started/ba-p/880010) for automatic provisioning. The service connects to the SCIM endpoint for the application, and uses SCIM user object schema and REST APIs to automate the provisioning and deprovisioning of users and groups. A SCIM-based provisioning connector is provided for most applications in the Microsoft Entra gallery. Developers use the SCIM 2.0 user management API in Microsoft Entra ID to build endpoints for their apps that integrate with the provisioning service. For details, see [Build a SCIM endpoint and configure user provisioning](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md). The on-premises provisioning agent also translates Microsoft Entra SCIM operations to [LDAP](./on-premises-ldap-connector-configure.md), [SQL](./tutorial-ecma-sql-connector.md), [REST or SOAP](./on-premises-web-services-connector.md), [PowerShell](./on-premises-powershell-connector.md), calls to a [custom ECMA connector](./on-premises-custom-connector.md), or [connectors and gateways built by partners](./partner-driven-integrations.md).
 
 To request an automatic Microsoft Entra provisioning connector for an app that doesn't currently have one, see [Microsoft Entra Application Request](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
@@ -181,7 +181,7 @@ Performance depends on whether your provisioning job is running an initial provi
 
 ### How to tell if users are being provisioned properly
 
-All operations run by the user provisioning service are recorded in the Microsoft Entra [Provisioning logs (preview)](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). The logs include all read and write operations made to the source and target systems, and the user data that was read or written during each operation. For information on how to read the provisioning logs in the Microsoft Entra admin center, see the [provisioning reporting guide](./check-status-user-account-provisioning.md).
+All operations run by the user provisioning service are recorded in the Microsoft Entra [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). The logs include all read and write operations made to the source and target systems, and the user data that was read or written during each operation. For information on how to read the provisioning logs in the Microsoft Entra admin center, see the [provisioning reporting guide](./check-status-user-account-provisioning.md).
 
 ## Deprovisioning
 The Microsoft Entra provisioning service keeps source and target systems in sync by deprovisioning accounts when user access is removed.
@@ -200,7 +200,7 @@ Confirm the mapping for *active* for your application. If you're using an applic
 **Configure your application to delete a user**
 
 The scenario triggers a disable or a delete: 
-* A user is soft-deleted in Microsoft Entra ID (sent to the recycle bin / AccountEnabled property set to false). Thirty days after a user is deleted in Microsoft Entra ID, they're permanently deleted from the tenant. At this point, the provisioning service sends a DELETE request to permanently delete the user in the application. At any time during the 30-day window, you can [manually delete a user permanently](~/fundamentals/users-restore.md), which sends a delete request to the application.
+* A user is soft-deleted in Microsoft Entra ID (sent to the recycle bin / AccountEnabled property set to false). Thirty days after a user is deleted in Microsoft Entra ID, they're permanently deleted from the tenant. At this point, the provisioning service sends a DELETE request to permanently delete the user in the application. At any time during the 30-day window, you can [manually delete a user permanently](~/fundamentals/users-restore.yml), which sends a delete request to the application.
 * A user is permanently deleted / removed from the recycle bin in Microsoft Entra ID.
 * A user is unassigned from an app.
 * A user goes from in scope to out of scope (doesn't pass a scoping filter anymore).

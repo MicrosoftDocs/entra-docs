@@ -91,7 +91,6 @@ Find the latest version and release notes:
 * [`microsoft-authentication-library-for-java`](https://github.com/AzureAD/microsoft-authentication-library-for-java/releases)
 * [`microsoft-authentication-library-for-objc`](https://github.com/AzureAD/microsoft-authentication-library-for-objc/releases)
 * [`microsoft-authentication-library-for-android`](https://github.com/AzureAD/microsoft-authentication-library-for-android/releases)
-* [`microsoft-authentication-library-for-js`](https://github.com/AzureAD/microsoft-authentication-library-for-js/releases)
 * [`microsoft-identity-web`](https://github.com/AzureAD/microsoft-identity-web/releases)
 
 ## Resilient patterns for token handling
@@ -199,7 +198,7 @@ See, [What is a Primary Refresh Token?](~/identity/devices/concept-primary-refre
 
 MSAL supports broker authentication. Learn more:
 
-* [SSO through Authentication broker on iOS](~/identity-platform/single-sign-on-macos-ios.md#sso-through-authentication-broker-on-ios)
+* [SSO through Authentication broker on iOS](/entra/msal/objc/single-sign-on-macos-ios#sso-through-authentication-broker-on-ios)
 * [Enable cross-app SSO on Android using MSAL](~/identity-platform/msal-android-single-sign-on.md)
 
 ## Continuous Access Evaluation

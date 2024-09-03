@@ -136,6 +136,11 @@ You may choose to renew the token signing certificates manually. For example, th
 
 * Token signing certificates are not self-signed certificates. The most common reason for this is that your organization manages AD FS certificates enrolled from an organizational certificate authority.
 * Network security does not allow the federation metadata to be publicly available.
+* You are migrating the federated domain from an existing federation service to a new federation service.
+  
+> [!IMPORTANT]
+> If you are migrating an existing federated domain to a new federation service, it is recommended to follow [Emergency Rotation of the AD FS certificates](how-to-connect-emergency-ad-fs-certificate-rotation.md)
+
 
 In these scenarios, every time you update the token signing certificates, you must also update your Microsoft 365 domain by using the PowerShell command, Update-MsolFederatedDomain.
 

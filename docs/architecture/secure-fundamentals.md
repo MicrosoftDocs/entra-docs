@@ -157,7 +157,7 @@ Microsoft Entra ID also provides information on the actions that are being perfo
 
 **Access certification**. Access certification is the process to prove that a user is entitled to have access to a resource at a point in time. Microsoft Entra access reviews continually review the memberships of groups or applications and provide insight to determine whether access is required or should be removed. This enables organizations to effectively manage group memberships, access to enterprise applications, and role assignments to make sure only the right people have continued access. For more information, see [What are Microsoft Entra access reviews?](~/id-governance/access-reviews-overview.md)
 
-**Privileged access**. [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) (PIM) provides time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions to Azure resources. It's used to protect privileged accounts by lowering the exposure time of privileges and increasing visibility into their use through reports and alerts.
+**Privileged access**. [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) provides time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions to Azure resources. It's used to protect privileged accounts by lowering the exposure time of privileges and increasing visibility into their use through reports and alerts.
 
 ### Self-service management
 

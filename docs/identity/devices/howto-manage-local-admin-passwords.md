@@ -12,7 +12,6 @@ author: sandeo-MSFT
 ms.reviewer: joflore
 ms.custom: references_regions
 ---
-
 # Windows Local Administrator Password Solution in Microsoft Entra ID
 
 Every Windows device comes with a built-in local administrator account that you must secure and protect to mitigate any Pass-the-Hash (PtH) and lateral traversal attacks. Many customers have been using our standalone, on-premises [Local Administrator Password Solution (LAPS)](https://www.microsoft.com/download/details.aspx?id=46899) product for local administrator password management of their domain joined Windows machines. With Microsoft Entra support for Windows LAPS, we're providing a consistent experience for both Microsoft Entra joined and Microsoft Entra hybrid joined devices.
@@ -69,9 +68,9 @@ LAPS is available to all customers with Microsoft Entra ID Free or higher licens
 
 ### Required roles or permission
 
-Other than the built-in Microsoft Entra roles of Cloud Device Administrator, Intune Administrator, and Global Administrator that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.md) or administrative units to authorize local administrator password recovery. For example,
+Other than the built-in Microsoft Entra roles like [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) and [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.yml) or administrative units to authorize local administrator password recovery. For example:
 
-- Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can create a custom role and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), [Microsoft Graph API](../role-based-access-control/custom-create.md#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../role-based-access-control/custom-create.md#create-a-role-using-powershell). Once you create a custom role, you can assign it to users.
+- Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can create a custom role and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), [Microsoft Graph API](../role-based-access-control/custom-create.yml#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../role-based-access-control/custom-create.yml#create-a-role-using-powershell). Once you create a custom role, you can assign it to users.
 
 - You can also create a Microsoft Entra ID [administrative unit](../role-based-access-control/administrative-units.md), add devices, and assign the Cloud Device Administrator role scoped to the administrative unit to authorize local administrator password recovery.
 
@@ -99,10 +98,8 @@ The following built-in roles are granted these actions by default:
 
 |Built-in role|microsoft.directory/deviceLocalCredentials/standard/read and microsoft.directory/deviceLocalCredentials/password/read|microsoft.directory/deviceLocalCredentials/standard/read|
 |---|---|---|
-|[Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator)|Yes|Yes|
 |[Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator)|Yes|Yes|
 |[Intune Service Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)|Yes|Yes|
-|[Global Reader](../role-based-access-control/permissions-reference.md#global-reader)|No|Yes|
 |[Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator)|No|Yes|
 |[Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)|No|Yes|
 |[Security Reader](../role-based-access-control/permissions-reference.md#security-reader)|No|Yes|
@@ -121,7 +118,7 @@ To view audit events, you can browse to **Identity** > **Devices** > **Overview*
 
 ## Conditional Access policies for local administrator password recovery
 
-Conditional Access policies can be scoped to the built-in roles like Cloud Device Administrator, Intune Administrator, and Global Administrator to protect access to recover local administrator passwords. You can find an example of a policy that requires multifactor authentication in the article, [Common Conditional Access policy: Require MFA for administrators](../conditional-access/howto-conditional-access-policy-admin-mfa.md).
+Conditional Access policies can be scoped to the built-in roles to protect access to recover local administrator passwords. You can find an example of a policy that requires multifactor authentication in the article, [Common Conditional Access policy: Require MFA for administrators](../conditional-access/howto-conditional-access-policy-admin-mfa.md).
 
 > [!NOTE]
 > Other role types including administrative unit-scoped roles and custom roles aren't supported
@@ -150,11 +147,11 @@ When a device is deleted in Microsoft Entra ID, the LAPS credential that was tie
 
 ### What roles are needed to recover LAPS passwords?
 
-The following built-in roles Microsoft Entra roles have permission to recover LAPS passwords: Global Administrator, Cloud Device Administrator, and Intune Administrator.
+The following built-in roles Microsoft Entra roles have permission to recover LAPS passwords: Cloud Device Administrator and Intune Administrator.
 
 ### What roles are needed to read LAPS metadata?
 
-The following built-in roles are supported to view metadata about LAPS including the device name, last password rotation, and next password rotation: Global Administrator, Cloud Device Administrator, Intune Administrator, Helpdesk Administrator, Security Reader, Security Administrator, and Global Reader.
+The following built-in roles are supported to view metadata about LAPS including the device name, last password rotation, and next password rotation: Cloud Device Administrator, Intune Administrator, Helpdesk Administrator, Security Reader and Security Administrator.
 
 ### Are custom roles supported?
 

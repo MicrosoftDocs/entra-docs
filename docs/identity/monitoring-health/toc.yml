@@ -69,6 +69,8 @@ items:
   - name: Recommendations
     expanded: false
     items:
+      - name: Enable insider risk Conditional Access condition
+        href: recommendation-insider-risk-condition.md
       - name: Migrate ADAL to MSAL
         href: recommendation-migrate-from-adal-to-msal.md
       - name: Migrate apps from AD FS to Microsoft Entra ID
@@ -131,7 +133,7 @@ items:
     - name: Configure a Log Analytics workspace
       href: tutorial-configure-log-analytics-workspace.md
     - name: Integrate activity logs with Azure Monitor logs
-      href: howto-integrate-activity-logs-with-azure-monitor-logs.md  
+      href: howto-integrate-activity-logs-with-azure-monitor-logs.yml  
     - name: Analyze activity logs in Azure Monitor logs
       href: howto-analyze-activity-logs-log-analytics.md
 

@@ -1,6 +1,6 @@
 ---
-title: Add sign in and sign out in native Android app
-description: Learn how to add sign in and sign out with email one-time passcode in Android app.
+title: Add sign-in in Android app by using native authentication
+description: Learn how to add sign-in and sign-out with email one-time passcode or username and password in Android app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -10,42 +10,49 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 02/23/2024
+ms.date: 05/30/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn about add sign in and sign out with email one-time passcode.
+#Customer intent: As a dev, devops, I want to add sign-in and sign-out with email one-time passcode or username (email) and password in an Android mobile app by using native authentication
 ---
 
-# Tutorial: Add sign in and sign out with email one-time passcode in Android app
+# Tutorial: Add sign-in in Android app by using native authentication
 
-This tutorial demonstrates how to sign in and sign out a user using email one-time passcode in your native authentication Android app. 
+This tutorial demonstrates how to sign-in and sign-out a user with email one-time passcode or username and password in your Android mobile app by using native authentication. 
 
 In this tutorial, you learn how to: 
 
-- Sign in a user. 
-- Sign out a user. 
+> [!div class="checklist"]
+> 
+> - Sign in a user using email one-time passcode or username (email) and password.
+> - Sign out a user.
+> - Handle sign-in error
 
 ## Prerequisites
 
-- [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-android-sign-up.md) 
-
+- Complete the steps in [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-android-sign-up.md). This tutorial shows you how to prepare your Android project or app for native authentication. 
 
 ## Sign in a user
 
-To sign in a user using the **Email one-time passcode** flow, capture the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in. 
+To sign in a user using the one-time passcode, collect the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in. 
 
-To sign in user using **Email one-time-passcode** you need to: 
+To sign in a user using username (email) and password, collect the email and password from the user. If the username and password are valid, the app signs in the user.
 
-1. Create your user interface that includes: 
+To sign in a user, you need to: 
 
-   - A UI to submit an Email.
-   - A UI to submit one-time passcode.
+1. Create a user interface (UI) to:
 
-1. To sign in the user, we're going to use the library's `signIn(username)` method, the function will return a result that you can assign to the `actionResult` field. The `actionResult` represents the result of the previously performed action and can take multiple states (forms). Add a button to the application that calls the following code snippet when selected: 
+    - Collect an email from the user. Add validation to your inputs to make sure the user enters a valid emails address.
+    - Collect a password if you sign in with username (email) and password.
+    - Collect an email one-time passcode from the user if you sign in with email one-time passcode.
+    - Resend one-time passcode (recommended) if you sign in with email one-time passcode.
+
+1. In your UI, add a button, whose select event starts a sign-in as shown in the following code snippet: 
 
    ```kotlin
     CoroutineScope(Dispatchers.Main).launch {
         val actionResult = authClient.signIn(
             username = emailAddress
+            //password = password, Pass 'password' param if you sign in with username (email) and password
         )
         if (actionResult is SignInResult.CodeRequired) {
             val nextState = actionResult.nextState
@@ -65,23 +72,48 @@ To sign in user using **Email one-time-passcode** you need to:
     }
    ```
 
-    > [!NOTE]
-    > You should add user inputs to your app to collect user email and one time passcode. 
+    If the user isn't required to submit a passcode, such as where a user signs in with email and password, use the following code snippet:
 
-   In the library's `signIn(username)` method, we pass in the email address that user supplied us in the email submit form. In most common scenario, the `actionResult` is of type `SignInResult.CodeRequired`, which indicates that the API expects a code to be sent, in this case to verify the email address. The `SignInResult.CodeRequired` contains a new state reference, which we can retrieve through `actionResult.nextState`. This new state is of type `SignInCodeRequiredState`, which gives us access to two new methods: 
+    ```kotlin
+        CoroutineScope(Dispatchers.Main).launch {
+            val actionResult = authClient.signIn(
+                username = emailAddress,
+                password = password
+            )
+            if (actionResult is SignInResult.Complete) -> {
+                // Handle sign in success
+                val accountState = actionResult.resultValue
+                val accessTokenResult = accountState.getAccessToken()
+                if (accessTokenResult is GetAccessTokenResult.Complete) {
+                        val accessToken = accessTokenResult.resultValue.accessToken
+                        val idToken = accountState.getIdToken()
+                    }
+            }
+        }
+    ```
+    
 
-   - `submitCode()` is used to submit the code that user supplies in the form to submit one-time passcode. 
-   - `resendCode()` is used to resend the one-time passcode if the user doesn't receive the code. 
+    - To start the sign-in flow, use the SDK's `signIn(username)` or `signIn(username, password)` method. 
+    - The method's parameter, `username` is then email address you collect from the user.
+    - If the sign-in method is username (email) and password, the method's parameter, `password` is then password you collect from the user.
+    - In most common scenario, the `signIn(username)` or `signIn(username, password)`returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address. 
+    - The `SignInResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
+    - The new state gives us access to two new methods: 
+        - `submitCode()` submits the email one-time passcode that the app collects from the user. 
+        - `resendCode()` resends the email one-time passcode if the user doesn't receive the code. 
 
-### Handle errors during sign in 
+### Handle sign-in errors
 
 During sign-in, not all actions succeed. For instance, the user might attempt to sign in with an email address that doesn't exist or submit an invalid code. 
 
-1. To handle errors in library's `signIn(username)` method, use the following code snippet: 
+#### Handle sign-in start errors
+
+To handle errors in the `signIn(username)` or `signIn(username, password)` method, use the following code snippet: 
 
    ```Kotlin
    val actionResult = authClient.sign(
        username = emailAddress
+       //password = password, Pass 'password' param if you sign in with username (email) and password
    )
    if (actionResult is SignInResult.CodeRequired) {
        // Next step: submit code
@@ -91,6 +123,12 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
             actionResult.isUserNotFound() -> {
                 // Handle "user not found" error
             }
+            actionResult.isAuthNotSupported() -> {
+            // Handle "authentication type not support" error
+            }
+            actionResult.isInvalidCredentials() -> {
+                // Handle specific errors
+            }
             else -> {
                 // Handle other errors
             }
@@ -98,29 +136,39 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-    `SignInError` indicates an unsuccessful action result returned by `signIn()` and won't include a reference to the new state, while the utility method `isUserNotFound()` checks for the specific error type of `SignInError`: the user used an email address that doesn't exist. 
+- `SignInError` indicates an unsuccessful action result returned by `signIn()`, so the action result doesn't include a reference to the new state.
+- If `actionResult is SignUpError`, the Android SDK provides utility methods to enable you to analyze the specific errors further:
+    - The method `isUserNotFound()` checks whether the user signs in with a username (email address) that doesn't exist.
+    - The method `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
+    - The method `isAuthNotSupported()` checks whether the app sends a challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* and *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
+    - For username (email) and password sign-in, the method `isInvalidCredentials()` checks whether the combination of username and password is incorrect.
 
-2. To handle errors in `submitCode()`, use the following code snippet: 
+#### Handle submit code errors
 
-    ```kotlin
-   val submitCodeActionResult = nextState.submitCode(
-       code = code
-   )
-   if (submitCodeActionResult is SignInResult.Complete) {
-       // Sign in flow complete, handle success state.
-   } else if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) {
-       // Handle "invalid code" error
-   }
-   ```
+To handle errors in `submitCode()` method, use the following code snippet: 
 
-    The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and won't include a reference to the new state, while the utility method `isInvalidCode()` checks for the specific error type of `SubmitCodeError`. In this case, the previous state reference must be used to reperform the action. To retrieve a new one-time passcode, use the following code snippet: 
+```Kotlin
+val submitCodeActionResult = nextState.submitCode(
+    code = code
+)
+if (submitCodeActionResult is SignInResult.Complete) {
+    // Sign in flow complete, handle success state.
+} else if (submitCodeActionResult is SubmitCodeError && submitCodeActionResult.isInvalidCode()) {
+    // Handle "invalid code" error
+}
+```
+
+- The `SubmitCodeError` error indicates an unsuccessful action result returned by `submitCode()` and so the action result doesn't include a reference to the new state.
+- The `isInvalidCode()` checks for the specific error. In this case, the previous state reference must be used to reperform the action. 
+
+To retrieve the new email one-time passcode, use the following code snippet: 
 
    ```kotlin
    val submitCodeActionResult = nextState.submitCode(
        code = code
    )
    if (submitCodeActionResult is SignInError && submitCodeActionResult.isInvalidCode) {
-       // Inform the user that the submitted code was incorrect or invalid and ask for a new code to be supplied
+       // Inform the user that the submitted code was incorrect or invalid, then ask them to input a new email one-time passcode
        val newCode = retrieveNewCode()
        nextState.submitCode(
            code = newCode
@@ -128,17 +176,19 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
    }
    ```
 
-You've completed all the necessary steps to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email ID, receive a code on the email and use that to successfully sign in user. 
+You've completed all the necessary steps to successfully sign in a user on your app. Build and run your application. If all good, you should be able to provide an email, receive a code on the email, and use that to successfully sign in user. 
+
+## Read ID token claims
+
+[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims-android-kotlin.md)]
 
 ## Sign out a user 
 
-To sign out a user using the **Email one-time passcode** flow, you need to have a `Sign out` button, which a user can select to remove the currently stored account from the cache. The user will sign out only from the local app.
+To sign out a user, you need to remove the account currently stored in the cache. 
 
-To sign out user using **Email one-time-passcode** you need to: 
+1. Create your custom user interface (UI) that includes: 
 
-1. Create your custom user interface that includes: 
-
-   - A `Sign out` button that user select to send logout request. 
+   - A sign-out button that user select to send a sign-out request. 
 
 1. To sign out a user, use the following code: 
 
@@ -156,7 +206,7 @@ To sign out user using **Email one-time-passcode** you need to:
     }
    ```
 
-### Handle errors during sign out 
+### Handle sign-out errors 
 
 Sign out should be error-free. If any errors occur, inspect the error result using the following code snippet: 
 
@@ -169,10 +219,14 @@ if (actionResult is SignOutResult.Complete) {
 }
 ```
 
-Don't forget to add the import statements, Android Studio does that for you automatically (on Mac select Alt + Enter on each error detected by the code editor). 
+Make sure you include the import statements. Android Studio should include the import statements for you automatically. 
 
 You have completed all the necessary steps to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
-## Next steps
+[!INCLUDE [Custom claims provider](../customers/includes/native-auth/support-custom-claims-provider.md)]
 
-[Tutorial: Sign up user with username and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md). 
+## Related content
+
+- [Tutorial: Sign up user with username and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md). 
+- [Configure a custom claims provider](/entra/identity-platform/custom-extension-tokenissuancestart-configuration?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
+- [Add user attributes as token claims](how-to-add-attributes-to-token.md).

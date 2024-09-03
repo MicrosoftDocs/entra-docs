@@ -20,17 +20,17 @@ This guide shows how to run an Android sample application that demonstrates sign
   
 In this article, you learn how to: 
  
-- Register application in the Microsoft Entra External ID for customers tenant.  
+- Register application in the external tenant.  
 - Enable public client and native authentication flows.  
-- Create user flow in the Microsoft Entra External ID for customers tenant.  
+- Create user flow in the external tenant.  
 - Associate your application with the user flow.  
-- Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
+- Update the Android configuration code sample file to use your own Microsoft Entra External ID for external tenant details.  
 - Run and test the sample native Android mobile application.  
  
 ## Prerequisites  
 
 - <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
-- Microsoft Entra External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
  
 ## Register an application
  
@@ -40,9 +40,9 @@ In this article, you learn how to:
 
 [!INCLUDE [Enable public client and native authentication](../customers/includes/native-auth/enable-native-authentication.md)]
  
-## Grant API permissions
+## Grant admin consent
  
-[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
+[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Create a user flow
  
@@ -69,7 +69,7 @@ In this article, you learn how to:
 3. Find the placeholder: 
  
    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier. 
-   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
+   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
    
 You've now configured the app and it's ready to run. 
  

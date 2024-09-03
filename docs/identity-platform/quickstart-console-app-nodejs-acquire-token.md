@@ -34,7 +34,7 @@ Follow the steps below to get started.
 
 To register your application and add the app's registration information to your solution manually, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for your application, for example `msal-node-cli`. Users of your app might see this name, and you can change it later.
@@ -73,15 +73,15 @@ To register your application and add the app's registration information to your 
 
 #### Step 4: Admin consent
 
-If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires **admin consent**: an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) must give consent to your application. Select one of the options below depending on your role:
+If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires **admin consent**: Someone assigned at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role must give consent to your application. Select one of the options below depending on your role:
 
 ##### Administrators
 
-If you're assigned the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) roles, go to **API Permissions** page in the Azure portal's Application Registration and select **Grant admin consent for {Tenant Name}** (where {Tenant Name} is the name of your directory).
+If you're assigned at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role, go to **API Permissions** page in the Azure portal's Application Registration and select **Grant admin consent for {Tenant Name}** (where {Tenant Name} is the name of your directory).
 
 ##### Standard users
 
-If you're a standard user of your tenant, then you need to ask a Global Administrator to grant **admin consent** for your application. To do this, give the following URL to your administrator:
+If you're a standard user of your tenant, then you need to ask a Cloud Application Administrator to grant **admin consent** for your application. To do this, give the following URL to your administrator:
 
 ```url
 https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here
@@ -113,7 +113,7 @@ Below, some of the important aspects of the sample application are discussed.
 
 ### MSAL Node
 
-[MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by application permissions (using the application's own identity) instead of delegated permissions. The authentication flow used in this case is known as [OAuth 2.0 client credentials flow](v2-oauth2-client-creds-grant-flow.md). For more information on how to use MSAL Node with daemon apps, see [Scenario: Daemon application](scenario-daemon-overview.md).
+[MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by application permissions (using the application's own identity) instead of delegated permissions. The authentication flow used in this case is known as [OAuth 2.0 client credentials flow](v2-oauth2-client-creds-grant-flow.md). For more information on how to use MSAL Node with daemon apps, see [Scenario: Daemon application](scenario-daemon-app-registration.md).
 
  You can install MSAL Node by running the following npm command.
 

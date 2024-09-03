@@ -19,7 +19,7 @@ ms.custom: enterprise-apps
 
 # Problems signing in to a Microsoft application
 
-Microsoft Applications (like Exchange, SharePoint, Yammer, etc.) are assigned and managed a bit differently than third-party SaaS applications or other applications you integrate with Microsoft Entra ID for single sign-on.
+Microsoft Applications (like Exchange, SharePoint, Yammer, and so on) are assigned and managed a bit differently than third-party SaaS applications or other applications you integrate with Microsoft Entra ID for single sign-on.
 
 There are three main ways that a user can get access to a Microsoft-published application.
 
@@ -27,7 +27,7 @@ There are three main ways that a user can get access to a Microsoft-published ap
 
 - For applications that Microsoft or a Third Party publishes freely for anyone to use, users may be granted access through **user consent**. This means that they sign in to the application with their Microsoft Entra work or school account and allow it to have access to some limited set of data on their account.
 
-- For applications that Microsoft or a third-party publishes freely for anyone to use, users may also be granted access through **administrator consent**. This means that an administrator has determined the application may be used by everyone in the organization, so they sign in to the application with a Global Administrator account and grant access to everyone in the organization.
+- For applications that Microsoft or a third-party publishes freely for anyone to use, users may also be granted access through **administrator consent**. This means that an administrator has determined the application may be used by everyone in the organization, so they sign in to the application with a Privileged Role Administrator account and grant access to everyone in the organization.
 
 To troubleshoot your issue, start with the [General Problem Areas with Application Access to consider](#general-problem-areas-with-application-access-to-consider) and then read the Walkthrough: Steps to troubleshoot Microsoft Application access to get into the details.
 
@@ -83,7 +83,7 @@ Following are some common issues folks run into when their users can't sign in t
 
   - If the application is requesting **user-level permissions** (for example “Access this user’s mailbox”), make sure that the user has signed in to the application and has performed a **user-level consent operation** to let the application access their data.
 
-  - If the application is requesting **administrator-level permissions** (for example “Access all user’s mailboxes”), make sure that a Global Administrator has performed an **administrator-level consent operation on behalf of all users** in the organization.
+  - If the application is requesting **administrator-level permissions** (for example “Access all user’s mailboxes”), make sure that a Privileged Role Administrator has performed an **administrator-level consent operation on behalf of all users** in the organization.
 
 ## Problems with the user’s account
 
@@ -142,7 +142,7 @@ To reset a user’s password, follow these steps:
 1. Select the **Reset password** button at the top of the user pane.
 1. Select the **Reset password** button on the **Reset password** pane that appears.
 1. Copy the **temporary password** or **enter a new password** for the user.
-1. Communicate this new password to the user, they be required to change this password during their next sign-in to Microsoft Entra ID.
+1. Communicate this new password to the user. They might be required to change this password during their next sign-in to Microsoft Entra ID.
 
 ### Enable self-service password reset
 
@@ -381,13 +381,13 @@ Application access can be blocked because the proper permissions consent operati
 
 ### Perform administrator-level consent for a single-tenant application
 
-- For **single-tenant applications** that request permissions (like those you're developing or own in your organization), you can perform an **administrative-level consent** operation on behalf of all users by signing in as a Global Administrator and clicking on the **Grant permissions** button at the top of the **Application Registry -&gt; All Applications -&gt; Select an App -&gt; Required Permissions** pane.
+- For **single-tenant applications** that request permissions (like those you're developing or own in your organization), you can perform an **administrative-level consent** operation on behalf of all users by signing in as a Privileged Role Administrator and clicking on the **Grant permissions** button at the top of the **Application Registry -&gt; All Applications -&gt; Select an App -&gt; Required Permissions** pane.
 
 - For **any application developed using the V1 or V2 application model**, you can enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#administrator-consent).
 
 ### Perform administrator-level consent for a multitenant application
 
-- For **multitenant applications** that request permissions (like an application a third party, or Microsoft, develops), you can perform an **administrative-level consent** operation. Sign in as a Global Administrator and clicking on the **Grant permissions** button under the **Enterprise Applications -&gt; All Applications -&gt; Select an App -&gt; Permissions** pane (available soon).
+- For **multitenant applications** that request permissions (like an application a third party, or Microsoft, develops), you can perform an **administrative-level consent** operation. Sign in as a Privileged Role Administrator and select the **Grant permissions** button under the **Enterprise Applications -&gt; All Applications -&gt; Select an App -&gt; Permissions** pane (available soon).
 
 - You can also enforce this administrator-level consent to occur by following the instructions under the **Request the permissions from a directory admin** section of [Using the admin consent endpoint](~/identity-platform/permissions-consent-overview.md#administrator-consent).
 

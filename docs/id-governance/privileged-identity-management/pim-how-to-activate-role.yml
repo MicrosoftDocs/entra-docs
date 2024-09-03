@@ -1,0 +1,275 @@
+### YamlMime:HowTo
+---
+metadata:
+  title: Activate Microsoft Entra roles in PIM
+  description: Learn how to activate Microsoft Entra roles in Privileged Identity Management (PIM).
+  author: barclayn
+  ms.author: barclayn
+  manager: amycolannino
+  ms.reviewer: ilyal
+  ms.date: 02/20/2024
+  ms.service: entra-id-governance
+  ms.subservice: privileged-identity-management
+  ms.topic: how-to
+  ms.custom:
+    - ge-structured-content-pilot
+
+title: |
+  Activate a Microsoft Entra role in PIM
+introduction: |
+  Microsoft Entra Privileged Identity Management (PIM) simplifies how enterprises manage privileged access to resources in Microsoft Entra ID and other Microsoft online services like Microsoft 365 or Microsoft Intune.  
+
+  If you have been made *eligible* for an administrative role, then you must *activate* the role assignment when you need to perform privileged actions. For example, if you occasionally manage Microsoft 365 features, your organization's Privileged Role Administrators might not make you a permanent Global Administrator, since that role impacts other services, too. Instead, they would make you eligible for Microsoft Entra roles such as Exchange Online Administrator. You can request to activate that role when you need its privileges, and then have administrator control for a predetermined time period.
+
+  This article is for administrators who need to activate their Microsoft Entra role in Privileged Identity Management. Although any user can submit a request for the role they need through PIM without having the Privileged Role Administrator (PRA) role, this role is required for managing and assigning roles to others within the organization.
+
+  >[!IMPORTANT]
+  >When a role is activated, Microsoft Entra PIM temporarily adds active assignment for the role. Microsoft Entra PIM creates active assignment (assigns user to a role) within seconds. When deactivation (manual or through activation time expiration) happens, Microsoft Entra PIM removes the active assignment within seconds as well.
+  >
+  >Application may provide access based on the role the user has. In some situations, application access may not immediately reflect the fact that user got role assigned or removed. If application previously cached the fact that user does not have a role – when user tries to access application again, access may not be provided. Similarly, if application previously cached the fact that user has a role – when role is deactivated, user may still get access. Specific situation depends on the application’s architecture. For some applications, signing out and signing back in may help get access added or removed.
+
+procedureSection:
+  - title: |
+      Activate a role
+    summary: |
+      When you need to assume a Microsoft Entra role, you can request activation by opening **My roles** in Privileged Identity Management.
+
+      >[!NOTE]
+      > PIM is now available in the Azure mobile app (iOS | Android) for Microsoft Entra ID and Azure resource roles. Easily activate eligible assignments, request renewals for ones that are expiring, or check the status of pending requests. [Read more below](#activate-pim-roles-using-the-azure-mobile-app)
+    steps:
+      - |
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+      - |
+        Browse to **Identity governance** > **Privileged Identity Management** > **My roles**.  For information about how to add the Privileged Identity Management tile to your dashboard, see [Start using Privileged Identity Management](pim-getting-started.md).
+      - |
+        Select **Microsoft Entra roles** to see a list of your eligible Microsoft Entra roles.
+
+        ![My roles page showing roles you can activate](./media/pim-how-to-activate-role/my-roles.png)
+      - |
+        In the **Microsoft Entra roles** list, find the role you want to activate.
+
+        ![Microsoft Entra roles - My eligible roles list](./media/pim-how-to-activate-role/activate-link.png)
+      - |
+        Select **Activate** to open the Activate pane.
+
+        ![Microsoft Entra roles - activation page contains duration and scope](./media/pim-how-to-activate-role/activate-page.png)
+      - |
+        Select **Additional verification required** and follow the instructions to provide security verification. You are required to authenticate only once per session.
+
+        ![Screen to provide security verification such as a PIN code](./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png)
+      - |
+        After multifactor authentication, select **Activate before proceeding**.
+
+        ![Verify my identity with MFA before role activates](./media/pim-how-to-activate-role/activate-role-mfa-banner.png)
+      - |
+        If you want to specify a reduced scope, select **Scope** to open the filter pane. On the filter pane, you can specify the Microsoft Entra resources that you need access to. It's a best practice to request access to the fewest resources that you need.
+      - |
+        If necessary, specify a custom activation start time. The Microsoft Entra role would be activated after the selected time.
+      - |
+        In the **Reason** box, enter the reason for the activation request.
+      - |
+        Select **Activate**.
+
+        If the [role requires approval](pim-resource-roles-approval-workflow.md) to activate, a notification appears in the upper right corner of your browser informing you the request is pending approval.
+
+        ![Activation request is pending approval notification](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate-notification.png)
+
+        ## Activate a role using Microsoft Graph API
+
+        For more information about Microsoft Graph APIs for PIM, see [Overview of role management through the privileged identity management (PIM) API](/graph/api/resources/privilegedidentitymanagementv3-overview).
+
+        ### Get all eligible roles that you can activate
+
+        When a user gets their role eligibility via group membership, this Microsoft Graph request doesn't return their eligibility.
+
+        #### HTTP request
+
+        ````HTTP
+        GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleEligibilityScheduleRequests/filterByCurrentUser(on='principal')  
+        ````
+
+        #### HTTP response
+
+        To save space we're showing only the response for one role, but all eligible role assignments that you can activate will be listed.
+
+        ````HTTP
+        {
+            "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#Collection(unifiedRoleEligibilityScheduleRequest)",
+            "value": [
+                {
+                    "@odata.type": "#microsoft.graph.unifiedRoleEligibilityScheduleRequest",
+                    "id": "50d34326-f243-4540-8bb5-2af6692aafd0",
+                    "status": "Provisioned",
+                    "createdDateTime": "2022-04-12T18:26:08.843Z",
+                    "completedDateTime": "2022-04-12T18:26:08.89Z",
+                    "approvalId": null,
+                    "customData": null,
+                    "action": "adminAssign",
+                    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+                    "roleDefinitionId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
+                    "directoryScopeId": "/",
+                    "appScopeId": null,
+                    "isValidationOnly": false,
+                    "targetScheduleId": "50d34326-f243-4540-8bb5-2af6692aafd0",
+                    "justification": "Assign Attribute Assignment Admin eligibility to myself",
+                    "createdBy": {
+                        "application": null,
+                        "device": null,
+                        "user": {
+                            "displayName": null,
+                            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
+                        }
+                    },
+                    "scheduleInfo": {
+                        "startDateTime": "2022-04-12T18:26:08.8911834Z",
+                        "recurrence": null,
+                        "expiration": {
+                            "type": "afterDateTime",
+                            "endDateTime": "2024-04-10T00:00:00Z",
+                            "duration": null
+                        }
+                    },
+                    "ticketInfo": {
+                        "ticketNumber": null,
+                        "ticketSystem": null
+                    }
+                }
+            ]
+        }
+        ````
+
+        ### Self-activate a role eligibility with justification
+
+        #### HTTP request
+
+        ````HTTP
+        POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentScheduleRequests 
+
+        {
+            "action": "selfActivate",
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+            "roleDefinitionId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
+            "directoryScopeId": "/",
+            "justification": "I need access to the Attribute Administrator role to manage attributes to be assigned to restricted AUs",
+            "scheduleInfo": {
+                "startDateTime": "2022-04-14T00:00:00.000Z",
+                "expiration": {
+                    "type": "AfterDuration",
+                    "duration": "PT5H"
+                }
+            },
+            "ticketInfo": {
+                "ticketNumber": "CONTOSO:Normal-67890",
+                "ticketSystem": "MS Project"
+            }
+        }
+        ````
+
+        #### HTTP response
+
+        ````HTTP
+        HTTP/1.1 201 Created
+        Content-Type: application/json
+
+        {
+            "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#roleManagement/directory/roleAssignmentScheduleRequests/$entity",
+            "id": "911bab8a-6912-4de2-9dc0-2648ede7dd6d",
+            "status": "Granted",
+            "createdDateTime": "2022-04-13T08:52:32.6485851Z",
+            "completedDateTime": "2022-04-14T00:00:00Z",
+            "approvalId": null,
+            "customData": null,
+            "action": "selfActivate",
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+            "roleDefinitionId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
+            "directoryScopeId": "/",
+            "appScopeId": null,
+            "isValidationOnly": false,
+            "targetScheduleId": "911bab8a-6912-4de2-9dc0-2648ede7dd6d",
+            "justification": "I need access to the Attribute Administrator role to manage attributes to be assigned to restricted AUs",
+            "createdBy": {
+                "application": null,
+                "device": null,
+                "user": {
+                    "displayName": null,
+                    "id": "071cc716-8147-4397-a5ba-b2105951cc0b"
+                }
+            },
+            "scheduleInfo": {
+                "startDateTime": "2022-04-14T00:00:00Z",
+                "recurrence": null,
+                "expiration": {
+                    "type": "afterDuration",
+                    "endDateTime": null,
+                    "duration": "PT5H"
+                }
+            },
+            "ticketInfo": {
+                "ticketNumber": "CONTOSO:Normal-67890",
+                "ticketSystem": "MS Project"
+            }
+        }
+        ````
+
+  - title: |
+      View the status of activation requests
+    summary: |
+      You can view the status of your pending requests to activate.
+    steps:
+      - |
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+      - |
+        Browse to **Identity governance** > **Privileged Identity Management** > **My requests**.
+      - |
+        When you select **My requests** you see a list of your Microsoft Entra role and Azure resource role requests.
+
+        :::image type="content" source="./media/pim-how-to-activate-role/my-requests-page.png" alt-text="Screenshot of My requests - Microsoft Entra ID page showing your pending requests" lightbox="./media/pim-how-to-activate-role/my-requests-page.png":::
+      - |
+        Scroll to the right to view the **Request Status** column.
+
+  - title: |
+      Cancel a pending request for new version
+    summary: |
+      If you don't require activation of a role that requires approval, you can cancel a pending request at any time.
+    steps:
+      - |
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+      - |
+        Browse to **Identity governance** > **Privileged Identity Management** > **My requests**.
+      - |
+        For the role that you want to cancel, select the **Cancel** link.
+
+          When you select Cancel, the request is canceled. To activate the role again, you have to submit a new request for activation.
+
+        ![My request list with Cancel action highlighted](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
+  - title: |
+      Deactivate a role assignment
+    summary: |
+      When a role assignment is activated, you see a **Deactivate** option in the PIM portal for the role assignment. Also, you can't deactivate a role assignment within five minutes after activation.
+      
+      ## Activate PIM roles using the Azure mobile app
+
+      PIM is now available in the Microsoft Entra ID and Azure resource roles mobile apps in both iOS and Android.
+    steps:
+      - |
+        To activate an eligible Microsoft Entra role assignment, start by downloading the Azure mobile app ([iOS](https://apps.apple.com/us/app/microsoft-azure/id1219013620) | [Android](https://play.google.com/store/apps/details?id=com.microsoft.azure)). You can also download the app by selecting ‘Open in mobile’  from Privileged Identity Management > My roles > Microsoft Entra roles.
+
+        :::image type="content" source="./media/pim-how-to-activate-role/open-mobile.png" alt-text="Screenshot shows how to download the mobile app." lightbox="./media/pim-resource-roles-assign-roles/resources-abac-update-remove.png":::
+      - |
+        Open the Azure mobile app and sign in. Select the **Privileged Identity Management** card and select **My Microsoft Entra roles** to view your eligible and active role assignments.
+
+        :::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part-1.png" alt-text="Screenshots of the mobile app showing how a user would view available roles." lightbox="./media/pim-how-to-activate-role/mobile-app-select-part-1.png":::
+      - |
+        Select the role assignment and click on **Action > Activate** under the role assignment details. Complete the steps to active and fill in any required details before clicking ‘Activate’ at the bottom.
+
+        :::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part-2.png" alt-text="Screenshot of the mobile app showing a user how to fill out the required information" lightbox="./media/pim-how-to-activate-role/mobile-app-select-part-2.png":::
+      - |
+        View the status of your activation requests and your role assignments under **My Microsoft Entra roles**.
+
+        :::image type="content" source="./media/pim-how-to-activate-role/mobile-app-select-part-3.png" alt-text="Screenshot of the mobile app showing the user's role status." lightbox="./media/pim-how-to-activate-role/mobile-app-select-part-3.png":::
+
+
+
+relatedContent:
+  - text: View audit history for Microsoft Entra roles
+    url: pim-how-to-use-audit-log.md

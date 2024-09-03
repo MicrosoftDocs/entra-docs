@@ -7,10 +7,11 @@ keywords:
 author: rwike77
 ms.author: ryanwi
 manager: celestedg
-ms.date: 03/26/2024
+ms.date: 08/08/2024
 ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
+ms.collection: ce-skilling-ai-copilot
 
 #Customer intent: As a SOC analyst or IT admin using Microsoft Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
 ---
@@ -31,7 +32,7 @@ This article introduces you to Copilot in Microsoft Entra.
 
 Microsoft Entra brings the capabilities of Copilot for Security to the Microsoft Entra admin center, enabling administrators and security teams to respond to identity threats quickly. Bringing AI to Microsoft Entra allows teams to understand risks immediately and determine remediation steps in a timely manner.
 
-### Summerize a user's risk level
+### Summarize a user's risk level
 
 Microsoft Entra ID Protection applies the capabilities of Copilot for Security to [summarize a user's risk level](copilot-entra-risky-user-summarization.md), provide insights relevant to the incident at hand, and provide recommendations for rapid mitigation. Identity risk investigation is a crucial step to defend an organization. Copilot for Microsoft Entra helps reduce the time to resolution by providing IT admins and security operations center (SOC) analysts the right context to investigate and remediate identity risk and identity-based incidents. Risky user summarization provides admins and responders quick access to the most critical information in context to aid their investigation.
 

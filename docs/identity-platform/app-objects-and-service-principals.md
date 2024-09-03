@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: has-azure-ad-ps-ref
-ms.date: 12/15/2023
+ms.date: 04/26/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
 
@@ -15,11 +15,11 @@ ms.topic: concept-article
 
 # Application and service principal objects in Microsoft Entra ID
 
-This article describes application registration, application objects, and service principals in Microsoft Entra ID, what they are, how they're used, and how they're related to each other. A multi-tenant example scenario is also presented to illustrate the relationship between an application's application object and corresponding service principal objects.
+This article describes application registration, application objects, and service principals in Microsoft Entra ID, what they are, how they're used, and how they're related to each other. A multitenant example scenario is also presented to illustrate the relationship between an application's application object and corresponding service principal objects.
 
 ## Application registration
 
-To delegate identity and access management functions to Microsoft Entra ID, an application must be registered with a Microsoft Entra tenant. When you register your application with Microsoft Entra ID, you're creating an identity configuration for your application that allows it to integrate with Microsoft Entra ID. When you register an app, you choose whether it's a [single tenant](single-and-multi-tenant-apps.md#who-can-sign-in-to-your-app), or [multi-tenant](single-and-multi-tenant-apps.md#who-can-sign-in-to-your-app), and can optionally set a [redirect URI](reply-url.md). For step-by-step instructions on registering an app, see the [app registration quickstart](quickstart-register-app.md).
+To delegate identity and access management functions to Microsoft Entra ID, an application must be registered with a Microsoft Entra tenant. When you register your application with Microsoft Entra ID, you're creating an identity configuration for your application that allows it to integrate with Microsoft Entra ID. When you register an app, you choose whether it's a [single tenant](single-and-multi-tenant-apps.md#who-can-sign-in-to-your-app), or [multitenant](single-and-multi-tenant-apps.md#who-can-sign-in-to-your-app), and can optionally set a [redirect URI](reply-url.md). For step-by-step instructions on registering an app, see the [app registration quickstart](quickstart-register-app.md).
 
 When you've completed the app registration, you have a globally unique instance of the app (the application object) that lives within your home tenant or directory. You also have a globally unique ID for your app (the app/client ID). You can add secrets or certificates and scopes to make your app work, customize the branding of your app in the sign-in dialog, and more.
 
@@ -40,6 +40,8 @@ You can use the **App registrations** page in the [Microsoft Entra admin center]
 ![App registrations blade](./media/app-objects-and-service-principals/app-registrations-blade.png)
 
 The Microsoft Graph [Application entity][ms-graph-app-entity] defines the schema for an application object's properties.
+
+> [!VIDEO af3ad1eb-63b4-4ab7-b976-16946fbbb099]
 
 ## Service principal object
 
@@ -63,14 +65,14 @@ You can use the **Enterprise applications** page in the Microsoft Entra admin ce
 
 ## Relationship between application objects and service principals
 
-The application object is the _global_ representation of your application for use across all tenants, and the service principal is the _local_ representation for use in a specific tenant. The application object serves as the template from which common and default properties are _derived_ for use in creating corresponding service principal objects.
+The application object is the *global* representation of your application for use across all tenants, and the service principal is the *local* representation for use in a specific tenant. The application object serves as the template from which common and default properties are *derived* for use in creating corresponding service principal objects.
 
 An application object has:
 
 - A one-to-one relationship with the software application, and
 - A one-to-many relationship with its corresponding service principal object(s)
 
-A service principal must be created in each tenant where the application is used, enabling it to establish an identity for sign-in and/or access to resources being secured by the tenant. A single-tenant application has only one service principal (in its home tenant), created and consented for use during application registration. A multi-tenant application also has a service principal created in each tenant where a user from that tenant has consented to its use.
+A service principal must be created in each tenant where the application is used, enabling it to establish an identity for sign-in and/or access to resources being secured by the tenant. A single-tenant application has only one service principal (in its home tenant), created and consented for use during application registration. A multitenant application also has a service principal created in each tenant where a user from that tenant has consented to its use.
 
 ### List service principals associated with an app
 
@@ -105,7 +107,7 @@ Any changes that you make to your application object are also reflected in its s
 
 ## Example
 
-The following diagram illustrates the relationship between an application's application object and corresponding service principal objects in the context of a sample multi-tenant application called **HR app**. There are three Microsoft Entra tenants in this example scenario:
+The following diagram illustrates the relationship between an application's application object and corresponding service principal objects in the context of a sample multitenant application called **HR app**. There are three Microsoft Entra tenants in this example scenario:
 
 - **Adatum** - The tenant used by the company that developed the **HR app**
 - **Contoso** - The tenant used by the Contoso organization, which is a consumer of the **HR app**

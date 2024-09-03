@@ -4,11 +4,11 @@ description: Learn how to fetch data from Microsoft Graph without prompting an A
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 01/11/2022
+ms.date: 07/19/2024
 ms.reviewer: nickludwig, paulgarn
 ms.service: identity-platform
-
 ms.topic: how-to
+
 #Customer intent: As a developer integrating SSO with AD FS and Microsoft Graph, I want to exchange a SAML token issued by AD FS for an OAuth 2.0 access token, so that I can enable SSO in my application and access Microsoft Graph APIs.
 ---
 
@@ -24,7 +24,7 @@ You'll enable the SAML bearer assertion flow to exchange a SAMLv1 token issued b
 ## Prerequisites
 
 - AD FS federated as an identity provider for single sign-on; see [Setting up AD FS and Enabling Single Sign-On to Office 365](/archive/blogs/canitpro/step-by-step-setting-up-ad-fs-and-enabling-single-sign-on-to-office-365) for an example.
-- [Postman](https://www.postman.com/) for testing requests.
+- A testing tool such to test requests.
 
 ## Scenario overview
 

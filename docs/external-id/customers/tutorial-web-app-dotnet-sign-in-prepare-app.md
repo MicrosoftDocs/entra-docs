@@ -1,6 +1,6 @@
 ---
-title: Tutorial - Prepare an ASP.NET Core web app for authentication in a customer tenant
-description: Learn how to prepare an ASP.NET Core web app for authentication with your Microsoft Entra ID for customers tenant.
+title: Tutorial - Prepare an ASP.NET Core web app for authentication in an external tenant
+description: Learn how to prepare an ASP.NET Core web app for authentication with your external tenant.
 
 author: cilwerner
 ms.author: cwerner
@@ -10,13 +10,13 @@ ms.service: entra-external-id
 ms.subservice: customers
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
-ms.date: 05/23/2023
-#Customer intent: As a dev, DevOps, I want to learn about how to enable authentication in my own ASP.NET web app with Microsoft Entra ID for customers tenant.
+ms.date: 06/27/2024
+#Customer intent: As a dev, DevOps, I want to learn about how to enable authentication in my own ASP.NET web app with an external tenant.
 ---
 
-# Tutorial: Prepare an ASP.NET Core web app for authentication in a customer tenant
+# Tutorial: Prepare an ASP.NET Core web app for authentication in an external tenant
 
-This tutorial is part 2 of a series that demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. This tutorial demonstrates how to create an ASP.NET Core web app, and configure it for authentication.
+This tutorial is part 2 of a series that demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to create an ASP.NET Core web app, and configure it for authentication.
 
 In this tutorial you'll;
 
@@ -28,7 +28,7 @@ In this tutorial you'll;
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant for building an ASP.NET Core web app](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md).
+- [Tutorial: Prepare your external tenant for building an ASP.NET Core web app](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md).
 - Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
@@ -81,7 +81,7 @@ Identity related NuGet packages must be installed in the project to authenticate
     }
     ```
 
-    - `Authority` - The identity provider instance and sign-in audience for the app. Replace `Enter_the_Tenant_Subdomain_Here` with the subdomain of your customer tenant. To find this, select **Overview** in the sidebar menu, then switch to the **Overview tab**. Find the **Primary domain**, in the form *caseyjensen.onmicrosoft.com*. The subdomain is *caseyjensen*.
+    - `Authority` - The identity provider instance and sign-in audience for the app. Replace `Enter_the_Tenant_Subdomain_Here` with the subdomain of your external tenant. To find this, select **Overview** in the sidebar menu, then switch to the **Overview tab**. Find the **Primary domain**, in the form *caseyjensen.onmicrosoft.com*. The subdomain is *caseyjensen*.
     - `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
     - `ClientSecret` - The value of the client secret you created in [Prepare your tenant](./tutorial-web-app-dotnet-sign-in-prepare-tenant.md). Replace the text in quotes with the client secret **value** in the Microsoft Entra admin center.
     - `CallbackPath` - Is an identifier to help the server redirect a response to the appropriate application.
@@ -90,6 +90,8 @@ Identity related NuGet packages must be installed in the project to authenticate
 1. Open the *Properties/launchSettings.json* file.
 1. In the `https` section of `profiles`, change the `https` URL in `applicationUrl` so that it reads `https://localhost:7274`. You used this URL to define the **Redirect URI**.
 1. Save the changes to your file.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-aspnet-core.md)]
 
 ## Add authorization to *HomeController.cs*
 
@@ -102,7 +104,7 @@ The *HomeController.cs* file contains the code for the home page of the applicat
     using System.Diagnostics;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using aspnet_webapp.Models;
+    using dotnetcore_webapp.Models;
     ```
 
 1. Additionally, add the `[Authorize]` attribute directly above the `HomeController` class definition.
@@ -181,4 +183,4 @@ The *Program.cs* needs to be modified to add authentication and authorization to
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Step 3: Add sign-in and sign-out to an ASP.NET Core web application for a customer tenant](tutorial-web-app-dotnet-sign-in-sign-out.md)
+> [Step 3: Add sign-in and sign-out to an ASP.NET Core web application for an external tenant](tutorial-web-app-dotnet-sign-in-sign-out.md)

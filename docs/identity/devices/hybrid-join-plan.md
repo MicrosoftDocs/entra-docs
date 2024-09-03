@@ -156,10 +156,8 @@ Beginning with version 1.1.819.0, Microsoft Entra Connect provides you with a wi
 
 ## Review on-premises Microsoft Windows Server Active Directory users UPN support for Microsoft Entra hybrid join
 
-Sometimes, on-premises Microsoft Windows Server Active Directory users UPNs are different from your Microsoft Entra UPNs. In these cases, Windows 10 or newer Microsoft Entra hybrid join provides limited support for on-premises Microsoft Windows Server Active Directory UPNs based on the [authentication method](~/identity/hybrid/connect/choose-ad-authn.md), domain type, and Windows version. There are two types of on-premises Microsoft Windows Server Active Directory UPNs that can exist in your environment:
-
-- Routable users UPN: A routable UPN has a valid verified domain that is registered with a domain registrar. For example, if contoso.com is the primary domain in Microsoft Entra ID, contoso.org is the primary domain in on-premises Microsoft Windows Server Active Directory owned by Contoso and [verified in Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
-- Non-routable users UPN: A non-routable UPN doesn't have a verified domain and is applicable only within your organization's private network. For example, if contoso.com is the primary domain in Microsoft Entra ID and contoso.local is the primary domain in on-premises Microsoft Windows Server Active Directory but isn't a verifiable domain in the internet and only used within Contoso's network.
+- Routable users UPN: A routable UPN has a valid verified domain that is registered with a domain registrar. For example, if contoso.com is the primary domain in Microsoft Entra ID, contoso.org is the primary domain in on-premises AD owned by Contoso and [verified in Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).
+- Non-routable users UPN: A non-routable UPN doesn't have a verified domain and is applicable only within your organization's private network. For example, if contoso.com is the primary domain in Microsoft Entra ID and contoso.local is the primary domain in on-premises AD but isn't a verifiable domain in the internet and only used within Contoso's network.
 
 > [!NOTE]
 > The information in this section applies only to an on-premises users UPN. It isn't applicable to an on-premises computer domain suffix (example: computer1.contoso.local).

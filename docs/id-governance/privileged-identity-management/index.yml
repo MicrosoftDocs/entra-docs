@@ -49,9 +49,9 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Activate my Microsoft Entra roles
-            url: pim-how-to-activate-role.md
+            url: pim-how-to-activate-role.yml
           - text: Activate my Azure resource roles
-            url: pim-resource-roles-activate-your-roles.md
+            url: pim-resource-roles-activate-your-roles.yml
 
   # Card
   - title: Assign roles

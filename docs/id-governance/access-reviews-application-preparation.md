@@ -62,7 +62,7 @@ The integration patterns listed in the previous section are applicable to third 
 
 Now that you have identified the integration pattern for the application, check the application as represented in Microsoft Entra ID is ready for review.
 
-1. Sign in to the [Microsoft Entra Admin Center](https://entra.microsoft.com) as at least a [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 1. Browse to > **Identity** > **Applications** > **Enterprise Applications**. 
 1. Here you can check to see whether your application is on the [list of enterprise applications](../identity/enterprise-apps/view-applications-portal.md) in your tenant.
 1. If the application isn't already listed, then check if the application is available the [application gallery](../identity/enterprise-apps/overview-application-gallery.md) for applications that can be integrated for federated SSO or provisioning. If it is in the gallery, then use the [tutorials](../identity/saas-apps/tutorial-list.md) to configure the application for federation, and if it supports provisioning, also [configure the application](../identity/app-provisioning/configure-automatic-user-provisioning-portal.md) for provisioning.  
@@ -104,7 +104,7 @@ Now that you have identified the integration pattern for the application, check 
 If your application doesn't rely upon groups, then skip to the next section.
 Otherwise, if the application integration also requires one or more groups to be reviewed, as described in pattern B, then check each group is ready for review.
 
-1. Sign in to the [Microsoft Entra Admin Center](https://entra.microsoft.com) as at least a [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 1. Browse to > **Groups**. 
 1. Search for and select each group from the list.
 1. On the **Overview** tab, verify that the **Membership type** is **Assigned**, and the **Source** is **Cloud**.  If the application uses a dynamic group, or a group synchronized from on-premises, then those group memberships can't be changed in Microsoft Entra ID.  We recommend converting the application to groups created in Microsoft Entra ID with assigned memberships, then copy the member users to that new group.
@@ -120,7 +120,7 @@ Otherwise, if the application integration also requires one or more groups to be
 
 Once you've identified the resources, the application and optionally one or more groups, based on the integration pattern, and who the reviewers should be, then you can configure Microsoft Entra ID to start the reviews.
 
-1. For this step, you need to be in the `Global administrator` or `Identity Governance administrator` role.
+1. For this step, you should be in the `Identity Governance Administrator` role.
 1. In patterns A and C, you create one access review, selecting the application.  Follow the instructions in the guide for [creating an access review of groups or applications](create-access-review.md), to create the review of the application's role assignments.
 1. If your application is integrated with pattern B, use the same [guide](create-access-review.md) to create additional access reviews for each of the groups.
 

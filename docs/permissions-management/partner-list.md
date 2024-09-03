@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: reference
-ms.date: 06/16/2023
+ms.date: 04/18/2024
 ms.author: jfields
 ---
 
@@ -18,23 +18,20 @@ Microsoft verified partners can help you onboard Microsoft Entra Permissions Man
 
 * **Product Expertise**
 
-    Our partners help you navigate Permissions Management, letting you in on best 
-    practices and guidance to enhance your security strategy.
+    Our partners help you navigate Permissions Management, letting you in on best practices and guidance to enhance your security strategy.
 
 * **Risk Assessment**
 
-    Partners guide you through the Microsoft Entra Permissions Management risk assessment and 
-    help you identify top permission risks across your multicloud infrastructure.
+    Partners guide you through the Microsoft Entra Permissions Management risk assessment and help you identify top permission risks across your multicloud infrastructure.
 
 * **Onboarding and Deployment Support**
 
-    Partners can guide you through the entire onboarding and deployment process for 
-    Permissions Management across AWS, Azure, and GCP.
+    Partners can guide you through the entire onboarding and deployment process for Permissions Management across AWS, Azure, and GCP.
 
 
 ## Partner list
 
-Select a partner from the list provided to begin your Permissions Management risk assessment. Additionally, Microsoft provides a [full list of security partners](https://appsource.microsoft.com/marketplace/consulting-services?exp=ubp8&page=1&product=m365-sa-identity-and-access-management) that can help secure your organization.
+Select a partner from the list provided to begin your Permissions Management risk assessment. Additionally, Microsoft provides a [full list of security partners](https://www.microsoft.com/security/business/find-a-partner) that can help secure your organization.
 
 If you're a partner and would like to be considered for the Microsoft Entra Permissions Management partner list, submit a [request](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbRzw7upfFlddNq4ce6ckvEvhUNzE3V0RQNkpPWjhDSU5FNkk1U1RWUDdDTC4u). 
 

@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: devx-track-js
-ms.date: 12/12/2021
+ms.date: 04/09/2024
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -276,7 +276,7 @@ request made to web API at: Fri Jan 22 2021 09:31:52 GMT-0800 (Pacific Standard 
             preferredLanguage: 'en-US',
             surname: 'Vance',
             userPrincipalName: 'AdeleV@msaltestingjs.onmicrosoft.com',
-            id: 'a6a218a5-f5ae-462a-acd3-581af4bcca00'
+            id: '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
         }
     ]
 }
@@ -294,4 +294,4 @@ The scope to request for a client credential flow is the name of the resource fo
 If you'd like to dive deeper into Node.js daemon application development on the Microsoft identity platform, see our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Daemon application](scenario-daemon-overview.md)
+> [Scenario: Daemon application](scenario-daemon-app-registration.md)

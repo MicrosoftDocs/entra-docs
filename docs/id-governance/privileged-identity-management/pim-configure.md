@@ -58,7 +58,7 @@ Once you set up Privileged Identity Management, you'll see **Tasks**, **Manage**
 
 For Microsoft Entra roles in Privileged Identity Management, only a user who is in the Privileged Role Administrator or Global Administrator role can manage assignments for other administrators. Global Administrators, Security Administrators, Global Readers, and Security Readers can also view assignments to Microsoft Entra roles in Privileged Identity Management.
 
-For Azure resource roles in Privileged Identity Management, only a subscription administrator, a resource Owner, or a resource User Access administrator can manage assignments for other administrators. Users who are Privileged Role Administrators, Security Administrators, or Security Readers don't by default have access to view assignments to Azure resource roles in Privileged Identity Management.
+For Azure resource roles in Privileged Identity Management, only a subscription administrator, a resource Owner, or a resource User Access Administrator can manage assignments for other administrators. Users who are Privileged Role Administrators, Security Administrators, or Security Readers don't by default have access to view assignments to Azure resource roles in Privileged Identity Management.
 
 ## Terminology
 
@@ -116,7 +116,7 @@ The following screenshot shows how members activate their role to a limited time
 
 If the role requires [approval](pim-resource-roles-approval-workflow.md) to activate, a notification appears in the upper right corner of the user's browser informing them the request is pending approval. If an approval isn't required, the member can start using the role.
 
-For more information, check out the following articles: [Activate Microsoft Entra roles](pim-how-to-activate-role.md), [Activate my Azure resource roles](pim-resource-roles-activate-your-roles.md), and [Activate my PIM for Groups roles](groups-activate-roles.md)
+For more information, check out the following articles: [Activate Microsoft Entra roles](pim-how-to-activate-role.yml), [Activate my Azure resource roles](pim-resource-roles-activate-your-roles.yml), and [Activate my PIM for Groups roles](groups-activate-roles.md)
 
 ### Approve or deny
 

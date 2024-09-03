@@ -4,16 +4,19 @@ description: Remedies for common problems with Microsoft Entra B2B collaboration
  
 ms.service: entra-external-id
 ms.topic: troubleshooting
-ms.date: 03/26/2024
+ms.date: 06/19/2024
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan
 ms.custom: it-pro, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
+
 # Customer intent: As an IT admin troubleshooting Microsoft Entra B2B collaboration, I want to find remedies for common problems, so that I can resolve issues and ensure smooth collaboration between organizations.
 ---
 
 # Troubleshooting Microsoft Entra B2B collaboration
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 Here are some remedies for common problems with Microsoft Entra B2B collaboration.
 
@@ -33,7 +36,7 @@ The organization hosting the Teams shared channel must enable the trust setting 
 
 ## An error similar to "Failure to update policy due to object limit" appears while configuring cross-tenant access settings
 
-As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md), if you receive an error that says “Failure to update policy due to object limit,” you've reached the policy object limit of 25 KB. We're working toward increasing this limit. If you need to be able to calculate how close the current policy is to this limit, do the following:
+As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml), if you receive an error that says “Failure to update policy due to object limit,” you've reached the policy object limit of 25 KB. We're working toward increasing this limit. If you need to be able to calculate how close the current policy is to this limit, do the following:
 
 1. Open Microsoft Graph Explorer and run the following:  
 
@@ -55,7 +58,7 @@ if ($size -le $maxSize) { return “valid” }; else { return “invalid” }
 
 ## Users can no longer read email encrypted with Microsoft Rights Management Service (OME))
 
-As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md), if you block access to all apps by default, users will be unable to read emails encrypted with Microsoft Rights Management Service (also known as OME). To avoid this issue, we recommend configuring your outbound settings to allow your users to access this app ID: 00000012-0000-0000-c000-000000000000. If this is the only application you allow, access to all other apps will be blocked by default.
+As you configure [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml), if you block access to all apps by default, users will be unable to read emails encrypted with Microsoft Rights Management Service (also known as OME). To avoid this issue, we recommend configuring your outbound settings to allow your users to access this app ID: 00000012-0000-0000-c000-000000000000. If this is the only application you allow, access to all other apps will be blocked by default.
 
 ## I’ve added an external user but don't see them in my Global Address Book or in the people picker
 
@@ -72,7 +75,7 @@ You can enable this feature by using the setting 'ShowPeoplePickerSuggestionsFor
 By default, SharePoint Online and OneDrive have their own set of external user options and don't use the settings from Microsoft Entra ID.  You need to enable [SharePoint and OneDrive integration with Microsoft Entra B2B](/sharepoint/sharepoint-azureb2b-integration) to ensure the options are consistent among those applications.
 ## Invitations have been disabled for directory
 
-If you're notified that you don't have permissions to invite users, verify that your user account is authorized to invite external users under Identity > Users > User settings > External users > Manage external collaboration settings:
+If you're notified that you don't have permissions to invite users, verify that your user account is authorized to invite external users under Microsoft Entra ID > Users > User settings > External users > Manage external collaboration settings:
 
 :::image type="content" source="media/troubleshoot/external-user-settings.png" alt-text="Screenshot showing the External User settings.":::
 
@@ -100,7 +103,19 @@ When we check whether a user is able to be invited to your tenant, one of the th
 
 ## I can't invite an email address because of a conflict in proxyAddresses
 
-This happens when another object in the directory has the same invited email address as one of its proxyAddresses. To fix this conflict, remove the email from the [user](/graph/api/resources/user) object, and also delete the associated [contact](/graph/api/resources/contact) object before trying to invite this email again.
+This happens when another object in the directory has the same invited email address as one of its proxyAddresses. The other conflicting object could be a User, Group, or Microsoft 365 Contact.
+
+To fix this conflict, search for the email address in the Microsoft 365 admin center to find the conflicting object. You must remove the email address using the Microsoft Graph API.
+
+To fix this conflict:
+1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com).
+1. Browse to **Users** > **All users** and search for the email address that you're trying to invite.
+1. Remove the email from the [Microsoft Graph user](/graph/api/resources/user) object.
+1. Browse to **Users** > **Contacts** to see if there's a contact using that email address.
+1. Remove the associated [Microsoft Graph contact](/graph/api/resources/contact) object.
+1. Browse to **Teams & groups** > **Active teams & groups** and search for the email address that you're trying to invite, and change the email address if found.
+
+Once you've removed the conflicting email address, you can invite the user.
 
 ## The guest user object doesn't have a proxyAddress
 
@@ -142,9 +157,9 @@ A user who has a guest account can't sign in, and is receiving the following err
     AADSTS65005: Using application 'AppName' is currently not supported for your organization contoso.com because it is in an unmanaged state. An administrator needs to claim ownership of the company by DNS validation of contoso.com before the application AppName can be provisioned.
 ```
 
-The user has an Azure user account and is a viral tenant who has been abandoned or unmanaged. Additionally, there are no Global Administrators in the tenant.
+The user has an Azure user account and is a viral tenant who has been abandoned or unmanaged. Additionally, there are no administrators in the tenant.
 
-To resolve this problem, you must take over the abandoned tenant. Refer to  [Take over an unmanaged directory as administrator in Microsoft Entra ID](~/identity/users/domains-admin-takeover.md). You must also access the internet-facing DNS for the domain suffix in question in order to provide direct evidence that you are in control of the namespace. After the tenant is returned to a managed state, discuss with the customer whether leaving the users and verified domain name is the best option for their organization.
+To resolve this problem, you must take over the abandoned tenant. Refer to [Take over an unmanaged directory as administrator in Microsoft Entra ID](~/identity/users/domains-admin-takeover.md). You must also access the internet-facing DNS for the domain suffix in question in order to provide direct evidence that you are in control of the namespace. After the tenant is returned to a managed state, discuss with the customer whether leaving the users and verified domain name is the best option for their organization.
 
 ## A guest user with a just-in-time or "viral" tenant is unable to reset their password
 
@@ -180,14 +195,14 @@ When you're using self-service sign-up features, like custom user attributes or 
 If you accidentally deleted the `aad-extensions-app`, you have 30 days to recover it. You can restore the app using the Microsoft Graph PowerShell module.
 
 1. Launch the Microsoft Graph PowerShell module and run `Connect-MgGraph`.
-1. Sign in as a Global Administrator for the Microsoft Entra tenant that you want to recover the deleted app for.
+1. Sign in as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) to the Microsoft Entra tenant for which you want to recover the deleted app.
 1. Run the PowerShell command `Get-MgDirectoryDeletedItem -DirectoryObjectId {id}`. As an example:
 
 ```powershell
-Get-MgDirectoryDeletedItem -DirectoryObjectId 'd4142c52-179b-4d31-b5b9-08940873507b'
+Get-MgDirectoryDeletedItem -DirectoryObjectId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 Id                                   DeletedDateTime
 --                                   ---------------
-d4142c52-179b-4d31-b5b9-08940873507b 8/30/2021 7:37:37 AM
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee 8/30/2021 7:37:37 AM
 ```
 
 1. Run the PowerShell command `Restore-MgDirectoryDeletedItem -DirectoryObjectId {id}`. Replace the `{id}` portion of the command with the `DirectoryObjectId` from the previous step.
@@ -199,7 +214,7 @@ You should now see the restored app in the Microsoft Entra admin center.
 Let's say you inadvertently invite a guest user with an email address that matches a user object already in your directory. The guest user object is created, but the email address is added to the `otherMail` property instead of to the `mail` or `proxyAddresses` properties. To avoid this issue, you can search for conflicting user objects in your Microsoft Entra directory by using these PowerShell steps:
 
 1. Open the Microsoft Graph PowerShell module and run `Connect-MgGraph`.
-1. Sign in as a Global Administrator for the Microsoft Entra tenant that you want to check for duplicate contact objects in.
+1. Sign in as at least a [Directory Reader](/entra/identity/role-based-access-control/permissions-reference?branch=main#directory-readers) to the Microsoft Entra tenant for which you want to check for duplicate contact objects.
 1. Run the PowerShell command `Get-MgContact -All | ? {$_.Mail -match 'user@domain.com'}`.
 
 ## External access blocked by policy error on the login screen

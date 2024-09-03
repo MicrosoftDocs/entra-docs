@@ -1,5 +1,4 @@
 ---
-
 title: Plan reports & monitoring deployment
 description: Describes how to plan and execute implementation of reporting and monitoring.
 
@@ -37,6 +36,7 @@ With Microsoft Entra monitoring, you can route logs to:
 
 * an Azure storage account for archival purposes.
 * Azure Monitor logs, where you can analyze the data, create dashboards, and alert on specific events.
+* [Microsoft Sentinel](/azure/sentinel/connect-azure-active-directory).
 * an Azure event hub where you can integrate with your existing SIEM tools such as Splunk, Sumologic, or QRadar.
 
 ### Prerequisites
@@ -45,7 +45,7 @@ You'll need a Microsoft Entra ID P1 or P2 license to access the Microsoft Entra 
 
 For detailed feature and licensing information, see the [Microsoft Entra pricing guide](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
-To deploy Microsoft Entra monitoring and health, you'll need a user who is a Global Administrator or Security Administrator for the Microsoft Entra tenant.
+To deploy Microsoft Entra monitoring and health, you'll need a user who is a Security Administrator for the Microsoft Entra tenant.
 
 * [Azure Monitor data platform](/azure/azure-monitor/data-platform)
 * [Azure Monitor naming and terminology changes](/azure/azure-monitor/overview)
@@ -70,7 +70,6 @@ Microsoft Entra roles enable you to delegate the ability to configure and view M
 
 The following roles can read Microsoft Entra reports:
 
-* Global Administrator
 * Security Administrator
 * Security Reader
 * Reports Reader
@@ -97,7 +96,7 @@ To better prioritize the use cases and solutions, organize the options by "requi
 
 * **Retention** - Log retention: store audit logs and sign in logs of Microsoft Entra longer than 30 days
 * **Analytics** - Logs are searchable with analytic tools
-* **Operational and security insights** - Provide access to application usage, sign-in errors, self-service usage, trends, etc.
+* **Operational and security insights** - Provide access to application usage, sign-in errors, self-service usage, trends, and so on.
 * **SIEM integration** - Integrate and stream Microsoft Entra sign-in logs and audit logs to SIEM systems
 
 ### Monitoring solution architecture
@@ -120,7 +119,7 @@ Learn more:
 
 #### Stream logs to storage and SIEM tools
 
-* [Integrate Microsoft Entra logs with Azure Monitor logs](./howto-integrate-activity-logs-with-azure-monitor-logs.md).
+* [Integrate Microsoft Entra logs with Azure Monitor logs](./howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 * [Analyze Microsoft Entra activity logs with Azure Monitor logs](~/identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md).
 * Learn how to [stream logs to an event hub](./howto-stream-logs-to-event-hub.md).
 * Learn how to [Archive Microsoft Entra logs to an Azure Storage account](./howto-archive-logs-to-storage-account.md).

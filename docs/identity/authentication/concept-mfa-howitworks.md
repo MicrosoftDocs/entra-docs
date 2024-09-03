@@ -6,7 +6,7 @@ description: Learn how Microsoft Entra multifactor authentication helps safeguar
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/13/2023
+ms.date: 06/28/2024
 
 ms.author: justinha
 author: justinha
@@ -45,7 +45,11 @@ The following additional forms of verification can be used with Microsoft Entra 
 * Microsoft Authenticator 
 * Authenticator Lite (in Outlook)
 * Windows Hello for Business
-* FIDO2 security key
+* Passkey (FIDO2) 
+* Passkey in Microsoft Authenticator (preview)
+* Certificate-based authentication (when configured for multifactor authentication)
+* External authentication methods (preview)
+* Temporary Access Pass (TAP)
 * OATH hardware token (preview)
 * OATH software token
 * SMS

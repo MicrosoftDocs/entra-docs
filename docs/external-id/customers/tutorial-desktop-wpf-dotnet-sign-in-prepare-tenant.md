@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Prepare your customer tenant to sign in user in .NET WPF application"
-description: Learn about how to prepare your Microsoft Entra ID for customers tenant to sign in users to your .NET WPF application
+title: "Tutorial: Prepare your external tenant to sign in user in .NET WPF application"
+description: Learn about how to prepare your external tenant to sign in users to your .NET WPF application
 
 author: SHERMANOUKO
 manager: mwongerapk
@@ -13,25 +13,24 @@ ms.topic: tutorial
 ms.date: 07/26/2023
 ---
 
-# Tutorial: Prepare your customer tenant to sign in user in .NET WPF application
+# Tutorial: Prepare your external tenant to sign in user in .NET WPF application
 
 This tutorial series demonstrates how to build a .NET Windows Presentation Form (WPF) desktop application and prepare it for authentication using the Microsoft Entra admin center. You'll register the app in the Microsoft Entra admin center, create a .NET WPF desktop app, add sign-in and sign-out components and run the application.
 
-In this tutorial, you'll;
+In this tutorial;
 
 > [!div class="checklist"]
->
 > - Register a WPF desktop application in the Microsoft Entra admin center
-> - Create a sign-in and sign-out user flow in customers tenant.
-> - Associate your WPF desktop app with the user flow.
+> - Create a sign-in and sign-out user flow in customers tenant
+> - Associate your WPF desktop app with the user flow
 
 ## Prerequisites
 
-- A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- An external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     - Application Administrator
     - Application Developer
-    - Cloud Application Administrator
+    - Cloud Application Administrator.
 
 ## Register the desktop app
 
@@ -41,9 +40,7 @@ In this tutorial, you'll;
 
 [!INCLUDE [active-directory-b2c-wpf-app-platform](./includes/register-app/add-platform-redirect-url-wpf.md)]
 
-## Grant API permissions
-
-Since this app signs-in users, add delegated permissions:
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 

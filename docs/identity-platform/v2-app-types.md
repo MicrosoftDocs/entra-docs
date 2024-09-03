@@ -44,17 +44,13 @@ The app types supported by the Microsoft identity platform are;
 
 ## Single-page apps
 
-Many modern apps have a single-page app (SPA) front end written primarily in JavaScript, often with a framework like Angular, React, or Vue. The Microsoft identity platform supports these apps by using the [OpenID Connect](v2-protocols-oidc.md) protocol for authentication and one of two types of authorization grants defined by OAuth 2.0. The supported grant types are either the [OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) or the more recent [OAuth 2.0 authorization code + PKCE flow](v2-oauth2-auth-code-flow.md) (see below).
+Many modern apps have a single-page app (SPA) front end written primarily in JavaScript, often with a framework like Angular, React, or Vue. The Microsoft identity platform supports these apps by using the [OpenID Connect](v2-protocols-oidc.md) protocol for authentication and one of two types of authorization grants defined by OAuth 2.0. Use the [authorization code flow with PKCE](https://devblogs.microsoft.com/identity/migrate-to-auth-code-flow/) when developing SPAs. Do not use the implicit flow.
 
 The flow diagram demonstrates the OAuth 2.0 authorization code grant flow (with details around PKCE omitted), where the app receives a code from the Microsoft identity platform `authorize` endpoint, and redeems it for an access token and a refresh token using cross-site web requests. For SPAs, the access token is valid for 1 hour, and once expired, must request another code using the refresh token. In addition to the access token, an `id_token` that represents the signed-in user to the client application is typically also requested through the same flow and/or a separate OpenID Connect request (not shown here).
 
 :::image type="content" source="media/v2-oauth-auth-code-spa/oauth-code-spa.svg" alt-text="Diagram showing the OAuth 2.0 authorization code flow between a single-page app and the security token service endpoint." border="false":::
 
 To see this in action, refer to the [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](./quickstart-single-page-app-javascript-sign-in.md).
-
-### Authorization code flow vs. implicit flow
-
-The OAuth 2.0 authorization code flow is now the recommended way to build SPAs to ensure compatibility of your app in Safari and other privacy-conscious browsers. Following the removal of [third-party cookies](reference-third-party-cookies-spas.md) and [greater attention](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14), the continued use of the implicit flow is not recommended.
 
 ## Web apps
 
@@ -68,7 +64,7 @@ abC1dEf2Ghi3jkL4mNo5Pqr6stU7vWx8Yza9...
 {
     "name": "Casey Jensen",
     "email": "casey.jensen@onmicrosoft.com",
-    "oid": "ab12cd34-effe-5678-9012-abcdef012345"
+    "oid": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
     ...
 }
 ```

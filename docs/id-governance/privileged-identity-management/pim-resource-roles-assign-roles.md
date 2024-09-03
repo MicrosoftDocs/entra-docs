@@ -22,7 +22,7 @@ With Microsoft Entra Privileged Identity Management (PIM), you can manage the bu
 - Security Manager
 
 > [!NOTE]
-> Users or members of a group assigned to the Owner or User Access Administrator subscription roles, and Microsoft Entra Global administrators that enable subscription management in Microsoft Entra ID have Resource administrator permissions by default. These administrators can assign roles, configure role settings, and review access using Privileged Identity Management for Azure resources. A user can't manage Privileged Identity Management for Resources without Resource administrator permissions. View the list of [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
+> Users or members of a group assigned to the Owner or User Access Administrator subscription roles, and Microsoft Entra Global Administrators that enable subscription management in Microsoft Entra ID have Resource administrator permissions by default. These administrators can assign roles, configure role settings, and review access using Privileged Identity Management for Azure resources. A user can't manage Privileged Identity Management for Resources without Resource administrator permissions. View the list of [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
 Privileged Identity Management support both built-in and custom Azure roles. For more information on Azure custom roles, see [Azure custom roles](/azure/role-based-access-control/custom-roles).
 
@@ -105,7 +105,7 @@ The following example is a sample HTTP request to create an eligible assignment 
 ### Request
 
 ````HTTP
-PUT https://management.azure.com/providers/Microsoft.Subscription/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f/providers/Microsoft.Authorization/roleEligibilityScheduleRequests/64caffb6-55c0-4deb-a585-68e948ea1ad6?api-version=2020-10-01-preview
+PUT https://management.azure.com/providers/Microsoft.Subscription/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/roleEligibilityScheduleRequests/64caffb6-55c0-4deb-a585-68e948ea1ad6?api-version=2020-10-01-preview
 ````
 
 ### Request body
@@ -113,8 +113,8 @@ PUT https://management.azure.com/providers/Microsoft.Subscription/subscriptions/
 ````JSON
 {
   "properties": {
-    "principalId": "a3bb8764-cb92-4276-9d2a-ca1e895e55ea",
-    "roleDefinitionId": "/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+    "roleDefinitionId": "/subscriptions/aaaaaaaa-bbbb-cccc-1111-222222222222/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608",
     "requestType": "AdminAssign",
     "scheduleInfo": {
       "startDateTime": "2022-07-05T21:00:00.91Z",
@@ -139,9 +139,9 @@ Status code: 201
   "properties": {
     "targetRoleEligibilityScheduleId": "b1477448-2cc6-4ceb-93b4-54a202a89413",
     "targetRoleEligibilityScheduleInstanceId": null,
-    "scope": "/providers/Microsoft.Subscription/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f",
-    "roleDefinitionId": "/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608",
-    "principalId": "a3bb8764-cb92-4276-9d2a-ca1e895e55ea",
+    "scope": "/providers/Microsoft.Subscription/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
+    "roleDefinitionId": "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "principalType": "User",
     "requestType": "AdminAssign",
     "status": "Provisioned",
@@ -165,12 +165,12 @@ Status code: 201
     "conditionVersion": "1.0",
     "expandedProperties": {
       "scope": {
-        "id": "/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f",
+        "id": "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "displayName": "Pay-As-You-Go",
         "type": "subscription"
       },
       "roleDefinition": {
-        "id": "/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608",
+        "id": "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608",
         "displayName": "Contributor",
         "type": "BuiltInRole"
       },
@@ -183,7 +183,7 @@ Status code: 201
     }
   },
   "name": "64caffb6-55c0-4deb-a585-68e948ea1ad6",
-  "id": "/providers/Microsoft.Subscription/subscriptions/dfa2a084-766f-4003-8ae1-c4aeb893a99f/providers/Microsoft.Authorization/RoleEligibilityScheduleRequests/64caffb6-55c0-4deb-a585-68e948ea1ad6",
+  "id": "/providers/Microsoft.Subscription/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/RoleEligibilityScheduleRequests/64caffb6-55c0-4deb-a585-68e948ea1ad6",
   "type": "Microsoft.Authorization/RoleEligibilityScheduleRequests"
 }
 ````

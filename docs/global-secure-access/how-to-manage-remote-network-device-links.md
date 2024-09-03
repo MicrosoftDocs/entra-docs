@@ -1,6 +1,6 @@
 ---
 title: How to add device links to remote networks
-description: Learn how to add and delete customer premises equipment device links to remote networks for Global Secure Access (preview).
+description: Learn how to add and delete customer premises equipment device links to remote networks for Global Secure Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -21,7 +21,7 @@ To configure remote networks, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - Created a remote network.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Add a device link
 
@@ -31,19 +31,13 @@ You can add a device link from the Microsoft Entra admin center or using the Mic
 
 You can add a device link to a remote network at any time.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 
 1. Select a remote network from the list.
 
-    ![Screenshot of the remote network page, with the existing branches highlighted.](./media/how-to-manage-remote-network-device-links/remote-network-list.png)
-
 1. Select **Links** from the menu.
 
-1. Select the **+ Add a link** button.
-
-    ![Screenshot of the Links area with the add a link button highlighted.](./media/how-to-manage-remote-network-device-links/add-link-to-remote-network.png)
+1. Select **+ Add a link**.
 
 ### Add a link - General tab
 
@@ -54,24 +48,25 @@ There are several details to enter on the General tab. Pay close attention to th
 1. Enter the following details.
     - **Link name**: Name of your Customer Premises Equipment (CPE).
     - **Device type**: Choose a device option from the dropdown list.
-    - **IP address**: Public IP address of your device.
-    - **Peer BGP address**: Enter the BGP IP address of your CPE.
+    - **Device IP address**: Public IP address of your device.
+    - **Device BGP address**: Enter the BGP IP address of your CPE.
         - This address is entered as the *local* BGP IP address on the CPE.
-    - **Local BGP address**: Enter a BGP IP address that isn't* part of your on-premises network where your CPE resides.
-        - For example, if your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address.
-        - This address is entered as the *peer* BGP​​ IP address on your CPE.
-    - **Link ASN**: Provide the autonomous system number (ASN) of the CPE.
+    - **Device ASN**: Provide the autonomous system number (ASN) of the CPE.
         - A BGP-enabled connection between two network gateways requires that they have different Autonomous System Number (ASN).
         - For more information, see the **Valid ASNs** section of the [Remote network configurations](reference-remote-network-configurations.md#valid-asn) article.
     - **Redundancy**: Select either *No redundancy* or *Zone redundancy* for your IPSec tunnel.
     - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
-        - Enter a BGP IP address that isn't* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
+        - Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
     - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. Available options are 250, 500, 750, and 1,000 Mbps.
-1. Select the **Next** button.
+    - **Local BGP address**: Enter a BGP IP address that isn't* part of your on-premises network where your CPE resides.
+        - For example, if your on-premises network is 10.1.0.0/16, then you can use 10.2.0.4 as your Local BGP address.
+        - This address is entered as the *peer* BGP​​ IP address on your CPE.
+        - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
+1. Select **Next**.
 
 ### Add a link - Details tab
 
-The **Details** tab is where you establish the bidirectional communication channel between Global Secure Access and your CPE. Configure your IPSec/IKE policy and select the **Next** button.
+The **Details** tab is where you establish the bidirectional communication channel between Global Secure Access and your CPE. Configure your IPSec/IKE policy and select **Next**.
 
 ![Screenshot of the default device link details.](./media/how-to-manage-remote-network-device-links/default-device-link-details.png)
 
@@ -83,16 +78,14 @@ The **Details** tab is where you establish the bidirectional communication chann
 
 ### Add a link - Security tab
 
-1. Enter the Preshared key (PSK). The same secret key must be used on your CPE.
+1. Enter the Pre-shared key (PSK) and Zone Redundancy Pre-shared key (PSK). The same secret key must be used on your respective CPE. Note that the Zone Redundancy Pre-shared key (PSK) field only appears if you set up redundancy on the first page in creating the link.
 1. Select the **Save** button.
-
-    ![Screenshot of the security tab for the device link.](media/how-to-manage-remote-network-device-links/pre-shared-key.png)
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 Remote networks with a custom IKE policy can be created using Microsoft Graph on the `/beta` endpoint.
 
-1. Sign in to the [Graph Explorer](https://aka.ms/ge).
+1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select `POST` as the HTTP method from the dropdown.
 1. Set the API version to beta.
 1. Run the following query to get a list of your remote networks and their details.
@@ -141,11 +134,11 @@ You can delete device links through the Microsoft Entra admin center and using t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
-1. Browse to **Global Secure Access (preview)** > **Devices** > **Remote network**. Device links appear in the **Links** column on the list of remote networks.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**. Device links appear in the **Links** column on the list of remote networks.
 
 1. Select the device link from the **Links** column to access the device link details page.
 
-1. Select the **Delete** icon for the device link you need to delete. A confirmation dialog appears. Select **Delete** to confirm the deletion.
+1. Select **Delete** for the device link you want to delete. A confirmation dialog appears. Select **Delete** to confirm the deletion.
 
     ![Screenshot of the delete icon for remote network device links.](media/how-to-manage-remote-network-device-links/delete-device-link.png)
 
@@ -163,4 +156,4 @@ You can delete device links through the Microsoft Entra admin center and using t
 
 ---
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+

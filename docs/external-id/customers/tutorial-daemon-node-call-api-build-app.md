@@ -10,8 +10,10 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/26/2023
+ms.date: 08/27/2024
 ms.custom: developer, devx-track-js
+
+#Customer intent: As a developer, devops, I want to learn about how to call a web API from my own daemon app with an external tenant
 ---
 
 # Tutorial: Call a web API from your Node.js daemon application
@@ -26,7 +28,7 @@ In this tutorial;
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to authorize a Node.js daemon application](tutorial-daemon-node-call-api-prepare-tenant.md).
+- [Tutorial: Prepare your external tenant to authorize a Node.js daemon application](tutorial-daemon-node-call-api-prepare-tenant.md).
 - A protected web API that is running and ready to accept requests. If you haven't created one, see the [create a protected web API tutorial](./tutorial-protect-web-api-dotnet-core-build-app.md). Ensure this web API is using the app registration details you created in the [prepare tenant tutorial](tutorial-daemon-node-call-api-prepare-tenant.md). Make sure your web API exposes the following endpoints via HTTPS:
     - `GET /api/todolist` to get all todos.
     - `POST /api/todolist` to add a TODO.
@@ -106,7 +108,7 @@ In your *authConfig.js* file, replace:
 
 - `Enter_the_Application_Id_Here` with the Application (client) ID of the client daemon app that you registered earlier.
 
-- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 - `Enter_the_Client_Secret_Here` with the client daemon app secret value that you copied earlier.
 

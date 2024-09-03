@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mitel Connect so that I can control who has access to Mitel Connect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Mitel MiCloud Connect or CloudLink Platform
+# Tutorial: Microsoft Entra integrations with Mitel MiCloud Connect or CloudLink Platform
 
-In this tutorial, you will learn how to use the Mitel Connect app to integrate Microsoft Entra ID with Mitel MiCloud Connect or CloudLink Platform. The Mitel Connect app is available in the Azure Gallery. Integrating Microsoft Entra ID with MiCloud Connect or CloudLink Platform provides you with the following benefits:
+In this tutorial, you'll learn how to use the Mitel Connect app to integrate Microsoft Entra ID with Mitel MiCloud Connect or CloudLink Platform. The Mitel Connect app is available in the Azure Gallery. Integrating Microsoft Entra ID with MiCloud Connect or CloudLink Platform provides you with the following benefits:
 
 * You can control users' access to MiCloud Connect apps and to CloudLink apps in Microsoft Entra ID by using their enterprise credentials.
 * You can enable users on your account to be automatically signed in to MiCloud Connect or CloudLink (single sign-on) by using their Microsoft Entra accounts.
@@ -86,7 +86,7 @@ To configure MiCloud Connect with SSO for Microsoft Entra ID, it is easiest to o
 
     1. To the right of **Single Sign-On**, select **Activate** or **Settings**.
     
-    The Connect Single Sign-On Settings dialog box appears.
+    The Connect single sign-on Settings dialog box appears.
 	
 3. Select the **Enable Single Sign-On** check box.
     
@@ -136,7 +136,7 @@ To configure MiCloud Connect with SSO for Microsoft Entra ID, it is easiest to o
 
 ### Create a Microsoft Entra test user 
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -152,15 +152,15 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Mitel Connect.
+In this section, you enable B.Simon to use single sign-on by granting access to Mitel Connect.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Mitel Connect**.
 1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Added Assignment** dialog, select the **Assign** button.
 
 ### Create a Mitel MiCloud Connect test user
 
@@ -183,11 +183,11 @@ Create a user on your MiCloud Connect account with the following details:
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Mitel Connect Sign-on URL where you can initiate the login flow. 
+* Select on **Test this application**, this will redirect to Mitel Connect Sign-on URL where you can initiate the sign-in flow. 
 
-* Go to Mitel Connect Sign-on URL directly and initiate the login flow from there.
+* Go to Mitel Connect Sign-on URL directly and initiate the sign-in flow from there.
 
-* You can use Microsoft My Apps. When you click the Mitel Connect tile in the My Apps, this will redirect to MiCloud Connect Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Mitel Connect tile in the My Apps, this will redirect to MiCloud Connect Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 <a name='configure-and-test-azure-ad-sso-with-cloudlink-platform'></a>
@@ -196,7 +196,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 This section describes how to enable Microsoft Entra SSO for CloudLink platform in the Azure portal and how to configure your CloudLink platform account to allow single sign-on using Microsoft Entra ID.
 
-To configure CloudLink platform with single sign-on for Microsoft Entra ID, it is recommended that you  open the Azure portal and the CloudLink Accounts portal side by side as you will need to copy some information to the CloudLink Accounts portal and vice versa.
+To configure CloudLink platform with single sign-on for Microsoft Entra ID, it is recommended that you  open the Azure portal and the CloudLink Accounts portal side by side as you need to copy some information to the CloudLink Accounts portal and vice versa.
 
 1. To open the configuration page in the Azure portal:
 
@@ -225,7 +225,7 @@ To configure CloudLink platform with single sign-on for Microsoft Entra ID, it i
       
        ![Screenshot shows Microsoft Entra Single Sign-On configuration.](./media/mitel-connect-tutorial/mitel-cloudlink-sso-setup.png)
        
-       Mitel recommends that the **Enable Mitel Credentials (Optional)** check box in the **Optional Mitel credentials** section is not selected. Select this check box only if you want the user to sign in to the CloudLink application using the Mitel credentials in addition to the single sign-on option.
+       Mitel recommends that the **Enabled Mitel Credentials (Optional)** check box in the **Optional Mitel credentials** section isn't selected. Select this check box only if you want the user to sign in to the CloudLink application using the Mitel credentials in addition to the single sign-on option.
 
 3. In the Azure portal, from the **SAML-based Sign-on** page, select the **Edit** icon  in the **Basic SAML Configuration** section. The **Basic SAML Configuration** panel opens.
 
@@ -271,7 +271,7 @@ To configure CloudLink platform with single sign-on for Microsoft Entra ID, it i
 
 ### Create a Microsoft Entra test user 
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -287,21 +287,21 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Mitel Connect.
+In this section, you enable B.Simon to use single sign-on by granting access to Mitel Connect.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Mitel Connect**.
 1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Added Assignment** dialog, select the **Assign** button.
 
 ### Create a CloudLink test user
 
 This section describes how to create a test user named **_Britta Simon_** on your CloudLink platform. Users must be created and activated before they can use single sign-on.
 
-For details about adding users in the CloudLink Accounts portal, see **_Managing Users_** in the [CloudLink Accounts documentation](https://www.mitel.com/document-center/technology/cloudlink/all-releases/en/cloudlink-accounts-html).
+For details about adding users in the CloudLink Accounts portal, see **_Managing Users_** in the [CloudLink Accounts documentation](https://www.mitel.com/document-center/technology/cloudlink).
 
 Create a user on your CloudLink Accounts portal with the following details:
 
@@ -317,11 +317,11 @@ Create a user on your CloudLink Accounts portal with the following details:
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to CloudLink Sign-on URL where you can initiate the login flow. 
+* Select on **Test this application**, this will redirect to CloudLink Sign-on URL where you can initiate the sign-in flow. 
 
-* Go to CloudLink Sign-on URL directly and initiate the login flow from there.
+* Go to CloudLink Sign-on URL directly and initiate the sign-in flow from there.
 
-* You can use Microsoft My Apps. When you click the Mitel Connect tile in the My Apps, this will redirect to CloudLink Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Mitel Connect tile in the My Apps, this will redirect to CloudLink Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 

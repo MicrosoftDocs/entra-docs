@@ -1,23 +1,21 @@
 ---
-title: 'Tutorial: Prepare a Node.js web application for authentication in a customer tenant'
-description: Learn how to create a Node web app project, then prepare it for authentication
+title: 'Tutorial: Create a Node.js web application to sign in users in an external tenant'
+description: Learn how to create a Node web app project, then prepare it to sign in users
  
 author: kengaderdus
 manager: mwongerapk
-
 ms.author: kengaderdus
-ms.service: entra-external-id
- 
+ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/27/2023
+ms.date: 08/27/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with Microsoft Entra ID for customers tenant
+#Customer intent: As a developer, devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
 ---
 
-# Tutorial: Prepare a Node.js web application for authentication
+# Tutorial: Create a Node.js web application to sign in users
 
-This tutorial is part 2 of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md) you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. In this tutorial, you create a Node.js(Express) project and organize all the folders and files you require. You enable sign-in to the application you prepare here. This Node.js(Express) web application's views use [Handlebars](https://handlebarsjs.com).
+This tutorial is part 2 of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md) you registered an application and configured user flows in your external tenant. In this tutorial, you create a Node.js(Express) project and organize all the folders and files you require. You enable sign-in to the application you prepare here. This Node.js(Express) web application's views use [Handlebars](https://handlebarsjs.com).
 
 In this tutorial you'll;
 
@@ -29,7 +27,7 @@ In this tutorial you'll;
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md)
+- [Tutorial: Prepare your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md)
 - Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 - [Node.js](https://nodejs.org).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
@@ -114,7 +112,7 @@ npm install express dotenv hbs express-session axios cookie-parser http-errors m
         </table>
         <a href="/">Go back</a>
     ```
-    We use this view to display ID token claims that Microsoft Entra ID for customers returns to this app after a user successfully signs in.  
+    We use this view to display ID token claims that Microsoft Entra External ID returns to this app after a user successfully signs in.  
 
 1. In your code editor, open *views/error.hbs* file, then add the following code:
 

@@ -1,6 +1,6 @@
 ---
-title: Sign in user after sign-up
-description: Learn how to sign in user after sign-up.
+title: Sign in user automatically after sign-up in an iOS app
+description: Learn how to automatically sign-in a user after sign-up in an iOS app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -10,19 +10,21 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 02/23/2024
-ms.custom: developer, devx-track-dotnet
-#Customer intent: As a dev, devops, I want to learn how to sign in user after sign-up.
+ms.date: 06/21/2024
+ms.custom: developer
+#Customer intent: As a dev, devops, I want to learn how to automatically sign-in a user after sign-up in an iOS app by using native authentication.
 ---
 
-# Tutorial: Sign in user after sign-up 
+# Tutorial: Sign in user automatically after sign-up in an iOS app
 
-This tutorial demonstrates how to sign in a user after sign-up. 
+This tutorial demonstrates how to sign in user automatically after sign-up in an iOS app by using native authentication. 
 
-In this tutorial, you learn how to: 
+In this tutorial, you learn how to:  
 
-- Sign in after sign-up. 
-- Handle errors. 
+> [!div class="checklist"]
+>
+> - Sign in after sign-up. 
+> - Handle errors. 
 
 ## Prerequisites 
 
@@ -82,7 +84,9 @@ extension ViewController: CredentialsDelegate {
 
 ```
 
-## Next steps 
+[!INCLUDE [Custom claims provider](../customers/includes/native-auth/support-custom-claims-provider.md)]
 
-- [Tutorial: Self-service password reset](tutorial-native-authentication-ios-self-service-password-reset.md) 
+## Next step 
 
+> [!div class="nextstepaction"]
+> [Tutorial: Self-service password reset](tutorial-native-authentication-ios-self-service-password-reset.md) 

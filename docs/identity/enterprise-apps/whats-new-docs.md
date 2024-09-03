@@ -1,11 +1,10 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 04/04/2024
+ms.date: 09/02/2024
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
-
 ms.author: jomondi
 author: omondiatieno
 manager: CelesteDG
@@ -15,23 +14,34 @@ manager: CelesteDG
 
 # Microsoft Entra application management: What's new
 
-Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those articles that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## March 2024
-
-No new or updated articles.
-
-## February 2024
+## August 2024
 
 ### Updated articles
 
-- [Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md) - Update to enhance the article's technical accuracy
-- [Troubleshoot SAML-based single sign-on](troubleshoot-saml-based-sso.md) - Update to enhance the article's technical accuracy
+Reviewed the following articles to improve technical accuracy and clarity:
 
-## January 2024
+- [SAML-based single sign-on: Configuration and Limitations](migrate-adfs-saml-based-sso.md).
+- [Configure Microsoft Entra SAML token encryption](howto-saml-token-encryption.md).
+
+## July 2024
 
 ### Updated articles
 
-- [Configure Datawiza Access Proxy for Microsoft Entra single sign-on and multifactor authentication for Outlook Web Access](datawiza-sso-mfa-to-owa.md) - Update to enhance the article's technical accuracy
-- [Enable self-service application assignment](manage-self-service-access.md) - Update to enhance the article's technical accuracy
-- [Home Realm Discovery for an application](home-realm-discovery-policy.md) - Add updated domain confirmation information
+- [Home Realm Discovery for an application](home-realm-discovery-policy.md) - Add end-user friendly guideline on domain confirmation dialog.
+
+Reviewed the following articles to improve technical accuracy and clarity:
+
+- [Manage access to an application](what-is-access-management.md).
+- [Configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access](datawiza-sso-mfa-to-owa.md).
+- [Configure F5 BIG-IP Access Policy Manager for form-based SSO](f5-big-ip-forms-advanced.md).
+- [Tutorial: Configure F5 BIG-IP Easy Button for Kerberos single sign-on](f5-big-ip-kerberos-easy-button.md).
+- [Tutorial: Configure F5 BIG-IP Easy Button for SSO to SAP ERP](f5-big-ip-sap-erp-easy-button.md).
+- [Integrate F5 BIG-IP with Microsoft Entra ID](f5-integration.md).
+
+## June 2024
+
+### Updated articles
+
+- [Manage consent to applications and evaluate consent requests](manage-consent-requests.md) - Review to improve technical accuracy and clarity.

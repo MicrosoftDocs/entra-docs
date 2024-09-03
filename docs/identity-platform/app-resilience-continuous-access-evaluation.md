@@ -13,7 +13,7 @@ ms.topic: concept-article
 ---
 # How to use Continuous Access Evaluation enabled APIs in your applications
 
-[Continuous Access Evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md) (CAE) is a Microsoft Entra feature that allows access tokens to be revoked based on [critical events](~/identity/conditional-access/concept-continuous-access-evaluation.md#critical-event-evaluation) and [policy evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md#conditional-access-policy-evaluation) rather than relying on token expiry based on lifetime. For some resource APIs, because risk and policy are evaluated in real time, this can increase token lifetime up to 28 hours. These long-lived tokens are proactively refreshed by the Microsoft Authentication Library (MSAL), increasing the resiliency of your applications.
+[Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md) is a Microsoft Entra feature that allows access tokens to be revoked based on [critical events](~/identity/conditional-access/concept-continuous-access-evaluation.md#critical-event-evaluation) and [policy evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md#conditional-access-policy-evaluation) rather than relying on token expiry based on lifetime. For some resource APIs, because risk and policy are evaluated in real time, this can increase token lifetime up to 28 hours. These long-lived tokens are proactively refreshed by the Microsoft Authentication Library (MSAL), increasing the resiliency of your applications.
 
 This article shows you how to use CAE-enabled APIs in your applications. Applications not using MSAL can add support for [claims challenges, claims requests, and client capabilities](claims-challenge.md) to use CAE.
 
@@ -172,7 +172,7 @@ You can test your application by signing in a user and then using the Azure port
 
 ## Code samples
 
-- [Enable your Angular single-page application to sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-angular-tutorial/tree/main/2-Authorization-I/1-call-graph)
+- [Enable your Angular single-page application to sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/angular-spa)
 - [Enable your React single-page application to sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-react-tutorial/tree/main/2-Authorization-I/1-call-graph)
 - [Enable your ASP.NET Core web app to sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-1-Call-MSGraph)
 

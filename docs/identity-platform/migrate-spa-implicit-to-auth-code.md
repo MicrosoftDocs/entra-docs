@@ -71,8 +71,6 @@ import * as msal from "@azure/msal-browser";
 const msalInstance = new msal.PublicClientApplication(config);
 ```
 
-For a full walk-through of adding MSAL 2.x to your application, see [Tutorial: Sign in users and call the Microsoft Graph API from a JavaScript single-page app (SPA) using auth code flow](tutorial-v2-javascript-auth-code.md).
-
 For additional changes you might need to make to your code, see the [migration guide](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/v1-migration.md) on GitHub.
 
 ## Disable implicit grant settings

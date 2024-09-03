@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: mode-api, devx-track-js
-ms.date: 01/14/2022
+ms.date: 04/09/2024
 ms.service: identity-platform
 
 ms.topic: quickstart
@@ -56,9 +56,9 @@ To register your application and add the app's registration information to your 
 | Variable  |  Description | Example(s) |
 |-----------|--------------|------------|
 | `Enter_the_Cloud_Instance_Id_Here` | The Azure cloud instance in which your application is registered | `https://login.microsoftonline.com/` (include the trailing forward-slash)|
-| `Enter_the_Tenant_Id_Here` | Tenant ID or Primary domain | `contoso.microsoft.com` or `cbe899ec-5f5c-4efe-b7a0-599505d3d54f` |
-| `Enter_the_Application_Id_Here` | Client ID of the application you registered | `fa29b4c9-7675-4b61-8a0a-bf7b2b4fda91` |
-| `Enter_the_Redirect_Uri_Here` | Redirect Uri of the application you registered | `msalfa29b4c9-7675-4b61-8a0a-bf7b2b4fda91://auth` |
+| `Enter_the_Tenant_Id_Here` | Tenant ID or Primary domain | `contoso.microsoft.com` or `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
+| `Enter_the_Application_Id_Here` | Client ID of the application you registered | `00001111-aaaa-2222-bbbb-3333cccc4444` |
+| `Enter_the_Redirect_Uri_Here` | Redirect Uri of the application you registered | `msal00001111-aaaa-2222-bbbb-3333cccc4444://auth` |
 | `Enter_the_Graph_Endpoint_Here` | The Microsoft Graph API cloud instance that your app will call | `https://graph.microsoft.com/`  (include the trailing forward-slash)|
 
 Your file should look similar to below:
@@ -68,8 +68,8 @@ Your file should look similar to below:
 
    const msalConfig = {
        auth: {
-           clientId: "fa29b4c9-7675-4b61-8a0a-bf7b2b4fda91",
-           authority: `${AAD_ENDPOINT_HOST}/cbe899ec-5f5c-4efe-b7a0-599505d3d54f`,
+           clientId: "00001111-aaaa-2222-bbbb-3333cccc4444",
+           authority: `${AAD_ENDPOINT_HOST}/aaaabbbb-0000-cccc-1111-dddd2222eeee`,
        },
        system: {
            loggerOptions: {
@@ -125,7 +125,7 @@ When a user selects the **Sign In** button for the first time, `acquireTokenInte
 
 ### MSAL Node
 
-[MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. For more information on how to use MSAL Node with desktop apps, see [this article](scenario-desktop-overview.md).
+[MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. For more information on how to use MSAL Node with desktop apps, see [this article](scenario-desktop-app-registration.md).
 
 You can install MSAL Node by running the following npm command.
 

@@ -5,7 +5,7 @@ description: Restrict guest user access permissions using the Azure portal, Powe
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 11/18/2023
+ms.date: 06/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -25,19 +25,15 @@ Limited access (default)     | Guests can see membership of all non-hidden group
 
 When guest access is restricted, guests can view only their own user profile. Permission to view other users isn't allowed even if the guest is searching by User Principal Name or objectId. Restricted access also restricts guest users from seeing the membership of groups they're in. For more information about the overall default user permissions, including guest user permissions, see [What are the default user permissions in Microsoft Entra ID?](~/fundamentals/users-default-permissions.md).
 
-## Permissions and licenses
-
-You must be in the Global Administrator role to configure guest user access. There are no additional licensing requirements to restrict guest access.
-
 ## Update in the Azure portal
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 We’ve made changes to the existing Azure portal controls for guest user permissions.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select Microsoft Entra ID  > **Users** > **All users**.
-1. Under **External users**, select **Manage external collaboration settings**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Select **Identity**  > **External Identities**.
+1. Select **External collaboration settings**.
 1. On the **External collaboration settings** page, select **Guest user access is restricted to properties and memberships of their own directory objects** option.
 
    :::image type="content" source="./media/users-restrict-guest-permissions/external-collaboration-settings.png" alt-text="Screenshot of Microsoft Entra external collaboration settings page.":::
@@ -61,7 +57,7 @@ POST https://graph.microsoft.com/beta/policies/authorizationPolicy/authorization
 Response should be Success 204.
 
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ### Updating the existing value
 

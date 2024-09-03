@@ -37,6 +37,9 @@ Conditional Access is only possible for applications that rely upon Microsoft En
 
 In this section, you configure Microsoft Entra entitlement management so users can request access to your application's roles or to groups used by the application.  In order to perform these tasks, you need to be in the *Global Administrator*, *Identity Governance Administrator* role, or be [delegated as a catalog creator](entitlement-management-delegate-catalog.md) and the owner of the application.
 
+> [!NOTE]
+> Following least privilege access, we recommend using the Identity Governance Administrator role here.
+
 1. **Access packages for governed applications should be in a designated catalog.** If you don't already have a catalog for your application governance scenario, [create a catalog](~/id-governance/entitlement-management-catalog-create.md) in Microsoft Entra entitlement management.  If you have multiple catalogs to create, you can use a PowerShell script to [create each catalog](entitlement-management-catalog-create.md#create-a-catalog-with-powershell).
 1. **Populate the catalog with necessary resources.** Add the application, and any Microsoft Entra groups that the application relies upon, [as resources in that catalog](~/id-governance/entitlement-management-catalog-create.md#add-resources-to-a-catalog).  If you have many resources, you can use a PowerShell script to [add each resource to a catalog](entitlement-management-catalog-create.md#add-a-resource-to-a-catalog-with-powershell).
 1. **Create an access package for each role or group which users can request.** For each of the applications, and for each of their application roles or groups, [create an access package](~/id-governance/entitlement-management-access-package-create.md) that includes that role or group as its resource. At this stage of configuring these access packages, configure the first access package assignment policy in each access package to be  [a policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), so that only administrators can create assignments.  In that policy, set the access review requirements for existing users, if any, so that they don't keep access indefinitely. If you have many access packages, you can use a PowerShell script to [create each access package in a catalog](entitlement-management-access-package-create.md#create-an-access-package-by-using-microsoft-powershell).
@@ -47,7 +50,7 @@ In this section, you configure Microsoft Entra entitlement management so users c
 
 ## View reports on access
 
-Microsoft Entra ID with Azure Monitor provides several reports to help you understand who has access to an application and if they're using that access.
+Microsoft Entra ID and Microsoft Entra ID Governance with Azure Monitor provides several reports to help you understand who has access to an application and if they're using that access.
 
 * An administrator, or a catalog owner, can [retrieve the list of users who have access package assignments](entitlement-management-access-package-assignments.md), via the Microsoft Entra admin center, Graph or PowerShell.
 * You can also send the audit logs to Azure Monitor and view a history of [changes to the access package](entitlement-management-logs-and-reporting.md#view-events-for-an-access-package), in the Microsoft Entra admin center, or via PowerShell.

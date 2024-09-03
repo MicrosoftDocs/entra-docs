@@ -5,7 +5,7 @@ description: Learn about the different authentication methods and features avail
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/28/2023
+ms.date: 08/22/2024
 
 ms.author: justinha
 author: justinha
@@ -14,43 +14,13 @@ manager: amycolannino
 ---
 # What authentication and verification methods are available in Microsoft Entra ID?
 
-Microsoft recommends passwordless authentication methods such as Windows Hello, FIDO2 security keys, and the Microsoft Authenticator app because they provide the most secure sign-in experience. Although a user can sign-in using other common methods such as a username and password, passwords should be replaced with more secure authentication methods.
+Microsoft recommends passwordless authentication methods such as Windows Hello, Passkeys (FIDO2), and the Microsoft Authenticator app because they provide the most secure sign-in experience. Although a user can sign-in using other common methods such as a username and password, passwords should be replaced with more secure authentication methods.
 
 :::image type="content" border="true" source="media/concept-authentication-methods/authentication-methods.png" alt-text="Illustration of the strengths and preferred authentication methods in Microsoft Entra ID." :::
 
 Microsoft Entra multifactor authentication adds additional security over only using a password when a user signs in. The user can be prompted for additional forms of authentication, such as to respond to a push notification, enter a code from a software or hardware token, or respond to a text message or phone call.
 
 To simplify the user on-boarding experience and register for both MFA and self-service password reset (SSPR), we recommend you [enable combined security information registration](howto-registration-mfa-sspr-combined.md). For resiliency, we recommend that you require users to register multiple authentication methods. When one method isn't available for a user during sign-in or SSPR, they can choose to authenticate with another method. For more information, see [Create a resilient access control management strategy in Microsoft Entra ID](concept-resilient-controls.md).
-
-Here's a [video](https://www.youtube.com/watch?v=LB2yj4HSptc&feature=youtu.be) we created to help you choose the best authentication method to keep your organization safe.
-
-## Authentication method strength and security
-
-When you deploy features like Microsoft Entra multifactor authentication in your organization, review the available authentication methods. Choose the methods that meet or exceed your requirements in terms of security, usability, and availability. Where possible, use authentication methods with the highest level of security.
-
-The following table outlines the security considerations for the available authentication methods. Availability is an indication of the user being able to use the authentication method, not of the service availability in Microsoft Entra ID:
-
-| Authentication method          | Security | Usability | Availability |
-|--------------------------------|:--------:|:---------:|:------------:|
-| Windows Hello for Business     | High     | High      | High         |
-| Microsoft Authenticator        | High     | High      | High         |
-| Authenticator Lite             | High     | High      | High         |
-| FIDO2 security key             | High     | High      | High         |
-| Certificate-based authentication | High | High | High       |
-| OATH hardware tokens (preview) | Medium   | Medium    | High         |
-| OATH software tokens           | Medium   | Medium    | High         |
-| Temporary Access Pass (TAP)    | Medium   | High      | High         |
-| SMS                            | Medium   | High      | Medium       |
-| Voice                          | Medium   | Medium    | Medium       |
-| Password                       | Low      | High      | High         |
-
-For the latest information on security, check out our blog posts:
-
-- [It's time to hang up on phone transports for authentication](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752)
-- [Authentication vulnerabilities and attack vectors](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/all-your-creds-are-belong-to-us/ba-p/855124)
-
-> [!TIP]
-> For flexibility and usability, we recommend that you use the Microsoft Authenticator app. This authentication method provides the best user experience and multiple modes, such as passwordless, MFA push notifications, and OATH codes.
 
 ## How each authentication method works
 
@@ -61,19 +31,21 @@ The following table outlines when an authentication method can be used during a 
 | Method                         | Primary authentication | Secondary authentication  |
 |--------------------------------|:----------------------:|:-------------------------:|
 | Windows Hello for Business     | Yes                    | MFA\*                     |
-| Microsoft Authenticator (Push) | No                     | MFA and SSPR              |
-| Microsoft Authenticator (Passwordless) | Yes            | No\*                        |
+| Microsoft Authenticator push | No                     | MFA and SSPR              |
+| Microsoft Authenticator passwordless | Yes            | No\*                      |
+| Microsoft Authenticator passkey (preview) | Yes         | MFA and SSPR              |
 | Authenticator Lite             | No                     | MFA                       |
-| FIDO2 security key             | Yes                    | MFA                       |
-| Certificate-based authentication | Yes                  | MFA                        |
+| Passkey (FIDO2)                | Yes                    | MFA                       |
+| Certificate-based authentication | Yes                  | MFA                       |
 | OATH hardware tokens (preview) | No                     | MFA and SSPR              |
 | OATH software tokens           | No                     | MFA and SSPR              |
+| External authentication methods (preview)| No           | MFA                       |
 | Temporary Access Pass (TAP)    | Yes                    | MFA                       |
 | SMS                            | Yes                    | MFA and SSPR              |
 | Voice call                     | No                     | MFA and SSPR              |
 | Password                       | Yes                    | No                        |
 
-> \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be enabled for FIDO2 authentication to work successfully.
+> \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be registered for FIDO2 authentication to work successfully.
 
 > \* Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication-preview).
 
@@ -83,10 +55,12 @@ To learn more about how each authentication method works, see the following sepa
 
 * [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 * [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
-* [FIDO2 security key](concept-authentication-passwordless.md#fido2-security-keys)
+* [Authenticator Lite](/entra/identity/authentication/how-to-mfa-authenticator-lite)
+* [Passkey (FIDO2)](concept-authentication-passwordless.md)
 * [Certificate-based authentication](concept-certificate-based-authentication.md)
 * [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 * [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
+* [External authentication methods (preview)](/entra/identity/authentication/how-to-authentication-external-method-manage)
 * [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md)
 * [SMS sign-in](howto-authentication-sms-signin.md) and [verification](concept-authentication-phone-options.md#mobile-phone-verification)
 * [Voice call verification](concept-authentication-phone-options.md)
@@ -100,6 +74,7 @@ The following additional verification methods can be used in certain scenarios:
 * [App passwords](howto-mfa-app-passwords.md) - used for old applications that don't support modern authentication and can be configured for per-user Microsoft Entra multifactor authentication.
 * [Security questions](concept-authentication-security-questions.md) - only used for SSPR
 * [Email address](concept-sspr-howitworks.md#authentication-methods) - only used for SSPR
+
 
 ## Usable and non-usable methods
 

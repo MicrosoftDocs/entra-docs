@@ -12,7 +12,7 @@
     items:
     - name: Compare Azure and Microsoft Entra roles    
       href: /azure/role-based-access-control/rbac-and-directory-admin-roles?toc=/entra/identity/role-based-access-control/TOC.yml&bc=/entra/identity/role-based-access-control/breadcrumb/toc.yml
-    - name: Microsoft 365 roles
+    - name: Roles across Microsoft services
       href: m365-workload-docs.md
   - name: Use groups to manage role assignments
     href: groups-concept.md
@@ -51,7 +51,7 @@
   - name: Assign roles
     items:
     - name: Assign roles to users
-      href: manage-roles-portal.md
+      href: manage-roles-portal.yml
     - name: Assign roles to a user at different scopes
       href: assign-roles-different-scopes.md
     - name: Create a role-assignable group
@@ -69,7 +69,7 @@
   - name: Create custom roles
     items: 
     - name: Create a custom role
-      href: custom-create.md
+      href: custom-create.yml
     - name: Create custom roles for enterprise apps
       href: custom-enterprise-apps.md
     - name: Create unlimited app registrations

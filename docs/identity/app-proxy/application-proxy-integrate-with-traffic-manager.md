@@ -69,4 +69,4 @@ Follow these steps to configure the Traffic Manager:
 
 ## Next steps
 
-- [Publish applications on separate networks and locations using connector groups](application-proxy-connector-groups.md)
+- [What is Global Secure Access?](../../global-secure-access/overview-what-is-global-secure-access.md)

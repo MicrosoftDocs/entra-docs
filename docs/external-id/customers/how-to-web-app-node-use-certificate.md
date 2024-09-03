@@ -1,25 +1,27 @@
 ---
 title: Use client certificate for authentication in your Node.js web app
 description: Learn how to use client certificate instead of secrets for authentication in your Node.js web app
- 
+
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: entra-external-id
- 
+
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 01/27/2024
+ms.date: 06/13/2024
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn Learn how to use a client certificate instead of a client secret for authentication in my Node.js web app
 ---
 
 # Use client certificate for authentication in your Node.js web app
 
-Microsoft Entra ID for customers supports two types of authentication for [confidential client applications](~/identity-platform/msal-client-applications.md); password-based authentication (such as client secret) and certificate-based authentication. For a higher level of security, we recommend using a certificate (instead of a client secret) as a credential in your confidential client applications.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-In production, you should purchase a certificate signed by a well-known certificate authority, and use [Azure Key Vault](https://azure.microsoft.com/products/key-vault/) to manage certificate access and lifetime for you. However, for testing purposes, you can create a self-signed certificate and configure your apps to authenticate with it. 
+Microsoft Entra External ID supports two types of authentication for [confidential client applications](~/identity-platform/msal-client-applications.md); password-based authentication (such as client secret) and certificate-based authentication. For a higher level of security, we recommend using a certificate (instead of a client secret) as a credential in your confidential client applications.
+
+In production, you should purchase a certificate signed by a well-known certificate authority, then use [Azure Key Vault](https://azure.microsoft.com/products/key-vault/) to manage certificate access and lifetime. However, for testing purposes, you can create a self-signed certificate and configure your apps to authenticate with it. 
 
 In this article, you learn to generate a self-signed certificate by using [Azure Key Vault](https://azure.microsoft.com/products/key-vault/) on the Azure portal, OpenSSL, or PowerShell. If you have a client secret already, you'll learn how to safely delete it.
 
@@ -31,7 +33,7 @@ When needed, you can also create a self-signed certificate programmatically by u
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-- External ID for customers tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
 
 - [OpenSSL](https://wiki.openssl.org/index.php/Binaries) or you can easily install [OpenSSL](https://community.chocolatey.org/packages/openssl) in Windows via [Chocolatey](https://chocolatey.org/). 
 
@@ -151,7 +153,7 @@ Once you associate your app registration with the certificate, you need to updat
     
     -  `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
     
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
     We encrypted the key (we recommend that you do so), so we have to decrypt it before we pass it to MSAL configuration object.
 

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 12/15/2023
+ms.date: 04/15/2024
 ms.author: sarahlipsey
 ms.reviewer: madansr7
 
@@ -28,7 +28,7 @@ To access the data from Usage and insights you must have:
 
 * A Microsoft Entra tenant
 * A Microsoft Entra ID P1 or P2 license to view the sign-in data
-* A user in the Reports Reader, Security Reader, Security Administrator, or Global Administrator role.
+* A user in the Reports Reader, Security Reader, or Security Administrator role.
 
 ## Access Usage and insights
 
@@ -137,8 +137,8 @@ Example response:
 ```json
 {
      "@odata.context": "https://graph.microsoft.com/beta/$metadata#reports/servicePrincipalSignInActivities",
-     "id": "ODNmNDUyOTYtZmI4Zi00YWFhLWEzOTktYWM1MTA4NGUwMmI3",
-     "appId": "83f45296-fb8f-4aaa-a399-ac51084e02b7",    
+     "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+     "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",    
      "delegatedClientSignInActivity": {
           "lastSignInDateTime": "2021-01-01T00:00:00Z",
           "lastSignInRequestId": "2d245633-0f48-4b0e-8c04-546c2bcd61f5"
@@ -196,14 +196,14 @@ Example response:
 ```json
 {
  "@odata.type": "#microsoft.graph.appCredentialSignInActivity",
- "id": "ODNmNDUyOTYtZmI4Zi00YWFhLWEzOTktYWM1MTA4NGUwMmI3fGFwcGxpY2F0aW9u",
- "keyId": "83f45296-fb8f-4aaa-a399-ac51084e02b7",
+ "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+ "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
  "keyType": "certificate",
  "keyUsage": "sign",
- "appId": "f4d9654f-0305-4072-878c-8bf266dfe146",
- "appObjectId": "6920caa5-1cae-4bc8-bf59-9c0b8495d240",
- "servicePrincipalObjectId": "cf533854-9fb7-4c01-9c0e-f68922ada8b6",
- "resourceId": "a89dc091-a671-4da4-9fcf-3ef06bdf3ac3",
+ "appId": "11112222-bbbb-3333-cccc-4444dddd5555",
+ "appObjectId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+ "servicePrincipalObjectId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+ "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
  "credentialOrigin": "application",
  "expirationDate": "2021-04-01T21:36:48-8:00",
  "signInActivity": {

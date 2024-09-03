@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Yodeck so that I can control who has access to Yodeck, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -82,14 +82,13 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Identifier** text box, type the URL:
     `https://app.yodeck.com/api/v1/account/metadata/`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
-
-    In the **Sign-on URL** text box, type the URL:
-    `https://app.yodeck.com/login`
-
 1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
+
+1. Your Yodeck application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Yodeck expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
+
+    ![Screenshot shows the image of attributes.](common/default-attributes.png)
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -134,7 +133,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	a. Select **Import from URL**.
 
-	b. In the **URL** textbox, paste the **App Federation Metadata Url** value, which you have copied and click **Import**.
+	b. In the **URL** textbox, paste the **App Federation Metadata Url** value, which you have copied, and click **Import**.
 	
 	c. After importing **App Federation Metadata Url**, the remaining fields populate automatically.
 
@@ -184,7 +183,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Click on **Test this application**, and you should be automatically signed in to the Yodeck for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Yodeck tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Yodeck for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you click the Yodeck tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Yodeck for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 

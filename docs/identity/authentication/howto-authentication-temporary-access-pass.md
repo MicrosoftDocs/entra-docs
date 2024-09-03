@@ -5,7 +5,7 @@ description: Learn how to configure and enable users to register passwordless au
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/19/2024
+ms.date: 05/21/2024
 
 ms.author: justinha
 author: tilarso 
@@ -16,7 +16,7 @@ ms.reviewer: tilarso
 
 Passwordless authentication methods, such as FIDO2 and passwordless phone sign-in through the Microsoft Authenticator app, enable users to sign in securely without a password. 
 
-Users can bootstrap Passwordless methods in one of two ways:
+Users can bootstrap passwordless methods in one of two ways:
 
 - Use existing Microsoft Entra multifactor authentication methods 
 - Use a Temporary Access Pass 
@@ -33,7 +33,7 @@ A TAP policy defines settings, such as the lifetime of passes created in the ten
 
 Before users can sign-in with a TAP, you need to enable this method in the authentication method policy and choose which users and groups can sign in by using a TAP.
 
-Although you can create a TAP for any user, only users included in the policy can sign-in with it. Only Global Admin and Authentication Policy Admin roles can update the TAP authentication method policy.
+Although you can create a TAP for any user, only users included in the policy can sign-in with it. Those with at least the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role can update the TAP authentication method policy.
 
 To configure the TAP authentication method policy:
 
@@ -72,7 +72,7 @@ After you enable a TAP policy, you can create TAPs for users in Microsoft Entra 
 - Authentication Administrators can create, delete, and view a TAP for members (except themselves).
 - Global Readers can view TAP details for the user (without reading the code itself).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users**.
 1. Select the user you would like to create a TAP for. 
 1. Select **Authentication methods** and click **Add authentication method**. 
@@ -105,14 +105,14 @@ New-MgUserAuthenticationTemporaryAccessPassMethod -UserId user2@contoso.com -Bod
 
 Id                                   CreatedDateTime       IsUsable IsUsableOnce LifetimeInMinutes MethodUsabilityReason StartDateTime         TemporaryAccessPass
 --                                   ---------------       -------- ------------ ----------------- --------------------- -------------         -------------------
-c5dbd20a-8b8f-4791-a23f-488fcbde3b38 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM TAPRocks!
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM TAPRocks!
 
 # Get a user's Temporary Access Pass
 Get-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com
 
 Id                                   CreatedDateTime       IsUsable IsUsableOnce LifetimeInMinutes MethodUsabilityReason StartDateTime         TemporaryAccessPass
 --                                   ---------------       -------- ------------ ----------------- --------------------- -------------         -------------------
-c5dbd20a-8b8f-4791-a23f-488fcbde3b38 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM
 
 ```
 
@@ -159,7 +159,7 @@ For hybrid-joined devices, users must first authenticate with another method suc
 
 ### Passwordless phone sign-in
 
-Users can also use their TAP to register for Passwordless phone sign-in directly from the Authenticator app. 
+Users can also use their TAP to register for passwordless phone sign-in directly from the Authenticator app. 
 
 For more information, see [Add your work or school account to the Microsoft Authenticator app](https://support.microsoft.com/account-billing/add-your-work-or-school-account-to-the-microsoft-authenticator-app-43a73ab5-b4e8-446d-9e54-2a4cb8e4e93c).
 
@@ -183,7 +183,7 @@ The token lifetime (session token, refresh token, access token, and so on) obtai
 
 Under the **Authentication methods** for a user, the **Detail** column shows when the TAP expired. You can delete an expired TAP using the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users**, select a user, such as *Tap User*, then choose **Authentication methods**.
 1. On the right-hand side of the **Temporary Access Pass** authentication method shown in the list, select **Delete**.
 
@@ -191,7 +191,7 @@ You can also use PowerShell:
 
 ```powershell
 # Remove a user's Temporary Access Pass
-Remove-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com -TemporaryAccessPassAuthenticationMethodId c5dbd20a-8b8f-4791-a23f-488fcbde3b38
+Remove-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com -TemporaryAccessPassAuthenticationMethodId 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 ```
 
 For more information, see [Remove-MgUserAuthenticationTemporaryAccessPassMethod](/powershell/module/microsoft.graph.identity.signins/remove-mguserauthenticationtemporaryaccesspassmethod?view=graph-powershell-1.0&preserve-view=true&viewFallbackFrom=graph-powershell-beta).
@@ -209,11 +209,11 @@ For more information about NIST standards for onboarding and recovery, see [NIST
 
 Keep these limitations in mind:
 
-- When using a one-time TAP to register a Passwordless method such as FIDO2 or Phone sign-in, the user must complete the registration within 10 minutes of sign-in with the one-time TAP. This limitation doesn't apply to a TAP that can be used more than once.
+- When using a one-time TAP to register a passwordless method such as a FIDO2 security key or phone sign-in, the user must complete the registration within 10 minutes of sign-in with the one-time TAP. This limitation doesn't apply to a TAP that can be used more than once.
 - Users in scope for self service password reset (SSPR) registration policy *or* [Identity Protection multifactor authentication registration policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md) are required to register authentication methods after they've signed in with a TAP using a browser. 
-Users in scope for these policies are redirected to the [Interrupt mode of the combined registration](concept-registration-mfa-sspr-combined.md#combined-registration-modes). This experience doesn't currently support FIDO2 and Phone Sign-in registration. 
+Users in scope for these policies are redirected to the [Interrupt mode of the combined registration](concept-registration-mfa-sspr-combined.md#combined-registration-modes). This experience doesn't currently support FIDO2 and phone sign-in registration. 
 - A TAP can't be used with the Network Policy Server (NPS) extension and Active Directory Federation Services (AD FS) adapter.
-- It can take a few minutes for changes to replicate. Because of this, after a TAP is added to an account it can take a while for the prompt to appear. For the same reason, after a TAP expires, users may still see a prompt for TAP. 
+- It can take a few minutes for changes to replicate. Because of this, after a TAP is added to an account, it can take a while for the prompt to appear. For the same reason, after a TAP expires, users may still see a prompt for TAP. 
 
 ## Troubleshooting    
 

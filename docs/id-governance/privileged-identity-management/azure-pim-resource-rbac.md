@@ -103,7 +103,7 @@ My audit enables you to view your personal role activity.
     :::image type="content" source="media/azure-pim-resource-rbac/my-audit-time.png" alt-text="Screenshot showing an audit list for the current user.":::
 
 > [!NOTE]
-> Access to audit history requires either a Global Administrator or Privileged Role Administrator role.
+> Access to audit history requires at least the Privileged Role Administrator role.
 
 ## Get reason, approver, and ticket number for approval events
 

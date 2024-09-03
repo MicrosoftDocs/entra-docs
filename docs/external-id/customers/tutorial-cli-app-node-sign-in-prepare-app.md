@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Create a Node.js CLI app for authentication"
-description: Learn how to build a Node.js CLI app that signs in users in a Microsoft Entra ID for customers tenant
+description: Learn how to build a Node.js CLI app that signs in users in an external tenant
  
 author: Dickson-Mwendia
 manager: mwongerapk
@@ -10,15 +10,15 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 08/04/2023
+ms.date: 06/24/2024
 ms.custom: developer, devx-track-js
 
-#Customer intent: As a dev, devops, I want to learn how to build a Node.js CLI application that signs in users in a Microsoft Entra ID for customers tenant.
+#Customer intent: As a dev, devops, I want to learn how to build a Node.js CLI application that signs in users in an external tenant.
 ---
 
 # Tutorial: Prepare a Node.js CLI application for authentication
 
-This tutorial is part 2 of a series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-cli-app-node-sign-in-prepare-tenant.md), you registered an application and configured user flows in your Microsoft Entra ID for customers tenant. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
+This tutorial is part 2 of a series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-cli-app-node-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
 
 In this tutorial: 
 
@@ -30,7 +30,7 @@ In this tutorial:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app](tutorial-cli-app-node-sign-in-prepare-tenant.md)
+- [Tutorial: Prepare your external tenant to sign in users in a Node.js CLI app](tutorial-cli-app-node-sign-in-prepare-tenant.md)
 - Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 - [Node.js](https://nodejs.org).
 
@@ -98,7 +98,7 @@ The `msalConfig` object contains a set of configuration options that can be used
 
 - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
-- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For instance, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant domain name, [learn how to read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For instance, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant domain name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 In the configuration object, you also add `LoggerOptions`, which contains two options:
 
@@ -121,6 +121,8 @@ module.exports = {
     loginRequest: loginRequest,
 };
 ```
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
 
 ## Next step
 

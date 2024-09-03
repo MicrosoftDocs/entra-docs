@@ -25,7 +25,7 @@ This article describes how to assign Microsoft Entra roles with administrative u
 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Microsoft Graph PowerShell module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
@@ -33,7 +33,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 ## Roles that can be assigned with administrative unit scope
 
-The following Microsoft Entra roles can be assigned with administrative unit scope. Additionally, any [custom role](custom-create.md) can be assigned with administrative unit scope as long as the custom role's permissions include at least one permission relevant to users, groups, or devices.
+The following Microsoft Entra roles can be assigned with administrative unit scope. Additionally, any [custom role](custom-create.yml) can be assigned with administrative unit scope as long as the custom role's permissions include at least one permission relevant to users, groups, or devices.
 
 | Role | Description |
 | -----| ----------- |
@@ -49,7 +49,7 @@ The following Microsoft Entra roles can be assigned with administrative unit sco
 | [Teams Administrator](permissions-reference.md#teams-administrator) | Can manage Microsoft 365 groups in the assigned administrative unit only. Can manage team members in the Microsoft 365 admin center for teams associated with groups in the assigned administrative unit only. Cannot use the Teams admin center. |
 | [Teams Devices Administrator](permissions-reference.md#teams-devices-administrator) | Can perform management related tasks on Teams certified devices. |
 | [User Administrator](permissions-reference.md#user-administrator) | Can manage all aspects of users and groups, including resetting passwords for limited admins within the assigned administrative unit only. Cannot currently manage users' profile photographs. |
-| [&lt;Custom role&gt;](custom-create.md) | Can perform actions that apply to users, groups, or devices, according to the definition of the custom role. |
+| [&lt;Custom role&gt;](custom-create.yml) | Can perform actions that apply to users, groups, or devices, according to the definition of the custom role. |
 
 Certain role permissions apply only to non-administrator users when assigned with the scope of an administrative unit. In other words, administrative unit scoped [Helpdesk Administrators](permissions-reference.md#helpdesk-administrator) can reset passwords for users in the administrative unit only if those users don't have administrator roles. The following list of permissions are restricted when the target of an action is another administrator:
 

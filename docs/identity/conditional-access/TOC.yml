@@ -7,20 +7,22 @@
 - name: Tutorials
   items:
   - name: Require multifactor authentication
-    href: ~/identity/authentication/tutorial-enable-azure-mfa.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+    href: ../authentication/tutorial-enable-azure-mfa.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
 - name: Concepts
   expanded: false
   items:
-  - name: Common Conditional Access policies
+  - name: Conditional Access templates
     href: concept-conditional-access-policy-common.md
   - name: Conditional Access policy components
     href: concept-conditional-access-policies.md
   - name: Assignments
     items: 
-     - name: Users and groups
+     - name: Users, groups, and roles
        href: concept-conditional-access-users-groups.md
      - name: Target resources
        href: concept-conditional-access-cloud-apps.md
+     - name: Network
+       href: concept-assignment-network.md
      - name: Conditions
        href: concept-conditional-access-conditions.md
   - name: Access controls
@@ -37,8 +39,6 @@
     href: concept-filter-for-applications.md
   - name: Token protection
     href: concept-token-protection.md
-  - name: Location conditions
-    href: location-condition.md
   - name: Authentication flows
     href: concept-authentication-flows.md    
   - name: Authentication transfer
@@ -88,12 +88,14 @@
       href: howto-conditional-access-policy-risk-user.md
     - name: Block users with elevated insider risk
       href: how-to-policy-insider-risk.md
+    - name: Require compliant devices
+      href: how-to-policy-require-device-compliance.md
     - name: Require compliant or hybrid joined devices for admins
       href: howto-conditional-access-policy-compliant-device-admin.md
     - name: Block access for unknown or unsupported device platform
       href: howto-policy-unknown-unsupported-device.md
     - name: Require approved app or app protection policy
-      href: howto-policy-approved-app-or-app-protection.md
+      href: howto-policy-approved-app-or-app-protection.yml
     - name: Require app protection policy for Windows
       href: how-to-app-protection-policy-windows.md
     - name: No persistent browser session
@@ -102,10 +104,12 @@
       href: howto-conditional-access-policy-compliant-device.md
     - name: Use application enforced restrictions
       href: howto-policy-app-enforced-restriction.md
+    - name: Require auth strength for device registration
+      href: how-to-policy-mfa-device-register-join.md
     - name: Require MFA for Intune enrollment
-      href: /mem/intune/enrollment/multi-factor-authentication?context=/entra/identity/conditional-access/context/conditional-access-context.json
+      href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
     - name: Block access by location
-      href: howto-conditional-access-policy-location.md
+      href: howto-conditional-access-policy-location.yml
     - name: Block access
       href: howto-conditional-access-policy-block-access.md
     - name: Require authentication strength for external users
@@ -136,24 +140,24 @@
       href: howto-continuous-access-evaluation-troubleshoot.md
   - name: Approved client app migration
     href: migrate-approved-client-app.md
-  - name: Conditional Access APIs
-    href: howto-conditional-access-apis.md
 - name: Reference
   items:
+  - name: Upcoming changes
+    href: reference-resources-change.md
   - name: Office 365 application
     href: reference-office-365-application-contents.md
   - name: Microsoft Graph APIs
     items: 
     - name: conditionalAccessPolicy
-      href: /graph/api/resources/conditionalaccesspolicy
+      href: /graph/api/resources/conditionalaccesspolicy?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
     - name: namedLocation
-      href: /graph/api/resources/namedlocation
+      href: /graph/api/resources/namedlocation?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
     - name: countryNamedLocation
-      href: /graph/api/resources/countrynamedlocation
+      href: /graph/api/resources/countrynamedlocation?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
     - name: ipNamedLocation
-      href: /graph/api/resources/ipnamedlocation
+      href: /graph/api/resources/ipnamedlocation?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
     - name: conditionalAccessTemplate
-      href: /graph/api/resources/conditionalaccesstemplate
+      href: /graph/api/resources/conditionalaccesstemplate?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
   - name: Custom controls
     href: controls.md
   - name: Classic policies
