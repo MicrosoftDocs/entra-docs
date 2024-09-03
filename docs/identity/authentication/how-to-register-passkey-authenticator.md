@@ -27,7 +27,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
 | **Same-device registration by signing into Authenticator**              | &#x2705;          | &#x2705;       |
-| **Same-device registration in a browser**            | &#x2705; | &#10060;<sup>1</sup>     |
+| **Same-device registration in a browser**            | &#x2705; | &#x2705;<sup>1</sup>     |
 | **Cross-device registration**  | &#x2705;  | &#x2705;    |
 
 <sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
