@@ -15,7 +15,7 @@ ms.topic: concept-article
 
 # How to handle third-party cookie blocking in browsers
 
-Many browsers block *third-party cookies*, cookies on requests to domains other than the domain shown in the browser's address bar. These cookies are also known as *cross-domain cookies*. This block breaks the implicit flow and requires new authentication patterns to successfully sign in users. In the Microsoft identity platform, we use the authorization flow with Proof Key for Code Exchange (PKCE) and refresh tokens to keep users signed in when third-party cookies are blocked.
+Many browsers block _third-party cookies_, cookies on requests to domains other than the domain shown in the browser's address bar. These cookies are also known as _cross-domain cookies_. This block breaks the implicit flow and requires new authentication patterns to successfully sign in users. In the Microsoft identity platform, we use the authorization flow with Proof Key for Code Exchange (PKCE) and refresh tokens to keep users signed in when third-party cookies are blocked. This authorization code flow with Proof Key for Code Exchange approach is recommended over the implicit flow.
 
 ## What is Intelligent Tracking Protection (ITP) and Privacy Sandbox?
 

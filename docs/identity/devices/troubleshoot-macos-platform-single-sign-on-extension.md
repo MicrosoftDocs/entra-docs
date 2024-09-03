@@ -125,6 +125,10 @@ If you're experiencing issues with PSSO, you can report them on Company Portal.
 
 You can check the current PSSO state on your machine at any time by opening the **Terminal** app. Run the following command.
 
+```console
+app-sso platform -s
+```
+
 ### Contact us
 
 We'd love to hear your feedback. You should include the following information:
@@ -193,7 +197,7 @@ fi
 cp /Applications/Company\ Portal.app/Contents/Resources/com.microsoft.browsercore.json ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/
 
 # For Edge (user-specific, default path, not channel specific)
-# See: https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/developer-guide/native-messaging?tabs=v3%2Cmacos
+# See: https://learn.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/native-messaging?tabs=v3%2Cmacos
 
 if [ ! -d ~/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts ]; then
   mkdir ~/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts

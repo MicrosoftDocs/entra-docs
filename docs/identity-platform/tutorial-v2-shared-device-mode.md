@@ -248,7 +248,7 @@ You should select **Make this change for me** and then provide the values the qu
 
 ## Set up a tenant
 
-For testing purposes, set up the following in your tenant: at least two employees, one Cloud Device Administrator, and one Global Administrator. Set the Cloud Device Administrator by modifying Organizational Roles. Access your Organizational Roles by selecting **Identity** > **Roles & admins** > **Roles & admins** > **All roles**, and then select **Cloud Device Administrator**. Add the users that can put a device into shared mode.
+For testing purposes, set up the following in your tenant: at least two employees, one Cloud Device Administrator, and one Application Developer. Set the Cloud Device Administrator by modifying Organizational Roles. Access your Organizational Roles by selecting **Identity** > **Roles & admins** > **Roles & admins** > **All roles**, and then select **Cloud Device Administrator**. Add the users that can put a device into shared mode.
 
 ## Set up an Android device in shared mode
 

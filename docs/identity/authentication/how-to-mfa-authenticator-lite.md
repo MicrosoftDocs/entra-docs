@@ -5,11 +5,11 @@ description: Learn about how to you can set up Microsoft Authenticator Lite for 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/17/2023
+ms.date: 08/20/2024
 
 ms.author: justinha
-author: sabina-smith
-ms.reviewer: sabina-smith
+author: justinha
+ms.reviewer: guptashi
 manager: amycolannino
 
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
@@ -28,7 +28,7 @@ Users receive a notification in Outlook mobile to approve or deny sign-in, or th
 
 ## Prerequisites
 
-- Your organization needs to enable Microsoft Authenticator (second factor) push notifications for all users or select groups. We recommend enabling Microsoft Authenticator by using the modern [Authentication methods policy](concept-authentication-methods-manage.md#authentication-methods-policy). You can edit the Authentication methods policy by using the Microsoft Entra admin center or Microsoft Graph API. Organizations with an active MFA server are not eligible for this feature.
+- Your organization needs to enable Microsoft Authenticator (second factor) push notifications for all users or select groups. We recommend enabling Microsoft Authenticator by using the modern [Authentication methods policy](concept-authentication-methods-manage.md#authentication-methods-policy). You can edit the Authentication methods policy by using the Microsoft Entra admin center or Microsoft Graph API. Authenticator Lite isn't eligible for on-premises user accounts or organizations with an active MFA server.  
 
   >[!TIP]
   >We recommend that you also enable [system-preferred multifactor authentication (MFA)](concept-system-preferred-multifactor-authentication.md) when you enable Authenticator Lite. With system-preferred MFA enabled, users try to sign-in with Authenticator Lite before they try less secure telephony methods like SMS or voice call. 

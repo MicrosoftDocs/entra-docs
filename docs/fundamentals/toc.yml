@@ -8,6 +8,8 @@ items:
     href: what-is-entra.md
   - name: What is Microsoft Entra ID?
     href: whatis.md
+  - name: Trial user guide for Microsoft Entra Suite
+    href: try-microsoft-entra-suite.md
   - name: New name for Azure AD
     href: new-name.md
   - name: Identity fundamentals

@@ -1,19 +1,19 @@
 ---
-title: Check Workflow Insights (preview)
+title: Check Workflow Insights
 description: Learn how to check workflow insights within your Microsoft Entra tenant.
 author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 04/22/2024
+ms.date: 08/12/2024
 ms.author: owinfrey
 ms.reviewer: krbain
 
 #CustomerIntent: As a system administrator, I want to view insights across my environment so that I know which workflows, or tasks, are being used the most.
 ---
 
-# Check Workflow Insights (preview)
+# Check Workflow Insights
 
 With Workflow Insights, you're able to get a quick view of workflow execution within your environment. With Workflow Insights, you can view information such as:
 
@@ -23,7 +23,7 @@ With Workflow Insights, you're able to get a quick view of workflow execution wi
 - Number of workflows by categories of the past time-span that you define from either 7, 14, or 30 days.
 
 
-For more information, see: [Workflow Insights (preview)](lifecycle-workflow-insights.md).
+For more information, see: [Workflow Insights](lifecycle-workflow-insights.md).
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ For more information, see: [Workflow Insights (preview)](lifecycle-workflow-insi
 
 1. Browse to **Identity governance** > **Lifecycle workflows** > **Overview**. 
 
-1. On the overview page, select **Workflow Insights (Preview)**.
+1. On the overview page, select **Workflow Insights**.
 
 1. On the Workflow Insights page, you're able to view workflow information across your environment.
 
