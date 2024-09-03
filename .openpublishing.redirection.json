@@ -186,16 +186,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/saas-apps/ibm-storage-virtualize-oidc-tutorial.md",
-      "redirect_url": "/entra/identity/saas-apps/ibm-storage-virtualize-tutorial",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/saas-apps/lifebalance-program-oidc-tutorial.md",
-      "redirect_url": "/entra/identity/saas-apps/lifebalance-program-tutorial",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity/saas-apps/paycargo-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/paycargo-classic-tutorial",
       "redirect_document_id": false
