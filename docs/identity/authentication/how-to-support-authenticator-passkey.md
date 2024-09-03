@@ -5,7 +5,7 @@ description: Support passkeys in Microsoft Authenticator in your Microsoft Entra
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/26/2024
+ms.date: 09/03/2024
 
 ms.author: justinha
 author: justinha

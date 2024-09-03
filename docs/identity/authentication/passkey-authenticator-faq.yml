@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 08/19/2024
+  ms.date: 09/03/2024
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -22,7 +22,10 @@ sections:
       - question: |
           Can I use Authenticator as a passkey provider on devices earlier than Android 14 or iOS 17?
         answer: |
-          Authenticator uses operating system APIs as a passkey provider. These APIs are available only on devices that run Android 14 and iOS 17 or later. As a result, passkeys in Authenticator are only available on devices that run Android 14 or iOS 17 and later.
+          Authenticator uses operating system APIs as a passkey provider. 
+          These APIs are available only on devices that run Android 14 and iOS 17 or later. 
+          As a result, passkeys in Authenticator are only available on devices that run Android 14 or iOS 17 and later.
+          Support for FIDO2 security keys on earlier versions of Android is coming soon.
       - question: |
           Do I need to enable Bluetooth to perform cross-device authentication?
         answer: |
@@ -47,14 +50,14 @@ sections:
       - question: |
           How can I prevent users from being looped between Authenticator and Security info when they add a passkey?
         answer: |
-          This loop can occur if you configure an "All cloud apps" Conditional Access policy which requires users to use a passkey in Authenticator to proceed. A sample configuration would be:
+          If you configure an authentication strength Conditional Access policy with the following conditions, users can get caught in a loop when they try to sign in: 
 
           - Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
           - Targeted resource: **All cloud apps** 
-          - Grant control: **Authentication strength - Require phishing-resistant credentials** 
-          
-          Registration of credentials (e.g. passkey) by signing into the Authenticator is governed by the "All cloud apps" policy. In this instance, the user is attempting to register a passkey in the Authenticator but they must use a phishing-resistant credential to do so.
-          Since the user doesn't have a phishing-resistant credential, they are directed to [Security info](https://mysignins.microsoft.com/security-info) for registration. When the user is in Security info, they can choose to add a different phishing-resistant credential, if enabled. However,
-          the user will enter a loop if they choose to add a passkey in the Authenticator app as Security info will guide users to sign in to the app to do so. To avoid this loop, users can use the WebAuthn registration flow to setup a passkey in the Authenticator.
-          Organizations can also tag their apps and explicitly apply CA policies to those instead of the "All cloud apps" CA policy or organizations can set up a CA policy for mobile platforms that allow users to use a Temporary Access Pass (TAP) in addiiton to phishing-resistant credentials which a user can then leverage to sign in to the Authenticator app and set up their passkey.
-          For more information about how to workaround the loop, see [Workarounds for an authentication strength Conditional Access policy loop](how-to-support-authenticator-passkey.md)
+          - Grant control: **Authentication strength – Require passkey in Authenticator** 
+
+          The policy creates a loop for the user because the authentication strength requires Authenticator, and the targeted resource is **All cloud apps**, which includes Authenticator. 
+          As a result, when a user tries to add a passkey in Authenticator, they are directed to [Security info](https://mysignins.microsoft.com/security-info) for passkey registration. 
+          But they only can add **Passkey in Microsoft Authenticator** as a registration option because of the authentication strength requirement. 
+
+          For possible workarounds, see [Workarounds for an authentication strength Conditional Access policy loop](how-to-support-authenticator-passkey.md#workarounds-for-an-authentication-strength-conditional-access-policy-loop).
