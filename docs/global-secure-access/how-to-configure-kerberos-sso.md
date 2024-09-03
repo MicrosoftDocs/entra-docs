@@ -18,7 +18,6 @@ Provide single sign-on for on-premises resources published through Microsoft Ent
 Before you get started with single sign-on, make sure your environment is ready.
 
 - An Active Directory forest. The guide uses a forest domain name that can be publicly resolved. However, a publicly resolved domain isn't a requirement.
-- Your Microsoft Entra ID tenant is set up with the private Domain Name System (DNS) feature of Microsoft Entra Private Access.
 - You enabled the Microsoft Entra Private Access forwarding profile.
 - The latest version of the Microsoft Entra Private Access connector is installed on a Windows server that has access to your domain controllers.
 - The latest version of the Global Secure Access client. For more information on the client, see [Global Secure Access clients](concept-clients.md).
