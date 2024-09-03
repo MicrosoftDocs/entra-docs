@@ -25,10 +25,10 @@ Microsoft Entra External ID external tenants include several baseline security f
 |Feature                                 |Notes     |
 |----------------------------------------|----------|
 |IP level throttling                     |Detects when a bad actor tries to overwhelm the system with requests.|
-|Application and tenant level throttling |Detects unusually high traffic spikes from specific applications in your tenant, and applies rate-limiting to protect your other applications.|
+|Application and tenant level throttling |Detects unusually high traffic spikes from specific applications in your tenant and applies rate-limiting to protect your other applications.|
 |Smart Lockout                           |Blocks attackers who attempt to guess passwords or use brute force methods to gain access, while allowing legitimate users to retain access to their accounts.|
 |Feature level throttling                |Ensures the availability of critical sign-in functionality by prioritizing it during times of high demand.|
-|User creation level throttling          |Allows for a steady increate in user sign-ups while protecting against misuse of tenant resources.|
+|User creation level throttling          |Allows for a steady increase in user sign-ups while protecting against misuse of tenant resources.|
 
 ## Account protection and access control
 
