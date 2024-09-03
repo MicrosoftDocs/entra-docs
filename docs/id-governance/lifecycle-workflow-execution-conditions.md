@@ -8,7 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: conceptual 
-ms.date: 04/10/2024
+ms.date: 09/03/2024
 ms.custom: template-concept 
 ---
 
