@@ -123,9 +123,8 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 > Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
 
 ### Add private DNS suffixes
-Private DNS support for Microsoft Entra Private Access lets you query your own internal DNS servers to resolve IP addresses for internal domain names. Let’s look at an example. Let’s say you have an internal IP range of 10.8.0.0 to 10.8.255.255. You configure this range in your Quick Access application definition. You want users to access a web application responding on IP 10.8.0.5 when they type
-https://benefits
-in their web browser. But you don’t want to configure a FQDN for the application. Using Private DNS, you configure a corresponding DNS Suffix so that the Global Secure Access client knows how to route the request correctly.
+Private DNS support for Microsoft Entra Private Access lets you query your own internal DNS servers to resolve IP addresses for internal domain names. Let’s look at an example. Let’s say you have an internal IP range of `10.8.0.0` to `10.8.255.255`. You configure this range in your Quick Access application definition. You want users to access a web application responding on IP `10.8.0.5` when they type
+`https://benefits` in their web browser. But you don’t want to configure a FQDN for the application. Using Private DNS, you configure a corresponding DNS Suffix so that the Global Secure Access client knows how to route the request correctly.
 
 Additionally, you can provide a single sign-on experience for Kerberos resources by configuring Kerberos Authentication to domain controllers using Private DNS.
 
