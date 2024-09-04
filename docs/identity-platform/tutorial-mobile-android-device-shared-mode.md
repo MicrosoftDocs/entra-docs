@@ -26,7 +26,7 @@ In this tutorial:
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/free/).
-- An Android device with Android OS version 8.0 or later that isn't registered with Microsoft Entra ID. If it's registered, reset it to factory settings.
+- An Android device running Android OS version 8.0 or later.  Ensure the device is wiped either by a factory reset or uninstalling all Microsoft and other SDM-enabled app. 
 - [Microsoft Authenticator app](https://play.google.com/store/apps/details/Microsoft_Authenticator?id=com.azure.authenticator&hl=en_NZ) latest version installed on the device.
 - For setup via MDM, the device should be managed by an MDM that supports shared device mode such as Microsoft Intune.  
 
@@ -49,27 +49,29 @@ The following third-party Mobile Device Management (MDM) tools support Microsoft
 
 ## Manual setup with the Microsoft Authenticator app
 
-Launch the Authenticator App and navigate to main account page where you can see the **Add Account** option, as shown:
+To complete manual setup using the Microsoft Authenticator app, you require a cloud device administrator account. Follow these steps to complete the setup process:
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-add-account.png" alt-text="Authenticator add account screen":::
+1. Launch the Authenticator App and navigate to main account page where you can see the **Add Account** option, as shown:
 
-Go to the **Settings** pane using the right-hand menu bar. Select **Device Registration** under **Work & School accounts**.
+    :::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-add-account.png" alt-text="Authenticator add account screen":::
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-settings.png" alt-text="Authenticator settings screen":::
+1. Go to the **Settings** pane using the right-hand menu bar. Select **Device Registration** under **Work & School accounts**.
 
-When you select this button, you're asked to authorize access to device contacts. This is due to Android's account integration on the device. Choose **Allow**.
+    :::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-settings.png" alt-text="Authenticator settings screen":::
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-allow-screen.png" alt-text="Authenticator allow access confirmation screen":::
+1. When you select **Device Registration**, you're asked to authorize access to device contacts. This is due to Android's account integration on the device. Choose **Allow**.
 
-The Cloud Device Administrator should enter their organizational email under **Or register as a shared device**. Then select the **Register as shared device** button, and enter their credentials.
+    :::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-allow-screen.png" alt-text="Authenticator allow access confirmation screen":::
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/register-device.png" alt-text="Device registration screen in app":::
+1. Enter your organizational email under **Or register as a shared device**. Then select the **Register as shared device** button, and enter their credentials.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/sign-in.png" alt-text="App screenshot showing Microsoft sign-in page":::
+    :::image type="content" source="media/tutorial-v2-shared-device-mode/register-device.png" alt-text="Device registration screen in app":::
 
-The device is now in shared mode.
+    :::image type="content" source="media/tutorial-v2-shared-device-mode/sign-in.png" alt-text="App screenshot showing Microsoft sign-in page":::
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/shared-device-mode-screen.png" alt-text="App screen showing shared device mode enabled":::
+1. The device is now in shared mode.
+
+    :::image type="content" source="media/tutorial-v2-shared-device-mode/shared-device-mode-screen.png" alt-text="App screen showing shared device mode enabled":::
 
 Any sign-in and sign-out instances on the device are global, and apply to all apps that are integrated with MSAL and Microsoft Authenticator on the device. You can now deploy applications to the device that use shared-device mode features.
 
@@ -77,7 +79,7 @@ Any sign-in and sign-out instances on the device are global, and apply to all ap
 
 Once you set up a device in shared-mode, it becomes known to your organization and is tracked in your organizational tenant. You can view your shared devices by looking at the **Join Type**.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/registered-device-screen.png" alt-text="Screenshot that shows the all devices pane":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/shared-device-mode-via-zero-touch-setup.png" alt-text="Screenshot showing shared device that's registered via zero-touch":::
 
    
 ## Related content
