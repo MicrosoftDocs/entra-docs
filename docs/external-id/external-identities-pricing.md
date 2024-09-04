@@ -5,7 +5,7 @@ description: Learn about Microsoft Entra External ID monthly active users (MAU) 
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 08/31/2024
+ms.date: 09/04/2024
 
 ms.author: mimart
 author: msmimart
@@ -23,9 +23,18 @@ This article outlines the pricing structure for Microsoft Entra External ID and 
 
 ## Monthly active users (MAU) billing model
 
-Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique external users with authentication activity within a calendar month. This billing model applies to all External ID scenarios, including B2B collaboration in workforce tenants and identity and access management in external tenants.
+The Microsoft Entra External ID billing model applies to all external users, including:
 
-To determine the total number of MAUs, we combine MAUs from all your tenants (both External ID and Azure AD B2C) that are linked to the same subscription. MAU billing helps you reduce costs by offering a free tier and flexible, predictable pricing. You can get started for free and only pay for what you use as your business grows.
+- B2B collaboration external guests in Microsoft Entra External ID [workforce tenants](tenant-configurations.md#workforce-tenants).
+
+   > [!NOTE]
+   > For B2B collaboration in [multitenant organizations](~/identity/multi-tenant-organizations/multi-tenant-organization-overview.md#who-are-multitenant-organization-member-users), this billing model applies only to external users with a UserType of Guest. It doesn’t apply to external members that originate from within the multitenant organization (UserType=Member).
+
+- External users in Microsoft Entra External ID [external tenants](tenant-configurations.md#external-tenants), which includes consumers and business guests (users without directory roles), and admins (users with directory roles).
+
+Billing is based on monthly active users (MAU), which is the count of unique external users who authenticate to your tenants within a calendar month. To determine the total number of MAUs, we combine MAUs from all tenants linked to the same subscription, including workforce tenants and external tenants. 
+
+MAU billing helps you reduce costs by offering a free tier and flexible, predictable pricing. You can get started for free and only pay for what you use as your business grows.
 
 ## External ID pricing
 
@@ -36,7 +45,6 @@ For the latest information about usage billing and pricing, see [External ID pri
 > [!NOTE]
 >
 >- Existing subscriptions to Azure Active Directory B2C (Azure AD B2C) B2C or B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We'll communicate upgrade options once they're available.
->- For multitenant organizations, identities whose UserType is external member aren't counted as part of the External ID MAU. Only internal and external guests count as External ID MAU. [Learn more about user types in multitenant organizations](~/identity/multi-tenant-organizations/multi-tenant-organization-overview.md#who-are-multitenant-organization-member-users).
 
 <a name='link-your-azure-ad-tenant-to-a-subscription'></a>
 
@@ -96,3 +104,4 @@ If no subscriptions are available in the **Link a subscription** pane, here are 
 
 - See [Frequently asked questions](customers/faq-customers.md) about external tenants.
 - For the latest pricing information, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+- For details about Azure Active Directory B2C billing, see [Billing model for Azure Active Directory B2C](~/azure/active-directory-b2c/billing.md).
