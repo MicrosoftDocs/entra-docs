@@ -147,7 +147,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 
 ## Step 6: Change Assignment required setting
-The default setting is **No** which allows users to log into twingate without being assigned in the enterprise application.
+The default setting is **No** which allows users to log into Twingate without being assigned in the enterprise application.
 
 1. Click on **Properties**.
 
