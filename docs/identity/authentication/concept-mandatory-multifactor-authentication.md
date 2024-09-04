@@ -42,6 +42,12 @@ Workload identities, such as managed identities and service principals, aren
 
 Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend updating these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
+## Implementation
+ 
+This requirement for MFA at sign-in is implemented by Azure. Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) will show it as the source of the MFA requirement. 
+
+This requirement will be implemented on top of any access policies you’ve configured in your tenant. For example, if your organization chose to retain Microsoft’s [security defaults](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/raising-the-baseline-security-for-all-organizations-in-the-world/ba-p/3299048), and you currently have security defaults enabled, your users will see no change in behavior as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users will not see a change. Similarly, if you have existing more restrictive Conditional Access policies in place targeting Azure that require stronger authentication, such as phishing-resistant MFA, then those policies will continue to be enforced and your users will not see any changes.
+
 ## Enforcement phases 
 
 The enforcement of MFA will roll out in two phases: 
