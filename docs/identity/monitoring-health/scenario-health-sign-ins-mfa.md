@@ -102,7 +102,9 @@ Important details to note:
     - Add a **filter** for Conditional Access.
     - View the sign-in logs details and select the Conditional Access tab to see the policies that were applied.
 1. Follow the guidance in the [Troubleshoot sign-in problems with Conditional Access]() article.
-    - This article illustrates how to identify sign-in events related to Conditional Access policies, how to check audit logs for signs of policy changes, and how to recognize common sign-in error codes.
+    - This article illustrates how to identify sign-in events related to Conditional Access policies and how to recognize common sign-in error codes.
+1. Follow the guidance in the [Troubleshoot Conditional Access policy changes]() article.
+    - This article explains how to check audit logs for signs of policy changes and to ensure the policy is working as intended.
 
 ## Next steps
 
