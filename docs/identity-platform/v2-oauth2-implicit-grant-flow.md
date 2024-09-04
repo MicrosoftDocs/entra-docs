@@ -21,7 +21,7 @@ The Microsoft identity platform supports the OAuth 2.0 implicit grant flow as de
 
 ## Prefer the auth code flow
 
-With the plans for [removing third party cookies from browsers](reference-third-party-cookies-spas.md), the **implicit grant flow is no longer a suitable authentication method**.  The [silent single sign-on (SSO) features](#acquire-access-tokens-silently) of the implicit flow do not work without third party cookies, causing applications to break when they attempt to get a new token. We strongly recommend that all new applications use the [authorization code flow](v2-oauth2-auth-code-flow.md) that now supports single-page apps in place of the implicit flow. Existing single-page apps should also [migrate to the authorization code flow](migrate-spa-implicit-to-auth-code.md).
+With some browsers [removing support for third party cookies](reference-third-party-cookies-spas.md), the **implicit grant flow is no longer a suitable authentication method**.  The [silent single sign-on (SSO) features](#acquire-access-tokens-silently) of the implicit flow do not work without third party cookies, causing applications to break when they attempt to get a new token. We strongly recommend that all new applications use the [authorization code flow](v2-oauth2-auth-code-flow.md) that now supports single-page apps in place of the implicit flow. Existing single-page apps should also [migrate to the authorization code flow](migrate-spa-implicit-to-auth-code.md).
 
 ## Protocol diagram
 

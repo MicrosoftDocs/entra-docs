@@ -34,8 +34,7 @@ This article describes how to enforce MFA for your customers by creating a Micro
 ## Prerequisites
 
 - A Microsoft Entra external tenant.
-- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md). If you want to use email one-time passcode for MFA, set the user flow's **Email Accounts** setting to **Email with password**.
-
+- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - An app that's registered in your external tenant and added to the sign-up and sign-in user flow.
 - An account with at least the Security Administrator role to configure Conditional Access policies and MFA.
 
