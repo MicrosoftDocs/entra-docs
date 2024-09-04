@@ -45,8 +45,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure KPN Grip to support provisioning with Microsoft Entra ID
 
-To configure KPN Grip to support provisioning with Microsoft Entra ID refer [KPN Grip Microsoft Entra Settings](https://grip.kpn.com/en/documentation/article/connectazuread#heading-authenticating-with-aad-accounts).
-
+To configure KPN Grip to support provisioning with Microsoft Entra ID refer KPN Grip Microsoft Entra Settings at `https://grip.kpn.com/en/documentation/article/connectentraid#`.
 
 <a name='step-3-add-kpn-grip-from-the-azure-ad-application-gallery'></a>
 
