@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/22/2024
+ms.date: 09/04/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -16,7 +16,7 @@ ms.reviewer: nashahid
 
 At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is Microsoft Entra multifactor authentication (MFA). [Research by Microsoft](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW166lD) shows that MFA can block more than 99.2% of account compromise attacks. 
 
-To better protect identities, Microsoft plans to enforce best-in-class standards for user and application authentication and authorization. Starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications are affected and how to prepare for mandatory MFA. 
+That's why, starting in 2024, we'll enforce mandatory multifactor authentication (MFA) for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications are affected and how to prepare for mandatory MFA.
 
 ## Scope of enforcement 
  
