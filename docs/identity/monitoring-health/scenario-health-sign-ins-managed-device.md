@@ -86,18 +86,16 @@ Important details to note:
 - The results of the query include everything identified by the detection service, but there might be results that aren't directly related to the alert.
 - We recommend pulling the API daily for regular monitoring of the alerts.
 
-### Common data sets to investigate
-
-
-
 ## Research root causes in your tenant
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Steps to find data.
-
-## Mitigate the root cause
-
-1. Steps to mitigate the root cause.
+    - If you need to modify Conditional Access policies, you need the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
+1. Analyze the sign-in logs.
+    - Adjust the time range to match the alert time frame.
+    - Add a **filter** for Conditional Access.
+    - View the sign-in logs details and select the Conditional Access tab to see the policies that were applied.
+1. Follow the guidance in the [Troubleshoot sign-in problems with Conditional Access]() article.
+    - This article illustrates how to identify sign-in events related to Conditional Access policies, how to check audit logs for signs of policy changes, and how to recognize common sign-in error codes.
 
 ## Next steps
 

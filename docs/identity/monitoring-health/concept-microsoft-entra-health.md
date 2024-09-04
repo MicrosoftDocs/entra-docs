@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 01/04/2024
+ms.date: 09/04/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -34,14 +34,14 @@ You can view the Microsoft Entra Health SLA attainment and Scenario monitoring (
 If you'd like to view the **Scenario monitoring (preview)**:
 
 1. Sign into the [Microsoft Entra admin center] as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Settings** > **Preview hub**.
-1. Enable **Scenario monitoring**.
+1. Browse to **Home** and select the **View all** button in the **Preview hub** tile.
+1. Enable **Scenario monitoring** and select **Save**.
 
 Enabling preview feature might take up to 24 hours to populate. Enabling the preview only changes your view, not the entire tenant. You can disable the preview at any time.
 
 ## SLA attainment
 
-In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance for organizations with at least 5000 monthly active users. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. For the current availability target and details on how SLA is calculated, see [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
+In addition to providing global SLA performance, Microsoft Entra ID provides tenant-level SLA performance for organizations with at least 5000 monthly active users. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. For the current availability target and details on how SLA is calculated, see [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
 
 Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
 
@@ -71,12 +71,6 @@ For detailed information on each scenario, see the following articles:
 - [Sign-ins requiring multifactor authentication (MFA)]()
 
 ![Screenshot of the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
-
-
-
-
-
-
 
 ### Sign-ins to applications using SAML authentication
 
