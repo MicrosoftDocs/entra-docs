@@ -120,19 +120,19 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: Will I be able to opt out? 
 
-There is no default opt out process. This security motion is critical to all safety and security of the Azure platform and is being repeated across cloud vendors. See AWS announcement. 
+There's no way to opt out. This security motion is critical to all safety and security of the Azure platform and is being repeated across cloud vendors. For example, see [Secure by Design: AWS to enhance MFA requirements in 2024](https://aws.amazon.com/blogs/security/security-by-design-aws-to-enhance-mfa-requirements-in-2024/). 
  
-We will allow a grace period for select customers with use cases where no workarounds are easily available and who need additional time (beyond the start date of enforcement for their tenants) to prepare for the MFA requirement at Azure sign-in. The first notification from us stating the enforcement date for your tenant(s) will also include a link to apply for the grace period. Additional details on customer types, use cases and scenarios that are eligible for grace period will be included in the notification. 
+A grace period is available for customers with use cases where no workarounds are easily available and need more time to prepare for the MFA requirement. The first notification from us that states the enforcement date for your tenant(s) also includes a link to apply for the grace period. The notification also includes more details about customer types, use cases, and scenarios that are eligible for grace period. 
 
  
 **Question**: Can I test MFA before Azure enforces the policy to ensure nothing breaks? 
 
-**Answer**: Yes, the customer can test their MFA through the manual setup process for MFA. We encourage customers to set this up themselves and test, please work with your user community to extend their controls beyond the Azure portal and apply to CLI/API and other sign-ins. 
+**Answer**: Yes, the customer can [test their MFA](~/identity/authentication/tutorial-enable-azure-mfa.md#test-microsoft-entra-multifactor-authentication) through the manual setup process for MFA. We encourage customers to set this up themselves and test, please work with your user community to extend their controls beyond the Azure portal and apply to CLI/API and other sign-ins. 
  
 
-**Question**: What if I already has MFA enabled, what will happen next? 
+**Question**: What if I already has MFA enabled, what happens next? 
 
-**Answer**: Customers already requiring MFA for their users when accessing Azure portal will not experience any change in experience.  If you are only requiring MFA for a subset of users, then any users not already using MFA will now need to do so when signing in to Azure portal. 
+**Answer**: Customers that already require MFA for their users who access the applications listed previously don't see any change. If you only require MFA for a subset of users, then any users not already using MFA will now need to use MFA when they sign in to the application. 
  
 
 **Question**: What if I have a "break glass" scenario? 
@@ -142,9 +142,7 @@ We will allow a grace period for select customers with use cases where no workar
 
 **Question**: What if I don’t receive an email about enabling MFA before it was enforced, and then I get locked-out. How should I resolve it?  
 
-**Answer**: The user should not be locked out but received a messaging encouraging them to enable MFA with the MFA wizard. However, if the user is locked-out, there may be other issues that should be triaged using this procedure.  
-
- 
+**Answer**: Users should not be locked out, but they may get a messaging that prompts them to enable MFA with the MFA wizard. If the user is locked-out, there may be other issues. For more information, see [Account has been locked](https://support.microsoft.com/en-us/account-billing/account-has-been-locked-805e8b0d-4141-29b2-7b65-df6ff6c9ce27).  
 
 
 ## Next steps
