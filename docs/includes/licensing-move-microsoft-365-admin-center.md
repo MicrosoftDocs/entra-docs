@@ -30,7 +30,7 @@ You can assign licenses using PowerShell or Microsoft Graph by following the det
 
 - [Group: assignLicense - Microsoft Graph v1.0](https://learn.microsoft.com/graph/api/group-assignlicense?view=graph-rest-1.0&tabs=http)
 
-### What will happen to the audit logs for license assignments? 
+### Are license assignment audit logs affected? 
 
 There are no changes to the audit logs and you can still see all assigned licenses in the Microsoft Entra Admin Center. 
 
