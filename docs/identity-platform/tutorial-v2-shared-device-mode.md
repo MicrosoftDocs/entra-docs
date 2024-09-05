@@ -284,6 +284,12 @@ You should select **Make this change for me** and then provide the values the qu
 
 For testing purposes, set up the following roles in your tenant - at least two employees and a Cloud Device Administrator. To set the Cloud Device Administrator, you need to modify Organizational Roles. From the Microsoft Entra admin center, go to your Organizational Roles by selecting **Identity** > **Roles & admins** > **Roles & admins** > **All roles**, and then select **Cloud Device Administrator**. Add the users that can put a device into shared mode.
 
+## Running the sample app
+
+The Sample Application is a simple app that will call the Graph API of your organization. On first run, you'll be prompted to consent as the application is new to your employee account.
+
+:::image type="content" source="media/tutorial-v2-shared-device-mode/run-app-permissions-requested.png" alt-text="Application configuration info screen":::
+
 ## Next steps
 
 Set up an Android device to run apps in shared device mode and test your app.

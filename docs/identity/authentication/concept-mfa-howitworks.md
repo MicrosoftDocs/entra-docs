@@ -49,6 +49,7 @@ The following additional forms of verification can be used with Microsoft Entra 
 * Passkey in Microsoft Authenticator (preview)
 * Certificate-based authentication (when configured for multifactor authentication)
 * External authentication methods (preview)
+* Temporary Access Pass (TAP)
 * OATH hardware token (preview)
 * OATH software token
 * SMS
