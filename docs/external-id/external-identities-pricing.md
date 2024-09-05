@@ -106,4 +106,4 @@ Depending on how you created your external tenant, it might already be linked to
 
 - See [Frequently asked questions](customers/faq-customers.md) about external tenants.
 - For the latest pricing information, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
-- For details about Azure Active Directory B2C billing, see [Billing model for Azure Active Directory B2C](/azure/active-directory-b2c/billing.md).
+- For details about Azure Active Directory B2C billing, see [Billing model for Azure Active Directory B2C](/azure/active-directory-b2c/billing).
