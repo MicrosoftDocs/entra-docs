@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 
 # Sign up for Microsoft Entra ID P1 or P2 editions
 
-You can purchase and associate Microsoft Entra ID P1 or P2 editions with your Azure subscription. If you need to create a new Azure subscription, you'll also need to [activate your licensing plan](#activate-your-new-license-plan) and your [Microsoft Entra ID service access](#activate-your-microsoft-entra-id-access). For information about obtaining a free trail, see [Microsoft Entra ID P2 Trial](https://signup.microsoft.com/get-started/signup?products=FAF849AB-BD30-42B2-856C-8F1EDC230CE9).
+You can purchase and associate Microsoft Entra ID P1 or P2 editions with your Azure subscription. If you need to create a new Azure subscription, you'll also need to [activate your licensing plan](#activate-your-new-license-plan) and your [Microsoft Entra ID service access](#activate-your-microsoft-entra-id-access). For information about obtaining a free trial, see [Microsoft Entra ID P2 Trial](https://signup.microsoft.com/get-started/signup?products=FAF849AB-BD30-42B2-856C-8F1EDC230CE9).
 
 Before you sign up for Active Directory Premium 1 or Premium 2, you must first determine which of your existing subscription or plan to use:
 

@@ -232,8 +232,7 @@ procedureSection:
 relatedContent:
   - text: Learn about groups and assigning access rights to groups
     url: concept-learn-about-groups.md
-  - text: Learn about groups and assigning access rights to groups
-    url: concept-learn-about-groups.md
+  
   - text: Manage groups using PowerShell commands
     url: ~/identity/users/groups-settings-v2-cmdlets.md
   
