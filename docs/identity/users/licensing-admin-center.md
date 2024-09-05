@@ -60,6 +60,7 @@ When assign licenses to a group, Microsoft Entra ID processes all existing membe
 
    [Read this section](licensing-group-advanced.md#use-audit-logs-to-monitor-group-based-licensing-activity) to learn more about how audit logs can be used to analyze changes made by group-based licensing.
 
+[!INCLUDE [FAQ](../../includes/licensing-move-microsoft-365-admin-center.md)]
 
 ## Next steps
 
