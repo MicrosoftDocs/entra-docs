@@ -11,6 +11,7 @@ ms.topic: include
 
 ## License assignment moving to the Microsoft 365 admin center FAQ 
 
+Upcoming changes to license assignment processes, and move to the Microsoft 365 admin center require changes to the way you manage licenses. This section covers the reasons for the change, the timeline, license assignments options, and addresses common questions and known issues.
 
 ### Why is this change happening?  
 
@@ -58,18 +59,19 @@ The "reprocessing" button was originally introduced due to issue with converting
     Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/v1.0/users/$userid/reprocessLicense 
     ```
 
-### What if I don’t have a Microsoft 365 Admin account/license and manage from Azure portal? 
+### What if I don’t have a Microsoft 365 Admin account or license and I manage licenses from the Azure portal?
 
-For non-Microsoft 365 users, transitioning to managing licenses through a Microsoft 365 Admin Center account is essential. 
-Microsoft Entra ID roles: Global Administrator, User Administrator, and License Administrator have access to the Microsoft 365 Admin Center for managing licenses using their existing Entra ID account. You don't have to be a Microsoft 365 customer to use the Microsoft 365 admin center.  You don't have to be a Microsoft 365 customer to use the Microsoft 365 admin center, and can manage licenses there regardless.  You don't have to be a Microsoft 365 customer to use the Microsoft 365 admin center, and can manage licenses there regardless. All Entra customers have access to the Microsoft 365 Admin Center for managing domains and licenses.
+For non-Microsoft 365 users, transitioning to managing licenses through a Microsoft 365 Admin Center account is essential.
 
-### How can I view license consumption and utilization now? 
+Microsoft Entra ID roles: Global Administrator, User Administrator, and License Administrator have access to the Microsoft 365 Admin Center to manage licenses using their existing Microsoft Entra ID account. You don't have to be a Microsoft 365 customer to use the Microsoft 365 admin center. You don't have to be a Microsoft 365 customer to use the Microsoft 365 admin center, and can manage licenses there regardless. You don't have to be a Microsoft 365 customer to use the Microsoft 365 admin center, and can manage licenses there regardless. All Microsoft Entra customers have access to the Microsoft 365 Admin Center for domain and license management.
+
+### How can I view license consumption and utilization now?
 
 License consumption and utilization can still be viewed in the Microsoft 365 Admin Center under **Billing -> Licenses**.
 
-### Who should I contact if I need help with these changes? 
+### Who should I contact if I need help with these changes?
 
-For questions, engage with community experts via Microsoft Q&A. If you need technical assistance and have a support plan, you can create a support request.
+For questions, engage with community experts via Microsoft Questions and Answers. If you need technical assistance and have a support plan, you can create a support request.
 
 For detailed instructions on assigning licenses, visit the [Microsoft 365 Admin Center guide](https://learn.microsoft.com/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide).
 
@@ -80,4 +82,4 @@ For detailed instructions on assigning licenses, visit the [Microsoft 365 Admin 
     - PowerShell continues to support the use of the Group Administrator role for license assignment. 
     - Alternatively Group Administrators can be given the Licenses Administrator role in order to assign group based Licenses from the Microsoft 365 Admin Portal.  
 
-- We are loosing some detailed logging for group license assignments. The Azure portal was able to provide a detailed error to administrators.
+- We are loosing some detailed group license assignments logging. The Azure portal was able to provide a detailed error to administrators.
