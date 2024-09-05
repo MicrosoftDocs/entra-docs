@@ -10,7 +10,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 09/09/2024
 ms.custom: developer
 
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample Electron desktop app to sign in and sign out users with my external tenant.
