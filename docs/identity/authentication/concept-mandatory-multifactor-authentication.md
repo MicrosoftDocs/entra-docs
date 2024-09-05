@@ -72,7 +72,7 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 Regardless of any roles they have or don't have, all users who access the admin portals and Azure clients listed in [applications](#applications) must be set up to use MFA. All users who access any administration portal should use MFA. Use the following resources to set up MFA for your users. 
 
-- For a tutorial about how to set up Microsoft Entra MFA, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](identity/authentication/tutorial-enable-azure-mfa.md).
+- For a tutorial about how to set up Microsoft Entra MFA, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md).
 - If you don’t require MFA in your tenant today, there are several options available to set it up (listed in preferred order): 
   - Use [Conditional Access](~/identity/conditional-access/overview.md) policies. Start in [report-only mode](~/identity/conditional-access/concept-conditional-access-report-only.md) and target **All users**. In report-only mode, don't configure exceptions. This configuration more closely mirrors the enforcement pattern of Microsoft Entra MFA program. 
     - [Microsoft administration portals](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals) (includes portals in scope for this Microsoft Entra MFA enforcement) 
