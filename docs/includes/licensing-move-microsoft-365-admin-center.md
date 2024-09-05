@@ -25,11 +25,11 @@ The changes will start taking effect from September 9, and will complete by  Sep
 
 You can assign licenses using PowerShell or Microsoft Graph by following the detailed guides available on the Microsoft Learn website for user and group license assignments.
 
-- [Assign Microsoft 365 licenses to user accounts with PowerShell](https://learn.microsoft.com/microsoft-365/enterprise/assign-licenses-to-user-accounts-with-microsoft-365-powershell?view=o365-worldwide) 
+- [Assign Microsoft 365 licenses to user accounts with PowerShell](/microsoft-365/enterprise/assign-licenses-to-user-accounts-with-microsoft-365-powershell?view=o365-worldwide) 
 
-- [user: assignLicense - Microsoft Graph v1.0](https://learn.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0&tabs=http)
+- [user: assignLicense - Microsoft Graph v1.0](/graph/api/user-assignlicense?view=graph-rest-1.0&tabs=http)
 
-- [Group: assignLicense - Microsoft Graph v1.0](https://learn.microsoft.com/graph/api/group-assignlicense?view=graph-rest-1.0&tabs=http)
+- [Group: assignLicense - Microsoft Graph v1.0](/graph/api/group-assignlicense?view=graph-rest-1.0&tabs=http)
 
 ### Are license assignment audit logs affected? 
 
@@ -73,7 +73,7 @@ License consumption and utilization can still be viewed in the Microsoft 365 Adm
 
 For questions, engage with community experts via Microsoft Questions and Answers. If you need technical assistance and have a support plan, you can create a support request.
 
-For detailed instructions on assigning licenses, visit the [Microsoft 365 Admin Center guide](https://learn.microsoft.com/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide).
+For detailed instructions on assigning licenses, visit the [Microsoft 365 Admin Center guide](/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide).
 
 ## Known Issues:
 
