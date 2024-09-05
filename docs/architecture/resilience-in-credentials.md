@@ -17,7 +17,7 @@ The most secure and resilient credential strategy is to use passwordless authent
 
 ![Image of preferred authentication methods and dependencies](./media/resilience-in-credentials/passwordless-pr.png)
 
-> [!tip]
+> [!Tip]
 > For a video series deep dive on deploying these authentication methods, see [Phishing-resistant authentication in Microsoft Entra ID](~/identity/authentication/phishing-resistant-authentication-videos.md)
 
 If you implement a second factor, the dependencies for the second factor are added to the dependencies for the first. For example, if your first factor is via [Pass Through Authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta.md) and your second factor is [SMS](~/identity/authentication/howto-authentication-sms-signin.md), your dependencies are as follows.
@@ -28,7 +28,7 @@ If you implement a second factor, the dependencies for the second factor are add
 * Phone carrier
 * The user's device (not pictured)
 
-![Image of remaining authentication methods and dependencies](./media/resilience-in-credentials/updated-admin-resilience-credentials.png)
+![Image of remaining authentication methods and dependencies.](./media/resilience-in-credentials/updated-admin-resilience-credentials.png)
  
 Your credential strategy should consider the dependencies of each authentication type and provision methods that avoid a single point of failure. 
 
