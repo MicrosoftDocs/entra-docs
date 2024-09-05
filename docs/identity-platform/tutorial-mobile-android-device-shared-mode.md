@@ -84,5 +84,5 @@ Once you set up a device in shared-mode, it becomes known to your organization a
    
 ## Related content
 
-- [Shared device mode for Android devices reference](./msal-android-handling-exceptions.md)
+- [Shared device mode in Android devices](./msal-android-shared-devices.md)
 - [Set up iOS/iPadOS device enrollment with Apple Configurator](/mem/intune/enrollment/apple-configurator-enroll-ios)
