@@ -44,13 +44,13 @@ Break glass or emergency access accounts are also required to sign in with MFA o
 
 ## Implementation
  
-This requirement for MFA at sign-in is implemented by Azure. Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) will show it as the source of the MFA requirement. 
+This requirement for MFA at sign-in is implemented by Azure. Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) shows it as the source of the MFA requirement. 
 
-This requirement will be implemented on top of any access policies you’ve configured in your tenant. For example, if your organization chose to retain Microsoft’s [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users will see no change in behavior as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users will not see a change. Similarly, if you have existing more restrictive Conditional Access policies in place targeting Azure that require stronger authentication, such as phishing-resistant MFA, then those policies will continue to be enforced and your users will not see any changes.
+This requirement is implemented on top of any access policies you’ve configured in your tenant. For example, if your organization chose to retain Microsoft’s [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users don't see any changes as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users don't see a change. Similarly, any restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, continue to be enforced. Users don't see any changes.
 
 ## Enforcement phases 
 
-The enforcement of MFA will roll out in two phases: 
+The enforcement of MFA rolls out in two phases: 
 
 - **Phase 1**: Starting in the second half of 2024, MFA will be required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
@@ -78,11 +78,12 @@ Regardless of any roles they have or don't have, all users who access the admin 
     - [Microsoft administration portals](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals) (includes portals in scope for this Microsoft Entra MFA enforcement) 
     - [Require multifactor authentication](~/identity/conditional-access/concept-conditional-access-grant.md#require-multifactor-authentication) or if you want more granular control, use [authentication strengths](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength)
   - If you sign in to the Microsoft 365 admin center, use the [MFA wizard for Microsoft Entra ID](https://aka.ms/EntraIDMFAWizard).
-  - If you don;t have a Microsoft Entra ID P1 or P2 license, you can enable [security defaults](~/fundamentals/security-defaults.md).
+  - If you don't have a Microsoft Entra ID P1 or P2 license, you can enable [security defaults](~/fundamentals/security-defaults.md). Users are prompted for MFA as needed, but you can't define your own rules to control the behavior.
+  - If your license doesn't include Conditional Access and you don't want to use security defaults, you can configure [per-user MFA](~/identity/authentication/howto-mfa-userstates.md). When you enable users individually, they perform MFA each time they sign in. An Authentication Administrator can enable some exceptions.
   
 Use the followng resources to find users whsign in with and without MFA: 
 
-- To identify user sign-ins that are aren't protected by MFA, use the [Multifactor Authentication Gaps workbook](~/identity/monitoring-health/workbook-mfa-gaps.md).
+- To identify user sign-ins that aren't protected by MFA, use the [Multifactor Authentication Gaps workbook](~/identity/monitoring-health/workbook-mfa-gaps.md).
 - To export a list of users and their authentication methods, use [PowerShell](https://aka.ms/AzMFA).
 
 Use these application IDs in your queries: 
@@ -102,7 +103,7 @@ If you're using a federated Identity Provider (IdP), such as Active Directory 
 
 We understand that some customers may need more time to prepare for this MFA requirement. Microsoft allows grace periods for customers with complex environments or technical barriers. 
 
-Between 8/15/2024 and 10/15/2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to 3/15/2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page.  
+Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to 3/15/2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page.  
 
 Global Administrators must perform this action for every tenant for which they would like to postpone the start date of enforcement.  
 
@@ -137,18 +138,18 @@ A grace period is available for customers with use cases where no workarounds ar
 
 **Question**: What if I have a "break glass" scenario? 
 
-**Answer**: We recommend updating break glass accounts to use FIDO2 or certificate-based authentication (when configured as MFA) instead of relying only on a long password.  Both methods will satisfy the MFA requirements.
+**Answer**: We recommend updating these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
  
 
 **Question**: What if I don’t receive an email about enabling MFA before it was enforced, and then I get locked-out. How should I resolve it?  
 
-**Answer**: Users should not be locked out, but they may get a messaging that prompts them to enable MFA with the MFA wizard. If the user is locked-out, there may be other issues. For more information, see [Account has been locked](https://support.microsoft.com/en-us/account-billing/account-has-been-locked-805e8b0d-4141-29b2-7b65-df6ff6c9ce27).  
+**Answer**: Users should not be locked out, but they may get a message that prompts them to enable MFA with the MFA wizard. If the user is locked-out, there may be other issues. For more information, see [Account has been locked](https://support.microsoft.com/en-us/account-billing/account-has-been-locked-805e8b0d-4141-29b2-7b65-df6ff6c9ce27).  
 
 
 ## Next steps
 
 
-Review the following topics to learn more about how tp configure and deploy MFA:
+Review the following topics to learn more about how to configure and deploy MFA:
 
 - [Secure sign-in events with Microsoft Entra multifactor](~/identity/authentication/tutorial-enable-azure-mfa.md)
 - [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md)
