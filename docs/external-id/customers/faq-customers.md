@@ -26,7 +26,7 @@ This FAQ references customer identity and access management (CIAM). CIAM is an i
 Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique users with authentication activity within a calendar month. External ID consists of a core offer and premium add-ons. The Microsoft Entra External ID core offering is free for the first 50,000 MAU. For the latest information about usage billing and pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing)
 
 > [!NOTE]
-> Existing subscriptions to Azure Active Directory B2C (Azure AD B2C) B2C or B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We'll communicate upgrade options once they're available. For multitenant organizations, identities whose UserType is external member aren't counted as part of the External ID MAU. Only internal and external guests count as External ID MAU.
+> Existing subscriptions to Azure Active Directory B2C (Azure AD B2C) B2C or B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We'll communicate upgrade options once they're available.
 
 ### Does the 50,000 MAU free tier apply to add-ons?
 
@@ -38,7 +38,7 @@ Yes, this feature is now available in workforce and [external](concept-multifact
 
 ### I linked my external tenant to a subscription, but the license status still shows "free"
 
-After you link your external tenant to a subscription, the licensing status (**Identity** > **Overview** > **Overview** > **License**) incorrectly displays as Microsoft Entra ID Free. This is a known issue that we’re working to resolve.
+After you link your external tenant to a subscription, you can view it on your external tenant home page (**Home** > **Billing**). However, the license on your external tenant overview page (**Home** > **Tenant overview** > **Overview**) will still show **Microsoft Entra ID Free**. This is a known issue that we’re working to resolve.
 
 ## About External ID
 

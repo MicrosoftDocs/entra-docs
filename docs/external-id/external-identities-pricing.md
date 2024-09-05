@@ -28,11 +28,11 @@ The Microsoft Entra External ID billing model applies to all external users, inc
 - B2B collaboration external guests in Microsoft Entra External ID [workforce tenants](tenant-configurations.md#workforce-tenants).
 
    > [!NOTE]
-   > For B2B collaboration in [multitenant organizations](~/identity/multi-tenant-organizations/multi-tenant-organization-overview.md#who-are-multitenant-organization-member-users), this billing model applies only to external users with a UserType of Guest. It doesn’t apply to external members that originate from within the multitenant organization (UserType=Member).
+   > For B2B collaboration in [multitenant organizations](~/identity/multi-tenant-organizations/multi-tenant-organization-overview.md#who-are-multitenant-organization-member-users), this billing model applies only to external users with a UserType of Guest. It doesn’t apply to external members that originate from within the multitenant organization, which have a UserType of Member.
 
 - External users in Microsoft Entra External ID [external tenants](tenant-configurations.md#external-tenants), which includes consumers and business guests (users without directory roles), and admins (users with directory roles).
 
-Billing is based on monthly active users (MAU), which is the count of unique external users who authenticate to your tenants within a calendar month. To determine the total number of MAUs, we combine MAUs from all tenants linked to the same subscription, including workforce tenants and external tenants. 
+Billing is based on monthly active users (MAU), which is the count of unique external users who authenticate to your tenants within a calendar month. To determine the total number of MAUs, we combine MAUs from all workforce and external tenants that are linked to a subscription.
 
 MAU billing helps you reduce costs by offering a free tier and flexible, predictable pricing. You can get started for free and only pay for what you use as your business grows.
 
@@ -56,7 +56,7 @@ Microsoft Entra tenants, both workforce and external, must be linked to an Azure
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that has at least the Contributor role within the subscription or a resource group within the subscription.
 
-2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings | Directories + subscriptions** page, find your directory in the **Directory name** list, and then select **Switch**.
+2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings | Directories + subscriptions** page, find your workforce tenant in the **Directory name** list, and then select **Switch**.
 
 3. Browse to **Identity** > **External identities** > **Overview**.
 
@@ -66,11 +66,23 @@ Microsoft Entra tenants, both workforce and external, must be linked to an Azure
 
     :::image type="content" source="media/external-identities-pricing/linked-subscriptions.png" alt-text="Screenshot of the link a subscription option.":::
 
-7. In the **Link a subscription** pane, select a **Subscription** and a **Resource group**. Then select **Apply**. (If there are no subscriptions listed, see [What if I can't find a subscription?](#what-if-i-cant-find-a-subscription).)
+7. In the **Link a subscription** pane, select a **Subscription** and a **Resource group**. Then select **Apply**. (If there are no subscriptions listed, see the next section, [What if I can't find a subscription?](#what-if-i-cant-find-a-subscription).)
 
     :::image type="content" source="media/external-identities-pricing/link-subscription-resource.png" alt-text="Screenshot of how to link a workforce tenant to a subscription.":::
 
 After you complete these steps, your Azure subscription is billed based on your Azure Direct or Enterprise Agreement details, if applicable.
+
+### What if I can't find a subscription?
+
+If no subscriptions are available in the **Link a subscription** pane, here are some possible reasons:
+
+- You’re trying link a workforce tenant to a subscription, but you’re currently signed in to an external tenant. Switch to the workforce tenant: Select the **Settings** icon in the portal toolbar, find your workforce tenant in the list on the **Portal settings | Directories + subscriptions** page, and select **Switch**.
+
+- You don't have the appropriate permissions. Be sure to sign in with an Azure account that has at least the Contributor role within the subscription or a resource group within the subscription.
+
+- A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](~/fundamentals/how-subscriptions-associated-directory.yml) and then repeat the steps for [linking it to your tenant](#link-your-azure-ad-tenant-to-a-subscription).
+
+- No subscription exists. In the **Link a subscription** pane, you can create a subscription by selecting the link **if you don't already have a subscription you may create one here**. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for [linking it to your tenant](#link-your-azure-ad-tenant-to-a-subscription).
 
 ### To link an external tenant to a subscription
 
@@ -90,18 +102,8 @@ Depending on how you created your external tenant, it might already be linked to
 
        :::image type="content" source="media/external-identities-pricing/billing-section-no-subscription.png" alt-text="Screenshot of how to upgrade and link a subscription.":::
 
-## What if I can't find a subscription?
-
-If no subscriptions are available in the **Link a subscription** pane, here are some possible reasons:
-
-- You don't have the appropriate permissions. Be sure to sign in with an Azure account that has at least the Contributor role within the subscription or a resource group within the subscription.
-
-- A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](~/fundamentals/how-subscriptions-associated-directory.yml) and then repeat the steps for [linking it to your tenant](#link-your-azure-ad-tenant-to-a-subscription).
-
-- No subscription exists. In the **Link a subscription** pane, you can create a subscription by selecting the link **if you don't already have a subscription you may create one here**. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for [linking it to your tenant](#link-your-azure-ad-tenant-to-a-subscription).
-
 ## Next steps
 
 - See [Frequently asked questions](customers/faq-customers.md) about external tenants.
 - For the latest pricing information, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
-- For details about Azure Active Directory B2C billing, see [Billing model for Azure Active Directory B2C](~/azure/active-directory-b2c/billing.md).
+- For details about Azure Active Directory B2C billing, see [Billing model for Azure Active Directory B2C](/azure/active-directory-b2c/billing.md).
