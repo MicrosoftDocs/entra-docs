@@ -17,7 +17,7 @@ ms.reviewer: Sunayana
 
 Configured tenants no longer in use may still generate costs for your organization. Making a tenant innacessible due to inactivity helps reduce unnecessary expenses.
 
-This article provides guidance on how to handle situations where a tenant has become innaccessible due to inactivity, including steps for reactivation and important considerations for both administrators and application developers. Understanding these steps ensures that you can manage tenant inactivity effectively and minimize any potential impact on your operations.
+This article provides guidance on how to handle a tenant that has become innaccessible due to inactivity. We include steps for reactivation and guidance for both administrators and application developers. 
 
 When you try to access the tenant you receive a message similar to the example shown below. 
 
