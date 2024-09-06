@@ -56,6 +56,7 @@ In a PowerShell session, run the following cmdlets:
 1. PS C:\Program Files\Microsoft Azure AD Connect Authentication Agent> `Import-Module .\Modules\PassthroughAuthPSModule`
 2. `Get-PassthroughAuthenticationEnablementStatus`
 3. `Disable-PassthroughAuthentication`
+      a. A warning prompt will appear when the disable-passthroughauthentication command is run - "WARNING: We recommend that you enabled Password Hash Synchronization before you disable Pas-Trough Authentication. And use a cloud-only Global Administrator account to run this cmdlet. These steps ensure that you are not locked out of your tenant"  Please enter to continue...:
 
 ## Next steps
 
