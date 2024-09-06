@@ -47,5 +47,5 @@ If you don't plan to reactivate your tenant:
 
 ## Related content
 
-- [Quickstart: Create a new tenant in Microsoft Entra ID](crete-new-tenant.md)
-- [Add your custom domain name to your tenant](add-custom-domain.md)
+- [Quickstart: Create a new tenant in Microsoft Entra ID](create-new-tenant.md)
+- [Add your custom domain name to your tenant](add-custom-domain.yml)
