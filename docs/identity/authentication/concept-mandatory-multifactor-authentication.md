@@ -115,9 +115,9 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Answer**: Yes, every Azure tenant will require MFA, there are no exceptions. 
 
-**Question**: When will I learn that I need to enable MFA for Azure portal? 
+**Question**: Is MFA mandatory for all users or only administrators? 
 
-**Answer**: Microsoft will notify Global Administrators about the expected enforcement date of your tenant(s) by email and through Azure Service Notifications, 60 days in advance. The countdown for enforcement for your tenant(s) does not begin until you have received this first notification from us.
+**Answer**: All users who sign in to any of the [listed applications](#applications) are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them.
 
 **Question**: Will I be able to opt out? 
 
