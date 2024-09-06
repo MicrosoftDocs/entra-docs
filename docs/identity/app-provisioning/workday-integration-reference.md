@@ -43,7 +43,9 @@ To further secure the connectivity between Microsoft Entra provisioning service 
 
 The default steps to [configure the Workday integration system user](~/identity/saas-apps/workday-inbound-tutorial.md#configure-integration-system-user-in-workday) grants access to retrieve all users in your Workday tenant. In certain integration scenarios, you may want to limit access. For example, only return users in certain supervisory organizations from the `Get_Workers` API call.
 
-You can limit access by working with your Workday admin and configuring constrained integration system security groups. For more information about Workday, see [Workday community](https://community.workday.com/forums/customer-questions/620393) (*Workday Community access required for this article*).
+You can limit access by working with your Workday admin and configuring constrained integration system security groups. For more information, review the section Get_Workers contextual security in this Workday document
+Concept: [Get Workers SOAP Web Service Guidelines](https://resourcecenter.workday.com/en-us/signin.html?fromURI=https://signin.resourcecenter.workday.com/app/workdayciam_aembetadoc2_1/exkd1j067lBdQMGYl4x7/sso/saml)
+(*Workday Community access required for this article*).
 
 This strategy of limiting access using constrained ISSG (Integration System Security Groups) is useful in the following scenarios: 
 * **Phased rollout scenario**: You have a large Workday tenant and plan to perform a phased rollout of Workday to Microsoft Entra ID automated provisioning. In this scenario, rather than excluding users who aren't in scope of the current phase with Microsoft Entra ID scoping filters, we recommend configuring constrained ISSG so that only in-scope workers are visible to Microsoft Entra ID.
