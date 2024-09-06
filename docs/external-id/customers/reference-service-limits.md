@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: reference
-ms.date: 08/09/2024
+ms.date: 09/06/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -88,14 +88,13 @@ The following table lists the administrative configuration limits in the Microso
 |Number of event listener policies    |249         |
 
 ## Telephony throttling limits
-
-The following table lists the service limits we implement to prevent outages and slowdowns. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md)
+The following table lists the service limits we implement to prevent outages and slowdowns. These values are lower during the preview phase, but we'll increase them as the product becomes generally available. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md)
 
 |Limit                        |Texts every 15 minutes|Texts every 60 minutes|Texts every 24 hours                                 |Texts every 7 days |
 |-----------------------------|----------------------|----------------------|-----------------------------------------------------|-------------------|
 |Limits based on IP address   |20 texts              |60 texts              |100 texts without a proxy</br>200 texts with a proxy |No limit           |
-|Limits based on phone number |4 texts               |10 texts              |20 texts                                             |40 texts           |
-|Limits based on tenant       |100 texts             |300 texts             |1,000 texts                                           |No limit           |
+|Limits based on phone number |15 texts              |20 texts              |30 texts                                             |50 texts           |
+|Limits based on tenant       |100 texts             |300 texts             |1,000 texts                                          |No limit           |
 
 ## Next steps
 
