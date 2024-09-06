@@ -15,9 +15,11 @@ ms.reviewer: Sunayana
 
 # Tenant inaccessible due to inactivity
 
-Configured tenants no longer in use still generates costs for your organization. Tenant inactivity blocks help you reduce unnecessary expenses by blocking inactive tenants. This article provides guidance on how to handle situations where a tenant has been blocked due to inactivity, including steps for reactivation and important considerations for both administrators and application developers. Understanding these steps ensures that you can manage tenant inactivity effectively and minimize any potential impact on your operations.
+Configured tenants no longer in use may still generate costs for your organization. Making a tenant innacessible due to inactivity helps reduce unnecessary expenses.
 
-When you try to access the tenant, you receive a message similar to the example shown below. 
+This article provides guidance on how to handle situations where a tenant has become innaccessible due to inactivity, including steps for reactivation and important considerations for both administrators and application developers. Understanding these steps ensures that you can manage tenant inactivity effectively and minimize any potential impact on your operations.
+
+When you try to access the tenant you receive a message similar to the example shown below. 
 
 Error message ```Error message: AADSTS5000225: This tenant has been blocked due to inactivity. To learn more about ...``` is expected for tenants' inaccessible due to inactivity. Administrators may request the tenant to be reactivated within 20 days of the tenant entering an inactive state. Tenants that remain in this state for longer than 20 days will be deleted. 
 
