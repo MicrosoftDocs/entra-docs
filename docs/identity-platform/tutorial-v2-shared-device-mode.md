@@ -64,7 +64,7 @@ There are two different interfaces that represent the type of device your applic
 
 The following object model illustrates the type of object you may receive and what it means in the context of a shared device:
 
-![public client application inheritance model](media/v2-shared-device-mode/ipublic-client-app-inheritance.png)
+:::image type="content" source="media/v2-shared-device-mode/ipublic-client-app-inheritance.png" alt-text="Diagram of the public client application inheritance model":::
 
 You need to do a type check and cast to the appropriate interface when you get your `PublicClientApplication` object. The following code checks for multiple account modes or single account modes, and casts the application object appropriately:
 
@@ -123,7 +123,7 @@ Here's an example of the auth_config.json file included in the **app**>**main**>
 
 ### Detect shared-device mode
 
-Shared-device mode allows you to configure Android devices to be shared by multiple employees, while providing Microsoft Identity backed management of the device. Employees can sign in to their devices and access customer information quickly. When they're finished with their shift or task, they'll be able to sign-out of all apps on the shared device with a single click and the device will be immediately ready for the next employee to use.
+Shared-device mode allows you to configure Android devices to be shared by multiple employees, while providing Microsoft Identity backed management of the device. Employees can sign in to their devices and access customer information quickly. When they're finished with their shift or task, they'll be able to sign out of all apps on the shared device with a single click and the device will be immediately ready for the next employee to use.
 
 Use `isSharedDevice()` to determine if an app is running on a device that is in shared-device mode. Your app could use this flag to determine if it should modify UX accordingly.
 
