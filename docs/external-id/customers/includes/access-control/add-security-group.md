@@ -3,7 +3,7 @@ author: henrymbuguakiarie
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: include
-ms.date: 06/20/2024
+ms.date: 09/06/2024
 ms.author: henrymbugua
 ms.manager: mwongerapk
 ---
@@ -12,7 +12,7 @@ Security groups manage user and computer access to shared resources. You can cre
 
 To create a security group, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Privileged Role Administrator](../../../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="~/external-id/customers/media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu. 
 1. Browse to **Identity** > **Groups** > **All groups**.
 1. Select **New group**.
