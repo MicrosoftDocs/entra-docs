@@ -32,7 +32,8 @@ Shared Device Mode feature supports following scenarios:
 - A User signs out of a Shared Device Mode supported application (Line of business, third-party launcher, or Microsoft app) on an Android or iOS/iPadOS device and is logged out of all SDM supported apps on the device.
 - If an admin sets up a Conditional Access policy with the grant that requires devices to be enrolled in mobile device management (MDM) and compliant, the user can only sign in to an SDM-supported application if the device is compliant.
 
-**Note:** If a user signs into an application that doesn't support shared device mode, they don't receive the benefits of single sign-on and single sign out.
+>[!Note]
+> If a user signs into an application that doesn't support shared device mode, they don't receive the benefits of single sign-on and single sign out.
 
 ## Roles of admins and developers in implementing Shared Device Mode
 
@@ -55,7 +56,8 @@ Application developers can also integrate with the [Intune App SDK](/mem/intune/
 
 Supporting shared device mode should be considered a feature upgrade for the application and can help increase its adoption in environments where the same device is shared among multiple users. 
 
-**Note:** For Microsoft applications that support shared device mode, you don't need to make any further changes other than installing them on a shared device mode enabled device. 
+>[!Note]
+>For Microsoft applications that support shared device mode, you don't need to make any further changes other than installing them on a shared device mode enabled device. 
 
 ## Related content
 
