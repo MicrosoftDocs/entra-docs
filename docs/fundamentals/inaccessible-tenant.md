@@ -21,10 +21,9 @@ When you try to access the tenant you receive a message similar to the example s
 
 Error message ```Error message: AADSTS5000225: This tenant has been blocked due to inactivity. To learn more about ...``` is expected for tenants' inaccessible due to inactivity. 
 
-Administrators may request the tenant to be reactivated within 20 days of the tenant entering an inactive state. Tenants that remain in this state for longer than 20 days will be deleted. 
-
 :::image type="content" source="media/tenant-inaccessible/tenant-block.png" alt-text="Screenshot showing an error when tenant access blocked due to inactivity." lightbox="media/tenant-inaccessible/tenant-block.png":::
 
+Administrators may request the tenant to be reactivated within 20 days of the tenant entering an inactive state. Tenants that remain in this state for longer than 20 days will be deleted. 
 Depending on your plans for the tenant we suggest different steps.
 
 ## Administrators
