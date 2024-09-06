@@ -64,7 +64,7 @@ There are two different interfaces that represent the type of device your applic
 
 The following object model illustrates the type of object you may receive and what it means in the context of a shared device:
 
-:::image type="content" source="media/v2-shared-device-mode/ipublic-client-app-inheritance.png" alt-text="Diagram of the public client application inheritance model":::
+:::image type="content" source="media/v2-shared-device-mode/ipublic-client-app-inheritance.png" alt-text="Diagram of the public client application inheritance model.":::
 
 You need to do a type check and cast to the appropriate interface when you get your `PublicClientApplication` object. The following code checks for multiple account modes or single account modes, and casts the application object appropriately:
 
