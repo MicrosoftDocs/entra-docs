@@ -229,7 +229,7 @@ The table describes how you can configure deprovisioning actions with the Micros
 **Known limitations**
 
 * When a user or group is unassigned from an app and no longer managed with the provisioning service, a disable request is sent. At that point, the service doesn't manage the user and a delete request isn't sent when the user is deleted from the directory.
-* Provisioning a user that is disabled in Microsoft Entra ID isn't supported. They must be active in Microsoft Entra ID before they're provisioned.
+* Provisioning a user that is disabled in Microsoft Entra ID isn't supported. They must be active in Microsoft Entra ID before they're provisioned. Cross-tenant synchronization is an exception to this rule. Disabled users will be provisioned. 
 * When a user goes from soft-deleted to active, the Microsoft Entra provisioning service activates the user in the target app, but doesn't automatically restore the group memberships. The target application should maintain the group memberships for the user in inactive state. If the target application doesn't support maintaining the inactive state, you can restart provisioning to update the group memberships. 
 
 **Recommendation**
