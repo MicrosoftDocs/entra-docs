@@ -111,8 +111,6 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
 
 5. Download the **Certificate (Raw)** and **Federation Metadata XML** to import it into Salesforce.
 
-    ![Screenshot of Certificate (Raw) and Federation Metadata XML entries under SAML Signing Certificate.](media/migrate-applications-from-okta/federation-metadata.png)
-
 6. On the Salesforce administration console, select **Identity** > **Single Sign-On Settings** > **New from Metadata File**.
 
     ![Screenshot of the New from Metadata File option under Single Sign On Settings.](media/migrate-applications-from-okta/salesforce-admin-console.png)
