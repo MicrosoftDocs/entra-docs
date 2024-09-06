@@ -521,7 +521,12 @@ Use the steps to retrieve attributes associated with international job assignmen
    * **Example 2:** To get `SecondaryBusinessLocation`, use the XPATH `wd:Worker/wd:Worker_Data/wd:Employment_Data/wd:Worker_Job_Data[@wd:Primary_Job=0]/wd:Position_Data/wd:Business_Site_Summary_Data/wd:Location_Reference/@wd:Descriptor`
 
 ## Known limitations
+This section lists current, known limitations customers may experience in their Workday integration. 
 
+1. The connector doesn't support the [retrieval of Workday calculated fields](hr-attribute-retrieval-issues#issue-fetching-workday-calculated-fields).
+2. The connector doesn't support synchronizing photos from Workday.
+3. The connector doesn't support [advanced retrieval of workers whose last day of work is due](hr-user-update-issues#provisioning-last-day-of-work-field-from-workday).
+4. During incremental sync, there might be a [delay in processing the termination event](hr-user-update-issues#workday-termination-processing-delay) for workers located in the Asia Pacific and Australia/New Zealand regions.
 
 ## Next steps
 
