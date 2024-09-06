@@ -52,7 +52,7 @@ Email one-time passcode authentication is available in an external tenant both a
 
 When email one-time passcode is enabled for MFA, the user signs in with their primary sign-in method and is notified that a code will be sent to the user's email address. The user chooses to send the code, retrieves the passcode from their email inbox, and enters it in the sign-in window.
 
-## SMS-based authentication
+## SMS-based authentication (preview)
 
 SMS is available at additional cost for second-factor verification in external tenants. Currently, SMS is not available for first-factor authentication or self-service password reset in external tenants.
 
@@ -67,7 +67,7 @@ External ID mitigates fraudulent sign-ups via SMS by enforcing the following mea
 
 ### SMS pricing tiers by country/region
 
-The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions.
+The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions. For pricing details, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
 
 |Tier                               |Countries/Regions  |
 |-----------------------------------|-------------------|

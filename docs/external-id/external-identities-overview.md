@@ -106,7 +106,7 @@ You use [cross-tenant access settings](cross-tenant-access-settings-b2b-collabor
 
 For details about the resources, files, and applications that are available to the B2B direct connect user via the Teams shared channel refer to [Chat, teams, channels, & apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
 
-Licensing and billing are based on monthly active users (MAU). Learn more about [External ID pricing](https://azure.microsoft.com/pricing/details/active-directory/external-identities/) and [billing setup for B2B](external-identities-pricing.md).  
+Licensing and billing are based on monthly active users (MAU). Learn more about [External ID pricing](https://aka.ms/ExternalIDPricing).  
 
 ### Azure Active Directory B2C
 
