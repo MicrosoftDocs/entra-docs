@@ -163,6 +163,8 @@ procedureSection:
         > [!NOTE]
         > When an on-premises user account synced to Microsoft Entra falls out of scope for the sync or when the sync is removed, the user is soft-deleted in Microsoft Entra ID. When this occurs, licenses assigned to the user directly or via group-based licensing will be marked as **suspended** rather than **deleted**.
 
+[!INCLUDE [FAQ](../../includes/licensing-move-microsoft-365-admin-center.md)]
+
 relatedContent:
   - text: Identify and resolve license assignment problems.
     url: ~/identity/users/licensing-groups-resolve-problems.md
