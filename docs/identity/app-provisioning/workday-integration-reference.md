@@ -2,13 +2,13 @@
 title: Microsoft Entra ID and Workday integration reference
 description: Technical deep dive into Workday-HR driven provisioning in Microsoft Entra ID
 
-author: kenwith
+author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/15/2023
-ms.author: kenwith
+ms.date: 09/05/2024
+ms.author: jfields
 ms.reviewer: arvinh, chmutali
 ---
 
@@ -520,7 +520,8 @@ Use the steps to retrieve attributes associated with international job assignmen
    * **Example 1:** To get `SecondaryBusinessTitle`, use the XPATH `wd:Worker/wd:Worker_Data/wd:Employment_Data/wd:Worker_Job_Data[@wd:Primary_Job=0]/wd:Position_Data/wd:Business_Title/text()`
    * **Example 2:** To get `SecondaryBusinessLocation`, use the XPATH `wd:Worker/wd:Worker_Data/wd:Employment_Data/wd:Worker_Job_Data[@wd:Primary_Job=0]/wd:Position_Data/wd:Business_Site_Summary_Data/wd:Location_Reference/@wd:Descriptor`
 
- 
+## Known limitations
+
 
 ## Next steps
 
