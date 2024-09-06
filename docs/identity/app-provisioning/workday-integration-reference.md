@@ -523,10 +523,10 @@ Use the steps to retrieve attributes associated with international job assignmen
 ## Known limitations
 This section lists current, known limitations customers may experience in their Workday integration. 
 
-1. The connector doesn't support the [retrieval of Workday calculated fields](hr-attribute-retrieval-issues#issue-fetching-workday-calculated-fields).
+1. The connector doesn't support the [retrieval of Workday calculated fields](hr-attribute-retrieval-issues.md#issue-fetching-workday-calculated-fields).
 2. The connector doesn't support synchronizing photos from Workday.
-3. The connector doesn't support [advanced retrieval of workers whose last day of work is due](hr-user-update-issues#provisioning-last-day-of-work-field-from-workday).
-4. During incremental sync, there might be a [delay in processing the termination event](hr-user-update-issues#workday-termination-processing-delay) for workers located in the Asia Pacific and Australia/New Zealand regions.
+3. The connector doesn't support [advanced retrieval of workers whose last day of work is due](hr-user-update-issues.md#provisioning-last-day-of-work-field-from-workday).
+4. During incremental sync, there might be a [delay in processing the termination event](hr-user-update-issues.md#workday-termination-processing-delay) for workers located in the Asia Pacific and Australia/New Zealand regions.
 
 ## Next steps
 
