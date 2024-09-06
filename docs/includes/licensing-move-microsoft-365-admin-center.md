@@ -1,7 +1,7 @@
 ---
 author: barclayn
 ms.author: barclayn
-ms.date: 03/04/2024
+ms.date: 09/06/2024
 manager: amycolannino
 ms.service: entra-id
 ms.topic: include
@@ -9,7 +9,7 @@ ms.topic: include
 
 
 
-## License assignment moving to the Microsoft 365 admin center FAQ 
+## License assignment move to the Microsoft 365 admin center FAQ 
 
 Upcoming changes to license assignment processes, and move to the Microsoft 365 admin center require changes to the way you manage licenses. This section covers the reasons for the change, the timeline, license assignments options, and addresses common questions and known issues.
 
