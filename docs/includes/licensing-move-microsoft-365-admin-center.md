@@ -9,7 +9,7 @@ ms.topic: include
 
 
 
-## License assignment move to the Microsoft 365 admin center FAQ 
+## License assignment move to the Microsoft 365 admin center
 
 Upcoming changes to license assignment processes, and move to the Microsoft 365 admin center require changes to the way you manage licenses. This section covers the reasons for the change, the timeline, license assignments options, and addresses common questions and known issues.
 
