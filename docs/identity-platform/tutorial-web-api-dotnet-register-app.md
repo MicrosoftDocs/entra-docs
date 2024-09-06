@@ -46,7 +46,7 @@ To complete registration, provide the application a name and specify the support
 
 1. The application's **Overview** pane is displayed when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in your application source code.
 
-    :::image type="content" source="./media/web-api-tutorial-01-register-app/record-identifiers.png" alt-text="Screenshot that shows the identifier values on the overview page.":::
+    :::image type="content" source="./media/web-api-tutorial-01-register-app/app-identifiers.png" alt-text="Screenshot that shows the identifier values on the overview page.":::
 
 >[!NOTE]
 > The **Supported account types** can be changed by referring to [Modify the accounts supported by an application](howto-modify-supported-accounts.md).

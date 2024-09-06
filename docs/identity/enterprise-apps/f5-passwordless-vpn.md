@@ -108,8 +108,6 @@ Set up a SAML federation trust between the BIG-IP to allow the Microsoft Entra B
 
 You can add other claims to your BIG-IP published service. Claims defined in addition to the default set are issued if they're in Microsoft Entra ID. Define directory [roles or group](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md) memberships against a user object in Microsoft Entra ID, before they can be issued as a claim.
 
-   ![Screenshot of Federation Metadata XML Download option.](media/f5-passwordless-vpn/saml-signing-certificate.png)
-
 SAML signing certificates created by Microsoft Entra ID have a lifespan of three years.
 
 <a name='azure-ad-authorization'></a>

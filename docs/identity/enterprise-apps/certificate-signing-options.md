@@ -69,9 +69,6 @@ Next, change the certificate signing options in the SAML token for that applicat
 1. If the **Set up Single Sign-On with SAML** page doesn't appear, select **Change single sign-on modes**.
 1. In the **Select a single sign-on method** page, select **SAML**. If **SAML** isn't available, the application doesn't support SAML, and you may ignore the rest of this procedure and article.
 1. In the **Set up Single Sign-On with SAML** page, find the **SAML Signing Certificate** heading and select the **Edit** icon (a pencil). The **SAML Signing Certificate** page appears.
-
-   ![Example: SAML signing certificate page](./media/certificate-signing-options/saml-signing-page.png)
-
 1. In the **Signing Option** drop-down list, choose **Sign SAML response**, **Sign SAML assertion**, or **Sign SAML response and assertion**. Descriptions of these options appear earlier in this article in the [Certificate signing options](#certificate-signing-options).
 1. In the **Signing Algorithm** drop-down list, choose **SHA-1** or **SHA-256**. Descriptions of these options appear earlier in this article in the [Certificate signing algorithms](#certificate-signing-algorithms) section.
 1. If you're satisfied with your choices, select **Save** to apply the new SAML signing certificate settings. Otherwise, select the **X** to discard the changes.

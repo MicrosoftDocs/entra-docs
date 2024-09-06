@@ -5,7 +5,7 @@ description: Deploy recommended Conditional Access policies from easy to use tem
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 07/24/2024
+ms.date: 08/28/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -33,6 +33,7 @@ Microsoft recommends these policies as the base for all organizations. We recomm
 - [Require multifactor authentication for all users](howto-conditional-access-policy-all-users-mfa.md)
 - [Require multifactor authentication for Azure management](howto-conditional-access-policy-azure-management.md)
 - [Require compliant or Microsoft Entra hybrid joined device or multifactor authentication for all users](howto-conditional-access-policy-compliant-device.md)
+- [Require compliant device](how-to-policy-require-device-compliance.md)
 
 # [Zero Trust](#tab/zero-trust)
 
@@ -66,6 +67,7 @@ These policies help secure organizations with remote workers.
 - [Require compliant or Microsoft Entra hybrid joined device for administrators](howto-conditional-access-policy-compliant-device-admin.md)
 - [Block access for unknown or unsupported device platform](howto-policy-unknown-unsupported-device.md)
 - [No persistent browser session](howto-policy-persistent-browser-session.md)
+- [Require compliant device](how-to-policy-require-device-compliance.md)
 - [Require approved client apps or app protection policies](howto-policy-approved-app-or-app-protection.yml)
 - [Use application enforced restrictions for unmanaged devices](howto-policy-app-enforced-restriction.md)
 
@@ -77,6 +79,7 @@ These policies are directed at highly privileged administrators in your environm
 - [Block legacy authentication](howto-conditional-access-policy-block-legacy.md)
 - [Require multifactor authentication for Azure management](howto-conditional-access-policy-azure-management.md)
 - [Require compliant or Microsoft Entra hybrid joined device for administrators](howto-conditional-access-policy-compliant-device-admin.md)
+- [Require compliant device](how-to-policy-require-device-compliance.md)
 - [Require phishing-resistant multifactor authentication for administrators](how-to-policy-phish-resistant-admin-mfa.md)
 
 # [Emerging threats](#tab/emerging-threats)
