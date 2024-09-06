@@ -153,8 +153,6 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
 22. In the **SAML Signing Certificate** section, select **Download**. 
 23. The **Federation Metadata XML** file is saved on your computer.
 
-   ![Screenshot of the Download link for Federation Metadata XML on the SAML Signing Certificate dialog.](./media/f5-big-ip-header-advanced/saml-signing-certificate.png)
-
 SAML signing certificates created by Microsoft Entra ID have a lifespan of three years.
 
 <a name='azure-ad-authorization'></a>
