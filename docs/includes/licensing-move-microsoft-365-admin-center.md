@@ -27,9 +27,9 @@ You can assign licenses using PowerShell or Microsoft Graph by following the det
 
 - [Assign Microsoft 365 licenses to user accounts with PowerShell](/microsoft-365/enterprise/assign-licenses-to-user-accounts-with-microsoft-365-powershell?view=o365-worldwide&preserve-view=true) 
 
-- [user: assignLicense - Microsoft Graph v1.0](/graph/api/user-assignlicense?view=graph-rest-1.0&tabs=http&preserve-view=true)
+- [Assign licenses to users with Microsoft Graph v1.0](/graph/api/user-assignlicense?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
-- [Assign Licenses to a Group using Microsoft Graph API](/graph/api/group-assignlicense?view=graph-rest-1.0&tabs=http&preserve-view=true)
+- [Assign Licenses to a Group with Microsoft Graph API](/graph/api/group-assignlicense?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
 ### Are license assignment audit logs affected? 
 
@@ -41,7 +41,7 @@ No. There's no loss of functionality. This change is limited to the user interfa
 
 ### The admin portal doesn't provide functionality to reprocess group licenses.
 
-The "reprocessing" button was originally introduced due to issue with converting between user and group based licensing. When you are debugging licensing issues, you can still reprocess users via Microsoft Graph and PowerShell using the following: 
+The "reprocessing" button was originally introduced to address an issue with conversion between user and group based licensing. When debugging licensing issues, you can still reprocess users via Microsoft Graph and PowerShell using one of the following options:
 
 - Use the Microsoft Graph PowerShell SDK module:
 
@@ -77,9 +77,9 @@ For detailed instructions on assigning licenses, visit the [Microsoft 365 Admin 
 
 ## Known Issues:
 
-- Users with the Group Administrator role won't be able to assign licenses in the Microsoft 365 Admins Center. 
-    - This functionality was fully supported in both the Azure and Entra Portals. 
-    - PowerShell continues to support the use of the Group Administrator role for license assignment. 
-    - Alternatively Group Administrators can be given the Licenses Administrator role in order to assign group based Licenses from the Microsoft 365 Admin Portal.  
+- Users with the Group Administrator role won't be able to assign licenses in the Microsoft 365 Admins Center.
+  - This functionality was fully supported in both the Azure and Entra Portals. 
+  - PowerShell continues to support the use of the Group Administrator role for license assignment.
+  - Alternatively Group Administrators can be given the Licenses Administrator role in order to assign group based Licenses from the Microsoft 365 Admin Portal.  
 
 - We are loosing some detailed group license assignments logging. The Azure portal was able to provide a detailed error to administrators.
