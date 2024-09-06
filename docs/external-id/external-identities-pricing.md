@@ -48,7 +48,7 @@ For the latest information about usage billing and pricing, see [External ID pri
 
 <a name='link-your-azure-ad-tenant-to-a-subscription'></a>
 
-## Linking a workforce tenant to a subscription
+## Link a workforce tenant to a subscription
 
 Microsoft Entra workforce tenants must be linked to an Azure subscription for proper billing and access to features. To link your tenant to a subscription, follow these steps.
 
@@ -82,7 +82,7 @@ If no subscriptions are available in the **Link a subscription** pane, here are 
 
 - No subscription exists. In the **Link a subscription** pane, you can create a subscription by selecting the link **if you don't already have a subscription you may create one here**. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for [linking it to your tenant](#link-your-azure-ad-tenant-to-a-subscription).
 
-## Linking an external tenant to a subscription
+## Link an external tenant to a subscription
 
 Depending on how you created your external tenant, it might already be linked to a subscription. To find out, follow these steps:
 
@@ -100,7 +100,7 @@ Depending on how you created your external tenant, it might already be linked to
 
        :::image type="content" source="media/external-identities-pricing/billing-section-no-subscription.png" alt-text="Screenshot of how to upgrade and link a subscription.":::
 
-## Changing the external tenant billing subscription
+## Change the external tenant billing subscription
 
 You can move an external tenant to another subscription, as long as the subscription you want to use is in the same Microsoft Entra tenant as the current subscription. Moving to a subscription in a *different* Microsoft Entra tenant is not currently supported.
 
