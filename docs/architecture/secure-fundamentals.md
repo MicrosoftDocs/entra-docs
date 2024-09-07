@@ -17,11 +17,11 @@ Microsoft Entra ID provides an identity and access boundary for Azure resources 
 
 You must determine your environment separation architecture based on your needs. Areas to consider include:
 
-* **Resource separation**. If a resource can change directory objects such as user objects, and the change would interfere with other resources, the resource may need to be isolated in a multi-tenant architecture.
+* **Resource separation**. If a resource can change directory objects such as user objects, and the change would interfere with other resources, the resource might need to be isolated in a multitenant architecture.
 
-* **Configuration separation**. Tenant-wide configurations affect all resources. The effect of some tenant-wide configurations can be scoped with Conditional Access policies and other methods. If you have a need for different tenant configurations that can't be scoped with Conditional Access policies, you may need a multi-tenant architecture.
+* **Configuration separation**. Tenant-wide configurations affect all resources. The effect of some tenant-wide configurations can be scoped with Conditional Access policies and other methods. If you have a need for different tenant configurations that can't be scoped with Conditional Access policies, you might need a multitenant architecture.
 
-* **Administrative separation**. You can delegate the administration of management groups, subscriptions, resource groups, resources, and some policies within a single tenant. A Global Administrator always has access to everything within the tenant. If you need to ensure that the environment doesn't share administrators with another environment, you need a multi-tenant architecture.
+* **Administrative separation**. You can delegate the administration of management groups, subscriptions, resource groups, resources, and some policies within a single tenant. A Global Administrator always has access to everything within the tenant. If you need to ensure that the environment doesn't share administrators with another environment, you need a multitenant architecture.
 
 To stay secure, you must follow best practices for identity provisioning, authentication management, identity governance, lifecycle management, and operations consistently across all tenants.
 
@@ -43,9 +43,9 @@ This list of terms is commonly associated with Microsoft Entra ID and relevant t
 
 * Lab purposes
 
-Non-production environments are commonly referred to as sandbox environments.
+Nonproduction environments are commonly referred to as sandbox environments.
 
-**Identity**. An identity is a directory object that can be authenticated and authorized for access to a resource. Identity objects exist for human identities and non-human identities. Non-human entities include:
+**Identity**. An identity is a directory object that can be authenticated and authorized for access to a resource. Identity objects exist for human identities and nonhuman identities. Nonhuman entities include:
 
 * Application objects
 
@@ -73,29 +73,29 @@ Microsoft Entra ID allows application and service principal objects to authentic
 
 * **Managed identities for Azure resources**. Managed identities are special service principals in Microsoft Entra ID. This type of service principal can be used to authenticate against services that support Microsoft Entra authentication without needing to store credentials in your code or handle secrets management. For more information, see [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md)
 
-* **Device identity**: A device identity verifies  the device in the authentication flow has undergone a process to attest  the device is legitimate and meets the technical requirements. Once the device has successfully completed this process, the associated identity can be used to further control access to an organization's resources. With Microsoft Entra ID, devices can authenticate with a certificate.
+* **Device identity**: A device identity verifies  the device in the authentication flow has gone through a process to attest  the device is legitimate and meets the technical requirements. Once the device successfully completes this process, the associated identity can be used to further control access to an organization's resources. With Microsoft Entra ID, devices can authenticate with a certificate.
 
-Some legacy scenarios required a human identity to be used in *non-human* scenarios. For example, when service accounts being used in on-premises applications such as scripts or batch jobs require access to Microsoft Entra ID. This pattern isn't recommended and we recommend you use [certificates](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md). However, if you do use a human identity with password for authentication, protect your Microsoft Entra accounts with [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
+Some legacy scenarios required a human identity to be used in *nonhuman* scenarios. For example, when service accounts being used in on-premises applications such as scripts or batch jobs require access to Microsoft Entra ID. This pattern isn't recommended and we recommend you use [certificates](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md). However, if you do use a human identity with password for authentication, protect your Microsoft Entra accounts with [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md).
 
-**Hybrid identity**. A hybrid identity is an identity that spans on-premises and cloud environments. This provides the benefit of being able to use the same identity to access on-premises and cloud resources. The source of authority in this scenario is typically an on-premises directory, and the identity lifecycle around provisioning, de-provisioning and resource assignment is also driven from on-premises. For more information, see [Hybrid identity documentation](~/identity/hybrid/index.yml).
+**Hybrid identity**. A hybrid identity is an identity that spans on-premises and cloud environments. Hybrid provides the benefit of being able to use the same identity to access on-premises and cloud resources. The source of authority in this scenario is typically an on-premises directory, and the identity lifecycle around provisioning, deprovisioning and resource assignment is also driven from on-premises. For more information, see [Hybrid identity documentation](~/identity/hybrid/index.yml).
 
 **Directory objects**. A Microsoft Entra tenant contains the following common objects:
 
-* **User objects** represent human identities and non-human identities for services that currently don't support service principals. User objects contain attributes that have the required information about the user including personal details, group memberships, devices, and roles assigned to the user.
+* **User objects** represent human identities and nonhuman identities for services that currently don't support service principals. User objects contain attributes that have the required information about the user including personal details, group memberships, devices, and roles assigned to the user.
 
-* **Device objects** represent devices that are associated with a Microsoft Entra tenant. Device objects contain attributes that have the required information about the device. This includes the operating system, associated user, compliance state, and the nature of the association with the Microsoft Entra tenant. This association can take multiple forms depending on the nature of the interaction and trust level of the device.
+* **Device objects** represent devices associated with a Microsoft Entra tenant. Device objects contain attributes that have the required information about the device. These objects include the operating system, associated user, compliance state, and the nature of the association with the Microsoft Entra tenant. This association can take multiple forms depending on the nature of the interaction and trust level of the device.
 
-  * **Hybrid Domain Joined**. Devices that are owned by the organization and [joined](~/identity/devices/concept-hybrid-join.md) to both the on-premises Active Directory and Microsoft Entra ID. Typically a device purchased and managed by an organization and managed by System Center Configuration Manager.
+  * **Hybrid Domain Joined**. Devices owned by the organization and [joined](~/identity/devices/concept-hybrid-join.md) to both the on-premises Active Directory and Microsoft Entra ID. Typically a device purchased and managed by an organization and managed by System Center Configuration Manager.
 
-  * **Microsoft Entra Domain Joined**. Devices that are owned by the organization and joined to the organization's Microsoft Entra tenant. Typically a device purchased and managed by an organization that is joined to Microsoft Entra ID and managed by a service such as [Microsoft Intune](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/microsoft-intune).
+  * **Microsoft Entra Domain Joined**. Devices owned by the organization and joined to the organization's Microsoft Entra tenant. Typically a device purchased and managed by an organization that is joined to Microsoft Entra ID and managed by a service such as [Microsoft Intune](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/microsoft-intune).
 
-  * **Microsoft Entra registered**. Devices not owned by the organization, for example, a personal device, used to access company resources. Organizations may require the device be enrolled via [Mobile Device Management (MDM)](https://www.microsoft.com/itshowcase/mobile-device-management-at-microsoft), or enforced through [Mobile Application Management (MAM)](/mem/intune/apps/apps-supported-intune-apps) without enrollment to access resources. This capability can be provided by a service such as Microsoft Intune.
+  * **Microsoft Entra registered**. Devices not owned by the organization, for example, a personal device used to access company resources. Organizations might require the device be enrolled via [Mobile Device Management (MDM)](https://www.microsoft.com/itshowcase/mobile-device-management-at-microsoft), or enforced through [Mobile Application Management (MAM)](/mem/intune/apps/apps-supported-intune-apps) without enrollment to access resources. A service such as Microsoft Intune can provide this capability.
 
-* **Group objects** contain objects for the purposes of assigning resource access, applying controls, or configuration. Group objects contain attributes that have the required information about the group including the name, description, group members, group owners, and the group type. Groups in Microsoft Entra ID take multiple forms based on an organization's requirements and can be mastered in Microsoft Entra ID or synchronized from on-premises Active Directory Domain Services (AD DS).
+* **Group objects** contain objects for the purposes of assigning resource access, applying controls, or configuration. Group objects contain attributes that have the required information about the group including the name, description, group members, group owners, and the group type. Groups in Microsoft Entra ID take multiple forms based on an organization's requirements. These requirements can be met using Microsoft Entra ID or synchronized from on-premises Active Directory Domain Services (AD DS).
 
   * **Assigned groups**. In assigned groups, users are added to or removed from the group manually, synchronized from on-premises AD DS, or updated as part of an automated scripted workflow. An assigned group can be synchronized from on-premises AD DS or can be homed in Microsoft Entra ID.
 
-  * **Dynamic membership groups**. In attribute-based dynamic membership groups, users are assigned to the group automatically based on defined attributes. This allows group memberships to be dynamically updated based on data held within the user objects. A dynamic membership group can only be homed in Microsoft Entra ID.
+  * **Dynamic membership groups**. In attribute-based dynamic membership groups, users are assigned to the group automatically based on defined attributes. This scenario allows group memberships to be dynamically updated based on data held within the user objects. A dynamic membership group can only be homed in Microsoft Entra ID.
 
 **Microsoft Account (MSA)**. You can create Azure subscriptions and tenants using Microsoft Accounts (MSA). A Microsoft Account is a personal account (as opposed to an organizational account) and is commonly used by developers and for trial scenarios. When used, the personal account is always made a guest in a Microsoft Entra tenant.
 
@@ -103,13 +103,13 @@ Some legacy scenarios required a human identity to be used in *non-human* scenar
 
 ## Microsoft Entra functional areas
 
-These are the functional areas provided by Microsoft Entra ID that are relevant to isolated environments. To learn more about the capabilities of Microsoft Entra ID, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md).
+These functional areas are provided by Microsoft Entra ID that are relevant to isolated environments. To learn more about the capabilities of Microsoft Entra ID, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md).
 
 ### Authentication
 
-**Authentication**. Microsoft Entra ID provides support for authentication protocols compliant with open standards such as OpenID Connect, OAuth and SAML. Microsoft Entra ID also provides capabilities to allow organizations to federate existing on-premises identity providers such as Active Directory Federation Services (AD FS) to authenticate access to Microsoft Entra integrated applications.
+**Authentication**. Microsoft Entra ID provides support for authentication protocols compliant with open standards such as OpenID Connect, OAuth, and SAML. Microsoft Entra ID also provides capabilities to allow organizations to federate existing on-premises identity providers such as Active Directory Federation Services (AD FS) to authenticate access to Microsoft Entra integrated applications.
 
-Microsoft Entra ID provides industry-leading strong authentication options that organizations can use to secure access to resources. Microsoft Entra multifactor authentication, device authentication and password-less capabilities allow organizations to deploy strong authentication options that suit their workforce's requirements.
+Microsoft Entra ID provides industry-leading strong authentication options that organizations can use to secure access to resources. Microsoft Entra multifactor authentication, device authentication, and password-less capabilities allow organizations to deploy strong authentication options that suit their workforce's requirements.
 
 **Single sign-on (SSO)**. With single sign-on, users sign in once with one account to access all resources that trust the directory such as domain-joined devices, company resources, software as a service (SaaS) applications, and all Microsoft Entra integrated applications. For more information, see [single sign-on to applications in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
@@ -129,7 +129,7 @@ Microsoft Entra ID provides industry-leading strong authentication options that 
 
 ### Administration
 
-**Identity management**. Microsoft Entra ID provides tools to manage the lifecycle of user, group, and device identities. [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) enables organizations to extend current, on-premises identity management solution to the cloud. Microsoft Entra Connect manages the provisioning, de-provisioning, and updates to these identities in Microsoft Entra ID.
+**Identity management**. Microsoft Entra ID provides tools to manage the lifecycle of user, group, and device identities. [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) enables organizations to extend current, on-premises identity management solution to the cloud. Microsoft Entra Connect manages the provisioning, deprovisioning, and updates to these identities in Microsoft Entra ID.
 
 Microsoft Entra ID also provides a portal and the Microsoft Graph API to allow organizations to manage identities or integrate Microsoft Entra identity management into existing workflows or automation. To learn more about Microsoft Graph, see [Use the Microsoft Graph API](/graph/use-the-api).
 
@@ -139,7 +139,7 @@ Microsoft Entra ID also provides a portal and the Microsoft Graph API to allow o
 
 ### Governance
 
-**Identity lifecycle**. Microsoft Entra ID provides capabilities to create, retrieve, delete, and update identities in the directory, including external identities. Microsoft Entra ID also [provides services to automate the identity lifecycle](~/identity/app-provisioning/how-provisioning-works.md) to ensure it's maintained in line with your organization's needs. For example, using Access Reviews to remove external users who haven't signed in for a specified period.
+**Identity lifecycle**. Microsoft Entra ID provides capabilities to create, retrieve, delete, and update identities in the directory, including external identities. Microsoft Entra ID also [provides services to automate the identity lifecycle](~/identity/app-provisioning/how-provisioning-works.md) to ensure it's maintained in line with your organization's needs. For example, using Access Reviews to remove external users who have yet to sign in for a specified period.
 
 **Reporting and analytics**. An important aspect of identity governance is visibility into user actions. Microsoft Entra ID provides insights into your environment's security and usage patterns. These insights include detailed information on:
 
@@ -155,7 +155,7 @@ Microsoft Entra ID also provides information on the actions that are being perfo
 
 **Auditing**. Auditing provides traceability through logs for all changes done by specific features within Microsoft Entra ID. Examples of activities found in audit logs include changes made to any resources within Microsoft Entra ID like adding or removing users, apps, groups, roles, and policies. Reporting in Microsoft Entra ID enables you to audit sign-in activities, risky sign-ins, and users flagged for risk. For more information, see [Audit activity reports in the Azure portal](~/identity/monitoring-health/concept-audit-logs.md).
 
-**Access certification**. Access certification is the process to prove that a user is entitled to have access to a resource at a point in time. Microsoft Entra access reviews continually review the memberships of groups or applications and provide insight to determine whether access is required or should be removed. This enables organizations to effectively manage group memberships, access to enterprise applications, and role assignments to make sure only the right people have continued access. For more information, see [What are Microsoft Entra access reviews?](~/id-governance/access-reviews-overview.md)
+**Access certification**. Access certification is the process to prove that a user is entitled to have access to a resource at a point in time. Microsoft Entra access reviews continually review the memberships of groups or applications and provide insight to determine whether access is required or should be removed. This certification enables organizations to effectively manage group memberships, access to enterprise applications, and role assignments to make sure only the right people continue to have access. For more information, see [What are Microsoft Entra access reviews?](~/id-governance/access-reviews-overview.md)
 
 **Privileged access**. [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) provides time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions to Azure resources. It's used to protect privileged accounts by lowering the exposure time of privileges and increasing visibility into their use through reports and alerts.
 
@@ -163,11 +163,12 @@ Microsoft Entra ID also provides information on the actions that are being perfo
 
 **Credential registration**. Microsoft Entra ID provides capabilities to manage all aspects of user identity lifecycle and self-service capabilities to reduce the workload of an organization's helpdesk.
 
-**Group management**. Microsoft Entra ID provides capabilities that enable users to request membership in a group for resource access and to create groups that can be used for securing resources or collaboration. These capabilities can be controlled by the organization so that appropriate controls are put in place.
+**Group management**. Microsoft Entra ID provides capabilities that enable users to request membership in a group for resource access. Use Microsoft Entra ID to create groups that can be used for securing resources or collaboration. Therefore, organizations can utilize appropriate controls 
+they put in place to control these capabilities.
 
 ### Consumer Identity and Access Management (IAM)
 
-**Azure AD B2C**. Azure AD B2C is a service that can be enabled in an Azure subscription to provide identities to consumers for your organization's customer-facing applications. This is a separate island of identity and these users don't appear in the organization's Microsoft Entra tenant. Azure AD B2C is managed by administrators in the tenant associated with the Azure subscription.
+**Azure AD B2C**. [Azure AD B2C](/azure/active-directory-b2c/overview) is a service that can be enabled in an Azure subscription to provide identities to consumers for your organization's customer-facing applications. This service is a separate identity offering, and therefore these users don't typically appear in the organization's Microsoft Entra tenant. Azure AD B2C is managed by administrators in the tenant associated with the Azure subscription.
 
 ## Next steps
 

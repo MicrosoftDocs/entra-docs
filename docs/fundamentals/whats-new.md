@@ -49,7 +49,7 @@ We'd like to share an update that the scope of MFA enforcement includes [Microso
 
 **Phase 2**: Beginning in early 2025, gradual enforcement of MFA at sign-in for the Azure CLI, Azure PowerShell, Azure mobile app, and Infrastructure as Code (IaC) tools will commence.
 
-Microsoft will send a 60-day advance notice to all Entra Global Administrators by email, and through Azure Service Health Notifications, to notify them of the start date of enforcement and required actions. Additional notifications will be sent through the Azure portal, Microsoft Entra admin center, and the Microsoft 365 message center.
+Microsoft will send a 60-day advance notice to all Microsoft Entra Global Administrators by email, and through Azure Service Health Notifications, to notify them of the start date of enforcement and required actions. Additional notifications will be sent through the Azure portal, Microsoft Entra admin center, and the Microsoft 365 message center.
 
 We understand that some customers might need additional time to prepare for this MFA requirement. Therefore, Microsoft will allow extended time for customers with complex environments or technical barriers. The notification from us will also include details about how customers can postpone the start date of enforcement for their tenants, the duration of the postponement, and a link to apply. Visit [here](../identity/authentication/concept-mandatory-multifactor-authentication.md) to learn more.
 
@@ -59,7 +59,7 @@ We understand that some customers might need additional time to prepare for this
 
 **Type:** Changed feature     
 **Service category:** Provisioning   
-**Product capability:** Entra Connect    
+**Product capability:** Microsoft Entra Connect    
 
 As part of ongoing security hardening, we've removed unused permissions from the privileged "*Directory Synchronization Accounts*" role. This role is exclusively used by Microsoft Entra Connect Sync, and Microsoft Entra Cloud Sync, to synchronize Active Directory objects with Microsoft Entra ID. There's no action required by customers to benefit from this hardening, and the revised role permissions are documented here: [Directory Synchronization Accounts](../identity/role-based-access-control/permissions-reference.md#directory-synchronization-accounts).
 
@@ -168,11 +168,11 @@ To learn more, see the [Automate employee mover tasks when they change jobs usin
 **Service category:** Conditional Access    
 **Product capability:** SSO              
 
-Since October 2022, users on Ubuntu Desktop 20.04 LTS & Ubuntu 22.04 LTS with Microsoft Edge browser could register their devices with Entra ID, enroll into Intune management, and securely access corporate resources using device-based Conditional Access policies.
+Since October 2022, users on Ubuntu Desktop 20.04 LTS & Ubuntu 22.04 LTS with Microsoft Edge browser could register their devices with Microsoft Entra ID, enroll into Microsoft Intune management, and securely access corporate resources using device-based Conditional Access policies.
 
 This release extends support to Red Hat Enterprise Linux 8.x and 9.x (LTS) which makes these capabilities possible:
 
-- Entra ID registration & enrollment of RedHat LTS (8/9) desktops.
+- Microsoft Entra ID registration & enrollment of RedHat LTS (8/9) desktops.
 - Conditional Access policies protecting web applications via Microsoft Edge.
 -Provides SSO for native & web applications (ex: Azure CLI, Edge Browser, Teams PWA, etc.) to access M365/Azure protected resources.
 - Standard Intune compliance policies.
@@ -270,7 +270,7 @@ An improved experience when using Microsoft Entra External ID as an identity pro
 
 **Type:** Changed feature    
 **Service category:** Provisioning    
-**Product capability:** Entra Connect    
+**Product capability:** Microsoft Entra Connect    
 
 **Action Recommended: Security Improvements to Microsoft Entra Connect Sync and Connect Health**
 
@@ -390,7 +390,7 @@ End users can now enable passwordless phone sign-in for multiple accounts in the
 The Microsoft Graph Bicep extension brings declarative infrastructure-as-code (IaC) capabilities to Microsoft Graph resources. It allows you to author, deploy, and manage core Microsoft Entra ID resources using Bicep template files, alongside Azure resources.
 
 - Existing Azure customers can now use familiar tools to deploy Azure resources and the Microsoft Entra resources they depend on, such as applications and service principals, IaC and DevOps practices.
-- It also opens the door for existing Microsoft Entra customers to use Bicep templates and IaC practices to deploy and manage their tenant's Entra resources.
+- It also opens the door for existing Microsoft Entra customers to use Bicep templates and IaC practices to deploy and manage their tenant's Microsoft Entra resources.
 
 For more information, see: [Bicep templates for Microsoft Graph resources](/graph/templates/)
 
@@ -510,7 +510,7 @@ For more information, see: [Support for FIDO2 authentication with Microsoft Entr
 
 **Type:** New feature    
 **Service category:** Provisioning    
-**Product capability:** Entra Cloud Sync    
+**Product capability:** Microsoft Entra Cloud Sync    
 
 Security groups provisioning to Active Directory (also known as Group Writeback) is now generally available through Microsoft Entra Cloud Sync in Azure Global and Azure Government clouds. With this new capability, you can easily govern Active Directory based on-premises applications (Kerberos based apps) using Microsoft Entra Governance. For more information, see: [Provision groups to Active Directory using Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
@@ -522,9 +522,9 @@ Security groups provisioning to Active Directory (also known as Group Writeback)
 **Service category:** Provisioning                     
 **Product capability:**  Microsoft Entra Connect Sync             
 
-The public preview of Group Writeback V2 (GWB) in Entra Connect Sync will no longer be available after June 30, 2024. After this date, Connect Sync will no longer support provisioning cloud security groups to Active Directory.
+The public preview of Group Writeback V2 (GWB) in Microsoft Entra Connect Sync will no longer be available after June 30, 2024. After this date, Connect Sync will no longer support provisioning cloud security groups to Active Directory.
 
-Another similar functionality is offered in Entra Cloud Sync, called “*Group Provision to AD*”, that maybe used instead of GWB V2 for provisioning cloud security groups to AD. Enhanced functionality in Cloud Sync, along with other new features, are being developed.
+Another similar functionality is offered in Microsoft Entra Cloud Sync, called “*Group Provision to AD*”, that maybe used instead of GWB V2 for provisioning cloud security groups to AD. Enhanced functionality in Cloud Sync, along with other new features, are being developed.
 
 Customers who use this preview feature in Connect Sync should [switch their configuration from Connect Sync to Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md). Customers can choose to move all their hybrid sync to Cloud Sync (if it supports their needs) or Cloud Sync can be run side-by-side and move only cloud security group provisioning to AD onto Cloud Sync.
 
