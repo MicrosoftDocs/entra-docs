@@ -4,7 +4,7 @@ description: Learn about B2B collaboration for sharing apps with external identi
 
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 04/29/2024
+ms.date: 09/06/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -23,7 +23,7 @@ Microsoft Entra External ID includes collaboration capabilities that allow your 
 
 A simple invitation and redemption process lets partners use their own credentials to access your company's resources. You can also enable self-service sign-up user flows to let guests sign up for apps or resources themselves. Once the guest redeems their invitation or completes sign-up, they're represented in your directory as a user object. The user type for these B2B collaboration users is typically set to "guest" and their user principal name contains the #EXT# identifier.
 
-Developers can use Microsoft Entra business-to-business APIs to customize the invitation process or write applications like self-service sign-up portals. For licensing and pricing information related to guest users, refer to [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
+Developers can use Microsoft Entra business-to-business APIs to customize the invitation process or write applications like self-service sign-up portals. For licensing and pricing information related to guest users, refer to [Billing model for Microsoft Entra External ID](external-identities-pricing.md).
 
 > [!IMPORTANT]
 > The [email one-time passcode](one-time-passcode.md) feature is now turned on by default for all new tenants and for any existing tenants where you haven't explicitly turned it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.

@@ -5,7 +5,7 @@ description: Microsoft Entra B2B direct connect lets users from other Microsoft 
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 04/29/2024
+ms.date: 09/06/2024
 
 ms.author: cmulligan
 author: csmulligan

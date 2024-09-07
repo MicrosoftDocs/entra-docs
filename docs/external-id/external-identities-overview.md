@@ -6,7 +6,7 @@ description: Microsoft Entra External ID allows you to collaborate with or publi
  
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 07/29/2024
+ms.date: 09/06/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
@@ -106,7 +106,7 @@ You use [cross-tenant access settings](cross-tenant-access-settings-b2b-collabor
 
 For details about the resources, files, and applications that are available to the B2B direct connect user via the Teams shared channel refer to [Chat, teams, channels, & apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
 
-Licensing and billing are based on monthly active users (MAU). Learn more about [External ID pricing](https://aka.ms/ExternalIDPricing).  
+Licensing and billing are based on monthly active users (MAU). Learn more about the [billing model for Microsoft Entra External ID](external-identities-pricing.md).  
 
 ### Azure Active Directory B2C
 
