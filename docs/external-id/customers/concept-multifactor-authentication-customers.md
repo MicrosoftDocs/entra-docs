@@ -23,7 +23,7 @@ ms.custom: it-pro, references_regions
 [Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
 
 - Email one-time passcode
-- SMS based authentication, available as an add-on ([see details](#sms-based-authentication))
+- SMS based authentication, available as an add-on [see details](#sms-based-authentication-preview).
 
 Enforcing MFA enhances your organization's security by adding an extra layer of verification, making it more difficult for unauthorized users to gain access.
 
