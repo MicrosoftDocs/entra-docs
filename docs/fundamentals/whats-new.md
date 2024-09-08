@@ -220,7 +220,7 @@ For more information, see: [SAML authentication with Microsoft Entra ID](/entra/
 
 In February 2024, we added the following 10 new applications in our App gallery with Federation support:
 
-[Fulls tory SAML](../identity/saas-apps/fullstory-saml-tutorial.md), [LSEG Workspace](https://azuremarketplace.microsoft.com/en-US/marketplace/apps/aad.lsegworkspace?tab=Overview)
+[Full story SAML](../identity/saas-apps/fullstory-saml-tutorial.md), [LSEG Workspace](https://azuremarketplace.microsoft.com/en-US/marketplace/apps/aad.lsegworkspace?tab=Overview)
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
 
