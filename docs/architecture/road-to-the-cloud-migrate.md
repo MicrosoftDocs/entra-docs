@@ -188,7 +188,7 @@ After you move SaaS applications that were federated to Microsoft Entra ID, ther
 
 * [Move application authentication to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md)
 
-* [Migrate from Azure Multi-Factor Authentication Server to Microsoft Entra multifactor authentication](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)
+* [Migrate from Azure Multifactor Authentication Server (MFA Server) to Microsoft Entra multifactor authentication](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)
 
 * [Migrate from federation to cloud authentication](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md)
 

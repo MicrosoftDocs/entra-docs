@@ -49,7 +49,7 @@ There are changes that require special considerations when testing, from simple 
 
 | Scenario| Recommendation |
 |-|-|
-|Change the authentication type from federated to PHS/PTA or vice-versa| Use [staged rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to test the affect of changing the authentication type.|
+|Change the authentication type from federated to PHS/PTA or vice-versa| Use [staged rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to test the effect of changing the authentication type.|
 |Rolling out a new Conditional Access policy or Identity Protection Policy|Create a new Conditional Access policy and assign to test users.|
 |Onboard a test environment of an application|Add the application to a production environment, hide it from the MyApps panel, and assign it to test users during the quality assurance (QA) phase.|
 |Change of sync rules|Perform the changes in a test Microsoft Entra Connect with the same configuration that is currently in production, also known as staging mode, and analyze Export Results. If satisfied, swap to production when ready.|
@@ -65,7 +65,7 @@ There are changes that require special considerations when testing, from simple 
 
 ### Access reviews to applications
 
-Over time, users might accumulate access to resources as they move throughout different teams and positions. It's important that resource owners review the access to applications regularly. This review process can involve remove privileges that are no longer needed throughout the lifecycle of users. Microsoft Entra [access reviews](~/id-governance/access-reviews-overview.md) enable organizations to efficiently manage group memberships, access to enterprise applications, and role assignments. Resource owners should review users' access regularly to make sure only the right people continue to have access. Ideally, you should consider using Microsoft Entra access reviews for this task.
+Over time, users might accumulate access to resources as they move throughout different teams and positions. It's important that resource owners review the access to applications regularly. This review process can involve removing privileges that are no longer needed throughout the lifecycle of users. Microsoft Entra [access reviews](~/id-governance/access-reviews-overview.md) enable organizations to efficiently manage group memberships, access to enterprise applications, and role assignments. Resource owners should review users' access regularly to make sure only the right people continue to have access. Ideally, you should consider using Microsoft Entra access reviews for this task.
 
 ![Access reviews start page](./media/ops-guide-auth/ops-img15.png)
 

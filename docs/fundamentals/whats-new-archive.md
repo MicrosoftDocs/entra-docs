@@ -3,7 +3,7 @@ title: Archive for What's new in Microsoft Entra ID?
 description: The What's new release notes in the Overview section of this content set contain six months of activity. After six months, the items are removed from the main article and put into this archive article.
 author: owinfreyATL
 manager: amycolannino
-ms.service: entra
+ms.service: entra 
 ms.subservice: fundamentals
 ms.topic: whats-new
 ms.date: 08/25/2024
@@ -256,15 +256,15 @@ The dynamic group rule builder is updated to no longer include the '*contains*' 
 
 ## November 2023
 
-### Decommissioning of Group Writeback V2 (Public Preview) in Entra Connect Sync
+### Decommissioning of Group Writeback V2 (Public Preview) in Microsoft Entra Connect Sync
 
 **Type:** Plan for change   
 **Service category:** Provisioning                     
 **Product capability:**  Microsoft Entra Connect Sync             
 
-The public preview of Group Writeback V2 (GWB) in Entra Connect Sync will no longer be available after June 30, 2024. After this date, Connect Sync will no longer support provisioning cloud security groups to Active Directory.
+The public preview of Group Writeback V2 (GWB) in Microsoft Entra Connect Sync will no longer be available after June 30, 2024. After this date, Connect Sync will no longer support provisioning cloud security groups to Active Directory.
 
-Another similar functionality is offered in Entra Cloud Sync, called 'Group Provision to AD', that maybe used instead of GWB V2 for provisioning cloud security groups to AD. Enhanced functionality in Cloud Sync, along with other new features, are being developed.
+Another similar functionality is offered in Microsoft Entra Cloud Sync, called 'Group Provision to AD', that maybe used instead of GWB V2 for provisioning cloud security groups to AD. Enhanced functionality in Cloud Sync, along with other new features, are being developed.
 
 Customers who use this preview feature in Connect Sync should [switch their configuration from Connect Sync to Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md). Customers can choose to move all their hybrid sync to Cloud Sync (if it supports their needs). They can also run Cloud Sync side-by-side and move only cloud security group provisioning to AD onto Cloud Sync.
 
@@ -1059,7 +1059,7 @@ For more information about how to better secure your organization by using autom
 **Service category:** Entitlement Management                          
 **Product capability:** Entitlement Management                
 
-The Entitlement Management service can now be targeted in the Conditional Access policy for inclusion or exclusion of applications. To target the Entitlement Management service, select “Azure AD Identity Governance - Entitlement Management” in the cloud apps picker. The Entitlement Management app includes the entitlement management part of My Access, the Entitlement Management part of the Entra and Azure portals, and the Entitlement Management part of MS Graph. For more information, see:  [Review your Conditional Access policies](~/id-governance/entitlement-management-external-users.md#review-your-conditional-access-policies).
+The Entitlement Management service can now be targeted in the Conditional Access policy for inclusion or exclusion of applications. To target the Entitlement Management service, select “Azure AD Identity Governance - Entitlement Management” in the cloud apps picker. The Entitlement Management app includes the entitlement management part of My Access, the Entitlement Management part of the Microsoft Entra and Azure portals, and the Entitlement Management part of MS Graph. For more information, see:  [Review your Conditional Access policies](~/id-governance/entitlement-management-external-users.md#review-your-conditional-access-policies).
 
 ---
 
@@ -1443,7 +1443,7 @@ To address this challenge, we're introducing a new system-preferred authenticati
 **Service category:** User Management                     
 **Product capability:** User Management            
 
-We've increased the number of properties that admins are able to define when creating and inviting a user in the Entra admin portal. This capability brings our UX to parity with our Create User APIs. Additionally, admins can now add users to a group or administrative unit, and assign roles. For more information, see:  [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.yml).
+We've increased the number of properties that admins are able to define when creating and inviting a user in the Microsoft Entra admin portal. This capability brings our UX to parity with our Create User APIs. Additionally, admins can now add users to a group or administrative unit, and assign roles. For more information, see:  [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.yml).
 
 ---
 
