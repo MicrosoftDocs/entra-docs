@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 08/25/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -104,7 +104,7 @@ Organizations need a process to manage access that is scalable. Users continue t
 
 Typically, IT delegates access approval decisions to business decision makers. Furthermore, IT can involve the users themselves. For example, users that access confidential customer data in a company's marketing application in Europe need to know the company's policies. Guest users also may be unaware of the handling requirements for data in an organization to which they've been invited.
 
-Organizations can automate the access lifecycle process through technologies such as [dynamic groups](~/identity/users/groups-dynamic-membership.md), coupled with user provisioning to [SaaS applications](~/identity/saas-apps/tutorial-list.md), or [applications integrated using the System for Cross-Domain Identity Management (SCIM)](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)) standard. Organizations also can control which [guest users have access to on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md). These access rights can then be regularly reviewed using recurring [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).
+Organizations can automate the access lifecycle process through technologies such as [dynamic membership groups](~/identity/users/groups-dynamic-membership.md), coupled with user provisioning to [SaaS applications](~/identity/saas-apps/tutorial-list.md), or [applications integrated using the System for Cross-Domain Identity Management (SCIM)](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)) standard. Organizations also can control which [guest users have access to on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md). These access rights can then be regularly reviewed using recurring [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).
 
 ## Future directions
 
