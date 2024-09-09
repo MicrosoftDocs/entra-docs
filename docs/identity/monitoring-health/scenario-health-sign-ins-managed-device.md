@@ -15,8 +15,12 @@ ms.reviewer: sarbar
 
 # Sign-ins requiring a managed device
 
-Microsoft Entra Health (preview) provides a set of health metrics you can monitor and receive alerts when a potential issue or failure condition is detected. Tenant health monitoring aggregates several health signals and alerts across different services and scenarios. This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a managed device.
+Microsoft Entra Health (preview) provides a set of health metrics you can monitor and receive alerts when a potential issue or failure condition is detected. Tenant health monitoring aggregates several health signals and alerts across different services and scenarios, such as sign-ins that require a managed device.
 
+To learn more about how Microsoft Entra Health works, see:
+
+- [What is Microsoft Entra Health?](concept-microsoft-entra-health.md)
+- [How to use Microsoft Entra scenario health monitoring and alerts](howto-use-health-scenario-alerts.md)
 
 This article describes these health metrics and how to troubleshoot the issue when you receive an alert.
 
@@ -30,61 +34,53 @@ To view the Scenario monitoring dashboards, you need:
 - The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
 
-## How it works
+## Alert analysis and mitigation
 
-1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Tenant health monitoring.
-    - This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a managed device.
-    - All the data is provided at the tenant level.
+Investigating an alert starts with gathering data.
 
-    ![Screenshot of the managed device scenario.](media/scenario-health-sign-ins-managed-device/scenario-monitoring-managed-device.png)
+1. Gather the signal details and impact summary from the [Microsoft Graph API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
+1. Review your [Intune device compliance policies](/mem/intune/protect/compliance-policy-monitor).
+    - If you're not using Intune, review your device management solution's compliance policies.
+1. Investigate common issues with [Conditional Access device compliance](/troubleshoot/mem/intune/device-protection/troubleshoot-conditional-access#devices-appear-compliant-but-users-are-still-blocked).
+1. Review the sign-in logs for users being blocked from signing in and have a compliant device [Conditional Access policy]((../conditional-access/troubleshoot-conditional-access.md)) applied.
+1. Check the [audit logs for Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md).
 
-1. These signals are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant.
+## How to mitigate common issues
 
-1. When the anomaly detection service identifies a significant change to that pattern, such as a spike in sign-ins requiring a managed device, it triggers an alert. 
-    - Anomaly specifics for the scenario
-    - Define threshold
+The following scenarios are common issues that could cause a spike in sign-ins requiring a compliant device. This list is not exhaustive, but provides a starting point for your investigation.
 
-1. An alert is sent by email to the [tenant's important role] when the anomaly detection service identifies a significant change to the pattern of sign-ins requiring a compliant device. 
+### User is blocked from signing in from an unknown device
 
-After receiving an alert, you need to research possible root causes, determine the next steps, and take action to mitigate the root cause.
+If the increase in blocked sign-ins is coming from an unknown device, that spike could indicate that an attacker has acquired a user's credentials and is attempting to sign in from a device used for such attacks.
 
-## Gather data
+- Review the sign-in logs for the user.
+- [Investigate risk with Microsoft Entra ID Protection](../../id-protection/howto-identity-protection-investigate-risk.md).
+    - Requires a Microsoft Entra ID P2 license.
 
-For this scenario, there are three main data sets to investigate:
 
-- The signal details from the API
-- The impact summary from the alerts API
-- Sign-in logs
 
-Microsoft Entra tenant health monitoring can be viewed and managed using Microsoft Graph on the `/beta` endpoint. For more information, see the [Microsoft Graph documentation for Microsoft Entra health monitoring](/graph/api/resources/healthmonitoring-overview).
 
-To get started, follow these instructions to work with tenant health monitoring using Microsoft Graph in Graph Explorer.
 
-1. Sign in to [Graph Explorer](https://aka.ms/ge).
-1. Select **GET** as the HTTP method from the dropdown.
-1. Set the API version to **beta**.
 
-### View the signal and impact summary
 
-Add the following query to retrieve all alerts for your tenant, then select the **Run query** button.
 
-```http
-GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
-```
 
-To view the impact summary for a specific alert, you need to save the `id` of the alert you want to investigate. Add the following query, using `id` as the `alertId`, then select the **Run query** button.
 
-```http
-GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
-```
 
-Important details to note:
 
-- The portion of the response after `impacts` make up the impact summary for the alert.
-- The `supportingData` portion includes the full query used to generate the alert.
-- Think about the seriousness of the alert. Are only a handful of users affected, or is it a widespread issue?
-- The results of the query include everything identified by the detection service, but there might be results that aren't directly related to the alert.
-- We recommend pulling the API daily for regular monitoring of the alerts.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Research root causes in your tenant
 

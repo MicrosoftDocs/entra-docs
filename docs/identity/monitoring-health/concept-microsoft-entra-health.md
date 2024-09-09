@@ -14,11 +14,9 @@ ms.reviewer: sarbar
 
 # What is Microsoft Entra Health?
 
-Microsoft Entra Health (preview) provides you with the ability to view the health of your Microsoft Entra tenant through a report of service level agreement (SLA) attainment and a set of health metrics you can monitor for key Microsoft Entra ID scenarios. In addition to viewing the health metrics, you can now receive alerts when a potential issue or failure condition is detected within the health scenarios.
+Microsoft Entra Health (preview) provides you with the ability to view the health of your Microsoft Entra tenant through a report of service level agreement (SLA) attainment and a set of health metrics you can monitor for key Microsoft Entra ID scenarios.
 
-Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Health Scenario Monitoring. These signals are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change to that pattern, such as a spike in sign-ins requiring multifactor authentication (MFA), it triggers an alert. 
-
-All the data is provided at the tenant level. The scenario monitoring solution is currently in public preview and can be enabled or disabled in the Preview Hub; the SLA Attainment report is available by default.
+Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Health Scenario Monitoring. All the data is provided at the tenant level. The scenario monitoring solution is currently in public preview and can be enabled or disabled in the Preview Hub; the SLA Attainment report is available by default.
 
 ## How to access Microsoft Entra Health
 
@@ -60,15 +58,11 @@ Many IT administrators spend a considerable amount of time investigating the hea
 
 The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities.
 
-Data is aggregated every 15 minutes, for low latency insights into your tenant's health. Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
-
-Select **View details** on a tile to view the metrics and alerts for that scenario. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true). At this time, alerts are only available through the Microsoft Graph API.
-
 For detailed information on each scenario, see the following articles:
 
-- [Sign-ins requiring a compliant device]()
-- [Sign-ins requiring a managed device]()
-- [Sign-ins requiring multifactor authentication (MFA)]()
+- [Sign-ins requiring a compliant device](scenario-health-sign-ins-compliant-device.md)
+- [Sign-ins requiring a managed device](scenario-health-sign-ins-managed-device.md)
+- [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
 
 ![Screenshot of the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
 

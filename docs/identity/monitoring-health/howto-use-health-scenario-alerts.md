@@ -1,0 +1,124 @@
+---
+title: How to use Microsoft Entra scenario health alerts
+description: Learn how to use the Microsoft Entra scenario health alerts to monitor and improve the health of your tenant.
+author: shlipsey3
+manager: amycolannino
+ms.service: entra-id
+ms.topic: how-to
+ms.subservice: monitoring-health
+ms.date: 09/09/2024
+ms.author: sarahlipsey
+ms.reviewer: sarbar
+
+# Customer intent: As an IT admin, I want to learn how to use Microsoft Entra scenario health to monitor and improve the health of my tenant.
+---
+
+# How to use Microsoft Entra scenario health alerts
+
+Microsoft Entra Health (preview) provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics that are fed into our anomaly detection service. Machine learning is used understand the patterns for your tenant so when the anomaly detection service identifies a significant change to that pattern it triggers an alert. You can now receive alerts when a potential issue or failure condition is detected within the health scenarios.
+
+## Prerequisites
+
+To enable and receive scenario health alerts, you need:
+
+- The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role needed to view tenant health monitoring.
+- The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is needed to view and modify Conditional Access policies.
+- A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
+- The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
+- The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
+
+## How it works
+
+1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Tenant health monitoring.
+    - This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device.
+    - All the data is provided at the tenant level.
+
+1. These signals are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant.
+
+1. When the anomaly detection service identifies a significant change to that pattern, such as a spike in sign-ins requiring a compliant device, it triggers an alert. Some examples include:
+    - Large rise in users being blocked
+    - Significant change in the pattern of sign-ins    
+
+1. An alert is sent by email to a pre-determined set of users when the anomaly detection service identifies a significant change to the pattern of sign-ins requiring a compliant device. 
+
+After receiving an alert, you need to research possible root causes, determine the next steps, and take action to mitigate the root cause.
+
+## Scenario monitoring
+
+Microsoft Entra health scenario monitoring provides a visualization of the related sign-in data. This data is aggregated every 15 minutes, for low latency insights into your tenant's health. 
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Monitoring & health** > **Health** **Scenario monitoring**.
+1. Select **View details** on the **Sign-ins requiring a managed device** tile to view the metrics and alerts for that scenario.
+    - You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true). 
+
+Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
+
+## Alerts and anomaly detection
+
+When the anomaly detection service identifies a significant change to the sign-ins requiring compliant device pattern it triggers an alert. At this time, alerts are only available through the Microsoft Graph API. With Microsoft Graph you can view the alerts, configure email notifications, and update the state of the alert. For more information, see the following articles:
+
+- [Microsoft Entra health monitoring Overview](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true)
+- [Update alertConfiguration](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true)
+    - We recommend sending alerts to users with these roles: [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator), [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator), and [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+
+## Gather data
+
+Microsoft Entra tenant health monitoring can be viewed and managed using Microsoft Graph on the `/beta` endpoint. For more information, see the [Microsoft Graph documentation for Microsoft Entra health monitoring](/graph/api/resources/healthmonitoring-overview).
+
+There are three main data sets to investigate. There are also scenario-specific data sets to also investigate, based on what you're investigating. You typically need to look at the:
+
+- Signal details from the API
+- Impact summary from the alerts API
+- Sign-in logs
+
+To get started:
+
+1. Sign in to [Graph Explorer](https://aka.ms/ge).
+1. Select **GET** as the HTTP method from the dropdown.
+1. Set the API version to **beta**.
+
+### View the signal and impact summary
+
+Add the following query to retrieve all alerts for your tenant, then select the **Run query** button.
+
+```http
+GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
+```
+
+To view the impact summary for a specific alert, you need to save the `id` of the alert you want to investigate. Add the following query, using `id` as the `alertId`, then select the **Run query** button.
+
+```http
+GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
+```
+
+- The portion of the response after `impacts` make up the impact summary for the alert.
+- The `supportingData` portion includes the full query used to generate the alert.
+- The results of the query include everything identified by the detection service, but there might be results that aren't directly related to the alert.
+- We recommend pulling the API daily for regular monitoring of the alerts.
+
+
+
+### View the sign-in logs
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+    - If you need to modify Conditional Access policies, you need the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
+1. Browse to **Monitoring & health** > **Sign-in logs**.
+    - Adjust the time range to match the alert time frame.
+    - Add a **filter** for Conditional Access.
+    - Select a log entry to view the sign-in logs details and select the Conditional Access tab to see the policies that were applied.
+
+## Analyze the possible root causes
+
+Now that you've gathered all the data related to the scenario, you need to consider possible root causes and research potential solutions. Think about the seriousness of the alert. Are only a handful of users affected, or is it a widespread issue? Did a recent policy change have unintended consequences?
+
+Each scenario has a set of root causes and solutions to consider. For details on each scenario, see the following articles:
+
+- [Sign-ins requiring a compliant device](scenario-health-sign-ins-compliant-device.md)
+- [Sign-ins requiring a managed device](scenario-health-sign-ins-managed-device.md)
+- [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
+
+## Next steps
+
+- [Troubleshoot sign-in problems with Conditional Access](../conditional-access/troubleshoot-conditional-access.md)
+- [Use audit logs to troubleshoot Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md)
