@@ -24,7 +24,7 @@ This how-to guide uses a sample Angular single-page application (SPA) to demonst
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
 - An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/readme/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ## Register the SPA in the Microsoft Entra admin center
