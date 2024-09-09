@@ -23,6 +23,7 @@ To enable and receive scenario health alerts, you need:
 
 - The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role needed to view tenant health monitoring.
 - The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is needed to view and modify Conditional Access policies.
+- The [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) role is required to configure Microsoft Graph alert notifications.
 - A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
 - The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
@@ -30,8 +31,6 @@ To enable and receive scenario health alerts, you need:
 ## How it works
 
 1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Tenant health monitoring.
-    - This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device.
-    - All the data is provided at the tenant level.
 
 1. These signals are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant.
 
@@ -49,22 +48,24 @@ Microsoft Entra health scenario monitoring provides a visualization of the relat
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Monitoring & health** > **Health** **Scenario monitoring**.
-1. Select **View details** on the **Sign-ins requiring a managed device** tile to view the metrics and alerts for that scenario.
+1. Select **View details** on a tile to view the metrics and alerts for that scenario.
     - You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true). 
 
 Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
 
 ## Alerts and anomaly detection
 
-When the anomaly detection service identifies a significant change to the sign-ins requiring compliant device pattern it triggers an alert. At this time, alerts are only available through the Microsoft Graph API. With Microsoft Graph you can view the alerts, configure email notifications, and update the state of the alert. For more information, see the following articles:
+With the [Microsoft Graph health monitoring API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true), you can view the alerts, configure email notifications, and update the state of the alert. 
 
-- [Microsoft Entra health monitoring Overview](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true)
-- [Update alertConfiguration](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true)
-    - We recommend sending alerts to users with these roles: [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator), [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator), and [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+When the anomaly detection service identifies a significant change to a pattern it triggers an alert. At this time, alerts are only available through the Microsoft Graph API. You can manually run the API calls daily or you can [configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true) using the API. To configure the alerts, you need to provide the `groupId` of the group you want to receive the alerts.
+
+We recommend sending alerts to users with these roles:
+
+- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)
+- [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator)
 
 ## Gather data
-
-Microsoft Entra tenant health monitoring can be viewed and managed using Microsoft Graph on the `/beta` endpoint. For more information, see the [Microsoft Graph documentation for Microsoft Entra health monitoring](/graph/api/resources/healthmonitoring-overview).
 
 There are three main data sets to investigate. There are also scenario-specific data sets to also investigate, based on what you're investigating. You typically need to look at the:
 
@@ -96,8 +97,6 @@ GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
 - The `supportingData` portion includes the full query used to generate the alert.
 - The results of the query include everything identified by the detection service, but there might be results that aren't directly related to the alert.
 - We recommend pulling the API daily for regular monitoring of the alerts.
-
-
 
 ### View the sign-in logs
 

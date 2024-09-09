@@ -13,9 +13,9 @@ ms.reviewer: sarbar
 # Customer intent: As an IT admin, I want to understand the health of my tenant through identity related signals and alerts so I can proactively address issues and maintain a healthy tenant.
 ---
 
-# Sign-ins requiring a managed device
+# How to investigate sign-ins requiring a managed device
 
-Microsoft Entra Health (preview) provides a set of health metrics you can monitor and receive alerts when a potential issue or failure condition is detected. Tenant health monitoring aggregates several health signals and alerts across different services and scenarios, such as sign-ins that require a managed device.
+Microsoft Entra Health (preview) provides a set of health metrics you can monitor and receive alerts when a potential issue or failure condition is detected. Tenant health monitoring aggregates several health signals and alerts across different services and scenarios. This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a managed device.
 
 To learn more about how Microsoft Entra Health works, see:
 
@@ -34,7 +34,7 @@ To view the Scenario monitoring dashboards, you need:
 - The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
 
-## Alert analysis and mitigation
+## Gather data
 
 Investigating an alert starts with gathering data.
 
@@ -45,7 +45,7 @@ Investigating an alert starts with gathering data.
 1. Review the sign-in logs for users being blocked from signing in and have a compliant device [Conditional Access policy]((../conditional-access/troubleshoot-conditional-access.md)) applied.
 1. Check the [audit logs for Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md).
 
-## How to mitigate common issues
+## Mitigate common issues
 
 The following scenarios are common issues that could cause a spike in sign-ins requiring a compliant device. This list is not exhaustive, but provides a starting point for your investigation.
 
@@ -56,44 +56,6 @@ If the increase in blocked sign-ins is coming from an unknown device, that spike
 - Review the sign-in logs for the user.
 - [Investigate risk with Microsoft Entra ID Protection](../../id-protection/howto-identity-protection-investigate-risk.md).
     - Requires a Microsoft Entra ID P2 license.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Research root causes in your tenant
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-    - If you need to modify Conditional Access policies, you need the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
-1. Analyze the sign-in logs.
-    - Adjust the time range to match the alert time frame.
-    - Add a **filter** for Conditional Access.
-    - View the sign-in logs details and select the Conditional Access tab to see the policies that were applied.
-1. Follow the guidance in the [Troubleshoot sign-in problems with Conditional Access]() article.
-    - This article illustrates how to identify sign-in events related to Conditional Access policies and how to recognize common sign-in error codes.
-1. Follow the guidance in the [Troubleshoot Conditional Access policy changes]() article.
-    - This article explains how to check audit logs for signs of policy changes and to ensure the policy is working as intended.
 
 ## Next steps
 
