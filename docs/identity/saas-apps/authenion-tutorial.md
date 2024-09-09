@@ -66,8 +66,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
-    1. In the **Redirect URIs** textbox, type a URL using the following pattern:
-    `https://<HOST_NAME>:<SSL_PORT>/oidcclient/redirect/<ClientID>`
+    1. In the **Redirect URIs** textbox, type a URL using the following pattern: 
+    `https://<HOST_NAME>/ssolibrary/oidc/callback`
 
         ![Screenshot of showing the redirect values.](common/redirect.png)
 
