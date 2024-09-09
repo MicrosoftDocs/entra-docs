@@ -15,7 +15,7 @@ ms.reviewer: Sunayana
 
 # Tenant inaccessible due to inactivity
 
-Configured tenants no longer in use may still generate costs for your organization. Making a tenant innacessible due to inactivity helps reduce unnecessary expenses. This article discusses how to handle an inaccessible tenant, reactivation, and guidance for both administrators and application developers. 
+Configured tenants no longer in use may still generate costs for your organization. Making a tenant inaccessible due to inactivity helps reduce unnecessary expenses. This article discusses how to handle an inaccessible tenant, reactivation, and guidance for both administrators and application developers. 
 
 When you try to access the tenant you receive a message similar to the example shown below. 
 
@@ -23,8 +23,9 @@ Error message ```Error message: AADSTS5000225: This tenant has been blocked due 
 
 :::image type="content" source="media/tenant-inaccessible/tenant-block.png" alt-text="Screenshot showing an error when tenant access blocked due to inactivity." lightbox="media/tenant-inaccessible/tenant-block.png":::
 
-Administrators may request the tenant to be reactivated within 20 days of the tenant entering an inactive state. Tenants that remain in this state for longer than 20 days will be deleted. 
-Depending on your plans for the tenant we suggest different steps.
+Administrators can request a tenant to be reactivated within 20 days of the tenant entering an inactive state. Tenants that remain in this state for longer than 20 days will be deleted.
+
+Take the appropriate steps depending on your goals for the tenant and your role in the environment.
 
 ## Administrators
 
@@ -41,7 +42,7 @@ If you don't plan to reactivate your tenant:
 ## Application owners/developers
 
 - Minimize the number of authentication requests sent to this deactivated tenant until the tenant is reactivated.
-- Refrain from submitting another assistance request while your existing case is in process and until you have heard back a decision on this case.
+- Refrain from submitting another assistance request. You will be contacted once that a decision is made.
 - Review Microsoft's [data protection policies](https://www.microsoft.com/trust-center/privacy/data-management#leave).  
 
 ## Related content
