@@ -30,8 +30,8 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- If you’re using macOS, follow the steps in [Sign in users in sample macOS (Swift) app by using native authentication](how-to-run-native-authentication-sample-macos-app.md).
 - If you’re using iOS, follow the steps in [Sign in users in a sample native iOS mobile application](how-to-run-native-authentication-sample-ios-app.md).
+- If you’re using macOS, follow the steps in [Sign in users in sample macOS (Swift) app by using native authentication](how-to-run-native-authentication-sample-macos-app.md).
 
 ## Browser required 
 
