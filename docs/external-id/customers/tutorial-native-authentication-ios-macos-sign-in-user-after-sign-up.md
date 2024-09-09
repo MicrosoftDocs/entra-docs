@@ -30,7 +30,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites 
 
--  If you’re on iOS, follow the steps in [Sign in users in sample iOS (Swift) mobile app by using native authentication](how-to-run-native-authentication-sample-ios-app.md). If you’re using macOS, follow the steps in [Sign in users in sample macOS (Swift) app by using native authentication](how-to-run-native-authentication-sample-macos-app.md).These articles show you how to run sample apps that you configure using your tenant settings.
+- If you’re using macOS, follow the steps in [Sign in users in sample macOS (Swift) app by using native authentication](how-to-run-native-authentication-sample-macos-app.md). If you’re on iOS, follow the steps in [Sign in users in sample iOS (Swift) mobile app by using native authentication](how-to-run-native-authentication-sample-ios-app.md). These articles show you how to run sample apps that you configure using your tenant settings.
 - [Tutorial: Add sign-up in an iOS/macOS app using native authentication](tutorial-native-authentication-ios-macos-sign-up.md). The steps in this tutorial should work whether you sign up with email and password or email one-time passcode.
 
 ## Sign in after sign-up 
