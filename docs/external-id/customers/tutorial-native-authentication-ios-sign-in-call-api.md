@@ -10,14 +10,14 @@ ms.subservice: customers
 ms.topic: tutorial
 ms.date: 08/12/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to acquire multiple access tokens so that I call a web API in an iOS/macOS mobile app by using native authentication
+#Customer intent: As a dev, devops, I want to acquire multiple access tokens so that I call a web API in an iOS/macOS app by using native authentication
 ---
 
 # Tutorial: Call multiple APIs in iOS/macOS app by using native authentication
 
 [!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
 
-In this tutorial, you learn how to acquire an access token and call an API in your iOS/macOS mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for iOS/macOS allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
+In this tutorial, you learn how to acquire an access token and call an API in your iOS/macOS app. Microsoft Authentication Library (MSAL) native authentication SDK for iOS/macOS allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
 
 In this tutorial, you learn how to: 
 

@@ -39,7 +39,7 @@ In this tutorial, you learn how to:
 
 To ensure stability of your application and avoid interruption of the authentication flow, it's highly recommended to use the SDK's `acquireToken()` method to continue the flow in the browser. 
 
-When we initialize the SDK, we need to specify which challenge types our mobile application can support. Here are the list of challenge types that the SDK accepts: 
+When we initialize the SDK, we need to specify which challenge types our application can support. Here are the list of challenge types that the SDK accepts: 
 
 - OOB (out of band): add this challenge type when your iOS/macOS application can handle a one-time-passcode, in this case an email code. 
 - Password: add this challenge type when your application is able to handle password based authentication. 
