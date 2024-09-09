@@ -7,7 +7,7 @@ manager: martinco
 ms.service: entra
 ms.topic: how-to
 ms.subservice: architecture
-ms.date: 07/27/2023
+ms.date: 08/25/2024
 ms.author: jricketts
 ms.custom: references_regions
 ---
@@ -48,7 +48,7 @@ Additional considerations include:
 
 To transform groups and distribution lists:
 
-* For security groups, use your existing business logic that assigns users to security groups. Migrate the logic and capability to Microsoft Entra ID and dynamic groups.
+* For security groups, use your existing business logic that assigns users to security groups. Migrate the logic and capability to Microsoft Entra ID and dynamic membership groups.
 
 * For self-managed group capabilities provided by Microsoft Identity Manager, replace the capability with self-service group management.
 
@@ -188,7 +188,7 @@ After you move SaaS applications that were federated to Microsoft Entra ID, ther
 
 * [Move application authentication to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md)
 
-* [Migrate from Azure Multi-Factor Authentication Server to Microsoft Entra multifactor authentication](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)
+* [Migrate from Azure Multifactor Authentication Server (MFA Server) to Microsoft Entra multifactor authentication](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)
 
 * [Migrate from federation to cloud authentication](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md)
 

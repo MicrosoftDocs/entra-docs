@@ -5,7 +5,7 @@ description: What are conditions in a Microsoft Entra Conditional Access policy?
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 06/20/2024
+ms.date: 08/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -230,7 +230,7 @@ By selecting **Other clients**, you can specify a condition that affects apps th
 
 ## Filter for devices
 
-When administrators configure filter for devices as a condition, they can choose to include or exclude devices based on a filter using a rule expression on device properties. The rule expression for filter for devices can be authored using rule builder or rule syntax. This experience is similar to the one used for dynamic membership rules for groups. For more information, see the article [Conditional Access: Filter for devices](concept-condition-filters-for-devices.md).
+When administrators configure filter for devices as a condition, they can choose to include or exclude devices based on a filter using a rule expression on device properties. The rule expression for filter for devices can be authored using rule builder or rule syntax. This experience is similar to the one used for rules for dynamic membership groups for groups. For more information, see the article [Conditional Access: Filter for devices](concept-condition-filters-for-devices.md).
 
 ## Authentication flows (preview)
 

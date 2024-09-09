@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 07/30/2024
+ms.date: 08/23/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -32,7 +32,7 @@ Before you update the license assignments, it's important to verify certain assu
 
 - If you manage groups on-premises and sync them into Microsoft Entra ID via Microsoft Entra Connect, then you add or remove users by using your on-premises system. It can take some time for the changes to sync with Microsoft Entra ID to be picked up by group licensing.
 
-- If you're using Microsoft Entra dynamic group memberships, you add or remove users by changing their attributes, but the update process for license assignments remains the same.
+- If you're using Microsoft Entra dynamic membership groups, you add or remove users by changing their attributes, but the update process for license assignments remains the same.
 
 ## Change user license assignments
 
