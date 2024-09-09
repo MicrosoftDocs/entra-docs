@@ -6,7 +6,7 @@ description: Microsoft Entra External ID allows you to collaborate with or publi
  
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 04/29/2024
+ms.date: 09/06/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
@@ -106,7 +106,7 @@ You use [cross-tenant access settings](cross-tenant-access-settings-b2b-collabor
 
 For details about the resources, files, and applications that are available to the B2B direct connect user via the Teams shared channel refer to [Chat, teams, channels, & apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
 
-Licensing and billing are based on monthly active users (MAU). Learn more about [External ID pricing](https://azure.microsoft.com/pricing/details/active-directory/external-identities/) and [billing setup for B2B](external-identities-pricing.md).  
+Licensing and billing are based on monthly active users (MAU). Learn more about the [billing model for Microsoft Entra External ID](external-identities-pricing.md).  
 
 ### Azure Active Directory B2C
 
@@ -126,13 +126,26 @@ As an inviting organization, you might not know ahead of time who the individual
 
 Microsoft Graph APIs are available for creating and managing External ID features.
 
-- **Cross-tenant access settings API**: The [Microsoft Graph cross-tenant access API](/graph/api/resources/crosstenantaccesspolicy-overview?view=graph-rest-beta&preserve-view=true) lets you programmatically create the same B2B collaboration and B2B direct connect policies that are configurable in the Azure portal. Using the API, you can set up policies for inbound and outbound collaboration. For example, you can allow or block features for everyone by default and limit access to specific organizations, groups, users, and applications. The API also allows you to accept MFA and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
+- **Cross-tenant access settings API**: The [Microsoft Graph cross-tenant access API](/graph/api/resources/crosstenantaccesspolicy-overview?view=graph-rest-beta&preserve-view=true) lets you programmatically create the same B2B collaboration and B2B direct connect policies that are configurable in the Azure portal. Using the API, you can set up policies for inbound and outbound collaboration. For example, you can allow or block features for everyone by default and limit access to specific organizations, groups, users, and applications. The API also allows you to accept multifactor authentication (MFA) and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
 
 - **B2B collaboration invitation manager**: The [Microsoft Graph invitation manager API](/graph/api/resources/invitation) is available for building your own onboarding experiences for business guests. You can use the [create invitation API](/graph/api/invitation-post?tabs=http) to automatically send a customized invitation email directly to the B2B user, for example. Or your app can use the inviteRedeemUrl returned in the creation response to craft your own invitation (through your communication mechanism of choice) to the invited user.
 
 ### Conditional Access
 
-Organizations can enforce Conditional Access policies for external B2B collaboration and B2B direct connect users in the same way that they're enabled for full-time employees and members of the organization. For Microsoft Entra cross-tenant scenarios, if your Conditional Access policies require MFA or device compliance, you can now trust MFA and device compliance claims from an external user's home organization. When trust settings are enabled, during authentication, Microsoft Entra ID checks a user's credentials for an MFA claim or a device ID to determine if the policies were already met. If so, the external user is granted seamless sign-on to your shared resource. Otherwise, an MFA or device challenge is initiated in the user's home tenant. Learn more about the [authentication flow and Conditional Access for external users](authentication-conditional-access.md).
+Organizations can use Conditional Access policies to enhance their security by applying the appropriate access controls, such as MFA, to external users.
+
+#### Conditional access and MFA in external tenants
+
+In external tenants, organizations can enforce MFA for customers by creating a Microsoft Entra Conditional Access policy and adding MFA to sign-up and sign-in user flows. External tenants support two methods for authentication as a second factor:
+
+- **Email one-time passcode**: After the user signs in with their email and password, they are prompted for a passcode that is sent to their email. 
+- **SMS-based authentication**: SMS is available as a second factor authentication method for MFA for users in external tenants. Users who sign in with email and password, email and one-time passcode, or social identities like Google or Facebook, are prompted for second verification using SMS.
+
+Learn more about [authentication methods in external tenants](customers/concept-multifactor-authentication-customers.md).
+
+#### Conditional Access for B2B collaboration and B2B direct connect
+
+In a workforce tenant, organizations can enforce Conditional Access policies for external B2B collaboration and B2B direct connect users in the same way that they're enabled for full-time employees and members of the organization. For Microsoft Entra cross-tenant scenarios, if your Conditional Access policies require MFA or device compliance, you can now trust MFA and device compliance claims from an external user's home organization. When trust settings are enabled, during authentication, Microsoft Entra ID checks a user's credentials for an MFA claim or a device ID to determine if the policies were already met. If so, the external user is granted seamless sign-on to your shared resource. Otherwise, an MFA or device challenge is initiated in the user's home tenant. Learn more about the [authentication flow and Conditional Access for external users in workforce tenants](authentication-conditional-access.md).
 
 ### Multitenant applications
 

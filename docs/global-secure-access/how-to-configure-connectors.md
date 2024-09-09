@@ -127,7 +127,12 @@ To use Private Access, install a connector on each Windows server you're using f
 >The minimum version of connector required for Private Access is **1.5.3417.0**.
 >Starting from the version 1.5.3437.0, having the .NET version 4.7.1 or greater is required for successful installation (upgrade).
 
-**To install the connector**:
+> [!Note]
+>**Deploy Private Network Connector for Your Azure and AWS Workloads from Marketplace (Preview)**
+> 
+> The Private Network Connector is now available on [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftcorporation1687208452115.entraprivatenetworkconnector?tab=overview) and [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cgpbjiaphamuc) (in preview), in addition to the [Microsoft Entra admin center](https://entra.microsoft.com). Marketplace offerings allow users to deploy a windows virtual machine with a pre-installed Private Network Connector through a simplified model. The process automates installation and registration, thus improving ease and efficiency.
+
+**To install the connector from Microsoft Entra admin center**:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Application Administrator of the directory that uses Application Proxy.
 

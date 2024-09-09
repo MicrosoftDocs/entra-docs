@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 07/15/2024
+ms.date: 08/25/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.
@@ -110,7 +110,7 @@ An *access package* is a bundle of resources that a team or project needs and is
     >The [role-assignable groups](../identity/role-based-access-control/groups-concept.md) added to an access package will be indicated using the Sub Type **Assignable to roles**. For more information, check out the [Create a role-assignable group](../identity/role-based-access-control/groups-create-eligible.md) article. Keep in mind that once a role-assignable group is present in an access package catalog, administrative users who are able to manage in entitlement management, including users in the Global Administrator role, users in the Identity Governance Administrator role, and catalog owners of the catalog, will be able to control the access packages in the catalog, allowing them to choose who can be added to those groups. If you don't see a role-assignable group that you want to add or you are unable to add it, make sure you have the required Microsoft Entra role and entitlement management role to perform this operation. You might need to ask someone with the required roles add the resource to your catalog. For more information, see [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
     >[!NOTE]
-    > When using [dynamic groups](../identity/users/groups-create-rule.md) you will not see any other roles available besides owner. This is by design.
+    > When using [dynamic membership groups](../identity/users/groups-create-rule.md) you will not see any other roles available besides owner. This is by design.
     > ![Screenshots that shows a dynamic group available roles.](./media/entitlement-management-access-package-first/dynamic-group-warning.png)
     
 

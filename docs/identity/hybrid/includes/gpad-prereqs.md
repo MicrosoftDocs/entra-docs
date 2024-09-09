@@ -4,7 +4,7 @@ description: Include file
 author: billmath
 ms.service: entra-id
 ms.topic: Include
-ms.date: 01/23/2022
+ms.date: 08/25/2024
 ms.author: billmath
 ms.custom: Include file
 ---
@@ -45,7 +45,7 @@ The following prerequisites are required to implement provisioning groups to Act
 ### Supported groups
 Only the following is supported:
   - Only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
-  - These groups can have assigned or dynamic membership.
+  - These groups can have assigned or dynamic membership groups.
   - These groups can only contain on-premises synchronized users and / or additional cloud created security groups.
   - The on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
   - These groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope). Your on-premises environment must support the universal group scope.

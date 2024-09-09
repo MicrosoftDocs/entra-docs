@@ -5,7 +5,7 @@ description: Assign, update, list, or remove custom security attributes for a us
 author: rolyon
 manager: amycolannino
 ms.author: rolyon
-ms.date: 11/15/2023
+ms.date: 08/25/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -1073,9 +1073,9 @@ Yes, custom security attributes can be assigned to members or guests in your ten
 
 Yes, directory synced users from an on-premises Active Directory can be assigned custom security attributes.
 
-**Are custom security attribute assignments available for dynamic membership rules?**
+**Are custom security attribute assignments available for rules for dynamic membership groups?**
 
-No, custom security attributes assigned to users are not supported for configuring dynamic membership rules.
+No, custom security attributes assigned to users are not supported for configuring rules for dynamic membership groups.
 
 **Are custom security attributes the same as the custom attributes in B2C tenants?**
 

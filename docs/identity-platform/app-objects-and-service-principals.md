@@ -41,6 +41,8 @@ You can use the **App registrations** page in the [Microsoft Entra admin center]
 
 The Microsoft Graph [Application entity][ms-graph-app-entity] defines the schema for an application object's properties.
 
+> [!VIDEO af3ad1eb-63b4-4ab7-b976-16946fbbb099]
+
 ## Service principal object
 
 To access resources that are secured by a Microsoft Entra tenant, the entity that requires access must be represented by a security principal. This requirement is true for both users (user principal) and applications (service principal). The security principal defines the access policy and permissions for the user/application in the Microsoft Entra tenant. This enables core features such as authentication of the user/application during sign-in, and authorization during resource access.
