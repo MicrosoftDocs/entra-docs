@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Authenion
+title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Authenion'
 description: Learn how to configure single sign-on between Microsoft Entra and Authenion.
 services: active-directory
 author: jeevansd
