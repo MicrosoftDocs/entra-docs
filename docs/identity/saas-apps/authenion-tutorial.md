@@ -19,7 +19,7 @@ ms.author: jeedes
 
 In this tutorial, you learn how to integrate Authenion with Microsoft Entra ID. When you integrate Authenion  with Microsoft Entra ID, you can:
 
-- Use Microsoft Entra ID to control who can access Authenion .
+- Use Microsoft Entra ID to control who can access Authenion.
 - Enable your users to be automatically signed in to Authenion  with their Microsoft Entra accounts.
 - Manage your accounts in one central location: the Azure portal.
 
@@ -112,4 +112,4 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 ## Configure Authenion SSO
 
-To complete the OAuth/OIDC federation setup on **Authenion** side, you need to send the copied values like  Tenant ID, Application ID, and Client Secret from Microsoft Entra to [Authenion  support team](eiksupport@likemindsconsulting.com). They set this setting to have the OIDC connection set properly on both sides.
+To complete the OAuth/OIDC federation setup on **Authenion** side, you need to send the copied values like  Tenant ID, Application ID, and Client Secret from Microsoft Entra to [Authenion  support team](mailto:eiksupport@likemindsconsulting.com). They set this setting to have the OIDC connection set properly on both sides.
