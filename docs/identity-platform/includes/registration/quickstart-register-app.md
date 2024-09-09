@@ -13,8 +13,8 @@ ms.service: identity-platform
 
 # This include file is currently referenced in the following documentation:
 
-# https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
-# https://learn.microsoft.com/en-us/graph/auth-register-app-v2
+# https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
+# https://learn.microsoft.com/graph/auth-register-app-v2
 ---
 
 Get started with the Microsoft identity platform by registering an application in the Microsoft Entra admin center.

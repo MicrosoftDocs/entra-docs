@@ -7,7 +7,7 @@ manager: martinco
 ms.service: entra
 ms.topic: how-to
 ms.subservice: architecture
-ms.date: 07/27/2023
+ms.date: 08/25/2024
 ms.author: jricketts
 ms.custom: references_regions
 ---
@@ -28,7 +28,7 @@ You can enrich user attributes in Microsoft Entra ID to make more user attribute
 
 * Application authorization: A token that Microsoft Entra ID issues can include claims generated from user attributes so that applications can make authorization decisions based on the claims in the token. It can also contain attributes coming from external data sources through a [custom claims provider](~/identity-platform/custom-claims-provider-overview.md).
 
-* Group membership population and maintenance: Dynamic groups enable dynamic population of group membership based on user attributes, such as department information.
+* Group membership population and maintenance: Dynamic membership groups enable dynamic population of groups based on user attributes, such as department information.
 
 These two links provide guidance on making schema changes:
 

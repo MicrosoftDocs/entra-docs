@@ -20,26 +20,13 @@ The goal of Microsoft Entra registered - also known as Workplace joined - device
 | Microsoft Entra registered | Description |
 | --- | --- |
 | **Definition** | Registered to Microsoft Entra ID without requiring organizational account to sign in to the device |
-| **Primary audience** | Applicable to all users with the following criteria: |
-|   | Bring your own device |
-|   | Mobile devices |
+| **Primary audience** | Applicable to all users with the following criteria: <ul><li>Bring your own device</li><li>Mobile devices</li></ul>
 | **Device ownership** | User or Organization |
-| **Operating Systems** | Windows 10 or newer, iOS, Android, macOS, Ubuntu 20.04/22.04 LTS|
-| **Provisioning** | Windows 10 or newer – Settings |
-|   | iOS/Android – Company Portal or Microsoft Authenticator app |
-|   | macOS – Company Portal |
-|   | Linux - Intune Agent |
-| **Device sign in options** | End-user local credentials |
-|   | Password |
-|   | Windows Hello |
-|   | PIN |
-|   | Biometrics or pattern for other devices |
-| **Device management** | Mobile Device Management (example: Microsoft Intune) |
-|   | Mobile Application Management |
-| **Key capabilities** | single sign-on (SSO) to cloud resources |
-|   | Conditional Access when enrolled into Intune |
-|   | Conditional Access via App protection policy |
-|   | Enables Phone sign in with Microsoft Authenticator app |
+| **Operating Systems** | <li>Windows 10 or newer</li><li>macOS 10.15</li><li>iOS 15<li>Android</li><li>Linux: <ul><li>Ubuntu 20.04/22.04 LTS</li><li>Red Hat Enterprise Linux 8/9 LTS</li></ul></li> |
+| **Provisioning** | <li>Windows 10 or newer – Settings</li><li>iOS/Android – Company Portal or Microsoft Authenticator app</li><li>macOS – Company Portal</li><li>Linux - Intune Agent</li> |
+| **Device sign in options** | <li>End-user local credentials</li><li>Password</li><li>Windows Hello</li><li>PIN</li><li>Biometrics or pattern for other devices</li> |
+| **Device management** | <li>Mobile Device Management (example: Microsoft Intune)</li><li>Mobile Application Management</li> |
+| **Key capabilities** | <li>Single sign-on (SSO) to cloud resources</li><li>Conditional Access when enrolled into Intune</li><li>Conditional Access via App protection policy</li><li>Enables Phone sign in with Microsoft Authenticator app</li> |
 
 ![Microsoft Entra registered devices](./media/concept-device-registration/azure-ad-registered-device.png)
 

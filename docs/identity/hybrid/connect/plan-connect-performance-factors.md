@@ -8,7 +8,7 @@ tags: azuread
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 08/25/2024
 ms.reviewer: martincoetzer
 ms.author: billmath
 
@@ -158,11 +158,11 @@ Microsoft Entra ID uses throttling to protect the cloud service from denial-of-s
 
 
 - Microsoft Entra Connect export to Microsoft Entra ID.
-- PowerShell scripts or applications updating the Microsoft Entra ID directly even in the background, such as Dynamic group memberships.
+- PowerShell scripts or applications updating the Microsoft Entra ID directly even in the background, such as dynamic membership groups.
 - Users updating their own identity records such as registering for MFA or SSPR (self-service password reset).
 - Operations within the graphical user interface.
 
-Plan for deployment and maintenance tasks, to make sure your Microsoft Entra Connect Sync cycle is not impacted by throttling limits. For example, if you have a large hiring wave where you create thousands of user identities, it can cause updates to dynamic group memberships, licensing assignments, and self-service password reset registrations. It's better to spread these writes over several hours or a few days.
+Plan for deployment and maintenance tasks, to make sure your Microsoft Entra Connect Sync cycle is not impacted by throttling limits. For example, if you have a large hiring wave where you create thousands of user identities, it can cause updates to dynamic membership groups, licensing assignments, and self-service password reset registrations. It's better to spread these writes over several hours or a few days.
 
 ### SQL database factors
 

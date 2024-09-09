@@ -8,6 +8,8 @@ items:
     href: what-is-entra.md
   - name: What is Microsoft Entra ID?
     href: whatis.md
+  - name: Trial user guide for Microsoft Entra Suite
+    href: try-microsoft-entra-suite.md
   - name: New name for Azure AD
     href: new-name.md
   - name: Identity fundamentals
@@ -105,6 +107,8 @@ items:
     href: how-to-find-tenant.yml
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
+  - name: Inaccessible tenant due to inactivity
+    href: inaccessible-tenant.md
   - name: Support access requests
     expanded: false
     items:
@@ -120,6 +124,7 @@ items:
   - name: What's new?
     expanded: false
     items:
+    
     - name: What's new in Microsoft Entra ID
       href: whats-new.md
     - name: Archive for What's new? in Microsoft Entra ID

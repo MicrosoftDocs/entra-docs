@@ -130,12 +130,10 @@ Configure the BIG-IP registration to fulfill SAML tokens that BIG-IP APM request
 16. On the **SAML Signing Certificate** pane, select **Download**.
 17. The **Federation Metadata XML** file is saved to your computer.
 
-   ![Screenshot of URLs in the SAML configuration.](./media/f5-big-ip-forms-advanced/basic-saml-configuration.png)
-
    > [!NOTE]
    > From Traffic Management Operating System (TMOS) v16 onward, the SAML SLO endpoint is `/saml/sp/profile/redirect/slo`.
 
-   ![Screenshot a Download option under SAML Signing Certificate.](./media/f5-big-ip-forms-advanced/saml-certificate.png)
+   ![Screenshot of URLs in the SAML configuration.](./media/f5-big-ip-forms-advanced/basic-saml-configuration.png)
 
    > [!NOTE]
    > Microsoft Entra SAML signing certificates have a lifespan of three years. 

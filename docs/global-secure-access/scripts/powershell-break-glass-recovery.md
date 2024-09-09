@@ -36,7 +36,7 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 # Before you begin:
 #    
 # - Make sure you are running PowerShell as an Administrator
-# - Make sure your Administrator persona is an leveraging an Entra ID emergency access admin account, not subject to Microsoft Entra Internet Access Compliant Network policy, as described in https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access.
+# - Make sure your Administrator persona is an leveraging an Entra ID emergency access admin account, not subject to Microsoft Entra Internet Access Compliant Network policy, as described in https://learn.microsoft.com/entra/identity/role-based-access-control/security-emergency-access.
 # - Make sure you run: Install-Module Microsoft.Graph.Beta -AllowClobber -Force
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 Connect-MgGraph -Scopes "Policy.Read.All,Policy.ReadWrite.ConditionalAccess"
