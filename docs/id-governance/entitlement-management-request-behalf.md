@@ -31,8 +31,6 @@ Instead of conducting numerous ad-hoc training sessions to ensure new hires know
 
 Now, managers are empowered to request access on behalf of new hires who haven't gone through the IT training. This ensures that employees have the tools and resources necessary to start on day one, and increases new hire satisfaction as they don’t need to wait for access or navigate the request process on their own.
 
-:::image type="content" source="media/entitlement-management-request-behalf/myaccess-approval-request.png" alt-text="Screenshot of the approval page for a requested access package in my access.":::
-
 ## Prerequisites
 
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
