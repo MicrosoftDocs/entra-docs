@@ -75,7 +75,7 @@ In the current preview state, the following limitations apply to email as an alt
     * The feature does not work as expected for users that are included in other staged rollout policies.
     * Staged rollout policy supports a maximum of 10 groups per feature.
     * Staged rollout policy does not support nested groups.
-    * Staged rollout policy does not support dynamic groups.
+    * Staged rollout policy does not support dynamic membership groups.
     * Contact objects inside the group will block the group from being added to a staged rollout policy.
 
 * **Duplicate values** - Within a tenant, a cloud-only user's UPN can be the same value as another user's proxy address synced from the on-premises directory. In this scenario, with the feature enabled, the cloud-only user will not be able to sign in with their UPN. More on this issue in the [Troubleshoot](#troubleshoot) section.
