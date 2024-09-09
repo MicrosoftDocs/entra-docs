@@ -107,7 +107,7 @@ items:
     href: how-to-find-tenant.yml
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
-  - name: Unblock an inaccessible tenant
+  - name: Inaccessible tenant due to inactivity
     href: inaccessible-tenant.md
   - name: Support access requests
     expanded: false
