@@ -49,7 +49,7 @@ If you don't have the email, you can find the access requests pending your appro
 
     ![My Access portal - Access request- Click request details](./media/entitlement-management-request-approve/requestor-information-request-details.png)
 
-1. On the **Request details** page, you're able to see basic information about the request such as who requested it, and for who it was requested.
+1. On the **Request details** page, basic information about the request are present such as who made the request, and whether it was for themselves or for someone else. See [Request access package on-behalf-of other users(Preview)](entitlement-management-request-behalf.md) for more details on requesting access for other users.
 
 1. The information provided by the requestor is at the bottom of the panel.
 
