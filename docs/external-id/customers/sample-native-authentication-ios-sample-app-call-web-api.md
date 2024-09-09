@@ -1,5 +1,5 @@
 ---
-title: Sign in users and call an API in sample iOS/macOS mobile app by using native authentication
+title: Sign in users and call an API in sample iOS mobile app by using native authentication
 description: Learn how sign in users and call an API in sample iOS mobile app by using native authentication
 
 author: henrymbuguakiarie
@@ -10,16 +10,14 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: sample
-ms.date: 03/06/2024
+ms.date: 09/09/2024
 ms.custom: developer
-#Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an iOS/macOS sample app.
+#Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an iOS sample app.
 ---
 
-# Sign in users and call an API in sample iOS/macOS mobile app by using native authentication
+# Sign in users and call an API in sample iOS mobile app by using native authentication
 
-[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
-
-This sample demonstrates how to configure iOS/macOS sample application to call an ASP.NET Core web API.
+This sample demonstrates how to configure iOS sample application to call an ASP.NET Core web API.
 
 ## Prerequisites
 
@@ -68,24 +66,26 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     - `Enter_the_Tenant_Id_Here` and replace it with the **Directory (tenant) ID** you copied earlier.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
-You need to host your web API for the iOS/macOS sample app to call it. Follow [Quickstart: Deploy an ASP.NET web app](/azure/app-service/quickstart-dotnetcore) to deploy your web API.
+You need to host your web API for the iOS sample app to call it. Follow [Quickstart: Deploy an ASP.NET web app](/azure/app-service/quickstart-dotnetcore) to deploy your web API.
 
-## Configure sample iOS/macOS mobile app to call web API
+## Configure sample iOS mobile app to call web API
+
+The sample allows you to configure multiple Web API URL endpoints and sets of scopes. In this case, you configure only one Web API URL endpoint and its associated scopes.
 
 1. In your Xcode, open `/NativeAuthSampleApp/ProtectedAPIViewController.swift` file.
-1. Find `Enter_the_Protected_API_Full_URL_Here` and replace this value with your web API URL.
+1. Find `protectedAPIUrl1` and enter your web API URL as its value.
 
     ```swift
-    let protectedAPIUrl = "Enter_the_Protected_API_Full_URL_Here" // Developers should set the respective URL of their web API here
+    let protectedAPIUrl1: String? = nil // Developers should set the respective URL of their web API here. For example let protectedAPIUrl1: String? = "https://api.example.com/v1/resource"
     ```
     
-1. Find `Enter_the_Protected_API_Scopes_Here` and set the scopes recorded in [Grant API permissions to the iOS sample app](#grant-api-permissions-to-the-ios-sample-app).
+1. Find `protectedAPIScopes1` and set the scopes recorded in [Grant API permissions to the iOS sample app](#grant-api-permissions-to-the-ios-sample-app).
 
     ```swift
-    let protectedAPIScopes = ["Enter_the_Protected_API_Scopes_Here"] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["api://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
+    let protectedAPIScopes1: [String] = [] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["api://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
     ```
     
-## Run iOS/macOS sample app and call web API 
+## Run iOS sample app and call web API 
  
 To build and run your app, follow these steps:
  
@@ -94,4 +94,4 @@ To build and run your app, follow these steps:
 
 ## Next steps
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
+- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
