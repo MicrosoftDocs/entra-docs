@@ -17,7 +17,7 @@ ms.author: jeedes
 
 # Tutorial: Microsoft Entra single sign-on (SSO) integration with Authenion (OIDC)
 
-In this tutorial, you'll learn how to integrate Authenion (OIDC) with Microsoft Entra ID. When you integrate Authenion (OIDC) with Microsoft Entra ID, you can:
+In this tutorial, you learn how to integrate Authenion (OIDC) with Microsoft Entra ID. When you integrate Authenion (OIDC) with Microsoft Entra ID, you can:
 
 - Use Microsoft Entra ID to control who can access Authenion (OIDC).
 - Enable your users to be automatically signed in to Authenion (OIDC) with their Microsoft Entra accounts.
@@ -52,7 +52,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Perform the following steps in the below section:
 
-    1. Click **Go to application**.
+    1. Select **Go to application**.
 
         ![Screenshot of showing the identity configuration.](common/go-to-application.png)
 
@@ -71,22 +71,22 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         ![Screenshot of showing the redirect values.](common/redirect.png)
 
-    1. Click **Configure** button.
+    1. Select **Configure** button.
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
-    1. Go to **Client secrets** tab and click **+New client secret**.
-    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
+    1. Go to **Client secrets** tab and select **+New client secret**.
+    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and select **Add**.
 
         ![Screenshot of showing the client secrets value.](common/client-secret.png)
 
-    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the Authenion (OIDC) side configuration.
+    1. Once you add a client secret, **Value** is generated. Copy the value and use it later in the Authenion (OIDC) side configuration.
 
         ![Screenshot of showing how to add a client secret.](common/client.png)
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -100,16 +100,16 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Authenion (OIDC).
+In this section, you enable B.Simon to use single sign-on by granting access to Authenion (OIDC).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Authenion (OIDC)**.
 1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Added Assignment** dialog, select the **Assign** button.
 
 ## Configure Authenion (OIDC) SSO
 
-To complete the OAuth/OIDC federation setup on **Authenion (OIDC)** side, you need to send the copied values like  Tenant ID, Application ID, and Client Secret from Entra to [Authenion (OIDC) support team](eiksupport@likemindsconsulting.com). They set this setting to have the OIDC connection set properly on both sides.
+To complete the OAuth/OIDC federation setup on **Authenion (OIDC)** side, you need to send the copied values like  Tenant ID, Application ID, and Client Secret from Microsoft Entra to [Authenion (OIDC) support team](eiksupport@likemindsconsulting.com). They set this setting to have the OIDC connection set properly on both sides.
