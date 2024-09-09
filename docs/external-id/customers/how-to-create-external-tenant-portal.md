@@ -74,6 +74,9 @@ In this article, you learn how to:
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/tenant-successfully-created.png" alt-text="Screenshot that shows the link to the new external tenant.":::
 
+> [!NOTE]
+> You can also use the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciamvscode/quickstarts/marketplace) to set up a trial or paid external tenant directly within Visual Studio Code ([learn more](https://aka.ms/ciamvscode/quickstartguide)).
+
 ## Get the external tenant details
 
 If you're not sure which directory contains your external tenant, you can find the tenant name and ID both in the Microsoft Entra admin center and in the Azure portal.
