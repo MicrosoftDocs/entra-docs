@@ -63,7 +63,7 @@ After the B2B collaboration user accepts the invitation, the **Identities** prop
 
 ### User Principal Name
 
-The user principal name (UPN) for a B2B collaboration user object contains an #EXT# identifier.
+The UPN for a B2B collaboration user object (i.e. the guest users) contains the email of the guest user, followed by #EXT#, followed by the tenantname.onmicrosoft.com. For example, if the user john@contoso.com is added as an external user in the directory fabrikam, then its UPN will be john_contoso.com#EXT#@fabrikam.onmicrosoft.com.
 
 ### User type
 
