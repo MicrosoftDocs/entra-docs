@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/01/2024
+ms.date: 09/09/2024
 
 ms.author: justinha
 author: justinha
@@ -248,7 +248,7 @@ The following table lists more numbers for different countries.
 | Spain                | +34 913305144   |
 | Sri Lanka            | +94 117750440   |
 | Sweden               | +46 701924176   |
-| Taiwan               | +886 277515260  |
+| Taiwan               | +886 277515260, +886 255686508  |
 | Türkiye              | +90 8505404893  |
 | Ukraine              | +380 443332393  |
 | United Arab Emirates | +971 44015046   |
