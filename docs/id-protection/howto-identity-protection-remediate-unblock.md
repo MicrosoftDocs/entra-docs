@@ -169,9 +169,10 @@ With a recent update to our detection architecture, we no longer autoremediate s
 The following ID Protection detections that identify suspicious token activity or the MSTIC Nation State IP detection are no longer autoremediated: 
 
 - Microsoft Entra threat intelligence  
-- Anomalous token  
-- Token issuer anomaly  
+- Anomalous token
+- Attacker in the Middle
 - MSTIC Nation State IP
+- Token issuer anomaly  
 
 ID Protection now surfaces session details in the Risk Detection Details pane for detections that emit sign-in data. This change ensures we don't close sessions containing detections where there's MFA-related risk. Providing session details with user level risk details provides valuable information to assist with investigation. This information includes:
 

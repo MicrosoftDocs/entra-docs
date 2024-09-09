@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 08/02/2024
+ms.date: 09/03/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -73,20 +73,16 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier (Entity ID)** text box, type one of the following values:
+    a. For the **Identifier (Entity ID)** value, configure as follows:
+    
+    i. In the **Identifier (Entity ID)** select `trtasso.thomson.com`. And if that Identifier (Entity ID) does not exist, add that and proceed to step 5.b.
 
-    |  Identifier |
-    |----------|
-    | `trtasso.thomson.com` | 
-    | `trtasso.thomson.com_CIAM` |
+    ii. If the **Identifier (Entity ID)** `trtasso.thomson.com` already exists, select `trtasso.thomson.com_CIAM`. Now edit **Attribute and Claims**, click on **Advanced settings** and click edit near **Advanced SAML claims options**. To the pane that appears from the right, enable **Append application ID to issuer**. Now proceed to step 5.b.
 
     b. In the **Reply URL** text box, type the URL:
     `https://trtasso.thomson.com/sp/ACS.saml2`
 
-    c. In the **Sign on URL** text box, type the URL:
-    `https://trtasso.thomson.com`
-
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the SAML Signing Certificate section, click copy button to copy **App Federation Metadata Url** and while reaching out to the Thomson Reuters Team, share this along with the **Identifier (Entity ID)** that was configured (`trtasso.thomson.com` or `trtasso.thomson.com_CIAM`).
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -129,8 +125,6 @@ In this section, you create a user called B.Simon in Thomson Reuters Account. Wo
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
 * Click on **Test this application** in Microsoft Entra admin center. This will redirect to Thomson Reuters Account Sign-on URL where you can initiate the login flow.
- 
-* Go to Thomson Reuters Account Sign-on URL directly and initiate the login flow from there.
  
 * You can use Microsoft My Apps. When you click the Thomson Reuters Account tile in the My Apps, this will redirect to Thomson Reuters Account Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
