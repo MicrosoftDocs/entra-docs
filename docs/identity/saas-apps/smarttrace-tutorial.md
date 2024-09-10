@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/09/2024
+ms.date: 09/10/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SmartTrace so that I can control who has access to SmartTrace, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -54,11 +54,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Click **Go to application**.
 
-        ![Screenshot of showing the identity configuration.](common/go-to-application.png)
+        ![Screenshot of showing the identity configuration.](common/go-to-application.png "Identity")
 
-    1. Copy **Application (client) ID** and use it later in the SmartTrace side configuration.
+    1. Copy **Application (client) ID** and **Directory (tenant) ID**, use it later in the SmartTrace side configuration.
 
-        ![Screenshot of application client values.](common/application-id.png)
+        ![Screenshot of application client values.](./media/smarttrace-tutorial/app.png "Tenant")
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
@@ -67,7 +67,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. In the **Front-channel logout URL** textbox, type a URL using the following pattern:
     `https://api.smarttrace.ai/v1/auth/callback/azure-logout/<InstanceName>`
-    ![Screenshot of showing the redirect values.](common/log.png)
+    ![Screenshot of showing the redirect values.](common/log.png "Redirecton")
 
     1. Click **Configure** button.
 
@@ -76,11 +76,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     1. Go to **Client secrets** tab and click **+New client secret**.
     1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
 
-        ![Screenshot of showing the client secrets value.](common/client-secret.png)
+        ![Screenshot of showing the client secrets value.](common/client-secret.png "Description")
 
     1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the SmartTrace side configuration.
 
-        ![Screenshot of showing how to add a client secret.](common/client.png)
+        ![Screenshot of showing how to add a client secret.](common/client.png "Add")
 
 ### Create a Microsoft Entra test user
 
@@ -110,4 +110,22 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure SmartTrace SSO
 
-To complete the OAuth/OIDC federation setup on **SmartTrace** side, you need to send the copied values like Tenant ID, Application ID, and Client Secret from Entra to [SmartTrace support team](mailto:support@ehtgroup.com). They set this setting to have the OIDC connection set properly on both sides.
+Below are the configuration steps to complete the OIDC federation setup:
+
+1. Sign into the SmartTrace site as an administrator.
+
+1. Go to **SmartTrace** header > select **Integrations** and click pencil icon on the **Azure Active Directory** tile.
+
+    ![Screenshot of the smarttracer header integrations.](./media/smarttrace-tutorial/tile.png "Site")
+
+1. Perform the following steps in the **Azure Active Directory** page:
+
+    ![Screenshot of the configuration page in smarttrace.](./media/smarttrace-tutorial/header.png "Page")
+
+    1. In the **APPLICATION ID** textbox, paste the **Application (client) ID**, which you have copied from the Entra page.
+
+    1. In the **TENANT ID** textbox, paste the **Directory (tenant) ID**, which you have copied from the Entra page.
+
+    1. In the **APPLICATION (CLIENT) SECRET** textbox, paste the value, which you have copied from **Certificates & secrets** section at Entra side.
+
+    1. Click **Save**.
