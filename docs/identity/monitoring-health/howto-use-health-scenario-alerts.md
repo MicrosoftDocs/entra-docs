@@ -42,12 +42,18 @@ After receiving an alert, you need to research possible root causes, determine t
 
 ## Alerts and anomaly detection
 
-With the [Microsoft Graph health monitoring API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true), you can view the alerts, configure email notifications, and update the state of the alert. You can manually run the API calls daily or you can configure email notifications so that a predetermined set of users receives the alert.
+With the [Microsoft Graph health monitoring API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true), you can view the alerts, configure email notifications, and update the state of the alert. You can manually run the API calls daily or you can configure email notifications.
 
 > [!NOTE]
 > At this time, alerts are only available through the Microsoft Graph API.
 
-To configure email notifications, you need the ID of the group you want to receive the alerts AND the specific alert ID.
+We recommend sending alerts users with these roles:
+
+- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)
+- [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator)
+
+To configure alert notifications, you need the ID of the group you want to receive the alerts AND the scenario alert ID.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator).
 1. Browse to **Groups** > **All groups** > and select the group you want to receive the alerts.
@@ -57,15 +63,9 @@ To configure email notifications, you need the ID of the group you want to recei
 1. Use the following guidance to [configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true) using the API.
     - Enter the `Object ID` as the `groupId`.
 
-We recommend sending alerts to users with these roles:
-
-- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
-- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)
-- [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator)
-
 ## Gather data
 
-There are three main data sets to investigate. There are also scenario-specific data sets to investigate. You typically need to look at:
+You typically need to investigate the following data sets:
 
 - Signal details from the API
 - Impact summary from the alerts API

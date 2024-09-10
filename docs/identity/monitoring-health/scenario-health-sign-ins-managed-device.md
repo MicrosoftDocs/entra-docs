@@ -28,9 +28,9 @@ This article describes these health metrics and how to troubleshoot the issue wh
 
 To view the Scenario monitoring dashboards, you need:
 
+- A tenant with a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md)
 - The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role needed to view tenant health monitoring.
 - The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is needed to view and modify Conditional Access policies.
-- A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
 - The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
 
@@ -42,7 +42,7 @@ Investigating an alert starts with gathering data.
 1. Review your [Intune device compliance policies](/mem/intune/protect/compliance-policy-monitor).
     - If you're not using Intune, review your device management solution's compliance policies.
 1. Investigate common issues with [Conditional Access device compliance](/troubleshoot/mem/intune/device-protection/troubleshoot-conditional-access#devices-appear-compliant-but-users-are-still-blocked).
-1. Review the sign-in logs for users being blocked from signing in and have a compliant device [Conditional Access policy]((../conditional-access/troubleshoot-conditional-access.md)) applied.
+1. Review the sign-in logs for users being blocked from signing in and have a compliant device [Conditional Access policy](../conditional-access/troubleshoot-conditional-access.md) applied.
 1. Check the [audit logs for Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md).
 
 ## Mitigate common issues
@@ -53,7 +53,7 @@ The following scenarios are common issues that could cause a spike in sign-ins r
 
 If the increase in blocked sign-ins is coming from an unknown device, that spike could indicate that an attacker has acquired a user's credentials and is attempting to sign in from a device used for such attacks.
 
-- Review the sign-in logs for the user.
+- Review the sign-in logs.
 - [Investigate risk with Microsoft Entra ID Protection](../../id-protection/howto-identity-protection-investigate-risk.md).
     - Requires a Microsoft Entra ID P2 license.
 

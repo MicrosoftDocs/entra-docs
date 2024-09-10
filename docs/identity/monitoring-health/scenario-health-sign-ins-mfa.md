@@ -29,9 +29,9 @@ This article describes these health metrics and how to troubleshoot the issue wh
 
 To view the Scenario monitoring dashboards, you need:
 
+- A tenant with a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md)
 - The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role needed to view tenant health monitoring.
 - The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is needed to view and modify Conditional Access policies.
-- A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
 - The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
 
@@ -40,17 +40,23 @@ To view the Scenario monitoring dashboards, you need:
 Investigating an alert starts with gathering data.
 
 1. Gather the signal details and impact summary from the [Microsoft Graph API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
+1. Review the sign-in logs for users being blocked from signing in and have a Conditional Access policy requiring MFA applied.
+1. Check the [audit logs for Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md).
 
 ## Mitigate common issues
 
 The following scenarios are common issues that could cause a spike in sign-ins requiring a compliant device. This list is not exhaustive, but provides a starting point for your investigation.
 
-### Users are blocked from signing in from known devices
+### Increase in sign-ins requiring MFA
 
-If your users are attempting to sign in from known devices, a spike in blocked sign-in attempts could indicate that the these devices have fallen out of compliance.
+An increase in sign-ins requiring MFA could indicate a brute force attack, where multiple unauthorized sign-in attempts are made to a user's account. There could be a regional system outage that required a large number of users to sign in at the same time. A policy change or new feature rollout could also trigger a large number of users to sign in.
 
-- Check your Intune compliant device policy.
-- Check your Conditional Access compliant device policy.
+To investigate:
+
+- Check the sign-in logs for failed MFA sign-in attempts.
+    - Look for patterns like common IP address locations or multiple failed sign-ins from the same user.
+- Check your system and network health to see if an outage or update matches the time frame with the spike occurred.
+- Check the audit logs for recent policy changes that could have triggered the spike.
 
 ## Next steps
 
