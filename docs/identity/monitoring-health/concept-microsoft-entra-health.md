@@ -58,24 +58,18 @@ Many IT administrators spend a considerable amount of time investigating the hea
 - User sign-in requests that require a compliant device through a Conditional Access policy.
 - User sign-in requests to applications using SAML authentication.
 
-The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities. Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
+The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities. 
 
-For detailed information on each scenario, see the following articles:
+![Screenshot of the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
+
+Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month. This data is aggregated every 15 minutes, for low latency insights into your tenant's health. 
+
+The following scenarios also provide health monitoring alerts:
 
 - [Sign-ins requiring a compliant device](scenario-health-sign-ins-compliant-device.md)
 - [Sign-ins requiring a managed device](scenario-health-sign-ins-managed-device.md)
 - [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
 
-![Screenshot of the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
-
-## Scenario monitoring
-
-Microsoft Entra health scenario monitoring provides a visualization of the related sign-in data. This data is aggregated every 15 minutes, for low latency insights into your tenant's health. 
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Monitoring & health** > **Health** **Scenario monitoring**.
-1. Select **View details** on a tile to view the metrics and alerts for that scenario.
-1. 
 ### Sign-ins to applications using SAML authentication
 
 This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra cloud service for your tenant successfully processed. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID.
