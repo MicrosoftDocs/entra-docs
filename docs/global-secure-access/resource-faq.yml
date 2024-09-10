@@ -35,12 +35,7 @@ sections:
           Can I manage Global Secure Access with Microsoft Graph APIs?
         answer: |
           Yes, there's a set of Microsoft Graph APIs available to manage aspects of Microsoft Entra Internet Access and Microsoft Entra Private Access. For more information about these APIs, see the article [Secure access to cloud, public, and private apps using Microsoft Graph network access APIs](/graph/api/resources/networkaccess-global-secure-access-api-overview).
-  - name: Private Access
-    questions:
-        - question: |
-            I can't access an internal resource using the hostname or Fully Qualified Domain Name (FQDN) when IP is configured in Quick Access.
-          answer: |
-            Private Domain Name System (DNS) is currently not supported. Specify the Hostname or FQDN being used to access the internal resource in the Quick Access configuration along with the respective port.
+
   - name: Remote networks
     questions:
         - question: |
