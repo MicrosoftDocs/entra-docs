@@ -33,7 +33,7 @@ This article explains the prerequisites and how to deploy the client onto Androi
 - Tunneling IPv6 traffic isn't currently supported.
 - Private Domain Name System (DNS) must be disabled on the device. This setting is often found in the System > Network and Internet options.
 - Running non-Microsoft endpoint protection products alongside Microsoft Defender for Endpoint might cause performance problems and unpredictable system errors.
-- Global Secure Access (GSA) coexistence with Microsoft Tunnel is not currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](../en-us/mem/intune/protect/microsoft-tunnel-prerequisites.md).
+- Global Secure Access (GSA) coexistence with Microsoft Tunnel is not currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](../mem/intune/protect/microsoft-tunnel-prerequisites.md).
 
 ## Supported scenarios
 
