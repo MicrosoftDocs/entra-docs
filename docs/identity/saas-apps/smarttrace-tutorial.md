@@ -54,7 +54,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Click **Go to application**.
 
-        ![Screenshot of showing the identity configuration.](common/go-to-application.png "Identity")
+        ![Screenshot showing the identity configuration.](common/go-to-application.png "Identity")
 
     1. Copy **Application (client) ID** and **Directory (tenant) ID**, use it later in the SmartTrace side configuration.
 
@@ -67,7 +67,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. In the **Front-channel logout URL** textbox, type a URL using the following pattern:
     `https://api.smarttrace.ai/v1/auth/callback/azure-logout/<InstanceName>`
-    ![Screenshot of showing the redirect values.](common/log.png "Redirecton")
+    ![Screenshot showing the redirect values.](common/log.png "Redirecton")
 
     1. Click **Configure** button.
 
@@ -76,11 +76,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     1. Go to **Client secrets** tab and click **+New client secret**.
     1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
 
-        ![Screenshot of showing the client secrets value.](common/client-secret.png "Description")
+        ![Screenshot showing the client secrets value.](common/client-secret.png "Description")
 
     1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the SmartTrace side configuration.
 
-        ![Screenshot of showing how to add a client secret.](common/client.png "Add")
+        ![Screenshot showing how to add a client secret.](common/client.png "Add")
 
 ### Create a Microsoft Entra test user
 
@@ -116,11 +116,11 @@ Below are the configuration steps to complete the OIDC federation setup:
 
 1. Go to **SmartTrace** header > select **Integrations** and click pencil icon on the **Azure Active Directory** tile.
 
-    ![Screenshot of the smarttracer header integrations.](./media/smarttrace-tutorial/tile.png "Site")
+    ![Screenshot of the SmartTrace header integrations.](./media/smarttrace-tutorial/tile.png "Site")
 
 1. Perform the following steps in the **Azure Active Directory** page:
 
-    ![Screenshot of the configuration page in smarttrace.](./media/smarttrace-tutorial/header.png "Page")
+    ![Screenshot of the configuration page in SmartTrace.](./media/smarttrace-tutorial/header.png "Page")
 
     1. In the **APPLICATION ID** textbox, paste the **Application (client) ID**, which you have copied from the Microsoft Entra page.
 
