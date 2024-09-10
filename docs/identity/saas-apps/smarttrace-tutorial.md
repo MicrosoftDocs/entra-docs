@@ -122,10 +122,10 @@ Below are the configuration steps to complete the OIDC federation setup:
 
     ![Screenshot of the configuration page in smarttrace.](./media/smarttrace-tutorial/header.png "Page")
 
-    1. In the **APPLICATION ID** textbox, paste the **Application (client) ID**, which you have copied from the Entra page.
+    1. In the **APPLICATION ID** textbox, paste the **Application (client) ID**, which you have copied from the Microsoft Entra page.
 
-    1. In the **TENANT ID** textbox, paste the **Directory (tenant) ID**, which you have copied from the Entra page.
+    1. In the **TENANT ID** textbox, paste the **Directory (tenant) ID**, which you have copied from the Microsoft Entra page.
 
-    1. In the **APPLICATION (CLIENT) SECRET** textbox, paste the value, which you have copied from **Certificates & secrets** section at Entra side.
+    1. In the **APPLICATION (CLIENT) SECRET** textbox, paste the value, which you have copied from **Certificates & secrets** section at Microsoft Entra side.
 
     1. Click **Save**.
