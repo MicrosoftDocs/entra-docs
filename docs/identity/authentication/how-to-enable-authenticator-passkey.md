@@ -45,7 +45,9 @@ The **Microsoft Authenticator** policy doesn't give you the option to enable pas
    - Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. This setting automatically populates the Authenticator app AAGUIDs for you in the key restriction list. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
 
       - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
+      - **Authenticator for Android:** b6879edc-2a86-4bde-9c62-c1cac4a8f8e5
       - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
+      - **Authenticator for iOS:** 257fa02a-18f3-4e34-8174-95d454c2e9ad
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
@@ -64,7 +66,9 @@ The following list describes other optional settings:
 - **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain passkeys, which are identified by their Authenticator Attestation GUID (AAGUID). If you want, you can manually enter the Authenticator app AAGUIDs or specifically restrict only Android or iOS devices. Otherwise, you can manually add the following AAGUIDs to enable the Authenticator passkey preview:
 
   - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
+  - **Authenticator for Android:** b6879edc-2a86-4bde-9c62-c1cac4a8f8e5
   - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
+  - **Authenticator for iOS:** 257fa02a-18f3-4e34-8174-95d454c2e9ad
 
 After you finish the configuration, select **Save**.
 
@@ -95,8 +99,10 @@ To configure the policy by using Graph Explorer:
            "isEnforced": true,
            "enforcementType": "allow",
            "aaGuids": [
+               "de1e552d-db1d-4423-a619-566b625cdc84",
+               "b6879edc-2a86-4bde-9c62-c1cac4a8f8e5",
                "90a3ccdf-635c-4729-a248-9b709135078f",
-               "de1e552d-db1d-4423-a619-566b625cdc84"
+               "257fa02a-18f3-4e34-8174-95d454c2e9ad"
    
                <insert previous AAGUIDs here to keep them stored in policy>
            ]
@@ -136,7 +142,9 @@ To make users sign in with a passkey when they access a sensitive resource, use 
 1. Add AAGUIDs for passkeys in Authenticator:
 
    - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
+   - **Authenticator for Android:** b6879edc-2a86-4bde-9c62-c1cac4a8f8e5
    - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
+   - **Authenticator for iOS:** 257fa02a-18f3-4e34-8174-95d454c2e9ad
 
 1. Choose **Next** and review the policy configuration.
 
