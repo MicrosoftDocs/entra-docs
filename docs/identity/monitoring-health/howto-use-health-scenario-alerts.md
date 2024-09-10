@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/09/2024
+ms.date: 09/10/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -21,43 +21,41 @@ Microsoft Entra Health (preview) provides the ability to monitor the health of y
 
 To enable and receive scenario health alerts, you need:
 
+- A tenant with a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md)
 - The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role needed to view tenant health monitoring.
 - The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is needed to view and modify Conditional Access policies.
 - The [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) role is required to configure Microsoft Graph alert notifications.
-- A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
 - The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
 
 ## How it works
 
-1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Tenant health monitoring.
+1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Health.
 
-1. These signals are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant.
+1. These signals are fed into our anomaly detection service.
 
-1. When the anomaly detection service identifies a significant change to that pattern, such as a spike in sign-ins requiring a compliant device, it triggers an alert. Some examples include:
-    - Large rise in users being blocked
-    - Significant change in the pattern of sign-ins    
+1. When the anomaly detection service identifies a significant change to that pattern, it triggers an alert. 
 
-1. An alert is sent by email to a pre-determined set of users when the anomaly detection service identifies a significant change to the pattern of sign-ins requiring a compliant device. 
+1. An alert is sent by email to a pre-determined set of users when the anomaly detection service identifies a significant change to the pattern. 
 
 After receiving an alert, you need to research possible root causes, determine the next steps, and take action to mitigate the root cause.
 
-## Scenario monitoring
-
-Microsoft Entra health scenario monitoring provides a visualization of the related sign-in data. This data is aggregated every 15 minutes, for low latency insights into your tenant's health. 
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Monitoring & health** > **Health** **Scenario monitoring**.
-1. Select **View details** on a tile to view the metrics and alerts for that scenario.
-    - You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true). 
-
-Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
-
 ## Alerts and anomaly detection
 
-With the [Microsoft Graph health monitoring API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true), you can view the alerts, configure email notifications, and update the state of the alert. 
+With the [Microsoft Graph health monitoring API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true), you can view the alerts, configure email notifications, and update the state of the alert. You can manually run the API calls daily or you can configure email notifications so that a predetermined set of users receives the alert.
 
-When the anomaly detection service identifies a significant change to a pattern it triggers an alert. At this time, alerts are only available through the Microsoft Graph API. You can manually run the API calls daily or you can [configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true) using the API. To configure the alerts, you need to provide the `groupId` of the group you want to receive the alerts.
+> [!NOTE]
+> At this time, alerts are only available through the Microsoft Graph API.
+
+To configure email notifications, you need the ID of the group you want to receive the alerts AND the specific alert ID.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator).
+1. Browse to **Groups** > **All groups** > and select the group you want to receive the alerts.
+1. Select **Properties** and copy the `Object ID` of the group. 
+1. Sign in to [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) and consent to the appropriate permissions.
+1. Select **GET** as the HTTP method from the dropdown and set the API version to **beta**.
+1. Use the following guidance to [configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true) using the API.
+    - Enter the `Object ID` as the `groupId`.
 
 We recommend sending alerts to users with these roles:
 
@@ -67,27 +65,22 @@ We recommend sending alerts to users with these roles:
 
 ## Gather data
 
-There are three main data sets to investigate. There are also scenario-specific data sets to also investigate, based on what you're investigating. You typically need to look at the:
+There are three main data sets to investigate. There are also scenario-specific data sets to investigate. You typically need to look at:
 
 - Signal details from the API
 - Impact summary from the alerts API
 - Sign-in logs
-
-To get started:
-
-1. Sign in to [Graph Explorer](https://aka.ms/ge).
-1. Select **GET** as the HTTP method from the dropdown.
-1. Set the API version to **beta**.
+- Scenario-specific resources
 
 ### View the signal and impact summary
 
-Add the following query to retrieve all alerts for your tenant, then select the **Run query** button.
+In Microsoft Graph, add the following query to retrieve all alerts for your tenant.
 
 ```http
 GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
 ```
 
-To view the impact summary for a specific alert, you need to save the `id` of the alert you want to investigate. Add the following query, using `id` as the `alertId`, then select the **Run query** button.
+To view the impact summary for a specific alert, you need to save the `id` of the alert you want to investigate. Add the following query, using `id` as the `alertId`.
 
 ```http
 GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}

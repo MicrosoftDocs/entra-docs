@@ -62,6 +62,8 @@ items:
   - name: How-to guides 
     expanded: true
     items:
+    - name: How to use Identity Workbooks
+      href: howto-use-workbooks.md
     - name: How to use Identity Recommendations
       href: howto-use-recommendations.md
     - name: How to use Identity Workbooks

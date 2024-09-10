@@ -15,7 +15,7 @@ ms.reviewer: sarbar
 
 # How to investigate the sign-ins requiring a compliant device alert
 
-Microsoft Entra Health (preview) provides a set of health metrics you can monitor and receive alerts when a potential issue or failure condition is detected. Tenant health monitoring aggregates several health signals and alerts across different services and scenarios. This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device.
+Microsoft Entra Health (preview) provides a set of health metrics you can monitor and receive alerts when a potential issue or failure condition is detected. Tenant health monitoring aggregates several health signals and alerts across different services and scenarios. This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device, such as a large increase in users being blocked.
 
 To learn more about how Microsoft Entra Health works, see:
 
