@@ -39,9 +39,13 @@ To view the Scenario monitoring dashboards, you need:
 
 Investigating an alert starts with gathering data.
 
-1. Gather the signal details and impact summary from the [Microsoft Graph API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
-1. Review the sign-in logs for users being blocked from signing in and have a Conditional Access policy requiring MFA applied.
-1. Check the [audit logs for Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md).
+1. Gather the signal details and impact summary.
+    - [Microsoft Graph health monitoring overview](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true)
+1. Review the sign-in logs.
+    - [Review the sign-in log details](concept-sign-in-log-activity-details.md)
+    - Look for users being blocked from signing in *and* have a Conditional Access policy requiring MFA applied
+1. Check the audit logs for recent policy changes.
+    - [Use the audit logs to troubleshoot Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md)
 
 ## Mitigate common issues
 
@@ -55,7 +59,8 @@ To investigate:
 
 - Check the sign-in logs for failed MFA sign-in attempts.
     - Look for patterns like common IP address locations or multiple failed sign-ins from the same user.
-- Check your system and network health to see if an outage or update matches the time frame with the spike occurred.
+- Use the [sign-in diagnostic](howto-use-sign-in-diagnostics.md) from the sign-in logs.
+- Check your system and network health to see if an outage or update matches the time frame as the anomaly.
 - Check the audit logs for recent policy changes that could have triggered the spike.
 
 ## Next steps

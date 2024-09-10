@@ -38,12 +38,20 @@ To view the Scenario monitoring dashboards, you need:
 
 Investigating an alert starts with gathering data.
 
-1. Gather the signal details and impact summary from the [Microsoft Graph API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
-1. Review your [Intune device compliance policies](/mem/intune/protect/compliance-policy-monitor).
-    - If you're not using Intune, review your device management solution's compliance policies.
-1. Investigate common issues with [Conditional Access device compliance](/troubleshoot/mem/intune/device-protection/troubleshoot-conditional-access#devices-appear-compliant-but-users-are-still-blocked).
-1. Review the sign-in logs for users being blocked from signing in and have a compliant device [Conditional Access policy](../conditional-access/troubleshoot-conditional-access.md) applied.
-1. Check the [audit logs for Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md).
+1. Gather the signal details and impact summary.
+    - [Microsoft Graph health monitoring overview](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true)
+1. Review your Intune device compliance policies.
+    - [Intune device compliance overview](/mem/intune/protect/device-compliance-get-started)
+    - [Monitor device compliance policies](/mem/intune/protect/compliance-policy-monitor)
+    - If you're not using Intune, review your device management solution's compliance policies
+1. Investigate common Conditional Access issues.
+    - [Troubleshoot Conditional Access device compliance policies](/troubleshoot/mem/intune/device-protection/troubleshoot-conditional-access#devices-appear-compliant-but-users-are-still-blocked)
+    - [Troubleshoot Conditional Access sign-in problems](../conditional-access/troubleshoot-conditional-access.md)
+1. Review the sign-in logs.
+    - [Review the sign-in log details](concept-sign-in-log-activity-details.md)
+    - Look for users being blocked from signing in *and* have a compliant device applied
+1. Check the audit logs for recent policy changes.
+    - [Use the audit logs to troubleshoot Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md)
 
 ## Mitigate common issues
 
