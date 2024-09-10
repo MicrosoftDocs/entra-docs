@@ -443,6 +443,8 @@ items:
           href: azure-rest-api-operations-tenant-management.md 
 - name: Reference
   items:
+    - name: Training and demos
+      href: reference-training-videos.md
     - name: Default user permissions
       href: reference-user-permissions.md
     - name: Service limits and restrictions

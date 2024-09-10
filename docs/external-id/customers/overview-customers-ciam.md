@@ -125,5 +125,6 @@ Opt for the next generation Microsoft Entra External ID platform if:
 
 ## Next steps
 
+- See our [training, live demos, and videos](reference-training-videos.md).
 - Learn more about [planning for Microsoft Entra External ID](concept-planning-your-solution.md).
 - See also the [Microsoft Entra External ID Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.
