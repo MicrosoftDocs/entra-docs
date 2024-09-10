@@ -102,7 +102,7 @@ sections:
       - question: |
           How many administrative units with rules for dynamic membership groups can I create in a tenant?
         answer: |
-          For the preview, the total number of dynamic membership groups and dynamic administrative units combined cannot exceed 5,000.
+          For the preview, the total number of dynamic membership groups and dynamic administrative units combined cannot exceed 15,000.
 
       - question: |
           Is there a limit to the number of characters in a rule for dynamic membership groups?
