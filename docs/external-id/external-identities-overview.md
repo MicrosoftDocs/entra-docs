@@ -159,7 +159,7 @@ All External ID features are also supported for automation through Microsoft Gra
 
 |  External ID feature |  Supported in  |  Automation workarounds  |
 | ---- | --- | --- |
-| [Identify organizations that you belong to](leave-the-organization.md#what-organizations-do-i-belong-to) | Workforce tenants | [Tenants - List Azure Resource Manager API](/rest/api/resources/tenants/list) |
+| [Identify organizations that you belong to](leave-the-organization.md#what-organizations-do-i-belong-to) | Workforce tenants | [Tenants - List Azure Resource Manager API](/rest/api/resources/tenants/list). For Teams shared channels and B2B direct connect, use [Get tenantReferences](/graph/api/outboundshareduserprofile-list-tenants) Microsoft Graph API. |
 
 <a name='azure-ad-microsoft-graph-api-for-b2b-collaboration'></a>
 
