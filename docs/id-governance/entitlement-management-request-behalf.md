@@ -1,5 +1,5 @@
 ---
-title: Request access packages on-behalf-of other users(Preview)
+title: Request access packages on-behalf-of other users  (Preview)
 description: This article describes how to set up an access package so that managers can approve, or deny, requests for users reporting to them.
 author: owinfreyATL
 ms.author: owinfrey
@@ -27,7 +27,7 @@ Imagine your organization hires hundreds of new employees each year, and you're 
 
 Instead of conducting numerous ad-hoc training sessions to ensure new hires know how to request access in their first week or weeks at the organization, you can set up access package policies that allow managers to request access on behalf of their employees.
 
-:::image type="content" source="media/entitlement-management-request-behalf/enable-manager-requests.png" alt-text="Screenshot of request on behalf of options.":::
+:::image type="content" source="media/entitlement-management-request-behalf/enable-manager-requests.png" alt-text="Screenshot of request on behalf of options." lightbox="media/entitlement-management-request-behalf/enable-manager-requests.png":::
 
 Now, managers are empowered to request access on behalf of new hires who haven't gone through the IT training. This ensures that employees have the tools and resources necessary to start on day one, and increases new hire satisfaction as they don’t need to wait for access or navigate the request process on their own.
 
@@ -48,7 +48,7 @@ Follow these steps to edit the policies, allowing on behalf of requests, for an 
 1. Select the policy you wish to edit or create a new policy. 
 
 1. On the **Requests** tab, set **Enable new requests** to Yes. This should show you the option **Allow managers to request on behalf of employees (preview)**. Set that option to Yes.  
-    :::image type="content" source="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" alt-text="Screenshot of editing an access package;s request on behalf of policy.":::
+    :::image type="content" source="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" lightbox="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" alt-text="Screenshot of editing an access package;s request on behalf of policy.":::
     > [!NOTE]
     > If approval is required, you will also see the option to **Bypass approval stage if manager is the requestor and approver (preview)**.
 1. Save your policy. 
@@ -62,7 +62,7 @@ When a manager requests an access package on behalf of an employee, you'd do the
 1. In the left menu, select **Approvals** to see a list of access requests pending approval.
 
 1. On the **Pending** tab, find the request.
-    :::image type="content" source="media/entitlement-management-request-behalf/myaccess-approval-request.png" alt-text="Screenshot of the pending approval requests in my access.":::
+    :::image type="content" source="media/entitlement-management-request-behalf/myaccess-approval-request.png" lightbox="media/entitlement-management-request-behalf/myaccess-approval-request.png" alt-text="Screenshot of the pending approval requests in my access.":::
 
 1. Either approve, or deny, the request on behalf of the employee.
 
