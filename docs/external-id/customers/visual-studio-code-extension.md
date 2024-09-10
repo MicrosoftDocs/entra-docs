@@ -31,7 +31,7 @@ External ID is a service that can be added to an Azure subscription. If you alre
 The Microsoft Entra External ID extension is available in the Visual Studio Code Marketplace.
 
 1. If you don’t already have Visual Studio Code installed, [download Visual Studio Code](https://code.visualstudio.com/Download) and complete the installation steps.
-1. Install the Microsoft Entra External ID Extension for Visual Studio Code from [aka.ms/ciam/vscode/marketplace](https://aka.ms/ciam/vscode/marketplace).
+1. Install the Microsoft Entra External ID Extension for Visual Studio Code from [https://aka.ms/vscodequickstart/marketplace](https://aka.ms/vscodequickstart/marketplace).
 
 After the extension is installed, you can access it using the icon on the activity bar.
 
