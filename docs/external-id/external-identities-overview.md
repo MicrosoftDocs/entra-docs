@@ -153,7 +153,13 @@ To learn more about multitenant organizations and cross-tenant synchronization, 
 
 ## Microsoft Graph APIs
 
-All External ID features are also supported for automation through Microsoft Graph APIs. For more information, see [Manage Microsoft Entra identity and network access by using Microsoft Graph](/graph/api/resources/identity-network-access-overview).
+All External ID features are also supported for automation through Microsoft Graph APIs except those listed in the next section. For more information, see [Manage Microsoft Entra identity and network access by using Microsoft Graph](/graph/api/resources/identity-network-access-overview).
+
+### Capabilities not supported in Microsoft Graph
+
+|  External ID feature |  Supported in  |  Automation workarounds  |
+| ---- | --- | --- |
+| [Identify organizations that you belong to](leave-the-organization.md#what-organizations-do-i-belong-to) | Workforce tenants | [Tenants - List Azure Resource Manager API](/rest/api/resources/tenants/list) |
 
 <a name='azure-ad-microsoft-graph-api-for-b2b-collaboration'></a>
 
