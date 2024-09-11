@@ -4,11 +4,11 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/05/2024
+ms.date: 09/11/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
-ms.reviewer: nashahid
+ms.reviewer: nashahid, gkinasewitz
 
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.
 ---
