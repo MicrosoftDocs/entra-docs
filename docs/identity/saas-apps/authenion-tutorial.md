@@ -28,7 +28,7 @@ In this tutorial, you learn how to integrate Authenion with Microsoft Entra ID. 
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* Authenion  single sign-on (SSO) enabled subscription.
+* Authenion single sign-on (SSO) enabled subscription.
 
 ## Add Authenion from the gallery
 
@@ -54,22 +54,22 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Select **Go to application**.
 
-        ![Screenshot of showing the identity configuration.](common/go-to-application.png#lightbox)
+        [![Screenshot of showing the identity configuration.](common/go-to-application.png)](common/go-to-application.png#lightbox)
 
     1. Copy **Application (client) ID** and use it later in the Authenion  side configuration.
 
-        ![Screenshot of application client values.](common/application-id.png#lightbox)
+        [![Screenshot of application client values.](common/application-id.png)](common/application-id.png#lightbox)
 
     1. Under **Endpoints** tab, copy **OpenID Connect metadata document** link and use it later in the Authenion  side configuration.
 
-        ![Screenshot of showing the endpoints on tab.](common/endpoints.png#lightbox)
+        [![Screenshot of showing the endpoints on tab.](common/endpoints.png)](common/endpoints.png#lightbox)
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
     1. In the **Redirect URIs** textbox, type a URL using the following pattern: 
     `https://<HOST_NAME>/ssolibrary/oidc/callback`
 
-        ![Screenshot of showing the redirect values.](common/redirect.png#lightbox)
+        [![Screenshot of showing the redirect values.](common/redirect.png)](common/redirect.png#lightbox)
 
     1. Select **Configure** button.
 
@@ -78,11 +78,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     1. Go to **Client secrets** tab and select **+New client secret**.
     1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and select **Add**.
 
-        ![Screenshot of showing the client secrets value.](common/client-secret.png#lightbox)
+        [![Screenshot of showing the client secrets value.](common/client-secret.png)](common/client-secret.png#lightbox)
 
     1. Once you add a client secret, **Value** is generated. Copy the value and use it later in the Authenion side configuration.
 
-        ![Screenshot of showing how to add a client secret.](common/client.png#lightbox)
+        [![Screenshot of showing how to add a client secret.](common/client.png)](common/client.png#lightbox)
 
 ### Create a Microsoft Entra test user
 
