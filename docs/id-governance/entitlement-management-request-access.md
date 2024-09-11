@@ -7,7 +7,7 @@ editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 09/11/2024
 ms.author: owinfrey
 ms.reviewer: mamkumar
 #Customer intent: As a requestor, I want simple steps for how to request resources I need so that I can start using the resources to perform my job.
@@ -38,13 +38,15 @@ The first step is to sign in to the My Access portal where you can request acces
 
 ## Request an access package
 
-Once you find the access package in the My Access portal, you can submit a request.
+Once you find the access package in the My Access portal, you can submit a request for either yourself, or a direct employee.
 
 **Prerequisite role:** Requestor
 
 1. Find the access package in the list. If necessary, you can search by typing a search string. You can search by name, description, or resources.
  
 1. To request access, you can either select the row or select **Request**.
+
+1. On the **Request details** pane select whether or not you are requesting the access package for yourself, or a direct employee.
 
 1. Review the details of the access package, then select **Continue**.
 
