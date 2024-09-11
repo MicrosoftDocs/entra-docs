@@ -290,7 +290,7 @@ items:
       href: concept-planning-your-solution.md
     - name: Woodgrove demo overview
       href: overview-solutions-customers.md
-    - name: Baseline security settings
+    - name: Security settings
       href: concept-security-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
