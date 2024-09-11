@@ -29,15 +29,7 @@ You can view the Microsoft Entra Health SLA attainment and Scenario monitoring (
 
 You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true). 
 
-### Enable the Scenario monitoring preview 
-
-If you'd like to view the **Scenario monitoring (preview)**:
-
-1. Sign into the [Microsoft Entra admin center] as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Home** and select the **View all** button in the **Preview hub** tile.
-1. Enable **Scenario monitoring** and select **Save**.
-
-Enabling preview feature might take up to 24 hours to populate. Enabling the preview only changes your view, not the entire tenant. You can disable the preview at any time.
+[Enable the Scenario monitoring preview](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true#view/Microsoft_AAD_IAM/FeaturePreviewsListBlade). Enabling the preview might take up to 24 hours to populate. Enabling the preview only changes your view, not the entire tenant. You can disable the preview at any time.
 
 ## SLA attainment
 
@@ -64,15 +56,18 @@ The data associated with each of these scenarios is aggregated into a view that'
 
 Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month. This data is aggregated every 15 minutes, for low latency insights into your tenant's health. 
 
+## Scenario health alerts
+
+Microsoft Entra health monitoring now provides alerts for some of the scenarios. Alerts are generated when our anomaly detection service identifies a significant change to the pattern in the signal. For more information, see [How to use Microsoft Entra scenario health alerts](howto-use-health-scenario-alerts.md).
+
 The following scenarios also provide health monitoring alerts:
 
-- [Sign-ins requiring a compliant device](scenario-health-sign-ins-compliant-device.md)
-- [Sign-ins requiring a managed device](scenario-health-sign-ins-managed-device.md)
+- [Sign-ins requiring a compliant or managed device](scenario-health-sign-ins-compliant-device.md)
 - [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
 
 ### Sign-ins to applications using SAML authentication
 
-This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra cloud service for your tenant successfully processed. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID.
+This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra cloud service for your tenant successfully processed. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID. This scenario is currently only available for scenario monitoring.
 
 - [Learn how the Microsoft Identity platform uses the SAML protocol](../../identity-platform/saml-protocol-reference.md)
 - [Use a SAML 2.0 IdP for single sign on](../hybrid/connect/how-to-connect-fed-saml-idp.md).

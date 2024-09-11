@@ -60,6 +60,8 @@ To investigate:
 - Check the sign-in logs for failed MFA sign-in attempts.
     - Look for patterns like common IP address locations or multiple failed sign-ins from the same user.
 - Use the [sign-in diagnostic](howto-use-sign-in-diagnostics.md) from the sign-in logs.
+    - Rule out standard user error issues or initial MFA setup
+    - 
 - Check your system and network health to see if an outage or update matches the time frame as the anomaly.
 - Check the audit logs for recent policy changes that could have triggered the spike.
 

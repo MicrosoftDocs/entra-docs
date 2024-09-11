@@ -21,12 +21,18 @@ Microsoft Entra Health (preview) provides the ability to monitor the health of y
 
 To enable and receive scenario health alerts, you need:
 
-- A tenant with a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md)
+- A tenant with a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md) is required to view the Microsoft Entra health scenario monitoring.
+- A tenant with at least 100 monthly active user is required to view and receive alerts.
 - The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role needed to view tenant health monitoring.
 - The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is needed to view and modify Conditional Access policies.
 - The [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) role is required to configure Microsoft Graph alert notifications.
 - The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
+
+### Known limitations
+
+- Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
+- At this time, Alerts are only available with the Microsoft Graph API.
 
 ## How it works
 
@@ -34,7 +40,7 @@ To enable and receive scenario health alerts, you need:
 
 1. These signals are fed into our anomaly detection service.
 
-1. When the anomaly detection service identifies a significant change to that pattern, it triggers an alert. 
+1. When the anomaly detection service identifies a significant change to a pattern in the signal, it triggers an alert. 
 
 1. An alert is sent by email to a pre-determined set of users when the anomaly detection service identifies a significant change to the pattern. 
 
@@ -63,14 +69,17 @@ To configure alert notifications, you need the ID of the group you want to recei
 1. Use the following guidance to [configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true) using the API.
     - Enter the `Object ID` as the `groupId`.
 
-## Gather data
+## Gather data / FLOW
 
 You typically need to investigate the following data sets:
 
-- Signal details from the API
 - Impact summary from the alerts API
+    - Review the impact of the alert
+- Signal details from the API
+    - Inspect the data stream/signal that caused the alert
 - Sign-in logs
 - Scenario-specific resources
+    - Based on ...
 
 ### View the signal and impact summary
 
@@ -106,8 +115,7 @@ Now that you've gathered all the data related to the scenario, you need to consi
 
 Each scenario has a set of root causes and solutions to consider. For details on each scenario, see the following articles:
 
-- [Sign-ins requiring a compliant device](scenario-health-sign-ins-compliant-device.md)
-- [Sign-ins requiring a managed device](scenario-health-sign-ins-managed-device.md)
+- [Sign-ins requiring a compliant or managed device](scenario-health-sign-ins-compliant-device.md)
 - [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
 
 ## Next steps
