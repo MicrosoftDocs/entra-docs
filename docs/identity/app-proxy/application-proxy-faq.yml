@@ -41,7 +41,7 @@ sections:
               If your license expires, application proxy is automatically disabled. Your application information is saved for up to one year.
 
       - question: |
-         Why is the "Enable application proxy button grayed out?
+         Why is the Enable application proxy button grayed out?
         answer: |
               Make sure you have at least a Microsoft Entra ID P1 or P2 license and a Microsoft Entra private network connector installed. After you successfully install your first connector, the Microsoft Entra application proxy service is enabled automatically.
       - question: |
