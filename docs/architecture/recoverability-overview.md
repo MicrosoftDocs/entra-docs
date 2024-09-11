@@ -115,7 +115,7 @@ Microsoft Graph APIs are highly customizable based on your organizational needs.
 | Conditional Access policies| [Conditional Access policy API](/graph/api/resources/conditionalaccesspolicy) |
 | Devices| [devices API](/graph/api/resources/device) |
 | Domains| [domains API](/graph/api/domain-list?tabs=http) |
-| Administrative units| [administrative unit API)](/graph/api/resources/administrativeunit) |
+| Administrative units| [administrative unit API](/graph/api/resources/administrativeunit) |
 | Deleted items*| [deletedItems API](/graph/api/resources/directory) |
 
 *Securely store these configuration exports with access provided to a limited number of admins.
