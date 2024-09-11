@@ -123,7 +123,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 There's no way to opt out. This security motion is critical to all safety and security of the Azure platform and is being repeated across cloud vendors. For example, see [Secure by Design: AWS to enhance MFA requirements in 2024](https://aws.amazon.com/blogs/security/security-by-design-aws-to-enhance-mfa-requirements-in-2024/). 
  
-An option to postpone the enforcement start date is available for customers with use cases where no workarounds are easily available and more time is needed to prepare for the MFA requirement. Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page and they must perform this action for every tenant for which they would like to postpone the start date of enforcement.
+An option to postpone the enforcement start date is available for customers. Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page and they must perform this action for every tenant for which they would like to postpone the start date of enforcement.
 
  
 **Question**: Can I test MFA before Azure enforces the policy to ensure nothing breaks? 
@@ -131,7 +131,7 @@ An option to postpone the enforcement start date is available for customers with
 **Answer**: Yes, the customer can [test their MFA](~/identity/authentication/tutorial-enable-azure-mfa.md#test-microsoft-entra-multifactor-authentication) through the manual setup process for MFA. We encourage customers to set this up themselves and test, please work with your user community to extend their controls beyond the Azure portal and apply to CLI/API and other sign-ins. 
  
 
-**Question**: What if I already has MFA enabled, what happens next? 
+**Question**: What if I already have MFA enabled, what happens next? 
 
 **Answer**: Customers that already require MFA for their users who access the applications listed previously don't see any change. If you only require MFA for a subset of users, then any users not already using MFA will now need to use MFA when they sign in to the applications. 
  
