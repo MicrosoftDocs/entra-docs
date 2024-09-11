@@ -13,11 +13,9 @@ ms.custom: it-pro
 
 # Create custom roles for managing cross-tenant access settings
 
-Your organization can [define custom roles](~/identity/role-based-access-control/custom-create.yml) to manage cross-tenant access settings. These roles allow for precise control without relying on built-in management roles.
+Your organization can [define custom roles](~/identity/role-based-access-control/custom-create.yml) to manage cross-tenant access settings. These roles allow for precise control without relying on built-in management roles. This article provides guidance on creating recommended custom roles for managing cross-tenant access settings.
 
-## Recommended custom roles
-
-### Cross-tenant access administrator
+## Cross-tenant access administrator
 
 This role can manage everything in cross-tenant access settings, including default and organizational based settings. This role should be assigned to users who need to manage all settings in cross-tenant access settings.
 
@@ -45,7 +43,7 @@ The following actions are recommended for this role.
 | microsoft.directory/crossTenantAccessPolicy/partners/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/partners/tenantRestrictions/update |
 
-### Cross-tenant access reader
+## Cross-tenant access reader
 
 This role can read everything in cross-tenant access settings, including default and organizational based settings. This role should be assigned to users who only need to review settings in cross-tenant access settings, but not manage them.
 
@@ -59,7 +57,7 @@ The following actions are recommended for this role.
 | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/partners/standard/read |
 
-### Cross-tenant access partner administrator
+## Cross-tenant access partner administrator
 
 This role can manage everything relating to partners and read the default settings. This role should be assigned to users who need to manage organizational based settings but not be able to change default settings.
 

@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 
 Microsoft Entra organizations can use External ID cross-tenant access settings to manage collaboration with other Microsoft Entra organizations and Microsoft Azure clouds through B2B collaboration and [B2B direct connect](cross-tenant-access-settings-b2b-direct-connect.md). The [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml) provide granular control over inbound and outbound access, allowing you to trust multifactor authentication (MFA) and device claims from other organizations. 
 
-This article covers cross-tenant access settings for managing B2B collaboration and B2B direct connect with external Entra organizations, including across Microsoft clouds. Other settings are available for B2B collaboration with non-Microsoft Entra identities (for example, social identities or non-IT managed external accounts). These [external collaboration settings](external-collaboration-settings-configure.md) include options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
+This article covers cross-tenant access settings for managing B2B collaboration and B2B direct connect with external Microsoft Entra organizations, including across Microsoft clouds. Other settings are available for B2B collaboration with non-Microsoft Entra identities (for example, social identities or non-IT managed external accounts). These [external collaboration settings](external-collaboration-settings-configure.md) include options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
 
 There are no limits to the number of organizations you can add in cross-tenant access settings.
  
