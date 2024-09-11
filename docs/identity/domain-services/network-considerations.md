@@ -174,7 +174,7 @@ Make sure no other NSG with higher priority denies the Outbound connectivity. If
 
 ### Port 3389 - management using remote desktop
 
-* Used for remote desktop connections to domain controllers in your managed domain.
+* Used for remote desktop connections to domain controllers in your managed domain, this port cannot be changed or encapsulated into another port.
 * The default network security group rule uses the *CorpNetSaw* service tag to further restrict traffic.
     * This service tag permits only secure access workstations on the Microsoft corporate network to use remote desktop to the managed domain.
     * Access is only allowed with business justification, such as for management or troubleshooting scenarios.
