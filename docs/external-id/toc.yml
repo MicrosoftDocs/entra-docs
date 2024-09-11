@@ -176,6 +176,8 @@ items:
       href: customize-invitation-api.md
     - name: Government and national clouds
       href: b2b-government-national-clouds.md
+    - name: Cross-tenant access roles
+      href: reference-cross-tenant-custom-roles.md
 - name: Resources
   items:
   - name: What's new in docs for external tenants?
