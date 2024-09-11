@@ -38,7 +38,7 @@ The scope of enforcement includes which applications plan to enforce MFA, when e
 
 All users who sign into the [applications](#applications) listed previously to perform any Create, Read, Update, or Delete (CRUD) operation will require MFA when the enforcement begins. End users who access application, websites, or services hosted on Azure, but don't sign into the listed applications, aren't required to use MFA. The authentication requirements for end users are controlled by the application, website, or service owner. 
 
-Workload identities, such as managed identities and service principals, aren't impacted by MFA enforcement. If user identities sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md). 
+Workload identities, such as managed identities and service principals, aren't impacted by [Phase 1](#enforcement-phases) of the MFA enforcement. If user identities sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md). 
 
 Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend updating these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
@@ -101,9 +101,9 @@ If you're using a federated Identity Provider (IdP), such as Active Directory 
 
 ## Request more time to prepare for enforcement 
 
-We understand that some customers may need more time to prepare for this MFA requirement. Microsoft allows grace periods for customers with complex environments or technical barriers. 
+We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until March 15, 2025. 
 
-Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to 3/15/2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page.  
+Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page.  
 
 Global Administrators must perform this action for every tenant for which they would like to postpone the start date of enforcement.  
 
@@ -123,7 +123,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 There's no way to opt out. This security motion is critical to all safety and security of the Azure platform and is being repeated across cloud vendors. For example, see [Secure by Design: AWS to enhance MFA requirements in 2024](https://aws.amazon.com/blogs/security/security-by-design-aws-to-enhance-mfa-requirements-in-2024/). 
  
-A grace period is available for customers with use cases where no workarounds are easily available and need more time to prepare for the MFA requirement. The first notification from us that states the enforcement date for your tenant(s) also includes a link to apply for the grace period. The notification also includes more details about customer types, use cases, and scenarios that are eligible for grace period. 
+An option to postpone the enforcement start date is available for customers with use cases where no workarounds are easily available and more time is needed to prepare for the MFA requirement. Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page and they must perform this action for every tenant for which they would like to postpone the start date of enforcement.
 
  
 **Question**: Can I test MFA before Azure enforces the policy to ensure nothing breaks? 
@@ -133,7 +133,7 @@ A grace period is available for customers with use cases where no workarounds ar
 
 **Question**: What if I already has MFA enabled, what happens next? 
 
-**Answer**: Customers that already require MFA for their users who access the applications listed previously don't see any change. If you only require MFA for a subset of users, then any users not already using MFA will now need to use MFA when they sign in to the application. 
+**Answer**: Customers that already require MFA for their users who access the applications listed previously don't see any change. If you only require MFA for a subset of users, then any users not already using MFA will now need to use MFA when they sign in to the applications. 
  
 
 **Question**: What if I have a "break glass" scenario? 
@@ -143,7 +143,7 @@ A grace period is available for customers with use cases where no workarounds ar
 
 **Question**: What if I don’t receive an email about enabling MFA before it was enforced, and then I get locked-out. How should I resolve it?  
 
-**Answer**: Users should not be locked out, but they may get a message that prompts them to enable MFA with the MFA wizard. If the user is locked-out, there may be other issues. For more information, see [Account has been locked](https://support.microsoft.com/en-us/account-billing/account-has-been-locked-805e8b0d-4141-29b2-7b65-df6ff6c9ce27).  
+**Answer**: Users should not be locked out, but they may get a message that prompts them to enable MFA once enforcement for their tenant has started. If the user is locked-out, there may be other issues. For more information, see [Account has been locked](https://support.microsoft.com/en-us/account-billing/account-has-been-locked-805e8b0d-4141-29b2-7b65-df6ff6c9ce27).  
 
 
 ## Next steps
