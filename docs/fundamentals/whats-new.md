@@ -9,7 +9,7 @@ ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: whats-new
-ms.date: 08/20/2024
+ms.date: 09/10/2024
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -103,7 +103,7 @@ In [October 2023](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/wh
 **Service category:** MFA    
 **Product capability:** Identity Security & Protection            
 
-Microsoft Entra ID now supports FIDO2 provisioning via API, allowing organizations to preprovision security keys (passkeys) for users. These new APIs can simplify user onboarding, and provide seamless phishing-resistant authentication on day one for employees. 
+Microsoft Entra ID now supports FIDO2 provisioning via API, allowing organizations to pre-provision security keys (passkeys) for users. These new APIs can simplify user onboarding, and provide seamless phishing-resistant authentication on day one for employees. 
 For more information on how to use this feature, see: [Provision FIDO2 security keys using Microsoft Graph API (preview)](../identity/authentication/how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 
 ---

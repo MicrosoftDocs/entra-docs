@@ -3139,6 +3139,7 @@
   "Azure Stack Registration Owner": "6f12a6df-dd06-4f3e-bcb1-ce8be600526a",
   "MDAGetAccessToken - application": "05a65629-4c1b-48c1-a78b-804c4abdd4af",
   "MDABYOKServicePrincipal - application": "6a12de16-95c8-4e42-a451-7dbbc34634cd",
+  "Split Experimentation Resource Provider ID" : "d3e90440-4ec9-4e8b-878b-c89e889e9fbc",
   "Windows Cloud Login": "270efc09-cd0d-444b-a71f-39af4910ec45",
   "Desktop Virtualization Power On Contributor": "489581de-a3bd-480d-9518-53dea7416b33",
   "Desktop Virtualization Power On Off Contributor": "40c5ff49-9181-41f8-ae61-143b0e78555e",
