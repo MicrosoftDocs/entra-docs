@@ -279,4 +279,4 @@ After a successful sign-up flow, you can sign-in a user without initiating a sig
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md). 
+> [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md)

@@ -1,7 +1,6 @@
 ---
 title: App samples
-description: Learn how build and integrate apps with external tenants. Use code samples to test authentication scenarios such as sign up, sign in, and getting an access token to call an API.
- 
+description: Learn how to build and integrate apps with external tenants. Use code samples to test authentication scenarios such as sign-up, sign in, and getting an access token to call an API.
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
@@ -68,7 +67,7 @@ These samples and how-to guides demonstrate how to write a desktop application t
 
 ### Mobile: Browser delegated authentication
 
-These samples and how-to guides demonstrate how to write a public client mobile application with browser delegated authentication that integrates with Microsoft Entra External ID.
+These samples and how-to guides show you how to write a public client mobile application with browser-delegated authentication that integrates with Microsoft Entra External ID.
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
