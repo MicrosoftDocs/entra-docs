@@ -69,7 +69,7 @@ To configure alert notifications, you need the ID of the group you want to recei
 1. Use the following guidance to [configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true) using the API.
     - Enter the `Object ID` as the `groupId`.
 
-## Gather data / FLOW
+## Investigate the alert and signal
 
 You typically need to investigate the following data sets:
 

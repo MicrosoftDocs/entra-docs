@@ -34,7 +34,7 @@ To view the Scenario monitoring dashboards and interact with the alerts, you nee
 - The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
 
-## Gather data / INVESTIGATE
+## Investigate the alert and signal
 
 Investigating an alert starts with gathering data.
 
