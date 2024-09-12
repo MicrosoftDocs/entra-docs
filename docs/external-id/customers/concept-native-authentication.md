@@ -83,7 +83,7 @@ Once you have enabled both **Allow native authentication** and **Allow public cl
 
 ## Update your configuration code
 
-After enabling the native authentication APIs in the admin center, you still need to update your application’s configuration code to support native authentication flows for Android or iOS. To do so, you need to add the challenge type field to your configuration. Challenge types are a list of values that the app uses to notify Microsoft Entra about the authentication method it supports. You can find more information about native authentication challenge types [here](/entra/external-id/customers/concept-native-authentication-challenge-types). 
+After enabling the native authentication APIs in the admin center, you still need to update your application’s configuration code to support native authentication flows for Android or iOS/macOS. To do so, you need to add the challenge type field to your configuration. Challenge types are a list of values that the app uses to notify Microsoft Entra about the authentication method it supports. You can find more information about native authentication challenge types [here](/entra/external-id/customers/concept-native-authentication-challenge-types). 
 If the configuration isn’t updated to integrate native authentication components, the native authentication SDKs and APIs won’t be usable. 
 
 ## Risk of enabling native authentication
@@ -100,6 +100,7 @@ For more information on native authentication samples and tutorials, see the fol
 | ----------- | ----------- |----------- |
 |Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
 |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+|macOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-macos-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
 
 If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](/entra/identity-platform/reference-native-authentication-overview).
 
@@ -107,5 +108,6 @@ If you're planning to create an app on a framework currently not supported by MS
 
 - [Android native authentication tutorials](how-to-run-native-authentication-sample-android-app.md).
 - [iOS native authentication tutorials](how-to-run-native-authentication-sample-ios-app.md).
+- [macOS native authentication tutorials](how-to-run-native-authentication-sample-macosƒ-app.md).
 - [Native authentication API documentation](../../identity-platform/reference-native-authentication-overview.md).
 
