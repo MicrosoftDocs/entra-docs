@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/25/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package to include a policy for users to get and lose access package assignments automatically, without them or an administrator needing to request access.
@@ -43,14 +43,14 @@ To create a policy for an access package, you need to start from the access pack
 
 1. In the first tab, you specify the rule. Select **Edit**.
 
-1. Provide a dynamic membership rule, using the [membership rule builder](../identity/users/groups-dynamic-membership.md) or by clicking **Edit** on the rule syntax text box.
+1. Provide a rule for dynamic membership groups using the [membership rule builder](../identity/users/groups-dynamic-membership.md) or by clicking **Edit** on the rule syntax text box.
 
    > [!NOTE]
    > The rule builder might not be able to display some rules constructed in the text box, and validating a rule currently requires the you to be in the Groups Administrator role. For more information, see [rule builder in the Microsoft Entra admin center](../identity/users/groups-create-rule.md#rule-builder-in-the-azure-portal).
 
     ![Screenshot of an access package automatic assignment policy rule configuration.](./media/entitlement-management-access-package-auto-assignment-policy/auto-assignment-rule-configuration.png)
 
-1. Select **Save** to close the dynamic membership rule editor.
+1. Select **Save** to close the rule editor for dynamic membership groups.
 1. By default, the checkboxes to automatically create and remove assignments should remain checked.
 1. If you wish users to retain access for a limited time after they go out of scope, you can specify a duration in hours or days. For example, when an employee leaves the sales department, you could wish to allow them to continue to retain access for seven days to allow them to use sales apps and transfer ownership of their resources in those apps to another employee.
 1. Select **Next** to open the **Custom Extensions** tab.

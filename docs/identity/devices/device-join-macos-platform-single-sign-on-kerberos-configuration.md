@@ -26,6 +26,7 @@ This tutorial shows you how to configure Platform SSO to support Kerberos-based 
 - [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2408.0 or later
 - A Mac device enrolled in mobile device management (MDM).
 - A configured SSO extension MDM payload with Platform SSO settings by an administrator, already deployed to the device. Refer to the [Platform SSO documentation](./macos-psso.md) or [Intune deployment guide](/mem/intune/configuration/platform-sso-macos) if Intune is your MDM.
+- Deploy Microsoft Entra Kerberos, which is required for some Kerberos capabilities in on-premises Active Directory. Refer to the [Cloud Kerberos trust deployment guide for Windows Hello for Business](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust) for more details or refer directly to the [Cloud Kerberos trust configuration instructions](/entra/identity/authentication/howto-authentication-passwordless-security-key-on-premises#install-the-azureadhybridauthenticationmanagement-module) to begin the setup. If you have already deployed Windows Hello for Business with Cloud Kerberos trust or passwordless security key sign-in for Windows, then this step has already been completed.
 
 ## Set up your macOS device
 

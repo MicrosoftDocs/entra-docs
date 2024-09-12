@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 07/08/2024
+ms.date: 08/25/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -57,13 +57,13 @@ For outbound provisioning from Microsoft Entra ID to a SaaS application, relying
 
 * **Groups.** With a Microsoft Entra ID P1 or P2 license plan, you can use groups to assign access to a SaaS application. Then, when the provisioning scope is set to **Sync only assigned users and groups**, the Microsoft Entra provisioning service provisions or deprovisions users based on whether they're members of a group that's assigned to the application. The group object itself isn't provisioned unless the application supports group objects. Ensure that groups assigned to your application have the property "SecurityEnabled" set to "True".
 
-* **Dynamic groups.** The Microsoft Entra user provisioning service can read and provision users in [dynamic groups](~/identity/users/groups-create-rule.md). Keep these caveats and recommendations in mind:
+* **Dynamic groups.** The Microsoft Entra user provisioning service can read and provision users in [dynamic membership groups](~/identity/users/groups-create-rule.md). Keep these caveats and recommendations in mind:
 
   * Dynamic groups can impact the performance of end-to-end provisioning from Microsoft Entra ID to SaaS applications.
 
   * How fast a user in a dynamic group is provisioned or deprovisioned in a SaaS application depends on how fast the dynamic group can evaluate membership changes. For information about how to check the processing status of a dynamic group, see [Check processing status for a membership rule](~/identity/users/groups-create-rule.md).
 
-  * When a user loses membership in the dynamic group, it's considered a deprovisioning event. Consider this scenario when creating rules for dynamic groups.
+  * When a user loses membership in the dynamic group, it's considered a deprovisioning event. Consider this scenario when creating rules for dynamic membership groups.
 
 * **Nested groups.** The Microsoft Entra user provisioning service can't read or provision users in nested groups. The service can only read and provision users that are immediate members of an explicitly assigned group. This limitation of "group-based assignments to applications" also affects single sign-on (see [Using a group to manage access to SaaS applications](~/identity/users/groups-saasapps.md)). Instead, directly assign or otherwise [scope in](define-conditional-rules-for-provisioning-user-accounts.md) the groups that contain the users who need to be provisioned.
 
@@ -107,7 +107,7 @@ When the provisioning service is started, the first cycle will:
 
 7. Persist a watermark at the end of the initial cycle, which provides the starting point for the later incremental cycles.
 
-Some applications such as ServiceNow, G Suite, and Box support not only provisioning users, but also provisioning groups and their members. In those cases, if group provisioning is enabled in the [mappings](customize-application-attributes.md), the provisioning service synchronizes the users and the groups, and then later synchronizes the group memberships.
+Some applications such as ServiceNow, G Suite, and Box support not only provisioning users, but also provisioning groups and their members. In those cases, if group provisioning is enabled in the [mappings](customize-application-attributes.md), the provisioning service synchronizes the users and the groups, and then later synchronizes the dynamic membership group.
 
 ### Incremental cycles
 
@@ -230,7 +230,7 @@ The table describes how you can configure deprovisioning actions with the Micros
 
 * When a user or group is unassigned from an app and no longer managed with the provisioning service, a disable request is sent. At that point, the service doesn't manage the user and a delete request isn't sent when the user is deleted from the directory.
 * Provisioning a user that is disabled in Microsoft Entra ID isn't supported. They must be active in Microsoft Entra ID before they're provisioned.
-* When a user goes from soft-deleted to active, the Microsoft Entra provisioning service activates the user in the target app, but doesn't automatically restore the group memberships. The target application should maintain the group memberships for the user in inactive state. If the target application doesn't support maintaining the inactive state, you can restart provisioning to update the group memberships. 
+* When a user goes from soft-deleted to active, the Microsoft Entra provisioning service activates the user in the target app, but doesn't automatically restore the dynamic membership group. The target application should maintain the dynamic membership group for the user in inactive state. If the target application doesn't support maintaining the inactive state, you can restart provisioning to update the dynamic membership groups. 
 
 **Recommendation**
 

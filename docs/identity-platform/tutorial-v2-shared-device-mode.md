@@ -1,44 +1,36 @@
 ---
-title: "Tutorial: Use shared-device mode with the Microsoft Authentication Library (MSAL) for Android"
-description: In this tutorial, you learn how to prepare an Android device to run in shared mode and run a frontline worker app.
-author: henrymbuguakiarie
+title: "Tutorial: Add shared-device mode support to your Android application"
+description: In this tutorial, you learn how to set up an Android application to run in shared device mode.
 manager: CelesteDG
+author: henrymbuguakiarie
 ms.author: henrymbugua
-ms.date: 10/24/2023
-ms.reviewer: negoe
-ms.service: identity-platform
-
+ms.date: 08/19/2024
+ms.reviewer: amgusain, dmwendia, akgoel
+ms.service: msal
+ms.subservice: msal-android
 ms.topic: tutorial
+
 #Customer intent: As an Android developer, I want to learn how to enable shared-device mode for an Android app, so that I can configure Android devices to be shared by multiple employees and provide Microsoft Identity backed management of the device.
 ---
 
-# Tutorial: Use shared-device mode in your Android application
+# Tutorial: Add shared-device mode support to your Android application
 
-In this tutorial, Android developers and Microsoft Entra tenant administrators learn about the code, Authenticator app, and tenant settings required to enable shared-device mode for an Android app.
-
+In this tutorial, Android developers learn how to add shared device mode support in an Android application using the Microsoft Authentication Library (MSAL) for Android.
+ 
 In this tutorial:
 
 > [!div class="checklist"]
 >
-> - Download a code sample
+> - Create or modify an existing Android application project.
 > - Enable and detect shared-device mode
 > - Detect single or multiple account mode
-> - Detect a user switch, and enable global sign-in and sign-out
-> - Set up tenant and register the application
-> - Set up an Android device in shared-device mode
-> - Run the sample app
+> - Detect a user switch
+> - Enable global sign-in and sign-out
 
-## Prerequisites
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+### Create or modify an existing Android application
 
-## Developer guide
-
-This section of the tutorial provides developer guidance for implementing shared-device mode in an Android application using the Microsoft Authentication Library (MSAL). See the [MSAL Android tutorial](./tutorial-v2-android.md) to see how to integrate MSAL with your Android app, sign in a user, call Microsoft graph, and sign out a user.
-
-### Download the sample
-
-Clone the [sample application](https://github.com/Azure-Samples/ms-identity-android-java/) from GitHub. The sample has the capability to work in [single or multi account mode](./single-multi-account.md).
+To complete the rest of the tutorial, you need to create a new or modify an existing Android application. If you haven't already, see the [MSAL Android tutorial](./tutorial-v2-android.md) for guidance on how to integrate MSAL with your Android app, sign in a user, call Microsoft graph, and sign out a user.  If you prefer using a completed code sample for learning and testing, clone the [sample application](https://github.com/Azure-Samples/ms-identity-android-java/) from GitHub. The sample has the capability to work in [single or multi account mode](./single-multi-account.md).
 
 ### Add the MSAL SDK to your local Maven repository
 
@@ -49,6 +41,55 @@ dependencies{
   implementation 'com.microsoft.identity.client.msal:4.9.+'
 }
 ```
+
+### Add support for single account mode 
+
+Applications written using the Microsoft Authentication Library (MSAL) SDK can manage a single account or multiple accounts. For details, see [single-account mode or multiple-account mode](single-multi-account.md).
+
+The Microsoft identity platform features available to your app vary depending on whether the application is running in single-account mode or multiple-account mode.
+
+**Shared device mode apps only work in single-account mode**.
+
+> [!IMPORTANT]
+> Applications that only support multiple-account mode can't run on a shared device. If an employee loads an app that doesn't support single-account mode, it won't run on the shared device.
+>
+> Apps written before the MSAL SDK was released run in multiple-account mode and must be updated to support single-account mode before they can run on a shared mode device.
+**Supporting both single-account and multiple-accounts**
+
+Your app can be built to support running on both personal devices and shared devices. If your app currently supports multiple accounts and you want to support shared device mode, add support for single account mode.
+
+You may also want your app to change its behavior depending on the type of device it's running on. Use `ISingleAccountPublicClientApplication.isSharedDevice()` to determine when to run in single-account mode.
+
+There are two different interfaces that represent the type of device your application is on. When you request an application instance from MSAL's application factory, the correct application object is provided automatically.
+
+The following object model illustrates the type of object you may receive and what it means in the context of a shared device:
+
+:::image type="content" source="media/v2-shared-device-mode/ipublic-client-app-inheritance.png" alt-text="Diagram of the public client application inheritance model.":::
+
+You need to do a type check and cast to the appropriate interface when you get your `PublicClientApplication` object. The following code checks for multiple account modes or single account modes, and casts the application object appropriately:
+
+```java
+private IPublicClientApplication mApplication;
+
+        // Running in personal-device mode?
+        if (mApplication instanceOf IMultipleAccountPublicClientApplication) {
+          IMultipleAccountPublicClientApplication multipleAccountApplication = (IMultipleAccountPublicClientApplication) mApplication;
+          ...
+        // Running in shared-device mode?
+        } else if (mApplication instanceOf ISingleAccountPublicClientApplication) {
+           ISingleAccountPublicClientApplication singleAccountApplication = (ISingleAccountPublicClientApplication) mApplication;
+            ...
+        }
+```
+
+The following differences apply depending on whether your app is running on a shared or personal device:
+
+|                             | Shared mode device | Personal device                                                                                     |
+| --------------------------- | ------------------ | --------------------------------------------------------------------------------------------------- |
+| **Accounts**                | Single account     | Multiple accounts                                                                                   |
+| **Sign-in**                 | Global             | Global                                                                                              |
+| **Sign-out**                | Global             | Each application can control if the sign-out is local to the app. |
+| **Supported account types** | Work accounts only | Personal and work accounts supported                                                                |
 
 ### Configure your app to use shared-device mode
 
@@ -82,7 +123,7 @@ Here's an example of the auth_config.json file included in the **app**>**main**>
 
 ### Detect shared-device mode
 
-Shared-device mode allows you to configure Android devices to be shared by multiple employees, while providing Microsoft Identity backed management of the device. Employees can sign in to their devices and access customer information quickly. When they're finished with their shift or task, they'll be able to sign-out of all apps on the shared device with a single click and the device will be immediately ready for the next employee to use.
+Shared-device mode allows you to configure Android devices to be shared by multiple employees, while providing Microsoft Identity backed management of the device. Employees can sign in to their devices and access customer information quickly. When they're finished with their shift or task, they'll be able to sign out of all apps on the shared device with a single click and the device will be immediately ready for the next employee to use.
 
 Use `isSharedDevice()` to determine if an app is running on a device that is in shared-device mode. Your app could use this flag to determine if it should modify UX accordingly.
 
@@ -226,14 +267,9 @@ private void registerAccountChangeBroadcastReceiver(){
     this.registerReceiver(mAccountChangedBroadcastReceiver, filter);
 }
 ```
+### Register the application and set up your tenant for testing
 
-## Administrator guide
-
-The following steps describe setting up your application and putting your device into shared-device mode.
-
-### Register the application
-
-First, register the application within your organizational tenant. Then provide these values below in auth_config.json in order for your application to run correctly.
+Before you can set up your application and put your device into shared-device mode, you need to register the application within your organizational tenant. You then provide these values in *auth_config.json* for your application to run correctly.
 
 For information on how to do this, refer to [Register your application](./tutorial-v2-android.md).
 
@@ -242,51 +278,11 @@ For information on how to do this, refer to [Register your application](./tutori
 
 :::image type="content" source="media/tutorial-v2-shared-device-mode/register-app.png" alt-text="Configure your Android app page":::
 
-You should select **Make this change for me** and then provide the values the quickstart asks for. When that's done, we'll generate all the configuration files you need.
+You should select **Make this change for me** and then provide the values the quickstart asks for. When done, Microsoft Entra ID generates all the configuration files you need.
 
 :::image type="content" source="media/tutorial-v2-shared-device-mode/config-info.png" alt-text="Configure your project page":::
 
-## Set up a tenant
-
-For testing purposes, set up the following in your tenant: at least two employees, one Cloud Device Administrator, and one Application Developer. Set the Cloud Device Administrator by modifying Organizational Roles. Access your Organizational Roles by selecting **Identity** > **Roles & admins** > **Roles & admins** > **All roles**, and then select **Cloud Device Administrator**. Add the users that can put a device into shared mode.
-
-## Set up an Android device in shared mode
-
-### Download the Authenticator App
-
-Download the Microsoft Authenticator App from the Google Play store. If you already have the app downloaded, ensure that it's the latest version.
-
-### Authenticator app settings & registering the device in the cloud
-
-Launch the Authenticator App and navigate to main account page. Once you see the **Add Account** page, you're ready to make the device shared.
-
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-add-account.png" alt-text="Authenticator add account screen":::
-
-Go to the **Settings** pane using the right-hand menu bar. Select **Device Registration** under **Work & School accounts**.
-
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-settings.png" alt-text="Authenticator settings screen":::
-
-When you click this button, you'll be asked to authorize access to device contacts. This is due to Android's account integration on the device. Choose **allow**.
-
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-allow-screen.png" alt-text="Authenticator allow access confirmation screen":::
-
-The Cloud Device Administrator should enter their organizational email under **Or register as a shared device**. Then click the **register as shared device** button, and enter their credentials.
-
-:::image type="content" source="media/tutorial-v2-shared-device-mode/register-device.png" alt-text="Device registration screen in app":::
-
-:::image type="content" source="media/tutorial-v2-shared-device-mode/sign-in.png" alt-text="App screenshot showing Microsoft sign-in page":::
-
-The device is now in shared mode.
-
-:::image type="content" source="media/tutorial-v2-shared-device-mode/shared-device-mode-screen.png" alt-text="App screen showing shared device mode enabled":::
-
-Any sign-ins and sign-outs on the device will be global, meaning they apply to all apps that are integrated with MSAL and Microsoft Authenticator on the device. You can now deploy applications to the device that use shared-device mode features.
-
-## View the shared device
-
-Once you've put a device in shared-mode, it becomes known to your organization and is tracked in your organizational tenant. You can view your shared devices by looking at the **Join Type**.
-
-:::image type="content" source="media/tutorial-v2-shared-device-mode/registered-device-screen.png" alt-text="Screenshot that shows the all devices pane":::
+For testing purposes, set up the following roles in your tenant - at least two employees and a Cloud Device Administrator. To set the Cloud Device Administrator, you need to modify Organizational Roles. From the Microsoft Entra admin center, go to your Organizational Roles by selecting **Identity** > **Roles & admins** > **Roles & admins** > **All roles**, and then select **Cloud Device Administrator**. Add the users that can put a device into shared mode.
 
 ## Running the sample app
 
@@ -296,7 +292,7 @@ The Sample Application is a simple app that will call the Graph API of your orga
 
 ## Next steps
 
-Learn more about working with the Microsoft Authentication Library and shared device mode on Android devices:
+Set up an Android device to run apps in shared device mode and test your app.
 
 > [!div class="nextstepaction"] 
-> [Shared device mode for Android devices](msal-android-shared-devices.md)
+> [Shared device mode for Android devices](tutorial-mobile-android-device-shared-mode.md)

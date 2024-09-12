@@ -100,7 +100,7 @@ Enable the email one-time passcode authentication method in your external tenant
 
 1. Select **Save**.
 
-## Enable SMS as an MFA method
+## Enable SMS as an MFA method (preview)
 
 Enable the SMS authentication method in your external tenant for all users.
 

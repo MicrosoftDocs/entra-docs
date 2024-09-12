@@ -46,7 +46,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Setup Airstack for provisioning
 
-1. Sign in to your [Airstack Admin Console](https://airstack-qa.lenovosoftware.com/). Navigate to **Settings**.
+1. Sign in to your Airstack Admin Console. Navigate to **Settings**.
 
 	![Airstack Admin Console](media/airstack-provisioning-tutorial/airstackadminmenu.png)
 

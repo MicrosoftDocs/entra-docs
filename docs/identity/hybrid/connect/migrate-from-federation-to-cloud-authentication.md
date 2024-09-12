@@ -6,7 +6,7 @@ description: This article has information about moving your hybrid identity envi
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 08/25/2024
 ms.author: billmath
 author: gargi-sinha
 manager: amycolannino
@@ -162,7 +162,7 @@ Create groups for staged rollout and also for Conditional Access policies if you
 
 We recommend you use a group mastered in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. For more information, see [creating a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.yml), and this [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups).
 
-The members in a group are automatically enabled for staged rollout. Nested and dynamic groups aren't supported for staged rollout.
+The members in a group are automatically enabled for staged rollout. Nested and dynamic membership groups aren't supported for staged rollout.
 
 ### Prework for SSO
 

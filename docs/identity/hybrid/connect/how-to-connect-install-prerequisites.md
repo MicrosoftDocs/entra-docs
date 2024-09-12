@@ -68,7 +68,7 @@ To read more about securing your Active Directory environment, see [Best practic
 - Microsoft Entra Connect can't be installed on Small Business Server or Windows Server Essentials before 2019 (Windows Server Essentials 2019 is supported). The server must be using Windows Server standard or better. 
 - The Microsoft Entra Connect server must have a full GUI installed. Installing Microsoft Entra Connect on Windows Server Core isn't supported. 
 - The Microsoft Entra Connect server must not have PowerShell Transcription Group Policy enabled if you use the Microsoft Entra Connect wizard to manage Active Directory Federation Services (AD FS) configuration. You can enable PowerShell transcription if you use the Microsoft Entra Connect wizard to manage sync configuration.
-- Ensure that MS Online PowerShell (MSOL) is not blocked at the tenant level.
+- Ensure that MSOnline PowerShell (MSOL) is not blocked at the tenant level.
 - If AD FS is being deployed: 
     - The servers where AD FS or Web Application Proxy are installed must be Windows Server 2012 R2 or later. Windows remote management must be enabled on these servers for remote installation. You may require [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for Windows Server 2016 and older.
     - You must configure TLS/SSL certificates. For more information, see [Managing SSL/TLS protocols and cipher suites for AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs) and [Managing SSL certificates in AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap).
@@ -91,8 +91,8 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
 - Implement dedicated [privileged access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) for all personnel with privileged access to your organization's information systems. 
 - Follow these [additional guidelines](/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface) to reduce the attack surface of your Active Directory environment.
 - Follow the [Monitor changes to federation configuration](how-to-connect-monitor-federation-changes.md) to set up alerts to monitor changes to the trust established between your Idp and Microsoft Entra ID. 
-- Enable Multi Factor Authentication (MFA) for all users that have privileged access in Microsoft Entra ID or in AD. One security issue with using Microsoft Entra Connect is that if an attacker can get control over the Microsoft Entra Connect server they can manipulate users in Microsoft Entra ID. To prevent an attacker from using these capabilities to take over Microsoft Entra accounts, MFA offers protections so that even if an attacker manages to, such as reset a user's password using Microsoft Entra Connect they still cannot bypass the second factor.
-- Disable Soft Matching on your tenant. Soft Matching is a great feature to help transferring source of authority for existing cloud managed objects to Microsoft Entra Connect, but it comes with certain security risks. If you do not require it, you should [disable Soft Matching](how-to-connect-syncservice-features.md#blocksoftmatch).
+- Enable Multifactor Authentication (MFA) for all users that have privileged access in Microsoft Entra ID or in AD. One security issue with using Microsoft Entra Connect is that if an attacker can get control over the Microsoft Entra Connect server they can manipulate users in Microsoft Entra ID. To prevent an attacker from using these capabilities to take over Microsoft Entra accounts, MFA offers protections so that even if an attacker manages to, such as reset a user's password using Microsoft Entra Connect they still can't bypass the second factor.
+- Disable Soft Matching on your tenant. Soft Matching is a great feature to help transferring source of authority for existing cloud managed objects to Microsoft Entra Connect, but it comes with certain security risks. If you don't require it, you should [disable Soft Matching](how-to-connect-syncservice-features.md#blocksoftmatch).
 - Disable Hard Match Takeover. Hard match takeover allows Microsoft Entra Connect to take control of a cloud managed object and changing the source of authority for the object to Active Directory. Once the source of authority of an object is taken over by Microsoft Entra Connect, changes made to the Active Directory object that is linked to the Microsoft Entra object will overwrite the original Microsoft Entra data - including the password hash, if Password Hash Sync is enabled. An attacker could use this capability to take over control of cloud managed objects. To mitigate this risk, [disable hard match takeover](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryonpremisesynchronization).
 
 <a name='sql-server-used-by-azure-ad-connect'></a>
@@ -103,6 +103,7 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
   * Microsoft Entra Connect support all mainstream supported SQL Server versions up to SQL Server 2022 running on Windows. Please refer to the [SQL Server lifecycle article](/lifecycle/products/?products=sql-server) to verify the support status of your SQL Server version. SQL Server 2012 is no longer supported. Azure SQL Database *isn't supported* as a database.  This includes both Azure SQL Database and Azure SQL Managed Instance.
   * You must use a case-insensitive SQL collation. These collations are identified with a \_CI_ in their name. Using a case-sensitive collation identified by \_CS_ in their name *isn't supported*.
   * You can have only one sync engine per SQL instance. Sharing a SQL instance with MIM Sync, DirSync, or Azure AD Sync *isn't supported*.
+  * Maintain ODBC Driver for SQL Server version 17 and OLE DB Driver for SQL Server version 18 that are bundled with Microsoft Entra Connect. Upgrading ODBC/OLE DB drivers’s major or minor version aren't supported. Microsoft Entra Connect product group team will include new ODBC/OLE DB drivers as these become available and have a requirement to be updated.
 
 ### Accounts
 * You must have a Microsoft Entra Global Administrator account or Hybrid Identity Administrator account for the Microsoft Entra tenant you want to integrate with. This account must be a *school or organization account* and can't be a *Microsoft account*.
@@ -116,13 +117,13 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
 * If you have firewalls on your intranet and you need to open ports between the Microsoft Entra Connect servers and your domain controllers, see [Microsoft Entra Connect ports](reference-connect-ports.md) for more information.
 * If your proxy or firewall limit which URLs can be accessed, the URLs documented in [Office 365 URLs and IP address ranges](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) must be opened. Also see [Safelist the Microsoft Entra admin center URLs on your firewall or proxy server](/azure/azure-portal/azure-portal-safelist-urls).
   * If you're using the Microsoft cloud in Germany or the Microsoft Azure Government cloud, see [Microsoft Entra Connect Sync service instances considerations](reference-connect-instances.md) for URLs.
-* Microsoft Entra Connect (version 1.1.614.0 and after) by default uses TLS 1.2 for encrypting communication between the sync engine and Microsoft Entra ID. If TLS 1.2 isn't available on the underlying operating system, Microsoft Entra Connect incrementally falls back to older protocols (TLS 1.1 and TLS 1.0). From Microsoft Entra Connect version 2.0 onwards. TLS 1.0 and 1.1 are no longer supported and installation will fail if TLS 1.2 is not enabled.
+* Microsoft Entra Connect (version 1.1.614.0 and after) by default uses TLS 1.2 for encrypting communication between the sync engine and Microsoft Entra ID. If TLS 1.2 isn't available on the underlying operating system, Microsoft Entra Connect incrementally falls back to older protocols (TLS 1.1 and TLS 1.0). From Microsoft Entra Connect version 2.0 onwards. TLS 1.0 and 1.1 are no longer supported and installation will fail if TLS 1.2 isn't enabled.
 * Prior to version 1.1.614.0, Microsoft Entra Connect by default uses TLS 1.0 for encrypting communication between the sync engine and Microsoft Entra ID. To change to TLS 1.2, follow the steps in [Enable TLS 1.2 for Microsoft Entra Connect](#enable-tls-12-for-azure-ad-connect).
 
 >[!IMPORTANT]
 >Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
 > 
->All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
+>All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 isn't enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
 >
 >For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#powershell-script-to-check-tls-12)
 >
@@ -177,7 +178,7 @@ Microsoft Entra Connect depends on Microsoft PowerShell 5.0 and .NET Framework 4
 >[!IMPORTANT]
 >Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
 > 
->All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
+>All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 isn't enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
 >
 >For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#powershell-script-to-check-tls-12)
 >

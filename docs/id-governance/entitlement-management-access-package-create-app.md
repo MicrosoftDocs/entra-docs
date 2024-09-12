@@ -6,7 +6,7 @@ manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 04/05/2024
+ms.date: 08/25/2024
 ms.author: mwahl
 ms.reviewer: mwahl
 ---
@@ -422,7 +422,7 @@ This script assumes you have an input CSV file containing one column, `UserPrinc
 
 If your organization's policy for who can be assigned access to an application includes a rule based on user's attributes to assign and remove access automatically based on those attributes, you can represent this using an [automatic assignment policy](entitlement-management-access-package-auto-assignment-policy.md). An access package can have at most one automatic assignment policy. If you don't have a requirement for an automatic assignment, then continue at the next section.
 
-1. Specify the automatic assignment filter expression for users to receive an assignment. Change the value of `autoAssignmentPolicyFilter` to be a filter for the users in your Microsoft Entra ID that are in scope. The syntax and allowable attributes are provided in [dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
+1. Specify the automatic assignment filter expression for users to receive an assignment. Change the value of `autoAssignmentPolicyFilter` to be a filter for the users in your Microsoft Entra ID that are in scope. The syntax and allowable attributes are provided in [rules for dynamic membership groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
    ```powershell
    $autoAssignmentPolicyFilter = '(user.city -eq "Redmond")'

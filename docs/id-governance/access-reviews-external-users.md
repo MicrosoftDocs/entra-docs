@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 07/15/2024
+ms.date: 08/25/2024
 ms.author: owinfrey
 ---
 
@@ -27,7 +27,7 @@ Entitlement management features enable the [automated lifecycle of external iden
 
 ## Find guests not invited through Entitlement Management
 
-When employees are authorized to collaborate with external users, they can invite any number of users from outside your organization. Looking for and grouping external partners into company-aligned dynamic groups and reviewing them might not be feasible, as there could be too many different individual companies to review, or there's no owner or sponsor for the organization. Microsoft provides a sample PowerShell script that can help you analyze the use of external identities in a tenant. The script enumerates external identities and categorizes them. The script can help you identify and clean up external identities that might no longer be required. As part of the script’s output, the script sample supports automated creation of security groups that contain the identified group-less external partners – for further analysis and use with Microsoft Entra access reviews.
+When employees are authorized to collaborate with external users, they can invite any number of users from outside your organization. Looking for and grouping external partners into company-aligned dynamic membership groups and reviewing them might not be feasible, as there could be too many different individual companies to review, or there's no owner or sponsor for the organization. Microsoft provides a sample PowerShell script that can help you analyze the use of external identities in a tenant. The script enumerates external identities and categorizes them. The script can help you identify and clean up external identities that might no longer be required. As part of the script’s output, the script sample supports automated creation of security groups that contain the identified group-less external partners – for further analysis and use with Microsoft Entra access reviews.
 The script is available on [GitHub](https://github.com/microsoft/access-reviews-samples/tree/master/ExternalIdentityUse). After the script finishes running, it generates an HTML output file that outlines external identities that:
 
 - No longer have any group membership in the tenant

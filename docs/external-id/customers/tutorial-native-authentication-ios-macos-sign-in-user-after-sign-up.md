@@ -1,6 +1,6 @@
 ---
-title: Sign in user automatically after sign-up in an iOS app
-description: Learn how to automatically sign-in a user after sign-up in an iOS app by using native authentication.
+title: Sign in user automatically after sign-up in iOS/macOS app
+description: Learn how to automatically sign-in a user after sign-up in an iOS/macOS app by using native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -10,14 +10,16 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 06/21/2024
+ms.date: 09/02/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, I want to learn how to automatically sign-in a user after sign-up in an iOS app by using native authentication.
+#Customer intent: As a dev, devops, I want to learn how to automatically sign-in a user after sign-up in an iOS/macOS app by using native authentication.
 ---
 
-# Tutorial: Sign in user automatically after sign-up in an iOS app
+# Tutorial: Sign in user automatically after sign-up in an iOS/macOS app
 
-This tutorial demonstrates how to sign in user automatically after sign-up in an iOS app by using native authentication. 
+[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
+
+This tutorial demonstrates how to sign in user automatically after sign-up in an iOS/macOS app by using native authentication. 
 
 In this tutorial, you learn how to:  
 
@@ -28,8 +30,8 @@ In this tutorial, you learn how to:
 
 ## Prerequisites 
 
-- [Sign in users in a sample native iOS mobile application](how-to-run-native-authentication-sample-ios-app.md) 
-- [Tutorial: Add built-in attributes to sign up with email one-time passcode](tutorial-native-authentication-ios-sign-up-with-email-one-time-passcode.md) 
+- If you’re on iOS, follow the steps in [Sign in users in sample iOS (Swift) mobile app by using native authentication](how-to-run-native-authentication-sample-ios-app.md). If you’re using macOS, follow the steps in [Sign in users in sample macOS (Swift) app by using native authentication](how-to-run-native-authentication-sample-macos-app.md). These articles show you how to run sample apps that you configure using your tenant settings.
+- [Tutorial: Add sign-up in an iOS/macOS app using native authentication](tutorial-native-authentication-ios-macos-sign-up.md). The steps in this tutorial should work whether you sign up with email and password or email one-time passcode.
 
 ## Sign in after sign-up 
 
@@ -89,4 +91,4 @@ extension ViewController: CredentialsDelegate {
 ## Next step 
 
 > [!div class="nextstepaction"]
-> [Tutorial: Self-service password reset](tutorial-native-authentication-ios-self-service-password-reset.md) 
+> [Tutorial: Self-service password reset](tutorial-native-authentication-ios-macos-self-service-password-reset.md) 
