@@ -84,7 +84,7 @@ As a manager you can also request an access package for a direct employee:
 
 :::image type="content" source="media/entitlement-management-request-behalf/manager-request-questions.png" alt-text="Screenshot of manager requesting question.":::
 
-For more information on this process, see: [Request access packages on-behalf-of other users  (Preview)](entitlement-management0request-behalf.md)
+For more information on this process, see: [Request access packages on-behalf-of other users  (Preview)](entitlement-management-request-behalf.md)
 
 > [!NOTE]
 > You might notice that some of the additional requestor information has pre-populated values. This generally occurs if your account already has attribute information set, either from a previous request or other process. These values can be editable or not depending on the settings of the policy selected.
