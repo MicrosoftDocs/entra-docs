@@ -47,7 +47,7 @@ Once you find the access package in the My Access portal, you can submit a reque
 1. To request access, you can either select the row or select **Request**.
 
 1. On the **Request details** pane select whether or not you are requesting the access package for yourself, or a direct employee.
-
+    :::image type="content" source="media/entitlement-management-request-behalf/manager-request-package.png" alt-text="Screenshot of manager requesting package.":::
 1. Review the details of the access package, then select **Continue**.
 
 1. You might have to answer questions and provide business justification for your request. If there are questions that you need to answer, type in your responses in the fields.
