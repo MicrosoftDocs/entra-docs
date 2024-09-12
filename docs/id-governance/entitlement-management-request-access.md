@@ -78,7 +78,7 @@ If you request access to an access package that has multiple policies that apply
 
 You can request access to an access package that requires business justification and extra requestor information before granting you access to the access package. Fill out all the requestor information required to access the access package.
 
-![My Access portal - Request access - Fill out requestor information](./media/entitlement-management-request-access/my-access-requestor-information.png)
+        ![My Access portal - Request access](./media/entitlement-management-shared/my-access-request-access.png)
 
 As a manager you can also request an access package for a direct employee:
 
