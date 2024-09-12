@@ -15,13 +15,13 @@ ms.reviewer: sarbar
 
 # How to use Microsoft Entra scenario health alerts
 
-Microsoft Entra Health (preview) provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics that are fed into our anomaly detection service. Machine learning is used understand the patterns for your tenant so when the anomaly detection service identifies a significant change to that pattern it triggers an alert. You can now receive alerts when a potential issue or failure condition is detected within the health scenarios.
+Microsoft Entra Health (preview) provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics that are fed into our anomaly detection service. Machine learning is used to understand the patterns for your tenant so when the anomaly detection service identifies a significant change to that pattern it triggers an alert. You can now receive alerts when a potential issue or failure condition is detected within the health scenarios.
 
 This article provides guidance on how to:
 
 - Access Microsoft Entra Health in the Microsoft Entra admin center.
 - Configure email notifications for alerts.
-- Gather data to investigate an alert.
+- Investigate an alert.
 
 , view alerts, and investigate the alerts and signals. For more information on Microsoft Entra Health, see [What is Microsoft Entra Health](concept-microsoft-entra-health.md).
 
@@ -36,7 +36,7 @@ This article provides guidance on how to:
 
 ## How to access Microsoft Entra Health
 
-You can view the Microsoft Entra Health SLA attainment and Scenario monitoring (preview) from the Microsoft Entra admin center. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true). 
+You can view the Microsoft Entra Health service level agreement (SLA) attainment and Scenario monitoring (preview) from the Microsoft Entra admin center. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true). 
 
 If needed, [enable the Scenario monitoring preview](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true#view/Microsoft_AAD_IAM/FeaturePreviewsListBlade). Enabling the preview might take up to 24 hours to populate. Enabling the preview only changes your view, not the entire tenant. You can disable the preview at any time.
 
@@ -52,13 +52,13 @@ If needed, [enable the Scenario monitoring preview](https://entra.microsoft.com/
 
     ![Screenshot of the Microsoft Entra Health scenario monitoring page.](media/howto-use-health-scenario-alerts/scenario-monitoring.png)
 
-The default view is the last 7 days, but you can adjust the date range to 24 hours, 7 days, or 1 month. The data is updated every 15 minutes.
+The default view is the last seven days, but you can adjust the date range to 24 hours, seven days, or one month. The data is updated every 15 minutes.
 
-## How configure email notifications
+## Configure email notifications
 
 With the [Microsoft Graph health monitoring API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true), configure email notifications. You can manually run the API calls daily or you can configure email notifications for when an alert is triggered. 
 
-Email notifications are sent to the [Microsoft Entra group](../../fundamentals/concept-learn-about-groups.md) of your choice. We recommend sending alerts to users with the appropriate access to investigate and take action on the alerts. Not every action can be taken by every role, so consider including a group with the following roles:
+Email notifications are sent to the [Microsoft Entra group](../../fundamentals/concept-learn-about-groups.md) of your choice. We recommend sending alerts to users with the appropriate access to investigate and take action on the alerts. Not ever role can take the same action, so consider including a group with the following roles:
 
 - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)
@@ -151,7 +151,7 @@ Each scenario might have a different data set to investigate. For details on eac
 
 ## Analyze the possible root causes
 
-After you've gathered all the data related to the scenario, you need to consider possible root causes and research potential solutions. Think about the seriousness of the alert. Are only a handful of users affected, or is it a widespread issue? Did a recent policy change have unintended consequences?
+After gathering all the data related to the scenario, you need to consider possible root causes and research potential solutions. Think about the seriousness of the alert. Are only a handful of users affected, or is it a widespread issue? Did a recent policy change have unintended consequences?
 
 We recommend looking at the alerts and scenario monitoring data regularly to identify trends and potential issues before they become widespread problems. 
 

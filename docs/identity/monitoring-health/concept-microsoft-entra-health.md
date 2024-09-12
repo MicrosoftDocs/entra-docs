@@ -28,7 +28,7 @@ Machine learning now looks at these metrics and associated signals to develop a 
 
 1. When the anomaly detection service identifies a significant change to a pattern in the signal, it triggers an alert. 
 
-1. An alert is sent by email to a pre-determined set of users when the anomaly detection service identifies a significant change to the pattern. 
+1. An email alert is sent to a predetermined set of users when the anomaly detection service identifies a significant change to the pattern. 
 
 After receiving an alert, you need to research possible root causes, determine the next steps, and take action to mitigate the root cause.
 
@@ -43,7 +43,7 @@ The following key scenarios are monitored in Microsoft Entra Health:
 
 The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities. 
 
-Each scenario detail page provides trends and totals for that scenario for the last 30 days.  This data is aggregated every 15 minutes, for low latency insights into your tenant's health.
+Each scenario detail page provides trends and totals for that scenario for the last 30 days. This data is aggregated every 15 minutes, for low latency insights into your tenant's health.
 
 The scenario monitoring solution is currently in public preview and can be enabled or disabled in the Preview Hub; the SLA Attainment report is available by default.
 
@@ -62,7 +62,7 @@ At this time, the alerts are only available through the Microsoft Graph API. But
 
 ### Sign-ins to applications using SAML authentication
 
-This scenario is included in the scenario monitoring, but at this time does not trigger alerts. The scenario monitors SAML 2.0 authentication attempts that the Microsoft Entra cloud service for your tenant successfully processed. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID. This scenario is currently only available for scenario monitoring.
+This scenario is included in the scenario monitoring, but at this time doesn't trigger alerts. The scenario monitors SAML 2.0 authentication attempts that the Microsoft Entra cloud service for your tenant successfully processed. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID. This scenario is currently only available for scenario monitoring.
 
 - [Learn how the Microsoft Identity platform uses the SAML protocol](../../identity-platform/saml-protocol-reference.md)
 - [Use a SAML 2.0 IdP for single sign on](../hybrid/connect/how-to-connect-fed-saml-idp.md).
