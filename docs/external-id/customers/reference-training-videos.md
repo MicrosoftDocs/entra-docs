@@ -83,10 +83,9 @@ The second part shows how to [configure Microsoft Entra ID custom claims provide
 This video examines the benefits of using Microsoft Graph API and Microsoft Graph PowerShell for automating tasks and running batch operations. Streamline deployment with GitHub workflows to reduce integration and deployment issues, speed up release cycles, improve change management, and maintain version control across different environments.
 
 > [!VIDEO https://www.youtube.com/embed/Gnv4ISZhzgA?si=ecX14P_QNKJPpEZM]
-### How to videos
+### How-to videos
 
-These how-to videos guide you on using Microsoft Entra External ID:
+These how-to videos guide you through using Microsoft Entra External ID:
 
 - [How to use OAuth 2.0 On-Behalf-Of flow](https://youtu.be/S2uYPgxBbMw?si=YdAn75BGyFwaUZ5q) in your application and web APIs.
 - [Step-up authentication](https://youtu.be/869Opl4TQT0?si=gGLBvm6RN0u8HB7r)
--
