@@ -80,7 +80,7 @@ You can request access to an access package that requires business justification
 
 ![My Access portal - Request access](./media/entitlement-management-shared/my-access-request-access.png)
 
-As a manager you can also request an access package for a direct employee:
+If you are a manager requesting access on behalf of an employee, keep in mind that you'll be filling out the requestor information section on behalf of the employee, as well:
 
 :::image type="content" source="media/entitlement-management-request-behalf/manager-request-questions.png" alt-text="Screenshot of manager requesting question.":::
 
