@@ -173,6 +173,9 @@ PATCH https://graph.microsoft.com/v1.0/policies/authorizationPolicy
 > [!TIP]
 > To allow users to request an administrator's review and approval of an application that the user isn't allowed to consent to, [enable the admin consent workflow](configure-admin-consent-workflow.md). For example, you might do this when user consent has been disabled or when an application is requesting permissions that the user isn't allowed to grant.
 
+> [!NOTE]
+> When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](~/identity/enterprise-apps/grant-admin-consent.md) to apps that require assignment.
+
 ## Next steps
 
 - [Manage app consent policies](manage-app-consent-policies.md)
