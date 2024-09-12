@@ -56,6 +56,9 @@ To assign a user or group account to an enterprise application:
 1. Under **Select a role**, select the role that you want to assign to the user or group. If you haven't defined any roles yet, the default role is **Default Access**.
 1. On the **Add Assignment** pane, select **Assign** to assign the user or group to the application.
 
+> [!NOTE]
+> When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](~/identity/enterprise-apps/grant-admin-consent.md) to apps that require assignment.
+
 ## Unassign users, and groups, from an application
 
 1. Follow the steps on the [Assign users, and groups, to an application](#assign-users-and-groups-to-an-application-using-the-microsoft-entra-admin-center) section to navigate to the **Users and groups** pane.
@@ -127,6 +130,8 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
     # Assign the user to the app role
     New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
     ```
+> [!NOTE]
+> When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](~/identity/enterprise-apps/grant-admin-consent.md) to apps that require assignment.
 
 ## Unassign users and groups from an application using Azure AD PowerShell
 
@@ -208,6 +213,8 @@ New-MgUserAppRoleAssignment -UserId $userId -BodyParameter $params |
     Format-List Id, AppRoleId, CreationTime, PrincipalDisplayName,
     PrincipalId, PrincipalType, ResourceDisplayName, ResourceId
 ```
+> [!NOTE]
+> When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](~/identity/enterprise-apps/grant-admin-consent.md) to apps that require assignment.
 
 ## Unassign users and groups from an application using Microsoft Graph PowerShell
 
@@ -293,6 +300,9 @@ $assignments | ForEach-Object {
     ```
 
     In the example, both the resource-servicePrincipal-id and resourceId represent the enterprise application.
+
+> [!NOTE]
+> When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](~/identity/enterprise-apps/grant-admin-consent.md) to apps that require assignment.
 
 ## Unassign users and groups from an application using Microsoft Graph API
 
