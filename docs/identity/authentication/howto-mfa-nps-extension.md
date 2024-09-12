@@ -318,7 +318,8 @@ This section includes design considerations and suggestions for successful NPS e
 
 ### Configuration limitations
 
-- The NPS extension for Microsoft Entra multifactor authentication doesn't include tools to migrate users and settings from MFA Server to the cloud. For this reason, we suggest using the extension for new deployments, rather than existing deployment. If you use the extension on an existing deployment, your users have to perform proof-up again to populate their MFA details in the cloud.  
+- The NPS extension for Microsoft Entra multifactor authentication doesn't include tools to migrate users and settings from MFA Server to the cloud. For this reason, we suggest using the extension for new deployments, rather than existing deployment. If you use the extension on an existing deployment, your users have to perform proof-up again to populate their MFA details in the cloud.
+- The NPS extension doesn't support custom phone calls configured on Phone call settings. The default phone call language will be used (EN-US). 
 - The NPS extension uses the UPN from the on-premises AD DS environment to identify the user on Microsoft Entra multifactor authentication for performing the Secondary Auth. The extension can be configured to use a different identifier like alternate login ID or custom AD DS field other than UPN. For more information, see the article, [Advanced configuration options for the NPS extension for multifactor authentication](howto-mfa-nps-extension-advanced.md).
 - Not all encryption protocols support all verification methods.
    - **PAP** supports phone call, one-way text message, mobile app notification, and mobile app verification code
