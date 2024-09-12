@@ -288,6 +288,10 @@ No, the registration campaign is available only for users using Microsoft Entra 
 
 Yes, we support embedded browser views in certain applications. We don't nudge users in out of the box experiences or in browser views embedded in Windows settings.
 
+**Is Microsoft Authenticator Lite supported?** 
+
+Yes, Microsoft AUthenticator Lite is supported by the registration campaign.
+
 **Can users be nudged on a mobile device?** 
 
 The registration campaign isn't available on mobile devices.
