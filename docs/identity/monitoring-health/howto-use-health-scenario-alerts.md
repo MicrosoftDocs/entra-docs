@@ -17,88 +17,121 @@ ms.reviewer: sarbar
 
 Microsoft Entra Health (preview) provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics that are fed into our anomaly detection service. Machine learning is used understand the patterns for your tenant so when the anomaly detection service identifies a significant change to that pattern it triggers an alert. You can now receive alerts when a potential issue or failure condition is detected within the health scenarios.
 
+This article provides guidance on how to:
+
+- Access Microsoft Entra Health in the Microsoft Entra admin center.
+- Configure email notifications for alerts.
+- Gather data to investigate an alert.
+
+, view alerts, and investigate the alerts and signals. For more information on Microsoft Entra Health, see [What is Microsoft Entra Health](concept-microsoft-entra-health.md).
+
 ## Prerequisites
 
-To enable and receive scenario health alerts, you need:
-
-- A tenant with a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md) is required to view the Microsoft Entra health scenario monitoring.
-- A tenant with at least 100 monthly active user is required to view and receive alerts.
-- The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role needed to view tenant health monitoring.
-- The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is needed to view and modify Conditional Access policies.
-- The [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) role is required to configure Microsoft Graph alert notifications.
-- The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
-- The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
+[!INCLUDE [Microsoft Entra health](../../includes/licensing-health.md)]
 
 ### Known limitations
 
 - Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
-- At this time, Alerts are only available with the Microsoft Graph API.
+- At this time, alerts are only available with the Microsoft Graph API.
 
-## How it works
+## How to access Microsoft Entra Health
 
-1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Health.
+You can view the Microsoft Entra Health SLA attainment and Scenario monitoring (preview) from the Microsoft Entra admin center. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true). 
 
-1. These signals are fed into our anomaly detection service.
+If needed, [enable the Scenario monitoring preview](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true#view/Microsoft_AAD_IAM/FeaturePreviewsListBlade). Enabling the preview might take up to 24 hours to populate. Enabling the preview only changes your view, not the entire tenant. You can disable the preview at any time.
 
-1. When the anomaly detection service identifies a significant change to a pattern in the signal, it triggers an alert. 
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
-1. An alert is sent by email to a pre-determined set of users when the anomaly detection service identifies a significant change to the pattern. 
+1. Browse to **Identity** > **Monitoring and health** > **Health**.
 
-After receiving an alert, you need to research possible root causes, determine the next steps, and take action to mitigate the root cause.
+1. Select the **Scenario Monitoring** tab.
 
-## Alerts and anomaly detection
+    ![Screenshot of the Microsoft Entra Health landing page.](media/howto-use-health-scenario-alerts/identity-health-landing-page.png)
 
-With the [Microsoft Graph health monitoring API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true), you can view the alerts, configure email notifications, and update the state of the alert. You can manually run the API calls daily or you can configure email notifications.
+1. Select **View details** for the scenario you wish to investigate.
 
-> [!NOTE]
-> At this time, alerts are only available through the Microsoft Graph API.
+    ![Screenshot of the Microsoft Entra Health scenario monitoring page.](media/howto-use-health-scenario-alerts/scenario-monitoring.png)
 
-We recommend sending alerts users with these roles:
+The default view is the last 7 days, but you can adjust the date range to 24 hours, 7 days, or 1 month. The data is updated every 15 minutes.
 
-- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
+## How configure email notifications
+
+With the [Microsoft Graph health monitoring API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true), configure email notifications. You can manually run the API calls daily or you can configure email notifications for when an alert is triggered. 
+
+Email notifications are sent to the [Microsoft Entra group](../../fundamentals/concept-learn-about-groups.md) of your choice. We recommend sending alerts to users with the appropriate access to investigate and take action on the alerts. Not every action can be taken by every role, so consider including a group with the following roles:
+
+- [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)
+- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
 - [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator)
 
-To configure alert notifications, you need the ID of the group you want to receive the alerts AND the scenario alert ID.
+To configure alert notifications, you need the ID of the group you want to receive the alerts AND the scenario alert ID. You can configure different groups to receive alerts for different alert scenarios.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator).
+### Locate the group's Object ID
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Groups** > **All groups** > and select the group you want to receive the alerts.
 1. Select **Properties** and copy the `Object ID` of the group. 
-1. Sign in to [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) and consent to the appropriate permissions.
+
+    ![Screenshot of the group properties in the Microsoft Entra admin center.](media/howto-use-health-scenario-alerts/locate-group-id.png)
+
+### Locate the scenario alert ID
+
+1. Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) and consent to the appropriate permissions.
 1. Select **GET** as the HTTP method from the dropdown and set the API version to **beta**.
-1. Use the following guidance to [configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true) using the API.
-    - Enter the `Object ID` as the `groupId`.
+1. Run the following query to retrieve the list of alerts for your tenant.
 
-## Investigate the alert and signal
+    ```http
+    GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
+    ```
+1. Locate and save the `id` of the alert you want to investigate.
 
-You typically need to investigate the following data sets:
+### Configure the email notifications
 
-- Impact summary from the alerts API
-    - Review the impact of the alert
-- Signal details from the API
-    - Inspect the data stream/signal that caused the alert
-- Sign-in logs
-- Scenario-specific resources
-    - Based on ...
+1. In Microsoft Graph Explorer, run the following PATCH query to configure email notifications for alerts.
 
-### View the signal and impact summary
+    - Replace `{alertConfigurationId}` with the `id` of the alert you want to configure.
+    - Replace `Object ID of the group` with the `Object ID` of the group you want to receive the alerts.
+    - For more information, see [configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true).
 
-In Microsoft Graph, add the following query to retrieve all alerts for your tenant.
+    ```http
+    PATCH https://graph.microsoft.com/beta/reports/healthMonitoring/alertConfigurations/{alertConfigurationId}
+    Content-Type: application/json
+
+    {
+        "groupId": "Object ID of the group",
+        "isEnabled": true
+    }
+    ```
+
+## Investigate the alert and signals
+
+With the email notifications configured, you and your team can more effectively monitor the health of these scenarios. When you receive an alert, you typically need to investigate the following data sets:
+
+- **Alert API impacts**: The portion of the response after `impacts` make up the impact summary for the alert. These details include the `impactCount` so you can determine how widespread the issue is.  
+- **Alert API signals**: The data stream, or signal, that caused the alert. A query is provided for further investigation.
+- **Sign-in logs**: A query is provided for further investigation.
+- **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies. In many cases, a link to related documentation is provided in the alert.
+
+### View the impacts and signals
+
+1. In Microsoft Graph, add the following query to retrieve all alerts for your tenant.
 
 ```http
 GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
 ```
 
-To view the impact summary for a specific alert, you need to save the `id` of the alert you want to investigate. Add the following query, using `id` as the `alertId`.
+1. Locate and save the `id` of the alert you want to investigate.
 
-```http
-GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
-```
+1. Add the following query, using `id` as the `alertId`.
 
+    ```http
+    GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
+    ```
+For sample requests and responses, see [Health  monitoring List alert objects](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true).
 - The portion of the response after `impacts` make up the impact summary for the alert.
 - The `supportingData` portion includes the full query used to generate the alert.
 - The results of the query include everything identified by the detection service, but there might be results that aren't directly related to the alert.
-- We recommend pulling the API daily for regular monitoring of the alerts.
 
 ### View the sign-in logs
 
@@ -109,14 +142,18 @@ GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
     - Add a **filter** for Conditional Access.
     - Select a log entry to view the sign-in logs details and select the Conditional Access tab to see the policies that were applied.
 
-## Analyze the possible root causes
+### View the scenario-specific resources
 
-Now that you've gathered all the data related to the scenario, you need to consider possible root causes and research potential solutions. Think about the seriousness of the alert. Are only a handful of users affected, or is it a widespread issue? Did a recent policy change have unintended consequences?
-
-Each scenario has a set of root causes and solutions to consider. For details on each scenario, see the following articles:
+Each scenario might have a different data set to investigate. For details on each scenario, see the following articles:
 
 - [Sign-ins requiring a compliant or managed device](scenario-health-sign-ins-compliant-device.md)
 - [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
+
+## Analyze the possible root causes
+
+After you've gathered all the data related to the scenario, you need to consider possible root causes and research potential solutions. Think about the seriousness of the alert. Are only a handful of users affected, or is it a widespread issue? Did a recent policy change have unintended consequences?
+
+We recommend looking at the alerts and scenario monitoring data regularly to identify trends and potential issues before they become widespread problems. 
 
 ## Next steps
 
