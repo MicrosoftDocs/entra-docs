@@ -15,15 +15,13 @@ ms.reviewer: sarbar
 
 # How to use Microsoft Entra scenario health alerts
 
-Microsoft Entra Health (preview) provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics that are fed into our anomaly detection service. Machine learning is used to understand the patterns for your tenant so when the anomaly detection service identifies a significant change to that pattern it triggers an alert. You can now receive alerts when a potential issue or failure condition is detected within the health scenarios.
+Microsoft Entra Health (preview) provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics. Those metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change to that pattern it triggers an alert. You can also receive email notifications when a potential issue or failure condition is detected within the health scenarios. For more information on Microsoft Entra Health, see [What is Microsoft Entra Health](concept-microsoft-entra-health.md).
 
 This article provides guidance on how to:
 
-- Access Microsoft Entra Health in the Microsoft Entra admin center.
+- Access Microsoft Entra Health.
 - Configure email notifications for alerts.
 - Investigate an alert.
-
-, view alerts, and investigate the alerts and signals. For more information on Microsoft Entra Health, see [What is Microsoft Entra Health](concept-microsoft-entra-health.md).
 
 ## Prerequisites
 
@@ -56,16 +54,16 @@ The default view is the last seven days, but you can adjust the date range to 24
 
 ## Configure email notifications
 
-With the [Microsoft Graph health monitoring API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true), configure email notifications. You can manually run the API calls daily or you can configure email notifications for when an alert is triggered. 
+With the [Microsoft Graph health monitoring API](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true), you can configure email notifications. You can manually run the API calls daily or you can configure email notifications for when an alert is triggered. We recommend daily monitoring of the scenario monitoring and alerts.
 
-Email notifications are sent to the [Microsoft Entra group](../../fundamentals/concept-learn-about-groups.md) of your choice. We recommend sending alerts to users with the appropriate access to investigate and take action on the alerts. Not ever role can take the same action, so consider including a group with the following roles:
+Email notifications are sent to the [Microsoft Entra group](../../fundamentals/concept-learn-about-groups.md) of your choice. We recommend sending alerts to users with the appropriate access to investigate and take action on the alerts. Not every role can take the same action, so consider including a group with the following roles:
 
 - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)
 - [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
 - [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator)
 
-To configure alert notifications, you need the ID of the group you want to receive the alerts AND the scenario alert ID. You can configure different groups to receive alerts for different alert scenarios.
+To configure alert notifications, you need the ID of the Microsoft Entra group you want to receive the alerts AND the scenario alert ID. You can configure different groups to receive alerts for different alert scenarios.
 
 ### Locate the group's Object ID
 
@@ -88,38 +86,37 @@ To configure alert notifications, you need the ID of the group you want to recei
 
 ### Configure the email notifications
 
-1. In Microsoft Graph Explorer, run the following PATCH query to configure email notifications for alerts.
+In Microsoft Graph Explorer, run the following PATCH query to configure email notifications for alerts.
 
-    - Replace `{alertConfigurationId}` with the `id` of the alert you want to configure.
-    - Replace `Object ID of the group` with the `Object ID` of the group you want to receive the alerts.
-    - For more information, see [configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true).
+- Replace `{alertConfigurationId}` with the `id` of the alert you want to configure.
+- Replace `Object ID of the group` with the `Object ID` of the group you want to receive the alerts.
+- For more information, see [configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true).
 
-    ```http
-    PATCH https://graph.microsoft.com/beta/reports/healthMonitoring/alertConfigurations/{alertConfigurationId}
-    Content-Type: application/json
-
-    {
-        "groupId": "Object ID of the group",
-        "isEnabled": true
-    }
-    ```
+```http
+PATCH https://graph.microsoft.com/beta/reports/healthMonitoring/alertConfigurations/{alertConfigurationId}
+Content-Type: application/json
+{
+    "groupId": "Object ID of the group",
+    "isEnabled": true
+}
+```
 
 ## Investigate the alert and signals
 
 With the email notifications configured, you and your team can more effectively monitor the health of these scenarios. When you receive an alert, you typically need to investigate the following data sets:
 
 - **Alert API impacts**: The portion of the response after `impacts` make up the impact summary for the alert. These details include the `impactCount` so you can determine how widespread the issue is.  
-- **Alert API signals**: The data stream, or signal, that caused the alert. A query is provided for further investigation.
-- **Sign-in logs**: A query is provided for further investigation.
-- **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies. In many cases, a link to related documentation is provided in the alert.
+- **Alert API signals**: The data stream, or signal, that caused the alert. A query is provided in the response for further investigation.
+- **Sign-in logs**: A query is provided in the response for further investigation.
+- **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies. In many cases, a link to related documentation is provided in the response.
 
 ### View the impacts and signals
 
 1. In Microsoft Graph, add the following query to retrieve all alerts for your tenant.
 
-```http
-GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
-```
+    ```http
+    GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
+    ```
 
 1. Locate and save the `id` of the alert you want to investigate.
 

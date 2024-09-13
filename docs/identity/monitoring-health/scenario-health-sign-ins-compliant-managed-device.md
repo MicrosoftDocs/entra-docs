@@ -15,7 +15,7 @@ ms.reviewer: sarbar
 
 # How to investigate the sign-ins requiring a compliant or managed device alert
 
-Microsoft Entra Health (preview) provides a set of health metrics you can monitor and receive alerts when a potential issue or failure condition is detected. Tenant health monitoring aggregates several health signals and alerts across different services and scenarios. This scenario captures user authentication that satisfies a Conditional Access policy requiring signing in from a compliant or managed device. Alerts for this scenario include, for example, a large increase in users being blocked from signing in based on the compliant device policy.
+Microsoft Entra Health (preview) aggregates several health signals and alerts across different services and scenarios. This scenario captures user authentication that satisfies a Conditional Access policy requiring signing in from a compliant or managed device. Alerts for this scenario include, for example, a large increase in users being blocked from signing in based on the compliant device policy.
 
 To learn more about how Microsoft Entra Health works, see:
 
@@ -26,53 +26,47 @@ This article describes these health metrics and how to troubleshoot the issue wh
 
 ## Prerequisites
 
-To view the Scenario monitoring dashboards and interact with the alerts, you need:
-
-- A tenant with a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md)
-- The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role needed to view tenant health monitoring.
-- The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is needed to view and modify Conditional Access policies.
-- The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
-- The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
+[!INCLUDE [Microsoft Entra health](../../includes/licensing-health.md)]
 
 ## Investigate the alert and signal
 
 Investigating an alert starts with gathering data.
 
 1. Gather the signal details and impact summary.
-    - [Microsoft Graph health monitoring overview](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true)
-    - Run the [List alerts](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true) API to retrieve all alerts for the tenant
-    - Run the [Get alert](/graph/api/healthmonitoring-alert-get?view=graph-rest-beta&preserve-view=true) API to retrieve the details of a specific alert
+    - For more information, see [Microsoft Graph health monitoring overview](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
+    - Run the [List alerts](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true) API to retrieve all alerts for the tenant.
+    - Run the [Get alert](/graph/api/healthmonitoring-alert-get?view=graph-rest-beta&preserve-view=true) API to retrieve the details of a specific alert.
 1. Review your Intune device compliance policies.
-    - [Intune device compliance overview](/mem/intune/protect/device-compliance-get-started)
-    - [Monitor device compliance policies](/mem/intune/protect/compliance-policy-monitor)
+    - For more information, see [Intune device compliance overview](/mem/intune/protect/device-compliance-get-started).
+    - Learn how to [Monitor device compliance policies](/mem/intune/protect/compliance-policy-monitor).
     - If you're not using Intune, review your device management solution's compliance policies
 1. Investigate common Conditional Access issues.
-    - [Troubleshoot Conditional Access device compliance policies](/troubleshoot/mem/intune/device-protection/troubleshoot-conditional-access#devices-appear-compliant-but-users-are-still-blocked)
-    - [Troubleshoot Conditional Access sign-in problems](../conditional-access/troubleshoot-conditional-access.md)
+    - [Troubleshoot Conditional Access device compliance policies](/troubleshoot/mem/intune/device-protection/troubleshoot-conditional-access#devices-appear-compliant-but-users-are-still-blocked).
+    - [Troubleshoot Conditional Access sign-in problems](../conditional-access/troubleshoot-conditional-access.md).
 1. Review the sign-in logs.
-    - [Review the sign-in log details](concept-sign-in-log-activity-details.md)
-    - Look for users being blocked from signing in *and* have a compliant device policy applied
+    - [Review the sign-in log details](concept-sign-in-log-activity-details.md).
+    - Look for users being blocked from signing in *and* have a compliant device policy applied.
 1. Check the audit logs for recent policy changes.
-    - [Use the audit logs to troubleshoot Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md)
+    - [Use the audit logs to troubleshoot Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md).
 
 ## Mitigate common issues
 
-The following scenarios are common issues that could cause a spike in sign-ins requiring a compliant or managed device. These scenarios are closely related and the mitigation steps are the same. This list is not exhaustive, but provides a starting point for your investigation.
+The following scenarios are common issues that could cause a spike in sign-ins requiring a compliant or managed device. This list is not exhaustive, but provides a starting point for your investigation.
 
 ### Many users are blocked from signing in from known devices
 
 If a large group of users are blocked from signing in from known devices, a spike could indicate that the these devices have fallen out of compliance.
 
-- Check your Intune compliant device policy.
-- Check your Conditional Access compliant device policy.
+- Check your [Intune device compliance policy](/mem/intune/protect/device-compliance-get-started).
+- Check your [Conditional Access device compliance policies](/troubleshoot/mem/intune/device-protection/troubleshoot-conditional-access#devices-appear-compliant-but-users-are-still-blocked).
 
 ### User is blocked from signing in from an unknown device
 
 If the increase in blocked sign-ins is coming from an unknown device, that spike could indicate that an attacker has acquired a user's credentials and is attempting to sign in from a device used for such attacks.
 
-- Review the sign-in logs.
+- [Review the sign-in logs](../monitoring-health/concept-sign-in-log-activity-details.md).
 - [Investigate risk with Microsoft Entra ID Protection](../../id-protection/howto-identity-protection-investigate-risk.md).
-    - Requires a Microsoft Entra ID P2 license.
+    - Note: Microsfot Entra ID Protection requires a Microsoft Entra P2 license.
 
 ## Next steps
 

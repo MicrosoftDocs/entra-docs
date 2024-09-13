@@ -27,25 +27,19 @@ This article describes these health metrics and how to troubleshoot the issue wh
 
 ## Prerequisites
 
-To view the Scenario monitoring dashboards, you need:
-
-- A tenant with a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md)
-- The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role needed to view tenant health monitoring.
-- The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is needed to view and modify Conditional Access policies.
-- The `HealthMonitoringAlert.Read.All` permission is required to view the alerts using the Microsoft Graph API.
-- The `HealthMonitoringAlert.ReadWrite.All` permission is required to view and modify the alerts using the Microsoft Graph API.
+[!INCLUDE [Microsoft Entra health](../../includes/licensing-health.md)]
 
 ## Gather data
 
 Investigating an alert starts with gathering data.
 
 1. Gather the signal details and impact summary.
-    - [Microsoft Graph health monitoring overview](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true)
+    - For more information, see [Microsoft Graph health monitoring overview](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
 1. Review the sign-in logs.
-    - [Review the sign-in log details](concept-sign-in-log-activity-details.md)
-    - Look for users being blocked from signing in *and* have a Conditional Access policy requiring MFA applied
+    - [Review the sign-in log details](concept-sign-in-log-activity-details.md).
+    - Look for users being blocked from signing in *and* have a Conditional Access policy requiring MFA applied.
 1. Check the audit logs for recent policy changes.
-    - [Use the audit logs to troubleshoot Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md)
+    - [Use the audit logs to troubleshoot Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md).
 
 ## Mitigate common issues
 
@@ -60,13 +54,12 @@ To investigate:
 - Check the sign-in logs for failed MFA sign-in attempts.
     - Look for patterns like common IP address locations or multiple failed sign-ins from the same user.
 - Use the [sign-in diagnostic](howto-use-sign-in-diagnostics.md) from the sign-in logs.
-    - Rule out standard user error issues or initial MFA setup
-    - 
+    - Rule out standard user error issues or initial MFA setup issues.
 - Check your system and network health to see if an outage or update matches the time frame as the anomaly.
 - Check the audit logs for recent policy changes that could have triggered the spike.
 
 ## Next steps
 
-- [Configure Conditional Access for MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md).
-- [Troubleshoot common sign-in errors](howto-troubleshoot-sign-in-errors.md).
-- [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access).
+- [Configure Conditional Access for MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
+- [Troubleshoot common sign-in errors](howto-troubleshoot-sign-in-errors.md)
+- [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access)

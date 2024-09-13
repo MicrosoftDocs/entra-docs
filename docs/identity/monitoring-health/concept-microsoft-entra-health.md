@@ -28,9 +28,9 @@ Machine learning now looks at these metrics and associated signals to develop a 
 
 1. When the anomaly detection service identifies a significant change to a pattern in the signal, it triggers an alert. 
 
-1. An email alert is sent to a predetermined set of users when the anomaly detection service identifies a significant change to the pattern. 
+1. When the alert is triggered, an email notification is sent to a predetermined set of users. 
 
-After receiving an alert, you need to research possible root causes, determine the next steps, and take action to mitigate the root cause.
+1. After receiving an alert, you need to research possible root causes, determine the next steps, and take action to mitigate the root cause.
 
 ## Microsoft Entra Health scenario monitoring (preview) 
 
