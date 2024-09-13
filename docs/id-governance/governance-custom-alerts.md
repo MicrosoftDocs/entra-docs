@@ -117,6 +117,7 @@ AuditLogs
 | extend Key = tostring(AdditionalDetailsParsed.key), Value = tostring(AdditionalDetailsParsed.value)
 | summarize make_set(Key), make_set(Value) by ActivityDisplayName, CorrelationId
 | where set_has_element(set_Key, "IsApprovalRequiredForAdd") and set_has_element(set_Value, "False")
+| where set_has_element(set_Key, "SpecificAllowedTargets") and not(set_has_element(set_Value, "None"))
 ```
 
 ## Lifecycle workflows
