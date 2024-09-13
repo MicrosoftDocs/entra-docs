@@ -313,41 +313,34 @@ Similar to initial sync, you can also use multiple options to obtain the CSV ext
 
 ## Writeback from Microsoft Entra ID to Oracle HCM
 
-After you've synchronized your worker data from Oracle HCM using the Inbound Provisioning API, you may want to configure writeback from the Microsoft Entra Provisioning Service to Oracle HCM. Writeback is the process of sending user changes that occur in Microsoft Entra ID back to Oracle HCM, such as username, email, and phone numbers. This process ensures that your data is consistent and accurate across both systems.
+After you have synchronized your user data from Oracle HCM to Microsoft Entra ID / on premises Active Directory using the Inbound Provisioning API, you may want to configure writeback from the Microsoft Entra Provisioning Service to Oracle HCM. Writeback is the process of sending user changes that occur in Entra ID back to Oracle HCM, such as username, email, and password. This ensures that your user data is consistent and accurate across both systems.
 
-To configure writeback, you'll need to use the [Oracle HCM SCIM APIs (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html). These APIs are RESTful web services that allow you to create, update, and delete users in Oracle HCM from an external source, such as Microsoft Entra. You can use the Microsoft Entra Provisioning Service to connect Microsoft Entra to the Oracle HCM SCIM APIs and map the user attributes that you want to writeback.
+To configure writeback, you'll need to use the Oracle HCM SCIM APIs. The [Oracle HCM SCIM APIs (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html) are RESTful web services that allow you to create, update, and delete users in Oracle HCM from an external source, such as Entra. You can use the existing Oracle Fusion ERP provisioning connector in the Microsoft Entra App Gallery to connect to the Oracle HCM SCIM APIs and map the user attributes that you want to write back.
 
-To set up writeback, you'll need to configure an outbound provisioning job to your Oracle HCM tenant. To configure writeback, you'll need the following info:
+To set up writeback you’ll need to configure an outbound provisioning job to your Oracle HCM tenant. To configure writeback, you’ll need the following info: 
 
-- **REST server URL**, which is normally the URL of your Oracle Cloud Service. It should look something like this:
-    [https://servername.fa.us2.oraclecloud.com](https://servername.fa.us2.oraclecloud.com/hcmRestApi/scim).
+- **Admin username and password:** You'll need the details of the admin account that has access to Oracle HCM and can invoke the HCM [User update API](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fcloud%2Fsaas%2Fapplications-common%2F24a%2Ffarca%2FExternal_IDM_as_Source_For_Email.html&data=05%7C02%7Crahunair%40microsoft.com%7Ca7d5bec5410a484e4d6208dcbcc93506%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638592819627654667%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=F094mAefz1hjtSJY0nX4K%2FHCLIRD%2F1WeHMX7KuqG350%3D&reserved=0).
 
-- **Secret token** from HCM environment that provides your HCM tenant with access to other systems, such as Microsoft Entra.
 
-    - Create an OAUTH token in HCM and save it for use in the steps here. You can create an OAUTH token by going to step four in the following [guide (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html).
+Follow these steps to configure the writeback job to Oracle HCM using the Oracle Fusion ERP connector: 
 
-Once you have your REST server URL and your secret token, follow the steps here to configure the writeback job in Microsoft Entra:
+1.  In the Microsoft Entra Enterprise App Gallery, search for the app Oracle Fusion ERP.
 
-1.  Create a new Enterprise application.
+1.  Refer to [Oracle Fusion ERP](https://go.microsoft.com/fwlink/?linkid=2286440) to configure writeback using the Oracle Fusion ERP app.
 
-1.  Select the **Provisioning** option and switch the mode to **Automatic**.
+1.  When you're prompted to enter a URL and admin username and password, use the URL specified in the instructions and enter the admin username and password of the account that has access to Oracle HCM and can invoke HCM [User update API](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fcloud%2Fsaas%2Fapplications-common%2F24a%2Ffarca%2FExternal_IDM_as_Source_For_Email.html&data=05%7C02%7Crahunair%40microsoft.com%7Ca7d5bec5410a484e4d6208dcbcc93506%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638592819627654667%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=F094mAefz1hjtSJY0nX4K%2FHCLIRD%2F1WeHMX7KuqG350%3D&reserved=0).
 
-1.  Enter the endpoint URL of your Oracle HCM tenant and the authentication token in the **REST server URL** and **Secret token** fields.
+1.  Follow the guidance in the Oracle Fusion ERP tutorial to edit attribute mappings and provision specific users back to Oracle HCM.
 
-1.  Test the connection, then save the settings.
+1.  In the edit Attribute Mapping section, select only the **Update** operation under **target object actions**.  
 
-1.  Go back to the **Provisioning overview** page for this application and select **Edit provisioning**. Click the arrow under mappings, then select the link of the mapping schema.
+1.  You'll see that HCM attributes are automatically populated in the attribute mappings section. Remove attributes that you don't want to write back.
 
-1.  In the edit **Attribute Mapping** section, select only the **Update**
-    operation under **Target object actions**.
+1.  Save the settings and enable the provisioning status.
 
-1.  You'll notice that HCM attributes are automatically populated in the **Attribute mappings** section. Only remove attributes that you don't want to writeback data.
+1.  Use Entra’s Provision on Demand capability to test and validate the writeback integration.
 
-1.  Save the settings, then enable the provisioning status.
-
-1.  Use Microsoft Entra's [Provision on Demand](~/identity/app-provisioning/provision-on-demand.md) capability to test and validate the writeback integration.
-
-1. Once you've validated the workflow, start the job and keep it running for Microsoft Entra to continuously sync data back to Oracle HCM.
+1.  Once you have validated the workflow, start the job and keep it running for Entra to continuously sync data back to Oracle HCM. 
 
 ## Appendix
 
