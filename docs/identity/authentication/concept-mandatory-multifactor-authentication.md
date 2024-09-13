@@ -141,7 +141,7 @@ An option to postpone the enforcement start date is available for customers. Bet
  
 **Question**: Can I test MFA before Azure enforces the policy to ensure nothing breaks? 
 
-**Answer**: Yes, the customer can [test their MFA](~/identity/authentication/tutorial-enable-azure-mfa.md#test-microsoft-entra-multifactor-authentication) through the manual setup process for MFA. We encourage customers to set this up themselves and test. If you use Conditional Access to enforce MFA, you can use Conditional Access templates to test your policy. For more information, see [Require multifactor authentication for admins accessing Microsoft admin portals](~/identity/conditional-access/how-to-policy-mfa-admin-portals.md). If you run a free edition of Microsoft Entra ID, you can enable [security defaults](~/identity/fundamentals/security-defaults.md). 
+**Answer**: Yes, the customer can [test their MFA](~/identity/authentication/tutorial-enable-azure-mfa.md#test-microsoft-entra-multifactor-authentication) through the manual setup process for MFA. We encourage customers to set this up themselves and test. If you use Conditional Access to enforce MFA, you can use Conditional Access templates to test your policy. For more information, see [Require multifactor authentication for admins accessing Microsoft admin portals](~/identity/conditional-access/how-to-policy-mfa-admin-portals.md). If you run a free edition of Microsoft Entra ID, you can enable [security defaults](~/fundamentals/security-defaults.md). 
 
 **Question**: What if I already have MFA enabled, what happens next? 
 
