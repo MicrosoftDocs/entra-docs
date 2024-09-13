@@ -313,7 +313,7 @@ Similar to initial sync, you can also use multiple options to obtain the CSV ext
 
 ## Writeback from Microsoft Entra ID to Oracle HCM
 
-After you have synchronized your user data from Oracle HCM to Microsoft Entra ID / on premises Active Directory using the Inbound Provisioning API, you may want to configure writeback from the Microsoft Entra Provisioning Service to Oracle HCM. Writeback is the process of sending user changes that occur in Entra ID back to Oracle HCM, such as username, email, and password. This ensures that your user data is consistent and accurate across both systems.
+After you've synchronized your user data from Oracle HCM to Microsoft Entra ID / on premises Active Directory using the Inbound Provisioning API, you may want to configure writeback from the Microsoft Entra Provisioning Service to Oracle HCM. Writeback is the process of sending user changes that occur in Entra ID back to Oracle HCM, such as username, email, and password. This ensures that your user data is consistent and accurate across both systems.
 
 To configure writeback, you need to use the Oracle HCM SCIM APIs. The [Oracle HCM SCIM APIs (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html) are RESTful web services that allow you to create, update, and delete users in Oracle HCM from an external source, such as Entra. You can use the existing Oracle Fusion ERP provisioning connector in the Microsoft Entra App Gallery to connect to the Oracle HCM SCIM APIs and map the user attributes that you want to write back.
 
