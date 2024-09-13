@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/11/2024
+ms.date: 09/13/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -81,7 +81,7 @@ Regardless of any roles they have or don't have, all users who access the admin 
   - If you don't have a Microsoft Entra ID P1 or P2 license, you can enable [security defaults](~/fundamentals/security-defaults.md). Users are prompted for MFA as needed, but you can't define your own rules to control the behavior.
   - If your license doesn't include Conditional Access and you don't want to use security defaults, you can configure [per-user MFA](~/identity/authentication/howto-mfa-userstates.md). When you enable users individually, they perform MFA each time they sign in. An Authentication Administrator can enable some exceptions.
   
-Use the followng resources to find users whsign in with and without MFA: 
+Use the followng resources to find users who sign in with and without MFA: 
 
 - To identify user sign-ins that aren't protected by MFA, use the [Multifactor Authentication Gaps workbook](~/identity/monitoring-health/workbook-mfa-gaps.md).
 - To export a list of users and their authentication methods, use [PowerShell](https://aka.ms/AzMFA).
@@ -128,7 +128,7 @@ An option to postpone the enforcement start date is available for customers. Bet
  
 **Question**: Can I test MFA before Azure enforces the policy to ensure nothing breaks? 
 
-**Answer**: Yes, the customer can [test their MFA](~/identity/authentication/tutorial-enable-azure-mfa.md#test-microsoft-entra-multifactor-authentication) through the manual setup process for MFA. We encourage customers to set this up themselves and test, please work with your user community to extend their controls beyond the Azure portal and apply to CLI/API and other sign-ins. 
+**Answer**: Yes, the customer can [test their MFA](~/identity/authentication/tutorial-enable-azure-mfa.md#test-microsoft-entra-multifactor-authentication) through the manual setup process for MFA. We encourage customers to set this up themselves and test. 
  
 
 **Question**: What if I already have MFA enabled, what happens next? 
