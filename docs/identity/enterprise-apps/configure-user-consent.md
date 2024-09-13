@@ -76,7 +76,7 @@ $body = @{
         "managePermissionGrantsForOwnedResource.{other-current-policies}" 
     )
 }
-Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId authorizationPolicy -BodyParameter $body
+Update-MgPolicyAuthorizationPolicy -BodyParameter $body
 
 ```
 
@@ -91,7 +91,7 @@ $body = @{
         "managePermissionGrantsForOwnedResource.{other-current-policies}"
     )
 }
-Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId authorizationPolicy -BodyParameter $body
+Update-MgPolicyAuthorizationPolicy -BodyParameter $body
 ```
 
 Replace `{consent-policy-id}` with the ID of the policy you want to apply. You can choose a [custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy-using-powershell) that you've created, or you can choose from the following built-in policies:
