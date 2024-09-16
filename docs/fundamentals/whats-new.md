@@ -71,9 +71,11 @@ As part of ongoing security hardening, Microsoft removes unused permissions from
 **Service category:** MFA   
 **Product capability:** End User Experiences    
 
-Starting late August 2024, the *Add sign-in method* dialog on the My Security-Info page updates with improved sign-in method descriptions, and a modern look and feel. With this change when users select *Add sign-in method*, they initially are recommended to register the strongest method available to them, allowing organizational authentication method policy. Users have the ability to select *Show more options* and choose from all available sign-in methods allowed by their policy. 
+Starting Mid-October 2024, the *Add sign-in* method dialog on the My Security-Info page will be updated with a modern look and feel. With this change new descriptors will be added under each method which provides detail to users on how the sign-in method is used (ex. *Microsoft Authenticator – Approve sign-in requests* or *use one-time codes*).  
 
-This change occurs automatically, so admins take no action.
+Early next year the *Add sign-in* method, dialog will be enhanced to show an initially recommended sign-in method instead of initially showing the full list of sign-in methods available to register. The recommended sign-in method will default to the strongest method available to the user based on the organization’s authentication method policy. Users can select *Show more options* and choose from all available sign-in methods allowed by their policy.
+
+This change will occur automatically, so admins take no action.
 
 ---
 
