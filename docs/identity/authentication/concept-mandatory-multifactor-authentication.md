@@ -146,6 +146,10 @@ An option to postpone the enforcement start date is available for customers. Bet
 **Answer**: Users should not be locked out, but they may get a message that prompts them to enable MFA once enforcement for their tenant has started. If the user is locked-out, there may be other issues. For more information, see [Account has been locked](https://support.microsoft.com/en-us/account-billing/account-has-been-locked-805e8b0d-4141-29b2-7b65-df6ff6c9ce27).  
 
 
+**Question**: How can I identify a sign-in log where MFA was enforced by the mandatory multifactor authentication (MFA)?
+
+**Answer**: The sign-in logs will show "MFA is explicitly enforced by the client application Browser" if you run the sign-in diagnostic.
+
 ## Next steps
 
 
