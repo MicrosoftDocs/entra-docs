@@ -111,7 +111,7 @@ Learn more about the [application user activity dashboards](how-to-user-insights
 
 ## About Azure AD B2C
 
-If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID . Opt for the current Azure AD B2C product if:
+If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID. Opt for the current Azure AD B2C product if:
 
 - You have an immediate need to deploy a production ready build.
   
@@ -125,5 +125,6 @@ Opt for the next generation Microsoft Entra External ID platform if:
 
 ## Next steps
 
+- See our [training, live demos, and videos](reference-training-videos.md).
 - Learn more about [planning for Microsoft Entra External ID](concept-planning-your-solution.md).
 - See also the [Microsoft Entra External ID Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.

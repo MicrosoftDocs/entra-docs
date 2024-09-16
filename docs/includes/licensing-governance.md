@@ -93,5 +93,5 @@ Using this feature requires Microsoft Entra ID Governance subscriptions for your
 
 | Scenario | Calculation | Number of licenses |
 | --- | --- | --- |
-| A Lifecycle Workflows Administrator creates a workflow to add new hires in the Marketing department to the Marketing teams group. 250 new hires are assigned to the Marketing teams group via this workflow. | 1 license for the Lifecycle Workflows Administrator, and 250 licenses for the users. | 251 |
-| A Lifecycle Workflows Administrator creates a workflow to pre-offboard a group of employees before their last day of employment. The scope of users who will be pre-offboarded are 40 users. | 40 licenses for users, and 1 license for the Lifecycle Workflows Administrator. | 41 |
+| A Lifecycle Workflows Administrator creates a workflow to add new hires in the Marketing department to the Marketing teams group. 250 new hires are assigned to the Marketing teams group via this workflow once. Other 150 new hires are assigned to the Marketing teams group via this workflow later the same year. | 1 license for the Lifecycle Workflows Administrator, and 400 licenses for the users. | 401 |
+| A Lifecycle Workflows Administrator creates a workflow to pre-offboard a group of employees before their last day of employment. The scope of users who will be pre-offboarded are 40 users once.  We offboard 40 licensed users.  Now, we can re-assign these 40 licenses and assign 10 more licenses later in the year to pre-offboard 50 more users.| 50 licenses for users, and 1 license for the Lifecycle Workflows Administrator. | 51 |
