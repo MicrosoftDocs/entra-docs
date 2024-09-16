@@ -19,6 +19,9 @@ ms.author: cmulligan
 
 [Azure Monitor](/azure/azure-monitor/overview) is a comprehensive solution for collecting, analyzing, and responding to monitoring data from your cloud and on-premises environments. The diagnostic settings on the monitored resource specify what data to send and where to send it. For Microsoft Entra, the destination options include Log Analytics, Azure Storage, and Azure Event Hubs.
 
+<!-- Is there a graph / image I can use here?  -->
+<!-- I can add a deployment overview: https://learn.microsoft.com/en-us/azure/active-directory-b2c/azure-monitor#deployment-overview  Do we have a graph / image? -->
+
 To set up Azure Monitor in a workforce tenant, you need the subscription of the workforce tenant for all the setup steps. However, the external tenant doesn't have its own separate subscription. [Azure Lighthouse](/azure/lighthouse/overview) addresses this issue by projecting the workforce tenant's subscription and all its resources to the external tenant. This solution is called resource projection. Resource projection allows the external tenant (service provider) to manage the Log Analytics workspace owned by the workforce tenant (customer).
 
 In this article, you'll learn how to send sign-in and audit logs from a Microsoft Entra External ID tenant to a Log Analytics workspace for long-term storage, querying, visualization, and alerting within Azure Monitor.
@@ -31,15 +34,33 @@ In this article, you'll learn how to send sign-in and audit logs from a Microsof
 - A Microsoft Entra account with the [Owner](/azure/role-based-access-control/built-in-roles#owner) role in the Microsoft Entra subscription.
 - An account in the external tenant that's been assigned at least the [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader) role. <!-- Source: https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-by-task -->
 
-## Configuration steps
+## Configuration overview
 
 To follow the configuration steps in this article, we recommend opening two separate browser windows or tabs: one for the workforce tenant and one for the external tenant. This setup will help you switch between the two tenants as needed.
 
 ## Step 1: Workforce tenant configuration - create resource group and logs workspace
 
 ### Create a resource group
+
+First, create, or choose a resource group that contains the destination Log Analytics workspace that will receive data from external tenant. You'll specify the resource group name when you deploy the Azure Resource Manager template.
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your Microsoft Entra ID tenant from the **Directories + subscriptions** menu.
+1. [Create a resource group](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) or choose an existing one. This example uses a resource group named *ExtIDMonitoring*.
+
 ### Create a Log Analytics workspace
-### Add Microsoft.Insights as a resource provider in the subscription
+
+A **Log Analytics workspace** is a unique environment for Azure Monitor log data. You'll use this Log Analytics workspace to collect data from external tenant, and then visualize it with queries.
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your Microsoft Entra ID tenant from the **Directories + subscriptions** menu.
+1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace). This example uses a Log Analytics workspace named *ExtIDLogAnalytics*, in a resource group named *ExtIDMonitoring*.
+
+### Add Microsoft.Insights as a resource provider
+
+Itt tartok ------------------------------
+
+
 
 ## Step 2: External tenant configuration - get external tenant ID and create a group for external ID monitoring
 
