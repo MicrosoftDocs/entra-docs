@@ -87,12 +87,7 @@ Use the followng resources to find users who sign in with and without MFA:
 - To identify user sign-ins that aren't protected by MFA, use the [Multifactor Authentication Gaps workbook](~/identity/monitoring-health/workbook-mfa-gaps.md).
 - To export a list of users and their authentication methods, use [PowerShell](https://aka.ms/AzMFA).
 
-Use these application IDs in your queries: 
-
-- Azure portal: c44b4083-3bb0-49c1-b47d-974e53cbdf3c 
-- Azure CLI: 04b07795-8ddb-461a-bbee-02f9e1bf7b46 
-- Azure PowerShell: 1950a258-227b-4e31-a9cf-717495945fc2 
-- Azure mobile app: 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa 
+If you run queries to analyze user sign-ins, use the application IDs of the [applications](#applications) listed previously. 
 
 ### External authentication methods and identity providers 
 
