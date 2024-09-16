@@ -132,7 +132,7 @@ The **Try out your sign-in experience** step in the walkthrough allows you to pr
 
 1. Complete the sign-up steps on the screen. Typically, once the user signs in, they're redirected back to your app. However, since you haven’t set up an app at this step, you're redirected to JWT.ms instead, where you can view the contents of the token issued during the sign-in process.
 
-To find the user you created during this step, you can go to the Microsoft Entra admin center and look for the user in the users list.
+To find the user you created during this step, you can go to the [Microsoft Entra admin center](https://entra.microsoft.com/) and look for the user in the users list.
 
 ## Set up and run a sample app
 
