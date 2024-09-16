@@ -107,7 +107,7 @@ If you're reviewing access to an application, then before you create the review,
     > In a team or group access review, only the group owners (at the time a review starts) are considered as reviewers. During the course of a review, if the list of group owners is updated, new group owners will not be considered reviewers as well as old group owners will still be considered reviewers. However, in the case of a recurring review, any changes on the group owners list will be considered in the next instance of that review.
 
     >[!IMPORTANT]
-    > For PIM for Groups (Preview), you must select **Group owner(s)**. It is mandatory to assign at least one fallback reviewer to the review. The review will only assign active owner(s) as the reviewer(s). Eligible owners are not included. If there are no active owners when the review begins, the fallback reviewer(s) will be assigned to the review.
+    > For access reviews of PIM for Groups (preview), when selecting the group owner as the reviewer, it is mandatory to assign at least one fallback reviewer. The review will only assign active owner(s) as the reviewer(s). Eligible owners are not included. If there are no active owners when the review begins, the fallback reviewer(s) will be assigned to the review.
 
       ![Screenshot that shows New access review.](./media/create-access-review/new-access-review.png)
 
@@ -120,6 +120,11 @@ If you're reviewing access to an application, then before you create the review,
      ![Screenshot that shows choosing how often the review should happen.](./media/create-access-review/frequency.png)
 
 1. Select **Next: Settings**.
+
+> [!NOTE]
+> When creating an access review, you are able to specify the start date, but the start time may vary a few hours based on system processing. For example, if you create an access review at 03:00 UTC on 09/09 that is set to run on 09/12, then the review will be scheduled to run at 03:00 UTC on the start date, but could be delayed due to system processing.
+
+You are able to specify the start date, but the start time may vary a few hours based on system processing. 
 
 ### Next: Settings
 

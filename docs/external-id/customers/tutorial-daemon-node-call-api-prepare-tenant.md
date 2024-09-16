@@ -10,8 +10,10 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/26/2023
+ms.date: 08/27/2024
 ms.custom: developer, devx-track-js
+
+#Customer intent: As a developer, devops, I want to learn how to set up my external tenant so that I can call a web API from my Node.js daemon application
 ---
 
 # Tutorial: Prepare your external tenant to authorize a Node.js daemon application
@@ -31,7 +33,9 @@ If you've already registered a client daemon application and a web API in the Mi
 
 ## Prerequisites
 
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ## Register a web API application
 

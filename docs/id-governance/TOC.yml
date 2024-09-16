@@ -115,6 +115,10 @@
       items:
       - name: Migrate from SAP IDM
         href: scenarios/migrate-from-sap-idm.md
+      - name: Author SAP ECC 7 Template for ECMA2Host
+        href: scenarios/sap-template.md
+      - name: Deploy SAP NetWeaver AS ABAP 7
+        href: scenarios/deploy-sap-netweaver.md
 - name: Tutorials
   expanded: true
   items:
@@ -205,9 +209,9 @@
       href: lifecycle-workflow-audits.md
     - name: Workflow History
       href: lifecycle-workflow-history.md
-    - name: Synced on-premises users (Preview)
+    - name: Synced AD DS users
       href: lifecycle-workflow-on-premises.md         
-    - name: Workflow Insights (preview)
+    - name: Workflow Insights
       href: lifecycle-workflow-insights.md        
 - name: How-to guides
   expanded: true
@@ -264,6 +268,8 @@
         href: entitlement-management-access-package-requests.md
       - name: Reprocess requests
         href: entitlement-management-reprocess-access-package-requests.md
+      - name: Request on behalf of users (Preview)
+        href: entitlement-management-request-behalf.md  
       - name: View, add, and remove assignments
         href: entitlement-management-access-package-assignments.md
       - name: Convert users to governed
@@ -356,9 +362,9 @@
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
-        - name: Manage synced on-premises users (Preview)
+        - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md              
-        - name: Check Workflow Insights (preview)
+        - name: Check Workflow Insights
           href: manage-workflow-insights.md            
       - name: Delete
         items: 
@@ -375,6 +381,8 @@
     href: licensing-fundamentals.md
   - name: Services and integration partners
     href: services-and-integration-partners.md
+  - name: Securing custom extension extensibility to Azure Logic Apps
+    href: custom-extension-security.md  
   - name: Identity Governance - PowerShell
     href: /powershell/module/microsoft.graph.identity.governance/?viewFallbackFrom=graph-powershell-beta&preserve-view=true&view=graph-powershell-1.0
   - name: Access reviews - Microsoft Graph API

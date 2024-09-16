@@ -146,11 +146,11 @@ The following filters can be applied for the export task:
 
 If you want to manage device identities by using the Microsoft Entra admin center, the devices need to be either [registered or joined](overview.md) to Microsoft Entra ID. As an administrator, you can control the process of registering and joining devices by configuring the following device settings.
 
-You must be assigned one of the following roles to manage device settings:
+You must be assigned one of the following roles to read or modify device settings:
 
-- [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator)
-- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
-- [Windows 365 Administrator](../role-based-access-control/permissions-reference.md#windows-365-administrator)
+- [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) (read and modify)
+- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) (read only)
+- [Windows 365 Administrator](../role-based-access-control/permissions-reference.md#windows-365-administrator) (read only)
 
 ![Screenshot that shows device settings related to Microsoft Entra ID.](./media/manage-device-identities/device-settings-azure-portal.png)
 

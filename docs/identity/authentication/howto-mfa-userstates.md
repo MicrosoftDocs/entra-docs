@@ -6,7 +6,7 @@ description: Learn how to enable per-user Microsoft Entra multifactor authentica
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/19/2024
+ms.date: 08/25/2024
 
 ms.author: justinha
 author: justinha
@@ -18,11 +18,11 @@ ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Enable per-user Microsoft Entra multifactor authentication to secure sign-in events
 
-To secure user sign-in events in Microsoft Entra ID, you can require multifactor authentication. Enabling Microsoft Entra multifactor authentication using Conditional Access policies is the recommended approach to protect users. Conditional Access is a Microsoft Entra ID P1 or P2 feature that lets you apply rules to require MFA as needed in certain scenarios. To get started using Conditional Access, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
+To secure user sign-in events in Microsoft Entra ID, you can require Microsoft Entra multifactor authentication (MFA). The best way to protect users with Microsoft Entra MFA is to create a Conditional Access policy. Conditional Access is a Microsoft Entra ID P1 or P2 feature that lets you apply rules to require MFA as needed in certain scenarios. To get started using Conditional Access, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
 
 For Microsoft Entra ID Free tenants without Conditional Access, you can [use security defaults to protect users](~/fundamentals/security-defaults.md). Users are prompted for MFA as needed, but you can't define your own rules to control the behavior.
 
-If needed, you can instead enable each account for per-user Microsoft Entra multifactor authentication. When users are enabled individually, they perform multifactor authentication each time they sign in (with some exceptions, such as when they sign in from trusted IP addresses or when the *remember MFA on trusted devices* feature is turned on).
+If needed, you can instead enable each account for per-user Microsoft Entra MFA. When you enable users individually, they perform MFA each time they sign in. You can enable exceptions, such as when they sign in from trusted IP addresses, or when the **remember MFA on trusted devices** feature is turned on.
 
 Changing [user states](#azure-ad-multi-factor-authentication-user-states) isn't recommended unless your Microsoft Entra ID licenses don't include Conditional Access and you don't want to use security defaults. For more information on the different ways to enable MFA, see [Features and licenses for Microsoft Entra multifactor authentication](concept-mfa-licensing.md).
 
@@ -38,13 +38,13 @@ Changing [user states](#azure-ad-multi-factor-authentication-user-states) isn't 
 
 ## Microsoft Entra multifactor authentication user states
 
-A user's state reflects whether an admin has enrolled them in per-user Microsoft Entra multifactor authentication. User accounts in Microsoft Entra multifactor authentication have the following three distinct states:
+A user's state reflects whether an Authentication Administrator enrolled them in per-user Microsoft Entra multifactor authentication. User accounts in Microsoft Entra multifactor authentication have the following three distinct states:
 
 | State | Description | Legacy authentication affected | Browser apps affected | Modern authentication affected |
 |:---:| --- |:---:|:--:|:--:|
 | Disabled | The default state for a user not enrolled in per-user Microsoft Entra multifactor authentication. | No | No | No |
-| Enabled | The user is enrolled in per-user Microsoft Entra multifactor authentication, but can still use their password for legacy authentication. If the user hasn't yet registered MFA authentication methods, they receive a prompt to register the next time they sign in using modern authentication (such as via a web browser). | No. Legacy authentication continues to work until the registration process is completed. | Yes. After the session expires, Microsoft Entra multifactor authentication registration is required.| Yes. After the access token expires, Microsoft Entra multifactor authentication registration is required. |
-| Enforced | The user is enrolled per-user in Microsoft Entra multifactor authentication. If the user hasn't yet registered authentication methods, they receive a prompt to register the next time they sign in using modern authentication (such as via a web browser). Users who complete registration while in the *Enabled* state are automatically moved to the *Enforced* state. | Yes. Apps require app passwords. | Yes. Microsoft Entra multifactor authentication is required at sign-in. | Yes. Microsoft Entra multifactor authentication is required at sign-in. |
+| Enabled | The user is enrolled in per-user Microsoft Entra multifactor authentication, but can still use their password for legacy authentication. If the user has no registered MFA authentication methods, they receive a prompt to register the next time they sign in using modern authentication (such as when they sign in on a web browser). | No. Legacy authentication continues to work until the registration process is completed. | Yes. After the session expires, Microsoft Entra multifactor authentication registration is required.| Yes. After the access token expires, Microsoft Entra multifactor authentication registration is required. |
+| Enforced | The user is enrolled per-user in Microsoft Entra multifactor authentication. If the user has no registered authentication methods, they receive a prompt to register the next time they sign in using modern authentication (such as when they sign in on a web browser). Users who complete registration while they're *Enabled* are automatically moved to the *Enforced* state. | Yes. Apps require app passwords. | Yes. Microsoft Entra multifactor authentication is required at sign-in. | Yes. Microsoft Entra multifactor authentication is required at sign-in. |
 
 All users start out *Disabled*. When you enroll users in per-user Microsoft Entra multifactor authentication, their state changes to *Enabled*. When enabled users sign in and complete the registration process, their state changes to *Enforced*. Administrators may move users between states, including from *Enforced* to *Enabled* or *Disabled*.
 
@@ -53,38 +53,54 @@ All users start out *Disabled*. When you enroll users in per-user Microsoft Entr
 
 ## View the status for a user
 
-To view and manage user states, complete the following steps:
+The per-user MFA administration experience in the Microsoft Entra admin center is recently improved. To view and manage user states, complete the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Browse to **Identity** > **Users** > **All users**.
+1. Select a user account, and click **User MFA settings**.
+1. After you make any changes, click **Save**.
+
+   :::image type="content" border="true" source="./media/howto-mfa-userstates/user-states.png" alt-text="Screenshot that shows an example of MFA settings for a user.":::
+
+   If you try to sort thousands of users, the result might gracefully return **There are no users to display**.
+   Try to enter more specific search criteria to narrow the search, or apply specific **Status** or **View** filters.
+
+   :::image type="content" border="true" source="./media/howto-mfa-userstates/sort.png" alt-text="Screenshot that shows an example of how to filter a large user sort.":::
+
+During transition to the new per-user MFA experience, you can also access the legacy per-user MFA experience. The format is:
+ 
+`https://account.activedirectory.windowsazure.com/usermanagement/multifactorverification.aspx?tenantId=${userTenantID}`
+ 
+To get the `userTenantID`, copy the tenant ID on the **Overview** page in the Microsoft Entra admin center. Then follow these steps to view status for a user with the legacy experience:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **Per-user MFA**. 
-   :::image type="content" border="true" source="media/howto-mfa-userstates/selectmfa-cropped.png" alt-text="Screenshot of select multifactor authentication from the Users window in Azure AD.":::
+   :::image type="content" border="true" source="./media/howto-mfa-userstates/selectmfa-cropped.png" alt-text="Screenshot of select per-user multifactor authentication.":::
 1. A new page opens that displays the user state, as shown in the following example.
-   ![Screenshot that shows example user state information for Microsoft Entra multifactor authentication](./media/howto-mfa-userstates/userstate1.png)
+   :::image type="content" border="true" source="./media/howto-mfa-userstates/legacy-user-state.png" alt-text="Screenshot that shows example user state information for Microsoft Entra multifactor authentication.":::
 
 ## Change the status for a user
 
 To change the per-user Microsoft Entra multifactor authentication state for a user, complete the following steps:
 
-1. Use the previous steps to [view the status for a user](#view-the-status-for-a-user) to get to the Microsoft Entra multifactor authentication **users** page.
-1. Find the user you want to enable for per-user Microsoft Entra multifactor authentication. You might need to change the view at the top to **users**.
-   ![Select the user to change status for from the users tab](./media/howto-mfa-userstates/enable1.png)
-1. Check the box next to the name(s) of the user(s) to change the state for.
-1. On the right-hand side, under **quick steps**, choose **Enable** or **Disable**. In the following example, the user *John Smith* has a check next to their name and is being enabled for use:
-   ![Enable selected user by clicking Enable on the quick steps menu](./media/howto-mfa-userstates/user1.png)
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Browse to **Identity** > **Users** > **All users**.
+1. Select a user account, and click **Enable MFA**. 
+   :::image type="content" border="true" source="./media/howto-mfa-userstates/new-enable.png" alt-text="Screenshot that shows how to enable a user for Microsoft Entra multifactor authentication.":::
 
    > [!TIP]
    > *Enabled* users are automatically switched to *Enforced* when they register for Microsoft Entra multifactor authentication. Don't manually change the user state to *Enforced* unless the user is already registered or if it is acceptable for the user to experience interruption in connections to legacy authentication protocols.
 
 1. Confirm your selection in the pop-up window that opens.
 
-After you enable users, notify them via email. Tell the users that a prompt is displayed to ask them to register the next time they sign in. Also, if your organization uses non-browser apps that don't support modern authentication, they need to create app passwords. For more information, see the [Microsoft Entra multifactor authentication end-user guide](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) to help them get started.
+After you enable users, notify them by email. Tell the users that a prompt is displayed to ask them to register the next time they sign in. If your organization uses applications that don't run in a browser or support modern authentication, you can create application passwords. For more information, see [Enforce Microsoft Entra multifactor authentication with legacy applications using app passwords](howto-mfa-app-passwords.md).
 
 ## Use Microsoft Graph to manage per-user MFA
 
-You can manage per-user MFA settings by using the Microsoft Graph REST API Beta. You can use the [authentication resource type](/graph/api/resources/authentication?view=graph-rest-beta) to expose authentication method states for users. 
+You can manage per-user MFA settings by using the Microsoft Graph REST API Beta. You can use the [authentication resource type](/graph/api/resources/authentication) to expose authentication method states for users. 
 
-To manage per-user MFA, use the perUserMfaState property within users/id/authentication/requirements. For more information, see [strongAuthenticationRequirements resource type](/graph/api/resources/strongauthenticationrequirements?view=graph-rest-beta).
+To manage per-user MFA, use the perUserMfaState property within users/id/authentication/requirements. For more information, see [strongAuthenticationRequirements resource type](/graph/api/resources/strongauthenticationrequirements).
 
 ### View per-user MFA state 
 
@@ -111,7 +127,7 @@ Content-Type: application/json
 }
 ```
 
-For more information, see [Get authentication method states](/graph/api/authentication-get?view=graph-rest-beta).
+For more information, see [Get authentication method states](/graph/api/authentication-get).
 
 ### Change MFA state for a user
 
@@ -132,7 +148,7 @@ If successful, the response is:
 HTTP/1.1 204 No Content
 ```
 
-For more information, see [Update authentication method states](/graph/api/authentication-update?view=graph-rest-beta).
+For more information, see [Update authentication method states](/graph/api/authentication-update).
 
 ## Next steps
 

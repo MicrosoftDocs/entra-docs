@@ -5,8 +5,8 @@ author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: how-to
-ms.date: 09/18/2023
+ms.topic: troubleshooting
+ms.date: 08/14/2024
 ms.author: owinfrey
 ---
 
@@ -20,7 +20,7 @@ To take full advantage of Lifecycle Workflows, user provisioning should be autom
 
 The following table shows the scheduling (trigger) relevant attributes and the methods of  synchronization that are supported.
 
-|Attribute|Type|Supported in HR Inbound Provisioning|Support in Microsoft Entra Connect cloud sync|Support in Microsoft Entra Connect Sync| 
+|Attribute|Type|Supported in HR Inbound Provisioning|Supported in Microsoft Entra Connect cloud sync|Supported in Microsoft Entra Connect Sync| 
 |-----|-----|-----|-----|-----|
 |employeeHireDate|DateTimeOffset|Yes|Yes|Yes|
 |employeeLeaveDateTime|DateTimeOffset|Yes|Yes|Yes|
@@ -155,7 +155,7 @@ For more information, see [How to customize a synchronization rule](../identity/
 
 Once you have set up your provisioning application, you're able to edit its attribute mapping. When the app is created, you get a list of default mappings between your HRM and Active Directory. From there, you can either edit the existing mapping, or add new mapping. 
 
-To update this mapping, you'd do the following:
+To update this mapping, you'd do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
 

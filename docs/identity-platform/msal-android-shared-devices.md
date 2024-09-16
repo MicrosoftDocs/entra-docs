@@ -4,46 +4,88 @@ description: Learn how to enable shared device mode to allow frontline workers t
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: identitypla | Azuretformtop40
-ms.date: 12/05/2023
-ms.reviewer: brianmel
-ms.service: identity-platform
+ms.service: msal
+ms.subservice: msal-android
+ms.topic: conceptual
+ms.date: 09/03/2024
+ms.reviewer: amgusain, akgoel, dmwendia
 
-ms.topic: concept-article
 #Customer intent: As a developer, I want to understand how to create a shared device mode app for Android devices, so that I can enable multiple employees to easily share a device and access customer information securely.
 ---
 
 # Shared device mode for Android devices
 
-Frontline workers such as retail associates, flight crew members, and field service workers often use a shared mobile device to do their work. That becomes problematic when they start sharing passwords or pin numbers to access customer and business data on the shared device.
+Frontline workers such as retail associates, flight crew members, and field service workers often use a shared mobile device to perform their work. These shared devices can present security risks if your users share their passwords or PINs, intentionally or not, to access customer and business data on the shared device.
 
-Shared device mode allows you to configure an Android device so that it can be easily shared by multiple employees. Employees can sign in and access customer information quickly. When they're finished with their shift or task, they can sign out of the device, and it will be immediately ready for the next employee to use.
+[Shared device mode](/entra/identity-platform/msal-shared-devices) allows you to configure an Android 8.0 or higher device such that employees can securely share the device. Employees can sign-in once and get single sign-on (SSO) to all apps that support this feature, giving them faster access to information. When employees sign out after completing their shift or task, they're automatically signed out of the device and all supported applications, making the device ready for the next user.
 
-Shared device mode also provides Microsoft identity backed management of the device.
+To take advantage of the Shared Device Mode feature, app developers and cloud device administrators work together:
 
-To create a shared device mode app, developers and cloud device admins work together:
+1. **Device administrators** prepare the device to be shared manually or by using a mobile device management (MDM) provider like Microsoft Intune. The preferred option is using an MDM as it allows the device setup in shared device mode at scale via zero-touch provisioning. The MDM pushes the [Microsoft Authenticator app](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) to the devices and turns on "Shared Mode" for each device through a managed configuration update to the device. This Shared Mode setting is what changes the behavior of the supported apps on the device. This configuration from the MDM provider sets the shared device mode for the device and triggers shared device registration using the Authenticator App.
 
-- Developers write a single-account app (multiple-account apps aren't supported in shared device mode), add `"shared_device_mode_supported": true` to the app's configuration, and write code to handle things like shared device sign-out.
-- Device admins prepare the device to be shared by installing the authenticator app, and setting the device to shared mode using the authenticator app. Only users who are in the [Cloud Device Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-device-administrator) role can put a device into shared mode by using the [Authenticator app](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc). You can configure the membership of your organizational roles in the Microsoft Entra admin center under:
+2. **Application developers** write a single-account app (multiple-account apps aren't supported in shared device mode) to handle the following scenario:
 
-**Identity** > **Roles & Admins** > **Roles & Admins** > **Cloud Device Administrator**.
+   - Sign in a user device-wide through any supported application
+   - Sign out a user device-wide through any supported application
+   - Query the state of the device to determine if your application is on a device that's in shared device mode
+   - Query the device state of the user to determine any changes in your application since the last use
 
-This article focuses primarily what developers should think about.
+   Supporting shared device mode should be considered a feature upgrade for your application, and can help increase its adoption in environments where the same device is used among multiple users.
 
-## Single vs multiple-account applications
+   > [!IMPORTANT]
+   > [Microsoft applications](#microsoft-applications-that-support-shared-device-mode) that support shared device mode on Android don't require any changes and just need to be installed on the device to get the benefits that come with shared device mode.
 
-Applications written using the Microsoft Authentication Library (MSAL) SDK can manage a single account or multiple accounts. For details, see [single-account mode or multiple-account mode](single-multi-account.md).
+## Set up device in Shared Device Mode
 
-The Microsoft identity platform features available to your app vary depending on whether the application is running in single-account mode or multiple-account mode.
+To configure your Android device to support shared device mode, it should be running Android OS 8.0 or later. The device should also be wiped by either factory reset or have all Microsoft and other shared device mode enabled apps uninstalled and reinstalled.
 
-**Shared device mode apps only work in single-account mode**.
+Microsoft Intune supports zero-touch provisioning for devices in Microsoft Entra shared device mode, which means that the device can be set up and enrolled in Intune with minimal interaction from the frontline worker. To set up device in shared device mode when using Microsoft Intune as the MDM, see [Set up enrollment for devices in Microsoft Entra shared device mode](/mem/intune/enrollment/automated-device-enrollment-shared-device-mode/).
 
-> [!IMPORTANT]
-> Applications that only support multiple-account mode can't run on a shared device. If an employee loads an app that doesn't support single-account mode, it won't run on the shared device.
->
-> Apps written before the MSAL SDK was released run in multiple-account mode and must be updated to support single-account mode before they can run on a shared mode device.
 
-**Supporting both single-account and multiple-accounts**
+## Modify your Android application to support shared device mode
+
+Your users depend on you to ensure their data isn't leaked to another user. The following sections provide helpful signals to indicate to your application that a change has occurred and should be handled.
+You're responsible for checking the state of the user on the device every time your app is used, and then clearing the previous user's data. This includes if it's reloaded from the background in multi-tasking.
+On a user change, you should ensure both the previous user's data is cleared and that any cached data being displayed in your application is removed. We highly recommend you and your company conduct a security review process after updating your app to support shared device mode.  
+
+### Add the Microsoft Authentication Library (MSAL) SDK to your application's dependencies
+
+Add the MSAL library as a dependency in your build.gradle file, like so:
+
+```gradle
+dependencies{
+  implementation 'com.microsoft.identity.client.msal:5.+'
+}
+```
+
+### Configure your app to use shared-device mode
+Applications written using the Microsoft Authentication Library (MSAL) SDK can manage a single account or multiple accounts. For details, see [single-account mode or multiple-account mode](single-multi-account.md). Shared device mode apps only work in single-account mode. 
+
+If you aren't planning to support multiple-account mode, set `"account_mode"` to `"SINGLE"` in your msal config file. This guarantees that your app will always get `ISingleAccountPublicClientApplication`, and significantly simplifies your MSAL integration. The default value of `"account_mode"` is `"MULTIPLE"`, so it's important to change this value in the config file if you're using `"single account"` mode.
+
+Here's an example of the configuration file:
+
+```json
+{
+  "client_id": "Client ID after app registration at https://aka.ms/MobileAppReg",
+  "authorization_user_agent": "WEBVIEW",
+  "redirect_uri": "Redirect URI after app registration at https://aka.ms/MobileAppReg",
+  "account_mode": "SINGLE",
+  "broker_redirect_uri_registered": true,
+  "authorities": [
+    {
+      "type": "AAD",
+      "audience": {
+        "type": "AzureADandPersonalMicrosoftAccount",
+        "tenant_id": "common"
+      }
+    }
+  ]
+}
+```
+Refer to the [configuration documentation](./msal-configuration.md) for more information on setting up your config file.
+
+#### Supporting both single-account and multiple-accounts
 
 Your app can be built to support running on both personal devices and shared devices. If your app currently supports multiple accounts and you want to support shared device mode, add support for single account mode.
 
@@ -80,30 +122,150 @@ The following differences apply depending on whether your app is running on a sh
 | **Sign-out**                | Global             | Each application can control if the sign-out is local to the app. |
 | **Supported account types** | Work accounts only | Personal and work accounts supported                                                                |
 
-## Why you may want to only support single-account mode
+### Initialize the PublicClientApplication object
 
-If you're writing an app that will only be used for frontline workers using a shared device, we recommend you write your application to only support single-account mode. This includes most applications that are task focused such as medical records apps, invoice apps, and most line-of-business apps. Only supporting single-account mode simplifies development because you won't need to implement the other features that are part of multiple-account apps.
+If you set `"account_mode":"SINGLE"` in the MSAL config file, you can safely cast the returned application object as an `ISingleAccountPublicCLientApplication`.
 
-## What happens when the device mode changes
+```java
+private ISingleAccountPublicClientApplication mSingleAccountApp;
 
-If your application is running in multiple-account mode, and an administrator puts the device in shared device mode, all of the accounts on the device are cleared from the application and the application transitions to single-account mode.
+PublicClientApplication.create(
+    this.getApplicationCOntext(),
+    R.raw.auth_config_single_account,
+    new PublicClientApplication.ApplicationCreatedListener() {
+
+        @Override
+        public void onCreated(IPublicClientApplication application){
+            mSingleAccountApp = (ISingleAccountPublicClientApplication)application;
+        }
+
+        @Override
+        public void onError(MsalException exception){
+            /*Fail to initialize PublicClientApplication */
+        }
+    });
+```
+
+### Detect shared device mode
+
+Detecting shared device mode is important for your application. Many applications require a change in their user experience (UX) when the application is used on a shared device. For example, your application might have a "Sign-Up" feature, which isn't appropriate for a frontline worker because they likely already have an account. You may also want to add extra security to your application's handling of data if it's in shared device mode.
+
+Use the `isSharedDevice` API in the `IPublicClientApplication` to determine if an app is running on a device in shared device mode.
+
+The following code snippets show examples of using the `isSharedDevice` API.
+
+```Java
+deviceModeTextView.setText(mSingleAccountApp.isSharedDevice() ? "Shared" : "Non-Shared");
+```
+
+
+### Get the signed-in user and determine if a user has changed on the device
+
+Another important part of supporting shared device mode is determining the state of the user on the device and clearing application data if a user has changed or if there's no user at all on the device. You're responsible for ensuring data isn't leaked to another user.
+
+You can use `getCurrentAccountAsync` API to query the currently signed-in account on the device.
+
+The `loadAccount` method retrieves the account of the signed in user. The `onAccountChanged` method determines if the signed-in user has changed, and if so, clean up:
+
+```java
+private void loadAccount()
+{
+  mSingleAccountApp.getCurrentAccountAsync(new ISingleAccountPublicClientApplication.CurrentAccountCallback())
+  {
+    @Override
+    public void onAccountLoaded(@Nullable IAccount activeAccount)
+    {
+      if (activeAccount != null)
+      {
+        signedInUser = activeAccount;
+        mSingleAccountApp.acquireTokenSilentAsync(SCOPES,"http://login.microsoftonline.com/common",getAuthSilentCallback());
+      }
+    }
+    @Override
+    public void onAccountChanged(@Nullable IAccount priorAccount, @Nullable Iaccount currentAccount)
+    {
+      if (currentAccount == null)
+      {
+        //Perform a cleanup task as the signed-in account changed.
+        cleaUp();
+      }
+    }
+    @Override
+    public void onError(@NonNull Exception exception)
+    {
+        //getCurrentAccountAsync failed
+    }
+  }
+}
+```
+
+### Globally sign in a user
+
+When a device is configured as a shared device, your application can call the `signIn` API to sign in the account. The account will be available globally for all eligible apps on the device after the first app signs in the account.
+
+```java
+final SignInParameters signInParameters = ... /* create SignInParameters object */
+mSingleAccountApp.signIn(signInParameters);
+```
+
+### Globally sign out a user
+
+The following code removes the signed-in account and clears cached tokens from not only the app, but also from the device that's in shared device mode. It doesn't, however, clear the _data_ from your application. You must clear the data from your application, and clear any cached data your application may be displaying to the user.
+
+```java
+mSingleAccountApp.signOut(new ISingleAccountPublicClientApplication.SignOutCallback() {
+    @Override
+    public void onSignOut() {
+        // clear data from your application
+    }
+
+    @Override
+    public void onError(@NonNull MsalException exception) {
+        // signout failed, show error
+    }
+});
+```
+
+### Receive broadcast to detect global sign out initiated from other applications
+
+To receive the account change broadcast, you need to register a broadcast receiver. It’s recommended to register your broadcast receiver via the [Context-registered receivers](https://developer.android.com/guide/components/broadcasts#context-registered-receivers).
+
+When an account change broadcast is received, immediately [get the signed in user and determine if a user has changed on the device](#get-the-signed-in-user-and-determine-if-a-user-has-changed-on-the-device). If a change is detected, initiate data cleanup for previously signed-in account. It's recommended to properly stop any operations and do data cleanup.
+
+The following code snippet shows how you could register a broadcast receiver.
+
+```java
+private static final String CURRENT_ACCOUNT_CHANGED_BROADCAST_IDENTIFIER = "com.microsoft.identity.client.sharedmode.CURRENT_ACCOUNT_CHANGED";
+private BroadcastReceiver mAccountChangedBroadcastReceiver;
+private void registerAccountChangeBroadcastReceiver(){
+    mAccountChangedBroadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //INVOKE YOUR PRIOR ACCOUNT CLEAN UP LOGIC HERE
+        }
+    };
+    IntentFilter filter = new
+
+    IntentFilter(CURRENT_ACCOUNT_CHANGED_BROADCAST_IDENTIFIER);
+    this.registerReceiver(mAccountChangedBroadcastReceiver, filter);
+}
+```
 
 ## Microsoft applications that support shared device mode
 
 These Microsoft applications support Microsoft Entra shared device mode:
 
 - [Microsoft Teams](/microsoftteams/platform/)
-- [Microsoft Managed Home Screen](/mem/intune/apps/app-configuration-managed-home-screen-app) app for Android Enterprise
-- [Microsoft Edge](/microsoft-edge/)
-- [Outlook](/mem/intune/apps/app-configuration-policies-outlook)
-- [Microsoft Power Apps](/power-apps/)
-- [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode)
 - [Microsoft Viva Engage](/viva/engage/overview) (previously [Yammer](/viva/engage/overview))
-- [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12) (in Public Preview)
+- [Outlook](/mem/intune/apps/app-configuration-policies-outlook) 
+- [Microsoft Power Apps](/power-apps/)
+- [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12)
+- [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode)
+- [Microsoft Edge](/microsoft-edge/)
 
 ## Third-party MDMs that support shared device mode
 
-This third-party Mobile Device Management (MDM) that supports Microsoft Entra shared device mode:
+These third-party Mobile Device Management (MDM) providers support Microsoft Entra shared device mode:
 
 - [VMware Workspace ONE](https://blogs.vmware.com/euc/2023/08/announcing-general-availability-of-shared-device-conditional-access-with-vmware-workspace-one-and-microsoft-entra-id.html)
 - [SOTI MobiControl](https://soti.net/resources/blog/2023/soti-mobicontrol-supports-microsoft-shared-device-mode/)
@@ -120,6 +282,6 @@ The following diagram shows the overall app lifecycle and common events that may
 
 ## Next steps
 
-For more information on how to run a frontline worker app on a shared mode on Android device, see:
+Set up an Android device to run apps in shared device mode and test your app.
 
-- [Use shared-device mode in your Android application](tutorial-v2-shared-device-mode.md)
+> [Shared device mode for Android devices](tutorial-mobile-android-device-shared-mode.md)

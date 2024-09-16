@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 07/15/2024
+ms.date: 08/25/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.
@@ -110,14 +110,14 @@ An *access package* is a bundle of resources that a team or project needs and is
     >The [role-assignable groups](../identity/role-based-access-control/groups-concept.md) added to an access package will be indicated using the Sub Type **Assignable to roles**. For more information, check out the [Create a role-assignable group](../identity/role-based-access-control/groups-create-eligible.md) article. Keep in mind that once a role-assignable group is present in an access package catalog, administrative users who are able to manage in entitlement management, including users in the Global Administrator role, users in the Identity Governance Administrator role, and catalog owners of the catalog, will be able to control the access packages in the catalog, allowing them to choose who can be added to those groups. If you don't see a role-assignable group that you want to add or you are unable to add it, make sure you have the required Microsoft Entra role and entitlement management role to perform this operation. You might need to ask someone with the required roles add the resource to your catalog. For more information, see [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
     >[!NOTE]
-    > When using [dynamic groups](../identity/users/groups-create-rule.md) you will not see any other roles available besides owner. This is by design.
+    > When using [dynamic membership groups](../identity/users/groups-create-rule.md) you will not see any other roles available besides owner. This is by design.
     > ![Screenshots that shows a dynamic group available roles.](./media/entitlement-management-access-package-first/dynamic-group-warning.png)
     
 
 
 1. Select **Next** to open the **Requests** tab. On the Requests tab, you create a request policy. A *policy* defines the rules or guardrails to access an access package. You create a policy that allows a specific user in the resource directory to request this access package.
 
-1. In the **Users who can request access** section, select **For users in your directory** and then select **Specific users and groups**.
+1. In the **Users who can request access** section, select **For users in your directory**, and then select **Specific users and groups**.
 
     :::image type="content" source="./media/entitlement-management-access-package-first/new-access-package-requests.png" alt-text="Screenshot of the access package requests tab." lightbox="./media/entitlement-management-access-package-first/new-access-package-requests.png":::
 
@@ -144,7 +144,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 
     ![Screenshots of the requests tab approval and enable requests settings.](./media/entitlement-management-access-package-first/requests-approval-enable.png)
 
-1. On the **Requestor information** tab, you can ask questions to collect more information from the requestor. The questions are shown on the request form and can be either required or optional. In this scenario, you haven't been asked to include requestor information for the access package, so you can leave these boxes empty. Select **Next** to open the **Lifecycle** tab.
+1. On the **Requestor information** tab, you can ask questions to collect more information from the requestor. The questions are shown on the request form and can be either required or optional. You're also able to specify whether or not an employee's manager can request on their behalf, and if approval is required if they do so. If the policy allows managers to request on an employee's behalf, the manager would be answering questions on behalf of the employee, and not themselves. For more information on this option, see: [Request access package on-behalf-of other users(Preview)](entitlement-management-request-behalf.md). In this scenario, you haven't been asked to include requestor information for the access package, so you can leave these boxes empty. Select **Next** to open the **Lifecycle** tab.
 
 1. On the **Lifecycle** tab, you specify when a user's assignment to the access package expires. You can also specify whether users can extend their assignments. In the **Expiration** section:
     1. Set the **Access package assignments expire** to **Number of days**.
@@ -252,5 +252,8 @@ In this step, you remove the changes you made and delete the **Marketing Campaig
 ## Next steps
 
 Advance to the next article to learn about common scenario steps in entitlement management.
+
 > [!div class="nextstepaction"]
 > [Common scenarios](entitlement-management-scenarios.md)
+
+

@@ -103,7 +103,19 @@ When we check whether a user is able to be invited to your tenant, one of the th
 
 ## I can't invite an email address because of a conflict in proxyAddresses
 
-This happens when another object in the directory has the same invited email address as one of its proxyAddresses. To fix this conflict, remove the email from the [user](/graph/api/resources/user) object, and also delete the associated [contact](/graph/api/resources/contact) object before trying to invite this email again.
+This happens when another object in the directory has the same invited email address as one of its proxyAddresses. The other conflicting object could be a User, Group, or Microsoft 365 Contact.
+
+To fix this conflict, search for the email address in the Microsoft 365 admin center to find the conflicting object. You must remove the email address using the Microsoft Graph API.
+
+To fix this conflict:
+1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com).
+1. Browse to **Users** > **All users** and search for the email address that you're trying to invite.
+1. Remove the email from the [Microsoft Graph user](/graph/api/resources/user) object.
+1. Browse to **Users** > **Contacts** to see if there's a contact using that email address.
+1. Remove the associated [Microsoft Graph contact](/graph/api/resources/contact) object.
+1. Browse to **Teams & groups** > **Active teams & groups** and search for the email address that you're trying to invite, and change the email address if found.
+
+Once you've removed the conflicting email address, you can invite the user.
 
 ## The guest user object doesn't have a proxyAddress
 

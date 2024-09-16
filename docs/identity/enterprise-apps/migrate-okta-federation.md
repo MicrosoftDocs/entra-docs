@@ -153,8 +153,6 @@ Configure the enterprise application registration for Okta.
    >[!NOTE]
    >The value and ID don't appear later. If you don't record the information, you must regenerate a secret.
 
-   ![Screenshot of the Certificates and secrets page. The value and I D of the secret appear.](media/migrate-okta-federation/record-secrets.png)
-
 18. On the left menu, select **API permissions**. 
 19. Grant the application access to the OpenID Connect (OIDC) stack.
 20. Select **Add a permission**.

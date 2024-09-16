@@ -22,7 +22,8 @@ In this tutorial, you will learn how to register a Mac device with macOS Platfor
 
 - A recommended minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported, we strongly recommend using macOS 14 Sonoma for the best experience.
 - Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later
-- A configured the SSO extension MDM payload with PSSO settings in Intune by an administrator
+- A Mac device enrolled in mobile device management (MDM) with [Microsoft Intune](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp).
+- A configured SSO extension MDM payload with PSSO settings in Intune by an administrator
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
 - For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
 
@@ -66,9 +67,6 @@ Now that the device is in compliance with Company Portal, you need to register y
 
 1. Once your account is unlocked with Touch ID or password, select the account to sign in to, enter your sign-in credentials and select **Next**.
 1. MFA is required as part of this sign in flow. Open your **Authenticator app** (recommended) or use your other MFA methods you have registered, and enter the number displayed on the screen to finish registration.
-
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-2fa-challenge.png" alt-text="Screenshot of a two-factor authentication window, prompting the user to open the Authenticator app.":::
-
 1. When the MFA flow completes and the loading screen disappears, your device should be registered with PSSO. You can now use PSSO to access Microsoft app resources.
 
 ### Enable Platform Credential for macOS for use as a passkey

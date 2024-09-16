@@ -9,7 +9,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 07/30/2024
+ms.date: 09/06/2024
 ms.author: barclayn
 ---
 
@@ -42,24 +42,25 @@ This article shows you how to use the Microsoft 365 license center to assign lic
    >[!NOTE]
    >When assigning licenses to a group with service plans that have dependencies on other service plans, they must both be assigned together in the same group, otherwise the service plan with the dependency will be disabled.
   
-1. To complete the assignment, on the **Assign license** page, click **Assign** at the bottom of the page.
+1. To complete the assignment, on the **Assign license** page, select **Assign** at the bottom of the page.
 
    :::image type="content" source="./media/licensing-admin-center/choose-assign.png" alt-text="Screenshot of the portal section that allows you to choose assign after selecting the group":::
 
 When assign licenses to a group, Microsoft Entra ID processes all existing members of that group. This process might take some time depending on the size of the group.
 
-   :::image type="content" source="./media/licensing-admin-center/licenses-assignment-message.png" alt-text="Screenshot of message telling the administrator that they have assigned a license to a group.":::
+   :::image type="content" source="./media/licensing-admin-center/licenses-assignment-message.png" alt-text="Screenshot of message telling the administrator that they assigned a license to a group.":::
 
-## Verify that the initial assignment has finished
+## Verify that the initial assignment finished
 
 1. From the Admin Center, go to **Billing** > **Licenses**. Select the license that you assigned.
 
-1. On the **License details** page, you can view the status of the license assignment operation. For example, in the image show below, you can see that **Contoso marketing** shows a status of **All licenses assigned** while **Contoso human resources** shows a status of **In progress**.
+1. On the **License details** page, you can view the status of the license assignment operation. For example, in the image shown, you can see that **Contoso marketing** shows a status of **All licenses assigned** while **Contoso human resources** shows a status of **In progress**.
 
    :::image type="content" source="./media/licensing-admin-center/progress.png" alt-text="Screenshot showing you the license assignment progress.":::
 
    [Read this section](licensing-group-advanced.md#use-audit-logs-to-monitor-group-based-licensing-activity) to learn more about how audit logs can be used to analyze changes made by group-based licensing.
 
+[!INCLUDE [FAQ](../../includes/licensing-move-microsoft-365-admin-center.md)]
 
 ## Next steps
 
