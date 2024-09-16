@@ -15,7 +15,7 @@ ms.reviewer: etbasser
 
 Microsoft Entra ID Protection can detect, investigate, and remediate workload identities to protect applications and service principals in addition to user identities.
 
-A [workload identity](../workload-id/workload-identities-overview.md) is an identity that allows an application or service principal access to resources, sometimes in the context of a user. These workload identities differ from traditional user accounts as they:
+A [workload identity](../workload-id/workload-identities-overview.md) is an identity that allows an application access to resources, sometimes in the context of a user. These workload identities differ from traditional user accounts as they:
 
 - Can’t perform multifactor authentication.
 - Often have no formal lifecycle process.

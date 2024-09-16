@@ -7,7 +7,7 @@ metadata:
   author: shlipsey3
   ms.author: sarahlipsey
   manager: amycolannino
-  ms.date: 01/05/2024
+  ms.date: 08/23/2024
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
@@ -19,7 +19,7 @@ title: |
 introduction: |
   Microsoft Entra groups are used to manage users that all need the same access and permissions to resources, such as potentially restricted apps and services. Instead of adding special permissions to individual users, you create a group that applies the special permissions to every member of that group. 
 
-  This article covers basic group scenarios where a single group is added to a single resource and users are added as members to that group. For more complex scenarios like dynamic memberships and rule creation, see the [Microsoft Entra user management documentation](~/identity/users/index.yml).
+  This article covers basic group scenarios where a single group is added to a single resource and users are added as members to that group. For more complex scenarios like dynamic membership groups and rule creation, see the [Microsoft Entra user management documentation](~/identity/users/index.yml).
   
   Before adding groups and members, [learn about groups and membership types](concept-learn-about-groups.md) to help you decide which options to use when you create a group.
 
@@ -72,7 +72,7 @@ procedureSection:
         Select **Create**. Your group is created and ready for you to manage other settings.
           
         ### Turn off group welcome email
-        A welcome notification is sent to all users when they're added to a new Microsoft 365 group, regardless of the membership type. When an attribute of a user or device changes, all dynamic group rules in the organization are processed for potential membership changes. Users who are added then also receive the welcome notification. You can turn off this behavior in [Exchange PowerShell](/powershell/module/exchange/set-unifiedgroup).
+        A welcome notification is sent to all users when they're added to a new Microsoft 365 group, regardless of the membership type. When an attribute of a user or device changes, all rules for dynamic membership groups in the organization are processed for potential membership changes. Users who are added then also receive the welcome notification. You can turn off this behavior in [Exchange PowerShell](/powershell/module/exchange/set-unifiedgroup).
   - title: |
       Add members or owners of a group
     summary: |
@@ -97,9 +97,9 @@ procedureSection:
 
         The **Group Overview** page updates to show the number of members who are now added to the group.
   - title: |
-      Remove members or owners of a group
+        Remove members or owners of a group
     summary: |
-      Members and owners can be removed from existing groups. The process is the same for members and owners. You'll need the **Groups Administrator** or **User Administrator** role to remove members and owners.
+        Members and owners can be removed from existing groups. The process is the same for members and owners. You'll need the **Groups Administrator** or **User Administrator** role to remove members and owners.
     steps: 
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
@@ -236,7 +236,7 @@ relatedContent:
   - text: Manage groups using PowerShell commands
     url: ~/identity/users/groups-settings-v2-cmdlets.md
   
-#  - text: Manage dynamic rules for users in a group
+#  - text: Manage rules for dynamic membership groups
 #    url: ~/identity/users/groups-create-rule.md
 
 #    - text: Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID

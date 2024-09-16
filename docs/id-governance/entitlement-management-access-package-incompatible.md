@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/23/2024
 ms.author: owinfrey
 #Customer intent: As an Identity Governance Administrator or access package manager, I want to configure that a user cannot request an access package if they already have incompatible access.
 ---
@@ -21,7 +21,7 @@ With the separation of duties settings on an access package, you can configure t
 
 ## Scenarios for separation of duties checks
 
-For example, you have an access package, *Marketing Campaign*, that people across your organization and other organizations can request access to, to work with your organization's marketing department while that campaign is going on. Since employees in the marketing department should already have access to that marketing campaign material, you don't want employees in the marketing department to request access to that access package. Or, you could already have a dynamic group, *Marketing department employees*, with all of the marketing employees in it. You could indicate that the access package is incompatible with the membership of that dynamic group. Then, if a marketing department employee is looking for an access package to request, they couldn't request access to the *Marketing campaign* access package.
+For example, you have an access package, *Marketing Campaign*, that people across your organization and other organizations can request access to, to work with your organization's marketing department while that campaign is going on. Since employees in the marketing department should already have access to that marketing campaign material, you don't want employees in the marketing department to request access to that access package. Or, you could already have a dynamic membership group, *Marketing department employees*, with all of the marketing employees in it. You could indicate that the access package is incompatible with the dynamic membership group. Then, if a marketing department employee is looking for an access package to request, they couldn't request access to the *Marketing campaign* access package.
 
 Similarly, you could have an application with two app roles - **Western Sales** and **Eastern Sales** - representing sales territories, and you want to ensure that a user can only have one sales territory at a time. If you have two access packages, one access package **Western Territory** giving the **Western Sales** role and the other access package **Eastern Territory** giving the **Eastern Sales** role, then you can configure:
  - the **Western Territory** access package has the **Eastern Territory** package as incompatible, and

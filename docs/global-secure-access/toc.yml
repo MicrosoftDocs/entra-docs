@@ -148,6 +148,8 @@ items:
         href: how-to-view-traffic-logs.md
       - name: Event enrichment in Microsoft 365 enriched logs
         href: reference-event-enrichment-logs.md
+      - name: How to use workbooks
+        href: how-to-use-workbooks.md 
   - name: Deployment guides
     expanded: false
     items:

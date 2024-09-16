@@ -40,6 +40,7 @@ The following section provides examples of custom alerts that customers can crea
 | Entitlement management | Alert an IT admin when a user is directly added to a group, without using an access package.|
 | Entitlement management | Alert an IT admin when a new connected organization is added. |
 | Entitlement management | Alert an IT admin when a custom extension fails. |
+| Entitlement management | Alert an IT admin when an entitlement management access package assignment policy is created or updated without requiring approval. |
 | Lifecycle workflows | Alert an IT admin when a specific workflow fails. |
 | Multitenant collaboration | Alert an IT admin when cross-tenant sync is enabled |
 | Multitenant collaboration | Alert an IT admin when a cross-tenant access policy is enabled |
@@ -52,7 +53,7 @@ The following section provides examples of custom alerts that customers can crea
 
 ## Access reviews ##
 
-**Alert an IT admin when an [access review](/entra/id-governance/access-reviews-overview) has been deleted.**
+### Alert an IT admin when an [access review](/entra/id-governance/access-reviews-overview) has been deleted.
 
 
 *Query*
@@ -64,7 +65,7 @@ AuditLogs
 
 ## Entitlement management
 
-**Alert an IT admin when a user is directly added to a group, without using an [access package](/entra/id-governance/entitlement-management-access-package-create).**
+### Alert an IT admin when a user is directly added to a group, without using an [access package](/entra/id-governance/entitlement-management-access-package-create).
 
 *Query*
 
@@ -76,7 +77,7 @@ AuditLogs
 | where ActorName != "Azure AD Identity Governance - User Management"
 ```
 
-**Alert an IT admin when a new [connected organization](/entra/id-governance/entitlement-management-organization) is created. Users from this organization can now request access to resources made available to all connected organizations.**
+### Alert an IT admin when a new [connected organization](/entra/id-governance/entitlement-management-organization) is created. Users from this organization can now request access to resources made available to all connected organizations.
 
 *Query*
 
@@ -91,7 +92,7 @@ AuditLogs
 | distinct TenantID
 ```
 
-**Alert an IT admin when an entitlement management [custom extension](/entra/id-governance/entitlement-management-logic-apps-integration) fails.**
+### Alert an IT admin when an entitlement management [custom extension](/entra/id-governance/entitlement-management-logic-apps-integration) fails.
 
 *Query*
 
@@ -104,9 +105,24 @@ AuditLogs
 | where CustomExtensionName in ('<input custom exteionsion name>', '<input custom extension name>')
 ```
 
+### Alert an IT admin when an entitlement management access package assignment policy is created or updated without requiring [approval.](/entra/id-governance/entitlement-management-access-package-approval-policy)
+
+*Query*
+
+```
+AuditLogs
+| where ActivityDisplayName in ("Create access package assignment policy", "Update access package assignment policy")
+| extend AdditionalDetailsParsed = parse_json(AdditionalDetails)
+| mv-expand AdditionalDetailsParsed
+| extend Key = tostring(AdditionalDetailsParsed.key), Value = tostring(AdditionalDetailsParsed.value)
+| summarize make_set(Key), make_set(Value) by ActivityDisplayName, CorrelationId
+| where set_has_element(set_Key, "IsApprovalRequiredForAdd") and set_has_element(set_Value, "False")
+| where set_has_element(set_Key, "SpecificAllowedTargets") and not(set_has_element(set_Value, "None"))
+```
+
 ## Lifecycle workflows
 
-**Alert an IT admin when a specific [lifecycle workflow](/entra/id-governance/what-are-lifecycle-workflows) fails.**
+### Alert an IT admin when a specific [lifecycle workflow](/entra/id-governance/what-are-lifecycle-workflows) fails.
 
 *Query*
 
@@ -129,7 +145,7 @@ AuditLogs
 
 ## Multitenant collaboration
 
-**Alert an IT admin when a new [cross-tenant access policy](/entra/external-id/cross-tenant-access-overview) is created. This allows your organization to detect when a relationship has been formed with a new organization.**
+### Alert an IT admin when a new [cross-tenant access policy](/entra/external-id/cross-tenant-access-overview) is created. This allows your organization to detect when a relationship has been formed with a new organization.
 
 *Query*
 
@@ -144,7 +160,7 @@ AuditLogs
 | project-rename source_tenant= AADTenantId
 ````
 
-**As an admin, I can get an alert when an [inbound cross-tenant sync policy](/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure) is set to true. This allows your organization to detect when an organization is authorized to synchronize identities into your tenant.**
+### As an admin, I can get an alert when an [inbound cross-tenant sync policy](/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure) is set to true. This allows your organization to detect when an organization is authorized to synchronize identities into your tenant.
 
 *Query*
 
@@ -158,7 +174,7 @@ AuditLogs
 <u>Alert logic</u>
 
 ## Privileged identity management ##
-**Alert an IT admin when specific [PIM security alerts](/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts) are disabled.**
+### Alert an IT admin when specific [PIM security alerts](/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts) are disabled.
 
 *Query*
 
@@ -167,7 +183,7 @@ AuditLogs
 | where ActivityDisplayName == "Disable PIM alert"
 ```
 
-**Alert an IT admin when a user is added to a role outside of PIM**
+### Alert an IT admin when a user is added to a role outside of PIM
 
 The query below is based on a templateId. You can find a list of template IDs [here](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference).
 
@@ -181,7 +197,7 @@ AuditLogs
 
 ## Provisioning
 
-**Alert an IT administrator when there is a spike in provisioning failures over a 24 hour period.**
+### Alert an IT administrator when there is a spike in provisioning failures over a 24 hour period.
 
 *Query*
 
@@ -198,7 +214,7 @@ AADProvisioningLogs
 - Operator: Greater than
 - Threshold value: 10
 
-**Alert an IT admin when someone starts, stops, disables, restarts, or deletes a provisioning configuration.**
+### Alert an IT admin when someone starts, stops, disables, restarts, or deletes a provisioning configuration.
 
 *Query*
 
@@ -207,7 +223,7 @@ AuditLogs
 | where ActivityDisplayName in ('Add provisioning configuration','Delete provisioning configuration','Disable/pause provisioning configuration', 'Enable/restart provisioning configuration', 'Enable/start provisioning configuration')
 ```
 
-**Alert an IT admin when a provisioning job goes into [quarantine](/entra/identity/app-provisioning/application-provisioning-quarantine-status)**
+### Alert an IT admin when a provisioning job goes into [quarantine](/entra/identity/app-provisioning/application-provisioning-quarantine-status)
 
 *Query*
 

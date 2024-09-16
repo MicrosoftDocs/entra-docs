@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: conditional-access
 
 ms.topic: conceptual
-ms.date: 08/13/2024
+ms.date: 08/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -95,7 +95,7 @@ Setting extension attributes is made possible through the Microsoft Graph API. F
 
 ### Filter for devices Graph API
 
-The filter for devices API is available in Microsoft Graph v1.0 endpoint and can be accessed using the endpoint `https://graph.microsoft.com/v1.0/identity/conditionalaccess/policies/`. You can configure a filter for devices when creating a new Conditional Access policy or you can update an existing policy to configure the filter for devices condition. To update an existing policy, you can do a patch call on the Microsoft Graph v1.0 endpoint by appending the policy ID of an existing policy and executing the following request body. The example here shows configuring a filter for devices condition excluding devices that aren't marked as SAW devices. The rule syntax can consist of more than one single expression. To learn more about the syntax, see [dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md). 
+The filter for devices API is available in Microsoft Graph v1.0 endpoint and can be accessed using the endpoint `https://graph.microsoft.com/v1.0/identity/conditionalaccess/policies/`. You can configure a filter for devices when creating a new Conditional Access policy or you can update an existing policy to configure the filter for devices condition. To update an existing policy, you can do a patch call on the Microsoft Graph v1.0 endpoint by appending the policy ID of an existing policy and executing the following request body. The example here shows configuring a filter for devices condition excluding devices that aren't marked as SAW devices. The rule syntax can consist of more than one single expression. To learn more about the syntax, see [rules for dynamic membership groups for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md). 
 
 ```json
 {

@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: how-to
-ms.date: 08/26/2022
+ms.date: 08/25/2024
 ms.author: jricketts
 ms.reviewer: ajburnle
 ms.custom:
@@ -142,7 +142,7 @@ Cloud groups allow you to decouple your collaboration and access from your on-pr
 - **Access**. Use Microsoft Entra security groups or Microsoft 365 Groups to authorize access to applications in Microsoft Entra ID.
 - **Office 365 licensing**. Use group-based licensing to provision to Office 365 by using cloud-only groups. This method decouples control of group membership from on-premises infrastructure.
 
-Owners of groups that are used for access should be considered privileged identities to avoid membership takeover in an on-premises compromise. A takeover would include direct manipulation of group membership on-premises or manipulation of on-premises attributes that can affect dynamic group membership in Microsoft 365.
+Owners of groups that are used for access should be considered privileged identities to avoid membership takeover in an on-premises compromise. A takeover would include direct manipulation of group membership on-premises or manipulation of on-premises attributes that can affect dynamic membership groups in Microsoft 365.
 
 ## Manage devices from the cloud
 

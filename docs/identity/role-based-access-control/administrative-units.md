@@ -59,7 +59,7 @@ In order for the [User Administrator](permissions-reference.md#user-administrato
 
 ## License requirements
 
-Using administrative units requires a Microsoft Entra ID P1 license for each administrative unit administrator who is assigned directory roles over the scope of the administrative unit, and a Microsoft Entra ID Free license for each administrative unit member. Creating administrative units is available with a Microsoft Entra ID Free license. If you are using dynamic membership rules for administrative units, each administrative unit member requires a Microsoft Entra ID P1 license. To find the right license for your requirements, see [Comparing generally available features of the Free and Premium editions](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+Using administrative units requires a Microsoft Entra ID P1 license for each administrative unit administrator who is assigned directory roles over the scope of the administrative unit, and a Microsoft Entra ID Free license for each administrative unit member. Creating administrative units is available with a Microsoft Entra ID Free license. If you are using rules for dynamic membership groups for administrative units, each administrative unit member requires a Microsoft Entra ID P1 license. To find the right license for your requirements, see [Comparing generally available features of the Free and Premium editions](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 ## Manage administrative units
 
@@ -67,7 +67,7 @@ You can manage administrative units by using the Microsoft Entra admin center, P
 
 - [Create or delete administrative units](admin-units-manage.md)
 - [Add users, groups, or devices to an administrative unit](admin-units-members-add.md)
-- [Manage users or devices for an administrative unit with dynamic membership rules (Preview)](admin-units-members-dynamic.md)
+- [Manage users or devices for an administrative unit with rules for dynamic membership groups (Preview)](admin-units-members-dynamic.md)
 - [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
 - [Work with administrative units](/powershell/azure/active-directory/working-with-administrative-units): Covers how to work with administrative units by using PowerShell.
 - [Administrative unit Graph support](/graph/api/resources/administrativeunit): Provides detailed documentation on Microsoft Graph for administrative units.
@@ -90,7 +90,7 @@ As a Privileged Role Administrator, you can use the Microsoft Entra admin center
 
 - Create administrative units
 - Add users, groups, or devices as members of administrative units
-- Manage users or devices for an administrative unit with dynamic membership rules (Preview)
+- Manage users or devices for an administrative unit with rules for dynamic membership groups (Preview)
 - Assign IT staff to administrative unit-scoped administrator roles.
 
 Administrative unit-scoped admins can use the Microsoft 365 admin center for basic management of users in their administrative units. A group administrator with administrative unit scope can manage groups by using PowerShell, Microsoft Graph, and the Microsoft 365 admin centers.

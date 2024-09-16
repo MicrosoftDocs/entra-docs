@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 06/26/2024
+ms.date: 09/06/2024
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -70,8 +70,8 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-| **Identity providers for external users (primary authentication)** | For self-service sign-up guests:</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>For invited guests:</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | For self-service sign-up users (consumers, business customers):</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation (preview)](./how-to-google-federation-customers.md)</br>- [Facebook federation (preview)](./how-to-facebook-federation-customers.md) |
-|   **Authentication methods for MFA**  | For internal users (employees and admins): </br>- [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </br>For guests (invited or self-service sign-up): </br>- [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  For self-service sign-up users (consumers, business customers):</br>- [Email one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</br>- [SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication)    |
+| **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>**For invited guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | **For self-service sign-up users (consumers, business customers)**</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation (preview)](./how-to-google-federation-customers.md)</br>- [Facebook federation (preview)](./how-to-facebook-federation-customers.md)<br></br>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):</br>- Microsoft Entra accounts </br>- Microsoft accounts </br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in) |
+|   **Authentication methods for MFA**  | **For internal users (employees and admins)** </br>- [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </br>**For guests (invited or self-service sign-up)** </br>- [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  **For self-service sign-up users (consumers, business customers) or invited users (preview)**</br>- [Email one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</br>- [SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication-preview)    |
 
 ## Application registration
 

@@ -193,7 +193,8 @@ The following are known limitations:
 
 When using OU scoping filter
 
-- You can only sync up to 59 separate OUs or Security Groups for a given configuration.
+- The scoping configuration has a limitation of 4MB in character length. In a standard tested environment, this translates to approximately 50 separate Organizational Units (OUs) or Security Groups, including its required metadata, for a given configuration.
+
 - Nested OUs are supported (that is, you **can** sync an OU that has 130 nested OUs, but you **cannot** sync 60 separate OUs in the same configuration).
 
 ### Password Hash Sync
