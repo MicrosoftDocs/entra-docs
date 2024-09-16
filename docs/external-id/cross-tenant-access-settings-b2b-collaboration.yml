@@ -109,7 +109,7 @@ procedureSection:
           - [To change inbound trust settings for accepting MFA and device claims](#to-change-inbound-trust-settings-for-mfa-and-device-claims)
             
       > [!NOTE]
-      > If you are using the native sharing capabilities in Microsoft SharePoint and [Microsoft OneDrive with Microsoft Entra B2B integration](/sharepoint/sharepoint-azureb2b-integration) enabled, you must add the external domains to [Microsoft Entra external collaboration settings](/entra/external-id/external-collaboration-settings-configure). Otherwise, invitations from these applications might fail, even if the external tenant has been added in the cross-tenant access settings.
+      > If you are using the native sharing capabilities in Microsoft SharePoint and [Microsoft OneDrive with Microsoft Entra B2B integration](/sharepoint/sharepoint-azureb2b-integration) enabled, you must add the external domains to the [external collaboration settings](/entra/external-id/external-collaboration-settings-configure). Otherwise, invitations from these applications might fail, even if the external tenant has been added in the cross-tenant access settings.
 
       ### To change inbound B2B collaboration settings
 
