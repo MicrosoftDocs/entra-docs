@@ -8,9 +8,9 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 10/31/2023
+ms.date: 09/16/2024
 ms.author: jomondi
-ms.reviewer: phsignor, yuhko
+ms.reviewer: phsignor, ergreenl
 ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 
@@ -25,6 +25,9 @@ In this article, you'll learn how to configure the way users consent to applicat
 Before an application can access your organization's data, a user must grant the application permissions to do so. Different permissions allow different levels of access. By default, all users are allowed to consent to applications for permissions that don't require administrator consent. For example, by default, a user can consent to allow an app to access their mailbox but can't consent to allow an app unfettered access to read and write to all files in your organization.
 
 To reduce the risk of malicious applications attempting to trick users into granting them access to your organization's data, we recommend that you allow user consent only for applications that have been published by a [verified publisher](~/identity-platform/publisher-verification-overview.md).
+
+> [!NOTE]
+> Applications that requires users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your diretory would otherwise allow a user to consent on behalf of themselves.
 
 ## Prerequisites
 
