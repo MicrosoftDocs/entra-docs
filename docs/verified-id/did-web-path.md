@@ -20,7 +20,6 @@ In this article, we go over the steps to enable support for did:web:path to your
 ## Prerequisites
 
 - Verified ID authority is [manually onboarded](verifiable-credentials-configure-tenant.md) using did:web. [Quick setup](verifiable-credentials-configure-tenant-quick.md) uses a domain name managed by Microsoft which can't be extended by yourself.
-- The domain used by the authority must be enabled for did:web:path by Microsoft.
 
 ## What is did:web:path?
 
@@ -28,7 +27,7 @@ Did:web:path is described in the [did:web Method Specification](https://w3c-ccg.
 
 ## Enable domain for did:web:path support
 
-By default, an authority isn't enabled to support did:web:path. You request enablement of did:web:path for your authority via creating a new support request in the [Entra admin center](https://entra.microsoft.com/#blade/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
+By default, a tenant and an authority isn't enabled to support did:web:path. You request enablement of did:web:path for your authority via creating a new support request in the [Entra admin center](https://entra.microsoft.com/#blade/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
 
 Support ticket details:
 
@@ -58,7 +57,7 @@ Once your tenant and authority is enabled for did:web:path, you can create a new
     - Go to `Verified ID | Overview` and copy domain (example: https://verifiedid.contoso.com/)
     - Go to `Verified ID | Organization settings` and take a note of which Key vault is being configured.
     - Go to the Key vault resource and copy the `resource group`, the `subscription ID` and the `Vault URI`
-2. Call the [create authority](admin-api.md#create-authority) with the following JSON body (modify as required):
+2. Call the [create authority](admin-api.md#create-authority) with the following JSON body (modify as required). Note especially the `/my-path` part as that is where you specify the path name to be used.
 
 ```JSON
 POST /v1.0/verifiableCredentials/authorities
@@ -74,7 +73,8 @@ POST /v1.0/verifiableCredentials/authorities
     "resourceName":"vccontosokv",
     "resourceUrl": "https://vccontosokv.vault.azure.net/"
   }
-}```
+}
+```
 
 3. Generate the did document for the new authority by calling [generateDidDocument](admin-api.md#generate-did-document) where `newAuthorityIdForPath` is the id in the create authority response:
 
@@ -82,7 +82,7 @@ POST /v1.0/verifiableCredentials/authorities
 POST /v1.0/verifiableCredentials/authorities/:newAuthorityIdForPath/generateDidDocument
 ```
 
-4. Save the did document response to a file named `did.json` and upload it to location on your webserver that matches the `linkedDomainUrl` in the create authority call.
+4. Save the did document response to a file named `did.json` and upload it to location on your webserver that matches the `linkedDomainUrl` in the create authority call. If your path is `https://my-domain.com/my-path`, the new did.json file must reside in that location.
 
 5. Retrieve the linked domain did configuration via calling [generateWellknownDidConfiguration](admin-api.md#well-known-did-configuration) API with the following JSON body (modify as required). Note that the domainUrl is the domain name ***without*** the path
 
