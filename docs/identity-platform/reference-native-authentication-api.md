@@ -30,7 +30,7 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
 ## Prerequisites
 
-1. An external tenant. If you don't already have one, [create an external tenant](../external-id/customers/how-to-create-external-tenant-portal.md).
+1. A Microsoft Entra external tenant. If you don't already have one, [create an external tenant](../external-id/customers/how-to-create-external-tenant-portal.md).
 
 1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauthentication#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
 
@@ -869,8 +869,9 @@ To request for security tokens, your app interacts with three endpoints, `/initi
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
 | `/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
-|   `/challenge`   | your app calls this endpoint with a list of [challenge types](#sign-in-challenge-types) supported by the identity service. Our identity service generates, then sends a one-time passcode to the chosen challenge channel such as email. If your app calls this endpoint repeatedly, a new OTP is sent each time a call is made.|
+|   `/challenge`   | Your app calls this endpoint with a list of [challenge types](#sign-in-challenge-types) supported by the identity service. Our identity service generates, then sends a one-time passcode to the chosen challenge channel such as email. If the tenant administrator enforces MFA for on customer users, your app calls this endpoint to request for an MFA verification method.|
 |  `/token`  | This endpoint verifies the one-time passcode it receives from your app, then it issues security tokens to your app.|
+| `/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered MFA verification methods if the `/challenge` endpoint doesn't return any MFA verification method or the app needs to provide multiple MFA verification methods for the user to choose from. Currently, since native authentication supports email one-time passcode as the only MFA verification method, this endpoint returns only email. |
 
 ### Sign-in challenge types
 
