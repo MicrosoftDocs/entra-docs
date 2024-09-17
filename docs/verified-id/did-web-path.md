@@ -122,6 +122,6 @@ In order to have apps issue credentials based on contracts in the new did:web:pa
 {
   "authority": "did:web:my-domain.com:my-path",
   "includeQRCode": false,
-  ... the rest is the came...
+  ... the rest is the same...
 }
 ```
