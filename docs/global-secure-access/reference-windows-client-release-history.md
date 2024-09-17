@@ -32,24 +32,25 @@ The most current version of the Global Secure Access client is available to down
 - Loading the health check results in advanced diagnostics from a zip file (created by collect logs).
 - Pause and Resume buttons were renamed to Disable and Enable.
 #### Other changes
-Miscellaneous bug fixes and improvements.
+Miscellaneous bug fixes and improvements
 
 ### 2.1.102
-Release status
+#### Release status
 07/30/2024: Released for download
 
-Functional changes:
-Support for coexistence with Netskope
-Support for client installation on Azure VM
-Support for sign out
-Icon update and event logs when user disables Private Access.
-Other changes:
-Stabilization and reliability of the system tray icon status
-Captive portal detection improvements
-Bug fix: System tray icon crashes when registry keys are manually misconfigured
-Miscellaneous bug fixes and improvements.
-2.0.0 and 1.8.239
-First GA version
+#### Functional changes
+- Support for coexistence with Netskope
+- Support for client installation on Azure VM
+- Support for sign out
+- Icon update and event logs when user disables Private Access.
+#### Other changes
+- Stabilization and reliability of the system tray icon status
+- Captive portal detection improvements
+- Bug fix: System tray icon crashes when registry keys are manually misconfigured
+- Miscellaneous bug fixes and improvements
 
-Release status
+### 2.0.0 and 1.8.239
+#### Release status
 7/11/2024: Released for download
+#### Functional changes
+First GA version
