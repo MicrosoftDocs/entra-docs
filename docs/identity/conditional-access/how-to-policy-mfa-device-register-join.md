@@ -40,7 +40,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 > 
 > :::image type="content" source="media/how-to-policy-mfa-device-register-join/device-settings-require-mfa-to-register-or-join.png" alt-text="Screenshot of the Require Multifactor Authentication to register or join devices with Microsoft Entra control to be disabled." lightbox="media/how-to-policy-mfa-device-register-join/device-settings-require-mfa-to-register-or-join.png":::
 
-### Named locations
+### Block access to register or join devices outside of trusted networks and locations
 
 Organizations might choose to incorporate known network locations known as **Named locations** in their Conditional Access policies. These named locations might include trusted IP networks like those for a main office location. For more information about configuring named locations, see the article [What is the location condition in Microsoft Entra Conditional Access?](concept-assignment-network.md#ipv4-and-ipv6-address-ranges)
 
