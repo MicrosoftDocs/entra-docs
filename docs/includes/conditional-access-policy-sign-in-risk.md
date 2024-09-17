@@ -41,3 +41,8 @@ For organizations that adopt [passwordless authentication methods](/entra/identi
 1. Under **Access controls** > **Block** access for passwordless users.
 1. Require administrator [investigation and remediation](/entra/id-protection/howto-identity-protection-investigate-risk) of any risk.
 1. Unblock the user.
+
+> [!TIP]
+> You might need to have two policies for a period of time while deploying passwordless credentials. 
+> - One that allows self-remediation for those not using passwordless methods. 
+> - Another that blocks passwordless users at high risk.
