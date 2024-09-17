@@ -33,8 +33,10 @@ After administrators confirm the settings using [report-only mode](../identity/c
 
 ### Passwordless scenarios
 
-For organizations that adopt [passwordless authentication methods](/entra/identity/authentication/howto-authentication-passwordless-deployment): 
+For organizations that adopt [passwordless authentication methods](/entra/identity/authentication/howto-authentication-passwordless-deployment) make the following changes: 
 
-1. Change the policy configuration to block access for passwordless users
+1. Under **Users**:
+   1. **Include**, select **Users and groups** and target your passwordless users.
+1. Under **Access controls** > **Block** access for passwordless users.
 1. Require administrator [investigation and remediation](/entra/id-protection/howto-identity-protection-investigate-risk) of any risk.
-1. Unblock the user
+1. Unblock the user.
