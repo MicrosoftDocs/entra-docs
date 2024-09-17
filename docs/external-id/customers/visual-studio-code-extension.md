@@ -138,7 +138,7 @@ To find the user you created during this step, you can go to the [Microsoft Entr
 
 The extension contains several code samples that demonstrate how authentication is implemented in different application types and development languages. Samples are included for single page apps (JavaScript, React, Angular) and web apps [Node.js (Express), ASP.NET Core, Python Django, Python Flask, Java Servlet]. Choose a sample from within the extension, and the extension automatically configures the application with your sign-in experience.
 
-1. Under select **Set up and run a sample app**, select the **Set up sample app button**.
+1. Under **Set up and run a sample app**, select the **Set up sample app** button.
 
    :::image type="content" source="media/visual-studio-code-extension/set-up-sample-app.png" alt-text="Screenshot of the Set up and run a sample app step.":::
 
