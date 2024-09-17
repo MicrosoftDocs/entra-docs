@@ -3,7 +3,7 @@ author: joflore
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: include
-ms.date: 05/02/2024
+ms.date: 09/17/2024
 ms.author: joflore
 ---
 
@@ -30,3 +30,11 @@ ms.author: joflore
 1. Select **Create** to create to enable your policy.
 
 After administrators confirm the settings using [report-only mode](../identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+
+### Passwordless scenarios
+
+For organizations that adopt [passwordless authentication methods](/entra/identity/authentication/howto-authentication-passwordless-deployment): 
+
+1. Change the policy configuration to block access for passwordless users
+1. Require administrator [investigation and remediation](/entra/id-protection/howto-identity-protection-investigate-risk) of any risk.
+1. Unblock the user

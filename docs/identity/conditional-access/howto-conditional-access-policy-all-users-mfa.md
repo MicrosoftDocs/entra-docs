@@ -5,7 +5,7 @@ description: Create a custom Conditional Access policy to require all users do m
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 09/17/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -18,7 +18,15 @@ As Alex Weinert, the Director of Identity Security at Microsoft, mentions in his
 
 > Your password doesn't matter, but MFA does! Based on our studies, your account is more than 99.9% less likely to be compromised if you use MFA.
 
-The guidance in this article helps your organization create an MFA policy for your environment.
+The guidance in this article helps your organization create an MFA policy for your environment using authentication strengths. Microsoft Entra ID provides three [built-in authentication strengths](/entra/identity/authentication/concept-authentication-strengths):
+
+- Multifactor authentication strength (least restrictive)
+- Passwordless MFA strength
+- Phishing-resistant MFA strength (most restrictive)
+
+You can use one of the built-in strengths or create a [custom authentication strength](/entra/identity/authentication/concept-authentication-strength-advanced-options) based on the authentication methods you want to require.
+
+For external user scenarios, the MFA authentication methods that a resource tenant can accept vary depending on whether the user is completing MFA in their home tenant or in the resource tenant. For more information, see [Authentication strength for external users](/entra/identity/authentication/concept-authentication-strength-external-users).
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
@@ -39,7 +47,7 @@ The following steps help create a Conditional Access policy to require all users
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
    1. Under **Exclude**, select any applications that don't require multifactor authentication.
 1. Under **Access controls** > **Grant**, select **Grant access**.
-   1. Select **Require authentication strength**, then choose the appropriate strength. The minimum recommendation is **Require multifactor authentication**, while the highest preconfigured option is **Phishing-resistant MFA**. For more information about authentication strengths, see the article [Conditional Access authentication strength](/entra/identity/authentication/concept-authentication-strengths).
+   1. Select **Require authentication strength**, then select the built-in or custom authentication strength from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
@@ -48,16 +56,14 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 ### Named locations
 
-Organizations might choose to incorporate known network locations known as **Named locations** to their Conditional Access policies. These named locations might include trusted IP networks like those for a main office location. For more information about configuring named locations, see the article [What is the location condition in Microsoft Entra Conditional Access?](concept-assignment-network.md#ipv4-and-ipv6-address-ranges)
+Organizations might choose to incorporate known network locations known as **Named locations** in their Conditional Access policies. These named locations might include trusted IP networks like those for a main office location. For more information about configuring named locations, see the article [What is the location condition in Microsoft Entra Conditional Access?](concept-assignment-network.md#ipv4-and-ipv6-address-ranges)
 
 In the previous example policy, an organization might choose to not require multifactor authentication if accessing a cloud app from their corporate network. In this case they could add the following configuration to the policy:
 
-1. Under **Assignments**, select **Conditions** > **Locations**.
+1. Under **Assignments**, select **Network**.
    1. Configure **Yes**.
-   1. Include **Any location**.
-   1. Exclude **All trusted locations**.
-   1. Select **Done**.
-1. Select **Done**.
+   1. Include **Any network or location**.
+   1. Exclude **All trusted networks and locations**.
 1. **Save** your policy changes.
 
 ## Application exclusions
@@ -92,8 +98,7 @@ Additionally, in the [**Activation**](ms-settings:activation) pane, the followin
 
 The prompt for authentication usually occurs when a device is offline for an extended period of time. This change eliminates the need for an exclusion in the Conditional Access policy for Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later. A Conditional Access policy can still be used with Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later if the prompt for user authentication via a toast notification isn't desired.
 
-## Next steps
+## Related content
 
-[Conditional Access templates](concept-conditional-access-policy-common.md)
-
-[Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Conditional Access templates](concept-conditional-access-policy-common.md)
+- [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)

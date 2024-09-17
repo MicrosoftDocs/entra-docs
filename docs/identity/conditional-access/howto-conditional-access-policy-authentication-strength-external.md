@@ -5,7 +5,7 @@ description: Create a custom Conditional Access policy with authentication stren
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 09/17/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -16,15 +16,15 @@ ms.reviewer: inbarc
 
 Authentication strength is a Conditional Access control that lets you define a specific combination of multifactor authentication (MFA) methods that an external user must complete to access your resources. This control is especially useful for restricting external access to sensitive apps in your organization. For example, you can create a Conditional Access policy, require a phishing-resistant authentication strength in the policy, and assign it to guests and external users.
 
-Microsoft Entra ID provides three [built-in authentication strengths](https://aka.ms/b2b-auth-strengths):
+Microsoft Entra ID provides three [built-in authentication strengths](/entra/identity/authentication/concept-authentication-strengths):
 
-- Multifactor authentication strength
+- Multifactor authentication strength (least restrictive)
 - Passwordless MFA strength
-- Phishing-resistant MFA strength
+- Phishing-resistant MFA strength (most restrictive)
 
-You can use one of the built-in strengths or create a [custom authentication strength](https://aka.ms/b2b-auth-strengths) based on the authentication methods you want to require.
+You can use one of the built-in strengths or create a [custom authentication strength](/entra/identity/authentication/concept-authentication-strength-advanced-options) based on the authentication methods you want to require.
 
-In external user scenarios, the MFA authentication methods that a resource tenant can accept vary depending on whether the user is completing MFA in their home tenant or in the resource tenant. For details, see [Conditional Access authentication strength](https://aka.ms/b2b-auth-strengths).
+In external user scenarios, the MFA authentication methods that a resource tenant can accept vary depending on whether the user is completing MFA in their home tenant or in the resource tenant. For details, see [Authentication strength for external users](/entra/identity/authentication/concept-authentication-strength-external-users).
 
 > [!NOTE]
 > Currently, you can only apply authentication strength policies to external users who authenticate with Microsoft Entra ID. For email one-time passcode, SAML/WS-Fed, and Google federation users, use the [MFA grant control](concept-conditional-access-grant.md#require-multifactor-authentication) to require MFA.
@@ -48,7 +48,7 @@ Determine if one of the built-in authentication strengths works for your scenari
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
 1. Review the built-in authentication strengths to see if one of them meets your requirements.
-1. If you want to enforce a different set of authentication methods, [create a custom authentication strength](https://aka.ms/b2b-auth-strengths).
+1. If you want to enforce a different set of authentication methods, [create a custom authentication strength](/entra/identity/authentication/concept-authentication-strength-advanced-options).
 
 ## Create a Conditional Access policy
 
@@ -66,7 +66,7 @@ Use the following steps to create a Conditional Access policy that applies an au
 1. Under **Target resources** > **Cloud apps**, under **Include** or **Exclude**, select any applications you want to include in or exclude from the authentication strength requirements.
 1. Under **Access controls** > **Grant**:
    1. Choose **Grant access**.
-   1. Select **Require authentication strength**, and then select the built-in or custom authentication strength from the list.
+   1. Select **Require authentication strength**, then select the built-in or custom authentication strength from the list.
 
    ![Screenshot showing where to select an authentication strength.](media/howto-conditional-access-policy-authentication-strength-external/select-authentication-strength.png)
 
@@ -75,8 +75,7 @@ Use the following steps to create a Conditional Access policy that applies an au
 
 After you confirm your settings using [report-only mode](howto-conditional-access-insights-reporting.md), an administrator can move the **Enable policy** toggle from **Report-only** to **On**.
 
-## Next steps
+## Related content
 
-[Conditional Access templates](concept-conditional-access-policy-common.md)
-
-[Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Conditional Access templates](concept-conditional-access-policy-common.md)
+- [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
