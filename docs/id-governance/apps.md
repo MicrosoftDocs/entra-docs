@@ -603,7 +603,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Podbean](~/identity/saas-apps/podbean-tutorial.md) |  | ● |
 | [PolicyStat](~/identity/saas-apps/policystat-tutorial.md) |  | ● |
 | [PoliteMail - SSO](~/identity/saas-apps/politemail-sso-tutorial.md) |  | ● |
-| [Postman](~/identity/saas-apps/postman-provisioning-tutorial.md) | ● | ● |
 | [Preciate](~/identity/saas-apps/preciate-provisioning-tutorial.md) | ● |  |
 | [PressReader](~/identity/saas-apps/pressreader-tutorial.md) |  | ● |
 | [PrinterLogic SaaS](~/identity/saas-apps/printer-logic-saas-provisioning-tutorial.md) | ● | ● |
