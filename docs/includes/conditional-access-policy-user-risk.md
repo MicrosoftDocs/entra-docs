@@ -42,6 +42,6 @@ For organizations that adopt [passwordless authentication methods](/entra/identi
 1. Unblock the user.
 
 > [!TIP]
-> You might need to have two policies for a period of time while deploying passwordless credentials. 
+> You might need to have two policies for a period of time while deploying passwordless methods. 
 > - One that allows self-remediation for those not using passwordless methods. 
 > - Another that blocks passwordless users at high risk.
