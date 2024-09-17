@@ -1,6 +1,6 @@
 ---
-title: Native authentication with email and password API reference
-description: Find out how to use native authentication with email and password API reference for Microsoft Entra ID for customers. 
+title: Native authentication API reference documentation
+description: Find out how to use native authentication APIs to authenticate users into your customer-facing apps with the external tenant. 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
@@ -9,7 +9,7 @@ ms.subservice: customers
 ms.topic: reference
 ms.date: 04/09/2024
 
-#Customer intent: As an identity developer, I want to learn how to integrate customer apps with Native authentication's email and password API that Microsoft Entra ID for customers supports.
+#Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
 
 # Native authentication API reference
@@ -30,17 +30,19 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
 ## Prerequisites
 
-1. Microsoft Entra External ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
+1. An external tenant. If you don't already have one, [create an external tenant](../external-id/customers/how-to-create-external-tenant-portal.md).
 
 1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauthentication#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
 
-1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you configure required as these attributes are the ones that Microsoft Entra expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
+1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). When you create the user flow, take note of the user attributes you configure as required as these attributes are the ones that Microsoft Entra expects your app to submit.
 
 1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign-in APIs. Alternatively, you can get this test user after you run the sign-up flow.
 
-1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the customers tenant. SSPR is available for customer users who use email with password authentication method.  
+1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the external tenant. SSPR is available for customer users who use email with password authentication method.  
+
+1. To enforce Multifactor authentication (MFA) for your customers, use the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to adding MFA to your sign-up and sign-in user flow. Currently, native authentication supports email one-time passcode as a second factor for MFA. Therefore, it's only available when the authentication method is email with password.
 
 ## Continuation token
 

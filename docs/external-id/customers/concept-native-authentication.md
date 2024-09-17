@@ -110,4 +110,3 @@ If you're planning to create an app on a framework currently not supported by MS
 - [iOS native authentication tutorials](how-to-run-native-authentication-sample-ios-app.md).
 - [macOS native authentication tutorials](how-to-run-native-authentication-sample-macos-app.md).
 - [Native authentication API documentation](../../identity-platform/reference-native-authentication-overview.md).
-
