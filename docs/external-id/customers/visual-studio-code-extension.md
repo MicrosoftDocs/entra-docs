@@ -50,7 +50,7 @@ The Microsoft Entra External ID extension creates a tenant in an external config
 
    :::image type="content" source="media/visual-studio-code-extension/get-started-step.png" alt-text="Screenshot of the get started options.":::
 
-### Set up a free trial
+### Set up a free trial (preview)
 
 1. Select **Set up a free trial**.
 1. In the sign-in confirmation message, select **Allow**.
