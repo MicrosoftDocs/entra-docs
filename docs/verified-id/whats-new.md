@@ -18,6 +18,10 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
+## September 2024
+
+- Support for [did:web:path](did-web-path.md) can be enabled for your Entra tenant upon request.
+
 ## August 2024
 
 - [FaceCheck](using-facecheck.md) is generally available starting August 12.
