@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/13/2024
+ms.date: 09/17/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -113,7 +113,11 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: Is MFA mandatory for all users or only administrators? 
 
-**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them.
+**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/howto-conditional-access-policy-all-users-.md#user-exclusions) that are enabled for them.
+
+**Question**: Will I need to complete MFA if I choose the option to Stay signed in?
+
+**Answer**: Yes, even if you choose **Stay signed in**, you're required to complete MFA before you can sign in to any these [applications](#applications).
 
 **Question**: Will the enforcement apply to B2B guest accounts?
 
