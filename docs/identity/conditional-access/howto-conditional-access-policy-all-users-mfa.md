@@ -23,6 +23,43 @@ The guidance in this article helps your organization create an MFA policy for yo
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
+[!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
+
+## Create a Conditional Access policy
+
+The following steps help create a Conditional Access policy to require all users do multifactor authentication.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
+1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Under **Assignments**, select **Users or workload identities**.
+   1. Under **Include**, select **All users**
+   1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
+1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
+   1. Under **Exclude**, select any applications that don't require multifactor authentication.
+1. Under **Access controls** > **Grant**, select **Grant access**.
+   1. Select **Require authentication strength**, then choose the appropriate strength. The minimum recommendation is **Require multifactor authentication**, while the highest preconfigured option is **Phishing-resistant MFA**. For more information about authentication strengths, see the article [Conditional Access authentication strength](/entra/identity/authentication/concept-authentication-strengths).
+   1. Select **Select**.
+1. Confirm your settings and set **Enable policy** to **Report-only**.
+1. Select **Create** to create to enable your policy.
+
+After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+
+### Named locations
+
+Organizations might choose to incorporate known network locations known as **Named locations** to their Conditional Access policies. These named locations might include trusted IP networks like those for a main office location. For more information about configuring named locations, see the article [What is the location condition in Microsoft Entra Conditional Access?](concept-assignment-network.md#ipv4-and-ipv6-address-ranges)
+
+In the previous example policy, an organization might choose to not require multifactor authentication if accessing a cloud app from their corporate network. In this case they could add the following configuration to the policy:
+
+1. Under **Assignments**, select **Conditions** > **Locations**.
+   1. Configure **Yes**.
+   1. Include **Any location**.
+   1. Exclude **All trusted locations**.
+   1. Select **Done**.
+1. Select **Done**.
+1. **Save** your policy changes.
+
 ## Application exclusions
 
 Organizations might have many cloud applications in use. Not all of those applications require equal security. For example, the payroll and attendance applications might require MFA but the cafeteria probably doesn't. Administrators can choose to exclude specific applications from their policy.
@@ -54,41 +91,6 @@ Additionally, in the [**Activation**](ms-settings:activation) pane, the followin
 > **Please sign in to your work or school account to verify your information.**
 
 The prompt for authentication usually occurs when a device is offline for an extended period of time. This change eliminates the need for an exclusion in the Conditional Access policy for Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later. A Conditional Access policy can still be used with Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later if the prompt for user authentication via a toast notification isn't desired.
-
-[!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
-
-## Create a Conditional Access policy
-
-The following steps help create a Conditional Access policy to require all users do multifactor authentication.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
-1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
-1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **All users**
-   1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
-   1. Under **Exclude**, select any applications that don't require multifactor authentication.
-1. Under **Access controls** > **Grant**, select **Grant access**, **Require multifactor authentication**, and select **Select**.
-1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
-
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
-
-### Named locations
-
-Organizations might choose to incorporate known network locations known as **Named locations** to their Conditional Access policies. These named locations might include trusted IP networks like those for a main office location. For more information about configuring named locations, see the article [What is the location condition in Microsoft Entra Conditional Access?](concept-assignment-network.md#ipv4-and-ipv6-address-ranges)
-
-In the previous example policy, an organization might choose to not require multifactor authentication if accessing a cloud app from their corporate network. In this case they could add the following configuration to the policy:
-
-1. Under **Assignments**, select **Conditions** > **Locations**.
-   1. Configure **Yes**.
-   1. Include **Any location**.
-   1. Exclude **All trusted locations**.
-   1. Select **Done**.
-1. Select **Done**.
-1. **Save** your policy changes.
 
 ## Next steps
 
