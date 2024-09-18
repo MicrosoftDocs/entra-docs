@@ -6,7 +6,7 @@ description: Learn how to enable Active Directory B2B external collaboration and
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 09/18/2024
 
 ms.author: mimart
 author: msmimart
@@ -36,11 +36,16 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 :::image type="content" source="media/external-identities-overview/b2b-comparison.png" alt-text="Screenshots showing a comparison of the branded sign-in experience and the default sign-in experience.":::
 
+> [!NOTE]
+> Depending on the external collaboration settings you want to configure, different admin roles might be required. This article specifies the role required for each type of setting. See also [Least privileged roles by task for External ID/B2C](/entra/identity/role-based-access-control/delegate-by-task#external-identitiesb2c).
+
 ## Configure settings in the portal
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+### To configure guest user access
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 
@@ -54,6 +59,12 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
    - **Guest user access is restricted to properties and memberships of their own directory objects (most restrictive)**: With this setting, guests can access only their own profiles. Guests aren't allowed to see other users' profiles, groups, or group memberships.
 
+### To configure guest invite settings
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter).
+
+1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+
 1. Under **Guest invite settings**, choose the appropriate settings:
 
     ![Screenshot showing Guest invite settings.](./media/external-collaboration-settings-configure/guest-invite-settings.png)
@@ -62,6 +73,12 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
    - **Member users and users assigned to specific admin roles can invite guest users including guests with member permissions**: To allow member users and users who have specific administrator roles to invite guests, select this radio button.
    - **Only users assigned to specific admin roles can invite guest users**: To allow only those users with [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) roles to invite guests, select this radio button.
    - **No one in the organization can invite guest users including admins (most restrictive)**: To deny everyone in the organization from inviting guests, select this radio button.
+
+### To configure guest self-service sign-up and external user leave settings
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+
+1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 
 1. Under **Enable guest self-service sign up via user flows**, select **Yes** if you want to be able to create user flows that let users sign up for apps. For more information about this setting, see [Add a self-service sign-up user flow to an app](self-service-sign-up-user-flow.yml).
 
@@ -76,6 +93,12 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
    > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.yml) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable.
 
    ![Screenshot showing External user leave settings in the portal.](media/external-collaboration-settings-configure/external-user-leave-settings.png)
+
+### To configure collaboration restrictions (allow or block domains)
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+
+1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 
 1. Under **Collaboration restrictions**, you can choose whether to allow or deny invitations to the domains you specify and enter specific domain names in the text boxes. For multiple domains, enter each domain on a new line. For more information, see [Allow or block invitations to B2B users from specific organizations](allow-deny-list.md).
 
