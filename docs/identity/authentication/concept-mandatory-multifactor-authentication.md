@@ -113,7 +113,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: Is MFA mandatory for all users or only administrators? 
 
-**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/howto-conditional-access-policy-all-users-.md#user-exclusions) that are enabled for them.
+**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/conditional-access/howto-conditional-access-policy-all-users-.md#user-exclusions) that are enabled for them.
 
 **Question**: Will I need to complete MFA if I choose the option to Stay signed in?
 
