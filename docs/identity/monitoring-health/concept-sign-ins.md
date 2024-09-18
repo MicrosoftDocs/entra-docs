@@ -57,10 +57,10 @@ To more effectively use the sign-in logs in the Microsoft Entra admin center, ad
 
 There are four types of logs in the sign-in logs preview:
 
-- Interactive user sign-ins
-- Non-interactive user sign-ins
-- Service principal sign-ins
-- Managed identity sign-ins
+- [Interactive user sign-ins](concept-interactive-sign-ins.md)
+- [Non-interactive user sign-ins](concept-noninteractive-sign-ins.md)
+- [Service principal sign-ins](concept-service-principal-sign-ins.md)
+- [Managed identity sign-ins](concept-managed-identity-sign-ins.md)
 
 The classic sign-in logs only include interactive user sign-ins.
 

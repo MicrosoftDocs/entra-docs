@@ -39,6 +39,9 @@ In addition to the default fields, the non-interactive sign-in log also shows:
 
 You can't customize the fields shown in this report.
 
+> [!NOTE]
+> Entries in the sign-in logs are system generated and can't be changed or deleted.
+
 ## How does it work?
 
 To make it easier to digest the data, non-interactive sign-in events are grouped. Clients often create many non-interactive sign-ins on behalf of the same user in a short time period. The non-interactive sign-ins share the same characteristics except for the time the sign-in was attempted. For example, a client might get an access token once per hour on behalf of a user. If the state of the user or client doesn't change, the IP address, resource, and all other information is the same for each access token request. The only state that does change is the date and time of the sign-in.

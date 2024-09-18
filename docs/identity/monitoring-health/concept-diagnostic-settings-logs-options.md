@@ -48,7 +48,7 @@ The `NonInteractiveUserSIgnInLogs` are sign-ins done on behalf of a user, such a
 
 ### Service principal sign-in logs
 
-If you need to review sign-in activity for apps or service principals, the `ServicePrincipalSignInLogs` might be a good option. In these scenarios, certificates or client secrets are used for authentication. For more information, see [Service principal sign-ins](concept-service-principals-sign-ins.md).
+If you need to review sign-in activity for apps or service principals, the `ServicePrincipalSignInLogs` might be a good option. In these scenarios, certificates or client secrets are used for authentication. For more information, see [Service principal sign-ins](concept-service-principal-sign-ins.md).
 
 ### Managed identity sign-in logs
 

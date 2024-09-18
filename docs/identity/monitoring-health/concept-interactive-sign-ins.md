@@ -37,6 +37,8 @@ In addition to the default fields, the interactive sign-in log also shows:
 - The sign-in location
 - Whether Conditional Access was applied
 
+> [!NOTE]
+> Entries in the sign-in logs are system generated and can't be changed or deleted.
 ## Special considerations
 
 **Non-interactive sign-ins on the interactive sign-in logs**
