@@ -74,15 +74,21 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
    - **Only users assigned to specific admin roles can invite guest users**: To allow only those users with [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter) roles to invite guests, select this radio button.
    - **No one in the organization can invite guest users including admins (most restrictive)**: To deny everyone in the organization from inviting guests, select this radio button.
 
-### To configure guest self-service sign-up and external user leave settings
+### To configure guest self-service sign-up
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 
 1. Under **Enable guest self-service sign up via user flows**, select **Yes** if you want to be able to create user flows that let users sign up for apps. For more information about this setting, see [Add a self-service sign-up user flow to an app](self-service-sign-up-user-flow.yml).
 
     ![Screenshot showing Self-service sign up via user flows setting.](./media/external-collaboration-settings-configure/self-service-sign-up-setting.png)
+
+### To configure external user leave settings
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+
+1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 
 1. Under **External user leave settings**, you can control whether external users can remove themselves from your organization.
 
