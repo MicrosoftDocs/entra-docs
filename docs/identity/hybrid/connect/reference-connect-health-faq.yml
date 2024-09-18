@@ -135,7 +135,7 @@ sections:
       - question: |
           After installing Microsoft Entra Connect Sync, with an account that has the Hybrid Administrator role, why is the Connect Health for Sync Agent disabled in services?
         answer: |
-          In order to install the Connect Health for Sync Agent, you need to be a Global Administrator.  To activate the agent, you need to re-install the agent using a global administrator account.
+          In order to install the Connect Health for Sync Agent, you need to be a Global Administrator.  To activate the agent, you need to reinstall the agent using a global administrator account.
 
   - name: Health Agent registration and data freshness
     questions:
@@ -216,7 +216,7 @@ sections:
       - question: |
           When will the agent certificate be automatically renewed before expiration?
         answer: |
-          The agent certification will be automatically renewed **6 months** before its expiration date. If it isn't renewed, ensure the network connection of the agent is stable. Restart the agent services or update to the latest version may also solve the issue.
+          The agent certification will be automatically renewed **six months** before its expiration date. If it isn't renewed, ensure the network connection of the agent is stable. Restart the agent services or update to the latest version may also solve the issue.
           
 additionalContent: |
 
