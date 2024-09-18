@@ -30,7 +30,7 @@ Microsoft Entra provisioning service uses basic authentication to connect to Emp
 To further secure the connectivity between Microsoft Entra provisioning service and SuccessFactors, add the Microsoft Entra IP ranges in the SuccessFactors IP allowlist:
 
 1. Download the [latest IP Ranges](https://www.microsoft.com/download/details.aspx?id=56519) for the Azure Public Cloud.
-1. Open the file and search for tag **`AzureActiveDirectory`**.
+1. Open the file and search for tag `AzureActiveDirectory`.
 1. Copy all IP address ranges listed within the element *addressPrefixes* and use the range to build your IP address restriction list.
 1. Translate the CIDR values to IP ranges.  
 1. Log in to SuccessFactors admin portal to add IP ranges to the allowlist. Refer to SAP [support note 2253200](https://userapps.support.sap.com/sap/support/knowledge/2253200). You can now [enter IP ranges](https://answers.sap.com/questions/12882263/whitelisting-sap-cloud-platform-ip-address-range-i.html) in this tool. 
