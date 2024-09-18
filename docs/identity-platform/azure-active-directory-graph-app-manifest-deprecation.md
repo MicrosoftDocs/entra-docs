@@ -35,9 +35,9 @@ Starting January 7 2025, you won't be able to view, save, upload, or download th
 
 If you don't view, edit, or save app manifests, this migration doesn't impact your workflow.
 
-If you view or edit app manifests, you'll notice the [attribute differences between Azure AD Graph format and Microsoft Graph format](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats). We recommend that you start viewing and editing app manifests following the [Microsoft Graph format reference](reference-microsoft-graph-app-manifest.md).
+If you view or edit app manifests, you notice the [attribute differences between Azure AD Graph format and Microsoft Graph format](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats). We recommend that you start viewing and editing app manifests following the [Microsoft Graph format reference](reference-microsoft-graph-app-manifest.md).
 
-If your workflow requires you to save the manifests in your source repository for use later, you'll need to [convert an app manifest in Azure AD Graph format to Microsoft Graph format](#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
+If your workflow requires you to save the manifests in your source repository for use later, you need to [convert an app manifest in Azure AD Graph format to Microsoft Graph format](#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
 
 ## Attribute differences between Azure AD Graph and Microsoft Graph formats
 
@@ -60,7 +60,7 @@ Most Azure AD Graph app manifest attributes stay the same. However, the followin
 | `preAuthorizedApplications` | Relocated as `preAuthorizedApplications` property of the `api` attribute |
 | `replyUrlsWithType` | Renamed as property `redirectUris` in multiple attributes: `web` attribute, `spa` attribute, `publicClient` attribute |
 | `signInUrl` | Relocated and renamed as property `homePageUrl` of the `web` attribute |
-| `trustedCertificateSubjects` | This is a Microsoft internal property. The portal shows v1.0 version of MS Graph app manifest while this property is only present in beta version of MS Graph app manifest. Please continue to edit this property using Azure AD Graph app manifest in Entra portal. We will expose MS Graph app manifest beta version in Entra portal before deprecating Azure AD Graph app manifest |
+| `trustedCertificateSubjects` | This is a Microsoft internal property. The portal shows v1.0 version of MS Graph app manifest while this property is only present in beta version of MS Graph app manifest. Continue to edit this property using Azure AD Graph app manifest in Microsoft Entra admin center. We will expose MS Graph app manifest beta version in Microsoft Entra admin center before deprecating Azure AD Graph app manifest |
 
 ## How do I tell the format of my app manifest?
 
