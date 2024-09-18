@@ -164,13 +164,13 @@ Content-Type: application/json
 ```json
 {
     "error": "user_already_exists", 
-    "error_description": "AADSTS1003037: It looks like you may already have an account.... .\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...", 
+    "error_description": "AADSTS1003037: It looks like you may already have an account.... .\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...", 
     "error_codes": [ 
         1003037 
     ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -302,13 +302,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -603,8 +603,8 @@ Content-Type: application/json
         399246
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6",
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd",
     "suberror": "password_too_weak"
 }
 ```
@@ -714,13 +714,13 @@ Content-Type: application/json
 ```json
 {
     "error": "expired_token",
-    "error_description": "AADSTS901007: The continuation_token is expired.  .\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...", 
+    "error_description": "AADSTS901007: The continuation_token is expired.  .\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...", 
     "error_codes": [
         552003
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6" 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd" 
 }
 ```
 
@@ -822,13 +822,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The client doesn't have consent for the requested scopes.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The client doesn't have consent for the requested scopes.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         50126 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -974,13 +974,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1115,13 +1115,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1145,7 +1145,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ### Step 3: Request for security tokens
 
-The app makes a POST request to the `/token` endpoint and provides the user’s credentials chosen in the previous step, in this case password, to acquire security tokens.  
+The app makes a POST request to the `/token` endpoint and provides the user’s credentials chosen in the previous step to acquire security tokens.  
 
 Here's an example of the request(we present the example request in multiple lines for readability):
 
@@ -1167,10 +1167,19 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 | `continuation_token`          |    Yes   |  [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
 |`grant_type`| Yes |The value must be *password* for email with password authentication method and *oob* for email one-time passcode authentication method. |
 |`scope`| Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid, and *email*. The app needs to include *openid* scope for Microsoft Entra to issue an ID token. The app needs to include *offline_access* scope for Microsoft Entra to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](permissions-consent-overview.md). |
-|   `password`    | Yes <br> (for email with password) | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user.|
-|`oob`| Yes <br> (for email one-time passcode) |The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. To **resend a one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
+|   `password`    | No | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user. This parameter is **required** if the authentication method is email with password.|
+|`oob`| No |The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. This parameter is **required** if the authentication method is email one-time passcode. To **resend a one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
 
-#### Successful response
+
+Once the app successfully submits the user’s credentials the sign-in flow depends on the scenarios as shown the table:
+
+|    Scenario          | How to proceed |
+|----------------------|------------------------|
+| The app successfully submits the user’s credentials and no further action is required from the customer user. | Microsoft Entra issues security tokens to your app as shown in [Issue sign-in security tokens](#issue-sign-in-security-tokens).  |
+|  |  |
+|  |  |
+
+#### Issue sign-in security tokens
 
 Here's an example of a successful response:
 
@@ -1211,13 +1220,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_grant", 
-    "error_description": "AADSTS901007: Error validating credentials due to invalid username or password.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: Error validating credentials due to invalid username or password.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         50126 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1244,7 +1253,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
-|`invalid_oob_value`| The value of one-time passcode is invalid. This sub-error only applies email one-time passcode |
+|`invalid_oob_value`| The value of one-time passcode is invalid. This sub-error only applies if the authentication method is email one-time passcode. |
 
 ## Self-service password reset (SSPR)
 
@@ -1351,13 +1360,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1469,13 +1478,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1553,13 +1562,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS55200: The continuation_token is invalid.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS55200: The continuation_token is invalid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         55200 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1644,13 +1653,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1745,13 +1754,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "expired_token", 
-    "error_description": "AADSTS901007: The continuation_token is expired.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The continuation_token is expired.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         552003 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
