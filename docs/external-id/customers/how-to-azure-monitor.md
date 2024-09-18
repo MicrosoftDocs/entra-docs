@@ -58,15 +58,37 @@ A **Log Analytics workspace** is a unique environment for Azure Monitor log data
 
 ### Add Microsoft.Insights as a resource provider
 
-Itt tartok ------------------------------
+Add Microsoft.Insights as a resource provider in the subscription. This can be done in the subscription’s settings menu on the left. 
+In this step, you choose your external tenant as a **service provider**. You also define the authorizations you need to assign the appropriate Azure built-in roles to groups in your Microsoft Entra tenant.
+To see all resource providers, and the registration status for your subscription:
 
-
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. On the Azure portal menu, search for **Subscriptions**. Select it from the available options.
+1. Select the subscription you want to view.
+1. On the left menu, under **Settings**, select **Resource providers**.
+1. Find the resource provider you want to register.
+1. Select the **Microsoft.Insights** resource provider, and select **Register**. 
 
 ## Step 2: External tenant configuration - get external tenant ID and create a group for external ID monitoring
 
 ### Get your external tenant ID
+
+First, get the **Tenant ID** of your external tenant. You'll need this ID to configure the external tenant to send logs to the Log Analytics workspace in the workforce tenant.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your external tenant from the **Directories + subscriptions** menu.
+1. Select **Tenant overview** and select **Overview**.
+1. Record the **Tenant ID**.
+
 ### Create a group for external ID monitoring
 
+Now create a group or user to which you want to give permission to the resource group you created earlier in the directory containing your subscription.
+
+To make management easier, we recommend using Microsoft Entra user _groups_ for each role, allowing you to add or remove individual users to the group rather than assigning permissions directly to that user. In this walkthrough, we'll add a security group.
+
+1. With **Microsoft Entra ID** still selected in your external tenant, select **Groups**, and then select a group. If you don't have an existing group, create a **Security** group, then add members. For more information, follow the procedure [Create a basic group and add members using Microsoft Entra ID](../active-directory/fundamentals/how-to-manage-groups.md).
+1. Select **Overview**, and record the group's **Object ID**.
+Itt tartok -----------------------------
 
 ## Step 3: Workforce tenant configuration – configure Lighthouse (create Service Provider) with ARM
 
