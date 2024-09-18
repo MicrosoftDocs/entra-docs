@@ -44,7 +44,7 @@ sections:
       - question: |
           Does password hash synchronization act as a fallback to Pass-through Authentication?
         answer: |
-          No. Pass-through Authentication *does not* automatically failover to password hash synchronization. To avoid user sign-in failures, you should configure Pass-through Authentication for [high availability](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability).
+          No. Pass-through Authentication *doesn't* automatically failover to password hash synchronization. To avoid user sign-in failures, you should configure Pass-through Authentication for [high availability](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability).
           
       - question: |
           What happens when I switch from password hash synchronization to Pass-through Authentication?
@@ -73,7 +73,7 @@ sections:
           To manually upgrade a connector:
 
           - Download the latest version of the Agent. (You find it under Microsoft Entra Connect Pass-through Authentication on the [Microsoft Entra admin center](https://entra.microsoft.com). You can also find the link at Microsoft Entra pass-through authentication: Version release history.
-          - The installer restarts the Microsoft Entra Connect Authentication Agent services. In some cases, a server reboot is required if the installer can't replace all files. Therefore we recommend closing all applications that is, Event Viewer before you start the upgrade.
+          - The installer restarts the Microsoft Entra Connect Authentication Agent services. In some cases, a server reboot is required if the installer can't replace all files. We recommend closing all applications before you start the upgrade.
           - Run the installer. The upgrade process is quick and doesn't require providing any credentials and the Agent won't be re-registered.
 
       - question: |
@@ -144,7 +144,7 @@ sections:
         answer: |
           As long as a Pass-through Authentication Agent is running, it remains active and continually handles user sign-in requests. If you want to uninstall an Authentication Agent, go to **Control Panel -> Programs -> Programs and Features** and uninstall both the **Microsoft Entra Connect Authentication Agent** and the **Microsoft Entra Connect Agent Updater** programs.
           
-          If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). after completing the preceding step, you'll see the Authentication Agent showing as **Inactive**. This is *expected*. The Authentication Agent is automatically dropped from the list after 10 days.
+          If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). You should see the Authentication Agent showing as **Inactive**. This is *expected*. The Authentication Agent is automatically dropped from the list after 10 days.
           
       - question: |
           I already use AD FS to sign in to Microsoft Entra ID. How do I switch it to Pass-through Authentication?
@@ -175,7 +175,7 @@ sections:
           For most customers, two or three Authentication Agents in total are sufficient for high availability and capacity. However, in production environments, we recommend that you have a minimum of 3 Authentication Agents running on your tenant. You should install Authentication Agents close to your domain controllers to improve sign-in latency.
           
           >[!NOTE]
-          >There is a system limit of 40 Authentication Agents per tenant.
+          >There's a system limit of 40 Authentication Agents per tenant.
           
       - question: |
           What role do I need to enable Pass-through Authentication?
@@ -193,7 +193,7 @@ sections:
           If you uninstall a Pass-through Authentication Agent from a server, it causes the server to stop accepting sign-in requests. To avoid breaking the user sign-in capability on your tenant, ensure that you have another Authentication Agent running before you uninstall a Pass-through Authentication Agent.
 
       - question: |
-          I have an older tenant that was originally setup using AD FS. We recently migrated to PTA, but now are not seeing our UPN changes synchronizing to Microsoft Entra ID. Why are our UPN changes not being synchronized?
+          I have an older tenant that was originally setup using AD FS. We recently migrated to PTA, but now aren't seeing our UPN changes synchronizing to Microsoft Entra ID. Why are our UPN changes not being synchronized?
         answer: |
           Under the following circumstances your on-premises UPN changes might not synchronize if:
           
@@ -228,7 +228,7 @@ additionalContent: |
 
   ## Next steps
 
-  - [Current limitations](how-to-connect-pta-current-limitations.md): Learn the scenarios that are supported and the ones that are not.
+  - [Current limitations](how-to-connect-pta-current-limitations.md): Learn the scenarios that are supported and the ones that aren't.
   - [Quick start](how-to-connect-pta-quick-start.md): Get up and running on Microsoft Entra pass-through authentication.
   - [Migrate your apps to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md): Resources to help you migrate application access and authentication to Microsoft Entra ID.
   - [Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md): Learn how to configure the Smart Lockout capability on your tenant to protect user accounts.
