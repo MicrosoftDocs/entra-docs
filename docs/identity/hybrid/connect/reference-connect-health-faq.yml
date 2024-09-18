@@ -88,7 +88,7 @@ sections:
           >
           
           * Local buffer storage for Microsoft Entra Connect Health Agents: ~20 MB.
-          * For AD FS servers, we recommend that you provision a disk space of 1,024 MB (1 GB) for the AD FS audit channel for Microsoft Entra Connect Health Agents to process all the audit data before it is overwritten.
+          * For AD FS servers, we recommend that you provision a disk space of 1,024 MB (1 GB) for the AD FS audit channel for Microsoft Entra Connect Health Agents to process all the audit data before it's overwritten.
           
       - question: |
           Will I have to reboot my servers during the installation of the Microsoft Entra Connect Health Agents?
@@ -211,7 +211,7 @@ sections:
       - question: |
           Why are my AD FS audits not being generated?
         answer: |
-          Please use the PowerShell cmdlet <i>Get-AdfsProperties -AuditLevel</i> to ensure audit logs aren't in disabled state. Read more about [AD FS audit logs](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server#auditing-levels-in-ad-fs-for-windows-server-2016). Notice if there are advanced audit settings pushed to the AD FS server, any changes with auditpol.exe will be overwritten (event if Application Generated isn't configured). In this case, set the local security policy to log Application Generated failures and success.
+          Please use the PowerShell cmdlet <i>Get-AdfsProperties -AuditLevel</i> to ensure audit logs aren't in disabled state. Read more about [AD FS audit logs](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server#auditing-levels-in-ad-fs-for-windows-server-2016). Notice if there are audit settings pushed to the AD FS server, any changes with auditpol.exe will be overwritten (event if Application Generated isn't configured). In this case, set the local security policy to log Application Generated failures and success.
           
       - question: |
           When will the agent certificate be automatically renewed before expiration?
