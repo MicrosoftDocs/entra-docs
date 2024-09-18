@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: identity-platform
 ms.topic: concept-article
 ms.workload: identity
-ms.date: 06/13/2024
+ms.date: 09/18/2024
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
@@ -24,7 +24,7 @@ Following the Azure AD Graph deprecation, the Azure AD Graph format of applicati
 
 ## Migration date
 
-From June 13 to June 27 2024, the **App registrations** manifest page in the Microsoft Entra admin center launched a new tabbed experience that allows you to view, edit, upload, download the app manifest in both Azure AD Graph format and Microsoft Graph format.
+From June 13 to September 16 2024, the **App registrations** manifest page in the Microsoft Entra admin center launched a new tabbed experience that allows you to view, edit, upload, download the app manifest in both Azure AD Graph format and Microsoft Graph format.
 
 > [!IMPORTANT] 
 > The new tabbed experience is rolling out to Microsoft Entra users in batches to ensure the quality of your experience.  You may not see the new experience immediately.
