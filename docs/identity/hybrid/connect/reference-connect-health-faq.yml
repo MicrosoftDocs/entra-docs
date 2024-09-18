@@ -132,6 +132,10 @@ sections:
           Can I install the Microsoft Entra Connect Health agent on Windows Server Core?
         answer: |
           No.  Installation on Server Core isn't supported.
+      - question: |
+          After installing Microsoft Entra Connect Sync with an account that has the Hybrid Administrator role, why is the Connect Health for Sync Agent disabled in services?
+        answer: |
+          In order to install the Connect Health for Sync Agent, you need to be a Global Administrator.  To activate the agent, you need to re-install the agent using a global administrator account.
 
   - name: Health Agent registration and data freshness
     questions:
