@@ -381,6 +381,36 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-prepare-ios-app.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-sign-out.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-sign-out",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-user-after-sign-up.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-self-service-password-reset.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-self-service-password-reset",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-support-web-fallback.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/sample-browserless-app-node-sign-in.md",
       "redirect_url": "/entra/external-id/customers/samples-ciam-all",
       "redirect_document_id": false
@@ -1001,6 +1031,11 @@
       "source_path_from_root": "/docs/identity-platform/msal-net-migration-ios-broker.md",
       "redirect_url": "/entra/identity-platform/quickstart-mobile-app-android-sign-in",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/user-token.md",
+      "redirect_url": "/entra/external-id/user-properties",
+      "redirect_document_id": true
     },
     {
       "source_path_from_root": "/docs/global-secure-access/how-to-get-started-with-global-secure-access.md",
