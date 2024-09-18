@@ -20,7 +20,7 @@ Microsoft Entra monitoring and health provides several types of sign-in logs to 
 
 Interactive sign-ins are performed *by* a user. They provide an authentication factor to Microsoft Entra ID. That authentication factor could also interact with a helper app, such as the Microsoft Authenticator app. Users can provide passwords, responses to MFA challenges, biometric factors, or QR codes to Microsoft Entra ID or to a helper app. This log also includes federated sign-ins from identity providers that are federated to Microsoft Entra ID.  
 
-:::image type="content" source="media/concept-sign-ins/sign-in-logs-user-interactive.png" alt-text="Screenshot of the interactive user sign-in log." lightbox="media/concept-sign-ins/sign-in-logs-user-interactive-expanded.png":::
+:::image type="content" source="media/concept-interactive-sign-ins/sign-in-logs-user-interactive.png" alt-text="Screenshot of the interactive user sign-in log." lightbox="media/concept-interactive-sign-ins/sign-in-logs-user-interactive-expanded.png":::
 
 ## Log details
 
