@@ -1011,7 +1011,7 @@ If the error parameter has a value of *invalid_client*, Microsoft Entra includes
 
 ### Step 2: Select an authentication method
 
-To continue with the flow, the app uses the continuation token it acquires from the previous step to request Microsoft Entra to select one of the supported challenge types for the user to authenticate with. The app makes a POST request to the `/challenge` endpoint.
+To continue with the flow, the app uses the continuation token it acquires from the previous step to request Microsoft Entra to select one of the supported challenge types for the user to authenticate or complete an MFA challenge. The app makes a POST request to the `/challenge` endpoint.
 
 Here's an example of the request (we present the example request in multiple lines for readability):
 
@@ -1028,10 +1028,12 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-| `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
+| `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/initiate` endpoint, or call to the `/token` endpoint when the user needs to complete MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
+| `id` | No | This is the string identifier of the MFA verification method that's returned from the `/introspect` endpoint.|
 
 #### Success response
+[TODO - add scenarios]
 # [Email one-time passcode](#tab/emailOtp)
 If the tenant administrator configured email one-time passcode in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra sends a one-time passcode to the user’s email, then responds with a challenge type of *oob* and provides more information about the one-time passcode.
 
@@ -1168,7 +1170,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 |`grant_type`| Yes |The value must be *password* for email with password authentication method and *oob* for email one-time passcode authentication method. |
 |`scope`| Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid, and *email*. The app needs to include *openid* scope for Microsoft Entra to issue an ID token. The app needs to include *offline_access* scope for Microsoft Entra to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](permissions-consent-overview.md). |
 |   `password`    | No | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user. This parameter is **required** if the authentication method is email with password.|
-|`oob`| No |The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. This parameter is **required** if the authentication method is email one-time passcode. To **resend a one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
+|`oob`| No |The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. This parameter is **required** if the authentication method is email one-time passcode or the app is submitting the email one-time passcode to complete an MFA challenge . To **resend a one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
 
 
 #### Successful response
@@ -1249,6 +1251,9 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 | `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `/challenge` endpoint to request for the user's [default MFA verification method](#determine-the-default-mfa-verification-method). |
 | `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA verification method registered. |
 
+### List user registered MFA verification methods (optional)
+
+TODO
 
 ### Determine the default MFA verification method
 
