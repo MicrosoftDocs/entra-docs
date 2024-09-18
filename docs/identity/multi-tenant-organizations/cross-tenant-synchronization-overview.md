@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 01/03/2024
+ms.date: 09/17/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -175,7 +175,7 @@ What user attributes can be synchronized?
 
 - Cross-tenant synchronization will sync commonly used attributes on the user object in Microsoft Entra ID, including (but not limited to) displayName, userPrincipalName, and directory extension attributes.
 - Cross-tenant synchronization supports provisioning the manager attribute in the commercial cloud. Manager synchronization is not yet supported in the US Government cloud. Both the user and their manager must be in scope for cross-tenant synchronization, in order to provision the manager attribute.
-  - For cross-tenant synchronization configurations created before January 2024 with the default schema / attribute mappings:
+  - For cross-tenant synchronization configurations created after January 2024 with the default schema / attribute mappings:
     - The manager attribute will automatically be added to the attribute mappings.
     - Manager updates will apply on the incremental cycle for users that are undergoing changes (ex: manager change). The sync engine doesn't automatically update all existing users that were provisioned previously.
     - To update the manager for existing users that are in scope for provisioning, you can use on-demand provisioning for specific users or do a restart to provision the manager for all users.

@@ -5,7 +5,7 @@ description: Topic that shows how to configure Microsoft Entra certificate-based
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/04/2023
+ms.date: 09/17/2023
 
 ms.author: justinha
 author: vimrang
@@ -483,10 +483,6 @@ X509:<S>DC=com,DC=contoso,DC=corp,OU=UserAccounts,CN=FirstUserATCSession
 ## Enable CBA using Microsoft Graph API
 
 To enable CBA and configure username bindings using Graph API, complete the following steps.
-
-
->[!NOTE]
->The following steps use Graph Explorer, which isn't available in the US Government cloud. US Government cloud tenants can use Postman to test the Microsoft Graph queries.
 
 1. Go to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Select **Sign into Graph Explorer** and sign in to your tenant.

@@ -6,13 +6,13 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to 
-ms.date: 09/09/2024
+ms.date: 09/11/2024
 
 #CustomerIntent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
 ---
 
 
-# Request access package on-behalf-of other users(Preview)
+# Request access package on-behalf-of other users (Preview)
 
 Entitlement Management enables admins to create access packages to manage their organization’s resources. Admins can either directly assign users to an access package, or configure an access package policy that allows users and groups to request access. This option to create self-service processes is useful, especially as organizations scale and hire more employees. However, new employees joining an organization might not always know what they need access to, or how they can request access. In this case, a new employee would likely rely on their manager to guide them through the access request process.
 
@@ -53,9 +53,25 @@ Follow these steps to edit the policies, allowing on behalf of requests, for an 
     > If approval is required, you will also see the option to **Bypass approval stage if manager is the requestor and approver (preview)**.
 1. Save your policy. 
 
+## Request an access package on behalf of an employee
+
+As a manager, you can request an access package for a direct report by doing the following steps:
+
+1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com). For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
+
+1. On the My Access Portal page, select **Access packages**.
+
+1. On the Access packages page, locate the access package you want to request for a direct report and select **Request**.
+    
+1. On the Request pane under **Request details** select requesting for **Someone else**.
+    :::image type="content" source="media/entitlement-management-request-behalf/manager-request-package.png" alt-text="Screenshot of manager requesting access package for direct employee.":::
+1. Fill in additional information needed to request an access package for the direct report.
+    :::image type="content" source="media/entitlement-management-request-behalf/manager-request-questions.png" alt-text="Screenshot of justification questions for requesting an access package for a direct report.":::
+1. Select **Submit request**.
+
 ## Approve access on behalf of employee requested by manager
 
-When a manager requests an access package on behalf of an employee, you'd do the following steps to approve access:
+When a manager requests an access package on behalf of their employee, you'd do the following steps to approve access:
 
 1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com). For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
 

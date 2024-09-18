@@ -280,8 +280,6 @@ For information on how to do this, refer to [Register your application](./tutori
 
 You should select **Make this change for me** and then provide the values the quickstart asks for. When done, Microsoft Entra ID generates all the configuration files you need.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/config-info.png" alt-text="Configure your project page":::
-
 For testing purposes, set up the following roles in your tenant - at least two employees and a Cloud Device Administrator. To set the Cloud Device Administrator, you need to modify Organizational Roles. From the Microsoft Entra admin center, go to your Organizational Roles by selecting **Identity** > **Roles & admins** > **Roles & admins** > **All roles**, and then select **Cloud Device Administrator**. Add the users that can put a device into shared mode.
 
 ## Running the sample app

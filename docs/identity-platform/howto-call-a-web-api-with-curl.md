@@ -269,7 +269,9 @@ The authorization code flow begins with the client directing the user to the `/a
 
 cURL can now be used to request an access token from the Microsoft identity platform. 
 
-1. Copy the cURL command in the following snippet. Replace the values in parentheses with the following parameters to your terminal. Be sure to remove the parentheses: 
+1. Copy the cURL command in the following snippet. Replace the values in parentheses with the following parameters to your terminal. Be sure to remove the parentheses:
+
+    #### [Bash](#tab/bash)
 
    ```bash
    curl -X POST https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token \
@@ -279,7 +281,22 @@ cURL can now be used to request an access token from the Microsoft identity plat
    -d 'redirect_uri=http://localhost' \
    -d 'grant_type=authorization_code' \
    -d 'client_secret={client_secret}'
-   ``` 
+   ```
+    
+    #### [Windows Command Prompt](#tab/command-prompt)
+    
+   ```bash
+   curl -X POST https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token ^
+    -d "client_id={web-app-calls-web-api_application_client_id}" ^
+    -d "api://{web_API_application_client_id}/Forecast.Read" ^
+    -d "code={authorization_code}&session_state={web-app-calls-web-api_application_client_id}" ^
+    -d "redirect_uri=http://localhost" ^
+    -d "grant_type=authorization_code" ^
+    -d "client_secret={client_secret}"
+   ```
+    ---
+
+ 
    - `{tenant_id}` is the web app **Directory (tenant) ID**.
    - `client_id={web-app-calls-web-api_application_client_id}`, and `session_state={web-app-calls-web-api_application_client_id}` is the **Application (client) ID** on the web application's (*web-app-calls-web-api*) **Overview** pane. 
    - `api://{web_API_application_client_id}/Forecast.Read` is the **Application (client) ID** on the web API's (*NewWebAPI1*) **Overview** pane. 

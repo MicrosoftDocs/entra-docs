@@ -60,6 +60,7 @@ Most Azure AD Graph app manifest attributes stay the same. However, the followin
 | `preAuthorizedApplications` | Relocated as `preAuthorizedApplications` property of the `api` attribute |
 | `replyUrlsWithType` | Renamed as property `redirectUris` in multiple attributes: `web` attribute, `spa` attribute, `publicClient` attribute |
 | `signInUrl` | Relocated and renamed as property `homePageUrl` of the `web` attribute |
+| `trustedCertificateSubjects` | This is a Microsoft internal property. The portal shows v1.0 version of MS Graph app manifest while this property is only present in beta version of MS Graph app manifest. Please continue to edit this property using Azure AD Graph app manifest in Entra portal. We will expose MS Graph app manifest beta version in Entra portal before deprecating Azure AD Graph app manifest |
 
 ## How do I tell the format of my app manifest?
 
