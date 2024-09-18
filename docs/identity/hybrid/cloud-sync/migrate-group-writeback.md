@@ -160,6 +160,8 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
      :::image type="content" source="media/migrate-group-writeback/migrate-7.png" alt-text="Screenshot of transformation." lightbox="media/migrate-group-writeback/migrate-7.png":::
 
+1. Select **Add**.
+
 ### Create a custom group inbound rule in PowerShell
 
 1. On your Microsoft Entra Connect server, open a PowerShell prompt as an administrator. 
@@ -226,7 +228,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
 You also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. To create this sync rule, you can opt to use the user interface or create it via PowerShell with the provided script.
 
-### Create a custom group inbound rule in the user interface
+### Create a custom group outbound rule in the user interface
 
  1. Select **Outbound** from the drop-down list for Direction and select **Add rule**.
  2. On the **Description** page, enter the following and select **Next**:
@@ -248,7 +250,7 @@ You also need an outbound sync rule with a link type of JoinNoFlow and the scopi
      :::image type="content" source="media/migrate-group-writeback/migrate-9.png" alt-text="Screenshot of outbound scoping filter." lightbox="media/migrate-group-writeback/migrate-9.png":::
 
 4. On the **Join** rules page, select **Next**.
-5. On the **Transformations** page, select **Add**.
+1. On the **Transformations** page, select **Add**.
 
 ### Create a custom group inbound rule in PowerShell
 
