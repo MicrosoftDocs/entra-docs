@@ -3,7 +3,7 @@ title: Global Secure Access client for Windows version release notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 09/17/2024
+ms.date: 09/18/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -12,7 +12,7 @@ ms.reviewer: lirazbarak
 
 ---
 # Global Secure Access client for Windows version release notes
-This article lists the released versions of the Global Secure Access client for Windows along with the changes in the latest version.   
+This article lists the released versions of the Global Secure Access client for Windows along with the changes in each version.   
 
 ## Download the latest version
 The current version of the Global Secure Access client is available to download from the Microsoft Entra admin center.
