@@ -869,7 +869,7 @@ To request for security tokens, your app interacts with three endpoints, `/initi
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
 | `/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
-|   `/challenge`   | Your app calls this endpoint with to request Microsoft Entra to select one of the supported [challenge types](#sign-in-challenge-types) for the user to authenticate with. If the tenant administrator enforces MFA for on customer users, your app calls this endpoint to request for an MFA verification method.|
+|   `/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to request for the user's [default MFA verification method](#determine-the-default-mfa-verification-method).|
 |  `/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge.|
 | `/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered MFA verification methods if the `/challenge` endpoint doesn't return any MFA verification method or the user requests the complete the MFA challenge using a different verification method. Currently, since native authentication supports email one-time passcode as the only MFA verification method, this endpoint returns only email as the challenge chanel. |
 
@@ -1246,9 +1246,13 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
 |`invalid_oob_value`| The value of one-time passcode that the app submits is invalid. This sub-error only applies if the authentication method is email one-time passcode. |
-| `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `/challenge` endpoint |
+| `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `/challenge` endpoint to request for the user's [default MFA verification method](#determine-the-default-mfa-verification-method). |
 | `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA verification method registered. |
 
+
+### Determine the default MFA verification method
+
+TODO
 
 ## Self-service password reset (SSPR)
 
