@@ -156,7 +156,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
      :::image type="content" source="media/migrate-group-writeback/migrate-6.png" alt-text="Screenshot of scoping filter." lightbox="media/migrate-group-writeback/migrate-6.png":::
 
 5. On the **Join** rules page, select **Next**.
-6. On the **Transformations** page, add a Constant transformation: flow True to cloudNoFlow attribute. Select **Add**.
+1. On the **Transformations** page, add a Constant transformation: flow True to cloudNoFlow attribute.
 
      :::image type="content" source="media/migrate-group-writeback/migrate-7.png" alt-text="Screenshot of transformation." lightbox="media/migrate-group-writeback/migrate-7.png":::
 
