@@ -1,5 +1,5 @@
 ---
-title: Understand app manifest in Microsoft Graph format
+title: Understand the app manifest (Microsoft Graph format)
 description: Describes the Microsoft Entra app manifest (Microsoft Graph format), which represents an application's identity configuration in a Microsoft Entra tenant.
 services: active-directory
 author: rwike77

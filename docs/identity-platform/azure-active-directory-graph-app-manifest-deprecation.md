@@ -1,6 +1,6 @@
 ---
-title: Azure Active Directory Graph app manifest deprecation
-description: Describes the deprecation of the Azure AD Graph format for application manifests and attribute differences in the new format.
+title: App manifest (Azure AD Graph format) deprecation
+description: Describes the deprecation of the app manifest (Azure AD Graph format) and attribute differences in the new format.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -15,7 +15,7 @@ ms.reviewer: youazhou
 # Customer intent: As an application developer, I want to learn about the new app manifest format, so that I can update the application object and define permissions and roles for the app.
 ---
 
-# Azure Active Directory Graph app manifest deprecation
+# App manifest (Azure AD Graph format) deprecation
 
 Following the Azure AD Graph deprecation, the Azure AD Graph format of application manifests is deprecated and the Microsoft Entra admin center displays app manifests in Microsoft Graph format.  Read this article to learn more about how the app manifest migration impacts your user experience.
 
