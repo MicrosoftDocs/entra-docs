@@ -269,7 +269,17 @@ The authorization code flow begins with the client directing the user to the `/a
 
 cURL can now be used to request an access token from the Microsoft identity platform. 
 
-1. Copy the cURL command in the following snippet. Replace the values in parentheses with the following parameters to your terminal. Be sure to remove the parentheses: 
+1. Copy the cURL command in the following snippet. Replace the values in parentheses with the following parameters to your terminal. Be sure to remove the parentheses:
+
+    #### [Browser](#tab/browser)
+
+    <!--- Content here  -->
+    
+    #### [Visual Studio](#tab/visual-studio)
+    
+    <!--- Content here  -->
+    
+    ---
 
    ```bash
    curl -X POST https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token \
