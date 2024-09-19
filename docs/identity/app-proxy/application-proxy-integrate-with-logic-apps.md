@@ -5,7 +5,7 @@ author: kenwith
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 09/19/2024
 ms.author: kenwith
 ms.reviewer: kfriedemann
 ms.custom:
