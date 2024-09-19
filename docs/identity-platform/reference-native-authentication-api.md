@@ -871,7 +871,7 @@ To request for security tokens, your app interacts with three endpoints, `/initi
 | `/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
 |   `/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to request for the user's [default MFA verification method](#determine-the-default-mfa-verification-method).|
 |  `/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge.|
-| `/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered MFA verification methods if the `/challenge` endpoint doesn't return any MFA verification method or the user requests the complete the MFA challenge using a different verification method. Currently, since native authentication supports email one-time passcode as the only MFA verification method, this endpoint returns only email as the challenge chanel. |
+| `/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered MFA verification methods if the `/challenge` endpoint doesn't return a default MFA verification method or the user requests to complete the MFA challenge using a different verification method from the default MFA method. Currently, since native authentication supports email one-time passcode as the only MFA verification method, this endpoint returns only email as the challenge chanel. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-verification-methods-optional)|
 
 ### Sign-in challenge types
 
@@ -1030,7 +1030,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/initiate` endpoint, or call to the `/token` endpoint when the user needs to complete MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-| `id` | No | This is the string identifier of the MFA verification method that's returned from the `/introspect` endpoint.|
+| `id` | No | This is the string identifier of the MFA verification method that's returned from the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-verification-methods-optional).|
 
 #### Success response
 
@@ -1089,7 +1089,7 @@ Content-Type: application/json
 |`challenge_type`|Microsoft Entra returns the supported challenge type configured for the user in the Microsoft Entra admin center. In this case the values is expected to be *password*.|
 
 
-**Response if request is complete an MFA challenge**
+**Response if request is to complete an MFA challenge**
 
 If the request to the `/challenge` endpoint is to complete an MFA challenge, Microsoft Entra sends a one-time passcode to the user’s selected MFA challenge channel and provides more information about the one-time passcode.
 
@@ -1178,6 +1178,12 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`invalid_grant`|The continuation token included in the request isn't valid.  |
 |`expired_token`|The continuation token included in the request is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type. |
+
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`introspect_required`| The client app makes a request to the `/challenge` endpoint after the interrupt for MFA, but the user doesn't have a default MFA. In this case, the client app needs to call the `/introspect` endpoint. |
 
 ### Step 3: Request for security tokens
 
@@ -1287,7 +1293,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 
 ### List user registered MFA verification methods (optional)
 
-TODO
+Use the `/introspect` endpoint to request user registered MFA verification method. Your app calls this endpoint if the `/challenge` endpoint doesn't return a [default MFA verification method](#determine-the-default-mfa-verification-method) or the user requests to complete the MFA challenge using a different verification method from the default verification method.  
 
 ### Determine the default MFA verification method
 
