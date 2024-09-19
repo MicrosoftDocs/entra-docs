@@ -20,7 +20,7 @@ Microsoft Entra monitoring and health provides several types of sign-in logs to 
 
 Non-interactive sign-ins are done *on behalf of a* user. These delegated sign-ins were performed by a client app or OS components on behalf of a user and don't require the user to provide an authentication factor. Instead, Microsoft Entra ID recognizes when the user's token needs to be refreshed and does so behind the scenes, without interrupting the user's session. In general, the user perceives these sign-ins as happening in the background.
 
-![Screenshot of the non-interactive user sign-in log.](media/concept-noninteractive-sign-ins/sign-in-logs-user-noninteractive.png)
+:::image type="content" source="media/concept-noninteractive-sign-ins/sign-in-logs-user-noninteractive.png" alt-text="Screenshot of the non-interactive user sign-in log." lightbox="media/concept-noninteractive-sign-ins/sign-in-logs-user-noninteractive-expanded.png":::
 
 ## Log details
 

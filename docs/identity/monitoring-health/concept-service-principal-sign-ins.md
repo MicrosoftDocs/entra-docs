@@ -16,7 +16,9 @@ ms.reviewer: egreenberg14
 
 Unlike interactive and non-interactive user sign-ins, service principal sign-ins don't involve a user. Instead, they're sign-ins by any nonuser account, such as apps or service principals (except managed identity sign-in, which are in included only in the managed identity sign-in log). In these sign-ins, the app or service provides its own credential, such as a certificate or app secret to authenticate or access resources.
 
-![Screenshot of the service principal sign-in log.](media/concept-service-principal-sign-ins/sign-in-logs-service-principal.png)
+![](media/)
+
+:::image type="content" source="media/concept-service-principal-sign-ins/sign-in-logs-service-principal.png" alt-text="Screenshot of the service principal sign-in log." lightbox="media/concept-service-principal-sign-ins/sign-in-logs-service-principal-expanded.png":::
 
 ## Log details
 
