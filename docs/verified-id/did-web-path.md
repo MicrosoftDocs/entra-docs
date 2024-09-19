@@ -54,7 +54,7 @@ https://discover.did.msidentity.com/v1.0/identifiers/did:web:my-domain.com:do-no
 Once your tenant and authority is enabled for did:web:path, you can create a new authority in the same tenant that uses did:web:path. Currently this requires using the [Admin API](admin-api.md) as there's no support in the portal for it.
 
 1. Get details of your existing authority
-    - Go to `Verified ID | Overview` and copy domain (example: https://verifiedid.contoso.com/)
+    - Go to `Verified ID | Overview` and copy domain (example: `https://verifiedid.contoso.com/`)
     - Go to `Verified ID | Organization settings` and take a note of which Key vault is being configured.
     - Go to the Key vault resource and copy the `resource group`, the `subscription ID`, and the `Vault URI`
 2. Call the [create authority](admin-api.md#create-authority) with the following JSON body (modify as required). The `/my-path` in the path is where you specify the path name to be used.
