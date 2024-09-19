@@ -1066,7 +1066,7 @@ Content-Type: application/json
 # [Email with password](#tab/emailPassword)
 If the tenant administrator configured email with password in the Microsoft Entra admin center as the user’s authentication method, the response depends on whether the request to the `/challenge` endpoint is to select a method for the user to authenticate with or to complete an MFA challenge.
 
-# [Select authentication method](#tab/selectAuthenticationMethod)
+## [Select authentication method](#tab/selectAuthenticationMethod)
 If the request to the `/challenge` endpoint is to select a method for the user to authenticate with, Microsoft Entra returns a success response, which includes a challenge type of *password*.
 
 Example:
@@ -1089,8 +1089,8 @@ Content-Type: application/json
 |`challenge_type`|Microsoft Entra returns the supported challenge type configured for the user in the Microsoft Entra admin center. In this case the values is expected to be *password*.|
 
 
-# [Select MFA verification method](#tab/selectMFAVerificationMethod)
-If the request to the `/challenge` endpoint is to complete an MFA challenge, Microsoft Entra sends a one-time passcode to the user’s email, then responds with a challenge type of *oob* and provides more information about the one-time passcode.
+## [Select MFA verification method](#tab/selectMFAVerificationMethod)
+If the request to the `/challenge` endpoint is to complete an MFA challenge, Microsoft Entra sends a one-time passcode to the user’s selected MFA challenge channel and provides more information about the one-time passcode.
 
 ```http
 HTTP/1.1 200 OK
@@ -1118,6 +1118,7 @@ Content-Type: application/json
 |`code_length`|The length of the one-time passcode that Microsoft Entra generates. | 
 
 ---
+
 ---
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
