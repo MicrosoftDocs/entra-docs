@@ -1119,6 +1119,8 @@ Content-Type: application/json
 
 ---
 
+---
+
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
