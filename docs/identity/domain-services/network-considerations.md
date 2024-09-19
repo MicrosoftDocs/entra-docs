@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 09/16/2024
+ms.date: 09/19/2024
 ms.author: justinha
 ms.reviewer: xyuan
 ---
@@ -165,7 +165,7 @@ Make sure no other NSG with higher priority denies the Outbound connectivity. If
 
 >[!NOTE]
 > The AzureUpdateDelivery and AzureFrontDoor.FirstParty tags are deprecated as of July 1, 2024. 
-> If you use the default AllowInternetOutBound rule (priority 65001), no change is needed (with or without AzureUpdateDelivery and AzureFrontDoor.FirstParty tags). If you remove the default AllowInternetOutBound rule (priority 65001) or precede it with a denied InternetOutBound rule, use a firewall to filter outbound Windows Update traffic by using the WindowsUpdate FQDN instead of restricting InternetOutBound. This step is crucial for Microsoft Entra Domain Services to continue receiving Windows updates. For more information, see [Changes coming to the AzureUpdateDelivery service tag](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/changes-coming-to-the-azure-update-delivery-service-tag/ba-p/4156552).
+> If you use the default AllowInternetOutBound rule (priority 65001), no change is needed (with or without AzureUpdateDelivery and AzureFrontDoor.FirstParty tags). For more information, see [Changes coming to the AzureUpdateDelivery service tag](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/changes-coming-to-the-azure-update-delivery-service-tag/ba-p/4156552).
 
 
 
