@@ -1034,7 +1034,6 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 
 #### Success response
 
-
 # [Email one-time passcode](#tab/emailOtp)
 If the tenant administrator configured email one-time passcode in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra sends a one-time passcode to the user’s email, then responds with a challenge type of *oob* and provides more information about the one-time passcode.
 
@@ -1066,7 +1065,8 @@ Content-Type: application/json
 # [Email with password](#tab/emailPassword)
 If the tenant administrator configured email with password in the Microsoft Entra admin center as the user’s authentication method, the response depends on whether the request to the `/challenge` endpoint is to select a method for the user to authenticate with or to complete an MFA challenge.
 
-# [Select authentication method](#tab/emailPassword/selectAuthenticationMethod)
+**Response if request is to selects an authentication method**
+
 If the request to the `/challenge` endpoint is to select a method for the user to authenticate with, Microsoft Entra returns a success response, which includes a challenge type of *password*.
 
 Example:
@@ -1089,7 +1089,8 @@ Content-Type: application/json
 |`challenge_type`|Microsoft Entra returns the supported challenge type configured for the user in the Microsoft Entra admin center. In this case the values is expected to be *password*.|
 
 
-# [Select MFA verification method](#tab/emailPassword/selectMFAVerificationMethod)
+**Response if request is complete an MFA challenge**
+
 If the request to the `/challenge` endpoint is to complete an MFA challenge, Microsoft Entra sends a one-time passcode to the user’s selected MFA challenge channel and provides more information about the one-time passcode.
 
 ```http
@@ -1116,8 +1117,6 @@ Content-Type: application/json
 |`challenge_channel`| The type of the MFA challenge channel through which the one-time passcode was sent. At the moment, Microsoft Entra supports email. |
 |`challenge_target_label` |An obfuscated email where the one-time passcode was sent.|
 |`code_length`|The length of the one-time passcode that Microsoft Entra generates. | 
-
----
 
 ---
 
