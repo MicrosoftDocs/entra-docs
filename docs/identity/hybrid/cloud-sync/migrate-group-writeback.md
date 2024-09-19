@@ -88,8 +88,7 @@ The following PowerShell script can be used to help automate this step. This scr
 $gwbOU = 'OU=Groups,DC=Contoso,DC=com'
 
 # Get all groups written back to Active Directory
-Import-module ActiveDirectory
-$properties = @('Samaccountname', 'adminDescription', 'msDS-ExternalDirectoryObjectID')
+$properties = @('displayName', 'Samaccountname', 'adminDescription', 'msDS-ExternalDirectoryObjectID')
 $groups = Get-ADGroup -Filter * -SearchBase $gwbOU -Properties $properties | 
     Where-Object {$_.adminDescription -ne $null} |
         Select-Object $properties
@@ -98,6 +97,25 @@ $groups = Get-ADGroup -Filter * -SearchBase $gwbOU -Properties $properties |
 foreach ($group in $groups) {
     Set-ADGroup -Identity $group.Samaccountname -Add @{('msDS-ExternalDirectoryObjectID') = $group.adminDescription}
 } 
+
+```
+
+The following PowerShell script can be used to check the results of the script above or confirm that all groups have adminDescription value equal to msDS-ExternalDirectoryObjectID value.
+
+
+```powershell
+
+# Provide the DistinguishedName of your Group Writeback target OU
+$gwbOU = 'OU=Groups,DC=Contoso,DC=com'
+
+
+# Get all groups written back to Active Directory
+$properties = @('displayName', 'Samaccountname', 'adminDescription', 'msDS-ExternalDirectoryObjectID')
+$groups = Get-ADGroup -Filter * -SearchBase $gwbOU -Properties $properties | 
+    Where-Object {$_.adminDescription -ne $null} |
+        Select-Object $properties
+
+$groups | select displayName, adminDescription, 'msDS-ExternalDirectoryObjectID', @{Name='Equal';Expression={$_.adminDescription -eq $_.'msDS-ExternalDirectoryObjectID'}}
 
 ```
 
