@@ -48,11 +48,11 @@ Due to the greater flexibility of the system to respond to a sign-in attempt, yo
 
 There are a three ways to access the Sign-in diagnostic in Microsoft Entra ID. Select a tab to learn about each method.
 
+[!INCLUDE [portal update](../../includes/portal-update.md)]
+
 ### [From Diagnose and Solve Problems](#tab/from-diagnose-and-solve-problems)
 
 You can start the Sign-in diagnostic from the **Diagnose and Solve Problems** area of Microsoft Entra ID. From Diagnose and Solve Problems you can review any flagged sign-in events or search for a specific sign-in event. You can also start this process from the Conditional Access Diagnose and Solve Problems area.
-
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../role-based-access-control/permissions-reference.md#global-reader).
 
@@ -88,7 +88,7 @@ You can start the Sign-in diagnostic from a specific sign-in event in the Sign-i
 
 1. From the Activity Details window that opens, select the **Launch the Sign-in diagnostic** link.
 
-    ![Screenshot showing how to launch sign-in diagnostics from Microsoft Entra ID.](media/overview-sign-in-diagnostics/sign-in-logs-link.png)
+    ![Screenshot showing how to launch sign-in diagnostics from Microsoft Entra ID.](media/howto-use-sign-in-diagnostics/sign-in-logs-link.png)
 
 1. Explore the results and take action as necessary.
 
@@ -106,6 +106,7 @@ If you're in the middle of creating a support request *and* the options you sele
 1. Explore the results and take action as necessary.
 
   ![Screenshot of the support request fields that start the sign-in diagnostics.](media/howto-use-sign-in-diagnostics/sign-in-support-request.png)
+
 ---
 
 ## How to use the diagnostic results
