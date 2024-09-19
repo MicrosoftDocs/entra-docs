@@ -59,6 +59,8 @@
     href: concept-condition-filters-for-devices.md
   - name: What if tool
     href: what-if-tool.md
+  - name: Protected actions
+    href: ..\role-based-access-control\protected-actions-add.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
 - name: How-to guides
   expanded: true
   items:
