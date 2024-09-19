@@ -1174,16 +1174,16 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |--------------------|--------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type. |  
+|`invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type. |  
 |`invalid_grant`|The continuation token included in the request isn't valid.  |
 |`expired_token`|The continuation token included in the request is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type. |
 
-If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+If the request to the `/challenge` endpoint is to complete an MFA challenge, but the user doesn't have a default MFA, the error response includes a `suberror` parameter for an *invalid_request* error:  
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
-|`introspect_required`| The client app makes a request to the `/challenge` endpoint after the interrupt for MFA, but the user doesn't have a default MFA. In this case, the client app needs to call the `/introspect` endpoint. |
+|`introspect_required`| The user doesn't have a default MFA. In this case, the client app needs to call the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-verification-methods-optional).|
 
 ### Step 3: Request for security tokens
 
@@ -1289,11 +1289,58 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 |----------------------|------------------------|
 |`invalid_oob_value`| The value of one-time passcode that the app submits is invalid. This sub-error only applies if the authentication method is email one-time passcode. |
 | `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `/challenge` endpoint to request for the user's [default MFA verification method](#determine-the-default-mfa-verification-method). |
-| `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA verification method registered. |
+| `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA verification method registered. This scenario can happen if the tenant administrator changes MFA configuration, or if the user moves to a new location rendering the initially registered strong authentication method invalid.|
 
 ### List user registered MFA verification methods (optional)
 
-Use the `/introspect` endpoint to request user registered MFA verification method. Your app calls this endpoint if the `/challenge` endpoint doesn't return a [default MFA verification method](#determine-the-default-mfa-verification-method) or the user requests to complete the MFA challenge using a different verification method from the default verification method.  
+Use the `/introspect` endpoint to request user registered MFA verification method. Your app calls this endpoint if the `/challenge` endpoint doesn't return a [default MFA verification method](#determine-the-default-mfa-verification-method) or the user requests to complete the MFA challenge using a different MFA verification method from the default verification method. 
+
+Here's an example of the request(we present the example request in multiple lines for readability):
+
+```http
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/introspect
+Content-Type: application/x-www-form-urlencoded
+
+continuation_token=uY29tL2F1dGhlbnRpY...
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+```
+
+|    Parameter     | Required                     |           Description        |
+|-----------------------|-------------------------|------------------------|
+| `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
+| `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
+| `continuation_token`  |    Yes   |  [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. |
+
+#### Success response
+
+Example:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```json
+{
+    "continuation_token": "uY29tL2F1dGhlbnRpY...",
+    "methods":[
+        {
+            "id":"",
+            "challenge_type":"oob",
+            "challenge_channel":"email",
+            "login_hint":"c***r@co**o**o.com"
+        }
+    ]
+}
+```
+
+|    Parameter     | Description        |
+|----------------------|------------------------|
+| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |
+| `methods` | A list of |
+
+
+
 
 ### Determine the default MFA verification method
 
