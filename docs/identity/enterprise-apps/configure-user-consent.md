@@ -27,7 +27,7 @@ Before an application can access your organization's data, a user must grant the
 To reduce the risk of malicious applications attempting to trick users into granting them access to your organization's data, we recommend that you allow user consent only for applications that have been published by a [verified publisher](~/identity-platform/publisher-verification-overview.md).
 
 > [!NOTE]
-> Applications that requires users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your diretory would otherwise allow a user to consent on behalf of themselves.
+> Applications that requires users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your directory would otherwise allow a user to consent on behalf of themselves.
 
 ## Prerequisites
 
