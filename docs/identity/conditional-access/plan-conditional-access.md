@@ -5,7 +5,7 @@ description: Learn how to design Conditional Access policies and effectively dep
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 09/18/2024
 
 ms.author: gasinh
 author: gargi-sinha
