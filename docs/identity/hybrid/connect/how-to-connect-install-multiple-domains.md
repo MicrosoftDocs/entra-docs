@@ -31,8 +31,6 @@ When a domain is federated with Microsoft Entra ID, several properties are set o
 
 You can view the IssuerUri by using the PowerShell command `Get-MsolDomainFederationSettings -DomainName <your domain>`.
 
-![Screenshot that shows results after entering the "Get-MsolDomainFederationSettings" command in PowerShell.](./media/how-to-connect-install-multiple-domains/MsolDomainFederationSettings.png)
-
 [!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 A problem arises when you add more than one top-level domain.  For example, let's say you have set up federation between Microsoft Entra ID and your on-premises environment.  For this document, the domain, bmcontoso.com is being used.  Now a second, top-level domain, bmfabrikam.com has been added.
@@ -124,11 +122,8 @@ Use the following steps to add the new top-level domain using Microsoft Entra Co
 ### Verify the new top-level domain
 By using the PowerShell command `Get-MsolDomainFederationSettings -DomainName <your domain>`you can view the updated IssuerUri.  The screenshot below shows the federation settings were updated on the original domain `http://bmcontoso.com/adfs/services/trust`
 
-![Screenshot that shows the federation settings updated on the original domain.](./media/how-to-connect-install-multiple-domains/MsolDomainFederationSettings.png)
 
 And the IssuerUri on the new domain has been set to `https://bmcontoso.com/adfs/services/trust`
-
-![Get-MsolDomainFederationSettings](./media/how-to-connect-install-multiple-domains/settings2.png)
 
 ## Support for subdomains
 When you add a subdomain, because of the way Microsoft Entra ID handled domains, it will inherit the settings of the parent.  So, the IssuerUri, needs to match the parents.
