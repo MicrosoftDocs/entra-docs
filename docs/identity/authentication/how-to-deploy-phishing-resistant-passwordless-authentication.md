@@ -16,6 +16,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how to plan phishing-resistant and passwordless authentication deployment in Microsoft Entra ID
 
 ---
+# Plan a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
 
 Passwords are the primary attack vector for modern adversaries, and a source of friction for users and administrators. 
 As part of an overall [Zero Trust security strategy](https://www.microsoft.com/en-us/security/business/zero-trust), Microsoft recommends [moving to phishing-resistant passwordless](https://www.microsoft.com/security/business/solutions/passwordless-authentication) in your authentication solution. 
@@ -26,7 +27,7 @@ Features like multifactor authentication (MFA) are a great way to secure your or
 But users often get frustrated with the extra security layer on top of their need to remember passwords. 
 Phishing-resistant passwordless authentication methods are more convenient. 
 
-For example, sign-in with a password can take up to nine seconds on average, but passkeys only take around three seconds in most cases. 
+For example, an analysis of Microsoft consumer accounts shows that sign-in with a password can take up to 9 seconds on average, but passkeys only take around 3 seconds in most cases.
 The speed and ease of passkey sign-in is even greater when compared with traditional password and MFA sign in. 
 Passkey users don’t need to remember their password, or wait around for SMS messages.
 
@@ -55,42 +56,59 @@ Before you start your Microsoft Entra phishing-resistant passwordless deployment
 - Identify stakeholder teams that need to collaborate
 
 ### License requirements
-Registration and passwordless sign in with Microsoft Entra doesn't require a license, but we recommend at least a Microsoft Entra ID P1 license for the full set of capabilities associated with a passwordless deployment. For example, a Microsoft Entra ID P1 license helps you enforce passwordless sign in through Conditional Access, and track deployment with an authentication method activity report. Refer to the licensing requirements guidance for features referenced in this guide for specific licensing requirements.
+
+Registration and passwordless sign in with Microsoft Entra doesn't require a license, but we recommend at least a Microsoft Entra ID P1 license for the full set of capabilities associated with a passwordless deployment. 
+For example, a Microsoft Entra ID P1 license helps you enforce passwordless sign in through Conditional Access, and track deployment with an authentication method activity report. Refer to the licensing requirements guidance for features referenced in this guide for specific licensing requirements.
  
 ### Required roles
-The following table lists least privileged role requirements for phishing-resistant passwordless deployment. We recommend that you enable phishing-resistant passwordless authentication for all privileged accounts.
+The following table lists least privileged role requirements for phishing-resistant passwordless deployment. 
+We recommend that you enable phishing-resistant passwordless authentication for all privileged accounts.
 
-Microsoft Entra role	Description
-User Administrator
-To implement combined registration experience
-
-Authentication Administrator
-To implement and manage authentication methods
-
-Authentication Policy Administrator
-To implement and manage the Authentication methods policy
-
-User	To configure Authenticator app on device; to enroll security key device for web or Windows 10/11 sign-in
+Microsoft Entra role                | Description
+------------------------------------|---------------------------------------------
+[User Administrator](~/identity/role-based-access-control/permissions-reference#user-administrator.md) | To implement combined registration experience
+[Authentication Administrator](~/identity/role-based-access-control/permissions-reference#authentication-administrator.md) | To implement and manage authentication methods
+[Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference#authentication-policy-administrator.md) | To implement and manage the Authentication methods policy
+User                                | To configure Authenticator app on device; to enroll security key device for web or Windows 10/11 sign-in
 
 ### Customer stakeholder teams
-To ensure success, make sure that you’re engaging with the right stakeholders and that they understand their roles prior to beginning your planning and rollout. Commonly recommended stakeholder teams are listed below:
 
-Stakeholder team	Description
-Identity and Access Management (IAM)	Manages day-to-day operations of the IAM system
-Information Security Architecture	Plans and designs the organization’s information security practices
-Information Security Operations	Runs and monitors information security practices for Information Security Architecture
-Security Assurance and Audit	Helps ensure IT processes are secure and compliant. They conduct regular audits, assess risks, and recommend security measures to mitigate identified vulnerabilities and enhance the overall security posture.
-Help Desk and Support	Assists end users who encounter issues during deployments of new technologies and policies, or when issues occur 
-End-User Communications	Messages changes to end users in preparation to aid in driving user-facing technology rollouts
+To ensure success, make sure that you engage with the right stakeholders, and that they understand their roles before you begin your plan and rollout. The following table lists commonly recommended stakeholder teams.
 
-1. Presence in Microsoft Entra ID
-Microsoft Entra ID is a cloud-based identity and access management service that your employees can use to access external resources. Example resources include Microsoft 365, the Azure portal, and thousands of other SaaS applications. A Microsoft Entra ID tenant is a requirement for cloud-based phishing-resistant passwordless deployments on Microsoft’s platform. You must have a Microsoft Entra ID tenant or establish one to begin your passwordless deployment with Microsoft phishing-resistant passwordless methods. To learn more about Microsoft Entra ID refer to the documentation: What is Microsoft Entra ID? 
+Stakeholder team                    | Description
+------------------------------------|------------------------------------------------
+Identity and Access Management (IAM) | Manages day-to-day operations of the IAM system
+Information Security Architecture	   | Plans and designs the organization’s information security practices
+Information Security Operations	     | Runs and monitors information security practices for Information Security Architecture
+Security Assurance and Audit         | Helps ensure IT processes are secure and compliant. They conduct regular audits, assess risks, and recommend security measures to mitigate identified vulnerabilities and enhance the overall security posture.
+Help Desk and Support	               | Assists end users who encounter issues during deployments of new technologies and policies, or when issues occur 
+End-User Communications	             | Messages changes to end users in preparation to aid in driving user-facing technology rollouts
 
-2. Update apps to support modern authentication
-Microsoft Entra ID is a cloud-based Identity and Access Management (IAM) service that integrates with many types of applications, including SaaS apps, Line of Business (LOB) apps, on-premises apps, and more. Integrating applications with Microsoft Entra ID is necessary to get the most benefit out of your investment in passwordless and phishing-resistant authentication. As you integrate more apps with Microsoft Entra ID, you will be able to protect more of your environment with Conditional Access policies that enforce the use of phishing-resistant authentication methods. To learn more about integrating apps with Microsoft Entra ID, refer to the documentation: Five steps to integrate your apps with Microsoft Entra ID
-When developing your own applications, follow the developer guidance for supporting passwordless and phishing-resistant authentication: Support passwordless authentication with FIDO2 keys in apps you develop
+## Deployment approach
 
-3. Determine your user personas
+### Planning phase
+When you deploy and operationalize phishing-resistant passwordless authentication in your environment, we recommend a user persona-based approach because different phishing-resistant passwordless methods are more effective than others for certain user personas. 
+This deployment guide helps you see which types of methods and rollout plans make sense for user personas in your environment.
+The phishing-resistant passwordless deployment approach commonly has 7 steps, which roughly flow in order:     
+
+#### Step 1: Presence in Microsoft Entra ID
+Microsoft Entra ID is a cloud-based Identity and Access Management (IAM) service that workers and students can use to access external resources. 
+For example, they can access resources like Microsoft 365, the Azure portal, and thousands of other Sotware-as-a-Service (SaaS) applications. 
+
+A Microsoft Entra ID tenant is required for cloud-based phishing-resistant passwordless deployments on the Microsoft platform. 
+You must have a Microsoft Entra ID tenant or create one to begin your passwordless deployment with Microsoft phishing-resistant passwordless methods. 
+To learn more about Microsoft Entra ID, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md).
+
+#### Step 2: Update apps to support modern authentication
+Microsoft Entra ID integrates with many types of applications, including SaaS apps, line-of-business (LOB) apps, on-premises apps, and more. 
+You need to integrate your applications with Microsoft Entra ID to get the most benefit from your investment in passwordless and phishing-resistant authentication. 
+As you integrate more apps with Microsoft Entra ID, you can protect more of your environment with Conditional Access policies that enforce the use of phishing-resistant authentication methods. 
+To learn more about how to integrate apps with Microsoft Entra ID, see [Five steps to integrate your apps with Microsoft Entra ID](~/fundamentals/five-steps-to-full-application-integration.md).
+
+When you develop your own applications, follow the developer guidance for supporting passwordless and phishing-resistant authentication. 
+For more information, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
+
+#### Step 3: Determine your user personas
 Determining the user personas relevant for your organization is a critical step in the phishing-resistant passwordless deployment journey, as different personas will have different needs. There are at least 4 generic user personas that Microsoft recommends considering and evaluating if you have in your organization:
 •	Information Workers
 o	Examples include office productivity staff, such as marketing, finance, or HR workers.
@@ -116,7 +134,7 @@ o	May work on locked down devices with Bluetooth disabled
 Microsoft recommends that you focus on deploying phishing-resistant passwordless as broadly in your organization as possible, which is traditionally easiest with Information Workers. You should not hold off on deploying secure credentials for Information Workers while you work through issues specific to IT Pros – take a “don’t let perfect be the enemy of good” approach and deploy as much as possible. The more users you have using phishing-resistant passwordless, the smaller the attack surface will be for your environment.
 Microsoft recommends that you define your personas and then place each persona into an Entra ID group specific to that user persona. These groups will be used in later steps in this guide when rolling out credentials to different types of users and when you begin enforcing the use of phishing-resistant passwordless credentials.
 
-4. Device readiness
+#### Step 4: Device readiness
 Devices are an essential aspect of any successful phishing-resistant passwordless deployment, since one of the goals of phishing-resistant passwordless credentials is to protect credentials with the hardware of modern devices. First, familiarize yourself with the FIDO2 supportability documentation for Microsoft Entra ID: Support for FIDO2 authentication with Microsoft Entra ID
 Ensure that your devices are prepared for phishing-resistant passwordless by patching to the latest supported versions of each operating system. Microsoft recommends your devices are running these versions at a minimum:
 •	Windows 10 20H1 (for Windows Hello for Business)
@@ -126,8 +144,9 @@ Ensure that your devices are prepared for phishing-resistant passwordless by pat
 •	Android 14
 These versions provide the best support for natively integrated features like passkeys, Windows Hello for Business, and macOS Platform Credential. Older operating systems may require external authenticators, like FIDO2 security keys, to support phishing-resistant passwordless authentication.
 
-Deployment Phase
-5. Credential Registration and Bootstrapping
+### Deployment phase
+
+#### Step 5: Credential Registration and Bootstrapping
 Credential registration and bootstrapping is the first major end-user facing activity in your phishing-resistant passwordless deployment project. This section will cover the rollout of portable and local credentials. Portable credentials are credentials that can be used in cross-device flows, such as to sign in on another device or to register additional credentials on more devices. Local credentials are used to authenticate on a device without needing to rely on external hardware, such as using the Windows Hello for Business biometric recognition to sign into an app in Microsoft Edge browser on the same PC.
 •	Portable credentials are the most important type of credential users should register, as they can be used across multiple devices and provide phishing-resistant authentication in many scenarios.
 •	Local credentials have two main benefits beyond those of the portable credentials:
@@ -217,7 +236,7 @@ Each persona has its own challenges and considerations that commonly come up dur
 •	IT Pros / DevOps Workers
 •	Highly Regulated Workers
 
-6. Drive usage of Phishing-resistant passwordless credentials
+#### Step 6: Drive usage of phishing-resistant passwordless credentials
 Test Deployment Strategy
 Microsoft recommends that you test the deployment strategy created in the previous step with a set of test and pilot users. This phase should include the following steps:
 •	Create a list of test users and early adopters. These users should be representative of your different user personas, and not just IT Admins
@@ -275,6 +294,6 @@ Your IT help desk can provide an invaluable signal on how well your deployment i
 6.	August 16th-31st: Wave 3 cohort enforcement enabled
 As you execute these different phases you may need to slow down depending on the volume of help desk tickets opened and then resume when the volume has subsided. To execute on this strategy, Microsoft recommends that you create a Microsoft Entra ID security group for each Wave and add each group to your policies one at a time – this will help you avoid overwhelming your support teams.
 
-7. Phishing Resistance Enforcement
-In this section we will focus on Phase 4:
+#### Step 7: Phishing-resistance enforcement
+This section focuses on phase 4.
 
