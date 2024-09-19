@@ -95,8 +95,6 @@ When a new Enterprise Application is created, a matching App Registration is als
 
     5. Select the **Copy** button for the *Value* of the newly created secret. Save the secret securely for use later, this value is only shown one time.
 
-        ![Screenshot of the Microsoft Entra App Registration Client Secret Detail.](./media/application-proxy-integrate-with-logic-apps/client-secret-detail.png)
-
 ## Configure the Logic App
 
 1. From the Logic App, open the **Designer** view.
