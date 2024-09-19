@@ -107,6 +107,12 @@ Users can access Microsoft 365 applications through their Office 365 portals. Yo
 
 As with enterprise apps, you can [assign users](assign-user-or-group-access-portal.md) to certain Microsoft applications via the Microsoft Entra admin center or, using PowerShell.
 
+## Local application passwords
+Enabling single sign-on helps your organization secure access to resources, improve end user productivity, and meet your compliance requirements. Microsoft Entra ID enables your organization to setup single sign-on and protect access with conditional access, multi-factor authentication, etc. However, applications can allow users to access applications using local credentials, circumventing SSO. To ensure that users are protected by Microsoft Entra ID:
+
+- Disable any settings in your application that allow end users to bypass SSO. You will need to review the documentation provided by the application developer to understand what settings are available. 
+- If your application provides an API to manage the passwords of the users, set a unique password for each user using the APIs. This will prevent end users from signing into the application with local credentials.
+
 ## Next steps
 
 - [Protecting apps with Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md)
