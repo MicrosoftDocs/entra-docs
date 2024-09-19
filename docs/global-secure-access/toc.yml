@@ -201,5 +201,7 @@ items:
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: FAQs
     href: resource-faq.yml
-  - name: Version History
+  - name: Connector version history
     href: reference-version-history.md
+  - name: Windows client version history
+    href: reference-windows-client-release-history.md
