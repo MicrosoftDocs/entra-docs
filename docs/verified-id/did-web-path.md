@@ -57,7 +57,7 @@ Once your tenant and authority is enabled for did:web:path, you can create a new
     - Go to `Verified ID | Overview` and copy domain (example: https://verifiedid.contoso.com/)
     - Go to `Verified ID | Organization settings` and take a note of which Key vault is being configured.
     - Go to the Key vault resource and copy the `resource group`, the `subscription ID`, and the `Vault URI`
-2. Call the [create authority](admin-api.md#create-authority) with the following JSON body (modify as required). Note especially the `/my-path` part as that is where you specify the path name to be used.
+2. Call the [create authority](admin-api.md#create-authority) with the following JSON body (modify as required). The `/my-path` in the path is where you specify the path name to be used.
 
 ```JSON
 POST /v1.0/verifiableCredentials/authorities
@@ -76,7 +76,7 @@ POST /v1.0/verifiableCredentials/authorities
 }
 ```
 
-3. Generate the did document for the new authority by calling [generateDidDocument](admin-api.md#generate-did-document) where `newAuthorityIdForPath` is the id in the create authority response:
+3. Generate the did document for the new authority by calling [generateDidDocument](admin-api.md#generate-did-document) where `newAuthorityIdForPath` is the `id` attribute in the create authority response:
 
 ```JSON
 POST /v1.0/verifiableCredentials/authorities/:newAuthorityIdForPath/generateDidDocument
