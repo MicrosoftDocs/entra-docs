@@ -240,8 +240,10 @@ In this section, you test your Microsoft Entra single sign-on configuration with
     ![Salesforce mobile app homepage](media/salesforce-tutorial/mobile-app5.png)
     ![Salesforce mobile app](media/salesforce-tutorial/mobile-app6.png)
 
-    > [!NOTE]
-	> Once you've validated that SSO works and rolled it out in your organization, we recommend disabling application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your conditional access policies, MFA, etc. will be in place to protect sign-ins to Salesforce. 
+
+## Prevent application access through local accounts
+Once you've validated that SSO works and rolled it out in your organization, disable application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your conditional access policies, MFA, etc. will be in place to protect sign-ins to Salesforce. 
+
 
 ## Next steps
 
