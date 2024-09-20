@@ -111,7 +111,7 @@ As with enterprise apps, you can [assign users](assign-user-or-group-access-port
 Microsoft Entra ID enables your organization to setup single sign-on and protects access with conditional access, multi-factor authentication, etc. However, application developers can allow users to access applications using local credentials, circumventing the controls that you have put in place. To ensure that users are protected by Microsoft Entra ID:
 
 - Disable any settings in your application that allows end users to bypass SSO. You will need to review the documentation provided by the application developer to understand what settings are available. 
-- If your application provides an API to manage the passwords of the users, set a unique password for each user using the APIs. This will prevent end users from signing into the application with local credentials.
+- If your application provides an API to manage user passwords, remove the local passwords or set a unique password for each user using the APIs. This will prevent end users from signing into the application with local credentials.
 
 ## Next steps
 
