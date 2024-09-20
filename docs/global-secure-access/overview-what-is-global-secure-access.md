@@ -40,7 +40,7 @@ Microsoft Entra Internet Access secures access to Microsoft services, SaaS, and 
 - Apply universal Conditional Access policies for all internet destinations, even if not federated with Microsoft Entra ID, through integration with Conditional Access session controls. 
 - Prevent stolen tokens from being replayed with the compliant network check for your tenant (built into Conditional Access). Avoid the need to hairpin users, while compromising productivity to achieve location-based security checks. Also prevent SSE bypass for SaaS applications.   
 - Apply universal tenant restrictions to prevent data exfiltration to unauthorized foreign tenants or personal accounts.
-- Restore original user Source IP in Conditional Access policies, Identity Protection scores/risk assessment and Entra ID sign-in logs. 
+- Restore original user Source IP in Conditional Access policies, Microsoft Entra ID Protection risk detections and Entra ID sign-in logs. 
 - Detailed network traffic logs (including enforced policy details). Dashboards such as relationship maps between users, devices and endpoints, cross tenant access, and top network destination in use.
 
 ## Microsoft Entra Private Access
