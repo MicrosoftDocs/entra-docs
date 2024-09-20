@@ -46,7 +46,7 @@ First, create, or choose a resource group that contains the destination Log Anal
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your Microsoft Entra ID tenant from the **Directories + subscriptions** menu.
-1. [Create a resource group](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) or choose an existing one. This example uses a resource group named *ExtIDMonitoring*.
+1. [Create a resource group](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) or choose an existing one. This example uses a resource group named _ExtIDMonitor_.
 
 ### Create a Log Analytics workspace
 
@@ -54,7 +54,7 @@ A **Log Analytics workspace** is a unique environment for Azure Monitor log data
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your Microsoft Entra ID tenant from the **Directories + subscriptions** menu.
-1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace). This example uses a Log Analytics workspace named *ExtIDLogAnalytics*, in a resource group named *ExtIDMonitoring*.
+1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace). This example uses a Log Analytics workspace named _ExtIDLogAnalytics_, in a resource group named _ExtIDMonitor_.
 
 ### Add Microsoft.Insights as a resource provider
 
@@ -88,11 +88,46 @@ To make management easier, we recommend using Microsoft Entra user _groups_ for 
 
 1. With **Microsoft Entra ID** still selected in your external tenant, select **Groups**, and then select a group. If you don't have an existing group, create a **Security** group, then add members. For more information, follow the procedure [Create a basic group and add members using Microsoft Entra ID](../active-directory/fundamentals/how-to-manage-groups.md).
 1. Select **Overview**, and record the group's **Object ID**.
-Itt tartok -----------------------------
 
-## Step 3: Workforce tenant configuration – configure Lighthouse (create Service Provider) with ARM
+## Step 3: Workforce tenant configuration - configure Azure Lighthouse
 
 ### Create an Azure Resource Manager template
+
+To create the custom authorization and delegation in Azure Lighthouse, we use an Azure Resource Manager template. This template grants the external tenant access to the Microsoft Entra resource group, which you created earlier, for example, _ExtIDMonitor_. Deploy the template from the GitHub sample by using the **Deploy to Azure** button, which opens the Azure portal and lets you configure and deploy the template directly in the portal. For these steps, make sure you're signed in to your Microsoft Entra workforce tenant (not the external tenant).
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your Microsoft Entra ID tenant from the **Directories + subscriptions** menu. 
+1. Use the **Deploy to Azure** button to open the Azure portal and deploy the template directly in the portal. For more information, see [create an Azure Resource Manager template](/azure/lighthouse/how-to/onboard-customer#create-an-azure-resource-manager-template).
+
+   [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure-ad-b2c%2Fsiem%2Fmaster%2Ftemplates%2FrgDelegatedResourceManagement.json)
+
+1. On the **Custom deployment** page, enter the following information:
+
+   | Field                 | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+   | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | Subscription          | Select the directory that contains the Azure subscription where the _ExtIDMonitor_ resource group was created.                                                                                                                                                                                                                                                                                                                                                                                                       |
+   | Region                | Select the region where the resource will be deployed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+   | Msp Offer Name        | A name describing this definition. For example, _ExtIDMonitor_. It's the name that will be displayed in Azure Lighthouse.  The **MSP Offer Name** must be unique in your Microsoft Entra ID. To monitor multiple external tenants, use different names. |
+   | Msp Offer Description | A brief description of your offer. For example, _Enables Azure Monitor in the external tenant_.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   | Managed By Tenant ID  | The **Tenant ID** of your external tenant (also known as the directory ID).                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+   | Authorizations        | Specify a JSON array of objects that include the Microsoft Entra ID `principalId`, `principalIdDisplayName`, and Azure `roleDefinitionId`. The `principalId` is the **Object ID** of the group or user that will have access to resources in this Azure subscription. For this walkthrough, specify the group's Object ID that you recorded earlier in the external tenant. For the `roleDefinitionId`, use the [built-in role](../role-based-access-control/built-in-roles.md) value for the _Contributor role_, `b24988ac-6180-42a0-ab88-20f7382dd24c`. |
+   | Rg Name               | The name of the resource group you create earlier in your Microsoft Entra tenant. For example, _ExtIDMonitor_.                                                                                                                                                                                                                                                                                                                                                                                                |
+
+   The following example demonstrates an Authorizations array with one security group.
+
+   ```json
+   [
+     {
+       "principalId": "<Replace with group's OBJECT ID>",
+       "principalIdDisplayName": "external tenant administrators",
+       "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c"
+     }
+   ]
+   ```
+
+After you deploy the template, it can take a few minutes (typically no more than five) for the resource projection to complete. You can verify the deployment in your Microsoft Entra workforce tenant and get the details of the resource projection. For more information, see [View and manage service providers](/azure/lighthouse/how-to/view-manage-service-providers).
+
+Itt tartok -----------------------------
 
 ## Step 4: External tenant configuration - – make workforce tenant subscription and resources visible
 
