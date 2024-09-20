@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 12/15/2023
+ms.date: 09/10/2024
 ms.author: sarahlipsey
 ms.reviewer: deawari
 
@@ -36,6 +36,8 @@ There are different role requirements for viewing or updating a recommendation. 
 | Apps Administrator | Update and read |
 | Security Operator | Update and read |
 | Security Administrator | Update and read |
+| `DirectoryRecommendations.Read.All` | Read-only in Microsoft Graph |
+| `DirectoryRecommendations.ReadWrite.All` | Update and read in Microsoft Graph |
 
 Some recommendations might require a P2 or other license. For more information, see [Recommendation availability and license requirements](overview-recommendations.md#recommendation-availability-and-license-requirements).
 
@@ -77,11 +79,13 @@ Each recommendation provides the same set of details that explain what the recom
 > In the Microsoft Entra admin enter, the impacted resources are limited to a maximum of 50 resources. To view all impacted resources for a recommendation, use this Microsoft Graph API request:
 >`GET /directory/recommendations/{recommendationId}/impactedResources`
 >
->For more information, see the [How to use Microsoft Graph with with Microsoft Entra recommendations](#how-to-use-microsoft-graph-with-azure-active-directory-recommendations) section of this article.
+>For more information, see the [Microsoft Graph API](#tab/microsoft-graph-api) section of this article.
 
 ## How to update a recommendation
 
-To update the status of a recommendation or a related resource, sign in to Azure using a least-privileged role for updating a recommendation.
+You can update the status of a recommendation or a related resource in the Microsoft Entra admin center or using Microsoft Graph.
+
+### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 [!INCLUDE [portal update](../../includes/portal-update.md)]
 
@@ -113,14 +117,13 @@ To update the status of a recommendation or a related resource, sign in to Azure
 
 Continue to monitor the recommendations in your tenant for changes.
 
-### How to use Microsoft Graph with Microsoft Entra recommendations
-<a name='how-to-use-microsoft-graph-with-azure-active-directory-recommendations'></a>
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 Microsoft Entra recommendations can be viewed and managed using Microsoft Graph on the `/beta` endpoint. You can view recommendations along with their impacted resources, postpone a recommendation for later, and more. For more information, see the [Microsoft Graph documentation for recommendations](/graph/api/resources/recommendations-api-overview).
 
 To get started, follow these instructions to work with recommendations using Microsoft Graph in Graph Explorer.
 
-1. Sign in to [Graph Explorer](https://aka.ms/ge).
+1. Sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Select **GET** as the HTTP method from the dropdown.
 1. Set the API version to **beta**.
 
@@ -151,6 +154,7 @@ To view the impacted resources for a specific recommendation, use the following 
 ```http
 GET /directory/recommendations/{recommendationId}/impactedResources
 ```
+---
 
 ## Next steps
 
