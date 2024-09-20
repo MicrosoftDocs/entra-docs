@@ -112,6 +112,7 @@ Microsoft Entra ID enables your organization to setup single sign-on to protect 
 
 - Identify which applications connected to your directory for single sign on allow end users to bypass single sign on with a local application credential or a backup authentication method. You will need to review the documentation provided by the application provider to understand if this is possible, and what settings are available. Then, in those applications, disable the settings that allows end users to bypass SSO. Test the end user experience has been secured by opening a browser in InPrivate, connecting to the applications' sign in page, providing the identity of a user in your tenant, and verify that there is no option to sign in other than via Microsoft Entra.
 - If your application provides an API to manage user passwords, remove the local passwords or set a unique password for each user using the APIs. This will prevent end users from signing into the application with local credentials.
+- If your application provides an API to manage users, configure Microsoft Entra user provisioning to that application to disable or delete user accounts when users are no longer in scope of the application or the tenant.
 
 ## Next steps
 
