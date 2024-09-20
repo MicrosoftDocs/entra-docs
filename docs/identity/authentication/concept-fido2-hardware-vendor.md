@@ -160,8 +160,6 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |VeriMark Guard Fingerprint Key|d94a29d9-52dd-4247-9c2d-8b818b610389|![y]|![n]|![n]|![n]|
 |VinCSS FIDO2 Authenticator|5fdb81b8-53f0-4967-a881-f5ec26fe4d18|![n]|![n]|![n]|![n]|
 |Windows Hello Hardware Authenticator|08987058-cadc-4b81-b6e1-30de50dcbe96|![y]|![n]|![n]|![n]|
-|Windows Hello Hardware Authenticator|08987058-cadc-4b81-b6e1-30de50dcbe96|![y]|![n]|![n]|![n]|
-|Windows Hello Software Authenticator|6028b017-b1d4-4c02-b4b3-afcdafc96bb2|![y]|![n]|![n]|![n]|
 |Windows Hello Software Authenticator|6028b017-b1d4-4c02-b4b3-afcdafc96bb2|![y]|![n]|![n]|![n]|
 |Windows Hello VBS Hardware Authenticator|9ddd1817-af5a-4672-a2b9-3e3dd95000a9|![y]|![n]|![n]|![n]|
 |Windows Hello VBS Hardware Authenticator|9ddd1817-af5a-4672-a2b9-3e3dd95000a9|![y]|![n]|![n]|![n]|
