@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/10/2024
+ms.date: 09/20/2024
 ms.author: sarahlipsey
 ms.reviewer: deawari
 
@@ -43,41 +43,56 @@ Some recommendations might require a P2 or other license. For more information, 
 
 ## How to read a recommendation
 
-Most recommendations follow the same pattern. You're provided information about how the recommendation work, its value, and some action steps to address the recommendation. This section provides an overview of the details provided in a recommendation, but aren't specific to one recommendation.
+Most recommendations follow the same pattern. You're provided information about how the recommendation works, its value, and some action steps to address the recommendation. This section provides an overview of the details provided in a recommendation, but aren't specific to one recommendation.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Overview** > **Recommendations tab**.
+1. Browse to **Identity** > **Overview** > **Recommendations**.
 1. Select a recommendation from the list.
 
     ![Screenshot of the list of recommendations.](media/howto-use-recommendations/recommendations-list.png)
 
-Each recommendation provides the same set of details that explain what the recommendation is, why it's important, and how to fix it.
+Each recommendation provides the same set of details that explain what the recommendation is, why it's important, and how to fix it. The recommendation service runs every 24-48 hours, depending on the recommendation.
 
 ![Screenshot of a recommendation's status, priority, and impacted resource type.](media/howto-use-recommendations/recommendation-status-risk.png)
 
-- The **Status** of a recommendation can be updated manually or automatically by the system. If all resources are addressed according to the action plan, the status automatically changes to *Completed* the next time the recommendations service runs. The recommendation service runs every 24-48 hours, depending on the recommendation.
+### Status
 
-- The **Priority** of a recommendation could be low, medium, or high. These values are determined by several factors, such as security implications, health concerns, or potential breaking changes.
+The **Status** of a recommendation can be active, completed, dismissed, or postponed. The recommendation service automatically marks a recommendation as completed when all impacted resources are addressed.
 
-  - **High**: Must do. Not acting will result in severe security implications or potential downtime.
-  - **Medium**: Should do. No severe risk if action isn't taken.
-  - **Low**: Might do. No security risks or health concerns if action isn't taken.
+- **Active**: The recommendation has resources that need to be addressed. A dismissed, postponed, or completed recommendation can be manually changed back to active.
+- **Completed**: All resources in the recommendation have been addressed. The status is updated automatically by the system when all resources are addressed according to the action plan.
+- **Dismissed**: If the recommendation is irrelevant or the data is wrong, you can dismiss the recommendation. You must provide a reason for dismissing the recommendation.
+- **Postponed**: If you want to address the recommendation at a later time, you can postpone it. The recommendation becomes active when the selected date occurs. You can postpone a recommendation for up to a year.
 
-- The **Impacted resource type** for a recommendation could be applications, users, or your full tenant. This detail gives you an idea of what type of resources you need to address. If the impacted resource is at the tenant level, you might need to make a global change.
+### Priority
 
-![Screenshot of the recommendation status description, description, and value.](media/howto-use-recommendations/status-description-value.png)
+The **Priority** of a recommendation could be low, medium, or high. These values are determined by several factors, such as security implications, health concerns, or potential breaking changes.
 
-- The **Status description** tells you the date the recommendation status changed and if it was changed by the system or a user.
+- **High**: Must do. Not acting will result in severe security implications or potential downtime.
+- **Medium**: Should do. No severe risk if action isn't taken.
+- **Low**: Might do. No security risks or health concerns if action isn't taken.
 
-- The recommendation's **Value** is an explanation of why completing the recommendation benefits you, and the value of the associated feature.
+### Recommendation details
+
+- The **Status description** tells you the date the recommendation status changed.
+
+- The recommendation's **Value** is an explanation of why completing the recommendation benefits your organization and the value of the associated feature.
 
 - The **Action plan** provides step-by-step instructions to implement a recommendation. The Action plan might include links to relevant documentation or direct you to other pages in the Azure portal.
 
-- The **Impacted resources** table contains a list of resources identified by the recommendation. The resource's name, ID, date it was first detected, and status are provided. The resource could be an application or resource service principal, for example.
+- Some recommendations might include a **User impact** that describes the user experience when the recommendation is addressed.
 
-> [!NOTE]
-> In the Microsoft Entra admin enter, the impacted resources are limited to a maximum of 50 resources. To view all impacted resources for a recommendation, use this Microsoft Graph API request:
->`GET /directory/recommendations/{recommendationId}/impactedResources`
+![Screenshot of the recommendation status description, description, and value.](media/howto-use-recommendations/status-description-value.png)
+
+### Impacted resources
+
+The **Impacted resources** for a recommendation could be applications, users, or your full tenant.  If the impacted resource is at the tenant level, you might need to make a global change.
+
+The **Impacted resources** table contains a list of resources identified by the recommendation. The resource's name, ID, date it was first detected, and status are provided. The resource could be an application or resource service principal, for example.
+
+- Not all recommendations populate the Impacted resources table.
+- In the Microsoft Entra admin enter, the impacted resources are limited to a maximum of 50 resources. To view all impacted resources for a recommendation, use the following Microsoft Graph API request:
+    - `GET /directory/recommendations/{recommendationId}/impactedResources`
 
 ## How to update a recommendation
 
@@ -87,33 +102,28 @@ You can update the status of a recommendation or a related resource in the Micro
 
 [!INCLUDE [portal update](../../includes/portal-update.md)]
 
-1. Go to **Microsoft Entra ID** > **Recommendations**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Identity** > **Overview** > **Recommendations**.
+1. Select a recommendation from the list.
+1. Review the **Action plan**.
 
-1. Select a recommendation from the list to view the details, status, and action plan.
-
-1. Follow the **Action plan**.
-
-1. If applicable, *right-click on the status* of a resource in a recommendation, select **Mark as**, then select a status.
-
-    - The status for the resource appears as regular text, but you can right-click on the status to open the menu.
-    - You can set each resource to a different status as needed.
-
-    ![Screenshot of the status options for a resource.](media/howto-use-recommendations/resource-mark-as-option.png)
+1. If applicable, select **more details** for a specific resource in the **Impacted resources** table to view the resource's details.
 
 1. The recommendation service automatically marks the recommendation as complete, but if you need to manually change the status of a recommendation, select **Mark as** from the top of the page and select a status.
 
     ![Screenshot of the Mark as options, to highlight the difference from the resource menu.](media/howto-use-recommendations/recommendation-mark-as-options.png)
 
     - Mark a recommendation as **Dismissed** if you think the recommendation is irrelevant or the data is wrong.
-        - Microsoft Entra ID asks for a reason why you dismissed the recommendation so we can improve the service.
+        - In the panel that opens, select a dismissed reason so we can improve the service.
     - Mark a recommendation as **Postponed** if you want to address the recommendation at a later time.
-        - The recommendation becomes **Active** when the selected date occurs.
-    - You can reactivate a completed or postponed recommendation to keep it top of mind and reassess the resources.
-    - Recommendations change to **Completed** if all impacted resources were addressed.
-       - If the service identifies an active resource for a completed recommendation the next time the service runs, the recommendation will automatically change back to **Active**.
+        - In the panel that opens, select a date within the next year to postpone the recommendation.
+        - The recommendation becomes active when the selected date occurs.
+    - Mark a dismissed, postponed, or completed recommendation as **Active** to reassess the resources and resolve the issue.
+    - Recommendations change to **Completed** when all impacted resources were addressed.
+       - If the service identifies an active resource for a completed recommendation the next time the service runs, the recommendation automatically changes back to **Active**.
        - Completing a recommendation is the only action collected in the audit log. To view these logs, go to **Microsoft Entra ID** > **Audit logs** and filter the service to "Microsoft Entra recommendations."
 
-Continue to monitor the recommendations in your tenant for changes.
+1. Continue to monitor the recommendations in your tenant for changes.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 <a name='how-to-use-microsoft-graph-with-azure-active-directory-recommendations'></a>
