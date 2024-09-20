@@ -86,11 +86,11 @@ The **Priority** of a recommendation could be low, medium, or high. These values
 
 ### Impacted resources
 
-The **Impacted resources** for a recommendation could be applications, users, or your full tenant.  If the impacted resource is at the tenant level, you might need to make a global change.
+The **Impacted resources** for a recommendation could be applications, users, or your full tenant. If the impacted resource is at the tenant level, you might need to make a global change.
 
 The **Impacted resources** table contains a list of resources identified by the recommendation. The resource's name, ID, date it was first detected, and status are provided. The resource could be an application or resource service principal, for example.
 
-- Not all recommendations populate the Impacted resources table.
+- Not all recommendations populate the impacted resources table. For example, the "Remove unused applications" recommendation lists all applications that were identified by the recommendation service. Tenant-level recommendations, however, won't have any resources listed in the table. 
 - In the Microsoft Entra admin enter, the impacted resources are limited to a maximum of 50 resources. To view all impacted resources for a recommendation, use the following Microsoft Graph API request:
     - `GET /directory/recommendations/{recommendationId}/impactedResources`
 
