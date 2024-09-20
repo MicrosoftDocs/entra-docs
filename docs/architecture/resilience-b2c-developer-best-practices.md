@@ -80,7 +80,7 @@ The most common service disruptions are code and configuration changes. Adoption
 Protect your applications from known vulnerabilities such as Distributed Denial of Service (DDoS) attacks, SQL injections, cross-site scripting, remote code execution, and others documented in [OWASP Top-10](https://owasp.org/www-project-top-ten/). Deploy a Web Application Firewall (WAF) to defend against common exploits and vulnerabilities.
 
 - Use Azure [WAF](/azure/web-application-firewall/overview), which provides centralized protection against attacks.
-- Use WAF with Microsoft Entra [Identity Protection and Conditional Access to provide multi-layer protection](/azure/active-directory-b2c/conditional-access-identity-protection-overview) when using Azure AD B2C.
+- Use WAF with Microsoft Entra [ID Protection and Conditional Access to provide multi-layer protection](/azure/active-directory-b2c/conditional-access-identity-protection-overview) when using Azure AD B2C.
 - Build resistance to bot-driven [sign-ups by integrating with a CAPTCHA system](https://github.com/azure-ad-b2c/samples/tree/master/policies/captcha-integration).
 
 ## Secrets
