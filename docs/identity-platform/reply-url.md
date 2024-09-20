@@ -106,7 +106,7 @@ The Microsoft Entra application model specifies the following restrictions to re
     * `https://contoso.com/abc/response-oidc` is returned as `https://contoso.com/abc/response-oidc`
 
 * Redirect URIs *don't* support special characters - `! $ ' ( ) , ;`
-* Redirect URIs *doesn't* support Internationalized Domain Names
+* Redirect URIs *don't* support Internationalized Domain Names
 
 ### Maximum number of redirect URIs and URI length
 
