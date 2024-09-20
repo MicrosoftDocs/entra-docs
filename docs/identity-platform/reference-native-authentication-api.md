@@ -129,9 +129,12 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 |`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.|
+
+
+#### Redirect response
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -146,7 +149,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
@@ -174,7 +177,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 |`error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -182,21 +185,21 @@ Content-Type: application/json
 |`timestamp`|The time when the error occurred.|
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
-|`invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This response is possible if the app submits user attributes, and the `suberror` parameter's value is *attribute_validation_failed*.    |
+|`invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This response is possible if the app submits user attributes, and the `suberror` property's value is *attribute_validation_failed*.    |
 |`suberror` | An error code string that can be used to further classify types of errors.|
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
 |`invalid_request`  |Request parameter validation failed such as when the challenge_type parameter value contains an unsupported authentication method or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.|
-|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
+|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` property to learn the exact cause of the error.|
 |`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the external tenant or is incorrect. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.| 
 |`user_already_exists` |  User already exists.  |
-|`invalid_grant`| The password that the app submits doesn't meet all the complexity requirements, such as the password is too short. Use the `suberror` parameter to learn the exact cause of the error. <br> **This parameter is only applicable for email with password authentication method**.|
+|`invalid_grant`| The password that the app submits doesn't meet all the complexity requirements, such as the password is too short. Use the `suberror` property to learn the exact cause of the error. <br> **This parameter is only applicable for email with password authentication method**.|
 
-If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property for an *invalid_grant* error:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
@@ -208,7 +211,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 |`password_is_invalid`| Password is invalid, for example because it uses disallowed characters. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). This response is possible if the app submits a user password.|
 
 
-If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_client* error:
+If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property for an *invalid_client* error:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
@@ -260,7 +263,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 |`interval`| The length of time in seconds the app needs to wait before it attempts to resend OTP. |
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
@@ -270,6 +273,7 @@ Content-Type: application/json
 |`challenge_target_label` |An obfuscated email where the one-time passcode was sent.|
 |`code_length`|The length of the one-time passcode that Microsoft Entra generates. |
 
+#### Redirect response
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -284,7 +288,7 @@ Content-Type: application/json
 }
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
@@ -312,7 +316,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -321,7 +325,7 @@ Content-Type: application/json
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
@@ -384,7 +388,7 @@ Content-Type: application/json
 } 
 ```
     
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |  An error code string that can be used to classify types of errors, and to react to errors.   |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -395,7 +399,7 @@ Content-Type: application/json
 |`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`suberror` | An error code string that can be used to further classify types of errors.|
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
@@ -404,7 +408,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`invalid_grant`|The grant type included in the request isn't valid or supported, or OTP value is incorrect.|
 |`expired_token`|The continuation token included in the request is expired. |
 
-If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property for an *invalid_grant* error:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
@@ -446,10 +450,12 @@ Content-Type: application/json
 }
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  |  *password* is returned in the response for the required credential.   |
 |`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.   |
+
+#### Redirect response
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -464,7 +470,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
@@ -547,7 +553,7 @@ Content-Type: application/json
 [!INCLUDE [custom-attribute-note](./includes/native-auth-api/custom-attributes-note.md)]
 
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  | This attribute is set if Microsoft Entra can't create the user account because an attribute needs to be verified or submitted.  |  
 |`error_description` | A specific error message that can help you to identify the cause of the error. |
@@ -558,7 +564,7 @@ Content-Type: application/json
 |`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.  |
 |`required_attributes`|A list (array of objects) of attributes that the app needs to submit next call to continue. These attributes are the extra attributes that app needs to submit apart from the username. Microsoft Entra includes this parameter is the response if the value of `error` parameter is *attributes_required*.|
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
@@ -566,6 +572,8 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`invalid_grant`| The grant type included in the request isn't valid or supported. The possible values for the `grant_type` are *oob*, *password*, *attributes* |
 |`expired_token`| The continuation token included in the request is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
+
+#### Redirect response 
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -580,7 +588,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
@@ -609,7 +617,7 @@ Content-Type: application/json
 }
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -619,17 +627,17 @@ Content-Type: application/json
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 |`suberror` | An error code string that can be used to further classify types of errors.|
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type.   |  
-|`invalid_grant`| The grant submitted is invalid, such as the password submitted is too short. Use the `suberror` parameter to learn the exact cause of the error.|
+|`invalid_grant`| The grant submitted is invalid, such as the password submitted is too short. Use the `suberror` property to learn the exact cause of the error.|
 |`expired_token`|The continuation token is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
 
 
-If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
@@ -679,9 +687,11 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter   |   Description        |
+|    Property   |   Description        |
 |----------------------|------------------------|
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns.|  
+
+#### Redirect response
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -696,7 +706,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
@@ -724,7 +734,7 @@ Content-Type: application/json
 }
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -735,20 +745,20 @@ Content-Type: application/json
 |`continuation_token`| [Continuation token](#continuation-token) that Microsoft Entra returns.  |
 | `unverified_attributes`  |  A list (array of objects) of attribute key names that must be verified. This parameter is included in the response when the `error` parameter's value is *verification_required*.|
 |`required_attributes`| A list (array of objects) of attributes that the app needs to submit. Microsoft Entra includes this parameter in its response when the `error` parameter's value is *attributes_required*.|
-| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `suberror` parameter's value is *attribute_validation_failed*.    |
+| `invalid_attributes`   |  A list (array of objects) of attributes that failed validation. This parameter is included in the response when the `suberror` property's value is *attribute_validation_failed*.    |
 |`suberror` | An error code string that can be used to further classify types of errors.|
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid.|
-|`invalid_grant`|The grant type provided isn't valid or supported or failed validation, such as attributes validation failed. Use the `suberror` parameter to learn the exact cause of the error.| 
+|`invalid_grant`|The grant type provided isn't valid or supported or failed validation, such as attributes validation failed. Use the `suberror` property to learn the exact cause of the error.| 
 |`expired_token`|The continuation token included in the request is expired.|
 |`attributes_required`  |  One or more of user attributes is required.   |
 
 
-If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property for an *invalid_grant* error:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
@@ -801,7 +811,7 @@ Content-Type: application/json
 }
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `access_token`  |    The access token that the app requested from the `/token` endpoint. The app can use this access token to request access to secured resources such as web APIs.|  
 |`token_type` |  Indicates the token type value. The only type that Microsoft Entra supports is *Bearer*.|
@@ -832,7 +842,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -841,7 +851,7 @@ Content-Type: application/json
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
@@ -869,9 +879,9 @@ To request for security tokens, your app interacts with three endpoints, `/initi
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
 | `/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
-|   `/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to request for the user's [default MFA verification method](#determine-the-default-mfa-verification-method).|
+|   `/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to request for the user's [default MFA method](#determine-the-default-mfa-verification-method).|
 |  `/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge.|
-| `/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered MFA verification methods if the `/challenge` endpoint doesn't return a default MFA verification method or the user requests to complete the MFA challenge using a different verification method from the default MFA method. Currently, since native authentication supports email one-time passcode as the only MFA verification method, this endpoint returns only email as the challenge chanel. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-verification-methods-optional)|
+| `/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered MFA methods if the `/challenge` endpoint doesn't return a default MFA method or the user requests to complete the MFA challenge using a different verification method from the default MFA method. Currently, since native authentication supports email one-time passcode as the only MFA method, this endpoint returns only email as the challenge chanel. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-verification-methods-optional)|
 
 ### Sign-in challenge types
 
@@ -938,9 +948,11 @@ Content-Type: application/json
 }
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |  
+
+#### Redirect response
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -956,7 +968,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
@@ -984,7 +996,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -993,17 +1005,17 @@ Content-Type: application/json
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type. or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.|  
 |`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the external tenant or is incorrect. |
-|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
+|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` property to learn the exact cause of the error.|
 |`user_not_found`|The username doesn't exist.|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 
-If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_client* error:
+If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property for an *invalid_client* error:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
@@ -1030,7 +1042,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/initiate` endpoint, or call to the `/token` endpoint when the user needs to complete MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-| `id` | No | This is the string identifier of the MFA verification method that's returned from the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-verification-methods-optional).|
+| `id` | No | This is the string identifier of the MFA method that's returned from the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-verification-methods-optional).|
 
 #### Success response
 
@@ -1053,7 +1065,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
@@ -1083,7 +1095,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |  
 |`challenge_type`|Microsoft Entra returns the supported challenge type configured for the user in the Microsoft Entra admin center. In this case the values is expected to be *password*.|
@@ -1109,7 +1121,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to complete MFA.|
@@ -1119,6 +1131,8 @@ Content-Type: application/json
 |`code_length`|The length of the one-time passcode that Microsoft Entra generates. | 
 
 ---
+
+#### Redirect response
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -1133,7 +1147,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
@@ -1161,7 +1175,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -1170,7 +1184,7 @@ Content-Type: application/json
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |--------------------|--------------------|
@@ -1179,11 +1193,11 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`expired_token`|The continuation token included in the request is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type. |
 
-If the request to the `/challenge` endpoint is to complete an MFA challenge, but the user doesn't have a default MFA, the error response includes a `suberror` parameter for an *invalid_request* error:  
+If the request to the `/challenge` endpoint is to complete an MFA challenge, but the user doesn't have a default MFA method, the error response includes a `suberror` property for an *invalid_request* error:  
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
-|`introspect_required`| The user doesn't have a default MFA. In this case, the client app needs to call the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-verification-methods-optional).|
+|`introspect_required`| The user doesn't have a default MFA method. In this case, the client app needs to call the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-verification-methods-optional).|
 
 ### Step 3: Request for security tokens
 
@@ -1233,7 +1247,7 @@ Content-Type: application/json
 }
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 |`token_type` |  Indicates the token type value. The only type that Microsoft Entra supports is *Bearer*.|
 |`scopes`|  A space-separated list of scopes that the access token is valid for.|
@@ -1264,7 +1278,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -1273,7 +1287,7 @@ Content-Type: application/json
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
@@ -1283,17 +1297,17 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`expired_token`|The continuation token included in the request is expired. |
 |`invalid_scope`| One or more of the scoped included in the request are invalid.|
 
-If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property for an *invalid_grant* error:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
 |`invalid_oob_value`| The value of one-time passcode that the app submits is invalid. This sub-error only applies if the authentication method is email one-time passcode. |
-| `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `/challenge` endpoint to request for the user's [default MFA verification method](#determine-the-default-mfa-verification-method). |
-| `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA verification method registered. This scenario can happen if the tenant administrator changes MFA configuration, or if the user moves to a new location rendering the initially registered strong authentication method invalid.|
+| `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `/challenge` endpoint to request for the user's [default MFA method](#determine-the-default-mfa-verification-method). |
+| `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA method registered. This scenario can happen if the tenant administrator changes MFA configuration, or if the user moves to a new location rendering the initially registered MFA method invalid.|
 
-### List user registered MFA verification methods (optional)
+### List user registered MFA methods (optional)
 
-Use the `/introspect` endpoint to request user registered MFA verification method. Your app calls this endpoint if the `/challenge` endpoint doesn't return a [default MFA verification method](#determine-the-default-mfa-verification-method) or the user requests to complete the MFA challenge using a different MFA verification method from the default verification method. 
+Use the `/introspect` endpoint to request user registered MFA method. Your app calls this endpoint if the `/challenge` endpoint doesn't return a [default MFA method](#determine-the-default-mfa-verification-method) or the user requests to complete the MFA challenge using a different MFA method from the default verification method. 
 
 Here's an example of the request(we present the example request in multiple lines for readability):
 
@@ -1334,24 +1348,24 @@ Content-Type: application/json
 }
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |
-| `methods` | A list ( of objects) of user registered strong authentication methods.|
+| `methods` | A list ( of objects) of user registered MFA methods.|
 
-The strong authentication method object has the following properties:
+The MFA method object has the following properties:
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `id`  |   An autogenerated unique string identifier for the strong authentication method. The app uses this string as `id` when it calls the `/challenge` endpoint.  |
-| `challenge_type` | Challenge type selected for the user to use as the strong authentication method. Current supported challenge type is *oob*.  |
-| `challenge_channel` | The type of the channel to which the the strong authentication method is sent. Current supported challenge channel is *email*. |
-| `login_hint` | The hint for the strong authentication method such as an obfuscated email to which the strong authentication method is sent.  |
+| `id`  |   An autogenerated unique string identifier for the MFA method. The app uses this string as `id` when it calls the `/challenge` endpoint.  |
+| `challenge_type` | Challenge type selected for the user to use as the MFA method. Current supported challenge type is *oob*.  |
+| `challenge_channel` | The type of the channel to which the the MFA method is sent. Current supported challenge channel is *email*. |
+| `login_hint` | The hint for the MFA method such as an obfuscated email to which the MFA method is sent.  |
 
 
 #### Redirect response
 
-If an app can't support a required strong authentication method, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If an app can't support a required MFA method, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1386,7 +1400,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -1395,7 +1409,7 @@ Content-Type: application/json
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
@@ -1405,13 +1419,13 @@ Here are the possible errors you can encounter (possible values of the `error` p
 | `server_error` | Something went wrong with the request. |
 
 
-### Determine the default MFA verification method
+### Determine the default MFA method
 
-Microsoft Entra determines the default strong authentication method for the user by priority as follows:
+Microsoft Entra determines the default MFA method for the user by priority as follows:
 
 1. Use [a system-preferred MFA](../identity/authentication/concept-system-preferred-multifactor-authentication#enable-system-preferred-mfa-in-the-microsoft-entra-admin-center).
 1. Use an MFA set as default on the user by the tenant administrator. 
-1. User has only one registered strong authentication method.
+1. User has only one registered MFA method.
 
 ## Self-service password reset (SSPR)
 
@@ -1483,9 +1497,11 @@ Content-Type: application/json
 }
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |
+
+#### Redirect response 
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -1500,7 +1516,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
@@ -1528,7 +1544,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -1537,17 +1553,17 @@ Content-Type: application/json
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.   |  
 |`user_not_found`|The username doesn't exist.|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
-|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` parameter to learn the exact cause of the error.|
+|`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` property to learn the exact cause of the error.|
 |`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the external tenant or is incorrect. |
 
-If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_client* error:
+If the error parameter has a value of *invalid_client*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property for an *invalid_client* error:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
@@ -1596,7 +1612,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
@@ -1604,6 +1620,8 @@ Content-Type: application/json
 |`challenge_channel`| The type of the channel through which the one-time passcode was sent. At the moment, we support email. |
 |`challenge_target_label` |An obfuscated email where the one-time passcode was sent.|
 |`code_length`|The length of the one-time passcode that Microsoft Entra generates. |
+
+#### Redirect response
 
 If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
@@ -1618,7 +1636,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 
@@ -1646,7 +1664,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -1655,7 +1673,7 @@ Content-Type: application/json
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
@@ -1703,7 +1721,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 |`expires_in`|Time in seconds before the *continuation_token* expires. The maximum value of `expires_in` is **600 seconds**. |
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns.  |
@@ -1730,7 +1748,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -1740,16 +1758,16 @@ Content-Type: application/json
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 |`suberror` | An error code string that can be used to further classify types of errors.|
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the external tenant administrator hasn't enabled SSPR and email OTP for all tenant users. Use the `error_description` parameter to learn the exact cause of the error. |
-|`invalid_grant` |The grant type is unknown or doesn't match the expected grant type value. Use the `suberror` parameter to learn the exact cause of the error.|
+|`invalid_grant` |The grant type is unknown or doesn't match the expected grant type value. Use the `suberror` property to learn the exact cause of the error.|
 |`expired_token`|The continuation token is expired.    |
 
 
-If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter for an *invalid_grant* error:
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property for an *invalid_grant* error:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
@@ -1794,7 +1812,7 @@ Content-Type: application/json
 }
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns.  |
 |`poll_interval`|The minimum amount of time in seconds that the app should wait between polling requests to check the status of the password reset request via the `/poll_completion` endpoint, see [step 5](#step-5-poll-for-password-reset-status)  |
@@ -1821,7 +1839,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -1831,15 +1849,15 @@ Content-Type: application/json
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 |`suberror` | An error code string that can be used to further classify types of errors.|
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |  Request parameter validation failed such as a validation of *continuation token* failed.   |
 |`expired_token`|The *continuation token* is expired.    |
-|`invalid_grant`| The grant submitted is invalid, such as the password submitted is too short. Use the `suberror` parameter to learn the exact cause of the error.|
+|`invalid_grant`| The grant submitted is invalid, such as the password submitted is too short. Use the `suberror` property to learn the exact cause of the error.|
 
-If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` parameter in its response. Here are the possible values of the `suberror` parameter:
+If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
@@ -1886,7 +1904,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `status`  | The status of the reset password request. If Microsoft Entra returns a status of *failed*, the app can resubmit the new password by making another request to the `/submit` endpoint and include the new continuation token.|
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. If the status is *succeeded*, the app can use the continuation token that Microsoft Entra returns to request for security tokens via the `/token` endpoint as explained in [step 5 of sign-up flow](#step-5-request-for-security-tokens). This means that after a user successfully resets their password, you can directly sign them into your app without initiating a new sign-in flow.|
@@ -1922,7 +1940,7 @@ Content-Type: application/json
 } 
 ```
 
-|    Parameter     | Description        |
+|    Property     | Description        |
 |----------------------|------------------------|
 | `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
@@ -1931,7 +1949,7 @@ Content-Type: application/json
 |`trace_id` |A  unique identifier for the request that can help you to diagnose errors.|
 |`correlation_id`|A  unique identifier for the request that can help in diagnostics across components. |
 
-Here are the possible errors you can encounter (possible values of the `error` parameter):
+Here are the possible errors you can encounter (possible values of the `error` property):
 
 |    Error value     | Description        |
 |----------------------|------------------------|
