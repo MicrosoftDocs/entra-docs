@@ -247,4 +247,6 @@ Once you've validated that SSO works and rolled it out in your organization, dis
 
 ## Next steps
 
-After you configure Salesforce, you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+If you have Enterprise Mobility + Security E5 or another license for Microsoft Defender for Cloud Apps, then you can collect an audit trail of application activities in that product, which can be used when investigating alerts.  In Defender for Cloud Apps, alerts can be triggered when user, admin, or sign-in activities don't comply with your policies.  By [connecting Microsoft Defender for Cloud Apps to Salesforce](/defender-cloud-apps/protect-salesforce#how-to-connect-defender-for-cloud-apps-to-salesforce) , Salesforce sign-in events are collected by Defender for Cloud Apps.
+
+In addition, you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
