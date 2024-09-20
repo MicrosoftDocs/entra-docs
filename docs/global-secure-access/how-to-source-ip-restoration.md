@@ -16,7 +16,7 @@ With a cloud based network proxy between users and their resources, the IP addre
 Source IP restoration in Global Secure Access allows backward compatibility for Microsoft Entra customers to continue using original user Source IP. Administrators can benefit from the following capabilities:
 
 - Continue to enforce Source IP-based location policies across both [Conditional Access](/azure/active-directory/conditional-access/overview) and [continuous access evaluation](/azure/active-directory/conditional-access/concept-continuous-access-evaluation).
-- [Identity Protection risk detections](/azure/active-directory/identity-protection/concept-identity-protection-risks) get a consistent view of original user Source IP address for assessing various risk scores.
+- [Microsoft Entra ID Protection risk detections](/entra/id-protection/concept-identity-protection-risks) get a consistent view of original user Source IP address for assessing various risk scores.
 - Original user Source IP is also made available in [Microsoft Entra sign-in logs](/azure/active-directory/reports-monitoring/concept-all-sign-ins).
 
 ## Prerequisites
