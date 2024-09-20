@@ -10,4 +10,4 @@ There are different role requirements for viewing or updating a recommendation. 
 | Security Operator | Update and read |
 | Security Administrator | Update and read |
 
-Some recommendations might require a P2 or other license. For more information, see [Recommendation availability and license requirements](overview-recommendations.md#recommendation-availability-and-license-requirements).
+Some recommendations might require a P2 or other license. For more information, see [Recommendation availability and license requirements](../identity/monitoring-health/overview-recommendations.md#recommendation-availability-and-license-requirements).
