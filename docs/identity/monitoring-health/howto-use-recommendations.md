@@ -156,7 +156,7 @@ GET /directory/recommendations/{recommendationId}/impactedResources
 ```
 ---
 
-## Next steps
+## Related content
 
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
 - [Learn about Service Health notifications](/azure/service-health/service-health-portal-update)
