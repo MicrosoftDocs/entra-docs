@@ -78,8 +78,6 @@ Each recommendation provides the same set of details that explain what the recom
 > [!NOTE]
 > In the Microsoft Entra admin enter, the impacted resources are limited to a maximum of 50 resources. To view all impacted resources for a recommendation, use this Microsoft Graph API request:
 >`GET /directory/recommendations/{recommendationId}/impactedResources`
->
->For more information, see the [Microsoft Graph API](#tab/microsoft-graph-api) section of this article.
 
 ## How to update a recommendation
 
@@ -118,6 +116,7 @@ You can update the status of a recommendation or a related resource in the Micro
 Continue to monitor the recommendations in your tenant for changes.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
+<a name='how-to-use-microsoft-graph-with-azure-active-directory-recommendations'></a>
 
 Microsoft Entra recommendations can be viewed and managed using Microsoft Graph on the `/beta` endpoint. You can view recommendations along with their impacted resources, postpone a recommendation for later, and more. For more information, see the [Microsoft Graph documentation for recommendations](/graph/api/resources/recommendations-api-overview).
 
