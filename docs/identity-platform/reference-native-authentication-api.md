@@ -893,7 +893,7 @@ Learn more about challenge types in the [native authentication challenge types](
 
 ### Sign-in flow protocol details
 
-The sequence diagram demonstrates the flow of the sign in process.
+The sequence diagram demonstrates the flow of the sign in process. The sign-in flow depends on the user's authentication method.
 
 # [Email one-time passcode](#tab/emailOtp)
 
@@ -1045,6 +1045,8 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `id` | No | This is the string identifier of the MFA method that's returned from the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-methods-optional).|
 
 #### Success response
+
+The success response depends on the user's authentication method.
 
 # [Email one-time passcode](#tab/emailOtp)
 If the tenant administrator configured email one-time passcode in the Microsoft Entra admin center as the user’s authentication method, Microsoft Entra sends a one-time passcode to the user’s email, then responds with a challenge type of *oob* and provides more information about the one-time passcode.
