@@ -95,7 +95,7 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |HID Crescendo Enabled|54d9fee8-e621-4291-8b18-7157b99c5bec|![n]|![n]|![y]|![n]|
 |VALMIDO PRO FIDO|5626bed4-e756-430b-a7ff-ca78c8b12738|![y]|![n]|![n]|![y]|
 |YubiKey Bio Series -</br>Multi-protocol Edition 1VDJSN|58276709-bb4b-4bb3-baf1-60eea99282a7|![y]|![y]|![n]|![n]|
-|Allthenticator App:</br>roaming BLE</br>FIDO2 Allthenticator for</br>Windows, Mac, Linux,</br>and Allthenticate door readers|5ca1ab1e-1337-fa57-f1d0-a117e71ca702|![y]|![y]|![n]|![n]|
+|Allthenticator App:<br>roaming BLE<br>FIDO2 Allthenticator for<br>Windows, Mac, Linux,<br>and Allthenticate door readers|5ca1ab1e-1337-fa57-f1d0-a117e71ca702|![y]|![y]|![n]|![n]|
 |Swissbit iShield Key Pro|5d629218-d3a5-11ed-afa1-0242ac120002|![n]|![y]|![y]|![n]|
 |VinCSS FIDO2 Authenticator|5fdb81b8-53f0-4967-a881-f5ec26fe4d18|![n]|![n]|![n]|![n]|
 |Excelsecu eSecu FIDO2 Fingerprint Key|6002f033-3c07-ce3e-d0f7-0ffe5ed42543|![y]|![y]|![n]|![n]|
