@@ -81,8 +81,7 @@ The following samples show public client desktop applications that access the Mi
 > | Java | [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/2-client-side/Integrated-Windows-Auth-Flow) | [MSAL Java](/java/api/com.microsoft.aad.msal4j) | Integrated Windows authentication | | |
 > | Node.js | [Sign in users](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-desktop) | [MSAL Node](/javascript/api/@azure/msal-node) | Authorization code with PKCE |[Quickstart](quickstart-desktop-app-nodejs-electron-sign-in.md) | [Tutorial](tutorial-v2-nodejs-desktop.md) |
 > | Python | [Sign in users](https://github.com/Azure-Samples/ms-identity-python-desktop) | [MSAL Python](/entra/msal/python) | Resource owner password credentials |
-> | Universal Windows Platform (UWP) | [Call Microsoft Graph](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/main/2-With-broker) | [MSAL.NET](/entra/msal/dotnet) | Web account manager | [Quickstart](quickstart-desktop-app-uwp-sign-in.md) | [Tutorial](tutorial-v2-windows-uwp.md) |
-> | Windows Presentation Foundation (WPF) | &#8226; [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph) <br/>&#8226; [Windows Presentation Foundation (WPF) user sign-in, protected web API access (Microsoft Graph)](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/tree/main/desktop-wpf) <br/>&#8226; [Sign in users and call ASP.NET Core web API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/1.%20Desktop%20app%20calls%20Web%20API) <br/> &#8226; [Sign in users and call Microsoft Graph](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [MSAL.NET](/entra/msal/dotnet) | Authorization code with PKCE | [Quickstart](quickstart-desktop-app-uwp-sign-in.md) | [Tutorial](quickstart-desktop-app-wpf-sign-in.md) |
+> | Windows Presentation Foundation (WPF) | &#8226; [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph) <br/>&#8226; [Windows Presentation Foundation (WPF) user sign-in, protected web API access (Microsoft Graph)](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/tree/main/desktop-wpf) <br/>&#8226; [Sign in users and call ASP.NET Core web API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/1.%20Desktop%20app%20calls%20Web%20API) <br/> &#8226; [Sign in users and call Microsoft Graph](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [MSAL.NET](/entra/msal/dotnet) | Authorization code with PKCE | [Tutorial](quickstart-desktop-app-wpf-sign-in.md) |
 
 ### Mobile
 
@@ -320,15 +319,6 @@ The following samples show how to build applications with Ruby.
 > | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Web application | Graph Training <br/> &#8226; [Sign in users and call Microsoft Graph](https://github.com/microsoftgraph/msgraph-training-rubyrailsapp) | OmniAuth OAuth2 | Authorization code | | |
 
-### Universal Windows Platform (UWP)
-
-The following samples show how to build applications with Universal Windows Platform (UWP).
-
-> [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
-> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
-> | Desktop | [Call Microsoft Graph](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/main/2-With-broker) | [MSAL.NET](/entra/msal/dotnet) | Web account manager | [Quickstart](quickstart-desktop-app-uwp-sign-in.md) | [Tutorial](tutorial-v2-windows-uwp.md) |
-
 ### Windows Presentation Foundation (WPF) 
 
 The following samples show how to build applications with Windows Presentation Foundation (WPF).
@@ -337,7 +327,7 @@ The following samples show how to build applications with Windows Presentation F
 > | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
 > | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
 > | Desktop | [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph) | [MSAL.NET](/entra/msal/dotnet) | Authorization code with PKCE |
-> | Desktop | &#8226; [Sign in users and call ASP.NET Core web API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/1.%20Desktop%20app%20calls%20Web%20API) <br/> &#8226; [Sign in users and call Microsoft Graph](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [MSAL.NET](/entra/msal/dotnet/) | Authorization code with PKCE | [Quickstart](quickstart-desktop-app-uwp-sign-in.md) | [Tutorial](quickstart-desktop-app-wpf-sign-in.md) |
+> | Desktop | &#8226; [Sign in users and call ASP.NET Core web API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/1.%20Desktop%20app%20calls%20Web%20API) <br/> &#8226; [Sign in users and call Microsoft Graph](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [MSAL.NET](/entra/msal/dotnet/) | Authorization code with PKCE | [Tutorial](quickstart-desktop-app-wpf-sign-in.md) |
 
 ---
 
@@ -347,4 +337,3 @@ If you'd like to delve deeper into more sample code, see:
 
 - [Sign in users and call the Microsoft Graph API from an Angular](tutorial-v2-angular-auth-code.md)
 - [Sign in users in a Node.js and Express web app](tutorial-v2-nodejs-webapp-msal.md)
-- [Call the Microsoft Graph API from a Universal Windows Platform](tutorial-v2-windows-uwp.md)
