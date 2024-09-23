@@ -35,14 +35,19 @@ After administrators confirm the settings using [report-only mode](../identity/c
 
 For organizations that adopt [passwordless authentication methods](/entra/identity/authentication/howto-authentication-passwordless-deployment) make the following changes: 
 
+#### Update your passwordless sign-in risk policy
+
 1. Under **Users**:
    1. **Include**, select **Users and groups** and target your passwordless users.
 1. Under **Select the sign-in risk level this policy will apply to**, select **High**.
 1. Under **Access controls** > **Block** access for passwordless users.
-1. Require administrator [investigation and remediation](/entra/id-protection/howto-identity-protection-investigate-risk) of any risk.
-1. Unblock the user.
 
 > [!TIP]
 > You might need to have two policies for a period of time while deploying passwordless methods. 
 > - One that allows self-remediation for those not using passwordless methods. 
 > - Another that blocks passwordless users at high risk.
+
+#### Remediate and unblock passwordless sign-in risk
+
+1. Require administrator [investigation and remediation](/entra/id-protection/howto-identity-protection-investigate-risk) of any risk.
+1. Unblock the user.
