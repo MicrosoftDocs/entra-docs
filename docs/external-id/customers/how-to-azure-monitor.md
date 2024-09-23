@@ -31,7 +31,7 @@ To enable [Diagnostic settings](/azure/azure-monitor/essentials/diagnostic-setti
 > [!TIP]
 > Azure Lighthouse is typically used to manage resources for multiple customers. However, it can also be used to manage resources **within an enterprise that has multiple Microsoft Entra tenants of its own**, which is what we are doing here, except that we are only delegating the management of single resource group.
 
-By following the steps in this article, you'll create a new resource group named _ExtIDMonitor_ in your workforce tenant and gain access to the same resource group containing the [Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace) workspace in your external tenant. You'll also be able to transfer the logs from external tenant to your Log Analytics workspace.
+By following the steps in this article, you'll create a new resource group named _ExtIDMonitor_ in your workforce tenant and gain access to the same resource group containing the [Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace) in your external tenant. You'll also be able to transfer the logs from external tenant to your Log Analytics workspace.
 
 During this deployment, you'll authorize a user or group in your external tenant directory to configure the Log Analytics workspace instance within the tenant that contains your Azure subscription. To create the authorization, you deploy an [Azure Resource Manager](/azure/azure-resource-manager/) template to the subscription that contains the Log Analytics workspace.
 
