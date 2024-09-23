@@ -56,7 +56,7 @@ This parameter makes Microsoft Entra ID configure the IssuerUri so that it's bas
 
 `-SupportMultipleDomain` also ensures that the AD FS system includes the proper Issuer value in tokens issued for Microsoft Entra ID. This value is set by taking the domain portion of the user's UPN and using it as the domain in the IssuerUri, that is, `https://{upn suffix}/adfs/services/trust`.
 
-Thus during authentication to Microsoft Entra ID or Microsoft 365, the IssuerUri element in the user’s token is used to locate the domain in Microsoft Entra ID. If, a match can't be found, the authentication fails.
+Thus during authentication to Microsoft Entra ID or Microsoft 365, the IssuerUri element in the user’s token is used to locate the domain in Microsoft Entra ID. If a match can't be found, the authentication fails.
 
 For example, if a user’s UPN is bsimon@bmcontoso.com, the IssuerUri element in the token, AD FS issuer, is set to `http://bmcontoso.com/adfs/services/trust`. This element matches the Microsoft Entra configuration, and authentication succeeds.
 
@@ -93,7 +93,7 @@ Use the steps below to add an additional top-level domain. If you have already a
 
 Use the following steps to remove the Microsoft Online trust and update your original domain.
 
-1. On your AD FS federation server open **AD FS Management**.
+1. On your AD FS federation server, open **AD FS Management**.
 2. On the left, expand **Trust Relationships** and **Relying Party Trusts**.
 3. On the right, delete the **Microsoft Office 365 Identity Platform** entry.
   ![Remove Microsoft Online](./media/how-to-connect-install-multiple-domains/trust4.png)
@@ -128,7 +128,7 @@ And the IssuerUri on the new domain has been set to `https://bmcontoso.com/adfs/
 ## Support for subdomains
 When you add a subdomain, because of the way Microsoft Entra ID handled domains, it inherits the settings of the parent. So, the IssuerUri, needs to match the parents.
 
-So lets say, for example, that I have bmcontoso.com and then add corp.bmcontoso.com. The IssuerUri for a user from corp.bmcontoso.com needs to be **`http://bmcontoso.com/adfs/services/trust`**. However the standard rule implemented above for Microsoft Entra ID, generates a token with an issuer as **`http://corp.bmcontoso.com/adfs/services/trust`**. which won't match the domain's required value and authentication fails.
+So lets say, for example, that I have bmcontoso.com and then add corp.bmcontoso.com. The IssuerUri for a user from corp.bmcontoso.com needs to be **`http://bmcontoso.com/adfs/services/trust`**. However the standard rule implemented above for Microsoft Entra ID, generates a token with an issuer as **`http://corp.bmcontoso.com/adfs/services/trust`**, which won't match the domain's required value and authentication fails.
 
 ### How To enable support for subdomains
 In order to work around this behavior, the AD FS relying party trust for Microsoft Online needs to be updated. To do this, you must configure a custom claim rule so that it strips off any subdomains from the user’s UPN suffix when constructing the custom Issuer value.
