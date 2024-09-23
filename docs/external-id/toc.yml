@@ -10,6 +10,8 @@ items:
     href: tenant-configurations.md
   - name: Supported features
     href: customers/concept-supported-features-customers.md
+  - name: External ID pricing
+    href: external-identities-pricing.md
 - name: External ID in external tenants
   href: customers/toc.yml
   expanded: true
@@ -41,8 +43,6 @@ items:
   - name: Concepts
     expanded: false
     items:
-    - name: External ID pricing
-      href: external-identities-pricing.md
     - name: Best practices
       href: b2b-fundamentals.md
     - name: Tenant configurations
@@ -60,8 +60,6 @@ items:
         href: user-properties.md
       - name: B2B user claims mapping
         href: claims-mapping.md
-      - name: B2B user token
-        href: user-token.md
       - name: B2B collaboration for hybrid organizations
         href: hybrid-organizations.md
     - name: B2B direct connect
@@ -176,6 +174,8 @@ items:
       href: customize-invitation-api.md
     - name: Government and national clouds
       href: b2b-government-national-clouds.md
+    - name: Cross-tenant access roles
+      href: reference-cross-tenant-custom-roles.md
 - name: Resources
   items:
   - name: What's new in docs for external tenants?

@@ -1,13 +1,13 @@
 ---
-title: Manage users synchronized from Active Directory Domain Services with workflows (Preview)
-description: An how to article on how to edit a user account related task to run for users synchronized from Active Directory Domain Services (AD DS) with Lifecycle workflows.
+title: Manage users synchronized from Active Directory Domain Services with workflows
+description: A how to article on how to edit a user account related task to run for users synchronized from Active Directory Domain Services (AD DS) with Lifecycle workflows.
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
 ms.service: entra-id-governance
 ms.workload: identity
 ms.topic: how-to 
-ms.date: 08/06/2024
+ms.date: 08/27/2024
 ms.subservice: lifecycle-workflows
 ms.custom: template-how-to 
 
@@ -15,7 +15,7 @@ ms.custom: template-how-to
 
 ---
 
-# Manage users synchronized from Active Directory Domain Services with workflows (Preview)
+# Manage users synchronized from Active Directory Domain Services with workflows
 
 Workflows created by Lifecycle workflows can be used to manage the lifecycle of users synchronized from Active Directory Domain Services (AD DS). Synced AD DS support allows you to use workflow tasks to enable, disable, and delete synchronized users. In this article, you're walked through the steps of enabling a user account task to be run for users synchronized from AD DS.
 
@@ -23,7 +23,7 @@ Workflows created by Lifecycle workflows can be used to manage the lifecycle of 
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-While most Lifecycle workflow tasks can manage users synchronized from Active Directory Domain Services without any extra configuration, certain tasks such as enabling, disabling, and deleting tasks require some extra configuration. For more information on setting these prerequisites, see:  [User account tasks (preview)](lifecycle-workflow-on-premises.md#user-account-tasks-preview).
+While most Lifecycle workflow tasks can manage users synchronized from Active Directory Domain Services without any extra configuration, certain tasks such as enabling, disabling, and deleting tasks require some extra configuration. For more information on setting these prerequisites, see:  [User account tasks](lifecycle-workflow-on-premises.md#user-account-tasks).
 
 ## Configure a user account task to manage users synchronized from Active Directory Domain Services using the Microsoft Entra admin center
 

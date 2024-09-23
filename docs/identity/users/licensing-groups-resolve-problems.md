@@ -9,7 +9,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 07/30/2024
+ms.date: 08/23/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -99,9 +99,9 @@ To solve this problem, remove users from unsupported locations from the licensed
 > - The attributes of First name, Last name, Other email address, and User type are not mandatory for license assignment.
 
 
-## License removal of dynamic groups with rules based on licenses with an initial static group
+## License removal of dynamic membership groups with rules based on licenses with an initial static group
 
-This error happens due to users being added and removed from another batch of dynamic groups, due to the cascading setup of dynamic groups with rules based on licenses on an initial static group. This error can impact multiple dynamic groups and require extensive reprocessing to restore access. 
+This error happens due to users being added and removed from another batch of dynamic membership groups, due to the cascading setup of dynamic membership groups with rules based on licenses on an initial static group. This error can impact multiple dynamic membership groups and require extensive reprocessing to restore access. 
 
 > [!WARNING]
 > When changing an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, be aware that the original members might lose access until the membership rule is fully processed.
@@ -144,7 +144,7 @@ You can assign more than one product license to a group. For example, you can as
 
 It's important to note that when assigning licenses to a group, if there are not enough available licenses, or an issue occurs like service plans that can't be assigned at the same time, the assignment to the group might not be completed. An example is if there aren't enough licenses for all, or if there are conflicts with other services that are enabled for the user.
 
-One potential work around for this problem is to [create dynamic groups](~/identity/users/groups-dynamic-rule-member-of.md). You could create dynamic groups to assign licenses, such as Exchange Online, and then use a second dynamic group with the same membership rules to apply prerequisite licenses. You can then assign those additional licenses after the initial group has applied the Exchange Online license to the users.
+One potential work around for this problem is to [create dynamic membership groups](~/identity/users/groups-dynamic-rule-member-of.md). You could create dynamic membership groups to assign licenses, such as Exchange Online, and then use a second dynamic group with the same membership rules to apply prerequisite licenses. You can then assign those additional licenses after the initial group has applied the Exchange Online license to the users.
 
 If you encounter any licensing errors, they're recorded on the user object and reported via the Azure portal for resolution. For more information, see [Microsoft Graph PowerShell group-based licensing examples](~/identity/users/licensing-powershell-graph-examples.md).
 

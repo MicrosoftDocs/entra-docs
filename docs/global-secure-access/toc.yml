@@ -148,6 +148,8 @@ items:
         href: how-to-view-traffic-logs.md
       - name: Event enrichment in Microsoft 365 enriched logs
         href: reference-event-enrichment-logs.md
+      - name: How to use workbooks
+        href: how-to-use-workbooks.md 
   - name: Deployment guides
     expanded: false
     items:
@@ -175,6 +177,10 @@ items:
     items:
       - name: Troubleshoot connectors
         href: troubleshoot-connectors.md
+      - name: "Troubleshoot the Global Secure Access client: Advanced diagnostics"
+        href: troubleshoot-global-secure-access-client-advanced-diagnostics.md
+      - name: "Troubleshoot the Global Secure Access client: Health check tab"
+        href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
   - name: Partner ecosystem
     expanded: false
     items:
@@ -195,5 +201,7 @@ items:
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: FAQs
     href: resource-faq.yml
-  - name: Version History
+  - name: Connector version history
     href: reference-version-history.md
+  - name: Windows client version history
+    href: reference-windows-client-release-history.md

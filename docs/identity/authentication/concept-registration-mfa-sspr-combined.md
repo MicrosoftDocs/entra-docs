@@ -85,7 +85,7 @@ Combined registration adheres to both multifactor authentication and SSPR polici
 
 The following are sample scenarios where users might be prompted to register or refresh their security info:
 
-- *multifactor authentication registration enforced through Identity Protection:* Users are asked to register during sign-in. They register multifactor authentication methods and SSPR methods (if the user is enabled for SSPR).
+- *multifactor authentication registration enforced through Microsoft Entra ID Protection:* Users are asked to register during sign-in. They register multifactor authentication methods and SSPR methods (if the user is enabled for SSPR).
 - *multifactor authentication registration enforced through per-user multifactor authentication:* Users are asked to register during sign-in. They register multifactor authentication methods and SSPR methods (if the user is enabled for SSPR).
 - *multifactor authentication registration enforced through Conditional Access or other policies:* Users are asked to register when they use a resource that requires multifactor authentication. They register multifactor authentication methods and SSPR methods (if the user is enabled for SSPR).
 - *SSPR registration enforced:* Users are asked to register during sign-in. They register only SSPR methods.
@@ -115,6 +115,12 @@ If the SSPR policy requires users to review their security info at regular inter
 ### Manage mode
 
 Users can go to [Security info](https://aka.ms/mysecurityinfo), or they can select **Security info** from My Account. From there, users can add methods, delete or change existing methods, change the default method, and more.
+
+
+### Session controls for Combined Registration
+By default Combined registration enforces all MFA capable users to strongly authenticate prior to registering or managing their security info. If a user is currently signed in and has previously completed MFA as part of  a valid session, no additional MFA will be required by default, unless a user is attempting to add or modify a passkey (FIDO2) method. Adding or modifying a passkey (FIDO2) method requires users to have strongly authenticated within the past 5 minutes. If MFA hasn't been completed in the past 5 minutes, the user will be asked to sign-in and complete fresh MFA. Organizations can modify the authentication requirements by defining [Conditional Access policies for securing security info registration.](~/identity/conditional-access/howto-conditional-access-policy-registration.md).
+
+Combined registration sessions are only valid for 15 minutes. If a users registration or management actions take longer than this time period, the session will expire and the user will be asked to sign back in to continue. 
 
 ## Key usage scenarios
 

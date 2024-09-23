@@ -62,7 +62,7 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps)** – enables you to discover and manage apps, govern across apps and resources, and check your cloud apps’ compliance.
 
-* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 Much of what you'll monitor and alert on are the effects of your Conditional Access policies. You can use the [Conditional Access insights and reporting workbook](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) to examine the effects of one or more Conditional Access policies on your sign-ins, and the results of policies including device state. This workbook enables you to view a summary, and identify the effects over a specific time period. You can also use the workbook to investigate the sign-ins of a specific user.
 

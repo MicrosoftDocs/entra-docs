@@ -19,9 +19,11 @@ This guide uses a sample React single-page application (SPA) to demonstrate how 
 
 ## Prerequisites
 
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-* [Node.js](https://nodejs.org/en/download/).
-* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+- [Node.js](https://nodejs.org/en/download/).
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ## Register the SPA in the Microsoft Entra admin center
 

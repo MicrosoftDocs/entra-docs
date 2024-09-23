@@ -116,6 +116,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/lytx-drivecam-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/cisco-umbrella-user-management-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/cisco-user-management-for-secure-access-provisioning-tutorial",
       "redirect_document_id": false
@@ -133,6 +138,21 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/neotalogicstudio-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/neota-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/whitesource-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/mend-io-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/sailpoint-identitynow-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/sailpoint-identity-security-cloud-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/pexip-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/pexip-service-mmv-legacy-app",
       "redirect_document_id": false
     },
     {
@@ -274,7 +294,7 @@
       "source_path_from_root": "/docs/identity/app-provisioning/application-provisioning-config-problem.md",
       "redirect_url": "/entra/identity",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path_from_root": "/docs/identity/app-provisioning/inbound-provisioning-api-postman.md",
       "redirect_url": "/entra/identity/app-provisioning/inbound-provisioning-api-curl-tutorial",
@@ -358,6 +378,36 @@
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-overview.md",
       "redirect_url": "/entra/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-prepare-ios-app.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-sign-out.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-sign-out",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-user-after-sign-up.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-self-service-password-reset.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-self-service-password-reset",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-support-web-fallback.md",
+      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback",
       "redirect_document_id": false
     },
     {
@@ -659,6 +709,11 @@
     {
       "source_path_from_root": "/docs/permissions-management/how-to-notifications-rule.md",
       "redirect_url": "/entra/permissions-management/ui-autopilot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/permissions-management/training-videos.md",
+      "redirect_url": "/entra/permissions-management/permissions-management-quickstart-guide",
       "redirect_document_id": false
     },
     {
@@ -976,6 +1031,11 @@
       "source_path_from_root": "/docs/identity-platform/msal-net-migration-ios-broker.md",
       "redirect_url": "/entra/identity-platform/quickstart-mobile-app-android-sign-in",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/user-token.md",
+      "redirect_url": "/entra/external-id/user-properties",
+      "redirect_document_id": true
     },
     {
       "source_path_from_root": "/docs/global-secure-access/how-to-get-started-with-global-secure-access.md",

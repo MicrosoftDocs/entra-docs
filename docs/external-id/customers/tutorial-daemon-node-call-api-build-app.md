@@ -10,8 +10,10 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/26/2023
+ms.date: 08/27/2024
 ms.custom: developer, devx-track-js
+
+#Customer intent: As a developer, devops, I want to learn about how to call a web API from my own daemon app with an external tenant
 ---
 
 # Tutorial: Call a web API from your Node.js daemon application

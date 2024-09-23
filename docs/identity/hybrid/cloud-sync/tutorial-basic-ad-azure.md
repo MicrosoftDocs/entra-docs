@@ -202,7 +202,7 @@ Now you need to create a Microsoft Entra tenant so that you can synchronize our 
 5. Provide a **name for the organization** along with the **initial domain name**. Then select **Create**. This will create your directory.
 6. Once this has completed, click the **here** link, to manage the directory.
 
-<a name='create-a-global-administrator-in-azure-ad'></a>
+
 
 ## Create a Hybrid Identity Administrator in Microsoft Entra ID
 Now that you have a Microsoft Entra tenant, you'll create a Hybrid Identity Administrator account. To create the Hybrid Identity Administrator account do the following.

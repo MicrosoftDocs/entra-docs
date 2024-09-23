@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 01/18/2024
+ms.date: 08/25/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -14,7 +14,7 @@ ms.author: billmath
 
 # Migrate to cloud authentication using Staged Rollout
 
-Staged Rollout allows you to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Identity Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. This article discusses how to make the switch. 
+Staged Rollout allows you to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Microsoft Entra ID Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. This article discusses how to make the switch. 
 
 Before you begin the Staged Rollout, you should consider the implications if one or more of the following conditions is true:
     
@@ -182,7 +182,8 @@ You can roll out these options:
 To configure Staged Rollout, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect sync**.
+
+1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect sync**.
 
 1. On the *Microsoft Entra Connect* page, under the *Staged rollout of cloud authentication*, select the **Enable staged rollout for managed user sign-in** link. 
 
@@ -193,7 +194,7 @@ To configure Staged Rollout, follow these steps:
    
 
    >[!NOTE]
-   >The members in a group are automatically enabled for Staged Rollout. Nested and dynamic groups are not supported for Staged Rollout.
+   >The members in a group are automatically enabled for Staged Rollout. Nested and dynamic membership groups are not supported for Staged Rollout.
    >When adding a new group, users in the group (up to 200 users for a new group) will be updated to use managed auth immediately. 
    >Editing a group (adding or removing users), it can take up to 24 hours for changes to take effect.
    >Seamless SSO will apply only if users are in the Seamless SSO group and also in either a PTA or PHS group.
@@ -238,7 +239,7 @@ To test the sign-in with *password hash sync* or *pass-through authentication* (
 
 To test sign-in with *seamless SSO*:
 
-1. On the intranet, go to the [Apps page](https://myapps.microsoft.com) in a private browser session, and then enter the UserPrincipalName (UPN) of the user account that's selected for Staged Rollout.
+1. On the intranet, go to the [Apps page](https://myapps.microsoft.com) using a browser session, and then enter the UserPrincipalName (UPN) of the user account that's selected for Staged Rollout.
 
    Users who have been targeted for Staged Rollout of *seamless SSO* are presented with a "Trying to sign you in ..." message before they're silently signed in.
 

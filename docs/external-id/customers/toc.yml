@@ -92,6 +92,10 @@ items:
                   href: how-to-run-native-authentication-sample-android-app.md
                 - name: Sign in users and call an API
                   href: sample-native-authentication-android-sample-app-call-web-api.md
+            - name: macOS (Swift)
+              items:
+                - name: Sign in users
+                  href: how-to-run-native-authentication-sample-macos-app.md
             - name: iOS (Swift)
               items:
                 - name: Sign in users
@@ -258,20 +262,20 @@ items:
                 - name: Call an API
                   href: tutorial-native-authentication-android-sign-in-call-api.md
                   displayName: multiple access token 
-            - name: iOS (Swift)
+            - name: iOS/macOS (Swift)
               items:
-                - name: Prepare iOS app
-                  href: tutorial-native-authentication-prepare-ios-app.md
+                - name: Prepare iOS/macOS app
+                  href: tutorial-native-authentication-prepare-ios-macos-app.md
                 - name: Sign up
-                  href: tutorial-native-authentication-ios-sign-up.md
+                  href: tutorial-native-authentication-ios-macos-sign-up.md
                 - name: Sign in and sign out
-                  href: tutorial-native-authentication-ios-sign-in-sign-out.md
+                  href: tutorial-native-authentication-ios-macos-sign-in-sign-out.md
                 - name: Auto-sign in after sign-up
-                  href: tutorial-native-authentication-ios-sign-in-user-after-sign-up.md
+                  href: tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md
                 - name: Self-service password reset
-                  href: tutorial-native-authentication-ios-self-service-password-reset.md
+                  href: tutorial-native-authentication-ios-macos-self-service-password-reset.md
                 - name: Support web fallback
-                  href: tutorial-native-authentication-ios-support-web-fallback.md
+                  href: tutorial-native-authentication-ios-macos-support-web-fallback.md
                 - name: Call an API
                   href: tutorial-native-authentication-ios-sign-in-call-api.md
     - name: Command-line interface (CLI) app
@@ -292,8 +296,10 @@ items:
       href: overview-solutions-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
-    - name: Authentication methods and identity providers
+    - name: Identity providers
       href: concept-authentication-methods-customers.md
+    - name: Multifactor authentication (MFA)
+      href: concept-multifactor-authentication-customers.md
     - name: Native authentication
       items:
         - name: Native authentication
@@ -441,6 +447,8 @@ items:
           href: azure-rest-api-operations-tenant-management.md 
 - name: Reference
   items:
+    - name: Training, demos, and videos
+      href: reference-training-videos.md
     - name: Default user permissions
       href: reference-user-permissions.md
     - name: Service limits and restrictions

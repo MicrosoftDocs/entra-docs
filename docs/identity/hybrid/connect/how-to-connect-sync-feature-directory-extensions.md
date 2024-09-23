@@ -9,7 +9,7 @@ ms.assetid: 995ee876-4415-4bb0-a258-cca3cbb02193
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 08/25/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -17,7 +17,7 @@ ms.author: billmath
 ---
 
 # Microsoft Entra Connect Sync: Directory extensions
-You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises. These attributes can be consumed through [extensions](/graph/extensibility-overview). You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). You can also use this feature to create dynamic groups in Microsoft Entra ID.
+You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises. These attributes can be consumed through [extensions](/graph/extensibility-overview). You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). You can also use this feature to create dynamic membership groups in Microsoft Entra ID.
 
 At present, no Microsoft 365 workload consumes these attributes.
 
@@ -80,7 +80,7 @@ These attributes are now available through the Microsoft Graph API, by using [Mi
 >[!NOTE]
 > It is not supported to sync attribute values from Microsoft Entra Connect to extension attributes that are not created by Microsoft Entra Connect. Doing so may produce performance issues and unexpected results. Only extension attributes that are created as shown in the above are supported for synchronization.
 
-## Use the attributes in dynamic groups
+## Use the attributes in dynamic membership groups
 
 One of the more useful scenarios is to use these attributes in dynamic security or Microsoft 365 groups.
 

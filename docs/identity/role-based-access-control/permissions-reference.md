@@ -489,7 +489,7 @@ Users with this role can manage all enterprise Azure DevOps policies, applicable
 
 ## Azure Information Protection Administrator
 
-Users with this role have all permissions in the Azure Information Protection service. This role allows configuring labels for the Azure Information Protection policy, managing protection templates, and activating protection. This role does not grant any permissions in Identity Protection, Privileged Identity Management, Monitor Microsoft 365 Service Health, Microsoft 365 Defender portal, or Microsoft Purview compliance portal.
+Users with this role have all permissions in the Azure Information Protection service. This role allows configuring labels for the Azure Information Protection policy, managing protection templates, and activating protection. This role does not grant any permissions in Microsoft Entra ID Protection, Privileged Identity Management, Monitor Microsoft 365 Service Health, Microsoft 365 Defender portal, or Microsoft Purview compliance portal.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -840,7 +840,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users in this role
 > | microsoft.directory/groups/reprocessLicenseAssignment | Reprocess license assignments for group-based licensing |
 > | microsoft.directory/groups/basic/update | Update basic properties on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/classification/update | Update the classification property on Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/dynamicMembershipRule/update | Update rules for dynamic membership groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/groupType/update | Update properties that would affect the group type of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/onPremWriteBack/update | Update Microsoft Entra groups to be written back to on-premises with Microsoft Entra Connect |
@@ -1402,7 +1402,7 @@ Users in this role can create/manage groups and its settings like naming and exp
 > | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/groups/basic/update | Update basic properties on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/classification/update | Update the classification property on Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/dynamicMembershipRule/update | Update rules for dynamic membership groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/groupType/update | Update properties that would affect the group type of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/onPremWriteBack/update | Update Microsoft Entra groups to be written back to on-premises with Microsoft Entra Connect |
@@ -1645,7 +1645,7 @@ This role can create and manage all security groups. However, Intune Administrat
 > | microsoft.directory/groups.security/delete | Delete Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/basic/update | Update basic properties on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/classification/update | Update the classification property on Security groups, excluding role-assignable groups |
-> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups, excluding role-assignable groups |
+> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update rules for dynamic membership groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/members/update | Update members of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/owners/update | Update owners of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/visibility/update | Update the visibility property on Security groups, excluding role-assignable groups |
@@ -2257,12 +2257,12 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 In | Can do
 --- | ---
 [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Monitor security-related policies across Microsoft 365 services<br>Manage security threats and alerts<br>View reports
-[Identity Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all Identity Protection operations except for resetting passwords
+[Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for resetting passwords
 [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role<br>**Cannot** manage Microsoft Entra role assignments or settings
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports
 Azure Advanced Threat Protection | Monitor and respond to suspicious security activity
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | Assign roles<br>Manage machine groups<br>Configure endpoint threat detection and automated remediation<br>View, investigate, and respond to alerts<br/>View machines/device inventory
-[Intune](/intune/role-based-access-control) | Views user, device, enrollment, configuration, and application information<br>Cannot make changes to Intune
+[Intune](/intune/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference#endpoint-security-manager)
 [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Add admins, add policies and settings, upload logs and perform governance actions
 [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services
 [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) | Define the threshold and duration for lockouts when failed sign-in events happen.
@@ -2362,7 +2362,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 | In | Can do |
 | --- | --- |
 | [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | All permissions of the Security Reader role<br/>View, investigate, and respond to security threats alerts<br/>Manage security settings in Microsoft 365 Defender portal |
-| [Identity Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all Identity Protection operations except for configuring or changing risk-based policies, resetting passwords, and configuring alert e-mails. |
+| [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for configuring or changing risk-based policies, resetting passwords, and configuring alert e-mails. |
 | [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role |
 | [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |
 | [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | All permissions of the Security Reader role<br/>View, investigate, and respond to security alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they are assigned a Microsoft Defender for Endpoint role. |
@@ -2396,7 +2396,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 In | Can do
 --- | ---
 [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | View security-related policies across Microsoft 365 services<br>View security threats and alerts<br>View reports
-[Identity Protection](~/id-protection/overview-identity-protection.md) | View all Identity Protection reports and Overview
+[Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | View all ID Protection reports and Overview
 [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | Has read-only access to all information surfaced in Microsoft Entra Privileged Identity Management: Policies and reports for Microsoft Entra role assignments and security reviews.<br>**Cannot** sign up for Microsoft Entra Privileged Identity Management or make any changes to it. In the Privileged Identity Management portal or via PowerShell, someone in this role can activate additional roles (for example, Global Administrator or Privileged Role Administrator), if the user is eligible for them.
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | View security policies<br>View and investigate security threats<br>View reports
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | View and investigate alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they are assigned a Microsoft Defender for Endpoint role.
@@ -2744,7 +2744,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/groups/basic/update | Update basic properties on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/classification/update | Update the classification property on Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/dynamicMembershipRule/update | Update rules for dynamic membership groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/groupType/update | Update properties that would affect the group type of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/onPremWriteBack/update | Update Microsoft Entra groups to be written back to on-premises with Microsoft Entra Connect |
@@ -2890,7 +2890,7 @@ Assign the Windows 365 Administrator role to users who need to do the following 
 > | microsoft.directory/groups.security/delete | Delete Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/basic/update | Update basic properties on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/classification/update | Update the classification property on Security groups, excluding role-assignable groups |
-> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups, excluding role-assignable groups |
+> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update rules for dynamic membership groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/members/update | Update members of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/owners/update | Update owners of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/visibility/update | Update the visibility property on Security groups, excluding role-assignable groups |

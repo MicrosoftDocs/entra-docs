@@ -120,11 +120,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure In Case of Crisis - Mobile SSO
 
-To configure single sign-on on **In Case of Crisis - Mobile** side, you need to send the downloaded **Certificate (Raw)** and copied **User access URL** from Azure portal to [In Case of Crisis - Mobile support team](https://www.rockdovesolutions.com/features/enterprise-ready). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **In Case of Crisis - Mobile** side, you need to send the downloaded **Certificate (Raw)** and copied **User access URL** from Azure portal to [In Case of Crisis - Mobile support team](https://www.rockdovesolutions.com/in-case-of-crisis-microsoft-teams-integration). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create In Case of Crisis - Mobile test user
 
-In this section, you create a user called Britta Simon in In Case of Crisis - Mobile. Work with [In Case of Crisis - Mobile support team](https://www.rockdovesolutions.com/features/enterprise-ready) to add the users in the In Case of Crisis - Mobile platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in In Case of Crisis - Mobile. Work with [In Case of Crisis - Mobile support team](https://www.rockdovesolutions.com/in-case-of-crisis-microsoft-teams-integration) to add the users in the In Case of Crisis - Mobile platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

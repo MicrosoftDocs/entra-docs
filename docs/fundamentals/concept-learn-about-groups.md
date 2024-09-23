@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 01/05/2024
+ms.date: 08/25/2024
 ms.author: sarahlipsey
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -52,9 +52,9 @@ This option also lets you give people outside of your organization access to the
 
 ### Membership types:
 
-- **Assigned:** Lets you add specific users as members of a group and have unique permissions.
-- **Dynamic user:** Lets you use dynamic membership rules to automatically add and remove members. If a member's attributes change, the system looks at your dynamic group rules for the directory to see whether the member meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
-- **Dynamic device:** Lets you use dynamic group rules to automatically add and remove devices. If a device's attributes change, the system looks at your dynamic group rules for the directory to see whether the device meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
+- **Assigned groups:** Lets you add specific users as members of a group and have unique permissions.
+- **Dynamic membership group for users:** Lets you use rules for users to automatically add and remove users as members. If a member's attributes change, the system looks at your rules for dynamic membership groups for the directory. The system checks to see whether the member meets the rule requirements (is added), or no longer meets the rules requirements (is removed).
+- **Dynamic membership group for devices:** Lets you use rules for devices to automatically add and remove devices as members. If a device's attributes change, the system looks at your rules for dynamic membership groups for the directory to see whether the device meets the rule requirements (is added) or no longer meets the rules requirements (is removed).
 
     > [!IMPORTANT]
     > You can create a dynamic group for either devices or users, but not for both. You can't create a device group based on the device owners' attributes. Device membership rules can only reference device attributions. For more info about creating a dynamic group for users and devices, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md).
@@ -69,7 +69,7 @@ After creating a Microsoft Entra group, you need to grant it the appropriate acc
 
 Microsoft Entra ID helps you give access to your organization's resources by providing access rights to a single user or to an entire Microsoft Entra group. Using groups lets the resource owner or Microsoft Entra directory owner assign a set of access permissions to all the members of the group. The resource or directory owner can also give management rights to someone such as a department manager or a help desk administrator, letting that person add and remove members. For more information about how to manage group owners, see the [Manage groups](how-to-manage-groups.yml) article.
 
-:::image type="content" source="./media/concept-learn-about-groups/access-management-overview.png" alt-text="Screenshot of a diagram of Microsoft Entra ID access management..":::
+:::image type="content" source="./media/concept-learn-about-groups/access-management-overview.png" alt-text="Screenshot of a diagram of Microsoft Entra ID access management.":::
 
 ### Ways to assign access rights
 
@@ -77,24 +77,24 @@ After creating a group, you need to decide how to assign access rights. Explore 
 
 - **Direct assignment.** The resource owner directly assigns the user to the resource.
 
-- **Group assignment.** The resource owner assigns a Microsoft Entra group to the resource, which automatically gives all of the group members access to the resource. Group membership is managed by both the group owner and the resource owner, letting either owner add or remove members from the group. For more information about managing group membership, see the [Manage groups](how-to-manage-groups.yml) article. 
+- **Group assignment.** The resource owner assigns a Microsoft Entra group to the resource, which automatically gives all of the group members access to the resource. Both the group owner and the resource owner manage group membership, letting either owner add or remove members from the group. For more information about managing group membership, see the [Managed groups](how-to-manage-groups.yml) article. 
 
 - **Rule-based assignment.** The resource owner creates a group and uses a rule to define which users are assigned to a specific resource. The rule is based on attributes that are assigned to individual users. The resource owner manages the rule, determining which attributes and values are required to allow access the resource. For more information, see [Create a dynamic group and check status](~/identity/users/groups-create-rule.md).
 
 - **External authority assignment.** Access comes from an external source, such as an on-premises directory or a SaaS app. In this situation, the resource owner assigns a group to provide access to the resource and then the external source manages the group members.
 
-   :::image type="content" source="./media/concept-learn-about-groups/access-management-process.png" alt-text="Screenshot of a diagram of access management overview..":::
+   :::image type="content" source="./media/concept-learn-about-groups/access-management-process.png" alt-text="Screenshot of a diagram of access management overview.":::
 
 ### Can users join groups without being assigned?
 
 The group owner can let users find their own groups to join, instead of assigning them. The owner can also set up the group to automatically accept all users that join or to require approval.
 
-After a user requests to join a group, the request is forwarded to the group owner. If it's required, the owner can approve the request and the user is notified of the group membership. If you have multiple owners and one of them disapproves, the user is notified, but isn't added to the group. For more information and instructions about how to let your users request to join groups, see [Set up Microsoft Entra ID so users can request to join groups](~/identity/users/groups-self-service-management.md).
+After a user requests to join a group, the request is forwarded to the group owner. If required, the owner can approve the request and the user is notified of the group membership. If you have multiple owners and one of them disapproves, the user is notified, but isn't added to the group. For more information and instructions about how to let your users request to join groups, see [Set up Microsoft Entra ID so users can request to join groups](~/identity/users/groups-self-service-management.md).
 
 ## Next steps
 
 - [Create and manage Microsoft Entra groups and group membership](how-to-manage-groups.yml)
 - [Learn about group-based licensing in Microsoft Entra ID](./concept-group-based-licensing.md)
 - [Manage access to SaaS apps using groups](~/identity/users/groups-saasapps.md)
-- [Manage dynamic rules for users in a group](~/identity/users/groups-create-rule.md)
+- [Manage rules for dynamic membership groups](~/identity/users/groups-create-rule.md)
 - Learn about [Privileged Identity Management (PIM) for Microsoft Entra roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)
