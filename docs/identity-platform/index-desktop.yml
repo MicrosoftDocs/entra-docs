@@ -22,8 +22,6 @@ landingContent:
         links:
           - text: Node.js - Electron
             url: quickstart-desktop-app-nodejs-electron-sign-in.md
-          - text: Universal Windows Platform (UWP)
-            url: quickstart-desktop-app-uwp-sign-in.md
           - text: Windows Presentation Foundation (WPF)
             url: quickstart-desktop-app-wpf-sign-in.md
   - title: "Learn by building"
