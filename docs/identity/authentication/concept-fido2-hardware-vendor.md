@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 09/20/2024
+ms.date: 09/23/2024
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -104,8 +104,6 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |IDCore 3121 Fido|e86addcd-7711-47e5-b42a-c18257b0bf61|![n]|![n]|![y]|![n]|
 |IDEMIA ID-ONE Card|8d1b1fcb-3c76-49a9-9129-5515b346aa02|![n]|![y]|![y]|![n]|
 |IDmelon Android Authenticator|39a5647e-1853-446c-a1f6-a79bae9f5bc7|![y]|![n]|![n]|![n]|
-|IDmelon Android Authenticator|39a5647e-1853-446c-a1f6-a79bae9f5bc7|![y]|![n]|![n]|![n]|
-|IDmelon iOS Authenticator|820d89ed-d65a-409e-85cb-f73f0578f82a|![y]|![n]|![n]|![n]|
 |IDmelon iOS Authenticator|820d89ed-d65a-409e-85cb-f73f0578f82a|![y]|![n]|![n]|![n]|
 |IDPrime 3930 FIDO|ca4cff1b-5a81-4404-8194-59aabcf1660b|![n]|![n]|![y]|![n]|
 |IDPrime 3940 FIDO|b50d5e0a-7f81-4959-9b12-f45407407503|![n]|![n]|![y]|![n]|
@@ -159,10 +157,6 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |VALMIDO PRO FIDO|5626bed4-e756-430b-a7ff-ca78c8b12738|![y]|![n]|![n]|![y]|
 |VeriMark Guard Fingerprint Key|d94a29d9-52dd-4247-9c2d-8b818b610389|![y]|![n]|![n]|![n]|
 |VinCSS FIDO2 Authenticator|5fdb81b8-53f0-4967-a881-f5ec26fe4d18|![n]|![n]|![n]|![n]|
-|Windows Hello Hardware Authenticator|08987058-cadc-4b81-b6e1-30de50dcbe96|![y]|![n]|![n]|![n]|
-|Windows Hello Software Authenticator|6028b017-b1d4-4c02-b4b3-afcdafc96bb2|![y]|![n]|![n]|![n]|
-|Windows Hello VBS Hardware Authenticator|9ddd1817-af5a-4672-a2b9-3e3dd95000a9|![y]|![n]|![n]|![n]|
-|Windows Hello VBS Hardware Authenticator|9ddd1817-af5a-4672-a2b9-3e3dd95000a9|![y]|![n]|![n]|![n]|
 |WiSECURE AuthTron USB FIDO2 Authenticator|504d7149-4e4c-3841-4555-55445a677357|![y]|![y]|![n]|![n]|
 |YubiKey 5 FIPS Series|73bb0cd4-e502-49b8-9c6f-b59445bf720b|![n]|![y]|![n]|![n]|
 |YubiKey 5 FIPS Series with Lightning|85203421-48f9-4355-9bc8-8a53846e5083|![n]|![y]|![n]|![n]|
