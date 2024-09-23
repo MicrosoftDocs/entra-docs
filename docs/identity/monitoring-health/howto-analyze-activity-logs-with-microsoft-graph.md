@@ -57,6 +57,8 @@ To search for specific activity log entries, use the $filter and createdDateTime
 - [Sign-up log properties](/graph/api/resources/signup#properties)
 - [Audit log properties](/graph/api/resources/directoryaudit#properties)
 
+#### Sample sign-in queries
+
 Try using the following queries for sign-in activity:
 
 - For sign-in attempts where Conditional Access failed:
@@ -68,13 +70,13 @@ Try using the following queries for sign-in activity:
 - For non-interactive sign-ins:
   - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'nonInteractiveUser')`
 
-- For service principal sign-ins: 
+- For service principal sign-ins:
   - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'servicePrincipal')`
 
-- For managed identity sign-ins: 
+- For managed identity sign-ins:
   - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'managedIdentity')`
 
-- To get the authentication method of a user: 
+- To get the authentication method of a user:
   - GET `https://graph.microsoft.com/beta/users/{userObjectId}/authentication/methods`
   - Requires `UserAuthenticationMethod.Read.All` permission
 
@@ -85,6 +87,47 @@ Try using the following queries for sign-in activity:
 - For the registration details of specific user:
   - GET `https://graph.microsoft.com/beta/reports/authenticationMethods/userRegistrationDetails/{userId}`
   - Requires `UserAuthenticationMethod.Read.All` permission
+
+#### Sample sign-up queries
+
+Try using the following queries for sign-up activity:
+
+- To find sign-up attempts that failed at any point during sign-up:
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode ne 0`
+
+- To find sign-up attempts that failed during user object creation:
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode ne 0 and signUpStage eq 'userCreation'`
+
+- To find sign-up attempts that failed during email validation (applies only to local accounts):
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode eq 1002013 and signUpStage eq 'credentialValidation'`
+
+- For sign-ups during a date range:
+  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z)`
+
+- For sign-ups for a specific application:
+  - GET `https://graph.microsoft.com/beta/signupLogs/signUps?$filter=appId eq 'AppId'`
+
+- For local account sign-ups:
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider in ('Email OTP', 'Email Password')`
+
+- For social account sign-ups:
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider eq ‘Google'`
+
+- To see entries for a specific user, for example `user@email.com`:
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentity/signUpIdentifier eq 'user@email.com'`
+
+- To find successful sign-ups:
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpStage eq 'userCreation' and userSnapshot ne 'null'`
+
+- To get the authentication method of a user:
+  - GET `https://graph.microsoft.com/beta/users/{userObjectId}/authentication/methods`
+  - Requires `UserAuthenticationMethod.Read.All permission`
+
+- To find entries matching a specific correlation ID:  
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=correlationId eq 'CorrelationId'`
+
+- To find the sign-in associated a sign-up correlation ID:
+  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=correlationId eq 'CorrelationId'`
 
 ### Related APIs
 
