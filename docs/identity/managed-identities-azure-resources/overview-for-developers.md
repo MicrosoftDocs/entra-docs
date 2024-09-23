@@ -24,14 +24,15 @@ This page demonstrates how to configure an App Service so it can connect to Azur
 
 The code samples use the Azure Identity client library, which is the recommended method as it automatically handles many of the steps for you, including acquiring an access token used in the connection.
 
-### What resources can managed identities connect to?
+## What resources can managed identities connect to?
+
 A managed identity can connect to any resource that supports Microsoft Entra authentication. In general, there's no special support required for the resource to allow managed identities to connect to it.
 
 Some resources don't support Microsoft Entra authentication, or their client library doesn't support authenticating with a token. Keep reading to see our guidance on how to use a Managed identity to securely access the credentials without needing to store them in your code or application configuration.
 
 ## Creating a managed identity
 
-There are two types of managed identity: system-assigned and user-assigned. System-assigned identities are directly linked to a single Azure resource. When the Azure resource is deleted, so is the identity. A user-assigned managed identity can be associated with multiple Azure resources, and its lifecycle is independent of those resources. 
+There are [two types of managed identities](overview.md#managed-identity-types): system-assigned and user-assigned. System-assigned identities are directly linked to a single Azure resource. When the Azure resource is deleted, so is the identity. A user-assigned managed identity can be associated with multiple Azure resources, and its lifecycle is independent of those resources. 
 
 This article explains how to create and configure a user-assigned managed identity, which is [recommended for most scenarios](managed-identity-best-practice-recommendations.md). If the source resource you're using doesn't support user-assigned managed identities, then you should refer to that resource provider's documentation to learn how to configure it to have a system-assigned managed identity.
 
@@ -104,10 +105,12 @@ Your source resource now has a user-assigned identity that it can use to connect
 
 ## Adding permissions to the identity
 
-> [!NOTE]
+Once that you have that you have a user assigned managed identity that you can use  with your App Service and you have configured the app service to use that identity to access other Azure resources, you need to give the identity the necessary permissions. In this scenario, we are using this identity to interact with Azure Storage, so you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview).
+
+> [!IMPORTANT]
 > You'll need a role such as "User Access Administrator" or "Owner" for the target resource to add Role assignments. Ensure you're granting the least privilege required for the application to run.
 
-Now that your App Service has a managed identity, you need to give the identity the correct permissions. As you're using this identity to interact with Azure Storage, you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview).
+
 
 ### [Portal](#tab/portal)
 
@@ -152,17 +155,17 @@ az role assignment create --assignee "<Object/Principal ID of the managed identi
 
 ---
 
-Your managed identity now has the correct permissions to access the Azure target resource. [Read more about Azure Role Based Access Control](/azure/role-based-access-control/overview).
+Your managed identity now has the necessary permissions to access the Azure target resource. [Read more about Azure Role Based Access Control](/azure/role-based-access-control/overview).
 
 ## Using the managed identity in your code
 
-Your App Service now has a managed identity with permissions. You can use the managed identity in your code to interact with target resources, instead of storing credentials in your code.
+Your App Service now has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain a token that your code can use to interact with Azure resources, instead of storing credentials in your code. 
 
-The recommended method is to use the Azure Identity library for your preferred programming language. The supported languages include [.NET](/dotnet/api/overview/azure/identity-readme), [Java](/java/api/overview/azure/identity-readme?view=azure-java-stable&preserve-view=true), [JavaScript](/javascript/api/overview/azure/identity-readme?view=azure-node-latest&preserve-view=true), [Python](/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true), [Go](/azure/developer/go/azure-sdk-authentication), and [C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md). The library acquires access tokens for you, making it simple to connect to target resources.
+We recommended that you use the Azure Identity library for your preferred programming language. The supported languages include [.NET](/dotnet/api/overview/azure/identity-readme), [Java](/java/api/overview/azure/identity-readme?view=azure-java-stable&preserve-view=true), [JavaScript](/javascript/api/overview/azure/identity-readme?view=azure-node-latest&preserve-view=true), [Python](/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true), [Go](/azure/developer/go/azure-sdk-authentication), and [C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md). The library acquires access tokens for you, making it simple to connect to target resources.
 
 ### Using the Azure Identity library in your development environment
 
-Except for the C++ library, the Azure Identity libraries support a `DefaultAzureCredential` type. `DefaultAzureCredential` automatically attempts to authenticate via multiple mechanisms, including environment variables or an interactive sign-in. The credential type can be used in your development environment using your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
+The Azure Identity libraries support a `DefaultAzureCredential` type. `DefaultAzureCredential` automatically attempts to authenticate via multiple mechanisms, including environment variables or an interactive sign-in. The credential type can be used in your development environment using your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
 
 If you're using user-assigned managed identities, you should also explicitly specify the user-assigned managed identity you wish to authenticate with by passing in the identity's client ID as a parameter. You can retrieve the client ID by browsing to the identity in the Portal.
 
@@ -233,6 +236,190 @@ if (blobClient.exists()) {
     String blobContent = blobClient.downloadContent().toString();
 }
 ```    
+
+#### [JavaScript](#tab/javascript)
+
+```javascript
+const { DefaultAzureCredential } = require("@azure/identity");
+const { BlobServiceClient } = require("@azure/storage-blob");
+
+// Specify the Client ID if using user-assigned managed identities
+const clientID = process.env.Managed_Identity_Client_ID;
+const credential = new DefaultAzureCredential({
+  managedIdentityClientId: clientID
+});
+
+const blobServiceClient = new BlobServiceClient("<URI of Storage account>", credential);
+const containerClient = blobServiceClient.getContainerClient("<name of blob>");
+const blobClient = containerClient.getBlobClient("<name of file>");
+
+async function downloadBlob() {
+  if (await blobClient.exists()) {
+    const downloadBlockBlobResponse = await blobClient.download();
+    const downloadedBlob = await streamToString(downloadBlockBlobResponse.readableStreamBody);
+    console.log("Downloaded blob content:", downloadedBlob);
+  }
+}
+
+async function streamToString(readableStream) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    readableStream.on("data", (data) => {
+      chunks.push(data.toString());
+    });
+    readableStream.on("end", () => {
+      resolve(chunks.join(""));
+    });
+    readableStream.on("error", reject);
+  });
+}
+
+downloadBlob().catch(console.error);
+
+```
+
+#### [Python](#tab/Python)
+
+```python
+from azure.identity import DefaultAzureCredential
+from azure.storage.blob import BlobServiceClient
+import os
+
+# Specify the Client ID if using user-assigned managed identities
+client_id = os.getenv("Managed_Identity_Client_ID")
+credential = DefaultAzureCredential(managed_identity_client_id=client_id)
+
+blob_service_client = BlobServiceClient(account_url="<URI of Storage account>", credential=credential)
+container_client = blob_service_client.get_container_client("<name of blob>")
+blob_client = container_client.get_blob_client("<name of file>")
+
+def download_blob():
+    if blob_client.exists():
+        download_stream = blob_client.download_blob()
+        blob_contents = download_stream.readall().decode('utf-8')
+        print("Downloaded blob content:", blob_contents)
+
+download_blob()
+
+```
+
+#### [Go](#tab/Go)
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+	"github.com/Azure/azure-sdk-for-go/sdk/storage/azblob"
+)
+
+func main() {
+	// Specify the Client ID if using user-assigned managed identities
+	clientID := os.Getenv("Managed_Identity_Client_ID")
+	cred, err := azidentity.NewDefaultAzureCredential(&azidentity.DefaultAzureCredentialOptions{
+		ManagedIdentityClientID: clientID,
+	})
+	if err != nil {
+		fmt.Printf("failed to obtain a credential: %v\n", err)
+		return
+	}
+
+	accountURL := "<URI of Storage account>"
+	containerName := "<name of blob>"
+	blobName := "<name of file>"
+
+	serviceClient, err := azblob.NewServiceClient(accountURL, cred, nil)
+	if err != nil {
+		fmt.Printf("failed to create service client: %v\n", err)
+		return
+	}
+
+	containerClient := serviceClient.NewContainerClient(containerName)
+	blobClient := containerClient.NewBlobClient(blobName)
+
+	// Check if the blob exists
+	_, err = blobClient.GetProperties(context.Background(), nil)
+	if err != nil {
+		fmt.Printf("failed to get blob properties: %v\n", err)
+		return
+	}
+
+	// Download the blob
+	downloadResponse, err := blobClient.Download(context.Background(), nil)
+	if err != nil {
+		fmt.Printf("failed to download blob: %v\n", err)
+		return
+	}
+
+	// Read the blob content
+	blobData := downloadResponse.Body(nil)
+	defer blobData.Close()
+
+	blobContents := new(strings.Builder)
+	_, err = io.Copy(blobContents, blobData)
+	if err != nil {
+		fmt.Printf("failed to read blob data: %v\n", err)
+		return
+	}
+
+	fmt.Println("Downloaded blob content:", blobContents.String())
+}
+
+```
+
+#### [C++](#tab/C++)
+
+```cpp
+#include <azure/identity/default_azure_credential.hpp>
+#include <azure/storage/blobs.hpp>
+#include <iostream>
+#include <cstdlib>
+#include <sstream>
+
+int main() {
+    // Specify the Client ID if using user-assigned managed identities
+    const char* clientID = std::getenv("Managed_Identity_Client_ID");
+    Azure::Identity::DefaultAzureCredentialOptions options;
+    options.ManagedIdentityClientId = clientID;
+    auto credential = std::make_shared<Azure::Identity::DefaultAzureCredential>(options);
+
+    std::string accountUrl = "<URI of Storage account>";
+    std::string containerName = "<name of blob>";
+    std::string blobName = "<name of file>";
+
+    Azure::Storage::Blobs::BlobServiceClient blobServiceClient(accountUrl, credential);
+    auto containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+    auto blobClient = containerClient.GetBlobClient(blobName);
+
+    // Check if the blob exists
+    try {
+        auto properties = blobClient.GetProperties();
+        std::cout << "Blob exists, downloading..." << std::endl;
+
+        // Download the blob
+        auto downloadResponse = blobClient.Download();
+        auto& downloadedBlob = downloadResponse.Value.BodyStream;
+
+        // Read the blob content
+        std::ostringstream blobContents;
+        blobContents << downloadedBlob->rdbuf();
+        std::cout << "Downloaded blob content: " << blobContents.str() << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "Failed to get blob properties or download blob: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
+
+
+```
+
+
+
 ---
 ### Accessing a secret stored in Azure Key Vault
 
