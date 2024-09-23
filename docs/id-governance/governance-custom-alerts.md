@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 08/12/2024
+ms.date: 09/23/2024
 ms.author: billmath
 ms.custom:
 ---
@@ -213,7 +213,7 @@ When configuring your alert in log analytics, set the aggregration granularity t
 ```
 AADProvisioningLogs
 | where JobId == "<input JobId>"
-| where resultType == “Failure”
+| where resultType == "Failure"
 ```
 
 
