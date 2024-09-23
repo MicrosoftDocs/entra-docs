@@ -185,7 +185,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Update group properties | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Delete group | [Groups Administrator](permissions-reference.md#groups-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
-## Identity Protection
+<a name='identity-protection'></a>
+
+#### Microsoft Entra ID Protection
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |

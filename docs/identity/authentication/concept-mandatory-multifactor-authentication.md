@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/17/2024
+ms.date: 09/19/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -125,7 +125,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: How can we comply if we enforce MFA by using another identity provider or MFA solution, and we don't enforce by using Microsoft Entra MFA? 
 
-**Answer**: The identity provider solution needs to be configured properly to send the MFAAuthN claim to Entra ID. For more information, see [Microsoft Entra multifactor authentication external method provider reference](concept-authentication-external-method-provider.md). 
+**Answer**: The identity provider solution needs to be configured properly to send the multipleauthn claim to Entra ID. For more information, see [Microsoft Entra multifactor authentication external method provider reference](concept-authentication-external-method-provider.md). 
 
 **Question**: Will phase 1 or phase 2 of mandatory MFA impact my ability to sync with Microsoft Entra Connect or Microsoft Entra Cloud Sync?
 

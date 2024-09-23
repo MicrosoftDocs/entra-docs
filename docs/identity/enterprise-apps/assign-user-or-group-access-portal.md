@@ -28,7 +28,7 @@ Group-based assignment requires Microsoft Entra ID P1 or P2 edition. Group-based
 For greater control, certain types of enterprise applications can be configured to require user assignment. For more information on requiring user assignment for an app, see [Manage access to an application](what-is-access-management.md#requiring-user-assignment-for-an-app).
 
 > [!NOTE]
-> Applications that requires users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your diretory would otherwise allow a user to consent on behalf of themselves.
+> Applications that requires users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your directory would otherwise allow a user to consent on behalf of themselves.
 
 ## Prerequisites
 
