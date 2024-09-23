@@ -161,7 +161,7 @@ At a minimum, it's recommended to enable the **Passkey (FIDO2)** policy so that 
 
 This section focuses on phases 1-3:
 
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-authentication/planning-phases.png" alt-text="Diagram that shows the first three phases of the planning process.":::
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/planning-phases.png" alt-text="Diagram that shows the first three phases of the planning process.":::
 
 
 Users should have at least two authentication methods registered. This ensures the user has a backup method available if something happens to their primary method, like when a device is lost or stolen. For example, it's a good practice for users to have passkeys registered both on their phone, and locally on their workstation in Windows Hello for Business.
@@ -181,7 +181,7 @@ At the end of this process, users are given a Temporary Access Pass (TAP) that t
 
 Refer to the following guides to enable verified ID onboarding and TAP issuance: 
 
-- [Onboard new remote employees using ID verification](~/entra/verified-id/remote-onboarding-new-employees-id-verification.md)
+- [Onboard new remote employees using ID verification](~/verified-id/remote-onboarding-new-employees-id-verification.md)
 - [Enable the Temporary Access Pass policy](howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
 
 >[!Note]
@@ -215,14 +215,14 @@ User Persona | Recommended portable credential | Alternative portable credential
 Information Worker | Passkey (Authenticator app) | Security key, smart card
 Frontline Worker | Security key | Passkey (Authenticator app), smart card
 IT pro/DevOps worker | Passkey (Authenticator app) | Security key, smart card
-Highly regulated worker | Certificate (smart card) | Passkey (Authenticator App), security key
+Highly regulated worker | Certificate (smart card) | Passkey (Authenticator app), security key
 
 Use the following guidance to enable recommended and alternative portable credentials for the relevant user personas for your organization:
 
 Method | Guidance
 -------|---------
 Passkeys | - Microsoft recommends that users sign in to Microsoft Authenticator directly to bootstrap a passkey in the app.<br>- Users will use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.<br>- Passkeys are disabled by default in Microsoft Entra ID. You can [enable passkeys in Authentication methods policy](how-to-enable-authenticator-passkey.md).<br>- [Register passkeys in Authenticator on Android or iOS devices](how-to-register-passkey-authenticator.md).
-Security keys | - Security keys are turned off by default in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-.md).<br>- Consider registering keys on behalf of your users with the Microsoft Entra ID provisioning APIs. For more information, see [Provision FIDO2 security keys using Microsoft Graph API (preview)](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+Security keys | - Security keys are turned off by default in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey.md).<br>- Consider registering keys on behalf of your users with the Microsoft Entra ID provisioning APIs. For more information, see [Provision FIDO2 security keys using Microsoft Graph API (preview)](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 Smart card/certificate-based authentication (CBA) | - Certificate-based authentication is more complicated to configure than passkeys or other methods. Consider only using it if required.<br>- [How to configure Microsoft Entra certificate-based authentication](how-to-certificate-based-authentication.md).<br>- Make sure to configure your on-premises PKI and Microsoft Entra ID CBA policies so that users truly complete multifactor authentication to sign in. The configuration generally requires the smart card Policy OID and the necessary affinity binding settings. For more advanced CBA configurations, see [Understanding the authentication binding policy](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-authentication-binding-policy).
 
 
@@ -267,7 +267,7 @@ Each persona has its own challenges and considerations that commonly come up dur
 •	IT Pros / DevOps Workers
 •	Highly Regulated Workers
 
-#### Step 6: Drive usage of phishing-resistant passwordless credentials
+#### Step 4: Drive usage of phishing-resistant credentials
 Test Deployment Strategy
 Microsoft recommends that you test the deployment strategy created in the previous step with a set of test and pilot users. This phase should include the following steps:
 •	Create a list of test users and early adopters. These users should be representative of your different user personas, and not just IT Admins
@@ -325,6 +325,6 @@ Your IT help desk can provide an invaluable signal on how well your deployment i
 6.	August 16th-31st: Wave 3 cohort enforcement enabled
 As you execute these different phases you may need to slow down depending on the volume of help desk tickets opened and then resume when the volume has subsided. To execute on this strategy, Microsoft recommends that you create a Microsoft Entra ID security group for each Wave and add each group to your policies one at a time – this will help you avoid overwhelming your support teams.
 
-#### Step 7: Phishing-resistance enforcement
+#### Step 5: Phishing-resistance enforcement
 This section focuses on phase 4.
 
