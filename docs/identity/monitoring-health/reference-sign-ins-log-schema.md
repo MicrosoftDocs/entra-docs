@@ -38,18 +38,18 @@ Some properties were removed from the sample for brevity. Many of the values are
   "createdDateTime": "2024-07-23T15:19:52Z",
   "userDisplayName": "Bala Sandhu",
   "userPrincipalName": "BalaS@microsoft.com",
-  "userId": "aaaaaaa-0000-bbbb-1111-aaaaaaaa",
-  "appId": "bbbbbbbb-1111-aaaaa-0000-aaaaaaaa",
+  "userId": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
+  "appId": "33334444-dddd-5555-eeee-6666ffff7777",
   "appDisplayName": "Azure Portal",
   "ipAddress": "10.1.1.1",
   "clientAppUsed": "Browser",
-  "correlationId": "aaaaaaa-0000-bbbb-1111-bbbbbbb",
+  "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd",
   "conditionalAccessStatus": "success",
   "riskDetail": "none",
   "riskLevelAggregated": "none",  
-  "resourceId": "bbbbbbbb-1111-aaaaa-0000-aaaaaaaa",
-  "resourceTenantId": "000000-aaaa-bbbb-1111-00000000",
-  "homeTenantId": "111111-aaaaa-bbbb-000000000",
+  "resourceId": "e4e4e4e4-ffff-aaaa-bbbb-c5c5c5c5c5c5",
+  "resourceTenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+  "homeTenantId": "eeeeffff-4444-aaaa-5555-bbbb6666cccc",
   "authenticationRequirement": "multiFactorAuthentication",
   "userType": "guest",
   "flaggedForReview": false,
@@ -124,63 +124,6 @@ Some properties were removed from the sample for brevity. Many of the values are
           ],
           "excludeRulesSatisfied": []
       },
-      {
-          "id": "85425b15-76c8-4cc6-b1df-36afcd094151",
-          "displayName": "CA007: Require multi-factor authentication for risky sign-in",
-          "enforcedGrantControls": [
-              "Mfa"
-          ],
-          "enforcedSessionControls": [
-              "SignInFrequency"
-          ],
-          "sessionControlsNotSatisfied": [],
-          "result": "notApplied",
-          "conditionsSatisfied": "application,users",
-          "conditionsNotSatisfied": "signInRisk",
-          "authenticationStrength": null,
-          "includeRulesSatisfied": [
-              {
-                  "conditionalAccessCondition": "application",
-                  "ruleSatisfied": "allApps"
-              },
-              {
-                  "conditionalAccessCondition": "users",
-                  "ruleSatisfied": "allUsers"
-              }
-          ],
-          "excludeRulesSatisfied": []
-      },
-      {
-          "id": "a3f333f5-5287-4c7d-9dbf-f4cd52bdcad0",
-          "displayName": "TESTING: Require phishing-resistant multifactor authentication for admins",
-          "enforcedGrantControls": [],
-          "enforcedSessionControls": [],
-          "sessionControlsNotSatisfied": [],
-          "result": "notApplied",
-          "conditionsSatisfied": "application",
-          "conditionsNotSatisfied": "users",
-          "includeRulesSatisfied": [
-              {
-                  "conditionalAccessCondition": "application",
-                  "ruleSatisfied": "allApps"
-              },
-              {
-                  "conditionalAccessCondition": "users",
-                  "ruleSatisfied": "roleId"
-              }
-          ],
-          "excludeRulesSatisfied": [
-              {
-                  "conditionalAccessCondition": "users",
-                  "ruleSatisfied": "groupId"
-              }
-          ],
-          "authenticationStrength": {
-              "displayName": null,
-              "authenticationStrengthId": "00000000-0000-0000-0000-000000000004",
-              "authenticationStrengthResult": "singleRegistrationRequired"
-          }
-      },
   ],
 
 ```
@@ -199,8 +142,14 @@ Some properties were removed from the sample for brevity. Many of the values are
 | riskLevelAggregated | Aggregated risk level. Possible values are: `none`, `low`, `medium`, `high`, `hidden`, and `unknownFutureValue`. The value `hidden` means the user or sign-in wasn't enabled for Microsoft Entra ID Protection. **Note:** Details for this property are only available for Microsoft Entra ID P2 customers. All other customers will be returned `hidden`. |
 | CorrelationId | The request ID sent from the client when the sign-in is initiated. Used to troubleshoot sign-in activity. |
 
+### Applied Conditional Access policies
 
+If any Conditional Access policies were applied during the sign-in, a subsection under `appliedConditionalAccessPolicies` lists Conditional Access related information. 
 
+| Property | Description |
+| --- | --- | 
+| displayName | The name |
+| enforcedGrantControls | ID of the resource that the user signed into. |
 
 ## Next steps
 
