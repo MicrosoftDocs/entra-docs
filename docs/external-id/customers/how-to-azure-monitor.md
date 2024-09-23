@@ -17,14 +17,31 @@ ms.author: cmulligan
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-[Azure Monitor](/azure/azure-monitor/overview) is a comprehensive solution for collecting, analyzing, and responding to monitoring data from your cloud and on-premises environments. The diagnostic settings on the monitored resource specify what data to send and where to send it. For Microsoft Entra, the destination options include Log Analytics, Azure Storage, and Azure Event Hubs.
+[Azure Monitor](/azure/azure-monitor/overview) is a comprehensive solution for collecting, analyzing, and responding to monitoring data from your cloud and on-premises environments. The diagnostic settings on the monitored resource specify what data to send and where to send it. For Microsoft Entra, the destination options include [Azure Storage](/azure/storage/blobs/storage-blobs-introduction), [Log Analytics](/azure/azure-monitor/essentials/resource-logs#send-to-log-analytics-workspace) and [Azure Event Hubs](/azure/event-hubs/event-hubs-about).
 
-<!-- Is there a graph / image I can use here?  -->
-<!-- I can add a deployment overview: https://learn.microsoft.com/en-us/azure/active-directory-b2c/azure-monitor#deployment-overview  Do we have a graph / image? -->
+:::image type="content" source="media/how-to-azure-monitor/azure-monitor-flow.png" alt-text="Image of the Azure Monitor flow.":::
 
-To set up Azure Monitor in a workforce tenant, you need the subscription of the workforce tenant for all the setup steps. However, the external tenant doesn't have its own separate subscription. [Azure Lighthouse](/azure/lighthouse/overview) addresses this issue by projecting the workforce tenant's subscription and all its resources to the external tenant. This solution is called resource projection. Resource projection allows the external tenant (service provider) to manage the Log Analytics workspace owned by the workforce tenant (customer).
+When you plan to transfer workforce tenant logs to different monitoring solutions, or repository, consider that external tenant logs contain personal data. When you process such data, ensure you use appropriate security measures on the personal data. It includes protection against unauthorized or unlawful processing, using appropriate technical or organizational measures.
 
-In this article, you'll learn how to send sign-in and audit logs from a Microsoft Entra External ID tenant to a Log Analytics workspace for long-term storage, querying, visualization, and alerting within Azure Monitor.
+## Deployment overview
+
+The external tenant uses [Microsoft Entra monitoring](/entra/identity/monitoring-health/overview-monitoring-health). Unlike Microsoft Entra tenants, an external tenant can't have a subscription associated with it. So, we need to take extra steps to enable the integration between external tenant and Log Analytics, which is where we send the logs.
+To enable [Diagnostic settings](/azure/azure-monitor/essentials/diagnostic-settings) in workforce tenant within your external tenant, you use [Azure Lighthouse](/azure/lighthouse/overview) to [delegate a resource](/azure/lighthouse/concepts/architecture), which allows your external tenant (the **Service Provider**) to manage a workforce tenant (the **Customer**) resource.
+
+> [!TIP]
+> Azure Lighthouse is typically used to manage resources for multiple customers. However, it can also be used to manage resources **within an enterprise that has multiple Microsoft Entra tenants of its own**, which is what we are doing here, except that we are only delegating the management of single resource group.
+
+After you complete the steps in this article, you'll have created a new resource group (here called _ExtIDMonitor_) and have access to that same resource group that contains the [Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace) in your external tenant. You'll also be able to transfer the logs from external tenant to your Log Analytics workspace.
+
+During this deployment, you'll authorize a user or group in your external tenant directory to configure the Log Analytics workspace instance within the tenant that contains your Azure subscription. To create the authorization, you deploy an [Azure Resource Manager](/azure/azure-resource-manager/) template to the subscription that contains the Log Analytics workspace.
+
+The following diagram depicts the components you'll configure in your workforce tenant and external tenants.
+
+:::image type="content" source="media/how-to-azure-monitor/resource-group-projection.png" alt-text="Flow chart of the resource group projection.":::
+
+During this deployment, you'll configure your external tenant where logs are generated. You'll also configure your external tenant where the Log Analytics workspace will be hosted. The external tenant accounts used (such as your admin account) should be assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role on the external tenant. <!---Is there a less privileged role here? --->The account you'll use to run the deployment in the external tenant must be assigned the [Owner](/azure/role-based-access-control/built-in-roles#owner) role in the Microsoft Entra subscription. It's also important to make sure you're signed in to the correct directory as you complete each step as described.
+
+In summary, you'll use Azure Lighthouse to allow a user or group in your external tenant to manage a resource group in a subscription associated with a different tenant (the workforce tenant). After this authorization is completed, the subscription and log analytics workspace can be selected as a target in the Diagnostic settings in external tenant.
 
 ## Prerequisites
 
@@ -45,7 +62,7 @@ To follow the configuration steps in this article, we recommend opening two sepa
 First, create, or choose a resource group that contains the destination Log Analytics workspace that will receive data from external tenant. You'll specify the resource group name when you deploy the Azure Resource Manager template.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your Microsoft Entra ID tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your workforce tenant from the **Directories + subscriptions** menu.
 1. [Create a resource group](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) or choose an existing one. This example uses a resource group named _ExtIDMonitor_.
 
 ### Create a Log Analytics workspace
@@ -53,13 +70,12 @@ First, create, or choose a resource group that contains the destination Log Anal
 A **Log Analytics workspace** is a unique environment for Azure Monitor log data. You'll use this Log Analytics workspace to collect data from external tenant, and then visualize it with queries.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your Microsoft Entra ID tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your workforce tenant from the **Directories + subscriptions** menu.
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace). This example uses a Log Analytics workspace named _ExtIDLogAnalytics_, in a resource group named _ExtIDMonitor_.
 
 ### Add Microsoft.Insights as a resource provider
 
-Add Microsoft.Insights as a resource provider in the subscription. This can be done in the subscription’s settings menu on the left. 
-In this step, you choose your external tenant as a **service provider**. You also define the authorizations you need to assign the appropriate Azure built-in roles to groups in your Microsoft Entra tenant.
+In this step, you choose your external tenant as a **service provider**. You also define the authorizations you need to assign the appropriate built-in roles to groups in your Microsoft Entra tenant.
 To see all resource providers, and the registration status for your subscription:
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
@@ -86,7 +102,7 @@ Now create a group or user to which you want to give permission to the resource 
 
 To make management easier, we recommend using Microsoft Entra user _groups_ for each role, allowing you to add or remove individual users to the group rather than assigning permissions directly to that user. In this walkthrough, we'll add a security group.
 
-1. With **Microsoft Entra ID** still selected in your external tenant, select **Groups**, and then select a group. If you don't have an existing group, create a **Security** group, then add members. For more information, follow the procedure [Create a basic group and add members using Microsoft Entra ID](../active-directory/fundamentals/how-to-manage-groups.md).
+1. With **workforce tenant** still selected in your external tenant, select **Groups**, and then select a group. If you don't have an existing group, create a **Security** group, then add members. For more information, follow the procedure [Create a basic group and add members using workforce tenant](../active-directory/fundamentals/how-to-manage-groups.md).
 1. Select **Overview**, and record the group's **Object ID**.
 
 ## Step 3: Workforce tenant configuration - configure Azure Lighthouse
@@ -96,7 +112,7 @@ To make management easier, we recommend using Microsoft Entra user _groups_ for 
 To create the custom authorization and delegation in Azure Lighthouse, we use an Azure Resource Manager template. This template grants the external tenant access to the Microsoft Entra resource group, which you created earlier, for example, _ExtIDMonitor_. Deploy the template from the GitHub sample by using the **Deploy to Azure** button, which opens the Azure portal and lets you configure and deploy the template directly in the portal. For these steps, make sure you're signed in to your Microsoft Entra workforce tenant (not the external tenant).
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your Microsoft Entra ID tenant from the **Directories + subscriptions** menu. 
+1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your workforce tenant from the **Directories + subscriptions** menu. 
 1. Use the **Deploy to Azure** button to open the Azure portal and deploy the template directly in the portal. For more information, see [create an Azure Resource Manager template](/azure/lighthouse/how-to/onboard-customer#create-an-azure-resource-manager-template).
 
    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure-ad-b2c%2Fsiem%2Fmaster%2Ftemplates%2FrgDelegatedResourceManagement.json)
@@ -107,10 +123,10 @@ To create the custom authorization and delegation in Azure Lighthouse, we use an
    | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
    | Subscription          | Select the directory that contains the Azure subscription where the _ExtIDMonitor_ resource group was created.                                                                                                                                                                                                                                                                                                                                                                                                       |
    | Region                | Select the region where the resource will be deployed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-   | Msp Offer Name        | A name describing this definition. For example, _ExtIDMonitor_. It's the name that will be displayed in Azure Lighthouse.  The **MSP Offer Name** must be unique in your Microsoft Entra ID. To monitor multiple external tenants, use different names. |
-   | Msp Offer Description | A brief description of your offer. For example, _Enables Azure Monitor in the external tenant_.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   | Msp Offer Name        | A name describing this definition. For example, _ExtIDMonitor_. It's the name that will be displayed in Azure Lighthouse.  The **MSP Offer Name** must be unique in your workforce tenant. To monitor multiple external tenants, use different names. |
+   | Msp Offer Description | A brief description of your offer. For example, _Enable Azure Monitor in the external tenant_.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
    | Managed By Tenant ID  | The **Tenant ID** of your external tenant (also known as the directory ID).                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-   | Authorizations        | Specify a JSON array of objects that include the Microsoft Entra ID `principalId`, `principalIdDisplayName`, and Azure `roleDefinitionId`. The `principalId` is the **Object ID** of the group or user that will have access to resources in this Azure subscription. For this walkthrough, specify the group's Object ID that you recorded earlier in the external tenant. For the `roleDefinitionId`, use the [built-in role](../role-based-access-control/built-in-roles.md) value for the _Contributor role_, `b24988ac-6180-42a0-ab88-20f7382dd24c`. |
+   | Authorizations        | Specify a JSON array of objects that include the workforce tenant `principalId`, `principalIdDisplayName`, and Azure `roleDefinitionId`. The `principalId` is the **Object ID** of the group or user that will have access to resources in this Azure subscription. For this walkthrough, specify the group's Object ID that you recorded earlier in the external tenant. For the `roleDefinitionId`, use the [built-in role](../role-based-access-control/built-in-roles.md) value for the _Contributor role_, `b24988ac-6180-42a0-ab88-20f7382dd24c`. |
    | Rg Name               | The name of the resource group you create earlier in your Microsoft Entra tenant. For example, _ExtIDMonitor_.                                                                                                                                                                                                                                                                                                                                                                                                |
 
    The following example demonstrates an Authorizations array with one security group.
@@ -127,51 +143,103 @@ To create the custom authorization and delegation in Azure Lighthouse, we use an
 
 After you deploy the template, it can take a few minutes (typically no more than five) for the resource projection to complete. You can verify the deployment in your Microsoft Entra workforce tenant and get the details of the resource projection. For more information, see [View and manage service providers](/azure/lighthouse/how-to/view-manage-service-providers).
 
-Itt tartok -----------------------------
+## Step 4: External tenant configuration - select your subscription
 
-## Step 4: External tenant configuration - – make workforce tenant subscription and resources visible
+After you've deployed the template and waited a few minutes for the resource projection to complete, follow these steps to associate your subscription with your external tenant.
+
+> [!NOTE]
+> On the **Portal settings | Directories + subscriptions** page, ensure that your external and workforce tenants are selected under **Current + delegated directories**.
 
 ### Select your subscription
+
+1. Sign out of the [Azure portal](https://portal.azure.com) and sign back in with your external tenant administrative account. This account must be a member of the security group you specified previously. Signing out and singing back in allows your session credentials to be refreshed in the next step.
+1. Select the **Settings** icon in the portal toolbar.
+1. On the **Portal settings | Directories + subscriptions** page, in the **Directory name** list,  find your workforce tenant directory that contains the Azure subscription and the _ExtIDMonitor_ resource group you created, and then select **Switch**.
+1. Verify that you've selected the correct directory and your Azure subscription is listed and selected in the **Default subscription filter**. <!--I couldn't rerpoduce this filter. -->
+
+:::image type="content" source="media/how-to-azure-monitor/default-subscription-filter.png" alt-text="Screenshot of the default subscription filter":::
+
 ### Configure diagnostic settings
 
+Diagnostic settings define where logs and metrics for a resource should be sent. Possible destinations are:
 
-## Step 5: Workforce tenant configuration – query external tenant logs
+- [Azure storage account](/azure/azure-monitor/essentials/resource-logs#send-to-azure-storage)
+- [Event hubs](/azure/azure-monitor/essentials/resource-logs#send-to-azure-event-hubs) solutions
+- [Log Analytics workspace](/azure/azure-monitor/essentials/resource-logs#send-to-log-analytics-workspace)
+
+In this example, we use the Log Analytics workspace to create a dashboard. Follow the steps to configure [monitoring settings](/entra/identity/monitoring-health/overview-monitoring-health) for the external tenant activity logs:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com)  with your external tenant's account. This account must be a member of the security group you specified previously.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant from the **Directories + subscriptions** menu.
+1. Browse to **Diagnostic settings** by navigating to **Identity** > **Monitoring & health**.
+1. If there are existing settings for the resource, you'll see a list of settings already configured. Either select **Add diagnostic setting** to add a new setting, or select **Edit settings** to edit an existing setting. Each setting can have no more than one of each of the destination types.
+
+    :::image type="content" source="media/how-to-azure-monitor/diagnostic-settings-pane-enabled.png" alt-text="Screenshot of the diagnostics settings.":::
+
+1. Give your setting a name if it doesn't already have one.
+1. Select **AuditLogs** and **SignInLogs**.
+1. Select **Send to Log Analytics Workspace**, and then:
+    1. Under **Subscription**, select your subscription. 
+    2. Under **Log Analytics Workspace**, select the name of the workspace you created earlier such as _ExtIDLogAnalytics_.
+
+1. Select **Save**.
+
+> [!NOTE]
+> It can take up to 15 minutes after an event is emitted for it to [appear in a Log Analytics workspace](/azure/azure-monitor/logs/data-ingestion-time). While you're waiting, it might be helpful to perform some actions to generate logs. For example, you could follow the [Get started guide](/entra/external-id/customers/quickstart-get-started-guide) to create some configurations and sign up a user.
+
+## Step 5: Workforce tenant configuration – visualize your data
+
+Now you can configure your Log Analytics workspace to visualize your data and configure alerts. These configurations can be made in both your workforce tenant.
 
 ### Visualize your data
 
+Create a Query
 
+Log queries help you to fully use the value of the data collected in Azure Monitor Logs. A powerful query language allows you to join data from multiple tables, aggregate large sets of data, and perform complex operations with minimal code. Virtually any question can be answered and analysis performed as long as the supporting data has been collected, and you understand how to construct the right query. For more information, see [Get started with log queries in Azure Monitor](/azure/azure-monitor/logs/get-started-queries).
 
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your workforce tenant from the **Directories + subscriptions** menu.
+1. From **Log Analytics workspace** window, select **Logs**
+1. In the query editor, paste the following [Kusto Query Language](/azure/data-explorer/kusto/query/) query. This query shows policy usage by operation over the past x days. The default duration is set to 90 days (90d). Notice that the query is focused only on the operation where a token/code is issued by policy.
 
+   ```kusto
+   AuditLogs
+   | where TimeGenerated  > ago(90d)
+   | where OperationName contains "issue"
+   | extend  UserId=extractjson("$.[0].id",tostring(TargetResources))
+   | extend Policy=extractjson("$.[1].value",tostring(AdditionalDetails))
+   | summarize SignInCount = count() by Policy, OperationName
+   | order by SignInCount desc  nulls last
+   ```
 
+1. Select **Run**. The query results are displayed at the bottom of the screen.
+1. To save your query for later use, select **Save**.
 
-## Next step -or- Related content
+  :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor.":::
 
-> [!div class="nextstepaction"]
-> [Next sequential article title](link.md)
+1. Fill in the following details:
 
--or-
+   - **Name** - Enter the name of your query.
+   - **Save as** - Select `query`.
+   - **Category** - Select `Log`.
 
-* [Related article title](link.md)
-* [Related article title](link.md)
-* [Related article title](link.md)
+1. Select **Save**.
 
-<!-- Optional: Next step or Related content - H2
+You can also change your query to visualize the data by using the [render](/azure/data-explorer/kusto/query/renderoperator?pivots=azuremonitor) operator.
 
-Consider adding one of these H2 sections (not both):
+```kusto
+AuditLogs
+| where TimeGenerated  > ago(90d)
+| where OperationName contains "issue"
+| extend  UserId=extractjson("$.[0].id",tostring(TargetResources))
+| extend Policy=extractjson("$.[1].value",tostring(AdditionalDetails))
+| summarize SignInCount = count() by Policy
+| order by SignInCount desc  nulls last
+| render  piechart
+```
 
-A "Next step" section that uses 1 link in a blue box 
-to point to a next, consecutive article in a sequence.
+  :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor pie chart.":::
 
--or- 
+## Related content
 
-A "Related content" section that lists links to 
-1 to 3 articles the user might find helpful.
-
--->
-
-<!--
-
-Remove all comments except the customer intent
-before you sign off or merge to the main branch.
-
--->
+* [Use audit logs and access reviews](/entra/external-id/auditing-and-reporting)
