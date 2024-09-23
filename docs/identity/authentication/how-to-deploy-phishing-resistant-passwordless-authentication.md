@@ -59,6 +59,17 @@ Before you start your Microsoft Entra phishing-resistant passwordless deployment
 
 Registration and passwordless sign in with Microsoft Entra doesn't require a license, but we recommend at least a Microsoft Entra ID P1 license for the full set of capabilities associated with a passwordless deployment. 
 For example, a Microsoft Entra ID P1 license helps you enforce passwordless sign in through Conditional Access, and track deployment with an authentication method activity report. Refer to the licensing requirements guidance for features referenced in this guide for specific licensing requirements.
+
+### Integrate apps with Microsoft Entra ID
+Microsoft Entra ID is a cloud-based Identity and Access Management (IAM) service that integrates integrates with many types of applications, including Sotware-as-a-Service (SaaS) apps, line-of-business (LOB) apps, on-premises apps, and more. 
+You need to integrate your applications with Microsoft Entra ID to get the most benefit from your investment in passwordless and phishing-resistant authentication. 
+
+As you integrate more apps with Microsoft Entra ID, you can protect more of your environment with Conditional Access policies that enforce the use of phishing-resistant authentication methods. 
+To learn more about how to integrate apps with Microsoft Entra ID, see [Five steps to integrate your apps with Microsoft Entra ID](~/fundamentals/five-steps-to-full-application-integration.md).
+
+When you develop your own applications, follow the developer guidance for supporting passwordless and phishing-resistant authentication. 
+For more information, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
+
  
 ### Required roles
 The following table lists least privileged role requirements for phishing-resistant passwordless deployment. 
@@ -89,74 +100,68 @@ End-User Communications	             | Messages changes to end users in preparat
 ### Planning phase
 When you deploy and operationalize phishing-resistant passwordless authentication in your environment, we recommend a user persona-based approach because different phishing-resistant passwordless methods are more effective than others for certain user personas. 
 This deployment guide helps you see which types of methods and rollout plans make sense for user personas in your environment.
-The phishing-resistant passwordless deployment approach commonly has 7 steps, which roughly flow in order:     
+The phishing-resistant passwordless deployment approach commonly has 5 steps, which roughly flow in order:     
 
-#### Step 1: Presence in Microsoft Entra ID
-Microsoft Entra ID is a cloud-based Identity and Access Management (IAM) service that workers and students can use to access external resources. 
-For example, they can access resources like Microsoft 365, the Azure portal, and thousands of other Sotware-as-a-Service (SaaS) applications. 
+#### Step 1: Determine your user personas
+Determine the user personas relevant for your organization. This step is critical to your project because different personas have different needs. Microsoft recommends you consider and evaluate at least 4 generic user personas in your organization.
 
-A Microsoft Entra ID tenant is required for cloud-based phishing-resistant passwordless deployments on the Microsoft platform. 
-You must have a Microsoft Entra ID tenant or create one to begin your passwordless deployment with Microsoft phishing-resistant passwordless methods. 
-To learn more about Microsoft Entra ID, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md).
+User persona | Description
+-----|------------
+Information workers | Examples include office productivity staff, such as iin marketing, finance, or human resources.</br>Other types of information workers may be executives and other high-sensitivity workers who need special controls</br>Typically have a 1:1 relationship with their mobile and computing devices</br>May bring their own devices (BYOD), especially for mobile
+Frontline workers | Examples include retail store workers, factory workers, manufacturing workers</br>Typically work only on shared devices or kiosks</br>May not be allowed to carry mobile phones
+IT Pros/DevOps workers | Examples include IT admins for on-premises Active Directory, Microsoft Entra ID, or other privileged accounts. other examples would be DevOps workers or DevSecOps workers who manage and deploy automations.</br>Typically have multiple user accounts, including a "normal" user account, and one or more administrative accounts</br>Commonly use remote access protocols, such as Remote Desktop Protocol (RDP) and Secure Shell Protocol (SSH), to administer remote systems</br>May work on locked down devices with Bluetooth disabled</br>May use secondary accounts to run non-interactive automations and scripts
+Highly regulated workers | Examples include US federal government workers subject to [Executive Order 14028](https://www.microsoft.com/en-us/security/blog/2022/02/17/us-government-sets-forth-zero-trust-architecture-strategy-and-requirements/) requirements, state and local government workers, or workers subject to specific security regulations</br>Typically have a 1:1 relationship with their devices, but have very specific regulatory controls that must be met on those devices and for authentication</br>Mobile phones may not be allowed in secure areas</br>May access air-gapped environments without internet connectivity</br>May work on locked down devices with Bluetooth disabled
 
-#### Step 2: Update apps to support modern authentication
-Microsoft Entra ID integrates with many types of applications, including SaaS apps, line-of-business (LOB) apps, on-premises apps, and more. 
-You need to integrate your applications with Microsoft Entra ID to get the most benefit from your investment in passwordless and phishing-resistant authentication. 
-As you integrate more apps with Microsoft Entra ID, you can protect more of your environment with Conditional Access policies that enforce the use of phishing-resistant authentication methods. 
-To learn more about how to integrate apps with Microsoft Entra ID, see [Five steps to integrate your apps with Microsoft Entra ID](~/fundamentals/five-steps-to-full-application-integration.md).
 
-When you develop your own applications, follow the developer guidance for supporting passwordless and phishing-resistant authentication. 
-For more information, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
+Microsoft recommends that you broadly deploy phishing-resistant passwordless across your organization. 
+Traditionally, information workers are the easist user persona to begin with. 
+Don't delay rollout of secure credentials for information workers while you resolve issues that affect IT Pros. 
+Take the approcah of "*don’t let perfect be the enemy of good*" and deploy secure credentials as much as possible. 
+As more users sign in using phishing-resistant passwordless credentials, you reduce the attack surface of your environment.
 
-#### Step 3: Determine your user personas
-Determining the user personas relevant for your organization is a critical step in the phishing-resistant passwordless deployment journey, as different personas will have different needs. There are at least 4 generic user personas that Microsoft recommends considering and evaluating if you have in your organization:
-•	Information Workers
-o	Examples include office productivity staff, such as marketing, finance, or HR workers.
-o	Additional sub-types of Information Workers may be executives or other high sensitivity workers, who may need special controls
-o	Typically have a 1:1 relationship with their mobile and computing devices
-o	May use BYOD devices, especially for mobile
-•	Frontline Workers
-o	Examples include retail store workers, factory workers, manufacturing workers
-o	Typically work only on shared devices or kiosks
-o	May not be allowed to carry mobile phones
-•	IT Pros / DevOps Workers
-o	Examples include IT admins with on-premises Active Directory, Microsoft Entra ID, or other privileged accounts. Additional examples would be DevOps workers or DevSecOps workers who manage and deploy automations.
-o	Typically have multiple user accounts, including a “normal” user account and one or more administrative accounts
-o	Commonly use remote access protocols, such as RDP and SSH, to administer remote systems
-o	May work on locked down devices with Bluetooth disabled
-o	May use secondary accounts to run non-interactive automations and scripts
-•	Highly Regulated Workers
-o	Examples include US Federal Government workers subject to Executive Order 14028 requirements, state and local government workers, or workers subject to specific security regulations, 
-o	Typically have a 1:1 relationship with their devices, but have very specific regulatory controls that must be met on those devices and for authentication
-o	Mobile phones may not be allowed in secure areas
-o	May access air-gapped environments without internet connectivity
-o	May work on locked down devices with Bluetooth disabled
-Microsoft recommends that you focus on deploying phishing-resistant passwordless as broadly in your organization as possible, which is traditionally easiest with Information Workers. You should not hold off on deploying secure credentials for Information Workers while you work through issues specific to IT Pros – take a “don’t let perfect be the enemy of good” approach and deploy as much as possible. The more users you have using phishing-resistant passwordless, the smaller the attack surface will be for your environment.
-Microsoft recommends that you define your personas and then place each persona into an Entra ID group specific to that user persona. These groups will be used in later steps in this guide when rolling out credentials to different types of users and when you begin enforcing the use of phishing-resistant passwordless credentials.
+Microsoft recommends that you define your personas, and then place each persona into a MIcrosoft Entra ID group specifically for that user persona. 
+These groups are used in later steps to roll out credentials to different types of users, and when you begin to enforce the use of phishing-resistant passwordless credentials.
 
-#### Step 4: Device readiness
-Devices are an essential aspect of any successful phishing-resistant passwordless deployment, since one of the goals of phishing-resistant passwordless credentials is to protect credentials with the hardware of modern devices. First, familiarize yourself with the FIDO2 supportability documentation for Microsoft Entra ID: Support for FIDO2 authentication with Microsoft Entra ID
-Ensure that your devices are prepared for phishing-resistant passwordless by patching to the latest supported versions of each operating system. Microsoft recommends your devices are running these versions at a minimum:
-•	Windows 10 20H1 (for Windows Hello for Business)
-•	Windows 11 23H2 (for the best user experience when using passkeys)
-•	macOS 13 Ventura
-•	iOS 17
-•	Android 14
-These versions provide the best support for natively integrated features like passkeys, Windows Hello for Business, and macOS Platform Credential. Older operating systems may require external authenticators, like FIDO2 security keys, to support phishing-resistant passwordless authentication.
+
+#### Step 2: Plan device readiness
+
+Devices are an essential aspect of any successful phishing-resistant passwordless deployment, since one of the goals of phishing-resistant passwordless credentials is to protect credentials with the hardware of modern devices. 
+First, become familiar with [FIDO2 supportability for Microsoft Entra ID](concept-fido2-compatibility.md). 
+Ensure that your devices are prepared for phishing-resistant passwordless by patching to the latest supported versions of each operating system. 
+Microsoft recommends your devices are running these versions at a minimum:
+
+- Windows 10 20H1 (for Windows Hello for Business)
+- Windows 11 23H2 (for the best user experience when using passkeys)
+- macOS 13 Ventura
+- iOS 17
+- Android 14
+
+These versions provide the best support for natively integrated features like passkeys, Windows Hello for Business, and macOS Platform Credential. 
+Older operating systems may require external authenticators, like FIDO2 security keys, to support phishing-resistant passwordless authentication.
 
 ### Deployment phase
 
-#### Step 5: Credential Registration and Bootstrapping
-Credential registration and bootstrapping is the first major end-user facing activity in your phishing-resistant passwordless deployment project. This section will cover the rollout of portable and local credentials. Portable credentials are credentials that can be used in cross-device flows, such as to sign in on another device or to register additional credentials on more devices. Local credentials are used to authenticate on a device without needing to rely on external hardware, such as using the Windows Hello for Business biometric recognition to sign into an app in Microsoft Edge browser on the same PC.
-•	Portable credentials are the most important type of credential users should register, as they can be used across multiple devices and provide phishing-resistant authentication in many scenarios.
-•	Local credentials have two main benefits beyond those of the portable credentials:
-o	They provide redundancy – if users lose their portable device, forget it at home, or have other issues then the local credential provides them with a backup method to maintain productivity on their computing device.
-o	They provide a great user experience – the local credential benefits the user experience by reducing the need for users to pull phones out of their pocket, scan QR codes, or perform other tasks that slow down authentication and add friction. Locally available phishing-resistant credentials make user authentication easier and smoother on users’ regularly used devices.
+#### Step 3: Register users for phishing-resistant credentials
 
-•	For new users, the registration and bootstrapping phase involves taking a user with no existing enterprise credentials, verifying their identity, bootstrapping them into their first portable credential, using that portable credential to bootstrap other local credentials on each of their computing devices, and finally enforcing that they use phishing-resistant authentication in Microsoft Entra ID.
-•	For existing users, this phase involves getting users to register for phishing-resistant passwordless on their existing devices directly or using existing MFA credentials to bootstrap phishing-resistant passwordless credentials. The end goal is the same as new users, most users should have at least one portable credential and then local credentials on each computing device.
-Before starting, Microsoft recommends enabling passkey and other credentials for use by enterprise users in the tenant. If users are motivated to self-register for strong credentials, it is beneficial to allow them to do so. At a minimum, it's recommended to enable the Passkey (FIDO2) policy so that users can register for passkeys and security keys if they would like.
-In this section we will focus on Phases 1-3:
+Credential registration and bootstrapping is the first major end-user facing activity in your phishing-resistant passwordless deployment project. 
+This section covers the rollout of **portable** and **local** credentials. 
+
+Credentials | Description | Benefits
+------------|-------------|----------
+**Portable** | Can be used [across devices](how-to-sign-in-passkey-authenticator.md). You can use **portable** credentials to sign in to another device, or to register credentials on other devices. | The most important type of credential to register, as they can be used across devices, and provide phishing-resistant authentication in many scenarios.
+*Local** | used to authenticate on a device without needing to rely on external hardware, such as using the Windows Hello for Business biometric recognition to sign into an app in Microsoft Edge browser on the same PC | They have two main benefits beyond those of the portable credentials:<br>They provide redundancy. If users lose their portable device, forget it at home, or have other issues, then the local credential provides them with a backup method to continue to work on their computing device.<br>They provide a great user experience. With a local credential, users don't need to pull phones out of their pocket, scan QR codes, or perform other tasks that slow down authentication and add friction. Locally available phishing-resistant credentials helps users sign in more easily on the devices they regularly use.
+
+
+- For *new users*, registration and bootstrapping takes a user with no existing enterprise credentials, verifies their identity, bootstraps them into their first portable credential, and then use that portable credential to bootstrap other local credentials on each of their computing devices. Finally, you enforce phishing-resistant authentication for users in Microsoft Entra ID.
+- For *existing users*, this phase gets users to register for phishing-resistant passwordless on their existing devices directly, or use existing MFA credentials to bootstrap phishing-resistant passwordless credentials. The end goal is the same as new users. Most users should have at least one portable credential, and then local credentials on each computing device.
+
+Before you start, Microsoft recommends enabling passkey and other credentials for enterprise users in the tenant. 
+If users are motivated to self-register for strong credentials, it's beneficial to allow it. 
+At a minimum, it's recommended to enable the **Passkey (FIDO2)** policy so that users can register for passkeys and security keys if they prefer them.
+
+This section focuses on phases 1-3:
+
+
 
 
 Note that it is always recommended that users have at least two credentials registered. This ensures the user has a backup credential available if something happens to their other credentials, such as in cases of device loss or theft. For example, it is a good practice for users to have passkeys registered both on their phone and locally on their workstation in Windows Hello for Business.
