@@ -18,7 +18,7 @@ ms.author: barclayn
 
 # Connecting from your application to resources without handling credentials
 
-Azure resources with managed identities support always provide an option to specify a managed identity to connect to Azure resources that support Microsoft Entra authentication. Managed identities support makes it unnecessary for developers to manage credentials in code. Managed identities are the recommended authentication option when working with Azure resources that support them. [Read an overview of managed identities](overview.md).
+Azure resources with managed identities support **always** provide an option to specify a managed identity to connect to Azure resources that support Microsoft Entra authentication. Managed identities support makes it unnecessary for developers to manage credentials in code. Managed identities are the recommended authentication option when working with Azure resources that support them. [Read an overview of managed identities](overview.md).
 
 This page demonstrates how to configure an App Service so it can connect to Azure Key Vault, Azure Storage, and Microsoft SQL Server. The same principles can be used for any Azure resource that supports managed identities and that will connect to resources that support Microsoft Entra authentication. 
 
@@ -33,7 +33,7 @@ Some resources don't support Microsoft Entra authentication, or their client lib
 
 There are two types of managed identity: system-assigned and user-assigned. System-assigned identities are directly linked to a single Azure resource. When the Azure resource is deleted, so is the identity. A user-assigned managed identity can be associated with multiple Azure resources, and its lifecycle is independent of those resources. 
 
-This article will explain how to create and configure a user-assigned managed identity, which is [recommended for most scenarios](managed-identity-best-practice-recommendations.md). If the source resource you're using doesn't support user-assigned managed identities, then you should refer to that resource provider's documentation to learn how to configure it to have a system-assigned managed identity.
+This article explains how to create and configure a user-assigned managed identity, which is [recommended for most scenarios](managed-identity-best-practice-recommendations.md). If the source resource you're using doesn't support user-assigned managed identities, then you should refer to that resource provider's documentation to learn how to configure it to have a system-assigned managed identity.
 
 ### Creating a user-assigned managed identity
 
@@ -56,7 +56,7 @@ This article will explain how to create and configure a user-assigned managed id
 
 4. Select "Review + create" to run the validation test, and then select the "Create" button.
 
-5. When the identity has been created, a confirmation screen will appear.
+5. When the identity has been created, a confirmation screen appears.
 
 :::image type="content" source="media/developer-introduction/managed-identity-confirmation-screen.png" alt-text="Screenshot showing a managed identity confirmation screen after creation in the portal.":::
 
@@ -65,7 +65,7 @@ This article will explain how to create and configure a user-assigned managed id
 az identity create --name <name of the identity> --resource-group <name of the resource group>
 ```
 
-Take a note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You'll use `principalId` while adding permissions, and `clientId` in your application's code.
+Take a note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You use `principalId` while adding permissions, and `clientId` in your application's code.
 
 ---
 
@@ -73,7 +73,7 @@ You now have an identity that can be associated with an Azure source resource. [
 
 #### Configuring your source resource to use a user-assigned managed identity
 
-Follow these steps to configure your Azure resource to have a managed identity through the Portal. Refer to the documentation for the specific resource type to learn how to configure the resource's identity using the Command Line Interface, PowerShell or ARM template.
+Follow these steps to configure your Azure resource to have a managed identity through the Portal. Refer to the documentation for the specific resource type to learn how to configure the resource's identity using the Command Line Interface, PowerShell, or ARM template.
 
 > [!NOTE]
 > You'll need "Write" permissions to configure an Azure resource to have a system-assigned identity. You'll need a role such as "Managed Identity Operator" to associate a user-assigned identity with an Azure resource.
@@ -96,7 +96,7 @@ Follow these steps to configure your Azure resource to have a managed identity t
 
 :::image type="content" source="media/developer-introduction/select-user-assigned-identity.png" alt-text="Screenshot showing a user-assigned identity being selected in the portal.":::
 
-6. The identity will be associated with the resource, and the list will update.
+6. The identity is associated with the resource, and the list will update.
 
 :::image type="content" source="media/developer-introduction/user-assigned-identity-added-to-resource.png" alt-text="Screenshot showing a user-assigned identity has been associated with the Azure resource in the portal.":::
 
@@ -107,32 +107,32 @@ Your source resource now has a user-assigned identity that it can use to connect
 > [!NOTE]
 > You'll need a role such as "User Access Administrator" or "Owner" for the target resource to add Role assignments. Ensure you're granting the least privilege required for the application to run.
 
-Now your App Service has a managed identity, you'll need to give the identity the correct permissions. As you're using this identity to interact with Azure Storage, you'll use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview).
+Now that your App Service has a managed identity, you need to give the identity the correct permissions. As you're using this identity to interact with Azure Storage, you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview).
 
 ### [Portal](#tab/portal)
 
 1. Locate the resource you want to connect to using the search bar at the top of the Portal
-2. Select the "Access Control (IAM)" link in the left hand navigation.
+2. Select the **Access Control (IAM)** link in the left hand navigation.
 
 :::image type="content" source="media/developer-introduction/resource-summary-screen.png" alt-text="Screenshot showing a resource summary screen in the portal.":::
 
 3. Select the "Add" button near the top of the screen and select "Add role assignment".
 
-:::image type="content" source="media/developer-introduction/resource-add-role-assignment-dropdown.png" alt-text="Screenshot showing the add role assignment navigation in the portal.":::
+:::image type="content" source="media/developer-introduction/resource-add-role-assignment-dropdown.png" alt-text="Screenshot showing the **add role assignment** option in the portal.":::
 
 4. A list of Roles will be displayed. You can see the specific permissions that a role has by selecting the "View" link. Select the role that you want to grant to the identity and select the "Next" button.
 
 :::image type="content" source="media/developer-introduction/resource-select-role.png" alt-text="Screenshot showing a role being selected in the portal.":::
 
-5. You'll be prompted to select who the role should be granted to. Select the "Managed identity" option and then the "Add members" link.
+5. You are prompted to select the identity that needs the role assigned. Select the "Managed identity" option and then the "Add members" link.
 
 :::image type="content" source="media/developer-introduction/resource-select-member.png" alt-text="Screenshot showing the identity type being selected in the portal.":::
 
-6. A context pane will appear on the right where you can search by the type of the managed identity. Select "User-assigned managed identity" from the "Managed identity" option.
+6. A context pane appears where you can search by the type of the managed identity. Select "User-assigned managed identity" from the "Managed identity" option.
 
 :::image type="content" source="media/developer-introduction/resource-select-identity.png" alt-text="Screenshot showing managed identity being selected in the portal.":::
 
-7. Select the identity that you created earlier and the "Select" button. The context pane will close, and the identity will be added to the list.
+7. Select the identity that you created earlier and the "Select" button. The context pane closes, and the identity will be added to the list.
 
 :::image type="content" source="media/developer-introduction/resource-identity-added.png" alt-text="Screenshot showing an identity being added to a resource in the portal.":::
 
