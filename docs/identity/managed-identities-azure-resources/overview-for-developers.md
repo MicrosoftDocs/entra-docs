@@ -371,7 +371,7 @@ func main() {
 
 ```
 
-#### [C++](#tab/Cpp)
+#### [C++](#tab/cpp)
 
 ```cpp
 #include <azure/identity/default_azure_credential.hpp>
