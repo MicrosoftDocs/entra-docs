@@ -439,10 +439,12 @@ items:
           href: how-to-user-insights.md
     - name: Monitor and troubleshoot
       items:
-        - name: Known issues
-          href: troubleshooting-known-issues.md
+        - name: User activity insights
+          href: how-to-user-insights.md
         - name: Azure Monitor
-          href: how-to-azure-monitor.md    
+          href: how-to-azure-monitor.md
+        - name: Known issues
+          href: troubleshooting-known-issues.md   
     - name: Management APIs
       items:
         - name: Tenant management operations

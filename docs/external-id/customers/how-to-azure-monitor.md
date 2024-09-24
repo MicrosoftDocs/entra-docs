@@ -29,7 +29,7 @@ The external tenant uses [Microsoft Entra monitoring](/entra/identity/monitoring
 To enable [Diagnostic settings](/azure/azure-monitor/essentials/diagnostic-settings) in workforce tenant within your external tenant, you use [Azure Lighthouse](/azure/lighthouse/overview) to [delegate a resource](/azure/lighthouse/concepts/architecture), which allows your external tenant (the **Service Provider**) to manage a workforce tenant (the **Customer**) resource.
 
 > [!TIP]
-> Azure Lighthouse is typically used to manage resources for multiple customers. However, it can also be used to manage resources **within an enterprise that has multiple Microsoft Entra tenants of its own**, which is what we are doing here, except that we are only delegating the management of single resource group.
+> Azure Lighthouse is typically used to manage resources for multiple customers. However, it can also be used to simplify cross-tenant administration [within an enterprise that has multiple Microsoft Entra tenants of its own](/azure/lighthouse/concepts/enterprise). In our case, we're using it to delegate management of a single resource group.
 
 By following the steps in this article, you'll create a new resource group named _ExtIDMonitor_ in your workforce tenant and gain access to the same resource group containing the [Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace) in your external tenant. You'll also be able to transfer the logs from external tenant to your Log Analytics workspace.
 
