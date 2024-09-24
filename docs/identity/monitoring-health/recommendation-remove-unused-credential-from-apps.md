@@ -80,7 +80,7 @@ Applications that the recommendation identified appear in the list of **Impacted
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
-The following requests can be used to retrieve the recommendation and the impacted resources using the Microsoft Graph API. To use the Microsoft Graph API, you need the `DirectoryRecommendations.Read.All` and `DirectoryRecommendations.ReadWrite.All` permissions. For more information, see [How to use Identity Recommendations](howto-use-recommendations.md#how-to-use-microsoft-graph-with-microsoft-entra-recommendations).
+The following requests can be used to retrieve the recommendation and the impacted resources using the Microsoft Graph API. To use the Microsoft Graph API, you need the `DirectoryRecommendations.Read.All` and `DirectoryRecommendations.ReadWrite.All` permissions. For more information, see [How to use Identity Recommendations](howto-use-recommendations.md).
 
 1. Sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Select **GET** as the HTTP method from the dropdown.
@@ -166,7 +166,7 @@ Because there's often multiple service principals for a single application, it m
 1. Search for and open the application that was surfaced as part of this recommendation.
 1. Select **Single sign-on** from the side menu.
 
-If the credential is a service principal but there are SAML certificates in use, you can identify the details of the credential using the Microsoft Graph API. To use the Microsoft Graph API, you need the `DirectoryRecommendations.Read.All` and `DirectoryRecommendations.ReadWrite.All` permissions. For more information, see [How to use Identity Recommendations](howto-use-recommendations.md#how-to-use-microsoft-graph-with-microsoft-entra-recommendations).
+If the credential is a service principal but there are SAML certificates in use, you can identify the details of the credential using the Microsoft Graph API. To use the Microsoft Graph API, you need the `DirectoryRecommendations.Read.All` and `DirectoryRecommendations.ReadWrite.All` permissions. For more information, see [How to use Identity Recommendations](howto-use-recommendations.md).
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select **GET** as the HTTP method from the dropdown.

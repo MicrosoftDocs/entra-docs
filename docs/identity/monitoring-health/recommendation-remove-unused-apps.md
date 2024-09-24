@@ -86,7 +86,7 @@ To indicate the application is still needed and skip the recommendation:
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 
-The following requests can be used to retrieve the recommendation and the impacted resources using the Microsoft Graph API. To use the Microsoft Graph API, you need the `DirectoryRecommendations.Read.All` and `DirectoryRecommendations.ReadWrite.All` permissions. For more information, see [How to use Identity Recommendations](howto-use-recommendations.md#how-to-use-microsoft-graph-with-microsoft-entra-recommendations).
+The following requests can be used to retrieve the recommendation and the impacted resources using the Microsoft Graph API. To use the Microsoft Graph API, you need the `DirectoryRecommendations.Read.All` and `DirectoryRecommendations.ReadWrite.All` permissions. For more information, see [How to use Identity Recommendations](howto-use-recommendations.md).
 
 1. Sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Select **GET** as the HTTP method from the dropdown.
