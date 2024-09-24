@@ -32,11 +32,11 @@ The OAuth 2.0 SAML bearer assertion flow allows you to request an OAuth access t
 
 The SAML assertion is posted to the OAuth token endpoint. The endpoint processes the assertion and issues an access token based on prior approval of the app. The client isn't required to have or store a refresh token, nor is the client secret required to be passed to the token endpoint.
 
-## Register the application with Microsoft Entra ID
+### Register the application with Microsoft Entra ID
 
 To register the application with Microsoft Entra ID, complete the steps in the [Register an application with the Microsoft identity platform](quickstart-register-app.md) article.
 
-## Get the SAML assertion from AD FS
+### Get the SAML assertion from AD FS
 
 Create a POST request to the AD FS endpoint using SOAP envelope to fetch the SAML assertion:
 
