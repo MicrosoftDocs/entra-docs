@@ -32,10 +32,6 @@ The OAuth 2.0 SAML bearer assertion flow allows you to request an OAuth access t
 
 The SAML assertion is posted to the OAuth token endpoint. The endpoint processes the assertion and issues an access token based on prior approval of the app. The client isn't required to have or store a refresh token, nor is the client secret required to be passed to the token endpoint.
 
-![OAuth flow](./media/v2-saml-bearer-assertion/1.png)
-
-<a name='register-the-application-with-azure-ad'></a>
-
 ## Register the application with Microsoft Entra ID
 
 Start by registering the application in the [portal](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade):
