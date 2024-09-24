@@ -252,71 +252,149 @@ Platform SSO Secure Enclave Key | - Platform SSO supports 3 different user authe
 Passkeys | - Microsoft recommends that you leverage the same device registration option for bootstrapping passkeys in Microsoft Authenticator (as opposed to the cross device registration option). <br>- Users will use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.<br>- Passkeys are disabled by default in Microsoft Entra ID, enable them via policy: Enable passkeys in Microsoft Authenticator. <br>- Register passkeys in Authenticator on Android or iOS devices.
 
 
-Persona-Specific Considerations
+##### Persona-specific considerations
+
 Each persona has its own challenges and considerations that commonly come up during phishing-resistant passwordless deployments. As you identify which personas you need to accommodate, you should factor these considerations into your deployment project planning. Below are links to specific guidance for each persona:
-•	Information Workers
-•	Frontline Workers
-•	IT Pros / DevOps Workers
-•	Highly Regulated Workers
+
+- Information workers
+- Frontline workers
+- IT pros/DevOps workers
+- Highly regulated workers
 
 #### Step 4: Drive usage of phishing-resistant credentials
-Test Deployment Strategy
+
+##### Test deployment strategy
+
 Microsoft recommends that you test the deployment strategy created in the previous step with a set of test and pilot users. This phase should include the following steps:
-•	Create a list of test users and early adopters. These users should be representative of your different user personas, and not just IT Admins
-•	Create a Microsoft Entra ID group and add your test users to the group
-•	Enable your authentication methods policies in Microsoft Entra ID and scope the test group to those methods
-•	Measure the registration rollout for your pilot users by using the Authentication Methods Activity report
-•	Create Conditional Access policies to enforce the use phishing-resistant passwordless credentials on each operating system type and target your pilot group
-•	Measure the success of the enforcement using Azure Monitor and Workbooks
-•	Gather feedback from users on the success of the rollout
-Plan Rollout Strategy
+
+- Create a list of test users and early adopters. These users should be representative of your different user personas, and not just IT Admins
+- Create a Microsoft Entra ID group and add your test users to the group
+- Enable your authentication methods policies in Microsoft Entra ID and scope the test group to those methods
+- Measure the registration rollout for your pilot users by using the Authentication Methods Activity report
+- Create Conditional Access policies to enforce the use phishing-resistant passwordless credentials on each operating system type and target your pilot group
+- Measure the success of the enforcement using Azure Monitor and Workbooks
+- Gather feedback from users on the success of the rollout
+
+##### Plan rollout strategy
 Microsoft recommends driving usage based on which user personas are most ready for deployment. Typically, this means deploying for users in this order, but this may change depending on your organization:
-1.	Information Workers
-2.	Frontline Workers
-3.	IT Pros / DevOps Workers
-4.	Highly Regulated Workers
+
+1. Information workers
+1. Frontline workers
+1. IT pros/DevOps workers
+1. Highly regulated workers
+
 Use the following sections to create end user communications for each persona group, scope and rollout the passkeys registration feature, and user reporting and monitoring to track rollout progress.
-Plan end user communications
+
+##### Plan end user communications
 Microsoft provides communication templates for end users. The authentication rollout material includes customizable posters and email templates to inform users about phishing-resistant passwordless authentication deployment. Use the communicate templates below to you’re your users understand the phishing-resistant passwordless deployment:
-•	Passwordless sign-in with Microsoft Authenticator
-•	Register the password reset verification method for a work or school account
-•	Reset your work or school password using security info
-•	Set up a security key as your verification method
-•	Sign in to your accounts using the Microsoft Authenticator app
-•	Sign in to your work or school account using your two-step verification method
-•	Work or school account sign-in blocked by tenant restrictions
-Communications should be repeated multiple times to help catch as many users as possible. For example, your organization may choose to communicate the different phases and timelines with a pattern like this:
-1.	60 days out from enforcement: message the value of phishing-resistant authentication methods and encourage users to proactively enroll
-2.	45 days out from enforcement: repeat message
-3.	30 days out from enforcement: message that in 30 days phishing-resistant enforcement will begin, encourage users to proactively enroll
-4.	15 days out from enforcement: repeat message, inform them of how to contact the help desk
-5.	7 days out from enforcement: repeat message, inform them of how to contact the help desk
-6.	1 day out from enforcement: inform them enforcement will occur in 24 hours, inform them of how to contact the help desk
-Microsoft recommends communicating to users through different channels than just email. Other options may include Microsoft Teams messages, break room posters, and champion programs where select employees are trained to advocate for the program to their peers.
-Reporting and monitoring
+
+- Passwordless sign-in with Microsoft Authenticator
+- Register the password reset verification method for a work or school account
+- Reset your work or school password using security info
+- Set up a security key as your verification method
+- Sign in to your accounts using the Microsoft Authenticator app
+- Sign in to your work or school account using your two-step verification method
+- Work or school account sign-in blocked by tenant restrictions
+
+Communications should be repeated multiple times to help catch as many users as possible. 
+For example, your organization may choose to communicate the different phases and timelines with a pattern like this:
+
+1. 60 days out from enforcement: message the value of phishing-resistant authentication methods and encourage users to proactively enroll
+1. 45 days out from enforcement: repeat message
+1. 30 days out from enforcement: message that in 30 days phishing-resistant enforcement will begin, encourage users to proactively enroll
+1. 15 days out from enforcement: repeat message, inform them of how to contact the help desk
+1. 7 days out from enforcement: repeat message, inform them of how to contact the help desk
+1. 1 day out from enforcement: inform them enforcement will occur in 24 hours, inform them of how to contact the help desk
+
+Microsoft recommends communicating to users through different channels than just email. 
+Other options may include Microsoft Teams messages, break room posters, and champion programs where select employees are trained to advocate for the program to their peers.
+
+##### Reporting and monitoring
 Microsoft Entra ID reports (such as Authentication Methods Activity and Sign-in event details for Microsoft Entra multifactor authentication) provide technical and business insights that can help you measure and drive adoption.
+
 From the Authentication methods activity dashboard, you can view registration and usage.
-•	Registration shows the number of users capable of phishing-resistant passwordless authentication and other authentication methods. Graphs include users registered by authentication method and recent registration by authentication method.
-•	Usage shows the sign-ins by authentication method.
+
+- Registration shows the number of users capable of phishing-resistant passwordless authentication and other authentication methods. Graphs include users registered by authentication method and recent registration by authentication method.
+- Usage shows the sign-ins by authentication method.
 We recommend that your business and technical application owners assume ownership of and consume reports based on organization requirements.
-•	Track phishing-resistant passwordless credentials rollout with Authentication Methods registration activity reports.
-•	Track user adoption of phishing-resistant passwordless credentials with Authentication Methods sign in activity reports and sign in logs.
-•	Use the sign-in activity report to track the authentication methods used to sign in to the various applications. Select the user row; select Authentication Details to view authentication method and its corresponding sign-in activity.
+- Track phishing-resistant passwordless credentials rollout with Authentication Methods registration activity reports.
+- Track user adoption of phishing-resistant passwordless credentials with Authentication Methods sign in activity reports and sign in logs.
+- Use the sign-in activity report to track the authentication methods used to sign in to the various applications. Select the user row; select Authentication Details to view authentication method and its corresponding sign-in activity.
+
 Microsoft Entra ID adds entries to audit logs when these conditions occur:
-•	An administrator changes authentication methods.
-•	A user makes any kind of change to their credentials within Microsoft Entra ID.
+- An administrator changes authentication methods.
+- A user makes any kind of change to their credentials within Microsoft Entra ID.
 Microsoft Entra ID retains most auditing data for thirty days. We recommend longer retention for auditing, trend analysis, and other business needs. Access auditing data in the Microsoft Entra admin center or API and download into your analysis systems. If you require longer retention, export and consume logs in a SIEM tool such as Microsoft Sentinel, Splunk, or Sumo Logic.
 
-Monitoring Help Desk Ticket Volume
-Your IT help desk can provide an invaluable signal on how well your deployment is progressing, so Microsoft recommends tracking your help desk ticket volume when executing a phishing-resistant passwordless deployment. As your help desk ticket volume increases you should slow down the pace of your deployments, user communications, and enforcement actions. As the ticket volume decreases you can ramp these activities back up. Using this approach requires that you maintain flexibility in your rollout plan. For example, you could execute your deployments and then enforcements in waves that have ranges of dates rather than specific dates:
-1.	June 1st-15th: Wave 1 cohort registration deployment and campaigns
-2.	June 16th-30th: Wave 2 cohort registration deployment and campaigns
-3.	July 1st-15th: Wave 3 cohort registration deployment and campaigns
-4.	July 16th-31st: Wave 1 cohort enforcement enabled
-5.	August 1st-15th: Wave 2 cohort enforcement enabled
-6.	August 16th-31st: Wave 3 cohort enforcement enabled
-As you execute these different phases you may need to slow down depending on the volume of help desk tickets opened and then resume when the volume has subsided. To execute on this strategy, Microsoft recommends that you create a Microsoft Entra ID security group for each Wave and add each group to your policies one at a time – this will help you avoid overwhelming your support teams.
+##### Monitoring Help Desk Ticket Volume
+Your IT help desk can provide an invaluable signal on how well your deployment is progressing, so Microsoft recommends tracking your help desk ticket volume when executing a phishing-resistant passwordless deployment. 
+
+As your help desk ticket volume increases you should slow down the pace of your deployments, user communications, and enforcement actions. 
+As the ticket volume decreases you can ramp these activities back up. 
+Using this approach requires that you maintain flexibility in your rollout plan. 
+
+For example, you could execute your deployments and then enforcements in waves that have ranges of dates rather than specific dates:
+
+1. June 1st-15th: Wave 1 cohort registration deployment and campaigns
+1. June 16th-30th: Wave 2 cohort registration deployment and campaigns
+1. July 1st-15th: Wave 3 cohort registration deployment and campaigns
+1. July 16th-31st: Wave 1 cohort enforcement enabled
+1. August 1st-15th: Wave 2 cohort enforcement enabled
+1. August 16th-31st: Wave 3 cohort enforcement enabled
+
+As you execute these different phases, you may need to slow down depending on the volume of help desk tickets opened and then resume when the volume has subsided. 
+To execute on this strategy, Microsoft recommends that you create a Microsoft Entra ID security group for each wave, and add each group to your policies one at a time. 
+This approach helps to avoid overwhelming your support teams.
 
 #### Step 5: Phishing-resistance enforcement
 This section focuses on phase 4.
 
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png" alt-text="Diagram that highlights the enforcement phase of the deployment.":::
+
+
+
+The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. The primary mechanism for doing this in Microsoft Entra ID is Conditional Access Authentication Strengths. Microsoft recommends taking a persona-based approach for enforcement that leverages a user/device pair methodology. For example, an enforcement rollout could follow the pattern below:
+
+1. Information Workers on Windows and iOS
+1. Information Workers on macOS and Android
+1. IT Pros on iOS and Android
+1. FLWs on iOS and Android
+1. FLWs on Windows and macOS
+1. IT Pros on Windows and macOS
+
+Microsoft recommends that you build a report of all your user/device pairs by using sign-in data from your tenant using querying tools like Azure Monitor and Workbooks   .  You should strive to identify all the relevant user/device pairs matching these categories, at a minimum. For each user you should have a list of which OSes they regularly use for work purposes and map that OS information to the readiness for that user/device pair to have phishing-resistance enforced.
+
+OS type | Ready for Enforcement | Not Ready for Enforcement
+--------|-----------------------|--------------------------
+Windows | 10+ | 8.1 and earlier, Windows Server
+iOS | 17+ | 16 and earlier
+Android | 14+ | 13 and earlier
+macOS | 13+ (Ventura) | 12 and earlier
+VDI| Depends* | Depends*
+Other | Depends* | Depends*
+
+For each user/device pair where the device version is not immediately ready for enforcement you will need to determine how you will address the need to enforce phishing-resistance. The following options should be considered for older OSes, VDI, and other OSes such as Linux:
+
+- Enforce phishing-resistance using external hardware – FIDO2 security keys
+- Enforce phishing-resistance using external hardware – smart cards
+- Enforce phishing-resistance using remote credentials, such as passkeys in the cross-device authentication flow
+- Enforce phishing-resistance using remote credentials inside of RDP tunnels (especially for VDI)
+
+The key task to perform is measuring through data which users and personas are ready for enforcement  on particular platforms. Begin your enforcement actions on user/device pairs that are ready for enforcement to "stop the bleeding" and reduce the amount of phishable authentication occurring in your environment. Then move on to other scenarios where the user/device pairs require readiness efforts and work your way through the list of user/device pairs until you have enforced phishing-resistant authentication across the board. 
+
+When executing on enforcement it is recommended that you create a set of Entra ID groups that can be used to roll out enforcement gradually. You may also reuse the groups from the previous step if you used the wave-based rollout approach. Each group will be targeted by a specific Conditional Access policy. This will allow you to roll out your enforcement controls gradually by user/device pair.
+
+Policy | Group name targeted in the policy | Policy – Device platform condition | Policy – Grant control
+-------|-----------------------------------|------------------------------------|-----------------------
+1	| Windows phishing-resistant passwordless ready users | Windows | Require authentication strength – Phishing-resistant MFA
+2	| macOS phishing-resistant passwordless ready users | macOS | Require authentication strength – Phishing-resistant MFA
+3	| iOS phishing-resistant passwordless ready users | iOS | Require authentication strength – Phishing-resistant MFA
+4	| Android phishing-resistant passwordless ready users | Android | Require authentication strength – Phishing-resistant MFA
+5	| Other phishing-resistant passwordless ready users | Any except Windows, macOS, iOS, or Android | Require authentication strength – Phishing-resistant MFA
+
+
+Add each user to each group as you determine that their device of that OS type is ready or they don’t have a device of that type. 
+At the end of the rollout each user should be in all of the groups .
+
+information-worker-examples.png
+information-worker-deployment.png
