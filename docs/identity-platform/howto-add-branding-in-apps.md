@@ -113,4 +113,4 @@ Microsoft UI string translations can be used to ensure that translations in the 
 
 ## Navigation Do’s and Don’ts
 
-**DO** provide a way for users to sign out and switch to another user account. While most people have a single personal account from Microsoft/Facebook/Google/Twitter, people are often associated with more than one organization. Support for multiple signed-in users is coming soon.
+**DO** provide a way for users to sign out and switch to another user account. While most people have a single personal account from Microsoft/Facebook/Google/X, people are often associated with more than one organization. Support for multiple signed-in users is coming soon.

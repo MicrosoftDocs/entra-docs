@@ -56,15 +56,15 @@ Microsoft Entra ID also supports direct single sign-on links to individual appli
 
 Direct sign-on links are crafted URLs that send a user through the Microsoft Entra sign-in process for a specific application. The user doesn't need to launch the application from My Apps or Microsoft 365. These **User access URLs** can be found under the properties of available enterprise applications. In the Microsoft Entra admin center, select **Identity** > **Applications** > **Enterprise applications**. Select the application, and then select **Properties**.
 
-![Example of the User access URL in Twitter properties](media/end-user-experiences/direct-sign-on-link.png)
+![Example of the User access URL in X properties](media/end-user-experiences/direct-sign-on-link.png)
 
-Direct sign-on links can be copied and pasted anywhere you want to provide a sign-in link to the selected application. They can be placed in an email, or in any custom web-based portal that you've set up for user application access. The following URL is an example of a Microsoft Entra ID direct single sign-on URL for Twitter:
+Direct sign-on links can be copied and pasted anywhere you want to provide a sign-in link to the selected application. They can be placed in an email, or in any custom web-based portal that you've set up for user application access. The following URL is an example of a Microsoft Entra ID direct single sign-on URL for X:
 
-`https://myapps.microsoft.com/signin/Twitter/230848d52c8745d4b05a60d29a40fced`
+`https://myapps.microsoft.com/signin/X/230848d52c8745d4b05a60d29a40fced`
 
 Similar to organization-specific URLs for My Apps, you can further customize direct sign-on URL by adding one of the active or verified domains for your directory after the *myapps.microsoft.com* domain. Customizing direct sign-on URL ensures any organizational branding is loaded immediately on the sign-in page without the user needing to enter their user ID first:
 
-`https://myapps.microsoft.com/contosobuild.com/signin/Twitter/230848d52c8745d4b05a60d29a40fced`
+`https://myapps.microsoft.com/contosobuild.com/signin/X/230848d52c8745d4b05a60d29a40fced`
 
 When an authorized user selects one of these application-specific links, they first see their organizational sign-in page (assuming they aren't already signed in). After sign-in, they're redirected to their app without stopping at My Apps first. If the user is missing prerequisites to access the application, such as the password-based single sign browser extension, then the link prompts the user to install the missing extension. The link URL also remains constant if the single sign-on configuration for the application changes.
 

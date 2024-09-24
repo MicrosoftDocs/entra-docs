@@ -187,9 +187,7 @@ To use the script, provide the extension with your Microsoft Entra Admin credent
 
    ![Inputting the Tenant ID in PowerShell](./media/howto-mfa-nps-extension-rdg/image6.png)
 
-1. The script creates a self-signed certificate and performs other configuration changes. The output should be like the image shown below.
-
-   ![Output of PowerShell showing self-signed certificate](./media/howto-mfa-nps-extension-rdg/image7.png)
+1. The script creates a self-signed certificate and performs other configuration changes. 
 
 ## Configure NPS components on Remote Desktop Gateway
 

@@ -57,7 +57,7 @@ Use the following table to find the recommended solution for mitigating the issu
 | Using AD FS and unable to move to managed authentication | Enable [AD FS Extranet Smart Lockout](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection) and / or [Microsoft Entra Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md) |
 | Password policy uses complexity-based rules such as length, multiple character sets, or expiration | Reconsider in favor of [Microsoft Recommended Practices](https://www.microsoft.com/research/publication/password-guidance/?from=http%3A%2F%2Fresearch.microsoft.com%2Fpubs%2F265143%2Fmicrosoft_password_guidance.pdf) and switch your approach to password management and deploy [Microsoft Entra password protection](~/identity/authentication/concept-password-ban-bad.md). |
 | Users aren't registered to use multifactor authentication | [Register all user's security information](~/id-protection/howto-identity-protection-configure-mfa-policy.md) so it can be used as a mechanism to verify the user's identity along with their password |
-| There is no revocation of passwords based on user risk | Deploy Microsoft Entra [Identity Protection user risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to force password changes on leaked credentials using SSPR |
+| There is no revocation of passwords based on user risk | Deploy Microsoft Entra [ID Protection user risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to force password changes on leaked credentials using SSPR |
 | There's no smart lockout mechanism to protect malicious authentication from bad actors coming from identified IP addresses | Deploy cloud-managed authentication with either password hash sync or [pass-through authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md) |
 
 #### Password policies recommended reading
@@ -76,7 +76,7 @@ At a minimum, it's recommended you deploy Microsoft Entra ID [self-service passw
 - [Eliminate weak passwords](~/identity/authentication/concept-password-ban-bad.md) in your organization.
 
 > [!NOTE]
-> For organizations with a Microsoft Entra ID P2 subscription, it is recommended to deploy SSPR and use it as part of an [Identity Protection User Risk Policy](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+> For organizations with Microsoft Entra ID P2 licenses, it is recommended to deploy SSPR and use it as part of an [Microsoft Entra ID Protection risk-based Conditional Access policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ### Strong credential management
 
