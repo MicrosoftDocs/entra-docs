@@ -138,8 +138,6 @@ When a new Enterprise Application is created, a matching App Registration is als
 
         6. *Secret*: Enter the **secret value** noted in *Configure the Application Access*.
 
-        ![Screenshot of Azure Logic App HTTP ActionConfiguration.](./media/application-proxy-integrate-with-logic-apps/logic-app-http-configuration.png)
-
 5. Save the logic app and test with your trigger.
 
 ## Caveats
