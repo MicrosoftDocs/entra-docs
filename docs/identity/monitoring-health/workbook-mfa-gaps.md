@@ -22,7 +22,7 @@ The Multifactor Authentication Gaps workbook helps with identifying user sign-in
 * Provides several filters such as trusted locations and device states to narrow down the users/applications. 
 * Provides filters to scope the workbook for a subset of users and applications.
 
-This article gives you an overview of the **Multifactor authentication caps** workbook.
+This article gives you an overview of the **Multifactor authentication gaps** workbook.
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ The **MFA gaps** workbook is currently not available as a template, but you can 
 
 1. Navigate to the Microsoft Entra workbooks GitHub repository
     - **Direct link to the Multifactor Authentication Gaps JSON file**: https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Workbooks/Azure%20Active%20Directory/MultiFactorAuthenticationGaps/MultiFactorAuthenticationGaps.workbook
-    - Select the link provided in the JSON editor, select the **Application-Insights-Workbooks** breadcrumb from the top of the page, select the **Workbooks** folder, select the **Microsoft Entra ID** folder, select the **MultiFactorAuthenticationGaps** folder, and open the **.workbook** file.
+    - Select the link provided in the JSON editor, select the **Application-Insights-Workbooks** breadcrumb from the top of the page, select the **Workbooks** folder, select the **Azure Active Directory** folder, select the **MultiFactorAuthenticationGaps** folder, and open the **.workbook** file.
     ![Screenshot of the GitHub repository with the breadcrumbs and copy file button highlighted.](./media/workbook-mfa-gaps/github-repository.png)
 1. Copy the entire JSON file from the GitHub repository.
 1. Return Advanced Editor window on the Azure portal and paste the JSON file over the exiting text.

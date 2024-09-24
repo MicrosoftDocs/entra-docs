@@ -1,21 +1,19 @@
 ---
-title: 'Tutorial: Prepare a Node.js web application for authentication in an external tenant'
-description: Learn how to create a Node web app project, then prepare it for authentication
+title: 'Tutorial: Create a Node.js web application to sign in users in an external tenant'
+description: Learn how to create a Node web app project, then prepare it to sign in users
  
 author: kengaderdus
 manager: mwongerapk
-
 ms.author: kengaderdus
-ms.service: entra-external-id
- 
+ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: tutorial
-ms.date: 07/27/2023
+ms.date: 08/27/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
+#Customer intent: As a developer, devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
 ---
 
-# Tutorial: Prepare a Node.js web application for authentication
+# Tutorial: Create a Node.js web application to sign in users
 
 This tutorial is part 2 of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md) you registered an application and configured user flows in your external tenant. In this tutorial, you create a Node.js(Express) project and organize all the folders and files you require. You enable sign-in to the application you prepare here. This Node.js(Express) web application's views use [Handlebars](https://handlebarsjs.com).
 

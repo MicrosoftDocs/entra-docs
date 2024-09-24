@@ -40,7 +40,7 @@ Specifically, you learn how to:
 - The Decentralized identifier (DID) gets a name like `did:web:verifiedid.entra.microsoft.com:tenantid:authority-id` and the DID document is discoverable following [did:web specification](https://w3c-ccg.github.io/did-method-web/#create-register).
 
 > [!NOTE]
-> If how the quick setup works doesn't meet your requirements, use the [Advanced setup](verifiable-credentials-configure-tenant.md).
+> If the quick setup doesn't meet your requirements, use the [Advanced setup](verifiable-credentials-configure-tenant.md).
 
 ## Set up Verified ID
 

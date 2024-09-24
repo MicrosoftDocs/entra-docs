@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 
 ms.topic: concept-article
-ms.date: 08/14/2024
+ms.date: 09/06/2024
 ms.author: mimart
 ms.custom: it-pro, references_regions
 
@@ -23,7 +23,7 @@ ms.custom: it-pro, references_regions
 [Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
 
 - Email one-time passcode
-- SMS based authentication, available as an add-on ([see details](#sms-based-authentication))
+- SMS based authentication, available as an add-on [see details](#sms-based-authentication-preview).
 
 Enforcing MFA enhances your organization's security by adding an extra layer of verification, making it more difficult for unauthorized users to gain access.
 
@@ -52,7 +52,7 @@ Email one-time passcode authentication is available in an external tenant both a
 
 When email one-time passcode is enabled for MFA, the user signs in with their primary sign-in method and is notified that a code will be sent to the user's email address. The user chooses to send the code, retrieves the passcode from their email inbox, and enters it in the sign-in window.
 
-## SMS-based authentication
+## SMS-based authentication (preview)
 
 SMS is available at additional cost for second-factor verification in external tenants. Currently, SMS is not available for first-factor authentication or self-service password reset in external tenants.
 
@@ -60,21 +60,21 @@ When SMS is enabled for MFA, users sign in with their primary method and are pro
 
    :::image type="content" source="media/concept-multifactor-authentication-customers/sms-text.png" alt-text="Screenshot of the SMS text for MFA." border="false":::
 
-External ID mitigates fraudulent sign-ups via SMS by enforcing the following measures:
+External ID mitigates fraudulent sign-ups and sign-ins via SMS by enforcing the following measures:
 
 - Telephony throttling limits help prevent outages and slowdowns. See [Service limits and restrictions](reference-service-limits.md).
 - CAPTCHA for SMS MFA helps prevent automated attacks by distinguishing human users from automated bots. If a risky user is detected, we block the user from signing in or ask the user to complete a CAPTCHA before sending an SMS verification code.
 
 ### SMS pricing tiers by country/region
 
-The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions.
+The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions. For pricing details, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
 
 |Tier                               |Countries/Regions  |
 |-----------------------------------|-------------------|
 |Phone Authentication Low Cost      |Australia, Brazil, Brunei, Canada, Chile, China, Colombia, Cyprus, Macedonia, Poland, Portugal, South Korea, Thailand, Turkey, United States         |
 |Phone Authentication Mid Low Cost  |Greenland, Albania, American Samoa, Austria, Bahamas, Bahrain, Bosnia & Herzegovina, Botswana, Costa Rica, Czech Republic, Denmark, Estonia, Faroe Islands, Finland, France, Greece, Hong Kong, Hungary, Iceland, Ireland, Italy, Japan, Latvia, Lithuania, Luxembourg, Macao, Malta, Mexico, Micronesia, Moldova, Namibia, New Zealand, Nicaragua, Norway, Romania, São Tomé and Príncipe, Seychelles Republic, Singapore, Slovakia, Solomon Islands, Spain, Sweden, Switzerland, Taiwan, United Kingdom, United States Virgin Islands, Uruguay         |
-|Phone Authentication Mid High Cost |Andorra, Angola, Anguilla, Antarctica, Antigua and Barbuda, Argentina, Armenia, Aruba, Ascension, Barbados, Belgium, Benin, Bolivia, British Virgin Islands, Bulgaria, Burkina Faso, Cameroon, Cayman Islands, Central African Republic, Cook Islands, Croatia, Cuba, Diego Garcia, Djibouti, Dominican Republic, Dominican Republic, Dominican Republic, East Timor, Ecuador, El Salvador, Eritrea, Falkland Islands, Fiji, French Guiana, French Polynesia, Gambia, Georgia, Germany, Gibraltar, Grenada, Guadeloupe, Guam, Guinea, Guyana, Honduras, India, Ivory Coast, Kenya, Kiribati, Laos, Liberia, Malaysia, Marshall Islands, Martinique, Mauritius, Monaco, Montenegro, Montserrat, Netherlands, Netherlands Antilles, New Caledonia, Niue, North Korea, Oman, Palau, Panama, Paraguay, Peru, Puerto Rico, Puerto Rico, Réunion, Rwanda, Saint Helena, Saint Kitts & Nevis, Saint Lucia, Saint Pierre & Miquelon, Saint Vincent and the Grenadines, Saipan, Samoa, San Marino, Saudi Arabia, Sint Maarten, Slovenia, South Africa, South Sudan, Suriname, Swaziland (New Name is Kingdom of Eswatini), Tokelau, Tonga, Turks & Caicos, Tuvalu, United Arab Emirates, Vanuatu, Venezuela, Vietnam, Wallis and Futuna         |
-|Phone Authentication High Cost     |Liechtenstein, Bermuda, Cambodia, Cape Verde, Democratic Republic of Congo, Dominica, Egypt, Equatorial Guinea, Ghana, Guatemala, Guinea-Bissau, Israel, Jamaica, Jamaica, Kosovo, Lesotho, Maldives, Mali, Mauritania, Morocco, Mozambique, Papua New Guinea, Philippines, Qatar, Sierra Leone, Trinidad & Tobago, Ukraine, Zimbabwe, Afghanistan, Algeria, Azerbaijan, Bangladesh, Belarus, Belize, Bhutan, Burundi, Chad, Comoros, Congo, Ethiopia, Gabonese Republic, Haiti, Indonesia, Iran, Iraq, Jordan, Kuwait, Kyrgyzstan, Lebanon, Libya, Madagascar, Malawi, Mongolia, Myanmar, Nauru, Nepal, Niger, Nigeria, Pakistan, Palestinian National Authority, Russia, Senegal, Serbia, Somalia, Sri Lanka, Sudan, Syria, Tajikistan, Tanzania, Togolese Republic, Tunisia, Turkmenistan, Uganda, Uzbekistan, Yemen, Zambia         |
+|Phone Authentication Mid High Cost |Andorra, Angola, Anguilla, Antarctica, Antigua and Barbuda, Argentina, Armenia, Aruba, Ascension, Barbados, Belgium, Benin, Bolivia, British Virgin Islands, Bulgaria, Burkina Faso, Cameroon, Cayman Islands, Central African Republic, Cook Islands, Croatia, Diego Garcia, Djibouti, Dominican Republic, Dominican Republic, Dominican Republic, East Timor, Ecuador, El Salvador, Eritrea, Falkland Islands, Fiji, French Guiana, French Polynesia, Gambia, Georgia, Germany, Gibraltar, Grenada, Guadeloupe, Guam, Guinea, Guyana, Honduras, India, Ivory Coast, Kenya, Kiribati, Laos, Liberia, Malaysia, Marshall Islands, Martinique, Mauritius, Monaco, Montenegro, Montserrat, Netherlands, Netherlands Antilles, New Caledonia, Niue, Oman, Palau, Panama, Paraguay, Peru, Puerto Rico, Puerto Rico, Réunion, Rwanda, Saint Helena, Saint Kitts & Nevis, Saint Lucia, Saint Pierre & Miquelon, Saint Vincent and the Grenadines, Saipan, Samoa, San Marino, Saudi Arabia, Sint Maarten, Slovenia, South Africa, South Sudan, Suriname, Swaziland (New Name is Kingdom of Eswatini), Tokelau, Tonga, Turks & Caicos, Tuvalu, United Arab Emirates, Vanuatu, Venezuela, Vietnam, Wallis and Futuna         |
+|Phone Authentication High Cost     |Liechtenstein, Bermuda, Cambodia, Cape Verde, Democratic Republic of Congo, Dominica, Egypt, Equatorial Guinea, Ghana, Guatemala, Guinea-Bissau, Israel, Jamaica, Jamaica, Kosovo, Lesotho, Maldives, Mali, Mauritania, Morocco, Mozambique, Papua New Guinea, Philippines, Qatar, Sierra Leone, Trinidad & Tobago, Ukraine, Zimbabwe, Afghanistan, Algeria, Azerbaijan, Bangladesh, Belarus, Belize, Bhutan, Burundi, Chad, Comoros, Congo, Ethiopia, Gabonese Republic, Haiti, Indonesia, Iraq, Jordan, Kuwait, Kyrgyzstan, Lebanon, Libya, Madagascar, Malawi, Mongolia, Myanmar, Nauru, Nepal, Niger, Nigeria, Pakistan, Palestinian National Authority, Russia, Senegal, Serbia, Somalia, Sri Lanka, Sudan, Tajikistan, Tanzania, Togolese Republic, Tunisia, Turkmenistan, Uganda, Uzbekistan, Yemen, Zambia         |
 
 ## Next steps
 
