@@ -58,4 +58,4 @@ sections:
         - question: |
             What is the difference between Global Secure Access web categories and Microsoft Defender for Endpoint web categories? 
           answer: |
-            Global Secure Access and Microsoft Defender for Endpoint both leverage similar categorization engines, with a few distinct differences. The Global Secure Access engine aims to provide a valid categorization of every endpoint on the internet, while the Microsoft Defender for Endpoint engine works towards categorizing sites that could result in a liability for an endpoint.
+            Global Secure Access and Microsoft Defender for Endpoint both leverage similar categorization engines, with a few distinct differences. The Global Secure Access engine aims to provide a valid categorization of every endpoint on the internet, while Microsoft Defender for Endpoint supports a smaller list of site categories, focused on categories of sites that could introduce liability for the organization that operates the endpoint. This means that many sites are not categorized, and an organization wishing to allow or deny access must manually create a Network Indicator for the site. 
