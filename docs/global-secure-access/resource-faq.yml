@@ -27,6 +27,12 @@ sections:
           B2B logins are only supported when the user is accessing the service from a device that is Microsoft Entra joined. The Microsoft Entra tenant must match the users sign-in credentials.
           For example, a person works at Fabrikam and is working on a project for Contoso. Contoso provided the person a device and a Contoso identity, such as `v-Bob@contoso.com`. To access Contoso's Global Secure Access using the Contoso device, the person can use either `Bob@Fabrikam.com` or `v-Bob@Contoso.com`.
           However, the person can't use the Fabrikam device that is joined to the Fabrikam tenant to access Contoso's Global Secure Access.
+      - question: |
+          What is the difference between Security Service Edge (SSE) and Endpoint Detection and Response (EDR) platforms? 
+        answer: |
+          Security Service Edge (SSE) platforms like [Global Secure Access](overview-what-is-global-secure-access.md) deliver advanced network security value from the cloud edge for all users connecting to any application. Global Secure Access specifically leverages deep integration with Entra ID to bring identity and context awareness to granular network security policies. Additionally, SSE platforms provide richer controls and deeper visibility via Transport Layer Security (TLS) Inspection, allowing these platforms to inspect and enforce security policy on the packet.
+          Endpoint Detection and Response (EDR) platforms like [Microsoft Defender for Endpoint](/defender-endpoint/web-content-filtering/) provide device aware security value for managed devices. These policies allow you to target devices or device groups, rather than user-based identity constructs. EDR platforms also provide visibility via advanced hunting capabilities.
+          It is best to use both network and endpoint protection controls in tandem to achieve a defense in depth approach. If an EDR platform is used together with Microsoft Entra Internet Access, the EDR platform’s on-device policies will always be enforced before reaching the cloud edge, where Microsoft Entra Internet Access policies are enforced. 
       - question: | 
           Does Global Secure Access support IPv6?
         answer: |
@@ -47,3 +53,9 @@ sections:
             I configure my customer premises equipment (CPE) and Global Secure Access, but the two aren't connecting. I specify the Local and Peer Border Gateway Protocol (BGP) IP addresses, but the connection isn't working.
           answer: |
             Make sure you reverse the BGP IP addresses between the CPE and Global Secure Access. For example, if you specified the Local BGP IP address as 1.1.1.1 and the Peer BGP IP address as 0.0.0.0 for the CPE, then swap the values in Global Secure Access. So the Local BGP IP address in Global Secure Access is 0.0.0.0 and the Peer GBP IP address is 1.1.1.1.
+  - name: Internet Access
+    questions:
+        - question: |
+            What is the difference between Global Secure Access web categories and Microsoft Defender for Endpoint web categories? 
+          answer: |
+            Global Secure Access and Microsoft Defender for Endpoint both leverage similar categorization engines, with a few distinct differences. The Global Secure Access engine aims to provide a valid categorization of every endpoint on the internet, while the Microsoft Defender for Endpoint engine works towards categorizing sites that could result in a liability for an endpoint.
