@@ -34,18 +34,7 @@ The SAML assertion is posted to the OAuth token endpoint. The endpoint processes
 
 ## Register the application with Microsoft Entra ID
 
-Start by registering the application in the [portal](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade):
-
-1. Sign in to the [app registration page of the portal](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) (Please note that we are using the v2.0 endpoints for Graph API and hence need to register the application in Microsoft Entra admin center. Otherwise we could have used the registrations in Microsoft Entra ID).
-1. Select **New registration**.
-1. When the **Register an application** page appears, enter your application's registration information:
-    1. **Name** - Enter a meaningful application name that will be displayed to users of the app.
-    1. **Supported account types** - Select which accounts you would like your application to support.
-    1. **Redirect URI (optional)** - Select the type of app you're building, Web, or Public client (mobile & desktop), and then enter the redirect URI (or reply URL) for your application.
-    1. When finished, select **Register**.
-1. Make a note of the application (client) ID.
-1. In the left pane, select **Certificates & secrets**. Click **New client secret** in the **Client secrets** section. Copy the new client secret, you won't be able to retrieve when you leave the page.
-1. In the left pane, select **API permissions** and then **Add a permission**. Select **Microsoft Graph**, then **delegated permissions**, and then select **Tasks.read** since we intend to use the Outlook Graph API.
+To register the application with Microsoft Entra ID, complete the steps in the [Register an application with the Microsoft identity platform](quickstart-register-app.md) article.
 
 ## Get the SAML assertion from AD FS
 
