@@ -96,14 +96,14 @@ Once the request is posted successfully, you should receive a SAML assertion fro
 
 Fetch an OAuth 2.0 token using the AD FS assertion response.
 
-1. Create a POST request with the header values:
+Create a POST request with the header values:
 
 | Key           | Value                        | Description                           |
 |---------------|------------------------------|---------------------------------------|
 | Host          | login.microsoftonline.com    |                                       |
 | Content-Type  | application/x-www-form-urlencoded |                                       |
 
-1. In the body of the request, replace client_id, client_secret, and assertion (the base64 encoded SAML assertion obtained the previous step):
+In the body of the request, replace client_id, client_secret, and assertion (the base64 encoded SAML assertion obtained the previous step):
 
 | Key           | Value                                                | Description                           |
 |---------------|------------------------------------------------------|---------------------------------------|
@@ -113,20 +113,20 @@ Fetch an OAuth 2.0 token using the AD FS assertion response.
 | assertion     | ASSERTION                                            | The base64 encoded SAML assertion     |
 | scope         | openid https://graph.microsoft.com/.default          | The scopes for which the token is valid|
 
-3. Upon successful request, you'll receive an access token from Microsoft Entra ID.
+Upon successful request, you'll receive an access token from Microsoft Entra ID.
 
 ### Get the data with the OAuth 2.0 token
 
 After receiving the access token, call the Graph APIs (Outlook tasks in this example).
 
-1. Create a GET request with the access token fetched in the previous step:
+Create a GET request with the access token fetched in the previous step:
 
 | Key           | Value                            | Description                             |
 |---------------|----------------------------------|-----------------------------------------|
 | Content-Type  | application/x-www-form-urlencoded |                                         |
 | Authorization | Bearer ACCESS_TOKEN              | Access token obtained from the OAuth 2.0 token request |
 
-1. Upon successful request, you'll receive a JSON response.
+Upon successful request, you'll receive a JSON response.
 
 ## Next steps
 
