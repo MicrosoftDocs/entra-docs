@@ -23,7 +23,7 @@ The key introductory feature for Microsoft Entra Internet Access for all apps is
 Web content filtering is implemented using filtering policies, which are grouped into security profiles, which can be linked to Conditional Access policies. To learn more about Conditional Access, see [Microsoft Entra Conditional Access](/azure/active-directory/conditional-access/).
 
 > [!NOTE]
-> While web content filtering is a core capability for any Secure Web Gateway, similar capabilities exist in other security products, such as endpoint security products like [Microsoft Defender for Endpoint](/defender-endpoint/web-content-filtering) and firewalls like [Azure Firewall](azure/firewall/web-categories). Microsoft Entra Internet Access, while leveraging a similar web category engine as these other products, provides additional security value via policy integration with Entra ID, policy enforcement on the cloud edge, and future security enhancements through Transport Layer Security (TLS) Inspection. Learn more in the [FAQ](resource-faq.yml).
+> While web content filtering is a core capability for any Secure Web Gateway, similar capabilities exist in other security products, such as endpoint security products like [Microsoft Defender for Endpoint](/defender-endpoint/web-content-filtering/) and firewalls like [Azure Firewall](/azure/firewall/web-categories/). Microsoft Entra Internet Access, while leveraging a similar web category engine as these other products, provides additional security value via policy integration with Entra ID, policy enforcement on the cloud edge, and future security enhancements through Transport Layer Security (TLS) Inspection. Learn more in the [FAQ](resource-faq.yml).
 
 ## Security profiles
 
