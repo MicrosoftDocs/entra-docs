@@ -31,8 +31,6 @@ In this tutorial;
 
 ## Edit the authentication configuration file
 
-The application uses the [Implicit Grant Flow](~/identity-platform/v2-oauth2-implicit-grant-flow.md) to authenticate users. The Implicit Grant Flow is a browser-based flow that doesn't require a back-end server. The flow redirects the user to the sign-in page, where the user signs in and consents to the permissions that are being requested by the application. The purpose of *authConfig.js* is to configure the authentication flow.
-
 1. Open *public/authConfig.js* and add the following code snippet:
 
     ```javascript
