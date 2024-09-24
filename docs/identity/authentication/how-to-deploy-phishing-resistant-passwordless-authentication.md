@@ -91,8 +91,8 @@ The following table lists recommendations for different personas:
 
 User Persona | Recommended portable credential | Alternative portable credentials
 -------------|---------------------------------|---------------------------------
-Information Worker | Passkey (Authenticator app) | Security key, smart card
-Frontline Worker | Security key | Passkey (Authenticator app), smart card
+Information worker | Passkey (Authenticator app) | Security key, smart card
+Frontline worker | Security key | Passkey (Authenticator app), smart card
 IT pro/DevOps worker | Passkey (Authenticator app) | Security key, smart card
 Highly regulated worker | Certificate (smart card) | Passkey (Authenticator app), security key
 
@@ -115,11 +115,10 @@ Your organization needs to determine which type of credential is preferred for e
 
 User persona | Recommended local credential - Windows | Recommended local credential - macOS | Recommended local credential - iOS | Recommended local credential - Android | Recommended Local Credential - Linux
 -------------|----------------------------------|-----------------------------|--------------------------------|--------------------------------|----------------------
-Information Worker | Windows Hello for Business | Platform SSO Secure Enclave Key | Passkey (Authenticator App) | Passkey (Authenticator App) | N/A (use portable credential instead)
-Frontline Worker | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead)
+Information worker | Windows Hello for Business | Platform SSO Secure Enclave Key | Passkey (Authenticator App) | Passkey (Authenticator App) | N/A (use portable credential instead)
+Frontline worker | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead)
 IT pro/DevOps worker | Windows Hello for Business | Platform SSO Secure Enclave Key | Passkey (Authenticator App) | Passkey (Authenticator App) | N/A (use portable credential instead)
-Highly Regulated Worker | Windows Hello for Business or CBA | Platform SSO Secure Enclave Key or CBA | Passkey (Authenticator App) or CBA | Passkey (Authenticator App) or CBA
-N/A (use smart card instead) 
+Highly Regulated worker | Windows Hello for Business or CBA | Platform SSO Secure Enclave Key or CBA | Passkey (Authenticator App) or CBA | Passkey (Authenticator App) or CBA | N/A (use smart card instead) 
 
 
 Refer to the following tips and guides to enable the recommended local credentials in your environment for the relevant user personas for your organization:
@@ -234,8 +233,8 @@ This section focuses on phase 4.
 
 The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. The primary mechanism for doing this in Microsoft Entra ID is Conditional Access Authentication Strengths. Microsoft recommends taking a persona-based approach for enforcement that leverages a user/device pair methodology. For example, an enforcement rollout could follow the pattern below:
 
-1. Information Workers on Windows and iOS
-1. Information Workers on macOS and Android
+1. Information workers on Windows and iOS
+1. Information workers on macOS and Android
 1. IT Pros on iOS and Android
 1. FLWs on iOS and Android
 1. FLWs on Windows and macOS
