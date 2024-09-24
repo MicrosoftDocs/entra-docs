@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Handle authentication flows in a Vanilla JavaScript single-page app
 description: Learn how to configure authentication for a Vanilla JavaScript single-page app (SPA) with your external tenant.
- 
+
 author: OwenRichards1
 manager: CelesteDG
 
