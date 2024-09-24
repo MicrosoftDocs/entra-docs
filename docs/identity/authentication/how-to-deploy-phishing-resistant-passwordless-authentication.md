@@ -228,38 +228,30 @@ Smart card/certificate-based authentication (CBA) | - Certificate-based authenti
 
 ##### Onboarding step 3: Bootstrap local credentials on computing devices
 
-After users have registered a portable credential, they are ready to bootstrap additional credentials on each of the computing devices they leverage regularly in a 1:1 relationship, which benefits their day-to-day user experience. This type of credential is common for Information Workers, IT Pros, but not Frontline Workers who use shared devices. Users who exclusively use shared devices should generally only use portable credentials.
-Your organization will need to determine which type of credential is preferred for each user persona at this stage. Microsoft recommends:
-User Persona
-Recommended Local Credential - Windows	Recommended Local Credential - macOS	Recommended Local Credential - iOS	Recommended Local Credential - Android	Recommended Local Credential - Linux
-Information Worker	Windows Hello for Business
-Platform SSO Secure Enclave Key	Passkey (Authenticator App)
-Passkey (Authenticator App)	N/A (use portable credential instead)
-Frontline Worker
-N/A (use portable credential instead)	N/A (use portable credential instead)	N/A (use portable credential instead)	N/A (use portable credential instead)	N/A (use portable credential instead)
-IT Pro / DevOps Worker	Windows Hello for Business	Platform SSO Secure Enclave Key	Passkey (Authenticator App)	Passkey (Authenticator App)	N/A (use portable credential instead)
-Highly Regulated Worker
-Windows Hello for Business or CBA
-Platform SSO Secure Enclave Key or CBA
-Passkey (Authenticator App) or CBA
-Passkey (Authenticator App) or CBA
-N/A (use smart card instead)
+After users have registered a portable credential, they are ready to bootstrap other credentials on each computing device they regularly use in a 1:1 relationship, which benefits their day-to-day user experience. 
+This type of credential is common for information workers and IT pros, but not for frontline workers who share devices. 
+Users who only share devices should generally only use portable credentials.
+
+Your organization needs to determine which type of credential is preferred for each user persona at this stage. Microsoft recommends:
+
+User persona | Recommended local credential - Windows | Recommended local credential - macOS | Recommended local credential - iOS | Recommended local credential - Android | Recommended Local Credential - Linux
+-------------|----------------------------------|-----------------------------|--------------------------------|--------------------------------|----------------------
+Information Worker | Windows Hello for Business | Platform SSO Secure Enclave Key | Passkey (Authenticator App) | Passkey (Authenticator App) | N/A (use portable credential instead)
+Frontline Worker | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead)
+IT pro/DevOps worker | Windows Hello for Business | Platform SSO Secure Enclave Key | Passkey (Authenticator App) | Passkey (Authenticator App) | N/A (use portable credential instead)
+Highly Regulated Worker | Windows Hello for Business or CBA | Platform SSO Secure Enclave Key or CBA | Passkey (Authenticator App) or CBA | Passkey (Authenticator App) or CBA
+N/A (use smart card instead) 
+
 
 Refer to the following tips and guides to enable the recommended local credentials in your environment for the relevant user personas for your organization:
-•	Windows Hello for Business
-o	Microsoft recommends using the Cloud Kerberos Trust method to deploy Windows Hello for Business: Cloud Kerberos trust deployment guide. Cloud Kerberos Trust is applicable to any environment where users are synced from on-premises Active Directory to Microsoft Entra ID. It is beneficial for these synced users on both Entra Joined and Entra Hybrid Joined PCs.
-o	Windows Hello for Business should only be used when each user on a PC is signing into that PC as themselves, it should not be used on kiosk devices that use a shared user account.
-o	Windows Hello for Business supports up to 10 users per device. If your shared devices need to support more users then switch to using a portable credential instead, such as security keys
-o	Biometrics are optional, but recommended: Prepare users to provision and use Windows Hello for Business
-•	Platform SSO Secure Enclave Key
-o	Platform SSO supports 3 different user authentication methods (Secure Enclave key, smart card, and password). Deploy the Secure Enclave key method to mirror your Windows Hello for Business on your Macs.
-o	Platform SSO requires that Macs are enrolled in MDM. Intune-specific instructions are available here: Configure Platform SSO for macOS devices in Microsoft Intune
-o	Refer to your MDM vendor’s documentation if you use a non-Intune MDM service on your Macs
-•	Passkeys
-o	Microsoft recommends that you leverage the same device registration option for bootstrapping passkeys in Microsoft Authenticator (as opposed to the cross device registration option).
-o	Users will use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.
-o	Passkeys are disabled by default in Microsoft Entra ID, enable them via policy: Enable passkeys in Microsoft Authenticator
-o	Register passkeys in Authenticator on Android or iOS devices
+
+Method | Guidance
+-------|---------
+Windows Hello for Business | - Microsoft recommends using the Cloud Kerberos Trust method to deploy Windows Hello for Business: Cloud Kerberos trust deployment guide. Cloud Kerberos Trust is applicable to any environment where users are synced from on-premises Active Directory to Microsoft Entra ID. It is beneficial for these synced users on both Entra Joined and Entra Hybrid Joined PCs.<br>- Windows Hello for Business should only be used when each user on a PC is signing into that PC as themselves, it should not be used on kiosk devices that use a shared user account.<br>- Windows Hello for Business supports up to 10 users per device. If your shared devices need to support more users then switch to using a portable credential instead, such as security keys.<br>- Biometrics are optional, but recommended: Prepare users to provision and use Windows Hello for Business
+Platform SSO Secure Enclave Key | - Platform SSO supports 3 different user authentication methods (Secure Enclave key, smart card, and password). Deploy the Secure Enclave key method to mirror your Windows Hello for Business on your Macs.<br>- Platform SSO requires that Macs are enrolled in MDM. Intune-specific instructions are available here: Configure Platform SSO for macOS devices in Microsoft Intune.<br>- Refer to your MDM vendor’s documentation if you use a non-Intune MDM service on your Macs.
+Passkeys | - Microsoft recommends that you leverage the same device registration option for bootstrapping passkeys in Microsoft Authenticator (as opposed to the cross device registration option). <br>- Users will use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.<br>- Passkeys are disabled by default in Microsoft Entra ID, enable them via policy: Enable passkeys in Microsoft Authenticator. <br>- Register passkeys in Authenticator on Android or iOS devices.
+
+
 Persona-Specific Considerations
 Each persona has its own challenges and considerations that commonly come up during phishing-resistant passwordless deployments. As you identify which personas you need to accommodate, you should factor these considerations into your deployment project planning. Below are links to specific guidance for each persona:
 •	Information Workers
