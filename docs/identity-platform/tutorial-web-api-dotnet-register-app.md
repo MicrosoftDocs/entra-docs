@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to register a web API with the Micr
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 11/1/2022
+ms.date: 09/24/2024
 ms.service: identity-platform
 
 ms.topic: tutorial
