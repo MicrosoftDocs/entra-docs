@@ -115,29 +115,29 @@ Your organization needs to determine which type of credential is preferred for e
 
 User persona | Recommended local credential - Windows | Recommended local credential - macOS | Recommended local credential - iOS | Recommended local credential - Android | Recommended Local Credential - Linux
 -------------|----------------------------------|-----------------------------|--------------------------------|--------------------------------|----------------------
-Information worker | Windows Hello for Business | Platform SSO Secure Enclave Key | Passkey (Authenticator App) | Passkey (Authenticator App) | N/A (use portable credential instead)
+Information worker | Windows Hello for Business | Platform SSO Secure Enclave Key | Passkey (Authenticator app) | Passkey (Authenticator app) | N/A (use portable credential instead)
 Frontline worker | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead) | N/A (use portable credential instead)
-IT pro/DevOps worker | Windows Hello for Business | Platform SSO Secure Enclave Key | Passkey (Authenticator App) | Passkey (Authenticator App) | N/A (use portable credential instead)
-Highly Regulated worker | Windows Hello for Business or CBA | Platform SSO Secure Enclave Key or CBA | Passkey (Authenticator App) or CBA | Passkey (Authenticator App) or CBA | N/A (use smart card instead) 
+IT pro/DevOps worker | Windows Hello for Business | Platform SSO Secure Enclave Key | Passkey (Authenticator app) | Passkey (Authenticator app) | N/A (use portable credential instead)
+Highly Regulated worker | Windows Hello for Business or CBA | Platform SSO Secure Enclave Key or CBA | Passkey (Authenticator app) or CBA | Passkey (Authenticator app) or CBA | N/A (use smart card instead) 
 
 
-Refer to the following tips and guides to enable the recommended local credentials in your environment for the relevant user personas for your organization:
+Use the following guidance to enable the recommended local credentials in your environment for the relevant user personas for your organization:
 
 Method | Guidance
 -------|---------
-Windows Hello for Business | - Microsoft recommends using the Cloud Kerberos Trust method to deploy Windows Hello for Business: Cloud Kerberos trust deployment guide. Cloud Kerberos Trust is applicable to any environment where users are synced from on-premises Active Directory to Microsoft Entra ID. It is beneficial for these synced users on both Entra Joined and Entra Hybrid Joined PCs.<br>- Windows Hello for Business should only be used when each user on a PC is signing into that PC as themselves, it should not be used on kiosk devices that use a shared user account.<br>- Windows Hello for Business supports up to 10 users per device. If your shared devices need to support more users then switch to using a portable credential instead, such as security keys.<br>- Biometrics are optional, but recommended: Prepare users to provision and use Windows Hello for Business
+Windows Hello for Business | - Microsoft recommends using the Cloud Kerberos Trust method to deploy Windows Hello for Business. For more information, see the [Cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune). Cloud Kerberos Trust is applicable to any environment where users are synced from on-premises Active Directory to Microsoft Entra ID. It is beneficial for these synced users on both Entra Joined and Entra Hybrid Joined PCs.<br>- Windows Hello for Business should only be used when each user on a PC is signing into that PC as themselves, it should not be used on kiosk devices that use a shared user account.<br>- Windows Hello for Business supports up to 10 users per device. If your shared devices need to support more users then switch to using a portable credential instead, such as security keys.<br>- Biometrics are optional, but recommended. For more information, see [Prepare users to provision and use Windows Hello for Business](/windows/security/identity-protection/hello-for-business/deploy/prepare-users).
 Platform SSO Secure Enclave Key | - Platform SSO supports 3 different user authentication methods (Secure Enclave key, smart card, and password). Deploy the Secure Enclave key method to mirror your Windows Hello for Business on your Macs.<br>- Platform SSO requires that Macs are enrolled in MDM. Intune-specific instructions are available here: Configure Platform SSO for macOS devices in Microsoft Intune.<br>- Refer to your MDM vendor’s documentation if you use a non-Intune MDM service on your Macs.
 Passkeys | - Microsoft recommends that you leverage the same device registration option for bootstrapping passkeys in Microsoft Authenticator (as opposed to the cross device registration option). <br>- Users will use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.<br>- Passkeys are disabled by default in Microsoft Entra ID, enable them via policy: Enable passkeys in Microsoft Authenticator. <br>- Register passkeys in Authenticator on Android or iOS devices.
 
 
 ### Persona-specific considerations
 
-Each persona has its own challenges and considerations that commonly come up during phishing-resistant passwordless deployments. As you identify which personas you need to accommodate, you should factor these considerations into your deployment project planning. Below are links to specific guidance for each persona:
+Each persona has its own challenges and considerations that commonly come up during phishing-resistant passwordless deployments. As you identify which personas you need to accommodate, you should factor these considerations into your deployment project planning. The following links have specific guidance for each persona:
 
-- Information workers
-- Frontline workers
-- IT pros/DevOps workers
-- Highly regulated workers
+- [Information workers](how-to-plan-persona-phishing-resistant-passwordless-authentication.md#information-workers)
+- [Frontline workers](how-to-plan-persona-phishing-resistant-passwordless-authentication.md#frontline-workers)
+- [IT pros/DevOps workers](how-to-plan-persona-phishing-resistant-passwordless-authentication.md#it-prosdevops-workers)
+- [Highly regulated workers](how-to-plan-persona-phishing-resistant-passwordless-authentication.md#highly-regulated-workers)
 
 ## Step 4: Drive usage of phishing-resistant credentials
 
