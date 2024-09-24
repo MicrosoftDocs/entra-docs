@@ -175,10 +175,6 @@ AuditLogs
 
 - Monitor application access in your tenant using the [cross-tenant access activity](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md) dashboard. Monitoring allows you to see who is accessing resources in your tenant and where those users are coming from.
 
-## Dynamic membership groups
-
-If your organization is using the [**all users** dynamic membership group](~/external-id/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
-
 ### Deny by default
 - Require user assignment for applications. If an application has the **User assignment required?** property set to **No**, external users can access the application. [Restrict your Microsoft Entra app to a set of users in a Microsoft Entra tenant](~/identity-platform/howto-restrict-your-app-to-a-set-of-users.md) explains how registered applications in a Microsoft Entra tenant are, by default, available to all users of the tenant who successfully authenticate.
 - Update your external collaboration settings so that only "Member users and users assigned to specific admin roles can invite guest users including guests with member permissions." This prevents guests in your tenant from inviting other users.
