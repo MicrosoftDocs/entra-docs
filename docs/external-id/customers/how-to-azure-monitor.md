@@ -77,7 +77,8 @@ In this step, you choose your external tenant as a **service provider**. You als
 To see all resource providers, and the registration status for your subscription:
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. On the Azure portal menu, search for **Subscriptions**. Select it from the available options.
+1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your workforce tenant from the **Directories + subscriptions** menu.
+1. On the Azure portal menu, search for **Subscriptions**. 
 1. Select the subscription you want to view.
 1. On the left menu, under **Settings**, select **Resource providers**.
 1. Select the **microsoft.insights** resource provider, and select **Register**.
@@ -214,13 +215,13 @@ Log queries help you to fully use the value of the data collected in Azure Monit
 
   :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor.":::
 
-1. Fill in the following details:
+7. Fill in the following details:
 
    - **Name** - Enter the name of your query.
    - **Save as** - Select `query`.
    - **Category** - Select `Log`.
 
-1. Select **Save**.
+8. Select **Save**.
 
 You can also change your query to visualize the data by using the [render](/azure/data-explorer/kusto/query/renderoperator?pivots=azuremonitor) operator.
 
