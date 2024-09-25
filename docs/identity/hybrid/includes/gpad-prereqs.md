@@ -43,14 +43,14 @@ The following prerequisites are required to implement provisioning groups to Act
      - Required to synchronize AD:user:objectGUID to AAD:user:onPremisesObjectIdentifier
 
 ### Supported groups and scale limits
-Only the following is supported:
+The following is supported:
   - Only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
   - These groups can have assigned or dynamic membership groups.
   - These groups can only contain on-premises synchronized users and / or additional cloud created security groups.
   - The on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
   - These groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope). Your on-premises environment must support the universal group scope.
   - Groups that are larger than 50,000 members aren't supported.
-  - Tenants that have more than 150,000 objects aren't supported.
+  - Tenants that have more than 150,000 objects aren't supported. Meaning, if a tenant has any combination of users and groups that exceeds 150K objects, the tenant isn't supported.
   - Each direct child nested group counts as one member in the referencing group
   - Reconciliation of groups between Microsoft Entra ID and Active Directory isn't supported if the group is manually updated in Active Directory.
 
