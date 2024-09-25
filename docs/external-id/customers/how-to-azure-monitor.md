@@ -45,11 +45,9 @@ In summary, you'll use Azure Lighthouse to allow a user or group in your externa
 
 ## Prerequisites
 
-<!-- Check the least privileged role options here! -->
-
 - An Azure subscription. If you don't have one, create a <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F" target="_blank">free account</a> before you begin.
 - A Microsoft Entra account with the [Owner](/azure/role-based-access-control/built-in-roles#owner) role in the Microsoft Entra subscription.
-- An account in the external tenant that's been assigned at least the [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader) role. <!-- Source: https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-by-task -->
+- An account in the external tenant that's been assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role. 
 
 ## Configuration overview
 
@@ -73,7 +71,7 @@ A **Log Analytics workspace** is a unique environment for Azure Monitor log data
 1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your workforce tenant from the **Directories + subscriptions** menu.
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace). This example uses a Log Analytics workspace named _ExtIDLogAnalytics_, in a resource group named _ExtIDMonitor_.
 
-### Add Microsoft.Insights as a resource provider
+### Add microsoft.insights as a resource provider
 
 In this step, you choose your external tenant as a **service provider**. You also define the authorizations you need to assign the appropriate built-in roles to groups in your Microsoft Entra tenant.
 To see all resource providers, and the registration status for your subscription:
@@ -82,8 +80,7 @@ To see all resource providers, and the registration status for your subscription
 1. On the Azure portal menu, search for **Subscriptions**. Select it from the available options.
 1. Select the subscription you want to view.
 1. On the left menu, under **Settings**, select **Resource providers**.
-1. Find the resource provider you want to register.
-1. Select the **Microsoft.Insights** resource provider, and select **Register**. 
+1. Select the **microsoft.insights** resource provider, and select **Register**.
 
 ## Step 2: External tenant configuration - get external tenant ID and create a group for external ID monitoring
 
@@ -103,7 +100,7 @@ Now create a group or user to which you want to give permission to the resource 
 To make management easier, we recommend using Microsoft Entra user _groups_ for each role, allowing you to add or remove individual users to the group rather than assigning permissions directly to that user. In this walkthrough, we'll add a security group.
 
 1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-2. Select **Groups**, and then select a group. If you don't have an existing group, create a **Security** group, then add members. For more information, follow the procedure [Create a basic group and add members using workforce tenant] (/entra/fundamentals/how-to-manage-groups).
+2. Select **Groups**, and then select a group. If you don't have an existing group, create a **Security** group, then add members. For more information, follow the procedure [Create a basic group and add members using workforce tenant](/entra/fundamentals/how-to-manage-groups).
 3. Select **Overview** and record the group's **Object ID**.
 
 ## Step 3: Workforce tenant configuration - configure Azure Lighthouse
@@ -241,4 +238,4 @@ AuditLogs
 
 ## Related content
 
-* [Use audit logs and access reviews](/entra/external-id/auditing-and-reporting)
+- [Use audit logs and access reviews](/entra/external-id/auditing-and-reporting)
