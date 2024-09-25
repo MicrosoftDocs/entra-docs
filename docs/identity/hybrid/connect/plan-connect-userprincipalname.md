@@ -76,10 +76,12 @@ When a user object is synchronized to a Microsoft Entra tenant for the first tim
 When the updates to a user object are synchronized to the Microsoft Entra tenant, Microsoft Entra ID updates the MailNickName attribute value only in case there is an update to the on-premises mailNickName attribute value.
 
 > [!IMPORTANT]
-> Microsoft Entra ID recalculates the UserPrincipalName attribute value only in case an update to the on-premises UserPrincipalName attribute/Alternate login ID value is synchronized to the Microsoft Entra tenant. 
-> > Whenever Microsoft Entra ID recalculates the UserPrincipalName attribute and the user has an Exchange license assigned, the new UserPrincipalName value is also added as a secondary smtp proxy address. 
+> Microsoft Entra ID recalculates the UserPrincipalName attribute value only in case an update to the on-premises UserPrincipalName attribute/Alternate login ID value is synchronized to the Microsoft Entra tenant.
+> 
+> Whenever Microsoft Entra ID recalculates the UserPrincipalName attribute and the user has an Exchange license assigned, the new UserPrincipalName value is also added as a secondary smtp proxy address. 
 > 
 > In case of verified domain change, Microsoft Entra ID also recalculates the UserPrincipalName attribute. For more information, see [Troubleshoot: Audit data on verified domain change](~/identity/monitoring-health/troubleshoot-audit-data-verified-domain.md)
+
 ## UPN scenarios
 The following are example scenarios of how the UPN is calculated based on the given scenario.
 
