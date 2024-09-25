@@ -124,8 +124,6 @@
     items: 
       - name: Plan phishing-resistant passwordless authentication
         items: 
-        - name: Overview
-          href: how-to-deploy-phishing-resistant-passwordless-authentication-overview.md
         - name: Prerequisites
           href: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
         - name: Plan
