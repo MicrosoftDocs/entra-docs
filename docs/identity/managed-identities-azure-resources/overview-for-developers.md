@@ -476,6 +476,133 @@ SecretClient secretClient = new SecretClientBuilder()
     
 KeyVaultSecret retrievedSecret = secretClient.getSecret(secretName);
 ```
+
+#### [Javascript](#tab/javascript)
+
+```javascript
+const { DefaultAzureCredential } = require("@azure/identity");
+const { SecretClient } = require("@azure/keyvault-secrets");
+
+// Specify the Client ID if using user-assigned managed identities
+const clientID = process.env.Managed_Identity_Client_ID;
+const credentialOptions = {
+    managedIdentityClientId: clientID
+};
+const credential = new DefaultAzureCredential(credentialOptions);
+
+const client = new SecretClient("https://<your-key-vault-name>.vault.azure.net/", credential);
+
+async function getSecret() {
+    const secret = await client.getSecret("<your-secret-name>");
+    const secretValue = secret.value;
+    console.log(secretValue);
+}
+
+getSecret().catch(err => console.error("Error retrieving secret:", err));
+```
+
+#### [Python](#tab/python)
+
+
+```Python
+
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
+import os
+
+# Specify the Client ID if using user-assigned managed identities
+client_id = os.getenv("Managed_Identity_Client_ID")
+credential = DefaultAzureCredential(managed_identity_client_id=client_id)
+
+client = SecretClient(vault_url="https://<your-key-vault-name>.vault.azure.net/", credential=credential)
+
+def get_secret():
+    secret = client.get_secret("<your-secret-name>")
+    secret_value = secret.value
+    print(secret_value)
+
+if __name__ == "__main__":
+    try:
+        get_secret()
+    except Exception as e:
+        print(f"Error retrieving secret: {e}")
+```
+
+#### [Go](#tab/Go)
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+
+    "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+    "github.com/Azure/azure-sdk-for-go/sdk/keyvault/azsecrets"
+)
+
+func main() {
+    // Specify the Client ID if using user-assigned managed identities
+    clientID := os.Getenv("Managed_Identity_Client_ID")
+    credential, err := azidentity.NewDefaultAzureCredential(&azidentity.DefaultAzureCredentialOptions{
+        ManagedIdentityClientID: clientID,
+    })
+    if err != nil {
+        fmt.Printf("Failed to obtain a credential: %v\n", err)
+        return
+    }
+
+    client, err := azsecrets.NewClient("https://<your-key-vault-name>.vault.azure.net/", credential, nil)
+    if err != nil {
+        fmt.Printf("Failed to create secret client: %v\n", err)
+        return
+    }
+
+    secretResp, err := client.GetSecret(context.TODO(), "<your-secret-name>", nil)
+    if err != nil {
+        fmt.Printf("Failed to get secret: %v\n", err)
+        return
+    }
+
+    secretValue := *secretResp.Value
+    fmt.Println(secretValue)
+}
+
+```
+
+#### [C++](#tab/cpp)
+
+```cpp
+
+#include <iostream>
+#include <azure/identity/default_azure_credential.hpp>
+#include <azure/keyvault/secrets/secret_client.hpp>
+
+int main() {
+    // Specify the Client ID if using user-assigned managed identities
+    const char* clientID = std::getenv("Managed_Identity_Client_ID");
+    Azure::Identity::DefaultAzureCredentialOptions options;
+    options.ManagedIdentityClientId = clientID;
+    auto credential = std::make_shared<Azure::Identity::DefaultAzureCredential>(options);
+
+    auto client = Azure::Security::KeyVault::Secrets::SecretClient(
+        Azure::Core::Url("https://<your-key-vault-name>.vault.azure.net/"), credential);
+
+    try {
+        auto secret = client.GetSecret("<your-secret-name>").Value;
+        std::cout << "Secret Value: " << secret.Value << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "Error retrieving secret: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
+
+
+```
+
+
 ---
 
 ### Accessing Azure SQL Database
@@ -514,7 +641,7 @@ dr.Close();
 
 #### [Java](#tab/java)
 
-If you use [Azure Spring Apps](/azure/spring-apps/), you can connect to Azure SQL Database with a managed identity without needing to make any changes to your code.
+If you use [Azure Spring Apps](/azure/spring-apps/), you can connect to Azure SQL Databases using a managed identity without making any changes to your code.
 
 Open the `src/main/resources/application.properties` file, and add `Authentication=ActiveDirectoryMSI;` at the end of the following line. Be sure to use the correct value for `$AZ_DATABASE_NAME` variable.
 
@@ -523,6 +650,239 @@ spring.datasource.url=jdbc:sqlserver://$AZ_DATABASE_NAME.database.windows.net:14
 ```
 
 Read more about how to [use a managed identity to connect Azure SQL Database to an Azure Spring Apps app](/azure/spring-apps/connect-managed-identity-to-azure-sql).
+
+#### [JavaScript](#tab/javascript)
+
+```javascript
+
+const { DefaultAzureCredential } = require("@azure/identity");
+const { Connection, Request } = require("tedious");
+
+// Specify the Client ID if using user-assigned managed identities
+const clientID = process.env.Managed_Identity_Client_ID;
+const credentialOptions = {
+    managedIdentityClientId: clientID
+};
+const credential = new DefaultAzureCredential(credentialOptions);
+
+async function getAccessToken() {
+    const tokenResponse = await credential.getToken("https://database.windows.net//.default");
+    return tokenResponse.token;
+}
+
+async function queryDatabase() {
+    const accessToken = await getAccessToken();
+
+    const config = {
+        server: "<your-server-name>",
+        authentication: {
+            type: "azure-active-directory-access-token",
+            options: {
+                token: accessToken
+            }
+        },
+        options: {
+            database: "<your-database-name>",
+            encrypt: true
+        }
+    };
+
+    const connection = new Connection(config);
+
+    connection.on("connect", err => {
+        if (err) {
+            console.error("Connection failed:", err);
+            return;
+        }
+
+        const request = new Request("SELECT TOP 1 ColumnName FROM TableName", (err, rowCount, rows) => {
+            if (err) {
+                console.error("Query failed:", err);
+                return;
+            }
+
+            rows.forEach(row => {
+                console.log(row.value);
+            });
+
+            connection.close();
+        });
+
+        connection.execSql(request);
+    });
+
+    connection.connect();
+}
+
+queryDatabase().catch(err => console.error("Error:", err));
+```
+
+#### [Python](#tab/Python)
+
+```python
+import os
+from azure.identity import DefaultAzureCredential
+from azure.core.credentials import AccessToken
+import pyodbc
+
+# Specify the Client ID if using user-assigned managed identities
+client_id = os.getenv("Managed_Identity_Client_ID")
+credential = DefaultAzureCredential(managed_identity_client_id=client_id)
+
+# Get the access token
+token = credential.get_token("https://database.windows.net//.default")
+access_token = token.token
+
+# Set up the connection string
+connection_string = "Driver={ODBC Driver 18 for SQL Server};Server=<your-server-name>;Database=<your-database-name>;"
+
+# Connect to the database
+connection = pyodbc.connect(connection_string, attrs_before={"AccessToken": access_token})
+
+# Execute the query
+cursor = connection.cursor()
+cursor.execute("SELECT TOP 1 ColumnName FROM TableName")
+
+# Fetch and print the result
+row = cursor.fetchone()
+while row:
+    print(row)
+    row = cursor.fetchone()
+
+# Close the connection
+cursor.close()
+connection.close()
+```
+
+#### [Go](#tab/Go)
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+
+    "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+    "github.com/Azure/azure-sdk-for-go/sdk/data/azsql"
+)
+
+func main() {
+    // Specify the Client ID if using user-assigned managed identities
+    clientID := os.Getenv("Managed_Identity_Client_ID")
+    credential, err := azidentity.NewDefaultAzureCredential(&azidentity.DefaultAzureCredentialOptions{
+        ManagedIdentityClientID: clientID,
+    })
+    if err != nil {
+        fmt.Printf("Failed to obtain a credential: %v\n", err)
+        return
+    }
+
+    // Get the access token
+    token, err := credential.GetToken(context.TODO(), azidentity.TokenRequestOptions{
+        Scopes: []string{"https://database.windows.net//.default"},
+    })
+    if err != nil {
+        fmt.Printf("Failed to get token: %v\n", err)
+        return
+    }
+
+    // Set up the connection string
+    connString := fmt.Sprintf("Server=<your-server-name>; Database=<your-database-name>; AccessToken=%s", token.Token)
+
+    // Connect to the database
+    db, err := azsql.Open("sqlserver", connString)
+    if err != nil {
+        fmt.Printf("Failed to connect to the database: %v\n", err)
+        return
+    }
+    defer db.Close()
+
+    // Execute the query
+    rows, err := db.QueryContext(context.TODO(), "SELECT TOP 1 ColumnName FROM TableName")
+    if err != nil {
+        fmt.Printf("Failed to execute query: %v\n", err)
+        return
+    }
+    defer rows.Close()
+
+    // Fetch and print the result
+    for rows.Next() {
+        var columnValue string
+        if err := rows.Scan(&columnValue); err != nil {
+            fmt.Printf("Failed to scan row: %v\n", err)
+            return
+        }
+        fmt.Println(columnValue)
+    }
+}
+```
+
+```cpp
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <azure/identity/default_azure_credential.hpp>
+#include <azure/core/credentials/azure_credential.hpp>
+#include <sql.h>
+#include <sqlext.h>
+
+int main() {
+    // Specify the Client ID if using user-assigned managed identities
+    const char* clientID = std::getenv("Managed_Identity_Client_ID");
+    Azure::Identity::DefaultAzureCredentialOptions options;
+    options.ManagedIdentityClientId = clientID;
+    auto credential = std::make_shared<Azure::Identity::DefaultAzureCredential>(options);
+
+    // Get the access token
+    auto token = credential->GetToken(
+        Azure::Core::Credentials::TokenRequestContext({"https://database.windows.net//.default"})).Value;
+
+    // Set up the connection string
+    std::string connectionString = "Driver={ODBC Driver 18 for SQL Server};Server=<your-server-name>;Database=<your-database-name>;";
+
+    // Initialize ODBC environment and connection handles
+    SQLHENV hEnv;
+    SQLHDBC hDbc;
+    SQLHSTMT hStmt;
+    SQLRETURN ret;
+
+    SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &hEnv);
+    SQLSetEnvAttr(hEnv, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);
+    SQLAllocHandle(SQL_HANDLE_DBC, hEnv, &hDbc);
+
+    // Set the access token
+    SQLSetConnectAttr(hDbc, SQL_COPT_SS_ACCESS_TOKEN, (SQLPOINTER)token.Token.c_str(), SQL_NTS);
+
+    // Connect to the database
+    ret = SQLDriverConnect(hDbc, NULL, (SQLCHAR*)connectionString.c_str(), SQL_NTS, NULL, 0, NULL, SQL_DRIVER_NOPROMPT);
+    if (SQL_SUCCEEDED(ret)) {
+        SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &hStmt);
+
+        // Execute the query
+        ret = SQLExecDirect(hStmt, (SQLCHAR*)"SELECT TOP 1 ColumnName FROM TableName", SQL_NTS);
+        if (SQL_SUCCEEDED(ret)) {
+            SQLCHAR columnValue;
+            while (SQLFetch(hStmt) == SQL_SUCCESS) {
+                SQLGetData(hStmt, 1, SQL_C_CHAR, columnValue, sizeof(columnValue), NULL);
+                std::cout << columnValue << std::endl;
+            }
+        }
+
+        // Clean up
+        SQLFreeHandle(SQL_HANDLE_STMT, hStmt);
+        SQLDisconnect(hDbc);
+    } else {
+        std::cerr << "Connection failed" << std::endl;
+    }
+
+    SQLFreeHandle(SQL_HANDLE_DBC, hDbc);
+    SQLFreeHandle(SQL_HANDLE_ENV, hEnv);
+
+    return 0;
+}
+```
 
 ---
 
