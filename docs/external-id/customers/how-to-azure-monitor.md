@@ -104,7 +104,7 @@ To make management easier, we recommend using Microsoft Entra user _groups_ for 
 
 1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 2. Select **Groups**, and then select a group. If you don't have an existing group, create a **Security** group, then add members. For more information, follow the procedure [Create a basic group and add members using workforce tenant] (/entra/fundamentals/how-to-manage-groups).
-1. Select **Overview**, and record the group's **Object ID**.
+3. Select **Overview** and record the group's **Object ID**.
 
 ## Step 3: Workforce tenant configuration - configure Azure Lighthouse
 
