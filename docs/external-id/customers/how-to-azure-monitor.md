@@ -21,7 +21,7 @@ ms.author: cmulligan
 
 :::image type="content" source="media/how-to-azure-monitor/azure-monitor-flow.png" alt-text="Image of the Azure Monitor flow.":::
 
-When you plan to transfer workforce tenant logs to different monitoring solutions, or repository, consider that external tenant logs contain personal data. When you process such data, ensure you use appropriate security measures on the personal data. It includes protection against unauthorized or unlawful processing, using appropriate technical or organizational measures.
+When you plan to transfer external tenant logs to different monitoring solutions, or repository, consider that external tenant logs contain personal data. When you process such data, ensure you use appropriate security measures on the personal data. It includes protection against unauthorized or unlawful processing, using appropriate technical or organizational measures.
 
 ## Deployment overview
 
