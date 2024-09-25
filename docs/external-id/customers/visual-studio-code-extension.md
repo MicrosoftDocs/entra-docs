@@ -7,18 +7,18 @@ manager: celestedg
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: quickstart
-ms.date: 05/16/2024
+ms.date: 09/16/2024
 ms.author: mimart
 ms.custom: it-pro
 
 # Customer intent: As a dev, devops, or it admin, I want to create an external tenant and configure a customized, branded sign-in experience for my apps from within Visual Studio Code.
 ---
 
-# Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code (preview)
+# Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Integrating authentication into your consumer and business customer applications is essential for securing resources and customer data. The Microsoft Entra External ID extension for Visual Studio Code lets you quickly add authentication to applications  for customer identity and access management (CIAM) scenarios. Using the application samples provided, you can see how to set up a customized, branded sign-in experience for external users of your application without leaving the development environment.
+Integrating authentication into your consumer and business customer applications is essential for securing resources and customer data. The Microsoft Entra External ID extension for Visual Studio Code lets you quickly create external tenants, configure sign-in experiences for external users, and set up an External ID sample, all directly within Visual Studio Code. Using the extension walkthrough, you can learn how to set up a customized, branded sign-in experience for external users of your application and bootstrap your projects with preconfigured sample applications.
 
 :::image type="content" source="media/visual-studio-code-extension/extension-overview.png" alt-text="Screenshot showing an overview of the extension.":::
 
@@ -45,16 +45,18 @@ The Microsoft Entra External ID extension creates a tenant in an external config
 
 - On the Get Started with Microsoft Entra External ID welcome page, choose an option:
 
-   - If you don't already have an Azure Account, select **Set up a free trial**.
-   - If you already have an Azure account, select **Use Azure subscription**.
- 
-### Set up a free trial
+  - If you don't already have an Azure Account, select **Set up a free trial**.
+  - If you already have an Azure account, select **Use my subscription**.
+
+   :::image type="content" source="media/visual-studio-code-extension/get-started-step.png" alt-text="Screenshot of the get started options.":::
+
+### Set up a free trial (preview)
 
 1. Select **Set up a free trial**.
 1. In the sign-in confirmation message, select **Allow**.
 1. A new browser window opens. Sign in using your personal account, Microsoft account (MSA), or GitHub account. Once you’re signed in, close the browser window.
 1. Return to Visual Studio Code. In the **Where should the tenant be located?** menu, select a location for your tenant data. This selection can't be changed later.
-1. Enter a name for the tenant.
+1. Enter a unique name for the tenant.
 
    :::image type="content" source="media/visual-studio-code-extension/name-tenant.png" alt-text="Screenshot of the tenant name field.":::
 
@@ -115,11 +117,28 @@ You can configure your app to allow users to sign in with their email and a pass
 
 1. The message **Configuring sign-in flow** appears. You can view the progress in the Output window. When configuration is finished, the message **User flow setup is complete** appears.  
 
+## Try out your sign-in experience
+
+The **Try out your sign-in experience** step in the walkthrough allows you to preview the sign-in experience you configured.
+
+   :::image type="content" source="media/visual-studio-code-extension/try-out.png" alt-text="Screenshot of option to try out your sign-in experience.":::
+
+
+1. Select the **Run it now** button. A new browser tab opens with the sign-up page for your tenant that can be used to create and sign in users.
+
+1. Select **No account? Create one** to create a new user in the tenant.
+
+1. Add your new user's email address and select **Next**. Don't use the same email you used to create your trial.
+
+1. Complete the sign-up steps on the screen. Typically, once the user signs in, they're redirected back to your app. However, since you haven’t set up an app at this step, you're redirected to JWT.ms instead, where you can view the contents of the token issued during the sign-in process.
+
+To find the user you created during this step, you can go to the [Microsoft Entra admin center](https://entra.microsoft.com/) and look for the user in the users list.
+
 ## Set up and run a sample app
 
-The extension contains several code samples that demonstrate how authentication is implemented in different application types and development languages. Samples are included for single page apps (JavaScript, React, Angular) and web apps (Node.js Express, ASP.NET Core, Python Django, Python Flask). Choose a sample from within the extension, and the extension automatically configures the application with your sign-in experience.
+The extension contains several code samples that demonstrate how authentication is implemented in different application types and development languages. Samples are included for single page apps (JavaScript, React, Angular) and web apps [Node.js (Express), ASP.NET Core, Python Django, Python Flask, Java Servlet]. Choose a sample from within the extension, and the extension automatically configures the application with your sign-in experience.
 
-1. Under select **Set up and run a sample app**, select the **Set up sample app button**.
+1. Under **Set up and run a sample app**, select the **Set up sample app** button.
 
    :::image type="content" source="media/visual-studio-code-extension/set-up-sample-app.png" alt-text="Screenshot of the Set up and run a sample app step.":::
 
@@ -142,15 +161,15 @@ After setup is complete, try out the sign-in experience by entering the local ho
 
 ## Use the Explorer view
 
-The Explorer view displays the registered applications and authentication user flows in your tenant. You can view configuration information  or navigate directly to the Microsoft Entra admin center to further configure or manage the resource. To access the Explorer view, open the Microsoft Entra External ID extension by selecting the icon in the activity bar.
+The Explorer view displays **Manage resources**, **Getting started** and **Help and Feedback** sections. To open the Explorer view, select the extension icon visible in the activity bar of Visual Studio Code.
 
 ## Manage resources
 
-To view project resources, expand the nodes in the left panel under **Manage Resources**.
+In the **Manage resources** section, you can view and manage your external tenants, registered applications, user flows, and company branding. To view project resources, expand the nodes in the left panel under **Manage Resources**.
 
 :::image type="content" source="media/visual-studio-code-extension/explorer-manage-resources.png" alt-text="Screenshot of the explorer view.":::
 
-In the Explorer view, you can select a resource and go directly to the Microsoft Entra admin center to manage or configure it. For example, right-click an application and select **Open in admin center**. You’re prompted to sign in, and then the Microsoft Entra admin center opens directly to the app registration page for that application.
+In the **Manage resources** section, you can select a resource and go directly to the Microsoft Entra admin center to manage or configure it. For example, right-click an application and select **Open in admin center**. You’re prompted to sign in, and then the Microsoft Entra admin center opens directly to the app registration page for that application.
 
 :::image type="content" source="media/visual-studio-code-extension/explorer-open-admin-center.png" alt-text="Screenshot of the open in admin center option.":::
 
@@ -162,4 +181,6 @@ In the Getting Started section, you can access documentation for the free trial,
 
 ## Next steps
 
-[Learn more about External ID free trial tenants](quickstart-trial-setup.md).
+- To further customize your tenant and explore the full range of configuration options, visit the [Microsoft Entra admin center](https://entra.microsoft.com/).
+- For the latest developer content and resources, check the [External ID developer center](https://aka.ms/ciam/dev).
+- To configure your own app for authentication, see the **tutorial** links. These tutorials assist you in building and integrating your own apps with Microsoft Entra External ID. You can also add [custom authentication extensions](concept-custom-extensions.md) at specific points within the authentication flow.

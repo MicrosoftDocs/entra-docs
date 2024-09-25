@@ -121,7 +121,7 @@ For more information, see [Conditional Access for B2B collaboration users](../..
 
 ### Blocked by risk policy
 
-This scenario is where Identity Protection Policy blocks a sign-in attempt due to the sign-in attempt having been identified as risky.
+This scenario is where risk-based Conditional Access policies block a sign-in attempt due to the sign-in attempt having been identified as risky.
 
 For more information, see [How to configure and enable risk policies](../../id-protection/howto-identity-protection-configure-risk-policies.md).
 

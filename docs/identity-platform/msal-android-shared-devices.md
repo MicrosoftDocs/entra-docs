@@ -257,9 +257,9 @@ These Microsoft applications support Microsoft Entra shared device mode:
 
 - [Microsoft Teams](/microsoftteams/platform/)
 - [Microsoft Viva Engage](/viva/engage/overview) (previously [Yammer](/viva/engage/overview))
-- [Outlook](/mem/intune/apps/app-configuration-policies-outlook) (in Public Preview)
+- [Outlook](/mem/intune/apps/app-configuration-policies-outlook) 
 - [Microsoft Power Apps](/power-apps/)
-- [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12) (in Public Preview)
+- [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12)
 - [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode)
 - [Microsoft Edge](/microsoft-edge/)
 
@@ -269,6 +269,7 @@ These third-party Mobile Device Management (MDM) providers support Microsoft Ent
 
 - [VMware Workspace ONE](https://blogs.vmware.com/euc/2023/08/announcing-general-availability-of-shared-device-conditional-access-with-vmware-workspace-one-and-microsoft-entra-id.html)
 - [SOTI MobiControl](https://soti.net/resources/blog/2023/soti-mobicontrol-supports-microsoft-shared-device-mode/)
+- [42Gears SureMDM](https://docs.42gears.com/suremdm/intergrations/integrations_reports/conditional-access-suremdm/shared-device-mode-with-microsoft-entra)
 
 ## Shared device sign-out and the overall app lifecycle
 

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 05/07/2024
+ms.date: 09/19/2024
 ms.author: justinha
 ms.reviewer: xyuan
 ---
@@ -161,9 +161,12 @@ Make sure no other NSG with higher priority denies the Outbound connectivity. If
 | 443 | TCP   | Any    | AzureMonitor                      | Allow  | Yes      | Monitoring of the virtual machines. |
 | 443 | TCP	  | Any	   | Storage                           | Allow  | Yes      | Communication with Azure Storage.   | 
 | 443 | TCP	  | Any	   | Microsoft Entra ID              | Allow  | Yes      | Communication with Microsoft Entra ID.  |
-| 443 | TCP	  | Any	   | AzureUpdateDelivery               | Allow  | Yes      | Communication with Windows Update.  | 
-| 80  | TCP	  | Any	   | AzureFrontDoor.FirstParty         | Allow  | Yes      | Download of patches from Windows Update.    |
 | 443 | TCP	  | Any	   | GuestAndHybridManagement          | Allow  | Yes      | Automated management of security patches.   |
+
+>[!NOTE]
+> The AzureUpdateDelivery and AzureFrontDoor.FirstParty tags are deprecated as of July 1, 2024. 
+> If you use the default AllowInternetOutBound rule (priority 65001), no change is needed (with or without AzureUpdateDelivery and AzureFrontDoor.FirstParty tags). For more information, see [Changes coming to the AzureUpdateDelivery service tag](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/changes-coming-to-the-azure-update-delivery-service-tag/ba-p/4156552).
+
 
 
 ### Port 5986 - management using PowerShell remoting

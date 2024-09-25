@@ -3340,5 +3340,10 @@
   "Windows Spotlight": "1b3c667f-cde3-4090-b60b-3d2abd0117f0",
   "WindowsDefenderATP Portal": "a3b79187-70b2-4139-83f9-6016c58cd27b",
   "Yammer Web": "c1c74fed-04c9-4704-80dc-9f79a2e515cb",
-  "Yammer Web Embed": "e1ef36fd-b883-4dbf-97f0-9ece4b576fc6"
+  "Yammer Web Embed": "e1ef36fd-b883-4dbf-97f0-9ece4b576fc6",
+  "Windows Hello for Business": "38aa3b87-a06d-4817-b275-7a316988d93b",
+  "Azure multifactor authentication client": "981f26a1-7f43-403b-a875-f8b09b8cd720",
+  "Business Central Base Application": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+  "Business Central System Application": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+  "Business Central Business Foundation": "f3552374-a1f2-4356-848e-196002525837"
 }

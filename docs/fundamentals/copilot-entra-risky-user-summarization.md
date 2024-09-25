@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
 
-# Customer intent: As a SOC analyst or IT admin, I want to learn about risky user summarization in the Identity Protection UX so that I can quickly respond to identity threats.
+# Customer intent: As a SOC analyst or IT admin, I want to learn about risky user summarization in the Microsoft Entra ID Protection UX so that I can quickly respond to identity threats.
 ---
 
 # Respond to identity threats using risky user summarization
@@ -23,7 +23,7 @@ Respond to identity threats quickly:
 - Risk summary: summarize in natural language why the user risk level was elevated.
 - Recommendations: get guidance on how to mitigate and respond to these types of attacks, with quick links to help and documentation.
 
-This article describes how to access the risky user summary capability of Identity Protection and Copilot for Microsoft Entra.  Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements).
+This article describes how to access the risky user summary capability of Microsoft Entra ID Protection and Copilot for Microsoft Entra.  Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements).
 
 ## Investigate risky users
 
@@ -33,11 +33,11 @@ To view and investigate a risky user:
 1. Navigate to **Protection** > **Identity Protection** and then to the [Risky users](https://aka.ms/entracopilotriskyuser) report.  
 1. Select a user from the risky users report.
 
-    :::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-users-report.png" alt-text="Screenshot that shows the Identity Protection risky users report.":::
+    :::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-users-report.png" alt-text="Screenshot that shows the ID Protection risky users report.":::
 
 1. In the **Risky User Details** window, information appears in **Summarize**.  
 
-    :::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the Identity Protection risky user summarization details.":::
+    :::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the ID Protection risky user summarization details.":::
 
 The risky user summary contains three sections:
 
