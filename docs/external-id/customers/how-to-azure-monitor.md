@@ -116,7 +116,7 @@ To create the custom authorization and delegation in Azure Lighthouse, we use an
 1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your workforce tenant from the **Directories + subscriptions** menu. 
 1. Use the **Deploy to Azure** button to open the Azure portal and deploy the template directly in the portal. For more information, see [create an Azure Resource Manager template](/azure/lighthouse/how-to/onboard-customer#create-an-azure-resource-manager-template).
 
-   [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure-ad-b2c%2Fsiem%2Fmaster%2Ftemplates%2FrgDelegatedResourceManagement.json)
+   [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fexternal-id-azure-monitor%2Fmain%2Ftemplates%2FrgDelegatedResourceManagement.json)
 
 1. On the **Custom deployment** page, enter the following information:
 
