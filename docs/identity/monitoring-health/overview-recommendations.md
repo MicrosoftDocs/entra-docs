@@ -68,4 +68,42 @@ Microsoft Entra recommendations use similar data to support you with the roll-ou
 
 ## Email notifications (preview)
 
-Microsoft Entra recommendations now generate email notifications when a new recommendation is generated. This new preview feature sends emails to a predetermined set of roles for each recommendation. For example, recommendations that are associated with the health of your tenant's applications are sent to users who have the Application Administrator role. 
+Microsoft Entra recommendations now generate email notifications when a new recommendation is generated. This new preview feature sends emails to a predetermined set of roles for each recommendation. For example, recommendations that are associated with the health of your tenant's applications are sent to users who have the Application Administrator role.
+
+The following table lists the Microsoft built-in roles that receive email notifications for each recommendation:
+
+| Recommendation Title | Target Roles |
+| --- | --- |
+| AAD Connect Deprecated | Hybrid Identity Administrator |
+| Convert per-user MFA to Conditional Access MFA | Security Administrator |
+| Designate more than one Global Administrator | Global Administrator |
+| Do not allow users to grant consent to unreliable applications | Global Administrator |
+| Do not expire passwords | Global Administrator |
+| Enable password hash sync if hybrid | Hybrid Identity Administrator |
+| Enable policy to block legacy authentication | Conditional Access Administrator, Security Administrator |
+| Enable self-service password reset | Authentication Policy Administrator |
+| Ensure all users can complete multifactor authentication | Conditional Access Administrator, Security Administrator |
+| Long lived credentials in applications | Global Administrator |
+| Migrate Applications from the retiring Azure AD Graph APIs to Microsoft Graph | Application Administrator |
+| Migrate applications from AD FS to Microsoft Entra ID | Application Administrator, Authentication Administrator Hybrid Identity Administrator |
+| Migrate authentication methods off the legacy MFA & SSPR policies | Global Administrator |
+| Migrate from ADAL to MSAL | Application Administrator |
+| Migrate from MFA Server to Microsoft Entra MFA | Global Administrator |
+| Migrate service principals from the retiring Azure AD Graph APIs to Microsoft Graph | Application Administrator |
+| MS Graph versioning | Global Administrator |
+| Optimize tenant MFA | Security Administrator |
+| Protect all users with a sign-in risk policy | Conditional Access Administrator, Security Administrator |
+| Protect all users with a user risk policy | Conditional Access Administrator, Security Administrator |
+| Protect your tenant with Insider Risk Conditional Access policy | Conditional Access Administrator, Security Administrator |
+| Remove overprivileged permissions for your applications | Global Administrator |
+| Remove unused applications | Application Administrator |
+| Remove unused credentials from applications | Application Administrator |
+| Renew expiring application credentials | Application Administrator |
+| Renew expiring credentials for service principals | Application Administrator |
+| Require MFA for administrative roles | Conditional Access Administrator, Security Administrator |
+| Review inactive users with Access Reviews | Identity Governance Administrator |
+| Secure and govern your apps with automatic user and group provisioning | Application Administrator, IT Governance Administrator |
+| Use least privileged administrative roles | Privileged Role Administrator |
+| Verify App Publisher | Global Administrator |
+
+If your organization is using Privileged Identity Management (PIM), the recipients must be elevated to the role indicated in order to receive the email notification. If no one is actively assigned to the role, no emails are sent. For this reason, we recommend checking the recommendations regularly to ensure that you are aware of any new recommendations.
