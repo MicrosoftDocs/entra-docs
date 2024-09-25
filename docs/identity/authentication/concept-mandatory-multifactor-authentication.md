@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/24/2024
+ms.date: 09/25/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -29,6 +29,7 @@ The scope of enforcement includes which applications plan to enforce MFA, when e
 | [Azure portal](/azure/azure-portal/)     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
 | [Microsoft Entra admin center](https://aka.ms/MSEntraPortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
 | [Microsoft Intune admin center](https://aka.ms/IntunePortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
+| [Microsoft 365 admin center](https://aka.ms/MSEntraPortal) | 00000006-0000-0ff1-ce00-000000000000 | Second half of 2024 |
 | [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | Early 2025 |
 | [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | Early 2025 |
 | [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | Early 2025 |
@@ -110,11 +111,15 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Answer**: Yes, every Azure tenant will require MFA, there are no exceptions. 
 
+**Question**: How does this requirement impact the Microsoft 365 admin center?
+
+**Answer**: Mandatory MFA will be rolled out to the Microsoft 365 admin center starting October 28th, 2024. Learn more about the mandatory MFA requirement for the Microsoft 365 admin center on the blog post [here](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-will-require-mfa-to-access-the-microsoft-365-admin/ba-p/4232568). 
+
 **Question**: Is MFA mandatory for all users or only administrators? 
 
 **Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md#user-exclusions) that are enabled for them.
 
-**Question**: Will I need to complete MFA if I choose the option to Stay signed in?
+**Question**: Will I need to complete MFA if I choose the option to **Stay signed in**?
 
 **Answer**: Yes, even if you choose **Stay signed in**, you're required to complete MFA before you can sign in to any these [applications](#applications).
 
