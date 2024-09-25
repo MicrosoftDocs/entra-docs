@@ -63,8 +63,6 @@ To strengthen security and avoid misconfigurations, an Authentication Policy Adm
 **Service category:** Microsoft Authenticator App    
 **Product capability:** User Authentication    
 
-General Availability - Authenticator on Android is FIPS 140 compliant
-
 Beginning with version 6.2408.5807, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS 140-3) for all Microsoft Entra authentications, including phishing-resistant device-bound passkeys, push multifactor authentication (MFA), passwordless phone sign-in (PSI), and time-based one-time passcodes (TOTP). No changes in configuration are required in Microsoft Authenticator or Microsoft Entra ID Admin Portal to enable this capability. Microsoft Authenticator on iOS is already FIPS 140 compliant, as announced last year. For more information, see: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md).
 
 ---
@@ -98,18 +96,6 @@ Custom Claims API allows admins to manage and update additional claims for their
 **Product capability:** Identity Governance    
 
 Support for synchronizing the manager attribute using cross-tenant synchronization is now generally available. For more information, see: [Attributes](../identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md#attributes).
-
----
-
-### Public preview - approval PIN for passkeys in Microsoft Authenticator
-
-**Type:** New feature    
-**Service category:** Microsoft Authenticator App    
-**Product capability:** User Authentication    
-
-We're introducing the ability to add an approval PIN for passkey authentication in Microsoft Authenticator. Approval PIN meets National Institute of Standards of Technology requirements (NIST) for activation secrets and will help federal agencies meet the requirements of the Executive Order Improving the Nation's Cybersecurity.
-
-Approval PIN in Microsoft Authenticator can be configured in Microsoft Entra ID, which will require end users to set up a 6-digit PIN specific to the Microsoft Authenticator App. The PIN must meet sufficient complexity requirements. Users must complete the approval PIN usage requirement when they authenticate with a passkey in Microsoft Authenticator. For more information, see: [Enable passkeys in Microsoft Authenticator (preview)](../identity/authentication/how-to-enable-authenticator-passkey.md).
 
 ---
 
