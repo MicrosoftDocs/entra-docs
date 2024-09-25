@@ -99,9 +99,10 @@ Now create a group or user to which you want to give permission to the resource 
 
 To make management easier, we recommend using Microsoft Entra user _groups_ for each role, allowing you to add or remove individual users to the group rather than assigning permissions directly to that user. In this walkthrough, we'll add a security group.
 
-1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-2. Select **Groups**, and then select a group. If you don't have an existing group, create a **Security** group, then add members. For more information, follow the procedure [Create a basic group and add members using workforce tenant](/entra/fundamentals/how-to-manage-groups).
-3. Select **Overview** and record the group's **Object ID**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your external tenant from the **Directories + subscriptions** menu.
+1. Select **Groups**, and then select a group. If you don't have an existing group, create a **Security** group, then add members. For more information, follow the procedure [Create a basic group and add members using workforce tenant](/entra/fundamentals/how-to-manage-groups).
+1. Select **Overview** and record the group's **Object ID**.
 
 ## Step 3: Workforce tenant configuration - configure Azure Lighthouse
 
@@ -167,8 +168,8 @@ Diagnostic settings define where logs and metrics for a resource should be sent.
 
 In this example, we use the Log Analytics workspace to create a dashboard. Follow the steps to configure [monitoring settings](/entra/identity/monitoring-health/overview-monitoring-health) for the external tenant activity logs:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com)  with your external tenant's account. This account must be a member of the security group you specified previously.
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant from the **Directories + subscriptions** menu.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your external tenant from the **Directories + subscriptions** menu. This account must be a member of the security group you specified previously.
 1. Browse to **Diagnostic settings** by navigating to **Identity** > **Monitoring & health**.
 1. If there are existing settings for the resource, you'll see a list of settings already configured. Either select **Add diagnostic setting** to add a new setting, or select **Edit settings** to edit an existing setting. Each setting can have no more than one of each of the destination types.
 
@@ -235,6 +236,22 @@ AuditLogs
 ```
 
   :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor pie chart.":::
+
+## Change the data retention period
+
+Azure Monitor Logs are designed to scale and support collecting, indexing, and storing massive amounts of data per day from any source in your enterprise or deployed in Azure. By default, logs are retained for 30 days, but retention duration can be increased to up to two years. Learn how to [manage usage and costs with Azure Monitor Logs](/azure/azure-monitor/logs/cost-logs). After you select the pricing tier, you can [Change the data retention period](/azure/azure-monitor/logs/data-retention-configure).
+
+## Disable monitoring data collection
+
+To stop collecting logs to your Log Analytics workspace, delete the diagnostic settings you created. You'll continue to incur charges for retaining log data you've already collected into your workspace. If you no longer need the monitoring data you've collected, you can delete your Log Analytics workspace and the resource group you created for Azure Monitor. Deleting the Log Analytics workspace deletes all data in the workspace and prevents you from incurring additional data retention charges.
+
+### Delete Log Analytics workspace and resource group
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your workforce tenant from the **Directories + subscriptions** menu.
+1. Choose the resource group that contains the Log Analytics workspace. This example uses a resource group named _ExtIDMonitor_ and a Log Analytics workspace named _ExtIDLogAnalytics_.
+1. [Delete the Logs Analytics workspace](/azure/azure-monitor/logs/delete-workspace).
+1. Select the **Delete** button to delete the resource group.
 
 ## Related content
 
