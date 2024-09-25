@@ -19,7 +19,7 @@ ms.author: cmulligan
 
 [Azure Monitor](/azure/azure-monitor/overview) is a comprehensive solution for collecting, analyzing, and responding to monitoring data from your cloud and on-premises environments. The diagnostic settings on the monitored resource specify what data to send and where to send it. For Microsoft Entra, the destination options include [Azure Storage](/azure/storage/blobs/storage-blobs-introduction), [Log Analytics](/azure/azure-monitor/essentials/resource-logs#send-to-log-analytics-workspace) and [Azure Event Hubs](/azure/event-hubs/event-hubs-about).
 
-:::image type="content" source="media/how-to-azure-monitor/azure-monitor-flow.png" alt-text="Image of the Azure Monitor flow.":::
+:::image type="content" source="media/how-to-azure-monitor/azure-monitor-flow.png" alt-text="Diagram of the Azure Monitor flow.":::
 
 When you plan to transfer external tenant logs to different monitoring solutions, or repository, consider that external tenant logs contain personal data. When you process such data, ensure you use appropriate security measures on the personal data. It includes protection against unauthorized or unlawful processing, using appropriate technical or organizational measures.
 
@@ -157,7 +157,7 @@ After you've deployed the template and waited a few minutes for the resource pro
 1. On the **Portal settings | Directories + subscriptions** page, in the **Directory name** list,  find your workforce tenant directory that contains the Azure subscription and the _ExtIDMonitor_ resource group you created, and then select **Switch**.
 1. Verify that you've selected the correct directory and your Azure subscription is listed and selected in the **Default subscription filter**.
 
-:::image type="content" source="media/how-to-azure-monitor/default-subscription-filter.png" alt-text="Screenshot of the default subscription filter":::
+:::image type="content" source="media/how-to-azure-monitor/default-subscription-filter.png" alt-text="Screenshot of the default subscription filter.":::
 
 ### Configure diagnostic settings
 
