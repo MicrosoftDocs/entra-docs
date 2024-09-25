@@ -23,7 +23,7 @@ During authentication transfer, all Microsoft Entra Conditional Access policies 
 - With authentication transfer, if users perform multifactor authentication (MFA) on their PC, they aren't required to perform MFA on their mobile device.
 - With authentication transfer, Conditional Access policies get evaluated before transferring the authentication. If a policy isn't met for the mobile device, the user is prompted to sign in manually.
    - Authentication Transfer bypasses 3rd party mobile device management (MDM) solutions when transferring authentication to mobile devices. 
-- With authentication transfer, users must reauthentication on their PC even if they signed in with protected session tokens, like the Primary Refresh Token. They are'nt required to reauthenticate on mobile apps.
+- With authentication transfer, users must reauthenticate on their PC even if they signed in with protected session tokens, like the Primary Refresh Token. They aren't required to reauthenticate on mobile apps.
 
 ## Authentication transfer in sign-in logs
 
