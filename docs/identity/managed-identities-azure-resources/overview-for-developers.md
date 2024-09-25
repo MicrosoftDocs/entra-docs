@@ -112,7 +112,7 @@ Once that you have that you have a user assigned managed identity that you can u
 
 
 
-### [Portal](#tab/portal)
+#### [Portal](#tab/portal)
 
 1. Locate the resource you want to connect to using the search bar at the top of the Portal
 2. Select the **Access Control (IAM)** link in the left hand navigation.
@@ -144,7 +144,8 @@ Once that you have that you have a user assigned managed identity that you can u
 
 :::image type="content" source="media/developer-introduction/resource-role-assignment-added.png" alt-text="Screenshot showing the role assignment has been added in the portal.":::
 
-### [Azure CLI](#tab/cli)
+#### [Azure CLI](#tab/cli)
+
 ```azurecli
 az role assignment create --assignee "<Object/Principal ID of the managed identity>" \
 --role "<Role name or Role ID>" \
@@ -182,7 +183,7 @@ Read more about the Azure Identity libraries below:
 
 ### Accessing a Blob in Azure Storage
 
-#### [.NET](#tab/dotnet)
+#### [C#](#tab/c#)
 
 ```csharp
 using Azure.Identity;
@@ -423,7 +424,7 @@ int main() {
 ---
 ### Accessing a secret stored in Azure Key Vault
 
-#### [.NET](#tab/dotnet)
+#### [C#](#tab/c#)
 
 ```csharp
 using Azure.Identity;
