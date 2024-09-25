@@ -30,11 +30,14 @@ Let’s imagine that your organization recently hired 50 new employees for the S
 
 Now, new members joining the Support team can request access to this access package in *My Access* and get access to everything they need as soon as their manager approves the request. This saves you time and energy because the Support team is planning on expanding globally, hiring ~1,000 new employees, but you no longer have to manually assign each person to an access package. 
 
-<a name='entitlement-management-roles.md#pim-note'></a>
+##### Pim note:
 
 > [!NOTE]
 > We recommend that you use Privileged Identity Management to provide just-in-time access to a user to perform a task that requires elevated permissions. These permissions are provided through the Microsoft Entra Roles, that are tagged as *“privileged”*, in our documentation here: [Microsoft Entra built-in roles](../identity/role-based-access-control/permissions-reference.md).
 > Entitlement Management is better suited for assigning users a bundle of resources, which can include a Microsoft Entra role, necessary to do one’s job. Users assigned to access packages tend to have more longstanding access to resources. While we recommend that you manage high-privileged roles through Privileged Identity Management, you can set up eligibility for those roles through access packages in Entitlement Management.  
+
+
+
 
 ## Prerequisites
 
