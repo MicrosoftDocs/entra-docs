@@ -1,6 +1,6 @@
 ---
-title: Regions that need to opt in for Microsoft Entra multifactor authentication telephony verification
-description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID
+title: Regional telecom restrictions
+description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Micorsoft Azure B2C
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -193,6 +193,17 @@ For voice verification, the following region codes require an opt-in.
 | 1849        |  Dominican Republic                            |
 | 1869        |  Saint Kitts and Nevis                         |
 | 1876        |  Jamaica                                       |
+
+## Region specific service limits 
+| Region Code | Region Name                                    | Limit per tenant per 60 minutes | Limit per tenant per 24 hours            |                         
+|:----------- |:---------------------------------------------- |:------------------------------- | :----------------------------------------|
+| 228         |  Togo                                          | 10                              |  30                                      |
+| 257         |  Uzbek                                         | 10                              |  30                                      |
+| 970         |  State of Plaestine                            | 10                              |  30                                      |
+| 249         |  Sudan                                         | 10                              |  30                                      |
+| 226         |  Burina Faso                                   | 10                              |  30                                      |
+| 252         |  Somalia                                       | 10                              |  30                                      |  
+| 501         |  Belize                                        | 10                              |  30                                      |
 
 ## Next steps
 
