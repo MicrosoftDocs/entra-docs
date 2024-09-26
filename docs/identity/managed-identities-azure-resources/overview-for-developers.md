@@ -32,9 +32,24 @@ Some resources don't support Microsoft Entra authentication, or their client lib
 
 ## Creating a managed identity
 
+There are [two types of managed identities](overview.md#managed-identity-types): system-assigned and user-assigned. System-assigned identities are directly linked to a single Azure resource. When the Azure resource is deleted, so is the identity. A user-assigned managed identity can be associated with multiple Azure resources, and its lifecycle is independent of those resources. 
 
-### Creating a user-assigned managed identity
+We recommend that you use a user-assigned managed identity, [for most scenarios](managed-identity-best-practice-recommendations.md). If the source resource you're using doesn't support user-assigned managed identities, then you should refer to that resource provider's documentation to learn how to configure it to have a system-assigned managed identity.
 
+
+
+> [!IMPORTANT]
+> The account used to create managed identities needs a role such as "Managed Identity Contributor" to create a new user-assigned managed identity.
+
+Create a user assigned managed identity using your preferred options:
+
+- [Azure portal](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp)
+- [CLI](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli)
+- [PowerShell](how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-powershell)
+- [Resource manager](how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-arm)
+- [REST](how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-rest)
+
+After you create a user assigned managed identity, take note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You use `principalId` while adding permissions, and `clientId` in your application's code.
 
 ## Using the managed identity in your code
 
