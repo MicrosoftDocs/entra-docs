@@ -238,7 +238,8 @@ In June 2022, Tableau released a SCIM 2.0 connector. Completing the steps below 
 1. Return to the first web browser window and select the Provisioning tab for your application. Your configuration will have been reset. You can confirm the upgrade has taken place by confirming the Job ID starts with **TableauOnlineSCIM**.
 
 1. Under the Admin Credentials section, select "Bearer Authentication" as the authentication method and enter the Tenant URL and Secret Token of the Tableau instance you wish to provision to.
-	![Screenshot of Admin Credentials in Tableau Cloud.](media/tableau-online-provisioning-tutorial/tableau-cloud-creds.png)
+	![Screenshot of Admin Credentials in Tableau Cloud.](media/tableau-online-provisioning-tutorial/tableau-test-connections.png)
+
 
 1. Restore any previous changes you made to the application (Authentication details, Scoping filters, Custom attribute mappings) and re-enable provisioning.
 
