@@ -598,11 +598,12 @@ package main
 
 import (
     "context"
+    "database/sql"
     "fmt"
     "os"
 
     "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-    "github.com/Azure/azure-sdk-for-go/sdk/data/azsql"
+    _ "github.com/denisenkom/go-mssqldb"
 )
 
 func main() {
@@ -631,10 +632,10 @@ func main() {
     }
 
     // Set up the connection string
-    connString := fmt.Sprintf("Server=<your-server-name>; Database=<your-database-name>; AccessToken=%s", token.Token)
+    connString := fmt.Sprintf("sqlserver://<your-server-name>?database=<your-database-name>&access_token=%s", token.Token)
 
     // Connect to the database
-    db, err := azsql.Open("sqlserver", connString)
+    db, err := sql.Open("sqlserver", connString)
     if err != nil {
         fmt.Printf("Failed to connect to the database: %v\n", err)
         return
@@ -659,6 +660,7 @@ func main() {
         fmt.Println(columnValue)
     }
 }
+
 ```
 
 
