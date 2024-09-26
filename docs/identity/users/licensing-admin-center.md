@@ -22,7 +22,7 @@ This article shows you how to use the Microsoft 365 license center to assign lic
 >
 > For group license assignment, any users without a usage location specified inherit the location of the directory. If you have users in multiple locations, we recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID. For example, configure Microsoft Entra Connect configuration to set usage location. This recommendation makes sure the result of license assignment is always correct and users do not receive services in locations that are not allowed.
 >
-> The licensing requirements for group-based licensing are unchanged. Please refer to the [Licensing requirements](https://learn.microsoft.com/en-us/entra/fundamentals/concept-group-based-licensing?context=azure%2Factive-directory%2Fusers-groups-roles%2Fcontext%2Fugr-context#licensing-requirements) for details regarding which licenses are required to leverage group-based licensing.
+> The licensing requirements for group-based licensing are unchanged. Please refer to the [Licensing requirements](https://learn.microsoft.com/entra/fundamentals/concept-group-based-licensing?context=azure%2Factive-directory%2Fusers-groups-roles%2Fcontext%2Fugr-context#licensing-requirements) for details regarding which licenses are required to leverage group-based licensing.
 
 ## Assign a license
 
