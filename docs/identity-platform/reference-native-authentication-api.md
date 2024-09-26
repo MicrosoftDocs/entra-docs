@@ -1353,7 +1353,7 @@ Content-Type: application/json
 |    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |
-| `methods` | A list ( of objects) of user registered MFA methods.|
+| `methods` | A list (of objects) of user registered MFA methods.|
 
 The MFA method object has the following properties:
 
