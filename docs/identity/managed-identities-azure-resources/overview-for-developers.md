@@ -157,7 +157,7 @@ downloadBlob().catch(console.error);
 
 ```
 
-#### [Python](#tab/Python)
+#### [Python](#tab/python)
 
 ```python
 from azure.identity import DefaultAzureCredential
@@ -308,7 +308,7 @@ SecretClient secretClient = new SecretClientBuilder()
 KeyVaultSecret retrievedSecret = secretClient.getSecret(secretName);
 ```
 
-#### [Javascript](#tab/javascript)
+#### [JavaScript](#tab/javascript)
 
 ```javascript
 const { DefaultAzureCredential } = require("@azure/identity");
@@ -516,7 +516,7 @@ async function queryDatabase() {
 queryDatabase().catch(err => console.error("Error:", err));
 ```
 
-#### [Python](#tab/Python)
+#### [Python](#tab/python)
 
 ```python
 import os
