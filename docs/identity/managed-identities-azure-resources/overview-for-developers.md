@@ -11,6 +11,7 @@ ms.topic: overview
 
 ms.date: 09/26/2024
 ms.author: barclayn
+ai-usage: ai-assisted
 
 
 #Customer intent: As a developer, I'd like to securely manage the credentials that my application uses for authenticating to cloud services without having the credentials in my code or checked into source control. 
@@ -37,11 +38,10 @@ There are [two types of managed identities](overview.md#managed-identity-types):
 We recommend that you use a user-assigned managed identity, [for most scenarios](managed-identity-best-practice-recommendations.md). If the source resource you're using doesn't support user-assigned managed identities, then you should refer to that resource provider's documentation to learn how to configure it to have a system-assigned managed identity.
 
 
-
 > [!IMPORTANT]
 > The account used to create managed identities needs a role such as "Managed Identity Contributor" to create a new user-assigned managed identity.
 
-Create a user assigned managed identity using your preferred options:
+Create a user assigned managed identity using your preferred option:
 
 - [Azure portal](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp)
 - [CLI](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli)
@@ -53,37 +53,38 @@ After you create a user assigned managed identity, take note of the `clientId` a
 
 ## Configure App service with a user-assigned managed identity
 
-Before you can use the managed identity in your code, we have to assign it to a resource. You can configure an App service to use a user-assigned managed identity. The process requires that you [specify the managed identity's resource identifier to your app config](/azure/app-service/overview-managed-identity?tabs=portal%2Chttp#add-a-user-assigned-identity).
+Before you can use the managed identity in your code, we have to assign it to the App service that will use it. The process of configuring an App service to use a user-assigned managed identity requires that you [specify the managed identity's resource identifier in your app config](/azure/app-service/overview-managed-identity?tabs=portal%2Chttp#add-a-user-assigned-identity).
 
 ### Adding permissions to the identity
 
-Once that you have configured your App service to use a user assigned managed identity and you have configured the app service to use that identity to access other Azure resources you need to give the identity the necessary permissions. In this scenario, we are using this identity to interact with Azure Storage, so you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview).
+Once that you have configured your App service to use a user assigned managed identity you need to grant the necessary permissions to the identity. In this scenario, we are using this identity to interact with Azure Storage, so you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview) to grant the user assigned managed identity the permissions to the resource we will access.
 
 > [!IMPORTANT]
 > You'll need a role such as "User Access Administrator" or "Owner" for the target resource to add Role assignments. Ensure you're granting the least privilege required for the application to run.
 
+Any resources you want to access requires that you grant the identity permissions. For example, if you request a token to access Key Vault, you must also add an access policy that includes the managed identity of your app or function. Otherwise, your calls to Key Vault will be rejected, even if you use a valid token. The same is true for Azure SQL Database. To learn more about which resources support Microsoft Entra tokens, see Azure services that support Microsoft Entra authentication.
 
-## Using the managed identity in your code
 
+## Using managed identities in your code
 
-After you complete the steps outlined above, your App Service has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain a token that your code can use to interact with Azure resources, instead of storing credentials in your code. 
+After you complete the steps outlined above, your App Service has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain a token that your code can use to interact with Azure resources, instead of storing credentials in your code.
 
-We recommended that you use the Azure Identity library for your preferred programming language. The supported languages include:
+We recommended that you use the Azure Identity library for your preferred programming language. The library acquires access tokens for you, making it simple to connect to target resources. The supported languages include:
 
 - [.NET](/dotnet/api/overview/azure/identity-readme)
 - [Java](/java/api/overview/azure/identity-readme?view=azure-java-stable&preserve-view=true)
 - [JavaScript](/javascript/api/overview/azure/identity-readme?view=azure-node-latest&preserve-view=true)
 - [Python](/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true)
 - [Go](/azure/developer/go/azure-sdk-authentication)
-- [C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md). The library acquires access tokens for you, making it simple to connect to target resources.
+- [C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md). 
+
+
 
 ### Using the Azure Identity library in your development environment
 
 The Azure Identity libraries support a `DefaultAzureCredential` type. `DefaultAzureCredential` automatically attempts to authenticate via multiple mechanisms, including environment variables or an interactive sign-in. The credential type can be used in your development environment using your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
 
 If you're using user-assigned managed identities, you should also explicitly specify the user-assigned managed identity you wish to authenticate with by passing in the identity's client ID as a parameter. You can retrieve the client ID by browsing to the identity in the Portal.
-
-:::image type="content" source="media/developer-introduction/identity-client-id.png" alt-text="Screenshot showing the client ID for the managed identity in the portal.":::
 
 Read more about the Azure Identity libraries below:
 
