@@ -183,7 +183,7 @@ Read more about the Azure Identity libraries below:
 
 ### Accessing a Blob in Azure Storage
 
-#### [C#](#tab/c#)
+#### [C#](#tab/csharp)
 
 ```csharp
 using Azure.Identity;
@@ -424,7 +424,7 @@ int main() {
 ---
 ### Accessing a secret stored in Azure Key Vault
 
-#### [C#](#tab/c#)
+#### [C#](#tab/csharp)
 
 ```csharp
 using Azure.Identity;
