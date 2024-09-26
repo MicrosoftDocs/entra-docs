@@ -39,9 +39,9 @@ Before configuring and enabling the provisioning service, you need to decide wha
 
 ### Important tips for assigning users to ThousandEyes
 
-* It is recommended that a single Microsoft Entra user is assigned to ThousandEyes to test the provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to ThousandEyes to test the provisioning configuration. More users and/or groups may be assigned later.
 
-* When assigning a user to ThousandEyes, you must select either the **User** role, or another valid application-specific role (if available) in the assignment dialog. The **Default Access** role does not work for provisioning, and these users are skipped.
+* When assigning a user to ThousandEyes, you must select either the **User** role, or another valid application-specific role (if available) in the assignment dialog. The **Default Access** role doesn't work for provisioning, and these users are skipped.
 
 ## Configuring user provisioning to ThousandEyes 
 
@@ -86,7 +86,7 @@ This section guides you through connecting your Microsoft Entra ID to ThousandEy
 
 9. Under the Mappings section, select **Synchronize Microsoft Entra users to ThousandEyes**.
 
-10. Review the user attributes that are synchronized from Microsoft Entra ID to ThousandEyes in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Parsable for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Parsable API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+10. Review the user attributes that are synchronized from Microsoft Entra ID to ThousandEyes in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Parsable for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Parsable API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
  	 |Attribute|Type|Supported for filtering|
   	 |---|---|---|
@@ -108,7 +108,7 @@ This section guides you through connecting your Microsoft Entra ID to ThousandEy
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-14. When you are ready to provision, click **Save**.
+14. When you're ready to provision, click **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -118,8 +118,8 @@ This operation starts the initial synchronization cycle of all users and groups 
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
 1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
+2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
+3. If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## Additional resources
 

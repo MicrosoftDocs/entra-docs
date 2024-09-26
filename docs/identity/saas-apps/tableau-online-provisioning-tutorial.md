@@ -53,14 +53,14 @@ The scenario outlined in this tutorial assumes that you already have the followi
 ## Step 2: Configure Tableau Cloud to support provisioning with Microsoft Entra ID
 
 Use the following steps to enable SCIM support with Microsoft Entra ID:
-1. The SCIM functionality requires that you configure your site to support SAML single sign-on. If you haven't not done this yet, complete the following sections in [Configure SAML with Microsoft Entra ID](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm):
+1. The SCIM functionality requires that you configure your site to support SAML single sign-on. If you haven't done this yet, complete the following sections in [Configure SAML with Microsoft Entra ID](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm):
  	* Step 1: [Open the Tableau Cloud SAML Settings](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm#open-the-tableau-online-saml-settings).
  	* Step 2: [Add Tableau Cloud to your Microsoft Entra applications](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm#add-tableau-online-to-your-azure-ad-applications).
 	 
   	> [!NOTE]
   	> If you don’t set up SAML single sign-on, your user will be unable to sign into Tableau Cloud after they have been provisioned unless you manually change the user’s authentication method from SAML to Tableau or Tableau MFA in Tableau Cloud. 
 
-1. In Tableau Cloud, navigate to **Settings > Authentication** page, then under **Automatic Provisioning and Group Synchronization (SCIM)**, select the **Enable SCIM** check box. This populates the **Base URL** and **Secret** boxes with values you'll use in the SCIM configuration of your IdP.
+1. In Tableau Cloud, navigate to **Settings > Authentication** page, then under **Automatic Provisioning and Group Synchronization (SCIM)**, select the **Enable SCIM** check box. This populates the **Base URL** and **Secret** boxes with values you use in the SCIM configuration of your IdP.
   	> [!NOTE] 
   	> The secret token is displayed only immediately after it is generated. If you lose it before you can apply it to Microsoft Entra ID, you can select **Generate New Secret**. In addition, the secret token is tied to the Tableau Cloud user account of the site administrator who enables SCIM support. If that user’s site role changes or the user is removed from the site, the secret token becomes invalid, and another site administrator must generate a new secret token and apply it to Microsoft Entra ID.
 
@@ -255,7 +255,7 @@ Once you've configured provisioning, use the following resources to monitor your
 
 ## Change log
 * 09/30/2020 - Added support for attribute "authSetting" for Users.
-* 06/24/2022 - Updated the ap to be SCIM 2.0 compliant.
+* 06/24/2022 - Updated the app to be SCIM 2.0 compliant.
 
 ## More resources
 

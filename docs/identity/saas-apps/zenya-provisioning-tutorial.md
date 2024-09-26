@@ -57,7 +57,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 	![Screenshot showing the Zenya add provider page.](media/zenya-provisioning-tutorial/add-provider.png)
 
-4.	Select the **Permanent token** button. Copy the **Permanent token** and save it. You won't be able to view it later. This value will be entered in the Secret Token field in the Provisioning tab of your Zenya application.
+4.	Select the **Permanent token** button. Copy the **Permanent token** and save it. You won't be able to view it later. This value is entered in the Secret Token field in the Provisioning tab of your Zenya application.
 
 	![Screenshot showing the Zenya User provisioning page for creating a Token.](media/zenya-provisioning-tutorial/token.png)
 
@@ -73,13 +73,13 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 
 * Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, maintain control by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
+* If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 ## Step 5: Configure automatic user provisioning to Zenya 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Zenya based on user and/or group assignments in Microsoft Entra ID.
 
-For more information (in dutch) also read: [`Implementatie SCIM koppeling`](https://webshare.iprova.nl/8my7yg8c1ofsmdj9/Document.aspx)
+For more information (in Dutch) also read: [`Implementatie SCIM koppeling`](https://webshare.iprova.nl/8my7yg8c1ofsmdj9/Document.aspx)
 
 <a name='to-configure-automatic-user-provisioning-for-zenya-in-azure-ad'></a>
 
@@ -92,7 +92,7 @@ For more information (in dutch) also read: [`Implementatie SCIM koppeling`](http
 
 1. In the applications list, select **Zenya**.
 
-	![The Zero link in the Applications list](common/all-applications.png)
+	![Screenshot to select the application from the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -146,7 +146,7 @@ For more information (in dutch) also read: [`Implementatie SCIM koppeling`](http
 
 	![Screenshot showing the provisioning status toggled on.](common/provisioning-toggle-on.png)
 
-1. Define the users and/or groups that you would like to provision to Zenya by choosing the desired values in **Scope** in the **Settings** section. You'll need a P1 or P2 license in order to allow provisioning assigned users and groups. 
+1. Define the users and/or groups that you would like to provision to Zenya by choosing the desired values in **Scope** in the **Settings** section. You need a P1 or P2 license in order to allow provisioning assigned users and groups. 
 
 	![Screenshot showing where to select the provisioning scope.](common/provisioning-scope.png)
 
@@ -160,15 +160,15 @@ This operation starts the initial synchronization of all users and/or groups def
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
 1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
+2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
+3. If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## Change log
 
 * 06/17/2020 - Removed support for enterprise extension attribute **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager**.
 * 10/11/2023 - Added support for core attribute **title** and added support for enterprise extension attributes **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department** and **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager**.
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
