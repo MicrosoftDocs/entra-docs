@@ -214,64 +214,71 @@ download_blob()
 package main
 
 import (
-	"context"
-	"fmt"
-	"os"
+    "context"
+    "fmt"
+    "io"
+    "os"
+    "strings"
 
-	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-	"github.com/Azure/azure-sdk-for-go/sdk/storage/azblob"
+    "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+    "github.com/Azure/azure-sdk-for-go/sdk/storage/azblob"
 )
 
 func main() {
-	// Specify the Client ID if using user-assigned managed identities
-	clientID := os.Getenv("Managed_Identity_Client_ID")
-	cred, err := azidentity.NewDefaultAzureCredential(&azidentity.DefaultAzureCredentialOptions{
-		ManagedIdentityClientID: clientID,
-	})
-	if err != nil {
-		fmt.Printf("failed to obtain a credential: %v\n", err)
-		return
-	}
+    // Specify the Client ID if using user-assigned managed identities
+    clientID := os.Getenv("Managed_Identity_Client_ID")
+    if clientID == "" {
+        fmt.Println("Managed_Identity_Client_ID environment variable is not set")
+        return
+    }
 
-	accountURL := "<URI of Storage account>"
-	containerName := "<name of blob>"
-	blobName := "<name of file>"
+    cred, err := azidentity.NewDefaultAzureCredential(&azidentity.DefaultAzureCredentialOptions{
+        ManagedIdentityClientID: clientID,
+    })
+    if err != nil {
+        fmt.Printf("failed to obtain a credential: %v\n", err)
+        return
+    }
 
-	serviceClient, err := azblob.NewServiceClient(accountURL, cred, nil)
-	if err != nil {
-		fmt.Printf("failed to create service client: %v\n", err)
-		return
-	}
+    accountURL := "<URI of Storage account>"
+    containerName := "<name of blob>"
+    blobName := "<name of file>"
 
-	containerClient := serviceClient.NewContainerClient(containerName)
-	blobClient := containerClient.NewBlobClient(blobName)
+    serviceClient, err := azblob.NewServiceClient(accountURL, cred, nil)
+    if err != nil {
+        fmt.Printf("failed to create service client: %v\n", err)
+        return
+    }
 
-	// Check if the blob exists
-	_, err = blobClient.GetProperties(context.Background(), nil)
-	if err != nil {
-		fmt.Printf("failed to get blob properties: %v\n", err)
-		return
-	}
+    containerClient := serviceClient.NewContainerClient(containerName)
+    blobClient := containerClient.NewBlobClient(blobName)
 
-	// Download the blob
-	downloadResponse, err := blobClient.Download(context.Background(), nil)
-	if err != nil {
-		fmt.Printf("failed to download blob: %v\n", err)
-		return
-	}
+    // Check if the blob exists
+    _, err = blobClient.GetProperties(context.Background(), nil)
+    if err != nil {
+        fmt.Printf("failed to get blob properties: %v\n", err)
+        return
+    }
 
-	// Read the blob content
-	blobData := downloadResponse.Body(nil)
-	defer blobData.Close()
+    // Download the blob
+    downloadResponse, err := blobClient.Download(context.Background(), nil)
+    if err != nil {
+        fmt.Printf("failed to download blob: %v\n", err)
+        return
+    }
 
-	blobContents := new(strings.Builder)
-	_, err = io.Copy(blobContents, blobData)
-	if err != nil {
-		fmt.Printf("failed to read blob data: %v\n", err)
-		return
-	}
+    // Read the blob content
+    blobData := downloadResponse.Body(nil)
+    defer blobData.Close()
 
-	fmt.Println("Downloaded blob content:", blobContents.String())
+    blobContents := new(strings.Builder)
+    _, err = io.Copy(blobContents, blobData)
+    if err != nil {
+        fmt.Printf("failed to read blob data: %v\n", err)
+        return
+    }
+
+    fmt.Println("Downloaded blob content:", blobContents.String())
 }
 
 ```
@@ -402,6 +409,11 @@ import (
 func main() {
     // Specify the Client ID if using user-assigned managed identities
     clientID := os.Getenv("Managed_Identity_Client_ID")
+    if clientID == "" {
+        fmt.Println("Managed_Identity_Client_ID environment variable is not set")
+        return
+    }
+
     credential, err := azidentity.NewDefaultAzureCredential(&azidentity.DefaultAzureCredentialOptions{
         ManagedIdentityClientID: clientID,
     })
@@ -596,6 +608,11 @@ import (
 func main() {
     // Specify the Client ID if using user-assigned managed identities
     clientID := os.Getenv("Managed_Identity_Client_ID")
+    if clientID == "" {
+        fmt.Println("Managed_Identity_Client_ID environment variable is not set")
+        return
+    }
+
     credential, err := azidentity.NewDefaultAzureCredential(&azidentity.DefaultAzureCredentialOptions{
         ManagedIdentityClientID: clientID,
     })
