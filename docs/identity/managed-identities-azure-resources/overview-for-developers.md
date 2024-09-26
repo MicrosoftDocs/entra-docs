@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: overview
 
-ms.date: 06/15/2022
+ms.date: 09/26/2024
 ms.author: barclayn
 
 
@@ -51,13 +51,22 @@ Create a user assigned managed identity using your preferred options:
 
 After you create a user assigned managed identity, take note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You use `principalId` while adding permissions, and `clientId` in your application's code.
 
+## Configure App service with a user-assigned managed identity
+
+Before you can use the managed identity in your code, we have to assign it to a resource. You can configure an App service to use a user-assigned managed identity. The process requires that you [specify the managed identity's resource identifier to your app config](/azure/app-service/overview-managed-identity?tabs=portal%2Chttp#add-a-user-assigned-identity).
+
+### Adding permissions to the identity
+
+Once that you have configured your App service to use a user assigned managed identity and you have configured the app service to use that identity to access other Azure resources you need to give the identity the necessary permissions. In this scenario, we are using this identity to interact with Azure Storage, so you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview).
+
+> [!IMPORTANT]
+> You'll need a role such as "User Access Administrator" or "Owner" for the target resource to add Role assignments. Ensure you're granting the least privilege required for the application to run.
+
+
 ## Using the managed identity in your code
 
-Before you can use the managed identity in your code, we have to assign it to a resource. 
 
-You can configure an App service to use a user-assigned managed identity. The process requires that you [specify the managed identity's resource identifier to your app config](/azure/app-service/overview-managed-identity?tabs=portal%2Chttp#add-a-user-assigned-identity).
-
-Your App Service now has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain a token that your code can use to interact with Azure resources, instead of storing credentials in your code. 
+After you complete the steps outlined above, your App Service has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain a token that your code can use to interact with Azure resources, instead of storing credentials in your code. 
 
 We recommended that you use the Azure Identity library for your preferred programming language. The supported languages include:
 
