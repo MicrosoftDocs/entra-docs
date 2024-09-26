@@ -136,7 +136,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -275,7 +275,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -457,7 +457,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -575,7 +575,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 #### Redirect response 
 
-If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -693,7 +693,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -881,7 +881,7 @@ To request for security tokens, your app interacts with three endpoints, `/initi
 | `/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
 |   `/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to request for the user's [default MFA method](#determine-the-default-mfa-method).|
 |  `/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge.|
-| `/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered MFA methods if the `/challenge` endpoint doesn't return a default MFA method or the user requests to complete the MFA challenge using a different MFA method from the default MFA method. Currently, since native authentication supports email one-time passcode as the only MFA method, this endpoint returns only email as the challenge channel. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-methods-optional)|
+| `/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered MFA methods if the `/challenge` endpoint doesn't return a default MFA method or the user requests to complete the MFA challenge using a different MFA method from the default MFA method. Currently, since native authentication supports email one-time passcode as the only MFA method, this endpoint returns only email as the challenge channel. Learn [how to interact with the introspect endpoint](#request -user-registered-mfa-methods-optional)|
 
 ### Sign-in challenge types
 
@@ -954,7 +954,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1042,7 +1042,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/initiate` endpoint, or call to the `/token` endpoint when the user needs to complete MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-| `id` | No | This is the string identifier of the MFA method that's returned from the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-methods-optional).|
+| `id` | No | This is the string identifier of the MFA method that's returned from the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#request -user-registered-mfa-methods-optional).|
 
 #### Success response
 
@@ -1136,7 +1136,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1199,7 +1199,7 @@ If the request to the `/challenge` endpoint is to complete an MFA challenge, but
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
-|`introspect_required`| The user doesn't have a default MFA method. In this case, the client app needs to call the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#list-user-registered-mfa-methods-optional).|
+|`introspect_required`| The user doesn't have a default MFA method. In this case, the client app needs to call the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#request-user-registered-mfa-methods-optional).|
 
 ### Step 3: Request for security tokens
 
@@ -1226,7 +1226,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 |`grant_type`| Yes |The value must be *password* for email with password authentication method and *oob* for email one-time passcode authentication method. |
 |`scope`| Yes | A space-separated list of scopes. All the scopes must be from a single resource, along with OpenID Connect (OIDC) scopes, such as *profile*, *openid, and *email*. The app needs to include *openid* scope for Microsoft Entra to issue an ID token. The app needs to include *offline_access* scope for Microsoft Entra to issue a refresh token. Learn more about [Permissions and consent in the Microsoft identity platform](permissions-consent-overview.md). |
 |   `password`    | No | The password value that the app collects from the customer user. Replace `{secure_password}` with the password value that the app collects from the customer user. This parameter is **required** if the authentication method is email with password.|
-|`oob`| No |The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode that the customer user received in their email. This parameter is **required** if the authentication method is email one-time passcode or the app is submitting the email one-time passcode to complete an MFA challenge . To **resend a one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
+|`oob`| No |The one-time passcode that the customer user received in their email. The value for this parameter is the one-time passcode that the customer user receives in their email address. This parameter is **required** if the authentication method is email one-time passcode or the app is submitting the email one-time passcode to complete an MFA challenge. To **resend a one-time passcode**, the app needs to make a request to the `/challenge` endpoint again. |
 
 
 #### Successful response
@@ -1307,7 +1307,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 | `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `/challenge` endpoint to request for the user's [default MFA method](#determine-the-default-mfa-method). |
 | `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA method registered. This scenario can happen if the tenant administrator changes MFA configuration, or if the user moves to a new location rendering the initially registered MFA method invalid.|
 
-### List user registered MFA methods (optional)
+### Request for user registered MFA methods (optional)
 
 Use the `/introspect` endpoint to request user registered MFA method. Your app calls this endpoint if the `/challenge` endpoint doesn't return a [default MFA method](#determine-the-default-mfa-method) or the user requests to complete the MFA challenge using a different MFA method from the default verification method. 
 
@@ -1367,7 +1367,9 @@ The MFA method object has the following properties:
 
 #### Redirect response
 
-If an app can't support a required MFA method, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the MFA method that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+
+
 
 ```http
 HTTP/1.1 200 OK
@@ -1505,7 +1507,7 @@ Content-Type: application/json
 
 #### Redirect response 
 
-If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1625,7 +1627,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If an app can't support a required authentication method by Microsoft Entra, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
 
 ```http
 HTTP/1.1 200 OK
