@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: reference
-ms.date: 30/09/2024
+ms.date:  09/30/2024
 
 #Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
