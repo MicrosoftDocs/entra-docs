@@ -32,9 +32,6 @@ Some resources don't support Microsoft Entra authentication, or their client lib
 
 ## Creating a managed identity
 
-There are [two types of managed identities](overview.md#managed-identity-types): system-assigned and user-assigned. System-assigned identities are directly linked to a single Azure resource. When the Azure resource is deleted, so is the identity. A user-assigned managed identity can be associated with multiple Azure resources, and its lifecycle is independent of those resources. 
-
-This article explains how to create and configure a user-assigned managed identity, which is [recommended for most scenarios](managed-identity-best-practice-recommendations.md). If the source resource you're using doesn't support user-assigned managed identities, then you should refer to that resource provider's documentation to learn how to configure it to have a system-assigned managed identity.
 
 ### Creating a user-assigned managed identity
 
@@ -253,56 +250,8 @@ func main() {
 
 ```
 
-#### [C++](#tab/cpp)
-
-```cpp
-#include <azure/identity/default_azure_credential.hpp>
-#include <azure/storage/blobs.hpp>
-#include <iostream>
-#include <cstdlib>
-#include <sstream>
-
-int main() {
-    // Specify the Client ID if using user-assigned managed identities
-    const char* clientID = std::getenv("Managed_Identity_Client_ID");
-    Azure::Identity::DefaultAzureCredentialOptions options;
-    options.ManagedIdentityClientId = clientID;
-    auto credential = std::make_shared<Azure::Identity::DefaultAzureCredential>(options);
-
-    std::string accountUrl = "<URI of Storage account>";
-    std::string containerName = "<name of blob>";
-    std::string blobName = "<name of file>";
-
-    Azure::Storage::Blobs::BlobServiceClient blobServiceClient(accountUrl, credential);
-    auto containerClient = blobServiceClient.GetBlobContainerClient(containerName);
-    auto blobClient = containerClient.GetBlobClient(blobName);
-
-    // Check if the blob exists
-    try {
-        auto properties = blobClient.GetProperties();
-        std::cout << "Blob exists, downloading..." << std::endl;
-
-        // Download the blob
-        auto downloadResponse = blobClient.Download();
-        auto& downloadedBlob = downloadResponse.Value.BodyStream;
-
-        // Read the blob content
-        std::ostringstream blobContents;
-        blobContents << downloadedBlob->rdbuf();
-        std::cout << "Downloaded blob content: " << blobContents.str() << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Failed to get blob properties or download blob: " << e.what() << std::endl;
-    }
-
-    return 0;
-}
-
-
-```
-
-
-
 ---
+
 ### Accessing a secret stored in Azure Key Vault
 
 #### [C#](#tab/csharp)
@@ -452,38 +401,6 @@ func main() {
 }
 
 ```
-
-#### [C++](#tab/cpp)
-
-```cpp
-
-#include <iostream>
-#include <azure/identity/default_azure_credential.hpp>
-#include <azure/keyvault/secrets/secret_client.hpp>
-
-int main() {
-    // Specify the Client ID if using user-assigned managed identities
-    const char* clientID = std::getenv("Managed_Identity_Client_ID");
-    Azure::Identity::DefaultAzureCredentialOptions options;
-    options.ManagedIdentityClientId = clientID;
-    auto credential = std::make_shared<Azure::Identity::DefaultAzureCredential>(options);
-
-    auto client = Azure::Security::KeyVault::Secrets::SecretClient(
-        Azure::Core::Url("https://<your-key-vault-name>.vault.azure.net/"), credential);
-
-    try {
-        auto secret = client.GetSecret("<your-secret-name>").Value;
-        std::cout << "Secret Value: " << secret.Value << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Error retrieving secret: " << e.what() << std::endl;
-    }
-
-    return 0;
-}
-
-
-```
-
 
 ---
 
@@ -701,72 +618,6 @@ func main() {
 }
 ```
 
-#### [C++](#tab/C++)
-
-```cpp
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include <azure/identity/default_azure_credential.hpp>
-#include <azure/core/credentials/azure_credential.hpp>
-#include <sql.h>
-#include <sqlext.h>
-
-int main() {
-    // Specify the Client ID if using user-assigned managed identities
-    const char* clientID = std::getenv("Managed_Identity_Client_ID");
-    Azure::Identity::DefaultAzureCredentialOptions options;
-    options.ManagedIdentityClientId = clientID;
-    auto credential = std::make_shared<Azure::Identity::DefaultAzureCredential>(options);
-
-    // Get the access token
-    auto token = credential->GetToken(
-        Azure::Core::Credentials::TokenRequestContext({"https://database.windows.net//.default"})).Value;
-
-    // Set up the connection string
-    std::string connectionString = "Driver={ODBC Driver 18 for SQL Server};Server=<your-server-name>;Database=<your-database-name>;";
-
-    // Initialize ODBC environment and connection handles
-    SQLHENV hEnv;
-    SQLHDBC hDbc;
-    SQLHSTMT hStmt;
-    SQLRETURN ret;
-
-    SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &hEnv);
-    SQLSetEnvAttr(hEnv, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);
-    SQLAllocHandle(SQL_HANDLE_DBC, hEnv, &hDbc);
-
-    // Set the access token
-    SQLSetConnectAttr(hDbc, SQL_COPT_SS_ACCESS_TOKEN, (SQLPOINTER)token.Token.c_str(), SQL_NTS);
-
-    // Connect to the database
-    ret = SQLDriverConnect(hDbc, NULL, (SQLCHAR*)connectionString.c_str(), SQL_NTS, NULL, 0, NULL, SQL_DRIVER_NOPROMPT);
-    if (SQL_SUCCEEDED(ret)) {
-        SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &hStmt);
-
-        // Execute the query
-        ret = SQLExecDirect(hStmt, (SQLCHAR*)"SELECT TOP 1 ColumnName FROM TableName", SQL_NTS);
-        if (SQL_SUCCEEDED(ret)) {
-            SQLCHAR columnValue;
-            while (SQLFetch(hStmt) == SQL_SUCCESS) {
-                SQLGetData(hStmt, 1, SQL_C_CHAR, columnValue, sizeof(columnValue), NULL);
-                std::cout << columnValue << std::endl;
-            }
-        }
-
-        // Clean up
-        SQLFreeHandle(SQL_HANDLE_STMT, hStmt);
-        SQLDisconnect(hDbc);
-    } else {
-        std::cerr << "Connection failed" << std::endl;
-    }
-
-    SQLFreeHandle(SQL_HANDLE_DBC, hDbc);
-    SQLFreeHandle(SQL_HANDLE_ENV, hEnv);
-
-    return 0;
-}
-```
 
 ---
 
