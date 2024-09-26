@@ -1199,7 +1199,7 @@ If the request to the `/challenge` endpoint is to complete an MFA challenge, but
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
-|`introspect_required`| The user doesn't have a default MFA method. In this case, the client app needs to call the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#request-user-registered-mfa-methods-optional).|
+|`introspect_required`| The user doesn't have a default MFA method. In this case, the client app needs to call the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#request-for-user-registered-mfa-methods-optional).|
 
 ### Step 3: Request for security tokens
 
