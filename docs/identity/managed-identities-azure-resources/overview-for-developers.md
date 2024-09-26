@@ -608,7 +608,7 @@ int main() {
 
 ### Accessing Azure SQL Database
 
-#### [.NET](#tab/dotnet)
+#### [C#](#tab/csharp)
 
 ```csharp
 using Azure.Identity;
