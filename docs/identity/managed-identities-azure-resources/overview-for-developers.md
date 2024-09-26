@@ -143,7 +143,7 @@ if (blobClient.exists()) {
 }
 ```    
 
-#### [JavaScript](#tab/javascript)
+#### [Node.js](#tab/nodejs)
 
 ```javascript
 const { DefaultAzureCredential } = require("@azure/identity");
