@@ -53,14 +53,14 @@ The scenario outlined in this tutorial assumes that you already have the followi
 ## Step 2: Configure Tableau Cloud to support provisioning with Microsoft Entra ID
 
 Use the following steps to enable SCIM support with Microsoft Entra ID:
-1. The SCIM functionality requires that you configure your site to support SAML single sign-on. If you have not done this yet, complete the following sections in [Configure SAML with Microsoft Entra ID](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm):
+1. The SCIM functionality requires that you configure your site to support SAML single sign-on. If you haven't not done this yet, complete the following sections in [Configure SAML with Microsoft Entra ID](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm):
  	* Step 1: [Open the Tableau Cloud SAML Settings](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm#open-the-tableau-online-saml-settings).
  	* Step 2: [Add Tableau Cloud to your Microsoft Entra applications](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm#add-tableau-online-to-your-azure-ad-applications).
 	 
   	> [!NOTE]
   	> If you don’t set up SAML single sign-on, your user will be unable to sign into Tableau Cloud after they have been provisioned unless you manually change the user’s authentication method from SAML to Tableau or Tableau MFA in Tableau Cloud. 
 
-1. In Tableau Cloud, navigate to **Settings > Authentication** page, then under **Automatic Provisioning and Group Synchronization (SCIM)**, select the **Enable SCIM** check box. This populates the **Base URL** and **Secret** boxes with values you will use in the SCIM configuration of your IdP.
+1. In Tableau Cloud, navigate to **Settings > Authentication** page, then under **Automatic Provisioning and Group Synchronization (SCIM)**, select the **Enable SCIM** check box. This populates the **Base URL** and **Secret** boxes with values you'll use in the SCIM configuration of your IdP.
   	> [!NOTE] 
   	> The secret token is displayed only immediately after it is generated. If you lose it before you can apply it to Microsoft Entra ID, you can select **Generate New Secret**. In addition, the secret token is tied to the Tableau Cloud user account of the site administrator who enables SCIM support. If that user’s site role changes or the user is removed from the site, the secret token becomes invalid, and another site administrator must generate a new secret token and apply it to Microsoft Entra ID.
 
@@ -80,10 +80,10 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 
 * Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
+* If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 ### Recommendations
-Tableau Cloud will only store the highest privileged role that is assigned to a user. In other words, if a user is assigned to two groups, the user’s role will reflect the highest privileged role.
+Tableau Cloud will only store the highest privileged role that is assigned to a user. In other words, if a user is assigned to two groups,  the user’s role reflects the highest privileged role.
 
 
 To keep track of role assignments, you can create two purpose-specific groups for role assignments. For example, you can create groups such as Tableau – Creator, and Tableau – Explorer, and so on. Assignment would then look like:
@@ -91,13 +91,13 @@ To keep track of role assignments, you can create two purpose-specific groups fo
 * Tableau – Explorer: Explorer
 * And so on.
 
-Once provisioning is set up, you will want to edit role changes directly in Microsoft Entra ID. Otherwise, you may end up with role inconsistencies between Tableau Cloud and Microsoft Entra ID.
+Once provisioning is set up, you want to edit role changes directly in Microsoft Entra ID. Otherwise, you may end up with role inconsistencies between Tableau Cloud and Microsoft Entra ID.
 
 ### Valid Tableau site role values
 On the **Select a Role** page in your Azure portal, the Tableau Site Role values that are valid include the following: **Creator, SiteAdministratorCreator, Explorer, SiteAdministratorExplorer, ExplorerCanPublish, Viewer, or Unlicensed**.
 
 
-If you select a role that is not in the above list, such as a legacy (pre-v2018.1) role, you will experience an error.
+If you select a role that isn't in the above list, such as a legacy (pre-v2018.1) role, you experience an error.
 
 
 ## Step 5: Configure automatic user provisioning to Tableau Cloud 
@@ -138,7 +138,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 
 	> [!NOTE]
-	> You will have 2 options for your Authentication Method: **Bearer Authentication** and **Basic Authentication**. Make sure that you select Bearer Authentication. Basic authentication will not work for the SCIM 2.0 endpoint.
+	> You'll have 2 options for your Authentication Method: **Bearer Authentication** and **Basic Authentication**. Make sure that you select Bearer Authentication. Basic authentication will not work for the SCIM 2.0 endpoint.
 
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
@@ -150,7 +150,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Tableau Cloud**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Tableau Cloud in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Tableau Cloud for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Tableau Cloud API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Tableau Cloud in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Tableau Cloud for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Tableau Cloud API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Tableau Cloud|
    |---|---|---|---|
@@ -195,7 +195,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 ### Update a Tableau Cloud application to use the Tableau Cloud SCIM 2.0 endpoint
 
-In June 2022, Tableau released a SCIM 2.0 connector. Completing the steps below will update applications configured to use the Tableau API endpoint to the use the SCIM 2.0 endpoint. These steps will remove any customizations previously made to the Tableau Cloud application, including:
+In June 2022, Tableau released a SCIM 2.0 connector. Completing the steps below will update applications configured to use the Tableau API endpoint to the use the SCIM 2.0 endpoint. These steps remove any customizations previously made to the Tableau Cloud application, including:
 
 * Authentication details (credentials used for provisioning, NOT the credentials used for SSO)
 * Scoping filters
@@ -215,7 +215,7 @@ In June 2022, Tableau released a SCIM 2.0 connector. Completing the steps below 
 
 	![Screenshot of Microsoft Graph explorer sign in page.](media/tableau-online-provisioning-tutorial/tableau-graph-explorer-signin.png)
 
-1. Check to make sure the account being used has the correct permissions. The permission **Directory.ReadWrite.All** is required to make this change.
+1. Check to make sure the account being used to the correct permissions. The permission **Directory.ReadWrite.All** is required to make this change.
 
 	![Screenshot of Microsoft Graph settings option.](media/tableau-online-provisioning-tutorial/tableau-graph-settings.png)
 
@@ -251,7 +251,7 @@ Once you've configured provisioning, use the following resources to monitor your
 
 * Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
 * Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
-* If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
+* If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## Change log
 * 09/30/2020 - Added support for attribute "authSetting" for Users.
