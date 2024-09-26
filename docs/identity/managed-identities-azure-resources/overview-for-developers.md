@@ -45,9 +45,9 @@ Create a user assigned managed identity using your preferred options:
 
 - [Azure portal](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp)
 - [CLI](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli)
-- [PowerShell](how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-powershell)
-- [Resource manager](how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-arm)
-- [REST](how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-rest)
+- [PowerShell](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell)
+- [Resource manager](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm)
+- [REST](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest)
 
 After you create a user assigned managed identity, take note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You use `principalId` while adding permissions, and `clientId` in your application's code.
 
