@@ -41,7 +41,7 @@ We recommend that you use a user-assigned managed identity, [for most scenarios]
 > [!IMPORTANT]
 > The account used to create managed identities needs a role such as "Managed Identity Contributor" to create a new user-assigned managed identity.
 
-Create a user assigned managed identity using your preferred option:
+Create a user-assigned managed identity using your preferred option:
 
 - [Azure portal](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp)
 - [CLI](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli)
