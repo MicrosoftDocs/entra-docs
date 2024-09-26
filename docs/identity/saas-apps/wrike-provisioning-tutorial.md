@@ -53,8 +53,6 @@ Before you configure Wrike for automatic user provisioning with Microsoft Entra 
 
 2.  Go to **Microsoft Entra ID** and select it.
 
-	![Microsoft Entra ID](media/Wrike-provisioning-tutorial/Capture01.png)
-
 3.  Select SCIM. Copy the **Base URL**.
 
 	![Base URL](media/Wrike-provisioning-tutorial/Wrike-tenanturl.png)
@@ -119,8 +117,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Select **Save**.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Wrike**.
-
-	![Wrike user mappings](media/Wrike-provisioning-tutorial/Wrike-user-mappings.png)
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Wrike in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Wrike for update operations. Select **Save** to commit any changes.
 

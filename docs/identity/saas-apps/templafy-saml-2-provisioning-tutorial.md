@@ -116,8 +116,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Templafy SAML2**.
 
-	![Templafy SAML2 User Mappings](media/templafy-saml-2-provisioning-tutorial/user-mapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Templafy SAML2 in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Templafy SAML2 for update operations. Select the **Save** button to commit any changes.
 
 
@@ -146,8 +144,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
       > Schema Discovery feature is enabled for this application.
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Templafy**.
-
-	![Templafy SAML2 Group Mappings](media/templafy-saml-2-provisioning-tutorial/group-mapping.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Templafy SAML2 in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the groups in Templafy SAML2 for update operations. Select the **Save** button to commit any changes.
 

@@ -92,7 +92,7 @@ For more information (in dutch) also read: [`Implementatie SCIM koppeling`](http
 
 1. In the applications list, select **Zenya**.
 
-	![Screenshot showing Zenya link in the Applications list.](media/zenya-provisioning-tutorial/browse-application.png)
+	![The Zero link in the Applications list](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 

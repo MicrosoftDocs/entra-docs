@@ -139,8 +139,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to TheOrgWiki**.
 
-	![TheOrgWiki User Mappings](media/theorgwiki-provisioning-tutorial/usermapping.png)
-
 10. Review the user attributes that are synchronized from Microsoft Entra ID to TheOrgWiki in the **Attribute- Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in TheOrgWiki for update operations. Select the **Save** button to commit any changes.
 
 	![TheOrgWiki User Attributes](media/theorgwiki-provisioning-tutorial/userattribute.png).

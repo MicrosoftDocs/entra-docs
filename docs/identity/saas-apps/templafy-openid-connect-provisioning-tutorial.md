@@ -116,8 +116,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Templafy OpenID Connect**.
 
-	![Templafy OpenID Connect User Mappings](media/templafy-openid-connect-provisioning-tutorial/user-mapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Templafy OpenID Connect in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Templafy OpenID Connect for update operations. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
@@ -145,8 +143,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
       > Schema Discovery feature is enabled for this application.
       
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Templafy**.
-
-	![Templafy OpenID Connect Group Mappings](media/templafy-openid-connect-provisioning-tutorial/group-mapping.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Templafy OpenID Connect in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Templafy OpenID Connect for update operations. Select the **Save** button to commit any changes.
 
