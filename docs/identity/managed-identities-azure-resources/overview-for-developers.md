@@ -46,7 +46,7 @@ Create a user assigned managed identity using your preferred option:
 - [Azure portal](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp)
 - [CLI](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli)
 - [PowerShell](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell)
-- [Resource manager](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm)
+- [Resource Manager](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm)
 - [REST](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest)
 
 After you create a user assigned managed identity, take note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You use `principalId` while adding permissions, and `clientId` in your application's code.
@@ -57,7 +57,7 @@ Before you can use the managed identity in your code, we have to assign it to th
 
 ### Adding permissions to the identity
 
-Once that you have configured your App service to use a user assigned managed identity you need to grant the necessary permissions to the identity. In this scenario, we are using this identity to interact with Azure Storage, so you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview) to grant the user assigned managed identity the permissions to the resource we will access.
+Once that you have configured your App service to use a user assigned managed identity you need to grant the necessary permissions to the identity. In this scenario, we are using this identity to interact with Azure Storage, so you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview) to grant the user assigned managed identity permissions to the resource.
 
 > [!IMPORTANT]
 > You'll need a role such as "User Access Administrator" or "Owner" for the target resource to add Role assignments. Ensure you're granting the least privilege required for the application to run.
