@@ -334,7 +334,7 @@ SecretClient secretClient = new SecretClientBuilder()
 KeyVaultSecret retrievedSecret = secretClient.getSecret(secretName);
 ```
 
-#### [JavaScript](#tab/javascript)
+#### [Node.js](#tab/nodejs)
 
 ```javascript
 const { DefaultAzureCredential } = require("@azure/identity");
@@ -476,7 +476,7 @@ spring.datasource.url=jdbc:sqlserver://$AZ_DATABASE_NAME.database.windows.net:14
 
 Read more about how to [use a managed identity to connect Azure SQL Database to an Azure Spring Apps app](/azure/spring-apps/connect-managed-identity-to-azure-sql).
 
-#### [JavaScript](#tab/javascript)
+#### [Node.js](#tab/nodejs)
 
 ```javascript
 
