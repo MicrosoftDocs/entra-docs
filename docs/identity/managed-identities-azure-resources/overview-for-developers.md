@@ -181,7 +181,6 @@ async function streamToString(readableStream) {
 }
 
 downloadBlob().catch(console.error);
-
 ```
 
 #### [Python](#tab/python)
