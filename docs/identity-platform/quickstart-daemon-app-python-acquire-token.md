@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-python, scenarios:getting-started, "languages:Python", mode-other
-ms.date: 03/28/2023
+ms.date: 09/24/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -25,7 +25,6 @@ To run this sample, you need:
 
 - [Python 3+](https://www.python.org/downloads/release/python-364/)
 - [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)
-
 
 ## Register and download your quickstart app
 
@@ -68,16 +67,6 @@ To register your application and add the app's registration information to your 
 
 > [!TIP]
 > To find the values of **Application (client) ID**, **Directory (tenant) ID**, go to the app's **Overview** page in the Microsoft Entra admin center. To generate a new key, go to **Certificates & secrets** page.
-
-
-#### Step 4: Admin consent
-
-If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires Admin consent: a Global Administrator of your directory must give consent to your application. Select one of the options below depending on your role:
-
-##### Global tenant administrator
-
-If you're a global tenant administrator, go to **API Permissions** page in **App registrations** in the Microsoft Entra admin center and select **Grant admin consent for {Tenant Name}** (Where {Tenant Name} is the name of your directory).
-
 
 ##### Standard user
 

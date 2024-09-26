@@ -57,7 +57,7 @@ Google guest users can also use application endpoints that include your tenant i
   * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
   * `https://portal.azure.com/<your tenant ID>`
 
-You can also give Google guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>`.
+You can also give Google guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
 
 ## Deprecation of web-view sign-in support
 

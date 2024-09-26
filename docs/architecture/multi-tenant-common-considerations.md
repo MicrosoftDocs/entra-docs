@@ -126,7 +126,7 @@ Where allowed, you can override this behavior with [Cross-Tenant Access Settings
 
 Additionally, while you can use the following Conditional Access conditions, be aware of the possible ramifications.
 
-- **Sign-in risk and user risk.** User behavior in their home tenant determines in part the sign-in risk and user risk. The home tenant stores the data and risk score. If resource tenant policies block an external user, a resource tenant admin might not be able to enable access. [Identity Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md) explains how Identity Protection detects compromised credentials for Microsoft Entra users.
+- **Sign-in risk and user risk.** User behavior in their home tenant determines in part the sign-in risk and user risk. The home tenant stores the data and risk score. If resource tenant policies block an external user, a resource tenant admin might not be able to enable access. [Microsoft Entra ID Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md) explains how Microsoft Entra ID Protection detects compromised credentials for Microsoft Entra users.
 - **Locations.** The named location definitions in the resource tenant determine the scope of the policy. The scope of the policy doesn't evaluate trusted locations managed in the home tenant. If your organization wants to share trusted locations across tenants, define the locations in each tenant where you define the resources and Conditional Access policies.
 
 <a name='securing-your-multi-tenant-environment'></a>

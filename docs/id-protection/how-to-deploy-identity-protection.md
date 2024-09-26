@@ -23,11 +23,11 @@ This deployment plan extends concepts introduced in the [Conditional Access depl
 ## Prerequisites
 
 * A working Microsoft Entra tenant with Microsoft Entra ID P2, or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Administrators who interact with Identity Protection must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
-   * Read Identity Protection and Conditional Access policies and configurations 
+* Administrators who interact with ID Protection must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
+   * Read ID Protection and Conditional Access policies and configurations 
       * [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
       * [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader)
-   * Manage Identity Protection 
+   * Manage ID Protection 
       * [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator)
       * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
    * Create or modify Conditional Access policies 
@@ -46,7 +46,7 @@ Communication is critical to the success of any new functionality. You should pr
 
 ## Step 1: Review existing reports
 
-It's important to review the [Identity Protection reports](howto-identity-protection-investigate-risk.md) before deploying risk-based Conditional Access policies. This review gives an opportunity to investigate any existing suspicious behavior. You might choose to dismiss the risk or confirm these users as safe if you determine they aren't at risk. 
+It's important to review the [ID Protection reports](howto-identity-protection-investigate-risk.md) before deploying risk-based Conditional Access policies. This review gives an opportunity to investigate any existing suspicious behavior. You might choose to dismiss the risk or confirm these users as safe if you determine they aren't at risk. 
 
 - [Investigate risk detections](howto-identity-protection-investigate-risk.md)
 - [Remediate risks and unblock users](howto-identity-protection-remediate-unblock.md)
@@ -102,7 +102,7 @@ The [ID Protection workbook](~/identity/monitoring-health/workbook-risk-analysis
  
 Microsoft Defender for Cloud Apps provides an investigation framework organizations can use as a starting point. For more information, see the article [How to investigate anomaly detection alerts](/defender-cloud-apps/investigate-anomaly-alerts).
 
-You can also use the Identity Protection APIs to [export risk information](howto-export-risk-data.md) to other tools, so your security team can monitor and alert on risk events. 
+You can also use the ID Protection APIs to [export risk information](howto-export-risk-data.md) to other tools, so your security team can monitor and alert on risk events. 
 
 During testing, you might want to [simulate some threats](howto-identity-protection-simulate-risk.md) to test your investigation processes.
 

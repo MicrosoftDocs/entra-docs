@@ -94,7 +94,7 @@ Cross-cloud Microsoft Entra guest users can also use application endpoints that 
   * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
   * `https://contoso.sharepoint.com/sites/testsite`
 
-You can also give cross-cloud Microsoft Entra guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>`.
+You can also give cross-cloud Microsoft Entra guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
 
 <a name='supported-scenarios-with-cross-cloud-azure-ad-guest-users'></a>
 

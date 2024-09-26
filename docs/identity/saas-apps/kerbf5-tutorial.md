@@ -204,7 +204,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the **Add Assignment** dialog, click the **Assign** button.
 1. Click on **Conditional Access** .
 1. Click on **New Policy**.
-1. You can now see your F5 App as a resource for Conditional Access policy and apply any Conditional Access including Multifactor Auth, Device based access control or Identity Protection Policy.
+1. You can now see your F5 App as a resource for Conditional Access policy and apply any Conditional Access including multifactor authentication, device based access, or Microsoft Entra ID Protection risk.
 
 ## Configure F5 SSO
 

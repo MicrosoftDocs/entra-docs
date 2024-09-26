@@ -32,7 +32,7 @@ Cloud sync uses the Microsoft Entra provisioning agent.  Use the steps below to 
  7. On the splash screen, select **I agree to the license and conditions**, and then select **Install**.
  8. Once the installation operation completes, the configuration wizard will launch. Select **Next** to start the configuration.
  9. On the **Select Extension** screen, select **HR-driven provisioning (Workday and SuccessFactors) / Microsoft Entra Connect cloud sync** and click **Next**.
- 10. Sign in with your Microsoft Entra Global Administrator account. 
+ 10. Sign in with your Microsoft Entra Hybrid Identity Administrator account. 
  11. On the **Configure Service Account** screen, select a group Managed Service Account (gMSA). This account is used to run the agent service. To continue, select **Next**.
  12. On the **Connect Active Directory** screen, if your domain name appears under **Configured domains**, skip to the next step. Otherwise, type your Active Directory domain name, and select **Add directory**.  
  13. Sign in with your Active Directory domain administrator account. Select **OK**, then select **Next** to continue. 

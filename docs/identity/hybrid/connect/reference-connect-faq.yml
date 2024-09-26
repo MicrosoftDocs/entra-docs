@@ -37,7 +37,7 @@ sections:
           * [Reducing the Active Directory attack surface](/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface)
           
       - question: |
-          Does the installation work if the Microsoft Entra Global Administrator has two-factor authentication (2FA) enabled?
+          Does the installation work if the Microsoft Entra Hybrid Identity Administrator has two-factor authentication (2FA) enabled?
         answer: |
           As of the February 2016 builds, this scenario is supported.
 
@@ -282,7 +282,7 @@ sections:
       - question: |
           I want to upgrade to a newer version but I’m not sure who installed Microsoft Entra Connect, and we don't have the username and password. Do we need this?
         answer: |
-          You don’t need to know the username and password that was initially used to upgrade Microsoft Entra Connect. Use any Microsoft Entra account that has the Global Administrator role.
+          You don’t need to know the username and password that was initially used to upgrade Microsoft Entra Connect. Use any Microsoft Entra account that has the Hybrid Identity Administrator role.
 
       - question: |
           How can I find which version of Microsoft Entra Connect I'm using?  

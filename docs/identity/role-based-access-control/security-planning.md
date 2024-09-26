@@ -153,7 +153,7 @@ Ensure all users have signed into their administrative accounts and changed thei
 
 Microsoft Entra Connect synchronizes a hash of the hash of a user's password from on-premises Active Directory to a cloud-based Microsoft Entra organization. You can use password hash synchronization as a backup if you use federation with Active Directory Federation Services (AD FS). This backup can be useful if your on-premises Active Directory or AD FS servers are temporarily unavailable.
 
-Password hash sync enables users to sign in to a service by using the same password they use to sign in to their on-premises Active Directory instance. Password hash sync allows Identity Protection to detect compromised credentials by comparing password hashes with passwords known to be compromised. For more information, see [Implement password hash synchronization with Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md).
+Password hash sync enables users to sign in to a service by using the same password they use to sign in to their on-premises Active Directory instance. Password hash sync allows Microsoft Entra ID Protection to detect compromised credentials by comparing password hashes with passwords known to be compromised. For more information, see [Implement password hash synchronization with Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md).
 
 <a name='require-multi-factor-authentication-for-users-in-privileged-roles-and-exposed-users'></a>
 
@@ -167,7 +167,9 @@ Turn on:
 
 If you use Windows Hello for Business, the MFA requirement can be met using the Windows Hello sign-in experience. For more information, see [Windows Hello](/windows/uwp/security/microsoft-passport).
 
-#### Configure Identity Protection
+<a name='configure-identity-protection'></a>
+
+#### Microsoft Entra ID Protection
 
 Microsoft Entra ID Protection is an algorithm-based monitoring and reporting tool that detects potential vulnerabilities affecting your organization's identities. You can configure automated responses to those detected suspicious activities, and take appropriate action to resolve them. For more information, see [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md).
 

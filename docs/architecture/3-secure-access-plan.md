@@ -103,7 +103,7 @@ Use the following table to help assess policy to address risk.
 | --- | --- |
 | Device| Require compliant devices |
 | Mobile apps| Require approved apps |
-| Identity protection is High risk| Require user to change password |
+| Microsoft Entra ID Protection user risk is high | Require user to change password |
 | Network location| To access confidential projects, require sign-in from an IP address range |
 
 To use device state as policy input, register, or join the device to your tenant. To trust the device claims from the home tenant, configure cross-tenant access settings. See, [Modify inbound access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-inbound-access-settings).

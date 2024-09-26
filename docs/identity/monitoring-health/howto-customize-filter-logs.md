@@ -130,15 +130,15 @@ Customizing the columns and adjusting the filter helps to look at logs with simi
 
 When reviewing where a sign-in originated, you might need to use the **Client app** filter. Client app has two subcategories: **Modern authentication clients** and **Legacy authentication clients**. Modern authentication clients have two more subcategories: **Browser** and **Mobile apps and desktop clients**. There are several subcategories for Legacy authentication clients, which are defined in the [Legacy authentication client details](#legacy-authentication-client-details) table.
 
-![Screenshot of the client app filter selected, with the categories highlighted.](media/concept-sign-ins/client-app-filter.png)
+![Screenshot of the client app filter selected, with the categories highlighted.](media/howto-customize-filter-logs/client-app-filter.png)
 
 **Browser** sign-ins include all sign-in attempts from web browsers. When you view the details of a sign-in from a browser, the **Basic info** tab shows **Client app: Browser**.
 
-![Screenshot of the sign-in details, with the client app detail highlighted.](media/concept-sign-ins/client-app-browser.png)
+![Screenshot of the sign-in details, with the client app detail highlighted.](media/howto-customize-filter-logs/client-app-browser.png)
 
 On the **Device info** tab, **Browser** shows the details of the web browser. The browser type and version are listed, but in some cases, the name of the browser and version isn't available. You might see something like **Rich Client 4.0.0.0**.
 
-![Screenshot of the sign-in activity details with a Rich Client browser example highlighted.](media/concept-sign-ins/browser-rich-client.png)
+![Screenshot of the sign-in activity details with a Rich Client browser example highlighted.](media/howto-customize-filter-logs/browser-rich-client.png)
 
 #### Legacy authentication client details
 

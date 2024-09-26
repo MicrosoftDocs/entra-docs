@@ -29,7 +29,7 @@ In this article, learn to protect your on-premises and cloud legacy authenticati
   * [Pre-built solutions](#secure-hybrid-access-through-azure-ad-partner-integrations)
   * [Apply Conditional Access policies per application](secure-hybrid-access-integrations.md#apply-conditional-access-policies)
  
-In addition to Application Proxy, you can strengthen your security posture with [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) and [Identity Protection](~/id-protection/overview-identity-protection.md). 
+In addition to Application Proxy, you can strengthen your security posture with [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) and [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md). 
 
 <a name='single-sign-on-and-multi-factor-authentication'></a>
 

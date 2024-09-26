@@ -61,7 +61,7 @@ Following are some common issues folks run into when their users can't sign in t
 
   - Make sure **multifactor authentication** isn't blocking user access. [Check a user’s multifactor authentication status](#check-a-users-multifactor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
-  - Make sure a **Conditional Access policy** or **Identity Protection** policy isn't blocking user access. [Check a specific Conditional Access policy](#problems-with-conditional-access-policies) or [Check a specific application’s Conditional Access policy](#check-a-specific-applications-conditional-access-policy) or [Disable a specific Conditional Access policy](#disable-a-specific-conditional-access-policy)
+  - Make sure a **Conditional Access policy** or **legacy Identity Protection** policy isn't blocking user access. [Check a specific Conditional Access policy](#problems-with-conditional-access-policies) or [Check a specific application’s Conditional Access policy](#check-a-specific-applications-conditional-access-policy) or [Disable a specific Conditional Access policy](#disable-a-specific-conditional-access-policy)
 
   - Make sure that a user’s **authentication contact info** is up to date to allow multifactor authentication or Conditional Access policies to be enforced. [Check a user’s multifactor authentication status](#check-a-users-multifactor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
@@ -171,7 +171,7 @@ To check a user’s multifactor authentication status, follow these steps:
 
 ### Check a user’s authentication contact info
 
-To check a user’s authentication contact info used for multifactor authentication, Conditional Access, Identity Protection, and Password Reset, follow these steps:
+To check a user’s authentication contact info used for multifactor authentication, Conditional Access, and Password Reset, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.

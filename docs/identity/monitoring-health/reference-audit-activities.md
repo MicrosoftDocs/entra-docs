@@ -981,7 +981,9 @@ If you're using Microsoft Entra Internet Access or Microsoft Entra Private Acces
 |Authentication|Add user to feature rollout|
 |Authentication|Remove user from feature rollout|
 
-## Identity protection
+<a name='identity-protection'></a>
+
+#### Microsoft Entra ID Protection
 
 |Audit Category|Activity|
 |---|---|

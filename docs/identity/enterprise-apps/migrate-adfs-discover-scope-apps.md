@@ -92,7 +92,7 @@ For certain apps using legacy authentication protocols, sometimes modernizing th
 - Apps connected to an on-premises identity or federation provider that you don't want to change.
 - Apps developed using on-premises authentication standards that you have no plans to move
 
-Microsoft Entra ID can bring great benefits to these legacy apps. You can enable modern Microsoft Entra security and governance features like [Multi-Factor Authentication](~/identity/authentication/concept-mfa-howitworks.md), [Conditional Access](~/identity/conditional-access/overview.md), [Identity Protection](~/id-protection/index.yml), [Delegated Application Access](./manage-self-service-access.md), and [Access Reviews](~/id-governance/manage-user-access-with-access-reviews.md#create-and-perform-an-access-review) against these apps without touching the app at all!
+Microsoft Entra ID can bring great benefits to these legacy apps. You can enable modern Microsoft Entra security and governance features like [Multi-Factor Authentication](~/identity/authentication/concept-mfa-howitworks.md), [Conditional Access](~/identity/conditional-access/overview.md), [Microsoft Entra ID Protection](~/id-protection/index.yml), [Delegated Application Access](./manage-self-service-access.md), and [Access Reviews](~/id-governance/manage-user-access-with-access-reviews.md#create-and-perform-an-access-review) against these apps without touching the app at all!
 
 - Start by extending these apps into the cloud with [Microsoft Entra application proxy](/entra/identity/app-proxy).
 - Or explore using on of our [Secure Hybrid Access (SHA) partner integrations](secure-hybrid-access.md) that you might have deployed already.

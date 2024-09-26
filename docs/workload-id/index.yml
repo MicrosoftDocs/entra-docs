@@ -86,7 +86,7 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Identity Protection
+          - text: Microsoft Entra ID Protection
             url: ~/id-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
   # Card
   - title: Review service principals and applications privileged directory roles

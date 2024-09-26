@@ -20,7 +20,7 @@ ms.author: billmath
 This article helps you find troubleshooting information about common issues regarding Microsoft Entra pass-through authentication.
 
 > [!IMPORTANT]
-> If you are facing user sign-in issues with Pass-through Authentication, don't disable the feature or uninstall Pass-through Authentication Agents without having a cloud-only Global Administrator account or a Hybrid Identity Administrator account to fall back on. Learn about [adding a cloud-only Global Administrator account](~/fundamentals/add-users.md). Doing this step is critical and ensures that you don't get locked out of your tenant.
+> If you are facing user sign-in issues with Pass-through Authentication, don't disable the feature or uninstall Pass-through Authentication Agents without having a cloud-only a Hybrid Identity Administrator account to fall back on. 
 
 ## General issues
 
@@ -109,7 +109,7 @@ Ensure that the server on which the Authentication Agent has been installed can 
 
 ### Registration of the Authentication Agent failed due to token or account authorization errors
 
-Ensure that you use a cloud-only Global Administrator account or a Hybrid Identity Administrator account for all Microsoft Entra Connect or standalone Authentication Agent installation and registration operations. There is a known issue with MFA-enabled Global Administrator accounts; turn off MFA temporarily (only to complete the operations) as a workaround.
+Ensure that you use a cloud-only Hybrid Identity Administrator account for all Microsoft Entra Connect or standalone Authentication Agent installation and registration operations. There is a known issue with MFA-enabled Hybrid Identity Administrator accounts; turn off MFA temporarily (only to complete the operations) as a workaround.
 
 ### An unexpected error occurred
 
@@ -137,7 +137,7 @@ Ensure that the server on which Microsoft Entra Connect is installed can communi
 
 ### Enabling the feature failed due to token or account authorization errors
 
-Ensure that you use a cloud-only Global Administrator account when enabling the feature. There is a known issue with multi-factor authentication (MFA)-enabled Global Administrator accounts; turn off MFA temporarily (only to complete the operation) as a workaround.
+Ensure that you use a cloud-only Hybrid Identity Administrator account when enabling the feature. There is a known issue with multi-factor authentication (MFA)-enabled Hybrid Identity Administrator accounts; turn off MFA temporarily (only to complete the operation) as a workaround.
 
 ## Collecting Pass-through Authentication Agent logs
 

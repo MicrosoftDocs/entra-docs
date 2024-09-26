@@ -56,7 +56,7 @@ It includes:
 
 - New risky users detected
 - New risky sign-ins detected (in real time)
-- Links to the related reports in Identity Protection
+- Links to the related reports in ID Protection
 
 ![A screenshot showing a sample weekly digest email.](./media/howto-identity-protection-configure-notifications/weekly-digest-email.png)
 

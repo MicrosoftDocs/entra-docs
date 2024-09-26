@@ -1033,8 +1033,18 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/user-token.md",
+      "redirect_url": "/entra/external-id/user-properties",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/global-secure-access/how-to-get-started-with-global-secure-access.md",
       "redirect_url": "/entra/global-secure-access/quickstart-access-admin-center",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-v2-netcore-daemon.md",
+      "redirect_url": "/entra/identity-platform/quickstart-daemon-dotnet-acquire-token",
       "redirect_document_id": false
     }
   ]

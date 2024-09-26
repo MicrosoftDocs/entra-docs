@@ -127,7 +127,7 @@ When planning for configuring company branding, language customizations, and cus
 
 - **Native authentication**. Native authentication enables you to host the user interface in the client application instead of delegating authentication to browsers. Learn more about [native authentication](concept-native-authentication.md) in External ID.
 
-- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant, such as Identity Protection.
+- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant, such as Microsoft Entra ID Protection.
 
 ### How to customize and secure your sign-in
 

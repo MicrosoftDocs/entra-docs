@@ -41,7 +41,7 @@ Email one-time passcode guest users can also use application endpoints that incl
   * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
   * `https://portal.azure.com/<your tenant ID>`
 
-You can also give email one-time passcode guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>`.
+You can also give email one-time passcode guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
 
 > [!NOTE]
 > Email one-time passcode guest users can sign in to Microsoft Teams directly from the common endpoint without choosing **Sign-in options**. During the sign-in process to Microsoft Teams, the guest user can select a link to send a one-time passcode.

@@ -27,7 +27,7 @@ The following table describes Microsoft Entra MFA settings, and subsections cove
 | [Account lockout (MFA Server only)](#account-lockout-mfa-server-only) | Temporarily lock accounts from using Microsoft Entra MFA if there are too many denied authentication attempts in a row. This feature applies only to users who use MFA Server to enter a PIN to authenticate. |
 | [Report suspicious activity](#report-suspicious-activity) | Configure settings that allow users to report fraudulent verification requests. Report suspicious activity replaces these features: Block/unblock users, Fraud alert, and Notifications.|
 | [Fraud alert](#fraud-alert) | This feature will be removed on March 1, 2025. Use [Report suspicious activity](#report-suspicious-activity) to allow users to report fraudulent verification requests.  |
-| [Block/unblock users](#block-and-unblock-users) | This feature will be removed on March 1, 2025. Use [Report suspicious activity](#report-suspicious-activity) to allow users to report fraudulent verification requests. These alerts are integrated with [Identity Protection](~/id-protection/overview-identity-protection.md). You can use [risk based policies](~/id-protection/concept-identity-protection-policies.md#user-risk-based-conditional-access-policy) or create your own workflows by using [risk detection events](/graph/api/resources/riskdetection) to temporarily limit user access and remediate risk. |
+| [Block/unblock users](#block-and-unblock-users) | This feature will be removed on March 1, 2025. Use [Report suspicious activity](#report-suspicious-activity) to allow users to report fraudulent verification requests. These alerts are integrated with [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md). You can use [risk based policies](~/id-protection/concept-identity-protection-policies.md#user-risk-based-conditional-access-policy) or create your own workflows by using [risk detection events](/graph/api/resources/riskdetection) to temporarily limit user access and remediate risk. |
 | [Notifications](#notifications) | This feature will be removed on March 1, 2025. Use [Report suspicious activity](#report-suspicious-activity) to allow users to report fraudulent verification requests. You can use [risk notifications](~/id-protection/howto-identity-protection-configure-notifications.md) or create your own workflows by using [risk detection events](/graph/api/resources/riskdetection) to enable email notifications for user reported fraud events.  |
 | [OATH tokens](concept-authentication-oath-tokens.md) | Used in cloud-based Microsoft Entra MFA environments to manage OATH tokens for users. |
 | [Phone call settings](#phone-call-settings) | Configure settings related to phone calls and greetings for cloud and on-premises environments. |
@@ -59,7 +59,7 @@ To configure account lockout settings, complete these steps:
 
 **Report suspicious activity** replaces these legacy features: Block/unblock users, Fraud alert, and Notifications. 
 
-When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using Microsoft Authenticator or through their phone. These alerts are integrated with [Identity Protection](~/id-protection/overview-identity-protection.md) for more comprehensive coverage and capability. 
+When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using Microsoft Authenticator or through their phone. These alerts are integrated with [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) for more comprehensive coverage and capability. 
 
 Users who report an MFA prompt as suspicious are set to **High User Risk**. Administrators can use risk-based policies to limit access for these users, or enable self-service password reset (SSPR) for users to remediate problems on their own. 
 
@@ -121,7 +121,7 @@ If **Fraud Alert** is enabled with Automatic Blocking, and **Report suspicious a
 
 ## Fraud alert
 
-[Report suspicious activity](#report-suspicious-activity) replaces Fraud alert due to its integration with Identity Protection for risk-driven remediation, better reporting capabilities, and least-privileged administration. The Fraud alert feature will be removed on March 1, 2025. 
+[Report suspicious activity](#report-suspicious-activity) replaces Fraud alert due to its integration with Microsoft Entra ID Protection for risk-driven remediation, better reporting capabilities, and least-privileged administration. The Fraud alert feature will be removed on March 1, 2025. 
 
 The Fraud alert feature lets users report fraudulent attempts to access their resources. When an unknown and suspicious MFA prompt is received, users can report the fraud attempt by using the Microsoft Authenticator app or through their phone. The following fraud alert configuration options are available:
 
@@ -142,7 +142,7 @@ To enable and configure fraud alerts, complete the following steps:
 
 ## Block and unblock users
 
-[Report suspicious activity](#report-suspicious-activity) replaces Fraud alert due to its integration with Identity Protection for risk-driven remediation, better reporting capabilities, and least-privileged administration. The Block/unblock users feature will be removed on March 1, 2025.
+[Report suspicious activity](#report-suspicious-activity) replaces Fraud alert due to its integration with Microsoft Entra ID Protection for risk-driven remediation, better reporting capabilities, and least-privileged administration. The Block/unblock users feature will be removed on March 1, 2025.
 
 If a user's device is lost or stolen, you can block Microsoft Entra MFA attempts for the associated account. Any Microsoft Entra MFA attempts for blocked users are automatically denied. The user isn't challenged with MFA for 90 days from the time they're blocked.
 
@@ -166,7 +166,7 @@ To unblock a user, complete the following steps:
 
 ## Notifications
 
-[Report suspicious activity](#report-suspicious-activity) replaces Notifications due to its integration with Identity Protection for risk-driven remediation, better reporting capabilities, and least-privileged administration. The Notifications feature will be removed on March 1, 2025. 
+[Report suspicious activity](#report-suspicious-activity) replaces Notifications due to its integration with Microsoft Entra ID Protection for risk-driven remediation, better reporting capabilities, and least-privileged administration. The Notifications feature will be removed on March 1, 2025. 
 
 You can configure Microsoft Entra ID to send email notifications when users report fraud alerts. These notifications are typically sent to identity administrators, because the user's account credentials are likely compromised. The following example shows what a fraud alert notification email looks like:
 

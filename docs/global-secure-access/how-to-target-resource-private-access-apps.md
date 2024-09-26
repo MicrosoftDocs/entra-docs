@@ -1,17 +1,16 @@
 ---
 title: How to apply Conditional Access policies to Microsoft Entra Private Access apps
 description: How to apply Conditional Access policies to Microsoft Entra Private Access apps.
-
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 07/07/2023
-
+ms.date: 09/23/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
 ms.reviewer: katabish
 ---
+
 # Apply Conditional Access policies to Private Access apps
 
 Applying Conditional Access policies to your Microsoft Entra Private Access apps is a powerful way to enforce security policies for your internal, private resources. You can apply Conditional Access policies to your Quick Access and Private Access apps from Global Secure Access.
@@ -41,10 +40,7 @@ You can create a Conditional Access policy for your Quick Access or Private Acce
     ![Screenshot of the Enterprise applications details.](media/how-to-target-resource-private-access-apps/enterprise-apps.png)
 
 1. Select **Conditional Access** from the side menu. Any existing Conditional Access policies appear in a list. 
-
-    ![Screenshot of the Conditional Access menu option.](media/how-to-target-resource-private-access-apps/conditional-access-policies.png)
-
-1. Select **Create new policy**. The selected app appears in the **Target resources** details.
+1. Select **New policy**. The selected app appears in the **Target resources** details.
 
     ![Screenshot of the Conditional Access policy with the Quick Access app selected.](media/how-to-target-resource-private-access-apps/quick-access-target-resource.png)
 

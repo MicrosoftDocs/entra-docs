@@ -24,7 +24,7 @@ Conditional Access policies that integrate user and sign-in risk have an impact 
 
 ## Multifactor authentication registration
 
-When an administrator enables the Identity Protection policy requiring Microsoft Entra multifactor authentication registration, it ensures that users can use Microsoft Entra multifactor authentication to self-remediate in the future. Configuring this policy gives your users a 14-day period where they can choose to register and at the end are forced to register.
+When an administrator enables the ID Protection policy requiring Microsoft Entra multifactor authentication registration, it ensures that users can use Microsoft Entra multifactor authentication to self-remediate in the future. Configuring this policy gives your users a 14-day period where they can choose to register and at the end are forced to register.
 
 ### Registration interrupt
 

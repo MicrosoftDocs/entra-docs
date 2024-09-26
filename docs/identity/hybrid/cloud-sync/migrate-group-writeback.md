@@ -88,8 +88,7 @@ The following PowerShell script can be used to help automate this step. This scr
 $gwbOU = 'OU=Groups,DC=Contoso,DC=com'
 
 # Get all groups written back to Active Directory
-Import-module ActiveDirectory
-$properties = @('Samaccountname', 'adminDescription', 'msDS-ExternalDirectoryObjectID')
+$properties = @('displayName', 'Samaccountname', 'adminDescription', 'msDS-ExternalDirectoryObjectID')
 $groups = Get-ADGroup -Filter * -SearchBase $gwbOU -Properties $properties | 
     Where-Object {$_.adminDescription -ne $null} |
         Select-Object $properties
@@ -98,6 +97,25 @@ $groups = Get-ADGroup -Filter * -SearchBase $gwbOU -Properties $properties |
 foreach ($group in $groups) {
     Set-ADGroup -Identity $group.Samaccountname -Add @{('msDS-ExternalDirectoryObjectID') = $group.adminDescription}
 } 
+
+```
+
+The following PowerShell script can be used to check the results of the script above or confirm that all groups have adminDescription value equal to msDS-ExternalDirectoryObjectID value.
+
+
+```powershell
+
+# Provide the DistinguishedName of your Group Writeback target OU
+$gwbOU = 'OU=Groups,DC=Contoso,DC=com'
+
+
+# Get all groups written back to Active Directory
+$properties = @('displayName', 'Samaccountname', 'adminDescription', 'msDS-ExternalDirectoryObjectID')
+$groups = Get-ADGroup -Filter * -SearchBase $gwbOU -Properties $properties | 
+    Where-Object {$_.adminDescription -ne $null} |
+        Select-Object $properties
+
+$groups | select displayName, adminDescription, 'msDS-ExternalDirectoryObjectID', @{Name='Equal';Expression={$_.adminDescription -eq $_.'msDS-ExternalDirectoryObjectID'}}
 
 ```
 
@@ -156,9 +174,11 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
      :::image type="content" source="media/migrate-group-writeback/migrate-6.png" alt-text="Screenshot of scoping filter." lightbox="media/migrate-group-writeback/migrate-6.png":::
 
 5. On the **Join** rules page, select **Next**.
-6. On the **Transformations** page, add a Constant transformation: flow True to cloudNoFlow attribute. Select **Add**.
+1. On the **Transformations** page, add a Constant transformation: flow True to cloudNoFlow attribute.
 
      :::image type="content" source="media/migrate-group-writeback/migrate-7.png" alt-text="Screenshot of transformation." lightbox="media/migrate-group-writeback/migrate-7.png":::
+
+1. Select **Add**.
 
 ### Create a custom group inbound rule in PowerShell
 
@@ -226,7 +246,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
 You also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. To create this sync rule, you can opt to use the user interface or create it via PowerShell with the provided script.
 
-### Create a custom group inbound rule in the user interface
+### Create a custom group outbound rule in the user interface
 
  1. Select **Outbound** from the drop-down list for Direction and select **Add rule**.
  2. On the **Description** page, enter the following and select **Next**:
@@ -248,7 +268,7 @@ You also need an outbound sync rule with a link type of JoinNoFlow and the scopi
      :::image type="content" source="media/migrate-group-writeback/migrate-9.png" alt-text="Screenshot of outbound scoping filter." lightbox="media/migrate-group-writeback/migrate-9.png":::
 
 4. On the **Join** rules page, select **Next**.
-5. On the **Transformations** page, select **Add**.
+1. On the **Transformations** page, select **Add**.
 
 ### Create a custom group inbound rule in PowerShell
 

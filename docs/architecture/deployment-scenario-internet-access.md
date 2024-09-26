@@ -75,7 +75,7 @@ To implement all the steps in this scenario, you need Global Secure Access and M
 
 To successfully deploy and test this scenario, configure for these prerequisites:
 
-1. Microsoft Entra tenant with Microsoft Entra ID P1 license. Configure Microsoft Entra ID to test Identity Protection. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+1. Microsoft Entra tenant with Microsoft Entra ID P1 license. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
    - One user with at least Global Secure Access Administrator and Application Administrator roles to configure Microsoft's Security Service Edge
    - At least one user as client test user in your tenant
 1. One Windows client device with this configuration:

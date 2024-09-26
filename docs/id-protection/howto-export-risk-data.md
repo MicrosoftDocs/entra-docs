@@ -32,12 +32,12 @@ Organizations can choose to store data for longer periods by changing diagnostic
 
 Log Analytics allows organizations to query data using built in queries or custom created Kusto queries, for more information, see [Get started with log queries in Azure Monitor](/azure/azure-monitor/logs/get-started-queries).
 
-Once enabled you find access to Log Analytics in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Identity** > **Monitoring & health** > **Log Analytics**. The following tables are of most interest to Identity Protection administrators:
+Once enabled you find access to Log Analytics in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Identity** > **Monitoring & health** > **Log Analytics**. The following tables are of most interest to Microsoft Entra ID Protection administrators:
 
-- AADRiskyUsers - Provides data like the **Risky users** report in Identity Protection.
-- AADUserRiskEvents - Provides data like the **Risk detections** report in Identity Protection.
-- RiskyServicePrincipals - Provides data like the **Risky workload identities** report in Identity Protection.
-- ServicePrincipalRiskEvents - Provides data like the **Workload identity detections** report in Identity Protection.
+- AADRiskyUsers - Provides data like the **Risky users** report.
+- AADUserRiskEvents - Provides data like the **Risk detections** report.
+- RiskyServicePrincipals - Provides data like the **Risky workload identities** report.
+- ServicePrincipalRiskEvents - Provides data like the **Workload identity detections** report.
 
 > [!NOTE]
 > Log Analytics only has visibility into data as it is streamed. Events prior to enabling the sending of events from Microsoft Entra ID do not appear.

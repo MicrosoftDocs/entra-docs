@@ -48,4 +48,3 @@ All [other external identity types](redemption-experience.md#invitation-redempti
 ## Related content
 
 - For information about B2B collaboration user properties, see [Properties of a Microsoft Entra B2B collaboration user](user-properties.md).
-- For information about user tokens for B2B collaboration users, see [Understand user tokens in Microsoft Entra B2B collaboration](user-token.md).

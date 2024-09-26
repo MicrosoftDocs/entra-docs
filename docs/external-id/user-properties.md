@@ -135,8 +135,7 @@ Yes. By default, guest objects aren't visible in your organization's global addr
 
 If a guest user accepts your invitation and they subsequently change their email address, the new email doesn't automatically sync to the guest user object in your directory. The mail property is created via [Microsoft Graph API](/graph/api/resources/user). You can update the mail property via the Microsoft Graph API, the Exchange admin center, or [Exchange Online PowerShell](/powershell/module/exchange/set-mailuser). The change will be reflected in the Microsoft Entra guest user object.
 
-## Next steps
+## Related content
 
 - [B2B user claims mapping](claims-mapping.md)
-- [B2B collaboration user tokens](user-token.md)
 - [B2B collaboration for hybrid organizations](hybrid-organizations.md)

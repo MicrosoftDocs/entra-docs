@@ -5,7 +5,7 @@ author: kenwith
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 09/19/2024
 ms.author: kenwith
 ms.reviewer: kfriedemann
 ms.custom:
@@ -95,8 +95,6 @@ When a new Enterprise Application is created, a matching App Registration is als
 
     5. Select the **Copy** button for the *Value* of the newly created secret. Save the secret securely for use later, this value is only shown one time.
 
-        ![Screenshot of the Microsoft Entra App Registration Client Secret Detail.](./media/application-proxy-integrate-with-logic-apps/client-secret-detail.png)
-
 ## Configure the Logic App
 
 1. From the Logic App, open the **Designer** view.
@@ -139,8 +137,6 @@ When a new Enterprise Application is created, a matching App Registration is als
         5. *Credential Type*: **Secret**.
 
         6. *Secret*: Enter the **secret value** noted in *Configure the Application Access*.
-
-        ![Screenshot of Azure Logic App HTTP ActionConfiguration.](./media/application-proxy-integrate-with-logic-apps/logic-app-http-configuration.png)
 
 5. Save the logic app and test with your trigger.
 

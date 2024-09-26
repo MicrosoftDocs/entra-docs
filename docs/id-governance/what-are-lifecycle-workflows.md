@@ -57,10 +57,10 @@ Those capabilities can help ensure a holistic experience by allowing you to remo
 You can use lifecycle workflows to address any of the following conditions:
 
 - **Automating and extending user orientation and HR provisioning**: Use lifecycle workflows when you want to extend your HR provisioning scenarios by automating tasks such as generating temporary passwords and emailing managers. If you currently have a manual process for orientation, use lifecycle workflows as part of an automated process.
-- **Automating s**: When groups in your organization are well defined, you can automate user membership in those groups. Benefits and differences from s include:
+- **Automating dynamic group memberships**: When groups in your organization are well defined, you can automate user membership in those groups. Benefits and differences from dynamic group memberships include:
   - Lifecycle workflows manage static groups, where you don't need a dynamic group rule.
   - There's no need to have one rule per group. Lifecycle workflow rules determine the scope of users to execute workflows against, not which group.
-  - Lifecycle workflows help manage users' lifecycle beyond attributes supported in s--for example, a certain number of days before the `employeeHireDate` attribute value.
+  - Lifecycle workflows help manage users' lifecycle beyond attributes supported in dynamic group memberships--for example, a certain number of days before the `employeeHireDate` attribute value.
   - Lifecycle workflows can perform actions on the group, not just the membership.
 - **Workflow history and auditing**: Use lifecycle workflows when you need to create an audit trail of user lifecycle processes. By using the Microsoft Entra admin center, you can view history and audits for orientation and departure scenarios.
 - **Automating user account management**: A key part of the identity lifecycle process is making sure that users who are leaving have their access to resources revoked. You can use lifecycle workflows to automate the disabling and removal of user accounts.

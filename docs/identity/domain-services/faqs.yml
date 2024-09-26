@@ -10,7 +10,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: faq
-  ms.date: 06/11/2024
+  ms.date: 09/16/2024
   ms.author: justinha
 title: Frequently asked questions (FAQs) about Microsoft Entra Domain Services
 summary: This page answers frequently asked questions about Microsoft Entra Domain Services.
@@ -203,7 +203,17 @@ sections:
       - question: |
           How are Windows Updates applied in Microsoft Entra Domain Services?
         answer: |
-          Domain controllers in a managed domain automatically apply required Windows updates. There's nothing for you to configure or administer here. Make sure you don't create network security group rules that block outbound traffic to Windows Updates. For your own VMs joined to the managed domain, you are responsible for configuring and applying any required OS and application updates.
+          Domain controllers in a managed domain automatically apply required Windows updates. 
+          There's nothing for you to configure or administer here. 
+          Make sure you don't create network security group rules that block outbound traffic to Windows Updates. 
+          For your own VMs joined to the managed domain, you are responsible for configuring and applying any required OS and application updates.
+      - question: | 
+          Should I remove the AzureUpdateDelivery and AzureFrontDoor.FirstParty tags in the outbound network security group (NSG)?
+        answer: |
+          With the deprecation of AzureUpdateDelivery and AzureFrontDoor.FirstParty tags, Microsoft Entra Domain Services no longer recommends adding these tags to outbound internet traffic.
+          If you use the default AllowInternetOutBound rule (priority 65001), no change is needed (with or without AzureUpdateDelivery and AzureFrontDoor.FirstParty tags). 
+          If you remove the default AllowInternetOutBound rule (priority 65001) or precede it with a denied InternetOutBound rule, use a firewall to filter outbound Windows Update traffic by using the WindowsUpdate FQDN instead of restricting InternetOutBound. 
+          This step is crucial for Microsoft Entra Domain Services to continue receiving Windows updates. For more information, see [Changes coming to the AzureUpdateDelivery service tag](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/changes-coming-to-the-azure-update-delivery-service-tag/ba-p/4156552).
       - question: | 
           Where does Microsoft Entra Domain Services store customer data?
         answer: |

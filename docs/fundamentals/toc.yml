@@ -146,11 +146,11 @@ items:
       href: data-protection-considerations.md
     - name: Customer data storage and processing for Europe
       href: ./data-storage-eu.md
-    - name: Customer data storage for Australia and New Zealand
-      href: data-storage-australia.md
     - name: Identity data storage for Australia and New Zealand
+      href: data-storage-australia.md
+    - name: Customer data storage for Australia and New Zealand
       href: data-storage-australia-newzealand.md
-    - name: Identity data storage for Japan
+    - name: Customer data storage for Japan
       href: data-storage-japan.md
   - name: Compare Microsoft Entra ID with AD DS
     href: compare.md

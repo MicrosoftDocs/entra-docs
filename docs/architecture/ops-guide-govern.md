@@ -50,7 +50,7 @@ There are changes that require special considerations when testing, from simple 
 | Scenario| Recommendation |
 |-|-|
 |Change the authentication type from federated to PHS/PTA or vice-versa| Use [staged rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to test the effect of changing the authentication type.|
-|Rolling out a new Conditional Access policy or Identity Protection Policy|Create a new Conditional Access policy and assign to test users.|
+|Rolling out a new Conditional Access policy |Create a new Conditional Access policy and assign to test users.|
 |Onboard a test environment of an application|Add the application to a production environment, hide it from the MyApps panel, and assign it to test users during the quality assurance (QA) phase.|
 |Change of sync rules|Perform the changes in a test Microsoft Entra Connect with the same configuration that is currently in production, also known as staging mode, and analyze Export Results. If satisfied, swap to production when ready.|
 |Change of branding|Test in a separate test tenant.|

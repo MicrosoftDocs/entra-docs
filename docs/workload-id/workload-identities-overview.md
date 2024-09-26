@@ -59,7 +59,7 @@ Secure access with adaptive policies:
 
 Intelligently detect compromised identities:
 
-- Detect risks (like leaked credentials), contain threats, and reduce risk to workload identities using [Identity Protection](~/id-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
+- Detect risks (like leaked credentials), contain threats, and reduce risk to workload identities using [Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
 
 Simplify lifecycle management:
 

@@ -61,9 +61,9 @@ Learn more:
 You can use analytics in the following tools to aggregate information from Microsoft Entra ID and show trends in your security posture in comparison to your baseline. You can also use analytics to assess and look for patterns or threats across Microsoft Entra ID. 
 
 * **Microsoft Entra ID Protection** analyzes sign-ins and other telemetry sources for risky behavior
-  * Identity Protection assigns a risk score to sign-in events
+  * ID Protection assigns a risk score to sign-in events
   * Prevent sign-ins, or force a step-up authentication, to access a resource or application based on risk score
-  * See, [What is Identity Protection?](~/id-protection/overview-identity-protection.md)
+  * See, [What is ID Protection?](~/id-protection/overview-identity-protection.md)
 * **Microsoft Entra usage and insights reports** have information similar to Azure Sentinel workbooks, including applications with highest usage or sign-in trends. 
   * Use reports to understand aggregate trends that might indicate an attack or other events
   * See, [Usage and insights in Microsoft Entra ID](~/identity/monitoring-health/concept-usage-insights-report.md)

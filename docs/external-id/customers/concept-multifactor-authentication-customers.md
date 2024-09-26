@@ -60,7 +60,7 @@ When SMS is enabled for MFA, users sign in with their primary method and are pro
 
    :::image type="content" source="media/concept-multifactor-authentication-customers/sms-text.png" alt-text="Screenshot of the SMS text for MFA." border="false":::
 
-External ID mitigates fraudulent sign-ups via SMS by enforcing the following measures:
+External ID mitigates fraudulent sign-ups and sign-ins via SMS by enforcing the following measures:
 
 - Telephony throttling limits help prevent outages and slowdowns. See [Service limits and restrictions](reference-service-limits.md).
 - CAPTCHA for SMS MFA helps prevent automated attacks by distinguishing human users from automated bots. If a risky user is detected, we block the user from signing in or ask the user to complete a CAPTCHA before sending an SMS verification code.

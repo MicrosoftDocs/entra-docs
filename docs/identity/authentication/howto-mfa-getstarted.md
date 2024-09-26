@@ -134,12 +134,12 @@ A major step in every multifactor authentication deployment is getting users reg
 
 It's critical to inform users about upcoming changes, registration requirements, and any necessary user actions. We provide [communication templates](https://aka.ms/mfatemplates) and [user documentation](https://support.microsoft.com/account-billing/set-up-security-info-from-a-sign-in-page-28180870-c256-4ebf-8bd7-5335571bf9a8) to prepare your users for the new experience and help to ensure a successful rollout. Send users to https://myprofile.microsoft.com to register by selecting the **Security Info** link on that page.
 
-### Registration with Identity Protection
+### Registration with Microsoft Entra ID Protection
 
 Microsoft Entra ID Protection contributes both a registration policy for and automated risk detection and remediation policies to the Microsoft Entra multifactor authentication story. Policies can be created to force password changes when there is a threat of compromised identity or require MFA when a sign-in is deemed risky.
 If you use Microsoft Entra ID Protection, [configure the Microsoft Entra multifactor authentication registration policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md) to prompt your users to register the next time they sign in interactively.
 
-### Registration without Identity Protection
+### Registration without Microsoft Entra ID Protection
 
 If you don't have licenses that enable Microsoft Entra ID Protection, users are prompted to register the next time that MFA is required at sign-in. 
 To require users to use MFA, you can use Conditional Access policies and target frequently used applications like HR systems. 
