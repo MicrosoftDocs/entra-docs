@@ -49,7 +49,7 @@ Create a user-assigned managed identity using your preferred option:
 - [Resource Manager](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm)
 - [REST](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest)
 
-After you create a user assigned managed identity, take note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You use `principalId` while adding permissions, and `clientId` in your application's code.
+After you create a user-assigned managed identity, take note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You use `principalId` while adding permissions, and `clientId` in your application's code.
 
 ## Configure App service with a user-assigned managed identity
 
