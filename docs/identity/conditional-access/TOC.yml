@@ -72,6 +72,7 @@
       href: howto-conditional-access-policy-block-legacy.md
     - name: Require phishing-resistant MFA for administrators
       href: how-to-policy-phish-resistant-admin-mfa.md
+      
     - name: Require MFA for all users
       href: howto-conditional-access-policy-all-users-mfa.md
     - name: Require MFA for guest users

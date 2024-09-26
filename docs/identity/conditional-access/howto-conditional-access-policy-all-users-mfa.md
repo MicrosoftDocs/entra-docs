@@ -18,9 +18,11 @@ As Alex Weinert, the Director of Identity Security at Microsoft, mentions in his
 
 > Your password doesn't matter, but MFA does! Based on our studies, your account is more than 99.9% less likely to be compromised if you use MFA.
 
+## Authentication strength
+
 The guidance in this article helps your organization create an MFA policy for your environment using authentication strengths. Microsoft Entra ID provides three [built-in authentication strengths](/entra/identity/authentication/concept-authentication-strengths):
 
-- Multifactor authentication strength (least restrictive)
+- **Multifactor authentication strength** (least restrictive) recommended in this article
 - Passwordless MFA strength
 - Phishing-resistant MFA strength (most restrictive)
 
