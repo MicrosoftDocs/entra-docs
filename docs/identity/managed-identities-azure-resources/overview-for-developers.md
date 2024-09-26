@@ -820,6 +820,8 @@ func main() {
 }
 ```
 
+#### [C++](#tab/C++)
+
 ```cpp
 #include <iostream>
 #include <string>
