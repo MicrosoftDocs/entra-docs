@@ -53,9 +53,20 @@ After you create a user assigned managed identity, take note of the `clientId` a
 
 ## Using the managed identity in your code
 
+Before you can use the managed identity in your code, we have to assign it to a resource. 
+
+You can configure an App service to use a user-assigned managed identity. The process requires that you [specify the managed identity's resource identifier to your app config](/azure/app-service/overview-managed-identity?tabs=portal%2Chttp#add-a-user-assigned-identity).
+
 Your App Service now has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain a token that your code can use to interact with Azure resources, instead of storing credentials in your code. 
 
-We recommended that you use the Azure Identity library for your preferred programming language. The supported languages include [.NET](/dotnet/api/overview/azure/identity-readme), [Java](/java/api/overview/azure/identity-readme?view=azure-java-stable&preserve-view=true), [JavaScript](/javascript/api/overview/azure/identity-readme?view=azure-node-latest&preserve-view=true), [Python](/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true), [Go](/azure/developer/go/azure-sdk-authentication), and [C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md). The library acquires access tokens for you, making it simple to connect to target resources.
+We recommended that you use the Azure Identity library for your preferred programming language. The supported languages include:
+
+- [.NET](/dotnet/api/overview/azure/identity-readme)
+- [Java](/java/api/overview/azure/identity-readme?view=azure-java-stable&preserve-view=true)
+- [JavaScript](/javascript/api/overview/azure/identity-readme?view=azure-node-latest&preserve-view=true)
+- [Python](/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true)
+- [Go](/azure/developer/go/azure-sdk-authentication)
+- [C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md). The library acquires access tokens for you, making it simple to connect to target resources.
 
 ### Using the Azure Identity library in your development environment
 
