@@ -69,22 +69,7 @@ Any resources you want to access requires that you grant the identity permission
 
 After you complete the steps outlined above, your App Service has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain a token that your code can use to interact with Azure resources, instead of storing credentials in your code.
 
-We recommended that you use the Azure Identity library for your preferred programming language. The library acquires access tokens for you, making it simple to connect to target resources. The supported languages include:
-
-- [.NET](/dotnet/api/overview/azure/identity-readme)
-- [Java](/java/api/overview/azure/identity-readme?view=azure-java-stable&preserve-view=true)
-- [JavaScript](/javascript/api/overview/azure/identity-readme?view=azure-node-latest&preserve-view=true)
-- [Python](/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true)
-- [Go](/azure/developer/go/azure-sdk-authentication)
-- [C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md). 
-
-
-
-### Using the Azure Identity library in your development environment
-
-The Azure Identity libraries support a `DefaultAzureCredential` type. `DefaultAzureCredential` automatically attempts to authenticate via multiple mechanisms, including environment variables or an interactive sign-in. The credential type can be used in your development environment using your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
-
-If you're using user-assigned managed identities, you should also explicitly specify the user-assigned managed identity you wish to authenticate with by passing in the identity's client ID as a parameter. You can retrieve the client ID by browsing to the identity in the Portal.
+We recommended that you use the Azure Identity library for your preferred programming language. The library acquires access tokens for you, making it simple to connect to target resources. 
 
 Read more about the Azure Identity libraries below:
 
@@ -94,6 +79,12 @@ Read more about the Azure Identity libraries below:
 * [Azure Identity library for Python](/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true)
 * [Azure Identity module for Go](/azure/developer/go/azure-sdk-authentication)
 * [Azure Identity library for C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md)
+
+### Using the Azure Identity library in your development environment
+
+The Azure Identity libraries support a `DefaultAzureCredential` type. `DefaultAzureCredential` automatically attempts to authenticate via multiple mechanisms, including environment variables or an interactive sign-in. The credential type can be used in your development environment using your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
+
+If you're using user-assigned managed identities, you should also explicitly specify the user-assigned managed identity you wish to authenticate with by passing in the identity's client ID as a parameter. You can retrieve the client ID by browsing to the identity in the Portal.
 
 ### Accessing a Blob in Azure Storage
 
