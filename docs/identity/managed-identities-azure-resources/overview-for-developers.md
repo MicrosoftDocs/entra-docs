@@ -44,7 +44,7 @@ We recommend that you use a user-assigned managed identity, [for most scenarios]
 Create a user-assigned managed identity using your preferred option:
 
 - [Azure portal](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp)
-- [CLI](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli)
+- [Azure CLI](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli)
 - [PowerShell](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell)
 - [Resource Manager](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm)
 - [REST](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest)
