@@ -145,7 +145,7 @@ if (blobClient.exists()) {
 
 #### [Node.js](#tab/nodejs)
 
-```javascript
+```nodejs
 import { DefaultAzureCredential } from "@azure/identity";
 import { BlobServiceClient } from "@azure/storage-blob";
 
