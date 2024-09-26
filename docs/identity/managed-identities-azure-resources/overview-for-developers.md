@@ -45,7 +45,7 @@ Create a user-assigned managed identity using your preferred option:
 
 - [Azure portal](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp)
 - [Azure CLI](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli)
-- [PowerShell](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell)
+- [Azure PowerShell](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell)
 - [Resource Manager](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm)
 - [REST](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest)
 
