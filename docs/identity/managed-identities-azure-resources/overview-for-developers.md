@@ -146,8 +146,8 @@ if (blobClient.exists()) {
 #### [Node.js](#tab/nodejs)
 
 ```javascript
-const { DefaultAzureCredential } = require("@azure/identity");
-const { BlobServiceClient } = require("@azure/storage-blob");
+import { DefaultAzureCredential } from "@azure/identity";
+import { BlobServiceClient } from "@azure/storage-blob";
 
 // Specify the Client ID if using user-assigned managed identities
 const clientID = process.env.Managed_Identity_Client_ID;
