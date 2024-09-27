@@ -903,9 +903,13 @@ After the app verifies the user's email with OTP, it receives security tokens. I
 
 # [Email with password](#tab/emailPassword)
 
-:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password.png" alt-text="Diagram of native auth sign in with email and password option."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-default-mfa.png" alt-text="Diagram of native auth sign in with email and password option."::: 
 
-This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the two values in the same screen. If you collect the username (email) and password in the same screen, steps **two** and **three** gets merged with steps **eight** and **nine**. In this case, the app holds the password, then submits it in step **ten** where it's required.
+- This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the two values in the same screen. 
+- If you collect the username (email) and password in the same screen, steps **two** and **three** gets merged with steps **eight** and **nine**. In this case, the app holds the password, then submits it in step **ten** where it's required.
+- If you enforce MFA for your users, and a user has a [default MFA method](#determine-the-default-mfa-method), then the flow goes through steps 11 to 16 before Microsoft Entra issues security tokens.
+
+The following are more flows you can expect when you enforce MFA for your users.
 
 ---
 
