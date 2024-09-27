@@ -347,10 +347,9 @@ import { SecretClient } from "@azure/keyvault-secrets";
 
 // Specify the Client ID if using user-assigned managed identities
 const clientID = process.env.Managed_Identity_Client_ID;
-const credentialOptions = {
+const credential = new DefaultAzureCredential({
     managedIdentityClientId: clientID
-};
-const credential = new DefaultAzureCredential(credentialOptions);
+});
 
 const client = new SecretClient("https://<your-key-vault-name>.vault.azure.net/", credential);
 
