@@ -78,7 +78,7 @@
       href: howto-conditional-access-policy-authentication-strength-external.md
     - name: Secure security info registration
       href: howto-conditional-access-policy-registration.md
-    - name: Require auth strength for device registration
+    - name: Require authentication strength for device registration
       href: how-to-policy-mfa-device-register-join.md
     - name: Require MFA for risky sign-in
       href: howto-conditional-access-policy-risk.md
