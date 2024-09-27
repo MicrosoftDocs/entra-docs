@@ -5,7 +5,7 @@ description: This article describes how to use emergency access accounts to help
 author: markwahl-msft
 manager: amycolannino
 ms.author: rolyon
-ms.date: 02/18/2022
+ms.date: 10/01/2024
 ms.topic: conceptual
 ms.service: entra-id
 ms.subservice: role-based-access-control
@@ -37,7 +37,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 1. [Enable passkeys (FIDO2) for your organization](../authentication/how-to-enable-passkey-fido2.md).
 
-1. Create the emergency accounts.
+1. [Create](#how-to-create-an-emergency-access-account) or [update](#how-to-update-an-existing-emergency-access-account) emergency accounts.
 
 1. [Register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md).
 
@@ -49,13 +49,6 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 1. [Validate accounts regularly](#validate-accounts-regularly).
 
-When you configure these accounts, the following requirements must be met:
-
-- The emergency access accounts shouldn't be associated with any individual user in the organization. Make sure that your accounts aren't connected with any employee-supplied mobile phones, hardware tokens that travel with individual employees, or other employee-specific credentials. This precaution covers instances where an individual employee is unreachable when the credential is needed. It's important to ensure that any registered devices are kept in a known, secure location that has multiple means of communicating with Microsoft Entra ID.
-- Use strong authentication for your emergency access accounts and make sure it doesn’t use the same authentication methods as your other administrative accounts. For example, if your normal administrator account uses the Microsoft Authenticator app for strong authentication, use a FIDO2 security key for your emergency accounts. Consider the [dependencies of various authentication methods](~/architecture/resilience-in-credentials.md), to avoid adding external requirements into the authentication process.
-- The device or credential must not expire or be in scope of automated cleanup due to lack of use.  
-- In Microsoft Entra Privileged Identity Management, you should make the Global Administrator role assignment permanent rather than eligible for your emergency access accounts. 
-
 ### How to create an emergency access account
 
 Follow these steps to create new emergency access accounts that use FIDO2.
@@ -66,23 +59,21 @@ Follow these steps to create new emergency access accounts that use FIDO2.
 
 1. Browse to **Identity** > **Users** > **All users**.
 
-1. Select **New user**.
+1. Select **New user** > **Create new user**.
 
-1. Select **Create user**.
-
-1. Give the account a **User name**.
-
-1. Give the account a **Name**.
+1. On the **Basics** tab, give the account a **User principal name** and **Display name**.
 
 1. Create a long and complex password for the account.
 
-1. Under **Roles**, assign the **Global Administrator** role.
+1. On the **Properties** tab, under **Usage location**, select the appropriate location.
 
-1. Under **Usage location**, select the appropriate location.
+1. On the **Assignments** tab, select **Add role**.
 
-    :::image type="content" source="./media/security-emergency-access/create-emergency-access-account-azure-ad.png" alt-text="Creating an emergency access account in Microsoft Entra ID." lightbox="./media/security-emergency-access/create-emergency-access-account-azure-ad.png":::
+1. Select the **Global Administrator** role.
 
-1. Select **Create**.
+1. On the **Review + create** tab, select **Create**.
+
+    :::image type="content" source="./media/security-emergency-access/create-emergency-access-account.png" alt-text="Creating an emergency access account in Microsoft Entra ID." lightbox="./media/security-emergency-access/create-emergency-access-account.png":::
 
 1. Follow steps to [register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md).
 
@@ -100,12 +91,21 @@ If you have existing emergency access accounts that only require a password to s
 
 ### Exclude at least one account from Conditional Access policies
 
-During an emergency, you don't want a policy to potentially block your access to fix an issue. If you use Conditional Access, at least one emergency access account needs to be excluded from all Conditional Access policies.
+During an emergency, you don't want a policy to potentially block your access in the case of a misconfiguration or to fix an issue. If you use Conditional Access, at least one emergency access account needs to be excluded from all Conditional Access policies.
 
 > [!NOTE]
 > Starting July 2024, Azure teams will begin rolling out additional tenant-level security measures to require multifactor authentication (MFA) for all users. For more information, see [Planning for mandatory multifactor authentication for Azure and other admin portals](../authentication/concept-mandatory-multifactor-authentication.md).
 > 
 > As already documented, use strong authentication for your emergency access accounts. We recommend updating these accounts to use FIDO2 or certificate-based authentication (when configured as MFA) instead of relying only on a long password. Both methods will satisfy the MFA requirements.
+
+## Configuration requirements
+
+When you configure these accounts, the following requirements must be met:
+
+- The emergency access accounts shouldn't be associated with any individual user in the organization. Make sure that your accounts aren't connected with any employee-supplied mobile phones, hardware tokens that travel with individual employees, or other employee-specific credentials. This precaution covers instances where an individual employee is unreachable when the credential is needed. It's important to ensure that any registered devices are kept in a known, secure location that has multiple means of communicating with Microsoft Entra ID.
+- Use strong authentication for your emergency access accounts and make sure it doesn’t use the same authentication methods as your other administrative accounts. For example, if your normal administrator account uses the Microsoft Authenticator app for strong authentication, use a FIDO2 security key for your emergency accounts. Consider the [dependencies of various authentication methods](~/architecture/resilience-in-credentials.md), to avoid adding external requirements into the authentication process.
+- The device or credential must not expire or be in scope of automated cleanup due to lack of use.  
+- In Microsoft Entra Privileged Identity Management, you should make the Global Administrator role assignment permanent rather than eligible for your emergency access accounts. 
 
 ## Federation guidance
 
