@@ -47,16 +47,16 @@ The scenario outlined in this tutorial assumes that you already have the followi
 1. Sign in to [Zendesk Admin Center](https://support.zendesk.com/hc/en-us/articles/4581766374554#topic_hfg_dyz_1hb).
 1. Navigate to **Apps and integrations** > **APIs** > **Zendesk APIs**.
 1. Click the **Settings** tab, and make sure Token Access is **enabled**.
-1. Click the **Add API token** button to the right of **Active API Tokens**.The token is generated and displayed.
+1. Click the **Add API token** button to the right of **Active API Tokens**. The token is generated and displayed.
 1. Enter an **API token description**.
 1. **Copy** the token and paste it somewhere secure. Once you close this window, the full token will never be displayed again.
-1. Click **Save** to return to the API page.If you click the token to reopen it, a truncated version of the token is displayed.
+1. Click **Save** to return to the API page. If you click the token to reopen it, a truncated version of the token is displayed.
 
 <a name='step-3-add-zendesk-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Zendesk from the Microsoft Entra application gallery
 
-Add Zendesk from the Microsoft Entra application gallery to start managing provisioning to Zendesk. If you have previously setup Zendesk for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Zendesk from the Microsoft Entra application gallery to start managing provisioning to Zendesk. If you have previously setup Zendesk for SSO, you can use the same application. However, it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who will be in scope for provisioning 
 
@@ -64,7 +64,7 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 
 * Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
+* If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 
 ## Step 5: Configure automatic user provisioning to Zendesk
@@ -75,7 +75,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 * Today, Zendesk roles are automatically and dynamically populated in the Azure portal UI. Before you assign Zendesk roles to users, make sure that an initial sync is completed against Zendesk to retrieve the latest roles in your Zendesk tenant.
 
-* We recommend that you assign a single Microsoft Entra user to Zendesk to test your initial automatic user provisioning configuration. You can assign additional users or groups later after the tests are successful.
+* We recommend that you assign a single Microsoft Entra user to Zendesk to test your initial automatic user provisioning configuration. You can assign more users or groups later after the tests are successful.
 
 * When you assign a user to Zendesk, select any valid application-specific role, if available, in the assignment dialog box. Users with the **Default Access** role are excluded from provisioning.
 
@@ -117,21 +117,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** box, enter the email address of the person or group to receive the provisioning error notifications. Select the **Send an email notification when a failure occurs** check box.
 
-	![Screenshot of Zendesk Notification Email](./media/zendesk-provisioning-tutorial/ZenDesk9.png)
+	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
 
 1. Select **Save**.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zendesk**.
-
-	![Screenshot of Zendesk user synchronization](./media/zendesk-provisioning-tutorial/ZenDesk10.png)
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zendesk in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Zendesk for update operations. To save any changes, select **Save**.
 
 	![Screenshot of Zendesk matching user attributes](./media/zendesk-provisioning-tutorial/ZenDesk11.png)
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zendesk**.
-
-	![Screenshot of Zendesk group synchronization](./media/zendesk-provisioning-tutorial/ZenDesk12.png)
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Zendesk in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the groups in Zendesk for update operations. To save any changes, select **Save**.
 
@@ -141,15 +137,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. To enable the Microsoft Entra provisioning service for Zendesk, in the **Settings** section, change **Provisioning Status** to **On**.
 
-	![Screenshot of Zendesk Provisioning Status](./media/zendesk-provisioning-tutorial/ZenDesk14.png)
+	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
 
 1. Define the users or groups that you want to provision to Zendesk. In the **Settings** section, select the values you want in **Scope**.
 
-	![Screenshot of Zendesk Scope](./media/zendesk-provisioning-tutorial/ZenDesk15.png)
+	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
 1. When you're ready to provision, select **Save**.
 
-	![Screenshot of Zendesk Save](./media/zendesk-provisioning-tutorial/ZenDesk18.png)
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization of all users or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than later syncs. They occur approximately every 40 minutes as long as the Microsoft Entra provisioning service runs. 
 
@@ -163,7 +159,7 @@ For information on how to read the Microsoft Entra provisioning logs, see [Repor
 
 * When a custom role is assigned to a user or group, the Microsoft Entra automatic user provisioning service also assigns the default role **Agent**. Only Agents can be assigned a custom role. For more information, see the [Zendesk API documentation](https://developer.zendesk.com/rest_api/docs/support/users#json-format-for-agent-or-admin-requests). 
 
-* Import of all roles will fail if any of the custom roles has a display name similar to the built in roles of "agent" or "end-user". To avoid this, ensure that none of the custom roles being imported has the above display names. 
+* Import of all roles fails if any of the custom roles has a display name similar to the built-in roles of "agent" or "end-user". To avoid this, ensure that none of the custom roles being imported has the above display names. 
 
 ## More resources
 

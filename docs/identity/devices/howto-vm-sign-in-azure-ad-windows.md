@@ -29,7 +29,7 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
    - Specify who can sign in to a VM as a regular user or with administrator privileges.
    - When users join or leave your team, you can update the Azure RBAC policy for the VM to grant access as appropriate.
    - When employees leave your organization and their user accounts are disabled or removed from Microsoft Entra ID, they no longer have access to your resources.
-- Configure Conditional Access policies to "phishing resistant MFA" using require authentication strength (preview) grant control or require multifactor authentication and other signals, such as user sign-in risk, before you can RDP into Windows VMs.
+- Configure Conditional Access policies to "phishing resistant MFA" using require authentication strength grant control or require multifactor authentication and other signals, such as user sign-in risk, before you can RDP into Windows VMs.
 - Use Azure Policy to deploy and audit policies to require Microsoft Entra login for Windows VMs and to flag the use of unapproved local accounts on the VMs.
 - Use Intune to automate and scale Microsoft Entra join with mobile device management (MDM) autoenrollment of Azure Windows VMs that are part of your virtual desktop infrastructure (VDI) deployments.
 
@@ -299,7 +299,7 @@ You're now signed in to the Windows Server 2019 Azure virtual machine with the r
 
 ## Enforce Conditional Access policies
 
-You can enforce Conditional Access policies, such as "phishing resistant MFA" using require authentication strength (preview) grant control or multifactor authentication or user sign-in risk check, before you authorize access to Windows VMs in Azure that are enabled with Microsoft Entra login. To apply a Conditional Access policy, you must select the **Microsoft Azure Windows Virtual Machine Sign-in** app from the cloud apps or actions assignment option. Then use sign-in risk as a condition or "phishing resistant MFA" using require authentication strength (preview) grant control or require MFA as a control for granting access.
+You can enforce Conditional Access policies, such as "phishing resistant MFA" using require authentication strength grant control or multifactor authentication or user sign-in risk check, before you authorize access to Windows VMs in Azure that are enabled with Microsoft Entra login. To apply a Conditional Access policy, you must select the **Microsoft Azure Windows Virtual Machine Sign-in** app from the cloud apps or actions assignment option. Then use sign-in risk as a condition or "phishing resistant MFA" using require authentication strength grant control or require MFA as a control for granting access.
 
 > [!NOTE]
 > If you require MFA as a control for granting access to the Microsoft Azure Windows Virtual Machine Sign-in app, then you must supply an MFA claim as part of the client that initiates the RDP session to the target Windows VM in Azure. This can be achieved using passwordless authentication method for RDP that satisfies the Conditional Access polices, however if you are using limited passwordless method for RDP then the only way to achieve this on a Windows 10 or later client is to use a Windows Hello for Business PIN or biometric authentication with the RDP client. Support for biometric authentication was added to the RDP client in Windows 10 version 1809. Remote desktop using Windows Hello for Business authentication is available only for deployments that use a certificate trust model. It's currently not available for a key trust model.
