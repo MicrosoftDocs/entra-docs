@@ -493,10 +493,9 @@ import { Connection, Request } from "tedious";
 
 // Specify the Client ID if using a user-assigned managed identity
 const clientID = process.env.Managed_Identity_Client_ID;
-const credentialOptions = {
+const credential = new DefaultAzureCredential({
     managedIdentityClientId: clientID
-};
-const credential = new DefaultAzureCredential(credentialOptions);
+});
 
 async function getAccessToken() {
     const tokenResponse = await credential.getToken("https://database.windows.net//.default");
