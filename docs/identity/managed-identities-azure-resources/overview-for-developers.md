@@ -408,13 +408,10 @@ func main() {
         return
     }
 
-    credential, err := azidentity.NewDefaultAzureCredential(&azidentity.DefaultAzureCredentialOptions{
-        ManagedIdentityClientID: clientID,
-    })
+    cred, err := azidentity.NewDefaultAzureCredential(nil)
     if err != nil {
-        fmt.Printf("Failed to obtain a credential: %v\n", err)
+        fmt.Printf("failed to obtain a credential: %v\n", err)
         return
-    }
 
     client, err := azsecrets.NewClient("https://<your-key-vault-name>.vault.azure.net/", credential, nil)
     if err != nil {
@@ -606,13 +603,12 @@ func main() {
         return
     }
 
-    credential, err := azidentity.NewDefaultAzureCredential(&azidentity.DefaultAzureCredentialOptions{
-        ManagedIdentityClientID: clientID,
-    })
+    cred, err := azidentity.NewDefaultAzureCredential(nil)
     if err != nil {
-        fmt.Printf("Failed to obtain a credential: %v\n", err)
+        fmt.Printf("failed to obtain a credential: %v\n", err)
         return
     }
+    
 
     // Get the access token
     token, err := credential.GetToken(context.TODO(), azidentity.TokenRequestOptions{
