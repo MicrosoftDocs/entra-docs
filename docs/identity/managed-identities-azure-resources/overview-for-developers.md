@@ -412,6 +412,7 @@ func main() {
     if err != nil {
         fmt.Printf("failed to obtain a credential: %v\n", err)
         return
+    }
 
     client, err := azsecrets.NewClient("https://<your-key-vault-name>.vault.azure.net/", credential, nil)
     if err != nil {
