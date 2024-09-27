@@ -495,7 +495,7 @@ Read more about how to [use a managed identity to connect Azure SQL Database to 
 const { DefaultAzureCredential } = require("@azure/identity");
 const { Connection, Request } = require("tedious");
 
-// Specify the Client ID if using user-assigned managed identities
+// Specify the Client ID if using a user-assigned managed identity
 const clientID = process.env.Managed_Identity_Client_ID;
 const credentialOptions = {
     managedIdentityClientId: clientID
