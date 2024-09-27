@@ -57,7 +57,7 @@ Before you can use the managed identity in your code, we have to assign it to th
 
 ### Adding permissions to the identity
 
-Once that you have configured your App service to use a user assigned managed identity you need to grant the necessary permissions to the identity. In this scenario, we are using this identity to interact with Azure Storage, so you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview) to grant the user assigned managed identity permissions to the resource.
+Once you've configured your App Service to use a user-assigned managed identity, grant the necessary permissions to the identity. In this scenario, we're using this identity to interact with Azure Storage, so you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview) to grant the user-assigned managed identity permissions to the resource.
 
 > [!IMPORTANT]
 > You'll need a role such as "User Access Administrator" or "Owner" for the target resource to add Role assignments. Ensure you're granting the least privilege required for the application to run.
