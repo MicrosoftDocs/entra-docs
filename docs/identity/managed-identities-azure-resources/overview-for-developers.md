@@ -366,7 +366,6 @@ getSecret().catch(err => console.error("Error retrieving secret:", err));
 
 
 ```Python
-
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 import os
