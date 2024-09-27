@@ -63,6 +63,17 @@ To add a verified ID requirement to an access package, you must start from the a
 1. Once you finish configuring the rest of the settings, you can review your selections on the **Review + create** tab. You can see all verified ID requirements for this access package policy in the **Verified IDs** section.
     :::image type="content" source="media/entitlement-management-verified-id-settings/verified-ids-list.png" alt-text="Screenshot of a list of verified IDs.":::
 
+## Adding Face Check to an access package (Preview)
+
+Face Check is a privacy-respecting facial matching feature of Microsoft Entra Verified ID that matches a user's real time selfie with the photo from their identity document (such as a passport or driver's license). This feature allows you to add an additional layer of security to access package requests as you will be able to quickly verify the requestor's identity and reduces the risk of impersonation. For more information on Face Check with Verified ID and licensing requirements, see: [Using Face Check with Microsoft Entra Verified ID](~verified-id/using-facecheck.md).
+    > [!NOTE]
+    > If you want to add a Face Check requirement for multiple verifiable credentials, you will need to create a new access package policy for each credential.
+
+Below are steps to add a Face Check requirement to an access package:
+
+1. After you add a credential, select the **Require Face Check** option.
+
+1. From the dropdown list of the credential's claims, choose the claim which maps to the user's photo.
 
 ## Request an access package with verified ID requirements
 
@@ -80,6 +91,7 @@ The requestor steps are as follows:
     :::image type="content" source="media/entitlement-management-verified-id-settings/verified-id-qr-code.png" alt-text="Screenshot of use QR code for verified IDs.":::
 1. After you share your credentials, My Access will automatically take you to the next step of the request process.
 
+For access packages that require Face Check with Verified ID, there will be an intermediate step before sharing your credentials where you will complete a Face Check. Once the Face Check is successfully completed, you can share your credentials and continue the request process on My Access.
 
 ## Next steps
 
