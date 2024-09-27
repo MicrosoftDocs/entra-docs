@@ -51,7 +51,7 @@ Create a user-assigned managed identity using your preferred option:
 
 After you create a user-assigned managed identity, take note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You use `principalId` while adding permissions, and `clientId` in your application's code.
 
-## Configure App service with a user-assigned managed identity
+## Configure App Service with a user-assigned managed identity
 
 Before you can use the managed identity in your code, we have to assign it to the App service that will use it. The process of configuring an App service to use a user-assigned managed identity requires that you [specify the managed identity's resource identifier in your app config](/azure/app-service/overview-managed-identity?tabs=portal%2Chttp#add-a-user-assigned-identity).
 
