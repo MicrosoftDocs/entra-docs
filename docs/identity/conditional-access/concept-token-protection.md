@@ -79,8 +79,6 @@ This process helps to assess your users’ client and app compatibility for toke
 
 Users who perform specialized roles like those described in [Privileged access security levels](/security/privileged-access-workstations/privileged-access-security-levels#specialized) are possible targets for this functionality. We recommend piloting with a small subset to begin. 
 
-:::image type="content" source="media/concept-token-protection/exposed-policy-attributes.png" alt-text="Screenshot of a configured Conditional Access policy and its components." lightbox="media/concept-token-protection/exposed-policy-attributes.png":::
-
 The steps that follow help create a Conditional Access policy to require token protection for Exchange Online and SharePoint Online on Windows devices.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
