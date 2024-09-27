@@ -67,7 +67,7 @@ Any resources you want to access requires that you grant the identity permission
 
 ## Using managed identities in your code
 
-After you complete the steps outlined above, your App Service has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain a token that your code can use to interact with Azure resources, instead of storing credentials in your code.
+After you complete the steps outlined above, your App Service has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain an access token that your code can use to interact with Azure resources, instead of storing credentials in your code.
 
 We recommended that you use the Azure Identity library for your preferred programming language. The library acquires access tokens for you, making it simple to connect to target resources. 
 
