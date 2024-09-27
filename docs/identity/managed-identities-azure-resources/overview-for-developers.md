@@ -205,7 +205,6 @@ def download_blob():
         print("Downloaded blob content:", blob_contents)
 
 download_blob()
-
 ```
 
 #### [Go](#tab/Go)
