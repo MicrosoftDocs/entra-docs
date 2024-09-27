@@ -911,17 +911,17 @@ After the app verifies the user's email with OTP, it receives security tokens. I
 
 The following are more flows you can expect when you enforce MFA for your users:
 
-- The app calls the `/challenge` endpoint to invoke default MFA, but after the app prompts the user for the code, the user selects to complete MFA challenge using a different method. See the following flow diagram.
+- The app calls the `/challenge` endpoint to invoke default MFA, but after the app prompts the user for the code, the user selects to complete MFA challenge using a different method. See the following sequence diagram.
 
 :::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-default-mfa-select-another-MFA.png" alt-text="Diagram of native auth sign in with email and password option where user selects another MFA method."::: 
 
-- The app calls the `/challenge` endpoint, but the endpoint can't determine the default MFA method. In this case, the client app needs to call the `/introspect` endpoint to, so the user selects a specific MFA method. See the following flow diagram.
+- The app calls the `/challenge` endpoint, but the endpoint can't determine the default MFA method. In this case, the client app needs to call the `/introspect` endpoint to, so the user selects a specific MFA method. See the following sequence diagram.
 
 :::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-no-default-MFA.png" alt-text="Diagram of native auth sign in with email and password option with no default MFA method."::: 
 
 ---
 
-In the sections that follow, we summarize the sequence diagram flow into three basic steps.
+In the sections that follow, we summarize the sign-in flow into three basic steps.
 
 ### Step 1: Request to start the sign-in flow
 
