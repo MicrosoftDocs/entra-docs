@@ -44,7 +44,7 @@ In this tutorial, you learn how to:
 1. Open your iOS/macOS project in Xcode.
 1. Select **Add Package Dependencies...** from the **File** menu.
 1. Enter `https://github.com/AzureAD/microsoft-authentication-library-for-objc` as the Package URL and choose **Add Package**.
-1. Add a new keychain group to your project capabilities. Keychain group is `com.microsoft.adalcache` on iOS and `com.microsoft.identity.universalstorage` on macOS.
+1. Add a new keychain group to your project **Capabilities**. Use `com.microsoft.adalcache` on iOS and `com.microsoft.identity.universalstorage` on macOS.
 
 
 For more information and other mechanisms to add MSAL to your project, see the [project Readme file](https://github.com/AzureAD/microsoft-authentication-library-for-objc?tab=readme-ov-file#installation).
