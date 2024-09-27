@@ -21,7 +21,7 @@ Organizations who deploy Microsoft Intune can use the information returned from 
 * Requiring a minimum or maximum operating system version
 * Requiring a device isn't jailbroken or rooted
 
-Policy compliance information is sent to Microsoft Entra ID where Conditional Access decides to grant or block access to resources. More information about device compliance policies can be found in the article, [Set rules on devices to allow access to resources in your organization using Intune](/intune/protect/device-compliance-get-started)
+Policy compliance information is sent to Microsoft Entra ID where Conditional Access decides to grant or block access to resources. More information about device compliance policies can be found in the article, [Set rules on devices to allow access to resources in your organization using Intune](/mem/intune/protect/device-compliance-get-started)
 
 Requiring a Microsoft Entra hybrid joined device is dependent on your devices already being Microsoft Entra hybrid joined. For more information, see the article [Configure Microsoft Entra hybrid join](~/identity/devices/how-to-hybrid-join.md).
 
