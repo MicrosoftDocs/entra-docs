@@ -433,7 +433,6 @@ func main() {
     secretValue := *secretResp.Value
     fmt.Println(secretValue)
 }
-
 ```
 
 ---
