@@ -319,6 +319,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS90101 | InvalidEmailAddress - The supplied data isn't a valid email address. The email address must be in the format `someone@example.com`. |
 | AADSTS90102 | InvalidUriParameter - The value must be a valid absolute URI. |
 | AADSTS90107 | InvalidXml - The request isn't valid. Make sure your data doesn't have invalid characters.|
+| AADSTS90112 | Application identifier is expected to be a GUID. |
 | AADSTS90114 | InvalidExpiryDate - The bulk token expiration timestamp will cause an expired token to be issued. |
 | AADSTS90117 | InvalidRequestInput |
 | AADSTS90119 | InvalidUserCode - The user code is null or empty.|
