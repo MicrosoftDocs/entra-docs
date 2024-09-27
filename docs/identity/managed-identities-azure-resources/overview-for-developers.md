@@ -489,8 +489,8 @@ Read more about how to [use a managed identity to connect Azure SQL Database to 
 
 ```javascript
 
-const { DefaultAzureCredential } = require("@azure/identity");
-const { Connection, Request } = require("tedious");
+import { DefaultAzureCredential } from "@azure/identity";
+import { Connection, Request } from "tedious";
 
 // Specify the Client ID if using a user-assigned managed identity
 const clientID = process.env.Managed_Identity_Client_ID;
