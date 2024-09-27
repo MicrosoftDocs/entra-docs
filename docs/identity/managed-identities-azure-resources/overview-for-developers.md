@@ -343,8 +343,8 @@ KeyVaultSecret retrievedSecret = secretClient.getSecret(secretName);
 #### [Node.js](#tab/nodejs)
 
 ```javascript
-const { DefaultAzureCredential } = require("@azure/identity");
-const { SecretClient } = require("@azure/keyvault-secrets");
+import { DefaultAzureCredential } from "@azure/identity";
+import { SecretClient } from "@azure/keyvault-secrets";
 
 // Specify the Client ID if using user-assigned managed identities
 const clientID = process.env.Managed_Identity_Client_ID;
