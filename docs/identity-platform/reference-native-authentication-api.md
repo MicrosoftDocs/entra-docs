@@ -917,7 +917,6 @@ The following are more flows you can expect when you enforce MFA for your users:
 
 - The app calls the `/challenge` endpoint, but the endpoint can't determine the default MFA method. In this case, the client app needs to call the `/introspect` endpoint to, so the user selects a specific MFA method. See the following flow diagram.
 
-
 :::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-no-default-MFA.png" alt-text="Diagram of native auth sign in with email and password option with no default MFA method."::: 
 
 ---
