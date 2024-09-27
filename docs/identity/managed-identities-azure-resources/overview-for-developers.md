@@ -53,7 +53,7 @@ After you create a user-assigned managed identity, take note of the `clientId` a
 
 ## Configure App Service with a user-assigned managed identity
 
-Before you can use the managed identity in your code, we have to assign it to the App service that will use it. The process of configuring an App service to use a user-assigned managed identity requires that you [specify the managed identity's resource identifier in your app config](/azure/app-service/overview-managed-identity?tabs=portal%2Chttp#add-a-user-assigned-identity).
+Before you can use the managed identity in your code, we have to assign it to the App Service that will use it. The process of configuring an App Service to use a user-assigned managed identity requires that you [specify the managed identity's resource identifier in your app config](/azure/app-service/overview-managed-identity?tabs=portal%2Chttp#add-a-user-assigned-identity).
 
 ### Adding permissions to the identity
 
