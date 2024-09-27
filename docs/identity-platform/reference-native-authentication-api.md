@@ -909,7 +909,16 @@ After the app verifies the user's email with OTP, it receives security tokens. I
 - If you collect the username (email) and password in the same screen, steps **two** and **three** gets merged with steps **eight** and **nine**. In this case, the app holds the password, then submits it in step **ten** where it's required.
 - If you enforce MFA for your users, and a user has a [default MFA method](#determine-the-default-mfa-method), then the flow goes through steps 11 to 16 before Microsoft Entra issues security tokens.
 
-The following are more flows you can expect when you enforce MFA for your users.
+The following are more flows you can expect when you enforce MFA for your users:
+
+- The app calls the `/challenge` endpoint to invoke default MFA, but after the app prompts the user for the code, the user selects to complete MFA challenge using a different method. See the following flow diagram.
+
+:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-default-mfa-select-another-MFA.png" alt-text="Diagram of native auth sign in with email and password option where user selects another MFA method."::: 
+
+- The app calls the `/challenge` endpoint, but the endpoint can't determine the default MFA method. In this case, the client app needs to call the `/introspect` endpoint to, so the user selects a specific MFA method. See the following flow diagram.
+
+
+:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-no-default-MFA.png" alt-text="Diagram of native auth sign in with email and password option with no default MFA method."::: 
 
 ---
 
