@@ -86,11 +86,9 @@ Whether an employee, affiliate, or consumer, most users are acquainted with the 
 
 Users can find their BIG-IP published services in the [My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) or [Microsoft 365 app launcher](https://support.microsoft.com/office/meet-the-microsoft-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) with self-service capabilities, regardless of device or location. Users can continue accessing published services with the BIG-IP Webtop portal. When users sign out, SHA ensures session termination for BIG-IP and Microsoft Entra ID, helping services remain protected from unauthorized access.  
 
-Users access the My Apps portal to find BIG-IP published services and to manage their account properties. See the gallery and self-service page in the following graphics. 
+Users access the My Apps portal to find BIG-IP published services and to manage their account properties. See the gallery and page in the following graphic. 
 
    ![Screenshot of woodgrove my apps page.](media/f5-integration/woodgrove-app-gallery.png)
-
-   ![Screenshot of woodgrove my account page.](media/f5-integration/woodgrove-myaccount.png)
 
 ## Insights and analytics
 
