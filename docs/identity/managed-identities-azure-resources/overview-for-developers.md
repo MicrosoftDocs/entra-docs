@@ -88,7 +88,7 @@ If you're using user-assigned managed identities, you should also explicitly spe
 
 ### Accessing a Blob in Azure Storage
 
-#### [C#](#tab/csharp)
+#### [.NET](#tab/dotnet)
 
 ```csharp
 using Azure.Identity;
@@ -287,7 +287,7 @@ func main() {
 
 ### Accessing a secret stored in Azure Key Vault
 
-#### [C#](#tab/csharp)
+#### [.NET](#tab/dotnet)
 
 ```csharp
 using Azure.Identity;
@@ -444,7 +444,7 @@ func main() {
 
 ### Accessing Azure SQL Database
 
-#### [C#](#tab/csharp)
+#### [.NET](#tab/dotnet)
 
 ```csharp
 using Azure.Identity;
