@@ -74,7 +74,7 @@
       href: how-to-policy-phish-resistant-admin-mfa.md
     - name: Require MFA authentication strength for all users
       href: howto-conditional-access-policy-all-users-mfa.md
-    - name: Require MFA authentication strength for external users
+    - name: Require MFA authentication strength for guests
       href: howto-conditional-access-policy-authentication-strength-external.md
     - name: Secure security info registration
       href: howto-conditional-access-policy-registration.md
@@ -96,7 +96,7 @@
       href: howto-policy-app-enforced-restriction.md
     - name: Block users with elevated insider risk
       href: how-to-policy-insider-risk.md
-    - name: Block access for unknown or unsupported device platform
+    - name: Block access for unknown or unsupported devices
       href: howto-policy-unknown-unsupported-device.md
     - name: Require terms of use to be accepted
       href: require-tou.md
@@ -108,9 +108,9 @@
       href: how-to-policy-mfa-admin-portals.md
     - name: Require MFA for Azure management
       href: howto-conditional-access-policy-azure-management.md
-    - name: Require compliant or hybrid joined devices for admins
+    - name: Require compliant or hybrid join for admins
       href: howto-conditional-access-policy-compliant-device-admin.md
-    - name: Require compliant device, hybrid joined, or MFA for users
+    - name: Require compliant device, hybrid joined, or MFA
       href: howto-conditional-access-policy-compliant-device.md
     - name: Require MFA for Intune enrollment
       href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
