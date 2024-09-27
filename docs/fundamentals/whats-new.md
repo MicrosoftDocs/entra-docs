@@ -45,7 +45,7 @@ A new Conditional Access template requiring device compliance is now available i
 
 ---
 
-### Public preview - Tenant admin can fail certificate based auth to fail when the end user certificate issuer isn't configured with a certificate revocation list
+### Public preview - Tenant admin can fail certificate based auth when the end user certificate issuer isn't configured with a certificate revocation list
 
 **Type:** New feature    
 **Service category:** Authentications (Logins)    
