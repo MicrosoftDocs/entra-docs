@@ -654,7 +654,6 @@ func main() {
         fmt.Println(columnValue)
     }
 }
-
 ```
 
 
