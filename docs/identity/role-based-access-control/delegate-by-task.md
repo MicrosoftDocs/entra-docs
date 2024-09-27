@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 09/24/2024
+ms.date: 09/26/2024
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -185,9 +185,26 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Update group properties | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Delete group | [Groups Administrator](permissions-reference.md#groups-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
+## Licenses
+
+> [!div class="mx-tableFixed"]
+> | Task | Least privileged role | Additional roles |
+> | ---- | --------------------- | ---------------- |
+> | Assign license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
+> | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Try or buy subscription | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
+
+## Microsoft Entra Health
+
+> [!div class="mx-tableFixed"]
+> | Task | Least privileged role | Additional roles |
+> | ---- | --------------------- | ---------------- |
+> | View scenario monitoring signals | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br>[Security Operator](permissions-reference.md#security-operator)<br>[Security Administrator](permissions-reference.md#security-administrator)<br>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br>[Global Reader](permissions-reference.md#global-reader)<br>|
+
 <a name='identity-protection'></a>
 
-#### Microsoft Entra ID Protection
+## Microsoft Entra ID Protection
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -203,31 +220,28 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read all risk detections | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read vulnerabilities | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Licenses
-
-> [!div class="mx-tableFixed"]
-> | Task | Least privileged role | Additional roles |
-> | ---- | --------------------- | ---------------- |
-> | Assign license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
-> | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Try or buy subscription | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
-
-## Monitoring - Audit logs
+## Monitoring and health - Audit logs
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Read audit logs | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br/>[Security Administrator](permissions-reference.md#security-administrator) |
 
-## Monitoring - Sign-ins
+## Monitoring and health - Sign-in logs
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Read sign-in logs | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/> [Global Reader](permissions-reference.md#global-reader) |
 
-## Monitoring - Recommendations
+## Monitoring and health - Provisioning logs
+
+> [!div class="mx-tableFixed"]
+> | Task | Least privileged role | Additional roles |
+> | ---- | --------------------- | ---------------- |
+> | Read sign-in logs | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/> [Global Reader](permissions-reference.md#global-reader)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) |
+
+## Monitoring and health - Recommendations
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |

@@ -40,13 +40,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to TheOrgWiki
 
-* It is recommended that a single Microsoft Entra user is assigned to TheOrgWiki to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to TheOrgWiki to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
 
 * When assigning a user to TheOrgWiki, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up TheOrgWiki for provisioning
 
-Before configuring TheOrgWiki for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on TheOrgWiki.
+Before configuring TheOrgWiki for automatic user provisioning with Microsoft Entra ID, you'll need to enable SCIM provisioning on TheOrgWiki.
 
 1. Sign in to your [TheOrgWiki Admin Console](https://www.theorgwiki.com/login/). Click on **Admin Console**.
 
@@ -60,11 +60,11 @@ Before configuring TheOrgWiki for automatic user provisioning with Microsoft Ent
 
 	![Screenshot of the Service Accounts page in the Org Wiki Admin Console.](media/theorgwiki-provisioning-tutorial/serviceaccount.png)
 
-4. Click on **+Service Account**. Under **Service Account Type**,select **Token Based**. Click **Save**.
+4. Click on **+Service Account**. Under **Service Account Type**, select **Token Based**. Click **Save**.
 
 	![Screenshot of the New Service Account dialog box with the Service Account Type, Token Based, and Save options called out.](media/theorgwiki-provisioning-tutorial/auth.png)
 
-5. 	Copy the **Active Tokens**. This value will be entered in the Secret Token field in the Provisioning tab of your TheOrgWiki application.
+5. 	Copy the **Active Tokens**. This value is entered in the Secret Token field in the Provisioning tab of your TheOrgWiki application.
 	 
 	![Screenshot of the Manage Tokens for S C I M provisioning dialog box.](media/theorgwiki-provisioning-tutorial/token.png)
 
@@ -86,11 +86,11 @@ To configure TheOrgWiki for automatic user provisioning with Microsoft Entra ID,
 
 	![Screenshot of the upper-right corner of the login page with the Log In option called out.](media/theorgwiki-provisioning-tutorial/image02.png)
 
-7. As TheOrgWiki is an OpenIDConnect app, choose to login to OrgWiki using your Microsoft work account.
+7. As TheOrgWiki is an OpenIDConnect app, choose to log in to OrgWiki using your Microsoft work account.
 
 	![Screenshot of the The Org Wiki sign in page with the Sign in with Microsoft option called out.](media/theorgwiki-provisioning-tutorial/image03.png)
 	
-8. After a successful authentication, the application will be automatically added to your tenant and you will be redirected to your TheOrgWiki account.
+8. After a successful authentication, the application will be automatically added to your tenant and you'll be redirected to your TheOrgWiki account.
 
 	![OrgWiki Add SCIM](media/theorgwiki-provisioning-tutorial/image04.png)
 
@@ -139,8 +139,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to TheOrgWiki**.
 
-	![TheOrgWiki User Mappings](media/theorgwiki-provisioning-tutorial/usermapping.png)
-
 10. Review the user attributes that are synchronized from Microsoft Entra ID to TheOrgWiki in the **Attribute- Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in TheOrgWiki for update operations. Select the **Save** button to commit any changes.
 
 	![TheOrgWiki User Attributes](media/theorgwiki-provisioning-tutorial/userattribute.png).
@@ -155,15 +153,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-14. When you are ready to provision, click **Save**.
+14. When you're ready to provision, click **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs. For more information on how long it will take for users and/or groups to provision, see [How long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users).
+This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs. For more information on how long it takes for users and/or groups to provision, see [How long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users).
 
 You can use the **Current Status** section to monitor progress and follow links to your provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on TheOrgWiki. For more information, see [Check the status of user provisioning](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md). To read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md).
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
