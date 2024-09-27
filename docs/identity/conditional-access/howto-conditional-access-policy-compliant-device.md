@@ -5,14 +5,14 @@ description: Create a custom Conditional Access policy to require compliant, hyb
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, lhuangnorth
 ---
-# Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users
+# Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users
 
 Organizations who deploy Microsoft Intune can use the information returned from their devices to identify devices that meet compliance requirements such as:
 

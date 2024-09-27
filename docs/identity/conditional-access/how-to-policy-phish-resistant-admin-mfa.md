@@ -5,14 +5,14 @@ description: Create a Conditional Access policy requiring stronger authenticatio
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/19/2024
+ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Require phishing-resistant multifactor authentication for administrators
+# Require phishing-resistant multifactor authentication for administrators
 
 Accounts that are assigned privileged administrative roles are frequent targets of attackers. Requiring phishing-resistant multifactor authentication (MFA) on those accounts is an easy way to reduce the risk of those accounts being compromised.
 
@@ -31,7 +31,7 @@ Organizations can use this policy in conjunction with features like Privileged I
 
 The guidance in this article helps your organization create an MFA policy for your environment using authentication strengths. Microsoft Entra ID provides three [built-in authentication strengths](/entra/identity/authentication/concept-authentication-strengths):
 
-- Multifactor authentication strength (least restrictive)
+- Multifactor authentication strength (less restrictive)
 - Passwordless MFA strength
 - **Phishing-resistant MFA strength** (most restrictive) recommended in this article
 
@@ -59,7 +59,8 @@ For external user scenarios, the MFA authentication methods that a resource tena
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
 1. Under **Access controls** > **Grant**, select **Grant access**.
-   1. Select **Require authentication strength**, then select **Phishing-resistant MFA**, and select **Select**.
+   1. Select **Require authentication strength**, then select the built-in or custom authentication strength from the list.
+   1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 

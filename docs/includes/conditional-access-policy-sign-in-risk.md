@@ -19,8 +19,8 @@ ms.author: joflore
 1. Under **Conditions** > **Sign-in risk**, set **Configure** to **Yes**. 
    1. Under **Select the sign-in risk level this policy will apply to**, select **High** and **Medium**. [This guidance is based on Microsoft recommendations and might be different for each organization](../id-protection/howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels)
    1. Select **Done**.
-1. Under **Access controls** > **Grant**.
-   1. Select **Grant access**, **Require multifactor authentication**.
+1. Under **Access controls** > **Grant**, select **Grant access**.
+   1. Select **Require authentication strength**, then select the built-in **Multifactor authentication** authentication strength from the list.
    1. Select **Select**.
 1. Under **Session**.
    1. Select **Sign-in frequency**.

@@ -5,14 +5,14 @@ description: Create a custom Conditional Access policy blocking unsupported plat
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Block access for unknown or unsupported device platform
+# Block unknown or unsupported device platform
 
 Users are blocked from accessing company resources when the device type is unknown or unsupported.
 

@@ -1,18 +1,18 @@
 ---
-title: Conditional Access - Use application enforced restrictions for unmanaged devices
+title: Use application enforced restrictions to protect access from unmanaged devices
 description: Create a custom Conditional Access policy for unmanaged devices.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Use application enforced restrictions for unmanaged devices
+# Use application enforced restrictions for unmanaged devices
 
 Block or limit access to SharePoint, OneDrive, and Exchange content from unmanaged devices.
 

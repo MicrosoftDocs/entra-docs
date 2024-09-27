@@ -12,7 +12,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Require multifactor authentication for device registration
+# Require multifactor authentication for device registration
 
 Use the [Conditional Access user action](concept-conditional-access-cloud-apps.md#user-actions) to enforce policy when users register or join devices to Microsoft Entra ID. This control provides granularity in configuring multifactor authentication for registering or joining devices instead of a tenant-wide policy that currently exists. Administrators can customize this policy to fit the security needs of their organization.
 
@@ -29,7 +29,9 @@ Use the [Conditional Access user action](concept-conditional-access-cloud-apps.m
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **User actions**, select **Register or join devices**.
-1. Under **Access controls** > **Grant**, select **Grant access**, **Require authentication strength**, select **Multifactor authentication**, then select **Select**.
+1. Under **Access controls** > **Grant**, select **Grant access**.
+   1. Select **Require authentication strength**, then select the built-in **Multifactor authentication** authentication strength from the list.
+   1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 

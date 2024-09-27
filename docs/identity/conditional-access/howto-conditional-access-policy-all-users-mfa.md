@@ -5,14 +5,14 @@ description: Create a custom Conditional Access policy to require all users do m
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/17/2024
+ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Require MFA for all users
+# Require multifactor authentication for all users
 
 As Alex Weinert, the Director of Identity Security at Microsoft, mentions in his blog post [Your Pa$$word doesn't matter](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Your-Pa-word-doesn-t-matter/ba-p/731984):
 
@@ -22,7 +22,7 @@ As Alex Weinert, the Director of Identity Security at Microsoft, mentions in his
 
 The guidance in this article helps your organization create an MFA policy for your environment using authentication strengths. Microsoft Entra ID provides three [built-in authentication strengths](/entra/identity/authentication/concept-authentication-strengths):
 
-- **Multifactor authentication strength** (least restrictive) recommended in this article
+- **Multifactor authentication strength** (less restrictive) recommended in this article
 - Passwordless MFA strength
 - Phishing-resistant MFA strength (most restrictive)
 

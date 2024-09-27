@@ -12,7 +12,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth, cokoopma
 ---
-# Common Conditional Access policy: Sign-in risk-based multifactor authentication
+# Require multifactor authentication for elevated sign-in risk
 
 Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You might want to block that user or maybe ask them to perform multifactor authentication to prove that they're really who they say they are. 
 
