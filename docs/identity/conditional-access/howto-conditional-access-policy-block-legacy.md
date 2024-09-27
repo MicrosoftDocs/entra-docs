@@ -5,14 +5,14 @@ description: Create a custom Conditional Access policy to block legacy authentic
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, lhuangnorth
 ---
-# Common Conditional Access policy: Block legacy authentication
+# Block legacy authentication with Conditional Access
 
 Due to the increased risk associated with legacy authentication protocols, Microsoft recommends that organizations block authentication requests using these protocols and require modern authentication. For more information about why blocking legacy authentication is important, see the article [How to: Block legacy authentication to Microsoft Entra ID with Conditional Access](block-legacy-authentication.md).
 
