@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/23/2024
+ms.date: 09/27/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -36,7 +36,7 @@ This article shows how you can stream your logs to an event hub, to integrate wi
 
 The subscription and Event Hubs namespace must both be associated with the Microsoft Entra tenant from where you're streaming the logs.
 
-Once you have the Azure event hub ready, navigate to the SIEM tool you want to integrate with the activity logs. You'll finish the process in the SIEM tool.
+Once you have the Azure event hub ready, navigate to the SIEM tool you want to integrate with the activity logs. The process is finished in the SIEM tool.
 
 We currently support Splunk, SumoLogic, and ArcSight. Select a tab to get started. Refer to the tool's documentation.
 

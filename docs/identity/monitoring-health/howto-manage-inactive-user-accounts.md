@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 07/16/2024
+ms.date: 09/27/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -18,8 +18,8 @@ In large environments, user accounts aren't always deleted when employees leave 
 
 This article explains a method to handle obsolete user accounts in Microsoft Entra ID.
 
->[!NOTE]
->This article applies only to finding inactive user accounts in Microsoft Entra ID. It does not apply to finding inactive accounts in [Azure AD B2C](/azure/active-directory-b2c/overview).
+> [!NOTE]
+> This article applies only to finding inactive user accounts in Microsoft Entra ID. It does not apply to finding inactive accounts in [Azure AD B2C](/azure/active-directory-b2c/overview).
 
 ## Prerequisites
 
@@ -89,7 +89,10 @@ If you need to view the latest sign-in activity for a user, you can view the use
 1. Select a user from the list.
 1. In the **My Feed** area of the user's Overview, locate the **Sign-ins** tile.
 
-    ![Screenshot of the user overview page with the sign-in activity tile highlighted.](media/howto-manage-inactive-user-accounts/last-sign-activity-tile.png)
+
+    :::image type="content" source="media/howto-manage-inactive-user-accounts/user-last-sign-in-tile.png" alt-text="Screenshot of the user overview page with the sign-in activity tile highlighted." lightbox="media/howto-manage-inactive-user-accounts/user-last-sign-in-tile-expanded.png":::
+
+    ![](media/howto-manage-inactive-user-accounts/last-sign-activity-tile.png)
 
 The last sign-in date and time shown on this tile might take up to 24 hours to update, which means the date and time might not be current. If you need to see the activity in near real time, select the **See all sign-ins** link on the **Sign-ins** tile to view all sign-in activity for that user.
 
