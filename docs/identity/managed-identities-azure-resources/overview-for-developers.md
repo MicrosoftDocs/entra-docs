@@ -231,9 +231,7 @@ func main() {
         return
     }
 
-    cred, err := azidentity.NewDefaultAzureCredential(&azidentity.DefaultAzureCredentialOptions{
-        ManagedIdentityClientID: clientID,
-    })
+    cred, err := azidentity.NewDefaultAzureCredential(nil)
     if err != nil {
         fmt.Printf("failed to obtain a credential: %v\n", err)
         return
