@@ -89,10 +89,7 @@ If you need to view the latest sign-in activity for a user, you can view the use
 1. Select a user from the list.
 1. In the **My Feed** area of the user's Overview, locate the **Sign-ins** tile.
 
-
     :::image type="content" source="media/howto-manage-inactive-user-accounts/user-last-sign-in-tile.png" alt-text="Screenshot of the user overview page with the sign-in activity tile highlighted." lightbox="media/howto-manage-inactive-user-accounts/user-last-sign-in-tile-expanded.png":::
-
-    ![](media/howto-manage-inactive-user-accounts/last-sign-activity-tile.png)
 
 The last sign-in date and time shown on this tile might take up to 24 hours to update, which means the date and time might not be current. If you need to see the activity in near real time, select the **See all sign-ins** link on the **Sign-ins** tile to view all sign-in activity for that user.
 
