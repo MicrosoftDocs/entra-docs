@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 This topic covers the deployment steps for a phishing-resistant passwordless authentication deployment in Microsoft Entra ID. Before you proceed, make sure you complete the planning steps for the deployment. For more information, see [Plan a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication-overview.md).
 
-## Step 3: Register users for phishing-resistant credentials
+## Register users for phishing-resistant credentials
 
 Credential registration and bootstrapping is the first major end-user facing activity in your phishing-resistant passwordless deployment project. 
 This section covers the rollout of **portable** and **local** credentials. 
@@ -139,7 +139,7 @@ Each persona has its own challenges and considerations that commonly come up dur
 - [IT pros/DevOps workers](how-to-plan-persona-phishing-resistant-passwordless-authentication.md#it-prosdevops-workers)
 - [Highly regulated workers](how-to-plan-persona-phishing-resistant-passwordless-authentication.md#highly-regulated-workers)
 
-## Step 4: Drive usage of phishing-resistant credentials 
+## Drive usage of phishing-resistant credentials
 
 This step covers how to make it easier for users to adopt phishing-resistant credentials. 
 You should test your deployment strategy, plan for the rollout, and communicate the plan to end users. 
@@ -236,7 +236,7 @@ As you execute these different phases, you may need to slow down depending on th
 To execute on this strategy, Microsoft recommends that you create a Microsoft Entra ID security group for each wave, and add each group to your policies one at a time. 
 This approach helps to avoid overwhelming your support teams.
 
-## Step 5: Enforce phishing-resistant methods for sign-in
+## Enforce phishing-resistant methods for sign-in
 
 This section focuses on phase 4.
 

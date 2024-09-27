@@ -79,9 +79,7 @@ Security Assurance and Audit         | Helps ensure IT processes are secure and 
 Help Desk and Support	               | Assists end users who encounter issues during deployments of new technologies and policies, or when issues occur 
 End-User Communications	             | Messages changes to end users in preparation to aid in driving user-facing technology rollouts
 
-
 ## Next steps
-
 
 [Plan a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-phishing-resistant-passwordless-authentication.md)
 [Deploy a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
