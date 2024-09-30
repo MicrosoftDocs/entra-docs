@@ -52,7 +52,7 @@ Organizations can choose to deploy this policy using the following steps or usin
 
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
-> [!TIP]policy-admin-phish-resistant-mfa.md
+> [!TIP]
 > Organizations should also deploy a policy that [blocks access from unsupported or unknown device platforms](policy-all-users-device-unknown-unsupported.md) along with this policy.
 
 ## Block Exchange ActiveSync on all devices
