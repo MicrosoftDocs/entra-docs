@@ -498,7 +498,7 @@ $userId = "objectid_of_the_user_in_Entra_ID"
 
 $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 
-{
+
     if($smssignin.SmsSignInState -eq "ready"){   
       #### Disable Sms Sign-In for the user is set to ready
 
@@ -509,7 +509,7 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
     Write-Host "SMS sign-in status not set or found for the user " -ForegroundColor Yellow
     }
 
-}
+
 
 ##### End the script
 ```

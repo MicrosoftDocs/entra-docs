@@ -27,11 +27,13 @@ In this article, you complete the following tasks:
 
 ## Prerequisites
 
-* Complete the steps in [Sign in users and call an API in sample Node.js web application](sample-web-app-node-sign-in.md) article. This article shows you how to sign in users by using a sample Node.js web app. 
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-* [Node.js](https://nodejs.org).
-* [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
-* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- Complete the steps in [Sign in users and call an API in sample Node.js web application](sample-web-app-node-sign-in.md) article. This article shows you how to sign in users by using a sample Node.js web app. 
+- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+- [Node.js](https://nodejs.org).
+- [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later.
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ## Register a web API
 

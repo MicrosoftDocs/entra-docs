@@ -55,6 +55,8 @@ Customer accounts have a [default set of permissions](reference-user-permissions
 
 - If you don't already have a Microsoft Entra tenant and want to try External ID, we recommend using the [get started experience](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl) to start a free trial.
 
+- If you use Visual Studio Code, you can also use the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciamvscode/quickstarts/marketplace) to create an external tenant directly within Visual Studio Code ([learn more](https://aka.ms/ciamvscode/quickstartguide)).
+
 ## Step 2: Register your application
 
 :::image type="content" source="media/concept-planning-your-solution/overview-setup-step-2.png" alt-text="Diagram showing step 2 in the setup flow.":::
@@ -121,11 +123,11 @@ When planning for configuring company branding, language customizations, and cus
 
 - **Extending the authentication token claims**. External ID is designed for flexibility. You can use a custom authentication extension to add claims from external systems to the application token just before the token is issued to the application. Learn more about [adding your own business logic](concept-custom-extensions.md) with custom authentication extensions.
 
-- **Multifactor authentication (MFA)**. You can also enable application access security by enforcing MFA, which adds a critical second layer of security to user sign-ins by requiring verification via email one-time passcode. Learn more about [MFA for customers](concept-security-customers.md#multifactor-authentication).
+- **Multifactor authentication (MFA)**. You can also enable application access security by enforcing MFA, which adds a critical second layer of security to user sign-ins by requiring verification via email one-time passcode. Learn more about [available MFA authentication methods](concept-security-customers.md#multifactor-authentication-mfa).
 
 - **Native authentication**. Native authentication enables you to host the user interface in the client application instead of delegating authentication to browsers. Learn more about [native authentication](concept-native-authentication.md) in External ID.
 
-- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant, such as Identity Protection.
+- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant, such as Microsoft Entra ID Protection.
 
 ### How to customize and secure your sign-in
 

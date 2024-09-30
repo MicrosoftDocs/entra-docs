@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 03/29/2024
+ms.date: 08/25/2024
 ms.author: barclayn
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
@@ -49,7 +49,7 @@ To enhance your Microsoft Entra implementation, you can also add paid features b
 
 - **Microsoft Entra ID Free.** Provides user and group management, on-premises directory synchronization, basic reports, self-service password change for cloud users, and single sign-on across Azure, Microsoft 365, and many popular SaaS apps.
 
-- **Microsoft Entra ID P1.** In addition to the Free features, P1 also lets your hybrid users access both on-premises and cloud resources. It also supports advanced administration, such as dynamic groups, self-service group management, Microsoft Identity Manager, and cloud write-back capabilities, which allow self-service password reset for your on-premises users.
+- **Microsoft Entra ID P1.** In addition to the Free features, P1 also lets your hybrid users access both on-premises and cloud resources. It also supports advanced administration, such as dynamic membership groups, self-service group management, Microsoft Identity Manager, and cloud write-back capabilities, which allow self-service password reset for your on-premises users.
 
 - **Microsoft Entra ID P2.** In addition to the Free and P1 features, P2 also offers [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) to help provide risk-based Conditional Access to your apps and critical company data and [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-getting-started.md) to help discover, restrict, and monitor administrators and their access to resources and to provide just-in-time access when needed.
 
@@ -84,7 +84,7 @@ After you choose your Microsoft Entra ID license, you'll get access to some or a
 |Enterprise users|Manage license assignments, access to apps, and set up delegates using groups and administrator roles. For more information, see [Microsoft Entra user management documentation](~/identity/users/index.yml).|
 |Hybrid identity|Use Microsoft Entra Connect and Connect Health to provide a single user identity for authentication and authorization to all resources, regardless of location (cloud or on-premises). For more information, see [Hybrid identity documentation](~/identity/hybrid/index.yml).|
 |Identity governance|Microsoft Entra ID P2 includes basic capabilities for privileged identity management (PIM), access reviews and entitlement management. Microsoft Entra ID Governance customers can manage their organization's identities and access through comprehensive employee, business partner, vendor, service, and app controls. For more information, see [Microsoft Entra ID Governance documentation](~/id-governance/identity-governance-overview.md) and [features by license](~/id-governance/licensing-fundamentals.md#features-by-license).|
-|Identity protection|Detect potential vulnerabilities affecting your organization's identities, configure policies to respond to suspicious actions, and then take appropriate action to resolve them. For more information, see [Microsoft Entra ID Protection](~/id-protection/index.yml).|
+|Microsoft Entra ID Protection|Detect potential vulnerabilities affecting your organization's identities, configure policies to respond to suspicious actions, and then take appropriate action to resolve them. For more information, see [Microsoft Entra ID Protection](~/id-protection/index.yml).|
 |Managed identities for Azure resources|Provide your Azure services with an automatically managed identity in Microsoft Entra ID that can authenticate any Microsoft Entra-supported authentication service, including Key Vault. For more information, see [What is managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md).|
 |Privileged identity management (PIM)|Manage, control, and monitor access within your organization. This feature includes access to resources in Microsoft Entra ID and Azure, and other Microsoft Online Services, like Microsoft 365 or Intune. For more information, see [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/index.yml).|
 |Monitoring and health|Gain insights into the security and usage patterns in your environment. For more information, see [Microsoft Entra monitoring and health](~/identity/monitoring-health/index.yml).|

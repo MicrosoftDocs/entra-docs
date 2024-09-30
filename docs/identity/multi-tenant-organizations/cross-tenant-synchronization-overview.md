@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 01/03/2024
+ms.date: 09/17/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -174,8 +174,8 @@ I have existing B2B collaboration users. What will happen to them?
 What user attributes can be synchronized?
 
 - Cross-tenant synchronization will sync commonly used attributes on the user object in Microsoft Entra ID, including (but not limited to) displayName, userPrincipalName, and directory extension attributes.
-- Cross-tenant synchronization supports provisioning the manager attribute in the commercial cloud (public preview). Manager synchronization is not yet supported in the US Government cloud. Both the user and their manager must be in scope for cross-tenant synchronization, in order to provision the manager attribute.
-  - For cross-tenant synchronization configurations created before January 2024 with the default schema / attribute mappings:
+- Cross-tenant synchronization supports provisioning the manager attribute in the commercial cloud. Manager synchronization is not yet supported in the US Government cloud. Both the user and their manager must be in scope for cross-tenant synchronization, in order to provision the manager attribute.
+  - For cross-tenant synchronization configurations created after January 2024 with the default schema / attribute mappings:
     - The manager attribute will automatically be added to the attribute mappings.
     - Manager updates will apply on the incremental cycle for users that are undergoing changes (ex: manager change). The sync engine doesn't automatically update all existing users that were provisioned previously.
     - To update the manager for existing users that are in scope for provisioning, you can use on-demand provisioning for specific users or do a restart to provision the manager for all users.
@@ -243,9 +243,9 @@ Does cross-tenant synchronization enhance any cross-tenant Microsoft 365 app acc
 - Cross-tenant synchronization utilizes a feature that improves the user experience by suppressing the first-time B2B consent prompt and redemption process in each tenant.
 - Synchronized users will have the same cross-tenant Microsoft 365 experiences available to any other B2B collaboration user.
 
-Can cross-tenant synchronization enable people search scenarios where synchronized users appear in the global address list of the target tenant?
+Can cross-tenant synchronization enable people search scenarios in Microsoft 365?
 
-- Yes, but you must set the value for the **showInAddressList** attribute of synchronized users to **True**, which is not set by default. If you want to create a unified address list, you'll need to set up a [mesh peer-to-peer topology](./cross-tenant-synchronization-topology.md). For more information, see [Step 9: Review attribute mappings](./cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
+- Yes, cross-tenant synchronization can enable people search in M365. Ensure that the **showInAddressList** attribute is set to **True** on users in the target tenant. The showInAddressList attribute is set to true by default in the cross-tenant synchronization [attribute mappings](./cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings). 
 - Cross-tenant synchronization creates B2B collaboration users and doesn't create contacts.
 
 #### Teams

@@ -1,7 +1,6 @@
 ---
 title: App samples
-description: Learn how build and integrate apps with external tenants. Use code samples to test authentication scenarios such as sign up, sign in, and getting an access token to call an API.
- 
+description: Learn how to build and integrate apps with external tenants. Use code samples to test authentication scenarios such as sign-up, sign in, and getting an access token to call an API.
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
@@ -68,7 +67,7 @@ These samples and how-to guides demonstrate how to write a desktop application t
 
 ### Mobile: Browser delegated authentication
 
-These samples and how-to guides demonstrate how to write a public client mobile application with browser delegated authentication that integrates with Microsoft Entra External ID.
+These samples and how-to guides show you how to write a public client mobile application with browser-delegated authentication that integrates with Microsoft Entra External ID.
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
@@ -78,6 +77,15 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > | iOS (Swift) | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-swift-prepare-tenant.md) |
 
 
+### Desktop: Native authentication
+
+These samples and how-to guides demonstrate how to write a desktop application that integrates with Microsoft Entra External ID.
+
+> [!div class="mx-tdCol2BreakAll"]
+> | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
+> | ------- | -------- | ------------- | 
+> macOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-macos-app.md)| &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+
 ### Mobile: Native authentication
 
 These samples and how-to guides demonstrate how to write a public client mobile application with native authentication that integrates with Microsoft Entra External ID.
@@ -86,7 +94,8 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > |Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-android-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
-> |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+> |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+
 
 ### Daemon
 
@@ -146,13 +155,14 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | ------- | -------- | ------------- |
 > | Web app | &#8226; [Sign in users](./sample-web-app-python-flask-sign-in.md) | ---   |
 
-### iOS (Swift)
+### iOS/macOS (Swift)
 
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > | Mobile: Browser delegated authentication | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-swift-prepare-tenant.md) |
-> |Mobile: Native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+> |Mobile: Native authentication | &#8226; iOS (Swift) [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; iOS (Swift) [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+> |Desktop: Native authentication | &#8226; macOS (Swift) [Sign in users](how-to-run-native-authentication-sample-macos-app.md)| &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
 
 ### JavaScript, Vanilla
 

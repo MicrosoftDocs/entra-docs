@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 05/24/2022
+ms.date: 08/25/2024
 ms.author: rolyon
 ms.custom: it-pro
 ---
@@ -105,9 +105,9 @@ The following permissions are available to update properties and members of grou
 > | microsoft.directory/groups.unified.assignedMembership/classification/update | Update the classification property on Microsoft 365 groups of assigned membership type, excluding role-assignable groups |
 > | microsoft.directory/groups.security/classification/update | Update the classification property on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security.assignedMembership/classification/update | Update the classification property on Security groups of assigned membership type, excluding role-assignable groups |
-> | microsoft.directory/groups/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/dynamicMembershipRule/update | Update the dynamic membership rule on Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups, excluding role-assignable groups |
+> | microsoft.directory/groups/dynamicMembershipRule/update | Update the rule for dynamic membership groups on Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/dynamicMembershipRule/update | Update the rule for dynamic membership groups on Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update the rule for dynamic membership groups on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified.assignedMembership/members/update | Update members of Microsoft 365 groups of assigned membership type, excluding role-assignable groups |

@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: overview
-ms.date: 08/01/2024
+ms.date: 09/19/2024
 ms.service: global-secure-access
 ms.custom: references_regions
 ---
@@ -40,7 +40,7 @@ Microsoft Entra Internet Access secures access to Microsoft services, SaaS, and 
 - Apply universal Conditional Access policies for all internet destinations, even if not federated with Microsoft Entra ID, through integration with Conditional Access session controls. 
 - Prevent stolen tokens from being replayed with the compliant network check for your tenant (built into Conditional Access). Avoid the need to hairpin users, while compromising productivity to achieve location-based security checks. Also prevent SSE bypass for SaaS applications.   
 - Apply universal tenant restrictions to prevent data exfiltration to unauthorized foreign tenants or personal accounts.
-- Restore original user Source IP in Conditional Access policies, Identity Protection scores/risk assessment and Entra ID sign-in logs. 
+- Restore original user Source IP in Conditional Access policies, Microsoft Entra ID Protection risk detections and Entra ID sign-in logs. 
 - Detailed network traffic logs (including enforced policy details). Dashboards such as relationship maps between users, devices and endpoints, cross tenant access, and top network destination in use.
 
 ## Microsoft Entra Private Access
@@ -57,9 +57,12 @@ Remote users connect to private apps across hybrid and multicloud environments, 
 - Provide a seamless end-user experience by acquiring network traffic from the desktop client and deploying side-by-side with your existing non-Microsoft SSE solutions.
 
 ## Licensing overview 
-Microsoft Entra Internet Access and Microsoft Entra Private Access are now generally available. Use of internet access features require a Microsoft Entra Internet Access license and use of private access features require a Microsoft Entra Private Access license. Both licenses are available as part of the Microsoft Entra Suite. To learn more about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about purchasing individual license, see the Microsoft Entra Suite standalone products tab of the licensing page. Use of the Microsoft traffic profile is included with the Secure Access Essentials license, which will soon be included in the Microsoft 365 E3 license. 
+Microsoft Entra Internet Access and Microsoft Entra Private Access are now generally available. Use of internet access features require a Microsoft Entra Internet Access license and use of private access features require a Microsoft Entra Private Access license. Both licenses are available as part of the Microsoft Entra Suite. To learn more about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about purchasing individual license, see the Microsoft Entra Suite standalone products tab of the licensing page.
 
-Prerequisite to use Microsoft Entra Private Access, Microsoft Entra Internet Access and Secure Access Essentials is Microsoft Entra ID P1 or Microsoft Entra ID P2.
+Prerequisite to use Microsoft Entra Private Access and Microsoft Entra Internet Access is Microsoft Entra ID P1 or Microsoft Entra ID P2.
+
+> [!IMPORTANT]
+> Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to roll out on October 1, 2024. This is following a 90-day trial period that began with General Availability on July 1st, 2024.
 
 **Remote Network licensing**
 

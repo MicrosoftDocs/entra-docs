@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/25/2024
 ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about the options available when I'm creating a new access package so that the access package can be managed with minimal effort.
 ---
@@ -73,7 +73,7 @@ On the **Basics** tab, you give the access package a name and specify which cata
 
 ## Select resource roles
 
-On the **Resource roles** tab, you select the resources to include in the access package. Users who request and receive the access package receive all the resource roles, such as group membership, in the access package.
+On the **Resource roles** tab, you select the resources to include in the access package. Users who request and receive the access package receive all the resource roles, such as group membership in the access package.
 
 If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](entitlement-management-access-package-resources.md) later.
 
@@ -86,7 +86,7 @@ If you're not sure which resource roles to include, you can skip adding them whi
     If you're creating the access package in the general catalog or a new catalog, you can choose any resource from the directory that you own. You must be at least an Identity Governance Administrator, or catalog creator.
 
     >[!NOTE]
-    >You can add dynamic groups to a catalog and to an access package. However, you can select only the owner role when you're managing a dynamic group resource in an access package.
+    >You can add dynamic membership groups to a catalog and to an access package. However, you can select only the owner role when you're managing a dynamic group resource in an access package.
 
     If you're creating the access package in an existing catalog, you can select any resource that's already in the catalog without needing to be an owner of that resource.
 
@@ -136,7 +136,7 @@ There are two ways to create an access package programmatically: through Microso
 You can create an access package by using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API to:
 
 1. [List the resources in the catalog](/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&tabs=http&preserve-view=true) and [create an accessPackageResourceRequest](/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0&tabs=http&preserve-view=true) for any resources that aren't yet in the catalog.
-1. [Retrieve the roles and scopes of each resource in the catalog](/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&tabs=http#example-2-retrieve-the-roles-and-scopes-of-a-single-resource-in-a-catalog). This list of roles will then be used to select a role, when subsequently creating a resourceRoleScope.
+1. [Retrieve the roles and scopes of each resource in the catalog](/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&tabs=http&preserve-view=true). This list of roles will then be used to select a role, when subsequently creating a resourceRoleScope.
 1. [Create an accessPackage](/graph/api/entitlementmanagement-post-accesspackages?view=graph-rest-1.0&preserve-view=true).
 1. [Create a resourceRoleScope](/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0&preserve-view=true) for each resource role needed in the access package.
 1. [Create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?view=graph-rest-1.0&preserve-view=true) for each policy needed in the access package.

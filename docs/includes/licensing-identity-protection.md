@@ -15,7 +15,7 @@ ms.custom: include file,licensing
 
 | Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 | Microsoft Entra Suite |
 | --- | --- | --- | --- | --- | --- |
-| Risk policies | Sign-in and user risk policies (via Identity Protection or Conditional Access) | No | No | Yes | Yes |
+| Risk policies | Sign-in and user risk policies (via Conditional Access) | No | No | Yes | Yes |
 | Security reports | Overview | No | No | Yes | Yes |
 | Security reports | Risky users | Limited Information. Only users with medium and high risk are shown. No details drawer or risk history. | Limited Information. Only users with medium and high risk are shown. No details drawer or risk history. | Full access| Yes |
 | Security reports | Risky sign-ins | Limited Information. No risk detail or risk level is shown. | Limited Information. No risk detail or risk level is shown. | Full access | Yes |

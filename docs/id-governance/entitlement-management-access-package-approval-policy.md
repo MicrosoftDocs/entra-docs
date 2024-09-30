@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/08/2024
 ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
@@ -164,6 +164,8 @@ For example, if you listed Alice and Bob as the first stage approver(s), list Ca
 
     ![Access package - Policy- Enable policy setting](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
+1. When new requests are enabled, you can specify whether you want to **Allow managers to request on behalf of their employees (preview)**. Enabling this setting will also give you the option to **Bypass approval stage if manager is the requestor and the approver (preview)**. Bypassing an approval stage when the manager is both the requestor, and the approver for that stage, streamlines the request process by reducing redundancy. 
+    :::image type="content" source="media/entitlement-management-access-package-approval-policy/manager-enable-approval.png" alt-text="Screenshot of manager approval of request options.":::
 1. Select **Next**.
 
 ## Collect additional requestor information for approval

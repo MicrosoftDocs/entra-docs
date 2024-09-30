@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
-ms.date: 04/15/2024
+ms.date: 09/27/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -49,7 +49,7 @@ You need:
     - Failure reason
     - Username, User ID, and Sign-in identifier
 
-    ![Screenshot of the sign-in details, with several details highlighted.](media/howto-troubleshoot-sign-in-errors/sign-in-activity-details.png)
+    ![Screenshot of the sign-in details, with several details highlighted.](media/howto-troubleshoot-sign-in-errors/troubleshoot-sign-in-details.png)
 
 ## Troubleshoot sign-in errors
 
