@@ -66,7 +66,7 @@
   items:
   - name: Plan your Conditional Access deployment
     href: plan-conditional-access.md
-  - name: Common Conditional Access policies
+  - name: Recommended policies
     items: 
     - name: Block legacy authentication
       href: howto-conditional-access-policy-block-legacy.md
@@ -100,6 +100,8 @@
       href: howto-policy-unknown-unsupported-device.md
     - name: Require terms of use to be accepted
       href: require-tou.md
+  - name: Other policy examples
+    items: 
     - name: Require MFA for administrators
       href: howto-conditional-access-policy-admin-mfa.md
     - name: Require MFA for guest users

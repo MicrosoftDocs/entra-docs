@@ -5,7 +5,7 @@ description: Create a Conditional Access policy requiring stronger authenticatio
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/27/2024
+ms.date: 09/30/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
