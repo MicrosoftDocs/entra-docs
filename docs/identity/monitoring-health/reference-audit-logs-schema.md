@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 07/23/2024
+ms.date: 09/30/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 ---
@@ -65,3 +65,17 @@ You can download the audit log schema from the Microsoft Entra admin center.
   ]
 },
 ```
+
+## Field descriptions
+
+For a full list of the properties, their descriptions, and the possible values, see [directoryAudit resource type](graph/api/resources/drectoryaudit?view=graph-rest-1.0&preserve-view=true)
+
+| Property | Description |
+| --- | --- | 
+| activityDateTime | The date and time, in UTC. |
+| activityDisplayName | Indicates the activity name or the operation name (examples: "Create User" and "Add member to group"). For more information, see [Audit log activities](reference-audit-activities.md). |
+| category | Indicates which resource category that's targeted by the activity. For example: `UserManagement`, `GroupManagement`, `ApplicationManagement`, `RoleManagement`. For more information, see [Audit log activities](reference-audit-activities.md). |
+| correlationId | Unique ID that helps correlate activities that span across various services. Used to troubleshoot tenant activity. |
+| initiatedBy | Indicates information about the user or app initiated the activity. |
+| result | Indicates the result of the activity. Possible values are: `success`, `failure`, `timeout`, `unknownFutureValue`. |
+| targetResources | Indicates information on which resource was changed due to the activity. Target Resource Type can be `User`, `Device`, `Directory`, `App`, `Role`, `Group`, `Policy` or `Other`. |

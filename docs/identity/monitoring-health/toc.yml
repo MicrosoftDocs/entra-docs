@@ -158,30 +158,32 @@ items:
 - name: Reference
   expanded: false
   items:
-  - name: SLA performance for Microsoft Entra ID
-    href: reference-sla-performance.md
-  - name: Audit activities
+  - name: Audit log activities
     href: reference-audit-activities.md
+  - name: Audit log schema
+    href: reference-audit-logs-schema.md
   - name: Data retention policies
     href: reference-reports-data-retention.md
   - name: Log latency
     href: reference-log-latency.md
+  - name: Microsoft Graph PowerShell cmdlets
+    href: reference-powershell-reporting.md
+  - name: Sign-in log schema
+    href: reference-sign-ins-log-schema.md
+  - name: SLA performance for Microsoft Entra ID
+    href: reference-sla-performance.md
   - name: FAQs
     href: reports-faq.yml
-  - name: Microsoft Graph
+  - name: Microsoft Graph APIs
     expanded: false
     items:
-    - name: Application credential activity API reference
+    - name: appCredentialSignInActivity
       href: /graph/api/resources/appcredentialsigninactivity
-    - name: Application sign-in activity API reference
-      href: /graph/api/resources/serviceprincipalsigninactivity
-    - name: Audit logs API reference
+    - name: directoryAudit
       href: /graph/api/resources/directoryaudit
-    - name: Microsoft Graph PowerShell cmdlets
-      href: reference-powershell-reporting.md
-    - name: Recommendations API reference
+    - name: recommendation
       href: /graph/api/resources/recommendations-api-overview
-    - name: Sign-in logs API reference
+    - name: servicePrincipalSignInActivity
+      href: /graph/api/resources/serviceprincipalsigninactivity
+    - name: signIn
       href: /graph/api/resources/signin
-    - name: Sign-in log schema
-      href: reference-azure-monitor-sign-ins-log-schema.md
