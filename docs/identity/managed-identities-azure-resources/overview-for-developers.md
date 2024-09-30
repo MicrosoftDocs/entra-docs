@@ -591,13 +591,7 @@ import (
 )
 
 func main() {
-    // Specify the Client ID if using user-assigned managed identities
-    clientID := os.Getenv("Managed_Identity_Client_ID")
-    if clientID == "" {
-        fmt.Println("Managed_Identity_Client_ID environment variable is not set")
-        return
-    }
-
+    // The client ID for the user-assigned managed identity is read from the AZURE_CLIENT_ID env var
     cred, err := azidentity.NewDefaultAzureCredential(nil)
     if err != nil {
         fmt.Printf("failed to obtain a credential: %v\n", err)
