@@ -25,13 +25,19 @@ The following diagram shows what the entire implicit sign-in flow looks like and
 
 ![Diagram showing the implicit sign-in flow.](./media/v2-oauth2-implicit-grant-flow/convergence-scenarios-implicit.svg)
 
-## Prefer the auth code flow
-
-With some browsers [removing support for third party cookies](reference-third-party-cookies-spas.md), the **implicit grant flow is no longer a suitable authentication method**. The [silent single sign-on (SSO) features](#acquire-access-tokens-silently) of the implicit flow do not work without third party cookies, causing applications to break when they attempt to get a new token. We strongly recommend that all new applications use the [authorization code flow](v2-oauth2-auth-code-flow.md) that now supports single-page apps in place of the implicit flow. Existing single-page apps should also [migrate to the authorization code flow](migrate-spa-implicit-to-auth-code.md).
-
 ## Suitable scenarios for the OAuth2 implicit grant
 
 The implicit grant is only reliable for the initial, interactive portion of your sign-in flow, where the lack of [third party cookies](reference-third-party-cookies-spas.md) doesn't impact your application. This limitation means you should use it exclusively as part of the hybrid flow, where your application requests a code as well as a token from the authorization endpoint. In a hybrid flow, your application receives a code that can be redeemed for a refresh token, thus ensuring your app's login session remains valid over time.
+
+### Prefer the auth code flow
+
+With some browsers [removing support for third party cookies](reference-third-party-cookies-spas.md), the **implicit grant flow is no longer a suitable authentication method**. The [silent single sign-on (SSO) features](#acquire-access-tokens-silently) of the implicit flow do not work without third party cookies, causing applications to break when they attempt to get a new token. We strongly recommend that all new applications use the [authorization code flow](v2-oauth2-auth-code-flow.md) that now supports single-page apps in place of the implicit flow. Existing single-page apps should also [migrate to the authorization code flow](migrate-spa-implicit-to-auth-code.md).
+
+### Security Concerns with Implicit Grant Flow
+
+There are two main ways to deliver tokens with the implicit grant flow: as a URL fragment or as a query parameter (using `form POST` and `GET` ). The security concerns that apply to the implicit grant flow for tokens in Single Page Apps (SPAs) do not apply to the implicit flow with `form POST`. In the implicit flow with form POST, the token is delivered securely through an HTML form POST to the client's redirect URI. This method ensures that the token is not exposed in the URL fragment, which in turn avoids the risks of token leakage through browser history or referrer headers.    
+
+The implicit flow with `form POST` is intended for traditional web applications where the server has control over processing POST data securely. The server-side handling of tokens decreases the risk of attack relative to tokens that are managed entirely on the client side, as is the case in SPAs.
 
 ### When should you allow an access token or ID token to be issued when requested using implicit grant or hybrid flow?
 
@@ -45,15 +51,9 @@ However, if you (or your developers) are not using MSAL in your application, the
 | A web or SPA application that calls a web API via JavaScript using implicit flow | Access tokens & ID tokens |
 | An ASP.NET Core web app and other web apps that use hybrid authentication | ID tokens |
 
-### Security Concerns with Implicit Grant Flow
-
-There are two main ways to deliver tokens with the implicit grant flow: as a URL fragment or as a query parameter (using `form POST` and `GET` ). The security concerns that apply to the implicit grant flow for tokens in Single Page Apps (SPAs) do not apply to the implicit flow with `form POST`. In the implicit flow with form POST, the token is delivered securely through an HTML form POST to the client's redirect URI. This method ensures that the token is not exposed in the URL fragment, which in turn avoids the risks of token leakage through browser history or referrer headers.    
-
-The implicit flow with `form POST` is intended for traditional web applications where the server has control over processing POST data securely. The server-side handling of tokens decreases the risk of attack relative to tokens that are managed entirely on the client side, as is the case in SPAs.
-
 ## Send the sign-in request
 
-To initially sign the user into your app, you can send an [OpenID Connect](v2-protocols-oidc.md) authentication request and get an `id_token` from the Microsoft identity platform. 
+To initially sign the user into your app, you can send an [OpenID Connect](v2-protocols-oidc.md) authentication request and get an `id_token` from the Microsoft identity platform.
 
 > [!IMPORTANT]
 > To successfully request an ID token and/or an access token, the app registration in the [Microsoft Entra admin center - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page must have the corresponding implicit grant flow enabled, by selecting **ID tokens** and **access tokens** in the **Implicit grant and hybrid flows** section. If it's not enabled, an `unsupported_response` error will be returned:
