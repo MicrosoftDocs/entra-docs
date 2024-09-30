@@ -33,7 +33,7 @@ Credentials | Description | Benefits
 - For *new users*, registration and bootstrapping takes a user with no existing enterprise credentials, verifies their identity, bootstraps them into their first portable credential, and then uses that portable credential to bootstrap other local credentials on each of their computing devices. Finally, after registration the admin may enforce phishing-resistant authentication for users in Microsoft Entra ID.
 - For *existing users*, this phase gets users to register for phishing-resistant passwordless on their existing devices directly, or using existing MFA credentials to bootstrap phishing-resistant passwordless credentials. The end goal is the same as new users - most users should have at least one **portable** credential, and then **local** credentials on each computing device. If you are an admin deploying phishing-resistant passwordless for existing users then you may be able to skip ahead to the [Onboarding Step 2: Bootstrapping a Portable Credential section](#onboarding-step-2-bootstrap-a-portable-credential).
 
-Before you start, Microsoft recommends enabling passkey and other credentials for enterprise users in the tenant. If users are motivated to self-register for strong credentials, it's beneficial to allow it. At a minimum, it's recommended to enable the [Passkey (FIDO2) policy](~/identity/authentication/how-to-enable-passkey-fido2) so that users can register for passkeys and security keys if they prefer them.
+Before you start, Microsoft recommends enabling passkey and other credentials for enterprise users in the tenant. If users are motivated to self-register for strong credentials, it's beneficial to allow it. At a minimum, it's recommended to enable the [Passkey (FIDO2) policy](~/identity/authentication/how-to-enable-passkey-fido2.md) so that users can register for passkeys and security keys if they prefer them.
 
 This section focuses on phases 1-3:
 
@@ -284,16 +284,16 @@ Entra Identity Entra ID Protection helps organizations detect, investigate, and 
 - Suspicious browser
 - Attacker in the middle
 - Possible attempt to access Primary Refresh Token (PRT)
-- And others: [Risk detections mapped to riskEventType](~/id-protection/concept-identity-protection-risks)
+- And others: [Risk detections mapped to riskEventType](~/id-protection/concept-identity-protection-risks.md)
 
 Microsoft recommends that Entra ID Protection customers take the following actions to best protect their phishing-resistant passwordless users:
 
-1. Review the Entra ID Protection deployment guidance: [Plan an ID Protection deployment](~/id-protection/how-to-deploy-identity-protection)
+1. Review the Entra ID Protection deployment guidance: [Plan an ID Protection deployment](~/id-protection/how-to-deploy-identity-protection.md)
 1. Configure your risk logs to export to a SIEM
 1. Investigate and act on any medium **user** risk
 1. Configure a conditional access policy to block high risk **users**
 
-Following your deployment of Entra ID Protection, consider leveraging [conditional access token protection](~/identity/conditional-access/concept-token-protection). As users begin using phishing-resistant passwordless credentials, attacks and detections will continue to evolve. For example, since the user credentials can no longer be easily phished, attackers may move on to trying to exfiltrate tokens off of users’ devices. Token protection helps mitigate this risk by binding tokens to the hardware of the device they were issued to.
+Following your deployment of Entra ID Protection, consider leveraging [conditional access token protection](~/identity/conditional-access/concept-token-protection.md). As users begin using phishing-resistant passwordless credentials, attacks and detections will continue to evolve. For example, since the user credentials can no longer be easily phished, attackers may move on to trying to exfiltrate tokens off of users’ devices. Token protection helps mitigate this risk by binding tokens to the hardware of the device they were issued to.
 
 ## Next steps
 
