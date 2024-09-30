@@ -1,5 +1,5 @@
 ---
-title: How to view and use the monitoring and health log schemas
+title: How to read the monitoring and health log schemas
 description: Learn how to interpret the details found in the the Microsoft Entra audit and sign-in and logs schema.
 
 author: shlipsey3
@@ -14,32 +14,43 @@ ms.reviewer: egreenberg
 # Customer intent: As an IT admin, I want to understand the schema of the Microsoft Entra audit and sign-in logs so that I can interpret the data in the logs and use it to monitor and troubleshoot my organization's identity and access management.
 ---
 
-# How to use the Microsoft Entra logs schema
+# How to read the Microsoft Entra logs schema
 
-This article describes the information contained in the Microsoft Entra sign-in and audit logs schemas. This article includes the schema from the Microsoft Entra admin center and Microsoft Graph. Descriptions of some key fields are provided.
+This article describes the information contained in the Microsoft Entra sign-in and audit logs and how that schema is used by other services. This article covers the schemas from the Microsoft Entra admin center and Microsoft Graph. Descriptions of some key fields are provided.
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
+- For license and role requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
+- The option to download logs is available in all editions of Microsoft Entra ID.
+- Downloading logs programmatically with Microsoft Graph requires a [premium license](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
+- **Reports Reader** is the least privileged role required to view Microsoft Entra activity logs.
+- Audit logs are available for features that you've licensed.
+- The results of a downloaded log might show `hidden` for some properties if you don't have the required license.
 
-Audit logs are available for features that you've licensed. To access the sign-in logs using the Microsoft Graph API, your tenant must have a Microsoft Entra ID P1 or P2 license associated with it. The results of the log schema might show `hidden` for some properties if you don't have the required license.
+## How to interpret the log schemas
 
-## How to download the schema
+Microsoft Entra monitoring and health offer logs, reports, and monitoring tools that can be integrated with Azure Monitor. Understanding the log schema is crucial for effective troubleshooting and data interpretation.
 
-You can download the sign-in log schema from the Microsoft Entra admin center.
+You can download the logs from the Microsoft Entra admin center in JSON format, which closely matches what you see when you query the logs using Microsoft Graph. However, the results of the query in Microsoft Graph vary if you're using the V1.0 or beta version of the schema. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs/Sign-in logs**.
-1. Select the **Download** button and select **JSON**.
-    - For sign-in logs you also need to select the type of logs you want to download: Interactive, non-interactive, service principal (ApplicationSignIns), or managed identity (MSISignIns).
-1. Open the downloaded file to view the schema.
-    - You may need to clean up the formatting to make the schema more readable.
+The V1.0 version of the schema is the most stable. The beta version often contains more properties, but they are subject to change. For this reason we don't recommend using the beta version of the schema in production environments.
 
-### Sample JSON schemas
+Azure Monitor ingests the logs from Microsoft Entra but the schema is different for some properties. Some properties have a slightly different name or might be broken into multiple properties.
+
+For full details on these schemas, see the following articles:
+
+- [Azure Monitor audit logs](/azure/azure-monitor/reference/tables/auditlogs)
+- [Azure Monitor sign-in logs](/azure/azure-monitor/reference/tables/signinlogs)
+- [Azure Monitor provisioning logs](/azure/azure-monitor/reference/tables/aadprovisioninglogs)
+- [Microsoft Graph audit logs](/graph/api/resources/directoryaudit?view=graph-rest-1.0&preserve-view=true)
+- [Microsoft Graph sign-in logs](/graph/api/resources/signin?view=graph-rest-1.0&preserve-view=true)
+- [Microsoft Graph provisioning logs](/graph/api/resources/provisioninglog?view=graph-rest-1.0&preserve-view=true)
+
+### Sample JSON representations
 
 Some properties were removed from the sample for brevity. Many of the values are placeholders and don't represent real data.
 
-### [Sign-in log schema](#tab/sign-in-log-schema)
+### [Sign-in logs](#tab/sign-in-logs)
 
 For a full list of the properties, their descriptions, and the possible values, see [signIn resource type](/graph/api/resources/signin?view=graph-rest-1.0&preserve-view=true).
 
@@ -138,8 +149,9 @@ For a full list of the properties, their descriptions, and the possible values, 
   ],
 
 ```
-### [Audit log schema](#tab/audit-log-schema)
+### [Audit logs](#tab/audit-logs)
 
+For a full list of the properties, their descriptions, and the possible values, see [directoryAudit resource type](/graph/api/resources/directoryaudit?view=graph-rest-1.0&preserve-view=true).
 
 ```json
 {
@@ -185,7 +197,7 @@ For a full list of the properties, their descriptions, and the possible values, 
 
 ## How to interpret the schema
 
-The full details of the schema are available in the [Microsoft Graph documentation](/graph/api/overview). When looking up the definitions of a value, pay attention to the version you're using. There might be differences between the V1.0 and beta versions of the schema.
+When looking up the definitions of a value, pay attention to the version you're using. There might be differences between the V1.0 and beta versions of the schema.
 
 ### Values found in all log schemas
 
@@ -198,7 +210,6 @@ Some values are common across all log schemas.
 
 ### Audit logs
 
-For a full list of the properties, their descriptions, and the possible values, see [directoryAudit resource type](/graph/api/resources/directoryaudit?view=graph-rest-1.0&preserve-view=true).
 - `activityDisplayName`: Indicates the activity name or the operation name (examples: "Create User" and "Add member to group"). For more information, see [Audit log activities](reference-audit-activities.md).
 - `category`: Indicates which resource category that's targeted by the activity. For example: `UserManagement`, `GroupManagement`, `ApplicationManagement`, `RoleManagement`. For more information, see [Audit log activities](reference-audit-activities.md).
 - `initiatedBy`: Indicates information about the user or app initiated the activity.

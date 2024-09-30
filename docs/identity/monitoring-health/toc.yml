@@ -42,8 +42,8 @@ items:
       href: howto-customize-filter-logs.md
     - name: Download logs
       href: howto-download-logs.md
-    - name: Use the log schemas
-      href: howto-use-log-schemas.md
+    - name: Read the log schemas
+      href: howto-read-log-schemas.md
   - name: Quickstarts 
     expanded: false
     items:
