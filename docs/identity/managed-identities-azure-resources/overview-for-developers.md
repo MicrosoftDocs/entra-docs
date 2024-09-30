@@ -597,7 +597,6 @@ func main() {
         fmt.Printf("failed to obtain a credential: %v\n", err)
         return
     }
-    
 
     // Get the access token
     token, err := credential.GetToken(context.TODO(), azidentity.TokenRequestOptions{
