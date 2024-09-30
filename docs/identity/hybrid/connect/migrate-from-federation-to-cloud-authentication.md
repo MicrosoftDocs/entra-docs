@@ -121,7 +121,7 @@ Evaluate if you're currently using Conditional Access for authentication, or if 
 
 Consider replacing AD FS access control policies with the equivalent Microsoft Entra [Conditional Access policies](~/identity/conditional-access/overview.md) and [Exchange Online Client Access Rules](/exchange/clients-and-mobile-in-exchange-online/client-access-rules/client-access-rules). You can use either Microsoft Entra ID or on-premises groups for Conditional Access.
 
-**Disable Legacy Authentication** - Due to the increased risk associated with legacy authentication protocols create [Conditional Access policy to block legacy authentication](~/identity/conditional-access/howto-conditional-access-policy-block-legacy.md).
+**Disable Legacy Authentication** - Due to the increased risk associated with legacy authentication protocols create [Conditional Access policy to block legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 ### Plan support for MFA
 

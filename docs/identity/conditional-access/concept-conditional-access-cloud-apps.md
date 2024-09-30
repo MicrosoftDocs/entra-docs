@@ -111,7 +111,7 @@ Because the policy is applied to the Azure management portal and API, services, 
 > [!NOTE]
 > The Windows Azure Service Management API application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It does not apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
 
-For more information on how to set up a sample policy for Windows Azure Service Management API, see [Conditional Access: Require MFA for Azure management](howto-conditional-access-policy-azure-management.md).
+For more information on how to set up a sample policy for Windows Azure Service Management API, see [Conditional Access: Require MFA for Azure management](policy-old-require-mfa-azure-mgmt.md).
 
 > [!TIP]
 > For Azure Government, you should target the Azure Government Cloud Management API application.
@@ -132,7 +132,7 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 We're continually adding more administrative portals to the list.
 
 > [!NOTE]
-> The Microsoft Admin Portals app applies to interactive sign-ins to the listed admin portals only. Sign-ins to the underlying resources or services like Microsoft Graph or Azure Resource Manager APIs are not covered by this application. Those resources are protected by the [Windows Azure Service Management API](#windows-azure-service-management-api) app. This enables customers to move along the MFA adoption journey for admins without impacting automation that relies on APIs and PowerShell. When you are ready, Microsoft recommends using a [policy requiring administrators perform MFA always](howto-conditional-access-policy-admin-mfa.md) for comprehensive protection.
+> The Microsoft Admin Portals app applies to interactive sign-ins to the listed admin portals only. Sign-ins to the underlying resources or services like Microsoft Graph or Azure Resource Manager APIs are not covered by this application. Those resources are protected by the [Windows Azure Service Management API](#windows-azure-service-management-api) app. This enables customers to move along the MFA adoption journey for admins without impacting automation that relies on APIs and PowerShell. When you are ready, Microsoft recommends using a [policy requiring administrators perform MFA always](policy-old-require-mfa-admin.md) for comprehensive protection.
 
 ### Other applications
 

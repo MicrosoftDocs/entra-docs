@@ -47,7 +47,7 @@ As threats evolve over time, Microsoft might change these policies in the future
 
 ### Multifactor authentication for admins accessing Microsoft Admin Portals
 
-This policy covers [14 admin roles](#what-administrator-roles-are-covered-by-these-policies) that we consider to be highly privileged, who are accessing the [Microsoft Admin Portals group](how-to-policy-mfa-admin-portals.md), and requires them to perform multifactor authentication.
+This policy covers [14 admin roles](#what-administrator-roles-are-covered-by-these-policies) that we consider to be highly privileged, who are accessing the [Microsoft Admin Portals group](policy-old-require-mfa-admin-portals.md), and requires them to perform multifactor authentication.
 
 This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled.
 

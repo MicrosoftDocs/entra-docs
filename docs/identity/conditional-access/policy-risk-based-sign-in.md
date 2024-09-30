@@ -34,6 +34,6 @@ The Sign-in risk-based policy protects users from registering MFA in risky sessi
 - [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
 - [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)
-- [User risk-based Conditional Access](howto-conditional-access-policy-risk-user.md)
+- [User risk-based Conditional Access](policy-risk-based-user.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions](concept-conditional-access-report-only.md)

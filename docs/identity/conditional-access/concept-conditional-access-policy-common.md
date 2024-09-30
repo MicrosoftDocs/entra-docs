@@ -26,67 +26,67 @@ Conditional Access policy templates are organized into the following categories:
 
 Microsoft recommends these policies as the base for all organizations. We recommend these policies be deployed as a group.
 
-- [Require multifactor authentication for admins](howto-conditional-access-policy-admin-mfa.md)
-- [Securing security info registration](howto-conditional-access-policy-registration.md)
-- [Block legacy authentication](howto-conditional-access-policy-block-legacy.md)
-- [Require multifactor authentication for admins accessing Microsoft admin portals](how-to-policy-mfa-admin-portals.md)
-- [Require multifactor authentication for all users](howto-conditional-access-policy-all-users-mfa.md)
-- [Require multifactor authentication for Azure management](howto-conditional-access-policy-azure-management.md)
-- [Require compliant or Microsoft Entra hybrid joined device or multifactor authentication for all users](howto-conditional-access-policy-compliant-device.md)
-- [Require compliant device](how-to-policy-require-device-compliance.md)
+- [Require multifactor authentication for admins](policy-old-require-mfa-admin.md)
+- [Securing security info registration](policy-all-users-security-info-registration.md)
+- [Block legacy authentication](policy-block-legacy-authentication.md)
+- [Require multifactor authentication for admins accessing Microsoft admin portals](policy-old-require-mfa-admin-portals.md)
+- [Require multifactor authentication for all users](policy-all-users-mfa-strength.md)
+- [Require multifactor authentication for Azure management](policy-old-require-mfa-azure-mgmt.md)
+- [Require compliant or Microsoft Entra hybrid joined device or multifactor authentication for all users](policy-alt-all-users-compliant-hybrid-or-mfa.md)
+- [Require compliant device](policy-all-users-device-compliance.md)
 
 # [Zero Trust](#tab/zero-trust)
 
 These policies as a group help support a [Zero Trust architecture](/security/zero-trust/deploy/identity).
 
-- [Require multifactor authentication for admins](howto-conditional-access-policy-admin-mfa.md)
-- [Securing security info registration](howto-conditional-access-policy-registration.md)
-- [Block legacy authentication](howto-conditional-access-policy-block-legacy.md)
-- [Require multifactor authentication for all users](howto-conditional-access-policy-all-users-mfa.md)
-- [Require multifactor authentication for guest access](howto-policy-guest-mfa.md)
-- [Require multifactor authentication for Azure management](howto-conditional-access-policy-azure-management.md)
-- [Require multifactor authentication for risky sign-ins](howto-conditional-access-policy-risk.md) **Requires Microsoft Entra ID P2**
-- [Require password change for high-risk users](howto-conditional-access-policy-risk-user.md) **Requires Microsoft Entra ID P2**
-- [Block access for unknown or unsupported device platform](howto-policy-unknown-unsupported-device.md)
-- [No persistent browser session](howto-policy-persistent-browser-session.md)
-- [Require approved client apps or app protection policies](howto-policy-approved-app-or-app-protection.yml)
-- [Require compliant or Microsoft Entra hybrid joined device or multifactor authentication for all users](howto-conditional-access-policy-compliant-device.md)
-- [Require multifactor authentication for admins accessing Microsoft admin portals](how-to-policy-mfa-admin-portals.md)
-- [Block access for users with insider risk](how-to-policy-insider-risk.md) **Requires Microsoft Purview**
+- [Require multifactor authentication for admins](policy-old-require-mfa-admin.md)
+- [Securing security info registration](policy-all-users-security-info-registration.md)
+- [Block legacy authentication](policy-block-legacy-authentication.md)
+- [Require multifactor authentication for all users](policy-all-users-mfa-strength.md)
+- [Require multifactor authentication for guest access](policy-old-require-mfa-guest.md)
+- [Require multifactor authentication for Azure management](policy-old-require-mfa-azure-mgmt.md)
+- [Require multifactor authentication for risky sign-ins](policy-risk-based-sign-in.md) **Requires Microsoft Entra ID P2**
+- [Require password change for high-risk users](policy-risk-based-user.md) **Requires Microsoft Entra ID P2**
+- [Block access for unknown or unsupported device platform](policy-all-users-device-unknown-unsupported.md)
+- [No persistent browser session](policy-all-users-persistent-browser.md)
+- [Require approved client apps or app protection policies](policy-all-users-device-compliance.md)
+- [Require compliant or Microsoft Entra hybrid joined device or multifactor authentication for all users](policy-alt-all-users-compliant-hybrid-or-mfa.md)
+- [Require multifactor authentication for admins accessing Microsoft admin portals](policy-old-require-mfa-admin-portals.md)
+- [Block access for users with insider risk](policy-risk-based-insider-block.md) **Requires Microsoft Purview**
 
 # [Remote work](#tab/remote-work)
 
 These policies help secure organizations with remote workers.
 
-- [Securing security info registration](howto-conditional-access-policy-registration.md)
-- [Block legacy authentication](howto-conditional-access-policy-block-legacy.md)
-- [Require multifactor authentication for all users](howto-conditional-access-policy-all-users-mfa.md)
-- [Require multifactor authentication for guest access](howto-policy-guest-mfa.md)
-- [Require multifactor authentication for risky sign-ins](howto-conditional-access-policy-risk.md) **Requires Microsoft Entra ID P2**
-- [Require password change for high-risk users](howto-conditional-access-policy-risk-user.md) **Requires Microsoft Entra ID P2**
-- [Require compliant or Microsoft Entra hybrid joined device for administrators](howto-conditional-access-policy-compliant-device-admin.md)
-- [Block access for unknown or unsupported device platform](howto-policy-unknown-unsupported-device.md)
-- [No persistent browser session](howto-policy-persistent-browser-session.md)
-- [Require compliant device](how-to-policy-require-device-compliance.md)
-- [Require approved client apps or app protection policies](howto-policy-approved-app-or-app-protection.yml)
-- [Use application enforced restrictions for unmanaged devices](howto-policy-app-enforced-restriction.md)
+- [Securing security info registration](policy-all-users-security-info-registration.md)
+- [Block legacy authentication](policy-block-legacy-authentication.md)
+- [Require multifactor authentication for all users](policy-all-users-mfa-strength.md)
+- [Require multifactor authentication for guest access](policy-old-require-mfa-guest.md)
+- [Require multifactor authentication for risky sign-ins](policy-risk-based-sign-in.md) **Requires Microsoft Entra ID P2**
+- [Require password change for high-risk users](policy-risk-based-user.md) **Requires Microsoft Entra ID P2**
+- [Require compliant or Microsoft Entra hybrid joined device for administrators](policy-alt-admin-device-compliand-hybrid.md)
+- [Block access for unknown or unsupported device platform](policy-all-users-device-unknown-unsupported.md)
+- [No persistent browser session](policy-all-users-persistent-browser.md)
+- [Require compliant device](policy-all-users-device-compliance.md)
+- [Require approved client apps or app protection policies](policy-all-users-device-compliance.md)
+- [Use application enforced restrictions for unmanaged devices](policy-all-users-app-enforced-restrictions.md)
 
 # [Protect administrator](#tab/protect-administrator)
 
 These policies are directed at highly privileged administrators in your environment, where compromise might cause the most damage.
 
-- [Require multifactor authentication for admins](howto-conditional-access-policy-admin-mfa.md)
-- [Block legacy authentication](howto-conditional-access-policy-block-legacy.md)
-- [Require multifactor authentication for Azure management](howto-conditional-access-policy-azure-management.md)
-- [Require compliant or Microsoft Entra hybrid joined device for administrators](howto-conditional-access-policy-compliant-device-admin.md)
-- [Require compliant device](how-to-policy-require-device-compliance.md)
-- [Require phishing-resistant multifactor authentication for administrators](how-to-policy-phish-resistant-admin-mfa.md)
+- [Require multifactor authentication for admins](policy-old-require-mfa-admin.md)
+- [Block legacy authentication](policy-block-legacy-authentication.md)
+- [Require multifactor authentication for Azure management](policy-old-require-mfa-azure-mgmt.md)
+- [Require compliant or Microsoft Entra hybrid joined device for administrators](policy-alt-admin-device-compliand-hybrid.md)
+- [Require compliant device](policy-all-users-device-compliance.md)
+- [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md.md)
 
 # [Emerging threats](#tab/emerging-threats)
 
 Policies in this category provide new ways to protect against compromise.
 
-- [Require phishing-resistant multifactor authentication for administrators](how-to-policy-phish-resistant-admin-mfa.md)
+- [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md.md)
 
 ---
 
@@ -108,9 +108,9 @@ Organizations can select individual policy templates and:
 
 ## Other common policies
 
-- [Require multifactor authentication for device registration](how-to-policy-mfa-device-register-join.md)
-- [Block access by location](howto-conditional-access-policy-location.yml)
-- [Block access except specific apps](howto-conditional-access-policy-block-access.md)
+- [Require multifactor authentication for device registration](policy-all-users-device-registration.md)
+- [Block access by location](policy-block-by-location.md)
+- [Block access except specific apps](policy-block-example.md)
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]

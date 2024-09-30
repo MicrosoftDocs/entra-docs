@@ -69,61 +69,61 @@
   - name: Recommended policies
     items: 
     - name: Block legacy authentication
-      href: howto-conditional-access-policy-block-legacy.md
+      href: policy-block-legacy-authentication.md
     - name: Require phishing-resistant MFA for administrators
-      href: how-to-policy-phish-resistant-admin-mfa.md
+      href: policy-admin-phish-resistant-mfa.md.md
     - name: Require MFA authentication strength for all users
-      href: howto-conditional-access-policy-all-users-mfa.md
+      href: policy-all-users-mfa-strength.md
     - name: Require MFA authentication strength for guests
-      href: howto-conditional-access-policy-authentication-strength-external.md
+      href: policy-guests-mfa-strength.md
     - name: Secure security info registration
-      href: howto-conditional-access-policy-registration.md
+      href: policy-all-users-security-info-registration.md
     - name: Require authentication strength for device registration
-      href: how-to-policy-mfa-device-register-join.md
+      href: policy-all-users-device-registration.md
     - name: Require MFA for risky sign-in
-      href: howto-conditional-access-policy-risk.md
+      href: policy-risk-based-sign-in.md
     - name: Require password change for risky users
-      href: howto-conditional-access-policy-risk-user.md
+      href: policy-risk-based-user.md
     - name: Require compliant devices
-      href: how-to-policy-require-device-compliance.md
+      href: policy-all-users-device-compliance.md
     - name: Require approved app or app protection policy
-      href: howto-policy-approved-app-or-app-protection.yml
+      href: policy-all-users-device-compliance.md
     - name: Require app protection policy for Windows
-      href: how-to-app-protection-policy-windows.md
+      href: policy-all-users-windows-app-protection.md
     - name: No persistent browser session
-      href: howto-policy-persistent-browser-session.md
+      href: policy-all-users-persistent-browser.md
     - name: Use application enforced restrictions
-      href: howto-policy-app-enforced-restriction.md
+      href: policy-all-users-app-enforced-restrictions.md
     - name: Block users with elevated insider risk
-      href: how-to-policy-insider-risk.md
+      href: policy-risk-based-insider-block.md
     - name: Block access for unknown or unsupported devices
-      href: howto-policy-unknown-unsupported-device.md
+      href: policy-all-users-device-unknown-unsupported.md
     - name: Require terms of use to be accepted
-      href: require-tou.md
+      href: policy-all-users-require-terms-of-use.md
   - name: Other policy examples
     items: 
     - name: Require MFA for administrators
-      href: howto-conditional-access-policy-admin-mfa.md
+      href: policy-old-require-mfa-admin.md
     - name: Require MFA for guest users
-      href: howto-policy-guest-mfa.md
+      href: policy-old-require-mfa-guest.md
     - name: Require MFA for Microsoft admin portals
-      href: how-to-policy-mfa-admin-portals.md
+      href: policy-old-require-mfa-admin-portals.md
     - name: Require MFA for Azure management
-      href: howto-conditional-access-policy-azure-management.md
+      href: policy-old-require-mfa-azure-mgmt.md
     - name: Require compliant or hybrid join for admins
-      href: howto-conditional-access-policy-compliant-device-admin.md
+      href: policy-alt-admin-device-compliand-hybrid.md
     - name: Require compliant device, hybrid joined, or MFA
-      href: howto-conditional-access-policy-compliant-device.md
+      href: policy-alt-all-users-compliant-hybrid-or-mfa.md
     - name: Require MFA for Intune enrollment
       href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
     - name: Block access by location
-      href: howto-conditional-access-policy-location.yml
+      href: policy-block-by-location.md
     - name: Block access
-      href: howto-conditional-access-policy-block-access.md
+      href: policy-block-example.md
   - name: Microsoft-managed policies
     href: managed-policies.md
   - name: Configure authentication flows
-    href: how-to-policy-authentication-flows.md
+    href: policy-block-authentication-flows.md
   - name: Configure report only mode
     href: howto-conditional-access-insights-reporting.md
   - name: Block legacy authentication

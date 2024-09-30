@@ -87,7 +87,7 @@ This scenario provides two aggregated data graphs. The first displays the number
 
 This scenario also provides an aggregated look at failures of interactive MFA sign-in attempts. The same type of refreshed sessions and passwordless methods are excluded from this metric.
 
-- [Configure Conditional Access for MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md).
+- [Configure Conditional Access for MFA for all users](../conditional-access/policy-all-users-mfa-strength.md).
 - [Troubleshoot common sign-in errors](howto-troubleshoot-sign-in-errors.md).
 
 ![Screenshot of the MFA scenario.](media/concept-microsoft-entra-health/scenario-monitoring-MFA.png)

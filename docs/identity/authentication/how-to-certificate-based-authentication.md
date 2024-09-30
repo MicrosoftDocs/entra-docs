@@ -323,7 +323,7 @@ Let's walk through a scenario where we validate strong authentication. We'll cre
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/policy-oid-rule.png" alt-text="Screenshot of the Policy OID rule.":::
 
-1. Create a Conditional Access policy for the user to require multifactor authentication by following steps at [Conditional Access - Require MFA](../conditional-access/howto-conditional-access-policy-all-users-mfa.md#create-a-conditional-access-policy).
+1. Create a Conditional Access policy for the user to require multifactor authentication by following steps at [Conditional Access - Require MFA](../conditional-access/policy-all-users-mfa-strength.md#create-a-conditional-access-policy).
 1. Navigate to [MyApps portal](https://myapps.microsoft.com/). Enter your UPN and select **Next**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/name.png" alt-text="Screenshot of the User Principal Name.":::

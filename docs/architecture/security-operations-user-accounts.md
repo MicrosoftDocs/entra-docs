@@ -244,7 +244,7 @@ After you scope what normal is for the accounts in your environment, consider th
 
 * Are the baselines you set too aggressive? Having too many alerts might result in alerts being ignored or missed.
 
-Configure Identity Protection to help ensure protection is in place that supports your security baseline policies. For example, blocking users if risk = high. This risk level indicates with a high degree of confidence that a user account is compromised. For more information on setting up sign in risk policies and user risk policies, visit [Identity Protection policies](~/id-protection/concept-identity-protection-policies.md). For more information on setting up Conditional Access, visit [Conditional Access: Sign-in risk-based Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-risk.md).
+Configure Identity Protection to help ensure protection is in place that supports your security baseline policies. For example, blocking users if risk = high. This risk level indicates with a high degree of confidence that a user account is compromised. For more information on setting up sign in risk policies and user risk policies, visit [Identity Protection policies](~/id-protection/concept-identity-protection-policies.md). For more information on setting up Conditional Access, visit [Conditional Access: Sign-in risk-based Conditional Access](~/identity/conditional-access/policy-risk-based-sign-in.md).
 
 The following are listed in order of importance based on the effect and severity of the entries.
 

@@ -335,7 +335,7 @@ You can access service settings from the [Microsoft Entra admin center](https://
 
 ### Trusted IPs
 
-Location conditions are the recommended way to configure MFA with Conditional Access because of IPv6 support and other improvements. For more information about location conditions, see [Using the location condition in a Conditional Access policy](/entra/identity/conditional-access/location-condition#location-condition-in-policy). For steps to define locations and create a Conditional Access policy, see [Conditional Access: Block access by location](/entra/identity/conditional-access/howto-conditional-access-policy-location).
+Location conditions are the recommended way to configure MFA with Conditional Access because of IPv6 support and other improvements. For more information about location conditions, see [Using the location condition in a Conditional Access policy](/entra/identity/conditional-access/location-condition#location-condition-in-policy). For steps to define locations and create a Conditional Access policy, see [Conditional Access: Block access by location](/entra/identity/conditional-access/policy-block-by-location).
 
 The trusted IPs feature of Microsoft Entra multifactor authentication also bypasses MFA prompts for users who sign in from a defined IP address range. You can set trusted IP ranges for your on-premises environments. When users are in one of these locations, there's no Microsoft Entra multifactor authentication prompt. The trusted IPs feature requires Microsoft Entra ID P1 edition. 
 

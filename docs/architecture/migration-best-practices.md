@@ -186,7 +186,7 @@ Microsoft Entra logs all sign-ins into an Azure tenant that includes internal ap
 
 Regardless of where requests originate or what resources they access, the [Zero Trust model](/security/zero-trust/zero-trust-overview) teaches us to "Never trust, always verify." Secure all locations as if they're outside the corporate network. Declare inside networks as [trusted locations](../identity/conditional-access/concept-assignment-network.md#trusted-locations) to reduce identity-protection false positives. Enforce multifactor authentication for all users and establish [device-based Conditional Access policies](/mem/intune/protect/create-conditional-access-intune).
 
-Run a query on sign-in logs to discover users that connect from inside the corporate network, but aren't [Microsoft Entra hybrid joined or compliant](/azure/active-directory/conditional-access/howto-conditional-access-policy-compliant-device). Consider users on compliant devices and use of unsupported browsers such as Firefox or Chrome without the extension. Instead, use computer domain and compliance status.
+Run a query on sign-in logs to discover users that connect from inside the corporate network, but aren't [Microsoft Entra hybrid joined or compliant](/azure/active-directory/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa). Consider users on compliant devices and use of unsupported browsers such as Firefox or Chrome without the extension. Instead, use computer domain and compliance status.
 
 ### Staged authentication migration testing and cutover
 

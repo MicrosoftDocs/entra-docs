@@ -82,7 +82,7 @@ Organizations that use the Subscription Activation feature to enable users to "s
 
 Although the app ID is the same in both instances, the name of the cloud app depends on the tenant.
 
-For more information about configuring exclusions in Conditional Access policies, see [Application exclusions](/azure/active-directory/conditional-access/howto-conditional-access-policy-all-users-mfa#application-exclusions).
+For more information about configuring exclusions in Conditional Access policies, see [Application exclusions](/azure/active-directory/conditional-access/policy-all-users-mfa-strength#application-exclusions).
 
 <!-- 8605089 -->
 
