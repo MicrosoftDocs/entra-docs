@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.reviewer: almars
-ms.date: 30/9/2024
+ms.date: 9/30/2024
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -20,7 +20,7 @@ This article describes how to configure and set up a custom email provider with 
 This how-to guide demonstrates the one time code send event with a REST API running in Azure Functions and a sample OpenID Connect application.
 
 > [!TIP]
-> [![Try it now](media/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmailOTP)
+> [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmailOTP)
 >
 > To try out this feature, go to the Woodgrove Groceries demo and start the “Use a custom Email Provider for One Time code” use case.
 
@@ -47,7 +47,7 @@ This section shows you how to set up an Azure Function app in the Azure portal. 
     | Setting      | Suggested value  | Description |
     | ------------ | ---------------- | ----------- |
     | **Subscription** | Your subscription | The subscription under which the new function app will be created in. |
-    | **[Resource Group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select and existing resource group, or name for the new one in which you'll create your function app. |
+    | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select and existing resource group, or name for the new one in which you'll create your function app. |
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
     |**Publish**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
@@ -73,7 +73,7 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
 
 The following screenshot demonstrates how to configure the Azure HTTP trigger function.
 
-  ![Screenshot that shows how to choose the development environment, and template.](media/create-http-trigger-function.png)
+  ![Screenshot that shows how to choose the development environment, and template.](media/custom-extension-emailotp-get-started/create-http-trigger-function.png)
 
 ### 1.2 Edit the function
 
@@ -339,11 +339,11 @@ Next, you register the custom authentication extension. You register the custom 
 
 After your custom authentication extension is created, open the application from the portal under *App registrations** and select **API permissions**.
 
-From the **API permissions** page, select the **Grant admin consent for <yourtenant>** button to give admin consent to the registered app, which allows the custom authentication extension to authenticate to your API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
+From the **API permissions** page, select the **Grant admin consent for "YourTenant"** button to give admin consent to the registered app, which allows the custom authentication extension to authenticate to your API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
 
 The following screenshot shows how to grant permissions.
 
-![Screenshot that shows how grant admin consent.](media/application-grantconsent.png)
+![Screenshot that shows how grant admin consent.](media/custom-extension-emailotp-get-started/application-grantconsent.png)
 
 ## Step 3: Configure an OpenID Connect app to test with
 
@@ -363,7 +363,7 @@ Follow these steps to register the **jwt.ms** web application:
 
 The following screenshot shows how to register the *My Test application*.
 
-![Screenshot that shows how to select the supported account type and redirect URI.](media/register-test-web-application.png)
+![Screenshot that shows how to select the supported account type and redirect URI.](media/custom-extension-emailotp-get-started/register-test-web-application.png)
 
 ### 3.1 Get the application ID
 
@@ -440,7 +440,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    ![Screenshot that shows how to add authentication to your function app.](media/configure-auth-function-app.png)
+    ![Screenshot that shows how to add authentication to your function app.](media/custom-extension-emailotp-get-started/configure-auth-function-app.png)
 
 ### 5.1 Using OpenID Connect identity provider
 
@@ -483,7 +483,7 @@ To test your custom email provider, follow these steps:
 1. Replace `{tenant-id}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{tenantname}` with the name of your tenant without the 'onmicrosoft.com'.
 1. Replace `{App_to_sendotp_ID}` with the [My Test application registration ID](#31-get-the-application-id).  
-1. Ensure you sign in using an [Email One Time Passcode account](https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode). Then click Send Code. Ensure that the code sent to the registred email addresses uses the custom provider registered above.
+1. Ensure you sign in using an [Email One Time Passcode account](/entra/external-id/one-time-passcode). Then click Send Code. Ensure that the code sent to the registred email addresses uses the custom provider registered above.
 
 ## Step 7: Fallback to Microsoft Provider
 
@@ -515,15 +515,10 @@ The following table describes known issues and important considerations related 
 
 | Description | Steps to reproduce |Status |
 | ----- | ------ | ------------- |
-| ~~Protocol not correctly updated for SAML~~ |  NA              | Resolved      |
 | Exception not surfaced | Delay in changing configuration       | XHR Request response shows the failure. AAD UI does not surface it.  | TBD      |
-| ~~Signup vs Signin not specified in API.~~|  NA              | Resolved. RequestType now available.      |
-| ~~When an Email OTP extension/ listener is created the portal no longer shows other listeners/ extensions.~~|  NA              | Resolved      |
-| ~~If a extension object is removed via graph that is already associated to a listener all future requests to retrieve listers will fail.~~|  NA              | Resolved      |
 | Native Authentication|  NA              | TBD      |
 | CREATE action on listener (and extension) response body has missing information from the request body. GET provides all information in response body.|  NA              | TBD      |
 | SSPR|  NA              | TBD      |
-| ~~SAML Not working with Custom Extension.~~|  SAML Flow throws an error because the clientId is also the issuerURI which can be a string not a GUID.          | Resolved      |
 
 ## How to report a bug or issue
 
