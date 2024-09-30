@@ -19,15 +19,15 @@ The Microsoft identity platform supports the OAuth 2.0 implicit grant flow as de
 
 [!INCLUDE [suggest-msal-from-protocols](includes/suggest-msal-from-protocols.md)]
 
-## Prefer the auth code flow
-
-With some browsers [removing support for third party cookies](reference-third-party-cookies-spas.md), the **implicit grant flow is no longer a suitable authentication method**.  The [silent single sign-on (SSO) features](#acquire-access-tokens-silently) of the implicit flow do not work without third party cookies, causing applications to break when they attempt to get a new token. We strongly recommend that all new applications use the [authorization code flow](v2-oauth2-auth-code-flow.md) that now supports single-page apps in place of the implicit flow. Existing single-page apps should also [migrate to the authorization code flow](migrate-spa-implicit-to-auth-code.md).
-
 ## Protocol diagram
 
 The following diagram shows what the entire implicit sign-in flow looks like and the sections that follow describe each step in detail.
 
 ![Diagram showing the implicit sign-in flow.](./media/v2-oauth2-implicit-grant-flow/convergence-scenarios-implicit.svg)
+
+## Prefer the auth code flow
+
+With some browsers [removing support for third party cookies](reference-third-party-cookies-spas.md), the **implicit grant flow is no longer a suitable authentication method**. The [silent single sign-on (SSO) features](#acquire-access-tokens-silently) of the implicit flow do not work without third party cookies, causing applications to break when they attempt to get a new token. We strongly recommend that all new applications use the [authorization code flow](v2-oauth2-auth-code-flow.md) that now supports single-page apps in place of the implicit flow. Existing single-page apps should also [migrate to the authorization code flow](migrate-spa-implicit-to-auth-code.md).
 
 ## Suitable scenarios for the OAuth2 implicit grant
 
@@ -45,9 +45,15 @@ However, if you (or your developers) are not using MSAL in your application, the
 | A web or SPA application that calls a web API via JavaScript using implicit flow | Access tokens & ID tokens |
 | An ASP.NET Core web app and other web apps that use hybrid authentication | ID tokens |
 
+### Security Concerns with Implicit Grant Flow
+
+There are two main ways to deliver tokens with the implicit grant flow: as a URL fragment or as a query parameter (using `form POST` and `GET` ). The security concerns that apply to the implicit grant flow for tokens in Single Page Apps (SPAs) do not apply to the implicit flow with `form POST`. In the implicit flow with form POST, the token is delivered securely through an HTML form POST to the client's redirect URI. This method ensures that the token is not exposed in the URL fragment, which in turn avoids the risks of token leakage through browser history or referrer headers.    
+
+The implicit flow with `form POST` is intended for traditional web applications where the server has control over processing POST data securely. The server-side handling of tokens decreases the risk of attack relative to tokens that are managed entirely on the client side, as is the case in SPAs.
+
 ## Send the sign-in request
 
-To initially sign the user into your app, you can send an [OpenID Connect](v2-protocols-oidc.md) authentication request and get an `id_token` from the Microsoft identity platform.
+To initially sign the user into your app, you can send an [OpenID Connect](v2-protocols-oidc.md) authentication request and get an `id_token` from the Microsoft identity platform. 
 
 > [!IMPORTANT]
 > To successfully request an ID token and/or an access token, the app registration in the [Microsoft Entra admin center - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page must have the corresponding implicit grant flow enabled, by selecting **ID tokens** and **access tokens** in the **Implicit grant and hybrid flows** section. If it's not enabled, an `unsupported_response` error will be returned:
@@ -68,13 +74,13 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 ```
 
 | Parameter | Type | Description |
-| --- | --- | --- |
+| --------- | ---- | ----------- |
 | `tenant` | required |The `{tenant}` value in the path of the request can be used to control who can sign into the application. The allowed values are `common`, `organizations`, `consumers`, and tenant identifiers. For more detail, see [protocol basics](./v2-protocols.md#endpoints).Critically, for guest scenarios where you sign a user from one tenant into another tenant, you *must* provide the tenant identifier to correctly sign them into the resource tenant.|
 | `client_id` | required | The Application (client) ID that the [Microsoft Entra admin center - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page assigned to your app. |
 | `response_type` | required | Must include `id_token` for OpenID Connect sign-in. It may also include the `response_type`, `token`. Using `token` here will allow your app to receive an access token immediately from the authorize endpoint without having to make a second request to the authorize endpoint. If you use the `token` response_type, the `scope` parameter must contain a scope indicating which resource to issue the token for (for example, `user.read` on Microsoft Graph). It can also contain `code` in place of `token` to provide an authorization code, for use in the [authorization code flow](v2-oauth2-auth-code-flow.md). This `id_token`+`code` response is sometimes called the hybrid flow.  |
 | `redirect_uri` | recommended |The redirect URI of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect URIs you registered in the portal, except it must be URL-encoded. |
 | `scope` | required |A space-separated list of [scopes](./permissions-consent-overview.md). For OpenID Connect (`id_tokens`), it must include the scope `openid`, which translates to the "Sign you in" permission in the consent UI. Optionally you may also want to include the `email` and `profile` scopes for gaining access to additional user data. You may also include other scopes in this request for requesting consent to various resources, if an access token is requested. |
-| `response_mode` | optional |Specifies the method that should be used to send the resulting token back to your app. Defaults to query for just an access token, but fragment if the request includes an id_token. |
+| `response_mode` | optional | Specifies the method that should be used to send the resulting token back to your app. Defaults to `query` for just an access token, but `fragment` if the request includes an id_token. For security reasons, it's recommended to use `form POST` for the implicit flow to ensure that the token is not exposed in the URL fragment. |
 | `state` | recommended |A value included in the request that will also be returned in the token response. It can be a string of any content that you wish. A randomly generated unique value is typically used for [preventing cross-site request forgery attacks](https://tools.ietf.org/html/rfc6749#section-10.12). The state is also used to encode information about the user's state in the app before the authentication request occurred, such as the page or view they were on. |
 | `nonce` | required |A value included in the request, generated by the app, that will be included in the resulting ID token as a claim. The app can then verify this value to mitigate token replay attacks. The value is typically a randomized, unique string that can be used to identify the origin of the request. Only required when an id_token is requested. |
 | `prompt` | optional |Indicates the type of user interaction that is required. The only valid values at this time are `login`, `none`, `select_account`, and `consent`. `prompt=login` will force the user to enter their credentials on that request, negating single-sign on. `prompt=none` is the opposite - it will ensure that the user isn't presented with any interactive prompt whatsoever. If the request can't be completed silently via SSO, the Microsoft identity platform will return an error. `prompt=select_account` sends the user to an account picker where all of the accounts remembered in the session will appear. `prompt=consent` will trigger the OAuth consent dialog after the user signs in, asking the user to grant permissions to the app. |
