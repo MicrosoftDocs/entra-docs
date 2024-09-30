@@ -224,7 +224,7 @@ import (
 )
 
 func main() {
-    // Specify the Client ID if using user-assigned managed identities
+    // Specify the Client ID if using a user-assigned managed identity
     clientID := os.Getenv("Managed_Identity_Client_ID")
     if clientID == "" {
         fmt.Println("Managed_Identity_Client_ID environment variable is not set")
