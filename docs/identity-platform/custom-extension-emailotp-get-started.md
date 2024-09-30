@@ -1,0 +1,540 @@
+---
+title: Configure a custom email provider for one time code send events (preview)
+description: Learn how to configure and set up a custom email provider with the One Time Code Send event type. 
+author: cilwerner
+manager: CelesteDG
+ms.author: cwerner
+ms.reviewer: almars
+ms.date: 30/9/2024
+ms.service: identity-platform
+
+ms.topic: how-to
+titleSuffix: Microsoft identity platform
+#customer intent: As a Microsoft Entra External ID customer, I want to learn how to configure a custom email provider for one time code send events, so that I can use my own email provider to send one time codes.
+---
+
+# Configure a custom email provider for one time code send events (preview)
+
+This article describes how to configure and set up a custom email provider with the One Time Code Send event type. This event is triggered when a one time code email is to be sent, and allows you to call a REST API to use your own email provider.
+
+This how-to guide demonstrates the one time code send event with a REST API running in Azure Functions and a sample OpenID Connect application.
+
+> [!TIP]
+> [![Try it now](media/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmailOTP)
+>
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Use a custom Email Provider for One Time code” use case.
+
+## Prerequisites
+<!-- Check if any whitelisting is required here. -->
+
+
+- A familiarity and understanding of the concepts covered in [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
+- An Azure subscription. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- A SendGrid account. If you don't already have one, start by setting up a SendGrid account. For setup instructions, see the [Create a SendGrid Account](https://docs.sendgrid.com/for-developers/partners/microsoft-azure-2021#create-a-sendgrid-account) section of [How to send email using SendGrid with Azure](https://docs.sendgrid.com/for-developers/partners/microsoft-azure-2021#create-a-twilio-sendgrid-accountcreate-a-twilio-sendgrid-account).
+
+## Step 1: Create an Azure Function app
+
+This section shows you how to set up an Azure Function app in the Azure portal. The function API is the gateway to your email provider. You create an Azure Function app to host the HTTP trigger function and configure the settings in the function.
+
+> [!TIP]
+> Steps in this article might vary slightly based on the portal you start from.
+
+1. Sign in to the [Azure portal](https://portal.azure.com) with your administrator account.
+1. From the Azure portal menu or the **Home** page, select **Create a resource**.
+1. In the **New** page, select **Compute** > **Function App**.
+1. On the **Basics** page, use the function app settings as specified in the following table:
+
+    | Setting      | Suggested value  | Description |
+    | ------------ | ---------------- | ----------- |
+    | **Subscription** | Your subscription | The subscription under which the new function app will be created in. |
+    | **[Resource Group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select and existing resource group, or name for the new one in which you'll create your function app. |
+    | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
+    |**Publish**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
+    | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
+    |**Version**| 6 (LTS) In-process | Version of the .NET runtime. |
+    |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
+    | **Operating System** | Windows | The operating system is pre-selected for you based on your runtime stack selection. |
+    | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
+
+1. Select **Review + create** to review the app configuration selections and then select **Create**.
+
+1. Select the **Notifications** icon in the upper-right corner of the portal and watch for the **Deployment succeeded** message. Then, select **Go to resource** to view your new function app.
+
+### 1.1 Create an HTTP trigger function
+
+After the Azure Function app is created, create an HTTP trigger function. The HTTP trigger lets you invoke a function with an HTTP request. This HTTP trigger will be referenced and called by your Microsoft Entra custom authentication extension.
+
+1. Within your **Function App**, from the menu select **Functions**.
+1. From the top menu, select **+ Create**.
+1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**, and then select the **HTTP trigger** template.
+1. Under **Template details**, enter *CustomAuthenticationExtensionsAPI* for the **New Function** property.
+1. For the **Authorization level**, select **Function**.
+1. Select **Create**
+
+The following screenshot demonstrates how to configure the Azure HTTP trigger function.
+
+  ![Screenshot that shows how to choose the development environment, and template.](media/create-http-trigger-function.png)
+
+### 1.2 Edit the function
+
+1. From the menu, select **Code + Test**
+1. Replace the entire code with the following code snippet.
+
+    ```csharp
+    #r "Newtonsoft.Json"
+
+    using System.Net;
+    using Microsoft.AspNetCore.Mvc;
+    using Newtonsoft.Json;
+
+    private static ILogger logger = null; 
+
+    public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
+    {
+        logger = log;
+        logger.LogInformation("C# HTTP trigger function processed a request.");
+        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+        dynamic ciamRequest = JsonConvert.DeserializeObject(requestBody);
+
+        // Read the correlation ID from the Azure AD  request    
+        string correlationId = ciamRequest?.data.authenticationContext.correlationId;
+
+        // Get OTP And Email
+        string email = ciamRequest?.data?.otpContext?.identifier;
+        string otp = ciamRequest?.data?.otpContext?.onetimecode;
+
+        logger.LogInformation($"Sending OTP to {email}");
+        await sendEmailAsync(email, otp);
+
+        CreatedResult okResult = new CreatedResult(location: string.Empty, ResponseData.GenerateResponse("microsoft.graph.OtpSend.continueWithDefaultBehavior"))
+        {
+            ContentTypes = { "application/json" },
+        };
+        return okResult;
+    }
+
+    public static async Task sendEmailAsync(string email, string code)
+    {
+        var apiKey = Environment.GetEnvironmentVariable("SENDGRIDKEY");
+        var fromEmail = Environment.GetEnvironmentVariable("FROMEMAIL");
+        var fromName = Environment.GetEnvironmentVariable("FROMNAME");
+        var templateId = Environment.GetEnvironmentVariable("TEMPLATEID");
+
+        var client = new HttpClient();
+        var request = new HttpRequestMessage(HttpMethod.Post, "https://api.sendgrid.com/v3/mail/send");
+        request.Headers.Add("Authorization", $"Bearer {apiKey}");
+
+        SendGridMessage msg = new SendGridMessage()
+        {
+            template_id = templateId,
+            from = new Person { email= fromEmail, name = fromName },
+            personalizations = new List<Personalization> { 
+                new Personalization(email, code)
+            }
+        };
+        request.Content = new StringContent(JsonConvert.SerializeObject(msg), null, "application/json");
+
+        var response = await client.SendAsync(request);
+        logger.LogInformation($"Sendgrid response: {response.StatusCode}");
+        response.EnsureSuccessStatusCode();
+        logger.LogInformation(await response.Content.ReadAsStringAsync());
+    }
+
+    private class ResponseData
+    {
+        public Data data { get; set; }
+
+        public static ResponseData GenerateResponse(string actionodatattype, string responseodatattype = "microsoft.graph.OnOtpSendResponseData")
+        {
+            return new ResponseData()
+            {
+                data = new Data(responseodatattype)
+                {
+                    actions = new List<Action>()
+                {
+                    new Action(actionodatattype)
+                }
+                }
+            };
+        }
+    }
+
+    private class Data
+    {
+        [JsonProperty("@odata.type")]
+        public string odatatype { get; set; }
+        public List<Action> actions { get; set; }
+
+        public Data(string responseodatattype)
+        {
+            odatatype = responseodatattype;
+        }
+
+    }
+
+    private class Action
+    {
+        [JsonProperty("@odata.type")]
+        public string odatatype { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+
+        public Action(string newodatattype, string mesg = null)
+        {
+            odatatype = newodatattype;
+        }
+    }
+    public class SendGridMessage
+    {
+        public List<Personalization> personalizations { get; set; }
+        public string template_id { get; set; }
+        public Person from { get; set; }
+    }
+    public class Personalization
+    {
+        public Personalization(string to, string otp)
+        {
+            this.to = new List<Person>() { new Person() { email = to } };
+            this.dynamic_template_data = new DynamicTemplateData() { otp = otp };
+        }
+
+        public List<Person> to { get; set; }
+        public DynamicTemplateData dynamic_template_data { get; set; }
+    }
+
+    public class DynamicTemplateData
+    {
+        public string otp { get; set; }
+    }
+
+    public class Person
+    {
+        public string email { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string name { get; set; }
+    }
+
+    private class OTPCodeTemplateData
+    {
+        [JsonProperty("otp")]
+        public string OTPCode { get; set; }
+
+    }
+
+
+    ```
+
+    The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](/entra/identity-platform/custom-claims-provider-reference) to your API. In this example, it reads the email address (identifier) and the one time code (otp). Then, the code sends the details to SendGrid to send the email using a [dynamic template](https://sendgrid.com/en-us/solutions/email-api/dynamic-email-templates).
+
+1. Add the required settings to the Azure function. Under **Settings** -> **Environment variables** add the following App settings.
+
+    | Setting      | Example  | Description |
+    | ------------ | ---------------- | ----------- |
+    | **SENDGRIDKEY** | SG.38h1234567... | The SendGrid API Key. | 
+    | **FROMEMAIL** | <from.email@myemailprovider.com> | The from email address. |
+    | **FROMNAME** | CIAM Demo | The name of the From Email. |
+    | **TEMPLATEID** | d-01234567.... | The SendGrid dynamic template it. |
+
+1. From the top menu, select **Get Function Url**, and copy the URL. In the next step, the function URL will be used and referred to as `{Function_Url}`.
+
+## Step 2: Register a custom authentication extension
+
+In this step, you configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure Function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. The Microsoft Entra admin center is not currently supported in this **Preview** feature. Please use  Microsoft Graph to register an application to authenticate your custom authentication extension to your Azure Function.
+
+### 2.1 Register an application in Graph Explorer
+
+1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in. The account must have the privileges to create and manage an application registration in the tenant.
+1. Run the following request.
+
+    ```http
+    POST https://graph.microsoft.com/v1.0/applications
+    Content-type: application/json
+    
+    {
+        "displayName": "authenticationeventsAPI"
+    }
+    ```
+
+1. From the response, record the value of **id** and **appId** of the newly created app registration. These values will be referenced in this article as `{authenticationeventsAPI_ObjectId}` and `{authenticationeventsAPI_AppId}` respectively.
+1. Create a service principal in the tenant for the authenticationeventsAPI app registration.
+1. Still in Graph Explorer, run the following request. Replace `{authenticationeventsAPI_AppId}` with the value of **appId** that you recorded from the previous step.
+
+```http
+POST https://graph.microsoft.com/v1.0/servicePrincipals
+Content-type: application/json
+    
+{
+    "appId": "{authenticationeventsAPI_AppId}"
+}
+```
+
+### 2.2 Set the App ID URI, access token version, and required resource access
+
+Update the newly created application to set the application ID URI value, the access token version, and the required resource access.
+
+1. In Graph Explorer, run the following request.
+
+- Set the application ID URI value in the *identifierUris* property. Replace `{Function_Url_Hostname}` with the hostname of the `{Function_Url}` you recorded earlier.
+- Set the `{authenticationeventsAPI_AppId}` value with the **appId** that you recorded earlier.
+- An example value is `api://authenticationeventsAPI.azurewebsites.net/f4a70782-3191-45b4-b7e5-dd415885dd80`. Take note of this value as you'll use it later in this article in place of `{functionApp_IdentifierUri}`.
+
+```http
+PATCH https://graph.microsoft.com/v1.0/applications/{authenticationeventsAPI_ObjectId}
+Content-type: application/json
+{
+    "identifierUris": [
+        "api://{Function_Url_Hostname}/{authenticationeventsAPI_AppId}"
+    ],    
+    "api": {
+        "requestedAccessTokenVersion": 2,
+        "acceptMappedClaims": null,
+        "knownClientApplications": [],
+        "oauth2PermissionScopes": [],
+        "preAuthorizedApplications": []
+    },
+    "requiredResourceAccess": [
+        {
+            "resourceAppId": "00000003-0000-0000-c000-000000000000",
+            "resourceAccess": [
+                {
+                    "id": "214e810f-fda8-4fd7-a475-29461495eb00",
+                    "type": "Role"
+                }
+            ]
+        }
+    ]
+}
+```
+
+### 2.3 Register a custom authentication extension
+
+Next, you register the custom authentication extension. You register the custom authentication extension by associating it with the app registration for the Azure Function, and your Azure Function endpoint `{Function_Url}`.
+
+1. In Graph Explorer, run the following request. Replace `{Function_Url}` with the hostname of your Azure Function app. Replace `{functionApp_IdentifierUri}` with the identifierUri used in the previous step.
+   - You need the *CustomAuthenticationExtension.ReadWrite.All* delegated permission.
+
+    ```http
+    POST https://graph.microsoft.com/beta/identity/customAuthenticationExtensions
+    Content-type: application/json
+    
+    {
+        "@odata.type": "#microsoft.graph.OnOtpSendCustomExtension",
+        "displayName": "onEmailOtpSendCustomExtension",
+        "description": "Use an external Email provider to send OTP Codes.",
+        "authenticationConfiguration": {
+            "@odata.type": "#microsoft.graph.azureAdTokenAuthentication",
+            "resourceId": "{functionApp_IdentifierUri}"
+        },
+        "endpointConfiguration": {
+            "@odata.type": "#microsoft.graph.httpRequestEndpoint",
+            "targetUrl": "{Function_Url}"
+        }
+    }
+    ```
+
+1. Record the **id** value of the created custom email OTP provider object. You'll use the value later in this tutorial in place of `{customExtensionObjectId}`.
+
+### 2.4 Grant admin consent
+
+After your custom authentication extension is created, open the application from the portal under *App registrations** and select **API permissions**.
+
+From the **API permissions** page, select the **Grant admin consent for <yourtenant>** button to give admin consent to the registered app, which allows the custom authentication extension to authenticate to your API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
+
+The following screenshot shows how to grant permissions.
+
+![Screenshot that shows how grant admin consent.](media/application-grantconsent.png)
+
+## Step 3: Configure an OpenID Connect app to test with
+
+To get a token and test the custom authentication extension, you can use the <https://jwt.ms> app. It's a Microsoft-owned web application that displays the decoded contents of a token (the contents of the token never leave your browser).
+
+Follow these steps to register the **jwt.ms** web application:
+
+### 3.1 Register a test web application
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-developer).
+1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Select **New registration**.
+1. Enter a **Name** for the application. For example, **My Test application**.
+1. Under **Supported account types**, select **Accounts in this organizational directory only**.
+1. In the **Select a platform** dropdown in **Redirect URI**, select **Web** and then enter `https://jwt.ms` in the URL text box.
+1. Select **Register** to complete the app registration.
+
+The following screenshot shows how to register the *My Test application*.
+
+![Screenshot that shows how to select the supported account type and redirect URI.](media/register-test-web-application.png)
+
+### 3.1 Get the application ID
+
+In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_sendotp_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
+
+![Screenshot that shows how to copy the application ID.](media/get-the-test-application-id.png)
+
+### 3.2 Enable implicit flow
+
+The **jwt.ms** test application uses the implicit flow. Enable implicit flow in your *My Test application* registration:
+
+1. Under **Manage**, select **Authentication**.
+1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
+1. Select **Save**.
+
+> [!NOTE]
+> 
+> The **jwt.ms** app uses the implicit flow to get an ID token. The implicit flow is not recommended for production applications. For production applications, use the authorization code flow.
+
+## Step 4: Assign a custom email provider to your app
+
+To use the custom emails, you must assign a custom email provider to your application.  The custom email provider relies on the custom authentication extension configured with the **one time code send** event listener. The Microsoft Entra Admin Center is not currently supported in this **Preview** feature. Please use Microsoft Graph to create an event listener to trigger a custom authentication extension for the *My Test application* using the token issuance start event.
+
+Follow these steps to connect the *My Test application* with your custom authentication extension:
+
+1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in.
+1. Run the following request. Replace `{App_to_sendotp_ID}` with the app ID of *My Test application* recorded earlier. Replace `{customExtensionObjectId}` with the custom authentication extension ID recorded earlier.
+    - You need the *EventListener.ReadWrite.All* delegated permission.
+
+    ```json
+    POST https://graph.microsoft.com/beta/identity/authenticationEventListeners
+    Content-type: application/json
+
+    {
+        "@odata.type": "#microsoft.graph.onEmailOtpSendListener",
+        "conditions": {
+            "applications": {
+                "includeAllApplications": false,
+                "includeApplications": [
+                    {
+                        "appId": "{App_to_sendotp_ID}"
+                    }
+                ]
+            }
+        },
+        "priority": 500,
+        "handler": {
+            "@odata.type": "#microsoft.graph.onOtpSendCustomExtensionHandler",
+            "customExtension": {
+                "id": "{customExtensionObjectId}"
+            }
+        }
+    }
+    ```
+
+1. Record the **id** value of the created listener object. You'll use the value later in this tutorial in place of `{customListenerOjectId}`.
+
+## Step 5: Protect your Azure Function
+
+Microsoft Entra custom authentication extension uses server to server flow to obtain an access token that is sent in the HTTP `Authorization` header to your Azure function. When publishing your function to Azure, especially in a production environment, you need to validate the token sent in the authorization header.
+
+To protect your Azure function, follow these steps to integrate Microsoft Entra authentication, for validating incoming tokens with your *Azure Functions authentication events API* application registration.
+
+> [!NOTE]
+> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [using OpenID Connect identity provider](#51-using-openid-connect-identity-provider) step.
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Navigate and select the function app you previously published.
+1. Select **Authentication** in the menu on the left.
+1. Select **Add Identity provider**.  
+1. Select **Microsoft** as the identity provider.
+1. Under **App registration**->**App registration type**, select **Pick an existing app registration in this directory** and pick the *Azure Functions authentication events API* app registration you [previously created](#step-2-register-a-custom-authentication-extension) when registering the custom email provider.
+1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
+1. Unselect the **Token store** option.
+1. Select **Add** to add authentication to your Azure Function.
+
+    ![Screenshot that shows how to add authentication to your function app.](media/configure-auth-function-app.png)
+
+### 5.1 Using OpenID Connect identity provider
+
+If you configured the [Microsoft identity provider](#step-5-protect-your-azure-function), skip this step. Otherwise, if the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
+
+1. Sign in to the [Azure portal](https://portal.azure.com), then navigate and select the function app you previously published.
+1. Select **Authentication** in the menu on the left.
+1. Select **Add Identity provider**.  
+1. Select **OpenID Connect** as the identity provider.
+1. Provide a name, such as *Contoso Microsoft Entra ID*.
+1. Under the **Metadata entry**, enter the following URL to the **Document URL**. Replace the `{tenantId}` with your Microsoft Entra tenant ID, and `{tenantname}` with the name of your tenant without the 'onmicrosoft.com'.
+
+    ```http
+    https://{tenantname}.ciamlogin.com/{tenantId}/v2.0/.well-known/openid-configuration
+    ```
+
+1. Under the **App registration**, enter the application ID (client ID) of the *Azure Functions authentication events API* app registration [you created previously](#step-2-register-a-custom-authentication-extension).
+
+1. In the Microsoft Entra admin center:
+    1. Select the *Azure Functions authentication events API* app registration [you created previously](#step-2-register-a-custom-authentication-extension).
+    1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
+    1. Add a description for your client secret.
+    1. Select an expiration for the secret or specify a custom lifetime.
+    1. Select **Add**.
+    1. Record the **secret's value** for use in your client application code. This secret value is never displayed again after you leave this page.
+1. Back to the Azure Function, under the **App registration**, enter the **Client secret**.
+1. Unselect the **Token store** option.
+1. Select **Add** to add the OpenID Connect identity provider.
+
+## Step 6: Test the application
+
+To test your custom email provider, follow these steps:
+
+1. Open a new private browser and navigate and sign-in through the following URL.
+
+    ```http
+    https://{tenantname}.ciamlogin.com/{tenant-id}/oauth2/v2.0/authorize?client_id={App_to_sendotp_ID}&response_type=id_token&redirect_uri=https://jwt.ms&scope=openid&state=12345&nonce=12345
+    ```
+
+1. Replace `{tenant-id}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
+1. Replace `{tenantname}` with the name of your tenant without the 'onmicrosoft.com'.
+1. Replace `{App_to_sendotp_ID}` with the [My Test application registration ID](#31-get-the-application-id).  
+1. Ensure you sign in using an [Email One Time Passcode account](https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode). Then click Send Code. Ensure that the code sent to the registred email addresses uses the custom provider registered above.
+
+## Step 7: Fallback to Microsoft Provider
+
+If an error occurs within your extension API, by default Entra ID will not send a one time code to the user. If this is not your desired result then you have the option to set the behaviour on error to fall back to the Microsoft Provider.
+
+To enable this, run the following request. Replace `{customListenerOjectId}` with the custom authentication listener ID recorded earlier.
+
+- You need the *EventListener.ReadWrite.All* delegated permission.
+
+```json
+PATCH https://graph.microsoft.com/beta/identity/authenticationEventListeners/{customListenerOjectId}
+
+{
+    "@odata.type": "#microsoft.graph.onEmailOtpSendListener",
+    "handler": {
+        "@odata.type": "#microsoft.graph.onOtpSendCustomExtensionHandler",
+        "configuration": {
+            "behaviorOnError": {
+                "@odata.type": "#microsoft.graph.fallbackToMicrosoftProviderOnError"
+            }
+        }
+    }
+}
+```
+
+## Known issues
+
+The following table describes known issues and important considerations related to this preview release. We don't currently have a preview target or timeline to share regarding when individual issues will be resolved.
+
+| Description | Steps to reproduce |Status |
+| ----- | ------ | ------------- |
+| ~~Protocol not correctly updated for SAML~~ |  NA              | Resolved      |
+| Exception not surfaced | Delay in changing configuration       | XHR Request response shows the failure. AAD UI does not surface it.  | TBD      |
+| ~~Signup vs Signin not specified in API.~~|  NA              | Resolved. RequestType now available.      |
+| ~~When an Email OTP extension/ listener is created the portal no longer shows other listeners/ extensions.~~|  NA              | Resolved      |
+| ~~If a extension object is removed via graph that is already associated to a listener all future requests to retrieve listers will fail.~~|  NA              | Resolved      |
+| Native Authentication|  NA              | TBD      |
+| CREATE action on listener (and extension) response body has missing information from the request body. GET provides all information in response body.|  NA              | TBD      |
+| SSPR|  NA              | TBD      |
+| ~~SAML Not working with Custom Extension.~~|  SAML Flow throws an error because the clientId is also the issuerURI which can be a string not a GUID.          | Resolved      |
+
+## How to report a bug or issue
+
+To report a bug or issue on any feature, use the [**Issues**](../../issues) tab at the top of the page. Before creating an issue, check the **Known Issues** earlier in this README file.
+When creating an issue, follow the **Bug report** issues template.
+
+## Provide your feedback
+
+Please let us know about your experience with this feature:
+
+1. Did this feature work the way you would expect?
+2. If not, what didn’t work well?
+
+You can provide your feedback using the [General Feedback survey](https://aka.ms/CIAM/PP3Feedback).
