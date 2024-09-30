@@ -41,9 +41,9 @@ The implicit flow with `form POST` is intended for traditional web applications 
 
 ### When should you allow an access token or ID token to be issued when requested using implicit grant or hybrid flow?
 
-The implicit grant and hybrid flow are not as secure as other OAuth flows. Unless absolutely required, you shouldn’t allow an access or ID token to be issued when requested using implicit grant or hybrid flow in your app registration. If you (or your developers) are using MSAL (Microsoft Authentication Library) in your application to implement authentication and authorization, then neither field needs to be enabled.
+The implicit grant and hybrid flow are not as secure as other OAuth flows. Unless absolutely required, you shouldn’t allow an access or ID token to be issued when requested using implicit grant or hybrid flow in your app registration. If you (or your developers) are using MSAL in your application to implement authentication and authorization, then neither field needs to be enabled.
 
-However, if you (or your developers) are not using MSAL in your application, then please view the following table to understand when access token or ID token should be enabled.
+However, if you (or your developers) are not using MSAL in your application, then please view the following table to understand when access tokens or ID token should be enabled.
 
 | Type of application you are building | Tokens you should enable in App Registration |
 | ------------------------------------ | -------------------------------------------- |
