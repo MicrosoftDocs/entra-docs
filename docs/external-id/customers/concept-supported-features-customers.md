@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 09/06/2024
+ms.date: 09/26/2024
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -81,7 +81,7 @@ The following table compares the features available for [Application registratio
 |---------|---------|---------|
 |   **Protocol**     |   SAML relying parties, OpenID Connect, and OAuth2    |   OpenID Connect and OAuth2    |
 | **Supported account types**| The following [account types](~/identity-platform/quickstart-register-app.md#register-an-application): <ul><li>Accounts in this organizational directory only (Single tenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant) and personal Microsoft accounts (such as Skype, Xbox)</li><li>Personal Microsoft accounts only</li></ul> | Always use *Accounts in this organizational directory only (Single tenant)*. |
-| **Platform** | The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client/native (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)</li><ul>| The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client (mobile & desktop)</li><li>[Native authentication mobile](concept-native-authentication.md) (preview) </li><li>Web</li><li>Single page application (SPA)</li><ul>|
+| **Platform** | The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client/native (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)</li><ul>| The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client (mobile & desktop)</li><li>[Native authentication mobile](concept-native-authentication.md) </li><li>Web</li><li>Single page application (SPA)</li><ul>|
 | **Authentication** > **Redirect URIs**| The URIs Microsoft Entra ID accepts as destinations when returning authentication responses (tokens) after successfully authenticating or signing out users. | Same as workforce.|
 | **Authentication** > **Front-channel logout URL**| This URL is where Microsoft Entra ID sends a request to have the application clear the user's session data. The Front-channel logout URL is required for single sign-out to work correctly.| Same as workforce.|
 | **Authentication** > **Implicit grant and hybrid flows**| Request a token directly from the authorization endpoint. | Same as workforce.|
@@ -103,7 +103,7 @@ The following table compares the features available for OAuth 2.0 and OpenID Con
 |[Authorization code](../../identity-platform/v2-oauth2-auth-code-flow.md)| Yes| Yes|
 |[Authorization code with Code Exchange (PKCE)](../../identity-platform/v2-oauth2-auth-code-flow.md)|Yes| Yes|
 |[Client credentials](../../identity-platform/v2-oauth2-client-creds-grant-flow.md)|Yes| [v2.0 applications](../../identity-platform/reference-app-manifest.md) (preview)|
-|[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| No |
+|[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| Preview |
 |[On-Behalf-Of flow](../../identity-platform/v2-oauth2-on-behalf-of-flow.md)| Yes| Yes|
 |[Implicit grant](../../identity-platform/v2-oauth2-implicit-grant-flow.md)| Yes| Yes|
 |[Resource Owner Password Credentials](../../identity-platform/v2-oauth-ropc.md)| Yes| No, for mobile applications, use [native authentication](concept-native-authentication.md). |

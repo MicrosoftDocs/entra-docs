@@ -1,7 +1,7 @@
 ---
 title: Tutorial - Handle authentication flows in a Vanilla JavaScript single-page app
 description: Learn how to configure authentication for a Vanilla JavaScript single-page app (SPA) with your external tenant.
- 
+
 author: OwenRichards1
 manager: CelesteDG
 
@@ -30,8 +30,6 @@ In this tutorial;
 * [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
 
 ## Edit the authentication configuration file
-
-The application uses the [Implicit Grant Flow](~/identity-platform/v2-oauth2-implicit-grant-flow.md) to authenticate users. The Implicit Grant Flow is a browser-based flow that doesn't require a back-end server. The flow redirects the user to the sign-in page, where the user signs in and consents to the permissions that are being requested by the application. The purpose of *authConfig.js* is to configure the authentication flow.
 
 1. Open *public/authConfig.js* and add the following code snippet:
 

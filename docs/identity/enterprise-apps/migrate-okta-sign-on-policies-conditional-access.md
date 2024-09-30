@@ -198,9 +198,6 @@ Learn more: [Enable combined security information registration in Microsoft Entr
    ![Screenshot of policies on the Conditional Access, Policies screen.](media/migrate-okta-sign-on-policies-conditional-access/enable-test-user.png)
 
 2. On the Office 365 **Sign-In** pane, the test user John Smith is prompted to sign in with Okta MFA and Microsoft Entra multifactor authentication.
-
-   ![Screenshot of the Azure Sign-In pane.](media/migrate-okta-sign-on-policies-conditional-access/sign-in-through-okta.png)
-
 3. Complete the MFA verification through Okta.
 
    ![Screenshot of MFA verification through Okta.](media/migrate-okta-sign-on-policies-conditional-access/mfa-verification-through-okta.png)

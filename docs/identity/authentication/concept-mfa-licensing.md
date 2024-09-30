@@ -114,5 +114,5 @@ If you don't want to enable Microsoft Entra multifactor authentication for all u
 
 * For more information on costs, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 * [What is Conditional Access](~/identity/conditional-access/overview.md)
-* [What is Identity Protection?](~/id-protection/overview-identity-protection.md)
+* [What is Microsoft Entra ID Protection?](~/id-protection/overview-identity-protection.md)
 * MFA can also be [enabled on a per-user basis](howto-mfa-userstates.md)

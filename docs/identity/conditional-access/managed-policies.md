@@ -66,7 +66,12 @@ To apply this policy to more users, duplicate it and change the assignments.
 
 This policy covers all users and requires MFA and reauthentication when we detect high-risk sign-ins. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include: travel that is highly abnormal, password spray attacks, or token replay attacks. For more information about these risk definitions, see the article [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
 
-This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled and there are enough licenses for each user. Microsoft doesn't allow risky users to register for MFA. To avoid locking out users, this policy is only available to organizations where every user is already registered for MFA. 
+This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled. 
+-	If P2 licenses equal or exceed total MFA-registered active users, the policy will cover All Users. 
+-	If MFA-registered active users exceed P2 licenses, we will create and assign the policy to a capped security group based on available P2 licenses. You can modify membership of the policy’s security group. 
+
+To prevent attackers from taking over accounts, Microsoft doesn't allow risky users to register for MFA.
+
 
 ## Security defaults policies
 The following policies are available for when you upgrade from using security defaults.

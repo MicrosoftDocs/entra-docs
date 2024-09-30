@@ -283,22 +283,22 @@ The [User-risk policy](~/identity/conditional-access/concept-conditional-access-
 
 [Session controls](~/identity/conditional-access/concept-conditional-access-session.md) behave the same for B2B guest users as they do for any other type of user.
 
-## Identity protection and user risk policies
+## Microsoft Entra ID Protection and user risk policies
 
-Identity Protection detects compromised credentials for Microsoft Entra users and marks user accounts that may be compromised as "at risk." As a resource tenant, you can apply user risk policies to external users to block risky sign-ins. For an external user, the user risk is evaluated at their home directory. The real-time sign-in risk for these users is evaluated at the resource directory when they try to access the resource. However, because an external user's identity exists in their home directory, the following are limitations:
+Microsoft Entra ID Protection detects compromised credentials for Microsoft Entra users and marks user accounts that may be compromised as "at risk." As a resource tenant, you can apply user risk policies to external users to block risky sign-ins. For an external user, the user risk is evaluated at their home directory. The real-time sign-in risk for these users is evaluated at the resource directory when they try to access the resource. However, because an external user's identity exists in their home directory, the following are limitations:
 
-- If an external user triggers the Identity Protection user risk policy to force password reset, they're blocked because they can't reset their password in the resource organization.
+- If an external user triggers the ID Protection user risk policy to force password reset, they're blocked because they can't reset their password in the resource organization.
 - The resource organization's risky users report doesn't reflect external users because the risk evaluation occurs in the external user's home directory.
 - Admins in the resource organization can't dismiss or remediate a risky external user because they don't have access to the B2B user's home directory.
 
-You can prevent risk-based policies from affecting external users by creating a group in Microsoft Entra ID that contains all of your organization's external users. Then, add this group as an exclusion for your built-in Identity Protection user risk and sign-in risk policies, and any Conditional Access policies that use sign-in risk as a condition.
+You can prevent risk-based policies from affecting external users by creating a group in Microsoft Entra ID that contains all of your organization's external users. Then, add this group as an exclusion for your user risk and sign-in risk based Conditional Access policies.
 
-For more information, see [Identity Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md).
+For more information, see [Microsoft Entra ID Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md).
 
 ## Next steps
 
 For more information, see the following articles:
 
 - [Zero Trust policies for allowing guest access and B2B external user access](/microsoft-365/security/office-365-security/identity-access-policies-guest-access?view=o365-worldwide&preserve-view=true)
-- [Identity Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md)
+- [Microsoft Entra ID Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md)
 - [Frequently Asked Questions (FAQs)](./faq.yml)

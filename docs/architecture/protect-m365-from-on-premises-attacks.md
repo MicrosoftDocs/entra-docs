@@ -259,7 +259,7 @@ Define a log storage and retention strategy, design, and implementation to facil
 
   Microsoft Entra ID provides Azure Monitor integration for the sign-in activity log and audit logs. See [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md).
 
-  Use the Microsoft Graph API to ingest risk events. See [Use the Microsoft Graph identity protection APIs](/graph/api/resources/identityprotection-overview).
+  Use the Microsoft Graph API to ingest risk events. See [Use the Microsoft Graph ID Protection APIs](/graph/api/resources/identityprotection-overview).
 
   You can stream Microsoft Entra logs to Azure Monitor logs. See [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
