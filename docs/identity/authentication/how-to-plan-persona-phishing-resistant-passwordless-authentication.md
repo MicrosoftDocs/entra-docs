@@ -26,6 +26,7 @@ Each persona has its own challenges and considerations that commonly come up dur
 - [Highly regulated workers](#highly-regulated-workers)
 
 ## Information workers
+
 Information workers typically have the simplest requirements and are the easiest to begin your phishing-resistant passwordless deployment with. However, there are still some issues that frequently arise when deploying for these users. Common examples include:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/information-worker-examples.png" alt-text="Diagram that shows examples of requirements for information workers.":::
@@ -52,11 +53,13 @@ Phases 1-3 of the deployment flow for Information Workers should typically follo
    1. Platform SSO Secure Enclave Key
 
 ## Frontline workers
+
 Frontline workers often have more complicated requirements due to increased needs for the portability of their credentials and limitations on which devices they can carry in retail or manufacturing settings. Security keys are a great option for Frontline workers, but have a cost that must be considered. In order to achieve phishing-resistance, be sure to balance the cost challenges of security keys against the added deployment burden of smart cards and certificate-based authentication. Consider if there may be different FLW user personas in your environment, its possible there are some users where security keys are better and other users where smart cards are better.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/frontline-worker-examples.png" alt-text="Diagram that shows examples of requirements for frontline workers.":::
 
-### Frontline worker deployment flow  
+### Frontline worker deployment flow
+ 
 Phases 1-3 of the deployment flow for Frontline Workers should typically follow a modified flow that emphasizes portable credentials. Many frontline workers may not have a permanent computing device and will never need a local credential on a Windows or Mac workstation. Instead, they will largely rely on portable credentials that they can take with them from device to device. Adjust the methods used at each step as needed in your environment:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/frontline-worker-deployment.png" alt-text="Diagram that shows deployment flow for frontline workers.":::
@@ -74,6 +77,7 @@ Phases 1-3 of the deployment flow for Frontline Workers should typically follow 
 
 
 ## IT pros/DevOps workers
+
 IT Pros and DevOps workers are especially reliant on remote access and multiple user accounts, which is why they are considered different from Information Workers. Many of the challenges posed by phishing-resistant passwordless for IT Pros are caused by their increased need for remote access to systems and ability to run automations.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-examples.png" alt-text="Diagram that shows examples of requirements for IT pros/DevOps workers.":::
@@ -85,9 +89,9 @@ Make sure to understand where users are using scripts that run in the user conte
 - [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md)
 - [Securing service principals in Microsoft Entra ID](~/architecture/service-accounts-principal.md)
 
-### IT pros/DevOps worker deployment flow 
-Phases 1-3 of the deployment flow for IT Pro/DevOps Workers should typically follow the standard deployment flow as pictured above for the user’s primary account. IT Pros/DevOps workers often have secondary accounts that require different considerations. Adjust the methods used at each step as needed in your environment for the primary accounts:
+### IT pros/DevOps worker deployment flow
 
+Phases 1-3 of the deployment flow for IT Pro/DevOps Workers should typically follow the standard deployment flow as pictured above for the user’s primary account. IT Pros/DevOps workers often have secondary accounts that require different considerations. Adjust the methods used at each step as needed in your environment for the primary accounts:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-deployment.png" alt-text="Diagram that shows deployment flow for IT pros/DevOps workers.":::
 
@@ -113,7 +117,8 @@ If your IT Pro/DevOps workers have secondary accounts you may need to handle tho
    1. Smart card
 1. Phase 3: Portable credentials used rather than local credentials
 
-## Highly regulated workers 
+## Highly regulated workers
+
 Highly regulated workers pose additional challenges beyond the average information worker because they may work on locked down devices, work in locked down environments, or have special regulatory requirements they must satisfy.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/regulated-worker-examples.png" alt-text="Diagram that shows examples of requirements for highly regulated workers.":::
@@ -121,9 +126,11 @@ Highly regulated workers pose additional challenges beyond the average informati
 Highly regulated workers will often leverage smart cards due to regulated environments already having heavy adoption of PKI and smart card infrastructure. However, consider when smart cards are desirable and required and when they can be balanced with more user-friendly options, such as Windows Hello for Business.
 
 ### Highly regulated worker deployment flow without PKI
+
 If you do not plan to leverage certificates, smart cards, and PKI then the Highly Regulated worker deployment will closely mirror the Information Worker deployment process. Refer to the Information Worker section.
 
 ### Highly regulated worker deployment flow with PKI
+
 If you plan to use certificates, smart cards, and PKI in your phishing-resistant passwordless then the deployment flow for Highly Regulated Workers will typically deviate from the Information Worker setup flow in key places. There is an increased need to identify if local authentication methods are viable for some users. Similarly, you will need to identify if there are some users who need portable-only credentials, such as smart cards, that can work without internet connections. Depending on your varied needs you may need to further adjust the deployment flow and tailor it to the various user personas identified in your environment. Adjust the methods used at each step as needed in your environment:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/regulated-worker-deployment.png" alt-text="Diagram that shows deployment flow for highly regulated workers.":::
