@@ -29,7 +29,7 @@ Transport Layer Security (TLS) protocol version 1.2 is a cryptography protocol t
 In order to force the Microsoft Entra Connect server to only use TLS 1.2, the registry of the Windows server must be updated. Set the following registry keys on the Microsoft Entra Connect server.
 
 > [!IMPORTANT]
-> After you have updated the registry, you must restart the Windows server for the changes to take affect.
+> After you have updated the registry, you must restart the Windows server for the changes to take effect.
 
 
 ### Enable TLS 1.2
