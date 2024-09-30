@@ -546,7 +546,7 @@ from azure.identity import DefaultAzureCredential
 from azure.core.credentials import AccessToken
 import pyodbc
 
-# Specify the Client ID if using user-assigned managed identities
+# Specify the Client ID if using a user-assigned managed identity
 client_id = os.getenv("Managed_Identity_Client_ID")
 credential = DefaultAzureCredential(managed_identity_client_id=client_id)
 
