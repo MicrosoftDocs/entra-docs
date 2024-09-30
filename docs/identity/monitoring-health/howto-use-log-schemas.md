@@ -198,7 +198,7 @@ Some values are common across all log schemas.
 
 ### Audit logs
 
-For a full list of the properties, their descriptions, and the possible values, see [directoryAudit resource type](/graph/api/resources/drectoryaudit?view=graph-rest-1.0&preserve-view=true).
+For a full list of the properties, their descriptions, and the possible values, see [directoryAudit resource type](/graph/api/resources/directoryaudit?view=graph-rest-1.0&preserve-view=true).
 - `activityDisplayName`: Indicates the activity name or the operation name (examples: "Create User" and "Add member to group"). For more information, see [Audit log activities](reference-audit-activities.md).
 - `category`: Indicates which resource category that's targeted by the activity. For example: `UserManagement`, `GroupManagement`, `ApplicationManagement`, `RoleManagement`. For more information, see [Audit log activities](reference-audit-activities.md).
 - `initiatedBy`: Indicates information about the user or app initiated the activity.
