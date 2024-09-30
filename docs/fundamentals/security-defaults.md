@@ -70,6 +70,9 @@ As part of enabling security defaults, administrators should revoke all existing
 
 ### Require all users to register for Microsoft Entra multifactor authentication
 
+> [!NOTE]
+> Starting July 29, 2024, new tenants may not have the 14-day grace period for users to register for MFA. We are making this change to help reduce the risk of account compromise during the 14-day window, as MFA can block over 99.2% of identity-based attacks. 
+
 All users have 14 days to register using the [Microsoft Authenticator app](~/identity/authentication/concept-authentication-authenticator-app.md) or any app supporting [OATH TOTP](~/identity/authentication/concept-authentication-oath-tokens.md). After the 14 days pass, the user can't sign in until registration is completed. A user's 14-day period begins after their first successful interactive sign-in after enabling security defaults.
 
 When users sign in and are prompted to perform multifactor authentication, they see a screen providing them with a number to enter in the Microsoft Authenticator app. This measure helps prevent users from falling for MFA fatigue attacks.
