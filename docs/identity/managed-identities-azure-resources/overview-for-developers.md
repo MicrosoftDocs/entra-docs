@@ -587,7 +587,7 @@ import (
     "os"
 
     "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-    _ "github.com/denisenkom/go-mssqldb"
+    "github.com/denisenkom/go-mssqldb"
 )
 
 func main() {
