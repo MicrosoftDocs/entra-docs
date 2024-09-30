@@ -80,13 +80,13 @@ These policies are directed at highly privileged administrators in your environm
 - [Require multifactor authentication for Azure management](policy-old-require-mfa-azure-mgmt.md)
 - [Require compliant or Microsoft Entra hybrid joined device for administrators](policy-alt-admin-device-compliand-hybrid.md)
 - [Require compliant device](policy-all-users-device-compliance.md)
-- [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md.md)
+- [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md)
 
 # [Emerging threats](#tab/emerging-threats)
 
 Policies in this category provide new ways to protect against compromise.
 
-- [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md.md)
+- [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md)
 
 ---
 

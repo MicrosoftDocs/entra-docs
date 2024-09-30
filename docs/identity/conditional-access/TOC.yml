@@ -71,7 +71,7 @@
     - name: Block legacy authentication
       href: policy-block-legacy-authentication.md
     - name: Require phishing-resistant MFA for administrators
-      href: policy-admin-phish-resistant-mfa.md.md
+      href: policy-admin-phish-resistant-mfa.md
     - name: Require MFA authentication strength for all users
       href: policy-all-users-mfa-strength.md
     - name: Require MFA authentication strength for guests

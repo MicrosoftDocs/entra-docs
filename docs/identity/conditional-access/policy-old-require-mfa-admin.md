@@ -29,7 +29,7 @@ Organizations can choose to include or exclude roles as they see fit.
 
 ## Create a Conditional Access policy
 
-The following steps help create a Conditional Access policy to require those assigned administrative roles to perform multifactor authentication. Some organizations might be ready to move to stronger authentication methods for their administrators. These organizations might choose to implement a policy like the one described in the article [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md.md).
+The following steps help create a Conditional Access policy to require those assigned administrative roles to perform multifactor authentication. Some organizations might be ready to move to stronger authentication methods for their administrators. These organizations might choose to implement a policy like the one described in the article [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
