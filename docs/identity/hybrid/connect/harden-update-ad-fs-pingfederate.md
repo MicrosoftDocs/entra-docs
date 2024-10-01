@@ -22,7 +22,7 @@ If you aren’t upgraded to the minimum required version, you may encounter the 
  - Configuration of PingFederate scenarios through the Connect Sync wizard may not work 
 
 >[!NOTE]
-> If you’re unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the latest version. However, you would lose the ability to configurate ADFS and PingFederate during the time period between April 7, 2025 and when you upgrade. 
+> If you’re unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the latest version. However, you would **lose the ability to configurate AD FS and PingFederate** during the time period between **April 7, 2025 and when you upgrade**. 
 
 ### Minimum version 
 
