@@ -69,7 +69,8 @@ Reviewing the data in the Microsoft Entra activity logs can provide helpful info
 - [Identity Protection](~/id-protection/overview-identity-protection.md) uses sign-in data to create reports on risky users and sign-in activities.
 - Activity related to your applications, such as service principal and app credential activity, are used to create reports in [Usage and insights](concept-usage-insights-report.md).
 - [Microsoft Entra workbooks](overview-workbooks.md) provide a customizable way to view and analyze the activity logs. 
-- [Monitor the status of Microsoft Entra recommendations to improve your tenant's security.](overview-recommendations.md)
+- Use [Microsoft Entra recommendations](overview-recommendations.md) to monitor and improve your tenant's security.
+- [Microsoft Entra Health](concept-microsoft-entra-health.md) capture global service level agreement attainment and health signals for several key scenarios.
 
 ## Identity monitoring and tenant health
 

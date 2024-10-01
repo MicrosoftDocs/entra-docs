@@ -65,21 +65,22 @@ The sign-in logs might take several minutes for the flagged sign-in events to ap
 1. If needed, apply more filters to refine the event view.
 1. Select the event to review what happened.
 
-### Admin or Developer: Find flagged events using MS Graph
+### Admin or Developer: Find flagged events using Microsoft Graph
 
-You can find flagged sign-ins with a filtered query using the sign-ins reporting API.
+You can find flagged sign-ins using the Microsoft Graph API. For more information, see the [signIn resource type](/graph/api/resources/signin) Microsoft Graph documentation.
 
 Show all Flagged Sign-ins:
-`https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=flaggedforReview eq true`
+
+- `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=flaggedforReview eq true`
 
 Flagged Sign-ins query for specific user by UPN (for example: user@contoso.com):
-`https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=flaggedforReview eq true and userPrincipalname eq 'user@contoso.com'`
+
+- `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=flaggedforReview eq true and userPrincipalname eq 'user@contoso.com'`
 
 Flagged Sign-ins query for specific user and date greater than:
-`https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=flaggedforReview eq true and createdDateTime ge 2021-10-01 and userPrincipalname eq 'user@contoso.com'`
- 
-For more information on using the sign-ins Graph API, see [signIn resource type](/graph/api/resources/signin).
 
+- `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=flaggedforReview eq true and createdDateTime ge 2021-10-01 and userPrincipalname eq 'user@contoso.com'`
+ 
 ## Who can create flagged sign-ins?
 
 Any user signing into Microsoft Entra ID can flag sign-ins for review, including member and guest users. 
