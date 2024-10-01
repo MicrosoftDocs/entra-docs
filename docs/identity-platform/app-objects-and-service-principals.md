@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: has-azure-ad-ps-ref
-ms.date: 04/26/2024
+ms.date: 10/01/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
 
@@ -70,7 +70,7 @@ The application object is the *global* representation of your application for us
 An application object has:
 
 - A one-to-one relationship with the software application, and
-- A one-to-many relationship with its corresponding service principal object(s)
+- A one-to-many relationship with its corresponding service principal objects
 
 A service principal must be created in each tenant where the application is used, enabling it to establish an identity for sign-in and/or access to resources being secured by the tenant. A single-tenant application has only one service principal (in its home tenant), created and consented for use during application registration. A multitenant application also has a service principal created in each tenant where a user from that tenant has consented to its use.
 
