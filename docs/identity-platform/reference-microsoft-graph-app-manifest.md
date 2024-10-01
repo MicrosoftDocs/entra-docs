@@ -448,7 +448,7 @@ Specifies settings for an application that implements a web API. It includes fiv
 Example:
 
 ```json
-"Api": {
+"api": {
     "acceptMappedClaims": true,
     "knownClientApplications": [
         "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd"
