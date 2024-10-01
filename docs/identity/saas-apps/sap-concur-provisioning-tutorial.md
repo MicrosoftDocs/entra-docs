@@ -30,13 +30,13 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
-* A subscription for SAP Concur
+* SAP Concur
 * SAP Cloud Identity Services tenant
 * A user account on SAP Identity Provisioning admin console with Admin permissions. Make sure you have access to the proxy systems in the Identity Provisioning admin console. If you don't see the **Proxy Systems** tile, create an incident for component **BC-IAM-IPS** to request access to this tile.
 
 ## Step 1: Plan your provisioning deployment
 
-Microsoft Entra has connectors to SAP ECC, SAP Cloud Identity Services, and SAP SuccessFactors. Provisioning into SAP Concur or other applications requires the users to first be present in Microsoft Entra ID. Once you have users in Microsoft Entra ID, you can provision those users from Microsoft Entra ID to SAP Cloud Identity Services. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications, including [`SAP Concur`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/REPLACE-THIS) and others.
+Microsoft Entra has connectors to SAP ECC, SAP Cloud Identity Services, and SAP SuccessFactors. Provisioning into SAP Concur or other applications requires the users to first be present in Microsoft Entra ID. Once you have users in Microsoft Entra ID, you can provision those users from Microsoft Entra ID to SAP Cloud Identity Services. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications, including [`SAP Concur`](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/target-sap-concur) and others.
 
   :::image type="content" source="~/identity/app-provisioning/media/plan-sap-user-source-and-target/end-to-end-integrations.png" alt-text="Diagram showing Microsoft and SAP technologies relevant to provisioning identities from Microsoft Entra ID." lightbox="~/identity/app-provisioning/media/plan-sap-user-source-and-target/end-to-end-integrations.png":::
 
@@ -61,11 +61,11 @@ There are two ways to provision users from Microsoft Entra into SAP Cloud Identi
 
 ## Step 4: Configure provisioning from SAP Cloud Identity Services to SAP Concur
 
-At this step, use SAP Cloud Identity Services Identity Provisioning to configure SAP Concur as a target system, where you can provision users and group members. For SAP Concur, see the [SAP documentation on provisioning to SAP Concur cloud](https://help.sap.com/docs/identity-provisioning/identity-provisioning/REPLACE-THIS).
+At this step, use SAP Cloud Identity Services Identity Provisioning to configure SAP Concur as a target system, where you can provision users and group members. For SAP Concur, see the [SAP documentation on provisioning to SAP Concur](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/target-sap-concur).
 
 ## Step 5: Configure single sign-on
 
-After you configure provisioning for users into your SAP applications, you should enable Single sign-on for them. Microsoft Entra ID can serve as the identity provider and authentication authority for your SAP applications. If you have not already done so, then configure [Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services](sap-REPLACE-THIS-cloud-platform-identity-authentication-tutorial.md).
+After you configure provisioning for users into your SAP applications, you should enable Single sign-on for them. Microsoft Entra ID can serve as the identity provider and authentication authority for your SAP applications. If you have not already done so, then configure [Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services](sap-hana-cloud-platform-identity-authentication-tutorial.md).
 
 For more information on how to configure single sign-on to SAP SaaS and modern apps, see [enable SSO](~/id-governance/sap.md#enable-sso).
 
