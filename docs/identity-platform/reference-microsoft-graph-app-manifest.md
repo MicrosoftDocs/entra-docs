@@ -17,7 +17,7 @@ ms.reviewer: youazhou
 
 # Understand the app manifest (Microsoft Graph format)
 
-The application manifest contains all the attributes and their values of an app registration in the Microsoft identity platform. 
+The application manifest contains all the attributes and their values of an app registration in the Microsoft identity platform.
 
 A Microsoft Graph app manifest is a JSON object that represents an app registration. It's also called the [Microsoft Graph Application resource type](/graph/api/resources/application) or Microsoft Graph app object (application object). It contains all the attributes and their values of an app registration.
 
@@ -30,19 +30,19 @@ The application object you receive using [Microsoft Graph Get Application method
 
 If you would like to configure Microsoft Graph App Manifest programmatically, you can either use [Microsoft Graph API](/graph/api/resources/application) or [Microsoft Graph PowerShell SDK](/powershell/module/microsoft.graph.applications/?view=graph-powershell-1.0&preserve-view=true).
 
-You can also configure the app manifest through the Microsoft Entra admin center. Most attributes can be configured using a UI element in **App registrations**. However, some attributes need to be configured by editing the app manifest directly in the **Manifest** page. 
+You can also configure the app manifest through the Microsoft Entra admin center. Most attributes can be configured using a UI element in **App registrations**. However, some attributes need to be configured by editing the app manifest directly in the **Manifest** page.
 
 ### Configure the app manifest in the Microsoft Entra admin center
 
 To configure the Microsoft Graph app manifest:
 
-1. Sign in to the [Microsoft Entra admin  center](https://entra.microsoft.com/) as at least an [Application  Developer](/entra/identity/role-based-access-control/permissions-reference#application-developer).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least an [Application Developer](/entra/identity/role-based-access-control/permissions-reference#application-developer).
 
 2. Browse to **Identity** > **Applications** > **App registrations**.
 
 3. Select the app you want to configure.
 
-4. From the app's **Overview** page, select the **Manifest** section.  A web-based manifest editor opens, allowing you to edit the  manifest. Optionally, you can select **Download** to edit the  manifest locally, and then use **Upload** to reapply it to your  application.
+4. From the app's **Overview** page, select the **Manifest** section. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** to edit the manifest locally, and then use **Upload** to reapply it to your application.
 
 ## Manifest reference
 
@@ -52,7 +52,7 @@ This section describes the attributes found in the Microsoft Graph app manifest.
 
 | Key | Value type |
 | :--- | :--- |
-|id  | String |
+|id | String |
 
 This property is referred to as Object ID in the Microsoft Entra admin center. It's a unique identifier for the application object in the directory.
 
@@ -63,7 +63,7 @@ It's a not nullable and Read-only attribute.
 Example:
 
 ```json
-    "id": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd",
+"id": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd"
 ```
 
 ### appId attribute
@@ -81,7 +81,7 @@ It's a not nullable and read-only attribute.
 Example:
 
 ```json
-"appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+"appId": "00001111-aaaa-2222-bbbb-3333cccc4444"
 ```
 
 ### addIns attribute
@@ -90,23 +90,23 @@ Example:
 | :--- | :--- |
 | addIns | Collection |
 
-Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the `addIns` property for its "FileHandler" functionality. This parameter  lets services like Microsoft 365 call the application in the context of a document the user is working on.
+Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the `addIns` property for its "FileHandler" functionality. This parameter lets services like Microsoft 365 call the application in the context of a document the user is working on.
 
 Example:
 
 ```json
-    "addIns": [
-       {
+"addIns": [
+    {
         "id": "968A844F-7A47-430C-9163-07AE7C31D407",
-        "type":" FileHandler",
+        "type": " FileHandler",
         "properties": [
-           {
-              "key": "version",
-              "value": "2"
-           }
+            {
+                "key": "version",
+                "value": "2"
+            }
         ]
-       }
-    ],
+    }
+]
 ```
 
 ### appRoles
@@ -120,18 +120,18 @@ Specifies the collection of roles that an app may declare. These roles can be as
 Example:
 
 ```json
-    "appRoles": [
-        {
-           "allowedMemberTypes": [
-               "User"
-           ],
-           "description": "Read-only access to device information",
-           "displayName": "Read Only",
-           "id": "00001111-aaaa-2222-bbbb-3333cccc4444",
-           "isEnabled": true,
-           "value": "ReadOnly"
-        }
-    ],
+"appRoles": [
+    {
+        "allowedMemberTypes": [
+            "User"
+        ],
+        "description": "Read-only access to device information",
+        "displayName": "Read Only",
+        "id": "00001111-aaaa-2222-bbbb-3333cccc4444",
+        "isEnabled": true,
+        "value": "ReadOnly"
+    }
+]
 ```
 
 
@@ -143,16 +143,16 @@ Example:
 
 Configures the `groups` claim issued in a user or OAuth 2.0 access token that the app expects. To set this attribute, use one of the following valid string values:
 
--  `None`
--  `SecurityGroup` (for security groups and Microsoft Entra roles)
--  `ApplicationGroup` (this option includes only groups that are assigned to the application)
--  `DirectoryRole` (gets the Microsoft Entra directory roles the user is a member of)
--  `All` (this gets all of the security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of).
+- `None`
+- `SecurityGroup` (for security groups and Microsoft Entra roles)
+- `ApplicationGroup` (this option includes only groups that are assigned to the application)
+- `DirectoryRole` (gets the Microsoft Entra directory roles the user is a member of)
+- `All` (this gets all of the security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of).
 
 Example:
 
 ```json
-    "groupMembershipClaims": "SecurityGroup",
+"groupMembershipClaims": "SecurityGroup"
 ```
 
 ### optionalClaims attribute
@@ -168,10 +168,22 @@ Apps that support both personal accounts and Microsoft Entra ID can't use option
 Example:
 
 ```json
-    "optionalClaims":{
-"idToken": [{"@odata.type": "microsoft.graph.optionalClaim"}],
-"accessToken": [{"@odata.type": "microsoft.graph.optionalClaim"}],
-"saml2Token": [{"@odata.type": "microsoft.graph.optionalClaim"}]
+"optionalClaims": {
+    "idToken": [
+        {
+            "@odata.type": "microsoft.graph.optionalClaim"
+        }
+    ],
+    "accessToken": [
+        {
+            "@odata.type": "microsoft.graph.optionalClaim"
+        }
+    ],
+    "saml2Token": [
+        {
+            "@odata.type": "microsoft.graph.optionalClaim"
+        }
+    ]
 }
 ```
 
@@ -189,7 +201,7 @@ When an application is used as a resource app, the identifierUri value is used t
 Example:
 
 ```json
-    "identifierUris": "https://contoso.onmicrosoft.com/fc4d2d73-d05a-4a9b-85a8-4f2b3a5f38ed",
+"identifierUris": "https://contoso.onmicrosoft.com/fc4d2d73-d05a-4a9b-85a8-4f2b3a5f38ed"
 ```
 
 ### keyCredentials attribute
@@ -203,17 +215,17 @@ Holds references to app-assigned credentials, string-based shared secrets and X.
 Example:
 
 ```json
-    "keyCredentials": [
-        {
-           "customKeyIdentifier":null,
-           "endDateTime":"2018-09-13T00:00:00Z",
-           "keyId":"<guid>",
-           "startDateTime":"2017-09-12T00:00:00Z",
-           "type":"AsymmetricX509Cert",
-           "usage":"Verify",
-           "value":null
-        }
-    ],
+"keyCredentials": [
+    {
+        "customKeyIdentifier": null,
+        "endDateTime": "2018-09-13T00:00:00Z",
+        "keyId": "<guid>",
+        "startDateTime": "2017-09-12T00:00:00Z",
+        "type": "AsymmetricX509Cert",
+        "usage": "Verify",
+        "value": null
+    }
+]
 ```
 
 ### displayName attribute
@@ -227,7 +239,7 @@ The display name for the app.
 Example:
 
 ```json
-" displayName": "MyRegisteredApp",
+"displayName": "MyRegisteredApp"
 ```
 
 ### oauth2RequiredPostResponse attribute
@@ -241,7 +253,7 @@ Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID allow
 Example:
 
 ```json
-    "oauth2RequirePostResponse": false,
+"oauth2RequirePostResponse": false
 ```
 
 ### parentalControlSettings attribute
@@ -256,10 +268,10 @@ Example:
 Example:
 
 ```json
-    "parentalControlSettings": {
-        "countriesBlockedForMinors": [],
-        "legalAgeGroupRule": "Allow"
-    },
+"parentalControlSettings": {
+    "countriesBlockedForMinors": [],
+    "legalAgeGroupRule": "Allow"
+}
 ```
 
 ### passwordCredentials attribute
@@ -273,17 +285,17 @@ See the description for the `keyCredentials` property.
 Example:
 
 ```json
-    "passwordCredentials": [
-      {
+"passwordCredentials": [
+    {
         "customKeyIdentifier": null,
         "displayName": "Generated by App Service",
         "endDateTime": "2022-10-19T17:59:59.6521653Z",
         "hint": "Nsn",
         "keyId": "<guid>",
-        "secretText": null,        
-        "startDateTime":"2022-10-19T17:59:59.6521653Z"
-      }
-    ],
+        "secretText": null,
+        "startDateTime": "2022-10-19T17:59:59.6521653Z"
+    }
+]
 ```
 
 ### publisherDomain attribute
@@ -297,7 +309,7 @@ The verified publisher domain for the application. Read-only. To edit the publis
 Example:
 
 ```json
-"publisherDomain": "{tenant}.onmicrosoft.com",
+"publisherDomain": "{tenant}.onmicrosoft.com"
 ```
 
 ### requiredResourceAccess attribute
@@ -314,17 +326,17 @@ With dynamic consent, `requiredResourceAccess` drives the admin consent experien
 Example:
 
 ```json
-    "requiredResourceAccess": [
-        {
-            "resourceAppId": "00000002-0000-0000-c000-000000000000",
-            "resourceAccess": [
-                {
-                    "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6",
-                    "type": "Scope"
-                }
-            ]
-        }
-    ],
+"requiredResourceAccess": [
+    {
+        "resourceAppId": "00000002-0000-0000-c000-000000000000",
+        "resourceAccess": [
+            {
+                "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6",
+                "type": "Scope"
+            }
+        ]
+    }
+]
 ```
 
 ### samlMetadataUrl attribute
@@ -338,7 +350,7 @@ The URL to the SAML metadata for the app.
 Example:
 
 ```json
-    "samlMetadataUrl": "https://MyRegisteredAppSAMLMetadata",
+"samlMetadataUrl": "https://MyRegisteredAppSAMLMetadata"
 ```
 
 ### signInAudience attribute
@@ -348,6 +360,7 @@ Example:
 | signInAudience | String |
 
 Specifies what Microsoft accounts are supported for the current application. Supported values are:
+
 - `AzureADMyOrg` - Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (for example, single tenant)
 - `AzureADMultipleOrgs` - Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (for example, multitenant)
 - `AzureADandPersonalMicrosoftAccount` - Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant
@@ -356,7 +369,7 @@ Specifies what Microsoft accounts are supported for the current application. Sup
 Example:
 
 ```json
-    "signInAudience": "AzureADandPersonalMicrosoftAccount",
+"signInAudience": "AzureADandPersonalMicrosoftAccount"
 ```
 
 ### tags attribute
@@ -370,26 +383,26 @@ Custom strings that can be used to categorize and identify the application.
 Example:
 
 ```json
-    "tags": [
-       "ProductionApp"
-    ],
+"tags": [
+    "ProductionApp"
+]
 ```
 
-### isFallbackPublicClient attribute 
+### isFallbackPublicClient attribute
 
 | Key | Value type |
 | :--- | :--- |
 | isFallbackPublicClient | Boolean |
- 
+
 Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value of this attribute is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can't determine the client application type. For example, the ROPC flow where it's configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
 
 Example:
 
 ```json
-"isFallbackPublicClient ": "false",
+"isFallbackPublicClient": "false"
 ```
 
-### info attribute 
+### info attribute
 
 | Key | Value type |
 | :--- | :--- |
@@ -399,23 +412,23 @@ Specifies basic profile information of the application including the app's marke
 
 Note that:
 
-- "logoUrl" is a read-only property. You can't edit it in app  manifest. Navigate to "branding and property" page in your  desired app registration and use "Upload new logo" to upload a new logo.
+- "logoUrl" is a read-only property. You can't edit it in app manifest. Navigate to "branding and property" page in your desired app registration and use "Upload new logo" to upload a new logo.
 
-- The terms of service and privacy statement are surfaced to users  through the user consent experience. For more info, see How to: [Add  Terms of service and privacy statement for registered Microsoft  Entra  apps](/azure/active-directory/develop/howto-add-terms-of-service-privacy-statement).
+- The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: [Add Terms of service and privacy statement for registered Microsoft Entra apps](/azure/active-directory/develop/howto-add-terms-of-service-privacy-statement).
 
 Example:
 
 ```json
-Info: { 
-"termsOfService": "https://MyRegisteredApp/termsofservice",
-"support": "https://MyRegisteredApp/support",
-"privacy": "https://MyRegisteredApp/privacystatement",
-"marketing": "https://MyRegisteredApp/marketing"
-"logoUrl": "https://MyRegisteredApp/logoUrl",
+"info": {
+    "termsOfService": "https://MyRegisteredApp/termsofservice",
+    "support": "https://MyRegisteredApp/support",
+    "privacy": "https://MyRegisteredApp/privacystatement",
+    "marketing": "https://MyRegisteredApp/marketing",
+    "logoUrl": "https://MyRegisteredApp/logoUrl",
 }
 ```
 
-### api attribute 
+### api attribute
 
 | Key | Value type |
 | :--- | :--- |
@@ -435,27 +448,31 @@ Specifies settings for an application that implements a web API. It includes fiv
 Example:
 
 ```json
-Api:{
+"Api": {
     "acceptMappedClaims": true,
-    "knownClientApplications": ["f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd"],
+    "knownClientApplications": [
+        "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd"
+    ],
     "oauth2PermissionScopes": [
         {
-        "adminConsentDescription": "Allow the app to access resources on behalf of the signed-in user.",
-        "adminConsentDisplayName": "Access resource1",
-        "id": "<guid>",
-        "isEnabled": true,
-        "type": "User",
-        "userConsentDescription": "Allow the app to access resource1 on your behalf.",
-        "userConsentDisplayName": "Access resources",
-        "value": "user_impersonation"
+            "adminConsentDescription": "Allow the app to access resources on behalf of the signed-in user.",
+            "adminConsentDisplayName": "Access resource1",
+            "id": "<guid>",
+            "isEnabled": true,
+            "type": "User",
+            "userConsentDescription": "Allow the app to access resource1 on your behalf.",
+            "userConsentDisplayName": "Access resources",
+            "value": "user_impersonation"
         }
     ],
-    "preAuthorizedApplications": [{
-        "appId": "abcdefg2-000a-1111-a0e5-812ed8dd72e8",
-        "permissionIds": [
-        "8748f7db-21fe-4c83-8ab5-53033933c8f1"
-        ]
-    }],
+    "preAuthorizedApplications": [
+        {
+            "appId": "abcdefg2-000a-1111-a0e5-812ed8dd72e8",
+            "permissionIds": [
+                "8748f7db-21fe-4c83-8ab5-53033933c8f1"
+            ]
+        }
+    ],
     "requestedAccessTokenVersion": 2
 }
 ```
@@ -472,19 +489,22 @@ Specifies settings for a web application. It includes four properties.
 | :--- | :--- | :--- |
 | homePageUrl | String |Home page or landing page of the application.|
 | implicitGrantSettings  | [implicitGrantSettings](/graph/api/resources/implicitgrantsettings)  | Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow. |
-| logoutUrl | String |Specifies the URL that is used by Microsoft's authorization service to sign out a  user using [front-channel](https://openid.net/specs/openid-connect-frontchannel-1_0.html), [back-channel](https://openid.net/specs/openid-connect-backchannel-1_0.html) or  SAML sign out protocols. |
+| logoutUrl | String |Specifies the URL that is used by Microsoft's authorization service to sign out a user using [front-channel](https://openid.net/specs/openid-connect-frontchannel-1_0.html), [back-channel](https://openid.net/specs/openid-connect-backchannel-1_0.html) or SAML sign out protocols. |
 | redirectUris |String collection |Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent in the web platform.|
 
 Example:
 
 ```json
-web: {
+"web": {
     "homePageUrl": "String",
     "implicitGrantSettings": {
-    "enableIdTokenIssuance": "Boolean",
-    "enableAccessTokenIssuance": "Boolean"}
+        "enableIdTokenIssuance": "Boolean",
+        "enableAccessTokenIssuance": "Boolean"
+    },
     "logoutUrl": "String",
-    "redirectUris": ["String"]
+    "redirectUris": [
+        "String"
+    ]
 }
 ```
 
@@ -503,8 +523,10 @@ Specifies settings for a single-page application, including sign out URLs and re
 Example:
 
 ```json
-spa: {
-    "redirectUris": ["String"]
+"spa": {
+    "redirectUris": [
+        "String"
+    ]
 }
 ```
 
@@ -525,8 +547,10 @@ running on a desktop device).
 Example:
 
 ```json
-publicClient: {
-"redirectUris": ["String"]
+"publicClient": {
+    "redirectUris": [
+        "String"
+    ]
 }
 ```
 
@@ -549,7 +573,7 @@ This might be due to the migration from Azure AD Graph to Microsoft Graph app ma
 
 #### I can't find the trustedCertificateSubjects attribute
 
-**trustedCertificateSubjects** attribute is a Microsoft internal property. The Microsoft Entra admin center shows version 1.0 of the Microsoft Graph app manifest, **trustedCertificateSubjects** attribute is only present in beta version of the app manifest (Microsoft Graph format). Continue to edit this property using the app manifest (Azure AD Graph format) in the Microsoft Entra admin center. 
+**trustedCertificateSubjects** attribute is a Microsoft internal property. The Microsoft Entra admin center shows version 1.0 of the Microsoft Graph app manifest, **trustedCertificateSubjects** attribute is only present in beta version of the app manifest (Microsoft Graph format). Continue to edit this property using the app manifest (Azure AD Graph format) in the Microsoft Entra admin center.
 
 #### ERROR: The application was not found. If the application was just created, wait a few minutes and refresh the page.**
 
