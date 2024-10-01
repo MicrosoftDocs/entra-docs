@@ -124,8 +124,6 @@
       href: policy-block-example.md
   - name: Microsoft-managed policies
     href: managed-policies.md
-  - name: Configure authentication flows
-    href: policy-block-authentication-flows.md
   - name: Configure report only mode
     href: howto-conditional-access-insights-reporting.md
   - name: Block legacy authentication
