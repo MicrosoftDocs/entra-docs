@@ -98,10 +98,12 @@
       href: policy-risk-based-insider-block.md
     - name: Block access for unknown or unsupported devices
       href: policy-all-users-device-unknown-unsupported.md
-    - name: Require terms of use to be accepted
-      href: policy-all-users-require-terms-of-use.md
+    - name: Restrict device code flow and authentication transfer
+      href: policy-block-authentication-flows.md
   - name: Other policy examples
     items: 
+    - name: Require terms of use to be accepted
+      href: policy-all-users-require-terms-of-use.md
     - name: Require MFA for administrators
       href: policy-old-require-mfa-admin.md
     - name: Require MFA for guest users
