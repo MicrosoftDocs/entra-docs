@@ -331,6 +331,8 @@
         href: connect/how-to-connect-install-automatic-upgrade.md
       - name: Security update to the auto-upgrade process 
         href: connect/security-updates-pks.md
+      - name: Hardening update to Microsoft Entra Connect Sync AD FS and PingFederate
+        href: connect/harden-update-ad-fs-pingfederate.md
       - name: Running the installation wizard a second time
         href: connect/how-to-connect-installation-wizard.md
       - name: Upgrade to a new version of Microsoft Entra Connect
