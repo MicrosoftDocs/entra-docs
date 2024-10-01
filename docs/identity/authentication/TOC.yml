@@ -148,7 +148,7 @@
           href: how-to-register-passkey-authenticator.md
         - name: Sign in with passkeys in Authenticator (preview)
           href: how-to-sign-in-passkey-authenticator.md
-        - name: Passkeys in Authenticator FAQs
+        - name: Passkeys in Authenticator FAQs (preview)
           href: passkey-authenticator-faq.yml
         - name: Enable Authenticator authentication method
           href: howto-authentication-passwordless-phone.md
