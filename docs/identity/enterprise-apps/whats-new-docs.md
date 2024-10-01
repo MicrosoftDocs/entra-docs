@@ -16,7 +16,7 @@ manager: CelesteDG
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those articles that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## October 2024
+## September 2024
 
 No updates this month.
 
