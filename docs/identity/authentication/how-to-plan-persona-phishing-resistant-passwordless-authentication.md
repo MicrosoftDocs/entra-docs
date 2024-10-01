@@ -34,7 +34,7 @@ When dealing with concerns about biometrics, make sure that you understand how t
 
 ### Information worker deployment flow  
 
-Phases 1-3 of the deployment flow for information workers should typically follow the standard deployment flow as pictured above. Adjust the methods used at each step as needed in your environment:
+Phases 1-3 of the deployment flow for information workers should typically follow the standard deployment flow, as shown in the following image. Adjust the methods used at each step as needed in your environment:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/information-worker-deployment.png" alt-text="Diagram that shows deployment flow for information workers.":::
 
@@ -114,11 +114,11 @@ If your IT pro/DevOps workers have secondary accounts you may need to handle tho
 
 ## Highly regulated workers
 
-Highly regulated workers pose additional challenges beyond the average information worker because they may work on locked down devices, work in locked down environments, or have special regulatory requirements they must satisfy.
+Highly regulated workers pose more challenges than the average information worker because they may work on locked down devices, work in locked down environments, or have special regulatory requirements they must satisfy.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/regulated-worker-examples.png" alt-text="Diagram that shows examples of requirements for highly regulated workers.":::
 
-Highly regulated workers often leverage smart cards due to regulated environments already having heavy adoption of PKI and smart card infrastructure. However, consider when smart cards are desirable and required and when they can be balanced with more user-friendly options, such as Windows Hello for Business.
+Highly regulated workers often use smart cards due to regulated environments already having heavy adoption of PKI and smart card infrastructure. However, consider when smart cards are desirable and required and when they can be balanced with more user-friendly options, such as Windows Hello for Business.
 
 ### Highly regulated worker deployment flow without PKI
 
