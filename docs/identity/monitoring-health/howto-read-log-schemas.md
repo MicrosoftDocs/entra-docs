@@ -44,7 +44,7 @@ For full details on these schemas, see the following articles:
 - [Azure Monitor provisioning logs](/azure/azure-monitor/reference/tables/aadprovisioninglogs)
 - [Microsoft Graph audit logs](/graph/api/resources/directoryaudit?view=graph-rest-1.0&preserve-view=true)
 - [Microsoft Graph sign-in logs](/graph/api/resources/signin?view=graph-rest-1.0&preserve-view=true)
-- [Microsoft Graph provisioning logs](/graph/api/resources/provisioninglog?view=graph-rest-1.0&preserve-view=true)
+- [Microsoft Graph provisioning logs](/graph/api/resources/provisioningobjectsummary?view=graph-rest-1.0&preserve-view=true)
 
 ### Sample JSON representations
 
