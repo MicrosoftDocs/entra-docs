@@ -135,7 +135,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ## 2.3.6.0
 
 ### Release status
-21 Feb 2024: Released for download and autoupgrade.
+21 Feb 2024: Released for download.
 
 ### Bug Fixes:
 - Improvements to auto-upgrade detection. Auto-upgrade will no longer retry if it detects the machine does not meet the OS or .NET runtime requirements.
