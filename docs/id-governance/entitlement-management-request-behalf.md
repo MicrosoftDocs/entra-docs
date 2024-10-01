@@ -52,7 +52,7 @@ Follow these steps to edit the policies, allowing on behalf of requests, for an 
 1. Save your policy. 
 
 ## Request an access package on behalf of an employee
-
+ 
 As a manager, you can request an access package for a direct report by doing the following steps:
 
 1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com). For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
