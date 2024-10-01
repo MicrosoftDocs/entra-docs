@@ -5,7 +5,7 @@ description: Detailed guidance for planning the prerequisites to deploy password
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/24/2024
+ms.date: 10/01/2024
 
 ms.author: justinha
 author: mepples21
@@ -81,6 +81,5 @@ End-User Communications	             | Messages changes to end users in preparat
 
 ## Next steps
 
-[Plan a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-phishing-resistant-passwordless-authentication.md)
 [Deploy a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
 [Considerations for specific personas in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-persona-phishing-resistant-passwordless-authentication.md)
