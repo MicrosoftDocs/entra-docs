@@ -5,7 +5,7 @@ description: Learn about the combined registration experience for Microsoft Entr
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/05/2024
+ms.date: 10/01/2024
 
 ms.author: justinha
 author: justinha
@@ -126,6 +126,9 @@ Combined registration sessions are only valid for 15 minutes. If a users registr
 
 ### Change a password in MySignIns
 A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can change their password. If the user authenticates with a password and a multifactor authentication method, they will be able to use the enhanced user experience to change their password without entering their existing password. When finished, the user has the new password updated on the Security info page. Authentication methods such as Temporary Access Pass (TAP) aren't supported for password change unless the user knows their existing password.
+
+>[!NOTE]
+>If you have any links that point to the legacy change password experience, update them to the following forward link to direct users to the new **My Sign Ins Change Password** experienence: [https://go.microsoft.com/fwlink/?linkid=2224198](https://go.microsoft.com/fwlink/?linkid=2224198). 
 
 ### Protect Security info registration with Conditional Access
 To secure when and how users register for Microsoft Entra multifactor authentication and self-service password reset, you can use user actions in Conditional Access policy. This functionality may be enabled in organizations that want users to register for Microsoft Entra multifactor authentication and SSPR from a central location, such as a trusted network location during HR onboarding. Learn more on how to configure [common Conditional Access policies for securing security info registration.](~/identity/conditional-access/howto-conditional-access-policy-registration.md)
