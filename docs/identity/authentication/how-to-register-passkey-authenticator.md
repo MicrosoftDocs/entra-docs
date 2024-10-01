@@ -1,11 +1,11 @@
 ---
-title: Register passkeys in Authenticator on Android and iOS devices in Security info 
+title: Register passkeys in Authenticator on Android and iOS devices in Security info (preview)
 description: Registration and management of passkey with Authenticator on iOS in Security info.
 
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/20/2024
+ms.date: 10/01/2024
 
 ms.author: justinha
 author: justinha
@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users can register a passkey in Microsoft Authenticator 
 
 ---
-# Register passkeys in Authenticator on Android or iOS devices 
+# Register passkeys in Authenticator on Android or iOS devices (preview)
 
 This article shows how to register a passkey using Microsoft Authenticator on your iOS or Android device by directly signing into the Authenticator app or by using [My Security info](https://aka.ms/mysecurityinfo). For more information on the availability of Microsoft Entra ID passkey (FIDO2) authentication across native apps, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
 
@@ -91,7 +91,7 @@ You can also use your web browser to set up a passkey in Authenticator.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info.png" alt-text="Screenshot of the Security Info screen in Microsoft Authenticator for iOS devices.":::
 
-1. Select **Passkey in Microsoft Authenticator**.
+1. Select **Passkey in Microsoft Authenticator (preview)**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-in-authenticator.png" alt-text="Screenshot of the drop-down list of options in Microsoft Authenticator for iOS devices.":::
 
@@ -139,7 +139,7 @@ You can also use your web browser to set up a passkey in Authenticator.
 You can also save a passkey in Authenticator from your computer or another mobile device. This registration option requires Bluetooth and an internet connection for both devices.
 
 1. Using another device, such as a laptop, open a web browser and sign in to [My Security info](https://aka.ms/mysecurityinfo).
-1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator** > **Add**.
+1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator (preview)** > **Add**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-passkey-authenticator.png" alt-text="Screenshot of how to add passkey in Microsoft Authenticator as a sign-in method.":::
 
@@ -275,7 +275,7 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-security-info.png" alt-text="Screenshot of the Security Info screen in Microsoft Authenticator for Android devices.":::
 
-1. Tap **Passkey in Microsoft Authenticator**.
+1. Tap **Passkey in Microsoft Authenticator (preview)**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/select-method.png" alt-text="Screenshot of the drop-down list of options in Microsoft Authenticator for Android devices.":::
 
@@ -335,7 +335,7 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 You can also save a passkey in Authenticator from your computer or another mobile device. This registration option requires Bluetooth and an internet connection for both devices.
 
 1. Open a web browser and sign in to [My Security info](https://aka.ms/mysecurityinfo).
-1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator** > **Add**.
+1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator (preview)** > **Add**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-passkey-authenticator.png" alt-text="Screenshot of how to add passkey in Microsoft Authenticator as a sign-in method for Android devices.":::
 
