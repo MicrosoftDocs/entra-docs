@@ -222,7 +222,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Communifire](~/identity/saas-apps/communifire-tutorial.md) |  | ● |
 | [Community Spark](~/identity/saas-apps/community-spark-tutorial.md) |  | ● |
 | [Compliance Genie](~/identity/saas-apps/compliance-genie-tutorial.md) |  | ● |
-| [Concur](~/identity/saas-apps/concur-provisioning-tutorial.md) | ● | ● |
+| [Concur](~/identity/saas-apps/sap-concur-provisioning-tutorial.md) | ● | ● |
 | [Condeco](~/identity/saas-apps/condeco-tutorial.md) |  | ● |
 | [Confirmit Horizons](~/identity/saas-apps/confirmit-horizons-tutorial.md) |  | ● |
 | [Connecter](~/identity/saas-apps/connecter-provisioning-tutorial.md) | ● |  |

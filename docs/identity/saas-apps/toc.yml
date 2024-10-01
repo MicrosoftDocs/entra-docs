@@ -3446,8 +3446,6 @@
         href: contentstack-provisioning-tutorial.md
       - name: Comeet Recruiting Software
         href: comeet-recruiting-software-provisioning-tutorial.md
-      - name: Concur
-        href: concur-provisioning-tutorial.md
       - name: Cornerstone OnDemand
         href: cornerstone-ondemand-provisioning-tutorial.md
       - name: CultureHQ
@@ -3802,6 +3800,10 @@
         href: sap-concur-provisioning-tutorial.md
       - name: SAP ECC (formerly SAP R/3)
         href: ~/identity/app-provisioning/on-premises-sap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
+      - name: SAP HANA
+        href: sap-hana-provisioning-tutorial.md
+      - name: SAP S/4HANA
+        href: sap-s4hana-provisioning-tutorial.md
       - name: SAP SuccessFactors Learning
         href: sap-successfactors-learning-provisioning-tutorial.md
       - name: SAP SuccessFactors to Active Directory
