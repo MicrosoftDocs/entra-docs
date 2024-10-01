@@ -49,7 +49,7 @@ The following steps help create a Conditional Access policy to require all users
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
    1. Under **Exclude**, select any applications that don't require multifactor authentication.
 1. Under **Access controls** > **Grant**, select **Grant access**.
-   1. Select **Require authentication strength**, then select the built-in or custom authentication strength from the list.
+   1. Select **Require authentication strength**, then select the built-in **Multifactor authentication strength** from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.

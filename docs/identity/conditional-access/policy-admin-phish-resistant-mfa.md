@@ -59,7 +59,7 @@ For external user scenarios, the MFA authentication methods that a resource tena
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
 1. Under **Access controls** > **Grant**, select **Grant access**.
-   1. Select **Require authentication strength**, then select the built-in or custom authentication strength from the list.
+   1. Select **Require authentication strength**, then select **Phishing-resistant MFA strength** from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.

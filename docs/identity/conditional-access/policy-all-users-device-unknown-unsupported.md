@@ -38,7 +38,7 @@ The [device platform condition](concept-conditional-access-conditions.md#device-
    1. Under **Include**, select **Any device**
    1. Under **Exclude**, select **Android**, **iOS**, **Windows**, and **macOS**.
       > [!NOTE]
-      > For the exclusion select any platforms that your organization knowingly uses, and leave the others unselected.
+      > For this exclusion select any platforms that your organization knowingly uses, and leave the others unselected.
    1. Select, **Done**.
 1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
