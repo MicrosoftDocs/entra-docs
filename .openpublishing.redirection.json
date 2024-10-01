@@ -1049,7 +1049,7 @@
     },
     {      
     "source_path_from_root": "/docs/identity/saas-apps/concur-provisioning-tutorial.md",
-    "redirect_url": "/docs/identity/saas-apps/sap-concur-provisioning-tutorial",
+    "redirect_url": "/entra/identity/saas-apps/sap-concur-provisioning-tutorial",
     "redirect_document_id": false
     }
   ]
