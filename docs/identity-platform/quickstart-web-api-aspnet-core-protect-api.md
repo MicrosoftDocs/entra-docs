@@ -100,13 +100,13 @@ To obtain the sample application, you can either clone it from GitHub or downloa
    ```bash
    ...
    info: Microsoft.Hosting.Lifetime[14]
-         Now listening on: https://localhost:{port}
+         Now listening on: http://localhost:{port}
    ...
    ```
 
-   Record the port number in the `https://localhost:{port}` URL.
+   Record the port number in the `http://localhost:{port}` URL.
 
-1. To verify the endpoint is protected, use the following cURL command in Bash to send an unauthenticated HTTP GET request in Bash:
+1. To verify the endpoint is protected, update the base URL in the following cURL command to match the one you received in the previous step, and then run the command:
 
    ```bash
    curl -X GET https://localhost:5001/weatherforecast -ki
