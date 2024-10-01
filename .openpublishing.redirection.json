@@ -71,6 +71,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/monitoring-health/overview-flagged-sign-ins.md",
+      "redirect_url": "/entra/identity/monitoring-health/concept-flagged-sign-ins",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/monitoring-health/howto-enable-microsoft-graph-activity-logs.md",
       "redirect_url": "/entra/identity/monitoring-health/howto-analyze-activity-logs-with-microsoft-graph",
       "redirect_document_id": false
