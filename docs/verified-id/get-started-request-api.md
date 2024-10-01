@@ -308,7 +308,7 @@ Issuance request using the `idTokenHint` attestation flow:
 
 ```JSON
 {
-    "includeQRCode": false,
+    "authority": "did:web:verifiedid.contoso.com",
     "callback": {
         "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
@@ -316,7 +316,6 @@ Issuance request using the `idTokenHint` attestation flow:
             "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
         }
     },
-    "authority": "did:web:verifiedid.contoso.com",
     "registration": {
         "clientName": "Verifiable Credential Expert Sample"
     },
@@ -338,7 +337,8 @@ Issuance request using the `idTokenHint` attestation flow:
 Issuance request using the `idTokenHint` attestation flow that [sets the expiry date](issuance-request-api.md#issuance-request-payload):
 
 ```JSON
-    "includeQRCode": false,
+{
+    "authority": "did:web:verifiedid.contoso.com",
     "callback": {
         "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
@@ -346,7 +346,6 @@ Issuance request using the `idTokenHint` attestation flow that [sets the expiry 
             "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
         }
     },
-    "authority": "did:web:verifiedid.contoso.com",
     "registration": {
         "clientName": "Verifiable Credential Expert Sample"
     },
@@ -390,7 +389,7 @@ Presentation request for a credential with a certain type and issuer:
 
 ```JSON
 {
-  "includeQRCode": true,
+  "authority": "did:web:verifiedid.contoso.com",
   "callback": {
     "url": "https://contoso.com/api/verifier/presentationCallback",
     "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
@@ -398,7 +397,6 @@ Presentation request for a credential with a certain type and issuer:
       "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
     }
   },
-  "authority": "did:web:verifiedid.contoso.com",
   "registration": {
     "clientName": "Veritable Credential Expert Verifier"
   },
@@ -428,7 +426,6 @@ Presentation request with [claims constraints](presentation-request-api.md#const
 ```JSON
 {
   "authority": "did:web:verifiedid.contoso.com",
-  "includeQRCode": false,
   "includeReceipt": false,
   "registration": {
     "clientName": "Contoso Job Application Center",
@@ -473,7 +470,6 @@ Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` 
 ```JSON
 {
   "authority": "did:web:verifiedid.contoso.com",
-  "includeQRCode": false,
   "includeReceipt": false,
   "registration": {
     "clientName": "Contoso Job Application Center",

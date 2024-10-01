@@ -49,7 +49,6 @@ Content-Type: application/json
 Authorization: Bearer  <token>
 
 {
-    "includeQRCode": true,
     "callback": {
       "url": "https://contoso.com/api/verifier/presentationCallback",
       "state": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
@@ -73,9 +72,8 @@ The presentation request payload contains information about your verifiable cred
 
 ```json
 {
-  "includeQRCode": true,
-  "includeReceipt": true,
   "authority": "did:web:verifiedid.contoso.com",
+  "includeReceipt": true,
   "registration": {
     "clientName": "Veritable Credential Expert Verifier"
   },
@@ -108,7 +106,7 @@ The payload contains the following properties.
 
 |Parameter |Type  | Description |
 |---------|---------|---------|
-| `includeQRCode` |  Boolean | Optional. Determines whether a QR code is included in the response of this request. Present the QR code and ask the user to scan it. Scanning the QR code launches the authenticator app with this presentation request. Possible values are `true` (default) or `false`. When you set the value to `false`, use the return `url` property to render a deep link.  |
+| `includeQRCode` |  Boolean | Optional. Determines whether a QR code is included in the response of this request. Present the QR code and ask the user to scan it. Scanning the QR code launches the authenticator app with this presentation request. Possible values are `true` or `false` (default). When you set the value to `false`, use the return `url` property to render a deep link.  |
 | `includeReceipt` |  Boolean | Optional. Determines whether a receipt should be included in the response of this request. Possible values are `true` or `false` (default). The receipt contains the original payload sent from the authenticator to the Verifiable Credentials service. The receipt is useful for troubleshooting or if you have the need to ge the full details of the payload. There's otherwise no need be set this value to `true `by default. In the `OpenId Connect SIOP` request, the receipt contains the ID token from the original request. |
 | `authority` | string|  Your decentralized identifier (DID) of your verifier Microsoft Entra tenant. For more information, see [Gather tenant details to set up your sample application](verifiable-credentials-configure-verifier.md#gather-tenant-details-to-set-up-your-sample-application).|
 | `registration` | [RequestRegistration](#requestregistration-type)|  Provides information about the verifier. |

@@ -164,10 +164,10 @@ For example, if you listed Alice and Bob as the first stage approver(s), list Ca
 
     ![Access package - Policy- Enable policy setting](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
-1. When new requests are enabled, you can specify whether you want to **Allow managers to request on behalf of their employees (preview)**. Enabling this setting will also give you the option to **Bypass approval stage if manager is the requestor and the approver (preview)**. Bypassing an approval stage when the manager is both the requestor, and the approver for that stage, streamlines the request process by reducing redundancy. 
+1. When new requests are enabled, you can specify whether you want to **Allow managers to request on behalf of their employees (preview)**.
     :::image type="content" source="media/entitlement-management-access-package-approval-policy/manager-enable-approval.png" alt-text="Screenshot of manager approval of request options.":::
 1. Select **Next**.
-
+ 
 ## Collect additional requestor information for approval
 
 In order to make sure users are getting access to the right access packages, you can require requestors to answer custom text field or Multiple Choice questions at the time of request. The questions will then be shown to approvers to help them make a decision.
