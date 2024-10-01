@@ -39,6 +39,9 @@ This article discusses two ways to configure an allow or blocklist for B2B colla
 
 By default, the **Allow invitations to be sent to any domain (most inclusive)** setting is enabled. In this case, you can invite B2B users from any organization.
 
+> [!IMPORTANT]
+> Microsoft recommends that you use roles with the fewest permissions. This helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
+
 ### Add a blocklist
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
@@ -48,8 +51,12 @@ This is the most typical scenario, where your organization wants to work with al
 To add a blocklist:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
+
+
 1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+
 1. Under **Collaboration restrictions**, select **Deny invitations to the specified domains**.
+
 1. Under **Target domains**, enter the name of one of the domains that you want to block. For multiple domains, enter each domain on a new line. For example:
 
     :::image type="content" source="media/allow-deny-list/deny-list-settings.png" alt-text="Screenshot showing the option to deny with added domains.":::

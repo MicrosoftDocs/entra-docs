@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/05/2024
+ms.date: 09/27/2024
 ms.author: sarahlipsey
 
 #Customer intent: As an IT admin, I need to use the cross-tenant access activity workbook to monitor the resources my external users are accessing so I can ensure that my cross-tenant policies are working as expected.
@@ -52,7 +52,7 @@ This workbook has four sections:
 
 - Individual users for inbound and outbound collaboration by tenant ID
 
-The total number of external tenants that have had cross-tenant access activity with your tenant is shown at the top of the workbook. 
+The total number of external tenants that had cross-tenant access activity with your tenant is shown at the top of the workbook. 
 
 ![Screenshot of the first section of the workbook.](./media/workbook-cross-tenant-access-activity/cross-tenant-activity-top.png)
 
@@ -64,7 +64,7 @@ When you select an external tenant from the list with outbound activity, associa
 
 ![Screenshot of the outbound and inbound activity, with the outbound and inbound options highlighted.](./media/workbook-cross-tenant-access-activity/cross-tenant-activity-outbound-inbound-activity.png)
 
-When you're viewing external tenants with outbound activity, the subsequent two tables display details for the application and user activity appear. When you're viewing external tenants with inbound activity, the same tables show inbound application and user activity. These tables are dynamic and based on what was previously selected, so make sure you're viewing the correct tenant and activity.
+When you're viewing external tenants with outbound activity, the subsequent two tables display details for the application, and user activity appear. When you're viewing external tenants with inbound activity, the same tables show inbound application and user activity. These tables are dynamic and based on what was previously selected, so make sure you're viewing the correct tenant and activity.
 
 ## Filters
 
