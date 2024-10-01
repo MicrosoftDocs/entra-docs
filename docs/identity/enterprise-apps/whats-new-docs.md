@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 09/02/2024
+ms.date: 01/10/2024
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
@@ -15,6 +15,10 @@ manager: CelesteDG
 # Microsoft Entra application management: What's new
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those articles that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+
+## October 2024
+
+No updates this month.
 
 ## August 2024
 
@@ -39,9 +43,3 @@ Reviewed the following articles to improve technical accuracy and clarity:
 - [Tutorial: Configure F5 BIG-IP Easy Button for Kerberos single sign-on](f5-big-ip-kerberos-easy-button.md).
 - [Tutorial: Configure F5 BIG-IP Easy Button for SSO to SAP ERP](f5-big-ip-sap-erp-easy-button.md).
 - [Integrate F5 BIG-IP with Microsoft Entra ID](f5-integration.md).
-
-## June 2024
-
-### Updated articles
-
-- [Manage consent to applications and evaluate consent requests](manage-consent-requests.md) - Review to improve technical accuracy and clarity.
