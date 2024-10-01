@@ -56,6 +56,19 @@ The enforcement of MFA rolls out in two phases:
 
 - **Phase 2**: Beginning in early 2025, MFA enforcement gradually begins for sign in to Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
 
+> [!Tip]
+> We recommend customers currently using user accounts as service accounts begin the process of discovery and migration to workload identities.  This will often require updating scripts and automation processes to use workload identities.
+>
+> Review [Prepare for multifactor authentication](#prepare-for-multifactor-authentication) to identify all user accounts (including user accounts being used as service accounts) signing into the phase 2 applications.
+>
+> For guidance on migrating authentication with these applications from user based service accounts to workload identities see: 
+> 
+>- [Sign into Azure with a managed identity using the Azure CLI](/cli/azure/authenticate-azure-cli-managed-identity)
+>- [Sign into Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
+>- [Sign in to Azure PowerShell non-interactively for automation scenarios](/powershell/azure/authenticate-noninteractive) (Includes guidance for both managed identity and service principal use cases)
+>
+> Customers applying conditional access policies to the user based service accounts can reclaim this user based license and apply [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
+
 ## Notification channels 
 
 Microsoft will notify all Microsoft Entra Global Administrators through the following channels: 
