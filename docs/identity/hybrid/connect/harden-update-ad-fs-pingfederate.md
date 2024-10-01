@@ -51,3 +51,10 @@ If you aren’t yet eligible to move to Cloud Sync, use this table for more info
 |-----|-----|
 |[Upgrading from a previous version](how-to-upgrade-previous-version.md)|Information on moving from one version of Microsoft Entra Connect to another| 
 |[Information on deprecation](deprecated-azure-ad-connect.md)|Information on using a deprecated or unsupported version of Microsoft Entra Connect (some information is applicable to versions that are impacted by a service change)| 
+
+
+## Next steps
+
+- [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
+- [Microsoft Entra Connect cloud sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
+- [Microsoft Entra Connect version history](reference-connect-version-history.md)
