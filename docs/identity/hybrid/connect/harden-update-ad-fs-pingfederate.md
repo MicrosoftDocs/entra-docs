@@ -26,7 +26,7 @@ If you aren’t upgraded to the minimum required version, you may encounter the 
 
 ### Minimum version 
 
-To avoid any service impact, customers should be on version 2.4.XX.0 or higher by April 7, 2025. 
+To avoid any service impact, customers should be on version 2.4.18.0 or higher by April 7, 2025. 
  - [.NET 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472#:~:text=Downloads%20for%20building%20and%20running%20applications%20with%20.NET%20Framework%204.7.2)
  - [TLS 1. 2](reference-connect-tls-enforcement.md) 
 
