@@ -16,7 +16,7 @@ ms.reviewer: lhuangnorth
 
 Accounts that are assigned administrative rights are targeted by attackers. Requiring multifactor authentication (MFA) on those accounts is an easy way to reduce the risk of those accounts being compromised.
 
-Microsoft recommends you require MFA on the following roles at a minimum, based on [identity score recommendations](~/identity/monitoring-health/concept-identity-secure-score.md):
+Microsoft recommends you require phishing-resistant multifactor authentication on the following roles at a minimum:
 
 [!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
 

@@ -20,7 +20,7 @@ More information about device compliance policies can be found in the article, [
 
 Requiring a Microsoft Entra hybrid joined device is dependent on your devices already being Microsoft Entra hybrid joined. For more information, see the article [Configure Microsoft Entra hybrid join](~/identity/devices/how-to-hybrid-join.md).
 
-Microsoft recommends you require enable this policy for the following roles at a minimum, based on [identity score recommendations](~/identity/monitoring-health/concept-identity-secure-score.md):
+Microsoft recommends you require phishing-resistant multifactor authentication on the following roles at a minimum:
 
 [!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
 
