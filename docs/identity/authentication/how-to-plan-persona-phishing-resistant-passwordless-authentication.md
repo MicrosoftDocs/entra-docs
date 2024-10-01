@@ -18,12 +18,7 @@ ms.collection: M365-identity-device-management
 ---
 # Considerations for specific personas in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
 
-Each persona has its own challenges and considerations that commonly come up during phishing-resistant passwordless deployments. As you identify which personas you need to accommodate, you should factor these considerations into your deployment project planning. Click each link for specific guidance for each persona:
-
-- [Information workers](#information-workers)
-- [Frontline workers](#frontline-workers)
-- [IT pros/DevOps workers](#it-prosdevops-workers)
-- [Highly regulated workers](#highly-regulated-workers)
+Each persona has its own challenges and considerations that commonly come up during phishing-resistant passwordless deployments. As you identify which personas you need to accommodate, you should factor these considerations into your deployment project planning. The next sections provide specific guidance for each persona.
 
 ## Information workers
 
@@ -39,12 +34,12 @@ When dealing with concerns about biometrics, make sure that you understand how t
 
 ### Information worker deployment flow  
 
-Phases 1-3 of the deployment flow for Information Workers should typically follow the standard deployment flow as pictured above. Adjust the methods used at each step as needed in your environment:
+Phases 1-3 of the deployment flow for information workers should typically follow the standard deployment flow as pictured above. Adjust the methods used at each step as needed in your environment:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/information-worker-deployment.png" alt-text="Diagram that shows deployment flow for information workers.":::
 
 1. Phase 1: Onboarding
-   1. Entra Verified ID service used to acquire a Temporary Access Pass
+   1. Microsoft Entra Verified ID service used to acquire a Temporary Access Pass
 1. Phase 2: Portable credential registration
    1. Microsoft Authenticator app passkey (preferred)
    1. FIDO2 security key
@@ -60,13 +55,13 @@ Frontline workers often have more complicated requirements due to increased need
 
 ### Frontline worker deployment flow
  
-Phases 1-3 of the deployment flow for Frontline Workers should typically follow a modified flow that emphasizes portable credentials. Many frontline workers may not have a permanent computing device and will never need a local credential on a Windows or Mac workstation. Instead, they will largely rely on portable credentials that they can take with them from device to device. Adjust the methods used at each step as needed in your environment:
+Phases 1-3 of the deployment flow for frontline workers should typically follow a modified flow that emphasizes portable credentials. Many frontline workers may not have a permanent computing device, and they never need a local credential on a Windows or Mac workstation. Instead, they largely rely on portable credentials that they can take with them from device to device. Adjust the methods used at each step as needed in your environment:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/frontline-worker-deployment.png" alt-text="Diagram that shows deployment flow for frontline workers.":::
 
 1. Phase 1: Onboarding
    1. FIDO2 security key on-behalf-of registration (preferred)
-   1. Entra Verified ID service used to acquire a Temporary Access Pass
+   1. Microsoft Entra Verified ID service used to acquire a Temporary Access Pass
 1. Phase 2: Portable credential registration
    1. FIDO2 security key (preferred)
    1. Smart card
@@ -78,25 +73,25 @@ Phases 1-3 of the deployment flow for Frontline Workers should typically follow 
 
 ## IT pros/DevOps workers
 
-IT Pros and DevOps workers are especially reliant on remote access and multiple user accounts, which is why they are considered different from Information Workers. Many of the challenges posed by phishing-resistant passwordless for IT Pros are caused by their increased need for remote access to systems and ability to run automations.
+IT pros and DevOps workers are especially reliant on remote access and multiple user accounts, which is why they are considered different from information workers. Many of the challenges posed by phishing-resistant passwordless for IT pros are caused by their increased need for remote access to systems and ability to run automations.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-examples.png" alt-text="Diagram that shows examples of requirements for IT pros/DevOps workers.":::
 
-Understand the supported options for phishing-resistant with RDP especially for this persona. For more information about RDP, see .
+Understand the supported options for phishing-resistant with RDP especially for this persona. 
 
-Make sure to understand where users are using scripts that run in the user context and are therefore not using MFA today. Instruct your IT Pros on the proper way to run automations using service principals and managed identities. You should also consider processes to allow IT Pros and other professionals to request new service principals and get the proper permissions assigned to them.
+Make sure to understand where users are using scripts that run in the user context and are therefore not using MFA today. Instruct your IT pros on the proper way to run automations using service principals and managed identities. You should also consider processes to allow IT pros and other professionals to request new service principals and get the proper permissions assigned to them.
 
 - [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md)
 - [Securing service principals in Microsoft Entra ID](~/architecture/service-accounts-principal.md)
 
 ### IT pros/DevOps worker deployment flow
 
-Phases 1-3 of the deployment flow for IT Pro/DevOps Workers should typically follow the standard deployment flow as pictured above for the user’s primary account. IT Pros/DevOps workers often have secondary accounts that require different considerations. Adjust the methods used at each step as needed in your environment for the primary accounts:
+Phases 1-3 of the deployment flow for IT pro/DevOps workers should typically follow the standard deployment flow as pictured above for the user’s primary account. IT pros/DevOps workers often have secondary accounts that require different considerations. Adjust the methods used at each step as needed in your environment for the primary accounts:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-deployment.png" alt-text="Diagram that shows deployment flow for IT pros/DevOps workers.":::
 
 1. Phase 1: Onboarding
-   1. Entra Verified ID service used to acquire a Temporary Access Pass
+   1. Microsoft Entra Verified ID service used to acquire a Temporary Access Pass
 1. Phase 2: Portable credential registration
    1. Microsoft Authenticator app passkey (preferred)
    1. FIDO2 security key
@@ -104,13 +99,13 @@ Phases 1-3 of the deployment flow for IT Pro/DevOps Workers should typically fol
    1. Windows Hello for Business
    1. Platform SSO Secure Enclave Key
 
-If your IT Pro/DevOps workers have secondary accounts you may need to handle those accounts differently. For example, for secondary accounts you may choose to use alternative portable credentials and forego local credentials on your computing devices entirely:
+If your IT pro/DevOps workers have secondary accounts you may need to handle those accounts differently. For example, for secondary accounts you may choose to use alternative portable credentials and forego local credentials on your computing devices entirely:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-secondary.png" alt-text="Diagram that shows an alternative deployment flow for IT pros/DevOps workers.":::
 
 1. Phase 1: Onboarding
-   1. Entra Verified ID service used to acquire a Temporary Access Pass (preferred)
-   1. Alternate process to provide TAPs for secondary accounts to the IT Pro/DevOps worker
+   1. Microsoft Entra Verified ID service used to acquire a Temporary Access Pass (preferred)
+   1. Alternate process to provide TAPs for secondary accounts to the IT pro/DevOps worker
 1. Phase 2: Portable credential registration
    1. Microsoft Authenticator app passkey (preferred)
    1. FIDO2 security key
@@ -123,20 +118,20 @@ Highly regulated workers pose additional challenges beyond the average informati
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/regulated-worker-examples.png" alt-text="Diagram that shows examples of requirements for highly regulated workers.":::
 
-Highly regulated workers will often leverage smart cards due to regulated environments already having heavy adoption of PKI and smart card infrastructure. However, consider when smart cards are desirable and required and when they can be balanced with more user-friendly options, such as Windows Hello for Business.
+Highly regulated workers often leverage smart cards due to regulated environments already having heavy adoption of PKI and smart card infrastructure. However, consider when smart cards are desirable and required and when they can be balanced with more user-friendly options, such as Windows Hello for Business.
 
 ### Highly regulated worker deployment flow without PKI
 
-If you do not plan to leverage certificates, smart cards, and PKI then the Highly Regulated worker deployment will closely mirror the Information Worker deployment process. Refer to the Information Worker section.
+If you don't plan to use certificates, smart cards, and PKI, then the highly regulated worker deployment closely mirrors the information worker deployment. For more information, see [Information workers](#information-workers).
 
 ### Highly regulated worker deployment flow with PKI
 
-If you plan to use certificates, smart cards, and PKI in your phishing-resistant passwordless then the deployment flow for Highly Regulated Workers will typically deviate from the Information Worker setup flow in key places. There is an increased need to identify if local authentication methods are viable for some users. Similarly, you will need to identify if there are some users who need portable-only credentials, such as smart cards, that can work without internet connections. Depending on your varied needs you may need to further adjust the deployment flow and tailor it to the various user personas identified in your environment. Adjust the methods used at each step as needed in your environment:
+If you plan to use certificates, smart cards, and PKI, then the deployment flow for highly regulated workers typically differs from the information worker setup flow in key places. There's an increased need to identify if local authentication methods are viable for some users. Similarly, you need to identify if there are some users who need portable-only credentials, such as smart cards, that can work without internet connections. Depending on your needs, you may adjust the deployment flow further, and tailor it to the various user personas identified in your environment. Adjust the methods used at each step as needed in your environment:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/regulated-worker-deployment.png" alt-text="Diagram that shows deployment flow for highly regulated workers.":::
 
 1. Phase 1: Onboarding
-   1. Entra Verified ID service used to acquire a Temporary Access Pass (preferred)
+   1. Microsoft Entra Verified ID service used to acquire a Temporary Access Pass (preferred)
    1. Smart card registration on behalf of the user, following an identity proofing process
 1. Phase 2: Portable credential registration
    1. Smart card (preferred)
