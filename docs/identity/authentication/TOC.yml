@@ -126,9 +126,7 @@
         items: 
         - name: Prerequisites
           href: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
-        - name: Plan
-          href: how-to-plan-phishing-resistant-passwordless-authentication.md
-        - name: Deploy
+        - name: Plan and deploy
           href: how-to-deploy-phishing-resistant-passwordless-authentication.md
         - name: Persona guidance
           href: how-to-plan-persona-phishing-resistant-passwordless-authentication.md
