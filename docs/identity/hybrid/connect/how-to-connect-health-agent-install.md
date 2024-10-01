@@ -161,6 +161,25 @@ To verify that the agent was installed, look for the following services on the s
      
     Register-MicrosoftEntraConnectHealthAgent -Credential $myCreds
     ```
+ 
+> [!NOTE]
+> To install and register in sovereign clouds, run the following commands:
+>
+> ```powershell
+> AdHealthAddsAgentSetup.exe /quiet AddsMonitoringEnabled=1 SkipRegistration=1 FairfaxInstallVariable=1
+> Register-MicrosoftEntraConnectHealthAgent -Credential $myCreds
+>  ``` 
+
+> [!NOTE]
+> If multi-factor authentication is required, a bearer token would need to be copied from an internet browser debugger while viewing the Microsoft Entra Connect Health portal.
+> ```
+> AdHealthAddsAgentSetup.exe /quiet AddsMonitoringEnabled=1 SkipRegistration=1
+> Start-Sleep 30
+> $bearerToken = ConvertTo-SecureString "BEARERTOKEN" -AsPlainText -Force
+> import-module "C:\Program Files\Microsoft Azure AD Connect Health Agent\Modules\AdHealthConfiguration"
+> Register-MicrosoftEntraConnectHealthAgent -AadToken $bearerToken
+> ```
+   
 
 When you finish, you can remove access for the local account by completing one or more of the following tasks:
 
@@ -171,20 +190,13 @@ When you finish, you can remove access for the local account by completing one o
 
 ## Register the agent by using PowerShell
 
-After you install the relevant agent *setup.exe* file, you can register the agent by using the following PowerShell commands, depending on the role. Open PowerShell as administrator and run the relevant command:
+After you install the relevant agent *setup.exe* file, you can register the agent by using the following PowerShell command, depending on the role. Open PowerShell as administrator and run the relevant command:
 
 ```powershell
 Register-MicrosoftEntraConnectHealthAgent
 ```
 
-> [!NOTE]
-> To register against sovereign clouds, use the following command lines:
->
-> ```powershell
-> Register-MicrosoftEntraConnectHealthAgent -UserPrincipalName upn-of-the-user
-> ```
-
-These commands accept `Credential` as a parameter to complete the registration non-interactively or to complete the registration on a computer that runs Server Core. Keep these factors in mind:
+This command accepts `Credential` as a parameter to complete the registration non-interactively. Keep these factors in mind:
 
 - You can capture `Credential` in a PowerShell variable that's passed as a parameter.
 - You can provide any Microsoft Entra identity that has permissions to register the agents, and which does *not* have multifactor authentication enabled.
