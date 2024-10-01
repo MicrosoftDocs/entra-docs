@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom:
-ms.date: 010/01/2024
+ms.date: 10/01/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 ms.topic: concept-article
