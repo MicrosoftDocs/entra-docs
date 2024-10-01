@@ -123,7 +123,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
    content-length: 0
    ```
 
-## Related content
+## Next steps
 
-- [How-to: Call an ASP.NET Core web API with cURL](howto-call-a-web-api-with-curl.md)
-- Learn more by building this Web API from scratch with the following series - [Tutorial: Register a web API with the Microsoft identity platform](./web-app-tutorial-01-register-application.md)
+Proceed to the next article to learn how to call the protected web API using cURL.
+
+> [!div class="nextstepaction"]
+> [How-to: Call an ASP.NET Core web API with cURL](howto-call-a-web-api-with-curl.md)
