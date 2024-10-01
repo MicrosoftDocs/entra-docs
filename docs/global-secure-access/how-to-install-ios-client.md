@@ -1,21 +1,20 @@
 ---
-title: The Global Secure Access client for iOS
+title: The Global Secure Access client for iOS (Preview)
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the iOS client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 09/16/2024
+ms.date: 10/01/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
 ms.reviewer: dhruvinrshah
 
 
-# Customer intent: As an iPhone user, I want to download and install the Global Secure Access client.
+# Customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for iOS devices.
 ---
-# Global Secure Access client for iOS
+# Global Secure Access client for iOS (Preview)
 
-This article describes how to install, configure, update, and use Global Secure Access client on iOS 
-devices. For simplicity, this article refers to both iOS and iPadOS as **iOS**.  
+This article explains how to set up and deploy the Global Secure Access client app onto iOS and iPadOS devices. For simplicity, this article refers to both iOS and iPadOS as **iOS**.  
 
 > [!CAUTION]
 > Running other third-party endpoint protection products alongside Defender for Endpoint on iOS is likely to cause performance problems and unpredictable system errors.
@@ -24,8 +23,8 @@ devices. For simplicity, this article refers to both iOS and iPadOS as **iOS**.
 > - The Global Secure Access client on iOS uses a VPN. This VPN is not a regular VPN. Instead, it's a local/self-looping VPN.
 
 ## Prerequisites
-- To use the Global Secure Access iOS client, be sure to configure the iOS endpoint device as a Microsoft Entra registered device.
-- The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- To use the Global Secure Access iOS client, configure the iOS endpoint device as a Microsoft Entra registered device.
+- The Global Secure Access client for iOS (Preview) requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - Onboard the tenant to Global Secure Access and configure one or more traffic forwarding profiles. For more information, see [Access the Global Secure Access area of the Microsoft Entra admin center](quickstart-access-admin-center.md).
 
 ## Requirements
@@ -45,9 +44,9 @@ The iOS device (phone or tablet) must meet the following requirements:
 Global Secure Access client on iOS supports installation on both modes of enrolled devices: supervised and unsupervised devices.
 
 ## Known limitations
-- Tunneling Quick User Datagram Protocol (UDP) Internet Connections (QUIC) traffic (except for EXO) isn't supported.
-- Side by Side with Intune VPN tunnel isn't currently supported.
-- Compliant network C___ A___ policy for all cloud apps isn't currently supported.
+- Tunneling Quick User Datagram Protocol (UDP) Internet Connections (QUIC) traffic (except for Exchange Online) isn't supported.
+- Global Secure Access (GSA) coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
+- Compliant network Conditional Access policy for all cloud apps isn't currently supported.
 
 ## Installation Steps
 ### Deploy on Device Administrator enrolled devices with Microsoft Intune
@@ -122,7 +121,7 @@ Once the configuration is complete and synced with the device, the following act
 - Microsoft Defender for Endpoint is deployed and silently onboarded.  
 - The device is listed in the Defender for Endpoint portal.  
 - A provisional notification is sent to the user device.  
-- Global Secure Access and other features are activated.
+- Global Secure Access and other Microsoft Defender for Endpoint (MDE)-configured features are activated.
 
 ## Troubleshooting
 - The Global Secure Access tile doesn't appear in the Defender app after onboarding the tenant:
