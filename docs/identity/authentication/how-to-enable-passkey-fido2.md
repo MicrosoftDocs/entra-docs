@@ -178,7 +178,7 @@ Registration of FIDO2 credentials isn't supported for B2B collaboration users in
 
 ### Security key provisioning
 
-Administrator provisioning and deprovisioning of security keys isn't available.
+Administrator provisioning of security keys is in public preview. See [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision).
 
 ### UPN changes
 
