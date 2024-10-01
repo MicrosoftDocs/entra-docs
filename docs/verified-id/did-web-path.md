@@ -23,7 +23,7 @@ In this article, we go over the steps to enable support for did:web:path to your
 
 ## What is did:web:path?
 
-Did:web:path is described in the [did:web Method Specification](https://w3c-ccg.github.io/did-method-web/#optional-path-considerations). If you have an environment where you're required to use a high number of authorities, acquiring domain names for them becomes a problem. Using one single domain and having the different authorities appear as paths under the domain may be a more favorable approach.  
+Did:web:path is described in the [did:web Method Specification](https://w3c-ccg.github.io/did-method-web/#optional-path-considerations). If you have an environment where you're required to use a high number of [authorities](admin-api.md#authorities), acquiring domain names for them becomes an administrative problem. Using one single domain and having the different authorities appear as paths under the domain may be a more favorable approach.  
 
 ## Enable domain for did:web:path support
 
