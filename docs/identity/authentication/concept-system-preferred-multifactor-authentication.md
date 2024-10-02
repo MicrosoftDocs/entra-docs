@@ -47,6 +47,7 @@ To enable system-preferred MFA in advance, you need to choose a single target gr
 ### Authentication method feature configuration properties
 
 By default, system-preferred MFA is [Microsoft managed](concept-authentication-default-enablement.md#microsoft-managed-settings) and enabled. 
+
 | Property | Type | Description |
 |----------|------|-------------|
 | excludeTarget | featureTarget | A single entity that is excluded from this feature. <br>You can only exclude one group from system-preferred MFA, which can be a dynamic or nested group.|
