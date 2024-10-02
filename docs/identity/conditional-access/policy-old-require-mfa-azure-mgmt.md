@@ -12,7 +12,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Require MFA for Azure management
+# Require MFA for Azure management
 
 Organizations use many Azure services and manage them from Azure Resource Manager based tools like:
 

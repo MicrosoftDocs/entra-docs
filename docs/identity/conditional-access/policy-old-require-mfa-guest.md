@@ -12,7 +12,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Require multifactor authentication for guest access
+# Require multifactor authentication for guest access
 
 Require guest users perform multifactor authentication when accessing your organization's resources. Some organizations might be ready to move to stronger authentication methods for their guest users. These organizations might choose to implement a policy like the one described in the article [Require multifactor authentication strength for external users](policy-guests-mfa-strength.md).
 

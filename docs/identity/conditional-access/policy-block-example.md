@@ -12,7 +12,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, lhuangnorth
 ---
-# Conditional Access: Block access
+# Block access example policy
 
 For organizations with a conservative cloud migration approach, the block all policy is an option that can be used. 
 

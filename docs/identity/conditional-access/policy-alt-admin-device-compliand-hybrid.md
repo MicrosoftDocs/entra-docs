@@ -12,7 +12,7 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Require compliant or Microsoft Entra hybrid joined device for administrators
+# Require compliant device or Microsoft Entra hybrid joined device for administrators
 
 Accounts that are assigned administrative rights are a target for attackers. Requiring users with these highly privileged rights to perform actions from devices marked as compliant or Microsoft Entra hybrid joined can help limit possible exposure.
 
