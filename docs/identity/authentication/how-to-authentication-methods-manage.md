@@ -24,6 +24,19 @@ You can also migrate policy settings manually on your own schedule. The migratio
 For more information about how these policies work together during migration, see [Manage authentication methods for Microsoft Entra ID](concept-authentication-methods-manage.md).
 
 ## Automated migration guide
+The automated migration guide let's you migrate where you manage authentication methods in just a few clicks. It can be accessed from the [Microsoft Entra admin center](https://entra.microsoft.com) by browsing to **Protection** > **Authentication methods** > **Policies**.
+
+// screenshot of auth method policy blade with highlighted wizard entry point
+
+The first page of the wizard explains what it is and how it works. It also provides links to each of the legacy policies for your reference. 
+
+// screenshot of wizard first page
+
+The second page of the wizard is a generated configuration for the authentication method policy based on what your organization currently has enabled in the legacy MFA and SSPR policies. If a method is enabled in either legacy policy, the suggested configuration will have it enabled as well such that users aren't suddenly blocked from authenticating or performing self-service password reset with a method they could previous use. In addition, we will recommend enabling the latest modern, secure methods like Passkeys, Temporary Access Pass, and Microsoft Authenticator to help increase your organizations security posture. You can edit the suggested configuration by selecting the pencil icon located next to each method. 
+
+// screenshot of wizard second page
+
+Once you are happy with the configuration, you can select **Migrate** and click through the subsequent confirmation dialogue to confirm the migration. The authentication methods policy will be updated to match the configuration specified in the wizard, authentication methods in the legacy MFA and SSPR policies will be grayed out and no longer apply, and your migration status will be updated to **Migration Complete**. You can change this status back to **In Progress** anytime to re-enable methods in the legacy policies if needed.
 
 ## Manual migration
 
