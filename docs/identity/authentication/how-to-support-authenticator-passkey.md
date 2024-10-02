@@ -5,7 +5,7 @@ description: Support passkeys in Microsoft Authenticator in your Microsoft Entra
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/03/2024
+ms.date: 10/02/2024
 
 ms.author: justinha
 author: justinha
@@ -22,13 +22,13 @@ This topic covers issues that users might see when they use passkeys in Microsof
 
 ## Workarounds for an authentication strength Conditional Access policy loop
 
-If you configure an authentication strength Conditional Access policy with the following conditions, users can get caught in a loop when they try to sign in: 
+Organizations that have the following Conditional Access policy can run into a looping issue:
 
 - Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
 - Targeted resource: **All cloud apps** 
 - Grant control: **Authentication strength – Require passkey in Authenticator** 
 
-The policy creates a loop for the user because the authentication strength requires Authenticator, and the targeted resource is **All cloud apps**, which includes Authenticator. As a result, when a user tries to add a passkey in Authenticator, they are directed to [Security info](https://mysignins.microsoft.com/security-info) for passkey registration. But they only can add **Passkey in Microsoft Authenticator** as a registration option because of the authentication strength requirement. 
+The policy effectively enforces that the targeted users must use a passkey to authenticate to all cloud applications, which includes the Microsoft Authenticator app. This means users need to use a passkey to provision a passkey when they go through the in-app registration flow within the Authenticator app. This affects both Android and iOS.
 
 There are a couple workarounds:
 
