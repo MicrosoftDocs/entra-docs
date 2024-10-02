@@ -5,7 +5,7 @@ description: Learn how to simplify the end-user experience with combined Microso
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 10/02/2024
 
 ms.author: justinha
 author: justinha
@@ -33,7 +33,7 @@ For more information about creating trusted locations in Conditional Access, see
 
 ### Create a policy to require registration from a trusted location
 
-Complete the following steps to create a policy that applies to all selected users that attempt to register using the combined registration experience, and blocks access unless they are connecting from a location marked as trusted network:
+Complete the following steps to create a policy that applies to all selected users that attempt to register using the combined registration experience, and requires users connected on a non-trusted network to either perform MFA or login using a Temporary Access Pass (TAP) in order to register for MFA or change their password using SSPR:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
@@ -52,7 +52,7 @@ Complete the following steps to create a policy that applies to all selected use
    1. Configure **Yes**.
    1. Include **Any location**.
    1. Exclude **All trusted locations**.
-1. Under **Access controls** > **Grant**, choose **Block access**, then **Select**.
+1. Under **Access controls** > **Grant**, choose **Require multifactor authentication**, then **Select**.
 1. Set **Enable policy** to **On**.
 1. To finalize the policy, select **Create**.
 
