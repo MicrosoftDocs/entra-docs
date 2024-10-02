@@ -27,6 +27,8 @@ items:
       href: concept-provisioning-logs.md
     - name: Microsoft Graph activity logs
       href: /graph/microsoft-graph-activity-logs-overview?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
+    - name: Activity log schemas
+      href: concept-activity-log-schemas.md
   - name: How-to guides 
     expanded: true
     items:
@@ -42,8 +44,6 @@ items:
       href: howto-customize-filter-logs.md
     - name: Download logs
       href: howto-download-logs.md
-    - name: Read the log schemas
-      href: howto-read-log-schemas.md
   - name: Quickstarts 
     expanded: false
     items:
