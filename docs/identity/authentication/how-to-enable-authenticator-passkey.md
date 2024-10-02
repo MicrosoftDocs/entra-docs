@@ -30,6 +30,13 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 
 To learn more about where you can use passkeys in Authenticator to sign in, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 
+## Network requirements
+
+All devices particpating in the passwordless authentication flow must be able to access the tunnel domains as defined in the [Client to Authenticator Protocol (CTAP)](https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html) specification.
+
+   - Android: `https://cable.ua5v.com`
+   - iOS `https://cable.auth.com`
+
 ## Enable passkeys in Authenticator in the admin center
 
 The **Microsoft Authenticator** policy doesn't give you the option to enable passkeys in Authenticator. Instead, to enable passkeys in Authenticator, you must edit the **FIDO2 security key** Authentication methods policy. 
