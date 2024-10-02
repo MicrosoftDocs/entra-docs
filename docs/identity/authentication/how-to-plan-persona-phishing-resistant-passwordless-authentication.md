@@ -75,7 +75,6 @@ Phases 1-3 of the deployment flow for frontline workers should typically follow 
 
 IT pros and DevOps workers are especially reliant on remote access and multiple user accounts, which is why they are considered different from information workers. Many of the challenges posed by phishing-resistant passwordless for IT pros are caused by their increased need for remote access to systems and ability to run automations.
 
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-examples.png" alt-text="Diagram that shows examples of requirements for IT Pro workers.":::
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-examples.png" alt-text="Diagram that shows examples of requirements for IT pro workers.":::
 
 Understand the supported options for phishing-resistant with RDP especially for this persona. 
