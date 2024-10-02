@@ -12,7 +12,7 @@ ms.author: billmath
 
 # Hardening update to Microsoft Entra Connect Sync AD FS and PingFederate configuration 
 
-On October 2nd 2024, we released a [new version (2.4.18.0) of Microsoft Entra Connect Sync](reference-connect-version-history.md#24180) in anticipation of an upcoming back-end service change that further hardens our services. **All customers are required to upgrade** to the latest version by **April 7, 2025**. 
+On October 2nd 2024, we released a [new version (2.4.18.0) of Microsoft Entra Connect Sync](reference-connect-version-history.md#24180) in which contains a back-end service change that further hardens our services. **All customers are required to upgrade** to the latest version by **April 7, 2025**. 
 
 ## Expected impacts 
 
@@ -27,11 +27,15 @@ If you aren’t upgraded to the minimum required version, you may encounter the 
 ### Minimum version 
 
 To avoid any service impact, customers should be on version 2.4.18.0 or higher by April 7, 2025. 
- - [.NET 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472#:~:text=Downloads%20for%20building%20and%20running%20applications%20with%20.NET%20Framework%204.7.2)
- - [TLS 1. 2](reference-connect-tls-enforcement.md) 
+
 
 >[!IMPORTANT]
 > Make sure you familiarize yourself with the [minimum requirements](how-to-connect-install-prerequisites.md) for the version, including but not limited to: 
+>
+>  - [.NET 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472#:~:text=Downloads%20for%20building%20and%20running%20applications%20with%20.NET%20Framework%204.7.2)
+>  - [TLS 1. 2](reference-connect-tls-enforcement.md)
+
+For [autoupgrade to work](security-updates-pks.md), you should be on version 2.3.20.0 or higher. 
 
 ## Consider moving to Microsoft Entra Cloud Sync
 
