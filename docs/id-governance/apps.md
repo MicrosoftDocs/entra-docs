@@ -222,7 +222,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Communifire](~/identity/saas-apps/communifire-tutorial.md) |  | ● |
 | [Community Spark](~/identity/saas-apps/community-spark-tutorial.md) |  | ● |
 | [Compliance Genie](~/identity/saas-apps/compliance-genie-tutorial.md) |  | ● |
-| [Concur](~/identity/saas-apps/sap-concur-provisioning-tutorial.md) | ● | ● |
 | [Condeco](~/identity/saas-apps/condeco-tutorial.md) |  | ● |
 | [Confirmit Horizons](~/identity/saas-apps/confirmit-horizons-tutorial.md) |  | ● |
 | [Connecter](~/identity/saas-apps/connecter-provisioning-tutorial.md) | ● |  |
@@ -680,12 +679,12 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [SAP Business Technology Platform](~/identity/saas-apps/sap-hana-cloud-platform-tutorial.md) |  | ● |
 | [SAP Cloud for Customer](~/identity/saas-apps/sap-customer-cloud-tutorial.md) |  | ● |
 | [SAP Cloud Identity Services](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) | ● | ● |
-| [SAP Concur Travel and Expense](~/identity/saas-apps/concur-travel-and-expense-tutorial.md) |  | ● |
+| [SAP Concur](~/identity/saas-apps/sap-concur-provisioning-tutorial.md) | ● | ● |
 | [SAP Fieldglass](~/identity/saas-apps/fieldglass-tutorial.md) | |  ● |
 | [SAP Fiori](~/identity/saas-apps/sap-fiori-tutorial.md) |  | ● |
-| [SAP HANA](~/identity/saas-apps/saphana-tutorial.md) | | ● |
+| [SAP HANA](~/identity/saas-apps/sap-hana-provisioning-tutorial.md) | | ● |
 | [SAP Litmos](~/identity/saas-apps/litmos-tutorial.md) |  | ● |
-| [SAP NetWeaver](~/identity/app-provisioning/on-premises-sap-connector-configure.md) |● |  ● |
+| [SAP NetWeaver](~/identity/app-provisioning/on-premises-sap-connector-configure.md) | ● |  ● |
 | [SAP R/3 and ERP](~/identity/app-provisioning/on-premises-sap-connector-configure.md) | ● | ●  |
 | [SAP SuccessFactors to Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) | ● | ● |
 | [SAP SuccessFactors to Microsoft Entra ID](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) | ● | ● |
