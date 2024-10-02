@@ -4,7 +4,7 @@ description: Learn how to use system-preferred multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/13/2023
+ms.date: 10/02/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
@@ -15,16 +15,16 @@ ms.reviewer: msft-poulomi
 
 # System-preferred multifactor authentication  - Authentication methods policy
 
-System-preferred multifactor authentication (MFA) prompts users to sign in by using the most secure method they registered. Administrators can enable system-preferred MFA to improve sign-in security and discourage less secure sign-in methods like SMS.
+System-preferred multifactor authentication (MFA) prompts users to sign in by using the most secure method they registered. 
+It's an important security enhancement for users who authenticate by using telecom transports.
+Administrators can enable system-preferred MFA to improve sign-in security and discourage less secure sign-in methods like SMS.
 
 For example, if a user registered both SMS and Microsoft Authenticator push notifications as methods for MFA, system-preferred MFA prompts the user to sign in by using the more secure push notification method. The user can still choose to sign in by using another method, but they're first prompted to try the most secure method they registered. 
 
-System-preferred MFA is a Microsoft managed setting, which is a [tristate policy](#authentication-method-feature-configuration-properties). For preview, the **default** state is disabled. If you want to turn it on for all users or a group of users during preview, you need to explicitly change the Microsoft managed state to **Enabled**. Sometime after general availability, the Microsoft managed state for system-preferred MFA will change to **Enabled**. 
+System-preferred MFA is a Microsoft managed setting, which is a [tristate policy](#authentication-method-feature-configuration-properties). The **Microsoft managed** value of system-preferred MFA is **Enabled**. If you don't want to enable system-preferred MFA, change the state from **Microsoft managed** to **Disabled**, or exclude users and groups from the policy.
 
 After system-preferred MFA is enabled, the authentication system does all the work. Users don't need to set any authentication method as their default because the system always determines and presents the most secure method they registered. 
 
->[!NOTE]
->System-preferred MFA is an important security enhancement for users authenticating by using telecom transports. Starting July 07, 2023, the Microsoft managed value of system-preferred MFA will change from **Disabled** to **Enabled**. If you don't want to enable system-preferred MFA, change the state from **Default** to **Disabled**, or exclude users and groups from the policy.
 
 ## Enable system-preferred MFA in the Microsoft Entra admin center
 
@@ -46,8 +46,7 @@ To enable system-preferred MFA in advance, you need to choose a single target gr
 
 ### Authentication method feature configuration properties
 
-By default, system-preferred MFA is [Microsoft managed](concept-authentication-default-enablement.md#microsoft-managed-settings) and disabled during preview. After generally availability, the Microsoft managed state default value will change to enable system-preferred MFA. 
-
+By default, system-preferred MFA is [Microsoft managed](concept-authentication-default-enablement.md#microsoft-managed-settings) and enabled. 
 | Property | Type | Description |
 |----------|------|-------------|
 | excludeTarget | featureTarget | A single entity that is excluded from this feature. <br>You can only exclude one group from system-preferred MFA, which can be a dynamic or nested group.|
@@ -66,7 +65,7 @@ System-preferred MFA can be enabled only for a single group, which can be a dyna
 Use the following API endpoint to enable **systemCredentialPreferences** and include or exclude groups:
 
 ```
-https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy
+https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy
 ```
 
 >[!NOTE]
@@ -77,7 +76,7 @@ https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy
 The following example excludes a sample target group and includes all users. For more information, see [Update authenticationMethodsPolicy](/graph/api/authenticationmethodspolicy-update).
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy
+PATCH https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy
 Content-Type: application/json
 
 {
@@ -112,9 +111,9 @@ When a user signs in, the authentication process checks which authentication met
 1. [Telephony](concept-authentication-phone-options.md)<sup>2</sup>
 1. [Certificate-based authentication](concept-certificate-based-authentication.md)
 
-<sup>1</sup> Includes hardware or software TOTP from Microsoft Authenticator, Authenticator Lite, or third-party applications.
+<sup>1</sup>Includes hardware or software TOTP from Microsoft Authenticator, Authenticator Lite, or third-party applications.
 
-<sup>2</sup> Includes SMS and voice calls.
+<sup>2</sup>Includes SMS and voice calls.
 
 ### How does system-preferred MFA affect the NPS extension?
 
