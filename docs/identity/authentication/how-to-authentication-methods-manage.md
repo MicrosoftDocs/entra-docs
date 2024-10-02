@@ -5,7 +5,7 @@ description: Learn about how to centrally manage multifactor authentication and 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/24/2023
+ms.date: 10/02/2024
 
 ms.author: justinha
 author: justinha
@@ -15,13 +15,17 @@ manager: amycolannino
 ---
 # How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID 
 
-You can migrate Microsoft Entra ID [legacy policy settings](concept-authentication-methods-manage.md#legacy-mfa-and-sspr-policies) that separately control multifactor authentication and self-service password reset (SSPR) to unified management with the [Authentication methods policy](./concept-authentication-methods-manage.md). 
+You can migrate Microsoft Entra ID [legacy policy settings](concept-authentication-methods-manage.md#legacy-mfa-and-sspr-policies) that separately control multifactor authentication (MFA) and self-service password reset (SSPR) to unified management with the [Authentication methods policy](./concept-authentication-methods-manage.md). 
 
-You migrate policy settings on your own schedule, and the process is fully reversible. You can continue to use tenant-wide MFA and SSPR policies while you configure authentication methods more precisely for users and groups in the Authentication methods policy. You complete the migration whenever you're ready to manage all authentication methods together in the Authentication methods policy.
+You can use the authentication methods migration guide (preview) in the Microsoft Entra Admin center to automate the migration. The guide provides a wizard to help audit your current policy settings for MFA and SSPR. Then it consolidates those settings in the Authentication methods policy, where they can be managed together more easily.
+
+You can also migrate policy settings manually on your own schedule. The migration process is fully reversible. You can continue to use tenant-wide MFA and SSPR policies while you configure authentication methods more precisely for users and groups in the Authentication methods policy. 
 
 For more information about how these policies work together during migration, see [Manage authentication methods for Microsoft Entra ID](concept-authentication-methods-manage.md).
 
-## Before you begin
+## Automated migration guide
+
+## Manual migration
 
 Begin by doing an audit of your existing policy settings for each authentication method that's available for users. If you roll back during migration, you might want a record of the authentication method settings from each of these policies:
 

@@ -5,7 +5,7 @@ description: Learn about the authentication methods policy and different ways to
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/09/2024
+ms.date: 10/02/2024
 
 ms.author: justinha
 author: justinha
@@ -70,7 +70,12 @@ Similarly, let's suppose you enable **Voice calls** for a group. After you enabl
 
 ## Migration between policies 
 
-The Authentication methods policy provides a migration path toward unified administration of all authentication methods. All desired methods can be enabled in the Authentication methods policy, assuming it has been defined the user groups required for each Authentication Method policy (unless it applies to All Users). After this user groups management activity, methods in the legacy MFA and SSPR policies can be disabled. Migration has three settings to let you move at your own pace, and avoid problems with sign-in or SSPR during the transition. After migration is complete, you'll centralize control over authentication methods for both sign-in and SSPR in a single place, and the legacy MFA and SSPR policies will be disabled.
+The Authentication methods policy provides a migration guide to help unify administration of all authentication methods. All desired methods can be enabled in the Authentication methods policy if the policy targets intended user groups, or all users. The authentication methods migration guide automates the steps to audit your current policy settings for MFA and SSPR, and consolidate them in the Authentication methods policy.
+
+
+You can also migrate policy settings manually. The migration has three settings to let you move at your own pace, and avoid problems with sign-in or SSPR during the transition. 
+
+After migration is complete, methods in the legacy MFA and SSPR policies can be disabled. You can centralize control over authentication methods for both sign-in and SSPR in a single place, and the legacy MFA and SSPR policies will be disabled.
 
 >[!Note]
 >Security questions can only be enabled today by using the legacy SSPR policy. In the future, it will be made available in the Authentication methods policy. If you're using security questions, and don't want to disable them, make sure to keep them enabled in the legacy SSPR policy until the new control is available in the future. You can migrate the remainder of your authentication methods and still manage security questions in the legacy SSPR policy.
