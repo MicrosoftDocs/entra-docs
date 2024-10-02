@@ -287,7 +287,7 @@ The key task is to measure through data which users and personas are ready for e
 
 Then move on to other scenarios where the user/device pairs require readiness efforts. Work your way through the list of user/device pairs until you enforce phishing-resistant authentication across the board. 
 
-Create a set of Microsoft Entra ID groups to roll out enforcement gradually. Reuse the groups from the [previous step](#monitoring-help-desk-ticket-volume) if you used the wave-based rollout approach. 
+Create a set of Microsoft Entra ID groups to roll out enforcement gradually. Reuse the groups from the [previous step](#monitor-help-desk-ticket-volume) if you used the wave-based rollout approach. 
 
 Target each group with a specific Conditional Access policy. This approach helps you roll out your enforcement controls gradually by user/device pair.
 
