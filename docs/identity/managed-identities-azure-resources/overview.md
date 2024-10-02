@@ -1,14 +1,14 @@
 ---
 title: Managed identities for Azure resources
 description: An overview of the managed identities for Azure resources.
-author: barclayn
-manager: amycolannino
+author: rwike77
+manager: CelesteDG
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: overview
 ms.date: 01/23/2023
-ms.author: barclayn
+ms.author: ryanwi
 
 
 #Customer intent: As a developer, I'd like to securely manage the credentials that my application uses for authenticating to cloud services without having the credentials in my code or checked into source control.

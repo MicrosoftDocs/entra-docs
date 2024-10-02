@@ -2,14 +2,14 @@
 title: Move managed identities to another region
 description: Steps involved in getting a managed identity recreated in another region
 
-author: barclayn
-manager: amycolannino
+author: rwike77
+manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 05/25/2023
-ms.author: barclayn
+ms.author: ryanwi
 ms.custom: subject-moving-resources
 #Customer intent: As an Azure administrator, I want to move a solution using managed identities from one Azure region to another one.
 ---

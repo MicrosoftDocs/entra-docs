@@ -2,13 +2,13 @@
 title: Azure Services with managed identities support
 description: List of services supporting managed identities
 
-author: barclayn
-ms.author: barclayn
+author: rwike77
+ms.author: ryanwi
 ms.date: 03/14/2024
 ms.topic: conceptual
 ms.service: entra-id
 ms.subservice: managed-identities
-manager: amycolannino
+manager: CelesteDG
 
 ---
 

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/04/2024
+ms.date: 10/01/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -15,23 +15,18 @@ ms.reviewer: egreenberg
 ---
 # How to analyze activity logs with Microsoft Graph
 
-The Microsoft Entra [reporting APIs](/graph/api/resources/azure-ad-auditlog-overview) provide you with programmatic access to the data through a set of REST APIs. You can call these APIs from many programming languages and tools. The Microsoft Graph API isn't designed for pulling large amounts of activity data. Pulling large amounts of activity data using the API might lead to issues with pagination and performance.
+The Microsoft Entra [reporting APIs](/graph/api/resources/azure-ad-auditlog-overview) provide you with programmatic access to the data through a set of REST APIs. You can call these APIs from many programming languages and tools.
 
 This article describes how to analyze Microsoft Entra activity logs with Microsoft Graph Explorer and Microsoft Graph PowerShell.
 
 ## Prerequisites
 
 - For license and role requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
-- To consent to the required permissions, you need the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-
-To make requests to the Microsoft Graph API, you must first:
-
-- [Register your app](/graph/auth-register-app-v2)
-- [Get authentication tokens for a user](/graph/auth-v2-user) or [service](/graph/auth-v2-service)
+- To consent to the required permissions, you need the [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 ## Access reports using Microsoft Graph Explorer
 
-With all the prerequisites configured, you can run activity log queries in Microsoft Graph. For more information on Microsoft Graph queries for activity logs, see [Activity reports API overview](/graph/api/resources/azure-ad-auditlog-overview).
+With all the prerequisites configured, you can run activity log queries in Microsoft Graph. The Microsoft Graph API isn't designed for pulling large amounts of activity data. Pulling large amounts of activity data using the API might lead to issues with pagination and performance. For more information on Microsoft Graph queries for activity logs, see [Activity reports API overview](/graph/api/resources/azure-ad-auditlog-overview).
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
 
