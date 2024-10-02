@@ -127,6 +127,9 @@ To start the agent installation, double-click the *.exe* file that you downloade
 
 :::image type="content" source="media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install1.png" alt-text="Screenshot that shows the Microsoft Entra Connect Health agent for AD DS installation window.":::
 
+> [!NOTE]
+> To install and register against sovereign clouds, select the appropriate option located under "Network Options".
+
 When you're prompted, sign in by using a Microsoft Entra account that has permissions to register the agent. By default, the Hybrid Identity Administrator account has permissions.
 
 :::image type="content" source="media/how-to-connect-health-agent-install/install3.png" alt-text="Screenshot that shows the sign-in window for Microsoft Entra Connect Health AD DS.":::
@@ -163,16 +166,23 @@ To verify that the agent was installed, look for the following services on the s
     ```
  
 > [!NOTE]
-> To install and register in sovereign clouds, run the following commands:
+> To install in sovereign clouds, run the script from above and add the *FairfaxInstallVariable* parameter with value of 1 to the *.exe* command.
 >
 > ```powershell
 > AdHealthAddsAgentSetup.exe /quiet AddsMonitoringEnabled=1 SkipRegistration=1 FairfaxInstallVariable=1
+> Start-Sleep 30
+> $userName = "NEWUSER@DOMAIN"
+> $secpasswd = ConvertTo-SecureString "PASSWORD" -AsPlainText -Force
+> $myCreds = New-Object System.Management.Automation.PSCredential ($userName, $secpasswd)
+> import-module "C:\Program Files\Microsoft Azure AD Connect Health Agent\Modules\AdHealthConfiguration"
+     
 > Register-MicrosoftEntraConnectHealthAgent -Credential $myCreds
 >  ``` 
 
 > [!NOTE]
+> 
 > If multi-factor authentication is required, a bearer token would need to be copied from an internet browser debugger while viewing the Microsoft Entra Connect Health portal.
-> ```
+> ```powershell
 > AdHealthAddsAgentSetup.exe /quiet AddsMonitoringEnabled=1 SkipRegistration=1
 > Start-Sleep 30
 > $bearerToken = ConvertTo-SecureString "BEARERTOKEN" -AsPlainText -Force
@@ -199,7 +209,7 @@ Register-MicrosoftEntraConnectHealthAgent
 This command accepts `Credential` as a parameter to complete the registration non-interactively. Keep these factors in mind:
 
 - You can capture `Credential` in a PowerShell variable that's passed as a parameter.
-- You can provide any Microsoft Entra identity that has permissions to register the agents, and which does *not* have multifactor authentication enabled.
+- You can provide any Microsoft Entra identity that has permissions to register the agents, and which does *not* have multi-factor authentication enabled.
 - By default, Global Administrators have permissions to register the agents. You can also allow less-privileged identities to do this step. For more information, see [Azure RBAC](how-to-connect-health-operations.md#manage-access-with-azure-rbac).
 
 ```powershell
