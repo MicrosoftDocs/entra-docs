@@ -34,7 +34,7 @@ Microsoft Entra ID offers the following phishing-resistant passwordless authenti
   - Platform credential for macOS (preview)
   - Microsoft Authenticator app passkeys (preview)
   - FIDO2 security keys
-  - Other passkeys and providers
+  - Other passkeys and providers, such as iCloud Keychain - [**_on roadmap_**](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-expanding-passkey-support-in-microsoft-entra-id/ba-p/4062702)
 - Certificate-based authentication/smart cards
 
 ## Prerequisites
