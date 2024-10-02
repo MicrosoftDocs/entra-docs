@@ -14,7 +14,7 @@ ms.custom: it-pro
 
 ---
 
-# Baseline security features in external tenants
+# Security fundamentals for external tenants
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
