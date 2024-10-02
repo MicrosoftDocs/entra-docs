@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 07/02/2024
+ms.date: 08/25/2024
 ms.author: gasinh
 ms.reviewer: ajburnle, ignite-2022
 ---
@@ -37,7 +37,7 @@ Use administrative units (AUs) in Microsoft Entra ID for administrative separati
 
    ![Diagram of administrative units.](media/secure-single-tenant/administrative-units.png)
 
-Use AUs to separate [users, groups, and device objects](~/identity/role-based-access-control/administrative-units.md). Assign units with [dynamic membership rules](~/identity/role-based-access-control/admin-units-members-dynamic.md).
+Use AUs to separate [users, groups, and device objects](~/identity/role-based-access-control/administrative-units.md). Assign units with [rules for dynamic membership groups](~/identity/role-based-access-control/admin-units-members-dynamic.md).
 
 With Privileged Identity Management (PIM), select a person to approve requests for highly privileged roles. For example, admins that require Global Administrator access to make tenant-wide changes.
 

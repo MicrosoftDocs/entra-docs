@@ -7,7 +7,7 @@ editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 09/11/2024
 ms.author: owinfrey
 ms.reviewer: mamkumar
 #Customer intent: As a requestor, I want simple steps for how to request resources I need so that I can start using the resources to perform my job.
@@ -38,7 +38,7 @@ The first step is to sign in to the My Access portal where you can request acces
 
 ## Request an access package
 
-Once you find the access package in the My Access portal, you can submit a request.
+Once you find the access package in the My Access portal, you can submit a request for either yourself, or a direct employee.
 
 **Prerequisite role:** Requestor
 
@@ -46,6 +46,8 @@ Once you find the access package in the My Access portal, you can submit a reque
  
 1. To request access, you can either select the row or select **Request**.
 
+1. On the **Request details** pane select whether or not you are requesting the access package for yourself, or a direct employee.
+    :::image type="content" source="media/entitlement-management-request-behalf/manager-request-package.png" alt-text="Screenshot of manager requesting package.":::
 1. Review the details of the access package, then select **Continue**.
 
 1. You might have to answer questions and provide business justification for your request. If there are questions that you need to answer, type in your responses in the fields.
@@ -76,7 +78,13 @@ If you request access to an access package that has multiple policies that apply
 
 You can request access to an access package that requires business justification and extra requestor information before granting you access to the access package. Fill out all the requestor information required to access the access package.
 
-![My Access portal - Request access - Fill out requestor information](./media/entitlement-management-request-access/my-access-requestor-information.png)
+![My Access portal - Request access](./media/entitlement-management-shared/my-access-request-access.png)
+
+If you are a manager requesting access on behalf of an employee, keep in mind that you'll be filling out the requestor information section on behalf of the employee, as well:
+
+:::image type="content" source="media/entitlement-management-request-behalf/manager-request-questions.png" alt-text="Screenshot of manager requesting question.":::
+
+For more information on this process, see: [Request access packages on-behalf-of other users  (Preview)](entitlement-management-request-behalf.md)
 
 > [!NOTE]
 > You might notice that some of the additional requestor information has pre-populated values. This generally occurs if your account already has attribute information set, either from a previous request or other process. These values can be editable or not depending on the settings of the policy selected.

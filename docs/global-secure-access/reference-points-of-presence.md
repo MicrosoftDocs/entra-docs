@@ -24,6 +24,7 @@ The table lists the deployment status for the APAC region.
 
 |Location                    | Global Secure Access service deployed | Remote network connectivity gateways | 
 | ---                        | --- | --- | 
+|Auckland, New Zealand       | ✅ |    |
 |Busan, South Korea          | ✅ | ✅ |
 |Chennai, India              | ✅ | ✅ |
 |Melbourne, Australia        | ✅ | ✅ |

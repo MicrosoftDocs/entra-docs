@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 05/23/2024
+ms.date: 09/18/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -50,6 +50,14 @@ This document covers commonly encountered errors and issues with inbound provisi
 
 ### Forbidden 403 response code 
 
+**Issue description**
+* You sent a request to the provisioning /bulkUpload API endpoint and you got HTTP 403 (Forbidden) response code. 
+
+**Probable causes**
+* The Graph permission `SynchronizationData-User.Upload` is not assigned to your API client. 
+
+**Resolution:**
+* Assign your API client the Graph permission `SynchronizationData-User.Upload` and retry the operation. 
 
 ### Too many requests 429 response code
 
@@ -59,15 +67,6 @@ The bulkUpload API endpoint enforces the following throttling limits and returns
 
 - 6000 API calls over a 24-hour period – if the number of calls go beyond this limit, then the client gets a 429 response. One way to prevent this is to make sure that your SCIM bulk payload is optimized to use the max 50 records per API call. With this approach, you can send 300K records every 24 hours. 
 
-
-**Issue description**
-* You sent a request to the provisioning /bulkUpload API endpoint and you got HTTP 403 (Forbidden) response code. 
-
-**Probable causes**
-* The Graph permission `SynchronizationData-User.Upload` is not assigned to your API client. 
-
-**Resolution:**
-* Assign your API client the Graph permission `SynchronizationData-User.Upload` and retry the operation. 
 
 ### Unauthorized 401 response code
 

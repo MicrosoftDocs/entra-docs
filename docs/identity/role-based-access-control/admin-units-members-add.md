@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
-ms.date: 06/18/2024
+ms.date: 08/25/2024
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
@@ -17,7 +17,7 @@ ms.custom: oldportal;it-pro;
 
 In Microsoft Entra ID, you can add users, groups, or devices to an administrative unit to limit the scope of role permissions. Adding a group to an administrative unit brings the group itself into the management scope of the administrative unit, but **not** the members of the group. For additional details on what scoped administrators can do, see [Administrative units in Microsoft Entra ID](administrative-units.md).
 
-This article describes how to add users, groups, or devices to administrative units manually. For information about how to add users or devices to administrative units dynamically using rules, see [Manage users or devices for an administrative unit with dynamic membership rules](admin-units-members-dynamic.md).
+This article describes how to add users, groups, or devices to administrative units manually. For information about how to add users or devices to administrative units dynamically using rules, see [Manage users or devices for an administrative unit with rules for dynamic membership groups](admin-units-members-dynamic.md).
 
 ## Prerequisites
 
@@ -262,5 +262,5 @@ Body
 
 - [Administrative units in Microsoft Entra ID](administrative-units.md)
 - [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
-- [Manage users or devices for an administrative unit with dynamic membership rules](admin-units-members-dynamic.md)
+- [Manage users or devices for an administrative unit with rules for dynamic membership groups](admin-units-members-dynamic.md)
 - [Remove users, groups, or devices from an administrative unit](admin-units-members-remove.md)

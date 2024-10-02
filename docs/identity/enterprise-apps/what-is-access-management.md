@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
-ms.date: 07/19/2024
+ms.date: 08/25/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
@@ -36,7 +36,7 @@ Microsoft Entra application assignment focuses on two primary assignment modes:
 
 * **Individual assignment** An IT admin with directory Cloud Application Administrator permissions can select individual user accounts and grant them access to the application.
 
-* **Group-based assignment (requires Microsoft Entra ID P1 or P2)** An IT admin with directory Cloud Application permissions can assign a group to the application. Specific users' access is determined by whether they're members of the group at the time they try to access the application. In other words, an administrator can effectively create an assignment rule stating "any current member of the assigned group has access to the application." With this assignment option, administrators can benefit from any of Microsoft Entra group management options, including [attribute-based dynamic groups](~/fundamentals/how-to-manage-groups.yml), external system groups (for example, on-premises Active Directory or Workday), or Administrator-managed or self-service-managed groups. A single group can be easily assigned to multiple apps, making sure that applications with assignment affinity can share assignment rules, reducing the overall management complexity.
+* **Group-based assignment (requires Microsoft Entra ID P1 or P2)** An IT admin with directory Cloud Application permissions can assign a group to the application. Specific users' access is determined by whether they're members of the group at the time they try to access the application. In other words, an administrator can effectively create an assignment rule stating "any current member of the assigned group has access to the application." With this assignment option, administrators can benefit from any of Microsoft Entra group management options, including attribute-based [dynamic membership groups](~/fundamentals/how-to-manage-groups.yml), external system groups (for example, on-premises Active Directory or Workday), or Administrator-managed or self-service-managed groups. A single group can be easily assigned to multiple apps, making sure that applications with assignment affinity can share assignment rules, reducing the overall management complexity.
 
   >[!NOTE]
   >[Nested group](~/fundamentals/how-to-manage-groups.yml) memberships aren't supported for group-based assignment to applications at this time.
@@ -106,6 +106,13 @@ Some applications combine these methods. For example, certain Microsoft applicat
 Users can access Microsoft 365 applications through their Office 365 portals. You can also show or hide Microsoft 365 applications in the My Apps with the [Office 365 visibility toggle](hide-application-from-user-portal.md) in your directory's **User settings**.
 
 As with enterprise apps, you can [assign users](assign-user-or-group-access-portal.md) to certain Microsoft applications via the Microsoft Entra admin center or, using PowerShell.
+
+## Preventing application access through local accounts
+Microsoft Entra ID enables your organization to set up single sign-on to protect how users authenticate to applications with conditional access, multi-factor authentication, etc. Some applications historically have their own local user store and allow users to sign into the application using local credentials or an application-specific backup authentication method, instead of using single sign-on. These application capabilities could be misused and allow users to retain access to applications even after they are no longer assigned to the application in Microsoft Entra ID or can no longer sign into Microsoft Entra ID, and could allow attackers to attempt to compromise the application without appearing in the Microsoft Entra ID logs. To ensure that sign ins to these applications are protected by Microsoft Entra ID:
+
+- Identify which applications connected to your directory for single sign-on allow end users to bypass single sign-on with a local application credential or a backup authentication method. You will need to review the documentation provided by the application provider to understand if this is possible, and what settings are available. Then, in those applications, disable the settings that allow end users to bypass SSO. Test the end user experience has been secured by opening a browser in InPrivate, connecting to the applications' sign in page, providing the identity of a user in your tenant, and verify that there is no option to sign in other than via Microsoft Entra.
+- If your application provides an API to manage user passwords, remove the local passwords or set a unique password for each user using the APIs. This will prevent end users from signing into the application with local credentials.
+- If your application provides an API to manage users, configure Microsoft Entra user provisioning to that application to disable or delete user accounts when users are no longer in scope of the application or the tenant.
 
 ## Next steps
 

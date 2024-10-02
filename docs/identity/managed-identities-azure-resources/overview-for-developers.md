@@ -2,15 +2,16 @@
 title: Developer introduction and guidelines
 description: An overview how developers can use managed identities for Azure resources.
 
-author: barclayn
-manager: amycolannino
+author: rwike77
+manager: CelesteDG
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: overview
 
-ms.date: 06/15/2022
-ms.author: barclayn
+ms.date: 09/26/2024
+ms.author: ryanwi
+ai-usage: ai-assisted
 
 
 #Customer intent: As a developer, I'd like to securely manage the credentials that my application uses for authenticating to cloud services without having the credentials in my code or checked into source control. 
@@ -18,155 +19,57 @@ ms.author: barclayn
 
 # Connecting from your application to resources without handling credentials
 
-Azure resources with managed identities support always provide an option to specify a managed identity to connect to Azure resources that support Microsoft Entra authentication. Managed identities support makes it unnecessary for developers to manage credentials in code. Managed identities are the recommended authentication option when working with Azure resources that support them. [Read an overview of managed identities](overview.md).
+Azure resources with managed identities support **always** provide an option to specify a managed identity to connect to Azure resources that support Microsoft Entra authentication. Managed identities support makes it unnecessary for developers to manage credentials in code. Managed identities are the recommended authentication option when working with Azure resources that support them. [Read an overview of managed identities](overview.md).
 
 This page demonstrates how to configure an App Service so it can connect to Azure Key Vault, Azure Storage, and Microsoft SQL Server. The same principles can be used for any Azure resource that supports managed identities and that will connect to resources that support Microsoft Entra authentication. 
 
 The code samples use the Azure Identity client library, which is the recommended method as it automatically handles many of the steps for you, including acquiring an access token used in the connection.
 
-### What resources can managed identities connect to?
+## What resources can managed identities connect to?
+
 A managed identity can connect to any resource that supports Microsoft Entra authentication. In general, there's no special support required for the resource to allow managed identities to connect to it.
 
 Some resources don't support Microsoft Entra authentication, or their client library doesn't support authenticating with a token. Keep reading to see our guidance on how to use a Managed identity to securely access the credentials without needing to store them in your code or application configuration.
 
 ## Creating a managed identity
 
-There are two types of managed identity: system-assigned and user-assigned. System-assigned identities are directly linked to a single Azure resource. When the Azure resource is deleted, so is the identity. A user-assigned managed identity can be associated with multiple Azure resources, and its lifecycle is independent of those resources. 
+There are [two types of managed identities](overview.md#managed-identity-types): system-assigned and user-assigned. System-assigned identities are directly linked to a single Azure resource. When the Azure resource is deleted, so is the identity. A user-assigned managed identity can be associated with multiple Azure resources, and its lifecycle is independent of those resources. 
 
-This article will explain how to create and configure a user-assigned managed identity, which is [recommended for most scenarios](managed-identity-best-practice-recommendations.md). If the source resource you're using doesn't support user-assigned managed identities, then you should refer to that resource provider's documentation to learn how to configure it to have a system-assigned managed identity.
+We recommend that you use a user-assigned managed identity, [for most scenarios](managed-identity-best-practice-recommendations.md). If the source resource you're using doesn't support user-assigned managed identities, then you should refer to that resource provider's documentation to learn how to configure it to have a system-assigned managed identity.
 
-### Creating a user-assigned managed identity
 
-> [!NOTE]
-> You'll need a role such as "Managed Identity Contributor" to create a new user-assigned managed identity.
+> [!IMPORTANT]
+> The account used to create managed identities needs a role such as "Managed Identity Contributor" to create a new user-assigned managed identity.
 
-#### [Portal](#tab/portal)
+Create a user-assigned managed identity using your preferred option:
 
-1. Search for "Managed Identities" from the search bar at the top of the Portal and select the matching result.
+- [Azure portal](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp)
+- [Azure CLI](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli)
+- [Azure PowerShell](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell)
+- [Resource Manager](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm)
+- [REST](how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest)
 
-:::image type="content" source="media/developer-introduction/managed-identities-search.png" alt-text="Screenshot of searching for managed identities in the portal.":::
+After you create a user-assigned managed identity, take note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You use `principalId` while adding permissions, and `clientId` in your application's code.
 
-2. Select the "Create" button.
+## Configure App Service with a user-assigned managed identity
 
-:::image type="content" source="media/developer-introduction/managed-identity-create-button.png" alt-text="Screenshot showing a managed identity create button in the portal.":::
+Before you can use the managed identity in your code, we have to assign it to the App Service that will use it. The process of configuring an App Service to use a user-assigned managed identity requires that you [specify the managed identity's resource identifier in your app config](/azure/app-service/overview-managed-identity?tabs=portal%2Chttp#add-a-user-assigned-identity).
 
-3. Select the Subscription and Resource group, and enter a name for the Managed identity.
+### Adding permissions to the identity
 
-:::image type="content" source="media/developer-introduction/managed-identity-create-screen.png" alt-text="Screenshot showing a managed identity create screen in the portal.":::
+Once you've configured your App Service to use a user-assigned managed identity, grant the necessary permissions to the identity. In this scenario, we're using this identity to interact with Azure Storage, so you need to use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview) to grant the user-assigned managed identity permissions to the resource.
 
-4. Select "Review + create" to run the validation test, and then select the "Create" button.
-
-5. When the identity has been created, a confirmation screen will appear.
-
-:::image type="content" source="media/developer-introduction/managed-identity-confirmation-screen.png" alt-text="Screenshot showing a managed identity confirmation screen after creation in the portal.":::
-
-#### [Azure CLI](#tab/cli)
-```azurecli
-az identity create --name <name of the identity> --resource-group <name of the resource group>
-```
-
-Take a note of the `clientId` and the `principalId` values that are returned when the managed identity is created. You'll use `principalId` while adding permissions, and `clientId` in your application's code.
-
----
-
-You now have an identity that can be associated with an Azure source resource. [Read more about managing user-assigned managed identities.](how-manage-user-assigned-managed-identities.md).
-
-#### Configuring your source resource to use a user-assigned managed identity
-
-Follow these steps to configure your Azure resource to have a managed identity through the Portal. Refer to the documentation for the specific resource type to learn how to configure the resource's identity using the Command Line Interface, PowerShell or ARM template.
-
-> [!NOTE]
-> You'll need "Write" permissions to configure an Azure resource to have a system-assigned identity. You'll need a role such as "Managed Identity Operator" to associate a user-assigned identity with an Azure resource.
-
-1. Locate the resource using the search bar at the top of the Portal
-
-:::image type="content" source="media/developer-introduction/locate-resource.png" alt-text="Screenshot showing a resource being searched for in the portal.":::
-
-2. Select the Identity link in the navigation
-
-:::image type="content" source="media/developer-introduction/app-service-summary.png" alt-text="Screenshot showing the link to the identity screen for a resource in the portal.":::
-
-3. Select the "User-assigned" tab
-
-4. Select the "Add" button
-
-:::image type="content" source="media/developer-introduction/user-assigned-identity-blade.png" alt-text="Screenshot showing a user-assigned identity screen in the portal.":::
-
-5. Select the user-assigned identity that you created earlier and select "Add"
-
-:::image type="content" source="media/developer-introduction/select-user-assigned-identity.png" alt-text="Screenshot showing a user-assigned identity being selected in the portal.":::
-
-6. The identity will be associated with the resource, and the list will update.
-
-:::image type="content" source="media/developer-introduction/user-assigned-identity-added-to-resource.png" alt-text="Screenshot showing a user-assigned identity has been associated with the Azure resource in the portal.":::
-
-Your source resource now has a user-assigned identity that it can use to connect to target resources.
-
-## Adding permissions to the identity
-
-> [!NOTE]
+> [!IMPORTANT]
 > You'll need a role such as "User Access Administrator" or "Owner" for the target resource to add Role assignments. Ensure you're granting the least privilege required for the application to run.
 
-Now your App Service has a managed identity, you'll need to give the identity the correct permissions. As you're using this identity to interact with Azure Storage, you'll use the [Azure Role Based Access Control (RBAC) system](/azure/role-based-access-control/overview).
+Any resources you want to access requires that you grant the identity permissions. For example, if you request a token to access Key Vault, you must also add an access policy that includes the managed identity of your app or function. Otherwise, your calls to Key Vault will be rejected, even if you use a valid token. The same is true for Azure SQL Database. To learn more about which resources support Microsoft Entra tokens, see Azure services that support Microsoft Entra authentication.
 
-### [Portal](#tab/portal)
 
-1. Locate the resource you want to connect to using the search bar at the top of the Portal
-2. Select the "Access Control (IAM)" link in the left hand navigation.
+## Using managed identities in your code
 
-:::image type="content" source="media/developer-introduction/resource-summary-screen.png" alt-text="Screenshot showing a resource summary screen in the portal.":::
+After you complete the steps outlined above, your App Service has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain an access token that your code can use to interact with Azure resources, instead of storing credentials in your code.
 
-3. Select the "Add" button near the top of the screen and select "Add role assignment".
-
-:::image type="content" source="media/developer-introduction/resource-add-role-assignment-dropdown.png" alt-text="Screenshot showing the add role assignment navigation in the portal.":::
-
-4. A list of Roles will be displayed. You can see the specific permissions that a role has by selecting the "View" link. Select the role that you want to grant to the identity and select the "Next" button.
-
-:::image type="content" source="media/developer-introduction/resource-select-role.png" alt-text="Screenshot showing a role being selected in the portal.":::
-
-5. You'll be prompted to select who the role should be granted to. Select the "Managed identity" option and then the "Add members" link.
-
-:::image type="content" source="media/developer-introduction/resource-select-member.png" alt-text="Screenshot showing the identity type being selected in the portal.":::
-
-6. A context pane will appear on the right where you can search by the type of the managed identity. Select "User-assigned managed identity" from the "Managed identity" option.
-
-:::image type="content" source="media/developer-introduction/resource-select-identity.png" alt-text="Screenshot showing managed identity being selected in the portal.":::
-
-7. Select the identity that you created earlier and the "Select" button. The context pane will close, and the identity will be added to the list.
-
-:::image type="content" source="media/developer-introduction/resource-identity-added.png" alt-text="Screenshot showing an identity being added to a resource in the portal.":::
-
-8. Select the "Review + assign" button to view the summary of the role assignment, and then once more to confirm.
-9. Select the "Role assignments" option, and a list of the role assignments for the resource will be displayed.
-
-:::image type="content" source="media/developer-introduction/resource-role-assignment-added.png" alt-text="Screenshot showing the role assignment has been added in the portal.":::
-
-### [Azure CLI](#tab/cli)
-```azurecli
-az role assignment create --assignee "<Object/Principal ID of the managed identity>" \
---role "<Role name or Role ID>" \
---scope "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{providerName}/{resourceType}/{resourceSubType}/{resourceName}"
-```
-
-[Read more about adding role assignments using the Command Line Interface](/azure/role-based-access-control/role-assignments-cli).
-
----
-
-Your managed identity now has the correct permissions to access the Azure target resource. [Read more about Azure Role Based Access Control](/azure/role-based-access-control/overview).
-
-## Using the managed identity in your code
-
-Your App Service now has a managed identity with permissions. You can use the managed identity in your code to interact with target resources, instead of storing credentials in your code.
-
-The recommended method is to use the Azure Identity library for your preferred programming language. The supported languages include [.NET](/dotnet/api/overview/azure/identity-readme), [Java](/java/api/overview/azure/identity-readme?view=azure-java-stable&preserve-view=true), [JavaScript](/javascript/api/overview/azure/identity-readme?view=azure-node-latest&preserve-view=true), [Python](/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true), [Go](/azure/developer/go/azure-sdk-authentication), and [C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md). The library acquires access tokens for you, making it simple to connect to target resources.
-
-### Using the Azure Identity library in your development environment
-
-Except for the C++ library, the Azure Identity libraries support a `DefaultAzureCredential` type. `DefaultAzureCredential` automatically attempts to authenticate via multiple mechanisms, including environment variables or an interactive sign-in. The credential type can be used in your development environment using your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
-
-If you're using user-assigned managed identities, you should also explicitly specify the user-assigned managed identity you wish to authenticate with by passing in the identity's client ID as a parameter. You can retrieve the client ID by browsing to the identity in the Portal.
-
-:::image type="content" source="media/developer-introduction/identity-client-id.png" alt-text="Screenshot showing the client ID for the managed identity in the portal.":::
+We recommended that you use the Azure Identity library for your preferred programming language. The library acquires access tokens for you, making it simple to connect to target resources. 
 
 Read more about the Azure Identity libraries below:
 
@@ -176,6 +79,12 @@ Read more about the Azure Identity libraries below:
 * [Azure Identity library for Python](/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true)
 * [Azure Identity module for Go](/azure/developer/go/azure-sdk-authentication)
 * [Azure Identity library for C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md)
+
+### Using the Azure Identity library in your development environment
+
+The Azure Identity libraries each provide a `DefaultAzureCredential` type. `DefaultAzureCredential` automatically attempts to authenticate via multiple mechanisms, including environment variables or an interactive sign-in. The credential type can be used in your development environment using your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
+
+If you're using user-assigned managed identities, you should also explicitly specify the user-assigned managed identity you wish to authenticate with by passing in the identity's client ID as a parameter. You can retrieve the client ID by browsing to the identity in the Azure portal.
 
 ### Accessing a Blob in Azure Storage
 
@@ -233,7 +142,139 @@ if (blobClient.exists()) {
     String blobContent = blobClient.downloadContent().toString();
 }
 ```    
+
+#### [Node.js](#tab/nodejs)
+
+```nodejs
+import { DefaultAzureCredential } from "@azure/identity";
+import { BlobServiceClient } from "@azure/storage-blob";
+
+// Specify the Client ID if using user-assigned managed identities
+const clientID = process.env.Managed_Identity_Client_ID;
+const credential = new DefaultAzureCredential({
+  managedIdentityClientId: clientID
+});
+
+const blobServiceClient = new BlobServiceClient("<URI of Storage account>", credential);
+const containerClient = blobServiceClient.getContainerClient("<name of blob>");
+const blobClient = containerClient.getBlobClient("<name of file>");
+
+async function downloadBlob() {
+  if (await blobClient.exists()) {
+    const downloadBlockBlobResponse = await blobClient.download();
+    const downloadedBlob = await streamToString(downloadBlockBlobResponse.readableStreamBody);
+    console.log("Downloaded blob content:", downloadedBlob);
+  }
+}
+
+async function streamToString(readableStream) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    readableStream.on("data", (data) => {
+      chunks.push(data.toString());
+    });
+    readableStream.on("end", () => {
+      resolve(chunks.join(""));
+    });
+    readableStream.on("error", reject);
+  });
+}
+
+downloadBlob().catch(console.error);
+```
+
+#### [Python](#tab/python)
+
+```python
+from azure.identity import DefaultAzureCredential
+from azure.storage.blob import BlobServiceClient
+import os
+
+# Specify the Client ID if using user-assigned managed identities
+client_id = os.getenv("Managed_Identity_Client_ID")
+credential = DefaultAzureCredential(managed_identity_client_id=client_id)
+
+blob_service_client = BlobServiceClient(account_url="<URI of Storage account>", credential=credential)
+container_client = blob_service_client.get_container_client("<name of blob>")
+blob_client = container_client.get_blob_client("<name of file>")
+
+def download_blob():
+    if blob_client.exists():
+        download_stream = blob_client.download_blob()
+        blob_contents = download_stream.readall().decode('utf-8')
+        print("Downloaded blob content:", blob_contents)
+
+download_blob()
+```
+
+#### [Go](#tab/Go)
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "io"
+    "os"
+    "strings"
+
+    "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+    "github.com/Azure/azure-sdk-for-go/sdk/storage/azblob"
+)
+
+func main() {
+    // The client ID for the user-assigned managed identity is read from the AZURE_CLIENT_ID env var
+    cred, err := azidentity.NewDefaultAzureCredential(nil)
+    if err != nil {
+        fmt.Printf("failed to obtain a credential: %v\n", err)
+        return
+    }
+
+    accountURL := "<URI of Storage account>"
+    containerName := "<name of blob>"
+    blobName := "<name of file>"
+
+    serviceClient, err := azblob.NewServiceClient(accountURL, cred, nil)
+    if err != nil {
+        fmt.Printf("failed to create service client: %v\n", err)
+        return
+    }
+
+    containerClient := serviceClient.NewContainerClient(containerName)
+    blobClient := containerClient.NewBlobClient(blobName)
+
+    // Check if the blob exists
+    _, err = blobClient.GetProperties(context.Background(), nil)
+    if err != nil {
+        fmt.Printf("failed to get blob properties: %v\n", err)
+        return
+    }
+
+    // Download the blob
+    downloadResponse, err := blobClient.Download(context.Background(), nil)
+    if err != nil {
+        fmt.Printf("failed to download blob: %v\n", err)
+        return
+    }
+
+    // Read the blob content
+    blobData := downloadResponse.Body(nil)
+    defer blobData.Close()
+
+    blobContents := new(strings.Builder)
+    _, err = io.Copy(blobContents, blobData)
+    if err != nil {
+        fmt.Printf("failed to read blob data: %v\n", err)
+        return
+    }
+
+    fmt.Println("Downloaded blob content:", blobContents.String())
+}
+```
+
 ---
+
 ### Accessing a secret stored in Azure Key Vault
 
 #### [.NET](#tab/dotnet)
@@ -289,6 +330,95 @@ SecretClient secretClient = new SecretClientBuilder()
     
 KeyVaultSecret retrievedSecret = secretClient.getSecret(secretName);
 ```
+
+#### [Node.js](#tab/nodejs)
+
+```javascript
+import { DefaultAzureCredential } from "@azure/identity";
+import { SecretClient } from "@azure/keyvault-secrets";
+
+// Specify the Client ID if using user-assigned managed identities
+const clientID = process.env.Managed_Identity_Client_ID;
+const credential = new DefaultAzureCredential({
+    managedIdentityClientId: clientID
+});
+
+const client = new SecretClient("https://<your-key-vault-name>.vault.azure.net/", credential);
+
+async function getSecret() {
+    const secret = await client.getSecret("<your-secret-name>");
+    const secretValue = secret.value;
+    console.log(secretValue);
+}
+
+getSecret().catch(err => console.error("Error retrieving secret:", err));
+```
+
+#### [Python](#tab/python)
+
+
+```Python
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
+import os
+
+# Specify the Client ID if using user-assigned managed identities
+client_id = os.getenv("Managed_Identity_Client_ID")
+credential = DefaultAzureCredential(managed_identity_client_id=client_id)
+
+client = SecretClient(vault_url="https://<your-key-vault-name>.vault.azure.net/", credential=credential)
+
+def get_secret():
+    secret = client.get_secret("<your-secret-name>")
+    secret_value = secret.value
+    print(secret_value)
+
+if __name__ == "__main__":
+    try:
+        get_secret()
+    except Exception as e:
+        print(f"Error retrieving secret: {e}")
+```
+
+#### [Go](#tab/Go)
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+
+    "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+    "github.com/Azure/azure-sdk-for-go/sdk/keyvault/azsecrets"
+)
+
+func main() {
+    // The client ID for the user-assigned managed identity is read from the AZURE_CLIENT_ID env var
+    cred, err := azidentity.NewDefaultAzureCredential(nil)
+    if err != nil {
+        fmt.Printf("failed to obtain a credential: %v\n", err)
+        return
+    }
+
+    client, err := azsecrets.NewClient("https://<your-key-vault-name>.vault.azure.net/", credential, nil)
+    if err != nil {
+        fmt.Printf("Failed to create secret client: %v\n", err)
+        return
+    }
+
+    secretResp, err := client.GetSecret(context.TODO(), "<your-secret-name>", nil)
+    if err != nil {
+        fmt.Printf("Failed to get secret: %v\n", err)
+        return
+    }
+
+    secretValue := *secretResp.Value
+    fmt.Println(secretValue)
+}
+```
+
 ---
 
 ### Accessing Azure SQL Database
@@ -327,7 +457,7 @@ dr.Close();
 
 #### [Java](#tab/java)
 
-If you use [Azure Spring Apps](/azure/spring-apps/), you can connect to Azure SQL Database with a managed identity without needing to make any changes to your code.
+If you use [Azure Spring Apps](/azure/spring-apps/), you can connect to Azure SQL Databases using a managed identity without making any changes to your code.
 
 Open the `src/main/resources/application.properties` file, and add `Authentication=ActiveDirectoryMSI;` at the end of the following line. Be sure to use the correct value for `$AZ_DATABASE_NAME` variable.
 
@@ -336,6 +466,172 @@ spring.datasource.url=jdbc:sqlserver://$AZ_DATABASE_NAME.database.windows.net:14
 ```
 
 Read more about how to [use a managed identity to connect Azure SQL Database to an Azure Spring Apps app](/azure/spring-apps/connect-managed-identity-to-azure-sql).
+
+#### [Node.js](#tab/nodejs)
+
+```javascript
+
+import { DefaultAzureCredential } from "@azure/identity";
+import { Connection, Request } from "tedious";
+
+// Specify the Client ID if using a user-assigned managed identity
+const clientID = process.env.Managed_Identity_Client_ID;
+const credential = new DefaultAzureCredential({
+    managedIdentityClientId: clientID
+});
+
+async function getAccessToken() {
+    const tokenResponse = await credential.getToken("https://database.windows.net//.default");
+    return tokenResponse.token;
+}
+
+async function queryDatabase() {
+    const accessToken = await getAccessToken();
+
+    const config = {
+        server: "<your-server-name>",
+        authentication: {
+            type: "azure-active-directory-access-token",
+            options: {
+                token: accessToken
+            }
+        },
+        options: {
+            database: "<your-database-name>",
+            encrypt: true
+        }
+    };
+
+    const connection = new Connection(config);
+
+    connection.on("connect", err => {
+        if (err) {
+            console.error("Connection failed:", err);
+            return;
+        }
+
+        const request = new Request("SELECT TOP 1 ColumnName FROM TableName", (err, rowCount, rows) => {
+            if (err) {
+                console.error("Query failed:", err);
+                return;
+            }
+
+            rows.forEach(row => {
+                console.log(row.value);
+            });
+
+            connection.close();
+        });
+
+        connection.execSql(request);
+    });
+
+    connection.connect();
+}
+
+queryDatabase().catch(err => console.error("Error:", err));
+```
+
+#### [Python](#tab/python)
+
+```python
+import os
+from azure.identity import DefaultAzureCredential
+from azure.core.credentials import AccessToken
+import pyodbc
+
+# Specify the Client ID if using a user-assigned managed identity
+client_id = os.getenv("Managed_Identity_Client_ID")
+credential = DefaultAzureCredential(managed_identity_client_id=client_id)
+
+# Get the access token
+token = credential.get_token("https://database.windows.net//.default")
+access_token = token.token
+
+# Set up the connection string
+connection_string = "Driver={ODBC Driver 18 for SQL Server};Server=<your-server-name>;Database=<your-database-name>;"
+
+# Connect to the database
+connection = pyodbc.connect(connection_string, attrs_before={"AccessToken": access_token})
+
+# Execute the query
+cursor = connection.cursor()
+cursor.execute("SELECT TOP 1 ColumnName FROM TableName")
+
+# Fetch and print the result
+row = cursor.fetchone()
+while row:
+    print(row)
+    row = cursor.fetchone()
+
+# Close the connection
+cursor.close()
+connection.close()
+```
+
+#### [Go](#tab/Go)
+
+```go
+package main
+
+import (
+    "context"
+    "database/sql"
+    "fmt"
+    "os"
+
+    "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+    "github.com/denisenkom/go-mssqldb"
+)
+
+func main() {
+    // The client ID for the user-assigned managed identity is read from the AZURE_CLIENT_ID env var
+    cred, err := azidentity.NewDefaultAzureCredential(nil)
+    if err != nil {
+        fmt.Printf("failed to obtain a credential: %v\n", err)
+        return
+    }
+
+    // Get the access token
+    token, err := credential.GetToken(context.TODO(), azidentity.TokenRequestOptions{
+        Scopes: []string{"https://database.windows.net//.default"},
+    })
+    if err != nil {
+        fmt.Printf("Failed to get token: %v\n", err)
+        return
+    }
+
+    // Set up the connection string
+    connString := fmt.Sprintf("sqlserver://<your-server-name>?database=<your-database-name>&access_token=%s", token.Token)
+
+    // Connect to the database
+    db, err := sql.Open("sqlserver", connString)
+    if err != nil {
+        fmt.Printf("Failed to connect to the database: %v\n", err)
+        return
+    }
+    defer db.Close()
+
+    // Execute the query
+    rows, err := db.QueryContext(context.TODO(), "SELECT TOP 1 ColumnName FROM TableName")
+    if err != nil {
+        fmt.Printf("Failed to execute query: %v\n", err)
+        return
+    }
+    defer rows.Close()
+
+    // Fetch and print the result
+    for rows.Next() {
+        var columnValue string
+        if err := rows.Scan(&columnValue); err != nil {
+            fmt.Printf("Failed to scan row: %v\n", err)
+            return
+        }
+        fmt.Println(columnValue)
+    }
+}
+```
+
 
 ---
 

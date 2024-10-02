@@ -21,10 +21,20 @@ items:
       href: concept-audit-logs.md
     - name: Sign-in logs
       href: concept-sign-ins.md
+    - name: Interactive sign-in logs
+      href: concept-interactive-sign-ins.md
+    - name: Non-interactive sign-in logs
+      href: concept-noninteractive-sign-ins.md
+    - name: Managed identity sign-in logs
+      href: concept-managed-identity-sign-ins.md
+    - name: Service principal sign-in logs
+      href: concept-service-principal-sign-ins.md
     - name: Sign-in log activity details
       href: concept-sign-in-log-activity-details.md
     - name: Provisioning logs
       href: concept-provisioning-logs.md
+    - name: Flagged sign-ins
+      href: concept-flagged-sign-ins.md
     - name: Microsoft Graph activity logs
       href: /graph/microsoft-graph-activity-logs-overview?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
   - name: How-to guides 
@@ -142,8 +152,6 @@ items:
   items:
   - name: Bulk changes to UserPrincipalName triggered by verified domain change
     href: troubleshoot-audit-data-verified-domain.md
-  - name: Flagged sign-ins
-    href: overview-flagged-sign-ins.md
   - name: Manage inactive user accounts in Microsoft Entra ID
     href: howto-manage-inactive-user-accounts.md
   - name: Sign-in diagnostic

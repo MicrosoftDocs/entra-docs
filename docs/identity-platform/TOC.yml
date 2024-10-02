@@ -352,9 +352,13 @@
     - name: Tutorials
       items:
         - name: Android
-          href: tutorial-v2-android.md
-        - name: Android - Shared-device mode
-          href: tutorial-v2-shared-device-mode.md
+          items:
+            - name: Sign in users and call a web API
+              href: tutorial-v2-android.md
+            - name: Enable Shared Device Mode in your app using MSAL
+              href: tutorial-v2-shared-device-mode.md
+            - name: Set up an Android device in Shared Device Mode
+              href: tutorial-mobile-android-device-shared-mode.md
         - name: iOS and macOS
           href: tutorial-v2-ios.md
     - name: Samples
@@ -709,6 +713,9 @@
           href: /entra/msal/python/
     - name: Protocol reference (OAuth, OIDC, SAML)
       items:
+        - name: OAuth 2.0 application types
+          displayName: App types, OAuth
+          href: v2-app-types.md
         - name: OAuth 2.0 and OpenID Connect (OIDC)
           items:
             - name: Token grant flows
@@ -729,9 +736,6 @@
                   href: v2-oauth-ropc.md
                 - name: OpenID Connect
                   href: v2-protocols-oidc.md
-            - name: OAuth 2.0 application types
-              displayName: App types, OAuth
-              href: v2-app-types.md
             - name: Certificate credentials
               href: certificate-credentials.md
             - name: Signing key rollover
