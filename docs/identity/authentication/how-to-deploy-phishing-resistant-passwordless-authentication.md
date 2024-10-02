@@ -76,7 +76,7 @@ Users should have at least two authentication methods registered. With another m
 >It is always recommended that users have at least two authentication methods registered. This ensures the user has a backup method available if something happens to their primary method, such as in cases of device loss or theft. For example, it is a good practice for users to have passkeys registered both on their phone and locally on their workstation in Windows Hello for Business.
 
 >[!NOTE] 
->This guidance is tailored for currently existing support for passkeys in Microsoft Entra ID, which includes device-bound passkeys in Microsoft Authenticator and device-bound passkeys on physical security keys. Microsoft Entra ID plans to add support for synced passkeys. For more information, see [Public preview: Expanding passkey support in Microsoft Entra ID](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-expanding-passkey-support-in-microsoft-entra-id/ba-p/4062702). This guide will be updated to include synced passkey guidance once available. For example, many organizations may benefit from relying on sync for phase 3 in the preceding diagram rather than bootstrapping entirely new credentials.
+>This guidance is tailored for currently existing support for passkeys in Microsoft Entra ID, which includes device-bound passkeys in Microsoft Authenticator and device-bound passkeys on physical security keys. Microsoft Entra ID plans to add support for synced passkeys. For more information, see [Public preview: Expanding passkey support in Microsoft Entra ID](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-expanding-passkey-support-in-microsoft-entra-id/ba-p/4062702). 
 
 ### Onboarding step 1: Identity verification
 
