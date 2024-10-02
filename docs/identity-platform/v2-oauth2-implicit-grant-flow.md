@@ -20,7 +20,7 @@ The Microsoft identity platform supports the OAuth 2.0 implicit grant flow as de
 [!INCLUDE [suggest-msal-from-protocols](includes/suggest-msal-from-protocols.md)]
 
 > [!WARNING]
-> Microsoft recommends you do *not* use the implicit grant flow flow. In most scenarios, more secure alternatives are available and recommended. Certain configurations of this flow requires a very high degree of trust in the application, and carries risks that are not present in other flows. You should only use this flow when other more secure flows aren't viable. For more information, see the [security concerns with implicit grant flow](#security-concerns-with-implicit-grant-flow).
+> Microsoft recommends you do *not* use the implicit grant flow. In most scenarios, more secure alternatives are available and recommended. Certain configurations of this flow requires a very high degree of trust in the application, and carries risks that are not present in other flows. You should only use this flow when other more secure flows aren't viable. For more information, see the [security concerns with implicit grant flow](#security-concerns-with-implicit-grant-flow).
 
 ## Protocol diagram
 
@@ -36,7 +36,7 @@ The implicit grant is only reliable for the initial, interactive portion of your
 
 With some browsers [removing support for third party cookies](reference-third-party-cookies-spas.md), the **implicit grant flow is no longer a suitable authentication method**. The [silent single sign-on (SSO) features](#acquire-access-tokens-silently) of the implicit flow don't work without third party cookies, causing applications to break when they attempt to get a new token. We strongly recommend that all new applications use the [authorization code flow](v2-oauth2-auth-code-flow.md) that now supports single-page apps in place of the implicit flow. Existing single-page apps should also [migrate to the authorization code flow](migrate-spa-implicit-to-auth-code.md).
 
-### Security Concerns with implicit grant flow
+### Security concerns with implicit grant flow
 
 The implicit grant flow is intended for traditional web applications where the server has control over processing POST data securely. There are two main ways to deliver tokens with the implicit grant flow: where `response_mode` is returned as a URL fragment or as a query parameter (using `form POST` and `GET` ). In the implicit flow where `response_mode=form_post`, the token is delivered securely through an HTML form POST to the client's redirect URI. This method ensures that the token isn't exposed in the URL fragment, which in turn avoids the risks of token leakage through browser history or referrer headers. 
 
