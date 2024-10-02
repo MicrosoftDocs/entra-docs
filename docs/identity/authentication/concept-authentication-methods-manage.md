@@ -70,8 +70,9 @@ Similarly, let's suppose you enable **Voice calls** for a group. After you enabl
 
 ## Migration between policies 
 
-The Authentication methods policy provides a migration guide to help unify administration of all authentication methods. All desired methods can be enabled in the Authentication methods policy if the policy targets intended user groups, or all users. The authentication methods migration guide automates the steps to audit your current policy settings for MFA and SSPR, and consolidate them in the Authentication methods policy.
+The Authentication methods policy provides a migration guide to help unify administration of all authentication methods. All desired methods can be enabled in the Authentication methods policy if the policy targets intended user groups, or all users. The authentication methods migration guide automates the steps to audit your current policy settings for MFA and SSPR, and consolidate them in the Authentication methods policy. You can access the guide from the [Microsoft Entra admin center](https://entra.microsoft.com) by browsing to **Protection** > **Authentication methods** > **Policies**.
 
+// screenshot of wizard entry point in the auth methods policy
 
 You can also migrate policy settings manually. The migration has three settings to let you move at your own pace, and avoid problems with sign-in or SSPR during the transition. 
 
