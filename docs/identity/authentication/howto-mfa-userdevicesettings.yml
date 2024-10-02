@@ -38,12 +38,12 @@ procedureSection:
   - title: |
       Add authentication methods for a user 
     summary: |
-      You can add authentication methods for a user by using the Microsoft Entra admin center or Microsoft Graph.  
+      You can add authentication methods for a user by using the Microsoft Entra admin center or Microsoft Graph PowerShell. In the Microsoft Entra admin center, the leagcy method for managing user authentication methods will be retired after Oct. 31, 2024. 
 
       > [!NOTE]
-      > For security reasons, public user contact information fields should not be used to perform MFA. Instead, users should populate their authentication method numbers to be used for MFA.  
+      > For security reasons, public user contact information fields shouldn't be used to perform MFA. Instead, users should populate their authentication method numbers to be used for MFA.  
 
-      :::image type="content" source="media/howto-mfa-userdevicesettings/add-authentication-method-detail.png" alt-text="Screenshot of add authentication methods from the Microsoft Entra admin center.":::
+      :::image type="content" source="media/howto-mfa-userdevicesettings/add-authentication-method-detail.png" alt-text="Screenshot of how to add authentication methods from the Microsoft Entra admin center.":::
 
       To add authentication methods for a user in the Microsoft Entra admin center:  
       1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
