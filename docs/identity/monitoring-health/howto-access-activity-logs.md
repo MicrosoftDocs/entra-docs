@@ -22,7 +22,7 @@ The data collected in your Microsoft Entra logs enables you to assess many aspec
 You can access Microsoft Entra activity logs and reports using the following methods:
 
 - [Stream activity logs to an **event hub** to integrate with other tools](#stream-logs-to-an-event-hub-to-integrate-with-siem-tools)
-- [Access activity logs through the **Microsoft Graph API**](#access-logs-with-microsoft-graph-api)
+- [Access activity logs through the **Microsoft Graph API**](#access-logs-with-the-microsoft-graph-api)
 - [Integrate activity logs with **Azure Monitor logs**](#integrate-logs-with-azure-monitor-logs)
 - [Monitor activity in real-time with **Microsoft Sentinel**](#monitor-events-with-microsoft-sentinel)
 - [View activity logs and reports in the **Azure portal**](#view-logs-through-the-portal)
