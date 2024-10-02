@@ -62,6 +62,10 @@ For client app authorization, OneDrive will check whether the client making the 
 
 The example given is simplified to illustrate delegated authorization. The production OneDrive service supports many other access scenarios, such as shared files.
 
+## Token2Self scenario
+
+In the scenario where both resource and client app are the same and there is no registered web api, when the application requests a token for self delegated permissions, consent prompt will not be triggered.
+
 ## See also
 
 - [Open connect scopes](scopes-oidc.md)
