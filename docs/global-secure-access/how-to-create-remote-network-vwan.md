@@ -1,9 +1,9 @@
 ---
 title: Simulate remote network connectivity using Azure vWAN
-description: Use Global Secure Access to configure Azure and Entra resources to create a virtual wide area network to connect to your resources in Azure.
+description: Use Global Secure Access to configure Azure and Microsoft Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/21/2024
+ms.date: 10/02/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -31,7 +31,7 @@ This document uses the following example values, along with the values in the im
 - Region: South Central US
 
 ## High-level steps
-The steps to create a remote network using Azure vWAN require access to both the Azure portal and the Microsoft Entra admin center. To switch between them easily, keep Azure and Entra open in separate tabs. Because certain resources can take more than 30 minutes to deploy, set aside at least two hours to complete this process. Reminder: Resources left running can cost you money. When done testing, or at the end of a project, it's a good idea to remove the resources that you no longer need.
+The steps to create a remote network using Azure vWAN require access to both the Azure portal and the Microsoft Entra admin center. To switch between them easily, keep Azure and Microsoft Entra open in separate tabs. Because certain resources can take more than 30 minutes to deploy, set aside at least two hours to complete this process. Reminder: Resources left running can cost you money. When done testing, or at the end of a project, it's a good idea to remove the resources that you no longer need.
 
 1. [Set up a vWAN in the Azure portal](#set-up-a-vwan-in-the-azure-portal)
     1. [Create a vWAN](#create-a-vwan)
@@ -155,7 +155,7 @@ In this step, use the network information from the VPN gateway to create a remot
         - **Link name**: Name of your Customer Premises Equipment (CPE). For this example, **Instance0**.
         - **Device type**: Choose a device option from the dropdown list. Set to **Other**.
         - **Device IP address**: Public IP address of your device. For this example, use **203.0.113.250**.
-        - **Device BGP address**: Enter the BGP IP address of your CPE. For this example, use **10.101.0.4**.
+        - **Device BGP address**: Enter the Border Gateway Protocol (BGP) IP address of your CPE. For this example, use **10.101.0.4**.
         - **Device ASN**: Provide the autonomous system number (ASN) of the CPE. For this example, the ASN is **65515**.
         - **Redundancy**: Set to **No redundancy**.
         - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
@@ -209,7 +209,7 @@ Navigate to the Remote network page to view the details of the new remote networ
         }
       ],
       "peerConfiguration": {
-        "endpoint": "203.0.113.33",
+        "endpoint": "203.0.113.250",
         "asn": 65515,
         "bgpAddress": "10.101.0.4"
       }
@@ -226,7 +226,7 @@ Navigate to the Remote network page to view the details of the new remote networ
         }
       ],
       "peerConfiguration": {
-        "endpoint": "203.0.113.35",
+        "endpoint": "203.0.113.251",
         "asn": 65515,
         "bgpAddress": "10.101.0.5"
       }
@@ -386,7 +386,7 @@ To test (option 1):
 Repeat the tenant restriction test from the previous section: 
 1. Sign in to the Azure Virtual Desktop virtual machine created in the previous steps.
 1. Go to www.office.com and sign in with an internal organization ID. This test should pass successfully.
-1. Repeat the previous step, but with an *external account*. This test should fail because the source **IP address** in the error message is coming from the VPN gateway public IP address instead of the Microsoft SSE proxying the request to Entra.
+1. Repeat the previous step, but with an *external account*. This test should fail because the source **IP address** in the error message is coming from the VPN gateway public IP address instead of the Microsoft SSE proxying the request to Microsoft Entra.
 :::image type="content" source="media/how-to-create-remote-network-vwan/access-blocked-troubleshooting-details-with-highlight.png" alt-text="Screenshot of the 'Access is blocked' message with the IP address highlighted.":::
 
 To test (option 2):

@@ -1,16 +1,17 @@
 ---
 title: How to add device links to remote networks
 description: Learn how to add and delete customer premises equipment device links to remote networks for Global Secure Access.
-author: kenwith
-ms.author: kenwith
+ms.author: jayrusso
+author: HULKsmashGithub
 manager: amycolannino
 ms.topic: how-to
-ms.date: 08/21/2024
+ms.date: 10/02/2024
 ms.service: global-secure-access
+ms.reviewer: absinh
 
 # Customer intent: As an IT admin, I need to manage the router devices that connect to the Global Secure Access service so my customers can connect to the service.
----
 
+---
 # Add and delete remote networks device links
 
 Customer premises equipment, such as routers, are added to the remote network. You can create device links when you create a new remote network or add them after the remote network is created. This article explains how to add and delete device links for remote networks for Global Secure Access.
@@ -91,36 +92,36 @@ Remote networks with a custom IKE policy can be created using Microsoft Graph on
 1. Run the following query to get a list of your remote networks and their details.
 
     ```http
-    GET https://graph.microsoft.com/beta/networkaccess/connectivity/branches
+    GET https://graph.microsoft.com/beta/networkAccess/connectivity/remoteNetworks
     ```
 
 1. Run the following query to get the device link details.
 
     ```http
-    POST https://graph.microsoft.com/beta/networkaccess/connectivity/branches/BRANCH_ID/deviceLinks
+    POST https://graph.microsoft.com/beta/networkAccess/connectivity/remoteNetworks/{remoteNetworkId}/deviceLinks
     ```
 
 Sample response:
 
 ```http
 {
-   "name": "CPE2",
-   "ipAddress": "100.1.1.56",
-    "BandwidthCapacityInMbps": "Mbps250",
+    "name": "CPE3",
+    "ipAddress": "20.55.91.42",
+    "deviceVendor": "ciscoMeraki",
+    "bandwidthCapacityInMbps": "mbps1000",
     "bgpConfiguration": {
-        "LocalIpAddress": "10.1.1.28",
-        "PeerIpAddress": "10.1.1.28",
-        "asn": 5555
+        "localIpAddress": "192.168.1.2",
+        "peerIpAddress": "10.2.2.2",
+        "asn": 65533
+    },
+    "redundancyConfiguration": {
+        "redundancyTier": "zoneRedundancy",
+        "zoneLocalIpAddress": "192.168.1.3"
     },
     "tunnelConfiguration": {
         "@odata.type": "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Default",
-        "preSharedKey": "secret.ppk"
-    },
-    "redundancyConfiguration": {
-    "redundancyTier": "zoneRedundancy",
-    "zoneLocalIpAddress": "1.1.1.12"
-    },
-    "deviceVendor": "citrix"
+        "preSharedKey": "test123"
+    }
 }
 ```
 
@@ -150,7 +151,7 @@ You can delete device links through the Microsoft Entra admin center and using t
 1. Enter the following query.
 
     ```http
-    DELETE https://graph.microsoft.com/beta/networkaccess/connectivity/branches/BRANCH_ID/deviceLinks/LINK_ID
+    DELETE https://graph.microsoft.com/beta/networkAccess/connectivity/remotenetworks/{remoteNetworkId}/deviceLinks/{deviceLinkId}
     
     ```
 

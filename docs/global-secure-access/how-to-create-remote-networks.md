@@ -1,13 +1,16 @@
 ---
 title: How to create remote networks
 description: Learn how to create remote networks, such as branch office locations, for Global Secure Access.
-author: kenwith
-ms.author: kenwith
+ms.author: jayrusso
+author: HULKsmashGithub
 manager: amycolannino
 ms.topic: how-to
-ms.date: 08/21/2024
+ms.date: 10/02/2024
 ms.service: global-secure-access
+ms.reviewer: absinh
+
 # Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
+
 ---
 # How to create a remote network with Global Secure Access
 
@@ -108,31 +111,39 @@ Global Secure Access remote networks can be viewed and managed using Microsoft G
 1. Run the query.
 
     ```http
-    POST https://graph.microsoft.com/beta/networkaccess/connectivity/branches 
-    { 
-        "name": "ContosoBranch", 
-        "region": "East US", 
-        "deviceLinks": [ 
-        { 
-            "name": "CPE Link 1", 
-            "ipAddress": "20.125.118.219", 
-            "deviceVendor": "Other", 
-            "bgpConfiguration": { 
-                "localIpAddress": "172.16.11.5",
-                "peerIpAddress": "10.16.11.5", 
-                "asn": 8888 
-              },
-            "redundancyConfiguration": {
-                "redundancyTier": "noRedundancy",
-                "zoneLocalIpAddress": "1.2.1.1"
-            },
-            "bandwidthCapacityInMbps": "mbps250"
-            "tunnelConfiguration": { 
-                  "@odata.type": "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Default", 
-                  "preSharedKey": "Detective5OutgrowDiligence" 
-              } 
-        }] 
-    }  
+    POST https://graph.microsoft.com/beta/networkAccess/connectivity/remoteNetworks
+    Content-Type: application/json
+    
+    {
+        "name": "Bellevue branch w/ device link",
+        "region": "canadaEast",
+        "forwardingProfiles": [
+            {
+                "id": "1adaf535-1e31-4e14-983f-2270408162bf"
+            }
+        ],
+        "deviceLinks": [
+            {
+                "name": "CPE1",
+                "ipAddress": "52.13.21.25",
+                "bandwidthCapacityInMbps": "mbps500",
+                "deviceVendor": "barracudaNetworks",
+                "bgpConfiguration": {
+                    "localIpAddress": "192.168.1.2",
+                    "peerIpAddress": "10.1.1.2",
+                    "asn": 65533
+                },
+                "redundancyConfiguration": {
+                    "zoneLocalIpAddress": null,
+                    "redundancyTier": "noRedundancy"
+                },
+                "tunnelConfiguration": {
+                    "@odata.type": "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Default",
+                    "preSharedKey": "test123"
+                }
+            }
+        ]
+    }
     ```
 
 ### Assign a traffic forwarding profile
@@ -150,14 +161,13 @@ Associating a traffic forwarding profile to your remote network using the Micros
 1. Find the `ID` of the desired traffic forwarding profile.
 1. Select `PATCH` as the `HTTP` method from the dropdown.
 1. Enter the query.
-    ```
-        PATCH https://graph.microsoft.com/beta/networkaccess/connectivity/branches/d2b05c5-1e2e-4f1d-ba5a-1a678382ef16/forwardingProfiles
+
+    ```http   
+        PATCH https://graph.microsoft.com/beta/networkAccess/connectivity/remoteNetworks/dc6a7efd-6b2b-4c6a-84e7-5dcf97e62e04
+        Content-Type: application/json
+        
         {
-            "@odata.context": "#$delta",
-            "value":
-            [{
-                "ID": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
-            }]
+            "name": "Test Redmond branch"
         }
     ```
 
