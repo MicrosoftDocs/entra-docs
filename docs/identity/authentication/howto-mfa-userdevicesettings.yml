@@ -31,8 +31,8 @@ introduction: |
   - Delete a user's existing app passwords  
 
   > [!NOTE]
-  > The screenshots in this topic show how to manage user authentication methods by using an updated experience in the Microsoft Entra admin center. 
-  > A legacy experience in the Microsoft Entra admin center will be retired starting Oct 31, 2024.
+  > The screenshots in this topic show how to manage user authentication methods by using an updated experience in the Microsoft Entra admin center. There's also a legacy experience, and admins can toggle between the two using a banner in the admin center. The modern experience has full parity with the legacy experience, and it manages modern methods like Temporary Access Pass, passkeys, and other settings.
+  > The legacy experience in the Microsoft Entra admin center will be retired starting Oct 31, 2024. There's no action required by organizations before the retirement.
 
 prerequisites:
   summary: |
