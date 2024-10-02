@@ -2,15 +2,15 @@
 title: Assign a managed identity to an application role
 description: Step-by-step instructions for assigning a managed identity access to another application's role.
 
-author: barclayn
-manager: amycolannino
+author: rwike77
+manager: CelesteDG
 
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 06/05/2024
-ms.author: barclayn
+ms.author: ryanwi
 ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell, devx-track-azurecli
 
 appliesto:
