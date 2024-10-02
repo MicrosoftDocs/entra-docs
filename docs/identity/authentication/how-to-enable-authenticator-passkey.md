@@ -22,13 +22,20 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Android 14 and later or iOS 17 and later
-- An active internet connection on any device that is part of the passkey registration/authentication process
+- An active internet connection on any device that is part of the passkey registration/authentication process. 
 - For cross-device registration/authentication, both devices must have Bluetooth enabled
 
 > [!NOTE]
 > Users need to install the latest version of Authenticator for Android or iOS to use a passkey. 
 
 To learn more about where you can use passkeys in Authenticator to sign in, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
+
+## Network requirements
+
+All devices particpating in the passwordless authentication flow must be able to access the tunnel domains as defined in the [Client to Authenticator Protocol (CTAP)](https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html) specification.
+
+   - Android: `https://cable.ua5v.com`
+   - iOS `https://cable.auth.com`
 
 ## Enable passkeys in Authenticator in the admin center
 
