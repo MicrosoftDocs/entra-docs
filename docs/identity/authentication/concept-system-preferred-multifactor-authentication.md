@@ -17,7 +17,7 @@ ms.reviewer: msft-poulomi
 
 System-preferred multifactor authentication (MFA) prompts users to sign in by using the most secure method they registered. 
 It's an important security enhancement for users who authenticate by using telecom transports.
-Administrators can enable system-preferred MFA to improve sign-in security and discourage less secure sign-in methods like SMS.
+Administrators can enable system-preferred MFA to improve sign-in security and discourage less secure sign-in methods like Short Message Service (SMS).
 
 For example, if a user registered both SMS and Microsoft Authenticator push notifications as methods for MFA, system-preferred MFA prompts the user to sign in by using the more secure push notification method. The user can still choose to sign in by using another method, but they're first prompted to try the most secure method they registered. 
 
@@ -102,7 +102,7 @@ Content-Type: application/json
 
 ### How does system-preferred MFA determine the most secure method?
 
-When a user signs in, the authentication process checks which authentication methods are registered for the user. The user is prompted to sign-in with the most secure method according to the following order. The order of authentication methods is dynamic. It's updated as the security landscape changes, and as better authentication methods emerge. Due to known issues with Certificate-based authentication and System preferred MFA we have moved CBA to the bottom of the list. Click the link for information about each method.
+When a user signs in, the authentication process checks which authentication methods are registered for the user. The user is prompted to sign-in with the most secure method according to the following order. The order of authentication methods is dynamic. It's updated as the security landscape changes, and as better authentication methods emerge. Due to known issues with certificate-based authentication (CBA) and system-preferred MFA, we moved CBA to the bottom of the list. Click the link for more information about each method.
 
 1. [Temporary Access Pass](howto-authentication-temporary-access-pass.md)
 1. [FIDO2 security key](concept-authentication-passwordless.md)
