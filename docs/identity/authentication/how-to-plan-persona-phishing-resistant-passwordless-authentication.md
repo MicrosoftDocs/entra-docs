@@ -22,9 +22,7 @@ Each persona has its own challenges and considerations that commonly come up dur
 
 ## Information workers
 
-Information workers typically have the simplest requirements and are the easiest to begin your phishing-resistant passwordless deployment with. However, there are still some issues that frequently arise when deploying for these users. Common examples include:
-
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/information-worker-examples.png" alt-text="Diagram that shows examples of requirements for information workers.":::
+Information workers typically have the simplest requirements and are the easiest to begin your phishing-resistant passwordless deployment with. However, there are still some issues that frequently arise when deploying for these users. 
 
 Information worker deployments, just like any other user persona, require proper communication and support. This commonly involves convincing users to install certain apps on their phones, distributing security keys where users won’t use apps, addressing concerns about biometrics, and developing processes for helping users recover from partial or total loss of their credentials.
 
@@ -49,7 +47,7 @@ Phases 1-3 of the deployment flow for information workers should typically follo
 
 ## Frontline workers
 
-Frontline workers often have more complicated requirements due to increased needs for the portability of their credentials and limitations on which devices they can carry in retail or manufacturing settings. Security keys are a great option for Frontline workers, but have a cost that must be considered. In order to achieve phishing-resistance, be sure to balance the cost challenges of security keys against the added deployment burden of smart cards and certificate-based authentication. Consider if there may be different FLW user personas in your environment, its possible there are some users where security keys are better and other users where smart cards are better.
+Frontline workers often have more complicated requirements due to increased needs for the portability of their credentials and limitations on which devices they can carry in retail or manufacturing settings. Security keys are a great option for frontline workers, but have a cost that must be considered. In order to achieve phishing-resistance, be sure to balance the cost challenges of security keys against the added deployment burden of smart cards and certificate-based authentication. Consider if there may be different frontline worker user personas in your environment. It's possible security keys are better for some frontline workers, where smart cards are better for others.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/frontline-worker-examples.png" alt-text="Diagram that shows examples of requirements for frontline workers.":::
 
@@ -74,8 +72,6 @@ Phases 1-3 of the deployment flow for frontline workers should typically follow 
 ## IT pros/DevOps workers
 
 IT pros and DevOps workers are especially reliant on remote access and multiple user accounts, which is why they are considered different from information workers. Many of the challenges posed by phishing-resistant passwordless for IT pros are caused by their increased need for remote access to systems and ability to run automations.
-
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-examples.png" alt-text="Diagram that shows examples of requirements for IT pros/DevOps workers.":::
 
 Understand the supported options for phishing-resistant with RDP especially for this persona. 
 
@@ -142,7 +138,7 @@ If you plan to use certificates, smart cards, and PKI, then the deployment flow 
    1. Optional: Platform SSO Secure Enclave Key
 
 >[!NOTE]
->It's always recommended that users have at least two credentials registered. This ensures the user has a backup credential available if something happens to their other credentials. For Highly regulated workers. it's recommended that you deploy passkeys or Windows Hello for Business in addition to any smart cards you deploy.
+>It's always recommended that users have at least two credentials registered. This ensures the user has a backup credential available if something happens to their other credentials. For highly regulated workers, it's recommended that you deploy passkeys or Windows Hello for Business in addition to any smart cards you deploy.
 
 ## Next steps
 
