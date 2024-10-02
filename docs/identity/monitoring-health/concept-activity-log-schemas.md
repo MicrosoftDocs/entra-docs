@@ -57,26 +57,26 @@ Some values are common across all log schemas.
 - `correlationId`: This unique ID helps correlate activities that span across various services and is used for troubleshooting.
 - `status` or `result`: This important value indicates the result of the activity. Possible values are: `success`, `failure`, `timeout`, `unknownFutureValue`.
 - Date and time: The date and time when the activity occurred is in Coordinated Universal Time (UTC).
-- Displaying some properties require a Microsoft Entra ID P2 license. If you don't have the Other licenses return the value `hidden`.
+- Some reporting features require a Microsoft Entra ID P2 license. If you don't have the correct licenses, the value `hidden` is returned.
 
 ### Audit logs
 
 - `activityDisplayName`: Indicates the activity name or the operation name (examples: "Create User" and "Add member to group"). For more information, see [Audit log activities](reference-audit-activities.md).
 - `category`: Indicates which resource category that's targeted by the activity. For example: `UserManagement`, `GroupManagement`, `ApplicationManagement`, `RoleManagement`. For more information, see [Audit log activities](reference-audit-activities.md).
-- `initiatedBy`: Indicates information about the user or app initiated the activity.
-- `targetResources`: Indicates information on which resource was changed due to the activity. Target Resource Type can be `User`, `Device`, `Directory`, `App`, `Role`, `Group`, `Policy` or `Other`.
+- `initiatedBy`: Indicates information about the user or app that initiated the activity.
+- `targetResources`: Provides information on which resource was changed. Possible values include `User`, `Device`, `Directory`, `App`, `Role`, `Group`, `Policy` or `Other`.
 
 ### Sign-in logs
 
 - ID values: There are unique identifiers for users, tenants, applications, and resources. Examples include:
-    - `resourceId`: The resource that the user signed into.
+    - `resourceId`: The *resource* that the user signed into.
     - `resourceTenantId`: The tenant that owns the *resource* being accessed. Might be the same as the `homeTenantId`.
     - `homeTenantId`: The tenant that owns the user *account* that is signing in.
 - Risk details: Provides the reason behind a specific state of a risky user, sign-in, or risk detection.
+    - `riskState`: Reports status of the risky user, sign-in, or a risk event.
     - `riskDetail`: Provides the reason behind a specific *state* of a risky user, sign-in, or risk detection. The value `none` means that no action has been performed on the user or sign-in so far.
     - `riskEventTypes_v2`: Risk detection types associated with the sign-in.
     - `riskLevelAggregated`: Aggregated risk level. The value `hidden` means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.
-    - `riskState`: Reports status of the risky user, sign-in, or a risk event.
 - `crossTenantAccessType`: Describes the type of cross-tenant access used to access the resource. For example, B2B, Microsoft Support, and passthrough sign-ins are captured here.
 - `status`: The sign-in status that includes the error code and description of the error (if a sign-in failure occurs).
 
