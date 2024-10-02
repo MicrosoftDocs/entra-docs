@@ -20,7 +20,7 @@ The Microsoft identity platform supports the OAuth 2.0 implicit grant flow as de
 [!INCLUDE [suggest-msal-from-protocols](includes/suggest-msal-from-protocols.md)]
 
 > [!WARNING]
-> Microsoft recommends you do *not* use the implicit grant flow flow. In most scenarios, more secure alternatives are available and recommended. Certain configurations of this flow requires a very high degree of trust in the application, and carries risks that are not present in other flows. You should only use this flow when other more secure flows aren't viable. For more information, see the [security concerns with implicit grant flow](#security-concerns-with-implicit-grant-flow).
+> Microsoft recommends you do *not* use the implicit grant flow. In most scenarios, more secure alternatives are available and recommended. Certain configurations of this flow requires a very high degree of trust in the application, and carries risks that are not present in other flows. You should only use this flow when other more secure flows aren't viable. For more information, see the [security concerns with implicit grant flow](#security-concerns-with-implicit-grant-flow).
 
 ## Protocol diagram
 
