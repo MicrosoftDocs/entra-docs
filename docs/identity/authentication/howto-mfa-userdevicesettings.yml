@@ -7,7 +7,7 @@ metadata:
   ms.author: justinha
   manager: amycolannino
   ms.reviewer: jupetter
-  ms.date: 07/30/2024
+  ms.date: 10/02/2024
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: how-to
@@ -29,6 +29,10 @@ introduction: |
   - Require a user to re-register for MFA.
   - Revoke existing MFA sessions.
   - Delete a user's existing app passwords  
+
+  > [!NOTE]
+  > The screenshots in this topic show how to manage user authentication methods by using an updated experience in the Microsoft Entra admin center. 
+  > A legacy experience in the Microsoft Entra admin center will be retired starting Oct 31, 2024.
 
 prerequisites:
   summary: |
