@@ -63,9 +63,9 @@ This table shows browser support for authenticating Microsoft Entra ID and Micro
 | **ChromeOS**  | &#x2705; | N/A | N/A | N/A |
 | **Linux**  | &#x2705; | &#10060; | &#10060; | N/A |
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
-| **Android**  | &#x2705; | &#x2705; | &#10060; | N/A |
+| **Android**  | &#x2705; | &#x2705;<sup>1</sup> | &#10060; | N/A |
 
-[!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
+<sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
 
 ## Web browser support for each platform
 

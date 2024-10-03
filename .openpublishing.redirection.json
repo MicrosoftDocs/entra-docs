@@ -71,6 +71,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/monitoring-health/overview-flagged-sign-ins.md",
+      "redirect_url": "/entra/identity/monitoring-health/concept-flagged-sign-ins",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/monitoring-health/howto-enable-microsoft-graph-activity-logs.md",
       "redirect_url": "/entra/identity/monitoring-health/howto-analyze-activity-logs-with-microsoft-graph",
       "redirect_document_id": false
@@ -1046,6 +1051,11 @@
       "source_path_from_root": "/docs/identity-platform/quickstart-v2-netcore-daemon.md",
       "redirect_url": "/entra/identity-platform/quickstart-daemon-dotnet-acquire-token",
       "redirect_document_id": false
+    },
+    {      
+    "source_path_from_root": "/docs/identity/saas-apps/concur-provisioning-tutorial.md",
+    "redirect_url": "/entra/identity/saas-apps/sap-concur-provisioning-tutorial",
+    "redirect_document_id": false
     }
   ]
 }
