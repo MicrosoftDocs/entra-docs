@@ -1,6 +1,6 @@
 ---
 title: 'Best practices for securely deploying Microsoft Entra ID Governance '
-description: TThis artile provides best practices for securing deploying Microsoft Entra ID Governance. 
+description: This article provides best practices for securing deploying Microsoft Entra ID Governance. 
 services: active-directory
 documentationcenter: ''
 author: arvindh
@@ -14,47 +14,47 @@ ms.author: billmath
 
 # Best practices for securely deploying Microsoft Entra ID Governance 
 
-This document provides best practices for securing deploying Microsoft Entra ID Governance.  
+This document provides best practices for securing deploying Microsoft Entra ID Governance. 
 
 ## Least privilege 
 
-The principle of least privilege means giving users and workload identities the minimum level of access or permissions they need to perform their tasks. By limiting access to only required resources based on the specific roles or job functions of users, providing just-in-time access, and performing regular audits, you can reduce the risk of unauthorized actions and potential security breaches.  
+The principle of least privilege means giving users and workload identities the minimum level of access or permissions they need to perform their tasks. By limiting access to only required resources based on the specific roles or job functions of users, providing just-in-time access, and performing regular audits, you can reduce the risk of unauthorized actions and potential security breaches. 
 
-Microsoft Entra ID Governance limits the access a user has based on the role that they have been assigned. Ensure that your users have the least privileged role to perform the task that they need.  
+Microsoft Entra ID Governance limits the access a user has based on the role that they have been assigned. Ensure that your users have the least privileged role to perform the task that they need. 
 
 For more information see [least privilege with Microsoft Entra ID Governance](least-privileged.md) 
 
 ## Preventing lateral movement 
 
-**Recommendation:** Do not use nested groups with PIM for groups. 
+**Recommendation:** Don't use nested groups with PIM for groups. 
 
-Groups can control access to various resources, including Microsoft Entra roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Microsoft Entra ID allows you to grant users just-in-time membership and ownership of groups through Privileged Identity Management (PIM) for Groups. These groups can be “flat” or “nested groups” (a non-role assignable group is a member of a role assignable group). Roles such as the groups admin, exchange admin, and knowledge admin can manage the non-role assignable group, providing these admins a path to gain access to privileged roles. Ensure that role-assignable groups do not have non-role assignable groups as members.
+Groups can control access to various resources, including Microsoft Entra roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Microsoft Entra ID allows you to grant users just-in-time membership and ownership of groups through Privileged Identity Management (PIM) for Groups. These groups can be “flat” or “nested groups” (a non-role assignable group is a member of a role assignable group). Roles such as the groups admin, exchange admin, and knowledge admin can manage the non-role assignable group, providing these admins a path to gain access to privileged roles. Ensure that role-assignable groups don't have non-role assignable groups as members.
 
-For more information, see [Privileged Identity Management (PIM) for Groups](/privileged-identity-management/concept-pim-for-groups.md#privileged-identity-management-and-group-nesting) 
+For more information, see [Privileged Identity Management (PIM) for Groups](privileged-identity-management/concept-pim-for-groups.md#privileged-identity-management-and-group-nesting) 
 
-**Recommendation:** Use Entitlement Management to provide access to sensitive resources, instead of hybrid groups.  
+**Recommendation:** Use Entitlement Management to provide access to sensitive resources, instead of hybrid groups. 
 
-Organizations have historically relied on Active Directory groups to access applications. Synchronizing these groups to Microsoft Entra ID makes it easy to reuse these groups and provide access to resources connected with Microsoft Entra ID. However, this creates lateral movement risk as a compromised account / group on-premises can be used to gain access to resources connected in the cloud. When providing access to sensitive applications or roles, use [entitlement management](entitlement-management-scenarios.md) to drive assignment to the application instead of security groups synchronized from Active Directory Domain Services.  For groups that need to be both in Microsoft Entra ID and Active Directory Domain Services, you can synchronize those groups from Microsoft Entra ID to Active Directory Domain Services using [cloud sync](~/identity/hybrid/group-writeback-cloud-sync.md). 
+Organizations have historically relied on Active Directory groups to access applications. Synchronizing these groups to Microsoft Entra ID makes it easy to reuse these groups and provide access to resources connected with Microsoft Entra ID. However, this creates lateral movement risk as a compromised account / group on-premises can be used to gain access to resources connected in the cloud. When providing access to sensitive applications or roles, use [entitlement management](../entitlement-management-scenarios.md) to drive assignment to the application instead of security groups synchronized from Active Directory Domain Services. For groups that need to be both in Microsoft Entra ID and Active Directory Domain Services, you can synchronize those groups from Microsoft Entra ID to Active Directory Domain Services using [cloud sync](~/identity/hybrid/group-writeback-cloud-sync.md). 
 
 ## Deny by default 
 
-The principle of "Deny by Default" is a security strategy that restricts access to resources by default, unless explicit permissions are granted. This approach minimizes the risk of unauthorized access by ensuring that users and applications do not have access rights until they are specifically assigned. Implementing this principle helps create a more secure environment, as it limits potential entry points for malicious actors. 
+The principle of "Deny by Default" is a security strategy that restricts access to resources by default, unless explicit permissions are granted. This approach minimizes the risk of unauthorized access by ensuring that users and applications don't have access rights until they're specifically assigned. Implementing this principle helps create a more secure environment, as it limits potential entry points for malicious actors. 
 
 ### Entitlement Management 
 
-Connected organizations is a feature of entitlement management that allows users to gain access to resources across tenants. Follow these best practices when configuring connected organizations.    
+Connected organizations are a feature of entitlement management that allows users to gain access to resources across tenants. Follow these best practices when configuring connected organizations.  
 
 **Recommendations:**
- - Require an expiration date for access-to-access packages in a connected organization. If, for example, users need access for the duration of a fixed contract, set the access package to expire at the end of the contract.  
- - Require approval prior to granting access to guests from connected organizations.  
- - Periodically review guest access to ensure that users only have access to resources that they still need.  
- - Carefully consider which organizations you are including as connected orgs. Periodically review the list of connected organizations and remove any that you do not collaborate with anymore.  
+ - Require an expiration date for access-to-access packages in a connected organization. If, for example, users need access for the duration of a fixed contract, set the access package to expire at the end of the contract. 
+ - Require approval prior to granting access to guests from connected organizations. 
+ - Periodically review guest access to ensure that users only have access to resources that they still need. 
+ - Carefully consider which organizations your including as connected orgs. Periodically review the list of connected organizations and remove any that you don't collaborate with anymore. 
 
 ### Provisioning 
 
-**Recommendation:** Set the provisioning scope to sync “assigned users and groups.”  
+**Recommendation:** Set the provisioning scope to sync “assigned users and groups.” 
 
-This ensures that only users explicitly assigned to your sync configuration will get provisioned. The alternative setting of allowing all users and groups should only be used for applications where access is required broadly across the organization.  
+This scope ensures that only users explicitly assigned to your sync configuration will get provisioned. The alternative setting of allowing all users and groups should only be used for applications where access is required broadly across the organization. 
 
 **PIM for roles** 
 
@@ -62,28 +62,28 @@ This ensures that only users explicitly assigned to your sync configuration will
 
 With Privileged Identity Management (PIM) in Microsoft Entra ID you can configure roles to require approval for activation, and choose one or multiple users or groups as delegated approvers.  
 
-For more information, see [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](/privileged-identity-management/pim-approval-workflow.md)
+For more information, see [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](privileged-identity-management/pim-approval-workflow.md)
 
 ## Defense in depth 
 
 **Recommendation:** Securely manage credentials for connectivity to applications 
 
-Encourage application vendors to support [OAuth](https://learn.microsoft.com/entra/identity-platform/v2-oauth2-client-creds-grant-flow) on their SCIM endpoints, rather than relying on long-lived tokens. Securely store credentials in [Azure Key Vault](https://azure.microsoft.com/products/key-vault), and regularly rotate your credentials.  
+Encourage application vendors to support [OAuth](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) on their SCIM endpoints, rather than relying on long-lived tokens. Securely store credentials in [Azure Key Vault](https://azure.microsoft.com/products/key-vault), and regularly rotate your credentials. 
 
 
-**Recommendation:** Use a certificate from a trusted certificate authority when configuring on-premises application provisioning.   
+**Recommendation:** Use a certificate from a trusted certificate authority when configuring on-premises application provisioning.  
 
-When configuring on-premises application provisioning with the ECMA host, you have the option to use a self-signed certificate or a trusted certificate. While the self-signed cert is helpful for getting started quickly and testing the capability, it is not recommended for production use, because the certificates cannot be revoked and expire in 2 years by default. 
+When configuring on-premises application provisioning with the ECMA host, you have the option to use a self-signed certificate or a trusted certificate. While the self-signed cert is helpful for getting started quickly and testing the capability, it isn't recommended for production use, because the certificates can't be revoked and expire in 2 years by default. 
 
 
-**Recommendation:** Harden your Microsoft Entra Provisioning Agent server  
+**Recommendation:** Harden your Microsoft Entra Provisioning Agent server 
 
 We recommend that you harden your Microsoft Entra provisioning agent server to decrease the security attack surface for this critical component of your IT environment. 
 
 [Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#harden-your-microsoft-entra-provisioning-agent-server) 
 
 
-**Recommendation:** Follow security best practices for using custom extensions with entitlement management + lifecycle workflows. The best practices described in this article include: 
+**Recommendation:** Follow security best practices for using custom extensions with entitlement management + lifecycle workflows. The best practices described in [this article](../custom-extension-security.md) include: 
 
  - Securing administrative access to the subscription 
  - Disabling shared access signature (SAS) 
@@ -91,13 +91,13 @@ We recommend that you harden your Microsoft Entra provisioning agent server to d
  - Authorizing with least privileged permissions 
  - Ensuring Proof-of-Possession (PoP) usage 
 
-**Recommendation:** All entitlement management policies should have an [expiration date](../entitlement-management-access-package-lifecycle-policy.md) and / or periodic [access review](../entitlement-management-access-reviews-create.md) to right size access. This ensures that only users that should have access continue to have access to the application.  
+**Recommendation:** All entitlement management policies should have an [expiration date](../entitlement-management-access-package-lifecycle-policy.md) and / or periodic [access review](../entitlement-management-access-reviews-create.md) to right size access. These requirements ensure that only users that should have access continue to have access to the application. 
 
-## Backup and recovery 
+## Back up and recovery 
 
-Backup your configuration so you can recover to a known good state in the case of a compromise.  
+Back up your configuration so you can recover to a known good state in the case of a compromise. 
 
- - [Microsoft Graph APIs](https://learn.microsoft.com/graph/overview) can be used to export the current state of many Microsoft Entra configurations. 
+ - [Microsoft Graph APIs](/graph/overview) can be used to export the current state of many Microsoft Entra configurations. 
  - [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) is a tool you can use to export your configuration settings. 
  - [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) is a module of the PowerShell Desired State Configuration framework. You can use it to export configurations for reference and application of the prior state of many settings. 
 
@@ -107,7 +107,7 @@ Backup your configuration so you can recover to a known good state in the case o
 
 Monitoring helps detect potential threats and vulnerabilities early. By watching for unusual activities and configuration changes, you can prevent security breaches and maintain data integrity. 
 
- - Alert when users activate privileged roles. [Security alerts for Microsoft Entra roles in PIM - Microsoft Entra ID Governance](/privileged-identity-management/pim-how-to-configure-security-alerts.md)
+ - Alert when users activate privileged roles. [Security alerts for Microsoft Entra roles in PIM - Microsoft Entra ID Governance](privileged-identity-management/pim-how-to-configure-security-alerts.md)
  - Proactively monitor your environment for configuration changes and suspicious activity by integrating Microsoft Entra ID Audit Logs with Azure Monitor. [Identity Governance custom alerts - Microsoft Entra ID Governance](../governance-custom-alerts.md)
 
  ## Next steps
