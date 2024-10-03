@@ -169,7 +169,7 @@ Removing permissions can reduce the risk of exposing sensitive data or compromis
 
 :::zone pivot="portal"
 
-To stop requesting permissions that require static consent, you need to remove the permission from the **App registrations** pane. An admin of the tenant also needs to revoke the permission on the **Enterprise applications** pane. For more information on how to revoke permissions granted to an enterprise application, see [Revoke permissions for an enterprise application](~/identity/enterprise-apps/manage-application-permissions.md#review-and-revoke-permissions).
+To stop requesting permissions that require static consent, you need to remove the permission from the **App registrations** pane. An admin of the tenant also needs to revoke the permission on the **Enterprise applications** pane. For more information on how to revoke permissions granted to an enterprise application, see [Revoke permissions for an enterprise application](~/identity/enterprise-apps/manage-application-permissions.md#review-and-revoke-permissions-in-the-microsoft-entra-admin-center).
 
 In this section, you learn how to stop requesting permissions for static consent.
 
