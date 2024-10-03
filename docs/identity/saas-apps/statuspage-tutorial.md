@@ -194,9 +194,7 @@ StatusPage supports just-in-time provisioning. You have already enabled it in [C
   
     ![Screenshot shows the Add Team Member button.](./media/statuspage-tutorial/team.png) 
 
-1. Type the **Email Address**, **First Name**, and **Surname** of a valid user you want to provision into the related textboxes. 
-
-    ![Screenshot shows the Add a User dialog box where you can enter the values described.](./media/statuspage-tutorial/user.png) 
+1. Type the **Email Address**, **First Name**, and **Surname** of a valid user you want to provision into the related textboxes.
 
 1. As **Role**, choose **Client Administrator**.
 

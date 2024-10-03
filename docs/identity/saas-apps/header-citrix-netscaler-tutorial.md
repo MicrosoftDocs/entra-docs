@@ -383,9 +383,6 @@ To bind a rewrite policy to a virtual server by using the GUI:
 1. In the list of virtual servers, select the virtual server to which you want to bind the rewrite policy, and then select **Open**.
 
 1. On the **Load Balancing Virtual Server** pane, under **Advanced Settings**, select **Policies**. All policies that are configured for your NetScaler instance appear in the list.
- 
-    ![Screenshot that shows the "Configuration" tab with the "Name", "Action", and "Expression" fields highlighted and "Create" button selected.](./media/header-citrix-netscaler-tutorial/header05.png)
-
     ![Citrix ADC configuration - Load Balancing Virtual Server pane](./media/header-citrix-netscaler-tutorial/header06.png)
 
 1.	Select the check box next to the name of the policy you want to bind to this virtual server.

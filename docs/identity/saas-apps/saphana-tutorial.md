@@ -193,9 +193,6 @@ If you need to create a user manually, take the following steps:
 >You can change the external authentication that the user uses. They can authenticate with an external system such as Kerberos. For detailed information about external identities, contact your [domain administrator](https://cloudplatform.sap.com/contact.html).
 
 1. Open the [SAP HANA Studio](https://help.sap.com/viewer/a2a49126a5c546a9864aae22c05c3d0e/2.0.01/en-us) as an administrator, and then enable the DB-User for SAML SSO.
-
-	![Create user](./media/saphana-tutorial/sap5.png)
-
 2. Select the invisible check box to the left of **SAML**, and then select the **Configure** link.
 
 3. Select **Add** to add the SAML IDP.  Select the appropriate SAML IDP, and then select **OK**.
