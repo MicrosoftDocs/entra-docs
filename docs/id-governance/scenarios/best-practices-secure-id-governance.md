@@ -80,7 +80,7 @@ When configuring on-premises application provisioning with the ECMA host, you ha
 
 We recommend that you harden your Microsoft Entra provisioning agent server to decrease the security attack surface for this critical component of your IT environment. 
 
-Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID - Microsoft Entra ID | Microsoft Learn 
+[Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#harden-your-microsoft-entra-provisioning-agent-server) 
 
 
 **Recommendation:** Follow security best practices for using custom extensions with entitlement management + lifecycle workflows. The best practices described in this article include: 
@@ -91,7 +91,7 @@ Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID - Microsoft E
  - Authorizing with least privileged permissions 
  - Ensuring Proof-of-Possession (PoP) usage 
 
-**Recommendation:** All entitlement management policies should have an expiration date and / or periodic access review to right size access. This ensures that only users that should have access continue to have access to the application.  
+**Recommendation:** All entitlement management policies should have an [expiration date](../entitlement-management-access-package-lifecycle-policy.md) and / or periodic [access review](../entitlement-management-access-reviews-create.md) to right size access. This ensures that only users that should have access continue to have access to the application.  
 
 ## Backup and recovery 
 
