@@ -35,7 +35,7 @@ Microsoft Graph is the primary way to access Microsoft Entra logs programmatical
 
 There are two endpoints for the Microsoft Graph API. The V1.0 endpoint is the most stable and is commonly used for production environments. The beta version often contains more properties, but they are subject to change. For this reason we don't recommend using the beta version of the schema in production environments.
 
-Azure Monitor ingests the logs from Microsoft Entra but the schema is different for some properties. Some properties have a slightly different name or might be broken into multiple properties.
+Microsoft Entra customer can configure activity log streams to be sent to Azure Monitor storage accounts. This integration enables Security Information and Event Management (SIEM) connectivity, long-term storage, and improved querying capabilities with Log Analytics. The log schemas for Azure Monitor might differfrom the Microsoft Graph schemas.
 
 For full details on these schemas, see the following articles:
 
@@ -54,7 +54,7 @@ When looking up the definitions of a value, pay attention to the version you're 
 
 Some values are common across all log schemas. 
 
-- `correlationId`: This unique ID helps correlate activities that span across various services and is used for troubleshooting.
+- `correlationId`: This unique ID helps correlate activities that span across various services and is used for troubleshooting. This value's presence in multiple logs doesn't indicate the ability to join logs across services.
 - `status` or `result`: This important value indicates the result of the activity. Possible values are: `success`, `failure`, `timeout`, `unknownFutureValue`.
 - Date and time: The date and time when the activity occurred is in Coordinated Universal Time (UTC).
 - Some reporting features require a Microsoft Entra ID P2 license. If you don't have the correct licenses, the value `hidden` is returned.
@@ -74,7 +74,7 @@ Some values are common across all log schemas.
     - `homeTenantId`: The tenant that owns the user *account* that is signing in.
 - Risk details: Provides the reason behind a specific state of a risky user, sign-in, or risk detection.
     - `riskState`: Reports status of the risky user, sign-in, or a risk event.
-    - `riskDetail`: Provides the reason behind a specific *state* of a risky user, sign-in, or risk detection. The value `none` means that no action has been performed on the user or sign-in so far.
+    - `riskDetail`: Provides the reason behind a specific state of a risky user, sign-in, or risk detection. The value `none` means that no action has been performed on the user or sign-in so far.
     - `riskEventTypes_v2`: Risk detection types associated with the sign-in.
     - `riskLevelAggregated`: Aggregated risk level. The value `hidden` means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.
 - `crossTenantAccessType`: Describes the type of cross-tenant access used to access the resource. For example, B2B, Microsoft Support, and passthrough sign-ins are captured here.
@@ -82,4 +82,5 @@ Some values are common across all log schemas.
 
 ### Applied Conditional Access policies
 
-If any Conditional Access policies were applied during the sign-in, a subsection under `appliedConditionalAccessPolicies` lists Conditional Access related information. A separate entry is created for each policy. For more information, see [conditionalAccessPolicy resource type](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-1.0&preserve-view=true).
+The `appliedConditionalAccessPolicies` subsection lists the Conditional Access policies related to that sign-in event. The section is called *applied* Conditional Access policies; however, policies that were *not* applied also appear in this section. A separate entry is created for each policy. For more information, see [conditionalAccessPolicy resource type](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-1.0&preserve-view=true).
+
