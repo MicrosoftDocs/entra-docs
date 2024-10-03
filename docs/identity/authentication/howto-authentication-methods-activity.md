@@ -136,7 +136,8 @@ The registration details report shows the following information for each user:
 ## Limitations
 
 - The data in the report is not updated in real-time and may reflect a latency of up to a few hours.
-- The **PhoneAppNotification** or **PhoneAppOTP** methods that a user might have configured are not displayed in the dashboard on **Microsoft Entra authentication methods - Policies**. 
+- The **PhoneAppNotification** or **PhoneAppOTP** methods that a user might have configured are not displayed in the dashboard on **Microsoft Entra authentication methods - Policies**.
+- Bulk operations in the Microsoft Entra admin portal could time out and fail on very large tenants. This limitation is a known issue due to scaling limitations. The Microsoft engineering team is working on a new service that will eventually address this limitation.
 
 ## Next steps
 
