@@ -27,7 +27,7 @@ This article covers the sign-in experience when using passkeys in Microsoft Auth
 
 <sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
 
-<sup>2</sup>For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
+<sup>2</sup>Native app sign-in support is coming soon.
 
 ## [**iOS**](#tab/iOS)
 
