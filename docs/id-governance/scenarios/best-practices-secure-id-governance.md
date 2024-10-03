@@ -28,13 +28,17 @@ For more information see [least privilege with Microsoft Entra ID Governance](le
 
 **Recommendation:** Don't use nested groups with PIM for groups. 
 
-Groups can control access to various resources, including Microsoft Entra roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Microsoft Entra ID allows you to grant users just-in-time membership and ownership of groups through Privileged Identity Management (PIM) for Groups. These groups can be “flat” or “nested groups” (a non-role assignable group is a member of a role assignable group). Roles such as the groups admin, exchange admin, and knowledge admin can manage the non-role assignable group, providing these admins a path to gain access to privileged roles. Ensure that role-assignable groups don't have non-role assignable groups as members.
+Groups can control access to various resources, including Microsoft Entra roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Microsoft Entra ID allows you to grant users just-in-time membership and ownership of groups through Privileged Identity Management (PIM) for Groups. 
+
+These groups can be “flat” or “nested groups” (a non-role assignable group is a member of a role assignable group). Roles such as the groups admin, exchange admin, and knowledge admin can manage the non-role assignable group, providing these admins a path to gain access to privileged roles. Ensure that role-assignable groups don't have non-role assignable groups as members.
 
 For more information, see [Privileged Identity Management (PIM) for Groups](../privileged-identity-management/concept-pim-for-groups.md#privileged-identity-management-and-group-nesting) 
 
 **Recommendation:** Use Entitlement Management to provide access to sensitive resources, instead of hybrid groups. 
 
-Organizations have historically relied on Active Directory groups to access applications. Synchronizing these groups to Microsoft Entra ID makes it easy to reuse these groups and provide access to resources connected with Microsoft Entra ID. However, this creates lateral movement risk as a compromised account / group on-premises can be used to gain access to resources connected in the cloud. When providing access to sensitive applications or roles, use [entitlement management](../entitlement-management-scenarios.md) to drive assignment to the application instead of security groups synchronized from Active Directory Domain Services. For groups that need to be both in Microsoft Entra ID and Active Directory Domain Services, you can synchronize those groups from Microsoft Entra ID to Active Directory Domain Services using [cloud sync](~/identity/hybrid/group-writeback-cloud-sync.md). 
+Organizations have historically relied on Active Directory groups to access applications. Synchronizing these groups to Microsoft Entra ID makes it easy to reuse these groups and provide access to resources connected with Microsoft Entra ID. However, this creates lateral movement risk as a compromised account / group on-premises can be used to gain access to resources connected in the cloud. 
+
+When providing access to sensitive applications or roles, use [entitlement management](../entitlement-management-scenarios.md) to drive assignment to the application instead of security groups synchronized from Active Directory Domain Services. For groups that need to be both in Microsoft Entra ID and Active Directory Domain Services, you can synchronize those groups from Microsoft Entra ID to Active Directory Domain Services using [cloud sync](~/identity/hybrid/group-writeback-cloud-sync.md). 
 
 ## Deny by default 
 
