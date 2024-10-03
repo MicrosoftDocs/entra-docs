@@ -38,7 +38,20 @@ The scope of enforcement includes which applications plan to enforce MFA, when e
 
 All users who sign into the [applications](#applications) listed previously to perform any Create, Read, Update, or Delete (CRUD) operation will require MFA when the enforcement begins. End users who access application, websites, or services hosted on Azure, but don't sign into the listed applications, aren't required to use MFA. The authentication requirements for end users are controlled by the application, website, or service owner. 
 
-Workload identities, such as managed identities and service principals, aren't impacted by [Phase 1](#enforcement-phases) of the MFA enforcement. If user identities sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md). 
+Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this Azure MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
+
+> [!Tip]
+> We recommend customers currently using user accounts as service accounts begin the process of discovery and migration to workload identities.  This will often require updating scripts and automation processes to use workload identities.
+>
+> Review [Prepare for multifactor authentication](#prepare-for-multifactor-authentication) to identify all user accounts (including user accounts being used as service accounts) signing into the phase 2 applications.
+>
+> For guidance on migrating authentication with these applications from user based service accounts to workload identities see: 
+> 
+>- [Sign into Azure with a managed identity using the Azure CLI](/cli/azure/authenticate-azure-cli-managed-identity)
+>- [Sign into Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
+>- [Sign in to Azure PowerShell non-interactively for automation scenarios](/powershell/azure/authenticate-noninteractive) (Includes guidance for both managed identity and service principal use cases)
+>
+> Customers applying conditional access policies to the user based service accounts can reclaim this user based license and apply [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
 
 Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend updating these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
@@ -55,19 +68,6 @@ The enforcement of MFA rolls out in two phases:
 - **Phase 1**: Starting in the second half of 2024, MFA will be required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
 - **Phase 2**: Beginning in early 2025, MFA enforcement gradually begins for sign in to Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
-
-> [!Tip]
-> We recommend customers currently using user accounts as service accounts begin the process of discovery and migration to workload identities.  This will often require updating scripts and automation processes to use workload identities.
->
-> Review [Prepare for multifactor authentication](#prepare-for-multifactor-authentication) to identify all user accounts (including user accounts being used as service accounts) signing into the phase 2 applications.
->
-> For guidance on migrating authentication with these applications from user based service accounts to workload identities see: 
-> 
->- [Sign into Azure with a managed identity using the Azure CLI](/cli/azure/authenticate-azure-cli-managed-identity)
->- [Sign into Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
->- [Sign in to Azure PowerShell non-interactively for automation scenarios](/powershell/azure/authenticate-noninteractive) (Includes guidance for both managed identity and service principal use cases)
->
-> Customers applying conditional access policies to the user based service accounts can reclaim this user based license and apply [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
 
 ## Notification channels 
 
