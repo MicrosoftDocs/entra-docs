@@ -38,9 +38,9 @@ The scope of enforcement includes which applications plan to enforce MFA, when e
 
 All users who sign into the [applications](#applications) listed previously to perform any Create, Read, Update, or Delete (CRUD) operation will require MFA when the enforcement begins. End users who access application, websites, or services hosted on Azure, but don't sign into the listed applications, aren't required to use MFA. The authentication requirements for end users are controlled by the application, website, or service owner. 
 
-Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this Azure MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
-
 Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend updating these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
+
+Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this Azure MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
 
 > [!Tip]
 > We recommend customers currently using user accounts as service accounts begin the process of discovery and migration to workload identities.  This will often require updating scripts and automation processes to use workload identities.
