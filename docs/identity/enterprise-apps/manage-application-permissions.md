@@ -168,7 +168,7 @@ $spApplicationPermissions = Get-MgServicePrincipalAppRoleAssignedTo -ServicePrin
 
 :::zone pivot = "ms-graph"
 
-## Review and revoke permissions Microsoft Graph
+## Review and revoke permissions using Microsoft Graph
 
 To review permissions, Sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
@@ -218,7 +218,7 @@ Run the following queries to review application permissions granted to an applic
     DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{resource-servicePrincipal-id}/appRoleAssignedTo/{appRoleAssignment-id}
     ```
 
-## Invalidate the refresh tokens Microsoft Graph
+## Invalidate the refresh tokens using Microsoft Graph
 
 Run the following queries to remove appRoleAssignments of users or groups to the application.
 
