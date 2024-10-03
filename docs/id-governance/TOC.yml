@@ -14,6 +14,8 @@
     href: scenarios/identity-governance-use-cases.md 
   - name: Understanding least privileged
     href: scenarios/least-privileged.md 
+  - name: Best practices for securing ID Governance
+    href: scenarios/best-practices-secure-id-governance.md 
   - name: Govern the employee and guest lifecycle
     items:
     - name: Govern the employee and guest lifecycle
