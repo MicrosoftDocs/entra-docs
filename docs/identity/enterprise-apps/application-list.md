@@ -34,7 +34,7 @@ When filtered to **All Applications**, the **All Applications** **List** shows e
 - When you use managed identities for Azure resources. For more information, see [Managed identity types](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 - When you add a new application registration by creating a custom-developed application using the [Application Registry](~/identity-platform/quickstart-register-app.md)
 - When you add a new application registration by creating a custom-developed application using the [V2.0 Application Registration portal](~/identity-platform/quickstart-register-app.md)
-- When you add an application, you’re developing using Visual Studio’s [ASP.NET authentication methods](/aspnet/core/security/authentication/identity?view=aspnetcore-8.0&tabs=visual-studio) or [Connected Services](https://devblogs.microsoft.com/visualstudio/connecting-to-cloud-services/)
+- When you add an application, you’re developing using Visual Studio’s [ASP.NET authentication methods](/aspnet/core/security/authentication/identity?tabs=visual-studio) or [Connected Services](https://devblogs.microsoft.com/visualstudio/connecting-to-cloud-services/)
 - When you create a service principal object using the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module.
 - When you [consent to an application](~/identity-platform/howto-convert-app-to-be-multi-tenant.md) as an administrator to use data in your tenant
 - When a [user consents to an application](~/identity-platform/howto-convert-app-to-be-multi-tenant.md) to use data in your tenant
