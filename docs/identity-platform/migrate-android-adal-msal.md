@@ -25,7 +25,7 @@ ADAL works with the Azure AD v1.0 endpoint. The Microsoft Authentication Library
 Supports:
   - Organizational Identity (Microsoft Entra ID)
   - Non-organizational identities such as Outlook.com, Xbox Live, and so on
-  - (Azure AD B2C only) Federated login with Google, Facebook, Twitter, and Amazon
+  - (Azure AD B2C only) Federated login with Google, Facebook, X, and Amazon
 
 - Is standards compatible with:
   - OAuth v2.0

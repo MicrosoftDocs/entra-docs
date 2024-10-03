@@ -208,9 +208,6 @@ The MFA challenge was canceled.
 
 Authentication was successful, but Azure AD PowerShell has an authentication problem.
 
-### Microsoft Entra Global Administrator role needed
-
-The user was authenticated successfully, but the user isn't assigned the Global Administrator role. You can [assign the Global Administrator role](~/identity/role-based-access-control/permissions-reference.md) to the user.
 
 ### Privileged Identity Management enabled
 

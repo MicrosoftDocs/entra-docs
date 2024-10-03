@@ -152,7 +152,7 @@ Microsoft Entra ID supports these client credential types:
 In addition to Microsoft Entra ID, the Microsoft Entra product family includes [Microsoft Entra Workload ID](~/workload-id/workload-identities-overview.md). Microsoft Entra Workload ID has the following premium features to enhance workload security.
 
 - [Conditional Access](~/identity/conditional-access/workload-identity.md) supports location- or risk-based policies for workload identities.
-- [Identity protection](~/id-protection/concept-workload-identity-risk.md) provides reports on compromised credentials, anomalous sign-ins, and suspicious changes to accounts.
+- [Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md) provides reports on compromised credentials, anomalous sign-ins, and suspicious changes to accounts.
 - [Access reviews](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/introducing-azure-ad-access-reviews-for-service-principals/ba-p/1942488) enable review delegation to the right people, focused on the most important privileged roles.
 - [App health recommendations](~/identity/monitoring-health/howto-use-recommendations.md) suggest ways to address identity hygiene gaps in your application portfolio and improve tenant security and resilience posture.
 

@@ -3342,5 +3342,11 @@
   "Yammer Web": "c1c74fed-04c9-4704-80dc-9f79a2e515cb",
   "Yammer Web Embed": "e1ef36fd-b883-4dbf-97f0-9ece4b576fc6",
   "Windows Hello for Business": "38aa3b87-a06d-4817-b275-7a316988d93b",
-  "Azure multifactor authentication client": "981f26a1-7f43-403b-a875-f8b09b8cd720"
+  "Azure multifactor authentication client": "981f26a1-7f43-403b-a875-f8b09b8cd720",
+  "Business Central Base Application": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+  "Business Central System Application": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+  "Business Central Business Foundation": "f3552374-a1f2-4356-848e-196002525837",
+  "Change password": "AB721A53-1E2F-11D0-9819-00AA0040529B",
+  "ID of the Prevhost.exe surrogate host GUID" : "6d2b5079-2f0b-48dd-ab7f-97cec514d30b",
+  "32-bit preview handlers GUID" : "534A1E02-D58F-44f0-B58B-36CBED287C7C"
 }

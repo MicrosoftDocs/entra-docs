@@ -1,15 +1,17 @@
 ---
 title: What is Microsoft Entra monitoring and health?
-description: Provides a general overview of Microsoft Entra monitoring and health.
+description: Learn about the features and capabilities of the logs and reports in Microsoft Entra monitoring and health.
 
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: overview
 ms.subservice: monitoring-health
-ms.date: 08/15/2023
+ms.date: 10/01/2024
 ms.author: sarahlipsey
-ms.reviewer: besiler
+ms.reviewer: egreenberg
+
+# Customer intent: As an IT admin, I want to understand the features and capabilities of Microsoft Entra monitoring and health so I can monitor and troubleshoot user activity in my organization.
 ---
 
 # What is Microsoft Entra monitoring and health?
@@ -67,7 +69,8 @@ Reviewing the data in the Microsoft Entra activity logs can provide helpful info
 - [Identity Protection](~/id-protection/overview-identity-protection.md) uses sign-in data to create reports on risky users and sign-in activities.
 - Activity related to your applications, such as service principal and app credential activity, are used to create reports in [Usage and insights](concept-usage-insights-report.md).
 - [Microsoft Entra workbooks](overview-workbooks.md) provide a customizable way to view and analyze the activity logs. 
-- [Monitor the status of Microsoft Entra recommendations to improve your tenant's security.](overview-recommendations.md)
+- Use [Microsoft Entra recommendations](overview-recommendations.md) to monitor and improve your tenant's security.
+- [Microsoft Entra Health](concept-microsoft-entra-health.md) capture global service level agreement attainment and health signals for several key scenarios.
 
 ## Identity monitoring and tenant health
 

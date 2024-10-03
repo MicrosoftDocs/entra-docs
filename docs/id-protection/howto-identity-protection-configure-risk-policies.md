@@ -27,7 +27,7 @@ Organizations must decide the level of risk they want to require access control 
 
 Choosing to apply access control on a **High** risk level reduces the number of times a policy is triggered and minimizes friction for users. However, it excludes **Low** and **Medium** risks from the policy, which might not block an attacker from exploiting a compromised identity. Selecting a **Low** risk level to require access control introduces more user interrupts.
 
-Configured trusted [network locations](../identity/conditional-access/concept-assignment-network.md#trusted-locations) are used by Identity Protection in some risk detections to reduce false positives.
+Configured trusted [network locations](../identity/conditional-access/concept-assignment-network.md#trusted-locations) are used by Microsoft Entra ID Protection in some risk detections to reduce false positives.
 
 The policy configurations that follow include the [sign-in frequency session control](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time) requiring a reauthentication for risky users and sign-ins.
 

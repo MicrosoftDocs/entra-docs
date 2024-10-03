@@ -9,7 +9,7 @@ ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: whats-new
-ms.date: 09/10/2024
+ms.date: 09/19/2024
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -32,6 +32,87 @@ Microsoft Entra ID (previously known as Azure Active Directory) receives improve
 > If you're currently using Azure Active Directory today or are have previously deployed Azure Active Directory in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function as they do today without any action from you.
 
 This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
+
+## September 2024
+
+### Public preview - New Conditional Access Template Requiring Device Compliance 
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+A new Conditional Access template requiring device compliance is now available in Public Preview. This template restricts access to company resources exclusively to devices enrolled in mobile device management (MDM) and compliant with company policy. Requiring device compliance improves data security, reducing risk of data breaches, malware infections, and unauthorized access. This is a recommended best practice for users and devices targeted by compliance policy through MDM. For more information, see: [Common policy: Create a Conditional Access policy requiring device compliance.](../identity/conditional-access/how-to-policy-require-device-compliance.md)
+
+---
+
+### Public preview - Tenant admin can fail certificate based auth when the end user certificate issuer isn't configured with a certificate revocation list
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+With Certificate based authentication, a CA can be uploaded without a CRL endpoint, and certificate-based authentication won't fail if an issuing CA doesn't have a CRL specified.
+
+To strengthen security and avoid misconfigurations, an Authentication Policy Administrator can require CBA authentication to fail if no CRL is configured for a CA that issues an end user certificate. For more information, see: [Understanding CRL validation (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-crl-validation-preview).
+
+---
+
+### General Availability: Microsoft Authenticator on Android is FIPS 140 compliant for Microsoft Entra authentication
+
+**Type:** New feature    
+**Service category:** Microsoft Authenticator App    
+**Product capability:** User Authentication    
+
+Beginning with version 6.2408.5807, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS 140-3) for all Microsoft Entra authentications, including phishing-resistant device-bound passkeys, push multifactor authentication (MFA), passwordless phone sign-in (PSI), and time-based one-time passcodes (TOTP). No changes in configuration are required in Microsoft Authenticator or Microsoft Entra ID Admin Portal to enable this capability. Microsoft Authenticator on iOS is already FIPS 140 compliant, as announced last year. For more information, see: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md).
+
+---
+
+### General Availability - Microsoft Entra External ID extension for Visual Studio Code
+
+**Type:** Changed feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C    
+
+[Microsoft Entra External ID Extension for VS Code](https://aka.ms/ciamvscode/newsletter/marketplace) provides a streamlined, guided experience to help you kickstart identity integration for customer-facing apps. With this extension, you can create external tenants, set up a customized and branded sign-in experience for external users, and quickly bootstrap your projects with preconfigured External ID samples—all within Visual Studio Code. Additionally, you can view and manage your external tenants, applications, user flows, and branding settings directly within the extension.
+
+For more information, see: [Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code](../external-id/customers/visual-studio-code-extension.md).
+
+---
+
+### Public Preview - Custom Claims API for Claims Configuration of Enterprise Apps
+
+**Type:** New feature    
+**Service category:** Enterprise Apps    
+**Product capability:** SSO    
+
+Custom Claims API allows admins to manage and update additional claims for their Enterprise Applications seamlessly through MS Graph. The Custom Claims API offers a simplified and user friendly API experience for claims management for our customers. With the introduction of Custom Claims API, we achieved UX and API interoperability. Admins can now use Microsoft Entra admin center and MS Graph API interchangeably to manage claims configurations for their Enterprise Applications. It facilitates admins to execute their automations using the API while allowing the flexibility to update claims on the Microsoft Entra admin center as required on the same policy object. For more information, see: [Customize claims using Microsoft Graph Custom Claims Policy (preview)](../identity-platform/claims-customization-custom-claims-policy.md).
+
+---
+
+### General Availability - Cross-tenant manager synchronization
+
+**Type:** New feature    
+**Service category:** Provisioning    
+**Product capability:** Identity Governance    
+
+Support for synchronizing the manager attribute using cross-tenant synchronization is now generally available. For more information, see: [Attributes](../identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md#attributes).
+
+---
+
+### Public Preview - Request on behalf of
+
+**Type:** New feature    
+**Service category:** Entitlement Management    
+**Product capability:** Entitlement Management    
+
+Entitlement Management enables admins to create access packages to manage their organization’s resources. Admins can either directly assign users to an access package, or configure an access package policy that allows users and group members to request access. This option to create self-service processes is useful, especially as organizations scale and hire more employees. However, new employees joining an organization might not always know what they need access to, or how they can request access. In this case, a new employee would likely rely on their manager to guide them through the access request process.
+
+Instead of having new employees navigate the request process, managers can request access packages for their employees, making onboarding faster and more seamless. To enable this functionality for managers, admins can select an option when setting up an access package policy that allows managers to request access on their employees' behalf.
+
+Expanding self-service request flows to allow requests on behalf of employees ensures that users have timely access to necessary resources, and increases productivity. For more information, see: [Request access package on-behalf-of other users (Preview)](../id-governance/entitlement-management-request-behalf.md).
+
+---
+
 
 ## August 2024
 
@@ -71,7 +152,7 @@ As part of ongoing security hardening, Microsoft removes unused permissions from
 **Service category:** MFA   
 **Product capability:** End User Experiences    
 
-Starting Mid-October 2024, the *Add sign-in* method dialog on the My Security-Info page will be updated with a modern look and feel. With this change new descriptors will be added under each method which provides detail to users on how the sign-in method is used (ex. *Microsoft Authenticator – Approve sign-in requests* or *use one-time codes*).  
+Starting Mid-October 2024, the *Add sign-in* method dialog on the My Security-Info page will be updated with a modern look and feel. With this change, new descriptors will be added under each method which provides detail to users on how the sign-in method is used (ex. *Microsoft Authenticator – Approve sign-in requests* or *use one-time codes*).  
 
 Early next year the *Add sign-in* method, dialog will be enhanced to show an initially recommended sign-in method instead of initially showing the full list of sign-in methods available to register. The recommended sign-in method will default to the strongest method available to the user based on the organization’s authentication method policy. Users can select *Show more options* and choose from all available sign-in methods allowed by their policy.
 
@@ -715,122 +796,3 @@ For more information on Self-service password reset for admins, including the fu
 
 ---
 
-## March 2024
-
-### Public Preview - Convert external users to internal
-
-**Type:** New feature    
-**Service category:** User Management    
-**Product capability:** User Management    
-
-External user conversion enables customers to convert external users to internal members without needing to delete and create new user objects. Maintaining the same underlying object ensures the user’s account, and access to resources, isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes. 
-
-The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well. For more information, see: [Convert external users to internal users (Preview)](../identity/users/convert-external-users-internal.md).
-
----
-
-### Public Preview - Alternate Email Notifications for Lockbox Requests
-
-**Type:** New feature    
-**Service category:** Other    
-**Product capability:** Access Control    
-
-Customer Lockbox for Microsoft Azure is launching a new feature that enables customers to use alternate email IDs for getting lockbox notifications. This capability enables Lockbox customers to receive notifications in scenarios where their Azure account isn't email enabled, or if they have a service principal defined as the tenant admin or subscription owner.
-
----
-
-### Plan for change - Conditional Access location condition is moving up
-
-**Type:** Plan for change    
-**Service category:** Conditional Access    
-**Product capability:** Identity Security & Protection    
-
-Beginning in mid-April 2024, the Conditional Access *Locations* condition is moving up. Locations become the *Network* assignment, with the new Global Secure Access assignment - *All compliant network locations*.
-
-This change occurs automatically, so admins take no action. Here's more details:
-
-- The familiar *Locations* condition is unchanged, updating the policy in the *Locations* condition are reflected in the *Network* assignment, and vice versa.
-- No functionality changes, existing policies continue to work without changes.
-
----
-
-### General Availability - Just-in-time application access with PIM for Groups
-
-**Type:** New feature    
-**Service category:** Privileged Identity Management    
-**Product capability:** Privileged Identity Management    
-
-Provide just-in-time access to non-Microsoft applications such as AWS & GCP. This capability integrates PIM for groups. Application provisioning with PIM reduces the activation time from 40+ minutes to roughly 2 minutes when requesting just-in-time access to a role in non-Microsoft apps.
-
-For more information, see:
-
-- [AWS](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups)
-- [GCP](../identity/saas-apps/g-suite-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups)
-
----
-
-### Public Preview - Azure Lockbox Approver Role for Subscription Scoped Requests
-
-**Type:** New feature    
-**Service category:** Other    
-**Product capability:** Identity Governance    
-
-Customer Lockbox for Microsoft Azure is launching a new built-in Azure Role-based access control role that enables customers to use a lesser privileged role for users responsible for approving/rejecting Customer Lockbox requests. This feature is targeted to the customer admin workflow where a lockbox approver acts on the request from Microsoft Support engineer to access Azure resources in a customer subscription.
-
-In this first phase, we're launching a new built-in Azure Role-based Access Control role. This role helps scope down the access possible for an individual with Azure Customer Lockbox approver rights on a subscription and its resources. A similar role for tenant-scoped requests is available in subsequent releases.
-
----
-
-### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - March 2024
-
-**Type:** New feature    
-**Service category:** App Provisioning    
-**Product capability:** Third Party Integration    
-
-We added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Astro](../identity/saas-apps/astro-provisioning-tutorial.md)
-- [Egnyte](../identity/saas-apps/egnyte-provisioning-tutorial.md)
-- [MobileIron](../identity/saas-apps/mobileiron-provisioning-tutorial.md)
-- [SAS Viya SSO](../identity/saas-apps/sas-viya-sso-provisioning-tutorial.md)
-
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](~/identity/app-provisioning/user-provisioning.md).
-
----
-
-### General Availability - TLS 1.3 support for Microsoft Entra
-
-**Type:** New feature    
-**Service category:** Other    
-**Product capability:** Platform        
-
-We're excited to announce that Microsoft Entra, is rolling out support for Transport Layer Security (TLS) 1.3 for its endpoints to align with security best practices ([NIST - SP 800-52 Rev. 2](https://csrc.nist.gov/pubs/sp/800/52/r2/final)). With this change, the Microsoft Entra ID related endpoints support both TLS 1.2 and TLS 1.3 protocols. For more information, see: [TLS 1.3 support for Microsoft Entra services](/troubleshoot/azure/active-directory/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services).
-
----
-
-### General Availability - API driven inbound provisioning
-
-**Type:** New feature    
-**Service category:** Provisioning    
-**Product capability:** Inbound to Microsoft Entra ID        
-
-With API-driven inbound provisioning, Microsoft Entra ID provisioning service now supports integration with any system of record. Customers and partners can choose any automation tool to retrieve workforce data from any system of record for provisioning to Microsoft Entra ID. This capability also applies to connected on-premises Active Directory domains. IT admins have full control on how the data is processed and transformed with attribute mappings. Once the workforce data is available in Microsoft Entra ID, IT admins can configure appropriate joiner-mover-leaver business processes using Microsoft Entra ID Governance Lifecycle Workflows. For more information, see: [API-driven inbound provisioning concepts](../identity/app-provisioning/inbound-provisioning-api-concepts.md).
-
----
-
-### General Availability - Changing Passwords in My Security Info
-
-**Type:** New feature    
-**Service category:** My Security Info    
-**Product capability:** End User Experiences        
-
-Now Generally Available, My Sign Ins [(My sign-ins (microsoft.com))](https://mysignins.microsoft.com/) supports end users changing their passwords inline. When a user authenticates with a password and an MFA credential, they're able to are able to change their password without entering their existing password. Beginning April 1, through a phased rollout, traffic from the [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) portal will redirect to the new My Sign Ins change experience. The [Change password (windowsazure.com)](https://account.activedirectory.windowsazure.com/ChangePassword.aspx) will no longer be available after June 2024, but will continue to redirect to the new experience.
-
-
-For more information, see: 
-
-- [Combined security information registration for Microsoft Entra overview](../identity/authentication/concept-registration-mfa-sspr-combined.md).
-- [Change work or school account settings in the My Account portal](https://support.microsoft.com/account-billing/change-work-or-school-account-settings-in-the-my-account-portal-e50bfccb-58e9-4d42-939c-a60cb6d56ced)
-
----

@@ -18,7 +18,7 @@ ms.reviewer: gkinasewitz, gustavosa
 ---
 # Manage an external authentication method in Microsoft Entra ID (Preview)
 
-An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign to Microsoft Entra ID. An EAM can satisfy MFA requirements from Conditional Access policies, Identity Protection sign-in risk policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA. 
+An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign to Microsoft Entra ID. An EAM can satisfy MFA requirements from Conditional Access policies, Microsoft Entra ID Protection risk-based Conditional Access policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA. 
 
 EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider. EAMs require at least a Microsoft Entra ID P1 license.
 
@@ -112,6 +112,12 @@ If the user has other ways to sign in and [system-preferred MFA](/entra/identity
 If the user has no other methods enabled, they can just choose the EAM. They're redirected to the external authentication provider to complete authentication.
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/sign-in.png" alt-text="Screenshot of how to sign in with an EAM.":::
+
+## Authentication method registration for EAMs
+In the preview, all users in an include group for the EAM are considered MFA capable and can use the external authentication method for satisfying MFA.  Users that are MFA-capable due to being an include target for an EAM are not included in reports on authentication method registration.
+
+>[!NOTE]
+>We're actively working on adding registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Entra ID before they will be prompted to use the it to satisfy MFA.
 
 ## Using EAM and Conditional Access custom controls in parallel
 

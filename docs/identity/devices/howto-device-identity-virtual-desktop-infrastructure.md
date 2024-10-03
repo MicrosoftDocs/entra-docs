@@ -71,7 +71,7 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 
 <sup>7</sup> **Non-Persistence support for Windows down-level** requires other consideration as documented in the guidance section.
 
-<sup>8</sup> **Microsoft Entra join support** is available with [Azure Virtual Desktop](https://learn.microsoft.com/azure/virtual-desktop/), [Windows 365](https://www.microsoft.com/windows-365) and [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html#launch-entra-id). For any support related queries with Amazon WorkSpaces and Microsoft Entra integration, contact [Amazon support](https://aws.amazon.com/contact-us/) directly.
+<sup>8</sup> **Microsoft Entra join support** is available with [Azure Virtual Desktop](/azure/virtual-desktop/), [Windows 365](https://www.microsoft.com/windows-365) and [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html#launch-entra-id). For any support related queries with Amazon WorkSpaces and Microsoft Entra integration, contact [Amazon support](https://aws.amazon.com/contact-us/) directly.
 
 ## Microsoft's guidance
 

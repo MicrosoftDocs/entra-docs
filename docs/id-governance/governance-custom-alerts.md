@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 08/12/2024
+ms.date: 09/23/2024
 ms.author: billmath
 ms.custom:
 ---
@@ -20,7 +20,7 @@ The following table outlines some of the standard notifications that Microsoft E
 
 | Persona | Alert method | Timeliness | Example alert |
 | --- | --- | --- | --- |
-| End user | Teams | Minutes | You need to approve or deny this request for access;  <br>The access you requested has been approved, go use your new app<br><br>[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
+| End user | Teams | Minutes | You need to approve or deny this request for access;  <br>The access you requested has been approved, go use your new app.<br><br>[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
 | End user | Teams | Days | The access you requested is going to expire next week, please renew.[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
 | End user | Email | Days | Welcome to Woodgrove, here is your temporary access pass. [Learn more.](/entra/id-governance/lifecycle-workflow-tasks#generate-temporary-access-pass-and-send-via-email-to-users-manager) |
 | Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](entitlement-management-ticketed-provisioning.md) |
@@ -32,7 +32,7 @@ In addition to the standard notifications provided by Microsoft Entra ID Governa
 
 All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), organizations can create [custom alerts](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics#set-up-alerts). 
 
-The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor. By using Azure Monitor, organizations can customize what alerts are generated, who receives the alerts, and how they receive the alert (email, SMS, [help desk ticket](https://learn.microsoft.com/azure/azure-monitor/alerts/itsm-connector-secure-webhook-connections-azure-configuration), etc.). 
+The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor. By using Azure Monitor, organizations can customize what alerts are generated, who receives the alerts, and how they receive the alert (email, SMS, [help desk ticket](/azure/azure-monitor/alerts/itsm-connector-secure-webhook-connections-azure-configuration), etc.). 
 
 | Feature | Example alert |
 | --- | --- |
@@ -46,7 +46,7 @@ The following section provides examples of custom alerts that customers can crea
 | Multitenant collaboration | Alert an IT admin when a cross-tenant access policy is enabled |
 | Privileged Identity Management | Alert an IT admin when PIM alerts are disabled. |
 | Privileged Identity Management | Alert an IT admin when a role is granted outside of PIM.|
-| Provisioning | Alert an IT admin when there is a spike in provisioning failures over a 24-hour period. |
+| Provisioning | Alert an IT admin when there is a spike in provisioning failures over the past day. |
 | Provisioning| Alert an IT admin when someone starts, stops, disables, restarts, or deletes a provisioning configuration.|
 | Provisioning| Alert an IT admin when a provisioning job goes into quarantine.|
 
@@ -60,7 +60,7 @@ The following section provides examples of custom alerts that customers can crea
 
 ```
 AuditLogs
-| where ActivityDisplayName == " Delete access review"
+| where ActivityDisplayName == "Delete access review"
 ```
 
 ## Entitlement management
@@ -130,11 +130,19 @@ AuditLogs
 AuditLogs
 | where Category == "WorkflowManagement"
 | where ActivityDisplayName in ('On-demand workflow execution completed', 'Scheduled workflow execution completed')
-| where Result == "failure"
+| where Result != "success"
 | mvexpand TargetResources 
 | extend  WorkflowName=TargetResources.displayName
-| where WorkflowName in ('<input workflow name>', '<input workflow name>')
-| distinct Id
+| where WorkflowName in ('input workflow name', 'input workflow name')
+| extend WorkflowType = AdditionalDetails[0].value 
+| extend DisplayName = AdditionalDetails[1].value 
+| extend ObjectId = AdditionalDetails[2].value 
+| extend UserCount = AdditionalDetails[3].value 
+| extend Users = AdditionalDetails[4].value 
+| extend RequestId = AdditionalDetails[5].value 
+| extend InitiatedBy = InitiatedBy.app.displayName 
+| extend Result = Result 
+| project WorkflowType, DisplayName, ObjectId, UserCount, Users, RequestId, Id, Result,ActivityDisplayName
 ```
 
 <u>Alert logic</u>
@@ -185,7 +193,7 @@ AuditLogs
 
 ### Alert an IT admin when a user is added to a role outside of PIM
 
-The query below is based on a templateId. You can find a list of template IDs [here](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference).
+The query below is based on a templateId. You can find a list of template IDs [here](/entra/identity/role-based-access-control/permissions-reference).
 
 *Query*
 
@@ -197,14 +205,15 @@ AuditLogs
 
 ## Provisioning
 
-### Alert an IT administrator when there is a spike in provisioning failures over a 24 hour period.
+**Alert an IT administrator when there is a spike in provisioning failures over the past day.**
+When configuring your alert in log analytics, set the aggregration granularity to 1-day.
 
 *Query*
 
 ```
 AADProvisioningLogs
-| where JobId == “<input JobId>”
-| where resultType == “Failure”
+| where JobId == "<input JobId>"
+| where resultType == "Failure"
 ```
 
 
