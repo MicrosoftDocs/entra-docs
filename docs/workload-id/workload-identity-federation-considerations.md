@@ -37,11 +37,12 @@ Federated identity credentials don't consume the Microsoft Entra tenant service 
 Creation of federated identity credentials is currently **not supported** on user-assigned managed identities created in the following regions:
 
 - East Asia
-- Qatar Central
-- Malaysia South
-- Italy North
 - Israel Central
+- Italy North
+- Malaysia South
 - Mexico Central
+- Qatar Central
+- Spain Central
 
 Support for creating federated identity credentials on user assigned identities in these regions will be gradually rolled out. 
 Resources in this region which need to use federated identity credentials, can do so by leveraging a user assigned managed identity created in a supported region. 
