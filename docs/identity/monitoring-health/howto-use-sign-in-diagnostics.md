@@ -167,7 +167,7 @@ In enterprise applications, problems might occur with the identity provider (Mic
 
 - **Enterprise apps service provider**: If the sign-in failed due to a problem with the service provider (application) side of the sign-in flow, the issue is resolved by fixing problems on the application service. You need to sign into the other service and change some configuration per the diagnostic guidance.
 
-- **Enterprise apps configuration**: If the sign-in failed due to a configuration issue on the Microsoft Entra ID side of the application, you need to reviewe and update the configuration of the application in Enterprise Applications.
+- **Enterprise apps configuration**: If the sign-in failed due to a configuration issue on the Microsoft Entra ID side of the application, you need to review and update the configuration of the application in Enterprise Applications.
 
 ### Security defaults
 
@@ -199,9 +199,9 @@ This scenario is where risk-based Conditional Access policies block a sign-in at
 
 For more information, see [How to configure and enable risk policies](../../id-protection/howto-identity-protection-configure-risk-policies.md).
 
-### Pass Through Authentication
+### Pass through authentication
 
-Because pass trough authentication is an integration of on premises and cloud authentication technologies, it can be difficult to determine where the problem lies. This diagnostic is intended to make these scenarios easier to diagnose and resolve.
+Because pass through authentication is an integration of on premises and cloud authentication technologies, it can be difficult to determine where the problem lies. This diagnostic is intended to make these scenarios easier to diagnose and resolve.
 
 This diagnostic scenario identifies user specific sign-in issues when the authentication method being used is pass through authentication (PTA) and there's a PTA specific error. Errors due to other problems-even when PTA authentication is being used-will still be diagnosed correctly.
 

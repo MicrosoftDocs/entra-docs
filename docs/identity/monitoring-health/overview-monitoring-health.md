@@ -96,6 +96,6 @@ How you use the logs, reports, and monitoring services available depends on your
 
 With Microsoft Entra monitoring, you can route Microsoft Entra activity logs and retain them for long-term reporting and analysis to gain environment insights, and integrate it with SIEM tools. Use the following decision flow chart to help select an architecture.
 
-   ![Decision matrix for business-need architecture.](media/overview-monitoring-health/deploy-reporting-flow-diagram.png)
+   ![Graphic of decision matrix for business-need architecture.](media/overview-monitoring-health/deploy-reporting-flow-diagram.png)
 
 For an overview of how to access, store, and analyze activity logs, see [How to access activity logs](howto-access-activity-logs.md).
