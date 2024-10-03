@@ -30,7 +30,7 @@ For more information see [least privilege with Microsoft Entra ID Governance](le
 
 Groups can control access to various resources, including Microsoft Entra roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Microsoft Entra ID allows you to grant users just-in-time membership and ownership of groups through Privileged Identity Management (PIM) for Groups. These groups can be “flat” or “nested groups” (a non-role assignable group is a member of a role assignable group). Roles such as the groups admin, exchange admin, and knowledge admin can manage the non-role assignable group, providing these admins a path to gain access to privileged roles. Ensure that role-assignable groups don't have non-role assignable groups as members.
 
-For more information, see [Privileged Identity Management (PIM) for Groups](privileged-identity-management/concept-pim-for-groups.md#privileged-identity-management-and-group-nesting) 
+For more information, see [Privileged Identity Management (PIM) for Groups](../privileged-identity-management/concept-pim-for-groups.md#privileged-identity-management-and-group-nesting) 
 
 **Recommendation:** Use Entitlement Management to provide access to sensitive resources, instead of hybrid groups. 
 
@@ -62,7 +62,7 @@ This scope ensures that only users explicitly assigned to your sync configuratio
 
 With Privileged Identity Management (PIM) in Microsoft Entra ID you can configure roles to require approval for activation, and choose one or multiple users or groups as delegated approvers.  
 
-For more information, see [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](privileged-identity-management/pim-approval-workflow.md)
+For more information, see [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](../privileged-identity-management/pim-approval-workflow.md)
 
 ## Defense in depth 
 
@@ -107,7 +107,7 @@ Back up your configuration so you can recover to a known good state in the case 
 
 Monitoring helps detect potential threats and vulnerabilities early. By watching for unusual activities and configuration changes, you can prevent security breaches and maintain data integrity. 
 
- - Alert when users activate privileged roles. [Security alerts for Microsoft Entra roles in PIM - Microsoft Entra ID Governance](privileged-identity-management/pim-how-to-configure-security-alerts.md)
+ - Alert when users activate privileged roles. [Security alerts for Microsoft Entra roles in PIM - Microsoft Entra ID Governance](../privileged-identity-management/pim-how-to-configure-security-alerts.md)
  - Proactively monitor your environment for configuration changes and suspicious activity by integrating Microsoft Entra ID Audit Logs with Azure Monitor. [Identity Governance custom alerts - Microsoft Entra ID Governance](../governance-custom-alerts.md)
 
  ## Next steps
