@@ -94,7 +94,7 @@ If you have existing emergency access accounts that only require a password to s
 During an emergency, you don't want a policy to potentially block your access in the case of a misconfiguration or to fix an issue. If you use Conditional Access, at least one emergency access account needs to be excluded from all Conditional Access policies.
 
 > [!NOTE]
-> Starting July 2024, Azure teams will begin rolling out additional tenant-level security measures to require multifactor authentication (MFA) for all users. For more information, see [Planning for mandatory multifactor authentication for Azure and other admin portals](../authentication/concept-mandatory-multifactor-authentication.md).
+> Starting July 2024, Azure teams will begin rolling out additional tenant-level security measures to require multifactor authentication (MFA) for all users signing in to the Azure portal, Microsoft Entra admin center, or Intune admin center. For more information, see [Planning for mandatory multifactor authentication for Azure and other admin portals](../authentication/concept-mandatory-multifactor-authentication.md).
 > 
 > As already documented, use strong authentication for your emergency access accounts. We recommend updating these accounts to use FIDO2 or certificate-based authentication (when configured as MFA) instead of relying only on a long password. Both methods will satisfy the MFA requirements.
 
@@ -114,8 +114,6 @@ Some organizations use AD Domain Services and AD FS or similar identity provider
 ## Store account credentials safely
 
 Organizations need to ensure that the credentials for emergency access accounts are kept secure and known only to individuals who are authorized to use them. Some customers use a smartcard for Windows Server AD, a [FIDO2 security key](~/identity/authentication/howto-authentication-passwordless-security-key.md) for Microsoft Entra ID and others use passwords. A password for an emergency access account is usually separated into two or three parts, written on separate pieces of paper, and stored in secure, fireproof safes that are in secure, separate locations.
-
-If using passwords, make sure the accounts have strong passwords that don't expire. Ideally, the passwords should be at least 16 characters long and randomly generated.
 
 ## Monitor sign-in and audit logs
 
