@@ -31,7 +31,7 @@ The following table shows what features are available with each license.  Not al
 |[Entitlement management + Auto Assignment Policies](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Directly Assign Any User(Preview)](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Guest Conversion API](~/id-governance/entitlement-management-access-package-manage-lifecycle.md)|||| :white_check_mark: | :white_check_mark: |
-|[Entitlement management - Grace Period(Preview)](~/id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Entitlement management - Grace Period](~/id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[My Access portal](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Microsoft Entra Roles (Preview)](~/id-governance/entitlement-management-roles.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Sponsors Policy](~/id-governance/entitlement-management-access-package-create.md)|||| :white_check_mark: | :white_check_mark: |
