@@ -81,7 +81,7 @@ You can also migrate policy settings manually. The migration has three settings 
 After migration is complete, methods in the legacy MFA and SSPR policies can be disabled. You can centralize control over authentication methods for both sign-in and SSPR in a single place, and the legacy MFA and SSPR policies will be disabled.
 
 >[!Note]
->Security questions can only be enabled today by using the legacy SSPR policy. In the future, it will be made available in the Authentication methods policy. If you're using security questions, and don't want to disable them, make sure to keep them enabled in the legacy SSPR policy until the new control is available in the future. You can migrate the remainder of your authentication methods and still manage security questions in the legacy SSPR policy.
+>Security questions can only be enabled today by using the legacy SSPR policy. If you're using security questions, and don't want to disable them, make sure to keep them enabled in the legacy SSPR policy until a migration control is available. You can migrate the remainder of your authentication methods and still manage security questions in the legacy SSPR policy.
 
 To view the migration options, open the Authentication methods policy and click **Manage migration**.
 
