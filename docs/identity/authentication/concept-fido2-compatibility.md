@@ -32,7 +32,7 @@ The following tables lists which authentication brokers are supported for differ
 | OS | Authentication broker           | Supports FIDO2 |
 |------------------|---------------------------------|----------------|
 | **iOS**              | Microsoft Authenticator         | &#x2705;       |
-| **macOS**            | Microsoft Intune Company Portal <sup>1</sup> | &#x2705;       |
+| **macOS**            | Microsoft Intune Company Portal<sup>1</sup> | &#x2705;       |
 | **Android**<sup>2</sup> | Authenticator or Company Portal | &#10060;    |
 
 <sup>1</sup>On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. For FIDO2 authentication, make sure that you run the latest version of native applications. 
@@ -65,9 +65,9 @@ This table shows browser support for authenticating Microsoft Entra ID and Micro
 | **ChromeOS**  | &#x2705; | N/A | N/A | N/A |
 | **Linux**  | &#x2705; | &#10060; | &#10060; | N/A |
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
-| **Android**  | &#x2705; | &#x2705; | &#10060; | N/A |
+| **Android**  | &#x2705; | &#x2705;<sup>1</sup> | &#10060; | N/A |
 
-[!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
+<sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
 
 ## Web browser support for each platform
 

@@ -6,9 +6,9 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 3/23/2023
+ms.date: 10/03/2023
 ms.author: justinha
-ms.reviewer: ajburnle
+ms.reviewer: justinha
 ---
 # Azure resource management fundamentals
 
@@ -167,7 +167,7 @@ Microsoft Entra Domain Services provides a managed domain to facilitate authenti
 
 An Azure AD B2C tenant is linked to an Azure subscription for billing and communication purposes. Azure AD B2C tenants have a self-contained role structure in the directory, which is independent from the Azure RBAC privileged roles of the Azure subscription.
 
-When the Azure AD B2C tenant is initially provisioned, the user creating the B2C tenant must have contributor or owner permissions in the subscription. Upon creation, that user becomes the first Azure AD B2C tenant [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) and they can later create other accounts and assign them to directory roles.
+When the Azure AD B2C tenant is initially provisioned, the user creating the B2C tenant must have contributor or owner permissions in the subscription. They can later create other accounts and assign them to directory roles. For more information, see [Overview of role-based access control in Microsoft Entra ID](/identity/role-based-access-control/custom-overview).
 
 It's important to note that the owners and contributors of the linked Microsoft Entra subscription can remove the link between the subscription and the directory, which will affect the ongoing billing of the Azure AD B2C usage.
 

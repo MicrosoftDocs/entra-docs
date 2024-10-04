@@ -138,9 +138,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     ![Screenshot that shows the Users tile in the Adobe Experience Manager.](./media/adobe-experience-manager-tutorial/user.png)
 
 3. Select **Administrator** or any other relevant user.
-
-    ![Screenshot that highlights the Adminisrator user.](./media/adobe-experience-manager-tutorial/administrator.png)
-
 4. Select **Account settings** > **Manage TrustStore**.
 
     ![Screenshot that shows Manage TrustStore under Account settings.](./media/adobe-experience-manager-tutorial/manage-trust.png)

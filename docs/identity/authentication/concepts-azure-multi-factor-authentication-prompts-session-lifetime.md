@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
-ms.date: 09/14/2023
+ms.date: 10/04/2024
 
 ms.author: justinha
 author: justinha
@@ -108,7 +108,7 @@ Under each sign-in log, go to the **Authentication Details** tab and explore **S
 
 To configure or review the *Remain signed-in* option, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. [!INCLUDE [Privileged role](../../includes/privileged-role-include.md)]
 1. Browse to **Identity** > **Company Branding**, then for each locale, choose **Show option to remain signed in**.
 1. Choose *Yes*, then select **Save**.
 

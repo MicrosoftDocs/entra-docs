@@ -195,7 +195,7 @@ Use the Microsoft Privacy portal to make a request for Account Close to delete a
 
 Users can add answers to security questions as part of SSPR. Security questions and answers are hashed to prevent unauthorized access. Only the hashed data is saved, so the security questions and answers can't be exported. Users can go to [My sign-ins](https://mysignins.microsoft.com/security-info) to edit or delete them. The only other information saved for SSPR is the user email address. 
 
-Global Administrators can remove data collected for any user. On the **Users** page in Microsoft Entra ID, click **Authentication methods** and select a user to remove their phone or email address. 
+Those assigned the [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator) role can remove data collected for any user. On the **Users** page in Microsoft Entra ID, click **Authentication methods** and select a user to remove their phone or email address. 
 
 ## Next steps
 
