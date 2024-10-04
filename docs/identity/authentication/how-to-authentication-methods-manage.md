@@ -34,12 +34,21 @@ The first page of the wizard explains what it is and how it works. It also provi
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/wizard-first-page.png" alt-text="Screenshot of the Authentication methods policy blade with highlighted wizard first page."
 
 
-The second page of the wizard is a generated configuration for the authentication method policy based on what your organization currently has enabled in the legacy MFA and SSPR policies. If a method is enabled in either legacy policy, the suggested configuration will have it enabled as well such that users aren't suddenly blocked from authenticating or performing self-service password reset with a method they could previous use. In addition, we will recommend enabling the latest modern, secure methods like Passkeys, Temporary Access Pass, and Microsoft Authenticator to help increase your organizations security posture. You can edit the suggested configuration by selecting the pencil icon located next to each method. 
+The wizard then configures the Authentication method policy based on what your organization currently has enabled in the legacy MFA and SSPR policies. 
+If a method is enabled in either legacy policy, the recommendation is to also enable it in the Authentication method policy. 
+With that configuration, users can continue to sign in and reset their password by using the same method they used previously. 
+
+In addition, we recommend you enable the latest modern, secure methods like passkeys, Temporary Access Pass, and Microsoft Authenticator to help improve your organizations security posture. 
+To edit the recommended configuration, select the pencil icon next to each method. 
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/wizard-second-page.png" alt-text="Screenshot of the Authentication methods policy blade with highlighted wizard second page."
 
+Once you're happy with the configuration, select **Migrate**, and then confirm the migration. 
+The Authentication methods policy gets updated to match the configuration specified in the wizard. 
+Authentication methods in the legacy MFA and SSPR policies become grayed out and no longer apply. 
 
-Once you are happy with the configuration, you can select **Migrate** and click through the subsequent confirmation dialogue to confirm the migration. The authentication methods policy will be updated to match the configuration specified in the wizard, authentication methods in the legacy MFA and SSPR policies will be grayed out and no longer apply, and your migration status will be updated to **Migration Complete**. You can change this status back to **In Progress** anytime to re-enable methods in the legacy policies if needed.
+Your migration status will be updated to **Migration Complete**. 
+You can change this status back to **In Progress** anytime to re-enable methods in the legacy policies if needed.
 
 ## Manual migration
 
