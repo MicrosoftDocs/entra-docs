@@ -3348,5 +3348,9 @@
   "Business Central Business Foundation": "f3552374-a1f2-4356-848e-196002525837",
   "Change password": "AB721A53-1E2F-11D0-9819-00AA0040529B",
   "ID of the Prevhost.exe surrogate host GUID" : "6d2b5079-2f0b-48dd-ab7f-97cec514d30b",
-  "32-bit preview handlers GUID" : "534A1E02-D58F-44f0-B58B-36CBED287C7C"
+  "32-bit preview handlers GUID" : "534A1E02-D58F-44f0-B58B-36CBED287C7C",
+  "Microsoft Graph Object ID" : "7ea9e944-71ce-443d-811c-71e8047b557a",
+  "Partner Customer Delegated Administration" : "2832473f-ec63-45fb-976f-5d45a7d4bb91",
+  "Microsoft Graph Explorer" : "de8bc8b5-d9f9-48b1-a8ad-b748da725064",
+  "Designated empty GUID" : "00000000-0000-0000-0000-000000000000"
 }
