@@ -181,7 +181,9 @@ With password hash synchronization enabled, this AD password hash is synced with
 
 > [!NOTE]
 > With the release of [version 2.4.18.0](reference-connect-version-history.md#24180) of Microsoft Entra Connect Sync, we fixed an issue that occurred when SCRIL is re-enabled on a user object. Re-enabling SCRIL is common in scenarios when a user loses their smart card, necessitating that SCRIL is disabled and the user is provided with a temporary password until they are issued a new smart card
+>
 > Previously, when SCRIL was re-enabled and a new randomized AD password was generated, the user was still able to use their old password to authenticate to Entra ID. Now, Connect Sync has been updated so that new randomized AD password is synced to Entra ID and the old password cannot be used once smart card login is enabled. 
+>
 > We recommend that admins perform a full sync if you have users with a SCRIL bit in your AD domain. If you do perform a full sync, there’s a chance that end users will be asked to re-login with the updated password if certificate-based authentication is not used. 
 
 ### Overwrite synchronized passwords
