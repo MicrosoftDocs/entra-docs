@@ -149,8 +149,6 @@ You can reuse settings to publish more applications.
 4. Confirm the BIG-IP connects to your tenant.
 5. Select **Next**
 
-   ![Screenshot of entries and options for Configuration Properties.](./media/f5-big-ip-easy-button-ldap/config-properties.png)
-
 ### Service Provider
 
 In Service Provider settings, define SAML SP instance settings for the SHA-protected application.
