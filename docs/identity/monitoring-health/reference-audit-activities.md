@@ -166,10 +166,6 @@ If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-ap
 
 The Audit logs for Authentication Methods can be used to make sure that your users have registered their mobile device properly to enable multifactor authentication.
 
-Audit events related to GDPR and data protection are also found in this service and are found in the `DirectoryManagement` category.
-
-[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-dsr-and-stp-note.md)] 
-
 |Audit Category|Activity|
 |---|---|
 |ApplicationManagement|Assign Hardware Oath Token|
