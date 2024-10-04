@@ -317,9 +317,6 @@ Configure Oracle Access Manager to accept SSO from the BIG-IP.
 11.    On **Security** tab, in **Public Users**, select **Allow Public Access**.
 12.    For **User ID**, enter **OAMPSFT**.
 13.    Enter the **Password**.
-
-![Screenshot of options and selections for Public Users.](./media/f5-big-ip-easy-button-oracle-peoplesoft/web-profiles.png)
- 
 14.    Leave the Peoplesoft console.
 15.    Start **PeopleTools Application Designer**.
 16.    Right-click the **LDAPAUTH** field.

@@ -155,9 +155,6 @@ In Service Provider settings, define SAML SP instance settings for the SHA-prote
 
 1. Enter a **Host**, the application public FQDN.
 2. Enter an **Entity ID**, the identifier Microsoft Entra ID uses to identify the SAML SP requesting a token.
-
-   ![Screenshot of input fields for Service Provider.](./media/f5-big-ip-easy-button-ldap/service-provider.png)
-
 3. (Optional) In Security Settings, select **Enable Encryption Assertion** to enable Microsoft Entra ID to encrypt issued SAML assertions. Microsoft Entra ID and BIG-IP APM encryption assertions help assure content tokens aren't intercepted, nor personal or corporate data compromised.
 
 4. In **Security Settings**, from the **Assertion Decryption Private Key** list, select **Create New**.
