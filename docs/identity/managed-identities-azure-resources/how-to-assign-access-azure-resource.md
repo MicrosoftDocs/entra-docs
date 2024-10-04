@@ -2,15 +2,15 @@
 title: Assign a managed identity access to an Azure resource or another resource
 description: Step-by-step instructions for assigning a managed identity access to an Azure resource or another resource.
 
-author: barclayn
-manager: amycolannino
+author: rwike77
+manager: CelesteDG
 
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 06/03/2024
-ms.author: barclayn
+ms.author: ryanwi
 
 ms.custom: devx-track-azurepowershell
 

@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 09/02/2024
+ms.date: 10/01/2024
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -15,6 +15,18 @@ ms.topic: whats-new
 # Microsoft identity platform docs: What's new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
+
+## September 2024
+
+### New articles
+
+- [Set up an Android device in Shared Device Mode](tutorial-mobile-android-device-shared-mode.md)
+
+### Updated articles
+
+- [Overview of shared device mode](msal-shared-devices.md) - Added clarity to the content
+- [Shared device mode for Android devices](msal-android-shared-devices.md) - Added clarity to the content
+- [Tutorial: Add shared-device mode support to your Android application](tutorial-v2-shared-device-mode.md) - Added clarity to the content
 
 ## August 2024
 
@@ -34,15 +46,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Customize claims issued in the JSON web token (JWT) for enterprise applications](jwt-claims-customization.md) - Updating the script with a working version
 - [Troubleshoot publisher verification](troubleshoot-publisher-verification.md) - Removed reference to Postman
 - [Restrict a Microsoft Entra app to a set of users](howto-restrict-your-app-to-a-set-of-users.md) - Added clarity to the content
-
-
-## June 2024
-
-### Updated articles
-
-- [Microsoft identity platform code samples](sample-v2-code.md) - Removed archived samples from code sample page and articles
-- [Quickstart: Configure a client application to access a web API](quickstart-configure-app-access-web-apis.md) - Added clarity to the content
-- [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md) - Added clarity to the content
-- [Quickstart: Sign in users and call Microsoft Graph from an Android app](quickstart-mobile-app-android-sign-in.md) - Added clarity to the content
-- [Redirect URI (reply URL) outline and restrictions](reply-url.md) - Added clarity to the content
-

@@ -12,7 +12,7 @@ ms.author: cmulligan
 
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
 ---
-# Native authentication (preview)
+# Native authentication
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 

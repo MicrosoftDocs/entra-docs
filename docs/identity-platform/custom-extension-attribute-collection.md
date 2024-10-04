@@ -4,7 +4,7 @@ description: Learn how to develop and register a Microsoft Entra custom authenti
 author: msmimart
 manager: CelesteDG
 ms.author: mimart
-ms.date: 01/23/2024
+ms.date: 10/01/2024
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -667,7 +667,10 @@ In your app registration, under **Overview**, copy the **Application (client) ID
 
 ### 4.3 Enable implicit flow
 
-The **jwt.ms** test application uses the implicit flow. Enable implicit flow in your *My Test application* registration:
+The **jwt.ms** test application uses the implicit flow. Enable implicit flow in your *My Test application* registration with the following steps.
+
+> [!IMPORTANT]
+> Microsoft recommends using the most secure authentication flow available. The authentication flow used for testing in this procedure requires a very high degree of trust in the application, and carries risks that are not present in other flows. This approach shouldn't be used for authenticating users to your production apps ([learn more](v2-oauth2-implicit-grant-flow.md)).
 
 1. Under **Manage**, select **Authentication**.
 1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.

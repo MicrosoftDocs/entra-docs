@@ -713,6 +713,9 @@
           href: /entra/msal/python/
     - name: Protocol reference (OAuth, OIDC, SAML)
       items:
+        - name: OAuth 2.0 application types
+          displayName: App types, OAuth
+          href: v2-app-types.md
         - name: OAuth 2.0 and OpenID Connect (OIDC)
           items:
             - name: Token grant flows
@@ -733,9 +736,6 @@
                   href: v2-oauth-ropc.md
                 - name: OpenID Connect
                   href: v2-protocols-oidc.md
-            - name: OAuth 2.0 application types
-              displayName: App types, OAuth
-              href: v2-app-types.md
             - name: Certificate credentials
               href: certificate-credentials.md
             - name: Signing key rollover

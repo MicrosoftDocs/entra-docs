@@ -1,6 +1,6 @@
 ---
-title: Approve and manage Microsoft Support access requests (preview)
-description: How to approve and manage Microsoft Support access requests to Microsoft Entra identity data
+title: Approve and manage support access requests (preview)
+description: Learn how to approve and manage the Microsoft Support access requests to Microsoft Entra identity data
 author: shlipsey3
 manager: amycolannino
 ms.author: sarahlipsey
@@ -8,7 +8,9 @@ ms.reviewer: jeffsta
 ms.service: entra
 ms.topic: how-to
 ms.subservice: fundamentals
-ms.date: 02/20/2024
+ms.date: 09/27/2024
+
+# Customer intent: As an IT admin, I want to learn how to approve and manage Microsoft Support access requests to Microsoft Entra identity data so that I can troubleshoot issues with Microsoft Support.
 ---
 
 # Approve and manage Microsoft Support access requests (preview)
@@ -37,7 +39,7 @@ Only authorized users in your tenant can view and manage Microsoft Support acces
 
 ## Approve or reject a support request
 
-You can approve or reject a support request from the Microsoft Support Access Requests (Preview) section. If you have a pending request, a banner message appears at the top of the page with a link to manage pending requests.
+You can approve or reject a support request from the Microsoft Support Access Requests (Preview) section. If you have a pending request, a banner message appears at the top of the page with a link to the manage pending requests.
 
 :::image type="content" source="media/how-to-manage-support-access-requests/diagnose-solve-problems-banner.png" alt-text="Screenshot of the Diagnose and solve problems page with the banner notification highlighted.":::
 
