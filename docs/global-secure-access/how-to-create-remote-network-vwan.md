@@ -3,7 +3,7 @@ title: Simulate remote network connectivity using Azure vWAN
 description: Use Global Secure Access to configure Azure and Microsoft Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/02/2024
+ms.date: 10/04/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -386,7 +386,7 @@ To test (option 1):
 Repeat the tenant restriction test from the previous section: 
 1. Sign in to the Azure Virtual Desktop virtual machine created in the previous steps.
 1. Go to www.office.com and sign in with an internal organization ID. This test should pass successfully.
-1. Repeat the previous step, but with an *external account*. This test should fail because the source **IP address** in the error message is coming from the VPN gateway public IP address instead of the Microsoft SSE proxying the request to Microsoft Entra.
+1. Repeat the previous step, but with an *external account*. This test should fail because the source **IP address** in the error message is coming from the VPN gateway public IP address instead of the Microsoft SSE proxying the request to Microsoft Entra.   
 :::image type="content" source="media/how-to-create-remote-network-vwan/access-blocked-troubleshooting-details-with-highlight.png" alt-text="Screenshot of the 'Access is blocked' message with the IP address highlighted.":::
 
 To test (option 2):

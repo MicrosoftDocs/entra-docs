@@ -5,7 +5,7 @@ ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
 ms.topic: how-to
-ms.date: 10/02/2024
+ms.date: 10/04/2024
 ms.service: global-secure-access
 ms.reviewer: absinh
 
@@ -136,6 +136,8 @@ Content-Type: application/json
     "bandwidthCapacityInMbps": "mbps250"
 }
 ```
+
+---
 
 
 ## Next steps
