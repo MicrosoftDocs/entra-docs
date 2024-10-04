@@ -50,7 +50,7 @@ sections:
       - question: |
           How can I prevent users from being looped between Authenticator and Security info when they add a passkey?
         answer: |
-          If you configure an authentication strength Conditional Access policy with the following conditions, users can get caught in a loop when they try to sign in: 
+          If you configure an authentication strength Conditional Access policy that requires phishing-resistant authentication to access cloud apps, users can get caught in a loop when they try to sign in. An sample configuration of such a policy is: 
 
           - Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
           - Targeted resource: **All cloud apps** 
