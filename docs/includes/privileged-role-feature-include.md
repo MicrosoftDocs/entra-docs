@@ -1,5 +1,5 @@
 ---
-title: include file for prviviled role needed for feature
+title: Include file for prvileged role needed for feature
 description: include file
 author: justinha
 manager: amycolannino

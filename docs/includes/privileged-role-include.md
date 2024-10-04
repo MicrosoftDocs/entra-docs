@@ -1,5 +1,5 @@
 ---
-title: include file for prviviled role in step one
+title: Include file for privileged role in step one
 description: include file
 author: justinha
 manager: amycolannino
