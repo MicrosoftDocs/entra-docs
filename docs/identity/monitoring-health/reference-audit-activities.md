@@ -166,7 +166,7 @@ If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-ap
 
 The Audit logs for Authentication Methods can be used to make sure that your users have registered their mobile device properly to enable multifactor authentication.
 
-Audit events related to GDPR and data protection are also found in this service and are found in the `DirectoryManagement` category. These events include strings like `MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` and `DSR Export: MFA.PostgreSQL.bypassed_users_creations`. 
+Audit events related to GDPR and data protection are also found in this service and are found in the `DirectoryManagement` category.
 
 [!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-dsr-and-stp-note.md)] 
 
@@ -1006,13 +1006,11 @@ Use the Invited users logs to help you manage the status of users who were invit
 |---|---|
 |UserManagement|Delete external user|
 |UserManagement|Email not sent, user unsubscribed|
-|UserManagement|Email subscribed|
-|UserManagement|Email unsubscribed|
+|UserManagement|Invitation Email|
 |UserManagement|Invite external user|
 |UserManagement|Invite external user with reset invitation status|
 |UserManagement|Invite internal user to B2B collaboration|
 |UserManagement|Redeem external user invite|
-|UserManagement|Viral user creation|
 
 ## Lifecycle Workflows
 
@@ -1066,8 +1064,18 @@ If you're using [MIM](/microsoft-identity-manager/microsoft-identity-manager-201
 
 |Audit Category|Activity|
 |---|---|
-|PolicyManagement|Delete policy|
-|PolicyManagement|Update mobility management policy|
+|Authentication|User confirmed unusual sign-in event as legitimate|
+|Authentication|User reported unusual sign-in event as not legitimate|
+|UserManagement|User changed default security info|
+|UserManagement|User deleted security info|
+|UserManagement|User registered security info|
+|UserManagement|User started security info registration|
+
+## MyAccess
+
+|Audit Category|Activity|
+|---|---|
+|ApplicationManagement|Create application collection|
 
 ## MyApps
 
@@ -1293,11 +1301,9 @@ Many of the activities in this group are associated with background processes re
 |Audit Category|Activity|
 |---|---|
 |GroupManagement|ApprovalNotification_Create|
-|GroupManagement|Autorenew group|
 |GroupManagement|Approval_Act|
 |GroupManagement|Approval_Get|
 |GroupManagement|Approval_GetAll|
-|GroupManagement|Approvals_ActOnApproval|
 |GroupManagement|Approvals_Post|
 |GroupManagement|Approve a pending request to join a group|
 |GroupManagement|Cancel a pending request to join a group|
@@ -1343,6 +1349,7 @@ Many of the activities in this group are associated with background processes re
 |GroupManagement|Reject a pending request to join a group|
 |GroupManagement|Renew group|
 |GroupManagement|Request to join a group|
+|GroupManagement|set dynamic group properties|
 |GroupManagement|Settings_GetSettingsAsync|
 |GroupManagement|Update lifecycle management policy|
 |GroupManagement|User_Create|
@@ -1392,6 +1399,7 @@ The Self-service password management logs provide insight into changes made to p
 |Audit Category|Activity|
 |---|---|
 |ResourceManagement|Create authority|
+|ResourceManagement|Create authorization policy|
 |ResourceManagement|Create contract|
 |ResourceManagement|Create issuance policy|
 |ResourceManagement|Delete issuance policy|
