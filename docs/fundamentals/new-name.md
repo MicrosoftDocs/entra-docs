@@ -205,7 +205,7 @@ Only official product names are capitalized, plus Conditional Access and My * ap
 
 |  **Category**           | **Old terminology** | **Correct name as of July 2023** |
 |-------------------------|---------------------|----------------------------------|
-| **Microsoft Entra product family** | Microsoft Azure Active Directory<br/> Azure Active Directory<br/> Azure Active Directory (Azure AD)<br/> Azure AD<br/> AAD | Microsoft Entra ID<br/> (Second use: Microsoft Entra ID is preferred, ME-ID if abbreviation is necessary) |
+| **Microsoft Entra product family** | Microsoft Azure Active Directory<br/> Azure Active Directory<br/> Azure Active Directory (Azure AD)<br/> Azure AD<br/> AAD | Microsoft Entra ID<br/> (Second use: Microsoft Entra ID is preferred, Entra ID should be used sparingly and only when space is truly limited) <br/><br/>Acronym usage isn't encouraged, but if you must replace AAD with an acronym due to space limitations, use ME-ID. |
 |       | Azure Active Directory External Identities<br/> Azure AD External Identities | Microsoft Entra External ID<br/> (Second use: External ID) |
 |       | Azure Active Directory Identity Governance<br/> Azure AD Identity Governance<br/> Microsoft Entra Identity Governance | Microsoft Entra ID Governance<br/> (Second use: ID Governance) |
 |       | *New* | Microsoft Entra Internet Access<br/> (Second use: Internet Access) |
