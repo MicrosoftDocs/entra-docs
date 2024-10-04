@@ -39,7 +39,7 @@ You can also follow along in a related video: [How to enable and configure SSPR 
 
 To finish this tutorial, you need the following resources and privileges:
 
-* A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 license is required for password reset. For more information about license requirements for password change and password reset in Entra ID, see [Licensing requirements for Microsoft Entra self-service password reset](concept-sspr-licensing.md).
+* A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 license is required for password reset. For more information about license requirements for password change and password reset in Microsoft Entra ID, see [Licensing requirements for Microsoft Entra self-service password reset](concept-sspr-licensing.md).
 * An account with at least the Authentication Policy Administrator role.
 * A non-administrator user with a password you know, like *testuser*. You'll test the end-user SSPR experience using this account in this tutorial.
     * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
