@@ -64,8 +64,8 @@ Make sure the server that you're using for Azure multifactor authentication meet
 
 There are three web components that make up Azure Multi-Factor Authentication Server:
 
-* Web Service SDK - Enables communication with the other components and is installed on the Microsoft Entra multifactor authentication application server
-* User portal - An Internet Information Services (IIS) website that allows users to enroll in Azure multifactor authentication and maintain their accounts.
+* Web Service SDK - Enables communication with the other components and is installed on the Azure Multi-Factor Authentication Server application server
+* User portal - An Internet Information Services (IIS) website that allows users to enroll in Microsoft Entra multifactor authentication and maintain their accounts.
 * Mobile App Web Service - Enables using a mobile app like the Microsoft Authenticator app for two-step verification.
 
 All three components can be installed on the same server if the server is internet-facing. If breaking up the components, the Web Service SDK is installed on the Microsoft Entra multifactor authentication application server and the User portal and Mobile App Web Service are installed on an internet-facing server.
