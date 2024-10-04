@@ -7,6 +7,7 @@ ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 10/04/2024
 
+
 ms.author: justinha
 author: justinha
 ms.reviewer: jpettere
@@ -15,13 +16,41 @@ manager: amycolannino
 ---
 # How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID 
 
-You can migrate Microsoft Entra ID [legacy policy settings](concept-authentication-methods-manage.md#legacy-mfa-and-sspr-policies) that separately control multifactor authentication and self-service password reset (SSPR) to unified management with the [Authentication methods policy](./concept-authentication-methods-manage.md). 
+You can migrate Microsoft Entra ID [legacy policy settings](concept-authentication-methods-manage.md#legacy-mfa-and-sspr-policies) that separately control multifactor authentication (MFA) and self-service password reset (SSPR) to unified management with the [Authentication methods policy](./concept-authentication-methods-manage.md). 
 
-You migrate policy settings on your own schedule, and the process is fully reversible. You can continue to use tenant-wide MFA and SSPR policies while you configure authentication methods more precisely for users and groups in the Authentication methods policy. You complete the migration whenever you're ready to manage all authentication methods together in the Authentication methods policy.
+You can use the authentication methods migration guide (preview) in the Microsoft Entra admin center to automate the migration. The guide provides a wizard to help audit your current policy settings for MFA and SSPR. Then it consolidates those settings in the Authentication methods policy, where they can be managed together more easily.
+
+You can also migrate policy settings manually on your own schedule. The migration process is fully reversible. You can continue to use tenant-wide MFA and SSPR policies while you configure authentication methods more precisely for users and groups in the Authentication methods policy. 
 
 For more information about how these policies work together during migration, see [Manage authentication methods for Microsoft Entra ID](concept-authentication-methods-manage.md).
 
-## Before you begin
+## Automated migration guide
+The automated migration guide lets you migrate where you manage authentication methods in just a few clicks. It can be accessed from the [Microsoft Entra admin center](https://entra.microsoft.com) by browsing to **Protection** > **Authentication methods** > **Policies**.
+
+:::image type="content" border="false" source="media/how-to-authentication-methods-manage/wizard-entry-point.png" alt-text="Screenshot of the Authentication methods policy blade with highlighted wizard entry point."
+
+The first page of the wizard explains what it is and how it works. It also provides links to each of the legacy policies for your reference. 
+
+:::image type="content" border="false" source="media/how-to-authentication-methods-manage/wizard-first-page.png" alt-text="Screenshot of the Authentication methods policy blade with highlighted wizard first page."
+
+
+The wizard then configures the Authentication method policy based on what your organization currently has enabled in the legacy MFA and SSPR policies. 
+If a method is enabled in either legacy policy, the recommendation is to also enable it in the Authentication method policy. 
+With that configuration, users can continue to sign in and reset their password by using the same method they used previously. 
+
+In addition, we recommend you enable the latest modern, secure methods like passkeys, Temporary Access Pass, and Microsoft Authenticator to help improve your organizations security posture. 
+To edit the recommended configuration, select the pencil icon next to each method. 
+
+:::image type="content" border="false" source="media/how-to-authentication-methods-manage/wizard-second-page.png" alt-text="Screenshot of the Authentication methods policy blade with highlighted wizard second page."
+
+Once you're happy with the configuration, select **Migrate**, and then confirm the migration. 
+The Authentication methods policy gets updated to match the configuration specified in the wizard. 
+Authentication methods in the legacy MFA and SSPR policies become grayed out and no longer apply. 
+
+Your migration status will be updated to **Migration Complete**. 
+You can change this status back to **In Progress** anytime to re-enable methods in the legacy policies if needed.
+
+## Manual migration
 
 Begin by doing an audit of your existing policy settings for each authentication method that's available for users. If you roll back during migration, you might want a record of the authentication method settings from each of these policies:
 

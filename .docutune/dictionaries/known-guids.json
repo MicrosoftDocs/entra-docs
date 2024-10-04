@@ -3348,5 +3348,7 @@
   "Business Central Business Foundation": "f3552374-a1f2-4356-848e-196002525837",
   "Change password": "AB721A53-1E2F-11D0-9819-00AA0040529B",
   "ID of the Prevhost.exe surrogate host GUID" : "6d2b5079-2f0b-48dd-ab7f-97cec514d30b",
-  "32-bit preview handlers GUID" : "534A1E02-D58F-44f0-B58B-36CBED287C7C"
+  "32-bit preview handlers GUID" : "534A1E02-D58F-44f0-B58B-36CBED287C7C",
+  "Business Central Test Toolkit - Library Assert" : "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
+  "Business Central Test Toolkit - Test Libraries" : "5d86850b-0d76-4eca-bd7b-951ad998e997"
 }

@@ -1,10 +1,11 @@
 ---
 title: 'Automate identity lifecycle management with Microsoft Entra ID Governance'
 description: Describes overview of identity lifecycle management for Microsoft Entra ID Governance.
-services: active-directory
+ms.service: entra-id
+ms.subservice: hybrid-cloud-sync
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+
 ms.workload: identity
 ms.topic: overview
 ms.date: 02/28/2024
