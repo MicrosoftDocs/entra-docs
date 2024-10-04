@@ -138,7 +138,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: portal
-    title: Azure portal
+    title: Microsoft Entra admin center
   - id: ms-graph
     title: Microsoft Graph API
 ## Create service principal with appId
