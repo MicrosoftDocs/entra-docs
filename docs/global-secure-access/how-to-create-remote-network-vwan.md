@@ -372,7 +372,7 @@ Before testing, enable tenant restrictions on the virtual network.
 To test:
 1. Sign in to the Azure Virtual Desktop virtual machine created in the previous steps.
 1. Go to www.office.com and sign in with an internal organization ID. This test should pass successfully.
-1. Repeat the previous step, but with an *external account*. This test should fail due to blocked access.
+1. Repeat the previous step, but with an *external account*. This test should fail due to blocked access.   
 :::image type="content" source="media/how-to-create-remote-network-vwan/access-blocked-troubleshooting-details-without-highlight.png" alt-text="Screenshot of the 'Access is blocked' message.":::
 
 ### Test source IP restoration

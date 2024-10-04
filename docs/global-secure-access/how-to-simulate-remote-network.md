@@ -176,7 +176,7 @@ For this article, we choose the zone redundancy path.
         - This address is entered as the *peer* BGP​​ IP address on your CPE.
         - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
 
-:::image type="content" source="media/how-to-simulate-remote-network/virtual-network-device-link-details.png" alt-text="Screenshot of the Add a link - General tab with examples in each field.":::
+    :::image type="content" source="media/how-to-simulate-remote-network/virtual-network-device-link-details.png" alt-text="Screenshot of the Add a link - General tab with examples in each field.":::
 
 1. On the **Add a link - Details** tab leave the default values selected, unless you made a different selection previously, and select the **Next** button.
 1. On the **Add a link - Security** tab, enter the Pre-shared key (PSK) and select the **Save** button. You return to the main **Create a remote network** set of tabs.
