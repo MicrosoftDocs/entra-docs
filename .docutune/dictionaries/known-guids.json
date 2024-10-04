@@ -3353,5 +3353,7 @@
   "Partner Customer Delegated Administration" : "2832473f-ec63-45fb-976f-5d45a7d4bb91",
   "Microsoft Graph Explorer" : "de8bc8b5-d9f9-48b1-a8ad-b748da725064",
   "Designated empty GUID" : "00000000-0000-0000-0000-000000000000",
-  "Sign in and start apps from the My Apps portal support page GUID" : "2f3b1bae-0e5a-4a86-a33e-876fbd2a4510"
+  "Sign in and start apps from the My Apps portal support page GUID" : "2f3b1bae-0e5a-4a86-a33e-876fbd2a4510",
+  "Business Central Library-Assert" : "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
+  "Business Central Tests-TestLibraries" : "5d86850b-0d76-4eca-bd7b-951ad998e997"
 }
