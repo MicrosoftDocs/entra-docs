@@ -162,7 +162,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	a. In the **Add Identity Provider Info** pane, paste the contents of the Metadata XML (which you downloaded) into the **Metadata** box.
 
-	![Screenshot that shows the "Add Identity Provider Info" pane with the "Metadata" and "Name" boxes highlighted.](./media/saphana-tutorial/sap2.png)
+	![Screenshot that shows the "Add Identity Provider Info" pane with the "Metadata" and "Name" boxes highlighted.](./media/saphana-tutorial/sap-2.png)
 
 	b. If the contents of the XML document are valid, the parsing process extracts the information that's required for the **Subject, Entity ID, and Issuer** fields in the **General data** screen area. It also extracts the information that's necessary for the URL fields in the **Destination** screen area, for example, the **Base URL and SingleSignOn URL (*)** fields.
 
@@ -193,9 +193,6 @@ If you need to create a user manually, take the following steps:
 >You can change the external authentication that the user uses. They can authenticate with an external system such as Kerberos. For detailed information about external identities, contact your [domain administrator](https://cloudplatform.sap.com/contact.html).
 
 1. Open the [SAP HANA Studio](https://help.sap.com/viewer/a2a49126a5c546a9864aae22c05c3d0e/2.0.01/en-us) as an administrator, and then enable the DB-User for SAML SSO.
-
-	![Create user](./media/saphana-tutorial/sap5.png)
-
 2. Select the invisible check box to the left of **SAML**, and then select the **Configure** link.
 
 3. Select **Add** to add the SAML IDP.  Select the appropriate SAML IDP, and then select **OK**.
