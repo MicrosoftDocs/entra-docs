@@ -22,7 +22,7 @@ This topic covers issues that users might see when they use passkeys in Microsof
 
 ## Workarounds for an authentication strength Conditional Access policy loop
 
-Organizations that have the following Conditional Access policy can run into a looping issue:
+Organizations that are deploying passkeys and have Conditional Access policies that require phishing-resistant authentication when accessing **All cloud apps** can run into a looping issue. An example of such a policy configuration:
 
 - Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
 - Targeted resource: **All cloud apps** 
@@ -32,14 +32,14 @@ The policy effectively enforces that the targeted users must use a passkey to au
 
 There are a couple workarounds:
 
-- You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All cloud apps** to specific applications. Start with a review of applications that are used in their tenant and use filters to tag Microsoft Authenticator and other applications.
+- You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All cloud apps** to specific applications. Start with a review of applications that are used in your tenant and use filters to tag Microsoft Authenticator and other applications.
 
-- To further reduce support costs, you can run an internal campaign to help users adopt passkeys. When you're ready to enforce passkey usage, create two Conditional Access policies: 
+- To further reduce support costs, you can run an internal campaign to help users adopt passkeys before enforcing the use of passkeys. When you're ready to enforce passkey usage, create two Conditional Access policies: 
 
   - A policy for mobile operating system (OS) versions
   - A policy for desktop OS versions 
   
-  Require a different authentication strength for each policy, and configure other policy settings listed in the following table. You'll likely want to [enable the use of a Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md), or enable other authentication methods that users can use to register the passkey. By issuing a TAP to a user only when they are registering a credential, you can ensure that users are using permitted authentication methods for all flows and using TAP only for a limited amount of time during registration.
+  Require a different authentication strength for each policy, and configure other policy settings listed in the following table. You'll likely want to [enable the use of a Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md), or enable other authentication methods that users can use to register the passkey. By issuing a TAP to a user only when they are registering a credential, and accepting it only on mobile platforms where passkey registration can occur, you can ensure that users are using permitted authentication methods for all flows and using TAP only for a limited amount of time during registration. 
 
   | Conditional Access policy | Desktop OS     | Mobile OS     |
   |---------------------------|----------------|---------------|
@@ -49,7 +49,7 @@ There are a couple workarounds:
   | Exclude devices   | Android, iOS                                 | N/A                     |
   | Targeted resource | All cloud apps                               | All cloud apps          |
   | Grant control     | Authentication strength                      | Authentication strength<sup>1</sup> |
-  | Methods           | Passkey in Microsoft Authenticator |TAP, passkey in Microsoft Authenticator, or other methods allowed for MFA |
+  | Methods           | Passkey in Microsoft Authenticator |TAP, passkey in Microsoft Authenticator. |
   | Policy result     | Users who can’t sign-in with a passkey in Authenticator are directed to My Sign-ins wizard mode. After registration, they're asked to sign in to Authenticator on their mobile device. | Users who sign in to Authenticator with a TAP or another allowed method can register a passkey directly in Authenticator. No loop occurs because the user meets the authentication requirements. |
 
   <sup>1</sup>For users to register new sign-in methods, your grant control for the mobile policy needs to match your Conditional Access policy to register [Security info](https://mysignins.microsoft.com/security-info). 
