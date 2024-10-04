@@ -1,6 +1,6 @@
 ---
 title: Learn about the monitoring and health activity log schemas
-description: Learn how to interpret the details found in the the Microsoft Entra audit and sign-in and logs schema.
+description: Learn how to interpret the details found in the Microsoft Entra audit and sign-in and logs schema.
 
 author: shlipsey3
 manager: amycolannino
@@ -33,9 +33,9 @@ Microsoft Entra monitoring and health offer logs, reports, and monitoring tools 
 
 Microsoft Graph is the primary way to access Microsoft Entra logs programmatically. The response for a Microsoft Graph call is in JSON format and includes the properties and values of the log. The schema of the logs is defined in the [Microsoft Graph documentation](/graph/api/overview?view=graph-rest-1.0&preserve-view=true).
 
-There are two endpoints for the Microsoft Graph API. The V1.0 endpoint is the most stable and is commonly used for production environments. The beta version often contains more properties, but they are subject to change. For this reason we don't recommend using the beta version of the schema in production environments.
+There are two endpoints for the Microsoft Graph API. The V1.0 endpoint is the most stable and is commonly used for production environments. The beta version often contains more properties, but they're subject to change. For this reason, we don't recommend using the beta version of the schema in production environments.
 
-Microsoft Entra customer can configure activity log streams to be sent to Azure Monitor storage accounts. This integration enables Security Information and Event Management (SIEM) connectivity, long-term storage, and improved querying capabilities with Log Analytics. The log schemas for Azure Monitor might differfrom the Microsoft Graph schemas.
+Microsoft Entra customer can configure activity log streams to be sent to Azure Monitor storage accounts. This integration enables Security Information and Event Management (SIEM) connectivity, long-term storage, and improved querying capabilities with Log Analytics. The log schemas for Azure Monitor might differ from the Microsoft Graph schemas.
 
 For full details on these schemas, see the following articles:
 
