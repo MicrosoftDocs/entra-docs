@@ -4,7 +4,7 @@ description: Reporting on Microsoft Entra self-service password reset events
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 10/04/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
@@ -19,7 +19,8 @@ After deployment, many organizations want to know how or if self-service passwor
 The following questions can be answered by the reports that exist in the [Microsoft Entra admin center](https://entra.microsoft.com):
 
 > [!NOTE]
-> You must be [a Global Administrator](~/identity/role-based-access-control/permissions-reference.md), and you must opt-in for this data to be gathered on behalf of your organization. To opt in, you must visit the **Reporting** tab or the audit logs at least once. Until then, data is not collected for your organization.
+> [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+> You must opt-in for this data to be gathered on behalf of your organization. To opt in, you must visit the **Reporting** tab or the audit logs at least once. Until then, data is not collected for your organization.
 >
 
 * How many people have registered for password reset?
@@ -37,7 +38,7 @@ The following questions can be answered by the reports that exist in the [Micros
 
 Use the following the steps to find the password reset and password reset registration events:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)]
 1. Browse to **Identity** > **Users**.
 5. Select **Audit Logs** from the **Users** blade. This shows you all of the audit events that occurred against all the users in your directory. You can filter this view to see all the password-related events.
 6. From the **Filter** menu at the top of the pane, select the **Service** drop-down list, and change it to the **Self-service Password Management** service type.

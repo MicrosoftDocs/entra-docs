@@ -6,7 +6,7 @@ description: What information is used to help authenticate users by self-service
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/13/2021
+ms.date: 10/04/2024
 
 ms.author: justinha
 author: justinha

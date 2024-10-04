@@ -5,7 +5,7 @@ description: Learn how to plan and deploy Microsoft Entra Password Protection in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 10/04/2024
 
 ms.author: justinha
 author: justinha
@@ -101,7 +101,7 @@ The following core requirements apply:
 
 The following requirements apply to the Microsoft Entra Password Protection DC agent:
 
-* Machines where the Microsoft Entra Password Protection DC agent software will be installed can run any supported version of Windows Server, including Windows Server Core editions.
+* Machines where the Microsoft Entra Password Protection DC agent software will be installed must run Windows Server 2012 R2 or later, including Windows Server Core editions.
     * The Active Directory domain or forest can be any supported functional level. 
 * All machines where the Microsoft Entra Password Protection DC agent will be installed must have .NET 4.7.2 installed.
     * If .NET 4.7.2 is not already installed, download and run the installer found at [The .NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).
@@ -208,7 +208,7 @@ To install the Microsoft Entra Password Protection proxy service, complete the f
 
 1. The proxy service is running on the machine, but doesn't have credentials to communicate with Microsoft Entra ID. Register the Microsoft Entra Password Protection proxy server with Microsoft Entra ID using the `Register-AzureADPasswordProtectionProxy` cmdlet.
 
-    This cmdlet requires *Global Administrator* credentials the first time any proxy is registered for a given tenant. Subsequent proxy registrations in that tenant, whether for the same or different proxies, may use either *Global Administrator* or *Security Administrator* credentials.
+    This cmdlet requires *Global Administrator* credentials the first time any proxy is registered for a given tenant. Subsequent proxy registrations in that tenant, whether for the same or different proxies, may use *Security Administrator* credentials.
 
     After this command succeeds once, additional invocations will also succeed but are unnecessary.
 
