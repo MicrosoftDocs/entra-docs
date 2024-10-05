@@ -34,7 +34,7 @@ To install the ADSyncTools PowerShell module do the following:
 5.  You should now see information about the module.
 
 
-Clear-ADSyncToolsMsDsConsistencyGuid
+## Clear-ADSyncToolsMsDsConsistencyGuid
 ### SYNOPSIS
 Clear an Active Directory object mS-DS-ConsistencyGuid
 ### SYNTAX
