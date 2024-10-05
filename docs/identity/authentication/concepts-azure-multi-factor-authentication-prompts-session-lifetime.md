@@ -20,7 +20,7 @@ Microsoft Entra ID has multiple settings that determine how often users need to 
 
 The Microsoft Entra ID default configuration for user sign-in frequency is a rolling window of 90 days. Asking users for credentials often seems like a sensible thing to do, but it can backfire. If users are trained to enter their credentials without thinking, they can unintentionally supply them to a malicious credential prompt.
 
-It might sound alarming to not ask for a user to sign back in, though any violation of IT policies revokes the session. Some examples include a password change, an incompliant device, or an account disable operation. You can also explicitly [revoke users' sessions by using Microsoft Graph PowerShell](/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession).
+It might sound alarming to not ask for a user to sign back in; however, any violation of IT policies revokes the session. Some examples include a password change, an incompliant device, or an account disable operation. You can also explicitly [revoke users' sessions by using Microsoft Graph PowerShell](/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession).
 
 This article details recommended configurations and how different settings work and interact with each other.
 
