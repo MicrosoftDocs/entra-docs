@@ -157,7 +157,7 @@ For this article, we choose the zone redundancy path.
 
 :::image type="content" source="media/how-to-simulate-remote-network/create-basics-tab.png" alt-text="Screenshot of the basics tab for creating a remote network.":::
 
-1. On the Connectivity tab, select **Add a link**.
+4. On the Connectivity tab, select **Add a link**.
 1. On the **Add a link - General** tab, enter the following details:
     - **Link name**: Name of your Customer Premises Equipment (CPE).
     - **Device type**: Choose a device option from the dropdown list.
