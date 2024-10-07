@@ -1,5 +1,5 @@
 ---
-title: Scenario monitoring - sign-ins requiring MFA
+title: Sign-ins requiring multifactor authentication
 description: Learn about the Microsoft Entra Health signals and alerts for sign-ins that require a multifactor authentication
 author: shlipsey3
 manager: amycolannino
