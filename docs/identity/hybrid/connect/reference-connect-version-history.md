@@ -125,7 +125,16 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Improved error messaging when fetching list of domains in a forest
 - Fixed error that made installing with an existing database incompatible with Password Writeback enabled. 
 - Fixed credential issue with ADConnectivityTool module that could occur if NTLM is set to deny-all.
-
+- Fixed error around localization string that could occur when prompting for Enterprise Admin.
+- Fixed an issue where the re-running the Wizard would display initial OU configuration instead of the correct configuration.
+- Fixed error that could occur during sync if the string was longer than expected due to special Unicode characters.
+- Fixed error that could occur that caused the Wizard install to hang due to null certificates in the AD FS configuration setup.
+- Fixed an issue where auto upgrade could fail when trying to get the service account.
+- Fixed an error that could occur if a join rule contains an attribute name with a hyphen.
+- Improved error messaging in the Wizard when TLS settings do not meet the prerequisites.
+- Fixed a bug with the password hash not syncing on changing the SMART CARD REQUIRED bit flag. This fix will now allow the passwords in Entra ID and AD to be in sync for scenarios where smart card is used as an authentication method.  
+- Fixed a bug where auto upgrade endpoints were configured incorrectly for some clouds.
+- Fixed an issue where auto upgrade could fail when trying to get the service account.
 
 
 ## 2.3.20.0
