@@ -141,7 +141,7 @@ For sample requests and responses, see [Health  monitoring List alert objects](/
 
 Each alert might have a different data set to investigate. For details on each alert type, see the following articles:
 
-- [Sign-ins requiring a compliant or managed device](scenario-health-sign-ins-compliant-device.md)
+- [Sign-ins requiring a compliant or managed device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
 
 ## Analyze the possible root causes
