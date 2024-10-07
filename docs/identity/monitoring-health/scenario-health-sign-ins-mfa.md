@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 08/13/2024
+ms.date: 10/07/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -15,7 +15,7 @@ ms.reviewer: sarbar
 
 # How to investigate sign-ins requiring multifactor authentication
 
-Microsoft Entra Health (preview) provides a set of health metrics you can monitor and receive alerts when a potential issue or failure condition is detected. Tenant health monitoring aggregates several health signals and alerts across different services and scenarios.
+Microsoft Entra Health monitoring provides a set of tenant-level health metrics you can monitor and alerts when a potential issue or failure condition is detected. There are multiple health scenarios that can be monitored, including multifactor authentication (MFA).
 
 This scenario:
 
@@ -23,7 +23,7 @@ This scenario:
 - Captures interactive sign-ins with MFA, aggregating both successes and failures.
 - Excludes when a user refreshes the session without completing the interactive MFA or using passwordless sign-in methods.
 
-This article describes these health metrics and how to troubleshoot the issue when you receive an alert.
+This article describes these health metrics and how to troubleshoot a potential issue when you receive an alert.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ Investigating an alert starts with gathering data.
 
 ## Mitigate common issues
 
-The following scenarios are common issues that could cause a spike in sign-ins requiring a compliant device. This list is not exhaustive, but provides a starting point for your investigation.
+The following common issues could cause a spike in MFA sign-ins. This list isn't exhaustive, but provides a starting point for your investigation.
 
 ### Increase in sign-ins requiring MFA
 
@@ -51,12 +51,22 @@ An increase in sign-ins requiring MFA could indicate a brute force attack, where
 
 To investigate:
 
-- Check the sign-in logs for failed MFA sign-in attempts.
-    - Look for patterns like common IP address locations or multiple failed sign-ins from the same user.
+- Study the impact summary of the alert. Sometimes, impacts are concentrated on a specific group or application. By narrowing down which MFA sing-in logs to study, you can track down the root cause faster.
+- After studying the impact summary, check the sign-in logs for failed MFA sign-in attempts.
+    - You might want to apply sign-in log filers based on what you found in the impact summary.
+    - Look for patterns in the sign-in logs, like common IP address locations or multiple failed sign-ins from the same user.
+    - If you find a pattern that implies a possible admin error, check the audit logs for recent configuration changes.
 - Use the [sign-in diagnostic](howto-use-sign-in-diagnostics.md) from the sign-in logs.
     - Rule out standard user error issues or initial MFA setup issues.
-- Check your system and network health to see if an outage or update matches the time frame as the anomaly.
+- Check your system and network health to see if an outage or update matches the same timeframe as the anomaly.
 - Check the audit logs for recent policy changes that could have triggered the spike.
+    - For example, perhaps the details of the impact summary are concentrated on a single application. In this case, check the audit logs to see if the application was recently added or reconfigured.
+
+
+Number of users
+If the data points to one app, then the chances are good that the app is part of the issue.
+
+What's the common thread between the impacted users?
 
 ## Next steps
 

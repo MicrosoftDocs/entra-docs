@@ -10,10 +10,10 @@ ms.author: barclayn
 ms.custom: include file,licensing
 ---
 
-There are different role and license requirements to view the scenario monitoring and configure and receive alerts. Separate permissions are required to access scenario monitoring and health alerts in [Microsoft Graph](/graph/permissions-overview). We recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
+There are different roles, permissions, and license requirements to view health monitoring signals and configure and receive alerts. Separate permissions are required to access health monitoring signals and alerts in [Microsoft Graph](/graph/permissions-overview). We recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
 
-- A tenant with a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md) is required to **view** the Microsoft Entra health scenario monitoring.
-- A tenant with at least 100 monthly active users is required to **view and receive alerts**.
+- A tenant with a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md) is required to **view** the Microsoft Entra health scenario monitoring signals.
+- A tenant with both a [Microsoft Entra P1 or P2 license](~/fundamentals/get-started-premium.md) *and* at least 100 monthly active users is required to **view alerts** and **receive alert notifications**.
 
 ### Required roles and permissions
 

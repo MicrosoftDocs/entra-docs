@@ -75,6 +75,8 @@ items:
       href: scenario-health-sign-ins-compliant-managed-device.md
     - name: Sign-ins requiring MFA
       href: scenario-health-sign-ins-mfa.md
+    - name: Sign-ins to applications using SAML auth
+      href: scenario-health-sign-ins-saml-auth.md      
   - name: Recommendations
     expanded: false
     items:
