@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/03/2024
+ms.date: 10/07/2024
 
 ms.author: justinha
 author: justinha
@@ -164,11 +164,9 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
 1. A QR code should appear on screen. Now, on your Android device, open the system camera app and scan the QR code. Alternatively, you can also use the camera in Authenticator. Navigate to the passkey account tile and tap on it. Under **Passkey details (preview)**, you'll see a button in the bottom-right corner to scan the QR code. 
    
-> [!NOTE]
-> Bluetooth and an internet connection are required for this step and both must be enabled on your mobile and remote device.
-> 
-> [!NOTE]
-> For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option and you will receive a notification on your mobile device to continue the passkey authentication.
+   > [!NOTE]
+   > Bluetooth and an internet connection are required for this step and both must be enabled on your mobile and remote device.
+   > For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of a QR code scan each time, the device appears as a selectable option, and you get a notification on your mobile device to continue the passkey authentication.
 
 1. To select your passkey, follow the steps in the Android operating system dialog. Verify that it's you by scanning your face, fingerprint, or enter your device PIN or unlock gesture.
 
@@ -176,5 +174,5 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
 ### Same-device authentication in native Microsoft applications (Android)
 
-You can use passkeys in Authenticator on your Android device to sign in to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. 
+You can't use passkeys in Authenticator on your Android device to sign in to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. Support for Android devices is coming later during preview. 
 ---
