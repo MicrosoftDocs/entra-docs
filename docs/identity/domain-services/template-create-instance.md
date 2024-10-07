@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: devx-track-arm-template, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: sample
-ms.date: 09/15/2023
+ms.date: 10/07/2024
 ms.author: justinha
 ---
 
@@ -126,7 +126,7 @@ As part of the Resource Manager resource definition, the following configuration
 |-------------------------|---------|
 | domainName              | The DNS domain name for your managed domain, taking into consideration the previous points on naming prefixes and conflicts. |
 | filteredSync            | Domain Services lets you synchronize *all* users and groups available in Microsoft Entra ID, or a *scoped* synchronization of only specific groups.<br /><br /> For more information about scoped synchronization, see [Microsoft Entra Domain Services scoped synchronization][scoped-sync].|
-| notificationSettings    | If there are any alerts generated in the managed domain, email notifications can be sent out. <br /><br />*Global Administrators* of the Azure tenant and members of the *AAD DC Administrators* group can be *Enabled* for these notifications.<br /><br /> If desired, you can add other recipients for notifications when there are alerts that require attention.|
+| notificationSettings    | If there are any alerts generated in the managed domain, email notifications can be sent out. <br /><br />Highy privileged administrators in the Microsoft Entra ID tenant and members of the *AAD DC Administrators* group can be *Enabled* for these notifications.<br /><br /> If desired, you can add other recipients for notifications when there are alerts that require attention.|
 | domainConfigurationType | By default, a managed domain is created as a *User* forest. This type of forest synchronizes all objects from Microsoft Entra ID, including any user accounts created in an on-premises AD DS environment. You don't need to specify a *domainConfiguration* value to create a user forest.<br /><br /> A *Resource* forest only synchronizes users and groups created directly in Microsoft Entra ID. Set the value to *ResourceTrusting* to create a resource forest.<br /><br />For more information on *Resource* forests, including why you might use one and how to create forest trusts with on-premises AD DS domains, see [Domain Services resource forests overview][resource-forests].|
 
 The following condensed parameters definition shows how these values are declared. A user forest named *aaddscontoso.com* is created with all users from Microsoft Entra ID synchronized to the managed domain:

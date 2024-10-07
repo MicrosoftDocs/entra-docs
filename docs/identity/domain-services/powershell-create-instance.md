@@ -8,7 +8,7 @@ ms.assetid: d4bc5583-6537-4cd9-bc4b-7712fdd9272a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: sample
-ms.date: 03/13/2024
+ms.date: 10/07/2024
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -32,8 +32,8 @@ To complete this article, you need the following resources:
 * Install and configure MS Graph PowerShell.
    - If needed, follow the instructions to [install the MS Graph PowerShell module and connect to Microsoft Entra ID](/powershell/microsoftgraph/installation).
     * Make sure that you sign in to your Microsoft Entra tenant using the [Connect-MgGraph][Connect-MgGraph] cmdlet.
-* You need *Global Administrator* privileges in your Microsoft Entra tenant to enable Domain Services.
-* You need *Contributor* privileges in your Azure subscription to create the required Domain Services resources.
+* [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+* *Contributor* privileges for the Azure subscription are required for this feature.
 
   > [!IMPORTANT]
   > While the **Az.ADDomainServices** PowerShell module is in preview, you must install it separately
@@ -78,7 +78,7 @@ if (!$GroupObject) {
 }
 ```
 
-With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-MgUser][Get-MgUser] cmdlet, then add the user to the group using the [New-MgGroupMember][New-MgGroupMember] cmdlet.
+With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-MgUser][Get-MgUser] cmdlet, then add the user to the group using the [New-MgGroupMemberByRef][New-MgGroupMemberByRef] cmdlet.
 
 In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *AAD DC Administrators* group:
 
@@ -231,8 +231,9 @@ When the Microsoft Entra admin center shows that the managed domain has finished
 
 The following complete PowerShell script combines all of the tasks shown in this article. Copy the script and save it to a file with a `.ps1` extension. For Azure Global, use AppId value *2565bd9d-da50-47d4-8b85-4c97f669dc36*. For other Azure clouds, use AppId value *6ba9a5d4-8456-4118-b521-9c5ca10cdf84*. Run the script in a local PowerShell console or the [Azure Cloud Shell][cloud-shell].
 
-> [!NOTE]
-> To enable Domain Services, you must be a Global Administrator for the Microsoft Entra tenant. You also need at least *Contributor* privileges in the Azure subscription.
+[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+
+*Contributor* privileges for the Azure subscription are required for this feature.
 
 ```azurepowershell-interactive
 # Change the following values to match your deployment.
@@ -391,7 +392,7 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 
 [New-MgGroup]: /powershell/module/microsoft.graph.groups/new-mggroup
 
-[New-MgGroupMember]: /powershell/module/microsoft.graph.groups/new-mggroupmember
+[New-MgGroupMemberByRef]: /powershell/module/microsoft.graph.groups/new-mggroupmemberbyref
 
 [Get-MgGroup]: /powershell/module/microsoft.graph.groups/get-mggroup
 
