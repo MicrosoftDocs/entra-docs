@@ -23,7 +23,7 @@ introduction: |
 
   This article explains how to create a new user, invite an external guest, and delete a user in your workforce tenant. It also includes information about creating users in an external tenant for [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) scenarios.
 
-  [!INCLUDE [GDPR-related guidance](~/../azure-docs-pr/includes/gdpr-hybrid-note.md)]
+
 
   ## Types of users
 

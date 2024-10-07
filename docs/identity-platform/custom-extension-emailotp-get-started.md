@@ -63,15 +63,11 @@ This section shows you how to set up an Azure Function app in the Azure portal. 
 After the Azure Function app is created, create an HTTP trigger function. The HTTP trigger lets you invoke a function with an HTTP request. This HTTP trigger will be referenced and called by your Microsoft Entra custom authentication extension.
 
 1. Within your **Function App**, from the menu select **Functions**.
-1. From the top menu, select **+ Create**.
-1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**, and then select the **HTTP trigger** template.
-1. Under **Template details**, enter *CustomAuthenticationExtensionsAPI* for the **New Function** property.
+1. Select **Create function**.
+1. In the **Create Function** window, under **Select a template**, search for and select the **HTTP trigger** template. Select **Next**.
+1. Under **Template details**, enter *CustomAuthenticationExtensionsAPI* for the **Function Name** property.
 1. For the **Authorization level**, select **Function**.
 1. Select **Create**.
-
-The following screenshot demonstrates how to configure the Azure HTTP trigger function.
-
-  ![Screenshot that shows how to choose the development environment, and template.](media/custom-extension-emailotp-get-started/create-http-trigger-function.png)
 
 ### 1.2 Edit the function
 
@@ -223,16 +219,16 @@ The following screenshot demonstrates how to configure the Azure HTTP trigger fu
 
     The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](/entra/identity-platform/custom-claims-provider-reference) to your API. In this example, it reads the email address (identifier) and the one time code (otp). Then, the code sends the details to SendGrid to send the email using a [dynamic template](https://sendgrid.com/en-us/solutions/email-api/dynamic-email-templates).
 
-1. Add the required settings to the Azure function. Under **Settings** -> **Environment variables** add the following App settings.
+1. Select **Get Function Url**, and copy the **Function key** URL, which will hereby be used and referred to as `{Function_Url}`. Close the function.
+1. From **Overview** page of your function app, you need to add the required settings to the Azure function. In the left menu, under **Settings** -> **Environment variables** add the following App settings. Once all the settings are added, select **Apply**, then **Confirm**.
 
-    | Setting      | Example  | Description |
+    | Setting      | Value (Example) | Description |
     | ------------ | ---------------- | ----------- |
     | **SENDGRIDKEY** | SG.38h1234567... | The SendGrid API Key. | 
     | **FROMEMAIL** | <from.email@myemailprovider.com> | The from email address. |
     | **FROMNAME** | CIAM Demo | The name of the From Email. |
     | **TEMPLATEID** | d-01234567.... | The SendGrid dynamic template it. |
 
-1. From the top menu, select **Get Function Url**, and copy the URL. In the next step, the function URL will be used and referred to as `{Function_Url}`.
 
 ## Step 2: Register a custom authentication extension
 
@@ -253,7 +249,7 @@ In this step, you configure a custom authentication extension, which will be use
     ```
 
 1. From the response, record the value of **id** and **appId** of the newly created app registration. These values will be referenced in this article as `{authenticationeventsAPI_ObjectId}` and `{authenticationeventsAPI_AppId}` respectively.
-1. Create a service principal in the tenant for the authenticationeventsAPI app registration.
+1. Create a service principal in the tenant for the **authenticationeventsAPI** app registration.
 1. Still in Graph Explorer, run the following request. Replace `{authenticationeventsAPI_AppId}` with the value of **appId** that you recorded from the previous step.
 
     ```http
@@ -273,7 +269,7 @@ Update the newly created application to set the application ID URI value, the ac
 
 - Set the application ID URI value in the *identifierUris* property. Replace `{Function_Url_Hostname}` with the hostname of the `{Function_Url}` you recorded earlier.
 - Set the `{authenticationeventsAPI_AppId}` value with the **appId** that you recorded earlier.
-- An example value is `api://authenticationeventsAPI.azurewebsites.net/f4a70782-3191-45b4-b7e5-dd415885dd80`. Take note of this value as you'll use it later in this article in place of `{functionApp_IdentifierUri}`.
+- An example value is `api://authenticationeventsAPI.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`. Take note of this value as you'll use it later in this article in place of `{functionApp_IdentifierUri}`.
 
     ```http
     PATCH https://graph.microsoft.com/v1.0/applications/{authenticationeventsAPI_ObjectId}
@@ -430,8 +426,9 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 1. Navigate and select the function app you previously published.
 1. Select **Authentication** in the menu on the left.
 1. Select **Add Identity provider**.  
-1. Select **Microsoft** as the identity provider.
+1. From the dropdown menuSelect **Microsoft** as the identity provider.
 1. Under **App registration**->**App registration type**, select **Pick an existing app registration in this directory** and pick the *Azure Functions authentication events API* app registration you [previously created](#step-2-register-a-custom-authentication-extension) when registering the custom email provider.
+1. Add the **Client secret** expiration for the app.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
