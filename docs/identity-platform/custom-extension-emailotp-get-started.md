@@ -14,6 +14,8 @@ titleSuffix: Microsoft identity platform
 
 # Configure a custom email provider for one time code send events (preview)
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This article describes how to configure and set up a custom email provider with the One Time Code Send event type. This event is triggered when a one time code email is to be sent, and allows you to call a REST API to use your own email provider.
 
 This how-to guide demonstrates the one time code send event with a REST API running in Azure Functions and a sample OpenID Connect application.
@@ -27,6 +29,7 @@ This how-to guide demonstrates the one time code send event with a REST API runn
 
 - A familiarity and understanding of the concepts covered in [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
 - An Azure subscription. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- A Microsoft Entra ID [external tenant](quickstart-tenant-setup.md).
 - A SendGrid account. If you don't already have one, start by setting up a SendGrid account. For setup instructions, see the [Create a SendGrid Account](https://docs.sendgrid.com/for-developers/partners/microsoft-azure-2021#create-a-sendgrid-account) section of [How to send email using SendGrid with Azure](https://docs.sendgrid.com/for-developers/partners/microsoft-azure-2021#create-a-twilio-sendgrid-accountcreate-a-twilio-sendgrid-account).
 
 ## Step 1: Create an Azure Function app
@@ -49,7 +52,7 @@ This section shows you how to set up an Azure Function app in the Azure portal. 
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
     |**Publish**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
-    |**Version**| 6 (LTS) In-process | Version of the .NET runtime. |
+    |**Version**| 8 (LTS) In-process | Version of the .NET runtime. |
     |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Operating System** | Windows | The operating system is pre-selected for you based on your runtime stack selection. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
