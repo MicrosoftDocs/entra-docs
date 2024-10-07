@@ -206,12 +206,12 @@ sections:
           
               In this case there's a fallback to “User principal name”. For more details on the B2B scenario, please read [Grant B2B users in Microsoft Entra ID access to your on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md).
           
-  - name: Pass-through authentication
+  - name: Passthrough preauthentication
     questions:
       - question: |
-         Can I use Conditional Access Policies for applications published with pass-through authentication?
+         Can I use Conditional Access Policies for applications published with passthrough preauthentication?
         answer: |
-              Conditional Access Policies are only enforced for successfully preauthenticated users in Microsoft Entra ID. Pass-through authentication doesn’t trigger Microsoft Entra authentication, so Conditional Access Policies can't be enforced. With pass-through authentication, MFA policies must be implemented on the on-premises server, if possible, or by enabling preauthentication with Microsoft Entra application proxy.
+              Conditional Access Policies are only enforced for successfully preauthenticated users in Microsoft Entra ID. Passthrough preauthentication doesn’t trigger Microsoft Entra authentication, so Conditional Access Policies can't be enforced. With passthrough preauthentication, MFA policies must be implemented on the on-premises server, if possible, or by enabling Microsoft Entra ID preauthentication with Microsoft Entra application proxy.
 
       - question: |
          Can I publish a web application with client certificate authentication requirement?
