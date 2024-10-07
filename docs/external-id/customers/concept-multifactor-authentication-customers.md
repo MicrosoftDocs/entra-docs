@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 
 ms.topic: concept-article
-ms.date: 09/06/2024
+ms.date: 10/07/2024
 ms.author: mimart
 ms.custom: it-pro, references_regions
 
@@ -23,7 +23,7 @@ ms.custom: it-pro, references_regions
 [Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
 
 - Email one-time passcode
-- SMS based authentication, available as an add-on [see details](#sms-based-authentication).
+- SMS-based authentication, available as an add-on ([see details](#sms-based-authentication)).
 
 Enforcing MFA enhances your organization's security by adding an extra layer of verification, making it more difficult for unauthorized users to gain access.
 
@@ -69,7 +69,7 @@ External ID mitigates fraudulent sign-ups and sign-ins via SMS by enforcing the 
 
 The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions. For pricing details, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
 
-The SMS feature requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription) and the External ID SMS Phone Authentication add-on. If your subscription expires or is cancelled, the feature will be disabled.
+SMS is an add-on feature and requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription). If your subscription expires or is cancelled, end users will no longer be able to authenticate using SMS, which could block them from signing in depending on your MFA policy.
 
 |Tier                               |Countries/Regions  |
 |-----------------------------------|-------------------|

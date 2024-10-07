@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: reference
-ms.date: 09/06/2024
+ms.date: 10/07/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -100,4 +100,3 @@ The following table lists the service limits we implement to prevent outages and
 
 - [Start a free trial without an Azure subscription](quickstart-trial-setup.md)
 - [Create a tenant with an Azure subscription](quickstart-tenant-setup.md)
-- 
