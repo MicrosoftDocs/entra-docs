@@ -88,7 +88,7 @@ The following table lists the administrative configuration limits in the Microso
 |Number of event listener policies    |249         |
 
 ## Telephony throttling limits
-The following table lists the service limits we implement to prevent outages and slowdowns. These limits apply during the preview phase of SMS authentication in external tenants. We'll increase these limits as the feature becomes generally available. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md)
+The following table lists the service limits we implement to prevent outages and slowdowns. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md)
 
 |Limit                        |Texts every 15 minutes|Texts every 60 minutes|Texts every 24 hours                                 |Texts every 7 days |
 |-----------------------------|----------------------|----------------------|-----------------------------------------------------|-------------------|
@@ -100,3 +100,4 @@ The following table lists the service limits we implement to prevent outages and
 
 - [Start a free trial without an Azure subscription](quickstart-trial-setup.md)
 - [Create a tenant with an Azure subscription](quickstart-tenant-setup.md)
+- 
