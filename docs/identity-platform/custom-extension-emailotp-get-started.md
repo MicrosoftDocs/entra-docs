@@ -7,7 +7,6 @@ ms.author: cwerner
 ms.reviewer: almars
 ms.date: 9/30/2024
 ms.service: identity-platform
-
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
 #customer intent: As a Microsoft Entra External ID customer, I want to learn how to configure a custom email provider for one time code send events, so that I can use my own email provider to send one time codes.
@@ -25,8 +24,6 @@ This how-to guide demonstrates the one time code send event with a REST API runn
 > To try out this feature, go to the Woodgrove Groceries demo and start the “Use a custom Email Provider for One Time code” use case.
 
 ## Prerequisites
-<!-- Check if any whitelisting is required here. -->
-
 
 - A familiarity and understanding of the concepts covered in [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
 - An Azure subscription. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
@@ -41,8 +38,9 @@ This section shows you how to set up an Azure Function app in the Azure portal. 
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your administrator account.
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
-1. In the **New** page, select **Compute** > **Function App**.
-1. On the **Basics** page, use the function app settings as specified in the following table:
+1. Search for **Function App** and select **Create**.
+1. Select the **Consumption** hosting plan, and then **Select**.
+1. On the **Basics** tab, create the function app settings as specified in the following table:
 
     | Setting      | Suggested value  | Description |
     | ------------ | ---------------- | ----------- |
@@ -60,7 +58,7 @@ This section shows you how to set up an Azure Function app in the Azure portal. 
 
 1. Select the **Notifications** icon in the upper-right corner of the portal and watch for the **Deployment succeeded** message. Then, select **Go to resource** to view your new function app.
 
-### 1.1 Create an HTTP trigger function
+### 1.1 Create a HTTP trigger function
 
 After the Azure Function app is created, create an HTTP trigger function. The HTTP trigger lets you invoke a function with an HTTP request. This HTTP trigger will be referenced and called by your Microsoft Entra custom authentication extension.
 
@@ -69,7 +67,7 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
 1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**, and then select the **HTTP trigger** template.
 1. Under **Template details**, enter *CustomAuthenticationExtensionsAPI* for the **New Function** property.
 1. For the **Authorization level**, select **Function**.
-1. Select **Create**
+1. Select **Create**.
 
 The following screenshot demonstrates how to configure the Azure HTTP trigger function.
 
@@ -77,7 +75,7 @@ The following screenshot demonstrates how to configure the Azure HTTP trigger fu
 
 ### 1.2 Edit the function
 
-1. From the menu, select **Code + Test**
+1. From the menu, select **Code + Test**.
 1. Replace the entire code with the following code snippet.
 
     ```csharp
@@ -221,8 +219,6 @@ The following screenshot demonstrates how to configure the Azure HTTP trigger fu
         public string OTPCode { get; set; }
 
     }
-
-
     ```
 
     The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](/entra/identity-platform/custom-claims-provider-reference) to your API. In this example, it reads the email address (identifier) and the one time code (otp). Then, the code sends the details to SendGrid to send the email using a [dynamic template](https://sendgrid.com/en-us/solutions/email-api/dynamic-email-templates).
@@ -240,7 +236,7 @@ The following screenshot demonstrates how to configure the Azure HTTP trigger fu
 
 ## Step 2: Register a custom authentication extension
 
-In this step, you configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure Function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. The Microsoft Entra admin center is not currently supported in this **Preview** feature. Please use  Microsoft Graph to register an application to authenticate your custom authentication extension to your Azure Function.
+In this step, you configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure Function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Use Microsoft Graph to register an application to authenticate your custom authentication extension to your Azure Function.
 
 ### 2.1 Register an application in Graph Explorer
 
@@ -260,14 +256,14 @@ In this step, you configure a custom authentication extension, which will be use
 1. Create a service principal in the tenant for the authenticationeventsAPI app registration.
 1. Still in Graph Explorer, run the following request. Replace `{authenticationeventsAPI_AppId}` with the value of **appId** that you recorded from the previous step.
 
-```http
-POST https://graph.microsoft.com/v1.0/servicePrincipals
-Content-type: application/json
-    
-{
-    "appId": "{authenticationeventsAPI_AppId}"
-}
-```
+    ```http
+    POST https://graph.microsoft.com/v1.0/servicePrincipals
+    Content-type: application/json
+        
+    {
+        "appId": "{authenticationeventsAPI_AppId}"
+    }
+    ```
 
 ### 2.2 Set the App ID URI, access token version, and required resource access
 
@@ -279,37 +275,37 @@ Update the newly created application to set the application ID URI value, the ac
 - Set the `{authenticationeventsAPI_AppId}` value with the **appId** that you recorded earlier.
 - An example value is `api://authenticationeventsAPI.azurewebsites.net/f4a70782-3191-45b4-b7e5-dd415885dd80`. Take note of this value as you'll use it later in this article in place of `{functionApp_IdentifierUri}`.
 
-```http
-PATCH https://graph.microsoft.com/v1.0/applications/{authenticationeventsAPI_ObjectId}
-Content-type: application/json
-{
-    "identifierUris": [
-        "api://{Function_Url_Hostname}/{authenticationeventsAPI_AppId}"
-    ],    
-    "api": {
-        "requestedAccessTokenVersion": 2,
-        "acceptMappedClaims": null,
-        "knownClientApplications": [],
-        "oauth2PermissionScopes": [],
-        "preAuthorizedApplications": []
-    },
-    "requiredResourceAccess": [
-        {
-            "resourceAppId": "00000003-0000-0000-c000-000000000000",
-            "resourceAccess": [
-                {
-                    "id": "214e810f-fda8-4fd7-a475-29461495eb00",
-                    "type": "Role"
-                }
-            ]
-        }
-    ]
-}
-```
+    ```http
+    PATCH https://graph.microsoft.com/v1.0/applications/{authenticationeventsAPI_ObjectId}
+    Content-type: application/json
+    {
+        "identifierUris": [
+            "api://{Function_Url_Hostname}/{authenticationeventsAPI_AppId}"
+        ],    
+        "api": {
+            "requestedAccessTokenVersion": 2,
+            "acceptMappedClaims": null,
+            "knownClientApplications": [],
+            "oauth2PermissionScopes": [],
+            "preAuthorizedApplications": []
+        },
+        "requiredResourceAccess": [
+            {
+                "resourceAppId": "00000003-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                    {
+                        "id": "214e810f-fda8-4fd7-a475-29461495eb00",
+                        "type": "Role"
+                    }
+                ]
+            }
+        ]
+    }
+    ```
 
 ### 2.3 Register a custom authentication extension
 
-Next, you register the custom authentication extension. You register the custom authentication extension by associating it with the app registration for the Azure Function, and your Azure Function endpoint `{Function_Url}`.
+Next, you register the custom authentication extension and associating it with the app registration for the Azure Function, and your Azure Function endpoint `{Function_Url}`.
 
 1. In Graph Explorer, run the following request. Replace `{Function_Url}` with the hostname of your Azure Function app. Replace `{functionApp_IdentifierUri}` with the identifierUri used in the previous step.
    - You need the *CustomAuthenticationExtension.ReadWrite.All* delegated permission.
@@ -337,7 +333,7 @@ Next, you register the custom authentication extension. You register the custom 
 
 ### 2.4 Grant admin consent
 
-After your custom authentication extension is created, open the application from the portal under *App registrations** and select **API permissions**.
+After your custom authentication extension is created, open the application from the portal under **App registrations** and select **API permissions**.
 
 From the **API permissions** page, select the **Grant admin consent for "YourTenant"** button to give admin consent to the registered app, which allows the custom authentication extension to authenticate to your API. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission.
 
@@ -373,7 +369,7 @@ In your app registration, under **Overview**, copy the **Application (client) ID
 
 ### 3.2 Enable implicit flow
 
-The **jwt.ms** test application uses the implicit flow. Enable implicit flow in your *My Test application* registration:
+The **jwt.ms** test application uses the implicit flow. Enable implicit flow in *My Test application* registration:
 
 1. Under **Manage**, select **Authentication**.
 1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
@@ -381,7 +377,7 @@ The **jwt.ms** test application uses the implicit flow. Enable implicit flow in 
 
 > [!NOTE]
 > 
-> The **jwt.ms** app uses the implicit flow to get an ID token. The implicit flow is not recommended for production applications. For production applications, use the authorization code flow.
+> The **jwt.ms** app uses the implicit flow to get an ID token and is for testing purposes only. The implicit flow is not recommended for production applications. For production applications, use the authorization code flow.
 
 ## Step 4: Assign a custom email provider to your app
 
@@ -509,27 +505,7 @@ PATCH https://graph.microsoft.com/beta/identity/authenticationEventListeners/{cu
 }
 ```
 
-## Known issues
+## See also
 
-The following table describes known issues and important considerations related to this preview release. We don't currently have a preview target or timeline to share regarding when individual issues will be resolved.
-
-| Description | Steps to reproduce |Status |
-| ----- | ------ | ------------- |
-| Exception not surfaced | Delay in changing configuration       | XHR Request response shows the failure. AAD UI does not surface it.  | TBD      |
-| Native Authentication|  NA              | TBD      |
-| CREATE action on listener (and extension) response body has missing information from the request body. GET provides all information in response body.|  NA              | TBD      |
-| SSPR|  NA              | TBD      |
-
-## How to report a bug or issue
-
-To report a bug or issue on any feature, use the [**Issues**](../../issues) tab at the top of the page. Before creating an issue, check the **Known Issues** earlier in this README file.
-When creating an issue, follow the **Bug report** issues template.
-
-## Provide your feedback
-
-Please let us know about your experience with this feature:
-
-1. Did this feature work the way you would expect?
-2. If not, what didn’t work well?
-
-You can provide your feedback using the [General Feedback survey](https://aka.ms/CIAM/PP3Feedback).
+- [Configure a custom claim provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md)
+- [Custom claims provider reference](custom-claims-provider-reference.md)
