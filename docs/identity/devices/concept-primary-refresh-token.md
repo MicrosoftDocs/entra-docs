@@ -85,7 +85,7 @@ A PRT is used by two key components in Windows:
 
 A PRT is renewed in two different methods:
 
-- **Microsoft Entra CloudAP plugin every 4 hours:** The CloudAP plugin renews the PRT every 4 hours during Windows sign in. If the user doesn't have internet connection during that time, CloudAP plugin will renew the PRT after the device is connected to the internet.
+- **Microsoft Entra CloudAP plugin every 4 hours:** The CloudAP plugin renews the PRT every 4 hours during Windows sign in. If the user doesn't have internet connection during that time, CloudAP plugin will renew the PRT after the device is connected to the internet and a new Windows sign in is done.
 - **Microsoft Entra WAM plugin during app token requests:** The WAM plugin enables SSO on Windows 10 or newer devices by enabling silent token requests for applications. The WAM plugin can renew the PRT during these token requests in two different ways:
    - An app requests WAM for an access token silently but there's no refresh token available for that app. In this case, WAM uses the PRT to request a token for the app and gets back a new PRT in the response.
    - An app requests WAM for an access token but the PRT is invalid or Microsoft Entra ID requires extra authorization (for example, Microsoft Entra multifactor authentication). In this scenario, WAM initiates an interactive logon requiring the user to reauthenticate or provide extra verification and a new PRT is issued on successful authentication.
