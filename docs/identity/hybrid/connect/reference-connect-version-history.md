@@ -107,7 +107,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
      - where the user information around the same user is spread across different forests
      - and if the user is disabled in one of the forests adding this rule will allow the sync to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled. 
 - This registry key change will now allow you to set the precedence number for custom rules to be more than 100 if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence** to allow for more custom rules. If no value is set, 100 is the default.
-- Cmdlets in the ADSync PowerShell module that modify Entra ID settings now require Entra ID login.
+- Cmdlets in the ADSync PowerShell module that modify Microsoft Entra ID settings now require Microsoft Entra ID login.
 
 ### Deprecated features
 - The feature that used to validate object against schema has been deprecated and is no longer available in the Synchronization Service Manager.
@@ -132,7 +132,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an issue where auto upgrade could fail when trying to get the service account.
 - Fixed an error that could occur if a join rule contains an attribute name with a hyphen.
 - Improved error messaging in the Wizard when TLS settings do not meet the prerequisites.
-- Fixed a bug with the password hash not syncing on changing the SMART CARD REQUIRED bit flag. This fix will now allow the passwords in Entra ID and AD to be in sync for scenarios where smart card is used as an authentication method.  
+- Fixed a bug with the password hash not syncing on changing the SMART CARD REQUIRED bit flag. This fix will now allow the passwords in Microsoft Entra ID and Active Directory to be in sync for scenarios where smart card is used as an authentication method. [Learn more](how-to-connect-password-hash-synchronization.md#password-hash-synchronization-and-smart-card-authentication) 
 - Fixed a bug where auto upgrade endpoints were configured incorrectly for some clouds.
 - Fixed an issue where auto upgrade could fail when trying to get the service account.
 
@@ -156,7 +156,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Functional changes
 
 - TLS 1.2 or greater is required for Microsoft Entra Connect. Please see the prerequisites for guidance: [Microsoft Entra Connect: Prerequisites and hardware - Microsoft Entra ID](how-to-connect-install-prerequisites.md#enable-tls-12-for-microsoft-entra-connect) | Microsoft Learn
-- TLS 1.3 is supported by Microsoft Entra Connect. Support for [TLS 1.3 is being rolled out for Entra ID services](/troubleshoot/azure/entra/entra-id/ad-dmn-services/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services), However, until this is complete, it is not recommended to enforce TLS 1.3.
+- TLS 1.3 is supported by Microsoft Entra Connect. Support for [TLS 1.3 is being rolled out for Microsoft Entra ID services](/troubleshoot/azure/entra/entra-id/ad-dmn-services/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services), However, until this is complete, it is not recommended to enforce TLS 1.3.
 
 ### Other Changes
 
