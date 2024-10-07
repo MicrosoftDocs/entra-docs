@@ -78,7 +78,7 @@ if (!$GroupObject) {
 }
 ```
 
-With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-MgUser][Get-MgUser] cmdlet, then add the user to the group using the [New-MgGroupMember][New-MgGroupMember] cmdlet.
+With the *AAD DC Administrators* group created, get the desired user's object ID using the [Get-MgUser][Get-MgUser] cmdlet, then add the user to the group using the [New-MgGroupMemberByRef][New-MgGroupMemberByRef] cmdlet.
 
 In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *AAD DC Administrators* group:
 
@@ -392,7 +392,7 @@ To see the managed domain in action, you can [domain-join a Windows VM][windows-
 
 [New-MgGroup]: /powershell/module/microsoft.graph.groups/new-mggroup
 
-[New-MgGroupMember]: /powershell/module/microsoft.graph.groups/new-mggroupmember
+[New-MgGroupMemberByRef]: /powershell/module/microsoft.graph.groups/new-mggroupmemberbyref
 
 [Get-MgGroup]: /powershell/module/microsoft.graph.groups/get-mggroup
 
