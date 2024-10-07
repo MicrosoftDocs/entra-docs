@@ -73,6 +73,10 @@ If your SPA needs to call an API, you must grant your SPA API permissions so it 
 
 If you'd like to learn how to expose the permissions by adding a link, go to the [Web API](how-to-register-ciam-app.md?tabs=webapi) section.
 
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
+
 # [Web app](#tab/webapp)
 ## Register your Web app
 
@@ -115,6 +119,10 @@ The following steps show you how to register your web app in the Microsoft Entra
 If your web app needs to call an API, you must grant your web app API permissions so it can call the API. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that you need to call.
 
 [!INCLUDE [grant permissions for calling an API](../customers/includes/register-app/grant-api-permission-call-api.md)] 
+
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
 
 # [Web API](#tab/webapi)
 ## Register your Web API
@@ -162,7 +170,11 @@ The following steps show you how to register your app in the Microsoft Entra adm
 ### Grant API permissions (optional)
 
 If your mobile app needs to call an API, you must grant your mobile app API permissions so it can call the API. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that you need to call.
-[!INCLUDE [grant permissions for calling an API](../customers/includes/register-app/grant-api-permission-call-api.md)] 
+[!INCLUDE [grant permissions for calling an API](../customers/includes/register-app/grant-api-permission-call-api.md)]
+
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
 
 # [Daemon app](#tab/daemonapp)
 ## Register your Daemon app
@@ -175,6 +187,10 @@ A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/
 
 [!INCLUDE [register daemon app](../customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
+
 # [Microsoft Graph API](#tab/graphapi)
 ## Register a Microsoft Graph API application
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
@@ -184,6 +200,10 @@ A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/
 
 ### Create a client secret 
 [!INCLUDE [add app client secret](../customers/includes/register-app/add-app-client-secret.md)]
+
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
 
 # [Native authentication](#tab/nativeauthentication)
 ## Register a native authentication application
@@ -197,24 +217,6 @@ A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/
 
 [!INCLUDE [find the application ID](../customers/includes/native-auth/enable-native-authentication.md)] 
 ---
-
-## Test the user flow
-
-To effectively test a user flow with this app registration, enable the implicit grant flow for authentication.
-
-> [!IMPORTANT]
-> Microsoft recommends using the most secure authentication flow available. The implicit flow used for testing in this procedure requires a very high degree of trust in the application, and carries risks that are not present in other flows. This approach should be used for testing purposes only and not for authenticating users to your production apps.
-To enable the implicit flow, follow these steps:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="~/external-id/customers/media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu. 
-1. Browse to **Identity** >**Applications** > **App registrations**.
-1. Select the app registration you created.
-1. Under **Manage**, select **Authentication**.
-1. Under **Implicit grant and hybrid flows**:
-    - If your application signs in users, select **ID tokens**.
-    - If your application also needs to call a protected web API, select **Access tokens**. For more information about these token types, see [ID tokens](/entra/identity-platform/id-tokens) and [Access tokens](/entra/identity-platform/access-tokens).
-1. Select **Save**.
 
 [!INCLUDE [find the application ID](../customers/includes/register-app/find-application-id.md)] 
 
