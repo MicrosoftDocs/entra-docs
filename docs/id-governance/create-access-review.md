@@ -47,7 +47,7 @@ If you're reviewing access to an application, then before you create the review,
 > Access reviews capture a snapshot of access at the beginning of each review instance. Any changes made during the review process will be reflected in the subsequent review cycle. Essentially, with the commencement of each new recurrence, pertinent data regarding the users, resources under review, and their respective reviewers is retrieved.
 
 > [!NOTE]
-> In a group review, nested groups will be automatically flattened, so users from nested groups will appear as individual users. If a user is flagged for removal due to their membership in a nested group, they will not be automatically removed from the nested group—only from direct group membership.
+> In a group review, nested groups will be automatically flattened, so users from nested groups will appear as individual users. If a user is flagged for removal due to their membership in a nested group, they will not be automatically removed from the nested group, but only from direct group membership.
 
 ## Create a single-stage access review
 
