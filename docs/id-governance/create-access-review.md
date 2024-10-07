@@ -28,6 +28,9 @@ This article describes how to create one or more access reviews for group member
 - To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
 - For reviews of PIM for Groups, see [create an access review of PIM for Groups](create-access-review-pim-for-groups.md).
 
+> [!NOTE]
+> In a group review, nested groups will be automatically flattened, so users from nested groups will appear as individual users. If a user is flagged for removal due to their membership in a nested group, they will not be automatically removed from the nested group—only from direct group membership.
+
 ## Prerequisites
 
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance licenses.  
