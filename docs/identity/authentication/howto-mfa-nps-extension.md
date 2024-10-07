@@ -363,7 +363,7 @@ Connect-MgGraph -Scopes 'Application.ReadWrite.All'
 New-MgServicePrincipal -AppId 00001111-aaaa-2222-bbbb-3333cccc4444 -DisplayName "Azure Multi-Factor Auth Client"
 ```
 
-1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)]
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](../role-based-access-control/permissions-reference.md#applcation-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > and search for "Azure Multi-factor Auth Client". 
 1. Click **Check properties for this app**. Confirm if the service principal is enabled or disabled. 
 1. Click the application entry > **Properties**. 

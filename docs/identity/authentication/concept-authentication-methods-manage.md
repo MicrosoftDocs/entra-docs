@@ -37,16 +37,14 @@ Only the [converged registration experience](concept-registration-mfa-sspr-combi
 
 Two other policies, located in **Multifactor authentication** settings and **Password reset** settings, provide a legacy way to manage some authentication methods for all users in the tenant. You can't control who uses an enabled authentication method, or how the method can be used. 
 
-[!INCLUDE [Privileged role](~/includes/privileged-role-feature-include.md)]
-
 >[!Important]
 >In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date.
 
-To manage the legacy MFA policy, select **Security** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
+To manage the legacy MFA policy, browes to **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
 
 :::image type="content" border="true" source="./media/concept-authentication-methods-manage/service-settings.png" alt-text="Screenshot of MFA service settings.":::
 
-To manage authentication methods for self-service password reset (SSPR), click **Password reset** > **Authentication methods**. The **Mobile phone** option in this policy allows either voice calls or text message to be sent to a mobile phone. The **Office phone** option allows only voice calls. 
+To manage authentication methods for self-service password reset (SSPR), browse to **Protection** > **Password reset** > **Authentication methods**. The **Mobile phone** option in this policy allows either voice calls or text message to be sent to a mobile phone. The **Office phone** option allows only voice calls. 
 
 :::image type="content" border="true" source="./media/concept-authentication-methods-manage/password-reset.png" alt-text="Screenshot of password reset settings.":::
 

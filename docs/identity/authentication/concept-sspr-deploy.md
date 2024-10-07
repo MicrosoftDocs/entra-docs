@@ -66,7 +66,7 @@ For more information about pricing, see [Microsoft Entra pricing](https://www.mi
 
 * A working Microsoft Entra tenant with at least a trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-* [!INCLUDE [Privileged role feature](../../includes/privileged-role-feature-include.md)]
+* You must be assigned at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 
 ### Guided walkthrough
 
@@ -312,8 +312,6 @@ Microsoft Entra ID can provide additional information on your SSPR performance t
 ### Password management activity reports 
 
 You can use pre-built reports on Microsoft Entra admin center to measure the SSPR performance. If you're appropriately licensed, you can also create custom queries. For more information, see [Reporting options for Microsoft Entra password management](./howto-sspr-reporting.md).
-
-[!INCLUDE [Privileged role feature](../../includes/privileged-role-feature-include.md)]
 
 > [!NOTE]
 > You must opt-in for this data to be gathered for your organization. To opt in, you must visit the Reporting tab or the audit logs on the Microsoft Entra admin center at least once. Until then, the data doesn't collect for your organization.
