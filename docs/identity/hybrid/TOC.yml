@@ -105,7 +105,7 @@
       href: cloud-sync/tutorial-pilot-aadc-aadccp.md
     - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
       href: cloud-sync/migrate-group-writeback.md
-  - name: Additional migration scenarios
+  - name: More migration scenarios
     items:
     - name: Multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect
       href: connect/parallel-hybrid-migration.md
@@ -410,7 +410,7 @@
         href: connect/how-to-connect-pta-quick-start.md
       - name: Pass-through authentication FAQ
         href: connect/how-to-connect-pta-faq.yml
-      - name: Disable PTA with Microsoft Entra Connect "Do not configure"
+      - name: Disable PTA with Microsoft Entra Connect "Don't configure"
         href: connect/how-to-connect-pta-disable-do-not-configure.md
     - name: Manage Federation Services
       items:
