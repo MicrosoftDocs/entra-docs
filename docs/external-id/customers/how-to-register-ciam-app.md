@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 02/29/2024
+ms.date: 10/07/2024
 ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to register an app on the Microsoft Entra admin center.
@@ -197,6 +197,24 @@ A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/
 
 [!INCLUDE [find the application ID](../customers/includes/native-auth/enable-native-authentication.md)] 
 ---
+
+## Test the user flow
+
+To effectively test a user flow with this app registration, enable the implicit grant flow for authentication.
+
+> [!IMPORTANT]
+> Microsoft recommends using the most secure authentication flow available. The implicit flow used for testing in this procedure requires a very high degree of trust in the application, and carries risks that are not present in other flows. This approach should be used for testing purposes only and not for authenticating users to your production apps.
+To enable the implicit flow, follow these steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="~/external-id/customers/media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu. 
+1. Browse to **Identity** >**Applications** > **App registrations**.
+1. Select the app registration you created.
+1. Under **Manage**, select **Authentication**.
+1. Under **Implicit grant and hybrid flows**:
+    - If your application signs in users, select **ID tokens**.
+    - If your application also needs to call a protected web API, select **Access tokens**. For more information about these token types, see [ID tokens](/entra/identity-platform/id-tokens) and [Access tokens](/entra/identity-platform/access-tokens).
+1. Select **Save**.
 
 [!INCLUDE [find the application ID](../customers/includes/register-app/find-application-id.md)] 
 
