@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 09/26/2024
+ms.date: 10/07/2024
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -172,4 +172,3 @@ The following table compares the features available for token customization in e
 ## Next steps
 
 - [Planning for CIAM](concept-planning-your-solution.md)
-- 
