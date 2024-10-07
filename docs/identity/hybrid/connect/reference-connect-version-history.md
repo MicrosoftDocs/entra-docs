@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: amycolannino
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 10/07/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
@@ -67,8 +67,9 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.2.8.0](#2280)|12 Dec 2024 (12 months after release of 2.3.2.0)|
 |[2.3.2.0](#2320)|21 Feb 2025(12 months after release of 2.3.6.0)|
 |[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0)|
-|[2.3.8.0](#2380)|x Jul 2025 (12 months after release of 2.3.20.0)|
-|[2.3.20.0](#23200)|TBD|
+|[2.3.8.0](#2380)|25 Jul 2025 (12 months after release of 2.3.20.0)|
+|[2.3.20.0](#23200)|x Oct 2025 (12 months after release of 2.4.18.0)|
+|[2.4.18.0](#23200)|TBD|
 
 **All other versions are not supported**
 
@@ -91,6 +92,41 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.4.18.0
+
+### Release status
+
+10/07/2024: Released for download
+
+
+### Updated Features
+- The step **Connect to Microsoft Entra ID** in the Connect Sync Wizard will not require password before redirecting you to the login page.
+- Updated Default Rule: "onPremisesObjectIdentifier" attribute added to the **In from AD - User Account Enabled** sync rule.
+   - In the scenario:
+     - where the user information around the same user is spread across different forests
+     - and if the user is disabled in one of the forests adding this rule will allow the sync to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled. 
+- This registry key change will now allow you to set the precedence number for custom rules to be more than 100 if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence** to allow for more custom rules. If no value is set, 100 is the default.
+- Cmdlets in the ADSync PowerShell module that modify Entra ID settings now require Entra ID login.
+
+### Deprecated features
+- The feature that used to validate object against schema has been deprecated and is no longer available in the Synchronization Service Manager.
+- The "enableldap" Command Line (Preview) feature has been deprecated and is no longer available when you run the Wizard.
+
+
+### Miscellaneous 
+- The minimum .NET runtime requirement has been increased to 4.7.2.
+- Branding updates to match Microsoft Entra ID branding.
+
+
+### Bug fixes
+
+- Improved Wizard experience to ensure domain validation has to be completed before moving to the next step in the wizard.
+- Improved error messaging when fetching list of domains in a forest
+- Fixed error that made installing with an existing database incompatible with Password Writeback enabled. 
+- Fixed credential issue with ADConnectivityTool module that could occur if NTLM is set to deny-all.
+
+
 
 ## 2.3.20.0
 
