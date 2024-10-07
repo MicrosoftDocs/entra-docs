@@ -5,7 +5,7 @@ description: Learn about deployment considerations and strategy for successful i
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/29/2023
+ms.date: 10/04/2024
 
 ms.author: justinha
 author: gargi-sinha
@@ -66,7 +66,7 @@ For more information about pricing, see [Microsoft Entra pricing](https://www.mi
 
 * A working Microsoft Entra tenant with at least a trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-* An account with Global Administrator privileges.
+* [!INCLUDE [Privileged role feature](../../includes/privileged-role-feature-include.md)]
 
 ### Guided walkthrough
 
@@ -134,7 +134,7 @@ When technology projects fail, they typically do so due to mismatched expectatio
 | - | - |
 | Level 1 helpdesk| Password Administrator |
 | Level 2 helpdesk| User Administrator |
-| SSPR administrator| Global Administrator |
+| SSPR administrator| Authentication Administrator |
 
 ### Plan a pilot
 
@@ -311,10 +311,12 @@ Microsoft Entra ID can provide additional information on your SSPR performance t
 
 ### Password management activity reports 
 
-You can use pre-built reports on Microsoft Entra admin center to measure the SSPR performance. If you're appropriately licensed, you can also create custom queries. For more information, see [Reporting options for Microsoft Entra password management](./howto-sspr-reporting.md)
+You can use pre-built reports on Microsoft Entra admin center to measure the SSPR performance. If you're appropriately licensed, you can also create custom queries. For more information, see [Reporting options for Microsoft Entra password management](./howto-sspr-reporting.md).
+
+[!INCLUDE [Privileged role feature](../../includes/privileged-role-feature-include.md)]
 
 > [!NOTE]
-> You must be a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator), and you must opt-in for this data to be gathered for your organization. To opt in, you must visit the Reporting tab or the audit logs on the Microsoft Entra admin center at least once. Until then, the data doesn't collect for your organization.
+> You must opt-in for this data to be gathered for your organization. To opt in, you must visit the Reporting tab or the audit logs on the Microsoft Entra admin center at least once. Until then, the data doesn't collect for your organization.
 
 Audit logs for registration and password reset are available for 30 days. If security auditing within your corporation requires longer retention, the logs need to be exported and consumed into a SIEM tool such as [Microsoft Sentinel](/azure/sentinel/connect-azure-active-directory), Splunk, or ArcSight.
 
