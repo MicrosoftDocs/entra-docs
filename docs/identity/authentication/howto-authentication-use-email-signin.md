@@ -45,8 +45,6 @@ Here's what you need to know about email as an alternate login ID:
     * [Home Realm Discovery (HRD) policy](#enable-user-sign-in-with-an-email-address) - Use this option to enable the feature for the entire tenant. At least the [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role is required.
     * [Staged rollout policy](#enable-staged-rollout-to-test-user-sign-in-with-an-email-address) - Use this option to test the feature with specific Microsoft Entra groups. When you first add a security group for staged rollout, you're limited to 200 users to avoid a UX time-out. After you've added the group, you can add more users directly to it, as required.
 
-    [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
-
 ## Preview limitations
 
 In the current preview state, the following limitations apply to email as an alternate login ID:
@@ -142,8 +140,6 @@ Email as an alternate login ID applies to [Microsoft Entra B2B collaboration](~/
 Once users with the *ProxyAddresses* attribute applied are synchronized to Microsoft Entra ID using Microsoft Entra Connect, you need to enable the feature for users to sign in with email as an alternate login ID for your tenant. This feature tells the Microsoft Entra login servers to not only check the sign-in identifier against UPN values, but also against *ProxyAddresses* values for the email address.
 
 You can use either Microsoft Entra admin center or Graph PowerShell to set up the feature.
-
-[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
 
 ### Microsoft Entra admin center
 
