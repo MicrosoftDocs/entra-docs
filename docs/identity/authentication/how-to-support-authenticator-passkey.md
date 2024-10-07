@@ -22,7 +22,7 @@ This topic covers issues that users might see when they use passkeys in Microsof
 
 ## Workarounds for an authentication strength Conditional Access policy loop
 
-Organizations that are deploying passkeys and have Conditional Access policies that require phishing-resistant authentication when accessing **All cloud apps** can run into a looping issue. An example of such a policy configuration:
+Organizations that are deploying passkeys and have Conditional Access policies that require phishing-resistant authentication when accessing **All cloud apps** can run into a looping issue when users attempt to add a passkey to Microsoft Authenticator. An example of such a policy configuration:
 
 - Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
 - Targeted resource: **All cloud apps** 
