@@ -64,9 +64,9 @@ If you aren't using SSPR and aren't yet using the Authentication methods policy,
 
 Start by documenting which methods are available in the legacy MFA policy. 
 
-[!INCLUDE [Privileged role](../../includes/privileged-role-include.md)]
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Identity** > **Users** > **All users** > **Per-user MFA** > **service settings** to view the settings. 
 
-Go to **Identity** > **Users** > **All users** > **Per-user MFA** > **service settings** to view the settings. 
 These settings are tenant-wide, so there's no need for user or group information. 
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/legacy-mfa-policy.png" alt-text="Screenshot the shows the legacy Microsoft Entra multifactor authentication policy." lightbox="media/how-to-authentication-methods-manage/legacy-mfa-policy.png":::

@@ -18,7 +18,7 @@ Self-service password reset (SSPR) gives users in Microsoft Entra ID the ability
 
 To improve the SSPR experience for users, you can customize the look and feel of the password reset page, email notifications, or sign-in pages. These customization options let you make it clear to the user they're in the right place, and give them confidence they're accessing company resources.
     
-This article shows you how to customize the SSPR e-mail link for users, company branding, and AD FS sign-in page link.
+This article shows you how to customize the SSPR e-mail link for users, company branding, and AD FS sign-in page link. Most of these options can be customized by anyone assigned the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 
 ## Customize the "Contact your administrator" link
 

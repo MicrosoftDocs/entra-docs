@@ -45,8 +45,6 @@ Here's what you need to know about email as an alternate login ID:
     * [Home Realm Discovery (HRD) policy](#enable-user-sign-in-with-an-email-address) - Use this option to enable the feature for the entire tenant. At least the [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role is required.
     * [Staged rollout policy](#enable-staged-rollout-to-test-user-sign-in-with-an-email-address) - Use this option to test the feature with specific Microsoft Entra groups. When you first add a security group for staged rollout, you're limited to 200 users to avoid a UX time-out. After you've added the group, you can add more users directly to it, as required.
 
-    [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
-
 ## Preview limitations
 
 In the current preview state, the following limitations apply to email as an alternate login ID:
@@ -143,14 +141,13 @@ Once users with the *ProxyAddresses* attribute applied are synchronized to Micro
 
 You can use either Microsoft Entra admin center or Graph PowerShell to set up the feature.
 
-[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
-
 ### Microsoft Entra admin center
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)]
-1. From the navigation menu on the left-hand side of the Microsoft Entra window, select **Microsoft Entra Connect > Email as alternate login ID**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**
+1. Select Email as alternate login ID**.
 
     ![Screenshot of email as alternate login ID option in the Microsoft Entra admin center.](media/howto-authentication-use-email-signin/azure-ad-connect-screen.png)
 
