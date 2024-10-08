@@ -1701,16 +1701,6 @@ For more information, see:
 
 ## March 2023
 
-### Public preview - Customize tokens with Custom Claims Providers
-
-**Type:** New feature   
-**Service category:** Authentications (Logins)                      
-**Product capability:** Extensibility             
-
-A custom claims provider lets you call an API and map custom claims into the token during the authentication flow. The API call is made after the user has completed all their authentication challenges, and a token is about to be issued to the app. For more information, see: [Custom authentication extensions (preview)](~/identity-platform/custom-claims-provider-overview.md).
-
----
-
 ### General Availability - Converged Authentication Methods
 
 **Type:** New feature   
