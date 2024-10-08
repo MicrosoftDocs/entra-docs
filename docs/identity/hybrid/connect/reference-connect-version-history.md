@@ -21,6 +21,12 @@ This article helps you keep track of the versions that have been released and un
 
 ## Looking for the latest versions?
 
+>[!WARNING]
+>If you are a customer using a non-commercial cloud (such as Azure Government or Azure in China), please wait until our next update before you attempt to upgrade. There is an installation issue with version [2.4.18.0](#24180) that affects customers in non-commercial clouds.
+> 
+>We are currently working on a fix, which we will release as part of an updated version as soon as possible. Customers in our commercial cloud are unaffected and can proceed to upgrade to version [2.4.18.0](#24180). 
+
+
 >[!IMPORTANT]
 >Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
 > 
@@ -69,7 +75,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0)|
 |[2.3.8.0](#2380)|25 Jul 2025 (12 months after release of 2.3.20.0)|
 |[2.3.20.0](#23200)|7 Oct 2025 (12 months after release of 2.4.18.0)|
-|[2.4.18.0](#23200)|TBD|
+|[2.4.18.0](#24180)|TBD|
 
 **All other versions are not supported**
 
