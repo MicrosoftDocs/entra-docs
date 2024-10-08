@@ -137,11 +137,11 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: How can we comply if we enforce MFA by using another identity provider or MFA solution, and we don't enforce by using Microsoft Entra MFA? 
 
-**Answer**: The identity provider solution needs to be configured properly to send the multipleauthn claim to Entra ID. For more information, see [Microsoft Entra multifactor authentication external method provider reference](concept-authentication-external-method-provider.md). 
+**Answer**: The identity provider solution needs to be configured properly to send the multifactor authentication claim to Entra ID. For more information, see [Microsoft Entra multifactor authentication external method provider reference](concept-authentication-external-method-provider.md). 
 
 **Question**: Will phase 1 or phase 2 of mandatory MFA impact my ability to sync with Microsoft Entra Connect or Microsoft Entra Cloud Sync?
 
-**Answer**: No. The syncronization service account isn't affected by the manadatory MFA requirement. Only [applications](#applications) listed previously require MFA for sign in. 
+**Answer**: No. The syncronization service account isn't affected by the mandatory MFA requirement. Only [applications](#applications) listed previously require MFA for sign in. 
 
 **Question**: Will I be able to opt out? 
 
