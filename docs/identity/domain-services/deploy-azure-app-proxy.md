@@ -48,7 +48,7 @@ To create a VM for the Microsoft Entra private network connector, complete the f
 
 Perform the following steps to download the Microsoft Entra private network connector. The setup file you download is copied to your application proxy VM in the next section.
 
-1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)] 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Search for and select **Enterprise applications**.
 1. Select **Application proxy** from the menu on the left-hand side. To create your first connector and enable application proxy, select the link to **download a connector**.
 1. On the download page, accept the license terms and privacy agreement, then select **Accept terms & Download**.
@@ -65,12 +65,10 @@ With a VM ready to be used as the Microsoft Entra private network connector, now
 1. Run the setup file, such as *MicrosoftEntraPrivateNetworkConnectorInstaller.exe*. Accept the software license terms.
 1. During the install, you're prompted to register the connector with the Application Proxy in your Microsoft Entra directory.
 
-   * [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)] 
-
-        > [!NOTE]
-        > The account used to register the connector must belong to the same directory where you enable the Application Proxy service.
-        >
-        > For example, if the Microsoft Entra domain is *contoso.com*, the account should be `admin@contoso.com` or another valid alias on that domain.
+   > [!NOTE]
+   > The account used to register the connector must belong to the same directory where you enable the Application Proxy service.
+   >
+   > For example, if the Microsoft Entra domain is *contoso.com*, the account should be `admin@contoso.com` or another valid alias on that domain.
 
    * If Internet Explorer Enhanced Security Configuration is turned on for the VM where you install the connector, the registration screen might be blocked. To allow access, follow the instructions in the error message, or turn off Internet Explorer Enhanced Security during the install process.
    * If connector registration fails, see [Troubleshoot Application Proxy](/azure/active-directory/app-proxy/application-proxy-troubleshoot).
