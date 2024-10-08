@@ -14,4 +14,4 @@ Once you register your application, it gets assigned the **User.Read** permissio
 1. Under **Manage**, select **API permissions**.
 
     1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
-    1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
+    1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for the permission.
