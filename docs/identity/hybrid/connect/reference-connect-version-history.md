@@ -19,6 +19,12 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 
 This article helps you keep track of the versions that have been released and understand what the changes are in the latest version.
 
+## 2.4.18.0 Warning
+>[!WARNING]
+>If you are a customer using a [non-commercial cloud](~/identity-platform/authentication-national-cloud.md) (such as [Azure Government](/azure/azure-government/documentation-government-welcome) or [Azure in China](/azure/china/overview-operations)), please wait until our next update before you attempt to upgrade. There is an installation issue with version [2.4.18.0](#24180) that affects customers in non-commercial clouds. Previous versions [2.3.20.0](#2320) and below are unimpacted.
+ 
+We are currently working on a fix, which we will release as part of an updated version as soon as possible. Customers in our commercial cloud are unaffected and can proceed to upgrade to version [2.4.18.0](#24180).
+
 ## Looking for the latest versions?
 
 >[!IMPORTANT]
@@ -30,8 +36,6 @@ This article helps you keep track of the versions that have been released and un
 >
 >For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
 >For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
-
-
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
@@ -68,8 +72,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.3.2.0](#2320)|21 Feb 2025(12 months after release of 2.3.6.0)|
 |[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0)|
 |[2.3.8.0](#2380)|25 Jul 2025 (12 months after release of 2.3.20.0)|
-|[2.3.20.0](#23200)|x Oct 2025 (12 months after release of 2.4.18.0)|
-|[2.4.18.0](#23200)|TBD|
+|[2.3.20.0](#23200)|7 Oct 2025 (12 months after release of 2.4.18.0)|
+|[2.4.18.0](#24180)|TBD|
 
 **All other versions are not supported**
 

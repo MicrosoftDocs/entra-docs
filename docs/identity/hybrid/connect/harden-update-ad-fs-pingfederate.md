@@ -14,11 +14,17 @@ ms.author: billmath
 
 In October 2024, we released a [new version (2.4.18.0) of Microsoft Entra Connect Sync](reference-connect-version-history.md#24180) in which contains a back-end service change that further hardens our services. **All customers are required to upgrade** to the latest version by **April 7, 2025**. 
 
+## 2.4.18.0 Warning
+>[!WARNING]
+>If you are a customer using a [non-commercial cloud](~/identity-platform/authentication-national-cloud.md) (such as [Azure Government](/azure/azure-government/documentation-government-welcome) or [Azure in China](/azure/china/overview-operations)), please wait until our next update before you attempt to upgrade. There is an installation issue with version [2.4.18.0](reference-connect-version-history.md#24180) that affects customers in non-commercial clouds. Previous versions [2.3.20.0](reference-connect-version-history.md#23200) and below are unimpacted.
+ 
+We are currently working on a fix, which we will release as part of an updated version as soon as possible. Customers in our commercial cloud are unaffected and can proceed to upgrade to version [2.4.18.0](reference-connect-version-history.md#24180).
+
 ## Expected impacts 
 
 If you aren’t upgraded to the minimum required version, you may encounter the following impacts to the Microsoft Entra Connect Sync service when the service change takes effect: 
 
- - Configuration of ADFS scenarios through the Connect Sync wizard may not work 
+ - Configuration of AD FS scenarios through the Connect Sync wizard may not work 
  - Configuration of PingFederate scenarios through the Connect Sync wizard may not work 
 
 >[!NOTE]
@@ -26,7 +32,9 @@ If you aren’t upgraded to the minimum required version, you may encounter the 
 
 ### Minimum version 
 
-To avoid any service impact, customers should be on version 2.4.18.0 or higher by April 7, 2025. 
+To avoid any service impact, customers should be on version by April 7, 2025. 
+- Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or higher.
+- Customers in non-commercial clouds:  x.x.xx.x or higher.  [Learn more](reference-connect-version-history.md#24180-warning)
 
 
 >[!IMPORTANT]
@@ -35,9 +43,9 @@ To avoid any service impact, customers should be on version 2.4.18.0 or higher b
 >  - [.NET 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472#:~:text=Downloads%20for%20building%20and%20running%20applications%20with%20.NET%20Framework%204.7.2)
 >  - [TLS 1. 2](reference-connect-tls-enforcement.md)
 
-For [autoupgrade to work](security-updates-pks.md), you should be on version 2.3.20.0 or higher. 
+To assist customers with the upgrade process, we occasionally autoupgrade customers where supported. If you would like to be autoupgraded, ensure you have the [autoupgrade feature](how-to-connect-install-automatic-upgrade.md) configured. For [autoupgrade to work](security-updates-pks.md), you should be on version [2.3.20.0](reference-connect-version-history.md#23200) or higher. 
 
-## Consider moving to Microsoft Entra Cloud Sync
+## Consider moving to Microsoft Entra Cloud  
 
 If you're eligible, we recommend migrating from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we're introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
 
