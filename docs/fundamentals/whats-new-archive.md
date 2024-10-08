@@ -1702,26 +1702,6 @@ For more information, see:
 ## March 2023
 
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - March 2023
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** Third Party Integration    
-      
-
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Acunetix 360](~/identity/saas-apps/acunetix-360-provisioning-tutorial.md)
-- [Akamai Enterprise Application Access](~/identity/saas-apps/akamai-enterprise-application-access-provisioning-tutorial.md)
-- [Ardoq](~/identity/saas-apps/ardoq-provisioning-tutorial.md)
-- [Torii](~/identity/saas-apps/torii-provisioning-tutorial.md)
-
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
-
-
----
-
 ### General Availability - Workload identity Federation for Managed Identities
 
 **Type:** New feature   
