@@ -1702,26 +1702,6 @@ For more information, see:
 ## March 2023
 
 
-### General Availability - Provisioning Insights Workbook
-
-**Type:** New feature   
-**Service category:** Provisioning                     
-**Product capability:** Monitoring & Reporting            
-
-This new workbook makes it easier to investigate and gain insights into your provisioning workflows in a given tenant. This includes HR-driven provisioning, cloud sync, app provisioning, and cross-tenant sync.
-
-Some key questions this workbook can help answer are:
-
-- How many identities have been synced in a given time range?
-- How many create, delete, update, or other operations were performed?
-- How many operations were successful, skipped, or failed?
-- What specific identities failed? And what step did they fail on?
-- For any given user, what tenants / applications were they provisioned or deprovisioned to?
-
-For more information, see: [Provisioning insights workbook](~/identity/app-provisioning/provisioning-workbook.md).
-
----
-
 ### General Availability - Number Matching for Microsoft Authenticator notifications
 
 **Type:** Plan for Change  
