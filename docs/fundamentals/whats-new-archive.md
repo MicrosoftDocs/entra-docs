@@ -1702,24 +1702,6 @@ For more information, see:
 ## March 2023
 
 
-### General Availability - Workload identity Federation for Managed Identities
-
-**Type:** New feature   
-**Service category:** Managed identities for Azure resources                     
-**Product capability:** Developer Experience             
-
-Workload Identity Federation enables developers to use managed identities for their software workloads running anywhere and access Azure resources without needing secrets. Key scenarios include:
-- Accessing Azure resources from Kubernetes pods running in any cloud or on-premises
-- GitHub workflows to deploy to Azure, no secrets necessary
-- Accessing Azure resources from other cloud platforms that support OIDC, such as Google Cloud Platform.
-
-For more information, see: 
-- [Workload identity federation](~/workload-id/workload-identity-federation.md).
-- [Configure a user-assigned managed identity to trust an external identity provider (preview)](~/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity.md)
-- [Use Azure AD workload identity with Azure Kubernetes Service (AKS)](/azure/aks/workload-identity-overview)
-
----
-
 ### Public Preview - New My Groups Experience
 
 **Type:** Changed feature   
