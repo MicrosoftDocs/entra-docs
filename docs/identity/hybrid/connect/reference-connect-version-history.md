@@ -19,13 +19,13 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 
 This article helps you keep track of the versions that have been released and understand what the changes are in the latest version.
 
-## Looking for the latest versions?
-
+## 2.4.18.0 Warning
 >[!WARNING]
->If you are a customer using a non-commercial cloud (such as Azure Government or Azure in China), please wait until our next update before you attempt to upgrade. There is an installation issue with version [2.4.18.0](#24180) that affects customers in non-commercial clouds.
-> 
->We are currently working on a fix, which we will release as part of an updated version as soon as possible. Customers in our commercial cloud are unaffected and can proceed to upgrade to version [2.4.18.0](#24180). 
+>If you are a customer using a [non-commercial cloud](~/identity-platform/authentication-national-cloud.md) (such as [Azure Government](/azure/azure-government/documentation-government-welcome) or [Azure in China](/azure/china/overview-operations)), please wait until our next update before you attempt to upgrade. There is an installation issue with version 2.4.18.0 that affects customers in non-commercial clouds. Previous versions [2.3.20.0](#2320) and below are unimpacted.
+ 
+We are currently working on a fix, which we will release as part of an updated version as soon as possible. Customers in our commercial cloud are unaffected and can proceed to upgrade to version [2.4.18.0](#24180).
 
+## Looking for the latest versions?
 
 >[!IMPORTANT]
 >Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
@@ -36,8 +36,6 @@ This article helps you keep track of the versions that have been released and un
 >
 >For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
 >For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
-
-
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
