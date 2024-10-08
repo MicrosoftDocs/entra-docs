@@ -1772,16 +1772,3 @@ For more information about Microsoft cloud settings for B2B collaboration, see [
 
 ---
 
-### Modernizing Terms of Use Experiences
-
-**Type:** Plan for Change  
-**Service category:** Terms of use                  
-**Product capability:** AuthZ/Access Delegation        
-
-Starting July 2023, we're modernizing the following Terms of Use end user experiences with an updated PDF viewer, and moving the experiences from https://account.activedirectory.windowsazure.com to https://myaccount.microsoft.com:
-- View previously accepted terms of use.
-- Accept or decline terms of use as part of the sign-in flow.
-
-No functionalities are removed. The new PDF viewer adds functionality and the limited visual changes in the end-user experiences will be communicated in a future update. If your organization has allow-listed only certain domains, you must ensure your allowlist includes the domains ‘myaccount.microsoft.com’ and ‘*.myaccount.microsoft.com’ for Terms of Use to continue working as expected.
-
----
