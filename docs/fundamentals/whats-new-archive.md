@@ -1701,15 +1701,6 @@ For more information, see:
 
 ## March 2023
 
-### General Availability - Converged Authentication Methods
-
-**Type:** New feature   
-**Service category:** MFA                     
-**Product capability:** User Authentication             
-
-The Converged Authentication Methods Policy enables you to manage all authentication methods used for MFA and SSPR in one policy, migrate off the legacy MFA and SSPR policies, and target authentication methods to groups of users instead of enabling them for all users in your tenant. For more information, see: [Manage authentication methods](~/identity/authentication/concept-authentication-methods-manage.md).
-
----
 
 ### General Availability - Provisioning Insights Workbook
 
