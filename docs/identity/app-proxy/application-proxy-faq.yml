@@ -56,7 +56,22 @@ sections:
         answer: |
               Yes, Microsoft Entra private network connector is used by both application proxy and Microsoft Entra Private Access. To learn more about the connector, see [Microsoft Entra private network connector](../../global-secure-access/concept-connectors.md).
               To troubleshoot connector configuration, see [troubleshoot connectors](../../global-secure-access/troubleshoot-connectors.md).
-          
+
+      - question: | 
+         ConnectorTroubleshooter cannot start
+        answer: |
+            The ConnectorTroubleshooterLauncher.exe is deprecated and no longer functional. Currently, there is no replacement available.
+
+      - question: | 
+         Can I Change the Logon User of the Microsoft Entra Private Network Connector / Updater Services?         
+        answer: |
+         Changing the logon user of the connector or updater service is not supported.
+
+         Correct Configuration:
+
+         Microsoft Entra Private Network Connector: *Network Service*
+         Microsoft Entra Private Network Connector Updater: *NT Authority\System*
+
   - name: Application configuration
     questions:
       - question: |
@@ -211,7 +226,7 @@ sections:
       - question: |
          Can I use Conditional Access Policies for applications published with passthrough preauthentication?
         answer: |
-              Conditional Access Policies are only enforced for successfully preauthenticated users in Microsoft Entra ID. Passthrough preauthentication doesn’t trigger Microsoft Entra authentication, so Conditional Access Policies can't be enforced. With passthrough preauthentication, MFA policies must be implemented on the on-premises server, if possible, or by enabling Microsoft Entra ID preauthentication with Microsoft Entra application proxy.
+              Conditional Access Policies are only enforced for successfully authenticated users in Microsoft Entra ID. Passthrough preauthentication doesn’t trigger Microsoft Entra authentication, so Conditional Access Policies can't be enforced. With passthrough preauthentication, MFA policies must be implemented on the on-premises server, if possible, or by enabling Microsoft Entra ID preauthentication with Microsoft Entra application proxy.
 
       - question: |
          Can I publish a web application with client certificate authentication requirement?
