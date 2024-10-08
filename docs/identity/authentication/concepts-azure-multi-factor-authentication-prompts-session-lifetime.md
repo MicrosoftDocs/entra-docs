@@ -88,11 +88,11 @@ More information, see [Remember multifactor authentication](howto-mfa-mfasetting
 
 ### Authentication session management with Conditional Access
 
-The administrator can use the **Sign-in frequency** policy to choose a sign-in frequency that applies for both first and second factor in both client and browser. We recommend using these settings, along with using managed devices, in scenarios when you have a need to restrict authentication sessions. For example, you might need restrict an authentication session for critical business applications.
+The administrator can use the **Sign-in frequency** policy to choose a sign-in frequency that applies for both first and second factor in both client and browser. We recommend using these settings, along with using managed devices, in scenarios when you have a need to restrict authentication sessions. For example, you might need to restrict an authentication session for critical business applications.
 
 **Persistent browser session** allows users to remain signed in after closing and reopening their browser window. Like the **Show option to remain signed in** setting, it sets a persistent cookie on the browser. But because the admin configures it, it doesn't require the user to select **Yes** in the **Stay signed-in?** option. In that way, it provides a better user experience. If you use the **Show option to remain signed in** option, we recommend that you enable the **Persistent browser session** policy instead.
 
-For more information. see [Configure adaptive session lifetime policies](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
+For more information, see [Configure adaptive session lifetime policies](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
 
 ### Configurable token lifetimes
 
