@@ -1757,18 +1757,4 @@ If you utilize Conditional Access or Identity Protection, and have IPv6 enabled 
 
 ---
 
-### General Availability - Microsoft cloud settings for Azure AD B2B
-
-**Type:** New feature  
-**Service category:** B2B              
-**Product capability:** B2B/B2C       
-
-Microsoft cloud settings let you collaborate with organizations from different Microsoft Azure clouds. With Microsoft cloud settings, you can establish mutual B2B collaboration between the following clouds:
-
-- Microsoft Azure commercial and Microsoft Azure Government
-- Microsoft Azure commercial and Microsoft Azure operated by 21Vianet
-
-For more information about Microsoft cloud settings for B2B collaboration, see [Microsoft cloud settings](~/external-id/cross-tenant-access-overview.md#microsoft-cloud-settings).
-
----
 
