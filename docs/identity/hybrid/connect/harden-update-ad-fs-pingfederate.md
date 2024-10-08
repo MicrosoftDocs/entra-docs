@@ -24,7 +24,7 @@ We are currently working on a fix, which we will release as part of an updated v
 
 If you aren’t upgraded to the minimum required version, you may encounter the following impacts to the Microsoft Entra Connect Sync service when the service change takes effect: 
 
- - Configuration of ADFS scenarios through the Connect Sync wizard may not work 
+ - Configuration of AD FS scenarios through the Connect Sync wizard may not work 
  - Configuration of PingFederate scenarios through the Connect Sync wizard may not work 
 
 >[!NOTE]
