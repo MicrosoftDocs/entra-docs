@@ -21,7 +21,7 @@ This article helps you keep track of the versions that have been released and un
 
 ## 2.4.18.0 Warning
 >[!WARNING]
->If you are a customer using a [non-commercial cloud](~/identity-platform/authentication-national-cloud.md) (such as [Azure Government](/azure/azure-government/documentation-government-welcome) or [Azure in China](/azure/china/overview-operations)), please wait until our next update before you attempt to upgrade. There is an installation issue with version 2.4.18.0 that affects customers in non-commercial clouds. Previous versions [2.3.20.0](#2320) and below are unimpacted.
+>If you are a customer using a [non-commercial cloud](~/identity-platform/authentication-national-cloud.md) (such as [Azure Government](/azure/azure-government/documentation-government-welcome) or [Azure in China](/azure/china/overview-operations)), please wait until our next update before you attempt to upgrade. There is an installation issue with version [2.4.18.0](#24180) that affects customers in non-commercial clouds. Previous versions [2.3.20.0](#2320) and below are unimpacted.
  
 We are currently working on a fix, which we will release as part of an updated version as soon as possible. Customers in our commercial cloud are unaffected and can proceed to upgrade to version [2.4.18.0](#24180).
 
