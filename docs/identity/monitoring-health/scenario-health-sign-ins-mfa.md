@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/07/2024
+ms.date: 10/09/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -45,28 +45,41 @@ Investigating an alert starts with gathering data.
 
 The following common issues could cause a spike in MFA sign-ins. This list isn't exhaustive, but provides a starting point for your investigation.
 
-### Increase in sign-ins requiring MFA
+### Application configuration issues
 
-An increase in sign-ins requiring MFA could indicate a brute force attack, where multiple unauthorized sign-in attempts are made to a user's account. There could be a regional system outage that required a large number of users to sign in at the same time. A policy change or new feature rollout could also trigger a large number of users to sign in.
+An increase in sign-ins requiring MFA could indicate a policy change or new feature rollout potentially triggered a large number of users to sign in around the same time.
 
 To investigate:
 
-- Study the impact summary of the alert. Sometimes, impacts are concentrated on a specific group or application. By narrowing down which MFA sing-in logs to study, you can track down the root cause faster.
-- After studying the impact summary, check the sign-in logs for failed MFA sign-in attempts.
-    - You might want to apply sign-in log filers based on what you found in the impact summary.
-    - Look for patterns in the sign-in logs, like common IP address locations or multiple failed sign-ins from the same user.
-    - If you find a pattern that implies a possible admin error, check the audit logs for recent configuration changes.
-- Use the [sign-in diagnostic](howto-use-sign-in-diagnostics.md) from the sign-in logs.
-    - Rule out standard user error issues or initial MFA setup issues.
+- In the impact summary, if `resourceType` is "application" and there's only one or two applications listed, check the audit logs for changes to the listed applications.
+- In the audit logs, use the **Target** column to filter for the application or open the audit logs from Enterprise Applications, so the filter is already set.
+- Determine if the application was recently added or reconfigured. 
+- In the sign-in logs, use the **Application** column to filter for the same application or date range to look for any other patterns.
+
+### User authentication issues
+
+An increase in sign-ins requiring MFA could indicate a brute force attack, where multiple unauthorized sign-in attempts are made to a user's account. 
+
+To investigate:
+
+- In the impact summary, if `resourceType` is "user" and the `impactedCount` value shows a small subset of users, the issue might be user-specific.
+- Use the following filters in the sign-in logs:
+    - **Status**: Failure
+    - **Authentication requirement**: Multifactor authentication
+    - Adjust the date to match the timeframe indicated in the impact summary.
+- Are the failed sign-in attempts coming from the same IP address?
+- Are the failed sign-in attempts from the same user?
+- Run the [sign-in diagnostic](howto-use-sign-in-diagnostics.md) to rule out standard user error issues or initial MFA setup issues.
+
+### Network issues
+
+There could be a regional system outage that required a large number of users to sign in at the same time. 
+
+To investigate:
+
+- In the impact summary, if `resourceType` is "user" and the `impactedCount` value shows a large percentage of your organization's users, you might be looking at a wide spread issue.
 - Check your system and network health to see if an outage or update matches the same timeframe as the anomaly.
-- Check the audit logs for recent policy changes that could have triggered the spike.
-    - For example, perhaps the details of the impact summary are concentrated on a single application. In this case, check the audit logs to see if the application was recently added or reconfigured.
 
-
-Number of users
-If the data points to one app, then the chances are good that the app is part of the issue.
-
-What's the common thread between the impacted users?
 
 ## Next steps
 
