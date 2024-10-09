@@ -1,5 +1,5 @@
 ---
-title: Mandatory Microsoft Entra multifactor authentication (MFA) 
+title: Plan for mandatory Microsoft Entra multifactor authentication (MFA) 
 description: Plan for mandatory multifactor authentication for users who sign in to Azure and other management portals.
 ms.service: entra-id
 ms.subservice: authentication
@@ -16,7 +16,9 @@ ms.reviewer: nashahid, gkinasewitz
 
 At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW166lD) shows that MFA can block more than 99.2% of account compromise attacks. 
 
-That's why, starting in 2024, we'll enforce mandatory multifactor authentication (MFA) for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications are affected and how to prepare for mandatory MFA.
+That's why, starting in 2024, we'll enforce mandatory multifactor authentication (MFA) for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
+
+There's no change for users if your organization already enforces MFA for them, or if they sign in with stronger methods like passwordless or passkey (FIDO2). For steps to find users who don't use MFA for sign in, and ways to verify that MFA is enabled, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md). 
 
 ## Scope of enforcement 
  
@@ -43,23 +45,17 @@ Break glass or emergency access accounts are also required to sign in with MFA o
 Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this Azure MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
 
 > [!Tip]
-> We recommend customers currently using user accounts as service accounts begin the process of discovery and migration to workload identities.  This will often require updating scripts and automation processes to use workload identities.
+> We recommend customers discover user accounts that are used as service accounts begin to migrate them to workload identities. Migration often requires updating scripts and automation processes to use workload identities.
 >
-> Review [Prepare for multifactor authentication](#prepare-for-multifactor-authentication) to identify all user accounts (including user accounts being used as service accounts) signing into the phase 2 applications.
->
-> For guidance on migrating authentication with these applications from user based service accounts to workload identities see: 
-> 
->- [Sign into Azure with a managed identity using the Azure CLI](/cli/azure/authenticate-azure-cli-managed-identity)
->- [Sign into Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
->- [Sign in to Azure PowerShell non-interactively for automation scenarios](/powershell/azure/authenticate-noninteractive) (Includes guidance for both managed identity and service principal use cases)
->
-> Customers applying conditional access policies to the user based service accounts can reclaim this user based license and apply [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
+> Review [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md) to identify all user accounts, including user accounts being used as service accounts, that sign in to the [applications](#applications).
 
 ## Implementation
  
 This requirement for MFA at sign-in is implemented for admin portals. Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) shows it as the source of the MFA requirement. 
 
-This requirement is implemented on top of any access policies you’ve configured in your tenant. For example, if your organization chose to retain Microsoft’s [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users don't see any changes as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users don't see a change. Similarly, any restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, continue to be enforced. Users don't see any changes.
+Mandatory MFA for admin portals isn't configurable. It's implemented separately from any access policies thet you configured in your tenant. 
+
+This requirement is implemented on top of . For example, if your organization chose to retain Microsoft’s [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users don't see any changes as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users don't see a change. Similarly, any restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, continue to be enforced. Users don't see any changes.
 
 ## Enforcement phases 
 
@@ -81,27 +77,7 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 - Microsoft 365 message center: A message appears in the Microsoft 365 message center with the same information as the email and service health notification. 
 
-## Prepare for multifactor authentication 
-
-Regardless of any roles they have or don't have, all users who access the admin portals and Azure clients listed in [applications](#applications) must be set up to use MFA. All users who access any administration portal should use MFA. Use the following resources to set up MFA for your users. 
-
-- For a tutorial about how to set up Microsoft Entra MFA, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md).
-- If you don’t require MFA in your tenant today, there are several options available to set it up (listed in preferred order): 
-  - Use [Conditional Access](~/identity/conditional-access/overview.md) policies. Start in [report-only mode](~/identity/conditional-access/concept-conditional-access-report-only.md) and target **All users**. In report-only mode, don't configure exceptions. This configuration more closely mirrors the enforcement pattern of Microsoft Entra MFA program. 
-    - [Microsoft administration portals](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals) (includes portals in scope for this Microsoft Entra MFA enforcement) 
-    - [Require multifactor authentication](~/identity/conditional-access/concept-conditional-access-grant.md#require-multifactor-authentication) or if you want more granular control, use [authentication strengths](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength)
-  - If you sign in to the Microsoft 365 admin center, use the [MFA wizard for Microsoft Entra ID](https://aka.ms/EntraIDMFAWizard).
-  - If you don't have a Microsoft Entra ID P1 or P2 license, you can enable [security defaults](~/fundamentals/security-defaults.md). Users are prompted for MFA as needed, but you can't define your own rules to control the behavior.
-  - If your license doesn't include Conditional Access and you don't want to use security defaults, you can configure [per-user MFA](~/identity/authentication/howto-mfa-userstates.md). When you enable users individually, they perform MFA each time they sign in. An Authentication Administrator can enable some exceptions.
-  
-Use the followng resources to find users who sign in with and without MFA: 
-
-- To identify user sign-ins that aren't protected by MFA, use the [Multifactor Authentication Gaps workbook](~/identity/monitoring-health/workbook-mfa-gaps.md).
-- To export a list of users and their authentication methods, use [PowerShell](https://aka.ms/AzMFA).
-
-If you run queries to analyze user sign-ins, use the application IDs of the [applications](#applications) listed previously. 
-
-### External authentication methods and identity providers 
+## External authentication methods and identity providers 
 
 Support for external MFA solutions is in preview with [external authentication methods](https://aka.ms/EAMAdminDocs), and can be used to meet the MFA requirement. The legacy Conditional Access custom controls preview won't satisfy the MFA requirement. You should migrate to the external authentication methods preview to use an external solution with Microsoft Entra ID.  
 
@@ -172,11 +148,11 @@ An option to postpone the enforcement start date is available for customers. Bet
 **Answer**: Users should not be locked out, but they may get a message that prompts them to enable MFA once enforcement for their tenant has started. If the user is locked out, there may be other issues. For more information, see [Account has been locked](https://support.microsoft.com/en-us/account-billing/account-has-been-locked-805e8b0d-4141-29b2-7b65-df6ff6c9ce27).  
 
 
-## Next steps
-
+## Related content
 
 Review the following topics to learn more about how to configure and deploy MFA:
 
+- [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md)
 - [Secure sign-in events with Microsoft Entra multifactor](~/identity/authentication/tutorial-enable-azure-mfa.md)
 - [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md)
 - [Phishing-resistant MFA methods](~/identity/authentication/phishing-resistant-authentication-videos.md)

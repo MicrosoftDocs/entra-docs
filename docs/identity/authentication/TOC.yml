@@ -240,6 +240,8 @@
       href: howto-mfa-mfasettings.md
     - name: Configure users
       href: howto-mfa-userdevicesettings.yml
+    - name: Verify mandatory MFA 
+      href: how-to-mandatory-multifactor-authentication.md
     - name: Find coverage gaps
       href: how-to-authentication-find-coverage-gaps.md
     - name: Enable per-user MFA
