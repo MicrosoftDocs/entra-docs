@@ -92,12 +92,15 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
-## 2.x.xx.x
+## 2.4.21.0
 
 ### Release status
 
 10/09/2024: Released for download
 
+### Bug fixes
+
+- Fixed an issue with non-commercial clouds.
 
 
 
