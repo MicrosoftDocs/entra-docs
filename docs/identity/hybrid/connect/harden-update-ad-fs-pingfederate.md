@@ -12,7 +12,7 @@ ms.author: billmath
 
 # Hardening update to Microsoft Entra Connect Sync AD FS and PingFederate configuration 
 
-In October 2024, we released a [new version (2.4.18.0) of Microsoft Entra Connect Sync](reference-connect-version-history.md#24180) in which contains a back-end service change that further hardens our services. **All customers are required to upgrade** to the latest version by **April 7, 2025**. 
+In October 2024, we released new versions (2.4.xx.0) of Microsoft Entra Connect Sync in which contains a back-end service change that further hardens our services. **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 7, 2025**. 
 
 
 ## Expected impacts 
@@ -25,11 +25,11 @@ If you aren’t upgraded to the minimum required version, you may encounter the 
 >[!NOTE]
 > If you’re unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the latest version. However, you would **lose the ability to configurate AD FS and PingFederate** during the time period between **April 7, 2025 and when you upgrade**. 
 
-### Minimum version 
+### Minimum versions 
 
 To avoid any service impact, customers should be on version by April 7, 2025. 
 - Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or higher.
-- Customers in non-commercial clouds:  x.x.xx.x or higher.  [Learn more](reference-connect-version-history.md#24180-warning)
+- Customers in non-commercial clouds:  2.4.21.0 or higher. 
 
 
 >[!IMPORTANT]
