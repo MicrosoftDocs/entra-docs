@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 07/24/2024
+ms.date: 10/09/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: kr2b-contr-experiment, enterprise-apps-article
@@ -28,7 +28,7 @@ To publish your application in the Microsoft Entra application gallery, you need
 - Join the Microsoft partner network.
 
 > [!NOTE]
-> We are currently not accepting new SSO or provisioning requests while we focus on the [Secure Future Initiative](https://www.microsoft.com/en-us/security/blog/2024/05/03/security-above-all-else-expanding-microsofts-secure-future-initiative/). Update requests will be processed on a case-by-case basis.
+> We are currently not accepting new SSO or provisioning requests while we focus on the [Secure Future Initiative](https://www.microsoft.com/security/blog/topic/secure-future-initiative/). Update requests will be processed on a case-by-case basis.
 
 ## Prerequisites
 To publish your application in the gallery, you must first read and agree to specific [terms and conditions](https://azure.microsoft.com/support/legal/active-directory-app-gallery-terms/).
