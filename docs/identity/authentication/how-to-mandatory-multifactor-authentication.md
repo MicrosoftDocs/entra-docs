@@ -37,12 +37,12 @@ Customers applying Conditional Access policies to the user based service account
 Regardless of any roles they have or don't have, all users who access the admin portals and Azure clients listed in [applications](#applications) must be set up to use MFA. All users who access any administration portal should use MFA. Use the following steps to verify that MFA is set up for your users, or to enable it if needed. 
 
 1. Sign in to Azure portal as a Global Reader.
-1. Browse to Identity > Overview.
+1. Browse to **Identity** > **Overview**.
 1. Check the license type for the tenant subscription. 
 1. Follow the steps for your license type to verify MFA is enabled, or enable it if needed. To complete these steps, you need to sign out as a Global Reader, and sign back in with a more privileged role.
 
-   - Microsoft Entra ID P1 or Microsoft Entra ID P2 
-   - Microsoft 365 or Microsoft Entra ID Free 
+   - [Microsoft Entra ID P1 or Microsoft Entra ID P2](#verify-mfa-is-enabled-for-microsoft-entra-id-p1-or-microsoft-entra-id-p2-license) 
+   - [Microsoft 365 or Microsoft Entra ID Free](#verify-mfa-is-enabled-for-microsoft-365-or-microsoft-entra-id-free)
 
 ### Verify MFA is enabled for Microsoft Entra ID P1 or Microsoft Entra ID P2 license
 
