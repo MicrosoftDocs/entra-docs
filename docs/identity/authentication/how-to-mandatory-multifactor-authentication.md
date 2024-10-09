@@ -4,7 +4,7 @@ description: Steps to verify mandatory multifactor authentication for users who 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/08/2024
+ms.date: 10/09/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -20,7 +20,7 @@ This topic covers steps to verify that users in your organization are set up to 
 Use the followng resources to find users who sign in with and without MFA: 
 
 - To export a list of users and their authentication methods, use [PowerShell](https://aka.ms/AzMFA).
-- If you run queries to analyze user sign-ins, use the application IDs of the [applications](#applications) listed previously. 
+- If you run queries to analyze user sign-ins, use the application IDs of the [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications). 
 
 ## Migrate user-based service accounts to workload identities
 
@@ -34,7 +34,7 @@ Customers applying Conditional Access policies to the user based service account
 
 
 ## Verify MFA enablement
-Regardless of any roles they have or don't have, all users who access the admin portals and Azure clients listed in [applications](#applications) must be set up to use MFA. All users who access any administration portal should use MFA. Use the following steps to verify that MFA is set up for your users, or to enable it if needed. 
+Regardless of any roles they have or don't have, all users who access the admin portals and Azure clients listed in [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications) must be set up to use MFA. All users who access any administration portal should use MFA. Use the following steps to verify that MFA is set up for your users, or to enable it if needed. 
 
 1. Sign in to Azure portal as a Global Reader.
 1. Browse to **Identity** > **Overview**.
@@ -53,7 +53,7 @@ If you have a Microsoft Entra ID P1 or Microsoft Entra ID P2 license, you can cr
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
-1. Under **Include**, select **All users**, or a group of users who sign in to the [applications](#applications) listed previously.
+1. Under **Include**, select **All users**, or a group of users who sign in to the [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications).
 1. Under **Target resources** > **Cloud apps** > **Include**, **Select apps**, select **Microsoft Admin Portals**.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require authentication strength**, select **Multifactor authentication**, and select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
@@ -83,14 +83,6 @@ If you don't want to use security defaults, you can enable per-user MFA. When yo
 
 After you enable users, notify them by email. Tell the users that a prompt is displayed to ask them to register the next time they sign in. For more information, see [Enable per-user Microsoft Entra multifactor authentication to secure sign-in events](howto-mfa-userstates.md).
 
-- For a tutorial about how to set up Microsoft Entra MFA, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md).
-- If you don’t require MFA in your tenant today, there are several options available to set it up (listed in preferred order): 
-  - Use [Conditional Access](~/identity/conditional-access/overview.md) policies. Start in [report-only mode](~/identity/conditional-access/concept-conditional-access-report-only.md) and target **All users**. In report-only mode, don't configure exceptions. This configuration more closely mirrors the enforcement pattern of Microsoft Entra MFA program. 
-    - [Microsoft administration portals](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals) (includes portals in scope for this Microsoft Entra MFA enforcement) 
-    - [Require multifactor authentication](~/identity/conditional-access/concept-conditional-access-grant.md#require-multifactor-authentication) or if you want more granular control, use [authentication strengths](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength)
-  - If you sign in to the Microsoft 365 admin center, use the [MFA wizard for Microsoft Entra ID](https://aka.ms/EntraIDMFAWizard).
-  - If you don't have a Microsoft Entra ID P1 or P2 license, you can enable [security defaults](~/fundamentals/security-defaults.md). Users are prompted for MFA as needed, but you can't define your own rules to control the behavior.
-  - If your license doesn't include Conditional Access and you don't want to use security defaults, you can configure [per-user MFA](~/identity/authentication/howto-mfa-userstates.md).
 
 ## Related content 
 
