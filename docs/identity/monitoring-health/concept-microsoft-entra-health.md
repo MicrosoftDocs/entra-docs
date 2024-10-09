@@ -63,6 +63,6 @@ In addition to publicly reporting global SLA performance, Microsoft Entra ID pro
 
 Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
 
-You can also view SLA attainment using [Microsoft Graph](/graph/api/resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
+You can also view SLA attainment using [Microsoft Graph APIs](/graph/api/resources/azureadauthentication?view=graph-rest-beta&preserve-view=true).
 
 ![Screenshot of the SLA attainment report.](media/concept-microsoft-entra-health/sla-attainment.png)

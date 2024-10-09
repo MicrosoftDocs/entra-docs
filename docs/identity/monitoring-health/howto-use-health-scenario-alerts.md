@@ -34,7 +34,7 @@ This article provides guidance on how to:
 
 ## How to access Microsoft Entra Health
 
-You can view the Microsoft Entra Health service level agreement (SLA) attainment report and the health monitoring signals from the Microsoft Entra admin center. You can also view these data streams, and the public preview of health monitoring alerts, using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true). [Enable the Scenario monitoring preview](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true#view/Microsoft_AAD_IAM/FeaturePreviewsListBlade).
+You can view the Microsoft Entra Health service level agreement (SLA) attainment report and the health monitoring signals from the Microsoft Entra admin center. You can also view these data streams, and the public preview of health monitoring alerts, using [Microsoft Graph APIs](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true). [Enable the Scenario monitoring preview](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true#view/Microsoft_AAD_IAM/FeaturePreviewsListBlade).
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
@@ -93,9 +93,14 @@ In Microsoft Graph Explorer, run the following PATCH query to configure email no
 ```http
 PATCH https://graph.microsoft.com/beta/reports/healthMonitoring/alertConfigurations/{alertType}
 Content-Type: application/json
+
 {
-    "groupId": "Object ID of the group",
-    "isEnabled": true
+  "emailNotificationConfigurations": [
+    {
+      "groupId":"Object ID of the group",
+      "isEnabled": true
+    }
+  ]
 }
 ```
 
