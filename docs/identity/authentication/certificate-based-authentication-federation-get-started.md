@@ -59,21 +59,21 @@ The related information exists for the following device platforms:
 
 ## Step 2: Configure the certificate authorities
 
-[!INCLUDE [Configure certificate authorities](../../includes/entra-authentication-configure-certificate-authorities.md)]
+[!INCLUDE [Configure certificate authorities](~/includes/entra-authentication-configure-certificate-authorities.md)]
 
 ### Connect
 
-[!INCLUDE [Connect-AzureAD](../../includes/entra-authentication-connect.md)]
+[!INCLUDE [Connect-AzureAD](~/includes/entra-authentication-connect.md)]
 
 
 ### Retrieve
 
-[!INCLUDE [Get-AzureAD](../../includes/entra-authentication-get-trusted.md)]
+[!INCLUDE [Get-AzureAD](~/includes/entra-authentication-get-trusted.md)]
 
 
 To add, modify, or remove a CA, use the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. [!INCLUDE [Privileged role](../../includes/privileged-role-include.md)]
 1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
 1. To upload a CA, select **Upload**: 
    1. Select the CA file.

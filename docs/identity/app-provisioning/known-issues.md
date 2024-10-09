@@ -80,7 +80,7 @@ On configuring provisioning for the first time, you'll notice that the provision
 
 #### Attribute SamAccountName or userType not available as a source attribute
 
-The attributes **SamAccountName** and **userType** aren't available as a source attribute by default. Extend your schema to add the attributes. You can add the attributes to the list of available source attributes by extending your schema. To learn more, see [Missing source attribute](user-provisioning-sync-attributes-for-mapping.md). 
+The attributes **SamAccountName** and **userType** aren't available as source attributes. You can instead use a directory extension attribute as a workaround. To learn more, see [Missing source attribute](user-provisioning-sync-attributes-for-mapping.md). 
 
 #### Source attribute dropdown missing for schema extension
 

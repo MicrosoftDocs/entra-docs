@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: amycolannino
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 10/07/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
@@ -19,6 +19,12 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 
 This article helps you keep track of the versions that have been released and understand what the changes are in the latest version.
 
+## 2.4.18.0 Warning
+>[!WARNING]
+>If you are a customer using a [non-commercial cloud](~/identity-platform/authentication-national-cloud.md) (such as [Azure Government](/azure/azure-government/documentation-government-welcome) or [Azure in China](/azure/china/overview-operations)), please wait until our next update before you attempt to upgrade. There is an installation issue with version [2.4.18.0](#24180) that affects customers in non-commercial clouds. Previous versions [2.3.20.0](#2320) and below are unimpacted.
+ 
+We are currently working on a fix, which we will release as part of an updated version as soon as possible. Customers in our commercial cloud are unaffected and can proceed to upgrade to version [2.4.18.0](#24180).
+
 ## Looking for the latest versions?
 
 >[!IMPORTANT]
@@ -30,8 +36,6 @@ This article helps you keep track of the versions that have been released and un
 >
 >For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
 >For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
-
-
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
@@ -67,8 +71,9 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.2.8.0](#2280)|12 Dec 2024 (12 months after release of 2.3.2.0)|
 |[2.3.2.0](#2320)|21 Feb 2025(12 months after release of 2.3.6.0)|
 |[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0)|
-|[2.3.8.0](#2380)|x Jul 2025 (12 months after release of 2.3.20.0)|
-|[2.3.20.0](#23200)|TBD|
+|[2.3.8.0](#2380)|25 Jul 2025 (12 months after release of 2.3.20.0)|
+|[2.3.20.0](#23200)|7 Oct 2025 (12 months after release of 2.4.18.0)|
+|[2.4.18.0](#24180)|TBD|
 
 **All other versions are not supported**
 
@@ -92,6 +97,50 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+## 2.4.18.0
+
+### Release status
+
+10/07/2024: Released for download
+
+
+### Updated Features
+- The step **Connect to Microsoft Entra ID** in the Connect Sync Wizard will not require password before redirecting you to the login page.
+- Updated Default Rule: "onPremisesObjectIdentifier" attribute added to the **In from AD - User Account Enabled** sync rule.
+   - In the scenario:
+     - where the user information around the same user is spread across different forests
+     - and if the user is disabled in one of the forests adding this rule will allow the sync to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled. 
+- This registry key change will now allow you to set the precedence number for custom rules to be more than 100 if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence** to allow for more custom rules. If no value is set, 100 is the default.
+- Cmdlets in the ADSync PowerShell module that modify Microsoft Entra ID settings now require Microsoft Entra ID login.
+
+### Deprecated features
+- The feature that used to validate object against schema has been deprecated and is no longer available in the Synchronization Service Manager.
+- The "enableldap" Command Line (Preview) feature has been deprecated and is no longer available when you run the Wizard.
+
+
+### Miscellaneous 
+- The minimum .NET runtime requirement has been increased to 4.7.2.
+- Branding updates to match Microsoft Entra ID branding.
+
+
+### Bug fixes
+
+- Improved Wizard experience to ensure domain validation has to be completed before moving to the next step in the wizard.
+- Improved error messaging when fetching list of domains in a forest
+- Fixed error that made installing with an existing database incompatible with Password Writeback enabled. 
+- Fixed credential issue with ADConnectivityTool module that could occur if NTLM is set to deny-all.
+- Fixed error around localization string that could occur when prompting for Enterprise Admin.
+- Fixed an issue where the re-running the Wizard would display initial OU configuration instead of the correct configuration.
+- Fixed error that could occur during sync if the string was longer than expected due to special Unicode characters.
+- Fixed error that could occur that caused the Wizard install to hang due to null certificates in the AD FS configuration setup.
+- Fixed an issue where auto upgrade could fail when trying to get the service account.
+- Fixed an error that could occur if a join rule contains an attribute name with a hyphen.
+- Improved error messaging in the Wizard when TLS settings do not meet the prerequisites.
+- Fixed a bug with the password hash not syncing on changing the SMART CARD REQUIRED bit flag. This fix will now allow the passwords in Microsoft Entra ID and Active Directory to be in sync for scenarios where smart card is used as an authentication method. [Learn more](how-to-connect-password-hash-synchronization.md#password-hash-synchronization-and-smart-card-authentication) 
+- Fixed a bug where auto upgrade endpoints were configured incorrectly for some clouds.
+- Fixed an issue where auto upgrade could fail when trying to get the service account.
+
+
 ## 2.3.20.0
 
 >[!IMPORTANT]
@@ -111,7 +160,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Functional changes
 
 - TLS 1.2 or greater is required for Microsoft Entra Connect. Please see the prerequisites for guidance: [Microsoft Entra Connect: Prerequisites and hardware - Microsoft Entra ID](how-to-connect-install-prerequisites.md#enable-tls-12-for-microsoft-entra-connect) | Microsoft Learn
-- TLS 1.3 is supported by Microsoft Entra Connect. Support for [TLS 1.3 is being rolled out for Entra ID services](/troubleshoot/azure/entra/entra-id/ad-dmn-services/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services), However, until this is complete, it is not recommended to enforce TLS 1.3.
+- TLS 1.3 is supported by Microsoft Entra Connect. Support for [TLS 1.3 is being rolled out for Microsoft Entra ID services](/troubleshoot/azure/entra/entra-id/ad-dmn-services/enable-support-tls-environment?tabs=azure-monitor#tls-13-support-for-microsoft-entra-services), However, until this is complete, it is not recommended to enforce TLS 1.3.
 
 ### Other Changes
 

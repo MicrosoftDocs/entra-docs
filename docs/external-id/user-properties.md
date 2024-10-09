@@ -63,7 +63,7 @@ After the B2B collaboration user accepts the invitation, the **Identities** prop
 
 ### User Principal Name
 
-The user principal name (UPN) for a B2B collaboration user object contains an #EXT# identifier.
+The UPN for a B2B collaboration user object (i.e. the guest users) contains the email of the guest user, followed by #EXT#, followed by the tenantname.onmicrosoft.com. For example, if the user john@contoso.com is added as an external user in the directory fabrikam, then its UPN will be john_contoso.com#EXT#@fabrikam.onmicrosoft.com.
 
 ### User type
 
@@ -135,8 +135,7 @@ Yes. By default, guest objects aren't visible in your organization's global addr
 
 If a guest user accepts your invitation and they subsequently change their email address, the new email doesn't automatically sync to the guest user object in your directory. The mail property is created via [Microsoft Graph API](/graph/api/resources/user). You can update the mail property via the Microsoft Graph API, the Exchange admin center, or [Exchange Online PowerShell](/powershell/module/exchange/set-mailuser). The change will be reflected in the Microsoft Entra guest user object.
 
-## Next steps
+## Related content
 
 - [B2B user claims mapping](claims-mapping.md)
-- [B2B collaboration user tokens](user-token.md)
 - [B2B collaboration for hybrid organizations](hybrid-organizations.md)

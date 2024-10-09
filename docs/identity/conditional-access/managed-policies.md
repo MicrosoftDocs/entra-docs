@@ -36,6 +36,8 @@ Administrators with at least the [Conditional Access Administrator](../role-base
 Administrators have the ability to **Edit** the **State** (On, Off, or Report-only) and the **Excluded identities** (Users, Groups, and Roles) in the policy. Organizations should [exclude their break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from these policies the same as they would in other Conditional Access policies. Organizations can duplicate these policies if they want to make more changes than the basic ones allowed in the Microsoft-managed versions.
 
 Microsoft will enable these policies after no less than 90 days after they're introduced in your tenant if they're left in the **Report-only** state. Administrators might choose to turn these policies **On** sooner, or opt out by setting the policy state to **Off**. Customers are notified via emails and [Message center](/microsoft-365/admin/manage/message-center) posts 28 days before the policies are enabled. 
+> [!NOTE]
+> In some cases, policies may be enabled faster than 90 days. If this is applicable to your tenant, it will be noted in emails and M365 message center posts you receive about Microsoft Managed Policies. It will also be mentioned in the policy's details in the Microsoft Admin Center.
 
 ## Policies
 
@@ -64,7 +66,12 @@ To apply this policy to more users, duplicate it and change the assignments.
 
 This policy covers all users and requires MFA and reauthentication when we detect high-risk sign-ins. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include: travel that is highly abnormal, password spray attacks, or token replay attacks. For more information about these risk definitions, see the article [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
 
-This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled and there are enough licenses for each user. Microsoft doesn't allow risky users to register for MFA. To avoid locking out users, this policy is only available to organizations where every user is already registered for MFA. 
+This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled. 
+-	If P2 licenses equal or exceed total MFA-registered active users, the policy will cover All Users. 
+-	If MFA-registered active users exceed P2 licenses, we will create and assign the policy to a capped security group based on available P2 licenses. You can modify membership of the policy’s security group. 
+
+To prevent attackers from taking over accounts, Microsoft doesn't allow risky users to register for MFA.
+
 
 ## Security defaults policies
 The following policies are available for when you upgrade from using security defaults.

@@ -20,8 +20,6 @@ The Microsoft Entra application gallery is a collection of software as a service
 
 To find the gallery when signed into your tenant, browse to **Identity** > **Applications** > **Enterprise applications** > **All applications** > **New application**.
 
-:::image type="content" source="media/overview-application-gallery/enterprise-applications.png" alt-text="Screenshot showing the Microsoft Entra application gallery pane in the [Microsoft Entra admin center](https://entra.microsoft.com).":::
-
 The applications available from the gallery follow the SaaS model that allows users to connect to and use cloud-based applications over the Internet. Common examples are email, calendaring, and office tools (such as Microsoft Office 365).
 
 The following are benefits of using applications available in the gallery:

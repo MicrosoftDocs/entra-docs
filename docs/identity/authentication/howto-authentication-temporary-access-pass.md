@@ -67,8 +67,7 @@ To configure the TAP authentication method policy:
 
 After you enable a TAP policy, you can create TAPs for users in Microsoft Entra ID.  These following roles can perform various actions related to a TAP.
 
-- Global Administrators can create, delete, and view a TAP for any user (except themselves).
-- Privileged Authentication Administrators can create, delete, and view a TAP for admins and members (except themselves).
+- Those assigned at least the Privileged Authentication Administrator role can create, delete, and view a TAP for admins and members (except themselves).
 - Authentication Administrators can create, delete, and view a TAP for members (except themselves).
 - Global Readers can view TAP details for the user (without reading the code itself).
 
@@ -210,7 +209,7 @@ For more information about NIST standards for onboarding and recovery, see [NIST
 Keep these limitations in mind:
 
 - When using a one-time TAP to register a passwordless method such as a FIDO2 security key or phone sign-in, the user must complete the registration within 10 minutes of sign-in with the one-time TAP. This limitation doesn't apply to a TAP that can be used more than once.
-- Users in scope for self service password reset (SSPR) registration policy *or* [Identity Protection multifactor authentication registration policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md) are required to register authentication methods after they've signed in with a TAP using a browser. 
+- Users in scope for self service password reset (SSPR) registration policy *or* [Microsoft Entra ID Protection multifactor authentication registration policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md) are required to register authentication methods after they've signed in with a TAP using a browser. 
 Users in scope for these policies are redirected to the [Interrupt mode of the combined registration](concept-registration-mfa-sspr-combined.md#combined-registration-modes). This experience doesn't currently support FIDO2 and phone sign-in registration. 
 - A TAP can't be used with the Network Policy Server (NPS) extension and Active Directory Federation Services (AD FS) adapter.
 - It can take a few minutes for changes to replicate. Because of this, after a TAP is added to an account, it can take a while for the prompt to appear. For the same reason, after a TAP expires, users may still see a prompt for TAP. 

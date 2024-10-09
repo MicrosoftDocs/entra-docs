@@ -144,9 +144,7 @@ Use the **Configuration Properties** tab to creat new application configurations
 2. Enter the **Tenant ID, Client ID**, and **Client Secret** you noted.
 4. Confirm the BIG-IP connects to the tenant.
 5. Select **Next**
-
-   ![Screenshot of options and selections for Configuration Properties.](./media/f5-big-ip-easy-button-oracle-jde/configuration-general-and-service-account-properties.png)
-   
+  
 ### Service Provider
 
 The Service Provider settings define the properties for the SAML SP instance of the application protected through SHA.

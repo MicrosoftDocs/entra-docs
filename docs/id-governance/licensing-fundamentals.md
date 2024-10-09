@@ -41,7 +41,7 @@ The [product names and service plan identifiers for licensing](../identity/users
 
 To check if the prerequisite products for a Microsoft Entra ID Governance product are present in a tenant, you can use the Microsoft Entra admin center or the Microsoft 365 admin center to view the list of products.
 
-1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as a [License Administrator](../identity/role-based-access-control/permissions-reference.md#license-administrator).
 
 1. In the **Identity** menu, expand **Billing** and select **Licenses**.
 

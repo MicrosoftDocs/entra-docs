@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/03/2024
+ms.date: 10/09/2024
 
 ms.author: justinha
 author: justinha
@@ -21,13 +21,13 @@ This article covers the sign-in experience when using passkeys in Microsoft Auth
 
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
-| **Same-device authentication in a browser**              | &#x2705;          | &#x2705;<sup>1</sup>      |
-| **Same-device authentication in native Microsoft applications**<sup>2</sup>            | &#x2705; | &#x2705;     |
+| **Same-device authentication in a browser**              | &#x2705;          | &#x2705;<sup>1</sup>       |
+| **Same-device authentication in native Microsoft applications**            | &#x2705; | &#10060;<sup>2</sup>    |
 | **Cross-device authentication**  | &#x2705;  | &#x2705;    |
 
-<sup>1</sup>Support for passkeys in Authenticator using Edge on Android is coming soon.
+<sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
 
-<sup>2</sup>For native app sign-in (preview), the user must have an authentication broker installed. Microsoft Authenticator is an authentication broker.
+<sup>2</sup>Native app sign-in support is coming soon.
 
 ## [**iOS**](#tab/iOS)
 
@@ -110,15 +110,12 @@ To sign in with a passkey in Microsoft Authenticator, your Android device needs 
 
 ### Same-device authentication in a browser (Android)
 
-
-### Same-device authentication (Android)
-
 Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft Authenticator on your Android device.
 
 >[!NOTE]
->Support for passkeys in Authenticator using Edge on Android is coming soon. 
+>Support for same-device registration in Edge on Android is coming soon.
 
-1. On your Android device, open your browser and navigate to the resource you're trying to access at [Security info](https://mysignins.microsoft.com/security-info).
+1. On your Android device, open your browser and navigate to the resource you're trying to access at [My Security info](https://aka.ms/mysecurityinfo).
 
 1. When prompted to sign in, you have two options. The *usernameless* option can be easier than entering your username.
 
@@ -140,7 +137,7 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 1. To select your passkey, follow the steps in the Android operating system dialog. Verify that it's you by scanning your face, fingerprint, or entering your device PIN or unlock gesture.
 
 1. You're now signed into Microsoft Entra ID.
---->
+
 
 ### Cross-device authentication (Android)
 

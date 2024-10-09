@@ -30,9 +30,9 @@ To take advantage of our latest security improvements, we strongly encourage cus
 
 - Microsoft Entra Connect: [version 2.3.2.0](reference-connect-version-history.md#2320) or higher
 - Microsoft Entra Connect Health 
-     - Connect Sync agent: [4.5.2487.0](https://aka.ms/connecthealth-download) or higher 
-     - AD DS agent: version: [4.5.2487.0](https://aka.ms/connecthealth-adds-download) or higher 
-     - AD FS agent: version: [4.5.2487.0](https://aka.ms/connecthealth-adfs-download) or higher
+     - Connect Sync agent: [4.5.2466.0](https://aka.ms/connecthealth-download) or higher 
+     - AD DS agent: version: [4.5.2466.0](https://aka.ms/connecthealth-adds-download) or higher 
+     - AD FS agent: version: [4.5.2466.0](https://aka.ms/connecthealth-adfs-download) or higher
 
 To upgrade to the latest version.
 > [!div class="nextstepaction"]

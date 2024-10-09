@@ -6,7 +6,7 @@ metadata:
   author: csmulligan
   ms.author: cmulligan
   manager: celestedg
-  ms.date: 12/14/2023
+  ms.date: 08/25/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -148,7 +148,7 @@ procedureSection:
               
               b. In the search results, choose the user, and then choose **Select**.
 
-        You can also use dynamic groups with Microsoft Entra B2B collaboration. For more information, see [Dynamic groups and Microsoft Entra B2B collaboration](use-dynamic-groups.md).
+        You can also use dynamic membership groups with Microsoft Entra B2B collaboration. For more information, see [Dynamic groups and Microsoft Entra B2B collaboration](use-dynamic-groups.md).
 
   - title: |
       Add guest users to an application

@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: customers
 
 ms.topic: concept-article
-ms.date: 08/14/2024
+ms.date: 10/07/2024
 ms.author: mimart
 ms.custom: it-pro, references_regions
 
@@ -23,7 +23,7 @@ ms.custom: it-pro, references_regions
 [Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
 
 - Email one-time passcode
-- SMS based authentication, available as an add-on ([see details](#sms-based-authentication))
+- SMS-based authentication, available as an add-on ([see details](#sms-based-authentication)).
 
 Enforcing MFA enhances your organization's security by adding an extra layer of verification, making it more difficult for unauthorized users to gain access.
 
@@ -54,20 +54,22 @@ When email one-time passcode is enabled for MFA, the user signs in with their pr
 
 ## SMS-based authentication
 
-SMS is available at additional cost for second-factor verification in external tenants. Currently, SMS is not available for first-factor authentication or self-service password reset in external tenants.
+SMS is available at additional cost for second-factor verification in external tenants. Currently, SMS isn't available for first-factor authentication or self-service password reset in external tenants.
 
 When SMS is enabled for MFA, users sign in with their primary method and are prompted to verify their identity with a code sent via text. They enter their phone number and receive an SMS with the verification code.
 
    :::image type="content" source="media/concept-multifactor-authentication-customers/sms-text.png" alt-text="Screenshot of the SMS text for MFA." border="false":::
 
-External ID mitigates fraudulent sign-ups via SMS by enforcing the following measures:
+External ID mitigates fraudulent sign-ups and sign-ins via SMS by enforcing the following measures:
 
 - Telephony throttling limits help prevent outages and slowdowns. See [Service limits and restrictions](reference-service-limits.md).
 - CAPTCHA for SMS MFA helps prevent automated attacks by distinguishing human users from automated bots. If a risky user is detected, we block the user from signing in or ask the user to complete a CAPTCHA before sending an SMS verification code.
 
 ### SMS pricing tiers by country/region
 
-The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions.
+The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions. For pricing details, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
+
+SMS is an add-on feature and requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription). If your subscription expires or is cancelled, end users will no longer be able to authenticate using SMS, which could block them from signing in depending on your MFA policy.
 
 |Tier                               |Countries/Regions  |
 |-----------------------------------|-------------------|

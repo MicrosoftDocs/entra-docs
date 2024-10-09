@@ -12,28 +12,28 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
 ---
-# What is Identity Protection?
+# What is Microsoft Entra ID Protection?
 
 Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. 
 
-:::image type="content" source="media/overview-identity-protection/identity-protection-overview.png" alt-text="Diagram showing how Identity Protection works at a high level.":::
+:::image type="content" source="media/overview-identity-protection/identity-protection-overview.png" alt-text="Diagram showing how ID Protection works at a high level.":::
 
 ## Detect risks
 
-Microsoft continually adds and updates detections in our catalog to protect organizations. These detections come from our learnings based on the analysis of trillions of signals each day from Active Directory, Microsoft Accounts, and in gaming with Xbox. This broad range of signals helps Identity Protection detect risky behaviors like: 
+Microsoft continually adds and updates detections in our catalog to protect organizations. These detections come from our learnings based on the analysis of trillions of signals each day from Active Directory, Microsoft Accounts, and in gaming with Xbox. This broad range of signals helps ID Protection detect risky behaviors like: 
 
 - Anonymous IP address usage
 - Password spray attacks
 - Leaked credentials 
 - and more... 
 
-During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in is compromised. Based on this risk level, policies are then applied to protect the user and the organization.
+During each sign-in, ID Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in is compromised. Based on this risk level, policies are then applied to protect the user and the organization.
 
 For a full listing of risks and how they're detected, see the article [What is risk](concept-identity-protection-risks.md).
 
 ## Investigate
 
-Any risks detected on an identity are tracked with reporting. Identity Protection provides three key reports for administrators to investigate risks and take action: 
+Any risks detected on an identity are tracked with reporting. ID Protection provides three key reports for administrators to investigate risks and take action: 
 
 - **Risk detections:** Each risk detected is reported as a risk detection.
 - **Risky sign-ins:** A risky sign-in is reported when there are one or more risk detections reported for that sign-in.
@@ -65,22 +65,22 @@ When user remediation isn't enabled, an administrator must manually review them 
 
 ## Making use of the data
 
-Data from Identity Protection can be exported to other tools for archive, further investigation, and correlation. The Microsoft Graph based APIs allow organizations to collect this data for further processing in a tool such as their SIEM. Information about how to access the Identity Protection API can be found in the article, [Get started with Microsoft Entra ID Protection and Microsoft Graph](howto-identity-protection-graph-api.md) 
+Data from ID Protection can be exported to other tools for archive, further investigation, and correlation. The Microsoft Graph based APIs allow organizations to collect this data for further processing in a tool such as their SIEM. Information about how to access the ID Protection API can be found in the article, [Get started with Microsoft Entra ID Protection and Microsoft Graph](howto-identity-protection-graph-api.md) 
 
-Information about integrating Identity Protection information with Microsoft Sentinel can be found in the article, [Connect data from Microsoft Entra ID Protection](/azure/sentinel/data-connectors-reference#microsoft). 
+Information about integrating ID Protection information with Microsoft Sentinel can be found in the article, [Connect data from Microsoft Entra ID Protection](/azure/sentinel/data-connectors-reference#microsoft). 
 
 Organizations might store data for longer periods by changing the diagnostic settings in Microsoft Entra ID. They can choose to send data to a Log Analytics workspace, archive data to a storage account, stream data to Event Hubs, or send data to another solution. Detailed information about how to do so can be found in the article, [How To: Export risk data](howto-export-risk-data.md). 
 
 ## Required roles
 
-Identity Protection requires users be assigned one or more of the following roles in order to access.
+ID Protection requires users be assigned one or more of the following roles in order to access.
 
 | Role | Can do | Can't do |
 | --- | --- | --- |
-| [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) | Full access to Identity Protection | Reset password for a user |
-| [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator) | View all Identity Protection reports and Overview <br><br> Dismiss user risk, confirm safe sign-in, confirm compromise | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts |
-| [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) | View all Identity Protection reports and Overview | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts <br><br> Give feedback on detections |
-| [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) | Read-only access to Identity Protection |   |
+| [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) | Full access to ID Protection | Reset password for a user |
+| [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator) | View all ID Protection reports and Overview <br><br> Dismiss user risk, confirm safe sign-in, confirm compromise | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts |
+| [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) | View all ID Protection reports and Overview | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts <br><br> Give feedback on detections |
+| [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) | Read-only access to ID Protection |   |
 | [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) | Reset user passwords |   |
 
 Currently, the Security Operator role can't access the Risky sign-ins report.
@@ -93,7 +93,7 @@ Conditional Access administrators can create policies that factor in user or sig
 
 | Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 |
 | --- | --- | --- | --- | --- |
-| Risk policies | Sign-in and user risk policies (via Identity Protection or Conditional Access) | No | No | Yes |
+| Risk policies | Sign-in and user risk policies (via ID Protection or Conditional Access) | No | No | Yes |
 | Security reports | Overview | No | No | Yes |
 | Security reports | Risky users | Limited Information. Only users with medium and high risk are shown. No details drawer or risk history. | Limited Information. Only users with medium and high risk are shown. No details drawer or risk history. | Full access|
 | Security reports | Risky sign-ins | Limited Information. No risk detail or risk level is shown. | Limited Information. No risk detail or risk level is shown. | Full access |
@@ -108,4 +108,4 @@ To make use of workload identity risk, including the **Risky workload identities
 
 ## Next steps
 
-- [Plan an Identity Protection deployment](how-to-deploy-identity-protection.md)
+- [Plan a Microsoft Entra ID Protection deployment](how-to-deploy-identity-protection.md)

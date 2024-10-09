@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: overview
-ms.date: 10/30/2023
+ms.date: 09/30/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps-article
@@ -24,13 +24,13 @@ Many applications already exist in Microsoft Entra ID that you can use with SSO.
 
 ## Single sign-on options
 
-Choosing an SSO method depends on how the application is configured for authentication. Cloud applications can use federation-based options, such as OpenID Connect, OAuth, and SAML. The application can also use password-based SSO, linked-based SSO, or SSO can be disabled.
+Choosing an SSO method depends on how the application is configured for authentication. Cloud applications can use federation-based options, such as OpenID Connect, and SAML. The application can also use password-based SSO, linked-based SSO, or SSO can be disabled.
 
 - **Federation** - When you set up SSO to work between multiple identity providers, it's called federation. An SSO implementation based on federation protocols improves security, reliability, end-user experiences, and implementation. 
 
     With federated single sign-on, Microsoft Entra authenticates the user to the application by using their Microsoft Entra account. This method is supported for [SAML 2.0](~/identity-platform/single-sign-on-saml-protocol.md), WS-Federation, or [OpenID Connect](~/identity-platform/v2-protocols-oidc.md) applications. Federated SSO is the richest mode of SSO. Use federated SSO with Microsoft Entra ID when an application supports it, instead of password-based SSO and Active Directory Federation Services (AD FS).
 
-    There are some scenarios where the SSO option isn't present for an enterprise application. If the application was registered using **App registrations** in the portal, then the single sign-on capability is configured to use OpenID Connect and OAuth by default. In this case, the single sign-on option doesn't appear in the navigation under enterprise applications.
+    There are some scenarios where the SSO option isn't present for an enterprise application. If the application was registered using **App registrations** in the portal, then the single sign-on capability is configured to use OpenID Connect. In this case, the single sign-on option doesn't appear in the navigation under enterprise applications.  OpenID Connect is an authentication protocol built on top of OAuth 2.0, which is an authorization protocol. OpenID Connect uses OAuth 2.0 to handle the authorization part of the process. When a user tries to log in, OpenID Connect verifies their identity based on the authentication performed by an authorization server. Once the user is authenticated, OAuth 2.0 is used to grant the application access to the user's resources without exposing their credentials.
 
     Single sign-on isn't available when an application is hosted in another tenant. Single sign-on is also not available if your account doesn't have the required permissions (Cloud Application Administrator, Application Administrator, or owner of the service principal). Permissions can also cause a scenario where you can open single sign-on but might not be able to save.
 

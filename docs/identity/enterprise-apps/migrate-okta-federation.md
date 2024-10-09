@@ -153,8 +153,6 @@ Configure the enterprise application registration for Okta.
    >[!NOTE]
    >The value and ID don't appear later. If you don't record the information, you must regenerate a secret.
 
-   ![Screenshot of the Certificates and secrets page. The value and I D of the secret appear.](media/migrate-okta-federation/record-secrets.png)
-
 18. On the left menu, select **API permissions**. 
 19. Grant the application access to the OpenID Connect (OIDC) stack.
 20. Select **Add a permission**.
@@ -169,9 +167,6 @@ Configure the enterprise application registration for Okta.
 
 27. On the left menu, select **Branding**. 
 28. For **Home page URL**, add your user application home page.
-
-    ![Screenshot of the Branding page in the Microsoft Entra admin center.](media/migrate-okta-federation/add-branding.png)
-
 29. In the Okta administration portal, to add a new identity provider, select **Security** then **Identity Providers**. 
 30. Select **Add Microsoft**.
 
@@ -203,9 +198,6 @@ You created the identity provider (IDP). Send users to the correct IDP.
 7. Select **Web**.
 8. Add the redirect URI you recorded in the IDP in Okta. 
 9. Select **Access tokens** and **ID tokens**.
-
-    ![Screenshot of the Configure Web page in the Microsoft Entra admin center. A redirect URI appears. The access and I D tokens are selected.](media/migrate-okta-federation/access-id-tokens.png)
-
 10. In the admin console, select **Directory**.
 11. Select **People**. 
 12. Select a test user to edit the profile.

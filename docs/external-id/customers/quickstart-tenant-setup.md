@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: quickstart
-ms.date: 08/13/2024
+ms.date: 09/09/2024
 ms.author: cmulligan
 ms.custom: it-pro, seo-july-2024
 
@@ -80,6 +80,9 @@ Our guide will walk you through the process of setting up a user and configuring
     :::image type="content" source="media/how-to-create-external-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
 
 This link will take you to the [guide](quickstart-get-started-guide.md), where you can customize your tenant in three easy steps.
+
+> [!NOTE]
+> You can also set up and customize your external tenant directly within Visual Studio Code using the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciamvscode/quickstarts/marketplace). For more information, see our [quickstart guide](https://aka.ms/ciamvscode/quickstartguide).
 
 ## Related content
 - To learn more about the set-up guide and how to customize your tenant, see the [Get started guide](quickstart-get-started-guide.md) article.

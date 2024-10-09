@@ -76,7 +76,7 @@ By default, Azure Automation doesn't have any PowerShell modules preloaded for M
 
 1. If you're using the cmdlets for Microsoft Entra ID Governance features, such as entitlement management, then repeat the import process for the module **Microsoft.Graph.Identity.Governance**.
 
-1. Import other modules that your script could require, such as **Microsoft.Graph.Users**. For example, if you're using Identity Protection, then you could wish to import the **Microsoft.Graph.Identity.SignIns** module.
+1. Import other modules that your script could require, such as **Microsoft.Graph.Users**. For example, if you're using Microsoft Entra ID Protection, then you could wish to import the **Microsoft.Graph.Identity.SignIns** module.
 
 ## Create an app registration and assign permissions
 

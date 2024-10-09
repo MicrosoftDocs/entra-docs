@@ -97,7 +97,7 @@ The sign-in experience process is grouped into sections. At the end of each sect
     - Choose one of two **Templates**: Full-screen or partial-screen background. The full-screen background could obscure your background image, so choose the partial-screen background if your background image is important.
     - The details of the **Header** and **Footer** options are set on the next two sections of the process.
 
-   :::image type="content" source="media/how-to-customize-branding/layout-visual-templates.png" alt-text="Screenshot of the Layout tab.":::
+   :::image type="content" source="media/how-to-customize-branding/layout-visual-templates.png" alt-text="Screenshot of the Layout tab for customizing branding.":::
 
 - **Custom CSS:** Upload a custom CSS file to replace the Microsoft default style of the page.
     - [Download the CSS template](https://download.microsoft.com/download/7/2/7/727f287a-125d-4368-a673-a785907ac5ab/custom-styles-template-013023.css).
@@ -124,7 +124,7 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 
     Uncheck this option to hide the default Microsoft link. Optionally provide your own **Display text** and **URL**. The text and links don't have to be related to your terms of use.
 
-    >[!IMPORTANT]
+    > [!IMPORTANT]
     > The default Microsoft 'Terms of Use' link is not the same as the Conditional Access Terms of Use. Seeing the terms here doesn't mean you've accepted those terms and conditions.
 
    :::image type="content" source="media/how-to-customize-branding/customize-branding-footer.png" alt-text="Screenshot of customizing branding on the Footer section.":::
@@ -145,9 +145,9 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 
 - **Username hint text:** Enter hint text for the username input field on the sign-in page. If guests use the same sign-in page, we don't recommend using hint text here.
 
-- **Sign-in page text:** Enter text that appears on the bottom of the sign-in page. You can use this text to communicate additional information, such as the phone number to your help desk or a legal statement. This page is public, so don't provide sensitive information here. This text must be Unicode and can't exceed 1024 characters.
+- **Sign-in page text:** Enter text that appears on the bottom of the sign-in page. You can use this text to communicate additional information, such as the phone number to your help desk or a legal statement. This page is public, so don't provide sensitive information here. This text must be Unicode and can't exceed 1,024 characters.
 
-    To begin a new paragraph, press the enter key twice. You can also change text formatting to include bold, italics, an underline, or clickable link. Use the following syntax to add formatting to text:
+    To begin a new paragraph, press the Enter key twice. You can also change text formatting to include bold, italics, an underline, or clickable link. Use the following syntax to add formatting to text:
 
     - Hyperlink: `[text](link)`
     - Bold: `**text**` or `__text__`

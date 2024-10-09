@@ -5,7 +5,7 @@ description: Learn about using the Microsoft Authenticator in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/03/2024
+ms.date: 10/09/2024
 
 ms.author: justinha
 author: justinha
@@ -105,9 +105,8 @@ Beginning with version 6.6.8, Microsoft Authenticator for iOS uses the native Ap
 For more information about the FIPS 140 validated cryptographic modules being used and compliant iOS devices, see [Apple iOS security certifications](https://support.apple.com/guide/certifications/ios-security-certifications-apc3fa917cb49/1/web/1.0).
 
 
->[!NOTE]
->Microsoft Authenticator is working to add support for a FIPS 140 validated cryptography module on Android. Microsoft plans to release an application update with FIPS support, estimated by October 2024.
-
+### Microsoft Authenticator for Android
+Beginning with version 6.2409.6094 on Microsoft Authenticator for Android, all authentications in Microsoft Entra ID, including passkeys, are now considered FIPS compliant. Authenticator leverages wolfSSL Inc.’s cryptographic module to achieve FIPS 140, Security Level 1 compliance on Android devices. For additional details on the certification being used, see [Cryptographic Module Validation Program | CSRC (nist.gov)](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4718).
 
 ## Determining Microsoft Authenticator registration type in Security info 
 Users can access [Security info](https://mysignins.microsoft.com/security-info) (see the URLs in the next section) or by selecting Security info from MyAccount to manage and add more Microsoft Authenticator registrations. Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 

@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on iOS in
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/03/2024
+ms.date: 10/09/2024
 
 ms.author: justinha
 author: justinha
@@ -27,14 +27,16 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
 | **Same-device registration by signing into Authenticator**              | &#x2705;          | &#x2705;       |
-| **Same-device registration in a browser**            | &#x2705; | &#x2705;     |
+| **Same-device registration in a browser**            | &#x2705; | &#x2705;<sup>1</sup>     |
 | **Cross-device registration**  | &#x2705;  | &#x2705;    |
+
+<sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
 
 ## [**iOS**](#tab/iOS)
 
 ### Same device registration using direct sign in to Authenticator (iOS)
 
-You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
+You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to set up a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
 1. Open Authenticator.
 1. Tap **Add account** or the **+** button.
@@ -217,7 +219,7 @@ In some cases when you try to register a passkey, it gets stored locally in the 
 
 ### Same device registration using direct sign in to Authenticator (Android)
 
-You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
+You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to set up a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
 1. Open Authenticator.
 1. Tap **Add account** or the **+** button.
@@ -260,12 +262,12 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
 ## Same-device registration from a browser (Android)
 
-Alternatively, users can set up a passkey in the Authenticator by navigating to a browser and initiating the flow from Security info. 
+Alternatively, users can set up a passkey in the Authenticator by navigating to a browser and initiating the flow from My Security info.
 
 >[!NOTE]
->Support for passkeys in Authenticator using Edge on Android is coming soon. 
+>Support for same-device registration in Edge on Android is coming soon.
 
-1. Using your Android device, open a web browser and sign-in to [Security info](https://mysignins.microsoft.com/security-info).
+1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-login.png" alt-text="Screenshot of how to sign in using Microsoft Authenticator for Android devices.":::
    
