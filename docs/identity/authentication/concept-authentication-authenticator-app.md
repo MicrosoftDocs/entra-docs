@@ -18,9 +18,7 @@ ms.reviewer: calui
 
 Microsoft Authenticator provides another level of security to your Microsoft Entra work or school account or your Microsoft account and is available for [Android](https://go.microsoft.com/fwlink/?linkid=866594) and [iOS](https://go.microsoft.com/fwlink/?linkid=866594). With the Microsoft Authenticator app, users can authenticate in a passwordless way during sign-in, or use it as another verification option during self-service password reset (SSPR) or multifactor authentication events.
 
-Microsoft Authenticator supports passkeys for user authentication. Users can then receive a notification on their mobile device to approve or deny the sign-in attempt. If they approve, Authenticator generates an OATH verification code. This code can then be entered in a sign-in interface. If you enable both a notification and verification code, users who register the Authenticator app can use either method to verify their identity using passkeys.
-
-To enable users to sign in with Authenticator instead of their username and password, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
+Microsoft Authenticator supports passkeys, passwordless sign ins and MFA via notifications and verification codes. Users can leverage passkeys in the Authenticator app with a biometric/device PIN to complete phishing-resistant authentications. Users leveraging Authenticator notifications can sign in with Authenticator instead of their username and password (see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md)). Users can also receive a MFA request on their mobile device and can approve or deny the sign-in attempt from their phone. Users can also leverage an OATH verification code in the Authenticator app and enter it in a sign-in interface. 
 
 > [!NOTE]
 > - Users don't have the option to register their mobile app when they enable SSPR. Instead, users can register their mobile app at [https://aka.ms/mfasetup](https://aka.ms/mfasetup) or as part of the combined security info registration at [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).
@@ -60,7 +58,7 @@ For more information about how to configure attestation, see [How to enable pass
 
 Passkeys in Authenticator aren't backed up and can't be restored on a new device. To create passkeys on a new device, use the passkey on an older device, or use another authentication method to re-create the passkey.
 
-## Passwordless sign-in
+## Passwordless sign-in via notifications
 
 Instead of seeing a prompt for a password after entering a username, users who enable phone sign-in from the Authenticator app sees a message to enter a number in their app. When the correct number is selected, the sign-in process is complete.
 
@@ -70,7 +68,7 @@ This authentication method provides a high level of security, and removes the ne
 
 To get started with passwordless sign-in, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 
-## Notification through mobile app
+## MFA via notifications through mobile app
 
 The Authenticator app can help prevent unauthorized access to accounts and stop fraudulent transactions by pushing a notification to your smartphone or tablet. Users view the notification, and if it's legitimate, select **Verify**. Otherwise, they can select **Deny**.
 
