@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/24/2024
+ms.date: 10/08/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -153,6 +153,7 @@ An option to postpone the enforcement start date is available for customers. Bet
 Review the following topics to learn more about how to configure and deploy MFA:
 
 - [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md)
+- [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md)
 - [Secure sign-in events with Microsoft Entra multifactor](~/identity/authentication/tutorial-enable-azure-mfa.md)
 - [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md)
 - [Phishing-resistant MFA methods](~/identity/authentication/phishing-resistant-authentication-videos.md)
