@@ -31,7 +31,9 @@ To avoid any service impact, customers should be on version by April 7, 2025.
 - Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or higher.
 - Customers in non-commercial clouds: [2.4.21.0](reference-connect-version-history.md#24210) or higher. 
 
-To upgrade to the latest version: [Install Microsoft Entra Connect](https://aka.ms/connectsync-download)
+To upgrade to the latest version.
+> [!div class="nextstepaction"]
+> [Install Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
 
 >[!IMPORTANT]
 > Make sure you familiarize yourself with the [minimum requirements](how-to-connect-install-prerequisites.md) for the versions, including but not limited to: 
