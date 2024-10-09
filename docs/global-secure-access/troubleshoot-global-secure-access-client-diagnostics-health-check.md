@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/19/2024
+ms.date: 10/08/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -36,7 +36,8 @@ As part of the troubleshooting process, it can be useful to check the Event View
 1. Navigate to **Control Panel** > **System and Security** > **Windows Tools**.
 1. Launch **Event Viewer**.
 1. Navigate to **Applications and Services Logs** > **Microsoft** > **Windows** > **Global Secure Access Client**.
-1. Select **Operational**.
+    1. To view client logs, select **Operational**.
+    1. To view driver logs, select **Kernel**.
 
 ## Health check tests
 The following checks verify the health of the Global Secure Access client.
