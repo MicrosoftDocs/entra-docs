@@ -5,10 +5,10 @@
     "maxInFlightFiles": 200
   },
   "pullRequest": {
-    "title": "[BULK] [DocuTune-Remediation] - Scheduled execution to fix known issues in Microsoft Entra docs",
+    "title": "[BULK] - DocuTune remediation - Sensitive terms with GUIDs",
     "batchSize": 9,
     "maxBatches": 100,
-    "body": "",
+    "body": "Applying sensitive terms with GUID changes as part of Content SFI and outlined in [Overview - Writing content securely - Platform Manual | Microsoft Learn](https://review.learn.microsoft.com/en-us/help/platform/security-reference?branch=main). Changes are part of the Microsoft-wide SFI effort.",
     "newBranchNamePrefix": "",
     "headRemote": "origin",
     "draft": false,
