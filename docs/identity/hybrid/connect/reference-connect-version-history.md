@@ -19,11 +19,6 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 
 This article helps you keep track of the versions that have been released and understand what the changes are in the latest version.
 
-## 2.4.18.0 Warning
->[!WARNING]
->If you are a customer using a [non-commercial cloud](~/identity-platform/authentication-national-cloud.md) (such as [Azure Government](/azure/azure-government/documentation-government-welcome) or [Azure in China](/azure/china/overview-operations)), please wait until our next update before you attempt to upgrade. There is an installation issue with version [2.4.18.0](#24180) that affects customers in non-commercial clouds. Previous versions [2.3.20.0](#2320) and below are unimpacted.
- 
-We are currently working on a fix, which we will release as part of an updated version as soon as possible. Customers in our commercial cloud are unaffected and can proceed to upgrade to version [2.4.18.0](#24180).
 
 ## Looking for the latest versions?
 
@@ -96,6 +91,15 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.x.xx.x
+
+### Release status
+
+10/09/2024: Released for download
+
+
+
 
 ## 2.4.18.0
 
