@@ -34,7 +34,7 @@ To avoid any service impact, customers should be on version by April 7, 2025.
 To upgrade to the latest version: [Install Microsoft Entra Connect](https://aka.ms/connectsync-download)
 
 >[!IMPORTANT]
-> Make sure you familiarize yourself with the [minimum requirements](how-to-connect-install-prerequisites.md) for the version, including but not limited to: 
+> Make sure you familiarize yourself with the [minimum requirements](how-to-connect-install-prerequisites.md) for the versions, including but not limited to: 
 >
 >  - [.NET 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472#:~:text=Downloads%20for%20building%20and%20running%20applications%20with%20.NET%20Framework%204.7.2)
 >  - [TLS 1. 2](reference-connect-tls-enforcement.md)
