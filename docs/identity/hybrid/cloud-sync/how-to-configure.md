@@ -36,6 +36,9 @@ To configure provisioning, follow these steps.
  5. On the configuration screen, select your domain and whether to enable password hash sync.  Click **Create**.  
  
  :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
+ 
+ >[!NOTE]
+ >  If you have previously setup cloud sync for another Active Directory domain into this tenancy and have a user with the following display name "On-Premises Directory Synchronization Service Account" - This account must be deleted or setting up cloud sync will fail.
 
  6.  The **Get started** screen will open.  From here, you can continue configuring cloud sync.
 
