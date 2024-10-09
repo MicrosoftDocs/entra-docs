@@ -4,7 +4,7 @@ description: Remedies for common problems with Microsoft Entra B2B collaboration
  
 ms.service: entra-external-id
 ms.topic: troubleshooting
-ms.date: 10/08/2024
+ms.date: 10/09/2024
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan
@@ -220,6 +220,10 @@ You should now see the restored app in the Microsoft Entra admin center.
 ## External access blocked by policy error on the login screen
 
 When you try to login to your tenant, you might see this error message: "Your network administrator has restricted what organizations can be accessed. Contact your IT department to unblock access." This error is related to tenant restriction settings. To resolve this issue, ask your IT team to follow the instructions in [this article](~/identity/enterprise-apps/tenant-restrictions.md).
+
+## Users get in a loop when they try to add passkey in Authenticator
+
+Organizations that are deploying passkeys and have Conditional Access policies that require phishing-resistant authentication when accessing **All cloud apps** can run into a looping issue when users attempt to add a passkey to Microsoft Authenticator. For more information and possible workarounds, see [Workarounds for an authentication strength Conditional Access policy loop](~/identity/authentication/how-to-support-authenticator-passkey.md#workarounds-for-an-authentication-strength-conditional-access-policy-loop).
 
 ## Invitation is blocked due missing cross-tenant access settings 
 
