@@ -93,9 +93,14 @@ In Microsoft Graph Explorer, run the following PATCH query to configure email no
 ```http
 PATCH https://graph.microsoft.com/beta/reports/healthMonitoring/alertConfigurations/{alertType}
 Content-Type: application/json
+
 {
-    "groupId": "Object ID of the group",
-    "isEnabled": true
+  "emailNotificationConfigurations": [
+    {
+      "groupId":"Object ID of the group",
+      "isEnabled": true
+    }
+  ]
 }
 ```
 
