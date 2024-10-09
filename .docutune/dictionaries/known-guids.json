@@ -3138,6 +3138,7 @@
   "Azure Stack HCI VM Contributor": "874d1c73-6003-4e60-a13a-cb31ea190a85",
   "Azure Stack HCI VM Reader": "4b3fe76c-f777-4d24-a2d7-b027b0f7b273",
   "Azure Stack Registration Owner": "6f12a6df-dd06-4f3e-bcb1-ce8be600526a",
+  "Guest Configuration Resource Contributor": "088ab73d-1256-47ae-bea9-9de8e7131f31",
   "MDAGetAccessToken - application": "05a65629-4c1b-48c1-a78b-804c4abdd4af",
   "MDABYOKServicePrincipal - application": "6a12de16-95c8-4e42-a451-7dbbc34634cd",
   "Split Experimentation Resource Provider ID" : "d3e90440-4ec9-4e8b-878b-c89e889e9fbc",
