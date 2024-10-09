@@ -24,6 +24,7 @@
       "name": "Default",
       "command": "Fix",
       "configType": "full",
+      "termFiles": [ "Security-GUIDs.ps1" ],
       "include": [
         // "docs/external-id/",
         // "docs/fundamentals/",
