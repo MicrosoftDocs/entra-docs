@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/09/2024
+ms.date: 10/10/2024
 
 ms.author: justinha
 author: justinha
@@ -44,7 +44,7 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
    
      This setting must be **Yes** and you need to add the Microsoft Authenticator AAGUIDs to allow users to register passkeys in the Authenticator, either by signing into the Authenticator app, or by adding **Passkey in Microsoft Authenticator** from their Security info. 
 
-     [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** for users to be able to choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users may still be able to add a passkey in Microsoft Authenticator by choosing the **Passkey** method, depending upon their operating system and browser. However, we do not expect this avenue to be discoverable and used by most users.  
+     [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** for users to be able to choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users may still be able to add a passkey in Microsoft Authenticator by choosing the **Security key or passkey** method, depending upon their operating system and browser. However, we do not expect this avenue to be discoverable and used by most users.  
      
      If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs, to enable this preview. This task can be done with an automated script that analyzes logs, such as registration details and sign-in logs.
 
