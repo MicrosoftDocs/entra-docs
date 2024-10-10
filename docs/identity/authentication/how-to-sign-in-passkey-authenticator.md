@@ -22,7 +22,7 @@ This article covers the sign-in experience when using passkeys in Microsoft Auth
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
 | **Same-device authentication in a browser**              | &#x2705;          | &#x2705;<sup>1</sup>       |
-| **Same-device authentication in native Microsoft applications**            | &#x2705; | &#10060;<sup>2</sup>    |
+| **Same-device authentication in native Microsoft applications**            | &#x2705; | &#x2705;<sup>2</sup>    |
 | **Cross-device authentication**  | &#x2705;  | &#x2705;    |
 
 <sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
