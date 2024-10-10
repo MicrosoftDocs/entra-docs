@@ -20,7 +20,7 @@ With Conditional Access, organizations can restrict access to [approved (modern 
 > App protection policies are supported on iOS and Android where applications meet specific requirements. **App protection policies are supported on Windows in preview for the Microsoft Edge browser only.** Not all applications that are supported as approved applications or support application protection policies. For a list of some common client apps, see [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy). If your application is not listed there, contact the application developer. In order to require approved client apps or to enforce app protection policies for iOS and Android devices, these devices must first register in Microsoft Entra ID.
 
 > [!NOTE]
-> **Require one of the selected controls** under grant controls is like an OR clause. This is used within policy to enable users to utilize apps that support either the **Require app protection policy** or **Require approved client app** grant controls. **Require app protection policy** is enforced when the app supports that grant control.
+> **Require one of the selected controls** under grant controls is like an **OR** clause. This is used within policy to enable users to utilize apps that support either the **Require app protection policy** or **Require approved client app** grant controls. **Require app protection policy** is enforced when the app supports that grant control.
 
 For more information about the benefits of using app protection policies, see the article [App protection policies overview](/mem/intune/apps/app-protection-policy).
 

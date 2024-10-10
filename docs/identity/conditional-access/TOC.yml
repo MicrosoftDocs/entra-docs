@@ -92,18 +92,18 @@
       href: policy-all-users-approved-app-or-app-protection.md
     - name: Require app protection policy for Windows
       href: policy-all-users-windows-app-protection.md
-    - name: No persistent browser session
-      href: policy-all-users-persistent-browser.md
-    - name: Use application enforced restrictions
-      href: policy-all-users-app-enforced-restrictions.md
-    - name: Block users with elevated insider risk
-      href: policy-risk-based-insider-block.md
     - name: Restrict device code flow and authentication transfer
       href: policy-block-authentication-flows.md
   - name: Other policy examples
     items: 
     - name: Require terms of use to be accepted
       href: policy-all-users-require-terms-of-use.md
+    - name: Use application enforced restrictions
+      href: policy-all-users-app-enforced-restrictions.md
+    - name: No persistent browser session
+      href: policy-all-users-persistent-browser.md
+    - name: Block users with elevated insider risk
+      href: policy-risk-based-insider-block.md
     - name: Require MFA for administrators
       href: policy-old-require-mfa-admin.md
     - name: Require MFA for guest users
