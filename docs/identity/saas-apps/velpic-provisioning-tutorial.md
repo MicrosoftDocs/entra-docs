@@ -63,7 +63,7 @@ This section guides you through connecting your Microsoft Entra ID to Velpic's u
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-    ![Velpic Provisioning](./media/velpic-provisioning-tutorial/Velpic1.png)
+    ![Screenshot shows the provisioning tab automatic.](common/provisioning-automatic.png "Provisioning tab")
 
 5. Under the **Admin Credentials** section, input the **Tenant URL&Secret Token** of Velpic.(You can find these values under your Velpic account: **Manage** > **Integration** > **Plugin** > **SCIM**)
 
