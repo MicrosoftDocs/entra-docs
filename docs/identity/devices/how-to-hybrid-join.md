@@ -111,7 +111,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a fed
 
 ### Federation caveats
 
-With Windows 10 1803 or newer, if instantaneous Microsoft Entra hybrid join for a federated environment using AD FS fails, we rely on Microsoft Entra Connect to sync the computer object in Microsoft Entra ID to complete the device registration for Microsoft Entra hybrid join.
+With Windows 10 1803 or newer, if instantaneous Microsoft Entra hybrid join for a federated environment using federation service fails, we rely on Microsoft Entra Connect to sync the computer object in Microsoft Entra ID to complete the device registration for Microsoft Entra hybrid join.
 
 ## Other scenarios
 
