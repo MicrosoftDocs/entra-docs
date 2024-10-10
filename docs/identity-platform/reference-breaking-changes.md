@@ -38,23 +38,23 @@ Check this article regularly to learn about:
 
 **Change**
 
-Previously, when matching the Federated Identity Credential (FIC) `issuer`, `subject`, and `audience` values against the corresponding `issuer`, `subject`, and `audience` values contained in the token sent to Microsoft Entra ID by an external IdP, case-insensitive matching was used. To provide more fine-grained control to customers, we are switching to enforcing case-sensitive matching. 
+Previously, when matching the Federated Identity Credential (FIC) `issuer`, `subject`, and `audience` values against the corresponding `issuer`, `subject`, and `audience` values contained in the token sent to Microsoft Entra ID by an external IdP, case-insensitive matching was used. To provide more fine-grained control to customers, we're switching to enforcing case-sensitive matching. 
 
 Invalid example: 
 - Token subject: `repo:contoso/contoso-org:ref:refs/heads/main`
 - FIC subject: `repo:Contoso/Contoso-Org:ref:refs/heads/main`
 
-These two subject values do not case-sensitively match, so validation fails. The same mechanism is applied to `issuer` and `audience` validation. 
+These two subject values don't case-sensitively match, so validation fails. The same mechanism is applied to `issuer` and `audience` validation. 
 
 This change will be applied initially to applications or managed identities created after `August 14th, 2024`.  Inactive applications or managed identities, determined by there being zero Workload Identity Federation requests made by said application or managed identity between the period `August 1st, 2024` to `August 31st, 2024`, are required to use case-sensitive matching starting `September 27th, 2024`. For active applications, case-insensitive matching comes at a later date to be communicated.  
 
-To better highlight failures due to case-insensitivity, we are revamping the error message for `AADSTS700213`. It will now state;
+To better highlight failures due to case-insensitivity, we're revamping the error message for `AADSTS700213`. It will now state;
 
 ```
 `AADSTS700213: No matching federated identity record found for presented assertion subject '{subject}'. Please note that matching is done using a case-sensitive comparison. Check your federated identity credential Subject, Audience, and Issuer against the presented assertion.` 
 ```
 
-The placeholder `'{subject}'` provides the value of the subject claim contained in the token being sent from the external IdP to Microsoft Entra ID. This error template is also used for case-insensitive failures surrounding `issuer` and `audience` validation. If you encounter this error, you should find the Federated Identity Credential that corresponds to the `issuer`, `subject`, or `audience` listed in the error and confirm that the corresponding values are equivalent from a case-sensitive perspective. If there is a mismatch, you need to replace the current `issuer`, `subject`, or `audience` value in the FIC with the `issuer`, `subject`, or `audience` value that was contained in the error message.
+The placeholder `'{subject}'` provides the value of the subject claim contained in the token being sent from the external IdP to Microsoft Entra ID. This error template is also used for case-insensitive failures surrounding `issuer` and `audience` validation. If you encounter this error, you should find the Federated Identity Credential that corresponds to the `issuer`, `subject`, or `audience` listed in the error and confirm that the corresponding values are equivalent from a case-sensitive perspective. If there's a mismatch, you need to replace the current `issuer`, `subject`, or `audience` value in the FIC with the `issuer`, `subject`, or `audience` value that was contained in the error message.
 
 ## June 2024
 
@@ -68,14 +68,14 @@ The placeholder `'{subject}'` provides the value of the subject claim contained 
 
 **Change**
 
-Previously, when registering an application using the [Entra app registrations experience](https://aka.ms/ra/prod), if the user was signed in with their personal Microsoft account (MSA), they could choose to only associate the application with their personal account.  That means the application would not be associated with or contained in any directory (also referred to as 'tenant' or 'organization').  However, starting June 2024, all applications must be registered in a directory.   This could be an existing directory, or a new one that the personal Microsoft account user creates to house their Entra applications and other Microsoft resources.  Users can easily create a new directory to use for this purpose by [joining the M365 Developer Program](https://aka.ms/joinM365DeveloperProgram) or [signing up for Azure](https://aka.ms/signUpForAzure).
+Previously, when registering an application using the [Microsoft Entra app registrations experience](https://aka.ms/ra/prod), if the user was signed in with their personal Microsoft account (MSA), they could choose to only associate the application with their personal account.  That means the application wouldn't be associated with or contained in any directory (also referred to as 'tenant' or 'organization').  However, starting June 2024, all applications must be registered in a directory.   This could be an existing directory, or a new one that the personal Microsoft account user creates to house their Microsoft Entra applications and other Microsoft resources.  Users can easily create a new directory to use for this purpose by [joining the Microsoft 365 Developer Program](https://aka.ms/joinM365DeveloperProgram) or [signing up for Azure](https://aka.ms/signUpForAzure).
 
 Registering an application in a directory, instead of only associating it with a personal account, has various benefits.  These include:
 - Applications registered in a directory have more features available to them, such as the ability to add more than one owner to the app, and the ability to [publisher verify](publisher-verification-overview.md) the app.
 - The application is located in the same place as other Microsoft resources the developer uses, such as Azure resources.
 - The application receives improved resiliency benefits.
 
-This will not affect any existing applications, including existing applications that are only associated with a personal account.  Only the ability to register new applications will be affected.
+This won't affect any existing applications, including existing applications that are only associated with a personal account.  Only the ability to register new applications will be affected.
 
 ## October 2023
 
@@ -112,7 +112,7 @@ An email is considered to be domain-owner verified if:
 1. The email is from a Google account.
 1. The email was used for authentication using the one-time passcode (OTP) flow.
 
-It should also be noted that Facebook and SAML/WS-Fed accounts do not have verified domains.
+It should also be noted that Facebook and SAML/WS-Fed accounts don't have verified domains.
 
 ## May 2023
 
