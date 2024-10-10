@@ -1071,6 +1071,16 @@
     "source_path_from_root": "/docs/identity/saas-apps/concur-provisioning-tutorial.md",
     "redirect_url": "/entra/identity/saas-apps/sap-concur-provisioning-tutorial",
     "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/ghae-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/ghae-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
     }
   ]
 }
