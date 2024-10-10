@@ -472,4 +472,4 @@ To request an access token from the SAP system using Azure Active Directory (Azu
 ## Next Steps
 
 - Configure Microsoft Entra SAP NetWeaver to enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
-- Configure SAP Principal Propagation using Azure API Management to govern and secure access to SAP systems from client apps in Azure, Power Platform, Microsoft 365 and others. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=c6a609ab-3556-ef11-a317-6045bda95bf0).
+- Configure SAP Principal Propagation (OAuth2) using Azure API Management to govern and secure access to SAP systems from client apps in Azure, Power Platform, Microsoft 365 and others. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=c6a609ab-3556-ef11-a317-6045bda95bf0).
