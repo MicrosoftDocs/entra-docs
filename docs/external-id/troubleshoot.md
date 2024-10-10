@@ -5,6 +5,7 @@ description: Remedies for common problems with Microsoft Entra B2B collaboration
 ms.service: entra-external-id
 ms.topic: troubleshooting
 ms.date: 10/09/2024
+
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan

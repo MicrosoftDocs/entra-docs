@@ -339,7 +339,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Genesys Cloud for Azure](~/identity/saas-apps/purecloud-by-genesys-provisioning-tutorial.md) | ● | ● |
 | [getAbstract](~/identity/saas-apps/getabstract-provisioning-tutorial.md) | ● | ● |
 | [Getty Images](~/identity/saas-apps/getty-images-tutorial.md) |  | ● |
-| [GHAE](~/identity/saas-apps/ghae-provisioning-tutorial.md) | ● | ● |
 | [GitHub](~/identity/saas-apps/github-provisioning-tutorial.md) | ● | ● |
 | [GitHub AE](~/identity/saas-apps/github-ae-provisioning-tutorial.md) | ● | ● |
 | [GitHub Enterprise Cloud - Enterprise Account](~/identity/saas-apps/github-enterprise-cloud-enterprise-account-tutorial.md) |  | ● |

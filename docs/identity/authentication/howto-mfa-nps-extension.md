@@ -6,7 +6,7 @@ description: Learn how to use Microsoft Entra multifactor authentication capabil
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/27/2024
+ms.date: 10/04/2024
 
 ms.author: justinha
 author: justinha
@@ -263,7 +263,10 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
    .\AzureMfaNpsExtnConfigSetup.ps1
    ```
 
-1. When prompted, sign in to Microsoft Entra ID as a Global Administrator.
+1. When prompted, sign in to Microsoft Entra ID. 
+
+   [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)] 
+
 1. PowerShell prompts for your tenant ID. Use the *Tenant ID* GUID that you copied in the prerequisites section.
 1. A success message is shown when the script is finished.  
 
@@ -360,7 +363,11 @@ Connect-MgGraph -Scopes 'Application.ReadWrite.All'
 New-MgServicePrincipal -AppId 00001111-aaaa-2222-bbbb-3333cccc4444 -DisplayName "Azure Multi-Factor Auth Client"
 ```
 
-Once done, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). Browse to **Identity** > **Applications** > **Enterprise applications** > and search for "Azure Multi-factor Auth Client". Then click **Check properties for this app**. Confirm if the service principal is enabled or disabled. Click the application entry > **Properties**. If the option **Enabled for users to sign-in?** is set to **No**, set it to **Yes**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator).
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > and search for "Azure Multi-factor Auth Client". 
+1. Click **Check properties for this app**. Confirm if the service principal is enabled or disabled. 
+1. Click the application entry > **Properties**. 
+1. If the option **Enabled for users to sign-in?** is set to **No**, set it to **Yes**.
 
 Run the `AzureMfaNpsExtnConfigSetup.ps1` script again and it should not return the **Service principal was not found** error. 
 
