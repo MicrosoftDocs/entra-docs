@@ -46,7 +46,7 @@ Invalid example:
 
 These two subject values do not case-sensitively match, so validation fails. The same mechanism is applied to `issuer` and `audience` validation. 
 
-This change will be applied initially to applications or managed identities created after `August 14th, 2024`.  Inactive applications or managed identities, determined by there being zero Workload Identity Federation requests made by said application or managed identity between the period `August 1st, 2024` to `August 31st, 2024`, will be required to use case-sensitive matching starting `September 27th, 2024`. For active applications, case-insensitive matching comes at a later date to be communicated.  
+This change will be applied initially to applications or managed identities created after `August 14th, 2024`.  Inactive applications or managed identities, determined by there being zero Workload Identity Federation requests made by said application or managed identity between the period `August 1st, 2024` to `August 31st, 2024`, are required to use case-sensitive matching starting `September 27th, 2024`. For active applications, case-insensitive matching comes at a later date to be communicated.  
 
 To better highlight failures due to case-insensitivity, we are revamping the error message for `AADSTS700213`. It will now state;
 
@@ -54,7 +54,7 @@ To better highlight failures due to case-insensitivity, we are revamping the err
 `AADSTS700213: No matching federated identity record found for presented assertion subject '{subject}'. Please note that matching is done using a case-sensitive comparison. Check your federated identity credential Subject, Audience, and Issuer against the presented assertion.` 
 ```
 
-The placeholder `'{subject}'` provides the value of the subject claim contained in the token being sent from the external IdP to Microsoft Entra ID. This error template will also be used for case-insensitive failures surrounding `issuer` and `audience` validation. If you encounter this error, you should find the Federated Identity Credential that corresponds to the `issuer`, `subject`, or `audience` listed in the error and confirm that the corresponding values are equivalent from a case-sensitive perspective. If there is a mismatch, you need to replace the current `issuer`, `subject`, or `audience` value in the FIC with the `issuer`, `subject`, or `audience` value that was contained in the error message.
+The placeholder `'{subject}'` provides the value of the subject claim contained in the token being sent from the external IdP to Microsoft Entra ID. This error template is also used for case-insensitive failures surrounding `issuer` and `audience` validation. If you encounter this error, you should find the Federated Identity Credential that corresponds to the `issuer`, `subject`, or `audience` listed in the error and confirm that the corresponding values are equivalent from a case-sensitive perspective. If there is a mismatch, you need to replace the current `issuer`, `subject`, or `audience` value in the FIC with the `issuer`, `subject`, or `audience` value that was contained in the error message.
 
 ## June 2024
 
@@ -87,7 +87,7 @@ This will not affect any existing applications, including existing applications 
 
 **Protocol impacted**: RemoteConnect
 
-RemoteConnect is a cross-device flow that is used for Microsoft Authentication Broker and Microsoft Intune related scenarios involving [Primary Refresh Tokens](~/identity/devices/concept-primary-refresh-token.md). To help prevent phishing attacks, the RemoteConnect flow will be receiving updated UX language to call out that the remote device (the device which initiated the flow) will be able to access any applications used by your organization upon successful completion of the flow.
+RemoteConnect is a cross-device flow that is used for Microsoft Authentication Broker and Microsoft Intune related scenarios involving [Primary Refresh Tokens](~/identity/devices/concept-primary-refresh-token.md). To help prevent phishing attacks, the RemoteConnect flow is receiving updated UX language to call out that the remote device (the device which initiated the flow) will be able to access any applications used by your organization upon successful completion of the flow.
 
 The prompt that appears will look something like this: 
 
@@ -126,11 +126,11 @@ It should also be noted that Facebook and SAML/WS-Fed accounts do not have verif
 
 **Change**
 
-The Power BI Administrator role will be renamed to Fabric Administrator.  
+The Power BI Administrator role is renamed to Fabric Administrator.  
  
 On May 23, 2023, Microsoft unveiled Microsoft Fabric, which provides a Data Factory-powered data integration experience, Synapse-powered data engineering, data warehouse, data science, and real-time analytics experiences and business intelligence (BI) with Power BI — all hosted on a lake-centric SaaS solution. The tenant and capacity administration for these experiences are centralized in the Fabric Admin portal (previously known as the Power BI admin portal).  
 
-Starting June 2023, the Power BI Administrator role will be renamed to Fabric Administrator to align with the changing scope and responsibility of this role. All applications including Microsoft Entra ID, Microsoft Graph APIs, Microsoft 365, and GDAP will start to reflect the new role name over the course of several weeks. 
+Starting June 2023, the Power BI Administrator role is renamed to Fabric Administrator to align with the changing scope and responsibility of this role. All applications including Microsoft Entra ID, Microsoft Graph APIs, Microsoft 365, and GDAP will start to reflect the new role name over the course of several weeks. 
  
 As a reminder, your application code and scripts shouldn't make decisions based on role name or display name.
 
