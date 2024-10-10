@@ -70,10 +70,10 @@ The placeholder `'{subject}'` provides the value of the subject claim contained 
 
 Previously, when registering an application using the [Entra app registrations experience](https://aka.ms/ra/prod), if the user was signed in with their personal Microsoft account (MSA), they could choose to only associate the application with their personal account.  That means the application would not be associated with or contained in any directory (also referred to as 'tenant' or 'organization').  However, starting June 2024, all applications must be registered in a directory.   This could be an existing directory, or a new one that the personal Microsoft account user creates to house their Entra applications and other Microsoft resources.  Users can easily create a new directory to use for this purpose by [joining the M365 Developer Program](https://aka.ms/joinM365DeveloperProgram) or [signing up for Azure](https://aka.ms/signUpForAzure).
 
-Registering an application in a directory, instead of only associating it with a personal account, has a variety of benefits.  These include:
-- Applications registered in a directory have additional features available to them, such as the ability to add more than one owner to the app, and the ability to [publisher verify](publisher-verification-overview.md) the app.
-- The application will be located in the same place as other Microsoft resources the developer uses, such as Azure resources.
-- The application will receive improved resiliency benefits.
+Registering an application in a directory, instead of only associating it with a personal account, has various benefits.  These include:
+- Applications registered in a directory have more features available to them, such as the ability to add more than one owner to the app, and the ability to [publisher verify](publisher-verification-overview.md) the app.
+- The application is located in the same place as other Microsoft resources the developer uses, such as Azure resources.
+- The application receives improved resiliency benefits.
 
 This will not affect any existing applications, including existing applications that are only associated with a personal account.  Only the ability to register new applications will be affected.
 
