@@ -173,7 +173,7 @@ This sign-in option requires Bluetooth and an internet connection for both devic
 
 1. You're now signed into Microsoft Entra ID on your other device.
 
-### Same-device authentication in native Microsoft applications (Android)
+# Same-device authentication in native Microsoft applications (Android - Preview)
 
-You can use passkeys in Authenticator on your Android device to sign in to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. 
+You can use Authenticator on your Android device to seamlessly sign in with a passkey to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. 
 ---
