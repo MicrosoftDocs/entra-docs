@@ -21,6 +21,9 @@ Use the [Conditional Access user action](concept-conditional-access-cloud-apps.m
 
 ## Create a Conditional Access policy
 
+> [!WARNING]
+> If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatable with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
