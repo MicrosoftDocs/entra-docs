@@ -3360,7 +3360,7 @@
   "Custom workpace Policy ID" : "64def556-fbad-4622-930e-72d1d5589bf5",
   "Custom workpace Policy ID 2" : "708b60a6-d253-4fe0-9114-4be4c00f012c",
   "Legacy Exchange Online" : "a0c73c16-a7e3-4564-9a95-2bdf47383716",
-  "Fraud Protection application ID" : "bf04bdab-e06f-44f3-9821-d3af64fc93a9",
+  "Dynamics 365 Fraud Protection application ID" : "bf04bdab-e06f-44f3-9821-d3af64fc93a9",
   "CallEvents-Emergency.Read.All - Application": "f0a35f91-2aa6-4a99-9d5a-5b6bcb66204e",
   "DeviceManagementCloudCA.Read.All - Application": "315b6e8c-d92a-4691-919d-00ce76d1344a",
   "DeviceManagementCloudCA.ReadWrite.All - Application": "f15eb2ba-ef8a-4f70-991d-da5d045154e2",
