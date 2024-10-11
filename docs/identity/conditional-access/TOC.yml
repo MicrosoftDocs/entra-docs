@@ -120,8 +120,8 @@
         href: policy-old-require-mfa-admin-portals.md
       - name: Require MFA for Azure management
         href: policy-old-require-mfa-azure-mgmt.md
-      - name: Block users with elevated insider risk
-        href: policy-risk-based-insider-block.md
+    - name: Block users with elevated insider risk
+      href: policy-risk-based-insider-block.md
     - name: Require terms of use to be accepted
       href: policy-all-users-require-terms-of-use.md
     - name: Block access by location
