@@ -3510,5 +3510,8 @@
   "Azure Center for SAP solutions service role": "aabbc5dd-1af0-458b-a942-81af88f9c138",
   "Azure Customer Lockbox Approver for Subscription": "4dae6930-7baf-46f5-909e-0383bc931c46",
   "Savings plan Purchaser": "3d24a3a0-c154-4f6f-a5ed-adc8e01ddb74",
-  "Hybrid Server Resource Administrator": "48b40c6e-82e0-4eb3-90d5-19e40f49b624"
+  "Hybrid Server Resource Administrator": "48b40c6e-82e0-4eb3-90d5-19e40f49b624",
+  "Dynamics link" : "b515c246-801d-ea11-b265-0003ff68f605",
+  "Microsoft's centralized Microsoft Entra application" : "7e97dcfb-bcdd-426e-8f0a-96439602627a",
+  "CRONUS USA, Inc. endpoint" : "bb6d48b6-c7b2-4a38-9a93-ad5506407f12"
 }
