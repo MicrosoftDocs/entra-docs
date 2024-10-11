@@ -232,6 +232,45 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
     | **FROMNAME** | CIAM Demo | The name of the From Email. |
     | **TEMPLATEID** | d-01234567.... | The SendGrid dynamic template it. |
 
+## 1. Create Communication Services resource
+
+Azure Communication Services offers multichannel communication APIs for adding voice, video, chat, text messaging/SMS, email, and more to all your applications. It include REST APIs and client library SDKs, so you don't need to be an expert in the underlying technologies to add communication into your apps. 
+
+Get started with Azure Communication Services by [provisioning your first Communication Services resource](/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp).
+
+### 2. Create email communication resource
+
+After you createe the **Azure Communication**, proceed to create a **Communication Email Services**. The Communication Email Services simplifies the integration of email capabilities to your applications.  Follow the guidece how to [create a new resource of type Email Communication Services](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/create-email-communication-resource?pivots=platform-azp). 
+
+### 2.1 Add custom verified email domains
+
+After you created a **Email Communication Services**, add the allowed email sender domains under this resource. The domains added under this resource type contain all the sender authentication and engagement tracking configurations that must be completed before you start sending emails.
+
+Follow the guidece [how to add custom verified email domains](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/add-custom-verified-domains?pivots=platform-azp).
+
+### 3. Connect domain to send email
+
+After the sender domains are configured and verified, you can link these domains with your **Azure Communication Services**. You can select which of the verified domains is suitable for your application and connect them to send emails from your application.
+
+To proceed, follow the guidence [How to connect a verified email domain](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal
+)
+
+### 3. Send an email
+
+The **Try Email** helps you kick-start sending emails to the desired recipients using Azure Communication Services, as well as verifying the configuration for your application to send email. It also helps to jump-start your email notification development with the code snippet in your preferred choice of language.
+
+Follow the guidence [How to send an email using Azure Communication Services](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/send-email?tabs=windows%2Cconnection-string%2Csend-email-and-get-status-async%2Csync-client&pivots=platform-azportal)
+
+### 3.1 [Optinally] Configure the mail sender
+
+The **sent from email** is configure to donotreply@your-domian. You can add [add and remove Multiple Sender Addresses](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/add-multiple-senders?pivots=platform-azp) to Email Communication Service.
+
+### 4. Develop your endpoint
+
+The source code for the custom auhentication extesion cab be found in [Woodgrove GitHub repo](https://github.com/microsoft/woodgrove-auth-api/blob/main/Controllers/OnOtpSendController.cs).
+
+Communication Services SDKs use **connection strings** to authorize requests made to Communication Services. 
+Learn hho to [access your connection strings and service endpoints](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-net#access-your-connection-strings-and-service-endpoints)
 
 ## Step 2: Register a custom authentication extension
 
