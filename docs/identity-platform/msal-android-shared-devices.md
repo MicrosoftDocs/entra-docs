@@ -179,7 +179,6 @@ private void loadAccount()
       {
         signedInUser = activeAccount;
         final AcquireTokenSilentParameters silentParameters = new AcquireTokenSilentParameters.Builder()
-
                         .fromAuthority(signedInUser.getAuthority())
                         .forAccount(signedInUser)
                         .withScopes(Arrays.asList(getScopes()))
