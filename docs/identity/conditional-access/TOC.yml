@@ -82,8 +82,6 @@
       href: policy-risk-based-sign-in.md
     - name: Require password change for risky users
       href: policy-risk-based-user.md
-    - name: Block access for unknown or unsupported devices
-      href: policy-all-users-device-unknown-unsupported.md
     - name: Require authentication strength for device registration
       href: policy-all-users-device-registration.md
     - name: Require device compliance
@@ -92,32 +90,40 @@
       href: policy-block-authentication-flows.md
   - name: Other policy examples
     items: 
+    - name: Applications
+      items:
+      - name: Require approved app or app protection policy
+        href: policy-all-users-approved-app-or-app-protection.md
+      - name: Require app protection policy for Windows
+        href: policy-all-users-windows-app-protection.md
+      - name: Use application enforced restrictions
+        href: policy-all-users-app-enforced-restrictions.md
+    - name: Devices
+      items:
+      - name: Block access for unknown or unsupported devices
+        href: policy-all-users-device-unknown-unsupported.md
+      - name: Require compliant or hybrid join for admins
+        href: policy-alt-admin-device-compliand-hybrid.md
+      - name: Require compliant device, hybrid joined, or MFA
+        href: policy-alt-all-users-compliant-hybrid-or-mfa.md
+      - name: No persistent browser session
+        href: policy-all-users-persistent-browser.md
+      - name: Require MFA for Intune enrollment
+        href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+    - name: Multifactor authentication
+      items:
+      - name: Require MFA for administrators
+        href: policy-old-require-mfa-admin.md
+      - name: Require MFA for guest users
+        href: policy-old-require-mfa-guest.md
+      - name: Require MFA for Microsoft admin portals
+        href: policy-old-require-mfa-admin-portals.md
+      - name: Require MFA for Azure management
+        href: policy-old-require-mfa-azure-mgmt.md
+      - name: Block users with elevated insider risk
+        href: policy-risk-based-insider-block.md
     - name: Require terms of use to be accepted
       href: policy-all-users-require-terms-of-use.md
-    - name: Require approved app or app protection policy
-      href: policy-all-users-approved-app-or-app-protection.md
-    - name: Require app protection policy for Windows
-      href: policy-all-users-windows-app-protection.md
-    - name: Use application enforced restrictions
-      href: policy-all-users-app-enforced-restrictions.md
-    - name: No persistent browser session
-      href: policy-all-users-persistent-browser.md
-    - name: Block users with elevated insider risk
-      href: policy-risk-based-insider-block.md
-    - name: Require MFA for administrators
-      href: policy-old-require-mfa-admin.md
-    - name: Require MFA for guest users
-      href: policy-old-require-mfa-guest.md
-    - name: Require MFA for Microsoft admin portals
-      href: policy-old-require-mfa-admin-portals.md
-    - name: Require MFA for Azure management
-      href: policy-old-require-mfa-azure-mgmt.md
-    - name: Require compliant or hybrid join for admins
-      href: policy-alt-admin-device-compliand-hybrid.md
-    - name: Require compliant device, hybrid joined, or MFA
-      href: policy-alt-all-users-compliant-hybrid-or-mfa.md
-    - name: Require MFA for Intune enrollment
-      href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
     - name: Block access by location
       href: policy-block-by-location.md
     - name: Block access

@@ -16,7 +16,11 @@ ms.reviewer: jodah
 
 Microsoft Intune and Microsoft Entra work together to secure your organization through [device compliance policies](/mem/intune/protect/device-compliance-get-started) and Conditional Access. Device compliance policies are a great way to ensure user devices meet minimum configuration requirements. The requirements can be enforced when users access services protected with Conditional Access policies.
 
-Some organizations might not be ready to require device complance for all users, these organizations might instead choose to [require compliant or Microsoft Entra hybrid joined device for their administrators](policy-alt-admin-device-compliand-hybrid.md) or [require a compliant device, Microsoft Entra hybrid joined device, **OR** multifactor authentication for all users](policy-alt-all-users-compliant-hybrid-or-mfa.md).
+Some organizations might not be ready to require device complance for all users, these organizations might instead choose to deploy the following policies: 
+
+- [Require compliant or Microsoft Entra hybrid joined device for their administrators](policy-alt-admin-device-compliand-hybrid.md) or [require a compliant device, Microsoft Entra hybrid joined device, **OR** multifactor authentication for all users](policy-alt-all-users-compliant-hybrid-or-mfa.md)
+- [Block unknown or unsupported device platforms](policy-all-users-device-unknown-unsupported.md)
+- [Disable browser persistence](policy-all-users-persistent-browser.md)
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
