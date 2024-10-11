@@ -64,7 +64,7 @@ To read more about securing your Active Directory environment, see [Best practic
 #### Installation prerequisites
 
 - Microsoft Entra Connect must be installed on a domain-joined Windows Server 2016 or later. We recommend using domain-joined Windows Server 2022. You can deploy Microsoft Entra Connect on Windows Server 2016 but since Windows Server 2016 is in extended support, you may require [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for this configuration.
-- The minimum .NET Framework version required is 4.6.2, and newer versions of .NET are also supported.  .NET version 4.8 and greater offers the best accessibility compliance.
+- The minimum .NET Framework version required is 4.7.2, and newer versions of .NET are also supported.  .NET version 4.8 and greater offers the best accessibility compliance.
 - Microsoft Entra Connect can't be installed on Small Business Server or Windows Server Essentials before 2019 (Windows Server Essentials 2019 is supported). The server must be using Windows Server standard or better. 
 - The Microsoft Entra Connect server must have a full GUI installed. Installing Microsoft Entra Connect on Windows Server Core isn't supported. 
 - The Microsoft Entra Connect server must not have PowerShell Transcription Group Policy enabled if you use the Microsoft Entra Connect wizard to manage Active Directory Federation Services (AD FS) configuration. You can enable PowerShell transcription if you use the Microsoft Entra Connect wizard to manage sync configuration.
@@ -169,7 +169,7 @@ Optional: Use a test user account to verify synchronization.
 
 ## Component prerequisites
 ### PowerShell and .NET Framework
-Microsoft Entra Connect depends on Microsoft PowerShell 5.0 and .NET Framework 4.5.1. You need this version or a later version installed on your server. 
+Microsoft Entra Connect depends on Microsoft PowerShell 5.0 and .NET Framework 4.7.2. You need this version or a later version installed on your server. 
 
 <a name='enable-tls-12-for-azure-ad-connect'></a>
 
