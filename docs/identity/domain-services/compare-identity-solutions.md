@@ -70,7 +70,7 @@ The following table outlines some of the features you may need for your organiza
 | **Custom OU structure**                           | **&#x2713;** | **&#x2713;** |
 | **Group Policy**                                  | **&#x2713;** | **&#x2713;** |
 | **Schema extensions**                             | **&#x2715;** | **&#x2713;** |
-| **AD domain / forest trusts**                     | **&#x2713;** | **&#x2713;** |
+| **AD domain / forest trusts**                     | **&#x2713;** (Preview requires Enterprise SKU) | **&#x2713;** |
 | **Secure LDAP (LDAPS)**                           | **&#x2713;** | **&#x2713;** |
 | **LDAP read**                                     | **&#x2713;** | **&#x2713;** |
 | **LDAP write**                                    | **&#x2713;** (within the managed domain) | **&#x2713;** |
