@@ -1,6 +1,6 @@
 ---
-title: How to use Microsoft Entra scenario health alerts (preview)
-description: Learn how to use the Microsoft Entra scenario health alerts to monitor and improve the health of your tenant.
+title: How to use Microsoft Entra health monitoring alerts (preview)
+description: Learn how to use the Microsoft Entra health monitoring alerts to monitor and improve the health of your tenant.
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
@@ -10,10 +10,10 @@ ms.date: 10/07/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
-# Customer intent: As an IT admin, I want to learn how to use Microsoft Entra scenario health to monitor and improve the health of my tenant.
+# Customer intent: As an IT admin, I want to learn how to use Microsoft Entra health monitoring to observe and improve the health of my tenant.
 ---
 
-# How to use Microsoft Entra scenario health alerts (preview)
+# How to use Microsoft Entra health monitoring alerts (preview)
 
 Microsoft Entra Health monitoring provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics and intelligent alerts. Health metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change one of the tenant-level patterns, it triggers an alert. You can also receive email notifications when a potential issue or failure condition is detected within the health scenarios. For more information on Microsoft Entra Health, see [What is Microsoft Entra Health](concept-microsoft-entra-health.md).
 
