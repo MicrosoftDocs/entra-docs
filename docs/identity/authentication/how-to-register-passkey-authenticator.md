@@ -57,6 +57,9 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
  
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/multifactor-auth-ios.png" alt-text="Screenshot of completing  multifactor authentication (MFA) using Microsoft Authenticator for iOS devices.":::
 
+1. click Register
+
+
 1. Select **Open Settings** to enable Authenticator as a passkey provider.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-provider-ios.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for iOS devices.":::
@@ -77,7 +80,20 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
     :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-added-ios.png" alt-text="Screenshot of setting up passkey, passwordless, and/or MFA for sign in using Microsoft Authenticator for iOS devices.":::
 
+1. Tap **Go to Authenticator**. 
+
 1. Tap **Continue** to complete the registration process. 
+
+   enter TAP
+
+1. After you see passkey added as a sign-in method for your account, click **Continue**. 
+
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/account-added.png" alt-text="Screenshot of that shows passkey in Authenticator added as a sign-in method for iOS devices.":::
+
+1. Authenticator opens, and you can see the new account you added.
+
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/new-authenticator-account.png" alt-text="Screenshot of a new account in Authenticator for iOS devices.":::
+
 
 ### Same-device registration from a browser (iOS)
 
@@ -91,7 +107,7 @@ You can also use your web browser to set up a passkey in Authenticator.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info.png" alt-text="Screenshot of the Security Info screen in Microsoft Authenticator for iOS devices.":::
 
-1. Select **Passkey in Microsoft Authenticator**.
+1. Where you're asked to **Choose a method**, select **Passkey in Microsoft Authenticator**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-in-authenticator.png" alt-text="Screenshot of the drop-down list of options in Microsoft Authenticator for iOS devices.":::
 
@@ -99,24 +115,30 @@ You can also use your web browser to set up a passkey in Authenticator.
    
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-add-sign-in-method.png" alt-text="Screenshot of the Security Info screen Add Sign-in Method option.":::
 
-1. Sign in with multifactor authentication (MFA) before adding a passkey.
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-2fa-authorization.png" alt-text="Screenshot of the two-factor authentication requirement to set up a passkey.":::
-
-   After you sign in with MFA, continue through the rest of the passkey setup.
-
 1. If necessary, download Microsoft Authenticator and tap **Next**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-download-auth-app.png" alt-text="Screenshot of the download app option in Microsoft Authenticator for iOS devices.":::
 
-1. Follow the steps to turn on Authenticator as a passkey provider in the **Settings** of your iOS device:
-      - On your iOS device, open **Settings**.
-      - Open **Passwords**, and select **Password Options**.
-      - Ensure **Autofill Passwords and and Passkeys** is turned on. 
-      - Under **Use Passwords and Passkeys From**, select **Authenticator**. 
-      - Return to [Security info](https://mysignins.microsoft.com/security-info) and select **Continue**. 
+1. Read the steps to turn on Authenticator as a passkey provider in the **Settings** of your iOS device, and click **Continue**. 
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-turn-on-support.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/auth-app-install-step-one.png" alt-text="Screenshot of the download app option in Microsoft Authenticator for iOS devices.":::
+
+1. On your iOS device, open **Settings** > **Passwords** > **Password Options**. Ensure **AutoFill Passwords and and Passkeys** is turned on. Under **Use Passwords and Passkeys From**, select **Authenticator**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/password-options.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for iOS devices.":::
+ 
+1. Return to [Security info](https://mysignins.microsoft.com/security-info) and complete MFA to sign in. 
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-manage-mode.png" alt-text="Screenshot of how to complete MFA to access the Security info page.":::
+
+1. You can see Passkey in Aithenticator as a new sign-in method. 
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/new-passkey-in-security-info.png" alt-text="Screenshot of a new passkey for Authenticator for iOS in the Security info page.":::
+
+
+
+   select **Continue**. 
+
 
 1. When ready, read the reminder that you must save the passkey in Authenticator, and tap **I understand** to continue.  
 
