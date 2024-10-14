@@ -187,8 +187,8 @@ Let's look at an example of a user who has single-factor certificate, and is con
 CBA can be used as a second factor like Password (first factor) and CBA (second factor) to get MFA.
 
 >[!NOTE]
-On iOS, users with certificate-based authentication will see a "double prompt", where they must click the option to use certificate-based authentication twice.
-On iOS, users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor or step-up authentication.
+> On iOS, users with certificate-based authentication will see a "double prompt", where they must click the option to use certificate-based authentication twice.
+> On iOS, users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor or step-up authentication.
 
 ## Understanding the authentication binding policy
 
