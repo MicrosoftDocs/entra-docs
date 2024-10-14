@@ -104,7 +104,7 @@ You can use authentication and authorization policies to protect your corporate 
 You can delegate guest user management to application owners. This allows them to add guest users directly to any application they want to share, whether it's a Microsoft application or not.
 
 - Administrators set up self-service app and group management.
-- Nonadministrators use their [Access Panel](https://myapps.microsoft.com) to add guest users to applications or groups.
+- Non-administrators use their [Access Panel](https://myapps.microsoft.com) to add guest users to applications or groups.
 
 :::image type="content" source="media/what-is-b2b/access-panel-manage-app.png" alt-text="Screenshot showing the Access panel for a guest user."  lightbox="media/what-is-b2b/access-panel-manage-app.png":::
 
