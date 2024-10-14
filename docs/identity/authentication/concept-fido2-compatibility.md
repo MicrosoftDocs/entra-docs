@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/09/2024
+ms.date: 10/11/2024
 
 author: justinha
 ms.author: justinha
@@ -33,7 +33,7 @@ The following tables lists which authentication brokers are supported for differ
 |------------------|---------------------------------|----------------|
 | **iOS**              | Microsoft Authenticator         | &#x2705;       |
 | **macOS**            | Microsoft Intune Company Portal<sup>1</sup> | &#x2705;       |
-| **Android**<sup>2</sup> | Authenticator or Company Portal | &#x2705;    |
+| **Android**<sup>2</sup> | Authenticator, Company Portal, or Link to Windows app | &#x2705;    |
 
 <sup>1</sup>On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. For FIDO2 authentication, make sure that you run the latest version of native applications. 
 
