@@ -132,17 +132,17 @@ _(Example: For US Government Cloud)_
 ### Example 1 prompt for all credentials
 
    ```powershell
-   # Specify the on-premises Active Directory domain. A new Azure AD
+   # Specify the on-premises Active Directory domain. A new Microsoft Entra ID
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
    # Enter an Azure Active Directory Global Administrator username and password.
-   $cloudCred = Get-Credential -Message 'An Active Directory user who is a member of the Global Administrators group for Azure AD.'
+   $cloudCred = Get-Credential -Message 'An Active Directory user who is a member of the Global Administrators group for Microsoft Entra ID.'
 
    # Enter a Domain Administrator username and password.
    $domainCred = Get-Credential -Message 'An Active Directory user who is a member of the Domain Admins group.'
 
-   # Create the new Azure AD Kerberos Server object in Active Directory
+   # Create the new Microsoft Entra ID Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
    Set-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred -DomainCredential $domainCred
    ```
@@ -152,14 +152,14 @@ _(Example: For US Government Cloud)_
    > If you're working on a domain-joined machine with an account that has domain administrator privileges, you can skip the "-DomainCredential" parameter. If the "-DomainCredential" parameter isn't provided, the current Windows login credential is used to access your on-premises Active Directory Domain Controller.
 
    ```powershell
-   # Specify the on-premises Active Directory domain. A new Azure AD
+   # Specify the on-premises Active Directory domain. A new Microsoft Entra ID
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
    # Enter an Azure Active Directory Global Administrator username and password.
    $cloudCred = Get-Credential
 
-   # Create the new Azure AD Kerberos Server object in Active Directory
+   # Create the new Microsoft Entra ID Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
    # Use the current windows login credential to access the on-premises AD.
    Set-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred
@@ -172,7 +172,7 @@ _(Example: For US Government Cloud)_
    > - Replace `administrator@contoso.onmicrosoft.com` in the following example with the UPN of a Global Administrator.
 
    ```powershell
-   # Specify the on-premises Active Directory domain. A new Azure AD
+   # Specify the on-premises Active Directory domain. A new Microsoft Entra ID
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
@@ -182,9 +182,9 @@ _(Example: For US Government Cloud)_
    # Enter a Domain Administrator username and password.
    $domainCred = Get-Credential
 
-   # Create the new Azure AD Kerberos Server object in Active Directory
+   # Create the new Microsoft Entra ID Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
-   # Open an interactive sign-in prompt with given username to access the Azure AD.
+   # Open an interactive sign-in prompt with given username to access the Microsoft Entra ID.
    Set-AzureADKerberosServer -Domain $domain -UserPrincipalName $userPrincipalName -DomainCredential $domainCred
    ```
 
@@ -194,16 +194,16 @@ _(Example: For US Government Cloud)_
       > - Replace `administrator@contoso.onmicrosoft.com` in the following example with the UPN of a Global Administrator.
 
    ```powershell
-   # Specify the on-premises Active Directory domain. A new Azure AD
+   # Specify the on-premises Active Directory domain. A new Microsoft Entra ID
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
    # Enter a UPN of a Global Administrator
    $userPrincipalName = "administrator@contoso.onmicrosoft.com"
 
-   # Create the new Azure AD Kerberos Server object in Active Directory
+   # Create the new Microsoft Entra ID Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
-   # Open an interactive sign-in prompt with given username to access the Azure AD.
+   # Open an interactive sign-in prompt with given username to access the Microsoft Entra ID.
    Set-AzureADKerberosServer -Domain $domain -UserPrincipalName $userPrincipalName
    ```
 

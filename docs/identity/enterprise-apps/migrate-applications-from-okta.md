@@ -49,8 +49,6 @@ To create an application inventory:
 
 5. In the Postman app, in the workspace, select **Import**.
 
-    ![Screenshot of the Import option on Postman.](media/migrate-applications-from-okta/import-api.png)
-
 6. On the **Import** page, select **Link**. To import the API, insert the following link:
 
 `https://developer.okta.com/docs/api/postman/example.oktapreview.com.environment`
@@ -98,8 +96,6 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
-
-    ![Screenshot of the New Application option on All applications.](media/migrate-applications-from-okta/list-of-new-applications.png)
 
 3. In **Microsoft Entra Gallery**, search for **Salesforce**, select the application, and then select **Create**.
 

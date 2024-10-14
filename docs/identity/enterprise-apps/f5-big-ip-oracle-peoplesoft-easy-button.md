@@ -149,8 +149,6 @@ Use the **Configuration Properties** tab to creat new application configurations
 3. Enter the **Tenant ID, Client ID**, and **Client Secret** you noted.
 4. Confirm the BIG-IP connects to the tenant.
 5. Select **Next**.
-
-![Screenshot of options and selections for Configuration Properties.](./media/f5-big-ip-easy-button-oracle-peoplesoft/configuration-general-and-service-account-properties.png)
  
 ### Service Provider
 
@@ -314,17 +312,11 @@ Configure Oracle Access Manager to accept SSO from the BIG-IP.
 6. For **User ID**, enter **OAMPSFT**
 7. For **User Role**, enter **PeopleSoft User**.
 8. Select **Save**.
-
-![Screenshot of User ID on the Roles tab, User Profiles.](./media/f5-big-ip-easy-button-oracle-peoplesoft/user-profiles.png)
- 
 9.    Navigate to **People Tools** > **Web Profile**.
 10.    Select the web profile.
 11.    On **Security** tab, in **Public Users**, select **Allow Public Access**.
 12.    For **User ID**, enter **OAMPSFT**.
 13.    Enter the **Password**.
-
-![Screenshot of options and selections for Public Users.](./media/f5-big-ip-easy-button-oracle-peoplesoft/web-profiles.png)
- 
 14.    Leave the Peoplesoft console.
 15.    Start **PeopleTools Application Designer**.
 16.    Right-click the **LDAPAUTH** field.
