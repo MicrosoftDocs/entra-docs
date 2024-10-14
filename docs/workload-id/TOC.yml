@@ -23,6 +23,8 @@
         href: ~/identity/conditional-access/concept-continuous-access-evaluation-workload.md?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
       - name: App health recommendations
         href: ~/identity/monitoring-health/howto-use-recommendations.md?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
+      - name: Flexible federated identity credentials
+        href: workload-identities-flexible-federated-identity-credentials.md
 - name: How-to guides
   items:
   - name: Connect workloads without managing secrets
