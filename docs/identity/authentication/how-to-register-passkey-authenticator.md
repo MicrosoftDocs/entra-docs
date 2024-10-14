@@ -88,11 +88,11 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
 1. After you see passkey added as a sign-in method for your account, click **Continue**. 
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-ios/account-added.png" alt-text="Screenshot of that shows passkey in Authenticator added as a sign-in method for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-added-ios.png" alt-text="Screenshot of that shows passkey in Authenticator added as a sign-in method for iOS devices.":::
 
 1. Authenticator opens, and you can see the new account you added.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-ios/new-authenticator-account.png" alt-text="Screenshot of a new account in Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/new-authenticator-account.png" alt-text="Screenshot of a new account in Authenticator for iOS devices.":::
 
 
 ### Same-device registration from a browser (iOS)
