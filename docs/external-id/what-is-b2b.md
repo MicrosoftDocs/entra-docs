@@ -4,7 +4,7 @@ description: Learn about B2B collaboration for sharing apps with external identi
 
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 09/06/2024
+ms.date: 10/14/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -101,10 +101,10 @@ You can use authentication and authorization policies to protect your corporate 
 
 ## Let application and group owners manage their own guest users
 
-You can delegate guest user management to application owners so that they can add guest users directly to any application they want to share, whether it's a Microsoft application or not.
+You can delegate guest user management to application owners. This allows them to add guest users directly to any application they want to share, whether it's a Microsoft application or not.
 
 - Administrators set up self-service app and group management.
-- Non-administrators use their [Access Panel](https://myapps.microsoft.com) to add guest users to applications or groups.
+- Nonadministrators use their [Access Panel](https://myapps.microsoft.com) to add guest users to applications or groups.
 
 :::image type="content" source="media/what-is-b2b/access-panel-manage-app.png" alt-text="Screenshot showing the Access panel for a guest user."  lightbox="media/what-is-b2b/access-panel-manage-app.png":::
 
@@ -123,7 +123,7 @@ Microsoft Entra External ID supports external identity providers like Facebook, 
 
 ## Integrate with SharePoint and OneDrive
 
-You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint-azureb2b-integration) to share files, folders, list items, document libraries, and sites with people outside your organization, while using Azure B2B for authentication and management. The users you share resources with are typically guest users in your directory, and permissions and groups work the same for these guests as they do for internal users. When enabling integration with SharePoint and OneDrive, you also enable the [email one-time passcode](one-time-passcode.md) feature in Microsoft Entra B2B to serve as a fallback authentication method.
+You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint-azureb2b-integration) to share files, folders, list items, document libraries, and sites with people outside your organization, while using Microsoft Entra B2B for authentication and management. The users you share resources with are typically guest users in your directory, and permissions and groups work the same for these guests as they do for internal users. When enabling integration with SharePoint and OneDrive, you also enable the [email one-time passcode](one-time-passcode.md) feature in Microsoft Entra B2B to serve as a fallback authentication method.
 
 :::image type="content" source="media/what-is-b2b/enable-email-otp-options.png" alt-text="Screenshot of the email one-time-passcode setting.":::
 
