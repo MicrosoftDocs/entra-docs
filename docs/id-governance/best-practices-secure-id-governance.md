@@ -22,7 +22,7 @@ The principle of least privilege means giving users and workload identities the 
 
 Microsoft Entra ID Governance limits the access a user has based on the role that they have been assigned. Ensure that your users have the least privileged role to perform the task that they need. 
 
-For more information see [least privilege with Microsoft Entra ID Governance](least-privileged.md) 
+For more information, see [least privilege with Microsoft Entra ID Governance](least-privileged.md) 
 
 ## Preventing lateral movement 
 
@@ -56,11 +56,11 @@ Connected organizations are a feature of entitlement management that allows user
 
 ### Provisioning 
 
-**Recommendation:** Set the provisioning scope to sync “assigned users and groups.” 
+**Recommendation:** Set the [provisioning scope](https://learn.microsoft.com/entra/identity/app-provisioning/how-provisioning-works#scoping) to sync “assigned users and groups.” 
 
 This scope ensures that only users explicitly assigned to your sync configuration will get provisioned. The alternative setting of allowing all users and groups should only be used for applications where access is required broadly across the organization. 
 
-**PIM for roles** 
+### PIM for roles 
 
 **Recommendation:** Require approval of PIM requests for Global Admin. 
 
@@ -69,11 +69,15 @@ With Privileged Identity Management (PIM) in Microsoft Entra ID you can configur
 For more information, see [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](../privileged-identity-management/pim-approval-workflow.md)
 
 ## Defense in depth 
+The following sections provide additional guidance on multiple security measures you can take to provide a defense in depth strategy for your governance deployments.
+
+### Applications
 
 **Recommendation:** Securely manage credentials for connectivity to applications 
 
 Encourage application vendors to support [OAuth](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) on their SCIM endpoints, rather than relying on long-lived tokens. Securely store credentials in [Azure Key Vault](https://azure.microsoft.com/products/key-vault), and regularly rotate your credentials. 
 
+### Provisioning
 
 **Recommendation:** Use a certificate from a trusted certificate authority when configuring on-premises application provisioning.  
 
@@ -82,10 +86,17 @@ When configuring on-premises application provisioning with the ECMA host, you ha
 
 **Recommendation:** Harden your Microsoft Entra Provisioning Agent server 
 
-We recommend that you harden your Microsoft Entra provisioning agent server to decrease the security attack surface for this critical component of your IT environment. 
+We recommend that you harden your Microsoft Entra provisioning agent server to decrease the security attack surface for this critical component of your IT environment. The best practices described in [Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#harden-your-microsoft-entra-provisioning-agent-server) include: 
 
-[Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#harden-your-microsoft-entra-provisioning-agent-server) 
+ - We recommend hardening the Microsoft Entra provisioning agent server as a Control Plane (formerly Tier 0) asset by following the guidance provided in [Secure Privileged Access](/security/privileged-access-workstations/overview) and [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model).
+ - Restrict administrative access to the Microsoft Entra provisioning agent server to only domain administrators or other tightly controlled security groups.
+ - Create a [dedicated account for all personnel with privileged access](/windows-server/identity/securing-privileged-access/securing-privileged-access). Administrators shouldn't be browsing the web, checking their email, and doing day-to-day productivity tasks with highly privileged accounts.
+ - Follow the guidance provided in [Securing privileged access](/security/privileged-access-workstations/overview). 
+ - Enable Multi Factor Authentication (MFA) for all users that have privileged access in Microsoft Entra ID or in AD. One security issue with using Microsoft Entra provisioning agent is that if an attacker can get control over the Microsoft Entra provisioning agent server they can manipulate users in Microsoft Entra ID. To prevent an attacker from using these capabilities to take over Microsoft Entra accounts, MFA offers protections so that even if an attacker manages to, such as reset a user's password using Microsoft Entra provisioning agent they still cannot bypass the second factor.
 
+ For more information and additional best practices see [Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#harden-your-microsoft-entra-provisioning-agent-server)
+
+### Entitlement management and lifecycle workflows
 
 **Recommendation:** Follow security best practices for using custom extensions with entitlement management + lifecycle workflows. The best practices described in [this article](../custom-extension-security.md) include: 
 
@@ -99,17 +110,16 @@ We recommend that you harden your Microsoft Entra provisioning agent server to d
 
 ## Back up and recovery 
 
-Back up your configuration so you can recover to a known good state in the case of a compromise. 
+Back up your configuration so you can recover to a known good state in the case of a compromise.  Use the following list to create a comprehensive back up strategy that covers the various areas of governance.
 
  - [Microsoft Graph APIs](/graph/overview) can be used to export the current state of many Microsoft Entra configurations. 
  - [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) is a tool you can use to export your configuration settings. 
  - [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) is a module of the PowerShell Desired State Configuration framework. You can use it to export configurations for reference and application of the prior state of many settings. 
-
-[Provisioning: Export Application Provisioning configuration and roll back to a known good state for disaster recovery in Microsoft Entra ID](~/identity/app-provisioning/export-import-provisioning-configuration.md) 
+ - [Provisioning: Export Application Provisioning configuration and roll back to a known good state for disaster recovery in Microsoft Entra ID](~/identity/app-provisioning/export-import-provisioning-configuration.md) 
 
 ## Monitoring 
 
-Monitoring helps detect potential threats and vulnerabilities early. By watching for unusual activities and configuration changes, you can prevent security breaches and maintain data integrity. 
+Monitoring helps detect potential threats and vulnerabilities early. By watching for unusual activities and confthiguration changes, you can prevent security breaches and maintain data integrity. 
 
  - Alert when users activate privileged roles. [Security alerts for Microsoft Entra roles in PIM - Microsoft Entra ID Governance](../privileged-identity-management/pim-how-to-configure-security-alerts.md)
  - Proactively monitor your environment for configuration changes and suspicious activity by integrating Microsoft Entra ID Audit Logs with Azure Monitor. [Identity Governance custom alerts - Microsoft Entra ID Governance](../governance-custom-alerts.md)
