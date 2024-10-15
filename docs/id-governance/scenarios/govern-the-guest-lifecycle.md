@@ -11,7 +11,7 @@ ms.author: billmath
 ---
 
 
-# Govern the employee and guest lifecycle with Microsoft Entra ID Governance
+# Govern the guest lifecycle with Microsoft Entra ID Governance
 
 
 
