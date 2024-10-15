@@ -182,13 +182,7 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
 1. On you iOS device, open Microsoft Authenticator and click **+** to add an account.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios-actual.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios-large.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios-medium.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios-small.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios.png" alt-text="Screenshot of how to add an account in Authenticator on iOS.":::
 
 1. Choose Work or school acount.
 
