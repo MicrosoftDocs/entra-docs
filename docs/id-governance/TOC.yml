@@ -16,8 +16,10 @@
     href: scenarios/least-privileged.md 
   - name: Govern the employee and guest lifecycle
     items:
-    - name: Govern the employee and guest lifecycle
+    - name: Govern the employee lifecycle
       href: scenarios/govern-the-employee-lifecycle.md
+    - name: Govern the guest lifecycle
+      href: scenarios/govern-the-guest-lifecycle.md
     - name: Identity lifecycle management provisioning
       href: what-is-provisioning.md
       items: 

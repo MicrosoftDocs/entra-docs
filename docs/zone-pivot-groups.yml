@@ -336,4 +336,13 @@ groups:
     title: Azure CLI
   - id: identity-mi-methods-sub-powershell
     title: PowerShell
-    
+# Owner: billmath
+- id: identity-governance-guest
+  title: Choosing a new scenario versus an exisiting scenario
+  prompt: Choose the option that best describes your situation
+  pivots:
+  - id: identity-governance-guest-new
+    title: A new project
+  - id: identity-governance-guest-existing
+    title: Updating an existing project
+
