@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/03/2024
+ms.date: 10/14/2024
 
 ms.author: justinha
 author: justinha
@@ -58,11 +58,6 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
    
      >[!NOTE]
      >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator (Preview)** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
-
-     Two more AAGUIDs may be listed. 
-     They are `b6879edc-2a86-4bde-9c62-c1cac4a8f8e5` and `257fa02a-18f3-4e34-8174-95d454c2e9ad`. 
-     These AAGUIDs appear in advance of an upcoming feature. 
-     You can remove them from the list of allowed AAGUIDs. 
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
