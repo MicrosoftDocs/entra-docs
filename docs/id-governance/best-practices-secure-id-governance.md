@@ -6,7 +6,7 @@ documentationcenter: ''
 author: arvindh
 manager: amycolannino
 editor: ''
-ms.service: active-directory
+ms.service: entra-id-governance
 ms.topic: conceptual
 ms.date: 07/28/2023
 ms.author: billmath
