@@ -345,4 +345,20 @@ groups:
     title: A new project
   - id: identity-governance-guest-existing
     title: Updating an existing project
-
+# Owner: billmath
+- id: identity-governance-guest-new-project
+  title: Steps for a new external user project
+  prompt: Choose the step of your journey
+  pivots:
+  - id: identity-governance-guest-onboard
+    title: Onboarding and discovery
+  - id: identity-governance-guest-assign
+    title: Auto assign resources
+  - id: identity-governance-guest-custom
+    title: Custom workflows
+  - id: identity-governance-guest-convert
+    title: Convert external users
+  - id: identity-governance-guest-access
+    title: Access recertification
+  - id: identity-governance-guest-close
+    title: Close out
