@@ -78,7 +78,7 @@ To publish your own on-premises application:
    1. **Translate URL in Headers**: Choose **No**.
 
    > [!NOTE]
-   > If this is your first application, use port 3000 to start and come back to update this setting if you change your PingAccess configuration. For subsequent applications, the port will need to match the Listener you've configured in PingAccess. Learn more about [listeners in PingAccess](https://docs.pingidentity.com/access/sources/dita/topic?category=pingaccess&Releasestatus_ce=Current&resourceid=pa_assigning_key_pairs_to_https_listeners).
+   > If this is your first application, use port 3000 to start and come back to update this setting if you change your PingAccess configuration. For subsequent applications, the port will need to match the Listener you've configured in PingAccess.
 
 1. Select **Add**. The overview page for the new application appears.
 
