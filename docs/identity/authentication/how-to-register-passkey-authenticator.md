@@ -43,23 +43,23 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
    > [!NOTE]
    > If you already have an account in Authenticator, you still need to tap on the **+** button to sign in and register a passkey for that same account.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot of how to register using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot 233x433 of how to register using Microsoft Authenticator for iOS devices.":::
 
 1. Select **Work or school account**.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/work-school-account-ios.png" alt-text="Screenshot of choosing Work or School Account using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/work-school-account-ios.png" alt-text="Screenshot 233x409 of choosing Work or School Account using Microsoft Authenticator for iOS devices.":::
  
 1. Tap **Sign in**.
  
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/tap-sign-in-ios.png" alt-text="Screenshot of tapping the Sign in option using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/tap-sign-in-ios.png" alt-text="Screenshot 234x417 of tapping the Sign in option using Microsoft Authenticator for iOS devices.":::
 
 1. You need to complete multifactor authentication (MFA).
  
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/multifactor-auth-ios.png" alt-text="Screenshot of how to complete MFA by using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/multifactor-auth-ios.png" alt-text="Screenshot 246x445 of how to complete MFA by using Microsoft Authenticator for iOS devices.":::
 
 1. Tap **Register**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/register.png" alt-text="Screenshot of how to register your iOS device.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/register-direct.png" alt-text="Screenshot of how to register a passkey directly in Authenticator your iOS device.":::
 
 1. When prompted to allow Authenticator to use Face ID, tap **Allow**.
 
