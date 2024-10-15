@@ -8,7 +8,7 @@ ms.author: godonnell
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: sample
+ms.topic: quickstart
 ms.date: 04/10/2024
 ms.custom: developer
 
