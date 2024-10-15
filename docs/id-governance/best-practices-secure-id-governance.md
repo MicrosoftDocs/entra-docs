@@ -1,7 +1,7 @@
 ---
 title: 'Best practices for securely deploying Microsoft Entra ID Governance '
 description: This article provides best practices for securing deploying Microsoft Entra ID Governance. 
-services: active-directory
+services: entra-id-governance
 documentationcenter: ''
 author: arvindh
 manager: amycolannino
@@ -56,7 +56,7 @@ The principle of "Deny by Default" is a security strategy that restricts access 
 
 ### Provisioning 
 
-**Recommendation:** Set the [provisioning scope](https://learn.microsoft.com/entra/identity/app-provisioning/how-provisioning-works#scoping) to sync “assigned users and groups.” 
+**Recommendation:** Set the [provisioning scope](/entra/identity/app-provisioning/how-provisioning-works#scoping) to sync “assigned users and groups.” 
 
 This scope ensures that only users explicitly assigned to your sync configuration will get provisioned. The alternative setting of allowing all users and groups should only be used for applications where access is required broadly across the organization. 
 
@@ -128,5 +128,5 @@ Monitoring helps detect potential threats and vulnerabilities early. By watching
 
 - [What is identity governance?](identity-governance-overview.md)
 - [Understanding least privileged](scenarios/least-privileged.md)
-- [Govern the employee and guest lifecycle](govern-the-employee-lifecycle.md)
+- [Govern the employee and guest lifecycle](scenarios/govern-the-employee-lifecycle.md)
 - [Govern access for applications in your environment](identity-governance-applications-prepare.md)
