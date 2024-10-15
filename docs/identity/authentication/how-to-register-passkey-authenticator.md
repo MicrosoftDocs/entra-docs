@@ -170,15 +170,23 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
 1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/select-passkey-in-authenticator.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/select-passkey-in-authenticator.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
 
-1. Sign in with multifactor authentication (MFA), then tap **Next**.   
+1. When you're asked to sign in with multifactor authentication (MFA), select **Next**.   
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/set-up-passkey.png" alt-text="Screenshot that notifies user to sign in with a second factor before they add a passkey.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/sign-in-required.png" alt-text="Screenshot that notifies user to sign in with a second factor before they add a passkey.":::
 
 1. If necessary, download Microsoft Authenticator, then tap **Next**.   
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/organization.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/download-authenticator-laptop.png" alt-text="Screenshot that gives users an option to download Authenticator.":::
+
+1. On you iOS device, open Microsoft Authenticator and click **+** to add an account.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios-actual.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios-small.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
+
+1. Choose Work or school acount.
 
 1. Tap **iOS**.   
 
