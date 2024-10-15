@@ -48,6 +48,20 @@ sections:
           For same-device scenarios, the mobile device that contains the passkey must be connected to the internet. 
           For cross-device scenarios, both the device with the passkey and the secondary device you are authenticating on must be connected to the internet.  
       - question: |
+          How can I prevent users from being looped between Authenticator and Security info when they add a passkey?
+        answer: |
+          If you configure an authentication strength Conditional Access policy that requires phishing-resistant authentication to access cloud apps, users can get caught in a loop when they try to sign in. An sample configuration of such a policy is: 
+
+          - Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
+          - Targeted resource: **All cloud apps** 
+          - Grant control: **Authentication strength – Require passkey in Authenticator** 
+
+          The policy creates a loop for the user because the authentication strength requires Authenticator, and the targeted resource is **All cloud apps**, which includes Authenticator. 
+          As a result, when a user tries to add a passkey in Authenticator, they are directed to [Security info](https://mysignins.microsoft.com/security-info) for passkey registration. 
+          But they only can add **Passkey in Microsoft Authenticator** as a registration option because of the authentication strength requirement. 
+
+          For possible workarounds, see [Workarounds for an authentication strength Conditional Access policy loop](how-to-support-authenticator-passkey.md#workarounds-for-an-authentication-strength-conditional-access-policy-loop).
+      - question: |
           Can I use passkeys in Authenticator on an Android corporate-owned device?
         answer: |
           Passkeys in Authenticator aren't supported on corporate-owned managed devices. Support for corporate-owned devices managed by Intune is coming soon.
