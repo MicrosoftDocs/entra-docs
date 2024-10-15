@@ -5,7 +5,8 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 10/02/2024
+  ms.date: 10/14/2024
+
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -61,3 +62,7 @@ sections:
           But they only can add **Passkey in Microsoft Authenticator** as a registration option because of the authentication strength requirement. 
 
           For possible workarounds, see [Workarounds for an authentication strength Conditional Access policy loop](how-to-support-authenticator-passkey.md#workarounds-for-an-authentication-strength-conditional-access-policy-loop).
+       - question: |
+           Can I use passkeys in Authenticator on an Android corporate-owned device?
+         answer: |
+           Passkeys in Authenticator aren't supported on corporate-owned managed devices. Support for corporate-owned devices managed by Intune is coming soon.

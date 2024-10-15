@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/01/2024
+ms.date: 10/14/2024
 
 ms.author: justinha
 author: justinha
@@ -62,13 +62,10 @@ To enable passkeys in Authenticator, edit the **Passkey (FIDO2)** authentication
 
 Set to **Yes** (default). If set to no, your users aren't able to register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
 
+
 ### Enforce attestation
 
 Should be set to **No** for preview. Attestation support is planned for General Availability.
-
-What kind of attestation is supported?
-
-What are the implications for choosing attestation?
 
 ### Key restriction policy
 
