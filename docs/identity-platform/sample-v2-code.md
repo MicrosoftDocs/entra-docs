@@ -108,7 +108,7 @@ The following samples show an application that accesses the Microsoft Graph API 
 
 ### Browserless (Headless)
 
-The following sample shows a public client application running on a device without a web browser. The app can be a command-line tool, an app running on Linux or Mac, or an IoT application. The sample features an app accessing the Microsoft Graph API, in the name of a user who signs-in interactively on another device (such as a mobile phone). This client application uses the Microsoft Authentication Library (MSAL).
+The following sample shows a public client application running on a device without a web browser. The app can be a command-line tool, an app running on Linux or Mac, or an IoT application. The sample features an app accessing the Microsoft Graph API, in the name of a user who signs in interactively on another device (such as a mobile phone). This client application uses the Microsoft Authentication Library (MSAL).
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
