@@ -5,7 +5,7 @@ description: What are all of the services included in the Office 365 app in Micr
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: reference
-ms.date: 09/04/2024
+ms.date: 10/07/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -22,9 +22,11 @@ The following list is provided as a reference and includes a detailed list of se
 - Call Recorder
 - Connectors
 - Compliant Sydney App
+- Data Security Investigation App
 - Device Management Service
 - EnrichmentSvc
 - IC3 Gateway
+- Loop Service
 - M365 Admin Services
 - M365 Auditing Public Protected Web API app
 - M365 Chat Client
@@ -122,5 +124,6 @@ The following list is provided as a reference and includes a detailed list of se
 - TeamsTargetingServiceApp
 - The GCC DoD app for office.com
 - The Office365 Shell DoD WCSS-Client
+- Visio Data Visualizer
 - WalkieTalkieApp
 - WalkieTalkieGCCApp

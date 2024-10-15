@@ -102,6 +102,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50006 | InvalidSignature - Signature verification failed because of an invalid signature. |
 | AADSTS50007 | PartnerEncryptionCertificateMissing - The partner encryption certificate wasn't found for this app. [Open a support ticket](~/fundamentals/how-to-get-support.md) with Microsoft to get this fixed. |
 | AADSTS50008 | InvalidSamlToken - SAML assertion is missing or misconfigured in the token. Contact your federation provider. |
+| AADSTS5000224 | NotAllowedTenantBlockedTenantFraud - We are sorry, this resource is not available. If you are seeing this message by mistake, please contact Microsoft support. |
 | AADSTS5000819 | InvalidSamlTokenEmailMissingOrInvalid - SAML Assertion is invalid. Email address claim is missing or doesn't match domain from an external realm. |
 | AADSTS50010 | AudienceUriValidationFailed - Audience URI validation for the app failed since no token audiences were configured. |
 | AADSTS50011 | InvalidReplyTo - The reply address is missing, misconfigured, or doesn't match reply addresses configured for the app. As a resolution ensures to add this missing reply address to the Microsoft Entra application or have someone with the permissions to manage your application in Microsoft Entra IF do this for you. To learn more, see the troubleshooting article for error [AADSTS50011](/troubleshoot/azure/active-directory/error-code-aadsts50011-reply-url-mismatch).|
