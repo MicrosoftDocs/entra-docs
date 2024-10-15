@@ -83,13 +83,26 @@
           href: how-applications-are-added.md
         - name: Single-tenant and multitenant apps
           href: single-and-multi-tenant-apps.md
-    - name: Custom Authentication Extensions
-      displayName: Custom Authentication Extensions
+    
+    - name: Customization and extensibility
       items:
-        - name: Overview
-          href: custom-extension-overview.md
-        - name: Custom claims provider
-          href: custom-claims-provider-overview.md
+      - name: Custom Authentication Extensions
+        displayName: Custom Authentication Extensions
+        items:
+          - name: Overview
+            href: custom-extension-overview.md
+          - name: Custom claims provider
+            href: custom-claims-provider-overview.md
+      - name: Native authentication
+        items:
+          - name: Native authentication
+            href: concept-native-authentication.md
+          - name: Native authentication challenge types
+            href: concept-native-authentication-challenge-types.md
+          - name: Native authentication web fallback
+            href: concept-native-authentication-web-fallback.md
+          - name: Native authentication user attribute builder
+            href: concept-native-authentication-user-attribute-builder.md
     - name: Security
       displayName: least privilege, secure app configuration, Conditional Access
       items:

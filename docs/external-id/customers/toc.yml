@@ -303,13 +303,13 @@ items:
     - name: Native authentication
       items:
         - name: Native authentication
-          href: concept-native-authentication.md
+          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication challenge types
-          href: concept-native-authentication-challenge-types.md
+          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication web fallback
-          href: concept-native-authentication-web-fallback.md
+          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication user attribute builder
-          href: concept-native-authentication-user-attribute-builder.md
+          href: /entra/identity-platform/concept-native-authentication-user-attribute-builder?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
     - name: Custom URL domains
