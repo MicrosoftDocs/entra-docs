@@ -6,6 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 10/15/2024
+zone_pivot_groups: identity-governance-guest
 ms.author: billmath
 ---
 
