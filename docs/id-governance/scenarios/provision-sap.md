@@ -4,7 +4,7 @@ description: This document describes how to provision users into SAP ERP Central
 
 author: billmath
 manager: amycolannino
-ms.service: entra-id
+ms.service: entra-id-governance
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 02/13/2024

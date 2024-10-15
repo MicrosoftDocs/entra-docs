@@ -1,7 +1,7 @@
 ---
 title: 'Deploy SAP NetWeaver AS ABAP 7'
 description: This article describes how to set up a lab environment with SAP ECC for testing.
-ms.service: entra-id
+ms.service: entra-id-governance
 ms.subservice: app-provisioning
 author: billmath
 manager: amycolannino
