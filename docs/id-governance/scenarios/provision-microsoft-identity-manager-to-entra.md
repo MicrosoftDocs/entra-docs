@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.date: 02/28/2024
-ms.subservice: hybrid-cloud-sync
+ms.subservice:
 ms.author: billmath
 ---
 

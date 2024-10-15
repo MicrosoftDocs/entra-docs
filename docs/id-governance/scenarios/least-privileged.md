@@ -2,7 +2,7 @@
 title: 'Understanding least privilege with Microsoft Entra ID Governance'
 description: This article describes the concept of least privilege and how it relates with Microsoft Entra ID Governance.
 ms.service: entra-id-governance
-ms.subservice: app-provisioning
+ms.subservice:
 
 author: billmath
 manager: amycolannino

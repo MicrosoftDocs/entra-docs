@@ -4,7 +4,7 @@ description: Learn the detailed steps for how to bring identities from SAP Succe
 author: markwahl-msft
 manager: amycolannino
 editor: markwahl-msft
-ms.service: entra-id-governance-governance
+ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 08/25/2024
 ms.author: mwahl
