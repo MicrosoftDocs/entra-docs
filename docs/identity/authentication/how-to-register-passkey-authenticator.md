@@ -164,6 +164,8 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop.png" alt-text="Screenshot of how to enter a temporary access pass on a laptop.":::
 
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop-eighty.png" alt-text="Screenshot of how to enter a temporary access pass on a laptop at 80%.":::
+
 1. When prompted to stay signed in, select **Yes**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/stay-signed-in.png" alt-text="Screenshot of option to Stay signed in.":::
