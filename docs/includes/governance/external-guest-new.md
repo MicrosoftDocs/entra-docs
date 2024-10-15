@@ -3,6 +3,7 @@ author: billmath
 ms.service: entra-id-governance
 ms.topic: include
 ms.date: 10/16/2019
+zone_pivot_groups: identity-governance-guest-new-project
 ms.author: billmath
 # Used by articles entra governance
 ---
