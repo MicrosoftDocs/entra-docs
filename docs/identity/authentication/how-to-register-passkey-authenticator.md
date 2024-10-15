@@ -131,7 +131,7 @@ You can also use your web browser to set up a passkey in Authenticator.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-manage-mode.png" alt-text="Screenshot of how to complete MFA to access the Security info page.":::
 
-1. You can see Passkey in Aithenticator as a new sign-in method. 
+1. You can see your passkey in Authenticator as a new sign-in method. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/new-passkey-in-security-info.png" alt-text="Screenshot of a new passkey for Authenticator for iOS in the Security info page.":::
 
@@ -161,9 +161,16 @@ You can also use your web browser to set up a passkey in Authenticator.
 You can also save a passkey in Authenticator from your computer or another mobile device. This registration option requires Bluetooth and an internet connection for both devices. If your organizations restricts Bluetooth usage, an administrator can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
 1. Using another device, such as a laptop, open a web browser and sign in to [Security info](https://mysignins.microsoft.com/security-info).
-1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator** > **Add**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-passkey-authenticator.png" alt-text="Screenshot of how to add passkey in Microsoft Authenticator as a sign-in method.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop.png" alt-text="Screenshot of how to enter a temporary access pass on a laptop.":::
+
+1. When prompted to stay signed in, select **Yes**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/stay-signed-in.png" alt-text="Screenshot of option to Stay signed in.":::
+
+1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/select-passkey-in-authenticator.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
 
 1. Sign in with multifactor authentication (MFA), then tap **Next**.   
 
