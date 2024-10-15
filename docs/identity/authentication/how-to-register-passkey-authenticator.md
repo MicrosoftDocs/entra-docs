@@ -178,15 +178,61 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/sign-in-required.png" alt-text="Screenshot that notifies user to sign in with a second factor before they add a passkey.":::
 
-1. If necessary, download Microsoft Authenticator, then tap **Next**.   
+1. If necessary, download Microsoft Authenticator to your iOS device, then tap **Next**.   
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/download-authenticator-laptop.png" alt-text="Screenshot that gives users an option to download Authenticator.":::
 
-1. On you iOS device, open Microsoft Authenticator and click **+** to add an account.
+1. On you iOS device, open Microsoft Authenticator and tap **+** to add an account.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios.png" alt-text="Screenshot of how to add an account in Authenticator on iOS.":::
 
-1. Choose Work or school acount.
+1. Tap **Work or school acount**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/work-or-school-account.png" alt-text="Screenshot of how to add a work or school account in Authenticator on iOS.":::
+
+1. Tap **Sign in**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/work-or-school-account-sign-in.png" alt-text="Screenshot of how to sign in for a work or school account in Authenticator on iOS.":::
+
+1. When prompted, complete multifactor authentication, and tap **Sign in**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-sign-in.png" alt-text="Screenshot of how to complete MFA.":::
+
+1. When prompted to set up phone sign-in, tap **Continue**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/set-up-phone-sign-in.png" alt-text="Screenshot of how to continue to set up phon sign-in.":::
+
+1. When prompted to register your device, tap **Register**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/register.png" alt-text="Screenshot of how to register your iOS device.":::
+
+1. After you see the account is added, tap **Continue**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/account-added.png" alt-text="Screenshot of account added to your iOS device.":::
+
+1. On you iOS device, you can see passkey added for your new account in Authenticator.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/new-passkey-in-authenticator.png" alt-text="Screenshot of new account added to Authenticator on your iOS device.":::
+
+1. Return to your other device, and resume the wizard to complete the passkey setup in Authenticator. Click **Next**. 
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
+
+1. When promted, complete MFA, and click **Sign in**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop-eighty.png" alt-text="Screenshot of how to complete MFA to add a new sign-in method to My security.":::
+
+1. After the passkey is created, click **Done**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-created.png" alt-text="Screenshot that confirms passkey is created.":::
+
+1. In Security info, you can see the new passkey added.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-passkey-ios-my-security.png" alt-text="Screenshot of a new passkey sign-in method in Security info.":::
+
+
+
+
 
 1. Tap **iOS**.   
 
@@ -233,7 +279,7 @@ You can also save a passkey in Authenticator from your computer or another mobil
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-create-passkey.png" alt-text="Screenshot of save passkey in Microsoft Authenticator for iOS devices.":::
 
 1. Once the passkey is successfully created on your device, you're directed back to [Security info](https://mysignins.microsoft.com/security-info), tap **Done**. 
-1. Name the passkey something memorable to you and select **Done**.
+
    
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/success.png" alt-text="Screenshot where user can change friendly name of the new sign-in method.":::
 
