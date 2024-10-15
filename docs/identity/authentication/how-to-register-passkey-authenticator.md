@@ -184,6 +184,10 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios-actual.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
 
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios-large.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios-medium.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
+
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/authenticator-add-account-ios-small.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey.":::
 
 1. Choose Work or school acount.
