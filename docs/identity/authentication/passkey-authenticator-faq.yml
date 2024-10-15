@@ -44,4 +44,4 @@ sections:
       - question: |
           Can I use passkeys in Authenticator on an Android corporate-owned device?
         answer: |
-          Passkeys in Authenticator aren't supported on corporate-owned managed devices. Support for corporate-owned devices managed by Intune is in development.
+          Passkeys in Authenticator aren't supported on corporate-owned managed devices. Support for corporate-owned devices managed by Intune is coming soon.
