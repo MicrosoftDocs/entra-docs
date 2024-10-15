@@ -14,7 +14,7 @@ ms.date: 04/29/2024
 
 # Native authentication challenge types
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 Native authentication supports two authentication methods:
 
@@ -29,7 +29,7 @@ Challenge types are predefined values, which the customer app includes in its re
 
 The following table contains the supported challenge type values:
 
-[!INCLUDE [native-auth-challenge-type](../../identity-platform/includes/native-auth-api/native-auth-challenge-type.md)]
+[!INCLUDE [native-auth-challenge-type](includes/native-auth-api/native-auth-challenge-type.md)]
 
 We add new values in the future when native authentication support new authentication methods.
 
@@ -42,7 +42,7 @@ The following table summarizes the challenge type values an app should use for t
 | **Email with password** | *oob*, *password*, and *redirect*  | *oob*, *password*, and *redirect*  | *oob* and *redirect* |
 | **Email OTP** | *oob* and *redirect* | *oob* and *redirect*  | Not applicable |
 
-- Apps that use [native authentication API](../../identity-platform/reference-native-authentication-overview.md) must include the *redirect* challenge type in the list when they indicate the challenge type that they support.
+- Apps that use [native authentication API](reference-native-authentication-overview.md) must include the *redirect* challenge type in the list when they indicate the challenge type that they support.
 - Apps that use Android and iOS SDKs don't need to include the *redirect* challenge type as the SDK automatically includes it.  
 
 
@@ -56,5 +56,5 @@ The following table summarizes what happens if either Microsoft Entra or the cli
 ## Related content 
 
 - [Native authentication web fallback](concept-native-authentication-web-fallback.md)
-- [Native authentication Android SDK tutorials](how-to-run-native-authentication-sample-android-app.md)
-- [Native authentication API reference](../../identity-platform/reference-native-authentication-overview.md)
+- [Native authentication Android SDK tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app)
+- [Native authentication API reference](reference-native-authentication-api.md)
