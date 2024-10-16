@@ -350,15 +350,15 @@ groups:
   title: Steps for a new external user project
   prompt: Choose the step of your journey
   pivots:
-  - id: identity-governance-guest-onboard
+  - id: identity-governance-guest-discover
     title: Discovery
-  - id: identity-governance-guest-assign
+  - id: identity-governance-guest-onboard
     title: Onboarding
-  - id: identity-governance-guest-custom
-    title: Custom workflows
-  - id: identity-governance-guest-convert
-    title: Convert external users
-  - id: identity-governance-guest-access
-    title: Access recertification
-  - id: identity-governance-guest-close
+  - id: identity-governance-guest-redemption
+    title: Redemption
+  - id: identity-governance-guest-monitor
+    title: Monitor and iterate
+  - id: identity-governance-guest-cleanup
+    title: Monitor and cleanup
+  - id: identity-governance-guest-offboard
     title: Close out

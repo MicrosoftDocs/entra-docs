@@ -121,8 +121,25 @@ As the months passed, Contoso saw a significant improvement in their security po
 
 ## Offboarding: Seamlessly secure your environment by efficiently offboarding guest users.   
 
-As an IT admin, offboarding of guest users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization. For this as an Admin, it is imperative to have auto-access management to start the offboarding process automatically when John's access package expires. The system then revokes John's access to all resources linked to that package. John is removed from any group that he is a part of. Once his last active package expires, John's account is removed from the guest user directory. You regularly check the status of access packages for guest users in the Microsoft Entra admin portal or conducts access reviews. Detailed audit logs capture every step, providing a clear trail for compliance. Notifications are sent to stakeholders, confirming the successful offboarding! 
+As an IT admin, offboarding of guest users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization. 
 
+For this as an Admin, it is imperative to have auto-access management to start the offboarding process automatically when John's access package expires. 
+
+The system then revokes John's access to all resources linked to that package. John is removed from any group that he is a part of. Once his last active package expires, John's account is removed from the guest user directory. You regularly check the status of access packages for guest users in the Microsoft Entra admin portal or conducts access reviews. Detailed audit logs capture every step, providing a clear trail for compliance. Notifications are sent to stakeholders, confirming the successful offboarding! 
+
+## Bill version
+In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long.  You can establish a policy for automatic assignments that Entitlement Management follows to create and remove assignments automatically.
+
+Offboarding of guest users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization.
+
+In order to accomplish this, it is imperative to have auto-access management start the offboarding process automatically when an access package expires.  
+
+When an access package expires, the offboarding process should include the following:
+
+- account is removed from the guest user directory
+- regularly check the status of access packages for guest users and conduct access reviews
+- use audit logs for compliance
+- notifications are sent confirming successful offboarding
 
 ::: zone-end  
 
