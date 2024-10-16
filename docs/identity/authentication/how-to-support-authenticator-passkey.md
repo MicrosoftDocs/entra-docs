@@ -5,7 +5,7 @@ description: Support passkeys in Microsoft Authenticator in your Microsoft Entra
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/02/2024
+ms.date: 10/16/2024
 
 ms.author: justinha
 author: justinha
@@ -64,4 +64,4 @@ Some organizations restrict Bluetooth usage, which includes the use of passkeys.
 ## Next steps 
 
 For more information about passkeys in Authenticator, see [Microsoft Authenticator authentication method](concept-authentication-authenticator-app.md).
-To enable passkeys in Authenticator as a way for users to sign in, see []
+To enable passkeys in Authenticator as a way for users to sign in, see [Enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
