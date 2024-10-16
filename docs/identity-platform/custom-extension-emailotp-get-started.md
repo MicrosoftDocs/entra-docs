@@ -30,7 +30,11 @@ This how-to guide demonstrates the one time code send event with a REST API runn
 - A familiarity and understanding of the concepts covered in [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
 - An Azure subscription. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID [external tenant](quickstart-tenant-setup.md).
-- A SendGrid account. If you don't already have one, start by setting up a SendGrid account. For setup instructions, see the [Create a SendGrid Account](https://docs.sendgrid.com/for-developers/partners/microsoft-azure-2021#create-a-sendgrid-account) section of [How to send email using SendGrid with Azure](https://docs.sendgrid.com/for-developers/partners/microsoft-azure-2021#create-a-twilio-sendgrid-accountcreate-a-twilio-sendgrid-account).
+- An Azure Communications Services resource. If you don't have one, create one by following the [Quickstart: Create and manage Communication Services resources](/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp) <!--Do we even need this, considering that we create an email communication resource?-->
+- An Azure Email Communication Services resource. If you don't have one, create one by following the [Quickstart: Create and manage Email Communication Service resources](/azure/communication-services/quickstarts/email/create-email-communication-resource?pivots=platform-azp)
+- A custom verified email domain in your Azure Email Communication Services resource. Refer to [how to add custom verified email domains](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/add-custom-verified-domains?pivots=platform-azp).
+- Link the domains with your Azure Communication Services resource by following the guidance [How to connect a verified email domain](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal)
+
 
 ## Step 1: Create an Azure Function app
 
@@ -50,10 +54,10 @@ This section shows you how to set up an Azure Function app in the Azure portal. 
     | **Subscription** | Your subscription | The subscription under which the new function app will be created in. |
     | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select and existing resource group, or name for the new one in which you'll create your function app. |
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
-    |**Publish**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
+    | **Publish** | Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
-    |**Version**| 8 (LTS) In-process | Version of the .NET runtime. |
-    |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
+    | **Version** | 8 (LTS) In-process | Version of the .NET runtime. |
+    | **Region** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Operating System** | Windows | The operating system is pre-selected for you based on your runtime stack selection. |
     | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
 
@@ -234,6 +238,7 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
 
 ## 1. Create Communication Services resource
 
+<!--
 Azure Communication Services offers multichannel communication APIs for adding voice, video, chat, text messaging/SMS, email, and more to all your applications. It include REST APIs and client library SDKs, so you don't need to be an expert in the underlying technologies to add communication into your apps. 
 
 Get started with Azure Communication Services by [provisioning your first Communication Services resource](/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp).
@@ -246,14 +251,15 @@ After you createe the **Azure Communication**, proceed to create a **Communicati
 
 After you created a **Email Communication Services**, add the allowed email sender domains under this resource. The domains added under this resource type contain all the sender authentication and engagement tracking configurations that must be completed before you start sending emails.
 
-Follow the guidece [how to add custom verified email domains](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/add-custom-verified-domains?pivots=platform-azp).
+
 
 ### 3. Connect domain to send email
 
 After the sender domains are configured and verified, you can link these domains with your **Azure Communication Services**. You can select which of the verified domains is suitable for your application and connect them to send emails from your application.
 
-To proceed, follow the guidence [How to connect a verified email domain](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal
-)
+To proceed, follow the guidence [How to connect a verified email domain](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal)
+
+-->
 
 ### 3. Send an email
 
