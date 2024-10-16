@@ -41,7 +41,7 @@ Microsoft Entra ID supports two signing algorithms, or secure hash algorithms (S
 
 * **SHA-256**. Microsoft Entra ID uses this default algorithm to sign the SAML response. It's the newest algorithm and is more secure than SHA-1. Most of the applications support the SHA-256 algorithm. If an application supports only SHA-1 as the signing algorithm, you can change it. Otherwise, we recommend that you use the SHA-256 algorithm for signing the SAML response.
 
-* **SHA-1**. This algorithm is older, and is less secure than SHA-256. If an application supports only this signing algorithm, you can select this option in the **Signing Algorithm** drop-down list. Microsoft Entra ID then signs the SAML response with the SHA-1 algorithm.
+* **SHA-1**. This algorithm is older, and is less secure than SHA-256. If an application supports only this signing algorithm, you can select this option in the **Signing Algorithm** drop-down list. Microsoft Entra ID then signs the SAML response with the SHA-1 algorithm. Please note that each certificate has its own built-in signing algorithm denoted in the cert's Sigature Algorithm field, which can differ from the configured signing algorithm for a SAML response.  Please do not confuse them.
 
 ## Prerequisites
 
