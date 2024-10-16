@@ -197,7 +197,7 @@ Follow the steps below to configure the Web Service.
 :::image type="content" source="media/deploy-sap-netweaver/sap-35.png" alt-text="Screenshot of save." lightbox="media/deploy-sap-netweaver/sap-35.png":::
  
  13. Find a WSDL URL for Service under WSDL Generation section and copy that link. 
- Example: http://vhcalnplci.dummy.nodomain:8000/sap/bc/srt/wsdl/flv\_10002A1011D1/bndg\_url/sap/bc/srt/rfc/sap/zsapconnectorwebservice/001/zsapconnectorws/zsapconnectorws?sapclient\=001 
+ Example: `http://vhcalnplci.dummy.nodomain:8000/sap/bc/srt/wsdl/flv\_10002A1011D1/bndg\_url/sap/bc/srt/rfc/sap/zsapconnectorwebservice/001/zsapconnectorws/zsapconnectorws?sapclient\=001`
 
 :::image type="content" source="media/deploy-sap-netweaver/sap-36.png" alt-text="Screenshot of WSDL URL." lightbox="media/deploy-sap-netweaver/sap-36.png":::
  
