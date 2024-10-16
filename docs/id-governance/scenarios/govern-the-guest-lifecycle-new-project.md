@@ -15,7 +15,7 @@ ms.author: billmath
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
 
-:::zone pivot="identity-governance-guest-onboard"
+:::zone pivot="identity-governance-guest-discover"
 
 ## Identify current lifecycle and governance processes for external identities 
 Identify your current lifecycle and governance processes for external identities.  This exercise will help you to determine applicable scenarios, feasibility and scope.  
@@ -38,7 +38,7 @@ There are different options depending on the business case. Let’s deep dive in
 
 :::zone-end
 
-::: zone pivot="identity-governance-guest-assign"  
+::: zone pivot="identity-governance-guest-onboard"  
 
 ## Onboarding of Bsuiness Guests: Develop a comprehensive onboarding process for business guests 
 
@@ -74,20 +74,56 @@ For more information, see [Bulk invite guest users for B2B collaboration tutoria
 
 ::: zone-end  
 
-::: zone pivot="identity-governance-guest-custom"  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+::: zone pivot="identity-governance-guest-redemption"  
+
+## Redemption in B2B collaboration: Enable guest users to securely access an organization’s resources by accepting an invitation  
+
+ 
+
+### Invitation Email: 
+John, a guest user, receives an email invitation from Contoso to access their internal portal. He clicks on the link provided in the email, which takes him to the Contoso’s sign-in page. Here, John is presented with the company’s privacy terms and conditions, which he reads through and accepts. He then signs-in using his existing email account. With the sign-in process complete, John is granted access to the Contoso portal, where he can now seamlessly collaborate with internal users. 
+
+### Direct Link: 
+In another instance, Jane, another guest user, receives a direct link to the Contoso Ltd. application from her contact at the company. She clicks on the link, which directs her to the sign-in page. Jane reviews and accepts the privacy terms and conditions before signing in with her existing email account. Once authenticated, she gains access to the application and can start working with her Contoso Ltd. colleagues. 
+
+### Common endpoint URL: 
+Meanwhile, Alex, a guest user, navigates to the common endpoint URL, myapps.microsoft.com. He selects the option to sign-in to an organization and enters the domain name of Contoso Ltd. After reviewing and accepting the privacy terms and conditions, Alex signs in using his existing email account. Successfully authenticated, Alex can now access the resources provided by Contoso Ltd., ready to collaborate and contribute. 
+
+
 ::: zone-end  
 
-::: zone pivot="identity-governance-guest-convert"  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+::: zone pivot="identity-governance-guest-monitor"  
+
+## Monitor and iterate additional resources via direct assignment 
+
+Now you as an IT administrator have a requirement to bypass access requests and directly assign specific users to an access package, granting the external team instant access. you'll create the first access package assignment policy in the access package. You review the access package’s policies to confirm that it permits external users to be added directly. 
+
+With everything in place, Emma moved to the assignments tab. She entered the email addresses of the external team members, ensuring they were correctly listed. After a final review, she clicked the “Assign” button. 
+
+Almost immediately, the external partners received their invitations. They joined the directory seamlessly and gained access to the necessary resources without any delays. This efficient setup allowed both teams to start their collaborative work right away, fostering a productive and innovative environment. 
+
 ::: zone-end  
 
-::: zone pivot="identity-governance-guest-access"  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+::: zone pivot="identity-governance-guest-cleanup"  
+
+## Monitor and Cleanup: Ensure compliance and security by monitoring and cleaning up accounts 
+ 
+
+ As the company grew, so did the complexity of managing who had access to what. You consistently monitor the consultant’s access, ensuring compliance with security policies. You make sure all guests have their access set to expire automatically at the end of the project duration by maintaining these details in access package lifecycle settings . With automated review process the system sent out review requests to managers and resource owners. They could approve or deny access with just a few clicks. This not only saved time but also reduced the risk of human error.  
+ 
+You  also uses the dashboard to monitor and clean up any inactive accounts. By regularly conducting access reviews and utilizing the inactive guest user dashboard, he ensures that only active and necessary guest users retain access to the company’s resources. This helps maintain security, reduce risks, and streamline user management. 
+ 
+As the months passed, Contoso saw a significant improvement in their security posture. Unauthorized access incidents dropped, and compliance audits became a breeze. The detailed reports generated by Entra Access Reviews provided clear insights into access patterns and potential risks. 
+
 ::: zone-end  
 
-::: zone pivot="identity-governance-guest-close"  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+::: zone pivot="identity-governance-guest-offboard"  
+
+## Offboarding: Seamlessly secure your environment by efficiently offboarding guest users.   
+
+As an IT admin, offboarding of guest users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization. For this as an Admin, it is imperative to have auto-access management to start the offboarding process automatically when John's access package expires. The system then revokes John's access to all resources linked to that package. John is removed from any group that he is a part of. Once his last active package expires, John's account is removed from the guest user directory. You regularly check the status of access packages for guest users in the Microsoft Entra admin portal or conducts access reviews. Detailed audit logs capture every step, providing a clear trail for compliance. Notifications are sent to stakeholders, confirming the successful offboarding! 
+
+
 ::: zone-end  
 
 
