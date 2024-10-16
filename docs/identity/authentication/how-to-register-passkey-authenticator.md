@@ -122,7 +122,7 @@ You can also use your web browser to set up a passkey in Authenticator.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info-save-as.png" alt-text="Screenshot of the Security Info screen save as in Microsoft Authenticator for iOS devices.":::
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/freecompress-passkey-ios-security-info-save-as.png" alt-text="Screenshot of the Security Info screen in a browser on an iOS device.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info-save-as-sixty.png" alt-text="Screenshot of the Security Info screen save as 60 in Microsoft Authenticator for iOS devices.":::
 
 1. Where you're asked to **Choose a method**, select **Passkey in Microsoft Authenticator**.
 
