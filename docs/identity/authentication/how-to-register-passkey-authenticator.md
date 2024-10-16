@@ -114,11 +114,13 @@ You can also use your web browser to set up a passkey in Authenticator.
 
 1. In the security dialog that opens on your device, tap **iPhone, iPad, or Android device**, and tap **Continue**.   
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/iphone-ipad-android.png" alt-text="Screenshot of the Security Info screen in Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/iphone-ipad-android.png" alt-text="Screenshot of option to sign in with an iPhone, iPad, or Android device.":::
 
 1. In Security info, tap **+ Add sign-in method**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info.png" alt-text="Screenshot of the Security Info screen in Microsoft Authenticator for iOS devices.":::
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info-three.png" alt-text="Screenshot of the Security Info screen size 3 in Microsoft Authenticator for iOS devices.":::
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info-save-as.png" alt-text="Screenshot of the Security Info screen save as in Microsoft Authenticator for iOS devices.":::
 
