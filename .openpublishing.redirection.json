@@ -1082,6 +1082,7 @@
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
     },
+    {
       "source_path_from_root": "/docs/identity-platform/quickstart-v2-uwp.md",
       "redirect_url": "/entra/identity-platform/quickstart-desktop-app-wpf-sign-in",
       "redirect_document_id": false
