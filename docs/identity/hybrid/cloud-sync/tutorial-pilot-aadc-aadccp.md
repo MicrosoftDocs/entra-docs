@@ -47,7 +47,7 @@ Before you try this tutorial, consider the following items:
 The following are prerequisites required for completing this tutorial
 
 - A test environment with Microsoft Entra Connect Sync version 1.4.32.0 or later
-- An OU or group that is in scope of sync and can be used the pilot. We recommend starting with a small set of objects.
+- An OU or group that is in scope of sync and can be used during the pilot. We recommend starting with a small set of objects.
 - A server running Windows Server 2016 or later that will host the provisioning agent.
 - Source anchor for Microsoft Entra Connect Sync should be either *objectGuid* or *ms-ds-consistencyGUID*
 
@@ -64,7 +64,7 @@ Before making any changes, you should back up your Microsoft Entra Connect confi
 
 ## Stop the scheduler
 
-Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises directory using a scheduler. In order to modify and add custom rules, you want to disable the scheduler so that synchronizations won't run while you're working making the changes. To stop the scheduler, use the following steps:
+Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises directory using a scheduler. In order to modify and add custom rules, you want to disable the scheduler so that synchronizations won't run while you're working and making the changes. To stop the scheduler, use the following steps:
 
 1. On the server that is running Microsoft Entra Connect Sync open PowerShell with Administrative Privileges.
 2. Run `Stop-ADSyncSyncCycle`.  Hit Enter.
@@ -107,7 +107,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
     ![Screenshot that shows the **Create inbound synchronization rule - Scoping filter** page with a scoping filter value entered.](media/tutorial-migrate-aadc-aadccp/user-3.png)
 
  5. On the **Join** rules page, select **Next**.
- 6. On the **Transformations** page, add a Constant transformation: flow True to cloudNoFlow attribute. Select **Add**.
+ 6. On the **Transformations** page, add a Constant transformation: Source value of True for the cloudNoFlow attribute. Select **Add**.
 
      ![Screenshot that shows the **Create inbound synchronization rule - Transformations** page with a **Constant transformation** flow added.](media/tutorial-migrate-aadc-aadccp/user-4.png)
 
@@ -169,7 +169,7 @@ Use the following steps to configure provisioning:
 
  5.  The **Get started** screen will open.  
 
- 6.  On the **Get started** screen, click either **Add scoping filters** next to the **Add scoping filters** icon or on the click **Scoping filters** on the left under **Manage**.
+ 6.  On the **Get started** screen, click either **Add scoping filters** next to the **Add scoping filters** icon or click **Scoping filters** on the left under **Manage**.
 
    :::image type="content" source="media/how-to-configure/new-ux-configure-5.png" alt-text="Screenshot of scoping filters." lightbox="media/how-to-configure/new-ux-configure-5.png":::
  
