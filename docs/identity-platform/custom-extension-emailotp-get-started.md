@@ -29,11 +29,13 @@ This how-to guide demonstrates the one time code send event with a REST API runn
 
 - A familiarity and understanding of the concepts covered in [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
 - An Azure subscription. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
-- A Microsoft Entra ID [external tenant](quickstart-tenant-setup.md).
+- A Microsoft Entra ID [external tenant](../external-id/customers/quickstart-tenant-setup.md).
 - An Azure Communications Services resource. If you don't have one, create one by following the [Quickstart: Create and manage Communication Services resources](/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp) <!--Do we even need this, considering that we create an email communication resource?-->
 - An Azure Email Communication Services resource. If you don't have one, create one by following the [Quickstart: Create and manage Email Communication Service resources](/azure/communication-services/quickstarts/email/create-email-communication-resource?pivots=platform-azp)
-- A custom verified email domain in your Azure Email Communication Services resource. Refer to [how to add custom verified email domains](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/add-custom-verified-domains?pivots=platform-azp).
-- Link the domains with your Azure Communication Services resource by following the guidance [How to connect a verified email domain](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal)
+- A custom verified email domain in your Azure Email Communication Services resource. Refer to [how to add custom verified email domains](/azure/communication-services/quickstarts/email/add-custom-verified-domains?pivots=platform-azp).
+- Link the domains with your Azure Communication Services resource by following the guidance [How to connect a verified email domain](/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal)
+- Follow the guidance [How to send an email using Azure Communication Services](/azure/communication-services/quickstarts/email/send-email?tabs=windows%2Cconnection-string%2Csend-email-and-get-status-async%2Csync-client&pivots=platform-azportal)
+- Learn how to [access your connection strings and service endpoints](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-net#access-your-connection-strings-and-service-endpoints)
 
 
 ## Step 1: Create an Azure Function app
@@ -236,8 +238,6 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
     | **FROMNAME** | CIAM Demo | The name of the From Email. |
     | **TEMPLATEID** | d-01234567.... | The SendGrid dynamic template it. |
 
-## 1. Create Communication Services resource
-
 <!--
 Azure Communication Services offers multichannel communication APIs for adding voice, video, chat, text messaging/SMS, email, and more to all your applications. It include REST APIs and client library SDKs, so you don't need to be an expert in the underlying technologies to add communication into your apps. 
 
@@ -259,7 +259,7 @@ After the sender domains are configured and verified, you can link these domains
 
 To proceed, follow the guidence [How to connect a verified email domain](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal)
 
--->
+
 
 ### 3. Send an email
 
@@ -278,9 +278,32 @@ The source code for the custom auhentication extesion cab be found in [Woodgrove
 Communication Services SDKs use **connection strings** to authorize requests made to Communication Services. 
 Learn hho to [access your connection strings and service endpoints](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-net#access-your-connection-strings-and-service-endpoints)
 
+-->
+
 ## Step 2: Register a custom authentication extension
 
 In this step, you configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure Function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Use Microsoft Graph to register an application to authenticate your custom authentication extension to your Azure Function.
+
+### [Azure portal](#tab/azure-portal)
+
+### 2.1 Register a custom authentication extension
+
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Search for and select **Microsoft Entra ID** and select **Enterprise applications**.
+1. Select **Custom authentication extensions**, and then select **Create a custom extension**.
+1. In **Basics**, select the **TokenIssuanceStart** event type and select **Next**.
+1. In **Endpoint Configuration**, fill in the following properties:
+    - **Name** - A name for your custom authentication extension. For example, *Token issuance event*.
+    - **Target Url** - The `{Function_Url}` of your Azure Function URL. Navigate to the **Overview** page of your Azure Function app, then select the function you created. In the function **Overview** page, select **Get Function Url** and use the copy icon to copy the **customauthenticationextension_extension (System key)** URL.
+    - **Description** - A description for your custom authentication extensions.
+1. Select **Next**.
+1. In **API Authentication**, select the **Create new app registration** option to create an app registration that represents your *function app*.  
+1. Give the app a name, for example **Azure Functions authentication events API**.
+1. Select **Next**.
+1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
+1. Note the **App ID** under **API Authentication**, which is needed to [configure authentication for your Azure Function](./custom-extension-tokenissuancestart-setup.md#configure-authentication-for-your-azure-function) in your Azure Function app.
+
+### [Microsoft Graph](#tab/microsoft-graph)
 
 ### 2.1 Register an application in Graph Explorer
 
@@ -375,7 +398,9 @@ Next, you register the custom authentication extension and associating it with t
 
 1. Record the **id** value of the created custom email OTP provider object. You'll use the value later in this tutorial in place of `{customExtensionObjectId}`.
 
-### 2.4 Grant admin consent
+---
+
+### Grant admin consent
 
 After your custom authentication extension is created, open the application from the portal under **App registrations** and select **API permissions**.
 
