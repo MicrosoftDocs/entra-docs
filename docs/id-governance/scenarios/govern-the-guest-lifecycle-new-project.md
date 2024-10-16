@@ -144,7 +144,11 @@ When an access package expires, the offboarding process should include the follo
 - notifications are sent confirming successful offboarding
 
 ### Example
-John is a guest whose access package has expired.  The system then revokes John's access to all resources linked to that package. John is removed from any group that he is a part of. Once his last active package expires, John's account is removed from the guest user directory. You regularly check the status of access packages for guest users in the Microsoft Entra admin portal or conducts access reviews. Detailed audit logs capture every step, providing a clear trail for compliance. Notifications are sent to stakeholders, confirming the successful offboarding!
+John is a guest whose access package has expired.  The system then revokes John's access to all resources linked to that package. John is removed from any group that he is a part of. Once his last active package expires, John's account is removed from the guest user directory. 
+
+When the access package has expired and the above actions are taken, you also review John's status in the Microsoft Entra admin portal. During your next access review, you verify users such as John, whose packages have expired since the last review. 
+
+You use detailed audit logs capture every step, providing a clear trail for compliance and notifications are sent to stakeholders, confirming the successful offboarding!
 
 ::: zone-end  
 
