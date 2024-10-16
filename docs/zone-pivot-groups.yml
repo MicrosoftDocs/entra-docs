@@ -351,9 +351,9 @@ groups:
   prompt: Choose the step of your journey
   pivots:
   - id: identity-governance-guest-onboard
-    title: Onboarding and discovery
+    title: Discovery
   - id: identity-governance-guest-assign
-    title: Auto assign resources
+    title: Onboarding
   - id: identity-governance-guest-custom
     title: Custom workflows
   - id: identity-governance-guest-convert
