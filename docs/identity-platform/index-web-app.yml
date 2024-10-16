@@ -26,7 +26,7 @@ landingContent:
           - text: Java
             url: quickstart-web-app-java-sign-in.md
           - text: Node.js with MSAL
-            url: quickstart-web-app-nodejs-msal-sign-in.md
+            url: quickstart-web-app-nodejs-sign-in.md
           - text: Python Flask
             url: quickstart-web-app-python-flask.md
   - title: "Learn by building"
