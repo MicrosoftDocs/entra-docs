@@ -139,7 +139,8 @@ When an access package expires, the offboarding process should include the follo
 - access to all resources associated with the expired package are revoked
 - user is removed from any group that they are a member of
 - account is removed from the guest user directory
-- regularly check the status of access packages for guest users and conduct access reviews
+- regularly check the status of access packages for guest users in the Microsoft Entra admin portal
+- regularly conduct access reviews to ensure all guests status 
 - use audit logs for compliance
 - notifications are sent confirming successful offboarding
 
