@@ -136,6 +136,8 @@ In order to accomplish this, it is imperative to have auto-access management sta
 
 When an access package expires, the offboarding process should include the following:
 
+- access to all resources associated with the expired package are revoked
+- user is removed from any group that they are a member of
 - account is removed from the guest user directory
 - regularly check the status of access packages for guest users and conduct access reviews
 - use audit logs for compliance
