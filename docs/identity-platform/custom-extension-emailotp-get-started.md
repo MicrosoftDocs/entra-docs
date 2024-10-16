@@ -45,27 +45,25 @@ This section shows you how to set up an Azure Function app in the Azure portal. 
 > [!TIP]
 > Steps in this article might vary slightly based on the portal you start from.
 
-1. Sign in to the [Azure portal](https://portal.azure.com) with your administrator account.
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
-1. Search for **Function App** and select **Create**.
-1. Select the **Consumption** hosting plan, and then **Select**.
-1. On the **Basics** tab, create the function app settings as specified in the following table:
+1. Search for and select **Function App** and select **Create**.
+1. On the **Create Function App** page, select **Consumption**, then **Select**.
+1. On the **Create Function App (Consumption)** page, in the **Basics** tab, create a function app using the settings as specified in the following table:
 
     | Setting      | Suggested value  | Description |
     | ------------ | ---------------- | ----------- |
-    | **Subscription** | Your subscription | The subscription under which the new function app will be created in. |
+    | **Subscription** | Your subscription | The subscription under which the new function app will be created. |
     | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select and existing resource group, or name for the new one in which you'll create your function app. |
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
-    | **Publish** | Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
+    | **Deploy code or container image** | Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
-    | **Version** | 8 (LTS) In-process | Version of the .NET runtime. |
+    | **Version** | 8 (LTS) In-process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal, which is recommended for this guide |
     | **Region** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
-    | **Operating System** | Windows | The operating system is pre-selected for you based on your runtime stack selection. |
-    | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
+    | **Operating System** | Windows | The operating system is preselected for you based on your runtime stack selection. |
 
-1. Select **Review + create** to review the app configuration selections and then select **Create**.
-
-1. Select the **Notifications** icon in the upper-right corner of the portal and watch for the **Deployment succeeded** message. Then, select **Go to resource** to view your new function app.
+1. Select **Review + create** to review the app configuration selections and then select **Create**. Deployment takes a few minutes.
+1. Once deployed, select **Go to resource** to view your new function app.
 
 ### 1.1 Create a HTTP trigger function
 
@@ -291,17 +289,15 @@ In this step, you configure a custom authentication extension, which will be use
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Search for and select **Microsoft Entra ID** and select **Enterprise applications**.
 1. Select **Custom authentication extensions**, and then select **Create a custom extension**.
-1. In **Basics**, select the **TokenIssuanceStart** event type and select **Next**.
-1. In **Endpoint Configuration**, fill in the following properties:
-    - **Name** - A name for your custom authentication extension. For example, *Token issuance event*.
+1. In **Basics**, select the **EmailOtpSend** event type and select **Next**.
+1. In the **Endpoint Configuration** tab, fill in the following properties, then select **Next** to continue.
+    - **Name** - A name for your custom authentication extension. For example, *Email OTP Send*.
     - **Target Url** - The `{Function_Url}` of your Azure Function URL. Navigate to the **Overview** page of your Azure Function app, then select the function you created. In the function **Overview** page, select **Get Function Url** and use the copy icon to copy the **customauthenticationextension_extension (System key)** URL.
     - **Description** - A description for your custom authentication extensions.
-1. Select **Next**.
-1. In **API Authentication**, select the **Create new app registration** option to create an app registration that represents your *function app*.  
-1. Give the app a name, for example **Azure Functions authentication events API**.
-1. Select **Next**.
-1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
-1. Note the **App ID** under **API Authentication**, which is needed to [configure authentication for your Azure Function](./custom-extension-tokenissuancestart-setup.md#configure-authentication-for-your-azure-function) in your Azure Function app.
+1. In the **API Authentication** tab, select the **Create new app registration** option to create an app registration that represents your *function app*.  
+1. Give the app a name, for example **Azure Functions authentication events API**, and select **Next**.
+1. In the **Applications** tab, select the application to associate with the custom authentication extension. Select **Next**. You also have the option to apply it across the whole tenant by checking the box. Select **Next** to continue. 
+1. In the **Review** tab, check that the details are correct for the custom authentication extension. Note the **App ID** under **API Authentication**, which is needed to [configure authentication for your Azure Function](./custom-extension-tokenissuancestart-setup.md#configure-authentication-for-your-azure-function) in your Azure Function app. Select **Create**.
 
 ### [Microsoft Graph](#tab/microsoft-graph)
 
