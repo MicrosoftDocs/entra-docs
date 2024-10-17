@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 04/25/2024
+  ms.date: 10/14/2024
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -41,3 +41,7 @@ sections:
           You can't use passkeys without an internet connection. 
           For same-device scenarios, the mobile device that contains the passkey must be connected to the internet. 
           For cross-device scenarios, both the device with the passkey and the secondary device you are authenticating on must be connected to the internet.  
+      - question: |
+          Can I use passkeys in Authenticator on an Android corporate-owned device?
+        answer: |
+          Passkeys in Authenticator aren't supported on corporate-owned managed devices. Support for corporate-owned devices managed by Intune is coming soon.

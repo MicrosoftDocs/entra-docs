@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 08/13/2024
+ms.date: 10/04/2024
 
 
 ms.author: justinha
@@ -141,7 +141,6 @@ The Authentication methods policy is the recommended way to manage Microsoft Aut
 
 Admins can also configure parameters to better control how Microsoft Authenticator can be used. For example, they can add location or app name to the sign-in request so users have greater context before they approve.  
 
-Global Administrators can also manage Microsoft Authenticator on a tenant-wide basis by using legacy MFA and SSPR policies. These policies allow Microsoft Authenticator to be enabled or disabled for all users in the tenant. There are no options to include or exclude anyone, or control how Microsoft Authenticator can be used for sign-in. 
 
 ## Known issues
 
