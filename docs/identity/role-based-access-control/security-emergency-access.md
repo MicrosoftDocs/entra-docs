@@ -18,7 +18,7 @@ ms.reviewer: mwahl
 
 It's important that you prevent being accidentally locked out of your Microsoft Entra organization because you can't sign in or activate another user's account as an administrator. You can mitigate the impact of accidental lack of administrative access by creating two or more *emergency access accounts* in your organization.
 
-Emergency access accounts are highly privileged, and they aren't assigned to specific individuals. Emergency access accounts are limited to emergency or "break glass"' scenarios where normal administrative accounts can't be used. We recommend that you maintain a goal of restricting emergency account use to only the times when it's absolutely necessary.
+User accounts with the Global Administrator role have high privileges in the system, this includes emergency access accounts with the Global Administrator role. Emergency access accounts are limited to emergency or "break glass"' scenarios where normal administrative accounts can't be used. We recommend that you maintain a goal of restricting emergency account use to only the times when it's absolutely necessary.
 
 This article provides guidelines for managing emergency access accounts in Microsoft Entra ID.
 
@@ -29,7 +29,8 @@ An organization might need to use an emergency access account in the following s
 - The user accounts are federated, and federation is currently unavailable because of a cell-network break or an identity-provider outage. For example, if the identity provider host in your environment has gone down, users might be unable to sign in when Microsoft Entra ID redirects to their identity provider.
 - The administrators are registered through Microsoft Entra multifactor authentication, and all their individual devices are unavailable or the service is unavailable. Users might be unable to complete multifactor authentication to activate a role. For example, a cell network outage is preventing them from answering phone calls or receiving text messages, the only two authentication mechanisms that they registered for their device.
 - The person with the most recent Global Administrator access has left the organization. Microsoft Entra ID prevents the last Global Administrator account from being deleted, but it doesn't prevent the account from being deleted or disabled on-premises. Either situation might make the organization unable to recover the account.
-- Unforeseen circumstances such as a natural disaster emergency, during which a mobile phone or other networks might be unavailable. 
+- Unforeseen circumstances such as a natural disaster emergency, during which a mobile phone or other networks might be unavailable.
+- If role assignments for Global Administrator and Privileged Role Administrator roles are eligible, approval is required for activation, but no approvers are selected (or all approvers are removed from the directory). Active Global Administrators and Privileged Role Administrators are default approvers. But there will be no active Global Administrators and Privileged Role Administrators and administration of the tenant will be effectively be locked, unless emergency access accounts are used.
 
 ## Create emergency access accounts
 
@@ -53,7 +54,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 Follow these steps to create new emergency access accounts that use FIDO2.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. If not already enabled, follow steps to [enable passkeys (FIDO2) for your organization](../authentication/how-to-enable-passkey-fido2.md).
 
