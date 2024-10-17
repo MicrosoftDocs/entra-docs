@@ -34,6 +34,8 @@ The Microsoft traffic forwarding profile includes Entra ID/ Microsoft Graph, Sha
 
 Microsoft traffic is forwarded to the service through either [remote network connectivity](concept-remote-network-connectivity.md), such as branch office location, or through the [Global Secure Access client](how-to-install-windows-client.md).
 
+[Learn more about the Microsoft traffic profile](concept-microsoft-traffic-profile.md)
+
 ## Private access
 
 With the Private Access profile, you can route traffic to your private resources. This traffic forwarding profile requires configuring Quick Access, which includes the fully qualified domain names (FQDNs) and IP addresses of the private apps and resources you want to forward to the service. 
@@ -50,6 +52,7 @@ Internet access traffic can be forwarded to the service by connecting through th
 
 ## Next steps
 
+- [Learn more about the Microsoft traffic profile](concept-microsoft-traffic-profile.md)
 - [Manage the Microsoft traffic profile](how-to-manage-microsoft-profile.md)
 - [Manage the Private access traffic profile](how-to-manage-private-access-profile.md)
 - [Configure Quick Access](how-to-configure-quick-access.md)

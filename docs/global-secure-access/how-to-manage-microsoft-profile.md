@@ -15,7 +15,7 @@ With the Microsoft profile enabled, Microsoft Entra Internet Access acquires the
 
 - Exchange Online
 - SharePoint Online and Microsoft OneDrive. 
-- Microsoft 365 Common and Office Online (only Microsoft Entra ID and Microsoft Graph)
+- Microsoft 365 Common and Office Online
 
 ## Prerequisites
 
@@ -24,7 +24,6 @@ To enable the Microsoft traffic forwarding profile for your tenant, you must hav
 - A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID to enable traffic profiles.
 - A [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)  role to create and interact with Conditional Access policies.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
@@ -59,6 +58,9 @@ The policy groups include the following details:
 - **Action**: Forward or Bypass
 
 You can configure the traffic acquisition rules to bypass traffic acquisition. If you do, the users will still be able to access resources; however, the Global Secure Access service will not process the traffic. You can bypass traffic to a specific FQDN or IP address, an entire policy group within the profile, or the entire Microsoft profile itself. If you only need to forward some of the Microsoft resources within a policy group, enable the group then change the **Action** in the details accordingly.
+
+[!IMPORTANT]
+> When a rule is set to Bypass, the Internet Access traffic profile will not acquire this traffic. Even with the Internet Access profile enabled, the bypassed traffic will skip Global Secure Access acquisition and use that client's network routing path to egress to the Internet. Traffic available for acquisition in the Microsoft traffic profile can be only acquired in the Microsoft traffic profile.
 
 The following example shows setting the `*.sharepoint.com` FQDN to **Bypass** so the traffic isn't forwarded to the service.
 
@@ -102,8 +104,9 @@ You can scope the Microsoft profile to specific users and groups instead of appl
 
 ## Next steps
 
-The next step for getting started with Microsoft Entra Internet Access is to [install and configure the Global Secure Access Client on end-user devices](how-to-install-windows-client.md)
+The next step for getting started with Microsoft traffic profile is to [install and configure the Global Secure Access Client on end-user devices](how-to-install-windows-client.md)
 
 For more information about traffic forwarding, see the following article:
 
 - [Learn about traffic forwarding profiles](concept-traffic-forwarding.md)
+- [Learn about the Microsoft traffic forwarding profile](concept-traffic-forwarding.md)
