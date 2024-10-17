@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on iOS in
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/09/2024
+ms.date: 10/17/2024
 
 ms.author: justinha
 author: justinha
@@ -180,11 +180,19 @@ If your organizations restricts Bluetooth usage, you can allow cross-device regi
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/select-passkey-in-authenticator.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
 
-1. If necessary, download Microsoft Authenticator to your iOS device, then tap **Next**.   
+1. If necessary, download Microsoft Authenticator to your iOS device. You can click [Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app) and scan a QR code to install Authenticator from Google Play or the iOS App Store. After you download Authenticator, tap **Next**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/download-authenticator-laptop.png" alt-text="Screenshot that gives users an option to download Authenticator.":::
 
-1. The next step is to add your account in Authenticator on your iOS device. If you just downloaded Authenticator, you can tap Add account near the bottom of you're iOS device. If already use Authenticator, tap **+** in the upper right corner. 
+1. After Authenticator is installed, you can review Microsoft Privacy information. Tap **Accept**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/privacy-statement.png" alt-text="Screenshot that explains Microsoft Privact statement in Authenticator.":::
+
+1. Choose whether to share app usage data, and tap **Continue**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/share-app-usage-data.png" alt-text="Screenshot that allows users to share app data usage.":::
+
+1. The next step is to add your account in Authenticator on your iOS device. If you just downloaded Authenticator, you can tap **Add work or school account** near the bottom of you're iOS device. If already use Authenticator, tap **+** in the upper right corner. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
 
