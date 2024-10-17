@@ -175,7 +175,7 @@
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js
-          href: quickstart-web-app-nodejs-msal-sign-in.md
+          href: quickstart-web-app-nodejs-sign-in.md
         - name: Java
           href: quickstart-web-app-java-sign-in.md
         - name: Python Flask
