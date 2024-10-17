@@ -81,10 +81,10 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |Excelsecu eSecu FIDO2 PRO Security Key|bbf4b6a7-679d-f6fc-c4f2-8ac0ddf9015a|![n]|![y]|![y]|![y]|
 |Excelsecu eSecu FIDO2 Security Key|cdbdaea2-c415-5073-50f7-c04e968640b6|![n]|![y]|![n]|![n]|
 |Feitian AllinOne FIDO2 Authenticator|12ded745-4bed-47d4-abaa-e713f51d6393|![y]|![y]|![y]|![y]|
-|Feitian BioPass FIDO2 Authenticator|77010bd7-212a-4fc9-b236-d2ca5e9d4084|![y]|![n]|![n]|![n]|
+|Feitian BioPass FIDO2 Authenticator|77010bd7-212a-4fc9-b236-d2ca5e9d4084|![y]|![y]|![n]|![n]|
 |Feitian BioPass FIDO2 Plus Authenticator|b6ede29c-3772-412c-8a78-539c1f4c62d2|![y]|![y]|![n]|![n]|
-|Feitian ePass FIDO2 Authenticator|833b721a-ff5f-4d00-bb2e-bdda3ec01e29|![n]|![n]|![n]|![n]|
-|Feitian ePass FIDO2-NFC Authenticator|ee041bce-25e5-4cdb-8f86-897fd6418464|![n]|![n]|![n]|![n]|
+|Feitian ePass FIDO2 Authenticator|833b721a-ff5f-4d00-bb2e-bdda3ec01e29|![n]|![y]|![n]|![n]|
+|Feitian ePass FIDO2-NFC Authenticator|ee041bce-25e5-4cdb-8f86-897fd6418464|![n]|![y]|![y]|![n]|
 |Feitian ePass FIDO2-NFC Series (CTAP2.1, CTAP2.0, U2F)|234cd403-35a2-4cc2-8015-77ea280c77f5|![n]|![y]|![y]|![n]|
 |Feitian iePass FIDO Authenticator|3e22415d-7fdf-4ea4-8a0c-dd60c4249b9d|![n]|![y]|![n]|![n]|
 |FIDO KeyPass S3|f4c63eff-d26c-4248-801c-3736c7eaa93a|![n]|![y]|![n]|![n]|
