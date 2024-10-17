@@ -49,7 +49,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     git clone https://github.com/Azure-Samples/ms-identity-node.git
     ```
 
-* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-node/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-node/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Configure the project
 
