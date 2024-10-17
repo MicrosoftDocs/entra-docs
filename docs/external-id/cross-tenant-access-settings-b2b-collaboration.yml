@@ -200,7 +200,7 @@ procedureSection:
       |My Profile|8c59ead7-d703-4a27-9e55-c96a0054c8d2|Yes|Defines access to `myaccount.microsoft.com` including My Groups and My Access portals. Some tabs within My Profile require the other apps listed here in order to work.|
       |My Sign ins|19db86c3-b2b9-44cc-b339-36da233a3be2|No|Defines access to `mysignins.microsoft.com` including access to Security Info. Allow this app if you require users to register for and use MFA in the resource tenant (for example, MFA isn't trusted from the home tenant).|
 
-      Some of the applications in the previous table don't allow selection from the Microsoft Entra admin center. To allow them, add them with Microsoft Graph API as shown the in the following example:
+      Some of the applications in the previous table don't allow selection from the Microsoft Entra admin center. To allow them, add them with Microsoft Graph API as shown in the following example:
 
       ```json
       PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/partners/<insert partner’s tenant id> 
