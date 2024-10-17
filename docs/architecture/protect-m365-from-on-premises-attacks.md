@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: how-to
-ms.date: 08/25/2024
+ms.date: 10/17/2024
 ms.author: jricketts
 ms.reviewer: ajburnle
 ms.custom:
@@ -75,7 +75,10 @@ In Microsoft Entra ID, users who have privileged roles, such as administrators, 
 
 - Use cloud-only accounts for Microsoft Entra ID and Microsoft 365 privileged roles.
 
-    For each [highly privileged role](../identity/role-based-access-control/privileged-roles-permissions.md), review the users that have `onPremisesImmutableId` and `onPremisesSyncEnabled` set. Create a cloud-only user account for that individual and remove their hybrid identity from privileged roles. See Microsoft Graph API [user resource type](/graph/api/resources/user).
+    For each [highly privileged role](../identity/role-based-access-control/privileged-roles-permissions.md), you should do the following:
+
+    - Review the users that have `onPremisesImmutableId` and `onPremisesSyncEnabled` set. See Microsoft Graph API [user resource type](/graph/api/resources/user).
+    - Create a cloud-only user account for those individuals and remove their hybrid identity from privileged roles.
 
 - Deploy privileged access devices for privileged access to manage Microsoft 365 and Microsoft Entra ID. See [Device roles and profiles](/security/privileged-access-workstations/privileged-access-devices#device-roles-and-profiles).
 
