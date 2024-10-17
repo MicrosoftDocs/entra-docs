@@ -118,23 +118,17 @@ You can also use your web browser to set up a passkey in Authenticator.
 
 1. In Security info, tap **+ Add sign-in method**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info.png" alt-text="Screenshot of the Security Info screen in Microsoft Authenticator for iOS devices.":::
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info-three.png" alt-text="Screenshot of the Security Info screen size 3 in Microsoft Authenticator for iOS devices.":::
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info-save-as.png" alt-text="Screenshot of the Security Info screen save as in Microsoft Authenticator for iOS devices.":::
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info-save-as-sixty.png" alt-text="Screenshot of the Security Info screen save as 60 in Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info-three.png" alt-text="Screenshot of the Security Info screen on an iOS devices.":::
 
 1. Where you're asked to **Choose a method**, select **Passkey in Microsoft Authenticator**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-in-authenticator.png" alt-text="Screenshot of the drop-down list of options in Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-in-authenticator-three.png" alt-text="Screenshot of the drop-down list of options in Microsoft Authenticator for iOS devices.":::
 
 1. Tap **Add**. 
    
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-add-sign-in-method.png" alt-text="Screenshot of the Security Info screen Add Sign-in Method option.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-add-sign-in-method-three.png" alt-text="Screenshot of the Security Info screen Add Sign-in Method option.":::
 
-1. When you're asked to sign in with multifactor authentication (MFA), tap **Next**. 
+1. When you're asked to sign in with MFA, tap **Next**. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/sign-in-required-ios.png" alt-text="Screenshot that notifies user to sign in with a second factor before they add a passkey on their iOS device.":::
 
