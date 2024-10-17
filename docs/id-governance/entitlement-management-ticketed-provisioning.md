@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 07/15/2024
+ms.date: 10/17/2024
 ms.custom: template-tutorial
 ---
 
@@ -38,16 +38,11 @@ In this tutorial, you learn how to:
 
 ## Adding Logic App Workflow to an existing Catalog for Entitlement Management
 
-To add a Logic App workflow to an existing catalog use the ARM template for the Logic App creation here: 
+Logic App workflows can be added to an existing catalog. For more information on how to create a new catalog, see: [Create and manage a catalog of resources in entitlement management](entitlement-management-catalog-create.md).
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Figaelmprodportalhosting.blob.core.windows.net%2Farm-deployment-template%2FLogicAppServiceNowIntegration.json).
+After a catalog is created, you'd add a Logic App workflow by doing the following steps:
 
-:::image type="content" source="media/entitlement-management-servicenow-integration/logic-app-arm-template.png" alt-text="Screenshot of Logic App ARM template." lightbox="media/entitlement-management-servicenow-integration/logic-app-arm-template.png":::
-
-Provide the Azure subscription, resource group details, along with the Logic App name and the Catalog ID to associate the Logic App with and select purchase. For more information on how to create a new catalog, see: [Create and manage a catalog of resources in entitlement management](entitlement-management-catalog-create.md).
-
-
-1. Navigate To Microsoft Entra admin center [Identity Governance - Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_ERM/DashboardBlade/~/elmEntitlement) as at least the role of [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and Resource group owner.
 1. In the left menu, select **Catalogs**. 
@@ -62,9 +57,9 @@ Provide the Azure subscription, resource group details, along with the Logic App
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-behavior.png" alt-text="Screenshot of entitlement management custom extension behavior actions tab." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-behavior.png":::
 1. Select **Launch and wait** in the **Extension Configuration** which will pause the associated access package action until after the Logic App linked to the extension completes its task, and a resume action is sent by the admin to continue the process. For more information on this process, see:  [Configuring custom extensions that pause entitlement management processes](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes).
 
-1. In the **Details** tab, choose No in the "*Create new logic App*" field as the Logic App has already been created in the previous steps. However, you need to provide the Azure subscription and resource group details, along with the Logic App name.
+1. In the **Details** tab, choose Yes in the "*Create new logic App*" field. Add a name for the Logic App, along with the subscription, and resource group, where you're putting it.
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details.png" alt-text="Screenshot of the entitlement management  custom extension details tab." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details.png":::
-1. In **Review and Create**, review the summary of your custom extension and make sure the details for your Logic App call-out are correct. Then select **Create**.
+1. In **Review and Create**, review the summary of your custom extension and make sure the details for your Logic App, and it's call-out, are correct. After reviewing these details, select **Create**.
 
 1. This custom extension to the linked Logic App now appears in your Custom Extensions tab under Catalogs. You're able to call on this in access package policies.
 
