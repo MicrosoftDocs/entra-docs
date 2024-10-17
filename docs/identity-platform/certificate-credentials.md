@@ -64,7 +64,7 @@ The signature is computed by applying the certificate as described in the [JSON 
   "iss": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
   "jti": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
   "nbf": 1484592741,
-  "sub": "aaaabbbb-0000-cccc-1111-dddd2222eeee"
+  "sub": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 }
 .
 "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u..."

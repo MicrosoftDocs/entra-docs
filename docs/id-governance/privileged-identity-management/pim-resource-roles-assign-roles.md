@@ -105,7 +105,7 @@ The following example is a sample HTTP request to create an eligible assignment 
 ### Request
 
 ````HTTP
-PUT https://management.azure.com/providers/Microsoft.Subscription/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/roleEligibilityScheduleRequests/64caffb6-55c0-4deb-a585-68e948ea1ad6?api-version=2020-10-01-preview
+PUT https://management.azure.com/providers/Microsoft.Subscription/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/roleEligibilityScheduleRequests/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e?api-version=2020-10-01-preview
 ````
 
 ### Request body
@@ -114,7 +114,7 @@ PUT https://management.azure.com/providers/Microsoft.Subscription/subscriptions/
 {
   "properties": {
     "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
-    "roleDefinitionId": "/subscriptions/aaaaaaaa-bbbb-cccc-1111-222222222222/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608",
+    "roleDefinitionId": "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/roleDefinitions/c8d4ff99-41c3-41a8-9f60-21dfdad59608",
     "requestType": "AdminAssign",
     "scheduleInfo": {
       "startDateTime": "2022-07-05T21:00:00.91Z",
@@ -182,8 +182,8 @@ Status code: 201
       }
     }
   },
-  "name": "64caffb6-55c0-4deb-a585-68e948ea1ad6",
-  "id": "/providers/Microsoft.Subscription/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/RoleEligibilityScheduleRequests/64caffb6-55c0-4deb-a585-68e948ea1ad6",
+  "name": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
+  "id": "/providers/Microsoft.Subscription/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/RoleEligibilityScheduleRequests/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
   "type": "Microsoft.Authorization/RoleEligibilityScheduleRequests"
 }
 ````

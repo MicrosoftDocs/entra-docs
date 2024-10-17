@@ -110,7 +110,7 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |IDPrime 931 Fido|2194b428-9397-4046-8f39-007a1605a482|![n]|![n]|![y]|![n]|
 |IDPrime 941 Fido|2ffd6452-01da-471f-821b-ea4bf6c8676a|![n]|![n]|![y]|![n]|
 |ImproveID Authenticator|4c50ff10-1057-4fc6-b8ed-43a529530c3c|![n]|![y]|![y]|![n]|
-|KEY-ID FIDO2 Authenticator|d91c5288-0ef0-49b7-b8ae-21ca0aa6b3f3|![n]|![y]|![n]|![n]|
+|KEY-ID FIDO2 Authenticator|aaaaaaaa-0b0b-1c1c-2d2d-333333333333|![n]|![y]|![n]|![n]|
 |KeyXentic FIDO2 Secp256R1 FIDO2 CTAP2 Authenticator|4b3f8944-d4f2-4d21-bb19-764a986ec160|![y]|![y]|![n]|![n]|
 |KeyXentic FIDO2 Secp256R1 FIDO2 CTAP2 Authenticator|ec31b4cc-2acc-4b8e-9c01-bade00ccbe26|![y]|![y]|![n]|![n]|
 |KONAI Secp256R1 FIDO2 Conformance Testing CTAP2 Authenticator|f7c558a0-f465-11e8-b568-0800200c9a66|![y]|![y]|![y]|![n]|
