@@ -30,13 +30,10 @@ This how-to guide demonstrates the one time code send event with a REST API runn
 - A familiarity and understanding of the concepts covered in [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
 - An Azure subscription. If you don't have an existing Azure account, you may sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID [external tenant](../external-id/customers/quickstart-tenant-setup.md).
-- An Azure Communications Services resource. If you don't have one, create one by following the [Quickstart: Create and manage Communication Services resources](/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp) <!--Do we even need this, considering that we create an email communication resource?-->
-- An Azure Email Communication Services resource. If you don't have one, create one by following the [Quickstart: Create and manage Email Communication Service resources](/azure/communication-services/quickstarts/email/create-email-communication-resource?pivots=platform-azp)
-- A custom verified email domain in your Azure Email Communication Services resource. Refer to [how to add custom verified email domains](/azure/communication-services/quickstarts/email/add-custom-verified-domains?pivots=platform-azp).
-- Link the domains with your Azure Communication Services resource by following the guidance [How to connect a verified email domain](/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal)
-- Follow the guidance [How to send an email using Azure Communication Services](/azure/communication-services/quickstarts/email/send-email?tabs=windows%2Cconnection-string%2Csend-email-and-get-status-async%2Csync-client&pivots=platform-azportal)
-- Learn how to [access your connection strings and service endpoints](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-net#access-your-connection-strings-and-service-endpoints)
-
+- An Azure Communications Services resource. If you don't have one, create one in [Quickstart: Create and manage Communication Services resources](/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp) using a new or existing resource group.
+- An Azure Email Communication Services Resource created and ready with a provisioned domain. If you don't have one, refer to [Quickstart: Create and manage Email Communication Service resources](/azure/communication-services/quickstarts/email/create-email-communication-resource?pivots=platform-azp), and use the same resource group as the Azure Communication Services.
+- An active Communication Services resource connected with an Email Domain. Refer to [Quickstart: How to connect a verified email domain](/azure/communication-services/quickstarts/email/connect-email-communication-resource?branch=main&pivots=azure-portal)
+- (Optional) [Send an email using Azure Communication Services](/azure/communication-services/quickstarts/email/send-email?tabs=windows%2Cconnection-string%2Csend-email-and-get-status-async%2Csync-client&pivots=platform-azportal) to test sending emails to the desired recipients using Azure Communication Services, while verifying the configuration for your application to send email.
 
 ## Step 1: Create an Azure Function app
 
@@ -54,7 +51,7 @@ This section shows you how to set up an Azure Function app in the Azure portal. 
     | Setting      | Suggested value  | Description |
     | ------------ | ---------------- | ----------- |
     | **Subscription** | Your subscription | The subscription under which the new function app will be created. |
-    | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select and existing resource group, or name for the new one in which you'll create your function app. |
+    | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select the resource group used to set up the [Azure Communications Service](/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp) and [Email Communication Service](/azure/communication-services/quickstarts/email/create-email-communication-resource?pivots=platform-azp) resources as part of the prerequisites |
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
     | **Deploy code or container image** | Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
@@ -227,7 +224,28 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
     The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](/entra/identity-platform/custom-claims-provider-reference) to your API. In this example, it reads the email address (identifier) and the one time code (otp). Then, the code sends the details to SendGrid to send the email using a [dynamic template](https://sendgrid.com/en-us/solutions/email-api/dynamic-email-templates).
 
 1. Select **Get Function Url**, and copy the **Function key** URL, which will hereby be used and referred to as `{Function_Url}`. Close the function.
-1. From **Overview** page of your function app, you need to add the required settings to the Azure function. In the left menu, under **Settings** -> **Environment variables** add the following App settings. Once all the settings are added, select **Apply**, then **Confirm**.
+
+## Step 2: Add connection strings to the Azure Function
+
+> [!NOTE]
+>
+> Help needed here. The process is unclear at this point.
+
+Connection strings enable the Communication Services SDKs to connect and authenticate to Azure. You can access your Communication Services connection strings and service endpoints from the Azure portal or programmatically with Azure Resource Manager APIs. You will then need to add these connection strings to your Azure Function app.
+
+### 2.1: Extract the connection strings and service endpoints from your Azure Communication Services resource
+
+1. From the **Home** page in the [Azure portal](https://portal.azure.com/#home), open the portal menu, search for and select **All resources**.
+1. Search for and select the **Azure Communications Service** created as part of the [Prerequisites](#prerequisites) to this article.
+1. In the left pane, select the **Settings** dropdown, then select **Keys**.
+1. Copy the **Endpoint**, and from **Primary key** copy the values for **Key** and **Connection string**
+
+    :::image type="content" border="false"source="media/custom-extension-emailotp-get-started/extract-communications-service-keys.png" alt-text="Screenshot of the Azure Communications Service Keys page showing the endpoint and key locations." lightbox="media/custom-extension-emailotp-get-started/extract-communications-service-keys.png":::
+
+### 2.2: Add the connection strings to the Azure Function
+
+1. Navigate back to the Azure Function you created in [Create an Azure Function app](#11-create-a-http-trigger-function).
+1. From **Overview** page of your function app, in the left menu, select **Settings** > **Environment variables** add the following App settings. Once all the settings are added, select **Apply**, then **Confirm**.
 
     | Setting      | Value (Example) | Description |
     | ------------ | ---------------- | ----------- |
@@ -236,55 +254,13 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
     | **FROMNAME** | CIAM Demo | The name of the From Email. |
     | **TEMPLATEID** | d-01234567.... | The SendGrid dynamic template it. |
 
-<!--
-Azure Communication Services offers multichannel communication APIs for adding voice, video, chat, text messaging/SMS, email, and more to all your applications. It include REST APIs and client library SDKs, so you don't need to be an expert in the underlying technologies to add communication into your apps. 
-
-Get started with Azure Communication Services by [provisioning your first Communication Services resource](/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp).
-
-### 2. Create email communication resource
-
-After you createe the **Azure Communication**, proceed to create a **Communication Email Services**. The Communication Email Services simplifies the integration of email capabilities to your applications.  Follow the guidece how to [create a new resource of type Email Communication Services](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/create-email-communication-resource?pivots=platform-azp). 
-
-### 2.1 Add custom verified email domains
-
-After you created a **Email Communication Services**, add the allowed email sender domains under this resource. The domains added under this resource type contain all the sender authentication and engagement tracking configurations that must be completed before you start sending emails.
-
-
-
-### 3. Connect domain to send email
-
-After the sender domains are configured and verified, you can link these domains with your **Azure Communication Services**. You can select which of the verified domains is suitable for your application and connect them to send emails from your application.
-
-To proceed, follow the guidence [How to connect a verified email domain](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal)
-
-
-
-### 3. Send an email
-
-The **Try Email** helps you kick-start sending emails to the desired recipients using Azure Communication Services, as well as verifying the configuration for your application to send email. It also helps to jump-start your email notification development with the code snippet in your preferred choice of language.
-
-Follow the guidence [How to send an email using Azure Communication Services](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/send-email?tabs=windows%2Cconnection-string%2Csend-email-and-get-status-async%2Csync-client&pivots=platform-azportal)
-
-### 3.1 [Optinally] Configure the mail sender
-
-The **sent from email** is configure to donotreply@your-domian. You can add [add and remove Multiple Sender Addresses](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/add-multiple-senders?pivots=platform-azp) to Email Communication Service.
-
-### 4. Develop your endpoint
-
-The source code for the custom auhentication extesion cab be found in [Woodgrove GitHub repo](https://github.com/microsoft/woodgrove-auth-api/blob/main/Controllers/OnOtpSendController.cs).
-
-Communication Services SDKs use **connection strings** to authorize requests made to Communication Services. 
-Learn hho to [access your connection strings and service endpoints](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-net#access-your-connection-strings-and-service-endpoints)
-
--->
-
-## Step 2: Register a custom authentication extension
+## Step 3: Register a custom authentication extension
 
 In this step, you configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure Function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Use Microsoft Graph to register an application to authenticate your custom authentication extension to your Azure Function.
 
 ### [Azure portal](#tab/azure-portal)
 
-### 2.1 Register a custom authentication extension
+### Register a custom authentication extension
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Search for and select **Microsoft Entra ID** and select **Enterprise applications**.
@@ -301,7 +277,7 @@ In this step, you configure a custom authentication extension, which will be use
 
 ### [Microsoft Graph](#tab/microsoft-graph)
 
-### 2.1 Register an application in Graph Explorer
+### 3.1 Register an application in Graph Explorer
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in. The account must have the privileges to create and manage an application registration in the tenant.
 1. Run the following request.
@@ -328,7 +304,7 @@ In this step, you configure a custom authentication extension, which will be use
     }
     ```
 
-### 2.2 Set the App ID URI, access token version, and required resource access
+### 3.2 Set the App ID URI, access token version, and required resource access
 
 Update the newly created application to set the application ID URI value, the access token version, and the required resource access.
 
@@ -366,7 +342,7 @@ Update the newly created application to set the application ID URI value, the ac
     }
     ```
 
-### 2.3 Register a custom authentication extension
+### 3.3 Register a custom authentication extension
 
 Next, you register the custom authentication extension and associating it with the app registration for the Azure Function, and your Azure Function endpoint `{Function_Url}`.
 
@@ -406,13 +382,13 @@ The following screenshot shows how to grant permissions.
 
 ![Screenshot that shows how grant admin consent.](media/custom-extension-emailotp-get-started/application-grantconsent.png)
 
-## Step 3: Configure an OpenID Connect app to test with
+## Step 4: Configure an OpenID Connect app to test with
 
 To get a token and test the custom authentication extension, you can use the <https://jwt.ms> app. It's a Microsoft-owned web application that displays the decoded contents of a token (the contents of the token never leave your browser).
 
 Follow these steps to register the **jwt.ms** web application:
 
-### 3.1 Register a test web application
+### 4.1 Register a test web application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-developer).
 1. Browse to **Identity** > **Applications** > **Application registrations**.
@@ -426,13 +402,13 @@ The following screenshot shows how to register the *My Test application*.
 
 ![Screenshot that shows how to select the supported account type and redirect URI.](media/custom-extension-emailotp-get-started/register-test-web-application.png)
 
-### 3.1 Get the application ID
+### 4.1 Get the application ID
 
 In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_sendotp_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
 
 ![Screenshot that shows how to copy the application ID.](media/get-the-test-application-id.png)
 
-### 3.2 Enable implicit flow
+### 4.2 Enable implicit flow
 
 The **jwt.ms** test application uses the implicit flow. Enable implicit flow in *My Test application* registration:
 
@@ -444,7 +420,7 @@ The **jwt.ms** test application uses the implicit flow. Enable implicit flow in 
 > 
 > The **jwt.ms** app uses the implicit flow to get an ID token and is for testing purposes only. The implicit flow is not recommended for production applications. For production applications, use the authorization code flow.
 
-## Step 4: Assign a custom email provider to your app
+## Step 5: Assign a custom email provider to your app
 
 To use the custom emails, you must assign a custom email provider to your application.  The custom email provider relies on the custom authentication extension configured with the **one time code send** event listener. The Microsoft Entra Admin Center is not currently supported in this **Preview** feature. Please use Microsoft Graph to create an event listener to trigger a custom authentication extension for the *My Test application* using the token issuance start event.
 
@@ -482,7 +458,7 @@ Follow these steps to connect the *My Test application* with your custom authent
 
 1. Record the **id** value of the created listener object. You'll use the value later in this tutorial in place of `{customListenerOjectId}`.
 
-## Step 5: Protect your Azure Function
+## Step 6: Protect your Azure Function
 
 Microsoft Entra custom authentication extension uses server to server flow to obtain an access token that is sent in the HTTP `Authorization` header to your Azure function. When publishing your function to Azure, especially in a production environment, you need to validate the token sent in the authorization header.
 
@@ -504,7 +480,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 
     ![Screenshot that shows how to add authentication to your function app.](media/custom-extension-emailotp-get-started/configure-auth-function-app.png)
 
-### 5.1 Using OpenID Connect identity provider
+### 6.1 Using OpenID Connect identity provider
 
 If you configured the [Microsoft identity provider](#step-5-protect-your-azure-function), skip this step. Otherwise, if the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
 
@@ -532,7 +508,7 @@ If you configured the [Microsoft identity provider](#step-5-protect-your-azure-f
 1. Unselect the **Token store** option.
 1. Select **Add** to add the OpenID Connect identity provider.
 
-## Step 6: Test the application
+## Step 7: Test the application
 
 To test your custom email provider, follow these steps:
 
@@ -547,7 +523,7 @@ To test your custom email provider, follow these steps:
 1. Replace `{App_to_sendotp_ID}` with the [My Test application registration ID](#31-get-the-application-id).  
 1. Ensure you sign in using an [Email One Time Passcode account](/entra/external-id/one-time-passcode). Then click Send Code. Ensure that the code sent to the registred email addresses uses the custom provider registered above.
 
-## Step 7: Fallback to Microsoft Provider
+## Step 8: Fallback to Microsoft Provider
 
 If an error occurs within your extension API, by default Entra ID will not send a one time code to the user. If this is not your desired result then you have the option to set the behaviour on error to fall back to the Microsoft Provider.
 
