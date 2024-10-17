@@ -78,6 +78,10 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
 1. From the menu, select **Code + Test**.
 1. Replace the entire code with the following code snippet.
 
+    > [!NOTE]
+    >
+    > Incorrect snippet here
+
     ```csharp
     #r "Newtonsoft.Json"
 
@@ -256,7 +260,7 @@ Connection strings enable the Communication Services SDKs to connect and authent
 
 ## Step 3: Register a custom authentication extension
 
-In this step, you configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure Function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Use Microsoft Graph to register an application to authenticate your custom authentication extension to your Azure Function.
+In this step, you configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure Function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Use either the Azure portal or Microsoft Graph to register an application to authenticate your custom authentication extension to your Azure Function.
 
 ### [Azure portal](#tab/azure-portal)
 
@@ -380,7 +384,7 @@ From the **API permissions** page, select the **Grant admin consent for "YourTen
 
 The following screenshot shows how to grant permissions.
 
-![Screenshot that shows how grant admin consent.](media/custom-extension-emailotp-get-started/application-grantconsent.png)
+:::image type="content" border="false"source="media/custom-extension-emailotp-get-started/application-grantconsent.png" alt-text="Screenshot of Azure portal and how to grant admin consent." lightbox="media/custom-extension-emailotp-get-started/application-grantconsent.png":::
 
 ## Step 4: Configure an OpenID Connect app to test with
 
@@ -397,16 +401,15 @@ Follow these steps to register the **jwt.ms** web application:
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 1. In the **Select a platform** dropdown in **Redirect URI**, select **Web** and then enter `https://jwt.ms` in the URL text box.
 1. Select **Register** to complete the app registration.
+1. In your app registration, under **Overview**, copy the **Application (client) ID**, which will be used later and referred to as the `{App_to_sendotp_ID}`. In Microsoft Graph, it's referenced by the **appId** property.
 
 The following screenshot shows how to register the *My Test application*.
 
-![Screenshot that shows how to select the supported account type and redirect URI.](media/custom-extension-emailotp-get-started/register-test-web-application.png)
+:::image type="content" border="false"source="media/custom-extension-emailotp-get-started/register-test-web-application.png" alt-text="Screenshot that shows how to select the supported account type and redirect URI." lightbox="media/custom-extension-emailotp-get-started/register-test-web-application.png":::
 
 ### 4.1 Get the application ID
 
 In your app registration, under **Overview**, copy the **Application (client) ID**. The app ID is referred to as the `{App_to_sendotp_ID}` in later steps. In Microsoft Graph, it's referenced by the **appId** property.
-
-![Screenshot that shows how to copy the application ID.](media/get-the-test-application-id.png)
 
 ### 4.2 Enable implicit flow
 
@@ -465,24 +468,24 @@ Microsoft Entra custom authentication extension uses server to server flow to ob
 To protect your Azure function, follow these steps to integrate Microsoft Entra authentication, for validating incoming tokens with your *Azure Functions authentication events API* application registration.
 
 > [!NOTE]
-> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [using OpenID Connect identity provider](#51-using-openid-connect-identity-provider) step.
+> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [using OpenID Connect identity provider](#61-using-openid-connect-identity-provider) step.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Navigate and select the function app you previously published.
 1. Select **Authentication** in the menu on the left.
 1. Select **Add Identity provider**.  
 1. From the dropdown menuSelect **Microsoft** as the identity provider.
-1. Under **App registration**->**App registration type**, select **Pick an existing app registration in this directory** and pick the *Azure Functions authentication events API* app registration you [previously created](#step-2-register-a-custom-authentication-extension) when registering the custom email provider.
+1. Under **App registration**->**App registration type**, select **Pick an existing app registration in this directory** and pick the *Azure Functions authentication events API* app registration you [previously created](#step-3-register-a-custom-authentication-extension) when registering the custom email provider.
 1. Add the **Client secret** expiration for the app.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    ![Screenshot that shows how to add authentication to your function app.](media/custom-extension-emailotp-get-started/configure-auth-function-app.png)
+:::image type="content" border="false"source="media/custom-extension-emailotp-get-started/configure-auth-function-app.png" alt-text="Screenshot that shows how to add authentication to your function app." lightbox="media/custom-extension-emailotp-get-started/configure-auth-function-app.png":::
 
 ### 6.1 Using OpenID Connect identity provider
 
-If you configured the [Microsoft identity provider](#step-5-protect-your-azure-function), skip this step. Otherwise, if the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
+If you configured the [Microsoft identity provider](#step-6-protect-your-azure-function), skip this step. Otherwise, if the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
 
 1. Sign in to the [Azure portal](https://portal.azure.com), then navigate and select the function app you previously published.
 1. Select **Authentication** in the menu on the left.
@@ -498,7 +501,7 @@ If you configured the [Microsoft identity provider](#step-5-protect-your-azure-f
 1. Under the **App registration**, enter the application ID (client ID) of the *Azure Functions authentication events API* app registration [you created previously](#step-2-register-a-custom-authentication-extension).
 
 1. In the Microsoft Entra admin center:
-    1. Select the *Azure Functions authentication events API* app registration [you created previously](#step-2-register-a-custom-authentication-extension).
+    1. Select the *Azure Functions authentication events API* app registration [you created previously](#step-3-register-a-custom-authentication-extension).
     1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
     1. Add a description for your client secret.
     1. Select an expiration for the secret or specify a custom lifetime.
@@ -520,7 +523,7 @@ To test your custom email provider, follow these steps:
 
 1. Replace `{tenant-id}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{tenantname}` with the name of your tenant without the 'onmicrosoft.com'.
-1. Replace `{App_to_sendotp_ID}` with the [My Test application registration ID](#31-get-the-application-id).  
+1. Replace `{App_to_sendotp_ID}` with the [My Test application registration ID](#41-get-the-application-id).  
 1. Ensure you sign in using an [Email One Time Passcode account](/entra/external-id/one-time-passcode). Then click Send Code. Ensure that the code sent to the registred email addresses uses the custom provider registered above.
 
 ## Step 8: Fallback to Microsoft Provider
