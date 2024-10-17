@@ -61,7 +61,10 @@ After a catalog is created, you'd add a Logic App workflow by doing the followin
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details.png" alt-text="Screenshot of the entitlement management  custom extension details tab." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details.png":::
 1. In **Review and Create**, review the summary of your custom extension and make sure the details for your Logic App, and it's call-out, are correct. After reviewing these details, select **Create**.
 
-1. This custom extension to the linked Logic App now appears in your Custom Extensions tab under Catalogs. You're able to call on this in access package policies.
+1. Once created, the Logic App is able to be accessed under **Logic App** next to the custom extension on the custom extensions page.
+    :::image type="content" source="media/entitlement-management-logic-apps/custom-extension-list.png" alt-text="Screenshot of custom extension list.":::
+
+This custom extension to the linked Logic App now appears in your Custom Extensions tab under Catalogs. You're able to call on this in access package policies.
 
 > [!TIP]
 > To learn more about custom extension feature that pause entitlement management processes, see: [Configuring custom extensions that pause entitlement management processes](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes).
