@@ -190,15 +190,15 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
 1. Tap **Work or school acount**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/work-or-school-account.png" alt-text="Screenshot of how to add a work or school account in Authenticator on iOS.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/work-or-school-account-three.png" alt-text="Screenshot of how to add a work or school account in Authenticator on iOS.":::
 
 1. Tap **Sign in**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/work-or-school-account-sign-in.png" alt-text="Screenshot of how to sign in for a work or school account in Authenticator on iOS.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/work-or-school-account-sign-in-three.png" alt-text="Screenshot of how to sign in for a work or school account in Authenticator on iOS.":::
 
 1. When prompted, complete multifactor authentication, and tap **Sign in**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-sign-in.png" alt-text="Screenshot of how to complete MFA.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-sign-in-three.png" alt-text="Screenshot of how to complete MFA.":::
 
 1. When prompted to set up phone sign-in, tap **Continue**.
 
