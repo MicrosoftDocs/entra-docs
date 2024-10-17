@@ -20,7 +20,7 @@ introduction: |
   [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
   Use External Identities cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of *inbound* access users in external Microsoft Entra organizations have to your resources, and the level of *outbound* access your users have to external organizations. They also let you trust multifactor authentication (MFA) and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations. For details and planning considerations, see [Cross-tenant access in Microsoft Entra External ID](cross-tenant-access-overview.md).
-  
+
   **Collaboration across clouds:** Partner organizations in different Microsoft clouds can set up B2B collaboration with each other. First, both organizations must enable collaboration with each other as described in [Configure Microsoft cloud settings](cross-cloud-settings.md). Then each organization can optionally modify their [inbound access settings](#modify-inbound-access-settings) and [outbound access settings](#modify-outbound-access-settings), as described below.
 
   > [!IMPORTANT]
@@ -37,8 +37,8 @@ prerequisites:
     - Identify any Microsoft Entra organizations that need customized settings so you can configure **Organizational settings** for them.
     - If you want to apply access settings to specific users, groups, or applications in an external organization, you need to contact the organization for information before configuring your settings. Obtain their user object IDs, group object IDs, or application IDs (*client app IDs* or *resource app IDs*) so you can target your settings correctly.
     - If you want to set up B2B collaboration with a partner organization in an external Microsoft Azure cloud, follow the steps in [Configure Microsoft cloud settings](cross-cloud-settings.md). An admin in the partner organization needs to do the same for your tenant.
-    - Both allow/block list and cross-tenant access settings are checked at the time of invitation. If a user's domain is on the allowlist, they can be invited, unless the domain is explicitly blocked in the cross-tenant access settings. If a user's domain is on the blocklist, they can't be invited regardless of the cross-tenant access settings. If a user isn't on either list, we check the cross-tenant access settings to determine whether they can be invited.  
-    
+    - Both allow/block list and cross-tenant access settings are checked at the time of invitation. If a user's domain is on the allowlist, they can be invited, unless the domain is explicitly blocked in the cross-tenant access settings. If a user's domain is on the blocklist, they can't be invited regardless of the cross-tenant access settings. If a user isn't on either list, we check the cross-tenant access settings to determine whether they can be invited.
+
 procedureSection:
   - title: |
       Configure default settings
@@ -49,7 +49,7 @@ procedureSection:
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-      - |       
+      - |
         Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select  **Cross-tenant access settings**.
       - |
         Select the **Default settings** tab and review the summary page.
@@ -189,15 +189,58 @@ procedureSection:
 
       14. Select **Save**.
 
-      ### Add the Microsoft Admin Portals app to B2B collaboration
+      ### Considerations for allowing Microsoft applications
 
-      You can't directly add the [Microsoft Admin Portals app](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#microsoft-admin-portals) to the inbound and outbound cross-tenant access settings in the Microsoft Entra admin center. However, you can add the apps listed below individually by using the [Microsoft Graph API](/graph/api/crosstenantaccesspolicy-post-partners).
+      If you want to configure **Cross-tenant access settings** to allow only a designated set of applications, consider adding the Microsoft applications shown in the following table. For example, if you configure an allow list and only allow SharePoint Online, the user can't access My Apps or register for MFA in the resource tenant. To ensure a smooth end user experience, include the following applications in your inbound and outbound collaboration settings.
 
-      The following apps are part of the Microsoft Admin Portals app group: 
-      - Azure portal (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
-      - Microsoft Entra admin center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c)
-      - Microsoft 365 Defender Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
-      - Microsoft Intune Admin Center (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+      |Application|Resource ID|Available in portal|Details|
+      |----|----|----|----|
+      |My Apps|2793995e-0a7d-40d7-bd35-6968ba142197|Yes|Default landing page after redeemed invitation. Defines access to `myapplications.microsoft.com`.|
+      |Microsoft App Access Panel|0000000c-0000-0000-c000-000000000000|No|Used in some late-bound calls when loading certain pages within My Sign ins. For example, the Security Info blade or the Organizations switcher.|
+      |My Profile|8c59ead7-d703-4a27-9e55-c96a0054c8d2|Yes|Defines access to `myaccount.microsoft.com` including My Groups and My Access portals. Some tabs within My Profile require the other apps listed here in order to work.|
+      |My Sign ins|19db86c3-b2b9-44cc-b339-36da233a3be2|No|Defines access to `mysignins.microsoft.com` including access to Security Info. Allow this app if you require users to register for and use MFA in the resource tenant (for example, MFA isn't trusted from the home tenant).|
+
+      Some of the applications in the previous table don't allow selection from the Microsoft Entra admin center. To allow them, add them with Microsoft Graph API as shown in the following example:
+
+      ```json
+      PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/partners/<insert partner’s tenant id> 
+      { 
+          "b2bCollaborationInbound": { 
+              "applications": { 
+                  "accessType": "allowed", 
+                  "targets": [ 
+                      { 
+                          "target": "2793995e-0a7d-40d7-bd35-6968ba142197", 
+                          "targetType": "application" 
+                      }, 
+                      { 
+                          "target": "0000000c-0000-0000-c000-000000000000", 
+                          "targetType": "application" 
+                      }, 
+                      { 
+                          "target": "8c59ead7-d703-4a27-9e55-c96a0054c8d2", 
+                          "targetType": "application" 
+                      }, 
+                      { 
+                          "target": "19db86c3-b2b9-44cc-b339-36da233a3be2", 
+                          "targetType": "application" 
+                      } 
+                  ] 
+              } 
+          } 
+      }
+      ```
+      > [!NOTE]
+      > Be sure to include any additional applications you want to allow in the PATCH request as this will overwrite any previously configured applications. Applications that are already configured can be retrieved manually from the portal or by running a GET request on the partner policy. For example, `GET https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/partners/<insert partner's tenant id>`
+
+      > [!NOTE]
+      > Applications added via Microsoft Graph API that do not map to an application available in the Microsoft Entra admin center will be displayed as the app ID.
+
+      You can't add the Microsoft Admin Portals app to the inbound and outbound cross-tenant access settings in the Microsoft Entra admin center. To allow external access to Microsoft admin portals, use the Microsoft Graph API to individually add the following apps that are part of the Microsoft Admin Portals app group: 
+      - Azure portal (c44b4083-3bb0-49c1-b47d-974e53cbdf3c) 
+      - Microsoft Entra admin center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c) 
+      - Microsoft 365 Defender Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775) 
+      - Microsoft Intune Admin Center (80ccca67-54bd-44ab-8625-4b79c4dc7775) 
       - Microsoft Purview Compliance Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
 
       ### Configure redemption order
@@ -209,7 +252,7 @@ procedureSection:
       2. Select **External Identities** > **Cross-tenant access settings**.
 
       3. On the **Default settings** tab, under **Inbound access settings**, select **Edit inbound defaults**.
-      
+
       4. On the **B2B collaboration** tab, select the **Redemption order** tab.
 
       5. Move the identity providers up or down to change the order in which your guest users can sign in when they accept your invitation. You can also reset the redemption order to the default settings here.
@@ -414,7 +457,7 @@ procedureSection:
           :::image type="content" source="~/media/external-identities/outbound-consent-prompt-setting.png" alt-text="Screenshot that shows the outbound Automatic redemption check box.":::
       - |
         Select **Save**.
-        
+
   - title: |
       Remove an organization
     summary: |
