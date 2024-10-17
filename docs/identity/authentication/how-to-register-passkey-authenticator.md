@@ -202,7 +202,7 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
 1. When prompted to set up phone sign-in, tap **Continue**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/set-up-phone-sign-in.png" alt-text="Screenshot of how to continue to set up phon sign-in.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/set-up-phone-sign-in-three.png" alt-text="Screenshot of how to continue to set up phon sign-in.":::
 
 1. When prompted to register your device, tap **Register**.
 
@@ -210,11 +210,11 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
 1. After you see the account is added, tap **Continue**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/account-added.png" alt-text="Screenshot of account added to your iOS device.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/account-added-three.png" alt-text="Screenshot of account added to your iOS device.":::
 
 1. On you iOS device, you can see passkey added for your new account in Authenticator.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/new-passkey-in-authenticator.png" alt-text="Screenshot of new account added to Authenticator on your iOS device.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/new-passkey-in-authenticator-three.png" alt-text="Screenshot of new account added to Authenticator on your iOS device.":::
 
 1. Return to your other device, and resume the wizard to complete the passkey setup in Authenticator. Click **Next**. 
 
