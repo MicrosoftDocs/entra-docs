@@ -16,12 +16,12 @@ ms.custom: template-tutorial
 
 Scenario: In this scenario you learn how to use custom extensibility, and a Logic App, to automatically generate ServiceNow tickets for manual provisioning of users who have received assignments and need access to apps.
 
-In this tutorial, you learn how to:
+In this tutorial, you'll learn:
 
 > [!div class="checklist"]
 > * Adding a Logic App Workflow to an existing catalog.
 > * Adding a custom extension to a policy within an existing access package.
-> * Register an application in Microsoft Entra ID for resuming Entitlement Management workflow
+> * Registering an application in Microsoft Entra ID for resuming Entitlement Management workflow
 > * Configuring ServiceNow for Automation Authentication.
 > * Requesting access to an access package as an end-user.
 > * Receiving access to the requested access package as an end-user.
