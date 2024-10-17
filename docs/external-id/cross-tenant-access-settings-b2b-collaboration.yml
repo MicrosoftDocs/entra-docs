@@ -191,13 +191,13 @@ procedureSection:
 
       ### Considerations for allowing Microsoft applications
 
-      If you want to configure **Cross-tenant access settings** to allow only a designated set of applications, consider adding the Microsoft applications shown in the following table. For example, if you configure an allow list and only allow SharePoint Online, the user can't access My Apps or register for MFA in the resource tenant. To ensure a smooth resource tenant access end user experience, include the following applications in your inbound and outbound collaboration settings.
+      If you want to configure **Cross-tenant access settings** to allow only a designated set of applications, consider adding the Microsoft applications shown in the following table. For example, if you configure an allow list and only allow SharePoint Online, the user can't access My Apps or register for MFA in the resource tenant. To ensure a smooth end user experience, include the following applications in your inbound and outbound collaboration settings.
 
       |Application|Resource ID|Available in portal|Details|
       |----|----|----|----|
       |My Apps|2793995e-0a7d-40d7-bd35-6968ba142197|Yes|Default landing page after redeemed invitation. Defines access to `myapplications.microsoft.com`.|
       |Microsoft App Access Panel|0000000c-0000-0000-c000-000000000000|No|Used in some late-bound calls when loading certain pages within My Sign ins. For example, the Security Info blade or the Organizations switcher.|
-      |My Profile|8c59ead7-d703-4a27-9e55-c96a0054c8d2|Yes|Defines access to `myaccount.microsoft.com` including My Groups and My Access portals. Certain tabs within My Account require you to allow other applications.|
+      |My Profile|8c59ead7-d703-4a27-9e55-c96a0054c8d2|Yes|Defines access to `myaccount.microsoft.com` including My Groups and My Access portals. Some tabs within My Profile require the other apps listed here in order to work.|
       |My Sign ins|19db86c3-b2b9-44cc-b339-36da233a3be2|No|Defines access to `mysignins.microsoft.com` including access to Security Info. Allow this app if you require users to register for and use MFA in the resource tenant (for example, MFA isn't trusted from the home tenant).|
 
       Some of the applications in the previous table don't allow selection from the Microsoft Entra admin center. To allow them, add them with Microsoft Graph API as shown the in the following example:
