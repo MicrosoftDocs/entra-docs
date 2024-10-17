@@ -4,8 +4,8 @@ description: This document describes how you can govern on-premises uses by prov
 
 author: billmath
 manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-provisioning
+ms.service: entra-id-governance
+ms.subservice:
 ms.topic: how-to
 ms.date: 02/13/2024
 ms.author: billmath

@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 09/23/2024
+ms.date: 10/11/2024
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -120,7 +120,7 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |NXP Semiconductros FIDO2 Conformance Testing CTAP2 Authenticator|07a9f89c-6407-4594-9d56-621d5f1e358b|![n]|![n]|![n]|![n]|
 |Nymi FIDO2 Authenticator|0acf3011-bc60-f375-fb53-6f05f43154e0|![y]|![n]|![y]|![n]|
 |OCTATCO EzFinger2 FIDO2 AUTHENTICATOR|a1f52be5-dfab-4364-b51c-2bd496b14a56|![y]|![n]|![n]|![n]|
-|OneSpan DIGIPASS FX1 BIO|30b5035e-d297-4ff1-b00b-addc96ba6a98|![y]|![y]|![n]|![y]|
+|OneSpan DIGIPASS FX1 BIO|30b5035e-d297-4ff1-b00b-addc96ba6a98|![y]|![y]|![y]|![y]|
 |OneSpan DIGIPASS FX1a|30b5035e-d297-4ff1-010b-addc96ba6a98|![y]|![y]|![n]|![n]|
 |OneSpan DIGIPASS FX7|30b5035e-d297-4ff7-b00b-addc96ba6a98|![n]|![y]|![n]|![y]|
 |OneSpan FIDO Touch|30b5035e-d297-4fc1-b00b-addc96ba6a97|![n]|![y]|![n]|![y]|

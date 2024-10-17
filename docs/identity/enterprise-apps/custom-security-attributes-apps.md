@@ -103,8 +103,6 @@ You can filter the list of custom security attributes assigned to applications o
 
 1. For **Value**, enter or select a value.
 
-    :::image type="content" source="./media/custom-security-attributes-apps/apps-attributes-filter.png" alt-text="Screenshot showing a custom security attribute filter for applications." lightbox="./media/custom-security-attributes-apps/apps-attributes-filter.png":::
-
 1. To apply the filter, select **Apply**.
 
 ### Remove custom security attribute assignments from applications

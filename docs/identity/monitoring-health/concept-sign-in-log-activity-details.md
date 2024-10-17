@@ -115,6 +115,7 @@ If Conditional Access (CA) policies are in use in your tenant, you can see if th
 - **Success:** The CA policy was applied successfully to the sign-in attempt.
 - **Failure:** The CA policy was applied to the sign-in attempt, but the sign-in attempt failed.
 - **Not Applied:** The sign-in didn't match the criteria for the policy to be applied.
+   - There are specific scenarios that due to their nature, are required to be exempt from Conditional Access evaluation to prevent a circular dependency (chicken-and-egg scenario) that would not be possible to complete. These are considered "bootstrap scenarios" and might include sign ins associated with device registration, device compliance, or Network Policy Server connectors.
 - **Disabled:** The policy was disabled at the time of the sign-in attempt.
 
 ### Report-only
