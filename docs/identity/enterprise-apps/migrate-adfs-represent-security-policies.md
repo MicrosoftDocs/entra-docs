@@ -37,8 +37,6 @@ This maps to Microsoft Entra ID in one of the following ways:
 
 1. Set **Assignment required** to **No**.
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/permit-access-to-all-users-2.png" alt-text="Screenshot shows how to edit access control policy for SaaS apps.":::
-
     > [!Note]
     > Setting **Assignment required** to **Yes** requires that users are assigned to the application to gain access. When set to **No**, all users have access. This switch doesn't control what users see in the **My Apps** experience.
 

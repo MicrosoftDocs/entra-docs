@@ -393,8 +393,6 @@ Click **Save and go to Advanced Settings**.
 
 1. Configure Application Identity.
 
-    ![Screenshot of the Akamai EAA console General tab showing Application identity settings for SSH-SECURE.](./media/header-akamai-tutorial/configure-27.png)
-
     a. Specify Name / Description.
 
     b. Specify Application Server IP/FQDN and port for SSH.

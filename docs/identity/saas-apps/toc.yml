@@ -1171,8 +1171,6 @@
         href: getthere-tutorial.md
       - name: Getty Images
         href: getty-images-tutorial.md
-      - name: GHAE
-        href: ghae-tutorial.md  
       - name: Gigya
         href: gigya-tutorial.md
       - name: GitHub
@@ -2273,7 +2271,7 @@
         href: pure-storage-sso-tutorial.md
       - name: pymetrics
         href: pymetrics-tutorial.md
-    - name: Q - R
+    - name: Q - S
       items:
       - name: Qiita Team
         href: qiita-team-tutorial.md  
@@ -3446,8 +3444,6 @@
         href: contentstack-provisioning-tutorial.md
       - name: Comeet Recruiting Software
         href: comeet-recruiting-software-provisioning-tutorial.md
-      - name: Concur
-        href: concur-provisioning-tutorial.md
       - name: Cornerstone OnDemand
         href: cornerstone-ondemand-provisioning-tutorial.md
       - name: CultureHQ
@@ -3522,8 +3518,6 @@
         href: purecloud-by-genesys-provisioning-tutorial.md
       - name: getAbstract
         href: getabstract-provisioning-tutorial.md
-      - name: GHAE
-        href: ghae-provisioning-tutorial.md  
       - name: GitHub
         href: github-provisioning-tutorial.md
       - name: GitHub AE
@@ -3792,10 +3786,22 @@
         href: samanage-provisioning-tutorial.md
       - name: SAP Analytics Cloud
         href: sap-analytics-cloud-provisioning-tutorial.md
+      - name: SAP Ariba Spend Management solutions
+        href: sap-ariba-spend-management-solutions-provisioning-tutorial.md
+      - name: SAP BTP
+        href: sap-btp-provisioning-tutorial.md
       - name: SAP Cloud Identity Services
         href: sap-cloud-platform-identity-authentication-provisioning-tutorial.md
+      - name: SAP Concur
+        href: sap-concur-provisioning-tutorial.md
       - name: SAP ECC (formerly SAP R/3)
         href: ~/identity/app-provisioning/on-premises-sap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
+      - name: SAP HANA
+        href: sap-hana-provisioning-tutorial.md
+      - name: SAP S/4HANA
+        href: sap-s4hana-provisioning-tutorial.md
+      - name: SAP SuccessFactors Learning
+        href: sap-successfactors-learning-provisioning-tutorial.md
       - name: SAP SuccessFactors to Active Directory
         href: sap-successfactors-inbound-provisioning-tutorial.md
       - name: SAP SuccessFactors to Microsoft Entra ID

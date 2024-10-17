@@ -178,7 +178,13 @@ private void loadAccount()
       if (activeAccount != null)
       {
         signedInUser = activeAccount;
-        mSingleAccountApp.acquireTokenSilentAsync(SCOPES,"http://login.microsoftonline.com/common",getAuthSilentCallback());
+        final AcquireTokenSilentParameters silentParameters = new AcquireTokenSilentParameters.Builder()
+                        .fromAuthority(signedInUser.getAuthority())
+                        .forAccount(signedInUser)
+                        .withScopes(Arrays.asList(getScopes()))
+                        .withCallback(getAuthSilentCallback())
+                        .build();
+        mSingleAccountApp.acquireTokenSilentAsync(silentParameters);
       }
     }
     @Override

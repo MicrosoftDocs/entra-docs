@@ -66,8 +66,28 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/monitoring-health/reference-azure-monitor-sign-ins-log-schema.md",
+      "redirect_url": "/entra/identity/monitoring-health/concept-activity-log-schemas",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md",
       "redirect_url": "/entra/identity/monitoring-health/howto-analyze-activity-logs-with-microsoft-graph",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/monitoring-health/concept-sign-in-diagnostics-scenarios.md",
+      "redirect_url": "/entra/identity/monitoring-health/howto-use-sign-in-diagnostics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/monitoring-health/plan-monitoring-and-reporting.md",
+      "redirect_url": "/entra/identity/monitoring-health/overview-monitoring-health",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/monitoring-health/overview-flagged-sign-ins.md",
+      "redirect_url": "/entra/identity/monitoring-health/concept-flagged-sign-ins",
       "redirect_document_id": false
     },
     {
@@ -1045,6 +1065,31 @@
     {
       "source_path_from_root": "/docs/identity-platform/quickstart-v2-netcore-daemon.md",
       "redirect_url": "/entra/identity-platform/quickstart-daemon-dotnet-acquire-token",
+      "redirect_document_id": false
+    },
+    {      
+    "source_path_from_root": "/docs/identity/saas-apps/concur-provisioning-tutorial.md",
+    "redirect_url": "/entra/identity/saas-apps/sap-concur-provisioning-tutorial",
+    "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/ghae-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/ghae-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-v2-uwp.md",
+      "redirect_url": "/entra/identity-platform/quickstart-desktop-app-wpf-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-windows-uwp.md",
+      "redirect_url": "/entra/identity-platform/quickstart-desktop-app-wpf-sign-in",
       "redirect_document_id": false
     }
   ]

@@ -44,7 +44,7 @@ After a user verifies their mobile phone number, the *Phone* field under **Authe
 
 ## Authentication contact info
 
-On the **Authentication methods** page for a Microsoft Entra user in the Microsoft Entra admin center, a Global Administrator can manually set the authentication contact information. You can review existing methods under the *Usable authentication methods* section, or **+Add authentication methods**, as shown in the following example screenshot:
+On the **Authentication methods** page for a Microsoft Entra user in the Microsoft Entra admin center, those assigned at least the [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator) role can manually set the authentication contact information for anyone. You can review existing methods under the *Usable authentication methods* section, or **+Add authentication methods**, as shown in the following example screenshot:
 
 :::image type="content" source="media/howto-sspr-authenticationdata/user-authentication-contact-info.png" alt-text="Screenshot of how to manage authentication methods":::
 
