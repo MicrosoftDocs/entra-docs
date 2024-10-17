@@ -214,7 +214,7 @@ You can also save a passkey in Authenticator from your computer or another mobil
 
 1. On you iOS device, you can see passkey added for your new account in Authenticator.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/new-passkey-in-authenticator-three.png" alt-text="Screenshot of new account added to Authenticator on your iOS device.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/new-passkey-in-authenticator.png" alt-text="Screenshot of new account added to Authenticator on your iOS device.":::
 
 1. Return to your other device, and resume the wizard to complete the passkey setup in Authenticator. Click **Next**. 
 
