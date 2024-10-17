@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on iOS in
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/20/2024
+ms.date: 09/03/2024
 
 ms.author: justinha
 author: justinha
@@ -20,23 +20,23 @@ ms.collection: M365-identity-device-management
 
 This article shows how to register a passkey using Microsoft Authenticator on your iOS or Android device by directly signing into the Authenticator app or by using [My Security info](https://aka.ms/mysecurityinfo). For more information on the availability of Microsoft Entra ID passkey (FIDO2) authentication across native apps, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
 
-**Note that the *easiest and fastest way* to add a passkey is to add it directly in the Authenticator app.**
+**The *easiest and fastest way* to add a passkey is to add it directly in the Authenticator app.**
 
 Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. 
 
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
 | **Same-device registration by signing into Authenticator**              | &#x2705;          | &#x2705;       |
-| **Same-device registration in a browser**            | &#x2705; | &#10060;<sup>1</sup>     |
+| **Same-device registration in a browser**            | &#x2705; | &#x2705;<sup>1</sup>     |
 | **Cross-device registration**  | &#x2705;  | &#x2705;    |
 
-<sup>1</sup> Support for same-device registration in a browser on Android is coming soon.
+<sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
 
 ## [**iOS**](#tab/iOS)
 
 ### Same device registration using direct sign in to Authenticator (iOS)
 
-You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
+You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to set up a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
 1. Open Authenticator.
 1. Tap **Add account** or the **+** button.
@@ -220,7 +220,7 @@ In some cases when you try to register a passkey, it gets stored locally in the 
 
 ### Same device registration using direct sign in to Authenticator (Android)
 
-You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to setup a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
+You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to set up a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
 1. Open Authenticator.
 1. Tap **Add account** or the **+** button.
@@ -263,9 +263,10 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
 ## Same-device registration from a browser (Android)
 
-[!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
-<!---
 Alternatively, users can set up a passkey in the Authenticator by navigating to a browser and initiating the flow from My Security info.
+
+>[!NOTE]
+>Support for same-device registration in Edge on Android is coming soon.
 
 1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
 
@@ -328,7 +329,6 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
 1. You can now see the passkeys in Authenticator along with your other registered security info options.
 
--->
 
 ## Cross-device registration (Android)
 

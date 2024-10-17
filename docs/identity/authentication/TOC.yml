@@ -122,8 +122,14 @@
     href: howto-authentication-temporary-access-pass.md
   - name: Passwordless
     items: 
-      - name: Deploying passwordless authentication
-        href: howto-authentication-passwordless-deployment.md
+      - name: Plan phishing-resistant passwordless authentication
+        items: 
+        - name: Get started
+          href: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
+        - name: Plan and deploy
+          href: how-to-deploy-phishing-resistant-passwordless-authentication.md
+        - name: Persona guidance
+          href: how-to-plan-persona-phishing-resistant-passwordless-authentication.md
       - name: Passkey (FIDO2) authentication
         items:
         - name: Enable passkeys for an organization

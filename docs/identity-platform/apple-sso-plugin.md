@@ -368,7 +368,7 @@ For more information, see the [Deploy the Microsoft Enterprise SSO plug-in for A
 
 ## Use the SSO plug-in in your application
 
-[MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later supports the Microsoft Enterprise SSO plug-in for Apple devices. It's the recommended way to add support for the Microsoft Enterprise SSO plug-in. It ensures you get the full capabilities of the Microsoft identity platform.
+[MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later support the Microsoft Enterprise SSO plug-in for Apple devices. It's the recommended way to add support for the Microsoft Enterprise SSO plug-in. It ensures you get the full capabilities of the Microsoft identity platform.
 
 If you're building an application for frontline-worker scenarios, see [Shared device mode for iOS devices](/entra/msal/objc/shared-devices-ios) for setup information.
 
@@ -408,13 +408,13 @@ Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSA
 The end user sees the familiar experience and doesn't have to sign in again in each application. For example, instead of displaying the native account picker, the SSO plug-in adds SSO sessions to the web-based account picker experience. 
 
 ## Upcoming changes to device identity key storage
-Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2025, all new device registrations will use Apple’s Secure Enclave by default. 
+Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2025, all new device registrations will use Apple’s Secure Enclave. There will be no opt-out of this storage location.
 
 Applications and MDM integrations that have a dependency on accessing Workplace Join keys via Keychain will need to start using MSAL and the Enterprise SSO plug-in to ensure compatibility with the Microsoft identity platform. 
 
 ### Enable Secure Enclave based storage of device identity keys
 
-If you would like to enable Secure Enclave based storage of device identity keys before it becomes the default, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
+If you would like to enable Secure Enclave based storage of device identity keys before it becomes mandatory, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
 
 > [!NOTE]
 > For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.

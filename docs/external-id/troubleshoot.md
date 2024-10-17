@@ -4,7 +4,7 @@ description: Remedies for common problems with Microsoft Entra B2B collaboration
  
 ms.service: entra-external-id
 ms.topic: troubleshooting
-ms.date: 06/19/2024
+ms.date: 10/08/2024
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan
@@ -117,9 +117,17 @@ To fix this conflict:
 
 Once you've removed the conflicting email address, you can invite the user.
 
-## The guest user object doesn't have a proxyAddress
+## On a guest user object, the proxyAddresses or email attribute isn't populated
 
-Sometimes, the external guest user you're inviting conflicts with an existing [Contact object](/graph/api/resources/contact). When this occurs, the guest user is created without a proxyAddress. This means that the user won't be able to redeem this account using [just-in-time redemption](redemption-experience.md#redemption-process-through-a-direct-link) or [email one-time passcode authentication](one-time-passcode.md#user-experience-for-one-time-passcode-guest-users). Also, if the contact object you're synchronizing from on-premises AD conflicts with an existing guest user, the conflicting proxyAddress is removed from the existing guest user.
+When you add or invite a guest with an email that matches an existing [Contact object](/graph/api/resources/contact) in the directory, the proxyAddresses property on the guest user object isn't populated. Also, when synchronizing contact objects from on-premises AD, if a guest user has a matching proxyAddresses property, the conflicting proxyAddresses property is removed from the existing guest user.
+
+The invitation redemption process has been updated so that this scenario no longer causes issues with [just-in-time redemption](redemption-experience.md#redemption-process-through-a-direct-link) or [email one-time passcode authentication](one-time-passcode.md#user-experience-for-one-time-passcode-guest-users). Previously, External ID searched only the proxyAddresses property, so redemption with a direct link or one-time passcode failed when it couldn’t find a match. Now, External ID searches the proxyAddresses and invited email properties.
+
+If you want to identify conflicting user objects in your directory, use these PowerShell steps:
+
+1. Open the Microsoft Graph PowerShell module and run `Connect-MgGraph`.
+1. Sign in as at least a [Directory Reader](/entra/identity/role-based-access-control/permissions-reference?branch=main#directory-readers) to the Microsoft Entra tenant for which you want to check for duplicate contact objects.
+1. Run the PowerShell command `Get-MgContact -All | ? {$_.Mail -match 'user@domain.com'}`.
 
 <a name='how-does--which-isnt-normally-a-valid-character-sync-with-azure-ad'></a>
 
@@ -208,14 +216,6 @@ Id                                   DeletedDateTime
 1. Run the PowerShell command `Restore-MgDirectoryDeletedItem -DirectoryObjectId {id}`. Replace the `{id}` portion of the command with the `DirectoryObjectId` from the previous step.
 
 You should now see the restored app in the Microsoft Entra admin center.
-
-## A guest user was invited successfully but the email attribute isn't populating
-
-Let's say you inadvertently invite a guest user with an email address that matches a user object already in your directory. The guest user object is created, but the email address is added to the `otherMail` property instead of to the `mail` or `proxyAddresses` properties. To avoid this issue, you can search for conflicting user objects in your Microsoft Entra directory by using these PowerShell steps:
-
-1. Open the Microsoft Graph PowerShell module and run `Connect-MgGraph`.
-1. Sign in as at least a [Directory Reader](/entra/identity/role-based-access-control/permissions-reference?branch=main#directory-readers) to the Microsoft Entra tenant for which you want to check for duplicate contact objects.
-1. Run the PowerShell command `Get-MgContact -All | ? {$_.Mail -match 'user@domain.com'}`.
 
 ## External access blocked by policy error on the login screen
 

@@ -8,7 +8,7 @@ author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.reviewer: martinco
-ms.date: 03/26/2024
+ms.date: 09/27/2024
 ms.custom: it-pro
 ---
 
@@ -70,7 +70,7 @@ Government agency cryptographic authenticators are validated for FIPS 140 Level 
 
 * Certificate stored in software or hardware (smartcard/security key/TPM)
 
-Microsoft Authenticator app is FIPS 140 compliant on iOS. Android FIPS 140 compliance is in progress. For more information on the FIPS validated cryptographic modules used by Microsoft Authenticator See [Microsoft Authenticator app](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
+Microsoft Authenticator app is FIPS 140 compliant on iOS and Android. For more information on the FIPS validated cryptographic modules used by Microsoft Authenticator. See [Microsoft Authenticator app](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
 
 For OATH hardware tokens and smartcards we recommend you consult with your provider for current FIPS validation status.
 

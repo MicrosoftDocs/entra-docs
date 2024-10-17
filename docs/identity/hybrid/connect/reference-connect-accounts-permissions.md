@@ -38,7 +38,7 @@ You also need the following accounts to *install* Microsoft Entra Connect:
 
 - **AD DS Enterprise Administrator account**: Optionally used to create the required AD DS Connector account.
 
-- **Microsoft Entra Global Administrator account**:  Used to create the Microsoft Entra Connector account and to configure Microsoft Entra ID. You can view Global Administrator and Hybrid Identity Administrator accounts in the [Microsoft Entra admin center](https://entra.microsoft.com). See [List Microsoft Entra role assignments](~/identity/role-based-access-control/view-assignments.md).
+- **Microsoft Entra Hybrid Identity Administrator account**:  Used to create the Microsoft Entra Connector account and to configure Microsoft Entra ID. You can view Hybrid Identity Administrator in the [Microsoft Entra admin center](https://entra.microsoft.com). See [List Microsoft Entra role assignments](~/identity/role-based-access-control/view-assignments.md).
 
 - **SQL SA account (optional)**: Used to create the ADSync database when you use the full version of SQL Server. The instance of SQL Server can be local or remote to the Microsoft Entra Connect installation. This account can be the same account as the Enterprise Administrator account.
 
@@ -50,7 +50,7 @@ You also need the following accounts to *install* Microsoft Entra Connect:
 > [!NOTE]
 > You can manage the administrative accounts that are used in Microsoft Entra Connect by using an *enterprise access model*. An organization can use an enterprise access model to host administrative accounts, workstations, and groups in an environment that has stronger security controls than a production environment. For more information, see [Enterprise access model](/security/privileged-access-workstations/privileged-access-access-model#esae-administrative-forest-design-approach).
 >
-> The Global Administrator role isn't required after initial setup. After setup, the only required account is the [Directory Synchronization Accounts role](~/identity/role-based-access-control/permissions-reference.md#directory-synchronization-accounts) account. Instead of removing the account that has the Global Administrator role, we recommend that you change the role to a role that has a lower level of permissions. Completely removing the account might introduce issues if you ever need to run the wizard again. You can add permissions if you need to use the Microsoft Entra Connect wizard again.
+> The Hybrid Identity Administrator role isn't required after initial setup. After setup, the only required account is the [Directory Synchronization Accounts role](~/identity/role-based-access-control/permissions-reference.md#directory-synchronization-accounts) account. Instead of removing the account that has the Hybrid Identity Administrator role, we recommend that you change the role to a role that has a lower level of permissions. Completely removing the account might introduce issues if you ever need to run the wizard again. You can add permissions if you need to use the Microsoft Entra Connect wizard again.
 
 <a name='azure-ad-connect-installation'></a>
 
@@ -68,21 +68,21 @@ The Microsoft Entra Connect installation wizard offers two paths:
 In express settings, you enter this information in the installation wizard:
 
 - AD DS Enterprise Administrator credentials
-- Microsoft Entra Global Administrator credentials
+- Microsoft Entra Hybrid Identity Administrator credentials
 
 ### AD DS Enterprise Administrator credentials
 
 The AD DS Enterprise Administrator account is used to configure Windows Server AD. These credentials are used only during installation. The Enterprise Administrator, not the Domain Administrator, should make sure that the permissions in Windows Server AD can be set in all domains.
 
-If you're upgrading from DirSync, the AD DS Enterprise Administrator credentials are used to reset the password for the account that DirSync used. Microsoft Entra Global Administrator credentials also are required.
+If you're upgrading from DirSync, the AD DS Enterprise Administrator credentials are used to reset the password for the account that DirSync used. Microsoft Entra Hybrid Identity Administrator credentials also are required.
 
 <a name='azure-ad-global-administrator-credentials'></a>
 
-### Microsoft Entra Global Administrator credentials
+### Microsoft Entra Hybrid Identity Administrator credentials
 
-Credentials for the Microsoft Entra Global Administrator account are used only during installation. The account is used to create the Microsoft Entra Connector account that syncs changes to Microsoft Entra ID. The account also enables sync as a feature in Microsoft Entra ID.
+Credentials for the Microsoft Entra Hybrid Identity Administrator account are used only during installation. The account is used to create the Microsoft Entra Connector account that syncs changes to Microsoft Entra ID. The account also enables sync as a feature in Microsoft Entra ID.
 
-For more information, see [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+For more information, see [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 
 ### AD DS Connector account required permissions for express settings
 
@@ -108,7 +108,7 @@ The following table is a summary of the express settings wizard pages, the crede
 | Wizard page | Credentials collected | Permissions required | Purpose |
 | --- | --- | --- | --- |
 | N/A |The user that's running the installation wizard. |Administrator of the local server. |Used to create the ADSync service account that's used to run the sync service. |
-| Connect to Microsoft Entra ID |Microsoft Entra directory credentials. |Global Administrator role in Microsoft Entra ID. |- Used to enable sync in the Microsoft Entra directory.<br /> - Used to create the Microsoft Entra Connector account that's used for ongoing sync operations in Microsoft Entra ID. |
+| Connect to Microsoft Entra ID |Microsoft Entra directory credentials. |Hybrid Identity Administrator role in Microsoft Entra ID. |- Used to enable sync in the Microsoft Entra directory.<br /> - Used to create the Microsoft Entra Connector account that's used for ongoing sync operations in Microsoft Entra ID. |
 | Connect to AD DS |Windows Server AD credentials. |Member of the Enterprise Admins group in Windows Server AD. |Used to create the AD DS Connector account in Windows Server AD and grant permissions to it. This created account is used to read and write directory information during sync. |
 
 <a name="custom-installation-settings"></a>
@@ -127,7 +127,7 @@ The following table is a summary of the custom settings wizard pages, the creden
 | --- | --- | --- | --- |
 | N/A |The user that's running the installation wizard. |- Administrator of the local server.<br />- If using an instance of full SQL Server, the user must be System Administrator (sysadmin) in SQL Server.</li> |By default, used to create the local account that's used as the sync engine service account. The account is created only when the admin doesn't specify an account. |
 | Install synchronization services, service account option |The Windows Server AD or local user account credentials. |User and permissions are granted by the installation wizard. |If the admin specifies an account, this account is used as the service account for the sync service. |
-| Connect to Microsoft Entra ID |Microsoft Entra directory credentials. |Global Administrator role in Microsoft Entra ID. |- Used to enable sync in the Microsoft Entra directory.<br />- Used to create the Microsoft Entra Connector account that's used for ongoing sync operations in Microsoft Entra ID. |
+| Connect to Microsoft Entra ID |Microsoft Entra directory credentials. |Hybrid Identity Administrator role in Microsoft Entra ID. |- Used to enable sync in the Microsoft Entra directory.<br />- Used to create the Microsoft Entra Connector account that's used for ongoing sync operations in Microsoft Entra ID. |
 | Connect your directories |Windows Server AD credentials for each forest that is connected to Microsoft Entra ID. |The permissions depend on which features you enable and can be found in [Create the AD DS Connector account](#create-the-ad-ds-connector-account). |This account is used to read and write directory information during sync. |
 | AD FS Servers |For each server in the list, the wizard collects credentials when the sign-in credentials of the user running the wizard are insufficient to connect. |The Domain Administrator account. |Used during installation and configuration of the Active Directory Federation Services (AD FS) server role. |
 | Web application proxy servers |For each server in the list, the wizard collects credentials when the sign-in credentials of the user running the wizard are insufficient to connect. |Local admin on the target machine. |Used during installation and configuration of the web application proxy (WAP) server role. |

@@ -5,12 +5,12 @@ description: What are all of the services included in the Office 365 app in Micr
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: reference
-ms.date: 04/10/2024
+ms.date: 10/07/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: calebb
+ms.reviewer: kvenkit
 ---
 
 # Apps included in Conditional Access Office 365 app suite
@@ -21,11 +21,15 @@ The following list is provided as a reference and includes a detailed list of se
 - Augmentation Loop
 - Call Recorder
 - Connectors
+- Compliant Sydney App
+- Data Security Investigation App
 - Device Management Service
 - EnrichmentSvc
 - IC3 Gateway
+- Loop Service
 - M365 Admin Services
 - M365 Auditing Public Protected Web API app
+- M365 Chat Client
 - Mail Hook App Office 365
 - Media Analysis and Transformation Service
 - Message Recall app
@@ -117,5 +121,9 @@ The following list is provided as a reference and includes a detailed list of se
 - Speedway (Groups Service)
 - Sway
 - Targeted Messaging Service
+- TeamsTargetingServiceApp
 - The GCC DoD app for office.com
 - The Office365 Shell DoD WCSS-Client
+- Visio Data Visualizer
+- WalkieTalkieApp
+- WalkieTalkieGCCApp

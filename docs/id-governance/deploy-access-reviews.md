@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/25/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As an IT admin, I want to ensure access to resources is appropriate and governed.
@@ -290,7 +290,7 @@ Group owners review membership because they're best qualified to know who needs 
 
 ### Review membership of exclusion groups in Conditional Access policies
 
-To learn how to review membership of exclusion groups, see [Use Microsoft Entra access reviews to manage users excluded from Conditional Access policies](conditional-access-exclusion.md).
+To learn how to review membership of excluded groups, see [Use Microsoft Entra access reviews to manage users excluded from Conditional Access policies](conditional-access-exclusion.md).
 
 ### Review guest users' group memberships
 
@@ -298,7 +298,7 @@ To learn how to review guest users' access to group memberships, see [Manage gue
 
 ### Review access to on-premises groups
 
-Access reviews can't change the group membership of groups that you synchronize from on-premises AD with [Microsoft Entra Connect](../identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority for a group originating in AD is on-premises AD.  To control access to AD group-based apps, use [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+Access reviews can't change the membership of groups that you synchronize from on-premises AD with [Microsoft Entra Connect](../identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority for a group originating in AD is on-premises AD.  To control access to AD group-based apps, use [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 Until you have migrated to Microsoft Entra groups with group writeback, you can still use access reviews to schedule and maintain regular reviews of existing on-premises groups. In this case, admins will then take action in the on-premises group after each review completes. This strategy keeps access reviews as the tool for all reviews.
 

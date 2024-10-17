@@ -21,12 +21,24 @@ items:
       href: concept-audit-logs.md
     - name: Sign-in logs
       href: concept-sign-ins.md
+    - name: Interactive sign-in logs
+      href: concept-interactive-sign-ins.md
+    - name: Non-interactive sign-in logs
+      href: concept-noninteractive-sign-ins.md
+    - name: Managed identity sign-in logs
+      href: concept-managed-identity-sign-ins.md
+    - name: Service principal sign-in logs
+      href: concept-service-principal-sign-ins.md
     - name: Sign-in log activity details
       href: concept-sign-in-log-activity-details.md
     - name: Provisioning logs
       href: concept-provisioning-logs.md
+    - name: Flagged sign-ins
+      href: concept-flagged-sign-ins.md
     - name: Microsoft Graph activity logs
       href: /graph/microsoft-graph-activity-logs-overview?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
+    - name: Activity log schemas
+      href: concept-activity-log-schemas.md
   - name: How-to guides 
     expanded: true
     items:
@@ -62,10 +74,21 @@ items:
   - name: How-to guides 
     expanded: true
     items:
+    - name: How to use Microsoft Entra Health alerts
+      href: howto-use-health-scenario-alerts.md
     - name: How to use Identity Recommendations
       href: howto-use-recommendations.md
     - name: How to use Identity Workbooks
       href: howto-use-workbooks.md
+  - name: Health scenarios
+    expanded: false
+    items:
+    - name: Sign-ins requiring a compliant or managed device
+      href: scenario-health-sign-ins-compliant-managed-device.md
+    - name: Sign-ins requiring MFA
+      href: scenario-health-sign-ins-mfa.md
+    - name: Sign-ins to applications using SAML auth
+      href: scenario-health-sign-ins-saml-auth.md      
   - name: Recommendations
     expanded: false
     items:
@@ -142,8 +165,6 @@ items:
   items:
   - name: Bulk changes to UserPrincipalName triggered by verified domain change
     href: troubleshoot-audit-data-verified-domain.md
-  - name: Flagged sign-ins
-    href: overview-flagged-sign-ins.md
   - name: Manage inactive user accounts in Microsoft Entra ID
     href: howto-manage-inactive-user-accounts.md
   - name: Sign-in diagnostic
@@ -158,30 +179,28 @@ items:
 - name: Reference
   expanded: false
   items:
-  - name: SLA performance for Microsoft Entra ID
-    href: reference-sla-performance.md
-  - name: Audit activities
+  - name: Audit log activities
     href: reference-audit-activities.md
   - name: Data retention policies
     href: reference-reports-data-retention.md
   - name: Log latency
     href: reference-log-latency.md
+  - name: Microsoft Graph PowerShell cmdlets
+    href: reference-powershell-reporting.md
+  - name: SLA performance for Microsoft Entra ID
+    href: reference-sla-performance.md
   - name: FAQs
     href: reports-faq.yml
-  - name: Microsoft Graph
+  - name: Microsoft Graph APIs
     expanded: false
     items:
-    - name: Application credential activity API reference
+    - name: appCredentialSignInActivity
       href: /graph/api/resources/appcredentialsigninactivity
-    - name: Application sign-in activity API reference
-      href: /graph/api/resources/serviceprincipalsigninactivity
-    - name: Audit logs API reference
+    - name: directoryAudit
       href: /graph/api/resources/directoryaudit
-    - name: Microsoft Graph PowerShell cmdlets
-      href: reference-powershell-reporting.md
-    - name: Recommendations API reference
+    - name: recommendation
       href: /graph/api/resources/recommendations-api-overview
-    - name: Sign-in logs API reference
+    - name: servicePrincipalSignInActivity
+      href: /graph/api/resources/serviceprincipalsigninactivity
+    - name: signIn
       href: /graph/api/resources/signin
-    - name: Sign-in log schema
-      href: reference-azure-monitor-sign-ins-log-schema.md

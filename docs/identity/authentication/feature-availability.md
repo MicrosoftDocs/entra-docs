@@ -43,8 +43,8 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 || Conditional Access  | &#x2705; | 
 || SharePoint limited access | &#x2705; | 
 || Session lifetime management | &#x2705; | 
-|| Identity Protection (vulnerabilities and risky accounts) | See [Identity protection](#identity-protection) below. | 
-|| Identity Protection (risk events investigation, SIEM connectivity) | See [Identity protection](#identity-protection) below. | 
+|| ID Protection (vulnerabilities and risky accounts) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection) below. | 
+|| ID Protection (risk events investigation, SIEM connectivity) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection) below. | 
 |**Administration and hybrid identity**|User and group management | &#x2705; | 
 || Advanced group management (Dynamic groups, naming policies, expiration, default classification) | &#x2705; | 
 || Directory synchronization—Microsoft Entra Connect (sync and cloud sync) | &#x2705; | 
@@ -70,14 +70,14 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 || Privileged Identity Management (PIM), just-in-time access |  &#x2705; |
 |**Event logging and reporting**|Basic security and usage reports | &#x2705; |
 || Advanced security and usage reports | &#x2705; |
-|| Identity Protection: vulnerabilities and risky accounts | &#x2705; |
-|| Identity Protection: risk events investigation, SIEM connectivity | &#x2705; |
+|| ID Protection: vulnerabilities and risky accounts | &#x2705; |
+|| ID Protection: risk events investigation, SIEM connectivity | &#x2705; |
 |**Frontline workers**|SMS sign-in | &#x2705; |
 || Shared device sign-out | Enterprise state roaming for Windows 10 devices isn't available. |
 || Delegated user management portal (My Staff) | &#10060; |
 
 
-## Identity protection
+## Microsoft Entra ID Protection
 
 | Risk Detection | Availability |
 |----------------|:--------------------:|
@@ -109,6 +109,7 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 |Workday Writeback | &#x2705; |
 |SuccessFactors to Microsoft Entra user provisioning | &#x2705; | 
 |SuccessFactors to Writeback | &#x2705; |
+|API-driven inbound provisioning | &#10060; |
 |Provisioning agent configuration and registration with Gov cloud tenant| Works with special undocumented command-line invocation:<br> `AADConnectProvisioningAgent.Installer.exe ENVIRONMENTNAME=AzureUSGovernment` |
 
 ## Other Microsoft Entra products

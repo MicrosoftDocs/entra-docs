@@ -7,11 +7,12 @@ editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/12/2024
 ms.author: owinfrey
 ms.reviewer: mamkumar
 #Customer intent: As an approver, I want steps for how to approve requests for access packages so that I can unlock requestors who need to use the resources.
 ---
+
 # Approve or deny access requests in entitlement management
 
 With  entitlement management, you can configure policies to require approval for access packages, and choose one or more approvers. This article describes how designated approvers can approve or deny requests for access packages.
@@ -47,6 +48,8 @@ If you don't have the email, you can find the access requests pending your appro
 1. Select **Request details**.
 
     ![My Access portal - Access request- Click request details](./media/entitlement-management-request-approve/requestor-information-request-details.png)
+
+1. On the **Request details** page, basic information about the request are present such as who made the request, and whether it was for themselves or for someone else. See [Request access package on-behalf-of other users(Preview)](entitlement-management-request-behalf.md) for more details on requesting access for other users.
 
 1. The information provided by the requestor is at the bottom of the panel.
 

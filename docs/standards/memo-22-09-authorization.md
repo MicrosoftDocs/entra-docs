@@ -8,7 +8,7 @@ author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.reviewer: martinco
-ms.date: 05/01/2023
+ms.date: 08/23/2024
 ms.custom: it-pro
 ---
 
@@ -46,7 +46,7 @@ Attribute-based access control (ABAC) uses metadata assigned to a user or resour
 
 ### Attributes assigned to users
 
-Use attributes assigned to users, stored in Microsoft Entra ID, to create user authorizations. Users are automatically assigned to dynamic groups based on a rule set you define during group creation. Rules add or remove a user from the group based on rule evaluation against the user and their attributes. We recommend you maintain attributes and don't set static attributes on creation day.
+Use attributes assigned to users, stored in Microsoft Entra ID, to create user authorizations. Users are automatically assigned to dynamic membership groups based on a rule set you define during group creation. Rules add or remove a user from the group based on rule evaluation against the user and their attributes. We recommend you maintain attributes and don't set static attributes on creation day.
 
 Learn more: [Create or update a dynamic group in Microsoft Entra ID](~/identity/users/groups-create-rule.md)
 
@@ -56,7 +56,7 @@ With Microsoft Entra ID, you can integrate authorization to the data. See the fo
 
 Data sources can be Microsoft Office files like Word, Excel, or SharePoint sites mapped to authentication. Use authentication assigned to data in applications. This approach requires integration with the application code and for developers to adopt the capability. Use authentication integration with Microsoft Defender for Cloud Apps to control actions taken on data through session controls. 
 
-Combine dynamic groups with authentication context to control user access mappings between the data and the user attributes. 
+Combine dynamic membership groups with authentication context to control user access mappings between the data and the user attributes. 
 
 Learn more:
 

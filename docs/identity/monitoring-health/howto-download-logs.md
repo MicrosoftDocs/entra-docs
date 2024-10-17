@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/21/2024
+ms.date: 09/27/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
