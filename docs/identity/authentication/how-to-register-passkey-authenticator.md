@@ -174,6 +174,10 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/select-passkey-in-authenticator.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
 
+1. When you're asked to sign in with MFA, click **Next**.   
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/sign-in-required-laptop.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
+
 1. If necessary, download Microsoft Authenticator to your iOS device. You can click [Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app) and scan a QR code to install Authenticator from Google Play or the iOS App Store. After you download Authenticator, tap **Next**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/download-authenticator-laptop.png" alt-text="Screenshot that gives users an option to download Authenticator.":::
@@ -358,16 +362,20 @@ Alternatively, users can set up a passkey in the Authenticator by navigating to 
 
 ## Cross-device registration (Android)
 
-You can also save a passkey in Authenticator from your computer or another mobile device. This registration option requires Bluetooth and an internet connection for both devices. If your organizations restricts Bluetooth usage, an administrator can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
+You can also save a passkey in Authenticator from your computer or another mobile device. 
+This registration option is convenient if you want to sign in with a passkey on another device and save it in Authenticator on your Android device. 
+This registration option requires Bluetooth and an internet connection for both devices. 
+
+If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
 1. Open a web browser and sign in to [Security info](https://mysignins.microsoft.com/security-info).
 1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator** > **Add**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-passkey-authenticator.png" alt-text="Screenshot of how to add passkey in Microsoft Authenticator as a sign-in method for Android devices.":::
 
-1. Sign in with multifactor authentication (MFA), then tap **Next**.   
+1. When you're asked to sign in with MFA, click **Next**.   
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/set-up-passkey.png" alt-text="Screenshot that notifies user to sign in with a second factor before they add a passkey for Android devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/sign-in-required-laptop.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
 
 1. If necessary, download Microsoft Authenticator, then tap **Next**.   
 
