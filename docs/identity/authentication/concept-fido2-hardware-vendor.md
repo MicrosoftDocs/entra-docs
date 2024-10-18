@@ -71,7 +71,6 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |eWBM eFA310 FIDO2 Authenticator|95442b2e-f15e-4def-b270-efb106facb4e|![y]|![n]|![n]|![n]|
 |eWBM eFA320 FIDO2 Authenticator|87dbc5a1-4c94-4dc8-8a47-97d800fd1f3c|![y]|![n]|![n]|![n]|
 |eWBM eFPA FIDO2 Authenticator|61250591-b2bc-4456-b719-0b17be90bb30|![y]|![n]|![n]|![n]|
-|eWBM eFPA FIDO2 Authenticator|61250591-b2bc-4456-b719-0b17be90bb30|![y]|![n]|![n]|![n]|
 |Excelsecu eSecu FIDO2 Fingerprint Key|6002f033-3c07-ce3e-d0f7-0ffe5ed42543|![y]|![y]|![n]|![n]|
 |Excelsecu eSecu FIDO2 Fingerprint Security Key|20f0be98-9af9-986a-4b42-8eca4acb28e4|![y]|![y]|![n]|![n]|
 |Excelsecu eSecu FIDO2 Fingerprint Security Key|d384db22-4d50-ebde-2eac-5765cf1e2a44|![y]|![y]|![n]|![n]|
