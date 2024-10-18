@@ -167,7 +167,7 @@ If you have fewer than 50,000 objects, but you still want to do a parallel deplo
 
 1. Open a Command Prompt window.
 
-1. In the installation location of Microsoft Entra Connect (the default is *C:\Program Files\Microsoft Entra Connect*), run the following command:
+1. In the installation location of Microsoft Entra Connect (the default is *C:\Program Files\Microsoft Azure Active Directory Connect*), run the following command:
 
    `AzureADConnect.exe /ForceExport`
 
