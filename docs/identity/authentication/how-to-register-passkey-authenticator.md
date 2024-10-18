@@ -73,7 +73,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
    On iOS 18, navigate to **Settings** > **General** > **Autofill & Passwords**. 
    On iOS 17, navigate to **Settings** > **Passwords** > **Password Options**. 
 
-   On both operating systems, make sure **AutoFill Passwords and and Passkeys** is turned on. 
+   On both operating systems, make sure **AutoFill Passwords and Passkeys** is turned on. 
    Under **Autofill From**, make sure **Authenticator** is selected.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/password-options-three.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for iOS devices.":::
