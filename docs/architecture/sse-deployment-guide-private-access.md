@@ -77,11 +77,7 @@ In the earlier section, we applied Conditional Access to one application for a s
 In this scenario, a Marketing department user needs to use RDP to open a remote desktop session to Server1. Additionally, a user in the Developer department needs to access a file share on Server using SMB protocol. Permissions to each application are configured so that users in the Marketing department can remote desktop into Server1 but can't access the file share on Server1. For additional access control, we enforce MFA to users in the Marketing department and require users in the Developer department to agree on the Terms of Use to access their resources.
 
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) and create two test users, such as *FirstUser* and *SecondUser*.
-
-     :::image type="content" source="media/sse-deployment-guide-private-access/new-user-inline.png" alt-text="Screenshot of Identity, Users, All users, New user window." lightbox="media/sse-deployment-guide-private-access/new-user-extended.png":::
 1. Create a group each for Marketing and Developers. Add *FirstUser* to the Marketing group and add *SecondUser* to the Developers group.
-
-     :::image type="content" source="media/sse-deployment-guide-private-access/all-groups-inline.png" alt-text="Screenshot of Identity, Groups, All groups window." lightbox="media/sse-deployment-guide-private-access/all-groups-extended.png":::
 1. Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select your test application from the [Publish application](#publish-application) section. Remove your earlier test user from **Users and groups** and replace it with the Marketing group.
 
      :::image type="content" source="media/sse-deployment-guide-private-access/users-and-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Users and groups window." lightbox="media/sse-deployment-guide-private-access/users-and-groups-extended.png":::
