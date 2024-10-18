@@ -16,7 +16,7 @@ Microsoft traffic profile ensures the best performance characteristics for suppo
 
 ## Traffic forwarding in the Microsoft traffic profile
 
-A traffic forwarding rules includes the Destination Type (IP or FQDN), Destination (specific FQDNs or IP ranges), Protocol (TCP or UDP), Ports, Traffic Category, and Action. Microsoft traffic profile derives the traffic forwarding rules from the Microsoft 365 IP and FQDN list (https://aka.ms/M365IPlist) and combines related services based on the traffic category. The traffic category details are described in https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-network-connectivity-principles?view=o365-worldwide#optimizing-connectivity-to-microsoft-365-services.
+A traffic forwarding rules includes the Destination Type (IP or FQDN), Destination (specific FQDNs or IP ranges), Protocol (TCP or UDP), Ports, Traffic Category, and Action. Microsoft traffic profile derives the traffic forwarding rules from the [Microsoft 365 IP and FQDN list](/microsoft-365/enterprise/urls-and-ip-address-ranges) and combines related services based on the traffic category. The traffic category details are described in the [Microsoft 365 Network Connectivity Principles](/microsoft-365/enterprise/microsoft-365-network-connectivity-principles#optimizing-connectivity-to-microsoft-365-services)
 
 You can configure traffic aquisition behavior for each rule according to specific needs of your organization. Configuring the action to Forward will instruct the Global Secure Access client and Remote Networks to acquire traffic. Configuring the rule action to Bypass will instruct the Global Secure Access Client and Remote Networks to skip traffic acquisition for FQDNs and IP ranges in that rule.
 
