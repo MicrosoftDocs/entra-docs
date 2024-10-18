@@ -3651,5 +3651,7 @@
   "PME tenant ID" : "975f013f-7f24-47e8-a7d3-abc4752bf346",
   "Torus tenant ID" : "cdc5aeea-15c5-4db6-b079-fcadd2505dc2",
   "AME tenant ID" : "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
-  "Azure AI Bot Service token store app ID" : "5b404cf4-a79d-4cfe-b866-24bf8e1a4921"
+  "Azure AI Bot Service token store app ID" : "5b404cf4-a79d-4cfe-b866-24bf8e1a4921",
+  "Azure Communication Services app ID" : "c880d6fb-5c66-49ef-9cf5-e53e31900be5",
+  "Omnichannel for Customer Service" : "a950df6d-e658-48fc-b494-ec69d8d9731b"
 }
