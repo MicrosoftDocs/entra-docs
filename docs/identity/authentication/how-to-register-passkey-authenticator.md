@@ -1,6 +1,6 @@
 ---
-title: Register passkeys in Authenticator on Android and iOS devices in Security info
-description: Registration and management of passkey with Authenticator on iOS in Security info.
+title: Register passkeys in Authenticator on Android and iOS devices
+description: Registration and management of passkey with Authenticator on Android and iOS devices.
 
 ms.service: entra-id 
 ms.subservice: authentication
