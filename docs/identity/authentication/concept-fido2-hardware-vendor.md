@@ -167,7 +167,7 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |YubiKey 5 Series with Lightning|a02167b9-ae71-4ac7-9a07-06432ebb6f1c|![n]|![y]|![n]|![n]|
 |YubiKey 5 Series with Lightning|c5ef55ff-ad9a-4b9f-b580-adebafe026d0|![n]|![y]|![n]|![n]|
 |YubiKey 5 Series with NFC|2fc0579f-8113-47ea-b116-bb5a8db9202a|![n]|![y]|![y]|![n]|
-|YubiKey 5 Series with NFC|a25342c0-3cdc-4414-8e46-f4807fca511c|![n]|![y]|![n]|![n]|
+|YubiKey 5 Series with NFC|a25342c0-3cdc-4414-8e46-f4807fca511c|![n]|![y]|![y]|![n]|
 |YubiKey 5 Series with NFC|fa2b99dc-9e39-4257-8f92-4a30d23c4118|![n]|![y]|![y]|![n]|
 |YubiKey Bio FIDO Edition|dd86a2da-86a0-4cbe-b462-4bd31f57bc6f|![y]|![y]|![n]|![n]|
 |YubiKey Bio Series|d8522d9f-575b-4866-88a9-ba99fa02f35b|![y]|![y]|![n]|![n]|
