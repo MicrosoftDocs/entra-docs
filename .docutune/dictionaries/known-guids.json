@@ -3639,5 +3639,11 @@
   "YubiKey Bio Series - Multi-protocol Edition" : "90636e1f-ef82-43bf-bdcf-5255f139d12f",
   "YubiKey Bio Series - Multi-protocol Edition 1VDJSN" : "58276709-bb4b-4bb3-baf1-60eea99282a7",
   "YubiKey Bio Series (Enterprise Profile)" : "83c47309-aabb-4108-8470-8be838b573cb",
-  "Community Feedback Link" : "22920db1-ad25-ec11-b6e6-000d3a4f0789"
+  "Community Feedback Link" : "22920db1-ad25-ec11-b6e6-000d3a4f0789",
+  "Enterprise Administrator" : "9f1983cb-2574-400c-87e9-34cf8e2280db",
+  "Enterprise Administrator (read only)" : "24f8edb6-1668-4659-b5e2-40bb5f3a7d7e",
+  "EA Purchaser" : "da6647fb-7651-49ee-be91-c43c4877f0c4",
+  "Department Admin" : "fb2cf67f-be5b-42e7-8025-4683c668f840",
+  "Department Reader" : "db609904-a47f-4794-9be8-9bd86fbffd8a",
+  "Account Owner" : "c15c22c0-9faf-424c-9b7e-bd91c06a240b"
 }
