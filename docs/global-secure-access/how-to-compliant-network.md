@@ -80,11 +80,16 @@ The compliant network Conditional Access policy can be used to protect your Micr
 1. Select the **Create** button to create to enable your policy.
 
 > [!NOTE]
-> You can use Global Secure Access traffic profiles along with a Conditional Access policy requiring a compliant network for **All cloud apps**. There's no exclusion required when setting up a policy using the **All Compliant Network locations** location and **All cloud apps**.
-> 
-> Authentication to Global Secure Access traffic profiles are automatically excluded from Conditional Access enforcement when a compliant network is required. This exclusion enables the Global Secure Access client to access required resources to start and authenticate the user.
+> You can use Global Secure Access along with a Conditional Access policies requiring a Compliant Network for All Resources.
+> Global Secure Access resources are automatically excluded from the Conditional Access policy when Compliant Network is enabled in the policy. There's no explicit resource exclusion required. These automatic exclusions are needed to ensure that the Global Secure Access client is not blocked from accessing the required resources Global Secure Access needs: 
+> * Global Secure Access Traffic Profiles 
+> * Global Secure Access Policy Service (internal service)
 >
-> Sign-in events for authentication of excluded Global Secure Access traffic profiles appear in the Microsoft Entra ID sign-in logs as "ZTNA Network Access Traffic Profile".
+> Sign-in events for authentication of excluded Global Secure Access resources appear in the Microsoft Entra ID sign-in logs as: 
+> * Internet resources with Global Secure Access 
+> * Microsoft apps with Global Secure Access 
+> * All private resources with Global Secure Access 
+> * ZTNA Policy Service 
 
 ### User exclusions
 
