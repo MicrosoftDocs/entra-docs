@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | **Reply URL** |
     | ----- |
     |`https://connect.taskize.com/Shibboleth.sso/SAML2/POST`|
-    |`https://help.taskize.com/Shibboleth.sso/SAML2/POST`|
+    |`https://docs.taskize.com/Shibboleth.sso/SAML2/POST`|
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
