@@ -415,85 +415,64 @@ The two sample functions below can be used to analyze the type of assignment on 
 #Returns TRUE if the user has the license assigned directly
 function UserHasLicenseAssignedDirectly
 {
-    Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]$user, [string]$skuId)
-
-    foreach($license in $user.Licenses)
-    {
-        #we look for the specific license SKU in all licenses assigned to the user
-        if ($license.AccountSkuId -ieq $skuId)
-        {
-            #GroupsAssigningLicense contains a collection of IDs of objects assigning the license
-            #This could be a group object or a user object (contrary to what the name suggests)
-            #If the collection is empty, this means the license is assigned directly - this is the case for users who have never been licensed via groups in the past
-            if ($license.GroupsAssigningLicense.Count -eq 0)
-            {
-                return $true
-            }
-
-            #If the collection contains the ID of the user object, this means the license is assigned directly
-            #Note: the license may also be assigned through one or more groups in addition to being assigned directly
-            foreach ($assignmentSource in $license.GroupsAssigningLicense)
-            {
-                if ($assignmentSource -ieq $user.ObjectId)
-                {
-                    return $true
-                }
-            }
-            return $false
-        }
-    }
-    return $false
+  Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]$user, [string]$skuId)
+   $result = $false
+   foreach($license in $user.LicenseAssignmentStates)
+   {
+       if ($license.SkuId -ieq $skuId)
+       {
+           if ($license.AssignedByGroup.Count -eq 0)
+           {
+               $result = $true
+           }
+       }
+   }
+   return $result
 }
 #Returns TRUE if the user is inheriting the license from a group
 function UserHasLicenseAssignedFromGroup
 {
-    Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]$user, [string]$skuId)
-
-    foreach($license in $user.Licenses)
-    {
-        #we look for the specific license SKU in all licenses assigned to the user
-        if ($license.AccountSkuId -ieq $skuId)
-        {
-            #GroupsAssigningLicense contains a collection of IDs of objects assigning the license
-            #This could be a group object or a user object (contrary to what the name suggests)
-            foreach ($assignmentSource in $license.GroupsAssigningLicense)
-            {
-                #If the collection contains at least one ID not matching the user ID this means that the license is inherited from a group.
-                #Note: the license may also be assigned directly in addition to being inherited
-                if ($assignmentSource -ine $user.ObjectId)
-                {
-                    return $true
-                }
-            }
-            return $false
-        }
-    }
-    return $false
+  Param([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser]$user, [string]$skuId)
+   $result = $false
+   foreach($license in $user.LicenseAssignmentStates)
+   {
+       if ($license.SkuId -ieq $skuId)
+       {
+           foreach ($assignmentSource in $license.AssignedByGroup)
+           {
+               if ($assignmentSource -ine $null)
+               {
+                   $result = $true
+               }
+           }
+       }
+   }
+   return $result
 }
 ```
 
-This script executes those functions on each user in the organization, using the SKU ID as input - in this example we are interested in the license for *Enterprise Mobility + Security*, which in our organization is represented with ID *contoso:EMS*:
+This script executes those functions on each user in the organization, using the SKU ID as input - in this example we are interested in the license for *Enterprise Mobility + Security E5*, which in our organization is represented with ID *b05e124f-c7cc-45a0-a6aa-8cf78c946968*:
 
 ```powershell
 #the license SKU we are interested in. use Get-MgSubscribedSku to see a list of all identifiers in your organization
-$skuId = "contoso:EMS"
+$skuId = "b05e124f-c7cc-45a0-a6aa-8cf78c946968"
 
 #find all users that have the SKU license assigned
-Get-MgUser -All | where {$_.isLicensed -eq $true -and $_.Licenses.AccountSKUID -eq $skuId} | select `
-    Id, `
-    @{Name="SkuId";Expression={$skuId}}, `
-    @{Name="AssignedDirectly";Expression={(UserHasLicenseAssignedDirectly $_ $skuId)}}, `
-    @{Name="AssignedFromGroup";Expression={(UserHasLicenseAssignedFromGroup $_ $skuId)}}
+Get-MgUser -All -Property Id,licenseAssignmentStates | Where {$_.licenseAssignmentStates.SkuId -eq $skuId} | Select `
+ Id, `
+ @{Name="SkuId";Expression={$skuId}}, `
+ @{Name="AssignedDirectly"; Expression={(UserHasLicenseAssignedDirectly $_ $skuId)}}, `
+ @{Name="AssignedFromGroup";Expression={(UserHasLicenseAssignedFromGroup $_ $skuId)}}
 ```
 
 The result looks like this example:
 
 ```output
-Id                                   SkuId       AssignedDirectly AssignedFromGroup
---                                   -----       ---------------- -----------------
-157870f6-e050-4b3c-ad5e-0f0a377c8f4d contoso:EMS             True             False
-1f3174e2-ee9d-49e9-b917-e8d84650f895 contoso:EMS            False              True
-240622ac-b9b8-4d50-94e2-dad19a3bf4b5 contoso:EMS             True              True
+Id                                   SkuId                                AssignedDirectly AssignedFromGroup
+--                                   -----                                ---------------- -----------------
+157870f6-e050-4b3c-ad5e-0f0a377c8f4d b05e124f-c7cc-45a0-a6aa-8cf78c946968             True             False
+1f3174e2-ee9d-49e9-b917-e8d84650f895 b05e124f-c7cc-45a0-a6aa-8cf78c946968            False              True
+240622ac-b9b8-4d50-94e2-dad19a3bf4b5 b05e124f-c7cc-45a0-a6aa-8cf78c946968             True              True
 ```
 
 Graph doesn’t have a straightforward way to show the result, but it can be seen from this API:
