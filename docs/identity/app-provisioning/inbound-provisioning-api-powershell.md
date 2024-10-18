@@ -178,7 +178,7 @@ To illustrate the procedure, let's use the CSV file `Samples/csv-with-2-records.
 
 This section explains how to send the generated bulk request payload to your inbound provisioning API endpoint. 
 
-1. Log in to your [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823).
 1. Browse to **Provisioning App** > **Properties** > **Object ID** and copy the `ServicePrincipalId` associated with your provisioning app.
 
    :::image type="content" border="true" source="./media/inbound-provisioning-api-powershell/object-id.png" alt-text="Screenshot of the Object ID." lightbox="./media/inbound-provisioning-api-powershell/object-id.png":::
