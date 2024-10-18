@@ -3654,5 +3654,6 @@
   "Azure AI Bot Service token store app ID" : "5b404cf4-a79d-4cfe-b866-24bf8e1a4921",
   "Azure Communication Services app ID" : "c880d6fb-5c66-49ef-9cf5-e53e31900be5",
   "Omnichannel for Customer Service" : "a950df6d-e658-48fc-b494-ec69d8d9731b",
-  "CRM online instance for testing" : "51f81489-12ee-4a9e-aaae-a2591f45987d"
+  "CRM online instance for testing" : "51f81489-12ee-4a9e-aaae-a2591f45987d",
+  "Copilot transcript example" : "56d56813-04f5-ed11-8849-000d3a35dbfc"
 }
