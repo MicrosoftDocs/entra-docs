@@ -38,7 +38,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to set up a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
-1. Open Authenticator.
+1. Download Authenticator from the App Store and open it.
 1. Tap **Add account** or the **+** button.
    > [!NOTE]
    > If you already have an account in Authenticator, you still need to tap on the **+** button to sign in and register a passkey for that same account.
@@ -69,21 +69,9 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/allow-notifications.png" alt-text="Screenshot of how to allow notifications for Microsoft Authenticator for iOS devices.":::
 
-1. Select **Open Settings** to enable Authenticator as a passkey provider.
+1. Open **Settings** > **Passwords** > **Password Options**. Make sure **AutoFill Passwords and and Passkeys** is turned on. Under **Use Passwords and Passkeys From**, make sure **Authenticator** is selected.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-provider-ios.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for iOS devices.":::
-
-1. Open **Passwords**, then select **Password Options**.
- 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/password-options-ios.png" alt-text="Screenshot of select Passwords and selecting Password Options using Microsoft Authenticator for iOS devices.":::
-
-1. Ensure **Autofill Passwords and Passkeys** is turned on.
-
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/autofill-passwords-ios.png" alt-text="Screenshot of Autofill Passwords and Passkeys is turned on using Microsoft Authenticator for iOS devices.":::
-
-1. In the **Use Passwords and Passkeys From** option, make sure **Authenticator** is selected.
-
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/select-authenticator-ios.png" alt-text="Screenshot of Use Passwords and Passkeys from using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/password-options-three.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for iOS devices.":::
 
 1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies. 
 
@@ -192,7 +180,7 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/share-app-usage-data.png" alt-text="Screenshot that allows users to share app data usage.":::
 
-1. The next step is to add your account in Authenticator on your iOS device. If you just downloaded Authenticator, you can tap **Add work or school account** near the bottom of you're iOS device. If already use Authenticator, tap **+** in the upper right corner. 
+1. Add your account in Authenticator on your iOS device. If you just downloaded Authenticator, you can tap **Add work or school account** near the bottom of you're iOS device. If already use Authenticator, tap **+** in the upper right corner. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
 
@@ -237,7 +225,7 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
 To remove the passkey from Authenticator, tap the account name, tap **Settings**, and then tap **Remove account**. Choose whether to remove the account only from Authenticator or from all apps on your device.
 
-:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/remove-all-apps.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for Android devices.":::
+:::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/remove-all-apps.png" alt-text="Screenshot of the passkey delete option in Microsoft Authenticator for iOS devices.":::
 
 > [!NOTE]
 > You also need to delete the passkey from [Security info](https://mysignins.microsoft.com/security-info). 
