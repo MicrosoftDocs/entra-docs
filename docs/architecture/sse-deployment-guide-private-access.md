@@ -41,12 +41,10 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
      :::image type="content" source="media/sse-deployment-guide-private-access/enterprise-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications window." lightbox="media/sse-deployment-guide-private-access/enterprise-applications-extended.png":::
 1. Enter a **Name** (such as Server1) and select the new connector group. Click **+Add application segment**. Enter the **IP address** of the application server and port 3389.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/create-application-segment-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create application segment window." lightbox="media/sse-deployment-guide-private-access/create-application-segment-extended.png":::
 1. Click **Apply** > **Save**. Verify that the application is added to the Enterprise applications list.
 
 1. Go to **Identity** > **Applications** > **Enterprise applications** and click the newly created application.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/all-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, All applications window." lightbox="media/sse-deployment-guide-private-access/all-applications-extended.png":::
 1. Click **Users and groups**. Add your test user that that will access this application from the internet.
 
      :::image type="content" source="media/sse-deployment-guide-private-access/application-users-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Manage, Users and groups window." lightbox="media/sse-deployment-guide-private-access/application-users-groups-extended.png":::
@@ -58,8 +56,6 @@ You can apply Conditional Access policies to applications published with Microso
 
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Identity** > **Protection** > **Conditional Access** > **Authentication strengths**. Select **+New authentication strength**.
 1. Create **New authentication strength** to require **Microsoft Authenticator (Phone Sign-in)**.
-
-     :::image type="content" source="media/sse-deployment-guide-private-access/new-authentication-strength-inline.png" alt-text="Screenshot of Identity, Protection, Conditional Access, Authentication strengths, New authentication strength window." lightbox="media/sse-deployment-guide-private-access/new-authentication-strength-extended.png":::
 1. Go to **Policies**.
 1. Create a new Conditional Access Policy as follows:
    1. **Users**: select a specific user
