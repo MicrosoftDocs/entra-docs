@@ -3645,5 +3645,6 @@
   "EA Purchaser" : "da6647fb-7651-49ee-be91-c43c4877f0c4",
   "Department Admin" : "fb2cf67f-be5b-42e7-8025-4683c668f840",
   "Department Reader" : "db609904-a47f-4794-9be8-9bd86fbffd8a",
-  "Account Owner" : "c15c22c0-9faf-424c-9b7e-bd91c06a240b"
+  "Account Owner" : "c15c22c0-9faf-424c-9b7e-bd91c06a240b",
+  "DefaultChannelAuthTenant (botframework.com)" : "d6d49420-f39b-4df7-a1dc-d59a935871db"
 }
