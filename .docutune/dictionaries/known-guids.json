@@ -3657,5 +3657,9 @@
   "CRM online instance for testing" : "51f81489-12ee-4a9e-aaae-a2591f45987d",
   "Copilot transcript example" : "56d56813-04f5-ed11-8849-000d3a35dbfc",
   "Dynamics 365 customer service basic session template" : "fac04293-1ab0-eb11-8236-000d3a5c49ed",
-  "Dynamics 365 customer service basic session template - not in focus" : "0e0e6c4f-cbb6-eb11-8236-000d3a5ab8b9"
+  "Dynamics 365 customer service basic session template - not in focus" : "0e0e6c4f-cbb6-eb11-8236-000d3a5ab8b9",
+  "Dynamics 365 customer service new tab" : "09e68a6e-b7ef-eb11-bacb-000d3a373d11",
+  "Dynamics 365 Omnichanel sample payload" : "87b4d06c-abc2-e811-a9b0-000d3a10e09e",
+  "Dynamics 365 customer service custom action" : "c3356c37-bba6-4067-b1a1-8c66e1c203a1",
+  "Dynamics 365 customer service sample code resource ID" : "268e3d0d-5e0c-eb11-a822-000d3aaf102a"
 }
