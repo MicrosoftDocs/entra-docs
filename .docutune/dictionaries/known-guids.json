@@ -3335,7 +3335,7 @@
   "SubstrateDirectoryEventProcessor": "26abc9a8-24f0-4b11-8234-e86ede698878",
   "Transcript Ingestion": "97cb1f73-50df-47d1-8fb0-0271f2728514",
   "Universal Store Native Client": "268761a2-03f3-40df-8a8b-c3db24145b6b",
-  "Vortex [wsfed enabled]": "5572c4c0-d078-44ce-b81c-6cbf8d3ed39e",
+  "Vortex [WSFed enabled]": "5572c4c0-d078-44ce-b81c-6cbf8d3ed39e",
   "WeveEngine": "3c896ded-22c5-450f-91f6-3d1ef0848f6e",
   "Windows Search": "26a7ee05-5602-4d76-a7ba-eae8b7b67941",
   "Windows Spotlight": "1b3c667f-cde3-4090-b60b-3d2abd0117f0",
@@ -3646,5 +3646,6 @@
   "Department Admin" : "fb2cf67f-be5b-42e7-8025-4683c668f840",
   "Department Reader" : "db609904-a47f-4794-9be8-9bd86fbffd8a",
   "Account Owner" : "c15c22c0-9faf-424c-9b7e-bd91c06a240b",
-  "DefaultChannelAuthTenant (botframework.com)" : "d6d49420-f39b-4df7-a1dc-d59a935871db"
+  "DefaultChannelAuthTenant (botframework.com)" : "d6d49420-f39b-4df7-a1dc-d59a935871db",
+  "Microsoft tenant" : "72f988bf-86f1-41af-91ab-2d7cd011db47"
 }
