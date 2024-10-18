@@ -174,9 +174,7 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/select-passkey-in-authenticator.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
 
-1. When you're asked to sign in with MFA, click **Next**.   
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/sign-in-required-laptop.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
+1. If you're asked to sign in with MFA, click **Next**.   
 
 1. If necessary, download Microsoft Authenticator to your iOS device. You can click [Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app) and scan a QR code to install Authenticator from the iOS App Store. After you download Authenticator, tap **Next**.
 
@@ -430,14 +428,14 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
 1. After Authenticator creates the passkey, tap **Continue**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/account-added-android.png" alt-text="Screenshot that confirms the apsskey is created in Authenticator on Android.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/account-added-android.png" alt-text="Screenshot that confirms the passkey is created in Authenticator on Android.":::
 
 
 1. Review the message that App Lock is enabled and click **OK**.
 
 1. On you Android device, you can see passkey added for your new account in Authenticator.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/account-in-android.png" alt-text="Screenshot that confirms the apsskey is created in Authenticator on Android.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/account-in-android.png" alt-text="Screenshot that shows the passkey in Authenticator on Android.":::
 
 1. Return to your other device after you complete the passkey setup in Authenticator, and click **Next**. 
 
