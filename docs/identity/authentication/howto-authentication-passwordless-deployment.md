@@ -408,8 +408,6 @@ Use the [sign-in activity report](~/identity/monitoring-health/concept-sign-ins.
 
 Select the user row, and then select the **Authentication Details** tab to view which authentication method was used for which sign-in activity.
 
-![Reporting sign-in activity](media/howto-authentication-passwordless-deployment/reporting-sign-in-activity.png)
-
 ## Next steps
 
 * [Learn how passwordless authentication works](concept-authentication-passwordless.md)

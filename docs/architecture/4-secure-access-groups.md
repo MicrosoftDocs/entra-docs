@@ -174,8 +174,6 @@ Learn more:
 
 Select email alias, privacy, and whether to enable the group for teams.
 
-   ![Screenshot of options and entries under Edit settings.](media/secure-external-access/4-edit-group-settings.png)
-
 After setup, add members, and configure settings for email usage, and so on.
 
 ## Next steps

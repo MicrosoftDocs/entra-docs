@@ -174,6 +174,7 @@ To illustrate the procedure, let's use the CSV file `Samples/csv-with-2-records.
 1. To directly upload the generated payload to the API endpoint using the same PowerShell script refer to the next section. 
 
 
+
 ## Configure client certificate for service principal authentication
 
 > [!NOTE]
