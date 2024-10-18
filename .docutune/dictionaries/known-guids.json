@@ -3647,5 +3647,9 @@
   "Department Reader" : "db609904-a47f-4794-9be8-9bd86fbffd8a",
   "Account Owner" : "c15c22c0-9faf-424c-9b7e-bd91c06a240b",
   "DefaultChannelAuthTenant (botframework.com)" : "d6d49420-f39b-4df7-a1dc-d59a935871db",
-  "Microsoft tenant" : "72f988bf-86f1-41af-91ab-2d7cd011db47"
+  "Microsoft tenant ID" : "72f988bf-86f1-41af-91ab-2d7cd011db47",
+  "PME tenant ID" : "975f013f-7f24-47e8-a7d3-abc4752bf346",
+  "Torus tenant ID" : "cdc5aeea-15c5-4db6-b079-fcadd2505dc2",
+  "AME tenant ID" : "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+  "Azure AI Bot Service token store app ID" : "5b404cf4-a79d-4cfe-b866-24bf8e1a4921"
 }
