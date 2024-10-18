@@ -147,15 +147,15 @@ This sign-in option requires Bluetooth and an internet connection for both devic
 
 1. You can enter your username to sign in: 
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for iOS devices.":::
 
    If you last used a passkey to authenticate, you will be automatically prompted to authenticate with a passkey. Otherwise, you may click on **Other ways to sign in** and then select **Face, fingerprint, PIN, or security key**.
 
    Alternatively, click **Sign-in options** to sign in more conveniently without having to enter a username. 
 
-    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for Android devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for Android devices.":::
 
-   If you chose **Sign-in options**, select **Face, fingerprint, PIN, or security key**. Otherwise, skip to next step.
+   If you chose **Sign-in options**, select **Face, fingerprint, PIN or security key**. Otherwise, skip to next step.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for Android devices.":::
 
