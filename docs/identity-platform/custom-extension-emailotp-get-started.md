@@ -498,7 +498,7 @@ If you configured the [Microsoft identity provider](#step-6-protect-your-azure-f
     https://{tenantname}.ciamlogin.com/{tenantId}/v2.0/.well-known/openid-configuration
     ```
 
-1. Under the **App registration**, enter the application ID (client ID) of the *Azure Functions authentication events API* app registration [you created previously](#step-2-register-a-custom-authentication-extension).
+1. Under the **App registration**, enter the application ID (client ID) of the *Azure Functions authentication events API* app registration [you created previously](#step-3-register-a-custom-authentication-extension).
 
 1. In the Microsoft Entra admin center:
     1. Select the *Azure Functions authentication events API* app registration [you created previously](#step-3-register-a-custom-authentication-extension).
