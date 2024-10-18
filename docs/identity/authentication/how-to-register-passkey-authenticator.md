@@ -178,7 +178,7 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/sign-in-required-laptop.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
 
-1. If necessary, download Microsoft Authenticator to your iOS device. You can click [Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app) and scan a QR code to install Authenticator from Google Play or the iOS App Store. After you download Authenticator, tap **Next**.
+1. If necessary, download Microsoft Authenticator to your iOS device. You can click [Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app) and scan a QR code to install Authenticator from the iOS App Store. After you download Authenticator, tap **Next**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/download-authenticator-laptop.png" alt-text="Screenshot that gives users an option to download Authenticator.":::
 
@@ -214,11 +214,11 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/new-passkey-in-authenticator.png" alt-text="Screenshot of new account added to Authenticator on your iOS device.":::
 
-1. Return to your other device, and resume the wizard to complete the passkey setup in Authenticator. Click **Next**. 
+1. Return to your other device after you complete the passkey setup in Authenticator, and click **Next**. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
 
-1. The wizard verifies passkey is installed in Authenticator. This step requires intenet connectivity and Bluetooth on both devices.
+1. The wizard verifies the passkey in Authenticator. This step requires intenet connectivity and Bluetooth on both devices.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/verifying-passkey.png" alt-text="Screenshot of wizard verifying passkey in Authenticator.":::
 
@@ -368,22 +368,34 @@ This registration option requires Bluetooth and an internet connection for both 
 
 If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
-1. Open a web browser and sign in to [Security info](https://mysignins.microsoft.com/security-info).
-1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator** > **Add**.
+1. Using another device, such as a laptop, open a web browser and sign in to [Security info](https://mysignins.microsoft.com/security-info).
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-passkey-authenticator.png" alt-text="Screenshot of how to add passkey in Microsoft Authenticator as a sign-in method for Android devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop-eighty.png" alt-text="Screenshot of how to enter a temporary access pass on a laptop at 80%.":::
+
+1. When prompted to stay signed in, select **Yes**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/stay-signed-in.png" alt-text="Screenshot of option to Stay signed in.":::
+
+1. Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/select-passkey-in-authenticator.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
 
 1. When you're asked to sign in with MFA, click **Next**.   
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/sign-in-required-laptop.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
 
-1. If necessary, download Microsoft Authenticator, then tap **Next**.   
+1. If necessary, download Microsoft Authenticator to your Android device. You can click [Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app) and scan a QR code to install Authenticator from Google Play. After you download Authenticator, tap **Next**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/organization.png" alt-text="Screenshot that notifies user that their organization requires them to add a passkey for Android devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/download-authenticator-laptop.png" alt-text="Screenshot that gives users an option to download Authenticator.":::
 
-1. Tap **Android**.   
+1. Open Authenticator, and click **Add account**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/choose-device-android.png" alt-text="Screenshot that lets user choose iOS or Android. Choose Android.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-account-android.png" alt-text="Screenshot that lets user add an account on Android.":::
+
+1. Tap **Work or school account**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-work-or-school-account-android.png" alt-text="Screenshot of how to add a work or school account on Android.":::
+
 
 1. Follow the steps to turn on Authenticator as a passkey provider in **Settings** on your Android device:
    - On your Android device, open **Settings**.
