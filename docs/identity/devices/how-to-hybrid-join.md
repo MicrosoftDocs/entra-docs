@@ -39,7 +39,7 @@ Microsoft Entra hybrid join requires devices to have access to the following Mic
 - Your organization's Security Token Service (STS) (**For federated domains**)
 
 > [!WARNING]
-> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or Microsoft Entra tenant restrictions, ensure that traffic to `https://device.login.microsoftonline.com` is excluded from TLS break-and-inspect. Failure to exclude this URL might cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access.
+> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or Microsoft Entra tenant restrictions, ensure that traffic to `https://device.login.microsoftonline.com` and `https://enterpriseregistration.windows.net` is excluded from TLS break-and-inspect. Failure to exclude this URL might cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access.
 
 If your organization requires access to the internet via an outbound proxy, you can use [Web Proxy Auto-Discovery (WPAD)](/previous-versions/tn-archive/cc995261(v=technet.10)) to enable Windows 10 or newer computers for device registration with Microsoft Entra ID. To address issues configuring and managing WPAD, see [Troubleshooting Automatic Detection](/previous-versions/tn-archive/cc302643(v=technet.10)).
 
