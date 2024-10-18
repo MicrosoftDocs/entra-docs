@@ -394,21 +394,33 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
 1. Tap **Add account**.
 
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-account-android.png" alt-text="Screenshot of how to add your first account to Authenticator on Android.":::
 
+1. Tap **Work or school account**. 
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/work-or-school-account-android.png" alt-text="Screenshot of how to add work or school account to Authenticator on Android.":::
 
 1. Tap **Sign in**.
 
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/sign-in-authenticator-android.png" alt-text="Screenshot of how to sign in to Authenticator on Android.":::
+
 1. Enter your user name and tap **Sign in**.
 
-1. Enter your password or Temporary Access Pass (TAP).
+1. Enter your password, Temporary Access Pass (TAP), or other sign-in method.
 
 1. When prompted to sign in with your phone, tap **Continue**.
 
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/sign-in-with-your-phone-android.png" alt-text="Screenshot of how to sign in with your phone on Android.":::
+
 1. Tap **Register**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/register-android.png" alt-text="Screenshot of how to register a passkey in Authenticator on Android.":::
 
 1. If prompted, unlock you phone to continue registration. 
 
 1. When prompted to allow Authenticator to use passkeys, click **Settings**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/tap-settings-android.png" alt-text="Screenshot of how to go to settings on Android.":::
 
 1. In **Passwords, passkeys, and authentications**, turn on **Authenticator**. When prompted to trust the app, click **OK**.
 
