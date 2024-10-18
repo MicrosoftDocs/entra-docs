@@ -416,21 +416,28 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/register-android.png" alt-text="Screenshot of how to register a passkey in Authenticator on Android.":::
 
-1. If prompted, unlock you phone to continue registration. 
-
 1. When prompted to allow Authenticator to use passkeys, click **Settings**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/tap-settings-android.png" alt-text="Screenshot of how to go to settings on Android.":::
 
-1. In **Passwords, passkeys, and authentications**, turn on **Authenticator**. When prompted to trust the app, click **OK**.
+1. In **Passwords, passkeys, and authenticators**, turn on **Authenticator**. When prompted to trust the app, click **OK**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/trust-app-android.png" alt-text="Screenshot of how to trust Authenticator app on Android.":::
 
 1. Return to the screen to allow Authenticator to use passkeys, and click **Done**.
 
-1. Authenticator creates the passkey. If prompted, unlock the device. Authenticator shows the account is added. Tap **Continue**.
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/settings-done-android.png" alt-text="Screenshot of how to return to Authenticator passkey registration on Android.":::
+
+1. After Authenticator creates the passkey, tap **Continue**.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/account-added-android.png" alt-text="Screenshot that confirms the apsskey is created in Authenticator on Android.":::
+
 
 1. Review the message that App Lock is enabled and click **OK**.
 
 1. On you Android device, you can see passkey added for your new account in Authenticator.
+
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/account-in-android.png" alt-text="Screenshot that confirms the apsskey is created in Authenticator on Android.":::
 
 1. Return to your other device after you complete the passkey setup in Authenticator, and click **Next**. 
 
