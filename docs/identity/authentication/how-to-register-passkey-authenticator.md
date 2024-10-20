@@ -34,7 +34,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 ## [**iOS**](#tab/iOS) 
 
-### Same device registration using direct sign in to Authenticator (iOS)
+### Registration by signing in to Authenticator (iOS)
 
 You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to set up a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
@@ -184,7 +184,7 @@ In some cases when you try to register a passkey, it gets stored locally in the 
 
 ## [**Android**](#tab/Android)
 
-### Same device registration using direct sign in to Authenticator (Android)
+### Registration by signing in to Authenticator (Android)
 
 You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. **This is the recommended and preferred flow to set up a passkey in Authenticator.** If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
