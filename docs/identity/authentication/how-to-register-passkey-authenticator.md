@@ -308,13 +308,15 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-security-info-laptop.png" alt-text="Screenshot of a new passkey on Android sign-in method in Security info on your other device.":::
 
-## Cross-device registration (Android)
+## Alternate registration flow on Security Info (Android)
 
 If a user is unable to sign in to the Authenticator to register a passkey, you can fall back to triggering registration directly from Security Info. If initiating this flow from a browser on a different device, Bluetooth and an internet connection will be required for both devices. Additionally, this flow only works when attestation is disabled for the user.  
 
 If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
-
+1. In Security Info, when adding a passkey, tap on **Having trouble**.
+   
+1. Now, tap on "Register another way" and go through the rest of the flow. 
 
 ## Delete your passkey in Authenticator for Android
 
