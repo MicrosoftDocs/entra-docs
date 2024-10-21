@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/08/2024
+ms.date: 10/21/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -49,6 +49,16 @@ Workload identities, such as managed identities and service principals, aren
 >
 > Review [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md) to identify all user accounts, including user accounts being used as service accounts, that sign in to the [applications](#applications).
 
+### Migrate user-based service accounts to workload identities
+
+For more information about how to migrate from user-based service accounts to workload identities for authentication with these applications, see: 
+
+- [Sign into Azure with a managed identity using the Azure CLI](/cli/azure/authenticate-azure-cli-managed-identity)
+- [Sign into Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
+- [Sign in to Azure PowerShell non-interactively for automation scenarios](/powershell/azure/authenticate-noninteractive) includes guidance for both managed identity and service principal use cases
+
+Customers applying Conditional Access policies to the user based service accounts can reclaim this user based license and apply [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
+
 ## Implementation
  
 This requirement for MFA at sign-in is implemented for admin portals. Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) shows it as the source of the MFA requirement. 
@@ -76,6 +86,10 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 - Portal notification: A notification appears in the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center when they sign in. The portal notification links to this topic for more information about the mandatory MFA enforcement. 
 
 - Microsoft 365 message center: A message appears in the Microsoft 365 message center with the same information as the email and service health notification. 
+
+After enforcement, a banner appears in Microsoft Entra multifactor authentication:
+
+:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/enforcement-banner.png" alt-text="Screenshot of a banner in Microsoft Entra multifactor authentication that shows mandatory MFA is enforced."
 
 ## External authentication methods and identity providers 
 

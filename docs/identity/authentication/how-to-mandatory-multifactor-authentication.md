@@ -4,7 +4,7 @@ description: Steps to verify mandatory multifactor authentication for users who 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/09/2024
+ms.date: 10/21/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -16,22 +16,21 @@ ms.reviewer: nashahid, gkinasewitz
 
 This topic covers steps to verify that users in your organization are set up to meet requirements to use MFA to sign in to Microsoft admin portals. For more information about which applications and accounts are affected and how the rollout works, see [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md).
 
+## Verify MFA for a personal account
+
+A user might use their personal account to create a Microsoft Entra tenant for only a few users. If you used your personal account to subscribe to 
+
+1. Sign in to your Microsoft account **Advanced security options**.
+1. Under **Additional security** and **Two-step verification** choose **Turn on** or **Turn off**.
+1. Follow the instructions shown on the screen.
+
+For more information, see [How to use two-step verification with your Microsoft account](https://support.microsoft.com/account-billing/how-to-use-two-step-verification-with-your-microsoft-account-c7910146-672f-01e9-50a0-93b4585e7eb4).
+
 ## Find users who sign in with and without MFA
 Use the followng resources to find users who sign in with and without MFA: 
 
 - To export a list of users and their authentication methods, use [PowerShell](https://aka.ms/AzMFA).
 - If you run queries to analyze user sign-ins, use the application IDs of the [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications). 
-
-## Migrate user-based service accounts to workload identities
-
-For more information about how to migrate from user-based service accounts to workload identities for authentication with these applications, see: 
-
-- [Sign into Azure with a managed identity using the Azure CLI](/cli/azure/authenticate-azure-cli-managed-identity)
-- [Sign into Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
-- [Sign in to Azure PowerShell non-interactively for automation scenarios](/powershell/azure/authenticate-noninteractive) includes guidance for both managed identity and service principal use cases
-
-Customers applying Conditional Access policies to the user based service accounts can reclaim this user based license and apply [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
-
 
 ## Verify MFA enablement
 Regardless of any roles they have or don't have, all users who access the admin portals and Azure clients listed in [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications) must be set up to use MFA. All users who access any administration portal should use MFA. Use the following steps to verify that MFA is set up for your users, or to enable it if needed. 
