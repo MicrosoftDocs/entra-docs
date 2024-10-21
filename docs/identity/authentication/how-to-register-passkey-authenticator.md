@@ -118,7 +118,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
 1. The rest of the flow is similar to the flow shared earlier to sign in to the Authenticator and complete passkey registration. Complete MFA on your iOS device, and tap **Sign in**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-sign-in-three.png" alt-text="Screenshot of how to complete MFA.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-sign-in.png" alt-text="Screenshot of how to complete MFA.":::
 
 1. Go through the steps to enable Touch ID or Face ID and select **Open Settings** to enable Authenticator as a passkey provider.
 
@@ -135,8 +135,6 @@ Security info by default will prompt users to sign in to the Authenticator app t
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/account-added-three.png" alt-text="Screenshot of account added to your iOS device.":::
 
 1. On you iOS device, you can see passkey added for your new account in Authenticator.
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/new-passkey-in-authenticator.png" alt-text="Screenshot of new account added to Authenticator on your iOS device.":::
 
 1. Return to your browser after you complete the passkey setup in Authenticator, and click **Next**. 
 
@@ -250,7 +248,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
 1. On the same Android device as the Authenticator or using another device, such as a laptop, open a web browser and sign in with MFA to [Security info](https://mysignins.microsoft.com/security-info).
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop-eighty.png" alt-text="Screenshot of how to enter a temporary access pass on a laptop at 80%.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop.png" alt-text="Screenshot of how to enter a temporary access pass on a laptop at 80%.":::
 
 1. In Security info, tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator**.
 
@@ -297,11 +295,11 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
 1. After you complete the passkey setup in Authenticator, return to your browser where Security info is open and click **Next**. 
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator on Android.":::
 
 1. After the passkey is created, click **Done**.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-created.png" alt-text="Screenshot that confirms passkey is created.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-created.png" alt-text="Screenshot that confirms passkey is created on Android.":::
 
 1. In Security info, you can see the new passkey added.
 
