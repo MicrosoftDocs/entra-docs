@@ -1096,6 +1096,11 @@
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-nodejs-msal-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-nodejs-sign-in",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/howto-authentication-passwordless-deployment.md",
+      "redirect_url": "/entra/identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication",
+      "redirect_document_id": false
     }
   ]
 }
