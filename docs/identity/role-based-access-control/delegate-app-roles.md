@@ -12,7 +12,7 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 
-#Customer intent: As a Microsoft Entra administrator, I want to reduce overusing the Global Administrator role by delegating app access management to lower-privilege roles.
+#Customer intent: As a Microsoft Entra administrator, I want to reduce overusing highly-privileged administrator roles by delegating app access management to lower-privilege roles.
 ---
 
 # Delegate app registration permissions in Microsoft Entra ID
@@ -24,7 +24,7 @@ This article describes how to use permissions granted by custom roles in Microso
 - [Assigning a built-in administrative role](#assign-built-in-application-administrator-roles) that grants access to manage configuration in Microsoft Entra ID for all applications. This is the recommended way to grant IT experts access to manage broad application configuration permissions without granting access to manage other parts of Microsoft Entra not related to application configuration.
 - [Creating a custom role](#create-and-assign-a-custom-role-preview) defining very specific permissions and assigning it to someone either to the scope of a single application as a limited owner, or at the directory scope (all applications) as a limited administrator.
 
-It's important to consider granting access using one of the above methods for two reasons. First, delegating the ability to perform administrative tasks reduces Global Administrator overhead. Second, using limited permissions improves your security posture and reduces the potential for unauthorized access. For guidelines about role security planning, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md).
+It's important to consider granting access using one of the above methods for two reasons. First, delegating the ability to perform administrative tasks reduces highly-privileged administrator overhead. Second, using limited permissions improves your security posture and reduces the potential for unauthorized access. For guidelines about role security planning, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md).
 
 ## Restrict who can create applications
 
