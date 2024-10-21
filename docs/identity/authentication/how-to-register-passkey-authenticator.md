@@ -165,9 +165,18 @@ If a user is unable to sign in to the Authenticator to register a passkey, you c
 
 If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
-1. In Security Info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
+1. In Security info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
+
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/having-trouble-complete.png" alt-text="Screenshot of how to register another way if you have trouble.":::
+
 2. Now, tap on **create your passkey a different way**.
-3. Choose **iPhone or iPad** and go through the rest of the flow to register a passkey on your device. 
+
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/having-trouble.png" alt-text="Screenshot of how to register a passkey another way.":::
+
+3. Choose **iPhone or iPad** and go through the rest of the flow to register a passkey on your device.
+
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/choose-ios-device.png" alt-text="Screenshot of how to choose another way on iOS if you have trouble.":::
+
 
 If a user wants to revert to the original instructions and register a passkey in Microsoft Authenticator through sign in: 
 
@@ -314,14 +323,23 @@ If a user is unable to sign in to the Authenticator to register a passkey, you c
 
 If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
-1. In Security Info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
+1. In Security info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
+
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/having-trouble-complete.png" alt-text="Screenshot of how to register another way if you have trouble.":::
+
 2. Now, tap on **create your passkey a different way**.
+
+
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/having-trouble.png" alt-text="Screenshot of how to register a passkey another way.":::
+
 3. Choose **Android** and go through the rest of the flow to register a passkey on your device.
+
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/choose-android-device.png" alt-text="Screenshot of how to choose another way on Android if you have trouble.":::
 
 If a user wants to revert to the original instructions and register a passkey in Microsoft Authenticator through sign in: 
 
-1. In Security Info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
-2. Now, tap on **Create your passkey a different way** by signing into the Authenticator.
+1. In Security info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
+2. Now, tap on **create your passkey a different way** by signing into the Authenticator.
 3. Go through the rest of the flow to register a passkey on your device. 
 
 ## Delete your passkey in Authenticator for Android
