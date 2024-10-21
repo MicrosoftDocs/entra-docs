@@ -1,6 +1,6 @@
 ---
 title: Native authentication
-description: Learn how you can use native authentication to take greater control over the user interface and experience for your customer-facing mobile and desktop apps.
+description: Learn how to set up native authentication in Microsoft Entra External ID. Customize the user interface for mobile and desktop apps, and provide a seamless sign-in experience.
  
 author: csmulligan
 manager: celestedg
@@ -12,7 +12,7 @@ ms.author: cmulligan
 
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
 ---
-# Native authentication
+# Native authentication in Microsoft Entra External ID
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 

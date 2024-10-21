@@ -1,12 +1,11 @@
 ---
 
-title: Add Google as an identity provider for B2B
-description: Federate with Google to enable guest users to sign in to your Microsoft Entra apps with their own Gmail accounts.
+title: Google identity provider
+description: Learn how to add Google as an identity provider in Microsoft Entra External ID. Enable customers to sign in with their Google accounts and configure Google federation for seamless access.
 
- 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 06/19/2024
+ms.date: 10/21/2024
 
 ms.author: mimart
 author: msmimart

@@ -1,6 +1,6 @@
 ---
-title: Troubleshooting B2B collaboration
-description: Remedies for common problems with Microsoft Entra B2B collaboration
+title: Troubleshoot B2B issues
+description: Learn how to troubleshoot common issues with Microsoft Entra B2B collaboration. Resolve guest sign-in errors, direct connect access problems, policy update failures, and encrypted email access issues.
  
 ms.service: entra-external-id
 ms.topic: troubleshooting
@@ -14,7 +14,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an IT admin troubleshooting Microsoft Entra B2B collaboration, I want to find remedies for common problems, so that I can resolve issues and ensure smooth collaboration between organizations.
 ---
 
-# Troubleshooting Microsoft Entra B2B collaboration
+# Troubleshoot common issues with Microsoft Entra B2B collaboration
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
