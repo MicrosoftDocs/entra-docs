@@ -61,9 +61,6 @@ When attestation is enabled in the **Passkey (FIDO2)** policy, Microsoft Entra I
 
 For more information about how to configure attestation, see [How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID](how-to-enable-authenticator-passkey.md).
 
-### Back up and restore passkeys in Authenticator
-
-Passkeys in Authenticator aren't backed up and can't be restored on a new device. To create passkeys on a new device, use the passkey on an older device, or use another authentication method to re-create the passkey.
 
 ## Passwordless sign-in via notifications
 
