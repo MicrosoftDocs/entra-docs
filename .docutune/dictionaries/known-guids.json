@@ -3665,5 +3665,6 @@
   "Azure SDK single org default tenant ID" : "22222222-2222-2222-2222-222222222222",
   "Bing Ads tutorial sample app ID" : "4c0b021c-00c3-4508-838f-d3127e8167ff",
   "Microsoft Advertising app ID" : "d42ffc93-c136-491d-b4fd-6f18168c68fd",
-  "Azure Arc service app ID" : "bc313c14-388c-4e7d-a58e-70017303ee3b"
+  "Azure Arc service app ID" : "bc313c14-388c-4e7d-a58e-70017303ee3b",
+  "EFI boot variable" : "8BE4DF61-93CA-11D2-AA0D-00E098032B8C"
 }
