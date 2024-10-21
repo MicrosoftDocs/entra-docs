@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/09/2024
+ms.date: 10/21/2024
 
 ms.author: justinha
 author: justinha
@@ -176,4 +176,6 @@ This sign-in option requires Bluetooth and an internet connection for both devic
 ## Same-device authentication in native Microsoft applications (Android - Preview)
 
 You can use Authenticator on your Android device to seamlessly sign in with a passkey to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. 
+
+
 ---
