@@ -93,8 +93,12 @@ items:
         href: skip-out-of-scope-deletions.md
       - name: Manage application unmatched users
         href: application-provisioning-application-unmatched-users.md
-    - name: Provision on-demand
-      href: provision-on-demand.md
+    - name: Provisioning in Microsoft Entra ID
+      items:
+      - name: On-demand provisioning
+        href: provision-on-demand.md
+      - name: Custom security attributes (preview)
+        href: provision-custom-security-attributes.md
     - name: Monitor and report on provisioning
       items:
       - name: Monitor provisioning status and performance

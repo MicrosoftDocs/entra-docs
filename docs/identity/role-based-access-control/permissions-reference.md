@@ -7,7 +7,7 @@ search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 09/28/2024
+ms.date: 10/28/2024
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit
@@ -35,6 +35,8 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Attribute Definition Reader](#attribute-definition-reader) | Read the definition of custom security attributes. | 1d336d2c-4ae8-42ef-9711-b3604ce3fc2c |
 > | [Attribute Log Administrator](#attribute-log-administrator) | Read audit logs and configure diagnostic settings for events related to custom security attributes. | 5b784334-f94b-471a-a387-e7219fc49ca2 |
 > | [Attribute Log Reader](#attribute-log-reader) | Read audit logs related to custom security attributes. | 9c99539d-8186-4804-835f-fd51ef9e2dcd |
+> | [Attribute Provisioning Administrator](#attribute-provisioning-administrator) | Add or remove custom security attributes in source to target attribute mapping.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | ecb2c6bf-0ab6-418e-bd87-7986f8d63bbe |
+> | [Attribute Provisioning Reader](#attribute-provisioning-reader)  | Read custom security attributes defined on user objects.   | 422218e4-db15-4ef9-bbe0-8afb41546d79 |
 > | [Authentication Administrator](#authentication-administrator) | Can access to view, set and reset authentication method information for any non-admin user.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | c4e39bd9-1100-46d3-8c65-fb160da0071f |
 > | [Authentication Extensibility Administrator](#authentication-extensibility-administrator) | Customize sign in and sign up experiences for users by creating and managing custom authentication extensions.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 25a516ed-2fa0-40ea-a2d0-12923a21473a |
 > | [Authentication Policy Administrator](#authentication-policy-administrator) | Can create and manage the authentication methods policy, tenant-wide MFA settings, password protection policy, and verifiable credentials. | 0526716b-113d-4c15-b2c8-68e3c22b9f80 |
@@ -364,6 +366,38 @@ For more information, see [Manage access to custom security attributes in Micros
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read | Read audit logs related to custom security attributes |
+
+## Attribute Provisioning Administrator 
+
+Users assigned this role can perform the following operations when configuring user provisioning/synchronization flows in Microsoft Entra:  
+
+- Read custom security attributes defined on user objects 
+- Add or remove custom security attributes in source to target attribute mapping 
+
+> [!IMPORTANT]
+> This role does not have the ability to create custom security attribute sets or to directly assign or update custom security attribute values for the user object. This role can only configure the flow of the custom security attributes in the provisioning app. For more information, see [Provision custom security attributes from HR sources (Preview)](~/identity/app-provisioning/provision-custom-security-attributes.md).  
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.directory/customSecurityAttributeDefinitions/allProperties/read | Read all properties of custom security attribute definitions |
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes present in the synchronization schema|
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update | Update custom security attribute mappings in the synchronization schema [![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+
+## Attribute Provisioning Reader 
+
+Users assigned this role can perform the following operations when working with user provisioning/synchronization flows in Microsoft Entra:  
+
+- Read custom security attributes defined on user objects 
+- Read custom security attributes defined on user objects to source or target attributes 
+
+For more information, see [Provision custom security attributes from HR sources (Preview)](~/identity/app-provisioning/provision-custom-security-attributes.md).
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.directory/customSecurityAttributeDefinitions/allProperties/read | Read all properties of custom security attribute definitions |
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes present in the synchronization schema |
 
 ## Authentication Administrator
 
@@ -2278,7 +2312,7 @@ In | Can do
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports
 Azure Advanced Threat Protection | Monitor and respond to suspicious security activity
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | Assign roles<br>Manage machine groups<br>Configure endpoint threat detection and automated remediation<br>View, investigate, and respond to alerts<br/>View machines/device inventory
-[Intune](/mem/intune/fundamentals/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference#endpoint-security-manager)
+[Intune](/mem/intune/fundamentals/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference)
 [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Add admins, add policies and settings, upload logs and perform governance actions
 [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services
 [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) | Define the threshold and duration for lockouts when failed sign-in events happen.
