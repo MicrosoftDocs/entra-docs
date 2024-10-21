@@ -1096,7 +1096,7 @@
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-nodejs-msal-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-nodejs-sign-in",
       "redirect_document_id": false
-    }
+    },
     {
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-aspnet-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-dotnet-core-sign-in",
