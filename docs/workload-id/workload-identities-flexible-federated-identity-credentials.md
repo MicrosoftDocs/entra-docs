@@ -14,15 +14,21 @@ ms.reviewer: ludwignick
 
 # Flexible federated identity credentials (preview)
 
-The current behavior of [federated identity credentials](/graph/api/resources/federatedidentitycredentials-overview?view=graph-rest-1.0) within workload identity federation requires explicit matching when comparing the defined `subject`, `issuer`, and `audience` in the federated identity credential against the `subject`, `issuer`, and `audience` contained in the token sent to Microsoft Entra. This, when combined with the current limit of 20 federated identity credentials for a given application or user-assigned managed identity, can cause scale limits to be hit quickly. Flexible federated identity credentials extend the existing federated identity credential model by allowing the use of a restricted expression language when matching against incoming `subject` claims. It can also be used to extend the federated identity credential authorization model past `subject`, `issuer`, and `audience` by enabling the inclusion of certain allowed custom claims within your federated identity credentials.
+The current behavior of [federated identity credentials](/graph/api/resources/federatedidentitycredentials-overview?view=graph-rest-1.0) within workload identity federation requires explicit matching when comparing the defined `subject`, `issuer`, and `audience` in the federated identity credential against the `subject`, `issuer`, and `audience` contained in the token sent to Microsoft Entra. This, when combined with the current limit of 20 federated identity credentials for a given application or user-assigned managed identity, can cause scale limits to be hit quickly. Flexible federated identity credentials extend the existing federated identity credential model by allowing the use of a restricted expression language when matching against incoming `subject` claims. It can also be used to extend the federated identity credential authorization model past `subject`, `issuer`, and `audience` by enabling the inclusion of certain allowed custom claims within your federated identity credentials. If you find yourself running into scale limits with your current workload identity federation implementation, flexible federated identity credentials can be leveraged to help reduce management overhead when attempting to authenticate external workloads with Microsoft Entra. 
 
 ## How do flexible federated identity credentials work? 
 
-Flexible federated identity credentials do not change the baseline functionality provided by federated identity credentials. These “trust relationships” are still used to indicate which token from the external IdP should be trusted by your application. Instead, they extend the ability of federated identity credentials by enabling scenarios which previously required multiple federated identity credentials to instead be managed under a single flexible federated identity credential. 
+Flexible federated identity credentials do not change the baseline functionality provided by federated identity credentials. These “trust relationships” are still used to indicate which token from the external IdP should be trusted by your application. Instead, they extend the ability of federated identity credentials by enabling scenarios which previously required multiple federated identity credentials to instead be managed under a single flexible federated identity credential. A few examples of this include:
+
+- A GitHub repository may have a variety of workflows, each running on a different branch (or being used across branches). Previously, a unique federated identity credential was required for each of the branches in which workflows could run across. With flexible federated identity credentials, this scenario can be managed under a single federated identity credential.
+- Terraform cloud run_phases plan and apply used to each require a unique FIC. This can now be managed under a single flexible federated identity credential.
+- For reusable GitHub Actions workflows, wildcarding can be used against GitHub's custom job_workflow_ref claim.
+
+Explore the flexible federated identity credential support to see how it can benefit your organization
 
 ## Current limitations 
 
-Flexible federated identity credential support is currently provided for matching against GitHub, GitLab, and Terraform Cloud issued tokens. Furthermore, this support exists only for federated identity credentials configured on application objects. Flexible federated identity credential support for managed identities is coming, but it is not included in the initial public preview. Finally, explicit support for flexible federated identity credentials does not yet exist within Azure CLI, Azure PowerShell, or Terraform providers – so, you will initially only be able to create and manage flexible federated identity credentials via Microsoft Graph or Azure Portal UI.
+Flexible federated identity credential support is currently provided for matching against GitHub, GitLab, and Terraform Cloud issued tokens. Furthermore, this support exists only for federated identity credentials configured on application objects. Flexible federated identity credential support for managed identities is coming, but it is not included in the initial public preview. Finally, explicit support for flexible federated identity credentials does not yet exist within Azure CLI, Azure PowerShell, or Terraform providers – so,unless you use Azure CLI or Azure PowerShell's methods for making rest API requests, you will initially only be able to create and manage flexible federated identity credentials via Microsoft Graph or Azure Portal UI.
 
 ## Set up Flexible Federated identity credentials through Microsoft Graph
 
@@ -70,9 +76,8 @@ Supported issuer URLs: `https://token.actions.githubusercontent.com`
 
 Supported claims and operators per claim: 
 
-Claim `sub` supports operators `eq` and `matches` 
-
-Claim `job_workflow_ref` supports operators `eq` and `matches` 
+- Claim `sub` supports operators `eq` and `matches` 
+- Claim `job_workflow_ref` supports operators `eq` and `matches` 
 
 ### [GitLab](#tab/gitlab)
 
@@ -80,7 +85,7 @@ Supported issuer URLs: `https://gitlab.com`, `https://gitlab.example.com`, and `
 
 Supported claims and operators per claim: 
 
-Claim `sub` supports operators `eq` and `matches` 
+- Claim `sub` supports operators `eq` and `matches` 
 
 ### [Terraform Cloud](#tab/terraformcloud)
 
@@ -88,7 +93,7 @@ Supported issuer URLs: `https://app.terraform.io`, `https://app.eu.terraform.io`
 
 Supported claims and operators per claim: 
 
-Claim `sub` supports operators `eq` and `matches` 
+- Claim `sub` supports operators `eq` and `matches` 
 
 ---
 
@@ -96,4 +101,20 @@ Claim `sub` supports operators `eq` and `matches`
 
 Explicit flexible federated identity credential support does not yet exist within Azure CLI, Azure PowerShell, or Terraform providers. If you attempt to configure a flexible federated identity credential with any of these tools, you will see an error. Additionally, if you configure a flexible federated identity credential via either Microsoft Graph or the Azure Portal and attempt to read that flexible federated identity credential with any of these tools, you will see an error.  
 
+That being said, Azure CLI's az rest method can be used to make REST API requests for flexible federated identity credential creation and management. An example of this is as follows:
+
+```bash
+az rest --method post \
+    --url https://graph.microsoft.com/beta/applications/{objectId}/federatedIdentityCredentials
+    --body "{'name': 'FlexFic1', 'issuer': 'https://token.actions.githubusercontent.com', 'audiences': ['api://AzureADTokenExchange'], 'claimsMatchingExpression': {'value': 'claims[\'sub\'] matches \'repo:contoso/contoso-org:ref:refs/heads/*\'', 'languageVersion': 1}}"
+```
+
 ## See also
+
+- Read about [workload identity federation](./workload-identity-federation.md).
+- How to create, delete, get, or update [federated identity credentials](./workload-identity-federation-create-trust-user-assigned-managed-identity.md) on a user-assigned managed identity.
+- How to create, delete, get, or update [federated identity credentials](./workload-identity-federation-create-trust.md) on an app registration.
+- Read the workload identity overview to learn how to configure a Kubernetes workload to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
+- Read the [GitHub Actions documentation](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-azure) to learn more about configuring your GitHub Actions workflow to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
+- How Microsoft Entra ID uses the [OAuth 2.0 client credentials grant](../identity-platform/v2-oauth2-client-creds-grant-flow.md) and a client assertion issued by another IdP to get a token.
+- For information about the required format of JWTs created by external identity providers, read about the [assertion format](../identity-platform/certificate-credentials.md#assertion-format).
