@@ -4,7 +4,7 @@ description: Microsoft Entra B2B collaboration guest user properties and states 
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/04/2024
+ms.date: 10/21/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -137,5 +137,4 @@ If a guest user accepts your invitation and they subsequently change their email
 
 ## Related content
 
-- [B2B user claims mapping](claims-mapping.md)
 - [B2B collaboration for hybrid organizations](hybrid-organizations.md)
