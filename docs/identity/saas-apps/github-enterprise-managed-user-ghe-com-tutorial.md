@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with GitHub Enterprise Managed User - GHE.com
-description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User.
+description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User - GHE.com.
 
 author: jeevansd
 manager: CelesteDG
@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 06/28/2024
 ms.author: jeedes
 
-# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User - GHE.com so that I can control who has access to GitHub Enterprise Managed User, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User so that I can control who has access to GitHub Enterprise Managed User, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with GitHub Enterprise Managed User
@@ -55,8 +55,8 @@ To configure and test Microsoft Entra SSO with GitHub Enterprise Managed User, p
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure GitHub Enterprise Managed User - GHE.com SSO](#configure-github-enterprise-managed-user---ghecom-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create GitHub Enterprise Managed User - GHE.com test user](#create-github-enterprise-managed-user---ghecom-test-user)** - to have a counterpart of B.Simon in GitHub Enterprise Managed User that is linked to the Microsoft Entra ID representation of user.
+1. **[Configure GitHub Enterprise Managed User SSO](#configure-github-enterprise-managed-user-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create GitHub Enterprise Managed User test user](#create-github-enterprise-managed-user-test-user)** - to have a counterpart of B.Simon in GitHub Enterprise Managed User that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO

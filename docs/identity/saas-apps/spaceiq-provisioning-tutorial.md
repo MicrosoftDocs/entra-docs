@@ -39,13 +39,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to SpaceIQ
 
-* It is recommended that a single Microsoft Entra user is assigned to SpaceIQ to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to SpaceIQ to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
 
 * When assigning a user to SpaceIQ, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up SpaceIQ for provisioning
 
-1. Sign in to your [SpaceIQ Admin Console](https://main.spaceiq.com/login/). Navigate to **Settings** by selecting it from the drop down menu on the top right corner of the screen.
+1. Sign in to your [SpaceIQ Admin Console](https://main.spaceiq.com/login/). Navigate to **Settings** by selecting it from the drop-down menu on the top right corner of the screen.
 
 	![SpaceIQ Admin Console](media/spaceiq-provisioning-tutorial/admin.png)
 
@@ -59,7 +59,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![SpaceIQ Activate Azure](media/spaceiq-provisioning-tutorial/azure.png)
 
-3.	Copy the **SCIM Bearer Token**. This value will be entered in the Secret Token field in the Provisioning tab of your SpaceIQ application. Click **Activate**
+3.	Copy the **SCIM Bearer Token**. This value is entered in the Secret Token field in the Provisioning tab of your SpaceIQ application. Click **Activate**
 
 	![SpaceIQ Create Token](media/spaceiq-provisioning-tutorial/token.png)
 
@@ -129,7 +129,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, click **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -137,7 +137,7 @@ This operation starts the initial synchronization of all users and/or groups def
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
