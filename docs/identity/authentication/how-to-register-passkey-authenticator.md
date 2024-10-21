@@ -169,6 +169,11 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 2. Now, tap on **create your passkey a different way**.
 3. Choose **iPhone or iPad** and go through the rest of the flow to register a passkey on your device. 
 
+If a user wants to revert to the original instructions and register a passkey in Microsoft Authenticator through sign in: 
+
+1. In Security Info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
+2. Now, tap on **Create your passkey a different way** by signing into the Authenticator.
+3. Go through the rest of the flow to register a passkey on your device. 
 
 ## Delete your passkey in Authenticator for iOS
 
@@ -311,7 +316,13 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
 1. In Security Info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
 2. Now, tap on **create your passkey a different way**.
-3. Choose **Android** and go through the rest of the flow to register a passkey on your device. 
+3. Choose **Android** and go through the rest of the flow to register a passkey on your device.
+
+If a user wants to revert to the original instructions and register a passkey in Microsoft Authenticator through sign in: 
+
+1. In Security Info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
+2. Now, tap on **Create your passkey a different way** by signing into the Authenticator.
+3. Go through the rest of the flow to register a passkey on your device. 
 
 ## Delete your passkey in Authenticator for Android
 
