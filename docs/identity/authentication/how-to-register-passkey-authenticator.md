@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on Androi
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/18/2024
+ms.date: 10/21/2024
 
 ms.author: justinha
 author: justinha
@@ -93,7 +93,9 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
 ### Passkey registration from Security Info (iOS)
 
-Security info by default will prompt users to sign in to the Authenticator app to register their passkey. On the same iOS device as the Authenticator or using another device, such as a laptop, open a web browser and sign in with MFA to [Security info](https://mysignins.microsoft.com/security-info).
+Security info by default will prompt users to sign in to the Authenticator app to register their passkey. 
+
+1. On the same iOS device as the Authenticator or using another device, such as a laptop, open a web browser and sign in with MFA to [Security info](https://mysignins.microsoft.com/security-info).
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop-eighty.png" alt-text="Screenshot of how to enter a temporary access pass on a laptop at 80%.":::
 
@@ -235,7 +237,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 >[!NOTE]
 >Support for same-device registration in Edge on Android is coming soon.
 
-1.On the same Android device as the Authenticator or using another device, such as a laptop, open a web browser and sign in with MFA to [Security info](https://mysignins.microsoft.com/security-info).
+1. On the same Android device as the Authenticator or using another device, such as a laptop, open a web browser and sign in with MFA to [Security info](https://mysignins.microsoft.com/security-info).
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop-eighty.png" alt-text="Screenshot of how to enter a temporary access pass on a laptop at 80%.":::
 
@@ -243,21 +245,13 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/select-passkey-in-authenticator.png" alt-text="Screenshot of how to select passkey in Microsoft Authenticator as a sign-in method.":::
 
-1. If prompted, sign in with MFA, and click **Next**.   
+1. If prompted, tap **Next**, and sign in with MFA.   
 
 1. If necessary, download Microsoft Authenticator to your Android device. You can click [Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app) and scan a QR code to install Authenticator from Google Play. After you download Authenticator to your Android device, click **Next**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/download-authenticator-laptop.png" alt-text="Screenshot that gives users an option to download Authenticator.":::
 
-1. Open Authenticator on your Android device. 
-
-1. When prompted to allow notifications from Authenticator, tap **Allow**.   
-
-1. Open Authenticator, review Microsoft Privacy information, and tap **Accept**.
-
-1. Choose whether to share app usage data, and tap **Continue**.
-
-1. Tap **Add account**.
+1. Open Authenticator, go through the privacy scrteens as needed, and tap **Add account**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-account-android.png" alt-text="Screenshot of how to add your first account to Authenticator on Android.":::
 
