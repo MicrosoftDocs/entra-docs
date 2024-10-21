@@ -18,7 +18,8 @@ Microsoft Intune and Microsoft Entra work together to secure your organization t
 
 Some organizations might not be ready to require device complance for all users, these organizations might instead choose to deploy the following policies: 
 
-- [Require compliant or Microsoft Entra hybrid joined device for their administrators](policy-alt-admin-device-compliand-hybrid.md) or [require a compliant device, Microsoft Entra hybrid joined device, **OR** multifactor authentication for all users](policy-alt-all-users-compliant-hybrid-or-mfa.md)
+- [Require compliant or Microsoft Entra hybrid joined device for their administrators](policy-alt-admin-device-compliand-hybrid.md)
+- [Require a compliant device, Microsoft Entra hybrid joined device, **OR** multifactor authentication for all users](policy-alt-all-users-compliant-hybrid-or-mfa.md)
 - [Block unknown or unsupported device platforms](policy-all-users-device-unknown-unsupported.md)
 - [Disable browser persistence](policy-all-users-persistent-browser.md)
 
