@@ -131,7 +131,7 @@ Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityI
 
 ## Updates to Authenticator
 
-Microsoft continuously updates Authenticator to maintain a high level of security. To ensure that your users are getting the best experience possible, we recommend having them continuously update their Authenticator App. In the case of critical security updates, app versions that aren't up to date may cease to work and may block users from completing their authentications. If a user is using a version of the app that is not supported, they will be prompted to upgrade to the latest version before being able to proceed with authentications.
+Microsoft continuously updates Authenticator to maintain a high level of security. To ensure that your users are getting the best experience possible, we recommend having them continuously update their Authenticator App. In the case of critical security updates, app versions that aren't up-to-date may not work, and may block users from completing their authentication. If a user is using a version of the app that isn't supported, they're prompted to upgrade to the latest version before they proceed to sign in.
 
 Microsoft also periodically retires older versions of the Authenticator App to maintain a high security bar for your organization. If a user’s device doesn't support modern versions of Microsoft Authenticator, they can't sign with the app. We recommend these users sign in with an OATH verification code in Microsoft Authenticator to complete MFA.
 
