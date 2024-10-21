@@ -134,7 +134,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/account-added-three.png" alt-text="Screenshot of account added to your iOS device.":::
 
-1. On you iOS device, you can see passkey added for your new account in Authenticator.
+1. On your iOS device, you can see passkey added for your new account in Authenticator.
 
 1. Return to your browser after you complete the passkey setup in Authenticator, and click **Next**. 
 
@@ -291,7 +291,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/account-added-android.png" alt-text="Screenshot that confirms the passkey is created in Authenticator on Android.":::
 
-1. On you Android device, you can see passkey added for your new account in Authenticator.
+1. On your Android device, you can see passkey added for your new account in Authenticator.
 
 1. After you complete the passkey setup in Authenticator, return to your browser where Security info is open and click **Next**. 
 
