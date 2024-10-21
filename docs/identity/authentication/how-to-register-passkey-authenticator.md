@@ -44,21 +44,21 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
    > [!NOTE]
    > If you already have an account in the Authenticator, tap your account in the app, and then tap the settings gear near the upper right of the account details page. Tap **Create a passkey (Preview)**, and skip directly to the sign-in step of the flow.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot 233x433 of how to register using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot of how to register using Microsoft Authenticator for iOS devices.":::
 
 1. You need to complete multifactor authentication (MFA).
 
 1. Select **Work or school account**.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/work-school-account-ios.png" alt-text="Screenshot 233x409 of choosing Work or School Account using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/work-school-account-ios.png" alt-text="Screenshot of choosing Work or School Account using Microsoft Authenticator for iOS devices.":::
  
 1. Tap **Sign in**.
  
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/tap-sign-in-ios.png" alt-text="Screenshot 234x417 of tapping the Sign in option using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/tap-sign-in-ios.png" alt-text="Screenshot of tapping the Sign in option using Microsoft Authenticator for iOS devices.":::
 
 1. You need to complete multifactor authentication (MFA).
  
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/multifactor-auth-ios.png" alt-text="Screenshot 246x445 of how to complete MFA by using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/multifactor-auth-ios.png" alt-text="Screenshot of how to complete MFA by using Microsoft Authenticator for iOS devices.":::
 
 1. When prompted to allow Authenticator to use Touch ID/Face ID, tap **Allow**.
 
@@ -97,7 +97,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
 1. On the same iOS device as the Authenticator or using another device, such as a laptop, open a web browser and sign in with MFA to [Security info](https://mysignins.microsoft.com/security-info).
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop-eighty.png" alt-text="Screenshot of how to enter a temporary access pass on a laptop at 80%.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/enter-temporary-access-pass-laptop.png" alt-text="Screenshot of how to enter a temporary access pass on a laptop at 80%.":::
 
 1. In Security info, Tap **+ Add sign-in method** > choose **Passkey in Microsoft Authenticator**.
 
@@ -294,8 +294,6 @@ Security info by default will prompt users to sign in to the Authenticator app t
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/account-added-android.png" alt-text="Screenshot that confirms the passkey is created in Authenticator on Android.":::
 
 1. On you Android device, you can see passkey added for your new account in Authenticator.
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/account-in-android.png" alt-text="Screenshot that shows the passkey in Authenticator on Android.":::
 
 1. After you complete the passkey setup in Authenticator, return to your browser where Security info is open and click **Next**. 
 
