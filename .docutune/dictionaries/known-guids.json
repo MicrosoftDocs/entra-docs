@@ -3664,5 +3664,6 @@
   "Dynamics 365 customer service sample code resource ID" : "268e3d0d-5e0c-eb11-a822-000d3aaf102a",
   "Azure SDK single org default tenant ID" : "22222222-2222-2222-2222-222222222222",
   "Bing Ads tutorial sample app ID" : "4c0b021c-00c3-4508-838f-d3127e8167ff",
-  "Microsoft Advertising app ID" : "d42ffc93-c136-491d-b4fd-6f18168c68fd"
+  "Microsoft Advertising app ID" : "d42ffc93-c136-491d-b4fd-6f18168c68fd",
+  "Azure Arc service app ID" : "bc313c14-388c-4e7d-a58e-70017303ee3b"
 }
