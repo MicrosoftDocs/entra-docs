@@ -100,15 +100,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Signagelive**.
 
-	![Screenshot of the Mappings section with the Synchronize Microsoft Entra users to Signagelive option called out.](media/signagelive-provisioning-tutorial/usermapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Signagelive in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Signagelive for update operations. Select the **Save** button to commit any changes.
 
 	![Screenshot of the Attribute Mappings section with seven mappings displayed.](media/signagelive-provisioning-tutorial/userattribute.png)
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra group to Signagelive**.
-
-	![Screenshot of the Mappings section with the Synchronize Microsoft Entra group to Signagelive option called out.](media/signagelive-provisioning-tutorial/groupmapping.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Signagelive in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the group accounts in Signagelive for update operations. Select the **Save** button to commit any changes.
 

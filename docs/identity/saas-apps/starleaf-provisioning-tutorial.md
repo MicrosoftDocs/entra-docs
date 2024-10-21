@@ -38,13 +38,13 @@ Before you configure and enable automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to StarLeaf
 
-* It's recommended that a single Microsoft Entra user is assigned to StarLeaf to test the automatic user provisioning configuration. Additional users and groups can be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to StarLeaf to test the automatic user provisioning configuration. More users and groups can be assigned later.
 
 * When you assign a user to StarLeaf, you must select any valid application-specific role (if available) in the assignment dialog. Users with the Default Access role are excluded from provisioning.
 
 ## Set up StarLeaf for provisioning
 
-Before you configure StarLeaf for automatic user provisioning with Microsoft Entra ID, you will need to configure SCIM provisioning in StarLeaf:
+Before you configure StarLeaf for automatic user provisioning with Microsoft Entra ID, you need to configure SCIM provisioning in StarLeaf:
 
 1. Sign in to your StarLeaf Admin Console. Navigate to **Integrations** > **Add integration**.
 
@@ -54,7 +54,7 @@ Before you configure StarLeaf for automatic user provisioning with Microsoft Ent
 
 	![Screenshot of the Add integration dialog box with the Type and Name text boxes called out.](media/starleaf-provisioning-tutorial/image01.png)
 
-3.  The **SCIM base URL** and **Access token** values will be then displayed. These values will be entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your StarLeaf application. 
+3.  The **SCIM base URL** and **Access token** values are then displayed. These values are entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your StarLeaf application. 
 
 	![Screenshot of the Edit integration dialog box with the Type, Name, and SCIM base URL text boxes called out.](media/starleaf-provisioning-tutorial/image02.png)
 
@@ -118,7 +118,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the provisioning scope.](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, click **Save**.
 
 	![Screenshot of saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
@@ -131,7 +131,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * StarLeaf doesn't currently support group provisioning. 
 * StarLeaf requires **email** and **userName** values to have the same source value.
 
-## Additional resources
+## More resources
 
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
