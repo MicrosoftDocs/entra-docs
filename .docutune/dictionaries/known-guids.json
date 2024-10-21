@@ -3661,5 +3661,6 @@
   "Dynamics 365 customer service new tab" : "09e68a6e-b7ef-eb11-bacb-000d3a373d11",
   "Dynamics 365 Omnichanel sample payload" : "87b4d06c-abc2-e811-a9b0-000d3a10e09e",
   "Dynamics 365 customer service custom action" : "c3356c37-bba6-4067-b1a1-8c66e1c203a1",
-  "Dynamics 365 customer service sample code resource ID" : "268e3d0d-5e0c-eb11-a822-000d3aaf102a"
+  "Dynamics 365 customer service sample code resource ID" : "268e3d0d-5e0c-eb11-a822-000d3aaf102a",
+  "Azure SDK single org default tenant ID" : "22222222-2222-2222-2222-222222222222"
 }
