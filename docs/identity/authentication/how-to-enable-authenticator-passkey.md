@@ -149,7 +149,7 @@ To make users sign in with a passkey when they access a sensitive resource, use 
 1. Provide a descriptive **Name** for your new authentication strength.
 1. Optionally provide a **Description**.
 1. Select **Passkeys (FIDO2)** and then select **Advanced options**.
-1. Add AAGUIDs for passkeys in Authenticator:
+1. You can either select **Phishing-resistant MFA strength** or add AAGUIDs for passkeys in Authenticator:
 
    - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
    - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
