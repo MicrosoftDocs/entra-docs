@@ -120,7 +120,7 @@ If after investigation, an account is confirmed compromised:
 1. If a risk-based policy wasn't triggered, and the risk wasn't [self-remediated](#self-remediation-with-risk-based-policy), then take one or more of the following actions:
    1. [Request a password reset](#manual-password-reset).
    1. Block the user if you suspect the attacker can reset the password or do multifactor authentication for the user.
-   1. Revoke refresh tokens.
+   1. [Revoke refresh tokens](/entra/identity/users/users-revoke-access).
    1. [Disable any devices](~/identity/devices/manage-device-identities.md) that are considered compromised.
    1. If using [continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md), revoke all access tokens.
 

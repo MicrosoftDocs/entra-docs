@@ -39,7 +39,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Soloinsight-CloudGate SSO
 
-* It is recommended that a single Microsoft Entra user is assigned to Soloinsight-CloudGate SSO to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Soloinsight-CloudGate SSO to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
 
 * When assigning a user to Soloinsight-CloudGate SSO, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -53,7 +53,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Soloinsight-CloudGate SSO Add SCIM](media/soloinsight-cloudgate-sso-provisioning-tutorial/config.png)
 
-3.	Scroll down to the end of the page to get the **Tenant URL** and **Secret Token**. Copy the **Secret Token**. This value will be entered in the Secret Token field in the Provisioning tab of your Soloinsight-CloudGate SSO application.
+3.	Scroll down to the end of the page to get the **Tenant URL** and **Secret Token**. Copy the **Secret Token**. This value is entered in the Secret Token field in the Provisioning tab of your Soloinsight-CloudGate SSO application.
 
 	![Soloinsight-CloudGate SSO Create Token](media/soloinsight-cloudgate-sso-provisioning-tutorial/token.png)
 
@@ -109,15 +109,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Soloinsight-CloudGate SSO**.
 
-	![Soloinsight-CloudGate SSO User Mappings](media/soloinsight-cloudgate-sso-provisioning-tutorial/usermappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Soloinsight-CloudGate SSO in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Soloinsight-CloudGate SSO for update operations. Select the **Save** button to commit any changes.
 
 	![Soloinsight-CloudGate SSO User Attributes](media/soloinsight-cloudgate-sso-provisioning-tutorial/userattributes.png)
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Soloinsight-CloudGate SSO**.
-
-	![Soloinsight-CloudGate SSO Group Mappings](media/soloinsight-cloudgate-sso-provisioning-tutorial/groupmappings.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Soloinsight-CloudGate SSO in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Soloinsight-CloudGate SSO for update operations. Select the **Save** button to commit any changes.
 
@@ -133,7 +129,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, click **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -141,7 +137,7 @@ This operation starts the initial synchronization of all users and/or groups def
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

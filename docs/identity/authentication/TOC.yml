@@ -124,7 +124,7 @@
     items: 
       - name: Plan phishing-resistant passwordless authentication
         items: 
-        - name: Prerequisites
+        - name: Get started
           href: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
         - name: Plan and deploy
           href: how-to-deploy-phishing-resistant-passwordless-authentication.md
@@ -148,6 +148,8 @@
         items:
         - name: Enable passkeys in Authenticator (preview)
           href: how-to-enable-authenticator-passkey.md
+        - name: Support passkeys in Authenticator (preview)
+          href: how-to-support-authenticator-passkey.md
         - name: Register passkeys in Authenticator (preview)
           href: how-to-register-passkey-authenticator.md
         - name: Sign in with passkeys in Authenticator (preview)
