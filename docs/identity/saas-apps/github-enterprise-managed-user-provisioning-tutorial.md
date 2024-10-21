@@ -50,23 +50,14 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 <a name='step-2-configure-github-enterprise-managed-user-to-support-provisioning-with-azure-ad'></a>
 
-## Step 2: Configure GitHub Enterprise Managed User to support provisioning with Microsoft Entra ID
+## Step 2: Prepare to configure provisioning with Microsoft Entra ID
 
-1. The Tenant URL is `https://api.github.com/scim/v2/enterprises/{enterprise}`. This value will be entered in the Tenant URL field in the Provisioning tab of your GitHub Enterprise Managed User application.
+1. Identify your Tenant URL. This is the value that you will enter in the Tenant URL field in the Provisioning tab of your GitHub Enterprise Managed User application.
 
-2. As a GitHub Enterprise Managed administrator navigates to the upper-right corner -> click your profile photo -> then click **Settings**.
+   * For an enterprise on GitHub.com, the Tenant URL is `https://api.github.com/scim/v2/enterprises/{enterprise}`.
+   * For an enterprise on GHE.com, the Tenant URL is `https://api.{subdomain}.ghe.com/scim/v2/enterprises/{subdomain}`
 
-3. In the left sidebar, click **Developer settings**.
-
-4. In the left sidebar, click **Personal access tokens**.
-
-5. Click **Generate new token**.
-
-6. Select the **admin:enterprise** scope for this token.
-
-7. Click **Generate Token**.
-
-8. Copy and save the **secret token**. This value will be entered in the Secret Token field in the Provisioning tab of your GitHub Enterprise Managed User application.
+2. Ensure you have created a token with the **scim:enterprise** scope for your enterprise's setup user. This value will be entered in the Secret Token field in the Provisioning tab of your GitHub Enterprise Managed User application. See [Getting started with Enterprise Managed Users](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/getting-started-with-enterprise-managed-users#create-a-personal-access-token) on GitHub Docs.
 
 <a name='step-3-add-github-enterprise-managed-user-from-the-azure-ad-application-gallery'></a>
 

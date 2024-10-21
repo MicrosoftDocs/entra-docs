@@ -49,23 +49,14 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 <a name='step-2-configure-github-enterprise-managed-user-oidc-to-support-provisioning-with-azure-ad'></a>
 
-## Step 2: Configure GitHub Enterprise Managed User (OIDC) to support provisioning with Microsoft Entra ID
+## Step 2: Prepare to configure provisioning with Microsoft Entra ID
 
-1. The Tenant URL is `https://api.github.com/scim/v2/enterprises/{enterprise}`. This value will be entered in the Tenant URL field in the Provisioning tab of your GitHub Enterprise Managed User (OIDC) application.
+1. Identify your Tenant URL. This is the value that you will enter in the Tenant URL field in the Provisioning tab of your GitHub Enterprise Managed User application.
 
-2. As a GitHub Enterprise Managed administrator navigate to the upper-right corner -> click your profile photo -> then click **Settings**.
+   * For an enterprise on GitHub.com, the Tenant URL is `https://api.github.com/scim/v2/enterprises/{enterprise}`.
+   * For an enterprise on GHE.com, the Tenant URL is `https://api.{subdomain}.ghe.com/scim/v2/enterprises/{subdomain}`
 
-3. In the left sidebar, click **Developer settings**.
-
-4. In the left sidebar, click **Personal access tokens**.
-
-5. Click **Generate new token**.
-
-6. Select the **admin:enterprise** scope for this token.
-
-7. Click **Generate Token**.
-
-8. Copy and save the **secret token**. This value will be entered in the Secret Token field in the Provisioning tab of your GitHub Enterprise Managed User (OIDC) application.
+1. Ensure you have created a token with the **scim:enterprise** scope for your enterprise's setup user. This value will be entered in the Secret Token field in the Provisioning tab of your GitHub Enterprise Managed User application. See [Getting started with Enterprise Managed Users](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/getting-started-with-enterprise-managed-users#create-a-personal-access-token) on GitHub Docs.
 
 <a name='step-3-add-github-enterprise-managed-user-oidc-from-the-azure-ad-application-gallery'></a>
 
@@ -109,11 +100,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 5. Under the **Admin Credentials** section, input your GitHub Enterprise Managed User (OIDC) Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to GitHub Enterprise Managed User (OIDC). If the connection fails, ensure your GitHub Enterprise Managed User (OIDC) account has created the secret token as an enterprise owner and try again.
 
-   For "Tenant URL", type `https://api.github.com/scim/v2/enterprises/YOUR_ENTERPRISE`, replacing YOUR_ENTERPRISE with the name of your enterprise account.
-   
-   For example, if your enterprise account's URL is https://github.com/enterprises/octo-corp, the name of the enterprise account is octo-corp.
-   
-   For "Secret token", paste the personal access token with the admin:enterprise scope that  you created earlier.
+    * For "Tenant URL", type the tenant URL you identified earlier.
+
+        For example, if your enterprise account's URL is https://github.com/enterprises/octo-corp, the name of the enterprise account is octo-corp.
+
+   * For "Secret token", paste the GitHub personal access token that you created earlier.
    
      ![Token](common/provisioning-testconnection-tenanturltoken.png)
 

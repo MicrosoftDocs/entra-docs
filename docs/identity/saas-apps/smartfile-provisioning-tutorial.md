@@ -113,15 +113,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to SmartFile**.
 
-	![SmartFile User Mappings](media/smartfile-provisioning-tutorial/usermapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to SmartFile in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SmartFile for update operations. Select the **Save** button to commit any changes.
 
 	![SmartFile User Attributes](media/smartfile-provisioning-tutorial/userattribute.png)
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to SmartFile**.
-
-	![SmartFile Group Mappings](media/smartfile-provisioning-tutorial/groupmapping.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to SmartFile in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in SmartFile for update operations. Select the **Save** button to commit any changes.
 

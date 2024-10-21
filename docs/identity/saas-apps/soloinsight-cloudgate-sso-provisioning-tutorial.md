@@ -109,15 +109,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Soloinsight-CloudGate SSO**.
 
-	![Soloinsight-CloudGate SSO User Mappings](media/soloinsight-cloudgate-sso-provisioning-tutorial/usermappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Soloinsight-CloudGate SSO in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Soloinsight-CloudGate SSO for update operations. Select the **Save** button to commit any changes.
 
 	![Soloinsight-CloudGate SSO User Attributes](media/soloinsight-cloudgate-sso-provisioning-tutorial/userattributes.png)
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Soloinsight-CloudGate SSO**.
-
-	![Soloinsight-CloudGate SSO Group Mappings](media/soloinsight-cloudgate-sso-provisioning-tutorial/groupmappings.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Soloinsight-CloudGate SSO in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Soloinsight-CloudGate SSO for update operations. Select the **Save** button to commit any changes.
 
