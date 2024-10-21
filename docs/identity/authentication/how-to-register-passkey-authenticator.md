@@ -111,16 +111,16 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
 1. You're prompted to open the Authenticator app and create your passkey there. Open Authenticator and go through the privacy screens as needed.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-in-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
    
 1. Add your account in Authenticator on your iOS device. If you just downloaded Authenticator, you can tap **Add work or school account** near the bottom of your iOS device. If already using Authenticator, tap **+** in the upper right corner of the app and then tap on **Add work or school account**.
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot 233x433 of how to register using Microsoft Authenticator for iOS devices.":::
 
-1. The rest of the flow is similar to the flow shared above to sign in to the Authenticator and complete passkey registration. Complete MFA on your iOS device, and tap **Sign in**.
+1. The rest of the flow is similar to the flow shared earlier to sign in to the Authenticator and complete passkey registration. Complete MFA on your iOS device, and tap **Sign in**.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-sign-in-three.png" alt-text="Screenshot of how to complete MFA.":::
 
-1. Go through the steps to enable Touch ID/Face ID and select **Open Settings** to enable Authenticator as a passkey provider.
+1. Go through the steps to enable Touch ID or Face ID and select **Open Settings** to enable Authenticator as a passkey provider.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-provider-ios.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for iOS devices.":::
 
@@ -140,7 +140,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
 1. Return to your browser after you complete the passkey setup in Authenticator, and click **Next**. 
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/after-setup-in-authenticator.png" alt-text="Screenshot of return to wizard to complete the passkey setup in Authenticator.":::
 
 1. The wizard verifies the passkey was created in Authenticator. This step requires internet connectivity and Bluetooth on both devices.
 
@@ -262,13 +262,9 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/download-authenticator-laptop.png" alt-text="Screenshot that gives users an option to download Authenticator.":::
 
-1. Open Authenticator, go through the privacy scrteens as needed, and tap **Add account**.
+1. You're prompted to open the Authenticator app and create your passkey there. Open Authenticator and go through the privacy screens as needed.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/add-account-android.png" alt-text="Screenshot of how to add your first account to Authenticator on Android.":::
-
-1. Tap **Work or school account**. 
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/work-or-school-account-android.png" alt-text="Screenshot of how to add work or school account to Authenticator on Android.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-in-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
 
 1. Tap **Sign in**.
 
