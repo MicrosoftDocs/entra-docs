@@ -169,9 +169,7 @@
     - name: Web app authentication
       href: index-web-app.yml
     - name: Quickstart
-      items: 
-        - name: ASP.NET 
-          href: quickstart-web-app-aspnet-sign-in.md
+      items:
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js
