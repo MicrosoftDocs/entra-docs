@@ -26,7 +26,7 @@ When a guest user from an identity provider (IdP) can't sign in to a resource te
 
 ## B2B direct connect user is unable to access a shared channel (error AADSTS90071)
 
-When a B2B direct connect sees the following error message when trying to access another organization's Teams shared channel, mult-factor authentication trust settings haven't been configured by the external organization:
+When a B2B direct connect sees the following error message when trying to access another organization's Teams shared channel, multifactor authentication trust settings haven't been configured by the external organization:
 
 > The organization you're trying to reach needs to update their settings to let you sign in.
 >
