@@ -4,7 +4,7 @@ description: Guest user properties are configurable in Microsoft Entra B2B colla
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 10/24/2024
+ms.date: 10/21/2024
 
 ms.author: cmulligan
 author: csmulligan
