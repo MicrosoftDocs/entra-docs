@@ -24,7 +24,7 @@ Microsoft Authenticator supports passkeys, passwordless sign ins and MFA via not
 > - Users don't have the option to register their mobile app when they enable SSPR. Instead, users can register their mobile app at [https://aka.ms/mfasetup](https://aka.ms/mfasetup) or as part of the combined security info registration at [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).
 > - The Authenticator app may not be supported on beta versions of iOS and Android. In addition, starting October 20th, 2023 the Authenticator app on Android no longer supports older versions of the Android Company Portal. Android users with Company Portal versions below 2111 (5.0.5333.0) can't re-register or register new instances of Authenticator until they update their Company Portal application to a newer version.
 
-## Passkey sign-in
+## Passkey sign-in (preview)
 
 Authenticator is a free passkey solution that lets users do passwordless phishing-resistant authentications from their own phones. Some key benefits to using passkeys in the Authenticator app:
 
@@ -39,7 +39,7 @@ Authenticator is a free passkey solution that lets users do passwordless phishin
 
 Passkeys in the Authenticator app are device-bound to ensure that they never leave the device they were created on. On an iOS device, Authenticator uses the Secure Enclave to create the passkey. On Android, we create the passkey in the Secure Element on devices that support it, or fall back to the Trusted Execution Environment (TEE).
 
-### How passkey attestation works with Authenticator
+### How passkey attestation works with Authenticator 
 
 When attestation is enabled in the passkey (FIDO) policy, Microsoft Entra ID tries to verify the legitimacy of the passkey being created. When the user is registering a passkey in the Authenticator, attestation verifies that the legitimate Microsoft Authenticator app created the passkey by using Apple and Google services. Here’s more details: 
 

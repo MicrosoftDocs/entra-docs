@@ -1,5 +1,5 @@
 ---
-title: Register passkeys in Authenticator on Android and iOS devices
+title: Register passkeys in Authenticator on Android and iOS devices (preview)
 description: Registration and management of passkey with Authenticator on Android and iOS devices.
 
 ms.service: entra-id 
@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users can register a passkey in Microsoft Authenticator 
 
 ---
-# Register passkeys in Authenticator on Android or iOS devices
+# Register passkeys in Authenticator on Android or iOS devices (preview)
 
 This article shows how to register a passkey using Microsoft Authenticator on your iOS or Android device by directly signing into the Authenticator app or by using [Security info](https://aka.ms/mysecurityinfo). For more information on the availability of Microsoft Entra ID passkey (FIDO2) authentication across native apps, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
 

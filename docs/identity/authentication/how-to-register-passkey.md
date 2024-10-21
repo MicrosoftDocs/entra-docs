@@ -1,5 +1,5 @@
 ---
-title:  Register a passkey 
+title:  Register a passkey (preview)
 description: Registration and management of passkey.
 
 services: active-directory
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users will register a passkey using a browser or with a security key. 
 
 ---
-# Register a passkey
+# Register a passkey (preview)
 
 This article shows how users can register a security key using the **Passkey** flow. For registration on a mobile device, see [Register a passkey using a mobile device](how-to-register-passkey-mobile.md).
 
