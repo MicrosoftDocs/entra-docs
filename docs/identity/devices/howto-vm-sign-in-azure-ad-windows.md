@@ -183,7 +183,7 @@ There are two ways to configure role assignments for a VM:
 - Azure Cloud Shell experience
 
 > [!NOTE]
-> The Virtual Machine Administrator Login and Virtual Machine User Login roles use `dataActions`, so they can't be assigned at the management group scope. Currently, you can assign these roles only at the subscription, resource group, or resource scope.
+> The Virtual Machine Administrator Login and Virtual Machine User Login roles use `dataActions`, so they can't be assigned at the management group scope. Currently, you can assign these roles only at the subscription, resource group, or resource scope. Also note time-bound permissions (via PIM) are not supported, and assignements made should NOT be time-bound.
 
 <a name='azure-ad-portal'></a>
 
