@@ -3522,8 +3522,8 @@
   "Arculus FIDO2 U2F Key Card" : "9d3df6ba-282f-11ed-a261-0242ac120002",
   "ATKey.Card CTAP2.0" : "d41f5a69-b817-4144-a13c-9ebd6d9254d6",
   "ATKey.Card NFC" : "da1fa263-8b25-42b6-a820-c0036f21ba7f",
-  "ATKey.Pro CTAP2.0" "e1a96183-5016-4f24-b55b-e3ae23614cc6",
-  "ATKey.Pro CTAP2.1" "e416201b-afeb-41ca-a03d-2281c28322aa",
+  "ATKey.Pro CTAP2.0" : "e1a96183-5016-4f24-b55b-e3ae23614cc6",
+  "ATKey.Pro CTAP2.1" : "e416201b-afeb-41ca-a03d-2281c28322aa",
   "ATKey.ProS" : "ba76a271-6eb6-4171-874d-b6428dbe3437",
   "Atos CardOS FIDO2" : "1c086528-58d5-f211-823c-356786e36140",
   "authenton1 - CTAP2.1" : "b267239b-954f-4041-a01b-ee4f33c145b6",
@@ -3661,5 +3661,6 @@
   "Dynamics 365 customer service new tab" : "09e68a6e-b7ef-eb11-bacb-000d3a373d11",
   "Dynamics 365 Omnichanel sample payload" : "87b4d06c-abc2-e811-a9b0-000d3a10e09e",
   "Dynamics 365 customer service custom action" : "c3356c37-bba6-4067-b1a1-8c66e1c203a1",
-  "Dynamics 365 customer service sample code resource ID" : "268e3d0d-5e0c-eb11-a822-000d3aaf102a"
+  "Dynamics 365 customer service sample code resource ID" : "268e3d0d-5e0c-eb11-a822-000d3aaf102a",
+  "Azure SDK single org default tenant ID" : "22222222-2222-2222-2222-222222222222"
 }
