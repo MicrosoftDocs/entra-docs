@@ -5,7 +5,7 @@ description: Learn about using the Microsoft Authenticator in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/09/2024
+ms.date: 10/21/2024
 
 ms.author: justinha
 author: justinha
@@ -16,13 +16,20 @@ ms.reviewer: calui
 ---
 # Authentication methods in Microsoft Entra ID - Microsoft Authenticator app
 
-Microsoft Authenticator provides another level of security to your Microsoft Entra work or school account or your Microsoft account and is available for [Android](https://go.microsoft.com/fwlink/?linkid=866594) and [iOS](https://go.microsoft.com/fwlink/?linkid=866594). With the Microsoft Authenticator app, users can authenticate in a passwordless way during sign-in, or use it as another verification option during self-service password reset (SSPR) or multifactor authentication events.
+Microsoft Authenticator provides another level of security to your Microsoft Entra work or school account or your Microsoft account. It's available for [Android](https://go.microsoft.com/fwlink/?linkid=866594) and [iOS](https://go.microsoft.com/fwlink/?linkid=866594). With the Microsoft Authenticator app, users can authenticate in a passwordless way during sign-in. They can also use it as a verification option during self-service password reset (SSPR) or multifactor authentication (NFA) events.
 
-Microsoft Authenticator supports passkeys, passwordless sign ins and MFA via notifications and verification codes. Users can leverage passkeys in the Authenticator app with a biometric/device PIN to complete phishing-resistant authentications. Users leveraging Authenticator notifications can sign in with Authenticator instead of their username and password (see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md)). Users can also receive a MFA request on their mobile device and can approve or deny the sign-in attempt from their phone. Users can also leverage an OATH verification code in the Authenticator app and enter it in a sign-in interface. 
+Microsoft Authenticator supports passkey, passwordless sign in, and MFA by using notifications and verification codes. 
+
+- Users can sign in with a passkey in the Authenticator app and complete phishing-resistant authentication with their biometric sign-in or device PIN. 
+- Users can set up Authenticator notifications and sign in with Authenticator instead of their username and password. 
+- Users can receive an MFA request on their mobile device, and approve or deny the sign-in attempt from their phone. 
+- They can also use an OATH verification code in the Authenticator app and enter it in a sign-in interface. 
+
+For more information, see [Enable passwordless sign-in with the Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
 
 > [!NOTE]
-> - Users don't have the option to register their mobile app when they enable SSPR. Instead, users can register their mobile app at [https://aka.ms/mfasetup](https://aka.ms/mfasetup) or as part of the combined security info registration at [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).
-> - The Authenticator app may not be supported on beta versions of iOS and Android. In addition, starting October 20th, 2023 the Authenticator app on Android no longer supports older versions of the Android Company Portal. Android users with Company Portal versions below 2111 (5.0.5333.0) can't re-register or register new instances of Authenticator until they update their Company Portal application to a newer version.
+> Users don't have the option to register their mobile app when they enable SSPR. Instead, users can register their mobile app at [https://aka.ms/mfasetup](https://aka.ms/mfasetup) or as part of the combined security info registration at [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).
+> The Authenticator app may not be supported on beta versions of iOS and Android. In addition, starting October 20th, 2023 the Authenticator app on Android no longer supports older versions of the Android Company Portal. Android users with Company Portal versions below 2111 (5.0.5333.0) can't re-register or register new instances of Authenticator until they update their Company Portal application to a newer version.
 
 ## Passkey sign-in (preview)
 
@@ -41,7 +48,7 @@ Passkeys in the Authenticator app are device-bound to ensure that they never lea
 
 ### How passkey attestation works with Authenticator 
 
-When attestation is enabled in the passkey (FIDO) policy, Microsoft Entra ID tries to verify the legitimacy of the passkey being created. When the user is registering a passkey in the Authenticator, attestation verifies that the legitimate Microsoft Authenticator app created the passkey by using Apple and Google services. Here’s more details: 
+When attestation is enabled in the **Passkey (FIDO2)** policy, Microsoft Entra ID attempts to verify the legitimacy of the security key model or passkey provider where the passkey is being created. When a user registers a passkey in Authenticator, attestation verifies that the legitimate Microsoft Authenticator app created the passkey by using Apple and Google services. Here are details for how attestation works for each platform: 
 
 - iOS: Authenticator attestation uses the [iOS App Attest service](https://developer.apple.com/documentation/devicecheck/preparing-to-use-the-app-attest-service) to ensure the legitimacy of the Authenticator app before registering the passkey.  
 
