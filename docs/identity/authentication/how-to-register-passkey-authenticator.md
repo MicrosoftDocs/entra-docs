@@ -165,8 +165,8 @@ If a user is unable to sign in to the Authenticator to register a passkey, you c
 
 If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
-1. In Security Info, when adding a passkey, tap on **Having trouble**.
-2. Now, tap on "Register another way" and go through the rest of the flow. 
+1. In Security Info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
+2. Now, tap on **create your passkey a different way** and go through the rest of the flow. 
 
 
 ## Delete your passkey in Authenticator for iOS
@@ -308,9 +308,8 @@ If a user is unable to sign in to the Authenticator to register a passkey, you c
 
 If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
-1. In Security Info, when adding a passkey, tap on **Having trouble**.
-   
-1. Now, tap on "Register another way" and go through the rest of the flow. 
+1. In Security Info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
+2. Now, tap on **create your passkey a different way** and go through the rest of the flow. 
 
 ## Delete your passkey in Authenticator for Android
 
