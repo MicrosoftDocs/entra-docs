@@ -36,7 +36,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 ### Registration by signing in to Authenticator (iOS)
 
-You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. This is the recommended and preferred flow to set up a passkey in Authenticator. If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
+You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. **This is the recommended and preferred flow to set up a passkey in Authenticator.** If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
 1. Download Authenticator from the App Store, open it, and go through the privacy screens.
 1. Add your account in Authenticator on your iOS device. Tap **Add account** or the **+** button.
