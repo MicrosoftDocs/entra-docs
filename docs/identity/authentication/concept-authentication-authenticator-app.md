@@ -16,7 +16,7 @@ ms.reviewer: calui
 ---
 # Authentication methods in Microsoft Entra ID - Microsoft Authenticator app
 
-Microsoft Authenticator provides another level of security to your Microsoft Entra work or school account or your Microsoft account. It's available for [Android](https://go.microsoft.com/fwlink/?linkid=866594) and [iOS](https://go.microsoft.com/fwlink/?linkid=866594). With the Microsoft Authenticator app, users can authenticate in a passwordless way during sign-in. They can also use it as a verification option during self-service password reset (SSPR) or multifactor authentication (NFA) events.
+Microsoft Authenticator provides another level of security to your Microsoft Entra work or school account or your Microsoft account. It's available for [Android](https://go.microsoft.com/fwlink/?linkid=866594) and [iOS](https://go.microsoft.com/fwlink/?linkid=866594). With the Microsoft Authenticator app, users can authenticate in a passwordless way during sign-in. They can also use it as a verification option during self-service password reset (SSPR) or multifactor authentication (MFA) events.
 
 Microsoft Authenticator supports passkey, passwordless sign in, and MFA by using notifications and verification codes. 
 
@@ -39,7 +39,7 @@ Authenticator is a free passkey solution that lets users do passwordless phishin
 - Passkeys in Authenticator come at no more cost and travel with the user wherever they go.
 - Passkeys in Authenticator are device-bound which ensures the passkey doesn’t leave the device on which it was created.
 - Users stay up-to-date with latest passkey innovation based upon open WebAuthn standards.
-- Enterprises can layer other capabilities on top of authentication flows such as [FIPS 140 compliance](#fips-140-compliant-for-microsoft-entra-authentication).
+- Enterprises can layer other capabilities on top of authentication flows such as [Federal Information Processing Standards (FIPS) 140 compliance](#fips-140-compliant-for-microsoft-entra-authentication).
 
 
 ### Device-bound passkey
@@ -99,7 +99,7 @@ Users can have a combination of up to five OATH hardware tokens or authenticator
 
 ## FIPS 140 compliant for Microsoft Entra authentication
 
-Consistent with the guidelines outlined in [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html?azure-portal=true), authenticators used by US government agencies are required to use FIPS 140 validated cryptography. This guideline helps US government agencies meet the requirements of [Executive Order (EO) 14028](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/?azure-portal=true). Additionally, this guideline helps other regulated industries such as healthcare organizations working with [Electronic Prescriptions for Controlled Substances (EPCS)](/azure/compliance/offerings/offering-epcs-us) meet their regulatory requirements.
+Consistent with the guidelines outlined in [NIST Special Publication 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html), authenticators used by US government agencies are required to use FIPS 140 validated cryptography. This guideline helps US government agencies meet the requirements of [Executive Order (EO) 14028](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/?azure-portal=true). Additionally, this guideline helps other regulated industries such as healthcare organizations working with [Electronic Prescriptions for Controlled Substances (EPCS)](/azure/compliance/offerings/offering-epcs-us) meet their regulatory requirements.
 
 FIPS 140 is a US government standard that defines minimum security requirements for cryptographic modules in information technology products and systems. The [Cryptographic Module Validation Program (CMVP)](https://csrc.nist.gov/Projects/cryptographic-module-validation-program?azure-portal=true) maintains the testing against the FIPS 140 standard.
 
@@ -111,7 +111,7 @@ For more information about the FIPS 140 validated cryptographic modules being us
 
 
 ### Microsoft Authenticator for Android
-Beginning with version 6.2409.6094 on Microsoft Authenticator for Android, all authentications in Microsoft Entra ID, including passkeys, are now considered FIPS compliant. Authenticator leverages wolfSSL Inc.’s cryptographic module to achieve FIPS 140, Security Level 1 compliance on Android devices. For additional details on the certification being used, see [Cryptographic Module Validation Program | CSRC (nist.gov)](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4718).
+Beginning with version 6.2409.6094 on Microsoft Authenticator for Android, all authentications in Microsoft Entra ID, including passkeys, are considered FIPS-compliant. Authenticator uses wolfSSL Inc.’s cryptographic module to achieve FIPS 140, Security Level 1 compliance on Android devices. For more details about the certification, see [Cryptographic Module Validation Program](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4718).
 
 ## Determining Microsoft Authenticator registration type in Security info 
 Users can access [Security info](https://mysignins.microsoft.com/security-info) (see the URLs in the next section) or by selecting Security info from MyAccount to manage and add more Microsoft Authenticator registrations. Specific icons are used to differentiate whether the Microsoft Authenticator registration is passwordless phone sign-in or MFA. 
@@ -126,14 +126,14 @@ Microsoft Authenticator: (Notification/Code) | <img width="43" alt="Microsoft Au
 
 Cloud | Security info URL | 
 ------ | ------ | ------
-Azure commercial (includes GCC)   | https://aka.ms/MySecurityInfo 
+Azure commercial (includes Government Community Cloud (GCC))   | https://aka.ms/MySecurityInfo 
 Azure for US Government (includes GCC High and DoD) | https://aka.ms/MySecurityInfo-us 
 
 ## Updates to Authenticator
 
 Microsoft continuously updates Authenticator to maintain a high level of security. To ensure that your users are getting the best experience possible, we recommend having them continuously update their Authenticator App. In the case of critical security updates, app versions that aren't up to date may cease to work and may block users from completing their authentications. If a user is using a version of the app that is not supported, they will be prompted to upgrade to the latest version before being able to proceed with authentications.
 
-Microsoft will also periodically retire older versions of the Authenticator App to maintain a high security bar for your organization. If a user’s device doesn't support modern versions of the Microsoft Authenticator App, they can't sign with the app. We recommend having these users use an OATH verification code in the Microsoft Authenticator App to complete two-factor authentication.
+Microsoft also periodically retires older versions of the Authenticator App to maintain a high security bar for your organization. If a user’s device doesn't support modern versions of Microsoft Authenticator, they can't sign with the app. We recommend these users sign in with an OATH verification code in Microsoft Authenticator to complete MFA.
 
 ## Next steps
 
