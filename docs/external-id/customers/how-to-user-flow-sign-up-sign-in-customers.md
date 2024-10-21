@@ -28,7 +28,7 @@ You can create a simple sign-up and sign-in experience for your customers by add
 You can create multiple user flows if you have multiple applications that you want to offer to customers. Or, you can use the same user flow for many applications. However, an application can have only one user flow.
 
 > [!NOTE]
-> If you're creating local user accounts via Microsoft Graph and only need to support sign-in, you don't need to attach a user flow to your app. Refer to the Microsoft Graph REST API reference for an example of how to [create a customer account in external tenants](/graph/api/user-post-users#example-3-create-a-customer-account-in-external-tenants). Users can then sign in to your app with their username and password.
+> If you're creating local user accounts via Microsoft Graph and only need to support sign-in, you don't need to attach a user flow to your app. Refer to the Microsoft Graph REST API reference for an example of how to [create a customer account in external tenants](/graph/api/user-post-users#example-3-create-a-customer-account-in-external-tenants).
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=OnlineRetail)
