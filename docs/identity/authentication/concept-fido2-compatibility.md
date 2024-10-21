@@ -67,7 +67,7 @@ This table shows browser support for authenticating Microsoft Entra ID and Micro
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | **Android**  | &#x2705; | &#x2705;<sup>1</sup> | &#10060; | N/A |
 
-<sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
+<sup>1</sup>Support for passkeys in Authenticator using Edge on Android devices is coming soon. 
 
 ## Web browser support for each platform
 

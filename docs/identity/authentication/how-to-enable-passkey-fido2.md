@@ -1,11 +1,12 @@
 ---
-title: Enable passkeys for your organization (preview)
+title: Enable passkeys for your organization
 description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (FIDO2).
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/14/2024
+
 
 ms.author: justinha
 author: justinha
