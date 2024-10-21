@@ -40,7 +40,19 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
 1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 1. On the **Configure** tab:
    - Set **Allow self-service set up** to **Yes**. If set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys (FIDO2) are enabled by the Authentication methods policy.  
-   - Set **Enforce attestation** to **No** for preview. Attestation support is planned for General Availability.
+   - Set **Enforce attestation** to **Yes**. 
+
+     When attestation is enabled in the passkey (FIDO) policy, Microsoft Entra ID tries to verify the legitimacy of the passkey being created. When the user is registering a passkey in the Authenticator, attestation verifies that the legitimate Microsoft Authenticator app created the passkey by using Apple and Google services. Here’s more details: 
+
+     - iOS: Authenticator attestation uses the [iOS App Attest service](https://developer.apple.com/documentation/devicecheck/preparing-to-use-the-app-attest-service) to ensure the legitimacy of the Authenticator app before registering the passkey.  
+
+     - Android: 
+       - For Play Integrity attestation, Authenticator attestation uses the [Play Integrity API](https://developer.android.com/google/play/integrity/overview) to ensure the legitimacy of the Authenticator app before registering the passkey.  
+       - For Key attestation, Authenticator attestation uses [key attestation by Android](https://developer.android.com/privacy-and-security/security-key-attestation) to verify that the passkey being registered is hardware-backed.     
+
+     >[!NOTE]
+     >For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users may need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
+
    - Key restrictions set the usability of specific passkeys for both registration and authentication. Set **Enforce key restrictions** to **Yes** to only allow or block certain passkeys, which are identified by their AAGUIDs. 
    
      This setting must be **Yes** and you need to add the Microsoft Authenticator AAGUIDs to allow users to register passkeys in the Authenticator, either by signing into the Authenticator app, or by adding **Passkey in Microsoft Authenticator** from their Security info. 
