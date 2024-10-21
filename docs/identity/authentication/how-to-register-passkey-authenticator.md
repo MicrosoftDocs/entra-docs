@@ -74,8 +74,8 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
 1. Enable the Authenticator as a passkey provider. 
 
-   On iOS 18, navigate to **Settings** > **General** > **Autofill & Passwords**. 
-   On iOS 17, navigate to **Settings** > **Passwords** > **Password Options**. 
+   - On iOS 18, navigate to **Settings** > **General** > **Autofill & Passwords**. 
+   - On iOS 17, navigate to **Settings** > **Passwords** > **Password Options**. 
 
    On both operating systems, make sure **AutoFill Passwords and Passkeys** is turned on. 
    Under **Autofill From**, make sure **Authenticator** is selected.
@@ -161,7 +161,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
 
 ### Alternate registration flow from Security Info (iOS)
-If a user is unable to sign in to the Authenticator to register a passkey, you can fall back to triggering registration directly from Security Info. If initiating this flow from a browser on a different device, Bluetooth and an internet connection will be required for both devices. Additionally, this flow only works when attestation is disabled for the user. 
+If a user is unable to sign in to the Authenticator to register a passkey, you can fall back to triggering registration directly from Security Info. If initiating this flow from a browser on a different device, Bluetooth and an internet connection will be required for both devices. Additionally, this flow only works when attestation is disabled in the passkey (FIDO2) authentication methods policy. 
 
 If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
@@ -304,7 +304,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
 ## Alternate registration flow on Security Info (Android)
 
-If a user is unable to sign in to the Authenticator to register a passkey, you can fall back to triggering registration directly from Security Info. If initiating this flow from a browser on a different device, Bluetooth and an internet connection will be required for both devices. Additionally, this flow only works when attestation is disabled for the user.  
+If a user is unable to sign in to the Authenticator to register a passkey, you can fall back to triggering registration directly from Security Info. If initiating this flow from a browser on a different device, Bluetooth and an internet connection will be required for both devices. Additionally, this flow only works when attestation is disabled in the passkey (FIDO2) authentication methods policy.  
 
 If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
