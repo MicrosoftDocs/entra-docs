@@ -135,8 +135,6 @@ Microsoft Internet Access has features to configure a security profile with a pr
 1. In the **Microsoft Entra admin center** \> **Global Secure Access** \> **Monitor**, select [**Traffic logs**](../global-secure-access/how-to-view-traffic-logs.md). If needed, select **Add filter**. Filter when **User principal name** contains *testuser* and **Action** set to **Block**.
 1. Observe the entries for your target FQDN that show traffic as blocked and then allowed. There may be a delay of up to 20 minutes for entries to appear in the log.
 
-   [ ![Screenshot of Global Secure Access, Monitor, Traffic logs for baseline policy.](media/sse-deployment-guide-internet-access/global-secure-access-monitor-traffic-logs-baseline-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-monitor-traffic-logs-baseline-expanded.png#lightbox)
-
 ## Sample PoC scenario: Block a group from accessing websites based on category
 
 Use Microsoft Entra Internet Access to block or allow access to internet sites based on category. These areas include gambling, alcohol, and tobacco sites. Manually managing blocklists isn't required. Complete the following tasks to configure Microsoft Entra Internet Access to block alcohol and tobacco sites for your test user.
@@ -261,8 +259,6 @@ Use Microsoft Entra Internet Access to block or allow access to internet sites b
 1. In the **Microsoft Entra admin center** \> **Global Secure Access** \> **Monitor**, select **Traffic logs**.
 1. If needed, select **Add filter**. Filter when **User principal name** contains *testuser* and **Action** set to **Block**.
 1. Observe the entries for your target FQDN that show traffic as blocked and then allowed. There can be a delay of up to 20 minutes for entries to appear in the log.
-
-   [ ![Screenshot of Global Secure Access, Monitor, Traffic logs for category.](media/sse-deployment-guide-internet-access/global-secure-access-monitor-traffic-logs-category-inline.png)](media/sse-deployment-guide-internet-access/global-secure-access-monitor-traffic-logs-category-expanded.png#lightbox)
 
 ## Sample PoC scenario: Block a group from accessing websites based on FQDN
 
@@ -490,8 +486,6 @@ In some cases, you might have users that require access to blocked sites for gro
 
 1. In the **Microsoft Entra admin center** \> **Global Secure Access** \> **Monitor**, select **Traffic logs**. If needed, select **Add filter**. Filter when **User principal name** contains *testuser* and **Action** set to **Block**.
 1. Observe the entries for your target FQDN that show traffic as blocked and then allowed. There can be a delay of up to 20 minutes for entries to appear in the log.
-
-   [ ![Screenshot of Global Secure Access - Advanced diagnostic, Network traffic to allow blocked Internet Access.](media/sse-deployment-guide-internet-access/network-traffic-allow-blocked-traffic-inline.png)](media/sse-deployment-guide-internet-access/network-traffic-allow-blocked-traffic-expanded.png#lightbox)
 
 ## Next steps
 

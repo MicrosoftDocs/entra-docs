@@ -1,11 +1,11 @@
 ---
-title: "Quickstart: Sign in users and call the Microsoft Graph API from a Node.js web application using MSAL Node"
+title: "Quickstart: Sign in to a web app & call an API - Node.js"
 description: In this quickstart, you learn how to implement authentication with a Node.js web app and the Microsoft Authentication Library (MSAL) for Node.js.
 author: cilwerner
 manager: celested
 ms.author: cwerner
 ms.custom: scenarios:getting-started, languages:js, devx-track-js
-ms.date: 04/09/2024
+ms.date: 10/16/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -13,13 +13,9 @@ ms.topic: quickstart
 #Customer intent: As an application developer, I want to know how to set up authentication in a web application built using Node.js and MSAL Node.
 ---
 
-# Quickstart: Sign in users and call the Microsoft Graph API from a Node.js web application using MSAL Node
+# Quickstart: Sign in users and call the Microsoft Graph API from a Node.js web app
 
-In this quickstart, you download and run a code sample that demonstrates how a Node.js web app can sign in users by using the authorization code flow. The code sample also demonstrates how to get an access token to call the Microsoft Graph API.
-
-See [How the sample works](#how-the-sample-works) for an illustration.
-
-This quickstart uses the Microsoft Authentication Library for Node.js (MSAL Node) with the authorization code flow.
+This quickstart uses a sample Node.js web app to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) and call the Microsoft Graph API. The sample uses [MSAL Node](/javascript/api/@azure/msal-node) to handle authentication.
 
 ## Prerequisites
 
@@ -27,30 +23,35 @@ This quickstart uses the Microsoft Authentication Library for Node.js (MSAL Node
 * [Node.js](https://nodejs.org/en/download/)
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 
+## Register the application and record identifiers
 
-## Register and download your quickstart application
+[!INCLUDE [Register a single-page application](./includes/register-app/web-app-common/register-application-web-app-common.md)]
 
-#### Step 1: Register your application
+## Add a platform redirect URI and create a client secret
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+To specify your app type to your app registration, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
-1. Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
-1. Under **Supported account types**, select **Accounts in this organizational directory only**.
-1. Set the **Redirect URI** type to **Web** and value to `http://localhost:3000/auth/redirect`.
-1. Select **Register**.
-1. On the app **Overview** page, note the **Application (client) ID** value for later use.
-1. Under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.  Leave the description blank and default expiration, and then select **Add**.
-1. Note the value of **Client secret** for later use.
+1. Under **Manage**, select **Authentication**.
+1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
+1. For the **Redirect URIs** enter `http://localhost:3000/auth/redirect`.
+1. Under **Front-channel logout URL**, enter `https://localhost:5001/signout-callback-oidc` for signing out.
+1. Select **Configure** to save your changes.
+1. Under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.  Choose a description, and then select **Add**.
+1. Note the value of **Client secret** for later use. **This value is only displayed once.**
 
-#### Step 2: Download the project
+## Clone or download the sample application
 
-To run the project with a web server by using Node.js, [download the core project files](https://github.com/Azure-Samples/ms-identity-node/archive/main.zip).
+To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
 
+* To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-#### Step 3: Configure your Node app
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-node.git
+    ```
+
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-node/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+
+## Configure the project
 
 Extract the project, open the *ms-identity-node-main* folder, and then open the *.env* file under the *App* folder. Replace the values above as follows:
 
@@ -65,7 +66,7 @@ Extract the project, open the *ms-identity-node-main* folder, and then open the 
 
 Your file should look similar to below:
 
-```text
+```env
 CLOUD_INSTANCE=https://login.microsoftonline.com/
 TENANT_ID=aaaabbbb-0000-cccc-1111-dddd2222eeee
 CLIENT_ID=00001111-aaaa-2222-bbbb-3333cccc4444
@@ -80,7 +81,7 @@ EXPRESS_SESSION_SECRET=6DP6v09eLiW7f1E65B8k
 ```
 
 
-#### Step 4: Run the project
+## Run the application and sign in
 
 Run the project by using Node.js.
 
@@ -112,7 +113,7 @@ The MSAL Node library signs in users and requests the tokens that are used to ac
 npm install @azure/msal-node
 ```
 
-## Next steps
+## Next step
 
 Learn more by building an ASP.NET Core web app that signs in users in the following multi-part tutorial series:
 
