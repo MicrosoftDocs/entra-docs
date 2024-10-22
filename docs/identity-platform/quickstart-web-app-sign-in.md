@@ -40,7 +40,7 @@ This quickstart uses a sample web app to show you how to sign in users in your e
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
-#### [ASP.NET Core](#tab/node)
+#### [ASP.NET Core](#tab/asp-dot-net-core)
 
 - Although any IDE that supports ASP.NET Core applications can be used, Visual Studio Code is used for this guide. It can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads/) page.
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet).
@@ -71,7 +71,7 @@ This quickstart uses a sample web app to show you how to sign in users in your e
 
 PLACEHOLDER
 
-#### [ASP.NET Core](#tab/node)
+#### [ASP.NET Core](#tab/asp-dot-net-core)
 
 PLACEHOLDER
 
