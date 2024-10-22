@@ -193,7 +193,7 @@ To handle user authentication and session management using MSAL in Angular, you 
       templateUrl: './app.component.html'
     })
     export class AppComponent implements OnInit, OnDestroy {
-      title = 'Angular 12 - MSAL Example';
+      title = 'Angular - MSAL Example';
       loginDisplay = false;
       tokenExpiration: string = '';
       private readonly _destroying$ = new Subject<void>();

@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Sign in user in Angular Single-page Application"
-description: Prepare an Angular Single-page Application in a Microsoft Entra tenant to manage authentication and secure user access.
+description: Sign in user in an Angular Single-page Application in a Microsoft Entra tenant to manage authentication and secure user access.
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
