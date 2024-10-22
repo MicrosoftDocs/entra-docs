@@ -24,6 +24,7 @@ This quickstart uses a sample web app to show you how to sign in users in your w
 
 ::: zone-end 
 
+COMMON PLACEHOLDER
 
 ::: zone pivot="external"
 
