@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: how-to
-ms.date: 08/25/2024
+ms.date: 10/17/2024
 ms.author: jricketts
 ms.reviewer: ajburnle
 ms.custom:
@@ -74,6 +74,11 @@ The following sections provide guidance about how to implement the principles de
 In Microsoft Entra ID, users who have privileged roles, such as administrators, are the root of trust to build and manage the rest of the environment. Implement the following practices to minimize the effects of a compromise.
 
 - Use cloud-only accounts for Microsoft Entra ID and Microsoft 365 privileged roles.
+
+    For each role with high privileges, you should do the following:
+
+    - Review the users that have `onPremisesImmutableId` and `onPremisesSyncEnabled` set. See Microsoft Graph API [user resource type](/graph/api/resources/user).
+    - Create cloud-only user accounts for those individuals and remove their hybrid identity from privileged roles.
 
 - Deploy privileged access devices for privileged access to manage Microsoft 365 and Microsoft Entra ID. See [Device roles and profiles](/security/privileged-access-workstations/privileged-access-devices#device-roles-and-profiles).
 

@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	![Screenshot shows the image of attributes.](common/default-attributes.png "Image")
 
    > [!Note]
-   > Please delete **Name**, **Givenname**, **Surname** manually from the above default attributes in the Entra portal as per application requirement.
+   > Please delete **Name**, **Givenname**, **Surname** manually from the above default attributes in the Microsoft Entra admin center as per application requirement.
 
 1. In addition to above, MAMORIO Biz application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	

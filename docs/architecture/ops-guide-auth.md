@@ -146,8 +146,6 @@ If you would like to learn more about passwordless authentication, see [A world 
 
 Providing a standardized single sign-on mechanism to the entire enterprise is crucial for best user experience, reduction of risk, ability to report, and governance. If you're using applications that support SSO with Microsoft Entra ID but are currently configured to use local accounts, you should reconfigure those applications to use SSO with Microsoft Entra ID. Likewise, if you're using any applications that support SSO with Microsoft Entra ID but are using another Identity Provider, you should reconfigure those applications to use SSO with Microsoft Entra ID as well. For applications that don't support federation protocols but do support forms-based authentication, we recommend you configure the application to use [password vaulting](~/identity/app-proxy/application-proxy-configure-single-sign-on-password-vaulting.md) with Microsoft Entra application proxy.
 
-![AppProxy Password-based Sign-on](./media/ops-guide-auth/ops-img8.png)
-
 > [!NOTE]
 > If you don't have a mechanism to discover unmanaged applications in your organization, we recommend implementing a discovery process using a cloud application security broker (CASB) such as [Microsoft Defender for Cloud Apps](https://www.microsoft.com/enterprise-mobility-security/cloud-app-security).
 

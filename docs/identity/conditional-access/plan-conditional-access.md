@@ -269,8 +269,6 @@ If a user has an issue with a Conditional Access policy, collect the following i
 
 If the user received a message with a More details link, they can collect most of this information for you.
 
-![Screenshots of an example error message and more details.](media/plan-conditional-access/cant-get-to-app.png)
-
 Once you collect the information, see the following resources:
 
 - [Sign-in problems with Conditional Access](troubleshoot-conditional-access.md) – Understand unexpected sign-in outcomes related to Conditional Access using error messages and Microsoft Entra sign-in log.
