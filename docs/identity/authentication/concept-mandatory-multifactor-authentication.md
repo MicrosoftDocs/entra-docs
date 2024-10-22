@@ -63,9 +63,9 @@ Some customers apply Conditional Access policies to user-based service accounts.
  
 This requirement for MFA at sign-in is implemented for admin portals. Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) shows it as the source of the MFA requirement. 
 
-Mandatory MFA for admin portals isn't configurable. It's implemented separately from any access policies thet you configured in your tenant. 
+Mandatory MFA for admin portals isn't configurable. It's implemented separately from any access policies that you configured in your tenant. 
 
-This requirement is implemented on top of . For example, if your organization chose to retain Microsoft’s [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users don't see any changes as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users don't see a change. Similarly, any restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, continue to be enforced. Users don't see any changes.
+For example, if your organization chose to retain Microsoft’s [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users don't see any changes as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users don't see a change. Similarly, any restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, continue to be enforced. Users don't see any changes.
 
 ## Enforcement phases 
 
@@ -115,11 +115,11 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: Is MFA mandatory for all users or only administrators? 
 
-**Answer**: All users who sign in to any of the [applications](#applications) listed earlier are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md#user-exclusions) that are enabled for them.
+**Answer**: All users who sign in to any of the [applications](#applications) listed earlier are required to complete MFA, regardless of any administrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md#user-exclusions) that are enabled for them.
 
 **Question**: Will I need to complete MFA if I choose the option to Stay signed in?
 
-**Answer**: Yes, even if you choose **Stay signed in**, you're required to complete MFA before you can sign in to any these [applications](#applications).
+**Answer**: Yes, even if you choose **Stay signed in**, you're required to complete MFA before you can sign in to these [applications](#applications).
 
 **Question**: Will the enforcement apply to B2B guest accounts?
 
@@ -131,7 +131,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: Will phase 1 or phase 2 of mandatory MFA impact my ability to sync with Microsoft Entra Connect or Microsoft Entra Cloud Sync?
 
-**Answer**: No. The syncronization service account isn't affected by the manadatory MFA requirement. Only [applications](#applications) listed earlier require MFA for sign in. 
+**Answer**: No. The synchronization service account isn't affected by the mandatory MFA requirement. Only [applications](#applications) listed earlier require MFA for sign in. 
 
 **Question**: Will I be able to opt out? 
 
@@ -150,7 +150,7 @@ An option to postpone the enforcement start date is available for customers. Bet
 
 **Question**: How can I review MFA activity in Microsoft Entra ID? 
 
-**Answer**: To review details about when a user is prompted to sign-in with MFA, use the Microsoft Entra sign-ins report. For more information, see [Sign-in event details for Microsoft Entra multifactor authentication](howto-mfa-reporting.md).
+**Answer**: To review details about when a user is prompted to sign in with MFA, use the Microsoft Entra sign-ins report. For more information, see [Sign-in event details for Microsoft Entra multifactor authentication](howto-mfa-reporting.md).
 
 **Question**: What if I have a "break glass" scenario? 
 
