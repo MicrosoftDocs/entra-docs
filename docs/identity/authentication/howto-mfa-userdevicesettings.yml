@@ -40,9 +40,9 @@ prerequisites:
     
 procedureSection:
   - title: |
-      Add or edit authentication methods for a user 
+      Add or change authentication methods for a user 
     summary: |
-      You can add or edit authentication methods for a user by using the Microsoft Entra admin center or Microsoft Graph PowerShell. 
+      You can add or change authentication methods for a user by using the Microsoft Entra admin center or Microsoft Graph PowerShell. 
       In the Microsoft Entra admin center, the leagcy method for managing user authentication methods will be retired after Oct. 31, 2024. 
 
       > [!NOTE]
@@ -50,13 +50,17 @@ procedureSection:
 
       :::image type="content" source="media/howto-mfa-userdevicesettings/add-authentication-method-detail.png" alt-text="Screenshot of how to add authentication methods from the Microsoft Entra admin center.":::
 
-      To add authentication methods for a user in the Microsoft Entra admin center:  
+      To add or change authentication methods for a user in the Microsoft Entra admin center:  
       1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
       1. Browse to **Identity** > **Users** > **All users**. 
-      1. Choose the user for whom you wish to edit or add an authentication method and select **Authentication methods**.  
+      1. Choose the user for whom you wish to add or change an authentication method and select **Authentication methods**.  
       1. At the top of the window, select **+ Add authentication method**.
          - Select a method (phone number or email). Email may be used for self-password reset but not authentication. When adding a phone number, select a phone type and enter phone number with valid format (such as `+1 4255551234`).
          - Select **Add**.
+
+      Users can add or edit their own authentication methods in [My Sign Ins | Security info](https://mysignins.microsoft.com/security-info). 
+      For example, to change the phone number, select **Phone number** and tap **Change**.
+
 
       ### Manage methods using PowerShell
 
