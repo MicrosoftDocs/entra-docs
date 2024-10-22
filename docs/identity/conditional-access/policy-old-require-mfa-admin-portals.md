@@ -12,11 +12,11 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Require multifactor authentication for admins accessing Microsoft admin portals
+# Require multifactor authentication for admins accessing Microsoft admin portals
 
 Microsoft recommends securing access to any Microsoft admin portals like Microsoft Entra, Microsoft 365, Exchange, and Azure. Using the [Microsoft Admin Portals](concept-conditional-access-cloud-apps.md#microsoft-admin-portals) app organizations can control interactive access to Microsoft admin portals.
 
-Microsoft recommends you enable this policy for the following roles at a minimum, based on [identity score recommendations](~/identity/monitoring-health/concept-identity-secure-score.md):
+Microsoft recommends you require phishing-resistant multifactor authentication on the following roles at a minimum:
 
 [!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
 

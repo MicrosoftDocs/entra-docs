@@ -47,7 +47,7 @@ This section shows how to create the required Conditional Access policy.
    1. Select **Microsoft Admin Portals**, and then choose **Select**.
 1. Under **Access controls**, select **Grant**.
    1. Select **Grant access**.
-   1. Select the terms of use you created previously called and choose **Select**.
+   1. Select the terms of use you created previously and choose **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 

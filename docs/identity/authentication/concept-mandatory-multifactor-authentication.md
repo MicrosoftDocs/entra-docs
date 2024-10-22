@@ -125,7 +125,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: Is MFA mandatory for all users or only administrators? 
 
-**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md#user-exclusions) that are enabled for them.
+**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
 
 **Question**: Will I need to complete MFA if I choose the option to Stay signed in?
 
@@ -152,7 +152,7 @@ An option to postpone the enforcement start date is available for customers. Bet
  
 **Question**: Can I test MFA before Azure enforces the policy to ensure nothing breaks? 
 
-**Answer**: Yes, you can [test their MFA](~/identity/authentication/tutorial-enable-azure-mfa.md#test-microsoft-entra-multifactor-authentication) through the manual setup process for MFA. We encourage you to set this up and test. If you use Conditional Access to enforce MFA, you can use Conditional Access templates to test your policy. For more information, see [Require multifactor authentication for admins accessing Microsoft admin portals](~/identity/conditional-access/how-to-policy-mfa-admin-portals.md). If you run a free edition of Microsoft Entra ID, you can enable [security defaults](~/fundamentals/security-defaults.md). 
+**Answer**: Yes, you can [test their MFA](~/identity/authentication/tutorial-enable-azure-mfa.md#test-microsoft-entra-multifactor-authentication) through the manual setup process for MFA. We encourage you to set this up and test. If you use Conditional Access to enforce MFA, you can use Conditional Access templates to test your policy. For more information, see [Require multifactor authentication for admins accessing Microsoft admin portals](~/identity/conditional-access/policy-old-require-mfa-admin-portals.md). If you run a free edition of Microsoft Entra ID, you can enable [security defaults](~/fundamentals/security-defaults.md). 
 
 **Question**: What if I already have MFA enabled, what happens next? 
 

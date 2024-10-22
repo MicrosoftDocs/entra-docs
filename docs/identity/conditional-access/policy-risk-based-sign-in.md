@@ -5,14 +5,14 @@ description: Create Conditional Access policies using Microsoft Entra ID Protect
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 09/17/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth, cokoopma
 ---
-# Common Conditional Access policy: Sign-in risk-based multifactor authentication
+# Require multifactor authentication for elevated sign-in risk
 
 Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You might want to block that user or maybe ask them to perform multifactor authentication to prove that they're really who they say they are. 
 
@@ -34,6 +34,6 @@ The Sign-in risk-based policy protects users from registering MFA in risky sessi
 - [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
 - [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)
-- [User risk-based Conditional Access](howto-conditional-access-policy-risk-user.md)
+- [User risk-based Conditional Access](policy-risk-based-user.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions](concept-conditional-access-report-only.md)

@@ -5,14 +5,14 @@ description: Create a custom Conditional Access policy to require compliant, hyb
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: calebb, lhuangnorth
 ---
-# Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users
+# Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users
 
 Organizations who deploy Microsoft Intune can use the information returned from their devices to identify devices that meet compliance requirements such as:
 
@@ -21,7 +21,7 @@ Organizations who deploy Microsoft Intune can use the information returned from 
 * Requiring a minimum or maximum operating system version
 * Requiring a device isn't jailbroken or rooted
 
-Policy compliance information is sent to Microsoft Entra ID where Conditional Access decides to grant or block access to resources. More information about device compliance policies can be found in the article, [Set rules on devices to allow access to resources in your organization using Intune](/intune/protect/device-compliance-get-started)
+Policy compliance information is sent to Microsoft Entra ID where Conditional Access decides to grant or block access to resources. More information about device compliance policies can be found in the article, [Set rules on devices to allow access to resources in your organization using Intune](/mem/intune/protect/device-compliance-get-started)
 
 Requiring a Microsoft Entra hybrid joined device is dependent on your devices already being Microsoft Entra hybrid joined. For more information, see the article [Configure Microsoft Entra hybrid join](~/identity/devices/how-to-hybrid-join.md).
 
@@ -68,8 +68,6 @@ Organizations that use the Subscription Activation feature to enable users to "s
 - [Windows Store for Business, AppID 45a330b1-b1ec-4cc1-9161-9f03992aa49f](/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).
 
 Although the app ID is the same in both instances, the name of the cloud app depends on the tenant.
-
-For more information about configuring exclusions in Conditional Access policies, see [Application exclusions](/azure/active-directory/conditional-access/howto-conditional-access-policy-all-users-mfa#application-exclusions).
 
 <!-- 8605089 -->
 

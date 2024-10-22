@@ -122,7 +122,7 @@ There are two ways to use Conditional Access policies to block legacy authentica
  
 ### Directly blocking legacy authentication
 
-The easiest way to block legacy authentication across your entire organization is by configuring a Conditional Access policy that applies specifically to legacy authentication clients and blocks access. When assigning users and applications to the policy, make sure to exclude users and service accounts that still need to sign in using legacy authentication. When choosing the cloud apps in which to apply this policy, select All cloud apps, targeted apps such as Office 365 (recommended) or at a minimum, Office 365 Exchange Online. Organizations can use the policy available in [Conditional Access templates](concept-conditional-access-policy-common.md) or the common policy [Conditional Access: Block legacy authentication](howto-conditional-access-policy-block-legacy.md) as a reference.
+The easiest way to block legacy authentication across your entire organization is by configuring a Conditional Access policy that applies specifically to legacy authentication clients and blocks access. When assigning users and applications to the policy, make sure to exclude users and service accounts that still need to sign in using legacy authentication. When choosing the cloud apps in which to apply this policy, select All cloud apps, targeted apps such as Office 365 (recommended) or at a minimum, Office 365 Exchange Online. Organizations can use the policy available in [Conditional Access templates](concept-conditional-access-policy-common.md) or the common policy [Conditional Access: Block legacy authentication](policy-block-legacy-authentication.md) as a reference.
 
 ### Indirectly blocking legacy authentication
 
