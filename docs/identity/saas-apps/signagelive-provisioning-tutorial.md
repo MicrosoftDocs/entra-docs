@@ -39,13 +39,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Signagelive   
 
-* It is recommended that a single Microsoft Entra user is assigned to Signagelive    to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It+'s recommended that a single Microsoft Entra user is assigned to Signagelive    to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
 
 * When assigning a user to Signagelive, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup Signagelive  for provisioning
+## Set up Signagelive  for provisioning
 
-Before configuring Signagelive for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Signagelive.
+Before configuring Signagelive for automatic user provisioning with Microsoft Entra ID, you'll need to enable SCIM provisioning on Signagelive.
 
   Reach out to  [Signagelive](mailto:development@signagelive.com) to obtain the secret token needed to configure SCIM provisioning.
 
@@ -100,15 +100,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Signagelive**.
 
-	![Screenshot of the Mappings section with the Synchronize Microsoft Entra users to Signagelive option called out.](media/signagelive-provisioning-tutorial/usermapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Signagelive in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Signagelive for update operations. Select the **Save** button to commit any changes.
 
 	![Screenshot of the Attribute Mappings section with seven mappings displayed.](media/signagelive-provisioning-tutorial/userattribute.png)
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra group to Signagelive**.
-
-	![Screenshot of the Mappings section with the Synchronize Microsoft Entra group to Signagelive option called out.](media/signagelive-provisioning-tutorial/groupmapping.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Signagelive in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the group accounts in Signagelive for update operations. Select the **Save** button to commit any changes.
 
@@ -124,15 +120,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, click **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs. For more information on how long it will take for users and/or groups to provision, see [How long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users). 
+This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs. For more information on how long it takes for users and/or groups to provision, see [How long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users). 
 
 You can use the **Current Status** section to monitor progress and follow links to your provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Signagelive. For more information, see [Check the status of user provisioning](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md). To read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
