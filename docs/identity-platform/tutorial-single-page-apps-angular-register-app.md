@@ -42,4 +42,5 @@ In this tutorial:
 
 ## Next steps
 
-Test
+> [!div class="nextstepaction"]
+> [Tutorial: Prepare an application for authentication](tutorial-single-page-apps-angular-prepare-app.md)
