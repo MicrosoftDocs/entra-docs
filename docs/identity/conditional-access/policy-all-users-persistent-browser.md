@@ -1,20 +1,20 @@
 ---
-title: Conditional Access - Use application enforced restrictions for unmanaged devices
-description: Create a custom Conditional Access policy for unmanaged devices.
+title: Require reauthentication with Conditional Access
+description: Create a custom Conditional Access policy requiring reauthentication.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Use application enforced restrictions for unmanaged devices
+# Require reauthentication and disable browser persistence
 
-Block or limit access to SharePoint, OneDrive, and Exchange content from unmanaged devices.
+Protect user access on unmanaged devices by preventing browser sessions from remaining signed in after the browser is closed and setting a sign-in frequency to 1 hour.
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
@@ -30,10 +30,16 @@ Block or limit access to SharePoint, OneDrive, and Exchange content from unmanag
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
-1. Under **Target resources** > **Cloud apps**, select the following options:
-   1. Under **Include**, choose **Select apps**.
-   1. Choose **Office 365**, then select **Select**.
-1. Under **Access controls** > **Session**, select **Use app enforced restrictions**, then select **Select**.
+1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
+1. Under **Conditions** > **Filter for devices**, set **Configure** to **Yes**. 
+   1. Under **Devices matching the rule:**, set to **Include filtered devices in policy**.
+   1. Under **Rule syntax** select the **Edit** pencil and paste the following expressing in the box, then select **Apply**. 
+      1. device.trustType -ne "ServerAD" -or device.isCompliant -ne True
+   1. Select **Done**.
+1. Under **Access controls** > **Session**
+   1. Select **Sign-in frequency**, specify **Periodic reauthentication**, and set the duration to **1** and the period to **Hours**.
+   1. Select **Persistent browser session**, and set **Persistent browser session** to **Never persistent**.
+   1. Select, **Select**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 

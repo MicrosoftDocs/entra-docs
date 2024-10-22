@@ -41,7 +41,7 @@ This article describes how to enforce MFA for your customers by creating a Micro
 
 ## Create a Conditional Access policy
 
-Create a Conditional Access policy in your external tenant that prompts users for MFA when they sign up or sign in to your app. (For more information, see [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)).
+Create a Conditional Access policy in your external tenant that prompts users for MFA when they sign up or sign in to your app. (For more information, see [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/policy-all-users-mfa-strength.md)).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 

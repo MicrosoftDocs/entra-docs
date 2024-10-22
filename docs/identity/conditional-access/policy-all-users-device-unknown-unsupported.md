@@ -1,20 +1,22 @@
 ---
-title: Require reauthentication with Conditional Access
-description: Create a custom Conditional Access policy requiring reauthentication.
+title: Block unsupported platforms with Conditional Access
+description: Create a custom Conditional Access policy blocking unsupported platforms.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Require reauthentication and disable browser persistence
+# Block unknown or unsupported device platform
 
-Protect user access on unmanaged devices by preventing browser sessions from remaining signed in after the browser is closed and setting a sign-in frequency to 1 hour.
+Users are blocked from accessing company resources when the device type is unknown or unsupported.
+
+The [device platform condition](concept-conditional-access-conditions.md#device-platforms) is based on user agent strings. Conditional Access policies using it should be used with another policy, like one requiring device compliance or app protection policies.
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
@@ -31,15 +33,14 @@ Protect user access on unmanaged devices by preventing browser sessions from rem
    1. Under **Include**, select **All users**
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
-1. Under **Conditions** > **Filter for devices**, set **Configure** to **Yes**. 
-   1. Under **Devices matching the rule:**, set to **Include filtered devices in policy**.
-   1. Under **Rule syntax** select the **Edit** pencil and paste the following expressing in the box, then select **Apply**. 
-      1. device.trustType -ne "ServerAD" -or device.isCompliant -ne True
-   1. Select **Done**.
-1. Under **Access controls** > **Session**
-   1. Select **Sign-in frequency**, specify **Periodic reauthentication**, and set the duration to **1** and the period to **Hours**.
-   1. Select **Persistent browser session**, and set **Persistent browser session** to **Never persistent**.
-   1. Select, **Select**
+1. Under **Conditions**, select **Device platforms**
+   1. Set **Configure** to **Yes**.
+   1. Under **Include**, select **Any device**
+   1. Under **Exclude**, select **Android**, **iOS**, **Windows**, and **macOS**.
+      > [!NOTE]
+      > For this exclusion select any platforms that your organization knowingly uses, and leave the others unselected.
+   1. Select, **Done**.
+1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 

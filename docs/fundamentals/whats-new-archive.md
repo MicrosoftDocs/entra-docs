@@ -563,7 +563,7 @@ For more information, see: [View and filter your devices](~/identity/devices/man
 
 Windows MAM is the first step toward Microsoft management capabilities for unmanaged Windows devices. This functionality comes at a critical time when we need to ensure the Windows platform is on par with the simplicity and privacy promise we offer end users today on the mobile platforms. End users can access company resources without needing the whole device to be MDM managed.
 
-For more information, see: [Require an app protection policy on Windows devices](~/identity/conditional-access/how-to-app-protection-policy-windows.md).
+For more information, see: [Require an app protection policy on Windows devices](~/identity/conditional-access/policy-all-users-windows-app-protection.md).
 
 ---
 
@@ -1083,7 +1083,7 @@ Using MAM Conditional Access, Microsoft Edge for Business provides users with se
 
 The new capability extends the benefits of app layer management to the Windows platform via Microsoft Edge for Business. Admins are empowered to configure the user experience and protect organizational data within Microsoft Edge for Business on unmanaged Windows devices.
 
-For more information, see: [Require an app protection policy on Windows devices (preview)](~/identity/conditional-access/how-to-app-protection-policy-windows.md).
+For more information, see: [Require an app protection policy on Windows devices (preview)](~/identity/conditional-access/policy-all-users-windows-app-protection.md).
 
 ---
 
