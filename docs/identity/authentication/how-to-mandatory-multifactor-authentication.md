@@ -33,7 +33,9 @@ Use the followng resources to find users who sign in with and without MFA:
 - If you run queries to analyze user sign-ins, use the application IDs of the [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications). 
 
 ## Verify MFA enablement
-Regardless of any roles they have or don't have, all users who access the admin portals and Azure clients listed in [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications) must be set up to use MFA. All users who access any administration portal should use MFA. Use the following steps to verify that MFA is set up for your users, or to enable it if needed. 
+All users who access [admin portals and Azure clients that require MFA](concept-mandatory-multifactor-authentication.md#applications) must be set up to use MFA. Manadtory MFA isn't restricted to privileged roles. As a best practice, all users who access *any* administration portal should use MFA. 
+
+Use the following steps to verify that MFA is set up for your users, or to enable it if needed. 
 
 1. Sign in to Azure portal as a Global Reader.
 1. Browse to **Identity** > **Overview**.
@@ -63,6 +65,7 @@ For more information, see [Common Conditional Access policy: Require multifactor
 ### Verify MFA is enabled for Microsoft 365 or Microsoft Entra ID Free
 
 If you have a Microsoft 365 or Microsoft Entra ID Free license, you can enable MFA by using security defaults. Users are prompted for MFA as needed, but you can't define your own rules to control the behavior.
+
 To enable security defaults:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
