@@ -1342,10 +1342,10 @@ Applications that support the SCIM profile described in this article can be conn
 
     > You can optionally disable syncing of group objects by disabling the "groups" mapping.
 
-1. Under **Settings**, the **Scope** field defines which users and groups are synchronized. Select **Sync only assigned users and groups** (recommended) to only sync users and groups assigned in the **Users and groups** tab.
-1. Select **Provision on-demand** in the left panel.
-1. Search for a user that is in scope for 1. If syncing only assigned users and groups (recommended), select the **Users and groups** tab. Then, assign the users or groups you want to sync. and select **provision** to provision the user on-demand. Repeat with other users that you would like to test provisioning with.
+1. Select **Provision on-demand** in the left panel. Search for a user that is in scope for provisioning and provision them on-demand. Repeat with other users that you would like to test provisioning with.
 1. Once your configuration is complete, select **Overview** in the left panel.
+1. Select **Properties**.
+1. Selec the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Click **Appy** to save the changes.   
 1. Select **Start provisioning** to start the Microsoft Entra provisioning service. 
 
 
