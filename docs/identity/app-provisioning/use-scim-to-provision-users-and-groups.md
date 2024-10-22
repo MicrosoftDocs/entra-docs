@@ -1337,15 +1337,17 @@ Applications that support the SCIM profile described in this article can be conn
     > **Test Connection** queries the SCIM endpoint for a user that doesn't exist, using a random GUID as the matching property selected in the Microsoft Entra configuration. The expected correct response is HTTP 200 OK with an empty SCIM ListResponse message.
 
 1. If the attempt to connect to the application succeeds, then select **Create** to create the provisioning job.
-1. In the **Mappings** section, there are two selectable sets of [attribute mappings](customize-application-attributes.md): one for user objects and one for group objects. Select each one to review the attributes that are synchronized from Microsoft Entra ID to your app. The attributes selected as **Matching** properties are used to match the users and groups in your app for update operations. Select **Save** to commit any changes.
+1. If syncing only assigned users and groups (recommended), select the **Users and groups** tab. Then, assign the users or groups you want to sync.
+1. Select **Attribute mapping** in the left panel. There are two selectable sets of [attribute mappings](customize-application-attributes.md): one for user objects and one for group objects. Select each one to review the attributes that are synchronized from Microsoft Entra ID to your app. The attributes selected as **Matching** properties are used to match the users and groups in your app for update operations. Select **Save** to commit any changes.
 
-    > [!NOTE]
     > You can optionally disable syncing of group objects by disabling the "groups" mapping.
 
 1. Under **Settings**, the **Scope** field defines which users and groups are synchronized. Select **Sync only assigned users and groups** (recommended) to only sync users and groups assigned in the **Users and groups** tab.
-1. Once your configuration is complete, set the **Provisioning Status** to **On**.
-1. Select **Save** to start the Microsoft Entra provisioning service.
-1. If syncing only assigned users and groups (recommended), select the **Users and groups** tab. Then, assign the users or groups you want to sync.
+1. Select **Provision on-demand** in the left panel.
+1. Search for a user that is in scope for 1. If syncing only assigned users and groups (recommended), select the **Users and groups** tab. Then, assign the users or groups you want to sync. and select **provision** to provision the user on-demand. Repeat with other users that you would like to test provisioning with.
+1. Once your configuration is complete, select **Overview** in the left panel.
+1. Select **Start provisioning** to start the Microsoft Entra provisioning service. 
+
 
 Once the initial cycle has started, you can select **Provisioning logs** in the left panel to monitor progress, which shows all actions done by the provisioning service on your app. For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](check-status-user-account-provisioning.md).
 
