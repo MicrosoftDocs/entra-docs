@@ -4,7 +4,7 @@ description: Steps to verify mandatory multifactor authentication for users who 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/21/2024
+ms.date: 10/22/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -18,10 +18,10 @@ This topic covers steps to verify that users in your organization are set up to 
 
 ## Verify MFA for a personal account
 
-A user might use their personal account to create a Microsoft Entra tenant for only a few users. If you used your personal account to subscribe to 
+A user might use their personal account to create a Microsoft Entra tenant for only a few users. If you used your personal account to subscribe to Azure, complete the following steps to confirm that your account is set up for MFA.
 
 1. Sign in to your Microsoft account **Advanced security options**.
-1. Under **Additional security** and **Two-step verification** choose **Turn on** or **Turn off**.
+1. Under **Additional security** and **Two-step verification** choose **Turn on**.
 1. Follow the instructions shown on the screen.
 
 For more information, see [How to use two-step verification with your Microsoft account](https://support.microsoft.com/account-billing/how-to-use-two-step-verification-with-your-microsoft-account-c7910146-672f-01e9-50a0-93b4585e7eb4).
