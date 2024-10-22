@@ -92,7 +92,7 @@ To complete the scenario in this tutorial, you need:
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-user-access.png" alt-text="Screenshot showing selecting all guest users.":::
 
 1. In the **Assignments** section, choose the link under **Cloud apps or actions**.
-1. Choose **Select apps**, and then choose the link under **Select**.
+1. Choose **Select resources**, and then choose the link under **Select**.
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-app-access.png" alt-text="Screenshot showing the Cloud apps page and the Select option." lightbox="media/tutorial-mfa/tutorial-mfa-app-access.png":::
 
@@ -121,7 +121,7 @@ To complete the scenario in this tutorial, you need:
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if-user.png" alt-text="Screenshot showing a guest user selected.":::
 
-1. Select the link under **Cloud apps, actions, or authentication content**. Choose **Select apps**, and then choose the link under **Select**.
+1. Select the link under **Cloud apps, actions, or authentication content**. Choose **Select resources**, and then choose the link under **Select**.
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if-app.png" alt-text="Screenshot showing the app selected." lightbox="media/tutorial-mfa/tutorial-mfa-what-if-app.png":::
 

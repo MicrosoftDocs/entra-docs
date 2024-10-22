@@ -147,15 +147,16 @@ Administrators can add any Microsoft Entra registered application to Conditional
 > [!NOTE]
 > Since Conditional Access policy sets the requirements for accessing a service you are not able to apply it to a client (public/native) application. In other words, the policy is not set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to all clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications are not available for selection in the Cloud Apps picker and Conditional Access option is not available in the application settings for the client (public/native) application registered in your tenant.
 
-Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All cloud apps**.
+Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')**.
 
-### All cloud apps
+<a name='all-cloud-apps'></a>
+### All resources
 
-Applying a Conditional Access policy to **All cloud apps** results in the policy being enforced for all tokens issued to web sites and services. This option includes applications that aren't individually targetable in Conditional Access policy, such as Microsoft Entra ID.
+Applying a Conditional Access policy to **All resources (formerly 'All cloud apps')** results in the policy being enforced for all tokens issued to web sites and services. This option includes applications that aren't individually targetable in Conditional Access policy, such as Microsoft Entra ID.
 
-In some cases, an **All cloud apps** policy could inadvertently block user access. These cases are excluded from policy enforcement and include:
+In some cases, an **All resources (formerly 'All cloud apps')** policy could inadvertently block user access. These cases are excluded from policy enforcement and include:
 
-- Services required to achieve the desired security posture. For example, device enrollment calls are excluded from compliant device policy targeted to All cloud apps.
+- Services required to achieve the desired security posture. For example, device enrollment calls are excluded from compliant device policy targeted to **All resources**.
 
 - Calls to Azure AD Graph and Microsoft Graph, to access user profile, group membership, and relationship information that is commonly used by applications excluded from policy. The excluded scopes are listed as follows. Consent is still required for apps to use these permissions.
    - For native clients:
