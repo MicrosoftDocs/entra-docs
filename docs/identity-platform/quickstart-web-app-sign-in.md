@@ -24,8 +24,6 @@ This quickstart uses a sample web app to show you how to sign in users in your w
 
 ::: zone-end 
 
-COMMON PLACEHOLDER
-
 ::: zone pivot="external"
 
 This quickstart uses a sample web app to show you how to sign in users in your external tenant. The sample uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
@@ -67,6 +65,11 @@ This quickstart uses a sample web app to show you how to sign in users in your e
 
 ## Register the web app
 
+common content
+
+
+## Define the platform and URLs
+
 #### [Node](#tab/node)
 
 PLACEHOLDER
@@ -83,21 +86,25 @@ PLACEHOLDER
 
 ---
 
+## Enable implicit and hybrid flows
+
+Only for ASP.NET, but confirm from Chris why this instruction is necessary. 
 
 ## Add app client secret
 
-
+common content
 
 ## Grant admin consent
 
-
+common content
 
 ## Create a user flow 
 
-
+common content
 
 ## Associate the web application with the user flow
 
+common content
 
 ## Clone or download sample web application
 
@@ -117,9 +124,22 @@ PLACEHOLDER
 
 ### How it works
 
-
+Common content
 
 ## Related content
 
+#### [Node](#tab/node)
+
+PLACEHOLDER
+
+#### [ASP.NET Core](#tab/asp-dot-net-core)
+
+PLACEHOLDER
+
+#### [Python Django](#tab/python-django)
+
+PLACEHOLDER
+
+#### [Python Flask](#tab/python-flask)
 
 ::: zone-end
