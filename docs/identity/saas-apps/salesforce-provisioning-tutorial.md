@@ -79,7 +79,7 @@ The objective of this section is to outline how to enable user provisioning of A
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-    ![Screenshot shows the Salesforce Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](./media/salesforce-provisioning-tutorial/provisioning.png)
+    ![Screenshot shows the Salesforce Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](common/provisioning-automatic.png)
 
 5. Under the **Admin Credentials** section, provide the following configuration settings:
 

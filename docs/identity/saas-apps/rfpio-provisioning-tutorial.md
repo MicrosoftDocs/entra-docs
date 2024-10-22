@@ -119,8 +119,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to RFPIO**.
 
-	![RFPIO User Mappings](media/rfpio-provisioning-tutorial/usermapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to RFPIO in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in RFPIO for update operations. Select the **Save** button to commit any changes.
 
 	![RFPIO User Attributes](media/rfpio-provisioning-tutorial/userattributes.png)

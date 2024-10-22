@@ -60,8 +60,7 @@ This section guides you through connecting your Microsoft Entra ID to the Pingbo
 1. Select your instance of Pingboard, and then select the **Provisioning** tab.
 
 1. Set **Provisioning Mode** to **Automatic**.
-
-    ![Pingboard Provisioning](./media/pingboard-provisioning-tutorial/pingboardazureprovisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
 1. Under the **Admin Credentials** section, use the following steps:
 
