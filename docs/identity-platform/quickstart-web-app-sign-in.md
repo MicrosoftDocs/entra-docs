@@ -120,26 +120,32 @@ common content
 
 ## Run and test sample web app
 
-
-
-### How it works
-
-Common content
-
-## Related content
-
 #### [Node](#tab/node)
 
 PLACEHOLDER
+
+### How it works
 
 #### [ASP.NET Core](#tab/asp-dot-net-core)
 
 PLACEHOLDER
 
+### How it works
+
 #### [Python Django](#tab/python-django)
 
 PLACEHOLDER
 
+### How it works
+
 #### [Python Flask](#tab/python-flask)
+
+PLACEHOLDER
+
+### How it works
+
+---
+
+## Related content
 
 ::: zone-end
