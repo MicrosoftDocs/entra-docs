@@ -36,7 +36,6 @@ This quickstart uses a sample web app to show you how to sign in users in your e
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - [Node.js](https://nodejs.org).
-- [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later.
 - An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
