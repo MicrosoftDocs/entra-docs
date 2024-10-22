@@ -3667,5 +3667,10 @@
   "Microsoft Advertising app ID" : "d42ffc93-c136-491d-b4fd-6f18168c68fd",
   "Azure Arc service app ID" : "bc313c14-388c-4e7d-a58e-70017303ee3b",
   "EFI boot variable" : "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
-  "Azure portal support request ID" : "3eadc5d3-b59a-3658-d8c6-9c729ba35b97"
+  "Azure portal support request ID" : "3eadc5d3-b59a-3658-d8c6-9c729ba35b97",
+  "LUIS app ID" : "df67dcdb-c37d-46af-88e1-8b97951ca1c2",
+  "Azure Machine Learning Workbench web app" : "d7304df8-741f-47d3-9bc2-df0e24e2071f",
+  "Azure AI Studio app" : "cb2ff863-7f30-4ced-ab89-a00194bcf6d9",
+  "Azure Cosmos DB principal ID - Azure Government" : "57506a73-e302-42a9-b869-6f12d9ec29e9",
+  "Azure Cosmos DB principal ID - Other regions" : "a232010e-820c-4083-83bb-3ace5fc29d0b"
 }

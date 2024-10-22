@@ -260,7 +260,7 @@ The following capabilities can be used to support Microsoft Entra application pr
 
 * Device-based Conditional Access: Ensure only enrolled, approved, and compliant devices can access corporate data with [device-based Conditional Access](~/identity/conditional-access/concept-conditional-access-grant.md).
 
-* Application-based Conditional Access: Work doesn't have to stop when a user isn't on the corporate network. [Secure access to corporate cloud and on-premises apps](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.yml) and maintain control with Conditional Access.
+* Application-based Conditional Access: Work doesn't have to stop when a user isn't on the corporate network. [Secure access to corporate cloud and on-premises apps](~/identity/conditional-access/policy-all-users-device-compliance.md) and maintain control with Conditional Access.
 
 * Risk-based Conditional Access: Protect your data from malicious hackers with a [risk-based Conditional Access policy](https://www.microsoft.com/cloud-platform/conditional-access) that can be applied to all apps and all users, whether on-premises or in the cloud.
 

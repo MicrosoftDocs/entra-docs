@@ -59,7 +59,7 @@ Learn more:
 
 * [Plan your Microsoft Entra hybrid join implementation](~/identity/devices/hybrid-join-plan.md), or 
 * [How to: Plan your Microsoft Entra join implementation](~/identity/devices/device-join-plan.md)
-* See also, [Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)
+* See also, [Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)
 
 >[!NOTE]
 > Microsoft Authenticator isn't phishing-resistant. Configure Conditional Access policy to require that managed devices get protection from external phishing threats.
