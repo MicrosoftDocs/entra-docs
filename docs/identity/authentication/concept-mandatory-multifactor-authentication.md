@@ -42,7 +42,7 @@ All users who sign into the [applications](#applications) listed earlier to pe
 
 Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
-Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this Azure MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
+Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
 
 ### Migrate user-based service accounts to workload identities
 
@@ -93,7 +93,7 @@ After enforcement, a banner appears in Microsoft Entra multifactor authenticatio
 
 ## External authentication methods and identity providers 
 
-Support for external MFA solutions is in preview with [external authentication methods](https://aka.ms/EAMAdminDocs), and can be used to meet the MFA requirement. The legacy Conditional Access custom controls preview doesn't satisfy the MFA requirement. You should migrate to the external authentication methods preview to use an external solution with Microsoft Entra ID.  
+Support for external MFA solutions is in preview with [external authentication methods](https://aka.ms/EAMAdminDocs), and can be used to meet the MFA requirement. The legacy Conditional Access custom controls preview doesn't satisfy the MFA requirement. You should migrate to the external authentication methods preview to use an external solution with Microsoft Entra ID.  
 
 If you're using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated IdP, the federated IdP must be configured to send an MFA claim. 
 
@@ -103,7 +103,7 @@ We understand that some customers may need more time to prepare for this MFA req
 
 Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page.  
 
-Global Administrators must perform this action for every tenant for which they would like to postpone the start date of enforcement.  
+Global Administrators must perform this action for every tenant where they want to postpone the start date of enforcement.  
 
 By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.  
 
@@ -127,7 +127,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: How can we comply if we enforce MFA by using another identity provider or MFA solution, and we don't enforce by using Microsoft Entra MFA? 
 
-**Answer**: The identity provider solution needs to be configured properly to send the multipleauthn claim to Entra ID. For more information, see [Microsoft Entra multifactor authentication external method provider reference](concept-authentication-external-method-provider.md). 
+**Answer**: The identity provider solution needs to be configured properly to send the multipleauthn claim to Microsoft Entra ID. For more information, see [Microsoft Entra multifactor authentication external method provider reference](concept-authentication-external-method-provider.md). 
 
 **Question**: Will phase 1 or phase 2 of mandatory MFA impact my ability to sync with Microsoft Entra Connect or Microsoft Entra Cloud Sync?
 
@@ -159,7 +159,7 @@ An option to postpone the enforcement start date is available for customers. Bet
 
 **Question**: What if I don’t receive an email about enabling MFA before it was enforced, and then I get locked-out. How should I resolve it?  
 
-**Answer**: Users should not be locked out, but they may get a message that prompts them to enable MFA once enforcement for their tenant has started. If the user is locked out, there may be other issues. For more information, see [Account has been locked](https://support.microsoft.com/en-us/account-billing/account-has-been-locked-805e8b0d-4141-29b2-7b65-df6ff6c9ce27).  
+**Answer**: Users shouldn't be locked out, but they may get a message that prompts them to enable MFA once enforcement for their tenant has started. If the user is locked out, there may be other issues. For more information, see [Account has been locked](https://support.microsoft.com/en-us/account-billing/account-has-been-locked-805e8b0d-4141-29b2-7b65-df6ff6c9ce27).  
 
 
 ## Related content

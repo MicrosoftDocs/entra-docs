@@ -27,13 +27,13 @@ A user might use their personal account to create a Microsoft Entra tenant for o
 For more information, see [How to use two-step verification with your Microsoft account](https://support.microsoft.com/account-billing/how-to-use-two-step-verification-with-your-microsoft-account-c7910146-672f-01e9-50a0-93b4585e7eb4).
 
 ## Find users who sign in with and without MFA
-Use the followng resources to find users who sign in with and without MFA: 
+Use the following resources to find users who sign in with and without MFA: 
 
 - To export a list of users and their authentication methods, use [PowerShell](https://aka.ms/AzMFA).
 - If you run queries to analyze user sign-ins, use the application IDs of the [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications). 
 
 ## Verify MFA enablement
-All users who access [admin portals and Azure clients that require MFA](concept-mandatory-multifactor-authentication.md#applications) must be set up to use MFA. Manadtory MFA isn't restricted to privileged roles. As a best practice, all users who access *any* administration portal should use MFA. 
+All users who access [admin portals and Azure clients that require MFA](concept-mandatory-multifactor-authentication.md#applications) must be set up to use MFA. Mandatory MFA isn't restricted to privileged roles. As a best practice, all users who access *any* administration portal should use MFA. 
 
 Use the following steps to verify that MFA is set up for your users, or to enable it if needed. 
 
