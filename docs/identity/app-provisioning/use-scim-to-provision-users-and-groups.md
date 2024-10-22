@@ -1345,7 +1345,7 @@ Applications that support the SCIM profile described in this article can be conn
 1. Select **Provision on-demand** in the left panel. Search for a user that is in scope for provisioning and provision them on-demand. Repeat with other users that you would like to test provisioning with.
 1. Once your configuration is complete, select **Overview** in the left panel.
 1. Select **Properties**.
-1. Selec the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Click **Appy** to save the changes.   
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Click **Appy** to save the changes.   
 1. Select **Start provisioning** to start the Microsoft Entra provisioning service. 
 
 
