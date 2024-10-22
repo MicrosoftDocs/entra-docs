@@ -64,7 +64,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application administrator](reference-role-based-permissions.md#application-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
 1. Select **New Application** to create a new application to publish your Domain Controllers.
-1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Don't add both IPs and FQDNs. Only the Domain Controllers in the Active Directory site where the Private Access connectors are located should be published.
+1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Only the Domain Controllers in the Active Directory site where the Private Access connectors are located should be published.
 
 > [!NOTE]
 > Make sure you don’t use wildcard FQDNs to publish your domain controllers, instead add their specific IPs or FQDNs.

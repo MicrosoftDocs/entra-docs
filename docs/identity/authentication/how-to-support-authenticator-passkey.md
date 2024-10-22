@@ -5,7 +5,7 @@ description: Support passkeys in Microsoft Authenticator in your Microsoft Entra
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/16/2024
+ms.date: 10/09/2024
 
 ms.author: justinha
 author: justinha
@@ -38,7 +38,7 @@ There are a couple workarounds:
 
   - A policy for mobile operating system (OS) versions
   - A policy for desktop OS versions 
-  
+
   Require a different authentication strength for each policy, and configure other policy settings listed in the following table. You'll likely want to [enable the use of a Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md), or enable other authentication methods that users can use to register the passkey. By issuing a TAP to a user only when they are registering a credential, and accepting it only on mobile platforms where passkey registration can occur, you can ensure that users are using permitted authentication methods for all flows and using TAP only for a limited amount of time during registration. 
 
   | Conditional Access policy | Desktop OS     | Mobile OS     |
@@ -56,7 +56,6 @@ There are a couple workarounds:
 
 >[!NOTE]
 >With either workaround, users must also satisfy any Conditional Access policy that targets **Register security info**, or they can't register the passkey. Additionally, if you have other conditions set up with the **All cloud apps* policies, those will have to be met when registering the passkey.  
-
 ## Restrict Bluetooth usage to passkeys in Authenticator
 
 Some organizations restrict Bluetooth usage, which includes the use of passkeys. In such cases, organizations can allow passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
@@ -64,4 +63,4 @@ Some organizations restrict Bluetooth usage, which includes the use of passkeys.
 ## Next steps 
 
 For more information about passkeys in Authenticator, see [Microsoft Authenticator authentication method](concept-authentication-authenticator-app.md).
-To enable passkeys in Authenticator as a way for users to sign in, see [Enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
+To enable passkeys in Authenticator as a way for users to sign in, see [Enable passkeys in Microsoft Authenticator ](how-to-enable-authenticator-passkey.md).

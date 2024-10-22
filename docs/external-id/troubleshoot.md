@@ -4,8 +4,7 @@ description: Remedies for common problems with Microsoft Entra B2B collaboration
  
 ms.service: entra-external-id
 ms.topic: troubleshooting
-ms.date: 10/09/2024
-
+ms.date: 10/21/2024
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan
@@ -27,13 +26,13 @@ When a guest user from an identity provider (IdP) can't sign in to a resource te
 
 ## B2B direct connect user is unable to access a shared channel (error AADSTS90071)
 
-When a B2B direct connect sees the following error message when trying to access another organization's Teams shared channel, multi-factor authentication trust settings haven't been configured by the external organization:
+When a B2B direct connect sees the following error message when trying to access another organization's Teams shared channel, multifactor authentication trust settings haven't been configured by the external organization:
 
 > The organization you're trying to reach needs to update their settings to let you sign in.
 >
 > AADSTS90071: An admin from *&lt;organization&gt;* must update their access settings to accept inbound multifactor authentication.
 
-The organization hosting the Teams shared channel must enable the trust setting for multi-factor authentication to allow access to B2B direct connect users. Trust settings are configurable in an organization's [cross-tenant access settings](cross-tenant-access-settings-b2b-direct-connect.md).
+The organization hosting the Teams shared channel must enable the trust setting for multifactor authentication to allow access to B2B direct connect users. Trust settings are configurable in an organization's [cross-tenant access settings](cross-tenant-access-settings-b2b-direct-connect.md).
 
 ## An error similar to "Failure to update policy due to object limit" appears while configuring cross-tenant access settings
 
@@ -220,7 +219,7 @@ You should now see the restored app in the Microsoft Entra admin center.
 
 ## External access blocked by policy error on the login screen
 
-When you try to login to your tenant, you might see this error message: "Your network administrator has restricted what organizations can be accessed. Contact your IT department to unblock access." This error is related to tenant restriction settings. To resolve this issue, ask your IT team to follow the instructions in [this article](~/identity/enterprise-apps/tenant-restrictions.md).
+When you try to log in to your tenant, you might see this error message: "Your network administrator has restricted what organizations can be accessed. Contact your IT department to unblock access." This error is related to tenant restriction settings. To resolve this issue, ask your IT team to follow the instructions in [this article](~/identity/enterprise-apps/tenant-restrictions.md).
 
 ## Users get in a loop when they try to add passkey in Authenticator
 

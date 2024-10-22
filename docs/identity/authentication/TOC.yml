@@ -148,7 +148,7 @@
         items:
         - name: Enable passkeys in Authenticator (preview)
           href: how-to-enable-authenticator-passkey.md
-        - name: Support passkeys in Authenticator 
+        - name: Support passkeys in Authenticator (preview)
           href: how-to-support-authenticator-passkey.md
         - name: Register passkeys in Authenticator (preview)
           href: how-to-register-passkey-authenticator.md

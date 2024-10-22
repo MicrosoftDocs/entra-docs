@@ -1,12 +1,12 @@
 ---
-title: Sign in with passkeys in Authenticator for Android and iOS devices (preview)
-description: Learn how to sign in with passkeys for Android and iOS devices with Microsoft Authenticator (preview.
+title: Sign in with passkeys in Authenticator for Android and iOS devices 
+description: Learn how to sign in with passkeys for Android and iOS devices with Microsoft Authenticator.
 
 services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/07/2024
+ms.date: 10/21/2024
 
 ms.author: justinha
 author: justinha
@@ -15,20 +15,17 @@ ms.reviewer: mjsantani, calui
 
 ms.collection: M365-identity-device-management
 ---
-# Sign in with passkeys in Authenticator for Android and iOS devices (preview)
+# Sign in with passkeys in Authenticator for Android and iOS devices
 
 This article covers the sign-in experience when using passkeys in Microsoft Authenticator with Microsoft Entra ID. For more information about the availability of Microsoft Entra ID passkey (FIDO2) authentication across native applications, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
 
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
-| **Same-device authentication in a browser**              | &#x2705;          | &#10060;<sup>2</sup>       |
-| **Same-device authentication in native Microsoft applications**<sup>1</sup>            | &#x2705; | &#x2705;     |
+| **Same-device authentication in a browser**              | &#x2705;          | &#x2705;<sup>1</sup>       |
+| **Same-device authentication in native Microsoft applications**            | &#x2705; | &#x2705;    |
 | **Cross-device authentication**  | &#x2705;  | &#x2705;    |
 
 <sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
-
-<sup>2</sup>Native app sign-in support is coming soon.
-
 
 ## [**iOS**](#tab/iOS)
 
@@ -144,19 +141,21 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Microsoft 
 
 Follow these steps to sign in to Microsoft Entra ID on another device with a passkey in Microsoft Authenticator on your Android device.
 
+This sign-in option requires Bluetooth and an internet connection for both devices. If your organizations restricts Bluetooth usage, an administrator can allow cross-device sign-in for passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
+
 1. On the other device where you're looking to sign in to Microsoft Entra ID, navigate to the resource you're trying to access such as [Office](https://www.office.com).
 
 1. You can enter your username to sign in: 
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-user-name.png" alt-text="Screenshot of the sign-in with username in Microsoft Authenticator for iOS devices.":::
 
    If you last used a passkey to authenticate, you will be automatically prompted to authenticate with a passkey. Otherwise, you may click on **Other ways to sign in** and then select **Face, fingerprint, PIN, or security key**.
 
    Alternatively, click **Sign-in options** to sign in more conveniently without having to enter a username. 
 
-    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for Android devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-microsoft.png" alt-text="Screenshot of the sign-in Microsoft in Microsoft Authenticator for Android devices.":::
 
-   If you chose **Sign-in options**, select **Face, fingerprint, PIN, or security key**. Otherwise, skip to next step.
+   If you chose **Sign-in options**, select **Face, fingerprint, PIN or security key**. Otherwise, skip to next step.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-options.png" alt-text="Screenshot of the sign-in options in Microsoft Authenticator for Android devices.":::
 
@@ -164,15 +163,19 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
 1. A QR code should appear on screen. Now, on your Android device, open the system camera app and scan the QR code. Alternatively, you can also use the camera in Authenticator. Navigate to the passkey account tile and tap on it. Under **Passkey details (preview)**, you'll see a button in the bottom-right corner to scan the QR code. 
    
-   > [!NOTE]
-   > Bluetooth and an internet connection are required for this step and both must be enabled on your mobile and remote device.
-   > For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of a QR code scan each time, the device appears as a selectable option, and you get a notification on your mobile device to continue the passkey authentication.
+> [!NOTE]
+> Bluetooth and an internet connection are required for this step and both must be enabled on your mobile and remote device.
+> 
+> [!NOTE]
+> For quicker sign-in, Android allows you to remember some browsers and Windows devices after scanning the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, the device will appear as a selectable option and you will receive a notification on your mobile device to continue the passkey authentication.
 
 1. To select your passkey, follow the steps in the Android operating system dialog. Verify that it's you by scanning your face, fingerprint, or enter your device PIN or unlock gesture.
 
 1. You're now signed into Microsoft Entra ID on your other device.
 
-### Same-device authentication in native Microsoft applications (Android)
+## Same-device authentication in native Microsoft applications
 
-You can't use passkeys in Authenticator on your Android device to sign in to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. Support for Android devices is coming later during preview. 
+You can use Authenticator on your Android device to seamlessly sign in with a passkey to other Microsoft apps, such as Microsoft OneDrive, SharePoint, and Outlook. 
+
+
 ---
