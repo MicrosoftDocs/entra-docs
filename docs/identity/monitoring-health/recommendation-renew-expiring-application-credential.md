@@ -7,13 +7,13 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/19/2024
+ms.date: 10/22/2024
 ms.author: sarahlipsey
 ms.reviewer: saumadan
 
 #Customer intent: As an IT Admin I need to know when application credentials are expiring so I can renew them to prevent downtime.
 ---
-# Microsoft Entra recommendation: Renew expiring application credentials
+# Microsoft Entra recommendation: Renew expiring application credentials (preview)
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
