@@ -46,6 +46,16 @@ groups:
     title: Cross-tenant synchronization
 ########### BEGIN MICROSOFT IDENTITY PLATFORM
 # Referenced by: /entra/identity-platform/*
+# Owner(s):  dmwendia, celested, ryanwi, henrymbugua, owenrichards, cwerner, kengaderdus
+## Tenant types
+- id: entra-tenants
+  title: entra-tenants
+  prompt: Choose a tenant type
+  pivots:
+  - id: workforce
+    title: Workforce tenant
+  - id: external
+    title: External tenant
 # Owner(s):  dmwendia, celested, ryanwi, henrymbugua, owenrichards, cwerner
 ## WEB API ##
 - id: web-api-howto-prereq
