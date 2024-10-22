@@ -5,14 +5,14 @@ description: Create Conditional Access policies using Microsoft Entra ID Protect
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 09/17/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth, cokoopma
 ---
-# Common Conditional Access policy: User risk-based password change
+# Require a secure password change for elevated user risk
 
 Microsoft works with researchers, law enforcement, various security teams at Microsoft, and other trusted sources to find leaked username and password pairs. Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection user risk detections](~/id-protection/concept-identity-protection-risks.md). 
 
@@ -30,7 +30,7 @@ Microsoft works with researchers, law enforcement, various security teams at Mic
 - [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
 - [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)
-- [Sign-in risk-based Conditional Access](howto-conditional-access-policy-risk.md)
+- [Sign-in risk-based Conditional Access](policy-risk-based-sign-in.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions](concept-conditional-access-report-only.md)
 

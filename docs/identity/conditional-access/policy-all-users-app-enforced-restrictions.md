@@ -1,22 +1,20 @@
 ---
-title: Block unsupported platforms with Conditional Access
-description: Create a custom Conditional Access policy blocking unsupported platforms.
+title: Use application enforced restrictions to protect access from unmanaged devices
+description: Create a custom Conditional Access policy for unmanaged devices.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 09/30/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Block access for unknown or unsupported device platform
+# Use application enforced restrictions for unmanaged devices
 
-Users are blocked from accessing company resources when the device type is unknown or unsupported.
-
-The [device platform condition](concept-conditional-access-conditions.md#device-platforms) is based on user agent strings. Conditional Access policies using it should be used with another policy, like one requiring device compliance or app protection policies.
+Block or limit access to SharePoint, OneDrive, and Exchange content from unmanaged devices.
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
@@ -32,15 +30,10 @@ The [device platform condition](concept-conditional-access-conditions.md#device-
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
-1. Under **Conditions**, select **Device platforms**
-   1. Set **Configure** to **Yes**.
-   1. Under **Include**, select **Any device**
-   1. Under **Exclude**, select **Android**, **iOS**, **Windows**, and **macOS**.
-      > [!NOTE]
-      > For the exclusion select any platforms that your organization knowingly uses, and leave the others unselected.
-   1. Select, **Done**.
-1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
+1. Under **Target resources** > **Cloud apps**, select the following options:
+   1. Under **Include**, choose **Select apps**.
+   1. Choose **Office 365**, then select **Select**.
+1. Under **Access controls** > **Session**, select **Use app enforced restrictions**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 

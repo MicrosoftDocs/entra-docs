@@ -41,7 +41,7 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 **Service category:** Conditional Access    
 **Product capability:** Identity Security & Protection    
 
-A new Conditional Access template requiring device compliance is now available in Public Preview. This template restricts access to company resources exclusively to devices enrolled in mobile device management (MDM) and compliant with company policy. Requiring device compliance improves data security, reducing risk of data breaches, malware infections, and unauthorized access. This is a recommended best practice for users and devices targeted by compliance policy through MDM. For more information, see: [Common policy: Create a Conditional Access policy requiring device compliance.](../identity/conditional-access/how-to-policy-require-device-compliance.md)
+A new Conditional Access template requiring device compliance is now available in Public Preview. This template restricts access to company resources exclusively to devices enrolled in mobile device management (MDM) and compliant with company policy. Requiring device compliance improves data security, reducing risk of data breaches, malware infections, and unauthorized access. This is a recommended best practice for users and devices targeted by compliance policy through MDM. For more information, see: [Common policy: Create a Conditional Access policy requiring device compliance.](../identity/conditional-access/policy-all-users-device-compliance.md)
 
 ---
 
@@ -279,7 +279,7 @@ To learn more, see: [Microsoft Entra registered devices](..//identity/devices/co
 
 Insider Risk condition, in Conditional Access, is a new feature that uses signals from Microsoft Purview's Adaptive Protection capability to enhance the detection and automatic mitigation of Insider threats. This integration allows organizations to more effectively manage, and respond, to potential insider risks by using advanced analytics and real-time data.
 
-For example, if Purview detects unusual activity from a user, Conditional Access can enforce extra security measures such as requiring multifactor authentication (MFA) or blocking access. This feature is a premium and requires a P2 license. For more information, see: [Common Conditional Access policy: Block access for users with insider risk](../identity/conditional-access/how-to-policy-insider-risk.md).
+For example, if Purview detects unusual activity from a user, Conditional Access can enforce extra security measures such as requiring multifactor authentication (MFA) or blocking access. This feature is a premium and requires a P2 license. For more information, see: [Common Conditional Access policy: Block access for users with insider risk](../identity/conditional-access/policy-risk-based-insider-block.md).
 
 ---
 
@@ -639,160 +639,4 @@ PIM is now available on the Azure mobile app in both iOS and Android. Customers 
 
 ---
 
-### General Availability - On-premises password reset remediates user risk
-
-**Type:** New feature    
-**Service category:** Identity Protection    
-**Product capability:** Identity Security & Protection    
-
-Organizations who enabled password hash synchronization can now allow password changes on-premises to remediate user risk. You can also use this capability to save hybrid users time and maintain their productivity with automatic self-service remediation in risk-based Conditional Access policies. For more information, see: [Remediate risks and unblock users](../id-protection/howto-identity-protection-remediate-unblock.md).
-
----
-
-### General Availability - Custom Claims Providers enable token claim augmentation from external data sources
-
-**Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** Extensibility    
-
-Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory. For more information, see: [Custom authentication extensions overview](../identity-platform/custom-extension-overview.md).
-
----
-
-### General Availability - Dynamic Groups quota increased to 15,000.
-
-**Type:** Changed feature    
-**Service category:** Group Management    
-**Product capability:** Directory    
-
-Microsoft Entra organizations could previously have a maximum of 15,000 dynamic membership groups and dynamic administrative units combined. 
-
-This quota is increased to 15,000. For example, you can now have 15,000 dynamic membership groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - this update is available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
-
----
-
-### General Availability - Lifecycle Workflows: Export workflow history data to CSV files
-
-**Type:** New feature    
-**Service category:** Lifecycle Workflows    
-**Product capability:** Identity Governance    
-
-In Lifecycle Workflows, IT admins can now export their workflow history data across users, runs, and tasks to CSV files for meeting their organization's reporting and auditing needs.
-
-See [Download workflow history reports](../id-governance/download-workflow-history.md) to learn more.
-
----
-
-### Public preview - Native Authentication for Microsoft Entra External ID
-
-**Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
-
-Native authentication empowers developers to take complete control over the design of the sign-in experience of their mobile applications. It allows them to craft stunning, pixel-perfect authentication screens that are seamlessly integrated into their apps, rather than relying on browser-based solutions. For more information, see: [Native authentication (preview)](../external-id/customers/concept-native-authentication.md).
-
----
-
-### Public Preview - Passkeys in Microsoft Authenticator
-
-**Type:** New feature    
-**Service category:** Microsoft Authenticator App    
-**Product capability:** User Authentication    
-
-Users can now create device-bound passkeys in the Microsoft Authenticator to access Microsoft Entra ID resources. Passkeys in the Authenticator app provide cost-effective, phishing-resistant, and seamless authentications to users from their mobile devices. For more information, see https://aka.ms/PasskeyInAuthenticator.
-
----
-
-### General Availability - Maximum workflows limit in Lifecycle workflows is now 100
-
-**Type:** Changed feature    
-**Service category:** Lifecycle Workflows        
-**Product capability:** Identity Governance        
-
-The maximum number of workflows that can be configured in Lifecycle workflows increased. Now IT admins can create up to 100 workflows in Lifecycle workflows. For more information, see: [Microsoft Entra ID Governance service limits](../id-governance/governance-service-limits.md).
-
----
-
-### Public Preview - Configure custom workflows to run mover tasks when a user's job profile changes
-
-**Type:** New feature    
-**Service category:** Lifecycle Workflows    
-**Product capability:** Identity Governance    
-
-Lifecycle Workflows now supports the ability to trigger workflows based on job change events like changes to an employee's department, job role, or location and see them executed on the workflow schedule. With this feature, customers can use new workflow triggers to create custom workflows for executing tasks associated with employees moving within the organization including triggering:
-
-- Workflows when a specified attribute changes
-- Workflows when a user is added or removed from a group's membership
-- Tasks to notify a user's manager about a move
-- Tasks to assign licenses or remove selected licenses from a user
-
-To learn more, see the [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](../id-governance/tutorial-mover-custom-workflow-portal.md) tutorial.
-
----
-
-### General Availability - Microsoft Graph activity logs
-
-**Type:** New feature    
-**Service category:** Microsoft Graph    
-**Product capability:** Monitoring & Reporting    
-
-The Microsoft Graph activity logs is now generally available! Microsoft Graph activity logs give you visibility into HTTP requests made to the Microsoft Graph service in your tenant. With rapidly growing security threats, and an increasing number of attacks, this log data source allows you to perform security analysis, threat hunting, and monitor application activity in your tenant. For more information, see: [Access Microsoft Graph activity logs](/graph/microsoft-graph-activity-logs-overview).
-
----
-
-### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - April 2024
-
-**Type:** New feature    
-**Service category:** App Provisioning    
-**Product capability:** Third Party Integration    
-
-Microsoft added the following new applications in our App gallery with provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-[CultureHQ](../identity/saas-apps/culturehq-provisioning-tutorial.md)
-[elia](../identity/saas-apps/elia-provisioning-tutorial.md)
-[GoSkills](../identity/saas-apps/goskills-provisioning-tutorial.md)
-[Island](../identity/saas-apps/island-provisioning-tutorial.md)
-[Jellyfish](../identity/saas-apps/jellyfish-provisioning-tutorial.md)
-
-For more information about how to better secure your organization by using automated user account provisioning, see Automate user provisioning to SaaS applications with Microsoft Entra.
-
----
-
-### General Availability - Quick Microsoft Entra Verified ID setup
-
-**Type:** New feature    
-**Service category:** Verified ID    
-**Product capability:** Decentralized Identities    
-
-Quick Microsoft Entra Verified ID setup, now generally available, removes several configuration steps an admin needs to complete with a single select on a Get started button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you. For more information, see: [Quick Microsoft Entra Verified ID setup](../verified-id/verifiable-credentials-configure-tenant-quick.md).
-
----
-
-### Public Preview - Assign Microsoft Entra roles using Entitlement Management
-
-**Type:** New feature    
-**Service category:** Entitlement Management    
-**Product capability:** Entitlement Management    
-
-By assigning Microsoft Entra roles to employees, and guests, using Entitlement Management, you can look at a user's entitlements to quickly determine which roles are assigned to that user. When you include a Microsoft Entra role as a resource in an access package, you can also specify whether that role assignment is *eligible* or *active*.
-
-Assigning Microsoft Entra roles through access packages helps to efficiently manage role assignments at scale and improves the role. For more information, see: [Assign Microsoft Entra roles (Preview)](../id-governance/entitlement-management-roles.md).
-
----
-
-### General Availability - Self-service password reset Admin policy expansion to include more roles
-
-**Type:** Changed feature    
-**Service category:** Self Service Password Reset    
-**Product capability:** Identity Security & Protection    
-
-Self-service password reset (SSPR) policy for Admins expands to include three extra built-in admin roles. These extra roles include: 
-
-- Teams Administrator
-- Teams Communications Administrator
-- Teams Devices Administrator
-
-For more information on Self-service password reset for admins, including the full list of in-scope admin roles, see [Administrator reset policy differences](../identity/authentication/concept-sspr-policy.md#administrator-reset-policy-differences). 
-
----
 

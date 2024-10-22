@@ -58,16 +58,16 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Require MFA for administrators
-            url: howto-conditional-access-policy-admin-mfa.md
+            url: policy-old-require-mfa-admin.md
           - text: Require MFA for Azure management
-            url: howto-conditional-access-policy-azure-management.md
+            url: policy-old-require-mfa-azure-mgmt.md
           - text: Block legacy authentication
-            url: howto-conditional-access-policy-block-legacy.md
+            url: policy-block-legacy-authentication.md
           - text: Risk-based Conditional Access (Requires Microsoft Entra ID P2)
-            url: howto-conditional-access-policy-risk.md
+            url: policy-risk-based-sign-in.md
           - text: Require trusted location for MFA registration
-            url: howto-conditional-access-policy-registration.md
+            url: policy-all-users-security-info-registration.md
           - text: Block access by location
-            url: howto-conditional-access-policy-location.yml
+            url: policy-block-by-location.md
           - text: Require compliant device
-            url: howto-conditional-access-policy-compliant-device.md
+            url: policy-alt-all-users-compliant-hybrid-or-mfa.md

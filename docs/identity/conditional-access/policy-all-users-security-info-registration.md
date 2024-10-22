@@ -5,14 +5,14 @@ description: Create a custom Conditional Access policy for security info registr
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: lhuangnorth
 ---
-# Common Conditional Access policy: Securing security info registration
+# Protect security info registration with Conditional Access policy
 
 Securing when and how users register for Microsoft Entra multifactor authentication and self-service password reset is possible with user actions in a Conditional Access policy. This feature is available to organizations who enable [combined registration](~/identity/authentication/concept-registration-mfa-sspr-combined.md). This functionality allows organizations to treat the registration process like any application in a Conditional Access policy and use the full power of Conditional Access to secure the experience. Users signing in to the Microsoft Authenticator app or enabling passwordless phone sign-in are subject to this policy.
 
@@ -26,6 +26,9 @@ Some organizations in the past might have used trusted network location or devic
 ## Create a policy to secure registration
 
 The following policy applies to the selected users, who attempt to register using the combined registration experience. The policy requires users to be in a trusted network location and do multifactor authentication, or use Temporary Access Pass credentials.
+
+> [!WARNING]
+> If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatable with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
@@ -49,8 +52,8 @@ The following policy applies to the selected users, who attempt to register usin
    1. Set **Configure** to **Yes**. 
       1. Include **Any location**.
       1. Exclude **All trusted locations**.
-1. Under **Access controls** > **Grant**. 
-   1. Select **Grant access**, **Require multifactor authentication**.
+1. Under **Access controls** > **Grant**, select **Grant access**.
+   1. Select **Require authentication strength**, then select the appropriate built-in or custom authentication strength from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.

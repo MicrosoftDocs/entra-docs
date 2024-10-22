@@ -136,8 +136,6 @@ If a user deletes a passkey in Authenticator, the passkey is also removed from t
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user whose passkey needs to be removed.
 1. Select **Authentication methods** > right-click **FIDO2 security key** and select **Delete**. 
 
-    ![Screenshot of View Authentication Method details.](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
-
 > [!NOTE]
 > Unless the user initiated the passkey deletion themselves in Authenticator, they need to also remove the passkey in Authenticator on their device.
 

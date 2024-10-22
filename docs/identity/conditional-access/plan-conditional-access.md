@@ -5,7 +5,7 @@ description: Learn how to design Conditional Access policies and effectively dep
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 09/18/2024
 
 ms.author: gasinh
 author: gargi-sinha
@@ -90,12 +90,6 @@ Will this policy apply to any application, user action, or authentication contex
 - Do you need to target specific device attributes? 
 - If using [Microsoft Entra ID Protection](~/id-protection/concept-identity-protection-risks.md), do you want to incorporate sign-in or user risk?
 
-##### User and sign-in risk
-
-For organizations with Microsoft Entra ID P2 licenses, they can include user and sign-in risk in their Conditional Access policies. These additions can help reduce the friction of security measures by requiring multifactor authentication or secure password change only when a user or sign-in is considered risky.
-
-For more information about risk and its use in policy, see the article [What is risk](~/id-protection/concept-identity-protection-risks.md).
-
 #### Block or grant controls
 
 Do you want to grant access to resources by requiring one or more of the following?
@@ -178,6 +172,10 @@ You can view the aggregate affects of your Conditional Access policies in the **
 ### Plan for disruption
 
 To reduce the risk of lockout during unforeseen disruptions, [plan resilience strategies](~/identity/authentication/concept-resilient-controls.md) for your organization.
+
+### Enable protected actions
+
+Enabling [protected actions](/entra/identity/role-based-access-control/protected-actions-add) puts another layer of security on attempts to create, modify, or delete Conditional Access policy. Organizations can require a fresh multifactor authentication or other grant control before modifying policy.
 
 ### Set naming standards for your policies
 

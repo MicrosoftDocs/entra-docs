@@ -16,7 +16,7 @@ ms.reviewer: lhuangnorth, jogro
 
 App protection policies apply [mobile application management (MAM)](/mem/intune/apps/app-management#mobile-application-management-mam-basics) to specific applications on a device. These policies allow for securing data within an application in support of scenarios like bring your own device (BYOD).
 
-![Screenshot of a browser requiring the user to sign in to their Microsoft Edge profile to access an application.](./media/how-to-app-protection-policy-windows/browser-sign-in-with-edge-profile.png)
+![Screenshot of a browser requiring the user to sign in to their Microsoft Edge profile to access an application.](./media/policy-all-users-windows-app-protection/browser-sign-in-with-edge-profile.png)
 
 ## Prerequisites
 
@@ -65,7 +65,7 @@ The following steps help create a Conditional Access policy requiring an app pro
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
 > [!TIP]
-> Organizations should also deploy a policy that [blocks access from unsupported or unknown device platforms](howto-policy-unknown-unsupported-device.md) along with this policy.
+> Organizations should also deploy a policy that [blocks access from unsupported or unknown device platforms](policy-all-users-device-unknown-unsupported.md) along with this policy.
 
 ## Sign in to Windows devices
 
@@ -73,7 +73,7 @@ When users attempt to sign in to a site that is protected by an app protection p
 
 Clicking on **Switch Edge profile** opens a window listing their Work or school account along with an option to **Sign in to sync data**.
 
-   ![Screenshot showing the popup in Microsoft Edge asking user to sign in.](./media/how-to-app-protection-policy-windows/browser-sign-in-continue-with-work-or-school-account.png)
+   ![Screenshot showing the popup in Microsoft Edge asking user to sign in.](./media/policy-all-users-windows-app-protection/browser-sign-in-continue-with-work-or-school-account.png)
 
 This process opens a window offering to allow Windows to remember your account and automatically sign you in to your apps and websites.
 
@@ -82,7 +82,7 @@ This process opens a window offering to allow Windows to remember your account a
 >
 > Don't select **No, sign in to this app only**.
 
-![Screenshot showing the stay signed in to all your apps window. Uncheck the allow my organization to manage my device checkbox.](./media/how-to-app-protection-policy-windows/stay-signed-in-to-all-your-apps.png)
+![Screenshot showing the stay signed in to all your apps window. Uncheck the allow my organization to manage my device checkbox.](./media/policy-all-users-windows-app-protection/stay-signed-in-to-all-your-apps.png)
 
 After selecting **OK**, you might see a progress window while policy is applied. After a few moments, you should see a window saying **You're all set**, app protection policies are applied.
 

@@ -149,7 +149,7 @@ Graph API support for named locations is available, for more information, see th
 
 When you use a cloud hosted proxy or VPN solution, the IP address Microsoft Entra ID uses while evaluating a policy is the IP address of the proxy. The X-Forwarded-For (XFF) header that contains the user’s public IP address isn't used because there's no validation that it comes from a trusted source, so would present a method for faking an IP address.
 
-When a cloud proxy is in place, a policy that requires a [Microsoft Entra hybrid joined or compliant device](howto-conditional-access-policy-compliant-device.md#create-a-conditional-access-policy) can be easier to manage. Keeping a list of IP addresses used by your cloud hosted proxy or VPN solution up to date can be nearly impossible.
+When a cloud proxy is in place, a policy that requires a [Microsoft Entra hybrid joined or compliant device](policy-alt-all-users-compliant-hybrid-or-mfa.md#create-a-conditional-access-policy) can be easier to manage. Keeping a list of IP addresses used by your cloud hosted proxy or VPN solution up to date can be nearly impossible.
 
 We recommend organizations utilize Global Secure Access to enable [source IP restoration](/entra/global-secure-access/how-to-source-ip-restoration) to avoid this change in address and simplify management.
 
@@ -176,7 +176,7 @@ A policy that uses the location condition to block access is considered restrict
 
 ## Related content
 
-- [Configure an example Conditional Access policy using location](howto-conditional-access-policy-location.yml).
+- [Configure an example Conditional Access policy using location](policy-block-by-location.md).
 
 <!--- 
 ## Define locations
