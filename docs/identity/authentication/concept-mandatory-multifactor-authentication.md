@@ -18,7 +18,7 @@ At Microsoft, we're committed to providing our customers with the highest level 
 
 That's why, starting in 2024, we'll enforce mandatory multifactor authentication (MFA) for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
 
-There's no change for users if your organization already enforces MFA for them, or if they sign in with stronger methods like passwordless or passkey (FIDO2). For steps to find users who don't use MFA for sign in, and ways to verify that MFA is enabled, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md). 
+There's no change for users if your organization already enforces MFA for them, or if they sign in with stronger methods like passwordless or passkey (FIDO2). To verify that MFA is enabled, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md). 
 
 ## Scope of enforcement 
  
@@ -38,18 +38,18 @@ The scope of enforcement includes which applications plan to enforce MFA, when e
 
 ### Accounts 
 
-All users who sign into the [applications](#applications) listed previously to perform any Create, Read, Update, or Delete (CRUD) operation will require MFA when the enforcement begins. End users who access application, websites, or services hosted on Azure, but don't sign into the listed applications, aren't required to use MFA. The authentication requirements for end users are controlled by the application, website, or service owner. 
+All users who sign into the [applications](#applications) listed earlier to perform any Create, Read, Update, or Delete (CRUD) operation must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
 
-Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend updating these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
+Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
 Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this Azure MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
 
-> [!Tip]
-> We recommend customers discover user accounts that are used as service accounts begin to migrate them to workload identities. Migration often requires updating scripts and automation processes to use workload identities.
->
-> Review [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md) to identify all user accounts, including user accounts being used as service accounts, that sign in to the [applications](#applications).
-
 ### Migrate user-based service accounts to workload identities
+
+We recommend customers discover user accounts that are used as service accounts begin to migrate them to workload identities. 
+Migration often requires updating scripts and automation processes to use workload identities. 
+
+Review [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md) to identify all user accounts, including user accounts being used as service accounts, that sign in to the [applications](#applications).
 
 For more information about how to migrate from user-based service accounts to workload identities for authentication with these applications, see: 
 
@@ -57,7 +57,7 @@ For more information about how to migrate from user-based service accounts to wo
 - [Sign into Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
 - [Sign in to Azure PowerShell non-interactively for automation scenarios](/powershell/azure/authenticate-noninteractive) includes guidance for both managed identity and service principal use cases
 
-Customers applying Conditional Access policies to the user based service accounts can reclaim this user based license and apply [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
+Some customers apply Conditional Access policies to user-based service accounts. You can reclaim the user-based license, and add a [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
 
 ## Implementation
  
@@ -115,7 +115,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: Is MFA mandatory for all users or only administrators? 
 
-**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md#user-exclusions) that are enabled for them.
+**Answer**: All users who sign in to any of the [applications](#applications) listed earlier are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md#user-exclusions) that are enabled for them.
 
 **Question**: Will I need to complete MFA if I choose the option to Stay signed in?
 
@@ -131,7 +131,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: Will phase 1 or phase 2 of mandatory MFA impact my ability to sync with Microsoft Entra Connect or Microsoft Entra Cloud Sync?
 
-**Answer**: No. The syncronization service account isn't affected by the manadatory MFA requirement. Only [applications](#applications) listed previously require MFA for sign in. 
+**Answer**: No. The syncronization service account isn't affected by the manadatory MFA requirement. Only [applications](#applications) listed earlier require MFA for sign in. 
 
 **Question**: Will I be able to opt out? 
 
@@ -146,7 +146,7 @@ An option to postpone the enforcement start date is available for customers. Bet
 
 **Question**: What if I already have MFA enabled, what happens next? 
 
-**Answer**: Customers that already require MFA for their users who access the applications listed previously don't see any change. If you only require MFA for a subset of users, then any users not already using MFA will now need to use MFA when they sign in to the applications. 
+**Answer**: Customers that already require MFA for their users who access the applications listed earlier don't see any change. If you only require MFA for a subset of users, then any users not already using MFA will now need to use MFA when they sign in to the applications. 
 
 **Question**: How can I review MFA activity in Microsoft Entra ID? 
 
