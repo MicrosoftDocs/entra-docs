@@ -6,7 +6,7 @@ manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/15/2023
+ms.date: 10/23/2024
 ms.author: billmath
 ms.reviewer: markwahl-msft
 ---
@@ -37,7 +37,7 @@ Identity Governance helps organizations achieve a balance between *productivity*
 
 For many organizations, identity lifecycle for employees and other workers is tied to the representation of that person in an HCM (human capital management) or HR system. Organizations need to automate the process of creating an identity for a new employee that is based on a signal from that system so that the employee can be productive on day 1. And organizations need to ensure those identities and access are removed when the employee leaves the organization.
 
-In Microsoft Entra ID Governance, you can automate the identity lifecycle for these individuals using:
+In Microsoft Entra ID Governance, you can [automate the identity lifecycle](https://youtu.be/NxSu3JEsxmY?si=fuY8nV4Fg5DbMArd) for these individuals using:
 
 - [inbound provisioning from your organization's HR sources](../identity/app-provisioning/plan-cloud-hr-provision.md), including retrieving from Workday and SuccessFactors, to automatically maintain user identities in both Active Directory and Microsoft Entra ID.
 - [lifecycle workflows](what-are-lifecycle-workflows.md) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day.
@@ -123,3 +123,4 @@ Once you've started using these identity governance features, you can easily aut
 - [Understanding least privileged](scenarios/least-privileged.md)
 - [Govern the employee and guest lifecycle](scenarios/govern-the-employee-lifecycle.md)
 - [Govern access for applications in your environment](identity-governance-applications-prepare.md)
+- [Microsoft Entra ID Governance Overview video](https://youtu.be/NxSu3JEsxmY?si=fuY8nV4Fg5DbMArd)
