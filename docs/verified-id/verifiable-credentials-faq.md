@@ -113,7 +113,7 @@ Yes, after reconfiguring your service, your tenant has a new DID use to issue an
 
 ### Is it possible to request Microsoft to retrieve "old DIDs"?
 
-No, at this point it isn't possible to keep your tenant's DID after you have opt out of the service.
+No, at this point it isn't possible to keep your tenant's DID after you have opted out of the service.
 
 ### I can't use ngrok, what do I do?
 
