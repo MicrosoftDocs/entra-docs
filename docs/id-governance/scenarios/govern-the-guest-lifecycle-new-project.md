@@ -54,6 +54,24 @@ For example:
    > [!NOTE]
    > A high degree of control over collaboration can lead to higher IT budgets, reduced productivity, and delayed business outcomes. When official collaboration channels are perceived as onerous, end users tend to evade official channels. An example is end users sending unsecured documents by email.
 
+### Scenario-based planning
+
+IT teams can delegate partner access to empower employees to collaborate with partners. This delegation can occur while maintaining sufficient security to protect intellectual property.
+
+Compile and assess your organizations scenarios to help assess employee versus business partner access to resources. Financial institutions might have compliance standards that restrict employee access to resources such as account information. Conversely, the same institutions can enable delegated partner access for projects such as marketing campaigns.
+
+   ![Diagram of a balance of IT team goverened access to partner self-service.](../../architecture/media/secure-external-access/1-scenarios.png)
+
+#### Scenario considerations
+
+Use the following list to help measure the level of access control.
+
+- Information sensitivity, and associated risk of its exposure
+- Partner access to information about other end users
+- The cost of a breach versus the overhead of centralized control and end-user friction
+
+Organizations can start with highly managed controls to meet compliance targets, and then delegate some control to end users, over time. There can be simultaneous access-management models in an organization.
+
 You should start with reviewing the documentation for [Secure external Collaboration](../../architecture/1-secure-access-posture.md) and [Plan a Microsoft Entra B2B collaboration deployment](../../architecture/secure-external-access-resources.md).  Reviewing this documentation will allow you to devise and create a security plan that can be used with your guest scenarios.
 
 :::zone-end
@@ -78,6 +96,21 @@ You should start with reviewing the documentation for [Secure external Collabora
 
 ## Discovery: Identify current lifecycle and governance processes for external identities 
 Identify your current lifecycle and governance processes for external identities.  This exercise will help you to determine applicable scenarios, feasibility and scope.  
+
+Use the following table as a guide for areas to investigate while determing your current state.
+
+|Process|Description|
+|-----|-----|
+|Determine who initiates external collaboration|Generally, users seeking external collaboration know the applications to use, and when access ends. Therefore, determine users with delegated permissions to invite external users, create access packages, and complete access reviews.|
+|Enumerate guest users and organizations|External users might be Microsoft Entra B2B users with partner-managed credentials, or external users with locally provisioned credentials. Typically, these users are the Guest UserType.|
+|Discover email domains and companyName property|You can determine external organizations with the domain names of external user email addresses.|
+|Use allowlist, blocklist, and entitlement management|Use the allowlist or blocklist to enable your organization to collaborate with, or block, organizations at the tenant level.|
+|Determine external user access|With an inventory of external users and organizations, determine the access to grant to the users.|
+|Enumerate application permissions|Investigate access to your sensitive apps for awareness about external access.|
+|Detect informal sharing|If your email and network plans are enabled, you can investigate content sharing through email or unauthorized software as a service (SaaS) apps.|
+
+For more information, see [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
+
 
 Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities.  The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
 
