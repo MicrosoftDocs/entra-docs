@@ -7,7 +7,7 @@ metadata:
   ms.author: sarahlipsey
   manager: amycolannino
   ms.reviewer: almars
-  ms.date: 01/16/2024
+  ms.date: 10/23/2024
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
@@ -27,7 +27,7 @@ prerequisites:
   summary: |
     Configuring the 'keep me signed in' (KMSI) option requires one of the following licenses:
 
-      - Microsoft Entra ID P1 or P2
+      - Microsoft Entra ID Free
       - Office 365 (for Office apps)
       - Microsoft 365
 

@@ -114,7 +114,7 @@ procedureSection:
         Go to **Identity** > **Users** > **All users** and select the invited guest user.
       - |
         In the **My Feed** section, locate the **B2B collaboration** tile. 
-         - If the invitation state is **PendingAcceptance**, select the **Resend invitation** link to send another email and follow the prompts.
+         - If the invitation state is **Pending acceptance**, select the **Resend invitation** link to send another email and follow the prompts.
          - You can also select the **Properties** for the user and view the **Invitation state**.
 
         :::image type="content" source="media/add-users-administrator/external-user-invitation-state.png" alt-text="Screenshot of the My Feed section of the user overview page.":::

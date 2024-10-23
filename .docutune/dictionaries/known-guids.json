@@ -1233,7 +1233,6 @@
   "Microsoft Cloud App Security_1": "df845ce7-05f9-4894-b5f2-11bbfbcfd2b6",
   "Microsoft Cloud App Security_2": "2e2ddb96-6af9-4b1d-a3f0-d6ecfd22edb2",
   "Marketo Sales Engage": "0b4dcf5f-e476-465b-8d46-538e19df4943",
-  "Azure VPN Client": "41b23e61-6c1e-4545-b367-cd054e0ed4b4",
   "Microsoft Commerce Tools Authentication Service": "dae9ab2c-0d46-41d1-969c-15f3b5005024",
   "Microsoft Forms": "c9a559d2-7aab-4f13-a6ed-e7e9c52aec87",
   "Microsoft Frontbridge": "0fe2f700-2fcd-47cd-8347-d6b245233ffc",
@@ -3672,5 +3671,13 @@
   "Azure Machine Learning Workbench web app" : "d7304df8-741f-47d3-9bc2-df0e24e2071f",
   "Azure AI Studio app" : "cb2ff863-7f30-4ced-ab89-a00194bcf6d9",
   "Azure Cosmos DB principal ID - Azure Government" : "57506a73-e302-42a9-b869-6f12d9ec29e9",
-  "Azure Cosmos DB principal ID - Other regions" : "a232010e-820c-4083-83bb-3ace5fc29d0b"
+  "Azure Cosmos DB principal ID - Other regions" : "a232010e-820c-4083-83bb-3ace5fc29d0b",
+  "Azure Arc MetalLB extension" : "087fca6e-4606-4d41-b3f6-5ebdf75b8b4c",
+  "Azure VPN client - Microsoft registered, Azure Public" : "c632b3df-fb67-4d84-bdcf-b95ad541b5c8",
+  "Azure VPN client - Manually registered, Azure Public" : "41b23e61-6c1e-4545-b367-cd054e0ed4b4",
+  "Azure VPN client - Manually registered, Azure Government" : "51bb15d4-3a4f-4ebf-9dca-40096fe32426",
+  "Azure VPN client - Manually registered, Azure Germany" : "538ee9e6-310a-468d-afef-ea97365856a9",
+  "Azure VPN client - Manually registered, Microsoft Azure operated by 21Vianet" : "49f817b6-84ae-4cc0-928c-73f27289b3aa",
+  "Azure Resource Manager tenant ID - hardcoded" : "c0257de7-538f-415c-993a-1b87a031879d",
+  "Azure Databricks app ID" : "2ff814a6-3304-4ab8-85cb-cd0e6f879c1d"
 }
