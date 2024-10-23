@@ -97,7 +97,10 @@ You should start with reviewing the documentation for [Secure external Collabora
 ## Discovery: Identify current lifecycle and governance processes for external identities 
 Identify your current lifecycle and governance processes for external identities.  This exercise will help you to determine applicable scenarios, feasibility and scope.  
 
-Use the following table as a guide for areas to investigate while determing your current state.
+Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities.  The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
+
+
+You can also use the following table as a guide for additional areas to consider while determing your current state.
 
 |Process|Description|
 |-----|-----|
@@ -112,7 +115,7 @@ Use the following table as a guide for areas to investigate while determing your
 For more information, see [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
 
 
-Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities.  The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
+
 
 ### Example - Identify current lifecycle and governance processes
 Consider you are the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business guests like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
