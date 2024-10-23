@@ -77,8 +77,10 @@ Identify your current lifecycle and governance processes for external identities
 
 Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities.  The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
 
-### Example discovery
+### Example - Identify current lifecycle and governance processes
 Consider you are the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business guests like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
+
+:::image type="content" source="media/external-guest-new/discover.png" alt-text="Conceputal drawing of an organization." lightbox="media/external-guest-new/discover.png":::
 
 Some of your key requirements include,  
 
