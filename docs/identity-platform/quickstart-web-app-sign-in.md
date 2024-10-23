@@ -118,6 +118,19 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 - Alternatively, [download the sample .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip), then extract it to a file path where the length of the name is fewer than 260 characters.
 
+### Install project dependencies
+
+1. Open a console window, and change to the directory that contains the Node.js sample app:
+
+    ```console
+    cd 1-Authentication\5-sign-in-express\App
+    ```
+
+1. Run the following commands to install app dependencies:
+
+    ```console
+    npm install
+    ```
 
 #### [ASP.NET Core](#tab/asp-dot-net-core)
 
@@ -143,45 +156,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
-
-#### [Python Flask](#tab/python-flask)
-
-To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
-
-- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
-
-    ```console
-    git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
-    ```
-
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
-
----
-
-
-## Install project dependencies
-
-#### [Node](#tab/node)
-
-1. Open a console window, and change to the directory that contains the Node.js sample app:
-
-    ```console
-    cd 1-Authentication\5-sign-in-express\App
-    ```
-
-1. Run the following commands to install app dependencies:
-
-    ```console
-    npm install
-    ```
-
-
-#### [ASP.NET Core](#tab/asp-dot-net-core)
-
-PLACEHOLDER
-
-
-#### [Python Django](#tab/python-django)
+### Install project dependencies
 
 1. Open a console window, and change to the directory that contains the Flask sample web app:
 
@@ -211,8 +186,20 @@ PLACEHOLDER
     python3 -m pip install -r requirements.txt
     ```
 
-
 #### [Python Flask](#tab/python-flask)
+
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
+
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
+
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
+    ```
+
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+
+
+### Install project dependencies
 
 1. Open a console window, and change to the directory that contains the Flask sample web app:
 
@@ -241,6 +228,7 @@ PLACEHOLDER
     ```console
     python3 -m pip install -r requirements.txt
     ```
+
 ---
 
 ## Configure the sample web app
