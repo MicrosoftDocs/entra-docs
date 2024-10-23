@@ -124,7 +124,14 @@ The tutorials for deploying and running the [samples](verifiable-credentials-con
 - Python - [Deploy using Visual Studio Code](/azure/app-service/quickstart-python?tabs=flask%2Cwindows%2Cazure-cli%2Cvscode-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli#3---deploy-your-application-code-to-azure)
 
 Regardless of which language of the sample you're using, the Azure AppService hostname `https://something.azurewebsites.net` is used as the public endpoint. You don't need to configure something extra to make it work. If you make changes to the code or configuration, you need to redeploy the sample to Azure AppServices. Troubleshooting/debugging isn't as easy as running the sample on your local machine, where traces to the console window show you errors, but you can achieve almost the same by using the [Log Stream](/azure/app-service/troubleshoot-diagnostic-logs#stream-logs).
- 
+
+### Network hardening for callback events
+
+The Request Service API makes use of callbacks to a [URL](presentation-request-api.md#callback-type) provided by the relying party application. This URL needs to be reachable from the Verified ID system for the callbacks to be received. Callbacks are coming from Azure infrastructure in the same region as your Entra tenant. If you need to harden your network, you have two options.
+
+1. Use [Azure firewall service tags](/azure/firewall/service-tags) [AzureCloud](/azure/virtual-network/service-tags-overview#available-service-tags).
+2. Use the published [CIDR range](https://www.microsoft.com/download/details.aspx?id=56519) to configure your firewall.  You need to use AzureCloud.***regions*** that matches where your Entra tenant is deployed to config their firewalls to let callback traffic from Request Service API through. For instance, if your tenant is in EU, you should pick all CIDR ranges from AzureCloud.***northeurope***, ***.westeurope***, etc, to your firewalls config.
+
 ## Next steps
 
 - [Customize your verifiable credentials](credential-design.md)
