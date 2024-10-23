@@ -315,7 +315,7 @@ When the managed domain is enabled again, the managed domain's health automatica
 
 ### Alert Message
 
-*Microsoft can’t manage the domain controllers for this managed domain due to unresolved health alerts \[IDs\]. This is blocking critical security updates as well as a planned migration to Windows Server 2019 for these domain controllers. Follow steps in the alert to resolve the issue. Failure to resolve this issue within 30 days will result in suspension of the managed domain.*
+*Microsoft can’t manage the domain controllers for this managed domain due to unresolved health alerts \[IDs\]. This is blocking critical security updates for these domain controllers. Follow steps in the alert to resolve the issue. Failure to resolve this issue within 30 days will result in suspension of the managed domain.*
 
 ### Resolution
 
