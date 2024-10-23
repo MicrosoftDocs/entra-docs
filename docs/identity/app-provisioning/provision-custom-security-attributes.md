@@ -13,7 +13,7 @@ ms.reviewer: chmutali
 
 # Provision custom security attributes from HR sources (preview)
 
-Custom security attribute provisioning enables customers to set custom security attributes automatically using Microsoft Entra inbound provisioning capabilities. With this public preview, you can source values for CSAs from authoritative sources, such as those from HR systems. Custom security attribute provisioning supports the following sources: Workday, SAP SuccessFactors, and other integrated HR systems that use API-driven provisioning. The provisioning target is your Microsoft Entra ID tenant.
+Custom security attribute provisioning enables customers to set custom security attributes automatically using Microsoft Entra inbound provisioning capabilities. With this public preview, you can source values for custom security attributes from authoritative sources, such as those from HR systems. Custom security attribute provisioning supports the following sources: Workday, SAP SuccessFactors, and other integrated HR systems that use API-driven provisioning. The provisioning target is your Microsoft Entra ID tenant.
 
 :::image type="content" source="media/custom-security-attributes/about-custom-security-attributes.png" alt-text="Diagram of custom security attributes architecture.":::
 
@@ -46,11 +46,11 @@ To provision custom security attributes, you must meet the following prerequisit
 
 ## Configuring your provisioning app with custom security attributes
 
-Before you begin, [follow these steps](~/fundamentals/custom-security-attributes-add.md) to add CSAs in your Microsoft Entra ID tenant and map custom security attributes in your inbound provisioning app. 
+Before you begin, [follow these steps](~/fundamentals/custom-security-attributes-add.md) to add custom security attributes in your Microsoft Entra ID tenant and map custom security attributes in your inbound provisioning app. 
 
 ### Define custom security attributes in your Microsoft Entra ID tenant
 
-In the [Microsoft Entra admin center](https://entra.microsoft.com), access the option to add CSAs from the **Protection** menu.  You need to have at least an **Attribute Definition Administrator** role to complete this task.
+In the [Microsoft Entra admin center](https://entra.microsoft.com), access the option to add custom security attributes from the **Protection** menu.  You need to have at least an **Attribute Definition Administrator** role to complete this task.
 
 This example includes custom security attributes that you could add to your tenant. Use the attribute set `HRConfidentialData` and then add the following attributes to:
 
@@ -86,10 +86,10 @@ This example includes custom security attributes that you could add to your tena
 
     - Test custom security attributes provisioning with the *Inbound Provisioning* API by defining a SCIM schema namespace: `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa`. Be sure to include the following attributes:
 
-      - `ourn:ietf:params:scim:schemas:extension:microsoft:entra:csa:EEOStatus`
-      - `ourn:ietf:params:scim:schemas:extension:microsoft:entra:csa:FLSAStatus`
-      - `ourn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayGrade`
-      - `ourn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayScaleType`
+      - `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:EEOStatus`
+      - `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:FLSAStatus`
+      - `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayGrade`
+      - `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayScaleType`
 
     :::image type="content" source="media/custom-security-attributes/attributes-to-test.png" alt-text="Screenshot of the SCIM schema namespace option.":::
 
@@ -124,7 +124,7 @@ CustomSecurityAttributes.HRConfidentialData_EEOStatus |
 
 ### Test custom security attributes provisioning
 
-Once you've mapped HR source attributes to the custom security attributes, use the following method to test the flow of CSA data. The method you choose depends upon your provisioning app type.
+Once you've mapped HR source attributes to the custom security attributes, use the following method to test the flow of custom security attributes data. The method you choose depends upon your provisioning app type.
 
 - If your job uses either Workday or SuccessFactors as its source, then use the [On-demand provisioning](provision-on-demand.md) capability to test the custom security attributes data flow.
 - If your job uses API-driven provisioning, then send SCIM bulk payload to the *bulkUpload* API endpoint of your job.
@@ -192,13 +192,146 @@ The bulk request shown in the [Bulk request with SCIM Enterprise User Schema](~/
 
 Publish as code similar to the following example. 
 
-:::image type="content" source="media/custom-security-attributes/graph-explorer-code-example.png" alt-text="Screenshot of the Sample SCIM payload with custom security attributes.":::
+<p><strong>Request body</strong></p>
+<pre><code class="lang-http">{
+    "schemas": ["urn:ietf:params:scim:api:messages:2.0:BulkRequest"],
+    "Operations": [
+    {
+        "method": "POST",
+        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+        "path": "/Users",
+        "data": {
+            "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
+            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],
+            "externalId": "701984",
+            "userName": "bjensen@example.com",
+            "name": {
+                "formatted": "Ms. Barbara J Jensen, III",
+                "familyName": "Jensen",
+                "givenName": "Barbara",
+                "middleName": "Jane",
+                "honorificPrefix": "Ms.",
+                "honorificSuffix": "III"
+            },
+            "displayName": "Babs Jensen",
+            "nickName": "Babs",
+            "emails": [
+            {
+              "value": "bjensen@example.com",
+              "type": "work",
+              "primary": true
+            }
+            ],
+            "addresses": [
+            {
+              "type": "work",
+              "streetAddress": "100 Universal City Plaza",
+              "locality": "Hollywood",
+              "region": "CA",
+              "postalCode": "91608",
+              "country": "USA",
+              "formatted": "100 Universal City Plaza\nHollywood, CA 91608 USA",
+              "primary": true
+            }
+            ],
+            "phoneNumbers": [
+            {
+              "value": "555-555-5555",
+              "type": "work"
+            }
+            ],
+            "userType": "Employee",
+            "title": "Tour Guide",
+            "preferredLanguage": "en-US",
+            "locale": "en-US",
+            "timezone": "America/Los_Angeles",
+            "active":true,
+            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
+                 "employeeNumber": "701984",
+                 "costCenter": "4130",
+                 "organization": "Universal Studios",
+                 "division": "Theme Park",
+                 "department": "Tour Operations",
+                 "manager": {
+                     "value": "89607",
+                     "displayName": "John Smith"
+                 }
+            }
+        }
+    },
+    {
+        "method": "POST",
+        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+        "path": "/Users",
+        "data": {
+            "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
+            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],
+            "externalId": "701985",
+            "userName": "Kjensen@example.com",
+            "name": {
+                "formatted": "Ms. Kathy J Jensen, III",
+                "familyName": "Jensen",
+                "givenName": "Kathy",
+                "middleName": "Jane",
+                "honorificPrefix": "Ms.",
+                "honorificSuffix": "III"
+            },
+            "displayName": "Kathy Jensen",
+            "nickName": "Kathy",
+            "emails": [
+            {
+              "value": "kjensen@example.com",
+              "type": "work",
+              "primary": true
+            }
+            ],
+            "addresses": [
+            {
+              "type": "work",
+              "streetAddress": "100 Oracle City Plaza",
+              "locality": "Hollywood",
+              "region": "CA",
+              "postalCode": "91618",
+              "country": "USA",
+              "formatted": "100 Oracle City Plaza\nHollywood, CA 91618 USA",
+              "primary": true
+            }
+            ],
+            "phoneNumbers": [
+            {
+              "value": "555-555-5545",
+              "type": "work"
+            }
+            ],
+            "userType": "Employee",
+            "title": "Tour Lead",
+            "preferredLanguage": "en-US",
+            "locale": "en-US",
+            "timezone": "America/Los_Angeles",
+            "active":true,
+            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
+                 "employeeNumber": "701985",
+                 "costCenter": "4130",
+                 "organization": "Universal Studios",
+                 "division": "Theme Park",
+                 "department": "Tour Operations",
+                 "manager": {
+                     "value": "701984",
+                     "displayName": "Barbara Jensen"
+                 }
+            }
+        }
+    }
+],
+    "failOnErrors": null
+}
+</code></pre>
 
 #### New Graph API permissions
 
 This preview feature introduces the following new Graph API permissions for all apps, either directly or on behalf of the signed-in user. This functionality enables you to access and modify provisioning app schemas that contain custom security attribute mappings.
 
-1. **CustomSecAttributeProvisioning.ReadWrite.All**: This permission grants the calling app ability to read and write the attribute mapping that contains custom security attributes. This permission with `Application.ReadWrite.OwnedBy` or `Synchronization.ReadWrite.All` or `Application.ReadWrite.All` (from least to highest privilege) is required to edit a provisioning app that contains custom security attributes mappings. This permission enables you to get the complete schema that includes the CSAs and to update or reset the schema with custom security attributes.
+1. **CustomSecAttributeProvisioning.ReadWrite.All**: This permission grants the calling app ability to read and write the attribute mapping that contains custom security attributes. This permission with `Application.ReadWrite.OwnedBy` or `Synchronization.ReadWrite.All` or `Application.ReadWrite.All` (from least to highest privilege) is required to edit a provisioning app that contains custom security attributes mappings. This permission enables you to get the complete schema that includes the custom security attributes and to update or reset the schema with custom security attributes.
 
 1. **CustomSecAttributeProvisioning.Read.All**: This permission grants the calling app ability to read the attribute mapping and the provisioning logs that contain custom security attributes. This permission with `Synchronization.Read.All` or `Application.Read.All` (from least to highest privilege) is required to view the custom security attributes names and values in the protected resources.
 
