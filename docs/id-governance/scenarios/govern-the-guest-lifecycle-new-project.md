@@ -13,7 +13,7 @@ ms.author: billmath
 
 # New guest lifecycle project with Microsoft Entra ID Governance
 
-Guest Scenarios or external access are specific use cases where business guests (External individuals like contractors, consultants, vendors, or partners who need access to the organization’s resources) interact with the organization’s resources. Understanding these scenarios helps in designing appropriate access controls and ensuring smooth collaboration with external individuals.
+Guest Scenarios or external access scenarios are specific use cases where business guests (External individuals like contractors, consultants, vendors, or partners who need access to the organization’s resources) interact with the organization’s resources. Understanding these scenarios helps in designing appropriate access controls and ensuring smooth collaboration with external individuals.
 
 :::zone pivot="identity-governance-guest-discover"
 
