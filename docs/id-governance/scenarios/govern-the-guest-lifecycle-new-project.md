@@ -13,23 +13,42 @@ ms.author: billmath
 
 # New guest lifecycle project with Microsoft Entra ID Governance
 
-Guest Scenarios or external access scenarios are specific use cases where business guests (External individuals like contractors, consultants, vendors, or partners who need access to the organization’s resources) interact with the organization’s resources. Understanding these scenarios helps in designing appropriate access controls and ensuring smooth collaboration with external individuals.
-
-:::zone pivot="identity-governance-guest-discover"
+The following documentation will guide you through creating and deploying guest access scenarios.
 
 
 
+:::zone pivot="identity-governance-guest-overview"
 
-## Determine your security posture for guest access with Microsoft Entra ID
+## An overview of guest scenarios
+Guest Scenarios or external access scenarios are specific use cases where business guests (External individuals like contractors, consultants, vendors, or partners who need access to the organization’s resources) interact with the organization’s resources. 
+
+:::image type="content" source="media/external-guest-new/govern-access.png" alt-text="Conceputal drawing of governing access to your resources." lightbox="media/external-guest-new/govern-access.png":::
+
+Understanding these scenarios helps in designing appropriate access controls and ensuring smooth collaboration with external individuals.  Some examples of guest scenarios include:
+
+ - If you’re an organization or a developer creating consumer apps, and you need add authentication and customer identity and access management (CIAM) to your application to allow extrnal guests access.  For more information, see [External ID overview](../../external-id/external-identities-overview.md)
+
+ - If you want to enable your employees to collaborate with business partners and guests and allow secure access through invitation or self-service sign-up. Determine the level of access guests have to the Microsoft Entra tenant that contains your employees and organizational resources, which is a tenant in a workforce configuration.  For more information, see[https://learn.microsoft.com/en-us/entra/external-id/what-is-b2b] (../../external-id/what-is-b2b.md)
+
+## License Requirements 
+
+Using some of the below features mentioned requires Microsoft Entra ID Governance or Microsoft Entra Suite licenses. To find the right license for your requirements, see [Microsoft Entra ID Governance licensing fundamentals](../licensing-fundamentals.md)
+
+:::zone-end
+
+:::zone pivot="identity-governance-guest-secure"
+
+
+## Determine your security posture for guest access
 
 As you consider the governance of external access, assess your organization's security and collaboration needs, by scenario. You can start with the level of control the IT team has over the day-to-day collaboration of end users. Organizations in highly regulated industries might require more IT team control. For example, defense contractors can have a requirement to positively identify and document external users, their access, and access removal: all access, scenario-based, or workloads. Consulting agencies can use certain features to allow end users to determine the external users they collaborate with.
 
-  ![Bar graph of the span from full IT team control, to end-user self service.](~/achitecture/media/secure-external-access/1-overall-control.png)
+  ![Bar graph of the span from full IT team control, to end-user self service.](../../architecture/media/secure-external-access/1-overall-control.png)
 
    > [!NOTE]
    > A high degree of control over collaboration can lead to higher IT budgets, reduced productivity, and delayed business outcomes. When official collaboration channels are perceived as onerous, end users tend to evade official channels. An example is end users sending unsecured documents by email.
 
-For more information, see [Determining your security posture](~/architecture/1-secure-access-posture.md)
+You should start with reviewing the documentation for [Secure external Collaboration](../../architecture/1-secure-access-posture.md).  Reviewing this documentation will allow you to devise and create a security plan that can be used with your guest scenarios.
 
 :::zone-end
 
@@ -54,6 +73,8 @@ For more information, see [Determining your security posture](~/architecture/1-s
 ## Identify current lifecycle and governance processes for external identities 
 Identify your current lifecycle and governance processes for external identities.  This exercise will help you to determine applicable scenarios, feasibility and scope.  
 
+
+## Example
 Consider you are the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business guests like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
 
 Some of your key requirements include,  
