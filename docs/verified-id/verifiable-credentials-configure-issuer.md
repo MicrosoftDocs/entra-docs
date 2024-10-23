@@ -39,7 +39,7 @@ The following diagram illustrates the Microsoft Entra Verified ID architecture a
 - To clone the repository that hosts the sample app, install [GIT](https://git-scm.com/downloads).
 - [Visual Studio Code](https://code.visualstudio.com/Download), [Visual Studio](https://visualstudio.microsoft.com/downloads/) or similar code editor.
 - [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/6.0).
-- Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cannot-use-ngrok-what-do-i-do).
+- Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cant-use-ngrok-what-do-i-do).
 - A mobile device with the latest version of Microsoft Authenticator.
 
 ## Create the verified credential expert card in Azure
