@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 5. Under the **Admin Credentials** section, copy the **8x8 URL** from Admin Console into **Tenant URL**. Copy the **8x8 API Token** from Admin Console into **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to 8x8. If the connection fails, ensure your 8x8 account has Admin permissions and try again.
 
- 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of the Admin section.](common/provisioning-testconnection-tenanturltoken.png)
 
 6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
@@ -139,15 +139,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 11. To enable the Microsoft Entra provisioning service for 8x8, change the **Provisioning Status** to **On** in the **Settings** section.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
 
 12. Define the users and/or groups that you would like to provision to 8x8 by choosing the desired values in **Scope** in the **Settings** section.
 
-	![Provisioning Scope](common/provisioning-scope.png)
+	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
 13. When you are ready to provision, click **Save**.
 
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 

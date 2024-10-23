@@ -44,7 +44,7 @@ Before configuring 4me for automatic user provisioning with Microsoft Entra ID, 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **4me**, select **4me** in the search box.
 1. Select **4me** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![4me in the results list](common/search-new-app.png)
+	![Screenshot of 4me in the results list.](common/search-new-app.png)
 
 ## Assigning users to 4me
 
@@ -74,11 +74,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **4me**.
 
-	![The 4me link in the Applications list](common/all-applications.png)
+	![Screenshot of The 4me link in the Applications list.](common/all-applications.png)
 
 3. Select the **Provisioning** tab.
 
@@ -92,23 +92,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 6. Sign in to your 4me Admin Console. Navigate to **Settings**.
 
-	![4me Settings](media/4me-provisioning-tutorial/4me01.png)
+	![Screenshot of 4me Settings.](media/4me-provisioning-tutorial/4me01.png)
 
 	Type in **apps** in the search bar.
 
-	![4me apps](media/4me-provisioning-tutorial/4me02.png)
+	![Screenshot of 4me apps.](media/4me-provisioning-tutorial/4me02.png)
 
 	Open the **SCIM** dropdown to retrieve the Secret Token and the SCIM endpoint.
 
-	![4me SCIM](media/4me-provisioning-tutorial/4me03.png)
+	![Screenshot of 4me SCIM.](media/4me-provisioning-tutorial/4me03.png)
 
 7. Upon populating the fields shown in Step 5, click **Test Connection** to ensure Microsoft Entra ID can connect to 4me. If the connection fails, ensure your 4me account has Admin permissions and try again.
 
-	![Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
 8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
 
-	![Notification Email](common/provisioning-notification-email.png)
+	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
 
 9. Click **Save**.
 
@@ -116,28 +116,28 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	
 11. Review the user attributes that are synchronized from Microsoft Entra ID to 4me in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in 4me for update operations. Please ensure that [4me supports filtering](https://developer.4me.com/v1/scim/users/) on the matching attribute you have chosen. Select the **Save** button to commit any changes.
 
-	![Screenshots of the 4me User attributes list.](media/4me-provisioning-tutorial/4me-user-attributes-first-part.png)
-	![Screenshots of the 4me User attributes list-2.](media/4me-provisioning-tutorial/4me-user-attributes-second-part.png)
+	![Screenshot of 4me User attributes list.](media/4me-provisioning-tutorial/4me-user-attributes-first-part.png)
+	![Screenshot of 4me User attributes list-2.](media/4me-provisioning-tutorial/4me-user-attributes-second-part.png)
 	
 12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to 4me**.
 	
 13. Review the group attributes that are synchronized from Microsoft Entra ID to 4me in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in 4me for update operations. Select the **Save** button to commit any changes.
 
-	![Screenshots of the 4me Group attributes list.](media/4me-provisioning-tutorial/4me-group-attribute.png)
+	![Screenshot of 4me Group attributes list.](media/4me-provisioning-tutorial/4me-group-attribute.png)
 
 14. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 15. To enable the Microsoft Entra provisioning service for 4me, change the **Provisioning Status** to **On** in the **Settings** section.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
 
 16. Define the users and/or groups that you would like to provision to 4me by choosing the desired values in **Scope** in the **Settings** section.
 
-	![Provisioning Scope](common/provisioning-scope.png)
+	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
 17. When you are ready to provision, click **Save**.
 
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on 4me.
 

@@ -126,8 +126,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Dialpad**.
 
-	![Dialpad User Mappings](media/dialpad-provisioning-tutorial/dialpad-user-mappings-new.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Dialpad in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Dialpad for update operations. Select the **Save** button to commit any changes.
 
 	![Dialpad User Attributes](media/dialpad-provisioning-tutorial/dialpad07.png)
