@@ -33,24 +33,12 @@ items:
             href: sample-single-page-app-react-sign-in.md
   - name: Web app
     items:
-      - name: Node.js
-        items:
-          - name: Sign in users
-            href: sample-web-app-node-sign-in.md
-          - name: Sign in users and call an API
-            href: sample-web-app-node-sign-in-call-api.md
-          - name: Sign in users and edit profile
-            href: sample-web-app-node-sign-in-edit-profile.md
-      - name: ASP.NET Core
-        items:
-          - name: Sign in users
-            href: sample-web-app-dotnet-sign-in.md
-      - name: Python
-        items:
-          - name: Django - Sign in users 
-            href: sample-web-app-python-django-sign-in.md
-          - name: Flask - Sign in users 
-            href: sample-web-app-python-flask-sign-in.md
+      - name: Sign in users
+        href: /entra/identity-platform/quickstart-web-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+      - name: Sign in users and call an API
+        href: sample-web-app-node-sign-in-call-api.md
+      - name: Sign in users and edit profile
+        href: sample-web-app-node-sign-in-edit-profile.md
   - name: Daemon, service
     items:
       - name: Node.js - call an API
