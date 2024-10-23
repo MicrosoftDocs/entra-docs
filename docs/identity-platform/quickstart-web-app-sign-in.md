@@ -19,40 +19,142 @@ Before you begin, use the **Choose a tenant type** selector at the top of this p
 
 ::: zone pivot="workforce"
 
-This quickstart uses a sample web app to show you how to sign in users in your workforce tenant. The sample uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
+This quickstart uses a sample web app to show you how to sign in users in your workforce tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
 
 ## Prerequisites
 
 #### [Node](#tab/node-worforce)
 
-placeholder
+* An Azure subscription. [Create an Azure subscription for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* [Node.js](https://nodejs.org/en/download/)
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
+* A Microsoft Entra workforce tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
 
-placeholder
-
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
+* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
 #### [Java](#tab/java-worforce)
 
-placeholder
+- [Java Development Kit (JDK)](https://openjdk.java.net/) 8 or later.
+- [Maven](https://maven.apache.org/).
+- A Microsoft Entra workforce tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
 
 #### [Python Flask](#tab/python-flask-worforce)
 
-placeholder
-
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra workforce tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
+- [Python 3 +](https://www.python.org/downloads/)
 
 ---
 
+
+## Register the web app
+
+#### [Node](#tab/node-worforce)
+
+Placeholder 
+
+### Add platform and URLs
+
+#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+
+Placeholder 
+
+### Add platform and URLs
+
+#### [Java](#tab/java-worforce)
+
+Placeholder 
+
+### Add platform and URLs
+
+#### [Python Flask](#tab/python-flask-worforce)
+
+Placeholder 
+
+### Add platform and URLs
+
+---
+
+
+## Add app client secret or certificate
+
+
+## Clone or download sample web application 
+
+#### [Node](#tab/node-worforce)
+
+Placeholder 
+
+### Install project dependencies
+
+#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+
+Placeholder 
+
+#### [Java](#tab/java-worforce)
+
+Placeholder 
+
+### Install project dependencies
+
+#### [Python Flask](#tab/python-flask-worforce)
+
+Placeholder 
+
+### Install project dependencies
+
+---
+
+
+## Configure the sample web app
+
+For you to sign in users with the sample app, you need to update it with your app and tenant details:
+
+
+## Run and test sample web app
+
+
+#### [Node](#tab/node-worforce)
+
+Placeholder 
+
+### How the app works
+
+#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+
+Placeholder 
+
+### How the app works
+
+#### [Java](#tab/java-worforce)
+
+Placeholder 
+
+### How the app works
+
+#### [Python Flask](#tab/python-flask-worforce)
+
+Placeholder 
+
+### How the app works
+
+---
+
+## Related content
 
 ::: zone-end 
 
 ::: zone pivot="external"
 
-This quickstart uses a sample web app to show you how to sign in users in your external tenant. The sample uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
+This quickstart uses a sample web app to show you how to sign in users in your external tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
 
 ## Prerequisites
 
-#### [Node](#tab/node)
+#### [Node](#tab/node-external)
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - [Node.js](https://nodejs.org).
@@ -60,15 +162,15 @@ This quickstart uses a sample web app to show you how to sign in users in your e
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
-#### [ASP.NET Core](#tab/asp-dot-net-core)
+#### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
-- Although any IDE that supports ASP.NET Core applications can be used, Visual Studio Code is used for this guide. It can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads/) page.
+- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 - An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
-#### [Python Django](#tab/python-django)
+#### [Python Django](#tab/python-django-external)
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - [Python 3+](https://www.python.org/).
@@ -76,7 +178,7 @@ This quickstart uses a sample web app to show you how to sign in users in your e
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
-#### [Python Flask](#tab/python-flask)
+#### [Python Flask](#tab/python-flask-external)
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - [Python 3+](https://www.python.org/).
@@ -90,21 +192,21 @@ This quickstart uses a sample web app to show you how to sign in users in your e
 
 [!INCLUDE [register-application-common-steps](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
-## Define the platform and URLs
+## Add platform and URLs
 
-#### [Node](#tab/node)
+#### [Node](#tab/node-external)
 
 [!INCLUDE [ciam-redirect-url-node](../external-id/customers/includes/register-app/add-platform-redirect-url-node.md)]
 
-#### [ASP.NET Core](#tab/asp-dot-net-core)
+#### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
 [!INCLUDE [ciam-redirect-url-dotnet](../external-id/customers/includes/register-app/add-platform-redirect-url-dotnet.md)]
 
-#### [Python Django](#tab/python-django)
+#### [Python Django](#tab/python-django-external)
 
 [!INCLUDE [django-app-redirect-uri-configuration](../external-id/customers/includes/register-app/add-platform-redirect-url-python-django.md)]  
 
-#### [Python Flask](#tab/python-flask)
+#### [Python Flask](#tab/python-flask-external)
 
 [!INCLUDE [flask-app-redirect-uri-configuration](../external-id/customers/includes/register-app/add-platform-redirect-url-python-flask.md)]  
 
@@ -128,7 +230,7 @@ This quickstart uses a sample web app to show you how to sign in users in your e
 
 ## Clone or download sample web application 
 
-#### [Node](#tab/node)
+#### [Node](#tab/node-external)
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file:
 
@@ -154,7 +256,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     npm install
     ```
 
-#### [ASP.NET Core](#tab/asp-dot-net-core)
+#### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
@@ -167,7 +269,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters. 
 
 
-#### [Python Django](#tab/python-django)
+#### [Python Django](#tab/python-django-external)
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
@@ -204,7 +306,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     python3 -m pip install -r requirements.txt
     ```
 
-#### [Python Flask](#tab/python-flask)
+#### [Python Flask](#tab/python-flask-external)
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
@@ -247,7 +349,10 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the sample web app
 
-#### [Node](#tab/node)
+
+For you to sign in users with the sample app, you need to update it with your app and tenant details:
+
+#### [Node](#tab/node-external)
 
 1. In your code editor, open *App\authConfig.js* file.
 
@@ -258,7 +363,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     - `Enter_the_Client_Secret_Here` and replace it with the app secret value you copied earlier.
 
 
-#### [ASP.NET Core](#tab/asp-dot-net-core)
+#### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
 1. Navigate to the root folder of the sample you have downloaded and directory that contains the ASP.NET Core sample app:
 
@@ -272,7 +377,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. Replace `Enter_the_Client_Secret_Here` with the client secret value you set up in [Add app client secret](#add-app-client-secret).
 
 
-#### [Python Django](#tab/python-django)
+#### [Python Django](#tab/python-django-external)
 
 1. Open your project files on Visual Studio Code or the editor you're using.
 
@@ -286,7 +391,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     1. `REDIRECT_URI` which should be similar to the redirect URI you registered earlier should match your configuration.
 
 
-#### [Python Flask](#tab/python-flask)
+#### [Python Flask](#tab/python-flask-external)
 
 1. Open your project files on Visual Studio Code or the editor you're using.
 
@@ -305,7 +410,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Run and test sample web app
 
-#### [Node](#tab/node)
+#### [Node](#tab/node-external)
 
 You can now test the sample Node.js web app. You need to start the Node.js server and access it through your browser at `http://localhost:3000`.
 
@@ -337,7 +442,7 @@ When the users select the **Sign out** link, the app clears its session, the red
 
 If you want to build an app similar to the sample you've run, complete the steps in [Sign in users in your own Node.js web application](/entra/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant) article.
 
-#### [ASP.NET Core](#tab/asp-dot-net-core)
+#### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
 1. From your shell or command line, execute the following commands:
 
@@ -355,7 +460,7 @@ If you want to build an app similar to the sample you've run, complete the steps
 
 1. To sign out from the application, select the **Sign out** button.
 
-#### [Python Django](#tab/python-django)
+#### [Python Django](#tab/python-django-external)
 
 Run the app to see the sign-in experience at play.
 
@@ -391,7 +496,7 @@ When users select the **Sign in** link, the app initiates an authentication requ
 
 When the users select the **Logout** link, the app clears its session, the redirect the user to Microsoft Entra External ID sign-out endpoint to notify it that the user has signed out. The user is then redirected back to the web app.
 
-#### [Python Flask](#tab/python-flask)
+#### [Python Flask](#tab/python-flask-external)
 
 Run the app to see the sign-in experience at play.
 
@@ -409,31 +514,30 @@ When the users select the **Logout** link, the app clears its session, the redir
 
 ## Related content
 
-#### [Node](#tab/node)
+#### [Node](#tab/node-external)
 
 - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 - [Configure sign-in with Google](/entra/external-id/customers/how-to-google-federation-customers)
 - [Sign in users in your Node.js web application](/entra/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant)
 
-#### [ASP.NET Core](#tab/asp-dot-net-core)
+#### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
 - [Use our multi-part tutorial series to build this ASP.NET web application from scratch](/entra/external-id/customers/tutorial-web-app-dotnet-sign-in-prepare-app)
 - [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)
 - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 
 
-#### [Python Django](#tab/python-django)
+#### [Python Django](#tab/python-django-external)
 
 - [Sign in users using a sample Flask web application](/entra/external-id/customers/sample-web-app-python-flask-sign-in)
 - [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)
 - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 
 
-#### [Python Flask](#tab/python-flask)
+#### [Python Flask](#tab/python-flask-external)
 
 - [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)f
 - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
-
 
 ---
 
