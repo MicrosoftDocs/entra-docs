@@ -351,6 +351,8 @@ groups:
   prompt: Choose the step of your journey
   pivots:
   - id: identity-governance-guest-discover
+    title: Security posture
+  - id: identity-governance-guest-discover
     title: Discovery
   - id: identity-governance-guest-onboard
     title: Onboarding
