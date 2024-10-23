@@ -61,6 +61,7 @@ This quickstart uses a sample web app to show you how to sign in users in your e
 - An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  
 ---
 
 ## Register the web app
@@ -181,9 +182,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```
 
 
-<!--#### [ASP.NET Core](#tab/asp-dot-net-core)
+#### [ASP.NET Core](#tab/asp-dot-net-core)
 
-PLACEHOLDER-->
+PLACEHOLDER
 
 
 #### [Python Django](#tab/python-django)
@@ -416,7 +417,7 @@ When the users select the **Logout** link, the app clears its session, the redir
 
 - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 - [Configure sign-in with Google](/entra/external-id/customers/how-to-google-federation-customers)
-- [Sign in users in your Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant)
+- [Sign in users in your Node.js web application](/entra/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant)
 
 #### [ASP.NET Core](#tab/asp-dot-net-core)
 
@@ -427,14 +428,14 @@ When the users select the **Logout** link, the app clears its session, the redir
 
 #### [Python Django](#tab/python-django)
 
-- [Sign in users using a sample Flask web application](./sample-web-app-python-flask-sign-in)
+- [Sign in users using a sample Flask web application](/entra/external-id/customers/sample-web-app-python-flask-sign-in)
 - [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)
 - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 
 
 #### [Python Flask](#tab/python-flask)
 
-- [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)
+- [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)f
 - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 
 ::: zone-end
