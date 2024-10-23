@@ -88,12 +88,6 @@ This quickstart uses a sample web app to show you how to sign in users in your e
 
 ---
 
-## Enable implicit and hybrid flows
-
-[Only for ASP.NET, but confirm from Chris why this instruction is necessary] 
-
-[!INCLUDE [ciam-enable-implicit-flow](../external-id/customers/includes/register-app/enable-implicit-hybrid-flows.md)]
-
 ## Add app client secret
 
 [!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
