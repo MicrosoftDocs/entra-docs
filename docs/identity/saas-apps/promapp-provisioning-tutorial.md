@@ -43,7 +43,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to Promapp, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup Promapp for provisioning
+## Set up Promapp for provisioning
 
 1. Sign in to your [Promapp Admin Console](https://freetrial.promapp.com/axelerate/Login.aspx). Under the user name navigate to **My Profile**.
 
@@ -53,7 +53,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Promapp Add SCIM](media/promapp-provisioning-tutorial/addtoken.png)
 
-3.	Provide any name in the **Description** field and select **Scim** from the **Scope** dropdown menu. Click on the save icon.
+3.	Provide any name in the **Description** field and select **SCIM** from the **Scope** dropdown menu. Click on the save icon.
 
 	![Promapp Add Name](media/promapp-provisioning-tutorial/addname.png)
 

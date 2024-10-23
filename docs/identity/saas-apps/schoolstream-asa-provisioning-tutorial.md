@@ -92,8 +92,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	![Provisioning tab](common/provisioning.png)
 
 1. If you are configuring provisioning for the first time, select **Get started**.
-
-	![Provisioning get started](media/schoolstream-asa-provisioning-tutorial/provisioning-get-started.png)
 	
 1. Set the **Provisioning Mode** to **Automatic**.
 

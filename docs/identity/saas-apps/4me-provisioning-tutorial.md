@@ -113,20 +113,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 9. Click **Save**.
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to 4me**.
-
-	:::image type="content" source="media/4me-provisioning-tutorial/4me-user-mapping.png" alt-text="Screenshot of the Mappings page. Under Name, Synchronize Microsoft Entra users to FourMe is highlighted." border="false":::
 	
 11. Review the user attributes that are synchronized from Microsoft Entra ID to 4me in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in 4me for update operations. Please ensure that [4me supports filtering](https://developer.4me.com/v1/scim/users/) on the matching attribute you have chosen. Select the **Save** button to commit any changes.
 
-	:::image type="content" source="media/4me-provisioning-tutorial/4me-user-attributes.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra attributes, corresponding FourMe attributes, and the matching status." border="false":::
+	![Screenshots of the 4me User attributes list.](media/4me-provisioning-tutorial/4me-user-attributes-first-part.png)
+	![Screenshots of the 4me User attributes list-2.](media/4me-provisioning-tutorial/4me-user-attributes-second-part.png)
 	
 12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to 4me**.
-
-	:::image type="content" source="media/4me-provisioning-tutorial/4me-group-mapping.png" alt-text="Screenshot of the Mappings page. Under Name, Synchronize Microsoft Entra groups to FourMe is highlighted." border="false":::
 	
 13. Review the group attributes that are synchronized from Microsoft Entra ID to 4me in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in 4me for update operations. Select the **Save** button to commit any changes.
 
-	![4me Group Mappings](media/4me-provisioning-tutorial/4me-group-attribute.png)
+	![Screenshots of the 4me Group attributes list.](media/4me-provisioning-tutorial/4me-group-attribute.png)
 
 14. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

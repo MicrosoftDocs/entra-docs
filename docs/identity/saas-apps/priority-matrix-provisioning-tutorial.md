@@ -75,7 +75,7 @@ To configure Priority Matrix for automatic user provisioning with Microsoft Entr
 
 	![Priority Matrix OIDC Add](media/priority-matrix-provisioning-tutorial/signup.png)
 
-6. As Priority Matrix is an OpenIDConnect app, choose to login to Priority Matrix using your Microsoft work account.
+6. As Priority Matrix is an OpenIDConnect app, choose to log in to Priority Matrix using your Microsoft work account.
 
 	![Priority Matrix OIDC login](media/priority-matrix-provisioning-tutorial/msftsignin.png)
 
