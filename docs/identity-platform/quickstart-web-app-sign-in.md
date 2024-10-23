@@ -257,7 +257,7 @@ PLACEHOLDER-->
 1. Find the placeholder:
 
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](/entra/external-id/customers/how-to-create-customer-tenant-portal#get-the-customer-tenant-details).
     - `Enter_the_Client_Secret_Here` and replace it with the app secret value you copied earlier.
 
 
@@ -285,7 +285,7 @@ PLACEHOLDER-->
 
     1. `CLIENT_ID` which is the Application (client) ID of the app you registered earlier.
     1. `CLIENT_SECRET` which is the app secret value you copied earlier.
-    1. `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    1. `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](/entra/external-id/customers/how-to-create-external-tenant-portal#get-the-external-tenant-details).
     1. `REDIRECT_URI` which should be similar to the redirect URI you registered earlier should match your configuration.
 
 
@@ -299,7 +299,7 @@ PLACEHOLDER-->
 
     - `CLIENT_ID` which is the Application (client) ID of the app you registered earlier.
     - `CLIENT_SECRET` which is the app secret value you copied earlier.
-    - `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](/entra/external-id/customers/how-to-create-customer-tenant-portal#get-the-customer-tenant-details).
 
 1. Confirm that the redirect URI is well configured. The redirect URI you registered earlier should match your configuration. This sample by default sets the redirect URI path to `/getAToken`. This is configured in the *app_config.py* file as *REDIRECT_PATH*.
 
@@ -398,9 +398,9 @@ When the users select the **Logout** link, the app clears its session, the redir
 
 Run the app to see the sign-in experience at play.
 
-[!INCLUDE [python-identity-library-warning](./includes/python-identity-library-alert.md)]
+[!INCLUDE [python-identity-library-warning](../external-id/customers/includes/python-identity-library-alert.md)]
 
-[!INCLUDE [python-flask-web-app-run-app](./includes/run-app/flask-web-app.md)]
+[!INCLUDE [python-flask-web-app-run-app](../external-id/customers/includes/run-app/flask-web-app.md)]
 
 ### How it works
 
@@ -414,27 +414,27 @@ When the users select the **Logout** link, the app clears its session, the redir
 
 #### [Node](#tab/node)
 
-- [Customize the default branding](how-to-customize-branding-customers.md)
-- [Configure sign-in with Google](how-to-google-federation-customers.md)
-- [Sign in users in your Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant.md)
+- [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
+- [Configure sign-in with Google](/entra/external-id/customers/how-to-google-federation-customers)
+- [Sign in users in your Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant)
 
 #### [ASP.NET Core](#tab/asp-dot-net-core)
 
-- [Use our multi-part tutorial series to build this ASP.NET web application from scratch](tutorial-web-app-dotnet-sign-in-prepare-app.md)
-- [Enable password reset](how-to-enable-password-reset-customers.md)
-- [Customize the default branding](how-to-customize-branding-customers.md)
+- [Use our multi-part tutorial series to build this ASP.NET web application from scratch](tutorial-web-app-dotnet-sign-in-prepare-app)
+- [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)
+- [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 
 
 #### [Python Django](#tab/python-django)
 
-- [Sign in users using a sample Flask web application](./sample-web-app-python-flask-sign-in.md)
-- [Enable password reset](how-to-enable-password-reset-customers.md)
-- [Customize the default branding](how-to-customize-branding-customers.md)
+- [Sign in users using a sample Flask web application](./sample-web-app-python-flask-sign-in)
+- [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)
+- [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 
 
 #### [Python Flask](#tab/python-flask)
 
-- [Enable password reset](how-to-enable-password-reset-customers.md)
-- [Customize the default branding](how-to-customize-branding-customers.md)
+- [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)
+- [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 
 ::: zone-end
