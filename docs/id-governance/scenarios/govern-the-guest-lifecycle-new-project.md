@@ -41,14 +41,16 @@ Using some of the below features mentioned requires Microsoft Entra ID Governanc
 
 ## Security posture: Determine your security posture for guest access
 
-As you consider the governance of external access, assess your organization's security and collaboration needs, by scenario. You can start with the level of control the IT team has over the day-to-day collaboration of end users. Organizations in highly regulated industries might require more IT team control. For example, defense contractors can have a requirement to positively identify and document external users, their access, and access removal: all access, scenario-based, or workloads. Consulting agencies can use certain features to allow end users to determine the external users they collaborate with.
+As you consider the governance of external access, assess your organization's security and collaboration needs, by scenario. You can start with the level of control the IT team has over the day-to-day collaboration of end users. Organizations in highly regulated industries might require more IT team control. 
+
+For example, defense contractors can have a requirement to positively identify and document external users, their access, and access removal: all access, scenario-based, or workloads. Consulting agencies can use certain features to allow end users to determine the external users they collaborate with.
 
   ![Bar graph of the span from full IT team control, to end-user self service.](../../architecture/media/secure-external-access/1-overall-control.png)
 
    > [!NOTE]
    > A high degree of control over collaboration can lead to higher IT budgets, reduced productivity, and delayed business outcomes. When official collaboration channels are perceived as onerous, end users tend to evade official channels. An example is end users sending unsecured documents by email.
 
-You should start with reviewing the documentation for [Secure external Collaboration](../../architecture/1-secure-access-posture.md).  Reviewing this documentation will allow you to devise and create a security plan that can be used with your guest scenarios.
+You should start with reviewing the documentation for [Secure external Collaboration](../../architecture/1-secure-access-posture.md) and [Plan a Microsoft Entra B2B collaboration deployment](../../architecture/secure-external-access-resources.md).  Reviewing this documentation will allow you to devise and create a security plan that can be used with your guest scenarios.
 
 :::zone-end
 
