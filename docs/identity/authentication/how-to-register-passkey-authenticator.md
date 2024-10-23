@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on Androi
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 10/23/2024
 
 ms.author: justinha
 author: justinha
@@ -24,6 +24,9 @@ This article shows how to register a passkey using Microsoft Authenticator on yo
 
 Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. 
 
+>[!NOTE]
+>Support for registering passkeys in Authenticator when attestation is enforced is currently rolling out to iOS Authenticator app users. Support for registering attested passkeys in Authenticator on Android devices is available to all users in the latest version of the app.
+
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
 | **Same-device registration by signing into Authenticator**              | &#x2705;          | &#x2705;       |
@@ -35,6 +38,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 ## [**iOS**](#tab/iOS) 
 
 ### Registration by signing in to Authenticator (iOS) (preview)
+
 
 You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. **This is the recommended and preferred flow to set up a passkey in Authenticator.** If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
@@ -91,7 +95,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/new-authenticator-account.png" alt-text="Screenshot of a new account in Authenticator for iOS devices.":::
 
 
-### Passkey registration from Security Info (iOS)
+### Passkey registration from Security info (iOS)
 
 Security info by default will prompt users to sign in to the Authenticator app to register their passkey. 
 
@@ -114,6 +118,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-in-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
    
 1. Add your account in Authenticator on your iOS device. If you just downloaded Authenticator, you can tap **Add work or school account** near the bottom of your iOS device. If already using Authenticator, tap **+** in the upper right corner of the app and then tap on **Add work or school account**.
+
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot 233x433 of how to register using Microsoft Authenticator for iOS devices.":::
 
 1. The rest of the flow is similar to the flow shared earlier to sign in to the Authenticator and complete passkey registration. Complete MFA on your iOS device, and tap **Sign in**.
@@ -305,7 +310,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/passkey-android-security-info-laptop.png" alt-text="Screenshot of a new passkey on Android sign-in method in Security info on your other device.":::
 
-## Alternate registration flow on Security Info (Android)
+## Alternate registration flow on Security info (Android)
 
 If a user is unable to sign in to the Authenticator to register a passkey, you can fall back to triggering registration directly from Security Info. If initiating this flow from a browser on a different device, Bluetooth, an internet connection, and connectivity to these two endpoints must be allowed in your organization to enable cross-device registration and authentication:
 
