@@ -438,4 +438,7 @@ When the users select the **Logout** link, the app clears its session, the redir
 - [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)f
 - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 
+
+---
+
 ::: zone-end
