@@ -339,7 +339,7 @@ When users select the **Sign in** link, the app initiates an authentication requ
 
 When the users select the **Sign out** link, the app clears its session, the redirect the user to Microsoft Entra External ID sign-out endpoint to notify it that the user has signed out.
 
-If you want to build an app similar to the sample you've run, complete the steps in [Sign in users in your own Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant.md) article.
+If you want to build an app similar to the sample you've run, complete the steps in [Sign in users in your own Node.js web application](/entra/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant.md) article.
 
 #### [ASP.NET Core](#tab/asp-dot-net-core)
 
@@ -421,7 +421,7 @@ When the users select the **Logout** link, the app clears its session, the redir
 
 #### [ASP.NET Core](#tab/asp-dot-net-core)
 
-- [Use our multi-part tutorial series to build this ASP.NET web application from scratch](tutorial-web-app-dotnet-sign-in-prepare-app)
+- [Use our multi-part tutorial series to build this ASP.NET web application from scratch](/entra/external-id/customers/tutorial-web-app-dotnet-sign-in-prepare-app)
 - [Enable password reset](/entra/external-id/customers/how-to-enable-password-reset-customers)
 - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
 
