@@ -204,8 +204,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. On the **Create New Identity Provider** perform the following steps:
 
-    ![Screenshot of the Create New Identity Providers dialog in the Akamai EAA console.](./media/header-akamai-tutorial/configure-2.png)
-
     a. Specify the **Unique Name**.
 
     b. Choose **Third Party SAML** and click **Create Identity Provider and Configure**.
