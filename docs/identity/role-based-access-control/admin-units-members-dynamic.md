@@ -1,25 +1,21 @@
 ---
-title: Manage users or devices for an administrative unit with rules for dynamic membership groups (Preview)
-description: Manage users or devices for an administrative unit with rules for dynamic membership groups (Preview) in Microsoft Entra ID
+title: Manage users or devices for an administrative unit with rules for dynamic membership groups
+description: Manage users or devices for an administrative unit with rules for dynamic membership groups in Microsoft Entra ID
 
 author: rolyon
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
-ms.date: 08/25/2024
+ms.date: 10/25/2024
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
-# Manage users or devices for an administrative unit with rules for dynamic membership groups (Preview)
+# Manage users or devices for an administrative unit with rules for dynamic membership groups
 
-> [!IMPORTANT]
-> Dynamic membership rules for administrative units are currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
-
-You can add or remove users or devices for administrative units manually. With this preview, you can add or remove users or devices for administrative units dynamically using rules. This article describes how to create administrative units with rules for dynamic membership groups using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
+You can add or remove users or devices for administrative units manually. With dynamic membership groups, you can add or remove users or devices for administrative units dynamically using rules. This article describes how to create administrative units with rules for dynamic membership groups using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
 
 > [!NOTE]
 > Dynamic membership rules for administrative units can be created using the same attributes available for dynamic membership groups. For more information about the specific attributes available and examples on how to use them, see [Manage rules for dynamic membership groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
@@ -109,14 +105,14 @@ For steps on how to edit your rule, see the following [Edit rules for dynamic me
 
 1. Create a rule for dynamic membership groups. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
-1. Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true) API to create a new administrative unit with a rule for dynamic membership groups.
+1. Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits) API to create a new administrative unit with a rule for dynamic membership groups.
 
     The following shows an example of a rule for dynamic membership groups that applies to Windows devices.
 
     Request
 
     ```http
-    POST https://graph.microsoft.com/beta/administrativeUnits
+    POST https://graph.microsoft.com/v1.0/directory/administrativeUnits
     ```
 
     Body
@@ -167,12 +163,12 @@ Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnit.Id -BodyPa
 
 ### Microsoft Graph API
 
-Use the [Update administrativeUnit](/graph/api/administrativeunit-update?view=graph-rest-beta&preserve-view=true) API to edit the rule for dynamic membership groups.
+Use the [Update administrativeUnit](/graph/api/administrativeunit-update) API to edit the rule for dynamic membership groups.
 
 Request
 
 ```http
-PATCH https://graph.microsoft.com/beta/administrativeUnits/{id}
+PATCH https://graph.microsoft.com/v1.0/directory/administrativeUnits/{id}
 ```
 
 Body
@@ -228,12 +224,12 @@ Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnit.Id -BodyPa
 
 ### Microsoft Graph API
 
-Use the [Update administrativeUnit](/graph/api/administrativeunit-update?view=graph-rest-beta&preserve-view=true) API to change the membership type setting.
+Use the [Update administrativeUnit](/graph/api/administrativeunit-update) API to change the membership type setting.
 
 Request
 
 ```http
-PATCH https://graph.microsoft.com/beta/administrativeUnits/{id}
+PATCH https://graph.microsoft.com/v1.0/directory/administrativeUnits/{id}
 ```
 
 Body
