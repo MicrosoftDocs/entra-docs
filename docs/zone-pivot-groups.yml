@@ -350,12 +350,14 @@ groups:
   title: Steps for a new external user project
   prompt: Choose the step of your journey
   pivots:
-  - id: identity-governance-guest-discover
+  - id: identity-governance-guest-overview
+    title: Overview
+  - id: identity-governance-guest-secure
     title: Security posture
   - id: identity-governance-guest-discover
     title: Discovery
   - id: identity-governance-guest-onboard
-    title: Onboarding
+    title: Onboard
   - id: identity-governance-guest-redemption
     title: Redemption
   - id: identity-governance-guest-monitor

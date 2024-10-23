@@ -19,7 +19,7 @@ The following documentation will guide you through creating and deploying guest 
 
 :::zone pivot="identity-governance-guest-overview"
 
-## An overview of guest scenarios
+## Overview:  An overview of guest scenarios
 Guest Scenarios or external access scenarios are specific use cases where business guests (External individuals like contractors, consultants, vendors, or partners who need access to the organization’s resources) interact with the organization’s resources. 
 
 :::image type="content" source="media/external-guest-new/govern-access.png" alt-text="Conceputal drawing of governing access to your resources." lightbox="media/external-guest-new/govern-access.png":::
@@ -39,7 +39,7 @@ Using some of the below features mentioned requires Microsoft Entra ID Governanc
 :::zone pivot="identity-governance-guest-secure"
 
 
-## Determine your security posture for guest access
+## Security posture: Determine your security posture for guest access
 
 As you consider the governance of external access, assess your organization's security and collaboration needs, by scenario. You can start with the level of control the IT team has over the day-to-day collaboration of end users. Organizations in highly regulated industries might require more IT team control. For example, defense contractors can have a requirement to positively identify and document external users, their access, and access removal: all access, scenario-based, or workloads. Consulting agencies can use certain features to allow end users to determine the external users they collaborate with.
 
@@ -70,11 +70,12 @@ You should start with reviewing the documentation for [Secure external Collabora
 
 :::zone pivot="identity-governance-guest-discover"
 
-## Identify current lifecycle and governance processes for external identities 
+## Discovery: Identify current lifecycle and governance processes for external identities 
 Identify your current lifecycle and governance processes for external identities.  This exercise will help you to determine applicable scenarios, feasibility and scope.  
 
+Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities.  The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
 
-## Example
+### Example discovery
 Consider you are the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business guests like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
 
 Some of your key requirements include,  
