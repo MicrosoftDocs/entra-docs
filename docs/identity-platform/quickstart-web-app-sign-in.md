@@ -23,20 +23,20 @@ This quickstart uses a sample web app to show you how to sign in users in your w
 
 ## Prerequisites
 
-#### [Node](#tab/node)
+#### [Node](#tab/node-worforce)
 
 placeholder
 
-#### [ASP.NET Core](#tab/asp-dot-net-core)
+#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
 
 placeholder
 
 
-#### [Java](#tab/java)
+#### [Java](#tab/java-worforce)
 
 placeholder
 
-#### [Python Flask](#tab/python-flask)
+#### [Python Flask](#tab/python-flask-worforce)
 
 placeholder
 
