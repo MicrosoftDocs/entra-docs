@@ -60,9 +60,9 @@ Applications that the recommendation identified appear in the list of **Impacted
     - The **Resource** column displays the application name
     - The **ID** column displays the application ID
 
-        :::image type="content" source="media/recommendation-remove-unused-credential-from-apps/recommendation-remove-unused-credentials-from-apps.png" alt-text="Screenshot of the recommendation with the More details options highlighted." lightbox="media/recommendation-remove-unused-credential-from-apps/recommendation-remove-unused-credentials-from-apps-expanded.png":::
-
 1. Select **More Details** from the **Actions** column to view more details.
+
+      :::image type="content" source="media/recommendation-remove-unused-credential-from-apps/recommendation-remove-unused-credentials-from-apps.png" alt-text="Screenshot of the recommendation with the More details options highlighted." lightbox="media/recommendation-remove-unused-credential-from-apps/recommendation-remove-unused-credentials-from-apps-expanded.png":::
 
     > [!NOTE]
     > If the origin of the credential is Service Principal, follow the guidance in the [**Service principals**](#service-principals) section.
@@ -70,11 +70,11 @@ Applications that the recommendation identified appear in the list of **Impacted
 1. From the panel that opens, select **Update Credential** to navigate directly to the **Certificates & secrets** area of the app registration to remove the unused credential.
     1. Alternatively, browse to **Identity** > **Applications** > **App registrations** and select the application that was surfaced as part of this recommendation. 
 
-        ![Screenshot of the Microsoft Entra app registration page.](media/recommendation-remove-unused-credential-from-apps/app-registrations-list.png)
+        :::image type="content" source="media/recommendation-remove-unused-credential-from-apps/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-remove-unused-credential-from-apps/app-registrations-list-expanded.png":::
 
     1. Then navigate to the **Certificates & Secrets** section of the app registration.
     
-        ![Screenshot of the Certificates and secrets section of Microsoft Entra ID.](media/recommendation-remove-unused-credential-from-apps/app-certificates-secrets.png)
+        :::image type="content" source="media/recommendation-remove-unused-credential-from-apps/app-certificates-secrets.png" alt-text="Screenshot of the Certificates and secrets section of Microsoft Entra ID." lightbox="media/recommendation-remove-unused-credential-from-apps/app-certificates-secrets-expanded.png":::
 
 1. **Locate the unused credential and remove it.**
 
@@ -99,7 +99,7 @@ To identify impacted resources:
 GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.StaleAppCreds
 ```
 
-To filter the resources based on their status (For example, *active* resources):
+To filter the resources based on their status (for example, *active* resources):
 
 ```http
 GET https://graph.microsoft.com/eta/directory/recommendations/536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.StaleAppCreds/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
@@ -147,7 +147,7 @@ GET https://graph.microsoft.com/eta/directory/recommendations/536279f6-15cc-45f2
       "text": "3. To remove a credential from a service principal resource, use the MS Graph Service Principal API service action ",
       "actionUrl": {
         "displayName": "`removePassword`",
-        "url": "https://docs.microsoft.com/en-us/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0&tabs=http"
+        "url": "https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0&tabs=http"
       }
     }
   ]
@@ -166,7 +166,7 @@ Because there's often multiple service principals for a single application, it m
 1. Search for and open the application that was surfaced as part of this recommendation.
 1. Select **Single sign-on** from the side menu.
 
-If the credential is a service principal but there are SAML certificates in use, you can identify the details of the credential using the Microsoft Graph API. To use the Microsoft Graph API, you need the `DirectoryRecommendations.Read.All` and `DirectoryRecommendations.ReadWrite.All` permissions. For more information, see [How to use Identity Recommendations](howto-use-recommendations.md).
+    If the credential is a service principal but there are SAML certificates in use, you can identify the details of the credential using the Microsoft Graph API. To use the Microsoft Graph API, you need the `DirectoryRecommendations.Read.All` and `DirectoryRecommendations.ReadWrite.All` permissions. For more information, see [How to use Identity Recommendations](howto-use-recommendations.md).
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select **GET** as the HTTP method from the dropdown.

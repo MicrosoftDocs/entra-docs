@@ -25,7 +25,7 @@ This article covers the recommendation to renew expiring service principal crede
 
 ## Description
 
-Service principal credentials include certificates and client secrets added to a service principal. The credentials are used to prove the identity of that service principal. If the credentials expire, the service principal can't authenticate, which cause downtime for your business scenario. This recommendation shows up if your tenant has service principals with credentials that are expiring soon.
+Service principal credentials include certificates and client secrets added to a service principal. The credentials are used to prove the identity of that service principal. If the credentials expire, the service principal can't authenticate, which can cause downtime for your business scenario. This recommendation shows up if your tenant has service principals with credentials that are expiring soon.
 
 A service principal credential is expiring if:
 
@@ -57,13 +57,13 @@ This recommendation is available in the Microsoft Entra admin center and using t
 1. From the panel that opens, select **Update Credential** to navigate directly to the **Single sign-on** area of the app registration.
     1. Alternatively, browse to **Identity** > **Applications** > **App registrations** and locate the application for which the credential needs to be rotated.
 
-        ![Screenshot of the Microsoft Entra app registration page.](media/recommendation-renew-expiring-service-principal-credential/app-registrations-list.png)
+      :::image type="content" source="media/recommendation-renew-expiring-service-principal-credential/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-renew-expiring-service-principal-credential/app-registrations-list-expanded.png":::
 
     1. Navigate to the **Single sign-on** section of the app registration.
 
 1. Edit the **SAML signing certificate** section and follow the prompts to add a new certificate.
 
-    :::image type="content" source="media/recommendation-renew-expiring-service-principal-credential/recommendation-edit-sso.png" alt-text="Screenshot of the edit single-sign-on process." lightbox="media/recommendation-renew-expiring-service-principal-credential/recommendation-edit-sso-expanded.png":::
+    :::image type="content" source="media/recommendation-renew-expiring-service-principal-credential/recommendation-edit-single-sign-on.png" alt-text="Screenshot of the edit single-sign-on process." lightbox="media/recommendation-renew-expiring-service-principal-credential/recommendation-edit-single-sign-on-expanded.png":::
     
 1. Once the certificate or secret is successfully added, update the SAML signing certificate configuration to make the new cert active. 
 1. Verify that the application works as expected then remove the inactive SAML certificate from the SAML certificates collection.

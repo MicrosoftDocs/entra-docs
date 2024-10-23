@@ -62,9 +62,9 @@ Applications that the recommendation identified appear in the list of **Impacted
 1. Select the **Recommendations** tab and select the **Remove unused applications** recommendation.
 1. From the **Impacted resources** table, select **More details** to view more details.
 1. Select the **Resource** link to go directly to the app registration for the app.
-    1. Alternatively, you can browse to **Identity** > **Applications** > **App registrations** and locate the application that was surfaced as part of this recommendation.
+    - Alternatively, you can browse to **Identity** > **Applications** > **App registrations** and locate the application that was surfaced as part of this recommendation.
 
-    ![Screenshot of the Microsoft Entra app registration page.](media/recommendation-remove-unused-apps/app-registrations-list.png)
+    :::image type="content" source="media/recommendation-remove-unused-apps/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-remove-unused-apps/app-registrations-list-expanded.png":::
 
 ### Determine if the application is needed
 
@@ -79,7 +79,7 @@ To remove the application:
 
 To indicate the application is still needed and skip the recommendation:
 
-1. [Update the recommendation status](howto-use-recommendations.md#how-to-update-a-recommendation) to **dismissed** or **postponed**.
+- [Update the recommendation status](howto-use-recommendations.md#how-to-update-a-recommendation) to **dismissed** or **postponed**.
     - Use **dismissed** if determined that the app will remain inactive for the rest of its lifecycle.
     - Use **dismissed** if you think the app as included in the recommendation in error.
     - Use **postponed** if you need more time to review the app.
@@ -107,7 +107,7 @@ To identify impacted resources:
 GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.StaleApps
 ```
 
-To filter the resources based on their status (For example, *active* resources):
+To filter the resources based on their status (for example, *active* resources):
 
 ```http
 GET https://graph.microsoft.com/beta/directory/recommendations/536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.StaleApps/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active' 

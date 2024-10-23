@@ -58,20 +58,20 @@ This recommendation is available in the Microsoft Entra admin center and using t
     - The **Resource** column displays the application name
     - The **ID** column displays the application ID
 
-        :::image type="content" source="media/recommendation-renew-expiring-application-credential/recommendation-renew-expiring-app-creds.png" alt-text="Screenshot of the recommendation with the More details options highlighted." lightbox="media/recommendation-renew-expiring-application-credential/recommendation-renew-expiring-app-creds-expanded.png":::
+        :::image type="content" source="media/recommendation-renew-expiring-application-credential/recommendation-renew-expiring-app-credentials.png" alt-text="Screenshot of the recommendation with the More details options highlighted." lightbox="media/recommendation-renew-expiring-application-credential/recommendation-renew-expiring-app-credentials-expanded.png":::
 
 1. Select **More Details** from the **Actions** column.
 
 1. From the panel that opens, select **Update Credential** to navigate directly to the **Certificates & secrets** area of the app registration to renew the expiring credential.
     1. Alternatively, browse to **Identity** > **Applications** > **App registrations** and locate the application for which the credential needs to be rotated.
 
-        ![Screenshot of the Microsoft Entra app registration page.](media/recommendation-renew-expiring-application-credential/app-registrations-list.png)
+      :::image type="content" source="media/recommendation-renew-expiring-application-credential/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-renew-expiring-application-credential/app-registrations-list-expanded.png":::
 
     1. Navigate to the **Certificates & Secrets** section of the app registration.
 
 1. Pick the credential type that you want to rotate and navigate to either **Certificates** or **Client Secret** tab and follow the prompts.
 
-    ![Screenshot of the Certificates and secrets section of Microsoft Entra ID.](media/recommendation-renew-expiring-application-credential/app-certificates-secrets.png)
+    :::image type="content" source="media/recommendation-renew-expiring-application-credential/app-certificates-secrets.png" alt-text="Screenshot of the Certificates and secrets section of Microsoft Entra ID." lightbox="media/recommendation-renew-expiring-application-credential/app-certificates-secrets-expanded.png":::
 
 1. Once the certificate or secret is successfully added, update the service code to ensure it works with the new credential and doesn't negatively affect customers.
 
@@ -100,7 +100,7 @@ To identify impacted resources:
 GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.ApplicationCredentialExpiry
 ```
 
-To filter the resources based on their status (For example, *active* resources):
+To filter the resources based on their status (for example, *active* resources):
 
 ```http
 GET https://graph.microsoft.com/beta/directory/recommendations/536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights. ApplicationCredentialExpiry’/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
