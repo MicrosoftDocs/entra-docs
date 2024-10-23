@@ -169,7 +169,7 @@
     - name: Web app authentication
       href: index-web-app.yml
     - name: Quickstart
-      href: quickstart-web-app-sign-in.md
+      href: quickstart-web-app-sign-in.md?pivots=workforce
     - name: Tutorials
       items:
         - name: ASP.NET Core
