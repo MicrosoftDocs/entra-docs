@@ -3672,5 +3672,7 @@
   "Azure Machine Learning Workbench web app" : "d7304df8-741f-47d3-9bc2-df0e24e2071f",
   "Azure AI Studio app" : "cb2ff863-7f30-4ced-ab89-a00194bcf6d9",
   "Azure Cosmos DB principal ID - Azure Government" : "57506a73-e302-42a9-b869-6f12d9ec29e9",
-  "Azure Cosmos DB principal ID - Other regions" : "a232010e-820c-4083-83bb-3ace5fc29d0b"
+  "Azure Cosmos DB principal ID - Other regions" : "a232010e-820c-4083-83bb-3ace5fc29d0b",
+  "Azure Arc MetalLB extension" : "087fca6e-4606-4d41-b3f6-5ebdf75b8b4c",
+  "Azure Public app ID" : "c632b3df-fb67-4d84-bdcf-b95ad541b5c8"
 }
