@@ -43,7 +43,11 @@ Using some of the below features mentioned requires Microsoft Entra ID Governanc
 
 As you consider the governance of external access, assess your organization's security and collaboration needs, by scenario. You can start with the level of control the IT team has over the day-to-day collaboration of end users. Organizations in highly regulated industries might require more IT team control. 
 
-For example, defense contractors can have a requirement to positively identify and document external users, their access, and access removal: all access, scenario-based, or workloads. Consulting agencies can use certain features to allow end users to determine the external users they collaborate with.
+For example:
+
+ - Defense contractors can have a requirement to positively identify and document external users, their access, and access removal.
+ - Consulting agencies can use certain features to allow end users to determine the external users they collaborate with.
+ - A contractor at a bank may require more control than a contractor at a software company
 
   ![Bar graph of the span from full IT team control, to end-user self service.](../../architecture/media/secure-external-access/1-overall-control.png)
 
