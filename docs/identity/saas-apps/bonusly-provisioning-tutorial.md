@@ -134,7 +134,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 16. When you are ready to provision, click **Save**.
 
-	:::image type="content" source="./media/bonusly-provisioning-tutorial/SaveProvisioning.png" alt-text="Screenshot of the Bonusly - Provisioning page, with the Save button highlighted." border="false":::
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Bonusly.
 

@@ -34,7 +34,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)).
 * An 8x8 X series subscription of any level.
 * An 8x8 user account with administrator permission in [Admin Console](https://vo-cm.8x8.com).
-* [Single Sign-On with Microsoft Entra ID](./8x8virtualoffice-tutorial.md) has already been configured.
+* [Single sign-on with Microsoft Entra ID](./8x8virtualoffice-tutorial.md) has already been configured.
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
@@ -101,8 +101,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-   ![Screenshot showing the Get started blade](./media/8x8-provisioning-tutorial/get-started.png)
-
 4. Set the **Provisioning Mode** to **Automatic**.
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
@@ -163,7 +161,7 @@ Once you've configured provisioning, use the following resources to monitor your
 ## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
+* [What is application access and Single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Next steps
 
