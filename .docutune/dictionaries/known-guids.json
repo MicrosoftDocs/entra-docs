@@ -3679,5 +3679,6 @@
   "Azure VPN client - Manually registered, Azure Germany" : "538ee9e6-310a-468d-afef-ea97365856a9",
   "Azure VPN client - Manually registered, Microsoft Azure operated by 21Vianet" : "49f817b6-84ae-4cc0-928c-73f27289b3aa",
   "Azure Resource Manager tenant ID - hardcoded" : "c0257de7-538f-415c-993a-1b87a031879d",
-  "Azure Databricks app ID" : "2ff814a6-3304-4ab8-85cb-cd0e6f879c1d"
+  "Azure Databricks app ID" : "2ff814a6-3304-4ab8-85cb-cd0e6f879c1d",
+  "MQTT broker state ID" : "FA9AE35F-2F64-47CD-9BFF-08E2B32A0FE8"
 }
