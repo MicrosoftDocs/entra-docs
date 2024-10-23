@@ -165,16 +165,12 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```
 
 1. Set up virtual environment:
-
-    1. For Windows, run the following commands:
-        
+    1. For Windows, run the following commands:        
     ```console
     py -m venv .venv
     .venv\scripts\activate
-    ```
-    
-    1. For macOS or Linux, run the following commands:
-    
+    ```    
+    1. For macOS or Linux, run the following commands:    
     ```console
     python3 -m venv .venv
     source .venv/bin/activate
@@ -209,20 +205,16 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 1. Set up virtual environment:
 
-    1. For Windows, run the following commands:
-    
+    1. For Windows, run the following commands:    
     ```console
     py -m venv .venv
     .venv\scripts\activate
-    ```
-    
-    1. For macOS or Linux, run the following commands:
-    
+    ```    
+    1. For macOS or Linux, run the following commands:    
     ```console
     python3 -m venv .venv
     source .venv/bin/activate
     ```
-
 1. To install app dependencies, run the following commands:
 
     ```console
