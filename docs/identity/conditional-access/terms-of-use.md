@@ -84,7 +84,7 @@ Once you complete your terms of use policy document, use the following procedure
    > [!IMPORTANT]
    > Conditional Access policy controls (including terms of use policies) do not support enforcement on service accounts. We recommend excluding all service accounts from the Conditional Access policy.
 
-    Custom Conditional Access policies enable granular terms of use policies, down to a specific cloud application or group of users. For more information, see [Quickstart: Require terms of use to be accepted before accessing cloud apps](require-tou.md).
+    Custom Conditional Access policies enable granular terms of use policies, down to a specific cloud application or group of users. For more information, see [Quickstart: Require terms of use to be accepted before accessing cloud apps](policy-all-users-require-terms-of-use.md).
 
 1. Select **Create**.
 
@@ -325,4 +325,4 @@ A: Terms of use utilize the following endpoints for authentication: https://toke
 
 ## Related content
 
-* [Example policy to require terms of use to be accepted before accessing Microsoft Admin Portals](require-tou.md)
+* [Example policy to require terms of use to be accepted before accessing Microsoft Admin Portals](policy-all-users-require-terms-of-use.md)

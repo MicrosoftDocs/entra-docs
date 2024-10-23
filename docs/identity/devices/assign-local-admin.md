@@ -110,4 +110,4 @@ Additionally, you can also add users using the command prompt:
 ## Next steps
 
 - To get an overview of how to manage devices, see [Managing device identities](manage-device-identities.md).
-- To learn more about device-based Conditional Access, see [Conditional Access: Require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md).
+- To learn more about device-based Conditional Access, see [Conditional Access: Require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md).

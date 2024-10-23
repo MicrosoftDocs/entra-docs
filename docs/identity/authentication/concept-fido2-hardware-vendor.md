@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 10/11/2024
+ms.date: 10/21/2024
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -47,7 +47,7 @@ Microsoft ingests the latest version of the FIDO Alliance MDS every month. There
 
 ## FIDO2 security keys eligible for attestation with Microsoft Entra ID
 
-The following table lists FIDO2 security key models listed in MDS version 93. These models are eligible for attestation with Microsoft Entra ID. 
+The following table includes each FIDO2 security key model listed in MDS version 93 that's eligible for attestation with Microsoft Entra ID. For each model, the table shows its Authenticator Attestation Globally Unique Identifier (AAGUID) and feature capabilities. 
 
 |Description|AAGUID|Bio|USB|NFC|BLE|
 |-----------|------|---|---|---|---|
