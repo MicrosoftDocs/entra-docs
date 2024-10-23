@@ -101,7 +101,7 @@ Onboarding, with regard to guest or external identities, is the process or proce
 
 Onboarding guest identities can be done in several ways.
 
-[Entitlement Management](#example---inviting-a-user-using-entitlement-management) - External user onboarding processes often involve collecting information about the users to guide decisions about whether to grant access, or how to set up their account properly for the apps and resources they use. Collecting information about the users to guide decisions about: 
+[Provisioning a user using Entitlement Management (Recommended)](#example---provisioning-a-user-using-entitlement-management) - External user onboarding processes often involve collecting information about the users to guide decisions about whether to grant access, or how to set up their account properly for the apps and resources they use. Collecting information about the users to guide decisions about: 
  
  - whether to grant access 
  - how to set up their account properly for the apps and resources they use.
@@ -109,7 +109,9 @@ Onboarding guest identities can be done in several ways.
  This process could include determining their role in their organization, so the approver knows whether the team is right for them. 
  You could need to set the location attribute for external users.  Using Entitlement management’s features automatically provide your approvers and apps with the information they need.  
 
-[B2B collaboration](#example---inviting-guest-users-using-b2b-invitation-collab) - External collaboration settings let you specify what roles in your organization can invite external users for B2B collaboration. These settings also include options for allowing or blocking specific domains, and options for restricting what external guest users can see in your Microsoft Entra directory. 
+[End User Driven Collaboration](#example---end-user-driven-collaboration) - External collaboration settings let you specify what roles in your organization can invite external users for B2B collaboration. These settings also include options for allowing or blocking specific domains, and options for restricting what external guest users can see in your Microsoft Entra directory. 
+
+### Additional requirements to onboard business guests
 
 [Self-Service sign up](#example---self-service-sign-up) - With a self-service sign-up user flow, you can create a sign-up experience for guests who want to access your apps. As part of the sign-up flow, you can provide options for different social or enterprise identity providers, and collect information about the user. 
 
@@ -117,7 +119,7 @@ Onboarding guest identities can be done in several ways.
  
 The sections below provide examples of various ways that you can onboard guest users
 
-### Example - Inviting a user using Entitlement Management:
+### Example - Provisioning a user using Entitlement Management:
 As an IT admin, you have identified a project that requires onboarding external consultants from Fabrikam to collaborate. It is important to have automated access management, approval workflows, and lifecycle management.
 Using Microsoft Entra’s Entitlement Management, you create an access package that allows you to bundle multiple resources (like groups, applications, and SharePoint sites), include approval workflows ensuring that access requests are reviewed and approved by the appropriate individuals before access is granted and set time period for the access. 
 
@@ -130,7 +132,7 @@ For more information, see [Onboard external users with entitlement management](.
 For additional examples see [Tutorial - Onboard external users to Microsoft Entra ID through an approval process](../entitlement-management-onboard-external-user.md) and [Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](https://learn.microsoft.com/en-us/entra/architecture/deployment-scenario-workforce-guest)
 
 
-### Example - Inviting guest users using B2B Invitation collab:  
+### Example - End User Driven Collaboration:  
 For another design project, the design team manager asked you as the IT admin to add John Doe from Global Solutions to collaborate. The primary goal is to invite the user to join your directory and collaborate. You invite external user John as a guest user by simply using his email. The email invite is simple and flexible and allows you to invite users from various domains and identity providers, including social identities like Gmail or Microsoft accounts. 
 John use his own credentials to sign in securely eliminating the need for password maintenance or account lifecycle management that simplifies the onboarding process.  
 
