@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Edit SAML Signing Certificate](common/edit-certificate.png)
 
-1. In the **SAML Signing Certificate Section**, choose to choose to download the PEM certificate.
+1. In the **SAML Signing Certificate Section**, download the PEM certificate.
 
     ![PEM](https://github.com/user-attachments/assets/9c0e4fa7-1c4a-4a62-aa1b-a45bc06b1afd)
 
