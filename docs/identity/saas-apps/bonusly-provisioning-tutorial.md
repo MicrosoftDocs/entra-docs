@@ -116,8 +116,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 11. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Bonusly**.
 
-	:::image type="content" source="./media/bonusly-provisioning-tutorial/UserMappings.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra users to Bonusly is highlighted." border="false":::
-
 12. Review the user attributes that are synchronized from Microsoft Entra ID to Bonusly in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Bonusly for update operations. Select the **Save** button to commit any changes.
 
 	:::image type="content" source="./media/bonusly-provisioning-tutorial/UserAttributeMapping.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra attributes, corresponding Bonusly attributes, and the matching status." border="false":::
