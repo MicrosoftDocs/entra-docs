@@ -53,29 +53,27 @@ This quickstart uses a sample web app to show you how to sign in users in your w
 
 ## Register the web app
 
+Common content 
+
+### Add platform and URLs
+
 #### [Node](#tab/node-worforce)
 
 Placeholder 
-
-### Add platform and URLs
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
 
 Placeholder 
 
-### Add platform and URLs
 
 #### [Java](#tab/java-worforce)
 
 Placeholder 
 
-### Add platform and URLs
 
 #### [Python Flask](#tab/python-flask-worforce)
 
 Placeholder 
-
-### Add platform and URLs
 
 ---
 
