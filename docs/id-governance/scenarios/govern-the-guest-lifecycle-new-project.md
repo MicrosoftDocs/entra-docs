@@ -28,7 +28,7 @@ Understanding these scenarios helps in designing appropriate access controls and
 
  - If you’re an organization or a developer creating consumer apps, and you need add authentication and customer identity and access management (CIAM) to your application to allow extrnal guests access.  For more information, see [External ID overview](../../external-id/external-identities-overview.md)
 
- - If you want to enable your employees to collaborate with business partners and guests and allow secure access through invitation or self-service sign-up. Determine the level of access guests have to the Microsoft Entra tenant that contains your employees and organizational resources, which is a tenant in a workforce configuration.  For more information, see[https://learn.microsoft.com/en-us/entra/external-id/what-is-b2b] (../../external-id/what-is-b2b.md)
+ - If you want to enable your employees to collaborate with business partners and guests and allow secure access through invitation or self-service sign-up. Determine the level of access guests have to the Microsoft Entra tenant that contains your employees and organizational resources, which is a tenant in a workforce configuration.  For more information, see[https://learn.microsoft.com/en-us/entra/external-id/what-is-b2b](../../external-id/what-is-b2b.md)
 
 ## License Requirements 
 
