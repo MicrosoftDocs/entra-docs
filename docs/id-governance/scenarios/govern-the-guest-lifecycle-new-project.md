@@ -157,9 +157,9 @@ Onboarding guest identities can be done in several ways.
 
 ### Additional requirements to onboard business guests
 
-[Self-Service sign up](#example---self-service-sign-up) - With a self-service sign-up user flow, you can create a sign-up experience for guests who want to access your apps. As part of the sign-up flow, you can provide options for different social or enterprise identity providers, and collect information about the user. 
+[Self-Service sign up](../../external-id/what-is-b2b.md#allow-self-service-sign-up) - With a self-service sign-up user flow, you can create a sign-up experience for guests who want to access your apps. As part of the sign-up flow, you can provide options for different social or enterprise identity providers, and collect information about the user. 
 
-[Bulk invite](#example---bulk-invite) - If you use Microsoft Entra B2B collaboration to work with external partners, you can invite multiple guest users to your organization at the same time.
+[Bulk invite](../../external-id/tutorial-bulk-invite.md#invite-guest-users-in-bulk)  - If you use Microsoft Entra B2B collaboration to work with external partners, you can invite multiple guest users to your organization at the same time.
  
 The sections below provide examples of various ways that you can onboard guest users
 
@@ -183,20 +183,6 @@ John use his own credentials to sign in securely eliminating the need for passwo
 :::image type="content" source="media/external-guest-new/invite-user-2.png" alt-text="Conceputal drawing of invite using B2B." lightbox="media/external-guest-new/invite-user-2.png":::
 
 For more information, see [Add B2B collaboration users in the Microsoft Entra admin center](../../external-id/add-users-administrator.md) and [Configure external collaboration settings](../external-id/external-collaboration-settings-configure.md)
-
-### Example - Self-service sign up:  
-You are the IT admin and have an additional requirement to onboard 25 freelance developers for a new project. You send an email with a sign-up link to all of them by customizing the look and feel of the sign-up process. By clicking on the link, they all enter the required details and complete the registration process without requiring manual intervention from your IT team. Upon completion, they all automatically gains access to the essential resources and applications according to predefined policies.  
-By automating the sign-up process, you free up your IT team resources to focus on more strategic tasks. This efficiency can lead to cost savings and improved productivity.
-
-For more information, see [Workforce Tenant Overview](../../external-id/what-is-b2b.md#allow-self-service-sign-up)
-
-:::image type="content" source="media/external-guest-new/invite-user-3.png" alt-text="Conceputal drawing of invite using self-service sign up." lightbox="media/external-guest-new/invite-user-3.png":::
-
-### Example - Bulk Invite: 
-In another instance, you receive an urgent request from the HR department. They need to send out bulk invitations to onboard 150 contractors that need to go through a mandatory training session on cybersecurity as they onboard. You quickly gather the necessary details: a list of all contractors , their email addresses, and the training session details – what access is needed. Using the bulk email invitation feature, you download the template available and import the email list. You set the email to be sent out at 9:00 AM the following day, giving employees ample time to prepare for the training session. That way all the new trainees are securely and successfully onboarded! 
-
-For more information, see [Bulk invite guest users for B2B collaboration tutorial](../../external-id/tutorial-bulk-invite.md#invite-guest-users-in-bulk) 
-
 
 ::: zone-end  
 
