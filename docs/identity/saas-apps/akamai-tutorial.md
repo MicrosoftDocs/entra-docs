@@ -212,15 +212,15 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ### General Settings
 
-1. **Identity Intercept** - Specify the name of the (SP base URL–will be used for Microsoft Entra Configuration).
+In the **General** tab, enter the following information:
+
+1. **Identity Intercept** - Specify the name of the domain (SP base URL–will be used for Microsoft Entra Configuration).
 
     > [!NOTE]
     > You can choose to have your own custom domain (will require a DNS entry and a Certificate). In this example we are going to use the Akamai Domain.
 
 1. **Akamai Cloud Zone** - Select the Appropriate cloud zone.
 1. **Certificate Validation** - Check Akamai Documentation (optional).
-
-    ![Screenshot of the Akamai EAA console General tab showing settings for Identity Intercept, Akamai Cloud Zone, and Certificate Validation.](./media/header-akamai-tutorial/configure-3.png)
 
 ### Authentication Configuration
 
@@ -239,27 +239,19 @@ Leave the settings as default.
 
 ### Directories
 
-Skip the directory configuration.
-
-![Screenshot of the Akamai EAA console Directories tab.](./media/header-akamai-tutorial/directories.png)
+In the **Directories** tab, skip the directory configuration.
 
 ### Customization UI
 
-You could add customization to IDP.
-
-![Screenshot of the Akamai EAA console Customization tab showing settings for Customize UI, Language settings, and Themes.](./media/header-akamai-tutorial/customization.png)
+You could add customization to IDP. In the **Customization** tab, there are settings for **Customize UI**, **Language settings**, and **Themes**.
 
 ### Advanced Settings
 
-Skip Advance settings / refer Akamai documentation for more details.
-
-![Screenshot of the Akamai EAA console Advanced Settings tab showing settings for EAA Client, Advanced, and OIDC to SAML bridging.](./media/header-akamai-tutorial/advance-settings.png)
+In the **Advanced settings** tab, accept the default values. Refer Akamai documentation for more details.
 
 ### Deployment
 
-1. Click on Deploy Identity Provider.
-
-    ![Screenshot of the Akamai EAA console Deployment tab showing the Deploy dentity provider button.](./media/header-akamai-tutorial/deployment.png)
+1. In the **Deployment** tab, click on Deploy Identity Provider.
 
 2. Verify the deployment was successful.
 
@@ -285,9 +277,7 @@ Akamai Header Based Authentication
 
     ![Screenshot of the Akamai EAA console with the Authentication tab selected.](./media/header-akamai-tutorial/configure-9.png)
 
-2. Assign the **Identity provider**.
-
-    ![Screenshot of the Akamai EAA console Authentication tab for MYHEADERAPP showing the Identity provider set to Microsoft Entra SSO.](./media/header-akamai-tutorial/configure-10.png)
+2. Select **Assign identity provider**.
 
 #### Services
 
@@ -333,11 +323,8 @@ Click Save and Go to Authentication.
 
     ![Screenshot of the Akamai EAA console Add Applications wizard showing RDP listed among the apps in the Access Apps section.](./media/header-akamai-tutorial/configure-16.png)
 
-1. Enter **Application Name** and **Description**.
-
-    ![Screenshot of a RDP App dialog showing settings for Application Name and Description.](./media/header-akamai-tutorial/configure-17.png)
-
-    ![Screenshot of the Akamai EAA console General tab showing Application identity settings for SECRETRDPAPP.](./media/header-akamai-tutorial/configure-18.png)
+1. Enter **Application Name**, such as *SecretRDPApp*.
+1. Select a **Description**, such as *Protect RDP Session using Microsoft Entra Conditional Access*.
 
 1. Specify the Connector that will be servicing this.
 
@@ -345,9 +332,7 @@ Click Save and Go to Authentication.
 
 #### Authentication
 
-Click **Save and go to Services**.
-
-![Screenshot of the Akamai EAA console Authentication tab for SECRETRDPAPP showing the Save and go to Services button is in the bottom right corner.](./media/header-akamai-tutorial/configure-20.png)
+In the **Authentication** tab, click **Save and go to Services**.
 
 #### Services
 
@@ -387,9 +372,7 @@ Click **Save and go to Advanced Settings**.
 
     ![Screenshot of the Akamai EAA console Add Applications wizard showing SSH listed among the apps in the Access Apps section.](./media/header-akamai-tutorial/configure-25.png)
 
-1. Enter **Application Name** and **Description**.
-
-    ![Screenshot of an SSH App dialog showing settings for Application Name and Description.](./media/header-akamai-tutorial/configure-26.png)
+1. Enter **Application Name** and **Description**, such as *Microsoft Entra modern authentication to SSH*.
 
 1. Configure Application Identity.
 
@@ -405,9 +388,7 @@ Click **Save and go to Advanced Settings**.
 
 #### Authentication
 
-Click on **Save and go to Services**.
-
-![Screenshot of the Akamai EAA console Authentication tab for SSH-SECURE showing the Save and go to Services button is in the bottom right corner.](./media/header-akamai-tutorial/configure-28.png)
+In the **Authentication** tab, click on **Save and go to Services**.
 
 #### Services
 
@@ -455,9 +436,7 @@ In the below example we will publish an internal web server at `http://frp-app1.
 
 #### Authentication Tab
 
-Assign the Identity Provider.
-
-![Screenshot of the Akamai EAA console Authentication tab for MYKERBOROSAPP showing Identity provider set to Microsoft Entra SSO.](./media/header-akamai-tutorial/authentication-tab.png)
+In the **Authentication** tab, assign the Identity Provider.
 
 #### Services Tab
 
@@ -498,15 +477,11 @@ Assign the Identity Provider.
 
 1. Add the Directory to you Identity Provider by clicking **Identity** > **Identity Providers** and click on the **Directories** Tab and Click on **Assign directory**.
 
-    ![Screenshot of the Akamai EAA console Directories tab for Microsoft Entra SSO, showing superdemo.live in the list of Currently assigned directories.](./media/header-akamai-tutorial/assign-directory.png)
-
 ### Configure KCD Delegation for EAA Walkthrough
 
 #### Step 1: Create an Account 
 
 1. In the example we will use an account called **EAADelegation**. You can perform this using the **Active Directory users and computer** Snappin.
-
-    ![Screenshot of the Akamai EAA console Directories tab for Microsoft Entra SSO. The directory superdemo.live is listed under Currently assigned directories.](./media/header-akamai-tutorial/assign-directory.png)
 
     > [!NOTE]
     > The user name has to be in a specific format based on the **Identity Intercept Name**. From the figure 1 we see it is **corpapps.login.go.akamai-access.com**
