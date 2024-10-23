@@ -21,6 +21,28 @@ Before you begin, use the **Choose a tenant type** selector at the top of this p
 
 This quickstart uses a sample web app to show you how to sign in users in your workforce tenant. The sample uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
 
+## Prerequisites
+
+#### [Node](#tab/node)
+
+placeholder
+
+#### [ASP.NET Core](#tab/asp-dot-net-core)
+
+placeholder
+
+
+#### [Java](#tab/java)
+
+placeholder
+
+#### [Python Flask](#tab/python-flask)
+
+placeholder
+
+
+---
+
 
 ::: zone-end 
 
