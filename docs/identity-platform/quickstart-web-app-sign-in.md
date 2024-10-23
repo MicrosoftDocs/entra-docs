@@ -196,8 +196,8 @@ PLACEHOLDER-->
 
 1. Set up virtual environment:
 
-  1. For Windows, run the following commands:
-    
+    1. For Windows, run the following commands:
+        
     ```console
     py -m venv .venv
     .venv\scripts\activate
@@ -227,7 +227,7 @@ PLACEHOLDER-->
 
 1. Set up virtual environment:
 
-  1. For Windows, run the following commands:
+    1. For Windows, run the following commands:
     
     ```console
     py -m venv .venv
