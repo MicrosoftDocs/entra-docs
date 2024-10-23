@@ -3674,5 +3674,9 @@
   "Azure Cosmos DB principal ID - Azure Government" : "57506a73-e302-42a9-b869-6f12d9ec29e9",
   "Azure Cosmos DB principal ID - Other regions" : "a232010e-820c-4083-83bb-3ace5fc29d0b",
   "Azure Arc MetalLB extension" : "087fca6e-4606-4d41-b3f6-5ebdf75b8b4c",
-  "Azure Public app ID" : "c632b3df-fb67-4d84-bdcf-b95ad541b5c8"
+  "Azure VPN client - Microsoft registered, Azure Public" : "c632b3df-fb67-4d84-bdcf-b95ad541b5c8",
+  "Azure VPN client - Manually registered, Azure Public" : "41b23e61-6c1e-4545-b367-cd054e0ed4b4",
+  "Azure VPN client - Manually registered, Azure Government" : "51bb15d4-3a4f-4ebf-9dca-40096fe32426",
+  "Azure VPN client - Manually registered, Azure Germany" : "538ee9e6-310a-468d-afef-ea97365856a9",
+  "Azure VPN client - Manually registered, Microsoft Azure operated by 21Vianet" : "49f817b6-84ae-4cc0-928c-73f27289b3aa"
 }
