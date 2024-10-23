@@ -70,9 +70,9 @@ Resetting requires that you opt out and opt back into the Microsoft Entra Verifi
 ### How can I check my Microsoft Entra tenant's region?
 
 1. In the [Azure portal](https://portal.azure.com), go to Microsoft Entra ID for the subscription you use for your Microsoft Entra Verified ID deployment.
-1. Under Manage, select Properties
+1. Under Manage, select Properties.
 
-    :::image type="content" source="media/verifiable-credentials-faq/region.png" alt-text="settings delete and opt out":::
+    :::image type="content" source="media/verifiable-credentials-faq/region.png" lightbox="media/verifiable-credentials-faq/region.png" alt-text="Screenshot of settings delete and opt out.":::
 
 1. See the value for Country or Region. If the value is a country or a region in Europe, your Microsoft Entra Verified ID service is set up in Europe.
 
@@ -130,8 +130,8 @@ Regardless of which language of the sample you're using, the Azure AppService ho
 
 The Request Service API makes use of callbacks to a [URL](presentation-request-api.md#callback-type) provided by the relying party application. This URL needs to be reachable from the Verified ID system for the callbacks to be received. Callbacks are coming from Azure infrastructure in the same region as your Microsoft Entra tenant. If you need to harden your network, you have two options.
 
-1. Use [Azure firewall service tags](/azure/firewall/service-tags) [AzureCloud](/azure/virtual-network/service-tags-overview#available-service-tags).
-2. Use the published [CIDR range](https://www.microsoft.com/download/details.aspx?id=56519) to configure your firewall.  You need to use AzureCloud.***regions*** that matches where your Entra tenant is deployed to config their firewalls to let callback traffic from Request Service API through. For instance, if your tenant is in EU, you should pick all CIDR ranges from AzureCloud.***northeurope***, ***.westeurope***, etc., to your firewalls config.
+- Use [Azure firewall service tags](/azure/firewall/service-tags) [AzureCloud](/azure/virtual-network/service-tags-overview#available-service-tags).
+- Use the published [CIDR range](https://www.microsoft.com/download/details.aspx?id=56519) to configure your firewall.  You need to use AzureCloud.***regions*** that matches where your Microsoft Entra tenant is deployed to config their firewalls to let callback traffic from Request Service API through. For instance, if your tenant is in EU, you should pick all CIDR ranges from AzureCloud.***northeurope***, ***.westeurope***, etc., to your firewalls config.
 
 ## Next steps
 
