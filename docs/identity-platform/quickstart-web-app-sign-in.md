@@ -599,16 +599,8 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```
 
 1. Set up virtual environment:
-    a. For **Windows**, run the following commands:        
-    ```console
-    py -m venv .venv
-    .venv\scripts\activate
-    ```    
-    b. For **macOS/Linux**, run the following commands:    
-    ```console
-    python3 -m venv .venv
-    source .venv/bin/activate
-    ```
+    
+    [!INCLUDE [Virtual environment setup](./includes/python-web-app/virtual-environment-setup.md)]
 
 1. To install app dependencies, run the following commands:
 
