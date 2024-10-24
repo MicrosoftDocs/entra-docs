@@ -117,7 +117,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-in-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
    
-1. Add your account in Authenticator on your iOS device. If you just downloaded Authenticator, you can tap **Add work or school account** near the bottom of your iOS device. If already using Authenticator, tap **+** in the upper right corner of the app and then tap on **Add work or school account**.
+1. Add your account in Authenticator on your iOS device. If you just downloaded Authenticator, you can tap **Add work or school account** near the bottom of your iOS device. If you already use Authenticator, tap **+** in the upper right corner of the app and then tap **Add work or school account**.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot 233x433 of how to register using Microsoft Authenticator for iOS devices.":::
 
@@ -271,6 +271,9 @@ Security info by default will prompt users to sign in to the Authenticator app t
 1. You're prompted to open the Authenticator app and create your passkey there. Open Authenticator and go through the privacy screens as needed.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-in-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator.":::
+
+   >[!NOTE]
+   >If you register your passkey with Chrome browser on MacOS, allow `login.microsoft.com` to access your security key or device when prompted.
 
 1. Tap **Sign in**.
 
