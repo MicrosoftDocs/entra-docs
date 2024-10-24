@@ -183,7 +183,16 @@ For more information, see [B2B collaboration invitation redemption](../../extern
 #### Additional guest enablement considerations
 Many of the tasks that will allow guest users to sign-in and get started, can be automated using lifecycle workflows.  For more information on how you can automate these and additional tasks, see [Automate employee and guest onboarding tasks](../tutorial-onboard-custom-workflow-portal.md)
 
+### Iterate additional resources via direct assignment
+Now you may have additional requirements that need to be assigned to guest users.  This can be done through the use of Access packages and entitlement management.  
+
+For instance, you may have an access package that is assigned to your regular users and you want a similar package assigned to guest users.  You can use entitlement management to assign the guest users to these access packages.  See [View, add, and remove assignments for an access package in entitlement management](../entitlement-management-access-package-assignments.md)
+
+You may opt to create a new package, not touching your exisiting one, and assign guest users to that package.  For more information see [Creating an access package](../entitlement-management-access-package-create.md) and [Configure an automatic assignment policy for an access package in entitlement management](../entitlement-management-access-package-auto-assignment-policy.md)
+
 The sections below provide examples of various ways that you can onboard guest users
+
+
 
 ### Example - Provisioning a user using Entitlement Management:
 As an IT admin, you have identified a project that requires onboarding external consultants from Fabrikam to collaborate. It's important to have automated access management, approval workflows, and lifecycle management.
