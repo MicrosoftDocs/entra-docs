@@ -43,7 +43,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. **This is the recommended and preferred flow to set up a passkey in Authenticator.** If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
 1. Download Authenticator from the App Store, and go through the privacy screens.
-   1. When you install Authenticator for the first time on your device, tap **Add work or school account**.
+   1. When you install Authenticator for the first time on your device, tap **Add work or school account**. If you tap **Add account** or the **+** button, tap **Work or school account**.
 
    1. If you installed Authenticator on you device before but haven't added an account, tap **Add account** or the **+** button, and select **Work or school account**.
 
@@ -203,7 +203,7 @@ In some cases when you try to register a passkey, it gets stored locally in the 
 You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. **This is the recommended and preferred flow to set up a passkey in Authenticator.** If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
 1. Download Authenticator from Google Play, and go through the privacy screens.
-   1. When you install Authenticator for the first time on your device, tap **Add work or school account**.
+   1. When you install Authenticator for the first time on your device, tap **Add work or school account**. If you tap **Add account** or the **+** button, tap **Work or school account**.
 
    1. If you installed Authenticator on you device before but haven't added an account, tap **Add account** or the **+** button, and select **Work or school account**.
 
