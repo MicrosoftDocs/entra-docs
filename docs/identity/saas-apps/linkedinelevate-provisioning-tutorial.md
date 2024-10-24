@@ -89,8 +89,6 @@ The first step is to retrieve your LinkedIn access token. If you are an Enterpri
 
 1. Set the **Provisioning Mode** to **Automatic**.
 
-    ![Screenshot shows the LinkedIn Elevate Provisioning page.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate3.PNG)
-
 1. Fill in the following fields under **Admin Credentials** :
 
     * In the **Tenant URL** field, enter `https://api.linkedin.com`.
