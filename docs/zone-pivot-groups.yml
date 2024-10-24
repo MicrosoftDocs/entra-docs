@@ -358,11 +358,7 @@ groups:
     title: Discovery
   - id: identity-governance-guest-onboard
     title: Onboard
-  - id: identity-governance-guest-redemption
-    title: Redemption
   - id: identity-governance-guest-monitor
     title: Monitor
-  - id: identity-governance-guest-cleanup
-    title: Monitor and cleanup
   - id: identity-governance-guest-offboard
     title: Offboard
