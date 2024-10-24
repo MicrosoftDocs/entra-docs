@@ -186,6 +186,8 @@
             href: concept-certificate-based-authentication-technical-deep-dive.md
           - name: Configure Microsoft Entra CBA
             href: how-to-certificate-based-authentication.md
+          - name: Configure certificate authorities
+            href: how-to-configure-certificate-authorities.md
           - name: Windows smart card logon
             href: concept-certificate-based-authentication-smartcard.md
           - name: Apple devices
