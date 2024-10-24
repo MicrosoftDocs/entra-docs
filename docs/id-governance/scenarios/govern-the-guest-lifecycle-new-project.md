@@ -160,7 +160,27 @@ Onboarding guest identities can be done in several ways.
 [Self-Service sign up](../../external-id/what-is-b2b.md#allow-self-service-sign-up) - With a self-service sign-up user flow, you can create a sign-up experience for guests who want to access your apps. As part of the sign-up flow, you can provide options for different social or enterprise identity providers, and collect information about the user. 
 
 [Bulk invite](../../external-id/tutorial-bulk-invite.md#invite-guest-users-in-bulk)  - If you use Microsoft Entra B2B collaboration to work with external partners, you can invite multiple guest users to your organization at the same time.
- 
+
+### Enable guest users to securely access an organization’s resources by accepting an invitation  
+Now that we have discussed the various ways that guest users can be onboarded into your organizations systems, we should cover the second part of the process.  Guest user accemptance or redemption.  There are several different ways a guest user can redeem an invitation.  The table below provides an overview of these ways.
+
+|Process|Description|
+|-----|-----|
+|Invitation email|When you add a guest user to your directory by using the Microsoft Entra admin center, an invitation email is sent to the guest in the process.|
+|Direct link|You can give a guest a direct link to your app or portal.|
+|Common endpoint|Guest users can now sign in to your multitenant or Microsoft first-party apps through a common endpoint (URL), for example `https://myapps.microsoft.com`.| 
+
+
+For more information, see [B2B collaboration invitation redemption](../../external-id/redemption-experience.md)
+
+
+
+
+
+
+
+
+
 The sections below provide examples of various ways that you can onboard guest users
 
 ### Example - Provisioning a user using Entitlement Management:
@@ -184,25 +204,17 @@ John use his own credentials to sign in securely eliminating the need for passwo
 
 For more information, see [Add B2B collaboration users in the Microsoft Entra admin center](../../external-id/add-users-administrator.md) and [Configure external collaboration settings](../external-id/external-collaboration-settings-configure.md)
 
-::: zone-end  
-
-::: zone pivot="identity-governance-guest-redemption"  
-
-## Redemption in B2B collaboration: Enable guest users to securely access an organization’s resources by accepting an invitation  
-
- 
-
-### Invitation Email: 
+### Example - Redemption via invitation email: 
 John, a guest user, receives an email invitation from Contoso to access their internal portal. He clicks on the link provided in the email, which takes him to the Contoso’s sign-in page. Here, John is presented with the company’s privacy terms and conditions, which he reads through and accepts. He then signs-in using his existing email account. With the sign-in process complete, John is granted access to the Contoso portal, where he can now seamlessly collaborate with internal users. 
 
-### Direct Link: 
+### Example - Redemption via direct link: 
 In another instance, Jane, another guest user, receives a direct link to the Contoso Ltd. application from her contact at the company. She clicks on the link, which directs her to the sign-in page. Jane reviews and accepts the privacy terms and conditions before signing in with her existing email account. Once authenticated, she gains access to the application and can start working with her Contoso Ltd. colleagues. 
 
-### Common endpoint URL: 
+### Example -  Redemption via common endpoint URL: 
 Meanwhile, Alex, a guest user, navigates to the common endpoint URL, myapps.microsoft.com. He selects the option to sign-in to an organization and enters the domain name of Contoso Ltd. After reviewing and accepting the privacy terms and conditions, Alex signs in using his existing email account. Successfully authenticated, Alex can now access the resources provided by Contoso Ltd., ready to collaborate and contribute. 
 
-
 ::: zone-end  
+
 
 ::: zone pivot="identity-governance-guest-monitor"  
 
@@ -216,18 +228,6 @@ Almost immediately, the external partners received their invitations. They joine
 
 ::: zone-end  
 
-::: zone pivot="identity-governance-guest-cleanup"  
-
-## Monitor and Cleanup: Ensure compliance and security by monitoring and cleaning up accounts 
- 
-
- As the company grew, so did the complexity of managing who had access to what. You consistently monitor the consultant’s access, ensuring compliance with security policies. You make sure all guests have their access set to expire automatically at the end of the project duration by maintaining these details in access package lifecycle settings . With automated review process the system sent out review requests to managers and resource owners. They could approve or deny access with just a few clicks. This not only saved time but also reduced the risk of human error.  
- 
-You  also uses the dashboard to monitor and clean up any inactive accounts. By regularly conducting access reviews and utilizing the inactive guest user dashboard, he ensures that only active and necessary guest users retain access to the company’s resources. This helps maintain security, reduce risks, and streamline user management. 
- 
-As the months passed, Contoso saw a significant improvement in their security posture. Unauthorized access incidents dropped, and compliance audits became a breeze. The detailed reports generated by Entra Access Reviews provided clear insights into access patterns and potential risks. 
-
-::: zone-end  
 
 ::: zone pivot="identity-governance-guest-offboard"  
 
