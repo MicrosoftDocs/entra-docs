@@ -149,8 +149,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 2. Select the **Account** button at the top right.
 
-    ![The Account button](./media/absorblms-tutorial/account.png)
-
 3. In the Account pane, select **Portal Settings**.
 
     ![The Portal Settings link](./media/absorblms-tutorial/portal.png)
@@ -202,8 +200,6 @@ For Microsoft Entra users to sign in to Absorb LMS, they must be set up in Absor
     ![The Add New drop-down list](./media/absorblms-tutorial/add.png)
 
 4. On the **Add User** page, do the following:
-
-    ![The Add User page](./media/absorblms-tutorial/user.png)
 
     a. In the **First Name** box, type the first name, such as **Britta**.
 

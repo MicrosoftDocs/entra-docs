@@ -148,8 +148,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click on the **Add a new federated identity provider** button and perform the following steps:
 
-   [ ![Screenshot that shows the Organization Algorithm.](./media/adra-by-trintech-tutorial/certificate.png "Organization")](./media/adra-by-trintech-tutorial/certificate.png#lightbox)
-
    a. Enter a valid **Name** and **Description** values in the textbox.
 
    b. In the **Metadata URL** textbox, paste the **App Federation Metadata Url** which you've copied and click on the **Test URL** button.

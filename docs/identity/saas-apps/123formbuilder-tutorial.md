@@ -142,8 +142,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 2. On the **Microsoft Entra ID - Single sign-on - Configure App Settings** perform the following steps:
 
-	![Configure Single Sign-On](./media/123formbuilder-tutorial/configuration.png)
-
 	a. If you wish to configure the application in **IDP initiated mode**, copy the **IDENTIFIER** value for your instance and paste it in **Identifier** textbox in **Basic SAML Configuration** section.
 
 	b. If you wish to configure the application in **IDP initiated mode**, copy the **REPLY URL** value for your instance and paste it in **Reply URL** textbox in **Basic SAML Configuration** section.

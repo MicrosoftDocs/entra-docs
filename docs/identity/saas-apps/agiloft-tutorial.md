@@ -149,8 +149,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. Click on the button **Configure SAML 2.0 Single Sign-On**.
 
-    ![Screenshot that highlights the Configure SAML 2.0 Single Sign-On button.](./media/agiloft-tutorial/setup.png)
-
 5. A wizard dialog appears. On the dialog, click on the **Identity Provider Details** and fill in the following fields:  
 
     ![Agiloft Contract Management Suite Configuration](./media/agiloft-tutorial/details.png)
