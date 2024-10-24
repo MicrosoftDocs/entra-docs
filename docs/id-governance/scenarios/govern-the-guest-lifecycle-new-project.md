@@ -140,7 +140,15 @@ There are different options depending on the business case. Let’s deep dive in
 
 ::: zone pivot="identity-governance-guest-onboard"  
 
-## Onboarding of Business Guests: Develop a comprehensive onboarding process for business guests 
+## Onboarding of Business Guests
+Onboarding for guest accounts can be broken down in to 2 main parts when considering developing a process.  These are:
+
+1.  Develop an onboarding process to get guests into the system.  How are we going to get guests into our systems?
+2.  Enable the guest users to access the systems.  How will the guests access these systems?
+
+The following sections cover both of these parts so that you can create a comprehensive onboarding process.
+
+### Develop a comprehensive onboarding process for business guests 
 Onboarding, with regard to guest or external identities, is the process or processes of getting these identities setup in your organizations systems.  Depending on the systems they will be added to or allowed to access, these processes may differ.
 
 Onboarding guest identities can be done in several ways.
@@ -155,7 +163,7 @@ Onboarding guest identities can be done in several ways.
 
 [End User Driven Collaboration](#example---end-user-driven-collaboration) - External collaboration settings let you specify what roles in your organization can invite external users for B2B collaboration. These settings also include options for allowing or blocking specific domains, and options for restricting what external guest users can see in your Microsoft Entra directory. 
 
-### Additional requirements to onboard business guests
+#### Additional onboarding options 
 
 [Self-Service sign up](../../external-id/what-is-b2b.md#allow-self-service-sign-up) - With a self-service sign-up user flow, you can create a sign-up experience for guests who want to access your apps. As part of the sign-up flow, you can provide options for different social or enterprise identity providers, and collect information about the user. 
 
@@ -170,16 +178,10 @@ Now that we have discussed the various ways that guest users can be onboarded in
 |Direct link|You can give a guest a direct link to your app or portal.|
 |Common endpoint|Guest users can now sign in to your multitenant or Microsoft first-party apps through a common endpoint (URL), for example `https://myapps.microsoft.com`.| 
 
-
 For more information, see [B2B collaboration invitation redemption](../../external-id/redemption-experience.md)
 
-
-
-
-
-
-
-
+#### Additional guest enablement considerations
+Many of the tasks that will allow guest users to sign-in and get started, can be automated using lifecycle workflows.  For more information on how you can automate these and additional tasks, see [Automate employee and guest onboarding tasks](../tutorial-onboard-custom-workflow-portal.md)
 
 The sections below provide examples of various ways that you can onboard guest users
 
