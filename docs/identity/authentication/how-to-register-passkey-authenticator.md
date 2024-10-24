@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on Androi
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/23/2024
+ms.date: 10/24/2024
 
 ms.author: justinha
 author: justinha
@@ -120,6 +120,9 @@ Security info by default will prompt users to sign in to the Authenticator app t
 1. Add your account in Authenticator on your iOS device. If you just downloaded Authenticator, you can tap **Add work or school account** near the bottom of your iOS device. If already using Authenticator, tap **+** in the upper right corner of the app and then tap on **Add work or school account**.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot 233x433 of how to register using Microsoft Authenticator for iOS devices.":::
+
+   >[!NOTE]
+   >If you register your passkey with Chrome browser on MacOS, allow `login.microsoft.com` to access your security key or device when prompted.
 
 1. The rest of the flow is similar to the flow shared earlier to sign in to the Authenticator and complete passkey registration. Complete MFA on your iOS device, and tap **Sign in**.
 
