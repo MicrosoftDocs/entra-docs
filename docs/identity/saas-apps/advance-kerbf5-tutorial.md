@@ -220,8 +220,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
       Edit the query properties to specify the server *superdemo.live* and **SearchFilter** value **(userPrincipalName=%{session.logon.last.usernameUPN})**.
 
-    ![Screenshot that shows the AD Query properties.](./media/advance-kerbf5-tutorial/configure17.png)
-
     * (userPrincipalName=%{session.logon.last.usernameUPN})
 
       Select **Branch Rules** to add a branch rule and **Properties** to view properties.
