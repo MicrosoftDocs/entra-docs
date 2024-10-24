@@ -150,9 +150,10 @@ Administrators can add any Microsoft Entra registered application to Conditional
 Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')**.
 
 <a name='all-cloud-apps'></a>
+
 ### All resources
 
-Applying a Conditional Access policy to **All resources (formerly 'All cloud apps')** results in the policy being enforced for all tokens issued to web sites and services. This option includes applications that aren't individually targetable in Conditional Access policy, such as Microsoft Entra ID.
+Applying a Conditional Access policy to **All resources (formerly 'All cloud apps')** results in the policy being enforced for all tokens issued to web sites and services including [Global Secure Access traffic forwarding profiles](/entra/global-secure-access/concept-traffic-forwarding). This option includes applications that aren't individually targetable in Conditional Access policy, such as Microsoft Entra ID.
 
 In some cases, an **All resources (formerly 'All cloud apps')** policy could inadvertently block user access. These cases are excluded from policy enforcement and include:
 
