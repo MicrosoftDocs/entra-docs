@@ -106,8 +106,6 @@ Example: `<demo0-qa>`.mypolicies.com.
 
 9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to myPolicies**.
 
-	:::image type="content" source="media/mypolicies-provisioning-tutorial/usermapping.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra users to customappsso is visible." border="false":::
-
 10. Review the user attributes that are synchronized from Microsoft Entra ID to myPolicies in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in myPolicies for update operations. Select the **Save** button to commit any changes.
 
    |Attribute|Type|

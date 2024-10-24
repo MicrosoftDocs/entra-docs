@@ -93,10 +93,6 @@ To configure Federated Directory for automatic user provisioning with Microsoft 
  
 8. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Federated Directory account.
 
-	![federated directory Add SCIM](media/federated-directory-provisioning-tutorial/premission.png)
-
-
-
 ## Configuring automatic user provisioning to Federated Directory 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Federated Directory based on user and/or group assignments in Microsoft Entra ID.
@@ -133,9 +129,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 9. Click **Save**.
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Federated Directory**.
-
-	:::image type="content" source="media/federated-directory-provisioning-tutorial/user-mappings.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra users to Federated Directory is highlighted." border="false":::
-	
 	
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Federated Directory in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Federated Directory for update operations. Select the **Save** button to commit any changes.
 

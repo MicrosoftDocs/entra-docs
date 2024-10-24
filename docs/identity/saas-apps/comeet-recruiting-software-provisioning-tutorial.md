@@ -104,8 +104,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Comeet**.
 
-	![Comeet Recruiting Software User Mappings](media/comeet-recruiting-software-provisioning-tutorial/user-mappings.png)
-
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Comeet Recruiting Software in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Comeet Recruiting Software for update operations. Select the **Save** button to commit any changes.
 
 	![Comeet Recruiting Software Group Attributes](media/comeet-recruiting-software-provisioning-tutorial/user-mapping-attributes.png)

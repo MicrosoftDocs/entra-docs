@@ -112,8 +112,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Flock**.
 
-	![Flock User Mappings](media/flock-provisioning-tutorial/usermapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Flock  in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Flock  for update operations. Select the **Save** button to commit any changes.
 
 	![Flock  User Attributes](media/flock-provisioning-tutorial/userattribute.png)

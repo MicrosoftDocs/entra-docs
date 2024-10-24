@@ -133,15 +133,11 @@ To configure automatic user provisioning for Harness in Microsoft Entra ID, do t
 
 1. Under **Mappings**, select **Synchronize Microsoft Entra users to Harness**.
 
-	![Harness "Synchronize Microsoft Entra users to Harness" link](media/harness-provisioning-tutorial/usermappings.png)
-
 1. Under **Attribute Mappings**, review the user attributes that are synchronized from Microsoft Entra ID to Harness. The attributes selected as *Matching* are used to match the user accounts in Harness for update operations. Select **Save** to commit any changes.
 
 	![Harness user "Attribute Mappings" pane](media/harness-provisioning-tutorial/userattributes.png)
 
 1. Under **Mappings**, select **Synchronize Microsoft Entra groups to Harness**.
-
-	![Harness "Synchronize Microsoft Entra groups to Harness" link](media/harness-provisioning-tutorial/groupmappings.png)
 
 1. Under **Attribute Mappings**, review the group attributes that are synchronized from Microsoft Entra ID to Harness. The attributes selected as *Matching* properties are used to match the groups in Harness for update operations. Select **Save** to commit any changes.
 

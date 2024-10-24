@@ -80,8 +80,6 @@ To configure Looop for automatic user provisioning with Microsoft Entra ID, you 
 
 7. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Looop account.
 
-	![Looop OIDc Consent](media/looop-provisioning-tutorial/accept.png)
-
 ## Configure automatic user provisioning to Looop 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Looop based on user and/or group assignments in Microsoft Entra ID.
@@ -119,8 +117,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Looop**.
 
-	![Looop User Mappings](media/looop-provisioning-tutorial/usermappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Looop in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Looop for update operations. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
@@ -143,8 +139,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:Looop:2.0:User:startAt|String|
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Meta Networks Connector**.
-
-	![Looop Group Mappings](media/looop-provisioning-tutorial/groupmappings.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Meta Networks Connector in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Meta Networks Connector for update operations. Select the **Save** button to commit any changes.
 
