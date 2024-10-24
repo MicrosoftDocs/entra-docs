@@ -42,19 +42,14 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 
 You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. **This is the recommended and preferred flow to set up a passkey in Authenticator.** If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
-1. Download Authenticator from the App Store, open it, and go through the privacy screens.
-1. Add your account in Authenticator on your iOS device. Tap **Add account** or the **+** button.
+1. Download Authenticator from the App Store, and go through the privacy screens.
+   1. When you install Authenticator for the first time on your device, tap **Add work or school account**.
 
-   > [!NOTE]
-   > If you already have an account in the Authenticator, tap your account in the app, and then tap the settings gear near the upper right of the account details page. Tap **Create a passkey (Preview)**, and skip directly to the sign-in step of the flow.
+   1. If you installed Authenticator on you device before but haven't added an account, tap **Add account** or the **+** button, and select **Work or school account**.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot of how to register using Microsoft Authenticator for iOS devices.":::
+      :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot of how to register using Microsoft Authenticator for iOS devices.":::
 
-1. You need to complete multifactor authentication (MFA).
-
-1. Select **Work or school account**.
-
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/work-school-account-ios.png" alt-text="Screenshot of choosing Work or School Account using Microsoft Authenticator for iOS devices.":::
+   1. If you already added an account in Authenticator, tap your account, and then tap the settings gear near the upper right of the account details page. Tap **Create a passkey (Preview)**.
  
 1. Tap **Sign in**.
  
@@ -207,18 +202,15 @@ In some cases when you try to register a passkey, it gets stored locally in the 
 
 You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. **This is the recommended and preferred flow to set up a passkey in Authenticator.** If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 
-1. Download Authenticator from Google Play, open it, and go through the privacy screens.
-1. Add your account in Authenticator on your Android device. Tap **Add account** or the **+** button.
-   > [!NOTE]
-   > If you already have an account in the Authenticator, tap your account in the app, and then tap the settings gear near the upper right of the account details page. Tap **Create a passkey (Preview)**, and skip directly to the sign-in step of the flow.
+1. Download Authenticator from Google Play, and go through the privacy screens.
+   1. When you install Authenticator for the first time on your device, tap **Add work or school account**.
 
+   1. If you installed Authenticator on you device before but haven't added an account, tap **Add account** or the **+** button, and select **Work or school account**.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/add-account-android.png" alt-text="Screenshot of how to register using Microsoft Authenticator for Android devices.":::
+      :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/add-account-android.png" alt-text="Screenshot of how to register using Microsoft Authenticator for Android devices.":::
 
-1. Select **Work or school account**.
-
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/work-school-account-android.png" alt-text="Screenshot of choosing Work or School Account using Microsoft Authenticator for Android devices.":::
-
+   1. If you already added an account in Authenticator, tap your account, and then tap the settings gear near the upper right of the account details page. Tap **Create a passkey (Preview)**.
+ 
 1. Tap **Sign in**.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/tap-sign-in-android.png" alt-text="Screenshot of tapping the Sign in option using Microsoft Authenticator for Android devices.":::
