@@ -19,7 +19,7 @@ Before you begin, use the **Choose a tenant type** selector at the top of this p
 
 ::: zone pivot="workforce"
 
-This quickstart uses a sample web app to show you how to sign in users in your workforce tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
+This quickstart uses a sample web app to show you how to sign in users and call Microsoft Graph API in your workforce tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
 
 ## Prerequisites
 
@@ -50,36 +50,95 @@ This quickstart uses a sample web app to show you how to sign in users in your w
 
 ---
 
-
 ## Register the web app
 
-Common content 
+[!INCLUDE [Register a single-page application](./includes/register-app/web-app-common/register-application-web-app-common.md)]
 
-### Add platform and URLs
+## Add platform and URLs
+
+To specify your app type to your app registration, follow these steps:
 
 #### [Node](#tab/node-worforce)
 
-Placeholder 
+1. Under **Manage**, select **Authentication**.
+1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
+1. For the **Redirect URIs** enter `http://localhost:3000/auth/redirect`.
+1. Under **Front-channel logout URL**, enter `https://localhost:5001/signout-callback-oidc` for signing out.
+1. Select **Configure** to save your changes. 
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
 
-Placeholder 
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/web-app-common/add-platform-redirect-web-app-port-5001.md)] 
 
 
 #### [Java](#tab/java-worforce)
 
-Placeholder 
+1. Under **Manage**, select **Authentication**.
+1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
+1. For the **Redirect URIs** enter `https://localhost:8443/msal4jsample/secure/aad`. 
+1. Add `https://localhost:8443/msal4jsample/graph/me` as a second redirect URI.
+1. Select **Configure** to save your changes. 
+
+#### [Python Flask](#tab/python-flask-worforce)
+
+1. Under **Manage**, select **Authentication**.
+1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
+1. For the **Redirect URIs** enter `http://localhost:5000/getAToken`.
+1. Select **Configure** to save your changes.  
+
+---
+
+## Add app client secret or certificate
+
+#### [Node](#tab/node-worforce)
+
+Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:
+
+1. Under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.  
+1. In the **Description** box, enter a description for the client secret (for example, *ciam app client secret*).
+1. Under **Expires**, select a duration for which the secret is valid (per your organizations security rules), and then select **Add**.
+1. Record the secret's **Value**. You'll use this value for configuration in a later step. The secret value won't be displayed again, and isn't retrievable by any means, after you navigate away from the **Certificates and secrets**. Make sure you record it.
+
+#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+
+To use a certificate credential for your web app, you need to create, then upload the certificate. For testing purposes, use a self-signed certificate. Use the following steps to create and upload a self-signed certificate:
+
+1. Using your terminal, use the following commands to navigate to create a self-signed certificate in the project directory.
+
+    ```console
+    cd ms-identity-docs-code-dotnet\web-app-aspnet\
+    dotnet dev-certs https -ep ./certificate.crt --trust
+    ```
+
+1. Return to the Microsoft Entra admin center, and under **Manage**, select **Certificates & secrets** > **Upload certificate**.
+1. Select the **Certificates (0)** tab, then select **Upload certificate**.
+1. An **Upload certificate** pane appears. Use the icon to navigate to the certificate file you created in the previous step, and select **Open**.
+1. Enter a description for the certificate, for example *Certificate for aspnet-web-app*, and select **Add**.
+1. Record the **Thumbprint** value for use in the next step.
+
+
+#### [Java](#tab/java-worforce)
+
+Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:
+
+1. Under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.  
+1. In the **Description** box, enter a description for the client secret (for example, *ciam app client secret*).
+1. Under **Expires**, select a duration for which the secret is valid (per your organizations security rules), and then select **Add**.
+1. Record the secret's **Value**. You'll use this value for configuration in a later step. The secret value won't be displayed again, and isn't retrievable by any means, after you navigate away from the **Certificates and secrets**. Make sure you record it.  
 
 
 #### [Python Flask](#tab/python-flask-worforce)
 
-Placeholder 
+Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:
+
+1. Under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.  
+1. In the **Description** box, enter a description for the client secret (for example, *ciam app client secret*).
+1. Under **Expires**, select a duration for which the secret is valid (per your organizations security rules), and then select **Add**.
+1. Record the secret's **Value**. You'll use this value for configuration in a later step. The secret value won't be displayed again, and isn't retrievable by any means, after you navigate away from the **Certificates and secrets**. Make sure you record it. 
 
 ---
 
-
-## Add app client secret or certificate
-
+When creating credentials for a confidential client application, Microsoft recommends that you use a certificate instead of a client secret before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md). 
 
 ## Clone or download sample web application 
 
