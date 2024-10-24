@@ -43,7 +43,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to Flock, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup Flock  for provisioning
+## Set up Flock  for provisioning
 
 Before configuring Flock for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Flock.
 

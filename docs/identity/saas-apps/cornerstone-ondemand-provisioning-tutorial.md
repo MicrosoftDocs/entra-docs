@@ -81,8 +81,6 @@ To configure automatic user provisioning for Cornerstone OnDemand in Microsoft E
 
 4. Set **Provisioning Mode** to **Automatic**.
 
-	![Cornerstone OnDemand Provisioning Mode](./media/cornerstone-ondemand-provisioning-tutorial/ProvisioningCredentials.png)
-
 5. Under the **Admin Credentials** section, enter the admin username, admin password, and domain of your Cornerstone OnDemand's account:
 
 	* In the **Admin Username** box, fill in the domain or username of the admin account on your Cornerstone OnDemand tenant. An example is contoso\admin.
@@ -102,8 +100,6 @@ To configure automatic user provisioning for Cornerstone OnDemand in Microsoft E
 8. Select **Save**.
 
 9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Cornerstone OnDemand**.
-
-	![Cornerstone OnDemand synchronization](./media/cornerstone-ondemand-provisioning-tutorial/UserMapping.png)
 
 10. Review the user attributes that are synchronized from Microsoft Entra ID to Cornerstone OnDemand in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Cornerstone OnDemand for update operations. To save any changes, select **Save**.
 

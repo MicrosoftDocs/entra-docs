@@ -51,7 +51,7 @@ Before you configure Foodee for automatic user provisioning by using Microsoft E
 
 1. Sign in to [Foodee](https://www.food.ee/login/), and then select your tenant ID.
 
-	:::image type="content" source="media/Foodee-provisioning-tutorial/tenant.png" alt-text="Screenshot of the main menu of the Foodee enterprise portal. A tenant id placeholder is visible in the menu." border="false":::
+	:::image type="content" source="media/Foodee-provisioning-tutorial/tenant.png" alt-text="Screenshot of the main menu of the Foodee enterprise portal. A Tenant ID placeholder is visible in the menu." border="false":::
 
 1. Under **Enterprise portal**, select **Single Sign On**.
 

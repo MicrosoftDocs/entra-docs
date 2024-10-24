@@ -106,8 +106,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Dynamic Signal**.
 
-	![Dynamic Signal User Mappings](media/dynamic-signal-provisioning-tutorial/user-mappings.png)
-
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Dynamic Signal in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Dynamic Signal for update operations. Select the **Save** button to commit any changes.
 
 	![Dynamic Signal User Attributes](media/dynamic-signal-provisioning-tutorial/user-mapping-attributes.png)

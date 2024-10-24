@@ -46,7 +46,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 * When assigning a user to Leapsome, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 
-## Setup Leapsome for provisioning
+## Set up Leapsome for provisioning
 
 1. Sign in to your [Leapsome Admin Console](https://www.Leapsome.com/app/#/login). Navigate to **Settings > Admin Settings**.
 
