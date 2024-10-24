@@ -361,8 +361,8 @@ groups:
   - id: identity-governance-guest-redemption
     title: Redemption
   - id: identity-governance-guest-monitor
-    title: Monitor and iterate
+    title: Monitor
   - id: identity-governance-guest-cleanup
     title: Monitor and cleanup
   - id: identity-governance-guest-offboard
-    title: Close out
+    title: Offboard
