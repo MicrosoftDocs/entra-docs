@@ -62,7 +62,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this tutorial, you configure and test Microsoft Entra SSO in a test environment
 
 * JIRA SAML SSO by Microsoft supports **SP** initiated SSO.
 
