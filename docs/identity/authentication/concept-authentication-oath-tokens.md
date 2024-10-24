@@ -40,6 +40,125 @@ OATH TOTP hardware tokens typically come with a secret key, or seed, pre-program
 
 Programmable OATH TOTP hardware tokens that can be reseeded can also be set up with Microsoft Entra ID in the software token setup flow.
 
+In this preview, we are introducing a new Hardware OATH token inventory. Global Administrator is no longer required to assign a token to a user when they upload the token information to Microsoft Entra ID. 
+You can delegate a lower privileged role to assign and activate the token.
+
+Here are the different features of the preview:
+
+Feature | Description | API/Portal support | Role requirement
+--------|-------------|--------------------|-----------------
+[Authentication method policy for hardware OATH tokens](#authentication-method-policy-for-hardware-oath-tokens) | You can scope the **Hardware OATH** method to specific users and groups. No need to use the legacy tenant-level setting that applies to both hardware and software OATH tokens. | API - Available<br>UX – During the private preview. | Global Administrator<br>Authentication Policy Administrator
+[Authentication devices](#authentication-devices) | A new option in the Microsoft Entra admin center to manage the hardware token inventory in your tenant. You can upload tokens to Microsoft Entra ID without assigning them to users. | API – Available<br>UX – Upload and edit are available, and more functionality will be added during the preview. | Global Administrator<br>Authentication Policy Administrator<br>If you want to upload a token AND assign it to a user, you can assign the following roles to the same user:<br>Authentication Policy Administrator<br>Authentication Administrator<br>Privileged Authentication Administrator is needed in order to assign token to privileged users
+[User authentication methods in the Entra admin center and APIs](#user-authentication-methods-in-the-entra-admin-center-and-apis) | Assign and activate a token from the tenant inventory to a specific user under the user’s authentication method in the Microsoft Entra admin center. | API, UX – available. | Global Administrator<br>Authentication Administrator<br>Privileged Authentication Administrator (to assign a token to a privileged user)
+[User self-assignment and activation](#user-self-assignment-and-activation) | Users can assign and activate token on themselves from the security info flow. | API – Available.<br>Security Info UX – will be become available during the preview. | Users manage themselves 
+
+
+### Authentication method policy for hardware OATH tokens
+
+1. You can view the Hardware OATH tokens policy status using the APIs
+
+
+   `https://developer.microsoft.com/graph/graph-explorer?request=policies%2FauthenticationMethodsPolicy%2FauthenticationMethodConfigurations%2FhardwareOath&method=GET&version=beta&GraphUrl=https://graph.microsoft.com`
+
+1. Start by enabling Hardware OATH tokens policy using the APIs.
+
+
+1. If you enabled the HW OATH authentication method policy above, we recommend that you clear the **Verification code from mobile app or hardware token** setting. To verify this setting: Azure AD portal > Security > MFA > Additional cloud-based multifactor authentication settings.
+
+Note: there might be some delays in the policy propagation(up to 20 mins). This can impact the 
+user’s ability to sign-in with HW OATH token and showing HW OATH token in the “Security Info” 
+page. Please allow an hour or so for this policy to get updated.
+
+
+### Authentication devices
+
+Use the UX flag and go to Protect and Secure > Authentication methods > Authentication 
+devices.
+2. Upload a CSV with up to 50 tokens at a time.
+a. Note: User assignment is currently not available via CSV and will become available later 
+in the preview. 
+b. Alternatively, you can use the APIs for either bulk upload tokens or create a single 
+token. Both APIs support assignments, using User ObjectID.
+Create a single token without assignment:
+
+Create single token:
+POST {{graphUrl}}/directory/authenticationMethodDevices/hardwareOathDevices
+{
+ "serialNumber": "91792950246",
+ "manufacturer": "CK Manufacturer",
+ "model": "CK1",
+ "secretKey": "QTUFKU2O6I3ZJNCU5NCZDV5GICQOOEPZ",
+ "timeIntervalInSeconds": 30,
+ "hashFunction": "hmacsha1"
+}
+All properties except hash function are required.
+
+Create a single token with assignment:
+To perform assignment the app needs to be assigned the “UserAuthenticationMethod.ReadWrite.All” 
+permission.
+
+Create token with assignment 
+POST {{graphUrl}}/directory/authenticationMethodDevices/hardwareOathDevices
+{
+ "serialNumber": "91792950245",
+ "manufacturer": "CK Manufacturer",
+ "model": "CK1",
+ "secretKey": "YGSD2KY7KDLSYM4IIGB74UMXDFL52Q",
+ "timeIntervalInSeconds": 30,
+ "assignTo": {"id": "eddff067-149a-4959-b81f-312734c7c5c8"}
+}
+All properties are required 
+
+Bulk upload
+
+Bulk upload
+PATCH {{graphUrl}}/directory/authenticationMethodDevices/hardwareOathDevices
+{
+ "@context":"#$delta",
+ "value": [
+ {
+ "@contentId": "1",
+ "serialNumber": "{{serialNumber}}",
+ "manufacturer": "{{manufacturer}}",
+ "model": "{{model}}",
+ "secretKey": "{{secretKey}}",
+ "timeIntervalInSeconds": 30,
+ "hashFunction": "HMACSHA1"
+ },
+ {
+ "@contentId": "2",
+ "serialNumber": "testingCreateFail",
+ "manufacturer": "{{manufacturer}}",
+ "model": "{{model}}",
+ "timeIntervalInSeconds": 30,
+ "hashFunction": "HMACSHA1"
+ }
+ ]
+}
+
+What can you do in the Authentication devices blade?
+a. Today:
+i. View all the HW OATH tokens in the tenant (that are part of the refreshed 
+version).
+ii. View details of a single token
+
+Note: The above screen is view only and does not support edit yet. 
+b. Later in the preview:
+i. Edit tokens info.
+ii. Assign and activate tokens
+
+
+
+
+
+### User authentication methods in the Entra admin center and APIs
+
+
+### User self-assignment and activation
+
+
+
+
 OATH hardware tokens are supported as part of a public preview. For more information about previews, see [Supplemental Terms of Use for Microsoft Azure Previews](https://aka.ms/EntraPreviewsTermsOfUse).
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/oath-tokens.png" alt-text="Screenshot of OATH token management." lightbox="./media/concept-authentication-methods/oath-tokens.png":::
