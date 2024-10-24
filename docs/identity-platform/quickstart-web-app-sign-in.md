@@ -144,25 +144,40 @@ When creating credentials for a confidential client application, Microsoft recom
 
 #### [Node](#tab/node-worforce)
 
-Placeholder 
+To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
 
-### Install project dependencies
+* To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
+
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-node.git
+    ```
+
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-node/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+ 
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
 
-Placeholder 
+To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
+
+* To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
+
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-docs-code-dotnet.git
+    ```
+
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters. 
 
 #### [Java](#tab/java-worforce)
 
-Placeholder 
-
-### Install project dependencies
+[Download the code sample](https://github.com/Azure-Samples/ms-identity-java-webapp/archive/master.zip) 
 
 #### [Python Flask](#tab/python-flask-worforce)
 
-Placeholder 
+[Download the Python code sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) or clone the repository:
 
-### Install project dependencies
+```Console
+git clone https://github.com/Azure-Samples/ms-identity-docs-code-python/
+```
 
 ---
 
@@ -170,6 +185,103 @@ Placeholder
 ## Configure the sample web app
 
 For you to sign in users with the sample app, you need to update it with your app and tenant details:
+
+#### [Node](#tab/node-worforce)
+
+In the *ms-identity-node-main* folder, open the *.env* file in the *App* folder. Replace the the following placeholders:
+
+| Variable  |  Description | Example(s) |
+|-----------|--------------|------------|
+| `Enter_the_Cloud_Instance_Id_Here` | The Azure cloud instance in which your application is registered | `https://login.microsoftonline.com/` (include the trailing forward-slash) |
+| `Enter_the_Tenant_Info_here` | Tenant ID or Primary domain | `contoso.microsoft.com` or `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
+| `Enter_the_Application_Id_Here` | Client ID of the application you registered | `00001111-aaaa-2222-bbbb-3333cccc4444` |
+| `Enter_the_Client_Secret_Here` | Client secret of the application you registered | `A1b-C2d_E3f.H4i,J5k?L6m!N7o-P8q_R9s.T0u` |
+| `Enter_the_Graph_Endpoint_Here` | The Microsoft Graph API cloud instance that your app will call | `https://graph.microsoft.com/` (include the trailing forward-slash) |
+| `Enter_the_Express_Session_Secret_Here` | A random string of characters used to sign the Express session cookie | `A1b-C2d_E3f.H4...` |
+
+After you make changes, your file should look similar to the following snippet:
+
+```env
+CLOUD_INSTANCE=https://login.microsoftonline.com/
+TENANT_ID=aaaabbbb-0000-cccc-1111-dddd2222eeee
+CLIENT_ID=00001111-aaaa-2222-bbbb-3333cccc4444
+CLIENT_SECRET=A1b-C2d_E3f.H4...
+
+REDIRECT_URI=http://localhost:3000/auth/redirect
+POST_LOGOUT_REDIRECT_URI=http://localhost:3000
+
+GRAPH_API_ENDPOINT=https://graph.microsoft.com/
+
+EXPRESS_SESSION_SECRET=6DP6v09eLiW7f1E65B8k
+```
+
+
+#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+
+1. In your IDE, open the project folder, *ms-identity-docs-code-dotnet\web-app-aspnet*, containing the sample.
+1. Open *appsettings.json* and replace the file contents with the following snippet;
+
+    :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json" :::
+
+    * `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the `Directory (tenant) ID` that was recorded earlier from the overview page of the registered application.
+    * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the `Application (client) ID` value that was recorded earlier from the overview page of the registered application.
+    * `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded.
+
+#### [Java](#tab/java-worforce)
+
+1. Extract the zip file to a local folder.
+1. *Optional.* If you use an integrated development environment, open the sample in that environment.
+1. Open the *application.properties* file. You can find it in the *src/main/resources/* folder. Replace the values in the fields `aad.clientId`, `aad.authority`, and `aad.secretKey` with the application ID, tenant ID, and client secret values, respectively. Here's what it should look like:
+
+     ```file
+      aad.clientId=Enter_the_Application_Id_here
+      aad.authority=https://login.microsoftonline.com/Enter_the_Tenant_Info_Here/
+      aad.secretKey=Enter_the_Client_Secret_Here
+      aad.redirectUriSignin=https://localhost:8443/msal4jsample/secure/aad
+      aad.redirectUriGraph=https://localhost:8443/msal4jsample/graph/me
+      aad.msGraphEndpointHost="https://graph.microsoft.com/"
+     ```
+  In the previous code:
+
+   - `Enter_the_Application_Id_here` is the application ID for the application you registered.
+   - `Enter_the_Client_Secret_Here` is the **Client Secret** you created in **Certificates & secrets** for the application you registered.
+   - `Enter_the_Tenant_Info_Here` is the **Directory (tenant) ID** value of the application you registered.
+1. To use HTTPS with localhost, provide the `server.ssl.key` properties. To generate a self-signed certificate, use the keytool utility (included in JRE).
+
+ Here's an example:
+
+```
+keytool -genkeypair -alias testCert -keyalg RSA -storetype PKCS12 -keystore keystore.p12 -storepass password
+
+server.ssl.key-store-type=PKCS12
+server.ssl.key-store=classpath:keystore.p12
+server.ssl.key-store-password=password
+server.ssl.key-alias=testCert
+```
+1. Put the generated keystore file in the *resources* folder. 
+
+#### [Python Flask](#tab/python-flask-worforce)
+
+1. Open the application you downloaded in an IDE and navigate to root folder of the sample app.
+
+    ```Console
+    cd flask-web-app
+    ```
+1. Create an *.env* file in the root folder of the project using *.env.sample* as a guide.
+
+    ```python
+    # The following variables are required for the app to run.
+    CLIENT_ID=<Enter_your_client_id>
+    CLIENT_SECRET=<Enter_your_client_secret>
+    AUTHORITY=<Enter_your_authority_url>
+    ```
+
+    * Set the value of `CLIENT_ID` to the **Application (client) ID** for the registered application, available on the overview page.
+    * Set the value of `CLIENT_SECRET` to the client secret you created in the **Certificates & Secrets** for the registered application.
+    * Set the value of `AUTHORITY` to a `https://login.microsoftonline.com/<TENANT_GUID>`. The **Directory (tenant) ID** is available on the app registration overview page.
+    
+    The environment variables are referenced in *app_config.py*, and are kept in a separate *.env* file to keep them out of source control. The provided *.gitignore* file prevents the *.env* file from being checked in. 
+---
 
 
 ## Run and test sample web app
@@ -202,6 +314,29 @@ Placeholder
 ---
 
 ## Related content
+
+#### [Node](#tab/node-worforce)
+
+Placeholder 
+
+
+
+#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+
+Placeholder 
+
+
+#### [Java](#tab/java-worforce)
+
+Placeholder 
+
+
+
+#### [Python Flask](#tab/python-flask-worforce)
+
+Placeholder 
+
+---
 
 ::: zone-end 
 
