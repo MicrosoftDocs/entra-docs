@@ -28,7 +28,7 @@ Understanding these scenarios helps in designing appropriate access controls and
 
  - If you’re an organization or a developer creating consumer apps, and you need add authentication and customer identity and access management (CIAM) to your application to allow extrnal guests access.  For more information, see [External ID overview](../../external-id/external-identities-overview.md)
 
- - If you want to enable your employees to collaborate with business partners and guests and allow secure access through invitation or self-service sign-up. Determine the level of access guests have to the Microsoft Entra tenant that contains your employees and organizational resources, which is a tenant in a workforce configuration.  For more information, seeb[Overview: B2B collaboration with external guests for your workforce](../../external-id/what-is-b2b.md)
+ - If you want to enable your employees to collaborate with business partners and guests and allow secure access through invitation or self-service sign-up. Determine the level of access guests have to the Microsoft Entra tenant that contains your employees and organizational resources, which is a tenant in a workforce configuration.  For more information, see [Overview: B2B collaboration with external guests for your workforce](../../external-id/what-is-b2b.md)
 
 ## License Requirements 
 
@@ -100,7 +100,7 @@ Identify your current lifecycle and governance processes for external identities
 Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities.  The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
 
 
-You can also use the following table as a guide for additional areas to consider while determing your current state.
+You can also use the following table as a guide for additional areas to consider while evaluating your current state.
 
 |Process|Description|
 |-----|-----|
@@ -118,7 +118,7 @@ For more information, see [Discover the current state of external collaboration 
 
 
 ### Example - Identify current lifecycle and governance processes
-Consider you are the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business guests like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
+Your the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business guests like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
 
 :::image type="content" source="media/external-guest-new/discover-1.png" alt-text="Conceputal drawing of an organization." lightbox="media/external-guest-new/discover-1.png":::
 
@@ -149,7 +149,7 @@ Onboarding for guest accounts can be broken down in to 2 main parts when conside
 The following sections cover both of these parts so that you can create a comprehensive onboarding process.
 
 ### Develop a comprehensive onboarding process for business guests 
-Onboarding, with regard to guest or external identities, is the process or processes of getting these identities setup in your organizations systems.  Depending on the systems they will be added to or allowed to access, these processes may differ.
+Onboarding, with regard to guest or external identities, is the process or processes of getting these identities set up in your organizations systems.  Depending on the systems they will be added to or allowed to access, these processes may differ.
 
 Onboarding guest identities can be done in several ways.
 
@@ -170,7 +170,7 @@ Onboarding guest identities can be done in several ways.
 [Bulk invite](../../external-id/tutorial-bulk-invite.md#invite-guest-users-in-bulk)  - If you use Microsoft Entra B2B collaboration to work with external partners, you can invite multiple guest users to your organization at the same time.
 
 ### Enable guest users to securely access an organization’s resources by accepting an invitation  
-Now that we have discussed the various ways that guest users can be onboarded into your organizations systems, we should cover the second part of the process.  Guest user accemptance or redemption.  There are several different ways a guest user can redeem an invitation.  The table below provides an overview of these ways.
+Now that we have discussed the various ways that guest users can be onboarded into your organizations systems, we should cover the second part of the process.  Guest user acceptance or redemption.  There are several different ways a guest user can redeem an invitation.  The table below provides an overview of these ways.
 
 |Process|Description|
 |-----|-----|
@@ -186,7 +186,7 @@ Many of the tasks that will allow guest users to sign-in and get started, can be
 The sections below provide examples of various ways that you can onboard guest users
 
 ### Example - Provisioning a user using Entitlement Management:
-As an IT admin, you have identified a project that requires onboarding external consultants from Fabrikam to collaborate. It is important to have automated access management, approval workflows, and lifecycle management.
+As an IT admin, you have identified a project that requires onboarding external consultants from Fabrikam to collaborate. It's important to have automated access management, approval workflows, and lifecycle management.
 Using Microsoft Entra’s Entitlement Management, you create an access package that allows you to bundle multiple resources (like groups, applications, and SharePoint sites), include approval workflows ensuring that access requests are reviewed and approved by the appropriate individuals before access is granted and set time period for the access. 
 
 You send out the invitations to the consultants, who receive emails with links to accept the access package. John, one of the consultants, follows the link, verifies his identity, and gains access to the necessary resources within minutes. The onboarding process is smooth and secure, allowing the consultants to start collaborating immediately. The project kicks off without delays, ensuring a productive partnership between Contoso and Fabrikam. 
@@ -199,8 +199,8 @@ For additional examples see [Tutorial - Onboard external users to Microsoft Entr
 
 
 ### Example - End User Driven Collaboration:  
-For another design project, the design team manager asked you as the IT admin to add John Doe from Global Solutions to collaborate. The primary goal is to invite the user to join your directory and collaborate. You invite external user John as a guest user by simply using his email. The email invite is simple and flexible and allows you to invite users from various domains and identity providers, including social identities like Gmail or Microsoft accounts. 
-John use his own credentials to sign in securely eliminating the need for password maintenance or account lifecycle management that simplifies the onboarding process.  
+For another design project, the design team manager asked you as the IT admin to add John Doe from Global Solutions to collaborate. The primary goal is to invite the user to join your directory and collaborate. You invite external user John as a guest user by using his email. The email invite is simple and flexible and allows you to invite users from various domains and identity providers, including social identities like Gmail or Microsoft accounts. 
+John uses his own credentials to sign in securely eliminating the need for password maintenance or account lifecycle management that simplifies the onboarding process.  
 
 :::image type="content" source="media/external-guest-new/invite-user-2.png" alt-text="Conceputal drawing of invite using B2B." lightbox="media/external-guest-new/invite-user-2.png":::
 
@@ -242,12 +242,12 @@ In Entitlement Management, an access package can have multiple policies, and eac
 
 Offboarding of guest users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization.
 
-In order to accomplish this, it is imperative to have auto-access management start the offboarding process automatically when an access package expires.  
+In order to accomplish this, it's imperative to have auto-access management start the offboarding process automatically when an access package expires.  
 
 When an access package expires, the offboarding process should include the following:
 
 - access to all resources associated with the expired package are revoked
-- user is removed from any group that they are a member of
+- user is removed from any group that they're a member of
 - account is removed from the guest user directory
 - regularly check the status of access packages for guest users in the Microsoft Entra admin portal
 - regularly conduct access reviews to ensure all guests status 
@@ -255,7 +255,7 @@ When an access package expires, the offboarding process should include the follo
 - notifications are sent confirming successful offboarding
 
 ### Example
-John is a guest whose access package has expired.  The system then revokes John's access to all resources linked to that package. John is removed from any group that he is a part of. Once his last active package expires, John's account is removed from the guest user directory. 
+John is a guest whose access package has expired.  The system then revokes John's access to all resources linked to that package. John is removed from any group that he's a part of. Once his last active package expires, John's account is removed from the guest user directory. 
 
 When the access package has expired and the above actions are taken, you also review John's status in the Microsoft Entra admin portal. During your next access review, you verify users such as John, whose packages have expired since the last review. 
 
