@@ -101,9 +101,9 @@ Create a client secret for the registered application. The application uses the 
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
 
-To use a certificate credential for your web app, you need to create, then upload the certificate. For testing purposes, use a self-signed certificate. Use the following steps to create and upload a self-signed certificate:
+To use a certificate credential for your web app, you need to create, then upload the certificate. For testing purposes, you can use a self-signed certificate. Use the following steps to create and upload a self-signed certificate:
 
-1. Using your terminal, use the following commands to navigate to create a self-signed certificate in the project directory.
+1. Using your terminal,navigate to your project directory, then create the self-signed certificate.
 
     ```console
     cd ms-identity-docs-code-dotnet\web-app-aspnet\
