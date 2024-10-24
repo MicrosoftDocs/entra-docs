@@ -45,6 +45,8 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 1. Download Authenticator from the App Store, and go through the privacy screens.
    1. When you install Authenticator for the first time on your device, tap **Add work or school account**. If you tap **Add account** or the **+** button, tap **Work or school account**.
 
+      :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/ios-first-run.png" alt-text="Screenshot of the first screen to appear for Microsoft Authenticator for iOS devices.":::
+
    1. If you installed Authenticator on you device before but haven't added an account, tap **Add account** or the **+** button, and select **Work or school account**.
 
       :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/add-account-ios.png" alt-text="Screenshot of how to register using Microsoft Authenticator for iOS devices.":::
@@ -204,6 +206,8 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
 1. Download Authenticator from Google Play, and go through the privacy screens.
    1. When you install Authenticator for the first time on your device, tap **Add work or school account**. If you tap **Add account** or the **+** button, tap **Work or school account**.
+
+      :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-first-run.png" alt-text="Screenshot of the first screen to appear for Microsoft Authenticator for Android devices.":::
 
    1. If you installed Authenticator on you device before but haven't added an account, tap **Add account** or the **+** button, and select **Work or school account**.
 
