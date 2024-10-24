@@ -197,7 +197,7 @@ For more information, see:
 - [Onboard external users with entitlement management](../entitlement-management-onboard.md)
 - [Configure an automatic assignment policy for an access package in entitlement management](../entitlement-management-access-package-auto-assignment-policy.md)
 - [Tutorial - Onboard external users to Microsoft Entra ID through an approval process](../entitlement-management-onboard-external-user.md)
-- [Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](entra/architecture/deployment-scenario-workforce-guest)
+- [Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](../../architecture/deployment-scenario-workforce-guest.md)
 
 
 ### Example - End User Driven Collaboration:  
@@ -206,7 +206,7 @@ John uses his own credentials to sign in securely eliminating the need for passw
 
 :::image type="content" source="media/external-guest-new/user-2.png" alt-text="Conceputal drawing of invite using B2B." lightbox="media/external-guest-new/user-2.png":::
 
-For more information, see [Add B2B collaboration users in the Microsoft Entra admin center](../../external-id/add-users-administrator.md) and [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md)
+For more information, see [Add B2B collaboration users in the Microsoft Entra admin center](../../external-id/add-users-administrator.yml) and [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md)
 
 ### Example - Redemption via invitation email: 
 John, a guest user, receives an email invitation from Contoso to access their internal portal. He clicks on the link provided in the email, which takes him to the Contoso’s sign-in page. Here, John is presented with the company’s privacy terms and conditions, which he reads through and accepts. He then signs-in using his existing email account. With the sign-in process complete, John is granted access to the Contoso portal, where he can now seamlessly collaborate with internal users. For more information, see [Redemption process through the invitation email](../../external-id/redemption-experience.md#redemption-process-through-the-invitation-email)
