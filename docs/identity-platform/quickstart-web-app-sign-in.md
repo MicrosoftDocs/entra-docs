@@ -114,22 +114,12 @@ To use a certificate credential for your web app, you need to create, then uploa
 
 #### [Java](#tab/java-worforce)
 
-Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:
-
-1. Under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.  
-1. In the **Description** box, enter a description for the client secret (for example, *web app client secret*).
-1. Under **Expires**, select a duration for which the secret is valid (per your organizations security rules), and then select **Add**.
-1. Record the secret's **Value**. You'll use this value for configuration in a later step. The secret value won't be displayed again, and isn't retrievable by any means, after you navigate away from the **Certificates and secrets**. Make sure you record it.  
+[!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
 
 #### [Python Flask](#tab/python-flask-worforce)
 
-Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:
-
-1. Under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.  
-1. In the **Description** box, enter a description for the client secret (for example, *web app client secret*).
-1. Under **Expires**, select a duration for which the secret is valid (per your organizations security rules), and then select **Add**.
-1. Record the secret's **Value**. You'll use this value for configuration in a later step. The secret value won't be displayed again, and isn't retrievable by any means, after you navigate away from the **Certificates and secrets**. Make sure you record it. 
+[!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
 ---
 
