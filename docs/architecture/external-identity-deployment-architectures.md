@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID and external identity deployment architectures
+title: Microsoft Entra External ID deployment architectures with Microsoft Entra
 description: Learn to securely deploy and operate Microsoft Entra ID and External Identity deployment architectures with Microsoft Entra. 
 author: gargi-sinha
 manager: martinco
@@ -11,7 +11,7 @@ ms.date: 10/24/2024
 
 #CustomerIntent: As a Microsoft Entra ID administrator, I want securely deploy and operate Microsoft Entra ID and external identity deployment architectures with Microsoft Entra to enable use cases for workforces, partners, and consumers.
 ---
-# Microsoft Entra ID external identity deployment architectures with Microsoft Entra
+# Microsoft Entra External ID deployment architectures with Microsoft Entra
 
 Enterprises can use Microsoft Entra to enable multiple use cases for workforces, partners, and consumers, potentially in combination. In this article, we recommend best practices based on patterns to securely deploy and use Microsoft Entra ID and the following external identity deployment architectures with Microsoft Entra. We include information about each architecture and links to resources.
 
