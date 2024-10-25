@@ -72,7 +72,7 @@ Follow the preceding steps to add a CA in the Microsoft Entra admin center.
 
 **crlDistributionPoint**
 
-You can download the CRL and compare the CA certificate and the CRL information to validate the crlDistributionPoint value in the preceding PowerShell example is valid for the CA you want to add.
+Download the CRL and compare the CA certificate and the CRL information. Make sure the crlDistributionPoint value in the preceding PowerShell example is valid for the CA you want to add.
 
 The following table and graphic show how to map information from the CA certificate to the attributes of the downloaded CRL.
 
@@ -104,8 +104,8 @@ Microsoft Graph APIs can be used to configure certificate authorities. To update
 
 Make sure the configuration allows Microsoft Entra CBA to: 
 
-- Validate the certificate authority trust chain
-- Successfully acquire the certificate revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) 
+- Validate the CA trust chain
+- Get the certificate revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) 
 
 To validate the CA configuration, install the [MSIdentity Tools](https://azuread.github.io/MSIdentityTools/) PowerShell module, and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). 
 This PowerShell cmdlet reviews the Microsoft Entra tenant CA configuration. 
