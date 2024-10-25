@@ -56,7 +56,7 @@ Before you configure and enable automatic user provisioning, decide which users 
 
 ### Important tips for assigning users to Cornerstone OnDemand
 
-* We recommend that you assign a single Microsoft Entra user to Cornerstone OnDemand to test the automatic user provisioning configuration. You can assign additional users or groups later.
+* We recommend that you assign a single Microsoft Entra user to Cornerstone OnDemand to test the automatic user provisioning configuration. You can assign more users or groups later.
 
 * When you assign a user to Cornerstone OnDemand, select any valid application-specific role, if available, in the assignment dialog box. Users with the **Default Access** role are excluded from provisioning.
 
@@ -135,7 +135,7 @@ The Cornerstone OnDemand **Position** attribute expects a value that corresponds
 
 ![Cornerstone OnDemand Provisioning position list](./media/cornerstone-ondemand-provisioning-tutorial/PostionId.png)
 
-## Additional resources
+## More resources
 
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

@@ -48,7 +48,7 @@ Before configuring Federated Directory for automatic user provisioning with Micr
 
 1. Sign in to your [Federated Directory Admin Console](https://federated.directory/of)
 
-	:::image type="content" source="media/federated-directory-provisioning-tutorial/companyname.png" alt-text="Screenshot of the Federated Directory admin console showing a field for entering a company name. Sign in buttons is also visible.." border="false":::
+	:::image type="content" source="media/federated-directory-provisioning-tutorial/companyname.png" alt-text="Screenshot of the Federated Directory admin console showing a field for entering a company name. Sign in buttons is also visible." border="false":::
 
 2. Navigate to **Directories > User directories** and select your tenant. 
 

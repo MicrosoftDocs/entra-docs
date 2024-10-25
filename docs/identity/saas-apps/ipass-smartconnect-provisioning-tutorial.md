@@ -47,7 +47,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to iPass SmartConnect, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup iPass SmartConnect for provisioning
+## Set up iPass SmartConnect for provisioning
 
 Before configuring iPass SmartConnect for automatic user provisioning with Microsoft Entra ID, you will need to retrieve configuration information from the iPass SmartConnect admin console:
 
