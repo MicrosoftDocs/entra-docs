@@ -32,7 +32,7 @@ Use your Microsoft Entra account with Atlassian JIRA server to enable single sig
 To configure Microsoft Entra integration with JIRA SAML SSO by Microsoft, you need the following items:
 
 - A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-- JIRA Core and Software 7.0 to 9.17.2 or JIRA Service Desk 3.0 to 4.22.1 should be installed and configured on Windows 64-bit version.
+- JIRA Core and Software 7.0 to 9.17.4 or JIRA Service Desk 3.0 to 4.22.1 should be installed and configured on Windows 64-bit version.
 - JIRA server is HTTPS enabled.
 - Note the supported versions for JIRA Plugin are mentioned in below section.
 - JIRA server is reachable on the Internet particularly to the Microsoft Entra login page for authentication and should able to receive the token from Microsoft Entra ID.
@@ -53,7 +53,7 @@ To get started, you need the following items:
 
 ## Supported versions of JIRA
 
-* JIRA Core and Software: 7.0 to 9.17.2.
+* JIRA Core and Software: 7.0 to 9.17.4.
 * JIRA Service Desk 3.0 to 4.22.1.
 * JIRA also supports 5.2. For more details, click [Microsoft Entra single sign-on for JIRA 5.2](jira52microsoft-tutorial.md).
 
@@ -236,7 +236,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 6. Perform following steps on configuration page:
 
-	![Screenshot shows the Microsoft Entra single sign-on for Jira configuration page.](https://github.com/SagarQA1695/azure-docs/blob/main/articles/active-directory/saas-apps/media/jiramicrosoft-tutorial/SSO_Plugin_Configuration_Page.png)
+	![Screenshot shows the Microsoft Entra single sign-on for Jira configuration page.](https://github.com/SagarQA1695/azure-docs/blob/main/articles/active-directory/saas-apps/media/jiramicrosoft-tutorial/SSO-Plugin-Configuration-Page.png)
 
 	> [!TIP]
 	> Ensure that there is only one certificate mapped against the app so that there is no error in resolving the metadata. If there are multiple certificates, upon resolving the metadata, admin gets an error.
