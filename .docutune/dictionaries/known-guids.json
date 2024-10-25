@@ -3688,5 +3688,6 @@
   "Azure Front Door Standard" : "205478c0-bd83-4e1b-a9d6-db63a3e1e1c8",
   "Azure Front Door Premium" : "d4631ece-daab-479b-be77-ccb713491fc0",
   "Azure Communication Services" : "1fd5118e-2576-4263-8130-9503064c837a",
-  "Project Synergy app ID" : "eb63d611-525e-4a31-abd7-0cb33f679599"
+  "Project Synergy app ID" : "eb63d611-525e-4a31-abd7-0cb33f679599",
+  "Azure Communication Gateway enterprise" : "8502a0ec-c76d-412f-836c-398018e2312b"
 }
