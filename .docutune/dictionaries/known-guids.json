@@ -3690,5 +3690,6 @@
   "Azure Communication Services" : "1fd5118e-2576-4263-8130-9503064c837a",
   "Project Synergy app ID" : "eb63d611-525e-4a31-abd7-0cb33f679599",
   "Azure Communication Gateway enterprise" : "8502a0ec-c76d-412f-836c-398018e2312b",
-  "Confidential VM Orchestrator" : "bf7b6499-ff71-4aa2-97a4-f372087be7f0"
+  "Confidential VM Orchestrator" : "bf7b6499-ff71-4aa2-97a4-f372087be7f0",
+  "Microsoft Graph Security Connector" : "c4829704-0edc-4c3d-a347-7c4a67586f3c"
 }
