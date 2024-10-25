@@ -193,7 +193,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Perform following steps on configuration page:
 
-    ![Screenshot that shows the single sign-on configuration page.](https://github.com/v-ymundhe/entra-docs/blob/patch-2/docs/identity/saas-apps/media/confluencemicrosoft-tutorial/SSO-Plugin-Configuration-Page.png)
+    ![Screenshot that shows the single sign-on configuration page.](./media/confluencemicrosoft-tutorial/sso-plugin-configuration-page.png)
 
     > [!TIP]
     > Ensure that there is only one certificate mapped against the app so that there is no error in resolving the metadata. If there are multiple certificates, admin gets an error upon resolving the metadata.
