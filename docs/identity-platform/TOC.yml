@@ -790,6 +790,8 @@
           href: custom-extension-OnAttributeCollectionStart-reference.md
         - name: Attribute collection submit custom extension reference
           href: custom-extension-OnAttributeCollectionSubmit-reference.md
+    - name: Native authentication API reference
+      href: reference-native-authentication-api.md
     - name: Endpoint reference
       items: 
         - name: Admin consent URI
