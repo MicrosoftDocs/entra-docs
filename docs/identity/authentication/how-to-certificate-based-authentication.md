@@ -271,10 +271,10 @@ Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
 To enable CBA in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Groups** > **All groups** > select **New group** and create a group for CBA users
+1. Browse to **Groups** > **All groups** > select **New group** and create a group for CBA users.
 1. Browse to **Protection** > **Authentication methods** > **Certificate-based Authentication**.
 1. Under **Enable and Target**, select **Enable**.
-1. Select **All users**, or select **Add groups** to select specific groups like the one created above. It is recommended to use specific groups rather than **All users**.
+1. Select **Add groups** to select specific groups like the one you created. Use specific groups rather than **All users**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/enable.png" alt-text="Screenshot of how to enable CBA.":::
  
@@ -388,7 +388,7 @@ The username binding policy helps validate the certificate of the user. By defau
 
 An Authentication Policy Administrator can override the default and create a custom mapping. To determine how to configure username binding, see [How username binding works](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-username-binding-policy).
 
-For more information on scenarios using certificateUserIds attribute see [Certificate user IDs](~/identity/authentication/concept-certificate-based-authentication-certificateuserids.md).
+For other scenarios that use the certificateUserIds attribute, see [Certificate user IDs](~/identity/authentication/concept-certificate-based-authentication-certificateuserids.md).
 
 >[!IMPORTANT]
 >If a username binding policy uses synchronized attributes, such as the certificateUserIds, onPremisesUserPrincipalName, and userPrincipalName attribute of the user object, be aware that accounts with administrative privileges in Active Directory (such as those with delegated rights on user objects or administrative rights on the Microsoft Entra Connect Server) can make changes that impact these attributes in Microsoft Entra ID. 
@@ -436,13 +436,13 @@ As a first configuration test, you should try to sign in to the [MyApps portal](
 
 If your sign-in is successful, then you know that:
 
-- The user certificate has been provisioned into your test device.
+- The user certificate is provisioned into your test device.
 - Microsoft Entra ID is configured correctly with trusted CAs.
 - Username binding is configured correctly, and the user is found and authenticated.
 
 ### Test custom authentication binding rules
 
-Let's walk through a scenario where we validate strong authentication. We'll create two authentication policy rules, one by using issuer subject to satisfy single-factor authentication, and another by using policy OID to satisfy multifactor authentication. 
+Let's walk through a scenario where we validate strong authentication. We create two authentication policy rules, one by using issuer subject to satisfy single-factor authentication, and another by using policy OID to satisfy multifactor authentication. 
 
 1. Create an issuer Subject rule with protection level as single-factor authentication and value set to your CAs Subject value. For example: 
 
