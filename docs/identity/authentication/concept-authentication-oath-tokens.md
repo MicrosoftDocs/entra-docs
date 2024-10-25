@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/03/2024
+ms.date: 10/25/2024
 
 ms.author: justinha
 author: justinha
@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 
 OATH time-based one-time password (TOTP) is an open standard that specifies how one-time password (OTP) codes are generated. OATH TOTP can be implemented using either software or hardware to generate the codes. Microsoft Entra ID doesn't support OATH HOTP, a different code generation standard.
 
-## OATH software tokens
+## Software OATH tokens
 
 Software OATH tokens are typically applications such as the Microsoft Authenticator app and other authenticator apps. Microsoft Entra ID generates the secret key, or seed, that's input into the app and used to generate each OTP.
 
@@ -29,7 +29,7 @@ The Authenticator app automatically generates codes when set up to do push notif
 
 Some OATH TOTP hardware tokens are programmable, meaning they don't come with a secret key or seed preprogrammed. These programmable hardware tokens can be set up using the secret key or seed obtained from the software token setup flow. Customers can purchase these tokens from the vendor of their choice and use the secret key or seed in their vendor's setup process.
 
-## OATH hardware tokens (Preview)
+## Hardware OATH tokens (Preview)
 
 Microsoft Entra ID supports the use of OATH-TOTP SHA-1 tokens that refresh codes every 30 or 60 seconds. Customers can purchase these tokens from the vendor of their choice. Hardware OATH tokens are available for users with a Microsoft Entra ID P1 or P2 license.  
 
@@ -48,8 +48,7 @@ Here are the different features of the preview:
 Feature | Description | API/Portal support | Role requirement
 --------|-------------|--------------------|-----------------
 [Authentication method policy for hardware OATH tokens](#authentication-method-policy-for-hardware-oath-tokens) | You can scope the **Hardware OATH** method to specific users and groups. No need to use the legacy tenant-level setting that applies to both hardware and software OATH tokens. | API - Available<br>UX – During the private preview. | Global Administrator<br>Authentication Policy Administrator
-[Authentication devices](#authentication-devices) | A new option in the Microsoft Entra admin center to manage the hardware token inventory in your tenant. You can upload tokens to Microsoft Entra ID without assigning them to users. | API – Available<br>UX – Upload and edit are available, and more functionality will be added during the preview. | Global Administrator<br>Authentication Policy Administrator<br>If you want to upload a token AND assign it to a user, you can assign the following roles to the same user:<br>Authentication Policy Administrator<br>Authentication Administrator<br>Privileged Authentication Administrator is needed in order to assign token to privileged users
-[User authentication methods in the Entra admin center and APIs](#user-authentication-methods-in-the-entra-admin-center-and-apis) | Assign and activate a token from the tenant inventory to a specific user under the user’s authentication method in the Microsoft Entra admin center. | API, UX – available. | Global Administrator<br>Authentication Administrator<br>Privileged Authentication Administrator (to assign a token to a privileged user)
+[User authentication methods in Microsoft Graph](#user-authentication-methods-in-microsoft-graph) | Assign and activate a token from the tenant inventory to a specific user under the user’s authentication method in the Microsoft Entra admin center. | API, UX – available. | Global Administrator<br>Authentication Administrator<br>Privileged Authentication Administrator (to assign a token to a privileged user)
 [User self-assignment and activation](#user-self-assignment-and-activation) | Users can assign and activate token on themselves from the security info flow. | API – Available.<br>Security Info UX – will be become available during the preview. | Users manage themselves 
 
 
@@ -70,88 +69,36 @@ user’s ability to sign-in with HW OATH token and showing HW OATH token in the 
 page. Please allow an hour or so for this policy to get updated.
 
 
-### Authentication devices
+### User authentication methods in Microsoft Graph
 
-Use the UX flag and go to Protect and Secure > Authentication methods > Authentication 
-devices.
-2. Upload a CSV with up to 50 tokens at a time.
-a. Note: User assignment is currently not available via CSV and will become available later 
-in the preview. 
-b. Alternatively, you can use the APIs for either bulk upload tokens or create a single 
-token. Both APIs support assignments, using User ObjectID.
-Create a single token without assignment:
-
-Create single token:
-POST {{graphUrl}}/directory/authenticationMethodDevices/hardwareOathDevices
-{
- "serialNumber": "91792950246",
- "manufacturer": "CK Manufacturer",
- "model": "CK1",
- "secretKey": "QTUFKU2O6I3ZJNCU5NCZDV5GICQOOEPZ",
- "timeIntervalInSeconds": 30,
- "hashFunction": "hmacsha1"
-}
-All properties except hash function are required.
-
-Create a single token with assignment:
-To perform assignment the app needs to be assigned the “UserAuthenticationMethod.ReadWrite.All” 
-permission.
-
-Create token with assignment 
-POST {{graphUrl}}/directory/authenticationMethodDevices/hardwareOathDevices
-{
- "serialNumber": "91792950245",
- "manufacturer": "CK Manufacturer",
- "model": "CK1",
- "secretKey": "YGSD2KY7KDLSYM4IIGB74UMXDFL52Q",
- "timeIntervalInSeconds": 30,
- "assignTo": {"id": "eddff067-149a-4959-b81f-312734c7c5c8"}
-}
-All properties are required 
-
-Bulk upload
-
-Bulk upload
-PATCH {{graphUrl}}/directory/authenticationMethodDevices/hardwareOathDevices
-{
- "@context":"#$delta",
- "value": [
- {
- "@contentId": "1",
- "serialNumber": "{{serialNumber}}",
- "manufacturer": "{{manufacturer}}",
- "model": "{{model}}",
- "secretKey": "{{secretKey}}",
- "timeIntervalInSeconds": 30,
- "hashFunction": "HMACSHA1"
- },
- {
- "@contentId": "2",
- "serialNumber": "testingCreateFail",
- "manufacturer": "{{manufacturer}}",
- "model": "{{model}}",
- "timeIntervalInSeconds": 30,
- "hashFunction": "HMACSHA1"
- }
- ]
-}
-
-What can you do in the Authentication devices blade?
-a. Today:
-i. View all the HW OATH tokens in the tenant (that are part of the refreshed 
-version).
-ii. View details of a single token
-
-Note: The above screen is view only and does not support edit yet. 
-b. Later in the preview:
-i. Edit tokens info.
-ii. Assign and activate tokens
+You can use the following Microsoft Graph examples to assign and activate tokens for a user. 
+You can allow assignment without activation. 
+The following examples require the [Privileged Authentication Administrator](~/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) role.
 
 
+List tokens: 
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices 
+```
+
+Unassign a token: 
+
+```msgraph-interactive
+DELETE https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551/authentication/hardwareoathmethods/6c0272a7-8a5e-490c-bc45-9fe7a42fc4e0
+```
+
+Delete a token: 
+
+```msgraph-interactive
+DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/325330ea-fcdb-41e3-bc21-8b89bbcb0e16
 
 
+Create a single token:
 
-### User authentication methods in the Entra admin center and APIs
+```msgraph-interactive
+POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
+```
 
 
 ### User self-assignment and activation
