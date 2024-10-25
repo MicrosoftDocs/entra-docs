@@ -46,7 +46,140 @@ This tutorial describes how you can quickly test [API-driven inbound provisionin
 1. Open the **Response headers** panel and copy the URL value of the location attribute. This points to the provisioning logs API endpoint that you can query to check the provisioning status of users present in the bulk request.
 
 ## Verify processing of bulk request payload
-
+<p><strong>Request body</strong></p>
+<pre><code class="lang-http">{
+    "schemas": ["urn:ietf:params:scim:api:messages:2.0:BulkRequest"],
+    "Operations": [
+    {
+        "method": "POST",
+        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+        "path": "/Users",
+        "data": {
+            "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
+            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],
+            "externalId": "701984",
+            "userName": "bjensen@example.com",
+            "name": {
+                "formatted": "Ms. Barbara J Jensen, III",
+                "familyName": "Jensen",
+                "givenName": "Barbara",
+                "middleName": "Jane",
+                "honorificPrefix": "Ms.",
+                "honorificSuffix": "III"
+            },
+            "displayName": "Babs Jensen",
+            "nickName": "Babs",
+            "emails": [
+            {
+              "value": "bjensen@example.com",
+              "type": "work",
+              "primary": true
+            }
+            ],
+            "addresses": [
+            {
+              "type": "work",
+              "streetAddress": "100 Universal City Plaza",
+              "locality": "Hollywood",
+              "region": "CA",
+              "postalCode": "91608",
+              "country": "USA",
+              "formatted": "100 Universal City Plaza\nHollywood, CA 91608 USA",
+              "primary": true
+            }
+            ],
+            "phoneNumbers": [
+            {
+              "value": "555-555-5555",
+              "type": "work"
+            }
+            ],
+            "userType": "Employee",
+            "title": "Tour Guide",
+            "preferredLanguage": "en-US",
+            "locale": "en-US",
+            "timezone": "America/Los_Angeles",
+            "active":true,
+            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
+                 "employeeNumber": "701984",
+                 "costCenter": "4130",
+                 "organization": "Universal Studios",
+                 "division": "Theme Park",
+                 "department": "Tour Operations",
+                 "manager": {
+                     "value": "89607",
+                     "displayName": "John Smith"
+                 }
+            }
+        }
+    },
+    {
+        "method": "POST",
+        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+        "path": "/Users",
+        "data": {
+            "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
+            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],
+            "externalId": "701985",
+            "userName": "Kjensen@example.com",
+            "name": {
+                "formatted": "Ms. Kathy J Jensen, III",
+                "familyName": "Jensen",
+                "givenName": "Kathy",
+                "middleName": "Jane",
+                "honorificPrefix": "Ms.",
+                "honorificSuffix": "III"
+            },
+            "displayName": "Kathy Jensen",
+            "nickName": "Kathy",
+            "emails": [
+            {
+              "value": "kjensen@example.com",
+              "type": "work",
+              "primary": true
+            }
+            ],
+            "addresses": [
+            {
+              "type": "work",
+              "streetAddress": "100 Oracle City Plaza",
+              "locality": "Hollywood",
+              "region": "CA",
+              "postalCode": "91618",
+              "country": "USA",
+              "formatted": "100 Oracle City Plaza\nHollywood, CA 91618 USA",
+              "primary": true
+            }
+            ],
+            "phoneNumbers": [
+            {
+              "value": "555-555-5545",
+              "type": "work"
+            }
+            ],
+            "userType": "Employee",
+            "title": "Tour Lead",
+            "preferredLanguage": "en-US",
+            "locale": "en-US",
+            "timezone": "America/Los_Angeles",
+            "active":true,
+            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
+                 "employeeNumber": "701985",
+                 "costCenter": "4130",
+                 "organization": "Universal Studios",
+                 "division": "Theme Park",
+                 "department": "Tour Operations",
+                 "manager": {
+                     "value": "701984",
+                     "displayName": "Barbara Jensen"
+                 }
+            }
+        }
+    }
+],
+    "failOnErrors": null
+}
+</code></pre>
 You can verify the processing either from the Microsoft Entra admin center or using Graph Explorer.
 
 ### Verify processing from Microsoft Entra admin center 

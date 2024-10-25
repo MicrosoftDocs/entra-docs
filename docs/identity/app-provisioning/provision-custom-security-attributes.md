@@ -159,10 +159,6 @@ In this example, the SAP SuccessFactors attribute mapping is shown as follows:
 
    :::image type="content" source="media/custom-security-attributes/scim-bulk-request.png" alt-text="Screenshot of the SCIM bulk request payload code.":::
 
-1. Append the following data to the SCIM payload for the sample custom security attributes that you created earlier.
-
-   :::image type="content" source="media/custom-security-attributes/provisioning-job-overview.png" alt-text="Screenshot of the SCIM payload for the sample custom security attributes.":::
-
    - To access the full SCIM payload, see [Sample SCIM payload](#sample-scim-payload-with-custom-security-attributes).
 
 1. Copy the *bulkUpload* API URL from the provisioning job overview page.
@@ -188,148 +184,158 @@ To view the actual values set for the user, go the user's Microsoft Entra ID pro
 
 #### Sample SCIM payload with custom security attributes
 
-The bulk request shown in the [Bulk request with SCIM Enterprise User Schema](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md#bulk-request-with-scim-enterprise-user-schema) uses the SCIM standard Core User and Enterprise User schema.
-
-Publish as code similar to the following example. 
-
-<p><strong>Request body</strong></p>
-<pre><code class="lang-http">{
+This sample SCIM bulk request includes custom fields under the extension `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa` that can be mapped to custom security attributes.
+ 
+<pre><code class="lang-http">
+{
     "schemas": ["urn:ietf:params:scim:api:messages:2.0:BulkRequest"],
-    "Operations": [
-    {
-        "method": "POST",
-        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
-        "path": "/Users",
-        "data": {
-            "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
-            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],
-            "externalId": "701984",
-            "userName": "bjensen@example.com",
-            "name": {
-                "formatted": "Ms. Barbara J Jensen, III",
-                "familyName": "Jensen",
-                "givenName": "Barbara",
-                "middleName": "Jane",
-                "honorificPrefix": "Ms.",
-                "honorificSuffix": "III"
-            },
-            "displayName": "Babs Jensen",
-            "nickName": "Babs",
-            "emails": [
-            {
-              "value": "bjensen@example.com",
-              "type": "work",
-              "primary": true
+    "Operations": [{
+            "method": "POST",
+            "bulkId": "897401c2-2de4-4b87-a97f-c02de3bcfc61",
+            "path": "/Users",
+            "data": {
+                "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
+                    "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+                    "urn:ietf:params:scim:schemas:extension:microsoft:entra:csa"],
+                "id": "2819c223-7f76-453a-919d-413861904646",
+                "externalId": "701984",
+                "userName": "bjensen@example.com",
+                "name": {
+                    "formatted": "Ms. Barbara J Jensen, III",
+                    "familyName": "Jensen",
+                    "givenName": "Barbara",
+                    "middleName": "Jane",
+                    "honorificPrefix": "Ms.",
+                    "honorificSuffix": "III"
+                },
+                "displayName": "Babs Jensen",
+                "nickName": "Babs",
+                "emails": [{
+                        "value": "bjensen@example.com",
+                        "type": "work",
+                        "primary": true
+                    }
+                ],
+                "addresses": [{
+                        "type": "work",
+                        "streetAddress": "234300 Universal City Plaza",
+                        "locality": "Hollywood",
+                        "region": "CA",
+                        "postalCode": "91608",
+                        "country": "USA",
+                        "formatted": "100 Universal City Plaza\nHollywood, CA 91608 USA",
+                        "primary": true
+                    }
+                ],
+                "phoneNumbers": [{
+                        "value": "555-555-5555",
+                        "type": "work"
+                    }
+                ],
+                "userType": "Employee",
+                "title": "Tour Guide",
+                "preferredLanguage": "en-US",
+                "locale": "en-US",
+                "timezone": "America/Los_Angeles",
+                "active": true,
+                "password": "t1meMa$heen",
+                "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
+                    "employeeNumber": "701984",
+                    "costCenter": "4130",
+                    "organization": "Universal Studios",
+                    "division": "Theme Park",
+                    "department": "Tour Operations",
+                    "manager": {
+                        "value": "89607",
+                        "$ref": "../Users/26118915-6090-4610-87e4-49d8ca9f808d",
+                        "displayName": "John Smith"
+                    }
+                },
+                "urn:ietf:params:scim:schemas:extension:microsoft:entra:csa": {
+                    "EEOStatus":"Semi-skilled",
+                    "FLSAStatus":"Non-exempt",
+                    "PayGrade":"IC-Level5",
+                    "PayScaleType":"Revenue-based"
+                }
             }
-            ],
-            "addresses": [
-            {
-              "type": "work",
-              "streetAddress": "100 Universal City Plaza",
-              "locality": "Hollywood",
-              "region": "CA",
-              "postalCode": "91608",
-              "country": "USA",
-              "formatted": "100 Universal City Plaza\nHollywood, CA 91608 USA",
-              "primary": true
-            }
-            ],
-            "phoneNumbers": [
-            {
-              "value": "555-555-5555",
-              "type": "work"
-            }
-            ],
-            "userType": "Employee",
-            "title": "Tour Guide",
-            "preferredLanguage": "en-US",
-            "locale": "en-US",
-            "timezone": "America/Los_Angeles",
-            "active":true,
-            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
-                 "employeeNumber": "701984",
-                 "costCenter": "4130",
-                 "organization": "Universal Studios",
-                 "division": "Theme Park",
-                 "department": "Tour Operations",
-                 "manager": {
-                     "value": "89607",
-                     "displayName": "John Smith"
-                 }
+        }, {
+            "method": "POST",
+            "bulkId": "897401c2-2de4-4b87-a97f-c02de3bcfc61",
+            "path": "/Users",
+            "data": {
+                "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
+                    "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+                    "urn:ietf:params:scim:schemas:extension:microsoft:entra:csa" ],
+                "id": "2819c223-7f76-453a-919d-413861904646",
+                "externalId": "701985",
+                "userName": "Kjensen@example.com",
+                "name": {
+                    "formatted": "Ms. Kathy J Jensen, III",
+                    "familyName": "Jensen",
+                    "givenName": "Kathy",
+                    "middleName": "Jane",
+                    "honorificPrefix": "Ms.",
+                    "honorificSuffix": "III"
+                },
+                "displayName": "Kathy Jensen",
+                "nickName": "Kathy",
+                "emails": [{
+                        "value": "kjensen@example.com",
+                        "type": "work",
+                        "primary": true
+                    }
+                ],
+                "addresses": [{
+                        "type": "work",
+                        "streetAddress": "100 Oracle City Plaza",
+                        "locality": "Hollywood",
+                        "region": "CA",
+                        "postalCode": "91618",
+                        "country": "USA",
+                        "formatted": "100 Oracle City Plaza\nHollywood, CA 91618 USA",
+                        "primary": true
+                    }
+                ],
+                "phoneNumbers": [{
+                        "value": "555-555-5545",
+                        "type": "work"
+                    }
+                ],
+                "userType": "Employee",
+                "title": "Tour Lead",
+                "preferredLanguage": "en-US",
+                "locale": "en-US",
+                "timezone": "America/Los_Angeles",
+                "active": true,
+                "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
+                    "employeeNumber": "701984",
+                    "costCenter": "4130",
+                    "organization": "Universal Studios",
+                    "division": "Theme Park",
+                    "department": "Tour Operations",
+                    "manager": {
+                        "value": "89607",
+                        "$ref": "../Users/26118915-6090-4610-87e4-49d8ca9f808d",
+                        "displayName": "John Smith"
+                    }
+                },
+                "urn:ietf:params:scim:schemas:extension:microsoft:entra:csa": {
+                    "EEOStatus":"Skilled",
+                    "FLSAStatus":"Exempt",
+                    "PayGrade":"Manager-Level2",
+                    "PayScaleType":"Profit-based"
+                }
+                
             }
         }
-    },
-    {
-        "method": "POST",
-        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
-        "path": "/Users",
-        "data": {
-            "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
-            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"],
-            "externalId": "701985",
-            "userName": "Kjensen@example.com",
-            "name": {
-                "formatted": "Ms. Kathy J Jensen, III",
-                "familyName": "Jensen",
-                "givenName": "Kathy",
-                "middleName": "Jane",
-                "honorificPrefix": "Ms.",
-                "honorificSuffix": "III"
-            },
-            "displayName": "Kathy Jensen",
-            "nickName": "Kathy",
-            "emails": [
-            {
-              "value": "kjensen@example.com",
-              "type": "work",
-              "primary": true
-            }
-            ],
-            "addresses": [
-            {
-              "type": "work",
-              "streetAddress": "100 Oracle City Plaza",
-              "locality": "Hollywood",
-              "region": "CA",
-              "postalCode": "91618",
-              "country": "USA",
-              "formatted": "100 Oracle City Plaza\nHollywood, CA 91618 USA",
-              "primary": true
-            }
-            ],
-            "phoneNumbers": [
-            {
-              "value": "555-555-5545",
-              "type": "work"
-            }
-            ],
-            "userType": "Employee",
-            "title": "Tour Lead",
-            "preferredLanguage": "en-US",
-            "locale": "en-US",
-            "timezone": "America/Los_Angeles",
-            "active":true,
-            "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
-                 "employeeNumber": "701985",
-                 "costCenter": "4130",
-                 "organization": "Universal Studios",
-                 "division": "Theme Park",
-                 "department": "Tour Operations",
-                 "manager": {
-                     "value": "701984",
-                     "displayName": "Barbara Jensen"
-                 }
-            }
-        }
-    }
-],
+    ],
     "failOnErrors": null
 }
 </code></pre>
 
-#### New Graph API permissions
+#### New Microsoft Graph API permissions
 
-This preview feature introduces the following new Graph API permissions for all apps, either directly or on behalf of the signed-in user. This functionality enables you to access and modify provisioning app schemas that contain custom security attribute mappings.
+This preview feature introduces the following new Graph API permissions. This functionality enables you to access and modify provisioning app schemas that contain custom security attribute mappings, either directly or on behalf of the signed-in user.
 
 1. **CustomSecAttributeProvisioning.ReadWrite.All**: This permission grants the calling app ability to read and write the attribute mapping that contains custom security attributes. This permission with `Application.ReadWrite.OwnedBy` or `Synchronization.ReadWrite.All` or `Application.ReadWrite.All` (from least to highest privilege) is required to edit a provisioning app that contains custom security attributes mappings. This permission enables you to get the complete schema that includes the custom security attributes and to update or reset the schema with custom security attributes.
 
