@@ -1,16 +1,10 @@
 ---
 title: Quickstart - Sign in users in a sample web app
-<<<<<<< HEAD
 description: Web app quickstart that shows how to configure a sample web app that signs in employees in workforce tenant or customers in external tenant
-=======
-description: Web app quickstart
-services: identity-platform
->>>>>>> b5a96e385d (Converge web app quickstart)
 author: kengaderdus
 manager: mwongerapk
 ms.service: identity-platform
 ms.topic: quickstart
-<<<<<<< HEAD
 ms.date: 11/20/2024
 ms.author: kengaderdus
 zone_pivot_groups: entra-tenants
@@ -392,31 +386,20 @@ This quickstart uses a sample web app to show you how to sign in users in your e
 - [Python 3+](https://www.python.org/).
 - An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-<<<<<<< HEAD
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 #### [Python Flask](#tab/python-flask-external)
-=======
-  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-
-#### [Python Flask](#tab/python-flask)
->>>>>>> b5a96e385d (Converge web app quickstart)
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - [Python 3+](https://www.python.org/).
 - An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-<<<<<<< HEAD
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
   
-=======
-  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
->>>>>>> b5a96e385d (Converge web app quickstart)
 ---
 
 ## Register the web app
 
-<<<<<<< HEAD
 [!INCLUDE [register-application-common-steps](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
 ## Add platform and URLs
@@ -758,22 +741,3 @@ When the users select the **Logout** link, the app clears its session, the redir
 ---
 
 ::: zone-end
-=======
-#### [Node](#tab/node)
-
-PLACEHOLDER
-
-#### [ASP.NET Core](#tab/node)
-
-PLACEHOLDER
-
-#### [Python Django](#tab/python-django)
-
-PLACEHOLDER
-
-#### [Python Flask](#tab/python-flask)
-
----
-
-::: zone-end
->>>>>>> b5a96e385d (Converge web app quickstart)
