@@ -1,12 +1,11 @@
 ---
-title: Enable B2B external collaboration settings
-description: Learn how to enable Active Directory B2B external collaboration and manage who can invite guest users. Use the Guest Inviter role to delegate invitations.
+title: Configure external collaboration
+description: Learn how to configure external collaboration settings in Microsoft Entra External ID. Control guest user access, specify who can invite guests, and manage domain restrictions for B2B collaboration.
 
- 
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 09/18/2024
+ms.date: 10/21/2024
 
 ms.author: mimart
 author: msmimart
@@ -16,7 +15,7 @@ ms.collection: M365-identity-device-management
 #customer intent: As an administrator managing external collaboration settings in Microsoft Entra, I want to configure guest user access, invite settings, self-service sign-up, and collaboration restrictions, so that I can control the level of access and permissions for external users and ensure secure collaboration with other organizations.
 ---
 
-# Configure external collaboration settings
+# Configure external collaboration settings for B2B in Microsoft Entra External ID
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
