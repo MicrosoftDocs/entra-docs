@@ -1,6 +1,6 @@
 ---
 title: Quickstart - Sign in users in a sample web app
-description: Web app quickstart
+description: Web app quickstart that shows how to configure a sample web app that signs in employees or customers by using Microsoft identity platform
 services: identity-platform
 author: kengaderdus
 manager: mwongerapk
@@ -10,12 +10,12 @@ ms.date: 11/20/2024
 ms.author: kengaderdus
 zone_pivot_groups: entra-tenants
 
-#Customer intent: As a developer, I want to configure a sample web app so that I can sign in my employees and customers by using Microsoft identity platform.
+#Customer intent: As a developer, I want to configure a sample web app so that I can sign in my employees or customers by using Microsoft identity platform.
 ---
 
-# Quickstart - Sign in users in a sample web app
+# Quickstart: Sign in users in a sample web app
 
-Before you begin, use the **Choose a tenant type** selector at the top of this page to select tenant type. Microsoft Entra ID provides two tenant configurations, [workforce](../external-id/tenant-configurations.md) and [external](../external-id/tenant-configurations.md). A workforce tenant configuration is for your employees, internal apps, and other organizational resources. An external tenant is for your customer-facing apps.
+[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
 ::: zone pivot="workforce"
 
@@ -95,7 +95,7 @@ To specify your app type to your app registration, follow these steps:
 Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:
 
 1. Under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.  
-1. In the **Description** box, enter a description for the client secret (for example, *ciam app client secret*).
+1. In the **Description** box, enter a description for the client secret (for example, *web app client secret*).
 1. Under **Expires**, select a duration for which the secret is valid (per your organizations security rules), and then select **Add**.
 1. Record the secret's **Value**. You'll use this value for configuration in a later step. The secret value won't be displayed again, and isn't retrievable by any means, after you navigate away from the **Certificates and secrets**. Make sure you record it.
 
@@ -122,7 +122,7 @@ To use a certificate credential for your web app, you need to create, then uploa
 Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:
 
 1. Under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.  
-1. In the **Description** box, enter a description for the client secret (for example, *ciam app client secret*).
+1. In the **Description** box, enter a description for the client secret (for example, *web app client secret*).
 1. Under **Expires**, select a duration for which the secret is valid (per your organizations security rules), and then select **Add**.
 1. Record the secret's **Value**. You'll use this value for configuration in a later step. The secret value won't be displayed again, and isn't retrievable by any means, after you navigate away from the **Certificates and secrets**. Make sure you record it.  
 
@@ -132,7 +132,7 @@ Create a client secret for the registered application. The application uses the 
 Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:
 
 1. Under **Manage**, select **Certificates & secrets** > **Client secrets** > **New client secret**.  
-1. In the **Description** box, enter a description for the client secret (for example, *ciam app client secret*).
+1. In the **Description** box, enter a description for the client secret (for example, *web app client secret*).
 1. Under **Expires**, select a duration for which the secret is valid (per your organizations security rules), and then select **Add**.
 1. Record the secret's **Value**. You'll use this value for configuration in a later step. The secret value won't be displayed again, and isn't retrievable by any means, after you navigate away from the **Certificates and secrets**. Make sure you record it. 
 
