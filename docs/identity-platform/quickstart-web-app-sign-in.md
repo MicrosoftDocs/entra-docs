@@ -824,9 +824,9 @@ When the users select the **Logout** link, the app clears its session, the redir
 
 #### [Node](#tab/node-external)
 
-- [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
-- [Configure sign-in with Google](/entra/external-id/customers/how-to-google-federation-customers)
 - [Sign in users in your Node.js web application](/entra/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant)
+- [Configure sign-in with Google](/entra/external-id/customers/how-to-google-federation-customers)
+- [Use client certificate for authentication in your Node.js web app](/entra/external-id/customers/how-to-web-app-node-use-certificate)
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
