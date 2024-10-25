@@ -17,7 +17,7 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 
 Microsoft Entra certificate-based authentication (CBA) enables organizations to configure their Microsoft Entra tenants to allow or require users to authenticate with X.509 certificates created by their Enterprise Public Key Infrastructure (PKI) for app and browser sign-in. This feature enables organizations to adopt phishing-resistant modern passwordless authentication by using an x.509 certificate.
  
-During sign-in, users will see also an option to authenticate with a certificate instead of entering a password. 
+During sign-in, users also see an option to authenticate with a certificate instead of entering a password. 
 If multiple matching certificates are present on the device, the user can pick which one to use. The certificate is validated against the user account and if successful, they sign in.
 
 <!---Clarify plans that are covered --->
@@ -59,7 +59,7 @@ Optionally, you can also configure authentication bindings to map certificates t
 
 Entra has a new public key infrastructure (PKI) based certificate authorities (CA) trust store. The PKI-based CA trust store keeps CAs within a container object for each different PKI. Admins can manage CAs in a container based on PKI easier than one flat list of CAs.
 
-The PKI-based trust store has higher limits for the number of CAs and the size of each CA file. A PKI-based trust store supports up to 250 CAs and 8KB size for each CA object. We highly recommended you use the new PKI-based trust store for storing CAs, which is scalable and supports new functionality like issuer hints. 
+The PKI-based trust store has higher limits for the number of CAs and the size of each CA file. A PKI-based trust store supports up to 250 CAs and 8 KB size for each CA object. We highly recommended you use the new PKI-based trust store for storing CAs, which is scalable and supports new functionality like issuer hints. 
 
 >[!Note]
 >If you use [the old trust store to configure CAs](how-to-configure-certificate-authorities.md), we recommended you configure a PKI-based trust store. After you make sure everything works well, you can delete the CAs from old trust store. 
@@ -148,7 +148,7 @@ For more information about issuer hints, see [Understanding Issuer Hints](concep
 By default, the subject names of all the CAs in the Entra trust store are sent as hints. 
 If you want only specific CAs to be sent back as a hint, set the issuer hint attribute **isIssuerHintEnabled** to true. 
 
-There is a character limit of 16KB for the issuer hints (subject name of the CA) that the server can send back to the TLS client. So it would be good to set the attribute **isIssuerHintEnabled** to true only for the CAs that issue user certificates. 
+There's a character limit of 16 KB for the issuer hints (subject name of the CA) that the server can send back to the TLS client. So it would be good to set the attribute **isIssuerHintEnabled** to true only for the CAs that issue user certificates. 
 
 If multiple intermediate CAs from the same root certificate issue the end user certificates, then by default all the certificates would show up in the certificate picker. But if you set **isIssuerHintEnabled** to true for specific CAs, only the proper user certificates appear in the certificate picker. To enable **isIssuerHintEnabled**, edit the CA and update the value to true.
 
@@ -266,9 +266,9 @@ Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
 ## Step 2: Enable CBA on the tenant
 
 >[!IMPORTANT]
->A user is considered capable for **MFA** when the user is in scope for **Certificate-based authentication** in the Authentication methods policy. This policy requirement means a user can't use proof up as part of their authentication to register other available methods. If the users do not have access to certificates they will be locked out and not be able to register other methods for MFA. So the admin needs to enable users who have a valid certificate into the CBA scope. Do not use all users for CBA target and use groups of users who have valid certificates available. For more information, see [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md).
+>A user is considered capable for **MFA** when the user is in scope for **Certificate-based authentication** in the Authentication methods policy. This policy requirement means a user can't use proof up as part of their authentication to register other available methods. If the users don't have access to certificates, they get locked out and can't register other methods for MFA. Authentication Policy Administrators need to enable CBA only for users who have a valid certificates. Don't include **All users** for CBA. Only use groups of users with valid certificates available. For more information, see [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md).
 
-To enable the certificate-based authentication in the Microsoft Entra admin center, complete the following steps:
+To enable CBA in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Groups** > **All groups** > select **New group** and create a group for CBA users
@@ -278,7 +278,7 @@ To enable the certificate-based authentication in the Microsoft Entra admin cent
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/enable.png" alt-text="Screenshot of how to enable CBA.":::
  
-Once certificate-based authentication is enabled on the tenant, all users in the tenant will see the option to sign in with a certificate. Only users who are enabled for certificate-based authentication will be able to authenticate using the X.509 certificate. 
+Once certificate-based authentication is enabled on the tenant, all users in the tenant see the option to sign in with a certificate. Only users who are enabled for CBA can authenticate by using the X.509 certificate. 
 
 >[!NOTE]
 >The network administrator should allow access to certauth endpoint for the customer's cloud environment in addition to `login.microsoftonline.com`. Disable TLS inspection on the certauth endpoint to make sure the client certificate request succeeds as part of the TLS handshake.
@@ -308,7 +308,7 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 
 1. You can also set up custom authentication binding rules to help determine the protection level for client certificates. It can be configured using either the issuer Subject or Policy OID fields in the certificate.
 
-   Authentication binding rules will map the certificate attributes (issuer or Policy OID) to a value, and select default protection level for that rule. Multiple rules can be created.
+   Authentication binding rules map the certificate attributes (issuer or Policy OID) to a value, and select default protection level for that rule. Multiple rules can be created.
 
    To add custom rules, select **Add rule**.
 
@@ -401,7 +401,7 @@ For more information on scenarios using certificateUserIds attribute see [Certif
 
 1. Select **Save** to save the changes. 
 
-The final configuration will look like this image:
+The final configuration looks like this image:
 
 :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/final.png" alt-text="Screenshot of the final configuration.":::
 
