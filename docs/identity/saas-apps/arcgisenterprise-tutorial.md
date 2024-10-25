@@ -146,8 +146,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. On the **Set Identity Provider** section, perform the following steps:
 
-    ![Screenshot shows Set Identity Provider where you perform the steps described here.](./media/arcgisenterprise-tutorial/configure-4.png)
-
     a. Please provide a name like **Microsoft Entra ID Test** in the **Name** textbox.
 
     b. In the **URL** textbox, paste the **App Federation Metadata Url** value which you copied previously.

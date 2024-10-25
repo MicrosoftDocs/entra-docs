@@ -140,8 +140,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 3. On the **Single Sign On Settings** page, perform the following steps:
 
-    ![Single sign-on settings.](./media/central-desktop-tutorial/configuration.png "Single Sign On Settings")
-
     a. Select **Enable SAML v2 Single Sign On**.
 
     b. In the **SSO URL** box, paste the **Microsoft Entra Identifier** value that you copied.
