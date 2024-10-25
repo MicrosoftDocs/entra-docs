@@ -100,8 +100,6 @@ Follow these steps to enable Microsoft Entra SSO.
 
 5. To Modify the **Signing** options as per your requirement, click **Edit** button to open **SAML Signing Certificate** dialog.
 
-	![Saml Response](./media/ciscocloudlock-tutorial/saml.png)
-
 	a. Select the **Sign SAML response and assertion** option for **Signing Option**.
 
 	b. Select the **SHA-256** option for **Signing Algorithm**.

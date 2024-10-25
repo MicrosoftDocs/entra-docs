@@ -187,8 +187,6 @@ If you need to create a user manually, perform the following steps:
 
 3. In the **Manage Users** window, select **Manually Add or Modify Users**.
 
-	![Screenshot shows the Users page where you can Manage Users and select Manually Add or Modify Users.](./media/cisco-spark-tutorial/user-2.png)
-
 4. Select **Names and Email address**. Then, fill out the textbox as follows:
 
     ![Screenshot shows the Mange Users dialog box where you can manually add or modify users.](./media/cisco-spark-tutorial/user-3.png) 

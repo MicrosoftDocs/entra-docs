@@ -155,8 +155,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. On the **SAML 2.0** tab, perform the following steps:
 
-	![Screenshot that shows the "S A M L 2.0" tab with arrows pointing to the "S A M L S S D U R L" and "Identifier Provider Issuer" fields.](./media/deskradar-tutorial/14-paste-urls.jpg)
-
 	a. Enable **SAML** authentication method.
 
 	b. In the **SAML SSO URL** textbox, enter the **Login URL** value, which you copied previously.
