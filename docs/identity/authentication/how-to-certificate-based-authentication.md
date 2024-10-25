@@ -29,7 +29,7 @@ Make sure that the following prerequisites are in place:
 
 - Configure at least one certificate authority (CA) and any intermediate CAs in Microsoft Entra ID.
 - The user must have access to a user certificate (issued from a trusted Public Key Infrastructure configured on the tenant) intended for client authentication to authenticate against Microsoft Entra ID. 
-- Each CA should have a certificate revocation list (CRL) that can be referenced from internet-facing URLs. If the trusted CA doesn't have a CRL configured, Microsoft Entra ID won't perform any CRL checking, revocation of user certificates won't work, and authentication won't be blocked.
+- Each CA should have a certificate revocation list (CRL) that can be referenced from internet-facing URLs. If the trusted CA doesn't have a CRL configured, Microsoft Entra ID doesn't perform any CRL checking, revocation of user certificates doesn't work, and authentication isn't blocked.
 
 >[!IMPORTANT]
 >Make sure the PKI is secure and can't be easily compromised. In the event of a compromise, the attacker can create and sign client certificates and compromise any user in the tenant, both users whom are synchronized from on-premises and cloud-only users. However, a strong key protection strategy, along with other physical and logical controls, such as HSM activation cards or tokens for the secure storage of artifacts, can provide defense-in-depth to prevent external attackers or insider threats from compromising the integrity of the PKI. For more information, see [Securing PKI](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn786443(v=ws.11)).
@@ -92,7 +92,7 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
    1. Click on **+ Add certificate authority**.
    1. Select the CA file.
    1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
-   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates won't fail.
+   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates doesn't fail.
    1. For **Delta Certificate Revocation List URL**, set the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
    1. The **Issuer hints** flag is enabled by default. Turn off **Issuer hints** if the CA shouldn't be included in issuer hints.
    1. Select **Save**.
@@ -288,7 +288,7 @@ Once certificate-based authentication is enabled on the tenant, all users in the
 
 The authentication binding policy helps determine the strength of authentication to either a single factor or multifactor. The default protection level for the certificates on the tenant is **single-factor authentication**.
 
-An Authentication Policy Administrator can change the default value from single-factor to multifactor and configure custom policy rules. Authentication binding rules map certificate attributes, such as Issuer, or Policy OID, or Issuer and Policy OID, to a value and select default protection level for that rule. You can create multiple rules.
+An Authentication Policy Administrator can change the default value from single-factor to multifactor and configure custom policy rules. Authentication binding rules map certificate attributes, such as Issuer, or Policy Object ID (OID), or Issuer and Policy OID, to a value and select default protection level for that rule. You can create multiple rules.
 
 To modify tenant default settings in the Microsoft Entra admin center, complete the following steps:
 
@@ -344,25 +344,26 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
    1. Authenticate with a certificate that has policy OID of 3.4.5.6 and Issued by CN=CBATestRootProd. Authentication should pass and get a multifactor claim.
 
 >[!IMPORTANT]
->There is a known issue where a Microsoft Entra tenant admin configures a CBA authentication policy rule using both Issuer and Policy OID impacts some device registration scenarios including:
+>There's a known issue where a Microsoft Entra tenant Authentication Policy Administrator configures a CBA authentication policy rule by using both Issuer and Policy OID. The issue impacts some device registration scenarios, including:
 >- Windows Hello For Business enrollment
->- Fido2 Security Key registration
->- Windows Passwordless Phone Sign-in
+>- FIDO2 security key registration
+>- Windows passwordless phone sign-in
 >  
->Device registration with Workplace Join, Microsoft Entra ID and Hybrid Microsoft Entra device join scenarios are not impacted. CBA authentication policy rules using either Issuer OR Policy OID are not impacted.
->To mitigate, admins should :
->- Edit the certificate-based authentication policy rules currently using both Issuer and Policy OID options and remove either the Issuer or OID requirement and save. OR
->- Remove the authentication policy rule currently using both Issuer and Policy OID and create rules using only issuer or policy OID
+>Device registration with Workplace Join, Microsoft Entra ID and Hybrid Microsoft Entra device join scenarios aren't impacted. CBA authentication policy rules using either Issuer OR Policy OID aren't impacted.
+>To mitigate, admins should:
+>- Edit the certificate-based authentication policy rules that use both Issuer and Policy OID options. Remove either the Issuer or Policy OID requirement and **Save**. 
+>  -Or-
+>- Remove the authentication policy rule that uses both Issuer and Policy OID. Create rules that use only Issuer or Policy OID.
 >  
->We are working to fix the issue.
+>We're working to fix the issue.
 
    To create a rule by Issuer and Serial Number:
 
-   1. Add an authentication binding policy that requires any cert issued by CN=CBATestRootProd with policyOID 1.2.3.4.6 needs only high affinity binding (that is, Issuer and serial number are used).
+   1. Add an authentication binding policy. The policy requires that any certificate issued by CN=CBATestRootProd with policyOID 1.2.3.4.6 needs only high affinity binding. Issuer and serial number are used.
       
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/issuer-and-serial-number.png" alt-text="Screenshot of Issuer and Serial Number added the Microsoft Entra admin center.":::
 
-   1. Select the certificate field. In this example, we'll select **Issuer and Serial number**.
+   1. Select the certificate field. In this example, let's select **Issuer and Serial number**.
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/select-issuer-and-serial-number.png" alt-text="Screenshot of how to select Issuer and Serial Number.":::
 
@@ -379,7 +380,7 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 1. Select **Ok** to save any custom rule.
 
 >[!IMPORTANT]
->Enter the PolicyOID by using the [object identifier format](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.4). For example, if the certificate policy says **All Issuance Policies**, enter the OID as **2.5.29.32.0** when you add the rule. The string **All Issuance Policies** is invalid for the rules editor and won't take effect.
+>Enter the PolicyOID by using the [object identifier format](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.4). For example, if the certificate policy says **All Issuance Policies**, enter the OID as **2.5.29.32.0** when you add the rule. The string **All Issuance Policies** is invalid for the rules editor and doesn't take effect.
 
 ## Step 4: Configure username binding policy
 
