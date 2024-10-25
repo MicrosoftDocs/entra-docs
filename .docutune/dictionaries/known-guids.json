@@ -3686,5 +3686,6 @@
   "HDInsight on AKS app ID" : "d3d1a4fe-edb2-4b09-bc39-e41d342323d6",
   "Azure Front Door service principal ID" : "ad0e1c7e-6d38-4ba4-9efd-0bc77ba9f037",
   "Azure Front Door Standard" : "205478c0-bd83-4e1b-a9d6-db63a3e1e1c8",
-  "Azure Front Door Premium" : "d4631ece-daab-479b-be77-ccb713491fc0"
+  "Azure Front Door Premium" : "d4631ece-daab-479b-be77-ccb713491fc0",
+  "Azure Communication Services" : "1fd5118e-2576-4263-8130-9503064c837a"
 }
