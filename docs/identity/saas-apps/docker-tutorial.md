@@ -108,8 +108,6 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Set up Docker Business** section, copy the appropriate URL(s) based on your requirement.
 
-	![Screenshot shows to copy configuration URLs.](./media/docker-tutorial/login.png "Metadata")
-
 ### Create a Microsoft Entra test user
 
 In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
