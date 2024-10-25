@@ -15,11 +15,18 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 ---
 # How to configure certificate authorities for Microsoft Entra certificate-based authentication
 
-You can configure certificate authorities (CAs) by using the Microsoft Entra admin center or Microsoft Graph REST APIs and the supported SDKs, such as Microsoft Graph PowerShell. The PKI infrastructure or PKI admin should be able to provide the list of issuing CAs. To make sure you have configured all the CAs, open the user certificate and click on 'certification path' tab and make sure every CA until the root is uploaded to the Microsoft Entra ID trust store. CBA authentication will fail if there are missing CAs.
+The best way to Configure the certificate authorities with PKI-based trust store (Preview)
+
+You can configure certificate authorities (CAs) by using the Microsoft Entra admin center, or Microsoft Graph REST APIs and the supported software development kits (SDKs), such as Microsoft Graph PowerShell. 
+The public key infrastructure (PKI) infrastructure or PKI admin should be able to provide the list of issuing CAs. 
+
+To make sure you have configured all the CAs, open the user certificate and click **Certification path** tab. 
+Make sure every CA until the root is uploaded to the Microsoft Entra ID trust store. 
+Microsoft Entra certificate-based authentication (CBA) fails if there are missing CAs.
 
 ### Configure certificate authorities using the Microsoft Entra admin center
 
-To enable the certificate-based authentication and configure user bindings in the Microsoft Entra admin center, complete the following steps:
+To configure certificate authorities to enable CBA in the Microsoft Entra admin center, complete the following steps:
 
 1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)]
 1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
@@ -90,11 +97,19 @@ The following table and graphic show how to map information from the CA certific
 For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process).
 
 ### Configure certificate authorities using the Microsoft Graph APIs
-MS Graph APIs can be used to configure certificate authorities. Please follow the steps at [certificatebasedauthconfiguration MSGraph commands](/graph/api/resources/certificatebasedauthconfiguration?view=graph-rest-1.0) to update the Microsoft Entra Certificate Authority trust store.
+
+MS Graph APIs can be used to configure certificate authorities. Please follow the steps at [certificatebasedauthconfiguration MSGraph commands](/graph/api/resources/certificatebasedauthconfiguration) to update the Microsoft Entra Certificate Authority trust store.
 
 ### Validate Certificate Authority configuration
 
-It is important to ensure that the above configuration steps result is Microsoft Entra ability to both validate the certificate authority trust chain and succsessfully acquire the certificate revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) . To assist with this task, it is recommended to install the [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). This PowerShell cmdlet will review the Microsoft Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
+Make sure the configuration allows Microsoft Entra CBA to: 
+
+- Validate the certificate authority trust chain
+- Successfully acquire the certificate revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) 
+
+To validate the CA configuration, install the [MSIdentity Tools](https://azuread.github.io/MSIdentityTools/) PowerShell module, and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). 
+This PowerShell cmdlet reviews the Microsoft Entra tenant CA configuration. 
+It reports errors and warnings for common misconfigurations. 
 
 ## Related content
 
