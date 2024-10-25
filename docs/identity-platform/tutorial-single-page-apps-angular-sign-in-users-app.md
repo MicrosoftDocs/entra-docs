@@ -24,7 +24,7 @@ In this tutorial:
 
 ## Prerequisites
 
-- [Tutorial: Create an Angular single-page application](tutorial-single-page-apps-angular-create-app.md)
+- [Tutorial: Create an Angular single-page application](tutorial-single-page-apps-angular-prepare-app.md)
 
 ## Add sign-in and sign-out functionality to your app
 
