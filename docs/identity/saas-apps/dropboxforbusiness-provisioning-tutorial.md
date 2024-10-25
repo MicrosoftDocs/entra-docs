@@ -106,15 +106,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Dropbox**.
 
-	![Dropbox User Mappings](media/dropboxforbusiness-provisioning-tutorial/dropbox-user-mapping.png)
-
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Dropbox in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Dropbox for update operations. Select the **Save** button to commit any changes.
 
 	![Dropbox User Attributes](media/dropboxforbusiness-provisioning-tutorial/dropbox-user-attributes.png)
 
 12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Dropbox**.
-
-	![Dropbox Group Mappings](media/dropboxforbusiness-provisioning-tutorial/dropbox-group-mapping.png)
 
 13. Review the group attributes that are synchronized from Microsoft Entra ID to Dropbox in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Dropbox for update operations. Select the **Save** button to commit any changes.
 

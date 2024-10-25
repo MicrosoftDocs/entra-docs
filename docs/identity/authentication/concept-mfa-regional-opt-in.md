@@ -205,12 +205,13 @@ For voice verification, the following region codes require an opt-in.
 | 252         |  Somalia                                       | 10                              |  30                                      |  
 | 501         |  Belize                                        | 10                              |  30                                      |
 | 855         |  Cambodia                                      | 50                              |  200                                     |
-| 84         |  Vietnam                                       | 50                              |  200                                     |
-| 94         |  Sri Lanka                                     | 50                              |  200                                     |
+| 84         |  Vietnam                                       | 150                              |  500                                     |
+| 94         |  Sri Lanka                                     | 100                              |  500                                     |
 | 63         |  Philippines                                   | 50                              |  200                                     |
 | 62         |  Indonesia                                     | 50                              |  200                                     |
-| 7         |  Russia                                        | 50                              |  200                                     |
+| 7         |  Russia                                        | 100                              |  1000                                     |
 | 258         |  Mozambique                                    | 50                              |  200                                     |
+| 92         |  Pakistan                                    | 100                              |  1000                                     |
 
 ## Next steps
 

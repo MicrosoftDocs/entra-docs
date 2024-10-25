@@ -1,6 +1,6 @@
 ---
-title: Properties of a B2B guest user
-description: Microsoft Entra B2B collaboration guest user properties and states before and after invitation redemption.
+title: B2B guest user properties 
+description: Learn about the properties of a B2B guest user in Microsoft Entra External ID. Understand user types, authentication methods, and how to manage guest user access and permissions.
 
 ms.service: entra-external-id
 ms.topic: how-to
@@ -13,7 +13,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an IT admin managing external collaboration in Microsoft Entra, I want to understand the properties and management options for B2B collaboration users, so that I can effectively invite and manage external users accessing apps and resources in my organization.
 ---
 
-# Properties of a Microsoft Entra B2B collaboration user
+# Understand and manage the properties of B2B guest users
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
@@ -41,7 +41,7 @@ Now, let's see what a Microsoft Entra B2B collaboration user looks like in Micro
 
 ### Before invitation redemption
 
-B2B collaboration user accounts are the result of inviting guest users to collaborate by using the guest users' own credentials. When the invitation is initially sent to the guest user, an account is created in your tenant. This account doesn’t have any credentials associated with it because authentication is performed by the guest user's identity provider. The **Identities** property for the guest user account in your directory is set to the host's organization domain until the guest redeems their invitation. The user sending the invitation is added as a default value for the **Sponsor** attribute on the guest user account. In the admin center, the invited user’s profile will show an **External user state** of **PendingAcceptance**. Querying for `externalUserState` using the Microsoft Graph API will return `Pending Acceptance`.
+B2B collaboration user accounts are the result of inviting guest users to collaborate by using the guest users' own credentials. When the invitation is initially sent to the guest user, an account is created in your tenant. This account doesn’t have any credentials associated with it because authentication is performed by the guest user's identity provider. The **Identities** property for the guest user account in your directory is set to the host's organization domain until the guest redeems their invitation. The user sending the invitation is added as a default value for the **Sponsor** attribute on the guest user account. In the admin center, the invited user’s profile will show an **Invitation state** of **Pending acceptance**. Querying for `externalUserState` using the Microsoft Graph API will return `Pending Acceptance`.
 
 :::image type="content" source="media/user-properties/before-redemption.png" alt-text="Screenshot of user profile before redemption.":::
 
