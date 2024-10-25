@@ -98,7 +98,7 @@ For more information, see [Understanding the certificate revocation process](./c
 
 ### Configure certificate authorities using the Microsoft Graph APIs
 
-MS Graph APIs can be used to configure certificate authorities. Please follow the steps at [certificatebasedauthconfiguration MSGraph commands](/graph/api/resources/certificatebasedauthconfiguration) to update the Microsoft Entra Certificate Authority trust store.
+Microsoft Graph APIs can be used to configure certificate authorities. To update the Microsoft Entra Certificate Authority trust store, follow the steps at [certificatebasedauthconfiguration MSGraph commands](/graph/api/resources/certificatebasedauthconfiguration).
 
 ### Validate Certificate Authority configuration
 
