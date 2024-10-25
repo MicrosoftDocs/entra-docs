@@ -3680,5 +3680,16 @@
   "Azure VPN client - Manually registered, Microsoft Azure operated by 21Vianet" : "49f817b6-84ae-4cc0-928c-73f27289b3aa",
   "Azure Resource Manager tenant ID - hardcoded" : "c0257de7-538f-415c-993a-1b87a031879d",
   "Azure Databricks app ID" : "2ff814a6-3304-4ab8-85cb-cd0e6f879c1d",
-  "MQTT broker state store ID" : "FA9AE35F-2F64-47CD-9BFF-08E2B32A0FE8"
+  "MQTT broker state store ID" : "FA9AE35F-2F64-47CD-9BFF-08E2B32A0FE8",
+  "Azure Lab Services principal ID (v2)" : "c7bb12bf-0b39-4f7f-9171-f418ff39b76a",
+  "Azure API for FHIR app ID" : "4f6778d8-5aef-43dc-a1ff-b073724b9495",
+  "HDInsight on AKS app ID" : "d3d1a4fe-edb2-4b09-bc39-e41d342323d6",
+  "Azure Front Door service principal ID" : "ad0e1c7e-6d38-4ba4-9efd-0bc77ba9f037",
+  "Azure Front Door Standard" : "205478c0-bd83-4e1b-a9d6-db63a3e1e1c8",
+  "Azure Front Door Premium" : "d4631ece-daab-479b-be77-ccb713491fc0",
+  "Azure Communication Services" : "1fd5118e-2576-4263-8130-9503064c837a",
+  "Project Synergy app ID" : "eb63d611-525e-4a31-abd7-0cb33f679599",
+  "Azure Communication Gateway enterprise" : "8502a0ec-c76d-412f-836c-398018e2312b",
+  "Confidential VM Orchestrator" : "bf7b6499-ff71-4aa2-97a4-f372087be7f0",
+  "Microsoft Graph Security Connector" : "c4829704-0edc-4c3d-a347-7c4a67586f3c"
 }
