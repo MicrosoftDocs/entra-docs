@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
 
-Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens.
+Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:
 
 1. From the **App registrations** page, select the application that you created (such as *ciam-client-app*) to open its **Overview** page.
 1. Under **Manage**, select **Certificates & secrets**.
