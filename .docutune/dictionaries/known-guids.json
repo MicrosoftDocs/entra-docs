@@ -3683,5 +3683,6 @@
   "MQTT broker state store ID" : "FA9AE35F-2F64-47CD-9BFF-08E2B32A0FE8",
   "Azure Lab Services principal ID (v2)" : "c7bb12bf-0b39-4f7f-9171-f418ff39b76a",
   "Azure API for FHIR app ID" : "4f6778d8-5aef-43dc-a1ff-b073724b9495",
-  "HDInsight on AKS app ID" : "d3d1a4fe-edb2-4b09-bc39-e41d342323d6"
+  "HDInsight on AKS app ID" : "d3d1a4fe-edb2-4b09-bc39-e41d342323d6",
+  "Azure Front Door service principal ID" : "ad0e1c7e-6d38-4ba4-9efd-0bc77ba9f037"
 }
