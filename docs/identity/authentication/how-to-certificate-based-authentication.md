@@ -55,7 +55,7 @@ Optionally, you can also configure authentication bindings to map certificates t
 
 :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/steps.png" alt-text="Diagram of the steps required to enable Microsoft Entra certificate-based authentication.":::
 
-## Step 1: Configure the certificate authorities with PKI based trust store (Preview)
+## Step 1: Configure the certificate authorities with PKI-based trust store (Preview)
 
 Tenants with a Microsoft Entra ID P1 or P2 license can try a new way to configure certificate authorities (CA) that's in preview. store based on a public key infrastructure (PKI).
 
@@ -116,6 +116,7 @@ A PKI-based trust store has RBAC roles [Privilege Authentication Administrator](
    1. Select **Refresh** to refresh the CAs.
 
    To generate the SHA256 checksum of the PKI .p7b file, run the command:
+
    ```powershell
    Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
    ```
@@ -161,9 +162,10 @@ The following examples show how to use Microsoft Graph to run Create, Read, Upda
 
 #### Create a PKI container object
 
-##### Request body
-
 ```http
+#### Request body
+
+
 PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/
 Content-Type: application/json
 {
@@ -178,7 +180,7 @@ GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certifica
 ConsistencyLevel: eventual
 ```
 
-#### Get PKI object by PKI ID.
+#### Get PKI object by PKI-id
 
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/
@@ -205,7 +207,7 @@ GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certifica
 ConsistencyLevel: eventual
 ```
 
-#### Get a specific CA within a PKI by CA id
+#### Get a specific CA within a PKI by CA-id
 
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
