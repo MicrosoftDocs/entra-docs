@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra External ID deployment architectures with Microsoft Entra
-description: Learn to securely deploy and operate Microsoft Entra ID and External Identity deployment architectures with Microsoft Entra. 
+description: Learn to securely deploy and operate Microsoft Entra External ID architectures with Microsoft Entra. 
 author: gargi-sinha
 manager: martinco
 ms.author: gasinh
@@ -15,7 +15,7 @@ ms.date: 10/24/2024
 
 Enterprises can use Microsoft Entra to enable multiple use cases for workforces, partners, and consumers, potentially in combination. In this article, we recommend best practices based on patterns to securely deploy and use Microsoft Entra ID and the following external identity deployment architectures with Microsoft Entra. We include information about each architecture and links to resources.
 
-- Workforce- and collaboration-oriented architecture
+- Workforce and collaboration-oriented architecture
 - Workforce-oriented architecture
 - Consumer-oriented architecture
 - Architecture combinations
@@ -23,10 +23,10 @@ Enterprises can use Microsoft Entra to enable multiple use cases for workforces,
 This article addresses the following considerations for each architecture.
 
 - **Account lifecycle.** Ability to define business rules to onboard and offboard user accounts in the environment.
-- **External identity providers.** Ability to handle external users from organizations with their own identity provider (for example, another Microsoft Entra tenant, SAML federation provider), or social identity providers. The capability to create accounts in your tenant for users who don't have any identity provider.
+- **External identity providers.** Ability to handle external users from organizations with their own identity provider (for example, another Microsoft Entra tenant, SAML federation provider), or social identity providers. It also refers to the capability to create accounts in your tenant for users who don't have any identity provider.
 - **Credential management.** Options to manage credentials for users, such as passwords for users who don't have identity providers, or additional factors of authentication.
 - **Ad-hoc collaboration.** Controls to allow or deny with users in the environment (either workforce users or other external users) with external users on documents, reports, and similar user-created content.
-- **Role-based resource assignment.** Ability to grant external users access to resources such as application assignments, memberships, or SharePoint site memberships based on predefined sets of role-encapsulated permissions.
+- **Role-based resource assignment.** Ability to grant external users access to resources such as application assignments, group memberships, or SharePoint site memberships based on predefined set of permissions, encapsulated in a role.
 - **Risk management.** Assess and manage security, operational, and compliance risks when you enable access to external users.
 
 We define the following personae based on their relationship with your organization.
@@ -36,23 +36,23 @@ We define the following personae based on their relationship with your organizat
 - **Consumers.** Individuals such as customers with whom you have a business relationship and who access your applications to purchase or consume your products and services.
 - **External user.** Users that are external to your organization such as business partners and consumers.
 
-## Workforce- and collaboration-oriented architecture
+## Workforce and collaboration-oriented architecture
 
-Workforce- and collaboration-oriented architecture enables your workforce to collaborate with business partners from external organizations. It includes controls to protect against unauthorized access to applications.
+Workforce and collaboration-oriented architecture enables your workforce to collaborate with business partners from external organizations. It includes controls to protect against unauthorized access to applications.
 
-Typical scenarios include when employees invite collaboration ad-hoc to share content in productivity tools such as SharePoint, Power BI, Microsoft Teams, or your line of business applications. Guest users can come from external organizations that have their own identity provider. For example, another Microsoft Entra ID tenant or a Security Assertion Markup Language (SAML) federated identity provider.
+Typical scenarios include employees initiating collaboration ad-hoc by inviting business partners to share content using productivity tools such as SharePoint, Power BI, Microsoft Teams, or your line of business applications. Guest users can come from external organizations that have their own identity provider. For example, another Microsoft Entra ID tenant or a Security Assertion Markup Language (SAML) federated identity provider.
 
-:::image type="content" source="media/external-identity-deployment-architectures/workforce-collaboration-architecture.png" alt-text="Diagram illustrates example of workforce- and collaboration-oriented architecture.":::
+:::image type="content" source="media/external-identity-deployment-architectures/workforce-collaboration-architecture.png" alt-text="Diagram illustrates example of workforce and collaboration-oriented architecture.":::
 
-In workforce- and collaboration-oriented architecture, the Microsoft Entra ID workforce configuration tenant uses [Microsoft Entra Identity Governance](../id-governance/identity-governance-overview.md) and [Microsoft Entra External ID](../external-id/external-identities-overview.md) to define policies to grant access to enterprise applications and resources. These policies include account and access lifecycle and security controls.
+In workforce and collaboration-oriented architecture, the Microsoft Entra ID workforce configuration tenant uses [Microsoft Entra Identity Governance](../id-governance/identity-governance-overview.md) and [Microsoft Entra External ID](../external-id/external-identities-overview.md) to define policies to grant access to enterprise applications and resources. These policies include account and access lifecycle and security controls.
 
-### Workforce- and collaboration-oriented architecture implementation resources
+### Workforce and collaboration-oriented architecture implementation resources
 
 - [Plan a Microsoft Entra B2B collaboration deployment](secure-external-access-resources.md) describes governance practices to reduce security risks, meet compliance goals, and ensure right access.
 - [Govern the employee lifecycle with Microsoft Entra ID Governance](../id-governance/scenarios/govern-the-employee-lifecycle.md) explains how Identity Governance can help organizations balance productivity and security.
 - [Govern access for external users in entitlement management](../id-governance/entitlement-management-external-users.md#enable-catalog-for-external-users) describes settings to govern external user access.
 
-### Workforce- and collaboration-oriented architecture considerations
+### Workforce and collaboration-oriented architecture considerations
 
 #### Account lifecycle
 
@@ -62,7 +62,7 @@ Onboard business partners with Entitlement Management access packages that have 
 
 #### External identity providers
 
-Workforce- and collaboration-oriented architecture supports business partners from organizations that have Microsoft Entra or an SAML / WS-Federation identity provider.
+Workforce and collaboration-oriented architecture supports business partners from organizations that have Microsoft Entra or an SAML / WS-Federation identity provider.
 
 Business partners that have organizational email addresses but don't have identity providers can access your tenant with an email one-time passcode.
 
@@ -78,7 +78,7 @@ Microsoft recommends enforcing multifactor authentication for external users. [A
 
 #### Ad-hoc collaboration
 
-Optimize workforce- and collaboration-oriented architecture for workforce users to interact with business partners with Microsoft collaboration services like Microsoft 365, Microsoft Teams, and Power BI.
+This architecture is optimized for workforce users to interact with business partners using Microsoft collaboration services like Microsoft 365, Microsoft Teams, and Power BI.
 
 #### Role-based resource assignment
 
@@ -97,13 +97,13 @@ You can help mitigate risk, depending on the risk analysis outcome, with the fol
 - Apply application-specific controls to restrict collaboration such [as Microsoft Purview Information Barriers](/purview/information-barriers).
 - Implement an allowlist approach to scope allowed organizations for external collaboration with capabilities such as cross-tenant access settings and domain allow-listing. [Transition to governed collaboration with Microsoft Entra B2B collaboration](5-secure-access-b2b.md) describes how to secure external access to your resources.
 
-#### Other
+#### Other considerations
 
 Capabilities that external identities use could add to your monthly charges depending on their activity. The [billing model for Microsoft Entra External ID](../external-id/external-identities-pricing.md) based on monthly active users might affect your decision to implement external identity features.
 
 ## Workforce-oriented architecture
 
-You can extend workforce-oriented architecture when you need to isolate external users such as business partner access. This approach ensures that there's a clear boundary between internal and external resources in terms of access and visibility. You can selectively onboard employee accounts from your workforce tenant to coexist with external users if they need to manage or access external-facing applications.
+The workforce-oriented architecture can be extended when you require your external users to be isolated from your organizational tenant, such that there is a clear boundary for access and visibility between resources intended for internal or external users . This allows for selectively onboarding employee user accounts from your workforce tenant to co-exist with external user accounts, if employees also need to manage or access external facing applications.
 
 In workforce-oriented architecture, you create an additional Microsoft Entra ID workforce-configured tenant as a [boundary](secure-multiple-tenants.md). It hosts applications and resources, isolated from your organizational tenant, available to external users to meet security, compliance, and similar requirements. You can configure structured access assignment based on predefined business roles. You can use cross-tenant synchronization to onboard the workforce users from the corporate tenant to the additional tenant.
 
