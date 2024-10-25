@@ -40,8 +40,17 @@ OATH TOTP hardware tokens typically come with a secret key, or seed, pre-program
 
 Programmable OATH TOTP hardware tokens that can be reseeded can also be set up with Microsoft Entra ID in the software token setup flow.
 
-In this preview, we are introducing a new Hardware OATH token inventory. Global Administrator is no longer required to assign a token to a user when they upload the token information to Microsoft Entra ID. 
-You can delegate a lower privileged role to assign and activate the token.
+
+Microsoft Entra ID has a new Microsoft Graph API in preview for commercial Azure, Azure for US Government, and air-gapped clouds.
+
+This preview uses the hardware OATH token Authentication methods policy. [Privileged Authentication Administrators](~/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) can use Microsoft Graph to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview in the Microsoft Entra admin center. 
+
+Hardware OATH tokens that you add with Microsoft Graph for this preview appear along with other tokens in the admin center, but they can only be managed by using Microsoft Graph.  
+
+This hardware OATH token preview improves flexibility for organizations by removing Global Administrator requirements. 
+Organizations can delegate token creation, assignment and activation to Privileged Authentication Administrators.
+
+Administrators can choose to upload tokens individually or in bulk. If the business need exists, they can assign the tokens to users, or they can let end users self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) page.
 
 Here are the different features of the preview:
 
@@ -98,7 +107,98 @@ Create a single token:
 
 ```msgraph-interactive
 POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
+
+{ 
+"serialNumber": "GALT11420104", 
+"manufacturer": "Thales", 
+"model": "OTP 110 Token", 
+"secretKey": "F3QROCK7NM47BBYVS6FZOVZ42JRLQ56F", 
+"timeIntervalInSeconds": 30, 
+"hashFunction": "hmacsha1" 
+}
+
 ```
+
+#### Response
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#directory/authenticationMethodDevices/hardwareOathDevices/$entity",
+    "id": "3dee0e53-f50f-43ef-85c0-b44689f2d66d",
+    "displayName": null,
+    "serialNumber": "GALT11420104",
+    "manufacturer": "Thales",
+    "model": "OTP 110 Token",
+    "secretKey": null,
+    "timeIntervalInSeconds": 30,
+    "status": "available",
+    "lastUsedDateTime": null,
+    "hashFunction": "hmacsha1",
+    "assignedTo": null
+}
+
+
+In this example, a Privileged Authentication Administrator creates a token and assigns it to a user:
+
+```msgraph-interactive
+POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
+{ 
+"serialNumber": "GALT11420104", 
+"manufacturer": "Thales", 
+"model": "OTP 110 Token", 
+"secretKey": "F3QROCK7NM47BBYVS6FZOVZ42JRLQ56F", 
+"timeIntervalInSeconds": 30, 
+"assignTo": {"id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}
+}
+```
+
+In this example, a Privileged Authentication Administrator activates the token:
+
+```sgraph-interactive
+POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods/325330ea-fcdb-41e3-bc21-8b89bbcb0e16/activate
+
+{ 
+    "verificationCode" : "903809" 
+}
+```
+
+To validate the token is activated, sign in as the test user.
+
+
+Let's try another example where a creates two tokens, with hashFunction optional. The hashFunction is SHA1 by default. For SHA256, you need to enter the property. 
+
+PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
+{
+"@context":"#$delta", 
+"value": [ 
+    { 
+        "@contentId": "1", 
+        "serialNumber": "GALT11420108", 
+        "manufacturer": "Thales", 
+        "model": "OTP 110 Token", 
+        "secretKey": "RBE6WEJDBDAAE6AYACIHC5ZLZW2XKPH6", 
+        "timeIntervalInSeconds": 30, 
+        "hashFunction": "HMACSHA1" 
+        },
+    { 
+        "@contentId": "2", 
+        "serialNumber": "GALT11420112", 
+        "manufacturer": "Thales", 
+        "model": "OTP 110 Token", 
+        "secretKey": "ZO3NHND67U335PZEMNF2EKD3UH5OHR4I", 
+        "timeIntervalInSeconds": 30, 
+        "hashFunction": "HMACSHA1" 
+        }
+    ]          
+} 
+
+POST https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551/authentication/hardwareOathMethods
+{
+    "device": 
+    {
+        "id": "6c0272a7-8a5e-490c-bc45-9fe7a42fc4e0" 
+    }
+}
+
+
 
 
 ### User self-assignment and activation
