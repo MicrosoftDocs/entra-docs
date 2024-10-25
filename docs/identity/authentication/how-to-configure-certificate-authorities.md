@@ -20,7 +20,7 @@ The best way to Configure the certificate authorities with PKI-based trust store
 You can configure certificate authorities (CAs) by using the Microsoft Entra admin center, or Microsoft Graph REST APIs and the supported software development kits (SDKs), such as Microsoft Graph PowerShell. 
 The public key infrastructure (PKI) infrastructure or PKI admin should be able to provide the list of issuing CAs. 
 
-To make sure you have configured all the CAs, open the user certificate and click **Certification path** tab. 
+To make sure you configured all the CAs, open the user certificate and click **Certification path** tab. 
 Make sure every CA until the root is uploaded to the Microsoft Entra ID trust store. 
 Microsoft Entra certificate-based authentication (CBA) fails if there are missing CAs.
 
@@ -33,7 +33,7 @@ To configure certificate authorities to enable CBA in the Microsoft Entra admin 
 1. To upload a CA, select **Upload**: 
    1. Select the CA file.
    1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
-   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates won't fail.
+   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates doesn't fail.
    1. For **Delta Certificate Revocation List URL**, set the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
    1. Select **Add**.
 
