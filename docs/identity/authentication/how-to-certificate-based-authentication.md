@@ -5,7 +5,7 @@ description: Topic that shows how to configure Microsoft Entra certificate-based
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/04/2024
+ms.date: 10/24/2024
 
 ms.author: justinha
 author: vimrang
@@ -55,12 +55,213 @@ Optionally, you can also configure authentication bindings to map certificates t
 
 :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/steps.png" alt-text="Diagram of the steps required to enable Microsoft Entra certificate-based authentication.":::
 
-## Step 1: Upload a PKI-based CA store (preview)
+## Step 1: Configure the certificate authorities with PKI based trust store (Preview)
 
 Tenants with a Microsoft Entra ID P1 or P2 license can try a new way to configure certificate authorities (CA) that's in preview. store based on a public key infrastructure (PKI).
 
 If you have a free license, ypou can configure certificate authorities by using the Microsoft Entra admin center. Fore more information, see see [How to configure certificate authorities for Microsoft Entra certificate-based authentication](how-to-configure-certificate-authorities.md).
 
+Entra has a new public key infrastructure (PKI) based certificate authorities (CA) trust store. The PKI-based CA trust store keeps CAs within a container object for each different PKI. Admins can manage CAs in a container based on PKI easier than one flat list of CAs.
+
+The PKI-based trust store has higher limits for the number of CAs and the size of each CA file. A PKI-based trust store supports up to 250 CAs and 8KB size for each CA object. We highly recommended you use the new PKI-based trust store for storing CAs, which is scalable and supports new functionality like issuer hints. 
+
+>[!Note]
+>If you use [the old trust store to configure CAs](how-to-configure-certificate-authorities.md), we recommended you configure a PKI-based trust store. After you make sure everything works well, you can delete the CAs from old trust store. 
+
+
+First, an admin must configure the trusted CAs that issue user certificates. 
+As seen in the following diagram, we use role-based access control (RBAC) to make sure only least-privileged administrators are needed to make changes. 
+A PKI-based trust store has RBAC roles [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator) and [Authentication Administrator](../role-based-access-control/permissions-reference.md#authentication-administrator).
+
+### Configure certificate authorities by using the Microsoft Entra admin center
+
+1.	Create a PKI container object.
+   1. Sign in to the Microsoft Entra admin center as an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+   1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Public key infrastructure (Preview)**.
+   1. Click **+ Create PKI**.
+   1. Enter **Display Name**.
+   1. Click **Create**.
+
+   :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to create a PKI.":::
+
+   1. To delete a PKI, select the PKI and select **Delete**. If the PKI has CAs in it, enter the name of the PKI to acknowledge the deletion of all CAs within it and select **Delete**.
+
+   :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
+
+   1. Select **Columns** to add or delete columns.
+   1. Select **Refresh** to refresh the list of PKIs.
+
+1. To upload a CA into the PKI container:
+   1. Click on **+ Add certificate authority**.
+   1. Select the CA file.
+   1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
+   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates won't fail.
+   1. For **Delta Certificate Revocation List URL**, set the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
+   1. The **Issuer hints** flag is enabled by default. Turn off **Issuer hints** if the CA shouldn't be included in issuer hints.
+   1. Select **Save**.
+   1. To delete a CA certificate, select the certificate and select **Delete**.
+
+   :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/delete-certificate-authority.png" alt-text="Diagram of how to delete a CA certificate.":::
+   
+   1. Select **Columns** to add or delete columns.
+   1. Select **Refresh** to refresh the list of CAs.
+
+1. To upload all CAs at once into the PKI container:
+   1. Create a PKI container object, or open one.
+   1. Select **Upload PKI**.
+   1. Enter the http internet facing URL where the . p7b file is available.
+   1. Enter the SHA256 checksum of the file.
+   1. Select the upload.
+   1. Upload PKI is an asynchronous process. As each CA is uploaded, it's available in the PKI. Completion of PKI upload can take up to 30 minutes.
+   1. Select **Refresh** to refresh the CAs.
+
+   To generate the SHA256 checksum of the PKI .p7b file, run the command:
+   ```powershell
+   Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
+   ```
+
+### Edit a PKI
+
+1. To edit PKI, select **...** on the PKI row and select **Edit**.
+1. Enter a new PKI name and select **Save**.
+
+
+### Edit a CA
+
+1. To edit CA, select **...** on the CA row and select **Edit**.
+1. Enter new values for Certificate Authority type (root/intermediate), CRL URL, Delta CRL URL, Issuer Hints enabled flag as necessary and select **Save**.
+
+
+### Restore a PKI
+1. Select the **Deleted PKIs** tab.
+1. Select the PKI and select **Restore PKI**.
+
+
+### Restore a CA
+1. Select the **Deleted CAs** tab.
+1. Select the CA file and select **Restore certificate authority**.
+
+### Understanding isIssuerHintEnabled attribute on CA
+
+Issuer hints send back a Trusted CA Indication as part of the TLS handshake. 
+The trusted CA list is set to subject of the CAs uploaded by the tenant in the Entra trust store. 
+For more information about issuer hints, see [Understanding Issuer Hints](concept-certificate-based-authentication-technical-deep-divemd#understanding-issuer-hints-preview).
+
+By default, the subject names of all the CAs in the Entra trust store are sent as hints. 
+If you want only specific CAs to be sent back as a hint, set the issuer hint attribute **isIssuerHintEnabled** to true. 
+
+There is a character limit of 16KB for the issuer hints (subject name of the CA) that the server can send back to the TLS client. So it would be good to set the attribute **isIssuerHintEnabled** to true only for the CAs that issue user certificates. 
+
+If multiple intermediate CAs from the same root certificate issue the end user certificates, then by default all the certificates would show up in the certificate picker. But if you set **isIssuerHintEnabled** to true for specific CAs, only the proper user certificates appear in the certificate picker. To enable **isIssuerHintEnabled**, edit the CA and update the value to true.
+
+### Configure certificate authorities using the Microsoft Graph APIs 
+Microsoft Graph APIs can be used to configure CAs. 
+
+The following examples show how to use Microsoft Graph to run Create, Read, Update, or Delete (CRUD) operations for a PKI or CA.
+
+#### Create a PKI container object
+
+##### Request body
+
+```http
+PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/
+Content-Type: application/json
+{
+   "displayName": "ContosoPKI"
+}
+```
+
+#### Get all the PKI objects
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations
+ConsistencyLevel: eventual
+```
+
+#### Get PKI object by PKI ID.
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/
+ConsistencyLevel: eventual
+```
+
+#### Upload CAs with a .p7b file
+
+```http
+#### Request body
+
+PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
+Content-Type: application/json
+{
+    	"uploadUrl":"https://CBA/demo/CBARootPKI.p7b,
+    	"sha256FileHash": "AAAAAAD7F909EC2688567DE4B4B0C404443140D128FE14C577C5E0873F68C0FE861E6F"
+}
+```
+
+#### Get all CAs in a PKI
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities
+ConsistencyLevel: eventual
+```
+
+#### Get a specific CA within a PKI by CA id
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
+ConsistencyLevel: eventual
+```
+
+#### Update specific CA issuer hints flag
+
+```http
+#### Request body
+
+PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
+Content-Type: application/json
+{
+   "isIssuerHintEnabled": true
+}
+```
+Configure certificate authorities (CA) using PowerShell
+For this configuration, you can use [Microsoft Graph PowerShell] (/powershell/microsoftgraph/installation).
+
+1. Start PowerShell with administrator privileges.
+1. Install and import the Microsoft Graph PowerShell SDK.
+   ```powershell
+   Install-Module Microsoft.Graph -Scope AllUsers
+   Import-Module Microsoft.Graph.Authentication
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+1. Connect to the tenant and accept all.
+
+   ```powershell
+      Connect-MGGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All" -TenantId <tenantId>
+   ``` 
+
+
+### Audit log 
+Any CRUD operations on a PKI or CA within the trust store are logged into the Microsoft Entra audit logs. 
+
+:::image type="content" border="false" source="./media/how-to-certificate-based-authentication/audit-logs.png" alt-text="Diagram of Audit logs.":::
+
+### FAQs
+
+**Question**: Why does upload PKI fail?
+
+**Answer**: Check if the PKI file is valid and can be accessed without any issues. The max size of PKI file should be 
+
+**Question**: What is the SLA for PKI upload?
+
+**Answer**: PKI upload is an asynchronous operation and may take up to 30 minutes for completion.
+
+**Question**: How do you generate SHA256 checksum for PKI file?
+
+**Answer**: To generate the SHA256 checksum of the PKI.p7b file, run the command: 
+
+```powershell
+Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
+```
 
 
 ## Step 2: Enable CBA on the tenant
