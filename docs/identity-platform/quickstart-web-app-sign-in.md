@@ -361,7 +361,7 @@ If you want to deploy the web sample to Tomcat, make a couple changes to the sou
       ```
 
 2.   Tomcat's default HTTP port is 8080, but you need an HTTPS connection over port 8443. To configure this setting:
-        - Go to *tomcat/conf/server.xml*.
+        - Open *tomcat/conf/server.xml* file.
         - Search for the `<connector>` tag, and replace the existing connector with this connector:
 
           ```xml
