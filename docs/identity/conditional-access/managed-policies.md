@@ -23,8 +23,6 @@ cybersecurity. Together, we can build cyber resilience through innovative action
 
 As part this work we're making Microsoft-managed policies available in Microsoft Entra tenants around the world. These [simplified Conditional Access policies](#what-is-conditional-access) take action to require multifactor authentication, which a [recent study](https://arxiv.org/abs/2305.00945) finds can reduce the risk of compromise by greater than 99%.
 
-Microsoft-managed policies requiring multifactor authentication differ from the [announcement of mandatory multifactor authentication for Azure sign-in made in 2024](https://azure.microsoft.com/blog/announcing-mandatory-multi-factor-authentication-for-azure-sign-in/) that started gradual rollout in October of 2024. More information about that enforcement can be found in the article, [Planning for mandatory multifactor authentication for Azure and other admin portals](../authentication/concept-mandatory-multifactor-authentication.md).
-
 :::image type="content" source="media/managed-policies/microsoft-managed-policy.png" alt-text="Screenshot showing an example of a Microsoft-managed policy in the Microsoft Entra admin center." lightbox="media/managed-policies/microsoft-managed-policy-expanded-full.png":::
 
 Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Policies**.
@@ -47,6 +45,9 @@ As threats evolve over time, Microsoft might change these policies in the future
 This policy covers [14 admin roles](#what-administrator-roles-are-covered-by-these-policies) that we consider to be highly privileged, who are accessing the [Microsoft Admin Portals group](policy-old-require-mfa-admin-portals.md), and requires them to perform multifactor authentication.
 
 This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled.
+
+> [!TIP]
+> Microsoft-managed policies requiring multifactor authentication differ from the [announcement of mandatory multifactor authentication for Azure sign-in made in 2024](https://azure.microsoft.com/blog/announcing-mandatory-multi-factor-authentication-for-azure-sign-in/) that started gradual rollout in October of 2024. More information about that enforcement can be found in the article, [Planning for mandatory multifactor authentication for Azure and other admin portals](../authentication/concept-mandatory-multifactor-authentication.md).
 
 ### Multifactor authentication for per-user multifactor authentication users
 
