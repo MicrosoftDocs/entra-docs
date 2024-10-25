@@ -94,7 +94,7 @@ Also, the chosen approver and a requestor of an access package have rights, alth
 
 The following table lists the tasks that the entitlement management roles can do within entitlement management.
 
-| Task | Admin | Catalog creator | Catalog owner | Access package manager | Access package assignment manager |
+| Task |  Identity Governance Administrator | Catalog creator | Catalog owner | Access package manager | Access package assignment manager |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [Delegate to a catalog creator](entitlement-management-delegate-catalog.md) | :heavy_check_mark: |  |  |  |  |
 | [Add a connected organization](entitlement-management-organization.md) | :heavy_check_mark: |  |  |  |  |
