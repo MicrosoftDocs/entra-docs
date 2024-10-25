@@ -151,7 +151,8 @@ In this example, the SAP SuccessFactors attribute mapping is shown as follows:
    > The source and target values of custom security attributes are redacted in the provisioning logs. 
 1. In the **Custom security attributes** screen of the user's Microsoft Entra ID profile, you can view the actual values set for that user. You need at least the [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) role to view this data.
 
-   :::image type="content" source="media/custom-security-attributes/assigned-values.png" alt-text="Screenshot of the assigned values column in the Custom security attributes screen.":::
+   :::image type="content" source="media/custom-security-attributes/assigned-values.png" alt-text="Screenshot of the assigned values column in the Custom security attributes screen."
+   lightbox="media/custom-security-attributes/assigned-values-expanded.png":::
 
 ### Test with the API-driven provisioning app
 
