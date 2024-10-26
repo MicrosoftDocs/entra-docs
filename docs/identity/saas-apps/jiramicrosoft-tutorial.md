@@ -32,7 +32,7 @@ Use your Microsoft Entra account with Atlassian JIRA server to enable single sig
 To configure Microsoft Entra integration with JIRA SAML SSO by Microsoft, you need the following items:
 
 - A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-- JIRA Core and Software 6.4 to 9.10.0 or JIRA Service Desk 3.0 to 4.22.1 should be installed and configured on Windows 64-bit version.
+- JIRA Core and Software 7.0 to 9.17.4 or JIRA Service Desk 3.0 to 4.22.1 should be installed and configured on Windows 64-bit version.
 - JIRA server is HTTPS enabled.
 - Note the supported versions for JIRA Plugin are mentioned in below section.
 - JIRA server is reachable on the Internet particularly to the Microsoft Entra login page for authentication and should able to receive the token from Microsoft Entra ID.
@@ -53,12 +53,20 @@ To get started, you need the following items:
 
 ## Supported versions of JIRA
 
-* JIRA Core and Software: 6.4 to 9.10.0.
+* JIRA Core and Software: 7.0 to 9.17.4.
 * JIRA Service Desk 3.0 to 4.22.1.
 * JIRA also supports 5.2. For more details, click [Microsoft Entra single sign-on for JIRA 5.2](jira52microsoft-tutorial.md).
 
 > [!NOTE]
 > Please note that our JIRA Plugin also works on Ubuntu Version 16.04 and Linux.
+
+## Microsoft SSO Plugins Market Place Data center and Server Side Application Link
+
+* [Microsoft Azure Active Directory single sign-on for JIRA Data-Center Application](https://marketplace.atlassian.com/apps/1224430/microsoft-azure-active-directory-single-sign-on-for-jira?tab=overview&hosting=datacenter
+)
+
+* [Microsoft Azure Active Directory single sign-on for JIRA Server side Application](https://www.microsoft.com/en-us/download/details.aspx?id=56506)
+
 
 ## Scenario description
 
@@ -228,7 +236,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 6. Perform following steps on configuration page:
 
-	![Screenshot shows the Microsoft Entra single sign-on for Jira configuration page.](./media/jiramicrosoft-tutorial/jira-configure-addon.png)
+	![Screenshot shows the Microsoft Entra single sign-on for Jira configuration page.](https://github.com/SagarQA1695/azure-docs/blob/main/articles/active-directory/saas-apps/media/jiramicrosoft-tutorial/SSO-Plugin-Configuration-Page.png)
 
 	> [!TIP]
 	> Ensure that there is only one certificate mapped against the app so that there is no error in resolving the metadata. If there are multiple certificates, upon resolving the metadata, admin gets an error.
@@ -241,30 +249,35 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	
 	d. In **Login Button Description** type the description of button your organization wants the users to see on login screen.
 
-	e. In **SAML User ID Locations** select either **User ID is in the NameIdentifier element of the Subject statement** or **User ID is in an Attribute element**.  This ID has to be the JIRA user ID. If the user ID is not matched, then system will not allow users to sign in.
+	e.  In **Default Group** Select your organization Default Group to assign to new users (Default groups facilitate organized access rights to new user account).
+
+	f. In **SAML User ID Locations** select either **User ID is in the NameIdentifier element of the Subject statement** or **User ID is in an Attribute element**.  This ID has to be the JIRA user ID. If the user ID is not matched, then the system doesn't allow users to sign in.
 
 	> [!Note]
 	> Default SAML User ID location is Name Identifier. You can change this to an attribute option and enter the appropriate attribute name.
 
-	f. If you select **User ID is in an Attribute element** option, then in **Attribute name** textbox type the name of the attribute where User ID is expected.
+	g. If you select **User ID is in an Attribute element** option, then in **Attribute name** textbox type the name of the attribute where User ID is expected.
 
-	g. If you are using the federated domain (like ADFS, and so on) with Microsoft Entra ID, then click on the **Enable Home Realm Discovery** option and configure the **Domain Name**.
+	h.  In **Auto-create User** feature (JIT User Provisioning): It automates user account creation in authorized web applications, without the need for manual provisioning. This reduces administrative workload and increases productivity. Because JIT relies on the login response from Azure AD, enter the SAML-response attribute values, which include the user's email address, last name, and first name.
 
-	h. In **Domain Name** type the domain name here in case of the ADFS-based login.
 
-	i. Check **Enable Single Sign out** if you wish to sign out from Microsoft Entra ID when a user sign out from JIRA.
+	i. If you are using the federated domain (like ADFS, and so on) with Microsoft Entra ID, then click on the **Enable Home Realm Discovery** option and configure the **Domain Name**.
+
+	j. In **Domain Name** type the domain name here in case of the ADFS-based login.
+
+	k. Check **Enable Single Sign out** if you wish to sign out from Microsoft Entra ID when a user sign out from JIRA.
 	
-	j. Enable **Force Azure Login** checkbox, if you wish to sign in through Microsoft Entra credentials only.
+	l. Enable **Force Azure Login** checkbox, if you wish to sign in through Microsoft Entra credentials only.
 	
 	> [!Note]
 	> To enable the default login form for admin login on login page when force azure login is enabled, add the query parameter in the browser URL.
 	> `https://<domain:port>/login.jsp?force_azure_login=false`
 
-	k. **Enable Use of Application Proxy** checkbox, if you have configured your on-premises atlassian application in an application proxy setup.
+	m. **Enable Use of Application Proxy** checkbox, if you have configured your on-premises atlassian application in an application proxy setup.
 
 	* For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/overview-what-is-app-proxy.md).
 
-	l. Click **Save** button to save the settings.
+	n. Click **Save** button to save the settings.
 
 	> [!NOTE]
 	> For more information about installation and troubleshooting, visit [MS JIRA SSO Connector Admin Guide](./ms-confluence-jira-plugin-adminguide.md). There is also an [FAQ](./ms-confluence-jira-plugin-adminguide.md) for your assistance.
