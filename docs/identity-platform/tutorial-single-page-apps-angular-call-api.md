@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Call an API from a Angular single-page app"
+title: "Tutorial: Call an API from an Angular single-page app"
 description: Call an API from an Angular single-page app in a Microsoft Entra tenant. Learn secure access and data retrieval steps.
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -14,7 +14,7 @@ ms.topic: tutorial
 
 # Tutorial: Call an API from an Angular single-page app
 
-This tutorial is part 4 of a series that demonstrates building an Angular single-page app (SPA), which uses the Microsoft identity platform for authentication. In this tutorial, you'll call Microsoft Graph API from your Angular SPA.
+This tutorial is part 4 of a series that demonstrates building an Angular single-page app (SPA), which uses the Microsoft identity platform for authentication. In this tutorial, you call Microsoft Graph API from your Angular SPA.
 
 In this tutorial:
 

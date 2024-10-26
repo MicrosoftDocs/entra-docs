@@ -26,9 +26,6 @@ In this tutorial:
 ## Prerequisites
 
 * Completion of the prerequisites and steps in [Tutorial: Register an application](tutorial-single-page-apps-angular-register-app.md).
-* Although any IDE that supports Angular applications can be used, the following Visual Studio IDEs are used for this tutorial. They can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads) page. For macOS users, it's recommended to use Visual Studio Code.
-  - Visual Studio 2022
-  - Visual Studio Code
 * [Node.js](https://nodejs.org/en/download/).
 
 ## Create a new Angular project
@@ -66,7 +63,7 @@ Launch an Angular project using the Angular CLI to create a well-structured appl
     ng generate component profile
     ```
 
-    These components will serve as the main views in your application.
+    These components serve as the main views in your application.
 
 ## Configure the settings for the application
 
@@ -248,7 +245,7 @@ To handle user authentication and session management using MSAL in Angular, you 
     }
     ```
 
-    The code integrates MSAL with Angular to manage user authentication. It listens for login status changes, displays the login state, handles token acquisition events, and provides methods to log users in or out based on Microsoft Entra configuration.
+    The code integrates MSAL with Angular to manage user authentication. It listens for sign in status changes, displays the sign in state, handles token acquisition events, and provides methods to log users in or out based on Microsoft Entra configuration.
 
 1. Save the file.
 
