@@ -148,13 +148,13 @@
         - name: Angular
           items:
           - name: Register your app
-            href: tutorial-single-page-app-angular-register-app.md
+            href: tutorial-single-page-apps-angular-register-app.md
           - name: Prepare your app
-            href: tutorial-single-page-app-angular-prepare-spa.md
+            href: tutorial-single-page-apps-angular-prepare-app.md
           - name: Sign in users
-            href: tutorial-single-page-app-angular-sign-in-users.md
+            href: tutorial-single-page-apps-angular-sign-in-users-app.md
           - name: Get user data from web API
-            href: tutorial-single-page-app-angular-call-api.md
+            href: tutorial-single-page-apps-angular-call-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
