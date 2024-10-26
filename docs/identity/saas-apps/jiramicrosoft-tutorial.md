@@ -236,7 +236,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 6. Perform following steps on configuration page:
 
-	![Screenshot shows the Microsoft Entra single sign-on for Jira configuration page.](https://github.com/SagarQA1695/azure-docs/blob/main/articles/active-directory/saas-apps/media/jiramicrosoft-tutorial/SSO-Plugin-Configuration-Page.png)
+	![Screenshot shows the Microsoft Entra single sign-on for Jira configuration page.](./media/jiramicrosoft-tutorial/sso-plugin-configuration-page.png)
 
 	> [!TIP]
 	> Ensure that there is only one certificate mapped against the app so that there is no error in resolving the metadata. If there are multiple certificates, upon resolving the metadata, admin gets an error.
