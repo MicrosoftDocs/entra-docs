@@ -40,7 +40,7 @@ Our [standard libraries](reference-v2-libraries.md) implement resilient and secu
 * The keys should be refreshed:
   * Once on process startup or when cache is empty
   * Periodically (recommended every 1 hour) as a background job 
-  * Dynamically if a token is received that has an unknown key
+  * Dynamically if a received token was signed with an unknown key (unknown **kid** or **tid** in the header)
 
 #### KeyRefresh procedure (pseudo code):
 This procedure uses a global (lastSuccessfulRefreshTime timestamp) to prevent conditions that refresh keys too often.
