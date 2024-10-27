@@ -19,11 +19,68 @@ This article discusses what you need to know about the public keys that are used
 ## Overview of signing keys in the Microsoft identity platform
 The Microsoft identity platform uses public-key cryptography built on industry standards to establish trust between itself and the applications that use it. In practical terms, this works in the following way: The Microsoft identity platform uses a signing key that consists of a public and private key pair. When a user signs in to an application that uses the Microsoft identity platform for authentication, the Microsoft identity platform creates a security token that contains information about the user. This token is signed by the Microsoft identity platform using its private key before it's sent back to the application. To verify that the token is valid and originated from Microsoft identity platform, the application must validate the token’s signature using the public keys exposed by the Microsoft identity platform that is contained in the tenant’s [OpenID Connect discovery document](https://openid.net/specs/openid-connect-discovery-1_0.html) or SAML/WS-Fed [federation metadata document](federation-metadata.md).
 
-For security purposes, the Microsoft identity platform’s signing key rolls on a periodic basis and, in the case of an emergency, could be rolled over immediately. There's no set or guaranteed time between these key rolls - any application that integrates with the Microsoft identity platform should be prepared to handle a key rollover event no matter how frequently it may occur. If your application doesn't handle sudden refreshes, and attempts to use an expired key to verify the signature on a token, your application incorrectly rejects the token.  Checking every 24 hours for updates is a best practice, with throttled (once every five minutes at most) immediate refreshes of the key document if a token is encountered that doesn't validate with the keys in your application's cache. 
+For security purposes, the Microsoft identity platform’s signing key rolls on a periodic basis and, in the case of an emergency, could be rolled over immediately. There's no set or guaranteed time between these key rolls - any application that integrates with the Microsoft identity platform should be prepared to handle a key rollover event no matter how frequently it may occur. If your application doesn't handle sudden refreshes, and attempts to use an expired key to verify the signature on a token, your application incorrectly rejects the token. It is recommended to use [standard libraries](reference-v2-libraries.md) to ensure key metadata is correctly refreshed and kept up to date. In cases where standard libraries are not used, please make sure the implementation follows the best practices below. 
 
-There's always more than one valid key available in the OpenID Connect discovery document and the federation metadata document. Your application should be prepared to use any and all of the keys specified in the document, since one key may be rolled soon, another may be its replacement, and so forth.  The number of keys present can change over time based on the internal architecture of the Microsoft identity platform as we support new platforms, new clouds, or new authentication protocols. Neither the order of the keys in the JSON response nor the order in which they were exposed should be considered meaningful to your app. 
+There's always more than one valid key available in the OpenID Connect discovery document and the federation metadata document. Your application should be prepared to use any and all of the keys specified in the document, since one key may be rolled soon, another may be its replacement, and so forth.  The number of keys present can change over time based on the internal architecture of the Microsoft identity platform as we support new platforms, new clouds, or new authentication protocols. Neither the order of the keys in the JSON response nor the order in which they were exposed should be considered meaningful to your application. 
 
 Applications that support only a single signing key, or those that require manual updates to the signing keys, are inherently less secure and less reliable.  They should be updated to use [standard libraries](reference-v2-libraries.md) to ensure that they're always using up-to-date signing keys, among other best practices. 
+
+## Best practices for keys metadata caching and validation
+* Discover keys using the tenant-specific endpoint as described in [OpenID Connect (OIDC)](v2-protocols-oidc.md) and [Federation metadata](federation-metadata.md)
+* Even if your application is deployed across multiple tenants, it’s recommended to always discover and cache keys independently for each tenant the application serves (using the tenant-specific endpoint). A key that is common across tenants today can become distinct across tenants in the future. 
+* Use the caching algorithm below to ensure the caching is resilient and secure
+
+### Keys metadata caching algorithm:
+Our [standard libraries](reference-v2-libraries.md) implement resilient and secure caching of keys. It’s recommended to use them to avoid subtle defects in the implementation. For custom implementations, this is the rough algorithm:
+
+#### General considerations:
+* The service validating tokens should have a cache capable of storing many distinct keys (10-1000). 
+* The keys should be cached individually, using the key id (“kid” in the OIDC keys metadata specification) as a cache key.
+* The time-to-live of keys in the cache should be configured to 24 hours, with refreshes happening every hour. This makes sure the system can respond quickly to keys being removed, but has enough cache duration to not be affected by problems in fetching keys. 
+* The keys should be refreshed:
+  * Once on process startup or when cache is empty
+  * Periodically (recommended every 1 hour) as a background job 
+  * Dynamically if a received token was signed with an unknown key (unknown **kid** or **tid** in the header)
+
+#### KeyRefresh procedure (pseudo code):
+This procedure uses a global (lastSuccessfulRefreshTime timestamp) to prevent conditions that refresh keys too often.
+* [OpenID Connect (OIDC)](v2-protocols-oidc.md)
+```csharp
+  if (lastSuccessfulRefreshTime is set and more recent than 5 minutes ago) 
+    return // without refreshing
+
+  // Load keys URL using the, see OpenID Connect (OIDC)
+  // Fetch the list of keys from the tenant-specific keys URL discovered above
+
+  foreach(key in the list) {
+    if (key id (kid) exists in cache) // cache[tid][kid]
+      set TTL = now+24h
+    else 
+      add key to the cache with TTL = now + 24h
+  }
+  set lastSuccessfulRefreshTime to now (current timestamp)
+```
+
+#### Service Startup procedure:
+* KeyRefresh to update the keys
+* Launch a background job which will call KeyRefresh every 1h
+
+### TokenValidation procedure for validating the key (pseudo code):
+```csharp
+  Get token from input request (input token)
+  Get key id from input token (**kid** / **tid** header claim for JWT)
+  if (key id is found in cache) { // cache[tid][kid]
+    validate token according to the key and return
+  }
+  else (key is not found cache) {
+    Call KeyRefresh to opportunistically refresh the cache 
+      if (key id is found in cache) {
+      validate token according to the key and return
+    }
+    else 
+      return token validation failure
+  }
+```
 
 ## How to assess if your application will be affected and what to do about it
 How your application handles key rollover depends on variables such as the type of application or what identity protocol and library was used. The sections below assess whether the most common types of applications are impacted by the key rollover and provide guidance on how to update the application to support automatic rollover or manually update the key.
