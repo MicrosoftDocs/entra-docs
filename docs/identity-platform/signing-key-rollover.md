@@ -68,7 +68,7 @@ This procedure uses a global (lastSuccessfulRefreshTime timestamp) to prevent co
 ### TokenValidation procedure for validating the key (pseudo code):
 ```csharp
   Get token from input request (input token)
-  Get key id from input token
+  Get key id from input token (**kid** / **tid** header claim for JWT)
   if (key id is found in cache) { // cache[tid][kid]
     validate token according to the key and return
   }
