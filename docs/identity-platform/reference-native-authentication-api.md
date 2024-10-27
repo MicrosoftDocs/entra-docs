@@ -5,7 +5,7 @@ author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: reference
 ms.date:  09/30/2024
 

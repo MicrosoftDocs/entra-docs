@@ -4,7 +4,7 @@ description: Learn how you can use web fallback to improve the resilience of you
 author: kengaderdus
 manager: mwongerapk
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date:  04/27/2024
 ms.author: kengaderdus

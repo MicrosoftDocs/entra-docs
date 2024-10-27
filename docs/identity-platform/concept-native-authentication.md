@@ -5,7 +5,7 @@ description: Learn how you can use native authentication to take greater control
 author: csmulligan
 manager: celestedg
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date:  09/30/2024
 ms.author: cmulligan
