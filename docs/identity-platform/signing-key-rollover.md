@@ -378,7 +378,7 @@ To check and update signing keys with PowerShell, you'll need the [MSIdentityToo
 
 1. For each of the returned signing key thumbprints, run the `Update-MsIdApplicationSigningKeyThumbprint` cmdlet and test your web application sign-in process.
 
-1. If the web application signs you in properly, it supports automatic rollover. If it doesn't, modify your application to support manual rollover. Check out [Establishing a manual rollover process](#how-to-perform-a-manual-rollover-if-your-application-does-not-support-automatic-rollover) for more information.
+1. If the web application signs you in properly, it supports automatic rollover. If it doesn't, modify your application to support manual rollover. Check out [Establishing a manual rollover process](#how-to-perform-a-manual-rollover-if-your-application-doesnt-support-automatic-rollover) for more information.
 
 1. Run the following script to revert to normal behavior:
 
