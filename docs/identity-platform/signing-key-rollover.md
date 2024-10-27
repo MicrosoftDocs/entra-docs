@@ -419,15 +419,15 @@ To check and update signing keys with PowerShell, you need the [`MSIdentityTools
     Get-MsIdSigningKeyThumbprint -Latest | Update-MsIdApplicationSigningKeyThumbprint -ApplicationId <ApplicationId>
     ```
 
-2. Test the web application by signing in to get a new token. The key update change is instantaneous, but make sure you use a new browser session. For example, use Internet Explorer's "InPrivate," Chrome's "Incognito," or Firefox's "Private" mode) to ensure you're issued a new token.
+1. Test the web application by signing in to get a new token. The key update change is instantaneous, but make sure you use a new browser session to ensure you're issued a new token. For example, use Microsoft Edge's "InPrivate," Chrome's "Incognito," or Firefox's "Private" mode.
 
-3. If you experience any issues, revert to the previous key you were using and contact Azure support:
+1. If you experience any issues, revert to the previous key you were using and contact Azure support:
 
     ```powershell
     Update-MsIdApplicationSigningKeyThumbprint -ApplicationId <ApplicationId> -KeyThumbprint <PreviousKeyThumbprint>
     ```
 
-4. After you update your application to support manual rollover, revert to normal behavior:
+1. After you update your application to support manual rollover, revert to normal behavior:
 
     ```powershell
     Update-MsIdApplicationSigningKeyThumbprint -ApplicationId <ApplicationId> -Default
