@@ -66,7 +66,7 @@ To create a policy for an access package, you need to start from the access pack
    > [!NOTE]
    > At this time, Entitlement management will automatically create a dynamic security group corresponding to each policy, in order to evaluate the users in scope. This group should not be modified except by Entitlement Management itself.  This group can also be modified or deleted automatically by Entitlement Management, so don't use this group for other applications or scenarios.
 
-1. Microsoft Entra ID evaluates the users in the organization that are in scope of this rule, and create assignments for those users who don't already have assignments to the access package. A policy can include at most 5,000 users in its rule. It can take several minutes for the evaluation to occur, or for subsequent updates to user's attributes to be reflected in the access package assignments.
+1. Microsoft Entra ID evaluates the users in the organization that are in scope of this rule, and create assignments for those users who don't already have assignments to the access package. A policy can include at most 15,000 users in its rule. It can take several minutes for the evaluation to occur, or for subsequent updates to user's attributes to be reflected in the access package assignments.
 
 ## Create an automatic assignment policy programmatically
 
