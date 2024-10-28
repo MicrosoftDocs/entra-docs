@@ -208,7 +208,9 @@ POST https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551
 
 ### User self-assignment and activation
 
-
+Scenario 1: Admin Creates, Assigns, and Activates Token: creating, assigning, and activating a token as an admin, including the necessary API calls and verification steps.
+Scenario 2: Admin Creates and Assigns, End-User Activates: an admin can create and assign a token, and then the end-user can activate it on their Security info page.
+Scenario 3: Admin Creates, End-User Self-Assigns and Activates: admin creates tokens without assignment, and the end-user self-assigns and activates the token.
 
 ### Upload tokens in CSV format
 
