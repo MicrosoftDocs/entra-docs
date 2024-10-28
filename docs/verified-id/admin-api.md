@@ -1015,7 +1015,7 @@ example:
                 "title": "BankofWoodgroveIdentity",
                 "logo": {
                     "description": "Defaultbankofwoodgrovelogo",
-                    "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png"
+                    "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png"
                 }
             },
             "consent": {

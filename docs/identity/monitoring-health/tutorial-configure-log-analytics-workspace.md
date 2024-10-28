@@ -4,13 +4,13 @@ description: Learn how to configure a Log Analytics workspace in Microsoft Entra
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: tutorial
-ms.date: 02/09/2024
+ms.date: 10/24/2024
 ms.author: sarahlipsey
 author: shlipsey3
 manager: amycolannino
 ms.reviewer: sandeo
 
-#Customer intent: As an IT admin, I want to set up log analytics so I can analyze the health of my environment.
+#Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.
 
 ---
 # Tutorial: Configure a log analytics workspace
@@ -70,7 +70,7 @@ To configure a Log Analytics workspace, you need to **create the workspace** and
 
 1. Select **Create**.
 
-    ![Screenshot shows the Add button in the log analytics workspaces page.](./media/tutorial-configure-log-analytics-workspace/add.png)
+    ![Screenshot of the Create button in the log analytics workspaces page.](./media/tutorial-configure-log-analytics-workspace/create-new-workspace.png)
 
 1.  On the **Create Log Analytics workspace** page, perform the following steps:
 
@@ -82,15 +82,11 @@ To configure a Log Analytics workspace, you need to **create the workspace** and
 
     4. Select your region.
 
-    ![Create log analytics workspace](./media/tutorial-configure-log-analytics-workspace/create-log-analytics-workspace.png)
+    ![Screenshot of the details page of create new log analytics workspace.](./media/tutorial-configure-log-analytics-workspace/create-new-workspace-details.png)
 
 1. Select **Review + Create**.
 
-    ![Review and create](./media/tutorial-configure-log-analytics-workspace/review-create.png)
-
 1. Select **Create** and wait for the deployment. You might need to refresh the page to see the new workspace.
-
-    ![Create](./media/tutorial-configure-log-analytics-workspace/create-workspace.png)
 
 ### Configure diagnostic settings
 
@@ -102,17 +98,19 @@ To configure diagnostic settings, you need switch to the Microsoft Entra admin c
 
 1. Select **Add diagnostic setting**.
 
-    ![Add diagnostic setting](./media/tutorial-configure-log-analytics-workspace/add-diagnostic-setting.png)
+    ![Screenshot of the Add diagnostic setting option.](./media/tutorial-configure-log-analytics-workspace/add-diagnostic-setting.png)
 
 1. On the **Diagnostic setting** page, perform the following steps:
 
-    1. Under **Category details**, select **AuditLogs** and **SigninLogs**.
+    1. Provide a name for the diagnostic setting.    
+
+    1. Under **Logs**, select **AuditLogs** and **SigninLogs**.
 
     1. Under **Destination details**, select **Send to Log Analytics**, and then select your new log analytics workspace. 
    
     3. Select **Save**. 
 
-    ![Select diagnostics settings](./media/tutorial-configure-log-analytics-workspace/select-diagnostics-settings.png)
+    ![Screenshot of the select diagnostics settings options.](./media/tutorial-configure-log-analytics-workspace/select-diagnostics-settings.png)
 
 Your logs can now be queried using the Kusto Query Language (KQL) in Log Analytics. You might need to wait around 15 minutes for the logs to populate.
 
@@ -189,11 +187,11 @@ This procedure shows how to create a new workbook using the quickstart template.
 
 1. In the **Quickstart** section, select **Empty**.
 
-    ![Quick start](./media/tutorial-configure-log-analytics-workspace/quick-start.png)
+    ![Screenshot of the blank workbook in the Quick start section.](./media/tutorial-configure-log-analytics-workspace/quick-start.png)
 
 1. From the **Add** menu, select **Add text**.
 
-    ![Add text](./media/tutorial-configure-log-analytics-workspace/add-text.png)
+    ![Screenshot of the Add text menu option.](./media/tutorial-configure-log-analytics-workspace/add-text.png)
 
 1. In the textbox, enter `# Client apps used in the past week` and select **Done Editing**.
 
@@ -202,7 +200,7 @@ This procedure shows how to create a new workbook using the quickstart template.
 
 1. Below the text window, open the **Add** menu and select **Add query**.
 
-    ![Add query](./media/tutorial-configure-log-analytics-workspace/add-query.png)
+    ![Screenshot of the Add query menu option.](./media/tutorial-configure-log-analytics-workspace/add-query.png)
 
 1. In the query textbox, enter: `SigninLogs | where TimeGenerated > ago(7d) | project TimeGenerated, UserDisplayName, ClientAppUsed | summarize count() by ClientAppUsed`
 
@@ -212,7 +210,7 @@ This procedure shows how to create a new workbook using the quickstart template.
 
 1. In the toolbar, from the **Visualization** menu select **Pie chart**.
 
-    ![Pie chart](./media/tutorial-configure-log-analytics-workspace/pie-chart.png)
+    ![Screenshot showing the Pie chart menu option.](./media/tutorial-configure-log-analytics-workspace/pie-chart.png)
 
 1. Select **Done Editing** at the top of the page.
 
@@ -250,7 +248,9 @@ This procedure shows how to add a query to an existing workbook template. The ex
 
 1. From the **Visualization** menu, select **Bar chart**. 
 
-1. Open the **Advanced Settings**.
+1. Select **Advanced Settings**.
+
+    ![Screenshot of the time range, visualization, and advanced setting options.](./media/tutorial-configure-log-analytics-workspace/select-query-options.png)
 
 1.  In the **Chart title** field, enter `Conditional Access status over the last 20 days`  and select **Done Editing**. 
 

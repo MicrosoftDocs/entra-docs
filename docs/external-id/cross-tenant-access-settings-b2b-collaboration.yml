@@ -1,12 +1,12 @@
 ### YamlMime:HowTo
 ---
 metadata:
-  title: Configure B2B collaboration cross-tenant access
-  description: Use cross-tenant collaboration settings to manage how you collaborate with other Microsoft Entra organizations. Learn how to configure  outbound access to external organizations and inbound access from external Microsoft Entra organizations for B2B collaboration.
+  title: Cross-tenant access settings
+  description: Learn how to manage cross-tenant access settings for B2B collaboration and direct connect in Microsoft Entra External ID. Control inbound and outbound access, trust MFA, and device claims from other organizations.
   author: msmimart
   ms.author: mimart
   manager: celestedg
-  ms.date: 08/21/2024
+  ms.date: 10/21/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -15,7 +15,7 @@ metadata:
     - ge-structured-content-pilot
 
 title: |
-  Configure cross-tenant access settings for B2B collaboration
+  Manage cross-tenant access settings for B2B collaboration
 introduction: |
   [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
