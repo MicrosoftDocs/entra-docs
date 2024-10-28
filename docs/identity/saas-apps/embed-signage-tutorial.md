@@ -136,8 +136,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In the **Single sign on** section, perform the following steps:
 
-    ![Screenshot shows the SSO Account.](./media/embed-signage-tutorial/settings.png "SSO Account")
-
     1. **Enable** single sign on checkbox.
 
     1. Open the downloaded **Federation Metadata XML** and upload the file into **Metadata XML file**.

@@ -134,16 +134,9 @@ Initiate the APM's **Guided Configuration** to launch the **Easy Button** Templa
 
 1. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-   ![Screenshot for Configure Easy Button- Install the template.](./media/f5-big-ip-headers-easy-button/easy-button-template.png)
+2. Under **Configuring the solution using the below steps will create the required objects**, review the list of configuration steps and select **Next**.
 
-2. Review the list of configuration steps and select **Next**.
-
-   ![Screenshot for Configure Easy Button - List configuration steps.](./media/f5-big-ip-headers-easy-button/configuration-steps.png)
-
-3. Follow the sequence of steps required to publish your application.
-
-   ![Screenshot of Configuration steps flow.](./media/f5-big-ip-headers-easy-button/configuration-steps-flow.png#lightbox)
-
+3. Under **Guided Configuration**, follow the sequence of steps required to publish your application.
 
 ### Configuration Properties
 
