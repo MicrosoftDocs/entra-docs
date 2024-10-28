@@ -33,13 +33,6 @@ Some OATH TOTP hardware tokens are programmable, meaning they don't come with a 
 
 Microsoft Entra ID supports the use of OATH-TOTP SHA--256 and SHA-1 tokens that refresh codes every 30 or 60 seconds. Customers can purchase these tokens from the vendor of their choice. Hardware OATH tokens are available for users with a Microsoft Entra ID P1 or P2 license.  
 
-> [!IMPORTANT]
-> The preview is only supported in Azure Global and Azure Government clouds.
-
-OATH TOTP hardware tokens typically come with a secret key, or seed, pre-programmed in the token. These keys must be input into Microsoft Entra ID as described in the following steps. Secret keys are limited to 128 characters, which is not compatible with some tokens. The secret key can only contain the characters *a-z* or *A-Z* and digits *2-7*, and must be encoded in *Base32*.
-
-Programmable OATH TOTP hardware tokens that can be reseeded can also be set up with Microsoft Entra ID in the software token setup flow.
-
 Microsoft Entra ID has a new Microsoft Graph API in preview for Azure and Azure for US Government clouds.
 
 This preview uses the hardware OATH token Authentication methods policy. [Privileged Authentication Administrators](~/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) can use Microsoft Graph to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview in the Microsoft Entra admin center. 
@@ -62,13 +55,15 @@ Feature | Description | API/Portal support | Role requirement
 
 1. You can view the Hardware OATH tokens policy status using the APIs
 
-
-   `https://developer.microsoft.com/graph/graph-explorer?request=policies%2FauthenticationMethodsPolicy%2FauthenticationMethodConfigurations%2FhardwareOath&method=GET&version=beta&GraphUrl=https://graph.microsoft.com`
+   ```msgraph-interactive
+   GET https://developer.microsoft.com/graph/graph-explorer?request=policies%2FauthenticationMethodsPolicy%2FauthenticationMethodConfigurations%2FhardwareOath&method=GET&version=beta&GraphUrl=https://graph.microsoft.com
+   ```
 
 1. Start by enabling Hardware OATH tokens policy using the APIs.
 
 
-1. If you enabled the HW OATH authentication method policy above, we recommend that you clear the **Verification code from mobile app or hardware token** setting. To verify this setting: Azure AD portal > Security > MFA > Additional cloud-based multifactor authentication settings.
+1. If you enabled the HW OATH authentication method policy above, we recommend that you clear the **Verification code from mobile app or hardware token** setting. To verify this setting, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
 
 Note: there might be some delays in the policy propagation(up to 20 mins). This can impact the 
 user’s ability to sign-in with HW OATH token and showing HW OATH token in the “Security Info” 
@@ -160,7 +155,7 @@ POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 To validate the token is activated, sign in as the test user.
 
 
-Let's try another example where a creates two tokens, with hashFunction optional. The hashFunction is SHA1 by default. For SHA256, you need to enter the property. 
+Let's try another example where a creates two tokens, with hashFunction optional. The hashFunction is SHA-1 by default. For SHA-256, enter `HMACSHA256` as the value for the property. 
 
 PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
 {
@@ -202,12 +197,16 @@ POST https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551
 
 
 
+### Upload tokens in CSV format
 
-OATH hardware tokens are supported as part of a public preview. For more information about previews, see [Supplemental Terms of Use for Microsoft Azure Previews](https://aka.ms/EntraPreviewsTermsOfUse).
+OATH TOTP hardware tokens typically come with a secret key, or seed, pre-programmed in the token. As an alternative to using the new Microsoft Graph API in preview, A Global Administrator can input these keys into Microsoft Entra ID. Secret keys are limited to 128 characters, which is not compatible with some tokens. The secret key can only contain the characters *a-z* or *A-Z* and digits *2-7*, and must be encoded in *Base32*.
+
+Programmable OATH TOTP hardware tokens that can be reseeded can also be set up with Microsoft Entra ID in the software token setup flow.
+
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/oath-tokens.png" alt-text="Screenshot of OATH token management." lightbox="./media/concept-authentication-methods/oath-tokens.png":::
 
-Once tokens are acquired, they must be uploaded in a comma-separated values (CSV) file format. The file should include the UPN, serial number, secret key, time interval, manufacturer, and model, as shown in the following example:
+Once tokens are acquired, a Global Administrator must upload them in a comma-separated values (CSV) file format. The file should include the UPN, serial number, secret key, time interval, manufacturer, and model, as shown in the following example:
 
 ```csv
 upn,serial number,secret key,time interval,manufacturer,model
@@ -217,17 +216,17 @@ Helga@contoso.com,1234567,2234567abcdef2234567abcdef,60,Contoso,HardwareKey
 > [!NOTE]
 > Make sure you include the header row in your CSV file. 
 
-Once properly formatted as a CSV file, an administrator can then sign in to the Microsoft Entra admin center, navigate to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the resulting CSV file.
+Once properly formatted as a CSV file, the Global Administrator can then sign in to the Microsoft Entra admin center, navigate to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the resulting CSV file.
 
 Depending on the size of the CSV file, it can take a few minutes to process. Select the **Refresh** button to get the current status. If there are any errors in the file, you can download a CSV file that lists any errors for you to resolve. The field names in the downloaded CSV file are different than the uploaded version.  
 
-Once any errors are addressed, the administrator then can activate each key by selecting **Activate** for the token and entering the OTP displayed on the token. You can activate a maximum of 200 OATH tokens every 5 minutes. 
+Once any errors are addressed, a Privileged Authentication Administrator or an end user can activate a key. Select **Activate** for the token and enterthe OTP displayed on the token. You can activate a maximum of 200 OATH tokens every 5 minutes. 
 
 Users can have a combination of up to five OATH hardware tokens or authenticator applications, such as the Microsoft Authenticator app, configured for use at any time. Hardware OATH tokens can't be assigned to guest users in the resource tenant. 
 
 > [!IMPORTANT]
 > Make sure to only assign each token to a single user.
-> In the future, support for the assignment of a single token to multiple users stops to prevent a security risk.
+> A single token can't be assigned to multiple users.
 
 ## Troubleshooting a failure during upload processing
 
