@@ -65,7 +65,7 @@ To build your Angular project, create a structure that looks like the following 
 
 ## Configure the settings for the application
 
-We will use the values recorded during the app registration to configure the application for authentication. Follow these steps:
+We'll use the values recorded during the app registration to configure the application for authentication. Follow these steps:
 
 1. Open the `src/app/app.module.ts` file and replace the contents with the following code:
 
@@ -158,7 +158,7 @@ We will use the values recorded during the app registration to configure the app
     export class AppModule { }
     ```
     
-    The code sets up MSAL for user authentication and API protection. It configures the app with MsalInterceptor to secure API requests and MsalGuard to protect routes, while defining key components and services for authentication. Replace the following values with the values from the Microsoft Entra admin center.
+    The code sets up MSAL for user authentication and API protection. It configures the app with `MsalInterceptor` to secure API requests and `MsalGuard` to protect routes, while defining key components and services for authentication. Replace the following values with the values from the Microsoft Entra admin center.
 
     - Replace `Enter_the_Application_Id_Here` with the `Application (client) ID` from the app registration.
     - Replace `Enter_the_Tenant_Info_Here` with the `Directory (tenant) ID` from the app registration.
