@@ -179,7 +179,7 @@ In this example, the SAP SuccessFactors attribute mapping is shown as follows:
 > The source and target values of custom security attributes get redacted in the provisioning logs. 
 To view the actual values set for the user, go the user's Microsoft Entra ID profile. You view the data in the **Custom security attributes** screen. You need at least the Attribute Assignment Administrator or Attribute Assignment Reader role to view this data.
 
-:::image type="content" source="media/custom-security-attributes/user-custom-security-attributes.png" alt-text="Screenshot of the Custom security attributes screen for the user." lightbox="media/custom-security-attributes/user-custom-attributes-expanded.png":::
+:::image type="content" source="media/custom-security-attributes/user-custom-security-attributes.png" alt-text="Screenshot of the Custom security attributes screen for the user." lightbox="media/custom-security-attributes/user-custom-security-attributes-expanded.png":::
 
 #### Sample SCIM payload with custom security attributes
 
