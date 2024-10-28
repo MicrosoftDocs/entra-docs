@@ -41,14 +41,14 @@ To build the Angular project from scratch, follow these steps:
     ng new msal-angular-tutorial --routing=true --style=css --strict=false
     ```
 
-    The command creates a new Angular project named msal-angular-tutorial with routing enabled, CSS for styling, and strict mode disabled.
+    The command creates a new Angular project named `msal-angular-tutorial` with routing enabled, CSS for styling, and strict mode disabled.
 
 1. Change to the project directory:
 
     ```console
     cd msal-angular-tutorial
     ```
-1. Install the MSAL Angular package:
+1. Install app dependencies:
 
     ```console
     npm install @azure/msal-browser @azure/msal-angular bootstrap
@@ -56,7 +56,7 @@ To build the Angular project from scratch, follow these steps:
 
     The command `npm install @azure/msal-browser @azure/msal-angular bootstrap` installs the Azure MSAL browser, Azure MSAL Angular, and Bootstrap packages.
 
-1. Add the Bootstrap CSS to the `styles` array in the `angular.json` file:
+1. Open `angular.json` and add Bootstrap's CSS path to the `styles` array::
 
     ```json
     "styles": [
@@ -65,7 +65,7 @@ To build the Angular project from scratch, follow these steps:
     ],
     ```
 
-    The code adds the Bootstrap CSS to the styles array in the angular.json file.
+    The code adds the Bootstrap CSS to the styles array in the `angular.json` file.
 
 1. Generate Home and Profile components:
 
@@ -76,8 +76,8 @@ To build the Angular project from scratch, follow these steps:
 
     The commands generate the Home and Profile components in the Angular project.
 
-1. Rename `app.routes.ts` to `app-routing.module.ts` and updated all references.
-1. Rename `app.config.ts` to `app.module.ts` and updated all references.
+1. Rename `app.routes.ts` to `app-routing.module.ts` and update all references of `app.routes.ts` throughout the application.
+1. Rename `app.config.ts` to `app.module.ts` and update all references to `app.config.ts` throughout the application.
 1. Remove unnecessary files and code from the project:
 
     ```console
