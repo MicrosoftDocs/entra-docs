@@ -108,7 +108,7 @@ This example includes custom security attributes that you could add to your tena
 1. Save the schema changes. 
 1. From the **Attribute mapping** screen, select **Add new mapping**.
 
-    :::image type="content" source="media/custom-security-attributes/add-new-mapping.png" alt-text="Screenshot of the Add new mapping options.":::
+    :::image type="content" source="media/custom-security-attributes/add-new-mapping.png" alt-text="Screenshot of the Add new mapping options." lightbox="media/custom-security-attributes/add-new-mapping-expanded.png:::
 
     - The custom security attributes display in the format `CustomSecurityAttributes.<AttributeSetName>_<AttributeName>`.  
 
