@@ -62,7 +62,7 @@ To specify your app type to your app registration, follow these steps:
 
 1. Under **Manage**, select **Authentication**.
 1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
-1. For the **Redirect URIs** enter `http://localhost:3000/auth/redirect`.
+1. For the **Redirect URIs** enter, `http://localhost:3000/auth/redirect`.
 1. Under **Front-channel logout URL**, enter `https://localhost:5001/signout-callback-oidc` for signing out.
 1. Select **Configure** to save your changes. 
 
@@ -75,7 +75,7 @@ To specify your app type to your app registration, follow these steps:
 
 1. Under **Manage**, select **Authentication**.
 1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
-1. For the **Redirect URIs** enter `https://localhost:8443/msal4jsample/secure/aad`. 
+1. For the **Redirect URIs** enter, `https://localhost:8443/msal4jsample/secure/aad`. 
 1. Add `https://localhost:8443/msal4jsample/graph/me` as a second redirect URI.
 1. Select **Configure** to save your changes. 
 
@@ -83,7 +83,7 @@ To specify your app type to your app registration, follow these steps:
 
 1. Under **Manage**, select **Authentication**.
 1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
-1. For the **Redirect URIs** enter `http://localhost:5000/getAToken`.
+1. For the **Redirect URIs** enter, `http://localhost:5000/getAToken`.
 1. Select **Configure** to save your changes.  
 
 ---
@@ -98,7 +98,7 @@ To specify your app type to your app registration, follow these steps:
 
 To use a certificate credential for your web app, you need to create, then upload the certificate. For testing purposes, you can use a self-signed certificate. Use the following steps to create and upload a self-signed certificate:
 
-1. Using your terminal,navigate to your project directory, then create the self-signed certificate.
+1. Using your terminal, navigate to your project directory, then create the self-signed certificate.
 
     ```console
     cd ms-identity-docs-code-dotnet\web-app-aspnet\
@@ -123,7 +123,7 @@ To use a certificate credential for your web app, you need to create, then uploa
 
 ---
 
-When creating credentials for a confidential client application, Microsoft recommends that you use a certificate instead of a client secret before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md). 
+When you create credentials for a confidential client application, Microsoft recommends that you use a certificate instead of a client secret before moving the application to a production environment. For more information on how to use a certificate, see [these instructions](./certificate-credentials.md). 
 
 ## Clone or download sample web application 
 
@@ -172,7 +172,7 @@ For you to sign in users with the sample app, you need to update it with your ap
 
 #### [Node](#tab/node-worforce)
 
-In the *ms-identity-node-main* folder, open the *.env* file in the *App* folder. Replace the the following placeholders:
+In the *ms-identity-node-main* folder, open the *.env* file in the *App* folder. Replace the following placeholders:
 
 | Variable  |  Description | Example(s) |
 |-----------|--------------|------------|
@@ -180,7 +180,7 @@ In the *ms-identity-node-main* folder, open the *.env* file in the *App* folder.
 | `Enter_the_Tenant_Info_here` | Tenant ID or Primary domain | `contoso.microsoft.com` or `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
 | `Enter_the_Application_Id_Here` | Client ID of the application you registered | `00001111-aaaa-2222-bbbb-3333cccc4444` |
 | `Enter_the_Client_Secret_Here` | Client secret of the application you registered | `A1b-C2d_E3f.H4i,J5k?L6m!N7o-P8q_R9s.T0u` |
-| `Enter_the_Graph_Endpoint_Here` | The Microsoft Graph API cloud instance that your app will call | `https://graph.microsoft.com/` (include the trailing forward-slash) |
+| `Enter_the_Graph_Endpoint_Here` | The Microsoft Graph API cloud instance that your app calls | `https://graph.microsoft.com/` (include the trailing forward-slash) |
 | `Enter_the_Express_Session_Secret_Here` | A random string of characters used to sign the Express session cookie | `A1b-C2d_E3f.H4...` |
 
 After you make changes, your file should look similar to the following snippet:
@@ -302,8 +302,7 @@ The sample hosts a web server on localhost, port 3000. When a web browser access
 
 1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:5001`, and paste it into a browser. We recommend using a private or incognito browser session.
 1. Follow the steps and enter the necessary details to sign in with your Microsoft account. You're requested to provide an email address so a one time passcode can be sent to you. Enter the code when prompted.
-1. The application requests permission to maintain access to data you have given it access to, and to sign you in and read your profile. Select **Accept**.
-1. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
+1. The application requests permission to maintain access to data you have given it access to, and to sign you in and read your profile. Select **Accept**. The following screenshot appears. It indicates that you're signed-in to the application and are viewing your profile details from the Microsoft Graph API.
 
     :::image type="content" source="./media/common-web-app/dotnet-core/display-api-call-results-dotnet-core.png" alt-text="Screenshot depicting the results of the API call." lightbox="./media/common-web-app/dotnet-core/display-api-call-results-dotnet-core.png":::
 
@@ -322,11 +321,9 @@ To run the project, take one of these steps:
 
 ### Run the project from an IDE
 
-To run the web application from an IDE, select run, and then go to the home page of the project. For this sample, the standard home page URL is https://localhost:8443.
+1. To run the web application from an IDE, select run, and then go to the home page of the project. For this sample, the standard home page URL is https://localhost:8443.
 
-1. On the front page, select the **Login** button to redirect users to Microsoft Entra ID and prompt them for credentials.
-
-1. After users are authenticated, they're redirected to `https://localhost:8443/msal4jsample/secure/aad`. They're now signed in, and the page will show information about the user account. The sample UI has these buttons:
+1. On the front page, select the **Login** button. The app prompts the user to sign in with their credentials. After user is authenticated, they're redirected to `https://localhost:8443/msal4jsample/secure/aad`. They're now signed in, and the page will show information about the user account. The sample UI has these buttons:
     - **Sign Out**: Signs the current user out of the application and redirects that user to the home page.
     - **Show User Info**: Acquires a token for Microsoft Graph and calls Microsoft Graph with a request that contains the token, which returns basic information about the signed-in user.
 
@@ -374,7 +371,7 @@ If you want to deploy the web sample to Tomcat, make a couple changes to the sou
           ```
 
 3. Open a Command Prompt window. Go to the root folder of this sample (where the `pom.xml` file is located), and run `mvn package` to build the project.
-    - This command will generate a `msal-web-sample-0.1.0.war` file in your `/targets` directory.
+    - This command generates a `msal-web-sample-0.1.0.war` file in your `/targets` directory.
     - Rename this file to `msal4jsample.war`.
     - Deploy the WAR file by using Tomcat or any other J2EE container solution.
         - To deploy the `msal4jsample.war` file, copy it to the `/webapps/` directory in your Tomcat installation, and then start the Tomcat server.
@@ -402,11 +399,11 @@ If you want to deploy the web sample to Tomcat, make a couple changes to the sou
 
 1. Follow the steps and enter the necessary details to sign in with your Microsoft account. You're requested to provide an email address and password to sign in.
 
-1. The application requests permission to maintain access to data you've given it access to, and to sign you in and read your profile, as shown. Select Accept.
+1. The application requests permission to maintain access to data you allow access to, and to sign you in and then read your profile, as shown in the screenshot. Select Accept.
 
   ![Diagram that shows the sample app requesting for consent to access the required permissions.](media/python-webapp/consent.png)
 
-1. The following screenshot appears, indicating that you've successfully signed in to the application. 
+1. The following screenshot appears, which indicates that you've successfully signed in to the application. 
 
   ![Diagram that shows how the sample app has successfully signed in a user.](media/python-webapp/signed-in-user.png) 
 
@@ -663,7 +660,7 @@ For you to sign in users with the sample app, you need to update it with your ap
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
-1. Navigate to the root folder of the sample you have downloaded and directory that contains the ASP.NET Core sample app:
+1. Navigate to the root directory that contains the ASP.NET Core sample app:
 
     ```console
     cd 1-Authentication\1-sign-in-aspnet-core-mvc
@@ -701,7 +698,7 @@ For you to sign in users with the sample app, you need to update it with your ap
     - `CLIENT_SECRET` which is the app secret value you copied earlier.
     - `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](/entra/external-id/customers/how-to-create-customer-tenant-portal#get-the-customer-tenant-details).
 
-1. Confirm that the redirect URI is well configured. The redirect URI you registered earlier should match your configuration. This sample by default sets the redirect URI path to `/getAToken`. This is configured in the *app_config.py* file as *REDIRECT_PATH*.
+1. Confirm that the redirect URI is well configured. The redirect URI you registered earlier should match your configuration. This sample by default sets the redirect URI path to `/getAToken`. This configuration is in the *app_config.py* file as *REDIRECT_PATH*.
 
 ---
 
@@ -736,7 +733,7 @@ You can now test the sample Node.js web app. You need to start the Node.js serve
 
 When users select the **Sign in** link, the app initiates an authentication request and redirects users to Microsoft Entra External ID. On the sign-in or sign-up page that appears, once a user successfully signs in or creates an account, Microsoft Entra External ID returns an ID token to the app. The app validates the ID token, reads the claims, and returns a secure page to the users.  
 
-When the users select the **Sign out** link, the app clears its session, the redirect the user to Microsoft Entra External ID sign-out endpoint to notify it that the user has signed out.
+When the users select the **Sign out** link, the app clears its session, then redirect the user to Microsoft Entra External ID sign-out endpoint to notify it that the user has signed out.
 
 If you want to build an app similar to the sample you've run, complete the steps in [Sign in users in your own Node.js web application](/entra/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant) article.
 
@@ -770,9 +767,9 @@ Run the app to see the sign-in experience at play.
     python manage.py runserver localhost:5000                                             
     ```
     
-    You can use the port of your choice. This should be similar to the port of the redirect URI you registered earlier.
+    You can use a port number of your choice.
 
-1. Open your browser, then go to `http://localhost:5000`. You should see the page similar to the following screenshot:
+1. Open your browser, then go to `http://localhost:5000`. You should see a page similar to the following screenshot:
 
     :::image type="content" source="media/sample-web-app-django-sign-in/django-sign-in-page.png" alt-text="Screenshot of Django web app sample sign-in page.":::
 
@@ -780,9 +777,9 @@ Run the app to see the sign-in experience at play.
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
-1. If you choose the sign-up option, you'll go through the sign-uo flow. Fill in your email, one-time passcode, new password, and more account details to complete the whole sign-up flow.
+1. If you choose the sign-up option, you go through the sign-uo flow. Fill in your email, one-time passcode, new password, and more account details to complete the whole sign-up flow.
 
-1. After you sign in or sign up, you're redirected back to the web app. You'll see a page that looks similar to the following screenshot:
+1. After you sign in or sign up, you're redirected back to the web app. You see a page that looks similar to the following screenshot:
 
     :::image type="content" source="media/sample-web-app-django-sign-in/django-authenticated-page.png" alt-text="Screenshot of flask web app sample after successful authentication.":::
 
