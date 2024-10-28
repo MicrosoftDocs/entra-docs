@@ -45,7 +45,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure GoTo to support provisioning with Microsoft Entra ID
 
-1. Log in to the [Organization Center](https://organization.gotoinc.com).
+1. Log in to the [Organization Center](https://organization.logmeininc.com).
 
 2. The domain used in your account's email address is the domain that you are prompted to verify within 10 days.  
 
@@ -70,7 +70,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
       * Location: `http://<yourdomain>/goto-verification-code.txt`
       * Contents: `goto-verification-code=00aa00aa-bb11-cc22-dd33-44ee44ee44ee`
 
-4. Once you have added the DNS record or TXT file, return to [Organization Center](https://organization.gotoinc.com) and click **Verify**.
+4. Once you have added the DNS record or TXT file, return to [Organization Center](https://organization.logmeininc.com) and click **Verify**.
 
 5. You have now created an organization in the Organization Center by verifying your domain, and the account used during this verification process is now the organization admin.
 
