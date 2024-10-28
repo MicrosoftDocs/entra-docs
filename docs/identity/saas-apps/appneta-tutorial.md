@@ -109,6 +109,8 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In order to properly pass along your ”groups” SAML assertions, you need to configure App roles and set the value to match the role mappings that are set within AppNeta Performance Manager. Under **Identity** > **Applications** > **App registrations**, select **Appneta Performance Manager**.
 
+   ![Screenshot that shows the App Registrations with Appneta Performance Manager at the bottom.](./media/appneta-tutorial/app-registrations.png)
+
 1. Click **App roles** in the left pane. The following screen will appear:
 
    ![Screenshot that shows the App Roles with Appneta Performance Manager at the bottom.](./media/appneta-tutorial/app-roles.png)
