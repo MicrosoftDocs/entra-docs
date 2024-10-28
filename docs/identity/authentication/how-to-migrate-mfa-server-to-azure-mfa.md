@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 10/04/2023
+ms.date: 10/28/2024
 
 ms.author: justinha
 author: Gargi-Sinha
@@ -67,9 +67,9 @@ We therefore recommend that regardless of the migration path you choose, that yo
 
 #### Migrating hardware security keys
 
-Microsoft Entra ID provides support for OATH hardware tokens. You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA settings between MFA Server and Microsoft Entra multifactor authentication and use [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to test user migrations without changing domain federation settings. 
+Microsoft Entra ID provides support for hardware OATH tokens. You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA settings between MFA Server and Microsoft Entra multifactor authentication and use [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to test user migrations without changing domain federation settings. 
 
-If you only want to migrate OATH hardware tokens, you need to [upload tokens to Microsoft Entra ID by using a CSV file](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview), commonly referred to as a "seed file". 
+If you only want to migrate hardware OATH tokens, you need to [upload tokens to Microsoft Entra ID by using a CSV file](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview), commonly referred to as a "seed file". 
 The seed file contains the secret keys, token serial numbers, and other necessary information needed to upload the tokens into Microsoft Entra ID. 
 
 If you no longer have the seed file with the secret keys, it isn't possible to export the secret keys from MFA Server. 
