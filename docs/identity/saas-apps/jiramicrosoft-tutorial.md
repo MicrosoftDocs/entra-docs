@@ -60,7 +60,7 @@ To get started, you need the following items:
 > [!NOTE]
 > Please note that our JIRA Plugin also works on Ubuntu Version 16.04 and Linux.
 
-## Microsoft SSO Plugins Market Place Data center and Server Side Application Link
+## Microsoft SSO plugins
 
 * [Microsoft Azure Active Directory single sign-on for JIRA Data-Center Application](https://marketplace.atlassian.com/apps/1224430/microsoft-azure-active-directory-single-sign-on-for-jira?tab=overview&hosting=datacenter
 )
