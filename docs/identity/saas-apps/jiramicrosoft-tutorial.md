@@ -62,10 +62,9 @@ To get started, you need the following items:
 
 ## Microsoft SSO plugins
 
-* [Microsoft Azure Active Directory single sign-on for JIRA Data-Center Application](https://marketplace.atlassian.com/apps/1224430/microsoft-azure-active-directory-single-sign-on-for-jira?tab=overview&hosting=datacenter
-)
+* [Microsoft Entra ID single sign-on for JIRA datacenter application](https://marketplace.atlassian.com/apps/1224430/microsoft-azure-active-directory-single-sign-on-for-jira?tab=overview&hosting=datacenter)
 
-* [Microsoft Azure Active Directory single sign-on for JIRA Server side Application](https://www.microsoft.com/en-us/download/details.aspx?id=56506)
+* [Microsoft Entra ID single sign-on for JIRA server-side application](https://www.microsoft.com/en-us/download/details.aspx?id=56506)
 
 
 ## Scenario description
