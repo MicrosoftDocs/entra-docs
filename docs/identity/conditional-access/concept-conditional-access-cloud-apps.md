@@ -7,7 +7,7 @@ ms.subservice: conditional-access
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
 
-ms.date: 03/28/2024
+ms.date: 10/28/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -166,6 +166,10 @@ In some cases, an **All resources (formerly 'All cloud apps')** policy could ina
    - For confidential / authenticated clients:
       - Azure AD Graph: email, offline_access, openid, profile, User.Read, User.Read.All, and User.ReadBasic.All
       - Microsoft Graph: email, offline_access, openid, profile, User.Read, User.Read.All, User.ReadBasic.All, People.Read, People.Read.All, GroupMember.Read.All, Member.Read.Hidden
+
+#### All internet resources with Global Secure Access
+
+The **All internet resources with Global Secure Access** option allows administrators to target the [internet access traffic forwarding profile](/entra/global-secure-access/concept-traffic-forwarding) from [Microsoft Entra Internet Access](/entra/global-secure-access/overview-what-is-global-secure-access#microsoft-entra-internet-access).
 
 ## User actions
 
