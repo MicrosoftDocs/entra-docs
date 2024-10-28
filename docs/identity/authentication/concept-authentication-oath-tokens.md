@@ -35,20 +35,29 @@ Microsoft Entra ID supports the use of OATH-TOTP SHA--256 and SHA-1 tokens that 
 
 Microsoft Entra ID has a new Microsoft Graph API in preview for Azure and Azure for US Government clouds.
 
-This preview uses the hardware OATH token Authentication methods policy. [Privileged Authentication Administrators](~/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) can use Microsoft Graph to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview in the Microsoft Entra admin center. 
+This preview refresh uses the hardware OATH token Authentication methods policy. [Privileged Authentication Administrators](~/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) can use Microsoft Graph to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview refresh in the Microsoft Entra admin center. 
 
-Hardware OATH tokens that you add with Microsoft Graph for this preview appear along with other tokens in the admin center, but they can only be managed by using Microsoft Graph.  
-
-This hardware OATH token preview improves flexibility and security for organizations by removing Global Administrator requirements. 
-Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators. They can also let end users self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) page.
-
-Here are the different features of the preview:
+Hardware OATH tokens that you add with Microsoft Graph for this preview refresh appear along with other tokens in the admin center. But you can only manage them by using Microsoft Graph. Here are features in the preview refresh:
 
 Feature | Description | API/Portal support | Role requirement
 --------|-------------|--------------------|-----------------
 [Authentication method policy for hardware OATH tokens](#authentication-method-policy-for-hardware-oath-tokens) | You can scope the **Hardware OATH** method to specific users and groups. No need to use the legacy tenant-level setting that applies to both hardware and software OATH tokens. | API - Available<br>UX – During the private preview. | Global Administrator<br>Authentication Policy Administrator
 [User authentication methods in Microsoft Graph](#user-authentication-methods-in-microsoft-graph) | Assign and activate a token from the tenant inventory to a specific user under the user’s authentication method in the Microsoft Entra admin center. | API, UX – available. | Global Administrator<br>Authentication Administrator<br>Privileged Authentication Administrator (to assign a token to a privileged user)
 [User self-assignment and activation](#user-self-assignment-and-activation) | Users can assign and activate token on themselves from the security info flow. | API – Available.<br>Security Info UX – will be become available during the preview. | Users manage themselves 
+
+### Role requirements
+
+This hardware OATH token preview improves flexibility and security for organizations by removing Global Administrator requirements. 
+Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators. They can also let end users self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) page.
+
+The following table compares the role requirements to manage hardware OATH tokens in the preview refresh versus original preview option.
+
+| Task | Original preview | Preview refresh |
+|------|------------------|-----------------|
+| Create a token | Global Administrator | Privileged Authentication Administrator |
+| Assign and activate a token | Global Administrator | Privileged Authentication Administrator<br>End user |
+| Unassign and deactivate a token | Global Administrator | Privileged Authentication Administrator<br>Authentication Administrator<br>End user |
+| Delete a token | Global Administrator | Privileged Authentication Administrator |
 
 
 ### Authentication method policy for hardware OATH tokens
