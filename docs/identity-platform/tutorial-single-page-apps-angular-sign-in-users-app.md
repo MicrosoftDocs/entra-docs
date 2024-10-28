@@ -152,6 +152,37 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     
     The code welcomes users to the Microsoft Authentication Library for JavaScript and prompts them to view their Microsoft Graph data by clicking the **View Profile** link.
 
+1. Open the `src/main.ts` file and replace the contents with the following code.
+
+    ```typescript
+    import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+    import { AppModule } from './app/app.module';
+    
+    platformBrowserDynamic().bootstrapModule(AppModule)
+      .catch(err => console.error(err));
+    ```
+    
+    The code snippet imports `platformBrowserDynamic` from Angular's platform browser dynamic module and `AppModule` from the application's module file. It then uses `platformBrowserDynamic()` to bootstrap the `AppModule`, initializing the Angular application. Any errors that occur during the bootstrap process are caught and logged to the console.
+
+1. Open the `src/index.html` file and replace the contents with the following code.
+
+    ```html
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <title>MSAL For Javascript - Angular SPA</title>
+      </head>
+      <body>
+        <app-root></app-root>
+        <app-redirect></app-redirect>
+      </body>
+    </html>
+    ```
+
+    The code snippet defines an HTML5 document with English as the language and UTF-8 character encoding. It sets the title to "MSAL For Javascript - Angular SPA." The body includes the `<app-root>` component as the main entry point and the `<app-redirect>` component for redirection functionalities.
+
 1. Open the `src/styles.css` file and replace the contents with the following code.
 
     ```css

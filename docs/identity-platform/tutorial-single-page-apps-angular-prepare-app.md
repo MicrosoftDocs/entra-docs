@@ -83,10 +83,10 @@ To build the Angular project from scratch, follow these steps:
     ```console
     rm src/app/app.component.css
     rm src/app/app.component.spec.ts
-    rm src/home/home.component.css
-    rm src/home/home.component.spec.ts
-    rm src/profile/profile.component.css
-    rm src/profile/profile.component.spec.ts
+    rm src/app/home/home.component.css
+    rm src/app/home/home.component.spec.ts
+    rm src/app/profile/profile.component.css
+    rm src/app/profile/profile.component.spec.ts
     ```
 
     The commands remove unnecessary files and code from the project.
