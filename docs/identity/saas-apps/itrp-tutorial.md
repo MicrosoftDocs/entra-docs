@@ -145,8 +145,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     ![Screenshot shows the Single Sign-On section with Enabled selected.](./media/itrp-tutorial/configuration.png "Single Sign-On section")
 
-    ![Screenshot shows the Single Sign-On section where you can add the information described in this step.](./media/itrp-tutorial/certificate.png "Single Sign-On section")
-
 	1. Select **Enabled**.
 
 	1. In the **Remote logout URL** box, paste the **Logout URL** value that you copied.

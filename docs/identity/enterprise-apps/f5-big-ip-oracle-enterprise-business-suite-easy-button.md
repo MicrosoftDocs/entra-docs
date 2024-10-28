@@ -152,8 +152,6 @@ To reduce time and effort, reuse global settings to publish other applications.
 4. Confirm the BIG-IP connects to your tenant.
 5. Select **Next**.
 
-   ![Screenshot of input on the Configuration Properties dialog.](./media/f5-big-ip-oracle/configuration-general-and-service-account-properties.png)
-
 ### Service Provider
 
 Use Service Provider settings for the properties of the SAML SP instance of the protected application.

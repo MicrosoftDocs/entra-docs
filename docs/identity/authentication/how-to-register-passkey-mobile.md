@@ -25,9 +25,9 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
 ## [**iOS**](#tab/iOS)
 
-### Register a security key with iOS 
+### Register a passkey with iOS 
 
-1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
+1. Using your iOS device, open a web browser and sign-in to [Security info](https://mysignins.microsoft.com/security-info).
    
 1. Tap **+ Add sign-in method**.
 
@@ -75,7 +75,7 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-reconnect.png" alt-text="Screenshot asking to confirm your pin for the security key connected to an iOS device.":::
     
-1. Upon completion, you're redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. Name the passkey something memorable to you and select **Done**. 
+1. Upon completion, you're redirected back to [Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. Name the passkey something memorable to you and select **Done**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-finish.png" alt-text="Screenshot showing final passkey registration step on iOS.":::
 
@@ -83,7 +83,7 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
 ### Register a security key with Android 
 
-1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
+1. Using your Android device, open a web browser and sign-in to [Security info](https://mysignins.microsoft.com/security-info).
    
 1. Tap **+ Add sign-in method**.
 
@@ -114,7 +114,7 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-save-another-way.png" alt-text="Screenshot of passkey selection on android device.":::
 
-1. Multiple options may be displayed, depending on the number of Google accounts or passkey managers enabled on your device. Select **Another device** to continue. 
+1. You may see various options, depending on the number of Google accounts or passkey managers enabled on your device. Select **Another device** to continue. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-more-options.png" alt-text="Screenshot of passkey more options on Android device.":::
 
@@ -134,9 +134,9 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-confirm-pin.png" alt-text="Screenshot of prompt to provide PIN or biometric.":::
 
-1. You maybe asked to confirm your PIN or biometric again before proceeding. 
+1. You may be asked to confirm your PIN or biometric again before proceeding. 
 
-1. Upon completion, you're redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. Name the passkey something memorable to you and select **Done**. 
+1. Upon completion, you're redirected back to [Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. Name the passkey something memorable to you and select **Done**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-finish.png" alt-text="Screenshot showing final passkey registration step on Android.":::
 

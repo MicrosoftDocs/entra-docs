@@ -118,7 +118,7 @@ To view audit events, you can browse to **Identity** > **Devices** > **Overview*
 
 ## Conditional Access policies for local administrator password recovery
 
-Conditional Access policies can be scoped to the built-in roles to protect access to recover local administrator passwords. You can find an example of a policy that requires multifactor authentication in the article, [Common Conditional Access policy: Require MFA for administrators](../conditional-access/howto-conditional-access-policy-admin-mfa.md).
+Conditional Access policies can be scoped to the built-in roles to protect access to recover local administrator passwords. You can find an example of a policy that requires multifactor authentication in the article, [Common Conditional Access policy: Require MFA for administrators](../conditional-access/policy-old-require-mfa-admin.md).
 
 > [!NOTE]
 > Other role types including administrative unit-scoped roles and custom roles aren't supported

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 07/29/2024
+ms.date: 10/18/2024
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
@@ -60,7 +60,7 @@ The PowerShell sample script published in the [Microsoft Entra inbound provision
 |1 | Read worker data from the CSV file. | [Download the PowerShell script](#download-the-powershell-script). It has out-of-the-box logic to read data from any CSV file. Refer to [CSV2SCIM PowerShell usage details](#csv2scim-powershell-usage-details) to get familiar with the different execution modes of this script.  | If your system of record is different, check guidance provided in the section [Integration scenario variations](#integration-scenario-variations) on how you can customize the PowerShell script. |
 |2 | Pre-process and convert data to SCIM format.  | By default, the PowerShell script converts each record in the CSV file to a SCIM Core User + Enterprise User representation. Follow the steps in the section [Generate bulk request payload with standard schema](#generate-bulk-request-payload-with-standard-schema) to get familiar with this process.  | If your CSV file has different fields, tweak the [AttributeMapping.psd file](#attributemappingpsd-file) to generate a valid SCIM user. You can also [generate bulk request with custom SCIM schema](#generate-bulk-request-with-custom-scim-schema). Update the PowerShell script to include any custom CSV data validation logic.|
 |3 | Use a certificate for authentication to Microsoft Entra ID. | [Create a service principal that can access](inbound-provisioning-api-grant-access.md) the inbound provisioning API. Refer to steps in the section [Configure client certificate for service principal authentication](#configure-client-certificate-for-service-principal-authentication) to learn how to use client certificate for authentication. | If you'd like to use managed identity instead of a service principal for authentication, then review the use of `Connect-MgGraph` in the sample script and update it to use [managed identities](/powershell/microsoftgraph/authentication-commands#using-managed-identity). |
-|4 | Provision accounts in on-premises Active Directory or Microsoft Entra ID.  | Configure [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md). This generates a unique [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint. Refer to the steps in the section [Generate and upload bulk request payload as admin user](#generate-and-upload-bulk-request-payload-as-admin-user) to learn how to upload data to this endpoint. Validate the attribute flow and customize the attribute mappings per your integration requirements. To run the script using a service principal with certificate-based authentication, refer to the steps in the section [Upload bulk request payload using client certificate authentication](#upload-bulk-request-payload-using-client-certificate-authentication) | If you plan to [use bulk request with custom SCIM schema](#generate-bulk-request-with-custom-scim-schema), then [extend the provisioning app schema](#extending-provisioning-job-schema) to include your custom SCIM schema elements.|
+|4 | Provision accounts in on-premises Active Directory or Microsoft Entra ID.  | Configure [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md). This generates a unique [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint. To run the script using a service principal with certificate-based authentication, refer to the steps in the section [Upload bulk request payload using client certificate authentication](#upload-bulk-request-payload-using-client-certificate-authentication). Validate the attribute flow and customize the attribute mappings per your integration requirements. | If you plan to [use bulk request with custom SCIM schema](#generate-bulk-request-with-custom-scim-schema), then [extend the provisioning app schema](#extending-provisioning-job-schema) to include your custom SCIM schema elements.|
 |5 | Scan the provisioning logs and retry provisioning for failed records.  |  Refer to the steps in the section [Get provisioning logs of the latest sync cycles](#get-provisioning-logs-of-the-latest-sync-cycles)  to learn how to fetch and analyze provisioning log data. Identify failed user records and include them in the next upload cycle.  | - |
 |6 | Deploy your PowerShell based automation to production.  |  Once you have verified your API-driven provisioning flow and customized the PowerShell script to meet your requirements, you can deploy the automation as a [PowerShell Workflow runbook in Azure Automation](/azure/automation/learn/automation-tutorial-runbook-textual) or as a server process [scheduled to run on a Windows server](/troubleshoot/windows-server/system-management-components/schedule-server-process). | - |
 
@@ -173,22 +173,6 @@ To illustrate the procedure, let's use the CSV file `Samples/csv-with-2-records.
 
 1. To directly upload the generated payload to the API endpoint using the same PowerShell script refer to the next section. 
 
-
-## Generate and upload bulk request payload as admin user
-
-This section explains how to send the generated bulk request payload to your inbound provisioning API endpoint. 
-
-1. Log in to your [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823).
-1. Browse to **Provisioning App** > **Properties** > **Object ID** and copy the `ServicePrincipalId` associated with your provisioning app.
-
-   :::image type="content" border="true" source="./media/inbound-provisioning-api-powershell/object-id.png" alt-text="Screenshot of the Object ID." lightbox="./media/inbound-provisioning-api-powershell/object-id.png":::
-
-1. As user with Global Administrator role, run the following command by providing the correct values for `ServicePrincipalId` and `TenantId`. It will prompt you for authentication if an authenticated session doesn't already exist for this tenant. Provide your consent to permissions prompted during authentication.  
-
-   ```powershell
-   .\CSV2SCIM.ps1 -Path '..\Samples\csv-with-2-records.csv' -AttributeMapping $AttributeMapping -ServicePrincipalId <servicePrincipalId> -TenantId "contoso.onmicrosoft.com"
-   ```
-1. Visit the **Provisioning logs** blade of your provisioning app to verify the processing of the above request. 
 
 
 ## Configure client certificate for service principal authentication

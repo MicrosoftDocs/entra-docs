@@ -94,7 +94,7 @@
     "ffffffff-5a5a-6b6b-7c7c-888888888888",
     "aaaaaaaa-6b6b-7c7c-8d8d-999999999999"
   ],
-  "subscriptionId": [
+  "subscriptionId|subscriptions": [
     "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
     "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
     "cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a",
@@ -111,8 +111,5 @@
     "4444eeee-55ff-aaaa-bb66-cccccc777777",
     "5555ffff-66aa-bbbb-cc77-dddddd888888",
     "6666aaaa-77bb-cccc-dd88-eeeeee999999"
-  ],
-  "appRoleId|roleId|roleAssignments|roleDefinitions": [
-    "00000000-0000-0000-0000-000000000000"
   ]
 }

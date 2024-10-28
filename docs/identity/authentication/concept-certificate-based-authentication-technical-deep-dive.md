@@ -187,8 +187,8 @@ Let's look at an example of a user who has single-factor certificate, and is con
 CBA can be used as a second factor like Password (first factor) and CBA (second factor) to get MFA.
 
 >[!NOTE]
-On iOS, users with certificate-based authentication will see a "double prompt", where they must click the option to use certificate-based authentication twice.
-On iOS, users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor or step-up authentication.
+> On iOS, users with certificate-based authentication will see a "double prompt", where they must click the option to use certificate-based authentication twice.
+> On iOS, users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor or step-up authentication.
 
 ## Understanding the authentication binding policy
 
@@ -440,7 +440,7 @@ As of now, there's no way to manually force or retrigger the download of the CRL
 
 [!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
 
-### Understanding CRL validation
+## Understanding CRL validation (Preview)
 
 A CRL is a record of digital certificates that have been revoked before the end of their validity period by a certificate authority (CA).
 When CAs are uploaded to the Microsoft Entra trust store, a CRL, or more specifically the CrlDistributionPoint attribute, isn't required. A CA can be uploaded without a CRL endpoint, and certificate-based authentication won't fail if an issuing CA doesn't have a CRL specified. 

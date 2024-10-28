@@ -50,5 +50,5 @@ After all users are migrated to Conditional Access MFA accounts, the recommendat
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)
-- [Learn about requiring MFA for all users using Conditional Access](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
+- [Learn about requiring MFA for all users using Conditional Access](../conditional-access/policy-all-users-mfa-strength.md)
 - [View the MFA Conditional Access policy tutorial](../authentication/tutorial-enable-azure-mfa.md)

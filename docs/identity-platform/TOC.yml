@@ -169,13 +169,11 @@
     - name: Web app authentication
       href: index-web-app.yml
     - name: Quickstart
-      items: 
-        - name: ASP.NET 
-          href: quickstart-web-app-aspnet-sign-in.md
+      items:
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js
-          href: quickstart-web-app-nodejs-msal-sign-in.md
+          href: quickstart-web-app-nodejs-sign-in.md
         - name: Java
           href: quickstart-web-app-java-sign-in.md
         - name: Python Flask
@@ -302,16 +300,12 @@
       items:
         - name: Node.js Electron
           href: quickstart-desktop-app-nodejs-electron-sign-in.md
-        - name: Universal Windows Platform (UWP)
-          href: quickstart-desktop-app-uwp-sign-in.md
         - name: Windows Presentation Foundation (WPF)
           href: quickstart-desktop-app-wpf-sign-in.md
     - name: Tutorials
       items:
         - name: Node.js Electron
           href: tutorial-v2-nodejs-desktop.md
-        - name: Universal Windows Platform (UWP)
-          href: tutorial-v2-windows-uwp.md
         - name: Windows Presentation Foundation (WPF)
           href: tutorial-v2-windows-desktop.md
     - name: Samples
@@ -352,9 +346,13 @@
     - name: Tutorials
       items:
         - name: Android
-          href: tutorial-v2-android.md
-        - name: Android - Shared-device mode
-          href: tutorial-v2-shared-device-mode.md
+          items:
+            - name: Sign in users and call a web API
+              href: tutorial-v2-android.md
+            - name: Enable Shared Device Mode in your app using MSAL
+              href: tutorial-v2-shared-device-mode.md
+            - name: Set up an Android device in Shared Device Mode
+              href: tutorial-mobile-android-device-shared-mode.md
         - name: iOS and macOS
           href: tutorial-v2-ios.md
     - name: Samples
@@ -709,6 +707,9 @@
           href: /entra/msal/python/
     - name: Protocol reference (OAuth, OIDC, SAML)
       items:
+        - name: OAuth 2.0 application types
+          displayName: App types, OAuth
+          href: v2-app-types.md
         - name: OAuth 2.0 and OpenID Connect (OIDC)
           items:
             - name: Token grant flows
@@ -729,9 +730,6 @@
                   href: v2-oauth-ropc.md
                 - name: OpenID Connect
                   href: v2-protocols-oidc.md
-            - name: OAuth 2.0 application types
-              displayName: App types, OAuth
-              href: v2-app-types.md
             - name: Certificate credentials
               href: certificate-credentials.md
             - name: Signing key rollover

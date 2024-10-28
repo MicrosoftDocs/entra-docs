@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/05/2024
+ms.date: 09/27/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -36,7 +36,7 @@ Typically, this scenario is caused by:
 - Over aggressive prompts policies 
 - Cyber-attacks 
  
-The authentication prompts analysis workbook identifies various types of authentication prompts. The types are  based on different pivots including users, applications, operating system, processes and more.
+The authentication prompts analysis workbook identifies various types of authentication prompts. The types are  based on different pivots including users, applications, operating system, processes, and more.
 
 You can use this workbook in the following scenarios:
 

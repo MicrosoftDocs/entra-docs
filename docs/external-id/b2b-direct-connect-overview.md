@@ -5,7 +5,7 @@ description: Microsoft Entra B2B direct connect lets users from other Microsoft 
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 04/29/2024
+ms.date: 09/06/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -26,8 +26,6 @@ B2B direct connect is a feature of Microsoft Entra External ID that lets you set
 B2B direct connect requires a mutual trust relationship between two Microsoft Entra organizations to allow access to each other's resources. Both the resource organization and the external organization need to mutually enable B2B direct connect in their cross-tenant access settings. When the trust is established, the B2B direct connect user has single sign-on access to resources outside their organization using credentials from their home Microsoft Entra organization.
 
 Currently, B2B direct connect capabilities work with Teams shared channels. When B2B direct connect is established between two organizations, users in one organization can create a shared channel in Teams and invite an external B2B direct connect user to it. Then from within Teams, the B2B direct connect user can seamlessly access the shared channel in their home tenant Teams instance, without having to manually sign in to the organization hosting the shared channel.
-
-For licensing and pricing information related to B2B direct connect users, refer to [Microsoft Entra External ID pricing](https://azure.microsoft.com/pricing/details/active-directory/external-identities/).
 
 ## Managing cross-tenant access for B2B direct connect
 

@@ -18,17 +18,25 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
+## October 2024
+
+- FAQ section now contains information for [network hardening](verifiable-credentials-faq.md#network-hardening-for-callback-events) for Request Service API callbacks.
+
+## September 2024
+
+- Support for [did:web:path](did-web-path.md) can be enabled for your Microsoft Entra tenant upon request.
+
 ## August 2024
 
 - [FaceCheck](using-facecheck.md) is generally available starting August 12.
 
 ## June 2024
 
-- [FaceCheck](using-facecheck.md) introducing the Face Check Addon as an incremental update to the Face Check public preview. Face Check is a premium feature within Entra Verified ID free to use during the public preview period ending on Aug 12.
+- [FaceCheck](using-facecheck.md) introducing the Face Check Addon as an incremental update to the Face Check public preview. Face Check is a premium feature within Microsoft Entra Verified ID free to use during the public preview period ending on Aug 12.
 
 ## April 2024
 
-- [Quick setup](verifiable-credentials-configure-tenant-quick.md) Generally available, it enables an admin to onboard Entra Verified ID in an Entra tenant with just one click of a button.
+- [Quick setup](verifiable-credentials-configure-tenant-quick.md) Generally available, it enables an admin to onboard Microsoft Entra Verified ID in an Microsoft Entra tenant with just one click of a button.
 
 ## March 2024
 
@@ -37,7 +45,7 @@ This article lists the latest features, improvements, and changes in the Microso
 
 ## February 2024
 
-- New concept article on [Verified helpdesk](helpdesk-with-verified-id.md) on how to identity of callers seeking help using Entra Verified ID.
+- New concept article on [Verified helpdesk](helpdesk-with-verified-id.md) on how to identity of callers seeking help using Microsoft Entra Verified ID.
 - Override of [expirationDate](issuance-request-api.md#issuance-request-payload) on issuance for idTokenHint attestation flow requires that the contract needs to have the flag [allowOverrideValidityOnIssuance](admin-api.md#contract-type) set to true.
 
 ## January 2024

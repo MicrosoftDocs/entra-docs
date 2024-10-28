@@ -46,7 +46,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Setup Airstack for provisioning
 
-1. Sign in to your [Airstack Admin Console](https://airstack-qa.lenovosoftware.com/). Navigate to **Settings**.
+1. Sign in to your Airstack Admin Console. Navigate to **Settings**.
 
 	![Airstack Admin Console](media/airstack-provisioning-tutorial/airstackadminmenu.png)
 
@@ -109,8 +109,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Airstack**.
-
-	![Airstack User Mappings](media/airstack-provisioning-tutorial/mappings.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Airstack in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Airstack for update operations. Select the **Save** button to commit any changes.
 

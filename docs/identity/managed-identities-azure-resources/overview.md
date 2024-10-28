@@ -1,14 +1,14 @@
 ---
 title: Managed identities for Azure resources
 description: An overview of the managed identities for Azure resources.
-author: barclayn
-manager: amycolannino
+author: rwike77
+manager: CelesteDG
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: overview
 ms.date: 01/23/2023
-ms.author: barclayn
+ms.author: ryanwi
 
 
 #Customer intent: As a developer, I'd like to securely manage the credentials that my application uses for authenticating to cloud services without having the credentials in my code or checked into source control.
@@ -77,14 +77,14 @@ Managed identities for Azure resources can be used to authenticate to services t
 Resources that support system assigned managed identities allow you to:
 
 - Enable or disable managed identities at the resource level.
-- Use role-based access control (RBAC) to [grant permissions](howto-assign-access-portal.md).
+- Use role-based access control (RBAC) to [grant permissions](/azure/role-based-access-control/role-assignments-portal).
 - View the create, read, update, and delete (CRUD) operations in [Azure Activity logs](/azure/azure-monitor/essentials/activity-log).
 - View sign in activity in Microsoft Entra ID [sign in logs](~/identity/monitoring-health/concept-sign-ins.md).
 
 If you choose a user assigned managed identity instead:
 
 - You can [create, read, update, and delete](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp) the identities.
-- You can use RBAC role assignments to [grant permissions](howto-assign-access-portal.md).
+- You can use RBAC role assignments to [grant permissions](/azure/role-based-access-control/role-assignments-portal).
 - User assigned managed identities can be used on more than one resource.
 - CRUD operations are available for review in [Azure Activity logs](/azure/azure-monitor/essentials/activity-log).
 - View sign in activity in Microsoft Entra ID [sign in logs](~/identity/monitoring-health/concept-sign-ins.md).

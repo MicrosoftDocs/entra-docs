@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: how-to
-ms.date: 08/26/2022
+ms.date: 10/17/2024
 ms.author: jricketts
 ms.reviewer: ajburnle
 ms.custom:
@@ -75,6 +75,11 @@ In Microsoft Entra ID, users who have privileged roles, such as administrators, 
 
 - Use cloud-only accounts for Microsoft Entra ID and Microsoft 365 privileged roles.
 
+    For each role with high privileges, you should do the following:
+
+    - Review the users that have `onPremisesImmutableId` and `onPremisesSyncEnabled` set. See Microsoft Graph API [user resource type](/graph/api/resources/user).
+    - Create cloud-only user accounts for those individuals and remove their hybrid identity from privileged roles.
+
 - Deploy privileged access devices for privileged access to manage Microsoft 365 and Microsoft Entra ID. See [Device roles and profiles](/security/privileged-access-workstations/privileged-access-devices#device-roles-and-profiles).
 
   Deploy Microsoft Entra Privileged Identity Management (PIM) for just-in-time access to all human accounts that have privileged roles. Require strong authentication to activate roles. See [What is Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md).
@@ -142,7 +147,7 @@ Cloud groups allow you to decouple your collaboration and access from your on-pr
 - **Access**. Use Microsoft Entra security groups or Microsoft 365 Groups to authorize access to applications in Microsoft Entra ID.
 - **Office 365 licensing**. Use group-based licensing to provision to Office 365 by using cloud-only groups. This method decouples control of group membership from on-premises infrastructure.
 
-Owners of groups that are used for access should be considered privileged identities to avoid membership takeover in an on-premises compromise. A takeover would include direct manipulation of group membership on-premises or manipulation of on-premises attributes that can affect dynamic group membership in Microsoft 365.
+Owners of groups that are used for access should be considered privileged identities to avoid membership takeover in an on-premises compromise. A takeover would include direct manipulation of group membership on-premises or manipulation of on-premises attributes that can affect dynamic membership groups in Microsoft 365.
 
 ## Manage devices from the cloud
 
@@ -182,7 +187,7 @@ Deploy Microsoft Entra joined Windows 10 workstations with mobile device managem
 
 Use Microsoft Entra Conditional Access to interpret signals and use them to make authentication decisions. For more information, see the [Conditional Access deployment plan](~/identity/conditional-access/plan-conditional-access.md).
 
-- Use Conditional Access to block legacy authentication protocols whenever possible. Additionally, disable legacy authentication protocols at the application level by using an application-specific configuration. See [Block legacy authentication](~/identity/conditional-access/howto-conditional-access-policy-block-legacy.md).
+- Use Conditional Access to block legacy authentication protocols whenever possible. Additionally, disable legacy authentication protocols at the application level by using an application-specific configuration. See [Block legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
   For more information, see [Legacy authentication protocols](./auth-sync-overview.md#legacy-authentication-protocols). Or see specific details for [Exchange Online](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online#how-basic-authentication-works-in-exchange-online) and [SharePoint Online](/powershell/module/sharepoint-online/set-spotenant).
 
@@ -259,7 +264,7 @@ Define a log storage and retention strategy, design, and implementation to facil
 
   Microsoft Entra ID provides Azure Monitor integration for the sign-in activity log and audit logs. See [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md).
 
-  Use the Microsoft Graph API to ingest risk events. See [Use the Microsoft Graph identity protection APIs](/graph/api/resources/identityprotection-overview).
+  Use the Microsoft Graph API to ingest risk events. See [Use the Microsoft Graph ID Protection APIs](/graph/api/resources/identityprotection-overview).
 
   You can stream Microsoft Entra logs to Azure Monitor logs. See [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 

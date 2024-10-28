@@ -66,9 +66,6 @@ Before you provide SSO for on-premises applications, enable application proxy an
 
 3. Edit the **Reply URL** configured earlier so that its domain reachable on the internet via application proxy. For example, if your **External URL** is `https://contosotravel-f128.msappproxy.net` and the original **Reply URL** was `https://contosotravel.com/acs`, you need to update the original **Reply URL** to `https://contosotravel-f128.msappproxy.net/acs`.
 
-    ![Enter basic SAML configuration data](./media/application-proxy-configure-single-sign-on-on-premises-apps/basic-saml-configuration.png)
-
-
 4. Select the checkbox next to the updated **Reply URL** to mark it as the default.
 
    * After marking the required **Reply URL** as default, you can also delete the previously configured **Reply URL** that used the internal URL.

@@ -146,11 +146,11 @@ The following filters can be applied for the export task:
 
 If you want to manage device identities by using the Microsoft Entra admin center, the devices need to be either [registered or joined](overview.md) to Microsoft Entra ID. As an administrator, you can control the process of registering and joining devices by configuring the following device settings.
 
-You must be assigned one of the following roles to manage device settings:
+You must be assigned one of the following roles to read or modify device settings:
 
-- [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator)
-- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
-- [Windows 365 Administrator](../role-based-access-control/permissions-reference.md#windows-365-administrator)
+- [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) (read and modify)
+- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) (read only)
+- [Windows 365 Administrator](../role-based-access-control/permissions-reference.md#windows-365-administrator) (read only)
 
 ![Screenshot that shows device settings related to Microsoft Entra ID.](./media/manage-device-identities/device-settings-azure-portal.png)
 
@@ -161,7 +161,7 @@ You must be assigned one of the following roles to manage device settings:
 
 - **Users may register their devices with Microsoft Entra ID**: You need to configure this setting to allow users to register Windows 10 or newer personal, iOS, Android, and macOS devices with Microsoft Entra ID. If you select **None**, devices aren't allowed to register with Microsoft Entra ID. Enrollment with Microsoft Intune or mobile device management for Microsoft 365 requires registration. If you've configured either of these services, **ALL** is selected, and **NONE** is unavailable.
 - **Require multifactor authentication to register or join devices with Microsoft Entra ID**: 
-   - We recommend organizations use the [Register or join devices user action](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions) in Conditional Access to enforce multifactor authentication. You must configure this toggle to **No** if you use a [Conditional Access policy to require multifactor authentication](../conditional-access/how-to-policy-mfa-device-register-join.md). 
+   - We recommend organizations use the [Register or join devices user action](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions) in Conditional Access to enforce multifactor authentication. You must configure this toggle to **No** if you use a [Conditional Access policy to require multifactor authentication](../conditional-access/policy-all-users-device-registration.md). 
    - This setting allows you to specify whether users are required to provide another authentication factor to join or register their devices to Microsoft Entra ID. The default is **No**. We recommend that you require multifactor authentication when a device is registered or joined. Before you enable multifactor authentication for this service, you must ensure that multifactor authentication is configured for users that register their devices. For more information on Microsoft Entra multifactor authentication services, see [getting started with Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md). This setting might not work with third-party identity providers.
 
    > [!NOTE]
