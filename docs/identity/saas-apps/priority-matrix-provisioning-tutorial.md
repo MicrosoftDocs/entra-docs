@@ -75,13 +75,12 @@ To configure Priority Matrix for automatic user provisioning with Microsoft Entr
 
 	![Priority Matrix OIDC Add](media/priority-matrix-provisioning-tutorial/signup.png)
 
-6. As Priority Matrix is an OpenIDConnect app, choose to login to Priority Matrix using your Microsoft work account.
+6. As Priority Matrix is an OpenIDConnect app, choose to log in to Priority Matrix using your Microsoft work account.
 
 	![Priority Matrix OIDC login](media/priority-matrix-provisioning-tutorial/msftsignin.png)
 
 7. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Priority Matrix account.
 
-	![Priority Matrix OIDc Consent](media/priority-matrix-provisioning-tutorial/consent.png)
 
 ## Configure automatic user provisioning to Priority Matrix 
 
@@ -122,8 +121,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Priority Matrix**.
-
-	![Priority Matrix User Mappings](media/priority-matrix-provisioning-tutorial/usermappings.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Priority Matrix in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Priority Matrix for update operations. Select the **Save** button to commit any changes.
 

@@ -18,6 +18,10 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
+## October 2024
+
+- FAQ section now contains information for [network hardening](verifiable-credentials-faq.md#network-hardening-for-callback-events) for Request Service API callbacks.
+
 ## September 2024
 
 - Support for [did:web:path](did-web-path.md) can be enabled for your Microsoft Entra tenant upon request.

@@ -7,7 +7,7 @@ editor: HANKI
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 10/17/2024
 ms.author: owinfrey
 ms.reviewer: hanki
 ---

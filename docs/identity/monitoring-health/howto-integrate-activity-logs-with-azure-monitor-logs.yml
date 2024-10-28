@@ -72,7 +72,7 @@ procedureSection:
       - |
         Enter a **Diagnostic setting name**. If you're editing an existing integration, you can't change the name.
       - |
-        Select the log categories that you want to stream.
+        Select the log categories that you want to stream. For a description of each log category, see [What are the identity logs you can stream to an endpoint](concept-log-monitoring-integration-options-considerations.md).
       - |
         Under **Destination Details** select the **Send to Log Analytics workspace** check box.
       - |

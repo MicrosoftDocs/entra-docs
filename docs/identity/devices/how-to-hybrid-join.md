@@ -14,7 +14,7 @@ ms.reviewer: sandeo
 ---
 # Configure Microsoft Entra hybrid join
 
-Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) at the same time.
+Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md) at the same time.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/hSCVR1oJhFI]
 
@@ -142,5 +142,5 @@ If you experience issues with completing Microsoft Entra hybrid join for domain-
 ## Related content
 
 - [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.yml)
-- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/howto-conditional-access-policy-compliant-device.md)
+- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)
 - [Planning a Windows Hello for Business Deployment](/windows/security/identity-protection/hello-for-business/hello-planning-guide)

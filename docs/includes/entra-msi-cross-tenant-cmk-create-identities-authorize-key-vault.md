@@ -66,11 +66,7 @@ Configure a user-assigned managed identity as a federated identity credential on
 5. Under **Federated credential scenario**, select **Customer Managed Keys**.
 6. Click **Select a managed identity**. From the pane, select the subscription. Under **Managed identity**, select **User-assigned managed identity**. In the **Select** box, search for the managed identity you created earlier, then click **Select** at the bottom of the pane.
 
-   :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/select-managed-identity.png" alt-text="Screen shot showing how to select a managed identity." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/select-managed-identity.png" border="true":::
-
 7. Under **Credential details**, provide a name and optional description for the credential and select **Add**.
-
-   :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/add-credential.png" alt-text="Screen shot showing how to add a credential." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/add-credential.png" border="true":::
 
 # [PowerShell](#tab/azure-powershell)
 
