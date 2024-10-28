@@ -8,6 +8,8 @@ ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
  
+1. From the **App registrations** page, select the API application that you created (such as *ciam-client-app*) to open its **Overview** page.
+
 1. Under **Manage**, select **API permissions**.
  
 1. Under **Configured permissions**, select **Add a permission**.

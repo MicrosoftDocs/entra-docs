@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
 
-1. From the **App registrations** page, select the application that you created (such as *ciam-client-app*) to open its **Overview** page.
+1. From the **App registrations** page, select the application that you created (such as *edit-profile-service*) to open its **Overview** page.
 
 1. Under **Manage**, select **API permissions**.
 
