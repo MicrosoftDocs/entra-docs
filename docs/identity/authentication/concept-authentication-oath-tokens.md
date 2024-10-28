@@ -45,9 +45,9 @@ Feature | Description | API/Portal support | Role requirement
 [User authentication methods in Microsoft Graph](#user-authentication-methods-in-microsoft-graph) | Assign and activate a token from the tenant inventory to a specific user under the user’s authentication method in the Microsoft Entra admin center. | API, UX – available. | Global Administrator<br>Authentication Administrator<br>Privileged Authentication Administrator (to assign a token to a privileged user)
 [User self-assignment and activation](#user-self-assignment-and-activation) | Users can assign and activate token on themselves from the security info flow. | API – Available.<br>Security Info UX – will be become available during the preview. | Users manage themselves 
 
-### Role requirements
+### Differences in the preview refresh
 
-This hardware OATH token preview improves flexibility and security for organizations by removing Global Administrator requirements. 
+This hardware OATH token preview refresh improves flexibility and security for organizations by removing Global Administrator requirements. 
 Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators. They can also let end users self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) page.
 
 The following table compares the role requirements to manage hardware OATH tokens in the preview refresh versus original preview option.
@@ -59,6 +59,10 @@ The following table compares the role requirements to manage hardware OATH token
 | Unassign and deactivate a token | Global Administrator | Privileged Authentication Administrator<br>Authentication Administrator<br>End user |
 | Delete a token | Global Administrator | Privileged Authentication Administrator |
 
+Another difference pertains to end users. In the legacy multifactor authentication (MFA) policy, hardware and software OATH tokens can only be enabled together. If you enable OATH tokens in the legacy MFA policy, end users see an option to add Hardware OATH tokens in their Security info page.
+
+If you don't want end users to see an option to add Hardware OATH tokens, migrate to the Authentication methods policy. 
+In the Authentication methods policy, hardware and software OATH tokens can be enabled and managed separately. For more information about how to migrate to the Authentication methods policy, see [How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID](how-to-authentication-methods-manage.md).
 
 ### Authentication method policy for hardware OATH tokens
 
