@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: quickstart
-ms.date: 06/26/2024
+ms.date: 11/26/2024
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn about how to configure a Nodejs code sample web app to sign in and sign out users with my external tenant.
 ---
