@@ -14,6 +14,8 @@ ms.custom: developer, devx-track-js
 
 # Quickstart - Sign in users and call a web API in sample Node.js web app
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 In this Quickstart, you learn how to sign in users and call a web API from a Node.js web application in your external tenant. The sample application calls a .NET API. The sample web application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) for Node to handle authentication.
 
 ## Prerequisites

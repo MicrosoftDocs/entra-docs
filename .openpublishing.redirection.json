@@ -1261,6 +1261,10 @@
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-python-flask.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
       "redirect_document_id": false
+    },    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-call-api.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-call-api",
+      "redirect_document_id": false
     }
 
   ]
