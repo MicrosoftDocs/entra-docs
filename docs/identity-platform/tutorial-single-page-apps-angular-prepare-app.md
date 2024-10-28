@@ -31,7 +31,7 @@ In this tutorial:
 
 ## Create a new Angular project
 
-To complete the rest of the tutorial, you need to create a new Angular project. If you prefer using a completed code sample for learning, download the [Angular code sample](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/angular-spa) from GitHub.
+To complete the rest of the tutorial, you need an Angular project. If you prefer using a completed code sample for learning, download the [Angular code sample](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/angular-spa) from GitHub.
 
 To build your Angular project, create a structure that looks like the following layout:
 
