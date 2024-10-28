@@ -266,17 +266,17 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	k. Check **Enable Single Sign out** if you wish to sign out from Microsoft Entra ID when a user sign out from JIRA.
 	
-	l. Enable **Force Azure Login** checkbox, if you wish to sign in through Microsoft Entra credentials only.
+	l. Enable **Force Azure Login** if you want to sign in by using only Microsoft Entra ID credentials.
 	
 	> [!Note]
 	> To enable the default login form for admin login on login page when force azure login is enabled, add the query parameter in the browser URL.
 	> `https://<domain:port>/login.jsp?force_azure_login=false`
 
-	m. **Enable Use of Application Proxy** checkbox, if you have configured your on-premises atlassian application in an application proxy setup.
+	m. Select **Enable Use of Application Proxy** if you configured your on-premises Atlassian application in an application proxy setup.
 
 	* For App proxy setup , follow the steps on the [Microsoft Entra application proxy Documentation](~/identity/app-proxy/overview-what-is-app-proxy.md).
 
-	n. Click **Save** button to save the settings.
+	n. Select **Save** to save the settings.
 
 	> [!NOTE]
 	> For more information about installation and troubleshooting, visit [MS JIRA SSO Connector Admin Guide](./ms-confluence-jira-plugin-adminguide.md). There is also an [FAQ](./ms-confluence-jira-plugin-adminguide.md) for your assistance.
