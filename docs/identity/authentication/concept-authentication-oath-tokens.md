@@ -147,7 +147,7 @@ DELETE https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e0595
 
 
 
-Let's try another example where a creates two tokens, with hashFunction optional. The hashFunction is SHA-1 by default. For SHA-256, enter `HMACSHA256` as the value for the property. 
+Let's try another example where a creates two tokens, with hashFunction optional. The hashFunction is SHA-1 by default. For SHA-256, enter `hmacsha256` as the value for the property. 
 
 PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
 {
@@ -160,7 +160,7 @@ PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/har
         "model": "OTP 110 Token", 
         "secretKey": "RBE6WEJDBDAAE6AYACIHC5ZLZW2XKPH6", 
         "timeIntervalInSeconds": 30, 
-        "hashFunction": "HMACSHA1" 
+        "hashFunction": "hmacsha1" 
         },
     { 
         "@contentId": "2", 
@@ -169,7 +169,7 @@ PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/har
         "model": "OTP 110 Token", 
         "secretKey": "ZO3NHND67U335PZEMNF2EKD3UH5OHR4I", 
         "timeIntervalInSeconds": 30, 
-        "hashFunction": "HMACSHA1" 
+        "hashFunction": "hmacsha1" 
         }
     ]          
 } 
@@ -187,7 +187,9 @@ POST https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551
 
 ### User self-assignment and activation
 
-Scenario 1: Admin Creates, Assigns, and Activates Token: creating, assigning, and activating a token as an admin, including the necessary API calls and verification steps.
+The next sections cover different scenarios to demonstrate options for different roles create, assign, and activate tokens. 
+
+#### Scenario 1: Admin Creates, Assigns, and Activates Token: creating, assigning, and activating a token as an admin, including the necessary API calls and verification steps.
 
 Let's look at an example where a Privileged Authentication Administrator creates a token and assigns it to a user. For the body of the POST in this example, you can find the serial number from your device and the secretKey is delivered to you.
 
@@ -203,7 +205,7 @@ POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hard
 }
 ```
 
-The response includes the token ID:
+The response includes the token ID, and the user ID that the token is assigned to:
 
 ```http
 {
@@ -218,7 +220,10 @@ The response includes the token ID:
     "status": "available",
     "lastUsedDateTime": null,
     "hashFunction": "hmacsha1",
-    "assignedTo": null
+    "assignedTo": {
+        "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+        "displayName": "Test User"
+    }
 }
 ```
 
@@ -235,8 +240,16 @@ POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 To validate the token is activated, sign in as the test user.
 
 
-Scenario 2: Admin Creates and Assigns, End-User Activates: an admin can create and assign a token, and then the end-user can activate it on their Security info page.
-Scenario 3: Admin Creates, End-User Self-Assigns and Activates: admin creates tokens without assignment, and the end-user self-assigns and activates the token.
+#### Scenario 2: Admin creates and assigns a token that a user activates
+
+In this scenario, a Privileged Authentication Administrator creates and assigns a token, and then a user can activate it on their Security info page.
+
+
+#### Scenario 3: Admin creates a token that a user self-assigns and activates
+
+In this scenario, a Privileged Authentication Administrator creates tokens without assignment, and users self-assign and activate the tokens.
+
+
 
 ### Upload tokens in CSV format
 
