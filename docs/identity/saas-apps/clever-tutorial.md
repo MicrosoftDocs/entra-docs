@@ -140,7 +140,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     c. Open the downloaded **App Federation Metadata Url** into Notepad and paste the content into the **Metadata URL** textbox in the **Configure Active Directory Authentication** dialog.
 
-       ![Upload Certificate](./media/clever-tutorial/metadata.png "Upload Certificate")
+    ![Upload Certificate](./media/clever-tutorial/metadata.png "Upload Certificate")
 
     d.Click **Save**.
 
