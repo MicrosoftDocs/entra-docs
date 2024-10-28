@@ -168,8 +168,12 @@
   items:
     - name: Web app authentication
       href: index-web-app.yml
-    - name: Quickstart
-      href: quickstart-web-app-sign-in.md?pivots=workforce
+    - name: Quickstarts
+      items:
+        - name: Sign in users
+          href: quickstart-web-app-sign-in.md?pivots=workforce
+        - name: Call an API from Nodejs web app
+          href: quickstart-web-app-node-sign-in-call-api.md
     - name: Tutorials
       items:
         - name: ASP.NET Core

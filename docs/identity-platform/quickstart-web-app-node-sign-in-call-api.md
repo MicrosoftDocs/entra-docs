@@ -1,39 +1,30 @@
 ---
-title: Sign in users and call a web API in sample Node.js web application 
-description: Learn how to configure a sample web app to sign in users and call an API.
-
+title: Quickstart - Call a web API from a sample Nodejs web app
+description: Learn how to configure a Node.js web app code sample to sign in users and call an API in an external tenant.
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id 
-ms.subservice: customers
-ms.topic: sample
-ms.date: 06/26/2024
+ms.subservice: external
+ms.topic: quickstart
+ms.date: 11/26/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample web app to sign in and sign out users with my external tenant.
+#Customer intent: As a dev, devops, I want to learn about how to configure a Nodejs code sample web app to sign in and sign out users with my external tenant.
 ---
 
-# Sign in users and call a web API in sample Node.js web application 
+# Quickstart - Sign in users and call a web API in sample Node.js web app
 
-This guide uses a code sample to show you how to add authentication and authorization in a Node.js web application. The sample application sign in users to a Node.js web app, which then calls a .NET API. You enable authentication and authorization by using your external tenant details. The sample web application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) for Node to handle authentication.
-
-In this article, you complete the following tasks:
-
-- Register and configure a web API in the Microsoft Entra admin center.
-
-- Update a sample Node web application and ASP.NET web API to use your external tenant details.
-
-- Run and test the sample web application and API.
+In this Quickstart, you learn how to sign in users and call a web API from a Node.js web application in your external tenant. The sample application calls a .NET API. The sample web application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) for Node to handle authentication.
 
 ## Prerequisites
 
-- Complete the steps in [Sign in users and call an API in sample Node.js web application](sample-web-app-node-sign-in.md) article. This article shows you how to sign in users by using a sample Node.js web app. 
+- Complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This article shows you how to sign in users by using a sample Node.js web app. 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - [Node.js](https://nodejs.org).
 - [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later.
 - An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ## Register a web API
 
@@ -41,13 +32,13 @@ In this step, you create the web and the web API application registrations, and 
 
 ### Register a web API application
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/register-api-app.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/register-api-app.md)]
 
 ### Configure API scopes
 
 This API needs to expose permissions, which a client needs to acquire for calling the API:
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-api-scopes.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-api-scopes.md))]
 
 ### Configure app roles
 
@@ -55,16 +46,16 @@ This API needs to expose permissions, which a client needs to acquire for callin
 
 ### Configure optional claims
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-optional-claims-access.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-optional-claims-access.md)]
 
-Use the steps in [Configure optional claims](../../identity-platform/optional-claims.md?tabs=appui) article to add idtyp claim to the access token:
+Use the steps in [Configure optional claims](optional-claims.md?tabs=appui) article to add idtyp claim to the access token:
 
 - For the **Token type** select **Access**.
 - From the optional claims list, select **idtyp**.  
 
 ### Grant API permissions to the web app
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permission-call-api.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/grant-api-permission-call-api.md)]
 
 ##  Clone or download sample web application and web API
 
@@ -100,7 +91,7 @@ To use your app registration in the client web app sample:
 1. Find the placeholder:
 
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details(../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
     - `Enter_the_Client_Secret_Here` and replace it with the app secret value you copied earlier.
     - `Enter_the_Web_Api_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied earlier.
 
@@ -112,7 +103,7 @@ To use your app registration in the web API sample:
     
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied. 
     - `Enter_the_Tenant_Id_Here` and replace it with the Directory (tenant) ID you copied earlier.
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 
 ##  Run and test sample web app and API 
@@ -159,7 +150,4 @@ The web API endpoint needs to check if the permissions or scopes in the access t
 
 ## Related content
 
-- [Sign in users and call an API in your own Node.js web application](how-to-web-app-node-sign-in-call-api-overview.md).
-- [Enable password reset](how-to-enable-password-reset-customers.md).
-- [Customize the default branding](how-to-customize-branding-customers.md).
-- [Configure sign-in with Google](how-to-google-federation-customers.md).
+- [Tutorial: Secure an ASP.NET Core web API registered in an external tenant](../external-id/customers/tutorial-protect-web-api-dotnet-core-build-app.md).
