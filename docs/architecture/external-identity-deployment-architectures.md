@@ -119,10 +119,10 @@ In both examples, the additional tenant for partner access provides resource iso
 
 Configure [Microsoft Entra Identity Governance](../id-governance/identity-governance-overview.md) and [Microsoft Entra External ID](../external-id/external-identities-overview.md) in the additional tenant with stricter controls such as:
 
-- restrict guest user profiles
-- allowlist organizations and apps for collaboration
-- define guest account lifecycle, time-limit resource assignment, schedule periodic access reviews
-- apply stricter sets of attestations as part of external user onboarding
+- Restrict guest user profiles
+- Allowlist organizations and apps for collaboration
+- Define guest account lifecycle, time-limit resource assignment, schedule periodic access reviews
+- Apply stricter sets of attestations as part of external user onboarding
 
 You can expand this architecture with collaboration tenants to create multiple isolation boundaries based on business requirements (for example, isolate per region, per partner, per compliance jurisdiction).
 
