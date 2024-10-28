@@ -1,6 +1,6 @@
 ---
-title: Quickstart - Get started guide
-description: Use our quickstart guide to customize your tenant in just a few steps.
+title: Quickstart - Get started
+description: Learn how to get started with Microsoft Entra External ID. Customize your apps' look and feel, set up a user to test the sign-up flow, and configure a sample app in just a few minutes.
  
 author: csmulligan
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: quickstart
-ms.date: 08/13/2024
+ms.date: 10/21/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
