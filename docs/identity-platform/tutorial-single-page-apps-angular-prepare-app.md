@@ -26,48 +26,46 @@ In this tutorial:
 ## Prerequisites
 
 * Completion of the prerequisites and steps in [Tutorial: Register an application](tutorial-single-page-apps-angular-register-app.md).
-* [Node.js](https://nodejs.org/en/download/).
+* [Install Agular CLI](https://v17.angular.io/cli#installing-angular-cli)
+* [Install Node.js](https://nodejs.org/en/download/).
 
 ## Create a new Angular project
 
-Launch an Angular project using the Angular CLI to create a well-structured application environment. Follow these steps:
+To complete the rest of the tutorial, you need to create a new Angular project. If you prefer using a completed code sample for learning, download the [Angular code sample](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/angular-spa) from GitHub.
 
-1. Open a terminal and navigate to the folder where you want to create your project.
-1. **Create an Angular project**: Run the following command to generate a new Angular project named `msal-angular-tutorial`. 
+To build your Angular project, create a structure that looks like the following layout:
 
-    ```bash
-    ng new msal-angular-tutorial --defaults --skip-install --strict --routing --style=scss --version=17
-    ```
-
-    The command sets up the project with default configurations, skips the installation of dependencies, enforces strict typing, enables routing, uses SCSS for styles, and specifies Angular version 17.
-
-1. **Navigate to the project folder**: Change your current directory to the newly created project folder to start working on your Angular application.
-
-    ```bash
-    cd msal-angular-tutorial
-    ```
-
-1. **Install required packages**: Use the following commands to add Angular Material and the Microsoft Authentication Library (MSAL) for browser and Angular.
-
-    ```bash
-    ng add @angular/material
-    npm install @azure/msal-browser @azure/msal-angular
-    ```
-
-    Angular Material provides UI components, while MSAL is essential for implementing authentication.
-
-1. **Create home and profile components**: Generate two new components, `home` and `profile`, using the Angular CLI's `generate` command.
-
-    ```bash
-    ng generate component home
-    ng generate component profile
-    ```
-
-    These components serve as the main views in your application.
+```console
+.
+├── README.md
+├── angular.json
+├── package-lock.json
+├── package.json
+├── readme-files
+│   └── angular-spa-sign-in.png
+├── src
+│   ├── app
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   ├── home
+│   │   │   ├── home.component.html
+│   │   │   └── home.component.ts
+│   │   └── profile
+│   │       ├── profile.component.html
+│   │       └── profile.component.ts
+│   ├── index.html
+│   ├── main.ts
+│   ├── polyfills.ts
+│   └── styles.css
+├── tsconfig.app.json
+└── tsconfig.json
+```
 
 ## Configure the settings for the application
 
-The values recorded earlier will be used to configure the application for authentication. 
+We will use the values recorded during the app registration to configure the application for authentication. Follow these steps:
 
 1. Open the `src/app/app.module.ts` file and replace the contents with the following code:
 
