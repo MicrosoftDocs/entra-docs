@@ -5,7 +5,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 10/28/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
@@ -40,8 +40,8 @@ Methods include:
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 - [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
 - [FIDO2 security key](concept-authentication-passwordless.md)
-- [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
-- [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
+- [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview)
+- [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
 - [SMS verification](concept-authentication-phone-options.md#mobile-phone-verification)
 - [Voice call verification](concept-authentication-phone-options.md)
 
