@@ -139,6 +139,8 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. On the Active Directory pop-up, perform the following steps:
 
+    ![Screenshot that shows the Active Directory screen.](./media/acquireio-tutorial/configuration.png)
+
     a. Click **Copy** to copy the Reply URL for your instance and paste it in **Reply URL** textbox in **Basic SAML Configuration** section.
 
     b. In the **Login URL** textbox, paste the value of **Login URL**.

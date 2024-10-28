@@ -159,6 +159,8 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 5. On the **Manage Single Sign-On Settings** page, do the following:
 
+   ![The single sign-on configuration page](./media/absorblms-tutorial/settings.png)
+
     a. In the **Name** textbox, enter the name like Microsoft Entra Marketplace SSO.
 
     b. Select **SAML** as a **Method**.
@@ -198,6 +200,8 @@ For Microsoft Entra users to sign in to Absorb LMS, they must be set up in Absor
     ![The Add New drop-down list](./media/absorblms-tutorial/add.png)
 
 4. On the **Add User** page, do the following:
+
+    ![The Add User page](./media/absorblms-tutorial/user.png)
 
     a. In the **First Name** box, type the first name, such as **Britta**.
 
