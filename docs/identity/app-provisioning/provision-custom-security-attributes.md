@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 10/28/2024
+ms.date: 11/01/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -32,7 +32,7 @@ To provision custom security attributes, you must meet the following prerequisit
    - [SAP SuccessFactors to Microsoft Entra ID user provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
    - [API-driven provisioning to Microsoft Entra ID](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)
 - Active custom security attributes in your tenant for discovery during the attribute mapping process. Before using this preview feature, you must [create custom security attribute sets](~/fundamentals/custom-security-attributes-add.md) in your Microsoft Entra ID tenant.
-- Configuration of custom security attributes and provisioning attribute mappings of your inbound provisioning app. You must sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with one of the following Microsoft Entra roles:
+- Configuration of custom security attributes and provisioning attribute mappings of your inbound provisioning app. You must sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user who is assigned the following Microsoft Entra roles:
    - **Application Administrators** can create and update provisioning jobs.
    - **Attribute Provisioning Administrators** can add or remove custom security attributes in the attribute mapping section of the provisioning app.
 
@@ -59,11 +59,11 @@ This example includes custom security attributes that you could add to your tena
 - PayGrade
 - PayScaleType
 
-:::image type="content" source="media/custom-security-attributes/active-attributes.png" alt-text="Screenshot of custom security active attributes.":::
+:::image type="content" source="media/custom-security-attributes/active-attributes.png" alt-text="Screenshot of custom security active attributes." lightbox="media/custom-security-attributes/active-attributes-expanded.png":::
 
 ### Map custom security attributes in your inbound provisioning app
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or [Attribute Provisioning Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-provisioning-administrator) role.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user who has both [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or [Attribute Provisioning Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-provisioning-administrator) role permissions.
 1. Go to **Enterprise Applications**, then open your inbound provisioning app. 
 1. Open the **Provisioning** screen.
 
@@ -103,7 +103,7 @@ This example includes custom security attributes that you could add to your tena
       - `$.employmentNav.results[0].jobInfoNav.results[0].payGradeNav.name`
       - `$.employmentNav.results[0].jobInfoNav.results[0].payScaleType`
 
-    :::image type="content" source="media/custom-security-attributes/api-expressions.png" alt-text="Screenshot of the API expressions available to select.":::
+    :::image type="content" source="media/custom-security-attributes/api-expressions.png" alt-text="Screenshot of the API expressions available to select." lightbox="media/custom-security-attributes/api-expressions-expanded.png":::
 
 1. Save the schema changes. 
 1. From the **Attribute mapping** screen, select **Add new mapping**.
@@ -116,8 +116,7 @@ This example includes custom security attributes that you could add to your tena
 
   | API source attribute  | Microsoft Entra ID target attribute                           |
   |-----------------------|-----------------------------------------------------|
-  | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:EEOStatus        | 
-CustomSecurityAttributes.HRConfidentialData_EEOStatus |
+  | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:EEOStatus        | CustomSecurityAttributes.HRConfidentialData_EEOStatus |
   | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:FLSAStatus       | CustomSecurityAttributes.HRConfidentialData_FLSAStatus |
   | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayGrade         | CustomSecurityAttributes.HRConfidentialData_PayGrade |
   | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayScaleType     | CustomSecurityAttributes.HRConfidentialData_PayScaleType |
@@ -180,13 +179,13 @@ In this example, the SAP SuccessFactors attribute mapping is shown as follows:
 > The source and target values of custom security attributes get redacted in the provisioning logs. 
 To view the actual values set for the user, go the user's Microsoft Entra ID profile. You view the data in the **Custom security attributes** screen. You need at least the Attribute Assignment Administrator or Attribute Assignment Reader role to view this data.
 
-:::image type="content" source="media/custom-security-attributes/user-custom-security-attributes.png" alt-text="Screenshot of the Custom security attributes screen for the user.":::
+:::image type="content" source="media/custom-security-attributes/user-custom-security-attributes.png" alt-text="Screenshot of the Custom security attributes screen for the user." lightbox="media/custom-security-attributes/user-custom-attributes-expanded.png"::::::
 
 #### Sample SCIM payload with custom security attributes
 
 This sample SCIM bulk request includes custom fields under the extension `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa` that can be mapped to custom security attributes.
  
-<pre><code class="lang-http">
+```json
 {
     "schemas": ["urn:ietf:params:scim:api:messages:2.0:BulkRequest"],
     "Operations": [{
@@ -331,7 +330,7 @@ This sample SCIM bulk request includes custom fields under the extension `urn:ie
     ],
     "failOnErrors": null
 }
-</code></pre>
+```
 
 #### New Microsoft Graph API permissions
 

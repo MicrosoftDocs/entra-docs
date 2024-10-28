@@ -7,7 +7,7 @@ search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 10/28/2024
+ms.date: 11/01/2024
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit
@@ -371,8 +371,8 @@ For more information, see [Manage access to custom security attributes in Micros
 
 Users assigned this role can perform the following operations when configuring user provisioning/synchronization flows in Microsoft Entra:  
 
-- Read custom security attributes defined on user objects 
-- Add or remove custom security attributes in source to target attribute mapping 
+- Read and write attribute mappings for custom security attributes when provisioning in an application 
+- Read and write provisioning and auditing logs for custom security attributes when provisioning in an application
 
 > [!IMPORTANT]
 > This role does not have the ability to create custom security attribute sets or to directly assign or update custom security attribute values for the user object. This role can only configure the flow of the custom security attributes in the provisioning app. For more information, see [Provision custom security attributes from HR sources (Preview)](~/identity/app-provisioning/provision-custom-security-attributes.md).  
@@ -381,15 +381,15 @@ Users assigned this role can perform the following operations when configuring u
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/customSecurityAttributeDefinitions/allProperties/read | Read all properties of custom security attribute definitions |
-> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes present in the synchronization schema|
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes in the synchronization schema|
 > | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update | Update custom security attribute mappings in the synchronization schema [![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 
 ## Attribute Provisioning Reader 
 
 Users assigned this role can perform the following operations when working with user provisioning/synchronization flows in Microsoft Entra:  
 
-- Read custom security attributes defined on user objects 
-- Read custom security attributes defined on user objects to source or target attributes 
+- Read the attribute mappings for custom security attributes when provisioning in an application 
+- Read the provisioning and auditing logs for custom security attributes when provisioning in an application
 
 For more information, see [Provision custom security attributes from HR sources (Preview)](~/identity/app-provisioning/provision-custom-security-attributes.md).
 
@@ -397,7 +397,7 @@ For more information, see [Provision custom security attributes from HR sources 
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/customSecurityAttributeDefinitions/allProperties/read | Read all properties of custom security attribute definitions |
-> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes present in the synchronization schema |
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes in the synchronization schema |
 
 ## Authentication Administrator
 
