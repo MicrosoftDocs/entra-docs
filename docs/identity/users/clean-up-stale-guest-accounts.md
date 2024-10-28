@@ -186,4 +186,4 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 Guest users who don't sign into the tenant for the number of days you configured are disabled for 30 days, then deleted. After deletion, you can restore guests for up to 30 days, after which a new invitation is needed.
 
 > [!NOTE]
-> The API call [accessReviewInstance: stopApplyDecisions](/graph/api/accessreviewinstance-stopapplydecisions) can also be used to stop an access review.
+> If access review decisions have been made for a user, but not yet applied, the API call [accessReviewInstance: stopApplyDecisions](/graph/api/accessreviewinstance-stopapplydecisions) can be used to stop the decisions.
