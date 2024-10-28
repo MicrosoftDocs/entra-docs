@@ -248,14 +248,14 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	
 	d. In **Login Button Description** type the description of button your organization wants the users to see on login screen.
 
-	e.  In **Default Group** Select your organization Default Group to assign to new users (Default groups facilitate organized access rights to new user account).
+	e.  In **Default Group**, select your organization default group to assign to new users. Default groups facilitate organized access rights to new user accounts.
 
 	f. In **SAML User ID Locations** select either **User ID is in the NameIdentifier element of the Subject statement** or **User ID is in an Attribute element**.  This ID has to be the JIRA user ID. If the user ID is not matched, then the system doesn't allow users to sign in.
 
 	> [!Note]
 	> Default SAML User ID location is Name Identifier. You can change this to an attribute option and enter the appropriate attribute name.
 
-	g. If you select **User ID is in an Attribute element** option, then in **Attribute name** textbox type the name of the attribute where User ID is expected.
+	g. If you select **User ID is in an Attribute element**, then for **Attribute name**, type the name of the attribute where the user ID is expected.
 
 	h.  In **Auto-create User** feature (JIT User Provisioning): It automates user account creation in authorized web applications, without the need for manual provisioning. This reduces administrative workload and increases productivity. Because JIT relies on the login response from Azure AD, enter the SAML-response attribute values, which include the user's email address, last name, and first name.
 
