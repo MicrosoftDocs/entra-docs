@@ -33,35 +33,89 @@ In this tutorial:
 
 To complete the rest of the tutorial, you need an Angular project. If you prefer using a completed code sample for learning, download the [Angular code sample](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/angular-spa) from GitHub.
 
-To build your Angular project, create a structure that looks like the following layout:
+To build the Angular project from scratch, follow these steps:
 
-```console
-.
-├── README.md
-├── angular.json
-├── package-lock.json
-├── package.json
-├── readme-files
-│   └── angular-spa-sign-in.png
-├── src
-│   ├── app
-│   │   ├── app-routing.module.ts
-│   │   ├── app.component.html
-│   │   ├── app.component.ts
-│   │   ├── app.module.ts
-│   │   ├── home
-│   │   │   ├── home.component.html
-│   │   │   └── home.component.ts
-│   │   └── profile
-│   │       ├── profile.component.html
-│   │       └── profile.component.ts
-│   ├── index.html
-│   ├── main.ts
-│   ├── polyfills.ts
-│   └── styles.css
-├── tsconfig.app.json
-└── tsconfig.json
-```
+1. Open a terminal window and run the following command to create a new Angular project:
+
+    ```console
+    ng new msal-angular-tutorial --routing=true --style=css --strict=false
+    ```
+
+    The command creates a new Angular project named msal-angular-tutorial with routing enabled, CSS for styling, and strict mode disabled.
+
+1. Change to the project directory:
+
+    ```console
+    cd msal-angular-tutorial
+    ```
+1. Install the MSAL Angular package:
+
+    ```console
+    npm install @azure/msal-browser @azure/msal-angular bootstrap
+    ```
+
+    The command `npm install @azure/msal-browser @azure/msal-angular bootstrap` installs the Azure MSAL browser, Azure MSAL Angular, and Bootstrap packages.
+
+1. Add the Bootstrap CSS to the `styles` array in the `angular.json` file:
+
+    ```json
+    "styles": [
+        "src/styles.css",
+        "node_modules/bootstrap/dist/css/bootstrap.min.css"
+    ],
+    ```
+
+    The code adds the Bootstrap CSS to the styles array in the angular.json file.
+
+1. Generate Home and Profile components:
+
+    ```console
+    ng generate component home
+    ng generate component profile
+    ```
+
+    The commands generate the Home and Profile components in the Angular project.
+
+1. Rename `app.routes.ts` to `app-routing.module.ts` and updated all references.
+1. Rename `app.config.ts` to `app.module.ts` and updated all references.
+1. Remove unnecessary files and code from the project:
+
+    ```console
+    rm src/app/app.component.css
+    rm src/app/app.component.spec.ts
+    ```
+
+    The commands remove unnecessary files and code from the project.
+
+After you complete these steps, the project structure should look like:
+
+  ```console
+  .
+  ├── README.md
+  ├── angular.json
+  ├── package-lock.json
+  ├── package.json
+  ├── readme-files
+  │   └── angular-spa-sign-in.png
+  ├── src
+  │   ├── app
+  │   │   ├── app-routing.module.ts
+  │   │   ├── app.component.html
+  │   │   ├── app.component.ts
+  │   │   ├── app.module.ts
+  │   │   ├── home
+  │   │   │   ├── home.component.html
+  │   │   │   └── home.component.ts
+  │   │   └── profile
+  │   │       ├── profile.component.html
+  │   │       └── profile.component.ts
+  │   ├── index.html
+  │   ├── main.ts
+  │   ├── polyfills.ts
+  │   └── styles.css
+  ├── tsconfig.app.json
+  └── tsconfig.json
+  ```
 
 ## Configure the settings for the application
 
