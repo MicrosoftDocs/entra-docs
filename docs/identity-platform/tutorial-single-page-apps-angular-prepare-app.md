@@ -95,8 +95,6 @@ After you complete these steps, the project structure should look like:
   ├── angular.json
   ├── package-lock.json
   ├── package.json
-  ├── readme-files
-  │   └── angular-spa-sign-in.png
   ├── src
   │   ├── app
   │   │   ├── app-routing.module.ts
