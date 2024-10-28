@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/25/2024
+ms.date: 10/27/2024
 
 ms.author: justinha
 author: justinha
@@ -31,7 +31,7 @@ Some OATH TOTP hardware tokens are programmable, meaning they don't come with a 
 
 ## Hardware OATH tokens (Preview)
 
-Microsoft Entra ID supports the use of OATH-TOTP SHA-1 tokens that refresh codes every 30 or 60 seconds. Customers can purchase these tokens from the vendor of their choice. Hardware OATH tokens are available for users with a Microsoft Entra ID P1 or P2 license.  
+Microsoft Entra ID supports the use of OATH-TOTP SHA--256 and SHA-1 tokens that refresh codes every 30 or 60 seconds. Customers can purchase these tokens from the vendor of their choice. Hardware OATH tokens are available for users with a Microsoft Entra ID P1 or P2 license.  
 
 > [!IMPORTANT]
 > The preview is only supported in Azure Global and Azure Government clouds.
@@ -40,17 +40,14 @@ OATH TOTP hardware tokens typically come with a secret key, or seed, pre-program
 
 Programmable OATH TOTP hardware tokens that can be reseeded can also be set up with Microsoft Entra ID in the software token setup flow.
 
-
-Microsoft Entra ID has a new Microsoft Graph API in preview for commercial Azure, Azure for US Government, and air-gapped clouds.
+Microsoft Entra ID has a new Microsoft Graph API in preview for Azure and Azure for US Government clouds.
 
 This preview uses the hardware OATH token Authentication methods policy. [Privileged Authentication Administrators](~/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) can use Microsoft Graph to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview in the Microsoft Entra admin center. 
 
 Hardware OATH tokens that you add with Microsoft Graph for this preview appear along with other tokens in the admin center, but they can only be managed by using Microsoft Graph.  
 
-This hardware OATH token preview improves flexibility for organizations by removing Global Administrator requirements. 
-Organizations can delegate token creation, assignment and activation to Privileged Authentication Administrators.
-
-Administrators can choose to upload tokens individually or in bulk. If the business need exists, they can assign the tokens to users, or they can let end users self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) page.
+This hardware OATH token preview improves flexibility and security for organizations by removing Global Administrator requirements. 
+Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators. They can also let end users self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) page.
 
 Here are the different features of the preview:
 
