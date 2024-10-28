@@ -96,12 +96,6 @@ List tokens:
 GET https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices 
 ```
 
-Unassign a token: 
-
-```msgraph-interactive
-DELETE https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551/authentication/hardwareoathmethods/6c0272a7-8a5e-490c-bc45-9fe7a42fc4e0
-```
-
 Delete a token: 
 
 ```msgraph-interactive
@@ -124,6 +118,9 @@ POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hard
 
 ```
 
+The response includes the token ID. 
+
+```http
 #### Response
 {
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#directory/authenticationMethodDevices/hardwareOathDevices/$entity",
@@ -139,33 +136,15 @@ POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hard
     "hashFunction": "hmacsha1",
     "assignedTo": null
 }
+```
 
-
-In this example, a Privileged Authentication Administrator creates a token and assigns it to a user:
+Authentication Administrators and end users can unassign a token: 
 
 ```msgraph-interactive
-POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
-{ 
-"serialNumber": "GALT11420104", 
-"manufacturer": "Thales", 
-"model": "OTP 110 Token", 
-"secretKey": "F3QROCK7NM47BBYVS6FZOVZ42JRLQ56F", 
-"timeIntervalInSeconds": 30, 
-"assignTo": {"id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}
-}
+DELETE https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551/authentication/hardwareoathmethods/6c0272a7-8a5e-490c-bc45-9fe7a42fc4e0
 ```
 
-In this example, a Privileged Authentication Administrator activates the token:
 
-```sgraph-interactive
-POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods/325330ea-fcdb-41e3-bc21-8b89bbcb0e16/activate
-
-{ 
-    "verificationCode" : "903809" 
-}
-```
-
-To validate the token is activated, sign in as the test user.
 
 
 Let's try another example where a creates two tokens, with hashFunction optional. The hashFunction is SHA-1 by default. For SHA-256, enter `HMACSHA256` as the value for the property. 
@@ -209,6 +188,53 @@ POST https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551
 ### User self-assignment and activation
 
 Scenario 1: Admin Creates, Assigns, and Activates Token: creating, assigning, and activating a token as an admin, including the necessary API calls and verification steps.
+
+Let's look at an example where a Privileged Authentication Administrator creates a token and assigns it to a user. For the body of the POST in this example, you can find the serial number from your device and the secretKey is delivered to you.
+
+```msgraph-interactive
+POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
+{ 
+"serialNumber": "GALT11420104", 
+"manufacturer": "Thales", 
+"model": "OTP 110 Token", 
+"secretKey": "F3QROCK7NM47BBYVS6FZOVZ42JRLQ56F", 
+"timeIntervalInSeconds": 30, 
+"assignTo": {"id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}
+}
+```
+
+The response includes the token ID:
+
+```http
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#directory/authenticationMethodDevices/hardwareOathDevices/$entity",
+    "id": "3dee0e53-f50f-43ef-85c0-b44689f2d66d",
+    "displayName": null,
+    "serialNumber": "GALT11420104",
+    "manufacturer": "Thales",
+    "model": "OTP 110 Token",
+    "secretKey": null,
+    "timeIntervalInSeconds": 30,
+    "status": "available",
+    "lastUsedDateTime": null,
+    "hashFunction": "hmacsha1",
+    "assignedTo": null
+}
+```
+
+Here's how the Privileged Authentication Administrator can activate the token. Replace the verifcation code in the body with the code from your hardware OATH token.
+
+```msgraph-interactive
+POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods/325330ea-fcdb-41e3-bc21-8b89bbcb0e16/activate
+
+{ 
+    "verificationCode" : "903809" 
+}
+```
+
+To validate the token is activated, sign in as the test user.
+
+
 Scenario 2: Admin Creates and Assigns, End-User Activates: an admin can create and assign a token, and then the end-user can activate it on their Security info page.
 Scenario 3: Admin Creates, End-User Self-Assigns and Activates: admin creates tokens without assignment, and the end-user self-assigns and activates the token.
 
