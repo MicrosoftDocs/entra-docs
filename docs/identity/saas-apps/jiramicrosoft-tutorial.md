@@ -264,7 +264,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	j. In **Domain Name** type the domain name here in case of the ADFS-based login.
 
-	k. Check **Enable Single Sign out** if you wish to sign out from Microsoft Entra ID when a user sign out from JIRA.
+	k. Select **Enable Single Sign out** if you want to sign out of Microsoft Entra ID when a user signs out of JIRA.
 	
 	l. Enable **Force Azure Login** if you want to sign in by using only Microsoft Entra ID credentials.
 	
