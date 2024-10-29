@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/14/2024
+ms.date: 10/29/2024
 
 
 ms.author: justinha
@@ -70,7 +70,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
 
    - **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their AAGUID. You can work with your security key vendor to determine the AAGUID of the passkey. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
 
-   When Enforce key restrictions is set to Yes, you can select Microsoft Authenticator (preview) to automatically add the Authenticator app AAGUIDs for you in the key restriction list. For more information, see [Enable passkeys in Microsoft Authenticator (preview)](how-to-enable-authenticator-passkey.md).
+   When Enforce key restrictions is set to Yes, you can select Microsoft Authenticator  to automatically add the Authenticator app AAGUIDs for you in the key restriction list. For more information, see [Enable passkeys in Microsoft Authenticator ](how-to-enable-authenticator-passkey.md).
 
    >[!WARNING]
    >Key restrictions set the usability of specific models or providers for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in.
@@ -78,7 +78,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
    If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs, to enable this preview. This task can be done with an automated script that analyzes logs, such as registration details and sign-in logs.
 
    >[!NOTE]
-   >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator (Preview)** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
+   >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
@@ -88,7 +88,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
    >If you see an error when you try to save, replace multiple groups with a single group in one operation, and then click **Save** again.
 
 
-## Provision FIDO2 security keys using Microsoft Graph API (preview)
+## Provision FIDO2 security keys using Microsoft Graph API 
 
 Currently in preview, administrators can use [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision). Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
 

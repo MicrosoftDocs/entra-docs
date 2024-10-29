@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 10/29/2024
 
 ms.author: justinha
 author: justinha
@@ -161,7 +161,7 @@ This sign-in option requires Bluetooth and an internet connection for both devic
 
 1. To begin cross-device authentication, follow the steps in the operating system or browser prompt. On Windows 11 23H2 or later, select **iPhone, iPad, or Android device**.
 
-1. A QR code should appear on screen. Now, on your Android device, open the system camera app and scan the QR code. Alternatively, you can also use the camera in Authenticator. Navigate to the passkey account tile and tap on it. Under **Passkey details (preview)**, you'll see a button in the bottom-right corner to scan the QR code. 
+1. A QR code should appear on screen. Now, on your Android device, open the system camera app and scan the QR code. Alternatively, you can also use the camera in Authenticator. Navigate to the passkey account tile and tap on it. Under **Passkey details**, you'll see a button in the bottom-right corner to scan the QR code. 
    
 > [!NOTE]
 > Bluetooth and an internet connection are required for this step and both must be enabled on your mobile and remote device.

@@ -1,12 +1,12 @@
 ---
-title:  Register a passkey (preview)
+title:  Register a passkey 
 description: Registration and management of passkey.
 
 services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/09/2024
+ms.date: 10/29/2024
 
 ms.author: justinha
 author: justinha
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users will register a passkey using a browser or with a security key. 
 
 ---
-# Register a passkey (preview)
+# Register a passkey 
 
 This article shows how users can register a security key using the **Passkey** flow. For registration on a mobile device, see [Register a passkey using a mobile device](how-to-register-passkey-mobile.md).
 
@@ -29,7 +29,7 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 ## Manual registration 
 
 1. Users can register a passkey (FIDO2) as an authentication method by navigating and completing the process from a browser at [Security info](https://aka.ms/mysecurityinfo).
-1. Tap **Add sign-in method** > **Choose a method** > **Passkey (preview)** > **Add**.
+1. Tap **Add sign-in method** > **Choose a method** > **Passkey** > **Add**.
 1. Sign in with multifactor authentication (MFA) before adding a passkey, then tap **Next**.
    1. If you don't have at least one MFA method registered, you must add one.
    1. An Authentication Policy Administrator can also issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow a user to strongly authenticate and register a passkey.

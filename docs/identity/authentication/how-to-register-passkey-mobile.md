@@ -1,12 +1,12 @@
 ---
-title:  Register a passkey using a mobile device (preview)
-description: Registration and management of passkey using a mobile device (preview).
+title:  Register a passkey using a mobile device 
+description: Registration and management of passkey using a mobile device .
 
 services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/14/2024
+ms.date: 10/19/2024
 
 ms.author: justinha
 author: justinha
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users will register a passkey using a mobile device or with a security key. 
 
 ---
-# Register a passkey using a mobile device (preview)
+# Register a passkey using a mobile device 
 
 This article shows how to register a security key with your iOS or Android device. 
 
@@ -33,7 +33,7 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-add-method.png" alt-text="Screenshot of the Security Info screen showing add methods.":::
 
-1. Select **Passkey (preview)**.
+1. Select **Passkey **.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-my-security-list.png" alt-text="Screenshot of the drop-down list of options in security info.":::
 
@@ -89,7 +89,7 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-add-method.png" alt-text="Screenshot of the Security Info screen showing add methods.":::
 
-1. Select **Passkey (preview)**.
+1. Select **Passkey **.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-my-security-list.png" alt-text="Screenshot of the drop-down list of options in security info.":::
 

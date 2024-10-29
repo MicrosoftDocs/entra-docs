@@ -1,11 +1,11 @@
 ---
-title: How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID (preview)
+title: How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID 
 description: Learn about how to enable passkeys in Microsoft Authenticator for Microsoft Entra ID.
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/23/2024
+ms.date: 10/29/2024
 
 
 ms.author: justinha
@@ -15,7 +15,7 @@ ms.reviewer: mjsantani
 
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys in Authenticator sign in for end users.
 ---
-# Enable passkeys in Microsoft Authenticator (preview)
+# Enable passkeys in Microsoft Authenticator 
 
 This article lists steps to enable and enforce use of passkeys in Authenticator for Microsoft Entra ID. First, you update the Authentication methods policy to allow end users to register and sign in with passkeys in Authenticator. Then you can use Conditional Access authentication strengths policies to enforce passkey sign-in when users access a sensitive resource.
 
@@ -69,13 +69,13 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
      If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
    - Set **Restrict specific keys** to **Allow**.
-   - Select **Microsoft Authenticator (Preview)** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following AAGUIDs to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page:
+   - Select **Microsoft Authenticator** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following AAGUIDs to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page:
 
      - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
      - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
    
      >[!NOTE]
-     >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator (Preview)** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
+     >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
