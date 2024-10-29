@@ -31,7 +31,7 @@ Applications that support only a single signing key, or applications that requir
 * Use the caching algorithm below to ensure the caching is resilient and secure
 
 ### Keys metadata caching algorithm:
-Our [standard libraries](reference-v2-libraries.md) implement resilient and secure caching of keys. It’s recommended to use them to avoid subtle defects in the implementation. For custom implementations, here is the rough algorithm:
+Our [standard libraries](reference-v2-libraries.md) implement resilient and secure caching of keys. It’s recommended to use them to avoid subtle defects in the implementation. For custom implementations, here's the rough algorithm:
 
 #### General considerations:
 * The service validating tokens should have a cache capable of storing many distinct keys (10-1000). 
@@ -42,7 +42,7 @@ Our [standard libraries](reference-v2-libraries.md) implement resilient and secu
   * Periodically (recommended every 1 hour) as a background job 
   * Dynamically if a received token was signed with an unknown key (unknown **kid** or **tid** in the header)
 
-#### KeyRefresh procdure (Conceptual algorithm from IdentityModel)
+#### KeyRefresh procedure (Conceptual algorithm from IdentityModel)
 
 1. **Initialization**
    
@@ -57,17 +57,17 @@ Our [standard libraries](reference-v2-libraries.md) implement resilient and secu
 
 4. **Validation**
    
-   Once the new data is retrieved, it is validated to ensure it meets the required standards and is not corrupted. The metadata is only accepted when an incoming request was successfully validated with the new keys.
+   Once the new data is retrieved, it's validated to ensure it meets the required standards and isn't corrupted. The metadata is only accepted when an incoming request was successfully validated with the new keys.
    
 5. **Error Handling**
    
-   If any errors occur during data retrieval, they are logged. The system continues to operate with the last known good configuration if new data cannot be fetched
+   If any errors occur during data retrieval, they're logged. The system continues to operate with the last known good configuration if new data can't be fetched
    
 6. **Automatic Updates**
    The system periodically checks and updates the configuration data automatically based on the refresh interval (recommend 12 h with a jitter of plus or minus 1 h). It can also manually request an update if needed, ensuring that the data is always current.
 
 7. **Validation of a token with a new key**
-   If a token arrives with a signing key that is not known yet from the configuration, the system attempts to fetch the configuration with a sync call on the hot path to handle new keys in metadata outside of the regular expected updates(but no more frequently than 5mins)
+   If a token arrives with a signing key that isn't known yet from the configuration, the system attempts to fetch the configuration with a sync call on the hot path to handle new keys in metadata outside of the regular expected updates(but no more frequently than 5 mins)
 
 This approach ensures that the system always uses the most up-to-date and valid configuration data, while gracefully handling errors and avoiding redundant operations.
 
