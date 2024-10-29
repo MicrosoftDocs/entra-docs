@@ -145,7 +145,7 @@ Taking into account our learnings in the use of Conditional Access and supportin
 
 ### Apply Conditional Access policies to every app
 
-**Ensure that every app has at least one Conditional Access policy applied**. From a security perspective it's better to create a policy that encompasses **All cloud apps**, and then exclude applications that you don't want the policy to apply to. This practice ensures you don't need to update Conditional Access policies every time you onboard a new application.
+**Ensure that every app has at least one Conditional Access policy applied**. From a security perspective it's better to create a policy that encompasses **All resources (formerly 'All cloud apps')**, and then exclude applications that you don't want the policy to apply to. This practice ensures you don't need to update Conditional Access policies every time you onboard a new application.
 
 > [!TIP]
 > Be very careful in using block and all apps in a single policy. This could lock admins out, and exclusions cannot be configured for important endpoints such as Microsoft Graph.

@@ -40,7 +40,7 @@ Most users have a normal behavior that can be tracked, when they fall outside of
          1. **B2B direct connect users**.
          1. **Service provider users**.
          1. **Other external users**.
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
 1. Under **Conditions** > **Insider risk**, set **Configure** to **Yes**. 
    1. Under **Select the risk levels that must be assigned to enforce the policy**. 
       1. Select **Elevated**.
