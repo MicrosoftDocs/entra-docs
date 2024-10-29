@@ -11,7 +11,7 @@ ms.author: billmath
 ---
 
 
-# New guest lifecycle project with Microsoft Entra ID Governance
+# Business planning and governance for external partners
 
 The following documentation will guide you through creating and deploying guest access scenarios.
 
@@ -48,7 +48,7 @@ Consider each of the following business processes and the examples of how partne
 |Supply Chain Orchestration|Coordinated management of all supply chain processes to ensure efficiency, visibility, and responsiveness across all stages, from procurement to delivery|Any company that manufactures something, has material inputs, and needs to coordinate with suppliers and vendors.|
 |Business Process Management|a systematic approach to improving an organization’s workflows and operations to increase efficiency, effectiveness, and adaptability. Differs from supply chain orchestration in that it is more general and applies across all business areas.|A financial services company that partners with a credit scoring agency to streamline the loan approval process.|
 |Integrated Business Planning|a holistic approach that aligns an organization’s strategic goals, operational plans, and financial forecasts to create a cohesive, unified framework for decision-making.|The retail company shares sales forecasts and inventory levels with suppliers through an integrated planning platform.|
-|Customer Relations Management| - Customer Relationship Management software company managing its relationships with corporate clients, partners, and vendors.  An automobile company in coordinating, supporting, and optimizing their interactions with dealerships. 
+|Customer Relations Management| - Customer Relationship Management software company managing its relationships with corporate clients, partners, and vendors.|An automobile company in coordinating, supporting, and optimizing their interactions with dealerships.| 
 |Business Partner Account Lifecycle|the end-to-end process of managing the relationships and interactions between an organization and its external business partners (such as suppliers, vendors, and distributors).|a technology company that partners with a software vendor to enhance its product offerings.|
 |B2B Collaboration with Other Organizations|trategic partnership between two or more businesses to achieve common objectives through shared resources, information, and efforts.|a local coffee roaster that collaborates with a bakery to enhance both businesses' offerings.|
 
