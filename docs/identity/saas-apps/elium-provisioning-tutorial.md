@@ -117,8 +117,6 @@ To configure automatic user provisioning for Elium in Microsoft Entra ID, follow
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Elium**.
 
-    ![Synchronize link for mapping Microsoft Entra users to Elium](media/Elium-provisioning-tutorial/usermapping.png)
-
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Elium in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Elium for update operations. Select **Save** to commit any changes.
 
     ![Attribute mappings between Microsoft Entra ID and Elium](media/Elium-provisioning-tutorial/userattribute.png)

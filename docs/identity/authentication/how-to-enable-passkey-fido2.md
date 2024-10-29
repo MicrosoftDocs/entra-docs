@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/14/2024
+ms.date: 10/28/2024
 
 
 ms.author: justinha
@@ -174,6 +174,10 @@ The following steps show how to create a custom authentication strength Conditio
 1. Choose **Next** and review the policy configuration.
 
 ## Known issues
+
+### Security key provisioning
+
+Administrator provisioning of security keys is in public preview. See [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision).
 
 ### B2B collaboration users 
 

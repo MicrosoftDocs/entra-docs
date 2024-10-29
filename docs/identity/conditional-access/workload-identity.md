@@ -49,7 +49,7 @@ Create a location based Conditional Access policy that applies to service princi
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **What does this policy apply to?**, select **Workload identities**.
    1. Under **Include**, choose **Select service principals**, and select the appropriate service principals from the list.
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**. The policy applies only when a service principal requests a token.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**. The policy applies only when a service principal requests a token.
 1. Under **Conditions** > **Locations**, include **Any location** and exclude **Selected locations** where you want to allow access.
 1. Under **Grant**, **Block access** is the only available option. Access is blocked when a token request is made from outside the allowed range.
 1. Your policy can be saved in **Report-only** mode, allowing administrators to estimate the effects, or policy is enforced by turning policy **On**.
@@ -68,7 +68,7 @@ Create a risk-based Conditional Access policy that applies to service principals
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **What does this policy apply to?**, select **Workload identities**.
    1. Under **Include**, choose **Select service principals**, and select the appropriate service principals from the list.
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**. The policy applies only when a service principal requests a token.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**. The policy applies only when a service principal requests a token.
 1. Under **Conditions** > **Service principal risk**
    1. Set the **Configure** toggle to **Yes**.
    1. Select the levels of risk where you want this policy to trigger.

@@ -251,6 +251,10 @@ Then follow these steps to retry onboarding the custom attribute in the **Custom
 
 1. Select the attributes that were unsuccessful, then click **Remove** and **Save**.
 1. Wait for the health alert to be removed, or verify that the corresponding attributes have been removed from the **AADDSCustomAttributes** OU from a domain-joined VM.
+    * **Note:** If the corresponding attributes are not removed from the **AADDSCustomAttributes** OU within a day:
+        1. Check that **Azure AD Domain Services Sync** manifest's _addIns_ section does not include corresponding attributes.
+            * By **Portal > App registrations > click "All applications" > "Azure AD Domain Services Sync" > Left blade > Manifest**
+        1. The AADDS DC Administrator can manually remove corresponding attributes from the **AADDSCustomAttributes** OU **if** the _addIns_ section does not include corresponding attributes. The alert should be cleared within two hours of manual deletion.
 1. Select **Add** and choose the desired attributes again, then click **Save**.
 
 Upon successful onboarding, Domain Services will back fill synchronized users and groups with the onboarded custom attribute values. The custom attribute values appear gradually, depending on the size of the tenant. To check the backfill status, go to [Domain Services Health](check-health.md) and verify the **Synchronization with Microsoft Entra ID** monitor timestamp has updated within the last hour.

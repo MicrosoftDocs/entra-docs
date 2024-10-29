@@ -112,8 +112,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to BitaBIZ**.
 
-	![BitaBIZ User Mappings](media/bitabiz-provisioning-tutorial/usermapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to BitaBIZ in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in BitaBIZ for update operations. Select the **Save** button to commit any changes.
 
 	![BitaBIZ User Attributes](media/bitabiz-provisioning-tutorial/user-attribute.png)

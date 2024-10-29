@@ -147,8 +147,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Meta Networks Connector**.
 
-	![Meta Networks Connector User Mappings](media/meta-networks-connector-provisioning-tutorial/usermappings.png)
-
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Meta Networks Connector in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Meta Networks Connector for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Meta Networks Connector API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
     |Attribute|Type|Supported for filtering|Required by Meta Networks Connector|
@@ -163,8 +161,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	> phonenumbers value should be in E164 format. For example +16175551212
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Meta Networks Connector**.
-
-	![Meta Networks Connector Group Mappings](media/meta-networks-connector-provisioning-tutorial/groupmappings.png)
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Meta Networks Connector in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Meta Networks Connector for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Meta Networks Connector API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
