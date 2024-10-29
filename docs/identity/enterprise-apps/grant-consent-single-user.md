@@ -159,7 +159,7 @@ In the example, the resource enterprise application is Microsoft Graph of object
    GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants?$filter=clientId eq '00001111-aaaa-2222-bbbb-3333cccc4444' and consentType eq 'Principal'
    ```
 
-1. Assign the app to the user. This assignment ensures that the user can sign in if assignment is required, and ensures that app is available through the user's My Apps portal. In the following example, `resourceId`represents the client app to which the user is being assigned. The user is assigned the default app role that is `ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0`.
+1. Assign the app to the user. This assignment ensures that the user can sign in if assignment is required, and ensures that app is available through the user's My Apps portal. In the following example, `resourceId`represents the client app to which the user is being assigned. The user is assigned the default app role that is `00000000-0000-0000-0000-000000000000`.
 
     ```http
         POST /servicePrincipals/resource-servicePrincipal-id/appRoleAssignedTo
