@@ -138,7 +138,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 3. Click on **Microsoft integrations** under **Add value** section.
 
-4. Scroll down to the section **Microsoft Entra ID (Enable single sign on)** and perform following steps:
+4. Scroll down to the section **Microsoft Entra ID (Enable single sign on)** and enter the appropriate values in the provided fields:
 
     a. Copy the value from the **Entity ID (”Identifier” in Microsoft Entra ID)** textbox and paste it into the **Identifier** textbox on the **Basic SAML Configuration** section in Azure portal. 
 
