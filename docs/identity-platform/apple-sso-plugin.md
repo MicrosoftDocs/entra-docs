@@ -207,7 +207,7 @@ Some iOS apps that have advanced network settings might experience unexpected is
 If your users have problems signing in to an application even after you've enabled it through the other settings, try adding it to the `AppCookieSSOAllowList` to resolve the issues.
 
 >[!NOTE]
-> Using SSO through the cookie mechanism has severe limitations. For example, it's not compatible with Entra ID conditional access policies and it only supports a single account. You should not use this feature, unless explicitly recommended by the Microsoft engineering or support teams for a limited set of applications that are determined to be incompatible with the regular SSO. 
+> Using SSO through the cookie mechanism has severe limitations. For example, it's not compatible with Microsoft Entra ID conditional access policies and it only supports a single account. You should not use this feature, unless explicitly recommended by the Microsoft engineering or support teams for a limited set of applications that are determined to be incompatible with the regular SSO. 
 
 - **Key**: `AppCookieSSOAllowList`
 - **Type**: `String`
