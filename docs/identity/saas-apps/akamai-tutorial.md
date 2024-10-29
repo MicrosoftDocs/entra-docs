@@ -473,7 +473,7 @@ In the **Authentication** tab, assign the Identity Provider.
 
     ![Screenshot of the Akamai EAA console GROUPS ON SUPERDEMOLIVE DIRECTORY window. The EAAGroup with 1 User is listed under Groups.](./media/header-akamai-tutorial/eaagroup.png)
 
-1. Add the Directory to you Identity Provider by clicking **Identity** > **Identity Providers** and click on the **Directories** Tab and Click on **Assign directory**.
+1. Add the Directory to your Identity Provider by clicking **Identity** > **Identity Providers** and click on the **Directories** Tab and Click on **Assign directory**.
 
 ### Configure KCD Delegation for EAA Walkthrough
 
