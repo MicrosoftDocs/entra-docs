@@ -31,7 +31,7 @@ In this step, you register the edit profile service (the API app) app, which pro
 
 ### Configure edit profile service API scopes
 
-This edit profile service needs to expose permissions, which a client needs to acquire for calling the API:
+The edit profile service needs to expose permissions, which a client needs to acquire for calling the API:
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-api-mfa-scopes.md)]
 
@@ -47,7 +47,7 @@ This edit profile service needs to expose permissions, which a client needs to a
 
 ### Grant admin consent
 
-You've assigned the *User.ReadWrite* permissions correctly. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to these permission on behalf of all the users in the tenant:
+You've assigned the *User.ReadWrite* permissions correctly. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to this permission on behalf of all the users in the tenant:
     
 1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
 
@@ -73,7 +73,7 @@ You've assigned the **EditProfileService.ReadWrite* permissions correctly. Howev
 
 Your edit profile service app that you registered earlier is the resource that you protect with MFA. 
 
-Use the steps in [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md) to create an MFA CA policy. Use the following settings when you create your policy:
+To create an MFA CA policy, use the steps in [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md). Use the following settings when you create your policy:
 - For the **Name**, use *MFA policy*.
 - For the Target resources, select the edit profile service app that you registered earlier, such as *edit-profile-service*.
 
@@ -115,7 +115,7 @@ To test your app, install project dependencies for both the the client app and t
     npm install
     npm start
     ```
-1. To run the edit service/API app, change directory edit service/API app, *1-Authentication\7-edit-profile-with-mfa-express\Api* ,then run the following commands:
+1. To run the edit service/API app, change directory to the edit service/API app, *1-Authentication\7-edit-profile-with-mfa-express\Api*, then run the following commands:
 
     ```Console
     npm install
