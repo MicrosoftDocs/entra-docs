@@ -21,13 +21,7 @@ As mentioned in the [Microsoft Digital Defense Report in October 2023](https://w
 > ...at Microsoft, our more than 10,000 security experts analyze over 65 trillion signals each day... driving some of the most influential insights in
 cybersecurity. Together, we can build cyber resilience through innovative action and collective defense.
 
-As part this work we're making Microsoft-managed policies available in Microsoft Entra tenants around the world. These [simplified Conditional Access policies](#what-is-conditional-access) take action to require multifactor authentication, which a [recent study](https://arxiv.org/abs/2305.00945) finds can reduce the risk of compromise by 99.22%.
-
-At launch Microsoft is deploying the following three policies where our data tells us they would increase an organization's security posture:
-
-- Multifactor authentication for admins accessing Microsoft Admin Portals
-- Multifactor authentication for per-user multifactor authentication users
-- Multifactor authentication and reauthentication for risky sign-ins
+As part this work we're making Microsoft-managed policies available in Microsoft Entra tenants around the world. These [simplified Conditional Access policies](#what-is-conditional-access) take action to require multifactor authentication, which a [recent study](https://arxiv.org/abs/2305.00945) finds can reduce the risk of compromise by greater than 99%.
 
 :::image type="content" source="media/managed-policies/microsoft-managed-policy.png" alt-text="Screenshot showing an example of a Microsoft-managed policy in the Microsoft Entra admin center." lightbox="media/managed-policies/microsoft-managed-policy-expanded-full.png":::
 
@@ -36,6 +30,7 @@ Administrators with at least the [Conditional Access Administrator](../role-base
 Administrators have the ability to **Edit** the **State** (On, Off, or Report-only) and the **Excluded identities** (Users, Groups, and Roles) in the policy. Organizations should [exclude their break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from these policies the same as they would in other Conditional Access policies. Organizations can duplicate these policies if they want to make more changes than the basic ones allowed in the Microsoft-managed versions.
 
 Microsoft will enable these policies after no less than 90 days after they're introduced in your tenant if they're left in the **Report-only** state. Administrators might choose to turn these policies **On** sooner, or opt out by setting the policy state to **Off**. Customers are notified via emails and [Message center](/microsoft-365/admin/manage/message-center) posts 28 days before the policies are enabled. 
+
 > [!NOTE]
 > In some cases, policies may be enabled faster than 90 days. If this is applicable to your tenant, it will be noted in emails and M365 message center posts you receive about Microsoft Managed Policies. It will also be mentioned in the policy's details in the Microsoft Admin Center.
 
@@ -51,11 +46,18 @@ This policy covers [14 admin roles](#what-administrator-roles-are-covered-by-the
 
 This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled.
 
+> [!TIP]
+> Microsoft-managed policies requiring multifactor authentication differ from the [announcement of mandatory multifactor authentication for Azure sign-in made in 2024](https://azure.microsoft.com/blog/announcing-mandatory-multi-factor-authentication-for-azure-sign-in/) that started gradual rollout in October of 2024. More information about that enforcement can be found in the article, [Planning for mandatory multifactor authentication for Azure and other admin portals](../authentication/concept-mandatory-multifactor-authentication.md).
+
 ### Multifactor authentication for per-user multifactor authentication users
 
 This policy covers users [per-user MFA](../authentication/howto-mfa-userstates.md), a configuration that Microsoft no longer recommends. [Conditional Access](concept-conditional-access-policies.md) offers a better admin experience with many extra features. Consolidating all MFA policies in Conditional Access can help you be more targeted in requiring MFA, lowering end user friction while maintaining security posture. 
 
-This policy only targets licensed users with Microsoft Entra ID P1 and P2, where security defaults policy isn't enabled, and there are less than 500 per-user MFA enabled or enforced users. 
+This policy targets: 
+
+- Licensed users with Microsoft Entra ID P1 and P2.
+- Where security defaults aren't enabled.
+- There are less than 500 per-user MFA enabled or enforced users. 
 
 To apply this policy to more users, duplicate it and change the assignments.
 
@@ -67,8 +69,8 @@ To apply this policy to more users, duplicate it and change the assignments.
 This policy covers all users and requires MFA and reauthentication when we detect high-risk sign-ins. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include: travel that is highly abnormal, password spray attacks, or token replay attacks. For more information about these risk definitions, see the article [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
 
 This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled. 
--	If P2 licenses equal or exceed total MFA-registered active users, the policy will cover All Users. 
--	If MFA-registered active users exceed P2 licenses, we will create and assign the policy to a capped security group based on available P2 licenses. You can modify membership of the policy’s security group. 
+-	If P2 licenses equal or exceed total MFA-registered active users, the policy covers All Users. 
+-	If MFA-registered active users exceed P2 licenses, we'll create and assign the policy to a capped security group based on available P2 licenses. You can modify membership of the policy’s security group. 
 
 To prevent attackers from taking over accounts, Microsoft doesn't allow risky users to register for MFA.
 

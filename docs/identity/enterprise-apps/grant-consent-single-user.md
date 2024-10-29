@@ -127,7 +127,7 @@ You need to consent to the following permissions:
 
 In the following example, you grant delegated permissions defined by a resource API to a client enterprise application on behalf of a single user.
 
-In the example, the resource enterprise application is Microsoft Graph of object ID `11112222-bbbb-3333-cccc-4444dddd5555`. The Microsoft Graph defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `Principal`, indicating that you're consenting on behalf of a single user in the tenant. The object ID of the client enterprise application is `00001111-aaaa-2222-bbbb-3333cccc4444`. The principalId of the user is `aaaaaaaa-bbbb-cccc-1111-222222222222`.
+In the example, the resource enterprise application is Microsoft Graph of object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The Microsoft Graph defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `Principal`, indicating that you're consenting on behalf of a single user in the tenant. The object ID of the client enterprise application is `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The principalId of the user is `aaaaaaaa-bbbb-cccc-1111-222222222222`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically are not subject to review or confirmation. They take effect immediately.
@@ -147,7 +147,7 @@ In the example, the resource enterprise application is Microsoft Graph of object
    {
       "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
       "consentType": "Principal",
-      "resourceId": "11112222-bbbb-3333-cccc-4444dddd5555",
+      "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
       "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
       "scope": "User.Read.All Group.Read.All"
    }
