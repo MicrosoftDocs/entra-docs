@@ -23,7 +23,7 @@ This solution acquires application traffic and routes it from the client device.
 
 The following architectural diagram illustrates an example configuration.
 
-:::image type="content" source="media/source-ip-anchoring/architectural-diagram-example-inline.png" alt-text="Example configuration architectural diagram." lightbox="media/source-ip-anchoring/architectural-diagram-example-expanded.png":::
+:::image type="content" source="media/source-ip-anchoring/architectural-diagram-example-inline.png" alt-text="Diagram of an example architectural configuration." lightbox="media/source-ip-anchoring/architectural-diagram-example-expanded.png":::
 
 In the example configuration, the application only allows connections that originate from 15.4.23.54, which is the egress IP address of customer's on-premises network. When a user attempts to access the application, the Global Secure Access client acquires and tunnels the traffic through Microsoft's Secure Service Edge where authorization control enforcement (such as Conditional Access) can occur. The traffic tunnels to the on-premises network using the Private Network Connector. Finally, the traffic uses the internet to connect to the web application. The application sees the connection originating from 15.4.23.54 and allows access.
 
