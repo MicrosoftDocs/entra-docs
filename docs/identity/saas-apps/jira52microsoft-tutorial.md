@@ -164,8 +164,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 5. Once the plugin is installed, it appears in **User Installed** add-ons section. Click **Configure** to configure the new plugin.
 
-	![Screenshot shows the Microsoft Entra SAML Single Sign-on for Jira section with Configure selected.](./media/jira52microsoft-tutorial/configure-plugin.png)
-
 6. Perform following steps on configuration page:
 
 	![Screenshot shows the Microsoft Jira S S O Connector configuration page.](./media/jira52microsoft-tutorial/configuration.png)
