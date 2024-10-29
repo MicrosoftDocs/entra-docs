@@ -182,8 +182,8 @@ Status code: 201
       }
     }
   },
-  "name": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
-  "id": "/providers/Microsoft.Subscription/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/RoleEligibilityScheduleRequests/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
+  "name": "64caffb6-55c0-4deb-a585-68e948ea1ad6",
+  "id": "/providers/Microsoft.Subscription/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/providers/Microsoft.Authorization/RoleEligibilityScheduleRequests64caffb6-55c0-4deb-a585-68e948ea1ad6",
   "type": "Microsoft.Authorization/RoleEligibilityScheduleRequests"
 }
 ````
