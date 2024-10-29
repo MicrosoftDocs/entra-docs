@@ -6,7 +6,7 @@ author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: sample
 ms.date: 10/31/2024
 ms.custom: developer
@@ -89,51 +89,50 @@ git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.
 
 ## Configure the sample web app
 
-<configure both App and Api apps>
+This code sample contains two apps, the client app and the service/API app. You need to update these apps to use your external tenant settings. To do so, use the following steps:
 
-To use your edit profile service app registration in the app sample:
+1. In your code editor, open `1-Authentication\7-edit-profile-with-mfa-express\App\authConfig.js` file, then find the placeholder:
 
-1. In your code editor, open `App\authConfig.js` file.
-
-1. Find the placeholder:
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's *https://graph.microsoft.com/*.
-    - `Add_your_protected_scope_here` and replace it with the edit profile service app scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the edit profile service app.
+    - `Add_your_protected_scope_here` and replace it with the edit profile service app scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the [edit profile service app](#register-edit-profile-service-app) you registered earlier.
 
+1. In your code editor, open `1-Authentication\7-edit-profile-with-mfa-express\Api\authConfig.js` file, then find the placeholder:
+    
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
+    - `Enter_the_Tenant_ID_Here` and replace it with Tenant ID. If you don't have your Tenant ID, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [edit profile service app](#register-edit-profile-service-app) you registered earlier.
+    - `Enter_the_Client_Secret_Here` and replace it with the e[dit profile service app secret](#add-app-client-secret) value you copied earlier.
+    - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's *https://graph.microsoft.com/*.
 
-## Install project dependencies
+## Install project dependencies and run app
 
-<Combine install dependencies and run app for both App and Api>
+To test your app, install project dependencies for both the the client app and the service/API app, then run them.
 
-1. Open your terminal window, and change to the directory that contains the Node.js sample app:
+1. To run the client app, open your terminal window, then run the following commands:
     
     ```Console
-    cd 1-Authentication\7-sign-in-express-mfa\App
+    cd 1-Authentication\7-edit-profile-with-mfa-express\App
+    npm install
+    npm start
     ```
-1. Run the following commands to install app dependencies:
+1. To run the edit service/API app, change directory edit service/API app, *1-Authentication\7-edit-profile-with-mfa-express\Api* ,then run the following commands:
 
     ```Console
     npm install
-    ```
-
-
-## Run and test web app
-
-1. In your terminal, run the following command::
-
-    ```console
     npm start
     ```
+
 1. Open your browser, then go to http://localhost:3000.
 
 1. Select the **Sign In** button, then you sign in.
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
-1. To update profile, select the **Edit profile** link. You see a page similar to the following screenshot:
+1. To update profile, select the **Profile editing** link. You see a page similar to the following screenshot:
 
     :::image type="content" source="media/how-to-web-app-node-edit-profile-update-profile/edit-user-profile.png" alt-text="Screenshot of user update profile."::: 
 
-1. To edit the user's **Display Name**, select the **Edit** button. If you haven't already done so, the app prompts you to complete an MFA challenge. 
+1. To edit profile, select the **Edit Profile** button. If you haven't already done so, the app prompts you to complete an MFA challenge. 
 
 ## Related content
 

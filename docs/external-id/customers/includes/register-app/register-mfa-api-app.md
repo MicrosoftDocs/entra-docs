@@ -24,4 +24,4 @@ ms.manager: mwongerapk
 
 1. Select **Register** to create the application.
 
-1. The application's **Overview pane** is displayed when registration is complete.
+1. The application's **Overview pane** is displayed when registration is complete. Record the **Application (client) ID** for use in your application source code.

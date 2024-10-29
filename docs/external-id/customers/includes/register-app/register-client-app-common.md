@@ -23,4 +23,5 @@ The following steps show you how to register your app in the Microsoft Entra adm
     1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 
 1. Select **Register**.
+
 1. The application's **Overview** pane displays upon successful registration. Record the **Application (client) ID** to be used in your application source code.
