@@ -21,17 +21,17 @@ This guide uses a sample Node.js web app to show you how to add sign in and edit
 
 - Complete the steps in [Sign in users in a sample Node.js web app](sample-web-app-node-sign-in.md) article. This article shows you how to sign in users by using a sample Node.js web app. 
 
-## Register and configure edit profile service app
+## Register and configure EditProfileService app
 
-In this step, you register the edit profile service (the API app) app, which provides a mechanism to protect the edit profile operation by requiring MFA. 
+In this step, you register the EditProfileService app (the API app) app, which provides a mechanism to protect the edit profile operation by requiring MFA. 
 
-### Register edit profile service app
+### Register EditProfileService app
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/register-mfa-api-app.md)]
 
-### Configure edit profile service API scopes
+### Configure EditProfileService app API scopes
 
-The edit profile service needs to expose permissions, which a client needs to acquire for calling the API:
+The EditProfileService app needs to expose permissions, which a client needs to acquire for calling the API:
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-api-mfa-scopes.md)]
 
@@ -39,9 +39,9 @@ The edit profile service needs to expose permissions, which a client needs to ac
 
 [!INCLUDE [active-directory-b2c-add-client-secret](./includes/register-app/add-mfa-api-app-client-secret.md)]
 
-### Grant User.ReadWrite permission to the edit profile service app
+### Grant User.ReadWrite permission to the EditProfileService app
 
-*User.ReadWrite* is a Microsoft Graph API permission that enables a user to update their profile. To grant the *User.ReadWrite* permission to the edit profile service app, use the following steps: 
+*User.ReadWrite* is a Microsoft Graph API permission that enables a user to update their profile. To grant the *User.ReadWrite* permission to the EditProfileService app, use the following steps: 
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permission-edit-profile.md)]
 
@@ -57,7 +57,7 @@ You've assigned the *User.ReadWrite* permissions correctly. However, since the t
 
 In this section, you grant API permissions to the client web app that you registered earlier (from the prerequisites). 
 
-Grant your client web app the *EditProfileService.ReadWrite* permission. This permission is exposed by the edit profile service app, and it protects the update profile operation with MFA. To grant the *EditProfileService.ReadWrite* permission to client web app, use the following steps:
+Grant your client web app the *EditProfileService.ReadWrite* permission. This permission is exposed by the EditProfileService app, and it protects the update profile operation with MFA. To grant the *EditProfileService.ReadWrite* permission to client web app, use the following steps:
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-mfa-api-app.md)]
 
@@ -71,11 +71,11 @@ You've assigned the **EditProfileService.ReadWrite* permissions correctly. Howev
 
 ## Create CA MFA policy
 
-Your edit profile service app that you registered earlier is the resource that you protect with MFA. 
+Your EditProfileService app that you registered earlier is the resource that you protect with MFA. 
 
 To create an MFA CA policy, use the steps in [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md). Use the following settings when you create your policy:
 - For the **Name**, use *MFA policy*.
-- For the Target resources, select the edit profile service app that you registered earlier, such as *edit-profile-service*.
+- For the Target resources, select the EditProfileService app that you registered earlier, such as *edit-profile-service*.
 
 ## Clone or download sample web app
 
@@ -94,7 +94,7 @@ This code sample contains two apps, the client app and the service/API app. You 
 1. In your code editor, open `1-Authentication\7-edit-profile-with-mfa-express\App\authConfig.js` file, then find the placeholder:
 
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's *https://graph.microsoft.com/*.
-    - `Add_your_protected_scope_here` and replace it with the edit profile service app scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the [edit profile service app](#register-edit-profile-service-app) you registered earlier.
+    - `Add_your_protected_scope_here` and replace it with the EditProfileService app scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the [edit profile service app](#register-edit-profile-service-app) you registered earlier.
 
 1. In your code editor, open `1-Authentication\7-edit-profile-with-mfa-express\Api\authConfig.js` file, then find the placeholder:
     
