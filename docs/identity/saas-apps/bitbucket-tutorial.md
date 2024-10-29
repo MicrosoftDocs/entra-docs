@@ -141,7 +141,7 @@ In this section, you enable B.Simon to use Azure single sign-on by granting acce
 
 4. On the **SAML SIngleSignOn Plugin Configuration page**, click **Add IdP**. 
 
-5. On the **Choose your SAML Identity Provider** Page, perform the following steps:
+5. On the **Choose your SAML Identity Provider** Page, enter your IdP Type, Name and Description in the provided fields:
 
     a. Select **IdP Type** as **Microsoft Entra ID**.
 

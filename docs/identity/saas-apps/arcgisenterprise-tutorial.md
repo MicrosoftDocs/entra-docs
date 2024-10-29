@@ -146,7 +146,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. On the **Set Identity Provider** section, perform the following steps:
 
-    a. Please provide a name like **Microsoft Entra ID Test** in the **Name** textbox.
+    a. Kindly provide a name like **Microsoft Entra ID Test** in the **Name** textbox.
 
     b. In the **URL** textbox, paste the **App Federation Metadata Url** value which you copied previously.
 
