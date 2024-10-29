@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     > [!Note]
     > Please delete **name** and **emailaddress** manually from the above default attributes in the Microsoft Entra admin center as per application requirements. 
 
-1. In addition to above, Docker Business application supports optional attributes to be passed back in SAML response, which are shown below. These attributes can be added to manage the provisioning of users in specific teams and their roles within the Docker Business Organization. To learn more about all attributes that Docker Business SSO supports, please refer [Docker Business SSO](https://docs.docker.com/security/for-admins/single-sign-on/configure/configure-idp/#sso-attributes) document.
+1. In addition to above, Docker Business application supports optional attributes to be passed back in SAML response, which are shown below. These attributes can be added to manage the provisioning of users in specific teams and their roles within the Docker Business Organization.
 
     | Claim Name | Namespace| Source Attribute|
     | ------------ | ----------| --------- |
