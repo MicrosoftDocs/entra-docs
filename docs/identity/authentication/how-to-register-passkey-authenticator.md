@@ -71,7 +71,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
 1. Enable the Authenticator as a passkey provider. 
 
-   - On iOS 18, navigate to **Settings** > **General** > **Autofill & Passwords**. 
+   - On iOS 18 or greater, navigate to **Settings** > **General** > **Autofill & Passwords**. 
    - On iOS 17, navigate to **Settings** > **Passwords** > **Password Options**. 
 
    On both operating systems, make sure **AutoFill Passwords and Passkeys** is turned on. 
@@ -145,7 +145,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/after-setup-in-authenticator.png" alt-text="Screenshot of return to wizard to complete the passkey setup in Authenticator.":::
 
-1. The wizard verifies the passkey was created in Authenticator. This step requires internet connectivity and Bluetooth on both devices.
+1. The wizard verifies the passkey was created in Authenticator.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/verifying-passkey.png" alt-text="Screenshot of wizard verifying passkey in Authenticator.":::
 
@@ -159,7 +159,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
 
 ### Alternate registration flow from Security Info (iOS)
-If a user is unable to sign in to the Authenticator to register a passkey, you can fall back to triggering registration directly from Security Info. If initiating this flow from a browser on a different device, Bluetooth, an internet connection, and connectivity to these two endpoints must be allowed in your organization to enable cross-device registration and authentication:
+If a user is unable to sign in to Authenticator to register a passkey, they can fall back to triggering registration directly from Security Info with WebAuthn. If initiating this flow from a browser on a different device, Bluetooth, an internet connection, and connectivity to these two endpoints must be allowed in your organization to enable cross-device registration and authentication:
 
 - cable.ua5v.com
 - cable.auth.com
@@ -174,7 +174,7 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/having-trouble.png" alt-text="Screenshot of how to register a passkey another way.":::
 
-3. Choose **iPhone or iPad** and go through the rest of the flow to register a passkey on your device.
+3. Choose **iPhone or iPad** and go through the rest of the flow to register a passkey on the device.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/choose-ios-device.png" alt-text="Screenshot of how to choose another way on iOS if you have trouble.":::
 
@@ -194,6 +194,7 @@ To remove the passkey from Authenticator, tap the account name, tap **Settings**
 
 > [!NOTE]
 > In most cases, the passkey is also deleted from [Security info](https://mysignins.microsoft.com/security-info). If not, navigate to Security info and click **Delete** to remove it. 
+> If the passkey is not deleted from Security Info Entra ID may prompt the user to sign-in with the passkey they no longer have. 
 
 ### Troubleshooting
 
@@ -246,8 +247,6 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
 Security info by default will prompt users to sign in to the Authenticator app to register their passkey.
 
->[!NOTE]
->Support for same-device registration in Edge on Android is coming soon.
 
 1. On the same Android device as the Authenticator or using another device, such as a laptop, open a web browser and sign in with MFA to [Security info](https://mysignins.microsoft.com/security-info).
 
@@ -308,6 +307,8 @@ Security info by default will prompt users to sign in to the Authenticator app t
 1. After you complete the passkey setup in Authenticator, return to your browser where Security info is open and click **Next**. 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-setup-authenticator.png" alt-text="Screenshot of wizard to complete the passkey setup in Authenticator on Android.":::
+
+1. The wizard verifies the passkey was created in Authenticator.
 
 1. After the passkey is created, click **Done**.
 
