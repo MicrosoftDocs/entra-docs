@@ -68,7 +68,7 @@ Follow the instructions in the article, [Add or deactivate custom security attri
    1. Select **Done**.
 1. Under **Target resources**, select the following options:
    1. Select what this policy applies to **Cloud apps**.
-   1. Include **Select apps**.
+   1. Include **Select resources**.
    1. Select **Edit filter**.
    1. Set **Configure** to **Yes**.
    1. Select the **Attribute** we created earlier called *policyRequirement*.

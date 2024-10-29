@@ -1,11 +1,10 @@
 ---
-title: Self-service sign-up for External ID
-description: Learn how to allow external users to sign up for your applications themselves by enabling self-service sign-up. Create a personalized sign-up experience by customizing the self-service sign-up user flow. 
+title: Self-service sign-up
+description: Learn how to enable self-service sign-up for Microsoft Entra External ID. Allow external users to sign up for your applications themselves, customize the sign-up experience, and manage user flows.
 
- 
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 01/23/2024
+ms.date: 10/21/2024
 
 ms.author: mimart
 author: msmimart

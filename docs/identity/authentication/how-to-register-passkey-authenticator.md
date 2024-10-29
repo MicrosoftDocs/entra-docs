@@ -24,6 +24,9 @@ This article shows how to register a passkey using Microsoft Authenticator on yo
 
 Alternatively, you can add a passkey from your mobile device browser, or through cross-device registration using another device, such as a laptop. Your mobile device needs to run iOS version 17, or Android version 14, or later. 
 
+>[!NOTE]
+>Support for registering passkeys in Authenticator when attestation is enforced is currently rolling out to iOS Authenticator app users. Support for registering attested passkeys in Authenticator on Android devices is available to all users in the latest version of the app.
+
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
 | **Same-device registration by signing into Authenticator**              | &#x2705;          | &#x2705;       |
@@ -35,6 +38,7 @@ Alternatively, you can add a passkey from your mobile device browser, or through
 ## [**iOS**](#tab/iOS) 
 
 ### Registration by signing in to Authenticator (iOS) (preview)
+
 
 You can sign in to Authenticator to create a passkey in the app and get seamless single sign-on (SSO) across Microsoft native apps. **This is the recommended and preferred flow to set up a passkey in Authenticator.** If you're signed in or already have an account in Authenticator, you still need to complete these steps to add a passkey in Authenticator.
 

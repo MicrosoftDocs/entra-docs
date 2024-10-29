@@ -30,8 +30,8 @@ Block or limit access to SharePoint, OneDrive, and Exchange content from unmanag
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
-1. Under **Target resources** > **Cloud apps**, select the following options:
-   1. Under **Include**, choose **Select apps**.
+1. Under **Target resources** > **Resources (formerly cloud apps)**, select the following options:
+   1. Under **Include**, choose **Select resources**.
    1. Choose **Office 365**, then select **Select**.
 1. Under **Access controls** > **Session**, select **Use app enforced restrictions**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
