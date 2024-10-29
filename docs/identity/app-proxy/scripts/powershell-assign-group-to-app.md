@@ -73,7 +73,7 @@ Import-Module Microsoft.Graph.Beta.Applications
 
 Connect-MgGraph -Scope Directory.ReadWrite.All -NoWelcome
 
-New-MgBetaGroupAppRoleAssignment -GroupId $groupObjectId -PrincipalId $groupObjectId -ResourceId $servicePrincipalObjectId -AppRoleId "00000000-0000-0000-0000-000000000000"
+New-MgBetaGroupAppRoleAssignment -GroupId $groupObjectId -PrincipalId $groupObjectId -ResourceId $servicePrincipalObjectId -AppRoleId "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 
 Write-Host ("")
 Write-Host ("Finished.") -BackgroundColor "Black" -ForegroundColor "Green"
