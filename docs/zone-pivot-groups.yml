@@ -362,3 +362,5 @@ groups:
     title: Monitor
   - id: identity-governance-guest-offboard
     title: Offboard
+  - id: identity-governance-guest-alt-overview
+    title: Alt Overview
