@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 11/29/2024
+ms.date: 11/28/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to set up my Node.js web app for profile editing so that customer users can update their profile after a successful sign-in.
 ---

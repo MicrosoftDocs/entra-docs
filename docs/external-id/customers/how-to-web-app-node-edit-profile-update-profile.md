@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 11/29/2024
+ms.date: 11/28/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to learn how to add edit profile to a Node.js web app so that customer users can update their profile after a successful sign-in to external-facing app.
 ---
@@ -38,7 +38,7 @@ Update the *authConfig.js* file for the client web app:
     ```JavaScript
     //...
     const GRAPH_API_ENDPOINT = process.env.GRAPH_API_ENDPOINT || "https://graph.microsoft.com/";
-    // https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0&tabs=http
+    // https://learn.microsoft.com/graph/api/user-update?tabs=http
     const GRAPH_ME_ENDPOINT = GRAPH_API_ENDPOINT + "v1.0/me";
     const editProfileScope = process.env.EDIT_PROFILE_FOR_CLIENT_WEB_APP || 'api://{clientId}/EditProfileService.ReadWrite';
     
@@ -313,7 +313,7 @@ In this section, you add the identity related code for the mid-tier app (EditPro
     
     const GRAPH_API_ENDPOINT = process.env.GRAPH_API_ENDPOINT || "graph_end_point";
     // Refers to the user that is single user singed in.
-    // https://learn.microsoft.com/en-us/graph/api/user-update?view=graph-rest-1.0&tabs=http
+    // https://learn.microsoft.com/en-us/graph/api/user-update?tabs=http
     const GRAPH_ME_ENDPOINT = GRAPH_API_ENDPOINT + "v1.0/me";
     
     module.exports = {
@@ -341,7 +341,7 @@ In this section, you add the identity related code for the mid-tier app (EditPro
 
 ### Acquire an access token by using acquireTokenOnBehalfOf 
 
-In the *Api/index.js* file, the mid-tier app (EditProfileService app) acquires an access token using the [acquireTokenOnBehalfOf](https://learn.microsoft.com/javascript/api/@azure/msal-node/confidentialclientapplication?view=msal-js-latest#@azure-msal-node-confidentialclientapplication-acquiretokenonbehalfof) function, which it uses to update the profile on behalf of that user.
+In the *Api/index.js* file, the mid-tier app (EditProfileService app) acquires an access token using the [acquireTokenOnBehalfOf](https://learn.microsoft.com/javascript/api/@azure/msal-node/confidentialclientapplication#@azure-msal-node-confidentialclientapplication-acquiretokenonbehalfof) function, which it uses to update the profile on behalf of that user.
 
 ```javascript
 async function getAccessToken(tokenRequest) {

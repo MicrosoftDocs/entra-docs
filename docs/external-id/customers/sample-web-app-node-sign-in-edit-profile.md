@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: sample
-ms.date: 11/29/2024
+ms.date: 11/28/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, or IT admin, I want to configure a sample Node.js web app so that customer users can sign in and edit profile in their external tenant
 ---
@@ -138,4 +138,4 @@ To test your app, install project dependencies for both the client app and the s
 
 ## Related content
 
--  [Learn how to add edit profile in your own Node.js web app](how-to-web-app-node-edit-profile-prepare-tenant.md).
+-  [Learn how to add edit profile in your own Node.js web app](how-to-web-app-node-edit-profile-prepare-app.md).
