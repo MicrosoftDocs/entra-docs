@@ -8,20 +8,18 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 10/29/2024
 ms.author: mimart
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn how to personalize my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
 ---
 
-# Enable custom URL domains for apps in external tenants (Preview)
+# Enable custom URL domains for apps in external tenants
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 This article describes how to enable [custom URL domains](concept-custom-url-domain.md) for Microsoft Entra External ID applications in external tenants. A custom URL domain allows you to brand your application’s sign-in endpoints with your own custom URL domain instead of Microsoft’s default domain name.
-
-[!INCLUDE [preview alert](includes/preview-alert/preview-alert-ciam.md)]
 
 ## Prerequisites
 
@@ -65,7 +63,7 @@ After you add and verify the custom domain name in your external tenant, associa
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Choose your *external* tenant: Select the **Settings** icon in the top menu, and then switch to your external tenant.
-1. Navigate to **Identity** > **Settings** > **Domain names** > **Custom URL domains (Preview)**.
+1. Navigate to **Identity** > **Settings** > **Domain names** > **Custom URL domains**.
 1. Select **Add custom url domain**.
 1. In the **Add custom url domain** pane, select the custom domain name you entered in [Step 1](#step-1-add-a-custom-domain-name-to-your-tenant).
 
@@ -250,6 +248,13 @@ When using custom domains, consider the following points:
 
 - The WAF policy must be the same tier as the Azure Front Door profile. For more information about how to create a WAF policy to use with Azure Front Door, see [Configure WAF policy](/azure/frontdoor/how-to-configure-endpoints).
 - The WAF managed rules feature isn't officially supported as it can cause false positives and prevent legitimate requests from passing through, so only use WAF custom rules if they meet your needs.
+
+## (Optional) Block the default domain
+
+After you configure custom URL domains, users will still be able to access the default domain name *&lt;tenant-name&gt;.ciamlogin.com*. You need to block access to the default domain so that attackers can't use it to access your apps or run distributed denial-of-service (DDoS) attacks. Submit a support ticket to request the blocking of access to the default domain.
+
+> [!CAUTION]
+> Make sure your custom domain works properly before you request that the default domain be blocked. After the default domain is blocked, certain features will no longer work. See [Blocking the default domain](concept-custom-url-domain.md#blocking-the-default-domain).
 
 ## Troubleshooting
 
