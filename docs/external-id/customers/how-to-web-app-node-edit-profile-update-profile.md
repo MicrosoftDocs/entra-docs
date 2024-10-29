@@ -331,8 +331,8 @@ In this section, you add the identity related code for the mid-tier app (EditPro
         
     - `Enter_the_Tenant_Subdomain_Here` and replace it with Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
     - `Enter_the_Tenant_ID_Here` and replace it with Tenant ID. If you don't have your Tenant ID, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
-    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](#register-editprofileservice-app).
-    - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](#add-app-client-secret) value you copied earlier.
+    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](sample-web-app-node-sign-in-edit-profile.md#register-editprofileservice-app).
+    - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](sample-web-app-node-sign-in-edit-profile.md#add-app-client-secret) value you copied earlier.
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's `https://graph.microsoft.com/`.
     
 1. In your code editor, open *Api/fetch.js* file, then paste the code from [Api/fetch.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/7-edit-profile-with-mfa-express/Api/fetch.js) file. The `fetch` function uses an access token and the resource endpoint to make the actual API call. 
@@ -341,7 +341,7 @@ In this section, you add the identity related code for the mid-tier app (EditPro
 
 ### Acquire an access token by using acquireTokenOnBehalfOf 
 
-In the *Api/index.js* file, the mid-tier app (EditProfileService app) acquires an access token using the [acquireTokenOnBehalfOf](https://learn.microsoft.com/javascript/api/@azure/msal-node/confidentialclientapplication#@azure-msal-node-confidentialclientapplication-acquiretokenonbehalfof) function, which it uses to update the profile on behalf of that user.
+In the *Api/index.js* file, the mid-tier app (EditProfileService app) acquires an access token using the [acquireTokenOnBehalfOf](/javascript/api/@azure/msal-node/confidentialclientapplication#@azure-msal-node-confidentialclientapplication-acquiretokenonbehalfof) function, which it uses to update the profile on behalf of that user.
 
 ```javascript
 async function getAccessToken(tokenRequest) {
