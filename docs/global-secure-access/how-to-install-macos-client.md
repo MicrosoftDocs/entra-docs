@@ -32,8 +32,7 @@ The most current version of the Global Secure Access client is available to down
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Get early access**/**Download Client**.
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-download-screen-preview.png" alt-text="Screenshot of the macOS Client download screen with the Get early access button highlighted.":::
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-download-screen-NO-preview.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-download-screen-PubPreview.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
     
 ## Install the Global Secure Access client
 ### Automated installation
@@ -42,35 +41,30 @@ Use the following command for silent installation.
 
 `sudo installer -pkg ~/Downloads/GlobalSecureAccessClient_[version].pkg -target / -verboseR`
 
-The client uses system extensions and a transparent application proxy that need to be approved during the installation. For a silent deployment without prompting the end user to allow these components, you can deploy a policy to automaticall approve the components.
+The client uses system extensions and a transparent application proxy that need to be approved during the installation. For a silent deployment without prompting the end user to allow these components, you can deploy a policy to automatically approve the components.
 
-### Allowing system extensions through MDM
+### Allow system extensions through mobile device management (MDM)
 The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) and you can adapt them for different MDMs:
 
-1. In Microsoft Intune, select Devices > Manage devices > Configuration > Policies > New policy
-image.png
-1. Create a profile for macOS platform based on a template of type Extensions and select create.
-image.png
-1. Enter a name for the new profile and select next.
-image.png
-1. In the configuration settings, enter the bundle identifier and the team identifier of the two extensions as appears in the following table and select **Next**.
-
+1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
+1. Create a profile for the macOS platform based on a template of type **Extensions**. Select **Create**.
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-create-profile.png" alt-text="Screenshot of the Create a profile form with the Platform, Profile type, and Template selections highlighted.":::
+1. On the **Basics** tab, enter a name for the new profile and select **Next**.
+1. On the **Configuration settings** tab, enter the **Bundle identifier** and the **Team identifier** of the two extensions according to the following table. Select **Next**.   
+ 
 |Bundle identifier  |Team identifier  |
 |---------|---------|
 |com.microsoft.naas.globalsecure.tunnel-df     |UBF8T346G9         |
 |com.microsoft.naas.globalsecure-df     |UBF8T346G9         |
-	
-image.png
 
-1. Complete the creation of the profile by assigning users and devices according to your needs.
+5. Complete the creation of the profile by assigning users and devices according to your needs.
 
-### Allowing transparent application proxy through MDM
-The following instructions are for Intune and can be adapted to different MDMs:
+### Allow transparent application proxy through MDM
+The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) and you can adapt them for different MDMs:
 
-1. In Intune, select Devices > Manage devices > Configuration > Policies > New policy
-image.png
-1. Create a profile for macOS platform based on a template of type Custom and select create.
-image.png
+1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
+1. Create a profile for the macOS platform based on a template of type **Custom** and select **Create**.
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-___.png" alt-text="Screenshot of the Create a profile form with the Platform, Profile type, and Template selections highlighted.":::
 1. Give a name to the profile
 image.png
 1. Give a name the Custom configuration profile and upload an xml file that contains the following data:
