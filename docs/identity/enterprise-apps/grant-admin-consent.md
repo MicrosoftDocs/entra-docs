@@ -120,7 +120,7 @@ In the following example, the resource API is Microsoft Graph of object ID `aaaa
    
    "ClientId" = "00001111-aaaa-2222-bbbb-3333cccc4444"
    "ConsentType" = "AllPrincipals"
-   "ResourceId" = "ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0"
+   "ResourceId" = "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
    "Scope" = "User.Read.All Group.Read.All"
    }
 
