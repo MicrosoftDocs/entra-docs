@@ -42,8 +42,8 @@ This section shows how to create the required Conditional Access policy.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
-1. Under **Target resources** > **Cloud apps**, select the following options:
-   1. Under **Include**, choose **Select apps**.
+1. Under **Target resources** > **Resources (formerly cloud apps)**, select the following options:
+   1. Under **Include**, choose **Select resources**.
    1. Select **Microsoft Admin Portals**, and then choose **Select**.
 1. Under **Access controls**, select **Grant**.
    1. Select **Grant access**.
