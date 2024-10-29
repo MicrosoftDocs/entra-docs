@@ -166,15 +166,15 @@ npm install axios cookie-parser body-parser method-override
 
 In this section, you set up the mid-tier app. 
 
-1. Create *Api* directory.
+1. Create *API* directory.
 
-1. To create your mid-tier app project, navigate into the *Api* directory, then run the following command:
+1. To create your mid-tier app project, navigate into the *API* directory, then run the following command:
 
     ```console
     npm init -y
     ```
 
-1. In the *Api* directory, create new files, *authConfig.js*, *fetch.js* and *index.js*.
+1. In the *API* directory, create new files, *authConfig.js*, *fetch.js* and *index.js*.
 
 1. To install mid-tier app dependencies, run the following command:
 
