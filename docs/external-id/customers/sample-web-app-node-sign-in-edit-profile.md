@@ -35,10 +35,6 @@ The EditProfileService app needs to expose permissions, which a client needs to 
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-api-mfa-scopes.md)]
 
-### Add app client secret
-
-[!INCLUDE [active-directory-b2c-add-client-secret](./includes/register-app/add-mfa-api-app-client-secret.md)]
-
 ### Grant User.ReadWrite permission to the EditProfileService app
 
 *User.ReadWrite* is a Microsoft Graph API permission that enables a user to update their profile. To grant the *User.ReadWrite* permission to the EditProfileService app, use the following steps: 
@@ -101,7 +97,6 @@ This code sample contains two apps, the client app and the service/API app. You 
     - `Enter_the_Tenant_Subdomain_Here` and replace it with Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
     - `Enter_the_Tenant_ID_Here` and replace it with Tenant ID. If you don't have your Tenant ID, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
     - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](#register-editprofileservice-app).
-    - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](#add-app-client-secret) value you copied earlier.
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's `https://graph.microsoft.com/`.
 
 ## Install project dependencies and run app
