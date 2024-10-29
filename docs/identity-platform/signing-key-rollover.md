@@ -57,7 +57,7 @@ Our [standard libraries](reference-v2-libraries.md) implement resilient and secu
 1. Automatic Updates
    The system periodically checks and updates the configuration data automatically based on the refresh interval (recommend 12 h with a jitter of plus or minus 1 h). It can also manually request an update if needed, ensuring that the data is always current.
 1. Reception of a token with a new key
-   If a token arrives with a signing key that is not known yet from the configuration, the system attempts to fetch the configuration with a sync call on the hotpath to handle new keys in metadata outside of the regular expected updates(but no more frequently than 5mins)
+   If a token arrives with a signing key that is not known yet from the configuration, the system attempts to fetch the configuration with a sync call on the hot path to handle new keys in metadata outside of the regular expected updates(but no more frequently than 5mins)
 
 This approach ensures that the system always uses the most up-to-date and valid configuration data, while gracefully handling errors and avoiding redundant operations.
 
