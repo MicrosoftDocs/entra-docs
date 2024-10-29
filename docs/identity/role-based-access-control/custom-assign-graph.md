@@ -209,7 +209,7 @@ HTTP/1.1 200 OK
 ### Example 8: Get role assignments for a given scope
 
 ```http
-GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=directoryScopeId+eq+'/00000000-0000-0000-0000-000000000000'
+GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=directoryScopeId+eq+'/d23998b1-8853-4c87-b95f-be97d6c6b610'
 ```
 
 Response
