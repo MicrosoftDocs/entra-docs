@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/01/2024
+ms.date: 10/28/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -87,41 +87,28 @@ Try using the following queries for sign-in activity:
 
 Try using the following queries for sign-up activity:
 
-- To find sign-up attempts that failed at any point during sign-up:
-  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode ne 0`
-
-- To find sign-up attempts that failed during user object creation:
+- To find sign-up attempts that failed or were interrupted during a specific step, such as user object creation:
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode ne 0 and signUpStage eq 'userCreation'`
 
-- To find sign-up attempts that failed during email validation (applies only to local accounts):
-  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode eq 1002013 and signUpStage eq 'credentialValidation'`
-
 - For sign-ups during a date range:
-  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z)`
+  - GET `https://graph.microsoft.com/v1.0/auditLogs/signUps?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z)`
 
 - For sign-ups for a specific application:
   - GET `https://graph.microsoft.com/beta/signupLogs/signUps?$filter=appId eq 'AppId'`
 
 - For local account sign-ups:
-  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider in ('Email OTP', 'Email Password')`
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider eq 'Email OTP' OR signUpIdentityProvider eq 'Email Password'
 
-- For social account sign-ups:
+- For social account sign-ups (Google in this example):
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider eq ‘Google'`
 
 - To see entries for a specific user, for example `user@email.com`:
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentity/signUpIdentifier eq 'user@email.com'`
 
-- To find successful sign-ups:
-  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpStage eq 'userCreation' and userSnapshot ne 'null'`
-
-- To get the authentication method of a user:
-  - GET `https://graph.microsoft.com/beta/users/{userObjectId}/authentication/methods`
-  - Requires `UserAuthenticationMethod.Read.All permission`
-
 - To find entries matching a specific correlation ID:  
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=correlationId eq 'CorrelationId'`
 
-- To find the sign-in associated a sign-up correlation ID:
+- To find the sign-in log entries corresponding to a specific sign-up using the correlation ID:
   - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=correlationId eq 'CorrelationId'`
 
 ### Related APIs
@@ -157,4 +144,4 @@ Microsoft Graph PowerShell cmdlets:
 - [Get started with Microsoft Entra ID Protection and Microsoft Graph](../../id-protection/howto-identity-protection-graph-api.md)
 - [Audit API reference](/graph/api/resources/directoryaudit)
 - [API signIn reference](/graph/api/resources/signin)
-- [API signUp reference](/graph/api/resources/signup)
+- [API signUp reference](/graph/api/resources/selfservicesignup)

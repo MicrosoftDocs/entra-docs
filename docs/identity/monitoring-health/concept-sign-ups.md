@@ -36,8 +36,13 @@ You can use the sign-up logs to find the following information:
 
 You can also describe the activity associated with a sign-up request by identifying the following details:
 
-- **Who** – The identity (User) performing the sign-up.
-- **How** – The client (Application) used for the sign-up.  
+- Who performed the sign-up
+- When the user performed the sign-up
+- How the user signed up (for example, local account or social identity provider)
+- What app they accessed to sign up
+- Whether the sign-up was successful
+- Where an unsuccessful sign-up failed in the sign-up flow
+- Whether the user who tried to sign up already had an account  
 
 ## Next steps
 
