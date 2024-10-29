@@ -134,6 +134,8 @@ To test your app, install project dependencies for both the client app and the s
 
 1. To edit profile, select the **Edit Profile** button. If you haven't already done so, the app prompts you to complete an MFA challenge. 
 
+1. Make changes to the any of the profile details, then select **Save** button. 
+
 ## Related content
 
 -  [Learn how to add edit profile in your own Node.js web app](how-to-web-app-node-edit-profile-prepare-tenant.md).
