@@ -22,7 +22,7 @@ In this how-to guide, you learn how to call Microsoft Graph API for profile edit
 
 ## Prerequisites
 
-- Complete the steps in the second part of this guide series, [Set-up a Node.js web application for profile editing](how-to-web-app-node-edit-profile-prepare-app.md).
+- Complete the steps in the second part of this guide series, [Set up a Node.js web application for profile editing](how-to-web-app-node-edit-profile-prepare-app.md).
 
 
 ## Complete the client web app

@@ -355,7 +355,7 @@ items:
                 items:
                   - name:  Edit profile with MFA
                     items:
-                      - name: Set-up app 
+                      - name: Set up app 
                         href: how-to-web-app-node-edit-profile-prepare-app.md 
                         displayName: Conditional Access, CA 
                       - name: Update profile

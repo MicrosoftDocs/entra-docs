@@ -34,7 +34,7 @@ To customize the fields your customer users can edit in their profile, choose fr
 ## Prerequisites
 
 - Complete the steps in [Tutorial: Set up your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. The tutorial shows you how to register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app
-- Complete the steps in [Sign in users and edit profile in a sample Node.js web app](sample-web-app-node-sign-in-edit-profile.md). This article shows you how to set-up your external tenant for profile editing.
+- Complete the steps in [Sign in users and edit profile in a sample Node.js web app](sample-web-app-node-sign-in-edit-profile.md). This article shows you how to set up your external tenant for profile editing.
 
 ## Update the client web app
 
@@ -162,11 +162,11 @@ In your terminal, install  more Node packages, `axios`, `cookie-parser`, `body-p
 npm install axios cookie-parser body-parser method-override 
 ```
 
-## Set-up the mid-tier app
+## Set up the mid-tier app
 
-In this section, you set-up the mid-tier app. 
+In this section, you set up the mid-tier app. 
 
-1. Create a directory *Api*.
+1. Create *Api* directory.
 
 1.  Navigate into the *Api* directory, then run the following command to create your mid-tier app project:
 
@@ -174,7 +174,7 @@ In this section, you set-up the mid-tier app.
     npm init -y
     ```
 
-1. In the *Api* directory create new files, *authConfig.js*, *fetch.js* and *index.js*.
+1. In the *Api* directory, create new files, *authConfig.js*, *fetch.js* and *index.js*.
 
 1. To install mid-tier app dependencies, run the following command:
 
