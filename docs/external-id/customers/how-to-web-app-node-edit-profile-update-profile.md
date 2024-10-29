@@ -395,7 +395,7 @@ To test your app, use the following steps:
     ```Console
     npm start
     ```
-1. To run the client app, form the terminal window, navigate into the *Api* directory, then run the following command:
+1. To run the client app, form the terminal window, navigate into the *API* directory, then run the following command:
 
     ```Console
     npm start
