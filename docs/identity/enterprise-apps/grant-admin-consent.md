@@ -231,7 +231,7 @@ You need to sign as at least a [Privileged Role Administrator](~/identity/role-b
 
    {
       "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
-      "resourceId": "ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0",
+      "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
       "appRoleId": "df021288-bdef-4463-88db-98f22de89214"
    }
    ```
