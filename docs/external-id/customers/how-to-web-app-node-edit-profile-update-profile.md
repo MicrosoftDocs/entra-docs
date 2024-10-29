@@ -223,7 +223,7 @@ router.post(
     1. Displays the user details in the *updateProfile.hbs* UI.
 
 - You trigger the `/update` route when the user selects the **Save** button in either *gatedUpdateProfile.hbs* or *updateProfile.hbs*. The app:
-    1. Retrieves the access token for app session. You learn how the mid-tier app (EditProfileService app) acquires the access token in the next step.
+    1. Retrieves the access token for app session. You learn how the mid-tier app (EditProfileService app) acquires the access token in the next section.
     1. Collects all user details.
     1. Makes a call to Microsoft Graph API to update the user's profile.
 
@@ -335,11 +335,57 @@ In this section, you add the identity related code for the mid-tier app (EditPro
     - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](#add-app-client-secret) value you copied earlier.
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's `https://graph.microsoft.com/`.
     
-1. Update the fetch.js  <add a link>
+1. In your code editor, open *Api/fetch.js* file, then paste the code from [Api/fetch.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/7-edit-profile-with-mfa-express/Api/fetch.js) file. The `fetch` function uses an access token and the resource endpoint to make the actual API call. 
 
-1. Update the index.js <add a link>
+1. In your code editor, open *Api/index.js* file, then paste the code from [Api/index.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/7-edit-profile-with-mfa-express/Api/index.js) file.
 
-### explain how the access token is retrieved
+### Acquire an access token by using acquireTokenOnBehalfOf 
+
+In the *Api/index.js* file, the mid-tier app (EditProfileService app) acquires an access token using the [acquireTokenOnBehalfOf](https://learn.microsoft.com/javascript/api/@azure/msal-node/confidentialclientapplication?view=msal-js-latest#@azure-msal-node-confidentialclientapplication-acquiretokenonbehalfof) function, which it uses to update the profile on behalf of that user.
+
+```javascript
+async function getAccessToken(tokenRequest) {
+  try {
+    const response = await cca.acquireTokenOnBehalfOf(tokenRequest);
+    return response.accessToken;
+  } catch (error) {
+    console.error("Error acquiring token:", error);
+    throw error;
+  }
+}
+```
+
+The `tokenRequest` parameter is defined as shown the following code:
+
+```javascript
+    const tokenRequest = {
+      oboAssertion: req.headers.authorization.replace("Bearer ", ""),
+      authority: `https://${TENANT_SUBDOMAIN}.ciamlogin.com/${TENANT_ID}`,
+      scopes: ["User.ReadWrite"],
+      correlationId: `${uuidv4()}`,
+    };
+```
+
+In the same file, *Api/index.js*, the the mid-tier app (EditProfileService app) makes a call to Microsoft Graph API to update the users's profile:
+
+```JavaScript
+   let accessToken = await getAccessToken(tokenRequest);
+    fetch(GRAPH_ME_ENDPOINT, accessToken, "PATCH", req.body)
+      .then((response) => {
+        if (response.status === 204) {
+          res.status(response.status);
+          res.json({ message: "Success" });
+        } else {
+          res.status(502);
+          res.json({ message: "Failed, " + response.body });
+        }
+      })
+      .catch((error) => {
+        res.status(502);
+        res.json({ message: "Failed, " + error });
+      });
+
+```
 
 ## Test your app
 
