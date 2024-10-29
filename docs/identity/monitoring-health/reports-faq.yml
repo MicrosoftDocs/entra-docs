@@ -164,7 +164,7 @@ sections:
           - Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
           - Select **Service Principal Sign-ins**. 
           - Select an appropriate time frame in the Date field (last 24 hours, 7 days, and so on).
-          - Add a filter and select **Service Principal ID** and provide the value 'aaaaaaaa-bbbb-cccc-1111-222222222222' to get instances of authentication with no client Service Principal.
+          - Add a filter and select **Service Principal ID** and provide the value '00000000-0000-0000-0000-000000000000' to get instances of authentication with no client Service Principal.
             
       - question: |
           How can I restrict sign-in (authentication) for various apps that I see in the Service Principal sign-in logs?
