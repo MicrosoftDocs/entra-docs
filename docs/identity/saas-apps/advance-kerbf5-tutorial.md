@@ -273,7 +273,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 * **Step 3: SPN Delegation ( for the App Service Account)**
 
-    * Setup the appropriate Delegation for the F5 Delegation Account.
+    * Set up the appropriate Delegation for the F5 Delegation Account.
     * In the example below, APM Delegation account is being configured for KCD for FRP-App1.superdemo.live app.
 
         ![Screenshot that shows the APM Delegatio Account Properties > Delegation tab.](./media/advance-kerbf5-tutorial/configure25.png)
