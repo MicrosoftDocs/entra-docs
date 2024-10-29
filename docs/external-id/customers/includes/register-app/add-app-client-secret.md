@@ -3,7 +3,7 @@ author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: include
-ms.date: 10/22/2024
+ms.date: 11/22/2024
 ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
