@@ -194,6 +194,8 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     > [!TIP]
     > Ensure that there is only one certificate mapped against the app so that there is no error in resolving the metadata. If there are multiple certificates, admin gets an error upon resolving the metadata.
 
+    ![Screenshot that shows the single sign-on configuration page.](./media/confluencemicrosoft-tutorial/sso-plugin-configuration-page.png)
+
     1. In the **Metadata URL** textbox, paste **App Federation Metadata Url** value which you have copied and click the **Resolve** button. It reads the IdP metadata URL and populates all the fields information.
 
     1. Copy the **Identifier, Reply URL and Sign on URL** values and paste them in **Identifier, Reply URL and Sign on URL** textboxes respectively in **Basic SAML Configuration** section.
