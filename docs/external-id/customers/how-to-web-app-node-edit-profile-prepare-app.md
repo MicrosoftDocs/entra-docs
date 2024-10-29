@@ -24,7 +24,7 @@ In this how-to guide, you learn how to set up your web app to support profile ed
 - The MFA requirement is enabled by a Conditional Access (CA) policy.
 - The whole web app setup contains two web services, the client web app and a middle-tier service app.
 - The client web app signs in the user and reads and displays the user's profile.
-- The middle-tier service app acquires an access token, then editsthe  profile on behalf of the user.
+- The middle-tier service app acquires an access token, then edits the profile on behalf of the user.
 
 ## Updatable properties 
 
