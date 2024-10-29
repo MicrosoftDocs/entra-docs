@@ -27,7 +27,7 @@ As another example, you might be using [named locations](../identity/conditional
 
 Unfortunately, some users might still have a valid reason to sign in from these blocked countries/regions. For example, users could be traveling for work and need to access corporate resources. In this case, the Conditional Access policy to block these countries/regions could use a cloud security group for the excluded users from the policy. Users who need access while traveling, can add themselves to the group using [Microsoft Entra self-service Group management](../identity/users/groups-self-service-management.md).
 
-Another example might be that you have a Conditional Access policy [blocking legacy authentication for most of your users](../identity/conditional-access/howto-conditional-access-policy-block-legacy.md). However, if you have some users that need to use legacy authentication methods to access specific resources, then you can exclude these users from the policy that blocks legacy authentication methods.
+Another example might be that you have a Conditional Access policy [blocking legacy authentication for most of your users](../identity/conditional-access/policy-block-legacy-authentication.md). However, if you have some users that need to use legacy authentication methods to access specific resources, then you can exclude these users from the policy that blocks legacy authentication methods.
 
 >[!NOTE]
 >Microsoft strongly recommends that you block the use of legacy protocols in your tenant to improve your security posture.

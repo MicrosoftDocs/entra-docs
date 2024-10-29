@@ -87,8 +87,6 @@ To configuring Dialpad for automatic user provisioning with Microsoft Entra ID, 
 
 8. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Dialpad account.
 
-	:::image type="content" source="media/dialpad-provisioning-tutorial/redirect.png" alt-text="Screenshot showing a Microsoft authentication page stating that the Dialpad app has requested access to some data. The Accept button is highlighted." border="false":::
-
  ## Configure automatic user provisioning to Dialpad
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Dialpad based on user and/or group assignments in Microsoft Entra ID.
@@ -125,8 +123,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Dialpad**.
-
-	![Dialpad User Mappings](media/dialpad-provisioning-tutorial/dialpad-user-mappings-new.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Dialpad in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Dialpad for update operations. Select the **Save** button to commit any changes.
 

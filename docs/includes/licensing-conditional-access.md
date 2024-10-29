@@ -14,7 +14,7 @@ ms.custom: include file,licensing
 
 Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features. 
 
-Risk-based policies require access to [Identity Protection](~/id-protection/overview-identity-protection.md), which is a Microsoft Entra ID P2 feature.
+Risk-based policies require access to [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md), which is a Microsoft Entra ID P2 feature.
 
 Microsoft Entra Suite includes all Microsoft Entra Conditional access features.
 

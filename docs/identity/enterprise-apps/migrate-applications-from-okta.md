@@ -49,8 +49,6 @@ To create an application inventory:
 
 5. In the Postman app, in the workspace, select **Import**.
 
-    ![Screenshot of the Import option on Postman.](media/migrate-applications-from-okta/import-api.png)
-
 6. On the **Import** page, select **Link**. To import the API, insert the following link:
 
 `https://developer.okta.com/docs/api/postman/example.oktapreview.com.environment`
@@ -99,8 +97,6 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
 
-    ![Screenshot of the New Application option on All applications.](media/migrate-applications-from-okta/list-of-new-applications.png)
-
 3. In **Microsoft Entra Gallery**, search for **Salesforce**, select the application, and then select **Create**.
 
     ![Screenshot of applications in the Microsoft Entra Gallery.](media/migrate-applications-from-okta/salesforce-application.png)
@@ -111,17 +107,12 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
 
 5. Download the **Certificate (Raw)** and **Federation Metadata XML** to import it into Salesforce.
 
-    ![Screenshot of Certificate (Raw) and Federation Metadata XML entries under SAML Signing Certificate.](media/migrate-applications-from-okta/federation-metadata.png)
-
 6. On the Salesforce administration console, select **Identity** > **Single Sign-On Settings** > **New from Metadata File**.
 
     ![Screenshot of the New from Metadata File option under Single Sign On Settings.](media/migrate-applications-from-okta/salesforce-admin-console.png)
 
 7. Upload the XML file you downloaded from the Microsoft Entra admin center. Then select **Create**.
 8. Upload the certificate you downloaded from Azure. Select **Save**.
-
-    ![Screenshot of the Identity Provider Certificate entry under SAML Single Sign On.](media/migrate-applications-from-okta/create-saml-provider.png)
-
 9. Record the values in the following fields. The values are in Azure.
 
    * **Entity ID**
@@ -129,9 +120,6 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
    * **Logout URL**
 
 10. Select **Download Metadata**.
-
-    ![Screenshot of the Download Metadata option, also entries for Entity ID and Your Organization.](media/migrate-applications-from-okta/record-values-for-azure.png)
-
 11. To upload the file to the Microsoft Entra admin center, in the Microsoft Entra ID **Enterprise applications** page, in the SAML SSO settings, select **Upload metadata file**.  
 12. Ensure the imported values match the recorded values. Select **Save**.
 
@@ -199,8 +187,6 @@ To complete the migration, repeat configuration for all applications in the Okta
 8. On the **Overview** page, record the **Application (client) ID**. You use this ID in your application.
 
 9. On the left, select **Certificates & secrets**. Then select **+ New client secret**. Name the client secret and set its expiration.
-
-    ![Screenshot of New client secret entries on Certificates and secrets.](media/migrate-applications-from-okta/new-client-secret.png)
 
 10. Record the value and ID of the secret.
 

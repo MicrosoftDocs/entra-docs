@@ -37,12 +37,13 @@ To add an enterprise application to your tenant:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Select **New application**.
-1. The **Browse Microsoft Entra Gallery** pane opens and displays tiles for cloud platforms, on-premises applications, and featured applications. Applications listed in the **Featured applications** section have icons indicating whether they support federated single sign-on (SSO) and provisioning. Search for and select the application. In this quickstart, **Microsoft Entra SAML Toolkit* is being used.
+1. The **Browse Microsoft Entra Gallery** pane opens and displays tiles for cloud platforms, on-premises applications, and featured applications. Applications listed in the **Featured applications** section have icons indicating whether they support federated single sign-on (SSO) and provisioning. Search for and select the application. In this quickstart, **Microsoft Entra SAML Toolkit** is being used.
 
     :::image type="content" source="media/add-application-portal/browse-gallery.png" alt-text="Browse in the enterprise application gallery for the application that you want to add." lightbox="media/add-application-portal/browse-gallery.png":::
 
 1. Enter a name that you want to use to recognize the instance of the application. For example, `Microsoft Entra SAML Toolkit 1`.
-1. Select **Create**.
+1. Select **Create**, you're taken to the application that you registered.
+1. You should [assign owners to the application](/entra/identity/enterprise-apps/assign-app-owners#assign-an-owner) as a best practice at this point.
 
 If you choose to install an application that uses OpenID Connect based SSO, instead of seeing a **Create** button, you see a button that redirects you to the application sign-in or sign-up page depending on whether you already have an account there. For more information, see [Add an OpenID Connect based single sign-on application](add-application-portal-setup-oidc-sso.md). After sign-in, the application is added to your tenant.
 

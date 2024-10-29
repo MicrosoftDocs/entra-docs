@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom:
-ms.date: 09/07/2023
+ms.date: 10/01/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 ms.topic: concept-article
@@ -51,7 +51,7 @@ The following metadata shows a sample tenant-specific `EntityDescriptor` element
 <EntityDescriptor
 xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
 ID="_00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
-entityID="https://sts.windows.net/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/">
+entityID="https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/">
 ```
 
 You can replace the tenant ID in the tenant-independent endpoint with your tenant ID to create a tenant-specific `EntityID` value. The resulting value will be the same as the token issuer. The strategy allows a multitenant application to validate the issuer for a given tenant.
@@ -61,7 +61,7 @@ The following metadata shows a sample tenant-independent `EntityID` element. Ple
 ```xml
 <EntityDescriptor
 xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
-ID="="_11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
+ID="="_aaaabbbb-0000-cccc-1111-dddd2222eeee"
 entityID="https://sts.windows.net/{tenant}/">
 ```
 
@@ -78,7 +78,7 @@ The following metadata shows a sample `KeyDescriptor` element with a signing key
 <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
 <X509Data>
 <X509Certificate>
-A1bC2dE3fH4iJ5...kL6mN7oP8qR9sT0u
+aB1cD2eF-3gH4i...J5kL6-mN7oP8qR=
 </X509Certificate>
 </X509Data>
 </KeyInfo>
@@ -144,7 +144,7 @@ The following metadata shows a sample `PassiveResistorEndpoint` for a tenant-spe
 <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
 …
     <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/contoso.onmicrosoft.com/saml2" />
-    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/contoso.onmicrosoft.com /saml2" />
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/contoso.onmicrosoft.com/saml2" />
   </IDPSSODescriptor>
 ```
 

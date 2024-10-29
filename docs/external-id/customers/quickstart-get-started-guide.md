@@ -1,6 +1,6 @@
 ---
-title: Quickstart - Get started guide
-description: Use our quickstart guide to customize your tenant in just a few steps.
+title: Quickstart - Get started
+description: Learn how to get started with Microsoft Entra External ID. Customize your apps' look and feel, set up a user to test the sign-up flow, and configure a sample app in just a few minutes.
  
 author: csmulligan
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: quickstart
-ms.date: 08/13/2024
+ms.date: 10/21/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -22,7 +22,11 @@ In this quickstart, we'll guide you through customizing the look and feel of you
 
 ## Prerequisites
 
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> or [create a tenant with external configurations in the Microsoft Entra admin center](quickstart-tenant-setup.md). 
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> or [create a tenant with external configurations in the Microsoft Entra admin center](quickstart-tenant-setup.md).
+
+> [!NOTE]
+> You can also use the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciamvscode/quickstarts/marketplace) to create your external tenant, customize your sign-in experience, and set up a sample app directly within Visual Studio Code ([learn more](https://aka.ms/ciamvscode/quickstartguide)).
+
 
 ## Customize your sign-in experience
 

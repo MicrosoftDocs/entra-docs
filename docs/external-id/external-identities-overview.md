@@ -6,7 +6,7 @@ description: Microsoft Entra External ID allows you to collaborate with or publi
  
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 07/29/2024
+ms.date: 09/06/2024
 ms.author: mimart
 author: msmimart
 manager: celestedg
@@ -106,7 +106,7 @@ You use [cross-tenant access settings](cross-tenant-access-settings-b2b-collabor
 
 For details about the resources, files, and applications that are available to the B2B direct connect user via the Teams shared channel refer to [Chat, teams, channels, & apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
 
-Licensing and billing are based on monthly active users (MAU). Learn more about [External ID pricing](https://azure.microsoft.com/pricing/details/active-directory/external-identities/) and [billing setup for B2B](external-identities-pricing.md).  
+Licensing and billing are based on monthly active users (MAU). Learn more about the [billing model for Microsoft Entra External ID](external-identities-pricing.md).  
 
 ### Azure Active Directory B2C
 
@@ -119,16 +119,6 @@ For more information about how an Azure AD B2C tenant differs from a Microsoft E
 ### Microsoft Entra entitlement management for business guest sign-up
 
 As an inviting organization, you might not know ahead of time who the individual external collaborators are who need access to your resources. You need a way for users from partner companies to sign themselves up with policies that you control. To enable users from other organizations to request access, you can use [Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md) to configure policies that [manage access for external users](~/id-governance/entitlement-management-external-users.md#how-access-works-for-external-users). Upon approval, these users will be provisioned with guest accounts and assigned to groups, apps, and SharePoint Online sites.
-
-<a name='azure-ad-microsoft-graph-api-for-b2b-collaboration'></a>
-
-### Microsoft Entra Microsoft Graph API for B2B collaboration
-
-Microsoft Graph APIs are available for creating and managing External ID features.
-
-- **Cross-tenant access settings API**: The [Microsoft Graph cross-tenant access API](/graph/api/resources/crosstenantaccesspolicy-overview?view=graph-rest-beta&preserve-view=true) lets you programmatically create the same B2B collaboration and B2B direct connect policies that are configurable in the Azure portal. Using the API, you can set up policies for inbound and outbound collaboration. For example, you can allow or block features for everyone by default and limit access to specific organizations, groups, users, and applications. The API also allows you to accept multifactor authentication (MFA) and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
-
-- **B2B collaboration invitation manager**: The [Microsoft Graph invitation manager API](/graph/api/resources/invitation) is available for building your own onboarding experiences for business guests. You can use the [create invitation API](/graph/api/invitation-post?tabs=http) to automatically send a customized invitation email directly to the B2B user, for example. Or your app can use the inviteRedeemUrl returned in the creation response to craft your own invitation (through your communication mechanism of choice) to the invited user.
 
 ### Conditional Access
 
@@ -160,6 +150,24 @@ The [multitenant organization](../identity/multi-tenant-organizations/multi-tena
 The [cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) capability is a one-way synchronization service that ensures users can access resources, without receiving an invitation email and having to accept a consent prompt in each tenant.
 
 To learn more about multitenant organizations and cross-tenant synchronization, see the [multitenant organizations documentation](../identity/multi-tenant-organizations/index.yml) and the [feature comparison](../identity/multi-tenant-organizations/overview.md#compare-multitenant-capabilities).
+
+## Microsoft Graph APIs
+
+All External ID features are also supported for automation through Microsoft Graph APIs except those listed in the next section. For more information, see [Manage Microsoft Entra identity and network access by using Microsoft Graph](/graph/api/resources/identity-network-access-overview).
+
+### Capabilities not supported in Microsoft Graph
+
+|  External ID feature |  Supported in  |  Automation workarounds  |
+| ---- | --- | --- |
+| [Identify organizations that you belong to](leave-the-organization.md#what-organizations-do-i-belong-to) | Workforce tenants | [Tenants - List Azure Resource Manager API](/rest/api/resources/tenants/list). For Teams shared channels and B2B direct connect, use [Get tenantReferences](/graph/api/outboundshareduserprofile-list-tenants) Microsoft Graph API. |
+
+<a name='azure-ad-microsoft-graph-api-for-b2b-collaboration'></a>
+
+### Microsoft Entra Microsoft Graph API for B2B collaboration
+
+- **Cross-tenant access settings APIs**: The [cross-tenant access APIs in Microsoft Graph](/graph/api/resources/crosstenantaccesspolicy-overview?view=graph-rest-beta&preserve-view=true) let you programmatically create the same B2B collaboration and B2B direct connect policies that are configurable in the Azure portal. Using these APIs, you can set up policies for inbound and outbound collaboration. For example, you can allow or block features for everyone by default and limit access to specific organizations, groups, users, and applications. The APIs also allow you to accept multifactor authentication (MFA) and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
+
+- **B2B collaboration invitation manager**: The [invitation manager API in Microsoft Graph](/graph/api/resources/invitation) is available for building your own onboarding experiences for business guests. You can use the [create invitation API](/graph/api/invitation-post) to automatically send a customized invitation email directly to the B2B user, for example. Or your app can use the inviteRedeemUrl returned in the creation response to craft your own invitation (through your communication mechanism of choice) to the invited user.
 
 ## Next steps
 

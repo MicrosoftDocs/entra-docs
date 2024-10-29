@@ -122,8 +122,14 @@
     href: howto-authentication-temporary-access-pass.md
   - name: Passwordless
     items: 
-      - name: Deploying passwordless authentication
-        href: howto-authentication-passwordless-deployment.md
+      - name: Plan phishing-resistant passwordless authentication
+        items: 
+        - name: Get started
+          href: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
+        - name: Plan and deploy
+          href: how-to-deploy-phishing-resistant-passwordless-authentication.md
+        - name: Persona guidance
+          href: how-to-plan-persona-phishing-resistant-passwordless-authentication.md
       - name: Passkey (FIDO2) authentication
         items:
         - name: Enable passkeys for an organization
@@ -142,6 +148,8 @@
         items:
         - name: Enable passkeys in Authenticator (preview)
           href: how-to-enable-authenticator-passkey.md
+        - name: Support passkeys in Authenticator (preview)
+          href: how-to-support-authenticator-passkey.md
         - name: Register passkeys in Authenticator (preview)
           href: how-to-register-passkey-authenticator.md
         - name: Sign in with passkeys in Authenticator (preview)
@@ -234,6 +242,8 @@
       href: howto-mfa-mfasettings.md
     - name: Configure users
       href: howto-mfa-userdevicesettings.yml
+    - name: Verify mandatory MFA 
+      href: how-to-mandatory-multifactor-authentication.md
     - name: Find coverage gaps
       href: how-to-authentication-find-coverage-gaps.md
     - name: Enable per-user MFA

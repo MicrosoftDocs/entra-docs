@@ -1,6 +1,6 @@
 ---
-title: Custom extensions in an external tenant
-description: Learn about custom authentication extensions that let you enrich or customize application tokens. You can add information from external systems. You can also add logic, such as validation, to attribute collection. 
+title: Custom authentication extensions
+description: Learn how to use custom authentication extensions in Microsoft Entra External ID. Integrate with external systems, add custom logic to authentication flows, and enhance user experiences.
  
 author: msmimart
 manager: celestedg
@@ -8,14 +8,14 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 10/27/2023
+ms.date: 10/21/2024
 ms.author: mimart
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to know 
 
 ---
-# Extending authentication flows with your own business logic
+# Extend authentication flows with your own business logic
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 

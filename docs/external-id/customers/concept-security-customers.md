@@ -1,6 +1,6 @@
 ---
-title: CIAM security and governance
-description: Learn about CIAM security and governance features.
+title: Security and governance
+description: Learn about security and governance in Microsoft Entra External ID. Use features like multifactor authentication (MFA), Conditional Access, and Identity Protection to secure your applications and mitigate risks.
  
 author: msmimart
 manager: celestedg
@@ -8,10 +8,9 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 01/18/2024
+ms.date: 10/21/2024
 ms.author: mimart
 ms.custom: it-pro
-
 ---
 
 # Security and governance in Microsoft Entra External ID

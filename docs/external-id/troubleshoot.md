@@ -1,10 +1,10 @@
 ---
-title: Troubleshooting B2B collaboration
-description: Remedies for common problems with Microsoft Entra B2B collaboration
+title: Troubleshoot B2B issues
+description: Learn how to troubleshoot common issues with Microsoft Entra B2B collaboration. Resolve guest sign-in errors, direct connect access problems, policy update failures, and encrypted email access issues.
  
 ms.service: entra-external-id
 ms.topic: troubleshooting
-ms.date: 06/19/2024
+ms.date: 10/21/2024
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan
@@ -14,7 +14,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an IT admin troubleshooting Microsoft Entra B2B collaboration, I want to find remedies for common problems, so that I can resolve issues and ensure smooth collaboration between organizations.
 ---
 
-# Troubleshooting Microsoft Entra B2B collaboration
+# Troubleshoot common issues with Microsoft Entra B2B collaboration
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
@@ -26,13 +26,13 @@ When a guest user from an identity provider (IdP) can't sign in to a resource te
 
 ## B2B direct connect user is unable to access a shared channel (error AADSTS90071)
 
-When a B2B direct connect sees the following error message when trying to access another organization's Teams shared channel, multi-factor authentication trust settings haven't been configured by the external organization:
+When a B2B direct connect sees the following error message when trying to access another organization's Teams shared channel, multifactor authentication trust settings haven't been configured by the external organization:
 
 > The organization you're trying to reach needs to update their settings to let you sign in.
 >
 > AADSTS90071: An admin from *&lt;organization&gt;* must update their access settings to accept inbound multifactor authentication.
 
-The organization hosting the Teams shared channel must enable the trust setting for multi-factor authentication to allow access to B2B direct connect users. Trust settings are configurable in an organization's [cross-tenant access settings](cross-tenant-access-settings-b2b-direct-connect.md).
+The organization hosting the Teams shared channel must enable the trust setting for multifactor authentication to allow access to B2B direct connect users. Trust settings are configurable in an organization's [cross-tenant access settings](cross-tenant-access-settings-b2b-direct-connect.md).
 
 ## An error similar to "Failure to update policy due to object limit" appears while configuring cross-tenant access settings
 
@@ -117,9 +117,17 @@ To fix this conflict:
 
 Once you've removed the conflicting email address, you can invite the user.
 
-## The guest user object doesn't have a proxyAddress
+## On a guest user object, the proxyAddresses or email attribute isn't populated
 
-Sometimes, the external guest user you're inviting conflicts with an existing [Contact object](/graph/api/resources/contact). When this occurs, the guest user is created without a proxyAddress. This means that the user won't be able to redeem this account using [just-in-time redemption](redemption-experience.md#redemption-process-through-a-direct-link) or [email one-time passcode authentication](one-time-passcode.md#user-experience-for-one-time-passcode-guest-users). Also, if the contact object you're synchronizing from on-premises AD conflicts with an existing guest user, the conflicting proxyAddress is removed from the existing guest user.
+When you add or invite a guest with an email that matches an existing [Contact object](/graph/api/resources/contact) in the directory, the proxyAddresses property on the guest user object isn't populated. Also, when synchronizing contact objects from on-premises AD, if a guest user has a matching proxyAddresses property, the conflicting proxyAddresses property is removed from the existing guest user.
+
+The invitation redemption process has been updated so that this scenario no longer causes issues with [just-in-time redemption](redemption-experience.md#redemption-process-through-a-direct-link) or [email one-time passcode authentication](one-time-passcode.md#user-experience-for-one-time-passcode-guest-users). Previously, External ID searched only the proxyAddresses property, so redemption with a direct link or one-time passcode failed when it couldn’t find a match. Now, External ID searches the proxyAddresses and invited email properties.
+
+If you want to identify conflicting user objects in your directory, use these PowerShell steps:
+
+1. Open the Microsoft Graph PowerShell module and run `Connect-MgGraph`.
+1. Sign in as at least a [Directory Reader](/entra/identity/role-based-access-control/permissions-reference?branch=main#directory-readers) to the Microsoft Entra tenant for which you want to check for duplicate contact objects.
+1. Run the PowerShell command `Get-MgContact -All | ? {$_.Mail -match 'user@domain.com'}`.
 
 <a name='how-does--which-isnt-normally-a-valid-character-sync-with-azure-ad'></a>
 
@@ -209,17 +217,13 @@ Id                                   DeletedDateTime
 
 You should now see the restored app in the Microsoft Entra admin center.
 
-## A guest user was invited successfully but the email attribute isn't populating
-
-Let's say you inadvertently invite a guest user with an email address that matches a user object already in your directory. The guest user object is created, but the email address is added to the `otherMail` property instead of to the `mail` or `proxyAddresses` properties. To avoid this issue, you can search for conflicting user objects in your Microsoft Entra directory by using these PowerShell steps:
-
-1. Open the Microsoft Graph PowerShell module and run `Connect-MgGraph`.
-1. Sign in as at least a [Directory Reader](/entra/identity/role-based-access-control/permissions-reference?branch=main#directory-readers) to the Microsoft Entra tenant for which you want to check for duplicate contact objects.
-1. Run the PowerShell command `Get-MgContact -All | ? {$_.Mail -match 'user@domain.com'}`.
-
 ## External access blocked by policy error on the login screen
 
-When you try to login to your tenant, you might see this error message: "Your network administrator has restricted what organizations can be accessed. Contact your IT department to unblock access." This error is related to tenant restriction settings. To resolve this issue, ask your IT team to follow the instructions in [this article](~/identity/enterprise-apps/tenant-restrictions.md).
+When you try to log in to your tenant, you might see this error message: "Your network administrator has restricted what organizations can be accessed. Contact your IT department to unblock access." This error is related to tenant restriction settings. To resolve this issue, ask your IT team to follow the instructions in [this article](~/identity/enterprise-apps/tenant-restrictions.md).
+
+## Users get in a loop when they try to add passkey in Authenticator
+
+Organizations that are deploying passkeys and have Conditional Access policies that require phishing-resistant authentication when accessing **All cloud apps** can run into a looping issue when users attempt to add a passkey to Microsoft Authenticator. For more information and possible workarounds, see [Workarounds for an authentication strength Conditional Access policy loop](~/identity/authentication/how-to-support-authenticator-passkey.md#workarounds-for-an-authentication-strength-conditional-access-policy-loop).
 
 ## Invitation is blocked due missing cross-tenant access settings 
 

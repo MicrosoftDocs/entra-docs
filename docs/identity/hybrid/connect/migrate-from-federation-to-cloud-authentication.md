@@ -6,7 +6,7 @@ description: This article has information about moving your hybrid identity envi
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 08/25/2024
 ms.author: billmath
 author: gargi-sinha
 manager: amycolannino
@@ -24,7 +24,7 @@ We recommend using PHS for cloud authentication.
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3inQJ]
 
-Staged rollout is a great way to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Identity Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. 
+Staged rollout is a great way to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Microsoft Entra ID Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. 
 
 Refer to the staged rollout implementation plan to understand the [supported](how-to-connect-staged-rollout.md#supported-scenarios) and [unsupported scenarios](how-to-connect-staged-rollout.md#unsupported-scenarios). We recommend using staged rollout to test before cutting over domains.
 
@@ -121,7 +121,7 @@ Evaluate if you're currently using Conditional Access for authentication, or if 
 
 Consider replacing AD FS access control policies with the equivalent Microsoft Entra [Conditional Access policies](~/identity/conditional-access/overview.md) and [Exchange Online Client Access Rules](/exchange/clients-and-mobile-in-exchange-online/client-access-rules/client-access-rules). You can use either Microsoft Entra ID or on-premises groups for Conditional Access.
 
-**Disable Legacy Authentication** - Due to the increased risk associated with legacy authentication protocols create [Conditional Access policy to block legacy authentication](~/identity/conditional-access/howto-conditional-access-policy-block-legacy.md).
+**Disable Legacy Authentication** - Due to the increased risk associated with legacy authentication protocols create [Conditional Access policy to block legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 ### Plan support for MFA
 
@@ -162,7 +162,7 @@ Create groups for staged rollout and also for Conditional Access policies if you
 
 We recommend you use a group mastered in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. For more information, see [creating a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.yml), and this [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups).
 
-The members in a group are automatically enabled for staged rollout. Nested and dynamic groups aren't supported for staged rollout.
+The members in a group are automatically enabled for staged rollout. Nested and dynamic membership groups aren't supported for staged rollout.
 
 ### Prework for SSO
 

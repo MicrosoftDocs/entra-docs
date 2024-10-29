@@ -66,6 +66,26 @@ The following diagram shows how two organizations can just-in-time collaborate b
 
 :::image type="content" source="./media/cross-tenant-synchronization-topology/connected-organization.png" alt-text="Diagram that shows just-in-time collaboration by using connected organizations and entitlement management.":::
 
+## Supported scenarios
+Cross-tenant synchronization supports importing [internal users](/entra/external-id/user-properties) in the source tenant and provisioning [external users](/entra/external-id/user-properties) in the target tenant. 
+
+| Source tenant credentials | Source tenant userType| Target tenant credentials | Target tenant userType|Scenario supported?|
+|:--- |:---:|:---:|:---:|:---:|
+|Internal|Member|External|Member|Yes|
+|Internal|Member|External|Guest|Yes|
+|Internal|Guest|External|Member|Yes|
+|Internal|Guest|External|Guest|Yes|
+|Internal|Member|Internal|Member|No|
+|Internal|Member|Internal|Guest|No|
+|Internal|Guest|Internal|Member|No|
+|Internal|Guest|Internal|Guest|No|
+|External|Member|External|Member|No|
+|External|Member|External|Guest|No|
+|External|Guest|External|Member|No|
+|External|Guest|External|Guest|No|
+
+
+
 ## Next steps
 
 - [What is cross-tenant synchronization?](cross-tenant-synchronization-overview.md)

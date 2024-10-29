@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 08/22/2024
+ms.date: 09/03/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -18,7 +18,6 @@ Provide single sign-on for on-premises resources published through Microsoft Ent
 Before you get started with single sign-on, make sure your environment is ready.
 
 - An Active Directory forest. The guide uses a forest domain name that can be publicly resolved. However, a publicly resolved domain isn't a requirement.
-- Your Microsoft Entra ID tenant is set up with the private Domain Name System (DNS) feature of Microsoft Entra Private Access.
 - You enabled the Microsoft Entra Private Access forwarding profile.
 - The latest version of the Microsoft Entra Private Access connector is installed on a Windows server that has access to your domain controllers.
 - The latest version of the Global Secure Access client. For more information on the client, see [Global Secure Access clients](concept-clients.md).
@@ -65,7 +64,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application administrator](reference-role-based-permissions.md#application-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
 1. Select **New Application** to create a new application to publish your Domain Controllers.
-1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Don't add both IPs and FQDNs. Only the Domain Controllers in the Active Directory site where the Private Access connectors are located should be published.
+1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Only the Domain Controllers in the Active Directory site where the Private Access connectors are located should be published.
 
 > [!NOTE]
 > Make sure you don’t use wildcard FQDNs to publish your domain controllers, instead add their specific IPs or FQDNs.
@@ -73,10 +72,11 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 Once the enterprise application is created, browse back to the app and select **Users and Groups**. Add all users synchronized from Active Directory.
 
 ## Publish DNS suffixes
-Configure private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on premises resources.
+Configure private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on premises resources. To learn more about Private DNS with Quick Access, see [how-to-configure-quick-access.md#add-private-dns-suffixes](how-to-configure-quick-access.md).
 
 1. Browse to **Global Secure Access** > **Applications** > **Quick Access**.
-1. Select **Enable Name Private DNS** and select **Add DNS suffix**. At a minimum, add the top level suffixes of your Active Directory forests hosting users synchronized to Microsoft Entra ID.
+1. Select the **Private DNS** tab and then select **Enable Private DNS**.
+1. Select **Add DNS suffix**. At a minimum, add the top level suffixes of your Active Directory forests hosting users synchronized to Microsoft Entra ID.
 1. Select **Save**.
 
 ## Troubleshoot

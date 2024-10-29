@@ -1,21 +1,21 @@
 ---
-title: Change static group membership to dynamic
-description: Learn how to convert existing groups from static to dynamic membership using either the portal or PowerShell cmdlets.
+title: Change static groups to dynamic membership groups
+description: Learn how to convert existing groups from static to dynamic membership groups using either the portal or PowerShell cmdlets.
 
 author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 07/30/2024
+ms.date: 08/23/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
-# Change static group membership to dynamic in Microsoft Entra ID
+# Change static groups to dynamic membership groups in Microsoft Entra ID
 
-You can change a group's membership from static to dynamic (or vice-versa) In Microsoft Entra ID, part of Microsoft Entra. Microsoft Entra ID keeps the same group name and ID in the system, so all existing references to the group are still valid. If you create a new group instead, you would need to update those references. Dynamic group membership eliminates management overhead adding and removing users. This article tells you how to convert existing groups from static to dynamic membership using either the portal or PowerShell cmdlets.
+You can change a group's membership from static to dynamic (or vice-versa) In Microsoft Entra ID, part of Microsoft Entra. Microsoft Entra ID keeps the same group name and ID in the system, so all existing references to the group are still valid. If you create a new group instead, you would need to update those references. Creating dynamic membership groups eliminates management overhead adding and removing users. This article tells you how to convert existing groups from static to dynamic membership groups using either the portal or PowerShell cmdlets. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
 > [!WARNING]
 > When changing an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, be aware that the original members might lose access until the membership rule is fully processed.
@@ -31,11 +31,11 @@ The following steps can be performed using an account that has at least the Grou
 1.  **Groups**.
 1. From the **All groups** list, open the group that you want to change.
 1. Select **Properties**.
-1. On the **Properties** page for the group, select a **Membership type** of either Assigned (static), Dynamic User, or Dynamic Device, depending on your desired membership type. For dynamic membership, you can use the rule builder to select options for a simple rule or write a membership rule yourself. 
+1. On the **Properties** page for the group, select a **Membership type** of either Assigned (static), Dynamic User, or Dynamic Device, depending on your desired membership type. For dynamic membership groups, you can use the rule builder to select options for a simple rule or write a membership rule yourself. 
 
-The following steps are an example of changing a group from static to dynamic membership for a group of users.
+The following steps are an example of changing a group from static to dynamic membership groups for a group of users.
 
-1. On the **Properties** page for your selected group, select a **Membership type** of **Dynamic User**, then select Yes on the dialog explaining the changes to the group membership to continue. 
+1. On the **Properties** page for your selected group, select a **Membership type** of **Dynamic User**, then select Yes on the dialog explaining the changes to the dynamic membership groups to continue. 
 
    :::image type="content" source="./media/groups-change-type/select-group-to-convert.png" alt-text="Screenshot of selecting membership type of dynamic user.":::
   
@@ -47,17 +47,17 @@ The following steps are an example of changing a group from static to dynamic me
 4. Select **Save** on the **Properties** page for the group to save your changes. The **Membership type** of the group is immediately updated in the group list.
 
 > [!TIP]
-> Group conversion might fail if the membership rule you entered was incorrect. A notification is displayed in the upper-right hand corner of the portal that it contains an explanation of why the rule can't be accepted by the system. Read it carefully to understand how you can adjust the rule to make it valid. For examples of rule syntax and a complete list of the supported properties, operators, and values for a membership rule, see [Dynamic membership rules for groups in Microsoft Entra ID](groups-dynamic-membership.md).
+> Group conversion might fail if the membership rule you entered was incorrect. A notification is displayed in the upper-right hand corner of the portal that it contains an explanation of why the rule can't be accepted by the system. Read it carefully to understand how you can adjust the rule to make it valid. For examples of rule syntax and a complete list of the supported properties, operators, and values for a membership rule, see [Manage rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-membership.md).
 
 ## Change membership type for a group (PowerShell)
 
 > [!NOTE]
 > To change dynamic group properties you will need to use cmdlets from the Microsoft Graph PowerShell module. for more information, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
-Here is an example of functions that switch membership management on an existing group. In this example, care is taken to correctly manipulate the GroupTypes property and preserve any values that are unrelated to dynamic membership.
+Here is an example of functions that switch membership management on an existing group. In this example, care is taken to correctly manipulate the GroupTypes property and preserve any values that are unrelated to dynamic membership groups.
 
 ```powershell
-#The moniker for dynamic groups as used in the GroupTypes property of a group object
+#The moniker for dynamic membership groups as used in the GroupTypes property of a group object
 $dynamicGroupTypeString = "DynamicMembership"
 
 function ConvertDynamicGroupToStatic
@@ -73,7 +73,7 @@ function ConvertDynamicGroupToStatic
     }
 
 
-    #remove the type for dynamic groups, but keep the other type values
+    #remove the type for dynamic membership groups, but keep the other type values
     $groupTypes.Remove($dynamicGroupTypeString)
 
     #modify the group properties to make it a static group: i) change GroupTypes to remove the dynamic type, ii) pause execution of the current rule
@@ -119,4 +119,4 @@ These articles provide additional information on groups in Microsoft Entra ID.
 * [Create a new group and adding members](~/fundamentals/how-to-manage-groups.yml)
 * [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
 * [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
-* [Manage dynamic rules for users in a group](groups-dynamic-membership.md)
+* [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

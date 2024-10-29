@@ -92,14 +92,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	![Provisioning tab](common/provisioning.png)
 
 1. If you are configuring provisioning for the first time, select **Get started**.
-
-	![Provisioning get started](media/schoolstream-asa-provisioning-tutorial/provisioning-get-started.png)
 	
 1. Set the **Provisioning Mode** to **Automatic**.
 
-	![Provisioning tab automatic](media/schoolstream-asa-provisioning-tutorial/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your SchoolStream ASA **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to SchoolStream ASA. If the connection fails , ensure your SchoolStream ASA account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your SchoolStream ASA **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to SchoolStream ASA. If the connection fails, ensure your SchoolStream ASA account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 

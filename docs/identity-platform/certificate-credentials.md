@@ -29,9 +29,9 @@ To compute the assertion, you can use one of the many JWT libraries in the langu
 
 | Parameter |  Remark |
 | --- | --- |
-| `alg` | Should be **RS256** |
+| `alg` | Should be **PS256** |
 | `typ` | Should be **JWT** |
-| `x5t` | Base64url-encoded SHA-1 thumbprint of the X.509 certificate's DER encoding. For example, given an X.509 certificate hash of `AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00` (Hex), the `x5t` claim would be `A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u` (Base64url). |
+| `x5t#s256` | Base64url-encoded SHA-256 thumbprint of the X.509 certificate's DER encoding. |
 
 ### Claims (payload)
 
@@ -47,15 +47,15 @@ To compute the assertion, you can use one of the many JWT libraries in the langu
 
 ### Signature
 
-The signature is computed by applying the certificate as described in the [JSON Web Token RFC7519 specification](https://tools.ietf.org/html/rfc7519).
+The signature is computed by applying the certificate as described in the [JSON Web Token RFC7519 specification](https://tools.ietf.org/html/rfc7519). Use PSS padding. 
 
 ## Example of a decoded JWT assertion
 
 ```JSON
 {
-  "alg": "RS256",
+  "alg": "PS256",
   "typ": "JWT",
-  "x5t": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u"
+  "x5t#sha256": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u"
 }
 .
 {

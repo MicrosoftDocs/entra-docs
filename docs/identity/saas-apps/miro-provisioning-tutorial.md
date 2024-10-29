@@ -101,15 +101,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Miro**.
 
-	![Miro User Mappings](media/miro-provisioning-tutorial/usermappings.png)
-
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Miro in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Miro for update operations. Select the **Save** button to commit any changes.
 
 	![Miro User Attributes](media/miro-provisioning-tutorial/userattributes.png)
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Miro**.
-
-	![Miro Group Mappings](media/miro-provisioning-tutorial/groupmappings.png)
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Miro in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Miro for update operations. Select the **Save** button to commit any changes. Uncheck **Create** and **Delete** under **Target Object Actions** as Miro SCIM API does not support creating and deleting groups.
 

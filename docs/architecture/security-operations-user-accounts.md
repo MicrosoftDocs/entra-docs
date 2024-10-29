@@ -92,7 +92,7 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Microsoft Defender for Cloud Apps](/cloud-app-security/what-is-cloud-app-security)** – enables you to discover and manage apps, govern across apps and resources, and check your cloud apps' compliance.
 
-* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 Much of what you will monitor and alert on are the effects of your Conditional Access policies. You can use the [Conditional Access insights and reporting workbook](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) to examine the effects of one or more Conditional Access policies on your sign-ins, and the results of policies, including device state. This workbook enables you to view a summary, and identify the effects over a specific time period. You can also use the workbook to investigate the sign-ins of a specific user.
 
@@ -173,7 +173,7 @@ Seeing failures for user authentication is normal. But seeing patterns or blocks
 
 Success appears to say all is well. But it can mean that a bad actor has successfully accessed a service. Monitoring successful logins helps you detect user accounts that are gaining access but aren't user accounts that should have access. User authentication successes are normal entries in Microsoft Entra sign-in logs. We recommend you monitor and alert to detect when patterns emerge. This helps ensure you can protect user accounts and your organization's data.
 
-As you design and operationalize a log monitoring and alerting strategy, consider the tools available to you through the Azure portal. Identity Protection enables you to automate the detection, protection, and remediation of identity-based risks. Identity protection uses intelligence-fed machine learning and heuristic systems to detect risk and assign a risk score for users and sign-ins. Customers can configure policies based on a risk level for when to allow or deny access or allow the user to securely self-remediate from a risk. The following Identity Protection risk detections inform risk levels today:
+As you design and operationalize a log monitoring and alerting strategy, consider the tools available to you through the Azure portal. Microsoft Entra ID Protection enables you to automate the detection, protection, and remediation of identity-based risks. ID Protection uses intelligence-fed machine learning and heuristic systems to detect risk and assign a risk score for users and sign-ins. Customers can configure policies based on a risk level for when to allow or deny access or allow the user to securely self-remediate from a risk. The following ID Protection risk detections inform risk levels today:
 
 | What to monitor | Risk Level | Where | Filter/sub-filter | Notes |
 | - | - | - | - | - |
@@ -194,7 +194,7 @@ As you design and operationalize a log monitoring and alerting strategy, conside
 | Suspicious inbox forwarding sign-in risk detection| Varies| Microsoft Entra risk detection logs| UX: Suspicious inbox forwarding<br><br>API: See [riskDetection resource type - Microsoft Graph](/graph/api/resources/riskdetection)| See [What is risk? Microsoft Entra ID Protection](~/id-protection/concept-identity-protection-risks.md)<br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
 | Microsoft Entra threat intelligence sign-in risk detection| High| Microsoft Entra risk detection logs| UX: Microsoft Entra threat intelligence<br>API: See [riskDetection resource type - Microsoft Graph](/graph/api/resources/riskdetection)| See [What is risk? Microsoft Entra ID Protection](~/id-protection/concept-identity-protection-risks.md)<br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
 
-For more information, visit [What is Identity Protection](~/id-protection/overview-identity-protection.md).
+For more information, visit [What is ID Protection](~/id-protection/overview-identity-protection.md).
 
 ### What to look for
 
@@ -216,7 +216,7 @@ For this risk area, we recommend you monitor standard user accounts and privileg
 
 ### How to detect
 
-You use Microsoft Entra ID Protection and the Microsoft Entra sign-in logs to help discover threats indicated by unusual sign-in characteristics. Information about Identity Protection is available at [What is Identity Protection](~/id-protection/overview-identity-protection.md). You can also replicate the data to Azure Monitor or a SIEM for monitoring and alerting purposes. To define normal for your environment and to set a baseline, determine:
+You use Microsoft Entra ID Protection and the Microsoft Entra sign-in logs to help discover threats indicated by unusual sign-in characteristics. For more information, see the article [What is ID Protection](~/id-protection/overview-identity-protection.md). You can also replicate the data to Azure Monitor or a SIEM for monitoring and alerting purposes. To define normal for your environment and to set a baseline, determine:
 
 * the parameters you consider normal for your user base.
 
@@ -238,13 +238,13 @@ You use Microsoft Entra ID Protection and the Microsoft Entra sign-in logs to he
 
 After you scope what normal is for the accounts in your environment, consider the following list to help determine scenarios you want to monitor and alert on, and to fine-tune your alerting.
 
-* Do you need to monitor and alert if Identity Protection is configured?
+* Do you need to monitor and alert if Microsoft Entra ID Protection is configured?
 
 * Are there stricter conditions applied to privileged accounts that you can use to monitor and alert on? For example, requiring privileged accounts only be used from trusted IP addresses.
 
 * Are the baselines you set too aggressive? Having too many alerts might result in alerts being ignored or missed.
 
-Configure Identity Protection to help ensure protection is in place that supports your security baseline policies. For example, blocking users if risk = high. This risk level indicates with a high degree of confidence that a user account is compromised. For more information on setting up sign in risk policies and user risk policies, visit [Identity Protection policies](~/id-protection/concept-identity-protection-policies.md). For more information on setting up Conditional Access, visit [Conditional Access: Sign-in risk-based Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-risk.md).
+Configure ID Protection to help ensure protection is in place that supports your security baseline policies. For example, blocking users if risk = high. This risk level indicates with a high degree of confidence that a user account is compromised. For more information on setting up sign in risk policies and user risk policies, visit [ID Protection policies](~/id-protection/concept-identity-protection-policies.md). 
 
 The following are listed in order of importance based on the effect and severity of the entries.
 

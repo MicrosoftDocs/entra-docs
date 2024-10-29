@@ -4,7 +4,7 @@ description: Learn about when and how to use delegated access in the Microsoft i
 author: omondiatieno
 manager: celesteDG
 ms.author: jomondi
-ms.date: 03/15/2023
+ms.date: 10/15/2024
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
 
@@ -15,8 +15,6 @@ ms.topic: concept-article
 # Understanding delegated access
 
 When a user signs into an app and uses it to access some other resource, like Microsoft Graph, the app will first need to ask for permission to access this resource on the user’s behalf. This common scenario is called delegated access.
-
-> [!VIDEO https://learn-video.azurefd.net/vod/player?show=one-dev-minute&ep=how-do-delegated-permissions-work]
 
 ## Why should I use delegated access?
 

@@ -103,9 +103,7 @@ Publishing an application as regular application is the preferred method to excl
 
 You can also limit the wildcard to only work for specific applications through your DNS management. As a best practice, you should create a CNAME entry that includes a wildcard and matches the format of the external URL you have configured. However, you can instead point specific application URLs to the wildcards. For example, instead of `*.adventure-works.com`, point `hr.adventure-works.com`, `expenses.adventure-works.com` and `travel.adventure-works.com individually` to `00001111-aaaa-2222-bbbb-3333cccc4444.tenant.runtime.msappproxy.net`.
 
-If you use this option, you also need another CNAME entry for the value `AppId.domain`, for example, `00001111-aaaa-2222-bbbb-3333cccc4444.adventure-works.com`, also pointing to the same location. You can find the **AppId** on the application properties page of the wildcard application:
-
-![Find the application ID on the app's property page](./media/application-proxy-wildcard/01.png)
+If you use this option, you also need another CNAME entry for the value `AppId.domain`, for example, `00001111-aaaa-2222-bbbb-3333cccc4444.adventure-works.com`, also pointing to the same location. You can find the **AppId** on the application properties page of the wildcard application.
 
 ### Setting the homepage URL for the MyApps panel
 

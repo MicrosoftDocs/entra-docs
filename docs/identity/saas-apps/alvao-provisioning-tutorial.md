@@ -44,7 +44,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure ALVAO to support provisioning with Microsoft Entra ID
 1. Find your **Tenant SCIM Endpoint URL**, which should have the format `{ALVAO REST API address}/scim` (for example, https://app.contoso.com/alvaorestapi/scim).
-1. Generate a new **Secret Token** in **WebApp - Administration - Settings - [Active Directory and Microsoft Entra ID](https://doc.alvao.com/en/11.1/list-of-windows/alvao-webapp/administration/settings/activedirectory)** and copy its value.
+1. Generate a new **Secret Token** in **WebApp - Administration - Settings - [Active Directory and Microsoft Entra ID](https://doc.alvao.com/en/11.2/ui/administration/settings/activedirectory)** and copy its value.
 
 <a name='step-3-add-alvao-from-the-azure-ad-application-gallery'></a>
 
@@ -126,8 +126,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
    > [!NOTE]
    >For advanced settings see:
-   > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/11.1/alvao-asset-management/implementation/users/authentication/aad/provisioning/person-attribute-mapping)
-   > * [Mapping SCIM attributes to object properties](https://doc.alvao.com/en/11.1/alvao-asset-management/implementation/users/authentication/aad/provisioning/object-attribute-mapping)
+   > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/person-attribute-mapping)
+   > * [Mapping SCIM attributes to object properties](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/object-attribute-mapping)
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to ALVAO**.
 

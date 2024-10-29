@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 12/15/2023
+ms.date: 10/02/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -36,7 +36,7 @@ When using workbooks, you can either start with an empty workbook, or use an exi
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
     - **Workbooks**: All workbooks created in your tenant
     - **Public Templates**: Prebuilt workbooks for common or high priority scenarios
-    - **My Templates**: Templates you've created
+    - **My Templates**: Templates you created
 1. Select a report or template from the list. Workbooks might take a few moments to populate.
     - Search for a template by name.
     - Select the **Browse across galleries** to view templates that aren't specific to Microsoft Entra ID.

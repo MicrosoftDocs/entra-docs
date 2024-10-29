@@ -7,14 +7,14 @@ manager: amycolannino
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
-ms.date: 04/26/2024
+ms.date: 08/25/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---
 
 # Cloud sync directory extensions and custom attribute mapping
 
-Microsoft Entra ID must contain all the data (attributes) required to create a user profile when provisioning user accounts from Microsoft Entra ID to a line of business (LOB), [SaaS app](~/identity/saas-apps/tutorial-list.md), or on-premises application. You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises, provision users from Windows Server Active Directory through Microsoft Entra ID to SaaS apps, and use extension attributes in Microsoft Entra ID and Microsoft Entra ID Governance features such as dynamic groups.
+Microsoft Entra ID must contain all the data (attributes) required to create a user profile when provisioning user accounts from Microsoft Entra ID to a line of business (LOB), [SaaS app](~/identity/saas-apps/tutorial-list.md), or on-premises application. You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises, provision users from Windows Server Active Directory through Microsoft Entra ID to SaaS apps, and use extension attributes in Microsoft Entra ID and Microsoft Entra ID Governance features such as dynamic membership groups.
 
 For more information on directory extensions, see [Using directory extension attributes in claims](../../../identity-platform/schema-extensions.md), [Microsoft Entra Connect Sync: directory extensions](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md), and [Syncing extension attributes for Microsoft Entra application provisioning](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md).
 
