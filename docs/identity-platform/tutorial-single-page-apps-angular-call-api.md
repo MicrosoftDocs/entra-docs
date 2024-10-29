@@ -20,7 +20,7 @@ In this tutorial:
 
 > [!div class="checklist"]
 > * Create the API call to Microsoft Graph
-
+> * Test the application
 
 ## Prerequisites
 
@@ -119,6 +119,20 @@ To configure your Angular application to interact with the Microsoft Graph API, 
     ```
     
     This code defines an HTML template that displays user profile information, using Angular's interpolation syntax to bind properties from the `profile` object (For example., `businessPhones`, `displayName`, `jobTitle`). It also shows the `tokenExpiration` value and includes a note stating that refreshing the page will use the cached access token until it nears expiration, after which a new token will be requested.
+
+## Test the application
+
+To test the application, complete the following steps:
+
+1. Run the Angular application by executing the following command in the terminal:
+
+    ```bash
+    ng serve --open
+    ```
+
+1. Select the **Sign in** button to authenticate with your Microsoft Entra tenant.
+1. After signing in, select the **View Profile** link to navigate to the **Profile** page.
+1. Verify that the user profile information is displayed, including the user's name, email, job title, and other details.
 
 ## Next steps
 
