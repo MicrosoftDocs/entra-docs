@@ -175,6 +175,8 @@ items:
     href: concept-sign-in-diagnostics-scenarios.md
   - name: Sign-in errors for a user
     href: howto-troubleshoot-sign-in-errors.md
+  - name: Sign-up errors
+    href: howto-troubleshoot-sign-up-errors.md
   - name: View applied Conditional Access policies
     href: how-to-view-applied-conditional-access-policies.md
 
