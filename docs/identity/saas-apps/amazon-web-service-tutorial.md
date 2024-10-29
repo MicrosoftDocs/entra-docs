@@ -154,11 +154,10 @@ Follow these steps to enable Microsoft Entra SSO.
    
     ![Screenshot showing New SAML Certificate.](common/new-saml-certificate.png) 
 
+1. (Optional) You can select **Make certificate active**.
 1. In the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
-    ![Screenshot showing the Certificate download link.](./media/amazon-web-service-tutorial/certificate.png)
-
-1. In the **Set up AWS Single-Account Access** section, copy the appropriate URL(s) based on your requirement.
+ 1. In the **Set up AWS Single-Account Access** section, copy the appropriate URL(s) based on your requirement.
 
     ![Screenshot showing Copy configuration URLs.](common/copy-configuration-urls.png)
 
