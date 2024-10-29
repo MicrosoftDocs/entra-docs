@@ -47,7 +47,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     </div>
     ```
 
-    The code implements a navigation bar in an Angular app that integrates with the Microsoft Identity Platform. It dynamically displays **Sign In** and **Sign Out** buttons based on user authentication status and includes a **View Profile** button for logged-in users, enhancing the application's user interface. The `login()` and `logout()` methods in `src/app/app.component.ts` are called when the buttons are selected.
+    The code implements a navigation bar in an Angular app. It dynamically displays **Sign In** and **Sign Out** buttons based on user authentication status and includes a **View Profile** button for logged-in users, enhancing the application's user interface. The `login()` and `logout()` methods in `src/app/app.component.ts` are called when the buttons are selected.
 
 1. Open the `src/app/app-routing.module.ts` file and replace the contents with the following code.
     
@@ -150,7 +150,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     ```
 
     
-    The code welcomes users to the Microsoft Authentication Library for JavaScript and prompts them to view their Microsoft Graph data by clicking the **View Profile** link.
+    The code welcomes users to the MSAL for JavaScript and prompts them to view their Microsoft Graph data by clicking the **View Profile** link.
 
 1. Open the `src/main.ts` file and replace the contents with the following code.
 

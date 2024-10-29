@@ -56,7 +56,7 @@ To build the Angular project from scratch, follow these steps:
 
     The command `npm install @azure/msal-browser @azure/msal-angular bootstrap` installs the Azure MSAL browser, Azure MSAL Angular, and Bootstrap packages.
 
-1. Open `angular.json` and add Bootstrap's CSS path to the `styles` array::
+1. Open `angular.json` and add Bootstrap's CSS path to the `styles` array:
 
     ```json
     "styles": [
