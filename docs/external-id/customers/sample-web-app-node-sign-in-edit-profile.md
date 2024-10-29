@@ -94,19 +94,19 @@ This code sample contains two apps, the client app and the service/API app. You 
 1. In your code editor, open `1-Authentication\7-edit-profile-with-mfa-express\App\authConfig.js` file, then find the placeholder:
 
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's *https://graph.microsoft.com/*.
-    - `Add_your_protected_scope_here` and replace it with the EditProfileService app scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the [edit profile service app](#register-edit-profile-service-app) you registered earlier.
+    - `Add_your_protected_scope_here` and replace it with the EditProfileService app scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the [EditProfileService you registered earlier](#register-edit-profile-service-app).
 
 1. In your code editor, open `1-Authentication\7-edit-profile-with-mfa-express\Api\authConfig.js` file, then find the placeholder:
     
     - `Enter_the_Tenant_Subdomain_Here` and replace it with Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
     - `Enter_the_Tenant_ID_Here` and replace it with Tenant ID. If you don't have your Tenant ID, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
-    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [edit profile service app](#register-edit-profile-service-app) you registered earlier.
-    - `Enter_the_Client_Secret_Here` and replace it with the e[dit profile service app secret](#add-app-client-secret) value you copied earlier.
+    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](#register-edit-profile-service-app).
+    - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](#add-app-client-secret) value you copied earlier.
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's *https://graph.microsoft.com/*.
 
 ## Install project dependencies and run app
 
-To test your app, install project dependencies for both the the client app and the service/API app, then run them.
+To test your app, install project dependencies for both the client app and the service/API app, then run them.
 
 1. To run the client app, open your terminal window, then run the following commands:
     
