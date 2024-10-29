@@ -17,7 +17,7 @@ Organizations with Software-as-a-Service (SaaS) or Line-of-Business (LOB) applic
 
 ## Configure source IP anchoring to route traffic from a dedicated IP address
 
-To enable application enforcement of a dedicated network, configure an enterprise application with Microsoft Entra Private Access. An example where this configuration might be necessary is when the application that allows access with local credentials isn't tied to your identity provider.
+To enable application enforcement of a dedicated network, configure an enterprise application with Microsoft Entra Private Access. An example where this configuration might be necessary is when the application allows access with local credentials which are not tied to your identity provider.
 
 This solution acquires application traffic and routes it from the client device. It routes through Microsoft's Secure Service Edge then to a private network with a private network connector. From the private network, the traffic can access the application with internet or any other available private connection. The application sees the traffic as originating from the allowed egress IP address indicating that access is coming from the dedicated network that satisfies its own network access controls.
 
