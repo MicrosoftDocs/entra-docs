@@ -38,7 +38,7 @@ To customize the fields your customer users can edit in their profile, choose fr
 
 ## Update the client web app
 
-Add the following files to your Node.js client we app (*1-Authentication/7-edit-profile-with-mfa-express/App/* directory): 
+Add the following files to your Node.js client we app (*App* directory): 
 - Create *views/gatedUpdateProfile.hbs* and *views/updateProfile.hbs*.
 - Create *fetch.js*.
 
@@ -106,7 +106,7 @@ Add the following files to your Node.js client we app (*1-Authentication/7-edit-
     - This file contains an HTML form that represents the [editable user details](reference-user-permissions.md#microsoft-graph-apis-and-permissions). 
     - The user needs to select the **Edit Profile** button to update their display name, but the user must complete an MFA challenge if they've not already done so. 
 
-1. In your code editor, open *views/updateProfile.hbs* file, then add the following code:
+1. In your code editor, open *App/views/updateProfile.hbs* file, then add the following code:
 
     ```html
     <h1>Microsoft Graph API</h1>
@@ -166,7 +166,7 @@ npm install axios cookie-parser body-parser method-override
 
 In this section, you set-up the mid-tier app. 
 
-1. Create a directory *1-Authentication/7-edit-profile-with-mfa-express/Api*.
+1. Create a directory *Api*.
 
 1.  Navigate into the *Api* directory, then run the following command to create your mid-tier app project:
 

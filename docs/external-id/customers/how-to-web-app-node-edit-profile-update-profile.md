@@ -333,9 +333,9 @@ In this section, you add the identity related code for the mid-tier app (EditPro
     - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](sample-web-app-node-sign-in-edit-profile.md#register-editprofileservice-app).
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's `https://graph.microsoft.com/`.
     
-1. In your code editor, open *Api/fetch.js* file, then paste the code from [Api/fetch.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/7-edit-profile-with-mfa-express/Api/fetch.js) file. The `fetch` function uses an access token and the resource endpoint to make the actual API call. 
+1. In your code editor, open *Api/fetch.js* file, then paste the code from *[Api/fetch.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/7-edit-profile-with-mfa-express/Api/fetch.js)* file. The `fetch` function uses an access token and the resource endpoint to make the actual API call. 
 
-1. In your code editor, open *Api/index.js* file, then paste the code from [Api/index.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/7-edit-profile-with-mfa-express/Api/index.js) file.
+1. In your code editor, open *Api/index.js* file, then paste the code from *[Api/index.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/7-edit-profile-with-mfa-express/Api/index.js)* file.
 
 ### Acquire an access token by using acquireTokenOnBehalfOf 
 
@@ -387,11 +387,16 @@ In the same file, *Api/index.js*, the the mid-tier app (EditProfileService app) 
 
 ## Test your app
 
-Use these steps to test your app:
+To test your app, use the following steps:
 
-1. In your terminal, make sure you're in the project folder that contains the *package.json*, then run the following command:
+1. To run the client app, form the terminal window, navigate into the *App* directory, then run the following command:
+    
+    ```Console
+    npm start
+    ```
+1. To run the client app, form the terminal window, navigate into the *Api* directory, then run the following command:
 
-    ```console
+    ```Console
     npm start
     ```
 
@@ -403,16 +408,18 @@ Use these steps to test your app:
     NODE_TLS_REJECT_UNAUTHORIZED='0'
     ```
 
-1. Select the **Sign In** button, then sign in.
+1. Select the **Sign In** button, then you sign in.
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
-1. To update profile, select the **Edit profile** link. You see a page similar to the following screenshot:
+1. To update profile, select the **Profile editing** link. You see a page similar to the following screenshot:
 
-    :::image type="content" source="media/how-to-web-app-node-edit-profile-update-profile/edit-user-profile.png" alt-text="Screenshot of update user profile."::: 
+    :::image type="content" source="media/how-to-web-app-node-edit-profile-update-profile/edit-user-profile.png" alt-text="Screenshot of user update profile."::: 
 
-1. To edit the user's **Display Name**, select the **Edit** button. If you haven't already done so, the app prompts you to complete an MFA challenge. 
+1. To edit profile, select the **Edit Profile** button. If you haven't already done so, the app prompts you to complete an MFA challenge. 
+
+1. Make changes to the any of the profile details, then select **Save** button.
  
 ## Related content
 
-- [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md).
+- Learn more about [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](../../identity-platform/v2-oauth2-on-behalf-of-flow.md).

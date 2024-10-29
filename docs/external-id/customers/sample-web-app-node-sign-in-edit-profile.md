@@ -117,7 +117,13 @@ To test your app, install project dependencies for both the client app and the s
     npm start
     ```
 
-1. Open your browser, then go to http://localhost:3000.
+1. Open your browser, then go to http://localhost:3000. If you experience SSL certificate errors, create a `.env` file, then add the following configuration:
+
+    ```Console
+    # Use this variable only in the development environment. 
+    # Remove the variable when you move the app to the production environment.
+    NODE_TLS_REJECT_UNAUTHORIZED='0'
+    ```
 
 1. Select the **Sign In** button, then you sign in.
 
