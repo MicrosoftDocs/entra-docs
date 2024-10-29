@@ -18,11 +18,11 @@ ms.custom: developer
 
 After customer users successfully sign in into your external-facing app, you can enable them to edit their profiles. You enable the customer users to manage their profiles by using [Microsoft Graph API's](/graph/api/user-get) `/me` endpoint. Calling the `/me` endpoint requires a signed-in user and therefore a delegated permission.
 
-To make sure that only the user makes changes to their profile, the user need to complete an MFA challenge.
+To make sure that only the user makes changes to their profile, the user needs to complete an MFA challenge.
 
 In this guide, you learn how to set up your web app to support profile editing with multifactor authentication (MFA) protection:
 
-- The MFA requirement is enabled by a Conditional Access (CA) policy.
+- The app uses Conditional Access (CA) policy to enable MFA requirement.
 - The web app setup contains two web services, the client web app and a middle-tier service app.
 - The client web app signs in the user and reads and displays the user's profile.
 - The middle-tier service app acquires an access token, then edits the profile on behalf of the user.
@@ -168,7 +168,7 @@ In this section, you set up the mid-tier app.
 
 1. Create *Api* directory.
 
-1.  Navigate into the *Api* directory, then run the following command to create your mid-tier app project:
+1. To create your mid-tier app project, navigate into the *Api* directory, then run the following command:
 
     ```console
     npm init -y

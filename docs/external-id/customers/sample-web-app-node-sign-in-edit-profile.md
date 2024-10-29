@@ -63,7 +63,7 @@ Grant your client web app the *EditProfileService.ReadWrite* permission. This pe
 
 ### Grant admin consent
 
-You've assigned the **EditProfileService.ReadWrite* permissions correctly. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to these permission on behalf of all the users in the tenant:
+You've assigned the **EditProfileService.ReadWrite* permissions correctly. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to this permission on behalf of all the users in the tenant:
     
 1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
 
@@ -140,7 +140,7 @@ To test your app, install project dependencies for both the client app and the s
 
 1. To edit profile, select the **Edit Profile** button. If you haven't already done so, the app prompts you to complete an MFA challenge. 
 
-1. Make changes to the any of the profile details, then select **Save** button. 
+1. Make changes to any of the profile details, then select **Save** button. 
 
 ## Related content
 

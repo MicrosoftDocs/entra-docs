@@ -419,7 +419,7 @@ To test your app, use the following steps:
 
 1. To edit profile, select the **Edit Profile** button. If you haven't already done so, the app prompts you to complete an MFA challenge. 
 
-1. Make changes to the any of the profile details, then select **Save** button.
+1. Make changes to any of the profile details, then select **Save** button.
  
 ## Related content
 
