@@ -42,7 +42,7 @@ Our [standard libraries](reference-v2-libraries.md) implement resilient and secu
   * Periodically (recommended every 1 hour) as a background job 
   * Dynamically if a received token was signed with an unknown key (unknown **kid** or **tid** in the header)
 
-#### KeyRefresh procedure (algorithm)
+#### KeyRefresh procdure (Conceptual algorithm from IdentityModel)
 
 1. Initialization
    The configuration manager is set up with a specific address to fetch configuration data and necessary interfaces to retrieve and validate this data.
@@ -61,7 +61,7 @@ Our [standard libraries](reference-v2-libraries.md) implement resilient and secu
 
 This approach ensures that the system always uses the most up-to-date and valid configuration data, while gracefully handling errors and avoiding redundant operations.
 
-The .NET implementation of this algorithm is available from [BaseConfigurationManager](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/blob/dev/src/Microsoft.IdentityModel.Tokens/BaseConfigurationManager.cs). It's subject to change based on resilience and security evaluations.
+The .NET implementation of this algorithm is available from [BaseConfigurationManager](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/blob/dev/src/Microsoft.IdentityModel.Tokens/BaseConfigurationManager.cs). It's subject to change based on resilience and security evaluations. See also an explanation [here](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki/signing-key-rollover)
 
 #### KeyRefresh procedure (pseudo code):
 This procedure uses a global (lastSuccessfulRefreshTime timestamp) to prevent conditions that refresh keys too often.
