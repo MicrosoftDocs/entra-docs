@@ -37,8 +37,8 @@ The first policy blocks access to all apps except for Microsoft 365 applications
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
-1. Under **Target resources** > **Cloud apps**, select the following options:
-   1. Under **Include**, select **All cloud apps**.
+1. Under **Target resources** > **Resources (formerly cloud apps)**, select the following options:
+   1. Under **Include**, select **All resources (formerly 'All cloud apps')**.
    1. Under **Exclude**, select **Office 365**, select **Select**.
 1. Under **Conditions**:
    1. Under **Conditions** > **Location**.
@@ -59,7 +59,7 @@ The following policy is created to require multifactor authentication or a compl
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
-1. Under **Target resources** > **Cloud apps** > **Include** > **Select apps**, choose **Office 365**, and select **Select**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**, choose **Office 365**, and select **Select**.
 1. Under **Access controls** > **Grant**, select **Grant access**.
    1. Select **Require multifactor authentication** and **Require device to be marked as compliant** select **Select**.
    1. Ensure **Require one of the selected controls** is selected.

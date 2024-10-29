@@ -50,7 +50,7 @@ The following steps help create a Conditional Access policy to require all users
    1. Under **Include**, select **All users**
    1. Under **Exclude** select **Users and groups** and choose your organization's emergency access or break-glass accounts.
       1. You might choose to exclude your guest users if you're targeting them with a [guest user specific policy](policy-guests-mfa-strength.md). 
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
    1. Under **Exclude**, select any applications that don't require multifactor authentication.
 1. Under **Access controls** > **Grant**, select **Grant access**.
    1. Select **Require authentication strength**, then select the built-in **Multifactor authentication strength** from the list.

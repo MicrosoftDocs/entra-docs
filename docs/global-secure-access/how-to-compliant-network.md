@@ -68,7 +68,7 @@ The compliant network Conditional Access policy can be used to protect your Micr
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's [emergency access or break-glass accounts](#user-exclusions).
-1. Under **Target resources** > **Include**, and select **All cloud apps**.
+1. Under **Target resources** > **Include**, and select **All resources (formerly 'All cloud apps')**.
    1. If your organization is enrolling devices into Microsoft Intune, it is recommended to exclude the applications **Microsoft Intune Enrollment** and **Microsoft Intune** from your Conditional Access policy to avoid a circular dependency.
 1. Under **Network**.
    1. Set **Configure** to **Yes**.
@@ -80,7 +80,7 @@ The compliant network Conditional Access policy can be used to protect your Micr
 1. Select the **Create** button to create to enable your policy.
 
 > [!NOTE]
-> You can use Global Secure Access traffic profiles along with a Conditional Access policy requiring a compliant network for **All cloud apps**. There's no exclusion required when setting up a policy using the **All Compliant Network locations** location and **All cloud apps**.
+> You can use Global Secure Access traffic profiles along with a Conditional Access policy requiring a compliant network for **All resources (formerly 'All cloud apps')**. There's no exclusion required when setting up a policy using the **All Compliant Network locations** location and **All resources (formerly 'All cloud apps')**.
 > 
 > Authentication to Global Secure Access traffic profiles are automatically excluded from Conditional Access enforcement when a compliant network is required. This exclusion enables the Global Secure Access client to access required resources to start and authenticate the user.
 >

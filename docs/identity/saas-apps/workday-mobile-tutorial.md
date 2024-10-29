@@ -85,7 +85,7 @@ To set up Workday as a managed device, perform the following steps:
 
     1. Switch **Select what this policy applies to** to **Cloud apps**.
 
-    1. In **Include**, choose **Select apps**.
+    1. In **Include**, choose **Select resources**.
 
     1. From the **Select** list, choose **Workday**.
 

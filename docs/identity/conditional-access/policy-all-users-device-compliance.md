@@ -42,7 +42,7 @@ The following steps help create a Conditional Access policy to require devices a
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
 1. Under **Access controls** > **Grant**.
    1. Select **Require device to be marked as compliant**.
    1. Select **Select**.
@@ -52,7 +52,7 @@ The following steps help create a Conditional Access policy to require devices a
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
 > [!NOTE]
-> You can enroll your new devices to Intune even if you select **Require device to be marked as compliant** for **All users** and **All cloud apps** using the previous steps. The **Require device to be marked as compliant** control does not block Intune enrollment.
+> You can enroll your new devices to Intune even if you select **Require device to be marked as compliant** for **All users** and **All resources (formerly 'All cloud apps')** using the previous steps. The **Require device to be marked as compliant** control does not block Intune enrollment.
 
 ### Known behavior
 
