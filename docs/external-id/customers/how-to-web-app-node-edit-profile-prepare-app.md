@@ -176,6 +176,11 @@ In this section, you set-up the mid-tier app.
 
 1. In the *Api* directory create new files, *authConfig.js*, *fetch.js* and *index.js*.
 
+1. To install mid-tier app dependencies, run the following command:
+
+```console
+npm install express express-session axios cookie-parser http-errors @azure/msal-node body-parser uuid 
+```
 ## Next step
 
 > [!div class="nextstepaction"]
