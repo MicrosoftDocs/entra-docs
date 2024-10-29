@@ -30,7 +30,7 @@ Protect user access on unmanaged devices by preventing browser sessions from rem
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
 1. Under **Conditions** > **Filter for devices**, set **Configure** to **Yes**. 
    1. Under **Devices matching the rule:**, set to **Include filtered devices in policy**.
    1. Under **Rule syntax** select the **Edit** pencil and paste the following expressing in the box, then select **Apply**. 
