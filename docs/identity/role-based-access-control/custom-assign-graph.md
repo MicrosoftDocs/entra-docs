@@ -228,7 +228,7 @@ HTTP/1.1 200 OK
                 "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1wIiSDKQoTVJrLE9etXyrY0-1"
                 "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                 "roleDefinitionId": "00000000-0000-0000-0000-000000000000",
-                "directoryScopeId": "/00000000-0000-0000-0000-000000000000"
+                "directoryScopeId": "/d23998b1-8853-4c87-b95f-be97d6c6b610"
             }
         ]
 }
