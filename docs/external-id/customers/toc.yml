@@ -360,7 +360,7 @@ items:
                         displayName: Conditional Access, CA 
                       - name: Update profile
                         href: how-to-web-app-node-edit-profile-update-profile.md  
-                        displayName: protect with MFA, multifactor authentication, MFA            
+                        displayName: protect, multifactor authentication, MFA            
                   - name: Call API
                     items:
                       - name: Prepare tenant 
