@@ -7,7 +7,7 @@ ms.author: jricketts
 ms.reviewer: jebley
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
-ms.topic: concept
+ms.topic: conceptual
 ms.date: 10/29/2024
 ---
 
@@ -95,7 +95,7 @@ After you configure an enterprise application for the web application, perform t
    1. The **Channel** field is **Private Access**.
    1. The **Action** field is **Tunnel**.
 
-      :::image type="content" source="media/source-ip-anchoring/ advanced-diagnostics-network-traffic-inline.png" alt-text="Screenshot of Global Secure Access - Advanced diagnostics - Network traffic." lightbox="media/source-ip-anchoring/ advanced-diagnostics-network-traffic-expanded.png":::
+      :::image type="content" source="media/source-ip-anchoring/advanced-diagnostics-network-traffic-inline.png" alt-text="Screenshot of Global Secure Access - Advanced diagnostics - Network traffic." lightbox="media/source-ip-anchoring/advanced-diagnostics-network-traffic-expanded.png":::
 
 1. Check the application's logs (not in Microsoft Entra ID). Validate that the application sees the sign-in from an IP address that matches an egress IP of your private network.
 
