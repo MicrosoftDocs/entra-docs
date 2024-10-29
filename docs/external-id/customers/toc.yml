@@ -355,11 +355,9 @@ items:
                 items:
                   - name:  Edit profile with MFA
                     items:
-                      - name: Set-up external tenant 
-                        href: how-to-web-app-node-edit-profile-prepare-tenant.md   
-                        displayName: Conditional Access, CA 
                       - name: Set-up app 
                         href: how-to-web-app-node-edit-profile-prepare-app.md 
+                        displayName: Conditional Access, CA 
                       - name: Update profile
                         href: how-to-web-app-node-edit-profile-update-profile.md  
                         displayName: protect with MFA, multifactor authentication, MFA            

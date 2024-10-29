@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 07/01/2024
+ms.date: 10/25/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to set up my Node.js web app for profile editing so that customer users can update their profile after a successful sign-in.
 ---
@@ -16,7 +16,19 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-This article is part 2 of a series that demonstrates profile editing in a Node.js web app. In [part 1 of this series](how-to-web-app-node-edit-profile-prepare-tenant.md), you set up your external tenant for profile editing.  
+After customer users successfully sign in into your external-facing app, you can enable them to edit their profiles. You enable the customer users to manage their profiles by using [Microsoft Graph API's](/graph/api/user-get) `/me` endpoint. Calling the `/me` endpoint requires a signed-in user and therefore a delegated permission.
+
+To make sure that only the user makes changes to their profile, the user need to complete an MFA challenge.
+
+In this how-to guide, you learn how to set up your web app to support profile editing with multifactor authentication (MFA) protection:
+- The MFA requirement is enabled by a Conditional Access (CA) policy.
+- The whole web app setup contains two web services, the client web app and a middle-tier service app.
+- The client web app signs in the user and reads and displays the user's profile.
+- The middle-tier service app acquires an access token, then editsthe  profile on behalf of the user.
+
+## Updatable properties 
+
+To customize the fields your customer users can edit in their profile, choose from the properties listed in the *Update profile* row of the table in [Microsoft Graph APIs and permissions](reference-user-permissions.md#microsoft-graph-apis-and-permissions). 
 
 ## Prerequisites
 
