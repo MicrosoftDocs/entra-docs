@@ -133,6 +133,8 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Source IP anchoring
+        href: source-ip-anchoring.md
   - name: Logs and monitoring
     expanded: false
     items:
