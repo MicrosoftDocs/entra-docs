@@ -53,7 +53,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 
 1. DriveLock application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
-	![image](common/default-attributes.png)
+	![Screenshot of default application attributes on the setup page.](common/default-attributes.png)
 
 1. In addition to above, DriveLock application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
@@ -66,7 +66,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
-	![The Certificate download link](common/copy-metadataurl.png)
+	![Screenshot of the SAML signing certificate on the setup page.](common/copy-metadataurl.png)
 ### Create a Microsoft Entra ID test user
 
 In this section, you create a test user in the Microsoft Entra admin center called B.Simon.
