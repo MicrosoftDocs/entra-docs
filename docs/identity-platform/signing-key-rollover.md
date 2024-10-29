@@ -44,19 +44,29 @@ Our [standard libraries](reference-v2-libraries.md) implement resilient and secu
 
 #### KeyRefresh procdure (Conceptual algorithm from IdentityModel)
 
-1. Initialization
+1. **Initialization**
+   
    The configuration manager is set up with a specific address to fetch configuration data and necessary interfaces to retrieve and validate this data.
-1. Configuration Check
+
+2. **Configuration Check**
+   
    Before fetching new data, the system first checks if the existing data is still valid based on a predefined refresh interval.
-1. Data Retrieval
+   
+3. **Data Retrieval**
    If the data is outdated or missing, the system locks down to ensure only one thread fetches the new data to avoid duplication (and thread exhaustion). The system then attempts to retrieve the latest configuration data from a specified endpoint.
-1. Validation
+
+4. **Validation**
+   
    Once the new data is retrieved, it is validated to ensure it meets the required standards and is not corrupted. The metadata is only accepted when an incoming request was successfully validated with the new keys.
-1. Error Handling
+   
+5. **Error Handling**
+   
    If any errors occur during data retrieval, they are logged. The system continues to operate with the last known good configuration if new data cannot be fetched
-1. Automatic Updates
+   
+6. **Automatic Updates**
    The system periodically checks and updates the configuration data automatically based on the refresh interval (recommend 12 h with a jitter of plus or minus 1 h). It can also manually request an update if needed, ensuring that the data is always current.
-1. Reception of a token with a new key
+
+7. **Validation of a token with a new key**
    If a token arrives with a signing key that is not known yet from the configuration, the system attempts to fetch the configuration with a sync call on the hot path to handle new keys in metadata outside of the regular expected updates(but no more frequently than 5mins)
 
 This approach ensures that the system always uses the most up-to-date and valid configuration data, while gracefully handling errors and avoiding redundant operations.
