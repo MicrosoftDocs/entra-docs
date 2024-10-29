@@ -49,7 +49,7 @@ With all the prerequisites configured, you can run activity log queries in Micro
 To search for specific activity log entries, use the $filter and createdDateTime query parameters with one of the available properties. Some of the following queries use the `beta` endpoint. The beta endpoint is subject to change and isn't recommended for production use.
 
 - [Sign-in log properties](/graph/api/resources/signin#properties)
-- [Sign-up log properties (preview)](/graph/api/resources/signup#properties)
+- [Sign-up log properties (preview)](/graph/api/resources/selfservicesignup#properties)
 - [Audit log properties](/graph/api/resources/directoryaudit#properties)
 
 #### Sample sign-in queries

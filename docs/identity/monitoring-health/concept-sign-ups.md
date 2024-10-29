@@ -12,7 +12,7 @@ ms.reviewer: celested
 
 # Customer intent: As an IT admin for an external tenant, I need to know what information is available in the sign-up logs so that I can use the logs to monitor all sign-up attempts and troubleshoot issues.
 ---
-# What are External ID sign-up logs (preview)?
+# External ID sign-up logs (preview)
 
 Microsoft Entra External ID logs all self-service sign-up events, including both successful sign-ups and failed attempts. The logs include information that helps organizations optimize their sign-up processes, enhance the user experience, and improve overall customer engagement. This article explains how to access and use the sign-up logs.
 
