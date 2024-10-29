@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: sample
-ms.date: 10/31/2024
+ms.date: 11/29/2024
 ms.custom: developer
 #Customer intent: As a dev, devops, or IT admin, I want to configure a sample Node.js web app so that customer users can sign in and edit profile in their external tenant
 ---
