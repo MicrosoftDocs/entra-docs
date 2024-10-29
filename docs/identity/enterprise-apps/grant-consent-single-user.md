@@ -147,7 +147,7 @@ In the example, the resource enterprise application is Microsoft Graph of object
    {
       "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
       "consentType": "Principal",
-      "resourceId": "ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0",
+      "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
       "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
       "scope": "User.Read.All Group.Read.All"
    }
