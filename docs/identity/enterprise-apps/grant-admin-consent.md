@@ -157,7 +157,7 @@ In the following example, you grant the Microsoft Graph application (the princip
 ```powershell
  $params = @{
   "PrincipalId" ="aaaaaaaa-bbbb-cccc-1111-222222222222"
-  "ResourceId" = "ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0"
+  "ResourceId" = "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
   "AppRoleId" = "df021288-bdef-4463-88db-98f22de89214"
 }
 
