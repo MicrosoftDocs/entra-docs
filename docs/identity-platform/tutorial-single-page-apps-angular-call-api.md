@@ -133,6 +133,7 @@ To test the application, complete the following steps:
 1. Select the **Sign in** button to authenticate with your Microsoft Entra tenant.
 1. After signing in, select the **View Profile** link to navigate to the **Profile** page.
 1. Verify that the user profile information is displayed, including the user's name, email, job title, and other details.
+1. Select the **Sign out** button to sign out of the application.
 
 ## Next steps
 
