@@ -171,7 +171,19 @@ Use the following list to help measure the level of access control.
 
 Organizations can start with highly managed controls to meet compliance targets, and then delegate some control to end users, over time. There can be simultaneous access-management models in an organization.
 
-You should start with reviewing the documentation for [Secure external Collaboration](../../architecture/1-secure-access-posture.md) and [Plan a Microsoft Entra B2B collaboration deployment](../../architecture/secure-external-access-resources.md).  Reviewing this documentation will allow you to devise and create a security plan that can be used with your guest scenarios.
+### Architectural considerations
+Proper security architectural design is an essential component of ensuring a secure business parnter and external user scenario.  You should familiarize yourself with the different types of recommended architectures while drafting your security plan.  The recommended architectures that use Microsoft Identity Governance are:
+
+   - [Workforce and collaboration-oriented architecture considerations](../../architecture/external-identity-deployment-architectures.md#workforce-and-collaboration-oriented-architecture) -  enables your workforce to collaborate with business partners from external organizations. 
+   - [Isolated access for business partners](../../architecture/external-identity-deployment-architectures.md#isolated-access-for-business-partners) - isolate external users from your oranization's tenant
+
+
+#### Suggested documentation
+Finally, you should review the following documentation. Reviewing this documentation will allow you to devise and create a security plan that can be used with your business partner and exteranl user scenarios.
+
+- [Microsoft Entra External ID deployment architectures with Microsoft Entra](../../architecture/external-identity-deployment-architectures.md)
+- [Secure external Collaboration](../../architecture/1-secure-access-posture.md)
+- [Plan a Microsoft Entra B2B collaboration deployment](../../architecture/secure-external-access-resources.md). 
 
 :::zone-end
 
