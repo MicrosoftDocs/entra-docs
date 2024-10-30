@@ -86,7 +86,7 @@ items:
   - name: Investigate incidents using Microsoft Copilot for Security
     href: copilot-security-entra-investigate-incident.md 
   - name: Responsible AI FAQ for Security Copilot in Microsoft Entra
-    href: rcopilot-security-entra-rai-faq.md
+    href: copilot-security-entra-rai-faq.md
 - name: Quick security wins
   expanded: false
   items:

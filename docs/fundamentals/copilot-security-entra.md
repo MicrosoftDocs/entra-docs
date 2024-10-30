@@ -32,20 +32,21 @@ This article introduces you to Copilot in Microsoft Entra.
 
 Microsoft Entra brings the capabilities of Copilot for Security to the Microsoft Entra admin center, enabling administrators and security teams to respond to identity threats quickly. Bringing AI to Microsoft Entra allows teams to understand risks immediately and determine remediation steps in a timely manner.
 
-### Create your own Copilot for Security prompts
+### Create Copilot for Security prompts in the Microsoft Entra admin center (preview)
 
-Launch Copilot for Security from anywhere in the Microsoft Entra admin center from a globally available button in the menu bar. You can enter any prompt in an ‘open prompting’ UX. Customers will see Starter Prompts at the top of the Copilot window, these are click-to-run. You also may see Suggested Prompts after a response, these are predefined prompts that Copilot selects based on the skill used in the prior response, sometimes showing nothing when no predefined prompts apply as a follow up. 
+Copilot for Security is a part of the Microsoft Entra admin center, use it to create your own prompts.  Launch Copilot from a globally available button in the menu bar. Click-to-run Starter Prompts appear at the top of the Copilot window. Suggested Prompts may also appear after a response, these are predefined prompts that Copilot selects based on the skill used in the prior response. 
 
-Graphic here...
-
-You also have access to Security Copilot skills for [Microsoft Entra documentation](https://learn.microsoft.com/en-us/entra/). 
+:::image type="content" source="./media/copilot-security-entra/security-copilot-entra-admin-center.png" alt-text="Screenshot that shows Security Copilot in the Microsoft Entra admin center.":::
 
 Specific scenarios supported by Microsoft Entra skills: 
 
-- As an IT admin, I need to troubleshoot user’s sign-in events 
-- As an IT admin or SOC Analyst, I need details about these users and groups 
-- As an IT admin or SOC Analyst, I need to understand changes made in Entra to users, roles, groups, and apps in audit log details 
-- As an IT admin or SOC Analyst, I want Copilot to help me improve security posture and reduce application / workload identity risk 
+- As an IT admin, I need to troubleshoot user’s sign-in events.
+- As an IT admin or SOC Analyst, I need details about these users and groups.
+- As an IT admin or SOC Analyst, I need to understand changes made in Entra to users, roles, groups, and apps in audit log details.
+- As an IT admin or SOC Analyst, I want Copilot to help me improve security posture and reduce application / workload identity risk.
+- As an IT admin or SOC Analyst, I need to see relevent [Microsoft Entra documentation](/entra/) while investigating incidents. 
+
+Copilot responses in the Microsoft Entra admin center only use Microsoft Entra, Microsoft Intune, Windows AutoPatch, Cloud PC, and Microsoft Documentation skills and not skills for other services such as Microsoft Defender XDR or Microsoft Purview.
 
 ### Summarize a user's risk level
 
