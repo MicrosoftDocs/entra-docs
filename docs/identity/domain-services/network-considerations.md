@@ -73,7 +73,7 @@ You can connect application workloads hosted in other Azure virtual networks usi
 
 ### Virtual network peering
 
-Virtual network peering is a mechanism that connects two virtual networks in the same region through the Azure backbone network. Global virtual network peering can connect virtual network across Azure regions. Once peered, the two virtual networks let resources, such as VMs, communicate with each other directly using private IP addresses. Using virtual network peering lets you deploy a managed domain with your application workloads deployed in other virtual networks.
+Virtual network peering is a mechanism that connects two virtual networks through the Azure backbone network, allowing resources such as virtual machines (VMs) to communicate with each other directly using private IP addresses. Virtual network peering supports both regional peering, which connects VNets within the same Azure region, and global virtual network peering, which connects VNets across different Azure regions. This flexibility allows you to deploy a managed domain with your application workloads across multiple virtual networks, regardless of their regional locations.
 
 ![Virtual network connectivity using peering](./media/entra-domain-services-design-guide/vnet-peering.png)
 
@@ -177,7 +177,7 @@ Make sure no other NSG with higher priority denies the Outbound connectivity. If
 
 ### Port 3389 - management using remote desktop
 
-* Used for remote desktop connections to domain controllers in your managed domain.
+* Used for remote desktop connections to domain controllers in your managed domain, this port cannot be changed or encapsulated into another port.
 * The default network security group rule uses the *CorpNetSaw* service tag to further restrict traffic.
     * This service tag permits only secure access workstations on the Microsoft corporate network to use remote desktop to the managed domain.
     * Access is only allowed with business justification, such as for management or troubleshooting scenarios.

@@ -62,7 +62,7 @@ As of now, following versions of Confluence are supported:
 
 - Confluence: 5.0 to 5.10
 - Confluence: 6.0.1 to 6.15.9
-- Confluence: 7.0.1 to 8.5.1
+- Confluence: 7.0.1 to 9.0.3
 
 > [!NOTE]
 > Please note that our Confluence Plugin also works on Ubuntu Version 16.04
@@ -189,14 +189,12 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Once the plugin is installed, it appears in **User Installed** add-ons section of **Manage Add-on** section. Click **Configure** to configure the new plugin.
 
-    ![Screenshot that shows the "User Installed" section with the "Configure" button highlighted.](./media/confluencemicrosoft-tutorial/add-on-15.png)
-
 1. Perform following steps on configuration page:
-
-    ![Screenshot that shows the single sign-on configuration page.](./media/confluencemicrosoft-tutorial/confluence-configure-addon.png)
 
     > [!TIP]
     > Ensure that there is only one certificate mapped against the app so that there is no error in resolving the metadata. If there are multiple certificates, admin gets an error upon resolving the metadata.
+
+    ![Screenshot that shows the single sign-on configuration page.](./media/confluencemicrosoft-tutorial/sso-plugin-configuration-page.png)
 
     1. In the **Metadata URL** textbox, paste **App Federation Metadata Url** value which you have copied and click the **Resolve** button. It reads the IdP metadata URL and populates all the fields information.
 
@@ -205,6 +203,10 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     1. In **Login Button Name** type the name of button your organization wants the users to see on login screen.
 
     1. In **Login Button Description** type the description of button your organization wants the users to see on login screen.
+  
+    1. In **Default Group** Select your organization Default Group to assign to new users (Default groups facilitate organized access rights to new user account).
+  
+    1. In **Auto-create User** feature (JIT User Provisioning): It automates user account creation in authorized web applications, without the need for manual provisioning. This reduces administrative workload and increases productivity. Because JIT relies on the login response from Azure AD, enter the SAML-response attribute values, which include the user's email address, last name, and first name.
 
     1. In **SAML User ID Locations**, select either **User ID is in the NameIdentifier element of the Subject statement** or **User ID is in an Attribute element**.  This ID has to be the Confluence user ID. If the user ID is not matched, then system will not allow users to sign in. 
 

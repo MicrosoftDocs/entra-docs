@@ -854,6 +854,8 @@
         href: drawboard-projects-tutorial.md
       - name: Drift
         href: drift-tutorial.md
+      - name: DriveLock
+        href: drivelock-tutorial.md
       - name: Dropbox Business
         href: dropboxforbusiness-tutorial.md
       - name: DRTrack
@@ -3836,6 +3838,8 @@
         href: simple-in-out-provisioning-tutorial.md
       - name: Slack
         href: slack-provisioning-tutorial.md
+      - name: Smartcat
+        href: smartcat-tutorial.md
       - name: Smartfile
         href: smartfile-provisioning-tutorial.md
       - name: Smartsheet

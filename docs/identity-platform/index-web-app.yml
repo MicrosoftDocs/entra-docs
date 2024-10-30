@@ -19,14 +19,12 @@ landingContent:
     linkLists:
       - linkListType: quickstart
         links:
-          - text: ASP.NET
-            url: quickstart-web-app-aspnet-sign-in.md
           - text: ASP.NET Core
             url: quickstart-web-app-dotnet-core-sign-in.md
           - text: Java
             url: quickstart-web-app-java-sign-in.md
           - text: Node.js with MSAL
-            url: quickstart-web-app-nodejs-msal-sign-in.md
+            url: quickstart-web-app-nodejs-sign-in.md
           - text: Python Flask
             url: quickstart-web-app-python-flask.md
   - title: "Learn by building"

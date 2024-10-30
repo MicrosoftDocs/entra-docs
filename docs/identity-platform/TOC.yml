@@ -169,13 +169,11 @@
     - name: Web app authentication
       href: index-web-app.yml
     - name: Quickstart
-      items: 
-        - name: ASP.NET 
-          href: quickstart-web-app-aspnet-sign-in.md
+      items:
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js
-          href: quickstart-web-app-nodejs-msal-sign-in.md
+          href: quickstart-web-app-nodejs-sign-in.md
         - name: Java
           href: quickstart-web-app-java-sign-in.md
         - name: Python Flask
@@ -302,16 +300,12 @@
       items:
         - name: Node.js Electron
           href: quickstart-desktop-app-nodejs-electron-sign-in.md
-        - name: Universal Windows Platform (UWP)
-          href: quickstart-desktop-app-uwp-sign-in.md
         - name: Windows Presentation Foundation (WPF)
           href: quickstart-desktop-app-wpf-sign-in.md
     - name: Tutorials
       items:
         - name: Node.js Electron
           href: tutorial-v2-nodejs-desktop.md
-        - name: Universal Windows Platform (UWP)
-          href: tutorial-v2-windows-uwp.md
         - name: Windows Presentation Foundation (WPF)
           href: tutorial-v2-windows-desktop.md
     - name: Samples

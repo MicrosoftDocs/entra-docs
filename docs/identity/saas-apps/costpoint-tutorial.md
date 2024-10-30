@@ -138,9 +138,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 In this section, you create a user in Costpoint. Assume the user ID is **B.SIMON** and the user's name is **B.Simon**. Work with the [Costpoint Client support team](https://www.deltek.com/about/contact-us) to add the user in the Costpoint platform. The user must be created and activated before they can use single sign-on.
 
-After the user is created, the user's **Authentication Method** selection must be **Active Directory**, the **SAML Single Sign-on** check box must be selected, and the user name from Microsoft Entra ID must be **Active Directory or Certificate ID** (shown in the following screenshot).
-
-![Costpoint user](./media/costpoint-tutorial/costpoint-user.png)
+After the user is created, the user's **Authentication Method** selection should be **Active Directory**, the **SAML Single Sign-on** check box should be selected, and the user name from Microsoft Entra ID should be **Active Directory or Certificate ID**.
 
 ## Test SSO
 

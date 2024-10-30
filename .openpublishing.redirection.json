@@ -46,6 +46,131 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-policy-app-enforced-restriction.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-all-users-app-enforced-restrictions",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-policy-approved-app-or-app-protection.yml",
+      "redirect_url": "/entra/identity/conditional-access/policy-all-users-approved-app-or-app-protection",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/how-to-policy-require-device-compliance.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-all-users-device-compliance",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/how-to-policy-mfa-device-register-join.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-all-users-device-registration",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-policy-unknown-unsupported-device.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-all-users-device-unknown-unsupported",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-all-users-mfa-strength",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-policy-persistent-browser-session.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-all-users-persistent-browser",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/require-tou.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-all-users-require-terms-of-use",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-registration.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-all-users-security-info-registration",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/how-to-app-protection-policy-windows.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-all-users-windows-app-protection",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-compliant-device-admin.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-alt-admin-device-compliand-hybrid",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-compliant-device.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/how-to-policy-authentication-flows.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-block-authentication-flows",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-location.yml",
+      "redirect_url": "/entra/identity/conditional-access/policy-block-by-location",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-block-access.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-block-example",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-block-legacy.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-block-legacy-authentication",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-guests-mfa-strength",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-old-require-mfa-admin",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/how-to-policy-mfa-admin-portals.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-old-require-mfa-admin-portals",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-azure-management.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-old-require-mfa-azure-mgmt",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-policy-guest-mfa.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-old-require-mfa-guest",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/how-to-policy-insider-risk.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-risk-based-insider-block",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-risk.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-risk-based-sign-in",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/howto-conditional-access-policy-risk-user.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-risk-based-user",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds.md",
       "redirect_url": "/entra/fundamentals/whats-new",
       "redirect_document_id": false
@@ -1080,6 +1205,36 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/ghae-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-v2-uwp.md",
+      "redirect_url": "/entra/identity-platform/quickstart-desktop-app-wpf-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-windows-uwp.md",
+      "redirect_url": "/entra/identity-platform/quickstart-desktop-app-wpf-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-nodejs-msal-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-nodejs-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/howto-authentication-passwordless-deployment.md",
+      "redirect_url": "/entra/identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-aspnet-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-dotnet-core-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-tenant.md",
+      "redirect_url": "/entra/external-id/customers/how-to-web-app-node-edit-profile-prepare-app",
       "redirect_document_id": false
     }
   ]

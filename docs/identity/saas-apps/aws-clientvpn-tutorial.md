@@ -101,9 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Type **AWS ClientVPN** in the search box and select **AWS ClientVPN** from the search panel.
 
-1. Click on **Manifest** and you need to keep the Reply URL as **http** instead of **https** to get the integration working, click on **Save**.
-
-    ![The Screenshot for the manifest page.](./media/aws-clientvpn-tutorial/reply-url.png)
+1. Click on **Manifest**. Under **replyUrlWithType**, keep the Reply URL as **http** instead of **https** to get the integration working. Click on **Save**.
 
 1. AWS ClientVPN application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -122,8 +120,6 @@ Follow these steps to enable Microsoft Entra SSO.
 	![The Certificate download link](common/metadataxml.png)
 
 1. In the **SAML Signing Certificate** section, click the edit icon and change the **Signing Option** to **Sign SAML response and assertion**. Click **Save**.
-
-    ![The screenshot for the SAML Signing Certificate page.](./media/aws-clientvpn-tutorial/signing-certificate.png)
 
 1. On the **Set up AWS ClientVPN** section, copy the appropriate URL(s) based on your requirement.
 

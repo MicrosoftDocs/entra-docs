@@ -75,36 +75,24 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In the **ATLASSIAN Admin** portal, navigate to **Security** > **Identity providers** > **Microsoft Entra ID**.
 
-   ![Screenshot shows the Instance Profile Name.](./media/atlassian-cloud-tutorial/name.png "Profile")
-
 1. Enter the **Directory name** and click **Add** button.
-
-   ![Screenshot shows the Directory for Admin Portal.](./media/atlassian-cloud-tutorial/directory.png "Add Directory")
 
 1. Select **Set up SAML single sign-on** button to connect your identity provider to Atlassian organization.
 
    ![Screenshot shows the Security of identity provider.](./media/atlassian-cloud-tutorial/provider.png "Security")
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Atlassian Cloud** application integration page, find the **Manage** section and select **Set up single sign-on**.
-
-   ![Set up sso](./media/atlassian-cloud-tutorial/set-up.png)
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Atlassian Cloud** application integration page. Find the **Manage** section. Under **Getting Started**, select **Set up single sign-on**.
 
 1. On the **Select a Single sign-on method** page, select **SAML**.
 
-   ![SAML in Azure](./media/atlassian-cloud-tutorial/azure.png)
-
-1. On the **Set up Single Sign-On with SAML** page, scroll down to **Set Up Atlassian Cloud**.
+1. On the **Set up Single Sign-On with SAML** page, scroll down to **Set up Atlassian Cloud**.
    
    a. Click on **Configuration URLs**.
 
-   ![Single Sign-On](./media/atlassian-cloud-tutorial/configure.png)
-   
    b. Copy **Login URL** value from Azure portal, paste it in the **Identity provider SSO URL** textbox in Atlassian.
    
    c. Copy **Microsoft Entra Identifier** value from Azure portal, paste it in the **Identity provider Entity ID** textbox in Atlassian.
-
-   ![Identity Provider SSO URL](./media/atlassian-cloud-tutorial/configuration-azure.png)
 
    ![Screenshot shows the Configuration values.](./media/atlassian-cloud-tutorial/metadata.png "Azure values")
 

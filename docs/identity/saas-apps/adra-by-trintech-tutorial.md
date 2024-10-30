@@ -146,9 +146,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
    [ ![Screenshot that shows the Configuration Settings.](./media/adra-by-trintech-tutorial/settings.png "Configuration")](./media/adra-by-trintech-tutorial/settings.png#lightbox)
 
-1. Click on the **Add a new federated identity provider** button and perform the following steps:
-
-   [ ![Screenshot that shows the Organization Algorithm.](./media/adra-by-trintech-tutorial/certificate.png "Organization")](./media/adra-by-trintech-tutorial/certificate.png#lightbox)
+1. Click on the **Add a new federated identity provider** button and enter the details for the required fields accordingly.
 
    a. Enter a valid **Name** and **Description** values in the textbox.
 

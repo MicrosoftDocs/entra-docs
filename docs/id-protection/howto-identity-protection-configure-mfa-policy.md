@@ -18,7 +18,7 @@ Microsoft helps you manage the deployment of multifactor authentication (MFA) by
 
 We recommend that you require multifactor authentication for all user sign-ins. [Based on our studies](https://www.microsoft.com/security/security-insider/microsoft-digital-defense-report-2023), your account is more than 99% less likely to be compromised if you use MFA. Even if you don't require MFA all the time this policy ensures your users are ready when the time comes to do MFA.
 
-For more information, see the article [Common Conditional Access policy: Require MFA for all users](../identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md).
+For more information, see the article [Common Conditional Access policy: Require MFA for all users](../identity/conditional-access/policy-all-users-mfa-strength.md).
 
 ## Policy configuration
 

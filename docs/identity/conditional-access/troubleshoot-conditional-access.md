@@ -22,14 +22,14 @@ The Conditional Access framework provides you with a great configuration flexibi
 
 Organizations should avoid the following configurations:
 
-**For all users, all cloud apps:**
+**For all users, all resources:**
 
 - **Block access** - This configuration blocks your entire organization.
 - **Require device to be marked as compliant** - For users that haven't enrolled their devices yet, this policy blocks all access including access to the Intune portal. If you're an administrator without an enrolled device, this policy blocks you from getting back in to change the policy.
 - **Require Hybrid Microsoft Entra domain joined device** - This policy block access has also the potential to block access for all users in your organization if they don't have a Microsoft Entra hybrid joined device.
 - **Require app protection policy** - This policy block access has also the potential to block access for all users in your organization if you don't have an Intune policy. If you're an administrator without a client application that has an Intune app protection policy, this policy blocks you from getting back into portals such as Intune and Azure.
 
-**For all users, all cloud apps, all device platforms:**
+**For all users, all resources, all device platforms:**
 
 - **Block access** - This configuration blocks your entire organization.
 
