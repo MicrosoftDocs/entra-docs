@@ -307,6 +307,7 @@ Offboarding of guest users is a critical aspect of identity and access managemen
 2.  Develop an offboarding process to remove external partners. 
 
 ### Offboarding process for business partners
+The following items are a generic list of steps that one should consider when offboarding business from your organization.
 
 - determine the end date for working with a business partner.  
 - notify all relevant departments as to the specific end time and date.
@@ -318,6 +319,7 @@ Offboarding of guest users is a critical aspect of identity and access managemen
 
 
 ### Offboarding process for external users
+The following items are a generic list of steps that one should consider when offboarding external users from your organization.
 
 - determine the end date.
 - ensuring any pending deliverables or tasks are completed.
