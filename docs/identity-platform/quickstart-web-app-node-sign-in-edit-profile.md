@@ -12,9 +12,9 @@ ms.custom: developer
 #Customer intent: As a dev, devops, or IT admin, I want to configure a sample Node.js web app so that customer users edit profile after completing a multifactor authentication (MFA) in their external tenant
 ---
 
-[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
-
 # Quickstart - Edit profile in a sample Node.js web app
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 In this Quickstart, you use a sample Node.js web app to learn how to add sign in and edit profile in a web app. The sample web app uses [Microsoft Authentication Library for Node (MSAL Node)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) and Microsoft Graph API to complete the sign in and edit profile operation.
 
