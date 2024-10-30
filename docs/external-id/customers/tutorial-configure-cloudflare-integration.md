@@ -4,7 +4,7 @@ description: Learn how to configure Cloudflare Web Application Firewall (WAF) to
 author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/05/2024
 ms.author: gasinh
@@ -104,7 +104,7 @@ We recommend you block traffic that originates from the Tor proxy network, unles
 
 ## Firewall rules: Traffic from countries or regions
 
-We recommended strict security controls on traffic from countries or regions where business is unlikely to occur, unless your organization has a business reason to support traffic from al countries or regions.  
+We recommended strict security controls on traffic from countries or regions where business is unlikely to occur, unless your organization has a business reason to support traffic from all countries or regions.  
 
    > [!NOTE]
    > If you can't block traffic from a country or region, select **Interactive Challenge**, not **Block**.

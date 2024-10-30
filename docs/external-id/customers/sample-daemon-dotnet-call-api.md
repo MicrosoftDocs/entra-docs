@@ -7,7 +7,7 @@ manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.custom: devx-track-dotnet
 ms.topic: quickstart
 ms.date: 07/13/2023

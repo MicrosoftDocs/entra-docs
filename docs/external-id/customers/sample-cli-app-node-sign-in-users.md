@@ -8,7 +8,7 @@ manager: mwongerapk
 ms.author: dmwendia
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: quickstart
 ms.date: 08/04/2023
 ms.custom: developer, devx-track-js
