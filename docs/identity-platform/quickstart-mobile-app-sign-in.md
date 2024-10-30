@@ -266,5 +266,37 @@ In this article, you do the following tasks:
 
 ---
 
+## Clone sample application
+
+
+#### [Android](#tab/android-external)
+
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
+
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
+ 
+   ```console 
+   git clone https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-android-sample
+   ```
+
+#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+
+To get the .NET MAUI Android application sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample .NET MAUI Android application from GitHub by running the following command:
+
+```bash
+git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
+```
+
+#### [iOS/macOS](#tab/ios-macos-external)
+
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
+
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
+
+   ```console 
+   git clone https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-ios-sample.git
+   ```
+
+---
 
 ::: zone-end
