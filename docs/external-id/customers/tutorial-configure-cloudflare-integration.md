@@ -4,7 +4,7 @@ description: Learn how to configure Cloudflare Web Application Firewall (WAF) to
 author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/05/2024
 ms.author: gasinh
