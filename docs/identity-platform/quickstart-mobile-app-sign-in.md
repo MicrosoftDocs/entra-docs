@@ -223,6 +223,10 @@ In this article, you do the following tasks:
 
 [!INCLUDE [Enable public client](../external-id//customers/includes/register-app/add-platform-redirect-url-android.md)]
 
+## Enable public client flow
+
+[!INCLUDE [Enable public client](../customers/includes/register-app/enable-public-client-flow.md)]
+
 #### [Android(.NETMAUI)](#tab/android-netmaui-external)
 
 [!INCLUDE [active-directory-b2c-app-integration-add-platform](../external-id/customers/includes/register-app/add-platform-redirect-url-dotnet-maui.md)]
@@ -230,6 +234,10 @@ In this article, you do the following tasks:
 #### [iOS/macOS](#tab/ios-macos-external)
 
 [!INCLUDE [Enable public client](../external-id//customers/includes/register-app/add-platform-redirect-url-ios.md)]
+
+## Enable public client flow
+
+[!INCLUDE [Enable public client](../customers/includes/register-app/enable-public-client-flow.md)]
 
 ---
 
