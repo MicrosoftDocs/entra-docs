@@ -296,6 +296,62 @@ To obtain the sample application, you can either clone it from GitHub or downloa
    ```console 
    git clone https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-ios-sample.git
    ```
+---
+
+## Configure the sample application
+
+#### [Android](#tab/android-external)
+
+To enable authentication and access to Microsoft Graph resources, configure the sample by following these steps:
+ 
+1. In Android Studio, open the project that you cloned. 
+ 
+1. Open */app/src/main/res/raw/auth_config_ciam.json* file. 
+1. Find the placeholder: 
+ 
+   - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
+   - `Enter_the_Redirect_Uri_Here` and replace it with the value of *redirect_uri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
+   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+1. Open */app/src/main/AndroidManifest.xml* file.
+1. Find the placeholder:
+
+    - `ENTER_YOUR_SIGNATURE_HASH_HERE` and replace it with the **Signature Hash** that you generated earlier when you added the platform redirect URL.
+
+1. Open */app/src/main/java/com/azuresamples/msaldelegatedandroidkotlinsampleapp/MainActivity.kt* file.
+1. Find property named `scopes` and set the scopes recorded in [Grant admin consent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
+
+    ```kotlin
+    private const val scopes = "" // Developers should set the respective scopes of their Microsoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
+    ```
+   
+You've configured the app and it's ready to run. 
+
+
+#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+
+1. In Visual Studio, open *ms-identity-ciam-dotnet-tutorial-main/1-Authentication/2-sign-in-maui/appsettings.json* file.
+1. Find the placeholder:
+   1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+   1. `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
+1. In Visual Studio, open *ms-identity-ciam-dotnet-tutorial-main/1-Authentication/2-sign-in-maui/Platforms/Android/AndroidManifest.xml* file.
+1. Find the placeholder:
+   1. `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
+
+#### [iOS/macOS](#tab/ios-macos-external)
+
+To enable authentication and access to Microsoft Graph resources, configure the sample by following these steps:
+
+1. In Xcode, open the project that you cloned.
+1. Open */MSALiOS/Configuration.swift* file.
+1. Find the placeholder:
+
+    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
+    - `Enter_the_Redirect_URI_Here` and replace it with the value of *kRedirectUri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
+    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant admin concent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+
+
+You've configured the app and it's ready to run.
 
 ---
 
