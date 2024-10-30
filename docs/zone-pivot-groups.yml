@@ -352,12 +352,10 @@ groups:
   pivots:
   - id: identity-governance-guest-overview
     title: Overview
-  - id: identity-governance-guest-alt-overview
-    title: Alt Overview
-  - id: identity-governance-guest-secure
-    title: Security
   - id: identity-governance-guest-discover
     title: Discovery
+  - id: identity-governance-guest-secure
+    title: Security
   - id: identity-governance-guest-onboard
     title: Onboard
   - id: identity-governance-guest-offboard
