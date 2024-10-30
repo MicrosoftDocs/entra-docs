@@ -9,7 +9,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id
  
 ms.subservice: customers
-ms.topic: sample
+ms.topic: quickstart
 ms.date: 07/29/2024
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected using my external tenant details.

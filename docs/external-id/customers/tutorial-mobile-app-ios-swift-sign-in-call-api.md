@@ -9,7 +9,7 @@ ms.author: henrymbugua
 ms.service: entra-external-id
 
 ms.subservice: customers
-ms.topic: sample
+ms.topic: tutorial
 ms.date: 05/09/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to sign in users in iOS (Swift) app for authentication using Microsoft Entra External ID.
