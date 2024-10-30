@@ -311,7 +311,7 @@ To enable authentication and access to Microsoft Graph resources, configure the 
  
    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
    - `Enter_the_Redirect_Uri_Here` and replace it with the value of *redirect_uri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
-   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 1. Open */app/src/main/AndroidManifest.xml* file.
 1. Find the placeholder:
 
@@ -388,15 +388,15 @@ Run the app by pressing *F5* or select the *play button* at the top of Visual St
 
 1. You can now test the sample .NET MAUI Android app. After you run the app, the Android app window appears in an emulator:
 
-   :::image type="content" source="../external-id/customer/media/how-to-mobile-app-maui-sample-sign-in/maui-android-sign-in.jpg" alt-text="Screenshot of the sign-in button in the Android application.":::
+   :::image type="content" source="media/how-to-mobile-app-maui-sample-sign-in/maui-android-sign-in.jpg" alt-text="Screenshot of the sign-in button in the Android application.":::
 
 1. On the Android window that appears, select the **Sign In** button. A browser window opens, and you're prompted to sign in.
 
-   :::image type="content" source="../external-id/customer/media/how-to-mobile-app-maui-sample-sign-in/maui-android-sign-in-prompt.jpg" alt-text="Screenshot of user prompt to enter credential in Android application.":::
+   :::image type="content" source="media/how-to-mobile-app-maui-sample-sign-in/maui-android-sign-in-prompt.jpg" alt-text="Screenshot of user prompt to enter credential in Android application.":::
 
    During the sign in process, you're prompted to grant various permissions (to allow the application to access your data). Upon successful sign in and consent, the application screen displays the main page.
 
-   :::image type="content" source="../external-id/customer/media/how-to-mobile-app-maui-sample-sign-in/maui-android-after-sign-in.png" alt-text="Screenshot of the main page in the Android application after signing in.":::
+   :::image type="content" source="media/how-to-mobile-app-maui-sample-sign-in/maui-android-after-sign-in.png" alt-text="Screenshot of the main page in the Android application after signing in.":::
 
 
 
