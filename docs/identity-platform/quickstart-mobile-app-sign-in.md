@@ -355,4 +355,78 @@ You've configured the app and it's ready to run.
 
 ---
 
+
+## Run and test the sample app
+
+#### [Android](#tab/android-external)
+
+To build and run your app, follow these steps:  
+ 
+1. In the toolbar, select your app from the run configurations menu.
+  
+1. In the target device menu, select the device that you want to run your app on.  
+ 
+   If you don't have any devices configured, you need to either create an Android Virtual Device to use the Android Emulator or connect a physical Android device.  
+ 
+1. Select the **Run** button.
+1. Select **Acquire Token Interactively** to request an access token.
+1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. 
+
+For more information about calling a protected web API, see our [next steps](#next-steps) 
+
+#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+
+.NET MAUI apps are designed to run on multiple operating systems and devices. You'll need to select which target you want to test and debug your app with.
+
+Set the **Debug Target** in the Visual Studio toolbar to the device you want to debug and test with. The following steps demonstrate setting the **Debug Target** to *Android*:
+
+1. Select **Debug Target** drop-down.
+1. Select **Android Emulators**. 
+1. Select emulator device.
+
+Run the app by pressing *F5* or select the *play button* at the top of Visual Studio.
+
+1. You can now test the sample .NET MAUI Android app. After you run the app, the Android app window appears in an emulator:
+
+   :::image type="content" source="../external-id/customer/media/how-to-mobile-app-maui-sample-sign-in/maui-android-sign-in.jpg" alt-text="Screenshot of the sign-in button in the Android application.":::
+
+1. On the Android window that appears, select the **Sign In** button. A browser window opens, and you're prompted to sign in.
+
+   :::image type="content" source="../external-id/customer/media/how-to-mobile-app-maui-sample-sign-in/maui-android-sign-in-prompt.jpg" alt-text="Screenshot of user prompt to enter credential in Android application.":::
+
+   During the sign in process, you're prompted to grant various permissions (to allow the application to access your data). Upon successful sign in and consent, the application screen displays the main page.
+
+   :::image type="content" source="../external-id/customer/media/how-to-mobile-app-maui-sample-sign-in/maui-android-after-sign-in.png" alt-text="Screenshot of the main page in the Android application after signing in.":::
+
+
+
+#### [iOS/macOS](#tab/ios-macos-external)
+
+To build and run your app, follow these steps:
+ 
+1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator.
+1. Select **Acquire Token Interactively** to request an access token.
+1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. 
+
+For more information about calling a protected web API, see our [Next steps](#next-steps) 
+
+---
+
+## Next steps
+
+#### [Android](#tab/android-external)
+
+- [Sign in users and call a protected web API in sample Android (Kotlin) app](../external-id/customers/sample-mobile-app-android-kotlin-sign-in-call-api.md).
+
+#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+
+- [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md).
+
+#### [iOS/macOS](#tab/ios-macos-external)
+
+- [Sign in users and call a protected web API in sample iOS (Swift) app](../external-id/customers/sample-mobile-app-ios-swift-sign-in-call-api.md).
+
+---
+
 ::: zone-end
