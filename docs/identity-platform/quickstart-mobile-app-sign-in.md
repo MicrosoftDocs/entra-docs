@@ -81,6 +81,8 @@ We'll now look at these files in more detail and call out the MSAL-specific code
 
 ---
 
+## Register the application
+
 ::: zone-end 
 
 ::: zone pivot="external"
@@ -145,5 +147,7 @@ In this article, you do the following tasks:
 - An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ---
+
+## Register the application
 
 ::: zone-end
