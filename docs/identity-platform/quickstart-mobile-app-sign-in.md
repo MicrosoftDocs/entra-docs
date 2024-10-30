@@ -19,9 +19,19 @@ Before you begin, use the **Choose a tenant type** selector at the top of this p
 
 ::: zone pivot="workforce"
 
+#### [Android](#tab/android-workforce)
+
 In this quickstart, you download and run a code sample that demonstrates how an Android application can sign in users and get an access token to call the Microsoft Graph API.
 
 Applications must be represented by an app object in Microsoft Entra ID so that the Microsoft identity platform can provide tokens to your application.
+
+#### [iOS/macOS](#tab/ios-macos-workforce)
+
+In this quickstart, you download and run a code sample that demonstrates how a native iOS or macOS application can sign in users and get an access token to call the Microsoft Graph API.
+
+The quickstart applies to both iOS and macOS apps. Some steps are needed only for iOS apps and will be indicated as such.
+
+---
 
 ## Prerequisites
 
@@ -53,6 +63,49 @@ In this article, you do the following tasks:
 - Enable public client flows.   
 - Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
 - Run and test the sample Android mobile application.
+
+
+
+#### [Android](#tab/android-external)
+
+This guide demonstrates how to configure a sample Android mobile application to sign in users.
+  
+In this article, you do the following tasks: 
+ 
+- Register an application in the Microsoft Entra admin center.
+- Add a platform redirect URL.
+- Enable public client flows.   
+- Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
+- Run and test the sample Android mobile application.
+
+#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+
+This how-to guide uses a sample .NET Multi-platform App UI (.NET MAUI) to show how to add authentication to an Android application by using an external tenant. The sample application enables users to sign in and sign out. The sample .NET MAUI Android application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for .NET to handle authentication.
+
+In this article, you do the following tasks:
+
+- Register a .NET MAUI Android application in the external tenant.
+- Create a sign-in and sign-out user flow in the external tenant.
+- Associate your .NET MAUI Android application with the user flow.
+- Update a sample .NET MAUI Android application to use your own external tenant details.
+- Run and test the sample .NET MAUI Android application.
+
+
+#### [iOS/macOS](#tab/ios-macos-external)
+
+This guide demonstrates how to configure a sample iOS mobile application to sign in users.
+
+In this article, you do the following tasks: 
+
+- Register an application in the Microsoft Entra admin center.
+- Add a platform redirect URL.
+- Enable public client flows.   
+- Update the iOS configuration code sample file to use your own Microsoft Entra External ID for external tenant details.  
+- Run and test the sample iOS mobile application. 
+
+---
+
+
 
 ## Prerequisites
 
