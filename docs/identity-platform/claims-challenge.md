@@ -8,7 +8,7 @@ ms.date: 04/10/2024
 ms.reviewer: kylemar
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to handle claims challenges returned from APIs protected by the Microsoft identity platform.
 ---
 

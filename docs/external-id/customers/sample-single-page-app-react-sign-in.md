@@ -7,7 +7,7 @@ manager: celestedg
 ms.author: godonnell
 ms.service: entra-external-id
 ms.subservice: customers
-ms.topic: sample
+ms.topic: quickstart
 ms.date: 04/10/2024
 
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample React Single-page app to sign in and sign out users with my external tenant

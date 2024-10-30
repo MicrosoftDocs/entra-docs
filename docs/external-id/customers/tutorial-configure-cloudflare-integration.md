@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.subservice: customers
-ms.topic: how-to
+ms.topic: tutorial
 ms.date: 08/05/2024
 ms.author: gasinh
 ms.custom: it-pro
@@ -138,7 +138,7 @@ For the following instructions, you can add custom HTML pages for visitors.
 ## Next steps
 
 * [What is Azure Web Application Firewall on Azure Application Gateway?](/azure/web-application-firewall/ag/ag-overview)
-* Cloudflare Docs: [Cloudflare Zero Trust: Azure AD](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/azuread/)
+* Cloudflare Docs: [Cloudflare Zero Trust: Microsoft Entra ID](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/entra-id/)
 * [Tutorial: Configure Cloudflare WAF with Azure AD B2C](/azure/active-directory-b2c/partner-cloudflare)
    
 
