@@ -241,4 +241,30 @@ In this article, you do the following tasks:
 
 ---
 
+## Grant admin consent
+
+#### [Android](#tab/android-external)
+
+[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
+
+#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+
+[!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
+
+## Create a user flow
+
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)]
+
+## Associate the .NET MAUI Android application with the user flow
+
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
+
+
+#### [iOS/macOS](#tab/ios-macos-external)
+
+[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
+
+---
+
+
 ::: zone-end
