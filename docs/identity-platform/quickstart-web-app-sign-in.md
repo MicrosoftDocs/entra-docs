@@ -1,7 +1,6 @@
 ---
 title: Quickstart - Sign in users in a sample web app
 description: Web app quickstart that shows how to configure a sample web app that signs in employees or customers by using Microsoft identity platform
-services: identity-platform
 author: kengaderdus
 manager: mwongerapk
 ms.service: identity-platform
