@@ -38,28 +38,42 @@ Using some of the below features mentioned requires Microsoft Entra ID Governanc
 
 :::zone pivot="identity-governance-guest-alt-overview"
 
-## Overview:  An overview of guest scenarios
-Business planning with regard to partners, vendors and external users involves designing and implementing technology solutions that enable effective collaboration, integration, and alignment of goals between your organization and the partners.
+## Overview:  An overview of business partner and external user scenarios
+Typically all business processes, at some point, require work with partners, contractors, or vendors.  In order to facilitate this work, business partners and external users may need access to your organization. Business planning with regard to partners, vendors and external users involves designing and implementing technology solutions that enable effective collaboration, integration, and alignment of goals between your organization and the partners.  
 
-Consider each of the following business processes and the examples of how partner planning and interaction comes into play.  These examples are just that, examples.  There are probably dozens more interactions that can be documented.
+Microsoft defines the following personae based on their relationship with your organization.
+
+- **Workforce.** Your full-time employees, part-time employees, or contractors for your organization.
+- **Business partners.** Organizations that have a business relationship with your enterprise. These organizations can include suppliers, vendors, consultants, and strategic alliances who collaborate with your enterprise to achieve mutual goals.
+- **Consumers.** Individuals such as customers with whom you have a business relationship and who access your applications to purchase or consume your products and services.
+- **External user.** Users that are external to your organization such as business partners and consumers.
+
+### Business processes and external scenario alignment
+Guest Scenarios or external access scenarios are specific use cases where business partners or external users interact with the organization’s resources and need to be represented in one of the organization's Microsoft Entra tenants. These scenarios stretch across almost every aspect of business processes.
+
+Consider each of the following business processes and the examples of how partner planning and interaction comes into play. The following table provides a breakdown of these processes and how external partners and users come in to play.
 
 |Business Process|Definition|Example|
 |-----|-----|-----|
+|Business Process Management|A systematic approach to improving an organization’s workflows and operations to increase efficiency, effectiveness, and adaptability. Differs from supply chain orchestration in that it is more general and applies across all business areas.|A financial services company that partners with a credit scoring agency to streamline the loan approval process.|
+|Integrated Business Planning|A holistic approach that aligns an organization’s strategic goals, operational plans, and financial forecasts to create a cohesive, unified framework for decision-making.|The retail company shares sales forecasts and inventory levels with suppliers through an integrated planning platform.|
+|Customer Relations Management|A strategic approach and system for managing an organization’s interactions with its customers, focusing on improving customer satisfaction, loyalty, and retention.|An automobile company in coordinating, supporting, and optimizing their interactions with dealerships.| 
 |Supply Chain Orchestration|Coordinated management of all supply chain processes to ensure efficiency, visibility, and responsiveness across all stages, from procurement to delivery|Any company that manufactures something, has material inputs, and needs to coordinate with suppliers and vendors.|
-|Business Process Management|a systematic approach to improving an organization’s workflows and operations to increase efficiency, effectiveness, and adaptability. Differs from supply chain orchestration in that it is more general and applies across all business areas.|A financial services company that partners with a credit scoring agency to streamline the loan approval process.|
-|Integrated Business Planning|a holistic approach that aligns an organization’s strategic goals, operational plans, and financial forecasts to create a cohesive, unified framework for decision-making.|The retail company shares sales forecasts and inventory levels with suppliers through an integrated planning platform.|
-|Customer Relations Management| - Customer Relationship Management software company managing its relationships with corporate clients, partners, and vendors.|An automobile company in coordinating, supporting, and optimizing their interactions with dealerships.| 
-|Business Partner Account Lifecycle|the end-to-end process of managing the relationships and interactions between an organization and its external business partners (such as suppliers, vendors, and distributors).|a technology company that partners with a software vendor to enhance its product offerings.|
-|B2B Collaboration with Other Organizations|trategic partnership between two or more businesses to achieve common objectives through shared resources, information, and efforts.|a local coffee roaster that collaborates with a bakery to enhance both businesses' offerings.|
-
-Typically all business processes, at some point, require work with partners, contractors, or vendors.  In order to facilitate this work, 
-external partners and users may need access to your organization. Microsoft calls these external partners and users guests, because they are guests in your organization.  Solutions that deal with guests are known as guest scenarios.
-
-Guest Scenarios or external access scenarios are specific use cases where business guests (External individuals like contractors, consultants, vendors, or partners who need access to the organization’s resources) interact with the organization’s resources and need to be represented in one of the organization's Microsoft Entra tenants. 
+|Business Partner Account Lifecycle|The end-to-end process of managing the relationships and interactions between an organization and its external business partners (such as suppliers, vendors, and distributors).|a technology company that partners with a software vendor to enhance its product offerings.|
+|B2B Collaboration with Other Organizations|Strategic partnership between two or more businesses to achieve common objectives through shared resources, information, and efforts.|A local coffee shop that collaborates with a bakery to enhance both businesses' offerings.|
 
 :::image type="content" source="media/external-guest-new/govern-access-1.png" alt-text="Conceputal drawing of governing access to your resources." lightbox="media/external-guest-new/govern-access-1.png":::
 
 Understanding these scenarios helps in designing appropriate access controls and ensuring smooth collaboration with external individuals.  
+
+## Solution outline
+An external parnter/user scenario and solution can be split into the 4 main parts which are covered in this docuemnt.  They are:
+
+**Discover of Define business requirements** -
+**Determine your security posture for the solution** -
+**Onboarding** -
+**Offboarding** -
+
 
 ## License Requirements 
 
@@ -78,7 +92,52 @@ Using some of the below features mentioned requires Microsoft Entra ID Governanc
 
 
 
+:::zone pivot="identity-governance-guest-discover"
 
+## Discovery: Identify current lifecycle and governance processes for external identities 
+Identify your current lifecycle and governance processes for external identities.  This exercise will help you to determine applicable scenarios, feasibility and scope.  
+
+Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities.  The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
+
+
+You can also use the following table as a guide for additional areas to consider while evaluating your current state.
+
+|Process|Description|
+|-----|-----|
+|Determine who initiates external collaboration|Generally, users seeking external collaboration know the applications to use, and when access ends. Therefore, determine users with delegated permissions to invite external users, create access packages, and complete access reviews.|
+|Enumerate guest users and organizations|External users might be Microsoft Entra B2B users with partner-managed credentials, or external users with locally provisioned credentials. Typically, these users are the Guest UserType.|
+|Discover email domains and companyName property|You can determine external organizations with the domain names of external user email addresses.|
+|Use allowlist, blocklist, and entitlement management|Use the allowlist or blocklist to enable your organization to collaborate with, or block, organizations at the tenant level.|
+|Determine external user access|With an inventory of external users and organizations, determine the access to grant to the users.|
+|Enumerate application permissions|Investigate access to your sensitive apps for awareness about external access.|
+|Detect informal sharing|If your email and network plans are enabled, you can investigate content sharing through email or unauthorized software as a service (SaaS) apps.|
+
+For more information, see [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
+
+
+
+
+### Example - Identify current lifecycle and governance processes
+Your the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business guests like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
+
+:::image type="content" source="media/external-guest-new/discover-1.png" alt-text="Conceputal drawing of an organization." lightbox="media/external-guest-new/discover-1.png":::
+
+Some of your key requirements include,  
+
+ - Diverse guest onboarding needs with different departments requiring unique levels of access.  
+ - Ensuring that guest users have the least privilege necessary to perform their tasks is critical and needs robust conditional access policies and multi-factor authentication to protect sensitive data. 
+ - Seamless and use friendly onboarding process for both you as an IT admin, and your business guests. Guests should be able to quickly and easily access the resources they require without unnecessary delays.  
+ - Integration with existing collaboration tools like Microsoft Teams and SharePoint, along with the option for Self-Service Sign-Up (SSSU) 
+ - Capability to govern guest by regularly monitoring guest user activity, set an expiration on access and periodic access reviews ensure that guest access remains appropriate over time. For more information, see [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) and [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
+
+With these key requirements in mind, here are two things to consider:
+ - onboarding the guest to the tenant
+ - getting the guest access to resources
+
+There are different options depending on the business case. Let’s deep dive into onboarding of the guests and the options that are available.
+
+
+:::zone-end
 
 
 
@@ -132,52 +191,7 @@ You should start with reviewing the documentation for [Secure external Collabora
 :::zone-end
 
 
-:::zone pivot="identity-governance-guest-discover"
 
-## Discovery: Identify current lifecycle and governance processes for external identities 
-Identify your current lifecycle and governance processes for external identities.  This exercise will help you to determine applicable scenarios, feasibility and scope.  
-
-Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities.  The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
-
-
-You can also use the following table as a guide for additional areas to consider while evaluating your current state.
-
-|Process|Description|
-|-----|-----|
-|Determine who initiates external collaboration|Generally, users seeking external collaboration know the applications to use, and when access ends. Therefore, determine users with delegated permissions to invite external users, create access packages, and complete access reviews.|
-|Enumerate guest users and organizations|External users might be Microsoft Entra B2B users with partner-managed credentials, or external users with locally provisioned credentials. Typically, these users are the Guest UserType.|
-|Discover email domains and companyName property|You can determine external organizations with the domain names of external user email addresses.|
-|Use allowlist, blocklist, and entitlement management|Use the allowlist or blocklist to enable your organization to collaborate with, or block, organizations at the tenant level.|
-|Determine external user access|With an inventory of external users and organizations, determine the access to grant to the users.|
-|Enumerate application permissions|Investigate access to your sensitive apps for awareness about external access.|
-|Detect informal sharing|If your email and network plans are enabled, you can investigate content sharing through email or unauthorized software as a service (SaaS) apps.|
-
-For more information, see [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
-
-
-
-
-### Example - Identify current lifecycle and governance processes
-Your the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business guests like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
-
-:::image type="content" source="media/external-guest-new/discover-1.png" alt-text="Conceputal drawing of an organization." lightbox="media/external-guest-new/discover-1.png":::
-
-Some of your key requirements include,  
-
- - Diverse guest onboarding needs with different departments requiring unique levels of access.  
- - Ensuring that guest users have the least privilege necessary to perform their tasks is critical and needs robust conditional access policies and multi-factor authentication to protect sensitive data. 
- - Seamless and use friendly onboarding process for both you as an IT admin, and your business guests. Guests should be able to quickly and easily access the resources they require without unnecessary delays.  
- - Integration with existing collaboration tools like Microsoft Teams and SharePoint, along with the option for Self-Service Sign-Up (SSSU) 
- - Capability to govern guest by regularly monitoring guest user activity, set an expiration on access and periodic access reviews ensure that guest access remains appropriate over time. For more information, see [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) and [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
-
-With these key requirements in mind, here are two things to consider:
- - onboarding the guest to the tenant
- - getting the guest access to resources
-
-There are different options depending on the business case. Let’s deep dive into onboarding of the guests and the options that are available.
-
-
-:::zone-end
 
 ::: zone pivot="identity-governance-guest-onboard"  
 
@@ -285,42 +299,7 @@ Almost immediately, the external partners received their invitations. They joine
 ::: zone-end  
 
 
-::: zone pivot="identity-governance-guest-monitor"  
 
-## Monitor your active and inactive account assignments 
-As your organization collaborates with external partners, it’s possible that many guest accounts get created in Microsoft Entra tenants over time.  While collaboration is occuring and when it ends, it is a good security practice to review access.  This helps to monitor active and inactive accounts.  
-
-### Manage inactive accounts
-Inactive accounts are user accounts that aren't required anymore by members of your organization to gain access to your resources.  These accounts, even though they are no longer needed, may still have access to important and proprietary resources. Learn more about [how to manage inactive user accounts in Microsoft Entra ID](~/identity/monitoring-health/howto-manage-inactive-user-accounts.md).
-
-There are a few recommended patterns that are effective at monitoring and cleaning up stale guest accounts:
-
-1. Monitor guest accounts at scale with intelligent insights into inactive guests in your organization using inactive guest report. Customize the inactivity threshold depending on your organization’s needs, narrow down the scope of guest users you want to monitor and identify the guest users that may be inactive.
-
-2. Create a multi-stage review whereby guests self-attest whether they still need access. A second-stage reviewer assesses results and makes a final decision. Guests with denied access are disabled and later deleted.
-
-3. Create a review to remove inactive external guests. Admins define inactive as period of days. They disable and later delete guests that don’t sign in to the tenant within that time frame. By default, this doesn't affect recently created users. [Learn more about how to identify inactive accounts](~/identity/monitoring-health/howto-manage-inactive-user-accounts.md#how-to-detect-inactive-user-accounts).
-
-When collaboration ends and the users no longer access your tenant, the guest accounts may become stale. Administrators can monitor guest accounts at scale using inactive guest insights. Administrators can also use Access Reviews to automatically review inactive guest users, block them from signing in, and, delete them from the directory.
-
-For more information, see [Monitor and clean up stale guest accounts using access reviews](../../identity/users/clean-up-stale-guest-accounts.md)
-
-### Review guest account access
-With access reviews, you can easily ensure that users or guests have appropriate access. You can ask the users themselves or a decision maker to participate in an access review and recertify (or attest) to users' access.  When an access review is finished, you can then make changes and remove access from users who no longer need it.  For more information, see [Manage user and guest user access with access reviews](../manage-access-review.md)
-
-
-### Example - Monitoring your organization's access
-As the company grew, so did the complexity of managing who had access to what. You consistently monitor the consultant’s access, ensuring compliance with security policies. You make sure all guests have their access set to expire automatically at the end of the project duration by maintaining these details in access package lifecycle settings . With automated review process the system sent out review requests to managers and resource owners. They could approve or deny access with just a few clicks. This not only saved time but also reduced the risk of human error.  
- 
-You  also uses the dashboard to monitor and clean up any inactive accounts. By regularly conducting access reviews and utilizing the inactive guest user dashboard, he ensures that only active and necessary guest users retain access to the company’s resources. This helps maintain security, reduce risks, and streamline user management. 
- 
-As the months passed, Contoso saw a significant improvement in their security posture. Unauthorized access incidents dropped, and compliance audits became a breeze. The detailed reports generated by Entra Access Reviews provided clear insights into access patterns and potential risks. For more information see:
- - [Creating an access package](../entitlement-management-access-package-create.md)
- - [Monitor and clean up stale guest accounts using access reviews](../../identity/users/clean-up-stale-guest-accounts.md)
- - [Change lifecycle settings for an access package in entitlement management](../entitlement-management-access-package-lifecycle-policy.md)
- - [Manage user and guest user access with access reviews](../manage-access-review.md)
-
-::: zone-end  
 
 
 ::: zone pivot="identity-governance-guest-offboard"  
