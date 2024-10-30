@@ -27,11 +27,16 @@ Applications must be represented by an app object in Microsoft Entra ID so that 
 
 #### [Android](#tab/android-workforce)
 
-Android prerequisites.
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- Android Studio
+- Android 16+
 
 #### [iOS/macOS](#tab/ios-macos-workforce)
 
-iOS/macOS prerequisites.
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* XCode 10+
+* iOS 10+
+* macOS 10.12+
 
 ---
 
@@ -53,15 +58,21 @@ In this article, you do the following tasks:
 
 #### [Android](#tab/android-external)
 
-Android prerequisites.
-
-#### [iOS/macOS](#tab/ios-macos-external)
-
-iOS/macOS prerequisites.
+- <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
 
 #### [Android(.NETMAUI)](#tab/android-netmaui-external)
 
-Android(.NETMAUI) prerequisites.
+- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
+- [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
+  - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
+  - [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
+- An external tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
+
+#### [iOS/macOS](#tab/ios-macos-external)
+
+- <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
 ---
 
