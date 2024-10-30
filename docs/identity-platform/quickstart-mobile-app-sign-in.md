@@ -225,7 +225,7 @@ In this article, you do the following tasks:
 
 ## Enable public client flow
 
-[!INCLUDE [Enable public client](../customers/includes/register-app/enable-public-client-flow.md)]
+[!INCLUDE [Enable public client](../external-id/customers/includes/register-app/enable-public-client-flow.md)]
 
 #### [Android(.NETMAUI)](#tab/android-netmaui-external)
 
@@ -237,7 +237,7 @@ In this article, you do the following tasks:
 
 ## Enable public client flow
 
-[!INCLUDE [Enable public client](../customers/includes/register-app/enable-public-client-flow.md)]
+[!INCLUDE [Enable public client](../external-id/customers/includes/register-app/enable-public-client-flow.md)]
 
 ---
 
