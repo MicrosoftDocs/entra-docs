@@ -152,9 +152,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "Installed and ready to go" screen with the "Close" action selected.](./media/kantegassoforconfluence-tutorial/installation.png)
 
-1. Click **Manage**.
-
-	![Screenshot that shows the "Kantega Single Sign-on with Kerberos and S A M L" plugin with the "Manage" button selected.](./media/kantegassoforconfluence-tutorial/integration.png)
+1. In the **Kantega SSO for Confluence SAML Keberos** page, select **Manage**.
 
 1. Click **Configure** to configure the new plugin.
 
@@ -164,13 +162,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "USERS & SECURITY" tab with the "Kantega Single Sign-on" action selected.](./media/kantegassoforconfluence-tutorial/security.png)
 
-1. In the **SAML** section. Select **Microsoft Entra ID** from the **Add identity provider** dropdown.
+1. In the **SAML** section, select **Microsoft Entra ID** from the **Add identity provider** dropdown.
 
-	![Screenshot that shows the "S A M L" section with "Add Identity provider" and "Microsoft Entra ID" selected.](./media/kantegassoforconfluence-tutorial/azure.png)
-
-1. Select subscription level as **Basic**.
-
-	![Screenshot that shows the "Preparing Microsoft Entra ID" page with "Basic" selected.](./media/kantegassoforconfluence-tutorial/subscription.png)
+1. In the **Kantega Single Sign-on** page, select **Basic**.
 
 1. On the **App properties** section, perform following steps:
 
@@ -180,13 +174,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	b. Click **Next**.
 
-1. On the **Metadata import** section, perform following steps: 
+1. On the **Metadata import** section, select **Metadata file on my computer**.
 
-	![Screenshot that shows the "Metadata import" section with "Metadata file on my computer" selected.](./media/kantegassoforconfluence-tutorial/metadata.png)
-
-	a. Select **Metadata file on my computer**, and upload metadata file, which you have downloaded previously.
-
-	b. Click **Next**.
+1. Select **Browse file** to upload the metadata file that you previously downloaded, then select **Next**.
 
 1. On the **Name and SSO location** section, perform following steps:
 
@@ -210,11 +200,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click **Finish**.
 
-	![Screenshot of the "Summary" page with the "Finish" button selected.](./media/kantegassoforconfluence-tutorial/summary.png)
-
 1. On the **Known domains for Microsoft Entra ID** section, perform following steps: 
-
-	![Screenshot that shows the "Known domains for Microsoft Entra ID" page with the "Known domains" textbox highlighted and the "Save" button selected.](./media/kantegassoforconfluence-tutorial/domain.png)
 
 	a. Select **Known domains** from the left panel of the page.
 

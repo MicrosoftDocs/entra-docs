@@ -89,11 +89,7 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
 
 1. On the **Single sign-on** dialog, select **Mode** as    **SAML-based Sign-on** to enable single sign-on.
  
-    ![Screenshot shows SAML-based Sign-on Mode selected.](./media/jobscience-tutorial/tutorial_jobscience_samlbase.png)
-
 1. On the **Jobscience Domain and URLs** section, perform the following steps:
-
-    ![Screenshot shows the sign-on U R L.](./media/jobscience-tutorial/tutorial_jobscience_url.png)
 
     In the **Sign-on URL** textbox, type a URL using the following pattern:
     `http://<company name>.my.salesforce.com`
@@ -103,15 +99,11 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
  
 1. On the **SAML Signing Certificate** section, click **Certificate (Base64)** and then save the certificate file on your computer.
 
-    ![Screenshot shows the SAML Signing Certificate pane where you can download a certificate.](./media/jobscience-tutorial/tutorial_jobscience_certificate.png) 
-
 1. Click **Save** button.
 
     ![Screenshot shows the save button.](./media/jobscience-tutorial/tutorial_general_400.png)
 
 1. On the **Jobscience Configuration** section, click **Configure Jobscience** to open **Configure sign-on** window. Copy the **Sign-Out URL, SAML Entity ID, and SAML Single Sign-On Service URL** from the **Quick Reference section.**
-
-    ![Screenshot shows the Jobscience configuration window.](./media/jobscience-tutorial/tutorial_jobscience_configure.png) 
 
 1. Log in to your Jobscience company site as an administrator.
 

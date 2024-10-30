@@ -164,8 +164,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click on **Upload XML file** to upload the **Federation Metadata XML** file which you copied previously.
 
-    ![Upload XML file](./media/linkedin-talent-solutions-tutorial/xml-file.png)
-
 ### Create LinkedIn Talent Solutions test user
 
 In this section, a user called Britta Simon is created in LinkedIn Talent Solutions. LinkedIn Talent Solutions supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in LinkedIn Talent Solutions, a new one is created after authentication.
