@@ -78,7 +78,7 @@ Using some of the below features mentioned requires Microsoft Entra ID Governanc
 
 :::zone pivot="identity-governance-guest-discover"
 
-## Discovery: Identify current lifecycle and governance processes for external identities 
+## Discovery: Identify current lifecycle and governance processes for business partners and external users 
 Identify your current lifecycle and governance processes for external identities.  This exercise will help you to determine applicable scenarios, feasibility and scope.  
 
 Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities.  The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
@@ -137,7 +137,7 @@ There are different options depending on the business case. Let’s deep dive in
 :::zone pivot="identity-governance-guest-secure"
 
 
-## Security posture: Determine your security posture for guest access
+## Security posture: Determine your security posture for business partners and external users
 
 As you consider the governance of external access, assess your organization's security and collaboration needs, by scenario. You can start with the level of control the IT team has over the day-to-day collaboration of end users. Organizations in highly regulated industries might require more IT team control. 
 
@@ -191,7 +191,7 @@ Finally, you should review the following documentation. Reviewing this documenta
 
 ::: zone pivot="identity-governance-guest-onboard"  
 
-## Onboarding of Business Guests
+## Onboarding of business partners and external users
 Onboarding for guest accounts can be broken down in to 2 main parts when considering developing a process.  These are:
 
 1.  Develop an onboarding process to get guests into the system.  How are we going to get guests into our systems?
@@ -199,7 +199,7 @@ Onboarding for guest accounts can be broken down in to 2 main parts when conside
 
 The following sections cover both of these parts so that you can create a comprehensive onboarding process.
 
-### Develop a comprehensive onboarding process for business guests 
+### Develop a comprehensive onboarding process for business partners and external users
 Onboarding, with regard to guest or external identities, is the process or processes of getting these identities set up in your organizations systems.  Depending on the systems they will be added to or allowed to access, these processes may differ.
 
 Onboarding guest identities can be done in several ways.
@@ -220,7 +220,7 @@ Onboarding guest identities can be done in several ways.
 
 [Bulk invite](../../external-id/tutorial-bulk-invite.md#invite-guest-users-in-bulk)  - If you use Microsoft Entra B2B collaboration to work with external partners, you can invite multiple guest users to your organization at the same time.
 
-### Enable guest users to securely access an organization’s resources by accepting an invitation  
+### Enable business partners and external users to access an organization’s resources by invitation  
 Now that we have discussed the various ways that guest users can be onboarded into your organizations systems, we should cover the second part of the process.  Guest user acceptance or redemption.  There are several different ways a guest user can redeem an invitation.  The table below provides an overview of these ways.
 
 |Process|Description|
@@ -231,7 +231,7 @@ Now that we have discussed the various ways that guest users can be onboarded in
 
 For more information, see [B2B collaboration invitation redemption](../../external-id/redemption-experience.md)
 
-#### Additional guest enablement considerations
+#### Additional business partner and external user enablement considerations
 Many of the tasks that will allow guest users to sign-in and get started, can be automated using lifecycle workflows.  For more information on how you can automate these and additional tasks, see [Automate employee and guest onboarding tasks](../tutorial-onboard-custom-workflow-portal.md)
 
 
@@ -300,11 +300,12 @@ Almost immediately, the external partners received their invitations. They joine
 
 ::: zone pivot="identity-governance-guest-offboard"  
 
-## Offboarding: Seamlessly secure your environment by efficiently offboarding guest users.   
-Offboarding of guest users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization.  Offboarding for guest accounts can be broken down in to 2 main parts when considering developing a process.  These are:
+## Offboarding: Seamlessly secure your environment by efficiently offboarding business partners and external users.   
+Offboarding of guest users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization.  Offboarding for business partners and external users can be broken down in to the following:
 
-1.  Develop an offboarding process to get guests out of your systems. 
-2.  Perform reviews to ensure that guest accounts no longer have access. 
+1.  Develop an offboarding process to remove external users from your systems.
+2.  Develop an offboarding process to remove external partners. 
+
 
 ### Develop an offboarding process
 
