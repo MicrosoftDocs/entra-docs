@@ -208,7 +208,12 @@ In this article, you do the following tasks:
 
 #### [Android(.NETMAUI)](#tab/android-netmaui-external)
 
+[!INCLUDE [active-directory-b2c-register-app](../external-id/customers/includes/register-app/register-client-app-common.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-platform](../external-id/customers/includes/register-app/add-platform-redirect-url-dotnet-maui.md)]
+
 #### [iOS/macOS](#tab/ios-macos-external)
+
+[!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
 ---
 
