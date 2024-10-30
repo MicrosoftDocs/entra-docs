@@ -19,12 +19,26 @@ Before you begin, use the **Choose a tenant type** selector at the top of this p
 
 ::: zone pivot="workforce"
 
-Test the workflow for signing in users in a sample mobile app. This quickstart shows you how to configure a sample mobile app to sign in employees with Microsoft identity platform.
+In this quickstart, you download and run a code sample that demonstrates how an Android application can sign in users and get an access token to call the Microsoft Graph API.
+
+Applications must be represented by an app object in Microsoft Entra ID so that the Microsoft identity platform can provide tokens to your application.
+
+## Prerequisites
 
 ::: zone-end 
 
 ::: zone pivot="external"
 
-This quickstart shows you how to configure a sample mobile app to sign in customers with Microsoft identity platform.
+This guide demonstrates how to configure a sample Android mobile application to sign in users.
+  
+In this article, you do the following tasks: 
+ 
+- Register an application in the Microsoft Entra admin center.
+- Add a platform redirect URL.
+- Enable public client flows.   
+- Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
+- Run and test the sample Android mobile application.
+
+## Prerequisites
 
 ::: zone-end
