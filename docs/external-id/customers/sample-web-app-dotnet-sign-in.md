@@ -8,8 +8,8 @@ manager: celestedg
 ms.author: cwerner
 ms.service: entra-external-id
  
-ms.subservice: external
-ms.topic: sample
+ms.subservice: customers
+ms.topic: quickstart
 ms.date: 04/23/2024
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample ASP.NET Core web app to sign in and sign out users with my external tenant

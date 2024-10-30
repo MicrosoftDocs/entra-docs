@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id
  
-ms.subservice: external
-ms.topic: sample
+ms.subservice: customers
+ms.topic: quickstart
 ms.date: 07/29/2024
 ms.custom: developer, devx-track-js
 #Customer intent: As a developer, devops, I want to learn about how to configure a sample Node.js web app to sign in and sign out users using my external tenant details

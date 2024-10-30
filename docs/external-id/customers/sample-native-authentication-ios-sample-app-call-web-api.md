@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: external
-ms.topic: sample
+ms.subservice: customers
+ms.topic: quickstart
 ms.date: 08/21/2024
 ms.custom: developer
 #Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an iOS sample app.

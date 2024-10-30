@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: external
-ms.topic: sample
+ms.subservice: customers
+ms.topic: tutorial
 ms.date: 05/09/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to reigister and configure iOS application in an External ID tenant.

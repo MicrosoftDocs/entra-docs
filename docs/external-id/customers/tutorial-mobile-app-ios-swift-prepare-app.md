@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: external
-ms.topic: sample
+ms.subservice: customers
+ms.topic: tutorial
 ms.date: 06/27/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to prepare iOS (Swift) app for authentication using Microsoft Entra External ID.

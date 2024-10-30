@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: external
-ms.topic: sample
+ms.subservice: customers
+ms.topic: quickstart
 ms.date: 04/04/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to authenticate users and call a protected web API from a sample iOS mobile app so that I can experience how Microsoft Entra External ID works.
