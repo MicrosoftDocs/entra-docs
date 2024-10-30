@@ -59,7 +59,7 @@ The policy groups include the following details:
 
 You can configure the traffic acquisition rules to bypass traffic acquisition. If you do, the users will still be able to access resources; however, the Global Secure Access service will not process the traffic. You can bypass traffic to a specific FQDN or IP address, an entire policy group within the profile, or the entire Microsoft profile itself. If you only need to forward some of the Microsoft resources within a policy group, enable the group then change the **Action** in the details accordingly.
 
-[!IMPORTANT]
+> [!IMPORTANT]
 > When a rule is set to Bypass, the Internet Access traffic profile will not acquire this traffic. Even with the Internet Access profile enabled, the bypassed traffic will skip Global Secure Access acquisition and use that client's network routing path to egress to the Internet. Traffic available for acquisition in the Microsoft traffic profile can be only acquired in the Microsoft traffic profile.
 
 The following example shows setting the `*.sharepoint.com` FQDN to **Bypass** so the traffic isn't forwarded to the service.

@@ -20,7 +20,7 @@ A traffic forwarding rules includes the Destination Type (IP or FQDN), Destinati
 
 You can configure traffic aquisition behavior for each rule according to specific needs of your organization. Configuring the action to Forward will instruct the Global Secure Access client and Remote Networks to acquire traffic. Configuring the rule action to Bypass will instruct the Global Secure Access Client and Remote Networks to skip traffic acquisition for FQDNs and IP ranges in that rule.
 
-[!IMPORTANT]
+> [!IMPORTANT]
 > When a rule is set to Bypass, the Internet Access traffic profile will not acquire this traffic. Even with the Internet Access profile enabled, the bypassed traffic will skip Global Secure Access acquisition and use that client's network routing path to egress to the Internet. Traffic available for acquisition in the Microsoft traffic profile can be only acquired in the Microsoft traffic profile.
 
 Traffic rules are grouped based on the application type. You can enable or disable traffic acquisition for an entire group. When the group is enabled, you can control the behavior of individual rules separately. When the group is disabled, all traffic covered by the rules in that group is bypassed.
@@ -29,7 +29,7 @@ Traffic rules are grouped based on the application type. You can enable or disab
 
 When you enable the Microsoft traffic profile, the rule list available to you is populated based on the supported traffic rules at the time of the traffic profile enablement. When we introduce a new rule, it will become visible in your configuration in the Forward mode in the Microsoft traffic profile, and in Bypass mode in the Internet Access profile.
 
-[!NOTE]
+> [!NOTE]
 > We will be adding coverage for more services to the Microsoft traffic profile in the future.
 
 
