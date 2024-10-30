@@ -221,7 +221,7 @@ In this article, you do the following tasks:
 
 #### [Android](#tab/android-external)
 
-[!INCLUDE [Enable public client](../customers/includes/register-app/add-platform-redirect-url-android.md)]
+[!INCLUDE [Enable public client](../external-id//customers/includes/register-app/add-platform-redirect-url-android.md)]
 
 #### [Android(.NETMAUI)](#tab/android-netmaui-external)
 
@@ -229,7 +229,7 @@ In this article, you do the following tasks:
 
 #### [iOS/macOS](#tab/ios-macos-external)
 
-[!INCLUDE [Enable public client](../customers/includes/register-app/add-platform-redirect-url-ios.md)]
+[!INCLUDE [Enable public client](../external-id//customers/includes/register-app/add-platform-redirect-url-ios.md)]
 
 ---
 
