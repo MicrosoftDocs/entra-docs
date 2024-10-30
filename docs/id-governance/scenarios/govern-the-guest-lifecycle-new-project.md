@@ -306,8 +306,12 @@ Offboarding of guest users is a critical aspect of identity and access managemen
 1.  Develop an offboarding process to remove external users from your systems.
 2.  Develop an offboarding process to remove external partners. 
 
+### Offboarding process for business partners
 
-### Develop an offboarding process
+### Offboarding process for external users
+
+### Wse Entitlement Management to facilitate offboarding
+An offboarding process can take the shape of two differ
 
 In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long.  You can establish a policy for automatic assignments that Entitlement Management follows to create and remove assignments automatically.  In order to accomplish this, it's imperative to have auto-access management start the offboarding process automatically when an access package expires.  
 
