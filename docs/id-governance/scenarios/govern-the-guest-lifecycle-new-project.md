@@ -49,7 +49,7 @@ Consider each of the following business processes and the examples of how partne
 Understanding these scenarios helps in designing appropriate access controls and ensuring smooth collaboration with external individuals.  
 
 ## Solution outline
-An external parnter/user scenario and solution can be split into the 4 main parts which are covered in this docuemnt.  They are:
+A business partner and external user solution is comprised of the following which are covered in this docuemnt.  They are:
 
 :::image type="content" source="media/external-guest-new/govern-access-1.png" alt-text="Conceputal drawing of governing access to your resources." lightbox="media/external-guest-new/govern-access-1.png":::
 
