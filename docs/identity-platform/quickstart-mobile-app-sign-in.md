@@ -70,7 +70,7 @@ The code is organized into fragments that show how to write a single and multipl
 
 We'll now look at these files in more detail and call out the MSAL-specific code in each.
 
-## Get the sample app
+### Get the sample app
 
 - Java: [Download the code](https://github.com/Azure-Samples/ms-identity-android-java/archive/master.zip).
 - Kotlin: [Download the code](https://github.com/Azure-Samples/ms-identity-android-kotlin/archive/master.zip).
