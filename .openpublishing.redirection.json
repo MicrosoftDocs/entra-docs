@@ -1291,7 +1291,11 @@
       "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-tenant.md",
       "redirect_url": "/entra/external-id/customers/how-to-web-app-node-edit-profile-prepare-app",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-edit-profile.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-edit-profile",
+      "redirect_document_id": false
     }
-
   ]
 }
