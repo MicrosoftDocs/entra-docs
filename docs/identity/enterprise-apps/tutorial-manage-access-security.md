@@ -74,7 +74,7 @@ It's easier for an administrator to manage access to the application by assignin
 
 In this tutorial, the administrator can find the basic steps to configure the application, but they should consider creating a plan for MFA before starting. For more information, see [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md).
 
-1. Under **Cloud apps or actions**, select **No cloud apps, actions, or authentication contexts selected**. For this tutorial, on the **Include** tab, choose **Select apps**.
+1. Under **Cloud apps or actions**, select **No cloud apps, actions, or authentication contexts selected**. For this tutorial, on the **Include** tab, choose **Select resources**.
 1. Search for and select your application, and then select **Select**.
 1. Under **Access controls** and **Grant**, select **0 controls selected**.
 1. Check the box for **Require multifactor authentication**, and then choose **Select**.

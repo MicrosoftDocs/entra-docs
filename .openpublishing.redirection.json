@@ -626,6 +626,26 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/concept-native-authentication-challenge-types.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication-challenge-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/concept-native-authentication-user-attribute-builder.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication-user-attribute-builder",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/concept-native-authentication-web-fallback.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication-web-fallback",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/concept-native-authentication.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/location-condition.md",
       "redirect_url": "/entra/identity/conditional-access/concept-assignment-network",
       "redirect_document_id": true
@@ -1261,9 +1281,15 @@
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-python-flask.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
       "redirect_document_id": false
-    },    {
+    },    
+    {
       "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-call-api.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-call-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-tenant.md",
+      "redirect_url": "/entra/external-id/customers/how-to-web-app-node-edit-profile-prepare-app",
       "redirect_document_id": false
     }
 

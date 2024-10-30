@@ -48,7 +48,7 @@ The following steps help create a Conditional Access policy requiring an app pro
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose at least your organization's emergency access or break-glass accounts.
-1. Under **Target resources** > **Cloud apps** > **Include**, select **Office 365**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **Office 365**.
 1. Under **Conditions**:
    1. **Device platforms** set **Configure** to **Yes**.
       1. Under **Include**, **Select device platforms**.

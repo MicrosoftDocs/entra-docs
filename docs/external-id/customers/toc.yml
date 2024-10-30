@@ -291,13 +291,13 @@ items:
     - name: Native authentication
       items:
         - name: Native authentication
-          href: concept-native-authentication.md
+          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication challenge types
-          href: concept-native-authentication-challenge-types.md
+          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication web fallback
-          href: concept-native-authentication-web-fallback.md
+          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication user attribute builder
-          href: concept-native-authentication-user-attribute-builder.md
+          href: /entra/identity-platform/concept-native-authentication-user-attribute-builder?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Customizing the sign-in look and feel
       href: concept-branding-customers.md
     - name: Custom URL domains
@@ -343,14 +343,12 @@ items:
                 items:
                   - name:  Edit profile with MFA
                     items:
-                      - name: Set-up external tenant 
-                        href: how-to-web-app-node-edit-profile-prepare-tenant.md   
-                        displayName: Conditional Access, CA 
-                      - name: Set-up app 
+                      - name: Set up app 
                         href: how-to-web-app-node-edit-profile-prepare-app.md 
+                        displayName: Conditional Access, CA 
                       - name: Update profile
                         href: how-to-web-app-node-edit-profile-update-profile.md  
-                        displayName: protect with MFA, multifactor authentication, MFA            
+                        displayName: protect, multifactor authentication, MFA            
                   - name: Call API
                     items:
                       - name: Prepare tenant 

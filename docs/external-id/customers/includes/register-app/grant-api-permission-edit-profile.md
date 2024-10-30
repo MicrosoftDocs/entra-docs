@@ -3,12 +3,12 @@ author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: customers
 ms.topic: include
-ms.date: 06/28/2024
+ms.date: 09/02/2024
 ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
 
-1. From the **App registrations** page, select the application that you created (such as *ciam-client-app*) to open its **Overview** page.
+1. From the **App registrations** page, select the application that you created (such as *edit-profile-service*) to open its **Overview** page.
 
 1. Under **Manage**, select **API permissions**.
 

@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     > [!Note]
     > Please delete **name** and **emailaddress** manually from the above default attributes in the Microsoft Entra admin center as per application requirements. 
 
-1. In addition to above, Docker Business application supports optional attributes to be passed back in SAML response, which are shown below. These attributes can be added to manage the provisioning of users in specific teams and their roles within the Docker Business Organization. To learn more about all attributes that Docker Business SSO supports, please refer [Docker Business SSO](https://docs.docker.com/security/for-admins/single-sign-on/configure/configure-idp/#sso-attributes) document.
+1. In addition to above, Docker Business application supports optional attributes to be passed back in SAML response, which are shown below. These attributes can be added to manage the provisioning of users in specific teams and their roles within the Docker Business Organization.
 
     | Claim Name | Namespace| Source Attribute|
     | ------------ | ----------| --------- |
@@ -106,11 +106,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
-	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
-
 1. On the **Set up Docker Business** section, copy the appropriate URL(s) based on your requirement.
-
-	![Screenshot shows to copy configuration URLs.](./media/docker-tutorial/login.png "Metadata")
 
 ### Create a Microsoft Entra test user
 

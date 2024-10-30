@@ -32,7 +32,7 @@ For organizations that have no established use of device code flow, blocking can
    1. Under **Include**, select the users you want to be in-scope for the policy (**all users** recommended).
    1. Under **Exclude**: 
       1. Select **Users and groups** and choose your organization's emergency access or break-glass accounts and any other necessary users this exclusion list should be audited regularly.  
-1. Under **Target resources** > **Cloud apps** > **Include**, select the apps you want to be in-scope for the policy (**all cloud apps** recommended).
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select the apps you want to be in-scope for the policy (**All resources (formerly 'All cloud apps')** recommended).
 1. Under **Conditions** > **Authentication Flows**, set **Configure** to **Yes**.
    1. Select **Device code flow**.
    1. Select **Done**.
@@ -54,7 +54,7 @@ The ability to control [authentication transfer](concept-authentication-transfer
    1. Under **Include**, select **All users** or user groups you would like to block for authentication transfer.
    1. Under **Exclude**: 
       1. Select **Users and groups** and choose your organization's emergency access or break-glass accounts and any other necessary users this exclusion list should be audited regularly.  
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps** or apps you would like to block for authentication transfer.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')** or apps you would like to block for authentication transfer.
 1. Under **Conditions** > **Authentication Flows**, set **Configure** to **Yes**  
    1. Select **Authentication transfer**.
    1. Select **Done**.

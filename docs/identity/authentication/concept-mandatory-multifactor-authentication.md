@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/21/2024
+ms.date: 10/27/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -85,7 +85,7 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 - Portal notification: A notification appears in the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center when they sign in. The portal notification links to this topic for more information about the mandatory MFA enforcement. 
 
-- Microsoft 365 message center: A message appears in the Microsoft 365 message center with the same information as the email and service health notification. 
+- Microsoft 365 message center: A message appears in the Microsoft 365 message center with message ID: **MC862873**. This message has the same information as the email and service health notification. 
 
 After enforcement, a banner appears in Microsoft Entra multifactor authentication:
 

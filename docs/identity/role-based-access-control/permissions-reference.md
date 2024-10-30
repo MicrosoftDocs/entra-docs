@@ -10,8 +10,7 @@ ms.topic: reference
 ms.date: 09/28/2024
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
-ms.custom: generated, it-pro, fasttrack-edit
-
+ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Microsoft Entra built-in roles
@@ -893,7 +892,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 Users with this role have global permissions within Microsoft Dynamics 365 Online, when the service is present, as well as the ability to manage support tickets and monitor service health. For more information, see [Use service admin roles to manage your tenant](/power-platform/admin/use-service-admin-role-manage-tenant).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Dynamics 365 Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Dynamics 365 Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Dynamics 365 Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Dynamics 365 Administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -947,7 +946,7 @@ Users in this role can create and manage the enterprise site list required for I
 Users with this role have global permissions within Microsoft Exchange Online, when the service is present. Also has the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health. For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Exchange Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Exchange Administrator. In the [Exchange admin center](/exchange/exchange-admin-center), it is named Exchange Online administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Exchange Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Exchange Administrator. In the [Exchange admin center](/exchange/exchange-admin-center), it is named Exchange Online administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1474,7 +1473,7 @@ Users with this role **cannot** do the following:
 
 Delegating administrative permissions over subsets of users and applying policies to a subset of users is possible with [Administrative Units](administrative-units.md).
 
-This role was previously named Password Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview). It was renamed to Helpdesk Administrator to align with the existing name in the Microsoft Graph API and Azure AD PowerShell.
+This role was previously named Password Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview). It was renamed to Helpdesk Administrator to align with the existing name in the Microsoft Graph API and Microsoft Graph PowerShell.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1632,7 +1631,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 This role can create and manage all security groups. However, Intune Administrator does not have admin rights over Office groups. That means the admin cannot update owners or memberships of all Office groups in the organization. However, he/she can manage the Office group that he creates which comes as a part of his/her end-user privileges. So, any Office group (not security group) that he/she creates should be counted against his/her quota of 250.
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Intune Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Intune Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Intune Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Intune Administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2461,7 +2460,7 @@ In | Can do
 Users with this role can create and manage support requests with Microsoft for Azure and Microsoft 365 services, and view the service dashboard and message center in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).
 
 > [!NOTE]
-> This role was previously named Service Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). It was renamed to Service Support Administrator to align with the existing name in the Microsoft Graph API and Azure AD PowerShell.
+> This role was previously named Service Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). It was renamed to Service Support Administrator to align with the existing name in the Microsoft Graph API and Microsoft Graph PowerShell.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2478,7 +2477,7 @@ Users with this role can create and manage support requests with Microsoft for A
 Users with this role have global permissions within Microsoft SharePoint Online, when the service is present, as well as the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health. For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named SharePoint Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named SharePoint Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named SharePoint Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named SharePoint Administrator.
 
 > [!NOTE]
 > This role also grants scoped permissions to the Microsoft Graph API for Microsoft Intune, allowing the management and configuration of policies related to SharePoint and OneDrive resources.
@@ -2542,7 +2541,7 @@ Assign the SharePoint Embedded Administrator role to users who need to do the fo
 Users with this role have global permissions within Microsoft Skype for Business, when the service is present, as well as manage Skype-specific user attributes in Microsoft Entra ID. Additionally, this role grants the ability to manage support tickets and monitor service health, and to access the Teams and Skype for Business admin center. The account must also be licensed for Teams or it can't run Teams PowerShell cmdlets. For more information, see [Skype for Business Online Admin](/skypeforbusiness/skype-for-business-online) and Teams licensing information at [Skype for Business add-on licensing](/skypeforbusiness/skype-for-business-and-microsoft-teams-add-on-licensing/skype-for-business-and-microsoft-teams-add-on-licensing).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Lync Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Skype for Business Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Lync Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Skype for Business Administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
