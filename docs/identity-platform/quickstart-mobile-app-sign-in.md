@@ -6,7 +6,7 @@ author: henrymbuguakiarie
 manager: mwongerapk
 ms.service: identity-platform
 ms.topic: quickstart
-ms.date: 11/20/2024
+ms.date: 10/30/2024
 ms.author: henrymbugua
 zone_pivot_groups: entra-tenants
 
