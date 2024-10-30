@@ -4,7 +4,7 @@ description: Learn how you can use web fallback to improve the resilience of you
 author: kengaderdus
 manager: mwongerapk
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date:  04/27/2024
 ms.author: kengaderdus
@@ -14,7 +14,7 @@ ms.author: kengaderdus
 
 # Native authentication web fallback
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 Web fallback allows a client app that uses native authentication to use browser-delegated authentication as a fallback mechanism to improve resilience. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide.
 
@@ -39,12 +39,12 @@ Let's look at an example when it's possible for Microsoft Entra to indicate that
 
 ## Support web fallback 
 
-If Microsoft Entra's response indicates that the client app needs to fall back to the browser-delegated authentication, we recommend you use a [Microsoft-built and supported authentication library](../../identity-platform/reference-v2-libraries.md). 
+If Microsoft Entra's response indicates that the client app needs to fall back to the browser-delegated authentication, we recommend you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md). 
 
-Learn how to support web fallback in [native Android apps](tutorial-native-authentication-android-support-web-fallback.md) and [native iOS/macOS apps](tutorial-native-authentication-ios-macos-support-web-fallback.md).
+Learn how to support web fallback in [native Android apps](/entra/external-id/customers/tutorial-native-authentication-android-support-web-fallback) and [native iOS/macOS apps](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback).
 
 ## Related content
 
 - [Native authentication challenge types](concept-native-authentication-challenge-types.md)
-- [Tutorial: Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md)
-- [Tutorial: Support web fallback in iOS/macOS app](tutorial-native-authentication-ios-macos-support-web-fallback.md)
+- [Tutorial: Support web fallback in Android app](/entra/external-id/customers/tutorial-native-authentication-android-support-web-fallback)
+- [Tutorial: Support web fallback in iOS/macOS app](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback)

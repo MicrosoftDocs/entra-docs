@@ -626,6 +626,26 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/concept-native-authentication-challenge-types.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication-challenge-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/concept-native-authentication-user-attribute-builder.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication-user-attribute-builder",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/concept-native-authentication-web-fallback.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication-web-fallback",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/concept-native-authentication.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/location-condition.md",
       "redirect_url": "/entra/identity/conditional-access/concept-assignment-network",
       "redirect_document_id": true

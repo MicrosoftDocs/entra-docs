@@ -5,7 +5,7 @@ author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date: 08/01/2024
 
@@ -14,7 +14,7 @@ ms.date: 08/01/2024
 
 # Native authentication SDK attribute builder
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 In native authentication, the information you collect from the user during sign-up is configured in the user flow in the Microsoft Entra admin center. The name of the user attribute as it appears in the Microsoft Entra admin center is different from the variable name that you use when you reference it in your app. 
 
@@ -52,7 +52,7 @@ To build user attributes in the Android SDK:
         }  
     ```
 
-- To build [custom attributes](concept-user-attributes.md#custom-user-attributes), use `UserAttribute.Builder` class `customAttribute()` method. The method accepts the custom attribute's programmable name, and the value of the attribute:
+- To build [custom attributes](/entra/external-id/customers/concept-user-attributes#custom-user-attributes), use `UserAttribute.Builder` class `customAttribute()` method. The method accepts the custom attribute's programmable name, and the value of the attribute:
 
      ```kotlin
         val userAttributes = UserAttributes.Builder()
@@ -92,7 +92,7 @@ To build user attributes in the iOS/macOS MSAL SDK:
         
         authAuthClientInstance.signUp(username: email, attributes: attributes, delegate: self)
      ```   
-- To build [custom attributes](concept-user-attributes.md#custom-user-attributes), use `UserAttribute.Builder` class `customAttribute()` method. The method accepts the custom attribute's programmable name, and the value of the attribute:
+- To build [custom attributes](/entra/external-id/customers/concept-user-attributes#custom-user-attributes), use `UserAttribute.Builder` class `customAttribute()` method. The method accepts the custom attribute's programmable name, and the value of the attribute:
     
     ```swift
             let attributes = [
@@ -104,10 +104,10 @@ To build user attributes in the iOS/macOS MSAL SDK:
     ```
 ---
 
-To learn more about the programmable names of user profile attributes, see the [User profile attributes](concept-user-attributes.md) article.
+To learn more about the programmable names of user profile attributes, see the [User profile attributes](/entra/external-id/customers/concept-user-attributes) article.
 
 ## Related content
 
 - [Native authentication challenge types](concept-native-authentication-challenge-types.md)
-- [iOS/macOS native authentication tutorials](tutorial-native-authentication-prepare-ios-macos-app.md)
-- [Android native authentication tutorials](tutorial-native-authentication-prepare-android-app.md) 
+- [iOS/macOS native authentication tutorials](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)
+- [Android native authentication tutorials](/entra/external-id/customers/tutorial-native-authentication-prepare-android-app) 

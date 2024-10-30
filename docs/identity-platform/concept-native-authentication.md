@@ -5,7 +5,7 @@ description: Learn how to set up native authentication in Microsoft Entra Extern
 author: csmulligan
 manager: celestedg
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date:  09/30/2024
 ms.author: cmulligan
@@ -14,9 +14,9 @@ ms.author: cmulligan
 ---
 # Native authentication in Microsoft Entra External ID
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-Microsoft Entra’s native authentication allows you to have full control over the design of your mobile and desktop application sign-in experiences. Unlike browser-based solutions, native authentication enables you to create visually appealing, pixel-perfect authentication screens that seamlessly blend into your app’s interface. With this approach, you can fully customize the user interface, including design elements, logo placement, and layout, ensuring a consistent and branded look.
+Microsoft Entra’s native authentication allows you to have full control over the design of your mobile and desktop application sign-in experience. Unlike browser-based solutions, native authentication enables you to create visually appealing, pixel-perfect authentication screens that seamlessly blend into your app’s interface. With this approach, you can fully customize the user interface, including design elements, logo placement, and layout, ensuring a consistent and branded look.
 
 The standard app sign-in process, which relies on browser-delegated authentication, often results in a disruptive transition during authentication. Users are temporarily redirected to a system browser for authentication, only to be brought back to the app once the sign-in is complete.
 
@@ -45,12 +45,12 @@ The following table compares the two authentication methods to help you decide t
 |   | Browser-delegated authentication | Native authentication | 
 | ---- | --- |  --- |
 | **User authentication experience** | Users are taken to a system browser or embedded browser for authentication only to be redirected back to the app when the sign-in is complete. This method is recommended if the redirection doesn't negatively affect the end user experience. | Users have a rich, native sign-up and sign-in journey without ever leaving the app. |
-| **Customization experience** |Managed [branding and customization options](how-to-customize-branding-customers.md) are available as an out-of-the-box feature.  | This API-centric approach offers a high level of customization, providing extensive flexibility in design and the ability to create tailored interactions and flows. |
+| **Customization experience** |Managed [branding and customization options](/entra/external-id/customers/how-to-customize-branding-customers) are available as an out-of-the-box feature.  | This API-centric approach offers a high level of customization, providing extensive flexibility in design and the ability to create tailored interactions and flows. |
 | **Applicability**  | Suitable for workforce, B2B, and B2C apps, it can be used for native apps, single-page applications, and web apps. | For customer first-party apps, when the same entity operates the authorization server and the app and the user perceives them both as the same entity.|
 | **Go live effort** |  Low. Use it straight out of the box.  |High. The developer builds, owns, and maintains the authentication experience. |
 | **Maintenance effort** | Low. |High. For each feature that Microsoft releases, you need to update the SDK to use it.  |
 | **Security** | Most secure option. |Security responsibility is shared with developers, and best practices need to be followed. It's prone to phishing attacks. |
-| **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li></ul> For other languages and platforms, you can use our [native authentication API](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).  |
+| **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li></ul> For other languages and platforms, you can use our [native authentication API](reference-native-authentication-api.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).  |
 
 
 ## Feature availability
@@ -98,16 +98,14 @@ For more information on native authentication samples and tutorials, see the fol
 
 | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 | ----------- | ----------- |----------- |
-|Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
-|iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
-|macOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-macos-app.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+|Android (Kotlin) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-android-app)|
+|iOS (Swift) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)|
+|macOS (Swift) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-macos-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)|
 
-If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](/entra/identity-platform/reference-native-authentication-overview).
+If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](reference-native-authentication-api.md).
 
 ## Related content 
 
-- [Android native authentication tutorials](how-to-run-native-authentication-sample-android-app.md).
-- [iOS native authentication tutorials](how-to-run-native-authentication-sample-ios-app.md).
-- [macOS native authentication tutorials](how-to-run-native-authentication-sample-macos-app.md).
-- [Native authentication API documentation](../../identity-platform/reference-native-authentication-overview.md).
-
+- [Android native authentication tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app).
+- [iOS native authentication tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app).
+- [Native authentication API documentation](reference-native-authentication-api.md).
