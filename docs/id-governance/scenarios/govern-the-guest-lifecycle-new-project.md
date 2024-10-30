@@ -28,7 +28,6 @@ Microsoft defines the following personae based on their relationship with your o
 
 - **Workforce.** Your full-time employees, part-time employees, or contractors for your organization.
 - **Business partners.** Organizations that have a business relationship with your enterprise. These organizations can include suppliers, vendors, consultants, and strategic alliances who collaborate with your enterprise to achieve mutual goals.
-- **Consumers.** Individuals such as customers with whom you have a business relationship and who access your applications to purchase or consume your products and services.
 - **External user.** Users that are external to your organization such as business partners and consumers.
 
 ### Business processes and external scenario alignment
