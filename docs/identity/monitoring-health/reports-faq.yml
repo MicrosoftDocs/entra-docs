@@ -119,6 +119,13 @@ sections:
           - Sign-in events that involve multiple Conditional Access policies might be split into multiple events, which can result in at least two events per sign-in event.
 
       - question: |
+          I'm investigating a sign-in event using Log Analytics, but the TimeGenerated time doesn't match the actual time of the sign-in. Why is that happening?
+        answer: |
+          The TimeGenerated field in Log Analytics is the time the entry was received and published by Log Analytics. Remember, in order for your logs to appear in Log Analytics, you have to configure diagnostics settings to *send* the logs to the Log Analytics workspace. That process takes time.NET
+
+          To confirm the date and time match the sign-in, look for the `CreatedDateTime` field a little further down. The `AuthenticationDetails` fields can also be expanded to see the exact time of the sign-in.
+
+      - question: |
           Why do my non-interactive sign-ins appear to have the same time stamp?
         answer: |
           Non-interactive sign-ins can trigger a large volume of events every hour, so they're grouped together in the logs.
