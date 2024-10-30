@@ -57,7 +57,7 @@ Microsoft Entra ID users can now use a passkey to sign into Microsoft apps on An
 
 ---
 
-### Public Preview - Passkeys in Microsoft Authenticator
+### Public Preview Refresh - Passkeys in Microsoft Authenticator
 
 **Type:** New feature    
 **Service category:** Microsoft Authenticator App    
