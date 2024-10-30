@@ -25,6 +25,16 @@ Applications must be represented by an app object in Microsoft Entra ID so that 
 
 ## Prerequisites
 
+#### [Android](#tab/android-workforce)
+
+Android prerequisites.
+
+#### [iOS/macOS](#tab/ios-macos-workforce)
+
+iOS/macOS prerequisites.
+
+---
+
 ::: zone-end 
 
 ::: zone pivot="external"
@@ -40,5 +50,19 @@ In this article, you do the following tasks:
 - Run and test the sample Android mobile application.
 
 ## Prerequisites
+
+#### [Android](#tab/android-external)
+
+Android prerequisites.
+
+#### [iOS/macOS](#tab/ios-macos-external)
+
+iOS/macOS prerequisites.
+
+#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+
+Android(.NETMAUI) prerequisites.
+
+---
 
 ::: zone-end
