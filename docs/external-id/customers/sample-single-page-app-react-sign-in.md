@@ -6,7 +6,7 @@ author: garrodonnell
 manager: celestedg
 ms.author: godonnell
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: sample
 ms.date: 04/10/2024
 

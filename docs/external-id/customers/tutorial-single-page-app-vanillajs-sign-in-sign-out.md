@@ -6,7 +6,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 08/02/2023
