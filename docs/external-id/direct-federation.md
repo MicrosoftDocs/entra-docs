@@ -79,10 +79,6 @@ Currently, redemption order settings aren't supported across clouds. If the doma
  
 Yes, you can set up SAML/WS-Fed IdP federation with domains that aren't DNS-verified in Microsoft Entra ID, including unmanaged (email-verified or "viral") Microsoft Entra tenants. Such tenants are created when a user redeems a B2B invitation or performs self-service sign-up for Microsoft Entra ID using a domain that doesn’t currently exist.
 
-**How many federation relationships can I create?**
-
-Currently, a maximum of 1,000 federation relationships is supported. This limit includes both [internal federations](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration) and SAML/WS-Fed IdP federations.
-
 **Can I set up federation with multiple domains from the same tenant?**
 
 Yes, we now support SAML/WS-Fed IdP federation with multiple domains from the same tenant.
