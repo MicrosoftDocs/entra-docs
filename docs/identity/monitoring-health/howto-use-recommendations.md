@@ -46,7 +46,7 @@ Each recommendation provides the same set of details that explain what the recom
 The **Status** of a recommendation can be active, completed, dismissed, or postponed. The recommendation service automatically marks a recommendation as completed when all impacted resources are addressed.
 
 - **Active**: The recommendation has resources that need to be addressed. A dismissed, postponed, or completed recommendation can be manually changed back to active.
-- **Completed**: All resources in the recommendation have been addressed. The status is updated automatically by the system when all resources are addressed according to the action plan.
+- **Completed**: All resources in the recommendation have been addressed. The status is updated automatically by the system when all resources are addressed according to the action plan. Recommendations can't be manually marked as completed.
 - **Dismissed**: If the recommendation is irrelevant or the data is wrong, you can dismiss the recommendation. You must provide a reason for dismissing the recommendation.
 - **Postponed**: If you want to address the recommendation at a later time, you can postpone it. The recommendation becomes active when the selected date occurs. You can postpone a recommendation for up to a year.
 
@@ -74,11 +74,11 @@ The **Priority** of a recommendation could be low, medium, or high. These values
 
 The **Impacted resources** for a recommendation could be applications, users, or your full tenant. If the impacted resource is at the tenant level, you might need to make a global change.
 
-The **Impacted resources** table contains a list of resources identified by the recommendation. The resource's name, ID, date it was first detected, and status are provided. The resource could be an application or resource service principal, for example.
+The **Impacted resources** table contains a list of resources identified by the recommendation. The resource's name, ID, date it was first detected, and status are provided. The resource could be an application, user, or resource service principal, for example.
 
-- Not all recommendations populate the impacted resources table. For example, the "Remove unused applications" recommendation lists all applications that were identified by the recommendation service. Tenant-level recommendations, however, won't have any resources listed in the table. 
-- In the Microsoft Entra admin enter, the impacted resources are limited to a maximum of 50 resources. To view all impacted resources for a recommendation, use the following Microsoft Graph API request:
-    - `GET /directory/recommendations/{recommendationId}/impactedResources`
+Not all recommendations populate the impacted resources table. For example, the "Remove unused applications" recommendation lists all applications that were identified by the recommendation service. Tenant-level recommendations, however, won't have any resources listed in the table. 
+
+In the Microsoft Entra admin enter, the impacted resources are limited to a maximum of 50 resources. To view all impacted resources for a recommendation, use the following Microsoft Graph API request: `GET /directory/recommendations/{recommendationId}/impactedResources`
 
 ## How to update a recommendation
 
@@ -91,10 +91,7 @@ You can update the status of a recommendation or a related resource in the Micro
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Overview** > **Recommendations**.
 1. Select a recommendation from the list.
-1. Review the **Action plan**.
-
-1. If applicable, select **more details** for a specific resource in the **Impacted resources** table to view the resource's details.
-
+1. Follow the guidance in the **Action plan**.
 1. The recommendation service automatically marks the recommendation as complete, but if you need to manually change the status of a recommendation, select **Mark as** from the top of the page and select a status.
 
     ![Screenshot of the Mark as options, to highlight the difference from the resource menu.](media/howto-use-recommendations/recommendation-mark-as-options.png)
@@ -150,6 +147,33 @@ To view the impacted resources for a specific recommendation, use the following 
 GET /directory/recommendations/{recommendationId}/impactedResources
 ```
 ---
+
+## How to update an impacted resource
+
+Some recommendations provide a table of impacted resources. In some cases, you can view the details of the resource and update the status of the resource. Not all recommendations provide a direct link to address the issue. 
+
+If your recommendation has impacted resources to address:
+
+1. From the ***Impacted resources** table, select **more details** for a specific resource.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Related content
 
