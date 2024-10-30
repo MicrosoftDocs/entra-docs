@@ -308,9 +308,27 @@ Offboarding of guest users is a critical aspect of identity and access managemen
 
 ### Offboarding process for business partners
 
+- determine the end date for working with a business partner.  
+- notify all relevant departments as to the specific end time and date.
+- coordinate termination of business partner access to all systems (portals, tools, APIs)
+- Partner linked accounts are removed and roles and assignments are revoked
+- review data shared with the partner and determine if any should be retained or securely deleted.
+- gather any propriatery or sensitive data from partner's systems
+- verify that data deletion is performed to ensure compliance.
+
+
 ### Offboarding process for external users
 
-### Wse Entitlement Management to facilitate offboarding
+- determine the end date.
+- ensuring any pending deliverables or tasks are completed.
+- notify IT to remove individual user access from systems.  This can be automated with an access package
+- confirm that any data in the external user’s possession has been transferred or returned.
+- ensure all accounts specific to the external user are disabled without affecting other users from the same organization.
+- record the offboarding steps taken.
+- obtain final approvals from HR, IT, and any relevant departments, ensuring all aspects of the offboarding are complete.
+
+
+### Use Entitlement Management to facilitate offboarding
 An offboarding process can take the shape of two differ
 
 In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long.  You can establish a policy for automatic assignments that Entitlement Management follows to create and remove assignments automatically.  In order to accomplish this, it's imperative to have auto-access management start the offboarding process automatically when an access package expires.  
@@ -328,12 +346,7 @@ When an access package expires, the offboarding process should include the follo
 For more information, see [Manage user and guest user access with access reviews](../manage-access-review.md) and 
 [Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center](../tutorial-scheduled-leaver-portal.md)
 
-### Perform reviews to ensure guests no longer have access
-In most organizations, end-users initiate the process of inviting business partners and vendors for collaboration. The need to collaborate drives organizations to provide resource owners and end users with a way to evaluate and attest external users regularly. Often the process of onboarding new collaboration partners is planned and accounted for, but with many collaborations not having a clear end date, it isn't always obvious when a user no longer needs access. 
 
-Organizations need to balance, enabling collaboration and meeting security and governance requirements. Part of these efforts should include evaluating and cleaning out external users when they are no longer needed.  For more information, see [Use Microsoft Entra ID Governance to review and remove external users who no longer have resource access](../access-reviews-external-users.md)
-
-With access reviews, you can easily ensure that users or guests have appropriate access. You can ask the users themselves or a decision maker to participate in an access review and recertify (or attest) to users' access.  When an access review is finished, you can then make changes and remove access from users who no longer need it.  For more information, see [Manage user and guest user access with access reviews](../manage-access-review.md)
 
 ### Example - Offboarding guest accounts
 John is a guest whose access package has expired.  The system then revokes John's access to all resources linked to that package. John is removed from any group that he's a part of. Once his last active package expires, John's account is removed from the guest user directory. 
