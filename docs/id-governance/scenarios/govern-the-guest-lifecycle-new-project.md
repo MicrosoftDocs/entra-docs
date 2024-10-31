@@ -11,9 +11,9 @@ ms.author: billmath
 ---
 
 
-# Business planning and governance for external partners
+# Planning new governance scenarios for business partners and external users
 
-The following documentation will guide you through creating and deploying guest access scenarios.
+The following documentation will guide you through creating and deploying business partner and external user scenarios.
 
 
 
