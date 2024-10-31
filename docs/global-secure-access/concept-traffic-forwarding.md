@@ -30,7 +30,7 @@ For each traffic forwarding profile, you can configure three main details:
 
 ## Microsoft traffic
 
-The Microsoft traffic forwarding profile includes Entra ID/ Microsoft Graph, SharePoint Online, Exchange Online, and other Microsoft apps. Traffic forwarding policies are grouped based on the workload and you can choose to either forward the traffic from each group to Global Secure Access, or bypass it. 
+The Microsoft traffic forwarding profile includes Microsoft Entra ID/ Microsoft Graph, SharePoint Online, Exchange Online, and other Microsoft apps. Traffic forwarding policies are grouped based on the workload and you can choose to either forward the traffic from each group to Global Secure Access, or bypass it. 
 
 Microsoft traffic is forwarded to the service through either [remote network connectivity](concept-remote-network-connectivity.md), such as branch office location, or through the [Global Secure Access client](how-to-install-windows-client.md).
 
