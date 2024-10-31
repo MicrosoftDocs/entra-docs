@@ -299,7 +299,7 @@ For more information on how to assign a group to an application role, see the do
     $assignments | Select *
     ```
 
-1. Run the following command to remove the Approle assignment.
+1. Run the following command to remove the AppRole assignment.
 
     ```powershell   
     Remove-MgServicePrincipalAppRoleAssignedTo -AppRoleAssignmentId  '<AppRoleAssignment-id>' -ServicePrincipalId $sp.Id
