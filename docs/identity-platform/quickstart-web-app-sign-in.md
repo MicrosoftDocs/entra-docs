@@ -811,8 +811,8 @@ When the users select the **Logout** link, the app clears its session, the redir
 #### [Node](#tab/node-external)
 
 - [Sign in users in your Node.js web application](/entra/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant)
-- [Configure sign-in with Google](/entra/external-id/customers/how-to-google-federation-customers)
-- [Use client certificate for authentication in your Node.js web app](/entra/external-id/customers/how-to-web-app-node-use-certificate)
+- [Quickstart - Sign in users and call a web API in sample Node.js web app](quickstart-web-app-node-sign-in-call-api.md)
+- [Quickstart - Edit profile in a sample Node.js web app](quickstart-web-app-node-sign-in-edit-profile.md)
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
