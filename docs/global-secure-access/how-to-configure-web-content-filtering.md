@@ -79,6 +79,8 @@ In this step, you create a security profile to group filtering policies. Then yo
 1. Select **Create a profile**.
 1. Select **Refresh** to refresh the profiles page and view the new profile.
 
+When traffic reaches Microsoft's Secure Service Edge, Microsoft Entra Internet Access will perform security controls either on on the Uniform Resource Locator (URL) for HTTP traffic or the Server Name Indicator (SNI) header for Transport Layer Security (TLS) encrypted traffic.
+
 ## Create and link Conditional Access policy
 
 Create a Conditional Access policy for end users or groups and deliver your security profile through Conditional Access Session controls. Conditional Access is the delivery mechanism for user and context awareness for Internet Access policies. To learn more about session controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session).
@@ -93,10 +95,9 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
-## User and group assignments
-You can scope the Internet Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
-
 ## Verify end user policy enforcement
+
+When traffic reaches Microsoft's Secure Service Edge, Microsoft Entra Internet Access will perform security controls either on on the Uniform Resource Locator (URL) for HTTP traffic or the Server Name Indicator (SNI) header for Transport Layer Security (TLS) encrypted traffic.
 
 Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
 
