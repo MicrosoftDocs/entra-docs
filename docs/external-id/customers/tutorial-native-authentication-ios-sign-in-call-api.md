@@ -6,7 +6,7 @@ author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/12/2024
 ms.custom: developer
