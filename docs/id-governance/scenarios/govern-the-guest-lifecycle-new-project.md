@@ -1,6 +1,6 @@
 ---
-title: 'External guest - new project'
-description: Describes overview of getting started with a new external guest project.
+title: 'Planning new governance scenarios for business partners and external users'
+description: Describes overview of getting started with new business partner and external user scenarios.
 author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
