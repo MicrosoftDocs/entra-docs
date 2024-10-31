@@ -1,5 +1,5 @@
 ---
-title: Learn about the Microsoft Traffic Profile.
+title: Learn about the Microsoft Traffic Profile
 description: Learn about the capabilities and traffic handling in the Microsoft traffic profile
 author: alexpav
 ms.author: alexpav
