@@ -132,14 +132,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Fresh Relevance SSO
 
-
-
-
-1. In a different web browser window, sign in to your Fresh Relevance company site as an administrator
+1. In a different web browser window, sign in to your Fresh Relevance company site as an administrator.
 
 1. Go to **Settings** > **All Settings** > **Security and Privacy** and click **SAML/Azure AD Single Sign-On**.
-
-    ![Screenshot shows settings of SAML account.](./media/fresh-relevance-tutorial/settings.png "Account")
 
 1. In the **SAML/Single Sign-On Configuration** page, **Enable SAML SSO for this account** checkbox and click **Create new IdP Configuration** button. 
 

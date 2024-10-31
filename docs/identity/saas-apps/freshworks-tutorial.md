@@ -102,11 +102,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
      ![image](common/edit-certificate.png)
 
-     ![Screenshot that shows the "S A M L Signing Certificate" dialog with the "Edit" button selected.](./media/freshworks-tutorial/response.png)
-
-    a. Select **Sign SAML response** as **Signing Option**.
-
-    b. Click **Save**.
+1. In the **SAML Signing Certificate** dialog, for **Signing Option**, select **Sign SAML response**. Then select **Save**.
 
 1. On the **Set up Freshworks** section, copy the appropriate URL(s) based on your requirement.
 
