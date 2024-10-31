@@ -96,3 +96,10 @@ In this article, you do the following tasks:
 ## Grant admin consent
 
 [!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
+
+## Grant web API permissions to the sample app
+
+Once you've registered both your client app, web API, and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
+
+[!INCLUDE [grant-api-permission-call-api-common](../customers/includes/register-app/grant-api-permission-call-api-common.md)]
+
