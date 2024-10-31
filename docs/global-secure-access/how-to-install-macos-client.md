@@ -64,10 +64,12 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 1. Create a profile for the macOS platform based on a template of type **Custom** and select **Create**.
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-___.png" alt-text="Screenshot of the Create a profile form with the Platform, Profile type, and Template selections highlighted.":::
-1. Give a name to the profile
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-create-profile-custom.png" alt-text="Screenshot of the Create a profile form with the Platform, Profile type, and Template selections highlighted.":::
+1. On the **Basics** tab, enter a **Name** for the profile.
 image.png
-1. Give a name the Custom configuration profile and upload an xml file that contains the following data:
+1. On the **Configuration settings** tab, enter a **Custom configuration profile name**.
+1. Keep **Deployment channel** set to "Device channel."
+1. Upload an .xml file that contains the following data:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -112,11 +114,11 @@ image.png
 </dict>
 </plist>
 ```
-image.png
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-custom-configuration-settings.png" alt-text="Screenshot of the Configuration settings tab showing a portion of the .xml data.":::
 
-1. Complete the creation of the profile by assigning users and devices according to your needs.
+5. Complete the creation of the profile by assigning users and devices according to your needs.
 
-Manual interactive Installation
+### Manual interactive Installation
 Run the GlobalSecureAccessClient.pkg setup file. Follow below prompts to install the client.
 
 On the introduction page, choose continue.
