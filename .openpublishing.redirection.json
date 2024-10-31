@@ -557,17 +557,17 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-mobile-app-maui-sample-sign-in.md",
-      "redirect_url": "/entra/external-id/customers//entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
+      "redirect_url": "/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-mobile-app-android-kotlin-sign-in.md",
-      "redirect_url": "/entra/external-id/customers/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
+      "redirect_url": "/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-mobile-app-ios-swift-sign-in.md",
-      "redirect_url": "/entra/external-id/customers/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
+      "redirect_url": "/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
       "redirect_document_id": false
     },
     {
