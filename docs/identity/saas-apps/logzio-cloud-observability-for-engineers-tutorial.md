@@ -110,12 +110,9 @@ If you don't want to configure this option, your organization will have to assig
 
 ### Enable SSO for your Logz.io resource via Microsoft Entra ID
 
-When you create a Logz.io account, use the AD app you created for the Logz.io resource to enable single sign-on with Microsoft Entra ID.  
+When you create a Logz.io account, use the app you created for the Logz.io resource to enable single sign-on with Microsoft Entra ID.  
 
-The Logz.io Microsoft Entra app resource name is automatically populated as you type.
-
-![Select your Logz Microsoft Entra app to enable SSO](./media/logzio-cloud-observability-for-engineers-tutorial/liftr-select-logz-aad-app.png)
-
+In the Azure portal, in your Logz.io account, select the **Sigle sign-on** tab. Under **Selected**, the Logz.io Microsoft Entra app resource name is automatically populated as you type.
 
 The SSO link is displayed when you sign into your Logz.io resource.  <br>
 Click the link to access your account in Logz.io. 
