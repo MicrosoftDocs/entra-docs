@@ -83,6 +83,7 @@ Identify your current lifecycle and governance processes for external identities
 
 Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities.  The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
 
+Because a governance scenarios for business parnters and external users use entitlement management, you should also review [Common scenarios in entitlement management](../entitlement-management-scenarios.md). This will provide you with the common scenarios for entitlement management based on a users role.  You should consider these while planning your solution.
 
 You can also use the following table as a guide for additional areas to consider while evaluating your current state.
 
@@ -97,8 +98,6 @@ You can also use the following table as a guide for additional areas to consider
 |Detect informal sharing|If your email and network plans are enabled, you can investigate content sharing through email or unauthorized software as a service (SaaS) apps.|
 
 For more information, see [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
-
-
 
 
 ### Example - Identify current lifecycle and governance processes
@@ -331,22 +330,22 @@ The following items are a generic list of steps that one should consider when of
 
 
 ### Use Entitlement Management to facilitate offboarding
-An offboarding process can take the shape of two differ
-
-In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long.  You can establish a policy for automatic assignments that Entitlement Management follows to create and remove assignments automatically.  In order to accomplish this, it's imperative to have auto-access management start the offboarding process automatically when an access package expires.  
+In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long.  Entitlement management can be configured to automatically offboard a guest user when their last access package assignment expires, removing their access rights and their guest user account from your tenant.  
 
 When an access package expires, the offboarding process should include the following:
 
 - access to all resources associated with the expired package are revoked
 - user is removed from any group that they're a member of
 - account is removed from the guest user directory
-- regularly check the status of access packages for guest users in the Microsoft Entra admin portal
-- regularly conduct access reviews to ensure all guests status 
 - use audit logs for compliance
 - notifications are sent confirming successful offboarding
 
-For more information, see [Manage user and guest user access with access reviews](../manage-access-review.md) and 
-[Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center](../tutorial-scheduled-leaver-portal.md)
+For more information, see [Govern access for external users in entitlement management](../entitlement-management-external-users.md)
+
+## Use Lifecycle Workflows to assist with offboarding tasks
+
+For more information, see [Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center](../tutorial-scheduled-leaver-portal.md)
+
 
 
 
