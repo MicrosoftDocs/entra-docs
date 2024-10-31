@@ -20,24 +20,24 @@ ms.custom: it-pro
 
 Get started with Microsoft External ID for consumer and business customer apps, which lets you create secure, customized sign-in experiences for your apps and services. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
 
-In this quickstart, you'll learn how to set up an external tenant free trial. If you're a developer using Visual Studio Code, you can also set up a free trial through the Microsoft Entra External ID extension ([learn more](visual-studio-code-extension.md)). 
-If you already have an Azure subscription, you can create a tenant with external configurations in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md).
+Microsoft Entra External ID is now generally available. To get started, you have two options:
 
-Your free trial of a tenant with external configurations provides you with the opportunity to try new features and build applications and processes during the free trial period. Organization (tenant) admins can invite other users. Each user account can only have one active free trial tenant at a time. 
+- **Set up a tenant with a subscription:** Create a tenant with an external tenant configuration in the Microsoft Entra admin center. For more information about how to create a tenant, see [Set up a tenant](quickstart-tenant-setup.md).
 
-The free trial is intended only for evaluation purposes and should not be used for scale testing or production workloads. It is currently in preview mode.
+- **Free trial with no payment or subscription required:** Create a free trial tenant with an external configuration. This free trial provides you with the opportunity to try new features and build applications and processes during the 30-day trial period.  Each user account can only have one active free trial tenant at a time. Organization (tenant) admins can invite other users. If you're a developer using Visual Studio Code, you can also set up a free trial through the Microsoft Entra External ID extension ([learn more](visual-studio-code-extension.md)).  
+This free trial sign-up, where no payment information is required, is currently in preview and designed for testing and evaluation purposes only. The free trial isn't suitable for scale testing or production use.
 
-Trial tenant will support up to 10K resources, learn more about Microsoft Entra service limits [here](~/identity/users/directory-service-limits-restrictions.md). During your free trial, you'll have the option to unlock the full set of features by upgrading to [Azure free account](https://azure.microsoft.com/free/).
+The trial tenant supports up to 10K objects, learn more about Microsoft Entra service limits [here](~/identity/users/directory-service-limits-restrictions.md). During your free trial, you have the option to unlock the full set of features by upgrading to [Azure free account](https://azure.microsoft.com/free/).
 
    > [!NOTE]
    > At the end of the free trial period, your free trial tenant will be disabled and deleted. You can always come back and register for another trial using this link: https://aka.ms/ciam-free-trial. 
     
-During the free trial period, you'll have access to all product features with few exceptions. See the following table for comparison: 
+During the free trial period, you have access to all product features with few exceptions. See the following table for comparison: 
 
 |  Features | Microsoft Entra External ID Trial (without credit card) | Microsoft Entra account includes Partners (needs credit card)  | 
 |----------|:-----------:|:------------:|
 | **Self-service account experiences** (Sign-up, sign-in, and password recovery.)   | :heavy_check_mark: |  :heavy_check_mark:  | 
-| **MFA** (With email OTP.)  | :x: |  :heavy_check_mark:  |  
+| **MFA**  | :x: |  :heavy_check_mark:  |  
 | **Custom token augmentation** (From external sources.) |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Social identity providers**   |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Identity Protection** (Conditional Access for adaptive risk-based policies.)  | :x: |  :heavy_check_mark:  |
@@ -58,7 +58,7 @@ During the free trial period, you'll have access to all product features with fe
 
 ## Get started guide
 
-Once your external tenant free trial is ready, the next step is to personalize your customer's sign-in and sign-up experience, set up a user in your tenant, and configure a sample app. The [get started guide](https://aka.ms/ciam/free-trial-hero) will walk you through all of these steps in just a few minutes. For more information about the next steps, see the [get started guide](quickstart-get-started-guide.md) article. 
+Once your external tenant free trial is ready, the next step is to personalize your customer's sign-in and sign-up experience, set up a user in your tenant, and configure a sample app. The [get started guide](https://aka.ms/ciam/free-trial-hero) walks you through all of these steps in just a few minutes. For more information about the next steps, see the [get started guide](quickstart-get-started-guide.md) article. 
 
 ## Upgrade your free trial by adding an Azure subscription
 
