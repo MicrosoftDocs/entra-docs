@@ -355,10 +355,6 @@
       items: 
         - name: Sign in users
           href: quickstart-mobile-app-sign-in.md?pivots=workforce
-        - name: Android
-          href: quickstart-mobile-app-android-sign-in.md
-        - name: iOS and macOS
-          href: quickstart-mobile-app-ios-sign-in.md
     - name: Tutorials
       items:
         - name: Android
