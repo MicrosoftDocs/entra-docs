@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: devx-track-arm-template, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: sample
-ms.date: 10/07/2024
+ms.date: 10/15/2024
 ms.author: justinha
 ---
 
@@ -85,7 +85,7 @@ New-MgGroup -DisplayName "AAD DC Administrators" `
   -MailNickName "AADDCAdministrators"
 ```
 
-With the *AAD DC Administrators* group created, add a user to the group using the [New-MgGroupMember](/powershell/module/microsoft.graph.groups/new-mggroupmember) cmdlet. You first get the *AAD DC Administrators* group object ID using the [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet, then the desired user's object ID using the [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) cmdlet.
+With the *AAD DC Administrators* group created, add a user to the group using the [New-MgGroupMemberByRef](/powershell/module/microsoft.graph.groups/new-mggroupmemberbyref) cmdlet. You first get the *AAD DC Administrators* group object ID using the [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet, then the desired user's object ID using the [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) cmdlet.
 
 In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *AAD DC Administrators* group:
 

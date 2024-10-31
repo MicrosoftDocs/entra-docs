@@ -27,6 +27,214 @@ The What's new in Microsoft Entra ID? Release notes provide information about:
 
 ---
 
+## April 2024
+
+### Public Preview - FIDO2 authentication in Android web browsers
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Users can now sign in with a FIDO2 security key in both Chrome, and Microsoft Edge, on Android. This change is applicable to all users who are in scope for the FIDO2 authentication method. FIDO2 registration in Android web browsers isn't available yet.
+
+For more information, see: [Support for FIDO2 authentication with Microsoft Entra ID](../identity/authentication/concept-fido2-compatibility.md).
+
+---
+
+### General Availability - Security group provisioning to Active Directory using cloud sync
+
+**Type:** New feature    
+**Service category:** Provisioning    
+**Product capability:** Microsoft Entra Cloud Sync    
+
+Security groups provisioning to Active Directory (also known as Group Writeback) is now generally available through Microsoft Entra Cloud Sync in Azure Global and Azure Government clouds. With this new capability, you can easily govern Active Directory based on-premises applications (Kerberos based apps) using Microsoft Entra Governance. For more information, see: [Provision groups to Active Directory using Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+
+---
+
+### Decommissioning of Group Writeback V2 (Public Preview) in Microsoft Entra Connect Sync
+
+**Type:** Plan for change   
+**Service category:** Provisioning                     
+**Product capability:**  Microsoft Entra Connect Sync             
+
+The public preview of Group Writeback V2 (GWB) in Microsoft Entra Connect Sync will no longer be available after June 30, 2024. After this date, Connect Sync will no longer support provisioning cloud security groups to Active Directory.
+
+Another similar functionality in Microsoft Entra Cloud Sync is *Group Provision to AD*. You can use this functionality instead of GWB V2 for provisioning cloud security groups to AD. Enhanced functionality in Cloud Sync, along with other new features, are being developed.
+
+Customers who use this preview feature in Connect Sync should [switch their configuration from Connect Sync to Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md). Customers can choose to move all their hybrid sync to Cloud Sync, if it supports their needs. Customers can also choose to run Cloud Sync side-by-side and move only cloud security group provisioning to Azure AD onto Cloud Sync.
+
+Customers who use Microsoft 365 groups to AD can continue using GWB V1 for this capability.  
+
+Customers can evaluate moving exclusively to Cloud Sync by using this wizard: https://aka.ms/EvaluateSyncOptions
+
+---
+
+### General availability - PIM approvals and activations on the Azure mobile app (iOS and Android) are available now
+
+**Type:** New feature    
+**Service category:** Privileged Identity Management    
+**Product capability:** Privileged Identity Management    
+
+PIM is now available on the Azure mobile app in both iOS and Android. Customers can now approve or deny incoming PIM activation requests. Customers can also activate Microsoft Entra ID and Azure resource role assignments directly from an app on their devices. For more information, see: [Activate PIM roles using the Azure mobile app](/entra/id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles).
+
+---
+
+### General Availability - On-premises password reset remediates user risk
+
+**Type:** New feature    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+Organizations who enabled password hash synchronization can now allow password changes on-premises to remediate user risk. You can also use this capability to save hybrid users time and maintain their productivity with automatic self-service remediation in risk-based Conditional Access policies. For more information, see: [Remediate risks and unblock users](../id-protection/howto-identity-protection-remediate-unblock.md).
+
+---
+
+### General Availability - Custom Claims Providers enable token claim augmentation from external data sources
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** Extensibility    
+
+Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems. A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory. For more information, see: [Custom authentication extensions overview](../identity-platform/custom-extension-overview.md).
+
+---
+
+### General Availability - Dynamic Groups quota increased to 15,000.
+
+**Type:** Changed feature    
+**Service category:** Group Management    
+**Product capability:** Directory    
+
+Microsoft Entra organizations could previously have a maximum of 15,000 dynamic membership groups and dynamic administrative units combined. 
+
+This quota is increased to 15,000. For example, you can now have 15,000 dynamic membership groups and 10,000 dynamic AUs (or any other combination that adds up to 15k). You don't need to do anything to take advantage of this change - this update is available right now. For more information, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
+
+---
+
+### General Availability - Lifecycle Workflows: Export workflow history data to CSV files
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+In Lifecycle Workflows, IT admins can now export their workflow history data across users, runs, and tasks to CSV files for meeting their organization's reporting and auditing needs.
+
+See [Download workflow history reports](../id-governance/download-workflow-history.md) to learn more.
+
+---
+
+### Public preview - Native Authentication for Microsoft Entra External ID
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Native authentication empowers developers to take complete control over the design of the sign-in experience of their mobile applications. It allows them to craft stunning, pixel-perfect authentication screens that are seamlessly integrated into their apps, rather than relying on browser-based solutions. For more information, see: [Native authentication (preview)](../external-id/customers/concept-native-authentication.md).
+
+---
+
+### Public Preview - Passkeys in Microsoft Authenticator
+
+**Type:** New feature    
+**Service category:** Microsoft Authenticator App    
+**Product capability:** User Authentication    
+
+Users can now create device-bound passkeys in the Microsoft Authenticator to access Microsoft Entra ID resources. Passkeys in the Authenticator app provide cost-effective, phishing-resistant, and seamless authentications to users from their mobile devices. For more information, see https://aka.ms/PasskeyInAuthenticator.
+
+---
+
+### General Availability - Maximum workflows limit in Lifecycle workflows is now 100
+
+**Type:** Changed feature    
+**Service category:** Lifecycle Workflows        
+**Product capability:** Identity Governance        
+
+The maximum number of workflows that can be configured in Lifecycle workflows increased. Now IT admins can create up to 100 workflows in Lifecycle workflows. For more information, see: [Microsoft Entra ID Governance service limits](../id-governance/governance-service-limits.md).
+
+---
+
+### Public Preview - Configure custom workflows to run mover tasks when a user's job profile changes
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+Lifecycle Workflows now supports the ability to trigger workflows based on job change events like changes to an employee's department, job role, or location and see them executed on the workflow schedule. With this feature, customers can use new workflow triggers to create custom workflows for executing tasks associated with employees moving within the organization including triggering:
+
+- Workflows when a specified attribute changes
+- Workflows when a user is added or removed from a group's membership
+- Tasks to notify a user's manager about a move
+- Tasks to assign licenses or remove selected licenses from a user
+
+To learn more, see the [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](../id-governance/tutorial-mover-custom-workflow-portal.md) tutorial.
+
+---
+
+### General Availability - Microsoft Graph activity logs
+
+**Type:** New feature    
+**Service category:** Microsoft Graph    
+**Product capability:** Monitoring & Reporting    
+
+The Microsoft Graph activity logs is now generally available! Microsoft Graph activity logs give you visibility into HTTP requests made to the Microsoft Graph service in your tenant. With rapidly growing security threats, and an increasing number of attacks, this log data source allows you to perform security analysis, threat hunting, and monitor application activity in your tenant. For more information, see: [Access Microsoft Graph activity logs](/graph/microsoft-graph-activity-logs-overview).
+
+---
+
+### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - April 2024
+
+**Type:** New feature    
+**Service category:** App Provisioning    
+**Product capability:** Third Party Integration    
+
+Microsoft added the following new applications in our App gallery with provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+[CultureHQ](../identity/saas-apps/culturehq-provisioning-tutorial.md)
+[elia](../identity/saas-apps/elia-provisioning-tutorial.md)
+[GoSkills](../identity/saas-apps/goskills-provisioning-tutorial.md)
+[Island](../identity/saas-apps/island-provisioning-tutorial.md)
+[Jellyfish](../identity/saas-apps/jellyfish-provisioning-tutorial.md)
+
+For more information about how to better secure your organization by using automated user account provisioning, see Automate user provisioning to SaaS applications with Microsoft Entra.
+
+---
+
+### General Availability - Quick Microsoft Entra Verified ID setup
+
+**Type:** New feature    
+**Service category:** Verified ID    
+**Product capability:** Decentralized Identities    
+
+Quick Microsoft Entra Verified ID setup, now generally available, removes several configuration steps an admin needs to complete with a single select on a Get started button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you. For more information, see: [Quick Microsoft Entra Verified ID setup](../verified-id/verifiable-credentials-configure-tenant-quick.md).
+
+---
+
+### Public Preview - Assign Microsoft Entra roles using Entitlement Management
+
+**Type:** New feature    
+**Service category:** Entitlement Management    
+**Product capability:** Entitlement Management    
+
+By assigning Microsoft Entra roles to employees, and guests, using Entitlement Management, you can look at a user's entitlements to quickly determine which roles are assigned to that user. When you include a Microsoft Entra role as a resource in an access package, you can also specify whether that role assignment is *eligible* or *active*.
+
+Assigning Microsoft Entra roles through access packages helps to efficiently manage role assignments at scale and improves the role. For more information, see: [Assign Microsoft Entra roles (Preview)](../id-governance/entitlement-management-roles.md).
+
+---
+
+### General Availability - Self-service password reset Admin policy expansion to include more roles
+
+**Type:** Changed feature    
+**Service category:** Self Service Password Reset    
+**Product capability:** Identity Security & Protection    
+
+Self-service password reset (SSPR) policy for Admins expands to include three extra built-in admin roles. These extra roles include: 
+
+- Teams Administrator
+- Teams Communications Administrator
+- Teams Devices Administrator
+
+For more information on Self-service password reset for admins, including the full list of in-scope admin roles, see [Administrator reset policy differences](../identity/authentication/concept-sspr-policy.md#administrator-reset-policy-differences). 
+
+---
 
 ## March 2024
 
@@ -434,7 +642,7 @@ An extra property is added to signInActivity API to display the last **successfu
 Starting in November 2023, Microsoft begins automatically protecting customers with Microsoft managed Conditional Access policies. Microsoft creates and enables these policies in external tenants. The following policies are rolled out to all eligible tenants, who are notified before policy creation:
 
 1. Multifactor authentication for admin portals: This policy covers privileged admin roles and requires multifactor authentication when an admin signs into a Microsoft admin portal.
-1. Multifactor authentication for per-user multifactor authentication users: This policy covers users with per-user multifactor authentication and requires multifactor authentication for all cloud apps.
+1. Multifactor authentication for per-user multifactor authentication users: This policy covers users with per-user multifactor authentication and requires multifactor authentication for all resources.
 1. Multifactor authentication for high-risk sign-ins: This policy covers all users and requires multifactor authentication and reauthentication for high-risk sign-ins.
 
 For more information, see:
@@ -563,7 +771,7 @@ For more information, see: [View and filter your devices](~/identity/devices/man
 
 Windows MAM is the first step toward Microsoft management capabilities for unmanaged Windows devices. This functionality comes at a critical time when we need to ensure the Windows platform is on par with the simplicity and privacy promise we offer end users today on the mobile platforms. End users can access company resources without needing the whole device to be MDM managed.
 
-For more information, see: [Require an app protection policy on Windows devices](~/identity/conditional-access/how-to-app-protection-policy-windows.md).
+For more information, see: [Require an app protection policy on Windows devices](~/identity/conditional-access/policy-all-users-windows-app-protection.md).
 
 ---
 
@@ -1083,7 +1291,7 @@ Using MAM Conditional Access, Microsoft Edge for Business provides users with se
 
 The new capability extends the benefits of app layer management to the Windows platform via Microsoft Edge for Business. Admins are empowered to configure the user experience and protect organizational data within Microsoft Edge for Business on unmanaged Windows devices.
 
-For more information, see: [Require an app protection policy on Windows devices (preview)](~/identity/conditional-access/how-to-app-protection-policy-windows.md).
+For more information, see: [Require an app protection policy on Windows devices (preview)](~/identity/conditional-access/policy-all-users-windows-app-protection.md).
 
 ---
 
@@ -1696,155 +1904,5 @@ For more information, see:
 
 - [Administrator reset policy differences](~/identity/authentication/concept-sspr-policy.md#administrator-reset-policy-differences).
 - [Create a role-assignable group in Azure Active Directory](~/identity/role-based-access-control/groups-create-eligible.md)
-
----
-
-## March 2023
-
-
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - March 2023
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** Third Party Integration    
-      
-
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Acunetix 360](~/identity/saas-apps/acunetix-360-provisioning-tutorial.md)
-- [Akamai Enterprise Application Access](~/identity/saas-apps/akamai-enterprise-application-access-provisioning-tutorial.md)
-- [Ardoq](~/identity/saas-apps/ardoq-provisioning-tutorial.md)
-- [Torii](~/identity/saas-apps/torii-provisioning-tutorial.md)
-
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
-
-
----
-
-### General Availability - Workload identity Federation for Managed Identities
-
-**Type:** New feature   
-**Service category:** Managed identities for Azure resources                     
-**Product capability:** Developer Experience             
-
-Workload Identity Federation enables developers to use managed identities for their software workloads running anywhere and access Azure resources without needing secrets. Key scenarios include:
-- Accessing Azure resources from Kubernetes pods running in any cloud or on-premises
-- GitHub workflows to deploy to Azure, no secrets necessary
-- Accessing Azure resources from other cloud platforms that support OIDC, such as Google Cloud Platform.
-
-For more information, see: 
-- [Workload identity federation](~/workload-id/workload-identity-federation.md).
-- [Configure a user-assigned managed identity to trust an external identity provider (preview)](~/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity.md)
-- [Use Azure AD workload identity with Azure Kubernetes Service (AKS)](/azure/aks/workload-identity-overview)
-
----
-
-### Public Preview - New My Groups Experience
-
-**Type:** Changed feature   
-**Service category:** Group Management                   
-**Product capability:** End User Experiences          
-
-A new and improved My Groups experience is now available at `https://www.myaccount.microsoft.com/groups`. My Groups enables end users to easily manage groups, such as finding groups to join, managing groups they own, and managing existing dynamic membership groups. Based on customer feedback, the new My Groups support sorting and filtering on lists of groups and group members, a full list of group members in large groups, and an actionable overview page for membership requests.
-This experience replaces the existing My Groups experience at `https://www.mygroups.microsoft.com` in May.  
-
-
-For more information, see: [Update your Groups info in the My Groups portal](https://support.microsoft.com/account-billing/update-your-groups-info-in-the-my-apps-portal-bc0ca998-6d3a-42ac-acb8-e900fb1174a4).
-
----
-
-### Public preview - Customize tokens with Custom Claims Providers
-
-**Type:** New feature   
-**Service category:** Authentications (Logins)                      
-**Product capability:** Extensibility             
-
-A custom claims provider lets you call an API and map custom claims into the token during the authentication flow. The API call is made after the user has completed all their authentication challenges, and a token is about to be issued to the app. For more information, see: [Custom authentication extensions (preview)](~/identity-platform/custom-claims-provider-overview.md).
-
----
-
-### General Availability - Converged Authentication Methods
-
-**Type:** New feature   
-**Service category:** MFA                     
-**Product capability:** User Authentication             
-
-The Converged Authentication Methods Policy enables you to manage all authentication methods used for MFA and SSPR in one policy, migrate off the legacy MFA and SSPR policies, and target authentication methods to groups of users instead of enabling them for all users in your tenant. For more information, see: [Manage authentication methods](~/identity/authentication/concept-authentication-methods-manage.md).
-
----
-
-### General Availability - Provisioning Insights Workbook
-
-**Type:** New feature   
-**Service category:** Provisioning                     
-**Product capability:** Monitoring & Reporting            
-
-This new workbook makes it easier to investigate and gain insights into your provisioning workflows in a given tenant. This includes HR-driven provisioning, cloud sync, app provisioning, and cross-tenant sync.
-
-Some key questions this workbook can help answer are:
-
-- How many identities have been synced in a given time range?
-- How many create, delete, update, or other operations were performed?
-- How many operations were successful, skipped, or failed?
-- What specific identities failed? And what step did they fail on?
-- For any given user, what tenants / applications were they provisioned or deprovisioned to?
-
-For more information, see: [Provisioning insights workbook](~/identity/app-provisioning/provisioning-workbook.md).
-
----
-
-### General Availability - Number Matching for Microsoft Authenticator notifications
-
-**Type:** Plan for Change  
-**Service category:** Microsoft Authenticator App                      
-**Product capability:** User Authentication             
-
-Microsoft Authenticator app’s number matching feature has been Generally Available since Nov 2022! If you haven't already used the rollout controls (via Azure portal Admin UX and MSGraph APIs) to smoothly deploy number matching for users of Microsoft Authenticator push notifications, we highly encourage you to do so. We previously announced that we'll remove the admin controls and enforce the number match experience tenant-wide for all users of Microsoft Authenticator push notifications starting February 27, 2023. After listening to customers, we'll extend the availability of the rollout controls for a few more weeks. Organizations can continue to use the existing rollout controls until May 8, 2023, to deploy number matching in their organizations. Microsoft services will start enforcing the number matching experience for all users of Microsoft Authenticator push notifications after May 8, 2023. We'll also remove the rollout controls for number matching after that date.
-
-If customers don’t enable number match for all Microsoft Authenticator push notifications prior to May 8, 2023, Authenticator users could experience inconsistent sign-ins while the services are rolling out this change. To ensure consistent behavior for all users, we highly recommend you enable number match for Microsoft Authenticator push notifications in advance.
-
-For more information, see: [How to use number matching in multifactor authentication (MFA) notifications - Authentication methods policy](~/identity/authentication/how-to-mfa-number-match.md)
-
----
-
-### Public Preview - IPv6 coming to Azure AD
-
-**Type:** Plan for Change     
-**Service category:** Identity Protection                     
-**Product capability:** Platform             
-
-Earlier, we announced our plan to bring IPv6 support to Microsoft Azure Active Directory (Azure AD), enabling our customers to reach the Azure AD services over IPv4, IPv6 or dual stack endpoints. This is just a reminder that we have started introducing IPv6 support into Azure AD services in a phased approach in late March 2023.  
- 
-If you utilize Conditional Access or Identity Protection, and have IPv6 enabled on any of your devices, you likely must take action to avoid impacting your users. For most customers, IPv4 won't completely disappear from their digital landscape, so we aren't planning to require IPv6 or to deprioritize IPv4 in any Azure AD features or services. We continue to share additional guidance on IPv6 enablement in Azure AD at this link: [IPv6 support in Azure Active Directory](/troubleshoot/azure/active-directory/azure-ad-ipv6-support).
-
----
-
-### General Availability - Microsoft cloud settings for Azure AD B2B
-
-**Type:** New feature  
-**Service category:** B2B              
-**Product capability:** B2B/B2C       
-
-Microsoft cloud settings let you collaborate with organizations from different Microsoft Azure clouds. With Microsoft cloud settings, you can establish mutual B2B collaboration between the following clouds:
-
-- Microsoft Azure commercial and Microsoft Azure Government
-- Microsoft Azure commercial and Microsoft Azure operated by 21Vianet
-
-For more information about Microsoft cloud settings for B2B collaboration, see [Microsoft cloud settings](~/external-id/cross-tenant-access-overview.md#microsoft-cloud-settings).
-
----
-
-### Modernizing Terms of Use Experiences
-
-**Type:** Plan for Change  
-**Service category:** Terms of use                  
-**Product capability:** AuthZ/Access Delegation        
-
-Starting July 2023, we're modernizing the following Terms of Use end user experiences with an updated PDF viewer, and moving the experiences from https://account.activedirectory.windowsazure.com to https://myaccount.microsoft.com:
-- View previously accepted terms of use.
-- Accept or decline terms of use as part of the sign-in flow.
-
-No functionalities are removed. The new PDF viewer adds functionality and the limited visual changes in the end-user experiences will be communicated in a future update. If your organization has allow-listed only certain domains, you must ensure your allowlist includes the domains ‘myaccount.microsoft.com’ and ‘*.myaccount.microsoft.com’ for Terms of Use to continue working as expected.
 
 ---

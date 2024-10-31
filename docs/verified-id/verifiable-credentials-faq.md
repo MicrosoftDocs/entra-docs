@@ -24,7 +24,7 @@ This page contains commonly asked questions about Verifiable Credentials and Dec
 
 ### What is a DID? 
 
-Decentralized Identifiers (DIDs) are unique identifiers that can be used to secure access to resources, sign and verify credentials, and facilitate application data exchange. Unlike traditional usernames and email addresses, entities and owning and controlling the DIDs themselves (be it a person, device, or company). DIDs exist independently of any external organization or trusted intermediary. [The W3C Decentralized Identifier spec](https://www.w3.org/TR/did-core/) explains DIDs in further detail.
+Decentralized Identifiers (DIDs) are unique identifiers used to secure access to resources, sign and verify credentials, and facilitate data exchange between applications. Unlike traditional usernames and email addresses, entities and owning and controlling the DIDs themselves (be it a person, device, or company). DIDs exist independently of any external organization or trusted intermediary. [The W3C Decentralized Identifier spec](https://www.w3.org/TR/did-core/) explains DIDs in further detail.
 
 ### Why do we need a DID?
 
@@ -45,12 +45,12 @@ There are multiple ways of offering a recovery mechanism to users, each with the
 
 ### How can a user trust a request from an issuer or verifier? How do they know a DID is the real DID for an organization?
 
-We implement [the Decentralized Identity Foundation's Well Known DID Configuration spec](https://identity.foundation/.well-known/resources/did-configuration/) in order to connect a DID to a highly known existing system, domain names. Each DID created using the Microsoft Entra Verified ID has the option of including a root domain name that is encoded in the DID Document. Follow the article titled [Link your Domain to your Distributed Identifier](how-to-dnsbind.md) to learn more.  
+We implement [the Decentralized Identity Foundation's Well Known DID Configuration spec](https://identity.foundation/.well-known/resources/did-configuration/) in order to connect a DID to a highly known existing system, domain names. Each DID created using the Microsoft Entra Verified ID has the option of including a root domain name that is encoded in the DID Document. Follow the article titled [Link your Domain to your Distributed Identifier](how-to-dnsbind.md) to learn more about linked domains.  
 
 ### What are the size limitations for a Verifiable Credential in Verified ID?
 
-- For issuance request - 1MB
-- Photo in the Verifiable credential - 1MB
+- For issuance request - 1 MB
+- Photo in the Verifiable credential - 1 MB
 - Callback result 10 MB without receipt
 
 ### What are the licensing requirements?
@@ -59,20 +59,21 @@ There are no special licensing requirements to issue Verifiable credentials.
 
 ### How do I reset the Microsoft Entra Verified ID service?
 
-Resetting requires that you opt-out and opt back into the Microsoft Entra Verified ID service. Your existing verifiable credentials configuration is reset and your tenant obtains a new DID to use during issuance and presentation.
+Resetting requires that you opt out and opt back into the Microsoft Entra Verified ID service. Your existing verifiable credentials configuration is reset and your tenant obtains a new DID to use during issuance and presentation.
 
-1. Follow the [opt-out](how-to-opt-out.md) instructions.
+1. Follow the [opt out](how-to-opt-out.md) instructions.
 1. Go over the Microsoft Entra Verified ID [deployment steps](verifiable-credentials-configure-tenant-quick.md) to reconfigure the service.
-    1. If you're manually setting up Verified ID, choose a location for your Azure Key Vault to be in the same or closest region. This avoids performance and latency issues.
+    1. If you're manually setting up Verified ID, choose a location for your Azure Key Vault to be in the same or closest region. Choosing same region avoids performance and latency issues.
 1. Finish [setting up](verifiable-credentials-configure-tenant.md#set-up-verified-id) your verifiable credentials service. You need to recreate your credentials.
-    1. If your tenant needs to be configured as an issuer, it's recommended that your storage account is in the European region as your Verifiable Credentials service.
-    2. You also need to issue new credentials because your tenant now holds a new DID.
+    1. You also need to issue new credentials because your tenant now holds a new DID.
 
 ### How can I check my Microsoft Entra tenant's region?
 
 1. In the [Azure portal](https://portal.azure.com), go to Microsoft Entra ID for the subscription you use for your Microsoft Entra Verified ID deployment.
-1. Under Manage, select Properties
-    :::image type="content" source="media/verifiable-credentials-faq/region.png" alt-text="settings delete and opt-out":::
+1. Under Manage, select Properties.
+
+    :::image type="content" source="media/verifiable-credentials-faq/region.png" lightbox="media/verifiable-credentials-faq/region.png" alt-text="Screenshot of settings delete and opt out.":::
+
 1. See the value for Country or Region. If the value is a country or a region in Europe, your Microsoft Entra Verified ID service is set up in Europe.
 
 ### Does Microsoft Entra Verified ID support ION as its DID method?
@@ -90,12 +91,12 @@ If you want to move to `did:web` from `did:ion`, you can follow these steps via 
 
 #### Creating new did:web authority
 
-1. Using the [onboard](admin-api.md#onboarding) API, create the new `did:web` authority. Alternatively, if your tenant has only one did:ion authority, you could also perform a service opt-out followed by an opt-in operation to restart with Verified ID configurations. In this case, you could choose between [Quick](verifiable-credentials-configure-tenant-quick.md) and [Manual](verifiable-credentials-configure-tenant.md) setup.
+1. Using the [onboard](admin-api.md#onboarding) API, create the new `did:web` authority. Alternatively, if your tenant has only one did:ion authority, you could also perform a service opt out followed by an opt-in operation to restart with Verified ID configurations. In this case, you could choose between [Quick](verifiable-credentials-configure-tenant-quick.md) and [Manual](verifiable-credentials-configure-tenant.md) setup.
 1. If you're setting up a did:web authority using Admin API, you need to call [generate DID document](admin-api.md#generate-did-document) to generate your did document and call [generate well-known document](admin-api.md#well-known-did-configuration) and then upload JSON files to the respective well-known path.
 
 #### Recreate credential definitions
 
-After you have created your new `did:web` authority, you need to recreate your credential definitions. You can either do that via the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) if you opted-out and reonboarded, or you need to use the [create contract](admin-api.md#create-contract) API to recreate them.
+When you have created your new `did:web` authority, you need to recreate your credential definitions. You can either do that via the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) if you opted-out and reonboarded, or you need to use the [create contract](admin-api.md#create-contract) API to recreate them.
 
 #### Update existing applications
 
@@ -104,7 +105,7 @@ After you have created your new `did:web` authority, you need to recreate your c
 
 #### Delete did:ion authority
 
-If you didn't opt-out and reonboarded, you need to remove your old `did:ion` authority. Use the [delete authority](admin-api.md#delete-authority) API to delete the did:ion authority. 
+If you didn't opt out and reonboarded, you need to remove your old `did:ion` authority. Use the [delete authority](admin-api.md#delete-authority) API to delete the did:ion authority. 
 
 ### If I reconfigure the Microsoft Entra Verified ID service, do I need to relink my DID to my domain?
 
@@ -112,9 +113,9 @@ Yes, after reconfiguring your service, your tenant has a new DID use to issue an
 
 ### Is it possible to request Microsoft to retrieve "old DIDs"?
 
-No, at this point it isn't possible to keep your tenant's DID after you have opt-out of the service.
+No, at this point it isn't possible to keep your tenant's DID after you have opted out of the service.
 
-### I cannot use ngrok, what do I do?
+### I can't use ngrok, what do I do?
 
 The tutorials for deploying and running the [samples](verifiable-credentials-configure-issuer.md#prerequisites) describes the use of the `ngrok` tool as an application proxy. This tool is sometimes blocked by IT admins from being used in corporate networks. An alternative is to deploy the sample to [Azure App Service](/azure/app-service/overview) and run it in the cloud. The following links help you deploy the respective sample to Azure App Service. The Free pricing tier is sufficient for hosting the sample. For each tutorial, you need to start by first creating the Azure App Service instance, then skip creating the app since you already have an app and then continue the tutorial with deploying it.
 
@@ -124,7 +125,19 @@ The tutorials for deploying and running the [samples](verifiable-credentials-con
 - Python - [Deploy using Visual Studio Code](/azure/app-service/quickstart-python?tabs=flask%2Cwindows%2Cazure-cli%2Cvscode-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli#3---deploy-your-application-code-to-azure)
 
 Regardless of which language of the sample you're using, the Azure AppService hostname `https://something.azurewebsites.net` is used as the public endpoint. You don't need to configure something extra to make it work. If you make changes to the code or configuration, you need to redeploy the sample to Azure AppServices. Troubleshooting/debugging isn't as easy as running the sample on your local machine, where traces to the console window show you errors, but you can achieve almost the same by using the [Log Stream](/azure/app-service/troubleshoot-diagnostic-logs#stream-logs).
- 
+
+### Network hardening for callback events
+
+The Request Service API makes use of callbacks to a [URL](presentation-request-api.md#callback-type) provided by the relying party application. This URL needs to be reachable from the Verified ID system for the callbacks to be received. Callbacks are coming from Azure infrastructure in the same region as your Microsoft Entra tenant. If you need to harden your network, you have two options.
+
+- Use [Azure firewall service tags](/azure/firewall/service-tags) [AzureCloud](/azure/virtual-network/service-tags-overview#available-service-tags).
+- Use the published [CIDR range](https://www.microsoft.com/download/details.aspx?id=56519) to configure your firewall.  You need to use AzureCloud.***regions*** that matches where your Microsoft Entra tenant is deployed to config your firewall to let callback traffic from Request Service API through. For instance, if your tenant is in EU, you should pick all CIDR ranges from AzureCloud.***northeurope***, ***.westeurope***, etc., to your firewalls config.
+
+### Scanning the QR code
+
+In the documentation, the instruction `scan the QR code` refers to scanning it with the Microsoft Authenticator mobile app, unless otherwise stated.
+It is possible to scan the QR code with the mobile's camera app, which then launches the Microsoft Authenticator. For this to work, the protocol handler for `openid-vc://` must be registered for Microsoft Authenticator. If another mobile app have been registered for it, the Authenticator will not open. On some older Android mobile versions, scanning the QR code with the camera app doesn't work, and there is no other workaround than using the Microsoft Authenticator app to scan it.
+
 ## Next steps
 
 - [Customize your verifiable credentials](credential-design.md)

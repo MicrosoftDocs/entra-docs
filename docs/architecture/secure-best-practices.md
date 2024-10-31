@@ -134,7 +134,7 @@ In the following sections are recommendations for Azure solutions. For general g
 
 * All applications onboarded to isolated environments must have explicit Conditional Access policies applied as part of the onboarding process.
 
-* Define Conditional Access policies for [security information registration](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that reflects a secure root of trust process on-premises (for example, for workstations in physical locations, identifiable by IP addresses, that employees must visit in person for verification).
+* Define Conditional Access policies for [security information registration](~/identity/conditional-access/policy-all-users-security-info-registration.md) that reflects a secure root of trust process on-premises (for example, for workstations in physical locations, identifiable by IP addresses, that employees must visit in person for verification).
 
 * Consider using Conditional Access to restrict workload identities. Create a policy to limit or better control access based on location or other relevant circumstances.
 

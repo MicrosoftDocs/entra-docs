@@ -10,8 +10,7 @@ ms.topic: reference
 ms.date: 09/28/2024
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
-ms.custom: generated, it-pro, fasttrack-edit
-
+ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Microsoft Entra built-in roles
@@ -138,7 +137,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users in this role
 This role also grants the ability to consent for delegated permissions and application permissions, with the exception of application permissions for Azure AD Graph and Microsoft Graph.
 
 > [!IMPORTANT]
-> This exception means that you can still consent to application permissions for _other_ apps (for example, other Microsoft apps, 3rd-party apps, or apps that you have registered). You can still _request_ these permissions as part of the app registration, but _granting_ (that is, consenting to) these permissions requires a more privileged administrator, such as Global Administrator.
+> This exception means that you can still consent to application permissions for _other_ apps (for example, other Microsoft apps, 3rd-party apps, or apps that you have registered). You can still _request_ these permissions as part of the app registration, but _granting_ (that is, consenting to) these permissions requires a more privileged administrator, such as Privileged Role Administrator.
 >
 >This role grants the ability to manage application credentials. Users assigned this role can add credentials to an application, and use those credentials to impersonate the application’s identity. If the application’s identity has been granted access to a resource, such as the ability to create or update User or other objects, then a user assigned to this role could perform those actions while impersonating the application. This ability to impersonate the application’s identity may be an elevation of privilege over what the user can do via their role assignments. It is important to understand that assigning a user to the Application Administrator role gives them the ability to impersonate an application’s identity.
 
@@ -562,7 +561,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users in this role
 This role also grants the ability to consent for delegated permissions and application permissions, with the exception of application permissions for Azure AD Graph and Microsoft Graph.
 
 > [!IMPORTANT]
-> This exception means that you can still consent to application permissions for _other_ apps (for example, other Microsoft apps, 3rd-party apps, or apps that you have registered). You can still _request_ these permissions as part of the app registration, but _granting_ (that is, consenting to) these permissions requires a more privileged administrator, such as Global Administrator.
+> This exception means that you can still consent to application permissions for _other_ apps (for example, other Microsoft apps, 3rd-party apps, or apps that you have registered). You can still _request_ these permissions as part of the app registration, but _granting_ (that is, consenting to) these permissions requires a more privileged administrator, such as Privileged Role Administrator.
 >
 >This role grants the ability to manage application credentials. Users assigned this role can add credentials to an application, and use those credentials to impersonate the application’s identity. If the application’s identity has been granted access to a resource, such as the ability to create or update User or other objects, then a user assigned to this role could perform those actions while impersonating the application. This ability to impersonate the application’s identity may be an elevation of privilege over what the user can do via their role assignments. It is important to understand that assigning a user to the Application Administrator role gives them the ability to impersonate an application’s identity.
 
@@ -893,7 +892,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 Users with this role have global permissions within Microsoft Dynamics 365 Online, when the service is present, as well as the ability to manage support tickets and monitor service health. For more information, see [Use service admin roles to manage your tenant](/power-platform/admin/use-service-admin-role-manage-tenant).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Dynamics 365 Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Dynamics 365 Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Dynamics 365 Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Dynamics 365 Administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -947,7 +946,7 @@ Users in this role can create and manage the enterprise site list required for I
 Users with this role have global permissions within Microsoft Exchange Online, when the service is present. Also has the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health. For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Exchange Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Exchange Administrator. In the [Exchange admin center](/exchange/exchange-admin-center), it is named Exchange Online administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Exchange Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Exchange Administrator. In the [Exchange admin center](/exchange/exchange-admin-center), it is named Exchange Online administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1474,7 +1473,7 @@ Users with this role **cannot** do the following:
 
 Delegating administrative permissions over subsets of users and applying policies to a subset of users is possible with [Administrative Units](administrative-units.md).
 
-This role was previously named Password Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview). It was renamed to Helpdesk Administrator to align with the existing name in the Microsoft Graph API and Azure AD PowerShell.
+This role was previously named Password Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview). It was renamed to Helpdesk Administrator to align with the existing name in the Microsoft Graph API and Microsoft Graph PowerShell.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1632,7 +1631,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 This role can create and manage all security groups. However, Intune Administrator does not have admin rights over Office groups. That means the admin cannot update owners or memberships of all Office groups in the organization. However, he/she can manage the Office group that he creates which comes as a part of his/her end-user privileges. So, any Office group (not security group) that he/she creates should be counted against his/her quota of 250.
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Intune Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Intune Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Intune Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Intune Administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2413,7 +2412,7 @@ In | Can do
 --- | ---
 [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | View security-related policies across Microsoft 365 services<br>View security threats and alerts<br>View reports
 [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | View all ID Protection reports and Overview
-[Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | Has read-only access to all information surfaced in Microsoft Entra Privileged Identity Management: Policies and reports for Microsoft Entra role assignments and security reviews.<br>**Cannot** sign up for Microsoft Entra Privileged Identity Management or make any changes to it. In the Privileged Identity Management portal or via PowerShell, someone in this role can activate additional roles (for example, Global Administrator or Privileged Role Administrator), if the user is eligible for them.
+[Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | Has read-only access to all information surfaced in Microsoft Entra Privileged Identity Management: Policies and reports for Microsoft Entra role assignments and security reviews.<br>**Cannot** sign up for Microsoft Entra Privileged Identity Management or make any changes to it. In the Privileged Identity Management portal or via PowerShell, someone in this role can activate additional roles (for example, Privileged Role Administrator), if the user is eligible for them.
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | View security policies<br>View and investigate security threats<br>View reports
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | View and investigate alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they are assigned a Microsoft Defender for Endpoint role.
 [Intune](/mem/intune/fundamentals/role-based-access-control) | Views user, device, enrollment, configuration, and application information. Cannot make changes to Intune.
@@ -2461,7 +2460,7 @@ In | Can do
 Users with this role can create and manage support requests with Microsoft for Azure and Microsoft 365 services, and view the service dashboard and message center in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).
 
 > [!NOTE]
-> This role was previously named Service Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). It was renamed to Service Support Administrator to align with the existing name in the Microsoft Graph API and Azure AD PowerShell.
+> This role was previously named Service Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). It was renamed to Service Support Administrator to align with the existing name in the Microsoft Graph API and Microsoft Graph PowerShell.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2478,7 +2477,7 @@ Users with this role can create and manage support requests with Microsoft for A
 Users with this role have global permissions within Microsoft SharePoint Online, when the service is present, as well as the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health. For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named SharePoint Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named SharePoint Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named SharePoint Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named SharePoint Administrator.
 
 > [!NOTE]
 > This role also grants scoped permissions to the Microsoft Graph API for Microsoft Intune, allowing the management and configuration of policies related to SharePoint and OneDrive resources.
@@ -2542,7 +2541,7 @@ Assign the SharePoint Embedded Administrator role to users who need to do the fo
 Users with this role have global permissions within Microsoft Skype for Business, when the service is present, as well as manage Skype-specific user attributes in Microsoft Entra ID. Additionally, this role grants the ability to manage support tickets and monitor service health, and to access the Teams and Skype for Business admin center. The account must also be licensed for Teams or it can't run Teams PowerShell cmdlets. For more information, see [Skype for Business Online Admin](/skypeforbusiness/skype-for-business-online) and Teams licensing information at [Skype for Business add-on licensing](/skypeforbusiness/skype-for-business-and-microsoft-teams-add-on-licensing/skype-for-business-and-microsoft-teams-add-on-licensing).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Lync Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Skype for Business Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Lync Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Skype for Business Administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |

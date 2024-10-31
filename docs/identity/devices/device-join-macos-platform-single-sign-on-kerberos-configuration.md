@@ -62,7 +62,7 @@ You must configure a Kerberos SSO MDM profile. Use the following settings, ensur
                 <key>pwReqComplexity</key>
                 <true/>
                 <key>syncLocalPassword</key>
-                <true/>
+                <false/>
                 <key>usePlatformSSOTGT</key>
                 <true/>
                 <key>preferredKDCs</key>                         

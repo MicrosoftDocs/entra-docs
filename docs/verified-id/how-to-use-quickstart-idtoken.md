@@ -42,7 +42,7 @@ The JSON display definition is nearly the same, regardless of attestation type. 
       "backgroundColor": "#000000",
       "textColor": "#ffffff",
       "logo": {
-        "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png",
+        "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png",
         "description": "Verified Credential Expert Logo"
       },
       "description": "Use your verified credential to prove to anyone that you know all about verifiable credentials."

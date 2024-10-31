@@ -74,7 +74,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-	![Screenshot of the MerchLogix - Prisioning section with the Provisioning option called out, the Provisioning Mode set to Automatic, and the Test Connection option called out.](./media/merchlogix-provisioning-tutorial/Merchlogix1.png)
+	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
 5. Under the **Admin Credentials** section:
 

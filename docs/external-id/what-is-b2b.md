@@ -4,7 +4,7 @@ description: Learn about B2B collaboration for sharing apps with external identi
 
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 09/06/2024
+ms.date: 10/29/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -42,7 +42,7 @@ B2B collaboration is enabled by default, but comprehensive admin settings let yo
 
 - **Cross-tenant access settings.** For B2B collaboration with other Microsoft Entra organizations, use [cross-tenant access settings](cross-tenant-access-overview.md) to control which users can authenticate with which resources. Manage inbound and outbound B2B collaboration, and scope access to specific users, groups, and applications. Set a default configuration that applies to all external organizations, and then create individual, organization-specific settings as needed. Using cross-tenant access settings, you can also trust multifactor (MFA) and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
 
-- **External collaboration settings.** Use [external collaboration settings](external-collaboration-settings-configure.md) to define who can invite guests into your organization as guests. You can also allow or block B2B specific domains and set restrictions on guest user access to your directory.
+- **External collaboration settings.** Use [external collaboration settings](external-collaboration-settings-configure.md) to define who can invite external users into your organization as guests. By default, all users in your organization, including B2B collaboration guest users, can invite external users to B2B collaboration. If you want to limit the ability to send invitations, you can turn invitations on or off for everyone, or limit invitations to certain roles. You can also allow or block B2B specific domains and set restrictions on guest user access to your directory.
 
 These settings are used to manage two different aspects of B2B collaboration. Cross-tenant access settings control whether users can authenticate with external Microsoft Entra tenants. They apply to both inbound and outbound B2B collaboration. By contrast, external collaboration settings control which users in your organization are allowed to send B2B collaboration invitations to guests from any organization.
 
@@ -101,7 +101,7 @@ You can use authentication and authorization policies to protect your corporate 
 
 ## Let application and group owners manage their own guest users
 
-You can delegate guest user management to application owners so that they can add guest users directly to any application they want to share, whether it's a Microsoft application or not.
+You can delegate guest user management to application owners. This allows them to add guest users directly to any application they want to share, whether it's a Microsoft application or not.
 
 - Administrators set up self-service app and group management.
 - Non-administrators use their [Access Panel](https://myapps.microsoft.com) to add guest users to applications or groups.
@@ -123,7 +123,7 @@ Microsoft Entra External ID supports external identity providers like Facebook, 
 
 ## Integrate with SharePoint and OneDrive
 
-You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint-azureb2b-integration) to share files, folders, list items, document libraries, and sites with people outside your organization, while using Azure B2B for authentication and management. The users you share resources with are typically guest users in your directory, and permissions and groups work the same for these guests as they do for internal users. When enabling integration with SharePoint and OneDrive, you also enable the [email one-time passcode](one-time-passcode.md) feature in Microsoft Entra B2B to serve as a fallback authentication method.
+You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint-azureb2b-integration) to share files, folders, list items, document libraries, and sites with people outside your organization, while using Microsoft Entra B2B for authentication and management. The users you share resources with are typically guest users in your directory, and permissions and groups work the same for these guests as they do for internal users. When enabling integration with SharePoint and OneDrive, you also enable the [email one-time passcode](one-time-passcode.md) feature in Microsoft Entra B2B to serve as a fallback authentication method.
 
 :::image type="content" source="media/what-is-b2b/enable-email-otp-options.png" alt-text="Screenshot of the email one-time-passcode setting.":::
 

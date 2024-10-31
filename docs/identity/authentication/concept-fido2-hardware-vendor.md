@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 09/23/2024
+ms.date: 10/27/2024
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -47,7 +47,7 @@ Microsoft ingests the latest version of the FIDO Alliance MDS every month. There
 
 ## FIDO2 security keys eligible for attestation with Microsoft Entra ID
 
-The following table lists FIDO2 security key models listed in MDS version 93. These models are eligible for attestation with Microsoft Entra ID. 
+The following table includes each FIDO2 security key model listed in MDS version 93 that's eligible for attestation with Microsoft Entra ID. For each model, the table shows its Authenticator Attestation Globally Unique Identifier (AAGUID) and feature capabilities. 
 
 |Description|AAGUID|Bio|USB|NFC|BLE|
 |-----------|------|---|---|---|---|
@@ -71,7 +71,6 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |eWBM eFA310 FIDO2 Authenticator|95442b2e-f15e-4def-b270-efb106facb4e|![y]|![n]|![n]|![n]|
 |eWBM eFA320 FIDO2 Authenticator|87dbc5a1-4c94-4dc8-8a47-97d800fd1f3c|![y]|![n]|![n]|![n]|
 |eWBM eFPA FIDO2 Authenticator|61250591-b2bc-4456-b719-0b17be90bb30|![y]|![n]|![n]|![n]|
-|eWBM eFPA FIDO2 Authenticator|61250591-b2bc-4456-b719-0b17be90bb30|![y]|![n]|![n]|![n]|
 |Excelsecu eSecu FIDO2 Fingerprint Key|6002f033-3c07-ce3e-d0f7-0ffe5ed42543|![y]|![y]|![n]|![n]|
 |Excelsecu eSecu FIDO2 Fingerprint Security Key|20f0be98-9af9-986a-4b42-8eca4acb28e4|![y]|![y]|![n]|![n]|
 |Excelsecu eSecu FIDO2 Fingerprint Security Key|d384db22-4d50-ebde-2eac-5765cf1e2a44|![y]|![y]|![n]|![n]|
@@ -81,10 +80,10 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |Excelsecu eSecu FIDO2 PRO Security Key|bbf4b6a7-679d-f6fc-c4f2-8ac0ddf9015a|![n]|![y]|![y]|![y]|
 |Excelsecu eSecu FIDO2 Security Key|cdbdaea2-c415-5073-50f7-c04e968640b6|![n]|![y]|![n]|![n]|
 |Feitian AllinOne FIDO2 Authenticator|12ded745-4bed-47d4-abaa-e713f51d6393|![y]|![y]|![y]|![y]|
-|Feitian BioPass FIDO2 Authenticator|77010bd7-212a-4fc9-b236-d2ca5e9d4084|![y]|![n]|![n]|![n]|
+|Feitian BioPass FIDO2 Authenticator|77010bd7-212a-4fc9-b236-d2ca5e9d4084|![y]|![y]|![n]|![n]|
 |Feitian BioPass FIDO2 Plus Authenticator|b6ede29c-3772-412c-8a78-539c1f4c62d2|![y]|![y]|![n]|![n]|
-|Feitian ePass FIDO2 Authenticator|833b721a-ff5f-4d00-bb2e-bdda3ec01e29|![n]|![n]|![n]|![n]|
-|Feitian ePass FIDO2-NFC Authenticator|ee041bce-25e5-4cdb-8f86-897fd6418464|![n]|![n]|![n]|![n]|
+|Feitian ePass FIDO2 Authenticator|833b721a-ff5f-4d00-bb2e-bdda3ec01e29|![n]|![y]|![n]|![n]|
+|Feitian ePass FIDO2-NFC Authenticator|ee041bce-25e5-4cdb-8f86-897fd6418464|![n]|![y]|![y]|![n]|
 |Feitian ePass FIDO2-NFC Series (CTAP2.1, CTAP2.0, U2F)|234cd403-35a2-4cc2-8015-77ea280c77f5|![n]|![y]|![y]|![n]|
 |Feitian iePass FIDO Authenticator|3e22415d-7fdf-4ea4-8a0c-dd60c4249b9d|![n]|![y]|![n]|![n]|
 |FIDO KeyPass S3|f4c63eff-d26c-4248-801c-3736c7eaa93a|![n]|![y]|![n]|![n]|
@@ -120,7 +119,7 @@ The following table lists FIDO2 security key models listed in MDS version 93. Th
 |NXP Semiconductros FIDO2 Conformance Testing CTAP2 Authenticator|07a9f89c-6407-4594-9d56-621d5f1e358b|![n]|![n]|![n]|![n]|
 |Nymi FIDO2 Authenticator|0acf3011-bc60-f375-fb53-6f05f43154e0|![y]|![n]|![y]|![n]|
 |OCTATCO EzFinger2 FIDO2 AUTHENTICATOR|a1f52be5-dfab-4364-b51c-2bd496b14a56|![y]|![n]|![n]|![n]|
-|OneSpan DIGIPASS FX1 BIO|30b5035e-d297-4ff1-b00b-addc96ba6a98|![y]|![y]|![n]|![y]|
+|OneSpan DIGIPASS FX1 BIO|30b5035e-d297-4ff1-b00b-addc96ba6a98|![y]|![y]|![y]|![y]|
 |OneSpan DIGIPASS FX1a|30b5035e-d297-4ff1-010b-addc96ba6a98|![y]|![y]|![n]|![n]|
 |OneSpan DIGIPASS FX7|30b5035e-d297-4ff7-b00b-addc96ba6a98|![n]|![y]|![n]|![y]|
 |OneSpan FIDO Touch|30b5035e-d297-4fc1-b00b-addc96ba6a97|![n]|![y]|![n]|![y]|

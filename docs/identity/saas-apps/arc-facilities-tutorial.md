@@ -93,9 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows User Attributes & Claims with the pen next to Groups returned in claim called out.](./media/arc-facilities-tutorial/config01.png)
 
-	![Screenshot shows Group Claims with All groups and Group I D selected and the Save button called out.](./media/arc-facilities-tutorial/config02.png)
-
-	b. Select **All Groups** from the radio list.
+	b. In the **Group Claims** dialog, select **All Groups** from the radio list.
 
 	c. Select **Source Attribute** of **Group ID**.
 

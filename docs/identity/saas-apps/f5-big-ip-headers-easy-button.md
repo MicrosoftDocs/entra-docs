@@ -134,16 +134,9 @@ Initiate the APM's **Guided Configuration** to launch the **Easy Button** Templa
 
 1. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-   ![Screenshot for Configure Easy Button- Install the template.](./media/f5-big-ip-headers-easy-button/easy-button-template.png)
+2. Under **Configuring the solution using the below steps will create the required objects**, review the list of configuration steps and select **Next**.
 
-2. Review the list of configuration steps and select **Next**.
-
-   ![Screenshot for Configure Easy Button - List configuration steps.](./media/f5-big-ip-headers-easy-button/configuration-steps.png)
-
-3. Follow the sequence of steps required to publish your application.
-
-   ![Screenshot of Configuration steps flow.](./media/f5-big-ip-headers-easy-button/configuration-steps-flow.png#lightbox)
-
+3. Under **Guided Configuration**, follow the sequence of steps required to publish your application.
 
 ### Configuration Properties
 
@@ -193,17 +186,17 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 ### Microsoft Entra ID
 
-This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. For this scenario, select **F5 BIG-IP APM Azure AD Integration > Add**.
+This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps.
 
-   ![Screenshot for Azure configuration add BIG-IP application.](./media/f5-big-ip-headers-easy-button/azure-configuration-add-app.png)
+For this scenario, in the **Azure Configuration** page, select **F5 BIG-IP APM Azure AD Integration** > **Add**.
 
 #### Azure Configuration
 
-1. Enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users will see on [MyApps portal](https://myapplications.microsoft.com/).
+In the **Azure Configuration** page, follow these steps:
+
+1. Under **Configuration Properties**, enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users will see on [MyApps portal](https://myapplications.microsoft.com/).
 
 2. Do not enter anything in the **Sign On URL (optional)** to enable IdP initiated sign-on.
-   
-   ![Screenshot for Azure configuration add display info.](./media/f5-big-ip-headers-easy-button/azure-configuration-properties.png)
 
 3. Select the refresh icon next to the **Signing Key** and **Signing Certificate** to locate the certificate you imported earlier.
  
@@ -233,8 +226,6 @@ For this example, you can include one more attribute:
 
 In the **Additional User Attributes tab**, you can enable session augmentation required by a variety of distributed systems such as Oracle, SAP, and other JAVA based implementations requiring attributes stored in other directories. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, and so on. 
 
-   ![Screenshot for additional user attributes.](./media/f5-big-ip-headers-easy-button/additional-user-attributes.png)
-
 >[!NOTE] 
 >This feature has no correlation to Microsoft Entra ID but is another source of attributes. 
 
@@ -244,7 +235,7 @@ Conditional Access policies are enforced post Microsoft Entra pre-authentication
 
 The **Available Policies** view, by default, will list all Conditional Access policies that do not include user based actions.
 
-The **Selected Policies** view, by default, displays all policies targeting All cloud apps. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
+The **Selected Policies** view, by default, displays all policies targeting All resources. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 

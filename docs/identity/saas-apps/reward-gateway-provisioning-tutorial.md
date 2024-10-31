@@ -111,8 +111,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Reward Gateway**.
 
-	![Screenshot of the Mappings section with the Synchronize Microsoft Entra users to Reward Gateway option called out.](media/reward-gateway-provisioning-tutorial/user-mappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Reward Gateway in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Reward Gateway for update operations. Select the **Save** button to commit any changes.
 
 	![Screenshot of the Attribute Mappings section with six mappings displayed.](media/reward-gateway-provisioning-tutorial/user-attributes.png)

@@ -116,8 +116,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 11. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Bonusly**.
 
-	:::image type="content" source="./media/bonusly-provisioning-tutorial/UserMappings.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra users to Bonusly is highlighted." border="false":::
-
 12. Review the user attributes that are synchronized from Microsoft Entra ID to Bonusly in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Bonusly for update operations. Select the **Save** button to commit any changes.
 
 	:::image type="content" source="./media/bonusly-provisioning-tutorial/UserAttributeMapping.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra attributes, corresponding Bonusly attributes, and the matching status." border="false":::
@@ -134,7 +132,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 16. When you are ready to provision, click **Save**.
 
-	:::image type="content" source="./media/bonusly-provisioning-tutorial/SaveProvisioning.png" alt-text="Screenshot of the Bonusly - Provisioning page, with the Save button highlighted." border="false":::
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Bonusly.
 

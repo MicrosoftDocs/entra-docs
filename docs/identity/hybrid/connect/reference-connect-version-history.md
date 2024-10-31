@@ -19,6 +19,7 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 
 This article helps you keep track of the versions that have been released and understand what the changes are in the latest version.
 
+
 ## Looking for the latest versions?
 
 >[!IMPORTANT]
@@ -30,8 +31,6 @@ This article helps you keep track of the versions that have been released and un
 >
 >For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
 >For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
-
-
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
@@ -68,8 +67,9 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.3.2.0](#2320)|21 Feb 2025(12 months after release of 2.3.6.0)|
 |[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0)|
 |[2.3.8.0](#2380)|25 Jul 2025 (12 months after release of 2.3.20.0)|
-|[2.3.20.0](#23200)|x Oct 2025 (12 months after release of 2.4.18.0)|
-|[2.4.18.0](#23200)|TBD|
+|[2.3.20.0](#23200)|7 Oct 2025 (12 months after release of 2.4.18.0)|
+|[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
+|[2.4.21.0](#24210)|TBD|
 
 **All other versions are not supported**
 
@@ -92,6 +92,18 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.4.21.0
+
+### Release status
+
+10/09/2024: Released for download
+
+### Bug fixes
+
+- Fixed an issue with non-commercial clouds.
+
+
 
 ## 2.4.18.0
 

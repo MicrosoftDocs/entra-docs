@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: dmwendia
 ms.service: entra-external-id
  
-ms.subservice: customers
-ms.topic: sample
+ms.subservice: external
+ms.topic: quickstart
 ms.date: 08/04/2023
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn how to authenticate users in an external tenant using a sample Node.js CLI application

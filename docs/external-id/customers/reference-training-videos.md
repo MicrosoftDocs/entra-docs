@@ -6,9 +6,9 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
-ms.date: 01/07/2024
+ms.date: 10/14/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -44,6 +44,12 @@ Microsoft Entra External ID videos are incorporated within our documentation and
 
 We regularly expand our video library, so be sure to subscribe to the Microsoft Security Channel for the latest updates. Here are some videos to help you get started with Microsoft Entra External ID.
 
+### Introduction to Microsoft Entra External ID
+
+Microsoft Entra External ID is Microsoft’s customer identity and access management (CIAM) platform. It helps control who has access to your external facing applications continually verify their online identity while ensuring their personal information and privacy remain safeguarded. This video gives you an introduction to Microsoft Entra External ID, its capabilities and what it’s like to use it as an end user.
+
+> [!VIDEO https://www.youtube.com/embed/XuxXCMOYiSc?si=yX21DVcKsozFPM0v]
+
 ### Get started with Microsoft Entra external ID
 
 This tutorial guides you through creating a new Microsoft Entra External ID tenant and helps you get started with running a sample app and signing in your users. It also explores the various components involved and discusses ways to enhance your configuration.
@@ -77,6 +83,12 @@ This video explains the concept of a custom claims provider, which enables you t
 
 > [!VIDEO https://www.youtube.com/embed/1tPA7B9ztz0?si=0VXQJmDfnSUv_jAz]
 The second part shows how to [configure Microsoft Entra ID custom claims provider](https://youtu.be/fxQGVIwX8_4?si=vwcYT7wn7OzL6MzK) with the token issuance start event type, which triggers just before a security token is issued.  This event allows you to call a REST API to add claims to the token that's returned to your application.
+
+### Edit user's profile
+
+In this video, we’ll explore the various methods available for accessing and editing user profiles in Microsoft Entra External ID.
+
+> [!VIDEO https://www.youtube.com/embed/_zKCgukVHYw?si=8T6TAdEorg4SHUUc]
 
 ### Microsoft Graph and continuous integration
 

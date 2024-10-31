@@ -105,7 +105,7 @@ conceptualContent:
           url: quickstart-single-page-app-react-sign-in.md
           itemType: quickstart
         - text: Web app
-          url: quickstart-web-app-aspnet-sign-in.md
+          url: quickstart-web-app-dotnet-core-sign-in.md
           itemType: quickstart
         - text: Desktop app
           url: quickstart-desktop-app-nodejs-electron-sign-in.md

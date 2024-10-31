@@ -24,14 +24,14 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 
 |Feature  |Limit  |
 |---------|---------|
-|Access Packages   |  4,000       |
-|Access Package Assignments     | 100,000        |
-|Access Package Assignments from a given automatic assignment policy      | 5,000        |
-|Catalogs     |   1,500      |
+|Access Packages   |  20,000       |
+|Access Package Assignments     | 300,000        |
+|Access Package Assignments from a given automatic assignment policy      | 15,000        |
+|Catalogs     |   7,500      |
 |Connected Organizations     |  2,500       |
 |Custom extensions     |  500       |
-|Policies     |  5,000       |
-|Requests (Within 3 months)     |  50,000       |
+|Policies     |  25,000       |
+|Requests (Within 3 months)     |  200,000       |
 
 ## Lifecycle Workflows
 

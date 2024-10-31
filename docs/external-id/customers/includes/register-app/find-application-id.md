@@ -1,7 +1,7 @@
 ---
 author: csmulligan
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: include
 ms.date: 09/06/2023
 ms.author: cmulligan

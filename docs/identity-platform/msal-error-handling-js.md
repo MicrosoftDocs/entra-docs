@@ -9,7 +9,7 @@ ms.date: 12/19/2023
 ms.reviewer: saeeda, hahamil
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As a developer using MSAL.js for authentication, I want to handle errors and exceptions effectively, so that I can troubleshoot and resolve issues in my application.
 
 ---

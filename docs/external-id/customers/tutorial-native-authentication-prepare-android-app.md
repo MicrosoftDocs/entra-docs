@@ -8,7 +8,7 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 05/30/2024
 ms.custom: developer
@@ -191,7 +191,7 @@ Your code should look something similar to the following snippet:
             }
         } 
  
-        private fun displaySignedInState(accountState: AccountState) { 
+        private fun displaySignedInState(accountResult: AccountState) { 
             val accountName = accountResult.getAccount().username 
             val textView: TextView = findViewById(R.id.accountText) 
             textView.text = "Cached account found: $accountName" 
