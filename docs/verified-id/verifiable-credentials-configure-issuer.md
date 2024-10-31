@@ -247,7 +247,7 @@ Now you're ready to issue your first verified credential expert card by running 
 
      :::image type="content" source="media/verifiable-credentials-configure-issuer/get-credentials.png" alt-text="Screenshot that shows how to choose to get the credential from the sample app.":::
 
-1. Using your mobile device, scan the QR code with the Authenticator app. You can also scan the QR code directly from your camera, which will open the Authenticator app for you.
+1. Using your mobile device, scan the QR code with the Authenticator app. For more info on scanning the QR code, please see the [FAQ section](verifiable-credentials-faq.md#scanning-the-qr-code).
 
      :::image type="content" source="media/verifiable-credentials-configure-issuer/scan-issuer-qr-code.png" alt-text="Screenshot that shows how to scan the QR code.":::
 
