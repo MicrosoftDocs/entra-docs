@@ -6,7 +6,7 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 10/07/2024
 ms.author: mimart
@@ -65,9 +65,9 @@ Create a Conditional Access policy in your external tenant that prompts users fo
 
    a. On the **Include** tab, choose one of the following options:
 
-      - Choose **All cloud apps**.
+      - Choose **All resources (formerly 'All cloud apps')**.
 
-      - Choose **Select apps** and select the link under **Select**. Find your app, select it, and then choose **Select**.
+      - Choose **Select resources** and select the link under **Select**. Find your app, select it, and then choose **Select**.
 
    b. On the **Exclude** tab, select any applications that don't require multifactor authentication.
 

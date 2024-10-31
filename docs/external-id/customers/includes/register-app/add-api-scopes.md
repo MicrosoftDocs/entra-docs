@@ -1,9 +1,9 @@
 ---
 author: kengaderdus
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: include
-ms.date: 03/30/2023
+ms.date: 08/29/2024
 ms.author: kengaderdus
 ms.manager: mwongerapk
 ---

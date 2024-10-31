@@ -7,7 +7,7 @@ ms.author: cwerner
 manager: celestedg
 ms.service: entra-external-id
 
-ms.subservice: customers
+ms.subservice: external
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 06/27/2024

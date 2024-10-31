@@ -5,7 +5,7 @@ services: active-directory
 author: garrodonnell
 manager: celestedg
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: godonnell

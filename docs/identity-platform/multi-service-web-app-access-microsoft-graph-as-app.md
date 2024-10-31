@@ -56,7 +56,7 @@ When accessing the Microsoft Graph, the managed identity needs to have proper pe
 # Install-Module Microsoft.Graph -Scope CurrentUser
 
 # The tenant ID
-$TenantId = "00001111-aaaa-2222-bbbb-3333cccc4444"
+$TenantId = "aaaabbbb-0000-cccc-1111-dddd2222eeee"
 
 # The name of your web app, which has a managed identity.
 $webAppName = "SecureWebApp-20201106120003" 

@@ -124,7 +124,7 @@ You can only cancel a pending request that hasn't yet been delivered or whose de
 
 ## Automatic assignment policies
 
-* Each automatic assignment policy can include at most 5000 users in scope of its rule. Other users in scope of the rule might not be assigned access.
+* Each automatic assignment policy can include at most 15,000 users in scope of its rule. Other users in scope of the rule might not be assigned access.
 
 ## Multiple policies
 
