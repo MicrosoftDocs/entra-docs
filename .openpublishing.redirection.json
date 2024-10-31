@@ -1296,6 +1296,16 @@
       "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-edit-profile.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-edit-profile",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-django-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-flask-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
+      "redirect_document_id": false
     }
   ]
 }
