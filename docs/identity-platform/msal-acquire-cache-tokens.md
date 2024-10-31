@@ -81,6 +81,9 @@ For web applications that use the [OpenID Connect authorization code flow](v2-pr
 
 The method of acquiring a token depends on whether it's a public client or confidential client application.
 
+> [!NOTE]
+> When acquiring tokens interactivelly using [authentication broker](msal-net-use-brokers-with-xamarin-apps.md), the authentication broker will do cache-lookup first and return cached token if available ([GitHub issue - acquireToken uses caching](https://github.com/AzureAD/microsoft-authentication-library-for-android/issues/2197#issuecomment-2447771586)).
+
 ### Public client applications
 
 In public client applications (desktop and mobile), you can:
