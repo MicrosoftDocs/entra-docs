@@ -59,17 +59,17 @@ items:
         - name: Browser-delegated authentication
           items:
               - name: Android (.NET MAUI) - sign in users
-                href: how-to-mobile-app-maui-sample-sign-in.md
+                href: /entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
               - name: Android (Kotlin)
                 items:
                   - name: Sign in users
-                    href: sample-mobile-app-android-kotlin-sign-in.md
+                    href: /entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                   - name: Sign in users and call an API
                     href: sample-mobile-app-android-kotlin-sign-in-call-api.md
               - name: iOS (Swift)
                 items:
                   - name: Sign in users
-                    href: sample-mobile-app-ios-swift-sign-in.md
+                    href: /entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                   - name: Sign in users and call an API
                     href: sample-mobile-app-ios-swift-sign-in-call-api.md
         - name: Native authentication
