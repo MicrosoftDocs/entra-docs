@@ -35,18 +35,6 @@ This page updates monthly, so revisit it regularly. If you're looking for items 
 
 ## October 2024
 
-### Change Announcement - Change in format for aud claim in access tokens for Microsoft Graph
-
-**Type:** Changed feature    
-**Service category:** Microsoft Graph    
-**Product capability:** Developer Experience    
-
-Considering our ongoing commitment to security, we're making a minor change to tokens issued for Microsoft Graph after 15 January 2025. In rare cases, this can cause impact to applications if the client application is parsing the access token and expecting a specific format of the [aud claim](../identity-platform/access-token-claims-reference.md#payload-claims).
-
-As described in [documentation](../identity-platform/access-tokens.md), access tokens should be parsed and validated only by the resource API, and client applications should treat the access token as an opaque string to avoid impact from this or future changes.
-
----
-
 ### Public Preview - Passkey authentication in brokered Microsoft apps on Android
 
 **Type:** New feature    
