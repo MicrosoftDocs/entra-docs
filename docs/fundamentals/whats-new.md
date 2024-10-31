@@ -65,16 +65,6 @@ The authentication methods migration guide (preview) in the Microsoft Entra admi
 
 ---
 
-### General Availability - Suspicious API Traffic detection for Workload Identities
-
-**Type:** New feature    
-**Service category:** Identity Protection    
-**Product capability:** Identity Security & Protection    
-
-This offline risk detection is reported when abnormal GraphAPI traffic, or directory enumeration of a service principal, is observed. The Suspicious API Traffic for service principals' detection might indicate abnormal reconnaissance or data exfiltration.
-
----
-
 ### General availability- SMS as an MFA method in Microsoft Entra External ID
 
 **Type:** New feature    
