@@ -615,8 +615,6 @@ Unlike the [auth_config_single_account.json](#auth_config_single_accountjson) co
 }
 ```
 
-[!INCLUDE [Help and support](includes/error-handling-and-tips/help-support-include.md)]
-
 #### [iOS/macOS](#tab/ios-macos-workforce)
 
 Read these sections to learn more about this quickstart.
@@ -748,9 +746,9 @@ self.applicationContext!.getCurrentAccount(with: nil) { (currentAccount, previou
 | `scopes` | Contains the scopes being requested (that is, `[ "user.read" ]` for Microsoft Graph or `[ "<Application ID URL>/scope" ]` for custom web APIs (`api://<Application ID>/access_as_user`)) |
 | `account` | The account a token is being requested for. This quickstart is about a single account application. If you want to build a multi-account app you'll need to define logic to identify which account to use for token requests using `accountsFromDeviceForParameters:completionBlock:` and passing correct `accountIdentifier` |
 
-[!INCLUDE [Help and support](includes/error-handling-and-tips/help-support-include.md)]
-
 ---
+
+[!INCLUDE [Help and support](includes/error-handling-and-tips/help-support-include.md)]
 
 ## Next steps
 
