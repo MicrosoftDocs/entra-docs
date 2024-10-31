@@ -73,3 +73,20 @@ In this article, you do the following tasks:
     - Configure and run sample web API.
 
 ---
+
+## Register an application
+
+[!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
+
+## Add a platform redirect URL
+
+#### [Android](#tab/android-external)
+
+[!INCLUDE [Enable public client](../external-id/customers/includes/register-app/add-platform-redirect-url-android.md)]
+
+#### [iOS/macOS](#tab/ios-macos-external)
+
+[!INCLUDE [Enable public client](../external-id/customers/includes/register-app/add-platform-redirect-url-ios.md)]
+
+---
+
