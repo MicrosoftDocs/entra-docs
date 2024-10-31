@@ -16,9 +16,6 @@ ms.author: billmath
 The following documentation will guide you through creating and deploying business partner and external user scenarios.
 
 
-
-
-
 :::zone pivot="identity-governance-guest-overview"
 
 ## Overview: An overview of business partner and external user scenarios
@@ -37,11 +34,11 @@ Consider each of the following business processes and the examples of how partne
 
 |Business Process|Definition|Business Partner and External User Example|
 |-----|-----|-----|
-|Business Process Management|A systematic approach to improving an organization’s workflows and operations to increase efficiency, effectiveness, and adaptability. Differs from supply chain orchestration in that it is more general and applies across all business areas.|A financial services company that partners with a credit scoring agency to streamline the loan approval process.|
+|Business Process Management|A systematic approach to improving an organization’s workflows and operations.|A financial services company that partners with a credit scoring agency to streamline the loan approval process.|
 |Integrated Business Planning|A holistic approach that aligns an organization’s strategic goals, operational plans, and financial forecasts to create a cohesive, unified framework for decision-making.|The retail company shares sales forecasts and inventory levels with suppliers through an integrated planning platform.|
-|Customer Relations Management|A strategic approach and system for managing an organization’s interactions with its customers, focusing on improving customer satisfaction, loyalty, and retention.|An automobile company in coordinating, supporting, and optimizing their interactions with dealerships.| 
-|Supply Chain Orchestration|Coordinated management of all supply chain processes to ensure efficiency, visibility, and responsiveness across all stages, from procurement to delivery|Any company that has a supply chain and needs to coordinate with suppliers and vendors.|
-|Business Partner Account Lifecycle|The end-to-end process of managing the relationships and interactions between an organization and its external business partners (such as suppliers, vendors, and distributors).|a technology company that partners with a software vendor to enhance its product offerings.|
+|Customer Relations Management|A strategic approach and system for managing an organization’s interactions with its customers.|An automobile company in coordinating, supporting, and optimizing their interactions with dealerships.| 
+|Supply Chain Orchestration|Coordinated management of all supply chain processes to ensure efficiency, visibility, and responsiveness across all stages, from procurement to delivery.|Any company that has a supply chain and needs to coordinate with suppliers and vendors.|
+|Business Partner Account Lifecycle|The end-to-end process of managing the relationships and interactions between an organization and its external business partners.|a technology company that partners with a software vendor to enhance its product offerings.|
 |B2B Collaboration with Other Organizations|Strategic partnership between two or more businesses to achieve common objectives through shared resources, information, and efforts.|A local coffee shop that collaborates with a bakery to enhance both businesses' offerings.|
 
 Understanding your scenario helps in designing appropriate access controls and ensuring smooth collaboration with external individuals. 
