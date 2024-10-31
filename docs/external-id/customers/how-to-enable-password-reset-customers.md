@@ -6,7 +6,7 @@ author: csmulligan
 manager: CelesteDG
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 02/29/2024
 ms.author: cmulligan

@@ -147,8 +147,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     b. Click **ENABLE SSO**.
 
-    ![Autotask Single Sign-on approve configuration](./media/autotaskworkplace-tutorial/configuration-2.png)
-
     c. Select the **I confirm this information is correct and I trust this IdP** check box.
 
     d. Click **APPROVE**.
