@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 10/17/2024
+ms.date: 10/31/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
@@ -274,7 +274,7 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
 
 To assign a group to an enterprise app, replace `Get-MgUser` with `Get-MgGroup` and replace `New-MgUserAppRoleAssignment` with `New-MgGroupAppRoleAssignment`.
     
-For more information on how to assign a group to an application role, see the documentation for [New-MgGroupAppRoleAssignment](https://learn.microsoft.com/powershell/module/microsoft.graph.applications/new-mggroupapproleassignment).
+For more information on how to assign a group to an application role, see the documentation for [New-MgGroupAppRoleAssignment](/powershell/module/microsoft.graph.applications/new-mggroupapproleassignment).
 
 ## Unassign users and groups from an application using Microsoft Graph PowerShell
 
