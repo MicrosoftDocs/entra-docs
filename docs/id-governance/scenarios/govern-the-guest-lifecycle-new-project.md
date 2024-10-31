@@ -236,7 +236,7 @@ An access package enables you to do a one-time setup of resources and policies t
 
 Policies specify who can request the access package, along with approval and lifecycle settings, or how access is automatically assigned. 
 
-For more information, see [Onboard external users with entitlement management](../id-governance/entitlement-management-onboard.md)
+For more information, see [Onboard external users with entitlement management](../entitlement-management-onboard-external-user.md)
 
 ####  Providing onboarding access to business partners and external users 
 With entitlement management, you can define a policy that allows users from organizations you specify to be able to self-service an access package. That policy includes whether approval is required, whether access reviews are required, and an expiration date for the access.
@@ -253,7 +253,7 @@ Lifecycle workflows are a identity governance feature that enables organizations
 - **Mover**: When an individual moves between boundaries within an organization. This movement might require more access or authorization. An example is a user who was in marketing and is now a member of the sales organization.
 - **Leaver**: When an individual leaves the scope of needing access. This movement might require the removal of access. Examples are an employee who's retiring or an employee who's terminated.
 
-Workflows contain specific processes that run automatically against users as they move through their lifecycle. Workflows consist of [tasks](lifecycle-workflow-tasks.md) and [execution conditions](understanding-lifecycle-workflows.md#understanding-lifecycle-workflows).
+Workflows contain specific processes that run automatically against users as they move through their lifecycle. Workflows consist of [tasks](../lifecycle-workflow-tasks.md) and [execution conditions](../understanding-lifecycle-workflows.md#understanding-lifecycle-workflows).
 
 
 Many of the tasks that will allow business partners and external users to get started, can be automated using lifecycle workflows.  
@@ -365,7 +365,7 @@ For more information, see [Govern access for external users in entitlement manag
 ## Use Lifecycle Workflows to assist with offboarding tasks
 Lifecycle workflows are a identity governance feature that enables organizations to manage Microsoft Entra users by automatings some basic lifecycle processes.
 
-Workflows contain specific processes that run automatically against users as they move through their lifecycle. Workflows consist of [tasks](lifecycle-workflow-tasks.md) and [execution conditions](understanding-lifecycle-workflows.md#understanding-lifecycle-workflows).
+Workflows contain specific processes that run automatically against users as they move through their lifecycle. Workflows consist of [tasks](../lifecycle-workflow-tasks.md) and [execution conditions](../understanding-lifecycle-workflows.md#understanding-lifecycle-workflows).
 
 For more information, see [Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center](../tutorial-scheduled-leaver-portal.md)
 
