@@ -65,13 +65,13 @@ items:
                   - name: Sign in users
                     href: /entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                   - name: Sign in users and call an API
-                    href: sample-mobile-app-android-kotlin-sign-in-call-api.md
+                    href: /entra/identity-platform/quickstart-mobile-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
               - name: iOS (Swift)
                 items:
                   - name: Sign in users
                     href: /entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                   - name: Sign in users and call an API
-                    href: sample-mobile-app-ios-swift-sign-in-call-api.md
+                    href: /entra/identity-platform/quickstart-mobile-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
         - name: Native authentication
           items:
             - name: Android (Kotlin)
