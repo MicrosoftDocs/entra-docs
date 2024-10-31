@@ -135,6 +135,105 @@ To register your application and add the app's registration information to your 
 
 ---
 
+## Configure the sample application
+
+#### [Android](#tab/android-workforce)
+
+1. In Android Studio's project pane, navigate to **app\src\main\res**.
+2. Right-click **res** and choose **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.
+3. In **app** > **src** > **main** > **res** > **raw**, go to JSON file called `auth_config_single_account.json` and paste the MSAL Configuration that you saved earlier.
+
+   Below the redirect URI, paste:
+
+   ```json
+     "account_mode" : "SINGLE",
+   ```
+
+   Your config file should resemble this example:
+
+   ```json
+   {
+     "client_id": "00001111-aaaa-bbbb-3333-cccc4444",
+     "authorization_user_agent": "WEBVIEW",
+     "redirect_uri": "msauth://com.azuresamples.msalandroidapp/00001111%cccc4444%3D",
+     "broker_redirect_uri_registered": true,
+     "account_mode": "SINGLE",
+     "authorities": [
+       {
+         "type": "AAD",
+         "audience": {
+           "type": "AzureADandPersonalMicrosoftAccount",
+           "tenant_id": "common"
+         }
+       }
+     ]
+   }
+   ```
+
+   As this tutorial only demonstrates how to configure an app in Single Account mode, see [single vs. multiple account mode](./single-multi-account.md) and [configuring your app](./msal-configuration.md) for more information
+
+##  Run the sample app
+
+Select your emulator, or physical device, from Android Studio's **available devices** dropdown and run the app.
+
+The sample app starts on the **Single Account Mode** screen. A default scope, **user.read**, is provided by default, which is used when reading your own profile data during the Microsoft Graph API call. The URL for the Microsoft Graph API call is provided by default. You can change both of these if you wish.
+
+![Screenshot of the MSAL sample app showing single and multiple account usage.](media/quickstart-v2-android/quickstart-sample-app.png)
+
+Use the app menu to change between single and multiple account modes.
+
+In single account mode, sign in using a work or home account:
+
+1. Select **Get graph data interactively** to prompt the user for their credentials. You'll see the output from the call to the Microsoft Graph API in the bottom of the screen.
+2. Once signed in, select **Get graph data silently** to make a call to the Microsoft Graph API without prompting the user for credentials again. You'll see the output from the call to the Microsoft Graph API in the bottom of the screen.
+
+In multiple account mode, you can repeat the same steps. Additionally, you can remove the signed-in account, which also removes the cached tokens for that account.
+
+#### [iOS/macOS](#tab/ios-macos-workforce)
+
+If you selected Option 1 above, you can skip these steps.
+1. Open the project in XCode.
+1. Edit **ViewController.swift** and replace the line starting with 'let kClientID' with the following code snippet. Remember to update the value for `kClientID` with the clientID that you saved when you registered your app earlier in this quickstart:
+
+   ```swift
+   let kClientID = "Enter_the_Application_Id_Here"
+   ```
+
+1. If you're building an app for [Microsoft Entra national clouds](/graph/deployments#app-registration-and-token-service-root-endpoints), replace the line starting with 'let kGraphEndpoint' and 'let kAuthority' with correct endpoints. For global access, use default values:
+
+   ```swift
+   let kGraphEndpoint = "https://graph.microsoft.com/"
+   let kAuthority = "https://login.microsoftonline.com/common"
+   ```
+
+1. Other endpoints are documented [here](/graph/deployments#app-registration-and-token-service-root-endpoints). For example, to run the quickstart with Microsoft Entra Germany, use following:
+
+   ```swift
+   let kGraphEndpoint = "https://graph.microsoft.de/"
+   let kAuthority = "https://login.microsoftonline.de/common"
+   ```
+
+3. Open the project settings. In the **Identity** section, enter the **Bundle Identifier**.
+4. Right-click **Info.plist** and select **Open As** > **Source Code**.
+5. Under the dict root node, replace `Enter_the_bundle_Id_Here` with the ***Bundle Id*** that you used in the portal. Notice the `msauth.` prefix in the string.
+
+   ```xml
+   <key>CFBundleURLTypes</key>
+   <array>
+      <dict>
+         <key>CFBundleURLSchemes</key>
+         <array>
+            <string>msauth.Enter_the_Bundle_Id_Here</string>
+         </array>
+      </dict>
+   </array>
+   ```
+
+6. Build and run the app!
+
+---
+
+
 ::: zone-end 
 
 ::: zone pivot="external"
