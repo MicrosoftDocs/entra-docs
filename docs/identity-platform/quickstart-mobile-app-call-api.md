@@ -8,7 +8,6 @@ ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 10/30/2024
 ms.author: henrymbugua
-zone_pivot_groups: entra-tenants
 
 #Customer intent: As a developer, I want to configure a sample mobile app so that I can sign in my users and call web API by using Microsoft identity platform.
 ---
