@@ -137,9 +137,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "S A M L Integration" setting with the "configure" action selected.](./media/happyfox-tutorial/configure.png)
 
-4. Inside SAML configuration section, paste the **Login URL** value, which you have into **SSO Target URL** textbox.
-
-	![Screenshot that shows the "S A M L Configuration" section with the "S S O Target U R L" textbox highlighted.](./media/happyfox-tutorial/target.png)
+4. In the **SAML Configuration** section, in the **SSO Target URL** textbox, paste the **Login URL** value from the **Set up HappyFox** section.
 
 5. Open the certificate downloaded from Azure portal in notepad and paste its content in **IdP Signature** section.
 
