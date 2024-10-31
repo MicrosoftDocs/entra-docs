@@ -43,7 +43,7 @@ Consider each of the following business processes and the examples of how partne
 
 Understanding your scenario helps in designing appropriate access controls and ensuring smooth collaboration with external individuals. 
 
-## Solution outline
+## Areas of a new governance scenario for business partners and external users
 A new business partner and external user solution typically involve the following areas. They are:
 
 :::image type="content" source="media/external-guest-new/govern-access-1.png" alt-text="Conceputal drawing of governing access to your resources." lightbox="media/external-guest-new/govern-access-1.png":::
