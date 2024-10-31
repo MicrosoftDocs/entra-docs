@@ -299,14 +299,6 @@ John uses his own credentials to sign in securely eliminating the need for passw
 
 For more information, see [Add B2B collaboration users in the Microsoft Entra admin center](../../external-id/add-users-administrator.yml) and [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md)
 
-### Example - Redemption via invitation email: 
-John, a guest user, receives an email invitation from Contoso to access their internal portal. He clicks on the link provided in the email, which takes him to the Contoso’s sign-in page. Here, John is presented with the company’s privacy terms and conditions, which he reads through and accepts. He then signs-in using his existing email account. With the sign-in process complete, John is granted access to the Contoso portal, where he can now seamlessly collaborate with internal users. For more information, see [Redemption process through the invitation email](../../external-id/redemption-experience.md#redemption-process-through-the-invitation-email)
-
-### Example - Redemption via direct link: 
-In another instance, Jane, another guest user, receives a direct link to the Contoso Ltd. application from her contact at the company. She clicks on the link, which directs her to the sign-in page. Jane reviews and accepts the privacy terms and conditions before signing in with her existing email account. Once authenticated, she gains access to the application and can start working with her Contoso Ltd. colleagues. For more information, see [Redemption process through a direct link](../../external-id/redemption-experience.md#redemption-process-through-a-direct-link)
-
-### Example - Redemption via common endpoint URL: 
-Meanwhile, Alex, a guest user, navigates to the common endpoint URL, myapps.microsoft.com. He selects the option to sign-in to an organization and enters the domain name of Contoso Ltd. After reviewing and accepting the privacy terms and conditions, Alex signs in using his existing email account. Successfully authenticated, Alex can now access the resources provided by Contoso Ltd., ready to collaborate and contribute.  For more information, see [Redemption process and sign-in through a common endpoint](../../external-id/redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint)
 
 ### Example - Iterate additional resources via direct assignment
 Now you as an IT administrator have a requirement to bypass access requests and directly assign specific users to an access package, granting the external team instant access. you'll create the first access package assignment policy in the access package. You review the access package’s policies to confirm that it permits external users to be added directly. 
