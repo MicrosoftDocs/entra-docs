@@ -145,8 +145,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Navigate to **User Management** > **Auth Configurations** and click **Add SAML** button.
 
-    ![Screenshot shows SAML settings.](./media/eccentex-appbase-for-azure-tutorial/users.png "SAML settings")
-
 1. In the **New SAML Configuration** page, perform the following steps.
 
     ![Screenshot shows the Azure SAML configuration.](./media/eccentex-appbase-for-azure-tutorial/configuration.png "SAML Configuration")

@@ -150,9 +150,10 @@ After the extension is enabled, you must enable SSO for your account.
 1. Go to **Settings**.
 1. In the side menu, select **Authentication**.
 1. Select **SSO (Single Sign-On)**.
-1. Enter additional authentication information as shown in the following image, and then select **Save**.
-
-![Screenshot of SSO settings](media/hub-planner-tutorial/sso-settings.png)
+1. For **SAML 2.0 Endpoint URL(HTTP)**, enter your **Login URL**.
+1. For **Identity Provider Issuer**, enter your Microsoft Entra identifier.
+1. For **X.509 certificate**, enter your certificate.
+1. Select **Save**.
 
 ### Create Hub Planner test user
 
