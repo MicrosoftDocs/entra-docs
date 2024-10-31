@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/27/2024
+ms.date: 10/31/2024
 
 ms.author: justinha
 author: justinha
@@ -41,23 +41,25 @@ Hardware OATH tokens that you add with Microsoft Graph for this preview refresh 
 
 Feature | Description | API/Portal support | Role requirement
 --------|-------------|--------------------|-----------------
-[Authentication method policy for hardware OATH tokens](#authentication-method-policy-for-hardware-oath-tokens) | You can scope the **Hardware OATH** method to specific users and groups. No need to use the legacy tenant-level setting that applies to both hardware and software OATH tokens. | API - Available<br>UX – During the private preview. | Global Administrator<br>Authentication Policy Administrator
+[Authentication method policy for hardware OATH tokens](#authentication-method-policy-for-hardware-oath-tokens) | You can scope the **Hardware OATH** method to specific users and groups. No need to use the legacy tenant-level setting that applies to both hardware and software OATH tokens. | API available<br>UX – During the private preview. | Global Administrator<br>Authentication Policy Administrator
 [User authentication methods in Microsoft Graph](#user-authentication-methods-in-microsoft-graph) | Assign and activate a token from the tenant inventory to a specific user under the user’s authentication method in the Microsoft Entra admin center. | API, UX – available. | Global Administrator<br>Authentication Administrator<br>Privileged Authentication Administrator (to assign a token to a privileged user)
 [User self-assignment and activation](#user-self-assignment-and-activation) | Users can assign and activate token on themselves from the security info flow. | API – Available.<br>Security Info UX – will be become available during the preview. | Users manage themselves 
 
-### Differences in the preview refresh
+### Improvements in the preview refresh
 
 This hardware OATH token preview refresh improves flexibility and security for organizations by removing Global Administrator requirements. 
-Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators. They can also let end users self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) page.
+Organizations can delegate token creation, assignment, and activation to Privileged Authentication Authentication Policy Administrator. 
 
-The following table compares the role requirements to manage hardware OATH tokens in the preview refresh versus original preview option.
+End users can also self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) page. For more information, see [User self-assignment and activation](#user-self-assignment-and-activation).
 
-| Task | Original preview | Preview refresh |
-|------|------------------|-----------------|
-| Create a token | Global Administrator | Privileged Authentication Administrator |
-| Assign and activate a token | Global Administrator | Privileged Authentication Administrator<br>End user |
-| Unassign and deactivate a token | Global Administrator | Privileged Authentication Administrator<br>Authentication Administrator<br>End user |
-| Delete a token | Global Administrator | Privileged Authentication Administrator |
+The following table compares the administrator role requirements to manage hardware OATH tokens in the preview refresh versus original preview option.
+
+| Task | Details | Original preview | Preview refresh |
+|------|---------|------------------|-----------------|
+| Create | Create a new token in the tenant’s inventory. | Global Administrator | Authentication Policy Administrator |
+| Read   | Read a token from the tenant’s inventory; doesn't return the secret. | Global Administrator | Authentication Policy Administrator |
+| Update | Update a token in the tenant. For example, update manufacturer or module; Secret can't be updated. | Global Administrator | Authentication Policy Administrator |
+| Delete a token | Delete a token from the tenant’s inventory. | Global Administrator | Authentication Policy Administrator |
 
 Another difference pertains to end users. In the legacy multifactor authentication (MFA) policy, hardware and software OATH tokens can only be enabled together. If you enable OATH tokens in the legacy MFA policy, end users see an option to add Hardware OATH tokens in their Security info page.
 
@@ -87,7 +89,7 @@ page. Please allow an hour or so for this policy to get updated.
 
 You can use the following Microsoft Graph examples to assign and activate tokens for a user. 
 You can allow assignment without activation. 
-The following examples require the [Privileged Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) role.
+The following examples require the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 
 
 List tokens: 
@@ -189,9 +191,20 @@ POST https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551
 
 The next sections cover different scenarios to demonstrate options for different roles create, assign, and activate tokens. 
 
-#### Scenario 1: Admin Creates, Assigns, and Activates Token: creating, assigning, and activating a token as an admin, including the necessary API calls and verification steps.
+| Task | Details | Token state | Role requirement |
+|------|---------|------------------|-----------------|
+| Create | Assign a token from the inventory to a user in the tenant. | Assigned | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
+| Read   | Read the token of the userl doesn't return the secret. | Activated / Assigned  (depends if the token was already activated or not) | Member (self)<br>Authentication Administrator (only has restricted Read, not standard Read)<br>Privileged Authentication Administrator  |
+| Update | Update the token of the user, such as provide current 6-digit code for activation, or change token name. | Activated | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
+| Delete | Remove the token from the user. The token goes back to the token inventory. | Available (back to the tenant inventory) | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
 
-Let's look at an example where a Privileged Authentication Administrator creates a token and assigns it to a user. For the body of the POST in this example, you can find the serial number from your device and the secretKey is delivered to you.
+
+
+#### Scenario 1: Admin creates, assigns, and activates a hardware OATH token 
+
+This scenario cover how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps.
+
+Let's look at an example where an Authentication Administrator creates a token and assigns it to a user. For the body of the POST in this example, you can find the **serialNumber** from your device and the **secretKey** is delivered to you.
 
 ```msgraph-interactive
 POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
@@ -199,13 +212,13 @@ POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hard
 "serialNumber": "GALT11420104", 
 "manufacturer": "Thales", 
 "model": "OTP 110 Token", 
-"secretKey": "F3QROCK7NM47BBYVS6FZOVZ42JRLQ56F", 
+"secretKey": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u", 
 "timeIntervalInSeconds": 30, 
 "assignTo": {"id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}
 }
 ```
 
-The response includes the token ID, and the user ID that the token is assigned to:
+The response includes the token **id**, and the user **id** that the token is assigned to:
 
 ```http
 {
@@ -227,7 +240,7 @@ The response includes the token ID, and the user ID that the token is assigned t
 }
 ```
 
-Here's how the Privileged Authentication Administrator can activate the token. Replace the verifcation code in the body with the code from your hardware OATH token.
+Here's how the Authentication Administrator can activate the token. Replace the verifcation code in the body with the code from your hardware OATH token.
 
 ```msgraph-interactive
 POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods/325330ea-fcdb-41e3-bc21-8b89bbcb0e16/activate
@@ -242,14 +255,57 @@ To validate the token is activated, sign in as the test user.
 
 #### Scenario 2: Admin creates and assigns a token that a user activates
 
-In this scenario, a Privileged Authentication Administrator creates and assigns a token, and then a user can activate it on their Security info page.
+In this scenario, an Authentication Administrator creates and assigns a token, and then a user can activate it on their Security info page.
 
 
 #### Scenario 3: Admin creates a token that a user self-assigns and activates
 
-In this scenario, a Privileged Authentication Administrator creates tokens without assignment, and users self-assign and activate the tokens.
+In this scenario, an Authentication Administrator creates tokens without assignment, and users self-assign and activate the tokens.
 
 
+### Troubleshooting
+
+#### User has two tokens with the same SerialNumber
+
+A user might have two instances of the same hardware OATH token registered as authentication methods. This happens if the legacy token isn't removed from **OATH tokens (Preview)** in the Microsoft Entra admin center after it's uploaded by using Microsoft Graph.
+
+When this happens, both instances of the token are listed as registered for the user:
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/users/{user-upn-or-objectid}/authentication/hardwareOathMethods
+```
+
+Both instances of the token are also listed in **OATH tokens (Preview)** in the Microsoft Entra admin center:
+
+:::image type="content" source="media/concept-authentication-oath-tokens/duplicate-tokens.png" alt-text="Screenshot of the duplicate tokens in the Microsoft Entra admin center.":::
+
+To identify and remove the legacy token.
+
+1. List all Hardware OATH tokens on the user.
+
+   ```msgraph-interactive
+   GET https://graph.microsoft.com/beta/users/{user-upn-or-objectid}/authentication/hardwareOathMethods
+   ```
+
+   Note the **id** of both tokens and copy the **serialNumber** of the duplicate token.
+
+1. Identify the legacy token. Only one token is returned in the response of the following command. That token was created by using Microsoft Graph.
+
+   ```msgraph-interactive
+   GET https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices?$filter=serialNumber eq '20033752'
+   ```
+
+1. Remove the legacy token assignment from the user. Now that you know the **id** of the new token, you can identify the **id** of the legacy token from the list returned in step 1. Craft the URL using the legacy token **id**.
+
+   ```msgraph-interactive
+   DELETE https://graph.microsoft.com/beta/users/{user-upn-or-objectid}/authentication/hardwareOathMethods/{legacyHardwareOathMethodId}
+   ```
+
+1. Delete the legacy token by using the legacy token **id** in this call.
+
+   ```msgraph-interactive
+   DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/{legacyHardwareOathMethodId}
+   ```
 
 ### Upload tokens in CSV format
 
