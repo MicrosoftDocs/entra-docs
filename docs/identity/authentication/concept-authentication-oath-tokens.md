@@ -98,10 +98,10 @@ List tokens:
 GET https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices 
 ```
 
-Delete a token: 
+Delete a token with token ID 3dee0e53-f50f-43ef-85c0-b44689f2d66d: 
 
 ```msgraph-interactive
-DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/325330ea-fcdb-41e3-bc21-8b89bbcb0e16
+DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/3dee0e53-f50f-43ef-85c0-b44689f2d66d
 
 
 Create a single token:
@@ -113,7 +113,7 @@ POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hard
 "serialNumber": "GALT11420104", 
 "manufacturer": "Thales", 
 "model": "OTP 110 Token", 
-"secretKey": "F3QROCK7NM47BBYVS6FZOVZ42JRLQ56F", 
+"secretKey": "Gg7Hh~8Ii9.-Jj0Kk1Ll2Mm3Nn4Oo5_Pp6Qq7Rr8", 
 "timeIntervalInSeconds": 30, 
 "hashFunction": "hmacsha1" 
 }
@@ -143,7 +143,7 @@ The response includes the token ID.
 Authentication Administrators and end users can unassign a token: 
 
 ```msgraph-interactive
-DELETE https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551/authentication/hardwareoathmethods/6c0272a7-8a5e-490c-bc45-9fe7a42fc4e0
+DELETE https://graph.microsoft.com/beta/users/66aa66aa-bb77-cc88-dd99-00ee00ee00ee/authentication/hardwareoathmethods/6c0272a7-8a5e-490c-bc45-9fe7a42fc4e0
 ```
 
 
@@ -160,7 +160,7 @@ PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/har
         "serialNumber": "GALT11420108", 
         "manufacturer": "Thales", 
         "model": "OTP 110 Token", 
-        "secretKey": "RBE6WEJDBDAAE6AYACIHC5ZLZW2XKPH6", 
+        "secretKey": "Bb2Cc~3Dd4.-Ee5Ff6Gg7Hh8Ii9Jj0_Kk1Ll2Mm3", 
         "timeIntervalInSeconds": 30, 
         "hashFunction": "hmacsha1" 
         },
@@ -169,7 +169,7 @@ PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/har
         "serialNumber": "GALT11420112", 
         "manufacturer": "Thales", 
         "model": "OTP 110 Token", 
-        "secretKey": "ZO3NHND67U335PZEMNF2EKD3UH5OHR4I", 
+        "secretKey": "Cc3Dd~4Ee5.-Ff6Gg7Hh8Ii9Jj0Kk1_Ll2Mm3Nn4", 
         "timeIntervalInSeconds": 30, 
         "hashFunction": "hmacsha1" 
         }
@@ -189,7 +189,7 @@ POST https://graph.microsoft.com/beta/users/0cadbf92-af6b-4cf4-ba77-3f381e059551
 
 ### User self-assignment and activation
 
-The next sections cover different scenarios to demonstrate options for different roles create, assign, and activate tokens. 
+
 
 | Task | Details | Token state | Role requirement |
 |------|---------|------------------|-----------------|
@@ -198,7 +198,9 @@ The next sections cover different scenarios to demonstrate options for different
 | Update | Update the token of the user, such as provide current 6-digit code for activation, or change token name. | Activated | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
 | Delete | Remove the token from the user. The token goes back to the token inventory. | Available (back to the tenant inventory) | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
 
+### Scenario use cases
 
+The next sections cover different scenarios to demonstrate options for different roles create, assign, and activate tokens. 
 
 #### Scenario 1: Admin creates, assigns, and activates a hardware OATH token 
 
@@ -240,10 +242,10 @@ The response includes the token **id**, and the user **id** that the token is as
 }
 ```
 
-Here's how the Authentication Administrator can activate the token. Replace the verifcation code in the body with the code from your hardware OATH token.
+Here's how the Authentication Administrator can activate the token. Replace the verifcation code in the Request body with the code from your hardware OATH token.
 
 ```msgraph-interactive
-POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods/325330ea-fcdb-41e3-bc21-8b89bbcb0e16/activate
+POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods/3dee0e53-f50f-43ef-85c0-b44689f2d66d/activate
 
 { 
     "verificationCode" : "903809" 
