@@ -76,7 +76,7 @@ Using some of the below features mentioned requires Microsoft Entra ID Governanc
 ## Discovery: Identify current lifecycle and governance processes for business partners and external users 
 Identify your current lifecycle and governance processes for external identities. This exercise will help you to determine applicable scenarios, feasibility and scope. 
 
-Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities. The processes covered here are also needed for guest users, suppliers and other guests, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
+Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities. The processes covered here are also needed for guest users, suppliers and other external users, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
 
 Because a governance scenario for business parnters and external users uses entitlement management, you should also review [Common scenarios in entitlement management](../entitlement-management-scenarios.md). This will provide you with the common scenarios for entitlement management based on a user's role. You should consider these while planning your solution.
 
@@ -85,7 +85,7 @@ You can also use the following table as a guide for additional areas to consider
 |Process|Description|
 |-----|-----|
 |Determine who initiates external collaboration|Generally, users seeking external collaboration know the applications to use, and when access ends. Therefore, determine users with delegated permissions to invite external users, create access packages, and complete access reviews.|
-|Enumerate guest users and organizations|External users might be Microsoft Entra B2B users with partner-managed credentials, or external users with locally provisioned credentials. Typically, these users are the Guest UserType.|
+|Enumerate business partners and external users|External users might be Microsoft Entra B2B users with partner-managed credentials, or external users with locally provisioned credentials. Typically, these users are the Guest UserType.|
 |Discover email domains and companyName property|You can determine external organizations with the domain names of external user email addresses.|
 |Use allowlist, blocklist, and entitlement management|Use the allowlist or blocklist to enable your organization to collaborate with, or block, organizations at the tenant level.|
 |Determine external user access|With an inventory of external users and organizations, determine the access to grant to the users.|
@@ -96,7 +96,7 @@ For more information, see [Discover the current state of external collaboration 
 
 
 ### Example - Identify current lifecycle and governance processes
-You're the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business guests like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
+You're the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business external users like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
 
 :::image type="content" source="media/external-guest-new/discover-1.png" alt-text="Conceputal drawing of an organization." lightbox="media/external-guest-new/discover-1.png":::
 
@@ -104,15 +104,15 @@ Some of your key requirements include,
 
  - Diverse guest onboarding needs with different departments requiring unique levels of access. 
  - Ensuring that guest users have the least privilege necessary to perform their tasks is critical and needs robust conditional access policies and multi-factor authentication to protect sensitive data. 
- - Seamless and use friendly onboarding process for both you as an IT admin, and your business guests. Guests should be able to quickly and easily access the resources they require without unnecessary delays. 
+ - Seamless and user friendly onboarding process for both you as an IT admin, and your external users. External users should be able to quickly and easily access the resources they require without unnecessary delays. 
  - Integration with existing collaboration tools like Microsoft Teams and SharePoint, along with the option for Self-Service Sign-Up (SSSU) 
  - Capability to govern guest by regularly monitoring guest user activity, set an expiration on access and periodic access reviews ensure that guest access remains appropriate over time. For more information, see [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) and [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
 
 With these key requirements in mind, here are two things to consider:
- - onboarding the guest to the tenant
- - getting the guest access to resources
+ - onboarding the external users to the tenant
+ - getting the external users access to resources
 
-There are different options depending on the business case. Let’s deep dive into onboarding of the guests and the options that are available.
+There are different options depending on the business case. Let’s deep dive into onboarding of the external users and the options that are available.
 
 
 :::zone-end
