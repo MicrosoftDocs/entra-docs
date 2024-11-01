@@ -78,7 +78,7 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
 1. From the menu, select **Code + Test**.
 1. Replace the entire code with the following code snippet.
 
-    :::code language="csharp" source="~/OnOtpSend/CustomEmail.cs":::
+    :::code language="csharp" source="~/../custom-authentication-extension/OnOtpSend/CustomEmail.cs":::
 
     The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](/entra/identity-platform/custom-claims-provider-reference) to your API. In this example, it reads the email address (identifier) and the one time code (otp). Then, the code sends the details to SendGrid to send the email using a [dynamic template](https://sendgrid.com/en-us/solutions/email-api/dynamic-email-templates).
 
