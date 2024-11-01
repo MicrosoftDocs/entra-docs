@@ -77,11 +77,6 @@ sections:
         answer: |
           At this time, there isn't a specific activity in the audit logs for license purchases or enablement. However, you might be able to correlate the "Onboard resource to PIM" activity from the "Resource Management" category to the purchase or enablement of a license. This activity might not always be available or provide the exact details.
 
-      - question: |
-          What does `DSR Delete: MFA.PostgreSQL.change_requests` or `DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` in the audit logs mean?
-        answer: |
-          These changes are related to how MFA and some [GDPR](https://www.microsoft.com/trust-center/privacy/gdpr-overview) events are processed. Events such as deleting users or exporting user data are captured in the audit logs, but the activity description might be a little cryptic. We're working to improve those activity labels. For a full list of the activities related to GDPR, see [Audit activities](reference-audit-activities.md#authentication-methods). These activities are associated with the DirectoryManagement category.
-
 
   - name: Sign-in logs
     questions:
@@ -123,7 +118,7 @@ sections:
         answer: |
           The TimeGenerated field in Log Analytics is the time the entry was received and published by Log Analytics. Remember, in order for your logs to appear in Log Analytics, you have to configure diagnostics settings to *send* the logs to the Log Analytics workspace. That process takes time, so the TimeGenerated field might not match the actual time of the sign-in.
 
-          To confirm the date and time match the sign-in, look for the `CreatedDateTime` field a little further down in the Log Analytics results. The `AuthenticationDetails` fields can also be expanded to see the exact time of the sign-in.
+          To confirm the date and time match the sign-in, look for the `CreatedDateTime` field a little further down in the Log Analytics results. The `AuthenticationDetails` fields can also be expanded to see the exact time of the sign-in. The time in Log Analytics appear in UTC, but the time in the sign-in logs in the Microsoft Entra admin center appear in local time, so you might need to adjust.
 
       - question: |
           Why do my non-interactive sign-ins appear to have the same time stamp?
