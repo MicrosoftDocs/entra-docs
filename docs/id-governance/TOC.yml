@@ -18,8 +18,8 @@
     items:
     - name: Govern the employee lifecycle
       href: scenarios/govern-the-employee-lifecycle.md
-    - name: Govern the guest lifecycle
-      href: scenarios/govern-the-guest-lifecycle.md
+    - name: Planning new governance scenarios for business partners and external users
+      href: scenarios/govern-the-guest-lifecycle-new-project.md
     - name: Identity lifecycle management provisioning
       href: what-is-provisioning.md
       items: 
