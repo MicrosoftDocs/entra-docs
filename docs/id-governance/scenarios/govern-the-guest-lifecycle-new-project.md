@@ -272,7 +272,7 @@ The sections below provide examples of various ways that you can onboard guest u
 
 
 
-### Example - Provisioning a user using Entitlement Management:
+### Example - Provisioning a user using Entitlement Management
 As an IT admin, you have identified a project that requires onboarding external consultants from Fabrikam to collaborate. It's important to have automated access management, approval workflows, and lifecycle management.
 Using Microsoft Entra’s Entitlement Management, you create an access package that allows you to bundle multiple resources (like groups, applications, and SharePoint sites), include approval workflows ensuring that access requests are reviewed and approved by the appropriate individuals before access is granted and set time period for the access. 
 
@@ -288,7 +288,7 @@ For more information, see:
 - [Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](../../architecture/deployment-scenario-workforce-guest.md)
 
 
-### Example - End User Driven Collaboration: 
+### Example - End User Driven Collaboration
 For another design project, the design team manager asked you as the IT admin to add John Doe from Global Solutions to collaborate. The primary goal is to invite the user to join your directory and collaborate. You invite external user John as a guest user by using his email. The email invite is simple and flexible and allows you to invite users from various domains and identity providers, including social identities like Gmail or Microsoft accounts. 
 John uses his own credentials to sign in securely eliminating the need for password maintenance or account lifecycle management that simplifies the onboarding process. 
 
