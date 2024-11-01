@@ -3,7 +3,7 @@ title: Enable compliant network check with Conditional Access
 description: Learn how to require known compliant network locations in order to connect to your secured resources with Conditional Access.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/13/2024
+ms.date: 10/31/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -80,11 +80,17 @@ The compliant network Conditional Access policy can be used to protect your Micr
 1. Select the **Create** button to create to enable your policy.
 
 > [!NOTE]
-> You can use Global Secure Access traffic profiles along with a Conditional Access policy requiring a compliant network for **All resources (formerly 'All cloud apps')**. There's no exclusion required when setting up a policy using the **All Compliant Network locations** location and **All resources (formerly 'All cloud apps')**.
+> Use Global Secure Access along with Conditional Access policies that require a Compliant Network for *All Resources*.
 > 
-> Authentication to Global Secure Access traffic profiles are automatically excluded from Conditional Access enforcement when a compliant network is required. This exclusion enables the Global Secure Access client to access required resources to start and authenticate the user.
+> Global Secure Access resources are automatically excluded from the Conditional Access policy when *Compliant Network* is enabled in the policy. There's no explicit resource exclusion required. These automatic exclusions are required to ensure the Global Secure Access client is not blocked from accessing the resources it needs. The resources Global Secure Access needs are:
+> * Global Secure Access Traffic Profiles 
+> * Global Secure Access Policy Service (internal service)
 >
-> Sign-in events for authentication of excluded Global Secure Access traffic profiles appear in the Microsoft Entra ID sign-in logs as "ZTNA Network Access Traffic Profile".
+> Sign-in events for authentication of excluded Global Secure Access resources appear in the Microsoft Entra ID sign-in logs as: 
+> * Internet resources with Global Secure Access 
+> * Microsoft apps with Global Secure Access 
+> * All private resources with Global Secure Access 
+> * ZTNA Policy Service 
 
 ### User exclusions
 
