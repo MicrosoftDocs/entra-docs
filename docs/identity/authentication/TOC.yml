@@ -248,6 +248,8 @@
       href: how-to-authentication-find-coverage-gaps.md
     - name: Enable per-user MFA
       href: howto-mfa-userstates.md
+    - name: Upload hardware OATH tokens
+      href: how-to-mfa-upload-oath-tokens.md
     - name: Manage external authentication method
       href: how-to-authentication-external-method-manage.md
     - name: Configure authentication providers
