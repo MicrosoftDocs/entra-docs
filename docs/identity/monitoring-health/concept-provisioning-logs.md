@@ -26,7 +26,13 @@ This article gives you an overview of the user provisioning logs.
 
 ## License and role requirements
 
-[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
+To use the provisioning logs, you need a Microsoft Entra ID P1 or P2 license.
+
+The following roles are required to view the provisioning logs:
+- [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)
+- [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)
+- [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator)
+- [Cloud App Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
 
 ## What can you do with the provisioning logs?
 
@@ -58,3 +64,8 @@ When you select an item in the provisioning list view, you get more details abou
 - **Modified Properties**: If there were changes, this tab shows the old value and the new value.
 
 - **Summary**: Provides an overview of what happened and identifiers for the object in the source and target systems.
+
+## Related content
+
+- [Integrating provisioning logs with Azure Monitor logs](../app-provisioning/application-provisioning-log-analytics.md)
+- [Reporting on automatic user account provisioning](../app-provisioning/check-status-user-account-provisioning.md)

@@ -21,7 +21,6 @@ Provisioning integrates with Azure Monitor logs and Log Analytics. With Azure mo
 If you're not already familiar with Azure Monitor and Log Analytics, explore the following resources and then come back to learn about integrating application provisioning logs with Azure Monitor logs.
     
 - [Azure Monitor overview](/azure/azure-monitor/overview)
-- [Log queries in Azure Monitor](/azure/azure-monitor/logs/log-query-overview)
 - [Configure a Log Analytics workspace](../monitoring-health/tutorial-configure-log-analytics-workspace.md)
 - [Integrate activity logs with Azure Monitor logs](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 
@@ -64,7 +63,7 @@ The **Provisioning Analysis** and **Provisioning Insights** are two of the prebu
 
 ## Custom queries
 
-You can create custom queries and show the data in your workbooks. To learn how, see [Get started with log queries in Azure Monitor](/azure/azure-monitor/logs/get-started-queries).
+You can create custom queries and show the data in your workbooks. To learn how, see [Get started with log queries in Azure Monitor](/azure/azure-monitor/logs/get-started-queries) and [Log queries in Azure Monitor](/azure/azure-monitor/logs/log-query-overview).
 
 Here are some samples to get started with application provisioning log queries.
 

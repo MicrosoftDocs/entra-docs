@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 05/06/2024
+ms.date: 11/01/2024
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
@@ -65,7 +65,7 @@ You can also use Microsoft Graph to programmatically monitor the status of provi
 
 ## Provisioning logs 
 
-All activities performed by the provisioning service are recorded in the Microsoft Entra [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). You can access the Provisioning logs in the Microsoft Entra admin center. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
+All activities performed by the provisioning service are recorded in the Microsoft Entra Provisioning logs. You can access the Provisioning logs in the Microsoft Entra admin center. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md). 
 
 
 ## Troubleshooting
@@ -74,7 +74,7 @@ The provisioning summary report and Provisioning logs play a key role helping ad
 
 For scenario-based guidance on how to troubleshoot automatic user provisioning, see [Problems configuring and provisioning users to an application](~/identity/app-provisioning/application-provisioning-config-problem.md).
 
-## Next steps
+## Related content
 
 - [Managing user account provisioning for Enterprise Apps](configure-automatic-user-provisioning-portal.md)
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
