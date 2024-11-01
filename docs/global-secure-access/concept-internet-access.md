@@ -36,7 +36,7 @@ Security profiles are objects you use to group filtering policies and deliver th
 ```
 
 ## Policy processing logic
-Within a security profile, policies are enforced according to priority ordering with 100 being the highest priority and 65,000 being the lowest priority (similar to traditional firewall logic). As a best practice, add spacing of about 100 between priorities to allow for policy flexibility in the future.
+Within a security profile, policies are enforced according to logical ordering of unique priority numbers, with 100 being the highest priority and 65,000 being the lowest priority (similar to traditional firewall logic). As a best practice, add spacing of about 100 between priorities to allow for policy flexibility in the future.
 
 Once you link a security profile to a Conditional Access (CA) policy, if multiple CA policies match, both security profiles are processed in priority ordering of the matching security profiles.
 
