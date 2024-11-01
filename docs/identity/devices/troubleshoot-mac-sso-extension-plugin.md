@@ -211,7 +211,7 @@ If none of above methods resolve your issue, there may be something else in your
 
 #### Make sure System Integrity Protection (SIP) is enabled
 
-The Enterprise SSO framework requires successful validation of code signing. If a machine has been explicitly opted out of [System Integrity Protection (SIP)](https://support.apple.com/en-us/102149), code signing might not work properly. If this happens, the machine will encounter sysdiagnose failures like the following:
+The Enterprise SSO framework requires successful validation of code signing. If a machine has been explicitly opted out of [System Integrity Protection (SIP)](https://support.apple.com/en-us/102149), code signing might not work properly. If this happens, the machine will encounter sysdiagnose failures like the following error:
 
 ```
 Error Domain=com.apple.AppSSO.AuthorizationError Code=-1000 "invalid team identifier of the extension=com.microsoft.CompanyPortalMac.ssoextension" UserInfo={NSLocalizedDescription=invalid team identifier of the extension=com.microsoft.CompanyPortalMac.ssoextension}
