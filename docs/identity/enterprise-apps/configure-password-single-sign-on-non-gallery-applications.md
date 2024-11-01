@@ -73,6 +73,8 @@ For password-based SSO, the end user’s browsers can be:
 - Microsoft Edge on Windows 10 Anniversary Edition or later
 - Chrome--on Windows 7 or later, and on macOS X or later
 
+Users may only have a maximum of [48 credentials](~/identity/users/directory-service-limits-restrictions.md) configured for applications utilizing password-based single sign-on. 
+
 ## Next steps
 
 - [Manage access to apps](what-is-access-management.md)
