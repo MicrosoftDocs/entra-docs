@@ -172,8 +172,6 @@ In this section, you'll configure single sign-on in **Resource Central System Ad
 
 1. Return to the **Azure portal**. In **SAML Signing Certificate**, upload your certificate and enter your password.
 
-   ![Screenshot of the Import Certificate pane.](./media/resource-central/cert2.png).
-
 1. Select **Add**.
 
 ## Test SSO 

@@ -143,11 +143,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 3. On the **Integrations** page, find the **Microsoft Entra ID** tile, and click it.
 
-	![Pingboard Single Sign-On Integration](./media/pingboard-tutorial/directory.png)
-
-4. In the modal that follows click **"Configure"**
-
-	![Pingboard configuration button](./media/pingboard-tutorial/configure.png)
+4. In the dialog that appears, select **"Configure"**.
 
 5. On the following page, you notice that "Azure SSO Integration is enabled". Open the downloaded Metadata XML file in a notepad and paste the content in **IDP Metadata**.
 

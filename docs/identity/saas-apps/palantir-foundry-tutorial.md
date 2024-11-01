@@ -135,8 +135,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click **Manage** in the **SAML** section.
 
-    ![Screenshot for S A M L Configuration.](./media/palantir-foundry-tutorial/authentication.png)
-
 1. Perform the following steps in the **SAML** section:
 
     ![Screenshot for Add SAML configuration.](./media/palantir-foundry-tutorial/configuration.png)

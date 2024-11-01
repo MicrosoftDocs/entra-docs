@@ -189,8 +189,6 @@ When you click the Netvision Compas tile in the Access Panel, you should be auto
 
 1. **(optional)** If the user is assigned multiple IDPs within **Netvision Compas**, a list of available IDPs is presented. Select the Microsoft Entra IDP configured previously in **Netvision Compas**.
 
-    ![Login choose](media/netvision-compas-tutorial/login-choose.png)
-
 1. You are redirected to Microsoft Entra ID to perform the authentication. Once you are successfully authenticated, you should be automatically signed in to **Netvision Compas** for which you set up SSO.
 
 ## Additional resources

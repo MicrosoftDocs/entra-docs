@@ -146,8 +146,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In the maintenance page, click **Authentication**.
 
-	![Screenshot shows the Riskware Configuration authentication.](./media/riskware-tutorial/profile.png "Authentication")
-
 1. In **Authentication Configuration** page, perform the following steps:
 
 	![Screenshot shows the Riskware Configuration Authentication Configuration.](./media/riskware-tutorial/menu.png "Configure")

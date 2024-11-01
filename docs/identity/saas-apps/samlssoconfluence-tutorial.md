@@ -152,10 +152,8 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "Installed and ready to go!" dialog with the "Close" action selected.](./media/saml-sso-confluence-tutorial/add-on-9.png)
 
-7.	Click **Manage**.
+7. Click **Manage**.
 
-	![Screenshot that shows the "S A M L Single Sign On (S S O) for Confluence" app page with the "Manage" button selected.](./media/saml-sso-confluence-tutorial/add-on-10.png)
-    
 8. Click **Configure** to configure the new plugin.
 
 	![Screenshot that shows the "Manage" page with the "Configure" button selected.](./media/saml-sso-confluence-tutorial/add-on-11.png)
@@ -181,8 +179,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	d. Click **Next**.
 	
 12. On **Identity provider configuration** page, click **Next** button.
-
-	![Screenshot that shows the "Identity provider configuration" page with the "Next" button selected.](./media/saml-sso-confluence-tutorial/add-on-5-b.png)
 
 13. On **Import SAML IdP Metadata** page, perform the following steps:
 

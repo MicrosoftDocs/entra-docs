@@ -127,8 +127,6 @@ To configure MiCloud Connect with SSO for Microsoft Entra ID, it is easiest to o
      1. Copy the URL from the **Login URL** field and paste it into the **Sign-in URL** field in the Mitel Account portal.
 
      1. Copy the URL from the **Microsoft Entra Identifier** field and paste it into the **Entity ID** field in the Mitel Account portal.
-         
-         ![Screenshot shows the relationship between the SAML-based sign-on page of the Azure portal and the Mitel Account portal.](./media/mitel-connect-tutorial/mitel-azure-set-up-connect.png)
 
 12. Select **Save** on the **Connect Single Sign-On Settings** dialog box in the Mitel Account portal.
 
@@ -217,14 +215,10 @@ To configure CloudLink platform with single sign-on for Microsoft Entra ID, it i
 
        The **Microsoft Entra Single Sign On** is enabled for the customer account and is added to the **Integrations** section of the **Account Information** page.   
 
-   1. Select **Complete Setup**.
-    
-      ![Screenshot shows the Complete Setup option for Microsoft Entra Single Sign-On.](./media/mitel-connect-tutorial/mitel-cloudlink-complete-setup.png)
-      
-      The **Microsoft Entra Single Sign On** configuration panel opens.
-      
+    1. Select **Complete Setup**. The **Microsoft Entra Single Sign On** configuration panel opens.
+
        ![Screenshot shows Microsoft Entra Single Sign-On configuration.](./media/mitel-connect-tutorial/mitel-cloudlink-sso-setup.png)
-       
+
        Mitel recommends that the **Enabled Mitel Credentials (Optional)** check box in the **Optional Mitel credentials** section isn't selected. Select this check box only if you want the user to sign in to the CloudLink application using the Mitel credentials in addition to the single sign-on option.
 
 3. In the Azure portal, from the **SAML-based Sign-on** page, select the **Edit** icon  in the **Basic SAML Configuration** section. The **Basic SAML Configuration** panel opens.
@@ -254,8 +248,6 @@ To configure CloudLink platform with single sign-on for Microsoft Entra ID, it i
 
     > [!NOTE]
     > If you have more than one certificate, we recommend that you paste them one after the other. 
-       
-    ![Screenshot shows Step two of the procedure where you fill in values from your Microsoft Entra integration.](./media/mitel-connect-tutorial/mitel-cloudlink-enter-certificate.png)
 
 10. In the **Set up Mitel Connect** section on the **SAML-based sign-on** page of the Azure portal:
 

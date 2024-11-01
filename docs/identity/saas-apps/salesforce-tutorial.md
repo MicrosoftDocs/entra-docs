@@ -198,8 +198,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In the **Authentication Configuration** section, Check the **Login Page** and  **AzureSSO** as **Authentication Service** of your SAML SSO configuration, and then click **Save**.
 
-    ![Configure Single Sign-On Authentication Service](./media/salesforce-tutorial/authentication.png)
-
     > [!NOTE]
     > If more than one authentication service is selected, users are prompted to select which authentication service they like to sign in with while initiating single sign-on to your Salesforce environment. If you don’t want it to happen, then you should **leave all other authentication services unchecked**.
 
