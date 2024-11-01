@@ -120,7 +120,7 @@ You can access your Communication Services connection strings and service endpoi
 
 ### 2.2: Add the connection strings to the Azure Function
 
-1. Navigate back to the Azure Function you created in [Create an Azure Function app](#11-create-a-http-trigger-function).
+1. Navigate back to the Azure Function you created in [Create an Azure Function app](#11-create-an-http-trigger-function).
 1. From **Overview** page of your function app, in the left menu, select **Settings** > **Environment variables** add the following App settings. Once all the settings are added, select **Apply**, then **Confirm**.
 
     | Setting      | Value (Example) | Description |
@@ -133,7 +133,7 @@ You can access your Communication Services connection strings and service endpoi
 
 ### 2.1: Add the connection strings to the Azure Function 
 
-1. Navigate back to the Azure Function you created in [Create an Azure Function app](#11-create-a-http-trigger-function).
+1. Navigate back to the Azure Function you created in [Create an Azure Function app](#11-create-an-http-trigger-function).
 1. From **Overview** page of your function app, in the left menu, select **Settings** > **Environment variables** add the following App settings. Once all the settings are added, select **Apply**, then **Confirm**.
 
     | Setting      | Value (Example) | Description |
