@@ -120,7 +120,14 @@
       "url": "https://github.com/Azure/azure-docs-powershell-samples",
       "branch": "master",
       "branch_mapping": {}
+    },
+    {
+      "path_to_root": "custom-authentication-extension",
+      "url": "https://github.com/microsoft/custom-authentication-extension",
+      "branch": "main",
+      "branch_mapping": {}
     }
+
   ],
   "branch_target_mapping": {},
   "targets": {},
