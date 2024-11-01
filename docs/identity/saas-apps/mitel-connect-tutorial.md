@@ -211,8 +211,6 @@ To configure CloudLink platform with single sign-on for Microsoft Entra ID, it i
 
     1. Select the **3rd party** tab. A list of supported third-party applications is displayed. Select the **Add** button associated with **Microsoft Entra Single Sign On**,  and select **Done**.
 
-       ![Screenshot shows the Integrations page where you can add Microsoft Entra Single Sign-On.](./media/mitel-connect-tutorial/mitel-cloudlink-integrations.png)
-
        The **Microsoft Entra Single Sign On** is enabled for the customer account and is added to the **Integrations** section of the **Account Information** page.   
 
     1. Select **Complete Setup**. The **Microsoft Entra Single Sign On** configuration panel opens.
