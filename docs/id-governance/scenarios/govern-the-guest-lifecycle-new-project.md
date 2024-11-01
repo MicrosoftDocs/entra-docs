@@ -182,7 +182,7 @@ Finally, you should review the following documentation. Reviewing this documenta
 
 ::: zone pivot="identity-governance-guest-onboard" 
 
-## Onboarding of business partners and external users
+## Onboard: Onboarding of business partners and external users
 Onboarding of business partners and external users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization. Onboarding for business partners and external users can be broken down in to the following:
 
 1. Develop an onboarding process to add external partners. 
@@ -190,7 +190,7 @@ Onboarding of business partners and external users is a critical aspect of ident
 
 
 ### Onboarding process for business partners
-The following items are a generic list of steps that one should consider when onboarding business from your organization.
+The following items are a generic list of steps that one should consider when onboarding business partners from your organization.
 
 - determine the start date for working with a business partner. 
 - notify all relevant departments as to the specific start time and date.
@@ -315,7 +315,7 @@ Almost immediately, the external partners received their invitations. They joine
 
 ::: zone pivot="identity-governance-guest-offboard" 
 
-## Offboarding: Seamlessly secure your environment by efficiently offboarding business partners and external users.  
+## Offboard: Efficiently offboarding business partners and external users.  
 Offboarding of business partners and external users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization. Offboarding for business partners and external users can be broken down in to the following:
 
 1. Develop an offboarding process to remove external partners. 
@@ -323,7 +323,7 @@ Offboarding of business partners and external users is a critical aspect of iden
 
 
 ### Offboarding process for business partners
-The following items are a generic list of steps that one should consider when offboarding business from your organization.
+The following items are a generic list of steps that one should consider when offboarding business partners from your organization.
 
 - determine the end date for working with a business partner. 
 - notify all relevant departments as to the specific end time and date.
