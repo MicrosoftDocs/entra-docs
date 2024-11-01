@@ -207,7 +207,20 @@ Sometimes, this command is insufficient and doesn't fully reset the cache. In th
 * Remove or move the Intune Company Portal app to the Trash, then restart your device. After the restart is complete, you can try re-install the Company Portal app. 
 * Re-enroll your device.
 
-If none of above methods resolve your issue, there may be something else in your environment that could be blocking the associated domain validation. If this happens, please reach out to Apple support for further troubleshooting. 
+If none of above methods resolve your issue, there may be something else in your environment that could be blocking the associated domain validation. If this happens, please reach out to Apple support for further troubleshooting.
+
+#### Make sure System Integrity Protection (SIP) is enabled
+
+The Enterprise SSO framework requires successful validation of code signing. If a machine has been explicitly opted out of [System Integrity Protection (SIP)](https://support.apple.com/en-us/102149), code signing might not work properly. If this happens, the machine will encounter sysdiagnose failures like the following:
+
+```
+Error Domain=com.apple.AppSSO.AuthorizationError Code=-1000 "invalid team identifier of the extension=com.microsoft.CompanyPortalMac.ssoextension" UserInfo={NSLocalizedDescription=invalid team identifier of the extension=com.microsoft.CompanyPortalMac.ssoextension}
+```
+
+To resolve this issue, perform one of the following steps:
+
+1. Re-enable System Integrity Protection on the affected machine.
+2. If re-enabling System Integrity Protection is not possible, ensure that `sudo nvram boot-args` does not have the `amfi_get_out_of_my_way` value set to `1`. If it does, remove that value or set it to `0` to fix the issue.
 
 #### Validate SSO configuration profile on macOS device
 
