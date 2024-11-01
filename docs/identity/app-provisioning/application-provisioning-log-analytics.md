@@ -30,11 +30,11 @@ To integrate provisioning logs with Azure Monitor logs:
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
 
-    :::image type="content" source="media/application-provisioning-log-analytics/diagnostic-settings.png" alt-text="Access diagnostic settings" lightbox="media/application-provisioning-log-analytics/diagnostic-settings.png":::
+    :::image type="content" source="media/application-provisioning-log-analytics/diagnostic-settings.png" alt-text="Screenshot of accessing diagnostic settings." lightbox="media/application-provisioning-log-analytics/diagnostic-settings.png":::
 
 1. Choose the logs you want to stream, select the **Send to Log Analytics workspace** option, and complete the fields.
 
-    :::image type="content" source="media/application-provisioning-log-analytics/enable-log-analytics.png" alt-text="Enable application provisioning logs" lightbox="media/application-provisioning-log-analytics/enable-log-analytics.png":::
+    :::image type="content" source="media/application-provisioning-log-analytics/enable-log-analytics.png" alt-text="Screenshot of enabling application provisioning logs." lightbox="media/application-provisioning-log-analytics/enable-log-analytics.png":::
 
 1. Browse to **Identity** > **Monitoring & health** > **Log Analytics** and begin querying the data.
 
@@ -147,11 +147,11 @@ Alert when there's a spike in failures. Replace the jobID with the jobID for you
 
 There might be an issue that caused the provisioning service to stop running. Use the following alert to detect when there are no provisioning events during a given time interval.
 
-:::image type="content" source="media/application-provisioning-log-analytics/alert2.png" alt-text="There might be an issue that caused the provisioning service to stop running." lightbox="media/application-provisioning-log-analytics/alert2.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/alert2.png" alt-text="Screenshot of a provisioning log error message." lightbox="media/application-provisioning-log-analytics/alert2.png":::
 
 Alert when there's a spike in disables or deletes.
 
-:::image type="content" source="media/application-provisioning-log-analytics/alert3.png" alt-text="Alert when there's a spike in disables or deletes." lightbox="media/application-provisioning-log-analytics/alert3.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/alert3.png" alt-text="Screenshot of an alert when there's a spike in disables or deletes." lightbox="media/application-provisioning-log-analytics/alert3.png":::
 
 
 ## Community contributions
