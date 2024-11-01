@@ -75,20 +75,32 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
 
 ### 1.2 Edit the function
 
+This how-to guide demonstrates the one time code send event using Azure Communication Services and SendGrid. Use the tabs below to select your implementation.
+
+### [Azure Communication Services](#tab/azure-communication-services)
+
 1. From the menu, select **Code + Test**.
 1. Replace the entire code with the following code snippet.
 
-    :::code language="csharp" source="~/../custom-authentication-extension/OnOtpSend/CustomEmail.cs":::
-
-    The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](/entra/identity-platform/custom-claims-provider-reference) to your API. In this example, it reads the email address (identifier) and the one time code (otp). Then, the code sends the details to SendGrid to send the email using a [dynamic template](https://sendgrid.com/en-us/solutions/email-api/dynamic-email-templates).
+    :::code language="csharp" source="~/../custom-authentication-extension/OnOtpSend/CustomEmailACS.cs":::
 
 1. Select **Get Function Url**, and copy the **Function key** URL, which will hereby be used and referred to as `{Function_Url}`. Close the function.
 
+### [SendGrid](#tab/sendgrid)
+
+1. From the menu, select **Code + Test**.
+1. Replace the entire code with the following code snippet.
+
+    :::code language="csharp" source="~/../custom-authentication-extension/OnOtpSend/CustomEmailSendGrid.cs":::
+
+1. Select **Get Function Url**, and copy the **Function key** URL, which will hereby be used and referred to as `{Function_Url}`. Close the function.
+---
+
+The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](/entra/identity-platform/custom-claims-provider-reference) to your API. In this example, it reads the email address (identifier) and the one time code (otp). Then, the code sends the details to SendGrid to send the email using a [dynamic template](https://sendgrid.com/en-us/solutions/email-api/dynamic-email-templates).
+
 ## Step 2: Add connection strings to the Azure Function
 
-> [!NOTE]
->
-> Help needed here. The process is unclear at this point.
+### [Azure Communication Services](#tab/azure-communication-services)
 
 Connection strings enable the Communication Services SDKs to connect and authenticate to Azure. You can access your Communication Services connection strings and service endpoints from the Azure portal or programmatically with Azure Resource Manager APIs. You will then need to add these connection strings to your Azure Function app.
 
@@ -101,7 +113,11 @@ Connection strings enable the Communication Services SDKs to connect and authent
 
     :::image type="content" border="false"source="media/custom-extension-emailotp-get-started/extract-communications-service-keys.png" alt-text="Screenshot of the Azure Communications Service Keys page showing the endpoint and key locations." lightbox="media/custom-extension-emailotp-get-started/extract-communications-service-keys.png":::
 
-### 2.2: Add the connection strings to the Azure Function
+### 2.2: Add the connection strings to the Azure Function 
+
+<!--HELP NEEDED-->
+
+### [SendGrid](#tab/sendgrid)
 
 1. Navigate back to the Azure Function you created in [Create an Azure Function app](#11-create-a-http-trigger-function).
 1. From **Overview** page of your function app, in the left menu, select **Settings** > **Environment variables** add the following App settings. Once all the settings are added, select **Apply**, then **Confirm**.
@@ -112,6 +128,8 @@ Connection strings enable the Communication Services SDKs to connect and authent
     | **FROMEMAIL** | <from.email@myemailprovider.com> | The from email address. |
     | **FROMNAME** | CIAM Demo | The name of the From Email. |
     | **TEMPLATEID** | d-01234567.... | The SendGrid dynamic template it. |
+
+---
 
 ## Step 3: Register a custom authentication extension
 
