@@ -63,7 +63,8 @@ For devices, check the device properties to ensure any synced attributes contain
 If everything looks good, please allow some time for the group to populate. Depending on the size of your Microsoft Entra organization, the group may take up to 24 hours for populating for the first time or after a rule change.
 
 **I configured a rule, but now the existing members of the rule are removed**  
-This is expected behavior. Existing members of the group are removed when a rule is enabled or changed. The users returned from evaluation of the rule are added as members to the group.
+This is expected behavior. Existing members of the group are removed when a rule is enabled or changed. Not all existing members are deleted, only those who no longer meet the new rule. The users returned from evaluation of the new rule are added as members to the group. 
+Users who meet both existing rules and new rules will remain in the dynamic group, so their licence assignments will not normally be temporarily deleted or their role assignments will be removed.
 
 **I don't see membership changes instantly when I add or change a rule, why not?**  
 Dedicated membership evaluation is done periodically in an asynchronous background process. How long the process takes is determined by the number of users in your directory and the size of the group created as a result of the rule. Typically, directories with small numbers of users will see the dynamic membership group changes in less than a few minutes. Directories with a large number of users can take 30 minutes or longer to populate.
