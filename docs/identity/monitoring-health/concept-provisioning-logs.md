@@ -1,6 +1,6 @@
 ---
 title: User provisioning logs in Microsoft Entra ID
-description: Learn about the details included in the user provisioning logs in Microsoft Entra ID for when users are provisioned by a third party service.
+description: Learn about the details included in the user provisioning logs in Microsoft Entra ID when a non-Microsoft service provisions users.
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
@@ -15,7 +15,7 @@ ms.reviewer: arvinh
 
 # What are the Microsoft Entra user provisioning logs?
 
-Microsoft Entra ID integrates with several third party services to provision users into your tenant. If you need to troubleshoot an issue with a provisioned user, you can use the information captured in the Microsoft Entra provisioning logs to help find a solution.
+Microsoft Entra ID integrates with several non-Microsoft services to provision users into your tenant. If you need to troubleshoot an issue with a provisioned user, you can use the information captured in the Microsoft Entra provisioning logs to help find a solution.
 
 Two other activity logs are also available to help monitor the health of your tenant:
 
@@ -29,10 +29,10 @@ This article gives you an overview of the user provisioning logs.
 To use the provisioning logs, you need a Microsoft Entra ID P1 or P2 license.
 
 The following roles are required to view the provisioning logs:
-- [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)
-- [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)
-- [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator)
-- [Cloud App Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
+- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader)
+- [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader)
+- [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator)
+- [Cloud App Administrator](../../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
 
 ## What can you do with the provisioning logs?
 
