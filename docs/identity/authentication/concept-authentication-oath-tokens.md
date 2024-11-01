@@ -154,7 +154,7 @@ Let's try another example where an Authentication Policy Administrator creates t
 The following table lists requirements to assign and activate hardware OATH tokens.
 
 | Task | Token state | Role requirement |
-|------|--------====-|------------------|
+|------|-------------|------------------|
 | Assign a token from the inventory to a user in the tenant. | Assigned | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
 | Read the token of the userl doesn't return the secret. | Activated / Assigned  (depends if the token was already activated or not) | Member (self)<br>Authentication Administrator (only has restricted Read, not standard Read)<br>Privileged Authentication Administrator  |
 | Update the token of the user, such as provide current 6-digit code for activation, or change token name. | Activated | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
