@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 02/07/2024
+ms.date: 11/01/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -18,19 +18,32 @@ Provisioning integrates with Azure Monitor logs and Log Analytics. With Azure mo
 
 ## Enabling provisioning logs
 
-You should already be familiar with Azure monitoring and Log Analytics. If not, jump over to learn about them, and then come back to learn about application provisioning logs. To learn more about Azure monitoring, see [Azure Monitor overview](/azure/azure-monitor/overview). To learn more about Azure Monitor logs and Log Analytics, see [Overview of log queries in Azure Monitor](/azure/azure-monitor/logs/log-query-overview).
+If you're not already familiar with Azure Monitor and Log Analytics, explore the following resources and then come back to learn about integrating application provisioning logs with Azure Monitor logs.
+    
+- [Azure Monitor overview](/azure/azure-monitor/overview)
+- [Log queries in Azure Monitor](/azure/azure-monitor/logs/log-query-overview)
+- [Configure a Log Analytics workspace](../monitoring-health/tutorial-configure-log-analytics-workspace.md)
+- [Integrate activity logs with Azure Monitor logs](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 
-Once you've configured Azure monitoring, you can enable logs for application provisioning. The option is located on the **Diagnostics settings** page.
+To integrate provisioning logs with Azure Monitor logs:
 
-:::image type="content" source="media/application-provisioning-log-analytics/diagnostic-settings.png" alt-text="Access diagnostic settings" lightbox="media/application-provisioning-log-analytics/diagnostic-settings.png":::
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
+1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
 
-:::image type="content" source="media/application-provisioning-log-analytics/enable-log-analytics.png" alt-text="Enable application provisioning logs" lightbox="media/application-provisioning-log-analytics/enable-log-analytics.png":::
+    :::image type="content" source="media/application-provisioning-log-analytics/diagnostic-settings.png" alt-text="Access diagnostic settings" lightbox="media/application-provisioning-log-analytics/diagnostic-settings.png":::
+
+1. Choose the logs you want to stream, select the **Send to Log Analytics workspace** option, and complete the fields.
+
+    :::image type="content" source="media/application-provisioning-log-analytics/enable-log-analytics.png" alt-text="Enable application provisioning logs" lightbox="media/application-provisioning-log-analytics/enable-log-analytics.png":::
+
+1. Browse to **Identity** > **Monitoring & health** > **Log Analytics** and begin querying the data.
 
 > [!NOTE]
-> If you have just recently provisioned a workspace, it can take some time before you can send logs to it. If you receive an error that the subscription is not registered to use *microsoft.insights* then check back after a few minutes.
+> It can take some time before logs appear in Log Analytics after first enabling the integration. If you receive an error that the subscription is not registered to use *microsoft.insights* then check back after a few minutes.
 
 ## Understanding the data
-The underlying data stream that Provisioning sends log viewers is almost identical. Azure Monitor logs gets nearly the same stream as the Azure portal UI and Azure API. There are only a few **differences** in the log fields as outlined in the following table. To learn more about these fields, see [List provisioningObjectSummary](/graph/api/provisioningobjectsummary-list?preserve-view=true&tabs=http&view=graph-rest-beta).
+The underlying data stream that Provisioning sends log viewers is almost identical. Azure Monitor logs gets nearly the same stream as the Microsoft Entra admin center and the Microsoft Graph API. There are a few differences in the log fields as outlined in the following table. Log Analytics may display more events than the logs in the Microsoft Entra admin center. To learn more about these fields, see [List provisioningObjectSummary](/graph/api/provisioningobjectsummary-list?preserve-view=true&tabs=http&view=graph-rest-beta).
 
 |Azure Monitor logs   |Azure portal UI   |Azure API |
 |----------|-----------|------------|
@@ -39,11 +52,11 @@ The underlying data stream that Provisioning sends log viewers is almost identic
 |activityDateTime |TimeGenerated |TimeGenerated |
 
 
-## Azure Monitor workbooks
+## Microsoft Entra workbooks
 
-Azure Monitor workbooks provide a flexible canvas for data analysis. They also provide for the creation of rich visual reports within the Azure portal. To learn more, see [Azure Monitor Workbooks overview](/azure/azure-monitor/visualize/workbooks-overview).
+Microsoft Entra identity workbooks provide a flexible canvas for data analysis. They also provide for the creation of rich visual reports within the Azure portal. To learn more, see [Microsoft Entra workbooks](../monitoring-health/overview-workbooks.md).
 
-Application provisioning comes with a set of prebuilt workbooks. You can find them on the Workbooks page. To view the data, ensure that all the filters (timeRange, jobID, appName) are populated. Also confirm the app was provisioned, otherwise there isn't any data in the logs.
+The **Provisioning Analysis** and **Provisioning Insights** are two of the prebuilt workbooks available. To view the data, ensure that all the filters (timeRange, jobID, appName) are populated. Also confirm the app was provisioned, otherwise there isn't any data in the logs.
 
 :::image type="content" source="media/application-provisioning-log-analytics/workbooks.png" alt-text="Application provisioning workbooks" lightbox="media/application-provisioning-log-analytics/workbooks.png":::
 
@@ -51,9 +64,9 @@ Application provisioning comes with a set of prebuilt workbooks. You can find th
 
 ## Custom queries
 
-You can create custom queries and show the data on Azure dashboards. To learn how, see [Create and share dashboards of Log Analytics data](/azure/azure-monitor/logs/get-started-queries). Also, be sure to check out [Overview of log queries in Azure Monitor](/azure/azure-monitor/logs/log-query-overview).
+You can create custom queries and show the data in your workbooks. To learn how, see [Get started with log queries in Azure Monitor](/azure/azure-monitor/logs/get-started-queries).
 
-Here are some samples to get started with application provisioning.
+Here are some samples to get started with application provisioning log queries.
 
 Query the logs for a user a based on their ID in the source system:
 ```kusto
@@ -131,7 +144,7 @@ To learn more about alerts, see [Azure Monitor Log Alerts](/azure/azure-monitor/
 
 Alert when there's a spike in failures. Replace the jobID with the jobID for your application.
 
-:::image type="content" source="media/application-provisioning-log-analytics/alert1.png" alt-text="Alert when there's a spike in failures." lightbox="media/application-provisioning-log-analytics/alert1.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/alert1.png" alt-text="Screenshot of an alert when there's a spike in failures." lightbox="media/application-provisioning-log-analytics/alert1.png":::
 
 There may be an issue that caused the provisioning service to stop running. Use the following alert to detect when there are no provisioning events during a given time interval.
 
