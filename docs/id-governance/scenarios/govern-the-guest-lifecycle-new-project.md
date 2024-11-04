@@ -60,7 +60,7 @@ Using some of the below features mentioned requires Microsoft Entra ID Governanc
 
 
 > [!div class="nextstepaction"]
-> [Discovery](govern-the-guest-lifecycle-new-project.md&pivots=identity-governance-guest-discover)
+> [Discovery](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-discover)
 
 :::zone-end
 
