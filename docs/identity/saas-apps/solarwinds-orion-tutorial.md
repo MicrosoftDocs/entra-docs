@@ -105,11 +105,8 @@ application integration page, find the **Manage** section and select **single si
     | LastName | user.surname |
     | Email |user.mail |
 
-1. In **User Attributes & Claims** section, click the pencil icon to edit and click **Add a group claim**.
-
-    ![Screenshot for User Attributes & Claims.](./media/solarwinds-orion-tutorial/group-claim.png)
-
-1. Choose **Security groups**.
+1. In **User Attributes & Claims** section, select **Add a group claim**.
+1. In **Group Claims**, choose **Security groups**.
 1. If you have Microsoft Entra ID synchronized with your on-premises AD, change **Source attribute** to **sAMAccountName**. Otherwise, leave it as Group ID.
 
 1. In the **Advanced options**, tick mark **Customize the name of the group claim** and give OrionGroups as the name.

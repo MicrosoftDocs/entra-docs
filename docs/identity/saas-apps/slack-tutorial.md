@@ -173,8 +173,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. On the **Configure SAML authentication for Azure** dialog, perform the below steps:
 
-    ![Screenshot of Configure single sign-on On SAML Authentication Settings.](./media/slack-tutorial/tutorial-slack-save-authentication.png)
-
     a. In the top right, toggle **Test** mode on.
     
     b.  In the **SAML SSO URL** textbox, paste the value of **Login URL**.
