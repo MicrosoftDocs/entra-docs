@@ -114,7 +114,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    d. Under **Advanced options**, select the **Customize the name of the group claim** check box.
 
-   e. For **Name**, enter **group**.
+   e. For **Name**, enter **groups**.
    
    f. Select **Save**.   
 
