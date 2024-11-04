@@ -1,6 +1,6 @@
 ---
-title: PowerShell sample - Get the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS or GCP Marketplaces. 
-description: PowerShell example that gets the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS or GCP Marketplaces. 
+title: PowerShell sample - Get the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS, or GCP Marketplaces. 
+description: PowerShell example that gets the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS, or GCP Marketplaces. 
 author: kenwith
 manager: amycolannino
 ms.service: global-secure-access
@@ -23,7 +23,7 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 ## Important considerations
 - Run the PowerShell script as an Administrator from an elevated PowerShell ISE.
 - Don't run the script on a Windows computer where the private network connector is already installed. 
-- Make sure there is no C:\temp folder on the machine. If you have some files stored in a C:\temp folder, move them before you run the script.
+- Make sure there's no C:\temp folder on the machine. If you have some files stored in a C:\temp folder, move them before you run the script.
 - After the script runs successfully, the Access Token is available at C:\token.txt.
 
 ## Sample script
