@@ -323,8 +323,6 @@ Now, the configuration of EntraCP needs to be updated to reflect that change and
 1. In the section **User identifier property**: Set the **User identifier for 'Guest' users:** to **UserPrincipalName**.
 1. Click Ok
 
-![Screenshot of EntraCP guests accounts configuration.](./media/sharepoint-on-premises-tutorial/sp-entracp-attribute-for-guests.png)
-
 You can now invite any guest user in the SharePoint sites.
 
 ## Configure the federation for multiple web applications

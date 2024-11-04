@@ -94,8 +94,10 @@ Follow these steps to enable Microsoft Entra SSO.
 	![Copy configuration URLs](./media/settlingmusic-tutorial/copy-configuration-urls.png)
 
 	> [!NOTE]
-	> Please use the below URL for the Logout URL.
-	```Logout URL https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
+	> Use the below URL for the Logout URL.
+
+	```text
+    Logout URL https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
     ```
 
 <a name='create-an-azure-ad-test-user'></a>
