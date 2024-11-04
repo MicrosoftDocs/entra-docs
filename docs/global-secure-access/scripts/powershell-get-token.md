@@ -1,6 +1,6 @@
 ---
-title: PowerShell sample - Get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace or AWS Marketplace. 
-description: PowerShell example that gets the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace or AWS Marketplace. 
+title: PowerShell sample - Get the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS or GCP Marketplaces. 
+description: PowerShell example that gets the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS or GCP Marketplaces. 
 author: kenwith
 manager: amycolannino
 ms.service: global-secure-access
@@ -10,9 +10,9 @@ ms.author: kenwith
 ms.reviewer: sumi
 ---
 
-# Get the Auth Token for registering your Microsoft Entra private network connector through Azure Marketplace or AWS Marketplace
+# Get the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS or GCP Marketplaces
 
-The PowerShell script helps you get the Auth Token for registering your Microsoft Entra private network connector through [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftcorporation1687208452115.entraprivatenetworkconnector?tab=overview) or [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cgpbjiaphamuc). 
+The PowerShell script helps you get the Auth Token for registering your Microsoft Entra private network connector through [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftcorporation1687208452115.entraprivatenetworkconnector?tab=overview) or [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cgpbjiaphamuc) or [GCP Marketplace](https://console.cloud.google.com/marketplace/product/ciem-entra/entraprivatenetworkconnector?hl=en). 
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
