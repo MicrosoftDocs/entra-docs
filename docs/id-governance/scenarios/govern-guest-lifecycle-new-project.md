@@ -48,10 +48,10 @@ A new business partner and external user solution typically involve the followin
 
 
 
-- [Discover your business requirements](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-discover) - Identify your current lifecycle and governance processes for external identities. This exercise will help you to determine applicable scenarios, feasibility and scope.
-- [Determine your security posture](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-secur) - Assess your organization's security and collaboration needs, by scenario.
-- [Onboarding of business partners and external users](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-onboard) - Onboarding, with regard to guest or external identities, is the process or processes of getting these identities set up in your organizations systems. 
-- [Offboarding business partners and external users](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-offboard) - Offboarding, with regard to guest or external identities, is the process or processes of getting these identities removed from your organizations systems. 
+- [Discover your business requirements](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-discover) - Identify your current lifecycle and governance processes for external identities. This exercise will help you to determine applicable scenarios, feasibility and scope.
+- [Determine your security posture](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-secur) - Assess your organization's security and collaboration needs, by scenario.
+- [Onboarding of business partners and external users](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-onboard) - Onboarding, with regard to guest or external identities, is the process or processes of getting these identities set up in your organizations systems. 
+- [Offboarding business partners and external users](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-offboard) - Offboarding, with regard to guest or external identities, is the process or processes of getting these identities removed from your organizations systems. 
 
 
 ## License requirements 
@@ -61,7 +61,7 @@ Using some of the below features mentioned requires Microsoft Entra ID Governanc
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Discovery](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-discover)
+> [Discovery](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-discover)
 
 :::zone-end
 
@@ -122,7 +122,7 @@ There are different options depending on the business case. Let’s deep dive in
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Security](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-secure)
+> [Security](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-secure)
 
 
 :::zone-end
@@ -191,7 +191,7 @@ Finally, you should review the following documentation. Reviewing this documenta
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Onboard](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-onboard)
+> [Onboard](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-onboard)
 
 :::zone-end
 
@@ -325,7 +325,7 @@ Almost immediately, the external partners received their invitations. They joine
  ## Next step
 
 > [!div class="nextstepaction"]
-> [Offboard](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-offboard)
+> [Offboard](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-offboard)
 
 ::: zone-end 
 
@@ -396,7 +396,7 @@ For more information, see [Manage user and guest user access with access reviews
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Overview](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-overview)
+> [Overview](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-overview)
 
 ::: zone-end 
 
