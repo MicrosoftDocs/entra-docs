@@ -148,21 +148,15 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot shows the Close button.](./media/kantegassoforbitbucket-tutorial/license.png)
 
-1. Click **Manage**.
-
-	![Screenshot shows the Manage button.](./media/kantegassoforbitbucket-tutorial/integration.png)
+1. In the **Kantega SSO for Bitbucket SAML Kerberos** page, select **Manage**.
 
 1. Click **Configure** to configure the new plugin.
 
 	![Screenshot shows User-installed add-ons with Configure selected.](./media/kantegassoforbitbucket-tutorial/profile.png)
 
-1. In the **SAML** section. Select **Microsoft Entra ID** from the **Add identity provider** dropdown.
+1. In the **SAML** section, select **Microsoft Entra ID** from the **Add identity provider** dropdown.
 
-	![Screenshot shows Kantega Single Sign-On with Microsoft Entra ID selected as the identity provider.](./media/kantegassoforbitbucket-tutorial/azure.png)
-
-1. Select subscription level as **Basic**.
-
-	![Screenshot shows Prepare Microsoft Entra ID with Basic selected.](./media/kantegassoforbitbucket-tutorial/subscription.png)
+1. In the **Kantega Single Sign-on** page, select **Basic**.
 
 1. On the **App properties** section, perform following steps:
 
@@ -172,13 +166,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	b. Click **Next**.
 
-1. On the **Metadata import** section, perform following steps:
+1. On the **Metadata import** section, select **Metadata file on my computer**.
 
-	![Screenshot shows the Metadata import section where you can browse to a metadata file.](./media/kantegassoforbitbucket-tutorial/metadata.png)
-
-	a. Select **Metadata file on my computer**, and upload metadata file, which you have downloaded previously.
-
-	b. Click **Next**.
+1. Select **Browse file** to upload the metadata file that you previously downloaded, then select **Next**.
 
 1. On the **Name and SSO location** section, perform following steps:
 
@@ -202,11 +192,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click **Finish**.
 
-	![Screenshot shows the Summary page.](./media/kantegassoforbitbucket-tutorial/groups.png)
-
 1. On the **Known domains for Microsoft Entra ID** section, perform following steps:
-
-	![Screenshot shows the Known domains for Microsoft Entra ID where you can perform these steps.](./media/kantegassoforbitbucket-tutorial/domain.png)
 
 	a. Select **Known domains** from the left panel of the page.
 
