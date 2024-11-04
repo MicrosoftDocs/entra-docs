@@ -35,7 +35,7 @@ Prepare SSO connectivity before setting up the Azure resource for Logz.io. You'l
 
 ### Creating SSO connectivity for your Logz.io resource in Microsoft Entra ID 
 
-You'll create a Microsoft Entra Enterprise application to allow you use SSO to connect to your Logz.io account from your Azure resource. 
+You'll create a Microsoft Entra Enterprise application to allow you to use SSO to connect to your Logz.io account from your Azure resource. 
 
 ### Prerequisites: 
 

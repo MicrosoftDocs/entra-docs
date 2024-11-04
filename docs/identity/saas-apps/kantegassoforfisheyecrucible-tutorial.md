@@ -152,7 +152,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "Installed and ready to go" dialog and the "Close" button selected.](./media/kantegassoforfisheyecrucible-tutorial/installation.png)
 
-1. In the **Kantega SSO for Crucible SAML & Keberos** page, select **Manage**.
+1. In the **Kantega SSO for Crucible SAML & Kerberos** page, select **Manage**.
 
 1. Click **Configure** to configure the new plugin.	
 

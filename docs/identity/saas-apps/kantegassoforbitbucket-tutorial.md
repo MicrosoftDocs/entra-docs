@@ -148,7 +148,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot shows the Close button.](./media/kantegassoforbitbucket-tutorial/license.png)
 
-1. In the **Kantega SSO for Bitbucket SAML Keberos** page, select **Manage**.
+1. In the **Kantega SSO for Bitbucket SAML Kerberos** page, select **Manage**.
 
 1. Click **Configure** to configure the new plugin.
 
