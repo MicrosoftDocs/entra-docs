@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/31/2024
+ms.date: 11/04/2024
 
 ms.author: justinha
 author: justinha
@@ -141,12 +141,7 @@ Authentication Administrators and end users can unassign a token:
 DELETE https://graph.microsoft.com/beta/users/66aa66aa-bb77-cc88-dd99-00ee00ee00ee/authentication/hardwareoathmethods/6c0272a7-8a5e-490c-bc45-9fe7a42fc4e0
 ```
 
-
-
-
 Let's try another example where an Authentication Policy Administrator creates two tokens, with **hashFunction** optional. The hashFunction is SHA-1 by default. For SHA-256, enter `hmacsha256` as the value for the property. 
-
-
 
 
 ### User self-assignment and activation
@@ -219,35 +214,19 @@ To validate the token is activated, sign in to [Security info](https://aka.ms/my
 
 #### Scenario 2: Admin creates and assigns a token that a user activates
 
-In this scenario, an Authentication Policy Administrator creates and assigns a token, and then a user can activate it on their Security info page, or by using Microsoft Graph Explorer. 
-
+In this scenario, an Authentication Policy Administrator creates and assigns a token, and then a user can activate it on their Security info page, or by using Microsoft Graph Explorer. When you assign a token, you can share steps for the user to sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
 
 ```msgraph-interactive
-PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
-{
-"@context":"#$delta", 
-"value": [ 
-    { 
-        "@contentId": "1", 
-        "serialNumber": "GALT11420108", 
-        "manufacturer": "Thales", 
-        "model": "OTP 110 Token", 
-        "secretKey": "abcdef2234567abcdef2234567", 
-        "timeIntervalInSeconds": 30, 
-        "hashFunction": "hmacsha1" 
-        },
-    { 
-        "@contentId": "2", 
-        "serialNumber": "GALT11420112", 
-        "manufacturer": "Thales", 
-        "model": "OTP 110 Token", 
-        "secretKey": "2234567abcdef2234567abcdef", 
-        "timeIntervalInSeconds": 30, 
-        "hashFunction": "hmacsha1" 
-        }
-    ]          
-} 
+POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
+{ 
+"serialNumber": "GALT11420104", 
+"manufacturer": "Thales", 
+"model": "OTP 110 Token", 
+"secretKey": "C2dE3fH4iJ5kL6mN7oP1qR2sT3uV4w", 
+"timeIntervalInSeconds": 30, 
+"assignTo": {"id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}
+}
 ```
 
 The response includes an **id** value for each token. An Authentication Administrator can assign the token to a user:
@@ -262,11 +241,7 @@ POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 }
 ```
 
-You can upload new tokens to the tenant in bulk. When you assign them to end users, you can share steps for user to to sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
-
-For greater assurance that the token is only activated by a specific user, you can assign the token to the user, and send the device to them for self-activation.
-
-Here are steps users can follow to self-activate their hardware OATH token in Security info:
+Here are steps a user can follow to self-activate their hardware OATH token in Security info:
 
 1. Sign in to [Security info](https://aka.ms/mysecurityinfo).
 1. Click **Add sign-in method** and choose **Hardware token**.
@@ -321,9 +296,40 @@ Here are steps users can follow to self-activate their hardware OATH token by us
    }
    ```
 
-#### Scenario 3: Admin creates a token that a user self-assigns and activates
+#### Scenario 3: Admin creates token that users self-assign and activate
 
-In this scenario, an Authentication Administrator creates tokens without assignment, and users self-assign and activate the tokens.
+In this scenario, an Authentication Administrator creates tokens without assignment, and users self-assign and activate the tokens. You can upload new tokens to the tenant in bulk. Users can sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
+
+For greater assurance that the token is only activated by a specific user, you can assign the token to the user, and send the device to them for self-activation.
+
+
+```msgraph-interactive
+PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
+{
+"@context":"#$delta", 
+"value": [ 
+    { 
+        "@contentId": "1", 
+        "serialNumber": "GALT11420108", 
+        "manufacturer": "Thales", 
+        "model": "OTP 110 Token", 
+        "secretKey": "abcdef2234567abcdef2234567", 
+        "timeIntervalInSeconds": 30, 
+        "hashFunction": "hmacsha1" 
+        },
+    { 
+        "@contentId": "2", 
+        "serialNumber": "GALT11420112", 
+        "manufacturer": "Thales", 
+        "model": "OTP 110 Token", 
+        "secretKey": "2234567abcdef2234567abcdef", 
+        "timeIntervalInSeconds": 30, 
+        "hashFunction": "hmacsha1" 
+        }
+    ]          
+} 
+```
+
 
 
 ### Troubleshooting
