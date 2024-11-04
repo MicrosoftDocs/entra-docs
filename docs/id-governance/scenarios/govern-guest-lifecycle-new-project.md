@@ -1,5 +1,5 @@
 ---
-title: 'Planning new governance scenarios for business partners and external users'
+title: 'Plan new governance scenarios for business partners and external users with Microsoft ID Governance'
 description: Describes overview of getting started with new business partner and external user scenarios.
 author: billmath
 manager: amycolannino
@@ -11,7 +11,7 @@ ms.author: billmath
 ---
 
 
-# Planning new governance scenarios for business partners and external users
+# Plan new governance scenarios for business partners and external users
 
 
 
@@ -46,19 +46,19 @@ Understanding your scenario helps in designing appropriate access controls and e
 ## Areas of a new governance scenario for business partners and external users
 A new business partner and external user solution typically involve the following areas. They are:
 
-:::image type="content" source="media/external-guest-new/govern-access-1.png" alt-text="Conceputal drawing of governing access to your resources." lightbox="media/external-guest-new/govern-access-1.png":::
+:::image type="content" source="media/external-guest-new/govern-access-1.png" alt-text="Conceptual drawing of governing access to your resources." lightbox="media/external-guest-new/govern-access-1.png":::
 
-- **Discover your business requirements** - Identify your current lifecycle and governance processes for external identities. This exercise will help you to determine applicable scenarios, feasibility and scope.
-- **Determine your security posture** - Assess your organization's security and collaboration needs, by scenario.
-- **Onboarding of business partners and external users** - Onboarding, with regard to guest or external identities, is the process or processes of getting these identities set up in your organizations systems. 
-- **Offboarding business partners and external users** - Offboarding, with regard to guest or external identities, is the process or processes of getting these identities removed from your organizations systems. 
+- [Discover your business requirements](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-discover) - Identify your current lifecycle and governance processes for external identities. This exercise will help you to determine applicable scenarios, feasibility and scope.
+- [Determine your security posture](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-secur) - Assess your organization's security and collaboration needs, by scenario.
+- [Onboarding of business partners and external users](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-onboard) - Onboarding, with regard to guest or external identities, is the process or processes of getting these identities set up in your organizations systems. 
+- [Offboarding business partners and external users](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-offboard) - Offboarding, with regard to guest or external identities, is the process or processes of getting these identities removed from your organizations systems. 
 
 
-## License Requirements 
+## License requirements 
 
 Using some of the below features mentioned requires Microsoft Entra ID Governance or Microsoft Entra Suite licenses. To find the right license for your requirements, see [Microsoft Entra ID Governance licensing fundamentals](../licensing-fundamentals.md)
 
-## Next Step
+## Next step
 
 > [!div class="nextstepaction"]
 > [Discovery](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-discover)
@@ -83,7 +83,7 @@ Identify your current lifecycle and governance processes for external identities
 
 Review the [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) with emphasis on external identities. The processes covered here are also needed for guest users, suppliers and other external users, to enable them to collaborate or have access to resources. This document covers actions you can take to discover your governance processes.
 
-Because a governance scenario for business parnters and external users uses entitlement management, you should also review [Common scenarios in entitlement management](../entitlement-management-scenarios.md). This will provide you with the common scenarios for entitlement management based on a user's role. You should consider these while planning your solution.
+Because a governance scenario for business partners and external users uses entitlement management, you should also review [Common scenarios in entitlement management](../entitlement-management-scenarios.md). This will provide you with the common scenarios for entitlement management based on a user's role. You should consider these while planning your solution.
 
 You can also use the following table as a guide for additional areas to consider while evaluating your current state.
 
@@ -103,12 +103,12 @@ For more information, see [Discover the current state of external collaboration 
 ### Example - Identify current lifecycle and governance processes
 You're the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business external users like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
 
-:::image type="content" source="media/external-guest-new/discover-1.png" alt-text="Conceputal drawing of an organization." lightbox="media/external-guest-new/discover-1.png":::
+:::image type="content" source="media/external-guest-new/discover-1.png" alt-text="Conceptual drawing of an organization." lightbox="media/external-guest-new/discover-1.png":::
 
 Some of your key requirements include, 
 
  - Diverse guest onboarding needs with different departments requiring unique levels of access. 
- - Ensuring that guest users have the least privilege necessary to perform their tasks is critical and needs robust conditional access policies and multi-factor authentication to protect sensitive data. 
+ - Ensuring that guest users have the least privilege necessary to perform their tasks is critical and needs robust conditional access policies and multifactor authentication to protect sensitive data. 
  - A seamless and user friendly onboarding process for both you as an IT admin, and your external users. External users should be able to quickly and easily access the resources they require without unnecessary delays. 
  - Integration with existing collaboration tools like Microsoft Teams and SharePoint, along with the option for Self-Service Sign-Up (SSSU) 
  - Capability to govern guest by regularly monitoring guest user activity, set an expiration on access and periodic access reviews ensure that guest access remains appropriate over time. For more information, see [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) and [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
@@ -119,7 +119,7 @@ With these key requirements in mind, here are two things to consider:
 
 There are different options depending on the business case. Let’s deep dive into onboarding of the external users and the options that are available.
 
-## Next Step
+## Next step
 
 > [!div class="nextstepaction"]
 > [Security](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-secure)
@@ -188,7 +188,7 @@ Finally, you should review the following documentation. Reviewing this documenta
 - [Secure external Collaboration](../../architecture/1-secure-access-posture.md)
 - [Plan a Microsoft Entra B2B collaboration deployment](../../architecture/secure-external-access-resources.md). 
 
-## Next Step
+## Next step
 
 > [!div class="nextstepaction"]
 > [Onboard](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-onboard)
@@ -198,30 +198,30 @@ Finally, you should review the following documentation. Reviewing this documenta
 ::: zone pivot="identity-governance-guest-onboard" 
 
 ## Onboard: Onboarding of business partners and external users
-Onboarding of business partners and external users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization. Onboarding for business partners and external users can be broken down in to the following:
+Onboarding of business partners and external users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization. Onboarding for business partners and external users can be broken down into the following:
 
-1. Develop an onboarding process to add external partners. 
-2. Develop an onboarding process to add external users to your systems.
+- Develop an onboarding process to add external partners. 
+- Develop an onboarding process to add external users to your systems.
 
 
 ### Onboarding process for business partners
 The following items are a generic list of steps that one should consider when onboarding business partners from your organization.
 
-- determine the start date for working with a business partner. 
-- notify all relevant departments as to the specific start time and date.
-- coordinate initiation of business partner access to all systems (portals, tools, APIs)
+- Determine the start date for working with a business partner. 
+- Notify all relevant departments as to the specific start time and date.
+- Coordinate initiation of business partner access to all systems (portals, tools, APIs)
 - Partner linked accounts are added and roles and assignments are approved
 
 ### Onboarding process for external users
 The following items are a generic list of steps that one should consider when onboarding external users from your organization.
 
-- determine the start date.
-- notify IT to add individual user access to systems. This can be automated with an access package and using a self-request.
-- record the onboarding steps taken.
-- obtain final approvals from HR, IT, and any relevant departments, ensuring all aspects of the onboarding are complete.
+- Determine the start date.
+- Notify IT to add individual user access to systems. This can be automated with an access package and using a self-request.
+- Record the onboarding steps taken.
+- Obtain final approvals from HR, IT, and any relevant departments, ensuring all aspects of the onboarding are complete.
 
-## Use Entitlement management to facilitate onboarding
-Entitlement management uses catalogs, access packages, and polices to: 
+## Use entitlement management to facilitate onboarding
+Entitlement management uses catalogs, access packages, and policies to: 
 
 - Control who can get access to resources
 - Give users access automatically 
@@ -231,16 +231,16 @@ Entitlement management uses catalogs, access packages, and polices to:
 
 For more information, see [What is Entitlement Management?](../entitlement-management-overview.md)
 
-### Catalog, Access Packages, and Policies
+### Catalog, access packages, and policies
 In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long. Entitlement management can be configured to onboard business partners and external users, adding their access rights and their account to your tenant. 
 
 A typical access package may include the following:
 
-- access to all resources associated with the package is added
-- user is added to any group that is needed
-- account is added to the guest user directory
-- use audit logs for compliance
-- notifications are sent confirming successful onboarding
+- Access to all resources associated with the package is added
+- User is added to any group that is needed
+- Account is added to the guest user directory
+- Use audit logs for compliance
+- Notifications are sent confirming successful onboarding
 
 A catalog is a container of resources and access packages. You can create a catalog when you want to group related resources and access packages. For instance, you may create a business partner catalog for organizations dealings with another organization such as Contoso. Inside this catalog, you can create access packages. An access package enables you to do a one-time setup of resources and policies that automatically administers access for the life of the access package. These access packages can be tailored to the various external users and partners within Contoso and for the entire Contoso org itself. For instance, you may have an access package for Contoso vendors and one for Contoso contractors and one for the Contoso organization. For more information, see [Create and manage a catalog of resources in entitlement management](../entitlement-management-catalog-create.md)
 
@@ -250,7 +250,7 @@ Policies specify who can request the access package, along with approval and lif
 
 For more information, see [Onboard external users with entitlement management](../entitlement-management-onboard-external-user.md)
 
-#### Providing onboarding access to business partners and external users 
+#### Provide onboarding access to business partners and external users 
 With entitlement management, you can define a policy that allows users from organizations you specify to be able to self-service an access package. That policy includes whether approval is required, whether access reviews are required, and an expiration date for the access.
 
 For more information, see [Govern access for external users in entitlement management](../entitlement-management-external-users.md)
@@ -258,7 +258,7 @@ For more information, see [Govern access for external users in entitlement manag
 For a specific example, see [Tutorial - Onboard external users to Microsoft Entra ID through an approval process](../entitlement-management-onboard-external-user.md)
 
 
-### Use Lifecycle Workflows to assist with onboarding tasks
+### Use lifecycle workflows to assist with onboarding tasks
 Lifecycle workflows are an identity governance feature that enables organizations to manage Microsoft Entra users by automating these three basic lifecycle processes:
 
 - **Joiner**: When an individual enters the scope of needing access. An example is a new employee joining a company or organization.
@@ -293,7 +293,7 @@ Using Microsoft Entra’s Entitlement Management, you create an access package t
 
 You send out the invitations to the consultants, who receive emails with links to accept the access package. John, one of the consultants, follows the link, verifies his identity, and gains access to the necessary resources within minutes. The onboarding process is smooth and secure, allowing the consultants to start collaborating immediately. The project kicks off without delays, ensuring a productive partnership between Contoso and Fabrikam. 
 
-:::image type="content" source="media/external-guest-new/user-1.png" alt-text="Conceputal drawing of invite using entitlement management." lightbox="media/external-guest-new/user-1.png":::
+:::image type="content" source="media/external-guest-new/user-1.png" alt-text="Conceptual drawing of invite using entitlement management." lightbox="media/external-guest-new/user-1.png":::
 
 For more information, see:
 
@@ -303,11 +303,11 @@ For more information, see:
 - [Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps](../../architecture/deployment-scenario-workforce-guest.md)
 
 
-### Example - End User Driven Collaboration
+### Example - End user driven collaboration
 For another design project, the design team manager asked you as the IT admin to add John Doe from Global Solutions to collaborate. The primary goal is to invite the user to join your directory and collaborate. You invite external user John as a guest user by using his email. The email invite is simple and flexible and allows you to invite users from various domains and identity providers, including social identities like Gmail or Microsoft accounts. 
 John uses his own credentials to sign in securely eliminating the need for password maintenance or account lifecycle management that simplifies the onboarding process. 
 
-:::image type="content" source="media/external-guest-new/user-2.png" alt-text="Conceputal drawing of invite using B2B." lightbox="media/external-guest-new/user-2.png":::
+:::image type="content" source="media/external-guest-new/user-2.png" alt-text="Conceptual drawing of invite using B2B." lightbox="media/external-guest-new/user-2.png":::
 
 For more information, see [Add B2B collaboration users in the Microsoft Entra admin center](../../external-id/add-users-administrator.yml) and [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md)
 
@@ -322,7 +322,7 @@ Almost immediately, the external partners received their invitations. They joine
  - [Configure an automatic assignment policy for an access package in entitlement management](../entitlement-management-access-package-auto-assignment-policy.md)
  - [Change lifecycle settings for an access package in entitlement management](../entitlement-management-access-package-lifecycle-policy.md)
 
- ## Next Step
+ ## Next step
 
 > [!div class="nextstepaction"]
 > [Offboard](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-offboard)
@@ -336,51 +336,51 @@ Almost immediately, the external partners received their invitations. They joine
 ::: zone pivot="identity-governance-guest-offboard" 
 
 ## Offboard: Efficiently offboarding business partners and external users.  
-Offboarding of business partners and external users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization. Offboarding for business partners and external users can be broken down in to the following:
+Offboarding of business partners and external users is a critical aspect of identity and access management, helping to maintain security, compliance, and operational efficiency within your organization. Offboarding for business partners and external users can be broken down into the following:
 
-1. Develop an offboarding process to remove external partners. 
-2. Develop an offboarding process to remove external users from your systems.
+- Develop an offboarding process to remove external partners. 
+- Develop an offboarding process to remove external users from your systems.
 
 
 ### Offboarding process for business partners
 The following items are a generic list of steps that one should consider when offboarding business partners from your organization.
 
-- determine the end date for working with a business partner. 
-- notify all relevant departments as to the specific end time and date.
-- coordinate termination of business partner access to all systems (portals, tools, APIs)
+- Determine the end date for working with a business partner. 
+- Notify all relevant departments as to the specific end time and date.
+- Coordinate termination of business partner access to all systems (portals, tools, APIs)
 - Partner linked accounts are removed and roles and assignments are revoked
-- review data shared with the partner and determine if any should be retained or securely deleted.
-- gather any proprietry or sensitive data from partner's systems
-- verify that data deletion is performed to ensure compliance.
+- Review data shared with the partner and determine if any should be retained or securely deleted.
+- Gather any proprietary or sensitive data from partner's systems
+- Verify that data deletion is performed to ensure compliance.
 
 
 ### Offboarding process for external users
 The following items are a generic list of steps that one should consider when offboarding external users from your organization.
 
-- determine the end date.
-- ensuring any pending deliverables or tasks are completed.
-- notify IT to remove individual user access from systems. This can be automated with an access package
-- confirm that any data in the external user’s possession has been transferred or returned.
-- ensure all accounts specific to the external user are disabled without affecting other users from the same organization.
-- record the offboarding steps taken.
-- obtain final approvals from HR, IT, and any relevant departments, ensuring all aspects of the offboarding are complete.
+- Determine the end date.
+- Ensuring any pending deliverables or tasks are completed.
+- Notify IT to remove individual user access from systems. This can be automated with an access package
+- Confirm that any data in the external user’s possession has been transferred or returned.
+- Ensure all accounts specific to the external user are disabled without affecting other users from the same organization.
+- Record the offboarding steps taken.
+- Obtain final approvals from HR, IT, and any relevant departments, ensuring all aspects of the offboarding are complete.
 
 
-### Use Entitlement Management to facilitate offboarding
+### Use entitlement Management to facilitate offboarding
 In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long. Entitlement management can be configured to automatically offboard a guest user when their last access package assignment expires, removing their access rights and their guest user account from your tenant. 
 
 When an access package expires, the offboarding process should include the following:
 
-- access to all resources associated with the expired package are revoked
-- user is removed from any group that they're a member of
-- account is removed from the guest user directory
-- use audit logs for compliance
-- notifications are sent confirming successful offboarding
+- Access to all resources associated with the expired package is revoked
+- User is removed from any group that they're a member of
+- Account is removed from the guest user directory
+- Use audit logs for compliance
+- Notifications are sent confirming successful offboarding
 
 For more information, see [Govern access for external users in entitlement management](../entitlement-management-external-users.md)
 
-## Use Lifecycle Workflows to assist with offboarding tasks
-Lifecycle workflows are a identity governance feature that enables organizations to manage Microsoft Entra users by automatings some basic lifecycle processes.
+## Use lifecycle workflows to assist with offboarding tasks
+Lifecycle workflows are an identity governance feature that enables organizations to manage Microsoft Entra users by automating some basic lifecycle processes.
 
 Workflows contain specific processes that run automatically against users as they move through their lifecycle. Workflows consist of [tasks](../lifecycle-workflow-tasks.md) and [execution conditions](../understanding-lifecycle-workflows.md#understanding-lifecycle-workflows).
 
@@ -393,7 +393,7 @@ John is a guest whose access package has expired. The system then revokes John's
 For more information, see [Manage user and guest user access with access reviews](../manage-access-review.md) and 
 [Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center](../tutorial-scheduled-leaver-portal.md)
 
-## Next Step
+## Next step
 
 > [!div class="nextstepaction"]
 > [Overview](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-overview)
