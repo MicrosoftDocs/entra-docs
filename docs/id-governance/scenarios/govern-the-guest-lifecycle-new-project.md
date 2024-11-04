@@ -58,6 +58,10 @@ A new business partner and external user solution typically involve the followin
 
 Using some of the below features mentioned requires Microsoft Entra ID Governance or Microsoft Entra Suite licenses. To find the right license for your requirements, see [Microsoft Entra ID Governance licensing fundamentals](../licensing-fundamentals.md)
 
+
+> [!div class="nextstepaction"]
+> [Discovery](govern-the-guest-lifecycle-new-project.md&pivots=identity-governance-guest-discover)
+
 :::zone-end
 
 
