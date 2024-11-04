@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/05/2024
+ms.date: 11/04/2024
 ms.author: sarahlipsey
 ms.reviewer: chuqiaoshi
 
@@ -32,7 +32,7 @@ As an IT administrator, you need to understand trends in identity risks and gaps
 **This workbook:**
 
 - Provides visualizations of where in the world risk is being detected.
-- Allows you to understand the trends in real time vs. Offline risk detections.
+- Allows you to understand the trends in real time vs. offline risk detections.
 - Provides insight into how effective you are at responding to risky users.
 
 ## How to access the workbook
@@ -80,3 +80,9 @@ Risky Users:
 - To learn more about identity protection, see [What is identity protection](~/id-protection/overview-identity-protection.md). 
 
 - For more information about Microsoft Entra workbooks, see [How to use Microsoft Entra workbooks](./howto-use-workbooks.md).
+
+## Related content
+
+- [How to use the identity workbooks](how-to-use-workbooks.md)
+- [What is Microsoft Entra ID Protection?](../../id-protection/overview-identity-protection.md)
+- [What are risk detections?](../../id-protection/concept-identity-protection-risks.md)
