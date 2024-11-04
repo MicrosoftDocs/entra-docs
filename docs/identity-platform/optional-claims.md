@@ -313,6 +313,10 @@ Configure claims in the manifest:
 
 1. When you're finished updating the manifest, select **Save** to save the manifest.
 
+## Limitation
+
+An application can issue a maximum number of 10 extension attributes as optional claims.
+
 ## Related content
 
 - [Access tokens](access-tokens.md)
