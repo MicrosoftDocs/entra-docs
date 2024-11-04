@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 10/01/2024
+ms.date: 11/04/2024
 ms.service: entra-external-id
 ms.topic: whats-new
 
@@ -14,6 +14,15 @@ manager: CelesteDG
 # What's new in docs: External ID in workforce tenants
 
 Welcome to what's new in documentation for Microsoft Entra External ID in workforce tenants. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+
+## October 2024
+
+### Updated articles
+
+- [B2B collaboration invitation redemption](redemption-experience.md) - Guest and contact object conflicts update
+- [Troubleshoot common issues with Microsoft Entra B2B collaboration](troubleshoot.md) - Guest and contact object conflicts update
+- [Microsoft Entra B2B in government and national clouds](b2b-government-national-clouds.md) - MSA support update
+- [Microsoft Entra B2B best practices](b2b-fundamentals.md) - Security considerations updates
 
 ## September 2024
 
@@ -28,10 +37,3 @@ Welcome to what's new in documentation for Microsoft Entra External ID in workfo
 
 - [Quickstart: Add a guest user with PowerShell](b2b-quickstart-invite-powershell.md) - PowerShell script updates
 - [Introduction to Microsoft Entra External ID](external-identities-overview.md) - Conditional access updates
-
-## July 2024
-
-### Updated articles
-
-- [Microsoft Entra External ID documentation](index.yml) - Editorial updates
-
