@@ -152,8 +152,6 @@
     href: migrate-approved-client-app.md
 - name: Reference
   items:
-  - name: Upcoming changes
-    href: reference-resources-change.md
   - name: Office 365 application
     href: reference-office-365-application-contents.md
   - name: Microsoft Graph APIs
