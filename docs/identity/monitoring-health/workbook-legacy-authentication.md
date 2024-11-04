@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/27/2024
+ms.date: 11/04/2024
 ms.author: sarahlipsey
 ms.reviewer: besiler
 
@@ -93,3 +93,8 @@ This workbook supports multiple filters:
 - To learn more about identity protection, see [What is identity protection](~/id-protection/overview-identity-protection.md). 
 
 - For more information about Microsoft Entra workbooks, see [How to use Microsoft Entra workbooks](./howto-use-workbooks.md).
+
+## Related content
+
+- [How to use the identity workbooks](howto-use-workbooks.md)
+- [Authentication methods overview](../authentication/concept-authentication-methods.md)
