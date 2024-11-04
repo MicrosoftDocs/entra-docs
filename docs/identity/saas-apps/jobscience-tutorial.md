@@ -87,7 +87,7 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
 
     ![Screenshot shows Single sign-on selected under Manage.][4]
 
-1. On the **Single sign-on** dialog, select **Mode** as    **SAML-based Sign-on** to enable single sign-on.
+1. On the **Single sign-on** dialog, select **Mode** as **SAML-based Sign-on** to enable single sign-on.
  
 1. On the **Jobscience Domain and URLs** section, perform the following steps:
 
@@ -99,7 +99,7 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
  
 1. On the **SAML Signing Certificate** section, click **Certificate (Base64)** and then save the certificate file on your computer.
 
-1. Click **Save** button.
+1. Select the **Save** button.
 
     ![Screenshot shows the save button.](./media/jobscience-tutorial/tutorial_general_400.png)
 
