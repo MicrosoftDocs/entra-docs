@@ -18,30 +18,30 @@ zone_pivot_groups: entra-tenants
 
 ::: zone pivot="workforce"
 
-This Quickstart uses a sample web app to show you how to sign in users and call Microsoft Graph API in your workforce tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
+In this quickstart, you use a sample web app to show you how to sign in users and call Microsoft Graph API in your workforce tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
 
 ## Prerequisites
 
-#### [Node](#tab/node-worforce)
+#### [Node](#tab/node-workforce)
 
 * An Azure subscription. [Create an Azure subscription for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Node.js](https://nodejs.org/en/download/)
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 * A Microsoft Entra workforce tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
 
-#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+#### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
-#### [Java](#tab/java-worforce)
+#### [Java](#tab/java-workforce)
 
 - [Java Development Kit (JDK)](https://openjdk.java.net/) 8 or later.
 - [Maven](https://maven.apache.org/).
 - A Microsoft Entra workforce tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
 
-#### [Python Flask](#tab/python-flask-worforce)
+#### [Python Flask](#tab/python-flask-workforce)
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - A Microsoft Entra workforce tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
@@ -57,7 +57,7 @@ This Quickstart uses a sample web app to show you how to sign in users and call 
 
 To specify your app type to your app registration, follow these steps:
 
-#### [Node](#tab/node-worforce)
+#### [Node](#tab/node-workforce)
 
 1. Under **Manage**, select **Authentication**.
 1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
@@ -65,12 +65,12 @@ To specify your app type to your app registration, follow these steps:
 1. Under **Front-channel logout URL**, enter `https://localhost:5001/signout-callback-oidc` for signing out.
 1. Select **Configure** to save your changes. 
 
-#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+#### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
 [!INCLUDE [Add a platform redirect URI](./includes/register-app/web-app-common/add-platform-redirect-web-app-port-5001.md)] 
 
 
-#### [Java](#tab/java-worforce)
+#### [Java](#tab/java-workforce)
 
 1. Under **Manage**, select **Authentication**.
 1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
@@ -78,7 +78,7 @@ To specify your app type to your app registration, follow these steps:
 1. Add `https://localhost:8443/msal4jsample/graph/me` as a second redirect URI.
 1. Select **Configure** to save your changes. 
 
-#### [Python Flask](#tab/python-flask-worforce)
+#### [Python Flask](#tab/python-flask-workforce)
 
 1. Under **Manage**, select **Authentication**.
 1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
@@ -89,11 +89,11 @@ To specify your app type to your app registration, follow these steps:
 
 ## Add app client secret or certificate
 
-#### [Node](#tab/node-worforce)
+#### [Node](#tab/node-workforce)
 
 [!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
-#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+#### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
 To use a certificate credential for your web app, you need to create, then upload the certificate. For testing purposes, you can use a self-signed certificate. Use the following steps to create and upload a self-signed certificate:
 
@@ -111,12 +111,12 @@ To use a certificate credential for your web app, you need to create, then uploa
 1. Record the **Thumbprint** value for use in the next step.
 
 
-#### [Java](#tab/java-worforce)
+#### [Java](#tab/java-workforce)
 
 [!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
 
-#### [Python Flask](#tab/python-flask-worforce)
+#### [Python Flask](#tab/python-flask-workforce)
 
 [!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
@@ -126,38 +126,37 @@ When you create credentials for a confidential client application, Microsoft rec
 
 ## Clone or download sample web application 
 
-#### [Node](#tab/node-worforce)
+To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file. 
 
-To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
+#### [Node](#tab/node-workforce)
 
+
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-node/archive/refs/heads/main.zip), then extract it to a file path where the length of the name is fewer than 260 characters or clone the repository:
+ 
 * To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
     git clone https://github.com/Azure-Samples/ms-identity-node.git
     ```
 
-* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-node/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
- 
+#### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
-#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
-
-To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip), then extract it to a file path where the length of the name is fewer than 260 characters or clone the repository:
 
 * To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
     git clone https://github.com/Azure-Samples/ms-identity-docs-code-dotnet.git
     ```
-
-* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters. 
-
-#### [Java](#tab/java-worforce)
+#### [Java](#tab/java-workforce)
 
 [Download the code sample](https://github.com/Azure-Samples/ms-identity-java-webapp/archive/master.zip) 
 
-#### [Python Flask](#tab/python-flask-worforce)
+#### [Python Flask](#tab/python-flask-workforce)
 
-[Download the Python code sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) or clone the repository:
+* [Download the Python code sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) then extract it to a file path where the length of the name is fewer than 260 characters or clone the repository:or clone the repository:
+
+* To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
 ```Console
 git clone https://github.com/Azure-Samples/ms-identity-docs-code-python/
@@ -169,7 +168,7 @@ git clone https://github.com/Azure-Samples/ms-identity-docs-code-python/
 
 For you to sign in users with the sample app, you need to update it with your app and tenant details:
 
-#### [Node](#tab/node-worforce)
+#### [Node](#tab/node-workforce)
 
 In the *ms-identity-node-main* folder, open the *.env* file in the *App* folder. Replace the following placeholders:
 
@@ -199,7 +198,7 @@ EXPRESS_SESSION_SECRET=6DP6v09eLiW7f1E65B8k
 ```
 
 
-#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+#### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
 1. In your IDE, open the project folder, *ms-identity-docs-code-dotnet\web-app-aspnet*, containing the sample.
 1. Open *appsettings.json* and replace the file contents with the following snippet;
@@ -210,7 +209,7 @@ EXPRESS_SESSION_SECRET=6DP6v09eLiW7f1E65B8k
     * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the `Application (client) ID` value that was recorded earlier from the overview page of the registered application.
     * `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded.
 
-#### [Java](#tab/java-worforce)
+#### [Java](#tab/java-workforce)
 
 1. Extract the zip file to a local folder.
 1. *Optional.* If you use an integrated development environment, open the sample in that environment.
@@ -243,7 +242,7 @@ server.ssl.key-alias=testCert
 ```
 1. Put the generated keystore file in the *resources* folder. 
 
-#### [Python Flask](#tab/python-flask-worforce)
+#### [Python Flask](#tab/python-flask-workforce)
 
 1. Open the application you downloaded in an IDE and navigate to root folder of the sample app.
 
@@ -269,7 +268,7 @@ server.ssl.key-alias=testCert
 ## Run and test sample web app
 
 
-#### [Node](#tab/node-worforce)
+#### [Node](#tab/node-workforce)
 
 Run the project by using Node.js.
 
@@ -291,7 +290,7 @@ The first time you sign in, you're prompted to provide your consent to allow the
 
 The sample hosts a web server on localhost, port 3000. When a web browser accesses this address, the app renders the home page. Once the user selects **Sign in**, the app redirects the browser to Microsoft Entra sign-in screen, via the URL generated by the MSAL Node library. After user consents, the browser redirects the user back to the application home page, along with an ID and access token.  
 
-#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+#### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
 1. In your project directory, use the terminal to enter the following command;
 
@@ -311,7 +310,7 @@ The sample hosts a web server on localhost, port 3000. When a web browser access
 1. You're prompted to pick an account to sign out from. Select the account you used to sign in.
 1. A message appears indicating that you signed out. You can now close the browser window. 
 
-#### [Java](#tab/java-worforce)
+#### [Java](#tab/java-workforce)
 
 To run the project, take one of these steps:
 
@@ -377,7 +376,7 @@ If you want to deploy the web sample to Tomcat, make a couple changes to the sou
 
 4. After the file is deployed, go to `https://localhost:8443/msal4jsample` by using a browser. 
 
-#### [Python Flask](#tab/python-flask-worforce)
+#### [Python Flask](#tab/python-flask-workforce)
 
 1. Create a virtual environment for the app:
 
@@ -415,18 +414,18 @@ The following diagram demonstrates how the sample app works:
 1. The application uses the [`identity` package](https://pypi.org/project/identity/) to obtain an access token from the Microsoft identity platform. This package is built on top of the Microsoft Authentication Library (MSAL) for Python to simplify authentication and authorization in web apps.
 
 1. The access token you obtain in the previous step is used as a bearer token to authenticate the user when calling the Microsoft Graph API.
-1. 
+
 ---
 
 ## Related content
 
-#### [Node](#tab/node-worforce)
+#### [Node](#tab/node-workforce)
 
 - Learn how to build a Node.js web app that signs in users and  calls Microsoft Graph API in [Tutorial: Sign in users and acquire a token for Microsoft Graph in a Node.js & Express web app](tutorial-v2-nodejs-webapp-msal.md).
 
 
 
-#### [ASP.NET Core](#tab/asp-dot-net-core-worforce)
+#### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
 
 * Learn by building this ASP.NET web app with the series [Tutorial: Register an application with the Microsoft identity platform](./tutorial-web-app-dotnet-sign-in-users.md).
@@ -434,7 +433,7 @@ The following diagram demonstrates how the sample app works:
 * [Quickstart: Deploy an ASP.NET web app to Azure App Service](/azure/app-service/quickstart-dotnetcore?tabs=net70&pivots=development-environment-vs) 
 
 
-#### [Java](#tab/java-worforce)
+#### [Java](#tab/java-workforce)
 
 For a more in-depth discussion of building web apps that sign in users on the Microsoft identity platform, see the multipart scenario series:
 
@@ -442,7 +441,7 @@ For a more in-depth discussion of building web apps that sign in users on the Mi
 
 
 
-#### [Python Flask](#tab/python-flask-worforce)
+#### [Python Flask](#tab/python-flask-workforce)
 
 - Learn how to build a Python web app that signs in users and calls a protected web API in [Tutorial: Web app that signs in users](tutorial-web-app-python-register-app.md).
 
@@ -452,7 +451,7 @@ For a more in-depth discussion of building web apps that sign in users on the Mi
 
 ::: zone pivot="external"
 
-This quickstart uses a sample web app to show you how to sign in users in your external tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
+In this quickstart, you use a sample web app to show you how to sign in users in your external tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
 
 ## Prerequisites
 
@@ -582,6 +581,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
+
 ### Install project dependencies
 
 1. Open a console window, and change to the directory that contains the Flask sample web app:
@@ -622,17 +622,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```
 
 1. Set up virtual environment:
+    
+    [!INCLUDE [Virtual environment setup](./includes/python-web-app/virtual-environment-setup.md)]
 
-    a. For **Windows**, run the following commands:    
-    ```console
-    py -m venv .venv
-    .venv\scripts\activate
-    ```    
-    b. For **macOS/Linux**, run the following commands:    
-    ```console
-    python3 -m venv .venv
-    source .venv/bin/activate
-    ```
 1. To install app dependencies, run the following commands:
 
     ```console
@@ -641,8 +633,8 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ---
 
-## Configure the sample web app
 
+## Configure the sample web app
 
 For you to sign in users with the sample app, you need to update it with your app and tenant details:
 
