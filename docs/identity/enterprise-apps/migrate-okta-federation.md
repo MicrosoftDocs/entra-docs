@@ -93,9 +93,7 @@ After you enable password hash sync and seamless SSO on the Microsoft Entra Conn
 
    ![Screenshot of the Enable staged rollout features page in the Microsoft Entra admin center. A Manage groups button appears.](media/migrate-okta-federation/password-hash-sync.png)
 
-9. Add a group to the password hash sync rollout. In the following example, the security group starts with 10 members.
-
-   ![Screenshot of the Manage groups for Password Hash Sync page in the Microsoft Entra admin center. A group is in a table.](media/migrate-okta-federation/example-security-group.png)
+9. Add a group to the password hash sync rollout.
 
 10. Wait about 30 minutes for the feature to take effect in your tenant. 
 11. When the feature takes effect, users aren't redirected to Okta when attempting to access Office 365 services.
