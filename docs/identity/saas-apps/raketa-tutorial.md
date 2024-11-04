@@ -46,13 +46,9 @@ To configure the integration of Raketa into Microsoft Entra ID, you need to add 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 
-    ![rkt_2](./media/raketa-tutorial/new-app.png)
+1. In the **Browse Microsoft Entra Gallery** page, in the search box, type *Raketa* in the search box.
 
-1. In the **Add from the gallery** [5] section, type **Raketa** in the search box [6].
-
-1. Select **Raketa** from results panel [7] and then click on **Add** button [8]. 
-
-    ![rkt_3](./media/raketa-tutorial/results.png)
+1. Select **Raketa**. In the **Raketa** pane, provide a name and select **Create**.
 
 <a name='configure-and-test-azure-ad-sso-for-raketa'></a>
 
@@ -76,9 +72,7 @@ To configure and test Microsoft Entra SSO with Raketa, perform the following ste
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Raketa** application integration page, find the **Manage** section and select **single sign-on** [9].
-
-    ![rkt_4](./media/raketa-tutorial/integration.png)
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Raketa** application integration page, find the **Manage** section and select **Single sign-on**.
 
 1. On the **Select a single sign-on method** page [9], select **SAML** [10].
 
@@ -97,17 +91,15 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> The Reply URL value is not real. Update the value with the actual Reply URL. Contact [Raketa Client support team](mailto:help@raketa.travel) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** [15] to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
 1. On the **Set up Raketa** section, copy the appropriate URL(s) based on your requirement.
 
-    1. Login URL [16] – The authorization web-page URL, which is used to redirect the users to the authentication system.
+    1. **Login URL** – The authorization web-page URL, which is used to redirect the users to the authentication system.
 
-    1. Microsoft Entra Identifier [17] – Microsoft Entra Identifier.
+    1. **Microsoft Entra Identifier** – Microsoft Entra Identifier.
 
-    1. Logout URL [18] – The web-page URL, which is used to redirect the users after logout.
-
-    ![rkt_7](./media/raketa-tutorial/authentication.png)
+    1. **Logout URL** – The web-page URL, which is used to redirect the users after logout.
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -132,13 +124,9 @@ In this section, you'll create a test user called B.Simon.
 In this section, you'll enable B.Simon to use single sign-on by granting access to Raketa.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Raketa** [27].  
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Raketa**.  
 
-    ![rkt_10](./media/raketa-tutorial/add-raketa.png)
-
-1. In the app's overview page, find the **Manage** section and select **Users and groups** [28]. 
-
-    ![rkt_11](./media/raketa-tutorial/users-groups.png)
+1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 
 1. Select **Add user** [29], then select **Users and groups** [30] in the **Add Assignment** dialog.
 
