@@ -173,6 +173,12 @@ We'd love to hear your feedback. You should include the following information:
     sudo sysdiagnose
     ```
 
+4. Reset the debug logs to default settings by running the following command in Terminal.
+
+    ```console
+    sudo log config --reset --subsystem "com.apple.AppSSO"
+    ```
+
 ## Troubleshooting guide
 
 ### Insufficient permissions

@@ -149,7 +149,7 @@ Now you are ready to present and verify your first verified credential expert ca
 
     :::image type="content" source="media/verifiable-credentials-configure-verifier/verify-credential.png" alt-text="Screenshot showing how to verify credential from the sample app.":::
 
-1. Using Authenticator, scan the QR code, or scan it directly from your mobile camera.
+1. Using your mobile device, scan the QR code with the Authenticator app. For more info on scanning the QR code, please see the [FAQ section](verifiable-credentials-faq.md#scanning-the-qr-code).
 
 1. When you see the warning message, *This app or website may be risky*, select **Advanced**. You are seeing this warning because your domain isn't verified. For this tutorial, you can skip the domain registration.  
 
