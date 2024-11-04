@@ -6,10 +6,10 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
 
-ms.subservice: customers
+ms.subservice: external
 
 ms.topic: concept-article
-ms.date: 10/07/2024
+ms.date: 11/01/2024
 ms.author: mimart
 ms.custom: it-pro, references_regions
 
@@ -50,7 +50,7 @@ For details, see [how to enable MFA methods in an external tenant](how-to-multif
 
 Email one-time passcode authentication is available in an external tenant both as a first- and second-factor verification method. To allow the use of email one-time passcodes for MFA, your local account authentication method must be set to *Email with password*. If you choose *Email with one-time passcode*, customers who use this method for primary sign-in aren't able to use it for MFA secondary verification.
 
-When email one-time passcode is enabled for MFA, the user signs in with their primary sign-in method and is notified that a code will be sent to the user's email address. The user chooses to send the code, retrieves the passcode from their email inbox, and enters it in the sign-in window.
+When email one-time passcode is enabled for MFA, the user signs in with their primary sign-in method and is notified that a code will be sent to the user's email address. The user chooses to send the code, retrieves the passcode from their email inbox, and enters it in the sign-in window. The user must complete this verification process within 10 minutes.
 
 ## SMS-based authentication
 

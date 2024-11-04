@@ -1,7 +1,7 @@
 ---
 author: henrymbugua
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: include
 ms.date: 08/12/2024
 ms.author: henrymbuguakiarie

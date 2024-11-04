@@ -8,7 +8,7 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 02/23/2024
 ms.custom: developer

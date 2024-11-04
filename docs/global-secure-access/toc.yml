@@ -101,6 +101,8 @@ items:
     items:
       - name: Understand traffic forwarding profiles
         href: concept-traffic-forwarding.md
+      - name: Understand the Microsoft traffic profile
+        href: concept-microsoft-traffic-profile.md
       - name: Manage the Microsoft profile
         href: how-to-manage-microsoft-profile.md
       - name: Manage the Private Access profile

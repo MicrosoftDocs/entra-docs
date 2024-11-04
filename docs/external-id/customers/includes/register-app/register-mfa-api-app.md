@@ -1,7 +1,7 @@
 ---
 author: kengaderdus
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: include
 ms.date: 11/31/2024
 ms.author: kengaderdus
