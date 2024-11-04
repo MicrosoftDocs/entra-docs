@@ -108,7 +108,7 @@ You can update the status of a recommendation and any related resource in the Mi
        - If the service identifies an active resource for a completed recommendation the next time the service runs, the recommendation automatically changes back to **Active**.
        - Completing a recommendation is the only action collected in the audit log. To view these logs, go to **Microsoft Entra ID** > **Audit logs** and filter the service to "Microsoft Entra recommendations."
 
-1. If you need to manually change the status of an impacted resource, select the checkbox for that resources in the **Impacted resources** table and select the status from the menu.
+1. If you need to manually change the status of an impacted resource, select the checkbox for that resource in the **Impacted resources** table and select the status from the menu.
 1. Continue to monitor the recommendations in your tenant for changes.
 
 > [!NOTE]
