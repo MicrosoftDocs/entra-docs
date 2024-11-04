@@ -3695,5 +3695,6 @@
   "Subscription Creator" : "a0bcee42-bf30-4d1b-926a-48d21664ef71",
   "Azure API Management Data Plane" : "c8623e40-e6ab-4d2b-b123-2ca193542c65",
   "Partner Center Container Registries AppId" : "32597670-3e15-4def-8851-614ff48c1efa",
-  "AKS server app ID" : "6dae42f8-4368-4678-94ff-3960e28e3630"
+  "AKS server app ID" : "6dae42f8-4368-4678-94ff-3960e28e3630",
+  "AKS public client ID on behalf of user auth" : "80faf920-1908-4b52-b5ef-a8e7bedfc67a"
 }
