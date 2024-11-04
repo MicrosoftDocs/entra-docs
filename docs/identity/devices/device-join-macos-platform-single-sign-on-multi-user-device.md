@@ -16,13 +16,13 @@ ms.reviewer: brianmel
 
 # Join a Mac device with Microsoft Entra ID and configure it for shared device scenarios (Preview)
 
-In this tutorial, you will learn how to configure an Entra Joined Mac via MDM to support multiple users. There are three methods in which you can register a Mac device with PSSO, secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however shared or multi-user Macs may benefit from using the password method instead. Common scenarios for shared Macs with passwords would be computer labs in schools or universities where students use multiple devices, multiple students use the same device, and they only have passwords and no MFA or passwordless credentials.
+In this tutorial, you will learn how to configure a Microsoft Entra Joined Mac via Mobile Device Management (MDM) to support multiple users. There are three methods in which you can register a Mac device with Platform SSO, secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however shared or multi-user Macs may benefit from using the password method instead. Common scenarios for shared Macs with passwords would be computer labs in schools or universities. In these scenarios, students use multiple devices, multiple students use the same device, and they only have passwords and no MFA or passwordless credentials.
 
 ## Prerequisites
 
-- A required minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported for PSSO overall, only Sonoma supports the necessary tools for the PSSO shared Mac scenario described in this guide.
+- A required minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported for Platform SSO overall, only Sonoma supports the necessary tools for the Platform SSO shared Mac scenario described in this guide.
 - Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later.
-- A configured PSSO MDM payload in your MDM by an administrator.
+- A configured Platform SSO MDM payload in your MDM by an administrator.
 
 ## MDM Configuration
 
@@ -34,7 +34,7 @@ There are three main steps for configuring Platform SSO on a shared device:
 
 ### Platform SSO Profile Configuration
 
-Your Platform SSO MDM profile should leverage the following configurations to support multi-user devices:
+Your Platform SSO MDM profile should apply the following configurations to support multi-user devices:
 
 | Configuration Paramter | Value(s) | Note |
 |-|-|-|
@@ -53,35 +53,35 @@ Your Platform SSO MDM profile should leverage the following configurations to su
 | Type | Redirect | Required |
 | URLs | https://login.microsoftonline.com, https://login.microsoft.com, https://sts.windows.net, https://login.partner.microsoftonline.cn, https://login.chinacloudapi.cn, https://login.microsoftonline.us, https://login-us.microsoftonline.com | Required |
 
-If you use Intune as your MDM of choice then the configuration profile settings will appear like this:
+If you use Intune as your MDM of choice, then the configuration profile settings will appear like this:
 
-:::image type="content" source="media/device-registration-macos-platform-single-sign-on/intune-psso-shared-device-profile.png" alt-text="Screenshot of a PSSO MDM profile in Intune.":::
+:::image type="content" source="media/device-registration-macos-platform-single-sign-on/intune-psso-shared-device-profile.png" alt-text="Screenshot of a Platform SSO MDM profile in Intune.":::
 
 ### macOS Login Screen Configuration
 
-To allow new users to log on and be created from the macOS login screen there are two configurations that can be used:
+To allow new users to log on and be created from the macOS login screen, there are two configurations that can be used:
 
- - **Show Other Users Managed**. With this configuration, the macOS login screen shows a list of profiles that have been created and an "other user" button that can be used to log in with a username and password for a new user. Users can select their existing profile to login or log in with their Entra ID UPN.
+ - **Show Other Users Managed**. With this configuration, the macOS login screen shows a list of profiles that have been created and an "other user" button that can be used to log in with a username and password. Users can select their existing profile to log in or log in with their Microsoft Entra ID user principal name (UPN).
     
- - **Show full name**. With this configuration, the macOS login screen displays and username and password field with no list of users. Users can log in with their Entra ID UPN.
+ - **Show full name**. With this configuration, the macOS login screen displays and username and password field with no list of users. Users can log in with their Microsoft Entra ID UPN.
 
 These configurations can be found in Intune Settings Catalog under **Login** > **Login Window Behavior**.
 
 ## Enrolling and registering devices
 
-To register a Mac device with PSSO, devices must be enrolled into MDM. For shared devices, the user who sets up the device would typically be an administrator or technician - this user will have local administrative rights unless there is alternative local admin account created.
+To register a Mac device with Platform SSO, devices must be enrolled into MDM. For shared devices, the user who sets up the device would typically be an administrator or technician - this user will have local administrative rights unless there is alternative local admin account created.
 
 > [!NOTE]
 > If you are enrolling using Automated Device Enrollment you may choose to encourage the user setting up the device to create the local account as:
->  - **Account name:** Entra ID username (eg. user@domain.com).
+>  - **Account name:** Microsoft Entra ID username (eg. user@domain.com).
 >  - **Full Name:** First and Last Name.
-> This is because the local account that is created during setup assistant will be associated with the Entra ID account during registration. 
+> This is because the local account that is created during setup assistant will be associated with the Microsoft Entra ID account during registration. 
 
 There are three high-level steps to set up Platform SSO on a shared device:
 
 1. IT admin or delegated person enrolls device with Intune.
-1. IT admin or delegated person registers the device with Entra ID using their credentials.
-1. Now the device is ready for new users to log in from the Entra ID login screen.
+1. IT admin or delegated person registers the device with Microsoft Entra ID using their credentials.
+1. Now the device is ready for new users to log in from the Microsoft Entra ID login screen.
 
 Organizations can enroll shared devices into Intune using different methods depending on the device ownership.
 
@@ -92,7 +92,7 @@ Organizations can enroll shared devices into Intune using different methods depe
 
 ### Platform SSO registration
 
-Once the device is MDM enrolled and has Company Portal installed, you need to register your device with PSSO. A **Registration Required** popup appears at the top right of the screen. Use the popup to register your device with PSSO using your Entra ID credentials:
+Once the device is MDM enrolled and has Company Portal installed, you need to register your device with Platform SSO. A **Registration Required** popup appears at the top right of the screen. Use the popup to register your device with Platform SSO using your Microsoft Entra ID credentials:
 
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. 
 
@@ -112,13 +112,13 @@ Once the device is MDM enrolled and has Company Portal installed, you need to re
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-entra-account-password-prompt.png" alt-text="Screenshot of a Microsoft Entra sign in window.":::
 
-1. After unlocking the Mac, you can now use PSSO to access Microsoft app resources. From this point on, your old password doesn't work because PSSO is enabled for your device.
+1. After unlocking the Mac, you can now use Platform SSO to access Microsoft app resources. From this point on, your old password doesn't work because Platform SSO is enabled for your device.
 
 ---
 
 ## Check your device registration status
 
-Once you've completed the steps above, it's a good idea to check your device registration status.
+After completing the steps above, it's recommended to check your device registration status.
 
 1. To check that registration has completed successfully, navigate to **Settings** and select **Users & Groups**. 
 1. Select **Edit** next to **Network Account Server** and check that **Platform SSO** is listed as **Registered**.
@@ -141,18 +141,18 @@ Next you should validate that the device is ready for other users in the tenant 
 
 :::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-new-user-login.png" alt-text="Screenshot of the macOS login screen":::
 
-3. Enter a user's Entra ID User Principal Name and password.
+3. Enter a user's Microsoft Entra ID User Principal Name and password.
 
 :::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-new-user-login-upn.png" alt-text="Screenshot of the macOS login box where a user has entered their credentials":::
 
-4. If the User Principal Name and password were correct then the user will be logged in. The user will be directed to go through several Setup Assistant dialog screens by default and then they will land on the macOS desktop.
+4. If the User Principal Name and password were correct then the user will be logged in. The user is directed to go through several Setup Assistant dialog screens by default and then they land on the macOS desktop.
 
 ## Troubleshooting
 
-If the user cannot sign in successfully then use the following resources to troubleshoot:
+If the user cannot sign in successfully, then use the following resources to troubleshoot:
 
 1. Refer to the [macOS Platform single sign-on known issues and troubleshooting](./troubleshoot-macos-platform-single-sign-on-extension.md) guide
-1. Validate that the user can successfully sign in to Entra ID using their account using their User Principal Name and password in a browser on another device. You can test by having the user go to a web app, such as [https://myapps.microsoft.com](https://myapps.microsoft.com)
+1. Validate that the user can successfully sign in to Microsoft Entra ID using their User Principal Name and password in a browser on another device. You can test by having the user go to a web app, such as [https://myapps.microsoft.com](https://myapps.microsoft.com)
 
 ## See also
 
