@@ -58,6 +58,7 @@ A new business partner and external user solution typically involve the followin
 
 Using some of the below features mentioned requires Microsoft Entra ID Governance or Microsoft Entra Suite licenses. To find the right license for your requirements, see [Microsoft Entra ID Governance licensing fundamentals](../licensing-fundamentals.md)
 
+## Next Step
 
 > [!div class="nextstepaction"]
 > [Discovery](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-discover)
@@ -117,6 +118,11 @@ With these key requirements in mind, here are two things to consider:
  - getting the external users access to resources
 
 There are different options depending on the business case. Let’s deep dive into onboarding of the external users and the options that are available.
+
+## Next Step
+
+> [!div class="nextstepaction"]
+> [Security](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-secure)
 
 
 :::zone-end
@@ -181,6 +187,11 @@ Finally, you should review the following documentation. Reviewing this documenta
 - [Microsoft Entra External ID deployment architectures with Microsoft Entra](../../architecture/external-identity-deployment-architectures.md)
 - [Secure external Collaboration](../../architecture/1-secure-access-posture.md)
 - [Plan a Microsoft Entra B2B collaboration deployment](../../architecture/secure-external-access-resources.md). 
+
+## Next Step
+
+> [!div class="nextstepaction"]
+> [Onboard](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-onboard)
 
 :::zone-end
 
@@ -311,6 +322,11 @@ Almost immediately, the external partners received their invitations. They joine
  - [Configure an automatic assignment policy for an access package in entitlement management](../entitlement-management-access-package-auto-assignment-policy.md)
  - [Change lifecycle settings for an access package in entitlement management](../entitlement-management-access-package-lifecycle-policy.md)
 
+ ## Next Step
+
+> [!div class="nextstepaction"]
+> [Offboard](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-offboard)
+
 ::: zone-end 
 
 
@@ -376,6 +392,11 @@ John is a guest whose access package has expired. The system then revokes John's
 
 For more information, see [Manage user and guest user access with access reviews](../manage-access-review.md) and 
 [Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center](../tutorial-scheduled-leaver-portal.md)
+
+## Next Step
+
+> [!div class="nextstepaction"]
+> [Overview](govern-the-guest-lifecycle-new-project.md?pivots=identity-governance-guest-overview)
 
 ::: zone-end 
 
