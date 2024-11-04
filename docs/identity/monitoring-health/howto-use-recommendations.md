@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/20/2024
+ms.date: 11/04/2024
 ms.author: sarahlipsey
 ms.reviewer: deawari
 
@@ -46,7 +46,7 @@ Each recommendation provides the same set of details that explain what the recom
 The **Status** of a recommendation can be active, completed, dismissed, or postponed. The recommendation service automatically marks a recommendation as completed when all impacted resources are addressed.
 
 - **Active**: The recommendation has resources that need to be addressed. A dismissed, postponed, or completed recommendation can be manually changed back to active.
-- **Completed**: All resources in the recommendation have been addressed. The status is updated automatically by the system when all resources are addressed according to the action plan.
+- **Completed**: All resources in the recommendation have been addressed. The status is updated automatically by the system when all resources are addressed according to the action plan. Recommendations can't be manually marked as completed.
 - **Dismissed**: If the recommendation is irrelevant or the data is wrong, you can dismiss the recommendation. You must provide a reason for dismissing the recommendation.
 - **Postponed**: If you want to address the recommendation at a later time, you can postpone it. The recommendation becomes active when the selected date occurs. You can postpone a recommendation for up to a year.
 
@@ -72,17 +72,19 @@ The **Priority** of a recommendation could be low, medium, or high. These values
 
 ### Impacted resources
 
-The **Impacted resources** for a recommendation could be applications, users, or your full tenant. If the impacted resource is at the tenant level, you might need to make a global change.
+The **Impacted resources** for a recommendation could be applications, users, or your full tenant. If the impacted resource is at the tenant level, you might need to make a global change. Not all recommendations populate the impacted resources table. For example, the "Remove unused applications" recommendation lists all applications that were identified by the recommendation service. Tenant-level recommendations, however, won't have any resources listed in the table.
 
-The **Impacted resources** table contains a list of resources identified by the recommendation. The resource's name, ID, date it was first detected, and status are provided. The resource could be an application or resource service principal, for example.
+For those recommendations where there are separate resources to address, the **Impacted resources** table contains a list of resources identified by the recommendation. The resource's name, ID, date it was first detected, and status are provided. The resource could be an application, user, or resource service principal, for example.
 
-- Not all recommendations populate the impacted resources table. For example, the "Remove unused applications" recommendation lists all applications that were identified by the recommendation service. Tenant-level recommendations, however, won't have any resources listed in the table. 
-- In the Microsoft Entra admin enter, the impacted resources are limited to a maximum of 50 resources. To view all impacted resources for a recommendation, use the following Microsoft Graph API request:
-    - `GET /directory/recommendations/{recommendationId}/impactedResources`
+You can mark individual impacted resources as *dismissed* or *postponed*. The rules and functionality at the resource level are the same as at the recommendation level. In some recommendations, you can select the resource or the **More details** link to access the resource directly.
 
-## How to update a recommendation
+![Screenshot of the more details link in the impacted resources table.](media/howto-use-recommendations/impacted-resources-more-details.png)
 
-You can update the status of a recommendation or a related resource in the Microsoft Entra admin center or using Microsoft Graph.
+In the Microsoft Entra admin enter, the impacted resources are limited to a maximum of 50 resources. To view all impacted resources for a recommendation, use the following Microsoft Graph API request: `GET /directory/recommendations/{recommendationId}/impactedResources`
+
+## How to update a recommendation and impacted resources
+
+You can update the status of a recommendation and any related resource in the Microsoft Entra admin center or using Microsoft Graph.
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
@@ -91,11 +93,8 @@ You can update the status of a recommendation or a related resource in the Micro
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Overview** > **Recommendations**.
 1. Select a recommendation from the list.
-1. Review the **Action plan**.
-
-1. If applicable, select **more details** for a specific resource in the **Impacted resources** table to view the resource's details.
-
-1. The recommendation service automatically marks the recommendation as complete, but if you need to manually change the status of a recommendation, select **Mark as** from the top of the page and select a status.
+1. Follow the guidance in the **Action plan**.
+1. If you need to manually change the status of a recommendation, select **Mark as** from the top of the page and select a status.
 
     ![Screenshot of the Mark as options, to highlight the difference from the resource menu.](media/howto-use-recommendations/recommendation-mark-as-options.png)
 
@@ -109,7 +108,11 @@ You can update the status of a recommendation or a related resource in the Micro
        - If the service identifies an active resource for a completed recommendation the next time the service runs, the recommendation automatically changes back to **Active**.
        - Completing a recommendation is the only action collected in the audit log. To view these logs, go to **Microsoft Entra ID** > **Audit logs** and filter the service to "Microsoft Entra recommendations."
 
+1. If you need to manually change the status of an impacted resource, select the checkbox for that resource in the **Impacted resources** table and select the status from the menu.
 1. Continue to monitor the recommendations in your tenant for changes.
+
+> [!NOTE]
+> You can't manually mark a recommendation as completed. The system automatically marks a recommendation as completed when all impacted resources are addressed. When the service runs, if no active resources are found, the recommendation is marked as completed.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 <a name='how-to-use-microsoft-graph-with-azure-active-directory-recommendations'></a>
@@ -150,6 +153,8 @@ To view the impacted resources for a specific recommendation, use the following 
 GET /directory/recommendations/{recommendationId}/impactedResources
 ```
 ---
+
+
 
 ## Related content
 
