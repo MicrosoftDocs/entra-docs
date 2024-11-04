@@ -79,7 +79,7 @@ To remove the application:
 
 To indicate the application is still needed and skip the recommendation:
 
-- [Update the recommendation status](howto-use-recommendations.md#how-to-update-a-recommendation) to **dismissed** or **postponed**.
+- [Update the recommendation status](howto-use-recommendations.md#how-to-update-a-recommendation-and-impacted-resources) to **dismissed** or **postponed**.
     - Use **dismissed** if determined that the app will remain inactive for the rest of its lifecycle.
     - Use **dismissed** if you think the app as included in the recommendation in error.
     - Use **postponed** if you need more time to review the app.
