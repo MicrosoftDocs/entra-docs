@@ -83,6 +83,6 @@ Risky Users:
 
 ## Related content
 
-- [How to use the identity workbooks](how-to-use-workbooks.md)
+- [How to use the identity workbooks](howto-use-workbooks.md)
 - [What is Microsoft Entra ID Protection?](../../id-protection/overview-identity-protection.md)
 - [What are risk detections?](../../id-protection/concept-identity-protection-risks.md)

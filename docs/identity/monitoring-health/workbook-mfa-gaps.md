@@ -76,5 +76,5 @@ The summary widget provides a detailed look at sign-ins related to multifactor a
 
 ## Related content
 
-- [How to use the identity workbooks](how-to-use-workbooks.md)
-- [Conditional Access gap analyzer workbook](workbook-cond-access-gap-analyzer.md)
+- [How to use the identity workbooks](howto-use-workbooks.md)
+- [Conditional Access gap analyzer workbook](workbook-conditional-access-gap-analyzer.md)

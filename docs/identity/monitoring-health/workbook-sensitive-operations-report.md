@@ -131,5 +131,5 @@ This paragraph lists the supported filters for each section.
 
 ## Related content
 
-- [How to use the identity workbooks](how-to-use-workbooks.md)
+- [How to use the identity workbooks](howto-use-workbooks.md)
 - [Service principal sign-in logs](concept-service-principal-sign-ins.md)

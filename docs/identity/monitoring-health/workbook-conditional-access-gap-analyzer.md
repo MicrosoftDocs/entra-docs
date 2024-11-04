@@ -83,5 +83,5 @@ Use this workbook to ensure that your tenant is configured to the following Cond
 
 ## Related content
 
-- [How to use the identity workbooks](how-to-use-workbooks.md)
+- [How to use the identity workbooks](howto-use-workbooks.md)
 - [What is Conditional Access?](../conditional-access/overview.md)

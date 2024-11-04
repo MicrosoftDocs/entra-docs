@@ -107,6 +107,6 @@ Filtering for a specific user that has many authentication requests or only show
 
 ## Related content
 
-- [How to use the identity workbooks](how-to-use-workbooks.md)
+- [How to use the identity workbooks](howto-use-workbooks.md)
 - [Manage the 'Stay signed in?' prompt](../../fundamentals/how-to-manage-stay-signed-in-prompt.yml)
 - [How MFA works](../authentication/concept-mfa-howitworks.md)

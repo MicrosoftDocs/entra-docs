@@ -94,5 +94,5 @@ Use this workbook to:
 
 ## Related content
 
-- [How to use the identity workbooks](how-to-use-workbooks.md)
+- [How to use the identity workbooks](howto-use-workbooks.md)
 - [Introduction to Microsoft Entra External ID](../../external-id/external-identities-overview.md)
