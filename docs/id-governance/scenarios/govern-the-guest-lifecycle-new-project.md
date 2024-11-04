@@ -13,7 +13,7 @@ ms.author: billmath
 
 # Planning new governance scenarios for business partners and external users
 
-The following documentation will guide you through creating and deploying business partner and external user scenarios.
+
 
 
 :::zone pivot="identity-governance-guest-overview"
@@ -49,7 +49,7 @@ A new business partner and external user solution typically involve the followin
 :::image type="content" source="media/external-guest-new/govern-access-1.png" alt-text="Conceputal drawing of governing access to your resources." lightbox="media/external-guest-new/govern-access-1.png":::
 
 - **Discover your business requirements** - Identify your current lifecycle and governance processes for external identities. This exercise will help you to determine applicable scenarios, feasibility and scope.
-- **Determine your security posture** - As you consider the governance of external access, assess your organization's security and collaboration needs, by scenario.
+- **Determine your security posture** - Assess your organization's security and collaboration needs, by scenario.
 - **Onboarding of business partners and external users** - Onboarding, with regard to guest or external identities, is the process or processes of getting these identities set up in your organizations systems. 
 - **Offboarding business partners and external users** - Offboarding, with regard to guest or external identities, is the process or processes of getting these identities removed from your organizations systems. 
 
@@ -109,7 +109,7 @@ Some of your key requirements include,
 
  - Diverse guest onboarding needs with different departments requiring unique levels of access. 
  - Ensuring that guest users have the least privilege necessary to perform their tasks is critical and needs robust conditional access policies and multi-factor authentication to protect sensitive data. 
- - Seamless and user friendly onboarding process for both you as an IT admin, and your external users. External users should be able to quickly and easily access the resources they require without unnecessary delays. 
+ - A seamless and user friendly onboarding process for both you as an IT admin, and your external users. External users should be able to quickly and easily access the resources they require without unnecessary delays. 
  - Integration with existing collaboration tools like Microsoft Teams and SharePoint, along with the option for Self-Service Sign-Up (SSSU) 
  - Capability to govern guest by regularly monitoring guest user activity, set an expiration on access and periodic access reviews ensure that guest access remains appropriate over time. For more information, see [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) and [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
 
@@ -160,7 +160,7 @@ For example:
 
 IT teams can delegate partner access to empower employees to collaborate with partners. This delegation can occur while maintaining sufficient security to protect intellectual property.
 
-Compile and assess your organizations scenarios to help assess employee versus business partner access to resources. Financial institutions might have compliance standards that restrict employee access to resources such as account information. Conversely, the same institutions can enable delegated partner access for projects such as marketing campaigns.
+Compile and assess your organization's scenarios to help assess employee versus business partner access to resources. Financial institutions might have compliance standards that restrict employee access to resources such as account information. Conversely, the same institutions can enable delegated partner access for projects such as marketing campaigns.
 
   ![Diagram of a balance of IT team goverened access to partner self-service.](../../architecture/media/secure-external-access/1-scenarios.png)
 
