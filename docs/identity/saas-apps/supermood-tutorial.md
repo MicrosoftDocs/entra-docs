@@ -148,8 +148,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click on **My account** (bottom left) and **Single Sign On (SSO)**.
 
-	![The Certificate single](./media/supermood-tutorial/tutorial_supermood_single.png)
-
 1. On **Your SAML 2.0 configurations**, Click **Add an SAML 2.0 configuration for an email domain**.
 
 	![The Certificate add](./media/supermood-tutorial/tutorial_supermood_add.png)
