@@ -26,7 +26,7 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 
 * An Azure subscription. [Create an Azure subscription for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Node.js](https://nodejs.org/en/download/)
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * A Microsoft Entra workforce tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
@@ -246,7 +246,7 @@ server.ssl.key-alias=testCert
 
 1. Open the application you downloaded in an IDE and navigate to root folder of the sample app.
 
-    ```Console
+    ```console
     cd flask-web-app
     ```
 1. Create an *.env* file in the root folder of the project using *.env.sample* as a guide.
@@ -397,7 +397,7 @@ If you want to deploy the web sample to Tomcat, make a couple changes to the sou
 
 1. Follow the steps and enter the necessary details to sign in with your Microsoft account. You're requested to provide an email address and password to sign in.
 
-1. The application requests permission to maintain access to data you allow access to, and to sign you in and then read your profile, as shown in the screenshot. Select Accept.
+1. The application requests permission to maintain access to data you allow access to, and to sign you in and then read your profile, as shown in the screenshot. Select **Accept**.
 
   ![Diagram that shows the sample app requesting for consent to access the required permissions.](media/python-webapp/consent.png)
 
@@ -710,7 +710,7 @@ You can now test the sample Node.js web app. You need to start the Node.js serve
 
     :::image type="content" source="media/how-to-web-app-node-sample-sign-in/web-app-node-sign-in.png" alt-text="Screenshot of sign in into a node web app.":::
 
-1. After the page completes loading, select **Sign in** link. You're prompted to sign in.
+1. After the page completes loading, select **Sign in** when prompted.
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
@@ -768,7 +768,7 @@ Run the app to see the sign-in experience at play.
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
-1. If you choose the sign-up option, you go through the sign-uo flow. Fill in your email, one-time passcode, new password, and more account details to complete the whole sign-up flow.
+1. If you choose the sign-up option, you go through the sign-up flow. Fill in your email, one-time passcode, new password, and more account details to complete the whole sign-up flow.
 
 1. After you sign in or sign up, you're redirected back to the web app. You see a page that looks similar to the following screenshot:
 
