@@ -46,6 +46,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/conditional-access/reference-resources-change.md",
+      "redirect_url": "/entra/identity/conditional-access/concept-conditional-access-cloud-apps",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa.md",
       "redirect_url": "/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
       "redirect_document_id": true
