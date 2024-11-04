@@ -16,11 +16,11 @@ ms.reviewer: brianmel
 
 # Join a Mac device with Microsoft Entra ID and configure it for shared device scenarios (Preview)
 
-In this tutorial, you will learn how to configure a Microsoft Entra Joined Mac via Mobile Device Management (MDM) to support multiple users. There are three methods in which you can register a Mac device with Platform SSO, secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however shared or multi-user Macs may benefit from using the password method instead. Common scenarios for shared Macs with passwords would be computer labs in schools or universities. In these scenarios, students use multiple devices, multiple students use the same device, and they only have passwords and no MFA or passwordless credentials.
+In this tutorial, you will learn how to configure a Microsoft Entra Joined Mac via Mobile Device Management (MDM) to support multiple users. There are three methods in which you can register a Mac device with Platform SSO (PSSO), secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however shared or multi-user Macs may benefit from using the password method instead. Common scenarios for shared Macs with passwords would be computer labs in schools or universities. In these scenarios, students use multiple devices, multiple students use the same device, and they only have passwords and no MFA or passwordless credentials.
 
 ## Prerequisites
 
-- A required minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported for Platform SSO overall, only Sonoma supports the necessary tools for the Platform SSO shared Mac scenario described in this guide.
+- A required minimum version of macOS 14 Sonoma or later. While macOS 13 Ventura is supported for Platform SSO overall, only Sonoma supports the necessary tools for the Platform SSO shared Mac scenario described in this guide.
 - Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later.
 - A configured Platform SSO MDM payload in your MDM by an administrator.
 
