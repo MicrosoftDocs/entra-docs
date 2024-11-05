@@ -257,7 +257,7 @@ Next, you register the custom authentication extension and associating it with t
     }
     ```
 
-1. Record the **id** value of the created custom email OTP provider object. You'll use the value later in this tutorial in place of `{customExtensionObjectId}`.
+1. Record the **id** value of the created custom email OTP provider object, which is used later in this article in place of `{customExtensionObjectId}`.
 
 ### 3.4 Assign a custom email provider to your app
 
@@ -295,7 +295,7 @@ Follow these steps to connect the *My Test application* with your custom authent
     }
     ```
 
-1. Record the **id** value of the created listener object. You'll use the value later in this tutorial in place of `{customListenerOjectId}`.
+1. Record the **id** value of the created listener object, which is used later in this article in place of `{customListenerOjectId}`.
 
 ---
 
@@ -324,7 +324,7 @@ Follow these steps to register the **jwt.ms** web application:
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 1. In the **Select a platform** dropdown in **Redirect URI**, select **Web**, and then enter `https://jwt.ms` in the URL text box.
 1. Select **Register** to complete the app registration.
-1. In your app registration, under **Overview**, copy the **Application (client) ID**, which will be used later and referred to as the `{App_to_sendotp_ID}`. In Microsoft Graph, it's referenced by the **appId** property.
+1. In your app registration, under **Overview**, copy the **Application (client) ID**, which is used later and referred to as the `{App_to_sendotp_ID}`. In Microsoft Graph, it's referenced by the **appId** property.
 
 The following screenshot shows how to register the *My Test application*.
 
@@ -438,4 +438,5 @@ PATCH https://graph.microsoft.com/beta/identity/authenticationEventListeners/{cu
 ## See also
 
 - [Configure a custom claim provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md)
+- [Create a custom authentication extension for attribute collection start and submit events]
 - [Custom claims provider reference](custom-claims-provider-reference.md)
