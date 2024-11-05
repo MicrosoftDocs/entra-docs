@@ -116,12 +116,12 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: How does this requirement impact the Microsoft 365 admin center?
 
-**Answer**: Mandatory MFA will be rolled out to the Microsoft 365 admin center starting October 28th, 2024. Learn more about the mandatory MFA requirement for the Microsoft 365 admin center on the blog post [here](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-will-require-mfa-to-access-the-microsoft-365-admin/ba-p/4232568). 
+**Answer**: Mandatory MFA will roll out to the Microsoft 365 admin center starting November 11, 2024. Learn more about the mandatory MFA requirement for the Microsoft 365 admin center on the blog post [here](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-will-require-mfa-to-access-the-microsoft-365-admin/ba-p/4232568). 
 
 **Question**: Is MFA mandatory for all users or only administrators? 
 
 
-**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
+**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any administrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
 
 **Question**: Will I need to complete MFA if I choose the option to **Stay signed in**?
 
@@ -143,8 +143,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 There's no way to opt out. This security motion is critical to all safety and security of the Azure platform and is being repeated across cloud vendors. For example, see [Secure by Design: AWS to enhance MFA requirements in 2024](https://aws.amazon.com/blogs/security/security-by-design-aws-to-enhance-mfa-requirements-in-2024/). 
  
-An option to postpone the enforcement start date is available for customers. Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page and they must perform this action for every tenant for which they would like to postpone the start date of enforcement.
-
+An option to postpone the enforcement start date is available for customers. Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before they postpone the start date of MFA enforcement on this page. They must perform this action for each tenant that needs postponement.
  
 **Question**: Can I test MFA before Azure enforces the policy to ensure nothing breaks? 
 
