@@ -116,7 +116,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: How does this requirement impact the Microsoft 365 admin center?
 
-**Answer**: Mandatory MFA will roll out to the Microsoft 365 admin center starting early in 2025. Learn more about the mandatory MFA requirement for the Microsoft 365 admin center on the blog post [here](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-will-require-mfa-to-access-the-microsoft-365-admin/ba-p/4232568). 
+**Answer**: Mandatory MFA will roll out to the Microsoft 365 admin center starting early in 2025. Learn more about the mandatory MFA requirement for the Microsoft 365 admin center on the blog post [Announcing mandatory multifactor authentication for the Microsoft 365 admin center](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-will-require-mfa-to-access-the-microsoft-365-admin/ba-p/4232568). 
 
 **Question**: Is MFA mandatory for all users or only administrators? 
 
