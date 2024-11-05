@@ -53,8 +53,7 @@ To configure the integration of Microsoft Entra ID with E Sales Manager Remix, a
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
-	![The "Enterprise applications" window][2]
-	
+
 1. To add a new application, select **New application** at the top of the window.
 
 	![The New application button][3]
@@ -85,12 +84,8 @@ Enable Microsoft Entra single sign-on in the Azure portal and configure single s
 	![The "Single sign-on" link][4]
 
 1. In the **Single sign-on** window, in the **Single Sign-on Mode** box, select **SAML-based Sign-on**.
- 
-	![The "Single sign-on" window](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_samlbase.png)
 
 1. Under **E Sales Manager Remix Domain and URLs**, do the following:
-
-	![E Sales Manager Remix Domain and URLs single sign-on information](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_url.png)
 
     a. In the **Sign-on URL** box, type a URL in the following format: *https://\<Server-Based-URL>/\<sub-domain>/esales-pc*.
 
@@ -103,8 +98,6 @@ Enable Microsoft Entra single sign-on in the Azure portal and configure single s
 
 1. Under **SAML Signing Certificate**, select **Certificate (Base64)**, and then save the certificate file on your computer.
 
-	![The Certificate (Base64) download link](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_certificate.png) 
-
 1. Select the **View and edit all other user attributes** check box, and then select the **emailaddress** attribute.
 	
 	![The User Attributes window](./media/esalesmanagerremix-tutorial/configure1.png)
@@ -116,8 +109,6 @@ Enable Microsoft Entra single sign-on in the Azure portal and configure single s
 	![The Edit Attribute window](./media/esalesmanagerremix-tutorial/configure2.png)
 
 1. Under **E Sales Manager Remix Configuration**, select **Configure E Sales Manager Remix**.
-
-	![Screenshot that shows the "E Sales Manager Remix Configuration" section with "Configure E Sales Manager Remix" selected.](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_configure.png) 
 
     The **Configure sign-on** window opens.
 
@@ -220,8 +211,6 @@ In this section, you enable user Britta Simon to use Azure single sign-on by gra
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
-	![The "Enterprise applications" and "All applications" links][201] 
-
 1. In the **Applications** list, select **E Sales Manager Remix**.
 
 	![The E Sales Manager Remix link](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_app.png)  
@@ -256,13 +245,13 @@ For more information about the Access Panel, see [Introduction to the Access 
 <!--Image references-->
 
 [1]: ./media/esalesmanagerremix-tutorial/tutorial_general_01.png
-[2]: ./media/esalesmanagerremix-tutorial/tutorial_general_02.png
+
 [3]: ./media/esalesmanagerremix-tutorial/tutorial_general_03.png
 [4]: ./media/esalesmanagerremix-tutorial/tutorial_general_04.png
 
 [100]: ./media/esalesmanagerremix-tutorial/tutorial_general_100.png
 
 [200]: ./media/esalesmanagerremix-tutorial/tutorial_general_200.png
-[201]: ./media/esalesmanagerremix-tutorial/tutorial_general_201.png
+
 [202]: ./media/esalesmanagerremix-tutorial/tutorial_general_202.png
 [203]: ./media/esalesmanagerremix-tutorial/tutorial_general_203.png

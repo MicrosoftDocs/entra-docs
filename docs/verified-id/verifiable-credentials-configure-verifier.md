@@ -34,7 +34,7 @@ In this article, you learn how to:
 - If you want to clone the repository that hosts the sample app, install [Git](https://git-scm.com/downloads).
 - [Visual Studio Code](https://code.visualstudio.com/Download), [Visual Studio](https://visualstudio.microsoft.com/downloads/) or similar code editor.
 - [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/6.0).
-- Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cannot-use-ngrok-what-do-i-do).
+- Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cant-use-ngrok-what-do-i-do).
 - A mobile device with the latest version of Microsoft Authenticator.
 
 ## Gather tenant details to set up your sample application
@@ -149,7 +149,7 @@ Now you are ready to present and verify your first verified credential expert ca
 
     :::image type="content" source="media/verifiable-credentials-configure-verifier/verify-credential.png" alt-text="Screenshot showing how to verify credential from the sample app.":::
 
-1. Using Authenticator, scan the QR code, or scan it directly from your mobile camera.
+1. Using your mobile device, scan the QR code with the Authenticator app. For more info on scanning the QR code, please see the [FAQ section](verifiable-credentials-faq.md#scanning-the-qr-code).
 
 1. When you see the warning message, *This app or website may be risky*, select **Advanced**. You are seeing this warning because your domain isn't verified. For this tutorial, you can skip the domain registration.  
 

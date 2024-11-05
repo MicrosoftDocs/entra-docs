@@ -93,7 +93,13 @@ On the Microsoft identity platform (requests made to the v2.0 endpoint), your ap
 
 The access token is usually valid for around one hour. At that point, your app needs to redirect the user back to the `/authorize` endpoint to request a new authorization code. During this redirect and depending on app type, the user may need to enter their credentials again or consent to permissions again.
 
-The refresh token has a longer expiry than the access token, and is usually valid for a day. For more information about how to get and use refresh tokens, see the [Microsoft identity platform protocol reference](./v2-protocols.md).
+The refresh token has a longer expiry than the access token and is usually valid for a day. For more information about how to get and use refresh tokens, see the [Microsoft identity platform protocol reference](./v2-protocols.md).
+
+The inclusion of the refresh token in the response can depend on several factors, including the specific configuration of your application and the scopes requested during the authorization process. If you expect to receive a refresh token in the response but fail to, consider the following factors:
+
+- **Scope requirements**: Ensure that you are requesting the `offline_access` scopes along with any other necessary scopes.
+- **Authorization grant type**: The refresh token is generally provided when using the authorization code grant type. If your flow differs, it may affect the response.
+- **Client configuration**: Check your application's settings in the identity platform. Certain configurations may restrict the issuance of refresh_tokens.
 
 ## The `.default` scope
 

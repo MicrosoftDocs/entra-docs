@@ -5,7 +5,7 @@ description: Topic that shows how to configure Microsoft Entra certificate-based
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/17/2023
+ms.date: 10/04/2024
 
 ms.author: justinha
 author: vimrang
@@ -47,7 +47,9 @@ Make sure that the following prerequisites are in place:
 
 ## Steps to configure and test Microsoft Entra CBA
 
-Some configuration steps to be done before you enable Microsoft Entra CBA. First, an admin must configure the trusted CAs that issue user certificates. As seen in the following diagram, we use role-based access control to make sure only least-privileged administrators are needed to make changes. Only the [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role can configure the CA.
+Some configuration steps to be done before you enable Microsoft Entra CBA. First, an admin must configure the trusted CAs that issue user certificates. As seen in the following diagram, we use role-based access control to make sure only least-privileged administrators are needed to make changes. 
+
+[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
 
 Optionally, you can also configure authentication bindings to map certificates to single-factor or multifactor authentication, and configure username bindings to map the certificate field to an attribute of the user object. [Authentication Policy Administrators](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) can configure user-related settings. Once all the configurations are complete, enable Microsoft Entra CBA on the tenant. 
 
@@ -61,7 +63,7 @@ You can configure certificate authorities(CAs) by using the Microsoft Entra admi
 
 To enable the certificate-based authentication and configure user bindings in the Microsoft Entra admin center, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)]
 1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
 1. To upload a CA, select **Upload**: 
    1. Select the CA file.
@@ -76,7 +78,8 @@ To enable the certificate-based authentication and configure user bindings in th
 1. Select **Columns** to add or delete columns.
 
 >[!NOTE]
->Upload of a new CA fails if any existing CA expired. A Global Administrator should delete any expired CA, and retry to upload the new CA.
+>Upload of a new CA fails if any existing CA expired. You should delete any expired CA, and retry to upload the new CA.
+>[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
 
 ### Configure certificate authorities (CA) using PowerShell
 
@@ -323,7 +326,7 @@ Let's walk through a scenario where we validate strong authentication. We'll cre
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/policy-oid-rule.png" alt-text="Screenshot of the Policy OID rule.":::
 
-1. Create a Conditional Access policy for the user to require multifactor authentication by following steps at [Conditional Access - Require MFA](../conditional-access/howto-conditional-access-policy-all-users-mfa.md#create-a-conditional-access-policy).
+1. Create a Conditional Access policy for the user to require multifactor authentication by following steps at [Conditional Access - Require MFA](../conditional-access/policy-all-users-mfa-strength.md#create-a-conditional-access-policy).
 1. Navigate to [MyApps portal](https://myapps.microsoft.com/). Enter your UPN and select **Next**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/name.png" alt-text="Screenshot of the User Principal Name.":::

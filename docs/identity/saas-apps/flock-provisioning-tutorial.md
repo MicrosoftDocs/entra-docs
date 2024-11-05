@@ -43,7 +43,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to Flock, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup Flock  for provisioning
+## Set up Flock  for provisioning
 
 Before configuring Flock for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Flock.
 
@@ -111,8 +111,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Flock**.
-
-	![Flock User Mappings](media/flock-provisioning-tutorial/usermapping.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Flock  in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Flock  for update operations. Select the **Save** button to commit any changes.
 

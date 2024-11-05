@@ -103,7 +103,7 @@ Replace *{tenant}* with your tenant ID, *{your_client_ID}* with the client ID of
 
 ## Exclude test apps and users from your MFA policy
 
-Your tenant likely has a Conditional Access policy that [requires multifactor authentication (MFA) for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md), as recommended by Microsoft.  MFA won't work with ROPC, so you'll need to exempt your test applications and test users from this requirement.
+Your tenant likely has a Conditional Access policy that [requires multifactor authentication (MFA) for all users](~/identity/conditional-access/policy-all-users-mfa-strength.md), as recommended by Microsoft.  MFA won't work with ROPC, so you'll need to exempt your test applications and test users from this requirement.
 
 To exclude user accounts:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).   

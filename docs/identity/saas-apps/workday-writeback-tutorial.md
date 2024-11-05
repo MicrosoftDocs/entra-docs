@@ -300,7 +300,7 @@ Once the Workday provisioning app configurations are complete, you can turn on t
    > ![Select Writeback scope](./media/sap-successfactors-inbound-provisioning/select-writeback-scope.png)
 
    > [!NOTE]
-   > The Workday Writeback provisioning app doesn't support the option **Sync only assigned users and groups**.
+   > The Workday Writeback provisioning app doesn't support the option **Sync only assigned users and groups** and will always operate as if the "Sync all users and groups" option is selected.
  
 
 2. Click **Save**.

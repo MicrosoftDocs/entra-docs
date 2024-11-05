@@ -128,9 +128,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Infor CloudSuite**.
-
-	![Infor CloudSuite User Mappings](media/infor-cloudsuite-provisioning-tutorial/usermappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Infor CloudSuite in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Infor CloudSuite for update operations. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Infor CloudSuite|
@@ -154,8 +151,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Infor CloudSuite**.
-
-	![Infor CloudSuite Group Mappings](media/infor-cloudsuite-provisioning-tutorial/groupmappings.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Infor CloudSuite in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Infor CloudSuite for update operations. Select the **Save** button to commit any changes.
 

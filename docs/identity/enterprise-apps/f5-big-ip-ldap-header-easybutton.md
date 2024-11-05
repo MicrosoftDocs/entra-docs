@@ -133,17 +133,12 @@ Some of these settings are global, therefore can be reused to publish more appli
 4. Confirm the BIG-IP can connect to your tenant.
 5. Select **Next**.
 
-    ![Screenshot of entries for General Properties and Azure Service Account Details, on Configuration Properties.](./media/f5-big-ip-easy-button-ldap/config-properties.png)
-
 ### Service Provider
 
 The Service Provider settings define the properties for the SAML SP instance of the application protected through SHA.
 
 1. Enter **Host**, the public fully qualified domain name (FQDN) of the application being secured.
 2. Enter **Entity ID**, the identifier Microsoft Entra ID uses to identify the SAML SP requesting a token.
-
-    ![Screenshot of Host and Entity ID entries on Service Provider.](./media/f5-big-ip-easy-button-ldap/service-provider.png)
-
 Use the optional **Security Settings** to specify whether Microsoft Entra ID encrypts issued SAML assertions. Encrypting assertions between Microsoft Entra ID and the BIG-IP APM provides assurance the content tokens can’t be intercepted, and personal or corporate data can't be compromised.
 
 3. From the **Assertion Decryption Private Key** list, select **Create New**
@@ -218,7 +213,7 @@ Conditional Access policies are enforced after Microsoft Entra pre-authenticatio
 
 The **Available Policies** view lists Conditional Access policies that don't include user actions.
 
-The **Selected Policies** view shows policies targeting all cloud apps. These policies can't be deselected or moved to the Available Policies list because they're enforced at a tenant level.
+The **Selected Policies** view shows policies targeting all resources. These policies can't be deselected or moved to the Available Policies list because they're enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 

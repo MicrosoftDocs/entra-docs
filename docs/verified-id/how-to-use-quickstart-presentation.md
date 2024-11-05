@@ -43,7 +43,7 @@ The JSON display definition is nearly the same, regardless of attestation type. 
     "title": "Verified Credential Expert",
     "logo": {
       "description": "Verified Credential Expert Logo",
-      "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png"
+      "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png"
     }
   },
   "consent": {

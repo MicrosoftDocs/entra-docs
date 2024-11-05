@@ -32,7 +32,7 @@ To complete this article, you need the following resources and privileges:
 * A Microsoft Entra tenant associated with your subscription.
 
   * If needed, [create a Microsoft Entra tenant](~/fundamentals/sign-up-organization.md) or [associate an Azure subscription with your account](~/fundamentals/how-subscriptions-associated-directory.yml).
-* You need *Global Administrator* privileges in your Microsoft Entra tenant to enable SMS-based authentication.
+* You need *Authentication Policy Administrator* privileges in your Microsoft Entra tenant to enable SMS-based authentication.
 * Each user who's enabled in the text message authentication method policy must be licensed, even if they don't use it. Each enabled user must have one of the following Microsoft Entra ID or Microsoft 365 licenses:
 
   * [Microsoft Entra ID P1 or P2](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing)

@@ -6,9 +6,9 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: overview
-ms.date: 04/29/2024
+ms.date:  09/30/2024
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -67,7 +67,7 @@ External ID is intended for businesses that want to make applications available 
 
 - **Integrate multiple app languages and platforms.** With Microsoft Entra, you can quickly set up and deliver secure, branded authentication flows for multiple app types, platforms, and languages.
 
-- **Use native authentication for your apps.** Create seamless authentication experiences for mobile and desktop applications using the preview Microsoft Authentication Library (MSAL) for iOS and Android. 
+- **Use native authentication for your apps.** Create seamless authentication experiences for mobile and desktop applications using the Microsoft Authentication Library (MSAL) for iOS and Android. 
 
 - **Provide self-service account management.** Customers can register for your online services by themselves, manage their profile, delete their account, enroll in a multifactor authentication (MFA) method, or reset their password with no admin or help desk assistance.
 

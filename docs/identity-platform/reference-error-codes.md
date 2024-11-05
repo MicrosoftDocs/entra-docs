@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 04/24/2024
+ms.date: 09/27/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -102,6 +102,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50006 | InvalidSignature - Signature verification failed because of an invalid signature. |
 | AADSTS50007 | PartnerEncryptionCertificateMissing - The partner encryption certificate wasn't found for this app. [Open a support ticket](~/fundamentals/how-to-get-support.md) with Microsoft to get this fixed. |
 | AADSTS50008 | InvalidSamlToken - SAML assertion is missing or misconfigured in the token. Contact your federation provider. |
+| AADSTS5000224 | NotAllowedTenantBlockedTenantFraud - We are sorry, this resource is not available. If you are seeing this message by mistake, please contact Microsoft support. |
 | AADSTS5000819 | InvalidSamlTokenEmailMissingOrInvalid - SAML Assertion is invalid. Email address claim is missing or doesn't match domain from an external realm. |
 | AADSTS50010 | AudienceUriValidationFailed - Audience URI validation for the app failed since no token audiences were configured. |
 | AADSTS50011 | InvalidReplyTo - The reply address is missing, misconfigured, or doesn't match reply addresses configured for the app. As a resolution ensures to add this missing reply address to the Microsoft Entra application or have someone with the permissions to manage your application in Microsoft Entra IF do this for you. To learn more, see the troubleshooting article for error [AADSTS50011](/troubleshoot/azure/active-directory/error-code-aadsts50011-reply-url-mismatch).|
@@ -319,6 +320,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS90101 | InvalidEmailAddress - The supplied data isn't a valid email address. The email address must be in the format `someone@example.com`. |
 | AADSTS90102 | InvalidUriParameter - The value must be a valid absolute URI. |
 | AADSTS90107 | InvalidXml - The request isn't valid. Make sure your data doesn't have invalid characters.|
+| AADSTS90112 | Application identifier is expected to be a GUID. |
 | AADSTS90114 | InvalidExpiryDate - The bulk token expiration timestamp will cause an expired token to be issued. |
 | AADSTS90117 | InvalidRequestInput |
 | AADSTS90119 | InvalidUserCode - The user code is null or empty.|

@@ -6,10 +6,10 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
 
-ms.subservice: customers
+ms.subservice: external
 
 ms.topic: concept-article
-ms.date: 09/06/2024
+ms.date: 11/01/2024
 ms.author: mimart
 ms.custom: it-pro, references_regions
 
@@ -23,7 +23,7 @@ ms.custom: it-pro, references_regions
 [Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
 
 - Email one-time passcode
-- SMS based authentication, available as an add-on [see details](#sms-based-authentication-preview).
+- SMS-based authentication, available as an add-on ([see details](#sms-based-authentication)).
 
 Enforcing MFA enhances your organization's security by adding an extra layer of verification, making it more difficult for unauthorized users to gain access.
 
@@ -50,11 +50,11 @@ For details, see [how to enable MFA methods in an external tenant](how-to-multif
 
 Email one-time passcode authentication is available in an external tenant both as a first- and second-factor verification method. To allow the use of email one-time passcodes for MFA, your local account authentication method must be set to *Email with password*. If you choose *Email with one-time passcode*, customers who use this method for primary sign-in aren't able to use it for MFA secondary verification.
 
-When email one-time passcode is enabled for MFA, the user signs in with their primary sign-in method and is notified that a code will be sent to the user's email address. The user chooses to send the code, retrieves the passcode from their email inbox, and enters it in the sign-in window.
+When email one-time passcode is enabled for MFA, the user signs in with their primary sign-in method and is notified that a code will be sent to the user's email address. The user chooses to send the code, retrieves the passcode from their email inbox, and enters it in the sign-in window. The user must complete this verification process within 10 minutes.
 
-## SMS-based authentication (preview)
+## SMS-based authentication
 
-SMS is available at additional cost for second-factor verification in external tenants. Currently, SMS is not available for first-factor authentication or self-service password reset in external tenants.
+SMS is available at additional cost for second-factor verification in external tenants. Currently, SMS isn't available for first-factor authentication or self-service password reset in external tenants.
 
 When SMS is enabled for MFA, users sign in with their primary method and are prompted to verify their identity with a code sent via text. They enter their phone number and receive an SMS with the verification code.
 
@@ -68,6 +68,8 @@ External ID mitigates fraudulent sign-ups and sign-ins via SMS by enforcing the 
 ### SMS pricing tiers by country/region
 
 The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions. For pricing details, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
+
+SMS is an add-on feature and requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription). If your subscription expires or is cancelled, end users will no longer be able to authenticate using SMS, which could block them from signing in depending on your MFA policy.
 
 |Tier                               |Countries/Regions  |
 |-----------------------------------|-------------------|

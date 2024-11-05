@@ -1,7 +1,7 @@
 // List of the dummy GUIDs used in the documentation, and the sensitive term list that they are associated with. Refer to Learn Plaford for more information.
 // Used as part of docutune-1.5.2/dictionaries/Dictionary-Security-GUIDs.ps1 workflow.
 {
-  "appId|applicationId|application|clientId|audience|aud": [
+  "appId|applicationId|clientId|audience|aud": [
     "00001111-aaaa-2222-bbbb-3333cccc4444",
     "11112222-bbbb-3333-cccc-4444dddd5555",
     "22223333-cccc-4444-dddd-5555eeee6666",
@@ -111,8 +111,5 @@
     "4444eeee-55ff-aaaa-bb66-cccccc777777",
     "5555ffff-66aa-bbbb-cc77-dddddd888888",
     "6666aaaa-77bb-cccc-dd88-eeeeee999999"
-  ],
-  "appRoleId|roleId|roleAssignments|roleDefinitions": [
-    "00000000-0000-0000-0000-000000000000"
   ]
 }

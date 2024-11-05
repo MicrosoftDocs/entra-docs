@@ -22,6 +22,8 @@ The key introductory feature for Microsoft Entra Internet Access for all apps is
 
 Web content filtering is implemented using filtering policies, which are grouped into security profiles, which can be linked to Conditional Access policies. To learn more about Conditional Access, see [Microsoft Entra Conditional Access](/azure/active-directory/conditional-access/).
 
+> [!NOTE]
+> While web content filtering is a core capability for any Secure Web Gateway, similar capabilities exist in other security products, such as endpoint security products like [Microsoft Defender for Endpoint](/defender-endpoint/web-content-filtering/) and firewalls like [Azure Firewall](/azure/firewall/web-categories/). Microsoft Entra Internet Access provides additional security value via policy integration with Microsoft Entra ID, policy enforcement on the cloud edge, universal support for all device platforms, and future security enhancements through Transport Layer Security (TLS) Inspection, such as higher fidelity web categorization. Learn more in the [FAQ](resource-faq.yml).
 
 ## Security profiles
 
@@ -34,7 +36,7 @@ Security profiles are objects you use to group filtering policies and deliver th
 ```
 
 ## Policy processing logic
-Within a security profile, policies are enforced according to priority ordering with 100 being the highest priority and 65,000 being the lowest priority (similar to traditional firewall logic). As a best practice, add spacing of about 100 between priorities to allow for policy flexibility in the future.
+Within a security profile, policies are enforced according to logical ordering of unique priority numbers, with 100 being the highest priority and 65,000 being the lowest priority (similar to traditional firewall logic). As a best practice, add spacing of about 100 between priorities to allow for policy flexibility in the future.
 
 Once you link a security profile to a Conditional Access (CA) policy, if multiple CA policies match, both security profiles are processed in priority ordering of the matching security profiles.
 

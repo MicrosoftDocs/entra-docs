@@ -16,8 +16,10 @@
     href: scenarios/least-privileged.md 
   - name: Govern the employee and guest lifecycle
     items:
-    - name: Govern the employee and guest lifecycle
+    - name: Govern the employee lifecycle
       href: scenarios/govern-the-employee-lifecycle.md
+    - name: Plan new governance scenarios for business partners and external users
+      href: scenarios/govern-guest-lifecycle-new-project.md
     - name: Identity lifecycle management provisioning
       href: what-is-provisioning.md
       items: 
@@ -381,6 +383,8 @@
     href: licensing-fundamentals.md
   - name: Services and integration partners
     href: services-and-integration-partners.md
+  - name: Best practices for securing ID Governance
+    href: best-practices-secure-id-governance.md 
   - name: Securing custom extension extensibility to Azure Logic Apps
     href: custom-extension-security.md  
   - name: Identity Governance - PowerShell

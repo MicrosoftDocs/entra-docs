@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
-ms.date: 04/15/2024
+ms.date: 10/30/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -49,7 +49,7 @@ You need:
     - Failure reason
     - Username, User ID, and Sign-in identifier
 
-    ![Screenshot of the sign-in details, with several details highlighted.](media/howto-troubleshoot-sign-in-errors/sign-in-activity-details.png)
+    ![Screenshot of the sign-in details, with several details highlighted.](media/howto-troubleshoot-sign-in-errors/troubleshoot-sign-in-details.png)
 
 ## Troubleshoot sign-in errors
 
@@ -88,6 +88,10 @@ The following error codes are associated with sign-in events, but this list isn'
 - **500121**: User didn't complete the MFA prompt.
   - This error often appears if the user hasn't completed setting up MFA.
   - Instruct the user to complete the setup process through to sign-in.
+
+- **70046**: Session expired or re-authentication check failed.
+    - This error can occur if a session token expired or if a re-authentication check failed.
+    - A re-authentication check can happen if a Conditional Access policy is enabled to require re-authentication for various sign-in risk levels.
 
 If all else fails, or the issue persists despite taking the recommended course of action, open a support request. For more information, see [how to get support for Microsoft Entra ID](~/fundamentals/how-to-get-support.md).
 

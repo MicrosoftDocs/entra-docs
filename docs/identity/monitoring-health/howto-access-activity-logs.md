@@ -1,4 +1,5 @@
 ---
+
 title: Access activity logs in Microsoft Entra ID
 description: How to choose the right method for accessing and integrating the activity logs in Microsoft Entra ID.
 author: shlipsey3
@@ -6,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 12/15/2023
+ms.date: 10/02/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -21,7 +22,7 @@ The data collected in your Microsoft Entra logs enables you to assess many aspec
 You can access Microsoft Entra activity logs and reports using the following methods:
 
 - [Stream activity logs to an **event hub** to integrate with other tools](#stream-logs-to-an-event-hub-to-integrate-with-siem-tools)
-- [Access activity logs through the **Microsoft Graph API**](#access-logs-with-microsoft-graph-api)
+- [Access activity logs through the **Microsoft Graph API**](#access-logs-with-the-microsoft-graph-api)
 - [Integrate activity logs with **Azure Monitor logs**](#integrate-logs-with-azure-monitor-logs)
 - [Monitor activity in real-time with **Microsoft Sentinel**](#monitor-events-with-microsoft-sentinel)
 - [View activity logs and reports in the **Azure portal**](#view-logs-through-the-portal)
@@ -33,7 +34,55 @@ Each of these methods provides you with capabilities that might align with certa
 
 [!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
 
-Audit logs are available for features that you've licensed. To access the sign-in logs using the Microsoft Graph API, your tenant must have a Microsoft Entra ID P1 or P2 license associated with it.
+Audit logs are available for features that you have licensed. To access the sign-in logs using the Microsoft Graph API, your tenant must have a Microsoft Entra ID P1 or P2 license associated with it.
+
+## View logs through the Microsoft Entra admin center
+<a name='view-logs-through-the-portal'></a>
+
+For one-off investigations with a limited scope, the [Microsoft Entra admin center](https://entra.microsoft.com/) is often the easiest way to find the data you need. The user interface for each of these reports provides you with filter options enabling you to find the entries you need to solve your scenario.
+
+The data captured in the Microsoft Entra activity logs are used in many reports and services. You can review the sign-in, audit, and provisioning logs for one-off scenarios or use reports to look at patterns and trends. The data from the activity logs help populate the Identity Protection reports, which provide information security related risk detections that Microsoft Entra ID can detect and report on. Microsoft Entra activity logs also populate Usage and insights reports, which provide usage details for your tenant's applications.
+
+### Recommended uses
+
+The reports available in the Azure portal provide a wide range of capabilities to monitor activities and usage in your tenant. The following list of uses and scenarios isn't exhaustive, so explore the reports for your needs.
+
+- Research a user's sign-in activity or track an application's usage.
+- Review details around group name changes, device registration, and password resets with audit logs.
+- Use the Identity Protection reports for monitoring at risk users, risky workload identities, and risky sign-ins.
+- Review the sign-in success rate in the Microsoft Entra application activity (preview) report from Usage and insights to ensure that your users can access the applications in use in your tenant.
+- Compare the different authentication methods your users prefer with the Authentication methods report from Usage and insights.
+
+### Quick steps
+
+Use the following basic steps to access the reports in the Microsoft Entra admin center.
+
+#### [Microsoft Entra activity logs](#tab/microsoft-entra-activity-logs)
+<a name='azure-ad-activity-logs'></a>
+
+1. Browse to **Identity** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
+1. Adjust the filter according to your needs.
+    - [Learn how to filter activity logs](howto-customize-filter-logs.md)
+    - [Explore the Microsoft Entra audit log categories and activities](reference-audit-activities.md)
+    - [Learn about basic info in the Microsoft Entra sign-in logs](concept-sign-in-log-activity-details.md)
+
+Audit logs can be accessed directly from the area of the Microsoft Entra admin center where you're working. For example, if you're in the **Groups** or **Licenses** section of Microsoft Entra ID, you can access the audit logs for those specific activities directly from that area. When you access the audit logs in this way, the filter categories are automatically set. If you're in **Groups**, the audit log filter category is set to **GroupManagement**.
+
+#### [Microsoft Entra ID Protection reports](#tab/microsoft-entra-id-protection-reports)
+<a name='azure-ad-identity-protection-reports'></a>
+
+1. Browse to **Protection** > **Identity Protection**.
+1. Explore the available reports.
+    - [Learn more about Identity Protection](../../id-protection/overview-identity-protection.md)
+    - [Learn how to investigate risk](../../id-protection/howto-identity-protection-investigate-risk.md)
+
+#### [Usage and insights reports](#tab/usage-and-insights-reports)
+
+1. Browse to **Identity** > **Monitoring & health** > **Usage and insights**.
+1. Explore the available reports.
+    - [Learn more about the Usage and insights report](concept-usage-insights-report.md)
+
+---
 
 ## Stream logs to an event hub to integrate with SIEM tools
 
@@ -43,8 +92,8 @@ Streaming your activity logs to an event hub is required to integrate your activ
 
 The SIEM tools you can integrate with your event hub can provide analysis and monitoring capabilities. If you're already using these tools to ingest data from other sources, you can stream your identity data for more comprehensive analysis and monitoring. We recommend streaming your activity logs to an event hub for the following types of scenarios:
 
-- If you need a big data streaming platform and event ingestion service to receive and process millions of events per second.
-- If you're looking to transform and store data by using a real-time analytics provider or batching/storage adapters.
+- You need a big data streaming platform and event ingestion service to receive and process millions of events per second.
+- You're looking to transform and store data by using a real-time analytics provider or batching/storage adapters.
 
 ### Quick steps
 
@@ -57,7 +106,7 @@ The SIEM tools you can integrate with your event hub can provide analysis and mo
 
  Your independent security vendor should provide you with instructions on how to ingest data from Azure Event Hubs into their tool.
 
-## Access logs with Microsoft Graph API
+## Access logs with the Microsoft Graph API
 
 The Microsoft Graph API provides a unified programmability model that you can use to access data for your Microsoft Entra ID P1 or P2 tenants. It doesn't require an administrator or developer to set up extra infrastructure to support your script or app.  
 
@@ -126,52 +175,6 @@ We recommend using the real-time security detection capabilities of Microsoft Se
 1. [Collect Microsoft Entra data](/azure/sentinel/connect-azure-active-directory).
 1. [Begin hunting for threats](/azure/sentinel/hunting).
 
-## View logs through the Microsoft Entra admin center
-<a name='view-logs-through-the-portal'></a>
-
-For one-off investigations with a limited scope, the [Microsoft Entra admin center](https://entra.microsoft.com/) is often the easiest way to find the data you need. The user interface for each of these reports provides you with filter options enabling you to find the entries you need to solve your scenario.
-
-The data captured in the Microsoft Entra activity logs are used in many reports and services. You can review the sign-in, audit, and provisioning logs for one-off scenarios or use reports to look at patterns and trends. The data from the activity logs help populate the Identity Protection reports, which provide information security related risk detections that Microsoft Entra ID can detect and report on. Microsoft Entra activity logs also populate Usage and insights reports, which provide usage details for your tenant's applications.
-
-### Recommended uses
-
-The reports available in the Azure portal provide a wide range of capabilities to monitor activities and usage in your tenant. The following list of uses and scenarios isn't exhaustive, so explore the reports for your needs.
-
-- Research a user's sign-in activity or track an application's usage.
-- Review details around group name changes, device registration, and password resets with audit logs.
-- Use the Identity Protection reports for monitoring at risk users, risky workload identities, and risky sign-ins.
-- You can review the sign-in success rate in the Microsoft Entra application activity (preview) report from Usage and insights to ensure that your users can access the applications in use in your tenant.
-- Compare the different authentication methods your users prefer with the Authentication methods report from Usage and insights.
-
-### Quick steps
-
-Use the following basic steps to access the reports in the Microsoft Entra admin center.
-
-#### Microsoft Entra activity logs
-<a name='azure-ad-activity-logs'></a>
-
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
-1. Adjust the filter according to your needs.
-    - [Learn how to filter activity logs](howto-customize-filter-logs.md)
-    - [Explore the Microsoft Entra audit log categories and activities](reference-audit-activities.md)
-    - [Learn about basic info in the Microsoft Entra sign-in logs](concept-sign-in-log-activity-details.md)
-
-Audit logs can be accessed directly from the area of the Microsoft Entra admin center where you're working. For example, if you're in the **Groups** or **Licenses** section of Microsoft Entra ID, you can access the audit logs for those specific activities directly from that area. When you access the audit logs in this way, the filter categories are automatically set. If you're in **Groups**, the audit log filter category is set to **GroupManagement**.
-
-#### Microsoft Entra ID Protection reports
-<a name='azure-ad-identity-protection-reports'></a>
-
-1. Browse to **Protection** > **Identity Protection**.
-1. Explore the available reports.
-    - [Learn more about Identity Protection](../../id-protection/overview-identity-protection.md)
-    - [Learn how to investigate risk](../../id-protection/howto-identity-protection-investigate-risk.md)
-
-#### Usage and insights reports
-
-1. Browse to **Identity** > **Monitoring & health** > **Usage and insights**.
-1. Explore the available reports.
-    - [Learn more about the Usage and insights report](concept-usage-insights-report.md)
-
 ## Export logs for storage and queries
 
 The right solution for your long-term storage depends on your budget and what you plan on doing with the data. You've got three options:
@@ -198,7 +201,7 @@ We recommend manually downloading and storing your activity logs if you have bud
 
 Use the following basic steps to archive or download your activity logs.
 
-#### Archive activity logs to a storage account
+#### [Archive activity logs to a storage account](#tab/archive-activity-logs-to-a-storage-account)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 1. Create a storage account.
@@ -206,12 +209,14 @@ Use the following basic steps to archive or download your activity logs.
 1. Choose the logs you want to stream, select the **Archive to a storage account** option, and complete the fields.
     - [Review the data retention policies](reference-reports-data-retention.md)
 
-#### Manually download activity logs
+#### [Manually download activity logs](#tab/manually-download-activity-logs)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs** from the **Monitoring** menu.
 1. Select **Download**.
     - [Learn more about how to download logs](howto-download-logs.md).
+
+---
 
 ## Next steps
 

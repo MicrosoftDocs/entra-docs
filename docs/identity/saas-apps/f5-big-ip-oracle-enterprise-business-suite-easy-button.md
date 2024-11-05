@@ -142,15 +142,9 @@ Initiate the APM's **Guided Configuration** to launch the **Easy Button** Templa
 
 1. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-   ![Screenshot for Configure Easy Button- Install the template](./media/f5-big-ip-oracle-ebs/easy-button-template.png)
+2. Under **Configuring the solution using the below steps will create the required objects**, review the list of configuration steps and select **Next**.
 
-2. Review the list of configuration steps and select **Next**
-
-   ![Screenshot for Configure Easy Button - List configuration steps](./media/f5-big-ip-oracle-ebs/config-steps.png)
-
-3. Follow the sequence of steps required to publish your application.
-
-   ![Configuration steps flow](./media/f5-big-ip-oracle-ebs/config-steps-flow.png#lightbox)
+3. Under **Guided Configuration**, follow the sequence of steps required to publish your application.
 
 ### Configuration Properties
 
@@ -202,13 +196,15 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 ### Microsoft Entra ID
 
-This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. For this scenario select **Oracle E-Business Suite > Add**.
+This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps.
 
-![Screenshot for Azure configuration add BIG-IP application](./media/f5-big-ip-oracle-ebs/azure-configuration-add-big-ip-application.png)
+For this scenario, in the **Azure Configuration** page, select **Oracle E-Business Suite** > **Add**.
 
 #### Azure Configuration
 
-1. Enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users see on [MyApps portal](https://myapplications.microsoft.com/)
+In the **Azure Configuration** page, follow these steps:
+
+1. Under **Configuration Properties**, enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users see on [MyApps portal](https://myapplications.microsoft.com/)
 
 2. In the **Sign On URL (optional)** enter the public FQDN of the EBS application being secured, along with the default path for the Oracle EBS homepage
 
@@ -270,7 +266,7 @@ Conditional Access policies are enforced post Microsoft Entra pre-authentication
 
 The **Available Policies** view, by default, will list all Conditional Access policies that do not include user-based actions.
 
-The **Selected Policies** view, by default, displays all policies targeting All cloud apps. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
+The **Selected Policies** view, by default, displays all policies targeting All resources. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 

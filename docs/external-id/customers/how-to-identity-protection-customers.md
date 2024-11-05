@@ -1,37 +1,39 @@
 ---
-title: Identity Protection for a customer app
-description: Learn how to add Identity Protection to your consumer and business customer (CIAM) application to provide ongoing risk detection.
+title: ID Protection for a customer app
+description: Learn how to add ID Protection to your consumer and business customer (CIAM) application to provide ongoing risk detection.
  
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 07/12/2023
 ms.author: mimart
 ms.custom: it-pro
 
 ---
-# Investigate risk with Identity Protection in Microsoft Entra External ID
+# Investigate risk with ID Protection in Microsoft Entra External ID
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your external tenant. It allows organizations to discover, investigate, and remediate identity-based risks. Identity Protection comes with risk reports that can be used to investigate identity risks in external tenants. In this article, you learn how to investigate and mitigate risks.
+Microsoft Entra [ID Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your external tenant. It allows organizations to discover, investigate, and remediate identity-based risks. ID Protection comes with risk reports that can be used to investigate identity risks in external tenants. In this article, you learn how to investigate and mitigate risks.
 
-## Identity Protection reporting
+<a name='identity-protection-reporting'></a>
 
-Identity Protection provides two reports. The *Risky users* report is where administrators can find which users are at risk and details about detections. The *risk detections* report gives information about each risk detection. This report includes the risk type, other risks triggered at the same time, the location of the sign-in attempt, and more.
+## ID Protection reporting
+
+ID Protection provides two reports. The *Risky users* report is where administrators can find which users are at risk and details about detections. The *risk detections* report gives information about each risk detection. This report includes the risk type, other risks triggered at the same time, the location of the sign-in attempt, and more.
 
 Each report launches with a list of all detections for the period shown at the top of the report. Reports can be filtered using the filters across the top of the report. Administrators can choose to download the data, or use [MS Graph API and Microsoft Graph PowerShell SDK](~/id-protection/howto-identity-protection-graph-api.md) to continuously export the data.
 
 ## Service limitations and considerations
 
-Consider the following points when using Identity Protection:
+Consider the following points when using ID Protection:
 
-- Identity Protection is not available in trial tenants.
-- Identity Protection is on by default.
-- Identity Protection is available for both local and social identities, such as Google or Facebook. Detection is limited because the external identity provider manages the social account credentials.
+- ID Protection is not available in trial tenants.
+- ID Protection is on by default.
+- ID Protection is available for both local and social identities, such as Google or Facebook. Detection is limited because the external identity provider manages the social account credentials.
 - Currently in Microsoft Entra external tenants, a subset of the [Microsoft Entra ID Protection risk detections](~/id-protection/overview-identity-protection.md) is available. Microsoft Entra External ID supports the following risk detections:  
 
 |Risk detection type  |Description  |
@@ -69,9 +71,7 @@ An administrator can choose to dismiss a user's risk in the Microsoft Entra admi
 
 1. Make sure you're using the directory that contains your Microsoft Entra external tenant: Select the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the toolbar and find your external tenant from the **Directories + subscriptions** menu. If it's not the current directory, select **Switch**.
 
-1. Browse to **Identity** > **Protection** > **Security Center**.
-
-1. Select **Identity Protection**.
+1. Browse to **Protection** > **Identity Protection**.
 
 1. Under **Report**, select **Risky users**.
 
@@ -93,8 +93,6 @@ Administrators can then choose to return to the user's risk or sign-ins report t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
  
-1. Browse to **Identity** > **Protection** > **Security Center**.
-
-1. Select **Identity Protection**.
+1. Browse to **Protection** > **Identity Protection**.
 
 1. Under **Report**, select **Risk detections**.

@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: shermanouko
 ms.service: entra-external-id
  
-ms.subservice: customers
-ms.topic: sample
+ms.subservice: external
+ms.topic: quickstart
 ms.date: 07/26/2023
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample WPF desktop app to sign in and sign out users with my external tenant.
@@ -88,9 +88,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     :::image type="content" source="./media/sample-wpf-dotnet-sign-in/wpf-sign-in-screen.png" alt-text="Screenshot of sign-in screen for a WPF desktop application.":::
 
 1. On the sign-in page, enter your account email address. If you don't have an account, select **No account? Create one**, which starts the sign-up flow. Follow through this flow to create a new account and sign in.
-1. Once you sign in, you'll see a screen displaying successful sign-in and basic information about your user account stored in the retrieved token.
-
-    :::image type="content" source="./media/sample-wpf-dotnet-sign-in/wpf-successful-sign-in.png" alt-text="Screenshot of successful sign-in for desktop WPF app.":::
+1. Once you sign in, you'll see a screen displaying successful sign-in and basic information about your user account stored in the retrieved token. The basic information is displayed in the *Token Info* section of the sign-in screen 
 
 ### How it works
 

@@ -1,9 +1,9 @@
 ---
 author: kengaderdus
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: include
-ms.date: 07/01/2024
+ms.date: 11/31/2024
 ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
@@ -18,10 +18,10 @@ ms.manager: mwongerapk
 
 1. In the **Register an application** page that appears, enter your application's registration information:
 
-    1. In the Name section, enter a meaningful application name, for example *mfa-api-app*.
+    1. In the Name section, enter a meaningful application name, for example *edit-profile-service*.
 
     1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 
 1. Select **Register** to create the application.
 
-1. The application's **Overview pane** is displayed when registration is complete.
+1. The application's **Overview pane** is displayed when registration is complete. Record the **Application (client) ID** for use in your application source code.
