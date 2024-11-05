@@ -61,9 +61,9 @@ You can select one, some, or all of the available logs. Some logs might be part 
 
 ### Destination details
 
-You can send logs to a Log Analytics workspace, stream logs to an event hub, or archive logs to a storage account. At this time, the only supported partner solution is Azure Native ISV services. For more information, see [Azure Native ISV services overview](/azure/partner-solutions/overview).
+You can send logs to a Log Analytics workspace, stream logs to an event hub, or archive logs to a storage account. Through Azure Native ISV services, you can send logs to services through the Azure Marketplace. For more information, see [Azure Native ISV services overview](/azure/partner-solutions/overview).
 
-To send your logs to one of the destinations, you must have configured that destination. 
+To send your logs to one of the destinations, you must have already configured that destination. 
 
 - [Configure a Log Analytics workspace](tutorial-configure-log-analytics-workspace.md)
 - [Create an event hub](/azure/event-hubs/event-hubs-create)

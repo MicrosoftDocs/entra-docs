@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page
   author: shlipsey3
   ms.author: sarahlipsey
-  ms.date: 02/12/2024
+  ms.date: 11/04/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
@@ -34,7 +34,7 @@ landingContent:
          - text: Audit logs
            url: concept-audit-logs.md
          - text: Sign-in logs
-           url: ./concept-sign-ins.md
+           url: concept-sign-ins.md
          - text: Provisioning logs
            url: concept-provisioning-logs.md
 
@@ -49,18 +49,18 @@ landingContent:
             url: howto-troubleshoot-sign-in-errors.md
           - text: View applied Conditional Access policies
             url: how-to-view-applied-conditional-access-policies.md
-          - text: Sign-in diagnostics scenarios
-            url: concept-sign-in-diagnostics-scenarios.md
 
   # Card
   - title: Identity logs
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Methods to access activity logs
+          - text: How to access activity logs
             url: howto-access-activity-logs.md
           - text: Access logs with Microsoft Graph
             url: quickstart-access-log-with-graph-api.md
+          - text: How to download logs
+            url: howto-download-logs.md
 
   # Card
   - title: Identity reports
@@ -69,23 +69,18 @@ landingContent:
         links:
           - text: Usage and Insights report
             url: concept-usage-insights-report.md
-          - text: Convert per-user MFA to Conditional Access recommendation
-            url: recommendation-turn-off-per-user-mfa.md
-          - text: Migrate to Microsoft Authenticator recommendation
-            url: recommendation-migrate-to-authenticator.md
-          - text: Migrate from ADAL to MSAL recommendation
-            url: recommendation-migrate-from-adal-to-msal.md
           - text: Conditional Access gap analyzer workbook
             url: workbook-conditional-access-gap-analyzer.md
           - text: Risk analysis workbook
             url: workbook-risk-analysis.md
+
   # Card
   - title: Identity monitoring
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Monitoring options and considerations
-            url: concept-log-monitoring-integration-options-considerations.md
+          - text: Microsoft Entra health alerts
+            url: overview-monitoring-health.md
           - text: Integrate activity logs with Azure Monitor logs
             url: howto-integrate-activity-logs-with-azure-monitor-logs.yml        
           - text: Analyze activity logs in Azure Monitor logs
