@@ -3196,6 +3196,9 @@
   "Re-register Microsoft.AAD namespace (2)": "abba844e-bc0e-44b0-947a-dc74e5d09022",
   "Re-register Microsoft.AAD namespace (3)": "d87dcbc6-a371-462e-88e3-28ad15ec4e64",
   "AAGUID for the macOS Platform Credential": "7FD635B3-2EF9-4542-8D9D-164F2C771EFC",
+  "Windows Hello for Business GUID 1" : "08987058-cadc-4b81-b6e1-30de50dcbe96  ",
+  "Windows Hello for Business GUID 2" : "9ddd1817-af5a-4672-a2b9-3e3dd95000a9",
+  "Windows Hello for Business GUID 3" : "6028b017-b1d4-4c02-b4b3-afcdafc96bb2 ",
   "Authenticator for iOS": "90a3ccdf-635c-4729-a248-9b709135078f",
   "Authenticator for Android": "de1e552d-db1d-4423-a619-566b625cdc84",
   "Amazon Business": "ee27ec8c-1ee9-4c6b-9e68-26bdc37479d3",
@@ -3702,5 +3705,6 @@
   "Microsoft Cloud for Sustainability API" : "c3163bf1-092f-436b-b260-7ade5973e5b9",
   "Environmental Credit Service (preview) app ID" : "b9b0ac19-f710-429d-b58e-dc3f73a330a9",
   "Mock Teams admin center for Graph Connector" : "ef1da9d4-ff77-4c3e-a005-840c3f830745",
-  "MIM Certificate Manager modern app client" : "70A8B8B1-862C-4473-80AB-4E55BAE45B4F"
+  "MIM Certificate Manager modern app client" : "70A8B8B1-862C-4473-80AB-4E55BAE45B4F",
+  "Policy Definition Network interface" : "83a86a26-fd1f-447c-b59d-e51f44264114"
 }
