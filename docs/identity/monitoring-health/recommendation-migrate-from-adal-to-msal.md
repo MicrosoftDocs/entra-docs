@@ -10,19 +10,21 @@ ms.subservice: monitoring-health
 ms.date: 05/01/2024
 ms.author: sarahlipsey
 ms.reviewer: jamesmantu
+
+# Customer intent: As an IT admin, I need to know what services are using ADAL so I can migrate them to MSAL.
 ---
 
 # Microsoft Entra recommendation: Migrate from the Azure Active Directory Authentication Library to the Microsoft Authentication Libraries
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
-This article covers the recommendation to migrate from the Azure Active Directory Authentication Library (ADAL) to the Microsoft Authentication Libraries. This recommendation is called `AdalToMsalMigration` in the recommendations API in Microsoft Graph. 
+This article covers the recommendation to migrate from the Azure Active Directory Authentication Library (ADAL) to the Microsoft Authentication Libraries (MSAL). This recommendation is called `AdalToMsalMigration` in the recommendations API in Microsoft Graph. 
 
 ## Description
 
-The 'migrate from ADAL to MSAL' recommendation is created to raise awareness and alert you about all applications using ADAL within your tenant. This recommendation is triggered for tenants with applications using ADAL (Azure Active Directory Authentication Library). It labels any application that requests a token via ADAL as an "ADAL application," including those using both ADAL and MSAL (Microsoft Authentication Library).
+The 'migrate from ADAL to MSAL' recommendation is created to raise awareness and alert you about all applications using ADAL within your tenant. This recommendation is triggered for tenants with applications using ADAL. It labels any application that requests a token via ADAL as an "ADAL application," including those applications using both ADAL and MSAL.
 
-Azure Active Directory Authentication Library (ADAL) has been deprecated. We strongly recommend migrating to the Microsoft Authentication Library (MSAL), which replaces ADAL. Microsoft **no longer releases new features and security fixes on ADAL**. Applications using ADAL will not be able to utilize the latest security features, leaving them vulnerable to future security threats. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](~/identity-platform/msal-migration.md). 
+Azure Active Directory Authentication Library (ADAL) has been deprecated. We strongly recommend migrating to the Microsoft Authentication Library (MSAL), which replaces ADAL. Microsoft **no longer releases new features and security fixes on ADAL**. Applications using ADAL won't be able to utilize the latest security features, leaving them vulnerable to future security threats. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](~/identity-platform/msal-migration.md). 
 
 
 
@@ -110,27 +112,27 @@ To reduce false positives, the service uses a 30 day window for ADAL requests. T
 
 ### How do I identify the owner of an application in my tenant?
 
-You can locate owner from the recommendation details. Select the resource, which takes you to the application details. Select **Owners** from the navigation menu.
+You can locate owner from the recommendation details. Select the resource, which takes you to the application details. Go to **Manage** > **Owners** to view the current owners. Viewing the owners requires at least the [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 
 ### Can the status change from *completed* to *active*?
 
-Yes. If an application was marked as completed - so no ADAL requests were made during the 30 day window - that application would be marked as complete. If the service detects a new ADAL request, the status changes back to *active*.
+Yes. If an application was marked as completed - so no ADAL requests were made during the 30 day window - that application would be marked as complete. If the service detects a new ADAL request, the status changes back to *active*. Recommendations can only be updated by the system.
 
-### How can I integrate  Microsoft Entra Sign-ins workbook?
+### How can I integrate  Microsoft Entra sign-ins workbook?
 You can find the detailed steps in the [Microsoft Entra Sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md). 
 
 
-### Why is the number of ADAL applications different in the Sign-ins workbook and the recommendation?
+### Why is the number of ADAL applications different in the sign-ins workbook and the recommendation?
 
-- **Aggregated Data  vs. Transactional Data:** The recommendation aggregates data over the last 30 days, providing a summarized view of application activities. Conversely, the Sign-ins workbook details each sign-in request transactionally, allowing for a more detailed analysis.
+- **Aggregated Data  vs. Transactional Data:** The recommendation aggregates data over the last 30 days, providing a summarized view of application activities. Conversely, the sign-ins workbook details each sign-in request as a transaction, which allows for a more detailed analysis.
 
-- **Time Frame Flexibility:** The Sign-ins workbook data can be filtered from as recently as the last 30 minutes to up to 30 days. This flexibility in selecting the time frame can lead to variations in the application count, potentially skewing the results.
+- **Time Frame Flexibility:** The sign-ins workbook data can be filtered from as recently as the last 30 minutes to up to 30 days. This flexibility in selecting the time frame can lead to variations in the application count, potentially skewing the results.
 
-- **Access to Historical Data:** Viewing data older than 7 days in the Sign-ins workbook requires a Microsoft Entra ID P1 or P2 tenant subscription. This requirement affects the volume of historical data accessible compared to the aggregated data in the recommendation.
+- **Access to Historical Data:** Viewing data older than 7 days in the sign-ins workbook requires a Microsoft Entra ID P1 or P2 tenant subscription. This requirement affects the volume of historical data accessible compared to the aggregated data in the recommendation.
 
 
 
-## Next steps
+## Related content
 
 - [Learn how to enable Sign-ins Workbook in your tenant](~/identity-platform/howto-get-list-of-all-auth-library-apps.md)
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
