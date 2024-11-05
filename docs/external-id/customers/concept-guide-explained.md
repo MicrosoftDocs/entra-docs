@@ -67,8 +67,8 @@ The get started guide allowed you to preview the sign-in experience with your fi
  
 To find the user you created during the guide setup, you can go to the [admin center](https://entra.microsoft.com/) and look for the user in the users list. You can find the user in the users list as a [customer user](how-to-manage-customer-accounts.md) and also manage your own account as a [tenant admin](how-to-manage-admin-accounts.md). If you’d like to see data on user activity and engagement for registered applications in your tenant, you can use the [Application user activity dashboards](how-to-user-insights.md).
 
-The guide set up the authentication method for your customer users; you choose between email and password, or one-time passcode sign-in. 
-You can also manually configure other options for authenticating users of your applications, including enabling sign-in with social accounts like Facebook and Google.
+The guide set up the authentication method for your customer users; you choose between email and password, or one-time passcode sign-in.
+You can also manually configure other options for authenticating users of your applications, including enabling sign-in with social accounts like Facebook and Google, or using a custom OpenID Connect identity provider.
 For more information on how to configure these options, visit the [Authentication methods and identity providers](concept-authentication-methods-customers.md) page. You can also [enable self-service password reset](how-to-enable-password-reset-customers.md) for your customers. 
 
 ## App samples
