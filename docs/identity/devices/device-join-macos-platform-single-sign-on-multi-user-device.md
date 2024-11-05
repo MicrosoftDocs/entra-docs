@@ -24,7 +24,7 @@ In this tutorial, you will learn how to configure a Microsoft Entra Joined Mac v
 - Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later.
 - A configured Platform SSO MDM payload in your MDM by an administrator.
 
-## MDM Configuration
+## MDM configuration
 
 There are three main steps for configuring Platform SSO on a shared device:
 
@@ -32,7 +32,7 @@ There are three main steps for configuring Platform SSO on a shared device:
 1. **Deploy Platform SSO Configuration.** Create and deploy a settings catalog profile with the required Platform SSO Configuration.
 1. **Deploy macOS Login Screen Configuration.** The macOS Login screen configuration can be changed to allow new users to log in.
 
-### Platform SSO Profile Configuration
+### Platform SSO profile configuration
 
 Your Platform SSO MDM profile should apply the following configurations to support multi-user devices:
 
@@ -57,7 +57,7 @@ If you use Intune as your MDM of choice, then the configuration profile settings
 
 :::image type="content" source="media/device-registration-macos-platform-single-sign-on/intune-psso-shared-device-profile.png" alt-text="Screenshot of a Platform SSO MDM profile in Intune.":::
 
-### macOS Login Screen Configuration
+### macOS login screen configuration
 
 To allow new users to log on and be created from the macOS login screen, there are two configurations that can be used:
 
@@ -96,7 +96,7 @@ Once the device is MDM enrolled and has Company Portal installed, you need to re
 
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. 
 
-    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen.":::
+    :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup.png" alt-text="Screenshot of a desktop screen with a registration required popup in the top right of the screen." lightbox="media/device-join-macos-platform-single-sign-on-out-of-box/psso-registration-required-popup.png":::
 
 1. You're prompted to register your device with Microsoft Entra ID. Enter your sign-in credentials and select **Next**.
     1. Your administrator may have configured MFA for the device registration flow. If so, open your **Authenticator** app on your mobile device and complete the MFA flow.
@@ -139,11 +139,11 @@ Next you should validate that the device is ready for other users in the tenant 
 1. Log out of the Mac with the account that you used to do the initial setup.
 2. At the login screen, choose the **Other...** option to sign in with a new user account
 
-:::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-new-user-login.png" alt-text="Screenshot of the macOS login screen":::
+:::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-new-user-login.png" alt-text="Screenshot of the macOS login screen.":::
 
 3. Enter a user's Microsoft Entra ID User Principal Name and password.
 
-:::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-new-user-login-upn.png" alt-text="Screenshot of the macOS login box where a user has entered their credentials":::
+:::image type="content" source="media/device-registration-macos-platform-single-sign-on/psso-new-user-login-upn.png" alt-text="Screenshot of the macOS login box where a user has entered their credentials.":::
 
 4. If the User Principal Name and password were correct then the user will be logged in. The user is directed to go through several Setup Assistant dialog screens by default and then they land on the macOS desktop.
 
