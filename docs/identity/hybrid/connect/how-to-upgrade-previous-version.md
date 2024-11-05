@@ -152,7 +152,7 @@ If you need to upgrade the operating system(OS) of your Microsoft Entra Connect 
 
 However, if this is not possible, the following in-place OS upgrades are supported.
 
-|Intial OS|Supported upgraded OS|
+|Intial OS|Supported in-place upgrade OS|
 |-----|-----|
 |Windows Server 2106|Windows Server 2022|
 |Windows Server 2019|Windows Server 2022|
