@@ -46,7 +46,7 @@ Understanding your scenario helps in designing appropriate access controls and e
 ## Areas of a new governance scenario for business partners and external users
 A new business partner and external user solution typically involve the following areas. They are:
 
-:::image type="content" source="media/external-guest-new/govern-access-new-1.png" alt-text="Conceptual drawing of governing access to your resources." lightbox="media/external-guest-new/govern-access-new-1.png":::
+:::image type="content" source="media/external-guest-new/govern-access-new-2.png" alt-text="Conceptual drawing of governing access to your resources." lightbox="media/external-guest-new/govern-access-new-2.png":::
 
 - [Discover your business requirements](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-discover) - Identify your current lifecycle and governance processes for external identities. This exercise will help you to determine applicable scenarios, feasibility and scope.
 - [Determine your security posture](govern-guest-lifecycle-new-project.md?pivots=identity-governance-guest-secur) - Assess your organization's security and collaboration needs, by scenario.
@@ -103,7 +103,7 @@ For more information, see [Discover the current state of external collaboration 
 ### Example - Identify current lifecycle and governance processes
 You're the IT admin at a bustling tech company, Contoso, and often face the challenge of efficiently and securely onboarding business external users like consultants, vendors, and partners. The current onboarding process is fragmented and inconsistent, leading to security vulnerabilities and inefficiencies. To tackle this, you embark on a discovery phase to identify key requirements and understand how you could leverage Microsoft Entra.
 
-:::image type="content" source="media/external-guest-new/discover-new-1.png" alt-text="Conceptual drawing of an organization." lightbox="media/external-guest-new/discover-new-1.png":::
+:::image type="content" source="media/external-guest-new/discover-new-2.png" alt-text="Conceptual drawing of an organization." lightbox="media/external-guest-new/discover-new-2.png":::
 
 Some of your key requirements include, 
 
