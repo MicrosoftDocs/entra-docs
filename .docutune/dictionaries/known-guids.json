@@ -3698,5 +3698,6 @@
   "AKS server app ID" : "6dae42f8-4368-4678-94ff-3960e28e3630",
   "AKS public client ID on behalf of user auth" : "80faf920-1908-4b52-b5ef-a8e7bedfc67a",
   "Microsoft Teams mobile/desktop ID" : "1fec8e78-bce4-4aaf-ab1b-5451cc387264",
-  "Dynamics 365 AI for Customer Insights" : "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff"
+  "Dynamics 365 AI for Customer Insights" : "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff",
+  "Microsoft Cloud for Sustainability API" : "c3163bf1-092f-436b-b260-7ade5973e5b9"
 }
