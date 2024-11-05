@@ -16,6 +16,16 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## October 2024
+
+### Updated articles
+
+- [Microsoft identity platform code samples](sample-v2-code.md) - Code sample page update
+- [Microsoft identity platform and OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) - Implicit grant flow protocol security guidance update
+- [Quickstart: Sign in users and call the Microsoft Graph API from a Node.js web app](quickstart-web-app-nodejs-sign-in.md) - Update NodeJS quickstart to new format
+- [Signing key rollover in the Microsoft identity platform](signing-key-rollover.md) - Add a description of the key refresh algorithm in a language neutral way
+- [What's new for authentication?](reference-breaking-changes.md) - Added clarity to the content
+
 ## September 2024
 
 ### New articles
