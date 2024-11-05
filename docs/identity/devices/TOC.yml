@@ -13,6 +13,8 @@
     href: device-join-macos-platform-single-sign-on.md
   - name: Join a Mac device using Company Portal
     href: device-join-microsoft-entra-company-portal.md
+  - name: Join a Mac device with Microsoft Entra ID and configure it for shared device scenarios
+    href: device-join-macos-platform-single-sign-on-multi-user-device.md
 - name: Concepts
   expanded: true
   items:
