@@ -47,6 +47,8 @@ landingContent:
             url:  scenarios/identity-governance-use-cases.md  
           - text: Govern the employee and guest lifecycle
             url:  scenarios/govern-the-employee-lifecycle.md  
+          - text: Planning new governance scenarios for business partners and external users
+            url:  scenarios/govern-guest-lifecycle-new-project.md  
           - text: Govern access for applications in your environment
             url:  identity-governance-applications-prepare.md  
   
