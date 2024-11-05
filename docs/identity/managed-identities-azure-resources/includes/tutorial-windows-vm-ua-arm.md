@@ -83,7 +83,7 @@ Location: westus
 TenantId: aaaabbbb-0000-cccc-1111-dddd2222eeee
 PrincipalId: aaaaaaaa-bbbb-cccc-1111-222222222222
 ClientId: 00001111-aaaa-2222-bbbb-3333cccc4444
-ClientSecretUrl: https://control-westus.identity.azure.net/subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1/credentials?tid=aaaabbbb-0000-cccc-1111-dddd2222eeee&oid=aaaaaaaa-bbbb-cccc-1111-222222222222&aid=00001111-aaaa-2222-bbbb-3333cccc4444
+ClientSecretUrl: https://control-westus.identity.azure.net/subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1/credentials?tid=aaaabbbb-0000-cccc-1111-dddd2222eeee&oid=aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb&aid=00001111-aaaa-2222-bbbb-3333cccc4444
 Type: Microsoft.ManagedIdentity/userAssignedIdentities
 }
 ```
@@ -151,7 +151,7 @@ For the remainder of the tutorial, you work from the VM that you created earlier
 Finally, use the access token retrieved in the previous step to access Azure Resource Manager, then read the properties of the resource group you granted your user-assigned identity access. Replace `<SUBSCRIPTION ID>` with the subscription ID of your environment.
 
 ```azurepowershell
-(Invoke-WebRequest -Uri https://management.azure.com/subscriptions/80c696ff-5efa-4909-a64d-f1b616f423ca/resourceGroups/myResourceGroupVM?api-version=2016-06-01 -Method GET -ContentType "application/json" -Headers @{Authorization ="Bearer $ArmToken"}).content
+(Invoke-WebRequest -Uri https://management.azure.com/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/myResourceGroupVM?api-version=2016-06-01 -Method GET -ContentType "application/json" -Headers @{Authorization ="Bearer $ArmToken"}).content
 ```
 The response contains the specific Resource Group information, similar to the following example:
 
