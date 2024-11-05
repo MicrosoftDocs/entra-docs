@@ -5,7 +5,7 @@ description: Learn how to access the sign-in log and analyze a single sign-in at
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: quickstart
-ms.date: 02/06/2024
+ms.date: 11/04/2024
 ms.author: sarahlipsey
 author: shlipsey3
 manager: amycolannino
@@ -15,7 +15,7 @@ ms.reviewer: besiler
 ---
 # Quickstart: Analyze a sign-in with the Microsoft Graph API 
 
-With the information in the Microsoft Entra sign-in logs, you can figure out what happened if a sign-in of a user failed. This quickstart shows you how to access the sign-in log using the Microsoft Graph API.
+In this Quickstart, you'll use the information in the Microsoft Entra sign-in logs to figure out what happened if a sign-in of a user failed. This quickstart shows you how to access the sign-in log using the Microsoft Graph API.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ To complete the scenario in this quickstart, you need:
 
 - **Access to a Microsoft Entra tenant**: If you don't have access to a Microsoft Entra tenant, see [Create your Azure free account today](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). 
 - **A test account called Isabella Simonsen**: If you don't know how to create a test account, see [Add cloud-based users](../../fundamentals/add-users.md#add-a-new-user).
-- **Access to the Microsoft Graph API**: If you haven't configured access yet, see [Microsoft Graph authentication and authorization basics](/graph/auth/auth-concepts).
+- **Access to the Microsoft Graph API**: If you don't have access yet, see [Microsoft Graph authentication and authorization basics](/graph/auth/auth-concepts).
 
 ## Perform a failed sign-in
 
@@ -38,8 +38,6 @@ The goal of this step is to create a record of a failed sign-in in the Microsoft
 ## Find the failed sign-in
 
 This section provides the steps to locate the failed sign-in attempt using the Microsoft Graph API.
-
- ![Microsoft Graph Explorer query](./media/quickstart-access-log-with-graph-api/graph-explorer-query.png)   
 
 1. Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as a user with permissions to run a query.
 
