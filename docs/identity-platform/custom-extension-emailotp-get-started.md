@@ -16,9 +16,7 @@ titleSuffix: Microsoft identity platform
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This article describes how to configure and set up a custom email provider with the One Time Code Send event type. This event is triggered when a one time code email is to be sent, and allows you to call a REST API to use your own email provider.
-
-This how-to guide demonstrates the one time code send event with a REST API running in Azure Functions and a sample OpenID Connect application.
+This article provides a guide on configuring and setting up a custom email provider for the One Time Code Send event type. The event is triggered when a one time code email is activated, it allows you to call a REST API to use your own email provider by calling a REST API.
 
 > [!TIP]
 > [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmailOTP)
@@ -114,7 +112,7 @@ You can access your Communication Services connection strings and service endpoi
 1. From the **Home** page in the [Azure portal](https://portal.azure.com/#home), open the portal menu, search for and select **All resources**.
 1. Search for and select the **Azure Communications Service** created as part of the [Prerequisites](#prerequisites) to this article.
 1. In the left pane, select the **Settings** dropdown, then select **Keys**.
-1. Copy the **Endpoint**, and from **Primary key** copy the values for **Key** and **Connection string**
+1. Copy the **Endpoint**, and from **Primary key** copy the values for **Key** and **Connection string**.
 
     :::image type="content" border="false"source="media/custom-extension-emailotp-get-started/extract-communications-service-keys.png" alt-text="Screenshot of the Azure Communications Service Keys page showing the endpoint and key locations." lightbox="media/custom-extension-emailotp-get-started/extract-communications-service-keys.png":::
 
@@ -203,7 +201,7 @@ Update the newly created application to set the application ID URI value, the ac
 
 - Set the application ID URI value in the *identifierUris* property. Replace `{Function_Url_Hostname}` with the hostname of the `{Function_Url}` you recorded earlier.
 - Set the `{authenticationeventsAPI_AppId}` value with the **appId** that you recorded earlier.
-- An example value is `api://authenticationeventsAPI.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`. Take note of this value as you'll use it later in this article in place of `{functionApp_IdentifierUri}`.
+- An example value is `api://authenticationeventsAPI.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`. Take note of this value as it's needed later in this article in place of `{functionApp_IdentifierUri}`.
 
     ```http
     PATCH https://graph.microsoft.com/v1.0/applications/{authenticationeventsAPI_ObjectId}
@@ -263,7 +261,7 @@ Next, you register the custom authentication extension and associating it with t
 
 ### 3.4 Assign a custom email provider to your app
 
-To use the custom emails, you must assign a custom email provider to your application. The custom email provider relies on the custom authentication extension configured with the **one time code send** event listener. The Microsoft Entra Admin Center isn't currently supported in this **Preview** feature. Please use Microsoft Graph to create an event listener to trigger a custom authentication extension for the *My Test application* using the token issuance start event.
+To use the custom emails, you must assign a custom email provider to your application. The custom email provider relies on the custom authentication extension configured with the **one time code send** event listener. 
 
 Follow these steps to connect the *My Test application* with your custom authentication extension:
 
@@ -355,7 +353,7 @@ Microsoft Entra custom authentication extension uses server to server flow to ob
 To protect your Azure function, follow these steps to integrate Microsoft Entra authentication, for validating incoming tokens with your *Azure Functions authentication events API* application registration.
 
 > [!NOTE]
-> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [using OpenID Connect identity provider](#61-using-openid-connect-identity-provider) step.
+> If the Azure function app is hosted in a different Azure tenant than the tenant in which your custom authentication extension is registered, skip to [using OpenID Connect identity provider](#51-using-openid-connect-identity-provider) step.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Navigate and select the function app you previously published.
@@ -372,7 +370,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 
 ### 5.1 Using OpenID Connect identity provider
 
-If you configured the [Microsoft identity provider](#step-6-protect-your-azure-function), skip this step. Otherwise, if the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
+If you configured the [Microsoft identity provider](#step-5-protect-your-azure-function), skip this step. Otherwise, if the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
 
 1. Sign in to the [Azure portal](https://portal.azure.com), then navigate and select the function app you previously published.
 1. Select **Authentication** in the left pane.
