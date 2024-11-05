@@ -54,3 +54,13 @@ landingContent:
             url: security-operations-introduction.md
           - text: Protecting cloud resources from on-premises attacks
             url: protect-m365-from-on-premises-attacks.md
+
+  # Card
+  - title: Secure for AI
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Microsoft Copilot for Security
+            url: //entra/fundamentals/copilot-security-entra.md
+          - text: Secure for AI adoption hub 
+            url: //entra/fundamentals/copilot-entra-risky-user-summarization.md        
