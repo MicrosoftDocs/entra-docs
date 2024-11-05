@@ -438,5 +438,5 @@ PATCH https://graph.microsoft.com/beta/identity/authenticationEventListeners/{cu
 ## See also
 
 - [Configure a custom claim provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md)
-- [Create a custom authentication extension for attribute collection start and submit events]
+- [Create a custom authentication extension for attribute collection start and submit events](./custom-extension-attribute-collection.md)
 - [Custom claims provider reference](custom-claims-provider-reference.md)
