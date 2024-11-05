@@ -44,15 +44,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 - [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - SSO Public Client flow updates
 - [Tutorial: Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA) using auth code flow](tutorial-v2-angular-auth-code.md) - Added clarity to the content
-
-
-## July 2024
-
-### Updated articles
-
-
-- [A web API that calls web APIs: Code configuration](scenario-web-api-call-api-app-configuration.md) - Added clarity to the content
-- [A web app that calls web APIs: Code configuration](scenario-web-app-call-api-app-configuration.md) - Added clarity to the content
-- [Customize claims issued in the JSON web token (JWT) for enterprise applications](jwt-claims-customization.md) - Updating the script with a working version
-- [Troubleshoot publisher verification](troubleshoot-publisher-verification.md) - Removed reference to Postman
-- [Restrict a Microsoft Entra app to a set of users](howto-restrict-your-app-to-a-set-of-users.md) - Added clarity to the content
