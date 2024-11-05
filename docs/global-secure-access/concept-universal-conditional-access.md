@@ -3,7 +3,7 @@ title: Learn about Universal Conditional Access through Global Secure Access
 description: Learn about how Microsoft Entra Internet Access and Microsoft Entra Private Access secures access to your resources through Conditional Access.
 ms.service: global-secure-access
 ms.topic: conceptual
-ms.date: 05/09/2024
+ms.date: 11/05/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -33,8 +33,8 @@ One example is if you block access to the Internet access target resource on non
 
 ### Other known limitations
 
-- Continuous access evaluation is not currently supported for Universal Conditional Access for Microsoft traffic.
-- Applying Conditional Access policies to Private Access traffic is not currently supported. To model this behavior, you can apply a Conditional Access policy at the application level for Quick Access and Global Secure Access apps. For more information, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
+- Continuous access evaluation isn't currently supported for Universal Conditional Access for Microsoft traffic.
+- Applying Conditional Access policies to Private Access traffic isn't currently supported. To model this behavior, you can apply a Conditional Access policy at the application level for Quick Access and Global Secure Access apps. For more information, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
 - Microsoft traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access Client.
 
 
@@ -46,6 +46,30 @@ With Conditional Access, you can enable access controls and security policies fo
 - Apply Conditional Access policies to your [Private Access apps](how-to-target-resource-private-access-apps.md), such as Quick Access.
 - Enable [Global Secure Access signaling in Conditional Access](how-to-source-ip-restoration.md) so the source IP address is visible in the appropriate logs and reports.
 
+## Internet Access – Universal Conditional Access
+
+The following example demonstrates how Microsoft Entra Internet Access works when you apply Universal Conditional Access (CA) policies to network traffic. 
+
+> [!NOTE]
+> Microsoft's Security Service Edge solution comprises three tunnels: Microsoft traffic, Internet Access, and Private Access. Universal Conditional Access applies to the Internet Access and Microsoft traffic tunnels. There isn't support to target the Private Access tunnel. You must individually target Private Access Enterprise Applications.
+
+The following flow diagram illustrates Universal Conditional Access targeting internet resources with Global Secure Access and Microsoft apps with Global Secure Access.
+
+:::image type="content" source="media/concept-universal-conditional-access/internet-access-universal-conditional-access-inline.png" alt-text="Diagram shows flow for Universal Conditional Access when targeting internet resources with Global Secure Access and Microsoft apps with Global Secure Access." lightbox="media/concept-universal-conditional-access/internet-access-universal-conditional-access-expanded.png":::
+
+|Step|Description|
+|-----|-----|
+|1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution (Microsoft Security Solution Edge).|
+|2|The client redirects to Microsoft Entra ID for authentication and authorization.|
+|3|The user and the device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
+|4|After the user and device authenticate, Universal Conditional Access policy enforcement occurs. Universal Conditional Access policies target the established Microsoft and internet tunnels between the Global Secure Access client and Microsoft Security Solution Edge.|
+|5|Microsoft Entra ID issues the access token for the Global Secure Access client.|
+|6|The Global Secure Access client presents the access token to Microsoft Security Solution Edge. The token validates.|
+|7|Tunnels establish between the Global Secure Access client and Microsoft Security Solution Edge.|
+|8|Traffic starts being acquired and tunneled to the destination via the Microsoft and Internet Access tunnels.|
+
+> [!NOTE]
+> Target Microsoft apps with Global Secure Access to protect the connection between Microsoft Security Solution Edge and the Global Secure Access client. To ensure that users can't bypass the Microsoft Security Solution Edge service, create a Conditional Access policy that requires compliant network for your Microsoft 365 Enterprise applications.
 
 ## User experience
 

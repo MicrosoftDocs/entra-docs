@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 09/25/2024
+ms.date: 11/05//2024
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
@@ -92,6 +92,31 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. Select **Select**.
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
+
+## Internet Access – web content filtering without transport layer security (TLS) termination  
+
+This example demonstrates the flow of Microsoft Entra Internet Access traffic when you apply web content filtering policies.
+
+The following flow diagram illustrates web content filtering policies blocking or allowing access to internet resources. 
+
+:::image type="content" source="media/how-to-configure-web-content-filtering/internet-access-web-content-filtering-inline.png" alt-text="Diagram shows flow for Universal Conditional Access when targeting internet resources with Global Secure Access and Microsoft apps with Global Secure Access." lightbox="media/how-to-configure-web-content-filtering/internet-access-web-content-filtering-expanded.png":::
+
+|Step|Description|
+|-----|-----|
+|1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution (Microsoft Security Solution Edge).|
+|2|The client redirects to Microsoft Entra ID for authentication and authorization.|
+|3|The user and device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
+|4|After the user and device authenticate, Conditional Access (CA) matches on Internet Access CA rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
+|5|Microsoft Entra ID presents the token to Microsoft Security Solution Edge for validation.|
+|6|The tunnel establishes between the Global Secure Access client and Microsoft Security Solution Edge.|
+|7|Traffic starts being acquired and tunnels through the Internet Access tunnel.|
+|8|Microsoft Security Solution Edge evaluates the security policies in the access token in priority order. After it matches on a web content filtering rule, web content filtering policy evaluation stops.|
+|9|Microsoft Security Solution Edge enforces the security policies.|
+|10|Policy = block results in an error for HTTP traffic or a connection reset exception occurs for HTTPS traffic.|
+|11|Policy = allow results in traffic forwarding to the destination.|
+
+> [!NOTE]
+> Applying a new security profile can take up to 60-90 minutes due to security profile enforcement with access tokens. The user must receive a new access token with the new security profile id as a claim before it takes effect. Changes to existing security profiles start being enforced much more quickly.
 
 ## User and group assignments
 You can scope the Internet Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
