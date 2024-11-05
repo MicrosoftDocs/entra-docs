@@ -31,7 +31,7 @@ The most current version of the Global Secure Access client is available to down
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
-1. Select **Get early access**/**Download Client**.
+1. Select **Download Client**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-download-screen-PubPreview.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
     
 ## Install the Global Secure Access client
@@ -119,25 +119,19 @@ image.png
 5. Complete the creation of the profile by assigning users and devices according to your needs.
 
 ### Manual interactive Installation
-Run the GlobalSecureAccessClient.pkg setup file. Follow below prompts to install the client.
-
-On the introduction page, choose continue.
-Screenshot 2024-06-25 at 1.25.05 PM.png
-
-On the license page, choose continue and then agree to accept the license agreement.
-image.png
-
-image.png
-4. On the install page, select install
-image.png
-
-When the installation completes, select close.
-image.png
-
-Allow the Global Secure Access system extension.
-When prompted, select “open system settings”
-image.png
-Allow the system extension of Global Secure Access client by selecting “allow”.
+To manually install the Global Secure Access client:
+1. Run the GlobalSecureAccessClient.pkg setup file. The *Install** wizard launches. Follow the prompts.
+1. On the **Introduction** step, select **Continue**.
+:::image type="content" source="media/how-to-install-macos-client/macOS-install-introduction.png" alt-text="Screenshot of the Install wizard on the Introduction step.":::
+1. On the **License** step, select **Continue** and then select **Agree** to accept the license agreement.
+:::image type="content" source="media/how-to-install-macos-client/macOS-install-license-agreement.png" alt-text="Screenshot of the Install wizard on the SumLicense step, showing the software license agreememnt pop-up.":::
+1. On the **Install** step, select **Install**.
+1. When the installation is complete, select **Close**.
+:::image type="content" source="media/how-to-install-macos-client/macOS-install-summary.png" alt-text="Screenshot of the Install wizard on the Summary step.":::
+1. Allow the Global Secure Access system extension.
+    - In the **System Extension Blocked** dialog, select **Open System Settings**.
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-open-systeem-settings.png" alt-text="Screenshot of the System Extension Blocked dialog box with the Open System Settings highlighted.":::    
+- Allow the system extension of Global Secure Access client by selecting “allow”.
 image.png
 Enter username and password to validate the approval of the system extension
 image.png
