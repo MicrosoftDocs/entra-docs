@@ -43,6 +43,8 @@ To upgrade to the latest version.
 
 To assist customers with the upgrade process, we occasionally autoupgrade customers where supported. If you would like to be autoupgraded, ensure you have the [autoupgrade feature](how-to-connect-install-automatic-upgrade.md) configured. For [autoupgrade to work](security-updates-pks.md), you should be on version [2.3.20.0](reference-connect-version-history.md#23200) or higher. 
 
+The 2.4.18.0 and 2.4.21.0 versions have been released for download and not available for autoupgrade. For more more information, review the release status on [Microsoft Entra Connect: Version release history](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/reference-connect-version-history).
+
 ## Consider moving to Microsoft Entra Cloud  
 
 If you're eligible, we recommend migrating from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we're introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
