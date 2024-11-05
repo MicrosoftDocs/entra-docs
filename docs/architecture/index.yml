@@ -61,6 +61,6 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Microsoft Copilot for Security
-            url: //entra/fundamentals/copilot-security-entra.md
+            url: ../entra/fundamentals/copilot-security-entra.md
           - text: Secure for AI adoption hub 
-            url: //entra/fundamentals/copilot-entra-risky-user-summarization.md        
+            url: ../entra/fundamentals/copilot-entra-risky-user-summarization.md        
