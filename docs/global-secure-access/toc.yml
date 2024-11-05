@@ -165,17 +165,6 @@ items:
         href: ~/architecture/sse-deployment-guide-m365.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploying Microsoft Entra Private Access
         href: ~/architecture/sse-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-  - name: Secure access with Microsoft Entra and partners
-    expanded: true
-    items:
-    - name: Coexistence with Cisco
-      href: concept-cisco-coexistence.md
-    - name: Coexistence with Palo Alto Networks
-      href: concept-palo-alto-coexistence.md
-    - name: Coexistence with Zscaler
-      href: concept-zscaler-coexistence.md
-    - name: Coexistence with Netskope
-      href: concept-netskope-coexistence.md
   - name: Troubleshoot
     expanded: false
     items:
@@ -186,10 +175,28 @@ items:
       - name: "Troubleshoot the Global Secure Access client: Health check tab"
         href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
   - name: Partner ecosystem
-    expanded: false
+    expanded: true
     items:
-      - name: Find a Microsoft services partner
-        href: how-to-find-microsoft-services-partners.md
+       - name: Partner ecosystem overview
+         href: partner-ecosystems-overview.md
+       - name: Partner integrations
+         expanded: true
+         items:
+            - name: Integration with Netskope
+              href: concept-netskope-integration.md
+       - name: Coexistence with partners
+         expanded: false
+         items:
+           - name: Coexistence with Cisco
+             href: concept-cisco-coexistence.md
+           - name: Coexistence with Palo Alto Networks
+             href: concept-palo-alto-coexistence.md
+           - name: Coexistence with Zscaler
+             href: concept-zscaler-coexistence.md
+           - name: Coexistence with Netskope
+             href: concept-netskope-coexistence.md
+       - name: Find a Microsoft services partner
+         href: how-to-find-microsoft-services-partners.md
 - name: Reference
   expanded: false
   items:
