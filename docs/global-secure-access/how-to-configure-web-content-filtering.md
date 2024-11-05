@@ -95,7 +95,7 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 
 ## Verify end user policy enforcement
 
-When traffic reaches Microsoft's Secure Service Edge, Microsoft Entra Internet Access performs security controls either on the Uniform Resource Locator (URL) for HTTP traffic or the Server Name Indicator (SNI) header for Transport Layer Security (TLS) encrypted traffic.
+When traffic reaches Microsoft's Secure Service Edge, Microsoft Entra Internet Access performs security controls in two ways. For unencrypted HTTP traffic, it uses the Uniform Resource Locator (URL). For HTTPS traffic encrypted with Transport Layer Security (TLS), it uses the Server Name Indication (SNI).
 
 Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
 
