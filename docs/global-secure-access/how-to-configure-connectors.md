@@ -128,9 +128,9 @@ To use Private Access, install a connector on each Windows server you're using f
 >Starting from the version 1.5.3437.0, having the .NET version 4.7.1 or greater is required for successful installation (upgrade).
 
 > [!Note]
->**Deploy Private Network Connector for Your Azure and AWS Workloads from Marketplace (Preview)**
+>**Deploy Private Network Connector for Your Azure, AWS, and GCP Workloads from respective Marketplaces (Preview)**
 > 
-> The Private Network Connector is now available on [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftcorporation1687208452115.entraprivatenetworkconnector?tab=overview) and [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cgpbjiaphamuc) (in preview), in addition to the [Microsoft Entra admin center](https://entra.microsoft.com). Marketplace offerings allow users to deploy a windows virtual machine with a pre-installed Private Network Connector through a simplified model. The process automates installation and registration, thus improving ease and efficiency.
+> The Private Network Connector is now available on [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftcorporation1687208452115.entraprivatenetworkconnector?tab=overview), [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cgpbjiaphamuc), and [GCP Marketplace](https://console.cloud.google.com/marketplace/product/ciem-entra/entraprivatenetworkconnector) (in preview), in addition to the [Microsoft Entra admin center](https://entra.microsoft.com). Marketplace offerings allow users to deploy a windows virtual machine with a pre-installed Private Network Connector through a simplified model. The process automates installation and registration, thus improving ease and efficiency.
 
 **To install the connector from Microsoft Entra admin center**:
 
