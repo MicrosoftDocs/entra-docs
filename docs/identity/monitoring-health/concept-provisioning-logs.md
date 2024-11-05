@@ -70,7 +70,11 @@ Select an item from the provisioning logs to see more details about this item, s
 
   ![Screenshot shows the provisioning steps on the Steps tab.](./media/concept-provisioning-logs/steps.png "Filter")
 
-- **Troubleshooting & Recommendations**: If there was an error, this tab provides the error code and reason. 
+- **Troubleshooting & Recommendations**: If there was an error, this tab provides the error code and reason. In many cases, a detailed description of the error is provided. Review this information to understand the issue and follow the guidance provided to resolve it. Review the following troubleshooting articles:
+    - [Troubleshoot HR user creation issues](../app-provisioning/hr-user-creation-issues.md)
+    - [Troubleshoot HR user update issues](../app-provisioning/hr-user-update-issues.md)
+    - [Troubleshoot insufficient access rights error](../app-provisioning/insufficient-access-rights-error-troubleshooting.md)
+
 
 - **Modified Properties**: If there were changes, this tab shows the old value and the new value.
 
