@@ -261,6 +261,44 @@ Next, you register the custom authentication extension and associating it with t
 
 1. Record the **id** value of the created custom email OTP provider object. You'll use the value later in this tutorial in place of `{customExtensionObjectId}`.
 
+### 3.4 Assign a custom email provider to your app
+
+To use the custom emails, you must assign a custom email provider to your application. The custom email provider relies on the custom authentication extension configured with the **one time code send** event listener. The Microsoft Entra Admin Center isn't currently supported in this **Preview** feature. Please use Microsoft Graph to create an event listener to trigger a custom authentication extension for the *My Test application* using the token issuance start event.
+
+Follow these steps to connect the *My Test application* with your custom authentication extension:
+
+1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in.
+1. Run the following request. Replace `{App_to_sendotp_ID}` with the app ID of *My Test application* recorded earlier. Replace `{customExtensionObjectId}` with the custom authentication extension ID recorded earlier.
+    - You need the *EventListener.ReadWrite.All* delegated permission.
+
+    ```json
+    POST https://graph.microsoft.com/beta/identity/authenticationEventListeners
+    Content-type: application/json
+
+    {
+        "@odata.type": "#microsoft.graph.onEmailOtpSendListener",
+        "conditions": {
+            "applications": {
+                "includeAllApplications": false,
+                "includeApplications": [
+                    {
+                        "appId": "{App_to_sendotp_ID}"
+                    }
+                ]
+            }
+        },
+        "priority": 500,
+        "handler": {
+            "@odata.type": "#microsoft.graph.onOtpSendCustomExtensionHandler",
+            "customExtension": {
+                "id": "{customExtensionObjectId}"
+            }
+        }
+    }
+    ```
+
+1. Record the **id** value of the created listener object. You'll use the value later in this tutorial in place of `{customListenerOjectId}`.
+
 ---
 
 ### Grant admin consent
@@ -310,45 +348,7 @@ The **jwt.ms** test application uses the implicit flow. Enable implicit flow in 
 > 
 > The **jwt.ms** app uses the implicit flow to get an ID token and is for testing purposes only. The implicit flow is not recommended for production applications. For production applications, use the authorization code flow.
 
-## Step 5: Assign a custom email provider to your app
-
-To use the custom emails, you must assign a custom email provider to your application. The custom email provider relies on the custom authentication extension configured with the **one time code send** event listener. The Microsoft Entra Admin Center isn't currently supported in this **Preview** feature. Please use Microsoft Graph to create an event listener to trigger a custom authentication extension for the *My Test application* using the token issuance start event.
-
-Follow these steps to connect the *My Test application* with your custom authentication extension:
-
-1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in.
-1. Run the following request. Replace `{App_to_sendotp_ID}` with the app ID of *My Test application* recorded earlier. Replace `{customExtensionObjectId}` with the custom authentication extension ID recorded earlier.
-    - You need the *EventListener.ReadWrite.All* delegated permission.
-
-    ```json
-    POST https://graph.microsoft.com/beta/identity/authenticationEventListeners
-    Content-type: application/json
-
-    {
-        "@odata.type": "#microsoft.graph.onEmailOtpSendListener",
-        "conditions": {
-            "applications": {
-                "includeAllApplications": false,
-                "includeApplications": [
-                    {
-                        "appId": "{App_to_sendotp_ID}"
-                    }
-                ]
-            }
-        },
-        "priority": 500,
-        "handler": {
-            "@odata.type": "#microsoft.graph.onOtpSendCustomExtensionHandler",
-            "customExtension": {
-                "id": "{customExtensionObjectId}"
-            }
-        }
-    }
-    ```
-
-1. Record the **id** value of the created listener object. You'll use the value later in this tutorial in place of `{customListenerOjectId}`.
-
-## Step 6: Protect your Azure Function
+## Step 5: Protect your Azure Function
 
 Microsoft Entra custom authentication extension uses server to server flow to obtain an access token that is sent in the HTTP `Authorization` header to your Azure function. When publishing your function to Azure, especially in a production environment, you need to validate the token sent in the authorization header.
 
@@ -370,7 +370,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 
 :::image type="content" border="false"source="media/custom-extension-emailotp-get-started/configure-auth-function-app.png" alt-text="Screenshot that shows how to add authentication to your function app." lightbox="media/custom-extension-emailotp-get-started/configure-auth-function-app.png":::
 
-### 6.1 Using OpenID Connect identity provider
+### 5.1 Using OpenID Connect identity provider
 
 If you configured the [Microsoft identity provider](#step-6-protect-your-azure-function), skip this step. Otherwise, if the Azure Function is hosted under a different tenant than the tenant in which your custom authentication extension is registered, follow these steps to protect your function:
 
@@ -398,7 +398,7 @@ If you configured the [Microsoft identity provider](#step-6-protect-your-azure-f
 1. Unselect the **Token store** option.
 1. Select **Add** to add the OpenID Connect identity provider.
 
-## Step 7: Test the application
+## Step 6: Test the application
 
 To test your custom email provider, follow these steps:
 
@@ -413,7 +413,7 @@ To test your custom email provider, follow these steps:
 1. Replace `{App_to_sendotp_ID}` with the [My Test application registration ID](#41-get-the-application-id).  
 1. Ensure you sign in using an [Email One Time Passcode account](/entra/external-id/one-time-passcode). Then select **Send Code**. Ensure that the code sent to the registred email addresses uses the custom provider registered above.
 
-## Step 8: Fall back to Microsoft Provider
+## Step 7: Fall back to Microsoft Provider
 
 If an error occurs within your extension API, by default Entra ID will not send a one time code to the user. You can instead set the behavior on error to fall back to the Microsoft Provider.
 
