@@ -74,17 +74,17 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Raketa** application integration page, find the **Manage** section and select **Single sign-on**.
 
-1. On the **Select a single sign-on method** page [9], select **SAML** [10].
+1. On the **Select a single sign-on method** page, select **SAML**.
 
     ![rkt_5](./media/raketa-tutorial/method.png)
 
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** [11] to edit the settings.
+1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    1. In the **Identifier (Entity ID)** [12] and **Sign on URL** [14] text boxes, type the URL: `https://raketa.travel/`.
+    1. In the **Identifier (Entity ID)** and **Sign on URL** text boxes, type the URL: `https://raketa.travel/`.
 
-    1. In the **Reply URL** text box [13], type a URL using the following pattern: `https://raketa.travel/sso/acs?clientId=<CLIENT_ID>`.  
+    1. In the **Reply URL** text box, type a URL using the following pattern: `https://raketa.travel/sso/acs?clientId=<CLIENT_ID>`.  
 
     ![rkt_6](./media/raketa-tutorial/values.png)
 
@@ -128,15 +128,15 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 
-1. Select **Add user** [29], then select **Users and groups** [30] in the **Add Assignment** dialog.
+1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
 
     ![rkt_12](./media/raketa-tutorial/add-user-raketa.png)
 
-1. In the **Users and groups** dialog, select **B.Simon** [31] from the Users list, then click the **Select** [32] button at the bottom of the screen.
+1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
 
 1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
 
-1. In the **Add Assignment** dialog, click the **Assign** button [33]. 
+1. In the **Add Assignment** dialog, click the **Assign** button.
 
     ![rkt_13](./media/raketa-tutorial/assign-user.png)
 
