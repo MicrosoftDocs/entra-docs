@@ -133,9 +133,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Log in to your valid8Me company site as an administrator.
 
-1. From the left side menu, expand **Configuration** >  **Single Sign On** > **Identity Management** tab and click Create.
-    
-    ![Screenshot that shows the Configuration Settings.](./media/valid8me-tutorial/menu.png "Configuration")
+1. From the left side menu, expand **Configuration** >  **Single Sign On** > **Identity Management** tab and click **Create**.
 
 1. In the **Microsoft Entra SAML settings** section, perform the following steps:
 
