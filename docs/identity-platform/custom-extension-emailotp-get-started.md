@@ -1,6 +1,6 @@
 ---
-title: Configure a custom email provider for one time code send events (preview)
-description: Learn how to configure and set up a custom email provider with the One Time Code Send event type. 
+title: Configure a custom email provider for one time passcode send events (preview)
+description: Learn how to configure and set up a custom email provider with the One Time Passcode Send event type. 
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
@@ -9,14 +9,14 @@ ms.date: 9/30/2024
 ms.service: identity-platform
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
-#customer intent: As a Microsoft Entra External ID customer, I want to learn how to configure a custom email provider for one time code send events, so that I can use my own email provider to send one time codes.
+#customer intent: As a Microsoft Entra External ID customer, I want to learn how to configure a custom email provider for one time passcode send events, so that I can use my own email provider to send one time passcodes.
 ---
 
-# Configure a custom email provider for one time code send events (preview)
+# Configure a custom email provider for one time passcode send events (preview)
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This article provides a guide on configuring and setting up a custom email provider for the One Time Code Send event type. The event is triggered when a one time code email is activated, it allows you to call a REST API to use your own email provider by calling a REST API.
+This article provides a guide on configuring and setting up a custom email provider for the One Time Passcode (OTP) Send event type. The event is triggered when an OTP email is activated, it allows you to call a REST API to use your own email provider by calling a REST API.
 
 > [!TIP]
 > [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmailOTP)
@@ -76,7 +76,7 @@ After the Azure Function app is created, create an HTTP trigger function. The HT
 
 ### 1.2 Edit the function
 
-The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](/entra/identity-platform/custom-claims-provider-reference) to your API. In this example, it reads the email address (identifier) and the one time code (OTP). Then, the code sends the details to the communications service to send the email using a [dynamic template](https://sendgrid.com/en-us/solutions/email-api/dynamic-email-templates).
+The code starts with reading the incoming JSON object. Microsoft Entra ID sends the [JSON object](/entra/identity-platform/custom-claims-provider-reference) to your API. In this example, it reads the email address (identifier) and the OTP. Then, the code sends the details to the communications service to send the email using a [dynamic template](https://sendgrid.com/en-us/solutions/email-api/dynamic-email-templates).
 
 This how-to guide demonstrates the OTP send event using Azure Communication Services and SendGrid. Use the tabs to select your implementation.
 
@@ -261,7 +261,7 @@ Next, you register the custom authentication extension and associating it with t
 
 ### 3.4 Assign a custom email provider to your app
 
-To use the custom emails, you must assign a custom email provider to your application. The custom email provider relies on the custom authentication extension configured with the **one time code send** event listener. 
+To use the custom emails, you must assign a custom email provider to your application. The custom email provider relies on the custom authentication extension configured with the **OTP send** event listener. 
 
 Follow these steps to connect the *My Test application* with your custom authentication extension:
 
@@ -413,7 +413,7 @@ To test your custom email provider, follow these steps:
 
 ## Step 7: Fall back to Microsoft Provider
 
-If an error occurs within your extension API, by default Entra ID will not send a one time code to the user. You can instead set the behavior on error to fall back to the Microsoft Provider.
+If an error occurs within your extension API, by default Entra ID will not send an OTP to the user. You can instead set the behavior on error to fall back to the Microsoft Provider.
 
 To enable this, run the following request. Replace `{customListenerOjectId}` with the custom authentication listener ID recorded earlier.
 
