@@ -48,7 +48,7 @@ With Conditional Access, you can enable access controls and security policies fo
 
 ## Internet Access – Universal Conditional Access
 
-The following example demonstrates how Microsoft Entra Internet Access works when you apply Universal Conditional Access (CA) policies to network traffic.
+The following example demonstrates how Microsoft Entra Internet Access works when you apply Universal Conditional Access policies to network traffic.
 
 > [!NOTE]
 > Microsoft's Security Service Edge solution comprises three tunnels: Microsoft traffic, Internet Access, and Private Access. Universal Conditional Access applies to the Internet Access and Microsoft traffic tunnels. There isn't support to target the Private Access tunnel. You must individually target Private Access Enterprise Applications.
@@ -61,7 +61,7 @@ The following flow diagram illustrates Universal Conditional Access targeting in
 |-----|-----|
 |1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution.|
 |2|The client redirects to Microsoft Entra ID for authentication and authorization.|
-|3|The user and the device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
+|3|The user and the device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token.|
 |4|After the user and device authenticate, Universal Conditional Access policy enforcement occurs. Universal Conditional Access policies target the established Microsoft and internet tunnels between the Global Secure Access client and Microsoft Security Service Edge.|
 |5|Microsoft Entra ID issues the access token for the Global Secure Access client.|
 |6|The Global Secure Access client presents the access token to Microsoft Security Service Edge. The token validates.|
