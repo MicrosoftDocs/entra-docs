@@ -93,11 +93,11 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
-## Internet Access – web content filtering without transport layer security (TLS) termination  
+## Internet Access – web content filtering
 
 This example demonstrates the flow of Microsoft Entra Internet Access traffic when you apply web content filtering policies.
 
-The following flow diagram illustrates web content filtering policies blocking or allowing access to internet resources. 
+The following flow diagram illustrates web content filtering policies blocking or allowing access to internet resources.
 
 :::image type="content" source="media/how-to-configure-web-content-filtering/internet-access-web-content-filtering-inline.png" alt-text="Diagram shows flow for web content filtering policies blocking or allowing access to internet resources." lightbox="media/how-to-configure-web-content-filtering/internet-access-web-content-filtering-expanded.png":::
 

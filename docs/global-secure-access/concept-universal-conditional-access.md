@@ -48,7 +48,7 @@ With Conditional Access, you can enable access controls and security policies fo
 
 ## Internet Access – Universal Conditional Access
 
-The following example demonstrates how Microsoft Entra Internet Access works when you apply Universal Conditional Access (CA) policies to network traffic. 
+The following example demonstrates how Microsoft Entra Internet Access works when you apply Universal Conditional Access (CA) policies to network traffic.
 
 > [!NOTE]
 > Microsoft's Security Service Edge solution comprises three tunnels: Microsoft traffic, Internet Access, and Private Access. Universal Conditional Access applies to the Internet Access and Microsoft traffic tunnels. There isn't support to target the Private Access tunnel. You must individually target Private Access Enterprise Applications.
