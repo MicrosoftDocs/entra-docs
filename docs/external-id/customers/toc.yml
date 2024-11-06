@@ -346,6 +346,8 @@ items:
             href: how-to-google-federation-customers.md
           - name: Facebook federation
             href: how-to-facebook-federation-customers.md
+          - name: Apple federation
+            href: how-to-apple-federation-customers.md
         displayName: rbac, roles claim, groups claim
       - name: Integrate apps 
         items:
