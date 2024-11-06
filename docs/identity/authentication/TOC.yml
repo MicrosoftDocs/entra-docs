@@ -26,7 +26,7 @@
   items:
   - name: Authentication methods
     items:
-    - name: Accessibility
+    - name: accessibility
       href: ./accessibility/authentication-methods-accessibility.md
       displayName: Accessibility, Special People, MFA Accessibility
     - name: Overview
