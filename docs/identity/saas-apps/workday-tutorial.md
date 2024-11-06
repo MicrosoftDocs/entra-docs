@@ -112,8 +112,6 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	a. Select **Sign SAML response and assertion** for **Signing Option**.
 
-    ![Screenshot showing SAML Signing Certificate.](./media/workday-tutorial/signing-option.png)
-
 	b. Click **Save**
 
 1. On the **Set up Workday** section, copy the appropriate URL(s) based on your requirement.

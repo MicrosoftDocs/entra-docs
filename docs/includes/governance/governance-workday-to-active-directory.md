@@ -280,10 +280,7 @@ In this step, we establish connectivity with Workday and Active Directory.
      > [!NOTE]
      > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
-   * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the Workday credentials and the AD credentials configured on the agent setup are valid.
-
-     >[!div class="mx-imgBorder"]
-     >![Screenshot that shows  the "Provisioning" page with credentials entered.](./media/workday-inbound-tutorial/wd_1.png)
+   * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at the top. If it fails, double-check that the Workday credentials and the AD credentials configured on the agent setup are valid.
 
    * Once the credentials are saved successfully, the **Mappings** section displays the default mapping **Synchronize Workday Workers to On Premises Active Directory**
 
@@ -485,9 +482,6 @@ Yes, this configuration is supported. Here are the high level steps to configure
 Your feedback is highly valued as it helps us set the direction for the future releases and enhancements. We welcome all feedback and encourage you to submit your idea or improvement suggestion in the [feedback forum of Microsoft Entra ID](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789). For specific feedback related to the Workday integration, select the category *SaaS Applications* and search using the keywords *Workday* to find existing feedback related to the Workday.
 
 > [!div class="mx-imgBorder"]
-> ![Screenshot of UserVoice SaaS Apps.](media/workday-inbound-tutorial/uservoice_saas_apps.png)
-
-> [!div class="mx-imgBorder"]
 > ![Screenshot of UserVoice Workday.](media/workday-inbound-tutorial/uservoice_workday_feedback.png)
 
 When suggesting a new idea, please check to see if someone else has already suggested a similar feature. In that case, you can up vote the feature or enhancement request. You can also leave a comment regarding your specific use case to show your support for the idea and demonstrate how the feature is valuable for you too.
@@ -500,12 +494,9 @@ Refer to [Microsoft Entra Connect Provisioning Agent: Version release history](~
 
 #### How do I know the version of my Provisioning Agent?
 
-* Sign in to the Windows server where the Provisioning Agent is installed.
-* Go to **Control Panel** -> **Uninstall or Change a Program** menu
-* Look for the version corresponding to the entry **Microsoft Entra Connect Provisioning Agent**
-
-  >[!div class="mx-imgBorder"]
-  >![Screenshot of Microsoft Entra admin center.](./media/workday-inbound-tutorial/pa_version.png)
+1. Sign in to the Windows server where the Provisioning Agent is installed.
+1. Go to **Control Panel** -> **Uninstall or Change a Program** menu.
+1. Look for the version corresponding to the entry **Microsoft Entra Connect Provisioning Agent**.
 
 #### Does Microsoft automatically push Provisioning Agent updates?
 
@@ -1013,8 +1004,6 @@ To do this change, you must use [Workday Studio](https://community.workday.com/s
 4. Scroll to the bottom of the next screen, and select **Show advanced options**.
 
 5. Select **Edit attribute list for Workday**.
-
-    ![Screenshot that shows the "Workday to Microsoft Entra user provisioning - Provisioning" page with the "Edit attribute list for Workday" action highlighted.](./media/workday-inbound-tutorial/wdstudio_aad1.png)
 
 6. Scroll to the bottom of the attribute list to where the input fields are.
 
