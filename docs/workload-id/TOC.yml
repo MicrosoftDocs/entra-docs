@@ -29,6 +29,8 @@
     items:
       - name: Configure an app to trust an external identity provider
         href: workload-identity-federation-create-trust.md
+      - name: Configure an application to trust a managed identity
+        href: workload-identity-federation-create-trust-managed-identity.md
       - name: Configure a managed identity to trust an external identity provider
         href: workload-identity-federation-create-trust-user-assigned-managed-identity.md
       - name: Block creation of federated credentials
