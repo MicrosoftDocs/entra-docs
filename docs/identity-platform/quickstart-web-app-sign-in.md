@@ -263,7 +263,7 @@ The sample hosts a web server on localhost, port 3000. When a web browser access
 
 1. The application requests permission to maintain access to data you allow access to, and to sign you in and then read your profile, as shown in the screenshot. Select **Accept**.
 
-:::image type="content" source="media/python-webapp/consent.png" alt-text="Diagram that shows the sample app requesting for consent to access the required permissions.":::
+   :::image type="content" source="media/python-webapp/consent.png" alt-text="Diagram that shows the sample app requesting for consent to access the required permissions.":::
 
 1. The following screenshot appears, which indicates that you've successfully signed in to the application. 
 
