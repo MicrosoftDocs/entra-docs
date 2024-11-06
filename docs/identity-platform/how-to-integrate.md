@@ -37,7 +37,7 @@ There are several ways for your application to integrate with the Microsoft iden
 
 **Use the Microsoft identity platform to control who has access to your application.**  Administrators and application owners in Microsoft Entra ID can assign access to applications to specific users and groups. Using the Microsoft Graph API, you can read this list and use it to control provisioning and de-provisioning of resources and access within your application.
 
-**Use the Microsoft identity platform for Roles Based Access Control.**  Administrators and application owners can assign users and groups to roles that you define when you register your application in Microsoft identity platform. Role information is sent to your application in sign in tokens and can also be read using the Microsoft Graph API. Learn more about [using the Microsoft identity platform for authorization](https://cloudblogs.microsoft.com/enterprisemobility/2014/12/18/azure-active-directory-now-with-group-claims-and-application-roles/).
+**Use the Microsoft identity platform for Roles Based Access Control.**  Administrators and application owners can assign users and groups to roles that you define when you register your application in Microsoft identity platform. Role information is sent to your application in sign in tokens and can also be read using the Microsoft Graph API. Learn more about how to [implement role-based access control in your application](./howto-implement-rbac-for-apps.md).
 
 ### Get access to users' profile, calendar, email, contacts, files, and more
 
