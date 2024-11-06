@@ -5,7 +5,7 @@ description: Learn about using phone authentication methods in Microsoft Entra I
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/30/2024
+ms.date: 11/06/2024
 
 ms.author: justinha
 author: justinha
