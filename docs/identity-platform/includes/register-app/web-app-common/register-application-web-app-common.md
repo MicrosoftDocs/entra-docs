@@ -30,5 +30,5 @@ To complete registration, provide the application a name and specify the support
     > The **Supported account types** can be changed by referring to [Modify the accounts supported by an application](../../../howto-modify-supported-accounts.md).
 
 8. Grant admin consent
-   :::image type="content" source="[../../../media/common-register-application/register-web-app-common.png](https://learn-attachment.microsoft.com/api/attachments/305e5854-2eb3-4940-8224-f18d72818efb?platform=QnA)" alt-text="Grant admin consent." lightbox="../../../media/common-register-application/register-web-app-common.png":::
+   :::image type="content" source="[../../../media/common-register-application/register-web-app-common.png](https://i.sstatic.net/MZ1Z4MpB.png)" alt-text="Grant admin consent." lightbox="[../../../media/common-register-application/register-web-app-common.png](https://i.sstatic.net/MZ1Z4MpB.png)":::
    
