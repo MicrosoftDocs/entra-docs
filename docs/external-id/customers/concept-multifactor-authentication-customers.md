@@ -41,7 +41,7 @@ When you select identity provider options in your user flows, you define the fir
 
 Depending on which option you choose as the first factor, different second-factor verification methods are available for [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md).
 
-- **Email with password and social identity providers**: For any of these first-factor methods, you can enable email one-time passcode, SMS, or both as second-factor verification methods for MFA.
+- **Email with password and external identity providers**: For any of these first-factor methods, you can enable email one-time passcode, SMS, or both as second-factor verification methods for MFA.
 - **Email one-time passcode**: When email with one-time passcode is selected as the first-factor authentication method, it can't be used for second-factor verification. Therefore, only SMS-based verification can be enabled for MFA.
 
 For details, see [how to enable MFA methods in an external tenant](how-to-multifactor-authentication-customers.md#enable-email-one-time-passcode-as-an-mfa-method).
