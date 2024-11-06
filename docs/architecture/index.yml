@@ -63,4 +63,8 @@ landingContent:
           - text: Copilot for Entra
             url: ~/fundamentals/copilot-security-entra.md
           - text: Adoption hub 
-            url: ~/fundamentals/copilot-entra-risky-user-summarization.md        
+            url: ~/fundamentals/copilot-entra-risky-user-summarization.md  
+          - text: Secure Gen AI
+            url: ~/fundamentals/copilot-security-entra-investigate-incident.md
+
+          
