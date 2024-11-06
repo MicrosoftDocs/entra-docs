@@ -59,17 +59,17 @@ The following flow diagram illustrates Universal Conditional Access targeting in
 
 |Step|Description|
 |-----|-----|
-|1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution (Microsoft Security Solution Edge).|
+|1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution.|
 |2|The client redirects to Microsoft Entra ID for authentication and authorization.|
 |3|The user and the device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
-|4|After the user and device authenticate, Universal Conditional Access policy enforcement occurs. Universal Conditional Access policies target the established Microsoft and internet tunnels between the Global Secure Access client and Microsoft Security Solution Edge.|
+|4|After the user and device authenticate, Universal Conditional Access policy enforcement occurs. Universal Conditional Access policies target the established Microsoft and internet tunnels between the Global Secure Access client and Microsoft Security Service Edge.|
 |5|Microsoft Entra ID issues the access token for the Global Secure Access client.|
-|6|The Global Secure Access client presents the access token to Microsoft Security Solution Edge. The token validates.|
-|7|Tunnels establish between the Global Secure Access client and Microsoft Security Solution Edge.|
+|6|The Global Secure Access client presents the access token to Microsoft Security Service Edge. The token validates.|
+|7|Tunnels establish between the Global Secure Access client and Microsoft Security Service Edge.|
 |8|Traffic starts being acquired and tunneled to the destination via the Microsoft and Internet Access tunnels.|
 
 > [!NOTE]
-> Target Microsoft apps with Global Secure Access to protect the connection between Microsoft Security Solution Edge and the Global Secure Access client. To ensure that users can't bypass the Microsoft Security Solution Edge service, create a Conditional Access policy that requires compliant network for your Microsoft 365 Enterprise applications.
+> Target Microsoft apps with Global Secure Access to protect the connection between Microsoft Security Service Edge and the Global Secure Access client. To ensure that users can't bypass the Microsoft Security Service Edge service, create a Conditional Access policy that requires compliant network for your Microsoft 365 Enterprise applications.
 
 ## User experience
 

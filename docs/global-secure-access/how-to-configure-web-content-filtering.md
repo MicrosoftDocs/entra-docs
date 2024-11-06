@@ -99,19 +99,19 @@ This example demonstrates the flow of Microsoft Entra Internet Access traffic wh
 
 The following flow diagram illustrates web content filtering policies blocking or allowing access to internet resources. 
 
-:::image type="content" source="media/how-to-configure-web-content-filtering/internet-access-web-content-filtering-inline.png" alt-text="Diagram shows flow for Universal Conditional Access when targeting internet resources with Global Secure Access and Microsoft apps with Global Secure Access." lightbox="media/how-to-configure-web-content-filtering/internet-access-web-content-filtering-expanded.png":::
+:::image type="content" source="media/how-to-configure-web-content-filtering/internet-access-web-content-filtering-inline.png" alt-text="Diagram shows flow for web content filtering policies blocking or allowing access to internet resources." lightbox="media/how-to-configure-web-content-filtering/internet-access-web-content-filtering-expanded.png":::
 
 |Step|Description|
 |-----|-----|
-|1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution (Microsoft Security Solution Edge).|
+|1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution.|
 |2|The client redirects to Microsoft Entra ID for authentication and authorization.|
 |3|The user and device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
 |4|After the user and device authenticate, Conditional Access (CA) matches on Internet Access CA rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
-|5|Microsoft Entra ID presents the token to Microsoft Security Solution Edge for validation.|
-|6|The tunnel establishes between the Global Secure Access client and Microsoft Security Solution Edge.|
+|5|Microsoft Entra ID presents the token to Microsoft Security Service Edge for validation.|
+|6|The tunnel establishes between the Global Secure Access client and Microsoft Security Service Edge.|
 |7|Traffic starts being acquired and tunnels through the Internet Access tunnel.|
-|8|Microsoft Security Solution Edge evaluates the security policies in the access token in priority order. After it matches on a web content filtering rule, web content filtering policy evaluation stops.|
-|9|Microsoft Security Solution Edge enforces the security policies.|
+|8|Microsoft Security Service Edge evaluates the security policies in the access token in priority order. After it matches on a web content filtering rule, web content filtering policy evaluation stops.|
+|9|Microsoft Security Service Edge enforces the security policies.|
 |10|Policy = block results in an error for HTTP traffic or a connection reset exception occurs for HTTPS traffic.|
 |11|Policy = allow results in traffic forwarding to the destination.|
 
