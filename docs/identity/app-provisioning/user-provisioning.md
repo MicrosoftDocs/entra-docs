@@ -10,7 +10,6 @@ ms.date: 09/15/2023
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
-
 # What is app provisioning in Microsoft Entra ID?
 
 In Microsoft Entra ID, the term *app provisioning* refers to automatically creating user identities and roles for applications.
