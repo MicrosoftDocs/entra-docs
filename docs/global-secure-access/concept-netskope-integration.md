@@ -68,7 +68,7 @@ These include having an onboarded Microsoft Entra tenant, an associated Azure Su
 You also need a user with the **Global Secure Access Administrator** role and a user with the **Conditional Access Administrator** role.
 Ensuring these prerequisites are in place is essential for a smooth and effective integration process.
 
-You can express your interest in joining this preview by filling out this [form](https://aka.ms/gsa3ppreviewonboard). Then we will follow up to have your tenant onboarded.
+You can express your interest in joining this preview by filling out this [form](https://aka.ms/GSANetskopeEAP). Then we will follow up to have your tenant onboarded.
 
 ## Installing and configuring the Global Secure Access client
 Install and configure the Global Secure Access client. To learn how to install the client, see [Global Secure Access clients](concept-clients.md).
