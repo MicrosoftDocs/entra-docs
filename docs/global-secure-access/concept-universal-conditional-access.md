@@ -53,7 +53,7 @@ The following example demonstrates how Microsoft Entra Internet Access works whe
 > [!NOTE]
 > Microsoft's Security Service Edge solution comprises three tunnels: Microsoft traffic, Internet Access, and Private Access. Universal Conditional Access applies to the Internet Access and Microsoft traffic tunnels. There isn't support to target the Private Access tunnel. You must individually target Private Access Enterprise Applications.
 
-The following flow diagram illustrates Universal Conditional Access targeting internet resources with Global Secure Access and Microsoft apps with Global Secure Access.
+The following flow diagram illustrates Universal Conditional Access targeting internet resources and Microsoft apps with Global Secure Access.
 
 :::image type="content" source="media/concept-universal-conditional-access/internet-access-universal-conditional-access-inline.png" alt-text="Diagram shows flow for Universal Conditional Access when targeting internet resources with Global Secure Access and Microsoft apps with Global Secure Access." lightbox="media/concept-universal-conditional-access/internet-access-universal-conditional-access-expanded.png":::
 
