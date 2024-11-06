@@ -116,7 +116,7 @@ The following flow diagram illustrates web content filtering policies blocking o
 |11|Policy = allow results in traffic forwarding to the destination.|
 
 > [!NOTE]
-> Applying a new security profile can take up to 60-90 minutes due to security profile enforcement with access tokens. The user must receive a new access token with the new security profile id as a claim before it takes effect. Changes to existing security profiles start being enforced much more quickly.
+> Applying a new security profile can take up to 60-90 minutes due to security profile enforcement with access tokens. The user must receive a new access token with the new security profile ID as a claim before it takes effect. Changes to existing security profiles start being enforced much more quickly.
 
 ## User and group assignments
 You can scope the Internet Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
