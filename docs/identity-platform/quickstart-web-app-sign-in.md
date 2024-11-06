@@ -35,12 +35,6 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 * A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
-#### [Java](#tab/java-workforce)
-
-- [Java Development Kit (JDK)](https://openjdk.java.net/) 8 or later.
-- [Maven](https://maven.apache.org/).
-- A Microsoft Entra workforce tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
-
 #### [Python Flask](#tab/python-flask-workforce)
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
@@ -67,16 +61,7 @@ To specify your app type to your app registration, follow these steps:
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/web-app-common/add-platform-redirect-web-app-port-5001.md)] 
-
-
-#### [Java](#tab/java-workforce)
-
-1. Under **Manage**, select **Authentication**.
-1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
-1. For the **Redirect URIs** enter, `https://localhost:8443/msal4jsample/secure/aad`. 
-1. Add `https://localhost:8443/msal4jsample/graph/me` as a second redirect URI.
-1. Select **Configure** to save your changes. 
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/web-app-common/add-platform-redirect-web-app-port-5001.md)]  
 
 #### [Python Flask](#tab/python-flask-workforce)
 
@@ -111,11 +96,6 @@ To use a certificate credential for your web app, you need to create, then uploa
 1. Record the **Thumbprint** value for use in the next step.
 
 
-#### [Java](#tab/java-workforce)
-
-[!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
-
-
 #### [Python Flask](#tab/python-flask-workforce)
 
 [!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
@@ -148,9 +128,6 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```console
     git clone https://github.com/Azure-Samples/ms-identity-docs-code-dotnet.git
     ```
-#### [Java](#tab/java-workforce)
-
-[Download the code sample](https://github.com/Azure-Samples/ms-identity-java-webapp/archive/master.zip) 
 
 #### [Python Flask](#tab/python-flask-workforce)
 
@@ -208,39 +185,6 @@ EXPRESS_SESSION_SECRET=6DP6v09eLiW7f1E65B8k
     * `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the `Directory (tenant) ID` that was recorded earlier from the overview page of the registered application.
     * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the `Application (client) ID` value that was recorded earlier from the overview page of the registered application.
     * `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded.
-
-#### [Java](#tab/java-workforce)
-
-1. Extract the zip file to a local folder.
-1. *Optional.* If you use an integrated development environment, open the sample in that environment.
-1. Open the *application.properties* file. You can find it in the *src/main/resources/* folder. Replace the values in the fields `aad.clientId`, `aad.authority`, and `aad.secretKey` with the application ID, tenant ID, and client secret values, respectively. Here's what it should look like:
-
-     ```file
-      aad.clientId=Enter_the_Application_Id_here
-      aad.authority=https://login.microsoftonline.com/Enter_the_Tenant_Info_Here/
-      aad.secretKey=Enter_the_Client_Secret_Here
-      aad.redirectUriSignin=https://localhost:8443/msal4jsample/secure/aad
-      aad.redirectUriGraph=https://localhost:8443/msal4jsample/graph/me
-      aad.msGraphEndpointHost="https://graph.microsoft.com/"
-     ```
-  In the previous code:
-
-   - `Enter_the_Application_Id_here` is the application ID for the application you registered.
-   - `Enter_the_Client_Secret_Here` is the **Client Secret** you created in **Certificates & secrets** for the application you registered.
-   - `Enter_the_Tenant_Info_Here` is the **Directory (tenant) ID** value of the application you registered.
-1. To use HTTPS with localhost, provide the `server.ssl.key` properties. To generate a self-signed certificate, use the keytool utility (included in JRE).
-
- Here's an example:
-
-```
-keytool -genkeypair -alias testCert -keyalg RSA -storetype PKCS12 -keystore keystore.p12 -storepass password
-
-server.ssl.key-store-type=PKCS12
-server.ssl.key-store=classpath:keystore.p12
-server.ssl.key-store-password=password
-server.ssl.key-alias=testCert
-```
-1. Put the generated keystore file in the *resources* folder. 
 
 #### [Python Flask](#tab/python-flask-workforce)
 
@@ -310,72 +254,6 @@ The sample hosts a web server on localhost, port 3000. When a web browser access
 1. You're prompted to pick an account to sign out from. Select the account you used to sign in.
 1. A message appears indicating that you signed out. You can now close the browser window. 
 
-#### [Java](#tab/java-workforce)
-
-To run the project, take one of these steps:
-
-- Run it directly from your IDE by using the embedded Spring Boot server.
-- Package it to a WAR file by using [Maven](https://maven.apache.org/plugins/maven-war-plugin/usage.html), and then deploy it to a J2EE container solution like [Apache Tomcat](http://tomcat.apache.org/).
-
-### Run the project from an IDE
-
-1. To run the web application from an IDE, select run, and then go to the home page of the project. For this sample, the standard home page URL is https://localhost:8443.
-
-1. On the front page, select the **Login** button. The app prompts the user to sign in with their credentials. After user is authenticated, they're redirected to `https://localhost:8443/msal4jsample/secure/aad`. They're now signed in, and the page will show information about the user account. The sample UI has these buttons:
-    - **Sign Out**: Signs the current user out of the application and redirects that user to the home page.
-    - **Show User Info**: Acquires a token for Microsoft Graph and calls Microsoft Graph with a request that contains the token, which returns basic information about the signed-in user.
-
-### Run the project from Tomcat
-
-If you want to deploy the web sample to Tomcat, make a couple changes to the source code.
-
-1. Open *ms-identity-java-webapp/src/main/java/com.microsoft.azure.msalwebsample/MsalWebSampleApplication*.
-
-    - Delete all source code and replace it with this code:
-
-      ```Java
-       package com.microsoft.azure.msalwebsample;
-
-       import org.springframework.boot.SpringApplication;
-       import org.springframework.boot.autoconfigure.SpringBootApplication;
-       import org.springframework.boot.builder.SpringApplicationBuilder;
-       import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-
-       @SpringBootApplication
-       public class MsalWebSampleApplication extends SpringBootServletInitializer {
-
-        public static void main(String[] args) {
-         SpringApplication.run(MsalWebSampleApplication.class, args);
-        }
-
-        @Override
-        protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-         return builder.sources(MsalWebSampleApplication.class);
-        }
-       }
-      ```
-
-2.   Tomcat's default HTTP port is 8080, but you need an HTTPS connection over port 8443. To configure this setting:
-        - Open *tomcat/conf/server.xml* file.
-        - Search for the `<connector>` tag, and replace the existing connector with this connector:
-
-          ```xml
-          <Connector
-                   protocol="org.apache.coyote.http11.Http11NioProtocol"
-                   port="8443" maxThreads="200"
-                   scheme="https" secure="true" SSLEnabled="true"
-                   keystoreFile="C:/Path/To/Keystore/File/keystore.p12" keystorePass="KeystorePassword"
-                   clientAuth="false" sslProtocol="TLS"/>
-          ```
-
-3. Open a Command Prompt window. Go to the root folder of this sample (where the `pom.xml` file is located), and run `mvn package` to build the project.
-    - This command generates a `msal-web-sample-0.1.0.war` file in your `/targets` directory.
-    - Rename this file to `msal4jsample.war`.
-    - Deploy the WAR file by using Tomcat or any other J2EE container solution.
-        - To deploy the `msal4jsample.war` file, copy it to the `/webapps/` directory in your Tomcat installation, and then start the Tomcat server.
-
-4. After the file is deployed, go to `https://localhost:8443/msal4jsample` by using a browser. 
-
 #### [Python Flask](#tab/python-flask-workforce)
 
 1. Create a virtual environment for the app:
@@ -431,14 +309,6 @@ The following diagram demonstrates how the sample app works:
 * Learn by building this ASP.NET web app with the series [Tutorial: Register an application with the Microsoft identity platform](./tutorial-web-app-dotnet-sign-in-users.md).
 * [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
 * [Quickstart: Deploy an ASP.NET web app to Azure App Service](/azure/app-service/quickstart-dotnetcore?tabs=net70&pivots=development-environment-vs) 
-
-
-#### [Java](#tab/java-workforce)
-
-For a more in-depth discussion of building web apps that sign in users on the Microsoft identity platform, see the multipart scenario series:
-
-- [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md?tabs=java) 
-
 
 
 #### [Python Flask](#tab/python-flask-workforce)
