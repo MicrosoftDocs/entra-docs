@@ -60,7 +60,7 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Copilot for Entra
+          - text: Copilot in Microsoft Entra
             url: ~/fundamentals/copilot-security-entra.md
           - text: Adoption hub 
             url: ~/fundamentals/copilot-entra-risky-user-summarization.md  
