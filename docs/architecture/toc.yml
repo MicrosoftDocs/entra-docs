@@ -303,5 +303,5 @@ items:
         href: service-accounts-govern-on-premises.md
   - name: Secure for AI
     items: 
-    - name: Secure Generative AI
+    - name: Secure Generative AI 
       href: secure-generative-ai.md

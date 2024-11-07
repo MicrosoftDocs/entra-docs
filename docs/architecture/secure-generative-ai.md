@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.date: 11/07/2024
 ms.reviewer: joflore
 
-#CustomerIntent: As an identity and security administrator, I want to mitigate security challenges that Generative AI (Gen AI) poses so that I can ensure organizational security with Microsoft Entra.
+#CustomerIntent: As an identity and security administrator, I want to mitigate security challenges that Generative AI (Gen AI) poses, so that I can ensure organizational security with Microsoft Entra.
 ---
 
 # Secure Generative AI with Microsoft Entra
