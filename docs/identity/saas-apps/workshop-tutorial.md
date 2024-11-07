@@ -80,16 +80,27 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
 
-    a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://app.useworkshop.com/auth/auth/saml/metadata?id=<ID>`
+    a. In the **Identifier (ENTITY ID)** text box, type one of the following URLs:
+    | Identifier |
+    |----|
+    | `https://app.useworkshop.com/auth/auth/saml/metadata?id=<ID>` |
+    | `https://app-eu.useworkshop.com/auth/auth/saml/metadata?id=<ID>` |
 
-    b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://app.useworkshop.com/auth/auth/saml/callback?id=<ID>`
+    b. In the **Reply URL** text box, type one of the following URLs:
+
+    | Reply URL |
+    |----|
+    | `https://app.useworkshop.com/auth/auth/saml/callback?id=<ID>` |
+    | `https://app-eu.useworkshop.com/auth/auth/saml/callback?id=<ID> `|
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign on URL** text box, type a URL using the following pattern:
-    `https://app.useworkshop.com/auth/auth/saml?id=<ID>`
+    In the **Sign on URL** text box, type one of the following URLs:
+
+    | Sign on URL |
+    |----|
+    | `https://app.useworkshop.com/auth/auth/saml?id=<ID>`  | 
+    | `https://app-eu.useworkshop.com/auth/auth/saml?id=<ID>` |
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Workshop support team](mailto:help@useworkshop.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
@@ -105,7 +116,6 @@ Follow these steps to enable Microsoft Entra SSO.
 	| first_name | user.givenname |
 	| last_name | user.surname |
 	| email | user.mail |
-	| title | user.title |
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
