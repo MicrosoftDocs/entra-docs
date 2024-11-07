@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 Microsoft's Secure Access Service Edge (SASE) partner ecosystem is designed to provide organizations with a robust and flexible security framework. Microsoft collaborates with leading security vendors to ensure that its SASE solution can seamlessly integrate with various non-Microsoft products. This integration allows organizations to use their existing security investments while enhancing their overall security posture. In this overview, you'll explore the different types of partner integrations and coexistence offerings available, helping you to make informed decisions about how to best secure your network infrastructure.
 
-Microsoft's Secure Access Service Edge (SASE) solution supports non-Microsoft integrations that provide you with flexibility to secure access to your resources with both Microsoft and non-Microsoft solutions. The goal of these integrations is twofold: ensure that non-Microsoft solutions work well with Microsoft's SASE solution, and enhance the experience for IT administrators and end users.
+Microsoft's SASE solution supports non-Microsoft integrations that provide you with flexibility to secure access to your resources with both Microsoft and non-Microsoft solutions. The goal of these integrations is twofold: ensure that non-Microsoft solutions work well with Microsoft's SASE solution, and enhance the experience for IT administrators and end users.
 
 ![Diagram of the Global Secure Access coexistence ecosystem.](media/partner-ecosystems-overview/sample-coexistence-diagram-no-logos.png) 
 
