@@ -1017,6 +1017,7 @@ This is a [privileged role](privileged-roles-permissions.md). This administrator
 
 ## Fabric Administrator
 
+
 Users with this role have global permissions within Microsoft Fabric and Power BI, when the service is present, as well as the ability to manage support tickets and monitor service health. For more information, see [Understanding Fabric admin roles](/fabric/admin/roles).
 
 > [!div class="mx-tableFixed"]
