@@ -46,6 +46,7 @@ The partners that are demonstrated to provide coexistence include:
 ### Partner connectivity offerings
 A core component of Microsoft’s Security Service Edge (SSE) solution, Microsoft Entra Internet Access, now integrates seamlessly with various SD-WAN and connectivity providers, enabling optimal connections between Microsoft’s identity-centric SSE and third-party network infrastructure. 
 Organizations can enhance their security posture by linking their Software Defined Wide Area Network (SD-WAN) and connectivity systems to Microsoft's SSE solution for a streamlined experience.
+
 The following partners offer automated integrations with Microsoft’s SSE solution, allowing customers to securely expand their networks with minimal effort:
 
 | ISV         | Docs | Description    |
