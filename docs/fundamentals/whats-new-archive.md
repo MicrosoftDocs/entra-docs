@@ -840,7 +840,7 @@ Today, when users navigate to myaccess.microsoft.com, they land on a list of ava
 
 Admins can enable/disable the Overview page preview by signing into the Microsoft Entra admin center and navigating to Entitlement management > Settings > Opt-in Preview Features and locating My Access overview page in the table.
 
-For more information, see: [My Access Overview page (preview)](~/id-governance/my-access-portal-overview.md#overview-page-preview).
+For more information, see: [My Access Overview page](~/id-governance/my-access-portal-overview.md#overview-page).
 
 ---
 
