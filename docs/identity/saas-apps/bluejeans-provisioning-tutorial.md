@@ -16,7 +16,7 @@ ms.author: thomasakelo
 
 # Tutorial: Configure BlueJeans for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both BlueJeans and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [BlueJeans](https://www.bluejeans.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both BlueJeans and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to BlueJeans using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 ## Capabilities supported
 > [!div class="checklist"]
@@ -31,7 +31,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
-* A BlueJeans tenant with [My Company](https://www.bluejeans.com) plan or better enabled.
+* A BlueJeans tenant with proper plan or better enabled.
 * A user account in BlueJeans with Admin permissions.
 * SCIM provisioning enabled in BlueJeans Enterprise.
 
