@@ -75,7 +75,7 @@ To ensure people outside of your organization can request access packages and ge
 
     ![Edit catalog settings](./media/entitlement-management-shared/catalog-edit.png)
 
-  If you're an administrator or catalog owner, you can view the list of catalogs currently enabled for external users in the Microsoft Entra admin center list of catalogs, by changing the filter setting for **Enabled for external users** to **Yes**. If any of those catalogs shown in that filtered view have a non-zero number of access packages, those access packages might have a policy [for users not in your directory](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory) that allow external users to request.
+  If you're an administrator or catalog owner, you can view the list of catalogs currently enabled for external users in the Microsoft Entra admin center list of catalogs, by changing the filter setting for **Enabled for external users** to **Yes**. If any of those catalogs shown in that filtered view have a nonzero number of access packages, those access packages might have a policy [for users not in your directory](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory) that allow external users to request.
 
 <a name='configure-your-azure-ad-b2b-external-collaboration-settings'></a>
 
@@ -134,7 +134,7 @@ To ensure people outside of your organization can request access packages and ge
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 
-You can select what happens when an external user, who was invited to your directory through making an access package request, no longer has any access package assignments. This can happen if the user relinquishes all their access package assignments, or their last access package assignment expires. By default, when an external user no longer has any access package assignments, they're blocked from signing in to your directory. After 30 days, their guest user account is removed from your directory.  You can also configure that an external user isn't blocked from sign in or deleted, or that an external user isn't blocked from sign in but is deleted.
+You can select what happens when an external user, who was invited to your directory through making an access package request, no longer has any access package assignments. This can happen if the user relinquishes all their access package assignments, or their last access package assignment expires. By default, when an external user no longer has any access package assignments, they're blocked from signing in to your directory. After 30 days, their guest user account is removed from your directory. You can also configure that an external user isn't blocked from sign in or deleted, or that an external user isn't blocked from sign in but is deleted.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
