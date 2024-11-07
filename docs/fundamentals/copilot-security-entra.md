@@ -34,19 +34,17 @@ Microsoft Entra brings the capabilities of Copilot for Security to the Microsoft
 
 ### Create Copilot for Security prompts in the Microsoft Entra admin center (preview)
 
-Copilot for Security is a part of the Microsoft Entra admin center, use it to create your own prompts.  Launch Copilot from a globally available button in the menu bar. Click-to-run Starter Prompts appear at the top of the Copilot window. Suggested Prompts may also appear after a response, these are predefined prompts that Copilot selects based on the skill used in the prior response. 
+Copilot for Security is a part of the Microsoft Entra admin center, use it to create your own prompts.  Launch Copilot from a globally available button in the menu bar. Choose from a set of Starter Pprompts that appear at the top of the Copilot window or enter your own in the prompt bar to get started. Suggested Prompts may also appear after a response, these are predefined prompts that Copilot selects based on the prior response. 
 
 :::image type="content" source="./media/copilot-security-entra/security-copilot-entra-admin-center.png" alt-text="Screenshot that shows Security Copilot in the Microsoft Entra admin center.":::
 
-Specific scenarios supported by Microsoft Entra skills: 
+Specific scenarios supported by Copilot in Microsoft Entra skills: 
 
-- As an IT admin, I need to troubleshoot user’s sign-in events.
-- As an IT admin or SOC Analyst, I need details about these users and groups.
-- As an IT admin or SOC Analyst, I need to understand changes made in Entra to users, roles, groups, and apps in audit log details.
-- As an IT admin or SOC Analyst, I want Copilot to help me improve security posture and reduce application / workload identity risk.
-- As an IT admin or SOC Analyst, I need to see relevent [Microsoft Entra documentation](/entra/) while investigating incidents. 
-
-Copilot responses in the Microsoft Entra admin center only use Microsoft Entra, Microsoft Intune, Windows AutoPatch, Cloud PC, and Microsoft Documentation skills and not skills for other services such as Microsoft Defender XDR or Microsoft Purview.
+- Troubleshoot a user’s sign-in events.
+- Find details about users and groups.
+- Find and summarize changes made to users, roles, groups, and apps from Microsoft Entra audit log details.
+- Improve your security posture and reduce application/workload identity risk.
+- Learn more about Microsoft Entra and receive guidance on identity & access administration from relevant [Microsoft Entra documentation](/entra/). 
 
 ### Summarize a user's risk level
 
@@ -56,7 +54,7 @@ Microsoft Entra ID Protection applies the capabilities of Copilot for Security t
 
 ## Providing feedback
 
-Copilot in Microsoft Entra uses AI and machine learning to process data and generate responses for each of the key features. However, AI might misinterpret some data, which sometimes cause a mismatch in responses. Providing your feedback about the generated responses enable both Copilot in Microsoft Entra and Microsoft Entra to continuously improve delivery of more accurate responses in the future.
+Copilot in Microsoft Entra uses AI and machine learning to process data and generate responses for each of the key features. However, AI might misinterpret some data, which sometimes cause a mismatch in responses. Your feedback on the generated responses helps improve the accuracy of Copilot in Microsoft Entra and Microsoft Entra over time.
 
 All key features have an option for providing feedback. To provide feedback, perform the following steps:
 
@@ -67,7 +65,7 @@ All key features have an option for providing feedback. To provide feedback, per
 
 Or
 
-1. Select the thumb up icon located at the bottom of any response card in the Copilot in Microsoft Entra pane.
+1. Select the thumb down icon located at the bottom of any response card in the Copilot in Microsoft Entra pane.
 1. Select **Inaccurate** if any detail is incorrect or incomplete based on your assessment. Select **Offensive or inappropriate** if it contains potentially harmful, questionable, or ambiguous information.  Select **Other** for some other reason.
 1. Whenever possible, write a few words explaining what can be done to improve the outcome in the **What went wrong?** text box.
 1. Select **Yes, share** samples or **No, don't share** samples.
