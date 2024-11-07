@@ -138,16 +138,16 @@ To manually install the Global Secure Access client:
     - In the **Privacy & Security** dialog, enter your username and password to validate the approval of the system extension. Then select **Modify Settings**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-credentials.png" alt-text="Screenshot of the Privacy & Security pop-up requesting sign-in credentials and the Modify Settings button highlighted.":::
 
-    - Complete the process by selecting **Allow** to enable the Global Secure Access client to add proxy configurations.
+    - Complete the process by selecting **Allow** to enable the Global Secure Access client to add proxy configurations.   
 :::image type="content" source="media/how-to-install-macos-client/macOS-add-proxy.png" alt-text="Screenshot of the Global Secure Access client would like to add proxy configurations pop-up with the Allow button highlighted.":::
-
+   
 1. After the installation is complete, you might be prompted to sign in to Microsoft Entra.
 > [!NOTE]
 > If the [Microsoft Enterprise SSO plug-in for Apple devices](/identity-platform/apple-sso-plugin) is deployed, the default behavior is to use single sign-on with the credentials entered in the company portal.   
 
-8. The **Global Secure Access - Connected** icon appears in the system tray, indicating a successful connection to Global Secure Access.
+8. The **Global Secure Access - Connected** icon appears in the system tray, indicating a successful connection to Global Secure Access.   
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-system-tray-icon-connected.png" alt-text="Screenshot of the system tray with the Global Secure Access - Connected icon highlighted.":::
-
+   
 ## Upgrade the Global Secure Access client
 The client installer supports upgrades. You can use the installation wizard to install a new version on a device that is currently running a previous client version.
 
