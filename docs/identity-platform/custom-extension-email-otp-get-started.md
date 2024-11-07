@@ -114,7 +114,7 @@ You can access your Communication Services connection strings and service endpoi
 1. In the left pane, select the **Settings** dropdown, then select **Keys**.
 1. Copy the **Endpoint**, and from **Primary key** copy the values for **Key** and **Connection string**.
 
-    :::image type="content" border="false"source="media/custom-extension-emailotp-get-started/extract-communications-service-keys.png" alt-text="Screenshot of the Azure Communications Service Keys page showing the endpoint and key locations." lightbox="media/custom-extension-emailotp-get-started/extract-communications-service-keys.png":::
+    :::image type="content" border="false"source="media/custom-extension-email-otp-get-started/extract-communications-service-keys.png" alt-text="Screenshot of the Azure Communications Service Keys page showing the endpoint and key locations." lightbox="media/custom-extension-email-otp-get-started/extract-communications-service-keys.png":::
 
 ### 2.2: Add the connection strings to the Azure Function
 
@@ -307,7 +307,7 @@ From the **API permissions** page, select the **Grant admin consent for "YourTen
 
 The following screenshot shows how to grant permissions.
 
-:::image type="content" border="false"source="media/custom-extension-emailotp-get-started/application-grantconsent.png" alt-text="Screenshot of Azure portal and how to grant admin consent." lightbox="media/custom-extension-emailotp-get-started/application-grantconsent.png":::
+:::image type="content" border="false"source="media/custom-extension-email-otp-get-started/application-grant-consent.png" alt-text="Screenshot of Azure portal and how to grant admin consent." lightbox="media/custom-extension-email-otp-get-started/application-grant-consent.png":::
 
 ## Step 4: Configure an OpenID Connect app to test with
 
@@ -328,7 +328,7 @@ Follow these steps to register the **jwt.ms** web application:
 
 The following screenshot shows how to register the *My Test application*.
 
-:::image type="content" border="false"source="media/custom-extension-emailotp-get-started/register-test-web-application.png" alt-text="Screenshot that shows how to select the supported account type and redirect URI." lightbox="media/custom-extension-emailotp-get-started/register-test-web-application.png":::
+:::image type="content" border="false"source="media/custom-extension-email-otp-get-started/register-test-web-application.png" alt-text="Screenshot that shows how to select the supported account type and redirect URI." lightbox="media/custom-extension-email-otp-get-started/register-test-web-application.png":::
 
 ### 4.1 Get the application ID
 
@@ -366,7 +366,7 @@ To protect your Azure function, follow these steps to integrate Microsoft Entra 
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-:::image type="content" border="false"source="media/custom-extension-emailotp-get-started/configure-auth-function-app.png" alt-text="Screenshot that shows how to add authentication to your function app." lightbox="media/custom-extension-emailotp-get-started/configure-auth-function-app.png":::
+:::image type="content" border="false"source="media/custom-extension-email-otp-get-started/configure-auth-function-app.png" alt-text="Screenshot that shows how to add authentication to your function app." lightbox="media/custom-extension-email-otp-get-started/configure-auth-function-app.png":::
 
 ### 5.1 Using OpenID Connect identity provider
 
@@ -409,7 +409,7 @@ To test your custom email provider, follow these steps:
 1. Replace `{tenant-id}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{tenantname}` with the name of your tenant without the 'onmicrosoft.com'.
 1. Replace `{App_to_sendotp_ID}` with the [My Test application registration ID](#41-get-the-application-id).  
-1. Ensure you sign in using an [Email One Time Passcode account](/entra/external-id/one-time-passcode). Then select **Send Code**. Ensure that the code sent to the registred email addresses uses the custom provider registered above.
+1. Ensure you sign in using an [Email One Time Passcode account](/entra/external-id/one-time-passcode). Then select **Send Code**. Ensure that the code sent to the registered email addresses uses the custom provider registered above.
 
 ## Step 7: Fall back to Microsoft Provider
 
