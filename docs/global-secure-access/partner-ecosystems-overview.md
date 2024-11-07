@@ -29,7 +29,7 @@ We work with our partners to deliver the following categories:
 
 The available partner integrations are:
 
-- [Netscope](concept-netskope-integration.md)
+- [Netskope](concept-netskope-integration.md)
 
 ## Partner coexistence offerings
 
