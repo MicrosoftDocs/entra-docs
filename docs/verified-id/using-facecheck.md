@@ -28,18 +28,21 @@ Face Check is a premium feature within Verified ID. You need to enable the Face 
 
 ## Setting up Face Check with Microsoft Entra Verified ID
 
-The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. 
+The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. If you are going to use Face Check in a tenant with the [Microsoft Entra Suite license](/entra/fundamentals/try-microsoft-entra-suite), Face Check is enabled at the tenant level and the configuration applies to all authorities within that tenant. For any other licenses you can enable Face Check individually by each authority on your tenant using the Azure Resource Manager (ARM) Rest API. 
+
+> [!NOTE]
+> The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
 
 ### Setting up Face Check with Microsoft Entra Verified ID in the Admin Center
 1. In the Verified ID overview page, scroll down to the new Add-ons section and `Enable` the Face Check add-on.
 
 :::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of the Face Check add-on.":::
 
-1. In the Link a subscription step, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
+2. In the Link a subscription step, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
 
 :::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot subscription linking for Face Check.":::
 
-1. Once validated you can `Enable` the add-on.
+3. Once validated you can `Enable` the add-on.
 
 :::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot Face Check add-on enabled.":::
 
@@ -50,7 +53,7 @@ Now you can start using Face Check in your enterprise applications.
 > [!NOTE]
 > The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
 
-To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine
+To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. The below mechanism wrapps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly
 
 1. Run the following command in PowerShell
 ```http
@@ -64,12 +67,12 @@ To set up the Face Check Add-on on a given authority, you must have the [Azure P
 ```
 - replace `<subscription-id>` with your subscription id
 - replace `<resource-group-name>` with your resource group name
-- replace `<authority-id>` with your authority ID
+- replace `<authority-id>` with your authority ID. You can obtain the `authority-id` using the [GET Authorities](/entra/verified-id/admin-api.md#get-authority) call from the Admin API. 
 - replace `<rp-location>` using one of the following two values:
   - For EU tenants, use `northeurope`
   - For Non-EU use `westus2`
 
-The Face Check Add-on hasn't been set up in your tenant.
+The Face Check Add-on is now enabled in your tenant.
 
 ## Get started with Face Check using MyAccount
 
