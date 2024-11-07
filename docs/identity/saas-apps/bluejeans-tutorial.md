@@ -97,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://bluejeans.com/sso/saml2/`
 
 	> [!NOTE]
-	> The Sign-On URL value is not real. Update the value with the actual Sign-On URL. Contact [BlueJeans for Microsoft Entra Client support team](https://support.bluejeans.com/contact) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Sign-On URL value is not real. Update the value with the actual Sign-On URL. Contact [BlueJeans for Microsoft Entra Client support team](https://learn.microsoft.com/en-us/entra/identity/saas-apps/bluejeans-tutorial) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. BlueJeans application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
