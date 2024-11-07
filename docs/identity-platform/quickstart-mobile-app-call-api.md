@@ -16,7 +16,7 @@ ms.author: henrymbugua
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-Before you begin, use the **Choose a tenant type** selector at the top of this page to select tenant type. Microsoft Entra ID provides two tenant configurations, [workforce](../external-id/tenant-configurations.md) and [external](../external-id/tenant-configurations.md). A workforce tenant configuration is for your employees, internal apps, and other organizational resources. An external tenant is for your customer-facing apps.
+[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
 This guide demonstrates how to configure a sample mobile application to sign in users, and call an ASP.NET Core web API.
 
