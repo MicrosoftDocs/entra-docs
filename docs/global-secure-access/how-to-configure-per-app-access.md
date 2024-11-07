@@ -185,6 +185,19 @@ This diagram demonstrates how Microsoft Entra Private Access works when attempti
 
 ![Diagram of Microsoft Entra Private Access working with Remote Desktop Protocol.](media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram.png)
 
+| Step | Description |
+| --- | --- |
+| 1 | User initiates RDP session to an FQDN which maps to the target server. The GSA Client intercepts the traffic and tunnels it to the SSE Edge.  |
+| 2 | The SSE Edge evaluates policies stored in Entra ID such as whether the user is assigned to the application and Conditional Access policies.  |
+| 3 | Once the user has been authorized, Entra ID issues a token for the Private Access application.  |
+| 4 | The traffic is released to continue to the Private Access service along with the application’s access token.  |
+| 5 | The Private Access service validates the access token and the connection is brokered to the Private Access backend service.  |
+| 6 | The connection is brokered to the Private Network Connector.  |
+| 7 | The Private Network Connector performs a DNS query to identify the IP address of the target server. |
+| 8 | The DNS service on the private network sends the response. |
+| 9 | The Private Network Connector forwards the traffic to the target server. The RDP session is negotiated (including RDP authentication) and is then established.  |
+
+
 ## Next steps
 
 The next step for getting started with Microsoft Entra Private Access is to [enable the Private Access traffic forwarding profile](how-to-manage-private-access-profile.md).
