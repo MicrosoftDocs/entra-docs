@@ -68,7 +68,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/allow-notifications.png" alt-text="Screenshot of how to allow notifications for Microsoft Authenticator for iOS devices.":::
 
-1. Select **Open Settings** to enable Authenticator as a passkey provider.
+1. Tap **Settings** to enable Authenticator as a passkey provider.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-provider-ios.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for iOS devices.":::
 
@@ -82,11 +82,11 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/password-options-three.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for iOS devices.":::
 
-1. Navigate back to the Authenticator app and continue. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies. 
+1. Return to Authenticator app and tap **Done**. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies. 
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-added-ios.png" alt-text="Screenshot of setting up passkey, passwordless, and/or MFA for sign in using Microsoft Authenticator for iOS devices.":::
 
-1. After you see passkey added as a sign-in method for your account, tap **Continue** and you can now see the new account you added.
+1. You can see the new account you added in Authenticator.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/new-authenticator-account.png" alt-text="Screenshot of a new account in Authenticator for iOS devices.":::
 
