@@ -3,7 +3,7 @@ title: The Global Secure Access client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/26/2024
+ms.date: 11/06/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -22,7 +22,7 @@ This article describes how to download and install the Global Secure Access clie
 - A Mac device with an Intel, M1, M2, or M3 processor, running macOS version 13 or newer.
 - A device registered to Microsoft Entra tenant using Company Portal.
 - A Microsoft Entra tenant onboarded to Global Secure Access.
-- Deployment of the Microsoft Enterprise SSO plug-in is recommended for SSO experience based on the user who is signed in to the company portal.
+- Deployment of the [Microsoft Enterprise single sign-on (SSO) plug-in for Apple devices](/identity-platform/apple-sso-plugin) is recommended for SSO experience based on the user who is signed in to the company portal.
 - An internet connection.
 
 ## Download the client
@@ -124,52 +124,59 @@ To manually install the Global Secure Access client:
 1. On the **Introduction** step, select **Continue**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-install-introduction.png" alt-text="Screenshot of the Install wizard on the Introduction step.":::
 1. On the **License** step, select **Continue** and then select **Agree** to accept the license agreement.
-:::image type="content" source="media/how-to-install-macos-client/macOS-install-license-agreement.png" alt-text="Screenshot of the Install wizard on the SumLicense step, showing the software license agreememnt pop-up.":::
+:::image type="content" source="media/how-to-install-macos-client/macOS-install-license-agreement.png" alt-text="Screenshot of the Install wizard on the SumLicense step, showing the software license agreement pop-up.":::
 1. On the **Install** step, select **Install**.
 1. When the installation is complete, select **Close**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-install-summary.png" alt-text="Screenshot of the Install wizard on the Summary step.":::
 1. Allow the Global Secure Access system extension.
     - In the **System Extension Blocked** dialog, select **Open System Settings**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-open-systeem-settings.png" alt-text="Screenshot of the System Extension Blocked dialog box with the Open System Settings highlighted.":::    
-- Allow the system extension of Global Secure Access client by selecting “allow”.
-image.png
-Enter username and password to validate the approval of the system extension
-image.png
-• Finally, select “allow”
-image.png
-After the installation is completed, the user might be prompted to sign in to Microsoft Entra.
-Note: The default behavior is to use single sign-on by the credentials entered in Company Portal, if Microsoft Enterprise SSO plug-in  is deployed.
-Few seconds later an icon in the system tray will indicate a successful connection to Global Secure Access (tick mark):
-image.png
 
-Client upgrade
-The client installer supports upgrades. A new version can be installed on a device that is running a previous client version.
+    - Allow the Global Secure Access client system extension by selecting **Allow**.
+:::image type="content" source="media/how-to-install-macos-client/macOS-allow-blocked-application.png" alt-text="Screenshot of the System Settings, open to the Privacy & Security options, showing a blocked application message, with the Allow button highlighted.":::   
 
-Use the following command for silent upgrade.
-Please update the file path and version number, as per the download location of pkg file.
+    - In the **Privacy & Security** dialog, enter your username and password to validate the approval of the system extension. Then select **Modify Settings**.
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-credentials.png" alt-text="Screenshot of the Privacy & Security pop-up requesting sign-in credentials and the Modify Settings button highlighted.":::
 
-sudo installer -pkg ~/Downloads/GlobalSecureAccessClient_[version].pkg -target / -verboseR
+    - Complete the process by selecting **Allow** to enable the Global Secure Access client to add proxy configurations.
+:::image type="content" source="media/how-to-install-macos-client/macOS-add-proxy.png" alt-text="Screenshot of the Global Secure Access client would like to add proxy configurations pop-up with the Allow button highlighted.":::
 
-Client uninstall
-To manually uninstall the client run the following command:
+1. After the installation is complete, you might be prompted to sign in to Microsoft Entra.
+> [!NOTE]
+> If the [Microsoft Enterprise SSO plug-in for Apple devices](/identity-platform/apple-sso-plugin) is deployed, the default behavior is to use single sign-on with the credentials entered in the company portal.   
 
-sudo /Applications/Global\ Secure\ Access\ Client.app/Contents/Resources/install_scripts/uninstall
+8. The **Global Secure Access - Connected** icon appears in the system tray, indicating a successful connection to Global Secure Access.
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-system-tray-icon-connected.png" alt-text="Screenshot of the system tray with the Global Secure Access - Connected icon highlighted.":::
 
-If you are using an MDM, uninstall the client with the MDM.
+## Upgrade the Global Secure Access client
+The client installer supports upgrades. You can use the installation wizard to install a new version on a device that is currently running a previous client version.
 
-Client actions
-The following actions are supported by the right-click menu on the system tray icon:
+For a silent upgrade, use the following command.    
+*Substitute your file path and version number according to the download location of the .pkg file.*
 
-action	description
-Disable	Disables the client until it is enabled again by the user. The user will be prompted to enter business justification and re-enter his credentials. The business justification is logged.
-Enable	Enables a client that was disabled.
-Pause	Pauses the client for 10 minutes, until it is resumed by the user or until the device is restarted. The user will be prompted to enter business justification and re-enter his credentials. The business justification is logged.
-Resume	Resumes a client that was paused
-Restart	Restarts the client
-Collect logs	Collects client logs and archives them in a zip file that can be sent to support for investigation.
-Settings	Opens the settings and advanced diagnostics tool.
-About	Shows information regarding the product's version.
-image.png
+`sudo installer -pkg ~/Downloads/GlobalSecureAccessClient_[version].pkg -target / -verboseR`
+
+## Uninstall the Global Secure Access client
+To manually uninstall the Global Secure Access client, use the following command.
+
+`sudo /Applications/Global\ Secure\ Access\ Client.app/Contents/Resources/install_scripts/uninstall`
+
+If you're using an MDM, uninstall the client with the MDM.
+
+## Client actions
+The following actions are available from the right-click menu on the system tray icon:
+
+|Action   |Description   |
+|---------|---------|
+|**Disable**   |Disables the client until the user enables it again. When the user disables the client, they're prompted to enter a business justification and reenter their sign-in credentials. The business justification is logged.   |
+|**Enable**   |Enables the disabled client.   |
+|**Pause**   |Pauses the client for either 10 minutes, until the user resumes the client, or until the device is restarted. When the user pauses the client, they're prompted to enter a business justification and reenter their sign-in credentials. The business justification is logged.   |
+|**Resume**   |Resumes the paused client.   |
+|**Restart**   |Restarts the client.   |
+|**Collect logs**   |Collects client logs and archives them in a zip file to share with Microsoft Support for investigation.   |
+|**Settings**   |Opens the Settings and Advanced diagnostics tool.   |
+|**About**   |Shows information regarding the product's version.   |
+
 
 ### Client statuses in system tray icon
 
@@ -179,20 +186,20 @@ image.png
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-connected.png":::	|Global Secure Access Client - Connected	|The client is connected to Global Secure Access.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disabled.png":::   |Global Secure Access Client - Disabled	|The client is disabled because services are offline or the user disabled the client.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disconnected.png":::	|Global Secure Access Client - Disconnected	|The client failed to connect to Global Secure Access.    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Some channels are unreachable	|The client is partially connected to Global Secure Access (that is, the connection to at least one channel failed: Entra, Microsoft 365, Private Access, Internet Access).    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Some channels are unreachable	|The client is partially connected to Global Secure Access (that is, the connection to at least one channel failed: Microsoft Entra, Microsoft 365, Private Access, Internet Access).    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Disabled by your organization	|Your organization has disabled the client (that is, all traffic forwarding profiles are disabled).    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Private Access is disabled	 |The user disabled Private Access on this device.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - could not connect to the Internet	|The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
 
-## Settings
-The settings window allows to set different configurations and to do some advanced actions.
+## Settings and Troubleshooting
+The Settings window allows you to set different configurations and do some advanced actions.
 The settings window contains two tabs:
 
 ### Settings
 
 |Option  |Description  |
 |---------|---------|
-|**Telemetry full diagnostics**     |Sends to Microsoft full telemetry data for application improvement.         |
+|**Telemetry full diagnostics**     |Sends full telemetry data to Microsoft for application improvement.         |
 |**Enable Verbose logging**     |Enables verbose logging and network capture to be collected when exporting the logs to a zip file.         |
 
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-settings-toggles.png" alt-text="Screenshot of the macOS Client download screen with the Get early access button highlighted.":::	
@@ -202,7 +209,7 @@ The settings window contains two tabs:
 |Action  |Description  |
 |---------|---------|
 |**Get Latest Policy**     |Downloads and applies the latest forwarding profile for your organization.         |
-|**Clear cached data**     |Deletes the client's internal cached data related to authentication, forwarding profile, FQDNs and IPs.         |
+|**Clear cached data**     |Deletes the client's internal cached data related to authentication, forwarding profile, FQDNs, and IPs.         |
 |**Export Logs**     |Exports logs and configuration files related to the client to a zip file.         |
 |**Advanced Diagnostics Tool**     |An advanced tool to monitor and troubleshoot the client's behavior.         |
 
@@ -214,15 +221,15 @@ For a list of known limitations for the Global Secure Access client, see [Global
 ## Remediations
 Use the following techniques to mitigate limitations:
 
-### Secure DNS
-If Secure DNS is enabled on the browser or in macOS and the DNS server supports Secure DNS, then the client does not tunnel traffic set to be acquired by FQDN (network traffic acquired by IP is not affected and is tunneled according to the forwarding profile). To mitigate the Secure DNS issue, disable Secure DNS, set a DNS server that doesn't support Secure DNS, or create rules based on IP.
+### Secure Domain Name System (DNS)
+If Secure DNS is enabled on the browser or in macOS and the DNS server supports Secure DNS, then the client doesn't tunnel traffic set to be acquired by FQDN (network traffic acquired by IP isn't affected and is tunneled according to the forwarding profile). To mitigate the Secure DNS issue, disable Secure DNS, set a DNS server that doesn't support Secure DNS, or create rules based on IP.
 
-### IPv6 is not supported
-The client tunnels only IPv4 traffic. IPv6 traffic is not acquired by the client and therefore routed directly to the network.
+### IPv6 not supported
+The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and therefore routed directly to the network.
 To make sure that all traffic is routed to Global Secure Access, disable IPv6.
 
 ### Connection fallback
-In case of a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the hardening value of the matching rule in the forwarding profile (bypass or block).
+If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the hardening value of the matching rule in the forwarding profile (bypass or block).
 
 ### Geolocation of source IP address
 For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This scenario might affect services that rely on geolocation.
