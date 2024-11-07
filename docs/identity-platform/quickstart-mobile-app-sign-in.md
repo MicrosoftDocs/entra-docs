@@ -773,44 +773,7 @@ Move on to the step-by-step tutorial in which you build an iOS or macOS app that
 
 ::: zone pivot="external"
 
-#### [Android](#tab/android-external)
-
-This guide demonstrates how to configure a sample Android mobile application to sign in users.
-  
-In this article, you do the following tasks: 
- 
-- Register an application in the Microsoft Entra admin center.
-- Add a platform redirect URL.
-- Enable public client flows.   
-- Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
-- Run and test the sample Android mobile application.
-
-#### [Android(.NETMAUI)](#tab/android-netmaui-external)
-
-This how-to guide uses a sample .NET Multi-platform App UI (.NET MAUI) to show how to add authentication to an Android application by using an external tenant. The sample application enables users to sign in and sign out. The sample .NET MAUI Android application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for .NET to handle authentication.
-
-In this article, you do the following tasks:
-
-- Register a .NET MAUI Android application in the external tenant.
-- Create a sign-in and sign-out user flow in the external tenant.
-- Associate your .NET MAUI Android application with the user flow.
-- Update a sample .NET MAUI Android application to use your own external tenant details.
-- Run and test the sample .NET MAUI Android application.
-
-
-#### [iOS/macOS](#tab/ios-macos-external)
-
-This guide demonstrates how to configure a sample iOS mobile application to sign in users.
-
-In this article, you do the following tasks: 
-
-- Register an application in the Microsoft Entra admin center.
-- Add a platform redirect URL.
-- Enable public client flows.   
-- Update the iOS configuration code sample file to use your own Microsoft Entra External ID for external tenant details.  
-- Run and test the sample iOS mobile application. 
-
----
+The quickstart guides you in configuring sample Android, .NET MAUI Android, and iOS/macOS apps to sign in users by registering applications, setting up redirect URLs, updating configurations, and testing the app.
 
 ## Prerequisites
 
@@ -819,7 +782,7 @@ In this article, you do the following tasks:
 - <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
 - An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
 
-#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+#### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
@@ -840,7 +803,7 @@ In this article, you do the following tasks:
 
 [!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
-#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+#### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 [!INCLUDE [active-directory-b2c-register-app](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
@@ -861,7 +824,7 @@ In this article, you do the following tasks:
 
 [!INCLUDE [Enable public client](../external-id/customers/includes/register-app/enable-public-client-flow.md)]
 
-#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+#### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 [!INCLUDE [active-directory-b2c-app-integration-add-platform](../external-id/customers/includes/register-app/add-platform-redirect-url-dotnet-maui.md)]
 
@@ -881,7 +844,7 @@ In this article, you do the following tasks:
 
 [!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
 
-#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+#### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -913,7 +876,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
    git clone https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-android-sample
    ```
 
-#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+#### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 To get the .NET MAUI Android application sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample .NET MAUI Android application from GitHub by running the following command:
 
@@ -961,7 +924,7 @@ To enable authentication and access to Microsoft Graph resources, configure the 
 You've configured the app and it's ready to run. 
 
 
-#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+#### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 1. In Visual Studio, open *ms-identity-ciam-dotnet-tutorial-main/1-Authentication/2-sign-in-maui/appsettings.json* file.
 1. Find the placeholder:
@@ -1008,7 +971,7 @@ To build and run your app, follow these steps:
 
 For more information about calling a protected web API, see our [next steps](#next-steps) 
 
-#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+#### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 .NET MAUI apps are designed to run on multiple operating systems and devices. You'll need to select which target you want to test and debug your app with.
 
@@ -1052,7 +1015,7 @@ For more information about calling a protected web API, see our [Next steps](#ne
 
 - [Sign in users and call a protected web API in sample Android (Kotlin) app](../external-id/customers/sample-mobile-app-android-kotlin-sign-in-call-api.md).
 
-#### [Android(.NETMAUI)](#tab/android-netmaui-external)
+#### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 - [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md).
