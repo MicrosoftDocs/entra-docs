@@ -4,7 +4,7 @@ description: Learn how to configure a Node.js web app code sample to sign in use
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: entra-external-id 
+ms.service: identity-platform 
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 06/26/2024

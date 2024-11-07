@@ -4,7 +4,7 @@ description: Learn how to use native authentication Android and iOS SDK attribut
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: entra-external-id 
+ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
 ms.date: 08/01/2024

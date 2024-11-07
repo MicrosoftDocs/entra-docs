@@ -3,7 +3,7 @@ title: Native authentication web fallback
 description: Learn how you can use web fallback to improve the resilience of your customer apps that use native authentication. 
 author: kengaderdus
 manager: mwongerapk
-ms.service: entra-external-id 
+ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
 ms.date:  04/27/2024
