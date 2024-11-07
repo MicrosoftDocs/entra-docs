@@ -215,9 +215,10 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 1. Add your account in Authenticator on your Android device. Tap **Add account** or the **+** button.
 
    > [!NOTE]
-   > If you already have an account in the Authenticator, tap your account in the app, and then tap the settings gear near the upper right of the account details page. Tap **Create a passkey **, and skip directly to the sign-in step of the flow.
+   > If you already have an account in the Authenticator, tap your account in the app, and then tap the settings gear near the upper right of the account details page. Tap **Create a passkey**, and skip directly to the sign-in step of the flow.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-first-run.png" alt-text="Screenshot of the first screen to appear for Microsoft Authenticator for Android devices.":::
+   
 
    1. If you installed Authenticator on your device before but haven't added an account, tap **Add account** or the **+** button, and select **Work or school account**. Then tap on **Sign in**.
 
@@ -226,10 +227,14 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
    1. If you already added an account in Authenticator, tap your account, and then tap the settings gear near the upper right of the account details page. Tap **Create a passkey**.
 
 1. You need to complete multifactor authentication (MFA).
+
+1. Tap **Settings** to set up a screen lock.
+
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-lock-screen-required.png" alt-text="Screenshot of step to set up lock screen for passkey in Microsoft Authenticator for Android devices."::: 
  
 1. Tap **Settings** to enable Authenticator as a passkey provider.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/tap-settings-android.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for Android devices."::: 
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-allow-authenticator.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for Android devices."::: 
  
 1. Open **Passwords and accounts**.
  
@@ -239,13 +244,9 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/enable-authenticator-android.png" alt-text="Screenshot of enabling Authenticator as a provider using Microsoft Authenticator for Android devices.":::
 
-1. Return to **Authenticator app** and select **Done**.
- 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/settings-done-android.png" alt-text="Screenshot of how to tap Done to complete using Microsoft Authenticator for Android devices.":::
+1. After you return to Authenticator, tap **Done** to confirm you added Authenticator as a passkey provider. Then you can see passkey added as a sign-in method for your account. Tap **Done** again to finish.
 
-1. After you see passkey added as a sign-in method for your account, tap **Continue**.
-
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/passkey-added-android.png" alt-text="Screenshot of an account added to Microsoft Authenticator for Android devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-account-added.png" alt-text="Screenshot of an account added to Microsoft Authenticator for Android devices.":::
 
 1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies. Tap your account to see details, including your new passkey. 
 
