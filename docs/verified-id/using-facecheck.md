@@ -67,7 +67,7 @@ To set up the Face Check Add-on on a given authority, you must have the [Azure P
 ```
 - replace `<subscription-id>` with your subscription id
 - replace `<resource-group-name>` with your resource group name
-- replace `<authority-id>` with your authority ID. You can obtain the `authority-id` using the [GET Authorities](/entra/verified-id/admin-api.md#get-authority) call from the Admin API. 
+- replace `<authority-id>` with your authority ID. You can obtain the `authority-id` using the [GET Authorities](admin-api.md#get-authority) call from the Admin API. 
 - replace `<rp-location>` using one of the following two values:
   - For EU tenants, use `northeurope`
   - For Non-EU use `westus2`
