@@ -1268,8 +1268,58 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-dotnet-core-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-nodejs-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-java-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-python-flask.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-call-api.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-call-api",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-tenant.md",
       "redirect_url": "/entra/external-id/customers/how-to-web-app-node-edit-profile-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-edit-profile.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-edit-profile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-django-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-flask-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-dotnet-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
       "redirect_document_id": false
     },
     {

@@ -11,6 +11,8 @@ ms.service: identity-platform
 ms.topic: include
 ---
 
+To enable your application to sign in users, Microsoft Entra ID must be made aware of the application you create. The app registration establishes a trust relationship between the app and Microsoft Entra. When you register an application, External ID generates a unique identifier known as an **Application (client) ID**, a value used to identify your app when creating authentication requests.
+
 To complete registration, provide the application a name and specify the supported account types. Once registered, the application **Overview** pane displays the identifiers needed in the application source code.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).

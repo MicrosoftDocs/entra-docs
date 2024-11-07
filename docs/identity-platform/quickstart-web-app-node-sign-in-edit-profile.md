@@ -1,25 +1,26 @@
 ---
-title: Sign in users and edit profile in a sample Node.js web app
+title: Quickstart - Edit profile in a sample Node.js web app
 description: Learn how to configure a sample web app to edit user's profile. The edit profile operation requires a customer user to complete multifactor authentication (MFA)
  
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: entra-external-id 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/28/2024
 ms.custom: developer
-#Customer intent: As a dev, devops, or IT admin, I want to configure a sample Node.js web app so that customer users can sign in and edit profile in their external tenant
+#Customer intent: As a dev, devops, or IT admin, I want to configure a sample Node.js web app so that customer users edit profile after completing a multifactor authentication (MFA) in their external tenant
 ---
 
-# Sign in users and edit profile in a sample Node.js web app
+# Quickstart - Edit profile in a sample Node.js web app
 
-This guide uses a sample Node.js web app to show you how to add sign in and edit profile in a web app. The sample web app uses [Microsoft Authentication Library for Node (MSAL Node)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) and Microsoft Graph API to complete the sign in and edit profile operation.
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
+In this Quickstart, you use a sample Node.js web app to learn how to add sign in and edit profile in a web app. The sample web app uses [Microsoft Authentication Library for Node (MSAL Node)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) and Microsoft Graph API to complete the sign in and edit profile operation.
 
 ## Prerequisites
 
-- Complete the steps in [Sign in users in a sample Node.js web app](sample-web-app-node-sign-in.md) article. This article shows you how to sign in users by using a sample Node.js web app. 
+- Complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This Quickstart shows you how to sign in users by using a sample Node.js web app. 
 
 ## Register and configure EditProfileService app
 
@@ -27,23 +28,23 @@ In this step, you register the EditProfileService app (the API app) app, which p
 
 ### Register EditProfileService app
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/register-mfa-api-app.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/register-mfa-api-app.md)]
 
 ### Configure EditProfileService app API scopes
 
 The EditProfileService app needs to expose permissions, which a client needs to acquire for calling the API:
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-api-mfa-scopes.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/add-api-mfa-scopes.md)]
 
 ### Add app client secret
 
-[!INCLUDE [active-directory-b2c-add-client-secret](./includes/register-app/add-mfa-api-app-client-secret.md)]
+[!INCLUDE [active-directory-b2c-add-client-secret](../external-id/customers//includes/register-app/add-mfa-api-app-client-secret.md)]
 
 ### Grant User.ReadWrite permission to the EditProfileService app
 
 *User.ReadWrite* is a Microsoft Graph API permission that enables a user to update their profile. To grant the *User.ReadWrite* permission to the EditProfileService app, use the following steps: 
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permission-edit-profile.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/grant-api-permission-edit-profile.md)]
 
 ### Grant admin consent
 
@@ -59,7 +60,7 @@ In this section, you grant API permissions to the client web app that you regist
 
 Grant your client web app the *EditProfileService.ReadWrite* permission. This permission is exposed by the EditProfileService app, and it protects the update profile operation with MFA. To grant the *EditProfileService.ReadWrite* permission to client web app, use the following steps:
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-mfa-api-app.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/grant-api-permissions-mfa-api-app.md)]
 
 ### Grant admin consent
 
@@ -73,7 +74,7 @@ You've assigned the **EditProfileService.ReadWrite* permissions correctly. Howev
 
 Your EditProfileService app that you registered earlier is the resource that you protect with MFA. 
 
-To create an MFA CA policy, use the steps in [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md). Use the following settings when you create your policy:
+To create an MFA CA policy, use the steps in [Add multifactor authentication to an app](../external-id/customers/how-to-multifactor-authentication-customers.md). Use the following settings when you create your policy:
 - For the **Name**, use *MFA policy*.
 - For the Target resources, select the EditProfileService app that you registered earlier, such as *edit-profile-service*.
 
@@ -98,8 +99,8 @@ This code sample contains two apps, the client app and the service/API app. You 
 
 1. In your code editor, open `1-Authentication\7-edit-profile-with-mfa-express\Api\authConfig.js` file, then find the placeholder:
     
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
-    - `Enter_the_Tenant_ID_Here` and replace it with Tenant ID. If you don't have your Tenant ID, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
+    - `Enter_the_Tenant_ID_Here` and replace it with Tenant ID. If you don't have your Tenant ID, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
     - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](#register-editprofileservice-app).
     - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](#add-app-client-secret) value you copied earlier.
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's `https://graph.microsoft.com/`.
@@ -144,4 +145,4 @@ To test your app, install project dependencies for both the client app and the s
 
 ## Related content
 
--  [Learn how to add edit profile in your own Node.js web app](how-to-web-app-node-edit-profile-prepare-app.md).
+-  [Learn how to add edit profile in your own Node.js web app](/entra/external-id/customers/how-to-web-app-node-edit-profile-prepare-app).
