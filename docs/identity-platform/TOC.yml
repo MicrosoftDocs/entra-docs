@@ -500,7 +500,7 @@
         - name: Custom extensions
           items:
             - name: Configure a custom email provider for one time code send events
-              href: custom-extension-emailotp-get-started.md
+              href: custom-extension-email-otp-get-started.md
             - name: Create attribute collection start and submit events
               href: custom-extension-attribute-collection.md
         - name: Handle browser cookie restrictions
