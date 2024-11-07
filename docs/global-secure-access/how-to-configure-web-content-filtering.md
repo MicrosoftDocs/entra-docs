@@ -106,7 +106,7 @@ The following flow diagram illustrates web content filtering policies blocking o
 |1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution.|
 |2|The client redirects to Microsoft Entra ID for authentication and authorization.|
 |3|The user and device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
-|4|After the user and device authenticate, Conditional Access (CA) matches on Internet Access CA rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
+|4|After the user and device authenticate, Conditional Access matches on Internet Access CA rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
 |5|Microsoft Entra ID presents the token to Microsoft Security Service Edge for validation.|
 |6|The tunnel establishes between the Global Secure Access client and Microsoft Security Service Edge.|
 |7|Traffic starts being acquired and tunnels through the Internet Access tunnel.|
