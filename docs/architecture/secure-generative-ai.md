@@ -25,7 +25,7 @@ Microsoft Entra offers a comprehensive suite of capabilities to securely manage 
 - [Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-configure.md) (PIM)
 - [Microsoft Purview Insider Risk](/purview/insider-risk-management-adaptive-protection)
 
-This article delves into the specific security challenges that Gen AI poses.
+This article delves into the specific security challenges that Gen AI poses and how you can address them with Microsoft Entra.
 
 ## Discover overprivileged identities
 
