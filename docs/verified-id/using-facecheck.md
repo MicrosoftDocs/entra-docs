@@ -22,15 +22,15 @@ Face Check is a privacy-respecting facial matching. It allows enterprises to per
 
 Face Check is a premium feature within Verified ID. You need to enable the Face Check Add-on in your Entra Verified ID setup before doing Face Check verifications.
 
-> [!IMPORTANT]
-> The Face Check Add-on can only be enabled from the Microsoft Entra admin center. Admin API support for this feature. 
-
-- If this is the first time using Entra Verified ID, [set up your tenant](./verifiable-credentials-configure-tenant-quick.md).
+- If this is the first time using Entra Verified ID, [set up your tenant](verifiable-credentials-configure-tenant-quick) before using Face C.
 - [Associate or add an Azure subscription to your Microsoft Entra tenant](/entra/fundamentals/how-subscriptions-associated-directory)
 - Make sure the user setting up Face Check has [Contributor role for the Azure subscription](/azure/role-based-access-control/built-in-roles/general#contributor)
 
-### Setting up the Face Check with Entra Verified ID
+## Setting up Face Check with Entra Verified ID
 
+The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [ARM Rest API](/rest/api/resources) via CLI. 
+
+### Setting up Face Check with Entra Verified ID in the Admin Center
 1. In the Verified ID overview page, scroll down to the new Add-ons section and `Enable` the Face Check add-on.
 
 :::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of the Face Check add-on.":::
@@ -44,6 +44,32 @@ Face Check is a premium feature within Verified ID. You need to enable the Face 
 :::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot Face Check add-on enabled.":::
 
 Now you can start using Face Check in your enterprise applications.
+
+### Setting up Face Check with Entra Verified ID using the ARM Rest API
+
+> [!NOTE]
+> The ARM Rest API for Verified ID is currently in public preview.
+
+To set up the Face Check Add-on on a given authority you must have the [Azure Powershell tools](https://learn.microsoft.com/en-us/powershell/azure/install-azps-windows?view=azps-12.3.0&tabs=powershell&pivots=windows-psgallery) in your machine
+
+1. Run the following command in Powershell
+```http
+  az login --tenant  <tenant ID>
+```
+1. Select the subscription that you want to enable Face Check billing on
+
+1. Run the following command
+```http
+  az rest --method PUT --uri /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.VerifiedId/authorities/<authority-id>?api-version=2024-01-26-preview --body "{'location':'<rp-location>'}"
+```
+- replace `<subscription-id>` with your subscription id
+- replace `<resource-group-name>` with your resource group name
+- replace `<authority-id>` with your authority ID
+- replace `<rp-location>` using one of the following two values:
+  - For EU tenants, use `northeurope`
+  - For Non-EU use `westus2`
+
+The Face Check Add-on has not been setup in your tenant.
 
 ## Get started with Face Check using MyAccount
 
