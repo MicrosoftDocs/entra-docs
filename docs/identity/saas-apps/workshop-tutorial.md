@@ -81,6 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
 
     a. In the **Identifier (ENTITY ID)** text box, type one of the following URLs:
+    
     | Identifier |
     |----|
     | `https://app.useworkshop.com/auth/auth/saml/metadata?id=<ID>` |
