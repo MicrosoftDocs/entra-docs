@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 07/22/2024
+ms.date: 11/07/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -180,6 +180,10 @@ Once you have your app configured, your private resources added, users assigned 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Select the toggle for **Private access profile**.
+
+This diagram demonstrates how Microsoft Entra Private Access works when attempting to use Remote Desktop Protocol to connect to a server on a private network.
+
+![Diagram of Microsoft Entra Private Access working with Remote Desktop Protocol.](media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram.png)
 
 ## Next steps
 
