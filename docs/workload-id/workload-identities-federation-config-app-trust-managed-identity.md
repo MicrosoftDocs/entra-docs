@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.service: entra-workload-id
 ms.topic: how-to
 ms.date: 11/6/2024
-ms.author: cilwerner
+ms.author: cwerner
 ms.reviewer: hosamsh
 #Customer intent: As an application developer, I want to configure my application to trust a managed identity so that I can access Microsoft Entra protected resources without needing to use or manage application secrets or certificates.
 ---
@@ -17,26 +17,15 @@ This article describes how to configure An Entra App to trust a Managed Identity
 
 ## Prerequisites
 
-### App Registration
-[Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your Azure workload.
+- An Azure account with either the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment. If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
+- An understanding of the concepts in [managed identities for Azure resources](/entra/identity/managed-identities-azure-resources/overview)
+- [A user-assigned managed identity](/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity) assigned to the Azure compute resource (e.g., VM or App Service) that hosts your workload.
+- An [app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID. Grant your app access to the Azure resources targeted by your Azure workload.
+    - If you need to access resources in another tenant, your app registration must be a multitenant application and provision the app into the other tenant. Additionally, you must grant the app access permissions on the resources in that tenant. Learn about [how to add a multitenant app in other tenants](/entra/identity/enterprise-apps/grant-admin-consent)
 
+## Get the Object ID of the Managed Identity
 
-    > [!IMPORTANT]
-    > If you need to access resources in another tenant, you must create a multitenant application and provision the App into the other tenant. Additionally, you must grant the app access permissions on the resources in that tenant. Refer to this article for more information on adding multitenant app in other tenants: https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent 
-    
-Find the client ID of the app, which you need in the following steps.  You can find it in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of app registrations and select your app registration.  In **Overview**->**Essentials**, find the **Client ID**.
-
-### User-Assigned Managed Identity
-- If you're unfamiliar with managed identities for Azure resources, check out the [overview section](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview). Be sure to review the [difference between a system-assigned and user-assigned managed identity](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview#managed-identity-types).
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
-- To create a user-assigned managed identity and configure a federated identity credential, your account needs the [Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#contributor) or [Owner](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) role assignment.
-- [Create a user-assigned managed identity](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity)
-- The Managed Identity must be assigned to Azure compute resource (e.g., VM or App Service) that hosts your workload. 
-- Find the Managed Identity's `Object ID`, which you will use as the *subject* field in the federated credential configuration. To get this value, navigate to Managed Identities in the Azure Portal, select the managed identity you want to use in the Federated Credential, and copy the `Object (Principal) ID` value. 
-
-![Locate the Object ID of a managed identity](assets\msi-principal-id.png)
-
-- Also note the managed identity's `Client ID`, which you will use when requesting the managed identity token from your code.
+:::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\managed-identity.png" alt-text="Screenshot of a user-assigned managed identity in the Azure portal. The Object ID is highlighted which will be used as the *subject* field in the federated credential configuration" :::
 
 ## Important considerations and restrictions
 
@@ -80,11 +69,14 @@ To add a federated identity from the Entra Portal, follow these steps:
 1. Select the Federated credentials tab and click on Add credential
 1. Choose Other Issuer and fill in the values as follows:
 	- Name: enter a unique descriptive name for the credential. This can't be changed later.
-	- Subject identifier: enter the `Principal ID` GUID of the Managed Identity.
+	- Subject identifier: enter the `Principal ID` GUID of the Managed Identity. - <!--Find the Managed Identity's `Object ID`, which you will use as the *subject* field in the federated credential configuration. To get this value, navigate to Managed Identities in the Azure Portal, select the managed identity you want to use in the Federated Credential, and copy the `Object (Principal) ID` value. - Also note the managed identity's `Client ID`, which you will use when requesting the managed identity token from your code.
+ > 
 	- Issuer: enter the OAuth 2.0 / OIDC issuer URL of the Entra ID authority in the following format: `https://login.microsoftonline.com/{tenantID}/v2.0`, where the tenant ID is the Entra tenant ID of the Azure subscription where both the App registration and Managed Identity exist.
 	- Audience: enter the recommended value -  `api://AzureADTokenExchange`
 
-![Configure the FIC](.\assets\configure-issuer.png)
+:::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\select-federated-credential.png" alt-text="Screenshot of the certificates and secrets pane of the Microsoft Enrta admin center with the federated credentials tab highlighted." ::: 
+
+:::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\add-credential.png" alt-text="Screenshot of the add a credential window in the Microsoft Entra admin center." ::: 
 
 ### [Azure CLI](#tab/azure-cli)
 
@@ -97,7 +89,7 @@ az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 
 
 #### Contents of credential.json:
 
-```Json
+```json
 {
     "name": "MyMsiFic",
     "issuer": "https://login.microsoftonline.com/{tenantID}/v2.0",
@@ -149,7 +141,7 @@ The below code samples are valid in both cases where the resource tenant is in t
 
 ### [Azure.Identity](#tab/azure-identity)
 
-``` csharp
+```csharp
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
   
