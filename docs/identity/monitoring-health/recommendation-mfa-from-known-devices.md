@@ -42,11 +42,15 @@ This recommendation improves your user's productivity and minimizes the sign-in 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../../identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 
-1. Browse to **Identity** > **Protection** > **Multifactor authentication** > select the **Additional cloud-based multifactor authentication settings** link.
+1. Browse to **Identity** > **Protection** > **Multifactor authentication**.
+
+1. Under the **Configure** heading, select the **Additional cloud-based multifactor authentication settings** link.
 
     ![Screenshot of the configuration settings link in Microsoft Entra multifactor authentication section.](media/recommendation-mfa-from-known-devices/mfa-configuration-settings.png)
 
-1. Adjust the number of days in the **remember multifactor authentication on trusted device** section to 90 days.
+1. Select the **Service settings** tab.
+
+1. Under the **Remember multifactor authentication on trusted device** heading, select the checkbox and set the **section to 90 days.
 
     ![Remember MFA on trusted devices](./media/recommendation-mfa-from-known-devices/remember-mfa-on-trusted-devices.png)
 

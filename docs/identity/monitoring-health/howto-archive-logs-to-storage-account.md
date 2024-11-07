@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 07/16/2024
+ms.date: 11/07/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -43,9 +43,8 @@ To use this feature, you need:
 
 9. Close the window to return to the diagnostic settings page.
 
-## Next steps
+## Related content
 
-* [Learn about other ways to access activity logs](howto-access-activity-logs.md)
 * [Manually download activity logs](howto-download-logs.md)
 * [Integrate activity logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 * [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)
