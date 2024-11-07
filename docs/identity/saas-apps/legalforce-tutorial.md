@@ -80,7 +80,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	> [!Note]
     > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [LegalForce support team](mailto:support@legalforce.co.jp) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration section**.
 
- 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **Download** to download the certificate and save it on your computer.
+ 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select the **...** context menu, then select **PEM certificate download**.
 
 	![Screenshot of the Certificate download link](common/certificate-base64-download.png "Certificate")
 

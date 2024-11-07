@@ -33,12 +33,9 @@ Administrators, via the Microsoft Entra admin center, can configure:
 
 [!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
 
-## Overview page (preview)
+## Overview page
 
-If an administrator has opted into the Overview page preview, users land on **Overview** when they sign in to the My Access portal. Otherwise, users land on **Access packages**. The Overview page shows you key tasks that need your attention such as pending requests and reviews.
-
-Admins can enable/disable the Overview page preview by signing into the Microsoft Entra admin center and navigating to **Entitlement management > Settings > Opt-in Preview Features** and locating **My Access overview page** in the table.
-
+The Overview page shows you key tasks that need your attention such as pending requests and reviews. It is the landing page for the My Access portal.
 
 ## Discover access packages
 

@@ -94,9 +94,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
-1. Compose a list of the Microsoft Entra groups you want the Descartes Application use for the Role-based configuration. A list of User Roles Descartes application modules can be found at https://www.gln.com/docs/Descartes_Application_User_Roles.pdf. You can find the Azure Active Direction Group GUIDs please download the Groups from your Azure portal Groups.
-
-    ![Screenshot shows the Microsoft Entra admin center Groups.](media/descartes-tutorial/copy-groups.png "Groups")
+1. Compose a list of the Microsoft Entra groups you want the Descartes Application use for the Role-based configuration. A list of User Roles Descartes application modules can be found at https://www.gln.com/docs/Descartes_Application_User_Roles.pdf. You can find the Azure group GUIDs. Select **Download groups** from **Groups** in the Microsoft Entra admin center.
 
 You can load this CSV file in Excel. Please select the groups that you want map to the Descartes application roles by list the ID in the first column and associating it with the Descartes Application User Role.
 

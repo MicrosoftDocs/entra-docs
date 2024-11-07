@@ -6,9 +6,9 @@ author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 02/02/2024
+ms.date: 11/06/2024
 ms.author: cmulligan
 ms.custom: it-pro, seo-july-2024
 
@@ -85,7 +85,7 @@ If you're not sure which directory contains your external tenant, you can find t
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/directories-subscription.png" alt-text="Screenshot of the Directories + subscriptions icon.":::
 
-1. On the **Portal settings | Directories + subscriptions** page, find your external tenant in the **Directory name** list, and then select **Switch**. This step will bring you to the tenant's home page.
+1. On the **Portal settings | Directories + subscriptions** page, find your external tenant in the **Directory name** list, and then select **Switch**. This step brings you to the tenant's home page.
 1. Select **Tenant overview** under **Quick navigation**. You can find the tenant **Name**, **Tenant ID** and **Primary domain** under the **Overview** tab.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/tenant-overview.png" alt-text="Screenshot of the tenant details.":::

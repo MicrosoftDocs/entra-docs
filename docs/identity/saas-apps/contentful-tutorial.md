@@ -109,8 +109,6 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In the **Set up Contentful** section, copy the login URL to configure Contentful SSO.
 
-	![Copy configuration URLs](media/contentful-tutorial/copy-configuration-urls.png)
-
 <a name='create-an-azure-ad-test-user'></a>
 
 ### Create a Microsoft Entra test user

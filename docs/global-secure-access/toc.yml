@@ -101,6 +101,8 @@ items:
     items:
       - name: Understand traffic forwarding profiles
         href: concept-traffic-forwarding.md
+      - name: Understand the Microsoft traffic profile
+        href: concept-microsoft-traffic-profile.md
       - name: Manage the Microsoft profile
         href: how-to-manage-microsoft-profile.md
       - name: Manage the Private Access profile
@@ -133,6 +135,8 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Source IP anchoring
+        href: source-ip-anchoring.md
   - name: Logs and monitoring
     expanded: false
     items:
