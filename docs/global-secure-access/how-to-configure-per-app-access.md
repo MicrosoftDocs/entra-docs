@@ -183,7 +183,7 @@ Once you have your app configured, your private resources added, users assigned 
 
 This diagram demonstrates how Microsoft Entra Private Access works when attempting to use Remote Desktop Protocol to connect to a server on a private network.
 
-![Diagram of Microsoft Entra Private Access working with Remote Desktop Protocol.](media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram.png)
+:::image type="content" source="media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram.png" alt-text="Diagram of Microsoft Entra Private Access working with Remote Desktop Protocol." lightbox="media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram-expanded.png":::
 
 | Step | Description |
 | --- | --- |
