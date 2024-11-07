@@ -49,11 +49,11 @@ Please refer to your MDM provider’s documentation for information on support a
 
 ## Enable SSO for Applications that don’t use MSAL
 
-See [Enable SSO for apps that don’t use MSAL](https://learn.microsoft.com/en-us/entra/identity-platform/apple-sso-plugin#enable-sso-for-apps-that-dont-use-msal).
+See [Enable SSO for apps that don’t use MSAL](../../identity-platform/apple-sso-plugin#enable-sso-for-apps-that-dont-use-msal).
 
 ## Configure Kerberos SSO Integration
 
-See [Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources in Platform SSO](https://learn.microsoft.com/en-us/entra/identity/devices/device-join-macos-platform-single-sign-on-kerberos-configuration).
+See [Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources in Platform SSO](./device-join-macos-platform-single-sign-on-kerberos-configuration).
 
 ## Account Management
 
@@ -75,21 +75,21 @@ For existing devices already enrolled in Intune, assign the Platform SSO policy 
 
 ### Create Device Compliance Policies
 
-Device Compliance Policies in Microsoft Intune allow administrators to ensure that enrolled devices meet organizational security standards and are configured properly. These policies help safeguard corporate data by enforcing requirements such as encryption, operating system versions, and security measures like password strength. For more information on configuring Device Compliance Policies, please see [Device Compliance Settings for macOS Settings in Intune](https://learn.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-mac-os).
+Device Compliance Policies in Microsoft Intune allow administrators to ensure that enrolled devices meet organizational security standards and are configured properly. These policies help safeguard corporate data by enforcing requirements such as encryption, operating system versions, and security measures like password strength. For more information on configuring Device Compliance Policies, please see [Device Compliance Settings for macOS Settings in Intune](/mem/intune/protect/compliance-policy-create-mac-os).
 
 ### Deprovision or Offboard Accounts
 
 #### Deleting users from a tenant
 
-See [How to create, invite, and delete users](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users#delete-a-user). 
+See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users#delete-a-user). 
 
 #### Revoke a user's access
 
-See [Revoke user access in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/users/users-revoke-access).
+See [Revoke user access in Microsoft Entra ID](../users/users-revoke-access).
 
 #### Remotely lock devices with Intune
 
-See [Remotely lock devices with Intune](https://learn.microsoft.com/en-us/mem/intune/remote-actions/device-remote-lock).
+See [Remotely lock devices with Intune](/mem/intune/remote-actions/device-remote-lock).
 
 ### MDM Unenrollment
 
@@ -109,7 +109,7 @@ See [Remotely lock devices with Intune](https://learn.microsoft.com/en-us/mem/in
 1. On the **Review + Create** page, select **Create** and run the action.
 
 > [!TIP] 
-> If you would like to synchronize a specific device, please refer to [Sync devices to get the latest policies and actions with Intune](https://learn.microsoft.com/en-us/mem/intune/remote-actions/device-sync#sync-a-device).
+> If you would like to synchronize a specific device, please refer to [Sync devices to get the latest policies and actions with Intune](/mem/intune/remote-actions/device-sync#sync-a-device).
 
 #### Detect and Remove Stale Devices in Microsoft Entra ID and Intune
 
