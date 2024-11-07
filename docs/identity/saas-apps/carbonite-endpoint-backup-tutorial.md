@@ -161,8 +161,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 5. Click on **Single sign-on**.
 
-    ![Screenshot shows Company with Single sign-on selected.](media/carbonite-endpoint-backup-tutorial/single-sign-on.png)
-
 6. Click on **Enable** and then click **Edit settings** to configure.
 
     ![Screenshot shows the Single sign-on tab with Enable and Edit settings called out.](media/carbonite-endpoint-backup-tutorial/settings.png)
@@ -188,8 +186,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     ![Screenshot shows the Carbonite Endpoint page with Users and Add users selected.](media/carbonite-endpoint-backup-tutorial/add-user-1.png)
 
 1. On the **Add user** page, perform the following steps:
-
-    ![Screenshot shows the Add user page where you can perform the steps described here.](media/carbonite-endpoint-backup-tutorial/add-user-2.png)
 
     1. Enter the **Email**, **First name**, **Last name** of the user and provide the required permissions to the user according to the Organizational requirements.
 

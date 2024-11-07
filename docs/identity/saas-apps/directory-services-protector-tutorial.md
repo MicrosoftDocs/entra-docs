@@ -155,11 +155,8 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. Go to **Settings (gear icon)** > **Data Connections** > 
 **SAML Authentication** and toggle on the **Enabled** switch.
-![Screenshot shows the settings of the configuration.](./media/directory-services-protector-tutorial/settings.png "Account")
 
 1. In Step **1 - Identity provider**, select **Microsoft Entra ID** from the drop-down menu and click **SAVE**.
-
-    ![Screenshot shows the admin configuration.](./media/directory-services-protector-tutorial/provider.png "Azure")
 
 1. In Step **2 – Data required by the SAML identity provider**, select **CONFIRM** button and **DOWNLOAD METADATA XML** to **Upload metadata file** in the **Basic SAML Configuration** section in Microsoft Entra admin center and click **SAVE**.
 
@@ -171,17 +168,11 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. Select **App federation metadata URL** radio button, and paste the **Metadata URL** in the field from Microsoft Entra ID, and then select **IMPORT**.
 
-        ![Screenshot shows settings of the app metadata URL.](./media/directory-services-protector-tutorial/field.png "Application")
-
     1. Select the radio button to use **Import federation metadata XML** and click **IMPORT XML** to upload the **Federation Metadata XML** file from Microsoft Entra admin center.
-        
-        ![Screenshot shows how to import federation file.](./media/directory-services-protector-tutorial/admin.png "Import")
 
     1. Click **SAVE**.
 
 1. At the top of the **SAML Authentication** blade in DSP, it should show **Status** now as **Configured**.
-
-    ![Screenshot shows the status of configuration.](./media/directory-services-protector-tutorial/status.png "Page")
 
 ### Create Directory Services Protector test user
 

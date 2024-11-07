@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 05/29/2024
+ms.date: 11/5/2024
 ms.author: billmath
 ---
 
@@ -24,7 +24,7 @@ The following licenses are available for use with Microsoft Entra ID Governance 
 >[!NOTE]
 >Some Microsoft Entra ID Governance scenarios can be configured to depend upon other features that aren't covered by Microsoft Entra ID Governance.  These features might have additional licensing requirements.  See the [Identity Governance overview](identity-governance-overview.md) for more information on governance scenarios that rely on additional features.
 
-Microsoft Entra ID Governance products aren't yet available in the US government or US national clouds.
+Microsoft Entra ID Governance products aren't yet available in the US national clouds.
 
 ### Governance products and prerequisites
 
@@ -51,7 +51,7 @@ To check if the prerequisite products for a Microsoft Entra ID Governance produc
 
 ## Starting a trial
 
-A Global Administrator in a tenant that has an appropriate prerequisite product, such as Microsoft Entra ID P1, already purchased, and isn't already using or has previously trialed Microsoft Entra ID Governance, can request a trial of Microsoft Entra ID Governance in their tenant.
+A Global Administrator in a commercial tenant that has an appropriate prerequisite product, such as Microsoft Entra ID P1, already purchased, and isn't already using or has previously trialed Microsoft Entra ID Governance, can request a trial of Microsoft Entra ID Governance in their tenant.
 
 1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/AdminPortal/Home) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator)
 

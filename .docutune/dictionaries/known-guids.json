@@ -1,6 +1,7 @@
 // List of all the known GUIDs in Learn content. If any of these is found next to a sensitive term, DocuTune will ignore these values.
 // Used as part of docutune-1.5.2/dictionaries/Dictionary-Security-GUIDs.ps1 workflow.
 {
+  "Designated empty GUID" : "00000000-0000-0000-0000-000000000000",
   "AccessReview.Read.All - Application": "d07a8cc0-3d51-4b77-b3b0-32704d1f69fa",
   "AccessReview.ReadWrite.All - Application": "ef5f7d5c-338f-44b0-86c3-351f46c8bb5f",
   "AccessReview.ReadWrite.Membership - Application": "18228521-a591-40f1-b215-5fad4488c117",
@@ -3352,7 +3353,6 @@
   "Microsoft Graph Object ID" : "7ea9e944-71ce-443d-811c-71e8047b557a",
   "Partner Customer Delegated Administration" : "2832473f-ec63-45fb-976f-5d45a7d4bb91",
   "Microsoft Graph Explorer" : "de8bc8b5-d9f9-48b1-a8ad-b748da725064",
-  "Designated empty GUID" : "00000000-0000-0000-0000-000000000000",
   "Sign in and start apps from the My Apps portal support page GUID" : "2f3b1bae-0e5a-4a86-a33e-876fbd2a4510",
   "Business Central Test Toolkit - Library Assert" : "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
   "Business Central Test Toolkit - Test Libraries" : "5d86850b-0d76-4eca-bd7b-951ad998e997",
@@ -3693,5 +3693,15 @@
   "Confidential VM Orchestrator" : "bf7b6499-ff71-4aa2-97a4-f372087be7f0",
   "Microsoft Graph Security Connector" : "c4829704-0edc-4c3d-a347-7c4a67586f3c",
   "Subscription Creator" : "a0bcee42-bf30-4d1b-926a-48d21664ef71",
-  "Azure API Management Data Plane" : "c8623e40-e6ab-4d2b-b123-2ca193542c65"
+  "Azure API Management Data Plane" : "c8623e40-e6ab-4d2b-b123-2ca193542c65",
+  "Partner Center Container Registries AppId" : "32597670-3e15-4def-8851-614ff48c1efa",
+  "AKS server app ID" : "6dae42f8-4368-4678-94ff-3960e28e3630",
+  "AKS public client ID on behalf of user auth" : "80faf920-1908-4b52-b5ef-a8e7bedfc67a",
+  "Microsoft Teams mobile/desktop ID" : "1fec8e78-bce4-4aaf-ab1b-5451cc387264",
+  "Dynamics 365 AI for Customer Insights" : "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff",
+  "Microsoft Cloud for Sustainability API" : "c3163bf1-092f-436b-b260-7ade5973e5b9",
+  "Environmental Credit Service (preview) app ID" : "b9b0ac19-f710-429d-b58e-dc3f73a330a9",
+  "Mock Teams admin center for Graph Connector" : "ef1da9d4-ff77-4c3e-a005-840c3f830745",
+  "MIM Certificate Manager modern app client" : "70A8B8B1-862C-4473-80AB-4E55BAE45B4F",
+  "Network interfaces built-in policy definition" : "83a86a26-fd1f-447c-b59d-e51f44264114"
 }
