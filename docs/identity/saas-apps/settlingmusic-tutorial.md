@@ -93,8 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Copy configuration URLs](./media/settlingmusic-tutorial/copy-configuration-urls.png)
 
-	> [!NOTE]
-	> Use the below URL for the Logout URL.
+	Use the below URL for the Logout URL.
 
 	```text
     Logout URL https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
