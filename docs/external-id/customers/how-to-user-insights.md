@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 07/18/2024
+ms.date: 11/07/2024
 
 ms.custom: it-pro
 
