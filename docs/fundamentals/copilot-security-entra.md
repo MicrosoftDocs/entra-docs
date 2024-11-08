@@ -37,7 +37,7 @@ If you're new to Security Copilot, you should familiarize yourself with it by re
 - [Understand authentication in Microsoft Security Copilot](/security-copilot/authentication)
 - [Prompting in Microsoft Security Copilot](/security-copilot/prompting-security-copilot)
 
-## Security Copilot integration in Entra
+## Security Copilot integration in Microsoft Entra
 
 Microsoft Entra is one of the Microsoft plugins that enable the Security Copilot platform to generate accurate and relevant information. Through the Microsoft Entra plugin, the Security Copilot portal can provide more context to incidents and generate more accurate results. The key features mentioned in this article are capabilities that are also available in the Security Copilot portal.
 
@@ -65,13 +65,13 @@ Microsoft Entra ID Protection applies the capabilities of Security Copilot to [s
 
 :::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the ID Protection risky user summarization details.":::
 
-## Enable the Security Copilot integration in Entra
+## Enable the Security Copilot integration in Microsoft Entra
 
 You can learn more about plugins implemented in the Security Copilot portal in [Manage plugins in Security Copilot](/security-copilot/manage-plugins). Additionally, you can learn more about the embedded experiences in other Microsoft security products in [Security Copilot experiences](/security-copilot/experiences-security-copilot).
 
 ## Sample Microsoft Entra prompts
 
-Once you're all set up in Security Copilot, you can start using natural language prompts prompts to help remediate identity-based incidents:
+Once you're all set up in Security Copilot, you can start using natural language prompts to help remediate identity-based incidents:
 
 - *Give me all user details for karita@woodgrovebank.com and extract the user Object ID.*
 - *Does karita@woodgrovebank.com have any registered devices in Microsoft Entra?*
