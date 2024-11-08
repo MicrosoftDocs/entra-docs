@@ -309,10 +309,6 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
       :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/enable-authenticator-android.png" alt-text="Screenshot of enabling Authenticator as a provider using Microsoft Authenticator for Android devices.":::
 
-1. Return to the screen to allow Authenticator to use passkeys, and click **Done**.
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/settings-done-android.png" alt-text="Screenshot of how to return to Authenticator passkey registration on Android.":::
-
 1. After you return to Authenticator, tap **Done** to confirm you added Authenticator as a passkey provider. Then you can see passkey added as a sign-in method for your account. Tap **Done** again to finish.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-account-added.png" alt-text="Screenshot of an account added to Microsoft Authenticator for Android devices.":::
