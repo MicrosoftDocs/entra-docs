@@ -116,7 +116,7 @@ Within Conditional Access, you can enable Microsoft Purview Adaptive Protection 
 
 Monitoring is crucial to detect potential threats and vulnerabilities early. Watch for [unusual activities and configuration changes](../id-governance/governance-custom-alerts.md#custom-alert-notifications) to prevent security breaches and maintain data integrity.
 
-Continually review and monitor access to your environment to discover suspicious activity, avoid permissions creep and get alerts when things change unintentionally.
+Continually review and monitor access to your environment to discover suspicious activity. Avoid permissions creep and get alerts when things unintentionally change.
 
 - To proactively monitor your environment for configuration changes and suspicious activity, [integrate Microsoft Entra ID Audit Logs with Azure Monitor](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
 - Configure [security alerts](../id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md) to monitor when users activate privileged roles.
