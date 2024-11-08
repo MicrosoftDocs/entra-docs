@@ -1497,17 +1497,4 @@ Report suspicious activity is an updated implementation of the MFA fraud alert, 
 
 ---
 
-## May 2023
-
-### General Availability - Conditional Access authentication strength for members, external users and FIDO2 restrictions
-
-**Type:** New feature   
-**Service category:** Conditional Access                      
-**Product capability:** Identity Security & Protection              
-
-Authentication strength is a Conditional Access control that allows administrators to specify which combination of authentication methods can be used to access a resource. For example, they can make only phishing-resistant authentication methods available to access a sensitive resource. Likewise, to access a nonsensitive resource, they can allow less secure multifactor authentication (MFA) combinations such as password + SMS.
-
-Authentication strength is now in General Availability for members and external users from any Microsoft cloud and FIDO2 restrictions. For more information, see: [Conditional Access authentication strength](~/identity/authentication/concept-authentication-strengths.md).
-
----
 
