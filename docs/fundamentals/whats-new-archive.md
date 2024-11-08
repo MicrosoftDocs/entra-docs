@@ -1629,21 +1629,6 @@ For more information about how to better secure your organization by using autom
 
 ---
 
-### General Availability - Authenticator Lite (In Outlook)
-
-**Type:** New feature   
-**Service category:** Microsoft Authenticator App                           
-**Product capability:** User Authentication                
-
-Authenticator Lite (in Outlook) is an authentication solution for users who haven't downloaded the Microsoft Authenticator app. Users are prompted in Outlook on their mobile device to register for multifactor authentication. After they enter their password at sign-in, they'll be able to send a push notification to their Android or iOS device.
-
-Due to the security enhancement this feature provides users, the Microsoft managed value of this feature will be changed from ‘*disabled*’ to ‘*enabled*’ on June 9. We made some changes to the feature configuration, so if you made an update before GA, May 17, validate that the feature is in the correct state for your tenant before June 9. If you don't wish for this feature to be enabled on June 9, move the state to ‘*disabled*’, or set users to include and exclude groups.  
-
-
-For more information, see: [How to enable Microsoft Authenticator Lite for Outlook mobile (preview)](~/identity/authentication/how-to-mfa-authenticator-lite.md).
-
----
-
 ### General Availability - PowerShell and Web Services connector support through the Azure AD provisioning agent
 
 **Type:** New feature   
