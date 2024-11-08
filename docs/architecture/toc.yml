@@ -301,3 +301,7 @@ items:
         href: service-accounts-user-on-premises.md
       - name: Govern on-premises user service accounts
         href: service-accounts-govern-on-premises.md
+  - name: Secure for AI
+    items: 
+    - name: Secure Generative AI 
+      href: secure-generative-ai.md
