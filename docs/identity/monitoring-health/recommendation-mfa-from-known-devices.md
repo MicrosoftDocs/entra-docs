@@ -52,10 +52,9 @@ This recommendation improves your user's productivity and minimizes the sign-in 
 
     ![Screenshot of the MFA page with the Service settings tab selected.](media/recommendation-mfa-from-known-devices/multifactor-authentication-service-settings.png)
 
-1. Under the **Remember multifactor authentication on trusted device** heading, select the checkbox and set the **section to 90 days.
+1. Under the **Remember multifactor authentication on trusted device** heading, select the checkbox and set the number of days to 90.
 
     ![Remember MFA on trusted devices](./media/recommendation-mfa-from-known-devices/multifactor-authentication-remember-known-devices.png)
-
 
 ## Related content
 
