@@ -127,9 +127,9 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
       :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/ios-create-passkey.png" alt-text="Screenshot of how to create a passkey in Authenticator for iOS devices.":::
 
-1. The rest of the flow is similar to the flow shared earlier to sign in to the Authenticator and complete passkey registration. Complete MFA on your iOS device, and tap **Sign in**.
-
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/complete-sign-in.png" alt-text="Screenshot of how to complete MFA.":::
+1. You need to complete multifactor authentication (MFA).
+ 
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/multifactor-auth-ios.png" alt-text="Screenshot of how to complete MFA by using Microsoft Authenticator for iOS devices.":::
 
 1. Go through the steps to enable Touch ID or Face ID and select **Open Settings** to enable Authenticator as a passkey provider.
 
@@ -230,6 +230,8 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
       :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/ios-create-passkey.png" alt-text="Screenshot of how to create a passkey in Authenticator for iOS devices.":::
 
 1. You need to complete multifactor authentication (MFA).
+ 
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/multifactor-auth-ios.png" alt-text="Screenshot of how to complete MFA by using Microsoft Authenticator for iOS devices.":::
 
 1. If necessary, tap **Settings** and set up a screen lock.
 
@@ -294,6 +296,8 @@ Security info by default will prompt users to sign in to the Authenticator app t
       :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/ios-create-passkey.png" alt-text="Screenshot of how to create a passkey in Authenticator for iOS devices.":::
 
 1. You need to complete multifactor authentication (MFA).
+ 
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/multifactor-auth-ios.png" alt-text="Screenshot of how to complete MFA by using Microsoft Authenticator for iOS devices.":::
 
 1. If necessary, tap **Settings** and set up a screen lock.
 
