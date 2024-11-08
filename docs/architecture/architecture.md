@@ -22,7 +22,7 @@ With Microsoft Entra ID, you can create and manage users and groups, and enable 
 
 ## Microsoft Entra architecture
 
-The geographically distributed architecture of Microsoft Entra ID combines extensive monitoring, automated rerouting, failover, and recovery capabilities, which deliver company-wide availability and performance to customers.
+Microsoft Entra ID geographically distributed architecture combines extensive monitoring, automated rerouting, failover, and recovery capabilities, to deliver company-wide availability and performance.
 
 The following architecture elements are covered in this article:
 
@@ -33,7 +33,7 @@ The following architecture elements are covered in this article:
 
 ### Service architecture design
 
-The most common way to build an accessible and usable, data-rich system is through independent building blocks or scale units. For the Microsoft Entra data tier, scale units are called *partitions*.
+The most common way to build an accessible and usable, data-rich system is to use independent building blocks or scale units. For the Microsoft Entra data tier, scale units are called *partitions*.
 
 The data tier has several front-end services that provide read-write capability. The following diagram shows how the components of a single-directory partition are delivered throughout geographically distributed datacenters.
 
