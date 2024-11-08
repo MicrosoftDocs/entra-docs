@@ -1776,16 +1776,6 @@ We've increased the number of properties that admins are able to define when cre
 
 ---
 
-### Public Preview - Azure Active Directory Conditional Access protected actions
-
-**Type:** Changed feature   
-**Service category:** RBAC                    
-**Product capability:** Access Control            
-
-The protected actions public preview introduces the ability to apply Conditional Access to select permissions. When a user performs a protected action, they must satisfy Conditional Access policy requirements. For more information, see: [What are protected actions in Azure AD? (preview)](~/identity/role-based-access-control/protected-actions-overview.md).
-
----
-
 ### Public Preview - Token Protection for Sign-in Sessions
 
 **Type:** New feature   
