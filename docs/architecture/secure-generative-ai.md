@@ -29,9 +29,9 @@ This article delves into the specific security challenges that Gen AI poses and 
 
 ## Discover overprivileged identities
 
-Ensure that users have the appropriate permissions to comply with the [principal of least privilege](../identity-platform/secure-least-privileged-access.md). Based on our telemetry, over 90% of identities use less than 5% of permissions granted. Over 50% of those permissions are high risk. There might be cases where identities require higher privilege access due to business/operational requirements such as [break glass](../identity/role-based-access-control/security-emergency-access.md) accounts. 
+Ensure that users have the appropriate permissions to comply with the [principal of least privilege](../identity-platform/secure-least-privileged-access.md). Based on our telemetry, over 90% of identities use less than 5% of permissions granted. Over 50% of those permissions are high risk. Compromised accounts can cause catastrophic damage.
 
-Compromised accounts can cause catastrophic damage. Risk of compromised unused accounts with high permissions increases as organizations adopt multicloud. Multicloud environment management is difficult as Identity and Access Management (IAM) and security teams often need to collaborate cross-functionally. Multicloud environments can limit comprehensive view into identities, permissions, and resources. This limited view increases the attack surface on identities that have overly privileged roles and over permissioned accounts. IT admins might only perform permission cleanup as needed and be wary of revoking permissions that could disrupt business operations.
+Multicloud environment management is difficult as Identity and Access Management (IAM) and security teams often need to collaborate cross-functionally. Multicloud environments can limit comprehensive view into identities, permissions, and resources. This limited view increases the attack surface on identities that have overly privileged roles and over permissioned accounts. Risk of compromised unused accounts with high permissions increases as organizations adopt multicloud.
 
 ### Identify nonhuman accounts
 
@@ -84,6 +84,8 @@ Automate basic Microsoft Entra user lifecycle processes at scale with the [life
 
 ### Govern highly privileged administrative role access
 
+There might be cases where identities require higher privilege access due to business/operational requirements such as [break glass](../identity/role-based-access-control/security-emergency-access.md) accounts.
+
 [Privileged accounts](/security/privileged-access-workstations/privileged-access-accounts) should have the highest protection level. Compromised privileged accounts can cause potentially significant or material impact on organizational operations.
 
 Only assign authorized users to administrative [roles](/azure/role-based-access-control/rbac-and-directory-admin-roles) in [Microsoft Azure](../id-governance/privileged-identity-management/pim-resource-roles-assign-roles.md) and [Microsoft Entra](../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md). Microsoft recommends you require phishing-resistant MFA on the following roles at a minimum:
@@ -132,7 +134,6 @@ Watch for atypical user usage patterns with [Microsoft Entra ID Protection](../i
 
 ## Related content
 
-- [Microsoft Purview data security and compliance protections for Microsoft 365 Copilot and other generative AI apps](/purview/ai-microsoft-purview) describes how to mitigate and manage AI usage risks.
 - [Microsoft Copilot for Security](/copilot/security/microsoft-security-copilot) helps support security professionals in end-to-end scenarios such as incident response, threat hunting, intelligence gathering, and posture management.
 - [Microsoft Purview Information Barriers](/purview/information-barriers) are policies that can prevent individuals or groups from communicating with each other. [Information barriers in Microsoft Teams](/purview/information-barriers-teams) can determine and prevent unauthorized collaborations.
 - For [Microsoft 365 Copilot requirements](/microsoft-365-copilot/microsoft-365-copilot-requirements), review [Enterprise data protection in Copilot for Microsoft 365 and Microsoft Copilot](/copilot/microsoft-365/enterprise-data-protection#what-is-enterprise-data-protection-in-copilot-for-microsoft-365-and-microsoft-copilot).
