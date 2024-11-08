@@ -24,6 +24,8 @@ As part of our ongoing commitment to enhancing security, Microsoft is incrementa
 
 All Windows devices that authenticate using Microsoft Entra must have the security patch applied or be running builds of Windows released after July 2021. Unpatched Windows devices won't authenticate with Microsoft Entra once the rollout of this change completes.
 
+<a name='sign-in-error-code-5000611'></a>
+
 ### Error Messages
 
 Users on unpatched devices encounter the following error message when attempting to sign in:
