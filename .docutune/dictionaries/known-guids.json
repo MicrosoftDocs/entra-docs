@@ -3705,5 +3705,7 @@
   "MIM Certificate Manager modern app client" : "70A8B8B1-862C-4473-80AB-4E55BAE45B4F",
   "Network interfaces built-in policy definition" : "83a86a26-fd1f-447c-b59d-e51f44264114",
   "Security Copilot" : "bb5ffd56-39eb-458c-a53a-775ba21277da",
-  "Enterprise Copilot Platform" : "fb8d773d-7ef8-4ec0-a117-179f88add510"
+  "Enterprise Copilot Platform" : "fb8d773d-7ef8-4ec0-a117-179f88add510",
+  "Azure Lighthouse monitoring appID 1" : "1215fb39-1d15-4c05-b2e3-d519ac3feab4",
+  "Azure Lighthouse monitoring appID 2" : "6da94f3c-0d67-4092-a408-bb5d1cb08d2d"
 }
