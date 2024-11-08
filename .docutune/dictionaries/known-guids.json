@@ -3707,5 +3707,16 @@
   "Mock Teams admin center for Graph Connector" : "ef1da9d4-ff77-4c3e-a005-840c3f830745",
   "MIM Certificate Manager modern app client" : "70A8B8B1-862C-4473-80AB-4E55BAE45B4F",
   "Network interfaces built-in policy definition" : "83a86a26-fd1f-447c-b59d-e51f44264114",
-  
+  "Managed HSM Administrator" : "a290e904-7015-4bba-90c8-60543313cdb4",
+  "Managed HSM Crypto Officer" : "515eb02d-2335-4d2d-92f2-b1cbdf9c3778",
+  "Managed HSM Crypto User" : "21dbd100-6940-42c2-9190-5d6cb909625b",
+  "Managed HSM Policy Administrator" : "4bd23610-cdcf-4971-bdee-bdc562cc28e4",
+  "Managed HSM Crypto Auditor" : "2c18b078-7c48-4d3a-af88-5a3a1b3f82b3",
+  "Managed HSM Crypto Service Encryption User" : "33413926-3206-4cdd-b39a-83574fe37a17",
+  "Managed HSM Crypto Service Release User" : "21dbd100-6940-42c2-9190-5d6cb909625c",
+  "Managed HSM Backup" : "7b127d3c-77bd-4e3e-bbe0-dbb8971fa7f8",
+  "Managed HSM Restore" : "6efe6056-5259-49d2-8b3d-d3d73544b20b",
+  "Azure Key Vault Managed HSM Key Governance Service" : "a1b76039-a76c-499f-a2dd-846b4cc32627",
+  "EV_EFI_VARIABLE_DRIVER_CONFIG GUID 1" : "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+  "EV_EFI_VARIABLE_DRIVER_CONFIG GUID 2" : "77FA9ABD-0359-4D32-BD60-28F4E78F784B"
 }
