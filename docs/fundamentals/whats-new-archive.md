@@ -1639,16 +1639,6 @@ The Azure AD on-premises application provisioning feature now supports both the 
 
 ---
 
-### General Availability - Verified threat actor IP sign-in detection
-
-**Type:** New feature   
-**Service category:** Identity Protection                          
-**Product capability:** Identity Security & Protection               
-
-Identity Protection has added a new detection, using the Microsoft Threat Intelligence database, to detect sign-ins performed from IP addresses of known nation state and cyber-crime actors and allow customers to block these sign-ins by using risk-based Conditional Access policies. For more information, see: [Sign-in risk](~/id-protection/concept-identity-protection-risks.md).
-
----
-
 ### General Availability - New Federated Apps available in Azure AD Application gallery - May 2023
 
 
