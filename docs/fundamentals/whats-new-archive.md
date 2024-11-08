@@ -1511,14 +1511,3 @@ Authentication strength is now in General Availability for members and external 
 
 ---
 
-### General Availability - SAML/Ws-Fed based identity provider authentication for Azure Active Directory B2B users in US Sec and US Nat clouds
-
-**Type:** New feature   
-**Service category:** B2B                        
-**Product capability:** B2B/B2C             
-
-SAML/Ws-Fed based identity providers for authentication in Azure AD B2B are generally available in US Sec, US Nat and China clouds. For more information, see: [Federation with SAML/WS-Fed identity providers for guest users](~/external-id/direct-federation.md).
-
----
-
-
