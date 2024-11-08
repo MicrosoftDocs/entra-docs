@@ -1649,16 +1649,6 @@ Identity Protection has added a new detection, using the Microsoft Threat Intell
 
 ---
 
-### General Availability - Conditional Access Granular control for external user types 
-
-**Type:** New feature   
-**Service category:** Conditional Access                            
-**Product capability:** Identity Security & Protection               
-
-When you configure a Conditional Access policy, customers now have granular control over the types of external users they want to apply the policy to. External users are categorized based on how they authenticate (internally or externally) and their relationship to your organization (guest or member). For more information, see: [Assigning Conditional Access policies to external user types](~/external-id/authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types).
-
----
-
 ### General Availability - New Federated Apps available in Azure AD Application gallery - May 2023
 
 
