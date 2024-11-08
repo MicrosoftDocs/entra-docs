@@ -28,7 +28,7 @@ Face Check is a premium feature within Verified ID. You need to enable the Face 
 
 ## Setting up Face Check with Microsoft Entra Verified ID
 
-The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. If you are going to use Face Check in a tenant with the [Microsoft Entra Suite license](/entra/fundamentals/try-microsoft-entra-suite), Face Check is enabled at the tenant level and the configuration applies to all authorities within that tenant. For any other licenses you can enable Face Check individually by each authority on your tenant using the Azure Resource Manager (ARM) Rest API. 
+The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. If you're going to use Face Check in a tenant with the [Microsoft Entra Suite license](/entra/fundamentals/try-microsoft-entra-suite), Face Check is enabled at the tenant level, and the configuration applies to all authorities within that tenant. For any other licenses you can enable Face Check individually by each authority on your tenant using the Azure Resource Manager (ARM) Rest API. 
 
 > [!NOTE]
 > The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
@@ -53,7 +53,7 @@ Now you can start using Face Check in your enterprise applications.
 > [!NOTE]
 > The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
 
-To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. The below mechanism wrapps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly
+To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. The below mechanism wraps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly
 
 1. Run the following command in PowerShell
 ```http
