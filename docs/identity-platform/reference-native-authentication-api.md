@@ -856,13 +856,13 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/user-attribute-format.md)]
 
-## Sign-in API reference
+## API Sign-in reference
 
 Users need to sign in with the authentication method that they use to sign up. For example, users who sign up using email with password authentication method must sign in email and password.
 
 To request for security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
-### Sign-in API endpoints
+### API Sign-in endpoints
 
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
