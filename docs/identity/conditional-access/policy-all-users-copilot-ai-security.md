@@ -14,7 +14,7 @@ ms.reviewer: lhuangnorth
 ---
 # Protect AI with Conditional Access policy
 
-[Generative Artificial Intelligence (AI)](/ai/playbook/technology-guidance/generative-ai/) services like Microsoft Copilot for Security and Microsoft 365 Copilot when used appropriately bring value to your organization. Protecting these services from misuse can be accomplished with existing features like Microsoft Entra Conditional Access policy.
+[Generative Artificial Intelligence (AI)](/ai/playbook/technology-guidance/generative-ai/) services like [Microsoft Copilot for Security](/copilot/security/microsoft-security-copilot) and [Microsoft 365 Copilot](/copilot/microsoft-365/) when used appropriately bring value to your organization. Protecting these services from misuse can be accomplished with existing features like Microsoft Entra Conditional Access policy.
 
 Applying Conditional Access policy to these Generative AI services can be accomplished through your existing policies that target all resources for [all users](policy-all-users-mfa-strength.md), risky [users](policy-risk-based-user.md) or [sign-ins](policy-risk-based-sign-in.md), and users with [insider risk](policy-risk-based-insider-block.md). 
 
