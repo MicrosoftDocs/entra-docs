@@ -38,7 +38,7 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
 1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use to test the API sign-in. Alternatively, you can get this test user after you run the sign-up flow.
+1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use to test the API signIn. Alternatively, you can get this test user after you run the sign-up flow.
 
 1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the external tenant. SSPR is available for customer users who use email with password authentication method.  
 
@@ -856,13 +856,13 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/user-attribute-format.md)]
 
-## API Sign-in reference
+## API signIn reference
 
 Users need to sign in with the authentication method that they use to sign up. For example, users who sign up using email with password authentication method must sign in email and password.
 
 To request for security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
-### API Sign-in endpoints
+### API signIn endpoints
 
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
