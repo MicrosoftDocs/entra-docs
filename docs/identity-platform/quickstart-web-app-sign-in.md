@@ -123,7 +123,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 #### [Python Flask](#tab/python-flask-workforce)
 
-* [Download the Python code sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) then extract it to a file path where the length of the name is fewer than 260 characters or clone the repository or clone the repository:
+* [Download the Python code sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) then extract it to a file path where the length of the name is fewer than 260 characters or clone the repository:
 
 * To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
