@@ -5,7 +5,7 @@ description: Registration and management of passkey with Authenticator on Androi
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/29/2024
+ms.date: 11/08/2024
 
 ms.author: justinha
 author: justinha
@@ -60,25 +60,17 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
  
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/multifactor-auth-ios.png" alt-text="Screenshot of how to complete MFA by using Microsoft Authenticator for iOS devices.":::
 
-1. When prompted to allow Authenticator to use Touch ID/Face ID, tap **Allow**.
+1. If necessary, tap **Settings** and set up a screen lock.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/allow-face.png" alt-text="Screenshot of how to allow Face ID for Microsoft Authenticator for iOS devices.":::
-
-1. When prompted to allow Authenticator to send you notifications, tap **Allow**. 
-
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/allow-notifications.png" alt-text="Screenshot of how to allow notifications for Microsoft Authenticator for iOS devices.":::
-
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-lock-screen-required.png" alt-text="Screenshot of step to set up lock screen for passkey in Microsoft Authenticator for Android devices."::: 
+ 
 1. Tap **Settings** to enable Authenticator as a passkey provider.
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-provider-ios.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for iOS devices.":::
 
-1. Enable the Authenticator as a passkey provider. 
+1. On your iOS 18 device, navigate to **Settings** > **General** > **Autofill & Passwords**. On your iOS 17 device, navigate to **Settings** > **Passwords** > **Password Options**. 
 
-   - On iOS 18 or greater, navigate to **Settings** > **General** > **Autofill & Passwords**. 
-   - On iOS 17, navigate to **Settings** > **Passwords** > **Password Options**. 
-
-   On both operating systems, make sure **AutoFill Passwords and Passkeys** is turned on. 
-   Under **Autofill From**, make sure **Authenticator** is selected.
+   On both operating systems, make sure **AutoFill Passwords and and Passkeys** is turned on. Under **Autofill From**, make sure **Authenticator** is selected.
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/password-options-three.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for iOS devices.":::
 
@@ -86,10 +78,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-added-ios.png" alt-text="Screenshot of setting up passkey, passwordless, and/or MFA for sign in using Microsoft Authenticator for iOS devices.":::
 
-1. You can see the new account you added in Authenticator.
-
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/new-authenticator-account.png" alt-text="Screenshot of a new account in Authenticator for iOS devices.":::
-
+1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies. Tap your account to see details, including your new passkey. 
 
 ### Passkey registration from Security info (iOS)
 
@@ -131,9 +120,11 @@ Security info by default will prompt users to sign in to the Authenticator app t
  
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/multifactor-auth-ios.png" alt-text="Screenshot of how to complete MFA by using Microsoft Authenticator for iOS devices.":::
 
-1. Go through the steps to enable Touch ID or Face ID and select **Open Settings** to enable Authenticator as a passkey provider.
+1. If necessary, tap **Settings** and set up a screen lock.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-provider-ios.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-lock-screen-required.png" alt-text="Screenshot of step to set up lock screen for passkey in Microsoft Authenticator for Android devices."::: 
+ 
+1. Tap **Settings** to enable Authenticator as a passkey provider.
 
 1. On your iOS 18 device, navigate to **Settings** > **General** > **Autofill & Passwords**. On your iOS 17 device, navigate to **Settings** > **Passwords** > **Password Options**. 
 
