@@ -341,6 +341,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/logmein-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/goto-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/logmein-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/goto-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/promaster-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/expensemepro-tutorial",
       "redirect_document_id": false
@@ -503,6 +513,11 @@
     {
       "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
       "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/custom-extension-email-otp-get-started.md",
+      "redirect_url": "/entra/identity-platform/custom-extension-overview",
       "redirect_document_id": false
     },
     {

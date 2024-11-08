@@ -57,6 +57,8 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 |----------|-----------|------------|
 |88        |User Datagram Protocol (UDP) / Transmission Control Protocol (TCP)  |Kerberos    |
 |389       |UDP        |DC locator  |
+|464       |UDP/TCP        |Password Change Request  |
+|123       |UDP        |Time Synchronization  |
 
 > [!NOTE]
 > The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.).

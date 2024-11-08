@@ -480,7 +480,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [LinkedIn Talent Solutions](~/identity/saas-apps/linkedin-talent-solutions-tutorial.md) |  | ● |
 | [Litmos](~/identity/saas-apps/litmos-provisioning-tutorial.md) | ● | ● |
 | [LogicGate](~/identity/saas-apps/logicgate-provisioning-tutorial.md) | ● |  |
-| [LogMeIn](~/identity/saas-apps/logmein-provisioning-tutorial.md) | ● | ● |
+| [GoTo](~/identity/saas-apps/goto-provisioning-tutorial.md) | ● | ● |
 | [Looker Analytics Platform](~/identity/saas-apps/looker-analytics-platform-tutorial.md) |  | ● |
 | [Looop](~/identity/saas-apps/looop-provisioning-tutorial.md) | ● |  |
 | [Lucid (All Products)](~/identity/saas-apps/lucid-all-products-provisioning-tutorial.md) | ● | ● |

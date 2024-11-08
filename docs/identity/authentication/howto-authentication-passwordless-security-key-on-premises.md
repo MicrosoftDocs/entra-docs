@@ -99,7 +99,7 @@ The [`AzureADHybridAuthenticationManagement` module](https://www.powershellgalle
 
 ## Create a Kerberos Server object
 
-Administrators use the `AzureADHybridAuthenticationManagement` module to create a Microsoft Entra Kerberos server object in their on-premises directory.
+Administrators use the `AzureADHybridAuthenticationManagement` module to create a Microsoft Entra Kerberos server object in their on-premises directory. The object must be created on the Microsoft Entra Connect server or on a server that has the Microsoft.Online.PasswordSynchronization.Rpc.dll dependency installed.
 
 Run the following steps in each domain and forest in your organization that contain Microsoft Entra users:
 

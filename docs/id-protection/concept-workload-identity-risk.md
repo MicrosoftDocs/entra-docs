@@ -24,20 +24,21 @@ A [workload identity](../workload-id/workload-identities-overview.md) is an iden
 These differences make workload identities harder to manage and put them at higher risk for compromise.
 
 > [!IMPORTANT]
-> Detections are visible only to [Workload Identities Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz) customers. Customers without Workload Identities Premium licenses still receive all detections but the reporting of details is limited. 
+> Full risk details and risk-based access controls are available to Workload Identities Premium customers; however, customers without the [Workload Identities Premium](https://entra.microsoft.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade) licenses still receive all detections with limited reporting details. 
 
 > [!NOTE]
 > ID Protection detects risk on single tenant, third party SaaS, and multi-tenant apps. Managed Identities are not currently in scope. 
 
 ## Prerequisites
 
-To make use of workload identity risk, including the new **Risky workload identities** blade and the **Workload identity detections** tab in the **Risk detections** blade in the portal, you must have the following.
+To make use of workload identity risk reports, including the new **Risky workload identities** blade and the **Workload identity detections** tab in the **Risk detections** blade in the portal, you must have the following.
 
-- Workload Identities Premium licensing: You can view and acquire licenses on the [Workload Identities blade](https://portal.azure.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade).
 - One of the following administrator roles assigned
    - Security Administrator
    - Security Operator
    - Security Reader Users assigned the Conditional Access administrator role can create policies that use risk as a condition.
+ 
+To take action on risky workload identities we recommend setting up risk-based Conditional Access policies, which does require [Workload Identities Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz) licensing: You can view, start a trial and acquire licenses on the [Workload Identities blade](https://portal.azure.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade).
 
 ## Workload identity risk detections
 
@@ -52,7 +53,7 @@ We detect risk on workload identities across sign-in behavior and offline indica
 | Malicious application | Offline | This detection combines alerts from ID Protection and Microsoft Defender for Cloud Apps to indicate when Microsoft disables an application for violating our terms of service. We recommend [conducting an investigation](https://go.microsoft.com/fwlink/?linkid=2208429) of the application. Note: These applications show `DisabledDueToViolationOfServicesAgreement` on the `disabledByMicrosoftStatus` property on the related [application](/graph/api/resources/application) and [service principal](/graph/api/resources/serviceprincipal) resource types in Microsoft Graph. To prevent them from being instantiated in your organization again in the future, you can't delete these objects. |
 | Suspicious application | Offline | This detection indicates that ID Protection or Microsoft Defender for Cloud Apps identified an application that might be violating our terms of service but hasn't disabled it. We recommend [conducting an investigation](https://go.microsoft.com/fwlink/?linkid=2208429) of the application.|
 | Anomalous service principal activity | Offline | This risk detection baselines normal administrative service principal behavior in Microsoft Entra ID, and spots anomalous patterns of behavior like suspicious changes to the directory. The detection is triggered against the administrative service principal making the change or the object that was changed. |
-| Suspicious API Traffic | Offline | This risk detection is reported when abnormal GraphAPI traffic or directory enumeration of a service principal is observed. The Suspicious API Traffic for service principals detection may indicate abnormal reconnaissance or data exfiltration. |
+| Suspicious API Traffic | Offline | This risk detection is reported when abnormal GraphAPI traffic or directory enumeration of a service principal is observed. The Suspicious API Traffic detection may indicate abnormal reconnaissance or data exfiltration by a service principal. |
 
 
 ## Identify risky workload identities
