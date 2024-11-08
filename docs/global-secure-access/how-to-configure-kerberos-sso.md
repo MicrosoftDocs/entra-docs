@@ -83,7 +83,7 @@ Configure private DNS so the Global Secure Access clients can resolve private DN
 
 ## How to use Kerberos SSO to access an SMB file share
 
-This diagram demonstrates how Microsoft Entra Private Access works when trying to access an SMB file share from a Windows device that is configured with Windows Hello for Business + Cloud Trust. 
+This diagram demonstrates how Microsoft Entra Private Access works when trying to access an SMB file share from a Windows device that is configured with Windows Hello for Business + Cloud Trust. In this example, the admin has configured Quick Access Private DNS and two enterprise apps - one for the Domain Controllers and one for the SMB file share.
 
 :::image type="content" source="media/how-to-configure-kerberos-sso/private-access-kerberos-sso-to-smb.png" alt-text="Diagram of Microsoft Entra Private Access using Kerberos SSO for SMB file share." lightbox="media/how-to-configure-kerberos-sso/private-access-kerberos-sso-to-smb-expanded.png":::
 
