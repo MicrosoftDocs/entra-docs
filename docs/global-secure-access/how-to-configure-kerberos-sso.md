@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 11/14/2024
+ms.date: 11/08/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
