@@ -44,7 +44,7 @@ As an organization adopting services like Microsoft 365 Copilot and Microsoft Co
 - All users of Generative AI services are blocked when insider risk is elevated 
 
 > [!TIP]
-> The following policies target the [standalone experiences, not embedded experiences](/copilot/security/experiences-security-copilot#standalone-and-embedded-experiences).
+> The following Conditional Access policies target the [standalone experiences, not embedded experiences](/copilot/security/experiences-security-copilot#standalone-and-embedded-experiences).
 
 ### User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
