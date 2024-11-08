@@ -1786,17 +1786,6 @@ Token Protection for sign-in sessions is our first release on a road-map to comb
 
 ---
 
-### General Availability- New limits on number and size of group secrets starting June 2023
-
-**Type:** Plan for change  
-**Service category:** Group Management                   
-**Product capability:** Directory            
-
-Starting in June 2023, the secrets stored on a single group can't exceed 48 individual secrets, or have a total size greater than 10 KB across all secrets on a single group. Groups with more than 10 KB of secrets will immediately stop working in June 2023. In June, groups exceeding 48 secrets are unable to increase the number of secrets they have, though they could still update or delete those secrets. We highly recommend reducing to fewer than 48 secrets by January 2024.
-
-Group secrets are typically created when a group is assigned credentials to an app using Password-based single sign-on. To reduce the number of secrets assigned to a group, we recommend creating additional groups, and splitting up group assignments to your Password-based SSO applications across those new groups. For more information, see: [Add password-based single sign-on to an application](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md).
-
----
 
 ### Public Preview - Authenticator Lite in Outlook
 
