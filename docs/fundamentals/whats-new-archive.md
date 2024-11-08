@@ -1567,28 +1567,3 @@ Admins can now restrict their users from self-service accessing their BitLocker 
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - May 2023
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** Third Party Integration    
-      
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Sign In Enterprise Host Provisioning](~/identity/saas-apps/sign-in-enterprise-host-provisioning-tutorial.md)
-
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
-
-
----
-
-### General Availability - PowerShell and Web Services connector support through the Azure AD provisioning agent
-
-**Type:** New feature   
-**Service category:** Provisioning                          
-**Product capability:** Outbound to On-premises Applications               
-
-The Azure AD on-premises application provisioning feature now supports both the [PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md) and [web services](~/identity/app-provisioning/on-premises-web-services-connector.md) connectors. You can now provision users into a flat file using the PowerShell connector or an app such as SAP ECC using the web services connector. For more information, see: [Provisioning users into applications using PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md).
-
----
