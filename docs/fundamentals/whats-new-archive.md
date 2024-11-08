@@ -1766,15 +1766,7 @@ To address this challenge, we're introducing a new system-preferred authenticati
 
 ---
 
-### Public Preview - Enhanced Create User and Invite User Experiences
 
-**Type:** Changed feature   
-**Service category:** User Management                     
-**Product capability:** User Management            
-
-We've increased the number of properties that admins are able to define when creating and inviting a user in the Microsoft Entra admin portal. This capability brings our UX to parity with our Create User APIs. Additionally, admins can now add users to a group or administrative unit, and assign roles. For more information, see:  [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.yml).
-
----
 
 
 
