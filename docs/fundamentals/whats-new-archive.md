@@ -1638,14 +1638,3 @@ For more information about how to better secure your organization by using autom
 The Azure AD on-premises application provisioning feature now supports both the [PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md) and [web services](~/identity/app-provisioning/on-premises-web-services-connector.md) connectors. You can now provision users into a flat file using the PowerShell connector or an app such as SAP ECC using the web services connector. For more information, see: [Provisioning users into applications using PowerShell](~/identity/app-provisioning/on-premises-powershell-connector.md).
 
 ---
-
-
-### General Availability - My Security-info now shows Microsoft Authenticator type
-
-**Type:** Changed feature   
-**Service category:** MFA                        
-**Product capability:** Identity Security & Protection               
-
-We've improved My Sign-ins and My Security-Info to give you more clarity on the types of Microsoft Authenticator or other Authenticator apps a user registers. Users will now see Microsoft Authenticator registrations with additional information showing the app as being registered as Push-based MFA or Password-less phone sign-in (PSI). For other Authenticator apps (Software OATH) we now indicate they're registered as a Time-based One-time password method. For more information, see: [Set up the Microsoft Authenticator app as your verification method](https://support.microsoft.com/account-billing/set-up-the-microsoft-authenticator-app-as-your-verification-method-33452159-6af9-438f-8f82-63ce94cf3d29).
-
----
