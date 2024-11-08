@@ -1521,24 +1521,4 @@ SAML/Ws-Fed based identity providers for authentication in Azure AD B2B are gene
 
 ---
 
-### Generally Availability - Cross-tenant synchronization
-
-**Type:** New feature   
-**Service category:** Provisioning                          
-**Product capability:** Identity Lifecycle Management              
-
-Cross-tenant synchronization allows you to set up a scalable and automated solution for users to access applications across tenants in your organization. It builds upon the Azure Active Directory B2B functionality and automates creating, updating, and deleting B2B users within tenants in your organization. For more information, see: [What is cross-tenant synchronization?](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
-
----
-
-### Public Preview - New My Groups Experience
-
-**Type:** Changed feature   
-**Service category:** Group Management                          
-**Product capability:** End User Experiences              
-
-A new and improved My Groups experience is now available at [myaccount.microsoft.com/groups](https://myaccount.microsoft.com/groups). This experience replaces the existing My Groups experience at mygroups.microsoft.com in May.   For more information, see: [Update your Groups info in the My Groups portal](https://support.microsoft.com/account-billing/update-your-groups-info-in-the-my-apps-portal-bc0ca998-6d3a-42ac-acb8-e900fb1174a4).
-
----
-
 
