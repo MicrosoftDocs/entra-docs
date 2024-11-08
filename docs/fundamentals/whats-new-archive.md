@@ -1787,16 +1787,6 @@ Token Protection for sign-in sessions is our first release on a road-map to comb
 ---
 
 
-### Public Preview - Authenticator Lite in Outlook
-
-**Type:** New feature   
-**Service category:** Microsoft Authenticator App                     
-**Product capability:** User Authentication           
-
-Authenticator Lite is an additional surface for Azure Active Directory users to complete multifactor authentication using push notifications on their Android or iOS device. With Authenticator Lite, users can satisfy a multifactor authentication requirement from the convenience of a familiar app. Authenticator Lite is currently enabled in the Outlook mobile app. Users could receive a notification in their Outlook mobile app to approve or deny, or use the Outlook app to generate an OATH verification code that can be entered during sign-in. The *'Microsoft managed'* setting for this feature will be set to be enabled on May 26, 2023. This enables the feature for all users in tenants where the feature is set to Microsoft managed. If you wish to change the state of this feature do so before May 26, 2023. For more information, see: [How to enable Microsoft Authenticator Lite for Outlook mobile (preview)](~/identity/authentication/how-to-mfa-authenticator-lite.md).
-
----
-
 
 
 
