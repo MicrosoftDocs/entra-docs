@@ -22,7 +22,7 @@ With Microsoft Entra ID, you can create and manage users and groups, and enable 
 
 ## Microsoft Entra architecture
 
-Microsoft Entra ID geographically distributed architecture combines extensive monitoring, automated rerouting, failover, and recovery capabilities, to deliver company-wide availability and performance.
+Microsoft Entra ID's geographically distributed architecture combines extensive monitoring, automated rerouting, failover, and recovery capabilities to deliver company-wide availability and performance.
 
 The following architecture elements are covered in this article:
 
