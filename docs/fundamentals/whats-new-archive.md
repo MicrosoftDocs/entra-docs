@@ -1867,18 +1867,4 @@ With this new experience, PIM now automatically manages any type of resource in 
 
 ---
 
-### General availability - Self Service Password Reset (SSPR) now supports PIM eligible users and indirect group role assignment
 
-**Type:** Changed feature   
-**Service category:** Self Service Password Reset                     
-**Product capability:** Identity Security & Protection          
-
-Self Service Password Reset (SSPR) can now check for PIM eligible users, and evaluate group-based memberships, along with direct memberships when checking if a user is in a particular administrator role. This capability provides more accurate SSPR policy enforcement by validating if users are in scope for the default SSPR admin policy or your organizations SSPR user policy.
-
-
-For more information, see: 
-
-- [Administrator reset policy differences](~/identity/authentication/concept-sspr-policy.md#administrator-reset-policy-differences).
-- [Create a role-assignable group in Azure Active Directory](~/identity/role-based-access-control/groups-create-eligible.md)
-
----
