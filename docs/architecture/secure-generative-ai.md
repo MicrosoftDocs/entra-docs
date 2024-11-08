@@ -21,7 +21,7 @@ Microsoft Entra offers a comprehensive suite of capabilities to securely manage 
 
 - [Microsoft Entra Permissions Management](../permissions-management/overview.md) (MEPM)
 - [Microsoft Entra ID Governance](/graph/api/resources/identitygovernance-overview)
-- [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md)
+- [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) (CA)
 - [Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-configure.md) (PIM)
 - [Microsoft Purview Insider Risk](/purview/insider-risk-management-adaptive-protection)
 
@@ -29,11 +29,9 @@ This article delves into the specific security challenges that Gen AI poses and 
 
 ## Discover overprivileged identities
 
-Ensure that users have the appropriate permissions to comply with the [principal of least privilege](../identity-platform/secure-least-privileged-access.md). There might be cases where identities require higher privilege access due to business/operational requirements such as [break glass](../identity/role-based-access-control/security-emergency-access.md) accounts.
+Ensure that users have the appropriate permissions to comply with the [principal of least privilege](../identity-platform/secure-least-privileged-access.md). Based on our telemetry, over 90% of identities use less than 5% of permissions granted. Over 50% of those permissions are high risk. There might be cases where identities require higher privilege access due to business/operational requirements such as [break glass](../identity/role-based-access-control/security-emergency-access.md) accounts. 
 
-Based on our telemetry, over 90% of identities use less than 5% of permissions granted. Over 50% of those permissions are high risk. Compromised accounts can cause catastrophic damage. The sprawl of unmanaged permissions grows as organizations adopt multicloud.
-
-Multicloud environment management is difficult as Identity and Access Management (IAM) and security teams often need to collaborate cross-functionally. Multicloud environments can limit comprehensive view into identities, permissions, and resources. This limited view increases the attack surface on identities that have overly privileged roles and over permissioned accounts. IT admins might only perform permission cleanup as needed and be wary of revoking permissions that could disrupt business operations.
+Compromised accounts can cause catastrophic damage. Risk of compromised unused accounts with high permissions increases as organizations adopt multicloud. Multicloud environment management is difficult as Identity and Access Management (IAM) and security teams often need to collaborate cross-functionally. Multicloud environments can limit comprehensive view into identities, permissions, and resources. This limited view increases the attack surface on identities that have overly privileged roles and over permissioned accounts. IT admins might only perform permission cleanup as needed and be wary of revoking permissions that could disrupt business operations.
 
 ### Identify nonhuman accounts
 
@@ -80,7 +78,7 @@ After you deploy Conditional Access policies, use the [Conditional Access gap a
 
 ### Enable automation to manage employee identity lifecycle at scale
 
-Give users access to information and resources only if they have a genuine need for them to perform their tasks. This approach prevents unauthorized access to sensitive data and minimizes potential security breach impact. Use automated user provisioning to reduce unnecessary granting of access rights.
+Give users access to information and resources only if they have a genuine need for them to perform their tasks. This approach prevents unauthorized access to sensitive data and minimizes potential security breach impact. Use automated [user provisioning](../id-governance/what-is-provisioning.md) to reduce unnecessary granting of access rights.
 
 Automate basic Microsoft Entra user lifecycle processes at scale with the [lifecycle workflows](../id-governance/what-are-lifecycle-workflows.md) feature in ID Governance. Automate workflow tasks that run at key events. Example events include before a new employee is scheduled to start work at the organization, as employees change status, and as employees leave the organization.
 
