@@ -34,7 +34,7 @@ Microsoft Entra brings the capabilities of Security Copilot to the Microsoft Ent
 
 ### Create Security Copilot prompts in the Microsoft Entra admin center (preview)
 
-Security Copilot is a part of the Microsoft Entra admin center, use it to create your own prompts.  Launch Security Copilot from a globally available button in the menu bar. Choose from a set of Starter Pprompts that appear at the top of the Security Copilot window or enter your own in the prompt bar to get started. Suggested Prompts may also appear after a response, these are predefined prompts that Security Copilot selects based on the prior response. 
+Security Copilot is a part of the Microsoft Entra admin center, use it to create your own prompts.  Launch Security Copilot from a globally available button in the menu bar. Choose from a set of starter prompts that appear at the top of the Security Copilot window or enter your own in the prompt bar to get started. Suggested prompts may also appear after a response, these are predefined prompts that Security Copilot selects based on the prior response. 
 
 :::image type="content" source="./media/copilot-security-entra/security-copilot-entra-admin-center.png" alt-text="Screenshot that shows Security Copilot in the Microsoft Entra admin center.":::
 
