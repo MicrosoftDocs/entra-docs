@@ -5,7 +5,7 @@ description: Deprecation of Key Derivation Function version 1 algorithm guidance
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 11/06/2024
+ms.date: 11/08/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -16,9 +16,9 @@ ms.reviewer: paulgarn
 
 Microsoft is deprecating support for the Key Derivation Function version 1 (KDFv1) algorithm used for the authentication of Microsoft Entra joined or Microsoft Entra hybrid joined devices in builds of Windows released before July 2021. 
 
-The KDFv1 algorithm was historically used for device authentication in earlier versions of Windows. A critical security flaw was discovered that allowed unauthorized authentication, as outlined in [CVE-2021-33781](https://www.cve.org/CVERecord?id=CVE-2021-33781). To address this vulnerability, Microsoft issued a security update in July 2021. All Windows builds released after July 2021 no longer use the KDFv1 algorithm.
+The KDFv1 algorithm was historically used for device authentication in earlier versions of Windows. A critical security flaw was discovered that allowed unauthorized authentication, as outlined in [CVE-2021-33781](https://www.cve.org/CVERecord?id=CVE-2021-33781). To address this vulnerability, Microsoft issued a Windows security update in July 2021. All Windows builds released after July 2021 no longer use the KDFv1 algorithm.
 
-As part of our ongoing commitment to enhancing security, Microsoft is incrementally rolling out a change that blocks the use of the KDFv1 algorithm for authentication.
+As part of our ongoing commitment to enhancing security, Microsoft is incrementally rolling out a change that blocks the use of the KDFv1 algorithm for authentication with Microsoft Entra.
 
 ## Impact of the Deprecation
 
