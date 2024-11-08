@@ -49,9 +49,11 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 
 ## Add platform and URLs
 
-To specify your app type to your app registration, follow these steps:
+[!INCLUDE [add-redirect-url-common-statement.md](./includes/register-app/add-redirect-url-common-statement.md)]
 
 #### [Node](#tab/node-workforce)
+
+To specify your app type to your app registration, follow these steps:
 
 1. Under **Manage**, select **Authentication**.
 1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
@@ -61,9 +63,13 @@ To specify your app type to your app registration, follow these steps:
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
+To specify your app type to your app registration, follow these steps:
+
 [!INCLUDE [Add a platform redirect URI](./includes/register-app/web-app-common/add-platform-redirect-web-app-port-5001.md)]  
 
 #### [Python Flask](#tab/python-flask-workforce)
+
+To specify your app type to your app registration, follow these steps:
 
 1. Under **Manage**, select **Authentication**.
 1. On the **Platform configurations** page, select **Add a platform**, and then select **Web** option.
@@ -117,7 +123,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 #### [Python Flask](#tab/python-flask-workforce)
 
-* [Download the Python code sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) then extract it to a file path where the length of the name is fewer than 260 characters or clone the repository:or clone the repository:
+* [Download the Python code sample](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) then extract it to a file path where the length of the name is fewer than 260 characters or clone the repository:
 
 * To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
@@ -350,6 +356,8 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 [!INCLUDE [register-application-common-steps](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
 ## Add platform and URLs
+
+[!INCLUDE [add-redirect-url-common-statement.md](./includes/register-app/add-redirect-url-common-statement.md)]
 
 #### [Node](#tab/node-external)
 

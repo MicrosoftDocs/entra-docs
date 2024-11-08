@@ -1319,7 +1319,7 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-web-app-dotnet-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external&tab= asp-dot-net-core-workforce",
       "redirect_document_id": false
     },
     {

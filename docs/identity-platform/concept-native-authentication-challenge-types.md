@@ -4,7 +4,7 @@ description: Learn how apps that use native authentication notify Microsoft Entr
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: entra-external-id 
+ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
 ms.date: 04/29/2024
