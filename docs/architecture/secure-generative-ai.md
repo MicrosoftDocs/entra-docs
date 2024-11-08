@@ -50,15 +50,15 @@ Directly within the discovery and insights page, you can make privileged roles P
 
 Permission creep creates a risk of unauthorized access and restricted company data manipulation. Secure AI applications with the same governance rules that you apply to all corporate resources. To achieve this goal, define and roll out granular access policies for all users and company resources (including Gen AI apps) with ID Governance and Microsoft Entra Conditional Access.
 
-Ensure that only the right people have the right access level for the right resources. Automate access lifecycles at scale through controls with entitlement management, lifecycle workflows, access requests, reviews, and expirations.
+Ensure that only the right people have the right access level for the right resources. Automate access lifecycles at scale through controls with Entitlement Management, Lifecycle Workflows, access requests, reviews, and expirations.
 
-Govern your [Joiner, Mover, and Leaver (JML)](../id-governance/understanding-lifecycle-workflows.md) process with user lifecycle workflows and control access in ID Governance.
+Govern your [Joiner, Mover, and Leaver (JML)](../id-governance/understanding-lifecycle-workflows.md) user processes with Lifecycle Workflows and control access in ID Governance.
 
 ### Configure policies and controls to govern user access
 
-Use [entitlement management](../id-governance/entitlement-management-overview.md) in ID Governance to control who can access applications, groups, Teams, and SharePoint sites with multi-stage approval policies.
+Use [Entitlement Management](../id-governance/entitlement-management-overview.md) in ID Governance to control who can access applications, groups, Teams, and SharePoint sites with multi-stage approval policies.
 
-[Configure automatic assignment](../id-governance/entitlement-management-access-package-auto-assignment-policy.md) policies in entitlement management to automatically give users access to resources based on user properties such as department or cost center. Remove user access when those properties change.
+[Configure automatic assignment](../id-governance/entitlement-management-access-package-auto-assignment-policy.md) policies in Entitlement Management to automatically give users access to resources based on user properties such as department or cost center. Remove user access when those properties change.
 
 To right size access, we recommend that you apply an [expiration date](../id-governance/entitlement-management-access-package-lifecycle-policy.md) and/or periodic [access review](../id-governance/entitlement-management-access-reviews-create.md) to entitlement management policies. These requirements ensure users don't indefinitely retain access through time-limited assignments and recurring application access reviews.
 
@@ -80,7 +80,7 @@ After you deploy Conditional Access policies, use the [Conditional Access gap a
 
 Give users access to information and resources only if they have a genuine need for them to perform their tasks. This approach prevents unauthorized access to sensitive data and minimizes potential security breach impact. Use automated [user provisioning](../id-governance/what-is-provisioning.md) to reduce unnecessary granting of access rights.
 
-Automate basic Microsoft Entra user lifecycle processes at scale with the [lifecycle workflows](../id-governance/what-are-lifecycle-workflows.md) feature in ID Governance. Automate workflow tasks that run at key events. Example events include before a new employee is scheduled to start work at the organization, as employees change status, and as employees leave the organization.
+Automate lifecycle processes for Microsoft Entra users at scale with [Lifecycle Workflows](../id-governance/what-are-lifecycle-workflows.md) in ID Governance. Automate workflow tasks to right size user access when key events occur. Example events include before a new employee is scheduled to start work at the organization, as employees change status, and as employees leave the organization.
 
 ### Govern highly privileged administrative role access
 
@@ -100,7 +100,7 @@ Apply role-based access control using Privileged Identity Management (PIM) and j
 
 In most organizations, end-users invite [business partners (B2B)](../external-id/what-is-b2b.md) and vendors for collaboration and provide access to applications. Typically, collaboration partners receive application access during the onboarding process. When collaborations don't have a clear end date, it isn't clear when a user no longer needs access.
 
-[Entitlement management](../id-governance/entitlement-management-overview.md) features enable [automated lifecycle of external identities](../id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users) with access to resources. Establish processes and procedures to manage access through entitlement management. Publish resources through access packages. This approach helps you to track external user access to resources and reduce the problem's complexity.
+[Entitlement Management](../id-governance/entitlement-management-overview.md) features enable [automated lifecycle of external identities](../id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users) with access to resources. Establish processes and procedures to manage access through Entitlement Management. Publish resources through access packages. This approach helps you to track external user access to resources and reduce the problem's complexity.
 
 When you authorize employees to collaborate with external users, they can invite any number of users from outside your organization. If [external identities](../external-id/external-identities-overview.md) use applications, [Microsoft Entra access reviews](../id-governance/create-access-review.md) help you to review access. You can let the resource owner, external identities themselves, or another delegated person you trust attest to whether they require continued access.
 
@@ -116,21 +116,21 @@ Within Conditional Access, you can enable Microsoft Purview Adaptive Protection 
 
 Monitoring is crucial to detect potential threats and vulnerabilities early. Watch for [unusual activities and configuration changes](../id-governance/governance-custom-alerts.md#custom-alert-notifications) to prevent security breaches and maintain data integrity.
 
-To proactively monitor your environment for configuration changes and suspicious activity, [integrate Microsoft Entra ID Audit Logs with Azure Monitor](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
+Continually review and monitor access to your environment to discover suspicious activity, avoid permissions creep and get alerts when things change unintentionally.
+
+- To proactively monitor your environment for configuration changes and suspicious activity, [integrate Microsoft Entra ID Audit Logs with Azure Monitor](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
+- Configure [security alerts](../id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md) to monitor when users activate privileged roles.
+- Watch for atypical user usage patterns with [Microsoft Entra ID Protection](../id-protection/concept-identity-protection-risks.md). Atypical usage might indicate that a bad actor is poking around and inappropriately using Gen AI tools.
 
 In some scenarios, you might only use AI applications seasonally. For example, financial apps might have low usage outside of tax and audit season while retail apps might have usage spikes during the holiday season.
 
-Configure [security alerts](../id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md) to monitor when users activate privileged roles.
-
 Ideally, all users follow access policies to secure access to organizational resources. When you need to use Conditional Access policies with exclusions for individual users or guests, you can avoid policy exception oversight. Use Microsoft Entra access reviews to provide auditors with proof of regular exception review.
 
-Continually review Permissions Management. As identities stay with an organization, they tend to gather permissions while they work on new projects or move teams. Monitor the Permissions Creep Index (PCI) score within Permissions Management and set up monitoring and alerting capabilities. This approach reduces gradual permissions creep and decreases the blast radius around compromised user accounts. [Configure reports to regularly run](../permissions-management/how-to-audit-trail-results.md). [Configure custom reports](../permissions-management/report-create-custom-report.md) for specific use cases, especially for identities that need to access Gen AI apps.
+Continually review Permissions Management. As identities stay with an organization, they tend to gather permissions while they work on new projects or move teams. Monitor the Permissions Creep Index (PCI) score within Permissions Management and set up monitoring and alerting capabilities. This approach reduces gradual permissions creep and decreases the blast radius around compromised user accounts.
 
-To monitor permissions creep across [Azure, AWS, and GCP](../permissions-management/onboard-enable-tenant.md), use Permissions Management. Apply recommendations to workload identities to ensure that your Gen AI apps don't have excessive permissions or have more permissions added over time than necessary.
-
-Disable accounts that go unused for a significant period, especially external partner accounts, with lifecycle workflows. Consider seasonality if JIT or temporary account deactivation is more appropriate.
-
-Watch for atypical user usage patterns with [Microsoft Entra ID Protection](../id-protection/concept-identity-protection-risks.md). Atypical usage might indicate that a bad actor is poking around and inappropriately using Gen AI tools.
+- [Configure reports to regularly run](../permissions-management/how-to-audit-trail-results.md). [Configure custom reports](../permissions-management/report-create-custom-report.md) for specific use cases, especially for identities that need to access Gen AI apps.
+- To monitor permissions creep across [Azure, AWS, and GCP](../permissions-management/onboard-enable-tenant.md), use Permissions Management. Apply recommendations to workload identities to ensure that your Gen AI apps don't have excessive permissions or have more permissions added over time than necessary.
+- Disable accounts that go unused for a significant period, especially external partner accounts, with Lifecycle Workflows. Consider seasonality if JIT or temporary account deactivation is more appropriate.
 
 ## Related content
 
