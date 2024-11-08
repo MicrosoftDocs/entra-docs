@@ -69,7 +69,7 @@ The following flow diagram illustrates Universal Conditional Access targeting in
 |8|Traffic starts being acquired and tunneled to the destination via the Microsoft and Internet Access tunnels.|
 
 > [!NOTE]
-> Target Microsoft apps with Global Secure Access to protect the connection between Microsoft Security Service Edge and the Global Secure Access client. To ensure that users can't bypass the Microsoft Security Service Edge service, create a Conditional Access policy that requires compliant network for your Microsoft 365 Enterprise applications.
+> Target Microsoft apps with Global Secure Access to protect the connection between the Microsoft Security Service Edge and the Global Secure Access client. To ensure that users can't bypass the Microsoft Security Service Edge service, create a Conditional Access policy that requires compliant network for your Microsoft 365 Enterprise applications.
 
 ## User experience
 
