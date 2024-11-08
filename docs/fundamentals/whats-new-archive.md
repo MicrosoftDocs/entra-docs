@@ -1629,16 +1629,6 @@ For more information about how to better secure your organization by using autom
 
 ---
 
-### Public Preview - In portal guide to configure multifactor authentication
-
-**Type:** New feature   
-**Service category:** MFA                           
-**Product capability:** Identity Security & Protection              
-
-The in portal guide for configuring multifactor authentication helps you get started with Azure Active Directory's MFA capabilities. You can find this guide under the Tutorials tab in the Azure AD Overview. 
-
----
-
 ### General Availability - Authenticator Lite (In Outlook)
 
 **Type:** New feature   
