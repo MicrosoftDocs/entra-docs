@@ -1,13 +1,13 @@
 ---
 title: Architecture overview
-description: Learn what a Microsoft Entra tenant is and how to manage Azure using Microsoft Entra ID.
+description: Learn about the architecture of Microsoft Entra ID, including service design, scalability, availability, and data consistency.
 author: barclayn
 manager: amycolannino
 
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 08/17/2022
+ms.date: 11/07/2024
 ms.author: barclayn
 ms.reviewer: jeffsta
 ---
@@ -37,7 +37,7 @@ The most common way to build an accessible and usable, data-rich system is throu
 
 The data tier has several front-end services that provide read-write capability. The following diagram shows how the components of a single-directory partition are delivered throughout geographically distributed datacenters.
 
-  ![Single-directory partition diagram](./media/architecture/entra-architecture.png)
+  ![Diagram showing the components of a single-directory partition in Microsoft Entra architecture](./media/architecture/entra-architecture.png)
 
 The components of Microsoft Entra architecture include a primary replica and secondary replicas.
 
@@ -47,7 +47,7 @@ The *primary replica* receives all *writes* for the partition it belongs to. Any
 
 #### Secondary replicas
 
-All directory *reads* are serviced from *secondary replicas*, which are at datacenters that are physically located across different geographies. There are many secondary replicas, as data is replicated asynchronously. Directory reads, such as authentication requests, are serviced from datacenters that are close to customers. The secondary replicas are responsible for read scalability.
+All directory *reads* are serviced from *secondary replicas*, located at geographically distributed datacenters. Data is replicated asynchronously across many secondary replicas. Directory reads, such as authentication requests, are serviced from datacenters that are close to customers. The secondary replicas are responsible for read scalability.
 
 ### Scalability
 
@@ -61,11 +61,12 @@ Directory applications connect to the nearest datacenters. This connection impro
 
 Availability (or uptime) defines the ability of a system to perform uninterrupted. The key to Microsoft Entra ID's high availability is that the services can quickly shift traffic across multiple geographically distributed datacenters. Each datacenter is independent, which enables de-correlated failure modes. Through this high availability design, Microsoft Entra ID requires no downtime for maintenance activities.
 
-The partition design of Microsoft Entra ID is simplified compared to the enterprise AD design, using a single-master design that includes a carefully orchestrated and deterministic primary replica failover process.
+The partition design of Microsoft Entra ID is simplified compared to the enterprise Active directory design, using a single-master design that includes a carefully orchestrated and deterministic primary replica failover process.
 
 #### Fault tolerance
 
-A system is more available if it is tolerant to hardware, network, and software failures. For each partition on the directory, a highly available master replica exists: The primary replica. Only writes to the partition are performed at this replica. This replica is being continuously and closely monitored, and writes can be immediately shifted to another replica (which becomes the new primary) if a failure is detected. During failover, there could be a loss of write availability typically of 1-2 minutes. Read availability isn't affected during this time.
+A system is more available if it can tolerate hardware, network, and software failures. Each directory partition has a highly available primary replica that handles all write operations. This primary replica is continuously monitored, and if a failure is detected, write operations are immediately shifted to another replica. This replica becomes the new primary. During this failover process, write availability may be temporarily affected for 1-2 minutes, but read availability remains unaffected.
+
 
 Read operations (which outnumber writes by many orders of magnitude) only go to secondary replicas. Since secondary replicas are idempotent, loss of any one replica in a given partition is easily compensated by directing the reads to another replica, usually in the same datacenter.
 
@@ -84,7 +85,7 @@ Microsoft Entra replicas are stored in datacenters located throughout the world.
 
 Microsoft Entra ID operates across datacenters with the following characteristics:
 
-- Authentication, Graph, and other AD services reside behind the Gateway service. The Gateway manages load balancing of these services. It will fail over automatically if any unhealthy servers are detected using transactional health probes. Based on these health probes, the Gateway dynamically routes traffic to healthy datacenters.
+- Authentication, Graph, and other Entra ID services reside behind the Gateway service. The Gateway manages load balancing. The service will automatically fail over any servers found unhealthy by transactional health probes. Based on these health probes, the Gateway dynamically routes traffic to healthy datacenters.
 - For *reads*, the directory has secondary replicas and corresponding front-end services in an active-active configuration operating in multiple datacenters. If a datacenter fails, traffic is automatically routed to a different datacenter.
 - For *writes*, the directory will fail over the primary replica across datacenters via planned (new primary is synchronized to old primary) or emergency failover procedures. Data durability is achieved by replicating any commit to at least two datacenters.
 
@@ -96,7 +97,7 @@ Microsoft Entra ID provides read-write consistency for applications targeting a 
 
 Application writes using the Microsoft Graph API of Microsoft Entra ID are abstracted from maintaining affinity to a directory replica for read-write consistency. The Microsoft Graph API service maintains a logical session, which has affinity to a secondary replica used for reads; affinity is captured in a "replica token" that the service caches using a distributed cache in the secondary replica datacenter. This token is then used for subsequent operations in the same logical session. To continue using the same logical session, subsequent requests must be routed to the same Microsoft Entra datacenter. It isn't possible to continue a logical session if the directory client requests are being routed to multiple Microsoft Entra datacenters; if this happens then the client has multiple logical sessions that have independent read-write consistencies.
 
- >[!NOTE]
+> [!NOTE]
  > Writes are immediately replicated to the secondary replica to which the logical session's reads were issued.
 
 #### Service-level backup
@@ -107,14 +108,14 @@ The directory also implements soft deletes instead of hard deletes for selected 
 
 #### Metrics and monitors
 
-Running a high availability service requires world-class metrics and monitoring capabilities. Microsoft Entra ID continually analyzes and reports key service health metrics and success criteria for each of its services. There is also continuous development and tuning of metrics and monitoring and alerting for each scenario, within each Microsoft Entra service and across all services.
+Running a high availability service requires world-class metrics and monitoring capabilities. Microsoft Entra ID continually analyzes and reports key service health metrics and success criteria for each of its services. There is also continuous development and tuning of metrics, monitoring, and alerting for each scenario, within each Microsoft Entra service and across all services.
 
-If any Microsoft Entra service isn't working as expected, action is immediately taken to restore functionality as quickly as possible. The most important metric Microsoft Entra ID tracks is how quickly live site issues can be detected and mitigated for customers. We invest heavily in monitoring and alerts to minimize time to detect (TTD Target: <5 minutes) and operational readiness to minimize time to mitigate (TTM Target: <30 minutes).
+If any Microsoft Entra service isn't working as expected, immediate action is taken to restore functionality as quickly as possible. The most important metric Microsoft Entra ID tracks is the speed at which live site issues are detected and mitigated for customers. We invest heavily in monitoring and alerts to minimize time to detect (TTD) (Target: <5 minutes) and operational readiness to minimize time to mitigate (TTM) (Target: <30 minutes).
 
 #### Secure operations
 
-Using operational controls such as multifactor authentication for any operation, and auditing of all operations. In addition, using a just-in-time elevation system to grant necessary temporary access for any operational task-on-demand on an ongoing basis. For more information, see The [Trusted Cloud](https://azure.microsoft.com/support/trust-center).
+Microsoft Entra ID uses operational controls such as multifactor authentication for any operation and auditing of all operations. In addition, it uses a just-in-time elevation system to grant necessary temporary access for any operational task-on-demand on an ongoing basis. For more information, see The [Trusted Cloud](https://azure.microsoft.com/support/trust-center).
 
 ## Next steps
 
-[Microsoft Entra developer's guide](~/identity-platform/index.yml)
+To learn more about developing with Microsoft Entra, see the [Microsoft Entra developer's guide](~/identity-platform/index.yml).
