@@ -1828,15 +1828,6 @@ As part of ongoing service improvements, we're making updates to the per-user MF
 
 ---
 
-### General Availability - Additional terms of use audit logs will be turned off
-
-**Type:**  Fixed     
-**Service category:** Terms of Use                  
-**Product capability:** AuthZ/Access Delegation          
-
-Due to a technical issue, we recently started to emit additional audit logs for terms of use. The additional audit logs will be turned off by May 1 and are tagged with the core directory service and the agreement category. If you built a dependency on the additional audit logs, you must switch to the regular audit logs tagged with the terms of use service.
-
----
 
 
 
