@@ -74,9 +74,9 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/password-options-three.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for iOS devices.":::
 
-1. Return to Authenticator app and tap **Done**. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies. 
+1. After you return to Authenticator, tap **Done** to confirm you added Authenticator as a passkey provider. Then you can see passkey added as a sign-in method for your account. Tap **Done** again to finish.
 
-   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/passkey-added-ios.png" alt-text="Screenshot of setting up passkey, passwordless, and/or MFA for sign in using Microsoft Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-account-added.png" alt-text="Screenshot of an account added to Microsoft Authenticator for Android devices.":::
 
 1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies. Tap your account to see details, including your new passkey. 
 
@@ -132,11 +132,11 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/password-options-three.png" alt-text="Screenshot of the turn-on passkey support option in Microsoft Authenticator for iOS devices.":::
 
-1. After you see the account is added, tap **Continue**.
+1. After you return to Authenticator, tap **Done** to confirm you added Authenticator as a passkey provider. Then you can see passkey added as a sign-in method for your account. Tap **Done** again to finish.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/account-added-three.png" alt-text="Screenshot of account added to your iOS device.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-account-added.png" alt-text="Screenshot of an account added to Microsoft Authenticator for Android devices.":::
 
-1. On your iOS device, you can see passkey added for your new account in Authenticator.
+1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies.  
 
 1. Return to your browser after you complete the passkey setup in Authenticator, and click **Next**. 
 
@@ -313,11 +313,11 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/settings-done-android.png" alt-text="Screenshot of how to return to Authenticator passkey registration on Android.":::
 
-1. After Authenticator creates the passkey, tap **Continue**.
+1. After you return to Authenticator, tap **Done** to confirm you added Authenticator as a passkey provider. Then you can see passkey added as a sign-in method for your account. Tap **Done** again to finish.
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-android/account-added-android.png" alt-text="Screenshot that confirms the passkey is created in Authenticator on Android.":::
+   :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-account-added.png" alt-text="Screenshot of an account added to Microsoft Authenticator for Android devices.":::
 
-1. On your Android device, you can see passkey added for your new account in Authenticator.
+1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies.  
 
 1. After you complete the passkey setup in Authenticator, return to your browser where Security info is open and click **Next**. 
 
