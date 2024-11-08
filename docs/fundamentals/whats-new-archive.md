@@ -1857,14 +1857,6 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 ---
 
-### Public Preview - New PIM Azure resource picker
 
-**Type:** Changed feature   
-**Service category:** Privileged Identity Management                     
-**Product capability:** End User Experiences            
-
-With this new experience, PIM now automatically manages any type of resource in a tenant, so discovery and activation is no longer required. With the new resource picker, users can directly choose the scope they want to manage from the Management Group down to the resources themselves, making it faster and easier to locate the resources they need to administer. For more information, see: [Assign Azure resource roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-assign-roles.md).
-
----
 
 
