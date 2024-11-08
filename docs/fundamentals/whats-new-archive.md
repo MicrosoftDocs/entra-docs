@@ -1776,15 +1776,6 @@ We've increased the number of properties that admins are able to define when cre
 
 ---
 
-### Public Preview - Token Protection for Sign-in Sessions
-
-**Type:** New feature   
-**Service category:** Conditional Access                  
-**Product capability:** User Authentication          
-
-Token Protection for sign-in sessions is our first release on a road-map to combat attacks involving token theft and replay. It provides Conditional Access enforcement of token proof-of-possession for supported clients and services that ensure that access to specified resources is only from a device to which the user signed into. For more information, see: [Conditional Access: Token protection (preview)](~/identity/conditional-access/concept-token-protection.md).
-
----
 
 
 
