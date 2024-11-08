@@ -141,3 +141,8 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 ## Related content
 
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Microsoft Purview data security and compliance protections for generative AI apps](/purview/ai-microsoft-purview)
+- [Considerations for Microsoft Purview AI Hub and data security and compliance protections for Copilot](/purview/ai-microsoft-purview-considerations)
+- [Apply principles of Zero Trust to Microsoft Copilot](/security/zero-trust/copilots/zero-trust-microsoft-copilot)
+- [Apply principles of Zero Trust to Microsoft 365 Copilot](/security/zero-trust/copilots/zero-trust-microsoft-365-copilot#step-2-deploy-or-validate-your-identity-and-access-policies)
+- [Apply principles of Zero Trust to Microsoft Copilot for Security](/security/zero-trust/copilots/zero-trust-microsoft-copilot-for-security)
