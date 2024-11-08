@@ -1857,30 +1857,6 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - April 2023
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** Third Party Integration    
-      
-
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Alvao](~/identity/saas-apps/alvao-provisioning-tutorial.md)
-- [Better Stack](~/identity/saas-apps/better-stack-provisioning-tutorial.md)
-- [BIS](~/identity/saas-apps/bis-provisioning-tutorial.md)
-- [Connecter](~/identity/saas-apps/connecter-provisioning-tutorial.md)
-- [Howspace](~/identity/saas-apps/howspace-provisioning-tutorial.md)
-- [Kno2fy](~/identity/saas-apps/kno2fy-provisioning-tutorial.md)
-- [Netsparker Enterprise](~/identity/saas-apps/netsparker-enterprise-provisioning-tutorial.md)
-- [uniFLOW Online](~/identity/saas-apps/uniflow-online-provisioning-tutorial.md)
-
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
-
-
----
-
 ### Public Preview - New PIM Azure resource picker
 
 **Type:** Changed feature   
