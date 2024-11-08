@@ -1256,6 +1256,16 @@
       "source_path_from_root": "/docs/identity/enterprise-apps/configure-user-consent-groups.md",
       "redirect_url": "/microsoftteams/platform/graph-api/rsc/grant-resource-specific-consent",
       "redirect_document_id": false
+    }, 
+    {
+      "source_path_from_root": "docs/identity/saas-apps/bluejeans-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "docs/identity/saas-apps/bluejeans-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
     }
   ]
 }
