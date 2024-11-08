@@ -1541,16 +1541,6 @@ A new and improved My Groups experience is now available at [myaccount.microsoft
 
 ---
 
-### General Availability - Admins can restrict their users from creating tenants
-
-**Type:** New feature   
-**Service category:** User Access Management                           
-**Product capability:** User Management               
-
-The ability for users to create tenants from the Managed Tenant overview is present in Azure AD since almost the beginning of the Azure portal.  This new capability in the User Settings pane allows admins to restrict their users from being able to create new tenants. There's also a new [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator) role to allow specific users to create tenants. For more information, see [Default user permissions](~/fundamentals/users-default-permissions.md#restrict-member-users-default-permissions).
-
----
-
 ### General Availability - Devices Self-Help Capability for Pending Devices
 
 
