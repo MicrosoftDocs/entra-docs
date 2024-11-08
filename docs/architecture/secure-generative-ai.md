@@ -122,7 +122,7 @@ Continually review and monitor access to your environment to discover suspicious
 - Configure [security alerts](../id-governance/privileged-identity-management/pim-how-to-configure-security-alerts.md) to monitor when users activate privileged roles.
 - Watch for atypical user usage patterns with [Microsoft Entra ID Protection](../id-protection/concept-identity-protection-risks.md). Atypical usage might indicate that a bad actor is poking around and inappropriately using Gen AI tools.
 
-In some scenarios, you might only use AI applications seasonally. For example, financial apps might have low usage outside of tax and audit season while retail apps might have usage spikes during the holiday season.
+In some scenarios, you might only use AI applications seasonally. For example, financial apps might have low usage outside of tax and audit season while retail apps might have usage spikes during the holiday season. Disable accounts that go unused for a significant period, especially external partner accounts, with Lifecycle Workflows. Consider seasonality if JIT or temporary account deactivation is more appropriate.
 
 Ideally, all users follow access policies to secure access to organizational resources. When you need to use Conditional Access policies with exclusions for individual users or guests, you can avoid policy exception oversight. Use Microsoft Entra access reviews to provide auditors with proof of regular exception review.
 
@@ -130,7 +130,6 @@ Continually review Permissions Management. As identities stay with an organizati
 
 - [Configure reports to regularly run](../permissions-management/how-to-audit-trail-results.md). [Configure custom reports](../permissions-management/report-create-custom-report.md) for specific use cases, especially for identities that need to access Gen AI apps.
 - To monitor permissions creep across [Azure, AWS, and GCP](../permissions-management/onboard-enable-tenant.md), use Permissions Management. Apply recommendations to workload identities to ensure that your Gen AI apps don't have excessive permissions or have more permissions added over time than necessary.
-- Disable accounts that go unused for a significant period, especially external partner accounts, with Lifecycle Workflows. Consider seasonality if JIT or temporary account deactivation is more appropriate.
 
 ## Related content
 
