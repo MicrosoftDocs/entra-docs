@@ -1541,29 +1541,4 @@ A new and improved My Groups experience is now available at [myaccount.microsoft
 
 ---
 
-### General Availability - Devices Self-Help Capability for Pending Devices
-
-
-
-**Type:** New feature   
-**Service category:** Device Access Management                
-**Product capability:** End User Experiences          
-
-In the **All Devices** view under the Registered column, you can now select any pending devices you have, and it opens a context pane to help troubleshoot why a device might be pending. You can also offer feedback on if the summarized information is helpful or not. For more information, see: [Pending devices in Azure Active Directory](/troubleshoot/azure/active-directory/pending-devices).
-
-
----
-
-### General Availability - Admins can now restrict users from self-service accessing their BitLocker keys
-
-
-
-**Type:** New feature   
-**Service category:** Device Access Management                
-**Product capability:** User Management            
-
-Admins can now restrict their users from self-service accessing their BitLocker keys through the Devices Settings page. Turning on this capability hides the BitLocker key(s) of all non-admin users. This capability helps to control BitLocker access management at the admin level. For more information, see: [Restrict member users' default permissions](users-default-permissions.md#restrict-member-users-default-permissions).
-
-
----
 
