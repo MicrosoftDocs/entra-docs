@@ -126,6 +126,6 @@ You can find the detailed steps in the [Microsoft Entra sign-ins workbook](~/ide
 
 ## Related content
 
-- [Get a lit of apps using ADAL in your tenant](~/identity-platform/howto-get-list-of-all-auth-library-apps.md)
+- [Get a list of apps using ADAL in your tenant](~/identity-platform/howto-get-list-of-all-auth-library-apps.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)

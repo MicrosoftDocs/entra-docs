@@ -54,7 +54,7 @@ This recommendation improves your user's productivity and minimizes the sign-in 
 
 1. Under the **Remember multifactor authentication on trusted device** heading, select the checkbox and set the number of days to 90.
 
-    ![Remember MFA on trusted devices](./media/recommendation-mfa-from-known-devices/multifactor-authentication-remember-known-devices.png)
+    ![Screenshot of remember MFA on trusted devices.](./media/recommendation-mfa-from-known-devices/multifactor-authentication-remember-known-devices.png)
 
 ## Related content
 
