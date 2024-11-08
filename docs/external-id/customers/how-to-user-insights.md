@@ -19,7 +19,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-The Application user activity  feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
+The Application user activity  feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This feature can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=UserInsights)
@@ -29,10 +29,10 @@ The Application user activity  feature under Usage & insights provides data anal
 
 You can use the user insights feature for the following scenarios:
 
-- **Tracking active users** - You want to determine the total number of active users in your tenant. This can help you assess the overall user engagement with your applications. 
+- **Tracking active users** - You want to determine the total number of active users in your tenant, to assess the overall user engagement with your applications. 
 - **Monitoring new users added** - You want to track and identify how many users have been added to your tenant in the last month. This data is valuable for monitoring the growth of your user base.
-- **Analyzing daily and monthly application sign-ins** - You want to gather data on the number of users who sign in to your applications on a daily and monthly basis. This can help you gauge user engagement over time and spot trends.
-- **Assessing MFA usage success and failure** - You want to compare the multifactor authentication (MFA) usage success and failure rates for your applications. This can provide insights into the security and user experience of your authentication processes. You can also use our new telecom metrics for MFA SMS and fraud detection. These preview metrics help you identify vulnerabilities and detect potential fraud.
+- **Analyzing daily and monthly application sign-ins** - You want to gather data on the number of users who sign in to your applications daily and monthly to assess user engagement and spot trends.
+- **Assessing MFA usage success and failure** - You want to compare the multifactor authentication (MFA) usage success and failure rates for your applications to provide insights into the security and user experience of your authentication processes. You can also use our new telecom metrics for MFA SMS and fraud detection. These preview metrics help you identify vulnerabilities and detect potential fraud.
 
 ## Prerequisites
 
@@ -58,7 +58,7 @@ There are three dashboards available with data centered around users, requests, 
 
 ### Users dashboard
 
-The **Users** dashboard gives you a summary of daily and monthly active users, and new users that have been added to your tenant. For this dataset, you'll be able to view the following trends:
+The **Users** dashboard provides a summary of daily and monthly active users, and new users added to your tenant. For this dataset, you can view the following trends:
 
 - Daily active and inactive users over a period of 30 days.
 - Monthly active users over a period of 12 months 
@@ -70,7 +70,7 @@ The **Users** dashboard gives you a summary of daily and monthly active users, a
 
 ### Authentications dashboard
 
-The **Authentications** dashboard gives you a summary of daily and monthly authentications in your tenant. For this dataset, you'll be able to view the following trends.
+The **Authentications** dashboard provides a summary of daily and monthly authentications in your tenant. For this dataset, you can view the following trends:
 
 - Daily authentications over a period of 30 days.
 - Daily authentications breakdown by operating system.
@@ -80,7 +80,7 @@ The **Authentications** dashboard gives you a summary of daily and monthly authe
 
 ### MFA Usage dashboard
 
-The **MFA Usage** dashboard gives you a summary of monthly MFA authentication performance for all your applications. For this dataset, you'll be able to view the following trends:
+The **MFA Usage** dashboard gives you a summary of monthly MFA authentication performance for all your applications. For this dataset, you can view the following trends:
 
 - Users registered for MFA
 - Types of MFA usage with a summary of success vs failure count over a period of 12 months
@@ -95,11 +95,11 @@ To better understand MFA performance, we have added new metrics to the MFA Usage
 - **Conditional Access (CA) policies requiring MFA**: This metric helps you identify which CA policies require MFA, allowing you to pinpoint any security gaps.
 - **Number of users registered for MFA**: This metric tracks how many users are registered for MFA and which methods they use. This information helps you evaluate the level of MFA adoption.
 
-We have added several new metrics to help you detect potential telecom fraud. Microsoft Entra External ID uses CAPTCHA for SMS MFA. to help to prevent automated attacks by distinguishing human users from bots. If a risky user is detected, we block the user from signing in or ask the user to complete a CAPTCHA before sending an SMS verification code. To help you visualize the effectiveness of this method, we have added the following metrics to the dashboard:
+We have added several new metrics to help you detect potential telecom fraud. Microsoft Entra External ID uses CAPTCHA for SMS MFA to help to prevent automated attacks by distinguishing human users from bots. If a risky user is detected, we block the user from signing in or ask the user to complete a CAPTCHA before sending an SMS verification code. To help you visualize the effectiveness of this method, we have added the following metrics to the dashboard:
 
 - **Allowed**: This metric shows the number of users who successfully received an SMS during sign-in or sign-up.
-- **Blocked**: This metric shows the number of users who were prevented from receiving an SMS. When telecom MFA is blocked, users are notified and advised to try an alternative authentication method.
-- **Challenged**: This metric shows cases where a CAPTCHA challenge is presented before the SMS is sent, typically when unusual behavior is detected. For this data point, you will also see the following metrics:
+- **Blocked**: This metric shows the number of users who were prevented from receiving an SMS. When telecom MFA is blocked, users are notified and advised trying an alternative authentication method.
+- **Challenged**: This metric shows when a CAPTCHA challenge appears before sending the SMS. This usually happens when unusual behavior is detected. For this data point, you'll also see the following metrics:
     - **Number of users unable to complete CAPTCHA**: This metric helps you to track how many users couldn’t pass the CAPTCHA challenge. This insight helps assess if the CAPTCHA is too difficult for legitimate users, allowing adjustments to balance security with accessibility.
     - **Number of users successfully completing CAPTCHA**: This metric helps you review how many users have successfully completed the CAPTCHA challenge. This data provides insight into how effectively CAPTCHA protects against automated attacks while ensuring legitimate users can authenticate.
 
@@ -107,7 +107,7 @@ We have added several new metrics to help you detect potential telecom fraud. Mi
 
 The Application user activity dashboards provide easy-to-digest graphs and charts but have limited customization options. These dashboards are available in the Microsoft Entra admin center and accessible via Microsoft Graph APIs, which are currently in beta.
 
-Microsoft Graph APIs enable you to build powerful, customized dashboards that you can tailor to your specific needs and preferences. This has some advantages:
+Microsoft Graph APIs enable you to build powerful, customized dashboards tailored to your specific needs and preferences, offering several advantages:
 
 - **Flexibility**: You can integrate with other data sources to present your data in a way that aligns more with your business objectives.
 - **Enhanced visualization**: You can have richer and more interactive visual representations of your data.
@@ -127,7 +127,7 @@ Once you have successfully created your access token, you can use the Microsoft 
 
 ### Create a custom Power BI report 
 
-To fetch the user insights data you can create a Power BI report using custom connectors. Here's how you can do it:
+To fetch the user insights data, you can create a Power BI report using custom connectors. Here's how you can do it:
 
 1. Create a new blank Power BI report.
 1. Create a [custom connector](/power-bi/connect-data/desktop-connect-to-data) and enter the URL for the Microsoft Graph API endpoint you want to query. For example: `https://graph.microsoft.com/beta/reports/userinsights/monthly/activeUsers` for monthly active users data. 
