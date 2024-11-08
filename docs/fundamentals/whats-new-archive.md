@@ -1531,21 +1531,6 @@ Cross-tenant synchronization allows you to set up a scalable and automated solut
 
 ---
 
-### Public Preview(Refresh) - Custom Extensions in Entitlement Management
-
-**Type:** New feature   
-**Service category:** Entitlement management                          
-**Product capability:** Identity Governance                
-
-Last year we announced the [public preview of custom extensions in Entitlement Management](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/run-custom-workflows-in-azure-ad-entitlement-management/ba-p/2466938) allowing you to automate complex processes when access is requested or about to expire. We have recently expanded the public preview to allow for the access package assignment request to be paused while your external process is running. In addition, the external process can now provide feedback to Entitlement Management to either surface additional information to end users in MyAccess or even stop the access request. This expands the scenarios of custom extension from notifications to additional stakeholders or the generation of tickets to advanced scenarios such as external governance, risk, and compliance checks. In the course of this update, we've also improved the audit logs, token security, and the payload sent to the Logic App. To learn more about the preview refresh, see:
-
--  [Trigger Logic Apps with custom extensions in entitlement management (Preview)](~/id-governance/entitlement-management-logic-apps-integration.md)
-- [accessPackageAssignmentRequest: resume](/graph/api/accesspackageassignmentrequest-resume)
-- [`accessPackageAssignmentWorkflowExtension` resource type](/graph/api/resources/accesspackageassignmentworkflowextension)
-- [`accessPackageAssignmentRequestWorkflowExtension` resource type](/graph/api/resources/accesspackageassignmentrequestworkflowextension)
-
----
-
 ### Public Preview - New My Groups Experience
 
 **Type:** Changed feature   
