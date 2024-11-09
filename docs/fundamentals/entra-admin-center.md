@@ -36,7 +36,7 @@ The following sections provide a high-level overview of the product interfaces a
 
 ### Identity
 
-**Identity** gives administrators and developers access to [Microsoft Entra ID](./whatis.md) and [Microsoft Entra External ID](~/external-identities/external-identities-overview.md)solutions, including tenants, users, groups, devices, applications, roles, and licensing.
+**Identity** gives administrators and developers access to [Microsoft Entra ID](./whatis.md) and [Microsoft Entra External ID](~/external-id/external-identities-overview.md)solutions, including tenants, users, groups, devices, applications, roles, and licensing.
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-identity.png" alt-text="Screenshot of the Microsoft Entra admin center Identity menu.":::
 
@@ -120,5 +120,5 @@ For more information about configuring and managing Global Secure Access solutio
 
 ## Next steps
 
-* [Find your tenant](./how-to-find-tenant.md)
+* [Find your tenant](./how-to-find-tenant.yml)
 * [Create a new tenant](./create-new-tenant.md)
