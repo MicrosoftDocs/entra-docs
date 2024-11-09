@@ -3,7 +3,7 @@ title: The Global Secure Access client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/06/2024
+ms.date: 11/08/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -22,7 +22,7 @@ This article describes how to download and install the Global Secure Access clie
 - A Mac device with an Intel, M1, M2, or M3 processor, running macOS version 13 or newer.
 - A device registered to Microsoft Entra tenant using Company Portal.
 - A Microsoft Entra tenant onboarded to Global Secure Access.
-- Deployment of the [Microsoft Enterprise single sign-on (SSO) plug-in for Apple devices](/identity-platform/apple-sso-plugin) is recommended for SSO experience based on the user who is signed in to the company portal.
+- Deployment of the [Microsoft Enterprise single sign-on (SSO) plug-in for Apple devices](../identity-platform/apple-sso-plugin.md) is recommended for SSO experience based on the user who is signed in to the company portal.   
 - An internet connection.
 
 ## Download the client
@@ -120,7 +120,7 @@ image.png
 
 ### Manual interactive Installation
 To manually install the Global Secure Access client:
-1. Run the GlobalSecureAccessClient.pkg setup file. The *Install** wizard launches. Follow the prompts.
+1. Run the GlobalSecureAccessClient.pkg setup file. The **Install** wizard launches. Follow the prompts.
 1. On the **Introduction** step, select **Continue**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-install-introduction.png" alt-text="Screenshot of the Install wizard on the Introduction step.":::
 1. On the **License** step, select **Continue** and then select **Agree** to accept the license agreement.
@@ -143,7 +143,7 @@ To manually install the Global Secure Access client:
    
 1. After the installation is complete, you might be prompted to sign in to Microsoft Entra.
 > [!NOTE]
-> If the [Microsoft Enterprise SSO plug-in for Apple devices](/identity-platform/apple-sso-plugin) is deployed, the default behavior is to use single sign-on with the credentials entered in the company portal.   
+> If the [Microsoft Enterprise SSO plug-in for Apple devices](../identity-platform/apple-sso-plugin.md) is deployed, the default behavior is to use single sign-on with the credentials entered in the company portal.   
 
 8. The **Global Secure Access - Connected** icon appears in the system tray, indicating a successful connection to Global Secure Access.   
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-system-tray-icon-connected.png" alt-text="Screenshot of the system tray with the Global Secure Access - Connected icon highlighted.":::
@@ -164,12 +164,13 @@ To manually uninstall the Global Secure Access client, use the following command
 If you're using an MDM, uninstall the client with the MDM.
 
 ## Client actions
-The following actions are available from the right-click menu on the system tray icon:
+To view the available client menu actions, right-click the Global Secure Access system tray icon.   
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-actions.png" alt-text="Screenshot showing the list of Global Secure Access client actions.":::   
 
 |Action   |Description   |
 |---------|---------|
 |**Disable**   |Disables the client until the user enables it again. When the user disables the client, they're prompted to enter a business justification and reenter their sign-in credentials. The business justification is logged.   |
-|**Enable**   |Enables the disabled client.   |
+|**Enable**   |Enables the client.   |
 |**Pause**   |Pauses the client for either 10 minutes, until the user resumes the client, or until the device is restarted. When the user pauses the client, they're prompted to enter a business justification and reenter their sign-in credentials. The business justification is logged.   |
 |**Resume**   |Resumes the paused client.   |
 |**Restart**   |Restarts the client.   |
@@ -200,7 +201,7 @@ The settings window contains two tabs:
 |Option  |Description  |
 |---------|---------|
 |**Telemetry full diagnostics**     |Sends full telemetry data to Microsoft for application improvement.         |
-|**Enable Verbose logging**     |Enables verbose logging and network capture to be collected when exporting the logs to a zip file.         |
+|**Enable Verbose Logging**     |Enables verbose logging and network capture to be collected when exporting the logs to a zip file.         |
 
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-settings-toggles.png" alt-text="Screenshot of the macOS Client download screen with the Get early access button highlighted.":::	
 
@@ -222,14 +223,14 @@ For a list of known limitations for the Global Secure Access client, see [Global
 Use the following techniques to mitigate limitations:
 
 ### Secure Domain Name System (DNS)
-If Secure DNS is enabled on the browser or in macOS and the DNS server supports Secure DNS, then the client doesn't tunnel traffic set to be acquired by FQDN (network traffic acquired by IP isn't affected and is tunneled according to the forwarding profile). To mitigate the Secure DNS issue, disable Secure DNS, set a DNS server that doesn't support Secure DNS, or create rules based on IP.
+If Secure DNS is enabled on the browser or in macOS and the DNS server supports Secure DNS, then the client doesn't tunnel traffic set to be acquired by FQDN. (Network traffic that's acquired by IP isn't affected and is tunneled according to the forwarding profile.) To mitigate the Secure DNS issue, disable Secure DNS, set a DNS server that doesn't support Secure DNS, or create rules based on IP.
 
 ### IPv6 not supported
 The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and therefore routed directly to the network.
 To make sure that all traffic is routed to Global Secure Access, disable IPv6.
 
 ### Connection fallback
-If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the hardening value of the matching rule in the forwarding profile (bypass or block).
+If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
 
 ### Geolocation of source IP address
 For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This scenario might affect services that rely on geolocation.
