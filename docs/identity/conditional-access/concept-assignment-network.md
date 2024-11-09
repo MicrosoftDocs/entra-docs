@@ -130,7 +130,7 @@ When selecting **Determine location by GPS coordinates**, users must have the Mi
 
 GPS location can be used with [passwordless phone sign-in](~/identity/authentication/concept-authentication-authenticator-app.md) only if MFA push notifications are also enabled. Users can use Microsoft Authenticator to sign in, but they also need to approve subsequent MFA push notifications to share their GPS location.
 
-GPS location doesn't work with [passwordless authentication methods](~/identity/authentication/concept-authentication-passwordless.md).
+GPS location doesn't work when only passwordless authentication methods are set [passwordless authentication methods](~/identity/authentication/concept-authentication-passwordless.md).
 
 Multiple Conditional Access policies might prompt users for their GPS location before all are applied. Because of the way Conditional Access policies are applied, a user might be denied access if they pass the location check but fail another policy. For more information about policy enforcement, see the article [Building a Conditional Access policy](concept-conditional-access-policies.md).
 
