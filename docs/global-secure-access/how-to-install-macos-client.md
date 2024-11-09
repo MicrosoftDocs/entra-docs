@@ -48,7 +48,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 1. Create a profile for the macOS platform based on a template of type **Extensions**. Select **Create**.
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-create-profile.png" alt-text="Screenshot of the Create a profile form with the Platform, Profile type, and Template selections highlighted.":::
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-create-profile.png" alt-text="Screenshot of the Create a profile form with the macOS Platform, Templates Profile type, and the Extensions template highlighted.":::
 1. On the **Basics** tab, enter a name for the new profile and select **Next**.
 1. On the **Configuration settings** tab, enter the **Bundle identifier** and the **Team identifier** of the two extensions according to the following table. Select **Next**.   
  
@@ -64,7 +64,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 1. Create a profile for the macOS platform based on a template of type **Custom** and select **Create**.
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-create-profile-custom.png" alt-text="Screenshot of the Create a profile form with the Platform, Profile type, and Template selections highlighted.":::
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-create-profile-custom.png" alt-text="Screenshot of the Create a profile form with the macOS Platform, Templates Profile type, and Custom template highlighted.":::
 1. On the **Basics** tab, enter a **Name** for the profile.
 image.png
 1. On the **Configuration settings** tab, enter a **Custom configuration profile name**.
@@ -203,7 +203,7 @@ The settings window contains two tabs:
 |**Telemetry full diagnostics**     |Sends full telemetry data to Microsoft for application improvement.         |
 |**Enable Verbose Logging**     |Enables verbose logging and network capture to be collected when exporting the logs to a zip file.         |
 
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-settings-toggles.png" alt-text="Screenshot of the macOS Client download screen with the Get early access button highlighted.":::	
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-settings-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Settings tab selected.":::	
 
 ### Troubleshooting
 
@@ -214,7 +214,7 @@ The settings window contains two tabs:
 |**Export Logs**     |Exports logs and configuration files related to the client to a zip file.         |
 |**Advanced Diagnostics Tool**     |An advanced tool to monitor and troubleshoot the client's behavior.         |
 
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-troubleshooting-toggles.png" alt-text="Screenshot of the macOS Client download screen with the Get early access button highlighted.":::	
+:::image type="content" source="media/how-to-install-macos-client/macOS-client-troubleshooting-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Troubleshooting tab selected.":::	
 
 ## Known limitations
 For a list of known limitations for the Global Secure Access client, see [Global Secure Access known limitations](reference-current-known-limitations.md).
