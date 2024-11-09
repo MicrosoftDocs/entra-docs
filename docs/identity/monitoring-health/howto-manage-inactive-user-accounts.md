@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/27/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -25,7 +25,7 @@ This article explains a method to handle obsolete user accounts in Microsoft Ent
 
 To access the `lastSignInDateTime` property using Microsoft Graph:
 
-- You need a Microsoft Entra ID P1 or P2 edition license.
+- You need a Microsoft Entra ID P1 or P2 license.
 
 - You need to grant the app the following Microsoft Graph permissions:
   - AuditLog.Read.All

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
-ms.date: 10/30/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -29,7 +29,7 @@ In addition, the sign-in logs can also help you troubleshoot sign-in failures fo
 You need:
 
 - A Microsoft Entra tenant with a P1 or P2 license.
-- A user with the **Reports Reader**, **Security Reader**, or **Security Administrator** role for the tenant.
+- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
 - In addition, any user can access their own sign-ins from https://mysignins.microsoft.com.
 
 ## Gather sign-in details

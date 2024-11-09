@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 11/04/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: arvinh
 
@@ -23,16 +23,6 @@ Two other activity logs are also available to help monitor the health of your te
 - **[Audit](concept-audit-logs.md)** – Information about changes applied to your tenant such as users and group management or updates applied to your tenant’s resources.
 
 This article gives you an overview of the user provisioning logs.
-
-## License and role requirements
-
-To use the provisioning logs, you need a Microsoft Entra ID P1 or P2 license.
-
-The following roles are required to view the provisioning logs:
-- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader)
-- [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader)
-- [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator)
-- [Cloud App Administrator](../../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
 
 ## What can you do with the provisioning logs?
 

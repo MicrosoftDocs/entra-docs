@@ -1,5 +1,4 @@
 ---
-
 title: Access activity logs in Microsoft Entra ID
 description: How to choose the right method for accessing and integrating the activity logs in Microsoft Entra ID.
 author: shlipsey3
@@ -7,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/02/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -32,9 +31,13 @@ Each of these methods provides you with capabilities that might align with certa
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
+- Audit logs are available for features that you have licensed.
+- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
+- [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator) is the least privileged role required to configure diagnostic settings.
+- To consent to the required permissions to view logs with Microsoft Graph, you need the [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+- For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
 
-Audit logs are available for features that you have licensed. To access the sign-in logs using the Microsoft Graph API, your tenant must have a Microsoft Entra ID P1 or P2 license associated with it.
+[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
 
 ## View logs through the Microsoft Entra admin center
 <a name='view-logs-through-the-portal'></a>
