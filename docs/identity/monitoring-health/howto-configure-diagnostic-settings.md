@@ -63,7 +63,7 @@ You can select one, some, or all of the available logs. Some logs might be part 
 
 You can send logs to a Log Analytics workspace, stream logs to an event hub, or archive logs to a storage account. Through Azure Native ISV services, you can send logs to services through the Azure Marketplace. For more information, see [Azure Native ISV services overview](/azure/partner-solutions/overview).
 
-To send your logs to one of the destinations, you must have already configured that destination. 
+You must have a destination set up prior to configuring diagnostic settings.
 
 - [Configure a Log Analytics workspace](tutorial-configure-log-analytics-workspace.md)
 - [Create an event hub](/azure/event-hubs/event-hubs-create)
@@ -86,7 +86,7 @@ The basic steps for configuring diagnostics settings are as follows:
 1. To create a new diagnostic setting, select **Add diagnostic setting**.
 1. Provide a name.
 1. Select the logs you want to include.
-1. Select the destinations you want to send the logs to.
+1. Select the destination.
 1. Select the subscription and the destination from the dropdown menus that appear.
 1. Select the **Save** button.
 
