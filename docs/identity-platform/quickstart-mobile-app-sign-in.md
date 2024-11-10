@@ -427,7 +427,7 @@ To enable authentication and access to Microsoft Graph resources, configure the 
 
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
     - `Enter_the_Redirect_URI_Here` and replace it with the value of *kRedirectUri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
-    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant admin concent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
+    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant admin consent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 
