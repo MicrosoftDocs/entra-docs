@@ -7,7 +7,7 @@ metadata:
   ms.author: sarahlipsey
   manager: amycolannino
   ms.reviewer: egreenberg
-  ms.date: 01/26/2024
+  ms.date: 11/07/2024
   ms.service: entra-id
   ms.subservice: monitoring-health
   ms.topic: how-to
@@ -26,7 +26,7 @@ introduction: |
   Use the integration of Microsoft Entra activity logs and Azure Monitor to perform the following tasks:
 
   - Compare your Microsoft Entra sign-in logs against security logs published by Microsoft Defender for Cloud.
-  - Troubleshoot performance bottlenecks on your application’s sign-in page by correlating application performance data from Azure Application Insights.
+  - Troubleshoot performance bottlenecks on your application's sign-in page by correlating application performance data from Azure Application Insights.
   - Analyze the Identity Protection risky users and risk detections logs to detect threats in your environment.
   - Identify sign-ins from applications still using the Active Directory Authentication Library (ADAL) for authentication. [Learn about the ADAL end-of-support plan.](../../identity-platform/msal-migration.md)
 
@@ -54,11 +54,11 @@ procedureSection:
     summary: |
       A Log Analytics workspace allows you to collect data based on a variety or requirements, such as geographic location of the data, subscription boundaries, or access to resources. Learn how to [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
 
-      Looking for how to set up a Log Analytics workspace for Azure resources outside of Microsoft Entra ID? Check out the [Collect and view resource logs for Azure Monitor](/azure/azure-monitor/essentials/diagnostic-settings) article.
+      To learn how to set up a Log Analytics workspace for Azure resources outside of Microsoft Entra ID, see [Collect and view resource logs for Azure Monitor](/azure/azure-monitor/essentials/diagnostic-settings).
 
       ## Send logs to Azure Monitor
 
-      Use the following steps to send logs from Microsoft Entra ID to Azure Monitor logs. Looking for how to set up Log Analytics workspace for Azure resources outside of Microsoft Entra ID? Check out the [Collect and view resource logs for Azure Monitor](/azure/azure-monitor/essentials/diagnostic-settings) article.
+      Use the following steps to send logs from Microsoft Entra ID to Azure Monitor logs.
 
       > [!TIP]
       > Steps in this article might vary slightly based on the portal you start from.
@@ -82,7 +82,7 @@ procedureSection:
 
         ![Screenshot of the diagnostics settings with some destination details shown.](./media/howto-integrate-activity-logs-with-azure-monitor-logs/diagnostic-settings-log-analytics-workspace.png)
 
-        If you don't see logs appearing in the selected destination after 15 minutes, sign out and back into Azure to refresh the logs.
+        If you don't see logs appearing in the selected destination after 15 minutes, sign out and back into the Microsoft Entra admin center to refresh the logs.
 
 relatedContent:
   - text: Analyze Microsoft Entra activity logs with Azure Monitor logs
