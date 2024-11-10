@@ -353,10 +353,10 @@
       href: index-mobile.yml
     - name: Quickstart
       items: 
-        - name: Android
-          href: quickstart-mobile-app-android-sign-in.md
-        - name: iOS and macOS
-          href: quickstart-mobile-app-ios-sign-in.md
+        - name: Sign in users
+          href: quickstart-mobile-app-sign-in.md?pivots=workforce
+        - name: Call a web API
+          href: quickstart-mobile-app-call-api.md
     - name: Tutorials
       items:
         - name: Android
