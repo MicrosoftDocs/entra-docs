@@ -27,15 +27,14 @@ MSAL libraries offer lower-level APIs that are closer to the OAuth2 and OIDC pro
 - Use Azure SDK if you are developing a new application and plan to call other Azure resources. This SDK provides a better developer experience by allowing the app to run on private developer machines where managed identity doesn't exist.
 - Use MSAL if you need to call other downstream web APIs like Microsoft Graph or your own web API.
 
-In cases where an Azure service has built a client library on top of these libraries, consider using the service-specific client library. For example, for Azure SQL, use the [`Microsoft.Data.SqlClient`](/sql/connect/ado-net/sql/azure-active-directory-authentication?view=sql-server-ver16#using-managed-identity-authentication) package.
+In cases where an Azure service has built a client library on top of these libraries, consider using the service-specific client library. For example, for Azure SQL, use the [`Microsoft.Data.SqlClient`](/sql/connect/ado-net/sql/azure-active-directory-authentication#using-managed-identity-authentication) package.
 
 ## Language-Specific API References
 
 | Language | Azure Identity | MSAL |
 |----------|----------------|------|
-| .NET | [Azure Identity client library for .NET](/dotnet/api/overview/azure/identity-readme?view=azure-dotnet#managed-identity-support) | [MSAL .NET](/entra/msal/dotnet/advanced/managed-identity) |
-| Java | [Azure Identity client library for Java](/java/api/overview/azure/identity-readme?view=azure-java-stable#managed-identity-support) | [MSAL Java](/entra/msal/java/advanced/managed-identity) |
-| JavaScript | [Azure Identity client library for JavaScript](/javascript/api/overview/azure/identity-readme?view=azure-node-latest#managed-identity-support) | [MSAL JavaScript](https://azuresdkdocs.blob.core.windows.net/$web/javascript/msal/1.0.0/classes/publicclientapplication.html) |
-| Python | [Azure Identity client library for Python](/python/api/overview/azure/identity-readme?view=azure-python#managed-identity-support) | [MSAL Python](/entra/msal/python/advanced/managed-identity) |
+| .NET | [Azure Identity client library for .NET](/dotnet/api/overview/azure/identity-readme#managed-identity-support) | [MSAL .NET](/entra/msal/dotnet/advanced/managed-identity) |
+| Java | [Azure Identity client library for Java](/java/api/overview/azure/identity-readme#managed-identity-support) | [MSAL Java](/entra/msal/java/advanced/managed-identity) |
+| JavaScript | [Azure Identity client library for JavaScript](/javascript/api/overview/azure/identity-readme#managed-identity-support) | [MSAL JavaScript](https://azuresdkdocs.blob.core.windows.net/$web/javascript/msal/1.0.0/classes/publicclientapplication.html) |
+| Python | [Azure Identity client library for Python](/python/api/overview/azure/identity-readme#managed-identity-support) | [MSAL Python](/entra/msal/python/advanced/managed-identity) |
 | Go | Work in progress | Work in progress |
-
