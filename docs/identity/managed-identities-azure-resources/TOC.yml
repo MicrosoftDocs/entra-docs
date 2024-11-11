@@ -68,16 +68,8 @@
       href: /azure/operational-excellence/relocation-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
 - name: Reference
   items:
-  - name: .NET
-    href: /dotnet/api/overview/azure/identity-readme
-  - name: Java
-    href: /java/api/overview/azure/identity-readme
-  - name: JavaScript
-    href: /javascript/api/overview/azure/identity-readme
-  - name: Python
-    href: /python/api/overview/azure/identity-readme
-  - name: Go
-    href: https://go.dev/doc/
+  - name: Client libraries
+    href: reference-managed-identity-libraries.md
 - name: Resources
   items:
   - name: Frequently asked questions
