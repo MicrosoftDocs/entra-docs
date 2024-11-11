@@ -4,7 +4,7 @@ description: Register an Angular Single-page Application in a Microsoft Entra te
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
-ms.date: 10/22/2024
+ms.date: 11/11/2024
 ms.reviewer: ejahjaloo
 ms.service: identity-platform
 

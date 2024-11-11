@@ -4,8 +4,8 @@ description: Call an API from an Angular single-page app in a Microsoft Entra te
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
-ms.date: 10/22/2024
-ms.reviewer: emilylauber
+ms.date: 11/11/2024
+ms.reviewer: ejahjaloo
 ms.service: identity-platform
 
 ms.topic: tutorial

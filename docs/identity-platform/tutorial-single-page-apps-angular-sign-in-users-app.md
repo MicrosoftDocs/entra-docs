@@ -4,8 +4,8 @@ description: Sign in user in an Angular Single-page Application in a Microsoft E
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
-ms.date: 10/22/2024
-ms.reviewer: emilylauber
+ms.date: 11/11/2024
+ms.reviewer: ejahjaloo
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -148,9 +148,8 @@ To enable sign-in and sign-out functionality in your Angular application, follow
         <p >View your data from Microsoft Graph by clicking the "View Profile" link above.</p>
     </div>
     ```
-
-    
-    The code welcomes users to the MSAL for JavaScript and prompts them to view their Microsoft Graph data by clicking the **View Profile** link.
+  
+    The code welcomes users to the app and prompts them to view their Microsoft Graph data by clicking the **View Profile** link.
 
 1. Open the `src/main.ts` file and replace the contents with the following code.
 

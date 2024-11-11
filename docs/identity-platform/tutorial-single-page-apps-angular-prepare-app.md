@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
 ms.date: 11/11/2024
-ms.reviewer: emilylauber
+ms.reviewer: ejahjaloo
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -74,8 +74,6 @@ To build the Angular project from scratch, follow these steps:
 
     The commands generate the Home and Profile components in the Angular project.
 
-1. Rename `app.routes.ts` to `app-routing.module.ts` and update all references of `app.routes.ts` throughout the application.
-1. Rename `app.config.ts` to `app.module.ts` and update all references to `app.config.ts` throughout the application.
 1. Remove unnecessary files and code from the project:
 
     ```console
@@ -88,6 +86,9 @@ To build the Angular project from scratch, follow these steps:
     ```
 
     The commands remove unnecessary files and code from the project.
+
+1. Rename `app.routes.ts` to `app-routing.module.ts` using Visual Studio Code and update all references of `app.routes.ts` throughout the application.
+1. Rename `app.config.ts` to `app.module.ts` using Visual Studio Code and update all references to `app.config.ts` throughout the application.
 
 After you complete these steps, the project structure should look like:
 
