@@ -314,7 +314,7 @@ To prevent it from being used for anything other than a hint, the token is issue
 
 #### Optional claims from Microsoft Entra ID
 
-If a provider needs optional claims from Microsoft Entra ID, then you can configure the following optional claims for id_token: `given_name`, `email` (guest accounts only),`family_name`, `preferred_username`, `upn`. For more information, see [Optional claims](/azure/active-directory/develop/optional-claims).
+If a provider needs optional claims from Microsoft Entra ID, then you can configure the following optional claims for id_token: `given_name`, `family_name`, `preferred_username`, `upn`. For more information, see [Optional claims](/azure/active-directory/develop/optional-claims).
 
 #### Recommended use of claims
 Microsoft recommends associating accounts on the provider side with the account in Azure AD by using the oid and tid claims. These two claims are guaranteed to be unique for the account in the tenant. 
