@@ -97,8 +97,6 @@ To set up Workday as a managed device, perform the following steps:
 
 For **Grant** access, perform the following steps:
 
-![Screenshot of Managed Devices Only and Grant.](./media/workday-tutorial/managed-devices-only-2.png)
-
 1. Select **Home** > **Microsoft Intune** > **Conditional Access-Policies**. Then select **Managed Devices Only**. 
 
 1. In the **Managed Devices Only**, under **Name**, select **Managed Devices Only**. Under **Access controls**, select **Grant**.
