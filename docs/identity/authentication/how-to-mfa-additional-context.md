@@ -4,7 +4,7 @@ description: Learn how to use additional context in MFA notifications
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/11/2023
+ms.date: 10/28/2024
 ms.author: justinha
 author: mjsantani
 # Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
@@ -44,64 +44,11 @@ You can enable and disable application name and geographic location separately. 
 
 Identify your single target group for each of the features. Then use the following API endpoint to change the displayAppInformationRequiredState or displayLocationInformationRequiredState properties under featureSettings to **enabled** and include or exclude the groups you want:
 
-```http
-https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/MicrosoftAuthenticator
+```msgraph-interactive
+GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/MicrosoftAuthenticator
 ```
 
-#### MicrosoftAuthenticatorAuthenticationMethodConfiguration properties
-
-**PROPERTIES**
-
-| Property | Type | Description |
-|---------|------|-------------|
-| id | String | The Authentication method policy identifier. |
-| state | authenticationMethodState | Possible values are: **enabled**<br>**disabled** |
- 
-**RELATIONSHIPS**
-
-| Relationship | Type | Description |
-|--------------|------|-------------|
-| includeTargets | [microsoftAuthenticatorAuthenticationMethodTarget](/graph/api/resources/microsoftauthenticatorauthenticationmethod) collection | A collection of users or groups who are enabled to use the authentication method. |
-| featureSettings | [microsoftAuthenticatorFeatureSettings](/graph/api/resources/microsoftauthenticatorauthenticationmethod) collection | A collection of Microsoft Authenticator features. |
- 
-#### MicrosoftAuthenticator includeTarget properties
- 
-**PROPERTIES**
-
-| Property | Type | Description |
-|----------|------|-------------|
-| authenticationMode | String | Possible values are:<br>**any**: Both passwordless phone sign-in and traditional second factor notifications are allowed.<br>**deviceBasedPush**: Only passwordless phone sign-in notifications are allowed.<br>**push**: Only traditional second factor push notifications are allowed. |
-| id | String | Object ID of a Microsoft Entra user or group. |
-| targetType | authenticationMethodTargetType | Possible values are: **user**, **group**.|
-
-#### MicrosoftAuthenticator featureSettings properties
- 
-**PROPERTIES**
-
-| Property | Type | Description |
-|----------|------|-------------|
-| numberMatchingRequiredState | authenticationMethodFeatureConfiguration | Require number matching for MFA notifications. Value is ignored for phone sign-in notifications. |
-| displayAppInformationRequiredState | authenticationMethodFeatureConfiguration | Determines whether the user is shown application name in Microsoft Authenticator notification. |
-| displayLocationInformationRequiredState | authenticationMethodFeatureConfiguration | Determines whether the user is shown geographic location context in Microsoft Authenticator notification. |
-
-#### Authentication method feature configuration properties
-
-**PROPERTIES**
-
-| Property | Type | Description |
-|----------|------|-------------|
-| excludeTarget | featureTarget | A single entity that is excluded from this feature. <br>You can only exclude one group for each feature.|
-| includeTarget | featureTarget | A single entity that is included in this feature. <br>You can only include one group for each feature.|
-| State | advancedConfigState | Possible values are:<br>**enabled** explicitly enables the feature for the selected group.<br>**disabled** explicitly disables the feature for the selected group.<br>**default** allows Microsoft Entra ID to manage whether the feature is enabled or not for the selected group. |
-
-#### Feature target properties
-
-**PROPERTIES**
-
-| Property | Type | Description |
-|----------|------|-------------|
-| id | String | ID of the entity targeted. |
-| targetType | featureTargetType | The kind of entity targeted, such as group, role, or administrative unit. The possible values are: ‘group’, 'administrativeUnit’, ‘role’, unknownFutureValue’. |
+For more information, see [microsoftAuthenticatorAuthenticationMethodConfiguration resource type](/graph/api/resources/microsoftAuthenticatorAuthenticationMethodConfiguration).
 
 #### Example of how to enable additional context for all users
 
@@ -213,7 +160,7 @@ Only users who are enabled for Microsoft Authenticator under Microsoft Authentic
  
 To verify, run GET again and verify the ObjectID:
 
-```http
+```msgraph-interactive
 GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/MicrosoftAuthenticator
 ```
 

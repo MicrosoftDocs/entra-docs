@@ -370,8 +370,6 @@
         href: blue-access-for-members-tutorial.md
       - name: BlueConic
         href: blueconic-tutorial.md
-      - name: BlueJeans
-        href: bluejeans-tutorial.md
       - name: Blue Ocean Brain
         href: blue-ocean-brain-tutorial.md  
       - name: BeyondTrust Remote Support
@@ -854,6 +852,8 @@
         href: drawboard-projects-tutorial.md
       - name: Drift
         href: drift-tutorial.md
+      - name: DriveLock
+        href: drivelock-tutorial.md
       - name: Dropbox Business
         href: dropboxforbusiness-tutorial.md
       - name: DRTrack
@@ -1719,8 +1719,8 @@
         href: logicmonitor-tutorial.md
       - name: LoginRadius
         href: lr-tutorial.md
-      - name: LogMeIn
-        href: logmein-tutorial.md
+      - name: GoTo
+        href: goto-tutorial.md
       - name: Logz.io - Microsoft Entra Integration
         href: logzio-cloud-observability-for-engineers-tutorial.md
       - name: Looker Analytics Platform
@@ -3378,8 +3378,6 @@
         href: blinq-provisioning-tutorial.md
       - name: BlogIn
         href: blogin-provisioning-tutorial.md
-      - name: BlueJeans
-        href: bluejeans-provisioning-tutorial.md
       - name: Bonusly
         href: bonusly-provisioning-tutorial.md
       - name: Box
@@ -3648,8 +3646,8 @@
         href: logicgate-provisioning-tutorial.md
       - name: Looop
         href: looop-provisioning-tutorial.md
-      - name: LogMeIn
-        href: logmein-provisioning-tutorial.md
+      - name: GoTo
+        href: goto-provisioning-tutorial.md
       - name: M-Files
         href: m-files-provisioning-tutorial.md
       - name: Maptician
@@ -3836,6 +3834,8 @@
         href: simple-in-out-provisioning-tutorial.md
       - name: Slack
         href: slack-provisioning-tutorial.md
+      - name: Smartcat
+        href: smartcat-tutorial.md
       - name: Smartfile
         href: smartfile-provisioning-tutorial.md
       - name: Smartsheet

@@ -120,7 +120,7 @@ Sometimes called a *public key*, a certificate is the recommended credential typ
 
 ### [Add a client secret](#tab/client-secret)
 
-Sometimes called an *application password*, a client secret is a string value your app can use in place of a certificate to identity itself.
+Sometimes called an *application password*, a client secret is a string value your app can use in place of a certificate to identify itself.
 
 Client secrets are considered less secure than certificate credentials. Application developers sometimes use client secrets during local app development because of their ease of use. However, you should use certificate credentials for any of your applications that are running in production.
 

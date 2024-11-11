@@ -101,12 +101,12 @@ For this tutorial, configure the Conditional Access policy to require multifacto
 
 1. Select the current value under **Cloud apps or actions**, and then under **Select what this policy applies to**, verify that **Cloud apps** is selected.
 
-1. Under **Include**, choose **Select apps**.
+1. Under **Include**, choose **Select resources**.
  
    Since no apps are yet selected, the list of apps (shown in the next step) opens automatically.
 
    > [!TIP]
-   > You can choose to apply the Conditional Access policy to **All cloud apps** or **Select apps**. To provide flexibility, you can also exclude certain apps from the policy.
+   > You can choose to apply the Conditional Access policy to **All resources (formerly 'All cloud apps')** or **Select resources**. To provide flexibility, you can also exclude certain apps from the policy.
 
 1. Browse the list of available sign-in events that can be used. For this tutorial, select **Windows Azure Service Management API** so that the policy applies to sign-in events. Then choose **Select**.
 

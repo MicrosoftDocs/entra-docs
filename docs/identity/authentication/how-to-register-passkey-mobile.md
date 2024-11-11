@@ -27,7 +27,7 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
 ### Register a passkey with iOS 
 
-1. Using your iOS device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
+1. Using your iOS device, open a web browser and sign-in to [Security info](https://mysignins.microsoft.com/security-info).
    
 1. Tap **+ Add sign-in method**.
 
@@ -75,7 +75,7 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-reconnect.png" alt-text="Screenshot asking to confirm your pin for the security key connected to an iOS device.":::
     
-1. Upon completion, you're redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. Name the passkey something memorable to you and select **Done**. 
+1. Upon completion, you're redirected back to [Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. Name the passkey something memorable to you and select **Done**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-ios-finish.png" alt-text="Screenshot showing final passkey registration step on iOS.":::
 
@@ -83,7 +83,7 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
 ### Register a security key with Android 
 
-1. Using your Android device, open a web browser and sign-in to [My Security info](https://aka.ms/mysecurityinfo).
+1. Using your Android device, open a web browser and sign-in to [Security info](https://mysignins.microsoft.com/security-info).
    
 1. Tap **+ Add sign-in method**.
 
@@ -136,7 +136,7 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
 1. You may be asked to confirm your PIN or biometric again before proceeding. 
 
-1. Upon completion, you're redirected back to [My Security info](https://aka.ms/mysecurityinfo) and asked to rename your passkey. Name the passkey something memorable to you and select **Done**. 
+1. Upon completion, you're redirected back to [Security info](https://mysignins.microsoft.com/security-info) and asked to rename your passkey. Name the passkey something memorable to you and select **Done**. 
 
    :::image type="content" border="true" source="media/how-to-register-passkey-mobile/passkey-android-finish.png" alt-text="Screenshot showing final passkey registration step on Android.":::
 

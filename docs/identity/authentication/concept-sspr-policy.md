@@ -53,13 +53,13 @@ The following Microsoft Entra password policy options are defined. Unless noted,
 | Password change history | The last password *can't* be used again when the user changes a password. |
 | Password reset history | The last password *can* be used again when the user resets a forgotten password. |
 
-If you enable *EnforceCloudPasswordPolicyForPasswordSyncedUsers*, the Microsoft Entra password policy applies to user accounts synchronized from on-premises using Microsoft Entra Connect. In addition, if a user changes a password on-premises to include a unicode character, the password change may succeed on-premises but not in Microsoft Entra ID. If password hash synchronization is enabled with Microsoft Entra Connect, the user can still receive an access token for cloud resources. But if the tenant enables [User risk-based password change](~/identity/conditional-access/howto-conditional-access-policy-risk-user.md), the password change is reported as high risk. 
+If you enable *EnforceCloudPasswordPolicyForPasswordSyncedUsers*, the Microsoft Entra password policy applies to user accounts synchronized from on-premises using Microsoft Entra Connect. In addition, if a user changes a password on-premises to include a unicode character, the password change may succeed on-premises but not in Microsoft Entra ID. If password hash synchronization is enabled with Microsoft Entra Connect, the user can still receive an access token for cloud resources. But if the tenant enables [User risk-based password change](~/identity/conditional-access/policy-risk-based-user.md), the password change is reported as high risk. 
 
 The user is prompted to change their password again. But if the change still includes a unicode character, they could get locked out if [smart lockout](howto-password-smart-lockout.md) is also enabled. 
 
 ## Risk based password reset policy limitations
 
-If you enable [EnforceCloudPasswordPolicyForPasswordSyncedUsers](~/identity/conditional-access/howto-conditional-access-policy-risk-user.md), a cloud password change is required once a high risk is identified. The user is prompted to change their password when they sign in to Microsoft Entra ID. The new password must comply with both the cloud and on-premises password policies. 
+If you enable [EnforceCloudPasswordPolicyForPasswordSyncedUsers](~/identity/conditional-access/policy-risk-based-user.md), a cloud password change is required once a high risk is identified. The user is prompted to change their password when they sign in to Microsoft Entra ID. The new password must comply with both the cloud and on-premises password policies. 
  
 If a password change meets on-premises requirements but fails to meet cloud requirements, the password change succeeds if password hash synchronization is enabled. For example, if the new password includes a Unicode character, the password change can be updated on-premises but not in the cloud. 
 

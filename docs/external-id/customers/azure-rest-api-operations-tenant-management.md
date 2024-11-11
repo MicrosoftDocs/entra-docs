@@ -7,7 +7,7 @@ manager: celested
 ms.author: godonnell
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 05/13/2024
 ms.custom: developer

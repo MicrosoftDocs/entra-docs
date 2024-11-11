@@ -128,7 +128,9 @@ When selecting **Determine location by GPS coordinates**, users must have the Mi
 > [!NOTE]
 > A Conditional Access policy with GPS-based named locations in report-only mode prompts users to share their GPS location, even though they aren't blocked from signing in.
 
-GPS location doesn't work with [passwordless authentication methods](~/identity/authentication/concept-authentication-passwordless.md).
+GPS location can be used with [passwordless phone sign-in](~/identity/authentication/concept-authentication-authenticator-app.md) only if MFA push notifications are also enabled. Users can use Microsoft Authenticator to sign in, but they also need to approve subsequent MFA push notifications to share their GPS location.
+
+GPS location doesn't work when only [passwordless authentication methods](~/identity/authentication/concept-authentication-passwordless.md) are set.
 
 Multiple Conditional Access policies might prompt users for their GPS location before all are applied. Because of the way Conditional Access policies are applied, a user might be denied access if they pass the location check but fail another policy. For more information about policy enforcement, see the article [Building a Conditional Access policy](concept-conditional-access-policies.md).
 
@@ -149,7 +151,7 @@ Graph API support for named locations is available, for more information, see th
 
 When you use a cloud hosted proxy or VPN solution, the IP address Microsoft Entra ID uses while evaluating a policy is the IP address of the proxy. The X-Forwarded-For (XFF) header that contains the user’s public IP address isn't used because there's no validation that it comes from a trusted source, so would present a method for faking an IP address.
 
-When a cloud proxy is in place, a policy that requires a [Microsoft Entra hybrid joined or compliant device](howto-conditional-access-policy-compliant-device.md#create-a-conditional-access-policy) can be easier to manage. Keeping a list of IP addresses used by your cloud hosted proxy or VPN solution up to date can be nearly impossible.
+When a cloud proxy is in place, a policy that requires a [Microsoft Entra hybrid joined or compliant device](policy-alt-all-users-compliant-hybrid-or-mfa.md#create-a-conditional-access-policy) can be easier to manage. Keeping a list of IP addresses used by your cloud hosted proxy or VPN solution up to date can be nearly impossible.
 
 We recommend organizations utilize Global Secure Access to enable [source IP restoration](/entra/global-secure-access/how-to-source-ip-restoration) to avoid this change in address and simplify management.
 
@@ -176,7 +178,7 @@ A policy that uses the location condition to block access is considered restrict
 
 ## Related content
 
-- [Configure an example Conditional Access policy using location](howto-conditional-access-policy-location.yml).
+- [Configure an example Conditional Access policy using location](policy-block-by-location.md).
 
 <!--- 
 ## Define locations

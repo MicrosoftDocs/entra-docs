@@ -4,7 +4,7 @@ description: Learn how to implement role-based access control in your applicatio
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.date: 01/06/2023
+ms.date: 10/29/2024
 ms.reviewer: 
 ms.service: identity-platform
 
@@ -82,9 +82,9 @@ Implementing RBAC in an ASP.NET Core web API mainly involves utilizing the *Auth
 
 ## Implement RBAC in other platforms
 
-### Angular SPA using MsalGuard
+### Angular SPA
 
-Implementing RBAC in an Angular SPA involves the use of the [Microsoft Authentication Library for Angular](https://www.npmjs.com/package/@azure/msal-angular) to authorize access to the Angular routes contained within the application. An example is shown in the [Enable your Angular single-page application to sign-in users and call APIs with the Microsoft identity platform](https://github.com/Azure-Samples/ms-identity-javascript-angular-tutorial#chapter-5-control-access-to-your-protected-api-using-app-roles-and-security-groups) sample.
+Implementing RBAC in an Angular SPA involves the use of the [Microsoft Authentication Library for Angular](https://www.npmjs.com/package/@azure/msal-angular) to authorize access to the Angular routes contained within the application. An example is shown in the [MSAL Angular v3 Samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-angular-v3-samples).
 
 > [!NOTE]
 > Client-side RBAC implementations should be paired with server-side RBAC to prevent unauthorized applications from accessing sensitive resources.

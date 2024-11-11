@@ -46,7 +46,7 @@ This condition allows administrators to use Conditional Access policies to take 
 
 This functionality involves incorporating parameters that specifically address potential risks arising from within an organization. By configuring Conditional Access to consider Insider Risk, administrators can tailor access permissions based on contextual factors such as user behavior, historical patterns, and anomaly detection.
 
-For more information, see the article [Configure and enable an insider risk based policy](how-to-policy-insider-risk.md).
+For more information, see the article [Configure and enable an insider risk based policy](policy-risk-based-insider-block.md).
 
 ## Device platforms
 
@@ -215,7 +215,7 @@ If the access control assigned to the policy uses **Require approved client app*
 For more information, see the following articles:
 
 - [Block legacy authentication with Conditional Access](block-legacy-authentication.md)
-- [Requiring approved client apps with Conditional Access](./howto-policy-approved-app-or-app-protection.yml)
+- [Requiring approved client apps with Conditional Access](./policy-all-users-device-compliance.md)
 
 ### Other clients
 

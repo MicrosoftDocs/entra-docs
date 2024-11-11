@@ -32,8 +32,8 @@ Administrators can choose to enforce one or more controls when granting access. 
 - [Require authentication strength](#require-authentication-strength)
 - [Require device to be marked as compliant (Microsoft Intune)](/mem/intune/protect/device-compliance-get-started)
 - [Require Microsoft Entra hybrid joined device](~/identity/devices/concept-hybrid-join.md)
-- [Require approved client app](./howto-policy-approved-app-or-app-protection.yml)
-- [Require app protection policy](./howto-policy-approved-app-or-app-protection.yml)
+- [Require approved client app](./policy-all-users-device-compliance.md)
+- [Require app protection policy](./policy-all-users-device-compliance.md)
 - [Require password change](#require-password-change)
 
 When administrators choose to combine these options, they can use the following methods:
@@ -134,13 +134,13 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Conditional Access policies that require Microsoft Power BI as an approved client app don't support using Microsoft Entra application proxy to connect the Power BI mobile app to the on-premises Power BI Report Server.
 - WebViews hosted outside of Microsoft Edge don't satisfy the approved client app policy. For example: If an app is trying to load SharePoint in a webview, app protection policies fail.
 
-See [Require approved client apps for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.yml) for configuration examples.
+See [Require approved client apps for cloud app access with Conditional Access](./policy-all-users-device-compliance.md) for configuration examples.
 
 ### Require app protection policy
 
 In Conditional Access policy, you can require that an [Intune app protection policy](/mem/intune/apps/app-protection-policy) is present on the client app before access is available to the selected applications. These mobile application management (MAM) app protection policies allow you to manage and protect your organization's data within specific applications.
 
-To apply this grant control, Conditional Access requires that the device is registered in Microsoft Entra ID, which requires using a broker app. The broker app can be either Microsoft Authenticator for iOS or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the app store to install the broker app. The Microsoft Authenticator app can be used as the broker app but doesn't support being targeted as an approved client app. App protection policies are generally available for iOS and Android, and in public preview for Microsoft Edge on Windows. [Windows devices support no more than three Microsoft Entra user accounts in the same session](~/identity/devices/faq.yml#i-can-t-add-more-than-3-microsoft-entra-user-accounts-under-the-same-user-session-on-a-windows-10-11-device--why). For more information about how to apply policy to Windows devices, see the article [Require an app protection policy on Windows devices (preview)](how-to-app-protection-policy-windows.md).
+To apply this grant control, Conditional Access requires that the device is registered in Microsoft Entra ID, which requires using a broker app. The broker app can be either Microsoft Authenticator for iOS or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the app store to install the broker app. The Microsoft Authenticator app can be used as the broker app but doesn't support being targeted as an approved client app. App protection policies are generally available for iOS and Android, and in public preview for Microsoft Edge on Windows. [Windows devices support no more than three Microsoft Entra user accounts in the same session](~/identity/devices/faq.yml#i-can-t-add-more-than-3-microsoft-entra-user-accounts-under-the-same-user-session-on-a-windows-10-11-device--why). For more information about how to apply policy to Windows devices, see the article [Require an app protection policy on Windows devices (preview)](policy-all-users-windows-app-protection.md).
 
 Applications must meet certain requirements to support app protection policies. Developers can find more information about these requirements in the section [Apps you can manage with app protection policies](/mem/intune/apps/app-protection-policy#apps-you-can-manage-with-app-protection-policies). 
 
@@ -180,7 +180,7 @@ The following client apps support this setting. This list isn't exhaustive and i
 > [!NOTE]
 > Kaizala, Skype for Business, and Visio don't support the **Require app protection policy** grant. If you require these apps to work, use the **Require approved apps** grant exclusively. Using the "or" clause between the two grants will not work for these three applications.
 
-See [Require app protection policy and an approved client app for cloud app access with Conditional Access](./howto-policy-approved-app-or-app-protection.yml) for configuration examples.
+See [Require app protection policy and an approved client app for cloud app access with Conditional Access](./policy-all-users-device-compliance.md) for configuration examples.
 
 ### Require password change
 
@@ -193,7 +193,7 @@ When a user is prompted to change a password, they're first required to complete
 
 The following restrictions apply when you configure a policy by using the password change control:  
 
-- The policy must be assigned to "all cloud apps." This requirement prevents an attacker from using a different app to change the user's password and resetting their account risk by signing in to a different app.
+- The policy must be assigned to **All resources**. This requirement prevents an attacker from using a different app to change the user's password and resetting their account risk by signing in to a different app.
 - **Require password change** can't be used with other controls, such as requiring a compliant device.  
 - The password change control can only be used with the user and group assignment condition, cloud app assignment condition (which must be set to "all"), and user risk conditions.
 
