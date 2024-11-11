@@ -805,11 +805,7 @@ When you click on any of the provisioning log records, the **Activity Details** 
 
   Look for the entry with *Event ID = 9*, which provides you with the LDAP search filter used by the agent to retrieve the AD account. You can verify if this is the right search filter to retrieve unique user entries.
 
-  ![Screenshot of LDAP Search.](media/workday-inbound-tutorial/wd_event_viewer_03.png)
-
   The record that immediately follows it with *Event ID = 2* captures the result of the search operation and if it returned any results.
-
-  ![Screenshot of LDAP Results.](media/workday-inbound-tutorial/wd_event_viewer_04.png)
 
 * **Synchronization rule action** record: This log record displays the results of the attribute mapping rules and configured scoping filters along with the provisioning action that is taken to process the incoming Workday event. Use information in the *Additional Details* section of the log record to troubleshoot issues with the synchronization action. An example record is shown below along with pointers on how to interpret each field.
 
