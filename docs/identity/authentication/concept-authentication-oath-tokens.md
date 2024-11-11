@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/04/2024
+ms.date: 11/11/2024
 
 ms.author: justinha
 author: justinha
@@ -32,7 +32,7 @@ Some OATH TOTP hardware tokens are programmable, meaning they don't come with a 
 
 ## Hardware OATH tokens (preview)
 
-Microsoft Entra ID supports the use of OATH-TOTP SHA--256 and SHA-1 tokens that refresh codes every 30 or 60 seconds. Customers can purchase these tokens from the vendor of their choice. Hardware OATH tokens are available for users with a Microsoft Entra ID P1 or P2 license.  
+Microsoft Entra ID supports the use of OATH-TOTP SHA-1 and SHA-256 tokens that refresh codes every 30 or 60 seconds. Customers can purchase these tokens from the vendor of their choice. 
 
 Microsoft Entra ID has a new Microsoft Graph API in preview for Azure and Azure for US Government clouds.
 
@@ -56,20 +56,22 @@ The following table compares the administrator role requirements to manage hardw
 | Update a token in the tenant. For example, update manufacturer or module; Secret can't be updated. | Global Administrator | Authentication Policy Administrator |
 | Delete a token from the tenant’s inventory. | Global Administrator | Authentication Policy Administrator |
 
-Another difference pertains to end users. In the legacy multifactor authentication (MFA) policy, hardware and software OATH tokens can only be enabled together. If you enable OATH tokens in the legacy MFA policy, end users see an option to add Hardware OATH tokens in their Security info page.
+Another difference pertains to end users. In the legacy multifactor authentication (MFA) policy, hardware and software OATH tokens can only be enabled together. If you enable OATH tokens in the legacy MFA policy, end users see an option to add **Hardware OATH tokens** in their Security info page.
 
-If you don't want end users to see an option to add Hardware OATH tokens, migrate to the Authentication methods policy. 
+If you don't want end users to see an option to add **Hardware OATH tokens**, migrate to the Authentication methods policy. 
 In the Authentication methods policy, hardware and software OATH tokens can be enabled and managed separately. For more information about how to migrate to the Authentication methods policy, see [How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID](how-to-authentication-methods-manage.md).
+
+Tenants with a Microsoft Entra ID Premium license can continue to upload hardware OATH tokens as in the original preview. Fore more information, see [Upload hardware OATH tokens in CSV format](how-to-mfa-upload-oath-tokens.md).
 
 ### Authentication method policy for hardware OATH tokens
 
-1. You can view the Hardware OATH tokens policy status using the APIs
+1. You can view the hardware OATH tokens policy status using the APIs
 
-   ```msgraph-interactive
-   GET https://developer.microsoft.com/graph/graph-explorer?request=policies%2FauthenticationMethodsPolicy%2FauthenticationMethodConfigurations%2FhardwareOath&method=GET&version=beta&GraphUrl=https://graph.microsoft.com
+   ```https
+   GET https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/hardwareOath
    ```
 
-1. Start by enabling Hardware OATH tokens policy using the APIs.
+1. Start by enabling hardware OATH tokens policy using the APIs.
 
 
 1. If you enabled the HW OATH authentication method policy above, we recommend that you clear the **Verification code from mobile app or hardware token** setting. To verify this setting, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
@@ -89,21 +91,25 @@ The following examples require the [Authentication Policy Administrator](~/ident
 
 List tokens: 
 
-```msgraph-interactive
+```https
 GET https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices 
 ```
 
 Delete a token with token ID 3dee0e53-f50f-43ef-85c0-b44689f2d66d: 
 
-```msgraph-interactive
+```https
 DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/3dee0e53-f50f-43ef-85c0-b44689f2d66d
 
 
 Create a single token:
 
-```msgraph-interactive
+```https
 POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
+```
 
+In the request body, add:
+
+```https
 { 
 "serialNumber": "GALT11420104", 
 "manufacturer": "Thales", 
@@ -137,7 +143,7 @@ The response includes the token ID.
 
 Authentication Administrators and end users can unassign a token: 
 
-```msgraph-interactive
+```https
 DELETE https://graph.microsoft.com/beta/users/66aa66aa-bb77-cc88-dd99-00ee00ee00ee/authentication/hardwareoathmethods/6c0272a7-8a5e-490c-bc45-9fe7a42fc4e0
 ```
 
@@ -165,7 +171,7 @@ This scenario cover how to create, assign, and activate a hardware OATH token as
 
 Let's look at an example where an Authentication Administrator creates a token and assigns it to a user. For the body of the POST in this example, you can find the **serialNumber** from your device and the **secretKey** is delivered to you.
 
-```msgraph-interactive
+```https
 POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
 { 
 "serialNumber": "GALT11420104", 
@@ -201,7 +207,7 @@ The response includes the token **id**, and the user **id** that the token is as
 
 Here's how the Authentication Administrator can activate the token. Replace the verifcation code in the Request body with the code from your hardware OATH token.
 
-```msgraph-interactive
+```https
 POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods/3dee0e53-f50f-43ef-85c0-b44689f2d66d/activate
 
 { 
@@ -217,7 +223,7 @@ To validate the token is activated, sign in to [Security info](https://aka.ms/my
 In this scenario, an Authentication Policy Administrator creates and assigns a token, and then a user can activate it on their Security info page, or by using Microsoft Graph Explorer. When you assign a token, you can share steps for the user to sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
 
-```msgraph-interactive
+```https
 POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
 { 
 "serialNumber": "GALT11420104", 
@@ -231,7 +237,7 @@ POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hard
 
 The response includes an **id** value for each token. An Authentication Administrator can assign the token to a user:
 
-```msgraph-interactive
+```https
 POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods
 {
     "device": 
@@ -278,19 +284,19 @@ Here are steps users can follow to self-activate their hardware OATH token by us
 1. Make sure you have the required permissions.
 1. Get a list of hardware OATH tokens that are assigned to your account, but not yet activated.
 
-   ```msgraph-interactive
+   ```https
    GET https://graph.microsoft.com/beta/me/authentication/hardwareOathMethods
    ```
 
 1. Copy the **id** of the token device, and add it to the end of the URL followed by */activate*. You need to enter the verification code in the request body and submit the POST call before the code changes.
 
-   ```msgraph-interactive  
+   ```https  
    POST https://graph.microsoft.com/beta/me/authentication/hardwareOathMethods/b65fd538-b75e-4c88-bd08-682c9ce98eca/activate
    ```
 
    Request body:
 
-   ```msgraph-interactive
+   ```https
    {
       "verificationCode": "988659"
    }
@@ -303,7 +309,7 @@ In this scenario, an Authentication Administrator creates tokens without assignm
 For greater assurance that the token is only activated by a specific user, you can assign the token to the user, and send the device to them for self-activation.
 
 
-```msgraph-interactive
+```https
 PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
 {
 "@context":"#$delta", 
@@ -340,7 +346,7 @@ A user might have two instances of the same hardware OATH token registered as au
 
 When this happens, both instances of the token are listed as registered for the user:
 
-```msgraph-interactive
+```https
 GET https://graph.microsoft.com/beta/users/{user-upn-or-objectid}/authentication/hardwareOathMethods
 ```
 
@@ -350,9 +356,9 @@ Both instances of the token are also listed in **OATH tokens (Preview)** in the 
 
 To identify and remove the legacy token.
 
-1. List all Hardware OATH tokens on the user.
+1. List all hardware OATH tokens on the user.
 
-   ```msgraph-interactive
+   ```https
    GET https://graph.microsoft.com/beta/users/{user-upn-or-objectid}/authentication/hardwareOathMethods
    ```
 
@@ -360,19 +366,19 @@ To identify and remove the legacy token.
 
 1. Identify the legacy token. Only one token is returned in the response of the following command. That token was created by using Microsoft Graph.
 
-   ```msgraph-interactive
+   ```https
    GET https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices?$filter=serialNumber eq '20033752'
    ```
 
 1. Remove the legacy token assignment from the user. Now that you know the **id** of the new token, you can identify the **id** of the legacy token from the list returned in step 1. Craft the URL using the legacy token **id**.
 
-   ```msgraph-interactive
+   ```https
    DELETE https://graph.microsoft.com/beta/users/{user-upn-or-objectid}/authentication/hardwareOathMethods/{legacyHardwareOathMethodId}
    ```
 
 1. Delete the legacy token by using the legacy token **id** in this call.
 
-   ```msgraph-interactive
+   ```https
    DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/{legacyHardwareOathMethodId}
    ```
 
