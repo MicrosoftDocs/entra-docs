@@ -40,7 +40,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
     :::image type="content" source="./media/security-emergency-access/create-emergency-access-account.png" alt-text="Creating an emergency access account in Microsoft Entra ID." lightbox="./media/security-emergency-access/create-emergency-access-account.png":::
 
-1. Select one these passwordless authentication methods for your emergency access accounts. These methods satisfy the [mandatory multifactor authentication requirements](../authentication/concept-mandatory-multifactor-authentication.md).
+1. Select one of these passwordless authentication methods for your emergency access accounts. These methods satisfy the [mandatory multifactor authentication requirements](../authentication/concept-mandatory-multifactor-authentication.md).
 
     - [Passkey (FIDO2)](../authentication/concept-authentication-passwordless.md#passkeys-fido2) (Recommended)
     - [Certificate-based authentication](../authentication/concept-authentication-passwordless.md#certificate-based-authentication) if your organization already has a Public Key Infrastructure (PKI) setup
@@ -51,7 +51,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
     - [Register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md)
     - [Configure certificate-based authentication](../authentication/concept-certificate-based-authentication.md)
 
-1. [Require phishing-resistant multifactor authentication for all of your emergency accounts](../conditional-access/policy-admin-phish-resistant-mfa.md)
+1. [Require phishing-resistant multifactor authentication](../conditional-access/policy-admin-phish-resistant-mfa.md) for all of your emergency accounts.
 
 1. [Store account credentials safely](#store-account-credentials-safely).
 
