@@ -14,7 +14,7 @@ ms.reviewer: egreenberg14
 ---
 # What are Microsoft Entra sign-in logs?
 
-Microsoft Entra logs all sign-ins into a Microsoft Entra tenant, which includes your internal apps and resources. As an IT administrator, you need to know what the values in the sign-in logs mean, so that you can interpret the log values correctly.
+Microsoft Entra logs all sign-ins into a Microsoft Entra tenant, which includes your internal apps and resources. As an IT administrator, you need to know what the sign-in log details mean, so that you can interpret the log values correctly.
 
 Reviewing sign-in errors and patterns provides valuable insight into how your users access applications and services. The sign-in logs provided by Microsoft Entra ID are a powerful type of [activity log](overview-monitoring-health.md) that you can analyze. This article describes several key aspects of the sign-in logs.
 

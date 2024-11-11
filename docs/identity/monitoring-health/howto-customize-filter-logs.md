@@ -47,7 +47,7 @@ For example, if you're looking into changes to Microsoft Entra groups, you can a
 
 ### Customize the layout of the audit logs
 
-You can customize the columns in the audit logs to view only the information you need. The **Service**, **Category** and **Activity** columns are related to each other, so these columns should always be visible.
+You can customize the columns in the audit logs to view only the information you need. The **Service**, **Category**, and **Activity** columns are related to each other, so these columns should always be visible.
 
 ![Screenshot of the Columns button on the audit logs.](media/howto-customize-filter-logs/audit-log-columns.png)
 

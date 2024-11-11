@@ -31,6 +31,9 @@ To access the `lastSignInDateTime` property using Microsoft Graph:
   - AuditLog.Read.All
   - User.Read.All
 
+- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
+    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
+
 ## What are inactive user accounts?
 
 Inactive accounts are user accounts that aren't required anymore by members of your organization to gain access to your resources. One key identifier for inactive accounts is that they haven't been used *for a while* to sign in to your environment. Because inactive accounts are tied to the sign-in activity, you can use the timestamp of the last time an account attempted to sign in to detect inactive accounts.
@@ -93,7 +96,7 @@ If you need to view the latest sign-in activity for a user, you can view the use
 
 The last sign-in date and time shown on this tile might take up to 24 hours to update, which means the date and time might not be current. If you need to see the activity in near real time, select the **See all sign-ins** link on the **Sign-ins** tile to view all sign-in activity for that user.
 
-## Next steps
+## Related content
 
 - [Get data using the Microsoft Entra reporting API with certificates](./howto-configure-prerequisites-for-reporting-api.md)
 - [Audit API reference](/graph/api/resources/directoryaudit)

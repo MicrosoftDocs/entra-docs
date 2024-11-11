@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/08/2024
+ms.date: 11/11/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -31,6 +31,8 @@ Each of these methods provides you with capabilities that might align with certa
 
 ## Prerequisites
 
+- A working Microsoft Entra tenant with the appropriate Microsoft Entra license associated with it.
+    - For a full list of license requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
 - Audit logs are available for features that you have licensed.
 - [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
 - [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator) is the least privileged role required to configure diagnostic settings.
