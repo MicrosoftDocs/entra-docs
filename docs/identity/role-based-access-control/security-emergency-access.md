@@ -34,70 +34,30 @@ An organization might need to use an emergency access account in the following s
 
 ## Create emergency access accounts
 
-Create two or more emergency access accounts. These accounts should be cloud-only accounts that use the \*.onmicrosoft.com domain and that aren't federated or synchronized from an on-premises environment. At a high level, you will follow these steps.
+Create two or more emergency access accounts. These accounts should be cloud-only accounts that use the \*.onmicrosoft.com domain and that aren't federated or synchronized from an on-premises environment. At a high level, follow these steps.
 
-1. [Enable passkeys (FIDO2) for your organization](../authentication/how-to-enable-passkey-fido2.md).
+1. Find your existing emergency access accounts or create new accounts with the Global Administrator role.
 
-1. [Create](#how-to-create-an-emergency-access-account) or [update](#how-to-update-an-existing-emergency-access-account) emergency accounts.
+    :::image type="content" source="./media/security-emergency-access/create-emergency-access-account.png" alt-text="Creating an emergency access account in Microsoft Entra ID." lightbox="./media/security-emergency-access/create-emergency-access-account.png":::
 
-1. [Register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md).
+1. Select one these passwordless authentication methods for your emergency access accounts. These methods satisfy the [mandatory multifactor authentication requirements](../authentication/concept-mandatory-multifactor-authentication.md).
 
-1. [Exclude at least one account from Conditional Access policies](#exclude-at-least-one-account-from-conditional-access-policies).
+    - [Passkey (FIDO2)](../authentication/concept-authentication-passwordless.md#passkeys-fido2) (Recommended)
+    - [Certificate-based authentication](../authentication/concept-authentication-passwordless.md#certificate-based-authentication) if your organization already has a PKI infrastructure setup
+
+1. [Configure your emergency access accounts](#configuration-requirements) to use passwordless authentication.
+
+    - [Enable passkeys (FIDO2) for your organization](../authentication/how-to-enable-passkey-fido2.md)
+    - [Register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md)
+    - [Configure certificate-based authentication](../authentication/concept-certificate-based-authentication.md)
+
+1. [Require phishing-resistant multifactor authentication for all of your emergency accounts](../conditional-access/policy-admin-phish-resistant-mfa.md)
 
 1. [Store account credentials safely](#store-account-credentials-safely).
 
 1. [Monitor sign-in and audit logs](#monitor-sign-in-and-audit-logs).
 
 1. [Validate accounts regularly](#validate-accounts-regularly).
-
-### How to create an emergency access account
-
-Follow these steps to create new emergency access accounts that use FIDO2.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator).
-
-1. If not already enabled, follow steps to [enable passkeys (FIDO2) for your organization](../authentication/how-to-enable-passkey-fido2.md).
-
-1. Browse to **Identity** > **Users** > **All users**.
-
-1. Select **New user** > **Create new user**.
-
-1. On the **Basics** tab, give the account a **User principal name** and **Display name**.
-
-1. Create a long and complex password for the account.
-
-1. On the **Properties** tab, under **Usage location**, select the appropriate location.
-
-1. On the **Assignments** tab, select **Add role**.
-
-1. Select the **Global Administrator** role.
-
-1. On the **Review + create** tab, select **Create**.
-
-    :::image type="content" source="./media/security-emergency-access/create-emergency-access-account.png" alt-text="Creating an emergency access account in Microsoft Entra ID." lightbox="./media/security-emergency-access/create-emergency-access-account.png":::
-
-1. Follow steps to [register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md).
-
-### How to update an existing emergency access account
-
-If you have existing emergency access accounts that only require a password to sign in, follow these steps to update these accounts to use FIDO2.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator).
-
-1. If not already enabled, follow steps to [enable passkeys (FIDO2) for your organization](../authentication/how-to-enable-passkey-fido2.md).
-
-1. Follow steps to [register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md).
-
-<a name='exclude-at-least-one-account-from-phone-based-multi-factor-authentication'></a>
-
-### Exclude at least one account from Conditional Access policies
-
-During an emergency, you don't want a policy to potentially block your access in the case of a misconfiguration or to fix an issue. If you use Conditional Access, at least one emergency access account needs to be excluded from all Conditional Access policies.
-
-> [!NOTE]
-> Starting July 2024, Azure teams will begin rolling out additional tenant-level security measures to require multifactor authentication (MFA) for all users signing in to the Azure portal, Microsoft Entra admin center, or Intune admin center. For more information, see [Planning for mandatory multifactor authentication for Azure and other admin portals](../authentication/concept-mandatory-multifactor-authentication.md).
-> 
-> As already documented, use strong authentication for your emergency access accounts. We recommend updating these accounts to use FIDO2 or certificate-based authentication (when configured as MFA) instead of relying only on a long password. Both methods will satisfy the MFA requirements.
 
 ## Configuration requirements
 
@@ -114,7 +74,7 @@ Some organizations use AD Domain Services and AD FS or similar identity provider
 
 ## Store account credentials safely
 
-Organizations need to ensure that the credentials for emergency access accounts are kept secure and known only to individuals who are authorized to use them. Some customers use a smartcard for Windows Server AD, a [FIDO2 security key](~/identity/authentication/howto-authentication-passwordless-security-key.md) for Microsoft Entra ID and others use passwords. A password for an emergency access account is usually separated into two or three parts, written on separate pieces of paper, and stored in secure, fireproof safes that are in secure, separate locations.
+Organizations need to ensure that the credentials for emergency access accounts are kept secure and known only to individuals who are authorized to use them. For example, you might use [FIDO2 security keys](../authentication/how-to-enable-passkey-fido2.md) for Microsoft Entra ID or smartcards for Windows Server Active Directory. Credentials should be stored in secure, fireproof safes that are in secure, separate locations.
 
 ## Monitor sign-in and audit logs
 
@@ -122,7 +82,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 ### Prerequisites
 
-1. [Send Microsoft Entra sign-in logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to Azure Monitor.
+- [Send Microsoft Entra sign-in logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to Azure Monitor.
 
 ### Obtain Object IDs of the break glass accounts
 
