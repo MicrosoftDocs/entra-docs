@@ -4,7 +4,7 @@ description: Prepare an Angular Single-page Application in a Microsoft Entra ten
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
-ms.date: 10/22/2024
+ms.date: 11/11/2024
 ms.reviewer: emilylauber
 ms.service: identity-platform
 
