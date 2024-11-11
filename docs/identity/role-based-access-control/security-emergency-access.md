@@ -18,7 +18,7 @@ ms.reviewer: mwahl
 
 It's important that you prevent being accidentally locked out of your Microsoft Entra organization because you can't sign in or activate another user's account as an administrator. You can mitigate the impact of accidental lack of administrative access by creating two or more *emergency access accounts* in your organization.
 
-User accounts with the Global Administrator role have high privileges in the system, this includes emergency access accounts with the Global Administrator role. Emergency access accounts are limited to emergency or "break glass"' scenarios where normal administrative accounts can't be used. We recommend that you maintain a goal of restricting emergency account use to only the times when it's absolutely necessary.
+User accounts with the Global Administrator role have high privileges in the system, this includes emergency access accounts with the Global Administrator role. Emergency access accounts are limited to emergency or "break glass" scenarios where normal administrative accounts can't be used. We recommend that you maintain a goal of restricting emergency account use to only the times when it's absolutely necessary.
 
 This article provides guidelines for managing emergency access accounts in Microsoft Entra ID.
 
@@ -64,7 +64,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 When you configure these accounts, the following requirements must be met:
 
 - The emergency access accounts shouldn't be associated with any individual user in the organization. Make sure that your accounts aren't connected with any employee-supplied mobile phones, hardware tokens that travel with individual employees, or other employee-specific credentials. This precaution covers instances where an individual employee is unreachable when the credential is needed. It's important to ensure that any registered devices are kept in a known, secure location that has multiple means of communicating with Microsoft Entra ID.
-- Use strong authentication for your emergency access accounts and make sure it doesn’t use the same authentication methods as your other administrative accounts. For example, if your normal administrator account uses the Microsoft Authenticator app for strong authentication, use a FIDO2 security key for your emergency accounts. Consider the [dependencies of various authentication methods](~/architecture/resilience-in-credentials.md), to avoid adding external requirements into the authentication process.
+- Use strong authentication for your emergency access accounts and make sure it doesn't use the same authentication methods as your other administrative accounts. For example, if your normal administrator account uses the Microsoft Authenticator app for strong authentication, use a FIDO2 security key for your emergency accounts. Consider the [dependencies of various authentication methods](~/architecture/resilience-in-credentials.md), to avoid adding external requirements into the authentication process.
 - The device or credential must not expire or be in scope of automated cleanup due to lack of use.  
 - In Microsoft Entra Privileged Identity Management, you should make the Global Administrator role assignment permanent rather than eligible for your emergency access accounts. 
 
@@ -78,23 +78,23 @@ Organizations need to ensure that the credentials for emergency access accounts 
 
 ## Monitor sign-in and audit logs
 
-Organizations should monitor sign-in and audit log activity from the emergency accounts and trigger notifications to other administrators. When you monitor the activity on break glass accounts, you can verify these accounts are only used for testing or actual emergencies. You can use Azure Log Analytics to monitor the sign-in logs and trigger email and SMS alerts to your admins whenever break glass accounts sign in.
+Organizations should monitor sign-in and audit log activity from the emergency accounts and trigger notifications to other administrators. When you monitor the activity for emergency access accounts, you can verify these accounts are only used for testing or actual emergencies. You can use Azure Log Analytics to monitor the sign-in logs and trigger email and SMS alerts to your admins whenever emergency access accounts sign in.
 
 ### Prerequisites
 
 - [Send Microsoft Entra sign-in logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to Azure Monitor.
 
-### Obtain Object IDs of the break glass accounts
+### Obtain Object IDs of the emergency access accounts
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Browse to **Identity** > **Users** > **All users**.
 
-1. Search for the break-glass account and select the user’s name.
+1. Search for the emergency access account and select the user's name.
 
 1. Copy and save the Object ID attribute so that you can use it later.
 
-1. Repeat previous steps for second break-glass account.
+1. Repeat previous steps for second emergency access account.
 
 ### Create an alert rule
 
@@ -109,9 +109,10 @@ Organizations should monitor sign-in and audit log activity from the emergency a
     1. Under **Resource**, verify that the subscription is the one with which you want to associate the alert rule.
     1. Under **Condition**, select **Add**.
     1. Select **Custom log search** under **Signal name**.
-    1. Under **Search query**, enter the following query, inserting the object IDs of the two break glass accounts.
+    1. Under **Search query**, enter the following query, inserting the object IDs of the two emergency access accounts.
+    
         > [!NOTE]
-        > For each additional break glass account you want to include, add another "or UserId == "ObjectGuid"" to the query.
+        > For each additional emergency access account you want to include, add another "or UserId == "ObjectGuid"" to the query.
                 
         Sample queries:
         ```kusto
@@ -135,7 +136,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
         | where UserPrincipalName == "user@yourdomain.onmicrosoft.com"
         ```
         
-        ![Add the object IDs of the break glass accounts to an alert rule](./media/security-emergency-access/query-image1.png)
+        ![Add the object IDs of the emergency access accounts to an alert rule](./media/security-emergency-access/query-image1.png)
 
     1. Under **Alert logic**, enter the following:
 
@@ -192,8 +193,8 @@ When you train staff members to use emergency access accounts and validate the e
 - Ensure that security-monitoring staff are aware that the account-check activity is ongoing.
 - Ensure that the emergency break glass process to use these accounts is documented and current.
 - Ensure that administrators and security officers who might need to perform these steps during an emergency are trained on the process.
-- Update the account credentials, in particular any passwords, for your emergency access accounts, and then validate that the emergency access accounts can sign-in and perform administrative tasks.
-- Ensure that users haven't registered multifactor authentication or self-service password reset (SSPR) to any individual user’s device or personal details. 
+- Validate that the emergency access accounts can sign-in and perform administrative tasks.
+- Ensure that users haven't registered multifactor authentication or self-service password reset (SSPR) to any individual user's device or personal details. 
 - If the accounts are registered for multifactor authentication to a device, for use during sign-in or role activation, ensure that the device is accessible to all administrators who might need to use it during an emergency. Also verify that the device can communicate through at least two network paths that don't share a common failure mode. For example, the device can communicate to the internet through both a facility's wireless network and a cell provider network.
 
 These steps should be performed at regular intervals and for key changes:
@@ -206,7 +207,7 @@ These steps should be performed at regular intervals and for key changes:
 
 - [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md)
 - [Add users using Microsoft Entra ID](~/fundamentals/add-users.md) and [assign roles to the new user](~/fundamentals/how-subscriptions-associated-directory.yml)
-- [Sign up for Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md), if you haven’t signed up already
-- [How to require two-step verification for a user](~/identity/authentication/howto-mfa-userstates.md)
+- [Sign up for Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md), if you haven't signed up already
+- [How to verify that users are set up for mandatory MFA](../authentication/how-to-mandatory-multifactor-authentication.md)
 - [Configure additional protections for privileged roles in Microsoft 365](/microsoft-365/enterprise/protect-your-global-administrator-accounts), if you're using Microsoft 365
 - [Start an access review of privileged roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) and [transition existing privileged role assignments to more specific administrator roles](permissions-reference.md)
