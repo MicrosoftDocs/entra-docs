@@ -133,7 +133,7 @@ To test the application, complete the following steps:
 1. Select the **Sign in** button to authenticate with your Microsoft Entra tenant.
 1. After signing in, select the **View Profile** link to navigate to the **Profile** page. Verify that the user profile information is displayed, including the user's name, email, job title, and other details.
 
-    :::image type="content" source="./media/quickstarts/angular-spa/quickstart-angular-spa-sign-in.png" alt-text="Screenshot of JavaScript App depicting the results of the API call.":::
+    :::image type="content" source="./media/tutorial/angular-spa/quickstart-angular-spa-sign-in.png" alt-text="Screenshot of JavaScript App depicting the results of the API call.":::
 
 1. Select the **Sign out** button to sign out of the application.
 
