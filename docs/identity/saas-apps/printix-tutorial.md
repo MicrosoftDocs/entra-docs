@@ -106,9 +106,7 @@ Follow these steps to enable Microsoft Entra SSO.
    
     ![Screenshot shows Authentication selected from the menu.](./media/printix-tutorial/menu.png "Authentication")
 
-1. On the **Setup** tab, select **Enable Azure/Office 365 authentication**
-   
-    ![Screenshot shows the Printix.net page where you can select Enable Azure/Office 365 authentication.](./media/printix-tutorial/authentication.png "Profile")
+1. On the **Setup** tab, select **Enable Azure/Office 365 authentication**.
 
 1. On the **Azure** tab, input federation metadata URL to the textbox of "**Federation metadata document**". 
 
