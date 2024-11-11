@@ -141,6 +141,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 ## Related content
 
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Secure Generative AI with Microsoft Entra](../../architecture/secure-generative-ai.md)
 - [Microsoft Purview data security and compliance protections for generative AI apps](/purview/ai-microsoft-purview)
 - [Considerations for Microsoft Purview AI Hub and data security and compliance protections for Copilot](/purview/ai-microsoft-purview-considerations)
 - [Apply principles of Zero Trust to Microsoft Copilot](/security/zero-trust/copilots/zero-trust-microsoft-copilot)
