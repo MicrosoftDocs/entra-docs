@@ -15,7 +15,7 @@ ms.reviewer: rwike77
 
 # Client libraries for managed identities authentication
 
-This document provides an overview of the client libraries available for authenticating your applications using managed identities for Azure resources. These libraries include the Azure Identity libraries and Microsoft Authentication Libraries (MSAL). This article focuses on accessing resources using these two libraries. For more information on other methods of accessing resources using managed identities, see [this guide](). 
+This document provides an overview of the client libraries available for authenticating your applications using managed identities for Azure resources. These libraries include the Azure Identity libraries and Microsoft Authentication Libraries (MSAL). This article focuses on accessing resources using these two libraries.
 
 Some Azure services have built client libraries on top of these libraries. For example, the `Microsoft.Data.SqlClient` package can be used to authenticate to an Azure SQL database using managed identities.
 
@@ -35,6 +35,6 @@ In cases where an Azure service has built a client library on top of these libra
 |----------|----------------|------|
 | .NET | [Azure Identity client library for .NET](/dotnet/api/overview/azure/identity-readme#managed-identity-support) | [MSAL .NET](/entra/msal/dotnet/advanced/managed-identity) |
 | Java | [Azure Identity client library for Java](/java/api/overview/azure/identity-readme#managed-identity-support) | [MSAL Java](/entra/msal/java/advanced/managed-identity) |
-| JavaScript | [Azure Identity client library for JavaScript](/javascript/api/overview/azure/identity-readme#managed-identity-support) | [MSAL JavaScript](https://azuresdkdocs.blob.core.windows.net/$web/javascript/msal/1.0.0/classes/publicclientapplication.html) |
+| JavaScript | [Azure Identity client library for JavaScript](/javascript/api/overview/azure/identity-readme#managed-identity-support) | [MSAL JavaScript](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/managed-identity.md) |
 | Python | [Azure Identity client library for Python](/python/api/overview/azure/identity-readme#managed-identity-support) | [MSAL Python](/entra/msal/python/advanced/managed-identity) |
 | Go | Work in progress | Work in progress |
