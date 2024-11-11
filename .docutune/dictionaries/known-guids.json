@@ -3322,6 +3322,7 @@
   "Password Breach Authenticator": "bdd48c81-3a58-4ea9-849c-ebea7f6b6360",
   "PeoplePredictions": "35d54a08-36c9-4847-9018-93934c62740c",
   "Power BI Service": "00000009-0000-0000-c000-000000000000",
+  "Fabric Client for Workloads": "d2450708-699c-41e3-8077-b0c8341509aa",
   "Primary Cluster": "c0438c1a-1936-4b62-864c-6792eec3741a",
   "Scheduling": "ae8e128e-080f-4086-b0e3-4c19301ada69",
   "Secondary Cluster": "2e19bf46-9799-4acc-b64b-a2cd2f7a4ee1",
@@ -3702,5 +3703,10 @@
   "Microsoft Cloud for Sustainability API" : "c3163bf1-092f-436b-b260-7ade5973e5b9",
   "Environmental Credit Service (preview) app ID" : "b9b0ac19-f710-429d-b58e-dc3f73a330a9",
   "Mock Teams admin center for Graph Connector" : "ef1da9d4-ff77-4c3e-a005-840c3f830745",
-  "MIM Certificate Manager modern app client" : "70A8B8B1-862C-4473-80AB-4E55BAE45B4F"
+  "MIM Certificate Manager modern app client" : "70A8B8B1-862C-4473-80AB-4E55BAE45B4F",
+  "Network interfaces built-in policy definition" : "83a86a26-fd1f-447c-b59d-e51f44264114",
+  "Security Copilot" : "bb5ffd56-39eb-458c-a53a-775ba21277da",
+  "Enterprise Copilot Platform" : "fb8d773d-7ef8-4ec0-a117-179f88add510",
+  "Azure Lighthouse monitoring appID 1" : "1215fb39-1d15-4c05-b2e3-d519ac3feab4",
+  "Azure Lighthouse monitoring appID 2" : "6da94f3c-0d67-4092-a408-bb5d1cb08d2d"
 }
