@@ -8,7 +8,7 @@ ms.date: 03/20/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---
 

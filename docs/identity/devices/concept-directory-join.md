@@ -25,19 +25,21 @@ Any organization can deploy Microsoft Entra joined devices no matter the size or
 | **Device ownership** | Organization |
 | **Operating Systems** | All Windows 11 and Windows 10 devices except Home editions |
 |   | [Windows Server 2019 and newer Virtual Machines running in Azure](howto-vm-sign-in-azure-ad-windows.md) (Server core isn't supported) |
+|   | (Public preview) Apple devices running macOS 13 or newer |
 | **Provisioning** | Self-service: Windows Out of Box Experience (OOBE) or Settings |
 |   | Bulk enrollment |
 |   | Windows Autopilot |
+|   | (Public preview) Apple Automated Device Enrollment (applies to Apple devices only) |
 | **Device sign in options** | Organizational accounts using: |
 |   | Password |
-|   | [Passwordless](../authentication/concept-authentication-passwordless.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) and FIDO2.0 security keys. |
+|   | [Passwordless](../authentication/concept-authentication-passwordless.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide), [Platform Credential for macOS (Public preview)](macos-psso.md) and FIDO2.0 security keys. |
 | **Device management** | Mobile Device Management (example: Microsoft Intune) |
 |   | [Configuration Manager standalone or co-management with Microsoft Intune](/mem/configmgr/comanage/overview) |
 | **Key capabilities** | single sign-on (SSO) to both cloud and on-premises resources |
 |   | Conditional Access through mobile device management (MDM) enrollment and compliance evaluation |
 |   | [Self-service Password Reset and Windows Hello PIN reset on lock screen](../authentication/howto-sspr-windows.md) |
 
-You sign in to Microsoft Entra joined devices using a Microsoft Entra account. Access to resources can be controlled based on your account and [Conditional Access policies](../conditional-access/howto-conditional-access-policy-compliant-device.md) applied to the device.
+You sign in to Microsoft Entra joined devices using a Microsoft Entra account. Access to resources can be controlled based on your account and [Conditional Access policies](../conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md) applied to the device.
 
 Administrators can secure and further control Microsoft Entra joined devices using Mobile Device Management (MDM) tools like Microsoft Intune or in co-management scenarios using Microsoft Configuration Manager. These tools provide a means to enforce organization-required configurations like:
 
@@ -48,7 +50,7 @@ Administrators can secure and further control Microsoft Entra joined devices usi
 
 Administrators can make organization applications available to Microsoft Entra joined devices using Configuration Manager to [Manage apps from the Microsoft Store for Business and Education](/mem/configmgr/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
-Microsoft Entra join can be accomplished using self-service options like the Out of Box Experience (OOBE), bulk enrollment, or [Windows Autopilot](/autopilot/enrollment-autopilot).
+Microsoft Entra join can be accomplished using self-service options like the Out of Box Experience (OOBE), bulk enrollment, [Apple Automated Device Enrollment (public preview)](/mem/intune/enrollment/device-enrollment-program-enroll-macos), or [Windows Autopilot](/autopilot/enrollment-autopilot).
 
 Microsoft Entra joined devices can still maintain single sign-on access to on-premises resources when they are on the organization's network. Devices that are Microsoft Entra joined can still authenticate to on-premises servers like file, print, and other applications.
 
@@ -66,8 +68,8 @@ You can configure Microsoft Entra join for all Windows 11 and Windows 10 devices
 
 The goal of Microsoft Entra joined devices is to simplify:
 
-- Windows deployments of work-owned devices
-- Access to organizational apps and resources from any Windows device
+- Windows and macOS deployments of work-owned devices
+- Access to organizational apps and resources from any Windows or macOS device
 - Cloud-based management of work-owned devices
 - Users to sign in to their devices with their Microsoft Entra ID or synced Active Directory work or school accounts.
 
@@ -78,6 +80,7 @@ Microsoft Entra join can be deployed by using any of the following methods:
 - [Windows Autopilot](/autopilot/windows-autopilot)
 - [Bulk deployment](/mem/intune/enrollment/windows-bulk-enroll)
 - [Self-service experience](device-join-out-of-box.md)
+- [Apple Automated Device Enrollment (public preview)](/mem/intune/enrollment/device-enrollment-program-enroll-macos)
 
 ## Related content
 
@@ -86,3 +89,4 @@ Microsoft Entra join can be deployed by using any of the following methods:
 - [How to manage the local administrators group on Microsoft Entra joined devices](assign-local-admin.md)
 - [Manage device identities](manage-device-identities.md)
 - [Manage stale devices in Microsoft Entra ID](manage-stale-devices.md)
+- [macOS Platform Single Sign-on (preview)](macos-psso.md)

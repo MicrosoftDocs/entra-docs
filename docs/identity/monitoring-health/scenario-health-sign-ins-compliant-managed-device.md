@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/14/2024
+ms.date: 10/23/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -20,7 +20,7 @@ Microsoft Entra Health monitoring provides a set of tenant-level health metrics 
 - Sign-ins requiring a Conditional Access compliant device
 - Sign-ins requiring a Conditional Access managed device
 
-These scenarios allow you to monitor and receive alerts on user authentication that satisfies a Conditional Access policy requiring signing in from a compliant or managed device. To learn more about how Microsoft Entra Health works, see:
+These scenarios allow you to monitor and receive alerts on user authentication that satisfy a Conditional Access policy requiring signing in from a compliant or managed device. To learn more about how Microsoft Entra Health works, see:
 
 - [What is Microsoft Entra Health?](concept-microsoft-entra-health.md)
 - [How to use Microsoft Entra health monitoring signals and alerts](howto-use-health-scenario-alerts.md)
@@ -42,7 +42,7 @@ Investigating an alert starts with gathering data.
 1. Review your Intune device compliance policies.
     - For more information, see [Intune device compliance overview](/mem/intune/protect/device-compliance-get-started).
     - Learn how to [Monitor device compliance policies](/mem/intune/protect/compliance-policy-monitor).
-    - If you're not using Intune, review your device management solution's compliance policies
+    - If you're not using Intune, review your device management solution's compliance policies.
 1. Investigate common Conditional Access issues.
     - [Troubleshoot Conditional Access device compliance policies](/troubleshoot/mem/intune/device-protection/troubleshoot-conditional-access#devices-appear-compliant-but-users-are-still-blocked).
     - [Troubleshoot Conditional Access sign-in problems](../conditional-access/troubleshoot-conditional-access.md).
@@ -60,6 +60,9 @@ The following common issues could cause a spike in sign-ins requiring a complian
 
 If a large group of users are blocked from signing in to known devices, a spike could indicate that these devices have fallen out of compliance.
 
+To investigate:
+
+- In the impact summary, if `resourceType` is "user" and the `impactedCount` value indicates a large percentage of your organization's users, you might be looking at a wide spread issue.
 - Check your [Intune device compliance policy](/mem/intune/protect/device-compliance-get-started).
 - Check your [Conditional Access device compliance policies](/troubleshoot/mem/intune/device-protection/troubleshoot-conditional-access#devices-appear-compliant-but-users-are-still-blocked).
 
@@ -67,9 +70,21 @@ If a large group of users are blocked from signing in to known devices, a spike 
 
 If the increase in blocked sign-ins is coming from an unknown device, that spike could indicate that an attacker has acquired a user's credentials and is attempting to sign in from a device used for such attacks.
 
+To investigate:
+
+- In the impact summary, if `resourceType` is "user" and the `impactedCount` value shows a small subset of users, the issue might be user-specific.
 - [Review the sign-in logs](../monitoring-health/concept-sign-in-log-activity-details.md).
 - [Investigate risk with Microsoft Entra ID Protection](../../id-protection/howto-identity-protection-investigate-risk.md).
     - Note: Microsoft Entra ID Protection requires a Microsoft Entra P2 license.
+
+### Network issues
+
+There could be a regional system outage that required a large number of users to sign in at the same time. 
+
+To investigate:
+
+- In the impact summary, if `resourceType` is "user" and the `impactedCount` value shows a large percentage of your organization's users, you might be looking at a wide spread issue.
+- Check your system and network health to see if an outage or update matches the same timeframe as the anomaly.
 
 ## Next steps
 

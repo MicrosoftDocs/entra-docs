@@ -30,8 +30,6 @@ Because this configuration is widely used with the *Workday to Active Directory 
 1. Select your application and go to Properties section of your provisioning app. In this example we are using Workday.
 1. Copy the GUID value in the *Object ID* field. This value is also called the **ServicePrincipalId** of your app and it's used in Graph Explorer operations.
 
-   ![Screenshot of Workday App Service Principal ID.](./media/skip-out-of-scope-deletions/wd_export_01.png)
-
 ## Step 2: Sign into Microsoft Graph Explorer
 
 1. Launch [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)
@@ -89,6 +87,4 @@ You can test this flag results in expected behavior by updating your scoping rul
 
    ![Screenshot that shows the "Add Scoping Filter" section with an example user highlighted.](./media/skip-out-of-scope-deletions/skip-07.png)
 
-In the next provisioning cycle, the Microsoft Entra provisioning service identifies that the user 21173 has gone out of scope. If the `SkipOutOfScopeDeletions` property is enabled, then the synchronization rule for that user displays a message as shown: 
-
-   ![Screenshot of scoping example.](./media/skip-out-of-scope-deletions/skip-08.png)
+In the next provisioning cycle, the Microsoft Entra provisioning service identifies that the user 21173 has gone out of scope. If the `SkipOutOfScopeDeletions` property is enabled, then the synchronization rule for that user displays a message. 

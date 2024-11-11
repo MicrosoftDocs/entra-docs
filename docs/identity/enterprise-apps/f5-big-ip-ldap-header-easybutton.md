@@ -213,7 +213,7 @@ Conditional Access policies are enforced after Microsoft Entra pre-authenticatio
 
 The **Available Policies** view lists Conditional Access policies that don't include user actions.
 
-The **Selected Policies** view shows policies targeting all cloud apps. These policies can't be deselected or moved to the Available Policies list because they're enforced at a tenant level.
+The **Selected Policies** view shows policies targeting all resources. These policies can't be deselected or moved to the Available Policies list because they're enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 

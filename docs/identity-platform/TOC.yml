@@ -169,9 +169,7 @@
     - name: Web app authentication
       href: index-web-app.yml
     - name: Quickstart
-      items: 
-        - name: ASP.NET 
-          href: quickstart-web-app-aspnet-sign-in.md
+      items:
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js
@@ -493,7 +491,7 @@
                   href: custom-extension-configure-saml-app.md
                 - name: Troubleshoot your custom claims provider API
                   href: custom-extension-troubleshoot.md
-        - name: Attribute collection custom extensions
+        - name: Custom extensions
           items:
             - name: Create attribute collection start and submit events
               href: custom-extension-attribute-collection.md

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/02/2024
+ms.date: 10/30/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -99,6 +99,13 @@ SigninLogs
 | where CreatedDateTime >= ago(7d)
 | summarize signInCount = count() by AppDisplayName
 | sort by signInCount desc 
+```
+
+To find risky sign-in events, use the following query:
+
+```kusto
+SigninLogs
+| where RiskState contains "atRisk"
 ```
 
 To get the top audit events over the last week, use the following query:

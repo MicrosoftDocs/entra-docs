@@ -4,7 +4,7 @@ description: Learn about when and how to use delegated access in the Microsoft i
 author: omondiatieno
 manager: celesteDG
 ms.author: jomondi
-ms.date: 10/15/2024
+ms.date: 11/07/2024
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
 
@@ -34,9 +34,19 @@ Once your app has requested a scope, a user or admin will need to grant the requ
 
 Always follow the principle of least privilege: you should never request scopes that your app doesn’t need. This principle helps limit the security risk if your app is compromised and makes it easier for administrators to grant your app access. For example, if your app only needs to list the chats a user belongs to but doesn’t need to show the chat messages themselves, you should request the more limited Microsoft Graph `Chat.ReadBasic` scope instead of `Chat.Read`. For more information about openID scopes, see [OpenID scopes](scopes-oidc.md).
 
-## Designing and publishing scopes for a resource  service
+## Designing and publishing scopes for a resource service
 
 If you’re building an API and want to allow delegated access on behalf of users, you’ll need to create scopes that other apps can request. These scopes should describe the actions or resources available to the client. You should consider developer scenarios when designing your scopes.
+
+## Token to self
+
+In the scenario where:
+- The resource application and client application are the same.
+- The application has no registered web API.
+- The application is requesting a token for a delegated permission that it exposes itself
+
+No consent will be needed or displayed for this token request. Additionally, apps that are created within a tenant and request a token to themselves can be inferred to have access to profile data already, and will be granted profile access automatically.
+
 
 ## How does delegated access work?
 

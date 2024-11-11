@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 05/16/2024
+ms.date: 10/28/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -138,6 +138,7 @@ To ease the setup of homogenous cross-tenant access settings applied to partner 
 The multitenant organization capability has been designed with the following constraints:
 
 - Any given tenant can only create or join a single multitenant organization.
+- Tenants the are in a [granular delegated admin privileges (GDAP)](/partner-center/customers/gdap-introduction) relationship cannot create or join a multitenant organization.
 - Any multitenant organization must have at least one active owner tenant.
 - Each active tenant must have cross-tenant access settings for all active tenants.
 - Any active tenant may leave a multitenant organization by removing themselves from it.

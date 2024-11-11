@@ -182,7 +182,7 @@ procedureSection:
 
         ### Assign a role
 
-        In this example, a security principal with objectID `aaaaaaaa-bbbb-cccc-1111-222222222222` is assigned the Billing Administrator role (role definition ID `b0f54661-2d74-4c50-afa3-1ec803f12efe`) at tenant scope. To see the list of immutable role template IDs of all built-in roles, see [Microsoft Entra built-in roles](permissions-reference.md).
+        In this example, a security principal with objectID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` is assigned the Billing Administrator role (role definition ID `b0f54661-2d74-4c50-afa3-1ec803f12efe`) at tenant scope. To see the list of immutable role template IDs of all built-in roles, see [Microsoft Entra built-in roles](permissions-reference.md).
 
         ```http
         POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments
@@ -200,7 +200,7 @@ procedureSection:
 
         #### Assign a time-bound eligible role assignment
 
-        In this example, a security principal with objectID `aaaaaaaa-bbbb-cccc-1111-222222222222` is assigned a time-bound eligible role assignment to Billing Administrator (role definition ID `b0f54661-2d74-4c50-afa3-1ec803f12efe`) for 180 days.
+        In this example, a security principal with objectID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` is assigned a time-bound eligible role assignment to Billing Administrator (role definition ID `b0f54661-2d74-4c50-afa3-1ec803f12efe`) for 180 days.
 
         ```http
         POST https://graph.microsoft.com/v1.0/rolemanagement/directory/roleEligibilityScheduleRequests

@@ -90,11 +90,11 @@ For end-to-end guidance on Microsoft Entra Conditional Access deployment, see th
 
 Common use cases to require Microsoft Entra multifactor authentication include:
 
-- For [administrators](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md)
+- For [administrators](~/identity/conditional-access/policy-old-require-mfa-admin.md)
 - To [specific applications](tutorial-enable-azure-mfa.md)
-- For [all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)
-- For [Azure management](~/identity/conditional-access/howto-conditional-access-policy-azure-management.md)
-- From [network locations you don't trust](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)
+- For [all users](~/identity/conditional-access/policy-all-users-mfa-strength.md)
+- For [Azure management](~/identity/conditional-access/policy-old-require-mfa-azure-mgmt.md)
+- From [network locations you don't trust](~/identity/conditional-access/policy-all-users-mfa-strength.md)
 
 ### Named locations
 
@@ -112,7 +112,7 @@ Risk policies include:
 
 ### Convert users from per-user MFA to Conditional Access based MFA
 
-If your users were enabled using per-user MFA enabled and enforced Microsoft Entra multifactor authentication, we recommend that you enable Conditional Access for all users and then manually disable per-user multifactor authentication. For more information, see [Create a Conditional Access policy](../conditional-access/howto-conditional-access-policy-all-users-mfa.md#create-a-conditional-access-policy).
+If your users were enabled using per-user MFA enabled and enforced Microsoft Entra multifactor authentication, we recommend that you enable Conditional Access for all users and then manually disable per-user multifactor authentication. For more information, see [Create a Conditional Access policy](../conditional-access/policy-all-users-mfa-strength.md#create-a-conditional-access-policy).
 
 ## Plan user session lifetime
 
@@ -143,7 +143,7 @@ If you use Microsoft Entra ID Protection, [configure the Microsoft Entra multifa
 
 If you don't have licenses that enable Microsoft Entra ID Protection, users are prompted to register the next time that MFA is required at sign-in. 
 To require users to use MFA, you can use Conditional Access policies and target frequently used applications like HR systems. 
-If a user's password is compromised, it could be used to register for MFA, taking control of their account. We therefore recommend [securing the security registration process with Conditional Access policies](~/identity/conditional-access/howto-conditional-access-policy-registration.md) requiring trusted devices and locations. 
+If a user's password is compromised, it could be used to register for MFA, taking control of their account. We therefore recommend [securing the security registration process with Conditional Access policies](~/identity/conditional-access/policy-all-users-security-info-registration.md) requiring trusted devices and locations. 
 You can further secure the process by also requiring a [Temporary Access Pass](howto-authentication-temporary-access-pass.md). A time-limited passcode issued by an admin that satisfies strong authentication requirements and can be used to onboard other authentication methods, including Passwordless ones.
 
 ### Increase the security of registered users
