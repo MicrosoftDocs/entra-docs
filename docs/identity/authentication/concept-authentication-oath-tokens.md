@@ -36,7 +36,7 @@ Microsoft Entra ID supports the use of OATH-TOTP SHA-1 and SHA-256 tokens that r
 
 Microsoft Entra ID has a new Microsoft Graph API in preview for Azure and Azure for US Government clouds.
 
-This preview refresh uses the hardware OATH token Authentication methods policy. [Privileged Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) can use Microsoft Graph to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview refresh in the Microsoft Entra admin center. 
+This preview refresh uses the hardware OATH token Authentication methods policy. [Privileged Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) can use [Microsoft Graph APIs](url) to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview refresh in the Microsoft Entra admin center. 
 
 Hardware OATH tokens that you add with Microsoft Graph for this preview refresh appear along with other tokens in the admin center. But you can only manage them by using Microsoft Graph. 
 
@@ -278,7 +278,7 @@ Here are steps a user can follow to self-activate their hardware OATH token in S
 
    :::image type="content" source="media/concept-authentication-oath-tokens/new-token.png" alt-text="Screenshot of a hardware OATH token in Security info.":::
 
-Here are steps users can follow to self-activate their hardware OATH token by using Microsoft Graph Explorer.
+Here are steps users can follow to self-activate their hardware OATH token by using Graph Explorer.
 
 1. Open Microsoft Graph Explorer, sign in, and consent to the required permissions.
 1. Make sure you have the required permissions.
