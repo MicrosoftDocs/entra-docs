@@ -210,7 +210,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1.  In the **Find Workers** page, select the user from the results.
 
-1. In the following page,select **Job > Worker Security** and the **Workday account** has to match with the Microsoft Entra ID as the **Name ID** value.
+1. In the following page, select **Job > Worker Security** and the **Workday account** has to match with the Microsoft Entra ID as the **Name ID** value.
 
     ![Screenshot showing Worker Security.](./media/workday-tutorial/worker-security.png)
 
