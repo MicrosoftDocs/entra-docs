@@ -43,7 +43,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 1. Select one these passwordless authentication methods for your emergency access accounts. These methods satisfy the [mandatory multifactor authentication requirements](../authentication/concept-mandatory-multifactor-authentication.md).
 
     - [Passkey (FIDO2)](../authentication/concept-authentication-passwordless.md#passkeys-fido2) (Recommended)
-    - [Certificate-based authentication](../authentication/concept-authentication-passwordless.md#certificate-based-authentication) if your organization already has a PKI infrastructure setup
+    - [Certificate-based authentication](../authentication/concept-authentication-passwordless.md#certificate-based-authentication) if your organization already has a Public Key Infrastructure (PKI) setup
 
 1. [Configure your emergency access accounts](#configuration-requirements) to use passwordless authentication.
 
@@ -162,7 +162,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 1. To turn off alerts for a while, select the **Suppress Alerts** check box and enter the wait duration before alerting again, and then select **Save**.
 
-1. Click **Create alert rule**.
+1. Select **Create alert rule**.
 
 ### Create an action group
 
@@ -190,7 +190,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 When you train staff members to use emergency access accounts and validate the emergency access accounts, at minimum do the following steps at regular intervals:
 
-- Ensure that security-monitoring staff are aware that the account-check activity is ongoing.
+- Ensure that security-monitoring staff is aware that the account-check activity is ongoing.
 - Ensure that the emergency break glass process to use these accounts is documented and current.
 - Ensure that administrators and security officers who might need to perform these steps during an emergency are trained on the process.
 - Validate that the emergency access accounts can sign-in and perform administrative tasks.
