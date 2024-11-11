@@ -29,7 +29,7 @@ MSAL libraries offer lower-level APIs that are closer to the OAuth2 and OIDC pro
 
 In cases where an Azure service has built a client library on top of these libraries, consider using the service-specific client library. For example, for Azure SQL, use the [`Microsoft.Data.SqlClient`](/sql/connect/ado-net/sql/azure-active-directory-authentication#using-managed-identity-authentication) package.
 
-## Language-Specific API References
+## Language-specific API references
 
 | Language | Azure Identity | MSAL |
 |----------|----------------|------|
