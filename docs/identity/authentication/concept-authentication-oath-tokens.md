@@ -272,7 +272,7 @@ Here are steps a user can follow to self-activate their hardware OATH token in S
 
    :::image type="content" source="media/concept-authentication-oath-tokens/new-token.png" alt-text="Screenshot of a hardware OATH token in Security info.":::
 
-Here are steps users can follow to self-activate their hardware OATH token by using Microsoft Graph Explorer.
+Here are steps users can follow to self-activate their hardware OATH token by using Graph Explorer.
 
 1. Open Microsoft Graph Explorer, sign in, and consent to the required permissions.
 1. Make sure you have the required permissions.
