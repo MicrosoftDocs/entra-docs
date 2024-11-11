@@ -137,8 +137,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In the **Microsoft Entra SAML settings** section, perform the following steps:
 
-    ![Screenshot that shows the Identity Management page.](./media/valid8me-tutorial/settings.png "Identity Management")
-
     a. In the **Login URL** textbox, paste the **Login URL** value, which you copied previously.
 
     b. In the **Microsoft Entra Identifier** textbox, paste the **Microsoft Entra Identifier** value, which you copied previously.
