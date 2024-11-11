@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 10/21/2024
+  ms.date: 10/25/2024
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -37,3 +37,11 @@ sections:
           You can't use passkeys without an internet connection. 
           For same-device scenarios, the mobile device that contains the passkey must be connected to the internet. 
           For cross-device scenarios, both the device with the passkey and the secondary device you are authenticating on must be connected to the internet.  
+      - question: |
+          Why is cross-device registration failing with "Device couldn't connect"?
+        answer: |
+          Make sure Bluetooth and an active internet connection are enabled on both devices. 
+          Additionally, allow connectivity to these two endpoints in your organization to enable cross-device registration and authentication:
+          
+          - cable.ua5v.com
+          - cable.auth.com

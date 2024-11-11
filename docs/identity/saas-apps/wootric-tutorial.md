@@ -141,8 +141,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In the **INTEGRATIONS**, select **Authentication** from the Left side menu and click on **Enable Single Sign On with Microsoft Entra ID**.
 
-	![Screenshot shows Enable Single Sign On with Microsoft Entra connected in the Authentication item.](./media/wootric-tutorial/configure-2.PNG)
-
 1. Perform the following steps in the following page:
 
 	![Screenshot shows the Settings page where you can enter the values described.](./media/wootric-tutorial/configure-3.PNG)

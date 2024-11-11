@@ -7,9 +7,11 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/25/2024
+ms.date: 11/04/2024
 ms.author: sarahlipsey
-ms.reviewer: hafowler
+ms.reviewer: deawari
+
+# Customer intent: As an IT admin, I need to know how many users in my tenant are using per-user MFA so I can make a plan to switch to Conditional Access MFA.
 ---
 
 # Microsoft Entra recommendation: Switch from per-user MFA to Conditional Access MFA
@@ -43,12 +45,11 @@ This recommendation improves your user's productivity and minimizes the sign-in 
 
 3. Ensure that the per-user MFA configuration is turned off. 
 
-After all users are migrated to Conditional Access MFA accounts, the recommendation status automatically updates the next time the service runs. Continue to review your Conditional Access policies to improve the overall health of your tenant.
+After all users are migrated to Conditional Access MFA accounts, the recommendation status automatically updates the next time the service runs. Continue to review your Conditional Access policies.
 
-## Next steps
+## Related content
 
-- [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
-- [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
-- [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)
-- [Learn about requiring MFA for all users using Conditional Access](../conditional-access/policy-all-users-mfa-strength.md)
-- [View the MFA Conditional Access policy tutorial](../authentication/tutorial-enable-azure-mfa.md)
+- [How to use Microsoft Entra recommendations](howto-use-recommendations.md)
+- [Microsoft Graph API for recommendations](/graph/api/resources/recommendation)
+- [MFA and Conditional Access policy](../conditional-access/policy-all-users-mfa-strength.md)
+- [MFA and Conditional Access policy tutorial](../authentication/tutorial-enable-azure-mfa.md)

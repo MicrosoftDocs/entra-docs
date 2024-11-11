@@ -131,7 +131,12 @@ Regardless of which language of the sample you're using, the Azure AppService ho
 The Request Service API makes use of callbacks to a [URL](presentation-request-api.md#callback-type) provided by the relying party application. This URL needs to be reachable from the Verified ID system for the callbacks to be received. Callbacks are coming from Azure infrastructure in the same region as your Microsoft Entra tenant. If you need to harden your network, you have two options.
 
 - Use [Azure firewall service tags](/azure/firewall/service-tags) [AzureCloud](/azure/virtual-network/service-tags-overview#available-service-tags).
-- Use the published [CIDR range](https://www.microsoft.com/download/details.aspx?id=56519) to configure your firewall.  You need to use AzureCloud.***regions*** that matches where your Microsoft Entra tenant is deployed to config their firewalls to let callback traffic from Request Service API through. For instance, if your tenant is in EU, you should pick all CIDR ranges from AzureCloud.***northeurope***, ***.westeurope***, etc., to your firewalls config.
+- Use the published [CIDR range](https://www.microsoft.com/download/details.aspx?id=56519) to configure your firewall.  You need to use AzureCloud.***regions*** that matches where your Microsoft Entra tenant is deployed to config your firewall to let callback traffic from Request Service API through. For instance, if your tenant is in EU, you should pick all CIDR ranges from AzureCloud.***northeurope***, ***.westeurope***, etc., to your firewalls config.
+
+### Scanning the QR code
+
+In the documentation, the instruction `scan the QR code` refers to scanning it with the Microsoft Authenticator mobile app, unless otherwise stated.
+It is possible to scan the QR code with the mobile's camera app, which then launches the Microsoft Authenticator. For this to work, the protocol handler for `openid-vc://` must be registered for Microsoft Authenticator. If another mobile app have been registered for it, the Authenticator will not open. On some older Android mobile versions, scanning the QR code with the camera app doesn't work, and there is no other workaround than using the Microsoft Authenticator app to scan it.
 
 ## Next steps
 

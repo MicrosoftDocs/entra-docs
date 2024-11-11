@@ -46,6 +46,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/conditional-access/reference-resources-change.md",
+      "redirect_url": "/entra/identity/conditional-access/concept-conditional-access-cloud-apps",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa.md",
       "redirect_url": "/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
       "redirect_document_id": true
@@ -336,6 +341,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/logmein-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/goto-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/logmein-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/goto-tutorial",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/promaster-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/expensemepro-tutorial",
       "redirect_document_id": false
@@ -498,6 +513,11 @@
     {
       "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
       "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/custom-extension-email-otp-get-started.md",
+      "redirect_url": "/entra/identity-platform/custom-extension-overview",
       "redirect_document_id": false
     },
     {
@@ -1230,6 +1250,26 @@
     {
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-aspnet-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-dotnet-core-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-tenant.md",
+      "redirect_url": "/entra/external-id/customers/how-to-web-app-node-edit-profile-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/configure-user-consent-groups.md",
+      "redirect_url": "/microsoftteams/platform/graph-api/rsc/grant-resource-specific-consent",
+      "redirect_document_id": false
+    }, 
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/bluejeans-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/bluejeans-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
     }
   ]

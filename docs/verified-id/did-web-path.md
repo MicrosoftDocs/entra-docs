@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 12/06/2023
+ms.date: 11/11/2024
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm looking for information to help me add support for did:web:path.
@@ -27,7 +27,7 @@ Did:web:path is described in the [did:web Method Specification](https://w3c-ccg.
 
 ## Enable domain for did:web:path support
 
-By default, a tenant and an authority isn't enabled to support did:web:path. You request enablement of did:web:path for your authority via creating a new support request in the [Microsoft Entra admin center](https://entra.microsoft.com/#blade/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
+By default, a tenant and an authority aren't enabled to support did:web:path. You request enablement of did:web:path for your authority via creating a new support request in the [Microsoft Entra admin center](https://entra.microsoft.com/#blade/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
 
 Support ticket details:
 
@@ -43,7 +43,7 @@ Support ticket details:
 
 ## How can I test that my authority is enabled?
 
-You are given confirmation on your support request, but you can also verify if a did:web domain is enabled for did:web:path by testing it in a normal browser. By adding a path that doesn't exist (:do-not-exist in the following example) you get and error message with code `discovery_service.web_method_path_not_supported` if your authority isn't enabled, but the code `discovery_service.not_found` if it's enabled.
+You are given confirmation on your support request, but you can also verify if a did:web domain is enabled for did:web:path by testing it in a normal browser. By adding a path that doesn't exist (```:do-not-exist``` in the following example) you get and error message with code `discovery_service.web_method_path_not_supported` if your authority isn't enabled, but the code `discovery_service.not_found` if it's enabled.
 
 ```http
 https://discover.did.msidentity.com/v1.0/identifiers/did:web:my-domain.com:do-not-exist
@@ -112,7 +112,7 @@ POST /v1.0/verifiableCredentials/authorities/:newAuthorityIdForPath/generateWell
 
 ## Creating contracts using the new did:web:path authority
 
-Contracts need to be created using the [Admin API](admin-api.md#contracts) as there's currently no user interface support for secondary authorities.
+Contracts need to be created using the [Admin API](admin-api.md#contracts). There's currently no user interface support for secondary authorities.
 
 ## Issuing credentials based contracts in the new did:web:path authority
 
