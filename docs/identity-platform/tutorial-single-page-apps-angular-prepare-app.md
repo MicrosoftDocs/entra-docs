@@ -221,7 +221,7 @@ We'll use the values recorded during the app registration to configure the appli
 
 ## Add authentication code to the application
 
-To handle user authentication and session management using MSAL in Angular, you need to update `src/app/app.component.ts`.
+To handle user authentication and session management using [MSAL Angular](/javascript/api/%40azure/msal-angular/), you'll need to update `src/app/app.component.ts`.
 
 1. Open `src/app/app.component.ts` file and replace the contents with the following code:
 
