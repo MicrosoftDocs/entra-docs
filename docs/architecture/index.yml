@@ -62,9 +62,7 @@ landingContent:
         links:
           - text: Copilot in Microsoft Entra
             url: ~/fundamentals/copilot-security-entra.md
-          - text: Adoption hub 
-            url:  https://adoption.microsoft.com/security-copilot/  
           - text: Secure Gen AI
-            url: ~/fundamentals/copilot-security-entra-investigate-incident.md
+            url: secure-generative-ai.md
 
           
