@@ -40,7 +40,7 @@ To enable sign-in for customers with an Apple ID, you need to create an applicat
 7. In the **Register a new identifier** section, select **Services IDs**, and then select **Continue**.
 8. In Register a Services ID:
    1. Enter a **Description**. The description is shown to the user on the consent screen.
-   1. Enter the **Identifier**, such as `com.contoso.entra-service`. Explicit naming such as `com.myappdomain.myappname.service``is recommended. Take note of your Service ID identifier. The identifier is your Client ID.
+   1. Enter the **Identifier**, such as `com.contoso.entra-service`. Explicit naming such as `com.myappdomain.myappname.service` is recommended. Take note of your Service ID identifier. The identifier is your Client ID.
    1. Select **Continue**, and then select **Register**.
 9. From **Identifiers**, select the Service ID identifier you created.
 10. Select **Sign In with Apple**, and then select **Configure**.
@@ -73,9 +73,12 @@ To enable sign-in for customers with an Apple ID, you need to create an applicat
 5. To Download Your Key, select **Download** to download the `.p8` file that contains your key.
 6. Select **Done**.
 
+> [!IMPORTANT]
+> Sign in with Apple requires the admin to renew their client secret every 6 months. You'll need to manually renew the Apple client secret if it expires and store the new value in the policy key. We recommend you set your own reminder within 6 months to generate a new client secret.
+
 ## Configure Apple federation in Microsoft Entra External ID
 
-After you create the Apple application, in this step you set the Apple app details in Microsoft Entra External ID. You can use the Microsoft Entra admin center to do so. To configure Apple federation in the Microsoft Entra admin center, follow these steps:
+After you create the Apple app, in this step you set the Apple app details in Microsoft Entra External ID. You can use the Microsoft Entra admin center to do so. To configure Apple federation in the Microsoft Entra admin center, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
@@ -83,7 +86,7 @@ After you create the Apple application, in this step you set the Apple app detai
 
 :::image type="content" source="media/how-to-apple-federation-customers/configure-apple-idp.png" alt-text="Screenshot that shows how to add Apple identity provider.":::
 
-1. The **Name** *Apple* is autopopulated.
+1. The **Name** *Apple* is autopopulated. It cannot be changed.
 1. Enter the following details: 
     - **Client (Apple service) ID**: The client ID of the Apple application you created in the previous step.
     - **Apple developer team ID**: The Apple developer team ID related to the Apple application you created in the previous step.
