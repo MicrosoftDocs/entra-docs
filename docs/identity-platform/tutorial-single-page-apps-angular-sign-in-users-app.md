@@ -143,7 +143,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     ```html
     <div class="title">
         <h5>
-            Welcome to the Microsoft Authentication Library For Javascript - Angular SPAx
+            Welcome to the Microsoft Authentication Library For Javascript - Angular SPA
         </h5>
         <p >View your data from Microsoft Graph by clicking the "View Profile" link above.</p>
     </div>
