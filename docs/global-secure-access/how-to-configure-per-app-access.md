@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 07/22/2024
+ms.date: 11/10/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -180,6 +180,23 @@ Once you have your app configured, your private resources added, users assigned 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Select the toggle for **Private access profile**.
+
+This diagram demonstrates how Microsoft Entra Private Access works when attempting to use Remote Desktop Protocol to connect to a server on a private network.
+
+:::image type="content" source="media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram.png" alt-text="Diagram of Microsoft Entra Private Access working with Remote Desktop Protocol." lightbox="media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram.png":::
+
+| Step | Description |
+| --- | --- |
+| 1 | User initiates RDP session to an FQDN which maps to the target server. The GSA Client intercepts the traffic and tunnels it to the SSE Edge.  |
+| 2 | The SSE Edge evaluates policies stored in Microsoft Entra ID such as whether the user is assigned to the application and Conditional Access policies.  |
+| 3 | Once the user has been authorized, Microsoft Entra ID issues a token for the Private Access application.  |
+| 4 | The traffic is released to continue to the Private Access service along with the application’s access token.  |
+| 5 | The Private Access service validates the access token and the connection is brokered to the Private Access backend service.  |
+| 6 | The connection is brokered to the Private Network Connector.  |
+| 7 | The Private Network Connector performs a DNS query to identify the IP address of the target server. |
+| 8 | The DNS service on the private network sends the response. |
+| 9 | The Private Network Connector forwards the traffic to the target server. The RDP session is negotiated (including RDP authentication) and is then established.  |
+
 
 ## Next steps
 

@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 12/13/2022
+ms.date: 11/07/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management 
 ms.reviewer: miccohen
@@ -215,7 +215,7 @@ To resolve your published SHA services to your BIG-IP-VM public IP(s), configure
 
     * **Subscription**: Same subscription as the BIG-IP-VM
     * **DNS zone**: DNS zone authoritative for the verified domain suffix your published websites use, for example, www.contoso.com
-    * **Name**: The hostname you specify resolves to the public IP associated with the selected secondary IP. Define DNS-to IP-mappings. For example, intranet.contoso.com to 13.77.148.215
+    * **Name**: The hostname you specify resolves to the public IP associated with the selected secondary IP. Define DNS-to IP-mappings. For example, intranet.contoso.com to 11.22.333.444
     * **TTL**: 1
     * **TTL units**: Hours
 

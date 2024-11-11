@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/26/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: arvinh
 
@@ -22,17 +22,9 @@ This article describes the options for downloading the provisioning logs from th
 
 ## Prerequisites
 
-To view the provisioning logs, your tenant must have a Microsoft Entra ID P1 or P2 license associated with it. To upgrade your Microsoft Entra edition, see [Getting started with Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md).
-
-Application owners can view logs for their own applications. The following roles are required to view provisioning logs:
-
-- Reports Reader
-- Security Reader
-- Security Operator
-- Security Administrator
-- Application Administrator
-- Cloud Application Administrator
-- Users in a custom role with the [provisioningLogs permission](../role-based-access-control/custom-enterprise-app-permissions.md#full-list-of-permissions)
+- A working Microsoft Entra tenant with a Microsoft Entra ID P1 or P2 license associated with it.
+- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the provisioning logs.
+    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
 
 ## How to view the provisioning logs
 
@@ -163,7 +155,7 @@ Use the following table to better understand how to resolve errors that you find
 | Microsoft Entra ID<br/>CannotUpdateObjects<br/>MasteredOnPremises| If the user in the target tenant was originally synchronized from AD to Microsoft Entra ID and converted to an external user, the source of authority is still on-premises and the user can't be updated.| The user can't be updated with cross-tenant synchronization. |
 | EntityTypeNotSupported|Groups can be used to determine what users are in scope for provisioning. Groups objects cannot be synchronized. | No customer action is required. This is a skipped event. If you are using the provisioning on-demand, ensure that you choose a user rather than a group to provision.|
 
-## Next steps
+## Related content
 
 - [Check the status of user provisioning](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md)
 - [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/application-provisioning-config-problem.md)
