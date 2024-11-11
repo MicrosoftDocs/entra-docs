@@ -761,6 +761,12 @@ if "access_token" in result:
     print("Token obtained!")
 ```
 
+#### [Go](#tab/Go)
+
+MSAL Go doesn't support managed identities yet. You can use the Azure Identity library to acquire tokens for managed identities.
+
+---
+
 ## Connecting to resources that don't support Microsoft Entra ID or token based authentication in libraries
 
 Some Azure resources either don't yet support Microsoft Entra authentication, or their client libraries don't support authenticating with a token. Typically these resources are open-source technologies that expect a username and password or an access key in a connection string.
