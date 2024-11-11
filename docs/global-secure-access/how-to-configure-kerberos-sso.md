@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 09/03/2024
+ms.date: 11/10/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -80,6 +80,22 @@ Configure private DNS so the Global Secure Access clients can resolve private DN
 1. Select the **Private DNS** tab and then select **Enable Private DNS**.
 1. Select **Add DNS suffix**. At a minimum, add the top level suffixes of your Active Directory forests hosting users synchronized to Microsoft Entra ID.
 1. Select **Save**.
+
+## How to use Kerberos SSO to access an SMB file share
+
+This diagram demonstrates how Microsoft Entra Private Access works when trying to access an SMB file share from a Windows device that is configured with Windows Hello for Business + Cloud Trust. In this example, the admin has configured Quick Access Private DNS and two enterprise apps - one for the Domain Controllers and one for the SMB file share.
+
+:::image type="content" source="media/how-to-configure-kerberos-sso/private-access-kerberos-sso-to-smb.png" alt-text="Diagram of Microsoft Entra Private Access using Kerberos SSO for SMB file share." lightbox="media/how-to-configure-kerberos-sso/private-access-kerberos-sso-to-smb.png":::
+
+|Step      |Description   |
+|----------|-----------|
+|A         |User attempts to access SMB file share using FQDN. The GSA Client intercepts the traffic and tunnels it to the SSE Edge. Authorization policies in Microsoft Entra ID are evaluated and enforced, such as whether the user is assigned to the application and Conditional Access. Once the user has been authorized, Microsoft Entra ID issues a token for the SMB Enterprise Application. The traffic is released to continue to the Private Access service along with the application’s access token. The Private Access service validates the access token and the connection is brokered to the Private Access backend service. The connection is then brokered to the Private Network Connector.  |
+|B       |The Private Network Connector performs a DNS query to identify the IP address of the target server. The DNS service on the private network sends the response. The Private Network Connector attempts to access the target SMB file share which then requests Kerberos authentication.         |
+|C       |The client generates an SRV DNS query to locate domain controllers. Phase A is repeated, intercepting the DNS query and authorizing the user for the Quick Access application. The Private Network Connector sends the SRV DNS query to the private network. The DNS service sends the DNS response to the client via the Private Network Connector.       |
+|D       |The Windows device requests a partial TGT (also called Cloud TGT) from Microsoft Entra ID (if it doesn’t already have one). Microsoft Entra ID issues a partial TGT.        |
+|E      |Windows initiates a DC locator connection over UDP port 389 with each domain controller listed in the DNS response from phase C. Phase A is repeated, intercepting the DC locator traffic and authorizing the user for the Enterprise application that publishes the on-premises domain controllers. The Private Network Connector sends the DC locator traffic to each domain controller. The responses are relayed back to the client. Windows selects and caches the domain controller with the fastest response. |
+|F |The client exchanges the partial TGT for a full TGT. The full TGT is then used to request and receive a TGS for the SMB file share. |
+|G |The client presents the TGS to the SMB file share. The SMB file share validates the TGS. Access to the file share is granted.  | 
 
 ## Troubleshoot
 Microsoft Entra ID joined devices using password authentication rely on attributes being synchronized by Microsoft Entra ID Connect. Make sure the attributes `onPremisesDomainName`, `onPremisesUserPrincipalName`, and `onPremisesSamAccountName` have the right values. Use Graph Explorer and PowerShell to check the values.
