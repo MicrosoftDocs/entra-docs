@@ -36,7 +36,7 @@ The following sections provide a high-level overview of the product interfaces a
 
 ### Identity
 
-**Identity** gives administrators and developers access to [Microsoft Entra ID](./whatis.md) and [Microsoft Entra External ID](~/external-id/external-identities-overview.md)solutions, including tenants, users, groups, devices, applications, roles, and licensing.
+**Identity** gives administrators and developers access to [Microsoft Entra ID](./whatis.md) and [Microsoft Entra External ID](~/external-id/external-identities-overview.md) solutions, including tenants, users, groups, devices, applications, roles, and licensing.
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-identity.png" alt-text="Screenshot of the Microsoft Entra admin center Identity menu.":::
 
@@ -98,7 +98,7 @@ For more information about configuring and managing Microsoft Entra Permissions 
 
 ### Global Secure Access
 
-**Global Secure Access** gives administrators and developers access to [Microsoft Entra Private Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-private-access) and [Microsoft Entra Internet Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-internet-access)solutions, including the Global Secure Access dashboard, clients, connectors, and monitoring.
+**Global Secure Access** gives administrators and developers access to [Microsoft Entra Private Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-private-access) and [Microsoft Entra Internet Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-internet-access) solutions, including the Global Secure Access dashboard, clients, connectors, and monitoring.
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-global-secure-access.png" alt-text="Screenshot of the Microsoft Entra admin center Global Secure Access menu.":::
 
