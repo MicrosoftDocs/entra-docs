@@ -665,6 +665,10 @@ if (!string.IsNullOrEmpty(result.AccessToken))
 #### [Java](#tab/java)
 
 ```java
+import com.microsoft.aad.msal4j.IAuthenticationResult;
+import com.microsoft.aad.msal4j.ManagedIdentityApplication;
+import com.microsoft.aad.msal4j.ManagedIdentityId;
+import com.microsoft.aad.msal4j.ManagedIdentityParameters;
 
 String resource = "https://vault.azure.net";
 
@@ -690,6 +694,20 @@ System.out.println(result.accessToken());
 #### [Node.js](#tab/nodejs)
 
 ```typescript
+import {
+    LogLevel,
+    LoggerOptions,
+    AuthenticationResult,
+} from "@azure/msal-common";
+import {
+    ManagedIdentityRequestParams,
+    ManagedIdentityConfiguration,
+    ManagedIdentityApplication,
+    ManagedIdentityIdParams,
+    NodeSystemOptions,
+} from "@azure/msal-node";
+
+
 // Applicable to user-assigned managed identities only
 const userAssignedManagedIdentityIdParams: ManagedIdentityIdParams = {
     userAssignedClientId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
@@ -742,7 +760,6 @@ result = global_app.acquire_token_for_client(resource='https://vault.azure.net')
 if "access_token" in result:
     print("Token obtained!")
 ```
----
 
 ## Connecting to resources that don't support Microsoft Entra ID or token based authentication in libraries
 
