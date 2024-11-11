@@ -56,7 +56,6 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 - Troubleshoot a user’s sign-in events.
 - Find details about users and groups.
 - Find and summarize changes made to users, roles, groups, and apps from Microsoft Entra audit log details.
-- Improve your security posture and reduce application/workload identity risk.
 - Learn more about Microsoft Entra and receive guidance on identity & access administration from relevant [Microsoft Entra documentation](/entra/). 
 
 ### Summarize a user's risk level
