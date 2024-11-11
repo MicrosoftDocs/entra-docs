@@ -132,7 +132,8 @@ The claims mapping in the following example requires that you configure the toke
 
 ## Application registration
 
-The clientId attribute is the application ID of a registered application in the OIDC identity provider. For Microsoft Entra ID, you create the application by taking the following steps:
+The clientId attribute is the application ID of a registered application in the OIDC identity provider. For Microsoft Entra ID, you create the application by following these steps:
+
 
 1. In the Azure portal, go to [Microsoft Entra ID](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps).
 
@@ -170,7 +171,7 @@ If the claims don't exist, there's no value in the issued verifiable credential.
 
 **For Microsoft Entra ID**: To configure the claims to include in your token, see [Provide optional claims to your app](~/identity-platform/optional-claims.md). The configuration is per application, so this configuration should be for the app that has the application ID specified in the client ID in the rules definition.
 
-To match the display and rules definitions, you should make your application's optionalClaims JSON look like the following:
+To match the display and rules definitions, you should make your application's optionalClaims JSON look like the following example:
 
 ```json
 "optionalClaims": {
