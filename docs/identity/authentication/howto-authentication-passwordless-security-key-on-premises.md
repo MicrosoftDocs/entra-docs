@@ -49,7 +49,7 @@ You must also meet the following system requirements:
 
 - Have the credentials required to complete the steps in the scenario:
    - An Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest. Referred to as **$domainCred**.
-   - A Microsoft Entra user with the [Hybrid Identity Administrators](/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role. Referred to as **$cloudCred**.
+   - A Microsoft Entra user with the [Hybrid Identity Administrators](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role. Referred to as **$cloudCred**.
 
 - Users must have the following Microsoft Entra attributes populated through Microsoft Entra Connect:
    - `onPremisesSamAccountName` (`accountName` in Microsoft Entra Connect)
