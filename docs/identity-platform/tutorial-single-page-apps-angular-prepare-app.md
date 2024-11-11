@@ -28,7 +28,7 @@ In this tutorial:
 * Completion of the prerequisites and steps in [Tutorial: Register an application](tutorial-single-page-apps-angular-register-app.md).
 * [Install Agular CLI](https://v17.angular.io/cli#installing-angular-cli)
 * [Install Node.js](https://nodejs.org/en/download/).
-
+* [Visual Studio 2024](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 ## Create a new Angular project
 
 To build the Angular project from scratch, follow these steps:
