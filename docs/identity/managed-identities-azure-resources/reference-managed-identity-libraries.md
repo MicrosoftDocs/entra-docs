@@ -17,17 +17,17 @@ ms.reviewer: rwike77
 
 This document provides an overview of the client libraries available for authenticating your applications using managed identities for Azure resources. These libraries include the Azure Identity libraries and Microsoft Authentication Libraries (MSAL). This article focuses on accessing resources using these two libraries.
 
-Some Azure services have built client libraries on top of these libraries. For example, the `Microsoft.Data.SqlClient` package can be used to authenticate to an Azure SQL database using managed identities.
+Some Azure services built client libraries on top of these libraries. For example, the `Microsoft.Data.SqlClient` package can be used to authenticate to an Azure SQL database using managed identities.
 
 ## Choosing the right library
 
-MSAL libraries offer lower-level APIs that are closer to the OAuth2 and OIDC protocols. Both MSAL and Azure SDK allow you to acquire tokens via managed identity. Internally, Azure SDK uses MSAL and provides a higher-level API through its `DefaultAzureCredential` and `ManagedIdentityCredential` abstractions.
+MSAL libraries offer lower-level APIs that are closer to the OAuth2 and OpenID Connect (OIDC) protocols. Both MSAL and Azure SDK allow you to acquire tokens via managed identity. Internally, Azure SDK uses MSAL and provides a higher-level API through its `DefaultAzureCredential` and `ManagedIdentityCredential` abstractions.
 
 - If your application already uses one of the SDKs, continue using the same SDK.
-- Use Azure SDK if you are developing a new application and plan to call other Azure resources. This SDK provides a better developer experience by allowing the app to run on private developer machines where managed identity doesn't exist.
-- Use MSAL if you need to call other downstream web APIs like Microsoft Graph or your own web API.
+- If you're developing a new application and plan to call other Azure resources, use Azure SDK. This SDK provides a better developer experience by allowing the app to run on private developer machines where managed identity doesn't exist.
+- If you need to call other downstream web APIs like Microsoft Graph or your own web API, use MSAL.
 
-In cases where an Azure service has built a client library on top of these libraries, consider using the service-specific client library. For example, for Azure SQL, use the [`Microsoft.Data.SqlClient`](/sql/connect/ado-net/sql/azure-active-directory-authentication#using-managed-identity-authentication) package.
+In cases where an Azure service built a client library on top of these libraries, consider using the service-specific client library. For example, for Azure SQL, use the [`Microsoft.Data.SqlClient`](/sql/connect/ado-net/sql/azure-active-directory-authentication#using-managed-identity-authentication) package.
 
 ## Language-specific API references
 
