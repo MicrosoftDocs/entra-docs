@@ -14,7 +14,7 @@ ms.topic: tutorial
 
 # Tutorial: Create an Angular application and prepare it for authentication
 
-After registration is complete, an Angular project can be created using Angular CLI (Command Line Interface). This tutorial demonstrates how to create a single-page Angular application using Angular CLI and create files needed for authentication and authorization.
+After registration is complete, an Angular project can be created using Angular CLI (Command Line Interface). This tutorial demonstrates how to create a single-page Angular application using the Angular CLI and create files needed for authentication and authorization.
 
 In this tutorial:
 
