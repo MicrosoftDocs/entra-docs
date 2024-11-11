@@ -112,8 +112,6 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	a. Select **Sign SAML response and assertion** for **Signing Option**.
 
-    ![Screenshot showing SAML Signing Certificate.](./media/workday-tutorial/signing-option.png)
-
 	b. Click **Save**
 
 1. On the **Set up Workday** section, copy the appropriate URL(s) based on your requirement.
@@ -212,7 +210,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1.  In the **Find Workers** page, select the user from the results.
 
-1. In the following page,select **Job > Worker Security** and the **Workday account** has to match with the Microsoft Entra ID as the **Name ID** value.
+1. In the following page, select **Job > Worker Security** and the **Workday account** has to match with the Microsoft Entra ID as the **Name ID** value.
 
     ![Screenshot showing Worker Security.](./media/workday-tutorial/worker-security.png)
 
