@@ -88,8 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type the URL:
-    `https://app.greenhouse.io`
+    Entra ID side Sign on URL should be left blank (for more details we advise to check with Greenhouse support)
 
 	> [!NOTE]
 	> The value is not real. Update the value with the actual Reply URL. Contact [Greenhouse Client support team](https://www.greenhouse.io/contact) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
