@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
 ms.date: 10/22/2024
-ms.reviewer: emilylauber
+ms.reviewer: ejahjaloo
 ms.service: identity-platform
 
 ms.topic: tutorial
