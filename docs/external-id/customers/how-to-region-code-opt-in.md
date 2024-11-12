@@ -1,6 +1,6 @@
 ---
 title: Regional telecom restrictions
-description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Micorsoft Azure B2C
+description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Microsoft Azure B2C
 
 author: msmimart
 manager: celestedg
@@ -12,29 +12,27 @@ ms.author: mimart
 ms.reviewer: aloom3
 ms.custom: it-pro
 
-#Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my custoconsumer and business customer app.
+#Customer intent: As a dev, devops, or it admin, I want to prevent telephony fraud by choosing which countries and regions to accept telecom traffic from.
 ---
 
 # Regional telecom restrictions in External ID
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-To safeguard against telephony fraud, Microsoft disallows traffic from certain phone number region codes. Doing so helps to prevent unauthorized access and protect customers from fraudulent activities, like International Revenue Share Fraud (IRSF). With IRSF, criminals gain unauthorized access to a network and divert traffic to premium rate numbers, resulting in exorbitant charges and unreliable services for customers.
+To safeguard against telephony fraud, Microsoft disallows traffic from certain phone number country codes. Doing so helps prevent unauthorized access and protect customers from fraudulent activities such as International Revenue Share Fraud (IRSF). With IRSF, criminals gain unauthorized access to a network and divert traffic to premium rate numbers, resulting in exorbitant charges and making it harder for your customers to access your services ([learn more about telephony fraud](concept-mfa-telephony-fraud.md)).
 
-For apps in your external tenant, you can activate region codes using the Microsoft Graph API `onPhoneMethodLoadStart` event policy. You can also deactivate regions using this same policy.
+When a country code is blocked, customers trying to set up SMS verification for multifactor authentication (MFA) for your application might encounter the message "Try another verification method." To resolve this issue, you can activate telephony traffic for the specific country code for your application.
 
-## Region codes activated by default
+You can use the Microsoft Graph API `onPhoneMethodLoadStart` event policy to manage telephony traffic for apps in your external tenant. With this event policy, you can activate or deactivate country codes for specific countries and regions.
 
-TBD
+## Country codes requiring opt-in
 
-## Region codes requiring opt-in
+For SMS verification, the following country codes are deactivated by default. If you want to allow traffic from these regions, you need to activate them using the `onPhoneMethodLoadStart`event policy.
 
-For SMS verification, the following region codes are deactivated by default. If you want to allow traffic from these regions, you will need to activate them using the `onPhoneMethodLoadStart`event policy.
+**SMS verification country codes requiring opt-in**
 
-**SMS verification region codes requiring opt-in**
-
-| Region Code | Region Name                                    |
-|:----------- |:---------------------------------------------- |
+| Country code | Region Name |
+|:------------ |:----------- |
 | 93  | Afghanistan |
 | 213 | Algeria |
 | 244 | Angola |
@@ -150,21 +148,23 @@ For SMS verification, the following region codes are deactivated by default. If 
 | 260 | Zambia |
 | 263 | Zimbabwe |
 
-## How to activate telecom traffic from regions
+## How to activate telecom traffic
 
-To enable telephony traffic from currently deactivated region codes, use the Microsoft Graph API to set the `includeAdditionalRegions` property in the `onPhoneMethodLoadStart` event policy for one or more applications. Include the relevant country codes in the `includeAdditionalRegions` property of the API request body for the regions you want to activate. For example, to send SMS requests in South Asia, activate the numeric region codes for the five countries within that region.
+To enable telephony traffic from currently deactivated country codes, use the Microsoft Graph API to set the `includeAdditionalRegions` property in the `onPhoneMethodLoadStart` event policy for one or more applications. Include the relevant country codes in the `includeAdditionalRegions` property of the API request body for the regions you want to activate. For example, to send SMS requests in South Asia, activate the numeric country codes for the five countries within that region.
 
 Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy schema to activate regions.
 
 |Property                  |Description   |
 |--------------------------|---------|
-|DefaultRegions            |A read-only, pre-defined list of regions where telephony service is enabled. Customers cannot modify this list.          |
-|IncludeAdditionalRegions  |A numbers-only set representing the region codes that can be manually added to enable telephony service in those regions, in addition to the list of countries that are already enabled. Regions that require opt in are linked above. Validates against current International Subscriber Dialing (ISD) country codes where the maximum code length is 4. Set cannot overlap ExcludeRegions or include non-numeric characters or null values.          |
-|ExcludeRegions            |A numbers-only set representing the region telecom codes to prevent or disable the telephony service. Validates against current International Subscriber Dialing (ISD) country codes where the maximum code length is 4. Set cannot overlap IncludeAdditionalRegions and cannot include non-numeric characters or null values. Exclude does not check the list defined above.   |
+|DefaultRegions            |A string of comma-separated country codes where telephony service is enabled by default. Read-only.          |
+|IncludeAdditionalRegions  |A string of comma-separated country codes to enable for telephony service in addition to default country codes. Codes are validated against current International Subscriber Dialing (ISD) country codes, where max length is 4. The same code can't be specified in both IncludeAdditionalRegions and in ExcludeRegions.      |
+|ExcludeRegions            |A string of comma-separated country codes to disable for telephony service. Codes are validated against current ISD country codes, where max length is 4. The same code can't be specified in both IncludeAdditionalRegions and in ExcludeRegions.   |
+
+### Example REST APIs
 
 ```http
 POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners  
-{
+{  
     "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartListener",  
     "conditions": {  
         "applications": {  
@@ -177,90 +177,12 @@ POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners
     "priority": 500,  
     "handler": {  
         "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler", 
-        /* An Admin can state the region codes they would like to opt in or opt out from. */ 
+        /* An Admin can state the country codes they would like to opt in or opt out from. */ 
         { 
                 "includeAdditionalRegions": [222, 998], 
                  "excludeRegions": [] 
       } 
-}
-
-HTTP/1.1 201 Created 
-{
-    "@odata.context": "https://microsoft.graph.microsoft.com/v1.0/$metadata#identity/authenticationEventListeners/$entity", 
-    "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartListener", 
-    "id": "2be3336b-e3b4-44f3-9128-b6fd9ad39bb8", 
-    "conditions": {  
-
-        "applications": { 
-           "includeAllApplications": false,  
-
-            "includeApplications": [  
-
-                "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
-
-            ] 
-
-        }   
-    },   
-    "handler": 
-    {   
-        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler ",  
-        { 
-            "includeAdditionalRegions": [222, 998], 
-            "excludeRegions": [] 
-        }, 
-    } 
-}
-```
-
-## How to deactivate telecom traffic from regions
-
-If want to disable fraudulent requests coming from a region, you can deactivate the region codes using the `excludeRegions` property in the `onPhoneMethodLoadStart` policy.
-
-For example, if an External ID application detects high volumes of SMS messages that are not being used for verification from users in a certain region code, you can deactivate telecom traffic in those regions. To do so, place them in the ‘excludeRegions’ list.
-
-```http
-POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners  
-
-{  
-
-    "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartListener",  
-
-    "conditions": {  
-
-        "applications": {  
-
-            "includeAllApplications": false,  
-
-            "includeApplications": [  
-
-                "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
-
-            ]  
-
-        }  
-
-    },  
-
-    "priority": 500,  
-
-    "handler": {  
-
-        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler", 
-
-        /* An Admin can state the country codes they would like to opt in or opt out from. */ 
-
-        { 
-
-                "includeAdditionalRegions": [222, 998], 
-
-                 "excludeRegions": [1001, 99, 777] 
-
-      } 
-
 } 
-
- 
 
 HTTP/1.1 201 Created 
 { 
@@ -268,16 +190,11 @@ HTTP/1.1 201 Created
     "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartListener", 
     "id": "2be3336b-e3b4-44f3-9128-b6fd9ad39bb8", 
     "conditions": {  
-
         "applications": { 
            "includeAllApplications": false,  
-
             "includeApplications": [  
-
                 "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
-
             ] 
-
         }   
     },   
     "handler": 
@@ -291,7 +208,60 @@ HTTP/1.1 201 Created
 } 
 ```
 
+## How to deactivate telecom traffic
+
+If you want to disable fraudulent requests coming from a region, you can deactivate the country codes using the `excludeRegions` property in the `onPhoneMethodLoadStart` policy.
+
+For example, if an External ID application detects a high volume of nonverification SMS messages from a specific country code, you can deactivate telecom traffic in that region. To do so, place the country code in the ‘excludeRegions’ list.
+
+```http
+POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners  
+{  
+    "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartListener",  
+    "conditions": {  
+        "applications": {  
+            "includeAllApplications": false,  
+            "includeApplications": [  
+                "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
+            ]  
+        }  
+    },  
+    "priority": 500,  
+    "handler": {  
+        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler", 
+        /* An Admin can state the country codes they would like to opt in or opt out from. */ 
+        { 
+                "includeAdditionalRegions": [222, 998], 
+                 "excludeRegions": [1001, 99, 777] 
+      } 
+} 
+
+HTTP/1.1 201 Created 
+{ 
+    "@odata.context": "https://microsoft.graph.microsoft.com/v1.0/$metadata#identity/authenticationEventListeners/$entity", 
+    "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartListener", 
+    "id": "2be3336b-e3b4-44f3-9128-b6fd9ad39bb8", 
+    "conditions": {  
+        "applications": { 
+           "includeAllApplications": false,  
+            "includeApplications": [  
+                "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
+            ] 
+        }   
+    },   
+    "handler": 
+    {   
+        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler ",  
+        { 
+            "includeAdditionalRegions": [222, 998], 
+            "excludeRegions": [] 
+        }, 
+    } 
+}  
+```
+
 ## Next steps
 
-* [Understanding telephony fraud](concept-mfa-telephony-fraud.md)
-* [Authentication methods in Microsoft Entra ID](concept-authentication-authenticator-app.md)
+- [Understanding telephony fraud](concept-mfa-telephony-fraud.md)
+- [Authentication methods in Microsoft Entra ID](concept-authentication-authenticator-app.md)
+- [Service limits and restrictions](reference-service-limits.md) 
