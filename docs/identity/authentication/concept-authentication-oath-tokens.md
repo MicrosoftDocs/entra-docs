@@ -45,9 +45,7 @@ Hardware OATH tokens that you add with Microsoft Graph for this preview refresh 
 This hardware OATH token preview refresh improves flexibility and security for organizations by removing Global Administrator requirements. 
 Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators or Authentication Policy Administrators. 
 
-End users can also self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) page. For more information, see [User self-assignment and activation](#user-self-assignment-and-activation).
-
-The following table compares the administrator role requirements to manage hardware OATH tokens in the preview refresh versus original preview option.
+The following table compares the administrator role requirements to manage hardware OATH tokens in the preview refresh versus the original preview.
 
 | Task    | Original preview | Preview refresh |
 |---------|------------------|-----------------|
@@ -56,7 +54,16 @@ The following table compares the administrator role requirements to manage hardw
 | Update a token in the tenant. For example, update manufacturer or module; Secret can't be updated. | Global Administrator | Authentication Policy Administrator |
 | Delete a token from the tenant’s inventory. | Global Administrator | Authentication Policy Administrator |
 
-Another difference pertains to end users. In the legacy multifactor authentication (MFA) policy, hardware and software OATH tokens can only be enabled together. If you enable OATH tokens in the legacy MFA policy, end users see an option to add **Hardware OATH tokens** in their Security info page.
+End users can also self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) as part of the preview refresh. The following table lists token and role requirements to assign and activate tokens. 
+
+| Task | Token state | Role requirement |
+|------|-------------|------------------|
+| Assign a token from the inventory to a user in the tenant. | Assigned | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
+| Read the token of the user, doesn't return the secret. | Activated / Assigned  (depends if the token was already activated or not) | Member (self)<br>Authentication Administrator (only has restricted Read, not standard Read)<br>Privileged Authentication Administrator  |
+| Update the token of the user, such as provide current 6-digit code for activation, or change token name. | Activated | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
+| Remove the token from the user. The token goes back to the token inventory. | Available (back to the tenant inventory) | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
+
+In the legacy multifactor authentication (MFA) policy, hardware and software OATH tokens can only be enabled together. If you enable OATH tokens in the legacy MFA policy, end users see an option to add **Hardware OATH tokens** in their Security info page.
 
 If you don't want end users to see an option to add **Hardware OATH tokens**, migrate to the Authentication methods policy. 
 In the Authentication methods policy, hardware and software OATH tokens can be enabled and managed separately. For more information about how to migrate to the Authentication methods policy, see [How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID](how-to-authentication-methods-manage.md).
@@ -74,13 +81,12 @@ Tenants with a Microsoft Entra ID Premium license can continue to upload hardwar
 1. Start by enabling hardware OATH tokens policy using the APIs.
 
 
-1. If you enabled the HW OATH authentication method policy above, we recommend that you clear the **Verification code from mobile app or hardware token** setting. To verify this setting, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. If you enable OATH tokens in the legacy MFA policy, we recommend that you clear the **Verification code from mobile app or hardware token** setting. To verify this setting, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+
 1. Browse to **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
 
-Note: there might be some delays in the policy propagation(up to 20 mins). This can impact the 
-user’s ability to sign-in with HW OATH token and showing HW OATH token in the “Security Info” 
-page. Please allow an hour or so for this policy to get updated.
-
+>[!NOTE]
+>There might be up to a 20-minute delay for the policy propagation. Allow an hour for the policy to update before users can sign in with their hardware OATH token and see it in their [Security info](https://mysignins.microsoft.com/security-info).
 
 ### User authentication methods in Microsoft Graph
 
@@ -147,25 +153,7 @@ Authentication Administrators and end users can unassign a token:
 DELETE https://graph.microsoft.com/beta/users/66aa66aa-bb77-cc88-dd99-00ee00ee00ee/authentication/hardwareoathmethods/6c0272a7-8a5e-490c-bc45-9fe7a42fc4e0
 ```
 
-Let's try another example where an Authentication Policy Administrator creates two tokens, with **hashFunction** optional. The hashFunction is SHA-1 by default. For SHA-256, enter `hmacsha256` as the value for the property. 
-
-
-### User self-assignment and activation
-
-The following table lists requirements to assign and activate hardware OATH tokens.
-
-| Task | Token state | Role requirement |
-|------|-------------|------------------|
-| Assign a token from the inventory to a user in the tenant. | Assigned | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
-| Read the token of the userl doesn't return the secret. | Activated / Assigned  (depends if the token was already activated or not) | Member (self)<br>Authentication Administrator (only has restricted Read, not standard Read)<br>Privileged Authentication Administrator  |
-| Update the token of the user, such as provide current 6-digit code for activation, or change token name. | Activated | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
-| Remove the token from the user. The token goes back to the token inventory. | Available (back to the tenant inventory) | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
-
-### Scenario use cases
-
-The next sections cover different scenarios to demonstrate options for different roles create, assign, and activate tokens. 
-
-#### Scenario 1: Admin creates, assigns, and activates a hardware OATH token 
+### Scenario: Admin creates, assigns, and activates a hardware OATH token 
 
 This scenario cover how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps.
 
@@ -218,7 +206,7 @@ POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 To validate the token is activated, sign in to [Security info](https://aka.ms/mysecurityinfo) as the test user. If you're prompted to approve a sign-in request from Microsoft Authenticator, select Use a verification code.
 
 
-#### Scenario 2: Admin creates and assigns a token that a user activates
+### Scenario: Admin creates and assigns a token that a user activates
 
 In this scenario, an Authentication Policy Administrator creates and assigns a token, and then a user can activate it on their Security info page, or by using Microsoft Graph Explorer. When you assign a token, you can share steps for the user to sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
@@ -302,7 +290,7 @@ Here are steps users can follow to self-activate their hardware OATH token by us
    }
    ```
 
-#### Scenario 3: Admin creates token that users self-assign and activate
+### Scenario: Admin creates token that users self-assign and activate
 
 In this scenario, an Authentication Administrator creates tokens without assignment, and users self-assign and activate the tokens. You can upload new tokens to the tenant in bulk. Users can sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
