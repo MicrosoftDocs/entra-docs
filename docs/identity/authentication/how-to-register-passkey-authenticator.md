@@ -187,11 +187,7 @@ If a user wants to revert to the original instructions and register a passkey in
 
 ## Delete your passkey in Authenticator for iOS
 
-To remove the passkey from Authenticator, tap the account name, tap **Settings**, and then tap **Delete passkey**. 
-
-> [!NOTE]
-> In most cases, the passkey is also deleted from [Security info](https://mysignins.microsoft.com/security-info). If not, navigate to Security info and click **Delete** to remove it. 
-> If the passkey is not deleted from Security Info Entra ID may prompt the user to sign-in with the passkey they no longer have. 
+To remove the passkey from Authenticator, tap the account name, tap **Settings**, and then tap **Delete passkey**. You will also need to delete your passkey from [Security info](https://mysignins.microsoft.com/security-info). 
 
 ### Troubleshooting
 
