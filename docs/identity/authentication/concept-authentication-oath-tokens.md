@@ -74,7 +74,7 @@ Tenants with a Microsoft Entra ID Premium license can continue to upload hardwar
 
 ### Authentication method policy for hardware OATH tokens
 
-1. You can view the hardware OATH tokens policy status using the APIs
+1. You can view the hardware OATH tokens policy status using Microsoft Graph APIs or the Microsoft Entra admin center.
 
    ```https
    GET https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/hardwareOath
@@ -90,26 +90,71 @@ Tenants with a Microsoft Entra ID Premium license can continue to upload hardwar
 >[!NOTE]
 >There might be up to a 20-minute delay for the policy propagation. Allow an hour for the policy to update before users can sign in with their hardware OATH token and see it in their [Security info](https://mysignins.microsoft.com/security-info).
 
-### User authentication methods in Microsoft Graph
 
-You can use the following Microsoft Graph examples to assign and activate tokens for a user. 
-You can allow assignment without activation. 
-The following examples require the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
+### Scenario: Admin creates, assigns, and activates a hardware OATH token 
+
+This scenario cover how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps.
+
+Let's look at an example where an Authentication Policy Administrator creates a token and assigns it to a user. You can allow assignment without activation. 
+
+For the body of the POST in this example, you can find the **serialNumber** from your device and the **secretKey** is delivered to you.
+
+```https
+POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
+{ 
+"serialNumber": "GALT11420104", 
+"manufacturer": "Thales", 
+"model": "OTP 110 Token", 
+"secretKey": "C2dE3fH4iJ5kL6mN7oP1qR2sT3uV4w", 
+"timeIntervalInSeconds": 30, 
+"assignTo": {"id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}
+}
+```
+
+The response includes the token **id**, and the user **id** that the token is assigned to:
+
+```http
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#directory/authenticationMethodDevices/hardwareOathDevices/$entity",
+    "id": "3dee0e53-f50f-43ef-85c0-b44689f2d66d",
+    "displayName": null,
+    "serialNumber": "GALT11420104",
+    "manufacturer": "Thales",
+    "model": "OTP 110 Token",
+    "secretKey": null,
+    "timeIntervalInSeconds": 30,
+    "status": "available",
+    "lastUsedDateTime": null,
+    "hashFunction": "hmacsha1",
+    "assignedTo": {
+        "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+        "displayName": "Test User"
+    }
+}
+```
+
+Here's how the Authentication Policy Administrator can activate the token. Replace the verifcation code in the Request body with the code from your hardware OATH token.
+
+```https
+POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods/3dee0e53-f50f-43ef-85c0-b44689f2d66d/activate
+
+{ 
+    "verificationCode" : "903809" 
+}
+```
+
+To validate the token is activated, sign in to [Security info](https://aka.ms/mysecurityinfo) as the test user. If you're prompted to approve a sign-in request from Microsoft Authenticator, select Use a verification code.
 
 
-List tokens: 
+You can GET to list tokens: 
 
 ```https
 GET https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices 
 ```
 
-Delete a token with token ID 3dee0e53-f50f-43ef-85c0-b44689f2d66d: 
-
-```https
-DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/3dee0e53-f50f-43ef-85c0-b44689f2d66d
 
 
-Create a single token:
+This example creates a single token:
 
 ```https
 POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
@@ -149,64 +194,17 @@ The response includes the token ID.
 }
 ```
 
-Authentication Administrators and end users can unassign a token: 
+Authentication Policy Administrators or an end user can unassign a token: 
 
 ```https
 DELETE https://graph.microsoft.com/beta/users/66aa66aa-bb77-cc88-dd99-00ee00ee00ee/authentication/hardwareoathmethods/6c0272a7-8a5e-490c-bc45-9fe7a42fc4e0
 ```
 
-### Scenario: Admin creates, assigns, and activates a hardware OATH token 
-
-This scenario cover how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps.
-
-Let's look at an example where an Authentication Administrator creates a token and assigns it to a user. For the body of the POST in this example, you can find the **serialNumber** from your device and the **secretKey** is delivered to you.
+This example shows how to delete a token with token ID 3dee0e53-f50f-43ef-85c0-b44689f2d66d: 
 
 ```https
-POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
-{ 
-"serialNumber": "GALT11420104", 
-"manufacturer": "Thales", 
-"model": "OTP 110 Token", 
-"secretKey": "C2dE3fH4iJ5kL6mN7oP1qR2sT3uV4w", 
-"timeIntervalInSeconds": 30, 
-"assignTo": {"id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"}
-}
+DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/3dee0e53-f50f-43ef-85c0-b44689f2d66d
 ```
-
-The response includes the token **id**, and the user **id** that the token is assigned to:
-
-```http
-{
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#directory/authenticationMethodDevices/hardwareOathDevices/$entity",
-    "id": "3dee0e53-f50f-43ef-85c0-b44689f2d66d",
-    "displayName": null,
-    "serialNumber": "GALT11420104",
-    "manufacturer": "Thales",
-    "model": "OTP 110 Token",
-    "secretKey": null,
-    "timeIntervalInSeconds": 30,
-    "status": "available",
-    "lastUsedDateTime": null,
-    "hashFunction": "hmacsha1",
-    "assignedTo": {
-        "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
-        "displayName": "Test User"
-    }
-}
-```
-
-Here's how the Authentication Administrator can activate the token. Replace the verifcation code in the Request body with the code from your hardware OATH token.
-
-```https
-POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods/3dee0e53-f50f-43ef-85c0-b44689f2d66d/activate
-
-{ 
-    "verificationCode" : "903809" 
-}
-```
-
-To validate the token is activated, sign in to [Security info](https://aka.ms/mysecurityinfo) as the test user. If you're prompted to approve a sign-in request from Microsoft Authenticator, select Use a verification code.
-
 
 ### Scenario: Admin creates and assigns a token that a user activates
 
