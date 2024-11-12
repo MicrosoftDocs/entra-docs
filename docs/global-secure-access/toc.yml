@@ -45,7 +45,7 @@ items:
     href: concept-connector-groups.md
   - name: Understand remote network connectivity
     href: concept-remote-network-connectivity.md
-  - name: Universal Continous Access Evaluation
+  - name: Universal Continuous Access Evaluation
     href: concept-universal-conditional-access.md
 - name: How-to guides
   expanded: true
