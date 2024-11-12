@@ -64,18 +64,26 @@ To make sure that your policy works as expected, the recommended best practice i
 
 ### Policy 3: Sign-in frequency control every time risky user
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Protection** > **Conditional Access**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
-   1. Under **Exclude**, select **Users and groups** and choose your organization's [emergency access or break-glass accounts](~/identity/role-based-access-control/security-emergency-access.md).
+   1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
    1. Select **Done**.
-1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
-1. Under **Conditions** > **User risk**, set **Configure** to **Yes**. Under **Configure user risk levels needed for policy to be enforced** select **High**, then select **Done**.
-1. Under **Access controls** > **Grant**, select **Grant access**, **Require password change**, and select **Select**.
-1. Under **Session controls** > **Sign-in frequency**, select **Every time**.
+1. Under **Cloud apps or actions** > **Include**, select **All resources (formerly 'All cloud apps')**.
+1. Under **Conditions** > **User risk**, set **Configure** to **Yes**. 
+   1. Under **Configure user risk levels needed for policy to be enforced**, select **High**. [This guidance is based on Microsoft recommendations and might be different for each organization](../id-protection/howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels)
+   1. Select **Done**.
+1. Under **Access controls** > **Grant**, select **Grant access**.
+   1. Select **Require authentication strength**, then select the built-in **Multifactor authentication** authentication strength from the list.
+   1. Select **Require password change**.
+   1. Select **Select**.
+1. Under **Session**.
+   1. Select **Sign-in frequency**.
+   1. Ensure **Every time** is selected.
+   1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
