@@ -49,7 +49,7 @@ Organizations can delegate token creation, assignment, and activation to Privile
 
 The following table compares the administrator role requirements to manage hardware OATH tokens in the preview refresh versus the original preview.
 
-| Task    | Original preview | Preview refresh |
+| Task    | Original preview role | Preview refresh role |
 |---------|------------------|-----------------|
 | Create a new token in the tenant’s inventory. | Global Administrator | Authentication Policy Administrator |
 | Read a token from the tenant’s inventory; doesn't return the secret. | Global Administrator | Authentication Policy Administrator |
@@ -74,7 +74,7 @@ Tenants with a Microsoft Entra ID Premium license can continue to upload hardwar
 
 ### Authentication method policy for hardware OATH tokens
 
-1. You can view the hardware OATH tokens policy status using Microsoft Graph APIs or the Microsoft Entra admin center.
+1. You can view the hardware OATH tokens policy status using Microsoft Graph APIs or the Microsoft Entra admin center. 
 
    ```https
    GET https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/hardwareOath
