@@ -44,6 +44,8 @@ For more information, see [Windows Hello for Business](/windows/security/identit
 
 While not as secure as other MFA methods, email verification can be useful in certain accessibility scenarios, providing a fallback option. For users who experience difficulty with text, voice, or app-based authentication, email can offer a familiar and easily accessible alternative.
 
+For Work Accounts email OTP is usable only for Self-Service Password Recovery.
+
 References:
 
 - [Available verification methods](/entra/identity/authentication/concept-mfa-howitworks)
