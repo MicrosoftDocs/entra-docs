@@ -38,7 +38,7 @@ You can use the user insights feature for the following scenarios:
 
 To access and view data from application user activity, you must have:
 
-- A Microsoft Entra ID for [customers tenant](quickstart-tenant-setup.md).
+- A Microsoft Entra External ID [external tenant](quickstart-tenant-setup.md).
 - [Registered application(s)](how-to-register-ciam-app.md) with some sign-in and sign-up data.
 
 ## How to access the Application user activity dashboards
