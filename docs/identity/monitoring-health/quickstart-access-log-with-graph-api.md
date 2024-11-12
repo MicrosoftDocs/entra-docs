@@ -5,7 +5,7 @@ description: Learn how to access the sign-in log and analyze a single sign-in at
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: quickstart
-ms.date: 11/04/2024
+ms.date: 11/12/2024
 ms.author: sarahlipsey
 author: shlipsey3
 manager: amycolannino
@@ -47,7 +47,8 @@ This section provides the steps to locate the failed sign-in attempt using the M
 
 1. Set the API version to **beta**.
 
-1. Select **Run query**.
+1. Enter the following query and select **Run query**:
+    - https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=Status eq 'failure'&$filter=userDisplayName eq 'Isabella Simonsen'
 
 1. Review the query response and locate the **status** section of the response.
 
