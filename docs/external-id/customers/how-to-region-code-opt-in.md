@@ -269,5 +269,5 @@ HTTP/1.1 201 Created
 ## Next steps
 
 - [Understanding telephony fraud](~/identity/authentication/concept-mfa-telephony-fraud.md)
-- [Authentication methods in Microsoft Entra ID](concept-authentication-authenticator-app.md)
-- [Service limits and restrictions](reference-service-limits.md) 
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md)
+- [Service limits and restrictions](reference-service-limits.md)
