@@ -15,7 +15,7 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to prevent telephony fraud by choosing which countries and regions to accept telecom traffic from.
 ---
 
-# Regions requiring opt-in for SMS verification
+# Regions requiring opt-in for SMS verification (preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -24,6 +24,8 @@ To safeguard against telephony fraud, Microsoft disallows traffic from certain p
 When a country code is blocked, customers trying to set up SMS verification for multifactor authentication (MFA) for your application might encounter the message "Try another verification method." To resolve this issue, you can activate telephony traffic for the specific country code for your application.
 
 You can use the Microsoft Graph API `onPhoneMethodLoadStart` event policy to manage telephony traffic for apps in your external tenant. With this event policy, you can activate or deactivate country codes for specific countries and regions.
+
+[!INCLUDE [preview alert](includes/preview-alert/preview-alert-ciam.md)]
 
 ## Country codes requiring opt-in
 
