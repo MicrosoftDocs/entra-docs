@@ -148,11 +148,11 @@ For SMS verification, the following country codes are deactivated by default. If
 | 260 | Zambia |
 | 263 | Zimbabwe |
 
-## How to activate telecom traffic
+## Use Microsoft Graph API to manage telecom traffic
 
-To enable telephony traffic from currently deactivated country codes, use the Microsoft Graph API to set the `includeAdditionalRegions` property in the `onPhoneMethodLoadStart` event policy for one or more applications. Include the relevant country codes in the `includeAdditionalRegions` property of the API request body for the regions you want to activate. For example, to send SMS requests in South Asia, activate the numeric country codes for the five countries within that region.
+Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy schema to activate or deactivate country codes.
 
-Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy schema to activate regions.
+### Event policy schema
 
 |Property                  |Description   |
 |--------------------------|---------|
@@ -160,7 +160,11 @@ Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy schema to 
 |IncludeAdditionalRegions  |A string of comma-separated country codes to enable for telephony service in addition to default country codes. Codes are validated against current International Subscriber Dialing (ISD) country codes, where max length is 4. The same code can't be specified in both IncludeAdditionalRegions and in ExcludeRegions.      |
 |ExcludeRegions            |A string of comma-separated country codes to disable for telephony service. Codes are validated against current ISD country codes, where max length is 4. The same code can't be specified in both IncludeAdditionalRegions and in ExcludeRegions.   |
 
-### Example REST APIs
+### How to activate telecom traffic
+
+To enable telephony traffic from currently deactivated country codes, use the Microsoft Graph API to set the `includeAdditionalRegions` property in the `onPhoneMethodLoadStart` event policy for one or more applications. Include the relevant country codes in the `includeAdditionalRegions` property of the API request body for the regions you want to activate. For example, to send SMS requests in South Asia, activate the numeric country codes for the five countries within that region.
+
+#### Example REST APIs
 
 ```http
 POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners  
@@ -208,11 +212,13 @@ HTTP/1.1 201 Created
 } 
 ```
 
-## How to deactivate telecom traffic
+### How to deactivate telecom traffic
 
 If you want to disable fraudulent requests coming from a region, you can deactivate the country codes using the `excludeRegions` property in the `onPhoneMethodLoadStart` policy.
 
-For example, if an External ID application detects a high volume of nonverification SMS messages from a specific country code, you can deactivate telecom traffic in that region. To do so, place the country code in the ‘excludeRegions’ list.
+For example, if an External ID application detects a high volume of nonverification SMS messages from a specific country code, you can deactivate telecom traffic in that region. To do so, place the country code in the `excludeRegions` list.
+
+#### Example REST APIs
 
 ```http
 POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners  
