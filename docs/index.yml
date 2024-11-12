@@ -86,9 +86,9 @@ conceptualContent:
         - text: Access the admin center and create a tenant
           url: /entra/fundamentals/create-new-tenant
           itemType: quickstart
-        - text: Create a group and add members 
-          url: /entra/fundamentals/groups-view-azure-portal
-          itemType: quickstart
+        - text: Copilot in Microsoft Entra 
+          url: /entra/fundamentals/copilot-security-entra
+          itemType: concept
     ## CARD 2 ######################
     - title: Architecture
       links:
