@@ -81,7 +81,8 @@ The ATP Preview requires the Microsoft Entra Internet Access traffic profile in 
 ## Configuring TLS Termination (Preview)
 The TLS termination feature is a standalone feature that is also currently in Preview. A significant percentage of internet traffic is encrypted. By terminating TLS at the edge, the SASE solution can inspect and apply security policies to decrypted traffic which allows for threat detection, content filtering, and granular access controls. Details on setting up TLS termination are included when you onboard your tenant in the Preview program.
 
-You can express your interest in joining this preview by filling out this [form](https://aka.ms/tlspreview). Then we will follow up to have your tenant onboarded.
+> [!NOTE]
+> When you sign up for the Netskope ATP preview, you are implicitly signing up for the TLS preview.
 
 ## Creating and Linking ATP Policies
 To create and link ATP policies, you must first activate the Netskope offer in the Microsoft Entra admin center. Navigate to **Global Secure Access** -> **Third-Party Solutions** and select the *Netskope* offer. During the Preview the offer is available for free.
