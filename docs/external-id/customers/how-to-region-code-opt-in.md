@@ -1,13 +1,13 @@
 ---
-title: Regional telecom restrictions
-description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Microsoft Azure B2C
+title: Regions that need to opt in for SMS verification
+description: To protect customers, some regions require you to enable the country codes to receive SMS telephony verification for Microsoft Entra External ID external tenants.
 
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 10/07/2024
+ms.date: 11/12/2024
 ms.author: mimart
 ms.reviewer: aloom3
 ms.custom: it-pro
@@ -15,11 +15,11 @@ ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to prevent telephony fraud by choosing which countries and regions to accept telecom traffic from.
 ---
 
-# Regional telecom restrictions in External ID
+# Regions requiring opt-in for SMS verification
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-To safeguard against telephony fraud, Microsoft disallows traffic from certain phone number country codes. Doing so helps prevent unauthorized access and protect customers from fraudulent activities such as International Revenue Share Fraud (IRSF). With IRSF, criminals gain unauthorized access to a network and divert traffic to premium rate numbers, resulting in exorbitant charges and making it harder for your customers to access your services ([learn more about telephony fraud](concept-mfa-telephony-fraud.md)).
+To safeguard against telephony fraud, Microsoft disallows traffic from certain phone number country codes. Doing so helps prevent unauthorized access and protect customers from fraudulent activities such as International Revenue Share Fraud (IRSF). With IRSF, criminals gain unauthorized access to a network and divert traffic to premium rate numbers, resulting in exorbitant charges and making it harder for your customers to access your services. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md).
 
 When a country code is blocked, customers trying to set up SMS verification for multifactor authentication (MFA) for your application might encounter the message "Try another verification method." To resolve this issue, you can activate telephony traffic for the specific country code for your application.
 
@@ -148,7 +148,7 @@ For SMS verification, the following country codes are deactivated by default. If
 | 260 | Zambia |
 | 263 | Zimbabwe |
 
-## Use Microsoft Graph API to manage telecom traffic
+## Use Microsoft Graph API to manage telecom for regions
 
 Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy schema to activate or deactivate country codes.
 
@@ -160,7 +160,7 @@ Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy schema to 
 |IncludeAdditionalRegions  |A string of comma-separated country codes to enable for telephony service in addition to default country codes. Codes are validated against current International Subscriber Dialing (ISD) country codes, where max length is 4. The same code can't be specified in both IncludeAdditionalRegions and in ExcludeRegions.      |
 |ExcludeRegions            |A string of comma-separated country codes to disable for telephony service. Codes are validated against current ISD country codes, where max length is 4. The same code can't be specified in both IncludeAdditionalRegions and in ExcludeRegions.   |
 
-### How to activate telecom traffic
+### How to activate telecom for regions
 
 To enable telephony traffic from currently deactivated country codes, use the Microsoft Graph API to set the `includeAdditionalRegions` property in the `onPhoneMethodLoadStart` event policy for one or more applications. Include the relevant country codes in the `includeAdditionalRegions` property of the API request body for the regions you want to activate. For example, to send SMS requests in South Asia, activate the numeric country codes for the five countries within that region.
 
@@ -212,11 +212,11 @@ HTTP/1.1 201 Created
 } 
 ```
 
-### How to deactivate telecom traffic
+### How to deactivate telecom for regions
 
 If you want to disable fraudulent requests coming from a region, you can deactivate the country codes using the `excludeRegions` property in the `onPhoneMethodLoadStart` policy.
 
-For example, if an External ID application detects a high volume of nonverification SMS messages from a specific country code, you can deactivate telecom traffic in that region. To do so, place the country code in the `excludeRegions` list.
+For example, if an External ID application detects a high volume of nonverification SMS messages from a specific country code, you can deactivate telecom in that region. To do so, place the country code in the `excludeRegions` list.
 
 #### Example REST APIs
 
@@ -268,6 +268,6 @@ HTTP/1.1 201 Created
 
 ## Next steps
 
-- [Understanding telephony fraud](concept-mfa-telephony-fraud.md)
+- [Understanding telephony fraud](~/identity/authentication/concept-mfa-telephony-fraud.md)
 - [Authentication methods in Microsoft Entra ID](concept-authentication-authenticator-app.md)
 - [Service limits and restrictions](reference-service-limits.md) 
