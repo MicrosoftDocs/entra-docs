@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: external
 
 ms.topic: concept-article
-ms.date: 10/07/2024
+ms.date: 11/01/2024
 ms.author: mimart
 ms.custom: it-pro, references_regions
 
@@ -50,7 +50,7 @@ For details, see [how to enable MFA methods in an external tenant](how-to-multif
 
 Email one-time passcode authentication is available in an external tenant both as a first- and second-factor verification method. To allow the use of email one-time passcodes for MFA, your local account authentication method must be set to *Email with password*. If you choose *Email with one-time passcode*, customers who use this method for primary sign-in aren't able to use it for MFA secondary verification.
 
-When email one-time passcode is enabled for MFA, the user signs in with their primary sign-in method and is notified that a code will be sent to the user's email address. The user chooses to send the code, retrieves the passcode from their email inbox, and enters it in the sign-in window.
+When email one-time passcode is enabled for MFA, the user signs in with their primary sign-in method and is notified that a code will be sent to the user's email address. The user chooses to send the code, retrieves the passcode from their email inbox, and enters it in the sign-in window. The user must complete this verification process within 10 minutes.
 
 ## SMS-based authentication
 
@@ -73,7 +73,7 @@ SMS is an add-on feature and requires a [linked subscription](../external-identi
 
 |Tier                               |Countries/Regions  |
 |-----------------------------------|-------------------|
-|Phone Authentication Low Cost      |Australia, Brazil, Brunei, Canada, Chile, China, Colombia, Cyprus, Macedonia, Poland, Portugal, South Korea, Thailand, Turkey, United States         |
+|Phone Authentication Low Cost      |Australia, Brazil, Brunei, Canada, Chile, China, Colombia, Cyprus, North Macedonia, Poland, Portugal, South Korea, Thailand, Turkey, United States         |
 |Phone Authentication Mid Low Cost  |Greenland, Albania, American Samoa, Austria, Bahamas, Bahrain, Bosnia & Herzegovina, Botswana, Costa Rica, Czech Republic, Denmark, Estonia, Faroe Islands, Finland, France, Greece, Hong Kong, Hungary, Iceland, Ireland, Italy, Japan, Latvia, Lithuania, Luxembourg, Macao, Malta, Mexico, Micronesia, Moldova, Namibia, New Zealand, Nicaragua, Norway, Romania, São Tomé and Príncipe, Seychelles Republic, Singapore, Slovakia, Solomon Islands, Spain, Sweden, Switzerland, Taiwan, United Kingdom, United States Virgin Islands, Uruguay         |
 |Phone Authentication Mid High Cost |Andorra, Angola, Anguilla, Antarctica, Antigua and Barbuda, Argentina, Armenia, Aruba, Ascension, Barbados, Belgium, Benin, Bolivia, British Virgin Islands, Bulgaria, Burkina Faso, Cameroon, Cayman Islands, Central African Republic, Cook Islands, Croatia, Diego Garcia, Djibouti, Dominican Republic, Dominican Republic, Dominican Republic, East Timor, Ecuador, El Salvador, Eritrea, Falkland Islands, Fiji, French Guiana, French Polynesia, Gambia, Georgia, Germany, Gibraltar, Grenada, Guadeloupe, Guam, Guinea, Guyana, Honduras, India, Ivory Coast, Kenya, Kiribati, Laos, Liberia, Malaysia, Marshall Islands, Martinique, Mauritius, Monaco, Montenegro, Montserrat, Netherlands, Netherlands Antilles, New Caledonia, Niue, Oman, Palau, Panama, Paraguay, Peru, Puerto Rico, Puerto Rico, Réunion, Rwanda, Saint Helena, Saint Kitts & Nevis, Saint Lucia, Saint Pierre & Miquelon, Saint Vincent and the Grenadines, Saipan, Samoa, San Marino, Saudi Arabia, Sint Maarten, Slovenia, South Africa, South Sudan, Suriname, Swaziland (New Name is Kingdom of Eswatini), Tokelau, Tonga, Turks & Caicos, Tuvalu, United Arab Emirates, Vanuatu, Venezuela, Vietnam, Wallis and Futuna         |
 |Phone Authentication High Cost     |Liechtenstein, Bermuda, Cambodia, Cape Verde, Democratic Republic of Congo, Dominica, Egypt, Equatorial Guinea, Ghana, Guatemala, Guinea-Bissau, Israel, Jamaica, Jamaica, Kosovo, Lesotho, Maldives, Mali, Mauritania, Morocco, Mozambique, Papua New Guinea, Philippines, Qatar, Sierra Leone, Trinidad & Tobago, Ukraine, Zimbabwe, Afghanistan, Algeria, Azerbaijan, Bangladesh, Belarus, Belize, Bhutan, Burundi, Chad, Comoros, Congo, Ethiopia, Gabonese Republic, Haiti, Indonesia, Iraq, Jordan, Kuwait, Kyrgyzstan, Lebanon, Libya, Madagascar, Malawi, Mongolia, Myanmar, Nauru, Nepal, Niger, Nigeria, Pakistan, Palestinian National Authority, Russia, Senegal, Serbia, Somalia, Sri Lanka, Sudan, Tajikistan, Tanzania, Togolese Republic, Tunisia, Turkmenistan, Uganda, Uzbekistan, Yemen, Zambia         |

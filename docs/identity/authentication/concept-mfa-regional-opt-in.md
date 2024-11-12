@@ -35,12 +35,34 @@ IRSF poses a significant threat to online businesses and can cause reputational 
 
 ## SMS verification
 
-For SMS verification, the following region codes require an opt-in.
+For SMS verification, the following region codes require an opt-in. This means that if you'd like to use telecom in these regions, you'll have to reach out to support. 
 
 | Region Code | Region Name                                    |
 |:----------- |:---------------------------------------------- |
 | 222         |  Mauritania                                    |
 | 998         |  Uzbek                                         |
+| 63 | Philippines | 
+| 20 | Egypt | 
+| 967 | Yemen | 
+| 84 | Vietnam | 
+| 62 | Indonesia | 
+| 234 | Nigeria | 
+| 972 | Israel | 
+| 233 | Ghana | 
+| 92 | Pakistan | 
+| 966 | Saudi Arabia | 
+| 971 | United Arab Emriates | 
+| 94 | Sri Lanka | 
+| 258 | Mozambique | 
+| 502 | Guatemala | 
+| 974 | Qatar | 
+| 591 | Bolivia | 
+| 254 | Kenya | 
+| 255 | Tanzania | 
+| 7 | Russia / Kazakhstan | 
+| 380 | Ukraine | 
+| 216 | Tunisia | 
+| 212 | Morocco | 
 
 ## Voice verification
 For voice verification, the following region codes require an opt-in.
@@ -212,6 +234,16 @@ For voice verification, the following region codes require an opt-in.
 | 7         |  Russia                                        | 100                              |  1000                                     |
 | 258         |  Mozambique                                    | 50                              |  200                                     |
 | 92         |  Pakistan                                    | 100                              |  1000                                     |
+| 994 | Azerbaijan | 50 | 200 | 
+| 880 | Bangladesh | 50 | 200 | 
+| 20  | Egypt | 50 | 200 | 
+| 260 | Zambia | 50 | 200 | 
+| 502 | Guatemala | 10 | 50 
+| 255 | Tanzania | 10 | 50 
+| 261 | Madagascar | 10 | 30 
+| 998 | Uzbekistan | 10 | 30 
+| 223 | Mali | 20 | 100 
+| 52 | Mexico | 100 | 500 
 
 ## Next steps
 

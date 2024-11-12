@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/01/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -21,7 +21,7 @@ This article describes how to analyze Microsoft Entra activity logs with Microso
 
 ## Prerequisites
 
-- For license and role requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
+- A working Microsoft Entra tenant with a Microsoft Entra ID P1 or P2 license associated with it.
 - To consent to the required permissions, you need the [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 ## Access reports using Microsoft Graph Explorer
@@ -107,7 +107,7 @@ Microsoft Graph PowerShell cmdlets:
 
 **Error: Application missing Microsoft Entra ID 'Read directory data' or 'Read all audit log data' permission**: The application must have either the `AuditLog.Read.All` or `Directory.Read.All` permission to access the activity logs with Microsoft Graph.
 
-## Next steps
+## Related content
 
 - [Get started with Microsoft Entra ID Protection and Microsoft Graph](../../id-protection/howto-identity-protection-graph-api.md)
 - [Audit API reference](/graph/api/resources/directoryaudit)

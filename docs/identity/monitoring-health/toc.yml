@@ -144,8 +144,7 @@ items:
       href: concept-log-monitoring-integration-options-considerations.md
     - name: Log options for streaming to endpoints
       href: concept-diagnostic-settings-logs-options.md
-    - name: Plan a reporting and monitoring deployment
-      href: plan-monitoring-and-reporting.md
+
   - name: How-to guides 
     expanded: true
     items:

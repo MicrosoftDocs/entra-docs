@@ -50,7 +50,6 @@ You can use the following link to bootstrap the creation of your web application
 1. Under **Manage**, select **Authentication** and then add the following information:
    1. In the **Web** section, add `https://localhost:44321/signin-oidc` as a **Redirect URI**.
    1. In **Front-channel logout URL**, enter `https://localhost:44321/signout-oidc`.
-   1. Under **Implicit grant and hybrid flows**, select **ID tokens**.
    1. Select **Save**.
    
 # [ASP.NET](#tab/aspnet)
@@ -61,7 +60,6 @@ You can use the following link to bootstrap the creation of your web application
    1. In the **Redirect URI (optional)** section, select **Web** in the combo box and enter a **Redirect URI** of `https://localhost:44326/`.
    1. Select **Register** to create the application.
 1. Under **Manage**, select **Authentication**.
-1. In the **Implicit grant and hybrid flows** section, select **ID tokens**. This sample requires the [implicit grant flow](v2-oauth2-implicit-grant-flow.md) to be enabled to sign in the user.
 1. Select **Save**.
 
 # [Java](#tab/java)

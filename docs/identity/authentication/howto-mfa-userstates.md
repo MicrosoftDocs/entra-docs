@@ -6,7 +6,7 @@ description: Learn how to enable per-user Microsoft Entra multifactor authentica
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/25/2024
+ms.date: 10/31/2024
 
 ms.author: justinha
 author: justinha
@@ -55,7 +55,7 @@ All users start out *Disabled*. When you enroll users in per-user Microsoft Entr
 
 The per-user MFA administration experience in the Microsoft Entra admin center is recently improved. To view and manage user states, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select a user account, and click **User MFA settings**.
 1. After you make any changes, click **Save**.
@@ -84,7 +84,7 @@ To get the `userTenantID`, copy the tenant ID on the **Overview** page in the Mi
 
 To change the per-user Microsoft Entra multifactor authentication state for a user, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select a user account, and click **Enable MFA**. 
    :::image type="content" border="true" source="./media/howto-mfa-userstates/new-enable.png" alt-text="Screenshot that shows how to enable a user for Microsoft Entra multifactor authentication.":::

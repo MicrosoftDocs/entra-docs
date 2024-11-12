@@ -76,20 +76,33 @@ The .NET implementation of this algorithm is available from [BaseConfigurationMa
 #### KeyRefresh procedure (pseudo code):
 This procedure uses a global (lastSuccessfulRefreshTime timestamp) to prevent conditions that refresh keys too often.
 * [OpenID Connect (OIDC)](v2-protocols-oidc.md)
+
 ```csharp
-  if (lastSuccessfulRefreshTime is set and more recent than 5 minutes ago) 
+KeyRefresh(issuer)
+{
+  // Store cache entries and last successful refresh timestamp per distinct 'issuer'
+ 
+  if (LastSuccessfulRefreshTime is set and more recent than 5 minutes ago) 
     return // without refreshing
-
-  // Load keys URL using the, see OpenID Connect (OIDC)
-  // Fetch the list of keys from the tenant-specific keys URL discovered above
-
-  foreach(key in the list) {
-    if (key id (kid) exists in cache) // cache[tid][kid]
-      set TTL = now + 24 h
+ 
+  // Load keys URI using the tenant-specific OIDC configuration endpoint ('issuer' is the input parameter)
+  oidcConfiguration = download JSON from "{issuer}/.well-known/openid-configuration"
+ 
+  // Load list of keys from keys URI
+  keyList = download JSON from jwks_uri property of oidcConfiguration
+ 
+  foreach (key in keyList) 
+  {
+    cache entry = lookup in cache by kid property of key
+    if (cache entry found) 
+      set expiration of cache entry to now + 24h 
     else 
-      add key to the cache with TTL = now + 24 h
+      add key to cache with expiration set to now + 24h
   }
-  set lastSuccessfulRefreshTime to now (current timestamp)
+ 
+  set LastSuccessfulRefreshTime to now // current timestamp
+}
+
 ```
 
 #### Service Startup procedure:
@@ -98,19 +111,30 @@ This procedure uses a global (lastSuccessfulRefreshTime timestamp) to prevent co
 
 ### TokenValidation procedure for validating the key (pseudo code):
 ```csharp
-  Get token from input request (input token)
-  Get key id from input token (**kid** / **tid** header claim for JWT)
-  if (key id is found in cache) { // cache[tid][kid]
-    validate token according to the key and return
+ValidateToken(token)
+{
+  kid = token.header.kid // get key id from token header
+  issuer = token.body.iss // get issuer from 'iss' claim in token body
+ 
+  key = lookup in cache by issuer and kid
+  if (key found)
+  {
+     validate token with key and return
   }
-  else (key is not found cache) {
-    Call KeyRefresh to opportunistically refresh the cache 
-      if (key id is found in cache) {
-      validate token according to the key and return
+  else // key is not found in the cache
+  {
+    call KeyRefresh(issuer) // to opportunistically refresh the keys for the issuer
+    key = lookup in cache by issuer and kid
+    if (key found)
+    {
+      validate token with key and return
     }
-    else 
-      return token validation failure
+    else // key is not found in the cache even after refresh
+    {
+      return token validation error
+    }
   }
+}
 ```
 
 ## How to assess if your application will be affected and what to do about it

@@ -13,6 +13,8 @@
     href: device-join-macos-platform-single-sign-on.md
   - name: Join a Mac device using Company Portal
     href: device-join-microsoft-entra-company-portal.md
+  - name: Join a Mac device with Microsoft Entra ID and configure it for shared device scenarios
+    href: device-join-macos-platform-single-sign-on-multi-user-device.md
 - name: Concepts
   expanded: true
   items:
@@ -100,6 +102,8 @@
       href: enterprise-state-roaming-group-policy-settings.md
     - name: Enterprise state roaming Windows settings
       href: enterprise-state-roaming-windows-settings-reference.md
+  - name: KDFv1 deprecation
+    href: deprecation-key-derivation-function-version-1.md
 - name: Reference
   items:
   - name: Microsoft Entra hybrid join reference

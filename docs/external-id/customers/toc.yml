@@ -12,6 +12,8 @@ items:
       href: visual-studio-code-extension.md
     - name: Use Azure App Service built-in authentication
       href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
+    - name: Use Power Pages and External ID
+      href: /power-pages/security/authentication/entra-external-id?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
 - name: Samples
   expanded: false
   items:
@@ -421,7 +423,7 @@ items:
         href: how-to-multifactor-authentication-customers.md
       - name: Regions requiring opt-in for SMS verification
         href: how-to-region-code-opt-in.md
-      - name: Identity Protection
+      - name: ID Protection
         href: how-to-identity-protection-customers.md
       - name: Use application roles to manage access
         href: how-to-use-app-roles-customers.md

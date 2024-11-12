@@ -5,7 +5,7 @@ description: Learn about the different authentication methods and features avail
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/22/2024
+ms.date: 11/11/2024
 
 ms.author: justinha
 author: justinha
@@ -31,9 +31,9 @@ The following table outlines when an authentication method can be used during a 
 | Method                         | Primary authentication | Secondary authentication  |
 |--------------------------------|:----------------------:|:-------------------------:|
 | Windows Hello for Business     | Yes                    | MFA\*                     |
-| Microsoft Authenticator push | No                     | MFA and SSPR              |
-| Microsoft Authenticator passwordless | Yes            | No\*                      |
-| Microsoft Authenticator passkey (preview) | Yes         | MFA and SSPR              |
+| Microsoft Authenticator push   | No                     | MFA and SSPR              |
+| Microsoft Authenticator passwordless | Yes              | No\*                      |
+| Microsoft Authenticator passkey| Yes                    | MFA                       |
 | Authenticator Lite             | No                     | MFA                       |
 | Passkey (FIDO2)                | Yes                    | MFA                       |
 | Certificate-based authentication | Yes                  | MFA                       |

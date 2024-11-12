@@ -35,7 +35,7 @@ In the example configuration, the application only allows connections that origi
 Before you get started with configuring source IP anchoring, make sure your environment is ready and compliant.
 
 - You have a SaaS application that enforces its own network-based access control policy.
-- Your license includes Microsoft Entra Suite or both Microsoft Entra Internet Access and Microsoft Entra Private Access.
+- Your license includes Microsoft Entra Suite or Microsoft Entra Private Access.
 - You enabled the Microsoft Entra Private Access forwarding profile.
 - You have the latest version of the [Global Secure Access client](concept-clients.md).
 

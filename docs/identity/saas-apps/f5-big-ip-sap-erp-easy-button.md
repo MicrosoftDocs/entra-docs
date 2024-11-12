@@ -140,16 +140,10 @@ Initiate the APM's **Guided Configuration** to launch the **Easy Button** Templa
 
 2. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-   ![Screenshot for Configure Easy Button- Install the template](./media/f5-big-ip-easy-button-sap-erp/easy-button-template.png)
+3. Under **Configuring the solution using the below steps will create the required objects**, review the list of configuration steps and select **Next**.
 
-3. Review the list of configuration steps and select **Next**
+4. Under **Guided Configuration**, follow the sequence of steps required to publish your application.
 
-   ![Screenshot for Configure Easy Button - List configuration steps](./media/f5-big-ip-easy-button-sap-erp/config-steps.png)
-
-4. Follow the sequence of steps required to publish your application.
-
-   ![Configuration steps flow](./media/f5-big-ip-easy-button-sap-erp/config-steps-flow.png#lightbox)
-   
 ### Configuration Properties
 
 These are general and service account properties. The **Configuration Properties** tab creates a BIG-IP application config and SSO object. Consider the **Azure Service Account Details** section to represent the client you registered in your Microsoft Entra tenant earlier, as an application. These settings allow a BIG-IP's OAuth client to individually register a SAML SP directly in your tenant, along with the SSO properties you would normally configure manually. Easy Button does this for every BIG-IP service being published and enabled for SHA.
@@ -202,9 +196,9 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. 
 
-Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. For this scenario, select **SAP ERP Central Component > Add** to start the Azure configurations.
+Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. 
 
-   ![Screenshot for Azure configuration add BIG-IP application](./media/f5-big-ip-easy-button-sap-erp/azure-config-add-app.png)
+For this scenario, in the **Azure Configuration** page, select **SAP ERP Central Component** > **Add** to start the Azure configurations.
 
 #### Azure Configuration
 

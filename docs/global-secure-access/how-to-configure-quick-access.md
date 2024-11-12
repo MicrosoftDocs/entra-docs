@@ -34,6 +34,8 @@ Tunneling traffic to Private Access destinations by IP address is supported only
 
 At this time, Private access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private Access traffic forwarding profile.
 
+The GSA client creates NRPT policies to route DNS queries for Private DNS suffixes through the tunnel. In some cases, the NRPT policies fail to be created. Check using Get-DNSClientNRPTPolicy. This happens because of a malformed GPO that applies NRPT settings. Use this script to identify the offending policy and delete it after moving the relevant settings to other policies. Please edit the script and modify the variables as per your environment. https://github.com/microsoft/GlobalSecureAccess/blob/main/website/content/FindDNSNRPTGPO.ps1
+
 ## High level steps
 
 Configuring your Quick Access settings is a major component to utilizing Microsoft Entra Private Access. When you configure Quick Access for the first time, Private Access creates a new enterprise application. The properties of this new app are automatically configured to work with Private Access.
