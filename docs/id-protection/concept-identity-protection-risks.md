@@ -88,6 +88,8 @@ These fields are essential for real-time monitoring, threat response, and mainta
 | [Suspicious sending patterns](#suspicious-sending-patterns) | Offline | Premium | suspiciousSendingPatterns |
 | [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | userReportedSuspiciousActivity |
 
+For more information on workload identity risk detections go to [Securing workload identities](https://learn.microsoft.com/en-us/entra/id-protection/concept-workload-identity-risk).
+
 ## Premium detections 
 
 The following premium detections are visible only to Microsoft Entra ID P2 customers. 
