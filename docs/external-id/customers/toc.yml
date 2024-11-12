@@ -12,6 +12,8 @@ items:
       href: visual-studio-code-extension.md
     - name: Use Azure App Service built-in authentication
       href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
+    - name: Use Power Pages and External ID
+      href: /power-pages/security/authentication/entra-external-id?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
 - name: Samples
   expanded: false
   items:
