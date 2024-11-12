@@ -27,7 +27,7 @@ You can use the Microsoft Graph API `onPhoneMethodLoadStart` event policy to man
 
 ## Country codes requiring opt-in
 
-For SMS verification, the following country codes are deactivated by default. If you want to allow traffic from these regions, you need to activate them using the `onPhoneMethodLoadStart`event policy.
+Starting Jan 2025, the following country codes will deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to activate them using the `onPhoneMethodLoadStart`event policy.
 
 **SMS verification country codes requiring opt-in**
 
@@ -172,7 +172,6 @@ POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners
     "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartListener",  
     "conditions": {  
         "applications": {  
-            "includeAllApplications": false,  
             "includeApplications": [  
                 "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
             ]  
@@ -195,7 +194,6 @@ HTTP/1.1 201 Created
     "id": "2be3336b-e3b4-44f3-9128-b6fd9ad39bb8", 
     "conditions": {  
         "applications": { 
-           "includeAllApplications": false,  
             "includeApplications": [  
                 "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
             ] 
@@ -226,7 +224,6 @@ POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners
     "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartListener",  
     "conditions": {  
         "applications": {  
-            "includeAllApplications": false,  
             "includeApplications": [  
                 "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
             ]  
@@ -249,7 +246,6 @@ HTTP/1.1 201 Created
     "id": "2be3336b-e3b4-44f3-9128-b6fd9ad39bb8", 
     "conditions": {  
         "applications": { 
-           "includeAllApplications": false,  
             "includeApplications": [  
                 "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
             ] 
