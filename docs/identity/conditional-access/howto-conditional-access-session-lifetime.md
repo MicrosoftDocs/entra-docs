@@ -74,7 +74,7 @@ To make sure that your policy works as expected, the recommended best practice i
    1. Select **Done**.
 1. Under **Cloud apps or actions** > **Include**, select **All resources (formerly 'All cloud apps')**.
 1. Under **Conditions** > **User risk**, set **Configure** to **Yes**. 
-   1. Under **Configure user risk levels needed for policy to be enforced**, select **High**. [This guidance is based on Microsoft recommendations and might be different for each organization](../id-protection/howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels)
+   1. Under **Configure user risk levels needed for policy to be enforced**, select **High**. [This guidance is based on Microsoft recommendations and might be different for each organization](../../id-protection/howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels)
    1. Select **Done**.
 1. Under **Access controls** > **Grant**, select **Grant access**.
    1. Select **Require authentication strength**, then select the built-in **Multifactor authentication** authentication strength from the list.
