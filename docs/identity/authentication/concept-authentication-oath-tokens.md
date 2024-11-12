@@ -34,7 +34,7 @@ Some OATH TOTP hardware tokens are programmable, meaning they don't come with a 
 
 Microsoft Entra ID supports the use of OATH-TOTP SHA-1 and SHA-256 tokens that refresh codes every 30 or 60 seconds. Customers can purchase these tokens from the vendor of their choice. 
 
-Microsoft Entra ID has a new Microsoft Graph API in preview for Azure and Azure for US Government clouds.
+Microsoft Entra ID has a new Microsoft Graph API in preview for Azure.
 
 This preview refresh uses the hardware OATH token Authentication methods policy. [Privileged Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) can use [Microsoft Graph APIs](url) to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview refresh in the Microsoft Entra admin center. 
 
@@ -43,7 +43,7 @@ Hardware OATH tokens that you add with Microsoft Graph for this preview refresh 
 ### Improvements in the preview refresh
 
 This hardware OATH token preview refresh improves flexibility and security for organizations by removing Global Administrator requirements. 
-Organizations can delegate token creation, assignment, and activation to Privileged Authentication Authentication Policy Administrator. 
+Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators or Authentication Policy Administrators. 
 
 End users can also self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) page. For more information, see [User self-assignment and activation](#user-self-assignment-and-activation).
 
