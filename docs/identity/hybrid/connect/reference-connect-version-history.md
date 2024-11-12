@@ -69,7 +69,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.3.8.0](#2380)|25 Jul 2025 (12 months after release of 2.3.20.0)|
 |[2.3.20.0](#23200)|7 Oct 2025 (12 months after release of 2.4.18.0)|
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
-|[2.4.21.0](#24210)|TBD|
+|[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.x.xx.x)|
+|[2.x.xx.x]|TBD|
 
 **All other versions are not supported**
 
@@ -92,6 +93,19 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+
+## 2.x.xx.x
+
+### Release status
+
+### Updated Features
+ - Updated SQL Drivers (OLE DB ) to [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
+
+### Bug fixes
+- Fixed an issues with PIM to ensure that we verify that PIM is enabled and that the user is a member of the group that is global administrator or hybrid administrator enabled.
+- Fixed an issue where the GRAPH API PowerShell for AD FS commandlets were failing under certain conditions.  
+
 
 ## 2.4.21.0
 
