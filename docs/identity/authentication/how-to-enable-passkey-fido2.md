@@ -88,7 +88,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
    >If you see an error when you try to save, replace multiple groups with a single group in one operation, and then click **Save** again.
 
 
-## Provision FIDO2 security keys using Microsoft Graph API 
+## Provision FIDO2 security keys using Microsoft Graph API (preview)
 
 Currently in preview, administrators can use [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision). Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
 
