@@ -158,7 +158,7 @@ To verify that the agent was installed, look for the following services on the s
     AdHealthAddsAgentSetup.exe /quiet AddsMonitoringEnabled=1 SkipRegistration=1
     Start-Sleep 30
     $userName = "NEWUSER@DOMAIN"
-    $secpasswd = ConvertTo-SecureString "PASSWORD" -AsPlainText -Force
+    [securestring] $secpasswd = read-host -assecurestring
     $myCreds = New-Object System.Management.Automation.PSCredential ($userName, $secpasswd)
     import-module "C:\Program Files\Microsoft Azure AD Connect Health Agent\Modules\AdHealthConfiguration"
      
@@ -172,12 +172,12 @@ To verify that the agent was installed, look for the following services on the s
 > AdHealthAddsAgentSetup.exe /quiet AddsMonitoringEnabled=1 SkipRegistration=1 FairfaxInstallVariable=1
 > Start-Sleep 30
 > $userName = "NEWUSER@DOMAIN"
-> $secpasswd = ConvertTo-SecureString "PASSWORD" -AsPlainText -Force
+> [securestring] $secpasswd = read-host -assecurestring
 > $myCreds = New-Object System.Management.Automation.PSCredential ($userName, $secpasswd)
 > import-module "C:\Program Files\Microsoft Azure AD Connect Health Agent\Modules\AdHealthConfiguration"
-     
+>
 > Register-MicrosoftEntraConnectHealthAgent -Credential $myCreds
->  ``` 
+> ``` 
 
 > [!NOTE]
 > 
@@ -185,9 +185,10 @@ To verify that the agent was installed, look for the following services on the s
 > ```powershell
 > AdHealthAddsAgentSetup.exe /quiet AddsMonitoringEnabled=1 SkipRegistration=1
 > Start-Sleep 30
-> $bearerToken = ConvertTo-SecureString "BEARERTOKEN" -AsPlainText -Force
+> $tokenSecure = Read-Host -Prompt "Enter Bearer Token" -AsSecureString
 > import-module "C:\Program Files\Microsoft Azure AD Connect Health Agent\Modules\AdHealthConfiguration"
-> Register-MicrosoftEntraConnectHealthAgent -AadToken $bearerToken
+>
+> Register-MicrosoftEntraConnectHealthAgent -AadToken $tokenSecure
 > ```
    
 
