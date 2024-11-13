@@ -100,10 +100,113 @@ git clone https://github.com/Azure-Samples/ms-identity-java-daemon.git
 
 * [Download the .zip file](https://github.com/Azure-Samples/ms-identity-java-daemon/archive/master.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
+---
+
+## Configure the project
+
+To use your app registration details in the client daemon app sample, use the following steps:
+
+#### [.NET](#tab/asp-dot-net-core-workforce)
+
+1. Open a console window then navigate to the *ms-identity-docs-code-dotnet/console-daemon* directory:
+
+```console
+cd ms-identity-docs-code-dotnet/console-daemon
+```
+
+1. Open *Program.cs* and replace the file contents with the following snippet;
+
+   ```csharp
+    // Full directory URL, in the form of https://login.microsoftonline.com/<tenant_id>
+    Authority = " https://login.microsoftonline.com/Enter_the_tenant_ID_obtained_from_the_Microsoft_Entra_admin_center",
+    // 'Enter the client ID obtained from the Microsoft Entra admin center
+    ClientId = "Enter the client ID obtained from the Microsoft Entra admin center",
+    // Client secret 'Value' (not its ID) from 'Client secrets' in the Microsoft Entra admin center
+    ClientSecret = "Enter the client secret value obtained from the Mifcrosoft Entra admin center",
+    // Client 'Object ID' of app registration in Microsoft Entra admin center - this value is a GUID
+    ClientObjectId = "Enter the client Object ID obtained from the Microsoft Entra admin center"
+   ```
+
+    * `Authority` - The authority is a URL that indicates a directory that MSAL can request tokens from. Replace *Enter_the_tenant_ID_obtained_from_the_Microsoft_Entra_admin_center* with the **Directory (tenant) ID** value that was recorded earlier.
+    * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the `Application (client) ID` value that was recorded earlier from the overview page of the registered application.
+    * `ClientSecret` - The client secret created for the application in the Microsoft Entra admin center. Enter the **value** of the client secret.
+    * `ClientObjectId` - The object ID of the client application. Replace the text in quotes with the `Object ID` value that you recorded earlier from the overview page of the registered application.
+
+#### [Node](#tab/node-workforce)
+
+
+#### [Python](#tab/python-workforce)
+
+
+#### [Java](#tab/java-workforce)
 
 
 ---
 
+
+## Run and test the application
+
+You've configured your sample app, you proceed to run and test it.
+
+#### [.NET](#tab/asp-dot-net-core-workforce)
+
+From your console window, run the following command to build and run the application:
+
+```console
+dotnet run
+```
+
+Once the application runs successfully, it displays a response similar to the following snippet (shortened for brevity):
+
+```console
+{
+"@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
+"id": "00001111-aaaa-2222-bbbb-3333cccc4444",
+"deletedDateTime": null,
+"appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+"applicationTemplateId": null,
+"disabledByMicrosoftStatus": null,
+"createdDateTime": "2021-01-17T15:30:55Z",
+"displayName": "identity-dotnet-console-app",
+"description": null,
+"groupMembershipClaims": null,
+...
+}
+```
+
+### How it works
+
+This app uses the client secret as its credentials to acquires an access token that's scoped for the Microsoft Graph API. It then uses the access token to request its own application registration details from Microsoft Graph API. The app can request any resource from Microsoft Graph API as long as the access token has the right permissions.
+
+#### [Node](#tab/node-workforce)
+
+
+#### [Python](#tab/python-workforce)
+
+
+#### [Java](#tab/java-workforce)
+
+
+---
+
+
+## Related content
+
+#### [.NET](#tab/asp-dot-net-core-workforce)
+
+* Learn by building this ASP.NET web app with the series [Tutorial: Register an application with the Microsoft identity platform](./tutorial-web-app-dotnet-sign-in-users.md).
+
+* [Quickstart: Deploy an ASP.NET web app to Azure App Service](/azure/app-service/quickstart-dotnetcore?tabs=net70&pivots=development-environment-vs)
+
+#### [Node](#tab/node-workforce)
+
+
+#### [Python](#tab/python-workforce)
+
+
+#### [Java](#tab/java-workforce)
+
+---
 
 
 ::: zone-end 
@@ -134,7 +237,7 @@ The sample app you use in this quickstart acquires an access token to call a sam
 
 --- 
 
-## ## Register the applications and record identifiers
+## Register the applications and record identifiers
 
 In this step, you register the daemon app and the web API app in the Microsoft Entra admin center, and you specify the scopes of your web API.
 
@@ -178,7 +281,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 - Alternatively, [download the samples .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip), then extract it to a file path where the length of the name is fewer than 260 characters.
 
-##  Install project dependencies
+### Install project dependencies
 
 1. Open a console window, and change to the directory that contains the Node.js sample app:
 
