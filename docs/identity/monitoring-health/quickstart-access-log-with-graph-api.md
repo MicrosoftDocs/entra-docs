@@ -47,7 +47,7 @@ This section provides the steps to locate the failed sign-in attempt using the M
 
 1. Set the API version to **beta**.
 
-1. Enter the following query and select **Run query**: `https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=&$filter=userDisplayName eq 'Isabella Simonsen' and Status eq 'failure'`
+1. Enter the following query and select **Run query**: `https://graph.microsoft.com/beta/auditLogs/signIns?$top=10&$filter=userDisplayName eq 'Isabella Simonsen'`
 
 1. Review the query response and locate the **status** section of the response.
 
