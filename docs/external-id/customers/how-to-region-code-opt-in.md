@@ -31,7 +31,7 @@ You can use the Microsoft Graph API `onPhoneMethodLoadStart` event policy to man
 
 Starting Jan 2025, the following country codes will deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to activate them using the `onPhoneMethodLoadStart`event policy.
 
-**SMS verification country codes requiring opt-in**
+**Table 1. SMS verification country codes requiring opt-in**
 
 | Country code | Region Name |
 |:------------ |:----------- |
@@ -154,7 +154,7 @@ Starting Jan 2025, the following country codes will deactivated by default for S
 
 Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy to activate or deactivate country codes.
 
-**Properties of OnPhoneMethodLoadStartExternalUsersAuthHandler**
+**Table 2. Properties of OnPhoneMethodLoadStartExternalUsersAuthHandler**
 
 |Property                  |Description   |
 |--------------------------|---------|
