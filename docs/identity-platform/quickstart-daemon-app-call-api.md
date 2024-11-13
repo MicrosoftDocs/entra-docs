@@ -133,9 +133,9 @@ To use your app registration details in the client daemon app sample, use the fo
 
 1. Open a console window then navigate to the *ms-identity-docs-code-dotnet/console-daemon* directory:
 
-```console
-cd ms-identity-docs-code-dotnet/console-daemon
-```
+    ```console
+    cd ms-identity-docs-code-dotnet/console-daemon
+    ```
 
 1. Open *Program.cs* and replace the file contents with the following snippet;
 
@@ -228,15 +228,15 @@ The sample demonstrates how an unattended job or Windows service can run with an
 
 1. To install dependencies, run the following command:
 
-```console
-npm install
-```
+    ```console
+    npm install
+    ```
 
 1. Use the following command to run the application:
 
-```console
-node . --op getUsers
-```
+    ```console
+    node . --op getUsers
+    ```
 
 [!INCLUDE [sample-daemon-app-output](./includes/sample-daemon-app-output.md)]
 
@@ -249,15 +249,15 @@ node . --op getUsers
 
 1. To install dependencies, run the following command:
 
-```console
-pip install -r requirements.txt
-```
+    ```console
+    pip install -r requirements.txt
+    ```
 
 1. To run the application, use the following command:
 
-```console
-python confidential_client_secret_sample.py parameters.json
-```
+    ```console
+    python confidential_client_secret_sample.py parameters.json
+    ```
 
 [!INCLUDE [sample-daemon-app-output](./includes/sample-daemon-app-output.md)]
 
@@ -275,8 +275,7 @@ You can test the sample app by running the main method of *ClientCredentialGrant
     $ mvn clean compile assembly:single
     ```
 
-This command generates a *msal-client-credential-secret-1.0.0.jar* file in your */targets* directory. 
-
+    This command generates a *msal-client-credential-secret-1.0.0.jar* file in your */targets* directory. 
  
 1. Navigate to the */targets* directory, then run your Java executable file using the following command:
 
