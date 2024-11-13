@@ -100,11 +100,13 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Release status
 
 ### Updated Features
- - Updated SQL Drivers (OLE DB ) to [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
+ -  SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
 
 ### Bug fixes
-- Fixed an issues with PIM to ensure that we verify that PIM is enabled and that the user is a member of the group that is global administrator or hybrid administrator enabled.
-- Fixed an issue where the GRAPH API PowerShell for AD FS commandlets were failing under certain conditions.  
+- Fixed an issues with Privileged Identity Management (PIM), Microsoft Entra roles, and PIM for Groups to verify that PIM is enabled and that the user has the Hybrid Identity Administrator role enabled.
+- Fixed an issue where AD FS commands were failing when Connect Sync is installed on a non-ADFS server.  
+
+
 
 
 ## 2.4.21.0
