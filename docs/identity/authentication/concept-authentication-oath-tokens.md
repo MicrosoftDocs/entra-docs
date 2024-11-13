@@ -72,28 +72,46 @@ Tenants with a Microsoft Entra ID Premium license can continue to upload hardwar
 
 ### Authentication method policy for hardware OATH tokens
 
-You can enable hardware OATH tokens in the Authentication methods policy. 
+You can view and enable hardware OATH tokens in the Authentication methods policy by using Microsoft Graph APIs or the Microsoft Entra admin center. 
 
-1. You can view the hardware OATH tokens policy status using Microsoft Graph APIs or the Microsoft Entra admin center. 
+- To view the hardware OATH tokens policy status by using the APIs:
 
    ```https
    GET https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/hardwareOath
    ```
 
-1. Start by enabling hardware OATH tokens policy using the APIs.
+- To enable hardware OATH tokens policy by using the APIs.
+
+   ```https
+   PATCH https://graph.microsoft.com/beta/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/hardwareOath
+   ```
+   
+   In the request body, add:
+
+   ```https
+   {
+    "state": "enabled"
+   }
+   ```
+
+To enable hardware OATH tokens in the Microsoft Entra admin center:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Protection** > **Authentication methods** > **Hardware OATH tokens (Preview)**.
+1. Select **Enable**, choose which groups of users to include in the policy, and click **Save**.
+
+   :::media/concept-authentication-oath-tokens/enable.png" alt-text="Screenshot of how to enable hardware OATH tokens in the Microsoft Entra admin center.":::
 
 
-1. If you enable OATH tokens in the legacy MFA policy, we recommend that you uncheck the **Verification code from mobile app or hardware token** checkbox. To verify this setting, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-
-1. Browse to **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
-
->[!NOTE]
->There might be up to a 20-minute delay for the policy propagation. Allow an hour for the policy to update before users can sign in with their hardware OATH token and see it in their [Security info](https://mysignins.microsoft.com/security-info).
+We recommend that you migrate to the Authentication methods policy to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
 
 
 ### Scenario: Admin creates, assigns, and activates a hardware OATH token 
 
 This scenario covers how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps.
+
+>[!NOTE]
+>There might be up to a 20-minute delay for the policy propagation. Allow an hour for the policy to update before users can sign in with their hardware OATH token and see it in their [Security info](https://mysignins.microsoft.com/security-info).
 
 Let's look at an example where an Authentication Policy Administrator creates a token and assigns it to a user. You can allow assignment without activation. 
 
