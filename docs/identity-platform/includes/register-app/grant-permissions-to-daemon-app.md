@@ -12,7 +12,7 @@ ms.topic: include
 1. Under **Manage**, select **API permissions**.
 1. Under **Configured permissions**, select **Add a permission**.
 1. Under **Microsoft APIs** tab, select the **Microsoft Graph >> Application permissions**. We select the **Application permissions** option as the app signs in as itself, but not on behalf of a user. 
-1. In the **Select permissions** list, search for then select **User.Read.All**. We grant this permission as the app wants to read all users' full profiles.
+1. In the **Select permissions** list, search for then select **User.Read.All**. We grant this permission so the app wants can read all users' full profiles.
 1. Select the **Add permissions** button.
 1. At this point, you've assigned the permissions correctly. However, since the daemon app doesn't allow users to interact with it, the users themselves can't consent to these permissions. You as the admin must consent to these permissions on behalf of all the users in the tenant:
 
