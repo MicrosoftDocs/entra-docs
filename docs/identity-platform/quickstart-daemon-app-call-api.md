@@ -29,23 +29,23 @@ The sample app you use in this quickstart acquires an access token to call Micro
 #### [.NET](#tab/asp-dot-net-core-workforce)
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
-* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
+* A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/).
 
 #### [Node](#tab/node-workforce)
 
-* [Node.js](https://nodejs.org/en/download/)
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [Python](#tab/python-workforce)
 
-* [Python 3+](https://www.python.org/downloads/release/python-364/)
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
+* [Python 3+](https://www.python.org/downloads/release/python-364/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [Java](#tab/java-workforce)
 
-* [Java Development Kit (JDK)](https://openjdk.java.net/) 8 or greater
-* [Maven](https://maven.apache.org/)
+* [Java Development Kit (JDK)](https://openjdk.java.net/) 8 or later.
+* [Maven](https://maven.apache.org/).
 * A suitable editor.
 
 --- 
