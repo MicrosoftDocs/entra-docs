@@ -1,5 +1,5 @@
 ---
-title: Regions that need to opt in for SMS verification
+title: Regions requiring opt-in for SMS verification
 description: To protect customers, some regions require you to enable the country codes to receive SMS telephony verification for Microsoft Entra External ID external tenants.
 
 author: msmimart
@@ -150,11 +150,11 @@ Starting Jan 2025, the following country codes will deactivated by default for S
 | 260 | Zambia |
 | 263 | Zimbabwe |
 
-## Use Microsoft Graph API to manage telecom for regions
+## Manage telecom for regions with Microsoft Graph
 
-Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy schema to activate or deactivate country codes.
+Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy to activate or deactivate country codes.
 
-### Event policy schema
+**Properties of OnPhoneMethodLoadStartExternalUsersAuthHandler**
 
 |Property                  |Description   |
 |--------------------------|---------|
