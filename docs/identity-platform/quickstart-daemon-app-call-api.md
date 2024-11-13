@@ -26,11 +26,48 @@ The sample app you use in this quickstart acquires an access token to call Micro
 
 ## Prerequisites
 
+#### [.NET](#tab/asp-dot-net-core-workforce)
+
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
+* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
+
 #### [Node](#tab/node-workforce)
 
+* [Node.js](https://nodejs.org/en/download/)
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
+
+#### [Python](#tab/python-workforce)
+
+* [Python 3+](https://www.python.org/downloads/release/python-364/)
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
+
+#### [Java](#tab/java-workforce)
+
+* [Java Development Kit (JDK)](https://openjdk.java.net/) 8 or greater
+* [Maven](https://maven.apache.org/)
+* A suitable editor.
+
+--- 
+
+## Register the application and record identifiers
+
+[!INCLUDE [Register a daemon in the Microsoft identity platform](includes/register-app/daemon-common/register-application-daemon-common.md)]
+
+## Create a client secret
+
+[!INCLUDE [add-app-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
+
+[!INCLUDE [client-credential-advice](./includes/register-app/client-credential-advice.md)]
+
+## Clone or download the sample application
+
+To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
 
 #### [.NET](#tab/asp-dot-net-core-workforce)
 
+
+#### [Node](#tab/node-workforce)
 
 
 #### [Python](#tab/python-workforce)
@@ -39,7 +76,9 @@ The sample app you use in this quickstart acquires an access token to call Micro
 #### [Java](#tab/java-workforce)
 
 
---- 
+---
+
+
 
 ::: zone-end 
 
@@ -69,7 +108,7 @@ The sample app you use in this quickstart acquires an access token to call a sam
 
 --- 
 
-## Register applications
+## ## Register the applications and record identifiers
 
 In this step, you register the daemon app and the web API app in the Microsoft Entra admin center, and you specify the scopes of your web API.
 
