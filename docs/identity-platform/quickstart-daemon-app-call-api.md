@@ -167,9 +167,23 @@ In your editor, open the *.env* file, then replace the placeholders:
 
 #### [Python](#tab/python-workforce)
 
+1. Navigate to the *1-Call-MsGraph-WithSecret* directory.
+
+1. In your editor, open the **parameters.json** file and replace the placeholders:
+
+   - `Enter_the_Application_Id_Here` with the application (client) ID of the application you registered earlier.
+   - `Enter_the_Tenant_Id_Here` with the the Tenant ID of your workforce tenant.
+   - `Enter_the_Client_Secret_Here` with the client secret you created earlier.
 
 #### [Java](#tab/java-workforce)
 
+1. Navigate to the `msal-client-credential-secret` directory.
+
+1. In your editor, open the `src\main\resources\application.properties` file and replace the placeholders:
+
+   - `Enter_the_Application_Id_Here` with the application (client) ID of the application you registered earlier.
+   - `Enter_the_Tenant_Id_Here` with the the Tenant ID of your workforce tenant.
+   - `Enter_the_Client_Secret_Here` with the client secret you created earlier.
 
 ---
 
@@ -212,7 +226,7 @@ The sample demonstrates how an unattended job or Windows service can run with an
 
 #### [Node](#tab/node-workforce)
 
-1. To install dependencies, run the following commnand:
+1. To install dependencies, run the following command:
 
 ```console
 npm install
@@ -224,36 +238,28 @@ npm install
 node . --op getUsers
 ```
 
-If the app runs successfully, you should see a JSON formatted output representing a list of users from your workforce tenant. It looks similar to the following snippet:
-
-```json
-{
-  '@odata.context': 'https://graph.microsoft.com/v1.0/$metadata#users',
-  value: [
-    {
-      businessPhones: [],
-      displayName: 'Casey Jensen',
-      givenName: 'Jense',
-      jobTitle: null,
-      mail: null,
-      mobilePhone: null,
-      officeLocation: null,
-      preferredLanguage: null,
-      surname: 'Casey',
-      userPrincipalName: 'jensen@contoso.onmicrosoft.com',
-      id: 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb'
-    },
-    ...
-  ]
-}
-```
+[!INCLUDE [sample-daemon-app-output](./includes/sample-daemon-app-output.md)]
 
 ### How it works
 
-[!INCLUDE [how-it-works-daemon-app](./includes/how-it-works-daemon-app.md)]
+[!INCLUDE [how-it-works-daemon-app](/includes/how-it-works-daemon-app.md)]
 
 #### [Python](#tab/python-workforce)
 
+
+1. To install dependencies, run the following command:
+
+```console
+pip install -r requirements.txt
+```
+
+1. To run the application, use the following command:
+
+```console
+python confidential_client_secret_sample.py parameters.json
+```
+
+[!INCLUDE [sample-daemon-app-output](./includes/sample-daemon-app-output.md)]
 
 ### How it works
 
@@ -261,13 +267,29 @@ If the app runs successfully, you should see a JSON formatted output representin
 
 #### [Java](#tab/java-workforce)
 
+You can test the sample app by running the main method of *ClientCredentialGrant.java* from your IDE or
 
+1. From your console, run the following command:
+
+    ```
+    $ mvn clean compile assembly:single
+    ```
+
+This command generates a *msal-client-credential-secret-1.0.0.jar* file in your */targets* directory. 
+
+ 
+1. Navigate to the */targets* directory, then run your Java executable file using the following command:
+
+    ```
+    $ java -jar msal-client-credential-secret-1.0.0.jar
+    ```
+
+[!INCLUDE [sample-daemon-app-output](./includes/sample-daemon-app-output.md)]
 
 ### How it works
 
 [!INCLUDE [how-it-works-daemon-app](./includes/how-it-works-daemon-app.md)]
 ---
-
 
 
 ## Related content
@@ -280,6 +302,7 @@ If the app runs successfully, you should see a JSON formatted output representin
 
 #### [Node](#tab/node-workforce)
 
+* Learn how [build your daemon application that calls web API](tutorial-v2-nodejs-console.md).
 
 #### [Python](#tab/python-workforce)
 
