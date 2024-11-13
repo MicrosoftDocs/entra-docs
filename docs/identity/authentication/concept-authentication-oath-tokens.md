@@ -70,7 +70,7 @@ In the Authentication methods policy, hardware and software OATH tokens can be e
 
 Tenants with a Microsoft Entra ID Premium license can continue to upload hardware OATH tokens as in the original preview. Fore more information, see [Upload hardware OATH tokens in CSV format](how-to-mfa-upload-oath-tokens.md).
 
-### Authentication method policy for hardware OATH tokens
+### Enable hardware OATH tokens in the Authentication methods policy
 
 You can view and enable hardware OATH tokens in the Authentication methods policy by using Microsoft Graph APIs or the Microsoft Entra admin center. 
 
@@ -103,7 +103,7 @@ To enable hardware OATH tokens in the Microsoft Entra admin center:
    :::media/concept-authentication-oath-tokens/enable.png" alt-text="Screenshot of how to enable hardware OATH tokens in the Microsoft Entra admin center.":::
 
 
-We recommend that you migrate to the Authentication methods policy to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
+We recommend that you [migrate to the Authentication methods policy](how-to-authentication-methods-manage.md) to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
 
 
 ### Scenario: Admin creates, assigns, and activates a hardware OATH token 
