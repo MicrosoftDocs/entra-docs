@@ -34,9 +34,7 @@ Some OATH TOTP hardware tokens are programmable, meaning they don't come with a 
 
 Microsoft Entra ID supports the use of OATH-TOTP SHA-1 and SHA-256 tokens that refresh codes every 30 or 60 seconds. Customers can purchase these tokens from the vendor of their choice. 
 
-Microsoft Entra ID has a new Microsoft Graph API in preview for Azure.
-
-This preview refresh uses the hardware OATH token Authentication methods policy. Administrators can access Microsoft Graph APIs with least privileged roles to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview refresh in the Microsoft Entra admin center. 
+Microsoft Entra ID has a new Microsoft Graph API in preview for Azure. Administrators can access Microsoft Graph APIs with least privileged roles to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview refresh in the Microsoft Entra admin center. 
 
 You can continue to manage tokens from the original preview in **OATH tokens** in the Microsoft Entra admin center. On the other hand, you can only manage tokens in the preview refresh by using Microsoft Graph APIs. 
 
@@ -56,7 +54,7 @@ The following table compares the administrator role requirements to manage hardw
 | Update a token in the tenant. For example, update manufacturer or module; Secret can't be updated. | Global Administrator | Authentication Policy Administrator |
 | Delete a token from the tenant’s inventory. | Global Administrator | Authentication Policy Administrator |
 
-End users can also self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info) as part of the preview refresh. The following table lists token and role requirements to assign and activate tokens. 
+As part of the preview refresh, end users can also self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info). In the preview refresh, a token can only be assigned to one user. The following table lists token and role requirements to assign and activate tokens. 
 
 | Task | Token state | Role requirement |
 |------|-------------|------------------|
@@ -83,7 +81,7 @@ Tenants with a Microsoft Entra ID Premium license can continue to upload hardwar
 1. Start by enabling hardware OATH tokens policy using the APIs.
 
 
-1. If you enable OATH tokens in the legacy MFA policy, we recommend that you clear the **Verification code from mobile app or hardware token** setting. To verify this setting, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. If you enable OATH tokens in the legacy MFA policy, we recommend that you uncheck the **Verification code from mobile app or hardware token** checkbox. To verify this setting, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 
 1. Browse to **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
 
@@ -93,7 +91,7 @@ Tenants with a Microsoft Entra ID Premium license can continue to upload hardwar
 
 ### Scenario: Admin creates, assigns, and activates a hardware OATH token 
 
-This scenario cover how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps.
+This scenario covers how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps.
 
 Let's look at an example where an Authentication Policy Administrator creates a token and assigns it to a user. You can allow assignment without activation. 
 
@@ -254,7 +252,7 @@ Here are steps a user can follow to self-activate their hardware OATH token in S
 
    :::image type="content" source="media/concept-authentication-oath-tokens/add-name.png" alt-text="Screenshot of how to add a freindly name for a hardware OATH token.":::
 
-1. Supply the random verification code that appears when you tap the button on the device. You need to enter this code and click **Next** before the code changes.
+1. Supply the random verification code that appears when you tap the button on the device. For a token that refreshes its code every 30 seconds, you need to enter the code and click **Next** within one minute. For a token that refreshes every 60 seconds, you have two minutes. 
 
    :::image type="content" source="media/concept-authentication-oath-tokens/add-code.png" alt-text="Screenshot of how to add a verification code to activate a hardware OATH token.":::
 
