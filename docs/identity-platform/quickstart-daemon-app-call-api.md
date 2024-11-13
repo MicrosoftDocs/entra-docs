@@ -46,7 +46,7 @@ The sample app you use in this quickstart acquires an access token to call Micro
 
 * [Java Development Kit (JDK)](https://openjdk.java.net/) 8 or later.
 * [Maven](https://maven.apache.org/).
-* A suitable editor.
+* A suitable code editor.
 
 --- 
 
@@ -64,16 +64,42 @@ The sample app you use in this quickstart acquires an access token to call Micro
 
 To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
 
+* To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
+
 #### [.NET](#tab/asp-dot-net-core-workforce)
 
+```console
+git clone https://github.com/Azure-Samples/ms-identity-docs-code-dotnet.git
+```
+
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 #### [Node](#tab/node-workforce)
+
+```console
+git clone https://github.com/azure-samples/ms-identity-javascript-nodejs-console.git 
+```
+
+* [Download the .zip file](https://github.com/azure-samples/ms-identity-javascript-nodejs-console/archive/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 
 #### [Python](#tab/python-workforce)
 
+```console
+git clone https://github.com/Azure-Samples/ms-identity-python-daemon.git 
+```
+
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-python-daemon/archive/master.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+
 
 #### [Java](#tab/java-workforce)
+
+```console
+git clone https://github.com/Azure-Samples/ms-identity-java-daemon.git
+```
+
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-java-daemon/archive/master.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+
 
 
 ---
