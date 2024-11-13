@@ -3,7 +3,7 @@ title: The Global Secure Access client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/08/2024
+ms.date: 11/13/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -122,23 +122,21 @@ image.png
 To manually install the Global Secure Access client:
 1. Run the GlobalSecureAccessClient.pkg setup file. The **Install** wizard launches. Follow the prompts.
 1. On the **Introduction** step, select **Continue**.
-:::image type="content" source="media/how-to-install-macos-client/macOS-install-introduction.png" alt-text="Screenshot of the Install wizard on the Introduction step.":::
 1. On the **License** step, select **Continue** and then select **Agree** to accept the license agreement.
 :::image type="content" source="media/how-to-install-macos-client/macOS-install-license-agreement.png" alt-text="Screenshot of the Install wizard on the SumLicense step, showing the software license agreement pop-up.":::
-1. On the **Install** step, select **Install**.
-1. When the installation is complete, select **Close**.
-:::image type="content" source="media/how-to-install-macos-client/macOS-install-summary.png" alt-text="Screenshot of the Install wizard on the Summary step.":::
+1. On the **Installation** step, select **Install**.
+1. On the **Summary** step, when the installation is complete, select **Close**.
 1. Allow the Global Secure Access system extension.
-    - In the **System Extension Blocked** dialog, select **Open System Settings**.
+    1. In the **System Extension Blocked** dialog, select **Open System Settings**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-open-systeem-settings.png" alt-text="Screenshot of the System Extension Blocked dialog box with the Open System Settings highlighted.":::    
 
-    - Allow the Global Secure Access client system extension by selecting **Allow**.
+    1. Allow the Global Secure Access client system extension by selecting **Allow**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-allow-blocked-application.png" alt-text="Screenshot of the System Settings, open to the Privacy & Security options, showing a blocked application message, with the Allow button highlighted.":::   
 
-    - In the **Privacy & Security** dialog, enter your username and password to validate the approval of the system extension. Then select **Modify Settings**.
+    1. In the **Privacy & Security** dialog, enter your username and password to validate the approval of the system extension. Then select **Modify Settings**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-credentials.png" alt-text="Screenshot of the Privacy & Security pop-up requesting sign-in credentials and the Modify Settings button highlighted.":::
 
-    - Complete the process by selecting **Allow** to enable the Global Secure Access client to add proxy configurations.   
+    1. Complete the process by selecting **Allow** to enable the Global Secure Access client to add proxy configurations.   
 :::image type="content" source="media/how-to-install-macos-client/macOS-add-proxy.png" alt-text="Screenshot of the Global Secure Access client would like to add proxy configurations pop-up with the Allow button highlighted.":::
    
 1. After the installation is complete, you might be prompted to sign in to Microsoft Entra.
@@ -188,7 +186,7 @@ To view the available client menu actions, right-click the Global Secure Access 
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disabled.png":::   |Global Secure Access Client - Disabled	|The client is disabled because services are offline or the user disabled the client.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disconnected.png":::	|Global Secure Access Client - Disconnected	|The client failed to connect to Global Secure Access.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Some channels are unreachable	|The client is partially connected to Global Secure Access (that is, the connection to at least one channel failed: Microsoft Entra, Microsoft 365, Private Access, Internet Access).    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Disabled by your organization	|Your organization has disabled the client (that is, all traffic forwarding profiles are disabled).    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Disabled by your organization	|Your organization disabled the client (that is, all traffic forwarding profiles are disabled).    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Private Access is disabled	 |The user disabled Private Access on this device.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - could not connect to the Internet	|The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
 
