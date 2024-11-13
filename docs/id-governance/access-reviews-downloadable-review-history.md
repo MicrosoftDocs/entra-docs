@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 08/15/2024
+ms.date: 11/13/2024
 ms.author: owinfrey
 ---
 

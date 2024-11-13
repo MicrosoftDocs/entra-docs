@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: overview
-ms.date: 08/23/2024
+ms.date: 11/13/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---

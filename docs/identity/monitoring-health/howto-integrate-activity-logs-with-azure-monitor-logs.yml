@@ -7,7 +7,7 @@ metadata:
   ms.author: sarahlipsey
   manager: amycolannino
   ms.reviewer: egreenberg
-  ms.date: 11/07/2024
+  ms.date: 11/08/2024
   ms.service: entra-id
   ms.subservice: monitoring-health
   ms.topic: how-to
@@ -42,7 +42,7 @@ prerequisites:
     - |
       A Microsoft Entra ID P1 or P2 tenant.
     - |
-      At least the **Security Administrator** role in the Microsoft Entra tenant.
+      At least the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role in the Microsoft Entra tenant.
     - |
       A **Log Analytics workspace** in your Azure subscription. Learn how to [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
     - |
