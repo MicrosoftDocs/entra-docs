@@ -242,7 +242,7 @@ node . --op getUsers
 
 ### How it works
 
-[!INCLUDE [how-it-works-daemon-app](/includes/how-it-works-daemon-app.md)]
+[!INCLUDE [how-it-works-daemon-app](./includes/how-it-works-daemon-app.md)]
 
 #### [Python](#tab/python-workforce)
 
@@ -305,11 +305,11 @@ This command generates a *msal-client-credential-secret-1.0.0.jar* file in your 
 
 #### [Python](#tab/python-workforce)
 
-* Learn how to [build a Python daemon application that calls web APIs](/scenario-daemon-app-registration)
+* Learn how to [build a Python daemon application that calls web APIs](scenario-daemon-app-registration.md)
 
 #### [Java](#tab/java-workforce)
 
-* Learn how to [build a Java daemon application that calls web APIs](/scenario-daemon-app-registration)
+* Learn how to [build a Java daemon application that calls web APIs](scenario-daemon-app-registration.md)
 ---
 
 
