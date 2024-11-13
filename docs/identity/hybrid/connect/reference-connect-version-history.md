@@ -69,8 +69,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.3.8.0](#2380)|25 Jul 2025 (12 months after release of 2.3.20.0)|
 |[2.3.20.0](#23200)|7 Oct 2025 (12 months after release of 2.4.18.0)|
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
-|[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.x.xx.x)|
-|[2.x.xx.x]|TBD|
+|[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
+|[2.4.27.0](#24270)|TBD|
 
 **All other versions are not supported**
 
@@ -95,7 +95,7 @@ If you want all the latest features and updates, check this page and install wha
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
 
-## 2.x.xx.x
+## 2.4.27.0
 
 ### Release status
 
