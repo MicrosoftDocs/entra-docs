@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 07/28/2022
+ms.date: 11/13/2024
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm trying to learn the process of revoking verifiable credentials that I've issued.
@@ -19,92 +19,12 @@ As part of the process of working with verifiable credentials, you have to issue
 
 ## Why do you want to revoke a verifiable credential?
 
-Each customer has their own unique reasons for wanting to revoke a verifiable credential. Here are some of the common themes:
+Each customer has their own unique reasons for wanting to revoke a verifiable credential. Here are some common scenarios:
 
 - **Student ID**: The student is no longer an active student at the university.
 - **Employee ID**: The employee is no longer an active employee.
 - **State driver's license**: The driver no longer lives in that state.
 
-## How do I revoke a verifiable credential?
-
-By using the indexed claim in verifiable credentials, you can search for issued verifiable credentials by that claim in the portal and revoke it.
-
-1. Go to the **Verified ID** pane in the Azure portal as an admin user with **sign** key permission for Azure Key Vault.
-1. Select the verifiable credential type.
-1. On the leftmost menu, select **Revoke a credential**.
-
-   :::image type="content" source="media/how-to-issuer-revoke/settings-revoke.png" alt-text="Screenshot that shows credential revocation.":::
-
-1. Search for the index claim of the user you want to revoke. Indexing a claim is a requirement for being able to search for a credential.
-
-   :::image type="content" source="media/how-to-issuer-revoke/revoke-search.png" alt-text="Screenshot that shows the credential to revoke.":::
-  
-    Because only a hash of the indexed claim from the verifiable credential is stored, only an exact match populates the search results. The information entered in the text box is hashed by using the same algorithm. It's used as a search criterion to match the hashed value that's stored.
-  
-1. When a match is found, select the **Revoke** option to the right of the credential you want to revoke.
-
-    The admin user who performs the revoke operation must have **sign** key permission for Key Vault or else the error message "Unable to access Key Vault resource with given credentials" appears.
-
-   :::image type="content" source="media/how-to-issuer-revoke/warning.png" alt-text="Screenshot that shows a warning that tells you that after revocation the user still has the credential.":::
-
-1. After successful revocation, you see the status update and a green banner appears at the top of the page.
-
-   :::image type="content" source="media/how-to-issuer-revoke/revoke-successful.png" alt-text="Screenshot that shows a successfully revoked verifiable credential message.":::
-
-The Request Service API indicates a revoked credential in the `presentation_verified` [callback](presentation-request-api.md#callback-events) as `REVOKED`. Depending on if the presentation request specified that it [allows revoked credentials](presentation-request-api.md#configurationvalidation-type) to be presented, the presentation of a revoked credential either succeeds or fails.
-
-## Set up a verifiable credential with the ability to revoke
-
-Microsoft Entra Verified ID doesn't store verifiable credential data. The issuer needs to index one claim to make the credential searchable. Only one claim can be indexed, and if there's none, you can't revoke credentials. The selected claim to index is then salted and hashed and isn't stored as its original value.
-
-> [!NOTE]
-> Hashing is a one-way cryptographic operation that turns an input, called a ```preimage```, and produces an output called a hash that has a fixed length. It isn't computationally feasible at this time to reverse a hash operation.
-
-**Example:** In the following example, `displayName` is the index claim. You can search only via the user's full name and nothing else.
-
-```json
-{
-  "attestations": {
-    "idTokens": [
-      {
-        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
-        "configuration": "https://didplayground.b2clogin.com/didplayground.onmicrosoft.com/B2C_1_sisu/v2.0/.well-known/openid-configuration",
-        "redirectUri": "vcclient://openid",
-        "scope": "openid profile email",
-        "mapping": [
-          {
-            "outputClaim": "displayName",
-            "required": true,
-            "inputClaim": "$.name",
-            "indexed": true
-          },
-          {
-            "outputClaim": "firstName",
-            "required": true,
-            "inputClaim": "$.given_name",
-            "indexed": false
-          },
-          {
-            "outputClaim": "lastName",
-            "required": true,
-            "inputClaim": "$.family_name",
-            "indexed": false
-          }
-        ],
-        "required": false
-      }
-    ]
-  },
-  "validityInterval": 2592000,
-  "vc": {
-    "type": [
-      "VerifiedCredentialExpert"
-    ]
-  }
-}
-```
-
-You can index only one claim from a rules claims mapping. If you accidentally have no indexed claim in your rules definition, and you later correct this oversight, already issued verifiable credentials won't be searchable because they were issued when no index existed.
 
 ## How does revocation work?
 
@@ -162,6 +82,90 @@ didDocument": {
          }
     ],
 ```
+
+## Set up a verifiable credential with the ability to revoke
+
+Microsoft Entra Verified ID doesn't store verifiable credential data. The issuer needs to index one claim to make the credential searchable. Only one claim can be indexed, and if there's none, you can't revoke credentials. The selected claim to index is then salted and hashed and isn't stored as its original value.
+
+> [!NOTE]
+> Hashing is a one-way cryptographic operation that turns an input, called a ```preimage```, and produces an output called a hash that has a fixed length. It isn't computationally feasible, at this time, to reverse a hash operation.
+
+**Example:** In the following example, `displayName` is the index claim. You can search only via the user's full name and nothing else.
+
+```json
+{
+  "attestations": {
+    "idTokens": [
+      {
+        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+        "configuration": "https://didplayground.b2clogin.com/didplayground.onmicrosoft.com/B2C_1_sisu/v2.0/.well-known/openid-configuration",
+        "redirectUri": "vcclient://openid",
+        "scope": "openid profile email",
+        "mapping": [
+          {
+            "outputClaim": "displayName",
+            "required": true,
+            "inputClaim": "$.name",
+            "indexed": true
+          },
+          {
+            "outputClaim": "firstName",
+            "required": true,
+            "inputClaim": "$.given_name",
+            "indexed": false
+          },
+          {
+            "outputClaim": "lastName",
+            "required": true,
+            "inputClaim": "$.family_name",
+            "indexed": false
+          }
+        ],
+        "required": false
+      }
+    ]
+  },
+  "validityInterval": 2592000,
+  "vc": {
+    "type": [
+      "VerifiedCredentialExpert"
+    ]
+  }
+}
+```
+
+You can index only one claim from a rules claims mapping. If you accidentally have no indexed claim in your rules definition, and you later correct this oversight, already issued verifiable credentials won't be searchable because they were issued when no index existed.
+
+## How do I revoke a verifiable credential?
+
+You can use indexed claims in verifiable credentials to search for issued verifiable credentials and revoke them.
+
+1. Go to the **Verified ID** pane in the Azure portal as an admin user with **sign** key permission for Azure Key Vault.
+1. Select the verifiable credential type.
+1. On the leftmost menu, select **Revoke a credential**.
+
+   :::image type="content" source="media/how-to-issuer-revoke/settings-revoke.png" alt-text="Screenshot that shows credential revocation.":::
+
+1. Search for the indexed claim of the user you want to revoke. Indexing a claim is a requirement for being able to search for a credential.
+
+   :::image type="content" source="media/how-to-issuer-revoke/revoke-search.png" alt-text="Screenshot that shows the credential to revoke.":::
+  
+    [>!IMPORTANT]
+     >We only store a hashed version of an indexed claim. This means that only exact matches of the value stored in the indexed claim work. When you enter information into the text box, it is hashed using the same algorithm. This hashed value is then used to search for a match to the stored hashed claim. If you don't find a match, you might have entered the wrong information or the claim might not be indexed.
+  
+1. When a match is found, select the **Revoke** option to the right of the credential you want to revoke.
+
+    The admin user who performs the revoke operation must have **sign** key permission for Key Vault or else the error message "Unable to access Key Vault resource with given credentials" appears.
+
+   :::image type="content" source="media/how-to-issuer-revoke/warning.png" alt-text="Screenshot that shows a warning that tells you that after revocation the user still has the credential.":::
+
+1. After successful revocation, you see the status update and a green banner appears at the top of the page.
+
+   :::image type="content" source="media/how-to-issuer-revoke/revoke-successful.png" alt-text="Screenshot that shows a successfully revoked verifiable credential message.":::
+
+The Request Service API indicates a revoked credential in the `presentation_verified` [callback](presentation-request-api.md#callback-events) as `REVOKED`. Depending on if the presentation request specified that it [allows revoked credentials](presentation-request-api.md#configurationvalidation-type) to be presented, the presentation of a revoked credential either succeeds or fails.
+
+
 
 ## Next steps
 
