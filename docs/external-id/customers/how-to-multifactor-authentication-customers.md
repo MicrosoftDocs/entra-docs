@@ -37,7 +37,7 @@ This article describes how to enforce MFA for your customers by creating a Micro
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - An app that's registered in your external tenant and added to the sign-up and sign-in user flow.
 - An account with at least the Security Administrator role to configure Conditional Access policies and MFA.
-- SMS is an add-on feature and requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription). If your subscription expires or is cancelled, end users will no longer be able to authenticate using SMS, which could block them from signing in depending on your MFA policy.
+- SMS is an add-on feature and requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription). If your subscription expires or is canceled, end users will no longer be able to authenticate using SMS, which could block them from signing in depending on your MFA policy.
 
 ## Create a Conditional Access policy
 
