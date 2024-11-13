@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/11/2024
+ms.date: 11/12/2024
 
 ms.author: justinha
 author: justinha
@@ -71,6 +71,8 @@ In the Authentication methods policy, hardware and software OATH tokens can be e
 Tenants with a Microsoft Entra ID Premium license can continue to upload hardware OATH tokens as in the original preview. Fore more information, see [Upload hardware OATH tokens in CSV format](how-to-mfa-upload-oath-tokens.md).
 
 ### Authentication method policy for hardware OATH tokens
+
+You can enable hardware OATH tokens in the Authentication methods policy. 
 
 1. You can view the hardware OATH tokens policy status using Microsoft Graph APIs or the Microsoft Entra admin center. 
 
