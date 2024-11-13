@@ -31,7 +31,7 @@ To achieve AAL1, you can use any NIST single-factor or multifactor [permitted au
 | - | - |
 |Password |Memorized Secret |
 |Phone (SMS): Not recommended | Single-factor out-of-band |
-|Microsoft Authenticator App (Passwordless)|Multi-factor out-of-band |
+|Microsoft Authenticator App (Phone Sign-In)|Multi-factor out-of-band |
 |Single-factor software certificate | Single-factor crypto software |
 |Multi-factor Software Certificate (PIN Protected) <br> Windows Hello for Business with software TPM <br> | Multi-factor crypto software | 
 |Hardware protected certificate (smartcard/security key/TPM) <br> Windows Hello for Business with hardware TPM <br> FIDO 2 security key <br> Platform credentials for macOS (Secure Enclave) <br> Passkey in Microsoft Authenticator| Multi-factor crypto hardware
