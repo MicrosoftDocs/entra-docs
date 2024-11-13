@@ -5,7 +5,7 @@ description: Learn how to access the sign-in log and analyze a single sign-in at
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: quickstart
-ms.date: 11/12/2024
+ms.date: 11/13/2024
 ms.author: sarahlipsey
 author: shlipsey3
 manager: amycolannino
@@ -47,8 +47,7 @@ This section provides the steps to locate the failed sign-in attempt using the M
 
 1. Set the API version to **beta**.
 
-1. Enter the following query and select **Run query**:
-    - https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=Status eq 'failure'&$filter=userDisplayName eq 'Isabella Simonsen'
+1. Enter the following query and select **Run query**: `https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=&$filter=userDisplayName eq 'Isabella Simonsen' and Status eq 'failure'`
 
 1. Review the query response and locate the **status** section of the response.
 
@@ -61,4 +60,4 @@ When no longer needed, delete the test user. If you don't know how to delete a M
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Integrate Microsoft Entra activity logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
+> [Analyze activity logs with Microsoft Graph](howto-analyze-activity-logs-with-microsoft-graph.md)
