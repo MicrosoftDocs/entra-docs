@@ -157,6 +157,13 @@ cd ms-identity-docs-code-dotnet/console-daemon
 
 #### [Node](#tab/node-workforce)
 
+In your editor, open the *.env* file, then replace the placeholders:
+
+- `Enter_the_Application_Id_Here` with the application (client) ID of the application you registered earlier.
+- `Enter_the_Tenant_Id_Here` with the the Tenant ID of your workforce tenant.
+- `Enter_the_Client_Secret_Here` with the client secret you created earlier.
+- `Enter_the_Cloud_Instance_Id_Here` with `https://login.microsoftonline.com`.
+- `Enter_the_Graph_Endpoint_Here` with `https://graph.microsoft.com/`.
 
 #### [Python](#tab/python-workforce)
 
@@ -201,17 +208,67 @@ Once the application runs successfully, it displays a response similar to the fo
 
 This app uses the client secret as its credentials to acquires an access token that's scoped for the Microsoft Graph API. It then uses the access token to request its own application registration details from Microsoft Graph API. The app can request any resource from Microsoft Graph API as long as the access token has the right permissions.
 
+The sample demonstrates how an unattended job or Windows service can run with an application identity, instead of a user's identity.
+
 #### [Node](#tab/node-workforce)
 
+1. To install dependencies, run the following commnand:
+
+```console
+npm install
+```
+
+1. Use the following command to run the application:
+
+```console
+node . --op getUsers
+```
+
+If the app runs successfully, you should see a JSON formatted output representing a list of users from your workforce tenant. It looks similar to the following snippet:
+
+```json
+{
+  '@odata.context': 'https://graph.microsoft.com/v1.0/$metadata#users',
+  value: [
+    {
+      businessPhones: [],
+      displayName: 'Casey Jensen',
+      givenName: 'Jense',
+      jobTitle: null,
+      mail: null,
+      mobilePhone: null,
+      officeLocation: null,
+      preferredLanguage: null,
+      surname: 'Casey',
+      userPrincipalName: 'jensen@contoso.onmicrosoft.com',
+      id: 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb'
+    },
+    ...
+  ]
+}
+```
+
+### How it works
+
+[!INCLUDE [how-it-works-daemon-app](./includes/how-it-works-daemon-app.md)]
 
 #### [Python](#tab/python-workforce)
 
 
+### How it works
+
+[!INCLUDE [how-it-works-daemon-app](./includes/how-it-works-daemon-app.md)]
+
 #### [Java](#tab/java-workforce)
 
+
+
+### How it works
+
+[!INCLUDE [how-it-works-daemon-app](./includes/how-it-works-daemon-app.md)]
 ---
 
-The sample demonstrates how an unattended job or Windows service can run with an application identity, instead of a user's identity.
+
 
 ## Related content
 

@@ -203,10 +203,10 @@ EXPRESS_SESSION_SECRET=6DP6v09eLiW7f1E65B8k
 
 ## Run and test sample web app
 
+You've configured your sample app, you proceed to run and test it.
 
 #### [Node](#tab/node-workforce)
 
-Run the project by using Node.js.
 
 1. To start the server, run the following commands from within the project directory:
 
