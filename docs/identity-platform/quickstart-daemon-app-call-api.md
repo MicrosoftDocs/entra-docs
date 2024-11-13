@@ -291,7 +291,6 @@ This command generates a *msal-client-credential-secret-1.0.0.jar* file in your 
 [!INCLUDE [how-it-works-daemon-app](./includes/how-it-works-daemon-app.md)]
 ---
 
-
 ## Related content
 
 #### [.NET](#tab/asp-dot-net-core-workforce)
@@ -302,13 +301,15 @@ This command generates a *msal-client-credential-secret-1.0.0.jar* file in your 
 
 #### [Node](#tab/node-workforce)
 
-* Learn how [build your daemon application that calls web API](tutorial-v2-nodejs-console.md).
+* Learn how [build your Node.js daemon application that calls web API](tutorial-v2-nodejs-console.md).
 
 #### [Python](#tab/python-workforce)
 
+* Learn how to [build a Python daemon application that calls web APIs](/scenario-daemon-app-registration)
 
 #### [Java](#tab/java-workforce)
 
+* Learn how to [build a Java daemon application that calls web APIs](/scenario-daemon-app-registration)
 ---
 
 
