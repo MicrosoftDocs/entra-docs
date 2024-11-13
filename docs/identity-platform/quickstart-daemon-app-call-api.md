@@ -16,13 +16,13 @@ zone_pivot_groups: entra-tenants
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
-In this quickstart, you use a sample daemon application acquires and access token to call a protected web API as itself (its own identity) by using the [Microsoft Authentication Library (MSAL)](msal-overview.md).
+In this quickstart, you use a sample daemon application acquires and access token to call a protected web API by using the [Microsoft Authentication Library (MSAL)](msal-overview.md).
 
-A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity by presenting its application ID, credential (secret or certificate), and an application ID URI.
-
-The application is a daemon uses the standard [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token.
+A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity by presenting its application ID, credential (secret or certificate), and an application ID URI. The daemon application uses the standard [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token.
 
 ::: zone pivot="workforce" 
+
+The sample app you use in this quickstart acquires an access token to call Microsoft Graph API.
 
 ## Prerequisites
 
@@ -33,11 +33,10 @@ The application is a daemon uses the standard [OAuth 2.0 client credentials gran
 
 
 
-#### [Python Flask](#tab/java-workforce)
+#### [Python](#tab/python-workforce)
 
 
-
-#### [Python Flask](#tab/python-flask-workforce)
+#### [Java](#tab/java-workforce)
 
 
 --- 
@@ -46,6 +45,8 @@ The application is a daemon uses the standard [OAuth 2.0 client credentials gran
 
 
 ::: zone pivot="external"
+
+The sample app you use in this quickstart acquires an access token to call a sample .NET web API.
 
 ## Prerequisites
 
