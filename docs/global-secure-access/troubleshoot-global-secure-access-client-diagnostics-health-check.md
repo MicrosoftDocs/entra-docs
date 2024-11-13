@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 10/08/2024
+ms.date: 11/12/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -57,15 +57,15 @@ Global Secure Access Tunneling service must be running.
 1. If the Global Secure Access Tunneling service isn't running, start it from the `services.msc`.
 1. If the service fails to start, look for errors in the Event Viewer.
 
-### Management service running
-Global Secure Access Management service must be running.
-1. To verify that this service running, enter the following command in the Command Prompt:   
-`sc query GlobalSecureAccessManagementService`
-1. If the Global Secure Access Management Service isn't running, start it from the `services.msc`.
+### Engine service running
+The Global Secure Access Engine service must be running.
+1. To verify that this service is running, enter the following command in the Command Prompt:   
+`sc query GlobalSecureAccessEngineService`
+1. If the Global Secure Access Engine Service isn't running, start it from the `services.msc`.
 1. If the service fails to start, look for errors in the Event Viewer.
 
 ### Policy Retriever service running
-Global Secure Access Policy Retriever service must be running.
+The Global Secure Access Policy Retriever service must be running.
 1. To verify that this service running, enter the following command in the Command Prompt:   
 `sc query GlobalSecureAccessPolicyRetrieverService`
 1. If the Global Secure Access Policy Retriever service isn't running, start it from the `services.msc`.
@@ -141,7 +141,7 @@ If this test fails, enroll in a new certificate by completing the following step
 :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-certificates-registry-key.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
 1. Delete the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName`
-1. Restart the Global Secure Access Management Service in the services MMC.
+1. Restart the Global Secure Access Engine Service in the services MMC.
 1. Refresh the certificates MMC to verify that a new certificate was created.   
 *Provisioning a new certificate might take a few minutes.*
 1. Check the Global Secure Access client event log for errors.
@@ -159,7 +159,7 @@ If this test fails, enroll in a new certificate by completing the following step
 :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-certificates-registry-key.png" alt-text="Screenshot of the list of certificates with the gsa.client certificate highlighted.":::
 1. Delete the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client\CertCommonName`
-1. Restart the Global Secure Access Management Service in the services MMC.
+1. Restart the Global Secure Access Engine Service in the services MMC.
 1. Refresh the certificates MMC to verify that a new certificate was created.   
 *Provisioning a new certificate might take a few minutes.*
 1. Check the Global Secure Access client event log for errors.
@@ -223,7 +223,7 @@ If the cached token test fails:
 1. Verify that the system tray icon is visible.
 1. If the sign-in notification appears, select **Sign in**.
 1. If the sign-in notification doesn't appear, check if it is in the Notification Center and select **Sign in**.
-1. Sign in with a user that is a member of the same Entra tenant that the device is joined to.
+1. Sign in with a user that is a member of the same Microsoft Entra tenant that the device is joined to.
 1. Verify the network connection.
 1. Hover over the system tray icon and verify that the client is **not** disabled by your organization.
 1. Restart the client and wait for a few seconds.
@@ -292,6 +292,17 @@ function FindProxyForURL(url, host) {  
 Configuring the Global Secure Access client to route Global Secure Access traffic through a proxy:
 1. Set a system environment variable in Windows named `grpc_proxy` to the value of the proxy address. For example, `http://10.1.0.10:8080`.
 1. Restart the Global Secure Access client.
+
+### No Hyper-V external virtual switch detected
+Hyper-V support: 
+1. External virtual switch: The Global Secure Access Windows client doesn't currently support host machines that have a Hyper-V external virtual switch. However, the client can be installed on the virtual machines to tunnel traffic to Global Secure Access.   
+1. Internal virtual switch: The Global Secure Access Windows client can be installed on host and guest machines. The client tunnels only the network traffic of the machine it's installed on. In other words, a client installed on a host machine doesn’t tunnel the network traffic of the guest machines.      
+
+The Global Secure Access Windows client supports Azure Virtual Machines. 
+
+The Global Secure Access Windows client supports Azure Virtual Desktop (AVD).
+> [!NOTE]
+> AVD multi-session is not supported.
 
 ### Tunneling succeeded
 This test checks each active traffic profile in the forwarding profile (**Microsoft 365**, **Private Access**, and **Internet Access**) to verify that connections to the health service of the corresponding channel are tunneled successfully.
