@@ -1356,13 +1356,23 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/sample-daemon-dotnet-call-api.md",
+      "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=external&tab=asp-dot-net-core-external",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-daemon-node-call-api.md",
+      "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=external&tab=node-external",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-flask-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-web-app-dotnet-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external&tab= asp-dot-net-core-workforce",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external&tab=asp-dot-net-core-workforce",
       "redirect_document_id": false
     },
     {

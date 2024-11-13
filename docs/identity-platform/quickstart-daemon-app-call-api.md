@@ -92,6 +92,8 @@ In this step, you register the daemon app and the web API app in the Microsoft E
 
 [!INCLUDE [add-app-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
+[!INCLUDE [client-credential-advice](./includes/register-app/client-credential-advice.md)]
+
 ### Grant API permissions to the daemon app
 
 [!INCLUDE [grant-api-permissions-app-permissions](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
@@ -138,10 +140,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the sample daemon app and API
 
+To use your app registration details in the client web app sample, use the following steps:
 
 #### [Node](#tab/node-external)
-
-To use your app registration in the client web app sample:
 
 1. In your code editor, open `App\authConfig.js` file.
 
@@ -168,8 +169,6 @@ To use your app registration in the web API sample:
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 #### [.NET](#tab/asp-dot-net-core-external)
-
-To use your app registration in the client web application sample:
 
 1. In your code editor, open *ms-identity-ciam-dotnet-tutorial/2-Authorization/3-call-own-api-dotnet-core-daemon/ToDoListClient/appsettings.json* file.
 
@@ -233,7 +232,7 @@ You've configured your sample app, you proceed to run and test it.
 
 ### How it works
 
-The Node.js app uses [OAuth 2.0 client credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app).
+The Node.js app uses [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app).
 
 On the API side, the web API must verify that the access token has the required permissions (application permissions). The web API can't accept an access token that doesn't have the required permissions. 
 
@@ -294,7 +293,7 @@ There are no to-do's in server
 
 ## How it works
 
-The daemon application use [OAuth2.0 client credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app). The daemon app in this article uses [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) to simplify the process of acquiring a token.
+The daemon application use [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app). The daemon app in this article uses [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) to simplify the process of acquiring a token.
 
 On the API side, the web API must verify that the access token has the required permissions (application permissions). The web API rejects access tokens that don't have the required permissions. 
 
