@@ -60,6 +60,29 @@ The sample app you use in this quickstart acquires an access token to call Micro
 
 [!INCLUDE [client-credential-advice](./includes/register-app/client-credential-advice.md)]
 
+## Grant API permissions to the daemon app
+
+For daemon app to access data in Microsoft Graph API, you grant it grant it the permissions it needs. The daemon app needs application type permissions. Users can't interact with a daemon application, so the tenant administrator must consent to this permissions. Use the following steps to grant and consent to the permissions:
+
+#### [.NET](#tab/asp-dot-net-core-workforce)
+
+For the .NET daemon app, you don't need to grant and consent to any permission. This daemon app reads it's own app registration information, so it can do so without being granted any application permissions.
+
+#### [Node](#tab/node-workforce)
+
+[!INCLUDE [grant-permissions-to-daemon-app](./includes/register-app/grant-permissions-to-daemon-app.md)]
+
+#### [Python](#tab/python-workforce)
+
+[!INCLUDE [grant-permissions-to-daemon-app](./includes/register-app/grant-permissions-to-daemon-app.md)]
+
+#### [Java](#tab/java-workforce)
+
+[!INCLUDE [grant-permissions-to-daemon-app](./includes/register-app/grant-permissions-to-daemon-app.md)]
+
+---
+
+
 ## Clone or download the sample application
 
 To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
@@ -186,9 +209,9 @@ This app uses the client secret as its credentials to acquires an access token t
 
 #### [Java](#tab/java-workforce)
 
-
 ---
 
+The sample demonstrates how an unattended job or Windows service can run with an application identity, instead of a user's identity.
 
 ## Related content
 
