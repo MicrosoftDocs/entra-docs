@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 11/12/2024
 ms.author: mimart
 ms.reviewer: aloom3
-ms.custom: it-pro
+ms.custom: it-pro, references_regions
 
 #Customer intent: As a dev, devops, or it admin, I want to prevent telephony fraud by choosing which countries and regions to accept telecom traffic from.
 ---
@@ -29,7 +29,7 @@ You can use the Microsoft Graph API `onPhoneMethodLoadStart` event policy to man
 
 ## Country codes requiring opt-in
 
-Starting Jan 2025, the following country codes will deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to activate them using the `onPhoneMethodLoadStart`event policy.
+Starting January 2025, the following country codes will be deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to activate them using the `onPhoneMethodLoadStart`event policy.
 
 **Table 1. SMS verification country codes requiring opt-in**
 
