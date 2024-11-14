@@ -37,17 +37,12 @@ items:
     items:
       - name: Sign in users
         href: /entra/identity-platform/quickstart-web-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
-      - name: Sign in users and call an API
-        href: sample-web-app-node-sign-in-call-api.md
-      - name: Sign in users and edit profile
-        href: sample-web-app-node-sign-in-edit-profile.md
-  - name: Daemon, service
-    items:
-      - name: Node.js - call an API
-        href: sample-daemon-node-call-api.md
-        displayName: client credentials grant
-      - name: .NET - call an API
-        href: sample-daemon-dotnet-call-api.md
+      - name: call an API
+        href: /entra/identity-platform/quickstart-web-app-node-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+      - name: Edit profile
+        href: /entra/identity-platform/quickstart-web-app-node-sign-in-edit-profile?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+  - name: Daemon, service app
+    href: /entra/identity-platform/quickstart-daemon-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external 
   - name: Desktop app
     items:
       - name: Electron - sign in users

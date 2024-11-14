@@ -14,11 +14,9 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Call a web API in a sample daemon app
 
-[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
-
 In this quickstart, you use a sample daemon application acquires and access token to call a protected web API by using the [Microsoft Authentication Library (MSAL)](msal-overview.md).
 
-A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity by presenting its application ID, credential (secret or certificate), and an application ID URI. The daemon application uses the standard [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token.
+[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
 ::: zone pivot="workforce" 
 
@@ -220,7 +218,9 @@ Once the application runs successfully, it displays a response similar to the fo
 
 ### How it works
 
-This app uses the client secret as its credentials to acquire an access token from Microsoft identity platform. The access token is scoped for the Microsoft Graph API. The app then uses the access token to request its own application registration details from Microsoft Graph API. The app can request any resource from Microsoft Graph API as long as the access token has the right permissions.
+A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity by presenting its application ID, credential (secret or certificate), and an application ID URI. The daemon application uses the standard [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token.
+
+The app acquires an access token from Microsoft identity platform. The access token is scoped for the Microsoft Graph API. The app then uses the access token to request its own application registration details from Microsoft Graph API. The app can request any resource from Microsoft Graph API as long as the access token has the right permissions.
 
 The sample demonstrates how an unattended job or Windows service can run with an application identity, instead of a user's identity.
 
@@ -316,8 +316,6 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 
 
 ::: zone pivot="external"
-
-The sample app you use in this quickstart acquires an access token to call a sample .NET web API.
 
 ## Prerequisites
 
@@ -506,7 +504,7 @@ You've configured your sample app. You can proceed to run and test it.
 
 The Node.js app uses [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app).
 
-On the API side, the web API must verify that the access token has the required permissions (application permissions). The web API can't accept an access token that doesn't have the required permissions. 
+On the API side, a sample .NET web API, the API must verify that the access token has the required permissions (application permissions). The web API can't accept an access token that doesn't have the required permissions. 
 
 ### Access to data
 
@@ -565,10 +563,10 @@ There are no to-do's in server
 
 ## How it works
 
-The daemon application use [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app). The daemon app in this article uses [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) to simplify the process of acquiring a token.
+The daemon application uses [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app). The daemon app in this article uses [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) to simplify the process of acquiring a token.
 
-On the API side, the web API must verify that the access token has the required permissions (application permissions). The web API rejects access tokens that don't have the required permissions. 
-
+On the API side, a sample .NET web API, the API must verify that the access token has the required permissions (application permissions). The web API rejects access tokens that don't have the required permissions. 
+The sample app you use in this quickstart acquires an access token to call a .
 ---
 
 ## Related content
