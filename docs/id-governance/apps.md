@@ -18,16 +18,16 @@ ms.reviewer: amycolannino
 
 | Category | Application |
 | :--- | :--- |
-| HR | [SuccessFactors - User Provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
-| HR | [Workday - User Provisioning](~/identity/saas-apps/workday-inbound-cloud-only-tutorial.md)|
-| HR | [API-driven connector from any HR source](~/identity/app-provisioning/inbound-provisioning-api-concepts.md)<br>[Oracle HCM API-driven connector](~/identity/saas-apps/oracle-hcm-provisioning-tutorial.md)|
-|[LDAP directory](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)| OpenLDAP<br>Microsoft Active Directory Lightweight Directory Services<br>389 Directory Server<br>Apache Directory Server<br>IBM Tivoli DS<br>Isode Directory<br>NetIQ eDirectory<br>Novell eDirectory<br>Open DJ<br>Open DS<br>Oracle (previously Sun ONE) Directory Server Enterprise Edition<br>RadiantOne Virtual Directory Server (VDS) |
-| [SQL database](~/identity/app-provisioning/tutorial-ecma-sql-connector.md)| Microsoft SQL Server and Azure SQL<br>IBM DB2 10.x<br>IBM DB2 9.x<br>Oracle 10g and 11g<br>Oracle 12c and 18c<br>MySQL 5.x|
-| Cloud platform| [AWS IAM Identity Center](~/identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) |
-| Cloud platform| [Google Cloud Platform - User Provisioning](~/identity/saas-apps/g-suite-provisioning-tutorial.md) |
-| Business applications|SAP applications integrated with [SAP Cloud Identity Services](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
-| CRM| [Salesforce - User Provisioning](~/identity/saas-apps/salesforce-provisioning-tutorial.md) |
-| ITSM| [ServiceNow](~/identity/saas-apps/servicenow-provisioning-tutorial.md)|
+| HR | [SuccessFactors - User Provisioning](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
+| HR | [Workday - User Provisioning](../identity/saas-apps/workday-inbound-cloud-only-tutorial.md)|
+| HR | [API-driven connector from any HR source](../identity/app-provisioning/inbound-provisioning-api-concepts.md)<br>[Oracle HCM API-driven connector](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md)|
+|[LDAP directory](../identity/app-provisioning/on-premises-ldap-connector-configure.md)| OpenLDAP<br>Microsoft Active Directory Lightweight Directory Services<br>389 Directory Server<br>Apache Directory Server<br>IBM Tivoli DS<br>Isode Directory<br>NetIQ eDirectory<br>Novell eDirectory<br>Open DJ<br>Open DS<br>Oracle (previously Sun ONE) Directory Server Enterprise Edition<br>RadiantOne Virtual Directory Server (VDS) |
+| [SQL database](../identity/app-provisioning/tutorial-ecma-sql-connector.md)| Microsoft SQL Server and Azure SQL<br>IBM DB2 10.x<br>IBM DB2 9.x<br>Oracle 10g and 11g<br>Oracle 12c and 18c<br>MySQL 5.x|
+| Cloud platform| [AWS IAM Identity Center](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) |
+| Cloud platform| [Google Cloud Platform - User Provisioning](../identity/saas-apps/g-suite-provisioning-tutorial.md) |
+| Business applications|SAP applications integrated with [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
+| CRM| [Salesforce - User Provisioning](../identity/saas-apps/salesforce-provisioning-tutorial.md) |
+| ITSM| [ServiceNow](../identity/saas-apps/servicenow-provisioning-tutorial.md)|
 
 
 <a name='entra-identity-governance-integrations'></a>
@@ -718,8 +718,8 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Shmoop For Schools](../identity/saas-apps/shmoopforschools-tutorial.md) |  | ● |
 | [Shopify Plus](../identity/saas-apps/shopify-plus-provisioning-tutorial.md) | ● | ● |
 | [Showpad](../identity/saas-apps/showpad-tutorial.md) |  | ● |
-| [Sigma Computing](~/identity/saas-apps/sigma-computing-provisioning-tutorial.md) | ● | ● |
-| [Signagelive](~/identity/saas-apps/signagelive-provisioning-tutorial.md) | ● | ● |
+| [Sigma Computing](../identity/saas-apps/sigma-computing-provisioning-tutorial.md) | ● | ● |
+| [Signagelive](../identity/saas-apps/signagelive-provisioning-tutorial.md) | ● | ● |
 | [SignalFx](../identity/saas-apps/signalfx-tutorial.md) |  | ● |
 | [Signiant Media Shuttle](../identity/saas-apps/signiant-media-shuttle-tutorial.md) |  | ● |
 | [Sigstr](../identity/saas-apps/sigstr-tutorial.md) |  | ● |
