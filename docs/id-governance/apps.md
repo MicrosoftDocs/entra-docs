@@ -487,46 +487,46 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Lusha](../identity/saas-apps/lusha-tutorial.md) |  | ● |
 | [LUSID](../identity/saas-apps/LUSID-provisioning-tutorial.md) | ● | ● |
 | [Lynda.com](../identity/saas-apps/lynda-tutorial.md) |  | ● |
-| [M-Files](~/identity/saas-apps/m-files-provisioning-tutorial.md) | ● | ● |
-| [Mailosaur](~/identity/saas-apps/mailosaur-tutorial.md) |  | ● |
-| [Mapiq](~/identity/saas-apps/mapiq-tutorial.md) |  | ● |
-| [Maptician](~/identity/saas-apps/maptician-provisioning-tutorial.md) | ● | ● |
-| [Marker.io](~/identity/saas-apps/marker-io-tutorial.md) |  | ● |
-| [Markit Procurement Service](~/identity/saas-apps/markit-procurement-service-provisioning-tutorial.md) | ● |  |
-| [MDComune Business](~/identity/saas-apps/mdcomune-business-tutorial.md) |  | ● |
-| [MediusFlow](~/identity/saas-apps/mediusflow-provisioning-tutorial.md) | ● |  |
-| [Mend.io](~/identity/saas-apps/mend-io-tutorial.md) |  | ● |
-| [Mercell](~/identity/saas-apps/mercell-tutorial.md) |  | ● |
-| [MerchLogix](~/identity/saas-apps/merchlogix-provisioning-tutorial.md) | ● | ● |
-| [Meta Networks Connector](~/identity/saas-apps/meta-networks-connector-provisioning-tutorial.md) | ● | ● |
-| [Metatask](~/identity/saas-apps/metatask-tutorial.md) |  | ● |
-| [Mevisio](~/identity/saas-apps/mevisio-tutorial.md) |  | ● |
-| [MIC SAAS Portal](~/identity/saas-apps/mic-saas-portal-tutorial.md) |  | ● |
-| [MicroFocus Novell eDirectory (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
-| [Microsoft 365](~/fundamentals/concept-group-based-licensing.md) | ● | ● |
-| [Microsoft Active Directory Domain Services](~/identity/domain-services/scoped-synchronization.md) | ● | ● |
+| [M-Files](../identity/saas-apps/m-files-provisioning-tutorial.md) | ● | ● |
+| [Mailosaur](../identity/saas-apps/mailosaur-tutorial.md) |  | ● |
+| [Mapiq](../identity/saas-apps/mapiq-tutorial.md) |  | ● |
+| [Maptician](../identity/saas-apps/maptician-provisioning-tutorial.md) | ● | ● |
+| [Marker.io](../identity/saas-apps/marker-io-tutorial.md) |  | ● |
+| [Markit Procurement Service](../identity/saas-apps/markit-procurement-service-provisioning-tutorial.md) | ● |  |
+| [MDComune Business](../identity/saas-apps/mdcomune-business-tutorial.md) |  | ● |
+| [MediusFlow](../identity/saas-apps/mediusflow-provisioning-tutorial.md) | ● |  |
+| [Mend.io](../identity/saas-apps/mend-io-tutorial.md) |  | ● |
+| [Mercell](../identity/saas-apps/mercell-tutorial.md) |  | ● |
+| [MerchLogix](../identity/saas-apps/merchlogix-provisioning-tutorial.md) | ● | ● |
+| [Meta Networks Connector](../identity/saas-apps/meta-networks-connector-provisioning-tutorial.md) | ● | ● |
+| [Metatask](../identity/saas-apps/metatask-tutorial.md) |  | ● |
+| [Mevisio](../identity/saas-apps/mevisio-tutorial.md) |  | ● |
+| [MIC SAAS Portal](../identity/saas-apps/mic-saas-portal-tutorial.md) |  | ● |
+| [MicroFocus Novell eDirectory (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
+| [Microsoft 365](../fundamentals/concept-group-based-licensing.md) | ● | ● |
+| [Microsoft Active Directory Domain Services](../identity/domain-services/scoped-synchronization.md) | ● | ● |
 | [Microsoft Azure](/azure/role-based-access-control/role-assignments-portal) | ● | ● |
-| [Microsoft Azure SQL (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
-| [Microsoft Entra Domain Services](/entra/identity/domain-services/synchronization) | ● | ● |
-| [Microsoft Lightweight Directory Server (ADAM) (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
-| [Microsoft SharePoint Server on-premises](~/identity/saas-apps/sharepoint-on-premises-tutorial.md) | | ●  |
-| [Microsoft SQL Server (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
-| [Mindtickle](~/identity/saas-apps/mindtickle-provisioning-tutorial.md) | ● | ● |
-| [Miro](~/identity/saas-apps/miro-provisioning-tutorial.md) | ● | ● |
-| [Mixpanel](~/identity/saas-apps/mixpanel-provisioning-tutorial.md) | ● | ● |
-| [MobileIron](~/identity/saas-apps/mobileiron-provisioning-tutorial.md) | ● | ● |
-| [Monday.com](~/identity/saas-apps/mondaycom-provisioning-tutorial.md) | ● | ● |
-| [MongoDB Atlas - SSO](~/identity/saas-apps/mongodb-cloud-tutorial.md) |  | ● |
-| [MongoDB Atlas](~/identity/saas-apps/mongodb-cloud-tutorial.md) |  | ● |
-| [Moqups](~/identity/saas-apps/moqups-provisioning-tutorial.md) | ● | ● |
-| [Movement by project44](~/identity/saas-apps/movement-by-project44-tutorial.md) |  | ● |
-| [Moveworks](~/identity/saas-apps/moveworks-tutorial.md) |  | ● |
-| [Mural Identity](~/identity/saas-apps/mural-identity-provisioning-tutorial.md) | ● | ● |
-| [MX3 Diagnostics](~/identity/saas-apps/mx3-diagnostics-connector-provisioning-tutorial.md) | ● |  |
-| [My IBISWorld](~/identity/saas-apps/my-ibisworld-tutorial.md) |  | ● |
-| [myPolicies](~/identity/saas-apps/mypolicies-provisioning-tutorial.md) | ● | ● |
-| [MySQL (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
-| [MyVR](~/identity/saas-apps/myvr-tutorial.md) |  | ● |
+| [Microsoft Azure SQL (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
+| [Microsoft Entra Domain Services](../identity/domain-services/synchronization.md) | ● | ● |
+| [Microsoft Lightweight Directory Server (ADAM) (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
+| [Microsoft SharePoint Server on-premises](../identity/saas-apps/sharepoint-on-premises-tutorial.md) | | ●  |
+| [Microsoft SQL Server (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
+| [Mindtickle](../identity/saas-apps/mindtickle-provisioning-tutorial.md) | ● | ● |
+| [Miro](../identity/saas-apps/miro-provisioning-tutorial.md) | ● | ● |
+| [Mixpanel](../identity/saas-apps/mixpanel-provisioning-tutorial.md) | ● | ● |
+| [MobileIron](../identity/saas-apps/mobileiron-provisioning-tutorial.md) | ● | ● |
+| [Monday.com](../identity/saas-apps/mondaycom-provisioning-tutorial.md) | ● | ● |
+| [MongoDB Atlas - SSO](../identity/saas-apps/mongodb-cloud-tutorial.md) |  | ● |
+| [MongoDB Atlas](../identity/saas-apps/mongodb-cloud-tutorial.md) |  | ● |
+| [Moqups](../identity/saas-apps/moqups-provisioning-tutorial.md) | ● | ● |
+| [Movement by project44](../identity/saas-apps/movement-by-project44-tutorial.md) |  | ● |
+| [Moveworks](../identity/saas-apps/moveworks-tutorial.md) |  | ● |
+| [Mural Identity](../identity/saas-apps/mural-identity-provisioning-tutorial.md) | ● | ● |
+| [MX3 Diagnostics](../identity/saas-apps/mx3-diagnostics-connector-provisioning-tutorial.md) | ● |  |
+| [My IBISWorld](../identity/saas-apps/my-ibisworld-tutorial.md) |  | ● |
+| [myPolicies](../identity/saas-apps/mypolicies-provisioning-tutorial.md) | ● | ● |
+| [MySQL (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
+| [MyVR](../identity/saas-apps/myvr-tutorial.md) |  | ● |
 | [Navan](~/identity/saas-apps/navan-tutorial.md) |  | ● |
 | [NAVEX IRM (Lockpath/Keylight)](~/identity/saas-apps/navex-irm-keylight-lockpath-tutorial.md) |  | ● |
 | [NetIQ eDirectory (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
