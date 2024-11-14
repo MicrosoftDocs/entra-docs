@@ -15,18 +15,29 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Sign in users in a sample Desktop app
 
-
+[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
 ::: zone pivot="workforce"
 
-Workforce content goes here.
- 
+#### [Node.js Electron](#tab/node-js-workforce)
+
+
+#### [Windows Presentation Foundation (WPF)](#tab/wpf-workforce)
+
+---
+
 ::: zone-end 
 
 ::: zone pivot="external"
 
-External content goes here.
+#### [Node.js Electron](#tab/node-js-external)
+
+
+#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
+
+
+#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
+
+---
 
 ::: zone-end 
-
-[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
