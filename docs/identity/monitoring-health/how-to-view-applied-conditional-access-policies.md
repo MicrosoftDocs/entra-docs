@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/13/2024
+ms.date: 11/14/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -115,7 +115,7 @@ For more information, review the following resources:
 
 Follow these steps to list Microsoft Entra roles using PowerShell.
 
-1. Open a PowerShell window. If necessary, use [Install-Module](/powershell/module/powershellget/install-module) to install Microsoft Graph PowerShell. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+1. Open a PowerShell window. If necessary, use [Install-Module](/powershell/module/powershellget/install-module) to install Microsoft Graph PowerShell. For more information, see [Prerequisites to use PowerShell or Graph Explorer](../role-based-access-control/prerequisites.md).
 
     ```powershell
     Install-Module Microsoft.Graph -Scope CurrentUser
@@ -127,7 +127,7 @@ Follow these steps to list Microsoft Entra roles using PowerShell.
     Connect-MgGraph -Scopes "Policy.Read.All", "Policy.Read.ConditionalAccess"
     ```
 
-3. Use [Get-MgIdentityConditionalAccessPolicy](/powershell/module/microsoft.graph.identity.governance/Get-MgIdentityConditionalAccessPolicy) to get all Conditional Access policies.
+3. Use [Get-MgIdentityConditionalAccessPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgidentityconditionalaccesspolicy) to get all Conditional Access policies.
 
     ```powershell
     Get-MgIdentityConditionalAccessPolicy
