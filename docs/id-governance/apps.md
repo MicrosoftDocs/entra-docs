@@ -773,59 +773,59 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Syniverse Customer Portal](../identity/saas-apps/syniverse-customer-portal-tutorial.md) |  | ● |
 | [Tableau Cloud](../identity/saas-apps/tableau-online-provisioning-tutorial.md) | ● | ● |
 | [Tailscale](../identity/saas-apps/tailscale-provisioning-tutorial.md) | ● |  |
-| [Talent Palette](~/identity/saas-apps/talent-palette-tutorial.md) |  | ● |
-| [Talentech](~/identity/saas-apps/talentech-provisioning-tutorial.md) | ● |  |
-| [Tanium SSO](~/identity/saas-apps/tanium-sso-provisioning-tutorial.md) | ● | ● |
-| [Tap App Security](~/identity/saas-apps/tap-app-security-provisioning-tutorial.md) | ● | ● |
-| [TargetProcess](~/identity/saas-apps/target-process-tutorial.md) |  | ● |
-| [TASC (beta)](~/identity/saas-apps/tasc-beta-tutorial.md) |  | ● |
-| [Taskize Connect](~/identity/saas-apps/taskize-connect-provisioning-tutorial.md) | ● | ● |
-| [Team Today](~/identity/saas-apps/team-today-provisioning-tutorial.md) | ● |  |
-| [TeamAlert SSO](~/identity/saas-apps/teamalert-sso-tutorial.md) |  | ● |
-| [Teamgo](~/identity/saas-apps/teamgo-provisioning-tutorial.md) | ● | ● |
-| [TeamSlide](~/identity/saas-apps/teamslide-tutorial.md) |  | ● |
-| [TeamSticker by Communitio](~/identity/saas-apps/teamsticker-by-communitio-tutorial.md) |  | ● |
-| [TeamViewer](~/identity/saas-apps/teamviewer-provisioning-tutorial.md) | ● | ● |
-| [Templafy OpenID Connect](~/identity/saas-apps/templafy-openid-connect-provisioning-tutorial.md) | ● | ● |
-| [Templafy SAML2](~/identity/saas-apps/templafy-saml-2-provisioning-tutorial.md) | ● | ● |
-| [TencentCloud IDaaS](~/identity/saas-apps/tencent-cloud-idaas-tutorial.md) |  | ● |
-| [Tendium](~/identity/saas-apps/tendium-tutorial.md) |  | ● |
-| [Terraform Cloud](~/identity/saas-apps/terraform-cloud-tutorial.md) |  | ● |
-| [Terraform Enterprise](~/identity/saas-apps/terraform-enterprise-tutorial.md) |  | ● |
-| [TerraTrue](~/identity/saas-apps/terratrue-provisioning-tutorial.md) | ● | ● |
-| [tesma](~/identity/saas-apps/tesma-tutorial.md) |  | ● |
-| [TestingBot](~/identity/saas-apps/testingbot-tutorial.md) |  | ● |
-| [TextExpander](~/identity/saas-apps/textexpander-tutorial.md) |  | ● |
-| [Textline](~/identity/saas-apps/textline-tutorial.md) |  | ● |
-| [TextMagic](~/identity/saas-apps/textmagic-tutorial.md) |  | ● |
-| [TheOrgWiki](~/identity/saas-apps/theorgwiki-provisioning-tutorial.md) | ● |  |
-| [Thoropass](~/identity/saas-apps/thoropass-tutorial.md) |  | ● |
-| [ThousandEyes](~/identity/saas-apps/thousandeyes-provisioning-tutorial.md) | ● | ● |
-| [ThreatQ Platform](~/identity/saas-apps/threatq-platform-tutorial.md) |  | ● |
-| [Thrive LXP](~/identity/saas-apps/thrive-lxp-provisioning-tutorial.md) | ● | ● |
-| [Tic-Tac Mobile](~/identity/saas-apps/tic-tac-mobile-provisioning-tutorial.md) | ● |  |
-| [TicketManager](~/identity/saas-apps/ticketmanager-tutorial.md) |  | ● |
-| [TimeClock 365](~/identity/saas-apps/timeclock-365-provisioning-tutorial.md) | ● | ● |
-| [TimeClock 365 SAML](~/identity/saas-apps/timeclock-365-saml-provisioning-tutorial.md) | ● | ● |
-| [TimeLive](~/identity/saas-apps/timelive-tutorial.md) |  | ● |
-| [TimeOffManager](~/identity/saas-apps/timeoffmanager-tutorial.md) |  | ● |
-| [TIMU](~/identity/saas-apps/timu-tutorial.md) |  | ● |
-| [TiViTz](~/identity/saas-apps/tivitz-tutorial.md) |  | ● |
-| [TonicDM](~/identity/saas-apps/tonicdm-tutorial.md) |  | ● |
-| [Torii](~/identity/saas-apps/torii-provisioning-tutorial.md) | ● | ● |
-| [Tracker Software Technologies](~/identity/saas-apps/tracker-software-technologies-tutorial.md) |  | ● |
-| [TrackVia](~/identity/saas-apps/trackvia-tutorial.md) |  | ● |
-| [Traction Guest](~/identity/saas-apps/traction-guest-tutorial.md) |  | ● |
-| [Training Platform](~/identity/saas-apps/training-platform-tutorial.md) |  | ● |
-| [TransPerfect GlobalLink Dashboard](~/identity/saas-apps/transperfect-globallink-dashboard-tutorial.md) |  | ● |
-| [Tranxfer](~/identity/saas-apps/tranxfer-tutorial.md) |  | ● |
-| [TravelPerk](~/identity/saas-apps/travelperk-provisioning-tutorial.md) | ● | ● |
-| [Tribeloo](~/identity/saas-apps/tribeloo-provisioning-tutorial.md) | ● | ● |
-| [Trisotech Digital Enterprise Server](~/identity/saas-apps/trisotechdigitalenterpriseserver-tutorial.md) |  | ● |
-| [TrueChoice](~/identity/saas-apps/truechoice-tutorial.md) |  | ● |
-| [TrustWorks](~/identity/saas-apps/trustworks-tutorial.md) |  | ● |
-| [Twilio Sendgrid](~/identity/saas-apps/twilio-sendgrid-tutorial.md) |  | ● |
-| [Twingate](~/identity/saas-apps/twingate-provisioning-tutorial.md) | ● |  |
+| [Talent Palette](../identity/saas-apps/talent-palette-tutorial.md) |  | ● |
+| [Talentech](../identity/saas-apps/talentech-provisioning-tutorial.md) | ● |  |
+| [Tanium SSO](../identity/saas-apps/tanium-sso-provisioning-tutorial.md) | ● | ● |
+| [Tap App Security](../identity/saas-apps/tap-app-security-provisioning-tutorial.md) | ● | ● |
+| [TargetProcess](../identity/saas-apps/target-process-tutorial.md) |  | ● |
+| [TASC (beta)](../identity/saas-apps/tasc-beta-tutorial.md) |  | ● |
+| [Taskize Connect](../identity/saas-apps/taskize-connect-provisioning-tutorial.md) | ● | ● |
+| [Team Today](../identity/saas-apps/team-today-provisioning-tutorial.md) | ● |  |
+| [TeamAlert SSO](../identity/saas-apps/teamalert-sso-tutorial.md) |  | ● |
+| [Teamgo](../identity/saas-apps/teamgo-provisioning-tutorial.md) | ● | ● |
+| [TeamSlide](../identity/saas-apps/teamslide-tutorial.md) |  | ● |
+| [TeamSticker by Communitio](../identity/saas-apps/teamsticker-by-communitio-tutorial.md) |  | ● |
+| [TeamViewer](../identity/saas-apps/teamviewer-provisioning-tutorial.md) | ● | ● |
+| [Templafy OpenID Connect](../identity/saas-apps/templafy-openid-connect-provisioning-tutorial.md) | ● | ● |
+| [Templafy SAML2](../identity/saas-apps/templafy-saml-2-provisioning-tutorial.md) | ● | ● |
+| [TencentCloud IDaaS](../identity/saas-apps/tencent-cloud-idaas-tutorial.md) |  | ● |
+| [Tendium](../identity/saas-apps/tendium-tutorial.md) |  | ● |
+| [Terraform Cloud](../identity/saas-apps/terraform-cloud-tutorial.md) |  | ● |
+| [Terraform Enterprise](../identity/saas-apps/terraform-enterprise-tutorial.md) |  | ● |
+| [TerraTrue](../identity/saas-apps/terratrue-provisioning-tutorial.md) | ● | ● |
+| [tesma](../identity/saas-apps/tesma-tutorial.md) |  | ● |
+| [TestingBot](../identity/saas-apps/testingbot-tutorial.md) |  | ● |
+| [TextExpander](../identity/saas-apps/textexpander-tutorial.md) |  | ● |
+| [Textline](../identity/saas-apps/textline-tutorial.md) |  | ● |
+| [TextMagic](../identity/saas-apps/textmagic-tutorial.md) |  | ● |
+| [TheOrgWiki](../identity/saas-apps/theorgwiki-provisioning-tutorial.md) | ● |  |
+| [Thoropass](../identity/saas-apps/thoropass-tutorial.md) |  | ● |
+| [ThousandEyes](../identity/saas-apps/thousandeyes-provisioning-tutorial.md) | ● | ● |
+| [ThreatQ Platform](../identity/saas-apps/threatq-platform-tutorial.md) |  | ● |
+| [Thrive LXP](../identity/saas-apps/thrive-lxp-provisioning-tutorial.md) | ● | ● |
+| [Tic-Tac Mobile](../identity/saas-apps/tic-tac-mobile-provisioning-tutorial.md) | ● |  |
+| [TicketManager](../identity/saas-apps/ticketmanager-tutorial.md) |  | ● |
+| [TimeClock 365](../identity/saas-apps/timeclock-365-provisioning-tutorial.md) | ● | ● |
+| [TimeClock 365 SAML](../identity/saas-apps/timeclock-365-saml-provisioning-tutorial.md) | ● | ● |
+| [TimeLive](../identity/saas-apps/timelive-tutorial.md) |  | ● |
+| [TimeOffManager](../identity/saas-apps/timeoffmanager-tutorial.md) |  | ● |
+| [TIMU](../identity/saas-apps/timu-tutorial.md) |  | ● |
+| [TiViTz](../identity/saas-apps/tivitz-tutorial.md) |  | ● |
+| [TonicDM](../identity/saas-apps/tonicdm-tutorial.md) |  | ● |
+| [Torii](../identity/saas-apps/torii-provisioning-tutorial.md) | ● | ● |
+| [Tracker Software Technologies](../identity/saas-apps/tracker-software-technologies-tutorial.md) |  | ● |
+| [TrackVia](../identity/saas-apps/trackvia-tutorial.md) |  | ● |
+| [Traction Guest](../identity/saas-apps/traction-guest-tutorial.md) |  | ● |
+| [Training Platform](../identity/saas-apps/training-platform-tutorial.md) |  | ● |
+| [TransPerfect GlobalLink Dashboard](../identity/saas-apps/transperfect-globallink-dashboard-tutorial.md) |  | ● |
+| [Tranxfer](../identity/saas-apps/tranxfer-tutorial.md) |  | ● |
+| [TravelPerk](../identity/saas-apps/travelperk-provisioning-tutorial.md) | ● | ● |
+| [Tribeloo](../identity/saas-apps/tribeloo-provisioning-tutorial.md) | ● | ● |
+| [Trisotech Digital Enterprise Server](../identity/saas-apps/trisotechdigitalenterpriseserver-tutorial.md) |  | ● |
+| [TrueChoice](../identity/saas-apps/truechoice-tutorial.md) |  | ● |
+| [TrustWorks](../identity/saas-apps/trustworks-tutorial.md) |  | ● |
+| [Twilio Sendgrid](../identity/saas-apps/twilio-sendgrid-tutorial.md) |  | ● |
+| [Twingate](../identity/saas-apps/twingate-provisioning-tutorial.md) | ● |  |
 | [Uber](~/identity/saas-apps/uber-provisioning-tutorial.md) | ● |  |
 | [Udemy Business SAML](~/identity/saas-apps/udemy-business-saml-tutorial.md) |  | ● |
 | [UKG Pro](~/identity/saas-apps/ultipro-tutorial.md) |  | ● |
