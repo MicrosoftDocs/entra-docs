@@ -127,13 +127,13 @@ To manually install the Global Secure Access client:
 1. On the **Installation** step, select **Install**.
 1. On the **Summary** step, when the installation is complete, select **Close**.
 1. Allow the Global Secure Access system extension.
-    1. In the **System Extension Blocked** dialog, select **Open System Settings**.
+    1. In the **System Extension Blocked** dialog, select **Open System Settings**.    
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-open-systeem-settings.png" alt-text="Screenshot of the System Extension Blocked dialog box with the Open System Settings highlighted.":::    
 
     1. Allow the Global Secure Access client system extension by selecting **Allow**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-allow-blocked-application.png" alt-text="Screenshot of the System Settings, open to the Privacy & Security options, showing a blocked application message, with the Allow button highlighted.":::   
 
-    1. In the **Privacy & Security** dialog, enter your username and password to validate the approval of the system extension. Then select **Modify Settings**.
+    1. In the **Privacy & Security** dialog, enter your username and password to validate the approval of the system extension. Then select **Modify Settings**.    
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-credentials.png" alt-text="Screenshot of the Privacy & Security pop-up requesting sign-in credentials and the Modify Settings button highlighted.":::
 
     1. Complete the process by selecting **Allow** to enable the Global Secure Access client to add proxy configurations.   
@@ -215,7 +215,7 @@ The settings window contains two tabs:
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-troubleshooting-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Troubleshooting tab selected.":::	
 
 ## Known limitations
-For a list of known limitations for the Global Secure Access client, see [Global Secure Access known limitations](reference-current-known-limitations.md).
+For a list of known limitations for the Global Secure Access client for macOS, see [Global Secure Access known limitations](reference-current-known-limitations.md).
 
 ## Remediations
 Use the following techniques to mitigate limitations:
