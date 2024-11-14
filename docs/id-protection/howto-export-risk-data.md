@@ -25,15 +25,47 @@ Microsoft Entra ID stores reports and security signals for a defined period of t
 | Microsoft Entra multifactor authentication usage | 30 days | 30 days | 30 days |
 | Risky sign-ins | 7 days | 30 days | 30 days |
 
-Organizations can choose to store data for longer periods by changing diagnostic settings in Microsoft Entra ID to send **RiskyUsers**, **UserRiskEvents**, **RiskyServicePrincipals**, and **ServicePrincipalRiskEvents** data to a Log Analytics workspace, archive data to a storage account, stream data to an event hub, or send data to a partner solution. Find these options in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Identity** > **Monitoring & health** > **Diagnostic settings** > **Edit setting**. If you don't have diagnostic settings configured, follow the instructions in the article [How to configure Microsoft Entra diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md) to get started.
+This article describes the available methods for exporting risk data from Microsoft Entra ID Protection for long-term storage and analysis.
 
-[![Diagnostic settings screen in Microsoft Entra ID showing existing configuration](./media/howto-export-risk-data/change-diagnostic-setting-in-portal.png)](./media/howto-export-risk-data/change-diagnostic-setting-in-portal.png#lightbox)
+## Prerequisites
+
+To export risk data for storage and analysis, you need:
+
+- A Log Analytics workspace *and* [access to that workspace](/azure/azure-monitor/logs/manage-access)
+
+- The appropriate role for Azure Monitor:
+  - Monitoring Reader
+  - Log Analytics Reader
+  - Monitoring Contributor
+  - Log Analytics Contributor
+
+- The appropriate role for Microsoft Entra ID:
+  - Reports Reader
+  - Security Reader
+  - Global Reader
+  - Security Administrator
+
+## Diagnostic settings
+
+Organizations can choose to store or export **RiskyUsers**, **UserRiskEvents**, **RiskyServicePrincipals**, and **ServicePrincipalRiskEvents** data by changing diagnostic settings in Microsoft Entra ID to export the data. You can integrate the data with a Log Analytics workspace, archive data to a storage account, stream data to an event hub, or send data to a partner solution. For a quick summary of the methods available for log storage and analysis, see [How to access activity logs in Microsoft Entra ID](../identity/monitoring-health/howto-access-activity-logs.md). If you don't have diagnostic settings configured, follow the instructions in [How to configure Microsoft Entra diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md) to get started.
+
+[![Screenshot of the diagnostic settings screen in Microsoft Entra ID.](./media/howto-export-risk-data/change-diagnostic-setting-in-portal.png)](./media/howto-export-risk-data/change-diagnostic-setting-in-portal.png#lightbox)
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+
+1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+
+1. Select **+ Add diagnostic setting**, enter a **Diagnostic setting name**, select the log categories that you want to stream and select **Save**.
+
+You might need to wait around 15 minutes for the data to start appearing in the destination you selected.
 
 ## Log Analytics
 
-Log Analytics allows organizations to query data using built in queries or custom created Kusto queries, for more information, see [Get started with log queries in Azure Monitor](/azure/azure-monitor/logs/get-started-queries).
+Integrating risk data with Log Analytics provides robust data analysis and visualization capabilities. You need to configure a Log Analytics workspace before you can export and then query the data. For more information, see [Configure a Log Analytics workspace](../identity/monitoring-health/tutorial-configure-log-analytics-workspace.md).
 
-Once enabled you find access to Log Analytics in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Identity** > **Monitoring & health** > **Log Analytics**. The following tables are of most interest to Microsoft Entra ID Protection administrators:
+With Log Analytics, organizations can query data using built-in or custom Kusto queries. For more information, see [Get started with log queries in Azure Monitor](/azure/azure-monitor/logs/get-started-queries).
+
+Once you've configured a Log Analytics workspace and exported the data with diagnostic settings, you go to [Microsoft Entra admin center](https://entra.microsoft.com) > **Identity** > **Monitoring & health** > **Log Analytics**. The following tables are of most interest to Microsoft Entra ID Protection administrators:
 
 - AADRiskyUsers - Provides data like the **Risky users** report.
 - AADUserRiskEvents - Provides data like the **Risk detections** report.
@@ -45,7 +77,7 @@ Once enabled you find access to Log Analytics in the [Microsoft Entra admin cent
 
 ### Sample queries
 
-[![Log Analytics view showing a query against the AADUserRiskEvents table showing the top 5 events](./media/howto-export-risk-data/log-analytics-view-query-user-risk-events.png)](./media/howto-export-risk-data/log-analytics-view-query-user-risk-events.png#lightbox)
+[![Screenshot of Log Analytics view showing a AADUserRiskEvents query for the top 5 events.](./media/howto-export-risk-data/log-analytics-view-query-user-risk-events.png)](./media/howto-export-risk-data/log-analytics-view-query-user-risk-events.png#lightbox)
 
 In the previous image, the following query was run to show the most recent five risk detections triggered. 
 
@@ -85,7 +117,7 @@ Access more queries and visual insights based on AADUserRiskEvents and AADRisky 
 
 ## Storage account
 
-By routing logs to an Azure storage account, you can keep it for longer than the default retention period. For more information, see the article [Tutorial: Archive Microsoft Entra logs to an Azure storage account](~/identity/monitoring-health/howto-archive-logs-to-storage-account.md).
+By routing logs to an Azure storage account, you can keep it for longer than the default retention period. For more information, see the article [How to archive Microsoft Entra activity logs to an Azure storage account](../identity/monitoring-health/howto-archive-logs-to-storage-account.md).
 
 ## Azure Event Hubs
 
