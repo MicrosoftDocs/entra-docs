@@ -298,41 +298,41 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Exium](../identity/saas-apps/exium-provisioning-tutorial.md) | ● | ● |
 | [EZOfficeInventory](../identity/saas-apps/ezofficeinventory-tutorial.md) |  | ● |
 | [EZRentOut](../identity/saas-apps/ezrentout-tutorial.md) |  | ● |
-| [Facebook Work Accounts](~/identity/saas-apps/facebook-work-accounts-provisioning-tutorial.md) | ● | ● |
-| [FAX.PLUS](~/identity/saas-apps/fax-plus-tutorial.md) |  | ● |
-| [Federated Directory](~/identity/saas-apps/federated-directory-provisioning-tutorial.md) | ● |  |
-| [Fexa](~/identity/saas-apps/fexa-tutorial.md) |  | ● |
-| [Fidelity NetBenefits](~/identity/saas-apps/fidelitynetbenefits-tutorial.md) |  | ● |
-| [Fieldglass](~/identity/saas-apps/fieldglass-tutorial.md) |  | ● |
-| [Figma](~/identity/saas-apps/figma-provisioning-tutorial.md) | ● | ● |
-| [FileCloud](~/identity/saas-apps/filecloud-tutorial.md) |  | ● |
-| [FileOrbis](~/identity/saas-apps/fileorbis-tutorial.md) |  | ● |
-| [FilesAnywhere](~/identity/saas-apps/filesanywhere-tutorial.md) |  | ● |
-| [Finvari](~/identity/saas-apps/finvari-tutorial.md) |  | ● |
-| [FiscalNote](~/identity/saas-apps/fiscalnote-tutorial.md) |  | ● |
-| [Fivetran](~/identity/saas-apps/fivetran-tutorial.md) |  | ● |
-| [Flexera One](~/identity/saas-apps/flexera-one-tutorial.md) |  | ● |
-| [Flipsnack SAML](~/identity/saas-apps/flipsnack-saml-tutorial.md) |  | ● |
-| [Flock Safety](~/identity/saas-apps/flock-safety-tutorial.md) |  | ● |
-| [Flock](~/identity/saas-apps/flock-provisioning-tutorial.md) | ● | ● |
-| [Folloze](~/identity/saas-apps/folloze-tutorial.md) |  | ● |
-| [Foodee](~/identity/saas-apps/foodee-provisioning-tutorial.md) | ● | ● |
-| [Forcepoint Cloud Security Gateway - User Authentication](~/identity/saas-apps/forcepoint-cloud-security-gateway-provisioning-tutorial.md) | ● | ● |
-| [ForeSee CX Suite](~/identity/saas-apps/foreseecxsuite-tutorial.md) |  | ● |
-| [Fortes Change Cloud](~/identity/saas-apps/fortes-change-cloud-provisioning-tutorial.md) | ● | ● |
-| [FortiSASE](~/identity/saas-apps/fortisase-sia-tutorial.md) |  | ● |
-| [Fountain](~/identity/saas-apps/fountain-tutorial.md) |  | ● |
-| [FourKites SAML2.0 SSO for Tracking](~/identity/saas-apps/fourkites-tutorial.md) |  | ● |
-| [Frankli.io](~/identity/saas-apps/frankli-io-provisioning-tutorial.md) | ● | |
-| [Freight Audit](~/identity/saas-apps/freight-audit-tutorial.md) |  | ● |
-| [Freightender SSO for TRP (Tender Response Platform)](~/identity/saas-apps/freightender-sso-for-trp-tender-response-platform-tutorial.md) |  | ● |
-| [Fresh Relevance](~/identity/saas-apps/fresh-relevance-tutorial.md) |  | ● |
-| [Freshservice Provisioning](~/identity/saas-apps/freshservice-provisioning-tutorial.md) | ● | ● |
-| [FTAPI](~/identity/saas-apps/ftapi-tutorial.md) |  | ● |
-| [Fulcrum](~/identity/saas-apps/fulcrum-tutorial.md) |  | ● |
-| [Fullstory SAML](~/identity/saas-apps/fullstory-saml-tutorial.md) |  | ● |
-| [Funnel Leasing](~/identity/saas-apps/funnel-leasing-provisioning-tutorial.md) | ● | ● |
-| [Fuze](~/identity/saas-apps/fuze-provisioning-tutorial.md) | ● | ● |
+| [Facebook Work Accounts](../identity/saas-apps/facebook-work-accounts-provisioning-tutorial.md) | ● | ● |
+| [FAX.PLUS](../identity/saas-apps/fax-plus-tutorial.md) |  | ● |
+| [Federated Directory](../identity/saas-apps/federated-directory-provisioning-tutorial.md) | ● |  |
+| [Fexa](../identity/saas-apps/fexa-tutorial.md) |  | ● |
+| [Fidelity NetBenefits](../identity/saas-apps/fidelitynetbenefits-tutorial.md) |  | ● |
+| [Fieldglass](../identity/saas-apps/fieldglass-tutorial.md) |  | ● |
+| [Figma](../identity/saas-apps/figma-provisioning-tutorial.md) | ● | ● |
+| [FileCloud](../identity/saas-apps/filecloud-tutorial.md) |  | ● |
+| [FileOrbis](../identity/saas-apps/fileorbis-tutorial.md) |  | ● |
+| [FilesAnywhere](../identity/saas-apps/filesanywhere-tutorial.md) |  | ● |
+| [Finvari](../identity/saas-apps/finvari-tutorial.md) |  | ● |
+| [FiscalNote](../identity/saas-apps/fiscalnote-tutorial.md) |  | ● |
+| [Fivetran](../identity/saas-apps/fivetran-tutorial.md) |  | ● |
+| [Flexera One](../identity/saas-apps/flexera-one-tutorial.md) |  | ● |
+| [Flipsnack SAML](../identity/saas-apps/flipsnack-saml-tutorial.md) |  | ● |
+| [Flock Safety](../identity/saas-apps/flock-safety-tutorial.md) |  | ● |
+| [Flock](../identity/saas-apps/flock-provisioning-tutorial.md) | ● | ● |
+| [Folloze](../identity/saas-apps/folloze-tutorial.md) |  | ● |
+| [Foodee](../identity/saas-apps/foodee-provisioning-tutorial.md) | ● | ● |
+| [Forcepoint Cloud Security Gateway - User Authentication](../identity/saas-apps/forcepoint-cloud-security-gateway-provisioning-tutorial.md) | ● | ● |
+| [ForeSee CX Suite](../identity/saas-apps/foreseecxsuite-tutorial.md) |  | ● |
+| [Fortes Change Cloud](../identity/saas-apps/fortes-change-cloud-provisioning-tutorial.md) | ● | ● |
+| [FortiSASE](../identity/saas-apps/fortisase-sia-tutorial.md) |  | ● |
+| [Fountain](../identity/saas-apps/fountain-tutorial.md) |  | ● |
+| [FourKites SAML2.0 SSO for Tracking](../identity/saas-apps/fourkites-tutorial.md) |  | ● |
+| [Frankli.io](../identity/saas-apps/frankli-io-provisioning-tutorial.md) | ● | |
+| [Freight Audit](../identity/saas-apps/freight-audit-tutorial.md) |  | ● |
+| [Freightender SSO for TRP (Tender Response Platform)](../identity/saas-apps/freightender-sso-for-trp-tender-response-platform-tutorial.md) |  | ● |
+| [Fresh Relevance](../identity/saas-apps/fresh-relevance-tutorial.md) |  | ● |
+| [Freshservice Provisioning](../identity/saas-apps/freshservice-provisioning-tutorial.md) | ● | ● |
+| [FTAPI](../identity/saas-apps/ftapi-tutorial.md) |  | ● |
+| [Fulcrum](../identity/saas-apps/fulcrum-tutorial.md) |  | ● |
+| [Fullstory SAML](../identity/saas-apps/fullstory-saml-tutorial.md) |  | ● |
+| [Funnel Leasing](../identity/saas-apps/funnel-leasing-provisioning-tutorial.md) | ● | ● |
+| [Fuze](../identity/saas-apps/fuze-provisioning-tutorial.md) | ● | ● |
 | [G Suite](~/identity/saas-apps/g-suite-provisioning-tutorial.md) | ● |  |
 | [GaggleAMP](~/identity/saas-apps/gaggleamp-tutorial.md) |  | ● |
 | [Genesys Cloud for Azure](~/identity/saas-apps/purecloud-by-genesys-provisioning-tutorial.md) | ● | ● |
