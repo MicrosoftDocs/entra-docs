@@ -624,13 +624,13 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Proxyclick](../identity/saas-apps/proxyclick-provisioning-tutorial.md) | ● | ● |
 | [PurelyHR](../identity/saas-apps/purelyhr-tutorial.md) |  | ● |
 | [pymetrics](../identity/saas-apps/pymetrics-tutorial.md) |  | ● |
-| [Qiita Team](~/identity/saas-apps/qiita-team-tutorial.md) |  | ● |
-| [Qmarkets Idea & Innovation Management](~/identity/saas-apps/qmarkets-idea-innovation-management-tutorial.md) |  | ● |
-| [QReserve](~/identity/saas-apps/qreserve-tutorial.md) |  | ● |
-| [Qualtrics](~/identity/saas-apps/qualtrics-tutorial.md) |  | ● |
-| [Quarem](~/identity/saas-apps/quarem-provisioning-tutorial.md) | ● | ● |
-| [QuickHelp](~/identity/saas-apps/quickhelp-tutorial.md) |  | ● |
-| [Qumu Cloud](~/identity/saas-apps/qumucloud-tutorial.md) |  | ● |
+| [Qiita Team](../identity/saas-apps/qiita-team-tutorial.md) |  | ● |
+| [Qmarkets Idea & Innovation Management](../identity/saas-apps/qmarkets-idea-innovation-management-tutorial.md) |  | ● |
+| [QReserve](../identity/saas-apps/qreserve-tutorial.md) |  | ● |
+| [Qualtrics](../identity/saas-apps/qualtrics-tutorial.md) |  | ● |
+| [Quarem](../identity/saas-apps/quarem-provisioning-tutorial.md) | ● | ● |
+| [QuickHelp](../identity/saas-apps/quickhelp-tutorial.md) |  | ● |
+| [Qumu Cloud](../identity/saas-apps/qumucloud-tutorial.md) |  | ● |
 | [Radancy's Employee Referrals](~/identity/saas-apps/radancys-employee-referrals-tutorial.md) |  | ● |
 | [Radiant IOT Portal](~/identity/saas-apps/radiant-iot-portal-tutorial.md) |  | ● |
 | [RadiantOne Virtual Directory Server (VDS) (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
