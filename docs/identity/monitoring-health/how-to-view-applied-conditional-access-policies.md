@@ -14,7 +14,7 @@ ms.reviewer: egreenberg
 
 ---
 
-# View applied Conditional Access details in Microsoft Entra sign-in logs
+# View applied Conditional Access details in the Microsoft Entra sign-in logs
 
 With Conditional Access policies, you can control how your users get access to your Azure and Microsoft Entra resources. As a tenant admin, you need to be able to determine what effect your Conditional Access policies have on sign-ins to your tenant, so that you can take action if necessary. The sign-in logs in Microsoft Entra ID give you the information that you need to assess the effect of your Conditional Access policies.
 
@@ -40,7 +40,7 @@ The following built-in roles grant permission to *view sign-in logs*:
 
 If you use a client app or the Microsoft Graph PowerShell module to pull sign-in logs from Microsoft Graph, your app needs permissions to receive the `appliedConditionalAccessPolicy` resource from Microsoft Graph. As a best practice, assign `Policy.Read.ConditionalAccess` because it's the least privileged permission.
 
-The following permissions allows a client app to access the activity logs and any applied applied Conditional Access policies in sign-in logs through Microsoft Graph:
+The following permissions allow a client app to access the activity logs and any applied Conditional Access policies in sign-in logs through Microsoft Graph:
 
 - `Policy.Read.ConditionalAccess`
 - `Policy.ReadWrite.ConditionalAccess`
@@ -48,7 +48,7 @@ The following permissions allows a client app to access the activity logs and an
 - `AuditLog.Read.All`
 - `Directory.Read.All`
 
-To use the Microsoft Graph PowerShell module you also need the following least privileged permissions with the necessary access:
+To use the Microsoft Graph PowerShell module, you also need the following least privileged permissions with the necessary access:
 
 - To consent to the necessary permissions: `Connect-MgGraph -Scopes Policy.Read.ConditionalAccess, AuditLog.Read.All, Directory.Read.All`
 - To view the sign-in logs: `Get-MgAuditLogSignIn`
@@ -71,7 +71,7 @@ Some scenarios require you to get an understanding of how your Conditional Acces
 
 You can access the sign-in logs by using the Microsoft Entra admin center, the Azure portal, Microsoft Graph, and PowerShell.  
 
-## View Conditional Access policies in Microsoft Entra sign-in logs
+## How to view Conditional Access policies
 <a name='view-conditional-access-policies-in-azure-ad-sign-in-logs'></a>
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
@@ -137,6 +137,32 @@ Follow these steps to list Microsoft Entra roles using PowerShell.
 
     ```powershell
     Get-MgIdentityConditionalAccessPolicy |Format-List
+    ```
+
+The following command can be used to export sign-in logs to a CSV file, that's formatted to highlight Conditional Access related details.
+
+1. Define the output CSV file path.
+
+    ```powershell
+    $PathCsv = "C:\\temp\\ConditionalAccessSignInLogs.csv"
+    ```
+1. Retrieve the logs, filtered from a specified date, and export them to the CSV file.
+
+    ```powershell
+    $SignInLogs = Get-MgAuditLogSignIn -Filter "createdDateTime gt 2024-11-10T05:30:00.0Z" | Select-Object `
+    @{Name="ResourceName";Expression={$_.ResourceDisplayName}}, `
+    @{Name="User";Expression={$_.UserDisplayName}}, `
+    @{Name="IPv4";Expression={$_.IPAddress}}, `
+    @{Name="Location";Expression={$_.Location.City}}, `
+    @{Name="NamedLocation";Expression={$_.ConditionalAccessLocations}}, `
+    @{Name="Success/Failure/ReportOnly";Expression={$_.ConditionalAccessStatus}}, `
+    @{Name="FailureReason";Expression={$_.FailureReason}}, `
+    @{Name="Details";Expression={$_.ConditionalAccessDetails}}, `
+    @{Name="DeviceName";Expression={$_.DeviceDetail.DeviceDisplayName}}, `
+    @{Name="ClientApp";Expression={$_.ClientAppUsed}} | 
+    Export-Csv -Path $PathCsv -NoTypeInformation
+
+    Write-Host "Conditional Access SignInLogs exported to $PathCsv"
     ```
 
 ---
