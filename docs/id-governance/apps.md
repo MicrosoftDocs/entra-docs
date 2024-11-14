@@ -333,36 +333,36 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Fullstory SAML](../identity/saas-apps/fullstory-saml-tutorial.md) |  | ● |
 | [Funnel Leasing](../identity/saas-apps/funnel-leasing-provisioning-tutorial.md) | ● | ● |
 | [Fuze](../identity/saas-apps/fuze-provisioning-tutorial.md) | ● | ● |
-| [G Suite](~/identity/saas-apps/g-suite-provisioning-tutorial.md) | ● |  |
-| [GaggleAMP](~/identity/saas-apps/gaggleamp-tutorial.md) |  | ● |
-| [Genesys Cloud for Azure](~/identity/saas-apps/purecloud-by-genesys-provisioning-tutorial.md) | ● | ● |
-| [getAbstract](~/identity/saas-apps/getabstract-provisioning-tutorial.md) | ● | ● |
-| [Getty Images](~/identity/saas-apps/getty-images-tutorial.md) |  | ● |
-| [GitHub](~/identity/saas-apps/github-provisioning-tutorial.md) | ● | ● |
-| [GitHub AE](~/identity/saas-apps/github-ae-provisioning-tutorial.md) | ● | ● |
-| [GitHub Enterprise Cloud - Enterprise Account](~/identity/saas-apps/github-enterprise-cloud-enterprise-account-tutorial.md) |  | ● |
-| [GitHub Enterprise Managed User](~/identity/saas-apps/github-enterprise-managed-user-provisioning-tutorial.md) | ● | ● |
-| [GitHub Enterprise Managed User (OIDC)](~/identity/saas-apps/github-enterprise-managed-user-oidc-provisioning-tutorial.md) | ● | ● |
-| [GitHub Enterprise Server](~/identity/saas-apps/github-ae-tutorial.md) |  | ● |
-| [Global Relay Identity Sync](~/identity/saas-apps/global-relay-identity-sync-provisioning-tutorial.md) | ● |  |
-| [GlobalOne](~/identity/saas-apps/globalone-tutorial.md) |  | ● |
-| [GlobeSmart](~/identity/saas-apps/globesmart-tutorial.md) |  | ● |
-| [goFLUENT](~/identity/saas-apps/gofluent-tutorial.md) |  | ● |
-| [GoLinks](~/identity/saas-apps/golinks-provisioning-tutorial.md) | ● | ● |
-| [Gong](~/identity/saas-apps/gong-provisioning-tutorial.md) | ● |  |
-| [Google Cloud Platform](~/identity/saas-apps/g-suite-provisioning-tutorial.md) | ● | ● |
-| [GoProfiles](~/identity/saas-apps/goprofiles-tutorial.md) |  | ● |
-| [GoSearch](~/identity/saas-apps/gosearch-tutorial.md) |  | ● |
-| [GoToMeeting](~/identity/saas-apps/citrixgotomeeting-provisioning-tutorial.md) | ● | ● |
-| [Graebel Single Sign On with globalCONNECT](~/identity/saas-apps/graebel-single-sign-on-with-globalconnect-tutorial.md) |  | ● |
-| [Grammarly](~/identity/saas-apps/grammarly-provisioning-tutorial.md) | ● | ● |
-| [Granite](~/identity/saas-apps/granite-tutorial.md) |  | ● |
-| [GreenOrbit](~/identity/saas-apps/greenorbit-tutorial.md) |  | ● |
-| [Grok Learning](~/identity/saas-apps/grok-learning-tutorial.md) |  | ● |
-| [Group Talk](~/identity/saas-apps/grouptalk-provisioning-tutorial.md) | ● |  |
-| [Grovo](~/identity/saas-apps/grovo-tutorial.md) |  | ● |
-| [Gtmhub](~/identity/saas-apps/gtmhub-provisioning-tutorial.md) | ● |  |
-| [Guru](~/identity/saas-apps/guru-tutorial.md) |  | ● |
+| [G Suite](../identity/saas-apps/g-suite-provisioning-tutorial.md) | ● |  |
+| [GaggleAMP](../identity/saas-apps/gaggleamp-tutorial.md) |  | ● |
+| [Genesys Cloud for Azure](../identity/saas-apps/purecloud-by-genesys-provisioning-tutorial.md) | ● | ● |
+| [getAbstract](../identity/saas-apps/getabstract-provisioning-tutorial.md) | ● | ● |
+| [Getty Images](../identity/saas-apps/getty-images-tutorial.md) |  | ● |
+| [GitHub](../identity/saas-apps/github-provisioning-tutorial.md) | ● | ● |
+| [GitHub AE](../identity/saas-apps/github-ae-provisioning-tutorial.md) | ● | ● |
+| [GitHub Enterprise Cloud - Enterprise Account](../identity/saas-apps/github-enterprise-cloud-enterprise-account-tutorial.md) |  | ● |
+| [GitHub Enterprise Managed User](../identity/saas-apps/github-enterprise-managed-user-provisioning-tutorial.md) | ● | ● |
+| [GitHub Enterprise Managed User (OIDC)](../identity/saas-apps/github-enterprise-managed-user-oidc-provisioning-tutorial.md) | ● | ● |
+| [GitHub Enterprise Server](../identity/saas-apps/github-ae-tutorial.md) |  | ● |
+| [Global Relay Identity Sync](../identity/saas-apps/global-relay-identity-sync-provisioning-tutorial.md) | ● |  |
+| [GlobalOne](../identity/saas-apps/globalone-tutorial.md) |  | ● |
+| [GlobeSmart](../identity/saas-apps/globesmart-tutorial.md) |  | ● |
+| [goFLUENT](../identity/saas-apps/gofluent-tutorial.md) |  | ● |
+| [GoLinks](../identity/saas-apps/golinks-provisioning-tutorial.md) | ● | ● |
+| [Gong](../identity/saas-apps/gong-provisioning-tutorial.md) | ● |  |
+| [Google Cloud Platform](../identity/saas-apps/g-suite-provisioning-tutorial.md) | ● | ● |
+| [GoProfiles](../identity/saas-apps/goprofiles-tutorial.md) |  | ● |
+| [GoSearch](../identity/saas-apps/gosearch-tutorial.md) |  | ● |
+| [GoToMeeting](../identity/saas-apps/citrixgotomeeting-provisioning-tutorial.md) | ● | ● |
+| [Graebel Single Sign On with globalCONNECT](../identity/saas-apps/graebel-single-sign-on-with-globalconnect-tutorial.md) |  | ● |
+| [Grammarly](../identity/saas-apps/grammarly-provisioning-tutorial.md) | ● | ● |
+| [Granite](../identity/saas-apps/granite-tutorial.md) |  | ● |
+| [GreenOrbit](../identity/saas-apps/greenorbit-tutorial.md) |  | ● |
+| [Grok Learning](../identity/saas-apps/grok-learning-tutorial.md) |  | ● |
+| [Group Talk](../identity/saas-apps/grouptalk-provisioning-tutorial.md) | ● |  |
+| [Grovo](../identity/saas-apps/grovo-tutorial.md) |  | ● |
+| [Gtmhub](../identity/saas-apps/gtmhub-provisioning-tutorial.md) | ● |  |
+| [Guru](../identity/saas-apps/guru-tutorial.md) |  | ● |
 | [H5mag](~/identity/saas-apps/h5mag-provisioning-tutorial.md) | ● |  |
 | [Hackerone](~/identity/saas-apps/hackerone-tutorial.md) |  | ● |
 | [HappyFox](~/identity/saas-apps/happyfox-tutorial.md) |  | ● |
