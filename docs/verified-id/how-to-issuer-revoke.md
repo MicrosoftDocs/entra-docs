@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 11/13/2024
+ms.date: 11/14/2024
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm trying to learn the process of revoking verifiable credentials that I've issued.
@@ -17,7 +17,7 @@ ms.author: barclayn
 
 As part of the process of working with verifiable credentials, you have to issue credentials. Sometimes you also have to revoke them. In this article, we review the `Status` property part of the verifiable credential specification. We also take a closer look at the revocation process, why we want to revoke credentials, and some data and privacy implications.
 
-## Why do you want to revoke a verifiable credential?
+## Why revoke a verifiable credential?
 
 Each customer has their own unique reasons for wanting to revoke a verifiable credential. Here are some common scenarios:
 
@@ -134,7 +134,8 @@ Microsoft Entra Verified ID doesn't store verifiable credential data. The issuer
 }
 ```
 
-You can index only one claim from a rules claims mapping. If you accidentally have no indexed claim in your rules definition, and you later correct this oversight, already issued verifiable credentials won't be searchable because they were issued when no index existed.
+>[!IMPORTANT]
+> You can only index one claim from a rules claims mapping. If you accidentally have no indexed claim in your rules definition, and you later correct this oversight, all verifiable credentials issued prior to the change won't be searchable because they were issued when no index existed.
 
 ## How do I revoke a verifiable credential?
 
