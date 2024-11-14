@@ -36,9 +36,7 @@ To export risk data for storage and analysis, you need:
 
 ## Diagnostic settings
 
-Organizations can choose to store or export **RiskyUsers**, **UserRiskEvents**, **RiskyServicePrincipals**, and **ServicePrincipalRiskEvents** data by changing diagnostic settings in Microsoft Entra ID to export the data. You can integrate the data with a Log Analytics workspace, archive data to a storage account, stream data to an event hub, or send data to a partner solution. For a quick summary of the methods available for log storage and analysis, see [How to access activity logs in Microsoft Entra ID](../identity/monitoring-health/howto-access-activity-logs.md). If you don't have diagnostic settings configured, follow the instructions in [How to configure Microsoft Entra diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md) to get started.
-
-[![Screenshot of the diagnostic settings screen in Microsoft Entra ID.](./media/howto-export-risk-data/change-diagnostic-setting-in-portal.png)](./media/howto-export-risk-data/change-diagnostic-setting-in-portal.png#lightbox)
+Organizations can choose to store or export **RiskyUsers**, **UserRiskEvents**, **RiskyServicePrincipals**, and **ServicePrincipalRiskEvents** data by changing diagnostic settings in Microsoft Entra ID to export the data. You can integrate the data with a Log Analytics workspace, archive data to a storage account, stream data to an event hub, or send data to a partner solution. For a quick summary of the methods available for log storage and analysis, see [How to access activity logs in Microsoft Entra ID](../identity/monitoring-health/howto-access-activity-logs.md). 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
@@ -46,7 +44,9 @@ Organizations can choose to store or export **RiskyUsers**, **UserRiskEvents**, 
 
 1. Select **+ Add diagnostic setting**, enter a **Diagnostic setting name**, select the log categories that you want to stream, and select **Save**.
 
-You might need to wait around 15 minutes for the data to start appearing in the destination you selected.
+[![Screenshot of the diagnostic settings screen in Microsoft Entra ID.](./media/howto-export-risk-data/change-diagnostic-setting-in-portal.png)](./media/howto-export-risk-data/change-diagnostic-setting-in-portal.png#lightbox)
+
+You might need to wait around 15 minutes for the data to start appearing in the destination you selected. For more information, see [How to configure Microsoft Entra diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md). 
 
 ## Log Analytics
 
