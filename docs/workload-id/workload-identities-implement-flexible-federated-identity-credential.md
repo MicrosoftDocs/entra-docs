@@ -14,16 +14,17 @@ ms.reviewer: ludwignick
 
 # How to set up a Flexible Federated identity credentials
 
-thing
+> [!NOTE]
+>
+> This article is a work in progress and may be removed
+
+This article provides a guide on how to set up a Flexible Federated identity credential in the Azure portal or Microsoft Graph Explorer.
 
 ## Preqrequisites
 
 - An Azure subscription
 - An application registration in Microsoft Entra ID
 
-> [!NOTE]
->
-> You may notice the new `claimsMatchingExpression` property within any federated identity credential you previously configured, but the addition of this property will not affect how your federated identity credential behavior unless configured to do so. 
 
 To accommodate the flexible federated identity credential functionality, the `federatedIdentityCredentials` resource is being extended with a new `claimsMatchingExpression` property. In addition to this, the `subject` property is now nullable. The `claimsMatchingExpression` and `subject` properties have been made mutually exclusive, so you cannot define both within a federated identity credential.
 
@@ -34,7 +35,7 @@ To accommodate the flexible federated identity credential functionality, the `fe
 - claimsMatchingExpression : a new complex type containing two properties, `value` and `languageVersion`. Value is used to define the expression, and `languageVersion` is used to define the version of the flexible federated identity credential expression language (FFL) being used. `languageVersion` should always be set to 1. If `claimsMatchingExpression` is defined, `subject` must be set to null. 
 
 
-## Do a thing
+## Set up a Flexible Federated identity credential
 
 ### [Azure portal](#tab/azure-portal)
 
@@ -63,5 +64,8 @@ To accommodate the flexible federated identity credential functionality, the `fe
   }
 }
 ```
-
 ---
+
+## See also
+
+[Flexible federated identity credentials](./workload-identities-flexible-federated-identity-credentials.md)

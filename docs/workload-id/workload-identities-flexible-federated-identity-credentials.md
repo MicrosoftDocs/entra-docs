@@ -18,7 +18,9 @@ Flexible federated identity credentials are an advanced feature of Microsoft Ent
 
 ## Why use flexible federated identity credentials?
 
-The current behavior of [federated identity credentials](/graph/api/resources/federatedidentitycredentials-overview) within workload identity federation requires explicit matching when comparing the defined `subject`, `issuer`, and `audience` in the federated identity credential against the `subject`, `issuer`, and `audience` contained in the token sent to Microsoft Entra. This, when combined with the current limit of 20 federated identity credentials for a given application or user-assigned managed identity, can cause scale limits to be hit quickly. Flexible federated identity credentials extend the existing federated identity credential model by allowing the use of a restricted expression language when matching against incoming `subject` claims. It can also be used to extend the federated identity credential authorization model past `subject`, `issuer`, and `audience` by enabling the inclusion of certain allowed custom claims within your federated identity credentials. If you find yourself running into scale limits with your current workload identity federation implementation, flexible federated identity credentials can be leveraged to help reduce management overhead when attempting to authenticate external workloads with Microsoft Entra. 
+The current behavior of [federated identity credentials](/graph/api/resources/federatedidentitycredentials-overview) within workload identity federation requires explicit matching when comparing the defined `subject`, `issuer`, and `audience` in the federated identity credential against the `subject`, `issuer`, and `audience` contained in the token sent to Microsoft Entra. This, when combined with the current limit of 20 federated identity credentials for a given application or user-assigned managed identity, can cause scale limits to be hit quickly. 
+
+Flexible federated identity credentials extend the existing federated identity credential model by allowing the use of a restricted expression language when matching against incoming `subject` claims. It can also be used to extend the federated identity credential authorization model past `subject`, `issuer`, and `audience` by enabling the inclusion of certain allowed custom claims within your federated identity credentials. If you find yourself running into scale limits with your current workload identity federation implementation, flexible federated identity credentials can be leveraged to help reduce management overhead when attempting to authenticate external workloads with Microsoft Entra. 
 
 ## How do flexible federated identity credentials work? 
 
@@ -112,7 +114,6 @@ az rest --method post \
 ## See also
 
 - [Configure a user-assigned managed identity to trust an external identity provider](./workload-identity-federation-create-trust-user-assigned-managed-identity.md)
-- []
 - How to create, delete, get, or update [federated identity credentials](./workload-identity-federation-create-trust.md) on an app registration.
 - Read the [workload identity overview] to learn how to configure a Kubernetes workload to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
 - Read the [GitHub Actions documentation](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-azure) to learn more about configuring your GitHub Actions workflow to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
