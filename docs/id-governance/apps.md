@@ -527,25 +527,25 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [myPolicies](../identity/saas-apps/mypolicies-provisioning-tutorial.md) | ● | ● |
 | [MySQL (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [MyVR](../identity/saas-apps/myvr-tutorial.md) |  | ● |
-| [Navan](~/identity/saas-apps/navan-tutorial.md) |  | ● |
-| [NAVEX IRM (Lockpath/Keylight)](~/identity/saas-apps/navex-irm-keylight-lockpath-tutorial.md) |  | ● |
-| [NetIQ eDirectory (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
-| [NetMotion Mobility](~/identity/saas-apps/netmotion-mobility-tutorial.md) |  | ● |
-| [Netpresenter Next](~/identity/saas-apps/netpresenter-provisioning-tutorial.md) | ● |  |
-| [Netskope User Authentication](~/identity/saas-apps/netskope-administrator-console-provisioning-tutorial.md) | ● | ● |
-| [Netsparker Enterprise](~/identity/saas-apps/netsparker-enterprise-provisioning-tutorial.md) | ● | ● |
-| [Neustar UltraDNS](~/identity/saas-apps/neustar-ultradns-tutorial.md) |  | ● |
-| [New Relic by Organization](~/identity/saas-apps/new-relic-by-organization-provisioning-tutorial.md) | ● | ● |
-| [Nimblex](~/identity/saas-apps/nimblex-tutorial.md) |  | ● |
-| [Nimbus](~/identity/saas-apps/nimbus-tutorial.md) |  | ● |
-| [Nintex Promapp](~/identity/saas-apps/promapp-tutorial.md) |  | ● |
-| [Nitro Productivity Suite](~/identity/saas-apps/nitro-productivity-suite-tutorial.md) |  | ● |
-| [Nomadesk](~/identity/saas-apps/nomadesk-tutorial.md) |  | ● |
-| [NordPass](~/identity/saas-apps/nordpass-provisioning-tutorial.md) | ● | ● |
-| [Notion](~/identity/saas-apps/notion-provisioning-tutorial.md) | ● | ● |
-| [Novatus](~/identity/saas-apps/novatus-tutorial.md) |  | ● |
-| [Novell eDirectory (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
-| [Nuclino](~/identity/saas-apps/nuclino-tutorial.md) |  | ● |
+| [Navan](../identity/saas-apps/navan-tutorial.md) |  | ● |
+| [NAVEX IRM (Lockpath/Keylight)](../identity/saas-apps/navex-irm-keylight-lockpath-tutorial.md) |  | ● |
+| [NetIQ eDirectory (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
+| [NetMotion Mobility](../identity/saas-apps/netmotion-mobility-tutorial.md) |  | ● |
+| [Netpresenter Next](../identity/saas-apps/netpresenter-provisioning-tutorial.md) | ● |  |
+| [Netskope User Authentication](../identity/saas-apps/netskope-administrator-console-provisioning-tutorial.md) | ● | ● |
+| [Netsparker Enterprise](../identity/saas-apps/netsparker-enterprise-provisioning-tutorial.md) | ● | ● |
+| [Neustar UltraDNS](../identity/saas-apps/neustar-ultradns-tutorial.md) |  | ● |
+| [New Relic by Organization](../identity/saas-apps/new-relic-by-organization-provisioning-tutorial.md) | ● | ● |
+| [Nimblex](../identity/saas-apps/nimblex-tutorial.md) |  | ● |
+| [Nimbus](../identity/saas-apps/nimbus-tutorial.md) |  | ● |
+| [Nintex Promapp](../identity/saas-apps/promapp-tutorial.md) |  | ● |
+| [Nitro Productivity Suite](../identity/saas-apps/nitro-productivity-suite-tutorial.md) |  | ● |
+| [Nomadesk](../identity/saas-apps/nomadesk-tutorial.md) |  | ● |
+| [NordPass](../identity/saas-apps/nordpass-provisioning-tutorial.md) | ● | ● |
+| [Notion](../identity/saas-apps/notion-provisioning-tutorial.md) | ● | ● |
+| [Novatus](../identity/saas-apps/novatus-tutorial.md) |  | ● |
+| [Novell eDirectory (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
+| [Nuclino](../identity/saas-apps/nuclino-tutorial.md) |  | ● |
 | [OfficeSpace Software](~/identity/saas-apps/officespace-software-provisioning-tutorial.md) | ● | ● |
 | [Olfeo SAAS](~/identity/saas-apps/olfeo-saas-provisioning-tutorial.md) | ● | ● |
 | [OneDesk](~/identity/saas-apps/onedesk-tutorial.md) |  | ● |
