@@ -1389,6 +1389,26 @@
       "source_path_from_root": "/docs/identity/saas-apps/bluejeans-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-daemon-dotnet-acquire-token.md",
+      "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=workforce&tab=asp-dot-net-core-workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-daemon-app-java-acquire-token.md",
+      "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=workforce&tab=java-workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-console-app-nodejs-acquire-token.md",
+      "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=workforce&tab=node-workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-daemon-app-python-acquire-token.md",
+      "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=workforce&tab=python-workforce",
+      "redirect_document_id": false
     }
   ]
 }
