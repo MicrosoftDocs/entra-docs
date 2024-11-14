@@ -31,19 +31,8 @@ This article describes the available methods for exporting risk data from Micros
 
 To export risk data for storage and analysis, you need:
 
-- A Log Analytics workspace *and* [access to that workspace](/azure/azure-monitor/logs/manage-access)
-
-- The appropriate role for Azure Monitor:
-  - Monitoring Reader
-  - Log Analytics Reader
-  - Monitoring Contributor
-  - Log Analytics Contributor
-
-- The appropriate role for Microsoft Entra ID:
-  - Reports Reader
-  - Security Reader
-  - Global Reader
-  - Security Administrator
+- An Azure subscription to create a Log Analytics workspace, Azure event hub, or Azure storage account. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) access to create general diagnostic settings for the Microsoft Entra tenant.
 
 ## Diagnostic settings
 
@@ -61,11 +50,15 @@ You might need to wait around 15 minutes for the data to start appearing in the 
 
 ## Log Analytics
 
-Integrating risk data with Log Analytics provides robust data analysis and visualization capabilities. You need to configure a Log Analytics workspace before you can export and then query the data. For more information, see [Configure a Log Analytics workspace](../identity/monitoring-health/tutorial-configure-log-analytics-workspace.md).
+Integrating risk data with Log Analytics provides robust data analysis and visualization capabilities. The high-level process to using Log Analytics to analyze risk data is as follows:
 
-With Log Analytics, organizations can query data using built-in or custom Kusto queries. For more information, see [Get started with log queries in Azure Monitor](/azure/azure-monitor/logs/get-started-queries).
+1. [Create a Log Analytics workspace](../identity/monitoring-health/tutorial-configure-log-analytics-workspace.md).
+1. [Configure Microsoft Entra diagnostic settings to export the data](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
+1. [Query the data in Log Analytics](/azure/azure-monitor/logs/get-started-queries).
 
-Once you've configured a Log Analytics workspace and exported the data with diagnostic settings, you go to [Microsoft Entra admin center](https://entra.microsoft.com) > **Identity** > **Monitoring & health** > **Log Analytics**. The following tables are of most interest to Microsoft Entra ID Protection administrators:
+You need to configure a Log Analytics workspace before you can export and then query the data. Once you've configured a Log Analytics workspace and exported the data with diagnostic settings, go to [Microsoft Entra admin center](https://entra.microsoft.com) > **Identity** > **Monitoring & health** > **Log Analytics**. Then, with Log Analytics, you can query data using built-in or custom Kusto queries.
+
+The following tables are of most interest to Microsoft Entra ID Protection administrators:
 
 - AADRiskyUsers - Provides data like the **Risky users** report.
 - AADUserRiskEvents - Provides data like the **Risk detections** report.
@@ -117,11 +110,17 @@ Access more queries and visual insights based on AADUserRiskEvents and AADRisky 
 
 ## Storage account
 
-By routing logs to an Azure storage account, you can keep it for longer than the default retention period. For more information, see the article [How to archive Microsoft Entra activity logs to an Azure storage account](../identity/monitoring-health/howto-archive-logs-to-storage-account.md).
+By routing logs to an Azure storage account, you can keep data for longer than the default retention period.
+
+1. [Create an Azure storage account](/azure/storage/common/storage-account-create).
+1. [Archive Microsoft Entra logs to a storage account](../identity/monitoring-health/howto-archive-logs-to-storage-account.md).
 
 ## Azure Event Hubs
 
-Azure Event Hubs can look at incoming data from sources like Microsoft Entra ID Protection and provide real-time analysis and correlation. For more information, see the article [How to stream logs to Event Hub](../identity/monitoring-health/howto-stream-logs-to-event-hub.md).
+Azure Event Hubs can look at incoming data from sources like Microsoft Entra ID Protection and provide real-time analysis and correlation.
+
+1. [Create an Azure Event Hub](/azure/event-hubs/event-hubs-create).
+1. [Stream Microsoft Entra logs to an event hub](../identity/monitoring-health/howto-stream-logs-to-event-hub.md).
 
 ## Other options
 
