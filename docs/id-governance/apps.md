@@ -428,13 +428,13 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Isode directory server (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [IT-Conductor](../identity/saas-apps/it-conductor-tutorial.md) |  | ● |
 | [Ivanti Service Manager (ISM)](../identity/saas-apps/ivanti-service-manager-tutorial.md) |  | ● |
-| [Javelo](~/identity/saas-apps/javelo-tutorial.md) |  | ● |
-| [JFrog Artifactory](~/identity/saas-apps/jfrog-artifactory-tutorial.md) |  | ● |
-| [Jive](~/identity/saas-apps/jive-provisioning-tutorial.md) | ● | ● |
-| [Jooto](~/identity/saas-apps/jooto-tutorial.md) |  | ● |
-| [Jostle](~/identity/saas-apps/jostle-provisioning-tutorial.md) | ● | ● |
-| [Joyn FSM](~/identity/saas-apps/joyn-fsm-provisioning-tutorial.md) | ● |  |
-| [Juno Journey](~/identity/saas-apps/juno-journey-provisioning-tutorial.md) | ● | ● |
+| [Javelo](../identity/saas-apps/javelo-tutorial.md) |  | ● |
+| [JFrog Artifactory](../identity/saas-apps/jfrog-artifactory-tutorial.md) |  | ● |
+| [Jive](../identity/saas-apps/jive-provisioning-tutorial.md) | ● | ● |
+| [Jooto](../identity/saas-apps/jooto-tutorial.md) |  | ● |
+| [Jostle](../identity/saas-apps/jostle-provisioning-tutorial.md) | ● | ● |
+| [Joyn FSM](../identity/saas-apps/joyn-fsm-provisioning-tutorial.md) | ● |  |
+| [Juno Journey](../identity/saas-apps/juno-journey-provisioning-tutorial.md) | ● | ● |
 | [Kairos Business](~/identity/saas-apps/kairos-business-tutorial.md) |  | ● |
 | [Kanbanize](~/identity/saas-apps/kanbanize-tutorial.md) |  | ● |
 | [Keepabl](~/identity/saas-apps/keepabl-provisioning-tutorial.md) | ● | ● |
