@@ -123,49 +123,49 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [AWS IAM Identity Center](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) | ● | ● |
 | [Axiad Cloud](../identity/saas-apps/axiad-cloud-provisioning-tutorial.md) | ● | ● |
 | [Azure Databricks SCIM Connector](/azure/databricks/administration-guide/users-groups/scim/aad) | ● |  |
-| [Balsamiq Wireframes](~/identity/saas-apps/balsamiq-wireframes-tutorial.md) |  | ● |
-| [BambooHR](~/identity/saas-apps/bamboo-hr-tutorial.md) |  | ● |
-| [Banyan Security Zero Trust Remote Access Platform](~/identity/saas-apps/banyan-command-center-tutorial.md) |  | ● |
-| [Bealink](~/identity/saas-apps/bealink-tutorial.md) |  | ● |
-| [Beekeeper Microsoft Entra Data Connector](~/identity/saas-apps/beekeeper-azure-ad-data-connector-tutorial.md) |  | ● |
-| [Benchling](~/identity/saas-apps/benchling-tutorial.md) |  | ● |
-| [BenQ IAM](~/identity/saas-apps/benq-iam-provisioning-tutorial.md) | ● | ● |
-| [Bentley - Automatic User Provisioning](~/identity/saas-apps/bentley-automatic-user-provisioning-tutorial.md) | ● |  |
-| [Better Stack](~/identity/saas-apps/better-stack-provisioning-tutorial.md) | ● |  |
-| [BeyondTrust Remote Support](~/identity/saas-apps/bomgarremotesupport-tutorial.md) |  | ● |
-| [BIC Cloud Design](~/identity/saas-apps/bic-cloud-design-provisioning-tutorial.md) | ● | ● |
-| [BigPanda](~/identity/saas-apps/bigpanda-tutorial.md) |  | ● |
-| [BIS](~/identity/saas-apps/bis-provisioning-tutorial.md) | ● | ● |
-| [BitaBIZ](~/identity/saas-apps/bitabiz-provisioning-tutorial.md) | ● | ● |
-| [Bitly](~/identity/saas-apps/bitly-tutorial.md) |  | ● |
-| [Bizagi Studio for Digital Process Automation](~/identity/saas-apps/bizagi-studio-for-digital-process-automation-provisioning-tutorial.md) | ● | ● |
-| [Blackboard Learn](~/identity/saas-apps/blackboard-learn-tutorial.md) |  | ● |
-| [Blackboard Learn - Shibboleth](~/identity/saas-apps/blackboard-learn-shibboleth-tutorial.md) |  | ● |
-| [BLDNG APP](~/identity/saas-apps/bldng-app-provisioning-tutorial.md) | ● |  |
-| [Blink](~/identity/saas-apps/blink-provisioning-tutorial.md) | ● | ● |
-| [Blinq](~/identity/saas-apps/blinq-provisioning-tutorial.md) | ● |  |
-| [Blockbax](~/identity/saas-apps/blockbax-tutorial.md) |  | ● |
-| [BlogIn](~/identity/saas-apps/blogin-provisioning-tutorial.md) | ● | ● |
-| [Blue Ocean Brain](~/identity/saas-apps/blue-ocean-brain-tutorial.md) |  | ● |
-| [Bonusly](~/identity/saas-apps/bonusly-provisioning-tutorial.md) | ● | ● |
-| [BorrowBox](~/identity/saas-apps/borrowbox-tutorial.md) |  | ● |
-| [Box](~/identity/saas-apps/box-userprovisioning-tutorial.md) | ● | ● |
-| [Boxcryptor](~/identity/saas-apps/boxcryptor-provisioning-tutorial.md) | ● | ● |
-| [Bpanda](~/identity/saas-apps/bpanda-provisioning-tutorial.md) | ● |  |
-| [BrainStorm Platform](~/identity/saas-apps/brainstorm-platform-tutorial.md) |  | ● |
-| [Brandfolder](~/identity/saas-apps/brandfolder-tutorial.md) |  | ● |
-| [Bright Pattern Omnichannel Contact Center](~/identity/saas-apps/bright-pattern-omnichannel-contact-center-tutorial.md) |  | ● |
-| [Brightidea](~/identity/saas-apps/brightidea-tutorial.md) |  | ● |
-| [Briq](~/identity/saas-apps/briq-tutorial.md) |  | ● |
-| [Britive](~/identity/saas-apps/britive-provisioning-tutorial.md) | ● | ● |
-| [Brivo Onair Identity Connector](~/identity/saas-apps/brivo-onair-identity-connector-provisioning-tutorial.md) | ● |  |
-| [Broadcom DX SaaS](~/identity/saas-apps/broadcom-dx-saas-tutorial.md) |  | ● |
-| [BrowserStack Single Sign-on](~/identity/saas-apps/browserstack-single-sign-on-provisioning-tutorial.md) | ● | ● |
-| [Bugsnag](~/identity/saas-apps/bugsnag-tutorial.md) |  | ● |
-| [BullseyeTDP](~/identity/saas-apps/bullseyetdp-provisioning-tutorial.md) | ● | ● |
-| [Burp Suite Enterprise Edition](~/identity/saas-apps/burp-suite-enterprise-edition-tutorial.md) |  | ● |
-| [Bustle B2B Transport Systems](~/identity/saas-apps/bustle-b2b-transport-systems-provisioning-tutorial.md) | ● |  |
-| [Bynder](~/identity/saas-apps/bynder-tutorial.md) |  | ● |
+| [Balsamiq Wireframes](../identity/saas-apps/balsamiq-wireframes-tutorial.md) |  | ● |
+| [BambooHR](../identity/saas-apps/bamboo-hr-tutorial.md) |  | ● |
+| [Banyan Security Zero Trust Remote Access Platform](../identity/saas-apps/banyan-command-center-tutorial.md) |  | ● |
+| [Bealink](../identity/saas-apps/bealink-tutorial.md) |  | ● |
+| [Beekeeper Microsoft Entra Data Connector](../identity/saas-apps/beekeeper-azure-ad-data-connector-tutorial.md) |  | ● |
+| [Benchling](../identity/saas-apps/benchling-tutorial.md) |  | ● |
+| [BenQ IAM](../identity/saas-apps/benq-iam-provisioning-tutorial.md) | ● | ● |
+| [Bentley - Automatic User Provisioning](../identity/saas-apps/bentley-automatic-user-provisioning-tutorial.md) | ● |  |
+| [Better Stack](../identity/saas-apps/better-stack-provisioning-tutorial.md) | ● |  |
+| [BeyondTrust Remote Support](../identity/saas-apps/bomgarremotesupport-tutorial.md) |  | ● |
+| [BIC Cloud Design](../identity/saas-apps/bic-cloud-design-provisioning-tutorial.md) | ● | ● |
+| [BigPanda](../identity/saas-apps/bigpanda-tutorial.md) |  | ● |
+| [BIS](../identity/saas-apps/bis-provisioning-tutorial.md) | ● | ● |
+| [BitaBIZ](../identity/saas-apps/bitabiz-provisioning-tutorial.md) | ● | ● |
+| [Bitly](../identity/saas-apps/bitly-tutorial.md) |  | ● |
+| [Bizagi Studio for Digital Process Automation](../identity/saas-apps/bizagi-studio-for-digital-process-automation-provisioning-tutorial.md) | ● | ● |
+| [Blackboard Learn](../identity/saas-apps/blackboard-learn-tutorial.md) |  | ● |
+| [Blackboard Learn - Shibboleth](../identity/saas-apps/blackboard-learn-shibboleth-tutorial.md) |  | ● |
+| [BLDNG APP](../identity/saas-apps/bldng-app-provisioning-tutorial.md) | ● |  |
+| [Blink](../identity/saas-apps/blink-provisioning-tutorial.md) | ● | ● |
+| [Blinq](../identity/saas-apps/blinq-provisioning-tutorial.md) | ● |  |
+| [Blockbax](../identity/saas-apps/blockbax-tutorial.md) |  | ● |
+| [BlogIn](../identity/saas-apps/blogin-provisioning-tutorial.md) | ● | ● |
+| [Blue Ocean Brain](../identity/saas-apps/blue-ocean-brain-tutorial.md) |  | ● |
+| [Bonusly](../identity/saas-apps/bonusly-provisioning-tutorial.md) | ● | ● |
+| [BorrowBox](../identity/saas-apps/borrowbox-tutorial.md) |  | ● |
+| [Box](../identity/saas-apps/box-userprovisioning-tutorial.md) | ● | ● |
+| [Boxcryptor](../identity/saas-apps/boxcryptor-provisioning-tutorial.md) | ● | ● |
+| [Bpanda](../identity/saas-apps/bpanda-provisioning-tutorial.md) | ● |  |
+| [BrainStorm Platform](../identity/saas-apps/brainstorm-platform-tutorial.md) |  | ● |
+| [Brandfolder](../identity/saas-apps/brandfolder-tutorial.md) |  | ● |
+| [Bright Pattern Omnichannel Contact Center](../identity/saas-apps/bright-pattern-omnichannel-contact-center-tutorial.md) |  | ● |
+| [Brightidea](../identity/saas-apps/brightidea-tutorial.md) |  | ● |
+| [Briq](../identity/saas-apps/briq-tutorial.md) |  | ● |
+| [Britive](../identity/saas-apps/britive-provisioning-tutorial.md) | ● | ● |
+| [Brivo Onair Identity Connector](../identity/saas-apps/brivo-onair-identity-connector-provisioning-tutorial.md) | ● |  |
+| [Broadcom DX SaaS](../identity/saas-apps/broadcom-dx-saas-tutorial.md) |  | ● |
+| [BrowserStack Single Sign-on](../identity/saas-apps/browserstack-single-sign-on-provisioning-tutorial.md) | ● | ● |
+| [Bugsnag](../identity/saas-apps/bugsnag-tutorial.md) |  | ● |
+| [BullseyeTDP](../identity/saas-apps/bullseyetdp-provisioning-tutorial.md) | ● | ● |
+| [Burp Suite Enterprise Edition](../identity/saas-apps/burp-suite-enterprise-edition-tutorial.md) |  | ● |
+| [Bustle B2B Transport Systems](../identity/saas-apps/bustle-b2b-transport-systems-provisioning-tutorial.md) | ● |  |
+| [Bynder](../identity/saas-apps/bynder-tutorial.md) |  | ● |
 | [C3M Cloud Control](~/identity/saas-apps/c3m-cloud-control-tutorial.md) |  | ● |
 | [Canva](~/identity/saas-apps/canva-provisioning-tutorial.md) | ● | ● |
 | [Canvas LMS](~/identity/saas-apps/canvas-lms-tutorial.md) |  | ● |
