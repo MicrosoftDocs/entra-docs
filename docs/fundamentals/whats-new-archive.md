@@ -1,5 +1,5 @@
 ---
-title: Archive for What's new in Microsoft Entra ID?
+title: Archive for Microsoft Entra releases and announcements
 description: The What's new release notes in the Overview section of this content set contain six months of activity. After six months, the items are removed from the main article and put into this archive article.
 author: owinfreyATL
 manager: amycolannino
@@ -13,17 +13,11 @@ ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 ---
 
-# Archive for What's new in Microsoft Entra ID?
+# Archive for Microsoft Entra releases and announcements
 
-The primary [What's new in Microsoft Entra ID? release notes](whats-new.md) article contains updates for the last six months, while this article contains Information up to 18 months.
+This article includes information about the releases and change announcements across the Microsoft Entra family of products that are older than six months (up to 18 months). If you're looking for more current information, see [Microsoft Entra releases and announcements](./whats-new.md).
 
-The What's new in Microsoft Entra ID? Release notes provide information about:
-
-- The latest releases
-- Known issues
-- Bug fixes
-- Deprecated functionality
-- Plans for changes
+For a more dynamic experience, you can now find the archive information in the Microsoft Entra admin center. To learn more, see [What's new (preview)](./whats-new-overview.md).
 
 ---
 
