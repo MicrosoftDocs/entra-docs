@@ -128,7 +128,7 @@ Some of the supported combinations are:
 1. Password (first factor) + CBA (second factor) (Preview)
 
 >[!Note]
->CBA as a second factor on iOS has [known issues](./concept-certificate-based-authentication-mobile-ios#known-issues) and is blocked on iOS. We are working on fixing the issues and should be supported on iOS.
+>CBA as a second factor on iOS has [known issues](./concept-certificate-based-authentication-mobile-ios.md#known-issues) and is blocked on iOS. We are working on fixing the issues and should be supported on iOS.
 
 Users need to have a way to get MFA and register passwordless sign-in or FIDO2 in advance to signing in with Microsoft Entra CBA.
 
