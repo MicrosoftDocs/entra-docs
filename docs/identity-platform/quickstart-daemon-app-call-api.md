@@ -62,11 +62,11 @@ The sample app you use in this quickstart acquires an access token to call Micro
 
 ## Grant API permissions to the daemon app
 
-For daemon app to access data in Microsoft Graph API, you grant it grant it the permissions it needs. The daemon app needs application type permissions. Users can't interact with a daemon application, so the tenant administrator must consent to this permissions. Use the following steps to grant and consent to the permissions:
+For daemon app to access data in Microsoft Graph API, you grant it the permissions it needs. The daemon app needs application type permissions. Users can't interact with a daemon application, so the tenant administrator must consent to these permissions. Use the following steps to grant and consent to the permissions:
 
 #### [.NET](#tab/asp-dot-net-core-workforce)
 
-For the .NET daemon app, you don't need to grant and consent to any permission. This daemon app reads it's own app registration information, so it can do so without being granted any application permissions.
+For the .NET daemon app, you don't need to grant and consent to any permission. This daemon app reads its own app registration information, so it can do so without being granted any application permissions.
 
 #### [Node](#tab/node-workforce)
 
@@ -160,7 +160,7 @@ To use your app registration details in the client daemon app sample, use the fo
 In your editor, open the *.env* file, then replace the placeholders:
 
 - `Enter_the_Application_Id_Here` with the application (client) ID of the application you registered earlier.
-- `Enter_the_Tenant_Id_Here` with the the Tenant ID of your workforce tenant.
+- `Enter_the_Tenant_Id_Here` with the Tenant ID of your workforce tenant.
 - `Enter_the_Client_Secret_Here` with the client secret you created earlier.
 - `Enter_the_Cloud_Instance_Id_Here` with `https://login.microsoftonline.com`.
 - `Enter_the_Graph_Endpoint_Here` with `https://graph.microsoft.com/`.
@@ -172,7 +172,7 @@ In your editor, open the *.env* file, then replace the placeholders:
 1. In your editor, open the **parameters.json** file and replace the placeholders:
 
    - `Enter_the_Application_Id_Here` with the application (client) ID of the application you registered earlier.
-   - `Enter_the_Tenant_Id_Here` with the the Tenant ID of your workforce tenant.
+   - `Enter_the_Tenant_Id_Here` with the Tenant ID of your workforce tenant.
    - `Enter_the_Client_Secret_Here` with the client secret you created earlier.
 
 #### [Java](#tab/java-workforce)
@@ -182,7 +182,7 @@ In your editor, open the *.env* file, then replace the placeholders:
 1. In your editor, open the `src\main\resources\application.properties` file and replace the placeholders:
 
    - `Enter_the_Application_Id_Here` with the application (client) ID of the application you registered earlier.
-   - `Enter_the_Tenant_Id_Here` with the the Tenant ID of your workforce tenant.
+   - `Enter_the_Tenant_Id_Here` with the Tenant ID of your workforce tenant.
    - `Enter_the_Client_Secret_Here` with the client secret you created earlier.
 
 ---
@@ -190,7 +190,7 @@ In your editor, open the *.env* file, then replace the placeholders:
 
 ## Run and test the application
 
-You've configured your sample app, you proceed to run and test it.
+You've configured your sample app. You can proceed to run and test it.
 
 #### [.NET](#tab/asp-dot-net-core-workforce)
 
@@ -220,7 +220,7 @@ Once the application runs successfully, it displays a response similar to the fo
 
 ### How it works
 
-This app uses the client secret as its credentials to acquires an access token that's scoped for the Microsoft Graph API. It then uses the access token to request its own application registration details from Microsoft Graph API. The app can request any resource from Microsoft Graph API as long as the access token has the right permissions.
+This app uses the client secret as its credentials to acquire an access token from Microsoft identity platform. The access token is scoped for the Microsoft Graph API. The app then uses the access token to request its own application registration details from Microsoft Graph API. The app can request any resource from Microsoft Graph API as long as the access token has the right permissions.
 
 The sample demonstrates how an unattended job or Windows service can run with an application identity, instead of a user's identity.
 
@@ -465,7 +465,7 @@ To use your app registration in the web API sample:
 
 ##  Run and test sample daemon app and API 
 
-You've configured your sample app, you proceed to run and test it.
+You've configured your sample app. You can proceed to run and test it.
 
 #### [Node](#tab/node-external)
 

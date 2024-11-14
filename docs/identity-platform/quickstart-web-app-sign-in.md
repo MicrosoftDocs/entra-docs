@@ -203,7 +203,7 @@ EXPRESS_SESSION_SECRET=6DP6v09eLiW7f1E65B8k
 
 ## Run and test sample web app
 
-You've configured your sample app, you proceed to run and test it.
+You've configured your sample app. You can proceed to run and test it.
 
 #### [Node](#tab/node-workforce)
 
@@ -580,7 +580,7 @@ You can now test the sample Node.js web app. You need to start the Node.js serve
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
-1. If you choose the sign-up option, after filling in your email, one-time passcode, new password and more account details, you complete the whole sign-up flow. You see a page similar to the following screenshot. You see a similar page if you choose the sign-in option.
+1. If you choose the sign-up option, after filling in your email, one-time passcode, new password, and more account details, you complete the whole sign-up flow. You see a page similar to the following screenshot. You see a similar page if you choose the sign-in option.
 
     :::image type="content" source="media/how-to-web-app-node-sample-sign-in/web-app-node-view-claims.png" alt-text="Screenshot of view ID token claims.":::
 
@@ -588,7 +588,7 @@ You can now test the sample Node.js web app. You need to start the Node.js serve
 
 ### How it works
 
-When users select the **Sign in** link, the app initiates an authentication request and redirects users to Microsoft Entra External ID. On the sign-in or sign-up page that appears, once a user successfully signs in or creates an account, Microsoft Entra External ID returns an ID token to the app. The app validates the ID token, reads the claims, and returns a secure page to the users.  
+When users select the **Sign in** link, the app initiates an authentication request and redirects users to Microsoft Entra External ID. On the sign-in or sign-up page that appears, once a user successfully signs in, or creates an account, Microsoft Entra External ID returns an ID token to the app. The app validates the ID token, reads the claims, and returns a secure page to the users.  
 
 When the users select the **Sign out** link, the app clears its session, then redirect the user to Microsoft Entra External ID sign-out endpoint to notify it that the user has signed out.
 
