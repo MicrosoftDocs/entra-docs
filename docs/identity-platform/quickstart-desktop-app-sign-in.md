@@ -218,7 +218,7 @@ In this quickstart, you’ll use a sample application to learn how to add authen
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 #### [.NET MAUI)](#tab/wpfdotnet-maui-external)
 
@@ -234,7 +234,7 @@ In this quickstart, you’ll use a sample application to learn how to add authen
 * [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
 - An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ---
 
@@ -376,13 +376,13 @@ To obtain the sample application, you can either clone it from GitHub or downloa
  
     1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
-    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 #### [.NET MAUI)](#tab/wpfdotnet-maui-external)
 
 1. In Visual Studio, open *ms-identity-ciam-dotnet-tutorial-main/1-Authentication/2-sign-in-maui/appsettings.json* file.
 1. Find the placeholder:
-    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
    1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
 #### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
@@ -393,7 +393,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 1. Replace `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
  
-1. Replace `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your primary domain is *contoso.onmicrosoft.com*, replace `Enter_the_Tenant_Subdomain_Here` with *contoso*. If you don't have your primary domain, learn how to [read tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+1. Replace `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your primary domain is *contoso.onmicrosoft.com*, replace `Enter_the_Tenant_Subdomain_Here` with *contoso*. If you don't have your primary domain, learn how to [read tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 ---
 
