@@ -826,18 +826,18 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [TrustWorks](../identity/saas-apps/trustworks-tutorial.md) |  | ● |
 | [Twilio Sendgrid](../identity/saas-apps/twilio-sendgrid-tutorial.md) |  | ● |
 | [Twingate](../identity/saas-apps/twingate-provisioning-tutorial.md) | ● |  |
-| [Uber](~/identity/saas-apps/uber-provisioning-tutorial.md) | ● |  |
-| [Udemy Business SAML](~/identity/saas-apps/udemy-business-saml-tutorial.md) |  | ● |
-| [UKG Pro](~/identity/saas-apps/ultipro-tutorial.md) |  | ● |
-| [UNIFI](~/identity/saas-apps/unifi-provisioning-tutorial.md) | ● | ● |
-| [uniFlow Online](~/identity/saas-apps/uniflow-online-provisioning-tutorial.md) | ● | ● |
-| [Unite Us](~/identity/saas-apps/unite-us-tutorial.md) |  | ● |
-| [uni-tel A/S](~/identity/saas-apps/uni-tel-as-provisioning-tutorial.md) | ● |  |
-| [Upwork Enterprise](~/identity/saas-apps/upwork-enterprise-tutorial.md) |  | ● |
-| [User Interviews](~/identity/saas-apps/user-interviews-tutorial.md) |  | ● |
-| [Vault Platform](~/identity/saas-apps/vault-platform-provisioning-tutorial.md) | ● | ● |
-| [Vbrick Rev Cloud](~/identity/saas-apps/vbrick-rev-cloud-provisioning-tutorial.md) | ● | ● |
-| [V-Client](~/identity/saas-apps/v-client-provisioning-tutorial.md) | ● | ● |
+| [Uber](../identity/saas-apps/uber-provisioning-tutorial.md) | ● |  |
+| [Udemy Business SAML](../identity/saas-apps/udemy-business-saml-tutorial.md) |  | ● |
+| [UKG Pro](../identity/saas-apps/ultipro-tutorial.md) |  | ● |
+| [UNIFI](../identity/saas-apps/unifi-provisioning-tutorial.md) | ● | ● |
+| [uniFlow Online](../identity/saas-apps/uniflow-online-provisioning-tutorial.md) | ● | ● |
+| [Unite Us](../identity/saas-apps/unite-us-tutorial.md) |  | ● |
+| [uni-tel A/S](../identity/saas-apps/uni-tel-as-provisioning-tutorial.md) | ● |  |
+| [Upwork Enterprise](../identity/saas-apps/upwork-enterprise-tutorial.md) |  | ● |
+| [User Interviews](../identity/saas-apps/user-interviews-tutorial.md) |  | ● |
+| [Vault Platform](../identity/saas-apps/vault-platform-provisioning-tutorial.md) | ● | ● |
+| [Vbrick Rev Cloud](../identity/saas-apps/vbrick-rev-cloud-provisioning-tutorial.md) | ● | ● |
+| [V-Client](../identity/saas-apps/v-client-provisioning-tutorial.md) | ● | ● |
 | [Velpic SAML](~/identity/saas-apps/velpicsaml-tutorial.md) |  | ● |
 | [Velpic](~/identity/saas-apps/velpic-provisioning-tutorial.md) | ● | ● |
 | [Vera Suite](~/identity/saas-apps/vera-suite-tutorial.md) |  | ● |
