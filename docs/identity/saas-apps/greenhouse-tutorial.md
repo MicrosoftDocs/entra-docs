@@ -79,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
 > [!NOTE]
-> [Greenhouse Client support team](https://www.greenhouse.io/contact) recommends configuring Entra ID side application settings for **IDP** initiated mode. Contact Greenshouse Client support team for more details and get the correct vales mentioned below. 
+> The [Greenhouse Client support team](https://www.greenhouse.io/contact) recommends configuring Entra ID side application settings for **IDP** initiated mode. Contact the Greenhouse Client support team for more details and to get the correct values mentioned below. 
 
 1. On the **Basic SAML Configuration** section enter the values for the following fields:
 
