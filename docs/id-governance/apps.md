@@ -363,32 +363,32 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Grovo](../identity/saas-apps/grovo-tutorial.md) |  | ● |
 | [Gtmhub](../identity/saas-apps/gtmhub-provisioning-tutorial.md) | ● |  |
 | [Guru](../identity/saas-apps/guru-tutorial.md) |  | ● |
-| [H5mag](~/identity/saas-apps/h5mag-provisioning-tutorial.md) | ● |  |
-| [Hackerone](~/identity/saas-apps/hackerone-tutorial.md) |  | ● |
-| [HappyFox](~/identity/saas-apps/happyfox-tutorial.md) |  | ● |
-| [Harness](~/identity/saas-apps/harness-provisioning-tutorial.md) | ● | ● |
-| [hCaptcha Enterprise](~/identity/saas-apps/hcaptcha-enterprise-tutorial.md) |  | ● |
-| [Headspace](~/identity/saas-apps/headspace-provisioning-tutorial.md) | ● | ● |
-| [HelloID](~/identity/saas-apps/helloid-provisioning-tutorial.md) | ● |  |
-| [Help Scout](~/identity/saas-apps/helpscout-tutorial.md) |  | ● |
-| [Helper Helper](~/identity/saas-apps/helper-helper-tutorial.md) |  | ● |
-| [Heroku](~/identity/saas-apps/heroku-tutorial.md) |  | ● |
-| [HeyBuddy](~/identity/saas-apps/heybuddy-tutorial.md) |  | ● |
-| [Hightail](~/identity/saas-apps/hightail-tutorial.md) |  | ● |
-| [Hive Learning](~/identity/saas-apps/hive-learning-tutorial.md) |  | ● |
-| [Hive](~/identity/saas-apps/hive-tutorial.md) |  | ● |
-| [Holmes Cloud](~/identity/saas-apps/holmes-cloud-provisioning-tutorial.md) | ● |  |
-| [Hootsuite](~/identity/saas-apps/hootsuite-provisioning-tutorial.md) | ● | ● |
-| [Hopsworks.ai](~/identity/saas-apps/hopsworks-ai-tutorial.md) |  | ● |
-| [Hornbill](~/identity/saas-apps/hornbill-tutorial.md) |  | ● |
-| [Hosted Graphite](~/identity/saas-apps/hostedgraphite-tutorial.md) |  | ● |
-| [HowNow WebApp SSO](~/identity/saas-apps/hownow-webapp-sso-tutorial.md) |  | ● |
-| [Howspace](~/identity/saas-apps/howspace-provisioning-tutorial.md) | ● |  |
-| [Hoxhunt](~/identity/saas-apps/hoxhunt-provisioning-tutorial.md) | ● | ● |
-| [HSB ThoughtSpot](~/identity/saas-apps/hsb-thoughtspot-tutorial.md) |  | ● |
-| [Humbol](~/identity/saas-apps/humbol-provisioning-tutorial.md) | ● |  |
-| [Hype](~/identity/saas-apps/hype-tutorial.md) |  | ● |
-| [Hypervault](~/identity/saas-apps/hypervault-provisioning-tutorial.md) | ● |  |
+| [H5mag](../identity/saas-apps/h5mag-provisioning-tutorial.md) | ● |  |
+| [Hackerone](../identity/saas-apps/hackerone-tutorial.md) |  | ● |
+| [HappyFox](../identity/saas-apps/happyfox-tutorial.md) |  | ● |
+| [Harness](../identity/saas-apps/harness-provisioning-tutorial.md) | ● | ● |
+| [hCaptcha Enterprise](../identity/saas-apps/hcaptcha-enterprise-tutorial.md) |  | ● |
+| [Headspace](../identity/saas-apps/headspace-provisioning-tutorial.md) | ● | ● |
+| [HelloID](../identity/saas-apps/helloid-provisioning-tutorial.md) | ● |  |
+| [Help Scout](../identity/saas-apps/helpscout-tutorial.md) |  | ● |
+| [Helper Helper](../identity/saas-apps/helper-helper-tutorial.md) |  | ● |
+| [Heroku](../identity/saas-apps/heroku-tutorial.md) |  | ● |
+| [HeyBuddy](../identity/saas-apps/heybuddy-tutorial.md) |  | ● |
+| [Hightail](../identity/saas-apps/hightail-tutorial.md) |  | ● |
+| [Hive Learning](../identity/saas-apps/hive-learning-tutorial.md) |  | ● |
+| [Hive](../identity/saas-apps/hive-tutorial.md) |  | ● |
+| [Holmes Cloud](../identity/saas-apps/holmes-cloud-provisioning-tutorial.md) | ● |  |
+| [Hootsuite](../identity/saas-apps/hootsuite-provisioning-tutorial.md) | ● | ● |
+| [Hopsworks.ai](../identity/saas-apps/hopsworks-ai-tutorial.md) |  | ● |
+| [Hornbill](../identity/saas-apps/hornbill-tutorial.md) |  | ● |
+| [Hosted Graphite](../identity/saas-apps/hostedgraphite-tutorial.md) |  | ● |
+| [HowNow WebApp SSO](../identity/saas-apps/hownow-webapp-sso-tutorial.md) |  | ● |
+| [Howspace](../identity/saas-apps/howspace-provisioning-tutorial.md) | ● |  |
+| [Hoxhunt](../identity/saas-apps/hoxhunt-provisioning-tutorial.md) | ● | ● |
+| [HSB ThoughtSpot](../identity/saas-apps/hsb-thoughtspot-tutorial.md) |  | ● |
+| [Humbol](../identity/saas-apps/humbol-provisioning-tutorial.md) | ● |  |
+| [Hype](../identity/saas-apps/hype-tutorial.md) |  | ● |
+| [Hypervault](../identity/saas-apps/hypervault-provisioning-tutorial.md) | ● |  |
 | [IamIP Platform](~/identity/saas-apps/iamip-patent-platform-tutorial.md) |  | ● |
 | [IBM DB2 (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [IBM Domino (via MIM)](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-domino) | ● |  |
