@@ -631,35 +631,35 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Quarem](../identity/saas-apps/quarem-provisioning-tutorial.md) | ● | ● |
 | [QuickHelp](../identity/saas-apps/quickhelp-tutorial.md) |  | ● |
 | [Qumu Cloud](../identity/saas-apps/qumucloud-tutorial.md) |  | ● |
-| [Radancy's Employee Referrals](~/identity/saas-apps/radancys-employee-referrals-tutorial.md) |  | ● |
-| [Radiant IOT Portal](~/identity/saas-apps/radiant-iot-portal-tutorial.md) |  | ● |
-| [RadiantOne Virtual Directory Server (VDS) (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
-| [raum\]für\[raum](~/identity/saas-apps/raumfurraum-tutorial.md) |  | ● |
-| [Reach 360](~/identity/saas-apps/reach-360-tutorial.md) |  | ● |
-| [ReadCube Papers](~/identity/saas-apps/readcube-papers-tutorial.md) |  | ● |
-| [Real Links](~/identity/saas-apps/real-links-provisioning-tutorial.md) | ● | ● |
-| [Recnice](~/identity/saas-apps/recnice-provisioning-tutorial.md) | ● |  |
-| [Redocly](~/identity/saas-apps/redocly-tutorial.md) |  | ● |
-| [Reprints Desk - Article Galaxy](~/identity/saas-apps/reprints-desk-article-galaxy-tutorial.md) |  | ● |
-| [Rescana](~/identity/saas-apps/rescana-tutorial.md) |  | ● |
-| [Resource Central – SAML SSO for Meeting Room Booking System](~/identity/saas-apps/resource-central-tutorial.md) |  | ● |
-| [Retail Zipline](~/identity/saas-apps/retail-zipline-tutorial.md) |  | ● |
-| [RevSpace](~/identity/saas-apps/revspace-tutorial.md) |  | ● |
-| [Reward Gateway](~/identity/saas-apps/reward-gateway-provisioning-tutorial.md) | ● | ● |
-| [Rewatch](~/identity/saas-apps/rewatch-tutorial.md) |  | ● |
-| [RFPIO](~/identity/saas-apps/rfpio-provisioning-tutorial.md) | ● | ● |
-| [Rhombus Systems](~/identity/saas-apps/rhombus-systems-provisioning-tutorial.md) | ● | ● |
-| [RightCrowd Workforce Management](~/identity/saas-apps/rightcrowd-workforce-management-tutorial.md) |  | ● |
-| [RingCentral](~/identity/saas-apps/ringcentral-provisioning-tutorial.md) | ● | ● |
-| [Rise.com](~/identity/saas-apps/risecom-tutorial.md) |  | ● |
-| [Robin](~/identity/saas-apps/robin-provisioning-tutorial.md) | ● | ● |
-| [RocketReach SSO](~/identity/saas-apps/rocketreach-sso-tutorial.md) |  | ● |
-| [RoleMapper](~/identity/saas-apps/rolemapper-tutorial.md) |  | ● |
-| [Rollbar](~/identity/saas-apps/rollbar-provisioning-tutorial.md) | ● | ● |
-| [Rootly](~/identity/saas-apps/rootly-provisioning-tutorial.md) | ● | ● |
-| [Rouse Sales](~/identity/saas-apps/rouse-sales-provisioning-tutorial.md) | ● |  |
-| [RSA Archer Suite](~/identity/saas-apps/rsa-archer-suite-tutorial.md) |  | ● |
-| [RStudio Connect SAML Authentication](~/identity/saas-apps/rstudio-connect-tutorial.md) |  | ● |
+| [Radancy's Employee Referrals](../identity/saas-apps/radancys-employee-referrals-tutorial.md) |  | ● |
+| [Radiant IOT Portal](../identity/saas-apps/radiant-iot-portal-tutorial.md) |  | ● |
+| [RadiantOne Virtual Directory Server (VDS) (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
+| [raum\]für\[raum](../identity/saas-apps/raumfurraum-tutorial.md) |  | ● |
+| [Reach 360](../identity/saas-apps/reach-360-tutorial.md) |  | ● |
+| [ReadCube Papers](../identity/saas-apps/readcube-papers-tutorial.md) |  | ● |
+| [Real Links](../identity/saas-apps/real-links-provisioning-tutorial.md) | ● | ● |
+| [Recnice](../identity/saas-apps/recnice-provisioning-tutorial.md) | ● |  |
+| [Redocly](../identity/saas-apps/redocly-tutorial.md) |  | ● |
+| [Reprints Desk - Article Galaxy](../identity/saas-apps/reprints-desk-article-galaxy-tutorial.md) |  | ● |
+| [Rescana](../identity/saas-apps/rescana-tutorial.md) |  | ● |
+| [Resource Central – SAML SSO for Meeting Room Booking System](../identity/saas-apps/resource-central-tutorial.md) |  | ● |
+| [Retail Zipline](../identity/saas-apps/retail-zipline-tutorial.md) |  | ● |
+| [RevSpace](../identity/saas-apps/revspace-tutorial.md) |  | ● |
+| [Reward Gateway](../identity/saas-apps/reward-gateway-provisioning-tutorial.md) | ● | ● |
+| [Rewatch](../identity/saas-apps/rewatch-tutorial.md) |  | ● |
+| [RFPIO](../identity/saas-apps/rfpio-provisioning-tutorial.md) | ● | ● |
+| [Rhombus Systems](../identity/saas-apps/rhombus-systems-provisioning-tutorial.md) | ● | ● |
+| [RightCrowd Workforce Management](../identity/saas-apps/rightcrowd-workforce-management-tutorial.md) |  | ● |
+| [RingCentral](../identity/saas-apps/ringcentral-provisioning-tutorial.md) | ● | ● |
+| [Rise.com](../identity/saas-apps/risecom-tutorial.md) |  | ● |
+| [Robin](../identity/saas-apps/robin-provisioning-tutorial.md) | ● | ● |
+| [RocketReach SSO](../identity/saas-apps/rocketreach-sso-tutorial.md) |  | ● |
+| [RoleMapper](../identity/saas-apps/rolemapper-tutorial.md) |  | ● |
+| [Rollbar](../identity/saas-apps/rollbar-provisioning-tutorial.md) | ● | ● |
+| [Rootly](../identity/saas-apps/rootly-provisioning-tutorial.md) | ● | ● |
+| [Rouse Sales](../identity/saas-apps/rouse-sales-provisioning-tutorial.md) | ● |  |
+| [RSA Archer Suite](../identity/saas-apps/rsa-archer-suite-tutorial.md) |  | ● |
+| [RStudio Connect SAML Authentication](../identity/saas-apps/rstudio-connect-tutorial.md) |  | ● |
 | [S4 - Digitsec](~/identity/saas-apps/s4-digitsec-tutorial.md) |  | ● |
 | [Saba Cloud](~/identity/saas-apps/saba-cloud-tutorial.md) |  | ● |
 | [SafeGuard Cyber](~/identity/saas-apps/safeguard-cyber-provisioning-tutorial.md) | ● | ● |
