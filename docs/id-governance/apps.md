@@ -273,31 +273,31 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Druva](../identity/saas-apps/druva-provisioning-tutorial.md) | ● | ● |
 | [Dynamic Signal](../identity/saas-apps/dynamic-signal-provisioning-tutorial.md) | ● | ● |
 | [Dynatrace](../identity/saas-apps/dynatrace-tutorial.md) |  | ● |
-| [EAComposer](~/identity/saas-apps/eacomposer-tutorial.md) |  | ● |
-| [EasySSO for Bamboo](~/identity/saas-apps/easysso-for-bamboo-tutorial.md) |  | ● |
-| [EasySSO for Confluence](~/identity/saas-apps/easysso-for-confluence-tutorial.md) |  | ● |
-| [EasySSO for Jira](~/identity/saas-apps/easysso-for-jira-tutorial.md) |  | ● |
-| [EBSCO](~/identity/saas-apps/ebsco-tutorial.md) |  | ● |
-| [Eccentex AppBase for Azure](~/identity/saas-apps/eccentex-appbase-for-azure-tutorial.md) |  | ● |
-| [eCornell](~/identity/saas-apps/ecornell-tutorial.md) |  | ● |
-| [EduBrite LMS](~/identity/saas-apps/edubrite-lms-tutorial.md) |  | ● |
-| [edX for Business SAML Integration](~/identity/saas-apps/edx-for-business-saml-integration-tutorial.md) |  | ● |
-| [Egnyte](~/identity/saas-apps/egnyte-provisioning-tutorial.md) | ● | ● |
-| [Egress](~/identity/saas-apps/egress-tutorial.md) |  | ● |
-| [eKincare](~/identity/saas-apps/ekincare-tutorial.md) |  | ● |
-| [Eletive](~/identity/saas-apps/eletive-provisioning-tutorial.md) | ● |  |
-| [Elia](~/identity/saas-apps/elia-provisioning-tutorial.md) | ● | ● |
-| [Elium](~/identity/saas-apps/elium-provisioning-tutorial.md) | ● | ● |
-| [Embed Signage](~/identity/saas-apps/embed-signage-provisioning-tutorial.md) | ● | ● |
-| [Employee Advocacy by Sprout Social](~/identity/saas-apps/bambubysproutsocial-tutorial.md) |  | ● |
-| [Enterprise Advantage](~/identity/saas-apps/enterprise-advantage-tutorial.md) |  | ● |
-| [Envoy](~/identity/saas-apps/envoy-provisioning-tutorial.md) | ● | ● |
-| [Equifax Workforce Solutions](~/identity/saas-apps/equifax-workforce-solutions-tutorial.md) |  | ● |
-| [ETU Skillsims](~/identity/saas-apps/etu-skillsims-tutorial.md) |  | ● |
-| [Evercate](~/identity/saas-apps/evercate-provisioning-tutorial.md) | ● |  |
-| [Exium](~/identity/saas-apps/exium-provisioning-tutorial.md) | ● | ● |
-| [EZOfficeInventory](~/identity/saas-apps/ezofficeinventory-tutorial.md) |  | ● |
-| [EZRentOut](~/identity/saas-apps/ezrentout-tutorial.md) |  | ● |
+| [EAComposer](../identity/saas-apps/eacomposer-tutorial.md) |  | ● |
+| [EasySSO for Bamboo](../identity/saas-apps/easysso-for-bamboo-tutorial.md) |  | ● |
+| [EasySSO for Confluence](../identity/saas-apps/easysso-for-confluence-tutorial.md) |  | ● |
+| [EasySSO for Jira](../identity/saas-apps/easysso-for-jira-tutorial.md) |  | ● |
+| [EBSCO](../identity/saas-apps/ebsco-tutorial.md) |  | ● |
+| [Eccentex AppBase for Azure](../identity/saas-apps/eccentex-appbase-for-azure-tutorial.md) |  | ● |
+| [eCornell](../identity/saas-apps/ecornell-tutorial.md) |  | ● |
+| [EduBrite LMS](../identity/saas-apps/edubrite-lms-tutorial.md) |  | ● |
+| [edX for Business SAML Integration](../identity/saas-apps/edx-for-business-saml-integration-tutorial.md) |  | ● |
+| [Egnyte](../identity/saas-apps/egnyte-provisioning-tutorial.md) | ● | ● |
+| [Egress](../identity/saas-apps/egress-tutorial.md) |  | ● |
+| [eKincare](../identity/saas-apps/ekincare-tutorial.md) |  | ● |
+| [Eletive](../identity/saas-apps/eletive-provisioning-tutorial.md) | ● |  |
+| [Elia](../identity/saas-apps/elia-provisioning-tutorial.md) | ● | ● |
+| [Elium](../identity/saas-apps/elium-provisioning-tutorial.md) | ● | ● |
+| [Embed Signage](../identity/saas-apps/embed-signage-provisioning-tutorial.md) | ● | ● |
+| [Employee Advocacy by Sprout Social](../identity/saas-apps/bambubysproutsocial-tutorial.md) |  | ● |
+| [Enterprise Advantage](../identity/saas-apps/enterprise-advantage-tutorial.md) |  | ● |
+| [Envoy](../identity/saas-apps/envoy-provisioning-tutorial.md) | ● | ● |
+| [Equifax Workforce Solutions](../identity/saas-apps/equifax-workforce-solutions-tutorial.md) |  | ● |
+| [ETU Skillsims](../identity/saas-apps/etu-skillsims-tutorial.md) |  | ● |
+| [Evercate](../identity/saas-apps/evercate-provisioning-tutorial.md) | ● |  |
+| [Exium](../identity/saas-apps/exium-provisioning-tutorial.md) | ● | ● |
+| [EZOfficeInventory](../identity/saas-apps/ezofficeinventory-tutorial.md) |  | ● |
+| [EZRentOut](../identity/saas-apps/ezrentout-tutorial.md) |  | ● |
 | [Facebook Work Accounts](~/identity/saas-apps/facebook-work-accounts-provisioning-tutorial.md) | ● | ● |
 | [FAX.PLUS](~/identity/saas-apps/fax-plus-tutorial.md) |  | ● |
 | [Federated Directory](~/identity/saas-apps/federated-directory-provisioning-tutorial.md) | ● |  |
