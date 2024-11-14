@@ -912,7 +912,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Zylo](../identity/saas-apps/zylo-tutorial.md) |  | ● |
 
 ## Partner driven integrations
-There is also a healthy partner ecosystem, further expanding the breadth and depth of integrations available with Microsoft Entra ID Governance. Explore the [partner integrations](~/identity/app-provisioning/partner-driven-integrations.md) available, including connectors for:
+There is also a healthy partner ecosystem, further expanding the breadth and depth of integrations available with Microsoft Entra ID Governance. Explore the [partner integrations](../identity/app-provisioning/partner-driven-integrations.md) available, including connectors for:
 * Epic
 * Cerner
 * IBM RACF
@@ -921,4 +921,4 @@ There is also a healthy partner ecosystem, further expanding the breadth and dep
 
 ## Next steps
 
-To learn more about application provisioning, see [What is application provisioning](~/identity/app-provisioning/user-provisioning.md).
+To learn more about application provisioning, see [What is application provisioning](../identity/app-provisioning/user-provisioning.md).
