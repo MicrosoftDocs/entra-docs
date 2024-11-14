@@ -838,17 +838,17 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Vault Platform](../identity/saas-apps/vault-platform-provisioning-tutorial.md) | ● | ● |
 | [Vbrick Rev Cloud](../identity/saas-apps/vbrick-rev-cloud-provisioning-tutorial.md) | ● | ● |
 | [V-Client](../identity/saas-apps/v-client-provisioning-tutorial.md) | ● | ● |
-| [Velpic SAML](~/identity/saas-apps/velpicsaml-tutorial.md) |  | ● |
-| [Velpic](~/identity/saas-apps/velpic-provisioning-tutorial.md) | ● | ● |
-| [Vera Suite](~/identity/saas-apps/vera-suite-tutorial.md) |  | ● |
-| [Verity](~/identity/saas-apps/verity-tutorial.md) |  | ● |
-| [Veza](~/identity/saas-apps/veza-tutorial.md) |  | ● |
-| [VIDA](~/identity/saas-apps/vida-tutorial.md) |  | ● |
-| [Vidyard](~/identity/saas-apps/vidyard-tutorial.md) |  | ● |
-| [Virtual Risk Manager - USA](~/identity/saas-apps/virtual-risk-manager-usa-tutorial.md) |  | ● |
-| [Visibly](~/identity/saas-apps/visibly-provisioning-tutorial.md) | ● | ● |
-| [Visitly](~/identity/saas-apps/visitly-provisioning-tutorial.md) | ● | ● |
-| [Visma](~/identity/saas-apps/visma-tutorial.md) |  | ● |
+| [Velpic SAML](../identity/saas-apps/velpicsaml-tutorial.md) |  | ● |
+| [Velpic](../identity/saas-apps/velpic-provisioning-tutorial.md) | ● | ● |
+| [Vera Suite](../identity/saas-apps/vera-suite-tutorial.md) |  | ● |
+| [Verity](../identity/saas-apps/verity-tutorial.md) |  | ● |
+| [Veza](../identity/saas-apps/veza-tutorial.md) |  | ● |
+| [VIDA](../identity/saas-apps/vida-tutorial.md) |  | ● |
+| [Vidyard](../identity/saas-apps/vidyard-tutorial.md) |  | ● |
+| [Virtual Risk Manager - USA](../identity/saas-apps/virtual-risk-manager-usa-tutorial.md) |  | ● |
+| [Visibly](../identity/saas-apps/visibly-provisioning-tutorial.md) | ● | ● |
+| [Visitly](../identity/saas-apps/visitly-provisioning-tutorial.md) | ● | ● |
+| [Visma](../identity/saas-apps/visma-tutorial.md) |  | ● |
 | [VMware Identity Service](~/identity/saas-apps/vmware-identity-service-provisioning-tutorial.md) | ● | ● |
 | [Vonage](~/identity/saas-apps/vonage-provisioning-tutorial.md) | ● | ● |
 | [Voyance](~/identity/saas-apps/voyance-tutorial.md) |  | ● |
