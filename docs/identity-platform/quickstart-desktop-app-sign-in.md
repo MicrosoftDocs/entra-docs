@@ -467,5 +467,27 @@ Run the app by pressing *F5* or select the *play button* at the top of Visual St
 
 ---
 
+## Related content
+
+#### [Node.js Electron](#tab/node-js-external)
+
+- [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
+- [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
+- [Explore the Electron desktop app sample code](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/tree/main/1-Authentication/3-sign-in-electron#about-the-code).
+
+#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
+
+- [Tutorial: Create a .NET MAUI app](../external-id/customers/tutorial-desktop-app-maui-sign-in-prepare-app.md).
+- [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
+- [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
+
+#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
+
+- [Tutorial: Authenticate users to your WPF desktop application](../external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-build-app.md)
+- [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
+- [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
+
+---
+
 
 ::: zone-end 
