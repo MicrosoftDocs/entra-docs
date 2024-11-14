@@ -13,7 +13,7 @@ ms.author: barclayn
 #Customer intent: As an administrator, I'm trying to learn the process of revoking verifiable credentials that I've issued.
 ---
 
-# Revoke a previously issued verifiable credential
+# Revoke a Verifiable credential
 
 As part of the process of working with verifiable credentials, you have to issue credentials. Sometimes you also have to revoke them. In this article, we review the `Status` property part of the verifiable credential specification. We also take a closer look at the revocation process, why we want to revoke credentials, and some data and privacy implications.
 
@@ -83,7 +83,7 @@ didDocument": {
     ],
 ```
 
-## Set up a verifiable credential with the ability to revoke
+## Create a revocable Verifiable Credential
 
 Microsoft Entra Verified ID doesn't store verifiable credential data. The issuer needs to index one claim to make the credential searchable. Only one claim can be indexed, and if there's none, you can't revoke credentials. The selected claim to index is then salted and hashed and isn't stored as its original value.
 
@@ -156,7 +156,7 @@ You can use indexed claims in verifiable credentials to search for issued verifi
   
 1. When a match is found, select the **Revoke** option to the right of the credential you want to revoke.
 
-    The admin user who performs the revoke operation must have **sign** key permission for Key Vault or else the error message "Unable to access Key Vault resource with given credentials" appears.
+    The admin user who performs the revocation operation must have **sign** key permission for Key Vault or else the error message "Unable to access Key Vault resource with given credentials" appears.
 
    :::image type="content" source="media/how-to-issuer-revoke/warning.png" alt-text="Screenshot that shows a warning that tells you that after revocation the user still has the credential.":::
 
