@@ -47,7 +47,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 1. Sign in to your OfficeSpace Software account with appropriate permissions.
 
-2. Under the Admin accordion menu in the Hamburger Menu, select **Connectors**.
+2. Under the Admin accordion menu in the hamburger menu, select **Connectors**.
 
 
 ![01 Connectors Highlighted](https://github.com/user-attachments/assets/dd66208e-1197-40b6-944c-7e204f579147)
