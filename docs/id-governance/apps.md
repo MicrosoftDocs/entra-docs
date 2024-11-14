@@ -389,45 +389,45 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Humbol](../identity/saas-apps/humbol-provisioning-tutorial.md) | ● |  |
 | [Hype](../identity/saas-apps/hype-tutorial.md) |  | ● |
 | [Hypervault](../identity/saas-apps/hypervault-provisioning-tutorial.md) | ● |  |
-| [IamIP Platform](~/identity/saas-apps/iamip-patent-platform-tutorial.md) |  | ● |
-| [IBM DB2 (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
+| [IamIP Platform](../identity/saas-apps/iamip-patent-platform-tutorial.md) |  | ● |
+| [IBM DB2 (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [IBM Domino (via MIM)](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-domino) | ● |  |
-| [IBM Tivoli Directory Server (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
-| [IBMid](~/identity/saas-apps/ibmid-tutorial.md) |  | ● |
-| [Ideagen Cloud](~/identity/saas-apps/ideagen-cloud-provisioning-tutorial.md) | ● |  |
-| [Ideo](~/identity/saas-apps/ideo-provisioning-tutorial.md) | ● | ● |
-| [Igloo Software](~/identity/saas-apps/igloo-software-tutorial.md) |  | ● |
-| [iGrafx Platform](~/identity/saas-apps/igrafx-platform-tutorial.md) |  | ● |
-| [iHASCO Training](~/identity/saas-apps/ihasco-training-tutorial.md) |  | ● |
-| [iLMS](~/identity/saas-apps/ilms-tutorial.md) |  | ● |
-| [Imagen](~/identity/saas-apps/imagen-tutorial.md) |  | ● |
-| [Infogix Data3Sixty Govern](~/identity/saas-apps/infogix-tutorial.md) |  | ● |
-| [Infor CloudSuite](~/identity/saas-apps/infor-cloudsuite-provisioning-tutorial.md) | ● | ● |
-| [InformaCast](~/identity/saas-apps/informacast-provisioning-tutorial.md) | ● | ● |
-| [Informatica Intelligent Data Management Cloud](~/identity/saas-apps/informatica-intelligent-data-management-cloud-tutorial.md) |  | ● |
-| [Innotas](~/identity/saas-apps/innotas-tutorial.md) |  | ● |
-| [Innovation Hub](~/identity/saas-apps/innovationhub-tutorial.md) |  | ● |
-| [Insider](~/identity/saas-apps/insider-tutorial.md) |  | ● |
-| [Insight4GRC](~/identity/saas-apps/insight4grc-provisioning-tutorial.md) | ● | ● |
-| [Insightsfirst](~/identity/saas-apps/insightsfirst-tutorial.md) |  | ● |
-| [Insite LMS](~/identity/saas-apps/insite-lms-provisioning-tutorial.md) | ● |  |
-| [InstaVR Viewer](~/identity/saas-apps/instavr-viewer-tutorial.md) |  | ● |
-| [International SOS Assistance Products](~/identity/saas-apps/international-sos-assistance-products-tutorial.md) |  | ● |
-| [introDus Pre and Onboarding Platform](~/identity/saas-apps/introdus-pre-and-onboarding-platform-provisioning-tutorial.md) | ● |  |
-| [IntSights](~/identity/saas-apps/intsights-tutorial.md) |  | ● |
-| [InSightly SAML](~/identity/saas-apps/insightly-saml-provisioning-tutorial.md) | ● | ● |
-| [Invision](~/identity/saas-apps/invision-provisioning-tutorial.md) | ● | ● |
-| [InviteDesk](~/identity/saas-apps/invitedesk-provisioning-tutorial.md) | ● |  |
-| [IP Platform](~/identity/saas-apps/ip-platform-tutorial.md) |  | ● |
-| [iPass SmartConnect](~/identity/saas-apps/ipass-smartconnect-provisioning-tutorial.md) | ● | ● |
-| [iQualify LMS](~/identity/saas-apps/iqualify-tutorial.md) |  | ● |
-| [Iris Intranet](~/identity/saas-apps/iris-intranet-provisioning-tutorial.md) | ● | ● |
-| [IriusRisk](~/identity/saas-apps/iriusrisk-tutorial.md) |  | ● |
-| [ISG GovernX Federation](~/identity/saas-apps/isg-governx-federation-tutorial.md) |  | ● |
-| [Island](~/identity/saas-apps/island-provisioning-tutorial.md) | ● | ● |
-| [Isode directory server (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
-| [IT-Conductor](~/identity/saas-apps/it-conductor-tutorial.md) |  | ● |
-| [Ivanti Service Manager (ISM)](~/identity/saas-apps/ivanti-service-manager-tutorial.md) |  | ● |
+| [IBM Tivoli Directory Server (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
+| [IBMid](../identity/saas-apps/ibmid-tutorial.md) |  | ● |
+| [Ideagen Cloud](../identity/saas-apps/ideagen-cloud-provisioning-tutorial.md) | ● |  |
+| [Ideo](../identity/saas-apps/ideo-provisioning-tutorial.md) | ● | ● |
+| [Igloo Software](../identity/saas-apps/igloo-software-tutorial.md) |  | ● |
+| [iGrafx Platform](../identity/saas-apps/igrafx-platform-tutorial.md) |  | ● |
+| [iHASCO Training](../identity/saas-apps/ihasco-training-tutorial.md) |  | ● |
+| [iLMS](../identity/saas-apps/ilms-tutorial.md) |  | ● |
+| [Imagen](../identity/saas-apps/imagen-tutorial.md) |  | ● |
+| [Infogix Data3Sixty Govern](../identity/saas-apps/infogix-tutorial.md) |  | ● |
+| [Infor CloudSuite](../identity/saas-apps/infor-cloudsuite-provisioning-tutorial.md) | ● | ● |
+| [InformaCast](../identity/saas-apps/informacast-provisioning-tutorial.md) | ● | ● |
+| [Informatica Intelligent Data Management Cloud](../identity/saas-apps/informatica-intelligent-data-management-cloud-tutorial.md) |  | ● |
+| [Innotas](../identity/saas-apps/innotas-tutorial.md) |  | ● |
+| [Innovation Hub](../identity/saas-apps/innovationhub-tutorial.md) |  | ● |
+| [Insider](../identity/saas-apps/insider-tutorial.md) |  | ● |
+| [Insight4GRC](../identity/saas-apps/insight4grc-provisioning-tutorial.md) | ● | ● |
+| [Insightsfirst](../identity/saas-apps/insightsfirst-tutorial.md) |  | ● |
+| [Insite LMS](../identity/saas-apps/insite-lms-provisioning-tutorial.md) | ● |  |
+| [InstaVR Viewer](../identity/saas-apps/instavr-viewer-tutorial.md) |  | ● |
+| [International SOS Assistance Products](../identity/saas-apps/international-sos-assistance-products-tutorial.md) |  | ● |
+| [introDus Pre and Onboarding Platform](../identity/saas-apps/introdus-pre-and-onboarding-platform-provisioning-tutorial.md) | ● |  |
+| [IntSights](../identity/saas-apps/intsights-tutorial.md) |  | ● |
+| [InSightly SAML](../identity/saas-apps/insightly-saml-provisioning-tutorial.md) | ● | ● |
+| [Invision](../identity/saas-apps/invision-provisioning-tutorial.md) | ● | ● |
+| [InviteDesk](../identity/saas-apps/invitedesk-provisioning-tutorial.md) | ● |  |
+| [IP Platform](../identity/saas-apps/ip-platform-tutorial.md) |  | ● |
+| [iPass SmartConnect](../identity/saas-apps/ipass-smartconnect-provisioning-tutorial.md) | ● | ● |
+| [iQualify LMS](../identity/saas-apps/iqualify-tutorial.md) |  | ● |
+| [Iris Intranet](../identity/saas-apps/iris-intranet-provisioning-tutorial.md) | ● | ● |
+| [IriusRisk](../identity/saas-apps/iriusrisk-tutorial.md) |  | ● |
+| [ISG GovernX Federation](../identity/saas-apps/isg-governx-federation-tutorial.md) |  | ● |
+| [Island](../identity/saas-apps/island-provisioning-tutorial.md) | ● | ● |
+| [Isode directory server (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
+| [IT-Conductor](../identity/saas-apps/it-conductor-tutorial.md) |  | ● |
+| [Ivanti Service Manager (ISM)](../identity/saas-apps/ivanti-service-manager-tutorial.md) |  | ● |
 | [Javelo](~/identity/saas-apps/javelo-tutorial.md) |  | ● |
 | [JFrog Artifactory](~/identity/saas-apps/jfrog-artifactory-tutorial.md) |  | ● |
 | [Jive](~/identity/saas-apps/jive-provisioning-tutorial.md) | ● | ● |
