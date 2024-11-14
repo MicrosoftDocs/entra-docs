@@ -39,7 +39,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 
 | Application | Automated provisioning | Single Sign On (SSO)|
 | :--- | :-:  | :-: |
-| [10,000 ft Plans](~/identity/saas-apps/10000ftplans-tutorial.md) |  | ● |
+| [10,000 ft Plans](../identity/saas-apps/10000ftplans-tutorial.md) |  | ● |
 | [15five](~/identity/saas-apps/15five-provisioning-tutorial.md) | ● | ● |
 | [123FormBuilder](~/identity/saas-apps/123formbuilder-tutorial.md) |  | ● |
 | [389 directory server (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
