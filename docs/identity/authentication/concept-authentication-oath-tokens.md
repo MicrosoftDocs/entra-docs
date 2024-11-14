@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/12/2024
+ms.date: 11/14/2024
 
 ms.author: justinha
 author: justinha
@@ -68,7 +68,17 @@ In the legacy multifactor authentication (MFA) policy, hardware and software OAT
 If you don't want end users to see an option to add **Hardware OATH tokens**, migrate to the Authentication methods policy. 
 In the Authentication methods policy, hardware and software OATH tokens can be enabled and managed separately. For more information about how to migrate to the Authentication methods policy, see [How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID](how-to-authentication-methods-manage.md).
 
-Tenants with a Microsoft Entra ID Premium license can continue to upload hardware OATH tokens as in the original preview. Fore more information, see [Upload hardware OATH tokens in CSV format](how-to-mfa-upload-oath-tokens.md).
+Tenants with a Microsoft Entra ID P1 or P2 license can continue to upload hardware OATH tokens as in the original preview. For more information, see [Upload hardware OATH tokens in CSV format](how-to-mfa-upload-oath-tokens.md).
+ 
+### Time drift correction
+
+tokens can be on shelf. Internal clock goes out of sync. 
+
+The first time a token is activated, we will try to match the code with any possible code within a +/- 1 day range for a 30 sec token. For 60 second token the range is +/- 2 days. 
+ 
+During auth it will match within 2 step window. For 30 second this is +/- 1 minute and 2 minute for a 60 second token. Every time a token is successfully used, the oath token time drift is updated
+
+E.g. we correct time drift at registration for codes +/-1 day for 30 sec token. We correct at each auth for +/- 1 min
 
 ### Enable hardware OATH tokens in the Authentication methods policy
 
