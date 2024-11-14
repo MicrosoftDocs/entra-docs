@@ -147,7 +147,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Blockbax](~/identity/saas-apps/blockbax-tutorial.md) |  | ● |
 | [BlogIn](~/identity/saas-apps/blogin-provisioning-tutorial.md) | ● | ● |
 | [Blue Ocean Brain](~/identity/saas-apps/blue-ocean-brain-tutorial.md) |  | ● |
-| [BlueJeans](~/identity/saas-apps/bluejeans-provisioning-tutorial.md) | ● | ● |
 | [Bonusly](~/identity/saas-apps/bonusly-provisioning-tutorial.md) | ● | ● |
 | [BorrowBox](~/identity/saas-apps/borrowbox-tutorial.md) |  | ● |
 | [Box](~/identity/saas-apps/box-userprovisioning-tutorial.md) | ● | ● |
