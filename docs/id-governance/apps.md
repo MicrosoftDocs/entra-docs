@@ -546,36 +546,36 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Novatus](../identity/saas-apps/novatus-tutorial.md) |  | ● |
 | [Novell eDirectory (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
 | [Nuclino](../identity/saas-apps/nuclino-tutorial.md) |  | ● |
-| [OfficeSpace Software](~/identity/saas-apps/officespace-software-provisioning-tutorial.md) | ● | ● |
-| [Olfeo SAAS](~/identity/saas-apps/olfeo-saas-provisioning-tutorial.md) | ● | ● |
-| [OneDesk](~/identity/saas-apps/onedesk-tutorial.md) |  | ● |
-| [Oneflow](~/identity/saas-apps/oneflow-provisioning-tutorial.md) | ● | ● |
-| [Oneteam](~/identity/saas-apps/oneteam-tutorial.md) |  | ● |
-| [OneTrust Privacy Management Software](~/identity/saas-apps/onetrust-tutorial.md) |  | ● |
-| [Onshape](~/identity/saas-apps/onshape-tutorial.md) |  | ● |
-| [Onyxia](~/identity/saas-apps/onyxia-tutorial.md) |  | ● |
-| [Open DJ (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
-| [Open DS (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
-| [OpenAthens](~/identity/saas-apps/openathens-tutorial.md) |  | ● |
-| [OpenForms](~/identity/saas-apps/openforms-provisioning-tutorial.md) | ● |  |
-| [OpenLDAP](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
-| [OpenText Directory Services](~/identity/saas-apps/open-text-directory-services-provisioning-tutorial.md) | ● | ● |
-| [OptiTurn](~/identity/saas-apps/optiturn-tutorial.md) |  | ● |
-| [Oracle Access Manager for Oracle E-Business Suite](~/identity/saas-apps/oracle-access-manager-for-oracle-ebs-tutorial.md) |  | ● |
-| [Oracle Access Manager for Oracle Retail Merchandising](~/identity/saas-apps/oracle-access-manager-for-oracle-retail-merchandising-tutorial.md) |  | ● |
-| [Oracle Cloud Infrastructure Console](~/identity/saas-apps/oracle-cloud-infrastructure-console-provisioning-tutorial.md) | ● | ● |
-| [Oracle Database (SQL connector)](~/identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
-| [Oracle E-Business Suite](~/identity/app-provisioning/on-premises-web-services-connector.md)  | ● | ● |
-| [Oracle Fusion ERP](~/identity/saas-apps/oracle-fusion-erp-provisioning-tutorial.md) | ● | ● |
-| [Oracle IDCS for E-Business Suite](~/identity/saas-apps/oracle-idcs-for-ebs-tutorial.md) |  | ● |
-| [Oracle IDCS for JD Edwards](~/identity/saas-apps/oracle-idcs-for-jd-edwards-tutorial.md) |  | ● |
-| [Oracle IDCS for PeopleSoft](~/identity/saas-apps/oracle-idcs-for-peoplesoft-tutorial.md) |  | ● |
-| [Oracle PeopleSoft ERP](~/identity/app-provisioning/on-premises-web-services-connector.md) | ● | ● |
-| [Oracle SunONE Directory Server (LDAP connector)](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
-| [O'Reilly Learning Platform](~/identity/saas-apps/oreilly-learning-platform-provisioning-tutorial.md) | ● | ● |
-| [Othership Workplace Scheduler](~/identity/saas-apps/othership-workplace-scheduler-tutorial.md) |  | ● |
-| [OutSystems](~/identity/saas-apps/outsystems-tutorial.md) |  | ● |
-| [Overdrive](~/identity/saas-apps/overdrive-books-tutorial.md) |  | ● |
+| [OfficeSpace Software](../identity/saas-apps/officespace-software-provisioning-tutorial.md) | ● | ● |
+| [Olfeo SAAS](../identity/saas-apps/olfeo-saas-provisioning-tutorial.md) | ● | ● |
+| [OneDesk](../identity/saas-apps/onedesk-tutorial.md) |  | ● |
+| [Oneflow](../identity/saas-apps/oneflow-provisioning-tutorial.md) | ● | ● |
+| [Oneteam](../identity/saas-apps/oneteam-tutorial.md) |  | ● |
+| [OneTrust Privacy Management Software](../identity/saas-apps/onetrust-tutorial.md) |  | ● |
+| [Onshape](../identity/saas-apps/onshape-tutorial.md) |  | ● |
+| [Onyxia](../identity/saas-apps/onyxia-tutorial.md) |  | ● |
+| [Open DJ (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
+| [Open DS (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
+| [OpenAthens](../identity/saas-apps/openathens-tutorial.md) |  | ● |
+| [OpenForms](../identity/saas-apps/openforms-provisioning-tutorial.md) | ● |  |
+| [OpenLDAP](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
+| [OpenText Directory Services](../identity/saas-apps/open-text-directory-services-provisioning-tutorial.md) | ● | ● |
+| [OptiTurn](../identity/saas-apps/optiturn-tutorial.md) |  | ● |
+| [Oracle Access Manager for Oracle E-Business Suite](../identity/saas-apps/oracle-access-manager-for-oracle-ebs-tutorial.md) |  | ● |
+| [Oracle Access Manager for Oracle Retail Merchandising](../identity/saas-apps/oracle-access-manager-for-oracle-retail-merchandising-tutorial.md) |  | ● |
+| [Oracle Cloud Infrastructure Console](../identity/saas-apps/oracle-cloud-infrastructure-console-provisioning-tutorial.md) | ● | ● |
+| [Oracle Database (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
+| [Oracle E-Business Suite](../identity/app-provisioning/on-premises-web-services-connector.md)  | ● | ● |
+| [Oracle Fusion ERP](../identity/saas-apps/oracle-fusion-erp-provisioning-tutorial.md) | ● | ● |
+| [Oracle IDCS for E-Business Suite](../identity/saas-apps/oracle-idcs-for-ebs-tutorial.md) |  | ● |
+| [Oracle IDCS for JD Edwards](../identity/saas-apps/oracle-idcs-for-jd-edwards-tutorial.md) |  | ● |
+| [Oracle IDCS for PeopleSoft](../identity/saas-apps/oracle-idcs-for-peoplesoft-tutorial.md) |  | ● |
+| [Oracle PeopleSoft ERP](../identity/app-provisioning/on-premises-web-services-connector.md) | ● | ● |
+| [Oracle SunONE Directory Server (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
+| [O'Reilly Learning Platform](../identity/saas-apps/oreilly-learning-platform-provisioning-tutorial.md) | ● | ● |
+| [Othership Workplace Scheduler](../identity/saas-apps/othership-workplace-scheduler-tutorial.md) |  | ● |
+| [OutSystems](../identity/saas-apps/outsystems-tutorial.md) |  | ● |
+| [Overdrive](../identity/saas-apps/overdrive-books-tutorial.md) |  | ● |
 | [PagerDuty](~/identity/saas-apps/pagerduty-tutorial.md) |  | ● |
 | [Palantir Foundry](~/identity/saas-apps/palantir-foundry-tutorial.md) |  | ● |
 | [Palo Alto Networks - Admin UI](~/identity/saas-apps/paloaltoadmin-tutorial.md) |  | ● |
