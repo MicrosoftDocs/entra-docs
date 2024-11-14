@@ -460,33 +460,33 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [KPN Grip](../identity/saas-apps/kpn-grip-provisioning-tutorial.md) | ● | |
 | [Krisp Technologies](../identity/saas-apps/krisp-technologies-tutorial.md) |  | ● |
 | [Kumolus](../identity/saas-apps/kumolus-tutorial.md) |  | ● |
-| [LabLog](~/identity/saas-apps/lablog-tutorial.md) |  | ● |
-| [LambdaTest Single Sign on](~/identity/saas-apps/lambda-test-single-sign-on-tutorial.md) |  | ● |
-| [LanSchool Air](~/identity/saas-apps/lanschool-air-provisioning-tutorial.md) | ● | ● |
-| [LaunchDarkly](~/identity/saas-apps/launchdarkly-tutorial.md) |  | ● |
-| [LawVu](~/identity/saas-apps/lawvu-provisioning-tutorial.md) | ● | ● |
-| [LDAP](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
-| [Lean](~/identity/saas-apps/lean-tutorial.md) |  | ● |
-| [Leapsome](~/identity/saas-apps/leapsome-provisioning-tutorial.md) | ● | ● |
-| [LearnUpon](~/identity/saas-apps/learnupon-tutorial.md) |  | ● |
-| [Ledgy](~/identity/saas-apps/ledgy-tutorial.md) |  | ● |
-| [Lessonly](~/identity/saas-apps/lessonly-tutorial.md) |  | ● |
-| [Lexonis TalentScape](~/identity/saas-apps/lexonis-talentscape-provisioning-tutorial.md) | ● | ● |
-| [LimbleCMMS](~/identity/saas-apps/limblecmms-provisioning-tutorial.md) | ● |  |
-| [LinkedIn Elevate](~/identity/saas-apps/linkedinelevate-provisioning-tutorial.md) | ● | ● |
-| [LinkedIn Learning](~/identity/saas-apps/linkedinlearning-tutorial.md) |  | ● |
-| [LinkedIn Sales Navigator](~/identity/saas-apps/linkedinsalesnavigator-provisioning-tutorial.md) | ● | ● |
-| [LinkedIn Talent Solutions](~/identity/saas-apps/linkedin-talent-solutions-tutorial.md) |  | ● |
-| [Litmos](~/identity/saas-apps/litmos-provisioning-tutorial.md) | ● | ● |
-| [LogicGate](~/identity/saas-apps/logicgate-provisioning-tutorial.md) | ● |  |
-| [GoTo](~/identity/saas-apps/goto-provisioning-tutorial.md) | ● | ● |
-| [Looker Analytics Platform](~/identity/saas-apps/looker-analytics-platform-tutorial.md) |  | ● |
-| [Looop](~/identity/saas-apps/looop-provisioning-tutorial.md) | ● |  |
-| [Lucid (All Products)](~/identity/saas-apps/lucid-all-products-provisioning-tutorial.md) | ● | ● |
-| [Lucidchart](~/identity/saas-apps/lucidchart-provisioning-tutorial.md) | ● | ● |
-| [Lusha](~/identity/saas-apps/lusha-tutorial.md) |  | ● |
-| [LUSID](~/identity/saas-apps/LUSID-provisioning-tutorial.md) | ● | ● |
-| [Lynda.com](~/identity/saas-apps/lynda-tutorial.md) |  | ● |
+| [LabLog](../identity/saas-apps/lablog-tutorial.md) |  | ● |
+| [LambdaTest Single Sign on](../identity/saas-apps/lambda-test-single-sign-on-tutorial.md) |  | ● |
+| [LanSchool Air](../identity/saas-apps/lanschool-air-provisioning-tutorial.md) | ● | ● |
+| [LaunchDarkly](../identity/saas-apps/launchdarkly-tutorial.md) |  | ● |
+| [LawVu](../identity/saas-apps/lawvu-provisioning-tutorial.md) | ● | ● |
+| [LDAP](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
+| [Lean](../identity/saas-apps/lean-tutorial.md) |  | ● |
+| [Leapsome](../identity/saas-apps/leapsome-provisioning-tutorial.md) | ● | ● |
+| [LearnUpon](../identity/saas-apps/learnupon-tutorial.md) |  | ● |
+| [Ledgy](../identity/saas-apps/ledgy-tutorial.md) |  | ● |
+| [Lessonly](../identity/saas-apps/lessonly-tutorial.md) |  | ● |
+| [Lexonis TalentScape](../identity/saas-apps/lexonis-talentscape-provisioning-tutorial.md) | ● | ● |
+| [LimbleCMMS](../identity/saas-apps/limblecmms-provisioning-tutorial.md) | ● |  |
+| [LinkedIn Elevate](../identity/saas-apps/linkedinelevate-provisioning-tutorial.md) | ● | ● |
+| [LinkedIn Learning](../identity/saas-apps/linkedinlearning-tutorial.md) |  | ● |
+| [LinkedIn Sales Navigator](../identity/saas-apps/linkedinsalesnavigator-provisioning-tutorial.md) | ● | ● |
+| [LinkedIn Talent Solutions](../identity/saas-apps/linkedin-talent-solutions-tutorial.md) |  | ● |
+| [Litmos](../identity/saas-apps/litmos-provisioning-tutorial.md) | ● | ● |
+| [LogicGate](../identity/saas-apps/logicgate-provisioning-tutorial.md) | ● |  |
+| [GoTo](../identity/saas-apps/goto-provisioning-tutorial.md) | ● | ● |
+| [Looker Analytics Platform](../identity/saas-apps/looker-analytics-platform-tutorial.md) |  | ● |
+| [Looop](../identity/saas-apps/looop-provisioning-tutorial.md) | ● |  |
+| [Lucid (All Products)](../identity/saas-apps/lucid-all-products-provisioning-tutorial.md) | ● | ● |
+| [Lucidchart](../identity/saas-apps/lucidchart-provisioning-tutorial.md) | ● | ● |
+| [Lusha](../identity/saas-apps/lusha-tutorial.md) |  | ● |
+| [LUSID](../identity/saas-apps/LUSID-provisioning-tutorial.md) | ● | ● |
+| [Lynda.com](../identity/saas-apps/lynda-tutorial.md) |  | ● |
 | [M-Files](~/identity/saas-apps/m-files-provisioning-tutorial.md) | ● | ● |
 | [Mailosaur](~/identity/saas-apps/mailosaur-tutorial.md) |  | ● |
 | [Mapiq](~/identity/saas-apps/mapiq-tutorial.md) |  | ● |
