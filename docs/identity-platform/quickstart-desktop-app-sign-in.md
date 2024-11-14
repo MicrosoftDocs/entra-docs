@@ -15,7 +15,7 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Sign in users in a sample Desktop app
 
-[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
+
 
 ::: zone pivot="workforce"
 
@@ -28,3 +28,5 @@ Workforce content goes here.
 External content goes here.
 
 ::: zone-end 
+
+[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
