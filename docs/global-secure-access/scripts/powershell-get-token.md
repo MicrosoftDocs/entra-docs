@@ -134,6 +134,9 @@ Write-Output "Error: Authentication result, token or tenant id returned with nul
 $accessToken = $token
 
 Set-Content -Path C:\token.txt -Value "$accessToken"
+Write-Output "---------------------------------------"
+Write-Output "Access Token that you acquired is available in C:\token.txt. "
+Write-Output "---------------------------------------"
 Write-Output "Please ensure no additional spaces are introduced when copying token to marketplace input form. Introducing spaces can change the token and can cause failures"
 Write-Output "---------------------------------------"
 
@@ -146,21 +149,23 @@ cd "C:\"
 # Note that if the Connector service is not uninstalled properly, next iteration can fail on this machine.  
 
 Write-Output "---------------------------------------"
-Write-Output "Performing the cleanup. Kindly follow the prompts to Uninstall and clean the state"
+Write-Output "Performing the cleanup. Kindly be patient"
 Write-Output "---------------------------------------"
 
-Start-Process -FilePath 'C:\temp\MicrosoftEntraPrivateNetworkConnectorInstaller.exe' /uninstall -Wait 
+C:\temp\MicrosoftEntraPrivateNetworkConnectorInstaller.exe /uninstall /quiet 
+
+#Wait 60 seconds
+Start-Sleep -Seconds 60
 
 # Delete the related files. Note that if you need to get the token again from 
 
 Write-Host "Cleaning Up....."
-Remove-Item C:\temp\*.*
-Remove-Item -Path "C:\temp"
+Remove-Item -Path "C:\temp" -Recurse
 Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector" -Recurse
 Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector updater" -Recurse
 
 Write-Output "---------------------------------------"
-Write-Output "Access Token that you acquired is available in C:\token.txt. "
+Write-Output "All Cleaned Up. Access Token that you acquired is available in C:\token.txt. "
 Write-Output "---------------------------------------"
 
 } else {
