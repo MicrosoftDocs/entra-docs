@@ -435,31 +435,31 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Jostle](../identity/saas-apps/jostle-provisioning-tutorial.md) | ● | ● |
 | [Joyn FSM](../identity/saas-apps/joyn-fsm-provisioning-tutorial.md) | ● |  |
 | [Juno Journey](../identity/saas-apps/juno-journey-provisioning-tutorial.md) | ● | ● |
-| [Kairos Business](~/identity/saas-apps/kairos-business-tutorial.md) |  | ● |
-| [Kanbanize](~/identity/saas-apps/kanbanize-tutorial.md) |  | ● |
-| [Keepabl](~/identity/saas-apps/keepabl-provisioning-tutorial.md) | ● | ● |
-| [Keeper Password Manager & Digital Vault](~/identity/saas-apps/keeper-password-manager-digitalvault-provisioning-tutorial.md) | ● | ● |
-| [Kendis - Microsoft Entra Integration](~/identity/saas-apps/kendis-scaling-agile-platform-tutorial.md) |  | ● |
-| [Keystone](~/identity/saas-apps/keystone-provisioning-tutorial.md) | ● | ● |
-| [Khoros Care](~/identity/saas-apps/khoros-care-tutorial.md) |  | ● |
-| [Kindling](~/identity/saas-apps/kindling-tutorial.md) |  | ● |
-| [Kintone](~/identity/saas-apps/kintone-provisioning-tutorial.md) | ● | ● |
-| [Kion](~/identity/saas-apps/cloudtamer-io-tutorial.md) |  | ● |
-| [Kisi Physical Security](~/identity/saas-apps/kisi-physical-security-provisioning-tutorial.md) | ● | ● |
-| [Kiteworks](~/identity/saas-apps/kiteworks-tutorial.md) |  | ● |
-| [Klaxoon](~/identity/saas-apps/klaxoon-provisioning-tutorial.md) | ● | ● |
-| [Klaxoon SAML](~/identity/saas-apps/klaxoon-saml-provisioning-tutorial.md) | ● | ● |
-| [Klue](~/identity/saas-apps/klue-tutorial.md) |  | ● |
-| [Kno2fy](~/identity/saas-apps/kno2fy-provisioning-tutorial.md) | ● | ● |
-| [KnowBe4 Security Awareness Training](~/identity/saas-apps/knowbe4-security-awareness-training-provisioning-tutorial.md) | ● | ● |
-| [Knowledge Anywhere LMS](~/identity/saas-apps/knowledge-anywhere-lms-tutorial.md) |  | ● |
-| [Knowledge Work](~/identity/saas-apps/knowledge-work-tutorial.md) |  | ● |
-| [KnowledgeOwl](~/identity/saas-apps/knowledgeowl-tutorial.md) |  | ● |
-| [Kofax TotalAgility](~/identity/saas-apps/kofax-totalagility-tutorial.md) |  | ● |
-| [Kpifire](~/identity/saas-apps/kpifire-provisioning-tutorial.md) | ● | ● |
-| [KPN Grip](~/identity/saas-apps/kpn-grip-provisioning-tutorial.md) | ● | |
-| [Krisp Technologies](~/identity/saas-apps/krisp-technologies-tutorial.md) |  | ● |
-| [Kumolus](~/identity/saas-apps/kumolus-tutorial.md) |  | ● |
+| [Kairos Business](../identity/saas-apps/kairos-business-tutorial.md) |  | ● |
+| [Kanbanize](../identity/saas-apps/kanbanize-tutorial.md) |  | ● |
+| [Keepabl](../identity/saas-apps/keepabl-provisioning-tutorial.md) | ● | ● |
+| [Keeper Password Manager & Digital Vault](../identity/saas-apps/keeper-password-manager-digitalvault-provisioning-tutorial.md) | ● | ● |
+| [Kendis - Microsoft Entra Integration](../identity/saas-apps/kendis-scaling-agile-platform-tutorial.md) |  | ● |
+| [Keystone](../identity/saas-apps/keystone-provisioning-tutorial.md) | ● | ● |
+| [Khoros Care](../identity/saas-apps/khoros-care-tutorial.md) |  | ● |
+| [Kindling](../identity/saas-apps/kindling-tutorial.md) |  | ● |
+| [Kintone](../identity/saas-apps/kintone-provisioning-tutorial.md) | ● | ● |
+| [Kion](../identity/saas-apps/cloudtamer-io-tutorial.md) |  | ● |
+| [Kisi Physical Security](../identity/saas-apps/kisi-physical-security-provisioning-tutorial.md) | ● | ● |
+| [Kiteworks](../identity/saas-apps/kiteworks-tutorial.md) |  | ● |
+| [Klaxoon](../identity/saas-apps/klaxoon-provisioning-tutorial.md) | ● | ● |
+| [Klaxoon SAML](../identity/saas-apps/klaxoon-saml-provisioning-tutorial.md) | ● | ● |
+| [Klue](../identity/saas-apps/klue-tutorial.md) |  | ● |
+| [Kno2fy](../identity/saas-apps/kno2fy-provisioning-tutorial.md) | ● | ● |
+| [KnowBe4 Security Awareness Training](../identity/saas-apps/knowbe4-security-awareness-training-provisioning-tutorial.md) | ● | ● |
+| [Knowledge Anywhere LMS](../identity/saas-apps/knowledge-anywhere-lms-tutorial.md) |  | ● |
+| [Knowledge Work](../identity/saas-apps/knowledge-work-tutorial.md) |  | ● |
+| [KnowledgeOwl](../identity/saas-apps/knowledgeowl-tutorial.md) |  | ● |
+| [Kofax TotalAgility](../identity/saas-apps/kofax-totalagility-tutorial.md) |  | ● |
+| [Kpifire](../identity/saas-apps/kpifire-provisioning-tutorial.md) | ● | ● |
+| [KPN Grip](../identity/saas-apps/kpn-grip-provisioning-tutorial.md) | ● | |
+| [Krisp Technologies](../identity/saas-apps/krisp-technologies-tutorial.md) |  | ● |
+| [Kumolus](../identity/saas-apps/kumolus-tutorial.md) |  | ● |
 | [LabLog](~/identity/saas-apps/lablog-tutorial.md) |  | ● |
 | [LambdaTest Single Sign on](~/identity/saas-apps/lambda-test-single-sign-on-tutorial.md) |  | ● |
 | [LanSchool Air](~/identity/saas-apps/lanschool-air-provisioning-tutorial.md) | ● | ● |
