@@ -14,7 +14,7 @@ ms.reviewer: egreenberg
 
 ---
 
-# View applied Conditional Access policies in Microsoft Entra sign-in logs
+# View applied Conditional Access details in Microsoft Entra sign-in logs
 
 With Conditional Access policies, you can control how your users get access to your Azure and Microsoft Entra resources. As a tenant admin, you need to be able to determine what effect your Conditional Access policies have on sign-ins to your tenant, so that you can take action if necessary. The sign-in logs in Microsoft Entra ID give you the information that you need to assess the effect of your Conditional Access policies.
 
@@ -36,25 +36,19 @@ The following built-in roles grant permission to *view sign-in logs*:
 - Security Reader
 - Security Administrator
 
-### Permissions for client apps
+### Permissions
 
-If you use a client app to pull sign-in logs from Microsoft Graph, your app needs permissions to receive the `appliedConditionalAccessPolicy` resource from Microsoft Graph. As a best practice, assign `Policy.Read.ConditionalAccess` because it's the least privileged permission.
+If you use a client app or the Microsoft Graph PowerShell module to pull sign-in logs from Microsoft Graph, your app needs permissions to receive the `appliedConditionalAccessPolicy` resource from Microsoft Graph. As a best practice, assign `Policy.Read.ConditionalAccess` because it's the least privileged permission.
 
-The following permissions allows a client app to access applied Conditional Access policies in sign-in logs through Microsoft Graph:
+The following permissions allows a client app to access the activity logs and any applied applied Conditional Access policies in sign-in logs through Microsoft Graph:
 
 - `Policy.Read.ConditionalAccess`
 - `Policy.ReadWrite.ConditionalAccess`
 - `Policy.Read.All`
-
-### Permissions for PowerShell
-
-Like any other client app, the Microsoft Graph PowerShell module needs client permissions to access applied Conditional Access policies in the sign-in logs. To successfully pull applied Conditional Access policies in the sign-in logs, you must consent to the necessary permissions with your administrator account for Microsoft Graph PowerShell. As a best practice, consent to:
-
-- `Policy.Read.ConditionalAccess`
 - `AuditLog.Read.All`
 - `Directory.Read.All`
 
-The following permissions are the least privileged permissions with the necessary access:
+To use the Microsoft Graph PowerShell module you also need the following least privileged permissions with the necessary access:
 
 - To consent to the necessary permissions: `Connect-MgGraph -Scopes Policy.Read.ConditionalAccess, AuditLog.Read.All, Directory.Read.All`
 - To view the sign-in logs: `Get-MgAuditLogSignIn`
@@ -80,6 +74,8 @@ You can access the sign-in logs by using the Microsoft Entra admin center, the A
 ## View Conditional Access policies in Microsoft Entra sign-in logs
 <a name='view-conditional-access-policies-in-azure-ad-sign-in-logs'></a>
 
+### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
+
 [!INCLUDE [portal update](../../includes/portal-update.md)]
 
 The activity details of sign-in logs contain several tabs. The **Conditional Access** tab lists the Conditional Access policies applied to that sign-in event.
@@ -90,6 +86,60 @@ The activity details of sign-in logs contain several tabs. The **Conditional Acc
 1. Select the **Conditional Access** tab.
 
 If you don't see the Conditional Access policies, confirm you're using a role that provides access to both the sign-in logs and the Conditional Access policies.
+
+### [Microsoft Graph API](#tab/microsoft-graph-api)
+
+Follow these instructions to list Microsoft Entra roles using the Microsoft Graph API in [Graph Explorer](https://aka.ms/ge).
+
+1. Sign in to the [Graph Explorer](https://aka.ms/ge).
+1. Select **GET** as the HTTP method from the dropdown. 
+1. Select the API version to **v1.0**.
+1. To get a list of Conditional Access policies, add the following query and select **Run query**.
+
+   ```http
+   GET https://graph.microsoft.com/v1.0/identity/conditionalAccess/policies
+   ```
+
+1. To view a specific Conditional Access policy, add the policy ID.
+
+   ```http
+   GET https://graph.microsoft.com/v1.0/identity/conditionalAccess/policies/{id}
+   ```
+
+For more information, review the following resources:
+
+- [conditionalAccessPolicy resource type](/graph/api/resources/conditionalaccesspolicy)
+- [signIn resource type](/graph/api/resources/signin)
+
+### [Microsoft Graph PowerShell](#tab/microsoft-graph-powershell)
+
+Follow these steps to list Microsoft Entra roles using PowerShell.
+
+1. Open a PowerShell window. If necessary, use [Install-Module](/powershell/module/powershellget/install-module) to install Microsoft Graph PowerShell. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+
+    ```powershell
+    Install-Module Microsoft.Graph -Scope CurrentUser
+    ```
+
+2. In a PowerShell window, use [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) to sign in to your tenant.
+
+    ```powershell
+    Connect-MgGraph -Scopes "Policy.Read.All", "Policy.Read.ConditionalAccess"
+    ```
+
+3. Use [Get-MgIdentityConditionalAccessPolicy](/powershell/module/microsoft.graph.identity.governance/Get-MgIdentityConditionalAccessPolicy) to get all Conditional Access policies.
+
+    ```powershell
+    Get-MgIdentityConditionalAccessPolicy
+    ```
+
+4. To format the results as a list, use the following command:
+
+    ```powershell
+    Get-MgIdentityConditionalAccessPolicy |Format-List
+    ```
+
+---
 
 ## Next steps
 
