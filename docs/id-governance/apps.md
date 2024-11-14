@@ -576,54 +576,54 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Othership Workplace Scheduler](../identity/saas-apps/othership-workplace-scheduler-tutorial.md) |  | ● |
 | [OutSystems](../identity/saas-apps/outsystems-tutorial.md) |  | ● |
 | [Overdrive](../identity/saas-apps/overdrive-books-tutorial.md) |  | ● |
-| [PagerDuty](~/identity/saas-apps/pagerduty-tutorial.md) |  | ● |
-| [Palantir Foundry](~/identity/saas-apps/palantir-foundry-tutorial.md) |  | ● |
-| [Palo Alto Networks - Admin UI](~/identity/saas-apps/paloaltoadmin-tutorial.md) |  | ● |
-| [Palo Alto Networks - Captive Portal](~/identity/saas-apps/paloaltonetworks-captiveportal-tutorial.md) |  | ● |
-| [Palo Alto Networks - GlobalProtect](~/identity/saas-apps/palo-alto-networks-globalprotect-tutorial.md) |  | ● |
-| [Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service](~/identity/saas-apps/palo-alto-networks-cloud-identity-engine-provisioning-tutorial.md) | ● | ● |
-| [Palo Alto Networks SCIM Connector](~/identity/saas-apps/palo-alto-networks-scim-connector-provisioning-tutorial.md) | ● | ● |
-| [PandaDoc](~/identity/saas-apps/pandadoc-tutorial.md) |  | ● |
-| [Panopto](~/identity/saas-apps/panopto-tutorial.md) |  | ● |
-| [Panorays](~/identity/saas-apps/panorays-tutorial.md) |  | ● |
-| [PaperCut Cloud Print Management](~/identity/saas-apps/papercut-cloud-print-management-provisioning-tutorial.md) | ● |  |
-| [Papirfly SSO](~/identity/saas-apps/papirfly-sso-tutorial.md) |  | ● |
-| [Parkable](~/identity/saas-apps/parkable-tutorial.md) |  | ● |
-| [Parkalot - Car park management](~/identity/saas-apps/parkalot-car-park-management-tutorial.md) |  | ● |
-| [Parsable](~/identity/saas-apps/parsable-provisioning-tutorial.md) | ● |  |
-| [Peakon](~/identity/saas-apps/peakon-provisioning-tutorial.md) | ● | ● |
-| [Perimeter 81](~/identity/saas-apps/perimeter-81-tutorial.md) |  | ● |
-| [Personify Inc](~/identity/saas-apps/personify-inc-provisioning-tutorial.md) | ● | ● |
-| [Peripass](~/identity/saas-apps/peripass-provisioning-tutorial.md) | ● |  |
-| [Pingboard](~/identity/saas-apps/pingboard-provisioning-tutorial.md) | ● | ● |
-| [PKSHA Chatbot](~/identity/saas-apps/pksha-chatbot-tutorial.md) |  | ● |
-| [Plandisc](~/identity/saas-apps/plandisc-provisioning-tutorial.md) | ● |  |
-| [PlanMyLeave](~/identity/saas-apps/planmyleave-tutorial.md) |  | ● |
-| [Playvox](~/identity/saas-apps/playvox-provisioning-tutorial.md) | ● |  |
-| [Pluto](~/identity/saas-apps/pluto-tutorial.md) |  | ● |
-| [Podbean](~/identity/saas-apps/podbean-tutorial.md) |  | ● |
-| [PolicyStat](~/identity/saas-apps/policystat-tutorial.md) |  | ● |
-| [PoliteMail - SSO](~/identity/saas-apps/politemail-sso-tutorial.md) |  | ● |
-| [Postman](~/identity/saas-apps/postman-provisioning-tutorial.md) | ● | ● |
-| [Preciate](~/identity/saas-apps/preciate-provisioning-tutorial.md) | ● |  |
-| [PressReader](~/identity/saas-apps/pressreader-tutorial.md) |  | ● |
-| [PrinterLogic SaaS](~/identity/saas-apps/printer-logic-saas-provisioning-tutorial.md) | ● | ● |
-| [PrinterLogic](~/identity/saas-apps/printerlogic-saas-tutorial.md) |  | ● |
-| [Printix](~/identity/saas-apps/printix-tutorial.md) |  | ● |
-| [Priority Matrix](~/identity/saas-apps/priority-matrix-provisioning-tutorial.md) | ● |  |
-| [Prisma Cloud SSO](~/identity/saas-apps/prisma-cloud-tutorial.md) |  | ● |
-| [ProcessUnity](~/identity/saas-apps/processunity-tutorial.md) |  | ● |
-| [ProdPad](~/identity/saas-apps/prodpad-provisioning-tutorial.md) | ● | ● |
-| [productboard](~/identity/saas-apps/productboard-tutorial.md) |  | ● |
-| [Productive](~/identity/saas-apps/productive-tutorial.md) |  | ● |
-| [ProductPlan](~/identity/saas-apps/productplan-tutorial.md) |  | ● |
-| [ProjectPlace](~/identity/saas-apps/projectplace-tutorial.md) |  | ● |
-| [Promapp](~/identity/saas-apps/promapp-provisioning-tutorial.md) | ● |  |
-| [Proofpoint Security Awareness Training](~/identity/saas-apps/proofpoint-security-awareness-training-tutorial.md) |  | ● |
-| [Proware](~/identity/saas-apps/proware-provisioning-tutorial.md) | ● | ● |
-| [Proxyclick](~/identity/saas-apps/proxyclick-provisioning-tutorial.md) | ● | ● |
-| [PurelyHR](~/identity/saas-apps/purelyhr-tutorial.md) |  | ● |
-| [pymetrics](~/identity/saas-apps/pymetrics-tutorial.md) |  | ● |
+| [PagerDuty](../identity/saas-apps/pagerduty-tutorial.md) |  | ● |
+| [Palantir Foundry](../identity/saas-apps/palantir-foundry-tutorial.md) |  | ● |
+| [Palo Alto Networks - Admin UI](../identity/saas-apps/paloaltoadmin-tutorial.md) |  | ● |
+| [Palo Alto Networks - Captive Portal](../identity/saas-apps/paloaltonetworks-captiveportal-tutorial.md) |  | ● |
+| [Palo Alto Networks - GlobalProtect](../identity/saas-apps/palo-alto-networks-globalprotect-tutorial.md) |  | ● |
+| [Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service](../identity/saas-apps/palo-alto-networks-cloud-identity-engine-provisioning-tutorial.md) | ● | ● |
+| [Palo Alto Networks SCIM Connector](../identity/saas-apps/palo-alto-networks-scim-connector-provisioning-tutorial.md) | ● | ● |
+| [PandaDoc](../identity/saas-apps/pandadoc-tutorial.md) |  | ● |
+| [Panopto](../identity/saas-apps/panopto-tutorial.md) |  | ● |
+| [Panorays](../identity/saas-apps/panorays-tutorial.md) |  | ● |
+| [PaperCut Cloud Print Management](../identity/saas-apps/papercut-cloud-print-management-provisioning-tutorial.md) | ● |  |
+| [Papirfly SSO](../identity/saas-apps/papirfly-sso-tutorial.md) |  | ● |
+| [Parkable](../identity/saas-apps/parkable-tutorial.md) |  | ● |
+| [Parkalot - Car park management](../identity/saas-apps/parkalot-car-park-management-tutorial.md) |  | ● |
+| [Parsable](../identity/saas-apps/parsable-provisioning-tutorial.md) | ● |  |
+| [Peakon](../identity/saas-apps/peakon-provisioning-tutorial.md) | ● | ● |
+| [Perimeter 81](../identity/saas-apps/perimeter-81-tutorial.md) |  | ● |
+| [Personify Inc](../identity/saas-apps/personify-inc-provisioning-tutorial.md) | ● | ● |
+| [Peripass](../identity/saas-apps/peripass-provisioning-tutorial.md) | ● |  |
+| [Pingboard](../identity/saas-apps/pingboard-provisioning-tutorial.md) | ● | ● |
+| [PKSHA Chatbot](../identity/saas-apps/pksha-chatbot-tutorial.md) |  | ● |
+| [Plandisc](../identity/saas-apps/plandisc-provisioning-tutorial.md) | ● |  |
+| [PlanMyLeave](../identity/saas-apps/planmyleave-tutorial.md) |  | ● |
+| [Playvox](../identity/saas-apps/playvox-provisioning-tutorial.md) | ● |  |
+| [Pluto](../identity/saas-apps/pluto-tutorial.md) |  | ● |
+| [Podbean](../identity/saas-apps/podbean-tutorial.md) |  | ● |
+| [PolicyStat](../identity/saas-apps/policystat-tutorial.md) |  | ● |
+| [PoliteMail - SSO](../identity/saas-apps/politemail-sso-tutorial.md) |  | ● |
+| [Postman](../identity/saas-apps/postman-provisioning-tutorial.md) | ● | ● |
+| [Preciate](../identity/saas-apps/preciate-provisioning-tutorial.md) | ● |  |
+| [PressReader](../identity/saas-apps/pressreader-tutorial.md) |  | ● |
+| [PrinterLogic SaaS](../identity/saas-apps/printer-logic-saas-provisioning-tutorial.md) | ● | ● |
+| [PrinterLogic](../identity/saas-apps/printerlogic-saas-tutorial.md) |  | ● |
+| [Printix](../identity/saas-apps/printix-tutorial.md) |  | ● |
+| [Priority Matrix](../identity/saas-apps/priority-matrix-provisioning-tutorial.md) | ● |  |
+| [Prisma Cloud SSO](../identity/saas-apps/prisma-cloud-tutorial.md) |  | ● |
+| [ProcessUnity](../identity/saas-apps/processunity-tutorial.md) |  | ● |
+| [ProdPad](../identity/saas-apps/prodpad-provisioning-tutorial.md) | ● | ● |
+| [productboard](../identity/saas-apps/productboard-tutorial.md) |  | ● |
+| [Productive](../identity/saas-apps/productive-tutorial.md) |  | ● |
+| [ProductPlan](../identity/saas-apps/productplan-tutorial.md) |  | ● |
+| [ProjectPlace](../identity/saas-apps/projectplace-tutorial.md) |  | ● |
+| [Promapp](../identity/saas-apps/promapp-provisioning-tutorial.md) | ● |  |
+| [Proofpoint Security Awareness Training](../identity/saas-apps/proofpoint-security-awareness-training-tutorial.md) |  | ● |
+| [Proware](../identity/saas-apps/proware-provisioning-tutorial.md) | ● | ● |
+| [Proxyclick](../identity/saas-apps/proxyclick-provisioning-tutorial.md) | ● | ● |
+| [PurelyHR](../identity/saas-apps/purelyhr-tutorial.md) |  | ● |
+| [pymetrics](../identity/saas-apps/pymetrics-tutorial.md) |  | ● |
 | [Qiita Team](~/identity/saas-apps/qiita-team-tutorial.md) |  | ● |
 | [Qmarkets Idea & Innovation Management](~/identity/saas-apps/qmarkets-idea-innovation-management-tutorial.md) |  | ● |
 | [QReserve](~/identity/saas-apps/qreserve-tutorial.md) |  | ● |
