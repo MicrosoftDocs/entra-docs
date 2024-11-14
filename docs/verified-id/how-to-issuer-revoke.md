@@ -152,7 +152,7 @@ You can use indexed claims in verifiable credentials to search for issued verifi
    :::image type="content" source="media/how-to-issuer-revoke/revoke-search.png" alt-text="Screenshot that shows the credential to revoke.":::
   
     [>!IMPORTANT]
-     >We only store a hashed version of an indexed claim. This means that only exact matches of the value stored in the indexed claim work. When you enter information into the text box, it is hashed using the same algorithm. This hashed value is then used to search for a match to the stored hashed claim. If you don't find a match, you might have entered the wrong information or the claim might not be indexed.
+    >We only store a hashed version of an indexed claim. This means that only exact matches of the value stored in the indexed claim work. When you enter information into the text box, it is hashed using the same algorithm. This hashed value is then used to search for a match to the stored hashed claim. If you don't find a match, you might have entered the wrong information or the claim might not be indexed.
   
 1. When a match is found, select the **Revoke** option to the right of the credential you want to revoke.
 
