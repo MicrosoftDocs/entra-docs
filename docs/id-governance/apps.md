@@ -241,38 +241,38 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Curator](../identity/saas-apps/curator-tutorial.md) |  | ● |
 | [Cybozu](../identity/saas-apps/cybozu-provisioning-tutorial.md) | ● | ● |
 | [CybSafe](../identity/saas-apps/cybsafe-provisioning-tutorial.md) | ● |  |
-| [Dagster Cloud](~/identity/saas-apps/dagster-cloud-provisioning-tutorial.md) | ● | ● |
-| [Databook](~/identity/saas-apps/databook-tutorial.md) |  | ● |
-| [DataCamp](~/identity/saas-apps/datacamp-tutorial.md) |  | ● |
-| [Datadog](~/identity/saas-apps/datadog-provisioning-tutorial.md) | ● | ● |
-| [Datava Enterprise Service Platform](~/identity/saas-apps/datava-enterprise-service-platform-tutorial.md) |  | ● |
-| [deBroome Brand Portal](~/identity/saas-apps/debroome-brand-portal-tutorial.md) |  | ● |
-| [Degreed](~/identity/saas-apps/degreed-tutorial.md) |  | ● |
-| [Delivery Solutions](~/identity/saas-apps/delivery-solutions-tutorial.md) |  | ● |
-| [Deputy](~/identity/saas-apps/deputy-tutorial.md) |  | ● |
-| [Descartes](~/identity/saas-apps/descartes-tutorial.md) |  | ● |
-| [Dialpad](~/identity/saas-apps/dialpad-provisioning-tutorial.md) | ● |  |
-| [Diffchecker](~/identity/saas-apps/diffchecker-provisioning-tutorial.md) | ● | ● |
-| [DigiCert](~/identity/saas-apps/digicert-tutorial.md) | | ● |
-| [Digital Pigeon](~/identity/saas-apps/digital-pigeon-tutorial.md) |  | ● |
-| [Directory Services Protector](~/identity/saas-apps/directory-services-protector-tutorial.md) |  | ● |
-| [Directory Services](~/identity/saas-apps/directory-services-tutorial.md) |  | ● |
-| [directprint.io Cloud Print Administration](~/identity/saas-apps/directprint-io-cloud-print-administration-tutorial.md) |  | ● |
-| [Directprint.io](~/identity/saas-apps/directprint-io-provisioning-tutorial.md) | ● | ● |
-| [Docker Business](~/identity/saas-apps/docker-tutorial.md) |  | ● |
-| [Documo](~/identity/saas-apps/documo-provisioning-tutorial.md) | ● | ● |
-| [DocuSign](~/identity/saas-apps/docusign-provisioning-tutorial.md) | ● | ● |
-| [Domo](~/identity/saas-apps/domo-tutorial.md) |  | ● |
-| [Dotcom-Monitor](~/identity/saas-apps/dotcom-monitor-tutorial.md) |  | ● |
-| [Dovetale](~/identity/saas-apps/dovetale-tutorial.md) |  | ● |
-| [Dozuki](~/identity/saas-apps/dozuki-tutorial.md) |  | ● |
-| [Draup, Inc](~/identity/saas-apps/draup-inc-tutorial.md) |  | ● |
-| [Drawboard Projects](~/identity/saas-apps/drawboard-projects-tutorial.md) |  | ● |
-| [Drift](~/identity/saas-apps/drift-tutorial.md) |  | ● |
-| [Dropbox Business](~/identity/saas-apps/dropboxforbusiness-provisioning-tutorial.md) | ● | ● |
-| [Druva](~/identity/saas-apps/druva-provisioning-tutorial.md) | ● | ● |
-| [Dynamic Signal](~/identity/saas-apps/dynamic-signal-provisioning-tutorial.md) | ● | ● |
-| [Dynatrace](~/identity/saas-apps/dynatrace-tutorial.md) |  | ● |
+| [Dagster Cloud](../identity/saas-apps/dagster-cloud-provisioning-tutorial.md) | ● | ● |
+| [Databook](../identity/saas-apps/databook-tutorial.md) |  | ● |
+| [DataCamp](../identity/saas-apps/datacamp-tutorial.md) |  | ● |
+| [Datadog](../identity/saas-apps/datadog-provisioning-tutorial.md) | ● | ● |
+| [Datava Enterprise Service Platform](../identity/saas-apps/datava-enterprise-service-platform-tutorial.md) |  | ● |
+| [deBroome Brand Portal](../identity/saas-apps/debroome-brand-portal-tutorial.md) |  | ● |
+| [Degreed](../identity/saas-apps/degreed-tutorial.md) |  | ● |
+| [Delivery Solutions](../identity/saas-apps/delivery-solutions-tutorial.md) |  | ● |
+| [Deputy](../identity/saas-apps/deputy-tutorial.md) |  | ● |
+| [Descartes](../identity/saas-apps/descartes-tutorial.md) |  | ● |
+| [Dialpad](../identity/saas-apps/dialpad-provisioning-tutorial.md) | ● |  |
+| [Diffchecker](../identity/saas-apps/diffchecker-provisioning-tutorial.md) | ● | ● |
+| [DigiCert](../identity/saas-apps/digicert-tutorial.md) | | ● |
+| [Digital Pigeon](../identity/saas-apps/digital-pigeon-tutorial.md) |  | ● |
+| [Directory Services Protector](../identity/saas-apps/directory-services-protector-tutorial.md) |  | ● |
+| [Directory Services](../identity/saas-apps/directory-services-tutorial.md) |  | ● |
+| [directprint.io Cloud Print Administration](../identity/saas-apps/directprint-io-cloud-print-administration-tutorial.md) |  | ● |
+| [Directprint.io](../identity/saas-apps/directprint-io-provisioning-tutorial.md) | ● | ● |
+| [Docker Business](../identity/saas-apps/docker-tutorial.md) |  | ● |
+| [Documo](../identity/saas-apps/documo-provisioning-tutorial.md) | ● | ● |
+| [DocuSign](../identity/saas-apps/docusign-provisioning-tutorial.md) | ● | ● |
+| [Domo](../identity/saas-apps/domo-tutorial.md) |  | ● |
+| [Dotcom-Monitor](../identity/saas-apps/dotcom-monitor-tutorial.md) |  | ● |
+| [Dovetale](../identity/saas-apps/dovetale-tutorial.md) |  | ● |
+| [Dozuki](../identity/saas-apps/dozuki-tutorial.md) |  | ● |
+| [Draup, Inc](../identity/saas-apps/draup-inc-tutorial.md) |  | ● |
+| [Drawboard Projects](../identity/saas-apps/drawboard-projects-tutorial.md) |  | ● |
+| [Drift](../identity/saas-apps/drift-tutorial.md) |  | ● |
+| [Dropbox Business](../identity/saas-apps/dropboxforbusiness-provisioning-tutorial.md) | ● | ● |
+| [Druva](../identity/saas-apps/druva-provisioning-tutorial.md) | ● | ● |
+| [Dynamic Signal](../identity/saas-apps/dynamic-signal-provisioning-tutorial.md) | ● | ● |
+| [Dynatrace](../identity/saas-apps/dynatrace-tutorial.md) |  | ● |
 | [EAComposer](~/identity/saas-apps/eacomposer-tutorial.md) |  | ● |
 | [EasySSO for Bamboo](~/identity/saas-apps/easysso-for-bamboo-tutorial.md) |  | ● |
 | [EasySSO for Confluence](~/identity/saas-apps/easysso-for-confluence-tutorial.md) |  | ● |
