@@ -26,7 +26,7 @@ After you have migrated your users and groups to Microsoft Entra ID, you may be 
 
 However, you may encounter issues in Windows, Intune, and Outlook due to legacy values remaining in on-premises user and group attributes. For example, hybrid device joining may fail because the system pulls the username and domain from these outdated attributes.
 
-To prevent these issues, we recommend that customers clear these on-premises attributes before completing the migration.
+To prevent these issues, we recommend that customers clear these on-premises attributes.
 
 These on-premises attributes include  
 
