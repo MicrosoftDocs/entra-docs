@@ -893,23 +893,23 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Zenya](../identity/saas-apps/zenya-provisioning-tutorial.md) | ● | ● |
 | [Zero](../identity/saas-apps/zero-provisioning-tutorial.md) | ● | ● |
 | [Zip](../identity/saas-apps/zip-provisioning-tutorial.md) | ● | ● |
-| [Zoho One](~/identity/saas-apps/zoho-one-provisioning-tutorial.md) | ● | ● |
-| [Zoom](~/identity/saas-apps/zoom-provisioning-tutorial.md) | ● | ● |
-| [Zoom for Government](~/identity/saas-apps/zoom-for-government-tutorial.md) |  | ● |
-| [Zscaler](~/identity/saas-apps/zscaler-provisioning-tutorial.md) | ● | ● |
-| [Zscaler B2B User Portal](~/identity/saas-apps/zscaler-b2b-user-portal-tutorial.md) |  | ● |
-| [Zscaler Beta](~/identity/saas-apps/zscaler-beta-provisioning-tutorial.md) | ● | ● |
-| [Zscaler Internet Access ZSCloud](~/identity/saas-apps/zscaler-internet-access-zscloud-tutorial.md) |  | ● |
-| [Zscaler Internet Access ZSNet](~/identity/saas-apps/zscaler-internet-access-zsnet-tutorial.md) |  | ● |
-| [Zscaler Internet Access ZSOne](~/identity/saas-apps/zscaler-internet-access-zsone-tutorial.md) |  | ● |
-| [Zscaler Internet Access ZSThree](~/identity/saas-apps/zscaler-internet-access-zsthree-tutorial.md) |  | ● |
-| [Zscaler Internet Access ZSTwo](~/identity/saas-apps/zscaler-internet-access-zstwo-tutorial.md) |  | ● |
-| [Zscaler One](~/identity/saas-apps/zscaler-one-provisioning-tutorial.md) | ● | ● |
-| [Zscaler Private Access](~/identity/saas-apps/zscaler-private-access-provisioning-tutorial.md) | ● | ● |
-| [Zscaler Three](~/identity/saas-apps/zscaler-three-provisioning-tutorial.md) | ● | ● |
-| [Zscaler Two](~/identity/saas-apps/zscaler-two-provisioning-tutorial.md) | ● | ● |
-| [Zscaler ZSCloud](~/identity/saas-apps/zscaler-zscloud-provisioning-tutorial.md) | ● | ● |
-| [Zylo](~/identity/saas-apps/zylo-tutorial.md) |  | ● |
+| [Zoho One](../identity/saas-apps/zoho-one-provisioning-tutorial.md) | ● | ● |
+| [Zoom](../identity/saas-apps/zoom-provisioning-tutorial.md) | ● | ● |
+| [Zoom for Government](../identity/saas-apps/zoom-for-government-tutorial.md) |  | ● |
+| [Zscaler](../identity/saas-apps/zscaler-provisioning-tutorial.md) | ● | ● |
+| [Zscaler B2B User Portal](../identity/saas-apps/zscaler-b2b-user-portal-tutorial.md) |  | ● |
+| [Zscaler Beta](../identity/saas-apps/zscaler-beta-provisioning-tutorial.md) | ● | ● |
+| [Zscaler Internet Access ZSCloud](../identity/saas-apps/zscaler-internet-access-zscloud-tutorial.md) |  | ● |
+| [Zscaler Internet Access ZSNet](../identity/saas-apps/zscaler-internet-access-zsnet-tutorial.md) |  | ● |
+| [Zscaler Internet Access ZSOne](../identity/saas-apps/zscaler-internet-access-zsone-tutorial.md) |  | ● |
+| [Zscaler Internet Access ZSThree](../identity/saas-apps/zscaler-internet-access-zsthree-tutorial.md) |  | ● |
+| [Zscaler Internet Access ZSTwo](../identity/saas-apps/zscaler-internet-access-zstwo-tutorial.md) |  | ● |
+| [Zscaler One](../identity/saas-apps/zscaler-one-provisioning-tutorial.md) | ● | ● |
+| [Zscaler Private Access](../identity/saas-apps/zscaler-private-access-provisioning-tutorial.md) | ● | ● |
+| [Zscaler Three](../identity/saas-apps/zscaler-three-provisioning-tutorial.md) | ● | ● |
+| [Zscaler Two](../identity/saas-apps/zscaler-two-provisioning-tutorial.md) | ● | ● |
+| [Zscaler ZSCloud](../identity/saas-apps/zscaler-zscloud-provisioning-tutorial.md) | ● | ● |
+| [Zylo](../identity/saas-apps/zylo-tutorial.md) |  | ● |
 
 ## Partner driven integrations
 There is also a healthy partner ecosystem, further expanding the breadth and depth of integrations available with Microsoft Entra ID Governance. Explore the [partner integrations](~/identity/app-provisioning/partner-driven-integrations.md) available, including connectors for:
