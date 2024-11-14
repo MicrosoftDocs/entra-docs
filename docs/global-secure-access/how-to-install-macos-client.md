@@ -3,7 +3,7 @@ title: The Global Secure Access client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/13/2024
+ms.date: 11/14/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -12,7 +12,7 @@ ms.reviewer: lirazbarak
 
 # Customer intent: macOS users, I want to download and install the Global Secure Access client.
 ---
-# Global Secure Access client for macOS
+# Global Secure Access client for macOS (Preview)
 The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
 
 This article describes how to download and install the Global Secure Access client for macOS.
@@ -37,9 +37,9 @@ The most current version of the Global Secure Access client is available to down
 ## Install the Global Secure Access client
 ### Automated installation
 Use the following command for silent installation. 
-*Substitute your file path and version number according to the download location of the .pkg file.*
+*Substitute your file path according to the download location of the .pkg file.*
 
-`sudo installer -pkg ~/Downloads/GlobalSecureAccessClient_[version].pkg -target / -verboseR`
+`sudo installer -pkg ~/Downloads/GlobalSecureAccessClient.pkg -target / -verboseR`
 
 The client uses system extensions and a transparent application proxy that need to be approved during the installation. For a silent deployment without prompting the end user to allow these components, you can deploy a policy to automatically approve the components.
 
@@ -150,9 +150,9 @@ To manually install the Global Secure Access client:
 The client installer supports upgrades. You can use the installation wizard to install a new version on a device that is currently running a previous client version.
 
 For a silent upgrade, use the following command.    
-*Substitute your file path and version number according to the download location of the .pkg file.*
+*Substitute your file path according to the download location of the .pkg file.*
 
-`sudo installer -pkg ~/Downloads/GlobalSecureAccessClient_[version].pkg -target / -verboseR`
+`sudo installer -pkg ~/Downloads/GlobalSecureAccessClient.pkg -target / -verboseR`
 
 ## Uninstall the Global Secure Access client
 To manually uninstall the Global Secure Access client, use the following command.
