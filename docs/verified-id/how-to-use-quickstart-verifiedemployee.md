@@ -17,9 +17,9 @@ ms.date: 11/13/2024
 
 Employees with accounts in your Microsoft Entra ID environment can have Verifiable Credentials of the type VerifiedEmployee, created with claims sourced from their user profiles. In this tutorial, we create a credential with claims sourced from a user's profile in Microsoft Entra ID.
 
-Using the [Quick setup](verifiable-credentials-configure-tenant-quick.md), the VerifiedEmployee credential is automatically created for you in a workforce tenant. If you use the [advanced setup](verifiable-credentials-configure-tenant.md), then you need to manually create the VerifiedEmployee credential as explained in this guide.
+You can create VerifiedEmployee credentials using the [Quick setup](verifiable-credentials-configure-tenant-quick.md) or the [advanced setup](verifiable-credentials-configure-tenant.md). If you use the quick setup, the VerifiedEmployee credential is automatically created for you in a workforce tenant. If you use the advanced setup, you need to manually create the VerifiedEmployee credential as explained in this guide.
 
-Issuing a VerifiedEmployee credential is now supported in [MyAccount](https://myaccount.microsoft.com) and it is explained [here](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials) how to enable it in Verified ID. Configuring a sample to issue VerifiedEmployee credentials is only necessary if you would like to handle issuance in your own app. 
+Issuing a VerifiedEmployee credential is now supported in [MyAccount](https://myaccount.microsoft.com). Instructions to enable it in Verified ID are available [here](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials). Configuring a sample to issue VerifiedEmployee credentials is only necessary if you would like to handle issuance in your own app.
 
 In this article, you learn how to:
 
@@ -61,7 +61,7 @@ When you select + Add credential in the portal, you get the option to launch two
 
 :::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-quickstart.png" alt-text="Screenshot of the quickstart start screen.":::
 
-In the next screen, you enter some of the Display definitions, like logo url, text and background color. Since the credential is a managed credential with directory based claims, rules definitions are predefined and can't be changed. You don't need to enter rule definition details. The credential type will be **VerifiedEmployee** and the claims from the user’s profile are pre-set. Select Create to create the credential.
+In the next screen, you enter some of the Display definitions, like logo url, text and background color. Since the credential is a managed credential with directory based claims, rules definitions are predefined and can't be changed. You don't need to enter rule definition details. The credential type will be **VerifiedEmployee** and the claims from the user’s profile are preset. Select Create to create the credential.
 
 :::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-styling.png" alt-text="Screenshot of the create credential, verified employee, card styling section.":::
 
