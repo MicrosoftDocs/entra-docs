@@ -80,7 +80,7 @@ You can access the sign-in logs by using the Microsoft Entra admin center, the A
 
 The activity details of sign-in logs contain several tabs. The **Conditional Access** tab lists the Conditional Access policies applied to that sign-in event.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../role-based-access-control/permissions-reference.md#global-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Select a sign-in item from the table to view the sign-in details pane.  
 1. Select the **Conditional Access** tab.
