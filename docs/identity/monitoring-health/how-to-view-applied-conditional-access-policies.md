@@ -1,24 +1,24 @@
 ---
 title: Conditional Access and Microsoft Entra sign-in logs
-description: Learn how to view Conditional Access policies in Microsoft Entra sign-in logs so that you can assess the effect of those policies.
+description: Learn how to view Conditional Access details in Microsoft Entra sign-in logs so that you can assess the effect of your policies.
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 04/15/2024
+ms.date: 11/13/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
-# Customer intent: As an IT admin, I want to view applied Conditional Access policies in Microsoft Entra sign-in logs so that I can assess the effect of those policies.
+# Customer intent: As an IT admin, I want to view applied Conditional Access details in the Microsoft Entra sign-in logs so that I can assess the effect of any policies in place.
 
 ---
 
 # View applied Conditional Access policies in Microsoft Entra sign-in logs
 
-With Conditional Access policies, you can control how your users get access to the resources of your Azure tenant. As a tenant admin, you need to be able to determine what effect your Conditional Access policies have on sign-ins to your tenant, so that you can take action if necessary.
+With Conditional Access policies, you can control how your users get access to your Azure and Microsoft Entra resources. As a tenant admin, you need to be able to determine what effect your Conditional Access policies have on sign-ins to your tenant, so that you can take action if necessary. The sign-in logs in Microsoft Entra ID give you the information that you need to assess the effect of your Conditional Access policies.
 
-The sign-in logs in Microsoft Entra ID give you the information that you need to assess the effect of your policies. This article explains how to view applied Conditional Access policies in those logs.
+This article explains how to view applied Conditional Access policies in those logs.
 
 ## Prerequisites
 
@@ -27,7 +27,6 @@ To see applied Conditional Access policies in the sign-in logs, administrators m
 The following built-in roles grant permissions to *read Conditional Access policies*:
 
 - Security Reader
-- Global Reader
 - Security Administrator
 - Conditional Access Administrator
 
@@ -35,14 +34,13 @@ The following built-in roles grant permission to *view sign-in logs*:
 
 - Reports Reader
 - Security Reader
-- Global Reader
 - Security Administrator
 
 ### Permissions for client apps
 
 If you use a client app to pull sign-in logs from Microsoft Graph, your app needs permissions to receive the `appliedConditionalAccessPolicy` resource from Microsoft Graph. As a best practice, assign `Policy.Read.ConditionalAccess` because it's the least privileged permission.
 
-Any of the following permissions is sufficient for a client app to access applied Conditional Access policies in sign-in logs through Microsoft Graph:
+The following permissions allows a client app to access applied Conditional Access policies in sign-in logs through Microsoft Graph:
 
 - `Policy.Read.ConditionalAccess`
 - `Policy.ReadWrite.ConditionalAccess`
