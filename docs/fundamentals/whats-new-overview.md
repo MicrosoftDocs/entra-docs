@@ -130,4 +130,4 @@ Yes, What's new provides a consolidated view of the releases and change announce
 
 ## Related content
 
-[What's new - releases and announcements](./whats-new.md)
+[Microsoft Entra releases and announcements](./whats-new.md)
