@@ -22,10 +22,10 @@ This document provides a comprehensive guidance for deploying macOS Platform Sin
 * Minimum version of macOS 13 Ventura (macOS 14 Sonoma or later recommended)
 * Users must be able to perform a multi-factor authentication during registration using one of the supported MFA methods in Entra ID.
     * [Microsoft Entra MFA](../authentication/concept-mfa-howitworks.md)
-    * [Federated MFA](/windows-server/ad-fs/operations/configure-ad-fs-and-azure-mfa#register-users-for-microsoft-entra-multifactor-authentication-by-using-ad-fs)
+    * [Federated MFA](/windows-server/ad-fs/operations/configure-ad-fs-and-azure-mfa)
     * [External Auth Methods](../authentication/how-to-authentication-external-method-manage.md)
 * [Microsoft Intune Company Portal app version 5.2408.0](/mem/intune/apps/apps-company-portal-macos) or later installed. This version is required before users are targeted for PSSO.
-* (Highly recommmended) Users are advised to [register a passkey on their mobile devices.](/../authentication/how-to-register-passkey-mobile.md?tabs=iOS)
+* (Highly recommmended) Users are advised to [register a passkey on their mobile devices.](/../authentication/how-to-register-passkey-mobile.md)
 
 
 ## Authentication Method Selection
@@ -49,7 +49,7 @@ Please refer to your MDM provider’s documentation for information on support a
 
 ## Enable SSO for Applications that don’t use Microsoft Authentication Library (MSAL)
 
-See [Enable SSO for apps that don’t use MSAL](../../identity-platform/apple-sso-plugin#enable-sso-for-apps-that-dont-use-msal.md).
+See [Enable SSO for apps that don’t use MSAL](../../identity-platform/apple-sso-plugin.md).
 
 ## Configure Kerberos SSO Integration
 
@@ -75,13 +75,13 @@ For existing devices already enrolled in Intune, assign the Platform SSO policy 
 
 ### Create Device Compliance Policies
 
-Device Compliance Policies in Microsoft Intune allow administrators to ensure that enrolled devices meet organizational security standards and are configured properly. These policies help safeguard corporate data by enforcing requirements such as encryption, operating system versions, and security measures like password strength. For more information on configuring Device Compliance Policies, please see [Device Compliance Settings for macOS Settings in Intune](/mem/intune/protect/compliance-policy-create-mac-os.md).
+Device Compliance Policies in Microsoft Intune allow administrators to ensure that enrolled devices meet organizational security standards and are configured properly. These policies help safeguard corporate data by enforcing requirements such as encryption, operating system versions, and security measures like password strength. For more information on configuring Device Compliance Policies, please see [Device Compliance Settings for macOS Settings in Intune](/mem/intune/protect/compliance-policy-create-mac-os).
 
 ### Deprovision or Offboard Accounts
 
 #### Deleting users from a tenant
 
-See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users#delete-a-user.md). 
+See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users.md#delete-a-user). 
 
 #### Revoke a user's access
 
@@ -165,5 +165,5 @@ If you experience issues when deploying macOS Platform SSO, refer to our documen
 - [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
 - [Plan a passwordless deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Configure Microsoft Entra ID to meet NIST authenticator assurance levels](../../standards/nist-overview.md)
-- [NIST authenticator types and aligned Microsoft Entra methods](../../standards/nist-authenticator-types)
-- [NIST authenticator assurance level 3 by using Microsoft Entra ID](../../standards/nist-authenticator-assurance-level-3)
+- [NIST authenticator types and aligned Microsoft Entra methods](../../standards/nist-authenticator-types.md)
+- [NIST authenticator assurance level 3 by using Microsoft Entra ID](../../standards/nist-authenticator-assurance-level-3.md)
