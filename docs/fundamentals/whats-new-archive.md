@@ -1394,18 +1394,6 @@ Starting today the modernized experience for viewing previously accepted terms o
 
 ---
 
-### General Availability - Privileged Identity Management for Groups
-
-**Type:** New feature       
-**Service category:** Privileged Identity Management                               
-**Product capability:** Privileged Identity Management                 
-
-Privileged Identity Management for Groups is now generally available. With this feature, you have the ability to grant users just-in-time membership in a group, which in turn provides access to Azure Active Directory roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Through one activation, you can conveniently assign a combination of permissions across different applications and Role-Based Access Control systems.
-
-PIM for Groups offers can also be used for just-in-time ownership. As the owner of the group, you can manage group properties, including membership. For more information, see: [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md).
-
----
-
 ### General Availability - Privileged Identity Management and Conditional Access integration 
 
 **Type:** New feature       
