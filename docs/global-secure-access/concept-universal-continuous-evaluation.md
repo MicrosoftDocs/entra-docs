@@ -1,6 +1,6 @@
 ---
 title: Learn about Universal Continuous Evaluation (Preview)
-description: Learn about how Microsoft Entra Internet Access and Microsoft Entra Private Access secures access to your resources through Conditional Access.
+description: Learn about Universal Continuous Evaluation concepts
 ms.service: global-secure-access
 ms.topic: conceptual
 ms.date: 11/11/2024
@@ -13,7 +13,7 @@ ms.reviewer: dhruvinshah
 
 Universal CAE is a platform feature of Global Secure Access that works together with Entra ID to ensure that access to the GSA service is validated every time a connection to a new application resource is established. Universal CAE protects tunnel access tokens from theft and replay and allows for network access to be revoked and re-validated in near real-time when Entra ID detects changes to the identity. Traditional Entra ID CAE requires each workload to adopt special libraries and is limited to first-party applications only.  GSA Universal CAE extends benefits of CAE to any application accessed with Global Secure Access, without requiring the application to be CAE aware.
 
-# Benefits of Universal CAE
+## Benefits of Universal CAE
 
 Here are some examples of how Universal CAE benefits your organization when Entra ID detects an identity change and triggers CAE in near real-time:
 
@@ -23,7 +23,7 @@ Here are some examples of how Universal CAE benefits your organization when Entr
 *  You can require that your users are on specific networks before they are allowed to connect to services with GSA, preventing the move to a different network even after the initial tunnel authentication. In this scenario, when the user changes networks, network access via GSA is re-authenticated and location-based Conditional Access policies are re-evaluated.
 * Optional Strict Enforcement mode, configured in Conditional Access, protects from token theft/replay of GSA access tokens. If the token replay is attempted from a different IP address than the original IP address used during authentication, network access will be blocked.
 
-# How it works
+## How it works
 
 Global Secure Access relies on Entra ID access tokens to authenticate to the service tunnels (Microsoft traffic, Internet Access, and Private Access traffic forwarding profiles). Access tokens are valid between 60 and 90 minutes. Prior to expiration, the GSA client uses the Entra ID refresh token to obtain a new access token.
 
@@ -48,12 +48,12 @@ Strict enforcement mode provides additional protection for Universal CAE, immedi
 
 ## Disabling Universal CAE
 
-Entra ID Conditional Access can be used to control CAE behavior in your tenant. By default, CAE is on for all applications that support it. You can disable CAE in your Entra ID tenant, which will disable CAE for all services, including Global Secure Access. To disable CAE in your tenant, please follow the steps in the [Conditional Access documentation](/docs/entra/identity/conditional-access/concept-conditional-access-session#customize-continuous-access-evaluation)
+Entra ID Conditional Access can be used to control CAE behavior in your tenant. By default, CAE is on for all applications that support it. You can disable CAE in your Entra ID tenant, which will disable CAE for all services, including Global Secure Access. To disable CAE in your tenant, please follow the steps in the [Conditional Access documentation](/entra/identity/conditional-access/concept-conditional-access-session#customize-continuous-access-evaluation)
 
 > [!Note]
 > Universal CAE is opportunistic unless the optional Strict Enforcement mode is enabled in Conditional Access and applied to the GSA workload identities. By default, supported Global Secure Access clients will attempt to obtain a CAE access token from Entra ID. If the CAE token cannot be obtained from Entra ID (for example, due to the unsupported client version), a regular access token will be issued. With the fallback behavior, there should not be a need for you to disable Universal CAE. 
 
-# Known limitations
+## Known limitations
 
 * Only Windows versions of Global Secure Access client, starting with version 1.8.239.0, are aware of Universal CAE. Other clients use regular access tokens.
 * Entra ID issues short lived tokens for Global Secure Access. Universal CAE access token lifetime is between 60 and 90 minutes, with support for near real-time revocation.
@@ -62,7 +62,7 @@ Entra ID Conditional Access can be used to control CAE behavior in your tenant. 
 
 ## Related content
 
-- [Continuous access evaluation in Microsoft Entra](/docs/entra/identity/conditional-access/concept-continuous-access-evaluation.md)
-- [Session controls in Conditional Access policy](/docs/entra/identity/conditional-access/concept-conditional-access-session.md)
-- [Continuous access evaluation strict location enforcement in Microsoft Entra ID](/docs/entra/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md)
+- [Continuous access evaluation in Microsoft Entra](/entra/identity/conditional-access/concept-continuous-access-evaluation.md)
+- [Session controls in Conditional Access policy](/entra/identity/conditional-access/concept-conditional-access-session.md)
+- [Continuous access evaluation strict location enforcement in Microsoft Entra ID](/entra/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md)
 - [Global Secure Access client for Windows](how-to-install-windows-client.md)
