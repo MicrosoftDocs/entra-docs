@@ -26,7 +26,7 @@ Here are the high-level steps for configuring the app integration with Microsoft
 
 ## Step 1 – Establish connection 
 
-In this step, the IT admin provides consent to Rippling to create an API-driven provisioning app in their Microsoft Entra ID tenant. The IT admin also provides details of the Active Directory domain and OU container to use for new user creations. 
+In this step, the IT admin provides consent to Rippling to create an API-driven provisioning app in their Microsoft Entra ID tenant. The IT admin also provides details of the Active Directory domain and organizational unit container to use for new user creations. 
 
 ## Step 2 – Configure attribute mapping 
 
