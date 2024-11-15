@@ -51,11 +51,11 @@ items:
   - name: Desktop app
     items:
       - name: Electron - sign in users
-        href: how-to-desktop-app-electron-sample-sign-in.md
+        href: /entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
       - name: .NET MAUI - sign in users
-        href: how-to-desktop-app-maui-sample-sign-in.md
+        href: /entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
       - name: .NET WPF - sign in users
-        href: sample-desktop-wpf-dotnet-sign-in.md
+        href: /entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
   - name: Mobile app
     items:
         - name: Browser-delegated authentication
