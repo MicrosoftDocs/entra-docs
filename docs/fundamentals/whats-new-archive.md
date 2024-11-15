@@ -1487,14 +1487,4 @@ Restricted Management Administrative Units allow you to restrict modification of
 
 ---
 
-### General Availability - Report suspicious activity integrated with Identity Protection
-
-**Type:** Changed feature   
-**Service category:** Identity Protection                        
-**Product capability:** Identity Security & Protection              
-
-Report suspicious activity is an updated implementation of the MFA fraud alert, where users can report a voice or phone app MFA prompt as suspicious. If enabled, users reporting prompts have their user risk set to high, enabling admins to use Identity Protection risk based policies or risk detection APIs to take remediation actions. Report suspicious activity operates in parallel with the legacy MFA fraud alert at this time. For more information, see: [Configure Microsoft Entra multifactor authentication settings](~/identity/authentication/howto-mfa-mfasettings.md).
-
----
-
 
