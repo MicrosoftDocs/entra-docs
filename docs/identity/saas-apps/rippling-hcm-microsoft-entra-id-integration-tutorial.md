@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Rippling Human Capital Management (HCM) integration with Microsoft Entra ID'
-description: Integrating Rippling Human Capital Management (HCM) with Microsoft Entra ID.
+title: 'Tutorial: Rippling Human Capital Management (HCM) integration with Microsoft Entra ID/Active Directory'
+description: Integrating Rippling Human Capital Management (HCM) with Microsoft Entra ID/Active Directory.
 author: jenniferf-skc
 manager: amycolannino
 ms.reviewer: rahuln3223
@@ -12,9 +12,9 @@ ms.date: 12/09/2024
 ms.author: jfields
 ---
 
-# Tutorial: Rippling HCM integration with Microsoft Entra ID 
+# Tutorial: Rippling HCM integration with Microsoft Entra ID/Active Directory
 
-The document provides a step-by-step guide for integrating Rippling HCM with Microsoft Entra ID. The steps include establishing a connection, configuring attribute mapping, testing account provisioning, configuring account access rules, and monitoring provisioning. This integration allows IT admins to automate business processes using Microsoft Entra ID Governance Lifecycle Workflows. 
+The document provides a step-by-step guide for integrating Rippling HCM with Microsoft Entra ID/Active Directory. The steps include establishing a connection, configuring attribute mapping, testing account provisioning, configuring account access rules, and monitoring provisioning. This integration allows IT admins to automate business processes using Microsoft Entra ID Governance Lifecycle Workflows. 
 
 For detailed guidance on how to integrate your Rippling HCM environment, reference the Rippling guide [here](https://www.rippling.com/app-shop/app/microsoftactivedirectory). Click the **Help docs** link next to the application name. 
 
