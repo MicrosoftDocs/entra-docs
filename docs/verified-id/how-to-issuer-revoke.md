@@ -135,7 +135,7 @@ Microsoft Entra Verified ID doesn't store verifiable credential data. The issuer
 }
 ```
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > You can only index one claim from a rules claims mapping. If you accidentally have no indexed claim in your rules definition, and you later correct this oversight, all verifiable credentials issued prior to the change won't be searchable because they were issued when no index existed.
 
 ## How do I revoke a verifiable credential?
