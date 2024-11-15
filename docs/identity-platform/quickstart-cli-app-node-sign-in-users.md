@@ -1,65 +1,53 @@
 ---
-title: Authenticate users in an external tenant using a sample Node.js CLI app
-description: Learn how to authenticate users in an external tenant using a sample Node.js CLI application.
-
+title: Quickstart - Sign in users in a sample Node.js CLI app
+description: Learn how to authenticate users in a sample Node.js Command Line Interface (CLI) application in your external tenant 
 author: Dickson-Mwendia
 manager: mwongerapk
-
 ms.author: dmwendia
-ms.service: entra-external-id
- 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: quickstart
-ms.date: 08/04/2023
+ms.date: 11/20/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn how to authenticate users in an external tenant using a sample Node.js CLI application
+#Customer intent: As a dev, devops, I want to learn how to authenticate users in a sample Node.js Command Line Interface (CLI) application in your external tenant
 ---
 
-# Sign in users in a sample Node.js CLI application. 
+# Quickstart: Sign in users in a sample Node.js CLI application 
 
-This guide uses a sample Node Command Line Interface (CLI) application to sign in users in an external tenant. The sample application uses the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node/) (MSAL Node) to handle authentication.
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this article, you complete the following tasks:
-
-- Register and configure a client Node.js CLI application in the Microsoft Entra admin center.
-
-- Create a sign-up and sign-in user flow in the Microsoft Entra admin center, and then associate the CLI application with it.
-
-- Update the sample CLI application to use your external tenant details.
-
-- Run and test the sample CLI application. 
+In this quickstart, you use a sample Node Command Line Interface (CLI) application to sign in users in your external tenant. The sample application uses the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node/) (MSAL Node) to handle authentication.  
 
 ## Prerequisites
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org).
-- An external tenant. To create one, choose from the following methods:
+* An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ## Register the Node.js CLI app
 
-[!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)] 
+[!INCLUDE [active-directory-b2c-register-app](../external-id/customers/includes/register-app/register-client-app-common.md)] 
 
 ## Add platform configurations
 
-[!INCLUDE [active-directory-b2c-app-integration-add-platform-configurations](./includes/register-app/add-platform-redirect-url-node-cli.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-platform-configurations](../external-id/customers/includes/register-app/add-platform-redirect-url-node-cli.md)]
 
-[!INCLUDE [active-directory-b2c-enable-public-client-flow](./includes/register-app/enable-public-client-flow.md)]  
+[!INCLUDE [active-directory-b2c-enable-public-client-flow](../external-id/customers/includes/register-app/enable-public-client-flow.md)]  
 
 ## Grant admin consent
 
 Since this app signs in users, add delegated permissions. These permissions allow the app to act on behalf of a signed-in user and access resources that the user has permissions to access. 
 
-[!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)] 
+[!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)] 
 
 ## Create a user flow 
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)] 
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)] 
 
 ## Associate the Node.js CLI application with the user flow
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/configure-user-flow/add-app-user-flow.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
 
 
 ## Clone or download the sample Node.js CLI application
@@ -83,7 +71,7 @@ To configure the client application (Node.js CLI app) to use your Microsoft Entr
 1. Find the placeholder:
 
     - `Enter_the_Application_Id_Here` and replace the existing value with the application ID (clientId) of `node-cli-app` application copied from the Microsoft Entra admin center.
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details)
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details)
 
 ## Run and test the sample Node.js CLI application
 
@@ -106,11 +94,10 @@ You can now test the sample Node.js CLI application.
 
      :::image type="content" source="media/tutorial-node-cli-app-sign-in/node-cli-app-signed-in-user.png" alt-text="Screenshot showing a signed-in user in a node CLI application.":::
 
-1. Move back to the terminal and see your authentication information including the ID token claims.
+1. Go back to the terminal and see your authentication information including the ID token claims.
 
 ## Related content
 
-- [Sign in users in your own Node.js CLI application](tutorial-cli-app-node-sign-in-prepare-tenant.md).
-- [Enable password reset](how-to-enable-password-reset-customers.md).
-- [Customize the default branding](how-to-customize-branding-customers.md).
-- [Configure sign-in with Google](how-to-google-federation-customers.md).
+- [Sign in users in your own Node.js CLI application](../external-id/customers/tutorial-cli-app-node-sign-in-prepare-tenant.md).
+- [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
+- [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).

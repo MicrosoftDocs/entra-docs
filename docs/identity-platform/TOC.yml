@@ -435,6 +435,10 @@
               href: scenario-daemon-acquire-token.md
             - name: Call a web API
               href: scenario-daemon-call-api.md
+- name: Command-line interface (CLI) app
+  items:
+    - name: Quickstarts 
+      href: quickstart-cli-app-node-sign-in-users.md?pivots=workforce
 - name: Scenarios
   items:
     - name: Build

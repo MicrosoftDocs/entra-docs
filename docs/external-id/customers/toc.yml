@@ -90,7 +90,7 @@ items:
   - name: Command-line interface (CLI) app
     items:
       - name: Node.js - sign in users
-        href: sample-cli-app-node-sign-in-users.md
+        href: /entra/identity-platform/quickstart-cli-app-node-sign-in-users?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
 - name: Tutorials
   expanded: false
   items: 

@@ -172,6 +172,16 @@ Validate your configuration is working by testing with appropriate Kerberos-capa
 1. Test on-premises Active Directory functionality by accessing an on-premises AD-integrated file server using Finder or a web application using Safari. The user should be able to access the file share without being challenged for interactive credentials.
 2. Test Microsoft Entra ID Kerberos functionality by accessing an Azure Files share enabled for Microsoft Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
 
+## Known Issues
+
+### Kerberos SSO extension menu extra
+
+When deploying support for Kerberos SSO with Platform SSO, the standard Kerberos SSO extension capabilities of macOS are still leveraged. Like with a deployment of the native [Kerberos SSO extension](https://support.apple.com/guide/deployment/kerberos-sso-extension-depe6a1cda64/web) without Platform SSO, the Kerberos SSO extension menu extra will appear in the macOS menu bar:
+
+:::image type="content" source="media/device-registration-macos-platform-single-sign-on/platform-sso-kerberos-menu-bar-applet.png" alt-text="Screenshot of the macOS Kerberos SSO extension menu extra.":::
+
+When deploying Kerberos support with Platform SSO, users do not need to interact with the Kerberos SSO extension menu extra to have Kerberos functionality work. Kerberos SSO functionality will still operate if the user does not sign into the menu bar extra and the menu bar extra reports "Not signed in". You may instruct users to ignore the menu bar extra when deploying with Platform SSO, per this article. Instead, make sure that you validate that kerberos functionality works as expected without interaction with the menu bar extra, as outlined in the [Testing Kerberos SSO](#testing-kerberos-sso) section of this article.
+
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md)
