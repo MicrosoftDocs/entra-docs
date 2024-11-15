@@ -81,7 +81,7 @@ Device Compliance Policies in Microsoft Intune allow administrators to ensure th
 
 #### Deleting users from a tenant
 
-See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users.md). 
+See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users.yml). 
 
 #### Revoke a user's access
 
