@@ -3,9 +3,9 @@ title: Export connector logs to the Log Analytics workspace
 description: Extract connector logs and send those logs to the Log Analytics workspace in the customer’s Azure subscription.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/22/2024
-ms.author: jayrusso
-author: HULKsmashGithub
+ms.date: 11/22/2024
+ms.author: jfields
+author: jenniferf-skc
 manager: amycolannino
 ms.reviewer: sumeetmittal
 
