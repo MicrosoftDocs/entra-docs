@@ -42,7 +42,12 @@ Hardware OATH tokens that you add with Microsoft Graph for this preview refresh 
 
 ### Time drift correction
 
-Microsoft Entra ID adjusts time drift of the tokens during activation and every authentication. During activation, verification codes are accepted if they are within a +/- 1 day range for a token with a 30 seconds refresh interval, or +/- 2 days for a token with a 60 seconds refresh interval. During authentication, verification codes are accepted if they are within a +/- 1 minute range for a token with a 30 seconds refresh interval, or +/- 2 minutes for a token with a 60 seconds refresh interval.
+Microsoft Entra ID adjusts time drift of the tokens during activation and every authentication. The following table lists the time adjustment that Microsoft Entra ID makes for tokens during activation and sign in. 
+
+| Token refresh interval | Activation time range | Authentication time range |
+|------------------------|-----------------------|---------------------------|
+| 30 seconds             | +/- 1 day             | +/- 1 minute              |
+| 60 seconds             | +/- 2 days            | +/- 2 minutes             |
 
 ### Improvements in the preview refresh
 
@@ -74,7 +79,7 @@ In the Authentication methods policy, hardware and software OATH tokens can be e
 
 Tenants with a Microsoft Entra ID P1 or P2 license can continue to upload hardware OATH tokens as in the original preview. For more information, see [Upload hardware OATH tokens in CSV format](how-to-mfa-upload-oath-tokens.md).
 
-For more information aabout how to enable hardware OATH tokens and Microsoft Graph APIs that you can use to upload, activate, and assifn tokens, see [How to manage OATH tokens](how-to-mfa-manage-oath-tokens.md).
+For more information about how to enable hardware OATH tokens and Microsoft Graph APIs that you can use to upload, activate, and assign tokens, see [How to manage OATH tokens](how-to-mfa-manage-oath-tokens.md).
  
 
 ## OATH token icons
