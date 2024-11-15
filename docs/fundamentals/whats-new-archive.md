@@ -1382,16 +1382,6 @@ For more information about how to better secure your organization by using autom
 
 ---
 
-### General Availability - Azure Active Directory User and Group capabilities on Azure Mobile are now available
-
-**Type:** New feature       
-**Service category:** Azure Mobile App                             
-**Product capability:** End User Experiences                  
-
-The Azure Mobile app now includes a section for Azure Active Directory. Within Azure Active Directory on mobile, user can search for and view more details about user and groups. Additionally, permitted users can invite guest users to their active tenant, assign group membership and ownership for users, and view user sign-in logs. For more information, see: [Get the Azure mobile app](https://azure.microsoft.com/get-started/azure-portal/mobile-app/).
-
----
-
 ### Plan for change - Modernizing Terms of Use Experiences
 
 **Type:** Plan for change         
