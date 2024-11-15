@@ -64,7 +64,7 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
 
      [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** for users to be able to choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users may still be able to add a passkey in Microsoft Authenticator by choosing the **Security key or passkey** method, depending upon their operating system and browser. However, we don't expect many users to discover and use that method.  
      
-     If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Include those users and the Authenticator AAGUIDs to enable this preview. You can do this with an automated script that analyzes logs, such as registration details and sign-in logs.
+     If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Include those users and the Authenticator AAGUIDs. You can do this with an automated script that analyzes logs, such as registration details and sign-in logs.
 
      If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
