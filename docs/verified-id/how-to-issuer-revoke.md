@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 11/14/2024
+ms.date: 11/15/2024
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm trying to learn the process of revoking verifiable credentials that I've issued.
@@ -38,6 +38,7 @@ In every Microsoft-issued verifiable credential, there's a claim called `credent
 > If the verifiable credential is old and was issued during the preview period, this claim doesn't exist. Revocation won't work for this credential and you have to reissue it.
 
 ```json
+
 ...
 "credentialStatus": { 
     "id": "urn:uuid:00aa00aa-bb11-cc22-dd33-44ee44ee44ee?bit-index=31", 
@@ -83,7 +84,7 @@ didDocument": {
     ],
 ```
 
-## Create a revocable Verifiable Credential
+## Create a revocable verifiable credential
 
 Microsoft Entra Verified ID doesn't store verifiable credential data. The issuer needs to index one claim to make the credential searchable. Only one claim can be indexed, and if there's none, you can't revoke credentials. The selected claim to index is then salted and hashed and isn't stored as its original value.
 
@@ -165,8 +166,6 @@ You can use indexed claims in verifiable credentials to search for issued verifi
    :::image type="content" source="media/how-to-issuer-revoke/revoke-successful.png" alt-text="Screenshot that shows a successfully revoked verifiable credential message.":::
 
 The Request Service API indicates a revoked credential in the `presentation_verified` [callback](presentation-request-api.md#callback-events) as `REVOKED`. Depending on if the presentation request specified that it [allows revoked credentials](presentation-request-api.md#configurationvalidation-type) to be presented, the presentation of a revoked credential either succeeds or fails.
-
-
 
 ## Next steps
 
