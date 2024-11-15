@@ -224,7 +224,7 @@ Microsoft Entra includes multiple access lifecycle management technologies to en
 
   ![Entitlement management overview diagram](~/id-governance/media/entitlement-management-overview/elm-overview.png)
 
- * **Access management through Entitlement management and an external GRC product.** With integrations with SAP access governance and with [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and other partner products, customers can take advantage of fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance.
+ * **Access management through Entitlement management and an external GRC product.** With Microsoft Entra integrations to [SAP access governance](https://learning.sap.com/learning-journeys/exploring-the-fundamentals-of-sap-system-security/discussing-access-governance-integration-scenarios-ac-iag-), to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance.
 
 ### Use Microsoft Entra for reporting
 

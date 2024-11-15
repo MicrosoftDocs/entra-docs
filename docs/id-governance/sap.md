@@ -101,7 +101,7 @@ With separation-of-duties checks in Microsoft Entra [entitlement management](htt
 
 * Admins and access managers can prevent users from requesting extra access packages if they're already assigned to other access packages or are a member of other groups that are incompatible with the requested access.
 * Enterprises with critical regulatory requirements for SAP apps have a single consistent view of access controls. They can then enforce separation-of-duties checks across their financial and other business-critical applications, along with Microsoft Entra integrated applications.
-* With integrations with SAP access governance and with [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and other partner products, customers can take advantage of fine-grained separation-of-duties checks with access packages in Microsoft Entra ID Governance.
+* With Microsoft Entra integrations to [SAP access governance](https://learning.sap.com/learning-journeys/exploring-the-fundamentals-of-sap-system-security/discussing-access-governance-integration-scenarios-ac-iag-), to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance.
 
 ## Additional guidance
 
