@@ -19,7 +19,7 @@ This document provides a comprehensive guidance for deploying macOS Platform Sin
 
 ## Prerequisites
 
-* Minimum version of macOS 13 Ventura (macOS 14 Sonoma recommended)
+* Minimum version of macOS 13 Ventura (macOS 14 Sonoma or later recommended)
 * Users must be able to perform a multi-factor authentication during registration using one of the supported MFA methods in Entra ID.
     * [Microsoft Entra MFA](../authentication/concept-mfa-howitworks.md)
     * [Federated MFA](/windows-server/ad-fs/operations/configure-ad-fs-and-azure-mfa#register-users-for-microsoft-entra-multifactor-authentication-by-using-ad-fs)
@@ -32,12 +32,12 @@ This document provides a comprehensive guidance for deploying macOS Platform Sin
 
 US government agencies must use a phish-resistant authentication method in the Platform SSO configuration deployed to their devices.
 
-As of macOS Sequoia, two phish-resistant methods are available in the Apple Platform SSO framework:
+macOS 14 Sonoma and later offer two phish-resistant methods in the Apple Platform SSO framework:
 
 1. [Secure Enclave](/mem/intune/configuration/platform-sso-macos#secure-enclave) (Recommended).        
 2. [Smart card](/mem/intune/configuration/platform-sso-macos#smart-card).
 
-For more information and a comparison of available authentication methods with Platform SSO, please see Decide the authentication method.
+For more information and a comparison of available authentication methods with Platform SSO, please see [Decide the authentication method](https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#step-1---decide-the-authentication-method).
 
 ## Microsoft Intune Configuration
 
@@ -47,7 +47,7 @@ See [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/c
 
 Please refer to your MDM provider’s documentation for information on support and provisioning Platform SSO for macOS.
 
-## Enable SSO for Applications that don’t use MSAL
+## Enable SSO for Applications that don’t use Microsoft Authentication Library (MSAL)
 
 See [Enable SSO for apps that don’t use MSAL](../../identity-platform/apple-sso-plugin#enable-sso-for-apps-that-dont-use-msal).
 
@@ -67,7 +67,7 @@ To use Platform SSO, the devices must be MDM enrolled. If using Intune, use one 
 
     * Create a [Direct enrollment](/mem/intune/enrollment/device-enrollment-direct-enroll-macos) policy using Apple Configurator.
 
-* For personally-owned devices, create a [Device enrollment](/mem/intune/fundamentals/deployment-guide-enrollment-macos#byod-device-enrollment) policy. With this enrollment method, end users open the Company Portal app and sign in with their Microsoft Entra ID. When the successfully sign in, the enrollment policy applies.
+* For personally-owned devices, create a [Device enrollment](/mem/intune/fundamentals/deployment-guide-enrollment-macos#byod-device-enrollment) policy. With this enrollment method, end users open the Company Portal app and sign in with their Microsoft Entra ID user account. When the successfully signed in, the enrollment policy applies.    
 
 For new devices, we recommend you pre-create and configure all the necessary policies, including the enrollment policy. Then, when the devices enroll in Intune, the policies automatically apply.
 
@@ -125,7 +125,7 @@ On devices that have the SSO plug-in, MSAL automatically invokes it for all inte
 
 ## Best Practices
 
-### Smart Card Certificate Pairing
+### Smart Card Certificate Pinning
 When using smart card-based authentication, it is highly recommended that you specify which Certificate Issuing Authorities are used for the trust evaluation of smart card certificates. This trust, which works in conjunction with Certificate Trust settings, is known as certificate pinning. For more information, see [Advanced Smart card Options on Mac](https://support.apple.com/guide/deployment/advanced-smart-card-options-dep7b2ede1e3/web#:~:text=Certificate%20pinning,%3C/plist%3E).
 
 #### Example configuration
