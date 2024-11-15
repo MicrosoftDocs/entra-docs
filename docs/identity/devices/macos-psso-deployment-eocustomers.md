@@ -22,10 +22,10 @@ This document provides a comprehensive guidance for deploying macOS Platform Sin
 * Minimum version of macOS 13 Ventura (macOS 14 Sonoma or later recommended)
 * Users must be able to perform a multi-factor authentication during registration using one of the supported MFA methods in Entra ID.
     * [Microsoft Entra MFA](../authentication/concept-mfa-howitworks.md)
-    * [Federated MFA](/windows-server/ad-fs/operations/configure-ad-fs-and-azure-mfa)
+    * [Federated MFA](/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa)
     * [External Auth Methods](../authentication/how-to-authentication-external-method-manage.md)
 * [Microsoft Intune Company Portal app version 5.2408.0](/mem/intune/apps/apps-company-portal-macos) or later installed. This version is required before users are targeted for PSSO.
-* (Highly recommmended) Users are advised to [register a passkey on their mobile devices.](/../authentication/how-to-register-passkey-mobile.md)
+* (Highly recommmended) Users are advised to [register a passkey on their mobile devices.](../authentication/how-to-register-passkey-mobile.md)
 
 
 ## Authentication Method Selection
@@ -81,7 +81,7 @@ Device Compliance Policies in Microsoft Intune allow administrators to ensure th
 
 #### Deleting users from a tenant
 
-See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users.md#delete-a-user). 
+See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users.md). 
 
 #### Revoke a user's access
 
