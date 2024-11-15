@@ -25,25 +25,25 @@ This sample demonstrates how to configure iOS sample application to call an ASP.
 
 ### Register a web API application
 
-[!INCLUDE [register-api-app](./includes/register-app/register-api-app.md)]
+[!INCLUDE [register-api-app](../external-id/customers/includes/register-app/register-api-app.md)]
 
 ### Configure API scopes
 
-[!INCLUDE [add-api-scopes](./includes/register-app/add-api-scopes.md)]
+[!INCLUDE [add-api-scopes](../external-id/customers/includes/register-app/add-api-scopes.md)]
 
 ### Configure app roles
 
-[!INCLUDE [add-app-role](./includes/register-app/add-app-role.md)]
+[!INCLUDE [add-app-role](../external-id/customers/includes/register-app/add-app-role.md)]
 
 ### Configure optional claims
 
-[!INCLUDE [add-optional-claims-access](./includes/register-app/add-optional-claims-access.md)]
+[!INCLUDE [add-optional-claims-access](../external-id/customers/includes/register-app/add-optional-claims-access.md)]
 
 ## Grant API permissions to the iOS sample app
 
 Once you've registered both your client app and web API and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
 
-[!INCLUDE [grant-api-permission-call-api-common](./includes/register-app/grant-api-permission-call-api-common.md)]
+[!INCLUDE [grant-api-permission-call-api-common](../external-id/customers/includes/register-app/grant-api-permission-call-api-common.md)]
 
 ## Clone or download sample web API
 
@@ -64,7 +64,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the web API you copied earlier. 
     - `Enter_the_Tenant_Id_Here` and replace it with the **Directory (tenant) ID** you copied earlier.
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 You need to host your web API for the iOS sample app to call it. Follow [Quickstart: Deploy an ASP.NET web app](/azure/app-service/quickstart-dotnetcore) to deploy your web API.
 
@@ -94,4 +94,4 @@ To build and run your app, follow these steps:
 
 ## Next steps
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md).
+- [Tutorial: Prepare your iOS app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-ios-app.md).

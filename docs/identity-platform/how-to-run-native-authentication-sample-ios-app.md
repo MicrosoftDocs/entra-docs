@@ -35,23 +35,23 @@ In this article, you learn how to:
 
 ## Register an application 
 
-[!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
+[!INCLUDE [register client app](../external-id/customers/customers/includes/register-app/register-client-app-common.md)]
 
 ## Enable public client and native authentication flows 
 
-[!INCLUDE [Enable public client and native authentication](../customers/includes/native-auth/enable-native-authentication.md)]
+[!INCLUDE [Enable public client and native authentication](../external-id/customers/includes/native-auth/enable-native-authentication.md)]
 
 ## Grant admin consent 
 
-[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-api-permission-sign-in.md)]
+[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Create a user flow 
 
-[!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
+[!INCLUDE [Create user flow](../external-id/customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
 
 ## Associate the application with the user flow 
  
-[!INCLUDE [associate user flow](../customers/includes/configure-user-flow/add-app-user-flow.md)] 
+[!INCLUDE [associate user flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)] 
 
 ## Clone sample iOS mobile application 
 
@@ -75,7 +75,7 @@ In this article, you learn how to:
 1. Find the placeholder:
 
    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier. 
-   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use contoso. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
+   - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use contoso. If you don't have your tenant subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
 
 > [!NOTE]
 > Remember to select a scheme to build and destination where you run the built products. Each scheme contains a list of real or simulated devices that represent the available destinations. 
@@ -112,7 +112,7 @@ In this section, you test email with password flow, with its variants such as, e
 
 1. Run the sample app, then select the ellipsis menu (**...**) to open more options. 
 
-1. Select the scenario you want to test, such as **Email + password** or **Email + password sign-up with user attributes** or **Password reset**, then follow the prompts. To test **Password reset**, you need to first sign up a user, and [enable email one-time passcode](how-to-enable-password-reset-customers.md) for all users in your tenant.
+1. Select the scenario you want to test, such as **Email + password** or **Email + password sign-up with user attributes** or **Password reset**, then follow the prompts. To test **Password reset**, you need to first sign up a user, and [enable email one-time passcode](../external-id/customers/how-to-enable-password-reset-customers.md) for all users in your tenant.
 
 ## Test call a protected API flow
 
@@ -120,4 +120,4 @@ Use the steps in [Call a protected web API in a sample iOS mobile app by using n
 
 ## Next steps 
 
-- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md). 
+- [Tutorial: Prepare your iOS/macOS app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-ios-macos-app.md). 
