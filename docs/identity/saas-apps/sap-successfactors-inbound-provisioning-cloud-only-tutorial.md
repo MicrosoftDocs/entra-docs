@@ -140,9 +140,7 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 1. In SuccessFactors Admin Center, search for *Manage Permission Roles*, then select **Manage Permission Roles** from the search results.
 1. From the **Permission Role List**, select the role that you created for API usage permissions.
 1. Under **Grant this role to...**, click **Add...** button.
-1. Select **Permission Group...** from the drop-down menu, then click **Select...** to open the Groups window to search and select the group created above. 
-    > [!div class="mx-imgBorder"]
-    > ![Add permission group](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
+1. Select **Permission Group...** from the drop-down menu, then click **Select...** to open the Groups window to search and select the group created above.
 1. Review the Permission Role grant to the Permission Group. 
 1. Click **Save Changes**.
 
