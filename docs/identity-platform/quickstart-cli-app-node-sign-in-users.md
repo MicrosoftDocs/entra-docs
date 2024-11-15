@@ -1,5 +1,5 @@
 ---
-title: Authenticate users in an external tenant using a sample Node.js CLI app
+title: Quickstart - Sign in users in a sample Node.js CLI application
 description: Learn how to authenticate users in an external tenant using a sample Node.js CLI application.
 
 author: Dickson-Mwendia
@@ -13,21 +13,11 @@ ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn how to authenticate users in an external tenant using a sample Node.js CLI application
 ---
 
-# Sign in users in a sample Node.js CLI application. 
+# Quickstart: Sign in users in a sample Node.js CLI application 
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This guide uses a sample Node Command Line Interface (CLI) application to sign in users in an external tenant. The sample application uses the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node/) (MSAL Node) to handle authentication.
-
-In this article, you complete the following tasks:
-
-- Register and configure a client Node.js CLI application in the Microsoft Entra admin center.
-
-- Create a sign-up and sign-in user flow in the Microsoft Entra admin center, and then associate the CLI application with it.
-
-- Update the sample CLI application to use your external tenant details.
-
-- Run and test the sample CLI application. 
+In this quickstart, you use a sample Node Command Line Interface (CLI) application to sign in users in your external tenant. The sample application uses the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node/) (MSAL Node) to handle authentication.  
 
 ## Prerequisites
 
@@ -106,7 +96,7 @@ You can now test the sample Node.js CLI application.
 
      :::image type="content" source="media/tutorial-node-cli-app-sign-in/node-cli-app-signed-in-user.png" alt-text="Screenshot showing a signed-in user in a node CLI application.":::
 
-1. Move back to the terminal and see your authentication information including the ID token claims.
+1. Go back to the terminal and see your authentication information including the ID token claims.
 
 ## Related content
 
