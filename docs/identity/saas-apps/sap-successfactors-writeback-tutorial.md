@@ -65,10 +65,6 @@ Work with your SuccessFactors admin team or implementation partner to create or 
    > ![Create New Permission Role](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
 
 1. Add a **Role Name** and **Description** for the new permission role. The name and description should indicate that the role is for API usage permissions.
-
-   > [!div class="mx-imgBorder"]
-   > ![Permission role detail](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
-
 1. Under Permission settings, click **Permission...**, then scroll down the permission list and click **Manage Integration Tools**. Check the box for **Allow Admin to Access to OData API through Basic Authentication**.
 
    > [!div class="mx-imgBorder"]
@@ -116,9 +112,6 @@ Work with your SuccessFactors admin team or implementation partner to create or 
    > ![Add permission group](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
 
 1. Review the Permission Role grant to the Permission Group. 
-   > [!div class="mx-imgBorder"]
-   > ![Permission Role and Group detail](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
-
 1. Click **Save Changes**.
 
 ## Preparing for SuccessFactors Writeback
