@@ -1,6 +1,6 @@
 ---
 title: Authentication methods and features
-description: Learn about the different authentication methods and features available in Microsoft Entra ID to help improve and secure sign-in events
+description: Learn about the different authentication methods and features available in Microsoft Entra ID that help improve and secure sign-in events
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -18,7 +18,7 @@ Microsoft recommends passwordless authentication methods such as Windows Hello, 
 
 :::image type="content" border="true" source="media/concept-authentication-methods/authentication-methods.png" alt-text="Illustration of the strengths and preferred authentication methods in Microsoft Entra ID." :::
 
-Microsoft Entra multifactor authentication adds additional security over only using a password when a user signs in. The user can be prompted for additional forms of authentication, such as to respond to a push notification, enter a code from a software or hardware token, or respond to a text message or phone call.
+Microsoft Entra multifactor authentication adds another layer of security over only using a password when a user signs in. The user can be prompted for other forms of authentication, such as to respond to a push notification, enter a code from a software or hardware token, or respond to a text message or phone call.
 
 To simplify the user on-boarding experience and register for both MFA and self-service password reset (SSPR), we recommend you [enable combined security information registration](howto-registration-mfa-sspr-combined.md). For resiliency, we recommend that you require users to register multiple authentication methods. When one method isn't available for a user during sign-in or SSPR, they can choose to authenticate with another method. For more information, see [Create a resilient access control management strategy in Microsoft Entra ID](concept-resilient-controls.md).
 
@@ -41,7 +41,7 @@ The following table outlines when an authentication method can be used during a 
 | Software OATH tokens           | No                     | MFA and SSPR              |
 | External authentication methods (preview)| No           | MFA                       |
 | Temporary Access Pass (TAP)    | Yes                    | MFA                       |
-| SMS                            | Yes                    | MFA and SSPR              |
+| Text                           | Yes                    | MFA and SSPR              |
 | Voice call                     | No                     | MFA and SSPR              |
 | Password                       | Yes                    | No                        |
 
@@ -69,25 +69,25 @@ To learn more about how each authentication method works, see the following sepa
 > [!NOTE]
 > In Microsoft Entra ID, a password is often one of the primary authentication methods. You can't disable the password authentication method. If you use a password as the primary authentication factor, increase the security of sign-in events using Microsoft Entra multifactor authentication.
 
-The following additional verification methods can be used in certain scenarios:
+These other verification methods can be used in certain scenarios:
 
 * [App passwords](howto-mfa-app-passwords.md) - used for old applications that don't support modern authentication and can be configured for per-user Microsoft Entra multifactor authentication.
 * [Security questions](concept-authentication-security-questions.md) - only used for SSPR
 * [Email address](concept-sspr-howitworks.md#authentication-methods) - only used for SSPR
 
 
-## Usable and non-usable methods
+## Usable and nonusable methods
 
-Administrators can view user authentication methods in the Microsoft Entra admin center. Usable methods are listed first, followed by non-usable methods. 
+Administrators can view user authentication methods in the Microsoft Entra admin center. Usable methods are listed first, followed by nonusable methods. 
 
-Each authentication method can become non-usable for different reasons. For example, a Temporary Access Pass may expire, or FIDO2 security key may fail attestation. The portal will be updated to provide the reason for why the method is non-usable. 
+Each authentication method can become nonusable for different reasons. For example, a Temporary Access Pass may expire, or FIDO2 security key may fail attestation. The portal gets updated to provide the reason for why the method isn't usable. 
 
-Authentication methods that are no longer available due to "Require re-register multifactor authentication" are also displayed here.
+Authentication methods that are no longer available due to **Require re-register multifactor authentication** also appear here.
 
 :::image type="content" border="true" source="media/concept-authentication-methods/non-usable.png" alt-text="Screenshot of non-usable authentication methods." :::
 
 
-## Next steps
+## Related content
 
 To get started, see the [tutorial for self-service password reset (SSPR)][tutorial-sspr] and [Microsoft Entra multifactor authentication][tutorial-azure-mfa].
 
