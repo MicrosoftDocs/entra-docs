@@ -121,6 +121,6 @@ Proactively monitoring and updating devices is crucial to avoid any authenticati
 
 For more detailed information on the deprecation of the KDFv1 algorithm and associated security updates, refer to the following resources:
 
-- [CVE Record CVE Record CVE-2021-33781](https://www.cve.org/CVERecord?id=CVE-2021-33781)
+- [CVE Record CVE-2021-33781](https://www.cve.org/CVERecord?id=CVE-2021-33781)
 - [What’s new in Microsoft Entra – June 2024](https://techcommunity.microsoft.com/blog/identity/what%e2%80%99s-new-in-microsoft-entra-%e2%80%93-june-2024/3796387)
 - [Windows Update](https://support.microsoft.com/windows/how-to-update-windows-security-11e85d24-9f2c-16f9-af6d-c23cb1a473fe)
