@@ -1447,16 +1447,6 @@ The integration is available for all providers: PIM for Azure AD roles, PIM for 
 
 ---
 
-### General Availability - Updated look and feel for Per-user MFA
-
-**Type:** Plan for change    
-**Service category:** MFA                       
-**Product capability:** Identity Security & Protection              
-
-As part of ongoing service improvements, we're making updates to the per-user MFA admin configuration experience to align with the look and feel of Azure. This change doesn't include any changes to the core functionality and only includes visual improvements. For more information, see: [Enable per-user Microsoft Entra multifactor authentication to secure sign-in events](~/identity/authentication/howto-mfa-userstates.md).
-
----
-
 ### General Availability - Converged Authentication Methods in US Gov cloud
 
 **Type:** New feature   
