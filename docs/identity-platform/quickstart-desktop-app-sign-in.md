@@ -6,7 +6,7 @@ author: henrymbuguakiarie
 manager: mwongerapk
 ms.service: identity-platform
 ms.topic: quickstart
-ms.date: 10/30/2024
+ms.date: 11/15/2024
 ms.author: henrymbugua
 zone_pivot_groups: entra-tenants
 
@@ -488,6 +488,5 @@ Run the app by pressing *F5* or select the *play button* at the top of Visual St
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 
 ---
-
 
 ::: zone-end 
