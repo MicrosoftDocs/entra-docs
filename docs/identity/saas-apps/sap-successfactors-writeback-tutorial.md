@@ -65,10 +65,6 @@ Work with your SuccessFactors admin team or implementation partner to create or 
    > ![Create New Permission Role](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
 
 1. Add a **Role Name** and **Description** for the new permission role. The name and description should indicate that the role is for API usage permissions.
-
-   > [!div class="mx-imgBorder"]
-   > ![Permission role detail](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
-
 1. Under Permission settings, click **Permission...**, then scroll down the permission list and click **Manage Integration Tools**. Check the box for **Allow Admin to Access to OData API through Basic Authentication**.
 
    > [!div class="mx-imgBorder"]
@@ -111,14 +107,7 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 1. From the **Permission Role List**, select the role that you created for API usage permissions.
 1. Under **Grant this role to...**, click **Add...** Button.
 1. Select **Permission Group...** from the drop-down menu, then click **Select...** to open the Groups window to search and select the group created above.
-
-   > [!div class="mx-imgBorder"]
-   > ![Add permission group](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
-
 1. Review the Permission Role grant to the Permission Group. 
-   > [!div class="mx-imgBorder"]
-   > ![Permission Role and Group detail](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
-
 1. Click **Save Changes**.
 
 ## Preparing for SuccessFactors Writeback
@@ -249,9 +238,7 @@ This section provides steps for
     > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
    * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and URL are valid.
-    >[!div class="mx-imgBorder"]
-    >![Entra admin center](./media/sap-successfactors-inbound-provisioning/sfwb-provisioning-creds.png)
-
+ 
    * Once the credentials are saved successfully, the **Mappings** section displays the default mapping. Refresh the page, if the attribute mappings are not visible.  
 
 ### Part 2: Configure attribute mappings
@@ -285,17 +272,9 @@ In this section, you configure how user data flows from SuccessFactors to Active
    | 13 | false | cellPhoneIsPrimary | Use this attribute to set the primary flag for cell phone number. Valid values are true or false. |
    | 14 | [extensionAttribute1-15] | userId | Use this mapping to ensure that the active record in SuccessFactors is updated when there are multiple employment records for the same user. For more details refer to [Enabling writeback with UserID](~/identity/app-provisioning/sap-successfactors-integration-reference.md#enabling-writeback-with-userid) |
  
-1. Validate and review your attribute mappings. 
- 
-    >[!div class="mx-imgBorder"]
-    >![Writeback attribute mapping](./media/sap-successfactors-inbound-provisioning/writeback-attribute-mapping.png)
-
+1. Validate and review your attribute mappings.
 1. Click **Save** to save the mappings. Next, we'll update the JSON Path API expressions to use the phoneType codes in your SuccessFactors instance. 
 1. Select **Show advanced options**. 
-
-    >[!div class="mx-imgBorder"]
-    >![Show advanced options](./media/sap-successfactors-inbound-provisioning/show-advanced-options.png)
-
 1. Click on **Edit attribute list for SuccessFactors**. 
 
    > [!NOTE] 
