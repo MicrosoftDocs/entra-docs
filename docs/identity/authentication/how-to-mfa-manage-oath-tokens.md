@@ -51,8 +51,7 @@ To enable hardware OATH tokens in the Microsoft Entra admin center:
 1. Browse to **Protection** > **Authentication methods** > **Hardware OATH tokens (Preview)**.
 1. Select **Enable**, choose which groups of users to include in the policy, and click **Save**.
 
-   :::media/concept-authentication-oath-tokens/enable.png" alt-text="Screenshot of how to enable hardware OATH tokens in the Microsoft Entra admin center.":::
-
+   :::image type="content" source="media/concept-authentication-oath-tokens/enable.png" alt-text="Screenshot of how to enable hardware OATH tokens in the Microsoft Entra admin center.":::
 
 We recommend that you [migrate to the Authentication methods policy](how-to-authentication-methods-manage.md) to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
 
@@ -319,7 +318,7 @@ To identify and remove the legacy token.
    GET https://graph.microsoft.com/beta/users/{user-upn-or-objectid}/authentication/hardwareOathMethods
    ```
 
-   Note the **id** of both tokens and copy the **serialNumber** of the duplicate token.
+   Find the **id** of both tokens and copy the **serialNumber** of the duplicate token.
 
 1. Identify the legacy token. Only one token is returned in the response of the following command. That token was created by using Microsoft Graph.
 
