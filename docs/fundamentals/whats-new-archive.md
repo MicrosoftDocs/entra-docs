@@ -1382,18 +1382,6 @@ For more information about how to better secure your organization by using autom
 
 ---
 
-### Plan for change - Modernizing Terms of Use Experiences
-
-**Type:** Plan for change         
-**Service category:** Terms of Use                               
-**Product capability:** AuthZ/Access Delegation                   
-
-Recently we announced the modernization of terms of use end-user experiences as part of ongoing service improvements. As previously communicated the end user experiences is updated with a new PDF viewer and are moving from https://account.activedirectory.windowsazure.com to https://myaccount.microsoft.com. 
-
-Starting today the modernized experience for viewing previously accepted terms of use is available via https://myaccount.microsoft.com/termsofuse/myacceptances. We encourage you to check out the modernized experience, which follows the same updated design pattern as the upcoming modernization of accepting or declining terms of use as part of the sign-in flow. We would appreciate your [feedback](https://forms.microsoft.com/r/NV0msbrqtF) before we begin to modernize the sign-in flow.
-
----
-
 ### General Availability - Privileged Identity Management and Conditional Access integration 
 
 **Type:** New feature       
