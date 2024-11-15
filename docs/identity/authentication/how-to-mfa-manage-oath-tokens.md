@@ -102,7 +102,7 @@ The response includes the token **id**, and the user **id** that the token is as
 }
 ```
 
-Here's how the Authentication Policy Administrator can activate the token. Replace the verifcation code in the Request body with the code from your hardware OATH token.
+Here's how the Authentication Policy Administrator can activate the token. Replace the verification code in the Request body with the code from your hardware OATH token.
 
 ```https
 POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods/3dee0e53-f50f-43ef-85c0-b44689f2d66d/activate
@@ -221,7 +221,7 @@ Here are steps a user can follow to self-activate their hardware OATH token in S
 
 1. Create a friendly name to help you choose this method to complete multifactor authentication, and click **Next**.
 
-   :::image type="content" source="media/concept-authentication-oath-tokens/add-name.png" alt-text="Screenshot of how to add a freindly name for a hardware OATH token.":::
+   :::image type="content" source="media/concept-authentication-oath-tokens/add-name.png" alt-text="Screenshot of how to add a friendly name for a hardware OATH token.":::
 
 1. Supply the random verification code that appears when you tap the button on the device. For a token that refreshes its code every 30 seconds, you need to enter the code and click **Next** within one minute. For a token that refreshes every 60 seconds, you have two minutes. 
 
@@ -229,7 +229,7 @@ Here are steps a user can follow to self-activate their hardware OATH token in S
 
 1. When you see the hardware OATH token is successfully added, click **Done**.
 
-   :::image type="content" source="media/concept-authentication-oath-tokens/success.png" alt-text="Screenshot of a hardware OATH token after it is added.":::
+   :::image type="content" source="media/concept-authentication-oath-tokens/success.png" alt-text="Screenshot of a hardware OATH token after it's added.":::
 
 1. The hardware OATH token appears in the list of your available authentication methods.
 
