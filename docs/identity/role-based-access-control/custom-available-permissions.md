@@ -28,7 +28,7 @@ When choosing the permissions for your custom role, you can grant access to mana
 
 Single-tenant applications are defined as having **Supported account types** set to "Accounts in this organizational directory only." In the Graph API, single-tenant applications have the signInAudience property set to "AzureADMyOrg."
 
-To grant access to manage only single-tenant applications, use the permissions indicated below with the subtype **applications.myOrganization**. For example, microsoft.directory/applications.myOrganization/basic/update.
+To grant access to manage only single-tenant applications, use the permissions indicated as follows with the subtype **applications.myOrganization**. For example, microsoft.directory/applications.myOrganization/basic/update.
 
 See the [custom roles overview](custom-overview.md) for an explanations of the terms subtype, permission, and property set mean. The following information is specific to application registrations.
 
@@ -38,13 +38,13 @@ There are two permissions available for granting the ability to create applicati
 
 #### microsoft.directory/applications/createAsOwner
 
-Assigning this permission results in the creator being added as the first owner of the created app registration. The created app registration will count towards the creator's 250 created objects quota.
+Assigning this permission results in the creator being added as the first owner of the created app registration. The created app registration counts towards the creator's 250 created objects quota.
 
 #### microsoft.directory/applications/create
 
-Assigning this permission results in the creator not being added as the first owner of the created app registration, and the created app registration will not count against the creator's 250 created objects quota. Use this permission carefully as there is nothing preventing the assignee from creating app registrations until the directory-level quota is reached.
+Granting this permission prevents the creator from being added as the first owner of the app registration and excludes the app registration from the creator's 250-object quota. Use this permission carefully as there is nothing preventing the assignee from creating app registrations until the directory-level quota is reached.
 
-If both permissions are assigned, the /create permission will take precedence. Though the /createAsOwner permission does not automatically add the creator as the first owner, owners can be specified during the creation of the app registration when using Graph APIs or PowerShell cmdlets.
+If both permissions are assigned, the /create permission takes precedence. Though the /createAsOwner permission does not automatically add the creator as the first owner, owners can be specified during the creation of the app registration when using Graph APIs or PowerShell cmdlets.
 
 Create permissions grant access to the **New registration** command.
 
@@ -93,11 +93,11 @@ Grants the same permissions as microsoft.directory/applications/standard/read, b
 
 ## Update
 
-The "Update" permissions in Microsoft Entra ID allow administrators to modify various properties of application registrations. These permissions are essential for maintaining and managing both single-tenant and multi-tenant applications. Depending on the specific permission granted, administrators can update properties such as supported account types, authentication settings, branding details, and more. Below is a detailed list of the available update permissions and their specific capabilities.
+The "Update" permissions in Microsoft Entra ID allow administrators to modify various properties of application registrations. These permissions are essential for maintaining and managing both single-tenant and multi-tenant applications. Depending on the specific permission granted, administrators can update properties such as supported account types, authentication settings, branding details, and more. The following is a detailed list of the available update permissions and their specific capabilities.
 
 #### microsoft.directory/applications/allProperties/update
 
-Provides the ability to update all properties on single-tenant and multi-tenant applications.
+Allows the ability to update all properties on single-tenant and multi-tenant applications.
 
 #### microsoft.directory/applications.myOrganization/allProperties/update
 
@@ -105,7 +105,7 @@ Grants the same permissions as microsoft.directory/applications/allProperties/up
 
 #### microsoft.directory/applications/audience/update
 
-Provides the ability to update the supported account type (signInAudience) property on single-tenant and multi-tenant applications.
+Allows the ability to update the supported account type (signInAudience) property on single-tenant and multi-tenant applications.
 
 ![This permission grants access to app registration supported account type property on authentication page](./media/custom-available-permissions/supported-account-types.png)
 
@@ -115,7 +115,7 @@ Grants the same permissions as microsoft.directory/applications/audience/update,
 
 #### microsoft.directory/applications/authentication/update
 
-Provides the ability to update the reply URL, sign-out URL, implicit flow, and publisher domain properties on single-tenant and multi-tenant applications. Grants access to all fields on the application registration authentication page except supported account types:
+Allows the ability to update the reply URL, sign-out URL, implicit flow, and publisher domain properties on single-tenant and multi-tenant applications. Grants access to all fields on the application registration authentication page except supported account types:
 
 ![Grants access to app registration authentication but not supported account types](./media/custom-available-permissions/supported-account-types.png)
 
@@ -125,7 +125,7 @@ Grants the same permissions as microsoft.directory/applications/authentication/u
 
 #### microsoft.directory/applications/basic/update
 
-Provides the ability to update the name, logo, homepage URL, terms of service URL, and privacy statement URL properties on single-tenant and multi-tenant applications. Grants access to all fields on the application registration branding page:
+Allows the ability to update the name, logo, homepage URL, terms of service URL, and privacy statement URL properties on single-tenant and multi-tenant applications. Grants access to all fields on the application registration branding page:
 
 ![This permission grants access to the app registration branding page](./media/custom-available-permissions/app-registration-branding.png)
 
@@ -135,7 +135,7 @@ Grants the same permissions as microsoft.directory/applications/basic/update, bu
 
 #### microsoft.directory/applications/credentials/update
 
-Provides the ability to update the certificates and client secrets properties on single-tenant and multi-tenant applications. Grants access to all fields on the application registration certificates & secrets page:
+Allows the ability to update the certificates and client secrets properties on single-tenant and multi-tenant applications. Grants access to all fields on the application registration certificates & secrets page:
 
 ![This permission grants access to the app registration certificates & secrets page](./media/custom-available-permissions/app-registration-secrets.png)
 
@@ -145,7 +145,7 @@ Grants the same permissions as microsoft.directory/applications/credentials/upda
 
 #### microsoft.directory/applications/owners/update
 
-Provides the ability to update the owner property on single-tenant and multi-tenant. Grants access to all fields on the application registration owners page:
+Allows the ability to update the owner property on single-tenant and multi-tenant. Grants access to all fields on the application registration owners page:
 
 ![This permissions grants access to the app registration owners page](./media/custom-available-permissions/app-registration-owners.png)
 
@@ -155,7 +155,7 @@ Grants the same permissions as microsoft.directory/applications/owners/update, b
 
 #### microsoft.directory/applications/permissions/update
 
-Provides the ability to update the delegated permissions, application permissions, authorized client applications, required permissions, and consent properties on single-tenant and multi-tenant applications. It doesn't grant the ability to perform consent. Grants access to all fields on the application registration API permissions and Expose an API pages:
+This permission allows updates to various properties on single-tenant and multi-tenant applications, including delegated permissions, application permissions, authorized client applications, required permissions, and consent properties. It doesn't grant the ability to perform consent. Grants access to all fields on the application registration API permissions and Expose an API pages:
 
 ![This permissions grants access to the app registration API permissions page](./media/custom-available-permissions/app-registration-api-permissions.png)
 
