@@ -1,6 +1,6 @@
 ---
 title: Call a web API in a sample Android mobile app
-description: Learn how to call web API in Android sample app.
+description: Learn how to call web API in an Android (Kotlin) sample app.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a developer, I want to call a web API from a sample Android mobile app so that I can experience how Microsoft Entra's native authentication works.
 ---
 
-# Sign in users and call an API in a sample Android mobile app by using native authentication
+# Sign in users and call an API in a sample Android app by using native authentication
 
 This article demonstrates how to configure a sample Android mobile application to call an ASP.NET Core web API.
 

@@ -1,6 +1,6 @@
 ---
 title: Sign in users in sample macOS (Swift) app by using native authentication
-description: Learn how to configure macOS sample app to sign up and sign in using Microsoft Entra External ID.
+description: Learn how to configure macOS (Swift) sample app to sign up and sign in using Microsoft Entra External ID.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -15,7 +15,7 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want to learn about how to configure native authentication macOS sample app to sign up and sign in scenarios using Microsoft Entra External ID.
 ---
 
-# Sign in users in sample macOS (Swift) app by using native authentication
+# Sign in users in sample macOS app by using native authentication
 
 This guide shows how to run an macOS sample application that demonstrates sign-up and sign in scenarios using Microsoft Entra External ID. 
 
@@ -35,7 +35,7 @@ In this article, you learn how to:
 
 ## Register an application 
 
-[!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
+[!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
 ## Enable public client and native authentication flows 
 

@@ -1,6 +1,6 @@
 ---
-title: Sign in users in sample iOS (Swift) mobile app by using native authentication
-description: Learn how to configure iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID.
+title: Sign in users in sample iOS (Swift) app by using native authentication
+description: Learn how to configure iOS (Swift) sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -35,7 +35,7 @@ In this article, you learn how to:
 
 ## Register an application 
 
-[!INCLUDE [register client app](../external-id/customers/customers/includes/register-app/register-client-app-common.md)]
+[!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
 ## Enable public client and native authentication flows 
 

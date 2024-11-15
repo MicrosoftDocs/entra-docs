@@ -1,6 +1,6 @@
 ---
 title: Sign in users in Android mobile app by using native authentication.
-description: Learn how to configure a sample Android Kotlin sample app to sign in customer users by using Microsoft Entra's native authentication.
+description: Learn how to configure a sample Android (Kotlin) sample app to sign in customer users by using Microsoft Entra's native authentication.
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -14,7 +14,7 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want to configure native authentication Android Kotlin sample app enable customer users to sign up, sign in, sign out and reset password by using Microsoft Entra's native authentication.
 ---
 
-# Sign in users in sample Android (Kotlin) mobile app by using native authentication
+# Sign in users in sample Android (Kotlin) app by using native authentication
 
 This guide shows how to run an Android sample application that demonstrates sign-up, sign in, sign out, and password reset scenarios using Microsoft Entra's [native authentication](concept-native-authentication.md). 
   

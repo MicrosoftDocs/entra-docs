@@ -1,6 +1,6 @@
 ---
 title: Sign in users and call an API in sample iOS mobile app by using native authentication
-description: Learn how sign in users and call an API in sample iOS mobile app by using native authentication
+description: Learn how sign in users and call an API in sample iOS (Swift) mobile app by using native authentication
 
 author: henrymbuguakiarie
 manager: mwongerapk
