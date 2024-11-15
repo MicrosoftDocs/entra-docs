@@ -1382,16 +1382,6 @@ For more information about how to better secure your organization by using autom
 
 ---
 
-### General Availability - Include/exclude Entitlement Management in Conditional Access policies
-
-**Type:** New feature       
-**Service category:** Entitlement Management                          
-**Product capability:** Entitlement Management                
-
-The Entitlement Management service can now be targeted in the Conditional Access policy for inclusion or exclusion of applications. To target the Entitlement Management service, select “Azure AD Identity Governance - Entitlement Management” in the cloud apps picker. The Entitlement Management app includes the entitlement management part of My Access, the Entitlement Management part of the Microsoft Entra and Azure portals, and the Entitlement Management part of MS Graph. For more information, see:  [Review your Conditional Access policies](~/id-governance/entitlement-management-external-users.md#review-your-conditional-access-policies).
-
----
-
 ### General Availability - Azure Active Directory User and Group capabilities on Azure Mobile are now available
 
 **Type:** New feature       
