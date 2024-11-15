@@ -1447,15 +1447,6 @@ The integration is available for all providers: PIM for Azure AD roles, PIM for 
 
 ---
 
-### General Availability - Converged Authentication Methods in US Gov cloud
-
-**Type:** New feature   
-**Service category:** MFA                      
-**Product capability:** User Authentication              
-
-The Converged Authentication Methods Policy enables you to manage all authentication methods used for MFA and SSPR in one policy and migrate off the legacy MFA and SSPR policies. This update also targets authentication methods to groups of users instead of enabling them for all users in the tenant. Customers should migrate management of authentication methods off the legacy MFA and SSPR policies before September 30, 2024. For more information, see: [Manage authentication methods for Azure AD](~/identity/authentication/concept-authentication-methods-manage.md).
-
----
 
 
 
