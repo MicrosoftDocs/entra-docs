@@ -62,7 +62,7 @@ Entra ID Conditional Access can be used to control CAE behavior in your tenant. 
 
 ## Related content
 
-- [Continuous access evaluation in Microsoft Entra](/entra/identity/conditional-access/concept-continuous-access-evaluation.md)
-- [Session controls in Conditional Access policy](/entra/identity/conditional-access/concept-conditional-access-session.md)
-- [Continuous access evaluation strict location enforcement in Microsoft Entra ID](/entra/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md)
+- [Continuous access evaluation in Microsoft Entra](/docs/identity/conditional-access/concept-continuous-access-evaluation.md)
+- [Session controls in Conditional Access policy](/docs/identity/conditional-access/concept-conditional-access-session.md)
+- [Continuous access evaluation strict location enforcement in Microsoft Entra ID](/docs/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md)
 - [Global Secure Access client for Windows](how-to-install-windows-client.md)
