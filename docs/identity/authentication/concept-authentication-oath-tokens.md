@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/14/2024
+ms.date: 11/15/2024
 
 ms.author: justinha
 author: justinha
@@ -40,6 +40,10 @@ You can continue to manage tokens from the original preview in **OATH tokens** i
 
 Hardware OATH tokens that you add with Microsoft Graph for this preview refresh appear along with other tokens in the admin center. But you can only manage them by using Microsoft Graph. 
 
+### Time drift correction
+
+Microsoft Entra ID adjusts time drift of the tokens during activation and every authentication. During activation, verification codes are accepted if they are within a +/- 1 day range for a token with a 30 seconds refresh interval, or +/- 2 days for a token with a 60 seconds refresh interval. During authentication, verification codes are accepted if they are within a +/- 1 minute range for a token with a 30 seconds refresh interval, or +/- 2 minutes for a token with a 60 seconds refresh interval.
+
 ### Improvements in the preview refresh
 
 This hardware OATH token preview refresh improves flexibility and security for organizations by removing Global Administrator requirements. 
@@ -72,15 +76,6 @@ Tenants with a Microsoft Entra ID P1 or P2 license can continue to upload hardwa
 
 For more information aabout how to enable hardware OATH tokens and Microsoft Graph APIs that you can use to upload, activate, and assifn tokens, see [How to manage OATH tokens](how-to-mfa-manage-oath-tokens.md).
  
-### Time drift correction
-
-tokens can be on shelf. Internal clock goes out of sync. 
-
-The first time a token is activated, we will try to match the code with any possible code within a +/- 1 day range for a 30 sec token. For 60 second token the range is +/- 2 days. 
- 
-During auth it will match within 2 step window. For 30 second this is +/- 1 minute and 2 minute for a 60 second token. Every time a token is successfully used, the oath token time drift is updated
-
-E.g. we correct time drift at registration for codes +/-1 day for 30 sec token. We correct at each auth for +/- 1 min
 
 ## OATH token icons
 
