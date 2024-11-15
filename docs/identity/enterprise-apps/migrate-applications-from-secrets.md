@@ -26,13 +26,12 @@ Migrating applications away from secret-based authentication offers several bene
 
 - **Improved security**: Secret-based authentication is susceptible to leaks and attacks. Migrating to more secure authentication methods, such as certificate-based authentication or managed identities, can help improve security.
 
-- **Enhanced user experience**: Secret-based authentication can be cumbersome for users and developers. Migrating to more user-friendly authentication methods can enhance the user experience.
-
-- **Compliance**: Migrating to more secure authentication methods can help you meet compliance requirements and security best practices.
-
 - **Reduced complexity**: Managing secrets can be complex and error-prone. Migrating to more secure authentication methods can help reduce complexity and improve security.
 
 - **Scalability**: Migrating to more secure authentication methods can help you scale your applications securely.
+
+- **Compliance**: Migrating to more secure authentication methods can help you meet compliance requirements and security best practices.
+
 
 ## How to migrate applications away from secret-based authentication
 
