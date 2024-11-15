@@ -37,7 +37,7 @@ macOS 14 Sonoma and later offer two phish-resistant methods in the Apple Platfor
 1. [Secure Enclave](/mem/intune/configuration/platform-sso-macos#secure-enclave) (Recommended).        
 2. [Smart card](/mem/intune/configuration/platform-sso-macos#smart-card).
 
-For more information and a comparison of available authentication methods with Platform SSO, please see [Decide the authentication method](https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#step-1---decide-the-authentication-method).
+For more information and a comparison of available authentication methods with Platform SSO, please see [Decide the authentication method](/mem/intune/configuration/platform-sso-macos#step-1---decide-the-authentication-method).
 
 ## Microsoft Intune Configuration
 
@@ -49,11 +49,11 @@ Please refer to your MDM provider’s documentation for information on support a
 
 ## Enable SSO for Applications that don’t use Microsoft Authentication Library (MSAL)
 
-See [Enable SSO for apps that don’t use MSAL](../../identity-platform/apple-sso-plugin#enable-sso-for-apps-that-dont-use-msal).
+See [Enable SSO for apps that don’t use MSAL](../../identity-platform/apple-sso-plugin#enable-sso-for-apps-that-dont-use-msal.md).
 
 ## Configure Kerberos SSO Integration
 
-See [Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources in Platform SSO](./device-join-macos-platform-single-sign-on-kerberos-configuration).
+See [Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources in Platform SSO](./device-join-macos-platform-single-sign-on-kerberos-configuration.md).
 
 ## Account Management
 
@@ -75,17 +75,17 @@ For existing devices already enrolled in Intune, assign the Platform SSO policy 
 
 ### Create Device Compliance Policies
 
-Device Compliance Policies in Microsoft Intune allow administrators to ensure that enrolled devices meet organizational security standards and are configured properly. These policies help safeguard corporate data by enforcing requirements such as encryption, operating system versions, and security measures like password strength. For more information on configuring Device Compliance Policies, please see [Device Compliance Settings for macOS Settings in Intune](/mem/intune/protect/compliance-policy-create-mac-os).
+Device Compliance Policies in Microsoft Intune allow administrators to ensure that enrolled devices meet organizational security standards and are configured properly. These policies help safeguard corporate data by enforcing requirements such as encryption, operating system versions, and security measures like password strength. For more information on configuring Device Compliance Policies, please see [Device Compliance Settings for macOS Settings in Intune](/mem/intune/protect/compliance-policy-create-mac-os.md).
 
 ### Deprovision or Offboard Accounts
 
 #### Deleting users from a tenant
 
-See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users#delete-a-user). 
+See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users#delete-a-user.md). 
 
 #### Revoke a user's access
 
-See [Revoke user access in Microsoft Entra ID](../users/users-revoke-access).
+See [Revoke user access in Microsoft Entra ID](../users/users-revoke-access.md).
 
 #### Remotely lock devices with Intune
 
@@ -113,13 +113,13 @@ See [Remotely lock devices with Intune](/mem/intune/remote-actions/device-remote
 
 #### Detect and Remove Stale Devices in Microsoft Entra ID and Intune
 
-See [How To: Manage stale devices in Microsoft Entra ID](./manage-stale-devices) and [Delete devices from the Intune Admin Center](/mem/intune/remote-actions/devices-wipe#delete-devices-from-the-intune-admin-center).
+See [How To: Manage stale devices in Microsoft Entra ID](./manage-stale-devices.md) and [Delete devices from the Intune Admin Center](/mem/intune/remote-actions/devices-wipe#delete-devices-from-the-intune-admin-center).
 
 ## Integrate Applications with the SSO Broker
 
 [MSAL for Apple devices](https://github.com/AzureAD/microsoft-authentication-library-for-objc) versions 1.1.0 and later support the Microsoft Enterprise SSO plug-in for Apple devices natively for work and school accounts.
 
-You don’t need any special configuration if you followed [Quickstart: Sign in users and call Microsoft Graph from an iOS or macOS app](../../identity-platform/quickstart-mobile-app-ios-sign-in) and used the [default redirect URI format](/mem/intune/remote-actions/devices-wipe#delete-devices-from-the-intune-admin-center). 
+You don’t need any special configuration if you followed [Quickstart: Sign in users and call Microsoft Graph from an iOS or macOS app](../../identity-platform/quickstart-mobile-app-ios-sign-in.md) and used the [default redirect URI format](/mem/intune/remote-actions/devices-wipe#delete-devices-from-the-intune-admin-center). 
 
 On devices that have the SSO plug-in, MSAL automatically invokes it for all interactive and silent token requests. It also invokes it for account enumeration and account removal operations. Because MSAL implements a native SSO plug-in protocol that relies on customer operations, this setup provides the smoothest native experience to the end user.
 
@@ -156,14 +156,14 @@ When using smart card-based authentication, it is highly recommended that you sp
 
 ## Troubleshooting
 
-If you experience issues when deploying macOS Platform SSO, refer to our documentation on [macOS Platform Single Sign-on known issues and troubleshooting](./troubleshoot-macos-platform-single-sign-on-extension).
+If you experience issues when deploying macOS Platform SSO, refer to our documentation on [macOS Platform Single Sign-on known issues and troubleshooting](./troubleshoot-macos-platform-single-sign-on-extension.md).
 
 ## See also
 
-•	Microsoft Learn | macOS Platform Single Sign-on overview (preview)
-•	Microsoft Learn | Configure Platform SSO for macOS devices in Microsoft Intune
-•	Microsoft Learn | Passwordless authentication options for Microsoft Entra ID
-•	Microsoft Learn | Plan a passwordless deployment in Microsoft Entra ID
-•	Microsoft Learn | Configure Microsoft Entra ID to meet NIST authenticator assurance levels
-•	Microsoft Learn | NIST authenticator types and aligned Microsoft Entra methods
-•	Microsoft Learn | NIST authenticator assurance level 3 by using Microsoft Entra ID
+- [macOS Platform Single Sign-on overview (preview)](../devices/macos-psso.md)
+- [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos)
+- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
+- [Plan a passwordless deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
+- [Configure Microsoft Entra ID to meet NIST authenticator assurance levels](../../standards/nist-overview.md)
+- [NIST authenticator types and aligned Microsoft Entra methods](../../standards/nist-authenticator-types)
+- [NIST authenticator assurance level 3 by using Microsoft Entra ID](../../standards/nist-authenticator-assurance-level-3)
