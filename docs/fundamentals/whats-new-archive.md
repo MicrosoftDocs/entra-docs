@@ -1467,24 +1467,5 @@ The Converged Authentication Methods Policy enables you to manage all authentica
 
 ---
 
-### General Availability - Support for Directory Extensions using Azure AD cloud sync
-
-**Type:** New feature  
-**Service category:** Provisioning  
-**Product capability:** Azure AD Connect cloud sync
-
-Hybrid IT Admins can now sync both Active Directory and Azure AD Directory Extensions using Azure AD Connect cloud sync. This new capability adds the ability to dynamically discover the schema for both Active Directory and Azure Active Directory, thereby, allowing customers to map the needed attributes using the attribute mapping experience of cloud sync. For more information, see [Directory extensions and custom attribute mapping in cloud sync](~/identity/hybrid/cloud-sync/custom-attribute-mapping.md).
-
----
-
-### Public Preview - Restricted Management Administrative Units
-
-**Type:** New feature   
-**Service category:** Directory Management                        
-**Product capability:** Access Control               
-
-Restricted Management Administrative Units allow you to restrict modification of users, security groups, and device in Azure AD so that only designated administrators can make changes. Global Administrators and other tenant-level administrators can't modify the users, security groups, or devices that are added to a restricted management admin unit. For more information, see: [Restricted management administrative units in Azure Active Directory (Preview)](~/identity/role-based-access-control/admin-units-restricted-management.md).
-
----
 
 
