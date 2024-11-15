@@ -55,4 +55,7 @@ To migrate applications away from secret-based authentication, consider the foll
 
 ## Related content
 
-- 
+- [Develop using Zero Trust principles](https://review.learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-applications-from-secrets?branch=pr-en-us-5974).
+- [Zero Trust identity and access management development best practices](https://learn.microsoft.com/en-us/security/zero-trust/develop/identity-iam-development-best-practices)
+
+
