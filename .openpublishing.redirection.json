@@ -1379,6 +1379,11 @@
       "source_path_from_root": "/docs/identity/saas-apps/bluejeans-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-cli-app-node-sign-in-users.md",
+      "redirect_url": "/entra/identity-platform/quickstart-cli-app-node-sign-in-users",
+      "redirect_document_id": false
     }
   ]
 }
