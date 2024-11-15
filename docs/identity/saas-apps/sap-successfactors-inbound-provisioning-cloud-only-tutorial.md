@@ -186,8 +186,6 @@ This section provides steps for user account provisioning from SuccessFactors to
     > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
    * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and URL are valid.
-    >[!div class="mx-imgBorder"]
-    >![Entra admin center](./media/sap-successfactors-inbound-provisioning/sf2aad-provisioning-creds.png)
 
    * Once the credentials are saved successfully, the **Mappings** section displays the default mapping **Synchronize SuccessFactors Users to Microsoft Entra ID**
 

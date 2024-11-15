@@ -249,9 +249,7 @@ This section provides steps for
     > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
    * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and URL are valid.
-    >[!div class="mx-imgBorder"]
-    >![Entra admin center](./media/sap-successfactors-inbound-provisioning/sfwb-provisioning-creds.png)
-
+ 
    * Once the credentials are saved successfully, the **Mappings** section displays the default mapping. Refresh the page, if the attribute mappings are not visible.  
 
 ### Part 2: Configure attribute mappings
@@ -285,17 +283,9 @@ In this section, you configure how user data flows from SuccessFactors to Active
    | 13 | false | cellPhoneIsPrimary | Use this attribute to set the primary flag for cell phone number. Valid values are true or false. |
    | 14 | [extensionAttribute1-15] | userId | Use this mapping to ensure that the active record in SuccessFactors is updated when there are multiple employment records for the same user. For more details refer to [Enabling writeback with UserID](~/identity/app-provisioning/sap-successfactors-integration-reference.md#enabling-writeback-with-userid) |
  
-1. Validate and review your attribute mappings. 
- 
-    >[!div class="mx-imgBorder"]
-    >![Writeback attribute mapping](./media/sap-successfactors-inbound-provisioning/writeback-attribute-mapping.png)
-
+1. Validate and review your attribute mappings.
 1. Click **Save** to save the mappings. Next, we'll update the JSON Path API expressions to use the phoneType codes in your SuccessFactors instance. 
 1. Select **Show advanced options**. 
-
-    >[!div class="mx-imgBorder"]
-    >![Show advanced options](./media/sap-successfactors-inbound-provisioning/show-advanced-options.png)
-
 1. Click on **Edit attribute list for SuccessFactors**. 
 
    > [!NOTE] 
