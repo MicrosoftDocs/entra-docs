@@ -22,7 +22,7 @@ ms.collection: M365-identity-device-management
 
 Hardware OATH tokens typically come with a secret key, or seed, preprogrammed in the token. Before a user can sign in to their work or school account in Microsoft Entra ID by using a hardware OATH token, an administrator needs to add the token to the tenant. The recommended way to add the token is by using Microsoft Graph with a least privileged administrator role. For more information, see [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview).
 
-As an alternative to using Microsoft Graph APIs, tenants with a Microsoft Entra ID Premium license can have a Global Administrator input these keys into Microsoft Entra ID. Secret keys are limited to 128 characters, which is not compatible with some tokens. The secret key can only contain the characters *a-z* or *A-Z* and digits *2-7*, and must be encoded in *Base32*.
+As an alternative to using Microsoft Graph APIs, tenants with a Microsoft Entra ID Premium license can have a Global Administrator input these keys into Microsoft Entra ID. Secret keys are limited to 128 characters, which isn't compatible with some tokens. The secret key can only contain the characters *a-z* or *A-Z* and digits *2-7*, and must be encoded in *Base32*.
 
 Programmable OATH time-based one-time passcode (TOTP) hardware tokens that can be reseeded can also be set up with Microsoft Entra ID in the software token setup flow.
 
