@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/08/2024
+ms.date: 11/11/2024
 
 ms.author: justinha
 author: justinha
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users will register a passkey using a mobile device or with a security key. 
 
 ---
-# Register a passkey using a mobile device 
+# Register a passkey using a mobile device
 
 This article shows how to register a security key with your iOS or Android device. 
 

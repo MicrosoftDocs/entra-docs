@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/29/2024
+ms.date: 11/11/2024
 
 ms.author: justinha
 author: justinha

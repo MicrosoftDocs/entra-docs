@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 07/06/2022
+ms.date: 11/11/2024
 ms.author: barclayn
 
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for self-asserted claims scenario. 
@@ -69,7 +69,7 @@ The JSON display definition is nearly the same, regardless of attestation type. 
 
 The JSON attestation definition should contain the **presentations** name. The **inputClaim** in the mapping section defines what claims should be captured in the credential the user presents. They need to have the prefix `$.vc.credentialSubject`. The **outputClaim** defined the name of the claims in the credential being issued. 
 
-The following rules definition will ask the user to present the **True Identity** credential during issuance. This credential comes from the [public demo application](https://woodgroveemployee.azurewebsites.net/). 
+The following rules definition prompts the user to present the **True Identity** credential during issuance. This credential comes from the [public demo application](https://woodgroveemployee.azurewebsites.net/). 
 
 ```json
 {

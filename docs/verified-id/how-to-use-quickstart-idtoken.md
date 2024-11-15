@@ -15,8 +15,6 @@ ms.author: barclayn
 
 # Create verifiable credentials for ID tokens
 
-  
-
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokens attestation](rules-and-display-definitions-model.md#idtokenattestation-type) produces an issuance flow where you're required to do an interactive sign-in to an OpenID Connect (OIDC) identity provider in Microsoft Authenticator. Claims in the ID token that the identity provider returns can be used to populate the issued verifiable credential. The claims mapping section in the rules definition specifies which claims are used. 
 
 ## Create a custom credential with the idTokens attestation type
@@ -136,6 +134,7 @@ The claims mapping in the following example requires that you configure the toke
 
 The clientId attribute is the application ID of a registered application in the OIDC identity provider. For Microsoft Entra ID, you create the application by following these steps:
 
+
 1. In the Azure portal, go to [Microsoft Entra ID](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps).
 
 1. Select **App registrations**, select **New registration**, and then give the app a name. 
@@ -144,7 +143,7 @@ The clientId attribute is the application ID of a registered application in the 
 
 1. In **Redirect URI (optional)**, select **Public client/native (mobile & desktop)**, and then enter **vcclient://openid/**.
  
-If you want to be able to test what claims are in the Microsoft Entra token, do the following:
+If you want to check the claims included in the Microsoft Entra ID token, take the following steps:
 
 1. On the left pane, select **Authentication**> **Add platform** > **Web**.
 
