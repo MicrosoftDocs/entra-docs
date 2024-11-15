@@ -320,10 +320,8 @@
       href: index-desktop.yml
     - name: Quickstart
       items:
-        - name: Node.js Electron
-          href: quickstart-desktop-app-nodejs-electron-sign-in.md
-        - name: Windows Presentation Foundation (WPF)
-          href: quickstart-desktop-app-wpf-sign-in.md
+        - name: Sign in users
+          href: quickstart-desktop-app-sign-in.md?pivots=workforce
     - name: Tutorials
       items:
         - name: Node.js Electron
