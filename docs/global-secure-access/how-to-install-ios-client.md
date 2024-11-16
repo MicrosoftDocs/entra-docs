@@ -29,7 +29,19 @@ This article explains how to set up and deploy the Global Secure Access client a
 
 ## Requirements
 ### Network requirements
-For Microsoft Defender for Endpoint on iOS (available in the [Apple App Store](https://apps.apple.com/us/app/microsoft-defender-security/id1526737990)) to function when connected to a network, you must configure the firewall/proxy to [Enable access to Microsoft Defender for Endpoint service URLs](defender-endpoint/configure-environment#enable-access-to-microsoft-defender-for-endpoint-service-urls-in-the-proxy-server).   
+For Microsoft Defender for Endpoint on iOS (available in the [Apple App Store](https://apps.apple.com/us/app/microsoft-defender-security/id1526737990)) to function when connected to a network, you must configure the firewall/proxy to [Enable access to Microsoft Defender for Endpoint service URLs](defender-endpoint/configure-environment#enable-access-to-microsoft-defender-for-endpoint-service-urls-in-the-proxy-server).  
+
+- [Enable access to Microsoft Defender for Endpoint service URLs](/defender-endpoint/configure-environment#enable-access-to-microsoft-defender-for-endpoint-service-urls-in-the-proxy-server).
+
+- [Enable access to Microsoft Defender for Endpoint service URLs](../defender-endpoint/configure-environment#enable-access-to-microsoft-defender-for-endpoint-service-urls-in-the-proxy-server).
+
+- [Enable access to Microsoft Defender for Endpoint service URLs](defender-endpoint/configure-environment).
+
+- [Enable access to Microsoft Defender for Endpoint service URLs](../../defender-endpoint/configure-environment#enable-access-to-microsoft-defender-for-endpoint-service-urls-in-the-proxy-server).
+
+- [Enable access to Microsoft Defender for Endpoint service URLs](defender-endpoint/configure-environment#enable-access-to-microsoft-defender-for-endpoint-service-urls-in-the-proxy-server). 
+
+- [Enable access to Microsoft Defender for Endpoint service URLs](defender-endpoint/configure-environment#enable-access-to-microsoft-defender-for-endpoint-service-urls-in-the-proxy-server).
 
 > [!NOTE]
 > Microsoft Defender for Endpoint on iOS isn't supported on userless or shared devices.

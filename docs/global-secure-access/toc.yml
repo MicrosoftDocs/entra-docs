@@ -55,6 +55,8 @@ items:
         href: how-to-install-windows-client.md
       - name: Install the Android client
         href: how-to-install-android-client.md
+      - name: Install the iOS client
+        href: how-to-install-ios-client.md
   - name: Remote networks
     expanded: false
     items:
