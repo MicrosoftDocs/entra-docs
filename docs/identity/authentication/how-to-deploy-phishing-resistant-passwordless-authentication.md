@@ -5,7 +5,7 @@ description: Detailed guidance to deploy passwordless and phishing-resistant aut
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/08/2024
+ms.date: 11/16/2024
 
 ms.author: justinha
 author: mepples21
@@ -92,7 +92,7 @@ Refer to the following guides to enable Microsoft Entra Verified ID onboarding a
 >[!Note]
 >Microsoft Entra Verified ID is part of the Microsoft Entra Suite license.
 
-Some organizations might choose other methods than Microsoft Entra Verified ID to onboard users and issue them their first credential. Microsoft recommends those organizations still use TAPs, or another way that lets a user onboard without a password. For example, you can [provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api).
+Some organizations might choose other methods than Microsoft Entra Verified ID to onboard users and issue them their first credential. Microsoft recommends those organizations still use TAPs, or another way that lets a user onboard without a password. For example, you can [provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 
 
 ### Onboarding step 2: Bootstrap a portable credential
@@ -119,7 +119,7 @@ Use the following guidance to enable recommended and alternative portable creden
 Method | Guidance
 -------|---------
 Passkeys | <li>Microsoft recommends that users sign in to Microsoft Authenticator directly to bootstrap a passkey in the app.<li>Users can use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.<li>Passkeys are disabled by default in Microsoft Entra ID. You can [enable passkeys in Authentication methods policy](how-to-enable-authenticator-passkey.md).<li>[Register passkeys in Authenticator on Android or iOS devices](how-to-register-passkey-authenticator.md).
-Security keys | <li>Security keys are turned off by default in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md).<li>Consider registering keys on behalf of your users with the Microsoft Entra ID provisioning APIs. For more information, see [Provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api).
+Security keys | <li>Security keys are turned off by default in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md).<li>Consider registering keys on behalf of your users with the Microsoft Entra ID provisioning APIs. For more information, see [Provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 Smart card/certificate-based authentication (CBA) | <li>Certificate-based authentication is more complicated to configure than passkeys or other methods. Consider only using it if necessary.<li>[How to configure Microsoft Entra certificate-based authentication](how-to-certificate-based-authentication.md).<li>Make sure to configure your on-premises PKI and Microsoft Entra ID CBA policies so that users truly complete multifactor authentication to sign in. The configuration generally requires the smart card Policy Object Identifier (OID) and the necessary affinity binding settings. For more advanced CBA configurations, see [Understanding the authentication binding policy](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-authentication-binding-policy).
 
 
