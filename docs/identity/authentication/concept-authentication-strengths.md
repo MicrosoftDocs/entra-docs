@@ -106,7 +106,7 @@ Conditional Access Administrators can also create custom authentication strength
 
   For example, let's say a resource requires passkey (FIDO2) for the authentication strength, and a 1-hour sign-in frequency. 24 hours ago, a user signed in with passkey (FIDO2) to access the resource. 
   
-  When they unlock their Windows device using Windows Hello for Business, they can access the resource again. Yesterday's sign-in satisfies the authentication strength requirement, and today's device unlock satisfies the sign-in frequency requirement.
+  When the user unlocks their Windows device using Windows Hello for Business, they can access the resource again. Yesterday's sign-in satisfies the authentication strength requirement, and today's device unlock satisfies the sign-in frequency requirement.
 
 - **FIDO2 security key Advanced options** - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
 
