@@ -99,10 +99,10 @@ Conditional Access Administrators can also create custom authentication strength
 - **Authentication methods that aren't currently supported by authentication strength** - The **Email one-time pass (Guest)** authentication method isn't included in the available combinations.
 
 - **Windows Hello for Business** – If the user signed in with Windows Hello for Business as their primary authentication method, it can be used to satisfy an authentication strength requirement that includes Windows Hello for Business. However, if the user signed in with another method like password as their primary authentication method, and the authentication strength requires Windows Hello for Business, they aren't prompted to sign in with Windows Hello for Business. The user needs to restart the session, choose **Sign-in options**, and select a method required by the authentication strength.
-
+ require
 ## Known issues
 
-- **Authentication strength and sign-in frequency** - When a resource has an authentication strength and sign-in frequency requirement for users, they can satisfy both requirements at two different times. For example, let's say a resource requires a passkey (FIDO2) and a 1-hour sign-in frequency. A user signed in with passkey (FIDO2) 24 hours ago to access the resource. When they unlock their Windows device using Windows Hello for Business, they can access the resource. Yesterday's sign-in satisfies the authentication strength requirement, and today's device unlock satisfies the sign-in frequency requirement.
+- **Authentication strength and sign-in frequency** - When a resource requires an authentication strength and sign-in frequency, users can satisfy both requirements at two different times. For example, let's say a resource requires a passkey (FIDO2) and a 1-hour sign-in frequency. A user signed in with passkey (FIDO2) 24 hours ago to access the resource. When they unlock their Windows device using Windows Hello for Business, they can access the resource. Yesterday's sign-in satisfies the authentication strength requirement, and today's device unlock satisfies the sign-in frequency requirement.
 
 - **FIDO2 security key Advanced options** - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
 
