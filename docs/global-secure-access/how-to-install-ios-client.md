@@ -3,7 +3,7 @@ title: The Global Secure Access client for iOS (Preview)
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the iOS client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/15/2024
+ms.date: 11/18/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -24,7 +24,7 @@ This article explains how to set up and deploy the Global Secure Access client a
 
 ## Prerequisites
 - To use the Global Secure Access iOS client, configure the iOS endpoint device as a Microsoft Entra registered device.
-- To enable Global Secure Access for your tenant, refer to the [Licensing requirements](overview-what-is-global-secure-access#licensing-overview). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).   
+- To enable Global Secure Access for your tenant, refer to the [Licensing requirements](overview-what-is-global-secure-access.md#licensing-overview). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).   
 - Onboard the tenant to Global Secure Access and configure one or more traffic forwarding profiles. For more information, see [Access the Global Secure Access area of the Microsoft Entra admin center](quickstart-access-admin-center.md).
 
 ## Requirements
@@ -43,10 +43,12 @@ The iOS device (phone or tablet) must meet the following requirements:
 ## Supported modes
 The Global Secure Access client for iOS supports installation on both modes of enrolled devices: supervised and unsupervised devices.
 
+## Supported traffic forwarding profiles
+The Global Secure Access client for iOS supports the Microsoft traffic forwarding profile and the Private Access traffic forwarding profile. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
+
 ## Known limitations
 - Tunneling Quick User Datagram Protocol (UDP) Internet Connections (QUIC) traffic (except for Exchange Online) isn't supported.
 - Global Secure Access (GSA) coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
-- Compliant network Conditional Access policy for all cloud apps isn't currently supported.
 
 ## Installation Steps
 ### Deploy on Device Administrator enrolled devices with Microsoft Intune
