@@ -52,7 +52,7 @@ Your app would check for:
 
 OneAuth/MSAL supports 2 ways of declaring capabilities, to apps of any size/scale/complexity. While we recommend setting them at the app-wide level, some complex applications (like Office), may have a mix of components that support CAE and others that don't, in which case you should opt for setting capabilities on a per-call basis. NOTE: Capabilities will be de-duped before requests are sent to the server, so there's no harm in setting a capability twice.
 
-    - App-wide To declare your entire app supports a capability like CAE, add it to the (optional) capabilities vector in your app's AADConfiguration object.
+App-wide To declare your entire app supports a capability like CAE, add it to the (optional) capabilities vector in your app's AADConfiguration object:
 
 ```csharp
 static Microsoft::Authentication::AadConfiguration AadConfig(
@@ -63,7 +63,7 @@ static Microsoft::Authentication::AadConfiguration AadConfig(
     ); 
 ```
 
-    - Per-call to declare that a specific call supports a capability like CAE, add it to the (optional) capabilities vector in your call's AuthenticationParameters object.
+Per-call to declare that a specific call supports a capability like CAE, add it to the (optional) capabilities vector in your call's AuthenticationParameters object:
 
 ```csharp
 AuthParameters::CreateForBearer(
