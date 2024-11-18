@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 11/18/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -39,6 +39,22 @@ Currently, the AD Schema isn't discoverable and there's fixed set of mappings. T
 |UniversalScope|True|Constant|CANNOT UPDATE IN UI - DO NOT UPDATE</br></br>Not visible in UI|
 
 Be aware that not all of the above mappings are visible in the portal. For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview).
+
+### sAmAccountName custom mapping
+The sAMAccount attribute is not, by default, synchronized from Microsoft Entra ID to Active Directory.  Because of this, when the new group is created in Active Directory, it is given a randomly generated name.
+
+:::image type="content" source="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-1.png" alt-text="Screenshot sAMAccountName using ADSI Edit." lightbox="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-1.png":::
+
+If you want your own unqiue value for sAMAccountName, you can create a custom mapping to sAMAccountName using an expression.  For example, you could do something like:  `Join("_", [displayName], "Contoso_Group")`
+
+:::image type="content" source="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-2.png" alt-text="Screenshot of an expression for sAMAccountName in the portal." lightbox="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-2.png":::
+
+This will take the displayName value and add "Contoso_Group" to it.  So the new sAMAccountName would be something like, Marketing_Contoso_Group
+
+:::image type="content" source="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-3.png" alt-text="Screenshot of the sAMAccountName value after expression." lightbox="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-3.png":::
+
+>[!IMPORTANT]
+>If you decide to make a value for the sAMAccountName, you must ensure that it is unique.
 
 ## Scoping filter target container
 The default target container is OU=User,DC=&lt;domain selected at configuration start&gt,DC=com. You can change this to be your own custom container.
