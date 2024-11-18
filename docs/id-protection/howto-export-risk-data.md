@@ -54,7 +54,7 @@ You might need to wait around 15 minutes for the data to start appearing in the 
 
 ## Log Analytics
 
-Integrating risk data with Log Analytics provides robust data analysis and visualization capabilities. The high-level process to using Log Analytics to analyze risk data is as follows:
+Integrating risk data with Log Analytics provides robust data analysis and visualization capabilities. The high-level process for using Log Analytics to analyze risk data is as follows:
 
 1. [Create a Log Analytics workspace](../identity/monitoring-health/tutorial-configure-log-analytics-workspace.md).
 1. [Configure Microsoft Entra diagnostic settings to export the data](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
@@ -74,7 +74,7 @@ The following tables are of most interest to Microsoft Entra ID Protection admin
 
 ### Sample queries
 
-[![Screenshot of Log Analytics view showing a AADUserRiskEvents query for the top 5 events.](./media/howto-export-risk-data/log-analytics-view-query-user-risk-events.png)](./media/howto-export-risk-data/log-analytics-view-query-user-risk-events.png#lightbox)
+[![Screenshot of Log Analytics view showing an AADUserRiskEvents query for the top 5 events.](./media/howto-export-risk-data/log-analytics-view-query-user-risk-events.png)](./media/howto-export-risk-data/log-analytics-view-query-user-risk-events.png#lightbox)
 
 In the previous image, the following query was run to show the most recent five risk detections triggered. 
 
