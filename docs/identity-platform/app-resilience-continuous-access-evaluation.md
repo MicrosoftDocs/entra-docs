@@ -4,7 +4,7 @@ description: How to increase app security and resilience by adding support for C
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 18/11/2024
+ms.date: 11/18/2024
 ms.reviewer: iambmelt
 ms.service: identity-platform
 
@@ -46,7 +46,7 @@ Your app would check for:
   - an "error" parameter with the value "insufficient_claims"
   - a "claims" parameter
 
-# [.NET](#tab/dotnet)
+## [.NET](#tab/dotnet)
 
 When these conditions are met, the app can extract and decode the claims challenge using MSAL.NET `WwwAuthenticateParameters` class.
 
@@ -98,7 +98,7 @@ _clientApp = PublicClientApplicationBuilder.Create(App.ClientId)
 
 You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
-# [JavaScript](#tab/JavaScript)
+## [JavaScript](#tab/JavaScript)
 
 When these conditions are met, the app can extract the claims challenge from the API response header as follows: 
 
@@ -163,12 +163,34 @@ const msalConfig = {
 }
 
 const msalInstance = new PublicClientApplication(msalConfig);
-
 ```
 
-# MSAL-Android (#tab/Java)
+## MSAL-Python (#tab/Python)
 
-## Declare support for the CP1 Client Capability
+```Python
+import msal  # pip install msal
+import requests  # pip install requests
+import www_authenticate  # pip install www-authenticate==0.9.2
+
+# Once your application is ready to handle the claim challenge returned by a CAE enabled resource, you can tell Microsoft Identity your app is CAE ready. To do this in your MSAL application, build your Public Client using the Client Capabilities of "cp1".
+app = msal.PublicClientApplication("your_client_id", client_capabilities=["cp1"])
+
+...
+
+# When these conditions are met, the app can extract the claims challenge from the API response header as follows:
+response = requests.get("https://httpbin.org/status/401")
+if response.status_code == 401 and response.headers.get('WWW-Authenticate'):
+    parsed = www_authenticate.parse(response.headers['WWW-Authenticate'])
+    claims = parsed.get("bearer", {}).get("claims")
+
+    # Your app would then use the claims challenge to acquire a new access token for the resource.
+    if claims:
+        auth_result = app.acquire_token_interactive(["scope"], claims_challenge=claims)
+```
+
+## MSAL-Android (#tab/Java)
+
+### Declare support for the CP1 Client Capability
 
 In your application configuration, you must declare that your application supports CAE by including the `CP1` client capability. This is specified by using the `client_capabilities` JSON property.
 
@@ -192,7 +214,7 @@ In your application configuration, you must declare that your application suppor
 }
 ```
 
-## Respond to CAE Challenges at Runtime
+### Respond to CAE Challenges at Runtime
 
 Make a request to a resource, if the response contains a claims challenge, extract it, and feed it back into MSAL for use in the next request.
 
@@ -235,11 +257,11 @@ if (200 == responseCode) {
 // Don't forget to close your connection
 ```
 
-# MSAL-ObjC (#tab/ObjC)
+## MSAL-ObjC (#tab/ObjC)
 
 The below code sample describes the flow of getting token silently -> make http call to resource provider -> handling CAE case. An extra interaction call maybe required in the end if the silent call failed with claims.
 
-# Declare support for CP1 client capability
+### Declare support for CP1 client capability
 
 In your application configuration, you must declare that your application supports CAE by including the `CP1` client capability. This is specified by using the `clientCapabilities` property.
 
@@ -328,7 +350,7 @@ default:
 }
 ```
 
-# MSAL-Go (#tab/Go)
+## MSAL-Go (#tab/Go)
 
 Advertise client capabilities:
 
@@ -348,8 +370,6 @@ Attempt to acquire a token silently with the claims challenge
 var ar AuthResult;
 ar, err := client.AcquireTokenSilent(ctx, tokenScope, public.WithClaims(claims))
 ```
-
-
 
 ---
 
