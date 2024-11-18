@@ -51,7 +51,7 @@ With the Strict Enforcement mode, Universal CAE immediately stops access if the 
 
 ## Disabling Universal CAE
 
-Entra ID Conditional Access can be used to control CAE behavior in your tenant. By default, CAE is on for all applications that support it. You can disable CAE in your Entra ID tenant, which will disable CAE for all services, including Global Secure Access. To disable CAE in your tenant, follow the steps in the [Conditional Access documentation](../identity/conditional-access/concept-conditional-access-session#customize-continuous-access-evaluation)
+Entra ID Conditional Access can be used to control CAE behavior in your tenant. By default, CAE is on for all applications that support it. You can disable CAE in your Entra ID tenant, which will disable CAE for all services, including Global Secure Access. To disable CAE in your tenant, follow the steps in the [Conditional Access documentation](../identity/conditional-access/concept-conditional-access-session.md)
 
 > [!Note]
 > Universal CAE is opportunistic unless the optional Strict Enforcement mode is enabled in Conditional Access and applied to the GSA workload identities. By default, supported Global Secure Access clients will attempt to obtain a CAE access token from Entra ID. If the CAE token cannot be obtained from Entra ID (for example, due to the unsupported client version), a regular access token will be issued. With the fallback behavior, there should not be a need for you to disable Universal CAE. 
