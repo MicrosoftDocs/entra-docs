@@ -165,7 +165,7 @@ const msalConfig = {
 const msalInstance = new PublicClientApplication(msalConfig);
 ```
 
-## MSAL-Python(#tab/Python)
+## [MSAL-Python](#tab/Python)
 
 ```Python
 import msal  # pip install msal
@@ -188,7 +188,7 @@ if response.status_code == 401 and response.headers.get('WWW-Authenticate'):
         auth_result = app.acquire_token_interactive(["scope"], claims_challenge=claims)
 ```
 
-## MSAL-Android(#tab/Java)
+## [MSAL-Android](#tab/Java)
 
 ### Declare support for the CP1 Client Capability
 
@@ -257,7 +257,7 @@ if (200 == responseCode) {
 // Don't forget to close your connection
 ```
 
-## MSAL-ObjC(#tab/ObjC)
+## [MSAL-ObjC](#tab/ObjC)
 
 The below code sample describes the flow of getting token silently -> make http call to resource provider -> handling CAE case. An extra interaction call maybe required in the end if the silent call failed with claims.
 
@@ -350,7 +350,7 @@ default:
 }
 ```
 
-## MSAL-Go(#tab/Go)
+## [MSAL-Go](#tab/Go)
 
 Advertise client capabilities:
 
