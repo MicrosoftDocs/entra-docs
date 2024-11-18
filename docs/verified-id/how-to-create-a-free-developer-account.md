@@ -44,7 +44,6 @@ If you decide to sign up for the free Microsoft 365 developer program, you need 
 
 At this point, you've created a tenant with 25 E5 user licenses. The E5 licenses include Microsoft Entra ID P2 licenses. Optionally, you can add sample data packs with users, groups, mail, and SharePoint to help you test in your development environment. For the verifiable credential issuing service, they're not required.
 
-For your convenience, you could add your own work account as [guest](~/external-id/b2b-quickstart-add-guest-users-portal.md) in the newly created tenant and use that account to administer the tenant. If you want the guest account to be able to manage the verifiable credential service, you need to assign the *Global Administrator* role to that user.
 
 ## Next steps
 

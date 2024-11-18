@@ -59,7 +59,7 @@ Remote users connect to private apps across hybrid and multicloud environments, 
 ## Licensing overview 
 Microsoft Entra Internet Access and Microsoft Entra Private Access are now generally available. Use of internet access features require a Microsoft Entra Internet Access license and use of private access features require a Microsoft Entra Private Access license. Both licenses are available as part of the Microsoft Entra Suite. To learn more about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about purchasing individual license, see the Microsoft Entra Suite standalone products tab of the licensing page.
 
-Prerequisite to use Microsoft Entra Private Access, Microsoft Entra Internet Access and Secure Access Essentials is Microsoft Entra ID P1 or Microsoft Entra ID P2.
+Prerequisite to use Microsoft Entra Private Access and Microsoft Entra Internet Access is Microsoft Entra ID P1 or Microsoft Entra ID P2.
 
 > [!IMPORTANT]
 > Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to roll out on October 1, 2024. This is following a 90-day trial period that began with General Availability on July 1st, 2024.

@@ -15,7 +15,7 @@ ms.author: barclayn
 
 # Assign licenses to users by group membership using the Microsoft 365 admin center
 
-This article shows you how to use the Microsoft 365 license center to assign licenses to a group.
+This article shows you how to use the Microsoft 365 license center to assign licenses to security groups. 
 
 > [!NOTE]
 > Some Microsoft services are not available in all locations. Before a license can be assigned to a user, the administrator has to specify the Usage location property on the user.

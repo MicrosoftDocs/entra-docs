@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: concept-article
-ms.date: 02/29/2024
+ms.date: 09/26/2024
 ms.service: global-secure-access
 ms.reviewer: frankgomulka
 ---
@@ -25,3 +25,4 @@ You install the client on a device, such as computer or phone, and then use Glob
 
 - [Global Secure Access client for Windows](how-to-install-windows-client.md)
 - [Global Secure Access client for Android](how-to-install-android-client.md)
+- [Client for Windows version release notes](reference-windows-client-release-history.md)

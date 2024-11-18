@@ -38,7 +38,7 @@ To achieve AAL1, you can use any NIST single-factor or multifactor [permitted au
 
 
 > [!TIP]
-> We recommend you select at a minimum phishing resistant AAL2 authneticators. Select AAL3 authenticators as necessary for business reasons, industry standards, or compliance requirements.
+> We recommend you select at a minimum phishing resistant AAL2 authenticators. Select AAL3 authenticators as necessary for business reasons, industry standards, or compliance requirements.
 
 ## FIPS 140 validation
 

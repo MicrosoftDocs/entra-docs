@@ -1,13 +1,16 @@
 ---
 title: How to create remote networks
 description: Learn how to create remote networks, such as branch office locations, for Global Secure Access.
-author: kenwith
-ms.author: kenwith
+ms.author: jayrusso
+author: HULKsmashGithub
 manager: amycolannino
 ms.topic: how-to
-ms.date: 03/22/2024
+ms.date: 10/04/2024
 ms.service: global-secure-access
+ms.reviewer: absinh
+
 # Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
+
 ---
 # How to create a remote network with Global Secure Access
 
@@ -66,15 +69,15 @@ The first step is to provide the name and location of your remote network. Compl
 1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 1. Select the **Create remote network** button and provide the details.
     - **Name**
-    - **Region**
+    - **Region**   
 
-    ![Screenshot of the basics tab of the create device link process.](media/how-to-create-remote-networks/create-basics-tab.png)
+:::image type="content" source="media/how-to-create-remote-networks/create-basics-tab.png" alt-text="Screenshot of the basics tab of the create device link process.":::
 
 ### Connectivity
 
-The connectivity tab is where you add the device links for the remote network. You can add device links *after* creating the remote network. You need to provide the device type, public IP address of your CPE, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. 
+The **Connectivity** tab is where you add the device links for the remote network. You can add device links *after* creating the remote network. You need to provide the device type, public IP address of your CPE, border gateway protocol (BGP) address, and autonomous system number (ASN) for each device link. 
 
-The details required to complete this tab can be complex, so this process is covered in detail in the [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
+The details required to complete the **Connectivity** tab can be complex. For more information, see [How to manage remote network device links](how-to-manage-remote-network-device-links.md).
 
 ### Traffic forwarding profiles
 
@@ -92,7 +95,7 @@ All your remote networks appear on the **Remote network** page. Select the **Vie
 
 These details contain the connectivity information from Microsoft's side of the bidirectional communication channel that you use to set up your CPE.
 
-This process is covered in detail in the [How to configure your customer premise equipment](how-to-configure-customer-premises-equipment.md).
+This process is covered in detail in the [How to configure your customer premises equipment](how-to-configure-customer-premises-equipment.md).
 
 ### Set up your CPE
 
@@ -108,31 +111,39 @@ Global Secure Access remote networks can be viewed and managed using Microsoft G
 1. Run the query.
 
     ```http
-    POST https://graph.microsoft.com/beta/networkaccess/connectivity/branches 
-    { 
-        "name": "ContosoBranch", 
-        "region": "East US", 
-        "deviceLinks": [ 
-        { 
-            "name": "CPE Link 1", 
-            "ipAddress": "20.125.118.219", 
-            "deviceVendor": "Other", 
-            "bgpConfiguration": { 
-                "localIpAddress": "172.16.11.5",
-                "peerIpAddress": "10.16.11.5", 
-                "asn": 8888 
-              },
-            "redundancyConfiguration": {
-                "redundancyTier": "noRedundancy",
-                "zoneLocalIpAddress": "1.2.1.1"
-            },
-            "bandwidthCapacityInMbps": "mbps250"
-            "tunnelConfiguration": { 
-                  "@odata.type": "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Default", 
-                  "preSharedKey": "Detective5OutgrowDiligence" 
-              } 
-        }] 
-    }  
+    POST https://graph.microsoft.com/beta/networkAccess/connectivity/remoteNetworks
+    Content-Type: application/json
+    
+    {
+        "name": "Bellevue branch w/ device link",
+        "region": "canadaEast",
+        "forwardingProfiles": [
+            {
+                "id": "1adaf535-1e31-4e14-983f-2270408162bf"
+            }
+        ],
+        "deviceLinks": [
+            {
+                "name": "CPE1",
+                "ipAddress": "52.13.21.25",
+                "bandwidthCapacityInMbps": "mbps500",
+                "deviceVendor": "barracudaNetworks",
+                "bgpConfiguration": {
+                    "localIpAddress": "192.168.1.2",
+                    "peerIpAddress": "10.1.1.2",
+                    "asn": 65533
+                },
+                "redundancyConfiguration": {
+                    "zoneLocalIpAddress": null,
+                    "redundancyTier": "noRedundancy"
+                },
+                "tunnelConfiguration": {
+                    "@odata.type": "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Default",
+                    "preSharedKey": "test123"
+                }
+            }
+        ]
+    }
     ```
 
 ### Assign a traffic forwarding profile
@@ -150,14 +161,13 @@ Associating a traffic forwarding profile to your remote network using the Micros
 1. Find the `ID` of the desired traffic forwarding profile.
 1. Select `PATCH` as the `HTTP` method from the dropdown.
 1. Enter the query.
-    ```
-        PATCH https://graph.microsoft.com/beta/networkaccess/connectivity/branches/d2b05c5-1e2e-4f1d-ba5a-1a678382ef16/forwardingProfiles
+
+    ```http   
+        PATCH https://graph.microsoft.com/beta/networkAccess/connectivity/remoteNetworks/dc6a7efd-6b2b-4c6a-84e7-5dcf97e62e04
+        Content-Type: application/json
+        
         {
-            "@odata.context": "#$delta",
-            "value":
-            [{
-                "ID": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
-            }]
+            "name": "Test Redmond branch"
         }
     ```
 
@@ -169,7 +179,7 @@ There are a few things to consider and verify when creating remote networks. You
 
 - **Verify IKE crypto profile**: The crypto profile (IKE phase 1 and phase 2 algorithms) set for a device link should match what is set on the CPE. If you chose the **default IKE policy**, ensure that your CPE is set up with the crypto profile specified in the [Remote network configurations](reference-remote-network-configurations.md) reference article.
 
-- **Verify pre shared key**: Compare the pre shared key (PSK) you specified when creating the device link in Microsoft Global Secure Access with the PSK you specified on your CPE. This detail is added on the **Security** tab during the **Add a link** process. For more information, see [How to manage remote network device links.](how-to-manage-remote-network-device-links.md#add-a-link---security-tab).
+- **Verify pre-shared key**: Compare the pre-shared key (PSK) you specified when creating the device link in Microsoft Global Secure Access with the PSK you specified on your CPE. This detail is added on the **Security** tab during the **Add a link** process. For more information, see [How to manage remote network device links.](how-to-manage-remote-network-device-links.md#add-a-link---security-tab).
 
 - **Verify local and peer BGP IP addresses**: The public IP and BGP address you use to configure the CPE must match what you use when you create a device link in Microsoft Global Secure Access.
     - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.

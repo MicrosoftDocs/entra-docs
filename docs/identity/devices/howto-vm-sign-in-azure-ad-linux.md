@@ -40,7 +40,6 @@ The following Linux distributions are currently supported for deployments in a s
 | --- | --- |
 | Common Base Linux Mariner (CBL-Mariner) | CBL-Mariner 1, CBL-Mariner 2 |
 | AlmaLinux | AlmaLinux 8, AlmaLinux 9 |
-| CentOS | CentOS 7, CentOS 8 |
 | Debian | Debian 9, Debian 10, Debian 11, Debian 12 |
 | openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1+ |
 | Oracle | Oracle Linux 8, Oracle Linux 9 |

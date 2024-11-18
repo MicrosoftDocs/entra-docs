@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 03/08/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -23,11 +23,7 @@ Two other activity logs are also available to help monitor the health of your te
 - **[Sign-ins](concept-sign-ins.md)** – Information about sign-ins and how your resources are used by your users.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by the provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
 
-This article gives you an overview of the audit logs, including what's required to access them and what information they provide.
-
-## License and role requirements
-
-[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
+This article gives you an overview of the audit logs, such as the information they provide and what kinds of questions they can answer.
 
 ## What can you do with audit logs?
 

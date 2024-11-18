@@ -31,10 +31,10 @@ There are multiple scenarios that organizations can now enable using filter for 
       - Policy 1: All users with an administrator role, accessing the Windows Azure Service Management API cloud app, and for Access controls, Grant access, but require multifactor authentication and require device to be marked as compliant.
       - Policy 2: All users with an administrator, accessing the Windows Azure Service Management API cloud app, excluding a filter for devices using rule expression device.extensionAttribute1 equals SAW and for Access controls, Block. Learn how to [update extensionAttributes on a Microsoft Entra device object](/graph/api/device-update?view=graph-rest-1.0&tabs=http&preserve-view=true).
 - **Block access to organization resources from devices running an unsupported Operating System**. For this example, lets say you want to block access to resources from Windows OS version older than Windows 10. For this scenario, organizations would create the following Conditional Access policy:
-   - All users, accessing all cloud apps, excluding a filter for devices using rule expression device.operatingSystem equals Windows and device.operatingSystemVersion startsWith "10.0" and for Access controls, Block.
+   - All users, accessing all resources, excluding a filter for devices using rule expression device.operatingSystem equals Windows and device.operatingSystemVersion startsWith "10.0" and for Access controls, Block.
 - **Do not require multifactor authentication for specific accounts on specific devices**. For this example, lets say you want to not require multifactor authentication when using service accounts on specific devices like Teams Phones or Surface Hub devices. For this scenario, organizations would create the following two Conditional Access policies:
-   - Policy 1: All users excluding service accounts, accessing all cloud apps, and for Access controls, Grant access, but require multifactor authentication.
-   - Policy 2: Select users and groups and include group that contains service accounts only, accessing all cloud apps, excluding a filter for devices using rule expression device.extensionAttribute2 not equals TeamsPhoneDevice and for Access controls, Block.
+   - Policy 1: All users excluding service accounts, accessing all resources, and for Access controls, Grant access, but require multifactor authentication.
+   - Policy 2: Select users and groups and include group that contains service accounts only, accessing all resources, excluding a filter for devices using rule expression device.extensionAttribute2 not equals TeamsPhoneDevice and for Access controls, Block.
 
 > [!NOTE] 
 > Microsoft Entra ID uses device authentication to evaluate device filter rules. For a device that is unregistered with Microsoft Entra ID, all device properties are considered as null values and the device attributes cannot be determined since the device does not exist in the directory. The best way to target policies for unregistered devices is by using the negative operator since the configured filter rule would apply. If you were to use a positive operator, the filter rule would only apply when a device exists in the directory and the configured rule matches the attribute on the device. 
@@ -59,7 +59,7 @@ Policy 1: All users with an administrator role, accessing the Windows Azure Serv
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
    1. Select **Done**.
-1. Under **Target resources** > **Cloud apps** > **Include** > **Select apps**, choose **Windows Azure Service Management API**, and select **Select**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**, choose **Windows Azure Service Management API**, and select **Select**.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require multifactor authentication**, and **Require device to be marked as compliant**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **On**.
 1. Select **Create** to create to enable your policy.
@@ -76,7 +76,7 @@ Policy 2: All users with an administrator role, accessing the Windows Azure Serv
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
    1. Select **Done**.
-1. Under **Target resources** > **Cloud apps** > **Include** > **Select apps**, choose **Windows Azure Service Management API**, and select **Select**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**, choose **Windows Azure Service Management API**, and select **Select**.
 1. Under **Conditions**, **Filter for devices**.
    1. Toggle **Configure** to **Yes**.
    1. Set **Devices matching the rule** to **Exclude filtered devices from policy**.

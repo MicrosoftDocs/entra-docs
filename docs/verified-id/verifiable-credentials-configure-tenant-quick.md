@@ -30,6 +30,9 @@ Specifically, you learn how to:
 - Ensure that you have the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) permission for the directory you want to configure. If you're not the Global Administrator, you need the [application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) permission to complete the app registration including granting admin consent.
 - Ensure that you have a [custom domain registered](~/identity/users/domains-manage.md) for the Microsoft Entra tenant. If you don't have one registered, the setup defaults to the advanced setup experience.
 
+> [!NOTE]
+> The Quick setup method is currently not supported in EDU Entra tenants.
+
 ## How Quick Verified ID setup works
 
 - A shared signing key, managed by Microsoft, is used across multiple tenants within a given region. It's no longer required to deploy Azure Key Vault.

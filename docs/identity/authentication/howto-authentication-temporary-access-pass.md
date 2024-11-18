@@ -67,8 +67,7 @@ To configure the TAP authentication method policy:
 
 After you enable a TAP policy, you can create TAPs for users in Microsoft Entra ID.  These following roles can perform various actions related to a TAP.
 
-- Global Administrators can create, delete, and view a TAP for any user (except themselves).
-- Privileged Authentication Administrators can create, delete, and view a TAP for admins and members (except themselves).
+- Those assigned at least the Privileged Authentication Administrator role can create, delete, and view a TAP for admins and members (except themselves).
 - Authentication Administrators can create, delete, and view a TAP for members (except themselves).
 - Global Readers can view TAP details for the user (without reading the code itself).
 

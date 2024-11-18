@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 05/09/2024
+ms.date: 10/04/2024
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ---
@@ -26,7 +26,7 @@ Audit log activities and categories change periodically. The tables are updated 
 
 <a name='aad-management-ux'></a>
 
-## Microsoft Entra Management UX
+## Microsoft Entra (AAD) Management UX
 
 |Audit Category|Activity|
 |---|---|
@@ -73,6 +73,7 @@ With [Microsoft Entra ID Governance access reviews](~/id-governance/manage-user-
 |DirectoryManagement|Create program|
 |DirectoryManagement|Link program control|
 |DirectoryManagement|Unlink program control|
+|DirectoryManagement|Update program|
 |Policy|Access review ended|
 |Policy|Apply decision|
 |Policy|Approve decision|
@@ -144,6 +145,7 @@ If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-ap
 |Authentication|Remove a group from feature rollout|
 |Authentication|Remove user from feature rollout|
 |Authentication|Update rollout policy of feature|
+|Authorization|User authorization for application access|
 |DirectoryManagement|Disable Desktop Sso|
 |DirectoryManagement|Disable Desktop Sso for a specific domain|
 |DirectoryManagement|Disable application proxy|
@@ -164,10 +166,6 @@ If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-ap
 
 The Audit logs for Authentication Methods can be used to make sure that your users have registered their mobile device properly to enable multifactor authentication.
 
-Audit events related to GDPR and data protection are also found in this service and are found in the `DirectoryManagement` category. These events include strings like `MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations` and `DSR Export: MFA.PostgreSQL.bypassed_users_creations`. 
-
-[!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-dsr-and-stp-note.md)] 
-
 |Audit Category|Activity|
 |---|---|
 |ApplicationManagement|Assign Hardware Oath Token|
@@ -181,73 +179,18 @@ Audit events related to GDPR and data protection are also found in this service 
 |ApplicationManagement|Authentication Strength Policy Update|
 |ApplicationManagement|Bulk upload Hardware Oath Token|
 |ApplicationManagement|Create Hardware Oath Token|
-|ApplicationManagement|DELETE Subscription.DeleteProviders|
-|ApplicationManagement|DELETE Tenant.DeleteAgentStatuses|
-|ApplicationManagement|DELETE Tenant.DeleteCaches|
-|ApplicationManagement|DELETE Tenant.DeleteGreetings|
 |ApplicationManagement|Delete Hardware Oath Token|
-|ApplicationManagement|PATCH Tenant.Patch|
-|ApplicationManagement|PATCH Tenant.PatchCaches|
+|ApplicationManagement|MFA Service Policy Update|
 |ApplicationManagement|PATCH UserAuthMethod.PatchSignInPreferencesAsync|
-|ApplicationManagement|POST SoundFile.Post|
-|ApplicationManagement|Subscription.CreateProvider|
-|ApplicationManagement|Subscription.CreateSubscription|
-|ApplicationManagement|POST Tenant.CreateBlockedUser|
-|ApplicationManagement|POST Tenant.CreateBypassedUser|
-|ApplicationManagement|POST Tenant.CreateCacheConfig|
-|ApplicationManagement|POST Tenant.CreateGreeting|
-|ApplicationManagement|POST Tenant.CreateOemTenant|
-|ApplicationManagement|POST Tenant.CreateTenant|
-|ApplicationManagement|POST Tenant.GenerateNewActivationCredentials|
-|ApplicationManagement|POST Tenant.RemoveBlockedUser|
-|ApplicationManagement|POST Tenant.RemoveBypassedUser|
+|ApplicationManagement|PATCH UserAuthMethod.ResetQRPinAsync|
+|ApplicationManagement|PATCH UserAuthMethod.UpdateQRPinAsync|
+|ApplicationManagement|POST UserAuthMethod.SecurityInfoRegistrationCallback|
+|ApplicationManagement|POST UserAuthMethod.SoftwareOathProofupRegistration|
 |ApplicationManagement|Update Hardware Oath Token|
 |DirectoryManagement|DELETE Subscription.DeleteProviders|
 |DirectoryManagement|DELETE Tenant.DeleteAgentStatuses|
 |DirectoryManagement|DELETE Tenant.DeleteCaches|
 |DirectoryManagement|DELETE Tenant.DeleteGreetings|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-au.activations|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-au.authentications|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-cn.activations|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-cn.authentications|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-eu.authentications|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ff.activations|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ff.authentications|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ge.activations|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ge.authentications|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-gv.activations|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-gv.authentications|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ww.activations|
-|DirectoryManagement|DSR Delete: MFA.CosmosDB.mfa-prd-cust-rpt-ww.authentications|
-|DirectoryManagement|DSR Delete: MFA.PostgreSQL.blocked_users|
-|DirectoryManagement|DSR Delete: MFA.PostgreSQL.blocked_users_completions|
-|DirectoryManagement|DSR Delete: MFA.PostgreSQL.blocked_creations|
-|DirectoryManagement|DSR Delete: MFA.PostgreSQL.bypassed_users_completions|
-|DirectoryManagement|DSR Delete: MFA.PostgreSQL.bypassed_users_creations|
-|DirectoryManagement|DSR Delete: MFA.PostgreSQL.change_request_statuses|
-|DirectoryManagement|DSR Delete: MFA.PostgreSQL.change_request|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-au.activations|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-au.authentications|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-cn.activations|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-cn.authentications|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.activations|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-eu.authentications|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ff.activations|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ff.authentications|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ge.activations|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ge.authentications|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-gv.activations|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-gv.authentications|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ww.activations|
-|DirectoryManagement|DSR Export: MFA.CosmosDB.mfa-prd-cust-rpt-ww.authentications|
-|DirectoryManagement|DSR Export: MFA.PostgreSQL.blocked_users|
-|DirectoryManagement|DSR Export: MFA.PostgreSQL.blocked_users_completions|
-|DirectoryManagement|DSR Export: MFA.PostgreSQL.blocked_creations|
-|DirectoryManagement|DSR Export: MFA.PostgreSQL.bypassed_users_completions|
-|DirectoryManagement|DSR Export: MFA.PostgreSQL.bypassed_users_creations|
-|DirectoryManagement|DSR Export: MFA.PostgreSQL.change_request_statuses|
-|DirectoryManagement|DSR Export: MFA.PostgreSQL.change_request|
 |DirectoryManagement|PATCH Tenant.Patch|
 |DirectoryManagement|PATCH Tenant.PatchCaches|
 |DirectoryManagement|POST SoundFile.Post|
@@ -260,12 +203,14 @@ Audit events related to GDPR and data protection are also found in this service 
 |DirectoryManagement|POST Tenant.CreateTenant|
 |DirectoryManagement|POST Tenant.GenerateNewActivationCredentials|
 |DirectoryManagement|POST Tenant.RemoveBlockedUser|
-|DirectoryManagement|POST TenantRemoveBypassedUser|
+|DirectoryManagement|POST Tenant.RemoveBypassedUser|
 |UserManagement|Admin deleted security info|
 |UserManagement|Admin registered security info|
 |UserManagement|Admin started password reset|
 |UserManagement|Admin updated security info|
 |UserManagement|Get passkey creation options|
+|UserManagement|Restore multifactor authentication on all remembered devices|
+|UserManagement|Update per-user multifactor authentication state|
 |UserManagement|User canceled security info registration|
 |UserManagement|User changed default security info|
 |UserManagement|User deleted security info|
@@ -279,7 +224,7 @@ Audit events related to GDPR and data protection are also found in this service 
 
 <a name='azure-ad-recommendations'></a>
 
-## Microsoft Entra Recommendations
+## Microsoft Entra (Azure AD) Recommendations
 
 [Microsoft Entra Recommendations](overview-recommendations.md) monitors your Microsoft Entra tenant and provides personalized insights and actionable guidance to implement best practices for Microsoft Entra features and optimize your tenant configurations. These logs provide a history of the changes made to the status of a recommendation.
 
@@ -291,16 +236,28 @@ Audit events related to GDPR and data protection are also found in this service 
 
 <a name='azure-ad-mfa-azure-mfa'></a>
 
-## Microsoft Entra multifactor authentication
+## Microsoft Entra (Azure MFA) multifactor authentication
 
 The Microsoft Entra multifactor authentication audit logs can help you track trends in suspicious activity or when fraud was reported. Use the [Microsoft Entra sign-in logs](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/SignIns) to see each time a user signs in when MFA is required.
 
 |Audit Category|Activity|
 |---|---|
+|DirectoryManagement|DeleteDataFromBackend|
+|DirectoryManagement|DeleteDataFromCosmosDb|
+|DirectoryManagement|ExportDataFromBackend|
+|DirectoryManagement|ExportDataFromCosmosDb|
 |UserManagement|Fraud reported - no action taken|
 |UserManagement|Fraud reported - user is blocked for MFA|
 |UserManagement|Suspicious activity reported|
 |UserManagement|User registered security info|
+
+## Azure RBAC (Elevated Access)
+
+|Audit Category|Activity|
+|---|---|
+|AzureRBACRoleManagementElevateAccess|The role assignment of User Access Administrator has been removed from the user|
+|AzureRBACRoleManagementElevateAccess|User has elevated their access to User Access Administrator for their Azure Resources|
+
 
 ## B2B Auth
 
@@ -314,19 +271,6 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 
 |Audit Category|Activity|
 |---|---|
-|ApplicationManagement|Add V2 application permissions|
-|ApplicationManagement|Create V2 application|
-|ApplicationManagement|Delete V2 application|
-|ApplicationManagement|Delete V2 application permission grant|
-|ApplicationManagement|Get V1 and V2 applications|
-|ApplicationManagement|Get V1 application|
-|ApplicationManagement|Get V1 applications|
-|ApplicationManagement|Get V2 application|
-|ApplicationManagement|Get V2 applications|
-|ApplicationManagement|Retrieve V2 application permissions grants|
-|ApplicationManagement|Retrieve V2 application service principals|
-|ApplicationManagement|Update V2 application|
-|ApplicationManagement|Update V2 application permission grant|
 |Authentication|A self-service sign-up request was completed|
 |Authentication|An API was called as part of a user flow|
 |Authentication|Delete all available strong authentication devices|
@@ -437,10 +381,8 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Get user flow|
 |Authorization|Get user flows|
 |Authorization|Get v1 and v2 applications|
-|Authorization|Get v1 application|
 |Authorization|Get v1 applications|
 |Authorization|Get v2 application|
-|Authorization|Get v2 applications|
 |Authorization|Initialize tenant|
 |Authorization|Move resources|
 |Authorization|Restore policy key|
@@ -466,31 +408,42 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |Authorization|Update local identity provider|
 |Authorization|Update policy key|
 |Authorization|Update subscription status|
+|Authorization|Update tenant metadata|
 |Authorization|Update user attribute|
 |Authorization|Update user flow|
-|Authorization|Update v2 application|
-|Authorization|Update v2 application permission grant|
 |Authorization|Upload certificate to policy key|
 |Authorization|Upload key to policy key|
 |Authorization|Upload secret into policy key|
 |Authorization|Validate customExtension authenticationConfiguration|
 |Authorization|Validate move resources|
+|Authorization|Verify if tenant is B2C|
+|Device|Delete pre-created device|
+|Device|Pre-create device|
+|Device|Recover device local administrator password|
+|Device|Register device|
+|Device|Unregister device|
+|Device|Update device local administrator password|
 |Directory Management|Get age gating configuration|
-|Directory Management|Get custom domains|
 |Directory Management|Get list of tenants|
 |Directory Management|Get resources properties of a tenant|
 |Directory Management|Get tenant details|
 |Directory Management|Get tenant domains|
 |Directory Management|Initialize tenant|
 |Directory Management|Update age gating configuration|
+|Directory Management|Update tenant metadata|
+|Directory Management|Verify if tenant is B2C|
 |IdentityProtection|Evaluate Conditional Access policies|
 |IdentityProtection|Remediate user|
+|KeyManagement|Add BitLocker key|
 |KeyManagement|Create policy key|
+|KeyManagement|Delete BitLocker key|
 |KeyManagement|Delete policy key|
 |KeyManagement|Get active key metadata from policy key|
 |KeyManagement|Get policy key|
 |KeyManagement|Get policy keys|
+|KeyManagement|Read BitLocker key|
 |KeyManagement|Restore policy key|
+|KeyManagement|Update policy key|
 |KeyManagement|Upload key to policy key|
 |KeyManagement|Upload secret into policy key|
 |Other|Generate one time password|
@@ -601,6 +554,10 @@ This set of audit logs is related to [B2C](/azure/active-directory-b2c/overview)
 |ResourceManagement|Update certificate to policy key|
 |ResourceManagement|Update secret into policy key|
 |ResourceManagement|Validate move resources|
+|UserManagement|Add Windows Hello for Business credential|
+|UserManagement|Add passwordless phone sign-in credential|
+|UserManagement|Delete Windows Hello for Business credential|
+|UserManagement|Delete passwordless phone sign-in credential|
 
 ## Conditional Access
 
@@ -672,42 +629,61 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |ApplicationManagement|Update application - Certificates and secrets management|
 |ApplicationManagement|Update external secrets|
 |ApplicationManagement|Update service principal|
-|AttributeManagement|Add an attribute set|
-|AttributeManagement|Add custom security attribute definition in an attribute set|
-|AttributeManagement|Update an attribute set|
-|AttributeManagement|Update attribute values assigned to a servicePrincipal|
-|AttributeManagement|Update attribute values assigned to a user|
-|AttributeManagement|Update custom security attribute definition in an attribute set|
+|Authentication|Test audit log|
 |AuthorizationPolicy|Update authorization policy|
-|CertificateBasedAuthConfiguration|Add CertificationBasedAuthConfiguration|
-|CertificateBasedAuthConfiguration|Delete CertificationBasedAuthConfiguration|
+|CertBasedConfiguration|Add CertBasedAuthConfiguration|
+|CertBasedConfiguration|Hard delete CertificationBasedAuthConfiguration|
+|CertificateAuthorityEntity|Create CertificateAuthorityEntity|
+|CertificateAuthorityEntity|Delete CertificateAuthorityEntity|
+|CertificateAuthorityEntity|Hard Delete CertificateAuthorityEntity|
+|CertificateAuthorityEntity|Restore CertificateAuthorityEntity|
+|CertificateAuthorityEntity|Update CertificateAuthorityEntity|
+|CertificateBasedAuthConfiguration|Add CertificateBasedAuthConfiguration|
+|CertificateBasedAuthConfiguration|Delete CertificateBasedAuthConfiguration|
+|CertificateBasedAuthConfiguration|Update CertificateBasedAuthConfiguration|
+|CompanyBranding|Create Branding Theme|
+|CompanyBranding|Delete Branding Theme|
+|CompanyBranding|Hard Delete Branding Theme|
+|CompanyBranding|Update Branding Theme|
+|CompanyBrandingLocale|Create Branding Theme Localization|
+|CompanyBrandingLocale|Delete Branding Theme Localization|
+|CompanyBrandingLocale|Hard Delete Branding Theme Localization|
+|CompanyBrandingLocale|Update Branding Theme Localization|
 |Contact|Add contact|
 |Contact|Delete contact|
 |Contact|Update contact|
+|CrossTenantAccessSettings|Add a domain-based partner to cross-tenant access setting|
 |CrossTenantAccessSettings|Add a partner to cross-tenant access setting|
+|CrossTenantAccessSettings|Delete a domain-based partner to cross-tenant access setting|
 |CrossTenantAccessSettings|Delete partner specific cross-tenant access setting|
 |CrossTenantAccessSettings|Migrated partner cross-tenant access settings to the scalable model|
 |CrossTenantAccessSettings|Reset the cross-tenant access default setting|
+|CrossTenantAccessSettings|Update a domain-based partner to cross-tenant access setting|
 |CrossTenantAccessSettings|Update a partner cross-tenant access setting|
 |CrossTenantAccessSettings|Update the company default cross-tenant access setting|
 |CrossTenantIdentitySyncSettings|Create a partner cross-tenant identity sync setting|
 |CrossTenantIdentitySyncSettings|Delete a partner cross-tenant identity sync setting|
 |CrossTenantIdentitySyncSettings|Update a partner cross-tenant identity sync setting|
+|DelegatedAdminServiceProviderConstraints|Adding allowed assignable roles|
+|DelegatedAdminServiceProviderConstraints|Updating allowed assignable roles|
 |Device|Add device|
 |Device|Add registered owner to device|
 |Device|Add registered users to device|
 |Device|Delete device|
 |Device|Device no longer compliant|
 |Device|Device no longer managed|
+|Device|Hard Delete device|
 |Device|Remove registered owner from device|
 |Device|Remove registered users from device|
+|Device|Restore device|
 |Device|Update device|
 |DeviceConfiguration|Add device configuration|
 |DeviceConfiguration|Delete device configuration|
 |DeviceConfiguration|Update device configuration|
 |DeviceTemplate|Add device from DeviceTemplate|
+|DeviceTemplate|Add DeviceTemplate|
+|DeviceTemplate|Add owner to DeviceTemplate|
 |DeviceTemplate|Delete DeviceTemplate|
-|DeviceTemplate|Update DeviceTemplate|
 |DirectoryManagement|Add partner to company|
 |DirectoryManagement|Add sharedEmailDomainInvitation|
 |DirectoryManagement|Add unverified domain|
@@ -717,12 +693,14 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |DirectoryManagement|Delete company allowed data location|
 |DirectoryManagement|Delete company settings|
 |DirectoryManagement|Delete subscription|
+|DirectoryManagement|Deleting Source Tenant subscriptions|
 |DirectoryManagement|Demote partner|
 |DirectoryManagement|Directory deleted|
 |DirectoryManagement|Directory deleted permanently|
 |DirectoryManagement|Directory scheduled for deletion (Lifecycle)|
 |DirectoryManagement|Directory scheduled for deletion (UserRequest)|
 |DirectoryManagement|Get cross-cloud verification code for domain|
+|DirectoryManagement|Hard Delete Domain|
 |DirectoryManagement|Promote company to partner|
 |DirectoryManagement|Promote sub domain to root domain|
 |DirectoryManagement|Remove partner from company|
@@ -741,6 +719,9 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |DirectoryManagement|Set domain authentication|
 |DirectoryManagement|Set federation settings on domain|
 |DirectoryManagement|Set password policy|
+|DirectoryManagement|Soft Delete Domain|
+|DirectoryManagement|Suspending Source Tenant Subscriptions|
+|DirectoryManagement|Update Domain|
 |DirectoryManagement|Update company|
 |DirectoryManagement|Update company settings|
 |DirectoryManagement|Update domain|
@@ -748,11 +729,6 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |DirectoryManagement|Update sharedEmailDomainInvitation|
 |DirectoryManagement|Verify domain|
 |DirectoryManagement|Verify email verified domain|
-|ExternalUserProfile|Create ExternalUserProfile|
-|ExternalUserProfile|Delete ExternalUserProfile|
-|ExternalUserProfile|Hard Delete ExternalUserProfile|
-|ExternalUserProfile|Restore ExternalUserProfile|
-|ExternalUserProfile|Update ExternalUserProfile|
 |GroupManagement|Add app role assignment to group|
 |GroupManagement|Add group|
 |GroupManagement|Add member to group|
@@ -765,6 +741,8 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |GroupManagement|Grant contextual consent to application|
 |GroupManagement|Hard Delete group|
 |GroupManagement|Remove app role assignment from group|
+|GroupManagement|Remove eligible member from group|
+|GroupManagement|Remove eligible owner from group|
 |GroupManagement|Remove label from group|
 |GroupManagement|Remove member from group|
 |GroupManagement|Remove owner from group|
@@ -782,11 +760,10 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |Label|Add label|
 |Label|Delete label|
 |Label|Update label|
-|MicrosoftSupportAccessManagement|Approval approved|
-|MicrosoftSupportAccessManagement|Approval removed|
+|MicrosoftSupportAccessManagement|Access approved|
+|MicrosoftSupportAccessManagement|Access removed|
 |MicrosoftSupportAccessManagement|Request approved|
 |MicrosoftSupportAccessManagement|Request canceled|
-|MicrosoftSupportAccessManagement|Request created|
 |MicrosoftSupportAccessManagement|Request created|
 |MicrosoftSupportAccessManagement|Request rejected|
 |MultiTenantOrg|Create a MultiTenantOrg|
@@ -801,24 +778,29 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |MultiTenantOrgTenant|Hard Delete MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Tenant joining MultiTenantOrg tenant|
 |MultiTenantOrgTenant|Update MultiTenantOrg tenant|
+|OrganizationalUnitContainer|Create OrganizationalUnit|
+|OrganizationalUnitContainer|Delete OrganizationalUnit|
+|OrganizationalUnitContainer|Update OrganizationalUnit|
 |PendingExternalUserProfile|Create PendingExternalUserProfile|
 |PendingExternalUserProfile|Delete PendingExternalUserProfile|
 |PendingExternalUserProfile|Hard Delete PendingExternalUserProfile|
-|PendingExternalUserProfile|Update PendingExternalUserProfile|
 |PermissionGrantPolicy|Add permission grant policy|
 |PermissionGrantPolicy|Delete permission grant policy|
 |PermissionGrantPolicy|Update permission grant policy|
 |Policy|Add owner to policy|
 |Policy|Add policy|
 |Policy|Delete policy|
+|Policy|Hard Delete policy|
 |Policy|Remove owner from policy|
 |Policy|Remove policy credentials|
+|Policy|Restore policy|
 |Policy|Update policy|
-|PrivateEndpoint|Add PrivateEndpoint|
-|PrivateEndpoint|Delete PrivateEndpoint|
-|PrivateLinkResource|Add PrivateLinkResource|
-|PrivateLinkResource|Delete PrivateLinkResource|
-|PrivateLinkResource|Update PrivateLinkResource|
+|PublicKeyInfrastructure|Create PublicKeyInfrastructure|
+|PublicKeyInfrastructure|Delete PublicKeyInfrastructure|
+|PublicKeyInfrastructure|Hard Delete PublicKeyInfrastructure|
+|PublicKeyInfrastructure|Initiate PublicKeyInfrastructure|
+|PublicKeyInfrastructure|Restore PublicKeyInfrastructure|
+|PublicKeyInfrastructure|Update PublicKeyInfrastructure|
 |RoleManagement|Add EligibleRoleAssignment to RoleDefinition|
 |RoleManagement|Add eligible member to role|
 |RoleManagement|Add member to role|
@@ -836,10 +818,9 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |RoleManagement|Remove scoped member from role|
 |RoleManagement|Update role|
 |RoleManagement|Update role definition|
-|SourceOfAuthorityPolicy|Add SOA policy|
 |UserManagement|Add app role assignment to group|
 |UserManagement|Add user|
-|UserManagement|Add users strong authentication phone app detail|
+|UserManagement|Add user sponsor|
 |UserManagement|Change user license|
 |UserManagement|Change user password|
 |UserManagement|Convert federated user to managed|
@@ -851,13 +832,15 @@ Logs captured in the Core Directory service cover a wide variety of scenarios. C
 |UserManagement|Enable Strong Authentication|
 |UserManagement|Enable account|
 |UserManagement|Hard Delete user|
+|UserManagement|Remove OrganizationalUnit assigned to a user|
 |UserManagement|Remove app role assignment from user|
-|UserManagement|Remove users strong authentication phone app detail|
+|UserManagement|Remove user sponsor|
 |UserManagement|Reset password|
 |UserManagement|Restore user|
 |UserManagement|Set force change user password|
 |UserManagement|Set user manager|
-|UserManagement|Set user oath token metadata enabled|
+|UserManagement|Takeover user cloned|
+|UserManagement|Update OrganizationalUnit assigned to a user|
 |UserManagement|Update StsRefreshTokenValidFrom Timestamp|
 |UserManagement|Update external secrets|
 |UserManagement|Update user|
@@ -869,20 +852,20 @@ If you need to manage [Microsoft Entra ID and Microsoft Entra hybrid joined devi
 |Audit Category|Activity|
 |---|---|
 |Device|Delete pre-created device|
-|Device|pre-create device|
+|Device|Pre-create device|
+|Device|Recover device local administrator password|
 |Device|Register device|
-|Device|Reveal local administrator password|
 |Device|Unregister device|
 |Device|Update local administrator password|
 |KeyManagement|Add BitLocker key|
 |KeyManagement|Delete BitLocker key|
 |KeyManagement|Read BitLocker key|
 |Policy|Set device registration policies|
-|UserManagement|Add FIDO2 security key|
+|UserManagement|Add Passkey (device-bound)|
 |UserManagement|Add Windows Hello for Business credential|
 |UserManagement|Add passwordless phone sign-in credential|
 |UserManagement|Add platform credential|
-|UserManagement|Delete FIDO2 security key(s)|
+|UserManagement|Delete Passkey (device-bound)|
 |UserManagement|Delete Windows Hello for Business credential|
 |UserManagement|Delete passwordless phone sign-in credential|
 |UserManagement|Delete platform credential|
@@ -957,22 +940,35 @@ If you're using Microsoft Entra Internet Access or Microsoft Entra Private Acces
 
 |Audit Category|Activity|
 |---|---|
+|ApplicationManagement|Create Certificate|
+|ApplicationManagement|Delete Certificate|
+|ApplicationManagement|Update Certificate|
+|ObjectManagement|Offboarding Process Started|
 |ObjectManagement|Onboarding Process Started|
 |ObjectManagement|Update Adaptive Access Policy|
 |ObjectManagement|Update Enriched Audit Logs Settings|
-|PolicyManagement|Create Branch|
+|ObjectManagement|Update Forwarding Options Policy|
 |PolicyManagement|Create Filtering Policy|
 |PolicyManagement|Create Filtering Policy Profile|
+|PolicyManagement|Create Remote Network|
+|PolicyManagement|Create Security Provider Policy|
 |PolicyManagement|Delete Filtering Policy|
 |PolicyManagement|Delete Filtering Policy Profile|
-|PolicyManagement|Create Forwarding Policy|
-|PolicyManagement|Update Branch|
+|PolicyManagement|Delete Forwarding Policy|
+|PolicyManagement|Delete Private Access Policy|
+|PolicyManagement|Delete Remote Network|
+|PolicyManagement|Delete Security Provider Policy|
 |PolicyManagement|Update Filtering Policy|
 |PolicyManagement|Update Filtering Policy Profile|
 |PolicyManagement|Update Filtering Profile|
 |PolicyManagement|Update Forwarding Options Policy|
 |PolicyManagement|Update Forwarding Policy|
 |PolicyManagement|Update Forwarding Profile|
+|PolicyManagement|Update Forwarding Rule|
+|PolicyManagement|Update Private Access Policy|
+|PolicyManagement|Update Remote Network|
+|PolicyManagement|Update Security Provider Policy|
+|ResourceManagement|Create Registration of Security Provider|
 
 ## Hybrid Authentication
 
@@ -983,18 +979,20 @@ If you're using Microsoft Entra Internet Access or Microsoft Entra Private Acces
 
 <a name='identity-protection'></a>
 
-#### Microsoft Entra ID Protection
+#### Microsoft Entra ID Protection (Identity Protection)
 
 |Audit Category|Activity|
 |---|---|
 |IdentityProtection|Update IdentityProtectionPolicy|
 |IdentityProtection|Update NotificationSettings|
 |Other|ConfirmAccountCompromised|
+|Other|ConfirmAccountSafe|
 |Other|ConfirmCompromised|
 |Other|ConfirmSafe|
-|Other|ConfirmServicePrincipalCompromised|
-|Other|DismissServicePrincipal|
+|Other|DismissRisk|
 |Other|DismissUser|
+|Other|confirmServicePrincipalCompromised|
+|Other|DismissServicePrincipal|
 
 ## Invited users
 
@@ -1004,13 +1002,11 @@ Use the Invited users logs to help you manage the status of users who were invit
 |---|---|
 |UserManagement|Delete external user|
 |UserManagement|Email not sent, user unsubscribed|
-|UserManagement|Email subscribed|
-|UserManagement|Email unsubscribed|
+|UserManagement|Invitation Email|
 |UserManagement|Invite external user|
 |UserManagement|Invite external user with reset invitation status|
 |UserManagement|Invite internal user to B2B collaboration|
 |UserManagement|Redeem external user invite|
-|UserManagement|Viral user creation|
 
 ## Lifecycle Workflows
 
@@ -1064,8 +1060,18 @@ If you're using [MIM](/microsoft-identity-manager/microsoft-identity-manager-201
 
 |Audit Category|Activity|
 |---|---|
-|PolicyManagement|Delete policy|
-|PolicyManagement|Update mobility management policy|
+|Authentication|User confirmed unusual sign-in event as legitimate|
+|Authentication|User reported unusual sign-in event as not legitimate|
+|UserManagement|User changed default security info|
+|UserManagement|User deleted security info|
+|UserManagement|User registered security info|
+|UserManagement|User started security info registration|
+
+## MyAccess
+
+|Audit Category|Activity|
+|---|---|
+|ApplicationManagement|Create application collection|
 
 ## MyApps
 
@@ -1291,11 +1297,9 @@ Many of the activities in this group are associated with background processes re
 |Audit Category|Activity|
 |---|---|
 |GroupManagement|ApprovalNotification_Create|
-|GroupManagement|Autorenew group|
 |GroupManagement|Approval_Act|
 |GroupManagement|Approval_Get|
 |GroupManagement|Approval_GetAll|
-|GroupManagement|Approvals_ActOnApproval|
 |GroupManagement|Approvals_Post|
 |GroupManagement|Approve a pending request to join a group|
 |GroupManagement|Cancel a pending request to join a group|
@@ -1341,6 +1345,7 @@ Many of the activities in this group are associated with background processes re
 |GroupManagement|Reject a pending request to join a group|
 |GroupManagement|Renew group|
 |GroupManagement|Request to join a group|
+|GroupManagement|set dynamic group properties|
 |GroupManagement|Settings_GetSettingsAsync|
 |GroupManagement|Update lifecycle management policy|
 |GroupManagement|User_Create|
@@ -1390,6 +1395,7 @@ The Self-service password management logs provide insight into changes made to p
 |Audit Category|Activity|
 |---|---|
 |ResourceManagement|Create authority|
+|ResourceManagement|Create authorization policy|
 |ResourceManagement|Create contract|
 |ResourceManagement|Create issuance policy|
 |ResourceManagement|Delete issuance policy|

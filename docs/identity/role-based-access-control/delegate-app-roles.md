@@ -7,12 +7,12 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 03/30/2023
+ms.date: 11/17/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 
-#Customer intent: As a Microsoft Entra administrator, I want to reduce overusing the Global Administrator role by delegating app access management to lower-privilege roles.
+#Customer intent: As a Microsoft Entra administrator, I want to reduce overusing highly-privileged administrator roles by delegating app access management to lower-privilege roles.
 ---
 
 # Delegate app registration permissions in Microsoft Entra ID
@@ -24,7 +24,7 @@ This article describes how to use permissions granted by custom roles in Microso
 - [Assigning a built-in administrative role](#assign-built-in-application-administrator-roles) that grants access to manage configuration in Microsoft Entra ID for all applications. This is the recommended way to grant IT experts access to manage broad application configuration permissions without granting access to manage other parts of Microsoft Entra not related to application configuration.
 - [Creating a custom role](#create-and-assign-a-custom-role-preview) defining very specific permissions and assigning it to someone either to the scope of a single application as a limited owner, or at the directory scope (all applications) as a limited administrator.
 
-It's important to consider granting access using one of the above methods for two reasons. First, delegating the ability to perform administrative tasks reduces Global Administrator overhead. Second, using limited permissions improves your security posture and reduces the potential for unauthorized access. For guidelines about role security planning, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md).
+It's important to consider granting access using one of the above methods for two reasons. First, delegating the ability to perform administrative tasks reduces highly-privileged administrator overhead. Second, using limited permissions improves your security posture and reduces the potential for unauthorized access. For guidelines about role security planning, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md).
 
 ## Restrict who can create applications
 
@@ -34,7 +34,7 @@ By default in Microsoft Entra ID, all users can register applications and manage
 
 To disable the default ability to create application registrations or consent to applications, follow these steps to set one or both of these settings for your organization.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator).
 
 1. Browse to **Identity** > **Users** > **User settings**.
 

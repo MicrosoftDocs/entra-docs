@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 3/28/2023
+ms.date: 09/30/2024
 ms.author: jomondi
 ms.reviewer: phsignor, jawoods
 ms.custom: has-azure-ad-ps-ref
@@ -18,9 +18,9 @@ zone_pivot_groups: enterprise-apps-all
 
 # Configure permission classifications
 
-In this article, you learn how to configure permissions classifications in Microsoft Entra ID. Permission classifications allow you to identify the impact that different permissions have according to your organization's policies and risk evaluations. For example, you can use permission classifications in consent policies to identify the set of permissions that users are allowed to consent to.
+In this article, you learn how to configure permissions classifications in Microsoft Entra ID. Permission classifications allow you to identify the impact that different permissions have based on your organization's policies and risk evaluations. For example, you can use permission classifications in consent policies to identify the set of permissions that users are allowed to consent to.
 
-Three permission classifications are supported: "Low", "Medium" (preview), and "High" (preview). Currently, only delegated permissions that don't require admin consent can be classified.
+Three permission classifications are supported: "Low," "Medium" (preview), and "High" (preview). Currently, only delegated permissions that don't require admin consent can be classified.
 
 The minimum permissions needed to do basic sign-in are `openid`, `profile`, `email`, and `offline_access`, which are all delegated permissions on the Microsoft Graph. With these permissions an app can read details of the signed-in user's profile, and can maintain this access even when the user is no longer using the app.
 
@@ -43,9 +43,9 @@ Follow these steps to classify permissions using the Microsoft Entra admin cente
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **Permission classifications**.
 1. Choose the tab for the permission classification you'd like to update.
 1. Choose **Add permissions** to classify another permission.
-1. Select the API and then select the delegated permission(s).
+1. Select the API and then select one or more delegated permissions.
 
-In this example, we've classified the minimum set of permission required for single sign-on:
+In this example, we classify the minimum set of permission required for single sign-on:
 
 :::image type="content" source="media/configure-permission-classifications/permission-classifications.png" alt-text="Permission classifications":::
 
@@ -221,7 +221,7 @@ List current permission classifications for an API using the following Microsoft
 
 ### Classify a permission as "Low impact" using Microsoft Graph API
 
-In the following example, we classify the permission as "low impact".
+In the following example, we classify the permission as "low impact."
 
 Add a delegated permission classification for an API using the following Microsoft Graph API call.
 

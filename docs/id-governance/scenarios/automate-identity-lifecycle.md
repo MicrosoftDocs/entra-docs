@@ -1,10 +1,11 @@
 ---
 title: 'Automate identity lifecycle management with Microsoft Entra ID Governance'
 description: Describes overview of identity lifecycle management for Microsoft Entra ID Governance.
-services: active-directory
+ms.service: entra-id-governance
+ms.subservice:
 author: billmath
 manager: amycolannino
-ms.service: active-directory
+
 ms.workload: identity
 ms.topic: overview
 ms.date: 02/28/2024
@@ -13,7 +14,7 @@ ms.author: billmath
 
 # Automate identity lifecycle management with Microsoft Entra ID Governance
 
-The following document provides an overview of how you can automate identity lifecycle processes using Microsoft Entra ID Governance.
+The following document provides an overview of how you can [automate identity lifecycle processes](https://youtu.be/NxSu3JEsxmY?si=PELWAnpdI4iAMfki) using Microsoft Entra ID Governance.
 
 
 ## Automatic inbound provisioning from Active Directory

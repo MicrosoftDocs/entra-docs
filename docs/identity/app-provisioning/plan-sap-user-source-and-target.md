@@ -88,7 +88,7 @@ In this section, you determine the organizational policies you plan to use to de
 
 1. **Select the appropriate conditional access policy for access to each application.** We recommend that you analyze your applications and organize them into collections of applications that have the same resource requirements for the same users.
 
-   The first time you integrate a federated SSO application with Microsoft Entra ID, you might need to create a new conditional access policy to express constraints. You might need to enforce requirements for multifactor authentication (MFA) or location-based access for that application and subsequent applications. You can also configure in conditional access that users must agree to [terms of use](~/identity/conditional-access/require-tou.md).
+   The first time you integrate a federated SSO application with Microsoft Entra ID, you might need to create a new conditional access policy to express constraints. You might need to enforce requirements for multifactor authentication (MFA) or location-based access for that application and subsequent applications. You can also configure in conditional access that users must agree to [terms of use](~/identity/conditional-access/policy-all-users-require-terms-of-use.md).
 
    For more considerations on how to define a conditional access policy, see [Plan a conditional access deployment](~/identity/conditional-access/plan-conditional-access.md).
 
@@ -204,7 +204,7 @@ If users need passwords, you can roll out the Microsoft Entra ID [self-service p
 
 If users will be using stronger authentication, enable the [Temporary Access Pass policy](../authentication/howto-authentication-temporary-access-pass.md) so that you can generate Temporary Access Passes for new users.
 
-1. **Verify that users are ready for Microsoft Entra MFA.** We recommend requiring Microsoft Entra MFA for business-critical applications integrated via federation. For these applications, a policy should require the user to meet an MFA requirement prior to Microsoft Entra ID that permits them to sign in to an application. Some organizations might also block access by locations or [require the user to access from a registered device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md).
+1. **Verify that users are ready for Microsoft Entra MFA.** We recommend requiring Microsoft Entra MFA for business-critical applications integrated via federation. For these applications, a policy should require the user to meet an MFA requirement prior to Microsoft Entra ID that permits them to sign in to an application. Some organizations might also block access by locations or [require the user to access from a registered device](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md).
 
    If there's no suitable policy already that includes the necessary conditions for authentication, location, device, and terms of use, [add a policy to your conditional access deployment](~/identity/conditional-access/plan-conditional-access.md).
 

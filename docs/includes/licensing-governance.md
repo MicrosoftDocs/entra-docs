@@ -27,11 +27,11 @@ The following table shows what features are available with each license.  Not al
 |[Entitlement management - Conditional Access Scoping](~/id-governance/entitlement-management-external-users.md#review-your-conditional-access-policies)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Entitlement management MyAccess Search](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Entitlement management with Verified ID](~/id-governance/entitlement-management-verified-id-settings.md)|||| :white_check_mark: | :white_check_mark: |
-|[Entitlement management + Custom Extensions (Logic Apps)](~/id-governance/entitlement-management-logic-apps-integration.md)|||| :white_check_mark: | :white_check_mark: |
-|[Entitlement management + Auto Assignment Policies](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: | :white_check_mark: |
-|[Entitlement management - Directly Assign Any User(Preview)](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)|||| :white_check_mark: | :white_check_mark: |
+|[Entitlement management - Custom Extensions (Logic Apps)](~/id-governance/entitlement-management-logic-apps-integration.md)|||| :white_check_mark: | :white_check_mark: |
+|[Entitlement management - Auto Assignment Policies](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: | :white_check_mark: |
+|[Entitlement management - Directly Assign Any User (Preview)](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Guest Conversion API](~/id-governance/entitlement-management-access-package-manage-lifecycle.md)|||| :white_check_mark: | :white_check_mark: |
-|[Entitlement management - Grace Period(Preview)](~/id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Entitlement management - Manage the lifecycle of external users](~/id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[My Access portal](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Microsoft Entra Roles (Preview)](~/id-governance/entitlement-management-roles.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Sponsors Policy](~/id-governance/entitlement-management-access-package-create.md)|||| :white_check_mark: | :white_check_mark: |
@@ -39,7 +39,7 @@ The following table shows what features are available with each license.  Not al
 |[PIM For Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[PIM CA Controls](../id-governance/privileged-identity-management/pim-how-to-change-default-settings.md#on-activation-require-microsoft-entra-conditional-access-authentication-context)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Access Reviews - Basic access certifications and reviews](~/id-governance/access-reviews-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[Access reviews - PIM For Groups](~/id-governance/create-access-review-pim-for-groups.md)|||| :white_check_mark: | :white_check_mark: |
+|[Access reviews - PIM For Groups (Preview)](~/id-governance/create-access-review-pim-for-groups.md)|||| :white_check_mark: | :white_check_mark: |
 |[Access reviews - Inactive Users reviews](~/id-governance/create-access-review.md)|||| :white_check_mark: | :white_check_mark: |
 |[Access Reviews - Inactive Users recommendations](~/id-governance/review-recommendations-access-reviews.md#inactive-user-recommendations)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Access reviews - Machine learning assisted access certifications and reviews](~/id-governance/review-recommendations-access-reviews.md#user-to-group-affiliation)|||| :white_check_mark: | :white_check_mark: |

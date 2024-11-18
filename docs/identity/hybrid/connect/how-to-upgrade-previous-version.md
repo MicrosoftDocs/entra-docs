@@ -148,7 +148,14 @@ To add the overrides for both full import and full synchronization on an arbitra
 
 ## Upgrading the server Operating System
 
-If you need to upgrade the operating system of your Microsoft Entra Connect server, do not use an in-place upgrade of the OS (Operating System). Instead, prepare a new server with the desired operating system and perform a [swing migration](#swing-migration).
+If you need to upgrade the operating system(OS) of your Microsoft Entra Connect server, the recommended method is to prepare a new server with the desired operating system and perform a [swing migration](#swing-migration).
+
+However, if this is not possible, the following in-place OS upgrades are supported.
+
+|Intial OS|Supported in-place upgrade OS|
+|-----|-----|
+|Windows Server 2106|Windows Server 2022|
+|Windows Server 2019|Windows Server 2022|
 
 ## Troubleshooting
 The following section contains troubleshooting and information that you can use if you encounter an issue upgrading Microsoft Entra Connect.

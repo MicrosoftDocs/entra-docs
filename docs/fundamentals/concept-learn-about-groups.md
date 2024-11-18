@@ -44,7 +44,7 @@ There are two group types and three group membership types. Review the options t
 For example, you can create a security group so that all group members have the same set of security permissions. Members of a security group can include users, devices, [service principals](~/architecture/service-accounts-principal.md), and other groups (also known as nested groups), which define [access policy and permissions](identity-fundamental-concepts.md). Owners of a security group can include users and service principals.
 
 > [!NOTE]
-> When nesting an existing security group to another security group, only members in the parent group will have access to shared resources and applications. Nested group members don't have the same assigned membership as the parent group members. For more info about managing nested groups, see [How to manage groups](how-to-manage-groups.yml#add-members-or-owners-of-a-group).
+> When nesting an existing security group to another security group, only members in the parent group will have access to shared resources and applications. Nested group members don't have the same assigned membership as the parent group members. For more info about managing nested groups, see [How to manage groups](how-to-manage-groups.yml#add-a-group-to-another-group).
 
 **Microsoft 365:** Provides collaboration opportunities by giving group members access to a shared mailbox, calendar, files, SharePoint sites, and more.
 

@@ -1,9 +1,9 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 09/11/2024
+ms.date: 11/04/2024
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: whats-new
  
 ms.author: cmulligan
@@ -15,6 +15,28 @@ manager: CelesteDG
 # What's new in docs: External ID in external tenants
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
+
+## October 2024
+
+### Updated articles
+
+- [Register an app in your external tenant](how-to-register-ciam-app.md) -  Implicit flow testing updates
+- [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md) -  SMS-based authentication updates
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) -  SMS-based authentication updates
+- [Create self-service sign-up user flows for apps in external tenants](how-to-user-flow-sign-up-sign-in-customers.md) -  Graph API updates
+
+## September 2024
+
+### New articles
+
+- [Set up Azure Monitor in external tenants (preview)](how-to-azure-monitor.md)
+- [Microsoft Entra External ID training, live demo, and videos](reference-training-videos.md)
+
+### Updated articles
+
+- [Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code](visual-studio-code-extension.md) - Updated sign-in experience
+- [Service limits and restrictions](reference-service-limits.md) - Updated phone limits
+- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md) - MSAL framework update
 
 ## August 2024
 
@@ -33,18 +55,3 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 - [Create self-service sign-up user flows for apps in external tenants](how-to-user-flow-sign-up-sign-in-customers.md) - Added MFA options
 - [Service limits and restrictions](reference-service-limits.md) - Added telephony throttling limits
 
-## July 2024
-
-### Updated articles
-
-- [Call an API in a sample Node.js daemon application](sample-daemon-node-call-api.md) - Editorial updates
-- [Sign in users in a sample Electron desktop application](how-to-desktop-app-electron-sample-sign-in.md) - Added user flow testing instructions
-- [Sign in users and edit profile in a sample Node.js web application](sample-web-app-node-sign-in-edit-profile.md) - Editorial updates
-
-## June 2024
-
-### Updated articles
-
-- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Screenshots and instructions updated
-- [Sign in users and call a web API in sample Node.js web application](sample-web-app-node-sign-in-call-api.md) - Editorial updates
-- [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md) - Updated sign in instructions

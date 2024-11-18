@@ -3,10 +3,10 @@ title: 'Govern cloud users and groups with provisioning from on-premises and Ent
 description: This article a tutorial on how to provision users and groups using cloud sync.
 author: billmath
 manager: amycolannino
-ms.service: entra-id
+ms.service: entra-id-governance
 ms.topic: conceptual
 ms.date: 11/06/2023
-ms.subservice: hybrid-cloud-sync
+ms.subservice:
 ms.author: billmath
 ---
 

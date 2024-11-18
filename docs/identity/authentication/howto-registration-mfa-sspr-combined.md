@@ -5,7 +5,7 @@ description: Learn how to simplify the end-user experience with combined Microso
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 10/02/2024
 
 ms.author: justinha
 author: justinha
@@ -29,11 +29,11 @@ To secure when and how users register for Microsoft Entra multifactor authentica
 >
 > You can create an MFA registration policy by using [Microsoft Entra ID Protection - Configure MFA Policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md).
 
-For more information about creating trusted locations in Conditional Access, see [What is the location condition in Microsoft Entra Conditional Access?](../conditional-access/concept-assignment-network.md#trusted-locations)
+For more information about creating trusted locations in Conditional Access, see [What is the location condition in Microsoft Entra Conditional Access?](../conditional-access/concept-assignment-network.md#trusted-locations).
 
 ### Create a policy to require registration from a trusted location
 
-Complete the following steps to create a policy that applies to all selected users that attempt to register using the combined registration experience, and blocks access unless they are connecting from a location marked as trusted network:
+Complete the following steps to create a policy that applies to all selected users that attempt to register using the combined registration experience, and requires users connected on a non-trusted network to either perform MFA or sign in using a Temporary Access Pass (TAP) to register for MFA or reset their password using SSPR:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access**.
@@ -52,7 +52,7 @@ Complete the following steps to create a policy that applies to all selected use
    1. Configure **Yes**.
    1. Include **Any location**.
    1. Exclude **All trusted locations**.
-1. Under **Access controls** > **Grant**, choose **Block access**, then **Select**.
+1. Under **Access controls** > **Grant**, choose **Require multifactor authentication**, then **Select**.
 1. Set **Enable policy** to **On**.
 1. To finalize the policy, select **Create**.
 

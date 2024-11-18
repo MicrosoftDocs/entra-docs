@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 04/23/2024
+ms.date: 10/15/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -26,13 +26,13 @@ If you instead want to use the Microsoft 365 admin center to configure a multite
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
 - [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multitenant organization.
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
+- [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) role to consent to required permissions.
 
 ![Icon for the member tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Member tenant**
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
 - [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multitenant organization.
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
+- [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) role to consent to required permissions.
 
 ## Step 1: Sign in to the owner tenant
 

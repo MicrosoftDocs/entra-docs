@@ -59,5 +59,5 @@ If device code flow was matched but device code flow wasn't the flow performed f
 
 ## Related content
 
-- [Block authentication flows with Conditional Access policy](how-to-policy-authentication-flows.md)
+- [Block authentication flows with Conditional Access policy](policy-block-authentication-flows.md)
 - [Conditional Access: Conditions](concept-conditional-access-conditions.md)

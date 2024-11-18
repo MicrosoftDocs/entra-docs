@@ -32,7 +32,7 @@ In addition to the standard notifications provided by Microsoft Entra ID Governa
 
 All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), organizations can create [custom alerts](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics#set-up-alerts). 
 
-The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor. By using Azure Monitor, organizations can customize what alerts are generated, who receives the alerts, and how they receive the alert (email, SMS, [help desk ticket](https://learn.microsoft.com/azure/azure-monitor/alerts/itsm-connector-secure-webhook-connections-azure-configuration), etc.). 
+The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor. By using Azure Monitor, organizations can customize what alerts are generated, who receives the alerts, and how they receive the alert (email, SMS, [help desk ticket](/azure/azure-monitor/alerts/itsm-connector-secure-webhook-connections-azure-configuration), etc.). 
 
 | Feature | Example alert |
 | --- | --- |
@@ -193,7 +193,7 @@ AuditLogs
 
 ### Alert an IT admin when a user is added to a role outside of PIM
 
-The query below is based on a templateId. You can find a list of template IDs [here](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference).
+The query below is based on a templateId. You can find a list of template IDs [here](/entra/identity/role-based-access-control/permissions-reference).
 
 *Query*
 

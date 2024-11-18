@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: how-to
-ms.date: 08/25/2024
+ms.date: 10/17/2024
 ms.author: jricketts
 ms.reviewer: ajburnle
 ms.custom:
@@ -74,6 +74,11 @@ The following sections provide guidance about how to implement the principles de
 In Microsoft Entra ID, users who have privileged roles, such as administrators, are the root of trust to build and manage the rest of the environment. Implement the following practices to minimize the effects of a compromise.
 
 - Use cloud-only accounts for Microsoft Entra ID and Microsoft 365 privileged roles.
+
+    For each role with high privileges, you should do the following:
+
+    - Review the users that have `onPremisesImmutableId` and `onPremisesSyncEnabled` set. See Microsoft Graph API [user resource type](/graph/api/resources/user).
+    - Create cloud-only user accounts for those individuals and remove their hybrid identity from privileged roles.
 
 - Deploy privileged access devices for privileged access to manage Microsoft 365 and Microsoft Entra ID. See [Device roles and profiles](/security/privileged-access-workstations/privileged-access-devices#device-roles-and-profiles).
 
@@ -182,7 +187,7 @@ Deploy Microsoft Entra joined Windows 10 workstations with mobile device managem
 
 Use Microsoft Entra Conditional Access to interpret signals and use them to make authentication decisions. For more information, see the [Conditional Access deployment plan](~/identity/conditional-access/plan-conditional-access.md).
 
-- Use Conditional Access to block legacy authentication protocols whenever possible. Additionally, disable legacy authentication protocols at the application level by using an application-specific configuration. See [Block legacy authentication](~/identity/conditional-access/howto-conditional-access-policy-block-legacy.md).
+- Use Conditional Access to block legacy authentication protocols whenever possible. Additionally, disable legacy authentication protocols at the application level by using an application-specific configuration. See [Block legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
   For more information, see [Legacy authentication protocols](./auth-sync-overview.md#legacy-authentication-protocols). Or see specific details for [Exchange Online](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online#how-basic-authentication-works-in-exchange-online) and [SharePoint Online](/powershell/module/sharepoint-online/set-spotenant).
 

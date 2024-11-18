@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/09/2024
+ms.date: 10/04/2024
 
 ms.author: justinha
 author: justinha
@@ -201,7 +201,8 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 > [!NOTE]
 > Be sure to include the header row in your CSV file.
 
-Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Global Administrator, go to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the CSV file.
+1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)] 
+1. Go to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the CSV file.
 
 Depending on the size of the CSV file, it might take a few minutes to process. Select **Refresh** to get the status. If there are any errors in the file, you can download a CSV file that lists them. The field names in the downloaded CSV file are different from those in the uploaded version.
 
@@ -335,7 +336,7 @@ You can access service settings from the [Microsoft Entra admin center](https://
 
 ### Trusted IPs
 
-Location conditions are the recommended way to configure MFA with Conditional Access because of IPv6 support and other improvements. For more information about location conditions, see [Using the location condition in a Conditional Access policy](/entra/identity/conditional-access/location-condition#location-condition-in-policy). For steps to define locations and create a Conditional Access policy, see [Conditional Access: Block access by location](/entra/identity/conditional-access/howto-conditional-access-policy-location).
+Location conditions are the recommended way to configure MFA with Conditional Access because of IPv6 support and other improvements. For more information about location conditions, see [Using the location condition in a Conditional Access policy](/entra/identity/conditional-access/location-condition#location-condition-in-policy). For steps to define locations and create a Conditional Access policy, see [Conditional Access: Block access by location](/entra/identity/conditional-access/policy-block-by-location).
 
 The trusted IPs feature of Microsoft Entra multifactor authentication also bypasses MFA prompts for users who sign in from a defined IP address range. You can set trusted IP ranges for your on-premises environments. When users are in one of these locations, there's no Microsoft Entra multifactor authentication prompt. The trusted IPs feature requires Microsoft Entra ID P1 edition. 
 

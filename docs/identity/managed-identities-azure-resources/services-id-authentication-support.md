@@ -2,13 +2,13 @@
 title: Azure services that support Microsoft Entra authentication
 description: List of services that support Microsoft Entra authentication
 
-author: barclayn
-ms.author: barclayn
+author: rwike77
+ms.author: ryanwi
 ms.date: 06/14/2024
 ms.topic: conceptual
 ms.service: entra-id
 ms.subservice: managed-identities
-manager: amycolannino
+manager: CelesteDG
 ---
 
 # Azure services that support Microsoft Entra authentication

@@ -58,9 +58,7 @@ To change an application's SAML certificate signing options and the certificate 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
-1. Enter the name of the existing application in the search box, and then select the application from the search results. In this example, you use the Salesforce application.
-
-   ![Example: Application overview page](./media/certificate-signing-options/application-overview-page.png)
+1. Enter the name of the existing application in the search box, and then select the application from the search results.
 
 Next, change the certificate signing options in the SAML token for that application:
 

@@ -219,7 +219,7 @@ if ($count -le 0) {
 
 ```powershell
 # Connect to Microsoft Graph using Connect-MgGraph
-Connect-MgGraph -Scopes "User.Read.All"
+Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All"
 
 # Get all users using Get-MgUser with a filter
 $users = Get-MgUser -All -Property AssignedLicenses, LicenseAssignmentStates, DisplayName | Select-Object DisplayName, AssignedLicenses -ExpandProperty LicenseAssignmentStates | Select-Object DisplayName, AssignedByGroup, State, Error, SkuId

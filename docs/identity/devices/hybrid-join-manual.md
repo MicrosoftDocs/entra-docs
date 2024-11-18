@@ -428,4 +428,4 @@ If you experience issues completing Microsoft Entra hybrid join for domain-joine
 
 - [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.yml)
 - [Plan your Microsoft Entra hybrid join implementation](hybrid-join-plan.md)
-- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)
+- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)

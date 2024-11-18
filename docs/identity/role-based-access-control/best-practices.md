@@ -48,7 +48,7 @@ One of the principles of least privilege is that access should be granted only w
  
 You can enable MFA on Microsoft Entra roles using two methods:
 - [Role settings](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md) in Privileged Identity Management
-- [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md)
+- [Conditional Access](~/identity/conditional-access/policy-old-require-mfa-admin.md)
 
 ## 4. Configure recurring access reviews to revoke unneeded permissions over time
 
@@ -86,7 +86,7 @@ Some roles include privileged permissions, such as the ability to update credent
 
 If you have an external governance system that takes advantage of groups, then you should consider assigning roles to Microsoft Entra groups, instead of individual users. You can also manage role-assignable groups in PIM to ensure that there are no standing owners or members in these privileged groups. For more information, see [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md).
 
-You can assign an owner to role-assignable groups. That owner decides who is added to or removed from the group, so indirectly, decides who gets the role assignment. In this way, a Global Administrator or Privileged Role Administrator can delegate role management on a per-role basis by using groups. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
+You can assign an owner to role-assignable groups. That owner decides who is added to or removed from the group, so indirectly, decides who gets the role assignment. In this way, a Privileged Role Administrator can delegate role management on a per-role basis by using groups. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
 
 ## 8. Activate multiple roles at once using PIM for Groups
 

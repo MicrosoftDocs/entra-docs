@@ -135,8 +135,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In SmartConsole > **Gateways & Servers** view, click **New > More > User/Identity > Identity Provider**.
 
-    ![screenshot for new Identity Provider.](./media/check-point-identity-awareness-tutorial/identity-provider.png)
-
 1. Perform the following steps in **New Identity Provider** window.
 
     ![screenshot for Identity Provider section.](./media/check-point-identity-awareness-tutorial/new-identity-provider.png)

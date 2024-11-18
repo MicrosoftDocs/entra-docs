@@ -105,15 +105,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Brivo Onair Identity Connector**.
 
-    ![Brivo Onair Identity Connector User Mappings](media/brivo-onair-identity-connector-provisioning-tutorial/user-mappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Brivo Onair Identity Connector in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Brivo Onair Identity Connector for update operations. Select the **Save** button to commit any changes.
 
     ![Brivo Onair Identity Connector User Attributes](media/brivo-onair-identity-connector-provisioning-tutorial/user-attributes.png)
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Brivo Onair Identity Connector**.
-
-    ![Brivo Onair Identity Connector Group Mappings](media/brivo-onair-identity-connector-provisioning-tutorial/group-mappings.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Brivo Onair Identity Connector in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Brivo Onair Identity Connector for update operations. Select the **Save** button to commit any changes.
 

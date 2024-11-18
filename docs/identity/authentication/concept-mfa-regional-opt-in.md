@@ -1,6 +1,6 @@
 ---
-title: Regions that need to opt in for Microsoft Entra multifactor authentication telephony verification
-description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID
+title: Regional telecom restrictions
+description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Micorsoft Azure B2C
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -35,12 +35,34 @@ IRSF poses a significant threat to online businesses and can cause reputational 
 
 ## SMS verification
 
-For SMS verification, the following region codes require an opt-in.
+For SMS verification, the following region codes require an opt-in. This means that if you'd like to use telecom in these regions, you'll have to reach out to support. 
 
 | Region Code | Region Name                                    |
 |:----------- |:---------------------------------------------- |
 | 222         |  Mauritania                                    |
 | 998         |  Uzbek                                         |
+| 63 | Philippines | 
+| 20 | Egypt | 
+| 967 | Yemen | 
+| 84 | Vietnam | 
+| 62 | Indonesia | 
+| 234 | Nigeria | 
+| 972 | Israel | 
+| 233 | Ghana | 
+| 92 | Pakistan | 
+| 966 | Saudi Arabia | 
+| 971 | United Arab Emriates | 
+| 94 | Sri Lanka | 
+| 258 | Mozambique | 
+| 502 | Guatemala | 
+| 974 | Qatar | 
+| 591 | Bolivia | 
+| 254 | Kenya | 
+| 255 | Tanzania | 
+| 7 | Russia / Kazakhstan | 
+| 380 | Ukraine | 
+| 216 | Tunisia | 
+| 212 | Morocco | 
 
 ## Voice verification
 For voice verification, the following region codes require an opt-in.
@@ -193,6 +215,35 @@ For voice verification, the following region codes require an opt-in.
 | 1849        |  Dominican Republic                            |
 | 1869        |  Saint Kitts and Nevis                         |
 | 1876        |  Jamaica                                       |
+
+## Region specific service limits 
+| Region Code | Region Name                                    | Limit per tenant per 60 minutes | Limit per tenant per 24 hours            |                         
+|:----------- |:---------------------------------------------- |:------------------------------- | :----------------------------------------|
+| 228         |  Togo                                          | 10                              |  30                                      |
+| 257         |  Uzbek                                         | 10                              |  30                                      |
+| 970         |  State of Plaestine                            | 10                              |  30                                      |
+| 249         |  Sudan                                         | 10                              |  30                                      |
+| 226         |  Burina Faso                                   | 10                              |  30                                      |
+| 252         |  Somalia                                       | 10                              |  30                                      |  
+| 501         |  Belize                                        | 10                              |  30                                      |
+| 855         |  Cambodia                                      | 50                              |  200                                     |
+| 84         |  Vietnam                                       | 150                              |  500                                     |
+| 94         |  Sri Lanka                                     | 100                              |  500                                     |
+| 63         |  Philippines                                   | 50                              |  200                                     |
+| 62         |  Indonesia                                     | 50                              |  200                                     |
+| 7         |  Russia                                        | 100                              |  1000                                     |
+| 258         |  Mozambique                                    | 50                              |  200                                     |
+| 92         |  Pakistan                                    | 100                              |  1000                                     |
+| 994 | Azerbaijan | 50 | 200 | 
+| 880 | Bangladesh | 50 | 200 | 
+| 20  | Egypt | 50 | 200 | 
+| 260 | Zambia | 50 | 200 | 
+| 502 | Guatemala | 10 | 50 
+| 255 | Tanzania | 10 | 50 
+| 261 | Madagascar | 10 | 30 
+| 998 | Uzbekistan | 10 | 30 
+| 223 | Mali | 20 | 100 
+| 52 | Mexico | 100 | 500 
 
 ## Next steps
 

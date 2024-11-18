@@ -147,9 +147,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     ![Screenshot for SSO Setting](./media/benq-iam-tutorial/sso-setting.png)
 
-1. Select **SSO by SAML** as SSO Setting in the pop up and click **Next**.
-
-    ![Screenshot for SSO by saml](./media/benq-iam-tutorial/sso-by-saml.png)
+1. Under **SSO Setting**, select **SSO by SAML** and click **Next**.
 
 1. Perform the following steps in the **SSO Setting** page.
 

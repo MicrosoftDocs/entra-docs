@@ -116,8 +116,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Figma**.
 
-	![Figma User Mappings](media/Figma-provisioning-tutorial/figma05.png)
-
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Figma  in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Figma  for update operations. Select the **Save** button to commit any changes.
 
 	![Figma User Attributes](media/Figma-provisioning-tutorial/figma06.png)

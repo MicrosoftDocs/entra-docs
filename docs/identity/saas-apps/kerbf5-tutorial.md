@@ -258,7 +258,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. On the Single Sign-On Settings screen, select **Enable Single Sign-On**. Under **Selected Single Sign-On Type** choose **Kerberos**. Replace **session.saml.last.Identity**  with **session.saml.last.attr.name.Identity** under **Username Source** (this variable it set using claims mapping in the Microsoft Entra ID). Select **Show Advanced Setting**. Under **Kerberos Realm** type the Domain Name. Under **Account Name/ Account Password** Specify the APM Delegation Account and Password. Specify the Domain Controller IP in the **KDC** Field. Click **Save & Next**.
 
-    ![Screenshot that shows the "Single Sign-On Settings" with text boxes highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure09.png)   
+    ![Screenshot that shows the "Single Sign-On Settings" with text boxes highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure-09.png)   
 
 1. For purposes of this guidance, we will skip endpoint checks.  Refer to F5 documentation for details.  On  screen select **Save & Next**.
 
@@ -327,7 +327,7 @@ You configure an Active Directory AAA server in Access Policy Manager (APM) to s
 15. Click **Finished**. The new server displays on the list. 
 This adds the new Active Directory server to the Active Directory Servers list.
 
-    ![Screenshot that shows the "General Properties" and "Configuration" sections.](./media/kerbf5-tutorial/configure17.png)
+    ![Screenshot that shows the "General Properties" and "Configuration" sections.](./media/kerbf5-tutorial/configure-17.png)
 
 ### SAML Configuration
 

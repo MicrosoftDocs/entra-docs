@@ -109,6 +109,7 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 |Workday Writeback | &#x2705; |
 |SuccessFactors to Microsoft Entra user provisioning | &#x2705; | 
 |SuccessFactors to Writeback | &#x2705; |
+|API-driven inbound provisioning | &#10060; |
 |Provisioning agent configuration and registration with Gov cloud tenant| Works with special undocumented command-line invocation:<br> `AADConnectProvisioningAgent.Installer.exe ENVIRONMENTNAME=AzureUSGovernment` |
 
 ## Other Microsoft Entra products

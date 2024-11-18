@@ -60,7 +60,7 @@ The new name is now the Microsoft Entra private network connector. The updated b
 
 ### New features and improvements
 
-- Support for User Datagram Protocol (UDP) and Private Domain Name System (DNS) features. *Requires the Early Access Preview. 
+- Support for User Datagram Protocol (UDP) and Private Domain Name System (DNS) features for Private Access flow. *Requires the Early Access Preview. 
 - Support for outbound proxy in connector for Private Access flow. *Requires the Early Access Preview. 
 - Improved resiliency and performance.
 - Improved logging and metrics reporting.

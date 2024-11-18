@@ -9,9 +9,9 @@ metadata:
   ms.service: entra-id
   ms.subservice: managed-identities
   ms.topic: landing-page
-  author: barclayn
-  ms.author: barclayn
-  manager: amycolannino
+  author: rwike77
+  ms.author: ryanwi
+  manager: CelesteDG
   ms.date: 11/09/2023
   
 

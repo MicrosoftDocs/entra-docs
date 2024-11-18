@@ -49,12 +49,10 @@ Follow these steps to edit the policies, allowing on behalf of requests, for an 
 
 1. On the **Requests** tab, set **Enable new requests** to Yes. This should show you the option **Allow managers to request on behalf of employees (preview)**. Set that option to Yes.  
     :::image type="content" source="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" lightbox="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" alt-text="Screenshot of editing an access package;s request on behalf of policy.":::
-    > [!NOTE]
-    > If approval is required, you will also see the option to **Bypass approval stage if manager is the requestor and approver (preview)**.
 1. Save your policy. 
 
 ## Request an access package on behalf of an employee
-
+ 
 As a manager, you can request an access package for a direct report by doing the following steps:
 
 1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com). For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.

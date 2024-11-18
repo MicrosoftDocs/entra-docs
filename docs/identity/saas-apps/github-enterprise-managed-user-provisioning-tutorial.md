@@ -50,29 +50,20 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 <a name='step-2-configure-github-enterprise-managed-user-to-support-provisioning-with-azure-ad'></a>
 
-## Step 2: Configure GitHub Enterprise Managed User to support provisioning with Microsoft Entra ID
+## Step 2: Prepare to configure provisioning with Microsoft Entra ID
 
-1. The Tenant URL is `https://api.github.com/scim/v2/enterprises/{enterprise}`. This value will be entered in the Tenant URL field in the Provisioning tab of your GitHub Enterprise Managed User application.
+1. Identify your Tenant URL. This is the value that you enter in the Tenant URL field in the Provisioning tab of your GitHub Enterprise Managed User application.
 
-2. As a GitHub Enterprise Managed administrator navigates to the upper-right corner -> click your profile photo -> then click **Settings**.
+   * For an enterprise on GitHub.com, the Tenant URL is `https://api.github.com/scim/v2/enterprises/{enterprise}`.
+   * For an enterprise on GHE.com, the Tenant URL is `https://api.{subdomain}.ghe.com/scim/v2/enterprises/{subdomain}`
 
-3. In the left sidebar, click **Developer settings**.
-
-4. In the left sidebar, click **Personal access tokens**.
-
-5. Click **Generate new token**.
-
-6. Select the **admin:enterprise** scope for this token.
-
-7. Click **Generate Token**.
-
-8. Copy and save the **secret token**. This value will be entered in the Secret Token field in the Provisioning tab of your GitHub Enterprise Managed User application.
+2. Ensure you have created a token with the **scim:enterprise** scope for your enterprise's setup user. This value is entered in the Secret Token field in the Provisioning tab of your GitHub Enterprise Managed User application. See [Getting started with Enterprise Managed Users](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/getting-started-with-enterprise-managed-users#create-a-personal-access-token) on GitHub Docs.
 
 <a name='step-3-add-github-enterprise-managed-user-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add GitHub Enterprise Managed User from the Microsoft Entra application gallery
 
-Add GitHub Enterprise Managed User from the Microsoft Entra application gallery to start managing provisioning to GitHub Enterprise Managed User. If you have previously setup GitHub Enterprise Managed User for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add GitHub Enterprise Managed User from the Microsoft Entra application gallery to start managing provisioning to GitHub Enterprise Managed User. If you have previously setup GitHub Enterprise Managed User for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who will be in scope for provisioning
 
@@ -80,7 +71,7 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 
 * Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
+* If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 
 ## Step 5: Configure automatic user provisioning to GitHub Enterprise Managed User
@@ -120,7 +111,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to GitHub Enterprise Managed User**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GitHub Enterprise Managed User for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the GitHub Enterprise Managed User API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GitHub Enterprise Managed User for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GitHub Enterprise Managed User API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
@@ -156,7 +147,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, click **Save**.
 
     ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -166,10 +157,10 @@ This operation starts the initial synchronization cycle of all users and groups 
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
 1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
+3. If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

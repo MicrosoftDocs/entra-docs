@@ -1,11 +1,11 @@
 ---
-title: Dynamic groups and B2B collaboration
-description: Shows how to use Microsoft Entra dynamic membership groups with Microsoft Entra B2B collaboration 
+title: Dynamic groups setup
+description: Learn how to create and manage dynamic membership groups in Microsoft Entra External ID. Set rules based on user attributes to automate group membership for B2B collaboration.
 
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 08/25/2024
+ms.date: 10/21/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an administrator managing user access in Microsoft Entra B2B collaboration, I want to create dynamic membership groups based on user attributes, so that I can automatically add or remove members from security groups and provide access to applications or cloud resources.
 ---
 
-# Create dynamic membership groups in Microsoft Entra B2B collaboration
+# Create and manage dynamic membership groups for B2B collaboration in Microsoft Entra External ID
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 

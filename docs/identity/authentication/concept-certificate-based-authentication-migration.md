@@ -5,7 +5,7 @@ description: Learn how to migrate from Federated server to Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 10/03/2024
 
 
 ms.author: justinha
@@ -75,7 +75,7 @@ For synchronized accounts:
 
 ### Should organizations eliminate federated servers like AD FS to prevent the capability to pivot from AD FS to Azure?
  
-With federation, an attacker could impersonate anyone, such as a CIO, even if they can't obtain a cloud-only role like the Global Administrator account.
+With federation, an attacker could impersonate anyone, such as a CIO, even if they can't obtain a cloud-only role like a highly privileged administrator account.
 
 When a domain is federated in Microsoft Entra ID, a high level of trust is being placed on the Federated IdP. AD FS is one example, but the notion holds true for *any* federated IdP. Many organizations deploy a federated IdP such as AD FS exclusively to accomplish certificate based authentication. Microsoft Entra CBA completely removes the AD FS dependency in this case. With Microsoft Entra CBA, customers can move their application estate to Microsoft Entra ID to modernize their IAM infrastructure and reduce costs with increased security.
 

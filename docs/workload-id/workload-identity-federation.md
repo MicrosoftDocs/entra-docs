@@ -51,6 +51,9 @@ Create a trust relationship between the external IdP and a [user-assigned manage
 - On a user-assigned managed identity through the [Microsoft Entra admin center](https://entra.microsoft.com), Azure CLI, Azure PowerShell, Azure SDK, and Azure Resource Manager (ARM) templates. The external workload uses the access token to access Microsoft Entra protected resources without needing to manage secrets (in supported scenarios). The [steps for configuring the trust relationship](workload-identity-federation-create-trust-user-assigned-managed-identity.md) differs, depending on the scenario and external IdP.
 - On an app registration in the [Microsoft Entra admin center](https://entra.microsoft.com) or through Microsoft Graph. This configuration allows you to get an access token for your application without needing to manage secrets outside Azure. For more information, learn how to [configure an app to trust an external identity provider](workload-identity-federation-create-trust.md).
 
+> [!NOTE]
+> The Federated Identity Credential `issuer`, `subject`, and `audience` values must case-sensitively match the corresponding `issuer`, `subject` and `audience` values contained in the token being sent to Microsoft Entra ID by the external IdP in order for the scenario to be authorized. For more information surrounding this change, please visit [What's new for Authentication](../identity-platform/reference-breaking-changes.md).
+
 The workflow for exchanging an external token for an access token is the same, however, for all scenarios. The following diagram shows the general workflow of a workload exchanging an external token for an access token and then accessing Microsoft Entra protected resources.
 
 :::image type="content" source="media/workload-identity-federation/workflow.svg" alt-text="Diagram showing an external token exchanged for an access token and accessing Azure" border="false":::
