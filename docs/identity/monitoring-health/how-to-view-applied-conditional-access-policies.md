@@ -1,6 +1,6 @@
 ---
-title: Conditional Access and Microsoft Entra sign-in logs
-description: Learn how to view Conditional Access details in Microsoft Entra sign-in logs so that you can assess the effect of your policies.
+title: Conditional Access and Microsoft Entra activity logs
+description: Learn how to view Conditional Access details in Microsoft Entra activity logs so that you can assess the effect of your policies.
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
@@ -14,15 +14,15 @@ ms.reviewer: egreenberg
 
 ---
 
-# View applied Conditional Access details in the Microsoft Entra sign-in logs
+# View applied Conditional Access details in the Microsoft Entra activity logs
 
-With Conditional Access policies, you can control how your users get access to your Azure and Microsoft Entra resources. As a tenant admin, you need to be able to determine what effect your Conditional Access policies have on sign-ins to your tenant, so that you can take action if necessary. The sign-in logs in Microsoft Entra ID give you the information that you need to assess the effect of your Conditional Access policies.
+With Conditional Access policies, you can control how your users get access to your Azure and Microsoft Entra resources. As a tenant admin, you need to be able to determine what effect your Conditional Access policies have on sign-ins to your tenant, so that you can take action if necessary. The sign-in logs in Microsoft Entra ID give you the information that you need to assess the effect of your Conditional Access policies. You might also need to view audit logs for recent changes to Conditional Access policies.
 
-This article explains how to view applied Conditional Access policies in those logs.
+This article explains how to view applied Conditional Access policies in the Microsoft Entra activity logs.
 
 ## Prerequisites
 
-To see applied Conditional Access policies in the sign-in logs, administrators must have permissions to view *both* the logs and the policies. The least privileged built-in role that grants *both* permissions is *Security Reader*. As a best practice, you should add the Security Reader role to the related administrator accounts.
+To see applied Conditional Access policies in the logs, administrators must have permissions to view *both* the logs and the policies. The least privileged built-in role that grants *both* permissions is *Security Reader*. As a best practice, you should add the Security Reader role to the related administrator accounts.
 
 The following built-in roles grant permissions to *read Conditional Access policies*:
 
@@ -30,7 +30,7 @@ The following built-in roles grant permissions to *read Conditional Access polic
 - Security Administrator
 - Conditional Access Administrator
 
-The following built-in roles grant permission to *view sign-in logs*:
+The following built-in roles grant permission to *view activity logs*:
 
 - Reports Reader
 - Security Reader
@@ -38,9 +38,9 @@ The following built-in roles grant permission to *view sign-in logs*:
 
 ### Permissions
 
-If you use a client app or the Microsoft Graph PowerShell module to pull sign-in logs from Microsoft Graph, your app needs permissions to receive the `appliedConditionalAccessPolicy` resource from Microsoft Graph. As a best practice, assign `Policy.Read.ConditionalAccess` because it's the least privileged permission.
+If you use a client app or the Microsoft Graph PowerShell module to pull logs from Microsoft Graph, your app needs permissions to receive the `appliedConditionalAccessPolicy` resource from Microsoft Graph. As a best practice, assign `Policy.Read.ConditionalAccess` because it's the least privileged permission.
 
-The following permissions allow a client app to access the activity logs and any applied Conditional Access policies in sign-in logs through Microsoft Graph:
+The following permissions allow a client app to access the activity logs and any applied Conditional Access policies in the logs through Microsoft Graph:
 
 - `Policy.Read.ConditionalAccess`
 - `Policy.ReadWrite.ConditionalAccess`
@@ -52,8 +52,9 @@ To use the Microsoft Graph PowerShell module, you also need the following least 
 
 - To consent to the necessary permissions: `Connect-MgGraph -Scopes Policy.Read.ConditionalAccess, AuditLog.Read.All, Directory.Read.All`
 - To view the sign-in logs: `Get-MgAuditLogSignIn`
+- To view the audit logs: `Get-MgAuditLogDirectoryAudit`
 
-For more information about this cmdlet, see [Get-MgAuditLogSignIn](/powershell/module/microsoft.graph.reports/get-mgauditlogsignin).
+For more information, see [Get-MgAuditLogSignIn](/powershell/module/microsoft.graph.reports/get-mgauditlogsignin) and [Get-MgAuditLogDirectoryAudit](/powershell/module/microsoft.graph.reports/get-mgauditlogdirectoryaudit).
 
 ## Conditional Access and sign-in log scenarios
 
@@ -139,7 +140,7 @@ Follow these steps to list Microsoft Entra roles using PowerShell.
     Get-MgIdentityConditionalAccessPolicy |Format-List
     ```
 
-The following command can be used to export sign-in logs to a CSV file, that's formatted to highlight Conditional Access related details.
+The following command can be used to export sign-in logs to a CSV file, formatted to highlight Conditional Access related details.
 
 1. Define the output CSV file path.
 
@@ -167,7 +168,23 @@ The following command can be used to export sign-in logs to a CSV file, that's f
 
 ---
 
-## Next steps
+## Conditional Access and audit log scenarios
+
+The Microsoft Entra audit logs contain information about changes to Conditional Access policies. You can use the audit logs to find out when a policy was created, updated, or deleted.
+
+To see when an existing Conditional Access policy was updated:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
+1. Set **Service** filter to **Conditional Access**.
+1. Set the **Category** filter to **Policy**.
+1. Set the **Activity** filter to **Update conditional access policy**.
+
+You might need to adjust the date to see the changes you're looking for. The **Target** column shows the name of the Conditional Access policy that was updated.
+
+To compare the current policy with the previous policy, select the audit log entry and then select the **Modified properties** tab.
+
+## Related content
 
 - [Troubleshoot Conditional Access related sign-in problems](../conditional-access/troubleshoot-conditional-access.md#microsoft-entra-sign-in-events)
 - [Review the Conditional Access sign-in logs FAQs](reports-faq.yml#conditional-access)

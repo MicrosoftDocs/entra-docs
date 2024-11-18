@@ -162,18 +162,22 @@ items:
 - name: Common troubleshooting scenarios
   expanded: false
   items:
-  - name: Bulk changes to UserPrincipalName triggered by verified domain change
-    href: troubleshoot-audit-data-verified-domain.md
+  - name: Common user sign-in errors
+    href: howto-troubleshoot-sign-in-errors.md
   - name: Manage inactive user accounts in Microsoft Entra ID
     href: howto-manage-inactive-user-accounts.md
-  - name: Sign-in diagnostic
+  - name: Sign-in diagnostics
     href: howto-use-sign-in-diagnostics.md
   - name: Sign-in diagnostics scenarios
     href: concept-sign-in-diagnostics-scenarios.md
-  - name: Sign-in errors for a user
-    href: howto-troubleshoot-sign-in-errors.md
-  - name: View applied Conditional Access policies
+  - name: View Conditional Access details in sign-in logs
     href: how-to-view-applied-conditional-access-policies.md
+  - name: Troubleshoot Conditional Access policy changes in audit logs
+    href: ../conditional-access/troubleshoot-policy-changes-audit-log?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
+  - name: Troubleshoot sign-in problems with Conditional Access
+    href: ../conditional-access/troubleshoot-conditional-access#microsoft-entra-sign-in-events?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
+  - name: Bulk changes to UserPrincipalName triggered by verified domain change
+    href: troubleshoot-audit-data-verified-domain.md
 
 - name: Reference
   expanded: false
