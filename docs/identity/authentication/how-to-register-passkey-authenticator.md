@@ -227,7 +227,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 1. Tap **Settings** to enable Authenticator as a passkey provider.
 
    >[!NOTE]
-   >The steps to enable passkey providers on Android may vary based on the make and model of your device. Search for passkey on your device settings or consult your device manufacturer for guidance.
+   >The steps to enable passkey providers on Android may vary based on the make and model of your device. Search for passkey on your device settings or consult your device manufacturer for guidance. If your device runs Android 14 and you can't enable Microsoft Authenticator as a passkey provider, we recommend you upgrade to Android 15. 
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-allow-authenticator.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for Android devices."::: 
  
@@ -293,7 +293,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 1. Tap **Settings** to enable Authenticator as a passkey provider.
 
    >[!NOTE]
-   >The steps to enable passkey providers on Android may vary based on the make and model of your device. Search for passkey on your device settings or consult your device manufacturer for guidance.
+   >The steps to enable passkey providers on Android may vary based on the make and model of your device. Search for passkey on your device settings or consult your device manufacturer for guidance. If your device runs Android 14 and you can't enable Microsoft Authenticator as a passkey provider, we recommend you upgrade to Android 15. 
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-allow-authenticator.png" alt-text="Screenshot of Open Settings and follow the on-screen instructions using Microsoft Authenticator for Android devices."::: 
  
