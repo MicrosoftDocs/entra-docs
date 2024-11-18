@@ -37,7 +37,7 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
 1. Select *user name* > **Assigned roles**.
 
-    You can see the list of roles assigned to the user at different scopes. Additionally, you can see whether the role has been assigned directly or via group.
+    You can see the list of roles assigned to the user at different scopes. Additionally, you can see whether the role has been assigned directly or via a group.
     
     ![list of roles assigned to a user in Azure portal](./media/list-role-assignments-users/list-role-definition.png)
 
