@@ -27,7 +27,7 @@ sections:
       - question: |
           Who can modify the membership of groups that are assigned to Microsoft Entra roles?
         answer: |
-          By default, Privileged Role Administrator manage the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
+          By default, Privileged Role Administrator manages the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
 
       - question: |
           I am a Helpdesk Administrator in my organization but I can't update password of a user who is a Directory Readers. Why does that happen?

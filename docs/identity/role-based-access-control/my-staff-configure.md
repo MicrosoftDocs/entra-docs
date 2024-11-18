@@ -58,7 +58,7 @@ After configuring administrative units, you can apply this scope to your users w
 
 ## Conditional Access
 
-You can protect the My Staff portal using Microsoft Entra Conditional Access policy. Use it for tasks like requiring multi-factor authentication before accessing My Staff.
+You can protect the My Staff portal using Microsoft Entra Conditional Access policy. Use it for tasks like requiring multifactor authentication before accessing My Staff.
 
 We strongly recommend that you protect My Staff using [Microsoft Entra Conditional Access policies](~/identity/conditional-access/index.yml). To apply a Conditional Access policy to My Staff, you must first visit the My Staff site once for a few minutes to automatically provision the service principal in your tenant for use by Conditional Access.
 
@@ -105,7 +105,7 @@ From **My Staff**, open a user's profile.
 * Select **Edit phone number** to change the phone number
 * Select **Remove phone number** to remove the phone number for the user
 
-Depending on your settings, the user can then use the phone number you set up to sign in with SMS, perform multi-factor authentication, and perform self-service password reset.
+Depending on your settings, the user can then use the phone number you set up to sign in with SMS, perform multifactor authentication, and perform self-service password reset.
 
 To manage a user's phone number, you must be assigned one of the following roles:
 
