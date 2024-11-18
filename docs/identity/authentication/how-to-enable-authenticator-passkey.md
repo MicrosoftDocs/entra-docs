@@ -1,11 +1,11 @@
 ---
-title: How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID (preview)
+title: How to enable passkeys in Microsoft Authenticator for Microsoft Entra ID 
 description: Learn about how to enable passkeys in Microsoft Authenticator for Microsoft Entra ID.
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/23/2024
+ms.date: 11/17/2024
 
 
 ms.author: justinha
@@ -15,7 +15,7 @@ ms.reviewer: mjsantani
 
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys in Authenticator sign in for end users.
 ---
-# Enable passkeys in Microsoft Authenticator (preview)
+# Enable passkeys in Microsoft Authenticator 
 
 This article lists steps to enable and enforce use of passkeys in Authenticator for Microsoft Entra ID. First, you update the Authentication methods policy to allow end users to register and sign in with passkeys in Authenticator. Then you can use Conditional Access authentication strengths policies to enforce passkey sign-in when users access a sensitive resource.
 
