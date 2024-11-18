@@ -1,11 +1,11 @@
 ---
 title: "How to use Continuous Access Evaluation enabled APIs in your applications"
 description: How to increase app security and resilience by adding support for Continuous Access Evaluation, enabling long-lived access tokens that can be revoked based on critical events and policy evaluation.
-author: cilwerner
+author: OwenRichards1
 manager: CelesteDG
-ms.author: cwerner
-ms.date: 01/03/2023
-ms.reviewer: jricketts
+ms.author: owenrichards
+ms.date: 18/11/2024
+ms.reviewer: iambmelt
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -166,17 +166,202 @@ const msalInstance = new PublicClientApplication(msalConfig);
 
 ```
 
+# MSAL-Android (#tab/Java)
+
+## Declare support for the CP1 Client Capability
+
+In your application configuration, you must declare that your application supports CAE by including the `CP1` client capability. This is specified by using the `client_capabilities` JSON property.
+
+```java
+{
+  "client_id" : "<your_client_id>",
+  "authorization_user_agent" : "DEFAULT",
+  "redirect_uri" : "msauth://<pkg>/<cert_hash>",
+  "multiple_clouds_supported":true,
+  "broker_redirect_uri_registered": true,
+  "account_mode": "MULTIPLE",
+  "client_capabilities": "CP1",
+  "authorities" : [
+    {
+      "type": "AAD",
+      "audience": {
+        "type": "AzureADandPersonalMicrosoftAccount"
+      }
+    }
+  ]
+}
+```
+
+## Respond to CAE Challenges at Runtime
+
+Make a request to a resource, if the response contains a claims challenge, extract it, and feed it back into MSAL for use in the next request.
+
+```java
+final HttpURLConnection connection = ...;
+final int responseCode = connection.getResponseCode();
+
+// Check the response code...
+if (200 == responseCode) {
+    // ...
+} else if (401 == responseCode) {
+    final String authHeader = connection.getHeaderField("WWW-Authenticate");
+
+    if (null != authHeader) {
+        final ClaimsRequest claimsRequest = WWWAuthenticateHeader
+                                                .getClaimsRequestFromWWWAuthenticateHeaderValue(authHeader);
+
+        // Feed the challenge back into MSAL, first silently, then interactively if required
+        final AcquireTokenSilentParameters silentParameters = new AcquireTokenSilentParameters.Builder()
+            .fromAuthority(authority)
+            .forAccount(account)
+            .withScopes(scope)
+            .withClaims(claimsRequest)
+            .build();
+        
+        try {
+            final IAuthenticationResult silentRequestResult = mPublicClientApplication.acquireTokenSilent(silentParameters);
+            // If successful - your business logic goes here...
+
+        } catch (final Exception e) {
+            if (e instanceof MsalUiRequiredException) {
+                // Retry the request interactively, passing in any claims challenge...
+            }
+        }
+    }
+} else {
+    // ...
+}
+
+// Don't forget to close your connection
+```
+
+# MSAL-ObjC (#tab/ObjC)
+
+The below code sample describes the flow of getting token silently -> make http call to resource provider -> handling CAE case. An extra interaction call maybe required in the end if the silent call failed with claims.
+
+# Declare support for CP1 client capability
+
+In your application configuration, you must declare that your application supports CAE by including the `CP1` client capability. This is specified by using the `clientCapabilities` property.
+
+```objc
+let clientConfigurations = MSALPublicClientApplicationConfig(clientId: "contoso-app-ABCDE-12345",
+                                                            redirectUri: "msauth.com.contoso.appbundle://auth",
+                                                            authority: try MSALAuthority(url: URL(string: "https://login.microsoftonline.com/organizations")!))
+clientConfigurations.clientApplicationCapabilities = ["CP1"]
+let applicationContext = try MSALPublicClientApplication(configuration: clientConfigurations)
+```
+
+Implement a helper function for parsing claims challenges (example shown below)
+
+```objc
+func parsewwwAuthenticateHeader(headers:Dictionary<AnyHashable, Any>) -> String? {
+    // !! This is a sample code and is not validated, please provide your own implementation or fully test the sample code provided here.
+    // Can also refer here for our internal implementation: https://github.com/AzureAD/microsoft-authentication-library-common-for-objc/blob/dev/IdentityCore/src/webview/embeddedWebview/challangeHandlers/MSIDPKeyAuthHandler.m#L112
+    guard let wwwAuthenticateHeader = headers["WWW-Authenticate"] as? String else {
+        // did not find the header, handle gracefully
+        return nil
+    }
+    
+    var parameters = [String: String]()
+    // regex mapping
+    let regex = try! NSRegularExpression(pattern: #"(\w+)="([^"]*)""#)
+    let matches = regex.matches(in: wwwAuthenticateHeader, range: NSRange(wwwAuthenticateHeader.startIndex..., in: wwwAuthenticateHeader))
+    
+    for match in matches {
+        if let keyRange = Range(match.range(at: 1), in: wwwAuthenticateHeader),
+           let valueRange = Range(match.range(at: 2), in: wwwAuthenticateHeader) {
+            let key = String(wwwAuthenticateHeader[keyRange])
+            let value = String(wwwAuthenticateHeader[valueRange])
+            parameters[key] = value
+        }
+    }
+    
+    guard let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) else {
+        // cannot convert params into json date, end gracefully
+        return nil
+    }
+    return String(data: jsonData, encoding: .utf8)
+}
+```
+
+Catch & parse 401 / claims challenges
+
+```objc
+let response = .... // HTTPURLResponse object from 401'd service response
+
+switch response.statusCode {
+case 200:
+    // ...succeeded!
+    break
+case 401:
+    let headers = response.allHeaderFields
+
+    // Parse header fields
+    guard let wwwAuthenticateHeaderString = self.parsewwwAuthenticateHeader(headers: headers) else {
+        // 3.7 no valid wwwAuthenticateHeaderString is returned from header, end gracefully
+        return
+    }
+    
+    let claimsRequest = MSALClaimsRequest(jsonString: wwwAuthenticateHeaderString, error: nil)
+    // Create claims request
+    let parameters = MSALSilentTokenParameters(scopes: "Enter_the_Protected_API_Scopes_Here", account: account)
+    parameters.claimsRequest = claimsRequest
+    // Acquire token silently again with the claims challenge
+    applicationContext.acquireTokenSilent(with: parameters) { (result, error) in
+        
+        if let error = error {
+            // error happened end flow gracefully, and handle error. (e.g. interaction required)
+            return
+        }
+        
+        guard let result = result else {
+            
+            // no result end flow gracefully
+            return
+        }                    
+        // Success - You got a token!
+    }
+    
+    break
+default:
+    break
+}
+```
+
+# MSAL-Go (#tab/Go)
+
+Advertise client capabilities:
+
+```Go
+client, err := New("client-id", WithAuthority(authority), WithClientCapabilities([]string{"cp1"}))
+```
+
+Parse the claims challenge
+
+```Go
+// No snippet provided
+```
+
+Attempt to acquire a token silently with the claims challenge
+    
+```Go
+var ar AuthResult;
+ar, err := client.AcquireTokenSilent(ctx, tokenScope, public.WithClaims(claims))
+```
+
+
+
 ---
 
 You can test your application by signing in a user and then using the Azure portal to revoke the user's session. The next time the app calls the CAE-enabled API, the user will be asked to reauthenticate.
 
 ## Code samples
 
-- [Enable your Angular single-page application to sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/angular-spa)
-- [Enable your React single-page application to sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-react-tutorial/tree/main/2-Authorization-I/1-call-graph)
-- [Enable your ASP.NET Core web app to sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-1-Call-MSGraph)
+* [Enable your Angular single-page application to sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/angular-spa)
+* [Enable your React single-page application to sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-react-tutorial/tree/main/2-Authorization-I/1-call-graph)
+* [Enable your ASP.NET Core web app to sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-1-Call-MSGraph)
 
-## Next steps
+## Related content
 
-- [Continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md) conceptual overview
-- [Claims challenges, claims requests, and client capabilities](claims-challenge.md)
+* [Continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md) conceptual overview
+* [Claims challenges, claims requests, and client capabilities](claims-challenge.md)
