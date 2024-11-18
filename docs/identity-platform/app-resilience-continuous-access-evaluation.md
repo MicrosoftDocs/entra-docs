@@ -67,29 +67,29 @@ Per-call to declare that a specific call supports a capability like CAE, add it 
 
 ```csharp
 AuthParameters::CreateForBearer(
-        "https://login.microsoftonline.com/organizations", //Authority
-        "https://officeapps.live.com", //Target
-        "", //AccessTokenToRenew
-        "", //Claims
-        {"CP1"}, //Capabilities (for this call)
-        {} //AdditionalParameters
-        );
+    "https://login.microsoftonline.com/organizations", //Authority
+    "https://officeapps.live.com", //Target
+    "", //AccessTokenToRenew
+    "", //Claims
+    {"CP1"}, //Capabilities (for this call)
+    {} //AdditionalParameters
+    );
 ```
 
 ### Use OneAuth's claims challenge parser
 
 While your app is welcome to parse the 401 challenge itself, and insert the base64-decoded claims string into the claims parameter of the AuthParams object for a given call (see above codeblock), OneAuth has a built in challenge parsing util which will take the 401 claims challenge headers, parse/decode them, and return an AuthParams object that contains all the details from the challenge.
     
-    ```csharp
+```csharp
     auto result = OneAuthPrivate::ParseAuthenticationHeaders(
-        mapOfChallengeHeaders, //Headers
-        "https://microsoft.sharepoint.com", //Target
-        {"CP1", "CP2"}, //Capabilities
-        "", //HttpMethod
-        "", //UriPath
-        "" //UriHost
-        );
-    ```
+    mapOfChallengeHeaders, //Headers
+    "https://microsoft.sharepoint.com", //Target
+    {"CP1", "CP2"}, //Capabilities
+    "", //HttpMethod
+    "", //UriPath
+    "" //UriHost
+    );
+```
 
 ### Apple platform
 
