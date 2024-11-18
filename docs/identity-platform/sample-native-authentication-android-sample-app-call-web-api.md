@@ -17,6 +17,8 @@ ms.custom: developer
 
 # Sign in users and call an API in a sample Android app by using native authentication
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This article demonstrates how to configure a sample Android mobile application to call an ASP.NET Core web API.
 
 ## Prerequisites

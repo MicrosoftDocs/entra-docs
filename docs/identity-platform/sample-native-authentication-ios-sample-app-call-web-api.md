@@ -17,6 +17,8 @@ ms.custom: developer
 
 # Sign in users and call an API in sample iOS mobile app by using native authentication
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This sample demonstrates how to configure iOS sample application to call an ASP.NET Core web API.
 
 ## Prerequisites

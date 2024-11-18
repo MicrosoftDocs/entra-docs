@@ -17,6 +17,8 @@ ms.custom: developer
 
 # Sign in users in sample macOS app by using native authentication
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This guide shows how to run an macOS sample application that demonstrates sign-up and sign in scenarios using Microsoft Entra External ID. 
 
 In this article, you learn how to: 

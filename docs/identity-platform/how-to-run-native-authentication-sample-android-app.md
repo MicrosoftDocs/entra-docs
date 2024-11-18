@@ -16,6 +16,8 @@ ms.custom: developer
 
 # Sign in users in sample Android (Kotlin) app by using native authentication
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This guide shows how to run an Android sample application that demonstrates sign-up, sign in, sign out, and password reset scenarios using Microsoft Entra's [native authentication](concept-native-authentication.md). 
   
 In this article, you learn how to: 
