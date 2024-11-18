@@ -259,7 +259,7 @@ For more information, see [Microsoft Defender for Office 365 permissions in the 
 
 Users with this role can assign and remove custom security attribute keys and values for supported Microsoft Entra objects such as users, service principals, and devices.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -281,7 +281,7 @@ For more information, see [Manage access to custom security attributes in Micros
 
 Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -299,7 +299,7 @@ For more information, see [Manage access to custom security attributes in Micros
 
 Users with this role can define a valid set of custom security attributes that can be assigned to supported Microsoft Entra objects. This role can also activate and deactivate custom security attributes.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -313,7 +313,7 @@ For more information, see [Manage access to custom security attributes in Micros
 
 Users with this role can read the definition of custom security attributes.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -333,7 +333,7 @@ Assign the Attribute Log Reader role to users who need to do the following tasks
 
 Users with this role **cannot** read audit logs for other events.
 
-By default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Reader role.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../fundamentals/custom-security-attributes-manage.md).
 
@@ -355,7 +355,7 @@ Users with this role **cannot** do the following tasks:
 - Configure diagnostic settings for custom security attributes
 - Read audit logs for other events
 
-By default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Administrator role.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../fundamentals/custom-security-attributes-manage.md).
 
