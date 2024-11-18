@@ -1046,6 +1046,16 @@
       "source_path_from_root": "/docs/identity-platform/quickstart-v2-netcore-daemon.md",
       "redirect_url": "/entra/identity-platform/quickstart-daemon-dotnet-acquire-token",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "docs/identity/saas-apps/autotaskworkplace-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "docs/identity/saas-apps/autotaskworkplace-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
     }
   ]
 }

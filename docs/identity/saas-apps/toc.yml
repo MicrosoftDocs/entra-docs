@@ -278,8 +278,6 @@
         href: autodesk-sso-tutorial.md
       - name: Autotask Endpoint Backup
         href: autotaskendpointbackup-tutorial.md
-      - name: Autotask Workplace
-        href: autotaskworkplace-tutorial.md
       - name: Aventri
         href: etouches-tutorial.md
       - name: Avionte Bold SAML Federated SSO
