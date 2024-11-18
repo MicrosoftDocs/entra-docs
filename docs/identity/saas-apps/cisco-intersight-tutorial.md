@@ -33,14 +33,14 @@ To get started, you need the following items:
 
 ## Scenario description
 
-Cisco Intersight supports SP-initiated SSO, allowing seamless integration with Microsoft Entra ID. The integration process is now self-service and documented directly within the Cisco Intersight platform
+In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
 * Cisco Intersight supports **SP** initiated SSO.
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
 
-## Adding Cisco Intersight from the Microsoft Entra Gallery
+## Adding Cisco Intersight from the gallery
 
 To configure the integration of Cisco Intersight into Microsoft Entra ID, you need to add Cisco Intersight from the gallery to your list of managed SaaS apps.
 
@@ -49,12 +49,12 @@ To configure the integration of Cisco Intersight into Microsoft Entra ID, you ne
 1. In the **Add from the gallery** section, type **Cisco Intersight** in the search box.
 1. Select **Cisco Intersight** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
-  For step-by-step guidance on adding enterprise applications, refer to [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-sso-for-cisco-intersight'></a>
 
-## Configuring and Testing Microsoft Entra SSO for Cisco Intersight
+## Configure and test Microsoft Entra SSO for Cisco Intersight
 
 Configure and test Microsoft Entra SSO with Cisco Intersight using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Cisco Intersight.
 
@@ -142,17 +142,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 To configure single sign-on on **Cisco Intersight** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Cisco Intersight support team](mailto:intersight-feedback@cisco.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
+### Create Cisco Intersight test user
 
-### Configuring and Testing Microsoft Entra SSO for Cisco Intersight
-
-The SSO configuration for Cisco Intersight is now self-service and managed directly through the Cisco Intersight platform. To complete the setup, visit the Cisco Intersight Help Center and follow their up-to-date guidance: [Cisco Intersight Help Documentation](https://www.intersight.com/help/saas)
-
-#### Steps Overview:
-1. Log in to Cisco Intersight.
-    1. Navigate to the **Settings** section.
-    1. Access the **SSO Configuration** page.
-1. Follow the self-service setup instructions provided in the Cisco Intersight Help documentation to configure the necessary SAML attributes, metadata, and certificate details.
-1. Test the integration using the built-in testing tools available in both Microsoft Entra ID and Cisco Intersight to ensure seamless SSO.
+In this section, you create a user called Britta Simon in Cisco Intersight. Work with [Cisco Intersight support team](mailto:intersight-feedback@cisco.com) to add the users in the Cisco Intersight platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
@@ -167,4 +159,4 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 ## Next steps
 
-For advanced configuration and troubleshooting, consult the [Cisco Intersight Help Documentation](https://www.intersight.com/help/saas). Additionally, consider using Conditional Access policies in Microsoft Entra ID to enhance security and enforce session controls.
+Once you configure Cisco Intersight you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
