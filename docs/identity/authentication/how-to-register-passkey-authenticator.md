@@ -214,7 +214,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    1. If you already added an account in Authenticator, tap your account, and then tap **Create a passkey**.
 
-      :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/ios-create-passkey.png" alt-text="Screenshot of how to create a passkey in Authenticator for iOS devices.":::
+      :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-create-passkey.png" alt-text="Screenshot of how to create a passkey in Authenticator for iOS devices.":::
 
 1. You need to complete multifactor authentication (MFA).
  
@@ -280,7 +280,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    1. If you already added an account in Authenticator, tap your account, and then tap **Create a passkey**.
 
-      :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-ios/ios-create-passkey.png" alt-text="Screenshot of how to create a passkey in Authenticator for iOS devices.":::
+      :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-create-passkey.png" alt-text="Screenshot of how to create a passkey in Authenticator for iOS devices.":::
 
 1. You need to complete multifactor authentication (MFA).
  

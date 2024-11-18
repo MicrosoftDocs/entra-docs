@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 11/11/2024
+  ms.date: 11/18/2024
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -30,9 +30,8 @@ sections:
       - question: |
           Can I use Authenticator app camera to scan the WebAuthn QR code for registration and authentication?
         answer: |
-          You can use the Authenticator camera on Android to register and authenticate with passkeys. 
+          You can use the Authenticator camera to register and authenticate with passkeys. 
           This option is useful if your organization doesn't push the system camera app to Android Work Profile. 
-          This capability isn't supported in the Authenticator app on iOS at this time.  
       - question: |
           Can I use passkeys in Authenticator without an internet connection?
         answer: |
@@ -47,3 +46,11 @@ sections:
           
           - cable.ua5v.com
           - cable.auth.com
+      - question: |
+          I'm on an Android 14 device and have followed all the steps but I'm not able to register passkeys in the Authenticator app?
+        answer: |
+          The Authenticator app leverages [Android APIs](https://developer.android.com/identity/sign-in/credential-provider) on Android 14 or higher to use passkeys. 
+          Manufacturers choose whether or not to implement these APIs for each device they make. 
+          If your device doesn't support these APIs, then the Microsoft Authenticator app may not work for your device on Android 14. 
+          For the best experience, we recommend upgrading to Android 15.
+
