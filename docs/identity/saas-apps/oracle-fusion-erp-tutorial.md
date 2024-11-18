@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern: 
     `https://<SUBDOMAIN>.login.em2.oraclecloud.com:443/oam/fed`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode. This is optional:
 
     In the **Sign-on URL** text box, type a URL using the following pattern: 
     `https://<SUBDOMAIN>.fa.em2.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome`
