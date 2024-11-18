@@ -165,6 +165,8 @@ const msalConfig = {
 const msalInstance = new PublicClientApplication(msalConfig);
 ```
 
+You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
+
 ## [MSAL-Python](#tab/Python)
 
 ```Python
@@ -187,6 +189,8 @@ if response.status_code == 401 and response.headers.get('WWW-Authenticate'):
     if claims:
         auth_result = app.acquire_token_interactive(["scope"], claims_challenge=claims)
 ```
+
+You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
 ## [MSAL-Android](#tab/Java)
 
@@ -256,6 +260,8 @@ if (200 == responseCode) {
 
 // Don't forget to close your connection
 ```
+
+You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
 ## [MSAL-ObjC](#tab/ObjC)
 
@@ -349,6 +355,7 @@ default:
     break
 }
 ```
+You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
 ## [MSAL-Go](#tab/Go)
 
@@ -370,6 +377,9 @@ Attempt to acquire a token silently with the claims challenge
 var ar AuthResult;
 ar, err := client.AcquireTokenSilent(ctx, tokenScope, public.WithClaims(claims))
 ```
+
+You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
+
 ---
 
 You can test your application by signing in a user and then using the Azure portal to revoke the user's session. The next time the app calls the CAE-enabled API, the user will be asked to reauthenticate.
