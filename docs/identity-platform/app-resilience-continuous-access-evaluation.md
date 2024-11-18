@@ -1,6 +1,6 @@
 ---
 title: "How to use Continuous Access Evaluation enabled APIs in your applications"
-description: How to increase app security and resilience by adding support for Continuous Access Evaluation, enabling long-lived access tokens that can be revoked based on critical events and policy evaluation.
+description: Increase app security and resilience by adding support for Continuous Access Evaluation, enabling long-lived access tokens that can be revoked based on critical events and policy evaluation.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
@@ -23,7 +23,7 @@ To use CAE, both your app and the resource API it's accessing must be CAE-enable
 
 If a resource API implements CAE and your application declares it can handle CAE, your app receives CAE tokens for that resource. For this reason, if you declare your app CAE ready, your application must handle the CAE claim challenge for all resource APIs that accept Microsoft Identity access tokens. If you don't handle CAE responses in these API calls, your app could end up in a loop retrying an API call with a token that is still in the returned lifespan of the token but has been revoked due to CAE.
 
-## The code
+## Handling CAE in your application
 
 The first step is to add code to handle a response from the resource API rejecting the call due to CAE. With CAE, APIs will return a 401 status and a WWW-Authenticate header when the access token has been revoked or the API detects a change in IP address used. The WWW-Authenticate header contains a Claims Challenge that the application can use to acquire a new access token.
 
@@ -45,6 +45,181 @@ Your app would check for:
 - the existence of a WWW-Authenticate header containing:
   - an "error" parameter with the value "insufficient_claims"
   - a "claims" parameter
+
+## [OneAuth-MSAL](#tab/OneAuth-MSAL)
+
+### Declare support for the CP1 Client Capability
+
+OneAuth/MSAL supports 2 ways of declaring capabilities, to apps of any size/scale/complexity. While we recommend setting them at the app-wide level, some complex applications (like Office), may have a mix of components that support CAE and others that don't, in which case you should opt for setting capabilities on a per-call basis. NOTE: Capabilities will be de-duped before requests are sent to the server, so there's no harm in setting a capability twice.
+
+    - App-wide To declare your entire app supports a capability like CAE, add it to the (optional) capabilities vector in your app's AADConfiguration object.
+
+```csharp
+static Microsoft::Authentication::AadConfiguration AadConfig(
+    Microsoft::Authentication::UUID::FromString("d3590ed6-52b3-4102-aeff-aad2292ab01c"), //Client ID
+    "urn:ietf:wg:oauth:2.0:oob", //Redirect URI
+    "https://officeapps.live.com", //Default Sign in resource 
+    {"CP1"} //Capabilities
+    ); 
+```
+
+    - Per-call to declare that a specific call supports a capability like CAE, add it to the (optional) capabilities vector in your call's AuthenticationParameters object.
+
+```csharp
+AuthParameters::CreateForBearer(
+        "https://login.microsoftonline.com/organizations", //Authority
+        "https://officeapps.live.com", //Target
+        "", //AccessTokenToRenew
+        "", //Claims
+        {"CP1"}, //Capabilities (for this call)
+        {} //AdditionalParameters
+        );
+```
+
+### Use OneAuth's claims challenge parser
+
+While your app is welcome to parse the 401 challenge itself, and insert the base64-decoded claims string into the claims parameter of the AuthParams object for a given call (see above codeblock), OneAuth has a built in challenge parsing util which will take the 401 claims challenge headers, parse/decode them, and return an AuthParams object that contains all the details from the challenge.
+    
+    ```csharp
+    auto result = OneAuthPrivate::ParseAuthenticationHeaders(
+        mapOfChallengeHeaders, //Headers
+        "https://microsoft.sharepoint.com", //Target
+        {"CP1", "CP2"}, //Capabilities
+        "", //HttpMethod
+        "", //UriPath
+        "" //UriHost
+        );
+    ```
+
+### Apple platform
+
+Advertise the `CP1` client capability:
+
+```swift
+MALAppConfiguration *appConfiguration =
+    [[MALAppConfiguration alloc] initWithApplicationId:@"com.contoso.appbundle"
+                                               appName:@"contoso"
+                                            appVersion:[MALOneAuthVersion oneAuthVersion]
+                                          languageCode:[[NSLocale currentLocale] localeIdentifier]];
+
+// Add OneAuth auth configuration, in capabilities, CP1 needs to be added to declare the application is CAE capable
+NSUUID *aadClientId = [[NSUUID alloc] initWithUUIDString:@"contoso-app-ABCDE-12345"];
+MALAadConfiguration *aadConfiguration =
+    [[MALAadConfiguration alloc] initWithClientId:aadClientId
+                                      redirectUri:@"msauth.com.contoso.appbundle://auth"
+                            defaultSignInResource:@"https://graph.contoso.com"
+                                     capabilities:@[@"CP1"]];
+
+MALAuthenticatorConfiguration *config =
+    [[MALAuthenticatorConfiguration alloc] initWithAppConfiguration:appConfiguration
+                                                   aadConfiguration:aadConfiguration
+                                                   msaConfiguration:nil
+                                            onPremisesConfiguration:nil
+                                             telemetryConfiguration:nil];
+[MALOneAuth startup:config];
+```
+
+Parse WWW-Authenticate headers from HTTP 401 responses and try a silent request, falling back to an interactive one if the silent request fails
+
+
+
+When these conditions are met, the app can extract the claims challenge from the API response header as follows:
+    
+```swift
+// NSURLResponse response = ...; // Request not shown
+
+if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+    NSInteger statusCode = httpResponse.statusCode;
+    // Check the response code...
+    if (200 == statusCode) {
+        // ...
+    } else if (401 == statusCode) {
+        // Extract and log all headers
+        NSDictionary *headers = httpResponse.allHeaderFields;
+        // parse WWW-Authenticate header
+        NSDictionary *wwwAuthenticateHeader = [self parsewwwAuthenticateHeader:headers];
+        if (!wwwAuthenticateHeader)
+        {
+            // if no WWW-Authenticate header, handle gracefully
+            return;
+        }
+        else
+        {
+            // acquireTokenSilentlyWithClaim with insufficient_claims
+            [self acquireTokenSilentlyWithClaim:wwwAuthenticateHeader[@"claims"] account:account];
+        }
+    }
+}
+
+- (nullable NSDictionary *)parsewwwAuthenticateHeader:(NSDictionary *)wwwAuthenticateHeaderObjc {
+    
+    // No native Objective-C API to do the parse form OneAuth. you can do either of the following:
+    // 1st option Call OneAuth public API in Objective cpp code to do the parsing (This sample)
+    // 2nd option Write your own logic to get the claims
+    
+    std::vector<std::pair<std::string, std::string>> wwwAuthenticateHeader;
+    for (id key in wwwAuthenticateHeaderObjc) {
+        // Convert key and value to std::string
+        NSString *keyString = [key description];
+        NSString *valueString = [[wwwAuthenticateHeaderObjc objectForKey:key] description];
+        
+        // Add the pair to the vector
+        wwwAuthenticateHeader.emplace_back([keyString UTF8String], [valueString UTF8String]);
+    }
+    
+    auto vector =  Microsoft::Authentication::OneAuth::ParseAuthChallenges(wwwAuthenticateHeader);
+    NSMutableArray *array = [NSMutableArray array];
+    for (const auto& map : vector) {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        
+        for (const auto& pair : map) {
+            NSString *key = [NSString stringWithUTF8String:pair.first.c_str()];
+            NSString *value = [NSString stringWithUTF8String:pair.second.c_str()];
+            [dict setObject:value forKey:key];
+        }
+        
+        [array addObject:dict];
+    }
+    
+    if (array.count == 1)
+    {
+        return array.firstObject;
+    }
+    else
+    {
+        // handle gracefully
+        return nil;
+    }
+}
+
+- (void)acquireTokenSilentlyWithClaim:(NSString *)claim account:(MALAccount *)account
+{
+    // Create auth oarams
+    MALAuthParameters *params = [MALAuthParameters authParametersWithAuthScheme:MALAuthSchemeBearer
+                                                                      authority:[account authority]
+                                                                         target:@"https://graph.microsoft.com/"
+                                                             accessTokenToRenew:@""
+                                                                         claims:claim
+                                                                   capabilities:nil
+                                                           additionalParameters:nil];
+    
+    MALTelemetryParameters *telemetryParameters =
+        [MALTelemetryParameters telemetryParametersWithCorrelationId:[NSUUID UUID]];
+    
+    // get authResult with acquireCredentialSilentlyForAccount API
+    [[MALOneAuth getAuthenticator] acquireCredentialSilentlyForAccount:account parameters:params telemetryParameters:telemetryParameters completion:^(MALAuthResult * _Nonnull authResult) {
+        // If successful - your business logic goes here...
+        // else try to call signInInteractively
+        
+        [[MALOneAuth getAuthenticator] signInInteractivelyWithUxContextHandle:MALDefaultUxContext accountHint:account.loginName authParameters:nil behaviorParameters:nil telemetryParameters:telemetryParameters completion:^(MALAuthResult * _Nonnull authResult) {
+            // handle new result
+        }];
+    }];
+}
+```
+
+You can test your application by signing in a user to the application then using the Azure portal to revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
 ## [.NET](#tab/dotnet)
 
@@ -96,7 +271,7 @@ _clientApp = PublicClientApplicationBuilder.Create(App.ClientId)
     .Build();
 ```
 
-You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
+You can test your application by signing in a user to the application then using the Azure portal to revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
 ## [JavaScript](#tab/JavaScript)
 
@@ -165,7 +340,7 @@ const msalConfig = {
 const msalInstance = new PublicClientApplication(msalConfig);
 ```
 
-You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
+You can test your application by signing in a user to the application then using the Azure portal to revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
 ## [MSAL-Python](#tab/Python)
 
@@ -190,7 +365,7 @@ if response.status_code == 401 and response.headers.get('WWW-Authenticate'):
         auth_result = app.acquire_token_interactive(["scope"], claims_challenge=claims)
 ```
 
-You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
+You can test your application by signing in a user to the application then using the Azure portal to revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
 ## [MSAL-Android](#tab/Java)
 
@@ -261,7 +436,7 @@ if (200 == responseCode) {
 // Don't forget to close your connection
 ```
 
-You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
+You can test your application by signing in a user to the application then using the Azure portal to revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
 ## [MSAL-ObjC](#tab/ObjC)
 
@@ -355,7 +530,7 @@ default:
     break
 }
 ```
-You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
+You can test your application by signing in a user to the application then using the Azure portal to revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
 ## [MSAL-Go](#tab/Go)
 
@@ -378,7 +553,7 @@ var ar AuthResult;
 ar, err := client.AcquireTokenSilent(ctx, tokenScope, public.WithClaims(claims))
 ```
 
-You can test your application by signing in a user to the application then using the Azure portal to Revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
+You can test your application by signing in a user to the application then using the Azure portal to revoke the user's sessions. The next time the app calls the CAE enabled API, the user will be asked to reauthenticate.
 
 ---
 
