@@ -5,7 +5,7 @@ description: Learn about the many long-term data storage and monitoring options 
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 11/13/2024
+ms.date: 11/18/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -36,13 +36,17 @@ To export risk data for storage and analysis, you need:
 
 ## Diagnostic settings
 
-Organizations can choose to store or export **RiskyUsers**, **UserRiskEvents**, **RiskyServicePrincipals**, and **ServicePrincipalRiskEvents** data by changing diagnostic settings in Microsoft Entra ID to export the data. You can integrate the data with a Log Analytics workspace, archive data to a storage account, stream data to an event hub, or send data to a partner solution. For a quick summary of the methods available for log storage and analysis, see [How to access activity logs in Microsoft Entra ID](../identity/monitoring-health/howto-access-activity-logs.md). 
+Organizations can choose to store or export **RiskyUsers**, **UserRiskEvents**, **RiskyServicePrincipals**, and **ServicePrincipalRiskEvents** data by configuring diagnostic settings in Microsoft Entra ID to export the data. You can integrate the data with a Log Analytics workspace, archive data to a storage account, stream data to an event hub, or send data to a partner solution.
+
+The endpoint you select for exporting the logs must be set up before you can configure diagnostic settings. For a quick summary of the methods available for log storage and analysis, see [How to access activity logs in Microsoft Entra ID](../identity/monitoring-health/howto-access-activity-logs.md). 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
 
-1. Select **+ Add diagnostic setting**, enter a **Diagnostic setting name**, select the log categories that you want to stream, and select **Save**.
+1. Select **+ Add diagnostic setting**.
+
+1. Enter a **Diagnostic setting name**, select the log categories that you want to stream, select a previously configured destination, and select **Save**.
 
 [![Screenshot of the diagnostic settings screen in Microsoft Entra ID.](./media/howto-export-risk-data/change-diagnostic-setting-in-portal.png)](./media/howto-export-risk-data/change-diagnostic-setting-in-portal.png#lightbox)
 
@@ -124,7 +128,7 @@ Azure Event Hubs can look at incoming data from sources like Microsoft Entra ID 
 
 ## Microsoft Sentinel
 
-Organizations can choose to [connect Microsoft Entra data to Microsoft Sentinel](/azure/sentinel/data-connectors/azure-active-directory-identity-protection) as well for further processing.
+Organizations can choose to [connect Microsoft Entra data to Microsoft Sentinel](/azure/sentinel/data-connectors/azure-active-directory-identity-protection) for security information and event management (SIEM) and security orchestration, automation, and response (SOAR).
 
 1. [Create a Log Analytics workspace](../identity/monitoring-health/tutorial-configure-log-analytics-workspace.md).
 1. [Configure Microsoft Entra diagnostic settings to export the data](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
@@ -133,6 +137,5 @@ Organizations can choose to [connect Microsoft Entra data to Microsoft Sentinel]
 ## Related content
 
 - [Use Microsoft Graph API to programmatically interact with risk events](howto-identity-protection-graph-api.md)
-- [Connect data from Microsoft Entra ID Protection with Microsoft Sentinel](/azure/sentinel/data-connectors/azure-active-directory-identity-protection)
 - [Microsoft Entra ID Protection and the Microsoft Graph PowerShell SDK](howto-identity-protection-graph-api.md)
-
+- [Overview of Azure partner solutions for diagnostic settings](/azure/partner-solutions/overview)
