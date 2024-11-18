@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 03/30/2023
+ms.date: 11/17/2024
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
@@ -34,7 +34,7 @@ By default in Microsoft Entra ID, all users can register applications and manage
 
 To disable the default ability to create application registrations or consent to applications, follow these steps to set one or both of these settings for your organization.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator).
 
 1. Browse to **Identity** > **Users** > **User settings**.
 
