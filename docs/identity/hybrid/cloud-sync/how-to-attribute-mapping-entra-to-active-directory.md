@@ -54,7 +54,7 @@ This will take the displayName value and add "Contoso_Group" to it.  So the new 
 :::image type="content" source="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-3.png" alt-text="Screenshot of the sAMAccountName value after expression." lightbox="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-3.png":::
 
 >[!IMPORTANT]
->If you decide to make a value for the sAMAccountName, you must ensure that it's unique.
+>If you decide create a custom attribute mapping for sAMAccountName, you must ensure that it's unique within Active Directory.
 
 ## Scoping filter target container
 The default target container is OU=User,DC=&lt;domain selected at configuration start&gt,DC=com. You can change this to be your own custom container.
