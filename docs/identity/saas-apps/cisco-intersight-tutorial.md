@@ -49,11 +49,7 @@ To configure the integration of Cisco Intersight into Microsoft Entra ID, you ne
 1. In the **Add from the gallery** section, type **Cisco Intersight** in the search box.
 1. Select **Cisco Intersight** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
-<<<<<<< HEAD
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
-=======
   For step-by-step guidance on adding enterprise applications, refer to [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
->>>>>>> gkingori/integration-request-274761
 
 
 <a name='configure-and-test-azure-ad-sso-for-cisco-intersight'></a>
@@ -147,9 +143,6 @@ To configure single sign-on on **Cisco Intersight** side, you need to send the d
 
 ### Create Cisco Intersight test user
 
-<<<<<<< HEAD
-In this section, you create a user called Britta Simon in Cisco Intersight. Work with [Cisco Intersight support team](mailto:intersight-feedback@cisco.com) to add the users in the Cisco Intersight platform. Users must be created and activated before you use single sign-on.
-=======
 ### Configuring and Testing Microsoft Entra SSO for Cisco Intersight
 
 The SSO configuration for Cisco Intersight is now self-service and managed directly through the Cisco Intersight platform. To complete the setup, visit the Cisco Intersight Help Center and follow their up-to-date guidance: [Cisco Intersight Help Documentation](https://www.intersight.com/help/saas)
@@ -160,7 +153,6 @@ The SSO configuration for Cisco Intersight is now self-service and managed direc
     1. Access the **SSO Configuration** page.
 1. Follow the self-service setup instructions provided in the Cisco Intersight Help documentation to configure the necessary SAML attributes, metadata, and certificate details.
 1. Test the integration using the built-in testing tools available in both Microsoft Entra ID and Cisco Intersight to ensure seamless SSO.
->>>>>>> gkingori/integration-request-274761
 
 ## Test SSO 
 
