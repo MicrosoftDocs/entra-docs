@@ -30,7 +30,7 @@ Here are some examples of how Universal CAE benefits your organization when Entr
 
 Global Secure Access relies on Entra ID access tokens to authenticate to the service tunnels (Microsoft traffic, Internet Access, and Private Access traffic forwarding profiles). Access tokens are valid between 60 and 90 minutes. Before access token expiration, the GSA client uses the Entra ID refresh token to obtain a new access token.
 
-As per the OATH2 specification, access tokens are valid until expired. For example, when you disable a user account, Entra ID invaldiates refresh tokens immediately, but it takes up to 90 minutes for the GSA access tokens to expire.
+As per the OAuth2 specification, access tokens are valid until expired. For example, when you disable a user account, Entra ID invaldiates refresh tokens immediately, but it takes up to 90 minutes for the GSA access tokens to expire.
 
 With Universal CAE, changes to user identity are communicated to Global Secure Access in near real time. Even though the access token is still valid, Global Secure Access sends a special claims challenge back to the end user, requiring the user to reauthenticate. If the user is unable to complete Entra ID authentication challenge, network access through GSA is blocked. Universal CAE shortens the time window between Entra ID account state change and requiring the user to reauthenticate, reducing the risk of data exfiltration by a departing employee.
 
