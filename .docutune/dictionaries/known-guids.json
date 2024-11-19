@@ -3824,5 +3824,7 @@
   "EV_EFI_VARIABLE_DRIVER_CONFIG GUID 1" : "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
   "EV_EFI_VARIABLE_DRIVER_CONFIG GUID 2" : "77FA9ABD-0359-4D32-BD60-28F4E78F784B",
   "Process mining service principal" : "dad3c6de-ed58-42ef-989f-9c0303aaeedc",
-  "Tabular Data Stream (TDS) link" : "893fcc7e-8a39-4b3c-815a-773b7b982c50"
+  "Tabular Data Stream (TDS) link" : "893fcc7e-8a39-4b3c-815a-773b7b982c50",
+  "Azure Digital Twins service endpoint resource ID" : "0b07f429-9f4b-4714-9392-cc5e8e80c8b0",
+  "Azure Digital Twins Read.Write Delegated permission" : "4589bd03-58cb-4e6c-b17f-b580e39652f8"
 }
