@@ -6,7 +6,7 @@ author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: entra-external-id 
+ms.service: identity-platform 
 ms.subservice: external
 ms.topic: how-to
 ms.date: 02/29/2024
@@ -18,16 +18,7 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This guide shows how to run an Android sample application that demonstrates sign-up, sign in, sign out, and password reset scenarios using Microsoft Entra's [native authentication](concept-native-authentication.md). 
-  
-In this article, you learn how to: 
- 
-- Register application in the external tenant.  
-- Enable public client and native authentication flows.  
-- Create user flow in the external tenant.  
-- Associate your application with the user flow.  
-- Update the Android configuration code sample file to use your own Microsoft Entra External ID for external tenant details.  
-- Run and test the sample native Android mobile application.  
+In this quickstart you learn how to run an Android sample application that demonstrates sign-up, sign in, sign out, and password reset scenarios using Microsoft Entra's [native authentication](concept-native-authentication.md).
  
 ## Prerequisites  
 
@@ -124,9 +115,10 @@ In this section, you test email with password flow, with its variants such as, e
 
 ## Test call a protected API flow
 
-Use the steps in [Call a protected web API in a sample Android mobile app by using native authentication](sample-native-authentication-android-sample-app-call-web-api.md) to call a protected web API from a sample Android mobile app.
+Use the steps in [Call a protected web API in a sample Android mobile app by using native authentication](quickstart-native-authentication-android-call-api.md) to call a protected web API from a sample Android mobile app.
  
 
 ## Next steps
- 
-- [Tutorial: Prepare your Android app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-android-app.md).
+
+> [!div class="nextstepaction"]
+> [Tutorial: Prepare your Android app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-android-app.md).

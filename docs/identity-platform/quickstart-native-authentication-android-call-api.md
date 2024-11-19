@@ -6,7 +6,7 @@ author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: quickstart
@@ -19,11 +19,11 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This article demonstrates how to configure a sample Android mobile application to call an ASP.NET Core web API.
+In this quickstart you learn how to configure a sample Android mobile application to call an ASP.NET Core web API.
 
 ## Prerequisites
 
-- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md).
+- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](quickstart-native-authentication-android-sign-in.md).
 
 ### Register a web API application
 
@@ -102,4 +102,5 @@ To build and run your app, follow these steps:
 
 ## Next steps
 
-- [Tutorial: Prepare your Android app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-android-app.md).
+> [!div class="nextstepaction"]
+> [Tutorial: Prepare your Android app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-android-app.md).

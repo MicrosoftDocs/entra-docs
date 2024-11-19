@@ -6,7 +6,7 @@ author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: how-to
@@ -19,16 +19,7 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This guide shows how to run an iOS sample application that demonstrates sign-up, sign in, sign out, and reset password scenarios using Microsoft Entra External ID. 
-
-In this article, you learn how to: 
-
-- Register application in the external tenant. 
-- Enable public client and native authentication flows. 
-- Create user flow in the external tenant. 
-- Associate your application with the user flow. 
-- Update a sample native iOS mobile application to use your own external tenant details. 
-- Run and test the sample native iOS mobile application. 
+In this quickstart you learn how to run an iOS sample application that demonstrates sign-up, sign in, sign out, and reset password scenarios using Microsoft Entra External ID. 
 
 ## Prerequisites 
 
@@ -118,8 +109,9 @@ In this section, you test email with password flow, with its variants such as, e
 
 ## Test call a protected API flow
 
-Use the steps in [Call a protected web API in a sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md) to call a protected web API from a sample Android mobile app.
+Use the steps in [Call a protected web API in a sample iOS mobile app by using native authentication](quickstart-native-authentication-ios-call-api.md) to call a protected web API from a sample Android mobile app.
 
 ## Next steps 
 
-- [Tutorial: Prepare your iOS/macOS app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-ios-macos-app.md). 
+> [!div class="nextstepaction"]
+> [Tutorial: Prepare your iOS/macOS app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-ios-macos-app.md). 
