@@ -125,8 +125,6 @@ Write-Output "Error: Authentication result, token or tenant id returned with nul
 $accessToken = $token
 
 Set-Content -Path C:\token.txt -Value "$accessToken"
-Write-Output "Access Token that you acquired is available in C:\token.txt. "
-Write-Output "Please ensure no additional spaces are introduced when copying token to marketplace input form. Introducing spaces can change the token and can cause failures"
 
 # Set the prompt path to C:\
 
@@ -146,6 +144,9 @@ Start-Sleep -Seconds 60
 Remove-Item -Path "C:\temp" -Recurse
 Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector" -Recurse
 Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector updater" -Recurse
+
+Write-Output "Access Token that you acquired is available in C:\token.txt. "
+Write-Output "Please ensure no additional spaces are introduced when copying token to marketplace input form. Introducing spaces can change the token and can cause failures"
 
 } else {
     Write-Host "The required module is not made available at path: $folderPath"
