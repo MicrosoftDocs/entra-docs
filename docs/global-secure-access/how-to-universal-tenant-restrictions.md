@@ -42,10 +42,7 @@ Universal tenant restrictions help to prevent data exfiltration across browsers,
 ### Known limitations
 
 - Data plane protection capabilities are in preview (authentication plane protection is generally available)
-- If you have enabled universal tenant restrictions and you are accessing the Microsoft Entra admin center for one of the allow listed tenants, you may see an "Access denied" error. Add the following feature flag to the Microsoft Entra admin center:
-    - `?feature.msaljs=true&exp.msaljsexp=true`
-    - For example, you work for Contoso and you have allow listed Fabrikam as a partner tenant. You may see the error message for the Fabrikam tenant's Microsoft Entra admin center.
-        - If you received the "access denied" error message for this URL: `https://entra.microsoft.com/` then add the feature flag as follows: `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
+- When you use Universal Tenant Restrictions and access the Microsoft Entra admin center to manage a partner tenant allowed by the Tenant Restrictions v2 policy, you may get authorization errors. To work around this issue, you need to add `?exp.msaljsoptedoutextensions=%7B%7D` query parameter to the Microsoft Entra admin center URL (for example, `https://entra.microsoft.com/?exp.msaljsoptedoutextensions=%7B%7D`).
 
 ## Configure Tenant Restrictions v2 policy 
 

@@ -146,7 +146,15 @@
           - name: Get user data from web API
             href: tutorial-single-page-app-react-call-api.md
         - name: Angular
-          href: tutorial-v2-angular-auth-code.md
+          items:
+          - name: Register your app
+            href: tutorial-single-page-apps-angular-register-app.md
+          - name: Prepare your app
+            href: tutorial-single-page-apps-angular-prepare-app.md
+          - name: Sign in users
+            href: tutorial-single-page-apps-angular-sign-in-users-app.md
+          - name: Get user data from web API
+            href: tutorial-single-page-apps-angular-call-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications

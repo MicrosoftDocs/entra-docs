@@ -47,10 +47,6 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 # - Make sure there in no C:\temp folder on the machine. If you have some files stored, please move those before running the script 
 # Make sure ExecutionPolicy is set to Unrestricted
 Set-ExecutionPolicy UnRestricted -Force
-#
-Write-Output "------------------------------------------------------------------"
-Write-Output "Access Token that you will acquire will be available in C:\token.txt."
-Write-Output "------------------------------------------------------------------"
 # The script will use a temp folder on C Drive. First it will remove the folder and create a new folder to ensure its empty.
 $tempPath = "C:\temp"
 # Check if the folder exists
@@ -58,10 +54,9 @@ if (Test-Path -Path $tempPath) {
 Write-Host "Your C Drive has existing temp folder that is being deleted"
 Remove-Item -Path C:\temp -Recurse
 } 
-Write-Host "Creating C:\temp folder"
+# Creating C:\temp folder
 New-Item -ItemType Directory c:\temp
 New-Item -ItemType File -Path C:\token.txt -Force
-Write-Host "C:\temp folder successfully created"
 
 # Copy Required Dlls 
 Invoke-WebRequest https://download.msappproxy.net/Subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/Connector/DownloadConnectorInstaller -OutFile c:\temp\MicrosoftEntraPrivateNetworkConnectorInstaller.exe
@@ -87,9 +82,6 @@ if (Test-Path -Path $folderPath) {
 cd "C:\Program Files\Microsoft Entra private network connector\Modules\MicrosoftEntraPrivateNetworkConnectorPSModule"
 
 # Import Module 
-Write-Output "---------------------------------------"
-Write-Output "Import Module Operation "
-Write-Output "---------------------------------------"
 Import-Module ..\MicrosoftEntraPrivateNetworkConnectorPSModule -ErrorAction Stop
 
 # Load MSAL  
@@ -125,7 +117,6 @@ $authResult = $app.AcquireTokenInteractive($scopes).WithAccount($account).Execut
 If (($authResult) -and ($authResult.AccessToken) -and ($authResult.TenantId)) {
 $token = $authResult.AccessToken
    $tenantId = $authResult.TenantId
-Write-Output "Success: Authentication result returned."
 }
 else {
 Write-Output "Error: Authentication result, token or tenant id returned with null."
@@ -134,8 +125,8 @@ Write-Output "Error: Authentication result, token or tenant id returned with nul
 $accessToken = $token
 
 Set-Content -Path C:\token.txt -Value "$accessToken"
+Write-Output "Access Token that you acquired is available in C:\token.txt. "
 Write-Output "Please ensure no additional spaces are introduced when copying token to marketplace input form. Introducing spaces can change the token and can cause failures"
-Write-Output "---------------------------------------"
 
 # Set the prompt path to C:\
 
@@ -145,23 +136,16 @@ cd "C:\"
 # You can do so programmatically (below) or manually by double clicking C:\temp\MicrosoftEntraPrivateNetworkConnectorInstaller.exe and choose Uninstall. 
 # Note that if the Connector service is not uninstalled properly, next iteration can fail on this machine.  
 
-Write-Output "---------------------------------------"
-Write-Output "Performing the cleanup. Kindly follow the prompts to Uninstall and clean the state"
-Write-Output "---------------------------------------"
+C:\temp\MicrosoftEntraPrivateNetworkConnectorInstaller.exe /uninstall /quiet 
 
-Start-Process -FilePath 'C:\temp\MicrosoftEntraPrivateNetworkConnectorInstaller.exe' /uninstall -Wait 
+#Wait 60 seconds
+Start-Sleep -Seconds 60
 
 # Delete the related files. Note that if you need to get the token again from 
 
-Write-Host "Cleaning Up....."
-Remove-Item C:\temp\*.*
-Remove-Item -Path "C:\temp"
+Remove-Item -Path "C:\temp" -Recurse
 Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector" -Recurse
 Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector updater" -Recurse
-
-Write-Output "---------------------------------------"
-Write-Output "Access Token that you acquired is available in C:\token.txt. "
-Write-Output "---------------------------------------"
 
 } else {
     Write-Host "The required module is not made available at path: $folderPath"

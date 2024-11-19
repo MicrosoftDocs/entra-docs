@@ -15,17 +15,17 @@ ms.reviewer: shaunliu
 
 # Troubleshoot access to Azure resources denied in Privileged Identity Management
 
-Are you having a problem with Privileged Identity Management (PIM) in Microsoft Entra ID? The information that follows can help you to get things working again.
+If you are experiencing issues with Privileged Identity Management (PIM) in Microsoft Entra ID, the information included in this article can help you resolve these issues.
 
 ## Access to Azure resources denied
 
 ### Problem
 
-As an active owner or user access administrator for an Azure resource, you are able to see your resource inside Privileged Identity Management but can't perform any actions such as making an eligible assignment or viewing a list of role assignments from the resource overview page. Any of these actions results in an authorization error.
+As an active owner or user access administrator for an Azure resource, you're able to see your resource inside Privileged Identity Management but can't perform any actions such as making an eligible assignment or viewing a list of role assignments from the resource overview page. Any of these actions results in an authorization error.
 
 ### Cause
 
-This problem can happen when the User Access Administrator role for the PIM service principal was accidentally removed from the subscription. For the Privileged Identity Management service to be able to access Azure resources, the MS-PIM service principal should always have the [User Access Administrator role](/azure/role-based-access-control/built-in-roles#user-access-administrator) role assigned.
+This issue can occur when the User Access Administrator role for the PIM service principal was accidentally removed from the subscription. For the Privileged Identity Management service to access Azure resources, the MS-PIM service principal should always have the [User Access Administrator role](/azure/role-based-access-control/built-in-roles#user-access-administrator) role assigned.
 
 ### Resolution
 
