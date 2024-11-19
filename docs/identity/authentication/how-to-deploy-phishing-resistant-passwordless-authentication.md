@@ -92,8 +92,8 @@ Refer to the following guides to enable Microsoft Entra Verified ID onboarding a
 
 Refer to the following links for licensing details for Microsoft Entra Verified ID:
 
-- [Face Check with Microsoft Entra Verified ID pricing](~/verified-id/verified-id-pricing)
-- [Microsoft Entra Plans and Pricing](/security/business/microsoft-entra-pricing.md)
+- [Face Check with Microsoft Entra Verified ID pricing](~/verified-id/verified-id-pricing.md)
+- [Microsoft Entra Plans and Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 
 Some organizations might choose other methods than Microsoft Entra Verified ID to onboard users and issue them their first credential. Microsoft recommends those organizations still use TAPs, or another way that lets a user onboard without a password. For example, you can [provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 
