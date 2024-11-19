@@ -318,8 +318,8 @@
   items:
     - name: Desktop app authentication
       href: index-desktop.yml
-    - name: Quickstart
-      items:
+    - name: Quickstarts
+      href: quickstart-desktop-app-sign-in.md?pivots=workforce
     - name: Tutorials
       items:
         - name: Node.js Electron
