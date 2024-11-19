@@ -77,10 +77,10 @@ Wildcard characters aren't supported in any federated identity credential proper
     | Field | Description | Example |
     | --- | --- | --- |
     | Issuer | The OAuth 2.0 / OIDC issuer URL of the Entra ID authority. | `https://login.microsoftonline.com/{tenantID}/v2.0` |
-    | Subject identifier | The `Principal ID` GUID of the Managed Identity. | aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb |
-    | Name | A unique descriptive name for the credential. | msi-webapp1 |
-    | Description (Optional) | A user-provided description of the federated identity credential. | Trust the workloads UAMI to impersonate the App |
-    | Audience | The audience value that can appear in the external token. | api://AzureADTokenExchange |
+    | Subject identifier | The `Principal ID` GUID of the Managed Identity. | `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` |
+    | Name | A unique descriptive name for the credential. | *msi-webapp1* |
+    | Description (Optional) | A user-provided description of the federated identity credential. | *Trust the workloads UAMI to impersonate the App* |
+    | Audience | The audience value that can appear in the external token. | *api://AzureADTokenExchange* |
 
     :::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\add-credential.png" alt-text="Screenshot of the add a credential window in the Microsoft Entra admin center." ::: 
 
