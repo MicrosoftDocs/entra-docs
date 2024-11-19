@@ -148,7 +148,7 @@ For the properties used for device rules, see [Rules for devices](#rules-for-dev
 The following table lists all the supported operators and their syntax for a single expression. Operators can be used with or without the hyphen (-) prefix. The **Contains** operator does partial string matches but not item in a collection matches.
 
 
->[!IMPORTANT]
+>[!CAUTION]
 > For best results, minimize the use of MATCH or CONTAINS as much as possible. [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that are more efficient and less error-prone.
 
 
