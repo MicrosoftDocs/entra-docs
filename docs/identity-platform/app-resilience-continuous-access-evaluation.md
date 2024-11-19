@@ -16,11 +16,15 @@ ms.topic: concept-article
 
 [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md) is a Microsoft Entra feature that allows access tokens to be revoked based on [critical events](~/identity/conditional-access/concept-continuous-access-evaluation.md#critical-event-evaluation) and [policy evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md#conditional-access-policy-evaluation), rather than relying on token expiry based on lifetime.
 
-Because risk and policy are evaluated in real time, some resource APIs token lifetime can increase by up to 28 hours. These long-lived tokens are proactively refreshed by the [Microsoft Authentication Library (MSAL)](msal-overview.md), increasing the resiliency of your applications. Applications not using MSAL can add support for [claims challenges, claims requests, and client capabilities](claims-challenge.md) to use CAE.
+Because risk and policy are evaluated in real time, some resource APIs token lifetime can increase by up to 28 hours. These long-lived tokens are proactively refreshed by the [Microsoft Authentication Library (MSAL)](msal-overview.md), increasing the resiliency of your applications. 
+
+Applications not using MSAL can add support for [claims challenges, claims requests, and client capabilities](claims-challenge.md) to use CAE.
 
 ## Implementation considerations
 
-To use CAE, both your app and the resource API it's accessing must be CAE-enabled. If a resource API implements CAE and your application declares it can handle CAE, your app receives CAE tokens for that resource. For this reason, if you declare your app CAE-ready, your application must handle the CAE claim challenge for all resource APIs that accept Microsoft Identity access tokens. However, preparing your code to support CAE-enabled resources doesn't limit its ability to work with APIs that don't support CAE.
+To use CAE, both your app and the resource API it's accessing must be CAE-enabled. If a resource API implements CAE and your application declares it can handle CAE, your app receives CAE tokens for that resource. For this reason, if you declare your app CAE-ready, your application must handle the CAE claim challenge for all resource APIs that accept Microsoft Identity access tokens. 
+
+However, preparing your code to support CAE-enabled resources doesn't limit its ability to work with APIs that don't support CAE.
 
 If your app doesn't handle CAE responses correctly, it might repeatedly retry an API call using a token that is technically valid but is revoked due to CAE.
 
@@ -87,7 +91,7 @@ catch (MsalUiRequiredException)
     // ...
 ```
 
-Once your application is ready to handle the claim challenge returned by a CAE-enabled resource, you can tell Microsoft Identity your app is CAE-ready. To do this in your MSAL application, build your Public Client using the Client Capabilities of "cp1".
+Once your application is ready to handle the claim challenge returned by a CAE-enabled resource, you can tell Microsoft Identity your app is CAE-ready. To do this in your MSAL application, build your Public Client using the Client Capabilities of `"cp1"`.
 
 ```csharp
 _clientApp = PublicClientApplicationBuilder.Create(App.ClientId)
@@ -188,8 +192,6 @@ if response.status_code == 401 and response.headers.get('WWW-Authenticate'):
 ```
 
 ## [MSAL-Android](#tab/Java)
-
-When these conditions are met, the app can extract the claims challenge from the API response header as follows: 
 
 ### Declare support for the CP1 Client Capability
 
