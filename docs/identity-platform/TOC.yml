@@ -320,8 +320,6 @@
       href: index-desktop.yml
     - name: Quickstart
       items:
-        - name: Sign in users
-          href: quickstart-desktop-app-sign-in.md?pivots=workforce
     - name: Tutorials
       items:
         - name: Node.js Electron
