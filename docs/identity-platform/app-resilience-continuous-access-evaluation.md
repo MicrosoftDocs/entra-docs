@@ -24,9 +24,7 @@ Applications not using MSAL can add support for [claims challenges, claims reque
 
 To use CAE, both your app and the resource API it's accessing must be CAE-enabled. If a resource API implements CAE and your application declares it can handle CAE, your app receives CAE tokens for that resource. For this reason, if you declare your app CAE-ready, your application must handle the CAE claim challenge for all resource APIs that accept Microsoft Identity access tokens. 
 
-However, preparing your code to support CAE-enabled resources doesn't limit its ability to work with APIs that don't support CAE.
-
-If your app doesn't handle CAE responses correctly, it might repeatedly retry an API call using a token that is technically valid but is revoked due to CAE.
+However, preparing your code to support CAE-enabled resources doesn't limit its ability to work with APIs that don't support CAE. If your app doesn't handle CAE responses correctly, it might repeatedly retry an API call using a token that is technically valid but is revoked due to CAE.
 
 ## Handling CAE in your application
 
@@ -262,7 +260,7 @@ if (200 == responseCode) {
 
 ## [MSAL-ObjC](#tab/ObjC)
 
-The below code sample describes the flow of getting token silently, making a http call to resource provider, then handling a CAE case. An extra interaction call maybe required in the end if the silent call failed with claims.
+The following code snippets describe the flow of acquiring a token silently, making a http call to resource provider, then handling a CAE case. An extra interaction call may be required if the silent call failed with claims.
 
 ### Declare support for CP1 client capability
 
