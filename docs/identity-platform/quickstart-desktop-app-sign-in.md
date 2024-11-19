@@ -220,7 +220,7 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
-#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
+#### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
@@ -228,7 +228,7 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
   - [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
 - An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 
-#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
+#### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
@@ -249,11 +249,11 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-platform-redirect-url-electron.md)]
 
-#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
+#### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
 [!INCLUDE [active-directory-b2c-app-integration-add-platform](../external-id/customers/includes/register-app/add-platform-redirect-url-dotnet-maui.md)]
 
-#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
+#### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
 [!INCLUDE [active-directory-b2c-wpf-app-platform](../external-id/customers/includes/register-app/add-platform-redirect-url-wpf.md)]  
 
@@ -298,7 +298,7 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
     npm install && npm update
     ```
 
-#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
+#### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
 To get the .NET MAUI desktop application sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample .NET MAUI desktop application from GitHub by running the following command:
 
@@ -306,7 +306,7 @@ To get the .NET MAUI desktop application sample code, [download the .zip file](h
 git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
 ```
 
-#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
+#### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
@@ -332,14 +332,14 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
     1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
-#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
+#### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
 1. In Visual Studio, open *ms-identity-ciam-dotnet-tutorial-main/1-Authentication/2-sign-in-maui/appsettings.json* file.
 1. Find the placeholder:
     1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
    1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
-#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
+#### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
 1. Open the project in your IDE (like Visual Studio or Visual Studio Code) to configure the code.
 
@@ -373,7 +373,7 @@ You can now test the sample Electron desktop app. After you run the app, the des
 
     :::image type="content" source="media/how-to-desktop-app-electron-sample-sign-in/desktop-app-electron-view-claims.png" alt-text="Screenshot of view token claims in an electron desktop app.":::
 
-#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
+#### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
 .NET MAUI apps are designed to run on multiple operating systems and devices. You'll need to select which target you want to test and debug your app with.
 
@@ -398,7 +398,7 @@ Run the app by pressing *F5* or select the *play button* at the top of Visual St
    :::image type="content" source="media/how-to-desktop-app-maui-sample-sign-in/maui-desktop-after-sign-in.png" alt-text="Screenshot of the main page in the desktop application after signing in.":::
 
 
-#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
+#### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
 1. Open a console window, and change to the directory that contains the WPF desktop sample app:
 
@@ -429,13 +429,13 @@ Run the app by pressing *F5* or select the *play button* at the top of Visual St
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 - [Explore the Electron desktop app sample code](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/tree/main/1-Authentication/3-sign-in-electron#about-the-code).
 
-#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
+#### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
 - [Tutorial: Create a .NET MAUI app](../external-id/customers/tutorial-desktop-app-maui-sign-in-prepare-app.md).
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 
-#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
+#### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
 - [Tutorial: Authenticate users to your WPF desktop application](../external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-build-app.md)
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
