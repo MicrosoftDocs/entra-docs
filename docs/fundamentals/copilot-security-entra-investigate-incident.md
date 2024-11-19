@@ -1,24 +1,24 @@
 ---
 # required metadata
 
-title: Investigate identity risk in Microsoft Copilot for Security
-description: Use Microsoft Copilot for Security and Microsoft Entra skills to quickly investigate identity-based security incident.
+title: Investigate identity risk in Microsoft Security Copilot
+description: Use Microsoft Security Copilot and Microsoft Entra skills to quickly investigate identity-based security incident.
 keywords:
 author: rwike77
 ms.author: ryanwi
 manager: celestedg
-ms.date: 08/08/2024
+ms.date: 11/7/2024
 ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
 ms.collection: ce-skilling-ai-copilot
 
-# Customer intent: As a SOC analyst or IT admin, I want to learn how to use the Microsoft Entra skills in Microsoft Copilot for Security so that I can quickly respond to a potential identity-based security incident.
+# Customer intent: As a SOC analyst or IT admin, I want to learn how to use the Microsoft Entra skills in Microsoft Security Copilot so that I can quickly respond to a potential identity-based security incident.
 ---
 
-# Investigate security incidents using Microsoft Copilot for Security
+# Investigate security incidents using Microsoft Security Copilot
 
-[Microsoft Copilot for Security](/security-copilot/microsoft-security-copilot) gets insights from your Microsoft Entra data through many different skills, such as Get Entra Risky Users and Get Audit Logs. IT admins and security operations center (SOC) analysts can use these skills and others to gain the right context to help investigate and remediate identity-based incidents using natural language prompts. 
+[Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) gets insights from your Microsoft Entra data through many different skills, such as Get Entra Risky Users and Get Audit Logs. IT admins and security operations center (SOC) analysts can use these skills and others to gain the right context to help investigate and remediate identity-based incidents using natural language prompts. 
 
 This article describes how a SOC analyst or IT admin could use the Microsoft Entra skills to investigate a potential security incident. 
 
@@ -28,7 +28,7 @@ Natasha, a security operations center (SOC) analyst at Woodgrove Bank, receives 
 
 ## Investigate
 
-Natasha starts her investigation and signs in to [Microsoft Copilot for Security](https://securitycopilot.microsoft.com/).  In order to view user, group, risky user, sign-in logs, audit-logs, and diagnostic logs details, she signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
+Natasha starts her investigation and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/).  In order to view user, group, risky user, sign-in logs, audit-logs, and diagnostic logs details, she signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
 
 ### Get user details
 
@@ -93,7 +93,7 @@ She uses the following prompts to get the information she needs:
 
 ## Remediate
 
-By using Copilot for Security, Natasha is able to gather comprehensive information about the user, sign-in activities, audit logs, risky user detections, group memberships, and system diagnostics. After completing her investigation, Natasha needs to take action to remediate the risky user or unblock them.
+By using Security Copilot, Natasha is able to gather comprehensive information about the user, sign-in activities, audit logs, risky user detections, group memberships, and system diagnostics. After completing her investigation, Natasha needs to take action to remediate the risky user or unblock them.
 
 She reads about [risk remediation](/entra/id-protection/howto-identity-protection-remediate-unblock#risk-remediation), [unblocking users](/entra/id-protection/howto-identity-protection-remediate-unblock#unblocking-users), and [response playbooks](/security/operations/incident-response-playbooks) to determine possible actions to take next.
 
