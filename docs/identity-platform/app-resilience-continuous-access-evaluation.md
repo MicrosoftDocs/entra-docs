@@ -49,7 +49,7 @@ Your app checks for:
 
 ## [.NET](#tab/dotnet)
 
-When these conditions are met, the app can extract and decode the claims challenge using the [MSAL.NET `WwwAuthenticateParameters`](/entra/msal/dotnet/microsoft.identity.client.wwwauthenticateparameters) class.
+When these conditions are met, the app can extract and decode the claims challenge using the [MSAL.NET](/entra/msal/dotnet/) `WwwAuthenticateParameters` class.
 
 ```csharp
 if (APIresponse.IsSuccessStatusCode)
