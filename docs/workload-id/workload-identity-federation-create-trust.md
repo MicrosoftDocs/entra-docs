@@ -171,6 +171,14 @@ Find your app registration in the app registrations experience of the [Microsoft
 
 To delete a federated identity credential, select the **Delete** icon for the credential.
 
+## Set up a Flexible Federated identity credential (preview)
+
+1. Navigate to Microsoft Entra ID and select the application where you want to configure the federated identity credential.
+1. In the left-hand navigation pane, select **Certificates & secrets**.
+1. Under the **Federated credentials** tab, select **+ Add credential**.
+1. In the **Add a credential** window that appears, from the dropdown menu next to **Federated credential scenario**, select **Other issuer**.
+1. In **Value** enter the claim matching expression you want to use.
+
 ::: zone-end
 
 ::: zone pivot="identity-wif-apps-methods-azcli"
