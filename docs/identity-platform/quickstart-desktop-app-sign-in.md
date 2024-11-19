@@ -1,7 +1,6 @@
 ---
 title: Quickstart - Sign in users in a sample Desktop app
 description: Quickstart for configuring a sample Desktop app to sign in employees or customers with Microsoft identity platform.
-services: identity-platform
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.service: identity-platform
@@ -15,11 +14,11 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Sign in users in a sample Desktop app
 
+In this quickstart, you’ll use a sample application to learn how to add authentication to a desktop application. The sample application enables users to sign in and sign out and uses the Microsoft Authentication Library (MSAL) to handle authentication.
+
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
 ::: zone pivot="workforce"
-
-In this quickstart, you'll download and run a code sample that demonstrates how an application can sign in users and acquire an access token to call the Microsoft Graph API.
 
 ## Prerequisites
 
@@ -178,11 +177,14 @@ Where:
 
 #### [Windows Presentation Foundation (WPF)](#tab/wpf-workforce)
 
-To build and run the sample application in Visual Studio, select the **Debug menu** > **Start Debugging**, or press the F5 key. Your application's MainWindow is displayed.
+To build and run the sample application in Visual Studio, follow these steps:
 
-When the app's main window appears, select the Call Microsoft Graph API button. You'll be prompted to sign in using your Microsoft Entra account (work or school account) or Microsoft account (live.com, outlook.com) credentials.
+1. Select the **Debug menu** > **Start Debugging**, or press the F5 key. Your application's **MainWindow** is displayed.
+2. Select the **Call Microsoft Graph API** button.
+1. Sign in using your Microsoft Entra account (work or school account) or Microsoft account (live.com, outlook.com) credentials.
+1. If you're running the application for the first time, you'll be prompted to provide consent to allow the application to access your user profile and sign you in. After consenting to the requested permissions, the application displays that you've successfully logged in.
 
-If you're running the application for the first time, you'll be prompted to provide consent to allow the application to access your user profile and sign you in. After consenting to the requested permissions, the application displays that you've successfully logged in. You should see some basic token information and user data obtained from the call to the Microsoft Graph API.
+You should see some basic token information and user data obtained from the call to the Microsoft Graph API.
 
 ---
 
@@ -207,8 +209,6 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
 ::: zone-end 
 
 ::: zone pivot="external"
-
-In this quickstart, you’ll use a sample application to learn how to add authentication to a desktop application. The sample application enables users to sign in and sign out and uses the Microsoft Authentication Library (MSAL) to handle authentication.
 
 ## Prerequisites
 
@@ -240,19 +240,8 @@ In this quickstart, you’ll use a sample application to learn how to add authen
 
 ## Register the desktop app
 
-#### [Node.js Electron](#tab/node-js-external)
-
 [!INCLUDE [active-directory-b2c-register-app](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
-#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
-
-[!INCLUDE [active-directory-b2c-register-app](../external-id/customers/includes/register-app/register-client-app-common.md)]
-
-#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
-
-[!INCLUDE [active-directory-b2c-register-app](../external-id/customers/includes/register-app/register-client-app-common.md)]
-
----
 
 ## Specify your app platform
 
@@ -272,51 +261,16 @@ In this quickstart, you’ll use a sample application to learn how to add authen
 
 ## Grant admin consent
 
-#### [Node.js Electron](#tab/node-js-external)
-
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
-
-[!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
-
-[!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
----
 
 ## Create a user flow
 
-#### [Node.js Electron](#tab/node-js-external)
-
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)] 
 
-#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)]
-
-#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)]
-
----
 
 ## Associate the desktop application with the user flow
 
-#### [Node.js Electron](#tab/node-js-external)
-
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
-
-#### [.NET MAUI)](#tab/wpfdotnet-maui-external)
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
-
-#### [.NET MAUI) WPF](#tab/wpfdotnet-wpf-external)
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
-
----
 
 ## Download the sample project
 
