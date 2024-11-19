@@ -22,7 +22,6 @@ This article describes how to configure An Entra App to trust a Managed Identity
 - [A user-assigned managed identity](/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity) assigned to the Azure compute resource (e.g., VM or App Service) that hosts your workload.
 - An [app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID. Grant your app access to the Azure resources targeted by your Azure workload.
     - If you need to access resources in another tenant, your app registration must be a multitenant application and provision the app into the other tenant. Additionally, you must grant the app access permissions on the resources in that tenant. Learn about [how to add a multitenant app in other tenants](/entra/identity/enterprise-apps/grant-admin-consent)
-- The application code. This how-to uses Visual Studio Code. <!--Work in Progress-->
 
 ## Important considerations and restrictions
 
@@ -162,7 +161,7 @@ internal class Program
 	
 	    string resourceTenantId = "YOUR_RESOURCE_TENANT_ID";
 	
-	    string miClientId = "YOUR_MI_CLIENT_ID"; //<hosam> do we need it?
+	    string miClientId = "YOUR_MI_CLIENT_ID"; 
 	
 	    string audience = "api://AzureADTokenExchange";
 	
@@ -173,10 +172,10 @@ internal class Program
 		async (token) => await GetManagedIdentityToken(miClientId, audience));
 	
 	    // 2. Access the resource
-	    var client = new SecretClient(new Uri($"https://testfickv.vault.azure.net/"), assertion);
+	    var client = new SecretClient(new Uri($"https://YOUR_KEY_VAULT_NAME.vault.azure.net/"), assertion);
 	
 	    // Retrieve the secret
-	    KeyVaultSecret secret = client.GetSecret("VerySecretHiddenString");
+	    KeyVaultSecret secret = client.GetSecret("SECRET_NAME");
 	
 	    // Print the secret value
 	    Console.WriteLine($"Secret Value: {secret.Value}");
@@ -197,8 +196,8 @@ internal class Program
   "AzureAd": {
     "Instance": "https://login.microsoftonline.com/",
     "ClientId": "YOUR_APPLICATION_ID",
-    "TenantId": "common",
-   // To call an API
+    "TenantId": "YOUR_TENANT_ID",
+
    "ClientCredentials": [
       {
         "SourceType": "SignedAssertionFromManagedIdentity",
@@ -211,6 +210,10 @@ internal class Program
 ```
 
 ### [MSAL (.NET)](#tab/msal-dotnet)
+
+> [!WARNING]
+>
+> For .NET apps, we strongly advise to use higher-level libraries that are based on MSAL, such as Microsoft.Identity.Web or Azure.Identity.
 
 ``` csharp
 using Microsoft.Identity.Client;
@@ -250,6 +253,16 @@ internal class Program
 	
 	    string[] scopes = ["https://vault.azure.net/.default"];
 	    AuthenticationResult result = await app.AcquireTokenForClient(scopes).ExecuteAsync().ConfigureAwait(false);
+
+        string vaultUrl = "YOUR_KEY_VAULT_NAME.vault.azure.net/";
+        TokenCredential tokenCredential = new AccessTokenCredential(result.AccessToken);
+        var client = new SecretClient(new Uri($"https://YOUR_KEY_VAULT_NAME.vault.azure.net/"), tokenCredential);
+        
+        // Retrieve the secret
+        KeyVaultSecret secret = client.GetSecret("SECRET_NAME");
+        
+        // Print the secret value
+        Console.WriteLine($"Secret Value: {secret.Value}");
 	}
 }
 ```
