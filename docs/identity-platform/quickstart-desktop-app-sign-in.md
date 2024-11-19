@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: mwongerapk
 ms.service: identity-platform
 ms.topic: quickstart
-ms.date: 11/15/2024
+ms.date: 11/19/2024
 ms.author: henrymbugua
 zone_pivot_groups: entra-tenants
 
@@ -180,7 +180,7 @@ Where:
 To build and run the sample application in Visual Studio, follow these steps:
 
 1. Select the **Debug menu** > **Start Debugging**, or press the F5 key. Your application's **MainWindow** is displayed.
-2. Select the **Call Microsoft Graph API** button.
+1. Select the **Call Microsoft Graph API** button.
 1. Sign in using your Microsoft Entra account (work or school account) or Microsoft account (live.com, outlook.com) credentials.
 1. If you're running the application for the first time, you'll be prompted to provide consent to allow the application to access your user profile and sign you in. After consenting to the requested permissions, the application displays that you've successfully logged in.
 
