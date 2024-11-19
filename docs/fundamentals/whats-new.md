@@ -76,16 +76,6 @@ In some environments, it’s necessary to prevent users from making this change.
 
 ---
 
-### Public Preview - Conditional Access What If API
-
-**Type:** New feature    
-**Service category:** Conditional Access    
-**Product capability:** Access Control    
-
-The Conditional access *What If* API can be used to programmatically test the impact of conditional access policies on user and workload identity signins.
-
----
-
 ### Retirement - MFA Fraud Alert will be retired on March 1st 2025
 
 **Type:** Deprecated    
