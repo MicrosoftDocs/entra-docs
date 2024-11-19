@@ -372,19 +372,19 @@
             - name: Android (Kotlin)
               items:
                 - name: Sign in users
-                  href: how-to-run-native-authentication-sample-android-app.md
+                  href: quickstart-native-authentication-android-sign-in.md
                 - name: Sign in users and call an API
-                  href: sample-native-authentication-android-sample-app-call-web-api.md
+                  href: quickstart-native-authentication-android-call-api.md
             - name: macOS (Swift)
               items:
                 - name: Sign in users
-                  href: how-to-run-native-authentication-sample-macos-app.md
+                  href: quickstart-native-authentication-macos-sign-in.md
             - name: iOS (Swift)
               items:
                 - name: Sign in users
-                  href: how-to-run-native-authentication-sample-ios-app.md
+                  href: quickstart-native-authentication-ios-sign-in.md
                 - name: Sign in users and call an API
-                  href: sample-native-authentication-ios-sample-app-call-web-api.md
+                  href: quickstart-native-authentication-ios-call-api.md
     - name: Tutorials
       items:
         - name: Android

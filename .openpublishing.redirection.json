@@ -540,27 +540,27 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-run-native-authentication-sample-android-app.md",
-      "redirect_url": "/entra/identity-platform/how-to-run-native-authentication-sample-android-app",
+      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-android-sign-in",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-run-native-authentication-sample-ios-app.md",
-      "redirect_url": "/entra/identity-platform/how-to-run-native-authentication-sample-ios-app",
+      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-ios-sign-in",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-run-native-authentication-sample-macos-app.md",
-      "redirect_url": "/entra/identity-platform/how-to-run-native-authentication-sample-macos-app",
+      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-macos-sign-in",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-native-authentication-android-sample-app-call-web-api.md",
-      "redirect_url": "/entra/identity-platform/sample-native-authentication-android-sample-app-call-web-api",
+      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-android-call-api",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-native-authentication-ios-sample-app-call-web-api.md",
-      "redirect_url": "/entra/identity-platform/sample-native-authentication-ios-sample-app-call-web-api",
+      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-ios-call-api",
       "redirect_document_id": false
     },
     {
