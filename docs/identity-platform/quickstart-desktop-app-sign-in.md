@@ -214,11 +214,11 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
 
 #### [Node.js Electron](#tab/node-js-external)
 
-- [Node.js](https://nodejs.org).
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+- [Node.js](https://nodejs.org)
+- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 - An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code
+  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center
 
 #### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
@@ -226,15 +226,15 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
   - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
   - [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>
 
 #### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-* [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
+* [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later
 - An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code
+  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center
 
 ---
 
