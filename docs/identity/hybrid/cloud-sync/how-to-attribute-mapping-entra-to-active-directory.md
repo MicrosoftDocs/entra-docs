@@ -20,7 +20,7 @@ You can customize the default attribute-mappings according to your business need
 
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
 
-The following document will guide you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory. If your looking for information on attribute mapping from AD to Microsoft Entra ID, see [ Attribute mapping - Active Directory to Microsoft Entra ID](how-to-attribute-mapping.md).
+The following document will guide you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory. If you're looking for information on attribute mapping from AD to Microsoft Entra ID, see [ Attribute mapping - Active Directory to Microsoft Entra ID](how-to-attribute-mapping.md).
 
 ## Schema for Microsoft Entra ID to Active Directory configurations
 Currently, the AD Schema isn't discoverable and there's fixed set of mappings. The following table provides the default mappings and schema for the Microsoft Entra ID to Active Directory configurations.
