@@ -27,6 +27,161 @@ For a more dynamic experience, you can now find this information in the Microsof
 > [!NOTE] 
 > If you're currently using Azure Active Directory today or are have previously deployed Azure Active Directory in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function as they do today without any action from you.
 
+## November 2024
+
+### Public Preview - Microsoft Entra new store for certificate-based authentication
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Microsoft Entra ID has a new scalable **PKI (Public Key Infrastructure) based CA** (Certificate Authorities) store with higher limits for the number of CAs and the size of each CA file. PKI based CA store allows CAs within each different PKI to be in its own container object allowing administrators to move away from one flat list of CAs to more efficient PKI container based CAs. PKI-based CA store now supports up to 250CAs, 8KB size for each CA and also supports issuers hints attribute for each CA. Administrators can also upload the entire PKI and all the CAs using the "Upload CBA PKI" feature or create a PKI container and upload CAs individually. 
+
+---
+
+### Changed feature - expansion of WhatsApp as an MFA one-time passcode delivery channel for Entra ID
+
+**Type:** Changed feature    
+**Service category:** MFA    
+**Product capability:** User Authentication    
+
+In late 2023, Entra started leveraging WhatsApp as an alternate channel to deliver multifactor authentication (MFA) one-time passcodes to users in India and Indonesia. We saw improved deliverability, completion rates, and satisfaction when leveraging the channel in both countries. The channel was temporarily disabled in India in early 2024. Starting early December 2024, we will be re-enabling the channel in India, and expanding its use to additional countries.
+
+Starting December 2024, users in India, and other countries can start receiving MFA text messages via WhatsApp. Only users that are enabled to receive MFA text messages as an authentication method, and already have WhatsApp on their phone, will get this experience. If a user with WhatsApp on their device is unreachable or doesn’t have internet connectivity, we will quickly fall back to the regular SMS channel. In addition, users receiving OTPs via WhatsApp for the first time will be notified of the change in behavior via SMS text message. 
+
+If you don’t want your users to receive MFA text messages through WhatsApp, you can disable text messages as an authentication method in your organization or scope it down to only be enabled for a subset of users. Please note that we highly encourage organizations move to using more modern, secure methods like Microsoft Authenticator and passkeys in favor of telecom and messaging app methods. For more information, see: [Text message verification](../identity/authentication/concept-authentication-phone-options.md#text-message-verification).
+
+---
+
+### Public Preview - bring your own 3rd party email OTP provider for Microsoft Entra External ID
+
+**Type:** New feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** 3rd Party Integration    
+
+Bring your own favorite email provider for email OTPs of sign-in and sign-up flows to Microsoft Entra External ID. You can use Azure Communication Service (ACS), or true 3rd party of choice making your authentication experiences consistently branded.
+
+
+---
+
+### Public Preview - Updating profile photo in MyAccount
+
+**Type:** New feature    
+**Service category:** My Profile/Account    
+**Product capability:** End User Experiences    
+
+On November 13, 2024, users received the ability to update their profile photo directly from their [MyAccount](https://myaccount.microsoft.com/) portal. This change exposes a new edit button on the profile photo section of the user’s account.
+
+In some environments, it’s necessary to prevent users from making this change. Global Administrators can manage this using a tenant-wide policy with Microsoft Graph API, following the guidance in the [Manage user profile photo settings in Microsoft 365](/graph/profilephoto-configure-settings) document.
+
+---
+
+### Public Preview - Conditional Access What If API
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Access Control    
+
+The Conditional access *What If* API can be used to programmatically test the impact of conditional access policies on user and workload identity signins.
+
+---
+
+### Retirement - MFA Fraud Alert will be retired on March 1st 2025
+
+**Type:** Deprecated    
+**Service category:** MFA    
+**Product capability:** Identity Security & Protection    
+
+Microsoft Entra multifactor authentication (MFA) [fraud alert](../identity/authentication/howto-mfa-mfasettings.md#fraud-alert) allows end users to report MFA voice calls, and Microsoft Authenticator push requests, they didn't initiate as fraudulent. Beginning March 1, 2025, MFA Fraud Alert will be retired in favor of the replacement feature [Report Suspicious Activity](../identity/authentication/howto-mfa-mfasettings.md#report-suspicious-activity) which allows end users to report fraudulent requests, and is also integrated with [Identity Protection](../id-protection/overview-identity-protection.md) for more comprehensive coverage and remediation. To ensure users can continue reporting fraudulent MFA requests, organizations should migrate to using Report Suspicious Activity, and review how reported activity is remediated based on their Microsoft Entra licensing. For more information, see: [Configure Microsoft Entra multifactor authentication settings](../identity/authentication/howto-mfa-mfasettings.md).
+
+---
+
+### Public Preview - Universal CAE
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Network Access    
+
+Universal CAE revokes, and revalidates, network access in near real-time whenever Microsoft Entra ID detects changes to the identity. For more information, see: [Universal Continuous Access Evaluation (Preview)](../global-secure-access/concept-universal-continuous-access-evaluation.md).
+
+---
+
+### Change Announcement - Updates to “Target resources” in Microsoft Entra Conditional Access
+
+**Type:** Changed feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+The Microsoft Entra Conditional Access '*Target resources*' assignment has a consolidated view for the "*Cloud apps*", and "*Global Secure Access*" options under a new name "*Resources*".
+
+Customers can now target "All internet resources with Global Secure Access", "All resources (formerly 'all cloud apps'), or select specific resources (formerly "select apps"). For more information, see: [Conditional Access: Target resources](../identity/conditional-access/concept-conditional-access-cloud-apps.md).
+
+---
+
+### General Availability - Dedicated new 1p resource application to enable AD to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
+
+**Type:** Changed feature    
+**Service category:** Provisioning    
+**Product capability:** Directory    
+
+As part of ongoing security hardening, Microsoft will deploy a dedicated 1st party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application, called the "Microsoft Entra AD Synchronization Service" (Application Id: 6bf85cfa-ac8a-4be5-b5de-425a0d0dc016) will be provisioned in customer tenants using Microsoft Entra Connect Sync, or Microsoft Entra Cloud Sync service.
+
+In the upcoming release(s), you will receive communications around deprecation of the current 1st party app that’s used for syncing between Active Directory and Microsoft Entra ID that would require you to update to the latest version of either Microsoft Entra Connect Sync, or Microsoft Entra Cloud Sync.
+
+---
+
+### General Availability - Dynamic Administrative Units
+
+**Type:** New feature    
+**Service category:** RBAC    
+**Product capability:** AuthZ/Access Delegation    
+
+Dynamic membership for users and devices in Administrative Units is now Generally Available.  Instead of manually assigning users and devices to administrative units, tenant admins can set up a query for the administrative unit.  The membership will be automatically maintained by Microsoft Entra ID. For more information, see: [Manage users or devices for an administrative unit with rules for dynamic membership groups](../identity/role-based-access-control/admin-units-members-dynamic.md).
+
+---
+
+### Public Preview - Microsoft Entra Health Monitoring, Alerts Feature
+
+**Type:** Changed feature    
+**Service category:** Other    
+**Product capability:** Monitoring & Reporting    
+
+Intelligent alerts in Microsoft Entra health monitoring notify tenant admins, and security engineers, whenever a monitored scenario breaks from its typical pattern. Microsoft Entra's alerting capability watches the low-latency health signals of each scenario, and fires a notification in the event of an anomaly. The set of alert-ready health signals and scenarios will grow over time. This alerts feature is now available in Microsoft Entra Health as an API-only public preview release (UX release is scheduled for February 2025). For more information, see: [How to use Microsoft Entra Health monitoring alerts (preview)](../identity/monitoring-health/howto-use-health-scenario-alerts.md).
+
+---
+
+### General Availability - Microsoft Entra Health Monitoring, Health Metrics Feature
+
+**Type:** New feature    
+**Service category:** Reporting    
+**Product capability:** Monitoring & Reporting    
+
+Microsoft Entra health monitoring, available from the Health pane, includes a set of low-latency pre-computed health metrics that can be used to monitor the health of critical user scenarios in your tenant. The first set of health scenarios includes MFA, CA-compliant devices, CA-managed devices, and SAML authentications. This set of monitor scenarios will grow over time. These health metrics are now released as general availability data streams, in conjunction with the public preview of an intelligent alerting capability.
+
+---
+
+### General Availability - Log analytics sign-in logs schema is in parity with MSGraph schema
+
+**Type:** Plan for change    
+**Service category:** Authentications (Logins)    
+**Product capability:** Monitoring & Reporting    
+
+To maintain consistency in our core logging principles, we've addressed a legacy parity issue where the Azure Log Analytics sign-in logs schema did not align with the MSGraph sign-in logs schema. The updates include fields such as ClientCredentialType, CreatedDateTime, ManagedServiceIdentity, NetworkLocationDetails, tokenProtectionStatus, SessionID, among others. These changes will take effect in the first week of December 2024.
+
+We believe this enhancement will provide a more consistent logging experience. As always, you can perform pre-ingestion transformations to remove any unwanted data from your Azure Log Analytics storage workspaces. For guidance on how to perform these transformations, see: [Data collection transformations in Azure Monitor](/azure/azure-monitor/essentials/data-collection-transformations).
+
+---
+
+### Deprecated - MIM hybrid reporting agent
+
+**Type:** Deprecated    
+**Service category:** Microsoft Identity Manager    
+**Product capability:** Monitoring & Reporting    
+
+The hybrid reporting agent, used to send a MIM Service event log to Microsoft Entra to surface in password reset and self-service group management reports, is deprecated. The recommended replacement is to use Azure Arc to send the event logs to Azure Monitor. For more information, see: [Microsoft Identity Manager 2016 reporting with Azure Monitor](/microsoft-identity-manager/mim-azure-monitor-reporting).
+
+---
+
 ## October 2024
 
 ### Public Preview - Passkey authentication in brokered Microsoft apps on Android
