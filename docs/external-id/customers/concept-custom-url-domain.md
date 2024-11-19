@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: concept-article
-ms.date: 10/29/2024
+ms.date: 11/19/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -63,6 +63,7 @@ When using custom URL domains:
 > [!IMPORTANT]
 >
 >- The connection from the browser to Azure Front Door should always use IPv4 instead of IPv6.
+>- Custom URL domains don't currently support social identity providers. Users who want to sign up or sign in using a social identity provider will need to use the default endpoint, *&lt;tenant-name&gt;.ciamlogin.com*, instead of the custom URL domain endpoint.
 
 ### Blocking the default domain
 
