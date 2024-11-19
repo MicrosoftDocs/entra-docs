@@ -405,9 +405,9 @@ An improved experience when using Microsoft Entra External ID as an identity pro
 **Service category:** MFA    
 **Product capability:** End User Experiences        
 
-Starting late July 2024, through end of August 2024, we're rolling out changes to the registration experience for passkey in Microsoft Authenticator (preview) on the My Security-Info page. This registration experience change will go from an WebAuthn approach, to guide users to register by signing into the Microsoft Authenticator app. This change will occur automatically, and admins won’t need to take any action. Here's more details:
+Starting late July 2024, through end of August 2024, we're rolling out changes to the registration experience for passkey in Microsoft Authenticator (preview) on the My Security-Info page. This registration experience change will go from a WebAuthn approach, to guide users to register by signing into the Microsoft Authenticator app. This change will occur automatically, and admins won’t need to take any action. Here's more details:
 
-- By default, we'll guide users to sign into the Authenticator app to setup passkeys. 
+- By default, we'll guide users to sign into the Authenticator app to set up passkeys. 
 - If users are unable to sign in, they'll be able to fallback to an improved WebAuthn experience through a "*Having trouble?*" link on the page. 
 
 ---

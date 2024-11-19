@@ -78,7 +78,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-account-added.png" alt-text="Screenshot of an account added to Microsoft Authenticator for Android devices.":::
 
-1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies. Tap your account to see details, including your new passkey. 
+1. Authenticator sets up passkey, passwordless, and MFA for sign-in according to your work or school account policies. Tap your account to see details, including your new passkey. 
 
 ### Passkey registration from Security info (iOS)
 
@@ -136,7 +136,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-account-added.png" alt-text="Screenshot of an account added to Microsoft Authenticator for Android devices.":::
 
-1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies.  
+1. Authenticator sets up passkey, passwordless, and MFA for sign-in according to your work or school account policies.  
 
 1. Return to your browser after you complete the passkey setup in Authenticator, and click **Next**. 
 
@@ -176,7 +176,7 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/choose-ios-device.png" alt-text="Screenshot of how to choose another way on iOS if you have trouble.":::
 
 
-If a user wants to revert to the original instructions and register a passkey in Microsoft Authenticator through sign in: 
+If a user wants to revert to the original instructions and register a passkey in Microsoft Authenticator through sign-in: 
 
 1. In Security Info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
 2. Now, tap on **Create your passkey a different way** by signing into the Authenticator.
@@ -243,7 +243,7 @@ You can sign in to Authenticator to create a passkey in the app and get seamless
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-account-added.png" alt-text="Screenshot of an account added to Microsoft Authenticator for Android devices.":::
 
-1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies. Tap your account to see details, including your new passkey. 
+1. Authenticator sets up passkey, passwordless, and MFA for sign-in according to your work or school account policies. Tap your account to see details, including your new passkey. 
 
 ## Passkey registration from Security Info (Android)
 
@@ -309,7 +309,7 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/android-account-added.png" alt-text="Screenshot of an account added to Microsoft Authenticator for Android devices.":::
 
-1. Authenticator sets up passkey, passwordless, and MFA for sign in according to your work or school account policies.  
+1. Authenticator sets up passkey, passwordless, and MFA for sign-in according to your work or school account policies.  
 
 1. After you complete the passkey setup in Authenticator, return to your browser where Security info is open and click **Next**. 
 
@@ -348,7 +348,7 @@ If your organization restricts Bluetooth usage, you can allow cross-device regis
 
    :::image type="content" border="true" source="media/howto-register-passwordless-passkey-direct-android/choose-android-device.png" alt-text="Screenshot of how to choose another way on Android if you have trouble.":::
 
-If a user wants to revert to the original instructions and register a passkey in Microsoft Authenticator through sign in: 
+If a user wants to revert to the original instructions and register a passkey in Microsoft Authenticator through sign-in: 
 
 1. In Security info, when adding a Passkey in Microsoft Authenticator, tap on **Having trouble**.
 2. Now, tap on **create your passkey a different way** by signing into the Authenticator.

@@ -75,7 +75,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
    >[!WARNING]
    >Key restrictions set the usability of specific models or providers for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in.
 
-   If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Add them to the Allow list, along with the Authenticator AAGUIDs, to enable passkeys (FIDO2). This task can be done with an automated script that analyzes logs, such as registration details and sign-in logs.
+   If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Add them to the allowlist, along with the Authenticator AAGUIDs, to enable passkeys (FIDO2). This task can be done with an automated script that analyzes logs, such as registration details and sign-in logs.
 
    >[!NOTE]
    >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
