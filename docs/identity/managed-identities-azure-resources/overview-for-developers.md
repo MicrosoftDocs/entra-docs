@@ -69,11 +69,11 @@ Any resources you want to access requires that you grant the identity permission
 
 After you complete the steps outlined above, your App Service has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain an access token that your code can use to interact with Azure resources, instead of storing credentials in your code.
 
-We recommended that you use the client libraries that we provide for your preferred programming language. These libraries acquires access tokens for you, making it simple to connect to target resources. For more information, see [Client libraries for managed identities authentication](reference-managed-identity-libraries.md).
+We recommended that you use the client libraries that we provide for your preferred programming language. These libraries acquire access tokens for you, making it easy to authenticate with Microsoft Entra ID. For more information, see [Client libraries for managed identities authentication](reference-managed-identity-libraries.md).
 
-### Using the Azure Identity library to access Azure resources
+### Using an Azure Identity library to access Azure resources
 
-The Azure Identity libraries each provide a `DefaultAzureCredential` type. `DefaultAzureCredential` automatically attempts to authenticate via multiple mechanisms, including environment variables or an interactive sign-in. The credential type can be used in your development environment using your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
+The Azure Identity libraries each provide a `DefaultAzureCredential` type. `DefaultAzureCredential` attempts to automatically authenticate the user through different flows, including environment variables or an interactive sign-in. The credential type can be used in a development environment with your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
 
 If you're using user-assigned managed identities, you should also explicitly specify the user-assigned managed identity you wish to authenticate with by passing in the identity's client ID as a parameter. You can retrieve the client ID by browsing to the identity in the Azure portal.
 
@@ -627,7 +627,7 @@ func main() {
 
 ### Using the Microsoft Authentication Library (MSAL) to access Azure resources
 
-Apart from the Azure identity libraries, you can also use MSAL to access Azure resources using managed identities. The following code snippets demonstrate how to use MSAL to access Azure resources in various programming languages.
+Apart from the Azure Identity libraries, you can also use MSAL to access Azure resources using managed identities. The following code snippets demonstrate how to use MSAL to access Azure resources in various programming languages.
 
 For system-assigned managed identities, the developer doesn't need to pass any additional information. MSAL automatically infers the relevant metadata about the assigned identity. For user-assigned managed identities, the developer needs to pass either the client ID, full resource identifier, or the object ID of the managed identity.
 
@@ -650,7 +650,7 @@ string userAssignedManagedIdentityClientId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx
 IManagedIdentityApplication mi = ManagedIdentityApplicationBuilder.Create(ManagedIdentityId.WithUserAssignedClientId(userAssignedManagedIdentityClientId))
     .Build();
 
-// Acwquire token
+// Acquire token
 AuthenticationResult result = await mi.AcquireTokenForManagedIdentity(resource)
     .ExecuteAsync()
     .ConfigureAwait(false);
@@ -731,7 +731,7 @@ const managedIdentityRequestParams: ManagedIdentityRequestParams = {
     resource: "https://vault.azure.net",
 };
 
-// Acwquire token
+// Acquire token
 const response: AuthenticationResult =
     await systemAssignedManagedIdentityApplication.acquireToken(
         managedIdentityRequestParams
@@ -746,11 +746,11 @@ console.log(response);
 import msal
 import requests
 
-# Use this for system assigned managed identities
+# Use this for system-assigned managed identities
 managed_identity = msal.SystemAssignedManagedIdentity()
 
-# Use this for user assigned managed identities
-userAssignedClientId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+# Use this for user-assigned managed identities
+userAssignedClientId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 managed_identity = msal.UserAssignedManagedIdentity(client_id=userAssignedClientId)
 
 global_app = msal.ManagedIdentityClient(managed_identity, http_client=requests.Session())
