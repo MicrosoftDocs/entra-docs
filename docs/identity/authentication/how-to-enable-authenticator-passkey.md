@@ -58,15 +58,11 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
      >[!NOTE]
      >For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users may need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
 
-   - Key restrictions set the usability of specific passkeys for both registration and authentication. Set **Enforce key restrictions** to **Yes** to only allow or block certain passkeys, which are identified by their AAGUIDs. 
+   - Key restrictions set the usability of specific passkeys for both registration and authentication. If you don't set key restrictions, users can register and sign in with any passkey. They can add the passkey directly in the Authenticator app or by adding **Passkey in Microsoft Authenticator** from their Security info. 
    
-     This setting must be **Yes** and you need to add the Microsoft Authenticator AAGUIDs to allow users to register passkeys in the Authenticator, either by signing into the Authenticator app, or by adding **Passkey in Microsoft Authenticator** from their Security info. 
-
-     [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** for users to be able to choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users may still be able to add a passkey in Microsoft Authenticator by choosing the **Security key or passkey** method, depending upon their operating system and browser. However, we don't expect many users to discover and use that method.  
+     You can set **Enforce key restrictions** to **Yes** to only allow or block certain passkeys, which are identified by their AAGUIDs. 
      
-     If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the passkeys being used today. Include those passkey AAGUIDs with the Authenticator AAGUIDs. 
-     
-     You can use a PowerShell script to find AAGUIDs that are used in your tenant. For more information, see [Find AAGUIDs](#find-aaguids).
+     If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the passkeys being used today. Include those passkey AAGUIDs with the Authenticator AAGUIDs. You can use a PowerShell script to find AAGUIDs that are used in your tenant. For more information, see [Find AAGUIDs](#find-aaguids).
 
      If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
