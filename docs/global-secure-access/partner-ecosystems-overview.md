@@ -43,7 +43,7 @@ The partners that are demonstrated to provide coexistence include:
 - [Palo Alto Networks](concept-palo-alto-coexistence.md)
 - [Zscaler](concept-zscaler-coexistence.md)
 
-### Partner connectivity offerings
+## Partner connectivity offerings
 A core component of Microsoft’s Security Service Edge (SSE) solution, Microsoft Entra Internet Access, now integrates seamlessly with various SD-WAN and connectivity providers, enabling optimal connections between Microsoft’s identity-centric SSE and third-party network infrastructure. 
 Organizations can enhance their security posture by linking their Software Defined Wide Area Network (SD-WAN) and connectivity systems to Microsoft's SSE solution for a streamlined experience.
 
