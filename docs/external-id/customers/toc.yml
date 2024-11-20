@@ -437,8 +437,6 @@ items:
           href: how-to-manage-admin-accounts.md
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
-        - name: User activity insights
-          href: how-to-user-insights.md
     - name: Monitor and troubleshoot
       items:
         - name: User activity insights
