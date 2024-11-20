@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 This topic covers issues that users might see when they use passkeys in Microsoft Authenticator, and possible ways for administrators to resolve them.
 
-## Storing passkeys in Android Work Profile 
+## Storing passkeys in Android profiles 
 
 Passkeys on Android can only be used from the profile where they are stored. A passkey that is stored in a Android Work Profile can only be used from that profile. A passkey in a Personal profile can only be used from that. To make sure users can use the passkey they need, they should create passkeys in both profiles. 
 
