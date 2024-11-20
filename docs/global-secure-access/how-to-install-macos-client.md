@@ -3,7 +3,7 @@ title: The Global Secure Access client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/14/2024
+ms.date: 11/20/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -215,10 +215,7 @@ The settings window contains two tabs:
 :::image type="content" source="media/how-to-install-macos-client/macOS-client-troubleshooting-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Troubleshooting tab selected.":::	
 
 ## Known limitations
-For a list of known limitations for the Global Secure Access client for macOS, see [Global Secure Access known limitations](reference-current-known-limitations.md).
-
-## Remediations
-Use the following techniques to mitigate limitations:
+Known limitations for the current version of the Global Secure Access client include:
 
 ### Secure Domain Name System (DNS)
 If Secure DNS is enabled on the browser or in macOS and the DNS server supports Secure DNS, then the client doesn't tunnel traffic set to be acquired by FQDN. (Network traffic that's acquired by IP isn't affected and is tunneled according to the forwarding profile.) To mitigate the Secure DNS issue, disable Secure DNS, set a DNS server that doesn't support Secure DNS, or create rules based on IP.
@@ -234,6 +231,13 @@ If there's a connection error to the cloud service, the client falls back to eit
 For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This scenario might affect services that rely on geolocation.
 > [!TIP]
 > For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md).
+
+### Virtualization support with UTM
+- If the network mode is **bridged** and Global Secure Access client is installed on the host machine:
+    - If the Global Secure Access client is installed on the virtual machine, network traffic of the virtual machine is subject to the forwarding profile on the virtual machine.
+    - If the Global Secure Access client *isn't* installed on the virtual machine, network traffic of the virtual machine is bypassed.
+- The Global Secure Access client doesn't support network mode **bridged** because it might block the network traffic of the virtual machine.
+- You can install the Global Secure Access client on a virtual machine running macOS, as long as the client isn't also installed on the host machine.
 
 ### QUIC not supported for Internet Access
 Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
