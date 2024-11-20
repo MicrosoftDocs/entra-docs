@@ -12,7 +12,6 @@ ms.custom: include file,licensing
 
 The required licenses vary based on the monitoring and health capability. 
 
-<<<<<<< HEAD
 | Log / Report | Roles | Licenses |
 |--|--|--|
 | Audit logs | [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)<br>[Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) | All editions of Microsoft Entra ID |
@@ -28,7 +27,6 @@ The required licenses vary based on the monitoring and health capability.
 *Viewing the custom security attributes in the audit logs or creating diagnostic settings for custom security attributes requires one of the Attribute Log roles. You also need the appropriate role to view the standard audit logs.
 
 **The level of access and capabilities for Microsoft Entra ID Protection varies with the role and license. For more information, see the [license requirements for ID Protection](~/id-protection/overview-identity-protection.md#license-requirements).
-=======
 | Capability | Microsoft Entra ID Free | Microsoft Entra ID P1 or P2 / Microsoft Entra Suite |
 | --- | --- | --- |
 | Audit logs | Yes | Yes |
@@ -38,4 +36,3 @@ The required licenses vary based on the monitoring and health capability.
 | Health | No | Yes |
 | Microsoft Graph activity logs | No | Yes |
 | Usage and insights | No | Yes |
->>>>>>> f337f2a000fd0a05def009d7aca0c87ba437673e

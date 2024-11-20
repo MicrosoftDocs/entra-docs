@@ -6,11 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-<<<<<<< HEAD
-ms.date: 08/27/2024
-=======
 ms.date: 11/08/2024
->>>>>>> f337f2a000fd0a05def009d7aca0c87ba437673e
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 

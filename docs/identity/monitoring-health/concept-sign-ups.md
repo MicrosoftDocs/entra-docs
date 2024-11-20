@@ -14,7 +14,7 @@ ms.reviewer: celested
 ---
 # External ID sign-up logs (preview)
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](/entra/external-id/includes/applies-to-external-only.md)]
 
 Microsoft Entra External ID logs all self-service sign-up events, including both successful sign-ups and failed attempts. The logs include information that helps organizations optimize their sign-up processes, enhance the user experience, and improve overall customer engagement. This article explains how to access and use the sign-up logs.
 
