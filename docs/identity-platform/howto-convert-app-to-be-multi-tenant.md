@@ -17,7 +17,7 @@ ms.topic: how-to
 
 If you offer a Software as a Service (SaaS) application to many organizations, you can configure your application to accept sign-ins from any Microsoft Entra tenant by converting it to multitenant. Users in any Microsoft Entra tenant will be able to sign in to your application after consenting to use their account with your application.
 
-For existing apps with its own account system (or other sign-ins from other cloud providers), you should add sign-in code via OAuth2, OpenID Connect, or SAML, and put a ["Sign in with Microsoft" button](howto-add-branding-in-apps.md) in your application.
+For existing apps with its own account system (or other sign-ins from other cloud providers), you should add sign-in code via OAuth2, OpenID Connect, or Security Assertion Markup Language (SAML), and put a ["Sign in with Microsoft" button](howto-add-branding-in-apps.md) in your application.
 
 In this how-to guide, you undertake the four steps needed to convert a single tenant app into a Microsoft Entra multitenant app:
 
@@ -47,7 +47,7 @@ For example, if the name of your tenant was `contoso.onmicrosoft.com` then a val
 
 With a multitenant application, the application can't immediately tell which tenant the user is from, so requests can't be sent to a tenant’s endpoint. Instead, requests are sent to a common endpoint (`https://login.microsoftonline.com/common`) that serves across all Microsoft Entra tenants, acting as a central hub that handles requests.
 
-Open your app in your IDE and edit your code and change the value for your tenant ID to `/common`. This endpoint isn't a tenant or an issuer itself. When the Microsoft identity platform receives a request on the `/common` endpoint, it signs the user in, thereby discovering which tenant the user is from. This endpoint works with all of the authentication protocols supported by the Microsoft Entra ID (OpenID Connect, OAuth 2.0, SAML 2.0, WS-Federation).
+Open your app in your IDE and edit your code and change the value for your tenant ID to `/common`. This endpoint isn't a tenant or an issuer itself. When the Microsoft identity platform receives a request on the `/common` endpoint, it signs the user in, discovering which tenant the user is from. This endpoint works with all of the authentication protocols supported by the Microsoft Entra ID (OpenID Connect, OAuth 2.0, SAML 2.0, WS-Federation).
 
 The sign-in response to the application then contains a token representing the user. The issuer value in the token tells an application what tenant the user is from. When a response returns from the `/common` endpoint, the issuer value in the token corresponds to the user’s tenant.
 
@@ -67,7 +67,7 @@ Multitenant applications must perform more checks when validating a token. A mul
 
 ## Understand user and admin consent and make appropriate code changes
 
-For a user to sign in to an application in Microsoft Entra ID, the application must be represented in the user’s tenant. This allows the organization to do things like apply unique policies when users from their tenant sign in to the application. For a single-tenant application, one can use the registration via the [Microsoft Entra admin center](https://entra.microsoft.com).
+For a user to sign in to an application in Microsoft Entra ID, the application must be represented in the user’s tenant. The organization is then allowed to do things like apply unique policies when users from their tenant sign in to the application. For a single-tenant application, one can use the registration via the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 For a multitenant application, the initial registration for the application resides in the Microsoft Entra tenant used by the developer. When a user from a different tenant signs in to the application for the first time, Microsoft Entra ID asks them to consent to the permissions requested by the application. If they consent, then a representation of the application called a *service principal* is created in the user’s tenant, and sign-in can continue. A delegation is also created in the directory that records the user’s consent to the application. For details on the application's Application and ServicePrincipal objects, and how they relate to each other, see [Application objects and service principal objects](app-objects-and-service-principals.md).
 
@@ -102,21 +102,21 @@ Your application may have multiple tiers, with each represented by its own regis
 
 #### Multiple tiers in a single tenant
 
-This can be a problem if your logical application consists of two or more application registrations, for example a separate client and resource. How do you get the resource into the external tenant first? Microsoft Entra ID covers this case by enabling client and resource to be consented in a single step. The user sees the sum total of the permissions requested by both the client and resource on the consent page. To enable this behavior, the resource’s application registration must include the client’s App ID as a `knownClientApplications` in its [application manifest](./reference-app-manifest.md). For example:
+If your logical application consists of two or more application registrations, for example a separate client and resource, you can encounter some problems. For example, how do you get the resource into the external tenant first? Microsoft Entra ID covers this case by enabling client and resource to be consented in a single step. The user sees the sum total of the permissions requested by both the client and resource on the consent page. To enable this behavior, the resource’s application registration must include the client’s App ID as a `knownClientApplications` in its [application manifest](./reference-app-manifest.md). For example:
 
 ```json
 "knownClientApplications": ["12ab34cd-56ef-78gh-90ij11kl12mn"]
 ```
 
-This is demonstrated in a [multitenant application sample](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-3-Multi-Tenant/README.md). The following diagram provides an overview of consent for a multi-tier app registered in a single tenant.
+You can refer to the [multitenant application sample](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-3-Multi-Tenant/README.md) for a demonstration. The following diagram provides an overview of consent for a multi-tier app registered in a single tenant.
 
 ![Diagram which illustrates consent to multi-tier known client app.](./media/howto-convert-app-to-be-multi-tenant/consent-flow-multi-tier-known-clients.svg)
 
 #### Multiple tiers in multiple tenants
 
-A similar case happens if the different tiers of an application are registered in different tenants. For example, consider the case of building a native client application that calls the Exchange Online API. To develop the native application, and later for the native application to run in a customer’s tenant, the Exchange Online service principal must be present. In this case, the developer and customer must purchase Exchange Online for the service principal to be created in their tenants.
+A similar case happens if the different tiers of an application are registered in different tenants. For example, consider the case of building a native client application that calls the Exchange Online API. To develop the native application, and later for the native application to run in a customer’s tenant, the Exchange Online service principal must be present. Here, the developer and customer must purchase Exchange Online for the service principal to be created in their tenants.
 
-If it's an API built by an organization other than Microsoft, the developer of the API needs to provide a way for their customers to consent the application into their customers' tenants. The recommended design is for the third-party developer to build the API such that it can also function as a web client to implement sign-up. To do this:
+If it's an API built by an organization other than Microsoft, the developer of the API needs to provide a way for their customers to consent the application into their customers' tenants. The recommended design is for the third-party developer to build the API such that it can also function as a web client to implement sign-up. You can;
 
 1. Follow the earlier sections to ensure the API implements the multitenant application registration/code requirements.
 2. In addition to exposing the API's scopes/roles, make sure the registration includes the "Sign in and read user profile" permission (provided by default).
