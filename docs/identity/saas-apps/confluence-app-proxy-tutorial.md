@@ -81,12 +81,8 @@ To add an Application proxy, we need to create an enterprise application.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. Choose **Add an on-premises application**.
-
-    ![Screenshot for Add an on-premises application.](./media/confluence-app-proxy-tutorial/add-on-premises-application.png)
-
 1. Type the name of the application and click the create button at the bottom left column.
-
-    ![Screenshot for on-premises application.](./media/confluence-app-proxy-tutorial/on-premises-application.png)
+1. In the **Add your own on-premises application**, enter the following settings.
 
     1.	**Internal URL** will be your Confluence application URL.
     2.	**External URL** will be auto-generated based on the Name you choose.

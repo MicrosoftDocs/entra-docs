@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 09/19/2024
+ms.date: 11/11/2024
 ms.author: justinha
 ms.reviewer: xyuan
 ---
@@ -150,7 +150,7 @@ If needed, you can [create the required network security group and rules using A
 
 ### Outbound connectivity
 
-For Outbound connectivity, you can either keep **AllowVnetOutbound** and **AllowInternetOutBound** or restrict Outbound traffic by using ServiceTags listed in the following table. The ServiceTag for AzureUpdateDelivery must be added via [PowerShell](powershell-create-instance.md). If you use [Log Analytics](/azure/azure-monitor/logs/logs-data-export), add **EventHub** to outbound destinations.
+For Outbound connectivity, you can either keep **AllowVnetOutbound** and **AllowInternetOutBound** or restrict Outbound traffic by using ServiceTags listed in the following table. If you use [Log Analytics](/azure/azure-monitor/logs/logs-data-export), add **EventHub** to outbound destinations.
 
 Make sure no other NSG with higher priority denies the Outbound connectivity. If Outbound connectivity is denied, replication won't work between replica sets. 
 
@@ -164,8 +164,7 @@ Make sure no other NSG with higher priority denies the Outbound connectivity. If
 | 443 | TCP	  | Any	   | GuestAndHybridManagement          | Allow  | Yes      | Automated management of security patches.   |
 
 >[!NOTE]
-> The AzureUpdateDelivery and AzureFrontDoor.FirstParty tags are deprecated as of July 1, 2024. 
-> If you use the default AllowInternetOutBound rule (priority 65001), no change is needed (with or without AzureUpdateDelivery and AzureFrontDoor.FirstParty tags). For more information, see [Changes coming to the AzureUpdateDelivery service tag](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/changes-coming-to-the-azure-update-delivery-service-tag/ba-p/4156552).
+> The AzureUpdateDelivery and AzureFrontDoor.FirstParty tags are deprecated as of July 1, 2024. Microsoft Entra Domain Services manages WindowsUpdate independently, which removes the need for these tags. NSG adjustments aren't needed, with or without deprecated tags.
 
 
 

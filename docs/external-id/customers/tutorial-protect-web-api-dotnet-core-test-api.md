@@ -9,7 +9,7 @@ ms.author: shermanouko
 ms.service: entra-external-id
 
 ms.custom: devx-track-dotnet
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 07/27/2023
 #Customer intent: As a dev, I want to learn how to test a protected web API registered in the external tenant.

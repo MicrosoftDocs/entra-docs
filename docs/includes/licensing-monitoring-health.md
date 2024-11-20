@@ -10,8 +10,9 @@ ms.author: barclayn
 ms.custom: include file,licensing
 ---
 
-The required roles and licenses vary based on the report. Separate permissions are required to access monitoring and health data in [Microsoft Graph](/graph/permissions-overview). We recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview). For a full list of roles, see [Least privileged roles by task](../identity/role-based-access-control/delegate-by-task.md).
+The required licenses vary based on the monitoring and health capability. 
 
+<<<<<<< HEAD
 | Log / Report | Roles | Licenses |
 |--|--|--|
 | Audit logs | [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)<br>[Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) | All editions of Microsoft Entra ID |
@@ -27,3 +28,14 @@ The required roles and licenses vary based on the report. Separate permissions a
 *Viewing the custom security attributes in the audit logs or creating diagnostic settings for custom security attributes requires one of the Attribute Log roles. You also need the appropriate role to view the standard audit logs.
 
 **The level of access and capabilities for Microsoft Entra ID Protection varies with the role and license. For more information, see the [license requirements for ID Protection](~/id-protection/overview-identity-protection.md#license-requirements).
+=======
+| Capability | Microsoft Entra ID Free | Microsoft Entra ID P1 or P2 / Microsoft Entra Suite |
+| --- | --- | --- |
+| Audit logs | Yes | Yes |
+| Sign-in logs | Yes | Yes |
+| Provisioning logs | No | Yes |
+| Custom security attributes | Yes | Yes |
+| Health | No | Yes |
+| Microsoft Graph activity logs | No | Yes |
+| Usage and insights | No | Yes |
+>>>>>>> f337f2a000fd0a05def009d7aca0c87ba437673e

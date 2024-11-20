@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom:
-ms.date: 03/16/2023
+ms.date: 10/28/2024
 ms.reviewer: paulgarn, ludwignick
 ms.service: identity-platform
 
@@ -21,7 +21,7 @@ The Microsoft identity platform uses public-key cryptography built on industry s
 
 For security purposes, the Microsoft identity platform’s signing key rolls on a periodic basis and, in the case of an emergency, could be rolled over immediately. There's no set or guaranteed time between these key rolls. Any application that integrates with the Microsoft identity platform should be prepared to handle a key rollover event no matter how frequently it may occur. If your application doesn't handle sudden refreshes, and attempts to use an expired key to verify the signature on a token, your application incorrectly rejects the token. It's recommended to use [standard libraries](reference-v2-libraries.md) to ensure key metadata is correctly refreshed, and kept up to date. In cases where standard libraries aren't used, make sure the implementation follows the [best practices](#best-practices-for-keys-metadata-caching-and-validation) section. 
 
-There's always more than one valid key available in the OpenID Connect discovery document and the federation metadata document. Your application should be prepared to use any and all of the keys specified in the document, since one key may be rolled soon, another may be its replacement, and so forth. The number of keys present can change over time based on the internal architecture of the Microsoft identity platform as we support new platforms, new clouds, or new authentication protocols. Neither the order of the keys in the JSON response nor the order in which they were exposed should be considered meaningful to your application. 
+There's always more than one valid key available in the OpenID Connect discovery document and the federation metadata document. Your application should be prepared to use any and all of the keys specified in the document, since one key may be rolled soon, another may be its replacement, and so forth. The number of keys present can change over time based on the internal architecture of the Microsoft identity platform as we support new platforms, new clouds, or new authentication protocols. Neither the order of the keys in the JSON response nor the order in which they were exposed should be considered meaningful to your application. To learn more about JSON Web Key data structure, you may reference [RFC7517](https://www.rfc-editor.org/rfc/rfc7517).
 
 Applications that support only a single signing key, or applications that require manual updates to the signing keys, are inherently less secure and less reliable. They should be updated to use [standard libraries](reference-v2-libraries.md) to ensure that they're always using up-to-date signing keys, among other best practices. 
 
@@ -31,7 +31,7 @@ Applications that support only a single signing key, or applications that requir
 * Use the caching algorithm below to ensure the caching is resilient and secure
 
 ### Keys metadata caching algorithm:
-Our [standard libraries](reference-v2-libraries.md) implement resilient and secure caching of keys. It’s recommended to use them to avoid subtle defects in the implementation. For custom implementations, here is the rough algorithm:
+Our [standard libraries](reference-v2-libraries.md) implement resilient and secure caching of keys. It’s recommended to use them to avoid subtle defects in the implementation. For custom implementations, here's the rough algorithm:
 
 #### General considerations:
 * The service validating tokens should have a cache capable of storing many distinct keys (10-1000). 
@@ -42,23 +42,67 @@ Our [standard libraries](reference-v2-libraries.md) implement resilient and secu
   * Periodically (recommended every 1 hour) as a background job 
   * Dynamically if a received token was signed with an unknown key (unknown **kid** or **tid** in the header)
 
+#### KeyRefresh procedure (Conceptual algorithm from IdentityModel)
+
+1. **Initialization**
+   
+   The configuration manager is set up with a specific address to fetch configuration data and necessary interfaces to retrieve and validate this data.
+
+2. **Configuration Check**
+   
+   Before fetching new data, the system first checks if the existing data is still valid based on a predefined refresh interval.
+   
+3. **Data Retrieval**
+   If the data is outdated or missing, the system locks down to ensure only one thread fetches the new data to avoid duplication (and thread exhaustion). The system then attempts to retrieve the latest configuration data from a specified endpoint.
+
+4. **Validation**
+   
+   Once the new data is retrieved, it's validated to ensure it meets the required standards and isn't corrupted. The metadata is only accepted when an incoming request was successfully validated with the new keys.
+   
+5. **Error Handling**
+   
+   If any errors occur during data retrieval, they're logged. The system continues to operate with the last known good configuration if new data can't be fetched
+   
+6. **Automatic Updates**
+   The system periodically checks and updates the configuration data automatically based on the refresh interval (recommend 12 h with a jitter of plus or minus 1 h). It can also manually request an update if needed, ensuring that the data is always current.
+
+7. **Validation of a token with a new key**
+   If a token arrives with a signing key that isn't known yet from the configuration, the system attempts to fetch the configuration with a sync call on the hot path to handle new keys in metadata outside of the regular expected updates(but no more frequently than 5 mins)
+
+This approach ensures that the system always uses the most up-to-date and valid configuration data, while gracefully handling errors and avoiding redundant operations.
+
+The .NET implementation of this algorithm is available from [BaseConfigurationManager](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/blob/dev/src/Microsoft.IdentityModel.Tokens/BaseConfigurationManager.cs). It's subject to change based on resilience and security evaluations. See also an explanation [here](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki/signing-key-rollover)
+
 #### KeyRefresh procedure (pseudo code):
 This procedure uses a global (lastSuccessfulRefreshTime timestamp) to prevent conditions that refresh keys too often.
 * [OpenID Connect (OIDC)](v2-protocols-oidc.md)
+
 ```csharp
-  if (lastSuccessfulRefreshTime is set and more recent than 5 minutes ago) 
+KeyRefresh(issuer)
+{
+  // Store cache entries and last successful refresh timestamp per distinct 'issuer'
+ 
+  if (LastSuccessfulRefreshTime is set and more recent than 5 minutes ago) 
     return // without refreshing
-
-  // Load keys URL using the, see OpenID Connect (OIDC)
-  // Fetch the list of keys from the tenant-specific keys URL discovered above
-
-  foreach(key in the list) {
-    if (key id (kid) exists in cache) // cache[tid][kid]
-      set TTL = now + 24 h
+ 
+  // Load keys URI using the tenant-specific OIDC configuration endpoint ('issuer' is the input parameter)
+  oidcConfiguration = download JSON from "{issuer}/.well-known/openid-configuration"
+ 
+  // Load list of keys from keys URI
+  keyList = download JSON from jwks_uri property of oidcConfiguration
+ 
+  foreach (key in keyList) 
+  {
+    cache entry = lookup in cache by kid property of key
+    if (cache entry found) 
+      set expiration of cache entry to now + 24h 
     else 
-      add key to the cache with TTL = now + 24 h
+      add key to cache with expiration set to now + 24h
   }
-  set lastSuccessfulRefreshTime to now (current timestamp)
+ 
+  set LastSuccessfulRefreshTime to now // current timestamp
+}
+
 ```
 
 #### Service Startup procedure:
@@ -67,19 +111,30 @@ This procedure uses a global (lastSuccessfulRefreshTime timestamp) to prevent co
 
 ### TokenValidation procedure for validating the key (pseudo code):
 ```csharp
-  Get token from input request (input token)
-  Get key id from input token (**kid** / **tid** header claim for JWT)
-  if (key id is found in cache) { // cache[tid][kid]
-    validate token according to the key and return
+ValidateToken(token)
+{
+  kid = token.header.kid // get key id from token header
+  issuer = token.body.iss // get issuer from 'iss' claim in token body
+ 
+  key = lookup in cache by issuer and kid
+  if (key found)
+  {
+     validate token with key and return
   }
-  else (key is not found cache) {
-    Call KeyRefresh to opportunistically refresh the cache 
-      if (key id is found in cache) {
-      validate token according to the key and return
+  else // key is not found in the cache
+  {
+    call KeyRefresh(issuer) // to opportunistically refresh the keys for the issuer
+    key = lookup in cache by issuer and kid
+    if (key found)
+    {
+      validate token with key and return
     }
-    else 
-      return token validation failure
+    else // key is not found in the cache even after refresh
+    {
+      return token validation error
+    }
   }
+}
 ```
 
 ## How to assess if your application will be affected and what to do about it

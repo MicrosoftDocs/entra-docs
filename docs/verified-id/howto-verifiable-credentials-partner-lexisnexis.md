@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 
 ms.topic: how-to
-ms.date: 01/26/2023
+ms.date: 11/11/2024
 ms.author: barclayn
 # Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
@@ -39,7 +39,7 @@ To incorporate identity verification into your Apps using LexisNexis Verified ID
 
 ### Part 1
 
-As a developer you'll provide the steps below to your tenant administrator. The instructions help them obtain the verification request URL, and application body or website to request verifiable credentials from your users.
+As a developer you need to share the steps below with your tenant administrator. The instructions help them get the verification request URL, and application body or website to request verifiable credentials from your users.
 
 1. Go to [Microsoft Entra admin center -> Verified ID](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/ResourceOverviewBlade).
     >[!Note]

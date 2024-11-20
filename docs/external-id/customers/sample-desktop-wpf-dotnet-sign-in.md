@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: shermanouko
 ms.service: entra-external-id
  
-ms.subservice: customers
-ms.topic: sample
+ms.subservice: external
+ms.topic: quickstart
 ms.date: 07/26/2023
 ms.custom: developer, devx-track-dotnet
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample WPF desktop app to sign in and sign out users with my external tenant.
