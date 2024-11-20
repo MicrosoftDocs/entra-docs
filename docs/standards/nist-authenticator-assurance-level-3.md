@@ -30,10 +30,10 @@ Use Microsoft authentication methods to meet required NIST authenticator types.
 | Microsoft Entra authentication methods| NIST authenticator type |
 | - | -|
 | **Recommended methods**|    |
-| Hardware protected certificate (smartcard/security key/TPM) <br> FIDO 2 security key<br>Windows Hello for Business with hardware TPM <br> Platform credentials for macOS| Multi-factor cryptographic hardware |
+|  Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator| Multi-factor cryptographic hardware |
 | **Additional methods**||
-|Password<br>**AND**<br>- Microsoft Entra joined with hardware TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with hardware TPM|Memorized secret <br>**AND**<br>Single-factor cryptographic hardware|
-|Password<br>**AND**<br>OATH hardware tokens (Preview) <br>**AND**<br>- Single-factor software certificate<br>- **OR**<br>- Microsoft Entra hybrid joined or compliant device with software TPM |Memorized secret<br>**AND**<br>Single-factor OTP hardware <br>**AND**<br>Single-factor cryptographic software|
+|Password<br>**AND**<br>Single-factor hardware protected certificate|Memorized secret <br>**AND**<br>Single-factor cryptographic hardware|
+
 
 ### Recommendations
 
@@ -59,7 +59,7 @@ Authenticators are required to be:
 
 * FIPS 140 Level 3 Physical Security, or higher
 
-Microsoft Entra joined and Microsoft Entra hybrid joined devices meet this requirement when:
+Single-factor hardware protected certificate used with Windows device meet this requirement when:
 
 * You run [Windows in a FIPS-140 approved mode](/windows/security/security-foundations/certification/fips-140-validation)
 
@@ -79,7 +79,7 @@ Authenticators are required to be:
 
 FIDO 2 security keys, smart cards, and Windows Hello for Business can help you meet these requirements.
 
-* FIDO2 key providers are in FIPS certification. We recommend you review the list of [supported FIDO2 key vendors](~/identity/authentication/concept-authentication-passwordless.md). Consult with your provider for current FIPS validation status.
+* Multiple FIDO2 security key providers meet FIPS requirements. We recommend you review the list of [supported FIDO2 key vendors](~/identity/authentication/concept-fido2-hardware-vendor.md). Consult with your provider for current FIPS validation status.
 
 * Smart cards are a proven technology. Multiple vendor products meet FIPS requirements.
 
@@ -99,7 +99,8 @@ To determine the TPMs that meet current standards, go to [NIST Computer Security
 
 **MacOS Platform SSO**
 
-FIPS 140 Security Level 2 is implemented for macOS 13 at a minimum, with most new devices implementing Level 3. We recommend referring to the [Apple Platform Certifications](https://support.apple.com/guide/certifications/apc3a7433eb89/web). It is important for you to be aware the security level on your device.
+Apples macOS 13 (and above) are FIPS 140 Level 2 Overall, with most devices also FIPS 140 Level 3 Physical Security. We recommend referring to the [Apple Platform Certifications](https://support.apple.com/guide/certifications/apc3a7433eb89/web). 
+**Passkey in Microsoft Authenticator**
 
 ## Reauthentication
 
