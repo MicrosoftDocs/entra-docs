@@ -46,4 +46,4 @@ You can also describe the activity associated with a sign-up request by identify
 
 ## Next steps
 
-[Access activity logs using Microsoft Graph](howto-analyze-activity-logs-with-microsoft-graph.md) and query the activity logs for [sign-up activity](howto-analyze-activity-logs-with-microsoft-graph.md#sample-sign-up-queries).
+[Access activity logs using Microsoft Graph](howto-analyze-activity-logs-with-microsoft-graph.md) and query the activity logs for [sign-up activity](howto-analyze-activity-logs-with-microsoft-graph.md#sample-sign-up-queries-preview).

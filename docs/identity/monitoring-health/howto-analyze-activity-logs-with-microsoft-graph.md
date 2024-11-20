@@ -87,8 +87,13 @@ Try using the following queries for sign-in activity:
 
 Try using the following queries for sign-up activity:
 
-- To find sign-up attempts that failed or were interrupted during a specific step, such as user object creation:
+- To find sign-up attempts that failed during user object creation:
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode ne 0 and signUpStage eq 'userCreation'`
+
+- To find sign-up attempts that failed during email validation:
+
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode eq 1002013 and signUpStage eq 'credentialValidation'`
+  - Note: Error code 1002013 represents an expected (and successful) interrupt of the sign-up flow. [Learn more](howto-troubleshoot-sign-up-errors.md#sign-up-error-codes)
 
 - For sign-ups during a date range:
   - GET `https://graph.microsoft.com/v1.0/auditLogs/signUps?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z)`
@@ -97,7 +102,7 @@ Try using the following queries for sign-up activity:
   - GET `https://graph.microsoft.com/beta/signupLogs/signUps?$filter=appId eq 'AppId'`
 
 - For local account sign-ups:
-  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider eq 'Email OTP' OR signUpIdentityProvider eq 'Email Password'
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider eq 'Email OTP' or signUpIdentityProvider eq 'Email Password'`
 
 - For social account sign-ups (Google in this example):
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider eq ‘Google'`

@@ -43,6 +43,22 @@ The following error codes are associated with sign-up events, but this list isn'
   - This error often appears if the user hasn't completed setting up MFA.
   - Instruct the user to complete the setup process through to sign-in.
 
+- **50181**: Unable to validate the OTP.
+
+- **50182**: OTP is already expired.
+
+- **1002027**: Some of the collected attributes were invalid.
+
+- **399279**: User creation failed ruing self-service sign-up.
+
+The following error codes indicate expected interruptions that occur because of the interactive nature of the sign-up process, rather than actual errors:
+
+- **1002013**: User is prompted to enter Email One-Time-Passcode to verify ownership of email address.
+  - This is an expected part of the signup flow, where a user is prompted to enter the one-time-passcode emailed to them to verify ownership of email address.
+
+- **50140**: User is prompted with option to 'Keep me signed in' during the sign-in following sign-up.
+  - This is an expected part of the sign-in flow, where a user is asked if they want to remain signed into this browser to make further sign-ins easier.
+
 If all else fails, or the issue persists despite taking the recommended course of action, open a support request. For more information, see [how to get support for Microsoft Entra ID](~/fundamentals/how-to-get-support.md).
 
 ## Next steps
