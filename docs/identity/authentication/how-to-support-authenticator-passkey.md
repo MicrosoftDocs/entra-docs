@@ -5,7 +5,7 @@ description: Support passkeys in Microsoft Authenticator in your Microsoft Entra
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/11/2024
+ms.date: 11/20/2024
 
 ms.author: justinha
 author: justinha
@@ -19,6 +19,10 @@ ms.collection: M365-identity-device-management
 # Support passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant
 
 This topic covers issues that users might see when they use passkeys in Microsoft Authenticator, and possible ways for administrators to resolve them.
+
+## Storing passkeys in Android Work Profile 
+
+Passkeys on Android can only be used from the profile where they are stored. A passkey that is stored in a Android Work Profile can only be used from that profile. A passkey in a Personal profile can only be used from that. To make sure users can use the passkey they need, they should create passkeys in both profiles. 
 
 ## Workarounds for an authentication strength Conditional Access policy loop
 
@@ -34,12 +38,12 @@ There are a couple workarounds:
 
 - You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All resources (formerly 'All cloud apps')** to specific applications. Start with a review of applications that are used in your tenant and use filters to tag Microsoft Authenticator and other applications.
 
-- To further reduce support costs, you can run an internal campaign to help users adopt passkeys before enforcing the use of passkeys. When you're ready to enforce passkey usage, create two Conditional Access policies: 
+- To further reduce support costs, you can run an internal campaign to help users adopt passkeys before you enforce the use of passkeys. When you're ready to enforce passkey usage, create two Conditional Access policies: 
 
   - A policy for mobile operating system (OS) versions
   - A policy for desktop OS versions 
 
-  Require a different authentication strength for each policy, and configure other policy settings listed in the following table. You'll likely want to [enable the use of a Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md), or enable other authentication methods that users can use to register the passkey. By issuing a TAP to a user only when they are registering a credential, and accepting it only on mobile platforms where passkey registration can occur, you can ensure that users are using permitted authentication methods for all flows and using TAP only for a limited amount of time during registration. 
+  Require a different authentication strength for each policy, and configure other policy settings listed in the following table. You'll likely want to [enable the use of a Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md), or enable other authentication methods that users can use to register the passkey. By issuing a TAP to a user only when they register a credential, and accepting it only on mobile platforms where passkey registration can occur, you can ensure that users are using permitted authentication methods for all flows and using TAP only for a limited amount of time during registration. 
 
   | Conditional Access policy | Desktop OS     | Mobile OS     |
   |---------------------------|----------------|---------------|
