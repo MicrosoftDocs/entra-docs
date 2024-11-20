@@ -28,7 +28,7 @@ However, preparing your code to support CAE-enabled resources doesn't limit its 
 
 ## Handling CAE in your application
 
-Start by adding code to handle responses from the resource API rejecting the call due to CAE. With CAE, APIs return a 401 status and a WWW-Authenticate header when the access token is revoked or the API detects a change in the IP address used. The WWW-Authenticate header contains a Claims Challenge that the application can use to acquire a new access token.
+Start by adding code to handle responses from the resource API rejecting the call due to CAE. With CAE, APIs return a 401 status and a `WWW-Authenticate` header when the access token is revoked or the API detects a change in the IP address used. The `WWW-Authenticate` header contains a Claims Challenge that the application can use to acquire a new access token.
 
 For example:
 
@@ -45,7 +45,7 @@ Bearer authorization_uri="https://login.windows.net/common/oauth2/authorize",
 Your app checks for:
 
 - the API call returning the 401 status
-- the existence of a WWW-Authenticate header containing:
+- the existence of a `WWW-Authenticate` header containing:
   - an `error` parameter with the value `insufficient_claims`
   - a `claims` parameter
 
@@ -179,7 +179,7 @@ app = msal.PublicClientApplication("your_client_id", client_capabilities=["cp1"]
 ...
 
 # When these conditions are met, the app can extract the claims challenge from the API response header as follows:
-response = requests.get("https://httpbin.org/status/401")
+response = requests.get("<your_resource_uri_here>")
 if response.status_code == 401 and response.headers.get('WWW-Authenticate'):
     parsed = www_authenticate.parse(response.headers['WWW-Authenticate'])
     claims = parsed.get("bearer", {}).get("claims")
@@ -361,10 +361,10 @@ Advertise client capabilities.
 client, err := New("client-id", WithAuthority(authority), WithClientCapabilities([]string{"cp1"}))
 ```
 
-Parse the claims challenge.
+parse the `WWW-Authenticate` header and pass the resulting challenge into MSAL-Go.
 
 ```Go
-// No snippet provided
+// No snippet provided at this time
 ```
 
 Attempt to acquire a token silently with the claims challenge.
