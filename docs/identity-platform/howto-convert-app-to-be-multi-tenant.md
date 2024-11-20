@@ -19,7 +19,7 @@ If you offer a Software as a Service (SaaS) application to many organizations, y
 
 For existing apps with its own account system (or other sign-ins from other cloud providers), you should add sign-in code via OAuth2, OpenID Connect, or SAML, and put a ["Sign in with Microsoft" button](howto-add-branding-in-apps.md) in your application.
 
-In this how-to guide, you'll undertake the four steps needed to convert a single tenant app into a Microsoft Entra multitenant app:
+In this how-to guide, you undertake the four steps needed to convert a single tenant app into a Microsoft Entra multitenant app:
 
 1. [Update your application registration to be multitenant](#update-registration-to-be-multitenant)
 2. [Update your code to send requests to the `/common` endpoint](#update-your-code-to-send-requests-to-common)
@@ -37,9 +37,9 @@ If you want to try using one of our samples, refer to [Build a multitenant SaaS 
 
 ## Update registration to be multitenant
 
-By default, web app/API registrations in Microsoft Entra ID are single-tenant upon creation. To make the registration multitenant, log in to the [Microsoft Entra admin center](https://entra.microsoft.com) and select the app registration that you want to update. With the app registration open, select the **Authentication** pane and navigate to the **Supported account types** section. Change the setting to **Accounts in any organizational directory**.
+By default, web app/API registrations in Microsoft Entra ID are single-tenant upon creation. To make the registration multitenant, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and select the app registration that you want to update. With the app registration open, select the **Authentication** pane and navigate to the **Supported account types** section. Change the setting to **Accounts in any organizational directory**.
 
-When a single-tenant application is created in the Microsoft Entra admin center, one of the items listed on the **Overview** page is the **Application ID URI**. This is one of the ways an application is identified in protocol messages, and can be added at any time. The App ID URI for single tenant apps can be globally unique within that tenant. In contrast, for multitenant apps it must be globally unique across all tenants, which ensures that Microsoft Entra ID can find the app across all tenants.
+When a single-tenant application is created in the Microsoft Entra admin center, one of the items listed on the **Overview** page is the **Application ID URI**. This is one of the ways an application is identified in protocol messages, and can be added at any time. The App ID URI for single tenant apps can be globally unique within that tenant. In contrast, for multitenant apps it must be globally unique across all tenants, ensuring that Microsoft Entra ID can find the app across all tenants.
 
 For example, if the name of your tenant was `contoso.onmicrosoft.com` then a valid App ID URI would be `https://contoso.onmicrosoft.com/myapp`. If the App ID URI doesn’t follow this pattern, setting an application as multitenant fails.
 
@@ -73,12 +73,12 @@ For a multitenant application, the initial registration for the application resi
 
 ![Diagram which illustrates a user's consent to a single-tier app.](./media/howto-convert-app-to-be-multi-tenant/consent-flow-single-tier.svg)
 
-This consent experience is affected by the permissions requested by the application. The Microsoft identity platform supports two kinds of permissions;
+The permissions requested by the application affect the consent experience. The Microsoft identity platform supports two kinds of permissions;
 
 - **Delegated**: This permission grants an application the ability to act as a signed in user for a subset of the things the user can do. For example, you can grant an application the delegated permission to read the signed in user’s calendar.
 - **App-only**: This permission is granted directly to the identity of the application. For example, you can grant an application the app-only permission to read the list of users in a tenant, regardless of who is signed in to the application.
 
-Some permissions can be consented to by a regular user, while others require a tenant administrator’s consent.
+Regular users can consent to some permissions, while others require a tenant administrator’s consent.
 
 To learn more about user and admin consent, see [Configure the admin consent workflow](/entra/identity/enterprise-apps/configure-admin-consent-workflow).
 
@@ -86,15 +86,15 @@ To learn more about user and admin consent, see [Configure the admin consent wor
 
 App-only permissions always require a tenant administrator’s consent. If your application requests an app-only permission and a user tries to sign in to the application, an error message is displayed saying the user isn’t able to consent.
 
-Certain delegated permissions also require a tenant administrator’s consent. For example, the ability to write back to Microsoft Entra ID as the signed in user requires a tenant administrator’s consent. Like app-only permissions, if an ordinary user tries to sign in to an application that requests a delegated permission that requires administrator consent, the app receives an error. Whether a permission requires admin consent is determined by the developer that published the resource, and can be found in the documentation for the resource. The permissions documentation for the [Microsoft Graph API](/graph/permissions-reference) indicate which permissions require admin consent.
+Certain delegated permissions also require a tenant administrator’s consent. For example, the ability to write back to Microsoft Entra ID as the signed in user requires a tenant administrator’s consent. Like app-only permissions, if an ordinary user tries to sign in to an application that requests a delegated permission that requires administrator consent, the app receives an error. The developer that published the resource determines whether a permission requires admin consent, and you can find this information in the resource's documentation. The permissions documentation for the [Microsoft Graph API](/graph/permissions-reference) indicate which permissions require admin consent.
 
-If your application uses permissions that require admin consent, consider adding a button or link where the admin can initiate the action. The request your application sends for this action is the usual OAuth2/OpenID Connect authorization request that also includes the `prompt=consent` query string parameter. Once the admin has consented and the service principal is created in the customer’s tenant, subsequent sign-in requests don't need the `prompt=consent` parameter. Since the administrator has decided the requested permissions are acceptable, no other users in the tenant are prompted for consent from that point forward.
+If your application uses permissions that require admin consent, consider adding a button or link where the admin can initiate the action. The request your application sends for this action is the usual OAuth2/OpenID Connect authorization request that also includes the `prompt=consent` query string parameter. After the admin consents and the service principal is created in the customer’s tenant, subsequent sign-in requests don't need the `prompt=consent` parameter. Since the administrator has approved the requested permissions, no other users in the tenant are prompted for consent.
 
 A tenant administrator can disable the ability for regular users to consent to applications. If this capability is disabled, admin consent is always required for the application to be used in the tenant. You can test your application with end-user consent disabled, in the Microsoft Entra admin center. In **Enterprise applications** > [Consent and permissions](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ConsentPoliciesMenuBlade/~/UserSettings), check the **Do not allow user consent** option.
 
-The `prompt=consent` parameter can also be used by applications that request permissions that don't require admin consent. An example of when this would be used is if the application requires an experience where the tenant admin “signs up” one time, and no other users are prompted for consent from that point on.
+The `prompt=consent` parameter can also be used by applications that request permissions that don't require admin consent. An example use case is if the application requires an experience where the tenant admin “signs up” one time, and no other users are prompted for consent from that point on.
 
-If an application requires admin consent and an admin signs in without the `prompt=consent` parameter being sent, when the admin successfully consents to the application it will apply **only for their user account**. Regular users will still not be able to sign in or consent to the application. This feature is useful if you want to give the tenant administrator the ability to explore your application before allowing other users access.
+If an application requires admin consent and an admin signs in without the `prompt=consent` parameter being sent, when the admin successfully consents to the application it applies **only for their user account**. Regular users won't able to sign in or consent to the application. This feature is useful if you want to give the tenant administrator the ability to explore your application before allowing other users access.
 
 ### Consent and multi-tier applications
 
