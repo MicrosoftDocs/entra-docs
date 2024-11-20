@@ -105,6 +105,8 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. From the **SAML Certificates** section, copy the App Federation Metadata Url.
 
+    ![Copy App Federation Metadata URL](common/app-federation-metadata-url.png)
+
 <a name='create-an-azure-ad-test-user'></a>
 
 ### Create a Microsoft Entra test user
