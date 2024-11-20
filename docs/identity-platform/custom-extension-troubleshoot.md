@@ -1,5 +1,5 @@
 ---
-title: Troubleshoot a custom claims provider
+title: Troubleshoot a custom authentication extension
 description: Troubleshoot and monitor your custom claims provider API.  Learn how to use logging and Microsoft Entra sign-in logs to find errors and issues in your custom claims provider API.
 author: cilwerner
 manager: CelesteDG
@@ -12,10 +12,10 @@ ms.service: identity-platform
 ms.topic: troubleshooting
 titleSuffix: Microsoft identity platform
 
-#Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom claims provider API, so that I can identify and resolve any errors or performance problems affecting the authentication experience.
+#Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom authentication extension, so that I can identify and resolve any errors or performance problems affecting the authentication experience.
 ---
 
-# Troubleshoot your custom claims provider API
+# Troubleshoot your custom authentication extension
 
 Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-tokenissuancestart-configuration.md) or [SAML app](custom-extension-configure-saml-app.md) to receive tokens with claims from an external store.
 
