@@ -103,6 +103,8 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
+1. From the **SAML Certificates** section, copy the App Federation Metadata Url.
+
 <a name='create-an-azure-ad-test-user'></a>
 
 ### Create a Microsoft Entra test user
@@ -135,7 +137,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Beatrust SSO
 
-To configure single sign-on on **Beatrust** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Beatrust support team](mailto:support@beatrust.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Beatrust** side, you need to send the downloaded **Certificate (Base64)**, appropriate copied URLs from the application configuration, and App Federation Metadata Url to [Beatrust support team](mailto:support@beatrust.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Beatrust test user
 
