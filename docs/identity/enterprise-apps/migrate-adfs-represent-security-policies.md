@@ -83,13 +83,13 @@ MFA rule settings in AD FS:
 
 The users/groups selector is a rule that allows you to enforce MFA on a per-group (Group SID) or per-user (Primary SID) basis. Apart from the users/groups assignments, all other checkboxes in the AD FS MFA configuration UI function as extra rules that are evaluated after the users/groups rule is enforced.
 
-[Common Conditional Access policy: Require MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
+[Common Conditional Access policy: Require MFA for all users](../conditional-access/policy-all-users-mfa-strength.md)
 
 ### Example 2: Enforce MFA for unregistered devices
 
 Specify MFA rules for unregistered devices in Microsoft Entra:
 
-[Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](../conditional-access/howto-conditional-access-policy-compliant-device.md)
+[Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](../conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)
 
 ## Map Emit attributes as Claims rule
 

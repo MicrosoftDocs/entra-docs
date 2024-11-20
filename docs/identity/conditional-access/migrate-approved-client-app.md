@@ -59,7 +59,7 @@ Organizations can choose to deploy this policy using the following steps.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and exclude at least one account to prevent yourself from being locked out. If you don't exclude any accounts, you can't create the policy.
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**
 1. Under **Conditions** > **Device platforms**, set **Configure** to **Yes**.
    1. Under **Include**, **Select device platforms**.
    1. Choose **Android** and **iOS**

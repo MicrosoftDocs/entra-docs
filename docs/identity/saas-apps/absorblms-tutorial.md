@@ -149,8 +149,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 2. Select the **Account** button at the top right.
 
-    ![The Account button](./media/absorblms-tutorial/account.png)
-
 3. In the Account pane, select **Portal Settings**.
 
     ![The Portal Settings link](./media/absorblms-tutorial/portal.png)
@@ -161,7 +159,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 5. On the **Manage Single Sign-On Settings** page, do the following:
 
-    ![The single sign-on configuration page](./media/absorblms-tutorial/settings.png)
+   ![Screenshot shows the single sign-on configuration page.](./media/absorblms-tutorial/settings.png)
 
     a. In the **Name** textbox, enter the name like Microsoft Entra Marketplace SSO.
 

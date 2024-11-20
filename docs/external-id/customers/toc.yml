@@ -12,6 +12,8 @@ items:
       href: visual-studio-code-extension.md
     - name: Use Azure App Service built-in authentication
       href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
+    - name: Use Power Pages and External ID
+      href: /power-pages/security/authentication/entra-external-id?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
 - name: Samples
   expanded: false
   items:
@@ -355,14 +357,12 @@ items:
                 items:
                   - name:  Edit profile with MFA
                     items:
-                      - name: Set-up external tenant 
-                        href: how-to-web-app-node-edit-profile-prepare-tenant.md   
-                        displayName: Conditional Access, CA 
-                      - name: Set-up app 
+                      - name: Set up app 
                         href: how-to-web-app-node-edit-profile-prepare-app.md 
+                        displayName: Conditional Access, CA 
                       - name: Update profile
                         href: how-to-web-app-node-edit-profile-update-profile.md  
-                        displayName: protect with MFA, multifactor authentication, MFA            
+                        displayName: protect, multifactor authentication, MFA            
                   - name: Call API
                     items:
                       - name: Prepare tenant 
@@ -421,7 +421,9 @@ items:
       items:
       - name: Multifactor authentication
         href: how-to-multifactor-authentication-customers.md
-      - name: Identity Protection
+      - name: Regions requiring opt-in for SMS verification
+        href: how-to-region-code-opt-in.md
+      - name: ID Protection
         href: how-to-identity-protection-customers.md
       - name: Use application roles to manage access
         href: how-to-use-app-roles-customers.md
@@ -435,8 +437,6 @@ items:
           href: how-to-manage-admin-accounts.md
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
-        - name: User activity insights
-          href: how-to-user-insights.md
     - name: Monitor and troubleshoot
       items:
         - name: User activity insights

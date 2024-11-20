@@ -60,7 +60,7 @@ If your organization has users who are delegated access to another tenant and th
 
 1. An organization has a managed service provider (MSP) or cloud solution provider (CSP) who takes care of configuring their cloud environment. 
 1. One of the MSPs technicians credentials are leaked and triggers high risk. That technician is blocked from signing in to other tenants. 
-1. The technician can self-remediate and sign in if the home tenant enabled the appropriate policies [requiring password change for high risk users](~/identity/conditional-access/howto-conditional-access-policy-risk-user.md) or [MFA for risky users](~/identity/conditional-access/howto-conditional-access-policy-risk.md). 
+1. The technician can self-remediate and sign in if the home tenant enabled the appropriate policies [requiring password change for high risk users](~/identity/conditional-access/policy-risk-based-user.md) or [MFA for risky users](~/identity/conditional-access/policy-risk-based-sign-in.md). 
    1. If the home tenant didn't enable self-remediation policies, an administrator in the technician's home tenant has to [remediate the risk](howto-identity-protection-remediate-unblock.md#risk-remediation).
 
 ## See also

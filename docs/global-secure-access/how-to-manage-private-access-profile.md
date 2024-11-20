@@ -49,8 +49,6 @@ To manage the details included in the Private Access traffic forwarding policy, 
 
 Details of your Quick Access and enterprise apps for Private Access are displayed. Select the link for the application to view the details from the Enterprise applications area of Microsoft Entra ID.
 
-![Screenshot of the private access application details.](media/how-to-manage-private-access-profile/private-access-app-details.png)
-
 ## Linked Conditional Access policies
 
 Conditional Access policies for Private Access are configured at the application level for each app. Conditional Access policies can be created and applied to the application from two places:

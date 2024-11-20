@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
-ms.date: 09/27/2024
+ms.date: 11/11/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -28,8 +28,9 @@ In addition, the sign-in logs can also help you troubleshoot sign-in failures fo
 
 You need:
 
-- A Microsoft Entra tenant with a P1 or P2 license.
-- A user with the **Reports Reader**, **Security Reader**, or **Security Administrator** role for the tenant.
+- A working Microsoft Entra tenant with the appropriate Microsoft Entra license associated with it.
+    - For a full list of license requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
+- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
 - In addition, any user can access their own sign-ins from https://mysignins.microsoft.com.
 
 ## Gather sign-in details
@@ -88,6 +89,10 @@ The following error codes are associated with sign-in events, but this list isn'
 - **500121**: User didn't complete the MFA prompt.
   - This error often appears if the user hasn't completed setting up MFA.
   - Instruct the user to complete the setup process through to sign-in.
+
+- **70046**: Session expired or reauthentication check failed.
+    - This error can occur if a session token expired or if a reauthentication check failed.
+    - A reauthentication check can happen if a Conditional Access policy is enabled to require reauthentication for various sign-in risk levels.
 
 If all else fails, or the issue persists despite taking the recommended course of action, open a support request. For more information, see [how to get support for Microsoft Entra ID](~/fundamentals/how-to-get-support.md).
 

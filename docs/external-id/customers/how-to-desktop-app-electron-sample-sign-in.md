@@ -8,7 +8,7 @@ manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 09/09/2024
 ms.custom: developer

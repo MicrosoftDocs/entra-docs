@@ -19,8 +19,6 @@ landingContent:
     linkLists:
       - linkListType: quickstart
         links:
-          - text: ASP.NET
-            url: quickstart-web-app-aspnet-sign-in.md
           - text: ASP.NET Core
             url: quickstart-web-app-dotnet-core-sign-in.md
           - text: Java

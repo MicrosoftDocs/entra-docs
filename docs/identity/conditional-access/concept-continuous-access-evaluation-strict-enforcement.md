@@ -25,7 +25,7 @@ Strictly enforce location policies is a new enforcement mode for continuous acce
 
 ### Step 1 - Configure a Conditional Access location based policy for your target users
 
-Before administrators create a Conditional Access policy requiring strict location enforcement, they must be comfortable using policies like the one described in [Conditional Access location based policies](howto-conditional-access-policy-location.yml). Policies like this one should be tested with a subset of users before proceeding to the next step. Administrators can avoid discrepancies between the allowed and actual IP addresses seen by Microsoft Entra ID during authentication, by testing before enabling strict enforcement.
+Before administrators create a Conditional Access policy requiring strict location enforcement, they must be comfortable using policies like the one described in [Conditional Access location based policies](policy-block-by-location.md). Policies like this one should be tested with a subset of users before proceeding to the next step. Administrators can avoid discrepancies between the allowed and actual IP addresses seen by Microsoft Entra ID during authentication, by testing before enabling strict enforcement.
 
 ### Step 2 - Test policy on a small subset of users
 

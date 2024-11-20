@@ -124,8 +124,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Proxyclick**.
 
-	![Proxyclick User Mappings](media/proxyclick-provisioning-tutorial/Proxyclick-user-mappings.png)
-
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Proxyclick in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Proxyclick for update operations. Select the **Save** button to commit any changes.
 
     ![Proxyclick User Attributes](media/proxyclick-provisioning-tutorial/Proxyclick-user-attribute.png)

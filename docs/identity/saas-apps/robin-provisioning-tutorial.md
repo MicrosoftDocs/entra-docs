@@ -109,15 +109,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Robin**.
 
-	![robin powered User Mappings](media/robin-provisioning-tutorial/robin-user-mapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Robin in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Robin for update operations. Select the **Save** button to commit any changes.
 
 	![robin powered User Attributes](media/robin-provisioning-tutorial/robin-user-attribute-mapping.png)
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Robin**.
-
-	![robin powered Group Mappings](media/robin-provisioning-tutorial/robin-group-mapping.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Robin in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Robin for update operations. Select the **Save** button to commit any changes.
 

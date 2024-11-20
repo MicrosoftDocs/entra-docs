@@ -101,8 +101,6 @@ Work with your SuccessFactors admin team or implementation partner to create or 
     > [!div class="mx-imgBorder"]
     > ![Create New Permission Role](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
 1. Add a **Role Name** and **Description** for the new permission role. The name and description should indicate that the role is for API usage permissions.
-    > [!div class="mx-imgBorder"]
-    > ![Permission role detail](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
 1. Under Permission settings, click **Permission...**, then scroll down the permission list and click **Manage Integration Tools**. Check the box for **Allow Admin to Access to OData API through Basic Authentication**.
     > [!div class="mx-imgBorder"]
     > ![Manage integration tools](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
@@ -142,15 +140,9 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 1. In SuccessFactors Admin Center, search for *Manage Permission Roles*, then select **Manage Permission Roles** from the search results.
 1. From the **Permission Role List**, select the role that you created for API usage permissions.
 1. Under **Grant this role to...**, click **Add...** button.
-1. Select **Permission Group...** from the drop-down menu, then click **Select...** to open the Groups window to search and select the group created above. 
-    > [!div class="mx-imgBorder"]
-    > ![Add permission group](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
+1. Select **Permission Group...** from the drop-down menu, then click **Select...** to open the Groups window to search and select the group created above.
 1. Review the Permission Role grant to the Permission Group. 
-    > [!div class="mx-imgBorder"]
-    > ![Permission Role and Group detail](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
 1. Click **Save Changes**.
-
-<a name='configuring-user-provisioning-from-successfactors-to-azure-ad'></a>
 
 ## Configuring user provisioning from SuccessFactors to Microsoft Entra ID
 
@@ -186,8 +178,6 @@ This section provides steps for user account provisioning from SuccessFactors to
     > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
    * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and URL are valid.
-    >[!div class="mx-imgBorder"]
-    >![Entra admin center](./media/sap-successfactors-inbound-provisioning/sf2aad-provisioning-creds.png)
 
    * Once the credentials are saved successfully, the **Mappings** section displays the default mapping **Synchronize SuccessFactors Users to Microsoft Entra ID**
 
