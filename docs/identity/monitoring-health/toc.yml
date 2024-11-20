@@ -175,7 +175,7 @@ items:
   - name: Troubleshoot Conditional Access policy changes in audit logs
     href: ..\conditional-access\troubleshoot-policy-changes-audit-log.md?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
   - name: Troubleshoot sign-in problems with Conditional Access
-    href: ..\conditional-access\troubleshoot-conditional-access.md#microsoft-entra-sign-in-events?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
+    href: ..\conditional-access\troubleshoot-conditional-access.md?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
   - name: Bulk changes to UserPrincipalName triggered by verified domain change
     href: troubleshoot-audit-data-verified-domain.md
 

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/14/2024
+ms.date: 11/19/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -16,7 +16,7 @@ ms.reviewer: egreenberg
 
 # View applied Conditional Access details in the Microsoft Entra activity logs
 
-With Conditional Access policies, you can control how your users get access to your Azure and Microsoft Entra resources. As a tenant admin, you need to be able to determine what effect your Conditional Access policies have on sign-ins to your tenant, so that you can take action if necessary. The sign-in logs in Microsoft Entra ID give you the information that you need to assess the effect of your Conditional Access policies. You might also need to view audit logs for recent changes to Conditional Access policies.
+With Conditional Access policies, you can control how your users get access to your Azure and Microsoft Entra resources. As a tenant admin, you need to be able to determine what effect your Conditional Access policies have on sign-ins to your tenant, so that you can take action if necessary. You might also need to view audit logs for recent changes to Conditional Access policies.
 
 This article explains how to view applied Conditional Access policies in the Microsoft Entra activity logs.
 
@@ -67,7 +67,6 @@ As a Microsoft Entra administrator, you can use the sign-in logs to:
 Some scenarios require you to get an understanding of how your Conditional Access policies were applied to a sign-in event. Common examples include:
 
 - Helpdesk administrators who need to look at applied Conditional Access policies to understand if a policy is the root cause of a ticket that a user opened.
-
 - Tenant administrators who need to verify that Conditional Access policies have the intended effect on the users of a tenant.
 
 You can access the sign-in logs by using the Microsoft Entra admin center, the Azure portal, Microsoft Graph, and PowerShell.  
@@ -90,15 +89,15 @@ If you don't see the Conditional Access policies, confirm you're using a role th
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
-Follow these instructions to list Microsoft Entra roles using the Microsoft Graph API in [Graph Explorer](https://aka.ms/ge).
+Follow these instructions to view Conditional Access policies and log details using the Microsoft Graph API in [Graph Explorer](https://aka.ms/ge).
 
 1. Sign in to the [Graph Explorer](https://aka.ms/ge).
 1. Select **GET** as the HTTP method from the dropdown. 
 1. Select the API version to **v1.0**.
-1. To get a list of Conditional Access policies, add the following query and select **Run query**.
+1. To get sign-in attempts where Conditional Access failed during a specific time frame, add the following query and select **Run query**.
 
    ```http
-   GET https://graph.microsoft.com/v1.0/identity/conditionalAccess/policies
+   GET https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=(createdDateTime ge 2024-11-01T14:13:32Z and createdDateTime le 2024-11-10T17:43:26Z) and conditionalAccessStatus eq 'failure'
    ```
 
 1. To view a specific Conditional Access policy, add the policy ID.
