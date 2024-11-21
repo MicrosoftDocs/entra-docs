@@ -86,8 +86,6 @@ To build and run your app, follow these steps:
  
 1. Enter the OTP code that you receive in the email inbox and select **Next**. If the sign-up is successful, the app signs you in automatically. If you don't receive the OTP code in your email inbox, you can resend it after a while by selecting **Resend Passcode**.
 
-    :::image type="content" source="media/native-authentication/android/android-sign-in-account-display.png" alt-text="Screenshot showing sign-in successfully completed in the Android application." lightbox="media/native-authentication/android/android-sign-in-account-display-expanded.png"::: 
-
 1. To sign out, select the **Sign out** button. 
  
 ### Other scenarios that this sample supports 
