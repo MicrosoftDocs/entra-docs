@@ -103,7 +103,7 @@ Apple macOS 13 (and above) are FIPS 140 Level 2 Overall, with most devices also 
 
 **Passkey in Microsoft Authenticator**
 
-For additional information on FIPS 140 compliance for Microsoft Authenticator (iOS/Android) See [FIPS 140 compliant for Microsoft Entra authentication](identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
+For additional information on FIPS 140 compliance for Microsoft Authenticator (iOS/Android) See [FIPS 140 compliant for Microsoft Entra authentication](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
 
 ## Reauthentication
 
