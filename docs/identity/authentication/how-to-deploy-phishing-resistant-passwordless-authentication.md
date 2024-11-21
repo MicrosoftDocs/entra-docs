@@ -80,20 +80,22 @@ Users should have at least two authentication methods registered. With another m
 
 ### Onboarding step 1: Identity verification
 
-For remote users who haven't proven their identity, enterprise onboarding is a significant challenge. Microsoft Entra Verified ID can help customers who want high assurance ID verification. It can use attestations based on government-issued ID as a way to establish user identity trust. 
+For remote users who haven't proven their identity, enterprise onboarding is a significant challenge. Without proper identity verification, an organization cannot be completely certain that they are onboarding the person that they intend to. Microsoft Entra Verified ID can provide high assurance identity verification. Organizations can work with an identity verification partner (IDV) to verify the identities of new remote users in the onboarding process. After processing a user’s government-issued ID, the IDV can provide a Verified ID that affirms the user's identity. The new user presents this identity-affirming Verified ID to the hiring organization to establish trust and confirm that the organization is onboarding the right person. Organizations can add Face Check with Microsoft Entra Verified ID which adds a facial matching layer to the verification, ensuring that the trusted user is presenting the identity-affirming Verified ID in that moment.
 
-In this phase, users may be directed to an identity verification partner service. They go through a proofing process determined by the organization and the verification partner service chosen by the organization. At the end of this process, users are given a Temporary Access Pass (TAP) that they can use to bootstrap their first portable credential.
+After verifying their identity through the proofing process, new hires are given a Temporary Access Pass (TAP) that they can use to bootstrap their first portable credential.
 
-Refer to the following guides to enable Microsoft Entra Verified ID onboarding and TAP issuance: 
+Refer to the following guides to enable Microsoft Entra Verified ID onboarding and TAP issuance:
 
 - [Onboard new remote employees using ID verification](~/verified-id/remote-onboarding-new-employees-id-verification.md)
+- [Using Face Check with Microsoft Entra Verified ID to unlock high assurance verifications at scale](~/verified-id/using-facecheck.md)
 - [Enable the Temporary Access Pass policy](howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
 
->[!Note]
->Microsoft Entra Verified ID is part of the Microsoft Entra Suite license.
+Refer to the following links for licensing details for Microsoft Entra Verified ID:
+
+- [Face Check with Microsoft Entra Verified ID pricing](~/verified-id/verified-id-pricing.md)
+- [Microsoft Entra Plans and Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 
 Some organizations might choose other methods than Microsoft Entra Verified ID to onboard users and issue them their first credential. Microsoft recommends those organizations still use TAPs, or another way that lets a user onboard without a password. For example, you can [provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
-
 
 ### Onboarding step 2: Bootstrap a portable credential
 
