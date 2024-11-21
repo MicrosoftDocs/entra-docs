@@ -123,7 +123,7 @@ Enable the SMS authentication method in your external tenant for all users.
 
 ### Activate telecom for opt-in regions
 
-Starting January 2025, certain country codes will be deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to use the Microsoft Graph `onPhoneMethodLoadStartevent` policy to activate them for your application. See [Regions requiring opt-in for SMS verification](how-to-region-code-opt-in.md).
+Starting January 2025, certain country codes will be deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to activate them for your application using the Microsoft Graph `onPhoneMethodLoadStartevent` policy. See [Regions requiring opt-in for SMS verification](how-to-region-code-opt-in.md).
 
 ## Test the sign-in
 
