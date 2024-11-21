@@ -155,6 +155,9 @@ In this step, you configure a custom authentication extension, which Microsoft E
 1. Search for and select **Microsoft Entra ID** and select **Enterprise applications**.
 1. Select **Custom authentication extensions**, and then select **Create a custom extension**.
 1. In **Basics**, select the **EmailOtpSend** event type and select **Next**.
+
+    :::image type="content" border="false"source="media/custom-extension-email-otp-get-started/select-email-otp-send-event.png" alt-text="Screenshot of the Azure portal highlighting the email OTP send event." lightbox="media/custom-extension-email-otp-get-started/select-email-otp-send-event.png":::
+
 1. In the **Endpoint Configuration** tab, fill in the following properties, then select **Next** to continue.
     - **Name** - A name for your custom authentication extension. For example, *Email OTP Send*.
     - **Target Url** - The `{Function_Url}` of your Azure Function URL. Navigate to the **Overview** page of your Azure Function app, then select the function you created. In the function **Overview** page, select **Get Function Url** and use the copy icon to copy the **customauthenticationextension_extension (System key)** URL.
