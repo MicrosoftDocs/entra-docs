@@ -1,10 +1,10 @@
 ---
-title: Configure a Log Analytics workspace in Microsoft Entra ID
-description: Learn how to configure a Log Analytics workspace in Microsoft Entra ID and run Kusto queries on your identity data.
+title: Configure a Log Analytics workspace and a custom workbook
+description: Learn how to configure a Log Analytics workspace, create a workbook, and run Kusto queries in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: tutorial
-ms.date: 10/24/2024
+ms.date: 11/21/2024
 ms.author: sarahlipsey
 author: shlipsey3
 manager: amycolannino
@@ -13,14 +13,16 @@ ms.reviewer: sandeo
 #Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.
 
 ---
-# Tutorial: Configure a log analytics workspace
+# Tutorial: Sign-in logs and Log Analytics - Workspaces, workbooks, and queries
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
-> * Configure a Log Analytics workspace for your audit and sign-in logs
+> * Create a Log Analytics workspace
+> * Configure diagnostic settings to integrate sign-in logs with the Log Analytics workspace
+> * Create a custom workbook
 > * Run queries using the Kusto Query Language (KQL)
-> * Create a custom workbook using the quickstart template
+
 > * Add a query to an existing workbook template
 
 ## Prerequisites
@@ -29,7 +31,7 @@ To analyze activity logs with Log Analytics, you need the following roles and re
 
 - [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health)
 
-- A Log Analytics workspace *and* [access to that workspace](/azure/azure-monitor/logs/manage-access)
+- [Access to create a Log Analytics workspace](/azure/azure-monitor/logs/manage-access)
 
 - The appropriate role for Azure Monitor:
   - Monitoring Reader
@@ -43,28 +45,13 @@ To analyze activity logs with Log Analytics, you need the following roles and re
   - Global Reader
   - Security Administrator
 
-Familiarize yourself with these articles:
-
-- [Tutorial: Collect and analyze resource logs from an Azure resource](/azure/azure-monitor/essentials/tutorial-resource-logs)
-
-- [How to integrate activity logs with Log Analytics](./howto-integrate-activity-logs-with-azure-monitor-logs.yml)
-
-- [Manage emergency access account in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
-
-- [KQL quick reference](/azure/data-explorer/kusto/query/kql-quick-reference)
-
-- [Azure Monitor Workbooks](/azure/azure-monitor/visualize/workbooks-overview)
-
-## Configure Log Analytics
+## Create a Log Analytics workspace
 
 [!INCLUDE [portal updates](../../includes/portal-update.md)]
 
-This procedure outlines how to configure a Log Analytics workspace for your audit and sign-in logs.
-To configure a Log Analytics workspace, you need to **create the workspace** and then **configure diagnostic settings**.
+In this step you create a Log Analytics workspace, which is where you eventually send your sign-in logs. Before you can create the workspace, you need an [Azure resource group](/azure//azure-resource-manager/management/overview#resource-groups).
 
-### Create the workspace
-
-1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) and [Log Analytics Contributor](/azure/azure-monitor/logs/manage-access#log-analytics-contributor).
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) with [Log Analytics Contributor](/azure/azure-monitor/logs/manage-access#log-analytics-contributor) permissions.
 
 1. Browse to **Log Analytics workspaces**.
 
@@ -88,7 +75,7 @@ To configure a Log Analytics workspace, you need to **create the workspace** and
 
 1. Select **Create** and wait for the deployment. You might need to refresh the page to see the new workspace.
 
-### Configure diagnostic settings
+## Configure diagnostic settings
 
 To configure diagnostic settings, you need switch to the Microsoft Entra admin center to send your identity log information to your new workspace.
 
