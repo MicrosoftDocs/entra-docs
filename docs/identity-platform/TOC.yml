@@ -499,6 +499,8 @@
                   href: custom-extension-configure-saml-app.md
             - name: Create attribute collection start and submit events
               href: custom-extension-attribute-collection.md
+            - name: Configure a custom email provider for one time code send events
+              href: custom-extension-email-otp-get-started.md
             - name: Troubleshoot your custom authentication extension
               href: custom-extension-troubleshoot.md
         - name: Handle browser cookie restrictions
