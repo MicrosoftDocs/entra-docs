@@ -51,7 +51,7 @@ Important notes to take note of before you proceed:
 1. Download Microsoft Entra Connect installer (AzureADConnect.MSI) to the Windows server. Double-click the Microsoft Entra Connect installer to start installing Microsoft Entra Connect.
 2. Once the MSI installation completes, the Microsoft Entra Connect wizard starts with the Express mode setup. Close the screen by clicking the Exit icon.
 ![Screenshot that shows the "Welcome to Microsoft Entra Connect" page, with "Express Settings" in the left-side menu highlighted.](./media/how-to-connect-install-existing-database/db1.png)
-3. Start a new command prompt or PowerShell session. Navigate to folder "C:\Program Files\Microsoft Entra Connect". Run command .\AzureADConnect.exe /useexistingdatabase to start the Microsoft Entra Connect wizard in “Use existing database” setup mode.
+3. Start a new command prompt or PowerShell session. Navigate to folder "C:\Program Files\Microsoft Azure Active Directory Connect". Run command .\AzureADConnect.exe /useexistingdatabase to start the Microsoft Entra Connect wizard in “Use existing database” setup mode.
 
 > [!NOTE]
 > Use the switch **/UseExistingDatabase** only when the database already contains data from an earlier Microsoft Entra Connect installation. For instance, when you are moving from a local database to a full SQL Server database or when the Microsoft Entra Connect server was rebuilt and you restored a SQL backup of the ADSync database from an earlier installation of Microsoft Entra Connect. If the database is empty, that is, it doesn't contain any data from a previous Microsoft Entra Connect installation, skip this step.
