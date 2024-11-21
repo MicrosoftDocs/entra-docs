@@ -89,7 +89,7 @@ items:
   - name: Microsoft Entra health monitoring and alerts 
     expanded: false
     items:
-    - name: Microsoft Entra Health alerts
+    - name: How to use Microsoft Entra Health alerts
       href: howto-use-health-scenario-alerts.md
     - name: Sign-ins requiring a compliant or managed device
       href: scenario-health-sign-ins-compliant-managed-device.md
@@ -100,7 +100,7 @@ items:
   - name: Microsoft Entra Recommendations 
     expanded: false
     items:
-    - name: Identity Recommendations
+    - name: How to use Microsoft Entra Recommendations
       href: howto-use-recommendations.md
     - name: Enable insider risk Conditional Access condition
       href: recommendation-insider-risk-condition.md
@@ -129,7 +129,7 @@ items:
   - name: Microsoft Entra Workbooks 
     expanded: false
     items:
-    - name: Identity Workbooks
+    - name: How to use Microsoft Entra Workbooks
       href: howto-use-workbooks.md
     - name: Authentication prompts analysis
       href: workbook-authentication-prompts-analysis.md
