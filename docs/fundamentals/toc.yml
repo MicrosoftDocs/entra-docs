@@ -8,6 +8,8 @@ items:
     href: what-is-entra.md
   - name: What is Microsoft Entra ID?
     href: whatis.md
+  - name: What is the Microsoft Entra admin center?
+    href: entra-admin-center.md
   - name: Trial user guide for Microsoft Entra Suite
     href: try-microsoft-entra-suite.md
   - name: New name for Azure AD
@@ -16,8 +18,6 @@ items:
     href: identity-fundamental-concepts.md
   - name: Introduction to identity and access management (IAM)
     href: introduction-identity-access-management.md
-  - name: Microsoft Entra admin center
-    href: entra-admin-center.md
 - name: First steps
   expanded: true
   items:
@@ -80,11 +80,13 @@ items:
 - name: Microsoft Copilot for Security + Microsoft Entra
   items:
   - name: Overview
-    href: copilot-security-entra.md
+    href: copilot-security-entra.md  
   - name: Respond to identity threats using risky user summarization
     href: copilot-entra-risky-user-summarization.md  
-  - name: Investigate incidents using Microsoft Copilot for Security
+  - name: Investigate incidents using Microsoft Security Copilot
     href: copilot-security-entra-investigate-incident.md 
+  - name: Responsible AI FAQ for Security Copilot in Microsoft Entra
+    href: copilot-security-entra-responsible-ai-faq.md
 - name: Quick security wins
   expanded: false
   items:
@@ -124,10 +126,12 @@ items:
   - name: What's new?
     expanded: false
     items:
-    
-    - name: What's new in Microsoft Entra ID
+
+    - name: What's new in Microsoft Entra
+      href: whats-new-overview.md    
+    - name: Releases and announcements
       href: whats-new.md
-    - name: Archive for What's new? in Microsoft Entra ID
+    - name: Archive for releases and announcements
       href: whats-new-archive.md
   - name: Frequently asked questions
     href: faq.yml
