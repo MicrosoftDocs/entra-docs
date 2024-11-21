@@ -35,13 +35,36 @@ If a user tries to access the common DFS path and appears to be coming from the 
 
 :::image type="content" source="media/troubleshoot-distributed-file-system/dfs1.png" alt-text="Diagram showing the connection between VPN and DFS.":::
  
-## Integration overview
-The docum
+## Issue
+IP-based network Access Control Lists (ACL) won't work with Global Secure Access as there’s no VPN in the middle. However, the employee computer should still be referred to the appropriate fileshare.
 
-The general steps
+## Workaround
+The GSA team acknowledges the service limitation and intends to address it appropriately in the service offering in FY25. In the meantime, the proposed temporary workaround for the above-mentioned scenario is as follows. 
 
-## Monitoring
-You use Global 
+As a workaround, we suggest moving this employee-to-fileshare mapping to the employee computer (as a DNS search suffix), so the traffic would be: 
+
+
+:::image type="content" source="media/troubleshoot-distributed-file-system/dfs2.png" alt-text="Diagram showing the connector.":::
+
+The workaround is to make changes in the network-architecture in the environment: 
+
+1. Add additional c-name dns records (aliases) on domain controllers: 
+    - `shares.foo-loc1.contoso.com` **->** `foo-loc1.contoso.com` 
+    - `shares.foo-loc2.contoso.com` **->** `foo-loc2.contoso.com` 
+    - `shares.foo-loc3.contoso.com` **->** `foo-loc3.contoso.com` 
+2. Push DNS search suffixes to the employees’ computer such that: 
+    - Employees at *Location1* get suffix: `foo-loc1.contoso.com` 
+    - Employees at *Location2* get suffix: `foo-loc2.contoso.com` 
+    - Employees at *Location3* get suffix: `foo-loc3.contoso.com` 
+3. Now a dedicated Global Secure Access application can be created for each of the following FQDNs (or their IPs): 
+    - `foo-loc1.contoso.com`
+    - `foo-loc2.contoso.com` 
+    - `foo-loc3.contoso.com` 
+4. Each of these applications map to the connector (via connector group specified in the app) in the corresponding location. 
+
+After these changes, the employees accessing the common path: `\\shares\bar` from *Location1* are directed to the website: `\\foo-loc1.contoso.com\bar`, and likewise for other locations.
+
+
 
 ## Related content
 - [What is Global Secure Access?](overview-what-is-global-secure-access.md)
