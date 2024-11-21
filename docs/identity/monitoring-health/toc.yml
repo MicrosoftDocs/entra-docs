@@ -12,7 +12,7 @@ items:
     href: overview-workbooks.md
 
 - name: Concepts
-  expanded: false
+  expanded: true
   items:
     - name: Audit logs
       href: concept-audit-logs.md
