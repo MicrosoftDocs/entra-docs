@@ -24,7 +24,7 @@ In this quickstart, you’ll use a sample application to learn how to add authen
 
 #### [Node.js Electron](#tab/node-js-workforce)
 
-* [Node.js](https://nodejs.org/en/download/)
+* [Node.js](https://nodejs.org/en/download/package-manager)
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 
 #### [Windows Presentation Foundation (WPF)](#tab/wpf-workforce)
