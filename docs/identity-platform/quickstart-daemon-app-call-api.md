@@ -480,24 +480,24 @@ You've configured your sample app. You can proceed to run and test it.
     node . --op getToDos
     ```
 
- - If your daemon app and web API successfully run, you should see something similar to the following JSON array in your console window
+If your daemon app and web API successfully run, you should see something similar to the following JSON array in your console window
 
-    ```json
-    {
-        "id": 1,
-        "owner": "3e8....-db63-43a2-a767-5d7db...",
-        "description": "Pick up grocery"
-    },
-    {
-        "id": 2,
-        "owner": "c3cc....-c4ec-4531-a197-cb919ed.....",
-        "description": "Finish invoice report"
-    },
-    {
-        "id": 3,
-        "owner": "a35e....-3b8a-4632-8c4f-ffb840d.....",
-        "description": "Water plants"
-    }
+```json
+{
+    "id": 1,
+    "owner": "3e8....-db63-43a2-a767-5d7db...",
+    "description": "Pick up grocery"
+},
+{
+    "id": 2,
+    "owner": "c3cc....-c4ec-4531-a197-cb919ed.....",
+    "description": "Finish invoice report"
+},
+{
+    "id": 3,
+    "owner": "a35e....-3b8a-4632-8c4f-ffb840d.....",
+    "description": "Water plants"
+}
     ```
 
 ### How it works
