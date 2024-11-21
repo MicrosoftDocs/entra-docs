@@ -98,21 +98,23 @@ foreach ($userRow in $usersData) {
         DisplayName = $userRow.'Name [displayName] Required' 
         UserPrincipalName = $userRow.'User name [userPrincipalName] Required' 
         PasswordProfile = @{ 
-            Password = $userRow.'Initial password [passwordProfile] Required' 
+            Password = $userRow.'Initial password [passwordProfile] Required'
+            ForceChangePasswordNextSignIn = $true # You can set this to $false if you don't want the user to change the password at the next sign-in
         } 
         AccountEnabled = $true 
-        MailNickName = $userRow.mailNickName 
+        MailNickName = $userRow.mailNickName
+        UsageLocation = $userRow.usageLocation # Required the ISO Country Code. For example: US for United States
     } 
     try { 
-        New-MgUser @userParams 
-        Write-Host "User $($userRow.UserPrincipalName) created successfully." 
-    } catch { 
-        Write-Host "Error creating user $($userRow.UserPrincipalName): $($_.Exception.Message)" 
+        New-MgUser @userParams -ErrorAction SilentlyContinue
+        Write-Host "User $($userRow.UserPrincipalName) created successfully." -ForegroundColor Green
+    } catch{ 
+        Write-Host "Error creating user $($userRow.UserPrincipalName): $($_.ErrorDetails.Message)" -ForegroundColor Red
     } 
 } 
 
 # Disconnect from Microsoft Graph 
-Disconnect-MgGraph 
+Disconnect-MgGraph
 
 Write-Host "Bulk user creation completed." 
 ```
@@ -139,10 +141,10 @@ $usersData = Import-Csv -Path $csvFilePath
 # Loop through each row in the CSV and delete users 
 foreach ($userRow in $usersData) { 
     try { 
-        Remove-MgUser -UserId $userRow.UserPrincipalName -Confirm:$false 
-        Write-Host "User $($userRow.UserPrincipalName) deleted successfully." 
+        Remove-MgUser -UserId $userRow.UserPrincipalName -Confirm:$false -ErrorAction SilentlyContinue
+        Write-Host "User $($userRow.UserPrincipalName) deleted successfully." -ForegroundColor Yellow
     } catch { 
-        Write-Host "Error deleting user $($userRow.UserPrincipalName): $($_.Exception.Message)" 
+        Write-Host "Error deleting user $($userRow.UserPrincipalName): $($_.ErrorDetails.Message)" -ForegroundColor Red
     } 
 } 
 
@@ -207,15 +209,17 @@ Import-Module Microsoft.Graph.Groups
  $groupId = "your_group_id" 
 
  # Get the group members 
- $members = Get-MgGroupMember -GroupId $groupId -All | select * -ExpandProperty additionalProperties | Select-Object @( 
-                'id'     
-                @{  Name       = 'userPrincipalName' 
-                    Expression = { $_.AdditionalProperties["userPrincipalName"] } 
-                } 
-                @{  Name = 'displayName' 
-                Expression = { $_.AdditionalProperties["displayName"] } 
-                } 
-            ) 
+ $members = Get-MgGroupMemberAsUser -GroupId $groupId -All | Select-Object @(
+    @{  Name        =   "UserId";
+        Expression  =   {$_.Id}
+    },
+    @{  Name        =   "UserPrincipalName";
+        Expression  =   {$_.UserPrincipalName}
+    },
+    @{  Name        =   "DisplayName";
+        Expression  =   {$_.DisplayName}
+    }
+ )
 
  # Specify the output CSV file path 
  $outputCsvPath = "C:\\Users\\YourUserName\\Documents\\GroupMembers.csv" 
@@ -244,18 +248,26 @@ $groupId = "your-group-id"
 
 # Iterate over each member and add them to the group 
 foreach ($member in $members) { 
-    try{ 
-        New-MgGroupMember -GroupId $groupId -DirectoryObjectId $member.memberObjectId 
-  	 Write-Host "Added $($member.memberObjectId) to the group."  
-    } 
-    Catch{ 
-        Write-Host "Error adding member $($member.memberObjectId):$($_.Exception.Message)" 
-    } 
+    $user = Get-MgUser -UserId $members.UserPrincipalName
+    if($user){
+        try{
+            New-MgGroupMember -GroupId $groupId -DirectoryObjectId $user.Id -ErrorAction SilentlyContinue
+            Write-Host "Added $($user.UserPrincipalName) to the group." -ForegroundColor Green
+        } 
+        Catch{ 
+            Write-Host "Error adding member $($user.UserPrincipalName): $($_.ErrorDetails.Message)" -ForegroundColor Red 
+        } 
+    }
+    else{
+        Write-Host "User $($members.UserPrincipalName) not found." -ForegroundColor Red
+    }
 } 
 
 # Disconnect from Microsoft Graph 
 Disconnect-MgGraph 
 ```
+> [!NOTE]
+> Make sure your CSV file contains the column `UserPrincipalName` with all users you want to add in the group 
  
 ### Remove members in bulk 
 
@@ -271,20 +283,28 @@ $members = Import-Csv -Path "C:\path\to\your\file.csv"
 # Define the Group ID 
 $groupId = "your-group-id" 
 
-# Iterate over each member and add them to the group 
+# Iterate over each member and remove them from the group 
 foreach ($member in $members) { 
-    try{ 
-        Remove-MgGroupMemberByRef -GroupId $groupId -DirectoryObjectId $member.memberObjectId \
-        Write-Host "Removed $($member.memberObjectId) from the group." 
-    } 
-    Catch{ 
-        Write-Host "Error removing member $($member.memberObjectId):$($_.Exception.Message)" 
-    } 
-} 
+    $user = Get-MgUser -UserId $members.UserPrincipalName
+    if($user){
+        try{
+            New-MgGroupMember -GroupId $groupId -DirectoryObjectId $user.Id -ErrorAction SilentlyContinue
+            Write-Host "Removed $($user.UserPrincipalName) from the group." -ForegroundColor Green
+        } 
+        Catch{ 
+            Write-Host "Error removing member $($user.UserPrincipalName): $($_.ErrorDetails.Message)" -ForegroundColor Red 
+        } 
+    }
+    else{
+        Write-Host "User $($members.UserPrincipalName) not found." -ForegroundColor Red
+    }
+}
 
 # Disconnect from Microsoft Graph 
 Disconnect-MgGraph 
 ```
+> [!NOTE]
+> Make sure your CSV file contains the column `UserPrincipalName` with all users you want to remove from the group 
 
 ## Devices 
 
