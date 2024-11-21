@@ -80,7 +80,7 @@ SMS is an add-on feature and requires a [linked subscription](../external-identi
 
 ### Opt-in regions for SMS
 
-Starting January 2025, the certain country codes will be deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to use Microsoft Graph to active them for your application onPhoneMethodLoadStartevent policy. See [Regions requiring opt-in for SMS verification](how-to-region-code-opt-in.md).
+Starting January 2025, certain country codes will be deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to use Microsoft Graph to active them for your application onPhoneMethodLoadStartevent policy. See [Regions requiring opt-in for SMS verification](how-to-region-code-opt-in.md).
 
 ## Next steps
 
