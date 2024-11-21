@@ -59,21 +59,18 @@ items:
 - name: How-to guides 
   expanded: true
   items:
-  - name: Activity logs 
-    expanded: false
-    items:
-    - name: Access activity logs
-      href: howto-access-activity-logs.md
-    - name: Analyze provisioning logs
-      href: howto-analyze-provisioning-logs.md
-    - name: Analyze activity logs with Microsoft Graph
-      href: howto-analyze-activity-logs-with-microsoft-graph.md
-    - name: Archive logs to a storage account
-      href: howto-archive-logs-to-storage-account.md
-    - name: Customize and filter activity logs
-      href: howto-customize-filter-logs.md
-    - name: Download logs
-      href: howto-download-logs.md
+  - name: Access activity logs
+    href: howto-access-activity-logs.md
+  - name: Analyze provisioning logs
+    href: howto-analyze-provisioning-logs.md
+  - name: Analyze activity logs with Microsoft Graph
+    href: howto-analyze-activity-logs-with-microsoft-graph.md
+  - name: Archive logs to a storage account
+    href: howto-archive-logs-to-storage-account.md
+  - name: Customize and filter activity logs
+    href: howto-customize-filter-logs.md
+  - name: Download logs
+    href: howto-download-logs.md
   - name: Diagnostic settings and Log Analytics 
     expanded: true
     items:
@@ -147,7 +144,7 @@ items:
     - name: Sign-ins using legacy authentication  
       href: workbook-legacy-authentication.md
 
-- name: Common troubleshooting scenarios
+- name: Troubleshooting
   expanded: false
   items:
   - name: Common user sign-in errors
