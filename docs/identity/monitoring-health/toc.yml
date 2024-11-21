@@ -11,114 +11,126 @@ items:
   - name: Identity Workbooks
     href: overview-workbooks.md
 
-- name: Identity logs
+- name: Concepts
   expanded: true
   items:
-  - name: Concepts
-    expanded: false
-    items:
     - name: Audit logs
       href: concept-audit-logs.md
     - name: Sign-in logs
-      href: concept-sign-ins.md
-    - name: Interactive sign-in logs
-      href: concept-interactive-sign-ins.md
-    - name: Non-interactive sign-in logs
-      href: concept-noninteractive-sign-ins.md
-    - name: Managed identity sign-in logs
-      href: concept-managed-identity-sign-ins.md
-    - name: Service principal sign-in logs
-      href: concept-service-principal-sign-ins.md
-    - name: Sign-in log activity details
-      href: concept-sign-in-log-activity-details.md
+      expanded: false
+      items:
+      - name: Sign-in logs overview
+        href: concept-sign-ins.md
+      - name: Interactive sign-in logs
+        href: concept-interactive-sign-ins.md
+      - name: Non-interactive sign-in logs
+        href: concept-noninteractive-sign-ins.md
+      - name: Managed identity sign-in logs
+        href: concept-managed-identity-sign-ins.md
+      - name: Service principal sign-in logs
+        href: concept-service-principal-sign-ins.md
+      - name: Sign-in log activity details
+        href: concept-sign-in-log-activity-details.md
+      - name: Flagged sign-ins
+        href: concept-flagged-sign-ins.md
     - name: Provisioning logs
       href: concept-provisioning-logs.md
-    - name: Flagged sign-ins
-      href: concept-flagged-sign-ins.md
     - name: Microsoft Graph activity logs
       href: /graph/microsoft-graph-activity-logs-overview?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
     - name: Activity log schemas
       href: concept-activity-log-schemas.md
-  - name: How-to guides 
-    expanded: true
-    items:
-    - name: Access activity logs
-      href: howto-access-activity-logs.md
-    - name: Analyze provisioning logs
-      href: howto-analyze-provisioning-logs.md
-    - name: Analyze activity logs with Microsoft Graph
-      href: howto-analyze-activity-logs-with-microsoft-graph.md
-    - name: Archive logs to a storage account
-      href: howto-archive-logs-to-storage-account.md
-    - name: Customize and filter activity logs
-      href: howto-customize-filter-logs.md
-    - name: Download logs
-      href: howto-download-logs.md
-  - name: Quickstarts 
-    expanded: false
-    items:
-      - name: Find a sign-in with the Microsoft Entra admin center
-        href: quickstart-analyze-sign-in.md
-      - name: Find a sign-in with Microsoft Graph  
-        href: quickstart-access-log-with-graph-api.md
-- name: Identity reports 
-  expanded: true
-  items:
-  - name: Concepts
-    expanded: false
-    items:
     - name: Microsoft Entra Health
       href: concept-microsoft-entra-health.md
+    - name: Log options for streaming to endpoints
+      href: concept-diagnostic-settings-logs-options.md
+    - name: Monitoring options and considerations
+      href: concept-log-monitoring-integration-options-considerations.md
+    - name: Identity secure score
+      href: concept-identity-secure-score.md
     - name: Usage and insights report
       href: concept-usage-insights-report.md
-  - name: How-to guides 
+
+- name: Quickstarts 
+  expanded: false
+  items:
+    - name: Find a sign-in with the Microsoft Entra admin center
+      href: quickstart-analyze-sign-in.md
+    - name: Find a sign-in with Microsoft Graph  
+      href: quickstart-access-log-with-graph-api.md
+
+- name: How-to guides 
+  expanded: true
+  items:
+  - name: Access activity logs
+    href: howto-access-activity-logs.md
+  - name: Analyze provisioning logs
+    href: howto-analyze-provisioning-logs.md
+  - name: Analyze activity logs with Microsoft Graph
+    href: howto-analyze-activity-logs-with-microsoft-graph.md
+  - name: Archive logs to a storage account
+    href: howto-archive-logs-to-storage-account.md
+  - name: Customize and filter activity logs
+    href: howto-customize-filter-logs.md
+  - name: Download logs
+    href: howto-download-logs.md
+  - name: Diagnostic settings and Log Analytics 
     expanded: true
+    items:
+    - name: Configure diagnostic settings
+      href: howto-configure-diagnostic-settings.md
+    - name: Stream logs to an event hub
+      href: howto-stream-logs-to-event-hub.md
+    - name: Configure a Log Analytics workspace
+      href: tutorial-configure-log-analytics-workspace.md
+    - name: Integrate activity logs with Azure Monitor logs
+      href: howto-integrate-activity-logs-with-azure-monitor-logs.yml  
+    - name: Analyze activity logs in Log Analytics
+      href: howto-analyze-activity-logs-log-analytics.md
+  - name: Microsoft Entra Health 
+    expanded: false
     items:
     - name: How to use Microsoft Entra Health alerts
       href: howto-use-health-scenario-alerts.md
-    - name: How to use Identity Recommendations
-      href: howto-use-recommendations.md
-    - name: How to use Identity Workbooks
-      href: howto-use-workbooks.md
-  - name: Health scenarios
-    expanded: false
-    items:
     - name: Sign-ins requiring a compliant or managed device
       href: scenario-health-sign-ins-compliant-managed-device.md
     - name: Sign-ins requiring MFA
       href: scenario-health-sign-ins-mfa.md
     - name: Sign-ins to applications using SAML auth
-      href: scenario-health-sign-ins-saml-auth.md      
-  - name: Recommendations
+      href: scenario-health-sign-ins-saml-auth.md 
+  - name: Microsoft Entra Recommendations 
     expanded: false
     items:
-      - name: Enable insider risk Conditional Access condition
-        href: recommendation-insider-risk-condition.md
-      - name: Migrate ADAL to MSAL
-        href: recommendation-migrate-from-adal-to-msal.md
-      - name: Migrate apps from AD FS to Microsoft Entra ID
-        href: recommendation-migrate-apps-from-adfs-to-azure-ad.md
-      - name: Migrate apps and service principals to Microsoft Graph
-        href: recommendation-migrate-to-microsoft-graph-api.md
-      - name: Migrate from MFA server to Microsoft Entra MFA
-        href: recommendation-migrate-to-microsoft-entra-mfa.md
-      - name: Migrate to Microsoft authenticator
-        href: recommendation-migrate-to-authenticator.md
-      - name: Switch to Conditional Access MFA
-        href: recommendation-turn-off-per-user-mfa.md
-      - name: Minimize MFA prompts from known devices
-        href: recommendation-mfa-from-known-devices.md
-      - name: Remove unused apps
-        href: recommendation-remove-unused-apps.md
-      - name: Remove unused credentials from apps
-        href: recommendation-remove-unused-credential-from-apps.md
-      - name: Renew expiring application credentials
-        href: recommendation-renew-expiring-application-credential.md
-      - name: Renew expiring service principal credentials
-        href: recommendation-renew-expiring-service-principal-credential.md
-  - name: Workbooks
+    - name: How to use Microsoft Entra Recommendations
+      href: howto-use-recommendations.md
+    - name: Enable insider risk Conditional Access condition
+      href: recommendation-insider-risk-condition.md
+    - name: Migrate ADAL to MSAL
+      href: recommendation-migrate-from-adal-to-msal.md
+    - name: Migrate apps from AD FS to Microsoft Entra ID
+      href: recommendation-migrate-apps-from-adfs-to-azure-ad.md
+    - name: Migrate apps and service principals to Microsoft Graph
+      href: recommendation-migrate-to-microsoft-graph-api.md
+    - name: Migrate from MFA server to Microsoft Entra MFA
+      href: recommendation-migrate-to-microsoft-entra-mfa.md
+    - name: Migrate to Microsoft authenticator
+      href: recommendation-migrate-to-authenticator.md
+    - name: Switch to Conditional Access MFA
+      href: recommendation-turn-off-per-user-mfa.md
+    - name: Minimize MFA prompts from known devices
+      href: recommendation-mfa-from-known-devices.md
+    - name: Remove unused apps
+      href: recommendation-remove-unused-apps.md
+    - name: Remove unused credentials from apps
+      href: recommendation-remove-unused-credential-from-apps.md
+    - name: Renew expiring application credentials
+      href: recommendation-renew-expiring-application-credential.md
+    - name: Renew expiring service principal credentials
+      href: recommendation-renew-expiring-service-principal-credential.md
+  - name: Microsoft Entra Workbooks 
     expanded: false
     items:
+    - name: How to use Microsoft Entra Workbooks
+      href: howto-use-workbooks.md
     - name: Authentication prompts analysis
       href: workbook-authentication-prompts-analysis.md
     - name: Conditional access gap analyzer
@@ -134,32 +146,7 @@ items:
     - name: Sign-ins using legacy authentication  
       href: workbook-legacy-authentication.md
 
-- name: Identity monitoring
-  expanded: true
-  items:
-  - name: Concepts
-    expanded: false
-    items:
-    - name: Monitoring options and considerations
-      href: concept-log-monitoring-integration-options-considerations.md
-    - name: Log options for streaming to endpoints
-      href: concept-diagnostic-settings-logs-options.md
-
-  - name: How-to guides 
-    expanded: true
-    items:
-    - name: Configure diagnostic settings
-      href: howto-configure-diagnostic-settings.md
-    - name: Stream logs to an event hub
-      href: howto-stream-logs-to-event-hub.md
-    - name: Configure a Log Analytics workspace
-      href: tutorial-configure-log-analytics-workspace.md
-    - name: Integrate activity logs with Azure Monitor logs
-      href: howto-integrate-activity-logs-with-azure-monitor-logs.yml  
-    - name: Analyze activity logs in Azure Monitor logs
-      href: howto-analyze-activity-logs-log-analytics.md
-
-- name: Common troubleshooting scenarios
+- name: Troubleshooting
   expanded: false
   items:
   - name: Common user sign-in errors
