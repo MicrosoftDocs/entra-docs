@@ -79,11 +79,11 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
    1. Enter **Display Name**.
    1. Click **Create**.
 
-      :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to create a PKI.":::
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to create a PKI.":::
 
    1. To delete a PKI, select the PKI and select **Delete**. If the PKI has CAs in it, enter the name of the PKI to acknowledge the deletion of all CAs within it and select **Delete**.
 
-      :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
 
    1. Select **Columns** to add or delete columns.
    1. Select **Refresh** to refresh the list of PKIs.
@@ -98,7 +98,7 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
    1. Select **Save**.
    1. To delete a CA certificate, select the certificate and select **Delete**.
 
-      :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/delete-certificate-authority.png" alt-text="Diagram of how to delete a CA certificate.":::
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/delete-certificate-authority.png" alt-text="Diagram of how to delete a CA certificate.":::
    
    1. Select **Columns** to add or delete columns.
    1. Select **Refresh** to refresh the list of CAs.
@@ -106,7 +106,7 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
 1. To upload all CAs at once into the PKI container:
    1. Create a PKI container object, or open one.
    1. Select **Upload PKI**.
-   1. Enter the http internet facing URL where the . p7b file is available.
+   1. Enter the http internet facing URL where the .p7b file is available.
    1. Enter the SHA256 checksum of the file.
    1. Select the upload.
    1. Upload PKI is an asynchronous process. As each CA is uploaded, it's available in the PKI. Completion of PKI upload can take up to 30 minutes.
