@@ -28,9 +28,9 @@ The Aquera catalog of over 900 pre-built connectors supports multiple integratio
 * AppSource Marketplace Listings: https://appsource.microsoft.com/en-us/marketplace/apps?search=aquera&page=1
 
 #### Popular applications supported
-* HRIS Applications: Over 40 including Oracle Cloud HCM, Dayforce, UKG Pro/Ready/Pro Workforce, ADP (all US and international versions), Workday, SAP HR, Greenhouse, iCIMS, SuccessFactors, HiBob, BambooHR, Paylocity, Paycor, PeopleSoft, Cornerstone, Lever
-* ERP Applications: Netsuite, Oracle Cloud ERP, Oracle EBS, SAP ERP Central Component (ECC), SAP S/4HANA, Sage Intacct, PeopleSoft ERP
-* EHR Applications: Epic, Cerner, PointClickCare, MyAvatar, Homecare Homebase
+* Human resources information systems applications: Over 40 including Oracle Cloud HCM, Dayforce, UKG Pro/Ready/Pro Workforce, ADP (all US and international versions), Workday, SAP HR, Greenhouse, iCIMS, SuccessFactors, HiBob, BambooHR, Paylocity, Paycor, PeopleSoft, Cornerstone, Lever
+* Enterprise resource planning applications: Netsuite, Oracle Cloud ERP, Oracle EBS, SAP ERP Central Component (ECC), SAP S/4HANA, Sage Intacct, PeopleSoft ERP
+* Electronic health record applications: Epic, Cerner, PointClickCare, MyAvatar, Homecare Homebase
 * Student Information Systems: Ellucian Banner, PeopleSoft Campus Solutions
 * Databases: Oracle, MySQL, SQLServer, MongoDB, PostgreSQL, AS/400 DB2, DB2, Snowflake, Redshift
 * Directories and IDPs: AS/400, Resource Access Control Facility (RACF), ACF2, TopSecret, OpenLDAP, IDP Directories
