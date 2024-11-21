@@ -146,7 +146,7 @@ The trusted CA list is set to the subject of the CAs uploaded by the tenant in t
 For more information about issuer hints, see [Understanding Issuer Hints](concept-certificate-based-authentication-technical-deep-dive.md#understanding-issuer-hints-preview).
 
 By default, the subject names of all CAs in the Microsoft Entra trust store are sent as hints. 
-If you want to send back only specific CAs as a hint, set the issuer hint attribute **isIssuerHintEnabled** to `true`. 
+If you want to send back a hint with only specific CAs, set the issuer hint attribute **isIssuerHintEnabled** to `true`. 
 
 There's a character limit of 16 KB for the issuer hints (subject name of the CA) that the server can send back to the TLS client. As a good practice, set the attribute **isIssuerHintEnabled** to true only for the CAs that issue user certificates. 
 
