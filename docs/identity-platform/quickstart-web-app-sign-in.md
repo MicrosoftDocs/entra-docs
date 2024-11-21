@@ -1,6 +1,6 @@
 ---
 title: Quickstart - Sign in users in a sample web app
-description: Web app quickstart that shows how to configure a sample web app that signs in employees or customers by using Microsoft identity platform
+description: Web app quickstart that shows how to configure a sample web app that signs in employees in workforce tenant or customers in external tenant
 author: kengaderdus
 manager: mwongerapk
 ms.service: identity-platform
@@ -14,18 +14,18 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Sign in users in a sample web app
 
-[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
-
 ::: zone pivot="workforce"
 
 In this quickstart, you use a sample web app to show you how to sign in users and call Microsoft Graph API in your workforce tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
+
+[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
 ## Prerequisites
 
 #### [Node](#tab/node-workforce)
 
 * An Azure subscription. [Create an Azure subscription for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Node.js](https://nodejs.org/en/download/)
+* [Node.js](https://nodejs.org/en/download/package-manager)
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * A Microsoft Entra workforce tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
 
@@ -203,10 +203,10 @@ EXPRESS_SESSION_SECRET=6DP6v09eLiW7f1E65B8k
 
 ## Run and test sample web app
 
+You've configured your sample app. You can proceed to run and test it.
 
 #### [Node](#tab/node-workforce)
 
-Run the project by using Node.js.
 
 1. To start the server, run the following commands from within the project directory:
 
@@ -314,6 +314,8 @@ The following diagram demonstrates how the sample app works:
 ::: zone pivot="external"
 
 In this quickstart, you use a sample web app to show you how to sign in users in your external tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
+
+[!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
 ## Prerequisites
 
@@ -580,7 +582,7 @@ You can now test the sample Node.js web app. You need to start the Node.js serve
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
-1. If you choose the sign-up option, after filling in your email, one-time passcode, new password and more account details, you complete the whole sign-up flow. You see a page similar to the following screenshot. You see a similar page if you choose the sign-in option.
+1. If you choose the sign-up option, after filling in your email, one-time passcode, new password, and more account details, you complete the whole sign-up flow. You see a page similar to the following screenshot. You see a similar page if you choose the sign-in option.
 
     :::image type="content" source="media/how-to-web-app-node-sample-sign-in/web-app-node-view-claims.png" alt-text="Screenshot of view ID token claims.":::
 
@@ -588,7 +590,7 @@ You can now test the sample Node.js web app. You need to start the Node.js serve
 
 ### How it works
 
-When users select the **Sign in** link, the app initiates an authentication request and redirects users to Microsoft Entra External ID. On the sign-in or sign-up page that appears, once a user successfully signs in or creates an account, Microsoft Entra External ID returns an ID token to the app. The app validates the ID token, reads the claims, and returns a secure page to the users.  
+When users select the **Sign in** link, the app initiates an authentication request and redirects users to Microsoft Entra External ID. On the sign-in or sign-up page that appears, once a user successfully signs in, or creates an account, Microsoft Entra External ID returns an ID token to the app. The app validates the ID token, reads the claims, and returns a secure page to the users.  
 
 When the users select the **Sign out** link, the app clears its session, then redirect the user to Microsoft Entra External ID sign-out endpoint to notify it that the user has signed out.
 

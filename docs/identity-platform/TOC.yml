@@ -195,10 +195,10 @@
           href: quickstart-web-app-sign-in.md?pivots=workforce
           displayName: Node, ASP.NET,  ASP.NET Core, Python, Java Spring
         - name: Call an API
-          href: quickstart-web-app-node-sign-in-call-api.md
+          href: quickstart-web-app-node-sign-in-call-api.md?pivots=workforce
           displayName: Node.js, Nodejs, Nodejs web app
         - name: Edit profile
-          href: quickstart-web-app-node-sign-in-edit-profile.md
+          href: quickstart-web-app-node-sign-in-edit-profile.md?pivots=workforce
           displayName: Node.js, Nodejs, Nodejs web app
     - name: Tutorials
       items:
@@ -429,16 +429,8 @@
   items:
     - name: Service/daemon authentication
       href: index-service.yml
-    - name: Quickstart
-      items:
-        - name: .NET
-          href: quickstart-daemon-dotnet-acquire-token.md
-        - name: Java
-          href: quickstart-daemon-app-java-acquire-token.md
-        - name: Node.js
-          href: quickstart-console-app-nodejs-acquire-token.md
-        - name: Python
-          href: quickstart-daemon-app-python-acquire-token.md
+    - name: Quickstarts
+      href: quickstart-daemon-app-call-api.md?pivots=workforce
     - name: Tutorials
       items:
         - name: .NET
