@@ -22,12 +22,10 @@ To use the enriched logs, you need the following roles, configurations, and subs
 ### Roles and Permissions
 
 - A **Global Administrator** role is required to enable the enriched Microsoft 365 logs.
-- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Configurations
 
-- **Microsoft Profile** - Ensure the Microsoft profile is enabled. Microsoft traffic forwarding profile is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
+- **Microsoft Profile** - Ensure the Microsoft traffic profile is enabled. Microsoft traffic forwarding profile is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
 - **Microsoft 365 Common and Office Online Traffic Policy** - Required for log enrichment. Ensure it's enabled. 
 - **Tenant sending data** - Confirms that traffic, as configured in forwarding profiles, is accurately tunneled to the Global Secure Access service.
 - **Diagnostic Settings Configuration** - Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace. The requirements for each endpoint differ and are outlined in the Configure Diagnostic settings section of this article.
@@ -35,7 +33,6 @@ To use the enriched logs, you need the following roles, configurations, and subs
 ### Subscriptions
 
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- **Microsoft 365 E3 License** - Recommended for employing the Microsoft traffic forwarding profile. 
 
 You must configure the endpoint for where you want to route the logs prior to configuring Diagnostic settings. The requirements for each endpoint vary and are described in the [Configure Diagnostic settings](#configure-diagnostic-settings) section.
 
