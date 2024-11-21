@@ -32,7 +32,7 @@ The sample app you use in this quickstart acquires an access token to call Micro
 
 #### [Node](#tab/node-workforce)
 
-* [Node.js](https://nodejs.org/en/download/).
+* [Node.js](https://nodejs.org/en/download/package-manager).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [Python](#tab/python-workforce)

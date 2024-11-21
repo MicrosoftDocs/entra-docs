@@ -25,7 +25,7 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 #### [Node](#tab/node-workforce)
 
 * An Azure subscription. [Create an Azure subscription for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Node.js](https://nodejs.org/en/download/)
+* [Node.js](https://nodejs.org/en/download/package-manager)
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * A Microsoft Entra workforce tenant. For more information, see [how to get a Microsoft Entra tenant.](./quickstart-create-new-tenant.md)
 
