@@ -139,7 +139,7 @@ In this example, a user named Bala Sandhu already provisioned their FIDO2 securi
 ### Manage security key biometric, PIN, or reset security key
 
 * Windows 10 version 1903 or higher
-   * Users can open **Windows Settings** on their device > **Accounts** > **Security Key**
+   * On a device, users can go to **Windows Settings** > **Accounts** > **Sign-in options** > **Security Key**, and then select the **Manage** button.
    * Users can change their PIN, update biometrics, or reset their security key
 
 ## Troubleshooting and feedback
