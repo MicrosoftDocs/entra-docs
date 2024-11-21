@@ -79,11 +79,11 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
    1. Enter **Display Name**.
    1. Click **Create**.
 
-   :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to create a PKI.":::
+      :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to create a PKI.":::
 
    1. To delete a PKI, select the PKI and select **Delete**. If the PKI has CAs in it, enter the name of the PKI to acknowledge the deletion of all CAs within it and select **Delete**.
 
-   :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
+      :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
 
    1. Select **Columns** to add or delete columns.
    1. Select **Refresh** to refresh the list of PKIs.
@@ -98,7 +98,7 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
    1. Select **Save**.
    1. To delete a CA certificate, select the certificate and select **Delete**.
 
-   :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/delete-certificate-authority.png" alt-text="Diagram of how to delete a CA certificate.":::
+      :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/delete-certificate-authority.png" alt-text="Diagram of how to delete a CA certificate.":::
    
    1. Select **Columns** to add or delete columns.
    1. Select **Refresh** to refresh the list of CAs.
@@ -112,7 +112,7 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
    1. Upload PKI is an asynchronous process. As each CA is uploaded, it's available in the PKI. Completion of PKI upload can take up to 30 minutes.
    1. Select **Refresh** to refresh the CAs.
 
-   To generate the SHA256 checksum of the PKI .p7b file, run the command:
+   To generate the SHA256 checksum of the PKI .p7b file, run this command:
 
    ```powershell
    Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
@@ -159,7 +159,7 @@ The following examples show how to use Microsoft Graph to run Create, Read, Upda
 
 #### Create a PKI container object
 
-```http
+```https
 #### Request body
 
 
@@ -172,21 +172,21 @@ Content-Type: application/json
 
 #### Get all the PKI objects
 
-```msgraph-interactive
+```https
 GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations
 ConsistencyLevel: eventual
 ```
 
 #### Get PKI object by PKI-id
 
-```msgraph-interactive
+```https
 GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/
 ConsistencyLevel: eventual
 ```
 
 #### Upload CAs with a .p7b file
 
-```http
+```https
 #### Request body
 
 PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
@@ -199,39 +199,40 @@ Content-Type: application/json
 
 #### Get all CAs in a PKI
 
-```msgraph-interactive
+```https
 GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities
 ConsistencyLevel: eventual
 ```
 
 #### Get a specific CA within a PKI by CA-id
 
-```msgraph-interactive
+```https
 GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
 ConsistencyLevel: eventual
 ```
 
 #### Update specific CA issuer hints flag
 
-```http
-#### Request body
-
+```https
 PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
 Content-Type: application/json
 {
    "isIssuerHintEnabled": true
 }
 ```
+
 Configure certificate authorities (CA) using PowerShell
 For this configuration, you can use [Microsoft Graph PowerShell] (/powershell/microsoftgraph/installation).
 
 1. Start PowerShell with administrator privileges.
 1. Install and import the Microsoft Graph PowerShell SDK.
+
    ```powershell
    Install-Module Microsoft.Graph -Scope AllUsers
    Import-Module Microsoft.Graph.Authentication
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
+
 1. Connect to the tenant and accept all.
 
    ```powershell
@@ -256,12 +257,11 @@ Any CRUD operations on a PKI or CA within the trust store are logged into the Mi
 
 **Question**: How do you generate SHA256 checksum for PKI file?
 
-**Answer**: To generate the SHA256 checksum of the PKI.p7b file, run the command: 
+**Answer**: To generate the SHA256 checksum of the PKI.p7b file, run this command: 
 
 ```powershell
 Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
 ```
-
 
 ## Step 2: Enable CBA on the tenant
 
