@@ -38,7 +38,7 @@ items:
     items:
     - name: Samples for guest user self-service signup
       href: code-samples-self-service-sign-up.md
-    - name: Code and Azure PowerShell samples
+    - name: Code and Microsoft Graph PowerShell samples
       href: code-samples.md
   - name: Concepts
     expanded: false

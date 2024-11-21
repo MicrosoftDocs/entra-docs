@@ -1,9 +1,9 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 10/01/2024
+ms.date: 11/04/2024
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: whats-new
  
 ms.author: cmulligan
@@ -15,6 +15,15 @@ manager: CelesteDG
 # What's new in docs: External ID in external tenants
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
+
+## October 2024
+
+### Updated articles
+
+- [Register an app in your external tenant](how-to-register-ciam-app.md) -  Implicit flow testing updates
+- [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md) -  SMS-based authentication updates
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) -  SMS-based authentication updates
+- [Create self-service sign-up user flows for apps in external tenants](how-to-user-flow-sign-up-sign-in-customers.md) -  Graph API updates
 
 ## September 2024
 
@@ -45,12 +54,4 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 - [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Updated SMS as an MFA method 
 - [Create self-service sign-up user flows for apps in external tenants](how-to-user-flow-sign-up-sign-in-customers.md) - Added MFA options
 - [Service limits and restrictions](reference-service-limits.md) - Added telephony throttling limits
-
-## July 2024
-
-### Updated articles
-
-- [Call an API in a sample Node.js daemon application](sample-daemon-node-call-api.md) - Editorial updates
-- [Sign in users in a sample Electron desktop application](how-to-desktop-app-electron-sample-sign-in.md) - Added user flow testing instructions
-- [Sign in users and edit profile in a sample Node.js web application](sample-web-app-node-sign-in-edit-profile.md) - Editorial updates
 

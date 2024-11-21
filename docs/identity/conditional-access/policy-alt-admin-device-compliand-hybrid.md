@@ -46,7 +46,7 @@ The following steps help create a Conditional Access policy to require multifact
       > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
 1. Under **Access controls** > **Grant**.
    1. Select **Require device to be marked as compliant**, and **Require Microsoft Entra hybrid joined device**
    1. **For multiple controls** select **Require one of the selected controls**.
@@ -57,7 +57,7 @@ The following steps help create a Conditional Access policy to require multifact
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
 > [!NOTE]
-> You can enroll your new devices to Intune even if you select **Require device to be marked as compliant** for **All users** and **All cloud apps** using the previous steps. **Require device to be marked as compliant** control does not block Intune enrollment. 
+> You can enroll your new devices to Intune even if you select **Require device to be marked as compliant** for **All users** and **All resources (formerly 'All cloud apps')** using the previous steps. **Require device to be marked as compliant** control does not block Intune enrollment. 
 
 ### Known behavior
 

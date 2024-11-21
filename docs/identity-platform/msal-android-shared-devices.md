@@ -268,6 +268,7 @@ These Microsoft applications support Microsoft Entra shared device mode:
 - [Microsoft 365](https://apps.apple.com/us/app-bundle/microsoft-365/id1450038993?mt=12)
 - [Microsoft Power BI Mobile](/power-bi/consumer/mobile/mobile-app-shared-device-mode)
 - [Microsoft Edge](/microsoft-edge/)
+- [Managed Home Screen](/mem/intune/apps/app-configuration-managed-home-screen-app)
 
 ## Third-party MDMs that support shared device mode
 

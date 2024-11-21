@@ -193,7 +193,7 @@ When a user is prompted to change a password, they're first required to complete
 
 The following restrictions apply when you configure a policy by using the password change control:  
 
-- The policy must be assigned to "all cloud apps." This requirement prevents an attacker from using a different app to change the user's password and resetting their account risk by signing in to a different app.
+- The policy must be assigned to **All resources**. This requirement prevents an attacker from using a different app to change the user's password and resetting their account risk by signing in to a different app.
 - **Require password change** can't be used with other controls, such as requiring a compliant device.  
 - The password change control can only be used with the user and group assignment condition, cloud app assignment condition (which must be set to "all"), and user risk conditions.
 

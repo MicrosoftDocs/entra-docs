@@ -60,8 +60,6 @@ As part of this procedure, you are required to provide a user security token you
 
 1. Set the **Provisioning Mode** to **Automatic**. 
 
-    ![Screenshot shows the Jive Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](./media/jive-provisioning-tutorial/provisioning.png)
-
 1. Under the **Admin Credentials** section, provide the following configuration settings:
    
     1. In the **Jive Admin User Name** textbox, type a Jive account name that has the **System Administrator** profile in Jive.com assigned.

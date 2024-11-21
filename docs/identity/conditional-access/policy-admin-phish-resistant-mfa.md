@@ -60,7 +60,7 @@ For external user scenarios, the MFA authentication methods that a resource tena
       > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
 1. Under **Access controls** > **Grant**, select **Grant access**.
    1. Select **Require authentication strength**, then select **Phishing-resistant MFA strength** from the list.
    1. Select **Select**.

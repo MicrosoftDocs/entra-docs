@@ -4,7 +4,7 @@ description: Learn how to configure your external tenant for authentication with
 author: garrodonnell
 manager: celestedg
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 07/03/2024
 ms.author: godonnell

@@ -1,6 +1,6 @@
 ---
-title: Properties of a B2B guest user
-description: Microsoft Entra B2B collaboration guest user properties and states before and after invitation redemption.
+title: B2B guest user properties 
+description: Learn about the properties of a B2B guest user in Microsoft Entra External ID. Understand user types, authentication methods, and how to manage guest user access and permissions.
 
 ms.service: entra-external-id
 ms.topic: how-to
@@ -13,7 +13,7 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an IT admin managing external collaboration in Microsoft Entra, I want to understand the properties and management options for B2B collaboration users, so that I can effectively invite and manage external users accessing apps and resources in my organization.
 ---
 
-# Properties of a Microsoft Entra B2B collaboration user
+# Understand and manage the properties of B2B guest users
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 

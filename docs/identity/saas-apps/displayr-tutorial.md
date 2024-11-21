@@ -97,15 +97,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In addition to above, Displayr application expects few more attributes to be passed back in SAML response. In the **User Attributes & Claims** section on the **Group Claims (Preview)** dialog, perform the following steps:
 
-   a. Click **Add a group claim**.
+   1. Click **Add a group claim**.
 
-      ![Screenshot that shows the "Group Claims (Preview) window with settings selected.](./media/displayr-tutorial/claims.png)
+   1. Select **All Groups** from the radio list.
 
-   b. Select **All Groups** from the radio list.
+   1. Select **Source Attribute** of **Group ID**.
 
-   c. Select **Source Attribute** of **Group ID**.
-
-   f. Click **Save**.
+   1. Click **Save**.
 
 1. On the **Set-up Displayr** section, copy the appropriate URL(s) based on your requirement.
 

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/27/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -21,7 +21,10 @@ This article shows you how to customize the columns and then filter the logs to 
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
+- A working Microsoft Entra tenant with the appropriate Microsoft Entra license associated with it.
+    - For a full list of license requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
+- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
+    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
 
 ## How to access the activity logs in the Microsoft Entra admin center
 
@@ -44,7 +47,7 @@ For example, if you're looking into changes to Microsoft Entra groups, you can a
 
 ### Customize the layout of the audit logs
 
-You can customize the columns in the audit logs to view only the information you need. The **Service**, **Category** and **Activity** columns are related to each other, so these columns should always be visible.
+You can customize the columns in the audit logs to view only the information you need. The **Service**, **Category**, and **Activity** columns are related to each other, so these columns should always be visible.
 
 ![Screenshot of the Columns button on the audit logs.](media/howto-customize-filter-logs/audit-log-columns.png)
 
@@ -228,7 +231,7 @@ In addition to the filters of the default view, you can set the following filter
 
 ---
 
-## Next steps
+## Related content
 
 - [Analyze a sign-in error](quickstart-analyze-sign-in.md)
 - [Troubleshoot sign-in errors](howto-troubleshoot-sign-in-errors.md)

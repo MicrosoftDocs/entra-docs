@@ -358,7 +358,7 @@ When you select the domain that you want to federate, Microsoft Entra Connect pr
 
 ## Configuring federation with PingFederate
 You can configure PingFederate with Microsoft Entra Connect in just a few clicks. The following prerequisites are required:
-- PingFederate 8.4 or later. For more information, see [PingFederate integration with Microsoft Entra ID and Microsoft 365](https://docs.pingidentity.com/r/pingfederate-azuread-office365-integration/pingfederate_azuread_office365_integration) in the Ping Identity documentation.
+- PingFederate 8.4 or later. For more information, see [PingFederate integration with Microsoft Entra ID and Microsoft 365](https://docs.pingidentity.com/integrations/azure/azure_ad_and_office_365_integration_guide/pf_azuread_office365_integration_enabling_federated_authentication.html) in the Ping Identity documentation.
 - A TLS/SSL certificate for the federation service name that you intend to use (for example, sts.contoso.com).
 
 ### Verify the domain
