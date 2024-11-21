@@ -33,11 +33,12 @@ Because subdomains inherit the authentication type of the root domain by default
 
    ```powershell
    Connect-MgGraph -Scopes "Domain.ReadWrite.All"
-    $param = @{
+   
+   $param = @{
       id="test.contoso.com"
       AuthenticationType="Federated"  
      }
-   New-MgDomain -Name "child.mydomain.com" -Authentication Federated
+   New-MgDomain -BodyParameter $param
    ```
 
 1. Use the following example to GET the domain. Because the domain isn't a root domain, it inherits the root domain authentication type. Your command and results might look as follows, using your own tenant ID:
