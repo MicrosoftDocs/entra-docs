@@ -135,6 +135,8 @@ items:
         href: configure-password-single-sign-on-non-gallery-applications.md
       - name: Perform One-click SSO
         href: one-click-sso-tutorial.md
+      - name: Secure a simple Java web application with OpenID Connect
+        href: secure-java-jboss-eap-apps-openid-connect.md
     - name: Manage access
       items:
       - name: Manage consent and permissions
