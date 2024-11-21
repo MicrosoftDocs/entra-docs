@@ -29,10 +29,39 @@ To complete the steps in this process, you must have the following prerequisites
 To extract connector logs, you must enable verbose logging on the connector machine and then stream the logs to Log Analytics.
 
 ### Enable verbose logging on the connector machine
-Verbose logs can be very useful when debugging Microsoft Entra Private Network Connector side issues for Entra Private Access. Verbose logging is not enabled in the connector by default. To enable verbose logging:
+Verbose logs are useful when debugging Microsoft Entra Private Network Connector side issues for Entra Private Access. Verbose logging is not enabled in the connector by default. To enable verbose logging:
 
 1. Locate the installation directory of the connector at `C:\Program Files\Microsoft Entra Private Network Connector`.
-2. 
+2. Create a folder on in the local directory with write permissions **On**. 
+    To verify write permissions, 
+    - Right-click on the folder you created, then click **Properties**.  
+    - Go to the **Security** tab and make sure the **Write** property is checked for **Allow**.
+    - If **Write** is not checked, select **edit**. 
+    - On the pop-up window, select **allow** for the **write** row, then click **apply**. 
+3. Right-click on a text editor application such as Notepad or Notepad++, select **Run as Administrator**, and open the file `MicrosoftEntraPrivateNetworkConnector.exe.config`to edit. 
+4. Add the following higlighted section from <system.diagnostics> to </system.diagnostrics> to the file in that location.
+
+``` json
+<?xml version="1.0" encoding="utf-8" ?> 
+<configuration> 
+    <runtime> 
+    <gcServer enabled="true"/> 
+    </runtime> 
+    <appSettings> 
+    <add key="TraceFilename" value="MicrosoftEntraPrivateNetworkConnector.log" /> 
+    </appSettings> 
+    <system.diagnostics> 
+     <trace autoflush="true" indentsize="4"> 
+     <listeners> 
+     <add name="consoleListener" type="System.Diagnostics.ConsoleTraceListener" /> 
+     <add name="textWriterListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="C:\logs\connector_logs.log" /> 
+     <remove name="Default" /> 
+     </listeners> 
+     </trace> 
+     </system.diagnostics>
+
+</configuration> 
+5.  
 
 ### Set up Microsoft Azure Arc for the on-premises machine
 
