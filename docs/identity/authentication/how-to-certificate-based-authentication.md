@@ -5,7 +5,7 @@ description: Topic that shows how to configure Microsoft Entra certificate-based
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/24/2024
+ms.date: 11/21/2024
 
 ms.author: justinha
 author: vimrang
@@ -141,28 +141,24 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
 
 ### Understanding isIssuerHintEnabled attribute on CA
 
-Issuer hints send back a Trusted CA Indication as part of the TLS handshake. 
-The trusted CA list is set to subject of the CAs uploaded by the tenant in the Entra trust store. 
+Issuer hints send back a Trusted CA Indication as part of the Transport Layer Security (TLS) handshake. 
+The trusted CA list is set to the subject of the CAs uploaded by the tenant in the Entra trust store. 
 For more information about issuer hints, see [Understanding Issuer Hints](concept-certificate-based-authentication-technical-deep-dive.md#understanding-issuer-hints-preview).
 
-By default, the subject names of all the CAs in the Entra trust store are sent as hints. 
-If you want only specific CAs to be sent back as a hint, set the issuer hint attribute **isIssuerHintEnabled** to true. 
+By default, the subject names of all CAs in the Microsoft Entra trust store are sent as hints. 
+If you want to send back only specific CAs as a hint, set the issuer hint attribute **isIssuerHintEnabled** to `true`. 
 
-There's a character limit of 16 KB for the issuer hints (subject name of the CA) that the server can send back to the TLS client. So it would be good to set the attribute **isIssuerHintEnabled** to true only for the CAs that issue user certificates. 
+There's a character limit of 16 KB for the issuer hints (subject name of the CA) that the server can send back to the TLS client. As a good practice, set the attribute **isIssuerHintEnabled** to true only for the CAs that issue user certificates. 
 
-If multiple intermediate CAs from the same root certificate issue the end user certificates, then by default all the certificates would show up in the certificate picker. But if you set **isIssuerHintEnabled** to true for specific CAs, only the proper user certificates appear in the certificate picker. To enable **isIssuerHintEnabled**, edit the CA and update the value to true.
+If multiple intermediate CAs from the same root certificate issue the end user certificates, then by default all the certificates show up in the certificate picker. But if you set **isIssuerHintEnabled** to `true` for specific CAs, only the proper user certificates appear in the certificate picker. To enable **isIssuerHintEnabled**, edit the CA, and update the value to `true`.
 
 ### Configure certificate authorities using the Microsoft Graph APIs 
 Microsoft Graph APIs can be used to configure CAs. 
-
 The following examples show how to use Microsoft Graph to run Create, Read, Update, or Delete (CRUD) operations for a PKI or CA.
 
 #### Create a PKI container object
 
-```https
-#### Request body
-
-
+```http
 PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/
 Content-Type: application/json
 {
@@ -172,23 +168,21 @@ Content-Type: application/json
 
 #### Get all the PKI objects
 
-```https
+```http
 GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations
 ConsistencyLevel: eventual
 ```
 
 #### Get PKI object by PKI-id
 
-```https
+```http
 GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/
 ConsistencyLevel: eventual
 ```
 
 #### Upload CAs with a .p7b file
 
-```https
-#### Request body
-
+```http
 PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
 Content-Type: application/json
 {
@@ -199,21 +193,21 @@ Content-Type: application/json
 
 #### Get all CAs in a PKI
 
-```https
+```http
 GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities
 ConsistencyLevel: eventual
 ```
 
 #### Get a specific CA within a PKI by CA-id
 
-```https
+```http
 GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
 ConsistencyLevel: eventual
 ```
 
 #### Update specific CA issuer hints flag
 
-```https
+```http
 PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
 Content-Type: application/json
 {
@@ -251,7 +245,7 @@ Any CRUD operations on a PKI or CA within the trust store are logged into the Mi
 
 **Answer**: Check if the PKI file is valid and can be accessed without any issues. The max size of PKI file should be 
 
-**Question**: What is the SLA for PKI upload?
+**Question**: What is the service level agreement (SLA) for PKI upload?
 
 **Answer**: PKI upload is an asynchronous operation and may take up to 30 minutes for completion.
 
@@ -324,7 +318,7 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
    To create a rule by Policy OID, select **Policy OID**.
 
    1. Enter a value for **Policy OID**.
-   1. Select **Multifactor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. .
+   1. Select **Multifactor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-policy-oid.png" alt-text="Screenshot of mapping to Policy OID.":::
 
@@ -373,9 +367,9 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 
    1. Select **Save**.
 
-   The sign-in log shows which binding was used and the details from certificate.
+      The sign-in log shows which binding was used for sign-in, and the details from the certificate.
 
-   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/sign-in-logs.png" alt-text="Screenshot of sign-in log.":::
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/sign-in-logs.png" alt-text="Screenshot of sign-in log.":::
 
 1. Select **Ok** to save any custom rule.
 
@@ -489,13 +483,13 @@ Let's walk through a scenario where we validate strong authentication. We create
 
 The username binding policy helps validate the certificate of the user. There are three bindings that are supported for the username binding policy:
 
-- IssuerAndSerialNumber > CertificateUserIds 
-- IssuerAndSubject > CertificateUserIds 
-- Subject > CertificateUserIds 
+- **IssuerAndSerialNumber** > **CertificateUserIds** 
+- **IssuerAndSubject** > **CertificateUserIds** 
+- **Subject** > **CertificateUserIds** 
 
-By default, Microsoft Entra ID maps Principal Name in the certificate to UserPrincipalName in the user object to determine the user. An Authentication Policy Administrator can override the default and create a custom mapping, as explained earlier in Step 4.
+By default, Microsoft Entra ID maps **Principal Name** in the certificate to **UserPrincipalName** in the user object to determine the user. An Authentication Policy Administrator can override the default and create a custom mapping, as explained earlier.
 
-Before enabling the new bindings, an Authentication Policy Administrator must make sure the correct values for the bindings are updated in the user object attribute Certificate UserIds for the corresponding username bindings. 
+An Authentication Policy Administrator needs to enable the new bindings. To prepare, they must make sure the correct values for the corresponding username bindings are updated in the **CertificateUserIds** attribute of the user object: 
 
 - For cloud only users, use the [Microsoft Entra admin center](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#update-certificate-user-ids-in-the-azure-portal) or [Microsoft Graph APIs](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#update-certificateuserids-using-microsoft-graph-queries) to update the value in CertificateUserIds. 
 - For on-premises synced users, use Microsoft Entra Connect to sync the values from on-premises by following [Microsoft Entra Connect Rules](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#update-certificate-user-ids-using-azure-ad-connect) or [syncing AltSecId value](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#synchronize-alternativesecurityid-attribute-from-ad-to-azure-ad-cba-certificateuserids). 
