@@ -59,7 +59,7 @@ Optionally, you can also configure authentication bindings to map certificates t
 
 Entra has a new public key infrastructure (PKI) based certificate authorities (CA) trust store. The PKI-based CA trust store keeps CAs within a container object for each different PKI. Admins can manage CAs in a container based on PKI easier than one flat list of CAs.
 
-The PKI-based trust store has higher limits for the number of CAs and the size of each CA file. A PKI-based trust store supports up to 250 CAs and 8 KB size for each CA object. We highly recommended you use the new PKI-based trust store for storing CAs, which is scalable and supports new functionality like issuer hints. 
+The PKI-based trust store has higher limits for the number of CAs and the size of each CA file. A PKI-based trust store supports up to 250 CAs and 8-KB size for each CA object. We highly recommended you use the new PKI-based trust store for storing CAs, which is scalable and supports new functionality like issuer hints. 
 
 >[!Note]
 >If you use [the old trust store to configure CAs](how-to-configure-certificate-authorities.md), we recommended you configure a PKI-based trust store. After you make sure everything works well, you can delete the CAs from old trust store. 
@@ -517,7 +517,7 @@ For example:
 certutil -dump -v firstusercert.cer >> firstCertDump.txt
 ```
 
-Here is an example for certutil command: 
+Here's an example for the certutil command: 
 
 ```
 certutil -dump -v C:\save\CBA\certs\CBATestRootProd\mfausercer.cer 
