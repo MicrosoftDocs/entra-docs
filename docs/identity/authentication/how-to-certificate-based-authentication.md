@@ -65,7 +65,7 @@ The PKI-based trust store has higher limits for the number of CAs and the size o
 >If you use [the old trust store to configure CAs](how-to-configure-certificate-authorities.md), we recommended you configure a PKI-based trust store. After you make sure everything works well, you can delete the CAs from old trust store. 
 
 An admin must configure the trusted CAs that issue user certificates. 
-As seen in the following diagram, we use role-based access control (RBAC) to make sure only least-privileged administrators are needed to make changes. 
+Only least-privileged administrators are needed to make changes. 
 A PKI-based trust store has RBAC roles [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator) and [Authentication Administrator](../role-based-access-control/permissions-reference.md#authentication-administrator).
 
 A Microsoft Entra ID P1 or P2 license is required to configure the certificate authorities with a PKI-based trust store. If you have a free Microsoft Entra ID license or Microsoft 365 license, you can configure certificate authorities to enable CBA by using the Microsoft Entra admin center. For more information, see [How to configure certificate authorities for Microsoft Entra certificate-based authentication](how-to-configure-certificate-authorities.md).

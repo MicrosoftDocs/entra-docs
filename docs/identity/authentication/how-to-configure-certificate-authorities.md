@@ -5,7 +5,7 @@ description: Topic that shows how to configure certificate authorities for Micro
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/24/2024
+ms.date: 11/21/2024
 
 ms.author: justinha
 author: vimrang
@@ -15,9 +15,9 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 ---
 # How to configure certificate authorities for Microsoft Entra certificate-based authentication
 
-The best way to Configure the certificate authorities with PKI-based trust store (Preview)
+The best way to configure the certificate authorities (CAs) is with the PKI-based trust store (Preview). You can delegate configuration with a PKI-based trust store to least privileged roles. For more information see, [Step 1: Configure the certificate authorities with PKI-based trust store (Preview)](how-to-certificate-based-authentication.md#step-1-configure-the-certificate-authorities-with-pki-based-trust-store-preview).
 
-You can configure certificate authorities (CAs) by using the Microsoft Entra admin center, or Microsoft Graph REST APIs and the supported software development kits (SDKs), such as Microsoft Graph PowerShell. 
+As an alternative, a Global Administrator can follow steps in this topic to configure CAs by using the Microsoft Entra admin center, or Microsoft Graph REST APIs and the supported software development kits (SDKs), such as Microsoft Graph PowerShell. 
 The public key infrastructure (PKI) infrastructure or PKI admin should be able to provide the list of issuing CAs. 
 
 To make sure you configured all the CAs, open the user certificate and click **Certification path** tab. 
