@@ -149,7 +149,7 @@ The following table lists all the supported operators and their syntax for a sin
 
 
 >[!CAUTION]
-> For best results, minimize the use of MATCH or CONTAINS as much as possible. [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that are more efficient and less error-prone. The ['''memberOf'''](groups-dynamic-rule-member-of.md) is in preview and should be used with caution as is it has some limitations. 
+> For best results, minimize the use of MATCH or CONTAINS as much as possible. [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that are more efficient and less error-prone. The ['''memberOf'''](groups-dynamic-rule-member-of.md) operator is in preview and should be used with caution as is it has some limitations. 
 
 
 | Operator | Syntax |
