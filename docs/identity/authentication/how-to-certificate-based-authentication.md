@@ -1,6 +1,6 @@
 ---
 title: How to configure Microsoft Entra certificate-based authentication
-description: Topic that shows how to configure Microsoft Entra certificate-based authentication in Microsoft Entra ID
+description: Topic that shows how to configure Microsoft Entra certificate-based authentication in Microsoft Entra ID.
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -627,7 +627,7 @@ To enable CBA and configure username bindings using Graph API, complete the foll
     #### Request body:
 
     ```http
-    PATCH https: //graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate
+    PATCH https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate
     Content-Type: application/json
     
     {
@@ -679,18 +679,18 @@ To enable CBA and configure username bindings using Graph API, complete the foll
 1. You get a `204 No content` response code. Rerun the GET request to make sure the policies are updated correctly.
 1. Test the configuration by signing in with a certificate that satisfies the policy.
 
-## Enable CBA using Microsoft Power Shell
+## Enable CBA using Microsoft PowerShell
 
-1. Open a power shell command window
-1. Connect to Microsoft Graph
+1. Open PowerShell.
+1. Connect to Microsoft Graph:
     ```powershell
     Connect-MgGraph -Scopes "Policy.ReadWrite.AuthenticationMethod"
     ```
-1. Create a variable for defining group for CBA users
+1. Create a variable for defining group for CBA users:
    ```powershell
    $group = Get-MgGroup -Filter "displayName eq 'CBATestGroup'"
    ```
-1. Define the request body
+1. Define the request body:
     ```powershell
     $body = @{
     "@odata.type" = "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration"
@@ -736,10 +736,10 @@ To enable CBA and configure username bindings using Graph API, complete the foll
         }
     ) } | ConvertTo-Json -Depth 5
     ```
-1. Execute the PATCH request
-      ```powershell
-       Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate" -Body $body -ContentType "application/json"
-      ```
+1. Run the PATCH request:
+   ```powershell
+   Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate" -Body $body -ContentType "application/json"
+   ```
 
 ## Next steps 
 

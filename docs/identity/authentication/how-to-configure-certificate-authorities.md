@@ -1,6 +1,6 @@
 ---
 title: How to configure certificate authorities for Microsoft Entra certificate-based authentication
-description: Topic that shows how to configure certificate authorities for Microsoft Entra certificate-based authentication
+description: Topic that shows how to configure certificate authorities for Microsoft Entra certificate-based authentication.
 
 ms.service: entra-id
 ms.subservice: authentication
