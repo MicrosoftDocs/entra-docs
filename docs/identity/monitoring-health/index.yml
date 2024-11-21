@@ -66,7 +66,7 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Configure diagostic settings
+          - text: Configure diagnostic settings
             url: howto-configure-diagnostic-settings.md
           - text: Integrate activity logs with Azure Monitor logs
             url: howto-integrate-activity-logs-with-azure-monitor-logs.yml        
