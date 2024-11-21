@@ -332,7 +332,7 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 * [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-- An external tenant. To create one, choose from the following methods:
+* An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
