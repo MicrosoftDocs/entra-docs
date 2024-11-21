@@ -1,12 +1,12 @@
 ---
 title: Call a web API in a sample Android mobile app
-description: Learn how to call web API in Android sample app.
+description: Learn how to call web API in an Android (Kotlin) sample app.
 
 author: henrymbuguakiarie
 manager: mwongerapk
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: quickstart
@@ -15,35 +15,37 @@ ms.custom: developer
 #Customer intent: As a developer, I want to call a web API from a sample Android mobile app so that I can experience how Microsoft Entra's native authentication works.
 ---
 
-# Sign in users and call an API in a sample Android mobile app by using native authentication
+# Sign in users and call an API in a sample Android app by using native authentication
 
-This article demonstrates how to configure a sample Android mobile application to call an ASP.NET Core web API.
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
+In this quickstart you learn how to configure a sample Android mobile application to call an ASP.NET Core web API.
 
 ## Prerequisites
 
-- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md).
+- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](quickstart-native-authentication-android-sign-in.md).
 
 ### Register a web API application
 
-[!INCLUDE [register-api-app](./includes/register-app/register-api-app.md)]
+[!INCLUDE [register-api-app](../external-id/customers//includes/register-app/register-api-app.md)]
 
 ### Configure API scopes
 
-[!INCLUDE [add-api-scopes](./includes/register-app/add-api-scopes.md)]
+[!INCLUDE [add-api-scopes](../external-id/customers/includes/register-app/add-api-scopes.md)]
 
 ### Configure app roles
 
-[!INCLUDE [add-app-role](./includes/register-app/add-app-role.md)]
+[!INCLUDE [add-app-role](../external-id/customers/includes/register-app/add-app-role.md)]
 
 ### Configure optional claims
 
-[!INCLUDE [add-optional-claims-access](./includes/register-app/add-optional-claims-access.md)]
+[!INCLUDE [add-optional-claims-access](../external-id/customers/includes/register-app/add-optional-claims-access.md)]
 
 ## Grant API permissions to the Android sample app
 
 Once you've registered both your client app and web API and you've exposed the API by creating scopes, you can configure the client's permissions to the API by following these steps:
 
-[!INCLUDE [grant-api-permission-call-api-common](./includes/register-app/grant-api-permission-call-api-common.md)]
+[!INCLUDE [grant-api-permission-call-api-common](../external-id/customers/includes/register-app/grant-api-permission-call-api-common.md)]
 
 ## Clone or download sample web API
 
@@ -64,7 +66,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the web API you copied earlier. 
     - `Enter_the_Tenant_Id_Here` and replace it with the **Directory (tenant) ID** you copied earlier.
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 
 You need to host your web API for the Android sample app to call it. Follow [Quickstart: Deploy an ASP.NET web app](/azure/app-service/quickstart-dotnetcore) to deploy your web API.
@@ -100,4 +102,5 @@ To build and run your app, follow these steps:
 
 ## Next steps
 
-- [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).
+> [!div class="nextstepaction"]
+> [Tutorial: Prepare your Android app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-android-app.md).

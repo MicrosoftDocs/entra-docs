@@ -357,10 +357,30 @@
       href: index-mobile.yml
     - name: Quickstart
       items: 
-        - name: Sign in users
-          href: quickstart-mobile-app-sign-in.md?pivots=workforce
-        - name: Call a web API
-          href: quickstart-mobile-app-call-api.md
+        - name: Browser-delegated authentication
+          items: 
+            - name: Sign in users
+              href: quickstart-mobile-app-sign-in.md?pivots=workforce
+            - name: Call a web API
+              href: quickstart-mobile-app-call-api.md
+        - name: Native authentication
+          items:
+            - name: Android (Kotlin)
+              items:
+                - name: Sign in users
+                  href: quickstart-native-authentication-android-sign-in.md
+                - name: Sign in users and call an API
+                  href: quickstart-native-authentication-android-call-api.md
+            - name: macOS (Swift)
+              items:
+                - name: Sign in users
+                  href: quickstart-native-authentication-macos-sign-in.md
+            - name: iOS (Swift)
+              items:
+                - name: Sign in users
+                  href: quickstart-native-authentication-ios-sign-in.md
+                - name: Sign in users and call an API
+                  href: quickstart-native-authentication-ios-call-api.md
     - name: Tutorials
       items:
         - name: Android

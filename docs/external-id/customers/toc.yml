@@ -79,19 +79,19 @@ items:
             - name: Android (Kotlin)
               items:
                 - name: Sign in users
-                  href: how-to-run-native-authentication-sample-android-app.md
+                  href: /entra/identity-platform/how-to-run-native-authentication-sample-android-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign in users and call an API
-                  href: sample-native-authentication-android-sample-app-call-web-api.md
+                  href: /entra/identity-platform/sample-native-authentication-android-sample-app-call-web-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: macOS (Swift)
               items:
                 - name: Sign in users
-                  href: how-to-run-native-authentication-sample-macos-app.md
+                  href: /entra/identity-platform/how-to-run-native-authentication-sample-macos-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: iOS (Swift)
               items:
                 - name: Sign in users
-                  href: how-to-run-native-authentication-sample-ios-app.md
+                  href: /entra/identity-platform/how-to-run-native-authentication-sample-ios-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign in users and call an API
-                  href: sample-native-authentication-ios-sample-app-call-web-api.md
+                  href: /entra/identity-platform/sample-native-authentication-ios-sample-app-call-web-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
   - name: Command-line interface (CLI) app
     items:
       - name: Node.js - sign in users
