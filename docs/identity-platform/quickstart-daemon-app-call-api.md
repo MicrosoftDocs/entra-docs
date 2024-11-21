@@ -14,7 +14,7 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Call a web API in a sample daemon app
 
-In this quickstart, you use a sample daemon application acquires and access token to call a protected web API by using the [Microsoft Authentication Library (MSAL)](msal-overview.md).
+In this quickstart, you use a sample daemon application to acquire an access token and call a protected web API by using the [Microsoft Authentication Library (MSAL)](msal-overview.md).
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
@@ -324,7 +324,7 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org).
 * [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
-- An external tenant. To create one, choose from the following methods:
+* An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
@@ -332,7 +332,7 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 * [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-- An external tenant. To create one, choose from the following methods:
+* An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
@@ -502,7 +502,7 @@ You've configured your sample app. You can proceed to run and test it.
 
 ### How it works
 
-The Node.js app uses [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app).
+The Node.js app uses the [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app).
 
 On the API side, a sample .NET web API, the API must verify that the access token has the required permissions (application permissions). The web API can't accept an access token that doesn't have the required permissions. 
 
@@ -563,7 +563,7 @@ There are no to-do's in server
 
 ## How it works
 
-The daemon application uses [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app). The daemon app in this article uses [Microsoft Authentication Library for .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) to simplify the process of acquiring a token.
+The daemon application uses the [OAuth 2.0 client credentials grant flow](v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app). The daemon app in this article uses [Microsoft Authentication Library for .NET](/entra/msal/dotnet/) to simplify the process of acquiring a token.
 
 On the API side, a sample .NET web API, the API must verify that the access token has the required permissions (application permissions). The web API rejects access tokens that don't have the required permissions. 
 
