@@ -123,7 +123,7 @@ At this stage, you create your web app endpoints and add the business logic to y
 
 1. Create a file called *app.py* in your root folder.
 
-1. Add the following code at the top of the 8app.py8 file to import required dependencies.
+1. Add the following code at the top of the *app.py* file to import required dependencies.
 
     ```python
     import identity.web
