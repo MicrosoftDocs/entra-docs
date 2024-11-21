@@ -16,18 +16,21 @@ The following descriptions and lists of applications are provided by the partner
 ### Aquera
 
 #### Description
-Aquera is a leading provider of SCIM Gateway Services for Microsoft Entra. The SCIM Gateway for Microsoft Entra from Aquera is a cloud-based service providing out-of-the-box connectivity between Microsoft Entra ID and the provisioning target applications, directories, databases, devices, or third party identity providers (IDPs) that an organization or their partners operate, which are not covered by the Microsoft Entra application gallery. 
-The Aquera SCIM Gateway powers Microsoft Entra ID to create, update, deactivate, and delete user accounts via Aquera connectors in any cloud or on-premises application, database, directory, device, or third party IDP via the Microsoft Entra ID SCIM protocol. Aquera has a catalog of over 800 connectors covering these targets, builds additional connectors on-demand, and offers a self-service connector builder for customers to build their own connectors for the Aquera SCIM Gateway. The Aquera connectors support the various integration methods required by each target including REST, SQL, LDAP, SOAP, SCIM not compatible with Microsoft Entra ID, or web service APIs, admin console automation, SDKs, code libraries, and files via FTP and local file shares. 
-Aquera also supports over 40 inbound provisioning HR Information System (HRIS) sources of record for Microsoft Entra ID, and further provides deep integration with all the major IT Service Management systems (ITSMs) supporting automatic generation of joiner, mover, and leaver work tickets in the ITSMs, and fulfilling ITSM self-service access requests via Microsoft Entra ID. 
+With 1,000+ customer deployments, Aquera delivers HR process and Identity Integration for Microsoft Active Directory (AD) and Microsoft Entra ID. Aquera automates user account provisioning and deprovisioning throughout the employee lifecycle to enable joiner, mover, leaver automation. Aquera’s prebuilt, out-of-the-box [HR Sync Connectors](https://azuremarketplace.microsoft.com/marketplace/apps/aquerainc1584125423571.hr-sync-for-microsoft-entra-id-azure-ad-by-aquera?tab=Overview) enable 50+ HR/HCM systems of record to automate HR-driven user and account inbound provisioning to AD and Microsoft Entra ID. Beyond HR systems of record, Aquera SCIM Gateway for Microsoft Entra ID provisions and deprovisions users, accounts, and groups (where available) to non-gallery apps through industry-standard System for Cross-domain Identity Management (SCIM). Since 2020, [Microsoft and Aquera have extended Microsoft Entra ID connectivity to hundreds of apps not found in the Microsoft Entra App Gallery](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/automate-user-provisioning-for-more-applications-with-our-new/ba-p/1751668).
+
+The Aquera SCIM Gateway delivers out-of-the-box connectivity between Microsoft Entra ID and the provisioning target applications, directories, databases, devices, files, or 3rd-party identity providers (IDPs) for B2B partners, which aren't included in the [Microsoft Entra App Gallery](https://portal.azure.com/#view/Microsoft_AAD_IAM/AppGalleryBladeV2), or where Gallery apps do not support automatic provisioning. Microsoft + Aquera extend [Microsoft Entra ID to scale identity management](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-lifecycle-management-software) as user identities, roles, and entitlements change dynamically.
+The Aquera catalog of over 900 prebuilt connectors supports multiple integration methods including REST, SQL, LDAP, SOAP, and SCIM, and SCIM that isn't compatible with Microsoft Entra ID. Additionally, the connectors support web service APIs, admin console automation, SDKs, code libraries, files, and [Microsoft API-driven Inbound Provisioning](https://learn.microsoft.com/entra/identity/app-provisioning/inbound-provisioning-api-concepts). 
+
 
 #### Contact Information
 * Company website: https://www.aquera.com 
-* Azure Marketplace Listings: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=aquera&page=1 
+* Azure Marketplace Listings: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=aquera&page=1
+* AppSource Marketplace Listings: https://appsource.microsoft.com/en-us/marketplace/apps?search=aquera&page=1
 
 #### Popular applications supported
-* HRIS Applications: Over 40 including Oracle Cloud HCM, Dayforce, UKG Pro/Ready/Pro Workforce, ADP (all US and international versions), Workday, SAP HR, Greenhouse, iCIMS, SuccessFactors, HiBob, BambooHR, Paylocity, Paycor, PeopleSoft, Cornerstone, Lever
-* ERP Applications: Netsuite, Oracle Cloud ERP, Oracle EBS, SAP ERP Central Component (ECC), SAP S/4HANA, Sage Intacct, PeopleSoft ERP
-* EHR Applications: Epic, Cerner, PointClickCare, MyAvatar, Homecare Homebase
+* Human resources information systems applications: Over 40 including Oracle Cloud HCM, Dayforce, UKG Pro/Ready/Pro Workforce, ADP (all US and international versions), Workday, SAP HR, Greenhouse, iCIMS, SuccessFactors, HiBob, BambooHR, Paylocity, Paycor, PeopleSoft, Cornerstone, Lever
+* Enterprise resource planning applications: Netsuite, Oracle Cloud ERP, Oracle EBS, SAP ERP Central Component (ECC), SAP S/4HANA, Sage Intacct, PeopleSoft ERP
+* Electronic health record applications: Epic, Cerner, PointClickCare, MyAvatar, Homecare Homebase
 * Student Information Systems: Ellucian Banner, PeopleSoft Campus Solutions
 * Databases: Oracle, MySQL, SQLServer, MongoDB, PostgreSQL, AS/400 DB2, DB2, Snowflake, Redshift
 * Directories and IDPs: AS/400, Resource Access Control Facility (RACF), ACF2, TopSecret, OpenLDAP, IDP Directories
@@ -36,9 +39,9 @@ Aquera also supports over 40 inbound provisioning HR Information System (HRIS) s
 
 ### IDMWORKS
 #### Description
-We Are Experts In Identity & Access Management and Data Center Management.
+We're Experts In Identity & Access Management and Data Center Management.
 The Microsoft Entra platform integrates with IDMWORKS IdentityForge (IDF) Gateway for user lifecycle management for Mainframe systems RACF, Top Secret, and ACF2, Midrange system AS/400, Healthcare applications EPIC and Cerner, Linux and Unix servers, Databases, and dozens of on-premises and cloud applications. IdentityForge provides a central, standardized integration engine and modern identity store that serves as a trusted source for all lifecycle management.
-The IDF Gateway for Microsoft Entra ID provides lifecycle management for import sources and provisioning target systems that are not covered by the Microsoft Entra connector portfolio like Mainframe systems RACF, Top Secret, and ACF2, or Healthcare applications EPIC and Cerner. The IDF Gateway powers Microsoft Entra identity lifecycle management (LCM) to continuously synchronize user account information from Mainframe and Healthcare sources and to automate the account provisioning lifecycle use cases like create, read or import, update, deactivate, delete user accounts, and perform group management.
+The IDF Gateway for Microsoft Entra ID provides lifecycle management for import sources and provisioning target systems that aren't covered by the Microsoft Entra connector portfolio like Mainframe systems RACF, Top Secret, and ACF2, or Healthcare applications EPIC and Cerner. The IDF Gateway powers Microsoft Entra identity lifecycle management (LCM) to continuously synchronize user account information from Mainframe and Healthcare sources and to automate the account provisioning lifecycle use cases like create, read or import, update, deactivate, delete user accounts, and perform group management.
 
 #### Contact information
 * Company website: https://www.idmworks.com/identity-forge
@@ -74,14 +77,14 @@ KloudIdentity provides a universal connector platform; Hence any LOB application
 
 ### Traxion SCIM Gateway
 #### Description
-At Traxion, we believe that industry-wide standardization plays a big role in the future of Identity and Access Management (IAM). We are determined to help our customers achieve their security goals through the use of best practices and common standards. System for Cross-domain Identity Management (SCIM) is such a standard.
+At Traxion, we believe that industry-wide standardization plays a large role in the future of Identity and Access Management (IAM). We're determined to help our customers achieve their security goals by using best practices and common standards. System for Cross-domain Identity Management (SCIM) is such a standard.
 
-Companies deploying an IGA system are challenged with how hard it can be to connect applications for synchronizing users, groups and other data entities.
+Companies deploying an IGA system are challenged with how hard it can be to connect applications for synchronizing users, groups, and other data entities.
 The process of connecting and maintaining application integrations has proven to be a challenging, time-consuming, and costly process; not only for the companies deploying an IAM system but also for application vendors and integrators.
-It is especially tough when connecting an application that does not support a common standard such as SCIM 2.0.
+It's especially tough when connecting an application that doesn't support a common standard such as SCIM 2.0.
 By using our SCIM Gateway we enable our customers to leverage the benefits of a standardized integration by reducing lead times and overall costs.
 
-Our SCIM Gateway is an easy, secure and standardized solution, that will enable you to synchronize all identity and access information with any non-natively SCIM supporting application.
+Our SCIM Gateway is an easy, secure, and standardized solution, that will enable you to synchronize all identity and access information with any non-natively SCIM supporting application.
 
 Integrations include:
 
@@ -118,6 +121,6 @@ UNIFY Solutions is a leading provider of Identity, Access, Security, and Governa
 ### Custom connectors
 
 Microsoft Entra ID includes connectivity to provision into applications that support protocols and interfaces including SCIM, SQL, LDAP, REST, SOAP, and PowerShell.
-For connectivity to applications that don't support one of those protocols and interfaces, customers and [partners](/archive/technet-wiki/1589.fim-2010-mim-2016-management-agents-from-partners) have custom Extensible Connectivity (ECMA) [connectors](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)) for use with Microsoft Identity Manager (MIM) 2016. Community members have also built ECMA connectors, hosted on their blogs and in public source code repositories. These same ECMA2 connectors can be used to provision into apps with the Microsoft Entra provisioning agent and Extensible Connectivity (ECMA) Connector host, without needing MIM sync deployed. For more information, see [provisioning with the custom connectors](~/identity/app-provisioning/on-premises-custom-connector.md).
+For connectivity to applications that don't support one of those protocols and interfaces, customers and [partners](/archive/technet-wiki/1589.fim-2010-mim-2016-management-agents-from-partners) have custom Extensible Connectivity (ECMA) [connectors](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)) for use with Microsoft Identity Manager (MIM) 2016. Community members have also built ECMA connectors, hosted on their blogs and in public source code repositories. These same ECMA2 connectors can be used to provision into apps with the Microsoft Entra provisioning agent and Extensible Connectivity (ECMA) Connector host, without needing to deploy MIM sync. For more information, see [provisioning with the custom connectors](~/identity/app-provisioning/on-premises-custom-connector.md).
 
 If you have been using a custom connector with MIM, then you can [export the MIM connector configuration](~/identity/app-provisioning/on-premises-migrate-microsoft-identity-manager.md) and import it into Microsoft Entra.
