@@ -39,7 +39,7 @@ The following table has authenticator types permitted for AAL2:
 | Password <br>**AND** <br>- Single-factor software certificate <br>- **OR**<br>- Microsoft Entra joined  with software TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with software TPM  <br>- **OR**<br>- Compliant mobile device | Yes<sup>1</sup> | Memorized secret <br>**AND**<br> Single-factor crypto software |
 | Password <br>**AND**<br>- Microsoft Entra joined with hardware TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with hardware TPM| Yes<sup>1</sup> |  Memorized secret <br>**AND**<br>Single-factor crypto hardware |
 
-<sup>1</sup> [Protection from external phishing](~/entra/standards/memo-22-09-multi-factor-authentication#protection-from-external-phishing.md)
+<sup>1</sup> [Protection from external phishing](~/entra/standards/memo-22-09-multi-factor-authentication.md#protection-from-external-phishing.md)
 
 
 ### AAL2 recommendations
