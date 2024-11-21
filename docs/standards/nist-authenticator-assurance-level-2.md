@@ -46,7 +46,7 @@ The following table has authenticator types permitted for AAL2:
 
 For AAL2, use multi-factor cryptographic authenticator. This is phishing resistant, eliminates the greatest attack surface (the password), and offers users a streamlined method to authenticate.
 
-For guidance on selecting a passwordless authentication method, see [Plan a passwordless authentication deployment in Microsoft Entra ID](~/identity/authentication/howto-authentication-passwordless-deployment.md). See also, [Windows Hello for Business deployment guide](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
+For guidance on selecting a passwordless authentication method, see [Plan a passwordless authentication deployment in Microsoft Entra ID](/identity/authentication/howto-authentication-passwordless-deployment.md). See also, [Windows Hello for Business deployment guide](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
 
 ## FIPS 140 validation
 
@@ -70,7 +70,7 @@ Government agency cryptographic authenticators are validated for FIPS 140 Level 
 
 * Certificate stored in software or hardware (smartcard/security key/TPM)
 
-For Microsoft Authenticator app (iOS/Android) FIPS 140 compliance information, See [FIPS 140 compliant for Microsoft Entra authentication](identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
+For Microsoft Authenticator app (iOS/Android) FIPS 140 compliance information, See [FIPS 140 compliant for Microsoft Entra authentication](/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
 
 For OATH hardware tokens and smartcards we recommend you consult with your provider for current FIPS validation status.
 
