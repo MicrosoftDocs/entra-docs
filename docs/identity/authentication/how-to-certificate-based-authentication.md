@@ -62,16 +62,17 @@ Entra has a new public key infrastructure (PKI) based certificate authorities (C
 The PKI-based trust store has higher limits for the number of CAs and the size of each CA file. A PKI-based trust store supports up to 250 CAs and 8-KB size for each CA object. We highly recommended you use the new PKI-based trust store for storing CAs, which is scalable and supports new functionality like issuer hints. 
 
 >[!Note]
->If you use [the old trust store to configure CAs](how-to-configure-certificate-authorities.md), we recommended you configure a PKI-based trust store. After you make sure everything works well, you can delete the CAs from old trust store. 
+>If you use [the old trust store to configure CAs](how-to-configure-certificate-authorities.md), we recommended you configure a PKI-based trust store. 
 
 An admin must configure the trusted CAs that issue user certificates. 
 Only least-privileged administrators are needed to make changes. 
 A PKI-based trust store has RBAC roles [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator) and [Authentication Administrator](../role-based-access-control/permissions-reference.md#authentication-administrator).
 
-A Microsoft Entra ID P1 or P2 license is required to configure the certificate authorities with a PKI-based trust store. If you have a free Microsoft Entra ID license or Microsoft 365 license, you can configure certificate authorities to enable CBA by using the Microsoft Entra admin center. For more information, see [How to configure certificate authorities for Microsoft Entra certificate-based authentication](how-to-configure-certificate-authorities.md).
+Upload PKI feature of the PKI-based trust store is available only with  Microsoft Entra ID P1 or P2 license. However, with free license as well, admins can upload all the CAs individually instead of the PKI file and configure the PKI-based trust store.
 
 ### Configure certificate authorities by using the Microsoft Entra admin center
 
+#### Create a PKI container object
 1.	Create a PKI container object.
    1. Sign in to the Microsoft Entra admin center as an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
    1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Public key infrastructure (Preview)**.
@@ -81,13 +82,15 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to create a PKI.":::
 
-   1. To delete a PKI, select the PKI and select **Delete**. If the PKI has CAs in it, enter the name of the PKI to acknowledge the deletion of all CAs within it and select **Delete**.
-
-      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
-
    1. Select **Columns** to add or delete columns.
    1. Select **Refresh** to refresh the list of PKIs.
 
+#### Delete a PKI container object
+1. To delete a PKI, select the PKI and select **Delete**. If the PKI has CAs in it, enter the name of the PKI to acknowledge the deletion of all CAs within it and select **Delete**.
+
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
+
+#### Upload individual CAs into PKI container object
 1. To upload a CA into the PKI container:
    1. Click on **+ Add certificate authority**.
    1. Select the CA file.
@@ -103,6 +106,7 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
    1. Select **Columns** to add or delete columns.
    1. Select **Refresh** to refresh the list of CAs.
 
+#### Upload all CAs with upload PKI into PKI container object
 1. To upload all CAs at once into the PKI container:
    1. Create a PKI container object, or open one.
    1. Select **Upload PKI**.
@@ -118,13 +122,13 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
    Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
    ```
 
-### Edit a PKI
+#### Edit a PKI
 
 1. To edit PKI, select **...** on the PKI row and select **Edit**.
 1. Enter a new PKI name and select **Save**.
 
 
-### Edit a CA
+#### Edit a CA
 
 1. To edit CA, select **...** on the CA row and select **Edit**.
 1. Enter new values for Certificate Authority type (root/intermediate), CRL URL, Delta CRL URL, Issuer Hints enabled flag as necessary and select **Save**.
@@ -139,7 +143,7 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
 1. Select the **Deleted CAs** tab.
 1. Select the CA file and select **Restore certificate authority**.
 
-### Understanding isIssuerHintEnabled attribute on CA
+#### Understanding isIssuerHintEnabled attribute on CA
 
 Issuer hints send back a Trusted CA Indication as part of the Transport Layer Security (TLS) handshake. 
 The trusted CA list is set to the subject of the CAs uploaded by the tenant in the Entra trust store. 
