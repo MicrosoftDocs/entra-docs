@@ -2,6 +2,8 @@
 // Used as part of docutune-1.5.2/dictionaries/Dictionary-Security-GUIDs.ps1 workflow.
 {
   "Designated empty GUID" : "00000000-0000-0000-0000-000000000000",
+  "Blazor Visual Studio project template default client Id" : "11111111-1111-1111-1111-111111111111",
+  "Azure SDK single org default tenant ID" : "22222222-2222-2222-2222-222222222222",
   "AccessReview.Read.All - Application": "d07a8cc0-3d51-4b77-b3b0-32704d1f69fa",
   "AccessReview.ReadWrite.All - Application": "ef5f7d5c-338f-44b0-86c3-351f46c8bb5f",
   "AccessReview.ReadWrite.Membership - Application": "18228521-a591-40f1-b215-5fad4488c117",
@@ -3665,7 +3667,6 @@
   "Dynamics 365 Omnichanel sample payload" : "87b4d06c-abc2-e811-a9b0-000d3a10e09e",
   "Dynamics 365 customer service custom action" : "c3356c37-bba6-4067-b1a1-8c66e1c203a1",
   "Dynamics 365 customer service sample code resource ID" : "268e3d0d-5e0c-eb11-a822-000d3aaf102a",
-  "Azure SDK single org default tenant ID" : "22222222-2222-2222-2222-222222222222",
   "Bing Ads tutorial sample app ID" : "4c0b021c-00c3-4508-838f-d3127e8167ff",
   "Microsoft Advertising app ID" : "d42ffc93-c136-491d-b4fd-6f18168c68fd",
   "Azure Arc service app ID" : "bc313c14-388c-4e7d-a58e-70017303ee3b",
@@ -3828,7 +3829,7 @@
   "Azure Digital Twins service endpoint resource ID" : "0b07f429-9f4b-4714-9392-cc5e8e80c8b0",
   "Azure Digital Twins Read.Write Delegated permission" : "4589bd03-58cb-4e6c-b17f-b580e39652f8",
   "Microsoft Power Query for Excel " : "a672d62c-fc7b-4e81-a576-e60dc46e951d",
+  "Power BI Data Refresh" : "b52893c8-bc2e-47fc-918b-77022b299bbc"
   "Dataverse account table ID" : "70816501-edb9-4740-a16c-6a5efbc05d84",
-  "Blazor Visual Studio project template default client Id" : "11111111-1111-1111-1111-111111111111",
   "Azure Management app redirect URI" : "58145B91-0C36-4500-8554-080854F2AC97"
 }
