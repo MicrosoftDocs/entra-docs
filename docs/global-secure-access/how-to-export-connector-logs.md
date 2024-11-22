@@ -41,6 +41,7 @@ Verbose logs are useful when debugging Microsoft Entra Private Network Connector
 3. Right-click on a text editor application such as Notepad or Notepad++, select **Run as Administrator**, and open the file `MicrosoftEntraPrivateNetworkConnector.exe.config`to edit. 
 4. Add the following higlighted section from <system.diagnostics> to </system.diagnostrics> to the file in that location.
 
+
 ``` json
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
@@ -60,7 +61,8 @@ Verbose logs are useful when debugging Microsoft Entra Private Network Connector
      </trace> 
      </system.diagnostics>
 
-</configuration> 
+</configuration>
+```
 
 Next, we need to Stop and Start the Connector service for the above changes to take effect.
 
