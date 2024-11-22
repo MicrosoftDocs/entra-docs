@@ -101,7 +101,7 @@ items:
   - name: Security defaults
     href: security-defaults.md
   - name: Block less secure authentications
-    href: ~/identity/conditional-access/block-legacy-authentication.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
+    href: ~/identity/conditional-access/policy-block-legacy-authentication.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
 - name: Support and help
   expanded: false
   items:
