@@ -45,22 +45,21 @@ Verbose logs are useful when debugging Microsoft Entra Private Network Connector
 ``` json
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
-    <runtime> 
-    <gcServer enabled="true"/> 
-    </runtime> 
-    <appSettings> 
-    <add key="TraceFilename" value="MicrosoftEntraPrivateNetworkConnector.log" /> 
-    </appSettings> 
-    <system.diagnostics> 
-     <trace autoflush="true" indentsize="4"> 
-     <listeners> 
-     <add name="consoleListener" type="System.Diagnostics.ConsoleTraceListener" /> 
-     <add name="textWriterListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="C:\logs\connector_logs.log" /> 
-     <remove name="Default" /> 
-     </listeners> 
-     </trace> 
-     </system.diagnostics>
-
+<runtime> 
+<gcServer enabled="true"/> 
+</runtime> 
+<appSettings> 
+<add key="TraceFilename" value="MicrosoftEntraPrivateNetworkConnector.log" /> 
+</appSettings> 
+<system.diagnostics> 
+<trace autoflush="true" indentsize="4"> 
+<listeners> 
+<add name="consoleListener" type="System.Diagnostics.ConsoleTraceListener" /> 
+<add name="textWriterListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="C:\logs\connector_logs.log" /> 
+<remove name="Default" /> 
+</listeners> 
+</trace> 
+</system.diagnostics>
 </configuration>
 ```
 
