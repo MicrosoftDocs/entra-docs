@@ -3,7 +3,7 @@ title: The Global Secure Access client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/20/2024
+ms.date: 11/22/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -233,11 +233,11 @@ For network traffic that is tunneled to the cloud service, the application serve
 > For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md).
 
 ### Virtualization support with UTM
-- If the network mode is **bridged** and Global Secure Access client is installed on the host machine:
-    - If the Global Secure Access client is installed on the virtual machine, network traffic of the virtual machine is subject to the forwarding profile on the virtual machine.
+- When the network is in **bridged** mode and Global Secure Access client is installed on the host machine:
+    - If the Global Secure Access client is installed on the virtual machine, network traffic of the virtual machine is subject to its local policy. The host machine's policy doesn't affect the forwarding profile on the virtual machine.
     - If the Global Secure Access client *isn't* installed on the virtual machine, network traffic of the virtual machine is bypassed.
-- The Global Secure Access client doesn't support network mode **bridged** because it might block the network traffic of the virtual machine.
-- You can install the Global Secure Access client on a virtual machine running macOS, as long as the client isn't also installed on the host machine.
+- The Global Secure Access client doesn't support network **shared** mode because it might block the network traffic of the virtual machine.
+- If the network is in **shared** mode, you can install the Global Secure Access client on a virtual machine running macOS, as long as the client isn't also installed on the host machine.
 
 ### QUIC not supported for Internet Access
 Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
