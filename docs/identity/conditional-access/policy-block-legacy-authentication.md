@@ -67,4 +67,4 @@ Additionally, to help triage legacy authentication within your tenant use the [S
 - [Deprecation of Basic authentication in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/deprecation-of-basic-authentication-exchange-online)
 - [How to set up a multifunction device or application to send email using Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
 - [How modern authentication works for Office client apps](/microsoft-365/enterprise/modern-auth-for-office-2013-and-2016)
-- [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershel)
+- [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell)
