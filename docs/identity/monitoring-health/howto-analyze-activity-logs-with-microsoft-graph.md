@@ -58,8 +58,9 @@ Try using the following queries for sign-in activity:
 
 - For sign-in attempts where Conditional Access failed:
   - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=conditionalAccessStatus eq 'failure'`
+  - Consider using a date filter so the request doesn't time out.
 
-- To find sign-ins to a specific application:
+- To find sign-ins to a specific application during a specific time frame:
   - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and appId eq 'APP ID'`
 
 - For non-interactive sign-ins:
@@ -85,7 +86,7 @@ Try using the following queries for sign-in activity:
 
 #### Sample sign-up queries (preview)
 
-Try using the following queries for sign-up activity:
+Try using the following queries for sign-up activity in your [external tenant](../../external-id/tenant-configurations.md):
 
 - To find sign-up attempts that failed during user object creation:
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode ne 0 and signUpStage eq 'userCreation'`

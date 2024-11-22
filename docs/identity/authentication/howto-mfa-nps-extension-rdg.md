@@ -75,7 +75,7 @@ This section details the prerequisites necessary before integrating Microsoft En
 * Microsoft Entra multifactor authentication License
 * Windows Server software
 * Network Policy and Access Services (NPS) role
-* Microsoft Entra synched with on-premises Active Directory
+* Microsoft Entra synced with on-premises Active Directory
 * Microsoft Entra GUID ID
 
 ### Remote Desktop Services (RDS) infrastructure
@@ -96,11 +96,11 @@ The NPS role service provides the RADIUS server and client functionality as well
 
 For information on installing the NPS role service Windows Server 2012 or older, see [Install a NAP Health Policy Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd296890(v=ws.10)). For a description of best practices for NPS, including the recommendation to install NPS on a domain controller, see [Best Practices for NPS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771746(v=ws.10)).
 
-<a name='azure-active-directory-synched-with-on-premises-active-directory'></a>
+<a name='azure-active-directory-synced-with-on-premises-active-directory'></a>
 
-### Microsoft Entra synched with on-premises Active Directory
+### Microsoft Entra synced with on-premises Active Directory
 
-To use the NPS extension, on-premises users must be synced with Microsoft Entra ID and enabled for MFA. This section assumes that on-premises users are synched with Microsoft Entra ID using AD Connect. For information on Microsoft Entra Connect, see [Integrate your on-premises directories with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md).
+To use the NPS extension, on-premises users must be synced with Microsoft Entra ID and enabled for MFA. This section assumes that on-premises users are synced with Microsoft Entra ID using AD Connect. For information on Microsoft Entra Connect, see [Integrate your on-premises directories with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md).
 
 <a name='azure-active-directory-guid-id'></a>
 
