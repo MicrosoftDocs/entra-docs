@@ -158,8 +158,8 @@ Security info by default will prompt users to sign in to the Authenticator app t
 ### Alternate registration flow from Security Info (iOS)
 If a user is unable to sign in to Authenticator to register a passkey, they can fall back to triggering registration directly from Security Info with WebAuthn. If initiating this flow from a browser on a different device, Bluetooth, an internet connection, and connectivity to these two endpoints must be allowed in your organization to enable cross-device registration and authentication:
 
-- cable.ua5v.com
-- cable.auth.com
+- https://cable.ua5v.com
+- https://cable.auth.com
 
 If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
@@ -329,8 +329,8 @@ Security info by default will prompt users to sign in to the Authenticator app t
 
 If a user is unable to sign in to the Authenticator to register a passkey, you can fall back to triggering registration directly from Security Info. If initiating this flow from a browser on a different device, Bluetooth, an internet connection, and connectivity to these two endpoints must be allowed in your organization to enable cross-device registration and authentication:
 
-- cable.ua5v.com
-- cable.auth.com
+- https://cable.ua5v.com
+- https://cable.auth.com
 
 
 If your organization restricts Bluetooth usage, you can allow cross-device registration of passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
