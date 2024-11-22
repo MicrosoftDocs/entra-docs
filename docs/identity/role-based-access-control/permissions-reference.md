@@ -7,7 +7,7 @@ search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 09/28/2024
+ms.date: 11/21/2024
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -2167,9 +2167,10 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Privile
 
 - Set or reset any authentication method (including passwords) for any user, including Global Administrators.
 - Delete or restore any users, including Global Administrators. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
-- Force users to re-register against existing non-password credential (such as MFA or FIDO) and revoke **remember MFA on the device**, prompting for MFA on the next sign-in of all users.
+- Force users to re-register against existing non-password credential (such as MFA or FIDO2) and revoke **remember MFA on the device**, prompting for MFA on the next sign-in of all users.
 - Update sensitive properties for all users. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
 - Create and manage support tickets in Azure and the Microsoft 365 admin center.
+- Configure certificate authorities with a PKI-based trust store (preview)
 
 Users with this role **cannot** do the following:
 
