@@ -10,19 +10,18 @@ author: shlipsey3
 manager: amycolannino
 ms.reviewer: sandeo
 
-#Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.
+# Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.
 
 ---
-# Tutorial: Sign-in logs and Log Analytics - Workspaces, workbooks, and queries
+# Tutorial: Integrating sign-in logs with Log Analytics
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 > * Create a Log Analytics workspace
 > * Configure diagnostic settings to integrate sign-in logs with the Log Analytics workspace
-> * Create a custom workbook
 > * Run queries using the Kusto Query Language (KQL)
-
+> * Create a custom workbook
 > * Add a query to an existing workbook template
 
 ## Prerequisites
@@ -49,7 +48,7 @@ To analyze activity logs with Log Analytics, you need the following roles and re
 
 [!INCLUDE [portal updates](../../includes/portal-update.md)]
 
-In this step you create a Log Analytics workspace, which is where you eventually send your sign-in logs. Before you can create the workspace, you need an [Azure resource group](/azure//azure-resource-manager/management/overview#resource-groups).
+In this step, you create a Log Analytics workspace, which is where you eventually send your sign-in logs. Before you can create the workspace, you need an [Azure resource group](/azure//azure-resource-manager/management/overview#resource-groups).
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) with [Log Analytics Contributor](/azure/azure-monitor/logs/manage-access#log-analytics-contributor) permissions.
 
@@ -77,7 +76,11 @@ In this step you create a Log Analytics workspace, which is where you eventually
 
 ## Configure diagnostic settings
 
-To configure diagnostic settings, you need switch to the Microsoft Entra admin center to send your identity log information to your new workspace.
+To send your identity log information to your new workspace, you need to configure diagnostic settings. Because there are different diagnostic settings for Azure, let's switch to the Microsoft Entra admin center to make sure everything is identity log related.
+
+You can complete these steps in the Azure portal, but for 
+
+The Microsoft Entra admin
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 
@@ -99,22 +102,17 @@ To configure diagnostic settings, you need switch to the Microsoft Entra admin c
 
     ![Screenshot of the select diagnostics settings options.](./media/tutorial-configure-log-analytics-workspace/select-diagnostics-settings.png)
 
-Your logs can now be queried using the Kusto Query Language (KQL) in Log Analytics. You might need to wait around 15 minutes for the logs to populate.
+Your selected logs might take up to 15 minutes for the logs to populate in your Log Analytics workspace. 
 
 ## Run queries in Log Analytics
 
-This procedure shows how to run queries using the **Kusto Query Language (KQL)**.
-
-### Run a query
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader). 
+With your logs streaming to your Log Analytics workspace, you can run queries using the **Kusto Query Language (KQL)**. The least privileged role to run queries is the **Reports Reader** role
 
 1. Browse to **Identity** > **Monitoring & health** > **Log Analytics**.
 
 1. In the **Search** textbox, type your query, and select **Run**. 
 
-
-### KQL query examples
+### Kusto query examples
 
 Take 10 random entries from the input data:
 
@@ -166,9 +164,7 @@ Create a new column by combining the values to two other columns:
 
 ## Create a custom workbook
 
-This procedure shows how to create a new workbook using the quickstart template.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+In addition to querying the data with KQL, you can create a custom workbook for further analysis and alerting. The least privileged role to create or update a workbook is the **Security Administrator** role.
 
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
 
@@ -207,9 +203,7 @@ This procedure shows how to create a new workbook using the quickstart template.
 
 ## Add a query to a workbook template
 
-This procedure shows how to add a query to an existing workbook template. The example is based on a query that shows the distribution of conditional access success to failures.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader).
+You can add Kusto queries to your workbook. The example is based on a query that shows the distribution of successful and failed sign-ins with applied Conditional Access policies. The least privileged role to create or update a workbook is the **Security Administrator** role.
 
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
 
