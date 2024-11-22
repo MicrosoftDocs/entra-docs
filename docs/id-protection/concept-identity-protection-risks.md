@@ -79,6 +79,7 @@ These fields are essential for real-time monitoring, threat response, and mainta
 | [Verified threat actor IP](#verified-threat-actor-ip) | Real-time | Premium | nationStateIP |
 | **User risk detections** | | | |
 | [Additional risk detected (user)](#additional-risk-detected-user) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
+| [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium | anomalousToken | 
 | [Anomalous user activity](#anomalous-user-activity) | Offline | Premium | anomalousUserActivity |
 | [Attacker in the Middle](#attacker-in-the-middle) | Offline | Premium | attackerinTheMiddle |
 | [Leaked credentials](#leaked-credentials) | Offline | Nonpremium | leakedCredentials |
@@ -175,6 +176,14 @@ Selecting an unfamiliar sign-in properties risk allows you to see more info 
 Calculated in real-time. This risk detection type indicates sign-in activity that is consistent with known IP addresses associated with nation state actors or cyber crime groups, based on data from the Microsoft Threat Intelligence Center (MSTIC). 
 
 ### Premium user risk detections 
+
+#### Anomalous token 
+
+Calculated in real-time or offline. This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
+
+Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
+
+[Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
 
 #### Anomalous user activity 
 
