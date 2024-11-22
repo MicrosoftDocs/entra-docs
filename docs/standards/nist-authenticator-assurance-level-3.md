@@ -30,11 +30,11 @@ Use Microsoft authentication methods to meet required NIST authenticator types.
 | Microsoft Entra authentication methods| NIST authenticator type |
 | - | -|
 | **Recommended methods**|    |
-|  Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator| Multi-factor cryptographic hardware |
+|  Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator<sup>1</sup>| Multi-factor cryptographic hardware |
 | **Additional methods**||
 |Password<br>**AND**<br>Single-factor hardware protected certificate|Memorized secret <br>**AND**<br>Single-factor cryptographic hardware|
 
-
+<sup>1</sup> Passkey in Microsoft Authenticator is overall considered partial AAL3 and can qualify as AAL3 on platforms with FIPS 140 Level 2 Overall (or higher) and FIPS 140 level 3 physical security (or higher). For additional information on FIPS 140 compliance for Microsoft Authenticator (iOS/Android) See [FIPS 140 compliant for Microsoft Entra authentication](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
 ### Recommendations
 
 For AAL3, we recommend using a multi-factor cryptographic hardware authenticator that provides passwordless authentication eliminating the greatest attack surface, the password.
@@ -101,7 +101,7 @@ To determine the TPMs that meet current standards, go to [NIST Computer Security
 
 Apple macOS 13 (and above) are FIPS 140 Level 2 Overall, with most devices also FIPS 140 Level 3 Physical Security. We recommend referring to the [Apple Platform Certifications](https://support.apple.com/guide/certifications/apc3a7433eb89/web). 
 
-**Passkey in Microsoft Authenticator**
+#### Passkey in Microsoft Authenticator
 
 For additional information on FIPS 140 compliance for Microsoft Authenticator (iOS/Android) See [FIPS 140 compliant for Microsoft Entra authentication](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
 
