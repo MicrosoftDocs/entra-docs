@@ -3826,5 +3826,9 @@
   "Process mining service principal" : "dad3c6de-ed58-42ef-989f-9c0303aaeedc",
   "Tabular Data Stream (TDS) link" : "893fcc7e-8a39-4b3c-815a-773b7b982c50",
   "Azure Digital Twins service endpoint resource ID" : "0b07f429-9f4b-4714-9392-cc5e8e80c8b0",
-  "Azure Digital Twins Read.Write Delegated permission" : "4589bd03-58cb-4e6c-b17f-b580e39652f8"
+  "Azure Digital Twins Read.Write Delegated permission" : "4589bd03-58cb-4e6c-b17f-b580e39652f8",
+  "Microsoft Power Query for Excel " : "a672d62c-fc7b-4e81-a576-e60dc46e951d",
+  "Dataverse account table ID" : "70816501-edb9-4740-a16c-6a5efbc05d84",
+  "Blazor Visual Studio project template default client Id" : "11111111-1111-1111-1111-111111111111",
+  "Azure Management app redirect URI" : "58145B91-0C36-4500-8554-080854F2AC97"
 }
