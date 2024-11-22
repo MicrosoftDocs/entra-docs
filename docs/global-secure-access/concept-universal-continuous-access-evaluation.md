@@ -47,7 +47,7 @@ Global Secure Access is enabled to receive signals from Entra ID in near real-ti
 Upon receiving the security event, Global Secure Access client will prompt the user to re-authenticate. If the re-authentication is successful, user's network connectivity to resources protected by Global Secure Access is restored.
 
 ## Strict Enforcement mode
-With the Strict Enforcement mode, Universal CAE immediately stops access if the IP address detected by the resource provider isn't allowed by Conditional Access policy. This option is the highest security modality of CAE location enforcement, and requires that administrators understand the routing of authentication and access requests in their network environment. When strict enforcement is enabled, access to the Global Secure Access services is only possible when your users are 
+With the Strict Enforcement mode, Universal CAE immediately stops access if the IP address detected by the resource provider isn't allowed by Conditional Access policy. This option is the highest security modality of CAE location enforcement, and requires that administrators understand the routing of authentication and access requests in their network environment. When strict enforcement is enabled, access to the Global Secure Access services is only possible when your users are connecting to the GSA service from IP address ranges authorized by your organization.
 
 ## Disabling Universal CAE
 
