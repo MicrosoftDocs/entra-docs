@@ -6,7 +6,7 @@ description: This is the Azure Multi-factor authentication page that will assist
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/30/2022
+ms.date: 11/25/2024
 
 ms.author: justinha
 author: justinha

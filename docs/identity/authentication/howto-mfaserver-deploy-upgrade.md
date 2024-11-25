@@ -6,7 +6,7 @@ description: Steps and guidance to upgrade the Azure Multi-Factor Authentication
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/10/2022
+ms.date: 11/22/2024
 
 ms.author: justinha
 author: justinha

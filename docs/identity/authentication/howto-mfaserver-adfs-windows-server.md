@@ -6,7 +6,7 @@ description: This article describes how to get started with Azure multifactor au
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/29/2022
+ms.date: 11/25/2024
 
 ms.author: justinha
 author: justinha

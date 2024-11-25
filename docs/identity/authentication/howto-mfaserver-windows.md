@@ -6,7 +6,7 @@ description: Deploying Windows Authentication and Azure Multi-Factor Authenticat
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/11/2018
+ms.date: 11/25/2024
 
 ms.author: justinha
 author: justinha
