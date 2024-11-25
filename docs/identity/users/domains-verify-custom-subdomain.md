@@ -32,13 +32,14 @@ Because subdomains inherit the authentication type of the root domain by default
 1. Use PowerShell to add the new subdomain, which has its root domain's default authentication type. The Microsoft Entra ID and Microsoft 365 admin centers don't yet support this operation.
 
    ```powershell
-   Connect-MgGraph -Scopes "Domain.ReadWrite.All"
-    $param = @{
-      id="test.contoso.com"
-      AuthenticationType="Federated"  
-     }
-   New-MgDomain -Name "child.mydomain.com" -Authentication Federated
-   ```
+     Connect-MgGraph -Scopes "Domain.ReadWrite.All"
+     $param = @{
+     Name = "child.mydomain.com"
+     AuthenticationType = "Federated"
+   }
+   New-MgDomain -BodyParameter $param
+
+ ```
 
 1. Use the following example to GET the domain. Because the domain isn't a root domain, it inherits the root domain authentication type. Your command and results might look as follows, using your own tenant ID:
 
