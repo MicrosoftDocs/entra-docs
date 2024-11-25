@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/20/2024
+ms.date: 11/25/2024
 
 
 ms.author: justinha
@@ -24,8 +24,8 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Android 14 and later or iOS 17 and later
 - An active internet connection on any device that is part of the passkey registration/authentication process. Connectivity to these two endpoints must be allowed in your organization to enable cross-device registration and authentication:
-  - https://cable.ua5v.com
-  - https://cable.auth.com
+  - `https://cable.ua5v.com`
+  - `https://cable.auth.com`
 - For cross-device registration/authentication, both devices must have Bluetooth enabled
 
 > [!NOTE]
