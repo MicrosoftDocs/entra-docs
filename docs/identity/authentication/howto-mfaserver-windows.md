@@ -1,6 +1,6 @@
 ---
 title: Windows authentication and Azure MFA Server
-description: Deploy Windows Authentication and Azure Multi-Factor Authentication Server.
+description: Deploy Windows Authentication and Azure Multifactor Authentication Server.
 
 
 ms.service: entra-id
@@ -13,12 +13,12 @@ author: justinha
 manager: amycolannino
 ms.reviewer: michmcla
 ---
-# Windows Authentication and Azure Multi-Factor Authentication Server
+# Windows Authentication and Azure Multifactor Authentication Server
 
-To enable and configure Windows authentication for applications, use the Windows Authentication section of the Azure Multi-Factor Authentication Server. Before you set up Windows Authentication, keep the following list in mind:
+To enable and configure Windows authentication for applications, use the Windows Authentication section of the Azure Multifactor Authentication Server. Before you set up Windows Authentication, keep the following list in mind:
 
 * After setup, reboot the Azure multifactor authentication for Terminal Services to take effect.
-* If 'Require Azure multifactor authentication user match' is checked and you aren't in the user list, you won't be able to log into the machine after reboot.
+* If 'Require Azure multifactor authentication user match' is checked, and you aren't in the user list, you won't be able to log into the machine after reboot.
 * Trusted IPs is dependent on whether the application can provide the client IP with the authentication. Currently only Terminal Services is supported.  
 
 > [!IMPORTANT]
@@ -33,7 +33,7 @@ To enable and configure Windows authentication for applications, use the Windows
 
 ## To secure an application with Windows Authentication, use the following procedure
 
-1. In the Azure Multi-Factor Authentication Server, select the Windows Authentication icon.
+1. In the Azure Multifactor Authentication Server, select the Windows Authentication icon.
    ![Windows Authentication in MFA Server](./media/howto-mfaserver-windows/windowsauth.png)
 2. Check the **Enable Windows Authentication** checkbox. By default, this box is unchecked.
 3. The Applications tab allows the administrator to configure one or more applications for Windows Authentication.
