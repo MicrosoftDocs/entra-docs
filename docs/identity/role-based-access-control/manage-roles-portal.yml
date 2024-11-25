@@ -90,7 +90,7 @@ procedureSection:
       - |
         Select **Next**.
       - |
-        On the **Setting** tab, select whether you wan to make this role assignment **Eligible** or **Active**.
+        On the **Setting** tab, select whether you want to make this role assignment **Eligible** or **Active**.
 
           An eligible role assignment means that the user must perform one or more actions to use the role. An active role assignment means that the user doesn't have to perform any action to use the role. For more information about what these settings mean, see [PIM terminology](~/id-governance/privileged-identity-management/pim-configure.md#terminology).
 

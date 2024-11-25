@@ -79,7 +79,7 @@ landingContent:
             url: license-users-groups.yml
 
    # Card
-  - title: Microsoft Copilot for Security + Microsoft Entra
+  - title: Microsoft Security Copilot + Microsoft Entra
     linkLists:
       - linkListType: how-to-guide
         links:

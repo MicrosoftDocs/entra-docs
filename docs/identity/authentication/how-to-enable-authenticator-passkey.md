@@ -24,8 +24,8 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Android 14 and later or iOS 17 and later
 - An active internet connection on any device that is part of the passkey registration/authentication process. Connectivity to these two endpoints must be allowed in your organization to enable cross-device registration and authentication:
-  - cable.ua5v.com
-  - cable.auth.com
+  - https://cable.ua5v.com
+  - https://cable.auth.com
 - For cross-device registration/authentication, both devices must have Bluetooth enabled
 
 > [!NOTE]
@@ -64,18 +64,18 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
 
      [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** for users to be able to choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users may still be able to add a passkey in Microsoft Authenticator by choosing the **Security key or passkey** method, depending upon their operating system and browser. However, we don't expect many users to discover and use that method.  
      
-     If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Include those users and the Authenticator AAGUIDs to enable this preview. You can do this with an automated script that analyzes logs, such as registration details and sign-in logs.
+     If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Include those users and the Authenticator AAGUIDs. You can do this with an automated script that analyzes logs, such as registration details and sign-in logs.
 
      If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
    - Set **Restrict specific keys** to **Allow**.
-   - Select **Microsoft Authenticator (Preview)** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following AAGUIDs to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page:
+   - Select **Microsoft Authenticator** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following AAGUIDs to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page:
 
      - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
      - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
    
      >[!NOTE]
-     >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator (Preview)** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
+     >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
