@@ -97,7 +97,7 @@ The **$scp.Keywords** output shows the Microsoft Entra tenant information. Here'
 
 In a federated Microsoft Entra configuration, devices rely on AD FS or an on-premises federation service from a Microsoft partner to authenticate to Microsoft Entra ID. Devices authenticate to get an access token to register against the Microsoft Entra Device Registration Service (Azure DRS).
 
-Windows current devices authenticate by using integrated Windows authentication to an active WS-Trust endpoint (either 1.3 or 2005 versions) hosted by the on-premises federation service.
+Windows devices authenticate by using integrated Windows authentication to an active WS-Trust endpoint (either 1.3 or 2005 versions) hosted by the on-premises federation service.
 
 When you're using AD FS, you need to enable the following WS-Trust endpoints:
 
@@ -414,7 +414,7 @@ The following script helps you with the creation of the issuance transform rules
    => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)",  "http://${domain}/adfs/services/trust/")); 
    ```
 
-If you've issued an **ImmutableID** claim for user accounts, set the value of **$immutableIDAlreadyIssuedforUsers** in the script to **$true**.
+If you issue an **ImmutableID** claim for user accounts, set the value of **$immutableIDAlreadyIssuedforUsers** in the script to **$true**.
 
 ## Troubleshoot your implementation
 

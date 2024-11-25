@@ -12,7 +12,6 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: sandeo
 ---
-
 # Microsoft Entra hybrid join targeted deployment
 
 You can validate your [planning and prerequisites](hybrid-join-plan.md) for hybrid Microsoft Entra joining devices using a targeted deployment before enabling it across the entire organization. This article explains how to accomplish a targeted deployment of Microsoft Entra hybrid join.
@@ -21,12 +20,13 @@ You can validate your [planning and prerequisites](hybrid-join-plan.md) for hybr
 > Use caution when modifying values in Active Directory. Making changes in an established environment might have unintended consequences.
 
 <a name='targeted-deployment-of-hybrid-azure-ad-join-on-windows-current-devices'></a>
+<a name='targeted-deployment-of-microsoft-entra-hybrid-join-on-windows-current-devices'></a>
 
-## Targeted deployment of Microsoft Entra hybrid join on Windows current devices
+## Targeted deployment of Microsoft Entra hybrid join on Windows devices
 
 For devices running Windows 10, the minimum supported version is Windows 10 (version 1607) to do hybrid join. As a best practice, upgrade to the latest version of Windows 10 or 11. 
 
-To do a targeted deployment of Microsoft Entra hybrid join on Windows current devices, you need to:
+To do a targeted deployment of Microsoft Entra hybrid join on Windows devices, you need to:
 
 1. [Clear the Service Connection Point (SCP) entry from Windows Server Active Directory if it exists](#clear-the-scp-from-ad).
 1. [Configure client-side registry setting for SCP on your domain-joined computers using a Group Policy Object (GPO)](#configure-client-side-registry-setting-for-scp).

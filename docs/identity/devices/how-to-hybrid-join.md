@@ -78,7 +78,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a man
 
 A federated environment should have an identity provider that supports the following requirements. If you have a federated environment using Active Directory Federation Services (AD FS), then the below requirements are already supported.
 
-- **WS-Trust protocol:** This protocol is required to authenticate Windows current Microsoft Entra hybrid joined devices with Microsoft Entra ID. When you're using AD FS, you need to enable the following WS-Trust endpoints:
+- **WS-Trust protocol:** This protocol is required to authenticate the Microsoft Entra hybrid joined devices with Microsoft Entra ID. When you're using AD FS, you need to enable the following WS-Trust endpoints:
    - `/adfs/services/trust/2005/windowstransport`
    - `/adfs/services/trust/13/windowstransport`
    - `/adfs/services/trust/2005/usernamemixed`
