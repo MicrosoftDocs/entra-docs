@@ -40,7 +40,6 @@ Released for download on November 26, 2024.
 - Performance improvements for tunneled network traffic.
 - Notifications when entering and exiting captive portal are turned off by default.
 - On the Advanced diagnostics **Traffic** tab, status information appears across two columns: the **Connection status** and **Status Details**. If the Global Secure Access service stops a connection (for example, due to a filtering policy set to block), the **Connection status** column shows "Terminated" and the **Status Details** column shows the reason for the termination.  
--  
 - To accommodate when sign-in is required, the sign-in window is shown even if Windows notifications are disabled.
 ### Other changes
 - Renamed services:
