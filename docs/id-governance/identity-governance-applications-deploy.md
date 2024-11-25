@@ -6,7 +6,7 @@ manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 12/19/2022
+ms.date: 11/25/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ---

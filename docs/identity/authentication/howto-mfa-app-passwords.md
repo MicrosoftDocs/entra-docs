@@ -91,7 +91,7 @@ By default, users can't create app passwords. The app passwords feature must be 
 >
 > When you disable the ability for users to create app passwords, existing app passwords continue to work. However, users can't manage or delete those existing app passwords once you disable this ability.
 >
-> When you disable the ability to create app passwords, it's also recommended to [create a Conditional Access policy to disable the use of legacy authentication](~/identity/conditional-access/block-legacy-authentication.md). This approach prevents existing app passwords from working, and forces the use of modern authentication methods.
+> When you disable the ability to create app passwords, it's also recommended to [create a Conditional Access policy to disable the use of legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md). This approach prevents existing app passwords from working, and forces the use of modern authentication methods.
 
 ## Create an app password
 

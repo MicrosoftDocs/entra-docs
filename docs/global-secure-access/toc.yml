@@ -132,6 +132,8 @@ items:
         href: how-to-configure-global-access-with-pim.md
       - name: Kerberos single sign-on (SSO)
         href: how-to-configure-kerberos-sso.md
+      - name: Source IP anchoring
+        href: source-ip-anchoring.md
   - name: Internet Access
     expanded: true
     items:
@@ -139,8 +141,6 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
-      - name: Source IP anchoring
-        href: source-ip-anchoring.md
   - name: Logs and monitoring
     expanded: false
     items:
