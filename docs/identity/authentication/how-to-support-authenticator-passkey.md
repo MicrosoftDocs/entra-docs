@@ -22,7 +22,7 @@ This topic covers issues that users might see when they use passkeys in Microsof
 
 ## Storing passkeys in Android profiles 
 
-Passkeys on Android can only be used from the profile where they are stored. A passkey that is stored in a Android Work Profile can only be used from that profile. A passkey in a Personal profile can only be used from that. To make sure users can use the passkey they need, they should create passkeys in both profiles. 
+Passkeys on Android can only be used from the profile where they are stored. A passkey that is stored in a Android Work Profile can only be used from that profile. A passkey in a Personal profile can only be used from that. To make sure users can access and use the passkey they need, users with both Android Personal profile and Android Work profile should create their passkeys in the Authenticator app for each profile. 
 
 ## Workarounds for an authentication strength Conditional Access policy loop
 
