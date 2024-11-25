@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 11/22/2024
+ms.date: 11/25/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -35,11 +35,12 @@ Released for download on November 26, 2024.
 > [!NOTE]
 > Host machines that have the Hyper-V external virtual switch do not support this version of the Global Secure Access client.
 - The forwarding profile update is triggered when a user signs in to Windows.
-- Global Secure Access client's driver events are written to the event log under:    
+- Global Secure Access client's driver events are written to the Event Viewer under:    
 `Applications and Services Logs > Microsoft > Windows > Global Secure Access > Kernel`
 - Performance improvements for tunneled network traffic.
-- Notifications when entering and exiting captive portal are removed by default.
-- The Advanced diagnostics **Traffic** tab, under the **Status details** column, lists connections that are terminated by the Global Secure Access service (for example, due to a filtering policy set to block), along with the connection status **Terminated** and the reason for the termination.   
+- Notifications when entering and exiting captive portal are turned off by default.
+- On the Advanced diagnostics **Traffic** tab, status information appears across two columns: the **Connection status** and **Status Details**. If the Global Secure Access service stops a connection (for example, due to a filtering policy set to block), the **Connection status** column shows "Terminated" and the **Status Details** column shows the reason for the termination.  
+-  
 - To accommodate when sign-in is required, the sign-in window is shown even if Windows notifications are disabled.
 ### Other changes
 - Renamed services:
