@@ -133,6 +133,6 @@ Continually review Permissions Management. As identities stay with an organizati
 
 ## Related content
 
-- [Microsoft Copilot for Security](/copilot/security/microsoft-security-copilot) helps support security professionals in end-to-end scenarios such as incident response, threat hunting, intelligence gathering, and posture management.
+- [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot) helps support security professionals in end-to-end scenarios such as incident response, threat hunting, intelligence gathering, and posture management.
 - [Microsoft Purview Information Barriers](/purview/information-barriers) are policies that can prevent individuals or groups from communicating with each other. [Information barriers in Microsoft Teams](/purview/information-barriers-teams) can determine and prevent unauthorized collaborations.
 - For [Microsoft 365 Copilot requirements](/microsoft-365-copilot/microsoft-365-copilot-requirements), review [Enterprise data protection in Copilot for Microsoft 365 and Microsoft Copilot](/copilot/microsoft-365/enterprise-data-protection#what-is-enterprise-data-protection-in-copilot-for-microsoft-365-and-microsoft-copilot).

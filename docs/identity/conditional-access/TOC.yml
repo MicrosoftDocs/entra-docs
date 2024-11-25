@@ -134,8 +134,6 @@
     href: managed-policies.md
   - name: Configure report only mode
     href: howto-conditional-access-insights-reporting.md
-  - name: Block legacy authentication
-    href: block-legacy-authentication.md
   - name: Require terms of use
     href: terms-of-use.md
   - name: Sign-in frequency and browser persistence control

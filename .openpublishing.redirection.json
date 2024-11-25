@@ -46,6 +46,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/conditional-access/block-legacy-authentication.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-block-legacy-authentication",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/reference-resources-change.md",
       "redirect_url": "/entra/identity/conditional-access/concept-conditional-access-cloud-apps",
       "redirect_document_id": false
@@ -516,10 +521,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity-platform/custom-extension-email-otp-get-started.md",
-      "redirect_url": "/entra/identity-platform/custom-extension-overview",
-      "redirect_document_id": false},
-    {"source_path_from_root": "/docs/identity-platform/tutorial-v2-angular-auth-code.md",
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-angular-auth-code.md",
       "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-register-app",
       "redirect_document_id": false
     },
