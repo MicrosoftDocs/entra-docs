@@ -287,7 +287,7 @@ Create an APM SSO object for KCD SSO to back-end applications. Use the APM deleg
 
     ![Screenshot of Name, Username Source, and SSO Method Configuration entries on General Properties.](./media/f5-big-ip-kerberos-advanced/configure-kerberos-sso.png)
 
-You can leave KDC undefined if the user realm is different from the back-end server realm. This rule applies to multiple-domain realm scenarios. If you leave KDC undefined, BIG-IP tries to discover a Kerberos realm through a DNS lookup of SRV records for the back-end server domain. It expects the domain name to be the same as the realm name. If the domain name differs, specify it in the [/, and so on/krb5.conf](https://support.f5.com/csp/article/K17976428) file.
+You can leave KDC undefined if the user realm is different from the back-end server realm. This rule applies to multiple-domain realm scenarios. If you leave KDC undefined, BIG-IP tries to discover a Kerberos realm through a DNS lookup of SRV records for the back-end server domain. It expects the domain name to be the same as the realm name. If the domain name differs, specify it in the [/etc/krb5.conf](https://support.f5.com/csp/article/K17976428) file.
 
 Kerberos SSO processing is faster when an IP address specifies a KDC. Kerberos SSO processing is slower if a host name specifies a KDC. Because of more DNS queries, processing is slower when a KDC is undefined. Ensure your DNS is performing optimally before moving a proof-of-concept into production. 
 
