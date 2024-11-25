@@ -6,7 +6,7 @@ metadata:
   ms.subservice: devices
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
-  ms.date: 03/01/2024
+  ms.date: 11/25/2024
   ms.author: joflore
   author: MicrosoftGuyJFlo
   manager: amycolannino
@@ -34,12 +34,10 @@ sections:
           Go to **All devices**. Search for the device by using the device ID. Check the value under the join type column. Sometimes, the device might be reset or reimaged. So it's essential to also check the device registration state on the device:
           
           - For Windows 10 or newer and Windows Server 2016 or later devices, run `dsregcmd.exe /status`.
-          - For down-level OS versions, run `%programFiles%\Microsoft Workplace Join\autoworkplace.exe`.
           
           For troubleshooting information, see these articles:
           - [Troubleshooting devices using dsregcmd command](troubleshoot-device-dsregcmd.md)
           - [Troubleshooting Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md)
-          - [Troubleshooting Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md)
           
       - question: My org on-premises AD users are split into two or more different tenants in Microsoft Entra ID. Do I get Windows PRT for each tenant on client machine?
         answer: |
@@ -58,7 +56,6 @@ sections:
           - An administrator (or user) deletes or disables the device.
           - Microsoft Entra hybrid joined only: An administrator removes the devices OU out of sync scope resulting in the devices being deleted from Microsoft Entra ID.
           - Microsoft Entra hybrid joined only: An administrator disables the computer account on premises, resulting in the device being disabled in Microsoft Entra ID.
-          - Upgrading Microsoft Entra Connect to the version 1.4.xx.x. [Understanding Microsoft Entra Connect 1.4.xx.x and device disappearance](/troubleshoot/azure/active-directory/reference-connect-device-disappearance).
           
       - question: I disabled or deleted my device, but the local state on the device says it's still registered. What should I do?
         answer: |
@@ -66,7 +63,7 @@ sections:
           
           - If the device was disabled in Microsoft Entra ID, an administrator with sufficient privileges can enable it in the Microsoft Entra admin center.
             > [!NOTE]
-            > If you're syncing devices using Microsoft Entra Connect, Microsoft Entra hybrid joined devices will be automatically re-enabled during the next  sync cycle. So, if you need to disable a Microsoft Entra hybrid joined device, you need to disable it from your on-premises AD.
+            > If you're syncing devices using Microsoft Entra Connect, Microsoft Entra hybrid joined devices will be automatically re-enabled during the next sync cycle. So, if you need to disable a Microsoft Entra hybrid joined device, you need to disable it from your on-premises AD.
           
            - If the device is deleted in Microsoft Entra ID, you need to re-register the device. To re-register, you must take a manual action on the device. See the following steps for instructions to re-register based on the device state. 
           
@@ -75,12 +72,6 @@ sections:
                 1. Open the command prompt as an administrator.
                 1. Enter `dsregcmd.exe /debug /leave`.
                 1. Sign out and sign in to trigger the scheduled task that registers the device again with Microsoft Entra ID. 
-          
-                For down-level Windows OS versions that are Microsoft Entra hybrid joined, take the following steps:
-          
-                1. Open the command prompt as an administrator.
-                1. Enter `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /l"`.
-                1. Enter `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /j"`.
           
                 For Microsoft Entra joined devices Windows 10/11 devices, take the following steps:
           
@@ -99,7 +90,6 @@ sections:
         answer: |
           - For Windows 10 or newer and Windows Server 2016 or later, repeated tries to unjoin and rejoin the same device might cause duplicate entries. 
           - Each Windows user who uses **Add Work or School Account** creates a new device record with the same device name.
-          - For down-level Windows OS versions that are on-premises Azure Directory domain joined, automatic registration creates a new device record with the same device name for each domain user who signs in to the device. 
           - A Microsoft Entra joined machine that's wiped, reinstalled, and rejoined with the same name shows up as another record with the same device name.
           
       - question: Does Windows 10/11 device registration in Microsoft Entra support TPMs in FIPS mode?
@@ -204,7 +194,6 @@ sections:
           For troubleshooting information, see these articles:
           
           - [Troubleshooting Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md)
-          - [Troubleshooting Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md)
            
       - question: Why do I see a duplicate Microsoft Entra registered record for my Windows 10/11 Microsoft Entra hybrid joined device in the Microsoft Entra devices list?
         answer: |

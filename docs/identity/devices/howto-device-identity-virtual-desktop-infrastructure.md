@@ -5,7 +5,7 @@ description: Learn how VDI and Microsoft Entra device identities can be used tog
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 08/27/2024
+ms.date: 11/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -28,7 +28,7 @@ There are two primary types of virtual desktops:
 
 Persistent versions use a unique desktop image for each user or a pool of users. These unique desktops can be customized and saved for future use.
 
-Non-persistent versions use a collection of desktops that users can access on an as needed basis. These non-persistent desktops are reverted to their original state, in Windows current<sup>1</sup> this change happens when a virtual machine goes through a shutdown/restart/OS reset process and in Windows down-level<sup>2</sup> this change happens when a user signs out.
+Non-persistent versions use a collection of desktops that users can access on an as needed basis. These non-persistent desktops are reverted to their original state, in Windows current<sup>1</sup> this change happens when a virtual machine goes through a shutdown/restart/OS reset process.
 
 It's important to ensure organizations manage stale devices that are created because frequent device registration without having a proper strategy for device lifecycle management.
 
@@ -45,21 +45,17 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 
 | Device identity type | Identity infrastructure | Windows devices | VDI platform version | Supported |
 | --- | --- | --- | --- | --- |
-| Microsoft Entra hybrid joined | Federated<sup>3</sup> | Windows current and Windows down-level | Persistent | Yes |
+| Microsoft Entra hybrid joined | Federated<sup>3</sup> | Windows current | Persistent | Yes |
 |   |   | Windows current | Non-persistent | Yes<sup>5</sup> |
-|   |   | Windows down-level | Non-persistent | Yes<sup>6</sup> |
-|   | Managed<sup>4</sup> | Windows current and Windows down-level | Persistent | Yes |
+|   | Managed<sup>4</sup> | Windows current | Persistent | Yes |
 |   |   | Windows current | Non-persistent | Limited<sup>6</sup> |
-|   |   | Windows down-level | Non-persistent | Yes<sup>7</sup> |
 | Microsoft Entra joined | Federated | Windows current | Persistent | Limited<sup>8</sup> |
 |   |   |   | Non-persistent | No |
 |   | Managed | Windows current | Persistent | Limited<sup>8</sup> |
 |   |   |   | Non-persistent | No |
-| Microsoft Entra registered | Federated/Managed | Windows current/Windows down-level | Persistent/Non-Persistent | Not Applicable |
+| Microsoft Entra registered | Federated/Managed | Windows current | Persistent/Non-Persistent | Not Applicable |
 
 <sup>1</sup> **Windows current** devices represent Windows 10 or newer, Windows Server 2016 v1803 or higher, and Windows Server 2019 or higher.
-
-<sup>2</sup> **Windows down-level** devices represent Windows 7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, and Windows Server 2012 R2. For support information on Windows 7, see [Support for Windows 7 is ending](https://www.microsoft.com/microsoft-365/windows/end-of-windows-7-support). For support information on Windows Server 2008 R2, see [Prepare for Windows Server 2008 end of support](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
 <sup>3</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider (IdP) such as AD FS or other third-party IdP. In a federated identity infrastructure environment, computers follow the [managed device registration flow](device-registration-how-it-works.md#hybrid-azure-ad-joined-in-managed-environments) based on the [Microsoft Windows Server Active Directory Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
 
@@ -68,8 +64,6 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 <sup>5</sup> **Non-Persistence support for Windows current** requires other consideration as documented in the guidance section. This scenario requires Windows 10 1803 or newer, Windows Server 2019, or Windows Server (Semi-annual channel) starting version 1803
 
 <sup>6</sup> **Non-Persistence support for Windows current** in a Managed identity infrastructure environment is only available with Citrix [on-premises customer managed](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/machine-identities/hybrid-azure-active-directory-joined) and [Cloud service managed](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-identities/hybrid-azure-active-directory-joined). For any support related queries, contact [Citrix support](https://www.citrix.com/support/) directly.
-
-<sup>7</sup> **Non-Persistence support for Windows down-level** requires other consideration as documented in the guidance section.
 
 <sup>8</sup> **Microsoft Entra join support** is available with [Azure Virtual Desktop](/azure/virtual-desktop/), [Windows 365](https://www.microsoft.com/windows-365) and [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html#launch-entra-id). For any support related queries with Amazon WorkSpaces and Microsoft Entra integration, contact [Amazon support](https://aws.amazon.com/contact-us/) directly.
 
@@ -88,14 +82,12 @@ When deploying non-persistent VDI, Microsoft recommends organizations implement 
 - If you're relying on a Virtual Machine (VM) snapshot to create more VMs, make sure that snapshot isn't from a VM that is already registered with Microsoft Entra ID as Microsoft Entra hybrid join.
 - Active Directory Federation Services (AD FS) supports instant join for non-persistent VDI and Microsoft Entra hybrid join.
 - Create and use a prefix for the display name (for example, NPVDI-) of the computer that indicates the desktop as non-persistent VDI-based.
-- For Windows down-level:
-   - Implement **autoworkplacejoin /leave** command as part of logoff script. This command should be triggered in the context of the user, and should be executed before the user has logged off completely and network connectivity exists.
 - For Windows current in a Federated environment (for example, AD FS):
    - Implement **dsregcmd /join** as part of VM boot sequence/order and before user signs in.
    - **DO NOT** execute dsregcmd /leave as part of VM shutdown/restart process.
 - Define and implement process for [managing stale devices](manage-stale-devices.md).
    - Once you have a strategy to identify your non-persistent Microsoft Entra hybrid joined devices (such as using computer display name prefix), you should be more aggressive on the cleanup of these devices to ensure your directory doesn't get consumed with lots of stale devices.
-   - For non-persistent VDI deployments on Windows current and down-level, you should delete devices that have **ApproximateLastLogonTimestamp** of older than 15 days.
+   - For non-persistent VDI deployments, you should delete devices that have **ApproximateLastLogonTimestamp** of older than 15 days.
 
 > [!NOTE]
 > When using non-persistent VDI, if you want to prevent adding a work or school account ensure the following registry key is set:

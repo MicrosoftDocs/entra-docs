@@ -6,7 +6,7 @@ description: Choose the Microsoft Entra device integration strategies that meet 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 09/30/2022
+ms.date: 11/25/2024
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -100,7 +100,6 @@ iOS and Android devices may only be Microsoft Entra registered. The following ta
 | --- | :---: | :---: | :---: |
 | **Client operating systems** | | |  |
 | Windows 11 or Windows 10 devices | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
-| Windows down-level devices (Windows 8.1 or Windows 7) | | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 | Linux Desktop - Ubuntu 20.04/22.04 | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | | | 
 |**Sign in options** | | |  |
 | End-user local credentials | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | |  |
@@ -184,7 +183,7 @@ You may determine that Microsoft Entra join is the best solution for a device in
 
 ## Microsoft Entra hybrid join
 
-If you have an on-premises Active Directory environment and want to join your existing domain-joined computers to Microsoft Entra ID, you can accomplish this task with Microsoft Entra hybrid join. It supports a [broad range of Windows devices](hybrid-join-plan.md), including both Windows current and Windows down-level devices.
+If you have an on-premises Active Directory environment and want to join your existing domain-joined computers to Microsoft Entra ID, you can accomplish this task with Microsoft Entra hybrid join. It supports a [broad range of Windows devices](hybrid-join-plan.md).
 
 Most organizations already have domain joined devices and manage them via Group Policy or System Center Configuration Manager (SCCM). In that case, we recommend configuring Microsoft Entra hybrid join to start getting benefits while using existing investments.
 

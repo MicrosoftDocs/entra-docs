@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 03/01/2024
+ms.date: 11/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -422,7 +422,6 @@ If you experience issues completing Microsoft Entra hybrid join for domain-joine
 
 - [Troubleshooting devices using dsregcmd command](./troubleshoot-device-dsregcmd.md)
 - [Troubleshooting Microsoft Entra hybrid joined devices](troubleshoot-hybrid-join-windows-current.md)
-- [Troubleshooting Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md)
 
 ## Related content
 

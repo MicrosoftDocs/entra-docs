@@ -5,7 +5,7 @@ description: This article helps you troubleshoot Microsoft Entra hybrid joined W
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 10/22/2024
+ms.date: 11/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -19,8 +19,6 @@ ms.custom: has-adal-ref
 This article provides troubleshooting guidance to help you resolve potential issues with devices that are running Windows 10 or newer and Windows Server 2016 or newer.
 
 Microsoft Entra hybrid join supports the Windows 10 November 2015 update and later.
-
-To troubleshoot other Windows clients, see [Troubleshoot Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md).
 
 This article assumes that you have [Microsoft Entra hybrid joined devices](hybrid-join-plan.md) to support the following scenarios:
 
