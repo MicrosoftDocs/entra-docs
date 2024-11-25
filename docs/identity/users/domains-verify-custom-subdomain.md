@@ -33,17 +33,17 @@ Because subdomains inherit the authentication type of the root domain by default
 
 ```powershell
 
-# Connect to Microsoft Graph with the required scopes
-Connect-MgGraph -Scopes "Domain.ReadWrite.All"
-
-# Define the parameters for the new domain
-$domainParams = @{
-    Name = "child6.mydomain.com"
-    AuthenticationType = "Federated"
-}
-
-# Create a new domain with the specified parameters
-New-MgDomain @domainParams
+    # Connect to Microsoft Graph with the required scopes
+    Connect-MgGraph -Scopes "Domain.ReadWrite.All"
+    
+    # Define the parameters for the new domain
+    $domainParams = @{
+        Name = "child6.mydomain.com"
+        AuthenticationType = "Federated"
+    }
+    
+    # Create a new domain with the specified parameters
+    New-MgDomain @domainParams
 
 ```
 
