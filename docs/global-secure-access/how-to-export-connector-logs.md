@@ -81,9 +81,9 @@ Next, we need to Stop and Start the Connector service for the above changes to t
     - Click on **Add/Create > Add a Machine**.
     - Add a single server > click on **Generate Script**.
     - Fill in the information, then click **Download and Run Script**.
-2.	Install Azure Arc Agent on On-Premises Connector Machine:
+2.	Install Azure Arc Agent on on-premises Connector Machine:
     - Download the Azure Arc agent setup script from the Azure portal or Microsoft documentation.
-    - Search for “Windows Powershell ISE” in the search box on the Task bar. Right click on the application and click “Run as administrator.”  
+    - Search for **Windows Powershell ISE** in the search box on the Task bar. Right click on the application and click “Run as administrator.”  
     From the application open the file just downloaded labeled “OnboardingScript.ps1” through Powershell. 
     - Run the script. Log in on the pop up to authenticate using the Azure account. The screen will then look like: 
  
