@@ -3,7 +3,7 @@ title: The Global Secure Access client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/22/2024
+ms.date: 11/26/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -32,7 +32,7 @@ The most current version of the Global Secure Access client is available to down
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-download-screen-PubPreview.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
+:::image type="content" source="media/how-to-install-macos-client/macos-client-download-screen-PubPreview.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
     
 ## Install the Global Secure Access client
 ### Automated installation
@@ -48,7 +48,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 1. Create a profile for the macOS platform based on a template of type **Extensions**. Select **Create**.
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-create-profile.png" alt-text="Screenshot of the Create a profile form with the macOS Platform, Templates Profile type, and the Extensions template highlighted.":::
+:::image type="content" source="media/how-to-install-macos-client/macos-client-create-profile.png" alt-text="Screenshot of the Create a profile form with the macOS Platform, Templates Profile type, and the Extensions template highlighted.":::
 1. On the **Basics** tab, enter a name for the new profile and select **Next**.
 1. On the **Configuration settings** tab, enter the **Bundle identifier** and the **Team identifier** of the two extensions according to the following table. Select **Next**.   
  
@@ -64,7 +64,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 1. Create a profile for the macOS platform based on a template of type **Custom** and select **Create**.
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-create-profile-custom.png" alt-text="Screenshot of the Create a profile form with the macOS Platform, Templates Profile type, and Custom template highlighted.":::
+:::image type="content" source="media/how-to-install-macos-client/macos-client-create-profile-custom.png" alt-text="Screenshot of the Create a profile form with the macOS Platform, Templates Profile type, and Custom template highlighted.":::
 1. On the **Basics** tab, enter a **Name** for the profile.
 image.png
 1. On the **Configuration settings** tab, enter a **Custom configuration profile name**.
@@ -114,37 +114,37 @@ image.png
 </dict>
 </plist>
 ```
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-custom-configuration-settings.png" alt-text="Screenshot of the Configuration settings tab showing a portion of the .xml data.":::
+:::image type="content" source="media/how-to-install-macos-client/macos-client-custom-configuration-settings.png" alt-text="Screenshot of the Configuration settings tab showing a portion of the .xml data.":::
 
-5. Complete the creation of the profile by assigning users and devices according to your needs.
+7. Complete the creation of the profile by assigning users and devices according to your needs.
 
-### Manual interactive Installation
+### Manual interactive installation
 To manually install the Global Secure Access client:
 1. Run the GlobalSecureAccessClient.pkg setup file. The **Install** wizard launches. Follow the prompts.
 1. On the **Introduction** step, select **Continue**.
 1. On the **License** step, select **Continue** and then select **Agree** to accept the license agreement.
-:::image type="content" source="media/how-to-install-macos-client/macOS-install-license-agreement.png" alt-text="Screenshot of the Install wizard on the SumLicense step, showing the software license agreement pop-up.":::
+:::image type="content" source="media/how-to-install-macos-client/macos-install-license-agreement.png" alt-text="Screenshot of the Install wizard on the SumLicense step, showing the software license agreement pop-up.":::
 1. On the **Installation** step, select **Install**.
 1. On the **Summary** step, when the installation is complete, select **Close**.
 1. Allow the Global Secure Access system extension.
     1. In the **System Extension Blocked** dialog, select **Open System Settings**.    
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-open-systeem-settings.png" alt-text="Screenshot of the System Extension Blocked dialog box with the Open System Settings highlighted.":::    
+:::image type="content" source="media/how-to-install-macos-client/macos-client-open-system-settings.png" alt-text="Screenshot of the System Extension Blocked dialog box with the Open System Settings highlighted.":::    
 
     1. Allow the Global Secure Access client system extension by selecting **Allow**.
-:::image type="content" source="media/how-to-install-macos-client/macOS-allow-blocked-application.png" alt-text="Screenshot of the System Settings, open to the Privacy & Security options, showing a blocked application message, with the Allow button highlighted.":::   
+:::image type="content" source="media/how-to-install-macos-client/macos-allow-blocked-application.png" alt-text="Screenshot of the System Settings, open to the Privacy & Security options, showing a blocked application message, with the Allow button highlighted.":::   
 
     1. In the **Privacy & Security** dialog, enter your username and password to validate the approval of the system extension. Then select **Modify Settings**.    
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-credentials.png" alt-text="Screenshot of the Privacy & Security pop-up requesting sign-in credentials and the Modify Settings button highlighted.":::
+:::image type="content" source="media/how-to-install-macos-client/macos-client-credentials.png" alt-text="Screenshot of the Privacy & Security pop-up requesting sign-in credentials and the Modify Settings button highlighted.":::
 
     1. Complete the process by selecting **Allow** to enable the Global Secure Access client to add proxy configurations.   
-:::image type="content" source="media/how-to-install-macos-client/macOS-add-proxy.png" alt-text="Screenshot of the Global Secure Access client would like to add proxy configurations pop-up with the Allow button highlighted.":::
+:::image type="content" source="media/how-to-install-macos-client/macos-add-proxy.png" alt-text="Screenshot of the Global Secure Access client would like to add proxy configurations pop-up with the Allow button highlighted.":::
    
 1. After the installation is complete, you might be prompted to sign in to Microsoft Entra.
 > [!NOTE]
 > If the [Microsoft Enterprise SSO plug-in for Apple devices](../identity-platform/apple-sso-plugin.md) is deployed, the default behavior is to use single sign-on with the credentials entered in the company portal.   
 
 8. The **Global Secure Access - Connected** icon appears in the system tray, indicating a successful connection to Global Secure Access.   
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-system-tray-icon-connected.png" alt-text="Screenshot of the system tray with the Global Secure Access - Connected icon highlighted.":::
+:::image type="content" source="media/how-to-install-macos-client/macos-client-system-tray-icon-connected.png" alt-text="Screenshot of the system tray with the Global Secure Access - Connected icon highlighted.":::
    
 ## Upgrade the Global Secure Access client
 The client installer supports upgrades. You can use the installation wizard to install a new version on a device that is currently running a previous client version.
@@ -163,7 +163,7 @@ If you're using an MDM, uninstall the client with the MDM.
 
 ## Client actions
 To view the available client menu actions, right-click the Global Secure Access system tray icon.   
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-actions.png" alt-text="Screenshot showing the list of Global Secure Access client actions.":::   
+:::image type="content" source="media/how-to-install-macos-client/macos-client-actions.png" alt-text="Screenshot showing the list of Global Secure Access client actions.":::   
 
 |Action   |Description   |
 |---------|---------|
@@ -190,7 +190,7 @@ To view the available client menu actions, right-click the Global Secure Access 
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Private Access is disabled	 |The user disabled Private Access on this device.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - could not connect to the Internet	|The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
 
-## Settings and Troubleshooting
+## Settings and troubleshooting
 The Settings window allows you to set different configurations and do some advanced actions.
 The settings window contains two tabs:
 
@@ -201,7 +201,7 @@ The settings window contains two tabs:
 |**Telemetry full diagnostics**     |Sends full telemetry data to Microsoft for application improvement.         |
 |**Enable Verbose Logging**     |Enables verbose logging and network capture to be collected when exporting the logs to a zip file.         |
 
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-settings-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Settings tab selected.":::	
+:::image type="content" source="media/how-to-install-macos-client/macos-client-settings-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Settings tab selected.":::	
 
 ### Troubleshooting
 
@@ -212,7 +212,7 @@ The settings window contains two tabs:
 |**Export Logs**     |Exports logs and configuration files related to the client to a zip file.         |
 |**Advanced Diagnostics Tool**     |An advanced tool to monitor and troubleshoot the client's behavior.         |
 
-:::image type="content" source="media/how-to-install-macos-client/macOS-client-troubleshooting-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Troubleshooting tab selected.":::	
+:::image type="content" source="media/how-to-install-macos-client/macos-client-troubleshooting-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Troubleshooting tab selected.":::	
 
 ## Known limitations
 Known limitations for the current version of the Global Secure Access client include:
