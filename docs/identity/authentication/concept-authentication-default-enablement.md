@@ -5,7 +5,7 @@ description: Learn about authentication features that may be enabled by default 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/25/2023
+ms.date: 11/26/2024
 
 ms.author: justinha
 author: ChristianCB83

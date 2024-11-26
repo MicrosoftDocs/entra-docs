@@ -5,7 +5,7 @@ description: Learn about Web browser cookies used in Microsoft Entra authenticat
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: overview
-ms.date: 01/29/2023
+ms.date: 11/26/2024
 
 ms.author: justinha
 author: custorod
