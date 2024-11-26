@@ -32,7 +32,7 @@ This document provides a comprehensive guidance for deploying macOS Platform Sin
 
 US government agencies must use a phish-resistant authentication method in the Platform SSO configuration deployed to their devices.
 
-macOS 14 Sonoma and later offer two phish-resistant methods in the Apple Platform SSO framework:
+macOS 14 Sonoma and later offer two phishing-resistant methods in the Apple Platform SSO framework:
 
 1. [Secure Enclave](/mem/intune/configuration/platform-sso-macos#secure-enclave) (Recommended).        
 2. [Smart card](/mem/intune/configuration/platform-sso-macos#smart-card).
