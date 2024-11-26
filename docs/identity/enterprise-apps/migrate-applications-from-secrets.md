@@ -51,7 +51,7 @@ Conditional Access for workload identities enables blocking service principals f
 
 Secret scanning for your repository checks for any secrets that may already exist in your source code across history and push protection prevents any new secrets from being exposed in source code. To learn more see, [Secret scanning](/azure/devops/repos/security/github-advanced-security-secret-scanning).  
 
-### Deploy application authentication policies using to enforce secure authentication practices.
+### Deploy application authentication policies to enforce secure authentication practices.
 
 Application management policies allow IT admins to enforce best practices for how apps in their organizations should be configured. For example, an admin might configure a policy to block the use or limit the lifetime of password secrets. To learn more see, [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy).  
 
