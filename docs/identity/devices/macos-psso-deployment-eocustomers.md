@@ -10,7 +10,7 @@ ms.reviewer: brianmel
 author: garrodonnell
 manager: celested
 
-#Customer intent: As an IT Admin for a US Government Agency, I want to understand how to configure macOS Platform Single Sign-on (PSSO) for Microsoft Entra ID registered devices to meet the National Institute of Standards and Technology (NIST) Special Publication (SP) 800-63 Revision 4 and Executive Order 14028 requirements.
+#Customer intent: As an IT Admin for a US Government Agency, I want to understand how to configure macOS Platform Single Sign-on (PSSO) for Microsoft Entra ID registered devices to meet the National Institute of Standards and Technology (NIST) Special Publication (SP) 800-63 Revision 4 and Executive Order (EO) 14028 requirements.
 ---
 
 # Configuring macOS Platform SSO (PSSO) to meet NIST SP 800-63 and EO 14028 Requirements (preview)
