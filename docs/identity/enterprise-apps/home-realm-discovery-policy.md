@@ -21,14 +21,14 @@ Home Realm Discovery (HRD) enables Microsoft Entra ID to identify the appropriat
 
 Users are directed to one of the following identity providers for authentication:  
 
-- The user's home tenant (which may be the same as the resource tenant).  
+- The user's home tenant (which might be the same as the resource tenant).  
 - Microsoft account, if the user is a guest in the resource tenant using a consumer account.  
 - An on-premises identity provider like Active Directory Federation Services (ADFS).  
 - Another identity provider federated with the Microsoft Entra tenant.  
 
 ## Auto-acceleration  
 
-Organizations may configure domains in their Microsoft Entra tenant to federate with another IdP, such as ADFS, for user authentication. When users sign in to an application, they initially see a Microsoft Entra sign-in page. If they belong to a federated domain, they are redirected to the IdP's sign-in page for that domain. Administrators might want to bypass the initial Microsoft Entra ID page for specific applications, a process known as "sign-in auto-acceleration."  
+Organizations might configure domains in their Microsoft Entra tenant to federate with another IdP, such as ADFS, for user authentication. When users sign in to an application, they initially see a Microsoft Entra sign-in page. If they belong to a federated domain, they're redirected to the IdP's sign-in page for that domain. Administrators might want to bypass the initial Microsoft Entra ID page for specific applications, a process known as "sign-in auto-acceleration."  
 
 Microsoft advises against configuring auto-acceleration as it can hinder stronger authentication methods like FIDO and collaboration. For more information, see [Enable passwordless security key sign-in](~/identity/authentication/howto-authentication-passwordless-security-key.md). To learn how to prevent sign-in auto-acceleration, see [Disable auto-acceleration sign-in](prevent-domain-hints-with-home-realm-discovery.md).  
 
@@ -45,7 +45,7 @@ Control auto-acceleration to a federated IdP in three ways:
 
 ## Domain Confirmation Dialog  
 
-Starting April 2023, organizations using auto-acceleration or smart links may encounter a new screen in the sign-in UI, called the Domain Confirmation Dialog. This screen is part of Microsoft's security hardening efforts and requires users to confirm the domain of the tenant they are signing into.  
+Starting April 2023, organizations using auto-acceleration or smart links might encounter a new screen in the sign-in UI, called the Domain Confirmation Dialog. This screen is part of Microsoft's security hardening efforts and requires users to confirm the domain of the tenant they're signing into.  
 
 ### What You Need to Do  
 
@@ -89,7 +89,7 @@ If the domain hint doesn't refer to a verified federated domain, it can be ignor
 
 ### HRD Policy for Auto-acceleration  
 
-Some applications don't allow configuration of authentication requests. In such cases, it's not possible to use domain hints to control auto-acceleration.Use [Home Realm Discovery](configure-authentication-for-federated-users-portal.md) policy to configure auto-acceleration.  
+Some applications don't allow configuration of authentication requests. In such cases, it's not possible to use domain hints to control auto-acceleration. Use [Home Realm Discovery](configure-authentication-for-federated-users-portal.md) policy to configure auto-acceleration.  
 
 ### HRD Policy to Prevent Auto-acceleration  
 
@@ -97,7 +97,7 @@ Some Microsoft and SaaS applications automatically include domain hints, which c
 
 ## Enable direct ROPC authentication of federated users for legacy applications  
 
-Best practice is for applications to use Microsoft Entra libraries and interactive sign-in for user authentication. Legacy applications using Resource Owner Password Credentials (ROPC) grants may submit credentials directly to Microsoft Entra ID without understanding federation. They don't perform HRD or interact with the correct federated endpoint. You can use [Home Realm Discovery policy to enable specific legacy applications](configure-authentication-for-federated-users-portal.md) to authenticate directly with Microsoft Entra ID, provided Password Hash Sync is enabled.  
+Best practice is for applications to use Microsoft Entra libraries and interactive sign-in for user authentication. Legacy applications using Resource Owner Password Credentials (ROPC) grants might submit credentials directly to Microsoft Entra ID without understanding federation. They don't perform HRD or interact with the correct federated endpoint. You can use [Home Realm Discovery policy to enable specific legacy applications](configure-authentication-for-federated-users-portal.md) to authenticate directly with Microsoft Entra ID. This option works, provided Password Hash Sync is enabled. 
 
 > [!IMPORTANT]  
 > Only enable direct authentication if Password Hash Sync is active and it's acceptable to authenticate the application without on-premises IdP policies. If Password Hash Sync or Directory Synchronization with AD Connect is disabled, remove this policy to prevent direct authentication with stale password hashes.  
