@@ -18,10 +18,6 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
-## November 2024
-
-In order to achieve FIPS compliance for Verified ID authorities, the `secp256k1` key type is [scheduled for retirement](verifiable-credentials-faq.md#fips-compliance) by September 2025.
-
 ## October 2024
 
 - FAQ section now contains information for [network hardening](verifiable-credentials-faq.md#network-hardening-for-callback-events) for Request Service API callbacks.
