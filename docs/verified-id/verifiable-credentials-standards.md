@@ -39,7 +39,7 @@ Microsoft Entra Verified ID supports the following open standards:
 | Issuance | [OpenID for Verifiable Credentials Issuance](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-11.html) | OIDF|
 | Query language | [Presentation Exchange v2.0.0](https://identity.foundation/presentation-exchange/spec/v2.0.0/)| DIF |
 | Trust in DID (decentralized identifier) owner | [Well Known DID Configuration](https://identity.foundation/.well-known/resources/did-configuration)| DIF |
-| Revocation |[Verifiable Credential Status List](https://www.w3.org/TR/vc-status-list/)| W3C CCG |
+| Revocation |[Verifiable Credential Status List](https://www.w3.org/TR/2023/WD-vc-status-list-20230427/)| W3C CCG |
 
 ## Supported algorithms
 
