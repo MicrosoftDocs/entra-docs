@@ -7,12 +7,12 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.date: 04/29/2024
+ms.date: 11/14/2024
 ms.author: jomondi
 ms.reviewer: ludwignick
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
-zone_pivot_groups: home-realm-discovery
+zone_pivot_groups: enterprise-apps-minus-portal-aad
 #customer intent: As an IT admin configuring sign-in behavior for federated users in Microsoft Entra ID, I want to understand how to use Home Realm Discovery (HRD) policy to enable auto-acceleration sign-in and direct username/password authentication, so that I can streamline the sign-in process for specific applications and improve user experience.
 ---
 
@@ -38,19 +38,15 @@ To configure HRD policy for an application in Microsoft Entra ID, you need:
 - An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Application Administrator, Cloud Application Administrator or owner of the service principal.
 
-:::zone pivot="powershell-hrd"
-- The latest Azure AD PowerShell cmdlet preview.
-:::zone-end
+## Set up an HRD policy for an application
 
-## Set up an HRD policy on an application
+:::zone pivot="ms-powershell"
 
-:::zone pivot="powershell-hrd"
-
-We use Azure AD PowerShell cmdlets to walk through a few scenarios, including:
+We use Microsoft Graph PowerShell cmdlets to walk through a few scenarios, including:
 
 :::zone-end
 
-:::zone pivot="graph-hrd"
+:::zone pivot="ms-graph"
 
 We use Microsoft Graph to walk through a few scenarios, including:
 
@@ -64,7 +60,7 @@ We use Microsoft Graph to walk through a few scenarios, including:
 
 - Listing the applications for which a policy is configured.
 
-:::zone pivot="powershell-hrd"
+:::zone pivot="ms-powershell"
 
 In the following examples, you create, update, link, and delete HRD policies on application service principals in Microsoft Entra ID.
 
@@ -73,15 +69,14 @@ In the following examples, you create, update, link, and delete HRD policies on 
 1. Before you begin, run the Connect command to sign in to Microsoft Entra ID with your admin account:
 
     ```powershell
-    Connect-AzureAD -Confirm
+    connect-MgGraph -scopes "Policy.Read.All"
     ```
-
 1. Run the following command to see all the policies in your organization:
 
     ```powershell
-    Get-AzureADPolicy
+    Get-MgPolicyHomeRealmDiscoveryPolicy
     ```
-
+<!--TBD - add output-->
 If nothing is returned, it means you have no policies created in your tenant.
 
 :::zone-end
@@ -96,48 +91,81 @@ In this example, you create a policy such that when you assign it to an applicat
 
 The following policy auto-accelerates users to a federated identity provider sign-in screen when they're signing in to an application when there's a single domain in your tenant.
 
-:::zone pivot="powershell-hrd"
+:::zone pivot="ms-powershell"
 
 ```powershell
-New-AzureADPolicy 
-    -Definition @("{`"HomeRealmDiscoveryPolicy`":{`"AccelerateToFederatedDomain`":true}}") -DisplayName BasicAutoAccelerationPolicy 
-    -Type HomeRealmDiscoveryPolicy
+# Define the parameters for the policy 
+$policyParams = @{  
+    Definition = @(  
+        @{  
+            HomeRealmDiscoveryPolicy = @{  
+                AccelerateToFederatedDomain = $true  
+            }  
+        } | ConvertTo-Json -Compress  
+    )  
+    DisplayName = "BasicAutoAccelerationPolicy"  
+} 
+# Create a new Home Realm Discovery Policy
+New-MgPolicyHomeRealmDiscoveryPolicy @policyParams 
 ```
 :::zone-end
 
-:::zone pivot="graph-hrd"
+:::zone pivot="ms-graph"
+
+From the Microsoft Graph explorer window:
+
+1. Sign in with one of the roles listed in the prerequisites section.
+1. Grant consent to the `Policy.ReadWrite.ApplicationConfiguration` permission.
+1. POST the new policy, or PATCH to update an existing policy.
 
 ```http
-POST /policies/homeRealmDiscoveryPolicies
-
-"HomeRealmDiscoveryPolicy": {
-    "AccelerateToFederatedDomain": true
-}
+POST https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies  
+  
+{  
+    "definition": [  
+        "{\"HomeRealmDiscoveryPolicy\":{\"AccelerateToFederatedDomain\":true}}"  
+    ],  
+    "displayName": "BasicAutoAccelerationPolicy"  
+} 
 ```
+
 :::zone-end
 
 The following policy auto-accelerates users to a federated identity provider sign-in screen when there's more than one federated domain in your tenant. If you have more than one federated domain that authenticates users for applications, you need to specify the domain to auto-accelerate.
 
-:::zone pivot="powershell-hrd"
+:::zone pivot="ms-powershell"
 
 ```powershell
-New-AzureADPolicy 
-    -Definition @("{`"HomeRealmDiscoveryPolicy`":{`"AccelerateToFederatedDomain`":true, `"PreferredDomain`":`"federated.example.edu`"}}") 
-    -DisplayName MultiDomainAutoAccelerationPolicy 
-    -Type HomeRealmDiscoveryPolicy
+# Define the parameters for the New-MgPolicyHomeRealmDiscoveryPolicy cmdlet using splatting  
+$policyParams = @{  
+    Definition = @(  
+        @{  
+            HomeRealmDiscoveryPolicy = @{  
+                AccelerateToFederatedDomain = $true  
+                PreferredDomain = "federated.example.edu"  
+            }  
+        } | ConvertTo-Json -Compress  
+    )  
+    DisplayName = "MultiDomainAutoAccelerationPolicy"  
+}  
+  
+# Create a new Home Realm Discovery Policy using Microsoft Graph PowerShell  
+New-MgPolicyHomeRealmDiscoveryPolicy @policyParams  
 ```
 :::zone-end
 
-:::zone pivot="graph-hrd"
+:::zone pivot="ms-graph"
 
 ```http
-POST /policies/homeRealmDiscoveryPolicies
-
-"HomeRealmDiscoveryPolicy": {
-    "AccelerateToFederatedDomain": true,
-    "PreferredDomain": [
-      "federated.example.edu"
-    ]
+POST https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies  
+Content-Type: application/json  
+Authorization: Bearer {access_token}  
+  
+{  
+    "definition": [  
+        "{\"HomeRealmDiscoveryPolicy\":{\"AccelerateToFederatedDomain\":true,\"PreferredDomain\":\"federated.example.edu\"}}"  
+    ],  
+    "displayName": "MultiDomainAutoAccelerationPolicy"  
 }
 ```
 :::zone-end
@@ -145,62 +173,110 @@ POST /policies/homeRealmDiscoveryPolicies
 The following policy enables username/password authentication for federated users directly with Microsoft Entra ID for specific applications:
 
 
-:::zone pivot="powershell-hrd"
+:::zone pivot="ms-powershell"
 
 
 ```powershell
-New-AzureADPolicy 
-    -Definition @("{`"HomeRealmDiscoveryPolicy`":{`"AllowCloudPasswordValidation`":true}}") 
-    -DisplayName EnableDirectAuthPolicy 
-    -Type HomeRealmDiscoveryPolicy
+# Define the parameters for the New-MgPolicyHomeRealmDiscoveryPolicy cmdlet using splatting  
+$policyParams = @{  
+    Definition = @(  
+        @{  
+            HomeRealmDiscoveryPolicy = @{  
+                AllowCloudPasswordValidation = $true  
+            }  
+        } | ConvertTo-Json -Compress  
+    )  
+    DisplayName = "EnableDirectAuthPolicy"  
+}  
+  
+# Create a new Home Realm Discovery Policy using Microsoft Graph PowerShell  
+New-MgPolicyHomeRealmDiscoveryPolicy @policyParams  
 ```
 :::zone-end
 
 
-:::zone pivot="graph-hrd"
+:::zone pivot="ms-graph"
 
 ```http
-POST /policies/homeRealmDiscoveryPolicies
-
-"EnableDirectAuthPolicy": {
-    "AllowCloudPasswordValidation": true
-}
-
+POST https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies  
+  
+{  
+    "definition": [  
+        "{\"HomeRealmDiscoveryPolicy\":{\"AllowCloudPasswordValidation\":true}}"  
+    ],  
+    "displayName": "EnableDirectAuthPolicy"  
+}  
 ```
 
 :::zone-end
-
-:::zone pivot="powershell-hrd"
 
 To see your new policy and get its **ObjectID**, run the following command:
 
+:::zone pivot="ms-powershell"
+
 ```powershell
-Get-AzureADPolicy
+    Get-MgPolicyHomeRealmDiscoveryPolicy
 ```
 
-To apply the HRD policy after creating it, you can assign it to multiple application service principals.
+:::zone-end
+
+To apply the HRD policy after creating it, you can assign it to multiple service principals.
 
 ## Locate the service principal to assign to the policy
 
 You need the **ObjectID** of the service principals to which you want to assign the policy. There are several ways to find the **ObjectID** of service principals.
 
-You can use the [Microsoft Entra admin center](https://entra.microsoft.com), or you can query [Microsoft Graph](/graph/api/resources/serviceprincipal). You can also go to the [Graph Explorer Tool](https://developer.microsoft.com/graph/graph-explorer) and sign in to your Microsoft Entra account to see all your organization's service principals.
+You can use the [Microsoft Entra admin center](https://entra.microsoft.com). Using this option:
 
-Because you're using PowerShell, you can use the following cmdlet to list the service principals and their IDs.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Enter the name of the existing application in the search box, and then select the application from the search results. Copy the Object ID of the application.
+
+:::zone pivot="ms-powershell"
+
+Because you're using Microsoft Graph PowerShell, run the following cmdlet to list the service principals and their IDs.
 
 ```powershell
-Get-AzureADServicePrincipal
+    Get-MgServicePrincipal
 ```
+
+:::zone-end
+
+:::zone pivot="ms-graph"
+
+Because you're using Microsoft Graph explorer, run the following request to list the service principals and their IDs.
+
+```http
+GET https://graph.microsoft.com/v1.0/servicePrincipals  
+```
+
+:::zone-end
 
 ## Assign the policy to your service principal
 
-After you have the **ObjectID** of the service principal of the application for which you want to configure auto-acceleration, run the following command. This command associates the HRD policy that you created in step 1 with the service principal that you located in step 2.
+After you have the **ObjectID** of the service principal of the application for which you want to configure auto-acceleration, run the following command. This command associates the HRD policy that you created with the service principal that you located in the previous sections.
 
 ```powershell
-Add-AzureADServicePrincipalPolicy 
-    -Id <ObjectID of the Service Principal> 
-    -RefObjectId <ObjectId of the Policy>
+# Define the parameters for the New-MgServicePrincipalHomeRealmDiscoveryPolicy cmdlet using splatting  
+$assignmentParams = @{  
+    ServicePrincipalId = "<ObjectID of the Service Principal>"  # Replace with the actual ObjectID of the Service Principal  
+    PolicyId = "<ObjectId of the Policy>"  # Replace with the actual ObjectId of the Policy  
+}  
+  
+# Assign the HRD policy to the service principal  
+New-MgServicePrincipalHomeRealmDiscoveryPolicy @assignmentParams
 ```
+
+:::zone pivot="ms-graph"
+
+```http
+POST https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/homeRealmDiscoveryPolicies/$ref  
+  
+{  
+    "@odata.id": "https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/{policyId}"  
+}  
+```
+
+:::zone-end
 
 You can repeat this command for each service principal to which you want to add the policy.
 
@@ -208,122 +284,96 @@ In the case where an application already has a HomeRealmDiscovery policy assigne
 
 ### Check which service principals your HRD policy is assigned to
 
-To check which applications have HRD policy configured, use the **Get-AzureADPolicyAppliedObject** cmdlet. Pass it the **ObjectID** of the policy that you want to check on.
+:::zone pivot="ms-powershell"
+
+Run the following command to list the service principals to which the policy is assigned:
 
 ```powershell
-Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
+Get-MgPolicyHomeRealmDiscoveryPolicyAppliesTo HomeRealmDiscoveryPolicyId = "<ObjectId of the Policy>" # Replace with the actual ObjectId of the Policy 
 ```
-Try the application to check that the new policy is working.
 
-### List the applications for which HRD policy is configured
+:::zone-end
 
-1. List all policies that were created in your organization
 
-    ```powershell
-    Get-AzureADPolicy
-    ```
+:::zone pivot="ms-graph"
 
-Note the **ObjectID** of the policy that you want to list assignments for.
+Run the following request to list the service principals to which the policy is assigned:
 
-2. List the service principals to which the policy is assigned
+GET https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/{policyId}/appliesTo  
+Authorization: Bearer {access_token}  
 
-    ```powershell
-    Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
-    ```
+:::zone-end
+
+Ensure you test the sign-in experience for the application to check that the new policy is working.
 
 ## Remove an HRD policy from an application
 
 1. Get the ObjectID
 
-   Use the previous example to get the **ObjectID** of the policy, and that of the application service principal from which you want to remove it.
+   Use the previous example for get the **ObjectID** of the policy, and that of the application service principal from which you want to remove it.
 
 1. Remove the policy assignment from the application service principal
 
+:::zone pivot="ms-powershell"
+
     ```powershell
-    Remove-AzureADServicePrincipalPolicy -id <ObjectId of the Service Principal>  -PolicyId <ObjectId of the policy>
+  # Define the parameters for the Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef cmdlet 
+    $params = @{  
+        ServicePrincipalId = "<ObjectId of the Service Principal>"  # Replace with the actual ObjectId of the Service Principal  
+        HomeRealmDiscoveryPolicyId = "<ObjectId of the Policy>"     # Replace with the actual ObjectId of the Policy  
+    }  
+  
+    # Remove the specified policy from the service principal  
+    Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef @params
     ```
+
+:::zone-end
+
+:::zone pivot="ms-graph"
+
+    ```http
+    DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/homeRealmDiscoveryPolicies/{policyId}/$ref  
+    ```
+
+:::zone-end
 
 1. Check removal by listing the service principals to which the policy is assigned
 
     ```powershell
-    Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
+    Get-MgPolicyAuthenticationMethodsPolicyAppliedObject PolicyId = "<ObjectId of the Policy>" # The ID of the policy for which you want to retrieve applied objects
     ```
 :::zone-end
 
-:::zone pivot="graph-hrd"
-
-## Configuring policy through Graph Explorer
-
-From the Microsoft Graph explorer window:
-
-1. Sign in with one of the roles listed in the prerequisites section.
-1. Grant consent to the `Policy.ReadWrite.ApplicationConfiguration` permission.
-1. Use the [Home realm discovery policy](/graph/api/resources/homerealmdiscoverypolicy) to create a new policy.
-1. POST the new policy, or PATCH to update an existing policy.
+:::zone pivot="ms-graph"
 
     ```http
-    PATCH /policies/homeRealmDiscoveryPolicies/{id}
-        {
-            "definition": [
-            "{\"HomeRealmDiscoveryPolicy\":
-            {\"AccelerateToFederatedDomain\":true,
-            \"PreferredDomain\":\"federated.example.edu\",
-            \"AlternateIdLogin\":{\"Enabled\":true}}}"
-        ],
-            "displayName": "Home Realm Discovery auto acceleration",
-            "isOrganizationDefault": true
-        }
-    ```
-1. To view your new policy, run the following query:  
-
-    ```http
-    GET /policies/homeRealmDiscoveryPolicies/{id}
-    ```	
-1. To assign the new policy to an application:
-   
-   ```http
-   POST /servicePrincipals/{id}/homeRealmDiscoveryPolicies/$ref
-   ```
-
-   Or,
-
-    ```http
-    POST /servicePrincipals(appId='{appId}')/homeRealmDiscoveryPolicies/$ref
+    GET https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/<PolicyId>/appliesTo  
     ```
 
-1. List the service principals to which the policy is assigned
+:::zone-end
 
-   ```http
-   GET /policies/homeRealmDiscoveryPolicies/{ObjectId of the policy}/appliesTo
-   ```
+## Delete the HRD policy
 
-1. To  delete the HRD policy you created, run the query:
+To  delete the HRD policy you created, run the following command:
 
-    ```http
-    DELETE /policies/homeRealmDiscoveryPolicies/{id}
-    ```	
+:::zone pivot="ms-powershell"
 
-1. Remove the policy assignment from the service principal
+```powershell
+    Remove-MgPolicyHomeRealmDiscoveryPolicy -Id "<ObjectId of the Policy>" # Replace with the actual ObjectId of the Policy
+```
 
-   ```http
-   DELETE /servicePrincipals/{id}/homeRealmDiscoveryPolicies/{policyId}/$ref
-   ```
-   
-   or,
+:::zone-end
 
-   ```http
-   DELETE /servicePrincipals(appId='{appId}')/homeRealmDiscoveryPolicies/{policyId}/$ref
-   ```
-   
-1. Check removal by listing the service principals to which the policy is assigned
- 
-   ```http
-   GET /policies/homeRealmDiscoveryPolicies/{ObjectId of the policy}/appliesTo
-   ```
-   
+:::zone pivot="ms-graph"
+
+To  delete the HRD policy you created, run the following request:
+
+```http
+DELETE /policies/homeRealmDiscoveryPolicies/{id}
+```
+
 :::zone-end
 
 ## Next steps
 
 - [Prevent sign-in auto-acceleration](prevent-domain-hints-with-home-realm-discovery.md)
-- [Home Realm Discovery for an application](./home-realm-discovery-policy.md)
