@@ -138,6 +138,15 @@ The Request Service API makes use of callbacks to a [URL](presentation-request-a
 In the documentation, the instruction `scan the QR code` refers to scanning it with the Microsoft Authenticator mobile app, unless otherwise stated.
 It is possible to scan the QR code with the mobile's camera app, which then launches the Microsoft Authenticator. For this to work, the protocol handler for `openid-vc://` must be registered for Microsoft Authenticator. If another mobile app have been registered for it, the Authenticator will not open. On some older Android mobile versions, scanning the QR code with the camera app doesn't work, and there is no other workaround than using the Microsoft Authenticator app to scan it.
 
+### FIPS compliance
+
+In order to achieve FIPS compliance for Verified ID authorities, the `secp256k1` key type is scheduled for retirement by September 2025. This applies to authorities that was created using [Advanced Setup](verifiable-credentials-configure-tenant.md) before Februrary 2024. Instructions for how to create a new P-256 signing key will be provided shortly. Issued credentials needs to be reissued after the new signing key have been created.
+
+There are two ways to know if your authority is using the `secp256k1` key type:
+
+1. The DID Document contains the `secp256k1` for the public key curve. You can view your DID Document using the browser via `https://your-domain.com/.well-known/did.json`.
+1. The Azure Key Vault key's elliptic curve name property for the authority is set to P-256K.
+
 ## Next steps
 
 - [Customize your verifiable credentials](credential-design.md)

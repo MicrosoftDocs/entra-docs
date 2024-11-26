@@ -36,7 +36,8 @@ Microsoft Entra Verified ID supports the following open standards:
 | Entity identifier (issuer, verifier) | [did:web](https://github.com/w3c-ccg/did-method-web) | W3C CCG |
 | User authentication | [Self-Issued OpenID Provider v2](https://openid.net/specs/openid-connect-self-issued-v2-1_0.html)| OIDF |
 | Presentation | [OpenID for Verifiable Credentials](https://openid.net/sg/openid4vc/) | OIDF|
-| Query language | [Presentation Exchange v1.0](https://identity.foundation/presentation-exchange/spec/v1.0.0/)| DIF |
+| Issuance | [OpenID for Verifiable Credentials Issuance](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-11.html) | OIDF|
+| Query language | [Presentation Exchange v2.0.0](https://identity.foundation/presentation-exchange/spec/v2.0.0/)| DIF |
 | Trust in DID (decentralized identifier) owner | [Well Known DID Configuration](https://identity.foundation/.well-known/resources/did-configuration)| DIF |
 | Revocation |[Verifiable Credential Status List](https://www.w3.org/TR/vc-status-list/)| W3C CCG |
 
@@ -50,6 +51,9 @@ Microsoft Entra Verified ID supports the following key types for the JSON Web Si
 |Ed25519|EdDSA|
 |EC|P-256|
 
+> [!NOTE]
+> The secp256k1 key type is [scheduled for retirement](verifiable-credentials-faq.md#fips-compliance) by September 2025. Authorities needs to migrate to P-256.
+
 Starting February 2024, Verified ID support NIST compliant P-256 curve.
 
 For the quick setup customers, the newly issued credentials use P-256 curve as default and any previously issued credentials continue to work until they expire. Existing authorities automatically migrate to using P-256 for any future issuances.
@@ -60,7 +64,7 @@ For the advanced setup customers, Verified ID credentials issued be signed with 
 
 Microsoft is collaborating with organization members of Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. Our collaboration efforts aim to build a Verifiable Credentials Interoperability profile to support standards-based issuance, revocation, presentation, and wallet portability.
 
-Today, we have a working JWT verifiable credentials presentation profile that supports the interoperable presentation of verifiable credentials between wallets and verifiers/resource providers. Join us at the DIF Claims and Credentials working group, [aka.ms/vcinterop](https://aka.ms/vcinterop).
+Today, we have a working JWT verifiable credentials presentation profile that supports the interoperable presentation of verifiable credentials between wallets and verifiers/resource providers. Join us at the DIF Claims and Credentials working group, [aka.ms/vcinterop](https://aka.ms/vcinterop) and  and [aka.ms/vcinteroppresentation](https://aka.ms/vcinteroppresentation).
 
 ## Next steps
 
