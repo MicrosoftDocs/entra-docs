@@ -59,7 +59,7 @@ See [Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID 
 
 ### Create and Provision Accounts
 
-To use Platform SSO, the devices must be MDM enrolled. If using Intune, use one of the following methods:
+To use Platform SSO, the devices must be MDM-enrolled. If using Intune, use one of the following methods:
 
 * For organization-owned devices, you can:
 
