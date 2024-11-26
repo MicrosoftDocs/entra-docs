@@ -30,7 +30,7 @@ This document provides a comprehensive guidance for deploying macOS Platform Sin
 
 ## Authentication Method Selection
 
-US government agencies must use a phish-resistant authentication method in the Platform SSO configuration deployed to their devices.
+US government agencies must use a phishing-resistant authentication method in the Platform SSO configuration deployed to their devices.
 
 macOS 14 Sonoma and later offer two phishing-resistant methods in the Apple Platform SSO framework:
 
