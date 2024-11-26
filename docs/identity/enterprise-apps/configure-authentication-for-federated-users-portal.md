@@ -317,27 +317,29 @@ Ensure you test the sign-in experience for the application to check that the new
 :::zone pivot="ms-powershell"
 
     ```powershell
-  # Define the parameters for the Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef cmdlet 
-    $params = @{  
-        ServicePrincipalId = "<ObjectId of the Service Principal>"  # Replace with the actual ObjectId of the Service Principal  
-        HomeRealmDiscoveryPolicyId = "<ObjectId of the Policy>"     # Replace with the actual ObjectId of the Policy  
-    }  
-  
-    # Remove the specified policy from the service principal  
-    Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef @params
+    # Define the parameters for the Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef cmdlet 
+        $params = @{  
+            ServicePrincipalId = "<ObjectId of the Service Principal>"  # Replace with the actual ObjectId of the Service Principal  
+            HomeRealmDiscoveryPolicyId = "<ObjectId of the Policy>"     # Replace with the actual ObjectId of the Policy  
+        }  
+    
+        # Remove the specified policy from the service principal  
+        Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef @params
     ```
 
 :::zone-end
 
 :::zone pivot="ms-graph"
 
-    ```http
-    DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/homeRealmDiscoveryPolicies/{policyId}/$ref  
-    ```
+```http
+DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/homeRealmDiscoveryPolicies/{policyId}/$ref  
+```
 
 :::zone-end
 
 1. Check removal by listing the service principals to which the policy is assigned
+
+:::zone pivot="ms-powershell"
 
     ```powershell
     Get-MgPolicyAuthenticationMethodsPolicyAppliedObject PolicyId = "<ObjectId of the Policy>" # The ID of the policy for which you want to retrieve applied objects
@@ -346,9 +348,9 @@ Ensure you test the sign-in experience for the application to check that the new
 
 :::zone pivot="ms-graph"
 
-    ```http
-    GET https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/<PolicyId>/appliesTo  
-    ```
+```http
+GET https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/<PolicyId>/appliesTo  
+```
 
 :::zone-end
 

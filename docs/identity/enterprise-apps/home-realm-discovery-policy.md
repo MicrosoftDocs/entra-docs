@@ -95,7 +95,7 @@ Some applications don't allow configuration of authentication requests. In such 
 
 Some Microsoft and SaaS applications automatically include domain hints, which can disrupt managed credential rollouts like FIDO. Use [Home Realm Discovery policy to ignore domain hints](prevent-domain-hints-with-home-realm-discovery.md) from certain apps or domains during managed credential rollouts.  
 
-## Enable Direct ROPC Authentication for Legacy Applications  
+## Enable direct ROPC authentication of federated users for legacy applications  
 
 Best practice is for applications to use Microsoft Entra libraries and interactive sign-in for user authentication. Legacy applications using Resource Owner Password Credentials (ROPC) grants may submit credentials directly to Microsoft Entra ID without understanding federation. They don't perform HRD or interact with the correct federated endpoint. You can use [Home Realm Discovery policy to enable specific legacy applications](configure-authentication-for-federated-users-portal.md) to authenticate directly with Microsoft Entra ID, provided Password Hash Sync is enabled.  
 
@@ -106,9 +106,9 @@ Best practice is for applications to use Microsoft Entra libraries and interacti
 
 To set an HRD policy on an application for federated sign-in auto-acceleration or direct cloud-based applications:  
 
-1. Create an HRD policy.  
-2. Locate the service principal to attach the policy.  
-3. Attach the policy to the service principal.  
+- Create an HRD policy.  
+- Locate the service principal to attach the policy.  
+- Attach the policy to the service principal.  
 
 Policies take effect for a specific application when attached to a service principal. Only one HRD policy can be active on a service principal at a time. Use [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) cmdlets to create and manage HRD policy.  
 
@@ -142,8 +142,7 @@ HRD policies can be assigned to organizations and service principals, allowing m
 - If no domain hint or service principal policy exists, a policy assigned to the parent organization is enforced.  
 - If no domain hint or policies are assigned, default HRD behavior applies.  
 
-## Next Steps  
+## Next Steps
 
-- [Configure sign-in behavior for an application using a Home Realm Discovery policy](configure-authentication-for-federated-users-portal.md)  
-- [Disable auto-acceleration to a federated IDP during user sign-in with Home Realm Discovery policy](prevent-domain-hints-with-home-realm-discovery.md)  
-- [Authentication scenarios for Microsoft Entra ID](~/identity-platform/authentication-vs-authorization.md)
+- [Configure sign-in behavior for an application using a Home Realm Discovery policy](configure-authentication-for-federated-users-portal.md)
+- [Disable auto-acceleration to a federated IDP during user sign-in with Home Realm Discovery policy](prevent-domain-hints-with-home-realm-discovery.md)
