@@ -1,6 +1,6 @@
 ---
-title: 'Microsoft Entra Connect: Clear on-premises attributes from migrated Microsoft Entra ID users and groups'
-description: Learn how to clean up on-premises attributes from migrated users and groups in Microsoft Entra ID.
+title: 'Microsoft Entra Connect: Clear on-premises attributes from migrated Microsoft Entra ID users'
+description: Learn how to clean up on-premises attributes from migrated users in Microsoft Entra ID.
 author: billmath
 manager: amycolannino
 ms.service: entra-id
@@ -16,7 +16,7 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 
 
 
-# Clear on-premises attributes from migrated Microsoft Entra ID users and groups
+# Clear on-premises attributes from migrated Microsoft Entra ID users
 
 After you have migrated your users and groups to Microsoft Entra ID, you may be ready to decommission your on-premises Active Directory and uninstall sync tools. After turning off directory synchronization, you can manage these objects directly in Microsoft Entra ID.
 
