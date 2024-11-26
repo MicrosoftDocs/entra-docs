@@ -1,6 +1,6 @@
 ---
 title: RDG and Microsoft Entra Multifactor Authentication Server using RADIUS
-description: This is the Microsoft Entra Multifactor authentication page that assists in deploying Remote Desktop (RD) Gateway and Microsoft Entra Multifactor Authentication Server using RADIUS.
+description: This is the Microsoft Entra Multifactor Authentication page that assists in deploying Remote Desktop (RD) Gateway and Microsoft Entra Multifactor Authentication Server using RADIUS.
 
 
 ms.service: entra-id
