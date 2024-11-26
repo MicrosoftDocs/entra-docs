@@ -15,7 +15,7 @@ ms.reviewer: vraganathan
 ---
 # Get started with certificate-based authentication in Microsoft Entra ID with federation
 
-Certificate-based authentication (CBA) with federation enables you to be authenticated by Microsoft Entra ID with a client certificate on a Windows, Android, or iOS device when connecting your Exchange online account to:
+Certificate-based authentication (CBA) with federation enables Microsoft Entra ID to authenticate you with a client certificate on a Windows, Android, or iOS device when connecting your Exchange online account to:
 
 - Microsoft mobile applications such as Microsoft Outlook and Microsoft Word
 - Exchange ActiveSync (EAS) clients
@@ -27,7 +27,7 @@ Configuring this feature eliminates the need to enter a username and password co
 
 This topic:
 
-- Provides you with the steps to configure and utilize CBA for users of tenants in Office 365 Enterprise, Business, Education, and US Government plans. 
+- Provides steps to configure and utilize CBA for users of tenants in Office 365 Enterprise, Business, Education, and US Government plans. 
 - Assumes that you already have a [public key infrastructure (PKI)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)) and [AD FS](/entra/identity/hybrid/connect/how-to-connect-fed-whatis) configured.
 
 ## Requirements
