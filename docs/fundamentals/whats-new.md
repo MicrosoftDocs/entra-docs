@@ -1,6 +1,6 @@
 ---
-title: What's new? Release notes
-description: Learn what is new with Microsoft Entra ID, such as the latest release notes, known issues, bug fixes, deprecated functionality, and upcoming changes.
+title: Microsoft Entra releases and announcements
+description: Learn what is new with Microsoft Entra, such as the latest release notes, known issues, bug fixes, deprecated functionality, and upcoming changes.
 author: owinfreyATL
 manager: amycolannino
 featureFlags:
@@ -16,22 +16,16 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 ---
 
-# What's new in Microsoft Entra ID?
+# Microsoft Entra releases and announcements
+
+This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see [Archive for What's new in Microsoft Entra](whats-new-archive.md). 
+
+For a more dynamic experience, you can now find this information in the Microsoft Entra admin center. To learn more, see [What's new (preview)](./whats-new-overview.md).
 
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
-Microsoft Entra ID (previously known as Azure Active Directory) receives improvements on an ongoing basis. To stay up to date with the most recent developments, this article provides you with information about:
-
-- The latest releases
-- Known issues
-- Bug fixes
-- Deprecated functionality
-- Plans for changes
-
 > [!NOTE] 
 > If you're currently using Azure Active Directory today or are have previously deployed Azure Active Directory in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function as they do today without any action from you.
-
-This page updates monthly, so revisit it regularly. If you're looking for items older than six months, you can find them in [Archive for What's new in Microsoft Entra ID?](whats-new-archive.md).
 
 ## October 2024
 
@@ -238,7 +232,7 @@ In [October 2023](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/wh
 **Product capability:** Identity Security & Protection            
 
 Microsoft Entra ID now supports FIDO2 provisioning via API, allowing organizations to pre-provision security keys (passkeys) for users. These new APIs can simplify user onboarding, and provide seamless phishing-resistant authentication on day one for employees. 
-For more information on how to use this feature, see: [Provision FIDO2 security keys using Microsoft Graph API (preview)](../identity/authentication/how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+For more information on how to use this feature, see: [Provision FIDO2 security keys using Microsoft Graph API](../identity/authentication/how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 
 ---
 
@@ -405,9 +399,9 @@ An improved experience when using Microsoft Entra External ID as an identity pro
 **Service category:** MFA    
 **Product capability:** End User Experiences        
 
-Starting late July 2024, through end of August 2024, we're rolling out changes to the registration experience for passkey in Microsoft Authenticator (preview) on the My Security-Info page. This registration experience change will go from an WebAuthn approach, to guide users to register by signing into the Microsoft Authenticator app. This change will occur automatically, and admins won’t need to take any action. Here's more details:
+Starting late July 2024, through end of August 2024, we're rolling out changes to the registration experience for passkey in Microsoft Authenticator (preview) on the My Security-Info page. This registration experience change will go from a WebAuthn approach, to guide users to register by signing into the Microsoft Authenticator app. This change will occur automatically, and admins won’t need to take any action. Here's more details:
 
-- By default, we'll guide users to sign into the Authenticator app to setup passkeys. 
+- By default, we'll guide users to sign into the Authenticator app to set up passkeys. 
 - If users are unable to sign in, they'll be able to fallback to an improved WebAuthn experience through a "*Having trouble?*" link on the page. 
 
 ---

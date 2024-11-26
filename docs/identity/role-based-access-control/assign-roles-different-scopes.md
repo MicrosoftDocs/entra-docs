@@ -14,7 +14,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # Assign Microsoft Entra roles at different scopes
 
-In Microsoft Entra ID, you typically assign Microsoft Entra roles so that they apply to the entire tenant. However, you can also assign Microsoft Entra roles for different resources, such as administrative units or application registrations. For example, you could assign the Helpdesk Administrator role so that it just applies to a particular administrative unit and not the entire tenant. The resources that a role assignment applies to is also called the scope. This article describes how to assign Microsoft Entra roles at tenant, administrative unit, and application registration scopes. For more information about scope, see [Overview of role-based access control (RBAC) in Microsoft Entra ID](custom-overview.md#scope).
+In Microsoft Entra ID, roles are typically assigned to apply to the entire tenant. However, you can also assign Microsoft Entra roles for different resources, such as administrative units or application registrations. For example, you could assign the Helpdesk Administrator role so that it just applies to a particular administrative unit and not the entire tenant. The resources that a role assignment applies to is also called the scope. This article describes how to assign Microsoft Entra roles at tenant, administrative unit, and application registration scopes. For more information about scope, see [Overview of role-based access control (RBAC) in Microsoft Entra ID](custom-overview.md#scope).
 
 ## Prerequisites
 
@@ -132,7 +132,7 @@ This section describes how to assign roles at an [administrative unit](administr
 
     ![Administrative Units in Microsoft Entra ID.](./media/assign-roles-different-scopes/admin-units.png)
 
-1. Select **Roles and administrators** from the left nav menu to see the list of all roles available to be assigned over an administrative unit.
+1. Select **Roles and administrators** from the left navigation menu to see the list of all roles available to be assigned over an administrative unit.
 
     ![Roles and administrators menu under administrative Units in Microsoft Entra ID.](./media/assign-roles-different-scopes/admin-units-roles.png)
 
@@ -242,7 +242,7 @@ This section describes how to assign roles at an application registration scope.
 
     ![App registrations in Microsoft Entra ID.](./media/assign-roles-different-scopes/app-reg.png)
 
-1. Select **Roles and administrators** from the left nav menu to see the list of all roles available to be assigned over the app registration.
+1. Select **Roles and administrators** from the left navigation menu to see the list of all roles available to be assigned over the app registration.
 
     ![Roles for an app registrations in Microsoft Entra ID.](./media/assign-roles-different-scopes/app-reg-roles.png)
 
