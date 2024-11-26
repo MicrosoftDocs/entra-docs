@@ -1,6 +1,6 @@
 ---
-title: Configure sign-in auto-acceleration using Home Realm Discovery
-description: Learn how to force federated IdP acceleration for an application using Home Realm Discovery policy.
+title: Configure sign-in auto-acceleration
+description: Learn how to force federated IdP auto-acceleration for an application using Home Realm Discovery policy.
 
 author: omondiatieno
 manager: CelesteDG
@@ -16,7 +16,7 @@ zone_pivot_groups: enterprise-apps-minus-portal-aad
 #customer intent: As an IT admin configuring sign-in behavior for federated users in Microsoft Entra ID, I want to understand how to use Home Realm Discovery (HRD) policy to enable auto-acceleration sign-in and direct username/password authentication, so that I can streamline the sign-in process for specific applications and improve user experience.
 ---
 
-# Configure sign-in behavior using Home Realm Discovery
+# Configure sign-in auto-acceleration
 
 This article provides an introduction to configuring Microsoft Entra authentication behavior for federated users using Home Realm Discovery (HRD) policy. It covers using auto-acceleration sign-in to skip the username entry screen and automatically forward users to federated sign-in endpoints. To learn more about HRD policy, check out the [Home Realm Discovery](home-realm-discovery-policy.md) article.
 
@@ -94,7 +94,7 @@ The following policy auto-accelerates users to a federated identity provider sig
                 HomeRealmDiscoveryPolicy = @{  
                     AccelerateToFederatedDomain = $true  
                 }  
-            } | ConvertTo-Json -Compress  
+            }  
         )  
         DisplayName = "BasicAutoAccelerationPolicy"  
     } 
@@ -105,15 +105,15 @@ The following policy auto-accelerates users to a federated identity provider sig
 The following policy auto-accelerates users to a federated identity provider sign-in screen when there's more than one federated domain in your tenant. If you have more than one federated domain that authenticates users for applications, you need to specify the domain to auto-accelerate.
 
 ```powershell
-# Define the parameters for the New-MgPolicyHomeRealmDiscoveryPolicy cmdlet using splatting  
+# Define the parameters for the New-MgPolicyHomeRealmDiscoveryPolicy cmdlet  
 $policyParams = @{  
     Definition = @(  
         @{  
             HomeRealmDiscoveryPolicy = @{  
                 AccelerateToFederatedDomain = $true  
                 PreferredDomain = "federated.example.edu"  
-            }  
-        } | ConvertTo-Json -Compress  
+            }
+        }  
     )  
     DisplayName = "MultiDomainAutoAccelerationPolicy"  
 }  
@@ -125,14 +125,14 @@ New-MgPolicyHomeRealmDiscoveryPolicy @policyParams
 The following policy enables username/password authentication for federated users directly with Microsoft Entra ID for specific applications:
 
 ```powershell
-# Define the parameters for the New-MgPolicyHomeRealmDiscoveryPolicy cmdlet using splatting  
+# Define the parameters for the New-MgPolicyHomeRealmDiscoveryPolicy cmdlet  
 $policyParams = @{  
     Definition = @(  
         @{  
             HomeRealmDiscoveryPolicy = @{  
                 AllowCloudPasswordValidation = $true  
             }  
-        } | ConvertTo-Json -Compress  
+        }  
     )  
     DisplayName = "EnableDirectAuthPolicy"  
 }  
@@ -169,7 +169,7 @@ Because you're using Microsoft Graph PowerShell, run the following cmdlet to lis
 After you have the **ObjectID** of the service principal of the application for which you want to configure auto-acceleration, run the following command. This command associates the HRD policy that you created with the service principal that you located in the previous sections.
 
 ```powershell
-# Define the parameters for the New-MgServicePrincipalHomeRealmDiscoveryPolicy cmdlet using splatting  
+# Define the parameters for the New-MgServicePrincipalHomeRealmDiscoveryPolicy cmdlet  
 $assignmentParams = @{  
     ServicePrincipalId = "<ObjectID of the Service Principal>"  # Replace with the actual ObjectID of the Service Principal  
     PolicyId = "<ObjectId of the Policy>"  # Replace with the actual ObjectId of the Policy  
