@@ -42,9 +42,9 @@ When you install Microsoft Entra Multifactor Authentication Server, you have the
 Before you begin, be aware of the following information:
 
 * You don't have to install Microsoft Entra Multifactor Authentication Server on your AD FS server. However, you must install the multifactor authentication adapter for AD FS on a Windows Server 2012 R2 or Windows Server 2016 that is running AD FS. You can install the server on a different computer if you install the AD FS adapter separately on your AD FS federation server. See the following procedures to learn how to install the adapter separately.
-* If your organization is using text message or mobile app verification methods, the strings defined in Company Settings contain a placeholder, <$*application_name*$>. In MFA Server v7.1, you can provide an application name that replaces this placeholder. In v7.0 or older, this placeholder is not automatically replaced when you use the AD FS adapter. For those older versions, remove the placeholder from the appropriate strings when you secure AD FS.
+* If your organization is using text message or mobile app verification methods, the strings defined in Company Settings contain a placeholder, <$*application_name*$>. In MFA Server v7.1, you can provide an application name that replaces this placeholder. In v7.0 or older, this placeholder isn't automatically replaced when you use the AD FS adapter. For those older versions, remove the placeholder from the appropriate strings when you secure AD FS.
 * The account that you use to sign in must have user rights to create security groups in your Active Directory service.
-* The multifactor Authentication AD FS adapter installation wizard creates a security group called PhoneFactor Admins in your instance of Active Directory. It then adds the AD FS service account of your federation service to this group. Verify that the PhoneFactor Admins group was created on your domain controller, and that the AD FS service account is a member of this group. If necessary, manually add the AD FS service account to the PhoneFactor Admins group on your domain controller.
+* The multifactor authentication AD FS adapter installation wizard creates a security group called PhoneFactor Admins in your instance of Active Directory. It then adds the AD FS service account of your federation service to this group. Verify that the PhoneFactor Admins group was created on your domain controller, and that the AD FS service account is a member of this group. If necessary, manually add the AD FS service account to the PhoneFactor Admins group on your domain controller.
 * For information about installing the Web Service SDK with the user portal, see [deploying the user portal for Microsoft Entra Multifactor Authentication Server.](howto-mfaserver-deploy-userportal.md)
 
 <a name='install-azure-multi-factor-authentication-server-locally-on-the-ad-fs-server'></a>
@@ -61,7 +61,7 @@ Before you begin, be aware of the following information:
    ![Install the ADFS Adapter from the MFA Server console](./media/howto-mfaserver-adfs-2012/server.png)
 
 5. If the Active Directory window is displayed, that means two things. Your computer is joined to a domain, and the Active Directory configuration for securing communication between the AD FS adapter and the multifactor authentication service is incomplete. Click **Next** to automatically complete this configuration, or select the **Skip automatic Active Directory configuration and configure settings manually** check box. Click **Next**.
-6. If the Local Group window is displayed, that means two things. Your computer is not joined to a domain, and the local group configuration for securing communication between the AD FS adapter and the multifactor authentication service is incomplete. Click **Next** to automatically complete this configuration, or select the **Skip automatic Local Group configuration and configure settings manually** check box. Click **Next**.
+6. If the Local Group window is displayed, that means two things. Your computer isn't joined to a domain, and the local group configuration for securing communication between the AD FS adapter and the multifactor authentication service is incomplete. Click **Next** to automatically complete this configuration, or select the **Skip automatic Local Group configuration and configure settings manually** check box. Click **Next**.
 7. In the installation wizard, click **Next**. Microsoft Entra Multifactor Authentication Server creates the PhoneFactor Admins group and adds the AD FS service account to the PhoneFactor Admins group.
 8. On the **Launch Installer** page, click **Next**.
 9. In the multifactor authentication AD FS adapter installer, click **Next**.
@@ -101,7 +101,7 @@ Follow these steps to edit the MultiFactorAuthenticationAdfsAdapter.config file:
 There are two options for configuring the Web Service SDK. The first is with a username and password, the second is with a client certificate. Follow these steps for the first option, or skip ahead for the second.  
 
 1. Set the value for **WebServiceSdkUsername** to an account that is a member of the PhoneFactor Admins security group. Use the &lt;domain&gt;&#92;&lt;user name&gt; format.  
-2. Set the value for **WebServiceSdkPassword** to the appropriate account password. The special character "&" cannot be used in the **WebServiceSdkPassword**.
+2. Set the value for **WebServiceSdkPassword** to the appropriate account password. The special character "&" can't be used in the **WebServiceSdkPassword**.
 
 ### Configure the Web Service SDK with a client certificate
 
@@ -111,8 +111,8 @@ If you don't want to use a username and password, follow these steps to configur
 2. Import the client certificate to the local computer personal certificate store on the server that is running the Web Service SDK. Make sure that the certificate authority's public certificate is in Trusted Root Certificates certificate store.  
 3. Export the public and private keys of the client certificate to a .pfx file.  
 4. Export the public key in Base64 format to a .cer file.  
-5. In Server Manager, verify that the Web Server (IIS)\Web Server\Security\IIS Client Certificate Mapping Authentication feature is installed. If it is not installed, select **Add Roles and Features** to add this feature.  
-6. In IIS Manager, double-click **Configuration Editor** in the website that contains the Web Service SDK virtual directory. It is important to select the website, not the virtual directory.  
+5. In Server Manager, verify that the Web Server (IIS)\Web Server\Security\IIS Client Certificate Mapping Authentication feature is installed. If it isn't installed, select **Add Roles and Features** to add this feature.  
+6. In IIS Manager, double-click **Configuration Editor** in the website that contains the Web Service SDK virtual directory. It's important to select the website, not the virtual directory.  
 7. Go to the **system.webServer/security/authentication/iisClientCertificateMappingAuthentication** section.  
 8. Set enabled to **true**.  
 9. Set oneToOneCertificateMappingsEnabled to **true**.  
@@ -165,7 +165,7 @@ To secure your cloud resource, set up a claims rule so that Active Directory Fed
 
 ## Troubleshooting logs
 
-To help with troubleshooting issues with the MFA Server AD FS Adapter use the steps that follow to enable additional logging.
+To help with troubleshooting issues with the MFA Server AD FS Adapter use the steps that follow to enable more logging.
 
 1. In the MFA Server interface, open the AD FS section, and check the **Enable logging** checkbox.
 2. On each AD FS server, use **regedit.exe** to create string value registry key `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Positive Networks\PhoneFactor\InstallPath` with value `C:\Program Files\Multifactor Authentication Server\` (or other directory of your choice).  **Note, the trailing backslash is important.**

@@ -17,8 +17,8 @@ ms.reviewer: michmcla
 
 To enable and configure Windows authentication for applications, use the Windows Authentication section of the Microsoft Entra Multifactor Authentication Server. Before you set up Windows Authentication, keep the following list in mind:
 
-* After setup, reboot the Microsoft Entra Multifactor authentication for Terminal Services to take effect.
-* If 'Require Microsoft Entra Multifactor authentication user match' is checked, and you aren't in the user list, you won't be able to log into the machine after reboot.
+* After setup, reboot the Microsoft Entra Multifactor Authenticationfor Terminal Services to take effect.
+* If 'Require Microsoft Entra Multifactor Authenticationuser match' is checked, and you aren't in the user list, you won't be able to log into the machine after reboot.
 * Trusted IPs is dependent on whether the application can provide the client IP with the authentication. Currently only Terminal Services is supported.  
 
 > [!IMPORTANT]
@@ -39,7 +39,7 @@ To enable and configure Windows authentication for applications, use the Windows
 3. The Applications tab allows the administrator to configure one or more applications for Windows Authentication.
 4. Select a server or application – specify whether the server/application is enabled. Select **OK**.
 5. Select **Add…**
-6. The Trusted IPs tab allows you to skip Microsoft Entra Multifactor authentication for Windows sessions originating from specific IPs. For example, if employees use the application from the office and from home, you may decide you don't want their phones ringing for Microsoft Entra Multifactor authentication while at the office. For this purpose, you would specify the office subnet as Trusted IPs entry.
+6. The Trusted IPs tab allows you to skip Microsoft Entra Multifactor Authenticationfor Windows sessions originating from specific IPs. For example, if employees use the application from the office and from home, you may decide you don't want their phones ringing for Microsoft Entra Multifactor Authentication while at the office. For this purpose, you would specify the office subnet as Trusted IPs entry.
 7. Select **Add…**
 8. Select **Single IP** if you would like to skip a single IP address.
 9. Select **IP Range** if you would like to skip an entire IP range. Example 10.63.193.1-10.63.193.100.

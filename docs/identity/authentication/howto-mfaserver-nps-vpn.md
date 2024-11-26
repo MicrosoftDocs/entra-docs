@@ -27,7 +27,7 @@ Microsoft Entra Multifactor Authentication Server (formerly Microsoft Entra Mult
 > Existing customers that activated MFA Server before July 1, 2019 can download the latest version, future updates, and generate activation credentials as usual.
 
 ## Cisco ASA VPN appliance and Microsoft Entra Multifactor Authentication Server
-Microsoft Entra Multifactor Authentication Server integrates with your Cisco&reg; ASA VPN appliance to provide additional security for Cisco AnyConnect&reg; VPN logins and portal access.  You can use either the LDAP or RADIUS protocol.  Select one of the following to download the detailed step-by-step configuration guides.
+Microsoft Entra Multifactor Authentication Server integrates with your Cisco&reg; ASA VPN appliance to provide additional security for Cisco AnyConnect&reg; VPN logins and portal access. You can use either the LDAP or RADIUS protocol. Select one of the following to download the detailed step-by-step configuration guides.
 
 | Configuration Guide | Description |
 | --- | --- |
@@ -35,7 +35,7 @@ Microsoft Entra Multifactor Authentication Server integrates with your Cisco&reg
 | [Cisco ASA with Anyconnect VPN and Microsoft Entra Multifactor Authentication Configuration for RADIUS](https://download.microsoft.com/download/4/5/7/4579C1CF-35B0-4FBE-8A1A-B49CB2CC0382/Cisco_ASA_Azure_MFA_RADIUS.docx) | Integrate your Cisco ASA VPN appliance with Microsoft Entra Multifactor Authentication using RADIUS |
 
 ## Citrix NetScaler SSL VPN and Microsoft Entra Multifactor Authentication Server
-Microsoft Entra Multifactor Authentication Server integrates with your Citrix NetScaler SSL VPN appliance to provide additional security for Citrix NetScaler SSL VPN logins and portal access.  You can use either the LDAP or RADIUS protocol.  Select one of the following to download the detailed step-by-step configuration guides.
+Microsoft Entra Multifactor Authentication Server integrates with your Citrix NetScaler SSL VPN appliance to provide additional security for Citrix NetScaler SSL VPN logins and portal access. You can use either the LDAP or RADIUS protocol. Select one of the following to download the detailed step-by-step configuration guides.
 
 | Configuration Guide | Description |
 | --- | --- |
@@ -43,7 +43,7 @@ Microsoft Entra Multifactor Authentication Server integrates with your Citrix Ne
 | [Citrix NetScaler SSL VPN and Microsoft Entra Multifactor Authentication Configuration for RADIUS](https://download.microsoft.com/download/1/A/4/1A482764-4A63-45C2-A5EC-2B673ACCDD12/Citrix_NS_Azure_MFA_RADIUS.docx) | Integrate your Citrix NetScaler SSL VPN appliance with Microsoft Entra Multifactor Authentication using RADIUS |
 
 ## Juniper/Pulse Secure SSL VPN appliance and Microsoft Entra Multifactor Authentication Server
-Microsoft Entra Multifactor Authentication Server integrates with your Juniper/Pulse Secure SSL VPN appliance to provide additional security for Juniper/Pulse Secure SSL VPN logins and portal access.  You can use either the LDAP or RADIUS protocol.  Select one of the following to download the detailed step-by-step configuration guides.
+Microsoft Entra Multifactor Authentication Server integrates with your Juniper/Pulse Secure SSL VPN appliance to provide additional security for Juniper/Pulse Secure SSL VPN logins and portal access. You can use either the LDAP or RADIUS protocol. Select one of the following to download the detailed step-by-step configuration guides.
 
 | Configuration Guide | Description |
 | --- | --- |
@@ -52,6 +52,6 @@ Microsoft Entra Multifactor Authentication Server integrates with your Juniper/P
 
 ## Next steps
 
-- [Augment your existing authentication infrastructure with the NPS extension for Microsoft Entra Multifactor authentication](howto-mfa-nps-extension.md)
+- [Augment your existing authentication infrastructure with the NPS extension for Microsoft Entra Multifactor Authentication](howto-mfa-nps-extension.md)
 
-- [Configure Microsoft Entra Multifactor authentication settings](howto-mfa-mfasettings.md)
+- [Configure Microsoft Entra Multifactor Authentication settings](howto-mfa-mfasettings.md)

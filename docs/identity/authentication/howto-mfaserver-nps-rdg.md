@@ -15,11 +15,11 @@ ms.reviewer: michmcla
 ---
 # Remote Desktop Gateway and Microsoft Entra Multifactor Authentication Server using RADIUS
 
-Often, Remote Desktop (RD) Gateway uses the local [Network Policy Services (NPS)](/windows-server/networking/core-network-guide/core-network-guide#BKMK_optionalfeatures) to authenticate users. This article describes how to route RADIUS requests out from the Remote Desktop Gateway (through the local NPS) to the Multi-Factor Authentication Server. The combination of Microsoft Entra Multifactor Authentication and RD Gateway means that your users can access their work environments from anywhere while performing strong authentication.
+Often, Remote Desktop (RD) Gateway uses the local [Network Policy Services (NPS)](/windows-server/networking/core-network-guide/core-network-guide#BKMK_optionalfeatures) to authenticate users. This article describes how to route RADIUS requests out from the Remote Desktop Gateway (through the local NPS) to the Multifactor Authentication Server. The combination of Microsoft Entra Multifactor Authentication and RD Gateway means that your users can access their work environments from anywhere while performing strong authentication.
 
 Since Windows Authentication for terminal services isn't supported for Server 2012 R2, use RD Gateway and RADIUS to integrate with MFA Server.
 
-Install the Microsoft Entra Multifactor Authentication Server on a separate server, which proxies the RADIUS request back to the NPS on the Remote Desktop Gateway Server. After NPS validates the username and password, it returns a response to the Multi-Factor Authentication Server. Then, the MFA Server performs the second factor of authentication and returns a result to the gateway.
+Install the Microsoft Entra Multifactor Authentication Server on a separate server, which proxies the RADIUS request back to the NPS on the Remote Desktop Gateway Server. After NPS validates the username and password, it returns a response to the Multifactor Authentication Server. Then, the MFA Server performs the second factor of authentication and returns a result to the gateway.
 
 > [!IMPORTANT]
 > In September 2022, Microsoft announced deprecation of Microsoft Entra Multifactor Authentication Server. Beginning September 30, 2024, Microsoft Entra Multifactor Authentication Server deployments will no longer service multifactor authentication (MFA) requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users’ authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Microsoft Entra Multifactor Authentication service by using the latest Migration Utility included in the most recent [Microsoft Entra Multifactor Authentication Server update](https://www.microsoft.com/download/details.aspx?id=55849). For more information, see [Microsoft Entra Multifactor Authentication Server Migration](how-to-migrate-mfa-server-to-azure-mfa.md).
@@ -56,13 +56,13 @@ The RD Gateway uses NPS to send the RADIUS request to Microsoft Entra Multifacto
 2. Select the **TS GATEWAY SERVER GROUP**.
 3. Go to the **Load Balancing** tab.
 4. Change both the **Number of seconds without response before request is considered dropped** and the **Number of seconds between requests when server is identified as unavailable** to between 30 and 60 seconds. (If you find that the server still times out during authentication, you can come back here and increase the number of seconds.)
-5. Go to the **Authentication/Account** tab and check that the RADIUS ports specified match the ports that the Multi-Factor Authentication Server is listening on.
+5. Go to the **Authentication/Account** tab and check that the RADIUS ports specified match the ports that the Multifactor Authentication Server is listening on.
 
 ### Prepare NPS to receive authentications from the MFA Server
 
 1. Right-click **RADIUS Clients** under RADIUS Clients and Servers in the left column and select **New**.
 2. Add the Microsoft Entra Multifactor Authentication Server as a RADIUS client. Choose a Friendly name and specify a shared secret.
-3. Open the **Policies** menu in the left column and select **Connection Request Policies**. You should see a policy called TS GATEWAY AUTHORIZATION POLICY that was created when RD Gateway was configured. This policy forwards RADIUS requests to the Multi-Factor Authentication Server.
+3. Open the **Policies** menu in the left column and select **Connection Request Policies**. You should see a policy called TS GATEWAY AUTHORIZATION POLICY that was created when RD Gateway was configured. This policy forwards RADIUS requests to the Multifactor Authentication Server.
 4. Right-click **TS GATEWAY AUTHORIZATION POLICY** and select **Duplicate Policy**.
 5. Open the new policy and go to the **Conditions** tab.
 6. Add a condition that matches the Client Friendly Name with the Friendly name set in step 2 for the Microsoft Entra Multifactor Authentication Server RADIUS client.
