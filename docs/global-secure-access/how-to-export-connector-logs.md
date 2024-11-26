@@ -208,8 +208,8 @@ The external user receives an email invitation to join your Microsoft Entra ID p
     - They can use the Log Analytics workspace's **Logs** feature to query and analyze logs based on the permissions granted.
 
 ### Additional Considerations
-•	**Security**: Ensure that you only grant the necessary permissions to the guest user. The principle of least privilege should be followed.
-•	**Monitoring and Auditing**: Regularly monitor and audit access to your Log Analytics workspace to ensure compliance and security.
+-	**Security**: Ensure that you only grant the necessary permissions to the guest user. The principle of least privilege should be followed.
+-	**Monitoring and Auditing**: Regularly monitor and audit access to your Log Analytics workspace to ensure compliance and security.
 By following these steps, you can securely expose your Azure Log Analytics workspace to a user outside your tenant, allowing them to access and query logs as needed.
 
 ## Next steps
