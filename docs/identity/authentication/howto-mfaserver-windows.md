@@ -1,6 +1,6 @@
 ---
-title: Windows authentication and Azure MFA Server
-description: Deploy Windows Authentication and Azure Multifactor Authentication Server.
+title: Windows authentication and Microsoft Entra Multifactor Authentication Server
+description: Deploy Windows Authentication and Microsoft Entra Multifactor Authentication Server.
 
 
 ms.service: entra-id
@@ -13,12 +13,12 @@ author: justinha
 manager: amycolannino
 ms.reviewer: michmcla
 ---
-# Windows Authentication and Azure Multifactor Authentication Server
+# Windows Authentication and Microsoft Entra Multifactor Authentication Server
 
-To enable and configure Windows authentication for applications, use the Windows Authentication section of the Azure Multifactor Authentication Server. Before you set up Windows Authentication, keep the following list in mind:
+To enable and configure Windows authentication for applications, use the Windows Authentication section of the Microsoft Entra Multifactor Authentication Server. Before you set up Windows Authentication, keep the following list in mind:
 
-* After setup, reboot the Azure multifactor authentication for Terminal Services to take effect.
-* If 'Require Azure multifactor authentication user match' is checked, and you aren't in the user list, you won't be able to log into the machine after reboot.
+* After setup, reboot the Microsoft Entra Multifactor authentication for Terminal Services to take effect.
+* If 'Require Microsoft Entra Multifactor authentication user match' is checked, and you aren't in the user list, you won't be able to log into the machine after reboot.
 * Trusted IPs is dependent on whether the application can provide the client IP with the authentication. Currently only Terminal Services is supported.  
 
 > [!IMPORTANT]
@@ -33,13 +33,13 @@ To enable and configure Windows authentication for applications, use the Windows
 
 ## To secure an application with Windows Authentication, use the following procedure
 
-1. In the Azure Multifactor Authentication Server, select the Windows Authentication icon.
+1. In the Microsoft Entra Multifactor Authentication Server, select the Windows Authentication icon.
    ![Windows Authentication in MFA Server](./media/howto-mfaserver-windows/windowsauth.png)
 2. Check the **Enable Windows Authentication** checkbox. By default, this box is unchecked.
 3. The Applications tab allows the administrator to configure one or more applications for Windows Authentication.
 4. Select a server or application – specify whether the server/application is enabled. Select **OK**.
 5. Select **Add…**
-6. The Trusted IPs tab allows you to skip Azure multifactor authentication for Windows sessions originating from specific IPs. For example, if employees use the application from the office and from home, you may decide you don't want their phones ringing for Azure multifactor authentication while at the office. For this purpose, you would specify the office subnet as Trusted IPs entry.
+6. The Trusted IPs tab allows you to skip Microsoft Entra Multifactor authentication for Windows sessions originating from specific IPs. For example, if employees use the application from the office and from home, you may decide you don't want their phones ringing for Microsoft Entra Multifactor authentication while at the office. For this purpose, you would specify the office subnet as Trusted IPs entry.
 7. Select **Add…**
 8. Select **Single IP** if you would like to skip a single IP address.
 9. Select **IP Range** if you would like to skip an entire IP range. Example 10.63.193.1-10.63.193.100.
@@ -48,6 +48,6 @@ To enable and configure Windows authentication for applications, use the Windows
 
 ## Next steps
 
-- [Configure third-party VPN appliances for Azure MFA Server](howto-mfaserver-nps-vpn.md)
+- [Configure third-party VPN appliances for Microsoft Entra Multifactor Authentication Server](howto-mfaserver-nps-vpn.md)
 
-- [Augment your existing authentication infrastructure with the NPS extension for Azure MFA](howto-mfa-nps-extension.md)
+- [Augment your existing authentication infrastructure with the NPS extension for Microsoft Entra Multifactor Authentication](howto-mfa-nps-extension.md)

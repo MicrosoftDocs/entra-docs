@@ -1,6 +1,6 @@
 ---
-title: Upgrade PhoneFactor to Azure Multi-Factor Authentication Server
-description: Get started with Azure Multi-Factor Authentication Server when you upgrade from the older phonefactor agent.
+title: Upgrade PhoneFactor to Microsoft Entra Multifactor Authentication Server
+description: Get started with Microsoft Entra Multifactor Authentication Server when you upgrade from the older phonefactor agent.
 
 
 ms.service: entra-id
@@ -13,12 +13,12 @@ author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
 ---
-# Upgrade the PhoneFactor Agent to Azure Multi-Factor Authentication Server
+# Upgrade the PhoneFactor Agent to Microsoft Entra Multifactor Authentication Server
 
-To upgrade the PhoneFactor Agent v5.x or older to Azure Multi-Factor Authentication Server, uninstall the PhoneFactor Agent and affiliated components first. Then the Multi-Factor Authentication Server and its affiliated components can be installed.
+To upgrade the PhoneFactor Agent v5.x or older to Microsoft Entra Multifactor Authentication Server, uninstall the PhoneFactor Agent and affiliated components first. Then the Multi-Factor Authentication Server and its affiliated components can be installed.
 
 > [!IMPORTANT]
-> In September 2022, Microsoft announced deprecation of Azure Multi-Factor Authentication Server. Beginning September 30, 2024, Azure Multi-Factor Authentication Server deployments will no longer service multifactor authentication requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users’ authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Azure MFA service by using the latest Migration Utility included in the most recent [Azure MFA Server update](https://www.microsoft.com/download/details.aspx?id=55849). For more information, see [Azure MFA Server Migration](how-to-migrate-mfa-server-to-azure-mfa.md).  
+> In September 2022, Microsoft announced deprecation of Microsoft Entra Multifactor Authentication Server. Beginning September 30, 2024, Microsoft Entra Multifactor Authentication Server deployments will no longer service multifactor authentication requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users’ authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Microsoft Entra Multifactor Authentication service by using the latest Migration Utility included in the most recent [Microsoft Entra Multifactor Authentication Server update](https://www.microsoft.com/download/details.aspx?id=55849). For more information, see [Microsoft Entra Multifactor Authentication Server Migration](how-to-migrate-mfa-server-to-azure-mfa.md).  
 
 > To get started with cloud-based MFA, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
 
@@ -73,10 +73,10 @@ The installation path is picked up from the registry from the previous PhoneFact
    3. Go to the User portal install location (for example, C:\inetpub\wwwroot\MultiFactorAuth) and edit the web.config file. Copy the values in the appSettings and applicationSettings sections from your original web.config file that was backed up before the upgrade into the new web.config file. If the new default virtual directory name was kept when installing the Web Service SDK, change the URL in the applicationSettings section to point to the correct location. If any other defaults were changed in the previous web.config file, apply those same changes to the new web.config file.
 
 > [!NOTE]
-> When upgrading from a version of Azure MFA Server older than 8.0 to 8.0+ that the mobile app web service can be uninstalled after the upgrade
+> When upgrading from a version of Microsoft Entra Multifactor Authentication Server older than 8.0 to 8.0+ that the mobile app web service can be uninstalled after the upgrade
 
 ## Next steps
 
-- [Install the users portal](howto-mfaserver-deploy-userportal.md) for the Azure Multi-Factor Authentication Server.
+- [Install the users portal](howto-mfaserver-deploy-userportal.md) for the Microsoft Entra Multifactor Authentication Server.
 
 - [Configure Windows Authentication](howto-mfaserver-windows.md) for your applications. 
