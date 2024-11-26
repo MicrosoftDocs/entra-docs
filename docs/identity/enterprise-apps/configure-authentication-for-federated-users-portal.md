@@ -27,6 +27,7 @@ To configure HRD policy for an application in Microsoft Entra ID, you need:
 
 - An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Application Administrator, Cloud Application Administrator or owner of the service principal.
+
 ## Auto-acceleration sign-in
 
 Some organizations configure domains in their Microsoft Entra tenant to federate with another identity provider (IDP), such as Active Directory Federation Services (ADFS) for user authentication. When a user signs into an application, they're first presented with a Microsoft Entra sign-in page. After they type their User Principal Name (UPN), if they are in a federated domain they're then taken to the sign-in page of the IDP serving that domain. Under certain circumstances, administrators might want to direct users to the sign-in page when they're signing in to specific applications. As a result users can skip the initial Microsoft Entra ID page. This process is referred to as "sign-in auto-acceleration."
@@ -67,8 +68,6 @@ In the following examples, you create, update, link, and delete HRD policies on 
     ```
 <!--TBD - add output-->
 If nothing is returned, it means you have no policies created in your tenant.
-
-:::zone-end
 
 ### Create an HRD policy using Microsoft Graph PowerShell
 
@@ -393,7 +392,7 @@ To  delete the HRD policy you created, run the following command:
 To  delete the HRD policy you created, run the following API call:
 
 ```http
-DELETE /policies/homeRealmDiscoveryPolicies/{id}
+DELETE https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/{id}
 ```
 
 :::zone-end
