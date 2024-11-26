@@ -15,7 +15,7 @@ manager: celested
 
 # Configuring macOS Platform SSO (PSSO) to meet NIST SP 800-63 and EO 14028 Requirements (preview)
 
-This document provides a comprehensive guidance for deploying macOS Platform Single Sign-On (PSSO) by US government agencies to meet the National Institute of Standards and Technology (NIST) Special Publication (SP) 800-63 Revision 4 and Executive Order 14028 requirements. By following the instructions and best practices outlined in this document, organizations can ensure a seamless and secure SSO experience for their macOS users.
+This document provides a comprehensive guidance for deploying macOS Platform Single Sign-On (PSSO) by US government agencies to meet the National Institute of Standards and Technology (NIST) Special Publication (SP) 800-63 Revision 4 and Executive Order (EO) 14028 requirements. By following the instructions and best practices outlined in this document, organizations can ensure a seamless and secure SSO experience for their macOS users.
 
 ## Prerequisites
 
