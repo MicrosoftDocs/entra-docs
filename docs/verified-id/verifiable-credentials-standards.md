@@ -61,7 +61,7 @@ For the advanced setup customers, Verified ID credentials issued be signed with 
 
 Microsoft is collaborating with organization members of Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. Our collaboration efforts aim to build a Verifiable Credentials Interoperability profile to support standards-based issuance, revocation, presentation, and wallet portability.
 
-Today, we have a working JWT verifiable credentials presentation profile that supports the interoperable presentation of verifiable credentials between wallets and verifiers/resource providers. Join us at the DIF Claims and Credentials working group, [aka.ms/vcinterop](https://aka.ms/vcinterop) and  and [aka.ms/vcinteroppresentation](https://aka.ms/vcinteroppresentation).
+Today, we have a working JWT verifiable credentials presentation profile that supports the interoperable presentation of verifiable credentials between wallets and verifiers/resource providers. Join us at the DIF Claims and Credentials working group, [aka.ms/vcinterop](https://aka.ms/vcinterop) and [aka.ms/vcinteroppresentation](https://aka.ms/vcinteroppresentation).
 
 ## Next steps
 
