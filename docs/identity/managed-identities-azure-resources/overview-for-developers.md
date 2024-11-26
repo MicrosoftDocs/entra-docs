@@ -656,9 +656,9 @@ AuthenticationResult result = await mi.AcquireTokenForManagedIdentity(resource)
     .ConfigureAwait(false);
 
 if (!string.IsNullOrEmpty(result.AccessToken))
-    {
-        Console.WriteLine(result.AccessToken);
-    }
+{
+    Console.WriteLine(result.AccessToken);
+}
 
 ```
 
@@ -672,15 +672,17 @@ import com.microsoft.aad.msal4j.ManagedIdentityParameters;
 
 String resource = "https://vault.azure.net";
 
+// Use this for user-assigned managed identities
+private static final String USER_ASSIGNED_MI_CLIENT_ID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+
 // Use this for system-assigned managed identities
 ManagedIdentityApplication miApp = ManagedIdentityApplication
                 .builder(ManagedIdentityId.systemAssigned())
                 .build();
 
 // Use this for user-assigned managed identities
-String userAssignedManagedIdentityClientId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 ManagedIdentityApplication miApp = ManagedIdentityApplication
-                .builder(ManagedIdentityId.userAssignedClientId(CLIENT_ID))
+                .builder(ManagedIdentityId.userAssignedClientId(USER_ASSIGNED_MI_CLIENT_ID))
                 .build();            
 
 // Acquire token
@@ -707,13 +709,17 @@ import {
     NodeSystemOptions,
 } from "@azure/msal-node";
 
+// Define resource
+const managedIdentityRequestParams: ManagedIdentityRequestParams = {
+    resource: "https://vault.azure.net",
+};
 
-// Applicable to user-assigned managed identities only
+// This section applies to user-assigned managed identities only
 const userAssignedManagedIdentityIdParams: ManagedIdentityIdParams = {
     userAssignedClientId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
 };
 
-const config: ManagedIdentityConfiguration = {
+const userAssignedManagedIdentityConfig: ManagedIdentityConfiguration = {
     userAssignedManagedIdentityIdParams, // applicable to user-assigned managed identities only
     
     // optional for logging
@@ -724,14 +730,30 @@ const config: ManagedIdentityConfiguration = {
     } as NodeSystemOptions,
 };
 
-const systemAssignedManagedIdentityApplication: ManagedIdentityApplication =
-    new ManagedIdentityApplication(config);
+const userSystemAssignedManagedIdentityApplication: ManagedIdentityApplication =
+    new ManagedIdentityApplication(userAssignedManagedIdentityConfig);
 
-const managedIdentityRequestParams: ManagedIdentityRequestParams = {
-    resource: "https://vault.azure.net",
+// Acquire token: user-assigned managed identity
+const response: AuthenticationResult =
+    await userAssignedManagedIdentityApplication.acquireToken(
+        managedIdentityRequestParams
+    );
+
+// This section applies to system-assigned managed identities only
+const systemAssignedManagedIdentityConfig: ManagedIdentityConfiguration = {
+    // optional for logging
+    system: {
+        loggerOptions: {
+            logLevel: LogLevel.Verbose,
+        } as LoggerOptions,
+    } as NodeSystemOptions,
 };
 
-// Acquire token
+const systemAssignedManagedIdentityApplication: ManagedIdentityApplication =
+    new ManagedIdentityApplication(systemAssignedManagedIdentityConfig);
+
+
+// Acquire token: system-assigned managed identity
 const response: AuthenticationResult =
     await systemAssignedManagedIdentityApplication.acquireToken(
         managedIdentityRequestParams
@@ -771,21 +793,24 @@ MSAL Go doesn't support managed identities yet. You can use the Azure Identity l
 
 Some Azure resources either don't yet support Microsoft Entra authentication, or their client libraries don't support authenticating with a token. Typically these resources are open-source technologies that expect a username and password or an access key in a connection string.
 
-To avoid storing credentials in your code or your application configuration, you can store the credentials as a secret in Azure Key Vault. Using the example displayed above, you can retrieve the secret from Azure KeyVault using a managed identity, and pass the credentials into your connection string. This approach means that no credentials need to be handled directly in your code or environment.
+To avoid storing credentials in your code or your application configuration, you can store the credentials as a secret in Azure Key Vault. Using the example displayed above, you can retrieve the secret from Azure KeyVault using a managed identity, and pass the credentials into your connection string. This approach means that no credentials need to be handled directly in your code or environment. For a detailed example, see [Use managed identities to access Azure Key Vault certificates](/azure/frontdoor/managed-identity). For more info on Azure Key vault uthentiucaiton, see [Azure Key Vault authentication](/azure/key-vault/general/authentication).
 
 ## Guidelines if you're handling tokens directly
 
 In some scenarios, you may want to acquire tokens for managed identities manually instead of using a built-in method to connect to the target resource. These scenarios include no client library for the programming language that you're using or the target resource you're connecting to, or connecting to resources that aren't running on Azure. When acquiring tokens manually, we provide the following guidelines:
 
 ### Cache the tokens you acquire
+
 For performance and reliability, we recommend that your application caches tokens in local memory, or encrypted if you want to save them to disk. As Managed identity tokens are valid for 24 hours, there's no benefit in requesting new tokens regularly, as a cached one will be returned from the token issuing endpoint. If you exceed the request limits, you'll be rate limited and receive an HTTP 429 error. 
 
 When you acquire a token, you can set your token cache to expire 5 minutes before the `expires_on` (or equivalent property) that will be returned when the token is generated.
 
 ### Token inspection
+
 Your application shouldn't rely on the contents of a token. The token's content is intended only for the audience (target resource) that is being accessed, not the client that's requesting the token. The token content may change or be encrypted in the future.
 
 ### Don't expose or move tokens
+
 Tokens should be treated like credentials. Don't expose them to users or other services; for example, logging/monitoring solutions. They shouldn't be moved from the source resource that's using them, other than to authenticate against the target resource.
 
 ## Next steps

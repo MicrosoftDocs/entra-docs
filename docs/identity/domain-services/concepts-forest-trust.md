@@ -21,8 +21,8 @@ The access control mechanisms provided by AD DS and the Windows distributed secu
 
 The trust path is implemented by the Net Logon service using an authenticated remote procedure call (RPC) connection to the trusted domain authority. A secured channel also extends to other AD DS domains through interdomain trust relationships. This secured channel is used to obtain and verify security information, including security identifiers (SIDs) for users and groups.
 
->[!NOTE]
->Domain Services supports multiple forest trust directions, including two-way trusts and one-way trusts that can be either incoming or outgoing. 
+> [!NOTE]
+> Domain Services supports multiple forest trust directions, including two-way trusts and one-way trusts that can be either incoming or outgoing. 
 
 For an overview of how trusts apply to Domain Services, see [Forest concepts and features][create-forest-trust].
 
@@ -109,11 +109,11 @@ A managed domain forest supports up to five one-way outbound forest trusts to on
 
 ## Trust processes and interactions
 
-Many inter-domain and inter-forest transactions depend on domain or forest trusts in order to complete various tasks. This section describes the processes and interactions that occur as resources are accessed across trusts and authentication referrals are evaluated.
+Many inter-domain and inter-forest transactions depend on domain or forest trusts to complete various tasks. This section describes the processes and interactions that occur as resources are accessed across trusts and authentication referrals are evaluated.
 
 ### Overview of authentication referral processing
 
-When a request for authentication is referred to a domain, the domain controller in that domain must determine whether a trust relationship exists with the domain from which the request comes. The direction of the trust and whether the trust is transitive or nontransitive must also be determined before it authenticates the user to access resources in the domain. The authentication process that occurs between trusted domains varies according to the authentication protocol in use. The Kerberos V5 and NTLM protocols process referrals for authentication to a domain differently
+When a request for authentication is referred to a domain, the domain controller in that domain must determine whether a trust relationship exists with the domain from which the request comes. The direction of the trust and whether the trust is transitive or non-transitive must also be determined before it authenticates the user to access resources in the domain. The authentication process that occurs between trusted domains varies according to the authentication protocol in use. The Kerberos V5 and NTLM protocols process referrals for authentication to a domain differently.
 
 ### Kerberos V5 referral processing
 
@@ -153,8 +153,8 @@ When two forests are connected by a forest trust, authentication requests made u
 
 When a forest trust is first established, each forest collects all of the trusted namespaces in its partner forest and stores the information in a [trusted domain object](#trusted-domain-object). Trusted namespaces include domain tree names, user principal name (UPN) suffixes, service principal name (SPN) suffixes, and security ID (SID) namespaces used in the other forest. TDO objects are replicated to the global catalog.
 
->[!NOTE]
->Alternate UPN suffixes on trusts are not supported. If an on-premises domain uses the same UPN suffix as Domain Services, sign in must use **sAMAccountName**.  
+> [!NOTE]
+> Alternate UPN suffixes on trusts are not supported. If an on-premises domain uses the same UPN suffix as Domain Services, sign in must use **sAMAccountName**.
 
 Before authentication protocols can follow the forest trust path, the service principal name (SPN) of the resource computer must be resolved to a location in the other forest. An SPN can be one of the following names:
 

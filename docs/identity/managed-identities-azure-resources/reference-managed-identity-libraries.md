@@ -25,7 +25,7 @@ MSAL libraries offer lower-level abstractions than libraries like Azure Identity
 
 - If your application already uses one of the libraries, continue using the same library.
 - If you're developing a new application and plan to call other Azure resources, use an Azure Identity library. This library provides an improved developer experience by allowing the app to authenticate on local developer machines where managed identities are not available.
-- If you need to call other downstream web APIs like Microsoft Graph or your own web API, use MSAL.
+- If you need to call other downstream web APIs like Microsoft Graph or your own web API, use MSAL. For .NET applications, use the *Microsoft.Identity.Web* library, which is built on top of MSAL.
 
 In cases where an Azure service built a client library on top of these libraries, consider using the service-specific client library. For example, for Azure SQL, use the [`Microsoft.Data.SqlClient`](/sql/connect/ado-net/sql/azure-active-directory-authentication#using-managed-identity-authentication) package.
 
