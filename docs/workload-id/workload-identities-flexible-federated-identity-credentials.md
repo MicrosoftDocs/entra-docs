@@ -4,7 +4,7 @@ description: Learn about Microsoft Entra Workload ID Flexible federated identity
 author: cilwerner
 manager: CelesteDG
 ms.service: entra-workload-id
-ms.topic: faq
+ms.topic: concept-article
 ms.date: 08/28/2024
 ms.author: cwerner
 ms.custom: 
@@ -113,6 +113,7 @@ az rest --method post \
 
 ## See also
 
+- [Implement a flexible federated identity credential](./workload-identity-federation-create-trust.md#set-up-a-flexible-federated-identity-credential-preview)
 - [Configure a user-assigned managed identity to trust an external identity provider](./workload-identity-federation-create-trust-user-assigned-managed-identity.md)
 - How to create, delete, get, or update [federated identity credentials](./workload-identity-federation-create-trust.md) on an app registration.
 - Read the [workload identity overview] to learn how to configure a Kubernetes workload to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
