@@ -174,7 +174,7 @@ Before you get started:
 
    ![Screenshot of the Keep you account secure dialog with the success message.](media/migrate-okta-sign-on-policies-conditional-access/success-test-user.png)
 
-5. After you configure the location-based policy and device trust policy, [Block legacy authentication with Microsoft Entra ID with Conditional Access](~/identity/conditional-access/block-legacy-authentication.md).
+5. After you configure the location-based policy and device trust policy, [Block legacy authentication with Microsoft Entra ID with Conditional Access](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 With these three Conditional Access policies, the original Okta sign-on policies experience is replicated in Microsoft Entra ID. 
 
