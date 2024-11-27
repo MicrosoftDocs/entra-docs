@@ -40,7 +40,9 @@ This article covers Microsoft's guidance to administrators on support for device
 
 ## Supported scenarios
 
-Before configuring device identities in Microsoft Entra ID for your VDI environment, familiarize yourself with the supported scenarios. The following table illustrates which provisioning scenarios are supported. Provisioning in this context implies that an administrator can configure device identities at scale without requiring any end-user interaction.
+Before configuring device identities in Microsoft Entra ID for your VDI environment, familiarize yourself with the supported scenarios. The following table illustrates which provisioning scenarios are supported. Provisioning in this context implies that an administrator can configure device identities at scale without requiring any end-user interaction. 
+
+**Windows current** devices represent Windows 10 or newer, Windows Server 2016 v1803 or higher, and Windows Server 2019 or higher.
 
 | Device identity type | Identity infrastructure | Windows devices | VDI platform version | Supported |
 | --- | --- | --- | --- | --- |
@@ -53,8 +55,6 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 |   | Managed | Windows current | Persistent | Limited<sup>8</sup> |
 |   |   |   | Non-persistent | No |
 | Microsoft Entra registered | Federated/Managed | Windows current | Persistent/Non-persistent | Not Applicable |
-
-<sup>1</sup> **Windows current** devices represent Windows 10 or newer, Windows Server 2016 v1803 or higher, and Windows Server 2019 or higher.
 
 <sup>3</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider (IdP) such as AD FS or other non-Microsoft IdP. In a federated identity infrastructure environment, computers follow the [managed device registration flow](device-registration-how-it-works.md#hybrid-azure-ad-joined-in-managed-environments) based on the [Microsoft Windows Server Active Directory Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
 
@@ -94,20 +94,19 @@ When administrators deploy non-persistent VDI, Microsoft recommends you implemen
 >
 > Ensure you're running Windows 10, version 1803 or higher.
 
->
-> Roaming any data under the path `%localappdata%` is not supported. If you choose to move content under `%localappdata%`, make sure that the content of the following folders and registry keys **never** leaves the device under any condition. For example: Profile migration tools must skip the following folders and keys:
->
-> - `%localappdata%\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy`
-> - `%localappdata%\Packages\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy`
-> - `%localappdata%\Packages\<any app package>\AC\TokenBroker`
-> - `%localappdata%\Microsoft\TokenBroker`
-> - `%localappdata%\Microsoft\OneAuth`
-> - `%localappdata%\Microsoft\IdentityCache`
-> - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\IdentityCRL`
-> - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\AAD`
-> - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WorkplaceJoin`
->
-> Roaming of the work account's device certificate is not supported. The certificate, issued by "MS-Organization-Access", is stored in the Personal (MY) certificate store of the current user and on the local machine.
+Roaming any data under the path `%localappdata%` is not supported. If you choose to move content under `%localappdata%`, make sure that the content of the following folders and registry keys **never** leaves the device under any condition. For example, profile migration tools must skip the following folders and keys:
+
+- `%localappdata%\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy`
+- `%localappdata%\Packages\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy`
+- `%localappdata%\Packages\<any app package>\AC\TokenBroker`
+- `%localappdata%\Microsoft\TokenBroker`
+- `%localappdata%\Microsoft\OneAuth`
+- `%localappdata%\Microsoft\IdentityCache`
+- `HKEY_CURRENT_USER\SOFTWARE\Microsoft\IdentityCRL`
+- `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\AAD`
+- `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WorkplaceJoin`
+
+Roaming of the work account's device certificate is not supported. The certificate, issued by "MS-Organization-Access", is stored in the Personal (MY) certificate store of the current user and on the local machine.
 
 ### Persistent VDI
 
