@@ -5,7 +5,7 @@ description: Learn how to configure and enable users to sign-in to Microsoft Ent
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 11/27/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino

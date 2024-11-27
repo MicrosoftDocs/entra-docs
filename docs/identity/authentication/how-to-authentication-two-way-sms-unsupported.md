@@ -5,7 +5,7 @@ description: Explains how to enable another method for users who still use two-w
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/27/2024
 
 ms.author: justinha
 author: rhicock

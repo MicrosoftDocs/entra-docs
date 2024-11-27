@@ -6,14 +6,14 @@ description: Get started with Azure MFA and the user portal.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 11/27/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
 ---
-# User portal for the Azure Multi-Factor Authentication Server
+# User portal for the Microsoft Entra multifactor authentication Server
 
 The user portal is an IIS web site that allows users to enroll in Microsoft Entra multifactor authentication and maintain their accounts. A user may change their phone number, change their PIN, or choose to bypass two-step verification during their next sign-on.
 
@@ -21,7 +21,7 @@ Users sign in to the user portal with their normal username and password, then e
 
 User portal Administrators may be set up and granted permission to add new users and update existing users.
 
-Depending on your environment, you may want to deploy the user portal on the same server as Azure Multi-Factor Authentication Server or on another internet-facing  server.
+Depending on your environment, you may want to deploy the user portal on the same server as Microsoft Entra multifactor authentication Server or on another internet-facing  server.
 
 > [!IMPORTANT]
 > In September 2022, Microsoft announced deprecation of Azure Multi-Factor Authentication Server. Beginning September 30, 2024, Azure Multi-Factor Authentication Server deployments will no longer service multifactor authentication requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users’ authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Azure MFA service by using the latest Migration Utility included in the most recent [Azure MFA Server update](https://www.microsoft.com/download/details.aspx?id=55849). For more information, see [Azure MFA Server Migration](how-to-migrate-mfa-server-to-azure-mfa.md).  
@@ -64,7 +64,7 @@ The following pre-requisites are required to install the user portal on the **sa
 
 To deploy the user portal, follow these steps:
 
-1. Open the Azure Multi-Factor Authentication Server console, click the **User Portal** icon in the left menu, then click **Install User Portal**.
+1. Open the Azure Multi-Factor Authentication Server console, select the **User Portal** icon in the left menu, then select **Install User Portal**.
 2. Complete the install using the defaults unless you need to change them for some reason.
 3. Bind a TLS/SSL Certificate to the site in IIS
 
@@ -122,7 +122,7 @@ If you have questions about configuring a TLS/SSL Certificate on an IIS server, 
 
 Now that the user portal is installed, you need to configure the Azure Multi-Factor Authentication Server to work with the portal.
 
-1. In the Azure Multi-Factor Authentication Server console, click the **User Portal** icon. On the Settings tab, enter the URL to the user portal in the **User Portal URL** textbox. If email functionality has been enabled, this URL is included in the emails that are sent to users when they're imported into the Azure Multi-Factor Authentication Server.
+1. In the Azure Multi-Factor Authentication Server console, select the **User Portal** icon. On the Settings tab, enter the URL to the user portal in the **User Portal URL** textbox. If email functionality has been enabled, this URL is included in the emails that are sent to users when they're imported into the Azure Multi-Factor Authentication Server.
 2. Choose the settings that you want to use in the User Portal. For example, if users are allowed to choose their authentication methods, ensure that **Allow users to select method** is checked, along with the methods they can choose from.
 3. Define who should be Administrators on the **Administrators** tab. You can create granular administrative permissions using the checkboxes and dropdowns in the Add/Edit boxes.
 
@@ -168,20 +168,20 @@ If they select the Voice Call verification method or have been pre-configured to
 
 ![Register primary and backup phone numbers](./media/howto-mfaserver-deploy-userportal/backupphone.png)
 
-If the user is required to use a PIN when they authenticate, the page prompts them to create a PIN. After entering their phone number(s) and PIN (if applicable), the user clicks the **Call Me Now to Authenticate** button. Microsoft Entra multifactor authentication performs a phone call verification to the user's primary phone number. The user must answer the phone call and enter their PIN (if applicable) and press # to move on to the next step of the self-enrollment process.
+If the user is required to use a PIN when they authenticate, the page prompts them to create a PIN. After entering their phone number(s) and PIN (if applicable), the user selects the **Call Me Now to Authenticate** button. Microsoft Entra multifactor authentication performs a phone call verification to the user's primary phone number. The user must answer the phone call and enter their PIN (if applicable) and press # to move on to the next step of the self-enrollment process.
 
-If the user selects the Text Message verification method or has been pre-configured to use that method, the page prompts the user for their mobile phone number. If the user is required to use a PIN when they authenticate, the page also prompts them to enter a PIN.  After entering their phone number and PIN (if applicable), the user clicks the **Text Me Now to Authenticate** button. Microsoft Entra multifactor authentication performs an SMS verification to the user's mobile phone. The user receives the text message with a one-time-passcode (OTP), then replies to the message with that OTP plus their PIN (if applicable).
+If the user selects the Text Message verification method or has been pre-configured to use that method, the page prompts the user for their mobile phone number. If the user is required to use a PIN when they authenticate, the page also prompts them to enter a PIN.  After entering their phone number and PIN (if applicable), the user selects the **Text Me Now to Authenticate** button. Microsoft Entra multifactor authentication performs an SMS verification to the user's mobile phone. The user receives the text message with a one-time-passcode (OTP), then replies to the message with that OTP plus their PIN (if applicable).
 
 ![User portal verification using SMS](./media/howto-mfaserver-deploy-userportal/text.png)
 
-If the user selects the Mobile App verification method, the page prompts the user to install the Microsoft Authenticator app on their device and generate an activation code. After installing the app, the user clicks the Generate Activation Code button.
+If the user selects the Mobile App verification method, the page prompts the user to install the Microsoft Authenticator app on their device and generate an activation code. After installing the app, the user selects the Generate Activation Code button.
 
 > [!NOTE]
 > To use the Microsoft Authenticator app, the user must enable push notifications for their device.
 
-The page then displays an activation code and a URL along with a barcode picture. If the user is required to use a PIN when they authenticate, the page additionally prompts them to enter a PIN. The user enters the activation code and URL into the Microsoft Authenticator app or uses the barcode scanner to scan the barcode picture and clicks the Activate button.
+The page then displays an activation code and a URL along with a barcode picture. If the user is required to use a PIN when they authenticate, the page additionally prompts them to enter a PIN. The user enters the activation code and URL into the Microsoft Authenticator app or uses the barcode scanner to scan the barcode picture and selects the Activate button.
 
-After the activation is complete, the user clicks the **Authenticate Me Now** button. Microsoft Entra multifactor authentication performs a verification to the user's mobile app. The user must enter their PIN (if applicable) and press the Authenticate button in their mobile app to move on to the next step of the self-enrollment process.
+After the activation is complete, the user selects the **Authenticate Me Now** button. Microsoft Entra multifactor authentication performs a verification to the user's mobile app. The user must enter their PIN (if applicable) and press the Authenticate button in their mobile app to move on to the next step of the self-enrollment process.
 
 If the administrators have configured the Azure Multi-Factor Authentication Server to collect security questions and answers, the user is then taken to the Security Questions page. The user must select four security questions and provide answers to their selected questions.
 
