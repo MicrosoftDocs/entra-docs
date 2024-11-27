@@ -34,7 +34,7 @@ The Microsoft traffic forwarding profile includes Microsoft Entra ID/ Microsoft 
 
 Microsoft traffic is forwarded to the service through either [remote network connectivity](concept-remote-network-connectivity.md), such as branch office location, or through the [Global Secure Access client](how-to-install-windows-client.md).
 
-[Learn more about the Microsoft traffic profile](concept-microsoft-traffic-profile.md)\
+[Learn more about the Microsoft traffic profile](concept-microsoft-traffic-profile.md)
 
 ### Licensing
 
