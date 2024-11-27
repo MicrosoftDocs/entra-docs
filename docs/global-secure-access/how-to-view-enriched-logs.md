@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 11/27/2024
 ms.service: global-secure-access
 ---
 
