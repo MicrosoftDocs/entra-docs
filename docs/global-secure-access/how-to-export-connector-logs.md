@@ -14,7 +14,7 @@ ms.reviewer: sumeetmittal
 ---
 # Export private network connector logs to the Log Analytics workspace
 
-This article describes how to extract private network connector logs from connector machines deployed on the customer's network and send those logs to the Log Analytics workspace in the customer’s Azure subscription. This is done using Azure Arc and its extensions. The logs stay under the customer's control and management in their Azure environment. This ensures that customers keep full ownership and security of their data.
+This article describes how to extract private network connector logs from connector machines that are deployed on the customer's network. Once extracted, those logs can be sent to the Log Analytics workspace in the customer’s Azure subscription. Extracting these logs is performed using Azure Arc and its extensions. Customers retain control and management of the logs in their Azure environment, which ensures that customers keep full ownership and security of their data.
 
 ## Prerequisites
 
@@ -29,68 +29,85 @@ To complete the steps in this process, you must have the following prerequisites
 To extract connector logs, you must enable verbose logging on the connector machine and then stream the logs to Log Analytics.
 
 ### Enable verbose logging on the connector machine
-Verbose logs are useful when debugging Microsoft Entra Private Network Connector side issues for Entra Private Access. Verbose logging is not enabled in the connector by default. To enable verbose logging:
+Verbose logs are useful when debugging Microsoft Entra Private Network Connector side issues for Entra Private Access. Verbose logging isn't enabled in the connector by default. 
+
+To enable verbose logging:
 
 1. Locate the installation directory of the connector at `C:\Program Files\Microsoft Entra Private Network Connector`.
 2. Create a folder on in the local directory with write permissions **On**. 
-    To verify write permissions, 
+    
+	To verify write permissions: 
     - Right-click on the folder you created, then click **Properties**.  
-    - Go to the **Security** tab and make sure the **Write** property is checked for **Allow**.
-    - If **Write** is not checked, select **edit**. 
+    - Go to the **Security** tab and make sure the **Write** property is checked for **Allow**. If **Write** isn't checked, select **edit**. 
     - On the pop-up window, select **allow** for the **write** row, then click **apply**. 
-3. Right-click on a text editor application such as Notepad or Notepad++, select **Run as Administrator**, and open the file `MicrosoftEntraPrivateNetworkConnector.exe.config`to edit. 
-4. Add the following higlighted section from <system.diagnostics> to </system.diagnostrics> to the file in that location.
+3. Right-click on a text editor application such as Notepad or Notepad++, select **Run as Administrator**, and open the file `MicrosoftEntraPrivateNetworkConnector.exe.config` to edit. 
+4. From this section, select the code from ```<system.diagnostics>``` to ```</system.diagnostrics>``` and add it to the `MicrosoftEntraPrivateNetworkConnector.exe.config` file.
 
 
 ``` json
 <?xml version="1.0" encoding="utf-8" ?> 
+
 <configuration> 
-<runtime> 
-<gcServer enabled="true"/> 
-</runtime> 
-<appSettings> 
-<add key="TraceFilename" value="MicrosoftEntraPrivateNetworkConnector.log" /> 
-</appSettings> 
+
+  <runtime> 
+
+     <gcServer enabled="true"/> 
+
+  </runtime> 
+
+  <appSettings> 
+
+    <add key="TraceFilename" value="MicrosoftEntraPrivateNetworkConnector.log" /> 
+
+  </appSettings> 
+
 <system.diagnostics> 
-<trace autoflush="true" indentsize="4"> 
-<listeners> 
-<add name="consoleListener" type="System.Diagnostics.ConsoleTraceListener" /> 
-<add name="textWriterListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="C:\logs\connector_logs.log" /> 
-<remove name="Default" /> 
-</listeners> 
-</trace> 
-</system.diagnostics>
-</configuration>
+
+  <trace autoflush="true" indentsize="4"> 
+
+    <listeners> 
+
+      <add name="consoleListener" type="System.Diagnostics.ConsoleTraceListener" /> 
+
+      <add name="textWriterListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="C:\logs\connector_logs.log" /> 
+
+      <remove name="Default" /> 
+
+    </listeners> 
+
+  </trace> 
+
+</system.diagnostics> 
 ```
 
-Next, we need to Stop and Start the Connector service for the above changes to take effect.
+Next, you need to Stop and Start the Connector service for the above changes to take effect.
 
 5. Type **Services** in search box in taskbar, then go to **Services**. 
 6. Look for the **Microsoft Entra Private Network Connector** service from the Services list and select it.
-7. Choose **Stop** the agent service, then **Start** the agent service again. At this point, you should see a text file labeled `connector_logs.log` in the C:\logs\ folder. 
+7. Choose **Stop** the agent service, then **Start** the agent service again. At this point, you see a text file labeled `connector_logs.log` in the C:\logs\ folder. 
 
 > [!NOTE]
 > When verbose logging isn't enabled, the default log file location is stored at `C:\Users\<user>\AppData\Local\Temp`. When verbose logging is enabled, the log file is stored at `C:\logs\connector_logs.log`.
 > Verbose logging can be enabled or disabled by adding or removing the lines specified in step 4. You must restart the service agent each time for the logging changes to take effect.
 
-### Set Up Azure Arc for On-Premises Machine
+### Set up Azure Arc on the on-premises machine
 1. Get the script for enabling Azure Arc for the on-premises machine:
-    - Go to the [Azure Portal](https://portal.azure.com/).
+    - Go to the [Azure portal](https://portal.azure.com/).
     - Search for **Azure Arc** in the search bar.
     - Go to **Azure Arc resources > Machines**.
     - Click on **Add/Create > Add a Machine**.
     - Add a single server > click on **Generate Script**.
     - Fill in the information, then click **Download and Run Script**.
-2.	Install Azure Arc Agent on on-premises Connector Machine:
+2.	Install the Azure Arc Agent on the on-premises connector machine:
     - Download the Azure Arc agent setup script from the Azure portal or Microsoft documentation.
     - Search for **Windows PowerShell ISE** in the search box on the Task bar. Right click on the application, then click **Run as administrator**.  
     From PowerShell, open the downloaded file labeled `OnboardingScript.ps1`. 
     - Run the script. 
-    - Log in on the pop up window to authenticate using the Azure account credentials. The screen returns a message that reads:
+    - Log in on the pop-up window to authenticate using the Azure account credentials. The screen returns a message that reads:
     `Authentication complete. You can return to the application. Feel free to close this browser tab.`
  
-### Set Up Log Analytics Workspace
-1. Go to the [Azure Portal](https://portal.azure.com/).
+### Set up Log Analytics workspace
+1. Go to the [Azure portal](https://portal.azure.com/).
 2. Create a Log Analytics workspace: 
     - In the search bar, type **Log Analytics** and select **Log Analytics workspaces**.
     - Click **Create**.
@@ -99,25 +116,25 @@ Next, we need to Stop and Start the Connector service for the above changes to t
       - **Resource Group**: Select an existing resource group or create a new one.
       - **Name**: Provide a unique name for the Log Analytics workspace.
       - **Region**: Choose the region closest to your on-premise machine.
-    - Click **Review + create** and then **Create**.
+    - Click **Review + create**, then **Create**.
 3. Create a table under the new workspace. 
-	- Select the workspace name you just created. 
+	- Select the workspace name you created. 
 	- Navigate to **Workspace -> Settings -> Tables**. 
 	- Click **Create -> New Custom Log (MMA-based)**.
-	- Select log file from the VM location (`C:\logs\connector_logs.log`).
-	- Set delimiter as New Line.
+	- Select log file from the virtual machine (VM) location (`C:\logs\connector_logs.log`).
+	- Set delimiter as **New Line**.
 	- Add Collection Path Type – windows & Path as `C:\logs\connector_logs.log`. 
 	- Click **Create**.
 
-### Set Up Data Collection Endpoint (DCE)
-1. Go to the [Azure Portal](https://portal.azure.com/).
+### Set up data collection endpoint (DCE)
+1. Go to the [Azure portal](https://portal.azure.com/).
 2. In the search bar, search for **Data Collection Endpoint**.
 3. Click **Create**.
 4. Provide a name and region for the DCE.
 5. Click **Review + create** and then **Create**.
 
-### Set Up Data Collection Rule (DCR)
-1. Go to the [Azure Portal](https://portal.azure.com/).
+### Set up data collection rule (DCR)
+1. Go to the [Azure portal](https://portal.azure.com/).
 2. In the search bar, search for **Data Collection Rule**.
 3. Click **Create**.
 4. Fill in the necessary details:
@@ -134,12 +151,12 @@ Next, we need to Stop and Start the Connector service for the above changes to t
 	- Click apply. You should see your VM name list in the resources.
 6. Click Next: Collect and deliver
 	- Click **Add data source**.
-	- For the Data source type, select "Custom Text logs".
-	- Specify the paths to the logs on your on-premise Windows machine (e.g., C:\logs\ connector_logs.log).
+	- For the Data source type, select **Custom Text logs**.
+	- Specify the paths to the logs on your on-premise Windows machine (for example, C:\logs\ connector_logs.log).
 	- Enter the table name you created under log analytics workspace. 
 	  To get the table name, open a new tab and navigate to the azure portal and search for **Log Analytics Workspaces**. Select the table you created. Click on **setting** and open the 
       tables. Find the name of the **custom table (classic)**. 
-	- Click **Add** and then **Next: Destination**.
+	- Click **Add**, then **Next: Destination**.
 7. Configure Destination:
 	- Destination **Type-> Azure Monitor Logs**.
 	- Select your subscription.
@@ -147,19 +164,19 @@ Next, we need to Stop and Start the Connector service for the above changes to t
 	- Ensure your Data Collection Endpoint is selected.
 	- Click **Next: Review + create** and then **Create**.
 
-### Verify Data Collection
+### Verify data collection
 1. Check Data in Log Analytics:
-	- After installing and configuring the agent, it may take some time for data to start appearing.
+	- After you've installed and configured the agent, it may take some time for data to start appearing.
 	- In the Azure portal, go to your Log Analytics workspace > Select your Workspace.
-	- Navigate to **Logs**, click exit on the pop up hub > **Custom Logs** > Double Click on your log name. This adds the log name into the query. 
-	- Select **Run**. You'll see your logs.
+	- Navigate to **Logs**, click exit on the pop-up hub > **Custom Logs** > Double Click on your log name. This adds the log name into the query. 
+	- Select **Run**. You see your logs.
     This setup allows you to collect text logs from on-premises Windows machines and send them to Azure Log Analytics using Azure Arc. The data collection rule ensures the logs are
     collected as per the defined paths, and the agent sends them to your Log Analytics workspace.
 
 ## Share access to your workspace 
-Once you have the logs into the Log Analytics workspace, you can expose the logs to a user outside of your tenant by sharing access to the workspace in a secure manner. One use case is to grant access to support personnel (as required) for any support issues. Support personnel can be from Microsoft CSS (Customer Service & Support), Engineering OCE (On Call Engineer) or the customer’s own support network. This helps with swiftly diagnosing the problem, positively impacting the Mean Time to Recovery (MTTR) and Mean Time to Mitigate (MTTM), by extension, customer satisfaction.
+Once you have the logs into the Log Analytics workspace, you can securely open access the logs to an external user (outside of your tenant) by sharing your workspace. One use case is to grant access to support personnel (as required) for any support issues. Support personnel can be from Microsoft CSS (Customer Service & Support), Engineering OCE (On Call Engineer), or the customer’s own support network. Giving access to your workspace can help with swiftly diagnosing the problem, positively impacting the Mean Time to Recovery (MTTR) and Mean Time to Mitigate (MTTM), and by extension, customer satisfaction.
 
-Here are the steps to achieve this:
+Here are the steps to provide access to an external user:
 
 ### Prerequisites
 
@@ -167,9 +184,9 @@ Here are the steps to achieve this:
 2.	**Log Analytics Workspace**: An existing Log Analytics workspace that you want to share.
 3.	**Azure AD Guest User**: The external user must be added as a guest user in your Azure Active Directory (AD).
 
-### Add External User as a Guest in Azure AD
-1.	Navigate to Azure Active Directory:
-	- Go to the [Azure Portal](https://portal.azure.com/).
+### Add external user as a guest in Azure Active Directory (AD)
+1.	Navigate to Azure AD:
+	- Go to the [Azure portal](https://portal.azure.com/).
 	- In the search bar, type **Microsoft Entra ID**, then select it.
 2.	Add a New Guest User:
 	- In the Microsoft Entra ID dashboard, select **Manage -> Users**.
@@ -178,10 +195,10 @@ Here are the steps to achieve this:
 	- Click **Invite** to send an invitation to the external user.
 The external user receives an email invitation to join your Microsoft Entra ID page as a guest.
 
-### Assign Roles to the Guest User in Log Analytics Workspace
+### Assign roles to the guest user in Log Analytics workspace
 1.	Navigate to the Log Analytics Workspace:
-	- In the Azure Portal, search for  **Log Analytics workspaces**, then select the workspace you want to share.
-2.	Access Control (IAM):
+	- In the Azure portal, search for  **Log Analytics workspaces**, then select the workspace you want to share.
+2.	Identity Access Control (IAM):
 	- In the workspace blade, select **Access control (IAM)** from the left-hand menu.
 	- Click on **+ Add**, then select **Add role assignment**.
 3.	Assign a Role:
@@ -193,23 +210,24 @@ The external user receives an email invitation to join your Microsoft Entra ID p
 	- Search for the guest user you added earlier by their email address.
 	- Select the guest user and click **Select**.
 5.	Review and Assign:
-	- Review the role assignment and click "Review + assign" to complete the process.
+	- Review the role assignment and click **Review + assign** to complete the process.
 
-### Ensure Permissions Are Properly Set
+### Ensure permissions are properly set
 1.	Verify Permissions:
 	- The guest user should now have access to the Log Analytics workspace with the permissions assigned.
-	- You can verify by going to "Access control (IAM)" in the Log Analytics workspace and checking the role assignments.
+	- You can verify by going to **Access control (IAM)** in the Log Analytics workspace and checking the role assignments.
 
-### External User Access and Query Logs
-1.	**External User Access**:
-	- The external user needs to accept the invitation sent to their email and log into the Azure Portal using their credentials.
-2.	**Accessing Log Analytics**:
+### External user access and query logs
+1.	External User Access:
+	- The external user needs to accept the invitation sent to their email and log into the Azure portal using their credentials.
+2.	Accessing Log Analytics:
 	- Once logged in, the external user navigates to the Log Analytics workspace shared with them.	
     - They can use the Log Analytics workspace's **Logs** feature to query and analyze logs based on the permissions granted.
 
-### Additional Considerations
--	**Security**: Ensure that you only grant the necessary permissions to the guest user. The principle of least privilege should be followed.
+### Other considerations
+-	**Security**: Follow the principle of least privilege and ensure that you grant only the necessary permissions to the guest user.
 -	**Monitoring and Auditing**: Regularly monitor and audit access to your Log Analytics workspace to ensure compliance and security.
-By following these steps, you can securely expose your Azure Log Analytics workspace to a user outside your tenant, allowing them to access and query logs as needed.
+
+By following these steps, you can securely open your Azure Log Analytics workspace to a user outside of your tenant, allowing them to access and query logs as needed.
 
 ## Next steps
