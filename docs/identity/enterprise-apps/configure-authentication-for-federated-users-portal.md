@@ -66,7 +66,6 @@ In the following examples, you create, update, link, and delete HRD policies on 
     ```powershell
     Get-MgPolicyHomeRealmDiscoveryPolicy
     ```
-<!--TBD - add output-->
 If nothing is returned, it means you have no policies created in your tenant.
 
 ### Create an HRD policy using Microsoft Graph PowerShell
@@ -220,7 +219,6 @@ In the following examples, you create, update, link, and delete HRD policies on 
     ```http
     GET https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies
     ```
-<!--TBD - add output-->
 If nothing is returned, it means you have no policies created in your tenant.
 
 ### Create an HRD policy using Microsoft Graph

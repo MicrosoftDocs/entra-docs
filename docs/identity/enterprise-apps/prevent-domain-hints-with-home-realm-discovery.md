@@ -181,23 +181,23 @@ Grant consent to the `Policy.ReadWrite.ApplicationConfiguration` permission.
 
 1. Gather feedback from the test domain users. Collect details for applications that broke as a result of this change - they have a dependency on domain hint usage, and should be updated. For now, add them to the `RespectDomainHintForApps` section:
 
-```http
-PATCH https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicyId} 
-{
-"definition": {  
-            "HomeRealmDiscoveryPolicy": {  
-                "DomainHintPolicy": {  
-                    "IgnoreDomainHintForDomains": ["testDomain.com"],  
-                    "RespectDomainHintForDomains": [],  
-                    "IgnoreDomainHintForApps": [],  
-                    "RespectDomainHintForApps": ["app1-clientID-Guid", "app2-clientID-Guid"]  
+    ```http
+    PATCH https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicyId} 
+    {
+    "definition": {  
+                "HomeRealmDiscoveryPolicy": {  
+                    "DomainHintPolicy": {  
+                        "IgnoreDomainHintForDomains": ["testDomain.com"],  
+                        "RespectDomainHintForDomains": [],  
+                        "IgnoreDomainHintForApps": [],  
+                        "RespectDomainHintForApps": ["app1-clientID-Guid", "app2-clientID-Guid"]  
+                    }  
                 }  
-            }  
-        },  
-"displayName": "Home Realm Discovery Domain Hint Exclusion Policy",
-"isOrganizationDefault": true  
-    }'
-```
+            },  
+    "displayName": "Home Realm Discovery Domain Hint Exclusion Policy",
+    "isOrganizationDefault": true  
+        }'
+    ```
 
 1. Continue expanding rollout of the policy to new domains, and collecting more feedback.
 
