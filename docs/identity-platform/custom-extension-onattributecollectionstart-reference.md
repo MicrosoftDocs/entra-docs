@@ -175,6 +175,7 @@ HTTP/1.1 200 OK
     "actions": [
       {
         "@odata.type": "microsoft.graph.attributeCollectionStart.showBlockPage",
+        "title": "Hold tight...",
         "message": "Your access request is already processing. You'll be notified when your request has been approved."
       }
     ]
