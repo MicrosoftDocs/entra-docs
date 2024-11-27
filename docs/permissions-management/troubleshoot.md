@@ -6,13 +6,13 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: troubleshooting
-ms.date: 02/23/2022
+ms.date: 11/21/2024
 ms.author: jfields
 ---
 
 # Troubleshoot issues with Permissions Management
 
-This section answers troubleshoot issues with Permissions Management.
+This section addresses how to troubleshoot issues with Permissions Management.
 
 ## One time passcode (OTP) email
 

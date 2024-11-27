@@ -34,6 +34,8 @@ The following sections provide a high-level overview of the product interfaces a
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-whats-new.png" alt-text="Screenshot of the Microsoft Entra admin center What's new page.":::
 
+For more information about the **What's new** experience, see [What's new in Microsoft Entra](./whats-new-overview.md).
+
 ### Identity
 
 **Identity** gives administrators and developers access to [Microsoft Entra ID](./whatis.md) and [Microsoft Entra External ID](~/external-id/external-identities-overview.md) solutions, including tenants, users, groups, devices, applications, roles, and licensing.
