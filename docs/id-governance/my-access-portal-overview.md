@@ -35,11 +35,11 @@ Administrators, via the Microsoft Entra admin center, can configure:
 
 ## Overview page
 
-The Overview page shows you key tasks that need your attention such as pending requests and reviews. It is the landing page for the My Access portal.
+The Overview page shows you key tasks that need your attention such as pending requests and reviews. It's the landing page for the My Access portal.
 
 ## Discover access packages
 
-In the My Access portal, you can view the access packages you can request by selecting **Access packages** in the left-hand menu and the **Available** tab. Find the access package you want to request access to in the list. You can search for an access package by name, description, or resources via the search bar. Once you’ve located the access package, select the row. You might have to answer questions and provide business justification for your request.
+In the My Access portal, you can view the access packages you can request by selecting **Access packages** in the left-hand menu and the **Available** tab. Find the access package you want to request access to in the list. You can search for an access package by name, description, or resources via the search bar. Once you locate the access package, select the row. You might have to answer questions and provide business justification for your request.
 
 Select Request history in the left-hand menu to see a list of your requests and the status.
 

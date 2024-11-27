@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 02/23/2022
+ms.date: 11/21/2024
 ms.author: jfields
 ---
 
@@ -15,6 +15,7 @@ ms.author: jfields
 This article describes how you can create and view permission analytics triggers in Permissions Management.
 
 ## View permission analytics triggers
+You can view permission analytics triggers to monitor activities in Permissions Management. This section explains how to access and interpret the alerts.
 
 1. In the Permissions Management home page, select **Activity triggers** (the bell icon).
 1. Select **Permission Analytics**, and then select the **Alerts** subtab.
@@ -47,6 +48,7 @@ This article describes how you can create and view permission analytics triggers
    The **Activity** section displays details about the **Identity Name**, **Resource Name**, **Task Name**, **Date**, and **IP Address**.
 
 ## Create a permission analytics trigger
+You can create permission analytics triggers to detect specific activities. This section guides you through the steps to create these triggers.
 
 1. In the Permissions Management home page, select **Activity triggers** (the bell icon).
 1. Select **Permission Analytics**, select the **Alerts** subtab, and then select **Create Permission Analytics Trigger**.
@@ -62,6 +64,7 @@ This article describes how you can create and view permission analytics triggers
 1. Select **Save**.
 
 ## View permission analytics alert triggers
+You can view and manage the permission analytics alert triggers you have created. This section provides instructions on how to access and modify these triggers.
 
 1. In the Permissions Management home page, select **Activity triggers** (the bell icon).
 1. Select **Permission Analytics**, and then select the **Alert Triggers** subtab.

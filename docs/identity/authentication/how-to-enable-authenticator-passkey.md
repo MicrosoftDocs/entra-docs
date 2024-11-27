@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/17/2024
+ms.date: 11/25/2024
 
 
 ms.author: justinha
@@ -24,8 +24,8 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 - [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
 - Android 14 and later or iOS 17 and later
 - An active internet connection on any device that is part of the passkey registration/authentication process. Connectivity to these two endpoints must be allowed in your organization to enable cross-device registration and authentication:
-  - cable.ua5v.com
-  - cable.auth.com
+  - `https://cable.ua5v.com`
+  - `https://cable.auth.com`
 - For cross-device registration/authentication, both devices must have Bluetooth enabled
 
 > [!NOTE]
@@ -64,18 +64,20 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
 
      [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** for users to be able to choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users may still be able to add a passkey in Microsoft Authenticator by choosing the **Security key or passkey** method, depending upon their operating system and browser. However, we don't expect many users to discover and use that method.  
      
-     If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the keys being used today. Include those users and the Authenticator AAGUIDs to enable this preview. You can do this with an automated script that analyzes logs, such as registration details and sign-in logs.
+     If your organization doesn't currently enforce key restrictions and already has active passkey usage, you should collect the AAGUIDs of the passkeys being used today. Include those passkey AAGUIDs with the Authenticator AAGUIDs. 
+     
+     You can use a PowerShell script to find AAGUIDs that are used in your tenant. For more information, see [Find AAGUIDs](#find-aaguids).
 
      If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
 
    - Set **Restrict specific keys** to **Allow**.
-   - Select **Microsoft Authenticator (Preview)** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following AAGUIDs to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page:
+   - Select **Microsoft Authenticator** to automatically add the Authenticator app AAGUIDs to the key restriction list, or manually add the following AAGUIDs to allow users to register passkeys in the Authenticator by signing into the Authenticator app or by going through a guided flow on the Security info page:
 
      - **Authenticator for Android:** de1e552d-db1d-4423-a619-566b625cdc84
      - **Authenticator for iOS:** 90a3ccdf-635c-4729-a248-9b709135078f
    
      >[!NOTE]
-     >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator (Preview)** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
+     >If you turn off key retrictions, make sure you clear the **Microsoft Authenticator** checkbox so that users aren’t prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
@@ -127,6 +129,50 @@ To configure the policy by using Graph Explorer:
    GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    ```
 
+## Find AAGUIDs 
+
+Use the GetRegisteredPasskeyAAGUIDsForAllUsers.ps1 Microsoft Graph PowerShell script to enumerate the AAGUIDs of all registered passkeys in the tenant. 
+Save the body of this script to a file called GetRegisteredPasskeyAAGUIDsForAllUsers.ps1.
+
+```powershell
+# Disconnect from Microsoft Graph
+Disconnect-MgGraph
+
+# Connect to Microsoft Graph with required scopes
+Connect-MgGraph -Scope 'User.Read,UserAuthenticationMethod.Read,UserAuthenticationMethod.Read.All'
+
+# Define the output file [If the script is run more than once delete the file to avoid appending to it.]
+$file = ".\AAGUIDs.txt"
+
+# Initialize the file with a header
+Set-Content -Path $file -Value '---'
+
+# Retrieve all users
+$UserArray = Get-MgBetaUser -All
+
+# Iterate through each user
+foreach ($user in $UserArray) {
+    # Retrieve Passkey authentication methods for the user
+    $fidos = Get-MgBetaUserAuthenticationFido2Method -UserId $user.Id
+
+    if ($fidos -eq $null) {
+        # Log and write to file if no Passkey methods are found
+        Write-Host "User object ID $($user.Id) has no Passkey"
+        Add-Content -Path $file -Value "User object ID $($user.Id) has no Passkey"
+    } else {
+        # Iterate through each Passkey method
+        foreach ($fido in $fidos) {
+            # Log and write to file the Passkey details
+            Write-Host "- User object ID $($user.Id) has a Passkey with AAGUID $($fido.Aaguid) of Model type '$($fido.Model)'"
+            Add-Content -Path $file -Value "- User object ID $($user.Id) has a Passkey with AAGUID $($fido.Aaguid) of Model type '$($fido.Model)'"
+        }
+    }
+
+    # Log and write a separator to file
+    Write-Host "==="
+    Add-Content -Path $file -Value "==="
+}
+```
 
 ## Restrict Bluetooth usage to passkeys in Authenticator
 
