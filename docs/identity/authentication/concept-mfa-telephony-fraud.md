@@ -5,7 +5,7 @@ description: Understanding International Revenue Share Fraud (IRSF) is crucial f
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/11/2023
+ms.date: 11/27/2024
 
 author: aloom3
 ms.author: justinha
