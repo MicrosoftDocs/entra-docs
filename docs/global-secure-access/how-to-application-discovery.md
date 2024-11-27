@@ -3,7 +3,7 @@ title: Configure Application Discovery (Preview)
 description: Configure Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/25/2024
+ms.date: 11/26/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -35,21 +35,21 @@ To view a list of all the application segments in Quick Access that users access
 
 By default, the **Application discovery** view sorts the application segments in descending order according to the number of users. This default sort order moves the most heavily used application segments to the top of the list, making them more visible to the administrator.  
 
-The administrator can adjust the time range, add other filters, and sort the application segments according to each of the columns. The administrator can also **filter by user** to see the list of the application segments accessed by a specific user. From the **Search** field, the administrator can filter by FQDN, IP address, and port address.
+The administrator can adjust the time range, add other filters, and sort the application segments according to each of the columns. The administrator can also **filter by user** to see the list of the application segments accessed by a specific user. From the **Search** field, the administrator can filter by fully qualified domain name (FQDN), IP address, and port address.
 
 The following columns are available for each application segment: 
-- Destination FQDN – The FQDN of the application segment 
-- Destination IP – The IP of the application segment 
-- Transport Protocol – The transport protocol of the application segment. Currently TCP and UDP are supported.   
-- Destination port – the port of the application segment 
-- Access type – Application Discovery currently supports only application segments that were accessed through Quick Access. 
-- Users – the number of users who accessed the application segment.  
-- Transactions – the number of transactions (connections) to the application segment.  
-- Devices - the number of devices that were used to access the application segment. 
-- Sent bytes – the total bytes of data that were sent from the user device to the application segment. 
-- Received bytes – the total bytes of data that were received by the user device from the application segment. 
-- Last access – the last time in the time range that the application segment was accessed.  
-- First access – the first time in the time range that the application segment was accessed. 
+- **Destination FQDN**: the FQDN of the application segment. 
+- **Destination IP**: the IP of the application segment. 
+- **Transport Protocol**: the transport protocol of the application segment. Currently TCP and UDP are supported.   
+- **Destination port**: the port of the application segment. 
+- **Access type**: Application discovery currently supports only application segments that were accessed through Quick Access. 
+- **Users**: the number of users who accessed the application segment.  
+- **Transactions**: the number of transactions (connections) to the application segment.  
+- **Devices** - the number of devices that were used to access the application segment. 
+- **Sent bytes**: the total bytes of data that were sent from the user device to the application segment. 
+- **Received bytes**: the total bytes of data that were received by the user device from the application segment. 
+- **Last access**: the last time in the time range that the application segment was accessed.  
+- **First access**: the first time in the time range that the application segment was accessed. 
 
 ## Add a new application
 Application Discovery helps the administrator to create a new Entra ID applications based on the discovered application segments of the main table.  
