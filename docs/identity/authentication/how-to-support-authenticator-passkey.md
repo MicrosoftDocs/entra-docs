@@ -24,7 +24,7 @@ This topic covers issues that users might see when they use passkeys in Microsof
 
 Organizations that are deploying passkeys and have Conditional Access policies that require phishing-resistant authentication when accessing **All resources (formerly 'All cloud apps')** can run into a looping issue when users attempt to add a passkey to Microsoft Authenticator. An example of such a policy configuration:
 
-- Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
+- Condition: **All devices (Windows, Linux, macOS, Windows, Android)** 
 - Targeted resource: **All resources (formerly 'All cloud apps')** 
 - Grant control: **Authentication strength – Require passkey in Authenticator** 
 
@@ -61,7 +61,7 @@ There are a couple workarounds:
 
 Organizations that are deploying passkeys and have Conditional Access policies that require the **Require approved client app** or **Require app protection policy** grant control when accessing **All resources (formerly 'All cloud apps')** can run into an issue where users are not allowed to register a passkey in Microsoft Authenticator. An example of such a policy configuration:
 
-- Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
+- Condition: **All devices (Windows, Linux, macOS, Windows, Android)** 
 - Targeted resource: **All resources (formerly 'All cloud apps')** 
 - Grant control: **Require approved client app** or **Require app protection policy**
 
@@ -71,9 +71,9 @@ There are a couple workarounds:
 
 - You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All resources (formerly 'All cloud apps')** to specific applications. Start with a review of applications that are used in your tenant and use filters to tag appropriate applications.
 
-- You can leverage full MDM management and the **Require device to be marked as compliant** control. An example of such a policy configuration:
+- You can leverage full MDM management and the **Require device to be marked as compliant** control. The Microsoft Authenticator app can satisfy this grant control if the device is MDM managed and is successfully reporting as being in a compliant state. An example of such a policy configuration:
 
-    - Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
+    - Condition: **All devices (Windows, Linux, macOS, Windows, Android)** 
     - Targeted resource: **All resources (formerly 'All cloud apps')** 
     - Grant control: **Require approved client app** or **Require app protection policy** or ***Require device to be marked as compliant***
 
