@@ -42,7 +42,7 @@ procedureSection:
 
     steps:
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
       - |
         Browse to **Identity governance** > **Privileged Identity Management** > **My roles**.
 
