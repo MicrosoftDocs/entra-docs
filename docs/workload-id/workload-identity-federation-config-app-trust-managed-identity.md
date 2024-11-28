@@ -13,43 +13,23 @@ ms.reviewer: hosamsh
 
 # Configure an application to trust a managed identity (preview)
 
-This article describes how to configure An Entra App to trust a Managed Identity. You can then exchange the managed identity token for an access token that can access Microsoft Entra protected resources without needing to use or manage App secrets.
+This article describes how to configure a Microsoft Entra application to trust a managed identity. You can then exchange the managed identity token for an access token that can access Microsoft Entra protected resources without needing to use or manage App secrets.
 
 ## Prerequisites
 
 - An Azure account with either the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment. If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
 - An understanding of the concepts in [managed identities for Azure resources](/entra/identity/managed-identities-azure-resources/overview)
 - [A user-assigned managed identity](/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity) assigned to the Azure compute resource (e.g., VM or App Service) that hosts your workload.
-- An [app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID. Grant your app access to the Azure resources targeted by your Azure workload.
+- An [app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID. Grant your app access to the Azure resources targeted by your Azure workload. This app registration must belong to the same tenant as the managed identity.
     - If you need to access resources in another tenant, your app registration must be a multitenant application and provision the app into the other tenant. Additionally, you must grant the app access permissions on the resources in that tenant. Learn about [how to add a multitenant app in other tenants](/entra/identity/enterprise-apps/grant-admin-consent)
 
 ## Important considerations and restrictions
 
 To create, update, or delete a federated identity credential, the account performing the action must have the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or Application Owner role.  The [microsoft.directory/applications/credentials/update permission](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate) is required to update a federated identity credential.
 
-A maximum of 20 federated identity credentials can be added to an application or user-assigned managed identity.
+Although the app registration and the managed identity must be in the same tenant, the service principal of the app registration can still redeem the managed identity token.
 
-When you configure a federated identity credential, there are several important pieces of information to provide:
-
-- *issuer* and *subject* are the key pieces of information needed to set up the trust relationship. The combination of `issuer` and `subject` must be unique on the app.  When the Azure workload requests Microsoft identity platform to exchange the Managed Identity token for an access token, the *issuer* and *subject* values of the federated identity credential are checked against the `issuer` and `subject` claims provided in the Managed Identity token. If that validation check passes, Microsoft identity platform issues an access token to the external software workload.
-
-- *issuer* is the URL of the Entra tenant's Authority URL in the form `https://login.microsoftonline.com/{tenant}/v2.0`. The Entra App and the Managed Identity must belong to the same tenant. If the `issuer` claim has leading or trailing whitespace in the value, the token exchange is blocked.
-    
-- *subject* is the GUID of the Managed Identity's Object ID (Principal ID) assigned to the Azure workload. Microsoft identity platform will look at the incoming external token and reject the exchange for an access token if the *subject* field configured in the Federated Identity Credential does not match the Principal ID of the Managed Identity. 
-
-    > [!IMPORTANT]
-    > You can only use User-Assigned Managed Identities in this feature.
-    
-- *audiences* lists the audiences that can appear in the external token.  Required. You must add a single audience value, which has a limit of 600 characters. The recommended value is "api://AzureADTokenExchange". This value must match the value of the `aud` claim in the Managed Identity token.  
-
-    > [!IMPORTANT]
-    > If you accidentally add  incorrect information in the *issuer*, *subject* or *audience* setting the federated identity credential is created successfully without error.  The error does not become apparent until the token exchange fails.
-    
-- *name* is the unique identifier for the federated identity credential. Required.  This field has a character limit of 3-120 characters and must be URL friendly. Alphanumeric, dash, or underscore characters are supported, the first character must be alphanumeric only.  It's immutable once created.
-
-- *description* is the user-provided description of the federated identity credential.  Optional. The description isn't validated or checked by Microsoft Entra ID. This field has a limit of 600 characters.
-
-Wildcard characters aren't supported in any federated identity credential property value.
+[!INCLUDE [federated credential configuration](./includes/federated-credential-configuration-considerations.md)]
 
 ## Get the Object ID of the managed identity
 
@@ -79,7 +59,7 @@ Wildcard characters aren't supported in any federated identity credential proper
     | Subject identifier | The `Principal ID` GUID of the Managed Identity. | `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` |
     | Name | A unique descriptive name for the credential. | *msi-webapp1* |
     | Description (Optional) | A user-provided description of the federated identity credential. | *Trust the workloads UAMI to impersonate the App* |
-    | Audience | The audience value that can appear in the external token. | *api://AzureADTokenExchange* |
+    | Audience | The audience value that must appear in the external token. | *api://AzureADTokenExchange* |
 
     :::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\add-credential.png" alt-text="Screenshot of the add a credential window in the Microsoft Entra admin center." ::: 
 
@@ -145,7 +125,7 @@ resource MyMsiFic 'federatedIdentityCredentials' = {
 
 ## Update your application code to request an access token
 
-The below code samples are valid in both cases where the resource tenant is in the same tenant as the App Reg and the Managed identity or a different tenant. 
+The below code samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant. 
 
 ### [Azure.Identity](#tab/azure-identity)
 

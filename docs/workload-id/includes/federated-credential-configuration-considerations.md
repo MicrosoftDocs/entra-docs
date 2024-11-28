@@ -23,12 +23,12 @@ When you configure a federated identity credential, there are several important 
 - *subject* is the identifier of the external software workload and must match the `sub` (`subject`) claim of the external token being exchanged. *subject* has no fixed format, as each IdP uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. This field has a character limit of 600 characters.
     
     > [!IMPORTANT]
-    > The *subject* setting values must exactly match the configuration on the GitHub workflow configuration.  Otherwise, Microsoft identity platform will look at the incoming external token and reject the exchange for an access token.  You won't get an error, the exchange fails without error.
+    > The *subject* setting values must exactly match the configuration on the GitHub workflow configuration. The Microsoft identity platform will only exchange the incoming token for an access token if the `subject` claim in the incoming token matches the value configured in the *subject* property of the federated identity credential.
     
     > [!IMPORTANT]
     > If you accidentally add the incorrect external workload information in the *subject* setting the federated identity credential is created successfully without error.  The error does not become apparent until the token exchange fails.
 
-- *audiences* lists the audiences that can appear in the external token.  Required. You must add a single audience value, which has a limit of 600 characters. The recommended value is "api://AzureADTokenExchange". It says what Microsoft identity platform must accept in the `aud` claim in the incoming token.  
+- *audiences* lists the audiences that can appear in the external token.  Required. You must add a single audience value, which has a limit of 600 characters. The value must be "api://AzureADTokenExchange" and must match the value of the `aud` claim in the Managed Identity token.  
 
 - *name* is the unique identifier for the federated identity credential. Required.  This field has a character limit of 3-120 characters and must be URL friendly. Alphanumeric, dash, or underscore characters are supported, the first character must be alphanumeric only.  It's immutable once created.
 
