@@ -46,11 +46,8 @@ For federated users with cloud-enabled credentials, such as Short Message Servic
 We use Microsoft Graph PowerShell cmdlets to walk through a few scenarios, including:
 
 - Setting up HRD policy to do auto-acceleration for an application in a tenant with a single federated domain.
-
 - Setting up HRD policy to do auto-acceleration  for an application to one of several domains that are verified for your tenant.
-
 - Setting up HRD policy to enable a legacy application to do direct username/password authentication to Microsoft Entra ID for a federated user.
-
 - Listing the applications for which a policy is configured.
 
 In the following examples, you create, update, link, and delete HRD policies on application service principals in Microsoft Entra ID.
@@ -64,7 +61,7 @@ In the following examples, you create, update, link, and delete HRD policies on 
 1. Run the following command to see all the policies in your organization:
 
     ```powershell
-    Get-MgPolicyHomeRealmDiscoveryPolicy
+    Get-MgPolicyHomeRealmDiscoveryPolicy -Property Id, displayName
     ```
 If nothing is returned, it means you have no policies created in your tenant.
 
@@ -87,63 +84,66 @@ The following policy auto-accelerates users to a federated identity provider sig
 
     ```powershell
     # Define the parameters for the policy 
-    $policyParams = @{  
-        Definition = @(  
-            @{  
-                HomeRealmDiscoveryPolicy = @{  
-                    AccelerateToFederatedDomain = $true  
-                }  
-            }  
-        )  
-        DisplayName = "BasicAutoAccelerationPolicy"  
+    $params = @{
+        definition = @(
+        '{"HomeRealmDiscoveryPolicy":{
+        "AccelerateToFederatedDomain":true,
+        }
+    }'
+    )
+    displayName = "BasicAutoAccelerationPolicy"
+    isOrganizationDefault = $true
     } 
     # Create a new Home Realm Discovery Policy
-    New-MgPolicyHomeRealmDiscoveryPolicy @policyParams 
+    New-MgPolicyHomeRealmDiscoveryPolicy -BodyParameter $params 
     ```
 
 The following policy auto-accelerates users to a federated identity provider sign-in screen when there's more than one federated domain in your tenant. If you have more than one federated domain that authenticates users for applications, you need to specify the domain to auto-accelerate.
 
 ```powershell
-# Define the parameters for the New-MgPolicyHomeRealmDiscoveryPolicy cmdlet  
-$policyParams = @{  
-    Definition = @(  
-        @{  
-            HomeRealmDiscoveryPolicy = @{  
-                AccelerateToFederatedDomain = $true  
-                PreferredDomain = "federated.example.edu"  
-            }
-        }  
-    )  
-    DisplayName = "MultiDomainAutoAccelerationPolicy"  
-}  
-  
-# Create a new Home Realm Discovery Policy using Microsoft Graph PowerShell  
-New-MgPolicyHomeRealmDiscoveryPolicy @policyParams  
+connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
+
+# Define the parameters for the New-MgPolicyHomeRealmDiscoveryPolicy cmdlet
+$params = @{
+	definition = @(
+	'{"HomeRealmDiscoveryPolicy":{
+	"AccelerateToFederatedDomain":true,
+	"PreferredDomain":"federated.example.edu"
+	}}'
+)
+displayName = "MultiDomainAutoAccelerationPolicy"
+isOrganizationDefault = $true
+
+}
+
+# Create the new policy
+New-MgPolicyHomeRealmDiscoveryPolicy -BodyParameter $params
 ```
 
 The following policy enables username/password authentication for federated users directly with Microsoft Entra ID for specific applications:
 
 ```powershell
+
+connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
+
 # Define the parameters for the New-MgPolicyHomeRealmDiscoveryPolicy cmdlet  
-$policyParams = @{  
-    Definition = @(  
-        @{  
-            HomeRealmDiscoveryPolicy = @{  
-                AllowCloudPasswordValidation = $true  
-            }  
-        }  
-    )  
-    DisplayName = "EnableDirectAuthPolicy"  
-}  
-  
-# Create a new Home Realm Discovery Policy using Microsoft Graph PowerShell  
-New-MgPolicyHomeRealmDiscoveryPolicy @policyParams  
+$params = @{
+	definition = @(
+	'{"HomeRealmDiscoveryPolicy":{
+	 "AllowCloudPasswordValidation":true
+     }
+   }'
+)
+displayName = "EnableDirectAuthPolicy"
+}
+
+New-MgPolicyHomeRealmDiscoveryPolicy -BodyParameter $params  
 ```
 
 To see your new policy and get its **ObjectID**, run the following command:
 
 ```powershell
-    Get-MgPolicyHomeRealmDiscoveryPolicy
+    Get-MgPolicyHomeRealmDiscoveryPolicy -Property Id, displayName
 ```
 
 To apply the HRD policy after creating it, you can assign it to multiple service principals.
@@ -160,7 +160,8 @@ You can use the [Microsoft Entra admin center](https://entra.microsoft.com). Usi
 Because you're using Microsoft Graph PowerShell, run the following cmdlet to list the service principals and their IDs.
 
 ```powershell
-    Get-MgServicePrincipal
+connect-MgGraph -scopes "Application.Read.All"
+Get-MgServicePrincipal
 ```
 
 ### Assign the policy to your service principal using Microsoft Graph PowerShell
@@ -168,14 +169,14 @@ Because you're using Microsoft Graph PowerShell, run the following cmdlet to lis
 After you have the **ObjectID** of the service principal of the application for which you want to configure auto-acceleration, run the following command. This command associates the HRD policy that you created with the service principal that you located in the previous sections.
 
 ```powershell
+    connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration", "Application.ReadWrite.All"
+
 # Define the parameters for the New-MgServicePrincipalHomeRealmDiscoveryPolicy cmdlet  
-$assignmentParams = @{  
-    ServicePrincipalId = "<ObjectID of the Service Principal>"  # Replace with the actual ObjectID of the Service Principal  
-    PolicyId = "<ObjectId of the Policy>"  # Replace with the actual ObjectId of the Policy  
-}  
-  
-# Assign the HRD policy to the service principal  
-New-MgServicePrincipalHomeRealmDiscoveryPolicy @assignmentParams
+$assignParams = @{
+	"@odata.id" = "https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/<policyId>"
+}
+
+New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef -ServicePrincipalId $servicePrincipalId -BodyParameter $assignParams
 ```
 
 You can repeat this command for each service principal to which you want to add the policy.
@@ -187,7 +188,8 @@ In the case where an application already has a Home Realm Discovery policy assig
 Run the following command to list the service principals to which the policy is assigned:
 
 ```powershell
-Get-MgPolicyHomeRealmDiscoveryPolicyAppliesTo HomeRealmDiscoveryPolicyId = "<ObjectId of the Policy>" # Replace with the actual ObjectId of the Policy 
+Get-MgPolicyHomeRealmDiscoveryPolicyApplyTo -HomeRealmDiscoveryPolicyId "-<ObjectId of the Policy>"
+ # Replace with the actual ObjectId of the Policy 
 ```
 
 Ensure you test the sign-in experience for the application to check that the new policy is working.
@@ -244,7 +246,8 @@ POST https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies
     "definition": [  
         "{\"HomeRealmDiscoveryPolicy\":{\"AccelerateToFederatedDomain\":true}}"  
     ],  
-    "displayName": "BasicAutoAccelerationPolicy"  
+    "displayName": "BasicAutoAccelerationPolicy",
+    "isOrganizationDefault": true 
 } 
 ```
 
@@ -252,14 +255,14 @@ The following policy auto-accelerates users to a federated identity provider sig
 
 ```http
 POST https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies  
-Content-Type: application/json  
-Authorization: Bearer {access_token}  
   
 {  
     "definition": [  
         "{\"HomeRealmDiscoveryPolicy\":{\"AccelerateToFederatedDomain\":true,\"PreferredDomain\":\"federated.example.edu\"}}"  
     ],  
-    "displayName": "MultiDomainAutoAccelerationPolicy"  
+    "displayName": "MultiDomainAutoAccelerationPolicy",
+    "isOrganizationDefault": true 
+ 
 }
 ```
 
@@ -303,6 +306,8 @@ GET https://graph.microsoft.com/v1.0/servicePrincipals
 
 After you have the **ObjectID** of the service principal of the application for which you want to configure auto-acceleration, run the following API cal. This API call associates the HRD policy that you created with the service principal that you located in the previous sections.
 
+Ensure you consent to the `Application.ReadWrite.All` permission.
+
 ```http
 POST https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/homeRealmDiscoveryPolicies/$ref  
   
@@ -321,7 +326,6 @@ Run the following API call to list the service principals to which the policy is
 
 ```http
 GET https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/{policyId}/appliesTo  
-Authorization: Bearer {access_token}
 ```
 
 Ensure you test the sign-in experience for the application to check that the new policy is working.
@@ -332,27 +336,21 @@ Ensure you test the sign-in experience for the application to check that the new
 
 ## Remove an HRD policy from an application using Microsoft Graph PowerShell
 
-1. Get the ObjectID.
+1. Get the ObjectID of the policy.
 
-   Use the previous example for get the **ObjectID** of the policy, and that of the application service principal from which you want to remove it.
+   Use the previous example for getting the **ObjectID** of the policy, and that of the application service principal from which you want to remove it.
 
 1. Remove the policy assignment from the application service principal.
 
     ```powershell
-    # Define the parameters for the Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef cmdlet 
-    $params = @{  
-        ServicePrincipalId = "<ObjectId of the Service Principal>"  # Replace with the actual ObjectId of the Service Principal  
-        HomeRealmDiscoveryPolicyId = "<ObjectId of the Policy>"     # Replace with the actual ObjectId of the Policy  
-    }  
-
-    # Remove the specified policy from the service principal  
-    Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef @params
-    ```
+    Remove-MgServicePrincipalHomeRealmDiscoveryPolicyHomeRealmDiscoveryPolicyByRef -ServicePrincipalId $servicePrincipalId -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId
+        ```
 
 1. Check removal by listing the service principals to which the policy is assigned.
 
     ```powershell
-    Get-MgPolicyAuthenticationMethodsPolicyAppliedObject PolicyId = "<ObjectId of the Policy>" # The ID of the policy for which you want to retrieve applied objects
+    Get-MgPolicyHomeRealmDiscoveryPolicyApplyTo -HomeRealmDiscoveryPolicyId "-<ObjectId of the Policy>"
+    # Replace with the actual ObjectId of the Policy 
     ```
 
 ### Delete the HRD policy using Microsoft Graph PowerShell
@@ -360,7 +358,7 @@ Ensure you test the sign-in experience for the application to check that the new
 To  delete the HRD policy you created, run the following command:
 
 ```powershell
-    Remove-MgPolicyHomeRealmDiscoveryPolicy -Id "<ObjectId of the Policy>" # Replace with the actual ObjectId of the Policy
+    Remove-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId "<ObjectId of the Policy>" # Replace with the actual ObjectId of the Policy
 ```
 
 :::zone-end
@@ -369,20 +367,20 @@ To  delete the HRD policy you created, run the following command:
 
 ## Remove an HRD policy from an application using Microsoft Graph
 
-1. Get the ObjectID.
+1. Get the ObjectID of the policy.
 
-   Use the previous example for get the **ObjectID** of the policy, and that of the application service principal from which you want to remove it.
+   Use the previous example for getting the **ObjectID** of the policy, and that of the application service principal from which you want to remove it.
 
 1. Remove the policy assignment from the application service principal.
 
     ```http
-    DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/homeRealmDiscoveryPolicies/{policyId}/$ref  
+    DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/homeRealmDiscoveryPolicies/{policyId}/$ref
     ```
 
 1. Check removal by listing the service principals to which the policy is assigned.
 
     ```http
-    GET https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/<PolicyId>/appliesTo  
+    GET https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/<policyId>/appliesTo  
     ```
 
 ### Delete the HRD policy using Microsoft Graph
