@@ -17,19 +17,21 @@ This article describes how to configure a Microsoft Entra application to trust a
 
 ## Prerequisites
 
-- An Azure account with either the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment. If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+- This Azure account must have permissions to manage applications, specifically to [update permissions](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate). Any of the following Microsoft Entra roles include the required permissions:
+  - [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
+  - [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer)
+  - [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
 - An understanding of the concepts in [managed identities for Azure resources](/entra/identity/managed-identities-azure-resources/overview)
 - [A user-assigned managed identity](/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity) assigned to the Azure compute resource (e.g., VM or App Service) that hosts your workload.
-- An [app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID. Grant your app access to the Azure resources targeted by your Azure workload. This app registration must belong to the same tenant as the managed identity.
+- An [app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID. This app registration must belong to the same tenant as the managed identity.
     - If you need to access resources in another tenant, your app registration must be a multitenant application and provision the app into the other tenant. Additionally, you must grant the app access permissions on the resources in that tenant. Learn about [how to add a multitenant app in other tenants](/entra/identity/enterprise-apps/grant-admin-consent)
+- The app registration must have access granted to Entra protected resources (e.g., Azure, Microsoft Graph, Microsoft 365, etc.). This access can be granted through [API permissions](~/identity-platform/quickstart-configure-app-access-api.md) or [delegated permissions](~/identity-platform/quickstart-configure-app-access-api.md#delegated-permissions).
 
 ## Important considerations and restrictions
 
-To create, update, or delete a federated identity credential, the account performing the action must have the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or Application Owner role.  The [microsoft.directory/applications/credentials/update permission](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate) is required to update a federated identity credential.
-
-Although the app registration and the managed identity must be in the same tenant, the service principal of the app registration can still redeem the managed identity token.
-
-[!INCLUDE [federated credential configuration](./includes/federated-credential-configuration-considerations.md)]
+> [!IMPORTANT] 
+> Although the app registration and the managed identity must be in the same tenant, the service principal of the app registration can still redeem the managed identity token.
 
 ## Get the Object ID of the managed identity
 
@@ -44,12 +46,12 @@ Although the app registration and the managed identity must be in the same tenan
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/). Check that you are in the tenant where your application is registered.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least an . Check that you are in the tenant where your application is registered.
 1. Browse to **Identity** > **Applications** > **App registrations**, and select your application in the main window.
 1. Under **Manage**, select **Certificates & secrets**.
 1. Select the Federated credentials tab and select **Add credential**.
 
-    :::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\select-federated-credential.png" alt-text="Screenshot of the certificates and secrets pane of the Microsoft Enrta admin center with the federated credentials tab highlighted." ::: 
+    :::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\select-federated-credential.png" alt-text="Screenshot of the certificates and secrets pane of the Microsoft Entra admin center with the federated credentials tab highlighted." ::: 
 
 1. From the **Federated credential scenario** dropdown, select **Other Issuer** and fill in the values according to the table below:
 
@@ -59,7 +61,7 @@ Although the app registration and the managed identity must be in the same tenan
     | Subject identifier | The `Principal ID` GUID of the Managed Identity. | `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` |
     | Name | A unique descriptive name for the credential. | *msi-webapp1* |
     | Description (Optional) | A user-provided description of the federated identity credential. | *Trust the workloads UAMI to impersonate the App* |
-    | Audience | The audience value that must appear in the external token. | *api://AzureADTokenExchange* |
+    | Audience | The audience value that must appear in the external token.  | &#8226; **Public cloud**: *api://AzureADTokenExchange* <br/>&#8226; **Fairfax**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Mooncake**: *api://AzureADTokenExchangeChina* <br/>&#8226; **USNat**: *api://AzureADTokenExchangeUSNat* <br/>&#8226; **USSec**: *api://AzureADTokenExchangeUSSec* |
 
     :::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\add-credential.png" alt-text="Screenshot of the add a credential window in the Microsoft Entra admin center." ::: 
 
@@ -106,26 +108,26 @@ az rest --method POST --uri 'https://graph.microsoft.com/applications/{app_regis
 This example shows how to use Bicep to create a FIC to make your app trust the assigned managed identity.
 
 ```Bicep
-extension microsoftGraph
-  
-resource MyMsiFic 'federatedIdentityCredentials' = {
-	name: 'MyMsiFic'
-	
-	issuer: '${environment().authentication.loginEndpoint}${tenant().tenantId}/v2.0' 
-	subject: '<Managed-Identity-Principal-ID>' 
-	audiences: [       'api://AzureADTokenExchange']
-	
-	description: 'Trust the workloads UAMI to impersonate the App'
-	    
-	languageVersion: 1
+resource myApp 'Microsoft.Graph/applications@v1.0' = {
+  displayName: applicationDisplayName
+  uniqueName: applicationName
+
+  resource myMsiFic 'federatedIdentityCredentials@v1.0' = {
+    name: '${myApp.uniqueName}/msiAsFic'
+    description: 'Trust the workloads UAMI to impersonate the App'
+    audiences: [
+       'api://AzureADTokenExchange'
+    ]
+    issuer: '${environment().authentication.loginEndpoint}${tenant().tenantId}/v2.0'
+    subject: myManagedIdentity.properties.principalId
+  }
 }
 ```
-
 ---
 
 ## Update your application code to request an access token
 
-The below code samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant. 
+The code samples in the following table show client credential "service to service" flows. However, managed identities as a credential can be used in other authentication flows such as on-behalf-of (OBO) flows. The samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant. 
 
 ### [Azure.Identity](#tab/azure-identity)
 

@@ -70,7 +70,7 @@ The Microsoft identity platform stores only the first 100 signing keys when they
 
 ## See also
 
-- Cow to create, delete, get, or update [federated identity credentials on a user-assigned managed identity](workload-identity-federation-create-trust-user-assigned-managed-identity.md) or [federated identity credentials on an app registration](workload-identity-federation-create-trust.md).
+- How to create, delete, get, or update [federated identity credentials on a user-assigned managed identity](workload-identity-federation-create-trust-user-assigned-managed-identity.md) or [federated identity credentials on an app registration](workload-identity-federation-create-trust.md).
 - Set up a [user-assigned managed identity as a federated identity credential on an app registration](./workload-identity-federation-config-app-trust-managed-identity.md).
 - Read the [workload identity overview](/azure/aks/workload-identity-overview) to learn how to configure a Kubernetes workload to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
 - Read the [GitHub Actions documentation](https://docs.github.com/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure) to learn more about configuring your GitHub Actions workflow to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
