@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-The integration of customer capabilities into Microsoft Entra ID means that your customer scenarios benefit from the advanced security and governance features available in Microsoft Entra ID. Your customers are able to self-service register for your applications using their preferred authentication methods, including social accounts through identity providers like Google and Facebook. And you can use features like multifactor authentication (MFA), Conditional Access, and Microsoft Entra ID Protection to mitigate threats and detect risks.
+The integration of customer capabilities into Microsoft Entra ID means that your customer scenarios benefit from the advanced security and governance features available in Microsoft Entra ID. Your customers are able to self-service register for your applications using their preferred authentication methods. These methods include social accounts through identity providers like Google and Facebook, or a custom-configured OpenID Connect (OIDC) identity provider. And you can use features like multifactor authentication (MFA), Conditional Access, and Microsoft Entra ID Protection to mitigate threats and detect risks.
 
 > [!NOTE]
 > Conditional Access, MFA, and ID Protection aren't available in free trial external tenants.
