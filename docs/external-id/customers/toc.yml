@@ -348,6 +348,14 @@ items:
             href: how-to-google-federation-customers.md
           - name: Facebook federation
             href: how-to-facebook-federation-customers.md
+          - name: Apple federation
+            href: how-to-apple-federation-customers.md
+          - name: OIDC federation
+            items:
+              - name: Custom OIDC federation
+                href: how-to-custom-oidc-federation-customers.md
+              - name: B2C federation
+                href: how-to-b2c-federation-customers.md
         displayName: rbac, roles claim, groups claim
       - name: Integrate apps 
         items:
@@ -463,6 +471,8 @@ items:
       href: ~/fundamentals/data-residency.md
     - name: Company branding CSS template reference guide
       href: ~/fundamentals/reference-company-branding-css-template.md
+    - name: OIDC claims mapping
+      href: reference-oidc-claims-mapping-customers.md
     - name: Native authentication
       items:
         - name: API reference

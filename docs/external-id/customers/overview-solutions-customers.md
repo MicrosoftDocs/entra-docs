@@ -57,6 +57,8 @@ To allow your customers to sign up and sign in using their social accounts, you 
 
 To try out this feature, go to the Woodgrove Groceries demo and start the “[Sign-in with social accounts](https://woodgrovedemo.com/#usecase=Social)” use case.
 
+<!--Ask PM about custom OIDC.-->
+
 ### Sign-up with a one-time passcode
 
 Email one-time passcode sign-in method is a type of passwordless authentication option for your email account identity provider. With email one-time passcode, users can sign up and sign-in to your app using an email as their primary sign-in identifier. They don't need to create and remember passwords. During the sign-in, users are asked to enter their email address, to which Microsoft Entra ID sends a one-time passcode. The users then open they mailbox and enter the passcode set to them into the sign-in page.

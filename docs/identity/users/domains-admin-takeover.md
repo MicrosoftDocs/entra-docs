@@ -119,7 +119,7 @@ The key and templates aren't moved over when the unmanaged organization is in a 
 
 Although RMS for individuals is designed to support Microsoft Entra authentication to open protected content, it doesn't prevent users from also protecting content. If users did protect content with the RMS for individuals subscription, and the key and templates weren't moved over, that content isn't accessible after the domain takeover.
 
-### Azure AD PowerShell cmdlets for the ForceTakeover option
+### PowerShell cmdlets for the ForceTakeover option
 
 You can see these cmdlets used in [PowerShell example](#powershell-example).
 
