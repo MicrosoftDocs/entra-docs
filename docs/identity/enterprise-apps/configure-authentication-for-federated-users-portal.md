@@ -298,9 +298,9 @@ You can use the [Microsoft Entra admin center](https://entra.microsoft.com). Usi
 
 Because you're using Microsoft Graph explorer, run the following request to list the service principals and their IDs.
 
-```http
-GET https://graph.microsoft.com/v1.0/servicePrincipals  
-```
+    ```http
+    GET https://graph.microsoft.com/v1.0/servicePrincipals  
+    ```
 
 ### Assign the policy to your service principal using Microsoft Graph
 
