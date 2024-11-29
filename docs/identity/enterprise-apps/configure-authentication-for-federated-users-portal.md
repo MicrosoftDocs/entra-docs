@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.date: 11/26/2024
+ms.date: 11/29/2024
 ms.author: jomondi
 ms.reviewer: ludwignick
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
@@ -26,7 +26,7 @@ This article provides an introduction to configuring Microsoft Entra authenticat
 To configure HRD policy for an application in Microsoft Entra ID, you need:
 
 - An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Application Administrator, Cloud Application Administrator or owner of the service principal.
+- The Application Administrator role
 
 ## Auto-acceleration sign-in
 
@@ -52,7 +52,7 @@ We use Microsoft Graph PowerShell cmdlets to walk through a few scenarios, inclu
 
 In the following examples, you create, update, link, and delete HRD policies on application service principals in Microsoft Entra ID.
 
-1. Before you begin, run the Connect command to sign in to Microsoft Entra ID with at least the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role:
+1. Before you begin, run the Connect command to sign in to Microsoft Entra ID with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role:
 
     ```powershell
     connect-MgGraph -scopes "Policy.Read.All"
@@ -75,7 +75,7 @@ In this example, you create a policy such that when you assign it to an applicat
 
 The following policy auto-accelerates users to a federated identity provider sign-in screen when they're signing in to an application when there's a single domain in your tenant.
 
-1. Run the Connect command to sign in to Microsoft Entra ID with at least the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role:
+1. Run the Connect command to sign in to Microsoft Entra ID with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role:
 
     ```powershell
     connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
@@ -188,7 +188,7 @@ In the case where an application already has a Home Realm Discovery policy assig
 Run the following command to list the service principals to which the policy is assigned:
 
 ```powershell
-Get-MgPolicyHomeRealmDiscoveryPolicyApplyTo -HomeRealmDiscoveryPolicyId "-<ObjectId of the Policy>"
+Get-MgPolicyHomeRealmDiscoveryPolicyApplyTo -HomeRealmDiscoveryPolicyId "<ObjectId of the Policy>"
  # Replace with the actual ObjectId of the Policy 
 ```
 
@@ -214,7 +214,7 @@ In the following examples, you create, update, link, and delete HRD policies on 
 
 1. Before you begin, access the Microsoft Graph explorer window.
 
-1. Sign in with at least the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role.
+1. Sign in with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 1. Grant consent to the `Policy.Read.All` permission.
 1. Run the following API call to see all the policies in your organization:
 
@@ -235,7 +235,7 @@ The following policy auto-accelerates users to a federated identity provider sig
 
 From the Microsoft Graph explorer window:
 
-1. Sign in with at least the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role.
+1. Sign in with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 1. Grant consent to the `Policy.ReadWrite.ApplicationConfiguration` permission.
 1. POST the new policy, or PATCH to update an existing policy.
 
@@ -349,7 +349,7 @@ Ensure you test the sign-in experience for the application to check that the new
 1. Check removal by listing the service principals to which the policy is assigned.
 
     ```powershell
-    Get-MgPolicyHomeRealmDiscoveryPolicyApplyTo -HomeRealmDiscoveryPolicyId "-<ObjectId of the Policy>"
+    Get-MgPolicyHomeRealmDiscoveryPolicyApplyTo -HomeRealmDiscoveryPolicyId "<ObjectId of the Policy>"
     # Replace with the actual ObjectId of the Policy 
     ```
 
