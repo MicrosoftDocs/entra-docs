@@ -239,17 +239,17 @@ From the Microsoft Graph explorer window:
 1. Grant consent to the `Policy.ReadWrite.ApplicationConfiguration` permission.
 1. POST the new policy, or PATCH to update an existing policy.
 
-```http
-POST https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies  
-  
-{  
-    "definition": [  
-        "{\"HomeRealmDiscoveryPolicy\":{\"AccelerateToFederatedDomain\":true}}"  
-    ],  
-    "displayName": "BasicAutoAccelerationPolicy",
-    "isOrganizationDefault": true 
-} 
-```
+    ```http
+    POST https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies  
+    
+    {  
+        "definition": [  
+            "{\"HomeRealmDiscoveryPolicy\":{\"AccelerateToFederatedDomain\":true}}"  
+        ],  
+        "displayName": "BasicAutoAccelerationPolicy",
+        "isOrganizationDefault": true 
+    } 
+    ```
 
 The following policy auto-accelerates users to a federated identity provider sign-in screen when there's more than one federated domain in your tenant. If you have more than one federated domain that authenticates users for applications, you need to specify the domain to auto-accelerate.
 
