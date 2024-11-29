@@ -47,20 +47,22 @@ connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
 
     ```powershell
     # Define the Home Realm Discovery Policy parameters  
-    $params = @{  
-        definition = @{  
-            "HomeRealmDiscoveryPolicy" = @{  
-                "DomainHintPolicy" = @{  
-                    "IgnoreDomainHintForDomains" = @("testDomain.com")  # Domains to ignore for domain hints  
-                    "RespectDomainHintForDomains" = @()                  # Domains to respect for domain hints  
-                    "IgnoreDomainHintForApps" = @()                      # Apps to ignore for domain hints  
-                    "RespectDomainHintForApps" = @()                     # Apps to respect for domain hints  
-                }  
-            }  
-        }  
-        displayName = "Home Realm Discovery Domain Hint Exclusion Policy"  # Display name for the policy
-        isOrganizationDefault: $true # Sets this as the default HRD policy
-    }
+    params = @{
+    definition = @(
+        '{
+            "HomeRealmDiscoveryPolicy": {
+                "DomainHintPolicy": {
+                    "IgnoreDomainHintForDomains": ["federated.example.edu"],
+                    "RespectDomainHintForDomains": [],
+                    "IgnoreDomainHintForApps": [],
+                    "RespectDomainHintForApps": []
+                }
+            }
+        }'
+    )
+    displayName = "Home Realm Discovery Domain Hint Exclusion Policy"
+    isOrganizationDefault = $false
+   }
     
     # Define the Home Realm Discovery Policy ID (ensure this is set to a valid ID)  
     $homeRealmDiscoveryPolicyId = "<Your-Policy-ID-Here>"  # Replace with your actual policy ID  
@@ -72,22 +74,23 @@ connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
 1. Gather feedback from the test domain users. Collect details for applications that broke as a result of this change - they have a dependency on domain hint usage, and should be updated. For now, add them to the `RespectDomainHintForApps` section:
 
     ```powershell
-    # Define the Home Realm Discovery Policy parameters  
-    $params = @{  
-        definition = @{  
-            "HomeRealmDiscoveryPolicy" = @{  
-                "DomainHintPolicy" = @{  
-                    "IgnoreDomainHintForDomains" = @("testDomain.com")  # Domains to ignore for domain hints  
-                    "RespectDomainHintForDomains" = @()                  # Domains to respect for domain hints  
-                    "IgnoreDomainHintForApps" = @()                      # Apps to ignore for domain hints  
-                    "RespectDomainHintForApps" = @("app1-clientID-Guid", "app2-clientID-Guid") # Apps to respect for domain hints  
-                }  
-            }  
-        }  
-        displayName = "Home Realm Discovery Domain Hint Exclusion Policy"  # Display name for the policy
-        isOrganizationDefault: $true # Sets this as the default HRD policy  
-    }  
-    
+    # Define the Home Realm Discovery Policy parameters
+    $params = @{
+        definition = @(
+            '{
+                "HomeRealmDiscoveryPolicy": {
+                    "DomainHintPolicy": {
+                        "IgnoreDomainHintForDomains": ["federated.example.edu"],
+                        "RespectDomainHintForDomains": [],
+                        "IgnoreDomainHintForApps": [],
+                        "RespectDomainHintForApps": ["app1-clientID-Guid", "app2-clientID-Guid"]
+                    }
+                }
+            }'
+        )
+        displayName = "Home Realm Discovery Domain Hint Exclusion Policy"
+        isOrganizationDefault = $false
+    }
     # Define the Home Realm Discovery Policy ID (ensure this is set to a valid ID)  
     $homeRealmDiscoveryPolicyId = "<Your-Policy-ID-Here>"  # Replace with your actual policy ID  
     
@@ -99,21 +102,23 @@ connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
 
     ```powershell
     # Define the Home Realm Discovery Policy parameters  
-    $params = @{  
-        definition = @{
-            "HomeRealmDiscoveryPolicy" = @{  
-                "DomainHintPolicy" = @{  
-                    "IgnoreDomainHintForDomains" = @("testDomain.com", "otherDomain.com", "anotherDomain.com")  # Domains to ignore for domain hints  
-                    "RespectDomainHintForDomains" = @()                  # Domains to respect for domain hints  
-                    "IgnoreDomainHintForApps" = @()                      # Apps to ignore for domain hints  
-                    "RespectDomainHintForApps" = @("app1-clientID-Guid", "app2-clientID-Guid")    # Apps to respect for domain hints  
-                }  
-            }  
-        }  
-        displayName = "Home Realm Discovery Domain Hint Exclusion Policy"  # Display name for the policy
-        isOrganizationDefault: $true # Sets this as the default HRD policy 
-    }  
-    
+    $params = @{
+    definition = @(
+        '{
+            "HomeRealmDiscoveryPolicy": {
+                "DomainHintPolicy": {
+                    "IgnoreDomainHintForDomains": ["federated.example.edu", "otherDomain.com", "anotherDomain.com"],
+                    "RespectDomainHintForDomains": [],
+                    "IgnoreDomainHintForApps": [],
+                    "RespectDomainHintForApps": ["app1-clientID-Guid", "app2-clientID-Guid"]
+                }
+            }
+        }'
+    )
+    displayName = "Home Realm Discovery Domain Hint Exclusion Policy"
+    isOrganizationDefault = $false
+    }
+   
     # Define the Home Realm Discovery Policy ID (ensure this is set to a valid ID)  
     $homeRealmDiscoveryPolicyId = "<Your-Policy-ID-Here>"  # Replace with your actual policy ID  
 
@@ -124,19 +129,21 @@ connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
 1. Complete your rollout - target all domains, exempting those that should continue to be accelerated:
 
     ```powershell
-    $params = @{  
-        definition = @{
-            "HomeRealmDiscoveryPolicy" = @{  
-                "DomainHintPolicy" = @{  
-                    "IgnoreDomainHintForDomains" = @("*")  # Ignore all domain hints  
-                    "RespectDomainHintForDomains" = @("guestHandlingDomain.com")                  # Domains to respect for domain hints  
-                    "IgnoreDomainHintForApps" = @()                      # Apps to ignore for domain hints  
-                    "RespectDomainHintForApps" = @("app1-clientID-Guid", "app2-clientID-Guid")                     # Apps to respect for domain hints  
-                }  
-            }  
-        }  
-        displayName = "Home Realm Discovery Domain Hint Exclusion Policy"  # Display name for the policy
-        isOrganizationDefault: $true # Sets this as the default HRD policy 
+    $params = @{
+    definition = @(
+        '{
+            "HomeRealmDiscoveryPolicy": {
+                "DomainHintPolicy": {
+                    "IgnoreDomainHintForDomains": ["*"],
+                    "RespectDomainHintForDomains": ["guestHandlingDomain.com"],
+                    "IgnoreDomainHintForApps": [],
+                    "RespectDomainHintForApps": ["app1-clientID-Guid", "app2-clientID-Guid"]
+                }
+            }
+        }'
+    )
+    displayName = "Home Realm Discovery Domain Hint Exclusion Policy"
+    isOrganizationDefault = $false
     }  
     
     # Define the Home Realm Discovery Policy ID (ensure this is set to a valid ID)  
@@ -163,81 +170,54 @@ Grant consent to the `Policy.ReadWrite.ApplicationConfiguration` permission.
 
     ```http
     PATCH https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicyId} 
-    {
-    "definition": {  
-                "HomeRealmDiscoveryPolicy": {  
-                    "DomainHintPolicy": {  
-                        "IgnoreDomainHintForDomains": ["testDomain.com"],  
-                        "RespectDomainHintForDomains": [],  
-                        "IgnoreDomainHintForApps": [],  
-                        "RespectDomainHintForApps": []  
-                    }  
-                }  
-            },  
-    "displayName": "Home Realm Discovery Domain Hint Exclusion Policy",
-    "isOrganizationDefault": true  
-        }'
+    {  
+    "definition": [  
+        "{\"HomeRealmDiscoveryPolicy\":{\"IgnoreDomainHintForDomains\":[\"testDomain.com\"],
+        \"RespectDomainHintForDomains\":[],\"IgnoreDomainHintForApps\":[],\"RespectDomainHintForApps\":[]}}"
+    ],
+    "displayName": "Home Realm Discovery Domain Hint Exclusion Policy",  
+    "isOrganizationDefault": true 
+    }
     ```
 
 1. Gather feedback from the test domain users. Collect details for applications that broke as a result of this change - they have a dependency on domain hint usage, and should be updated. For now, add them to the `RespectDomainHintForApps` section:
 
     ```http
     PATCH https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicyId} 
-    {
-    "definition": {  
-                "HomeRealmDiscoveryPolicy": {  
-                    "DomainHintPolicy": {  
-                        "IgnoreDomainHintForDomains": ["testDomain.com"],  
-                        "RespectDomainHintForDomains": [],  
-                        "IgnoreDomainHintForApps": [],  
-                        "RespectDomainHintForApps": ["app1-clientID-Guid", "app2-clientID-Guid"]  
-                    }  
-                }  
-            },  
-    "displayName": "Home Realm Discovery Domain Hint Exclusion Policy",
-    "isOrganizationDefault": true  
-        }'
+    {  
+    "definition": [  
+        "{\"HomeRealmDiscoveryPolicy\":{\"IgnoreDomainHintForDomains\":[\"testDomain.com\"],
+        \"RespectDomainHintForDomains\":[],\"IgnoreDomainHintForApps\":[],\"RespectDomainHintForApps\":[\"app1-clientID-Guid\",\"app2-clientID-Guid\"]}}"
+    ],
+    "displayName": "Home Realm Discovery Domain Hint Exclusion Policy",  
+    "isOrganizationDefault": true   
+    }
     ```
 
 1. Continue expanding rollout of the policy to new domains, and collecting more feedback.
 
     ```http
     PATCH https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicyId} 
-    {
-    "definition": {  
-                "HomeRealmDiscoveryPolicy": {  
-                    "DomainHintPolicy": {  
-                        "IgnoreDomainHintForDomains": ["testDomain.com", "otherDomain.com", "anotherDomain.com"],  
-                        "RespectDomainHintForDomains": [],  
-                        "IgnoreDomainHintForApps": [],  
-                        "RespectDomainHintForApps": ["app1-clientID-Guid", "app2-clientID-Guid"]  
-                    }  
-                }  
-            },  
-    "displayName": "Home Realm Discovery Domain Hint Exclusion Policy",
-    "isOrganizationDefault": true 
-        }'
+    {  
+    "definition": [  
+        "{\"HomeRealmDiscoveryPolicy\":{\"IgnoreDomainHintForDomains\":[\"testDomain.com\",\"otherDomain.com\",\"anotherDomain.com\"],\"RespectDomainHintForDomains\":[],\"IgnoreDomainHintForApps\":[],\"RespectDomainHintForApps\":[\"app1-clientID-Guid\",\"app2-clientID-Guid\"]}}"  
+    ],  
+    "displayName": "Home Realm Discovery Domain Hint Exclusion Policy",  
+    "isOrganizationDefault": true  
+    }
     ```
 
 1. Complete your rollout - target all domains, exempting those domains that should continue to be accelerated:
 
     ```http
     PATCH https://graph.microsoft.com/v1.0/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicyId} 
-    {
-    "definition": {  
-                "HomeRealmDiscoveryPolicy": {  
-                    "DomainHintPolicy": {  
-                        "IgnoreDomainHintForDomains": ["*"],  
-                        "RespectDomainHintForDomains": ["guestHandlingDomain.com"],  
-                        "IgnoreDomainHintForApps": [],  
-                        "RespectDomainHintForApps": ["app1-clientID-Guid", "app2-clientID-Guid"]
-
-                    }  
-                }  
-            },  
-    "displayName": "Home Realm Discovery Domain Hint Exclusion Policy",
-    "isOrganizationDefault": true
-        }'
+    {  
+    "definition": [  
+        "{\"HomeRealmDiscoveryPolicy\":{\"IgnoreDomainHintForDomains\":[\"*\"],\"RespectDomainHintForDomains\":[\"guestHandlingDomain.com\"],\"IgnoreDomainHintForApps\":[],\"RespectDomainHintForApps\":[\"app1-clientID-Guid\",\"app2-clientID-Guid\"]}}"  
+    ],  
+    "displayName": "Home Realm Discovery Domain Hint Exclusion Policy",  
+    "isOrganizationDefault": true   
+    }
     ```
 
 ::: zone-end

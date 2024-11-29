@@ -344,7 +344,7 @@ Ensure you test the sign-in experience for the application to check that the new
 
     ```powershell
     Remove-MgServicePrincipalHomeRealmDiscoveryPolicyHomeRealmDiscoveryPolicyByRef -ServicePrincipalId $servicePrincipalId -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId
-        ```
+    ```
 
 1. Check removal by listing the service principals to which the policy is assigned.
 
