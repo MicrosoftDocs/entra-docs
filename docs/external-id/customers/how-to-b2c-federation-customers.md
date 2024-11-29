@@ -58,22 +58,22 @@ To create an application:
 1. Under **Supported account types**, select **Accounts in any identity provider or organizational directory (for authenticating users with user flows)**.
 1. Under **Redirect URI**, select **Web**, and then enter the following URL in all lowercase letters, where `your-B2C-tenant-name` is replaced with the name of your Azure AD B2C tenant (for example, Contoso):
   
-  `https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
-
-  `https://<tenant-subdomain>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
-
-  For example:
-  
-  `https://contoso.ciamlogin.com/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/federation/oauth2`
-
-  `https://contoso.ciamlogin.com/contoso.onmicrosoft.com/federation/oauth2`
-
-  If you use a custom domain, enter:
-  
-  `https://<your-domain-name>/<your-tenant-name>.onmicrosoft.com/oauth2/authresp`
-
-  Replace `your-domain-name` with your custom domain, and `your-tenant-name` with the name of your tenant.
-
+    `https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
+    
+    `https://<tenant-subdomain>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
+    
+    For example:
+      
+    `https://contoso.ciamlogin.com/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/federation/oauth2`
+    
+    `https://contoso.ciamlogin.com/contoso.onmicrosoft.com/federation/oauth2`
+    
+    If you use a custom domain, enter:
+      
+    `https://<your-domain-name>/<your-tenant-name>.onmicrosoft.com/oauth2/authresp`
+    
+    Replace `your-domain-name` with your custom domain, and `your-tenant-name` with the name of your tenant.
+    
 6. Under **Permissions**, select the **Grant admin consent to openid and offline_access permissions** check box.
 7. Select **Register**.
 8. In the Azure AD B2C - App registrations page, select the application you created and record the **Application (client) ID** shown on the application overview page. You need this ID when you configure the identity provider in the next section.
