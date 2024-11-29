@@ -80,7 +80,7 @@ There are a couple workarounds:
 
 - You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md), and transition the policy target from **All resources (formerly 'All cloud apps')** to specific applications. Start with a review of applications that are used in your tenant and use filters to tag appropriate applications.
 
-- You can use mobile device management (MDM) and the **Require device to be marked as compliant** control. Microsoft Authenticator can satisfy this grant control if the device is fully managed by MDM and successfully reports as compliant. For example:
+- You can use mobile device management (MDM) and the **Require device to be marked as compliant** control. Microsoft Authenticator can satisfy this grant control if MDM fully manages the device and it's compliant. For example:
 
   - Condition: **All devices (Windows, Linux, macOS, Windows, Android)** 
   - Targeted resource: **All resources (formerly 'All cloud apps')** 
