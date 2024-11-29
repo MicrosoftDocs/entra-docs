@@ -1,7 +1,6 @@
 ---
 title: Overview of admin consent workflow
-description: Learn how to manage user and admin consent for applications.
-Understand the admin consent workflow, and handle email notifications and audit logs related to consent requests.
+description: Learn how to manage the admin consent workflow, email notifications and audit logs related to consent requests.
 
 author: omondiatieno
 manager: CelesteDG
@@ -22,7 +21,7 @@ ms.custom: enterprise-apps
 
 There might be situations where your end-users need to consent to permissions for applications that they're creating or using with their work accounts. However, nonadmin users aren't allowed to consent to permissions that require admin consent. Also, users can’t consent to applications when [user consent](configure-user-consent.md) is disabled in the user’s tenant.
 
-In such situations where user consent is disabled, an admin can grant users the ability to make requests for gaining access to applications by enabling the admin consent workflow. In this article, you learn about the user and admin experience when the admin consent workflow is disabled vs when it's enabled.
+In such situations where user consent is disabled, an admin can grant users the ability to make requests for gaining access to applications by enabling the admin consent workflow. In this article, you learn about the user and admin experience when the admin consent workflow is on vs when it's off.
 
 When attempting to sign in,  users might see a consent prompt like the one in the following screenshot:
 
@@ -32,7 +31,7 @@ If the user doesn’t know who to contact to grant them access, they might be un
 As an admin, the following options exist for you to determine how users consent to applications:
 
 - Disable user consent. For example, a high school might want to turn off user consent so that the school IT administration has full control over all the applications in their tenant.
-- Allow users to consent to the required permissions. The best practise is to keep user consent open if you have sensitive data in your tenant.
+- Allow users to consent to the required permissions. The best practice is to keep user consent open if you have sensitive data in your tenant.
 - If you still want to retain admin-only consent for certain permissions but want to assist your end-users in onboarding their application, you can use the admin consent workflow to evaluate and respond to admin consent requests. This way, you can have a queue of all the requests for admin consent for your tenant and can track and respond to them directly through the Microsoft Entra admin center.
 To learn how to configure the admin consent workflow, see [Configure the admin consent workflow](configure-admin-consent-workflow.md).
 
