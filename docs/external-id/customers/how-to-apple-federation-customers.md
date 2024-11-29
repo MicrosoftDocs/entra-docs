@@ -8,7 +8,7 @@ ms.service: entra-external-id
 
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 09/11/2024
+ms.date: 11/29/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -84,7 +84,7 @@ After you create the Apple app, in this step you set the Apple app details in Mi
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Under the Built-in tab, select **Apple**.
 
-:::image type="content" source="media/how-to-apple-federation-customers/configure-apple-idp.png" alt-text="Screenshot that shows how to add Apple identity provider.":::
+    :::image type="content" source="media/how-to-apple-federation-customers/configure-apple-identity-provider.png" alt-text="Screenshot that shows how to add Apple identity provider.":::
 
 1. The **Name** *Apple* is autopopulated. It cannot be changed.
 1. Enter the following details: 
@@ -94,7 +94,7 @@ After you create the Apple app, in this step you set the Apple app details in Mi
     - **Client secret (.p8) key**: The client secret key of the Apple application you created in the previous step.
 1. Select **Save**. You’ll see Apple listed as a configured identity provider.
 
-:::image type="content" source="media/how-to-apple-federation-customers/configured-apple-idp.png" alt-text="Screenshot that shows that Apple is added to the identity providers list.":::
+    :::image type="content" source="media/how-to-apple-federation-customers/configured-apple-identity-provider.png" alt-text="Screenshot that shows that Apple is added to the identity providers list.":::
 
 ## Add Apple identity provider to a user flow
 
