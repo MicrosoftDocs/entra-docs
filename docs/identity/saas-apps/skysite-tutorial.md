@@ -95,11 +95,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows User claims with the option to Add new claim.](./media/skysite-tutorial/claims.png)
 
-	![Screenshot shows the Manage user claims dialog box where you can enter the values described.](./media/skysite-tutorial/groups.png)
+	b. Select **All groups** from the radio list.
 
-	b. Select **All Groups** from the radio list.
-
-	c. Select **Source Attribute** of **Group ID**.
+	c. Select **Source attribute** of **Group ID**.
 
 	d. Click **Save**.
 

@@ -1,6 +1,6 @@
 ---
 title: Identity Providers
-description: Learn about sign-in and MFA options for customer identity and access management (CIAM) in external tenants, including email, one-time passcodes, Google and Facebook. 
+description: Learn about sign-in and MFA options for customer identity and access management (CIAM) in external tenants, including email, one-time passcodes, Google, and Facebook. 
  
 author: msmimart
 manager: celestedg
@@ -20,7 +20,7 @@ ms.custom: it-pro, seo-july-2024
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with their own social account.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google or a custom OIDC identity provider, they can sign in with their own account.
 
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
@@ -77,6 +77,14 @@ The following screenshots show the sign-in with Facebook experience. In the sign
    :::image type="content" source="media/concept-authentication-methods-customers/facebook-sign-in.png" alt-text="Screenshots of Facebook sign-in screens." border="false":::
 
 Learn how to [add Facebook as an identity provider](how-to-facebook-federation-customers.md).
+
+## Custom OIDC identity provider (preview)
+
+You can set up a custom OpenID Connect (OIDC) identity provider to enable customers to sign up and sign in to your applications with their own accounts. When a customer signs up for your app using their custom OIDC identity provider, the identity provider creates, maintains, and manages identity information while providing authentication services to applications.
+
+You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
+
+Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
 
 ## Updating sign-in methods
 

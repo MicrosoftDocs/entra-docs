@@ -5,7 +5,7 @@ description: Support passkeys in Microsoft Authenticator in your Microsoft Entra
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/09/2024
+ms.date: 11/11/2024
 
 ms.author: justinha
 author: justinha
@@ -24,7 +24,7 @@ This topic covers issues that users might see when they use passkeys in Microsof
 
 Organizations that are deploying passkeys and have Conditional Access policies that require phishing-resistant authentication when accessing **All resources (formerly 'All cloud apps')** can run into a looping issue when users attempt to add a passkey to Microsoft Authenticator. An example of such a policy configuration:
 
-- Condition: **All devices (Windows, Linux, MacOS, Windows, Android)** 
+- Condition: **All devices (Windows, Linux, macOS, Windows, Android)** 
 - Targeted resource: **All resources (formerly 'All cloud apps')** 
 - Grant control: **Authentication strength – Require passkey in Authenticator** 
 
@@ -56,6 +56,33 @@ There are a couple workarounds:
 
 >[!NOTE]
 >With either workaround, users must also satisfy any Conditional Access policy that targets **Register security info**, or they can't register the passkey. Additionally, if you have other conditions set up with the **All resources** policies, those will have to be met when registering the passkey.  
+
+## Workarounds for users blocked from registering passkeys by Conditional Access "Require approved client app" or "Require app protection policy" grant control
+
+Organizations that are deploying passkeys and have Conditional Access policies that require the **Require approved client app** or **Require app protection policy** grant control when accessing **All resources (formerly 'All cloud apps')** can run into an issue where users are not allowed to register a passkey in Microsoft Authenticator. An example of such a policy configuration:
+
+- Condition: **All devices (Windows, Linux, macOS, Windows, Android)** 
+- Targeted resource: **All resources (formerly 'All cloud apps')** 
+- Grant control: **Require approved client app** or **Require app protection policy**
+
+The policy effectively enforces that the targeted users must use an app that supports [Microsoft Intune app protection policies](/mem/intune/apps/app-protection-policy) to authenticate to all cloud applications, which the Microsoft Authenticator app does not support. This means users cannot register a passkey in Microsoft Authenticator when this type of Conditional Access policy is enforced. This affects both Android and iOS.
+
+There are a couple workarounds:
+
+- You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All resources (formerly 'All cloud apps')** to specific applications. Start with a review of applications that are used in your tenant and use filters to tag appropriate applications.
+
+- You can leverage full MDM management and the **Require device to be marked as compliant** control. The Microsoft Authenticator app can satisfy this grant control if the device is MDM managed and is successfully reporting as being in a compliant state. An example of such a policy configuration:
+
+    - Condition: **All devices (Windows, Linux, macOS, Windows, Android)** 
+    - Targeted resource: **All resources (formerly 'All cloud apps')** 
+    - Grant control: **Require approved client app** or **Require app protection policy** or ***Require device to be marked as compliant***
+
+- You can grant users a temporary exemption from the Conditional Access policy. Microsoft recommends using one or more compensating controls:
+    - Only allow the exemption for a period of time. Communicate to the end user what the time window is where they are allowed to register a passkey. Remove the exemption at the end of the time window and direct users to call the help desk if they missed the window.
+    - Use another Conditional Access policy to require that users register only from a specific network location or a compliant device
+
+>[!NOTE]
+>With any proposed workaround, users must also satisfy any Conditional Access policy that targets **Register security info**, or they can't register the passkey. Additionally, if you have other conditions set up with the **All resources** policies, those will have to be met when registering the passkey.
 
 ## Restrict Bluetooth usage to passkeys in Authenticator
 

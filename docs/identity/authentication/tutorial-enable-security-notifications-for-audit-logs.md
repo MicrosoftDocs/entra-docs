@@ -32,7 +32,7 @@ To use this feature, you need:
 
 ## Create a logic app
 
-1. Sign in to the Microsoft Entra admin center.
+1. Sign in to the Azure portal.
 1. In the home page, under **Azure services**, select **Logic Apps**. 
 1. Select **Add**.
 1. In **Create Logic App**, configure your logic app: 
@@ -447,4 +447,4 @@ This workflow can be customized to filter other logs and activities, or send not
 
 ## Next steps
 
-- [How Entra ID multifactor authentication works](concept-mfa-howitworks.md)
+- [How Microsoft Entra ID multifactor authentication works](concept-mfa-howitworks.md)
