@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
-ms.date: 11/02/2022
+ms.date: 11/29/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
