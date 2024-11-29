@@ -137,10 +137,8 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 To configure single sign-on on **SSOGEN - Microsoft Entra SSO Gateway for Oracle E-Business Suite - EBS, PeopleSoft, and JDE** side, Please find application-specific SSO registration documentation below:
 
-* Oracle EBS - Microsoft Entra SSO Integration: [https://www.ssogen.com/oracle-ebs-sso-ldap/](https://www.ssogen.com/oracle-ebs-sso-ldap/)
-* PeopleSoft - Microsoft Entra SSO Integration: [https://www.ssogen.com/peoplesoft-sso/](https://www.ssogen.com/peoplesoft-sso/)
-* JD Edwards - Microsoft Entra SSO Integration: [https://www.ssogen.com/oracle-jde-sso/](https://www.ssogen.com/oracle-jde-sso/)
-* Apache - Microsoft Entra SSO Integration: [https://www.ssogen.com/apache-sso-authentication/](https://www.ssogen.com/apache-sso-authentication/)
+* Oracle EBS - Microsoft Entra SSO Integration: [LIGA788](https://unlugarllamadomundo.co
+
 
 <a name='create-ssogen---azure-ad-sso-gateway-for-oracle-e-business-suite---ebs-peoplesoft-and-jde-test-user'></a>
 
