@@ -71,7 +71,7 @@ connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
     Update-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId -BodyParameter $params  
     ```
 
-    Ensure to Replace with the `app-client-Guid` with the actual app Guids and the placeholder domain value with the actual domain.
+    Ensure to Replace with the `app-client-Guid` with the actual app GUIDs and the placeholder domain value with the actual domain.
 
 1. Gather feedback from the test domain users. Collect details for applications that broke as a result of this change - they have a dependency on domain hint usage, and should be updated. For now, add them to the `RespectDomainHintForApps` section:
 
@@ -100,7 +100,7 @@ connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
     Update-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId -BodyParameter $params
     ```
 
-    Ensure to Replace with the `app-client-Guid` with the actual app Guids and the placeholder domain value with the actual domain.
+    Ensure to Replace with the `app-client-Guid` with the actual app GUIDs and the placeholder domain value with the actual domain.
    
 1. Continue expanding rollout of the policy to new domains, and collecting more feedback.
 
@@ -130,7 +130,7 @@ connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
     Update-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId -BodyParameter $params
     ```
     
-    Ensure to Replace with the `app-client-Guid` with the actual app Guids and the placeholder domain value with the actual domain.
+    Ensure to Replace with the `app-client-Guid` with the actual app GUIDs and the placeholder domain value with the actual domain.
 
 1. Complete your rollout - target all domains, exempting those that should continue to be accelerated:
 
@@ -159,7 +159,7 @@ connect-MgGraph -scopes "Policy.ReadWrite.ApplicationConfiguration"
     Update-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId $homeRealmDiscoveryPolicyId -BodyParameter $params
     ```
     
-    Ensure to Replace with the `app-client-Guid` with the actual app Guids and the placeholder domain value with the actual domain.
+    Ensure to Replace with the `app-client-Guid` with the actual app GUIDs and the placeholder domain value with the actual domain.
 
 ::: zone-end
 
