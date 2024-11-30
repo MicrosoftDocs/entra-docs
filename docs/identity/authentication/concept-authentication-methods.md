@@ -5,7 +5,7 @@ description: Learn about the different authentication methods and features avail
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/11/2024
+ms.date: 11/29/2024
 
 ms.author: justinha
 author: justinha
@@ -30,9 +30,9 @@ The following table outlines when an authentication method can be used during a 
 
 | Method                         | Primary authentication | Secondary authentication  |
 |--------------------------------|:----------------------:|:-------------------------:|
-| Windows Hello for Business     | Yes                    | MFA\*                     |
+| Windows Hello for Business     | Yes                    | MFA<sup>1</sup>           |
 | Microsoft Authenticator push   | No                     | MFA and SSPR              |
-| Microsoft Authenticator passwordless | Yes              | No\*                      |
+| Microsoft Authenticator passwordless | Yes              | No<sup>2</sup>            |
 | Microsoft Authenticator passkey| Yes                    | MFA                       |
 | Authenticator Lite             | No                     | MFA                       |
 | Passkey (FIDO2)                | Yes                    | MFA                       |
@@ -42,12 +42,14 @@ The following table outlines when an authentication method can be used during a 
 | External authentication methods (preview)| No           | MFA                       |
 | Temporary Access Pass (TAP)    | Yes                    | MFA                       |
 | Text                           | Yes                    | MFA and SSPR              |
-| Voice call                     | No                     | MFA and SSPR              |
+| Voice call                     | No                     | MFA and SSPR<sup>3</sup>  |
 | Password                       | Yes                    | No                        |
 
-> \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be registered for FIDO2 authentication to work successfully.
+<sup>1</sup>Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be registered for FIDO2 authentication to work successfully.
 
-> \* Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication-preview).
+<sup>2</sup>Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication).
+
+<sup>3</sup>Alternate phone methods can only be used for MFA.
 
 All of these authentication methods can be configured in the Microsoft Entra admin center, and increasingly using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).
 
