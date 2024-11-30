@@ -47,7 +47,7 @@ The following table outlines when an authentication method can be used during a 
 
 <sup>1</sup>Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be registered for FIDO2 authentication to work successfully.
 
-<sup>2</sup>Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication).
+<sup>2</sup>Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-certificate-based-authentication).
 
 <sup>3</sup>Alternate phone methods can only be used for MFA.
 
