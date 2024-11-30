@@ -36,7 +36,7 @@ The following table outlines when an authentication method can be used during a 
 | Microsoft Authenticator passkey| Yes                    | MFA                       |
 | Authenticator Lite             | No                     | MFA                       |
 | Passkey (FIDO2)                | Yes                    | MFA                       |
-| Certificate-based authentication | Yes                  | MFA                       |
+| Certificate-based authentication (CBA) | Yes                  | MFA                       |
 | Hardware OATH tokens (preview) | No                     | MFA and SSPR              |
 | Software OATH tokens           | No                     | MFA and SSPR              |
 | External authentication methods (preview)| No           | MFA                       |
@@ -45,9 +45,9 @@ The following table outlines when an authentication method can be used during a 
 | Voice call                     | No                     | MFA and SSPR<sup>3</sup>  |
 | Password                       | Yes                    | No                        |
 
-<sup>1</sup>Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be registered for FIDO2 authentication to work successfully.
+<sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if it's used in FIDO2 authentication. Users need to be registered for passkey (FIDO2).
 
-<sup>2</sup>Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-certificate-based-authentication).
+<sup>2</sup>Passwordless sign-in can be used for secondary authentication only if [CBA is used for primary authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-certificate-based-authentication).
 
 <sup>3</sup>Alternate phone methods can only be used for MFA.
 
@@ -64,7 +64,7 @@ To learn more about how each authentication method works, see the following sepa
 * [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
 * [External authentication methods (preview)](/entra/identity/authentication/how-to-authentication-external-method-manage)
 * [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md)
-* [SMS sign-in](howto-authentication-sms-signin.md) and [verification](concept-authentication-phone-options.md#mobile-phone-verification)
+* [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md) and [verification](concept-authentication-phone-options.md#mobile-phone-verification)
 * [Voice call verification](concept-authentication-phone-options.md)
 * Password
 
@@ -86,7 +86,7 @@ Each authentication method can become nonusable for different reasons. For examp
 
 Authentication methods that are no longer available due to **Require re-register multifactor authentication** also appear here.
 
-:::image type="content" border="true" source="media/concept-authentication-methods/non-usable.png" alt-text="Screenshot of non-usable authentication methods." :::
+:::image type="content" border="true" source="media/concept-authentication-methods/non-usable.png" alt-text="Screenshot of nonusable authentication methods." :::
 
 
 ## Related content
