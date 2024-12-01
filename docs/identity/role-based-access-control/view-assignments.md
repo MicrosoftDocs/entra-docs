@@ -129,6 +129,17 @@ This section describes how to list role assignments with single-application scop
 
     ![List app registration role assignments from the properties of an app registration](./media/view-assignments/app-reg-assignments-2.png)
 
+### List role assignments with administrative unit scope
+
+You can view all the role assignments created with an administrative unit scope in the **Admin units** section of the Microsoft Entra admin center.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+
+1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+
+1. Select the administrative unit for the list of role assignments you want to view.
+
+1. Select **Roles and administrators**, and then open a role to view the assignments in the administrative unit.
 
 ## PowerShell
 
@@ -226,6 +237,15 @@ Use the [Get-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microso
 
 ```powershell
 Get-MgRoleManagementDirectoryRoleAssignment -Filter "PrincipalId eq '<object id of group>'" 
+```
+
+### List role assignments with administrative unit scope
+
+Use the [Get-MgDirectoryAdministrativeUnitScopedRoleMember](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunitscopedrolemember) command to list role assignments with administrative unit scope.
+
+```powershell
+$adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayname eq 'Example_admin_unit_name'"
+Get-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $adminUnit.Id | FL *
 ```
 
 ## Microsoft Graph API
@@ -356,6 +376,22 @@ HTTP/1.1 200 OK
             }
         ]
 }
+```
+
+### List role assignments with administrative unit scope
+
+Use the [List scopedRoleMembers](/graph/api/administrativeunit-list-scopedrolemembers) API to list role assignments with administrative unit scope.
+
+Request
+
+```http
+GET /directory/administrativeUnits/{admin-unit-id}/scopedRoleMembers
+```
+
+Body
+
+```http
+{}
 ```
 
 ## Next steps
