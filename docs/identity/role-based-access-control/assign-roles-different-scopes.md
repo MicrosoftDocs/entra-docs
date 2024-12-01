@@ -28,11 +28,11 @@ This article describes how to assign Microsoft Entra roles at tenant, administra
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Assign roles scoped to the tenant
+## Assign roles with tenant scope
 
 This section describes how to assign roles at the tenant scope.
 
-### Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -48,7 +48,7 @@ This section describes how to assign roles at the tenant scope.
 
 1. Select **Add** to assign the role.
 
-### PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Follow these steps to assign Microsoft Entra roles using PowerShell.
 
@@ -90,7 +90,7 @@ Follow these steps to assign Microsoft Entra roles using PowerShell.
        -RoleDefinitionId $roleDefinition.Id
     ```
 
-### Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Follow these instructions to assign a role using the Microsoft Graph API in [Graph Explorer](https://aka.ms/ge).
 
@@ -120,13 +120,15 @@ Follow these instructions to assign a role using the Microsoft Graph API in [Gra
     }
     ```
 
-## Assign roles scoped to an app registration
+---
+
+## Assign roles with app registration scope
 
 Built-in roles and custom roles are assigned by default at tenant scope to grant access permissions over all app registrations in your organization. Additionally, custom roles and some relevant built-in roles (depending on the type of Microsoft Entra resource) can also be assigned at the scope of a single Microsoft Entra resource. This allows you to give the user the permission to update credentials and basic properties of a single app without having to create a second custom role.
 
 This section describes how to assign roles at an application registration scope.
 
-### Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Developer](./permissions-reference.md#application-developer).
 
@@ -157,7 +159,7 @@ This section describes how to assign roles at an application registration scope.
 >[!NOTE]
 > You will not see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to managing app registrations only.
 
-### PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Follow these steps to assign Microsoft Entra roles at application scope using PowerShell.
 
@@ -203,7 +205,7 @@ Follow these steps to assign Microsoft Entra roles at application scope using Po
 
 To assign the role to a service principal instead of a user, use the [Get-MgServicePrincipal](/powershell/module/Microsoft.Graph.Applications/Get-MgServicePrincipal) cmdlet.
 
-### Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Follow these instructions to assign a role at application scope using the Microsoft Graph API in [Graph Explorer](https://aka.ms/ge).
 
@@ -246,10 +248,12 @@ Follow these instructions to assign a role at application scope using the Micros
     HTTP/1.1 201 Created
     ```
 
->[!NOTE]
-> Here directoryScopeId is specified as */foo*, unlike the section above. It is by design. The scope of */foo* means the principal can manage that Microsoft Entra object. The scope */administrativeUnits/foo* means the principal can manage the members of the administrative unit (based on the role that she is assigned), not the administrative unit itself.
+    >[!NOTE]
+    > Here directoryScopeId is specified as */foo*, unlike the section above. It is by design. The scope of */foo* means the principal can manage that Microsoft Entra object. The scope */administrativeUnits/foo* means the principal can manage the members of the administrative unit (based on the role that she is assigned), not the administrative unit itself.
 
-## Assign roles scoped to an administrative unit
+---
+
+## Assign roles with administrative unit scope
 
 In Microsoft Entra ID, for more granular administrative control, you can assign a Microsoft Entra role with a scope that's limited to one or more [administrative units](./administrative-units.md). When a Microsoft Entra role is assigned at the scope of an administrative unit, role permissions apply only when managing members of the administrative unit itself, and don't apply to tenant-wide settings or configurations.
 
@@ -310,7 +314,7 @@ Service principals and guest users won't be able to use a role assignment scoped
 
 It isn't currently possible to assign directory read permissions scoped to an administrative unit. For more information about default permissions for users, see [default user permissions](~/fundamentals/users-default-permissions.md). 
 
-### Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -333,7 +337,7 @@ It isn't currently possible to assign directory read permissions scoped to an ad
 >[!NOTE]
 > You will not see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to the objects that are supported within the administrative unit. To see the list of objects supported within an administrative unit, see [Administrative units in Microsoft Entra ID](administrative-units.md).
 
-### PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Follow these steps to assign Microsoft Entra roles at administrative unit scope using PowerShell.
 
@@ -377,7 +381,7 @@ Follow these steps to assign Microsoft Entra roles at administrative unit scope 
        -RoleDefinitionId $roleDefinition.Id
     ```
 
-### Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Follow these instructions to assign a role at administrative unit scope using the Microsoft Graph API in [Graph Explorer](https://aka.ms/ge).
 
@@ -461,8 +465,10 @@ Body
 }
 ```
 
+---
+
 ## Next steps
 
-- [List Microsoft Entra role assignments](view-assignments.md).
-- [Assign Microsoft Entra roles to users](manage-roles-portal.yml).
+- [List Microsoft Entra role assignments](view-assignments.md)
+- [Assign Microsoft Entra roles to users](manage-roles-portal.yml)
 - [Assign Microsoft Entra roles to groups](groups-assign-role.md)

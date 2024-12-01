@@ -39,7 +39,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 You can create a new administrative unit by using either the Microsoft Entra admin center, PowerShell or Microsoft Graph.
 
-### Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -65,9 +65,7 @@ You can create a new administrative unit by using either the Microsoft Entra adm
 
 1. Select the **Create** button.
 
-### PowerShell
-
-# [Microsoft Graph PowerShell](#tab/ms-powershell)
+# [PowerShell](#tab/ms-powershell)
 
 Use the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?branch=main#using-connect-mggraph) command to sign in to your tenant and consent to the required permissions.
 
@@ -98,25 +96,7 @@ $params = @{
 $restrictedAU = New-MgBetaDirectoryAdministrativeUnit -BodyParameter $params
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
-Use the [New-AzureADMSAdministrativeUnit](/powershell/module/azuread/new-azureadmsadministrativeunit?branch=main) command to create a new administrative unit.
-
-```powershell
-$adminUnitObj = New-AzureADMSAdministrativeUnit -Description "West Coast region" -DisplayName "West Coast"
-```
-
-Use the [New-AzureADMSAdministrativeUnit (preview)](/powershell/module/azuread/new-azureadmsadministrativeunit?view=azureadps-2.0-preview&preserve-view=true&branch=main) command to create a new restricted management administrative unit. Set the `IsMemberManagementRestricted` parameter to `$true`.
-
-```powershell
-$restrictedAU = New-AzureADMSAdministrativeUnit -DisplayName "Contoso Executive Division" -IsMemberManagementRestricted $true
-```
-
----
-
-### Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?branch=main) API to create a new administrative unit.
 
@@ -153,11 +133,13 @@ Body
 }
 ```
 
+---
+
 ## Delete an administrative unit
 
 In Microsoft Entra ID, you can delete an administrative unit that you no longer need as a unit of scope for administrative roles. Before you delete the administrative unit, you should remove any role assignments with that administrative unit scope.
 
-### Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -179,9 +161,7 @@ In Microsoft Entra ID, you can delete an administrative unit that you no longer 
 
 1. To confirm that you want to delete the administrative unit, select **Yes**.
 
-### PowerShell
-
-# [Microsoft Graph PowerShell](#tab/ms-powershell)
+# [PowerShell](#tab/ms-powershell)
 
 Use the [Remove-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdirectoryadministrativeunit?branch=main) command to delete an administrative unit.
 
@@ -190,26 +170,15 @@ $adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq 'Seatt
 Remove-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnitObj.Id
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
-Use the [Remove-AzureADMSAdministrativeUnit](/powershell/module/azuread/remove-azureadmsadministrativeunit?branch=main) command to delete an administrative unit.
-
-```powershell
-$adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "DisplayName eq 'Seattle District Technical Schools'"
-Remove-AzureADMSAdministrativeUnit -Id $adminUnitObj.Id
-```
-
----
-
-### Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Delete administrativeUnit](/graph/api/administrativeunit-delete) API to delete an administrative unit.
 
 ```http
 DELETE https://graph.microsoft.com/v1.0/directory/administrativeUnits/{admin-unit-id}
 ```
+
+---
 
 ## Next steps
 

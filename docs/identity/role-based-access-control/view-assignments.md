@@ -33,7 +33,7 @@ In Microsoft Entra ID, roles can be assigned at different scopes.
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -141,9 +141,9 @@ You can view all the role assignments created with an administrative unit scope 
 
 1. Select **Roles and administrators**, and then open a role to view the assignments in the administrative unit.
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
-This section describes viewing assignments of a role with tenant scope. This article uses the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
+This section describes viewing assignments of a role with tenant scope. This section uses the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
 
 ### Setup
 
@@ -248,11 +248,9 @@ $adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayname eq 'Example_
 Get-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $adminUnit.Id | FL *
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
-This section describes how to list role assignments with tenant scope. To list single-application scope role assignments using Graph API, you can use the operations in [Assign custom roles with Graph API](custom-assign-graph.md).
-
-Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to get the role assignments.
+This section describes how to list role assignments with tenant scope. Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to get the role assignments.
 
 ### List role assignments for a principal
 
@@ -393,6 +391,8 @@ Body
 ```http
 {}
 ```
+
+---
 
 ## Next steps
 

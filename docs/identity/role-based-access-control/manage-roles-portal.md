@@ -27,7 +27,7 @@ This article describes how to assign Microsoft Entra roles using the Microsoft E
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 Follow these steps to assign Microsoft Entra roles using the Microsoft Entra admin center. Your experience will be different depending on whether you have [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) enabled.
 
@@ -122,7 +122,7 @@ Follow these steps to assign roles using the **Roles and administrators** page. 
 
 1. Select **Assign** to assign the role.
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Follow these steps to assign Microsoft Entra roles using PowerShell.
 
@@ -214,7 +214,7 @@ If PIM is enabled, you have additional capabilities, such as making a user eligi
     New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest -BodyParameter $params | Format-List Id, Status, Action, AppScopeId, DirectoryScopeId, RoleDefinitionId, IsValidationOnly, Justification, PrincipalId, CompletedDateTime, CreatedDateTime
     ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Create unifiedRoleAssignment](/graph/api/rbacapplication-post-roleassignments) API to assign a role.
 
@@ -350,6 +350,8 @@ Content-type: application/json
 ```
 
 For more information about managing Microsoft Entra roles through the PIM API in Microsoft Graph, see [Overview of role management through the privileged identity management (PIM) API](/graph/api/resources/privilegedidentitymanagementv3-overview).
+
+---
 
 ## Related content
 

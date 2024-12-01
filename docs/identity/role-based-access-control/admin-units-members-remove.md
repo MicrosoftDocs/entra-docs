@@ -27,7 +27,7 @@ When users, groups, or devices in an administrative unit no longer need access, 
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 You can remove users, groups, or devices from administrative units individually using the Microsoft Entra admin center. You can also remove users in a bulk operation.
 
@@ -97,7 +97,7 @@ You can remove users, groups, or devices from administrative units individually 
 
 1. Select **Submit**.
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Use the [Remove-MgDirectoryAdministrativeUnitMemberByRef](/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdirectoryadministrativeunitmemberbyref) command to remove users, groups, or devices from an administrative unit.
 
@@ -123,7 +123,7 @@ Remove-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnit
 Remove-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj.Id -DirectoryObjectId $deviceObj.Id
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Remove a member](/graph/api/administrativeunit-delete-members) API to remove users, groups, or devices from an administrative unit. For `{member-id}`, specify the user, group, or device ID.
 
@@ -132,6 +132,8 @@ Use the [Remove a member](/graph/api/administrativeunit-delete-members) API to r
 ```http
 DELETE https://graph.microsoft.com/v1.0/directory/administrativeUnits/{admin-unit-id}/members/{member-id}/$ref
 ```
+
+---
 
 ## Next steps
 

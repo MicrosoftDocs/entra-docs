@@ -26,7 +26,7 @@ In Microsoft Entra ID, you can list the users, groups, or devices in administrat
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 You can list the users, groups, or devices in administrative units using the Microsoft Entra admin center.
 
@@ -97,7 +97,7 @@ You can list the users, groups, or devices in administrative units using the Mic
 
     ![Screenshot of the Administrative units page with the Restricted management column.](./media/admin-units-members-list/list-restricted-management-admin-unit.png)
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Use the [Get-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunit) and [Get-MgDirectoryAdministrativeUnitMember](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunitmember) commands to list users, groups, or devices for an administrative unit.
 
@@ -164,7 +164,7 @@ foreach ($member in (Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnit
 }
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 ### List the administrative units for a user
 
@@ -215,6 +215,8 @@ Response
   "userPrincipalName": "john@contoso.com", 
 }
 ```
+
+---
 
 ## Next steps
 

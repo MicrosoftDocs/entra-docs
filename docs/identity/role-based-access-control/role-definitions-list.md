@@ -27,7 +27,7 @@ This article describes how to list the Microsoft Entra built-in and custom roles
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -43,7 +43,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
     ![Screenshot that shows the "Conditional Access Administrator - Description" page.](./media/role-definitions-list/role-description-updated.png)
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Follow these steps to list Microsoft Entra roles with PowerShell.
 
@@ -84,7 +84,7 @@ Follow these steps to list Microsoft Entra roles with PowerShell.
     (Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Conditional Access Administrator'").RolePermissions | Format-list
     ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Follow these instructions to list Microsoft Entra roles using the Microsoft Graph API in [Graph Explorer](https://aka.ms/ge).
 
@@ -133,6 +133,8 @@ Follow these instructions to list Microsoft Entra roles using the Microsoft Grap
    ```http
    GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions?$filter=DisplayName eq 'Conditional Access Administrator'&$select=rolePermissions
    ```
+
+---
 
 ## Next steps
 

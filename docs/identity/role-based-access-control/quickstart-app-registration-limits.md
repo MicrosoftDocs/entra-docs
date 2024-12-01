@@ -28,7 +28,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 ### Create a custom role
 
@@ -74,7 +74,7 @@ There are two permissions available for granting the ability to create applicati
 - microsoft.directory/applications/createAsOwner: Assigning this permission results in the creator being added as the first owner of the created app registration, and the created app registration counts against the creator's 250 created objects quota.
 - microsoft.directory/applications/create: Assigning this permission results in the creator not being added as the first owner of the created app registration, and the created app registration won't count against the creator's 250 created objects quota. Use this permission carefully, because there's nothing preventing the assignee from creating app registrations until the directory-level quota is hit. If both permissions are assigned, this permission takes precedence.
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 ### Create a custom role
 
@@ -114,7 +114,7 @@ $resourceScope = '/'
 $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.Id
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 ### Create a custom role
 
@@ -164,6 +164,8 @@ Body
     "directoryScopeId": "/"
 }
 ```
+
+---
 
 ## Next steps
 

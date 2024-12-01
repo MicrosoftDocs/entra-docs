@@ -31,7 +31,7 @@ This article describes how to create a role-assignable group using the Microsoft
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -63,7 +63,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
     The group is created with any roles you might have assigned to it.
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Use the [New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup?branch=main) command to create a role-assignable group.
 
@@ -81,7 +81,7 @@ Connect-MgGraph -Scopes "Group.ReadWrite.All"
 $group = New-MgGroup -DisplayName "Contoso_Helpdesk_Administrators" -Description "Helpdesk Administrator role assigned to group" -MailEnabled:$true -SecurityEnabled -MailNickName "contosohelpdeskadministrators" -IsAssignableToRole:$true -GroupTypes "Unified"
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Create group](/graph/api/group-post-groups?branch=main) API to create a role-assignable group.
 
@@ -124,6 +124,8 @@ POST https://graph.microsoft.com/v1.0/groups
 ```
 
 For this type of group, `isPublic` will always be false and `isSecurityEnabled` will always be true.
+
+---
 
 ## Next steps
 

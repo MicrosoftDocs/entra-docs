@@ -40,7 +40,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 Follow these steps to create administrative units with rules for dynamic membership groups for users or devices.
 
-### Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -72,7 +72,7 @@ Follow these steps to create administrative units with rules for dynamic members
 
 For steps on how to edit your rule, see the following [Edit rules for dynamic membership groups](#edit-rules-for-dynamic-membership-groups) section.
 
-### PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 1. Create a dynamic membership groups rule. For more information, see [Manage rules for dynamic membership groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
@@ -101,7 +101,7 @@ For steps on how to edit your rule, see the following [Edit rules for dynamic me
     New-MgDirectoryAdministrativeUnit -BodyParameter $params
     ```
 
-### Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 1. Create a rule for dynamic membership groups. For more information, see [Dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
@@ -127,11 +127,13 @@ For steps on how to edit your rule, see the following [Edit rules for dynamic me
     }
     ```
 
+---
+
 ## Edit rules for dynamic membership groups
 
 When an administrative unit has been configured for dynamic membership groups, the usual commands to add or remove members for the administrative unit are disabled as the dynamic membership groups engine retains the sole ownership of adding or removing members. To make changes to the membership, you can edit the rules for dynamic membership groups.
 
-### Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -147,7 +149,7 @@ When an administrative unit has been configured for dynamic membership groups, t
 
 1. When finished, select **Save** to save the dynamic membership groups rule changes.
 
-### PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Use the [Update-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryadministrativeunit) command to edit the dynamic membership groups rule.
 
@@ -161,7 +163,7 @@ $params = @{
 Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnit.Id -BodyParameter $params
 ```
 
-### Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Update administrativeUnit](/graph/api/administrativeunit-update) API to edit the rule for dynamic membership groups.
 
@@ -179,11 +181,13 @@ Body
 }
 ```
 
+---
+
 ## Change a dynamic administrative unit to assigned
 
 Follow these steps to change an administrative unit with rules for dynamic membership groups to an administrative unit where members are manually assigned.
 
-### Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -207,7 +211,7 @@ Follow these steps to change an administrative unit with rules for dynamic membe
 
     When the membership type setting is changed from dynamic to assigned, the current members remain intact in the administrative unit. Additionally, the ability to add groups to the administrative unit is enabled.
 
-### PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Use the [Update-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryadministrativeunit) command to edit the rule for dynamic membership groups.
 
@@ -222,7 +226,7 @@ $params = @{
 Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnit.Id -BodyParameter $params
 ```
 
-### Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Update administrativeUnit](/graph/api/administrativeunit-update) API to change the membership type setting.
 
@@ -239,6 +243,8 @@ Body
   "membershipType": "Assigned"
 }
 ```
+
+---
 
 ## Next steps
 

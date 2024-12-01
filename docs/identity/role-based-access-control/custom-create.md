@@ -27,7 +27,7 @@ Custom roles can be created in the **Roles and administrators** page of the Micr
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 ### Create a custom role
 
@@ -61,7 +61,7 @@ These steps describe how to create a custom role in the Microsoft Entra admin ce
 
     Your custom role will show up in the list of available roles to assign.
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 ### Sign in
 
@@ -111,7 +111,7 @@ Update-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId c4e39bd9
 Remove-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId c4e39bd9-1100-46d3-8c65-fb160da0071f
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 ### Create a custom role
 
@@ -161,6 +161,8 @@ Follow these steps:
     "directoryScopeId":"/<GUID OF APPLICATION REGISTRATION>"
     }
     ```
+
+---
 
 ## Related content
 

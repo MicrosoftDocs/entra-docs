@@ -32,7 +32,7 @@ This article describes how to add users, groups, or devices to administrative un
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 You can add users, groups, or devices to administrative units using the Microsoft Entra admin center. You can also add users in a bulk operation or create a new group in an administrative unit.
 
@@ -118,7 +118,7 @@ You can add users, groups, or devices to administrative units using the Microsof
 
     ![Screenshot of the Administrative units page for creating a new group in an administrative unit.](./media/admin-units-members-add/admin-unit-create-group.png)
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Use the [New-MgDirectoryAdministrativeUnitMemberByRef](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunitmemberbyref) command to add user, groups, or devices to an administrative unit or create a new group in an administrative unit.
 
@@ -166,7 +166,7 @@ $params = @{
 New-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $adminUnitObj.Id -BodyParameter $params
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Add a member](/graph/api/administrativeunit-post-members) API to add users, groups, or devices to an administrative unit or create a new group in an administrative unit.
 
@@ -257,6 +257,8 @@ Body
     "securityEnabled": false
 }
 ```
+
+---
 
 ## Next steps
 

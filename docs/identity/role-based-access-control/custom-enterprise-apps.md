@@ -41,7 +41,7 @@ Granting the update permission is done in two steps:
 1. Create a custom role with permission `microsoft.directory/servicePrincipals/appRoleAssignedTo/update`
 1. Grant users or groups permissions to manage user and group assignments to enterprise apps. This is when you can set the scope to the organization-wide level or to a single application.
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 ### Create a new custom role
 
@@ -94,7 +94,7 @@ In the Microsoft Entra Admin Center, you can create and manage custom roles to c
 
     ![Verify the user permissions](./media/custom-enterprise-apps/verify-user-permissions.png)
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 For more detail, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml) and [Assign custom roles with resource scope using PowerShell](custom-assign-powershell.md).
 
@@ -136,7 +136,7 @@ $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId 
    -PrincipalId $user.Id -RoleDefinitionId $roleDefinition.Id
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml) and [Assign custom admin roles using the Microsoft Graph API](custom-assign-graph.md).
 
@@ -175,6 +175,8 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments
     "directoryScopeId": "/"
 }
 ```
+
+---
 
 ## Next steps
 

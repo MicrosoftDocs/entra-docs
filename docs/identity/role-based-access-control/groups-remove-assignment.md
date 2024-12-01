@@ -28,7 +28,7 @@ This article describes how an IT admin can remove Microsoft Entra role assignmen
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -44,7 +44,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. When asked to confirm your action, select **Yes**.
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 ### Remove a role assignment
 
@@ -54,7 +54,7 @@ Use the [Remove-MgRoleManagementDirectoryRoleAssignment](/powershell/module/micr
 Remove-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId $roleAssignment.Id
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Delete unifiedRoleAssignment](/graph/api/unifiedroleassignment-delete) API to remove role assignments.
 
@@ -107,6 +107,8 @@ HTTP/1.1 400 Bad Request
 ```
 
 You are prevented from removing your own Global Administrator role assignment to avoid a scenario where a tenant has zero Global Administrators. Removing other roles assigned to yourself is allowed.
+
+---
 
 ## Next steps
 
