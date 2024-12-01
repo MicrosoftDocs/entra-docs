@@ -46,8 +46,6 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 # [PowerShell](#tab/ms-powershell)
 
-### Remove a role assignment
-
 Use the [Remove-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/remove-mgrolemanagementdirectoryroleassignment) command to remove role assignments.
 
 ```powershell

@@ -127,8 +127,6 @@ Remove-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnit
 
 Use the [Remove a member](/graph/api/administrativeunit-delete-members) API to remove users, groups, or devices from an administrative unit. For `{member-id}`, specify the user, group, or device ID.
 
-### Remove users, groups, or devices from an administrative unit
-
 ```http
 DELETE https://graph.microsoft.com/v1.0/directory/administrativeUnits/{admin-unit-id}/members/{member-id}/$ref
 ```
