@@ -1,6 +1,6 @@
 ---
-title: Remove role assignments from a group in Microsoft Entra ID
-description: Remove role assignments from a group in Microsoft Entra ID using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
+title: Remove role assignments in Microsoft Entra ID
+description: Remove role assignments in Microsoft Entra ID using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
 
 author: rolyon
 manager: amycolannino
@@ -15,9 +15,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 
-# Remove role assignments from a group in Microsoft Entra ID
+# Remove role assignments in Microsoft Entra ID
 
-This article describes how an IT admin can remove Microsoft Entra roles assigned to groups. In the Microsoft Entra admin center, you can remove both direct and indirect role assignments to a user. If a user is assigned a role by a group membership, remove the user from the group to remove the role assignment.
+This article describes how an IT admin can remove Microsoft Entra role assignments. In the Microsoft Entra admin center, you can remove both direct and indirect role assignments to a user. If a user is assigned a role by a group membership, remove the user from the group to remove the role assignment.
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Select a *role name*.
 
-1. Select the group from which you want to remove the role assignment and select **Remove assignment**.
+1. Select the user or group from which you want to remove the role assignment and select **Remove assignment**.
 
    ![Remove a role assignment from a selected group.](./media/groups-remove-assignment/remove-assignment.png)
 
@@ -46,33 +46,9 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 ## PowerShell
 
-### Create a group that can be assigned to role
+### Remove a role assignment
 
-```powershell
-$group = New-MgGroup -DisplayName "Contoso_Helpdesk_Administrators" `
-   -Description "This group is assigned to Helpdesk Administrator built-in role in Microsoft Entra ID." `
-   -MailNickname "contosohelpdeskadministrators" -IsAssignableToRole:$true `
-   -MailEnabled:$true -SecurityEnabled:$true
-```
-
-### Get the role definition you want to assign the group to
-
-```powershell
-$roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Helpdesk Administrator'"
-```
-
-### Create a role assignment
-
-```powershell
-$Params = @{
-   "directoryScopeId" = "/" 
-   "principalId" = $group.Id
-   "roleDefinitionId" = $roleDefinition.Id
-}
-$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -BodyParameter $Params
-```
-
-### Remove the role assignment
+Use the [Remove-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/remove-mgrolemanagementdirectoryroleassignment) command to remove role assignments.
 
 ```powershell
 Remove-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId $roleAssignment.Id
@@ -80,57 +56,57 @@ Remove-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId $roleAss
 
 ## Microsoft Graph API
 
-<a name='create-a-group-that-can-be-assigned-an-azure-ad-role'></a>
+Use the [Delete unifiedRoleAssignment](/graph/api/unifiedroleassignment-delete) API to remove role assignments.
 
-### Create a group that can be assigned a Microsoft Entra role
-
-Use the [Create group](/graph/api/group-post-groups) API to create a group.
+### Remove a role assignment for a user
 
 ```http
-POST https://graph.microsoft.com/v1.0/groups
+DELETE https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
+```
 
+Response
+
+```http
+HTTP/1.1 204 No Content
+```
+
+### Remove a role assignment that no longer exists
+
+```http
+DELETE https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
+```
+
+Response
+
+```http
+HTTP/1.1 404 Not Found
+```
+
+### Remove a Global Administrator role assignment for the current user
+
+```http
+DELETE https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
+```
+
+Response
+
+```http
+HTTP/1.1 400 Bad Request
 {
-    "description": "This group is assigned to Helpdesk Administrator built-in role of Microsoft Entra ID",
-    "displayName": "Contoso_Helpdesk_Administrators",
-    "groupTypes": [
-        "Unified"
-    ],
-    "isAssignableToRole": true,
-    "mailEnabled": true,
-    "mailNickname": "contosohelpdeskadministrators",
-    "securityEnabled": true
+    "odata.error":
+    {
+        "code":"Request_BadRequest",
+        "message":
+        {
+            "lang":"en",
+            "value":"Removing self from Global Administrator built-in role is not allowed"},
+            "values":null
+        }
+    }
 }
 ```
 
-### Get the role definition
-
-Use the [List unifiedRoleDefinitions](/graph/api/rbacapplication-list-roledefinitions) API to get a role definition.
-
-```http
-GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions?$filter=displayName+eq+'Helpdesk Administrator'
-```
-
-### Create the role assignment
-
-Use the [Create unifiedRoleAssignment](/graph/api/rbacapplication-post-roleassignments) API to assign the role.
-
-```http
-POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments
-{
-    "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
-    "principalId": "{object-id-of-group}",
-    "roleDefinitionId": "{role-definition-id}",
-    "directoryScopeId": "/"
-}
-```
-
-### Delete role assignment
-
-Use the [Delete unifiedRoleAssignment](/graph/api/unifiedroleassignment-delete) API to delete the role assignment.
-
-```http
-DELETE https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments/{role-assignment-id}
-```
+You are prevented from removing your own Global Administrator role assignment to avoid a scenario where a tenant has zero Global Administrators. Removing other roles assigned to yourself is allowed.
 
 ## Next steps
 

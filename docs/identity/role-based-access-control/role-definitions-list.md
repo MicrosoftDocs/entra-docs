@@ -59,10 +59,20 @@ Follow these steps to list Microsoft Entra roles with PowerShell.
     Connect-MgGraph -Scopes "RoleManagement.Read.All"
     ```
 
-3. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) to get all roles.
+3. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) to get roles.
 
     ```powershell
+    # Get all role definitions
     Get-MgRoleManagementDirectoryRoleDefinition
+    
+    # Get single role definition by ID
+    Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId 00000000-0000-0000-0000-000000000000
+    
+    # Get single role definition by templateId
+    Get-MgRoleManagementDirectoryRoleDefinition -Filter "TemplateId eq 'c4e39bd9-1100-46d3-8c65-fb160da0071f'"
+
+    # Get role definition by displayName
+    Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Helpdesk Administrator'"
     ```
 
 4. To view the list of permissions of a role, use the following cmdlet.
@@ -79,16 +89,46 @@ Follow these steps to list Microsoft Entra roles with PowerShell.
 Follow these instructions to list Microsoft Entra roles using the Microsoft Graph API in [Graph Explorer](https://aka.ms/ge).
 
 1. Sign in to the [Graph Explorer](https://aka.ms/ge).
-2. Select **GET** as the HTTP method from the dropdown. 
-3. Select the API version to **v1.0**.
-4. Add the following query to use the [List unifiedRoleDefinitions](/graph/api/rbacapplication-list-roledefinitions) API.
 
-   ```http
-   GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions
-   ```
+1. Select **GET** as the HTTP method from the dropdown. 
 
-5. Select **Run query** to list the roles.
-6. To view permissions of a role, use the following API.
+1. Select the API version to **v1.0**.
+
+1. Use the [List unifiedRoleDefinitions](/graph/api/rbacapplication-list-roledefinitions) API to list all role definitions.
+
+    ```http
+    GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions
+    ```
+
+    To list a specific role by displayName, use this format.
+
+    ```http
+    GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions?$filter = displayName eq 'Helpdesk Administrator'
+    ```
+
+1. Select **Run query** to list the roles.
+
+    Here is an example of the response.
+
+    ```http
+    {
+        "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#roleManagement/directory/roleDefinitions",
+        "value": [
+            {
+                "id": "729827e3-9c14-49f7-bb1b-9608f156bbb8",
+                "description": "Can reset passwords for non-administrators and Helpdesk Administrators.",
+                "displayName": "Helpdesk Administrator",
+                "isBuiltIn": true,
+                "isEnabled": true,
+                "resourceScopes": [
+                    "/"
+                ],
+    
+        ...
+    
+    ```
+    
+1. To view permissions of a role, use the following API.
 
    ```http
    GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions?$filter=DisplayName eq 'Conditional Access Administrator'&$select=rolePermissions

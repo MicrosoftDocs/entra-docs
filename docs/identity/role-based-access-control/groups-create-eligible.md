@@ -65,8 +65,6 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 ## PowerShell
 
-# [Microsoft Graph PowerShell](#tab/ms-powershell)
-
 Use the [New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup?branch=main) command to create a role-assignable group.
 
 This example shows how to create a Security role-assignable group.
@@ -82,52 +80,6 @@ This example shows how to create a Microsoft 365 role-assignable group.
 Connect-MgGraph -Scopes "Group.ReadWrite.All"
 $group = New-MgGroup -DisplayName "Contoso_Helpdesk_Administrators" -Description "Helpdesk Administrator role assigned to group" -MailEnabled:$true -SecurityEnabled -MailNickName "contosohelpdeskadministrators" -IsAssignableToRole:$true -GroupTypes "Unified"
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-Use the [New-AzureADMSGroup](/powershell/module/azuread/new-azureadmsgroup?branch=main) command to create a role-assignable group.
-
-```powershell
-$group = New-AzureADMSGroup -DisplayName "Contoso_Helpdesk_Administrators" -Description "Helpdesk Administrator role assigned to group" -MailEnabled $false -SecurityEnabled $true -MailNickName "contosohelpdeskadministrators" -IsAssignableToRole $true
-```
-
-For this type of group, `isPublic` will always be false and `isSecurityEnabled` will always be true.
-
-### Copy one group's users and service principals into a role-assignable group
-
-```powershell
-#Basic set up
-Install-Module -Name AzureAD
-Import-Module -Name AzureAD
-Get-Module -Name AzureAD
-
-#Connect to Azure AD. Sign in as Privileged Role Administrator. This role can create a role-assignable group.
-Connect-AzureAD
-
-#Input variabled: Existing group
-$idOfExistingGroup = "14044411-d170-4cb0-99db-263ca3740a0c"
-
-#Input variables: New role-assignable group
-$groupName = "Contoso_Bellevue_Admins"
-$groupDescription = "This group is assigned to Helpdesk Administrator built-in role in Azure AD."
-$mailNickname = "contosobellevueadmins"
-
-#Create new security group which is a role assignable group. For creating a Microsoft 365 group, set GroupTypes="Unified" and MailEnabled=$true
-$roleAssignablegroup = New-AzureADMSGroup -DisplayName $groupName -Description $groupDescription -MailEnabled $false -MailNickname $mailNickname -SecurityEnabled $true -IsAssignableToRole $true
-
-#Get details of existing group
-$existingGroup = Get-AzureADMSGroup -Id $idOfExistingGroup
-$membersOfExistingGroup = Get-AzureADGroupMember -ObjectId $existingGroup.Id
-
-#Copy users and service principals from existing group to new group
-foreach($member in $membersOfExistingGroup){
-if($member.ObjectType -eq 'User' -or $member.ObjectType -eq 'ServicePrincipal'){
-Add-AzureADGroupMember -ObjectId $roleAssignablegroup.Id -RefObjectId $member.ObjectId
-}
-}
-```
-
----
 
 ## Microsoft Graph API
 
@@ -145,6 +97,12 @@ POST https://graph.microsoft.com/v1.0/groups
     "mailNickname": "contosohelpdeskadministrators",
     "securityEnabled": true
 }
+```
+
+Response
+
+```http
+HTTP/1.1 201 Created
 ```
 
 This example shows how to create a Microsoft 365 role-assignable group.

@@ -1,0 +1,167 @@
+---
+title: Create custom roles in Microsoft Entra role-based access control
+description: Create and assign custom Microsoft Entra roles with resource scope on Microsoft Entra resources.
+author: rolyon
+ms.author: rolyon
+manager: amycolannino
+ms.reviewer: vincesm
+ms.date: 06/24/2024
+ms.service: entra-id
+ms.subservice: role-based-access-control
+ms.topic: how-to
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+---
+
+# Create and assign a custom role in Microsoft Entra ID
+
+This article describes how to create new custom roles in Microsoft Entra ID. For the basics of custom roles, see the [custom roles overview](custom-overview.md). The role can be assigned either at the directory-level scope or an app registration resource scope only. For information about the maximum number of custom roles that can be created in a Microsoft Entra organization, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
+
+Custom roles can be created in the **Roles and administrators** page of the Microsoft Entra admin center.
+
+## Prerequisites
+
+- Microsoft Entra ID P1 or P2 license
+- Privileged Role Administrator
+- Microsoft.Graph module when using PowerShell
+- Admin consent when using Graph explorer for Microsoft Graph API
+
+For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+
+## Microsoft Entra admin center
+
+### Create a custom role to grant access to manage app registrations
+
+[!INCLUDE [portal updates](~/includes/portal-update.md)]
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+
+1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+
+1. Select **New custom role**.
+
+    ![Create or edit roles from the Roles and administrators page](./media/custom-create/new-custom-role.png)
+
+1. On the **Basics** tab, provide a name and description for the role.
+
+    You can clone the baseline permissions from a custom role but you can't clone a built-in role.
+
+    ![provide a name and description for a custom role on the Basics tab](./media/custom-create/basics-tab.png)
+
+1. On the **Permissions** tab, select the permissions necessary to manage basic properties and credential properties of app registrations. For a detailed description of each permission, see [Application registration subtypes and permissions in Microsoft Entra ID](custom-available-permissions.md).
+
+    1. First, enter "credentials" in the search bar and select the `microsoft.directory/applications/credentials/update` permission.
+
+        ![Select the permissions for a custom role on the Permissions tab](./media/custom-create/permissions-tab.png)
+
+    1. Next, enter "basic" in the search bar, select the `microsoft.directory/applications/basic/update` permission, and then click **Next**.
+
+1. On the **Review + create** tab, review the permissions and select **Create**.
+
+    Your custom role will show up in the list of available roles to assign.
+
+## PowerShell
+
+### Sign in
+
+Use the [Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph) command to sign in to your tenant.
+
+``` PowerShell
+Connect-MgGraph -Scopes "RoleManagement.ReadWrite.Directory"
+```
+
+### Create a custom role
+
+Create a new role using the following PowerShell script:
+
+``` PowerShell
+# Basic role information
+$displayName = "Application Support Administrator"
+$description = "Can manage basic aspects of application registrations."
+$templateId = (New-Guid).Guid
+      
+# Set of permissions to grant
+$rolePermissions = @{
+    "allowedResourceActions" = @(
+        "microsoft.directory/applications/basic/update",
+        "microsoft.directory/applications/credentials/update"
+    )
+}
+      
+# Create new custom admin role
+$customAdmin = New-MgRoleManagementDirectoryRoleDefinition -RolePermissions $rolePermissions `
+    -DisplayName $displayName -Description $description -TemplateId $templateId -IsEnabled:$true
+```
+
+### Update a custom role
+
+```powershell
+# Update role definition
+# This works for any writable property on role definition. You can replace display name with other
+# valid properties.
+Update-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId c4e39bd9-1100-46d3-8c65-fb160da0071f `
+   -DisplayName "Updated DisplayName"
+```
+
+### Delete a custom role
+
+```powershell
+# Delete role definition
+Remove-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId c4e39bd9-1100-46d3-8c65-fb160da0071f
+```
+
+## Microsoft Graph API
+
+### Create a custom role
+
+Follow these steps:
+
+1. Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role.
+
+    ``` HTTP
+    POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions
+    ```
+    
+    Body
+    
+    ``` HTTP
+    {
+        "description": "Can manage basic aspects of application registrations.",
+        "displayName": "Application Support Administrator",
+        "isEnabled": true,
+        "templateId": "<GUID>",
+        "rolePermissions": [
+            {
+                "allowedResourceActions": [
+                    "microsoft.directory/applications/basic/update",
+                    "microsoft.directory/applications/credentials/update"
+                ]
+            }
+        ]
+    }
+    ```
+    
+    > [!Note]
+    > The `"templateId": "GUID"` is an optional parameter that's sent in the body depending on the requirement. If you have a requirement to create multiple different custom roles with common parameters, it's best to create a template and define a `templateId` value. You can generate a `templateId` value beforehand by using the PowerShell cmdlet `(New-Guid).Guid`. 
+
+
+1. Use the [Create unifiedRoleAssignment](/graph/api/rbacapplication-post-roleassignments) API to assign the custom role.
+
+    ```http
+    POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments
+    ```
+    
+    Body
+    
+    ```http
+    {
+    "principalId":"<GUID OF USER>",
+    "roleDefinitionId":"<GUID OF ROLE DEFINITION>",
+    "directoryScopeId":"/<GUID OF APPLICATION REGISTRATION>"
+    }
+    ```
+
+## Related content
+
+- [Microsoft Entra administrative roles forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
+- [Microsoft Entra built-in roles](permissions-reference.md)
+- [Comparison of default guest and member user permissions](~/fundamentals/users-default-permissions.md?context=azure/active-directory/roles/context/ugr-context)

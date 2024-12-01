@@ -14,7 +14,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # Assign Microsoft Entra roles at different scopes
 
-In Microsoft Entra ID, roles are typically assigned to apply to the entire tenant. However, you can also assign Microsoft Entra roles for different resources, such as administrative units or application registrations. For example, you could assign the Helpdesk Administrator role so that it just applies to a particular administrative unit and not the entire tenant. The resources that a role assignment applies to is also called the scope. This article describes how to assign Microsoft Entra roles at tenant, administrative unit, and application registration scopes. For more information about scope, see [Overview of role-based access control (RBAC) in Microsoft Entra ID](custom-overview.md#scope).
+In Microsoft Entra ID, roles are typically assigned to apply to the entire tenant. However, you can also assign Microsoft Entra roles for different resources, such as administrative units or application registrations. For example, you could assign the Helpdesk Administrator role so that it just applies to a particular administrative unit and not the entire tenant. The resources that a role assignment applies to is also called the scope. Restricting the scope of a role assignment is supported for built-in and custom roles. For more information about scope, see [Overview of role-based access control (RBAC) in Microsoft Entra ID](custom-overview.md#scope).
+
+This article describes how to assign Microsoft Entra roles at tenant, administrative unit, and application registration scopes.
 
 ## Prerequisites
 
@@ -225,20 +227,48 @@ Follow these instructions to assign a role at administrative unit scope using th
     }
     ```
 
+    Response
+    
+    ```http
+    HTTP/1.1 201 Created
+    ```
+
+    If the role is not supported, the response is bad request.
+
+    ```http
+    HTTP/1.1 400 Bad Request
+    {
+        "odata.error":
+        {
+            "code":"Request_BadRequest",
+            "message":
+            {
+                "message":"The given built-in role is not supported to be assigned to a single resource scope."
+            }
+        }
+    }
+    ```
+    
+    Only a subset of built-in roles are enabled for administrative unit scope. For a list of roles that support administrative unit scope, see [Assign Microsoft Entra roles with administrative unit scope](./admin-units-assign-roles.md).
+
 >[!NOTE]
 > Here directoryScopeId is specified as */administrativeUnits/foo*, instead of */foo*. It is by design. The scope */administrativeUnits/foo* means the principal can manage the members of the administrative unit (based on the role that she is assigned), not the administrative unit itself. The scope of */foo* means the principal can manage that Microsoft Entra object itself. In the subsequent section, you will see that the scope is */foo* because a role scoped over an app registration grants the privilege to manage the object itself.
 
 ## Assign roles scoped to an app registration
 
+Built-in roles and custom roles are assigned by default at tenant scope to grant access permissions over all app registrations in your organization. Additionally, custom roles and some relevant built-in roles (depending on the type of Microsoft Entra resource) can also be assigned at the scope of a single Microsoft Entra resource. This allows you to give the user the permission to update credentials and basic properties of a single app without having to create a second custom role.
+
 This section describes how to assign roles at an application registration scope.
 
 ### Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Developer](./permissions-reference.md#application-developer).
 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 
 1. Select an application. You can use search box to find the desired app.
+
+    You might have to select **All applications** to see the complete list of app registrations in your tenant.
 
     ![App registrations in Microsoft Entra ID.](./media/assign-roles-different-scopes/app-reg.png)
 
@@ -305,6 +335,8 @@ Follow these steps to assign Microsoft Entra roles at application scope using Po
        -RoleDefinitionId $roleDefinition.Id 
     ```
 
+To assign the role to a service principal instead of a user, use the [Get-MgServicePrincipal](/powershell/module/Microsoft.Graph.Applications/Get-MgServicePrincipal) cmdlet.
+
 ### Microsoft Graph API
 
 Follow these instructions to assign a role at application scope using the Microsoft Graph API in [Graph Explorer](https://aka.ms/ge).
@@ -340,6 +372,12 @@ Follow these instructions to assign a role at application scope using the Micros
         "roleDefinitionId": "<provide templateId of the role obtained above>",
         "directoryScopeId": "/<provide objectId of the app registration obtained above>"
     }
+    ```
+
+    Response
+    
+    ```http
+    HTTP/1.1 201 Created
     ```
 
 >[!NOTE]
