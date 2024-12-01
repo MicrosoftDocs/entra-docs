@@ -6,7 +6,7 @@ author: rolyon
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.topic: quickstart
+ms.topic: how-to
 ms.date: 06/16/2024
 ms.author: rolyon
 ms.reviewer: vincesm
