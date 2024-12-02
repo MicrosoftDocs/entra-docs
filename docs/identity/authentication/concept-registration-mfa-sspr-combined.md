@@ -5,7 +5,7 @@ description: Learn about the combined registration experience for Microsoft Entr
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/01/2024
+ms.date: 12/01/2024
 
 ms.author: justinha
 author: justinha
@@ -20,6 +20,8 @@ Before combined registration, users registered authentication methods for Micros
 ![My Account showing registered Security info for a user](media/concept-registration-mfa-sspr-combined/combined-security-info-defaults-registered.png)
 
 Before enabling the new experience, review this administrator-focused documentation and the user-focused documentation to ensure you understand the functionality and effect of this feature. Base your training on the [user documentation](https://support.microsoft.com/account-billing/set-up-your-security-info-from-a-sign-in-prompt-28180870-c256-4ebf-8bd7-5335571bf9a8) to prepare your users for the new experience and help to ensure a successful rollout.
+
+Combined registration has rolled out to all customers in Azure and Azure for US Government. The portal control that allows you to switch from legacy to combined registration experience is removed after your tenant migrates to the combined registratione.
 
 *My Account* pages are localized based on the language settings of the computer accessing the page. Microsoft stores the most recent language used in the browser cache, so subsequent attempts to access the pages continue to render in the last language used. If you clear the cache, the pages re-render.
 

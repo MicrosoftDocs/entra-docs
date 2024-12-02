@@ -35,9 +35,9 @@ To be able to federate users to your identity provider, you first need to prepar
 
 Before moving to next step, populate your redirect URIs as follows:
 
-`https://\<tenant-subdomain\>.ciamlogin.com/\<tenant-ID\>/federation/oauth2`
+`https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
 
-`https://\<tenant-subdomain\>.ciamlogin.com/\<tenant-subdomain\>.onmicrosoft.com/federation/oauth2`
+`https://<tenant-subdomain>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
 
 ## Enable sign-in and sign-up with your identity provider
 
