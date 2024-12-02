@@ -29,6 +29,16 @@ For a more dynamic experience, you can now find this information in the Microsof
 
 ## November 2024
 
+### General Availability - Microsoft Entra Connect Sync Version 2.4.27.0
+
+**Type:** Changed feature       
+**Service category:** Provisioning        
+**Product capability:** Identity Governance        
+
+On November 14, 2025, we released Microsoft Entra Connect Sync Version 2.4.27.0 that uses the OLE DB version 18.7.4 that further hardens our service.  Upgrade to this latest version of connect sync to improve your security. More details are available in the [release notes](../identity/hybrid/connect/reference-connect-version-history.md#24270). 
+
+---
+
 ### Public Preview - Microsoft Entra new store for certificate-based authentication
 
 **Type:** New feature    
