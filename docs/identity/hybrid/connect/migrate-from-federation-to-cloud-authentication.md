@@ -51,7 +51,7 @@ Install [Microsoft Entra Connect](https://www.microsoft.com/download/details.asp
 To find your current federation settings, run [Get-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainfederationconfiguration?view=graph-powershell-1.0&viewFallbackFrom=graph-powershell-beta&preserve-view=true).
 
 ```powershell
-Get-MgDomainFederationConfiguration - DomainID yourdomain.com
+Get-MgDomainFederationConfiguration -DomainID yourdomain.com
 ```
 
 Verify any settings that might have been customized for your federation design and deployment documentation. Specifically, look for customizations in **PreferredAuthenticationProtocol**, **federatedIdpMfaBehavior**, **SupportsMfa** (if **federatedIdpMfaBehavior** isn't set), and **PromptLoginBehavior**.
