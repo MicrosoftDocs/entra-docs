@@ -793,7 +793,7 @@ MSAL Go doesn't support managed identities yet. You can use the Azure Identity l
 
 Some Azure resources either don't yet support Microsoft Entra authentication, or their client libraries don't support authenticating with a token. Typically these resources are open-source technologies that expect a username and password or an access key in a connection string.
 
-To avoid storing credentials in your code or your application configuration, you can store the credentials as a secret in Azure Key Vault. Using the example displayed above, you can retrieve the secret from Azure KeyVault using a managed identity, and pass the credentials into your connection string. This approach means that no credentials need to be handled directly in your code or environment. For a detailed example, see [Use managed identities to access Azure Key Vault certificates](/azure/frontdoor/managed-identity). For more info on Azure Key vault uthentiucaiton, see [Azure Key Vault authentication](/azure/key-vault/general/authentication).
+To avoid storing credentials in your code or your application configuration, you can store the credentials as a secret in Azure Key Vault. Using the example displayed above, you can retrieve the secret from Azure KeyVault using a managed identity, and pass the credentials into your connection string. This approach means that no credentials need to be handled directly in your code or environment. For a detailed example, see [Use managed identities to access Azure Key Vault certificates](/azure/frontdoor/managed-identity). For more info on Azure Key Vault authentication, see [Azure Key Vault authentication](/azure/key-vault/general/authentication).
 
 ## Guidelines if you're handling tokens directly
 
