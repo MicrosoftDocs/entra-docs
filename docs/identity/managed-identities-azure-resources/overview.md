@@ -7,7 +7,7 @@ ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: overview
-ms.date: 01/23/2023
+ms.date: 12/02/2024
 ms.author: ryanwi
 
 
@@ -41,7 +41,7 @@ There are two types of managed identities:
     - A service principal of a special type is created in Microsoft Entra ID for the identity. The service principal is tied to the lifecycle of that Azure resource. When the Azure resource is deleted, Azure automatically deletes the service principal for you. 
     - By design, only that Azure resource can use this identity to request tokens from Microsoft Entra ID.
     - You authorize the managed identity to have access to one or more services.
-    - The name of the system-assigned service principal is always the same as the name of the Azure resource it is created for. For a deployment slot, the name of its system-assigned identity is ```<app-name>/slots/<slot-name>```.
+    - The name of the system-assigned service principal is always the same as the name of the Azure resource it's created for. For a deployment slot, the name of its system-assigned identity is ```<app-name>/slots/<slot-name>```.
 
 - **User-assigned**. You may also create a managed identity as a standalone Azure resource. You can [create a user-assigned managed identity](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp) and assign it to one or more Azure Resources. When you enable a user-assigned managed identity:
     - A service principal of a special type is created in Microsoft Entra ID for the identity. The service principal is managed separately from the resources that use it. 
@@ -56,7 +56,7 @@ The following table shows the differences between the two types of managed ident
 | Creation |  Created as part of an Azure resource (for example, Azure Virtual Machines or Azure App Service). | Created as a stand-alone Azure resource. |
 | Life cycle | Shared life cycle with the Azure resource that the managed identity is created with. <br/> When the parent resource is deleted, the managed identity is deleted as well. | Independent life cycle. <br/> Must be explicitly deleted. |
 | Sharing across Azure resources | Can’t be shared. <br/> It can only be associated with a single Azure resource. | Can be shared. <br/> The same user-assigned managed identity can be associated with more than one Azure resource. |
-| Common use cases | Workloads contained within a single Azure resource. <br/> Workloads needing independent identities. <br/> For example, an application that runs on a single virtual machine. | Workloads that run on multiple resources and can share a single identity. <br/> Workloads needing pre-authorization to a secure resource, as part of a provisioning flow. <br/> Workloads where resources are recycled frequently, but permissions should stay consistent. <br/> For example, a workload where multiple virtual machines need to access the same resource. |
+| Common use cases | Workloads contained within a single Azure resource. <br/> Workloads needing independent identities. <br/> For example, an application that runs on a single virtual machine. | Workloads that run on multiple resources and can share a single identity. <br/> Workloads needing preauthorization to a secure resource, as part of a provisioning flow. <br/> Workloads where resources are recycled frequently, but permissions should stay consistent. <br/> For example, a workload where multiple virtual machines need to access the same resource. |
 
 ## How can I use managed identities for Azure resources?
 
