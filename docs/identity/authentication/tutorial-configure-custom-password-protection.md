@@ -15,7 +15,7 @@ ms.reviewer: rogoya
 ---
 # Tutorial: Configure custom banned passwords for Microsoft Entra password protection
 
-Users often create passwords that use common local words such as a school, sports team, or famous person. These passwords are easy to guess, and weak against dictionary-based attacks. To enforce strong passwords in your organization, the Microsoft Entra custom banned password list let you add specific strings to evaluate and block. A password change request fails if there's a match in the custom banned password list.
+Users often create passwords that use common local words such as a school, sports team, or famous person. These passwords are easy to guess, and weak against dictionary-based attacks. To enforce strong passwords in your organization, the Microsoft Entra custom banned password list lets you add specific strings to evaluate and block. A password change request fails if there's a match in the custom banned password list.
 
 In this tutorial you learn how to:
 
@@ -82,7 +82,7 @@ To enable the custom banned password list and add entries to it, complete the fo
 
 It may take several hours for updates to the custom banned password list to be applied.
 
-For a hybrid environment, you can also [deploy Microsoft Entra password protection to an on-premises environment](howto-password-ban-bad-on-premises-deploy.md). The same global and custom banned password lists are used for both cloud and on-prem password change requests.
+For a hybrid environment, you can also [deploy Microsoft Entra password protection to an on-premises environment](howto-password-ban-bad-on-premises-deploy.md). The same global and custom banned password lists are used for both cloud and on-premises password change requests.
 
 ## Test custom banned password list
 
