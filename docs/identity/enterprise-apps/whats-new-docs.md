@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 11/06/2024
+ms.date: 12/02/2024
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
@@ -16,6 +16,16 @@ manager: CelesteDG
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those articles that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
+## November 2024
+
+### Updated articles
+
+- [Configure sign-in behavior using Home Realm Discovery](configure-authentication-for-federated-users-portal.md) - Replace legacy PowerShell with Microsoft Graph PowerShell cmdlets
+- [Disable auto-acceleration sign-in](prevent-domain-hints-with-home-realm-discovery.md) - Rewrite content for clarity and accuracy
+- [Home Realm Discovery for an application](home-realm-discovery-policy.md) - Replace legacy PowerShell with Microsoft Graph PowerShell cmdlets
+- [Overview of admin consent workflow](admin-consent-workflow-overview.md) - Review and update content for accuracy and clarity
+
+
 ## October 2024
 
 ### Updated articles
@@ -29,11 +39,3 @@ Reviewed the following articles to improve technical accuracy and clarity:
 
 No updates this month.
 
-## August 2024
-
-### Updated articles
-
-Reviewed the following articles to improve technical accuracy and clarity:
-
-- [SAML-based single sign-on: Configuration and Limitations](migrate-adfs-saml-based-sso.md).
-- [Configure Microsoft Entra SAML token encryption](howto-saml-token-encryption.md).
