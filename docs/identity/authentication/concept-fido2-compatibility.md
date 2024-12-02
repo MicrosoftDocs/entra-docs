@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/15/2024
+ms.date: 12/02/2024
 
 author: justinha
 ms.author: justinha
@@ -40,6 +40,12 @@ The following tables lists which authentication brokers are supported for differ
 <sup>2</sup>Native application support for FIDO2 security keys on Android version 13 and lower is in development.
 
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
+
+### Supported versions of iOS and macOS
+
+- Passkey (FIDO2) authentication (with user verification) in web browsers requires iOS 14.3 or later, iPadOS 14.3 or later, and macOS Catalina 11.1 or later with Safari 14 or later.
+- Passkey (FIDO2) in native apps without SSO extension requires iOS/iPadOS 16.0 or later.
+- Passkey (FIDO2) in native apps with SSO extension requires iOS/iPadOS 17.1 or later, or macOS 14.0 or later.
 
 ### Microsoft application support without authentication broker 
 
