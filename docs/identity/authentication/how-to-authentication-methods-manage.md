@@ -5,7 +5,7 @@ description: Learn about how to centrally manage multifactor authentication and 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/07/2024
+ms.date: 12/01/2024
 
 
 ms.author: justinha
@@ -82,11 +82,11 @@ For each method, note whether or not it's enabled for the tenant. The following 
 
 ### Review the legacy SSPR policy
 
-To get the authentication methods available in the legacy SSPR policy, go to **Identity** > **Protection** > **Password reset** > **Authentication methods**. The following table lists the available methods in the legacy SSPR policy and corresponding methods in the Authentication method policy. 
+To get the authentication methods available in the legacy SSPR policy, go to **Identity** > **Users** > **All users** > **Password reset** > **Authentication methods**. The following table lists the available methods in the legacy SSPR policy and corresponding methods in the Authentication method policy. 
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/legacy-sspr-policy.png" alt-text="Screenshot that shows the legacy Microsoft Entra SSPR policy." lightbox="media/how-to-authentication-methods-manage/legacy-sspr-policy.png":::
 
-Record which users are in scope for SSPR (either all users, one specific group, or no users) and the authentication methods they can use. While security questions aren't yet available to manage in the Authentication methods policy, make sure you record them for later when they are. 
+Record which users are in scope for SSPR (either all users, one specific group, or no users) and the authentication methods they can use. While security questions aren't yet available to manage in the Authentication methods policy, make sure you record them for later when they are. You can find this information by going to **Identity** > **Users** > **All users** > **Password reset** > **Properties**.
 
 | SSPR authentication methods | Authentication method policy |
 |-----------------------------|------------------------------|
@@ -157,7 +157,8 @@ If **Verification code from mobile app or hardware token** is enabled in the leg
 :::image type="content" border="true" source="./media/how-to-authentication-methods-manage/one-time-password.png" alt-text="Screenshot of Microsoft Authenticator OTP.":::
 
 > [!NOTE]
-> If users register the Microsoft Authenticator App only for OTP code using the "**I want to use a different authenticator app**" wizard, it will be needed to enable **Third-party software OATH tokens** policy.
+> If users register Microsoft Authenticator only for OTP code using the **I want to use a different authenticator app** wizard, it will be needed to enable **Third-party software OATH tokens** policy.
+
 ### SMS and voice calls
 
 The legacy MFA policy has separate controls for **SMS** and **Phone calls**. But there's also a **Mobile phone** control that enables mobile phones for both SMS and voice calls. And another control for **Office phone** enables an office phone only for voice call.
