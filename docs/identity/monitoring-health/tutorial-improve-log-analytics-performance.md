@@ -24,10 +24,14 @@ In this tutorial, you learn how to:
 > * Create an Azure function to connect the event hub with the Log Analytics table
 > * Remove Conditional Access policies from the logs
 
+Sign-in and audit logs can generate a large amount of data, so if you're integrating the logs with Log Analytics for analysis, you might want to exclude some unnecessary logs to improve the performance of your analysis tools.
+
 ## Prerequisites
 
 To complete the steps in this tutorial, you need the following roles and requirements:
 
+- A working Microsoft Entra tenant with Microsoft Entra ID P1 or trial licenses enabled.
+  - If you need to, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health)
 
 - [Access to create a Log Analytics workspace](/azure/azure-monitor/logs/manage-access)
@@ -43,3 +47,7 @@ To complete the steps in this tutorial, you need the following roles and require
   - Security Reader
   - Global Reader
   - Security Administrator
+
+If you haven't already created a Log Analtyics workspace and a custom workbook, complete the [Configure Log Analytics workspace](tutorial-configure-log-analytics-workspace.md) and [Create a Log Analytics workbook](tutorial-create-log-analytics-workbook.md) tutorials.
+
+## 
