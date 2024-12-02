@@ -53,17 +53,6 @@ If you don’t want your users to receive MFA text messages through WhatsApp, yo
 
 ---
 
-### Public Preview - bring your own 3rd party email OTP provider for Microsoft Entra External ID
-
-**Type:** New feature    
-**Service category:** B2C - Consumer Identity Management    
-**Product capability:** 3rd Party Integration    
-
-Bring your own favorite email provider for email OTPs of sign-in and sign-up flows to Microsoft Entra External ID. You can use Azure Communication Service (ACS), or true 3rd party of choice making your authentication experiences consistently branded.
-
-
----
-
 ### Public Preview - Updating profile photo in MyAccount
 
 **Type:** New feature    
@@ -83,50 +72,6 @@ In some environments, it’s necessary to prevent users from making this change.
 **Product capability:** Identity Security & Protection    
 
 Microsoft Entra multifactor authentication (MFA) [fraud alert](../identity/authentication/howto-mfa-mfasettings.md#fraud-alert) allows end users to report MFA voice calls, and Microsoft Authenticator push requests, they didn't initiate as fraudulent. Beginning March 1, 2025, MFA Fraud Alert will be retired in favor of the replacement feature [Report Suspicious Activity](../identity/authentication/howto-mfa-mfasettings.md#report-suspicious-activity) which allows end users to report fraudulent requests, and is also integrated with [Identity Protection](../id-protection/overview-identity-protection.md) for more comprehensive coverage and remediation. To ensure users can continue reporting fraudulent MFA requests, organizations should migrate to using Report Suspicious Activity, and review how reported activity is remediated based on their Microsoft Entra licensing. For more information, see: [Configure Microsoft Entra multifactor authentication settings](../identity/authentication/howto-mfa-mfasettings.md).
-
----
-
-### Public Preview - Universal CAE
-
-**Type:** New feature    
-**Service category:** Other    
-**Product capability:** Network Access    
-
-Universal CAE revokes, and revalidates, network access in near real-time whenever Microsoft Entra ID detects changes to the identity. For more information, see: [Universal Continuous Access Evaluation (Preview)](../global-secure-access/concept-universal-continuous-access-evaluation.md).
-
----
-
-### Change Announcement - Updates to “Target resources” in Microsoft Entra Conditional Access
-
-**Type:** Changed feature    
-**Service category:** Conditional Access    
-**Product capability:** Identity Security & Protection    
-
-The Microsoft Entra Conditional Access '*Target resources*' assignment has a consolidated view for the "*Cloud apps*", and "*Global Secure Access*" options under a new name "*Resources*".
-
-Customers can now target "All internet resources with Global Secure Access", "All resources (formerly 'all cloud apps'), or select specific resources (formerly "select apps"). For more information, see: [Conditional Access: Target resources](../identity/conditional-access/concept-conditional-access-cloud-apps.md).
-
----
-
-### General Availability - Dedicated new 1p resource application to enable AD to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
-
-**Type:** Changed feature    
-**Service category:** Provisioning    
-**Product capability:** Directory    
-
-As part of ongoing security hardening, Microsoft will deploy a dedicated 1st party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application, called the "Microsoft Entra AD Synchronization Service" (Application Id: 6bf85cfa-ac8a-4be5-b5de-425a0d0dc016) will be provisioned in customer tenants using Microsoft Entra Connect Sync, or Microsoft Entra Cloud Sync service.
-
-In the upcoming release(s), you will receive communications around deprecation of the current 1st party app that’s used for syncing between Active Directory and Microsoft Entra ID that would require you to update to the latest version of either Microsoft Entra Connect Sync, or Microsoft Entra Cloud Sync.
-
----
-
-### General Availability - Dynamic Administrative Units
-
-**Type:** New feature    
-**Service category:** RBAC    
-**Product capability:** AuthZ/Access Delegation    
-
-Dynamic membership for users and devices in Administrative Units is now Generally Available.  Instead of manually assigning users and devices to administrative units, tenant admins can set up a query for the administrative unit.  The membership will be automatically maintained by Microsoft Entra ID. For more information, see: [Manage users or devices for an administrative unit with rules for dynamic membership groups](../identity/role-based-access-control/admin-units-members-dynamic.md).
 
 ---
 
