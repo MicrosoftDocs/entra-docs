@@ -26,7 +26,7 @@ This article describes how to configure a Microsoft Entra application to trust a
 - [A user-assigned managed identity](/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity) assigned to the Azure compute resource (e.g., VM or App Service) that hosts your workload.
 - An [app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID. This app registration must belong to the same tenant as the managed identity.
     - If you need to access resources in another tenant, your app registration must be a multitenant application and provision the app into the other tenant. Additionally, you must grant the app access permissions on the resources in that tenant. Learn about [how to add a multitenant app in other tenants](/entra/identity/enterprise-apps/grant-admin-consent)
-- The app registration must have access granted to Entra protected resources (e.g., Azure, Microsoft Graph, Microsoft 365, etc.). This access can be granted through [API permissions](~/identity-platform/quickstart-configure-app-access-api.md) or [delegated permissions](~/identity-platform/quickstart-configure-app-access-api.md#delegated-permissions).
+- The app registration must have access granted to Entra protected resources (e.g., Azure, Microsoft Graph, Microsoft 365, etc.). This access can be granted through [API permissions](../identity-platform/quickstart-configure-app-access-web-apis.md#add-permissions-to-access-microsoft-graph) or [delegated permissions](../identity-platform/quickstart-configure-app-access-web-apis.md#delegated-permission-to-microsoft-graph).
 
 ## Important considerations and restrictions
 
