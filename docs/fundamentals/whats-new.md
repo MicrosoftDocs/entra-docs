@@ -8,7 +8,7 @@ featureFlags:
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: whats-new
+ms.topic: reference
 ms.date: 09/19/2024
 ms.author: owinfrey
 ms.reviewer: dhanyahk
