@@ -5,7 +5,7 @@ description: In this tutorial, you learn how to configure custom banned password
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 09/14/2023
+ms.date: 12/02/2024
 
 ms.author: justinha
 author: justinha
