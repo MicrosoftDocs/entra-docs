@@ -116,5 +116,5 @@ To run the test application, follow these steps:
 
 ### Related content
 
-•	[Add sign-in with Microsoft to an ASP.NET web app](./identity-platform/quickstart-v2-aspnet-webapp.md)
+•	[Add sign-in with Microsoft to an ASP.NET web app](/entra/identity-platform/quickstart-v2-aspnet-webapp.md)
 •	[Visual Studio Code extension for Microsoft Entra External ID](visual-studio-code-extension.md)
