@@ -53,6 +53,19 @@ Once the API is registered, you can configure its permission by defining the sco
 
 #### [ASP.NET](#tab/aspnet-workforce)
 
+1. Under **Manage**, select **Expose an API** > **Add a scope**. Accept the proposed Application ID URI (`api://{clientId}`) by selecting **Save and continue**, and then enter the following information:
+
+    1. For **Scope name**, enter `access_as_user`.
+    1. For **Who can consent**, ensure that the **Admins and users** option is selected.
+    1. In the **Admin consent display name** box, enter `Access TodoListService as a user`.
+    1. In the **Admin consent description** box, enter `Accesses the TodoListService web API as a user`.
+    1. In the **User consent display name** box, enter `Access TodoListService as a user`.
+    1. In the **User consent description** box, enter `Accesses the TodoListService web API as a user`.
+    1. For **State**, keep **Enabled**.
+1. Select **Add scope**.
+
+#### [ASP.NET CORE](#tab/aspnet-core-workforce)
+
 1. Under **Manage**, select **Expose an API > Add a scope**. Accept the proposed **Application ID URI** `(api://{clientId})` by selecting **Save and continue**. The `{clientId}` is the value recorded from the **Overview** page. Then enter the following information:
     1. For **Scope name**, enter `Forecast.Read`.
     1. For **Who can consent**, ensure that the **Admins and users** option is selected.
@@ -64,19 +77,6 @@ Once the API is registered, you can configure its permission by defining the sco
 1. Select **Add scope**. If the scope has been entered correctly, it's listed in the **Expose an API** pane.
 
     :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
-
-#### [ASP.NET CORE](#tab/aspnet-core-workforce)
-
-1. Under **Manage**, select **Expose an API** > **Add a scope**. Accept the proposed Application ID URI (`api://{clientId}`) by selecting **Save and continue**, and then enter the following information:
-
-    1. For **Scope name**, enter `access_as_user`.
-    1. For **Who can consent**, ensure that the **Admins and users** option is selected.
-    1. In the **Admin consent display name** box, enter `Access TodoListService as a user`.
-    1. In the **Admin consent description** box, enter `Accesses the TodoListService web API as a user`.
-    1. In the **User consent display name** box, enter `Access TodoListService as a user`.
-    1. In the **User consent description** box, enter `Accesses the TodoListService web API as a user`.
-    1. For **State**, keep **Enabled**.
-1. Select **Add scope**.
 
 ---
 
