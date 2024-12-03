@@ -230,7 +230,7 @@ internal class Program
 
 ### Microsoft.Identity.Web
 
-In **Microsoft.Identity.Web**, a web application or web API can replace the client certificate with a signed client assertion for authentication. Below is an example of how this configuration can be represented in the appsettings.json file:
+In **Microsoft.Identity.Web**, a web application or web API can replace the client certificate with a signed client assertion for authentication. Below is an example of how this configuration can be represented in *appsettings.json*:
 
 ``` JSON
 {
@@ -255,7 +255,7 @@ In **Microsoft.Identity.Web**, a web application or web API can replace the clie
 > [!WARNING]
 > For .NET apps, we strongly advise to use higher-level libraries that are based on MSAL, such as Microsoft.Identity.Web or Azure.Identity.
 
-In **MSAL**, you can leverage the [ManagedClientApplication](https://learn.microsoft.com/en-us/entra/msal/dotnet/advanced/managed-identity) class to acquire a Managed Identity token. This token can then be used as a client assertion when constructing a confidential client application.
+In **MSAL**, you can leverage the [ManagedClientApplication](/entra/msal/dotnet/advanced/managed-identity) class to acquire a Managed Identity token. This token can then be used as a client assertion when constructing a confidential client application.
 
 ``` csharp
 using Microsoft.Identity.Client;
@@ -546,7 +546,7 @@ The example below demonstrates how to connect to an Azure KeyVault, but can be a
 
 ### Azure Identity library for Java
 
-You can use [azure-identity](https://mvnrepository.com/artifact/com.azure/azure-identity) to obtain the [ManagedIdentityCredential](https://learn.microsoft.com/en-us/java/api/com.azure.identity.managedidentitycredential) and [TokenCredential](https://learn.microsoft.com/en-us/java/api/com.azure.core.credential.tokencredential), which in turn can be combined to form a client assertion. If you're using Maven, your pom.xml should include these two dependencies:
+You can use [azure-identity](https://mvnrepository.com/artifact/com.azure/azure-identity) to obtain the [ManagedIdentityCredential](/java/api/com.azure.identity.managedidentitycredential) and [TokenCredential](/java/api/com.azure.core.credential.tokencredential), which in turn can be combined to form a client assertion. If you're using Maven, your pom.xml should include these two dependencies:
 
 ```xml
 <dependencies>
@@ -793,7 +793,7 @@ func main() {
 >
 > We strongly advise customers to use higher-level libraries, like [Azure client SDKs](https://azure.microsoft.com/downloads/), where possible.
 
-To use MSAL for go, install the [confidential](https://learn.microsoft.com/en-us/entra/msal/go/packages/confidential/) package or the [MSAL for Go](https://github.com/AzureAD/microsoft-authentication-library-for-go) library:
+To use MSAL for Go, install the [confidential](/entra/msal/go/packages/confidential/) package or the [MSAL for Go](https://github.com/AzureAD/microsoft-authentication-library-for-go) library:
 
 ```bash
 go get -u github.com/AzureAD/microsoft-authentication-library-for-go/
