@@ -6,7 +6,7 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date: 01/07/2024
 ms.author: mimart
@@ -56,6 +56,8 @@ You can offer your customers the ability to sign in with their existing social o
 To allow your customers to sign up and sign in using their social accounts, you can navigate to **External Identities** > **All identity providers** in the admin center. You can find the exact steps for adding Google and Facebook as identity providers in the following links for [Google](how-to-google-federation-customers.md) and for [Facebook](how-to-facebook-federation-customers.md). 
 
 To try out this feature, go to the Woodgrove Groceries demo and start the “[Sign-in with social accounts](https://woodgrovedemo.com/#usecase=Social)” use case.
+
+<!--Ask PM about custom OIDC.-->
 
 ### Sign-up with a one-time passcode
 

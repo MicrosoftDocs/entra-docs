@@ -110,8 +110,6 @@ The following steps show you how the consent experience works for the applicatio
 
     d. Click On **Microsoft Graph**.
 
-    ![Screenshot that shows the "Request A P I permissions" page with the "Microsoft A P I" tab and "Microsoft Graph" tile selected.](./media/openidoauth-tutorial/microsoft-graph.png)
-
     e. Select required options from **Delegated permissions** and **Application Permissions**.
 
     ![Graph API](./media/openidoauth-tutorial/graphapi.png)
@@ -132,9 +130,7 @@ A regular user can consent to some permissions. Other permissions require a tena
 
 ## Difference between admin consent and user consent
 
-As an administrator, you can also consent to an application's delegated permissions on behalf of all the users in your tenant. Administrative consent prevents the consent dialog box from appearing for every user in the tenant. Users who have the administrator role can provide consent. From the **Settings** page for your application, select **Required Permissions** > **Grant admin consent**.
-
-![Grant Permissions button](./media/openidoauth-tutorial/grantpermission.png)
+As an administrator, you can also consent to an application's delegated permissions on behalf of all the users in your tenant. Administrative consent prevents the consent dialog box from appearing for every user in the tenant. Users who have the administrator role can provide consent. Select **Manage** > **API permissions**. Under **Grant consent**, select **Grant admin consent for**.
 
 > [!NOTE]
 > Granting explicit consent by using the **Grant admin consent** button is now required for single-page applications (SPAs) that use MSAL.js. Otherwise, the application fails when the access token is requested.

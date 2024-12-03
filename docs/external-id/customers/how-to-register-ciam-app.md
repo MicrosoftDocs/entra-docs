@@ -5,7 +5,7 @@ author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 10/07/2024
 ms.custom: it-pro, seo-july-2024

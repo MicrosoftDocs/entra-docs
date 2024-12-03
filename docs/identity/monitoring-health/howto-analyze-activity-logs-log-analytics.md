@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/02/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -29,7 +29,7 @@ This article describes to analyze the Microsoft Entra activity logs in your Log 
 
 To analyze activity logs with Log Analytics, you need:
 
-* A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
+* A working Microsoft Entra tenant with a Microsoft Entra ID P1 or P2 license associated with it.
 * A Log Analytics workspace *and* access to that workspace
 * The appropriate roles for Azure Monitor *and* Microsoft Entra ID
 
@@ -99,6 +99,13 @@ SigninLogs
 | where CreatedDateTime >= ago(7d)
 | summarize signInCount = count() by AppDisplayName
 | sort by signInCount desc 
+```
+
+To find risky sign-in events, use the following query:
+
+```kusto
+SigninLogs
+| where RiskState contains "atRisk"
 ```
 
 To get the top audit events over the last week, use the following query:

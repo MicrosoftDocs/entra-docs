@@ -157,11 +157,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 5. Click on the **Microsoft Entra SSO** and select **Team settings** from the dropdown.
 
-	![Screenshot that shows the "Microsoft Entra S S O" drop-down with "Team settings" selected.](./media/nuclino-tutorial/team-settings.png)
-
 6. Select **Authentication** from left navigation pane.
-
-	![Screenshot that shows "Authentication" selected.](./media/nuclino-tutorial/authentication.png)
 
 7. In the **Authentication** section, perform the following steps:
 

@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 
 ms.service: identity-platform
-ms.topic: how-to
+ms.topic: reference
 ms.workload: identity
 ms.date: 03/19/2024
 ms.author: owenrichards

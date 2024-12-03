@@ -7,7 +7,7 @@ ms.author: cmulligan
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 05/15/2024
 ms.custom: it-pro

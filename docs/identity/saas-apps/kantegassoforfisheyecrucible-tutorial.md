@@ -152,9 +152,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "Installed and ready to go" dialog and the "Close" button selected.](./media/kantegassoforfisheyecrucible-tutorial/installation.png)
 
-1.	Click **Manage**.
-
-	![Screenshot that shows the "Kantega S S O for Crucible S A M L & Kerberos" app page and the "Manage" button selected.](./media/kantegassoforfisheyecrucible-tutorial/integration.png)
+1. In the **Kantega SSO for Crucible SAML & Kerberos** page, select **Manage**.
 
 1. Click **Configure** to configure the new plugin.	
 
@@ -162,11 +160,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In the **SAML** section. Select **Microsoft Entra ID** from the **Add identity provider** dropdown.
 
-	![Screenshot that shows the "Add-ons - Kantega Single Sign-on" page with the "Add identity provider" drop-down and "Microsoft Entra ID" selected.](./media/kantegassoforfisheyecrucible-tutorial/azure.png)
-
-1. Select subscription level as **Basic**.
-
-	![Screenshot that shows the "Preparing Microsoft Entra ID" section with "Basic" selected.](./media/kantegassoforfisheyecrucible-tutorial/subscription.png)
+1. In the **Kantega Single Sign-on** page, select **Basic**.
 
 1. On the **App properties** section, perform following steps:
 
@@ -176,13 +170,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	b. Click **Next**.
 
-1. On the **Metadata import** section, perform following steps:
+1. On the **Metadata import** section, select **Metadata file on my computer**.
 
-	![Screenshot that shows the "Metadata import" section with "Metadata file on my computer" selected.](./media/kantegassoforfisheyecrucible-tutorial/metadata.png)
-
-	a. Select **Metadata file on my computer**, and upload metadata file, which you have downloaded previously.
-
-	b. Click **Next**.
+1. Select **Browse file** to upload the metadata file that you previously downloaded, then select **Next**.
 
 1. On the **Name and SSO location** section, perform following steps:
 
@@ -206,11 +196,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click **Finish**.
 
-	![Screenshot that shows the "Summary" section with the "Finish" button selected.](./media/kantegassoforfisheyecrucible-tutorial/summary.png)
-
 1. On the **Known domains for Microsoft Entra ID** section, perform following steps:	
-
-	![Screenshot that shows the "Known domains for Microsoft Entra ID" section with the "Save" button selected.](./media/kantegassoforfisheyecrucible-tutorial/domain.png)
 
 	a. Select **Known domains** from the left panel of the page.
 
