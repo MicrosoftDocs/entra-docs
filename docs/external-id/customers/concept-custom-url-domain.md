@@ -52,7 +52,7 @@ Azure Front Door passes the user's original IP address, which is the IP address 
 > [!IMPORTANT]
 > If the client sends an `x-forwarded-for` header to Azure Front Door, External ID will use the originator's `x-forwarded-for` as the user's IP address for Conditional Access evaluation and the `{Context:IPAddress}` claims resolver.
 
-### Considerations and limitations
+## Considerations and limitations
 
 When using custom URL domains:
 
@@ -62,26 +62,26 @@ When using custom URL domains:
 
 > [!IMPORTANT]
 >
->- The connection from the browser to Azure Front Door should always use IPv4 instead of IPv6.
->- Custom URL domains don't currently support social identity providers. Users who want to sign up or sign in using a social identity provider will need to use the default endpoint, *&lt;tenant-name&gt;.ciamlogin.com*, instead of the custom URL domain endpoint.
+>- Azure Front Door: The connection from the browser to Azure Front Door should always use IPv4 instead of IPv6.
+>- Social identity providers: Custom URL domains support Apple. However, Google and Facebook are not currently supported. Users who want to sign up or sign in using Google or Facebook must use the default endpoint, *&lt;tenant-name&gt;.ciamlogin.com*, instead of the custom URL domain endpoint.
 
-### Blocking the default domain
+## Blocking the default domain
 
-After you configure custom URL domains, users will still be able to access the default domain name *&lt;tenant-name&gt;.ciamlogin.com*. You need to block access to the default domain so that attackers can't use it to access your apps or run distributed denial-of-service (DDoS) attacks. To block access to the default domain, [open a support ticket](~/fundamentals/how-to-get-support.md) and submit a request.
+For added security, we recommend blocking the default domain. After you configure custom URL domains, users will still be able to access the default domain name *&lt;tenant-name&gt;.ciamlogin.com*. You need to block access to the default domain so that attackers can't use it to access your apps or run distributed denial-of-service (DDoS) attacks. To block access to the default domain, [open a support ticket](~/fundamentals/how-to-get-support.md) and submit a request.
 
 > [!CAUTION]
 > Make sure your custom URL domain works properly before you submit a request to block the default domain.
 
-#### Feature impact and workarounds
+### Feature impact and workarounds
 
-Blocking the default domain will disable certain features that depend on it. However, you can maintain functionality by following the provided workaround steps. Configure the features outlined in this section with your custom URL domain to ensure they continue to work properly.
+Blocking the default domain will disable certain features that depend on it. However, you can maintain functionality for the features outlined in the following table by configuring them with your custom URL domain.
 
 |Feature  |Workaround  |
-|---------|---------|
+|---------|------------|
 |Run now                  | In the Microsoft Entra admin center, update the URL used by the "Run now" feature in the get started guide and the user flow pane with your custom URL domain. In the browser URL, replace `{your_domain}.ciamlogin.com` with your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
 |Get started samples      |Configure the samples in the get started guide with your custom URL domain. For detailed instructions, refer to the documentation for each sample. For example, see the “Use custom URL domain” section in the [Vanilla JavaScript single-page app tutorial](tutorial-single-page-app-vanillajs-configure-authentication.md).         |
-|Power Pages with External ID        |When using [External ID with your Power Pages site](https://learn.microsoft.com/en-us/power-pages/security/authentication/entra-external-id), update the site settings with your custom URL domain. In the Power Pages identity provider configuration page, replace `{your_domain}.ciamlogin.com` with your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
-|Azure App Service with External ID  |When using [External ID with Azure App Service]( https://learn.microsoft.com/en-us/azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration), edit the identity provider and change the Issuer URL field from `{your_domain}.ciamlogin.com` to your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
+|Power Pages with External ID        |When using [External ID with your Power Pages site](/power-pages/security/authentication/entra-external-id), update the site settings with your custom URL domain. In the Power Pages identity provider configuration page, replace `{your_domain}.ciamlogin.com` with your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
+|Azure App Service with External ID  |When using [External ID with Azure App Service](/app-service/scenario-secure-app-authentication-app-service), edit the identity provider and change the Issuer URL field from `{your_domain}.ciamlogin.com` to your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
 |Visual Studio Code Extension        |In the [Visual Studio Code extension](visual-studio-code-extension.md), add your custom URL domain to the application's MSAL configuration so the application and the “Run it now” feature work properly. Change the authority in the authconfig file from `{your_domain}.ciamlogin.com` to `{your_custom_URL_domain}/{your_tenant_ID}`, and add the known authorities with your custom URL domain.         |
 |Visual Studio with External ID      |In the appsettings.json file, add your custom URL domain followed by the tenant id, and add the known authorities with your custom URL domain.         |
 |GitHub samples                      |Certain samples, such as [OpenAI Chat Application with Microsoft Entra Authentication (Python)](https://github.com/Azure-Samples/openai-chat-app-entra-auth-builtin/blob/main/README.md), need your custom URL domain. When setting up the sample, set the AZURE_AUTH_LOGIN_ENDPOINT to your custom URL domain.         |
