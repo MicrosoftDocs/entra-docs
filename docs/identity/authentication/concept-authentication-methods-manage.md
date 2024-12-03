@@ -109,7 +109,7 @@ Tenants are set to either Pre-migration or Migration in Progress by default, dep
 - Registration of an authentication method can fail if many groups are included in the Authentication methods policy or a registration campaign. We recommend consolidating multiple groups into a single group for each authentication method. To maintain registration for users during consolidation, add the new group and remove current groups in the same operation. 
 
   >[!NOTE]
-  >You might not be able to save updates to the Authentication methods policy if it targets many group targets and the policy size exceeds 20 KB. While we work to increase the policy size limit, consolidate targeted group as much as possible. 
+  >You might not be able to save updates to the Authentication methods policy if it targets many groups and the policy size exceeds 20 KB. While we work to increase the policy size limit, consolidate targeted group as much as possible. 
 
 ## Next steps
 
