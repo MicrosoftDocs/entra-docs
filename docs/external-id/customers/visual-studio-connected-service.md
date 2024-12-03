@@ -3,8 +3,7 @@ title: Get Started with the Microsoft identity platform Visual Studio Connected 
 description: Learn how to use Visual Studio Connected services to integrate Microsoft Entra ID into your applications right from your development environment.
 author: Dickson-Mwendia
 manager: celestedg
-ms.service: entra-external-id
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 12/03/2024
 ms.author: dmwendia
@@ -116,5 +115,5 @@ To run the test application, follow these steps:
 
 ### Related content
 
-•	[Add sign-in with Microsoft to an ASP.NET web app](/entra/identity-platform/quickstart-v2-aspnet-webapp.md)
-•	[Visual Studio Code extension for Microsoft Entra External ID](visual-studio-code-extension.md)
+*	[Add sign-in with Microsoft to an ASP.NET web app](~/identity-platform/quickstart-v2-aspnet-webapp.md)
+*	[Visual Studio Code extension for Microsoft Entra External ID](visual-studio-code-extension.md)
