@@ -5,7 +5,7 @@ description: Learn about the authentication methods policy and different ways to
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/04/2024
+ms.date: 12/03/2024
 
 ms.author: justinha
 author: justinha
@@ -107,6 +107,9 @@ Tenants are set to either Pre-migration or Migration in Progress by default, dep
 ## Known issues and limitations
 - In recent updates, we removed the ability to target individual users. Previously targeted users will remain in the policy, but we recommend moving them to a targeted group.
 - Registration of an authentication method can fail if many groups are included in the Authentication methods policy or a registration campaign. We recommend consolidating multiple groups into a single group for each authentication method. To maintain registration for users during consolidation, add the new group and remove current groups in the same operation. 
+
+  >[!NOTE]
+  >You might not be able to save updates to the Authentication methods policy if it targets many group targets and the policy size exceeds 20 KB. While we work to increase the polcy size limit, consolidate targeted group as much as possible. 
 
 ## Next steps
 
