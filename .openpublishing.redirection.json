@@ -541,6 +541,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-api-aspnet-protect-api.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-api-aspnet-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-api-aspnet-core-protect-api.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-api-aspnet-sign-in",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/quickstart-desktop-app-wpf-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-desktop-app-sign-in",
       "redirect_document_id": false
