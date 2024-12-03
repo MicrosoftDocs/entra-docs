@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 11/19/2024
+ms.date: 12/03/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -31,11 +31,11 @@ Using a verified custom URL domain has several benefits:
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomDomain)
 >
-> To try out this feature, go to the Woodgrove Groceries demo and start the "Custom domain name” use case.
+> To try out this feature, go to the Woodgrove Groceries demo and start the "custom URL domain name” use case.
 
 ## How a custom URL domain works
 
-A custom URL domain lets you use your verified custom domain names as your applications' sign-in authentication endpoints. When you add a new custom domain name, you can associate it with a custom URL domain. Then a reverse proxy service, such as [Azure Front Door](https://azure.microsoft.com/services/frontdoor/), can use the custom URL domain to direct sign-ins to your application.
+A custom URL domain lets you use your verified custom URL domain names as your applications' sign-in authentication endpoints. When you add a new custom URL domain name, you can associate it with a custom URL domain. Then a reverse proxy service, such as [Azure Front Door](https://azure.microsoft.com/services/frontdoor/), can use the custom URL domain to direct sign-ins to your application.
 
 The following diagram illustrates Azure Front Door integration:
 
@@ -56,7 +56,7 @@ Azure Front Door passes the user's original IP address, which is the IP address 
 
 When using custom URL domains:
 
-- You can set up multiple custom domains. For the maximum number of supported custom domains, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md) for Microsoft Entra, and [Azure subscription and service limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-front-door-classic-limits) for Azure Front Door.
+- You can set up multiple custom URL domains. For the maximum number of supported custom URL domains, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md) for Microsoft Entra, and [Azure subscription and service limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-front-door-classic-limits) for Azure Front Door.
 - You can use Azure Front Door, which is a separate Azure service that incurs extra charges. For more information, see [Front Door pricing](https://azure.microsoft.com/pricing/details/frontdoor). Your Azure Front Door instance can be hosted in a different subscription than your external tenant.
 - If you have multiple applications, migrate them all to the custom URL domain because the browser stores the session under the domain name currently being used.
 
@@ -67,17 +67,25 @@ When using custom URL domains:
 
 ### Blocking the default domain
 
-After you configure custom URL domains, users will still be able to access the default domain name *&lt;tenant-name&gt;.ciamlogin.com*. You need to block access to the default domain so that attackers can't use it to access your apps or run distributed denial-of-service (DDoS) attacks. Submit a support ticket to request the blocking of access to the default domain.
+After you configure custom URL domains, users will still be able to access the default domain name *&lt;tenant-name&gt;.ciamlogin.com*. You need to block access to the default domain so that attackers can't use it to access your apps or run distributed denial-of-service (DDoS) attacks. To block access to the default domain, [open a support ticket](~/fundamentals/how-to-get-support.md) and submit a request.
 
 > [!CAUTION]
-> Make sure your custom domain works properly before you request that the default domain be blocked. After the default domain is blocked, the following features will no longer work:
->
->- The "Run now" feature in the user flow pane and in the getting started experience
->- PowerApp pages and Azure App Services
->- In the Visual Studio Code extension, running MSAL samples on the default domain
->- Azure Function Apps and Azure App Services with External ID
->- Visual Studio with External ID
->- Some samples, such as [OpenAI Chat Application with Microsoft Entra Authentication (Python)](https://github.com/Azure-Samples/openai-chat-app-entra-auth-builtin/blob/main/README.md)
+> Make sure your custom URL domain works properly before you submit a request to block the default domain.
+
+#### Feature impact and workarounds
+
+Blocking the default domain will disable certain features that depend on it. However, you can maintain functionality by following the provided workaround steps. Configure the features outlined in this section with your custom URL domain to ensure they continue to work properly.
+
+|Feature  |Workaround  |
+|---------|---------|
+|Run now                  | In the Microsoft Entra admin center, update the URL used by the "Run now" feature in the get started guide and the user flow pane with your custom URL domain. In the browser URL, replace `{your_domain}.ciamlogin.com` with your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
+|Get started samples      |Configure the samples in the get started guide with your custom URL domain. For detailed instructions, refer to the documentation for each sample. For example, see the “Use custom URL domain” section in the [Vanilla JavaScript single-page app tutorial](tutorial-single-page-app-vanillajs-configure-authentication.md).         |
+|Power Pages with External ID        |When using [External ID with your Power Pages site](https://learn.microsoft.com/en-us/power-pages/security/authentication/entra-external-id), update the site settings with your custom URL domain. In the Power Pages identity provider configuration page, replace `{your_domain}.ciamlogin.com` with your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
+|Azure App Service with External ID  |When using [External ID with Azure App Service]( https://learn.microsoft.com/en-us/azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration), edit the identity provider and change the Issuer URL field from `{your_domain}.ciamlogin.com` to your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
+|Visual Studio Code Extension        |In the [Visual Studio Code extension](visual-studio-code-extension.md), add your custom URL domain to the application's MSAL configuration so the application and the “Run it now” feature work properly. Change the authority in the authconfig file from `{your_domain}.ciamlogin.com` to `{your_custom_URL_domain}/{your_tenant_ID}`, and add the known authorities with your custom URL domain.         |
+|Visual Studio with External ID      |In the appsettings.json file, add your custom URL domain followed by the tenant id, and add the known authorities with your custom URL domain.         |
+|GitHub samples                      |Certain samples, such as [OpenAI Chat Application with Microsoft Entra Authentication (Python)](https://github.com/Azure-Samples/openai-chat-app-entra-auth-builtin/blob/main/README.md), need your custom URL domain. When setting up the sample, set the AZURE_AUTH_LOGIN_ENDPOINT to your custom URL domain.         |
+
 
 ## Next steps
 
