@@ -233,5 +233,5 @@ By following these steps, you can securely open your Azure Log Analytics workspa
 
 ## Next steps
 
-[Understand the Microsoft Entra private network connector](concept-connectors.md)
-[Learn about Microsoft Entra Private Access](concept-private-access.md)
+- [Understand the Microsoft Entra private network connector](concept-connectors.md)
+- [Learn about Microsoft Entra Private Access](concept-private-access.md)
