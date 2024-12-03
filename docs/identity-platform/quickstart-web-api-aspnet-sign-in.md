@@ -1,11 +1,11 @@
 ---
-title: "Quickstart: Sign in users and call a web API that is protected by the Microsoft identity platform"
+title: "Quickstart: Call a web API that is protected by the Microsoft identity platform"
 description: In this quickstart, you download and modify a code sample that demonstrates how to protect an ASP.NE web API by using the Microsoft identity platform for authorization.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api, 
-ms.date: 12/03/2024
+ms.date: 01/31/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -13,7 +13,7 @@ ms.topic: quickstart
 #Customer intent: As an application developer, I want to know how to write an ASP.NET web API that uses the Microsoft identity platform to authorize API requests from clients.
 ---
 
-# Quickstart: Sign in users in a sample web API
+# Quickstart: Call a web API that is protected by the Microsoft identity platform
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-workforce-only.md)]
 
