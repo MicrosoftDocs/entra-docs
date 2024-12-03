@@ -35,7 +35,7 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Select **Manage**.
  4. Select **Download provisioning agent**
- 5. On the right, click **Accept terms and download**.
+ 5. On the right, select **Accept terms and download**.
  6. For the purposes of these instructions, the agent was downloaded to the C:\temp folder.
  7. Install ProvisioningAgent in quiet mode.
        ```
@@ -89,10 +89,10 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
  16. Go to the Microsoft Entra admin center to create the cloud sync configuration.
 
 ## Provisioning agent gMSA PowerShell cmdlets
-Now that you've installed the agent, you can apply more granular permissions to the gMSA. For information and step-by-step instructions on how to configure the permissions, see [Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md).
+After you've installed the agent, you can apply more granular permissions to the gMSA. For information and step-by-step instructions on how to configure the permissions, see [Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md).
 
 ## Installing against US government cloud
-By default, the Microsoft Entra provisioning agent installs against the default Azure cloud environment.  If you are installing the agent for use in the US government cloud do the following:
+By default, the Microsoft Entra provisioning agent installs against the default Azure cloud environment.  If you're installing the agent for use in the US government cloud, do the following:
 
 - In step #8, add **ENVIRONMENTNAME=AzureUSGovernment** to the command line like the example.
     ```
