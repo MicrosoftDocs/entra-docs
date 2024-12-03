@@ -188,3 +188,103 @@ Configure your TodoListClient project by adding the Application ID to the *app.c
 
 ## Run the sample application
 
+#### [ASP.NET](#tab/aspnet-workforce)
+
+Start both projects. For Visual Studio users;
+
+1. Right click on the Visual Studio solution and select **Properties**
+
+1. In the **Common Properties** select **Startup Project** and then **Multiple startup projects**. 
+
+1. For both projects choose **Start** as the action
+
+1. Ensure the TodoListService service starts first by moving it to the first position in the list, using the up arrow.
+
+Sign in to run your TodoListClient project.
+
+1. Press F5 to start the projects. The service page opens, as well as the desktop application.
+
+1. In the TodoListClient, at the upper right, select **Sign in**, and then sign in with the same credentials you used to register your application, or sign in as a user in the same directory.
+
+   If you're signing in for the first time, you might be prompted to consent to the TodoListService web API.
+
+   To help you access the TodoListService web API and manipulate the *To-Do* list, the sign-in also requests an access token to the *access_as_user* scope.
+
+## Pre-authorize your client application
+
+You can allow users from other directories to access your web API by pre-authorizing the client application to access your web API. You do this by adding the Application ID from the client app to the list of pre-authorized applications for your web API. By adding a pre-authorized client, you're allowing users to access your web API without having to provide consent.
+
+1. In the **App registrations** portal, open the properties of your TodoListService app.
+1. In the **Expose an API** section, under **Authorized client applications**, select **Add a client application**.
+1. In the **Client ID** box, paste the Application ID of the TodoListClient app.
+1. In the **Authorized scopes** section, select the scope for the `api://<Application ID>/access_as_user` web API.
+1. Select **Add application**.
+
+### Run your project
+
+1. Press <kbd>F5</kbd> to run your project. Your TodoListClient app opens.
+1. At the upper right, select **Sign in**, and then sign in by using a personal Microsoft account, such as a *live.com* or *hotmail.com* account, or a work or school account.
+
+## Optional: Limit sign-in access to certain users
+
+By default, any personal accounts, such as *outlook.com* or *live.com* accounts, or work or school accounts from organizations that are integrated with Microsoft Entra ID can request tokens and access your web API.
+
+To specify who can sign in to your application, by changing the `TenantId` property in the *appsettings.json* file.
+
+#### [ASP.NET CORE](#tab/aspnet-core-workforce)
+
+1. Execute the following command to start the app:
+
+   ```bash
+   dotnet run
+   ```
+
+1. An output like the following sample appears:
+
+   ```bash
+   ...
+   info: Microsoft.Hosting.Lifetime[14]
+         Now listening on: http://localhost:{port}
+   ...
+   ```
+
+   Record the port number in the `http://localhost:{port}` URL.
+
+1. To verify the endpoint is protected, update the base URL in the following cURL command to match the one you received in the previous step, and then run the command:
+
+   ```bash
+   curl -X GET https://localhost:5001/weatherforecast -ki
+   ```
+
+   The expected response is 401 Unauthorized with output similar to:
+
+   ```bash
+   user@host:~$ curl -X GET https://localhost:5001/weatherforecast -ki
+   HTTP/2 401
+   date: Fri, 23 Sep 2023 23:34:24 GMT
+   server: Kestrel
+   www-authenticate: Bearer
+   content-length: 0
+   ```
+
+---
+
+## Next steps
+
+#### [ASP.NET](#tab/aspnet-workforce)
+
+Learn more by building a protected ASP.NET Core web api in the following tutorial series:
+
+> [!div class="nextstepaction"]
+> [Protected web API tutorial](tutorial-web-api-dotnet-register-app.md)
+
+
+#### [ASP.NET CORE](#tab/aspnet-core-workforce)
+
+Proceed to the next article to learn how to call the protected web API using cURL.
+
+> [!div class="nextstepaction"]
+> [How-to: Call an ASP.NET Core web API with cURL](howto-call-a-web-api-with-curl.md)
+
+---
+
