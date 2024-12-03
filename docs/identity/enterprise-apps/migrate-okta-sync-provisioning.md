@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 04/18/2024
+ms.date: 12/03/2024
 ms.author: gasinh
 ms.subservice: enterprise-apps
 ms.custom: kr2b-contr-experiment, not-enterprise-apps, has-azure-ad-ps-ref
@@ -44,7 +44,14 @@ To use Microsoft Entra Connect, you need to sign in with a Hybrid Identity Admin
 
 The ImmutableID attribute ties synchronized objects to their on-premises counterparts. Okta takes the Active Directory objectGUID of an on-premises object and converts it to a Base-64-encoded string. By default, it then stamps that string to the ImmutableID field in Microsoft Entra ID.
 
-You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run it in an administrative session before you run commands:
+You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run:
+
+ `Install-Module AzureAD` in an administrative session before you run the following commands:
+ 
+ ```Powershell
+ Import-Module AzureAD
+ Connect-MgGraph
+ ```
 
 If you have the module, a warning might appear to update to the latest version.
 
@@ -68,7 +75,6 @@ The following command gets on-premises Microsoft Entra users and exports a list 
 
 1. Run the following command in Microsoft Graph PowerShell on an on-premises domain controller:
 
-
    ```PowerShell
    Get-MgUser -Filter * -Properties objectGUID | Select-Object
    UserPrincipalName, Name, objectGUID, @{Name = 'ImmutableID';
@@ -77,8 +83,18 @@ The following command gets on-premises Microsoft Entra users and exports a list 
    } } | export-csv C:\Temp\OnPremIDs.csv
    ```
 
-2. Run a command in a Microsoft Graph PowerShell session to list the synchronized values.   
-3. After both exports, confirm user ImmutableID values match.
+2. Run the following command in a Microsoft Graph PowerShell session to list the synchronized values:
+
+   ```powershell
+   Get-MgUser -all $true | Where-Object {$_.dirsyncenabled -like
+   "true"} | Select-Object UserPrincipalName, @{Name = 'objectGUID';
+   Expression = {
+   [GUID][System.Convert]::FromBase64String($_.ImmutableID) } },
+   ImmutableID | export-csv C:\\temp\\AzureADSyncedIDS.csv
+   ```
+
+3. Run a command in a Microsoft Graph PowerShell session to list the synchronized values.
+4. After both exports, confirm user ImmutableID values match.
 
    >[!IMPORTANT]
    >If your ImmutableID values in the cloud don't match objectGUID values, you've modified the defaults for Okta sync. You've likely chosen another attribute to determine ImmutableID values. Before going the next section, identify which source attribute populates ImmutableID values. Before you disable Okta sync, update the attribute Okta is syncing.
