@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 04/18/2024
+ms.date: 12/03/2024
 ms.author: gasinh
 ms.subservice: enterprise-apps
 ms.custom: kr2b-contr-experiment, not-enterprise-apps, has-azure-ad-ps-ref
