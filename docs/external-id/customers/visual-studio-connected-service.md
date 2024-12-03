@@ -41,15 +41,15 @@ If you’re creating your app from an empty project template in Visual Studio or
 1.  Open the solutions explorer and select **Connected Services**.
 1.  When the Connected Services pane opens on Visual Studio, select **Add a service dependency** or use the + icon.
  
-    :image type="content" source="media/visual-studio-connected-service/add-service-dependency.png" alt-text="Screenshot showing the Connected Services pane on Visual Studio.":::
+    :::image type="content" source="media/visual-studio-connected-service/add-service-dependency.png" alt-text="Screenshot showing the Connected Services pane on Visual Studio.":::
 
 1.  From the dropdown list, select **Microsoft identity platform**. You can use the search tab if needed.
 
-    :image type="content" source="media/visual-studio-connected-service/microsoft-identity-platform-service-dependency.png" alt-text="Screenshot showing Microsoft identity platform and other service dependencies on Visual Studio.":::
+    :::image type="content" source="media/visual-studio-connected-service/microsoft-identity-platform-service-dependency.png" alt-text="Screenshot showing Microsoft identity platform and other service dependencies on Visual Studio.":::
 
 1.  Microsoft identity platform shows under service dependencies in the Connected Services pane, as shown:
  
-    :image type="content" source="media/visual-studio-connected-service/microsoft-identity-platform-connected.png" alt-text="Screenshot showing Microsoft identity platform successfully connected as a service dependency on Visual Studio.":::
+    :::image type="content" source="media/visual-studio-connected-service/microsoft-identity-platform-connected.png" alt-text="Screenshot showing Microsoft identity platform successfully connected as a service dependency on Visual Studio.":::
 
 ## Install required components
 
@@ -57,7 +57,7 @@ To use Microsoft identity platform in your project, you need to install the **do
 
 - If you haven’t installed the dotnet msidentity tool, Visual Studio prompts you to install it, as shown in the following screenshot.
  
-    :image type="content" source="media/visual-studio-connected-service/dotnet-msidentity-tool-installation-prompt.png" alt-text="Screenshot showing a Visual Studio prompt to install the dotnet msidentity tool":::
+    :::image type="content" source="media/visual-studio-connected-service/dotnet-msidentity-tool-installation-prompt.png" alt-text="Screenshot showing a Visual Studio prompt to install the dotnet msidentity tool":::
 
 - Alternatively, you can install the dotnet msidentity tool from your command line by running the following:
 
@@ -73,25 +73,25 @@ Microsoft Entra ID Visual Studio Connected Service allows you to configure appli
 
 1. In the top right section, sign in to your Microsoft account. If you have multiple accounts, select the account with the tenant where you’d like to register your application.
 
-    :image type="content" source="media/visual-studio-connected-service/configure-application-to-use-microsoft-identity-platform.png" alt-text="Screenshot showing the Visual Studio window where you configure the application to use Microsoft identity platform":::
+    :::image type="content" source="media/visual-studio-connected-service/configure-application-to-use-microsoft-identity-platform.png" alt-text="Screenshot showing the Visual Studio window where you configure the application to use Microsoft identity platform":::
 
 1. Once you're signed in, you see a list of applications registered in your tenant; with the application’s display name, client ID, and date created.
 1. If you haven’t already created an app registration in the Microsoft Entra admin center, select **Create new**. Choose the tenant where you’d like to create the application and provide a display name, such as sample-web-app and Select **Register**. You can change the application's display name later. 
 
-    :image type="content" source="media/visual-studio-connected-service/register-new-application.png" alt-text="Screenshot showing the Visual Studio window where you register a new application":::
+    :::image type="content" source="media/visual-studio-connected-service/register-new-application.png" alt-text="Screenshot showing the Visual Studio window where you register a new application":::
 
 1. The application you created now shows in the list. Select it and choose **Next.**
 
-    :image type="content" source="media/visual-studio-connected-service/app-registrations-list.png" alt-text="Screenshot showing a list of app registrations in your tenant":::
+    :::image type="content" source="media/visual-studio-connected-service/app-registrations-list.png" alt-text="Screenshot showing a list of app registrations in your tenant":::
 
 1. On the next screen, you can configure your app's permissions to access Microsoft Graph or other APIs. Select **Next** to complete the configuration later if you don't have the information yet.
 1. A screen with the summary of the changes being made to your project appears. Select **Finish** to complete the process.
 
-    :image type="content" source="media/visual-studio-connected-service/summary-of-changes-to-the-project.png" alt-text="Screenshot showing a list of the changes being made to your project":::
+    :::image type="content" source="media/visual-studio-connected-service/summary-of-changes-to-the-project.png" alt-text="Screenshot showing a list of the changes being made to your project":::
 
 1. A Dependency configuration progress screen showing the actual changes being in your project appears, as shown. Once successful, select **Close**.
 
-    :image type="content" source="media/visual-studio-connected-service/dependency-configuration-progress.png" alt-text="Screenshot showing the dependency configuration progress":::
+    :::image type="content" source="media/visual-studio-connected-service/dependency-configuration-progress.png" alt-text="Screenshot showing the dependency configuration progress":::
 
 ## [Optional]: Configure permissions to access a web API
 
@@ -99,7 +99,7 @@ The Visual Studio Connected Service for Microsoft Identity platform allows you t
 
 If you want to modify it, such as to add support for an API such as Microsoft Graph, select the three dots on the Microsoft identity platform service dependency, and then choose **Edit dependency**. You can repeat the steps and add the APIs that you want to grant access to.
 
-:image type="content" source="media/visual-studio-connected-service/configure-additional-api-permissions.png" alt-text="Screenshot showing the window that allows you to add permissions to access Microsoft Graph or any other web API":::
+:::image type="content" source="media/visual-studio-connected-service/configure-additional-api-permissions.png" alt-text="Screenshot showing the window that allows you to add permissions to access Microsoft Graph or any other web API":::
 
 ## Run and test the app
 
@@ -107,12 +107,12 @@ To run the test application, follow these steps:
 
 1. Navigate to Visual Studio’s top navigation bar and select **Debug > Start Without Debugging** to start building your application, as shown:
 
-    :image type="content" source="media/visual-studio-connected-service/build-sample-application.png" alt-text="Screenshot showing a sample application building on Visual Studio":::
+    :::image type="content" source="media/visual-studio-connected-service/build-sample-application.png" alt-text="Screenshot showing a sample application building on Visual Studio":::
 
 1. Once your build is complete, a new browser window opens at [https://localhost:7142](https://localhost:7142).
 1. Depending on what your application does, Microsoft Entra ID will redirect you to perform the required action. For our sample application, the app prompts you to complete the sign-up and sign-in process as shown:
 
-    :image type="content" source="media/visual-studio-connected-service/sample-app-running.png" alt-text="Screenshot showing a sample application integrated with Microsoft identity platform running on Visual Studio":::
+    :::image type="content" source="media/visual-studio-connected-service/sample-app-running.png" alt-text="Screenshot showing a sample application integrated with Microsoft identity platform running on Visual Studio":::
 
 ### Related content
 
