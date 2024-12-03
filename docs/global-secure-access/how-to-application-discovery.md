@@ -3,7 +3,7 @@ title: Configure Application Discovery (Preview)
 description: Configure Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/26/2024
+ms.date: 12/02/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -31,7 +31,7 @@ This article walks through the process of using Application discovery to detect 
 To view a list of all the application segments in Quick Access that users accessed via the Global Secure Access client in the last 30 days:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Application discovery**.
-:::image type="content" source="media/how-to-application-discovery/___.png" alt-text="Screenshot of Application discovery screen.":::
+:::image type="content" source="media/how-to-application-discovery/application-dicovery-default-view.png" alt-text="Screenshot of Application discovery screen.":::
 
 By default, the **Application discovery** view sorts the application segments in descending order according to the number of users. This default sort order moves the most heavily used application segments to the top of the list, making them more visible to the administrator.  
 
