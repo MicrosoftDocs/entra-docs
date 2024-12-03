@@ -34,7 +34,7 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Select **Manage**.
- 4. Click **Download provisioning agent**
+ 4. Select **Download provisioning agent**
  5. On the right, click **Accept terms and download**.
  6. For the purposes of these instructions, the agent was downloaded to the C:\temp folder.
  7. Install ProvisioningAgent in quiet mode.
