@@ -3,7 +3,7 @@ title: Export connector logs to the Log Analytics workspace
 description: Extract connector logs and send those logs to the Log Analytics workspace in the customer’s Azure subscription.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/26/2024
+ms.date: 12/03/2024
 ms.author: jfields
 author: jenniferf-skc
 manager: amycolannino
@@ -40,8 +40,9 @@ To enable verbose logging:
     - Right-click on the folder you created, then click **Properties**.  
     - Go to the **Security** tab and make sure the **Write** property is checked for **Allow**. If **Write** isn't checked, select **edit**. 
     - On the pop-up window, select **allow** for the **write** row, then click **apply**. 
-3. Right-click on a text editor application such as Notepad or Notepad++, select **Run as Administrator**, and open the file `MicrosoftEntraPrivateNetworkConnector.exe.config` to edit. 
-4. From this section, select the code from ```<system.diagnostics>``` to ```</system.diagnostrics>``` and add it to the `MicrosoftEntraPrivateNetworkConnector.exe.config` file.
+3. Right-click on a text editor application such as Notepad or Notepad++, and select **Run as Administrator**.
+4. Open the file `MicrosoftEntraPrivateNetworkConnector.exe.config` to edit. 
+5. From the following section, select the code from ```<system.diagnostics>``` to ```</system.diagnostrics>``` and add it to the `MicrosoftEntraPrivateNetworkConnector.exe.config` file.
 
 
 ``` json
@@ -99,7 +100,7 @@ Next, you need to Stop and Start the Connector service for the above changes to 
     - Add a single server > click on **Generate Script**.
     - Fill in the information, then click **Download and Run Script**.
 2.	Install the Azure Arc Agent on the on-premises connector machine:
-    - Download the Azure Arc agent setup script from the Azure portal or Microsoft documentation.
+    - Download the Azure Arc agent setup script from the Azure portal.
     - Search for **Windows PowerShell ISE** in the search box on the Task bar. Right click on the application, then click **Run as administrator**.  
     From PowerShell, open the downloaded file labeled `OnboardingScript.ps1`. 
     - Run the script. 
@@ -182,10 +183,10 @@ Here are the steps to provide access to an external user:
 
 1.	**Azure Subscription**: Ensure you have an active Azure subscription.
 2.	**Log Analytics Workspace**: An existing Log Analytics workspace that you want to share.
-3.	**Azure AD Guest User**: The external user must be added as a guest user in your Azure Active Directory (AD).
+3.	**Microsoft Entra ID Guest User**: The external user must be added as a guest user in your Microsoft Entra ID.
 
-### Add external user as a guest in Azure Active Directory (AD)
-1.	Navigate to Azure AD:
+### Add external user as a guest in Microsoft Entra ID
+1.	Navigate to Microsoft Entra ID:
 	- Go to the [Azure portal](https://portal.azure.com/).
 	- In the search bar, type **Microsoft Entra ID**, then select it.
 2.	Add a New Guest User:
