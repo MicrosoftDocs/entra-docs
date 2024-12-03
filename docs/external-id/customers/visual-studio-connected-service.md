@@ -22,7 +22,7 @@ Integrating identity management solutions into your organizational and customer-
 
 - [**Visual Studio 2022**](https://visualstudio.microsoft.com/downloads/) with the ASP.NET and web development workload installed.
 - A **Microsoft Entra tenant** (workforce or external). If you don’t have one, choose from the following methods:
-  - [Create a new tenant](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-create-external-tenant-portal) in the Microsoft Entra admin center.
+  - [Create a new tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
   - Use an Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/free/).
 - The account you use must have permissions to manage applications in your tenant. Any of the following Microsoft Entra roles have the required permissions:
   - Application Administrator
@@ -99,7 +99,7 @@ The Visual Studio Connected Service for Microsoft Identity platform allows you t
 
 If you want to modify it, such as to add support for an API such as Microsoft Graph, select the three dots on the Microsoft identity platform service dependency, and then choose **Edit dependency**. You can repeat the steps and add the APIs that you want to grant access to.
 
-    :image type="content" source="media/visual-studio-connected-service/configure-additional-api-permissions.png" alt-text="Screenshot showing the window that allows you to add permissions to access Microsoft Graph or any other web API":::
+:image type="content" source="media/visual-studio-connected-service/configure-additional-api-permissions.png" alt-text="Screenshot showing the window that allows you to add permissions to access Microsoft Graph or any other web API":::
 
 ## Run and test the app
 
@@ -116,5 +116,5 @@ To run the test application, follow these steps:
 
 ### Related content
 
-•	[Add sign-in with Microsoft to an ASP.NET web app](/identity-platform/quickstart-v2-aspnet-webapp.md)
+•	[Add sign-in with Microsoft to an ASP.NET web app](./identity-platform/quickstart-v2-aspnet-webapp.md)
 •	[Visual Studio Code extension for Microsoft Entra External ID](visual-studio-code-extension.md)
