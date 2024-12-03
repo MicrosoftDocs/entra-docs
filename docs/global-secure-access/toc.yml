@@ -158,6 +158,8 @@ items:
         href: reference-event-enrichment-logs.md
       - name: How to use workbooks
         href: how-to-use-workbooks.md 
+      - name: Export private network connector logs
+        href: how-to-export-connector-logs.md
   - name: Deployment guides
     expanded: false
     items:

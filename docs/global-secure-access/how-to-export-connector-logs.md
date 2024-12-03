@@ -232,3 +232,6 @@ The external user receives an email invitation to join your Microsoft Entra ID p
 By following these steps, you can securely open your Azure Log Analytics workspace to a user outside of your tenant, allowing them to access and query logs as needed.
 
 ## Next steps
+
+[Understand the Microsoft Entra private network connector](concept-connectors.md)
+[Learn about Microsoft Entra Private Access](concept-private-access.md)
