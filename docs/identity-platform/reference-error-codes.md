@@ -86,7 +86,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS230109 | CachedCredentialNonGWAuthNRequestsNotSupported - Backup Auth Service only allows AuthN requests from Microsoft Entra Gateway. This error is returned when traffic targets the backup auth service directly instead of going through the reverse proxy.  |
 | AADSTS28002 | Provided value for the input parameter scope '{scope}' isn't valid when requesting an access token. Specify a valid scope. |
 | AADSTS28003 | Provided value for the input parameter scope can't be empty when requesting an access token using the provided authorization code. Specify a valid scope.|
-| AADSTS399284 | InboundIdTokenIssuerInvalid - Inbound ID token received in the federation has an invalid issuer. Either it is empty or it does not match with the Realm identifier. |
+| AADSTS399284 | InboundIdTokenIssuerInvalid - Inbound ID token received in the federation has an invalid issuer. Either it is empty or it does not match with the realm identifier. |
 | AADSTS40008 | OAuth2IdPUnretryableServerError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
 | AADSTS40009 | OAuth2IdPRefreshTokenRedemptionUserError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
 | AADSTS40010 | OAuth2IdPRetryableServerError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
