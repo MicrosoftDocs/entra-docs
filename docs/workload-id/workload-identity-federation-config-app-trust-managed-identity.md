@@ -35,6 +35,7 @@ To create, update, or delete a federated identity credential, the account perfor
 A maximum of 20 federated identity credentials can be added to an application or user-assigned managed identity.
 
 When you configure a federated identity credential, there are several important pieces of information to provide:
+
 - *issuer* and *subject* are the key pieces of information needed to set up the trust relationship. The combination of `issuer` and `subject` must be unique on the app.  When the Azure workload requests Microsoft identity platform to exchange the Managed Identity token for an access token, the *issuer* and *subject* values of the federated identity credential are checked against the `issuer` and `subject` claims provided in the Managed Identity token. If that validation check passes, Microsoft identity platform issues an access token to the external software workload.
 - *issuer* is the URL of the Microsoft Entra tenant's Authority URL in the form `https://login.microsoftonline.com/{tenant}/v2.0`. The Microsoft Entra App and the Managed Identity must belong to the same tenant. If the `issuer` claim has leading or trailing whitespace in the value, the token exchange is blocked.
     
@@ -58,6 +59,7 @@ When you configure a federated identity credential, there are several important 
     
 - *name* is the unique identifier for the federated identity credential. (Required) This field has a character limit of 3-120 characters and must be URL friendly. Alphanumeric, dash, or underscore characters are supported, and the first character must be alphanumeric only.  It's immutable once created.
 - *description* is the user-provided description of the federated identity credential (Optional). The description isn't validated or checked by Microsoft Entra ID. This field has a limit of 600 characters.
+
 Wildcard characters aren't supported in any federated identity credential property value.
 
 ## Get the Object ID of the managed identity
@@ -67,11 +69,11 @@ Wildcard characters aren't supported in any federated identity credential proper
 1. Search for and select the user-assigned managed identity you created as part of the [prerequisites](#prerequisites).
 1. In the **Overview** pane, copy the **Object (principal) ID** value. This value is used as the *subject* field in the federated credential configuration.
 
-:::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\managed-identity.png" alt-text="Screenshot of a user-assigned managed identity in the Azure portal. The Object ID is highlighted which will be used as the *subject* field in the federated credential configuration" :::
+:::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\managed-identity.png" alt-text="Screenshot of a user-assigned managed identity in the Azure portal. The Object ID is highlighted which will be used as the *subject* field in the federated credential configuration":::
 
 ## Configure a federated identity credential on an existing application
 
-In this section, you'll configure a federated identity credential on an existing application to trust a managed identity. Use the following tabs to choose how to configure a federated identity credential on an existing application 
+In this section, you'll configure a federated identity credential on an existing application to trust a managed identity. Use the following tabs to choose how to configure a federated identity credential on an existing application.
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
@@ -170,9 +172,9 @@ The code samples in the following table show client credential "service to servi
 
 ### [.NET](#tab/dotnet)
 
-The example below demonstrates how to connect to an Azure storage container, but can be adapted to access any resource protected by Microsoft Entra. The samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant.
-
 ### Azure.Identity
+
+The following example demonstrates how to connect to an Azure storage container using `Azure.Identity`, but can be adapted to access any resource protected by Microsoft Entra. The samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant.
 
 ```csharp
 using Azure.Identity;
@@ -318,7 +320,7 @@ internal class Program
 
 ### [Node.js](#tab/nodejs)
 
-The example below demonstrates how to connect to an Azure KeyVault, but can be adapted to access any resource protected by Microsoft Entra. The samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant.
+The following example demonstrates how to connect to an Azure Key Vault, but can be adapted to access any resource protected by Microsoft Entra. The samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant.
 
 ### Azure Identity library for Node.js
 
@@ -544,11 +546,11 @@ const main = async () => {
 
 ### [Java](#tab/java)
 
-The following example demonstrates how to connect to an Azure KeyVault, but can be adapted to access any resource protected by Microsoft Entra. The samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant.
+The following example demonstrates how to connect to an Azure Key Vault, but can be adapted to access any resource protected by Microsoft Entra. The samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant.
 
 ### Azure Identity library for Java
 
-You can use [azure-identity](https://mvnrepository.com/artifact/com.azure/azure-identity) to obtain the [ManagedIdentityCredential](/java/api/com.azure.identity.managedidentitycredential) and [TokenCredential](/java/api/com.azure.core.credential.tokencredential), which in turn can be combined to form a client assertion. If you're using Maven, your pom.xml should include these two dependencies:
+You can use [azure-identity](https://mvnrepository.com/artifact/com.azure/azure-identity) to obtain the [ManagedIdentityCredential](/java/api/com.azure.identity.managedidentitycredential) and [TokenCredential](/java/api/com.azure.core.credential.tokencredential), which in turn can be combined to form a client assertion. If you're using Maven, your *pom.xml* should include these two dependencies:
 
 ```xml
 <dependencies>
@@ -612,7 +614,7 @@ public class KeyVaultFIC {
 >
 > We strongly advise customers to use higher-level libraries, like [Azure client SDKs](https://azure.microsoft.com/downloads/), where possible.
 
-To get a federated identity credential with MSAL Java, add a dependency to the [msal4j](https://mvnrepository.com/artifact/com.microsoft.azure/msal4j) library in your project. If you're using Maven, you need to add the following to your pom.xml:
+To get a federated identity credential with MSAL Java, add a dependency to the [msal4j](https://mvnrepository.com/artifact/com.microsoft.azure/msal4j) library in your project. If you're using Maven, you need to add the following to your *pom.xml*:
 
 ```xml
 <dependencies>
@@ -624,7 +626,7 @@ To get a federated identity credential with MSAL Java, add a dependency to the [
 </dependencies>
 ```
 
-The following example demonstrates acquiring the Managed Identity token audience, and then passing it as a client assertion to a ConfidentialClientApplication.
+The following example demonstrates acquiring the Managed Identity token audience, and then passing it as a client assertion to a `ConfidentialClientApplication`.
 
 ```java
 import java.net.MalformedURLException;
@@ -668,7 +670,7 @@ The following example demonstrates how to connect to an Azure KeyVault, but can 
 
 ### Azure Identity library for Python
 
-The azure-identity library is used to generate client assertions with a managed identity and the azure.keyvault.secrets library to interact with Azure KeyVault.
+The [azure-identity](https://mvnrepository.com/artifact/com.azure/azure-identity) library is used to generate client assertions with a managed identity and the `azure.keyvault.secrets` library to interact with Azure KeyVault.
 
 ```python
 from azure.identity import ManagedIdentityCredential, ClientAssertionCredential
@@ -737,11 +739,11 @@ if "access_token" in result:
 
 ### [Go](#tab/go)
 
-The example below demonstrates how to connect to an Azure KeyVault, but can be adapted to access any resource protected by Microsoft Entra. The samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant.
+The following example demonstrates how to connect to an Azure Key Vault, but can be adapted to access any resource protected by Microsoft Entra. The samples are valid in both cases where the resource tenant is in the same tenant as the app registration and the Managed identity or a different tenant.
 
 ### Azure Identity library for Go
 
-The below snippet uses [Azure Identity for Go](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity) to get a federated identity credential.
+The following snippet uses [Azure Identity for Go](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity) to get a federated identity credential.
 
 ```go
 package main
