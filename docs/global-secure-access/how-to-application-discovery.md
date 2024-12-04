@@ -3,7 +3,7 @@ title: Configure Application Discovery (Preview)
 description: Configure Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/02/2024
+ms.date: 12/03/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -52,11 +52,23 @@ The following columns are available for each application segment:
 - **First access**: the first time in the time range that the application segment was accessed. 
 
 ## Add a new application
-Application Discovery helps the administrator to create a new Entra ID applications based on the discovered application segments of the main table.  
+Use Application discovery to create new Entra ID applications based on the discovered application segments of the main table. To add an application segment to a new application:
+1. From the list, choose one or more application segments that correspond to an application that you would like to create.
+    1. Often, one application uses one application segment, for example:
+        1. A file server, such as: `filesrv.contoso.com`, TCP, 445.
+        1. A portal, such as: `internalportal.contoso.com`, TCP, 443.
+    1. However, sometimes a single application uses several ports, protocols, or spans across mutilple servers (FQDNs/IPs). In this case, you may choose several application segments and even add others manually, for example:
+        1. Publishing ADDS services in a specific AD site: `dc1.contoso.com/dc2.contoso.com`, TCP, 88, 135, 137, 138, 389, 445, 464, 636, 3268, 3269 and a fixed high port for Netlogon `dc1.contoso.com/dc2.contoso.com`, UDP, 88, 123, 389, 464.  
+    1. For a comprehensive list of ADDS ports see [How to configure a firewall for Active Directory domains and trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).  
+1. Select **Add to new application**.
+    1. On the **Create Global Secure Access application** screen, give the application a **Name** and select the corresponding **Connector Group**.
+    1. You can also add or delete applications segments manually. 
+    1. Select **Save**.
+1. 
 
 
 ## Add to an existing application 
-Application Discovery also allows the administrator to add application segments to an existing private application. 
+Application discovery also allows the administrator to add application segments to an existing private application. 
 
 
 ## Application segments details 
