@@ -16,7 +16,7 @@ ms.reviewer: arvinh
 
 Provisioning integrates with Azure Monitor logs and Log Analytics. With Azure monitoring you can do things like create workbooks, also known as dashboards, store provisioning logs for 30+ days, and create custom queries and alerts. This article discusses how provisioning logs integrate with Azure Monitor logs. To learn more about how provisioning logs work in general, see [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md).
 
-## Enabling provisioning logs
+## Enabling provisioning logs integration
 
 If you're not already familiar with Azure Monitor and Log Analytics, explore the following resources and then come back to learn about integrating application provisioning logs with Azure Monitor logs.
     
@@ -139,19 +139,17 @@ AADProvisioningLogs
 
 Azure Monitor lets you configure custom alerts so that you can get notified about key events related to Provisioning. For example, you might want to receive an alert on spikes in failures spikes in disables or deletes. You might also want to be alerted if there is a lack of any provisioning, which indicates something is wrong.
 
-To learn more about alerts, see [Azure Monitor Log Alerts](/azure/azure-monitor/alerts/alerts-create-new-alert-rule). There are many options and configurations, so review the documentation. But at a very high-level, here's how you can create an alert:
+To learn more about alerts, see [Azure Monitor Log Alerts](/azure/azure-monitor/alerts/alerts-create-new-alert-rule). There are many options and configurations, so review the full documentation. But at a very high-level, here's how you can create an alert:
 
 1. From Log Analytics, select **+ New alert rule**.
 1. On the **Condition** tab, select the **View result and edit query in Logs** link.
 1. Enter a query you want to alert on, and complete the necessary fields to create the alert.
 
-In each of the examples, replace `jobId` with the ID for your application.
-
 To create an alert when there's a spike in failures:
 
 ```kusto
 AADProvisioningLogs
-| where JobId == "FacebookAtWorkOutDelta.536279f615cc45f2be2d61e352b51eef.7a962c2b-318d-45a7-8cc0-486173dccfd7"
+| where JobId == "string" // Customize by adding a specific app JobId
 | where ResultType == "Failure"
 ```
 
@@ -175,7 +173,7 @@ We're taking an open source and community-based approach to application provisio
 
 ## Next steps
 
-- [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-logs-with-azure-monitor-logs.md)
+- [Integrate Microsoft Entra logs with Azure Monitor logs](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 - [Get started with queries in Azure Monitor logs](/azure/azure-monitor/logs/get-started-queries)
 - [Create and manage alert groups in the Azure portal](/azure/azure-monitor/alerts/action-groups)
 - [Provisioning logs API](/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta)

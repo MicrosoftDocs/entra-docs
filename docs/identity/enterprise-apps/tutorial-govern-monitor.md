@@ -108,7 +108,7 @@ You also can view application sign-in information from the Enterprise applicatio
 
 The Microsoft Entra activity logs only store information for seven days for Microsoft Entra ID Free and 30 days for Microsoft Entra ID P1/P2. Depending on your needs, you may require extra storage to back up the activity logs data.
 
-Using Azure Monitor logs, you can retain the data for longer and enable powerful analysis tools, such as visualization and alerts. For more information about integrating logs with Azure Monitor logs, see [Integrate Microsoft Entra logs with Azure Monitor](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+Using Azure Monitor logs, you can retain the data for longer and enable powerful analysis tools, such as visualization and alerts. For more information about integrating logs with Azure Monitor logs, see [Integrate Microsoft Entra logs with Azure Monitor](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 To send logs to Azure Monitor, you need a Log Analytics workspace. Once that's created, you configure diagnostic settings to integrate with Log Analytics. There are cost considerations associated with integrating logs with Azure Monitor and Log Analytics, so review this section of [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md#cost-considerations) before proceeding.
 
