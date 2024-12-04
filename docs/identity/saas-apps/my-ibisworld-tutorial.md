@@ -141,7 +141,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure My IBISWorld SSO
 
-To configure single sign-on on **My IBISWorld** side, you need to send the **App Federation Metadata Url** to your [IBISWorld Client Relationship Manager](https://www.ibisworld.com/contact-us/). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **My IBISWorld** side, you need to send the **App Federation Metadata Url** to your [IBISWorld Client Relationship Manager](https://www.ibisworld.com/contact-us/). We will need this to have the SAML SSO connection set properly on both sides.
 
 If you have any questions, please contact your [IBISWorld Client Relationship Manager](https://www.ibisworld.com/contact-us/) and they will liaise with IBISWorld IT Department. 
 
