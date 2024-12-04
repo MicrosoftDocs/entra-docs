@@ -3832,5 +3832,6 @@
   "Power BI Data Refresh" : "b52893c8-bc2e-47fc-918b-77022b299bbc",
   "Dataverse account table ID" : "70816501-edb9-4740-a16c-6a5efbc05d84",
   "Azure Management app redirect URI" : "58145B91-0C36-4500-8554-080854F2AC97",
-  "Partner Seller docs exemption GUID" : "8300f34c-05f0-e70e-a4a6-db1b7114c309"
+  "Partner Seller docs exemption GUID" : "8300f34c-05f0-e70e-a4a6-db1b7114c309",
+  "Compute Gallery Image Reader" : "cf7c76d2-98a3-4358-a134-615aa78bf44d"
 }
