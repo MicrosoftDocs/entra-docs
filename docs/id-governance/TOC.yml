@@ -111,8 +111,6 @@
       items:
       - name: Migrate IAM scenarios to Microsoft Entra ID
         href: /microsoft-identity-manager/migrate-entra-id
-      - name: Migrate from the FIM connector
-        href: /microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory
     - name: Migrate from SAP IDM
       items:
       - name: Migrate from SAP IDM
