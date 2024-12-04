@@ -72,7 +72,7 @@ If you've assigned guests as reviewers and they haven't accepted their invitatio
 
 ### View the status of an access review
 
-You can track the progress of access reviews as they are completed.
+You can track the progress of access reviews as they're completed.
  
 1. Go to **Identity** > **Identity Governance** > **Access reviews**.
 1. In the list, select the access review you created.
@@ -82,11 +82,11 @@ The **Results** page provides information on each user under review in the insta
 
 ## Access the audit logs
 
-The Microsoft Entra audit logs captures a wide variety of activities within your tenant. These logs provide valuable insights into the activities you need to monitor. For more information, see [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md).
+The Microsoft Entra audit logs capture a wide variety of activities within your tenant. These logs provide valuable insights into the activities you need to monitor. For more information, see [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md).
 
 To access the audit logs, go to **Identity** > **Monitoring & health** > **Audit logs**.
 
-The audit logs capture activities that fall under the following categories, but is not limited to:
+The audit logs capture activities that fall under the following categories. This list is not exhaustive. For a full list of the audit log categories and activities, see [Audit log activities](../monitoring-health/reference-audit-activities.md).
 
 - Password reset activity
 - Password reset registration activity
@@ -106,7 +106,7 @@ You also can view application sign-in information from the Enterprise applicatio
 
 ## Send logs to Azure Monitor
 
-The Microsoft Entra activity logs only store information for seven days for Microsoft Entra ID Free and 30 days for Microsoft Entra ID P1/P2. Depending on your needs, you may require extra storage to back up the activity logs data.
+The Microsoft Entra activity logs only store information for seven days for Microsoft Entra ID Free and 30 days for Microsoft Entra ID P1/P2. Depending on your needs, you might require extra storage to back up the activity logs data.
 
 Using Azure Monitor logs, you can retain the data for longer and enable powerful analysis tools, such as visualization and alerts. For more information about integrating logs with Azure Monitor logs, see [Integrate Microsoft Entra logs with Azure Monitor](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 

@@ -137,9 +137,9 @@ AADProvisioningLogs
 ```
 ## Custom alerts
 
-Azure Monitor lets you configure custom alerts so that you can get notified about key events related to Provisioning. For example, you might want to receive an alert on spikes in failures spikes in disables or deletes. You might also want to be alerted if there is a lack of any provisioning, which indicates something is wrong.
+Azure Monitor lets you configure custom alerts so that you can get notified about key events related to Provisioning. For example, you might want to receive an alert on spikes in failures spikes in disables or deletes. You might also want to be alerted if there's a lack of any provisioning, which indicates something is wrong.
 
-To learn more about alerts, see [Azure Monitor Log Alerts](/azure/azure-monitor/alerts/alerts-create-new-alert-rule). There are many options and configurations, so review the full documentation. But at a very high-level, here's how you can create an alert:
+To learn more about alerts, see [Azure Monitor Log Alerts](/azure/azure-monitor/alerts/alerts-create-new-alert-rule). There are many options and configurations, so review the full documentation. But at a high-level, here's how you can create an alert:
 
 1. From Log Analytics, select **+ New alert rule**.
 1. On the **Condition** tab, select the **View result and edit query in Logs** link.
