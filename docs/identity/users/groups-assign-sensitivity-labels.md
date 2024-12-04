@@ -46,7 +46,8 @@ All Microsoft operated regions should choose Microsoft. All other regions should
 1. Fetch the current group settings for the Microsoft Entra organization and display the current group settings.
 
     ```powershell
-    $grpUnifiedSetting = Get-MgBetaDirectorySetting -Search DisplayName:"Group.Unified"
+    $grpUnifiedSetting = Get-MgBetaDirectorySetting | Where-Object { $_.Values.Name -eq "EnableMIPLabels" }
+    $grpUnifiedSetting.Values
     ```
    
     If no group settings were created for this Microsoft Entra organization, you get an empty screen. In this case, you must first create the settings. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this Microsoft Entra organization.
