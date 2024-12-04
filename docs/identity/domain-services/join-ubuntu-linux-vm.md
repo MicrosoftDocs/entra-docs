@@ -188,6 +188,10 @@ With the VM joined to the managed domain and configured for authentication, ther
 
 By default, users can only sign in to a VM using SSH public key-based authentication. Password-based authentication fails. When you join the VM to a managed domain, those domain accounts need to use password-based authentication. Update the SSH configuration to allow password-based authentication as follows.
 
+> [!NOTE]
+> Ubuntu marketplace images usually will have a few configuration options set under /etc/ssh/sshd_config.d, including *PasswordAuthentication* in the 50-cloud-init.conf file, so make sure you also update that file to avoid it overwriting the one set with the steps below.
+> 
+
 1. Open the *sshd_conf* file with an editor:
 
     ```bash
