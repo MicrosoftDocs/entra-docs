@@ -84,7 +84,7 @@ If a single factor authentication is performed, two rows are populated with the 
 In cases of multifactor authentication, there are three rows with a shared correlation ID and three corresponding Authentication Methods (that is, Forms, Microsoft Entra multifactor authentication, Multifactor). In this particular example, the multifactor in this case shows that the SSO has an MFA.
 
 ***What are the errors that I can see in the report?***
-For a full list of AD FS related errors that are populated in the sign-in report and descriptions, visit [AD FS Help Error Code Reference](https://adfshelp.microsoft.com/References/ConnectHealthErrorCodeReference)
+For a full list of AD FS related errors that are populated in the sign-in report and descriptions, visit [Microsoft Entra Connect Health Alert Catalog](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-federation-services)
 
 ***I am seeing “00000000-0000-0000-0000-000000000000” in the “User” section of a sign-in. What does that 
 mean?***
