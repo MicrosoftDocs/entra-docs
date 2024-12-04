@@ -74,7 +74,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Configure an application to trust a managed identity (preview)
-            url: workload-identity-federation-config-app-trust-managed-identity
+            url: workload-identity-federation-config-app-trust-managed-identity.md
   
     # Card
   - title: Apply Conditional Access policies to service principals

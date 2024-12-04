@@ -53,15 +53,7 @@ landingContent:
             url: how-to-use-vm-sign-in.md
           - text: Use with Azure SDK
             url: how-to-use-vm-sdk.md
-  
-  # Card
-  - title: Configuring applications
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Configure an application to trust a managed identity (preview)
-            url: /entra/workload-id/workload-identity-federation-config-app-trust-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
-  
+
   # Card
   - title: Assign a managed identity access to another Azure resource
     linkLists:
