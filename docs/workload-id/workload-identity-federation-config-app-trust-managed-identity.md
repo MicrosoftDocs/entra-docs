@@ -69,7 +69,7 @@ Wildcard characters aren't supported in any federated identity credential proper
 1. Search for and select the user-assigned managed identity you created as part of the [prerequisites](#prerequisites).
 1. In the **Overview** pane, copy the **Object (principal) ID** value. This value is used as the *subject* field in the federated credential configuration.
 
-:::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\managed-identity.png" alt-text="Screenshot of a user-assigned managed identity in the Azure portal. The Object ID is highlighted which will be used as the *subject* field in the federated credential configuration":::
+:::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\managed-identity.png" alt-text="Screenshot of a user-assigned managed identity in the Azure portal. The Object ID is highlighted which will be used as the *subject* field in the federated credential configuration.":::
 
 ## Configure a federated identity credential on an existing application
 
