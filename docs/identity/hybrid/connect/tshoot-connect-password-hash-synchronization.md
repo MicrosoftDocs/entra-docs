@@ -177,7 +177,7 @@ Older versions of Microsoft Entra Connect did not support synchronizing temporar
 
 ![Temporary password isn't exported](./media/tshoot-connect-password-hash-synchronization/phssingleobjecttemporarypassword.png)
 
-To enable synchonization of temporary passwords you must have Microsoft Entra Connect version 2.0.3.0 or higher installed and the feature [ForcePasswordChangeOnLogon](../connect/how-to-connect-password-hash-synchronization.md#synchronizing-temporary-passwords-and-force-password-change-on-next-logon) must be enabled.
+To enable synchonizations of temporary passwords you must have Microsoft Entra Connect version 2.0.3.0 or higher installed and the feature [ForcePasswordChangeOnLogon](../connect/how-to-connect-password-hash-synchronization.md#synchronizing-temporary-passwords-and-force-password-change-on-next-logon) must be enabled.
 
 #### Results of last attempt to synchronize password aren't available
 
@@ -281,7 +281,7 @@ If you used custom installation, set the permissions manually by doing the follo
     ![Account used by Active Directory connector](./media/tshoot-connect-password-hash-synchronization/connectoraccount.png)  
     Note the username and the domain where the account is located.
     
-5. Start **Active Directory Users and Computers**, and then verify that the account you found earlier has the follow permissions set at the root of all domains in your forest:
+5. Start **Active Directory Users and Computers**, and then verify that the account you found earlier has the following permissions set at the root of all domains in your forest:
     * Replicate Directory Changes
     * Replicate Directory Changes All
 
