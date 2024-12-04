@@ -8,7 +8,7 @@ ms.assetid: 1034c000-59f2-4fc8-8137-2416fa5e4bfe
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 12/04/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
