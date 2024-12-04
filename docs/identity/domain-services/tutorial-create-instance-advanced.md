@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: tutorial
-ms.date: 09/15/2023
+ms.date: 12/03/2024
 ms.author: justinha
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services managed domain and define advanced configuration options so that I can synchronize identity information with my Microsoft Entra tenant and provide Domain Services connectivity to virtual machines and applications in Azure.
 ---

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 09/15/2023
+ms.date: 12/03/2024
 ms.author: justinha
 #Customer intent: As an identity administrator, I want to create and configure a virtual network subnet or network peering for application workloads in a Microsoft Entra Domain Services managed domain
 ---
