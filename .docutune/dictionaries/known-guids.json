@@ -3836,5 +3836,6 @@
   "Compute Gallery Image Reader" : "cf7c76d2-98a3-4358-a134-615aa78bf44d",
   "Microsoft.EventGrid - Public cloud" : "4962773b-9cdb-44cf-a8bf-237846a00ab7",
   "Microsoft.EventGrid - Government cloud" : "54316b56-3481-47f9-8f30-0300f5542a7b",
-  "Microsoft Azure Batch - Public cloud" : "ddbf3205-c6bd-46ae-8127-60eb93363864"
+  "Microsoft Azure Batch - Public cloud" : "ddbf3205-c6bd-46ae-8127-60eb93363864",
+  "RDS.DataControl object in VBScript" : "BD96C556-65A3-11D0-983A-00C04FC29E33"
 }
