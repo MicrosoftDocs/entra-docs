@@ -54,19 +54,6 @@ Only issuers that provide tokens signed using the RS256 algorithm are supported 
 
 <a name='azure-active-directory-issuers-arent-supported'></a>
 
-## Microsoft Entra issuers aren't supported
-
-*Applies to: applications and user-assigned managed identities*
-
-Creating a federation between two Microsoft Entra identities from the same or different tenants isn't supported. When creating a federated identity credential, configuring the *issuer* (the URL of the external identity provider) with the following values isn't supported:
-
-- *.login.microsoftonline.com
-- *.login.windows.net
-- *.login.microsoft.com
-- *.sts.windows.net
-
-While it's possible to create a federated identity credential with a Microsoft Entra issuer, attempts to use it for authorization fail with error `AADSTS700222: AAD-issued tokens may not be used for federated identity flows`.
-
 ## Time for federated credential changes to propagate
 
 *Applies to: applications and user-assigned managed identities*
