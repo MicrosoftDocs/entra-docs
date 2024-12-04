@@ -7,12 +7,12 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 10/25/2023
+ms.date: 11/29/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: michmcla
+ms.reviewer: jpettere
 ---
 # Integrate your Remote Desktop Gateway infrastructure using the Network Policy Server (NPS) extension and Microsoft Entra ID
 
@@ -140,7 +140,7 @@ This section provides instructions for configuring RDS infrastructure to use Mic
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Settings**.
+1. Browse to **Identity** > **Overview**.
 
    ![Getting the Tenant ID from the Microsoft Entra admin center](./media/howto-mfa-nps-extension-vpn/tenant-id.png)
 
@@ -155,9 +155,9 @@ Install the NPS extension on a server that has the Network Policy and Access Ser
 
 1. Download the [NPS extension](https://aka.ms/npsmfa).
 1. Copy the setup executable file (NpsExtnForAzureMfaInstaller.exe) to the NPS server.
-1. On the NPS server, double-click **NpsExtnForAzureMfaInstaller.exe**. If prompted, click **Run**.
-1. In the NPS Extension For Microsoft Entra multifactor authentication Setup dialog box, review the software license terms, check **I agree to the license terms and conditions**, and click **Install**.
-1. In the NPS Extension For Microsoft Entra multifactor authentication Setup dialog box, click **Close**.
+1. On the NPS server, double-select **NpsExtnForAzureMfaInstaller.exe**. If prompted, select **Run**.
+1. In the NPS Extension For Microsoft Entra multifactor authentication Setup dialog box, review the software license terms, check **I agree to the license terms and conditions**, and select **Install**.
+1. In the NPS Extension For Microsoft Entra multifactor authentication Setup dialog box, select **Close**.
 
 ### Configure certificates for use with the NPS extension using a PowerShell script
 
@@ -181,7 +181,7 @@ To use the script, provide the extension with your Microsoft Entra Admin credent
 
    ![Running AzureMfaNpsExtnConfigSetup.ps1 in PowerShell](./media/howto-mfa-nps-extension-rdg/image4.png)
   
-1. After the script verifies the installation of the PowerShell module, it displays the PowerShell module dialog box. In the dialog box, enter your Microsoft Entra admin credentials and password, and click **Sign In**.
+1. After the script verifies the installation of the PowerShell module, it displays the PowerShell module dialog box. In the dialog box, enter your Microsoft Entra admin credentials and password, and select **Sign In**.
 
 1. When prompted, paste the *Tenant ID* you copied to the clipboard earlier, and press **ENTER**.
 
@@ -200,16 +200,16 @@ The authentication flow requires that RADIUS messages be exchanged between the R
 Remote Desktop connection authorization policies (RD CAPs) specify the requirements for connecting to a Remote Desktop Gateway server. RD CAPs can be stored locally (default) or they can be stored in a central RD CAP store that is running NPS. To configure integration of Microsoft Entra multifactor authentication with RDS, you need to specify the use of a central store.
 
 1. On the RD Gateway server, open **Server Manager**.
-1. On the menu, click **Tools**, point to **Remote Desktop Services**, and then click **Remote Desktop Gateway Manager**.
-1. In the RD Gateway Manager, right-click **\[Server Name\] (Local)**, and click **Properties**.
+1. On the menu, select **Tools**, point to **Remote Desktop Services**, and then select **Remote Desktop Gateway Manager**.
+1. In the RD Gateway Manager, right-select **\[Server Name\] (Local)**, and select **Properties**.
 1. In the Properties dialog box, select the **RD CAP Store** tab.
 1. On the RD CAP Store tab, select **Central server running NPS**. 
 1. In the **Enter a name or IP address for the server running NPS** field, type the IP address or server name of the server where you installed the NPS extension.
 
    ![Enter the name or IP Address of your NPS Server](./media/howto-mfa-nps-extension-rdg/image10.png)
   
-1. Click **Add**.
-1. In the **Shared Secret** dialog box, enter a shared secret, and then click **OK**. Ensure you record this shared secret and store the record securely.
+1. Select **Add**.
+1. In the **Shared Secret** dialog box, enter a shared secret, and then select **OK**. Ensure you record this shared secret and store the record securely.
 
    >[!NOTE]
    >Shared secret is used to establish trust between the RADIUS servers and clients. Create a long and complex secret.
@@ -217,24 +217,24 @@ Remote Desktop connection authorization policies (RD CAPs) specify the requireme
 
    ![Creating a shared secret to establish trust](./media/howto-mfa-nps-extension-rdg/image11.png)
 
-1. Click **OK** to close the dialog box.
+1. Select **OK** to close the dialog box.
 
 ### Configure RADIUS timeout value on Remote Desktop Gateway NPS
 
 To ensure there is time to validate users' credentials, perform two-step verification, receive responses, and respond to RADIUS messages, it is necessary to adjust the RADIUS timeout value.
 
-1. On the RD Gateway server, open Server Manager. On the menu, click **Tools**, and then click **Network Policy Server**.
+1. On the RD Gateway server, open Server Manager. On the menu, select **Tools**, and then select **Network Policy Server**.
 1. In the **NPS (Local)** console, expand **RADIUS Clients and Servers**, and select **Remote RADIUS Server**.
 
    ![Network Policy Server management console showing Remote RADIUS Server](./media/howto-mfa-nps-extension-rdg/image12.png)
 
-1. In the details pane, double-click **TS GATEWAY SERVER GROUP**.
+1. In the details pane, double-select **TS GATEWAY SERVER GROUP**.
 
    >[!NOTE]
    >This RADIUS Server Group was created when you configured the central server for NPS policies. The RD Gateway forwards RADIUS messages to this server or group of servers, if more than one in the group.
    >
 
-1. In the **TS GATEWAY SERVER GROUP Properties** dialog box, select the IP address or name of the NPS server you configured to store RD CAPs, and then click **Edit**.
+1. In the **TS GATEWAY SERVER GROUP Properties** dialog box, select the IP address or name of the NPS server you configured to store RD CAPs, and then select **Edit**.
 
    ![Select the IP or name of the NPS Server configured earlier](./media/howto-mfa-nps-extension-rdg/image13.png)
 
@@ -244,20 +244,20 @@ To ensure there is time to validate users' credentials, perform two-step verific
 
    ![Edit Radius Server timeout settings on the load balancing tab](./media/howto-mfa-nps-extension-rdg/image14.png)
 
-1. Click **OK** two times to close the dialog boxes.
+1. Select **OK** two times to close the dialog boxes.
 
 ### Verify Connection Request Policies
 
 By default, when you configure the RD Gateway to use a central policy store for connection authorization policies, the RD Gateway is configured to forward CAP requests to the NPS server. The NPS server with the Microsoft Entra multifactor authentication extension installed, processes the RADIUS access request. The following steps show you how to verify the default connection request policy.  
 
 1. On the RD Gateway, in the NPS (Local) console, expand **Policies**, and select **Connection Request Policies**.
-1. Double-click **TS GATEWAY AUTHORIZATION POLICY**.
-1. In the **TS GATEWAY AUTHORIZATION POLICY properties** dialog box, click the **Settings** tab.
-1. On **Settings** tab, under Forwarding Connection Request, click **Authentication**. RADIUS client is configured to forward requests for authentication.
+1. Double-select **TS GATEWAY AUTHORIZATION POLICY**.
+1. In the **TS GATEWAY AUTHORIZATION POLICY properties** dialog box, select the **Settings** tab.
+1. On **Settings** tab, under Forwarding Connection Request, select **Authentication**. RADIUS client is configured to forward requests for authentication.
 
    ![Configure Authentication Settings specifying the server group](./media/howto-mfa-nps-extension-rdg/image15.png)
 
-1. Click **Cancel**.
+1. Select **Cancel**.
 
 >[!NOTE]
 > For more information about creating a connection request policy see the article, [Configure connection request policies](/windows-server/networking/technologies/nps/nps-crp-configure#add-a-connection-request-policy) documentation for the same. 
@@ -271,9 +271,9 @@ The NPS server where the NPS extension is installed needs to be able to exchange
 To function properly in this scenario, the NPS server needs to be registered in Active Directory.
 
 1. On the NPS server, open **Server Manager**.
-1. In Server Manager, click **Tools**, and then click **Network Policy Server**.
-1. In the Network Policy Server console, right-click **NPS (Local)**, and then click **Register server in Active Directory**.
-1. Click **OK** two times.
+1. In Server Manager, select **Tools**, and then select **Network Policy Server**.
+1. In the Network Policy Server console, right-select **NPS (Local)**, and then select **Register server in Active Directory**.
+1. Select **OK** two times.
 
    ![Register the NPS server in Active Directory](./media/howto-mfa-nps-extension-rdg/image16.png)
 
@@ -283,7 +283,7 @@ To function properly in this scenario, the NPS server needs to be registered in 
 
 The Remote Desktop Gateway needs to be configured as a RADIUS client to the NPS server.
 
-1. On the NPS server where the NPS extension is installed, in the **NPS (Local)** console, right-click **RADIUS Clients** and click **New**.
+1. On the NPS server where the NPS extension is installed, in the **NPS (Local)** console, right-select **RADIUS Clients** and select **New**.
 
    ![Create a New RADIUS Client in the NPS console](./media/howto-mfa-nps-extension-rdg/image17.png)
 
@@ -292,31 +292,31 @@ The Remote Desktop Gateway needs to be configured as a RADIUS client to the NPS 
 
    ![Configure a friendly name and the IP or DNS address](./media/howto-mfa-nps-extension-rdg/image18.png)
 
-1. Click **OK** to close the New RADIUS Client dialog box.
+1. Select **OK** to close the New RADIUS Client dialog box.
 
 ### Configure Network Policy
 
 Recall that the NPS server with the Microsoft Entra multifactor authentication extension is the designated central policy store for the Connection Authorization Policy (CAP). Therefore, you need to implement a CAP on the NPS server to authorize valid connections requests.  
 
-1. On the NPS Server, open the NPS (Local) console, expand **Policies**, and click **Network Policies**.
-1. Right-click **Connections to other access servers**, and click **Duplicate Policy**.
+1. On the NPS Server, open the NPS (Local) console, expand **Policies**, and select **Network Policies**.
+1. Right-select **Connections to other access servers**, and select **Duplicate Policy**.
 
    ![Duplicate the connection to other access servers policy](./media/howto-mfa-nps-extension-rdg/image19.png)
 
-1. Right-click **Copy of Connections to other access servers**, and click **Properties**.
+1. Right-select **Copy of Connections to other access servers**, and select **Properties**.
 1. In the **Copy of Connections to other access servers** dialog box, in **Policy name**, enter a suitable name, such as *RDG_CAP*. Check **Policy enabled**, and select **Grant access**. Optionally, in **Type of network access server**, select **Remote Desktop Gateway**, or you can leave it as **Unspecified**.
 
    ![Name the policy, enable, and grant access](./media/howto-mfa-nps-extension-rdg/image21.png)
 
-1. Click the **Constraints** tab, and check **Allow clients to connect without negotiating an authentication method**.
+1. Select the **Constraints** tab, and check **Allow clients to connect without negotiating an authentication method**.
 
    ![Modify authentication methods to allow clients to connect](./media/howto-mfa-nps-extension-rdg/image22.png)
 
-1. Optionally, click the **Conditions** tab and add conditions that must be met for the connection to be authorized, for example, membership in a specific Windows group.
+1. Optionally, select the **Conditions** tab and add conditions that must be met for the connection to be authorized, for example, membership in a specific Windows group.
 
    ![Optionally specify connection conditions](./media/howto-mfa-nps-extension-rdg/image23.png)
 
-1. Click **OK**. When prompted to view the corresponding Help topic, click **No**.
+1. Select **OK**. When prompted to view the corresponding Help topic, select **No**.
 1. Ensure that your new policy is at the top of the list, that the policy is enabled, and that it grants access.
 
    ![Move your policy to the top of the list](./media/howto-mfa-nps-extension-rdg/image24.png)

@@ -5,7 +5,7 @@ description: Learn how Microsoft Entra certificate-based authentication works
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/30/2024
+ms.date: 12/02/2024
 
 
 ms.author: justinha
@@ -73,7 +73,7 @@ Now we'll walk through each step:
 
 ## Understanding issuer hints (Preview)
 
-Issuer hints send back a Trusted CA Indication as part of the TLS handshake. The trusted CA list is set to subject of the Certificate Authorities (CAs) uploaded by the tenant in the Entra trust store. Browsers client or native application client use the hints sent back by server to filter the certificates shown in certificate picker. The client shows only the authentication certificates issued by the CAs in the trust store. 
+Issuer hints send back a Trusted CA Indication as part of the TLS handshake. The trusted CA list is set to subject of the Certificate Authorities (CAs) uploaded by the tenant in the Entra trust store. A browser client or native application client can use the hints sent back by server to filter the certificates shown in the certificate picker. The client shows only the authentication certificates issued by the CAs in the trust store. 
 
 ### Enable issuer hints
 

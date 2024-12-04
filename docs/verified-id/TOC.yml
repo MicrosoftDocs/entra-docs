@@ -20,8 +20,6 @@
     href: verifiable-credentials-configure-verifier.md
   - name: Using FaceCheck
     href: using-facecheck.md
-  - name: LinkedIn employment verification
-    href: linkedin-employment-verification.md
   - name: Using Verified ID with Entitlement Management
     href: ~/id-governance/entitlement-management-verified-id-settings.md
 - name: Concepts
