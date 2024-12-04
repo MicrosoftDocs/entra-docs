@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
-    Please contact [My IBISWorld support team](mailto:support@ibisworld.freshdesk.com) for Sign-on URL from IBISWorld and set it into the **Sign-on URL** text box.
+    Please contact your IBISWorld Client Relationship Manager for Sign-on URL from IBISWorld and set it into the **Sign-on URL** text box.
 
 1. Click **Save**.
 
@@ -107,6 +107,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
+1. Send the **App Federation Metadata Url** (or Metadata file from previous step) to your IBISWorld Client Relationship Manager.
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -140,7 +141,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure My IBISWorld SSO
 
-To configure single sign-on on **My IBISWorld** side, you need to send the **App Federation Metadata Url** to [My IBISWorld support team](mailto:support@ibisworld.freshdesk.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **My IBISWorld** side, you need to send the **App Federation Metadata Url** to your [IBISWorld Client Relationship Manager](https://www.ibisworld.com/contact-us/). They set this setting to have the SAML SSO connection set properly on both sides.
+
+If you have any questions, please contact your [IBISWorld Client Relationship Manager](https://www.ibisworld.com/contact-us/) and they will liaise with IBISWorld IT Department. 
 
 ### Create My IBISWorld test user
 
