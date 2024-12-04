@@ -3,7 +3,7 @@ title: Configure Application Discovery (Preview)
 description: Configure Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/03/2024
+ms.date: 12/04/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -40,36 +40,55 @@ The administrator can adjust the time range, add other filters, and sort the app
 The following columns are available for each application segment: 
 - **Destination FQDN**: the FQDN of the application segment. 
 - **Destination IP**: the IP of the application segment. 
-- **Transport Protocol**: the transport protocol of the application segment. Currently TCP and UDP are supported.   
+- **Transport Protocol**: the transport protocol of the application segment. Currently Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) are supported.   
 - **Destination port**: the port of the application segment. 
 - **Access type**: Application discovery currently supports only application segments that were accessed through Quick Access. 
 - **Users**: the number of users who accessed the application segment.  
 - **Transactions**: the number of transactions (connections) to the application segment.  
 - **Devices** - the number of devices that were used to access the application segment. 
-- **Sent bytes**: the total bytes of data that were sent from the user device to the application segment. 
-- **Received bytes**: the total bytes of data that were received by the user device from the application segment. 
+- **Sent bytes**: the total bytes of data that the user device sent to the application segment. 
+- **Received bytes**: the total bytes of data that the user device received from the application segment. 
 - **Last access**: the last time in the time range that the application segment was accessed.  
 - **First access**: the first time in the time range that the application segment was accessed. 
 
-## Add a new application
-Use Application discovery to create new Entra ID applications based on the discovered application segments of the main table. To add an application segment to a new application:
+## Create a new application
+Use Application discovery to create new Microsoft Entra ID applications based on the discovered application segments of the main table. To add an application segment to a new application:
 1. From the list, choose one or more application segments that correspond to an application that you would like to create.
-    1. Often, one application uses one application segment, for example:
+    1. Often, one application uses one application segment. For example:
         1. A file server, such as: `filesrv.contoso.com`, TCP, 445.
         1. A portal, such as: `internalportal.contoso.com`, TCP, 443.
-    1. However, sometimes a single application uses several ports, protocols, or spans across mutilple servers (FQDNs/IPs). In this case, you may choose several application segments and even add others manually, for example:
+    1. However, sometimes a single application uses several ports, protocols, or spans across multiple servers (FQDNs/IPs). In this case, you can choose several application segments and even add others manually. For example:
         1. Publishing ADDS services in a specific AD site: `dc1.contoso.com/dc2.contoso.com`, TCP, 88, 135, 137, 138, 389, 445, 464, 636, 3268, 3269 and a fixed high port for Netlogon `dc1.contoso.com/dc2.contoso.com`, UDP, 88, 123, 389, 464.  
-    1. For a comprehensive list of ADDS ports see [How to configure a firewall for Active Directory domains and trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).  
-1. Select **Add to new application**.
-    1. On the **Create Global Secure Access application** screen, give the application a **Name** and select the corresponding **Connector Group**.
+    1. For a comprehensive list of ADDS ports, see [How to configure a firewall for Active Directory domains and trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).  
+1. Select **Add to new application**. The **Create Global Secure Access application** screen opens, showing the selected application segments.
+    1. Give the application a **Name** and select the corresponding **Connector Group**.
     1. You can also add or delete applications segments manually. 
-    1. Select **Save**.
-1. 
+    1. To apply your changes, select **Save**.
+1. Enable access for the appropriate users by adjusting the users and groups assigned to the new application.  
+    1. You should fine-tune the assignments *after* creating the application. This way, the list contains only groups of users who require access to the new application, according to the principle of least privilege.              
+    1. For enterprise applications:
+        1. Browse to **Global Secure Access** > **Applications** > **Enterprise applications** > **Users and groups**.
+        1. Select the application you created. 
+        1. Modify the user and group assignments as needed. 
+> [!IMPORTANT]
+> To avoid service disruption, new applications you create through application discovery inherit the assigned users and groups from Quick Access (at the time of creation).
 
+4. (Optional) For extra security, you can set Conditional Access policies according to your company's security policies. For example, you might want to require multifactor authentication (MFA) and device compliance when users access a critical application.
+> [!NOTE]
+> Application segments persist in the Application discovery main table even after you've created an application, until a user signs in to the new application and accesses the resource. In the future, the Application discovery main table will update regardless of user interaction. 
 
 ## Add to an existing application 
-Application discovery also allows the administrator to add application segments to an existing private application. 
+You can use Application discovery to add application segments to an existing private application. To add an application segment to an existing application:
+1. From the list, choose one or more application segments. 
+1. Select **Add to an existing application**.   
+1. Choose the existing private application to which you would like to add the segments. The **Edit Global Secure Access application** screen opens, showing the properties of the existing application, the selected application segments (with status **Pending**), and any previously configured application segments (with status **Success**).
+1. Review the configuration and revise the **Name**, **Connector Group**, and application segments as needed.   
+1. To apply your changes, select **Save**. 
 
-
-## Application segments details 
-Before the decision to create a private application, you may review other details of the application segment. 
+## View the details of an application segment   
+Before you decide to create a private application, you might want to review other details of the application segment. 
+1. On the Application discovery table, select the FQDN or IP for the application segment you wish to explore.
+1. The **Usage** tab defaults to a graph of **Users** over time. You can set the graph to show the distribution of **Transactions**, **Devices**, **Bytes sent**, and **Bytes received** over time. You can also change the time range by adjusting the **Timespan** setting.   
+1. The **Users** tab shows the list of users who accessed the selected application segment in the last 30 days.    
+> [!IMPORTANT]
+> Use the list of users to inform the decisions you make regarding the users and groups that you plan to assign to the Entra application once you onboard the selected application segment.  
