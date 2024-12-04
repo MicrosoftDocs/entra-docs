@@ -65,7 +65,7 @@ When using custom URL domains:
 >- Azure Front Door: The connection from the browser to Azure Front Door should always use IPv4 instead of IPv6.
 >- Social identity providers: Custom URL domains support Apple. However, Google and Facebook are not currently supported. Users who want to sign up or sign in using Google or Facebook must use the default endpoint, *&lt;tenant-name&gt;.ciamlogin.com*, instead of the custom URL domain endpoint.
 
-## Block the default domain
+## Blocking the default domain
 
 For added security, we recommend blocking the default domain. After you configure custom URL domains, users will still be able to access the default domain name *&lt;tenant-name&gt;.ciamlogin.com*. You need to block access to the default domain so that attackers can't use it to access your apps or run distributed denial-of-service (DDoS) attacks. To block access to the default domain, [open a support ticket](~/fundamentals/how-to-get-support.md) and submit a request.
 
