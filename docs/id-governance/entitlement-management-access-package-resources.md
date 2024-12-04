@@ -281,6 +281,8 @@ $rparams = @{
 New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $apid -BodyParameter $rparams
 ```
 
+If the role does not have an ID, then don't include the `id` of the `role` in the request payload.
+
 For more information, see [Create an access package in entitlement management for an application with a single role using PowerShell](entitlement-management-access-package-create-app.md).
 
 ## Remove resource roles
