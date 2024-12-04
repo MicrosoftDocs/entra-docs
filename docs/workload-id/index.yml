@@ -67,6 +67,15 @@ landingContent:
         links:
           - text: Secure workload identities
             url: ~/id-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+
+  # Card
+  - title: Configuring applications to trust managed identities
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Configure an application to trust a managed identity (preview)
+            url: workload-identity-federation-config-app-trust-managed-identity
+  
     # Card
   - title: Apply Conditional Access policies to service principals
     linkLists:
