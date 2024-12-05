@@ -8,7 +8,7 @@ ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 10/14/2024
+ms.date: 12/05/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -50,19 +50,27 @@ Microsoft Entra External ID is Microsoft’s customer identity and access manage
 
 > [!VIDEO https://www.youtube.com/embed/XuxXCMOYiSc?si=yX21DVcKsozFPM0v]
 
-### Get started with Microsoft Entra external ID
+### Microsoft Entra external ID overview
 
-This tutorial guides you through creating a new Microsoft Entra External ID tenant and helps you get started with running a sample app and signing in your users. It also explores the various components involved and discusses ways to enhance your configuration.
+Microsoft Entra External ID allows secure and customizable sign-ins for customer-facing apps. For businesses that want to provide their customers with apps for buying products, subscribing to services, or accessing their account data, it offers robust customer identity and access management (CIAM). It lets you easily integrate your apps and get all the security, reliability, and scalability benefits of Microsoft Entra. This video highlights some of the most commonly used Entra external ID features.
 
-> [!VIDEO https://www.youtube.com/embed/AgjAgcBOehU?si=Rqg7UHxq-43VpCjy]
+> [!VIDEO https://www.youtube.com/embed/zb5tpY1sGaE?si=n1KLhaTF044jhnex]
+
 ### Woodgrove Groceries live demo
 
 The Woodgrove Groceries live demo is a fictional global food retailer that uses Microsoft Entra External ID for its online shopping app. This video shows how to use the live demo and demonstrates how you can try out the authentication features you can configure for customer-facing apps.
 
 > [!VIDEO https://www.youtube.com/embed/ZRhD-1WLrh8?si=y5iXA9dNskWfXO-Z]
+
+### Get started with Microsoft Entra external ID
+
+This tutorial guides you through creating a new Microsoft Entra External ID tenant and helps you get started with running a sample app and signing in your users. It also explores the various components involved and discusses ways to enhance your configuration.
+
+> [!VIDEO https://www.youtube.com/embed/AgjAgcBOehU?si=Rqg7UHxq-43VpCjy]
+
 ### Enable sign-in with social accounts
 
-The video covers how to integrate social identity providers like Facebook and Google into application sign-up and sign-in flows. It focuses on how you can enhance and personalize the registration experience. It also describes ways to ensure robust security and manage users efficiently using Microsoft Entra External ID.
+The video covers how to integrate social identity providers like Facebook, Google and Apple into application sign-up and sign-in flows. It focuses on how you can enhance and personalize the registration experience. It also describes ways to ensure robust security and manage users efficiently using Microsoft Entra External ID.
 
 > [!VIDEO https://www.youtube.com/embed/lIdGt9rDM-E?si=8n1_G_AqFbYDP22y]
 ### Authorize access to your application

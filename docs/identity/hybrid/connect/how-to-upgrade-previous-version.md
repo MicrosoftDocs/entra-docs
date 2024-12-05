@@ -9,7 +9,7 @@ ms.assetid: 31f084d8-2b89-478c-9079-76cf92e6618f
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 12/04/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
