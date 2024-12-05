@@ -6,7 +6,7 @@ manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 6/28/2022
+ms.date: 11/21/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ---
@@ -15,7 +15,9 @@ ms.reviewer: markwahl-msft
 
 Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility. Its features ensure that the right people have the right access to the right resources in your organization at the right time.
 
-Organizations with compliance requirements or risk management plans have sensitive or business-critical applications. The application sensitivity may be based on its purpose or the data it contains, such as financial information or personal information of the organization's customers. For those applications, only a subset of all the users in the organization will typically be authorized to have access, and access should only be permitted based on documented business requirements. As part of your organization's controls for managing access, you can use Microsoft Entra features to:
+Organizations with compliance requirements or risk management plans have sensitive or business-critical applications. The application sensitivity may be based on its purpose or the data it contains, such as financial information or personal information of the organization's customers. For those applications, only a subset of all the users in the organization will typically be authorized to have access, and access should only be permitted based on documented business requirements. 
+
+As part of your organization's controls for managing access, you can use Microsoft Entra features to:
 
 * set up appropriate access
 * provision users to applications
@@ -29,7 +31,9 @@ In addition to the application access governance scenario, you can also use Micr
 
 ## Getting started with governing access to applications
 
-Microsoft Entra ID Governance can be integrated with many applications, using [standards](~/architecture/auth-sync-overview.md) such as OpenID Connect, SAML, SCIM, SQL, and LDAP. Through these standards, you can use Microsoft Entra ID  with many popular SaaS applications, on-premises applications, and applications that your organization has developed. Once you've prepared your Microsoft Entra environment, as described in the section below, the three step plan covers how to connect an application to Microsoft Entra ID and enable identity governance features to be used for that application.
+Microsoft Entra ID Governance can be integrated with many applications, using [standards](~/architecture/auth-sync-overview.md) such as OpenID Connect, SAML, SCIM, SQL, and LDAP. Through these standards, you can use Microsoft Entra ID  with many popular SaaS applications, on-premises applications, and applications that your organization has developed. 
+
+Once you've prepared your Microsoft Entra environment, as described in the section below, the three step plan covers how to connect an application to Microsoft Entra ID and enable identity governance features to be used for that application.
 
 1. [Define your organization's policies for governing access to the application](identity-governance-applications-define.md)
 1. [Integrate the application with Microsoft Entra ID](identity-governance-applications-integrate.md) to ensure only authorized users can access the application, and review user's existing access to the application to set a baseline of all users having been reviewed. This allows authentication and user provisioning

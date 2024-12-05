@@ -46,6 +46,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/conditional-access/block-legacy-authentication.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-block-legacy-authentication",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/reference-resources-change.md",
       "redirect_url": "/entra/identity/conditional-access/concept-conditional-access-cloud-apps",
       "redirect_document_id": false

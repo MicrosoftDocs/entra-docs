@@ -99,7 +99,7 @@ To configure Microsoft Entra single sign-on with Mercer BenefitsCentral (MBC), p
     `https://ssous-stg.mercerhrs.com/SP2/Saml2AssertionConsumer.aspx`
 
 	> [!NOTE]
-	> The Reply URL value is not real. Update this value with the actual Reply URL. Contact [Mercer BenefitsCentral (MBC) Client support team](https://www.mercer.com/contact-us.html) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Reply URL value is not real. Update this value with the actual Reply URL. Contact [Mercer BenefitsCentral (MBC) Client support team](https://www.mercer.com/en-gb/about/contact/contact-us/) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -117,7 +117,7 @@ To configure Microsoft Entra single sign-on with Mercer BenefitsCentral (MBC), p
 
 ### Configure Mercer BenefitsCentral (MBC) Single Sign-On
 
-To configure single sign-on on **Mercer BenefitsCentral (MBC)** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Mercer BenefitsCentral (MBC) support team](https://www.mercer.com/contact-us.html). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Mercer BenefitsCentral (MBC)** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Mercer BenefitsCentral (MBC) support team](https://www.mercer.com/en-gb/about/contact/contact-us/). They set this setting to have the SAML SSO connection set properly on both sides.
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -158,7 +158,7 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 ### Create Mercer BenefitsCentral (MBC) test user
 
-In this section, you create a user called Britta Simon in Mercer BenefitsCentral (MBC). Work with [Mercer BenefitsCentral (MBC) support team](https://www.mercer.com/contact-us.html) to add the users in the Mercer BenefitsCentral (MBC) platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Mercer BenefitsCentral (MBC). Work with [Mercer BenefitsCentral (MBC) support team](https://www.mercer.com/en-gb/about/contact/contact-us/) to add the users in the Mercer BenefitsCentral (MBC) platform. Users must be created and activated before you use single sign-on.
 
 ### Test single sign-on 
 

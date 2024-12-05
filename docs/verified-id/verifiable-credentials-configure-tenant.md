@@ -55,17 +55,17 @@ After you create your key vault, Verifiable Credentials generates a set of keys 
 
 ## Set up Verified ID
 
-:::image type="content" source="media/verifiable-credentials-configure-tenant/verifiable-credentials-getting-started.png" alt-text="Screenshot that shows how to set up Verifiable Credentials.":::
+:::image type="content" source="media/verifiable-credentials-configure-tenant/verifiable-credentials-setup-advanced-1-2-3.png" alt-text="Screenshot that shows how to set up Verifiable Credentials.":::
 
 To set up Verified ID, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
-1. Select **Verified ID**.
+1. From the left menu, select **Overview** under **Verified ID**.
 
-1. From the left menu, select **Setup**.
+1. From the middle menu, select **Setup** tab and then select **Advanced Setup**.
 
-1. From the middle menu, select **Configure organization settings**.
+1. Select **Configure organization settings**
 
 1. Set up your organization by providing the following information:
 
@@ -75,12 +75,13 @@ To set up Verified ID, follow these steps:
 
         >[!IMPORTANT]
         > The domain can't be a redirect. Otherwise, the DID and domain can't be linked. Make sure to use HTTPS for the domain. For example: `https://did.woodgrove.com`.
+        > Please also ensure that the Key Vault's Permission Model is set to Vault Access Policy.
 
     1. **Key vault**: Select the key vault that you created earlier.
 
 1. Select **Save**.  
 
-    :::image type="content" source="media/verifiable-credentials-configure-tenant/verifiable-credentials-getting-started-save.png" alt-text="Screenshot that shows how to set up Verifiable Credentials first step.":::
+    :::image type="content" source="media/verifiable-credentials-configure-tenant/verifiable-credentials-advanced-setup-save.png" alt-text="Screenshot that shows how to set up Verifiable Credentials first step.":::
 
 ## Register an application in Microsoft Entra ID
 
@@ -136,9 +137,9 @@ After Azure Key Vault is setup, and the service have a signing key, you must com
 :::image type="content" source="media/verifiable-credentials-configure-tenant/verifiable-credentials-getting-started-step-2-3.png" alt-text="Screenshot that shows how to set up Verifiable Credentials step 2 and 3.":::
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select **Verifiable credentials**.
-1. From the left menu, select **Setup**.
-1. From the middle menu, select **Register decentralized ID** to register your DID document, as per instructions in article [How to register your decentralized ID for did:web](how-to-register-didwebsite.md). You must complete this step before you can continue to verify your domain. If you selected did:ion as your trust system, you should skip this step.
+1. Select **Verified ID**.
+1. From the left menu, select **Overview**.
+1. From the middle menu, select **Register decentralized ID** to register your DID document, as per instructions in article [How to register your decentralized ID for did:web](how-to-register-didwebsite.md). You must complete this step before you can continue to verify your domain.
 1. From the middle menu, select **Verify domain ownership** to verify your domain, as per instructions in article [Verify domain ownership to your Decentralized Identifier (DID)](how-to-dnsbind.md)
 
 Once that you have successfully completed the verification steps, and have green checkmarks on all three steps, you are ready to continue to the next tutorial.

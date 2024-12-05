@@ -67,6 +67,9 @@ With phone call verification during SSPR or Microsoft Entra multifactor authenti
 
 The calling number that a user receives the voice call from differs for each country. See [phone call settings](howto-mfa-mfasettings.md#phone-call-settings) to view all possible voice call numbers.
 
+> [!NOTE]
+> SSPR can only be completed with a primary phone method or an office phone method. Alternate phone methods are only available for MFA.
+
 ## Office phone verification
 
 With office phone call verification during SSPR or Microsoft Entra multifactor authentication, an automated voice call is made to the phone number registered by the user. To complete the sign-in process, the user is prompted to press # on their keypad. 

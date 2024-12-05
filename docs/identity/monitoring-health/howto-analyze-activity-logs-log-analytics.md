@@ -117,6 +117,24 @@ AuditLogs
 | sort by auditCount desc 
 ```
 
+To summarize the count of provisioning events per day, by action:
+```kusto
+AADProvisioningLogs
+| where TimeGenerated > ago(7d)
+| summarize count() by Action, bin(TimeGenerated, 1d)
+```
+
+Take 100 provisioning events and project key properties:
+```kusto
+AADProvisioningLogs
+| extend SourceIdentity = parse_json(SourceIdentity)
+| extend TargetIdentity = parse_json(TargetIdentity)
+| extend ServicePrincipal = parse_json(ServicePrincipal)
+| where tostring(SourceIdentity.identityType) == "Group"
+| project tostring(ServicePrincipal.Id), tostring(ServicePrincipal.Name), ModifiedProperties, JobId, Id, CycleId, ChangeId, Action, SourceIdentity.identityType, SourceIdentity.details, TargetIdentity.identityType, TargetIdentity.details, ProvisioningSteps
+| take 100
+```
+
 ## Related content
 
 * [Get started with queries in Azure Monitor logs](/azure/azure-monitor/logs/get-started-queries)

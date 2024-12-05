@@ -8,8 +8,8 @@ featureFlags:
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: whats-new
-ms.date: 09/19/2024
+ms.topic: reference
+ms.date: 12/02/2024
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -26,6 +26,106 @@ For a more dynamic experience, you can now find this information in the Microsof
 
 > [!NOTE] 
 > If you're currently using Azure Active Directory today or are have previously deployed Azure Active Directory in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function as they do today without any action from you.
+
+## November 2024
+
+### General Availability - Microsoft Entra Connect Sync Version 2.4.27.0
+
+**Type:** Changed feature       
+**Service category:** Provisioning        
+**Product capability:** Identity Governance        
+
+On November 14, 2025, we released Microsoft Entra Connect Sync Version 2.4.27.0 that uses the OLE DB version 18.7.4 that further hardens our service.  Upgrade to this latest version of connect sync to improve your security. More details are available in the [release notes](../identity/hybrid/connect/reference-connect-version-history.md#24270). 
+
+---
+
+### Public Preview - Microsoft Entra new store for certificate-based authentication
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Microsoft Entra ID has a new scalable **PKI (Public Key Infrastructure) based CA** (Certificate Authorities) store with higher limits for the number of CAs and the size of each CA file. PKI based CA store allows CAs within each different PKI to be in its own container object allowing administrators to move away from one flat list of CAs to more efficient PKI container based CAs. PKI-based CA store now supports up to 250CAs, 8KB size for each CA and also supports issuers hints attribute for each CA. Administrators can also upload the entire PKI and all the CAs using the "Upload CBA PKI" feature or create a PKI container and upload CAs individually. For more information, see: [Step 1: Configure the certificate authorities with PKI-based trust store (Preview)](../identity/authentication/how-to-certificate-based-authentication.md#step-1-configure-the-certificate-authorities-with-pki-based-trust-store-preview).
+
+---
+
+### Changed feature - expansion of WhatsApp as an MFA one-time passcode delivery channel for Entra ID
+
+**Type:** Changed feature    
+**Service category:** MFA    
+**Product capability:** User Authentication    
+
+In late 2023, Entra started leveraging WhatsApp as an alternate channel to deliver multifactor authentication (MFA) one-time passcodes to users in India and Indonesia. We saw improved deliverability, completion rates, and satisfaction when leveraging the channel in both countries. The channel was temporarily disabled in India in early 2024. Starting early December 2024, we will be re-enabling the channel in India, and expanding its use to additional countries.
+
+Starting December 2024, users in India, and other countries can start receiving MFA text messages via WhatsApp. Only users that are enabled to receive MFA text messages as an authentication method, and already have WhatsApp on their phone, will get this experience. If a user with WhatsApp on their device is unreachable or doesn’t have internet connectivity, we will quickly fall back to the regular SMS channel. In addition, users receiving OTPs via WhatsApp for the first time will be notified of the change in behavior via SMS text message. 
+
+If you don’t want your users to receive MFA text messages through WhatsApp, you can disable text messages as an authentication method in your organization or scope it down to only be enabled for a subset of users. Please note that we highly encourage organizations move to using more modern, secure methods like Microsoft Authenticator and passkeys in favor of telecom and messaging app methods. For more information, see: [Text message verification](../identity/authentication/concept-authentication-phone-options.md#text-message-verification).
+
+---
+
+### Public Preview - Updating profile photo in MyAccount
+
+**Type:** New feature    
+**Service category:** My Profile/Account    
+**Product capability:** End User Experiences    
+
+On November 13, 2024, users received the ability to update their profile photo directly from their [MyAccount](https://myaccount.microsoft.com/) portal. This change exposes a new edit button on the profile photo section of the user’s account.
+
+In some environments, it’s necessary to prevent users from making this change. Global Administrators can manage this using a tenant-wide policy with Microsoft Graph API, following the guidance in the [Manage user profile photo settings in Microsoft 365](/graph/profilephoto-configure-settings) document.
+
+---
+
+### Retirement - MFA Fraud Alert will be retired on March 1st 2025
+
+**Type:** Deprecated    
+**Service category:** MFA    
+**Product capability:** Identity Security & Protection    
+
+Microsoft Entra multifactor authentication (MFA) [fraud alert](../identity/authentication/howto-mfa-mfasettings.md#fraud-alert) allows end users to report MFA voice calls, and Microsoft Authenticator push requests, they didn't initiate as fraudulent. Beginning March 1, 2025, MFA Fraud Alert will be retired in favor of the replacement feature [Report Suspicious Activity](../identity/authentication/howto-mfa-mfasettings.md#report-suspicious-activity) which allows end users to report fraudulent requests, and is also integrated with [Identity Protection](../id-protection/overview-identity-protection.md) for more comprehensive coverage and remediation. To ensure users can continue reporting fraudulent MFA requests, organizations should migrate to using Report Suspicious Activity, and review how reported activity is remediated based on their Microsoft Entra licensing. For more information, see: [Configure Microsoft Entra multifactor authentication settings](../identity/authentication/howto-mfa-mfasettings.md).
+
+---
+
+### Public Preview - Microsoft Entra Health Monitoring, Alerts Feature
+
+**Type:** Changed feature    
+**Service category:** Other    
+**Product capability:** Monitoring & Reporting    
+
+Intelligent alerts in Microsoft Entra health monitoring notify tenant admins, and security engineers, whenever a monitored scenario breaks from its typical pattern. Microsoft Entra's alerting capability watches the low-latency health signals of each scenario, and fires a notification in the event of an anomaly. The set of alert-ready health signals and scenarios will grow over time. This alerts feature is now available in Microsoft Entra Health as an API-only public preview release (UX release is scheduled for February 2025). For more information, see: [How to use Microsoft Entra Health monitoring alerts (preview)](../identity/monitoring-health/howto-use-health-scenario-alerts.md).
+
+---
+
+### General Availability - Microsoft Entra Health Monitoring, Health Metrics Feature
+
+**Type:** New feature    
+**Service category:** Reporting    
+**Product capability:** Monitoring & Reporting    
+
+Microsoft Entra health monitoring, available from the Health pane, includes a set of low-latency pre-computed health metrics that can be used to monitor the health of critical user scenarios in your tenant. The first set of health scenarios includes MFA, CA-compliant devices, CA-managed devices, and SAML authentications. This set of monitor scenarios will grow over time. These health metrics are now released as general availability data streams, in conjunction with the public preview of an intelligent alerting capability. For more information, see: [What is Microsoft Entra Health?](../identity/monitoring-health/concept-microsoft-entra-health.md).
+
+---
+
+### General Availability - Log analytics sign-in logs schema is in parity with MSGraph schema
+
+**Type:** Plan for change    
+**Service category:** Authentications (Logins)    
+**Product capability:** Monitoring & Reporting    
+
+To maintain consistency in our core logging principles, we've addressed a legacy parity issue where the Azure Log Analytics sign-in logs schema did not align with the MSGraph sign-in logs schema. The updates include fields such as ClientCredentialType, CreatedDateTime, ManagedServiceIdentity, NetworkLocationDetails, tokenProtectionStatus, SessionID, among others. These changes will take effect in the first week of December 2024.
+
+We believe this enhancement will provide a more consistent logging experience. As always, you can perform pre-ingestion transformations to remove any unwanted data from your Azure Log Analytics storage workspaces. For guidance on how to perform these transformations, see: [Data collection transformations in Azure Monitor](/azure/azure-monitor/essentials/data-collection-transformations).
+
+---
+
+### Deprecated - MIM hybrid reporting agent
+
+**Type:** Deprecated    
+**Service category:** Microsoft Identity Manager    
+**Product capability:** Monitoring & Reporting    
+
+The hybrid reporting agent, used to send a MIM Service event log to Microsoft Entra to surface in password reset and self-service group management reports, is deprecated. The recommended replacement is to use Azure Arc to send the event logs to Azure Monitor. For more information, see: [Microsoft Identity Manager 2016 reporting with Azure Monitor](/microsoft-identity-manager/mim-azure-monitor-reporting).
+
+---
 
 ## October 2024
 
@@ -489,145 +589,3 @@ While the feature is in preview, no technical support is provided. Learn more ab
 
 ---
 
-## May 2024
-
-### General Availability - Azure China 21Vianet now supports My sign-ins and MFA/SSPR Combined Registration
-
-**Type:** Changed feature    
-**Service category:** MFA        
-**Product capability:** Identity Security & Protection        
-
-Beginning end of June 2024, all organizations utilizing Microsoft Azure China 21Vianet now has access to My Sign-ins activity reporting. They're required to use the combined security information registration end-user experience for MFA and SSPR. As a result of this enablement, users now see a unified SSPR and MFA registration experience when prompted to register for SSPR or MFA. For more information, see: [Combined security information registration for Microsoft Entra overview](../identity/authentication/concept-registration-mfa-sspr-combined.md). 
-
----
-
-### General Availability - $select in `signIn` API
-
-**Type:** New feature    
-**Service category:** MS Graph    
-**Product capability:** Monitoring & Reporting    
-
-The long-awaited `$select` property is now implemented into the `signIn` API. Utilize the `$select` to reduce the number of attributes that are returned for each log. This update should greatly help customers who deal with throttling issues, and allow every customer to run faster, more efficient queries.
-
----
-
-### General Availability - Multiple Passwordless Phone sign-ins for Android Devices
-
-**Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
-
-End users can now enable passwordless phone sign-in for multiple accounts in the Authenticator App on any supported Android device. Consultants, students, and others with multiple accounts in Microsoft Entra can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same Android device. The Microsoft Entra accounts can be in the same tenant or different tenants. Guest accounts aren't supported for multiple account sign-ins from one device. For more information, see: [Enable passwordless sign-in with Microsoft Authenticator](../identity/authentication/howto-authentication-passwordless-phone.md).
-
----
-
-### Public Preview - Bicep templates support for Microsoft Graph
-
-**Type:** New feature    
-**Service category:** MS Graph    
-**Product capability:** Developer Experience    
-
-The Microsoft Graph Bicep extension brings declarative infrastructure-as-code (IaC) capabilities to Microsoft Graph resources. It allows you to author, deploy, and manage core Microsoft Entra ID resources using Bicep template files, alongside Azure resources.
-
-- Existing Azure customers can now use familiar tools to deploy Azure resources and the Microsoft Entra resources they depend on, such as applications and service principals, IaC and DevOps practices.
-- It also opens the door for existing Microsoft Entra customers to use Bicep templates and IaC practices to deploy and manage their tenant's Microsoft Entra resources.
-
-For more information, see: [Bicep templates for Microsoft Graph resources](/graph/templates/)
-
----
-
-### Public Preview - Platform Single Sign-on for macOS with Microsoft Entra ID
-
-**Type:** New feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** User Authentication    
-
-Today we’re announcing that Platform SSO for macOS is available in public preview with Microsoft Entra ID. Platform SSO is an enhancement to the Microsoft Enterprise SSO plug-in for Apple Devices that makes usage and management of Mac devices more seamless and secure than ever. At the start of public preview, Platform SSO works with Microsoft Intune. Other Mobile Device Management (MDM) providers are coming soon. Contact your MDM provider for more information on support and availability. For more information, see: [macOS Platform Single Sign-on overview (preview)](../identity/devices/macos-psso.md).
-
----
-
-### Public Preview - Workflow History Insights in Lifecycle Workflows
-
-**Type:** New feature    
-**Service category:** Lifecycle Workflows    
-**Product capability:** Identity Lifecycle Management   
-
-Customers can now monitor workflow health, and get insights throughout all their workflows in Lifecycle Workflows including viewing workflow processing data across workflows, tasks, and workflow categories. For more information, see: [Workflow Insights (preview)](../id-governance/lifecycle-workflow-insights.md).
-
----
-
-### Public Preview - Configure Lifecycle Workflow Scope Using Custom Security Attributes
-
-**Type:** New feature    
-**Service category:** Lifecycle Workflows    
-**Product capability:** Identity Lifecycle Management   
-
-Customers can now apply their confidential HR data stored in custom security attributes in addition to other attributes. This update enables customers to define the scope of their workflows in Lifecycle Workflows for automating joiner, mover, and leaver scenarios. For more information, see: [Use custom security attributes to scope a workflow](../id-governance/lifecycle-workflow-insights.md).
-
----
-
-### Public Preview - Enable, Disable, and Delete synchronized users accounts with Lifecycle Workflows
-
-**Type:** New feature    
-**Service category:** Lifecycle Workflows    
-**Product capability:** Identity Lifecycle Management   
-
-Lifecycle Workflows can now enable, disable, and delete user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra. This feature allows you to ensure that the offboarding processes of your employees are completed by deleting the user account after a retention period.
-
-For more information, see: [Managing synced on-premises users with Lifecycle Workflows](../id-governance/lifecycle-workflow-on-premises.md).
-
----
-
-### Public Preview - External authentication methods for multifactor authentication
-
-**Type:** New feature    
-**Service category:** MFA    
-**Product capability:** User Authentication    
-
-External authentication methods enable you to use your preferred multifactor authentication (MFA) solution with Microsoft Entra ID. For more information, see: [Manage an external authentication method in Microsoft Entra ID (Preview)](../identity/authentication/how-to-authentication-external-method-manage.md).
-
----
-
-### General Availability - `LastSuccessfulSignIn`
-
-**Type:** Changed feature    
-**Service category:** MS Graph    
-**Product capability:** Monitoring & Reporting    
-
-Due to popular demand and increased confidence in the stability of the properties, the update adds `LastSuccessfulSignIn` &` LastSuccessfulSigninDateTime` into V1. Feel free to take dependencies on these properties in your production environments now. For more information, see: [signInActivity resource type](/graph/api/resources/signinactivity).
-
----
-
-### General Availability - Changing default accepted token version for new applications
-
-**Type:** Plan for change    
-**Service category:** Other    
-**Product capability:** Developer Experience    
-
-Beginning in August 2024, new Microsoft Entra applications created using any interface (including the Microsoft Entra admin center, Azure portal, Powershell/CLI, or the Microsoft Graph application API) has the default value of the `requestedAccessTokenVersion` property in the app registration set to 2. This capability is a change from the previous default of null` (meaning 1). This means that new resource applications receive v2 access tokens instead of v1 by default. This update improves the security of apps. For more information on differences between token versions, see: [Access tokens in the Microsoft identity platform](../identity-platform/access-tokens.md) and [Access token claims reference](../identity-platform/access-token-claims-reference.md).
-
----
-
-### General Availability - Windows Account extension is now Microsoft Single Sign On
-
-**Type:** Changed feature    
-**Service category:** Authentications (Logins)    
-**Product capability:** SSO    
-
-The Windows Account extension is now the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji) extension in docs and Chrome store. The Windows Account extension is updated to represent the new macOS compatibility. This capability is now known as the Microsoft Single Sign On (SSO) extension for Chrome, offering single sign-on and device identity features with the Enterprise SSO plug-in for Apple devices. This update is only a name change for the extension, there are no software changes to the extension itself.
-
----
-
-### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - May 2024
-
-**Type:** New feature    
-**Service category:** App Provisioning    
-**Product capability:** Third Party Integration    
-
-Microsoft added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [ClearView Trade](../identity/saas-apps/clearview-trade-provisioning-tutorial.md)
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](../identity/app-provisioning/user-provisioning.md).
-
----
