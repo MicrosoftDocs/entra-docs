@@ -72,7 +72,7 @@ Select an item from the provisioning logs to see more details about this item, s
 
 ## Using provisioning logs workbooks and Log Analytics
 
-With the querying and alerting capabilties of Log Analytics and workbooks, you can create custom reports and alerts. To get started, you need to [create a Log Analytics workspace](). Once you have a workspace, you can stream your logs to that workspace, which allows you to query and analyze the data in Log Analytics and workbooks.
+With the querying and alerting capabilities of Log Analytics and workbooks, you can create custom reports and alerts. To get started, you need to [create a Log Analytics workspace](tutorial-configure-log-analytics-workspace#create-the-workspace). Once you have a workspace, you can stream your logs to that workspace, which allows you to query and analyze the data in Log Analytics and workbooks.
 
 For more information, see [Integrating provisioning logs with Azure Monitor logs](../app-provisioning/application-provisioning-log-analytics.md).
 
