@@ -34,6 +34,7 @@ To create the access package and its associated policies and assignments, you'll
 |--|--|--|
 | All| Name of the application in your Microsoft Entra ID tenant|`$servicePrincipalName`|
 | All| Name of the application's role|`$servicePrincipalRoleName`|
+| Apps which rely upon a security group | ID of the Microsoft Entra security group used by the application, if any||
 | All| Name of the catalog containing the access package|`$catalogName`|
 | All| Name to give the access package|`$accessPackageName`|
 | All | Description to give the access package|`$accessPackageDescription`|
@@ -171,6 +172,10 @@ Once the catalog is created, add the application [as a resource in that catalog]
    if ($resourceRole -eq $null) { throw "role $servicePrincipalRoleName not located" }
    ```
 
+## Add the group as a resource to the catalog
+
+If the application relies upon a security group, then add that group to the catalog so it can be included as a resource. If the application does not rely upon a security group, then continue at the next section.
+
 ## Create the access package for the application
 
 
@@ -208,7 +213,7 @@ Next you'll use PowerShell to [create an access package in a catalog](entitlemen
 
 ## Add the application role to the access package
 
-Once you've created an access package, then you link the role of the resource in the catalog to the access package.
+Once you've created an access package, then you link the role of the resource for the application in the catalog to the access package.
 
    ```powershell
    $rrsParams = @{
@@ -233,6 +238,11 @@ Once you've created an access package, then you link the role of the resource in
 
    $roleAddRes = New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $accessPackageId -BodyParameter $rrsParams
    ```
+
+## Add the group to the access package
+
+If the application relies upon a group, then you link the group membership of the group to the access package.  If the application does not rely upon a group, then continue at the next section.
+
 
 ## Create access package assignment policies for direct assignment
 
