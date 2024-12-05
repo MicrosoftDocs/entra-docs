@@ -29,23 +29,19 @@ Microsoft applications provide native support for FIDO2 authentication for all u
 
 The following tables lists which authentication brokers are supported for different operating systems.
 
-| OS | Authentication broker           | Supports FIDO2 |
-|------------------|---------------------------------|----------------|
-| **iOS**              | Microsoft Authenticator         | &#x2705;       |
-| **macOS**            | Microsoft Intune Company Portal<sup>1</sup> | &#x2705;       |
-| **Android**<sup>2</sup> | Authenticator, Company Portal, or Link to Windows app | &#x2705;    |
+| OS | Min version | Authentication broker           | Supports FIDO2 |
+|----|-------------|---------------------------------|----------------|
+| **iOS/iPadOS**<sup>1</sup>              | 14.3 or later | Microsoft Authenticator         | &#x2705;       |
+| **macOS**<sup>2</sup>            | Catalina 11.1 or later with Safari 14 or later | Microsoft Intune Company Portal | &#x2705;       |
+| **Android**<sup>3</sup> | 14.0 or later | Authenticator, Company Portal, or Link to Windows app | &#x2705;    |
 
-<sup>1</sup>On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. For FIDO2 authentication, make sure that you run the latest version of native applications. 
+<sup>1</sup>Passkey (FIDO2) in native apps with SSO extension requires iOS/iPadOS 17.1 or later. Passkey (FIDO2) in native apps without SSO extension requires iOS/iPadOS 16.0 or later.
 
-<sup>2</sup>Native application support for FIDO2 security keys on Android version 13 and lower is in development.
+<sup>2</sup>On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. For FIDO2 authentication, make sure that you run the latest version of native applications. Passkey (FIDO2) in native apps with SSO extension requires macOS 14.0 or later. 
+
+<sup>3</sup>Native application support for FIDO2 security keys on Android version 13 and lower is in development.
 
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
-
-### Supported versions of iOS and macOS
-
-- Passkey (FIDO2) authentication (with user verification) in web browsers requires iOS 14.3 or later, iPadOS 14.3 or later, and macOS Catalina 11.1 or later with Safari 14 or later.
-- Passkey (FIDO2) in native apps without SSO extension requires iOS/iPadOS 16.0 or later.
-- Passkey (FIDO2) in native apps with SSO extension requires iOS/iPadOS 17.1 or later, or macOS 14.0 or later.
 
 ### Microsoft application support without authentication broker 
 
