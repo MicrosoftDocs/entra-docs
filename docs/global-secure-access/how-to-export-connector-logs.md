@@ -34,12 +34,12 @@ Verbose logs are useful when debugging Microsoft Entra Private Network Connector
 To enable verbose logging:
 
 1. Locate the installation directory of the connector at `C:\Program Files\Microsoft Entra Private Network Connector`.
-2. Create a folder on in the local directory with write permissions **On**. 
+2. Create a folder in the local directory with write permissions **On**. 
     
-	To verify write permissions: 
-    a. Right-click on the folder you created, then click **Properties**.  
-    b. Go to the **Security** tab and make sure the **Write** property is checked for **Allow**. If **Write** isn't checked, select **edit**. 
-    c  On the pop-up window, select **allow** for the **write** row, then click **apply**. 
+   To verify write permissions: 
+    1. Right-click on the folder you created, then click **Properties**.  
+    1. Go to the **Security** tab and make sure the **Write** property is checked for **Allow**. If **Write** isn't checked, select **edit**. 
+    1.  On the pop-up window, select **allow** for the **write** row, then click **apply**. 
 3. Right-click on a text editor application such as Notepad or Notepad++, and select **Run as Administrator**.
 4. Open the file `MicrosoftEntraPrivateNetworkConnector.exe.config` to edit. 
 5. From the following section, select the code from ```<system.diagnostics>``` to ```</system.diagnostrics>``` and add it to the `MicrosoftEntraPrivateNetworkConnector.exe.config` file.
@@ -84,7 +84,7 @@ To enable verbose logging:
 
 ```
 
-Next, you need to Stop and Start the Connector service for the above changes to take effect.
+   Next, you need to Stop and Start the Connector service for the above changes to take effect.
 
 6. Type **Services** in the search box in the taskbar, then go to **Services**. 
 7. Look for the **Microsoft Entra Private Network Connector** service from the Services list and select it.
@@ -116,10 +116,10 @@ Next, you need to Stop and Start the Connector service for the above changes to 
     1. In the search bar, type **Log Analytics** and select **Log Analytics workspaces**.
     1. Click **Create**.
     1. Fill in the necessary details:
-      - **Subscription**: Select your subscription.
-      - **Resource Group**: Select an existing resource group or create a new one.
-      - **Name**: Provide a unique name for the Log Analytics workspace.
-      - **Region**: Choose the region closest to your on-premises machine.
+       - **Subscription**: Select your subscription.
+       - **Resource Group**: Select an existing resource group or create a new one.
+       - **Name**: Provide a unique name for the Log Analytics workspace.
+       - **Region**: Choose the region closest to your on-premises machine.
     1. Click **Review + create**, then **Create**.
 3. Create a table under the new workspace. 
 	1. Select the workspace name you created. 
@@ -169,7 +169,7 @@ Next, you need to Stop and Start the Connector service for the above changes to 
 	1. Click **Next: Review + create** and then **Create**.
 
 ### Verify data collection
-1. Check Data in Log Analytics:
+- Check Data in Log Analytics:
 
    After you've installed and configured the agent, it may take some time for data to start appearing.
 
@@ -219,7 +219,7 @@ The external user receives an email invitation to join your Microsoft Entra ID p
 	- Review the role assignment and click **Review + assign** to complete the process.
 
 ### Ensure permissions are properly set
-1.	Verify Permissions:
+-	Verify Permissions:
 	The guest user should now have access to the Log Analytics workspace with the permissions assigned. 
 	- You can verify by going to **Access control (IAM)** in the Log Analytics workspace and checking the role assignments.
 
