@@ -84,7 +84,7 @@ To enable verbose logging:
 
 ```
 
-	Next, you need to Stop and Start the Connector service for the above changes to take effect.
+Next, you need to Stop and Start the Connector service for the above changes to take effect.
 
 6. Type **Services** in the search box in the taskbar, then go to **Services**. 
 7. Look for the **Microsoft Entra Private Network Connector** service from the Services list and select it.
