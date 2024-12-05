@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/12/2024
+ms.date: 12/05/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -156,6 +156,9 @@ Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 
 > QUIC is currently supported in Private Access and Microsoft 365 workloads.
 
 Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).
+
+### WSL 2 connectivity
+When the Global Secure Access client for Windows is enabled on the host machine, outgoing connections from the Windows Subsystem for Linux (WSL) 2 environment might be blocked. To mitigate this, create a .wslconfig file that sets dnsTunneling to **false**. This way, all traffic from the WSL bypasses GLobal Secure Access and goes directly to the network. For more information, see [Advanced settings configuration in WSL](/windows/wsl/wsl-config#wslconfig).
 
 ## Troubleshooting
 To troubleshoot the Global Secure Access client, right-click the client icon in the taskbar and select one of the troubleshooting options: **Collect logs** or **Advanced diagnostics**.
