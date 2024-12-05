@@ -14,7 +14,7 @@ ms.reviewer: bozbayburtlu
 ---
 # Microsoft Entra ID multifactor authentication (MFA) SAML/WSFed assertions
 
-This document outlines the assertions Microsoft Entra ID requires from a [federated Identity Provider (IdP)](~/identity/hybrid/connect/whatis-fed.md) to honor configured [federatedIdpMfaBehaviour](/graph/api/domain-post-federationconfiguration#federatedidpmfabehavior-values) values of acceptIfMfaDoneByFederatedIdp and enforceMfaByFederatedIdp for SAMLP and ws-federation [internalDomainFederations](/graph/api/resources/internaldomainfederation).
+This document outlines the assertions Microsoft Entra ID requires from a [federated identity provider (IdP)](~/identity/hybrid/connect/whatis-fed.md) to honor configured [federatedIdpMfaBehaviour](/graph/api/domain-post-federationconfiguration#federatedidpmfabehavior-values) values of acceptIfMfaDoneByFederatedIdp and enforceMfaByFederatedIdp for SAML and WS-Fed federation.
 
 ## WSFed/SAML1.1   
 When an admin optionally configures their Entra ID tenant to use a [federated IdP](~/identity/hybrid/connect/whatis-fed.md) using ws-federation Entra will redirect to IdP for authentication and expect a response in the form of a Request Security Token Response (RSTR) containing a SAML 1.1 assertion. If configured to do so, Microsoft Entra will honor MFA done by the IdP if one of the following two claims are present:
