@@ -1,20 +1,20 @@
 ---
-title: Expected inbound assertions for Microsoft Entra multifactor authentication (MFA)
-description: Explains the assetions that Microsoft Entra multifactor authentication (MFA) requires for federated identities.
+title: Microsoft Entra ID multifactor authentication (MFA) SAML/WSFed assertions
+description: Explains Microsoft Entra ID multifactor authentication (MFA) SAML/WSFed assertions.
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/03/2024
+ms.date: 12/04/2024
 
-author: justinha
+author: brozbab
 ms.author: justinha
 manager: amycolannino
-ms.reviewer: calui
+ms.reviewer: bozbayburtlu
 ---
-# Expected inbound assertions for Microsoft Entra multifactor authentication (MFA)
+# Microsoft Entra ID multifactor authentication (MFA) SAML/WSFed assertions
 
-This document outlines the assertions ESTS requires from a federated IdP to honor configured [federatedIdpMfaBehaviour](/graph/api/domain-post-federationconfiguration#federatedidpmfabehavior-values) values of acceptIfMfaDoneByFederatedIdp and enforceMfaByFederatedIdp for SAMLP and ws-federation [internalDomainFederations](/graph/api/resources/internaldomainfederation).
+This document outlines the assertions Microsoft Entra ID requires from a [federated Identity Provider (IdP)](~/identity/hybrid/connect/whatis-fed.md) to honor configured [federatedIdpMfaBehaviour](/graph/api/domain-post-federationconfiguration#federatedidpmfabehavior-values) values of acceptIfMfaDoneByFederatedIdp and enforceMfaByFederatedIdp for SAMLP and ws-federation [internalDomainFederations](/graph/api/resources/internaldomainfederation).
 
 ## WSFed/SAML1.1   
 When an internal domain federation is configured using ws-federation Entra will redirect to IdP for authentication and expect a response in the form of a Request Security Token Response (RSTR) containing a SAML 1.1 assertion. If configured to do so, Entra will honor MFA done by the Identity Provider if one of the following two claims are present:
@@ -46,10 +46,9 @@ Or they can be included in the assertion as part of the AttributeStatement eleme
 
 Sign-in frequency uses UserAuthenticationInstant (SAML assertion `http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant`), which is AuthInstant of first factor authentication using password for SAML1.1/WS-Fed. 
 
-## SAML 2 (Draft)   
+## SAML 2 
 
 When an internal domain federation is configured using SAMLP/SAML2.0 federation, Microsoft Entra will redirect to IdP for authentication and expect a response that contains a SAML 2.0 assertion.
-Investigation into current state for processing inbound SAML 2.0 assertions from external IdPs yielded unexpected results. All inbound AttributeStatement values are discarded.
 
 ### Actual (confirmed by BvT)
 
