@@ -20,18 +20,16 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 
 ## Entitlement Management
 
-### Per Tenant
-
 |Feature  |Limit  |
 |---------|---------|
-|Access Packages   |  20,000       |
-|Access Package Assignments     | 300,000        |
-|Access Package Assignments from a given automatic assignment policy      | 15,000        |
-|Catalogs     |   7,500      |
-|Connected Organizations     |  2,500       |
-|Custom extensions     |  500       |
-|Policies     |  25,000       |
-|Requests (Within 3 months)     |  200,000       |
+|Access Packages   |  20,000 per tenant      |
+|Access Package Assignments     | 300,000 per tenant        |
+|Access Package Assignments from a given automatic assignment policy      | 15,000 per automatic assignment policy       |
+|Catalogs     |   7,500 per tenant      |
+|Connected Organizations     |  2,500 per tenant       |
+|Custom extensions     |  500 per tenant       |
+|Policies     |  25,000 per tenant       |
+|Requests (Within 3 months)     |  200,000 per tenant       |
 
 ## Lifecycle Workflows
 
