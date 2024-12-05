@@ -4,7 +4,7 @@ description: Learn how to apply Conditional Access policies to the Microsoft tra
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ms.topic: how-to
-ms.date: 05/20/2024
+ms.date: 12/05/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -27,19 +27,20 @@ This article describes how to apply Conditional Access policies to your Microsof
 
 The following example policy targets all users except for your break-glass accounts and guest/external users, requiring multifactor authentication, device compliance, or a Microsoft Entra hybrid joined device when accessing Microsoft traffic.
 
-:::image type="content" source="media/how-to-target-resource-microsoft-profile/target-resource-traffic-profile.png" alt-text="Screenshot showing a Conditional Access policy targeting a traffic profile.":::
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
-1. Under **Assignments**, select **Users or workload identities**.
+1. Under **Assignments**, select the **Users and groups** link.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**:
       1. Select **Users and groups** and choose your organization's [emergency access or break-glass accounts](#user-exclusions).
       1. Select **Guest or external users** and select all checkboxes.
-1. Under **Target resources** > **Global Secure Access***.
-   1. Choose **Microsoft traffic**.
+1. Under **Target resources** > **Resources (formerly cloud apps)**.
+   1. Choose **All internet resources with Global Secure Access**.
+
+   :::image type="content" source="media/how-to-target-resource-microsoft-profile/target-resource-traffic-profile.png" alt-text="Screenshot showing a Conditional Access policy targeting a traffic profile.":::
+
 1. Under **Access controls** > **Grant**.
    1. Select **Require multifactor authentication**, **Require device to be marked as compliant**, and **Require Microsoft Entra hybrid joined device**
    1. **For multiple controls** select **Require one of the selected controls**.
