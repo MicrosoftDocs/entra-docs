@@ -93,8 +93,7 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
-## Internet Access – web content filtering
-
+## Internet Access flow diagram
 This example demonstrates the flow of Microsoft Entra Internet Access traffic when you apply web content filtering policies.
 
 The following flow diagram illustrates web content filtering policies blocking or allowing access to internet resources.
