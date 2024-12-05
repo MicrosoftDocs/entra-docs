@@ -156,7 +156,7 @@ Depending on your tenant’s configuration of Certificate-Based Authentication (
 
 ### What if I use custom controls?
 
-Custom controls don't satisfy multifactor authentication claim requirements. If your organization uses custom controls you should [migrate to external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), the replacement of custom controls. Your external authentication provider needs to support external authentication methods and provide you with the necessary configuration guidance for their integration.
+[Custom controls don't satisfy multifactor authentication claim requirements](controls.md#creating-custom-controls). If your organization uses custom controls you should [migrate to external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), the replacement of custom controls. Your external authentication provider needs to support external authentication methods and provide you with the necessary configuration guidance for their integration.
 
 ## Next steps
 
