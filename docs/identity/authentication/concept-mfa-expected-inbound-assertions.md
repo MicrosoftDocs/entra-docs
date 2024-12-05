@@ -21,7 +21,7 @@ This document outlines the assertions Microsoft Entra ID requires from a [federa
    > 
    > - Microsoft Entra ID includes support for authentication methods previously only availble via a federated IdP such as certificate/smartcards with [Entra Certificate Baseed Authentication](~/identity/authentication/concept-certificate-based-authentication.md)
    > - Microsoft Entra ID includes support for integrating 3rd party MFA providers with [External Authentication Methods](~/identity/authentication/how-to-authentication-external-method-manage.md) 
-   > - Applications integrated with a federated IdP can be [integrated directly with Microsoft Entra ID](~/entra/architecture/migration-best-practices.md)
+   > - Applications integrated with a federated IdP can be [integrated directly with Microsoft Entra ID](/entra/architecture/migration-best-practices)
 
 
 ## Use WS-Fed/SAML 1.1 to configure a federated IdP 
