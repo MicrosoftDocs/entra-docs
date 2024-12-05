@@ -10,9 +10,8 @@ manager: celestedg
 ms.date: 11/7/2024
 ms.topic: conceptual
 ms.service: entra
-ms.custom: microsoft-copilot
+ms.custom: microsoft-copilot, ignite-2024
 ms.collection: ce-skilling-ai-copilot
-
 #Customer intent: As a SOC analyst or IT admin using Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
 ---
 
@@ -112,4 +111,3 @@ To understand how Security Copilot handles your prompts and the data that’s re
 - [What is Security Copilot?](/security-copilot/microsoft-security-copilot)
 - [Privacy and data security in Security Copilot](/security-copilot/privacy-data-security)
 - [Responsible AI FAQs](/security-copilot/responsible-ai-overview-security-copilot)
-
