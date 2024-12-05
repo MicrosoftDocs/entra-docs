@@ -112,7 +112,7 @@ In the output of either Get-MsolFederationProperty or Get-AdfsCertificate, check
 | Yes |No |- |Less than 15 days |Renew immediately. See [Renew token signing certificate manually](#manualrenew). |
 | No |- |- |Less than 35 days |Renew immediately. See [Renew token signing certificate manually](#manualrenew). |
 
-\[-]  Does not matter
+\[-]  Doesn't matter
 
 ## Renew the token signing certificate automatically (recommended) <a name="autorenew"></a>
 You don't need to perform any manual steps if both of the following are true:
