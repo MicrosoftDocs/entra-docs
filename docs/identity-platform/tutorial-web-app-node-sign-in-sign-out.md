@@ -10,7 +10,9 @@ ms.date: 01/03/2025
 #Customer intent: As a dev, devops, I want to learn about how to add sign users in my own Node.js web app with an external tenant or workforce tenant by using Microsoft identity platform
 ---
 
-# Tutorial: Add add sign-in in your Node/Express.js web app Microsoft identity platform
+# Tutorial: Add add sign-in to a Node/Express.js web app by using Microsoft identity platform
+
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 In this tutorial, you add sign-in and sign-out logic to your Node/Express web app. This code enables you to sign in users into your customer facing app by in an external tenant or employees in a workforce tenant.
 
@@ -80,7 +82,7 @@ In your *authConfig.js* file, replace:
 
 - `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
 
-- `Enter_the_Tenant_Subdomain_Here` and replace it with the external Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). **This value is required only for external tenant**.
+- `Enter_the_Tenant_Subdomain_Here` and replace it with the external Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details). **This value is required only for external tenant**.
  
 - `Enter_the_Client_Secret_Here` with the app secret value you copied earlier.
 
@@ -435,7 +437,7 @@ The `/` route is the entry point to the application. It renders the *views/index
 
 - The `handleRedirect` method handles `/redirect` route:
     
-    - You set this URL as Redirect URI for the web app in the Microsoft Entra admin center earlier in [Register the web app](sample-web-app-node-sign-in.md#register-the-web-app).
+    - You set this URL as Redirect URI for the web app in the Microsoft Entra admin center earlier in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external).
     
     - This endpoint implements the second leg of auth code flow uses. It uses the authorization code to request an ID token by using MSAL's [acquireTokenByCode](/javascript/api/@azure/msal-node/confidentialclientapplication#@azure-msal-node-confidentialclientapplication-acquiretokenbycode) method.
     
@@ -557,7 +559,23 @@ At this point, you can test your node web app.
 
 #### [Workforce tenant authority](#tab/workforce-tenant)
 
+1. Use the steps in [Create a new user](../fundamentals/how-to-create-delete-users.md#create-a-new-user) to create a test user in the workforce tenant. If you don't have access to the tenant, ask your tenant admin to create the user for you.
 
+1. To start the server, run the following commands from within the project directory:
+
+    ```console
+    npm start
+    ```
+
+1. Open your browser, then go to `http://localhost:3000`. You should see the page similar to the following screenshot:
+
+    :::image type="content" source="media/how-to-web-app-node-sample-sign-in/web-app-node-sign-in.png" alt-text="Screenshot of sign in into a node web app.":::
+
+1. Select **Sign in** to start the sign-in process. The first time you sign in, you're prompted to provide your consent to allow the application to sign you in and access your profile as shown in the following screenshot:
+
+    :::image type="content" source="media/tutorial-v2-nodejs-webapp-msal/consent-screen.png" alt-text="Screenshot displaying user consent screen":::
+
+After you're signed in successfully, you'll be redirected back to the application home page. 
 
 #### [External tenant authority](#tab/external-tenant)
 

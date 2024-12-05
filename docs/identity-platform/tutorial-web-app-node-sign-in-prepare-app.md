@@ -14,7 +14,7 @@ ms.date: 01/03/2025
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-In this tutorial, you learn how to build a Node/Express.js web app that signs in users into customer facing app by in an external tenant or employees in a workforce tenant. The tutorial also demonstrates how to acquire an access tokens for calling Microsoft Graph API.
+In this tutorial, you learn how to build a Node/Express.js web app that signs in users into customer facing app in an external tenant or employees in a workforce tenant. The tutorial also demonstrates how to acquire an access tokens for calling Microsoft Graph API.
 
 This tutorial is part 1 of a 3-part series.
 
