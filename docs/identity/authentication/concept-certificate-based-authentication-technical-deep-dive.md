@@ -98,25 +98,6 @@ Authentication Policy Administrators should sign in with a certificate after the
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/propagation-error.png" alt-text="Screenshot of an error users see if updates are in progress.":::
 
-## Certificate-based authentication MFA capability
-
-Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user might need more configuration to complete MFA, and proof up to register other authentication methods when the user is in scope for CBA.
-
-If the CBA-enabled user only has a Single Factor (SF) certificate and needs to complete MFA:
-   1. Use a password and SF certificate.
-   1. Issue a Temporary Access Pass.
-   1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
-
-If the CBA-enabled user hasn't yet been issued a certificate and needs to complete MFA:
-   1. Issue a Temporary Access Pass.
-   1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
-
-If the CBA-enabled user can't use an MF cert, such as on mobile device without smart card support, and needs to complete MFA:
-   1. Issue a Temporary Access Pass.
-   1. User needs to register another MFA method (when user can use MF cert).
-   1. Use password and MF cert (when user can use MF cert).
-   1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
-
 ## MFA with single-factor certificate-based authentication
 
 Microsoft Entra CBA is supported as both first factor and selcond factor for authentication. 
@@ -135,6 +116,25 @@ Users need to have a way to get MFA and register passwordless sign-in or FIDO2 i
 >[!IMPORTANT]
 >A user is considered MFA capable when they are included in the CBA method settings. This means the user can't use proof up as part of their authentication to register other available methods. Make sure users without a valid certificate aren't included in the CBA method settings. For more information about how authentication works, see [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md).
 
+## Options to get MFA capability with Single factor certificates
+
+Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user with single factor certificate will need another factor to complete MFA. If the user does not have any other auth method registered and are added into scope for CBA auth method, the user cannot proof up to register other authentication methods.
+
+If the CBA-enabled user only has a Single Factor (SF) certificate and needs to complete MFA:
+   1. Use a password and SF certificate.
+   1. Issue a Temporary Access Pass.
+   1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
+
+If the CBA-enabled user hasn't yet been issued a certificate and needs to complete MFA:
+   1. Issue a Temporary Access Pass.
+   1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
+
+If the CBA-enabled user can't use an MF cert, such as on mobile device without smart card support, and needs to complete MFA:
+   1. Issue a Temporary Access Pass.
+   1. User needs to register another MFA method (when user can use MF cert).
+   1. Use password and MF cert (when user can use MF cert).
+   1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
+      
 **Steps to set up passwordless phone sign in (PSI) with CBA**
 
 For passwordless sign-in to work, users should disable legacy notification through their mobile app.
