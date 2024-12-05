@@ -1,5 +1,5 @@
 ---
-title: Satisfying Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP
+title: Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP
 description: Explains Microsoft Entra ID multifactor authentication (MFA) SAML/WSFed assertions.
 
 ms.service: entra-id
@@ -12,7 +12,7 @@ ms.author: justinha
 manager: amycolannino
 ms.reviewer: bozbayburtlu
 ---
-# Satisfying Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP
+# Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP
 
 This document outlines the assertions Microsoft Entra ID requires from a [federated identity provider (IdP)](~/identity/hybrid/connect/whatis-fed.md) to honor configured [federatedIdpMfaBehaviour](/graph/api/domain-post-federationconfiguration#federatedidpmfabehavior-values) values of acceptIfMfaDoneByFederatedIdp and enforceMfaByFederatedIdp for Security Assertions Markup Language (SAML) and WS-Fed federation.
 

@@ -77,7 +77,9 @@
       href: concept-sspr-licensing.md
     - name: Deployment guide
       href: concept-sspr-deploy.md
-  - name: Multifactor authentication
+ - name: Satisfy MFA with claims
+   href: concept-mfa-expected-inbound-assertions.md
+ - name: Multifactor authentication
     items:
     - name: How MFA works
       href: concept-mfa-howitworks.md
@@ -89,8 +91,6 @@
       href: concept-mandatory-multifactor-authentication.md
     - name: External MFA provider
       href: concept-authentication-external-method-provider.md
-    - name: Expected inbound assertions
-      href: concept-mfa-expected-inbound-assertions.md
     - name: Prompts and session lifetime
       href: concepts-azure-multi-factor-authentication-prompts-session-lifetime.md
     - name: Understanding telephony fraud
