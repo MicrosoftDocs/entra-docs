@@ -130,7 +130,7 @@ items:
       items: 
         - name: Node/Express.js
           items:
-            - name: Create Nodejs app
+            - name: Set up Nodejs app
               href: /entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Add sign in and sign out
               href: /entra/identity-platform/tutorial-web-app-node-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant

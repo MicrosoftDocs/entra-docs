@@ -224,7 +224,7 @@
             href: tutorial-web-app-python-call-api.md
         - name: Node/Express.js
           items:
-            - name: Create Nodejs app
+            - name: Set up Nodejs app
               href: tutorial-web-app-node-sign-in-prepare-app.md?tabs=workforce-tenant
             - name: Add sign in and sign out
               href: tutorial-web-app-node-sign-in-sign-out.md?tabs=workforce-tenant
