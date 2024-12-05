@@ -77,9 +77,9 @@
       href: concept-sspr-licensing.md
     - name: Deployment guide
       href: concept-sspr-deploy.md
- - name: Satisfy MFA with claims
-   href: concept-mfa-expected-inbound-assertions.md
- - name: Multifactor authentication
+  - name: Satisfy MFA with claims
+    href: concept-mfa-expected-inbound-assertions.md
+  - name: Multifactor authentication
     items:
     - name: How MFA works
       href: concept-mfa-howitworks.md
