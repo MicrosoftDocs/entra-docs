@@ -50,36 +50,38 @@ To enable verbose logging:
 
 <configuration> 
 
- <runtime> 
+  <runtime> 
 
-   <gcServer enabled="true"/> 
+     <gcServer enabled="true"/> 
 
- </runtime> 
+  </runtime> 
 
- <appSettings> 
+  <appSettings> 
 
-     <add key="TraceFilename" value="MicrosoftEntraPrivateNetworkConnector.log" /> 
+    <add key="TraceFilename" value="MicrosoftEntraPrivateNetworkConnector.log" /> 
 
-  	</appSettings> 
+  </appSettings> 
 
 <system.diagnostics> 
 
-  	<trace autoflush="true" indentsize="4"> 
+  <trace autoflush="true" indentsize="4"> 
 
-     <listeners> 
+    <listeners> 
 
-       <add name="consoleListener" type="System.Diagnostics.ConsoleTraceListener" /> 
+      <add name="consoleListener" type="System.Diagnostics.ConsoleTraceListener" /> 
 
-       <add name="textWriterListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="C:\logs\connector_logs.log" /> 
+      <add name="textWriterListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="C:\logs\connector_logs.log" /> 
 
-       <remove name="Default" /> 
+      <remove name="Default" /> 
 
-      </listeners> 
+    </listeners> 
 
-  	 </trace> 
+  </trace> 
 
-	</system.diagnostics> 
-```
+</system.diagnostics> 
+
+</configuration>
+ ```
 
 	Next, you need to Stop and Start the Connector service for the above changes to take effect.
 
