@@ -109,11 +109,9 @@ If you use the *.env* file to store your configuration information:
 
 You export `msalConfig`, `REDIRECT_URI`, `TENANT_SUBDOMAIN`, `GRAPH_ME_ENDPOINT` and `POST_LOGOUT_REDIRECT_URI` variables in the *authConfig.js* file, to make them accessible in other files.
 
-[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
+###  Authority URL for your app
 
-###  Authority URL for your application
-
-The application authorities for external and workforce tenants looks different. For them as shown below:
+The application authorities for external and workforce tenants looks different. Build them as shown below:
 
 #### [Workforce tenant authority](#tab/workforce-tenant)
 
@@ -128,6 +126,18 @@ authority: process.env.CLOUD_INSTANCE + process.env.TENANT_ID
 //Authority for external tenant
 authority: process.env.AUTHORITY || `https://${TENANT_SUBDOMAIN}.ciamlogin.com/`
 ```
+---
+
+### Use custom URL domain (Optional)
+
+#### [Workforce tenant authority](#tab/workforce-tenant)
+
+Workforce tenant doesn't support custom URL domains.
+
+#### [External tenant authority](#tab/external-tenant)
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)] 
+
 ---
 
 ## Add express routes
@@ -156,11 +166,236 @@ The `/` route is the entry point to the application. It renders the *views/index
 
 ### Sign in and sign out
 
-1. In your code editor, open *routes/auth.js* file, then add the code from [auth.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/5-sign-in-express/App/routes/auth.js) to it.
+1. In your code editor, open *routes/auth.js* file, then add the following code:
 
-1. In your code editor, open *controller/authController.js* file, then add the code from [authController.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/5-sign-in-express/App/controller/authController.js) to it.
+    ```javascript
+    const express = require('express');
+    const authController = require('../controller/authController');
+    const router = express.Router();
+    
+    router.get('/signin', authController.signIn);
+    router.get('/signout', authController.signOut);
+    router.post('/redirect', authController.handleRedirect);
+    
+    module.exports = router;
+    ```
 
-1. In your code editor, open *auth/AuthProvider.js* file, then add the code from [AuthProvider.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/5-sign-in-express/App/auth/AuthProvider.js) to it.
+1. In your code editor, open *controller/authController.js* file, then add the following code:
+
+    ```javascript
+    const authProvider = require('../auth/AuthProvider');
+    
+    exports.signIn = async (req, res, next) => {
+        return authProvider.login(req, res, next);
+    };
+    
+    exports.handleRedirect = async (req, res, next) => {
+        return authProvider.handleRedirect(req, res, next);
+    }
+    
+    exports.signOut = async (req, res, next) => {
+        return authProvider.logout(req, res, next);
+    };
+    
+    ```
+
+1. In your code editor, open *auth/AuthProvider.js* file, then add the following code:
+
+    ```javascript
+    const msal = require('@azure/msal-node');
+    const axios = require('axios');
+    const { msalConfig, TENANT_SUBDOMAIN, REDIRECT_URI, POST_LOGOUT_REDIRECT_URI, GRAPH_ME_ENDPOINT} = require('../authConfig');
+    
+    class AuthProvider {
+        config;
+        cryptoProvider;
+    
+        constructor(config) {
+            this.config = config;
+            this.cryptoProvider = new msal.CryptoProvider();
+        }
+    
+        getMsalInstance(msalConfig) {
+            return new msal.ConfidentialClientApplication(msalConfig);
+        }
+    
+        async login(req, res, next, options = {}) {
+            // create a GUID for crsf
+            req.session.csrfToken = this.cryptoProvider.createNewGuid();
+    
+            /**
+             * The MSAL Node library allows you to pass your custom state as state parameter in the Request object.
+             * The state parameter can also be used to encode information of the app's state before redirect.
+             * You can pass the user's state in the app, such as the page or view they were on, as input to this parameter.
+             */
+            const state = this.cryptoProvider.base64Encode(
+                JSON.stringify({
+                    csrfToken: req.session.csrfToken,
+                    redirectTo: '/',
+                })
+            );
+    
+            const authCodeUrlRequestParams = {
+                state: state,
+    
+                /**
+                 * By default, MSAL Node will add OIDC scopes to the auth code url request. For more information, visit:
+                 * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+                 */
+                scopes: [],
+            };
+    
+            const authCodeRequestParams = {
+                state: state,
+    
+                /**
+                 * By default, MSAL Node will add OIDC scopes to the auth code request. For more information, visit:
+                 * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+                 */
+                scopes: [],
+            };
+    
+            /**
+             * If the current msal configuration does not have cloudDiscoveryMetadata or authorityMetadata, we will
+             * make a request to the relevant endpoints to retrieve the metadata. This allows MSAL to avoid making
+             * metadata discovery calls, thereby improving performance of token acquisition process.
+             */
+            if (!this.config.msalConfig.auth.authorityMetadata) {
+                const authorityMetadata = await this.getAuthorityMetadata();
+                this.config.msalConfig.auth.authorityMetadata = JSON.stringify(authorityMetadata);
+            }
+    
+            const msalInstance = this.getMsalInstance(this.config.msalConfig);
+    
+            // trigger the first leg of auth code flow
+            return this.redirectToAuthCodeUrl(
+                req,
+                res,
+                next,
+                authCodeUrlRequestParams,
+                authCodeRequestParams,
+                msalInstance
+            );
+        }
+    
+        async handleRedirect(req, res, next) {
+            const authCodeRequest = {
+                ...req.session.authCodeRequest,
+                code: req.body.code, // authZ code
+                codeVerifier: req.session.pkceCodes.verifier, // PKCE Code Verifier
+            };
+    
+            try {
+                const msalInstance = this.getMsalInstance(this.config.msalConfig);
+                msalInstance.getTokenCache().deserialize(req.session.tokenCache);
+    
+                const tokenResponse = await msalInstance.acquireTokenByCode(authCodeRequest, req.body);
+    
+                req.session.tokenCache = msalInstance.getTokenCache().serialize();
+                req.session.idToken = tokenResponse.idToken;
+                req.session.account = tokenResponse.account;
+                req.session.isAuthenticated = true;
+    
+                const state = JSON.parse(this.cryptoProvider.base64Decode(req.body.state));
+                res.redirect(state.redirectTo);
+            } catch (error) {
+                next(error);
+            }
+        }
+    
+        async logout(req, res, next) {
+            /**
+             * Construct a logout URI and redirect the user to end the
+             * session with Microsoft Entra ID. For more information, visit:
+             * https://docs.microsoft.com/azure/active-directory/develop/v2-protocols-oidc#send-a-sign-out-request
+             */
+            //For external tenant
+            //const logoutUri = `${this.config.msalConfig.auth.authority}${TENANT_SUBDOMAIN}.onmicrosoft.com/oauth2/v2.0/logout?post_logout_redirect_uri=${this.config.postLogoutRedirectUri}`;
+    
+            //For workforce tenant
+            let logoutUri = `${this.config.msalConfig.auth.authority}/oauth2/v2.0/logout?post_logout_redirect_uri=${this.config.postLogoutRedirectUri}`;
+            req.session.destroy(() => {
+                res.redirect(logoutUri);
+            });
+        }
+    
+        /**
+         * Prepares the auth code request parameters and initiates the first leg of auth code flow
+         * @param req: Express request object
+         * @param res: Express response object
+         * @param next: Express next function
+         * @param authCodeUrlRequestParams: parameters for requesting an auth code url
+         * @param authCodeRequestParams: parameters for requesting tokens using auth code
+         */
+        async redirectToAuthCodeUrl(req, res, next, authCodeUrlRequestParams, authCodeRequestParams, msalInstance) {
+            // Generate PKCE Codes before starting the authorization flow
+            const { verifier, challenge } = await this.cryptoProvider.generatePkceCodes();
+    
+            // Set generated PKCE codes and method as session vars
+            req.session.pkceCodes = {
+                challengeMethod: 'S256',
+                verifier: verifier,
+                challenge: challenge,
+            };
+    
+            /**
+             * By manipulating the request objects below before each request, we can obtain
+             * auth artifacts with desired claims. For more information, visit:
+             * https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_node.html#authorizationurlrequest
+             * https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_node.html#authorizationcoderequest
+             **/
+    
+            req.session.authCodeUrlRequest = {
+                ...authCodeUrlRequestParams,
+                redirectUri: this.config.redirectUri,
+                responseMode: 'form_post', // recommended for confidential clients
+                codeChallenge: req.session.pkceCodes.challenge,
+                codeChallengeMethod: req.session.pkceCodes.challengeMethod,
+            };
+    
+            req.session.authCodeRequest = {
+                ...authCodeRequestParams,
+                redirectUri: this.config.redirectUri,
+                code: '',
+            };
+    
+            try {
+                const authCodeUrlResponse = await msalInstance.getAuthCodeUrl(req.session.authCodeUrlRequest);
+                res.redirect(authCodeUrlResponse);
+            } catch (error) {
+                next(error);
+            }
+        }
+    
+        /**
+         * Retrieves oidc metadata from the openid endpoint
+         * @returns
+         */
+        async getAuthorityMetadata() {
+            // For external tenant
+            //const endpoint = `${this.config.msalConfig.auth.authority}${TENANT_SUBDOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration`;
+    
+            // For workforce tenant
+            const endpoint = `${this.config.msalConfig.auth.authority}/v2.0/.well-known/openid-configuration`;
+            try {
+                const response = await axios.get(endpoint);
+                return await response.data;
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }
+    
+    const authProvider = new AuthProvider({
+        msalConfig: msalConfig,
+        redirectUri: REDIRECT_URI,
+        postLogoutRedirectUri: POST_LOGOUT_REDIRECT_URI,
+    });
+    
+    module.exports = authProvider;
+    
+    ```
+
 
     The `/signin`, `/signout` and `/redirect` routes are defined in the *routes/auth.js* file, but you implement their logic in the *auth/AuthProvider.js* class.
 
@@ -241,6 +476,33 @@ The `/` route is the entry point to the application. It renders the *views/index
     - When you want to sign the user out of the application, it isn't enough to end the user's session. You must redirect the user to the *logoutUri*. Otherwise, the user might be able to reauthenticate to your applications without reentering their credentials. If the name of your tenant is *contoso*, then the *logoutUri* looks similar to `https://contoso.ciamlogin.com/contoso.onmicrosoft.com/oauth2/v2.0/logout?post_logout_redirect_uri=http://localhost:3000`.
     
     
+###  Logout URI and authority metadata endpoint for your app
+
+The app's logout URI, `logoutUri` and authority metadata endpoint, `endpoint` for external and workforce tenants looks different. Build them as shown below:
+
+#### [Workforce tenant authority](#tab/workforce-tenant)
+
+```javascript
+//Logout URI for workforce tenant
+const logoutUri = `${this.config.msalConfig.auth.authority}/oauth2/v2.0/logout?post_logout_redirect_uri=${this.config.postLogoutRedirectUri}`;
+
+//authority metadata endpoint for workforce tenant
+const endpoint = `${this.config.msalConfig.auth.authority}/v2.0/.well-known/openid-configuration`;
+```
+
+#### [External tenant authority](#tab/external-tenant)
+
+```javascript
+//Logout URI for external tenant
+const logoutUri = `${this.config.msalConfig.auth.authority}${TENANT_SUBDOMAIN}.onmicrosoft.com/oauth2/v2.0/logout?post_logout_redirect_uri=${this.config.postLogoutRedirectUri}`;
+...
+
+//authority metadata endpoint for external tenant
+const endpoint = `${this.config.msalConfig.auth.authority}${TENANT_SUBDOMAIN}.onmicrosoft.com/v2.0/.well-known/openid-configuration`;
+
+```
+---
+
 ### View ID token claims
 
 In your code editor, open *routes/users.js* file, then add the following code:
@@ -291,6 +553,14 @@ const givenName = req.session.account.idTokenClaims.given_name
 
 ## Run and test the web app
 
+At this point, you can test your node web app.
+
+#### [Workforce tenant authority](#tab/workforce-tenant)
+
+
+
+#### [External tenant authority](#tab/external-tenant)
+
 1. In your terminal, make sure you're in the project folder that contains your web app such as `ciam-sign-in-node-express-web-app`.
 
 1. In your terminal, run the following command:
@@ -313,10 +583,9 @@ const givenName = req.session.account.idTokenClaims.given_name
 
 1. Select **Sign out** to sign the user out of the web app or select **View ID token claims** to view all ID token claims. 
 
-## See also
+---
 
-- [Enable password reset](how-to-enable-password-reset-customers.md).
-- [Configure sign-in with Google](how-to-google-federation-customers.md).
-- [Use client certificate for authentication in your Node.js web app instead of a client secret](how-to-web-app-node-use-certificate.md).
+## Next step
 
-- [Call an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Call Microsoft Graph API from your Node/Express.js web app](tutorial-web-app-node-call-microsoft-graph-api.md)
