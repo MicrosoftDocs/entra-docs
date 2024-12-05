@@ -44,8 +44,7 @@ To enable verbose logging:
 4. Open the file `MicrosoftEntraPrivateNetworkConnector.exe.config` to edit. 
 5. From the following section, select the code from ```<system.diagnostics>``` to ```</system.diagnostrics>``` and add it to the `MicrosoftEntraPrivateNetworkConnector.exe.config` file.
 
-
-``` json
+```json
 <?xml version="1.0" encoding="utf-8" ?> 
 
 <configuration> 
@@ -81,7 +80,7 @@ To enable verbose logging:
 </system.diagnostics> 
 
 </configuration>
- ```
+```
 
 	Next, you need to Stop and Start the Connector service for the above changes to take effect.
 
