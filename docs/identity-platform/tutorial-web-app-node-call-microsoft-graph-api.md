@@ -7,7 +7,7 @@ manager: mwongerapk
 ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 01/05/2025
+ms.date: 01/03/2025
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
 ---
 

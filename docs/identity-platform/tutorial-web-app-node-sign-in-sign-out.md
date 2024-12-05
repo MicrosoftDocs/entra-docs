@@ -1,18 +1,20 @@
 ---
-title: 'Tutorial: Add add sign-in and sign-out in your Node.js web application'
-description: Learn how to add sign-in, sign-up and sign-out in your Node.js web application. 
+title: 'Tutorial: Add add sign-in in your Node/Express.js web app by using Microsoft identity platform'
+description: Learn how to add sign-in in your Node.js web app with an external tenant or workforce tenant by using Microsoft identity platform. 
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 01/05/2025
-#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
+ms.date: 01/03/2025
+#Customer intent: As a dev, devops, I want to learn about how to add sign users in my own Node.js web app with an external tenant or workforce tenant by using Microsoft identity platform
 ---
 
-# Tutorial: Add add sign-in and sign-out in your Node.js web application
+# Tutorial: Add add sign-in in your Node/Express.js web app Microsoft identity platform
 
-This tutorial is the final part of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 2 of this series](tutorial-web-app-node-sign-in-prepare-app.md), you created a Node.js web app and organized all the required files. In this tutorial, you'll add sign in, sign-up and sign out to the Node.js web app. To simplify adding authentication to the Node.js web app, you use [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node). The sign-in flow uses OpenID Connect (OIDC) authentication protocol, which securely signs in users.
+In this tutorial, you add sign-in and sign-out logic to your Node/Express web app. This code enables you to sign in users into your customer facing app by in an external tenant or employees in a workforce tenant.
+
+This tutorial is part 2 of the 3-part tutorial series.
 
 In this tutorial, you'll:
 
@@ -24,7 +26,7 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- You've completed the steps in [Tutorial: Prepare a Node.js web application for authentication](tutorial-web-app-node-sign-in-prepare-app.md).
+- Complete the steps in [Tutorial: Set up a Node.js web app to sign in users by using Microsoft identity platform](tutorial-web-app-node-sign-in-prepare-app.md).
 
 ## Create MSAL configuration object
 
@@ -36,6 +38,7 @@ require('dotenv').config();
 const TENANT_SUBDOMAIN = process.env.TENANT_SUBDOMAIN || 'Enter_the_Tenant_Subdomain_Here';
 const REDIRECT_URI = process.env.REDIRECT_URI || 'http://localhost:3000/auth/redirect';
 const POST_LOGOUT_REDIRECT_URI = process.env.POST_LOGOUT_REDIRECT_URI || 'http://localhost:3000';
+const GRAPH_ME_ENDPOINT = process.env.GRAPH_API_ENDPOINT + "v1.0/me" || 'Enter_the_Graph_Endpoint_Here';
 
 /**
  * Configuration object to be passed to MSAL instance on creation.
@@ -45,7 +48,10 @@ const POST_LOGOUT_REDIRECT_URI = process.env.POST_LOGOUT_REDIRECT_URI || 'http:/
 const msalConfig = {
     auth: {
         clientId: process.env.CLIENT_ID || 'Enter_the_Application_Id_Here', // 'Application (client) ID' of app registration in Azure portal - this value is a GUID
+        //For external tenant
         authority: process.env.AUTHORITY || `https://${TENANT_SUBDOMAIN}.ciamlogin.com/`, // replace "Enter_the_Tenant_Subdomain_Here" with your tenant name
+        //For workforce tenant
+        //authority: process.env.CLOUD_INSTANCE + process.env.TENANT_ID
         clientSecret: process.env.CLIENT_SECRET || 'Enter_the_Client_Secret_Here', // Client secret generated from the app registration in Azure portal
     },
     system: {
@@ -63,7 +69,8 @@ module.exports = {
     msalConfig,
     REDIRECT_URI,
     POST_LOGOUT_REDIRECT_URI,
-    TENANT_SUBDOMAIN
+    TENANT_SUBDOMAIN,
+    GRAPH_ME_ENDPOINT
 };
 ```
 
@@ -73,9 +80,11 @@ In your *authConfig.js* file, replace:
 
 - `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
 
-- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+- `Enter_the_Tenant_Subdomain_Here` and replace it with the external Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). **This value is required only for external tenant**.
  
 - `Enter_the_Client_Secret_Here` with the app secret value you copied earlier.
+
+- `Enter_the_Graph_Endpoint_Here` with the Microsoft Graph API cloud instance that your app will call. USe the value *https://graph.microsoft.com/* (include the trailing forward-slash)
 
 If you use the *.env* file to store your configuration information:
 
@@ -83,17 +92,43 @@ If you use the *.env* file to store your configuration information:
 
     ```
         CLIENT_ID=Enter_the_Application_Id_Here
-        TENANT_SUBDOMAIN=Enter_the_Tenant_Subdomain_Here
+        TENANT_SUBDOMAIN=Enter_the_Tenant_Subdomain_Here 
+        CLOUD_INSTANCE="Enter_the_Cloud_Instance_Id_Here" # cloud instance string should end with a trailing slash
+        TENANT_ID=Enter_the_Tenant_ID_here
         CLIENT_SECRET=Enter_the_Client_Secret_Here
         REDIRECT_URI=http://localhost:3000/auth/redirect
         POST_LOGOUT_REDIRECT_URI=http://localhost:3000
+        GRAPH_API_ENDPOINT=Enter_the_Graph_Endpoint_Here # graph api endpoint string should end with a trailing slash
+        EXPRESS_SESSION_SECRET=Enter_the_Express_Session_Secret_Here # express session secret, just any random text
     ```
 
-1. Replace the `Enter_the_Application_Id_Here`, `Enter_the_Tenant_Subdomain_Here` and `Enter_the_Client_Secret_Here` placeholders as explained earlier. 
+1. Replace the placeholder:
+    1.  `Enter_the_Application_Id_Here`, `Enter_the_Tenant_Subdomain_Here` and `Enter_the_Client_Secret_Here` as explained earlier. 
+    1. `Enter_the_Cloud_Instance_Id_Here` with the Azure cloud instance in which your application is registered. Use *https://login.microsoftonline.com/* as its value (include the trailing forward-slash). **This value is required only for workforce tenant**. 
+    1. `Enter_the_Tenant_ID_here` with the workforce Tenant ID or Primary domain such as or *aaaabbbb-0000-cccc-1111-dddd2222eeee* or *contoso.microsoft.com*. **This value is required only for workforce tenant**.
 
-You export `msalConfig`, `REDIRECT_URI`, `TENANT_SUBDOMAIN` and `POST_LOGOUT_REDIRECT_URI` variables in the *authConfig.js* file, which makes them accessible wherever you require the file.
+You export `msalConfig`, `REDIRECT_URI`, `TENANT_SUBDOMAIN`, `GRAPH_ME_ENDPOINT` and `POST_LOGOUT_REDIRECT_URI` variables in the *authConfig.js* file, to make them accessible in other files.
 
 [!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
+
+###  Authority URL for your application
+
+The application authorities for external and workforce tenants looks different. For them as shown below:
+
+#### [Workforce tenant authority](#tab/workforce-tenant)
+
+```javascript
+//Authority for workforce tenant
+authority: process.env.CLOUD_INSTANCE + process.env.TENANT_ID
+```
+
+#### [External tenant authority](#tab/external-tenant)
+
+```javascript
+//Authority for external tenant
+authority: process.env.AUTHORITY || `https://${TENANT_SUBDOMAIN}.ciamlogin.com/`
+```
+---
 
 ## Add express routes
 
