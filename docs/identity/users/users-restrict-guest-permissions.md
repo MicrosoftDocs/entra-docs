@@ -31,7 +31,7 @@ When guest access is restricted, guests can view only their own user profile. Pe
 
 We’ve made changes to the existing Azure portal controls for guest user permissions.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [User administrator](~/identity/role-based-access-control/permissions-reference#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select **Identity**  > **External Identities**.
 1. Select **External collaboration settings**.
 1. On the **External collaboration settings** page, select **Guest user access is restricted to properties and memberships of their own directory objects** option.
