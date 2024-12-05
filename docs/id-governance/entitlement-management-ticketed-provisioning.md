@@ -160,7 +160,7 @@ At this point it's time to configure ServiceNow for resuming the entitlement man
     1. Go to the REST API Messages section under System Web Services.
     1. Select the "New" button to create a new REST API message.
     1. Fill in all the required fields, which include providing the Endpoint URL: 
-        `` https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/${AccessPackageAssignmentRequestId}/resume ``
+        ``https://learn.microsoft.com/en-us/graph/api/accesspackageassignmentrequest-resume?view=graph-rest-1.0&tabs=http``
     1. For Authentication, select OAuth2.0 and choose the OAuth profile that was created during the app registration process.
     1. Select the "*Submit*" button to save the changes.
     1. Go back to the REST API Messages section under System Web Services.
