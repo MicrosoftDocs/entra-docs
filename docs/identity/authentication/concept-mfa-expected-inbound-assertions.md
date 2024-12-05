@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID multifactor authentication (MFA) SAML/WSFed assertions
+title: Satisfying Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP
 description: Explains Microsoft Entra ID multifactor authentication (MFA) SAML/WSFed assertions.
 
 ms.service: entra-id
@@ -12,7 +12,7 @@ ms.author: justinha
 manager: amycolannino
 ms.reviewer: bozbayburtlu
 ---
-# Microsoft Entra ID multifactor authentication (MFA) SAML/WSFed assertions
+# Satisfying Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP
 
 This document outlines the assertions Microsoft Entra ID requires from a [federated identity provider (IdP)](~/identity/hybrid/connect/whatis-fed.md) to honor configured [federatedIdpMfaBehaviour](/graph/api/domain-post-federationconfiguration#federatedidpmfabehavior-values) values of acceptIfMfaDoneByFederatedIdp and enforceMfaByFederatedIdp for Security Assertions Markup Language (SAML) and WS-Fed federation.
 
@@ -48,10 +48,6 @@ Or they can be included in the assertion as part of the `AttributeStatement` ele
 
 ## SAML 2 
 
-When an admin optionally configures their Entra ID tenant to use a [federated IdP](~/identity/hybrid/connect/whatis-fed.md) using SAMLP/SAML2.0 federation, Microsoft Entra will redirect to IdP for authentication and expect a response that contains a SAML 2.0 assertion.
-
-### Actual (confirmed by BvT)
-
 When an admin optionally configures their Entra ID tenant to use a [federated IdP](~/identity/hybrid/connect/whatis-fed.md) using SAMLP/SAML2.0 federation, Microsoft Entra will redirect to the IdP for authentication, and expect a response that contains a SAML 2.0 assertion. The inbound MFA assertions must be present in the `AuthnContext` element of the `AuthnStatement`.
 
 ```xml
@@ -62,7 +58,7 @@ When an admin optionally configures their Entra ID tenant to use a [federated Id
 </AuthnStatement>
 ```
 
-As a result, for inbound MFA assertions to be processed by Microsoft Entra, they **must** be present in the AuthnContext element of the AuthnStatement. A potentially unwanted side effect of this is that only one method can be presented in this manner. 
+As a result, for inbound MFA assertions to be processed by Microsoft Entra, they **must** be present in the AuthnContext element of the AuthnStatement. Only one method can be presented in this manner.
 
 ### Using sign-in frequency and session control Conditional Access policies with SAML 2.0
 
