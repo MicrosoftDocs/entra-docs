@@ -1466,6 +1466,21 @@
       "source_path_from_root": "/docs/external-id/customers/sample-cli-app-node-sign-in-users.md",
       "redirect_url": "/entra/identity-platform/quickstart-cli-app-node-sign-in-users",
       "redirect_document_id": false
+    },    
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant.md", 
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-app.md", 
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-sign-out?tabs=external-tenant",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/saas-apps/autotaskworkplace-tutorial.md",
