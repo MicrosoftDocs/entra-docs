@@ -3,7 +3,7 @@ title: How to use the BypassDirSyncOverridesEnabled feature of a Microsoft Entra
 description: Describes how to use BypassDirSyncOverridesEnabled tenant feature to restore synchronization of Mobile and OtherMobile attributes from on-premises Active Directory.
 
 author: billmath
-ms.date: 11/06/2023
+ms.date: 12/05/2024
 ms.author: billmath
 ms.topic: how-to
 ms.service: entra-id
