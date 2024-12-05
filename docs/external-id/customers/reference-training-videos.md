@@ -62,7 +62,7 @@ The Woodgrove Groceries live demo is a fictional global food retailer that uses 
 > [!VIDEO https://www.youtube.com/embed/ZRhD-1WLrh8?si=y5iXA9dNskWfXO-Z]
 ### Enable sign-in with social accounts
 
-The video covers how to integrate social identity providers like Facebook and Google into application sign-up and sign-in flows. It focuses on how you can enhance and personalize the registration experience. It also describes ways to ensure robust security and manage users efficiently using Microsoft Entra External ID.
+The video covers how to integrate social identity providers like Facebook, Google and Apple into application sign-up and sign-in flows. It focuses on how you can enhance and personalize the registration experience. It also describes ways to ensure robust security and manage users efficiently using Microsoft Entra External ID.
 
 > [!VIDEO https://www.youtube.com/embed/lIdGt9rDM-E?si=8n1_G_AqFbYDP22y]
 ### Authorize access to your application
