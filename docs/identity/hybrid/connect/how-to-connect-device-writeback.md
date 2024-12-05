@@ -39,14 +39,14 @@ Install Microsoft Entra Connect using Custom or Express settings. Microsoft reco
 <a name='part-2-enable-device-writeback-in-azure-ad-connect'></a>
 
 ## Part 2: Enable device writeback in Microsoft Entra Connect
-1. Run the installation wizard again. Select **Configure device options** from the Additional Tasks page and click **Next**. 
+1. Run the installation wizard again. Select **Configure device options** from the Additional Tasks page and select **Next**. 
 
     ![Configure device options](./media/how-to-connect-device-writeback/deviceoptions.png)
 
     >[!NOTE]
     > The new Configure device options is available only in version 1.1.819.0 and newer.
 
-2. On the device options page, select **Configure device writeback**. Option to **Disable device writeback** won't be available until device writeback is enabled. Click on **Next** to move to the next page in the wizard.
+2. On the device options page, select **Configure device writeback**. Option to **Disable device writeback** isn't be available until device writeback is enabled. Select on **Next** to move to the next page in the wizard.
     ![Chose device operation](./media/how-to-connect-device-writeback/configuredevicewriteback1.png)
 
 3. On the writeback page, you'll see the supplied domain as the default Device writeback forest.
@@ -54,26 +54,26 @@ Install Microsoft Entra Connect using Custom or Express settings. Microsoft reco
 
 4. **Device container** page provides option of preparing the active directory by using one of the two available options:
 
-    a. **Provide enterprise administrator credentials**: If the enterprise administrator credentials are provided for the forest where devices need to be written back, Microsoft Entra Connect will prepare the forest automatically during the configuration of device writeback.
+    a. **Provide enterprise administrator credentials**: If the enterprise administrator credentials are provided for the forest where devices need to be written back, Microsoft Entra Connect prepares the forest automatically during the configuration of device writeback.
 
-    b. **Download PowerShell script**: Microsoft Entra Connect auto-generates a PowerShell script that can prepare the active directory for device writeback. In case the enterprise administrator credentials can't be provided in Microsoft Entra Connect, it's suggested to download the PowerShell script. Provide the downloaded PowerShell script **CreateDeviceContainer.ps1** to the enterprise administrator of the forest where devices will be written back to.
+    b. **Download PowerShell script**: Microsoft Entra Connect auto-generates a PowerShell script that can prepare the active directory for device writeback. In case the enterprise administrator credentials can't be provided in Microsoft Entra Connect, it's suggested to download the PowerShell script. Provide the downloaded PowerShell script **CreateDeviceContainer.ps1** to the enterprise administrator of the forest where devices are written back to.
     ![Prepare active directory forest](./media/how-to-connect-device-writeback/devicecontainercreds.png)
     
     The following operations are performed for preparing the active directory forest:
     * If they don't exist already, creates and configures new containers and objects under CN=Device Registration Configuration,CN=Services,CN=Configuration,[forest-dn].
-    * If they don't exist already, creates and configures new containers and objects under CN=RegisteredDevices,[domain-dn]. Device objects will be created in this container.
+    * If they don't exist already, creates and configures new containers and objects under CN=RegisteredDevices,[domain-dn]. Device objects are created in this container.
     * Sets necessary permissions on the Microsoft Entra Connector account, to manage devices on your Active Directory.
     * Only needs to run on one forest, even if Microsoft Entra Connect is being installed on multiple forests.
 
 ## Verify Devices are synchronized to Active Directory
-Device writeback should now be working properly. Be aware that it can take up to 3 hours for device objects to be written-back to AD.  To verify that your devices are being synced properly, do the following after the sync rules complete:
+Device writeback should now be working properly. It can take up to 3 hours for device objects to be written-back to AD.  To verify that your devices are being synced properly, do the following after the sync rules complete:
 
 1. Launch Active Directory Administrative Center.
 2. Expand RegisteredDevices, within the Domain that is being federated.
 
    ![Active Directory Admin Center Registered Devices](./media/how-to-connect-device-writeback/devicewriteback5.png)
 
-3. Current registered devices will be listed there.
+3. Current registered devices are be listed there.
 
    ![Active Directory Admin Center Registered Devices List](./media/how-to-connect-device-writeback/devicewriteback6.png)
 
@@ -82,12 +82,12 @@ Detailed instructions to enable this scenario are available within [Setting up O
 
 ## Troubleshooting
 ### The writeback checkbox is still disabled
-If the checkbox for device writeback isn't enabled even though you've followed the steps above, the following steps will guide you through what the installation wizard is verifying before the box is enabled.
+If the checkbox for device writeback isn't enabled even though you've followed the previous steps, the following steps guide you through what the installation wizard is verifying before the box is enabled.
 
 First things first:
 
 * The forest where the devices are present must have the forest schema upgraded to Windows 2012 R2 level so that the device object and associated attributes are present .
-* If the installation wizard is already running, then any changes won't be detected. In this case, complete the installation wizard and run it again.
+* If the installation wizard is already running, then any changes aren't detected. In this case, complete the installation wizard and run it again.
 * Make sure the account you provide in the initialization script is actually the correct user used by the Active Directory Connector. To verify this, follow these steps:
   * From the start menu, open **Synchronization Service**.
   * Open the **Connectors** tab.
@@ -98,7 +98,7 @@ First things first:
 
 Verify configuration in Active Directory:
 
-* Verify that the Device Registration Service is located in the location below (CN=DeviceRegistrationService,CN=Device Registration Services,CN=Device Registration Configuration,CN=Services,CN=Configuration) under configuration naming context.
+* Verify that the Device Registration Service is located in the following location (CN=DeviceRegistrationService,CN=Device Registration Services,CN=Device Registration Configuration,CN=Services,CN=Configuration) under configuration naming context.
 
 ![Troubleshoot, DeviceRegistrationService in configuration namespace](./media/how-to-connect-device-writeback/troubleshoot1.png)
 
