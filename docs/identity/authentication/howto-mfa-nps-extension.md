@@ -275,8 +275,8 @@ If your previous computer certificate has expired, and a new certificate has bee
 
 > [!NOTE]
 > If you use your own certificates instead of generating certificates with the PowerShell script, make sure that they include the Client Authentication purpose and that the private key has **READ** permission granted to the user *NETWORK SERVICE*. 
-> If you use version 1.2.2677.2 or earlier, the certificate must align to the NPS naming convention and the subject name must be **CN=\<TenantID\>,OU=Microsoft NPS Extension**. 
 > If you use version 1.2.2893.1 or later, the certificate’s thumbprint can be used to identify the certificate. Set HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa\CLIENT_CERT_IDENTIFIER to the thumbprint in **Registry Settings**. There have been issues with subject name lookup for some certificates. Using thumbprint works around this issue.
+> If you use version 1.2.2677.2 or earlier, the certificate must align to the NPS naming convention and the subject name must be **CN=\<TenantID\>,OU=Microsoft NPS Extension**. 
 
 ### Microsoft Azure Government or Microsoft Azure operated by 21Vianet additional steps
 
