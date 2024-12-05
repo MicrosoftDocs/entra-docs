@@ -5,7 +5,7 @@ description: Microsoft-managed policies take action to require multifactor authe
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 06/10/2024
+ms.date: 12/05/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -55,9 +55,9 @@ This policy covers users [per-user MFA](../authentication/howto-mfa-userstates.m
 
 This policy targets: 
 
-- Licensed users with Microsoft Entra ID P1 and P2.
-- Where security defaults aren't enabled.
-- There are less than 500 per-user MFA enabled or enforced users. 
+- Organizations licensed users with Microsoft Entra ID P1 and P2
+- Organizations where security defaults aren't enabled
+- Organizations with less than 500 per-user MFA enabled or enforced users
 
 To apply this policy to more users, duplicate it and change the assignments.
 
@@ -74,8 +74,8 @@ This policy targets Microsoft Entra ID P2 tenants where security defaults aren't
 
 To prevent attackers from taking over accounts, Microsoft doesn't allow risky users to register for MFA.
 
-
 ## Security defaults policies
+
 The following policies are available for when you upgrade from using security defaults.
 
 ### Block legacy authentication
@@ -127,7 +127,9 @@ Administrators can go deeper and look through the Microsoft Entra sign-in logs t
    1. To investigate further, drill down into the configuration of the policies by clicking on the **Policy Name**. Clicking the **Policy Name** shows the policy configuration user interface for the selected policy for review and editing.
    1. The **client user** and **device details** that were used for the Conditional Access policy assessment are also available in the **Basic Info**, **Location**, **Device Info**, **Authentication Details**, and **Additional Details** tabs of the sign-in event.
 
-## What is Conditional Access?
+## Common questions
+
+### What is Conditional Access?
 
 Conditional Access is a Microsoft Entra feature that allows organizations to enforce security requirements when accessing resources. Conditional Access is commonly used to enforce multifactor authentication, device configuration, or network location requirements.
 
@@ -136,17 +138,25 @@ These policies can be thought of as logical if then statements.
 **If** the assignments (users, resources, and conditions) are true, **then** apply the access controls (grant and/or session) in the policy.
 **If** you're an administrator, who wants to access one of the Microsoft admin portals, **then** you must perform multifactor authentication to prove it's really you.
 
-## What if I want to make more changes?
+### What if I want to make more changes?
 
 Administrators might choose to make further changes to these policies by duplicating them using the **Duplicate** button in the policy list view. This new policy can be configured in the same way as any other Conditional Access policy with starting from a Microsoft recommended position.
 
-## What administrator roles are covered by these policies?
+### What administrator roles are covered by these policies?
 
 [!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
 
-## What if I use a different solution for multifactor authentication?
+### What if I use a different solution for multifactor authentication?
 
 Multifactor authentication completed via federation or the recently announced external authentication methods satisfies the requirements of the managed policy.
+
+### What if I use Certificate-Based Authentication?
+
+Depending on your tenant’s configuration of Certificate-Based Authentication (CBA), it can function as either single-factor or multifactor. If your organization has CBA configured as single-factor, other configuration and registration of other authentication methods might be required for users to complete MFA. For more information, see [MFA with single factor certificate-based authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication).
+
+### What if I use custom controls?
+
+Custom controls don't satisfy multifactor authentication claim requirements. If your organization uses custom controls you should [migrate to external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), the replacement of custom controls. Your external authentication provider needs to support external authentication methods and provide you with the necessary configuration guidance for their integration.
 
 ## Next steps
 
