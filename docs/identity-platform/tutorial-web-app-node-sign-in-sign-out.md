@@ -559,7 +559,7 @@ At this point, you can test your node web app.
 
 #### [Workforce tenant authority](#tab/workforce-tenant)
 
-1. Use the steps in [Create a new user](../fundamentals/how-to-create-delete-users.md#create-a-new-user) to create a test user in the workforce tenant. If you don't have access to the tenant, ask your tenant admin to create the user for you.
+1. Use the steps in [Create a new user](/entra/fundamentals/how-to-create-delete-users#create-a-new-user) to create a test user in the workforce tenant. If you don't have access to the tenant, ask your tenant admin to create the user for you.
 
 1. To start the server, run the following commands from within the project directory:
 
