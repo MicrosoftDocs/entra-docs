@@ -16,6 +16,14 @@ ms.reviewer: bozbayburtlu
 
 This document outlines the assertions Microsoft Entra ID requires from a [federated identity provider (IdP)](~/identity/hybrid/connect/whatis-fed.md) to honor configured [federatedIdpMfaBehaviour](/graph/api/domain-post-federationconfiguration#federatedidpmfabehavior-values) values of acceptIfMfaDoneByFederatedIdp and enforceMfaByFederatedIdp for Security Assertions Markup Language (SAML) and WS-Fed federation.
 
+   > [!TIP]
+   > Configuring Entra ID with a federated IdP is **optional**. Microsoft recommends using native [authentication methods](~/identity/authentication/concept-authentication-methods.md) available in Entra ID.
+> 
+> - Entra ID includes support for authentication methods previously only availble via a federated IdP such as certificate/smartcards with [Entra Certificate Baseed Authentication](~/identity/authentication/concept-certificate-based-authentication.md)
+> - Entra ID includes support for integrating 3rd party MFA providers with [External Authentication Methods](~/entra/identity/authentication/how-to-authentication-external-method-manage.md) 
+> - Applications integrated with federated Idp's can be [integrated directly with Entra ID](~./entra/architecture/migration-best-practices.md)
+>
+
 ## WSFed/SAML1.1   
 When an admin optionally configures their Entra ID tenant to use a [federated IdP](~/identity/hybrid/connect/whatis-fed.md) using WS-Fed federation, Microsoft Entra redirects to IdP for authentication and expect a response in the form of a Request Security Token Response (RSTR) containing a SAML 1.1 assertion. If configured to do so, Microsoft Entra honors MFA done by the IdP if one of the following two claims is present:
 
