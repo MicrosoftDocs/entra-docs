@@ -78,7 +78,7 @@ The following flowchart explains the different combinations for these parameters
 
 :::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="flowchart of self-service sign-up controls.":::
 
-This setting's details may be retrieved using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information on this, see [Get-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy.
+This setting's details may be retrieved using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information on this, see [Get-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy).
 
 ```powershell
 Get-MgPolicyAuthorizationPolicy | Select-Object AllowedToSignUpEmailBasedSubscriptions, AllowEmailVerifiedUsersToJoinOrganization
