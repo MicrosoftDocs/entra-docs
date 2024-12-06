@@ -71,7 +71,7 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      ```
      For more information, see [create application](/graph/api/application-post-applications?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
-     - Using PowerShell (Note: take the $tenantId variable from previous steps)
+     - Using PowerShell (Note: take the `$tenantId` variable from previous steps)
 
      ```powershell
      New-MgApplication -DisplayName "CloudSyncCustomExtensionsApp" -IdentifierUris "API://$tenantId/CloudSyncCustomExtensionsApp"
