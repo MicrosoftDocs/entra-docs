@@ -78,7 +78,7 @@ The following flowchart explains the different combinations for these parameters
 
 :::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="flowchart of self-service sign-up controls.":::
 
-This setting's details may be retrieved using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information on this, see [Get-MgPolicyAuthorizationPolicy]([/powershell/module/msonline/get-msolcompanyinformation](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy?view=graph-powershell-1.0)).
+This setting's details may be retrieved using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information on this, see [Get-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy).
 
 ```powershell
 Get-MgPolicyAuthorizationPolicy | Select-Object AllowedToSignUpEmailBasedSubscriptions, AllowEmailVerifiedUsersToJoinOrganization
@@ -92,5 +92,5 @@ For more information and examples of how to use these parameters, see [Update-Mg
 * [How to install and configure Azure PowerShell](/powershell/azure/)
 * [Azure PowerShell](/powershell/azure/)
 * [Azure Cmdlet Reference](/powershell/azure/get-started-azureps)
-* [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy?view=graph-powershell-1.0).
+* [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy).
 * [Close your work or school account in an unmanaged tenant](users-close-account.md)
