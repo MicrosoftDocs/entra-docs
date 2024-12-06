@@ -19,7 +19,6 @@ The following list is provided as a reference and includes a detailed list of se
 
 - App Studio for Microsoft Teams
 - Augmentation Loop
-- Augmentation Loop
 - Call Recorder
 - Connectors
 - DataSecurityInvestigation
@@ -40,7 +39,6 @@ The following list is provided as a reference and includes a detailed list of se
 - M365ChatClient
 - make.gov.powerapps.us
 - make.powerapps.com
-- Media Analysis and Transformation Service
 - Media Analysis and Transformation Service
 - Message Recall
 - Messaging Async Media
@@ -84,7 +82,6 @@ The following list is provided as a reference and includes a detailed list of se
 - Natural Language Editor
 - O365 Diagnostic Service
 - O365 Suite UX
-- O365 Suite UX
 - O365 Suite UX PathFinder
 - OCPS Checkin Service
 - Office 365
@@ -93,10 +90,8 @@ The following list is provided as a reference and includes a detailed list of se
 - Office 365 Search Service
 - Office 365 SharePoint Online
 - Office Delve
-- Office Delve
 - Office Hive
 - Office Hive Fairfax
-- Office MRO Device Manager Service
 - Office MRO Device Manager Service
 - Office Online Add-in SSO
 - Office Online Augmentation Loop SSO
@@ -115,11 +110,9 @@ The following list is provided as a reference and includes a detailed list of se
 - Office.com
 - Office365 Shell DoD WCSS-Client
 - Office365 Shell WCSS-Client
-- Office365 Shell WCSS-Client
 - OfficeClientService
 - OfficeHome
 - OfficePowerPointSGS
-- OfficeServicesManager
 - OfficeServicesManager
 - One Outlook Web
 - OneDrive
@@ -135,7 +128,6 @@ The following list is provided as a reference and includes a detailed list of se
 - Reply-At-Mention
 - SharePoint eSignature
 - SharePoint eSignature PPE
-- SharePoint Online Web Client Extensibility
 - SharePoint Online Web Client Extensibility
 - SharePoint Online Web Client Extensibility Isolated
 - Skype and Teams Tenant Admin API
