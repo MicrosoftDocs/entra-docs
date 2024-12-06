@@ -12,7 +12,6 @@ ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---
 
-
 # Cloud sync directory extensions and custom attribute mapping
 
 Microsoft Entra ID must contain all the data (attributes) required to create a user profile when provisioning user accounts from Microsoft Entra ID to a line of business (LOB), [SaaS app](~/identity/saas-apps/tutorial-list.md), or on-premises application. You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises, provision users from Windows Server Active Directory through Microsoft Entra ID to SaaS apps, and use extension attributes in Microsoft Entra ID and Microsoft Entra ID Governance features such as dynamic membership groups or Group provisioning to Active Directory.
@@ -72,7 +71,7 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      ```
      For more information, see [create application](/graph/api/application-post-applications?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
-     - Using PowerShell (Note: take the $tenantId value from previous steps)
+     - Using PowerShell (Note: take the $tenantId variable from previous steps)
 
      ```powershell
      New-MgApplication -DisplayName "CloudSyncCustomExtensionsApp" -IdentifierUris "api://$tenantId/CloudSyncCustomExtensionsApp"
@@ -89,7 +88,7 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      ```
      For more information, see [get service principal](/graph/api/serviceprincipal-get?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
-     - Using PowerShell (Note: take the $tenantId from previous steps)
+     - Using PowerShell (Note: take the $tenantId variable from previous steps)
 
      ```powershell
      $appId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://$tenantId/CloudSyncCustomExtensionsApp')").AppId
@@ -114,7 +113,7 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      ```
      For more information, see [create servicePrincipal](/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
-     - Using PowerShell (Note: take the $appId value from previous steps)
+     - Using PowerShell (Note: take the $appId variable from previous steps)
      
      ```powershell     
      New-MgServicePrincipal -AppId $appId
@@ -130,7 +129,7 @@ You need to create an [application](/graph/api/resources/application?view=graph-
 Using cloud sync and Microsoft Entra Connect|Create extensions using Microsoft Entra Connect|[Create an extension attribute using Microsoft Entra Connect](../../app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-using-azure-ad-connect)|
 |Customizing attributes to sync|Information on customizing, which attributes to synch|[Customize which attributes to synchronize with Microsoft Entra ID](../connect/how-to-connect-sync-feature-directory-extensions.md#customize-which-attributes-to-synchronize-with-azure-ad)
 
- 6. To create a directory extension called 'WritebackEnabled' in Microsoft Entra ID for Group objects using PowerShell, use the following commands:
+6. To create a directory extension called 'WritebackEnabled' in Microsoft Entra ID for Group objects using PowerShell, use the following commands:
 
      ```powershell     
      $appObjId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://$tenantId/CloudSyncCustomExtensionsApp')").Id
