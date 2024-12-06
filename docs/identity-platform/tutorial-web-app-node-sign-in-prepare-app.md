@@ -157,4 +157,4 @@ npm install express dotenv hbs express-session axios cookie-parser http-errors m
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add add sign-in in your Node/Express.js web app](/entra/identity-platform/tutorial-web-app-node-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant).
+> [Tutorial: Add add sign-in in your Node/Express.js web app](tutorial-web-app-node-sign-in-sign-out.md).

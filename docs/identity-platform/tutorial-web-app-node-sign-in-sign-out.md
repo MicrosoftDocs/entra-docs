@@ -553,7 +553,7 @@ const givenName = req.session.account.idTokenClaims.given_name
     }
     ```
 
-## Run and test the web app
+## Run and test the Node/Express.js web app
 
 At this point, you can test your node web app.
 
@@ -606,4 +606,4 @@ After you're signed in successfully, you'll be redirected back to the applicatio
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Call Microsoft Graph API from your Node/Express.js web app](/entra/identity-platform/tutorial-web-app-node-call-microsoft-graph-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant).
+> [Tutorial: Call Microsoft Graph API from your Node/Express.js web app](tutorial-web-app-node-call-microsoft-graph-api.md).
