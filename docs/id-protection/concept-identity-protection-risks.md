@@ -44,7 +44,7 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 > Our system might detect that the risk event that contributed to the risk user risk score was either: 
 > 
 > - A false positive
-> - The user risk was [remediated by policy](howto-identity-protection-remediate-unblock.md) by either: 
+> - The user risk was [remediated by policy](howto-identity-protection-remediate-unblock.md) by either: 
 >    - Completing multifactor authentication
 >    - Secure password change
 > 
@@ -62,7 +62,7 @@ These fields are essential for real-time monitoring, threat response, and mainta
 | [Activity from anonymous IP address](#activity-from-anonymous-ip-address) | Offline | Premium | riskyIPAddress |
 | [Additional risk detected (sign-in)](#additional-risk-detected-sign-in) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
 | [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
-| [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium | anomalousToken | 
+| [Anomalous Token (sign-in)](#anomalous-token-sign-in) | Real-time or Offline | Premium | anomalousToken | 
 | [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium | anonymizedIPAddress |
 | [Atypical travel](#atypical-travel) | Offline | Premium | unlikelyTravel |
 | [Impossible travel](#impossible-travel) | Offline | Premium | mcasImpossibleTravel |
@@ -79,7 +79,7 @@ These fields are essential for real-time monitoring, threat response, and mainta
 | [Verified threat actor IP](#verified-threat-actor-ip) | Real-time | Premium | nationStateIP |
 | **User risk detections** | | | |
 | [Additional risk detected (user)](#additional-risk-detected-user) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
-| [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium | anomalousToken | 
+| [Anomalous Token (user)](#anomalous-token-user) | Real-time or Offline | Premium | anomalousToken | 
 | [Anomalous user activity](#anomalous-user-activity) | Offline | Premium | anomalousUserActivity |
 | [Attacker in the Middle](#attacker-in-the-middle) | Offline | Premium | attackerinTheMiddle |
 | [Leaked credentials](#leaked-credentials) | Offline | Nonpremium | leakedCredentials |
@@ -101,7 +101,9 @@ The following premium detections are visible only to Microsoft Entra ID P2 custo
 
 Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address identified as an anonymous proxy IP address. 
 
-#### Anomalous token 
+<a name='anomalous-token'></a>
+
+#### Anomalous token (sign-in)
 
 Calculated in real-time or offline. This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
 
@@ -177,7 +179,7 @@ Calculated in real-time. This risk detection type indicates sign-in activity tha
 
 ### Premium user risk detections 
 
-#### Anomalous token 
+#### Anomalous token (user)
 
 Calculated in real-time or offline. This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
 
