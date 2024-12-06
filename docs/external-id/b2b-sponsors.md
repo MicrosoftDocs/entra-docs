@@ -85,7 +85,7 @@ When you invite a guest user, you became their sponsor by default. If you need t
 
 ## Edit the Sponsors field with PowerShell
 
-You can manage the **Sponsors** field for all existing users using the [Update-MsIdInvitedUserSponsorsFromInvitedBy](https://azuread.github.io/MSIdentityTools/commands/Update-MsIdInvitedUserSponsorsFromInvitedBy) PowerShell script in the [Microsoft Identity Tools module](https://azuread.github.io/MSIdentityTools). The script updates the sponsors attribute to include the user who initially invited them to the tenant using the InvitedBy property.
+You can manage the **Sponsors** field for all existing users using the [Update-MsIdInvitedUserSponsorsFromInvitedBy](https://azuread.github.io/MSIdentityTools/commands/Update-MsIdInvitedUserSponsorsFromInvitedBy) PowerShell script in the [Microsoft Identity Tools module](https://azuread.github.io/MSIdentityTools). The script updates the sponsors attribute to include the user who initially invited them to the tenant using the `InvitedBy` property.
 
 ## Manage access reviews with sponsors
 
