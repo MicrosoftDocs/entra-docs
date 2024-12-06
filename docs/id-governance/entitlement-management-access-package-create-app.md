@@ -176,6 +176,56 @@ Once the catalog is created, add the application [as a resource in that catalog]
 
 If the application relies upon a security group, then add that group to the catalog so it can be included as a resource. If the application does not rely upon a security group, then continue at the next section.
 
+1. Specify the ID of the group. Use the ID of your group as the value of `servicePrincipalName`.
+
+   ```powershell
+   $groupId = "7c2b967b-68c2-418a-a1c6-a3c7efb895a7"
+   ```
+
+1. Check if the group is already present in the catalog as a resource. If it's already present, continue at step 4 of this section.
+
+   ```powershell
+   $groupResourceId = $null
+   foreach ($r in $catalog.Resources) { if ($r.OriginId -eq $groupId) { $groupResourceId = $r.id; break } }
+   if ($groupResourceId -ne $null) { write-output "resource for group already in catalog" } else {write-output "resource for group not yet in catalog"}
+   ```
+
+1. Add the group as a resource to the catalog.
+
+   ```powershell
+   $groupResourceAddParams = @{
+     requestType = "adminAdd"
+     resource = @{
+       originId = $groupId
+       originSystem = "AadGroup"
+     }
+     catalog = @{ id = $catalogId }
+   }
+
+   $groupResourceAdd = New-MgEntitlementManagementResourceRequest -BodyParameter $groupResourceAddParams
+   if ($groupResourceAdd -eq $null) { throw "group resource could not be added" }
+   sleep 5
+   ```
+1. Retrieve the ID and the scope of the group resource in that catalog.
+
+   ```powershell
+   $groupResource = $null
+   $groupResourceId = $null
+   $groupResourceScope = $null
+   $catalogResources = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $CatalogId -ExpandProperty "scopes" -all
+
+   foreach ($r in $catalogResources) { if ($r.OriginId -eq $groupId) { $groupResource = $r; $groupResourceId = $r.id; $groupResourceScope = $r.Scopes[0]; break } }
+   if ($groupResourceId -eq $null) { throw "resource was not added" }
+   ```
+
+1. Retrieve the `member` role of the group resource in that catalog.
+
+   ```powershell
+   $grFilter = "(originSystem eq 'AadGroup' and resource/id eq '" + $groupResourceId + "')"
+   $grrs = Get-MgEntitlementManagementCatalogResourceRole -AccessPackageCatalogId $CatalogId -Filter $grFilter -ExpandProperty "resource"
+   $grMember = $grrs | where DisplayName -eq "Member"
+   ```
+
 ## Create the access package for the application
 
 
@@ -243,6 +293,28 @@ Once you've created an access package, then you link the role of the resource fo
 
 If the application relies upon a group, then you link the group membership of the group to the access package.  If the application does not rely upon a group, then continue at the next section.
 
+  ```powershell
+   $grrsParams = @{
+    role = @{
+        displayName =  "Member"
+        description =  ""
+        originSystem =  $grMember.OriginSystem
+        originId =  $grMember.OriginId
+        resource = @{
+            id = $groupResource.Id
+            originId = $groupResource.OriginId
+            originSystem = $groupResource.OriginSystem
+        }
+    }
+    scope = @{
+        id = $groupResourceScope.Id
+        originId = $groupResourceScope.OriginId
+        originSystem = $groupResourceScope.OriginSystem
+    }
+   }
+
+   $groupRrsAddRes = New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $accessPackageId -BodyParameter $grrsParams
+   ```
 
 ## Create access package assignment policies for direct assignment
 
