@@ -20,7 +20,7 @@ Microsoft Entra Connect requires a SQL Server database to store data. You can ei
 ## Benefits of using an existing ADSync database
 By pointing to an existing ADSync database:
 
-- Except for credentials information, synchronization configuration stored in the ADSync database (including custom synchronization rules, connectors, filtering, and optional features configuration) is automatically recovered and used during installation. Credentials used by Microsoft Entra Connect to synchronize changes with on-premises AD and Microsoft Entra ID are encrypted and can only be accessed by the previous Microsoft Entra Connect server.
+- Except for credentials information, the synchronization configuration stored in the ADSync database is automatically recovered and used during installation. This includes custom synchronization rules, connectors, filtering, and optional features configuration.
 - All the identity data (associated with connector spaces and metaverse) and synchronization cookies stored in the ADSync database are also recovered. The newly installed Microsoft Entra Connect server can continue to synchronize from where the previous Microsoft Entra Connect server left off, instead of having the need to perform a full sync.
 
 ## Scenarios where using an existing ADSync database is beneficial
@@ -80,16 +80,16 @@ Important notes to take note of before you proceed:
 1. Once installation completes, the Microsoft Entra Connect server is automatically enabled for Staging Mode. It's recommended that you review the server configuration and pending exports for unexpected changes before disabling Staging Mode. 
 
 ## Post installation tasks
-When restoring a database backup created by a version of Microsoft Entra Connect prior to 1.2.65.0, the staging server automatically select a sign-in method of **Do Not Configure**. While your password hash sync and password writeback preferences are restored, you must subsequently change the sign-in method to match the other policies in effect for your active synchronization server.  Failure to complete these steps may prevent users from signing in should this server becomes active.  
+When restoring a database backup created by a version of Microsoft Entra Connect prior to 1.2.65.0, the staging server automatically select a sign-in method of **Do Not Configure**. While your password hash sync and password writeback preferences are restored, you must subsequently change the sign-in method to match the other policies in effect for your active synchronization server. Failure to complete these steps may prevent users from signing in should this server becomes active.  
 
 Use the following table to verify any additional steps that are required.
 
 |Feature|Steps|
 |-----|-----|
 |Password Hash Synchronization| the Password Hash Synchronization and Password writeback settings are fully restored for versions of Microsoft Entra Connect starting with 1.2.65.0. If restoring using an older version of Microsoft Entra Connect, review the synchronization option settings for these features to ensure they match your active synchronization server. No other configuration steps should be necessary.|
-|Federation with AD FS|Azure authentications continues to use the AD FS policy configured for your active synchronization server. If you use Microsoft Entra Connect to manage your AD FS farm, you may optionally change the sign-in method to AD FS federation in preparation for your standby server becoming the active synchronization instance.  If device options are enabled on the active synchronization server, configure those options on this server by running the "Configure device options" task.|
+|Federation with AD FS|Azure authentications continues to use the AD FS policy configured for your active synchronization server. If you use Microsoft Entra Connect to manage your AD FS farm, you can optionally change the sign-in method to AD FS federation. This prepares your standby server to become the active synchronization instance. If device options are enabled on the active synchronization server, configure those options on this server by running the "Configure device options" task.|
 |Pass-through authentication and Desktop Single Sign-On|Update the sign in method to match the configuration on your active synchronization server. If you do not follow this procedure before promoting the server to primary, pass-through authentication and Seamless Single Sign-On will be disabled. Additionally, your tenant might be locked out if you do not have password hash sync as a backup sign-in option. When you enable pass-through authentication in staging mode, a new authentication agent will be installed, registered and will run as a high-availability agent which will accept sign in requests.|
-|Federation with PingFederate|Azure authentications will continue to use the PingFederate policy configured for your active synchronization server. You may optionally change the sign-in method to PingFederate in preparation for your standby server becoming the active synchronization instance. This step may be deferred until you need to federate additional domains with PingFederate.|
+|Federation with PingFederate|Azure authentications continues to use the PingFederate policy configured for your active synchronization server. You may optionally change the sign-in method to PingFederate in preparation for your standby server becoming the active synchronization instance. This step may be deferred until you need to federate additional domains with PingFederate.|
 
 ## Next steps
 
