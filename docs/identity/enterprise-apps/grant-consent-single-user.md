@@ -1,6 +1,6 @@
 ---
 title: Grant consent on behalf of a single user
-description: Learn how to grant consent on behalf of a single user when user consent is disabled or restricted.
+description: Learn how to grant consent on behalf of a single user when the user consent is disabled or restricted.
 
 author: omondiatieno
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 12/20/2023
+ms.date: 12/12/2024
 ms.author: jomondi
 ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-ms-graph-ms-powershell
@@ -127,7 +127,7 @@ You need to consent to the following permissions:
 
 In the following example, you grant delegated permissions defined by a resource API to a client enterprise application on behalf of a single user.
 
-In the example, the resource enterprise application is Microsoft Graph of object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The Microsoft Graph defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `Principal`, indicating that you're consenting on behalf of a single user in the tenant. The object ID of the client enterprise application is `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The principalId of the user is `aaaaaaaa-bbbb-cccc-1111-222222222222`.
+In the example, the resource enterprise application is Microsoft Graph of object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The Microsoft Graph defines the delegated permissions, `User.Read.All`, and `Group.Read.All`. The consentType is `Principal`, indicating that you're consenting on behalf of a single user in the tenant. The object ID of the client enterprise application is `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The principalId of the user is `aaaaaaaa-bbbb-cccc-1111-222222222222`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically are not subject to review or confirmation. They take effect immediately.
@@ -153,7 +153,7 @@ In the example, the resource enterprise application is Microsoft Graph of object
    }
    ```
 
-1. Confirm that you've granted consent to the user by running the following request.
+1. Confirm that you granted consent to the user by running the following request.
 
    ```http
    GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants?$filter=clientId eq '00001111-aaaa-2222-bbbb-3333cccc4444' and consentType eq 'Principal'
