@@ -37,7 +37,7 @@ You can use [directory extensions](/graph/api/resources/extensionproperty?view=g
 You need to create an [application](/graph/api/resources/application?view=graph-rest-1.0&preserve-view=true) with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` if it doesn't exist and create a service principal for the application if it doesn't exist. 
 
 
- 1. Check if application with the identifier URI `api://<tenantId>/CloudSyncCustomExtensionsApp` exists.
+ 1. Check if application with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` exists.
 
      - Using Microsoft Graph 
 
