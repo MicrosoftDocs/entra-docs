@@ -42,7 +42,7 @@ The following example policy targets all users except for your break-glass accou
    :::image type="content" source="media/how-to-target-resource-microsoft-profile/target-resource-traffic-profile.png" alt-text="Screenshot showing a Conditional Access policy targeting a traffic profile.":::
 
    > [!NOTE]
-   > If you only want to enforce the *Internet Access traffic forwarding profile* and **not** the *Microsoft traffic forwarding profile* then select **Internet Resources** from the app picker and configure a security profile. 
+   > To only enforce the *Internet Access traffic forwarding profile* and **not** the *Microsoft traffic forwarding profile* then choose **Select resources** and select **Internet resources** from the app picker and configure a security profile. 
 
 1. Under **Access controls** > **Grant**.
    1. Select **Require multifactor authentication**, **Require device to be marked as compliant**, and **Require Microsoft Entra hybrid joined device**

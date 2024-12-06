@@ -86,8 +86,7 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. Browse to **Identity** > **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
-1. Select **Target resources** and **Global Secure Access** from the drop-down menu to set what the policy applies to.
-1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
+1. Select **Target resources** and **All internet resources with Global Secure Access**.
 1. Select **Session** > **Use Global Secure Access security profile** and choose a security profile.
 1. Select **Select**.
 1. In the **Enable policy** section, ensure **On** is selected.
