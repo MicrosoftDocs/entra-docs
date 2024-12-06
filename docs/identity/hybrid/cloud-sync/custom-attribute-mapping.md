@@ -12,13 +12,14 @@ ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---
 
+
 # Cloud sync directory extensions and custom attribute mapping
 
-Microsoft Entra ID must contain all the data (attributes) required to create a user profile when provisioning user accounts from Microsoft Entra ID to a line of business (LOB), [SaaS app](~/identity/saas-apps/tutorial-list.md), or on-premises application. You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises, provision users from Windows Server Active Directory through Microsoft Entra ID to SaaS apps, and use extension attributes in Microsoft Entra ID and Microsoft Entra ID Governance features such as dynamic membership groups.
+Microsoft Entra ID must contain all the data (attributes) required to create a user profile when provisioning user accounts from Microsoft Entra ID to a line of business (LOB), [SaaS app](~/identity/saas-apps/tutorial-list.md), or on-premises application. You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises, provision users from Windows Server Active Directory through Microsoft Entra ID to SaaS apps, and use extension attributes in Microsoft Entra ID and Microsoft Entra ID Governance features such as dynamic membership groups or Group provisioning to Active Directory.
 
 For more information on directory extensions, see [Using directory extension attributes in claims](../../../identity-platform/schema-extensions.md), [Microsoft Entra Connect Sync: directory extensions](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md), and [Syncing extension attributes for Microsoft Entra application provisioning](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md).
 
- You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
+You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
 >[!NOTE]
 > In order to discover new Active Directory extension attributes, the provisioning agent needs to be restarted. You should restart the agent after the directory extensions have been created. For Microsoft Entra extension attributes, the agent doesn't need to be restarted.
@@ -30,7 +31,7 @@ For more information on directory extensions, see [Using directory extension att
 You can use [directory extensions](/graph/api/resources/extensionproperty?view=graph-rest-1.0&preserve-view=true) to extend the synchronization schema directory definition in Microsoft Entra ID with your own attributes. 
 
 >[!Important]
-> Directory extension for Microsoft Entra Cloud Sync is only supported for applications with the identifier URI “api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp” and the [Tenant Schema Extension App](../connect/how-to-connect-sync-feature-directory-extensions.md#configuration-changes-in-azure-ad-made-by-the-wizard) created by Microsoft Entra Connect 
+> Directory extension for Microsoft Entra Cloud Sync is only supported for applications with the identifier URI “api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp” and the [Tenant Schema Extension App](../connect/how-to-connect-sync-feature-directory-extensions.md#configuration-changes-in-azure-ad-made-by-the-wizard) created by Microsoft Entra Connect.
 
 ### Create application and service principal for directory extension 
 
@@ -50,12 +51,14 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      - Using PowerShell 
      
      ```powershell
-     Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://<tenantId>/CloudSyncCustomExtensionsApp')"
+     $tenantId = (Get-MgOrganization).Id
+     
+     Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://$tenantId/CloudSyncCustomExtensionsApp')"
      ```
 
      For more information, see [Get-MgApplication](/powershell/module/microsoft.graph.applications/get-mgapplication)
 
- 2. If the application doesn't exist, create the application with identifier URI "api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp."
+ 2. If the application doesn't exist, create the application with identifier URI "api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp".
 
      - Using Microsoft Graph 
      ```
@@ -69,17 +72,16 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      ```
      For more information, see [create application](/graph/api/application-post-applications?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
-     - Using PowerShell 
+     - Using PowerShell (Note: take the $tenantId value from previous steps)
 
      ```powershell
-     New-MgApplication -DisplayName "CloudSyncCustomExtensionsApp" -IdentifierUris "api://<tenant id>/CloudSyncCustomExtensionsApp"
+     New-MgApplication -DisplayName "CloudSyncCustomExtensionsApp" -IdentifierUris "api://$tenantId/CloudSyncCustomExtensionsApp"
      ```
 
      For more information, see [New-MgApplication](/powershell/module/microsoft.graph.applications/new-mgapplication)
-
  
 
- 3. Check if the service principal exists for the application with identifier URI "api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp."
+ 3. Check if the service principal exists for the application with identifier URI "api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp".
 
      - Using Microsoft Graph 
      ```
@@ -87,10 +89,12 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      ```
      For more information, see [get service principal](/graph/api/serviceprincipal-get?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
-     - Using PowerShell 
+     - Using PowerShell (Note: take the $tenantId from previous steps)
 
      ```powershell
-     Get-MgServicePrincipal -Filter "AppId eq '<application id>'"
+     $appId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://$tenantId/CloudSyncCustomExtensionsApp')").AppId
+     
+     Get-MgServicePrincipal -Filter "AppId eq '$appId'"
      ```
 
      For more information, see [Get-MgServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal)
@@ -110,10 +114,10 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      ```
      For more information, see [create servicePrincipal](/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
-     - Using PowerShell 
+     - Using PowerShell (Note: take the $appId value from previous steps)
      
-     ```powershell
-     New-MgServicePrincipal -AppId '<appId>'
+     ```powershell     
+     New-MgServicePrincipal -AppId $appId
      ```
      For more information, see [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal)
  
@@ -125,6 +129,15 @@ You need to create an [application](/graph/api/resources/application?view=graph-
 |PowerShell|Create extensions using PowerShell|[New-MgApplicationExtensionProperty](/powershell/module/microsoft.graph.applications/new-mgapplicationextensionproperty)| 
 Using cloud sync and Microsoft Entra Connect|Create extensions using Microsoft Entra Connect|[Create an extension attribute using Microsoft Entra Connect](../../app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-using-azure-ad-connect)|
 |Customizing attributes to sync|Information on customizing, which attributes to synch|[Customize which attributes to synchronize with Microsoft Entra ID](../connect/how-to-connect-sync-feature-directory-extensions.md#customize-which-attributes-to-synchronize-with-azure-ad)
+
+ 6. To create a directory extension called 'WritebackEnabled' in Microsoft Entra ID for Group objects using PowerShell, use the following commands:
+
+     ```powershell     
+     $appObjId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://$tenantId/CloudSyncCustomExtensionsApp')").Id
+     
+     New-MgApplicationExtensionProperty -ApplicationId $appObjId -Name WritebackEnabled -DataType Boolean -TargetObjects Group
+     ```
+
 
 ## Use attribute mapping to map Directory Extensions
 If you have extended Active Directory to include custom attributes, you can add these attributes and map them to users.  
