@@ -15,7 +15,7 @@ ms.reviewer: mwahl
 
 In Microsoft Entra entitlement management, an access package encompasses the policies for how users can obtain assignments for one or more resource roles. The resources can include groups, applications, and SharePoint Online sites.
 
-This article describes how to create an access package for a single application with a single role, using Microsoft Graph PowerShell. This scenario is primarily applicable to environments that are using entitlement management for automating ongoing access for a specific business or middleware application. An organization that has multiple resources or resources with multiple roles can also model their access policies with access packages:
+This article describes how to create an access package for a single application with a single role, using Microsoft Graph PowerShell. This scenario is primarily applicable to environments that are using entitlement management for automating ongoing access for a specific business or middleware application.  You can build upon the guidance in this and other articles for more complex scenarios, such as access across multiple applications, or access across applications and other kinds of resources. An organization that has multiple resources or resources with multiple roles can also model their access policies with access packages:
 
 * If the organization already has an existing organizational role model for their business roles, they can migrate that model to Microsoft Entra ID Governance, and [govern access with an organizational role model](identity-governance-organizational-roles.md).
 * If the organization has applications with multiple roles, then they can [deploy organizational policies for governing access to applications integrated with Microsoft Entra ID](identity-governance-applications-deploy.md)
@@ -34,7 +34,7 @@ To create the access package and its associated policies and assignments, you'll
 |--|--|--|
 | All| Name of the application in your Microsoft Entra ID tenant|`$servicePrincipalName`|
 | All| Name of the application's role|`$servicePrincipalRoleName`|
-| Apps which rely upon a security group | ID of the Microsoft Entra security group used by the application, if any||
+| Apps which rely upon a security group | ID of the Microsoft Entra security group used by the application, if any|`$groupId`|
 | All| Name of the catalog containing the access package|`$catalogName`|
 | All| Name to give the access package|`$accessPackageName`|
 | All | Description to give the access package|`$accessPackageDescription`|
@@ -174,7 +174,7 @@ Once the catalog is created, add the application [as a resource in that catalog]
 
 ## Add the group as a resource to the catalog
 
-If the application relies upon a security group, then add that group to the catalog so it can be included as a resource. If the application does not rely upon a security group, then continue at the next section.
+If the application relies upon a security group, then add that group to the catalog so it can be included as a resource. If the application doesn't rely upon a security group, then continue at the next section.
 
 1. Specify the ID of the group. Use the ID of your group as the value of `servicePrincipalName`.
 
@@ -291,7 +291,7 @@ Once you've created an access package, then you link the role of the resource fo
 
 ## Add the group to the access package
 
-If the application relies upon a group, then you link the group membership of the group to the access package.  If the application does not rely upon a group, then continue at the next section.
+If the application relies upon a group, then you link the group membership of the group to the access package.  If the application doesn't rely upon a group, then continue at the next section.
 
   ```powershell
    $grrsParams = @{
