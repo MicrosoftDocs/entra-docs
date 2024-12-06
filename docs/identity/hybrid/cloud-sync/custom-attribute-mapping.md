@@ -42,7 +42,7 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      - Using Microsoft Graph 
 
      ```
-     GET /applications?$filter=identifierUris/any(uri:uri eq 'API://<tenantId>/CloudSyncCustomExtensionsApp')
+     GET /applications?$filter=identifierUris/any(uri:uri eq 'api://<tenantId>/CloudSyncCustomExtensionsApp')
      ```
 
      For more information, see [Get application](/graph/api/application-get?view=graph-rest-1.0&tabs=http&preserve-view=true)
