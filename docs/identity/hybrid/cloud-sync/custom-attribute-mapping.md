@@ -88,7 +88,7 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      ```
      For more information, see [get service principal](/graph/api/serviceprincipal-get?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
-     - Using PowerShell (Note: take the $tenantId variable from previous steps)
+     - Using PowerShell (Note: take the `$tenantId` variable from previous steps)
 
      ```powershell
      $appId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')").AppId
@@ -113,14 +113,38 @@ You need to create an [application](/graph/api/resources/application?view=graph-
      ```
      For more information, see [create servicePrincipal](/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
-     - Using PowerShell (Note: take the $appId variable from previous steps)
+     - Using PowerShell (Note: take the `$appId` variable from previous steps)
      
      ```powershell     
      New-MgServicePrincipal -AppId $appId
      ```
      For more information, see [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal)
  
- 5. You can create directory extensions in Microsoft Entra ID in several different ways. 
+ 5. Create a directory extension in Microsoft Entra ID. For example, a new extension called 'WritebackEnabled', of boolean type, for Group objects.
+
+     - Using Microsoft Graph 
+     ```
+     POST https://graph.microsoft.com/v1.0/applications/<ApplicationId>/extensionProperties
+     Content-type: application/json
+     
+     {
+         "name": "WritebackEnabled",
+         "dataType": "Boolean",
+         "isMultiValued": false,
+         "targetObjects": [
+             "Group"
+         ]
+     }    
+     ```
+
+     - Using PowerShell (Note: take the `$tenantId` variable from previous steps)
+     ```powershell     
+     $appObjId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')").Id
+     
+     New-MgApplicationExtensionProperty -ApplicationId $appObjId -Name WritebackEnabled -DataType Boolean -TargetObjects Group
+     ```
+ 
+You can create directory extensions in Microsoft Entra ID in several different ways, as described in the following table:
 
 |Method|Description|URL|
 |-----|-----|-----|
@@ -129,13 +153,6 @@ You need to create an [application](/graph/api/resources/application?view=graph-
 Using cloud sync and Microsoft Entra Connect|Create extensions using Microsoft Entra Connect|[Create an extension attribute using Microsoft Entra Connect](../../app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-using-azure-ad-connect)|
 |Customizing attributes to sync|Information on customizing, which attributes to synch|[Customize which attributes to synchronize with Microsoft Entra ID](../connect/how-to-connect-sync-feature-directory-extensions.md#customize-which-attributes-to-synchronize-with-azure-ad)
 
-6. To create a directory extension called 'WritebackEnabled' in Microsoft Entra ID for Group objects using PowerShell, use the following commands:
-
-     ```powershell     
-     $appObjId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')").Id
-     
-     New-MgApplicationExtensionProperty -ApplicationId $appObjId -Name WritebackEnabled -DataType Boolean -TargetObjects Group
-     ```
 
 
 ## Use attribute mapping to map Directory Extensions
