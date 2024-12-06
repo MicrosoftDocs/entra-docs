@@ -77,8 +77,6 @@
       href: concept-sspr-licensing.md
     - name: Deployment guide
       href: concept-sspr-deploy.md
-  - name: Satisfy MFA with claims
-    href: concept-mfa-expected-inbound-assertions.md
   - name: Multifactor authentication
     items:
     - name: How MFA works
@@ -251,6 +249,8 @@
       href: howto-mfa-userdevicesettings.yml
     - name: Verify mandatory MFA 
       href: how-to-mandatory-multifactor-authentication.md
+    - name: Verify MFA for federated accounts
+      href: concept-mfa-expected-inbound-assertions.md
     - name: Find coverage gaps
       href: how-to-authentication-find-coverage-gaps.md
     - name: Enable per-user MFA
