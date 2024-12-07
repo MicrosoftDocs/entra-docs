@@ -1,19 +1,19 @@
 ---
-title: Configure Application Discovery (Preview)
-description: Configure Application discovery to detect the applications accessed by users and create separate private applications.
+title: Application Discovery (Preview)
+description: Use Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/04/2024
+ms.date: 12/06/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
 ms.reviewer: lirazbarak
 
 
-# Customer intent: As an administrator, I want to configure Application discovery so I can detect the applications accessed by users and create separate private applications.
+# Customer intent: As an administrator, I want to use Application discovery to detect the applications accessed by users and create separate private applications.
 ---
-# Configure Application discovery (Preview)
-Application discovery, a part of Quick Access, is a tool administrators can use to gain visibility and insight about who uses which applications in their corporate network.  
+# Application discovery (Preview)
+Application discovery allows administrators to gain visibility and insight about which applications are used in their corporate network, and who uses those applications.  
 
 With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, in a way as you would with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a conditional access policy and set user assignments per application.  
 
@@ -24,8 +24,6 @@ This article walks through the process of using Application discovery to detect 
 - A Microsoft Entra tenant onboarded to [Microsoft Entra Private Access](concept-private-access.md).
 - A Microsoft Entra tenant configured with [Quick Access](how-to-configure-quick-access.md).
 - A device configured with the Global Secure Access client ([Windows](how-to-install-windows-client.md), [macOS](how-to-install-macos-client.md), [Android](how-to-install-android-client.md), [iOS](how-to-install-ios-client.md)).
-> [!IMPORTANT]
-> Because of a new feature that prioritizes specific applications over Quick Access, you must modify all application segemnts in existing Global Secure Access tenants and save the new settings.
 
 ## Discover applications
 To view a list of all the application segments in Quick Access that users accessed via the Global Secure Access client in the last 30 days:
@@ -53,17 +51,19 @@ The following columns are available for each application segment:
 
 ## Create a new application
 Use Application discovery to create new Microsoft Entra ID applications based on the discovered application segments of the main table. To add an application segment to a new application:
-1. From the list, choose one or more application segments that correspond to an application that you would like to create.
+1. From the Application discovery list, choose one or more application segments that correspond to an application that you would like to create.
+:::image type="content" source="media/how-to-application-discovery/select-application-segments.png" alt-text="Screenshot of the list of application segments with two segments selected.":::
     1. Often, one application uses one application segment. For example:
         1. A file server, such as: `filesrv.contoso.com`, TCP, 445.
         1. A portal, such as: `internalportal.contoso.com`, TCP, 443.
     1. However, sometimes a single application uses several ports, protocols, or spans across multiple servers (FQDNs/IPs). In this case, you can choose several application segments and even add others manually. For example:
-        1. Publishing ADDS services in a specific AD site: `dc1.contoso.com/dc2.contoso.com`, TCP, 88, 135, 137, 138, 389, 445, 464, 636, 3268, 3269 and a fixed high port for Netlogon `dc1.contoso.com/dc2.contoso.com`, UDP, 88, 123, 389, 464.  
+        1. Publishing ADDS services in a specific AD site: `dc1.contoso.com` and `dc2.contoso.com`, TCP, 88, 135, 137, 138, 389, 445, 464, 636, 3268, 3269 and a fixed high port for Netlogon `dc1.contoso.com` and `dc2.contoso.com`, UDP, 88, 123, 389, 464.  
     1. For a comprehensive list of ADDS ports, see [How to configure a firewall for Active Directory domains and trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).  
 1. Select **Add to new application**. The **Create Global Secure Access application** screen opens, showing the selected application segments.
     1. Give the application a **Name** and select the corresponding **Connector Group**.
     1. You can also add or delete applications segments manually. 
     1. To apply your changes, select **Save**.
+:::image type="content" source="media/how-to-application-discovery/create-application.png" alt-text="Screenshot of the Create Global Secure Access application screen with the Name field, Connector Group field, and Save button highlighted.":::
 1. Enable access for the appropriate users by adjusting the users and groups assigned to the new application.  
     1. You should fine-tune the assignments *after* creating the application. This way, the list contains only groups of users who require access to the new application, according to the principle of least privilege.              
     1. For enterprise applications:
@@ -79,16 +79,19 @@ Use Application discovery to create new Microsoft Entra ID applications based on
 
 ## Add to an existing application 
 You can use Application discovery to add application segments to an existing private application. To add an application segment to an existing application:
-1. From the list, choose one or more application segments. 
+1. From the Application discovery list, choose one or more application segments. 
 1. Select **Add to an existing application**.   
 1. Choose the existing private application to which you would like to add the segments. The **Edit Global Secure Access application** screen opens, showing the properties of the existing application, the selected application segments (with status **Pending**), and any previously configured application segments (with status **Success**).
-1. Review the configuration and revise the **Name**, **Connector Group**, and application segments as needed.   
+1. Review the configuration and revise the **Name**, **Connector Group**, and application segments, and make any necessary revisions.   
 1. To apply your changes, select **Save**. 
+:::image type="content" source="media/how-to-application-discovery/edit-application.png" alt-text="Screenshot of the Edit Global Secure Access application screen with the Status column and Save button highlighted.":::
 
 ## View the details of an application segment   
 Before you decide to create a private application, you might want to review other details of the application segment. 
-1. On the Application discovery table, select the FQDN or IP for the application segment you wish to explore.
-1. The **Usage** tab defaults to a graph of **Users** over time. You can set the graph to show the distribution of **Transactions**, **Devices**, **Bytes sent**, and **Bytes received** over time. You can also change the time range by adjusting the **Timespan** setting.   
+1. On the Application discovery table, select the **Destination FQDN** or **Destination IP** for the application segment you wish to explore.
+1. The **Usage** tab defaults to a graph of **Users** over time. You can set the graph to show the distribution of **Transactions**, **Devices**, **Bytes sent**, and **Bytes received** over time. You can also change the time range by adjusting the **Timespan** setting.
+:::image type="content" source="media/how-to-application-discovery/usage-tab.png" alt-text="Screenshot of the Usage tab with the Y-axis display options highlighted.":::   
 1. The **Users** tab shows the list of users who accessed the selected application segment in the last 30 days.    
+:::image type="content" source="media/how-to-application-discovery/users-tab.png" alt-text="Screenshot of the Users tab showing the list of users.":::
 > [!IMPORTANT]
 > Use the list of users to inform the decisions you make regarding the users and groups that you plan to assign to the Entra application once you onboard the selected application segment.  
