@@ -38,16 +38,16 @@ The administrator can adjust the time range, add other filters, and sort the app
 The following columns are available for each application segment: 
 - **Destination FQDN**: the FQDN of the application segment. 
 - **Destination IP**: the IP of the application segment. 
-- **Transport Protocol**: the transport protocol of the application segment. Currently Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) are supported.   
-- **Destination port**: the port of the application segment. 
+- **Transport protocol**: the transport protocol of the application segment. Application discovery currently supports Transmission Control Protocol (TCP) and User Datagram Protocol (UDP).   
+- **Destination port**: the port of the application segment.   
 - **Access type**: Application discovery currently supports only application segments that were accessed through Quick Access. 
-- **Users**: the number of users who accessed the application segment.  
+- **Users**: the number of users who accessed the application segment.   
 - **Transactions**: the number of transactions (connections) to the application segment.  
-- **Devices** - the number of devices that were used to access the application segment. 
-- **Sent bytes**: the total bytes of data that the user device sent to the application segment. 
-- **Received bytes**: the total bytes of data that the user device received from the application segment. 
-- **Last access**: the last time in the time range that the application segment was accessed.  
-- **First access**: the first time in the time range that the application segment was accessed. 
+- **Devices** - the number of devices that were used to access the application segment.  
+- **Sent bytes**: the total bytes of data that the user device sent to the application segment.  
+- **Received bytes**: the total bytes of data that the user device received from the application segment.  
+- **Last access**: the last time in the time range that the application segment was accessed.   
+- **First access**: the first time in the time range that the application segment was accessed.  
 
 ## Create a new application
 Use Application discovery to create new Microsoft Entra ID applications based on the discovered application segments of the main table. To add an application segment to a new application:
