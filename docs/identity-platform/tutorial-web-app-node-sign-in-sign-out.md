@@ -573,11 +573,11 @@ At this point, you can test your node web app.
 
 1. Select **Sign in** to start the sign-in process. The first time you sign in, you're prompted to provide your consent to allow the application to sign you in and access your profile as shown in the following screenshot:
 
-    :::image type="content" source="media/tutorial-v2-nodejs-webapp-msal/consent-screen.png" alt-text="Screenshot displaying user consent screen":::
+    :::image type="content" source="media/tutorial-web-app-node-sign-in-sign-out/consent-screen.png" alt-text="Screenshot displaying user consent screen":::
 
 After you're signed in successfully, you'll be redirected back to the application home page. 
 
-#### [External tenant authority](#tab/external-tenant)
+#### [External tenant authority](#tab/external-tenant) 
 
 1. In your terminal, make sure you're in the project folder that contains your web app such as `ciam-sign-in-node-express-web-app`.
 
