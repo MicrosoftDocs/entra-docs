@@ -20,7 +20,7 @@ ms.author: billmath
 ## Install Microsoft Entra Connect
 
 > [!IMPORTANT]
-> Microsoft doesn't support modifying or operating Microsoft Entra Connect Sync outside of the actions that are formally documented. Any of these actions might result in an inconsistent or unsupported state of Microsoft Entra Connect Sync. As a result, Microsoft can't provide technical support for such deployments.
+> Microsoft does not support the modification or operation of Microsoft Entra Connect Sync beyond the formally documented set-up. Such actions may result in an inconsistent and/or unsupported state of Microsoft Entra Connect Sync. As a result, Microsoft cannot provide technical support for such configurations.
 
 You can find the download for Microsoft Entra Connect on [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=615771).
 
@@ -59,9 +59,9 @@ You also want to prepare for [operational](./how-to-connect-sync-staging-server.
 |User sign-in options | [Microsoft Entra Connect User sign-in options](plan-connect-user-signin.md)|
 
 ## Configure sync features
-Microsoft Entra Connect comes with several features you can optionally turn on or are enabled by default. Some features might sometimes require more configuration in certain scenarios and topologies.
+Microsoft Entra Connect comes with several features that are optional and may be enabled by default when navigating the setup process. Some features will require more configuration in certain scenarios and topologies.
 
-[Filtering](how-to-connect-sync-configure-filtering.md) is used when you want to limit which objects are synchronized to Microsoft Entra ID. By default all users, contacts, groups, and Windows 10 computers are synchronized. You can change the filtering based on domains, OUs, or attributes.
+[Filtering](how-to-connect-sync-configure-filtering.md) is used when you want to limit which objects are synchronized to Microsoft Entra ID. By default all users, contacts, groups, and Windows 10 computers are synchronized. You can change the filtering based on domains, OUs, or attributes (reference: https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/concept-attributes).
 
 [Password hash synchronization](how-to-connect-password-hash-synchronization.md) synchronizes the password hash in Active Directory to Microsoft Entra ID. The  end-user can use the same password on-premises and in the cloud but only manage it in one location. Since it uses your on-premises Active Directory as the authority, you can also use your own password policy.
 
