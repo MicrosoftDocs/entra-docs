@@ -24,7 +24,7 @@ This document outlines the assertions Microsoft Entra ID requires from a [federa
    > - Applications integrated with a federated IdP can be [integrated directly with Microsoft Entra ID](/entra/architecture/migration-best-practices)
 
 
-## Use WS-Fed/SAML 1.1 to configure a federated IdP 
+## Use WS-Fed or SAML 1.1 to configure a federated IdP 
 When an admin optionally configures their Microsoft Entra ID tenant to use a [federated IdP](~/identity/hybrid/connect/whatis-fed.md) using WS-Fed federation, Microsoft Entra redirects to IdP for authentication and expect a response in the form of a Request Security Token Response (RSTR) containing a SAML 1.1 assertion. If configured to do so, Microsoft Entra honors MFA done by the IdP if one of the following two claims is present:
 
 - `http://schemas.microsoft.com/claims/multipleauthn`
@@ -50,7 +50,7 @@ Or they can be included in the assertion as part of the `AttributeStatement` ele
 </saml:AttributeStatement>
 ```
 
-### Using sign-in frequency and session control Conditional Access policies with WSFed/SAML 1.1
+### Using sign-in frequency and session control Conditional Access policies with WS-Fed or SAML 1.1
 
 [Sign-in frequency](~/identity/conditional-access/concept-conditional-access-session.md#sign-in-frequency) uses UserAuthenticationInstant (SAML assertion `http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant`), which is AuthInstant of first factor authentication using password for SAML1.1/WS-Fed. 
 
