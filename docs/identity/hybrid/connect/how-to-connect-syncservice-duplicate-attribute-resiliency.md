@@ -10,14 +10,14 @@ ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/09/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
 
 ---
 # Identity synchronization and duplicate attribute resiliency
-Duplicate Attribute Resiliency is a feature in Microsoft Entra ID that will eliminate friction caused by **UserPrincipalName** and SMTP **ProxyAddress** conflicts when running one of Microsoft’s synchronization tools.
+Duplicate Attribute Resiliency is a feature in Microsoft Entra ID that eliminates friction caused by **UserPrincipalName** and SMTP **ProxyAddress** conflicts when running one of Microsoft’s synchronization tools.
 
 These two attributes are generally required to be unique across all **User**, **Group**, or **Contact** objects in a given Microsoft Entra tenant.
 
@@ -37,9 +37,9 @@ _**\<OriginalPrefix>+\<4DigitNumber>\@\<InitialTenantDomain>.onmicrosoft.com**_.
 
 The attribute resiliency process handles only UPN and SMTP **ProxyAddress** values.
 
-If the attribute is not required, like a  **ProxyAddress**, Microsoft Entra ID simply quarantines the conflict attribute and proceeds with the object creation or update.
+If the attribute isn't required, like a  **ProxyAddress**, Microsoft Entra ID simply quarantines the conflict attribute and proceeds with the object creation or update.
 
-Upon quarantining the attribute, information about the conflict is sent in the same error report email used in the old behavior. However, this info only appears in the error report one time, when the quarantine happens, it does not continue to be logged in future emails. Also, since the export for this object has succeeded, the sync client does not log an error and does not retry the create / update operation upon subsequent sync cycles.
+Upon quarantining the attribute, information about the conflict is sent in the same error report email used in the old behavior. However, this info only appears in the error report one time, when the quarantine happens, it doesn't continue to be logged in future emails. Also, since the export for this object has succeeded, the sync client doesn't log an error and doesn't retry the create / update operation upon subsequent sync cycles.
 
 To support this behavior a new attribute has been added to the User, Group, and Contact object classes:  
 **DirSyncProvisioningErrors**
@@ -47,7 +47,7 @@ To support this behavior a new attribute has been added to the User, Group, and 
 This is a multi-valued attribute that is used to store the conflicting attributes that would violate the uniqueness constraint should they be added normally. A background timer task has been enabled in Microsoft Entra ID that  runs every hour to look for duplicate attribute conflicts that have been resolved, and automatically removes the attributes in question from quarantine.
 
 ### Enabling Duplicate Attribute Resiliency
-Duplicate Attribute Resiliency will be the new default behavior across all Microsoft Entra tenants. It will be on by default for all tenants that enabled synchronization for the first time on August 22nd, 2016 or later. Tenants that enabled sync prior to this date will have the feature enabled in batches. This rollout will begin in September 2016, and an email notification will be sent to each tenant's technical notification contact with the specific date when the feature will be enabled.
+Duplicate Attribute Resiliency is the new default behavior across all Microsoft Entra tenants. It's on by default for all tenants that enabled synchronization for the first time on August 22nd, 2016 or later. Tenants that enabled sync prior to this date have the feature enabled in batches. This rollout began in September 2016, and an email notification is sent to each tenant's technical notification contact with the specific date when the feature is enabled.
 
 > [!NOTE]
 > Once Duplicate Attribute Resiliency has been turned on it cannot be disabled.
@@ -59,7 +59,7 @@ To check if the feature is enabled for your tenant, you can do so by downloading
 `Get-MsolDirSyncFeatures -Feature DuplicateProxyAddressResiliency`
 
 > [!NOTE]
-> You can no longer use Set-MsolDirSyncFeature cmdlet to proactively enable the Duplicate Attribute Resiliency feature before it is turned on for your tenant. To be able to test the feature, you will need to create a new Microsoft Entra tenant.
+> You can no longer use Set-MsolDirSyncFeature cmdlet to proactively enable the Duplicate Attribute Resiliency feature before it is turned on for your tenant. To be able to test the feature, you'll need to create a new Microsoft Entra tenant.
 
 [!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
@@ -117,7 +117,7 @@ To do a broad string search use the **-SearchString** flag. This can be used ind
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -MaxResults 5`
 
 ## Microsoft 365 admin center
-You can view directory synchronization errors in the Microsoft 365 admin center. The report in the Microsoft 365 admin center only displays **User** objects that have these errors. It does not show info about conflicts between **Groups** and **Contacts**.
+You can view directory synchronization errors in the Microsoft 365 admin center. The report in the Microsoft 365 admin center only displays **User** objects that have these errors. It doesn't show info about conflicts between **Groups** and **Contacts**.
 
 ![Screenshot that shows directory synchronization errors in the Microsoft 365 admin center.](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/1234.png "Active Users")
 

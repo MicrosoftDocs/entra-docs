@@ -10,7 +10,7 @@ ms.service: entra-id
 ms.custom: azure-ad-connect
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 12/09/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -100,7 +100,7 @@ When installing Microsoft Entra Connect with Express mode, the Microsoft Entra C
 
 * In which case, the wizard falls back to using objectGUID as the sourceAnchor attribute.
 
-* Once the sourceAnchor attribute is decided, the wizard stores the information in your Microsoft Entra tenant. The information will be used by future installation of Microsoft Entra Connect.
+* Once the sourceAnchor attribute is decided, the wizard stores the information in your Microsoft Entra tenant. The information is used by future installation of Microsoft Entra Connect.
 
 Once Express installation completes, the wizard informs you which attribute has been picked as the Source Anchor attribute.
 

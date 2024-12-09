@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/09/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -26,17 +26,17 @@ Microsoft has deployed a new endpoint (API) for Microsoft Entra Connect that imp
 > - Azure Commercial
 > - Microsoft Azure operated by 21Vianet cloud
 > - Azure US Government cloud
-> It will not be made available in the Azure German cloud
+> It won't be made available in the Azure German cloud
 
 ## Prerequisites  
-In order to use the new V2 endpoint, you'll need to use Microsoft Entra Connect V2.0. When you deploy Microsoft Entra Connect V2.0, the V2 endpoint will be automatically enabled.
+In order to use the new V2 endpoint, you'll need to use Microsoft Entra Connect V2.0. When you deploy Microsoft Entra Connect V2.0, the V2 endpoint is automatically enabled.
 There is a known issue where upgrading to the latest V1.6 build resets the group membership limit to 50k. When a server is upgraded to Azure AD Connect V1.6, then the customer should reapply the rule changes that they applied when initially increasing the group membership limit to 250k before they enable sync for the server. 
 
 ## Frequently asked questions  
  
 **When will the new end point become the default for upgrades and new installations?**  
 The V2 endpoint is the default setting for Microsoft Entra Connect V2.0, and we advise customers to upgrade to Microsoft Entra Connect V2.0 to leverage the benefits of this endpoint.
-There is an issue where customers who have the V2 endpoint running with an older version and try to upgrade to a newer V1.6 release will see that the 50K limitation on group membership is reinstated. When a server is upgraded to Azure AD Connect V1.6, then the customer should reapply the rule changes that they applied when initially increasing the group membership limit to 250k before they enable sync for the server. 
+There is an issue where customers who have the V2 endpoint running with an older version and try to upgrade to a newer V1.6 release see that the 50K limitation on group membership is reinstated. When a server is upgraded to Azure AD Connect V1.6, then the customer should reapply the rule changes that they applied when initially increasing the group membership limit to 250k before they enable sync for the server. 
 
 ## Next steps
 

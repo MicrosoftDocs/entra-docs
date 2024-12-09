@@ -4,7 +4,7 @@ description: The following document describes how the UserPrincipalName attribut
 author: billmath
 ms.subservice: hybrid-connect
 ms.author: billmath
-ms.date: 11/06/2023
+ms.date: 12/09/2024
 ms.topic: conceptual
 ms.service: entra-id
 manager: amycolannino
@@ -37,14 +37,14 @@ A UPN consists of a UPN prefix (the user account name) and a UPN suffix (a DNS d
 <a name='upn-in-azure-ad-'></a>
 
 ## UPN in Microsoft Entra ID 
-The UPN is used by Microsoft Entra ID to allow users to sign-in.  The UPN that a user can use, depends on whether or not the domain has been verified.  If the domain has been verified, then a user with that suffix will be allowed to sign-in to Microsoft Entra ID.  
+The UPN is used by Microsoft Entra ID to allow users to sign-in. The UPN that a user can use, depends on whether or not the domain has been verified.  If the domain has been verified, then a user with that suffix is allowed to sign-in to Microsoft Entra ID.  
 
 The attribute is synchronized by Microsoft Entra Connect.  During installation, you can view the domains that have been verified and the ones that have not.
 
    ![Unverified domains](./media/plan-connect-userprincipalname/unverifieddomain.png) 
 
 ## Alternate login ID
-In some environments, end users may only be aware of their email address and not their UPN.  The use of email address may be due to a corporate policy or an on-premises line-of-business application dependency.
+In some environments, end users may only be aware of their email address and not their UPN. The use of email address may be due to a corporate policy or an on-premises line-of-business application dependency.
 
 Alternate login ID allows you to configure a sign-in experience where users can sign-in with an attribute other than their UPN, such as mail.
 
@@ -152,7 +152,7 @@ On-Premises user object:
 - userPrincipalName: us5@contoso.com
 
 Synchronize update on on-premises mail attribute and primary SMTP address to Microsoft Entra tenant
-- After the initial synchronization of the user object, updates to the on-premises mail attribute and the primary SMTP address will not affect the Microsoft Entra MailNickName or the UserPrincipalName attribute.
+- After the initial synchronization of the user object, updates to the on-premises mail attribute and the primary SMTP address won't affect the Microsoft Entra MailNickName or the UserPrincipalName attribute.
 
 Microsoft Entra tenant user object:
 - MailNickName: us4
