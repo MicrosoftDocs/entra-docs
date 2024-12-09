@@ -130,9 +130,7 @@ The most common use for a TAP is for a user to register authentication details d
 > For federated domains, a TAP is preferred over federation. A user with a TAP completes the authentication in Microsoft Entra ID and isn't redirected to the federated Identity Provider (IdP).
 
 The user is now signed in and can update or register a method such as FIDO2 security key. 
-
-Users who update their authentication methods due to losing their credentials or device should make sure they remove the old authentication methods.
-
+Users who update their authentication methods due to losing their credentials or device should make sure they remove the old authentication methods. 
 Users can also continue to sign-in by using their password; a TAP doesn’t replace a user’s password.
 
 ### User management of Temporary Access Pass
@@ -164,16 +162,11 @@ For more information, see [Add your work or school account to the Microsoft Auth
 
 ### Guest access
 
-Guest users can sign-in to a resource tenant with a TAP that was issued by their home tenant if the TAP meets the home tenant authentication requirement.
+You can add a TAP as a sign-in method to an internal guest, but not other types of guests. An internal guest has user object **UserType** set to **Guest**. They have authentication methods registered in Microsoft Entra ID. For more information about internal guests and other guest accounts, see [B2B guest user properties](~/entra/external-id/user-properties.md).
 
-If multifactor authentication (MFA) is required for the resource tenant, the guest user needs to perform MFA in order to gain access to the resource.
+If you try to add a TAP to an external guest account in the Microsoft Entra admin center or in Microsoft Graph, you get an error that says **Temporary Access Pass cannot be added to an external guest user.**
 
-
-### 
-
-You can  can be issued only to internal guest
-
-Internal guest: Before Microsoft Entra B2B collaboration was available, it was common to collaborate with distributors, suppliers, vendors, and others by setting up internal credentials for them and designating them as guests by setting the user object UserType to Guest. If you have internal guest users like these, you can invite them to use B2B collaboration instead so they can use their own credentials, allowing their external identity provider to manage authentication and their account lifecycle. For more information about internal guest accounts, see [B2B guest user properties](~/entra/external-id/user-properties.md).
+Guest users can sign-in to a resource tenant with a TAP that was issued by their home tenant if the TAP meets the home tenant authentication requirement. If multifactor authentication (MFA) is required for the resource tenant, the guest user needs to perform MFA in order to gain access to the resource.
 
 ### Expiration
 
@@ -222,12 +215,13 @@ Users in scope for these policies are redirected to the [Interrupt mode of the c
 ## Troubleshooting    
 
 - If a TAP isn't offered to a user during sign-in:
-  - Make sure the user is in scope for the TAP authentication method policy.
+  - Make sure the user is in scope for TAP use in the Authentication methods policy.
   - Make sure the user has a valid TAP, and if it's one-time use, it wasn’t used yet.
 - If **Temporary Access Pass sign in was blocked due to User Credential Policy** appears during sign-in with a TAP:
-  - Make sure the user doesn't have a multi-use TAP while the authentication method policy requires a one-time TAP.
+  - Check that the user is in scope for the TAP policy
+  - Make sure the user doesn't have a TAP for multiple use while the Authentication methods policy requires a one-time TAP.
   - Check if a one-time TAP was already used.
-- If TAP sign-in was blocked due to User Credential Policy, check that the user is in scope for the TAP policy.
+- If **Temporary Access Pass cannot be added to an external guest user** appears when you try to add a TAP to an account as an authentication method, the account is an external guest. Both internal and external guest accounts have an option to add a TAP for sign-in in the Microsoft Entra admin center and Microsoft Graph APIs, but only internal guest accounts can be issued a TAP. 
 
 ## Next steps
 
