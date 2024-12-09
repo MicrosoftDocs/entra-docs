@@ -5,7 +5,7 @@ description: Learn how to configure and enable users to register passwordless au
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 05/21/2024
+ms.date: 12/09/2024
 
 ms.author: justinha
 author: tilarso 
@@ -14,16 +14,14 @@ ms.reviewer: tilarso
 ---
 # Configure Temporary Access Pass to register passwordless authentication methods
 
-Passwordless authentication methods, such as FIDO2 and passwordless phone sign-in through the Microsoft Authenticator app, enable users to sign in securely without a password. 
-
-Users can bootstrap passwordless methods in one of two ways:
+Passwordless authentication methods like a passkey (FIDO2) let users sign in securely without a password. Users can bootstrap passwordless methods in one of two ways:
 
 - Use existing Microsoft Entra multifactor authentication methods 
 - Use a Temporary Access Pass 
 
-A Temporary Access Pass (TAP) is a time-limited passcode that can be configured for single use or multiple. Users can sign in with a TAP to onboard other passwordless authentication methods, such as Microsoft Authenticator, FIDO2 and Windows Hello for Business.
+A Temporary Access Pass (TAP) is a time-limited passcode that can be configured for single use or multiple sign-ins. Users can sign in with a TAP to onboard other passwordless authentication methods.
 
-A TAP also makes recovery easier when a user has lost or forgotten their strong authentication factor like a FIDO2 security key or Microsoft Authenticator app, but needs to sign in to register new strong authentication methods.
+A TAP also makes recovery easier when a user loses or forgets a strong authentication method like their FIDO2 security key, and they need to sign in to register a new strong authentication method.
 
 This article shows you how to enable and use a TAP using the [Microsoft Entra admin center](https://entra.microsoft.com). You can also perform these actions using REST APIs. 
 
@@ -169,6 +167,13 @@ For more information, see [Add your work or school account to the Microsoft Auth
 Guest users can sign-in to a resource tenant with a TAP that was issued by their home tenant if the TAP meets the home tenant authentication requirement.
 
 If multifactor authentication (MFA) is required for the resource tenant, the guest user needs to perform MFA in order to gain access to the resource.
+
+
+### 
+
+You can  can be issued only to internal guest
+
+Internal guest: Before Microsoft Entra B2B collaboration was available, it was common to collaborate with distributors, suppliers, vendors, and others by setting up internal credentials for them and designating them as guests by setting the user object UserType to Guest. If you have internal guest users like these, you can invite them to use B2B collaboration instead so they can use their own credentials, allowing their external identity provider to manage authentication and their account lifecycle. For more information about internal guest accounts, see [B2B guest user properties](~/entra/external-id/user-properties.md).
 
 ### Expiration
 
