@@ -43,7 +43,7 @@ The HTML report has the following:
 
 |Tab|Description|
 |-----|-----|
-|Steps|Outlines the steps taken to synchronize an object. Each step contains details for troubleshooting. The Import, Sync, and Export steps contains additional attribute info such as name, is multi-valued, type, value, value add, value delete, operation, sync rule, mapping type and data source.| 
+|Steps|Outlines the steps taken to synchronize an object. Each step contains details for troubleshooting. The Import, Sync, and Export steps contain additional attribute info such as name, is multi-valued, type, value, value add, value delete, operation, sync rule, mapping type and data source.| 
 |Troubleshooting & Recommendation|Provides the error code and reason. The error information is available only if a failure happens.| 
 |Modified Properties|Shows the old value and the new value. If there's no old value or if the new value is deleted, that cell is blank. For multivalued attributes, it shows the count. The attribute name is a link to Steps tab: Export Object from Microsoft Entra Connector Space to Microsoft Entra ID: Attribute Info that contains additional details of the attribute such as name, is multi-valued, type, value, value add, value delete, operation, sync rule, mapping type and data source.| 
 |Summary|Provides an overview of what happened and identifiers for the object in the source and target systems.| 
