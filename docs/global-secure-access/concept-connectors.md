@@ -54,9 +54,7 @@ The connectors are stateless and have no configuration data on the machine. The 
 
 Connectors also poll the server to find out whether there's a newer version of the connector. If one is found, the connectors update themselves.
 
-You can monitor your connectors from the machine they're running on, using either the event log and performance counters. For more information, see [Monitor and review logs for on-premises Microsoft Entra](../identity/authentication/howto-password-ban-bad-on-premises-monitor.md).
-
-You can also view their status in the Microsoft Entra admin center. For Microsoft Entra Private Access, navigate to Global Secure Access, Connect, and select Connectors. For application proxy, navigate to Identity, Applications, Enterprise applications, and select the application. On the application page select application proxy.
+You can monitor your connectors from the machine they're running on, using either the event log and performance counters. You can also view their status in the Microsoft Entra admin center. For Microsoft Entra Private Access, navigate to Global Secure Access, Connect, and select Connectors. For application proxy, navigate to Identity, Applications, Enterprise applications, and select the application. On the application page select application proxy.
 
 You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as `_inactive_` and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart the computer to fully remove the service.
 

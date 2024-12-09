@@ -396,7 +396,7 @@ Here is another version of the script that searches only through groups that con
 $groupIds = Get-MgGroup -All -Filter "HasMembersWithLicenseErrors eq true"
     foreach ($groupId in $groupIds) {
         $Members = Get-MgGroupMember -All -GroupId $groupId 
-        foreach ($Member in $Members) { Get-Get-MgUser -UserId $Member.Id |
+        foreach ($Member in $Members) { Get-MgUser -UserId $Member.Id |
             Where {$Member.AdditionalProperties.IndirectLicenseErrors -and $Member.AdditionalProperties.IndirectLicenseErrors.ReferencedObjectId -eq $groupId.ObjectID} |
             Select DisplayName, `
                    ObjectId, `

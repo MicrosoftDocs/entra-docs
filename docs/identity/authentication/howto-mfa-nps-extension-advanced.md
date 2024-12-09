@@ -6,7 +6,7 @@ description: After you install the NPS extension, use these steps for advanced c
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 11/27/2024
 
 ms.author: justinha
 author: justinha
@@ -17,13 +17,13 @@ ms.reviewer: michmcla
 
 The Network Policy Server (NPS) extension extends your cloud-based Microsoft Entra multifactor authentication features into your on-premises infrastructure. This article assumes that you already have the extension installed, and now want to know how to customize the extension for your needs.
 
-## Alternate login ID
+## Alternate sign-in ID
 
-Since the NPS extension connects to both your on-premises and cloud directories, you might encounter an issue where your on-premises user principal names (UPNs) don't match the names in the cloud. To solve this problem, use alternate login IDs. 
+Since the NPS extension connects to both your on-premises and cloud directories, you might encounter an issue where your on-premises user principal names (UPNs) don't match the names in the cloud. To solve this problem, use alternate sign-in IDs. 
 
 Within the NPS extension, you can designate an Active Directory attribute to be used as the UPN for Microsoft Entra multifactor authentication. This enables you to protect your on-premises resources with two-step verification without modifying your on-premises UPNs. 
 
-To configure alternate login IDs, go to `HKLM\SOFTWARE\Microsoft\AzureMfa` and edit the following registry values:
+To configure alternate sign-in IDs, go to `HKLM\SOFTWARE\Microsoft\AzureMfa` and edit the following registry values:
 
 | Name | Type | Default value | Description |
 | ---- | ---- | ------------- | ----------- |
@@ -31,7 +31,7 @@ To configure alternate login IDs, go to `HKLM\SOFTWARE\Microsoft\AzureMfa` and e
 | LDAP_FORCE_GLOBAL_CATALOG | boolean | False | Use this flag to force the use of Global Catalog for LDAP searches when looking up AlternateLoginId. Configure a domain controller as a Global Catalog, add the AlternateLoginId attribute to the Global Catalog, and then enable this flag. <br><br> If LDAP_LOOKUP_FORESTS is configured (not empty), **this flag is enforced as true**, regardless of the value of the registry setting. In this case, the NPS extension requires the Global Catalog to be configured with the AlternateLoginId attribute for each forest. |
 | LDAP_LOOKUP_FORESTS | string | Empty | Provide a semi-colon separated list of forests to search. For example, *contoso.com;foobar.com*. If this registry value is configured, the NPS extension iteratively searches all the forests in the order in which they were listed, and returns the first successful AlternateLoginId value. If this registry value is not configured, the AlternateLoginId lookup is confined to the current domain.|
 
-To troubleshoot problems with alternate login IDs, use the recommended steps for [Alternate login ID errors](howto-mfa-nps-extension-errors.md#alternate-login-id-errors).
+To troubleshoot problems with alternate sign-in IDs, use the recommended steps for [Alternate sign-in ID errors](howto-mfa-nps-extension-errors.md#alternate-login-id-errors).
 
 ## IP exceptions
 

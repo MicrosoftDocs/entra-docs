@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 11/07/2024
+ms.date: 12/04/2024
 ms.author: sarahlipsey
 ms.reviewer: arvinh
 
@@ -23,16 +23,6 @@ Two other activity logs are also available to help monitor the health of your te
 - **[Audit](concept-audit-logs.md)** – Information about changes applied to your tenant such as users and group management or updates applied to your tenant’s resources.
 
 This article gives you an overview of the logs that capture user provisioning through non-Microsoft services.
-
-## License and role requirements
-
-To use the provisioning logs, you need a Microsoft Entra ID P1 or P2 license.
-
-The following roles are required to view the provisioning logs:
-- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader)
-- [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader)
-- [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator)
-- [Cloud App Administrator](../../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
 
 ## What can you do with the provisioning logs?
 
@@ -79,6 +69,17 @@ Select an item from the provisioning logs to see more details about this item, s
 - **Modified Properties**: If there were changes, this tab shows the old value and the new value.
 
 - **Summary**: Provides an overview of what happened and identifiers for the object in the source and target systems.
+
+## Using provisioning logs workbooks and Log Analytics
+
+With the querying and alerting capabilities of Log Analytics and workbooks, you can create custom reports and alerts. To get started, you need to [create a Log Analytics workspace](tutorial-configure-log-analytics-workspace.md#create-the-workspace). Once you have a workspace, you can stream your logs to that workspace, which allows you to query and analyze the data in Log Analytics and workbooks.
+
+For more information, see [Integrating provisioning logs with Azure Monitor logs](../app-provisioning/application-provisioning-log-analytics.md).
+
+There are two workbook templates available for provisioning logs:
+
+- **Provisioning Analysis** provides a high-level overview of the provisioning events in your tenant.
+- **Provisioning Insights** provides details on events related to syncing users from other sources so you can see analyze these events in one place. For more information, see [Provisioning insights workbook](../app-provisioning/provisioning-workbook.md).
 
 ## Related content
 

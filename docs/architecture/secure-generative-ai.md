@@ -7,7 +7,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 11/08/2024
+ms.date: 11/12/2024
 ms.reviewer: joflore
 
 #CustomerIntent: As an identity and security administrator, I want to mitigate security challenges that Generative AI (Gen AI) poses, so that I can ensure organizational security with Microsoft Entra.
@@ -68,7 +68,7 @@ Conditional Access brings signals together to make decisions and enforce organiz
 
 Enforce least privilege principles and apply the right access controls to keep your organization secure with [Conditional Access policies](../identity/conditional-access/plan-conditional-access.md). Think of Conditional Access policies as if-then statements where identities that meet certain criteria can only access resources if they meet specific requirements such as MFA or device compliance status.
 
-Restrict access to Gen AI apps based on signals like users, groups, roles, location, or risk to enhance policy decisions.
+[Restrict access to Gen AI apps based on signals](/entra/identity/conditional-access/policy-all-users-copilot-ai-security) like users, groups, roles, location, or risk to enhance policy decisions.
 
 - Use the [authentication strength](../identity/authentication/concept-authentication-strengths.md) Conditional Access control that specifies combinations of authentication methods to access a resource. Require users to complete [phishing-resistant multifactor authentication](../identity/conditional-access/policy-all-users-mfa-strength.md) (MFA) to access Gen AI apps.
 - Deploy [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) to mitigate and manage AI usage risks. Use the [Insider Risk](../identity/conditional-access/concept-conditional-access-conditions.md#insider-risk) condition to [block Gen AI apps access for users with elevated insider risk](../identity/conditional-access/policy-risk-based-insider-block.md).
@@ -133,6 +133,6 @@ Continually review Permissions Management. As identities stay with an organizati
 
 ## Related content
 
-- [Microsoft Copilot for Security](/copilot/security/microsoft-security-copilot) helps support security professionals in end-to-end scenarios such as incident response, threat hunting, intelligence gathering, and posture management.
+- [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot) helps support security professionals in end-to-end scenarios such as incident response, threat hunting, intelligence gathering, and posture management.
 - [Microsoft Purview Information Barriers](/purview/information-barriers) are policies that can prevent individuals or groups from communicating with each other. [Information barriers in Microsoft Teams](/purview/information-barriers-teams) can determine and prevent unauthorized collaborations.
 - For [Microsoft 365 Copilot requirements](/microsoft-365-copilot/microsoft-365-copilot-requirements), review [Enterprise data protection in Copilot for Microsoft 365 and Microsoft Copilot](/copilot/microsoft-365/enterprise-data-protection#what-is-enterprise-data-protection-in-copilot-for-microsoft-365-and-microsoft-copilot).

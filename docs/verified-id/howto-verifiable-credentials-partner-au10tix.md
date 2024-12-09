@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 
 ms.topic: how-to
-ms.date: 10/12/2023
+ms.date: 11/11/2024
 ms.author: barclayn
 # Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
@@ -42,7 +42,7 @@ When onboarding users you can remove the need for error prone manual onboarding 
 
 ## Configure your Application to use AU10TIX Verified ID
 
-For incorporating identity verification into your Apps, using AU10TIX  “Government Issued ID -Global” Verified ID follow these steps:
+For incorporating identity verification into your Apps, using AU10TIX  “Government Issued ID - Global” Verified ID follow these steps:
 
 ### Part 1
 

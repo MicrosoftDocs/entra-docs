@@ -1,5 +1,5 @@
 ---
-title: Archive for What's new in Microsoft Entra ID?
+title: Archive for Microsoft Entra releases and announcements
 description: The What's new release notes in the Overview section of this content set contain six months of activity. After six months, the items are removed from the main article and put into this archive article.
 author: owinfreyATL
 manager: amycolannino
@@ -13,17 +13,154 @@ ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 ---
 
-# Archive for What's new in Microsoft Entra ID?
+# Archive for Microsoft Entra releases and announcements
 
-The primary [What's new in Microsoft Entra ID? release notes](whats-new.md) article contains updates for the last six months, while this article contains Information up to 18 months.
+This article includes information about the releases and change announcements across the Microsoft Entra family of products that are older than six months (up to 18 months). If you're looking for more current information, see [Microsoft Entra releases and announcements](./whats-new.md).
 
-The What's new in Microsoft Entra ID? Release notes provide information about:
+For a more dynamic experience, you can now find the archive information in the Microsoft Entra admin center. To learn more, see [What's new (preview)](./whats-new-overview.md).
 
-- The latest releases
-- Known issues
-- Bug fixes
-- Deprecated functionality
-- Plans for changes
+---
+
+## May 2024
+
+### General Availability - Azure China 21Vianet now supports My sign-ins and MFA/SSPR Combined Registration
+
+**Type:** Changed feature    
+**Service category:** MFA        
+**Product capability:** Identity Security & Protection        
+
+Beginning end of June 2024, all organizations utilizing Microsoft Azure China 21Vianet now has access to My Sign-ins activity reporting. They're required to use the combined security information registration end-user experience for MFA and SSPR. As a result of this enablement, users now see a unified SSPR and MFA registration experience when prompted to register for SSPR or MFA. For more information, see: [Combined security information registration for Microsoft Entra overview](../identity/authentication/concept-registration-mfa-sspr-combined.md). 
+
+---
+
+### General Availability - $select in `signIn` API
+
+**Type:** New feature    
+**Service category:** MS Graph    
+**Product capability:** Monitoring & Reporting    
+
+The long-awaited `$select` property is now implemented into the `signIn` API. Utilize the `$select` to reduce the number of attributes that are returned for each log. This update should greatly help customers who deal with throttling issues, and allow every customer to run faster, more efficient queries.
+
+---
+
+### General Availability - Multiple Passwordless Phone sign-ins for Android Devices
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+End users can now enable passwordless phone sign-in for multiple accounts in the Authenticator App on any supported Android device. Consultants, students, and others with multiple accounts in Microsoft Entra can add each account to Microsoft Authenticator and use passwordless phone sign-in for all of them from the same Android device. The Microsoft Entra accounts can be in the same tenant or different tenants. Guest accounts aren't supported for multiple account sign-ins from one device. For more information, see: [Enable passwordless sign-in with Microsoft Authenticator](../identity/authentication/howto-authentication-passwordless-phone.md).
+
+---
+
+### Public Preview - Bicep templates support for Microsoft Graph
+
+**Type:** New feature    
+**Service category:** MS Graph    
+**Product capability:** Developer Experience    
+
+The Microsoft Graph Bicep extension brings declarative infrastructure-as-code (IaC) capabilities to Microsoft Graph resources. It allows you to author, deploy, and manage core Microsoft Entra ID resources using Bicep template files, alongside Azure resources.
+
+- Existing Azure customers can now use familiar tools to deploy Azure resources and the Microsoft Entra resources they depend on, such as applications and service principals, IaC and DevOps practices.
+- It also opens the door for existing Microsoft Entra customers to use Bicep templates and IaC practices to deploy and manage their tenant's Microsoft Entra resources.
+
+For more information, see: [Bicep templates for Microsoft Graph resources](/graph/templates/)
+
+---
+
+### Public Preview - Platform Single Sign-on for macOS with Microsoft Entra ID
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Today we’re announcing that Platform SSO for macOS is available in public preview with Microsoft Entra ID. Platform SSO is an enhancement to the Microsoft Enterprise SSO plug-in for Apple Devices that makes usage and management of Mac devices more seamless and secure than ever. At the start of public preview, Platform SSO works with Microsoft Intune. Other Mobile Device Management (MDM) providers are coming soon. Contact your MDM provider for more information on support and availability. For more information, see: [macOS Platform Single Sign-on overview (preview)](../identity/devices/macos-psso.md).
+
+---
+
+### Public Preview - Workflow History Insights in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management   
+
+Customers can now monitor workflow health, and get insights throughout all their workflows in Lifecycle Workflows including viewing workflow processing data across workflows, tasks, and workflow categories. For more information, see: [Workflow Insights (preview)](../id-governance/lifecycle-workflow-insights.md).
+
+---
+
+### Public Preview - Configure Lifecycle Workflow Scope Using Custom Security Attributes
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management   
+
+Customers can now apply their confidential HR data stored in custom security attributes in addition to other attributes. This update enables customers to define the scope of their workflows in Lifecycle Workflows for automating joiner, mover, and leaver scenarios. For more information, see: [Use custom security attributes to scope a workflow](../id-governance/lifecycle-workflow-insights.md).
+
+---
+
+### Public Preview - Enable, Disable, and Delete synchronized users accounts with Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Lifecycle Management   
+
+Lifecycle Workflows can now enable, disable, and delete user accounts that are synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra. This feature allows you to ensure that the offboarding processes of your employees are completed by deleting the user account after a retention period.
+
+For more information, see: [Managing synced on-premises users with Lifecycle Workflows](../id-governance/lifecycle-workflow-on-premises.md).
+
+---
+
+### Public Preview - External authentication methods for multifactor authentication
+
+**Type:** New feature    
+**Service category:** MFA    
+**Product capability:** User Authentication    
+
+External authentication methods enable you to use your preferred multifactor authentication (MFA) solution with Microsoft Entra ID. For more information, see: [Manage an external authentication method in Microsoft Entra ID (Preview)](../identity/authentication/how-to-authentication-external-method-manage.md).
+
+---
+
+### General Availability - `LastSuccessfulSignIn`
+
+**Type:** Changed feature    
+**Service category:** MS Graph    
+**Product capability:** Monitoring & Reporting    
+
+Due to popular demand and increased confidence in the stability of the properties, the update adds `LastSuccessfulSignIn` &` LastSuccessfulSigninDateTime` into V1. Feel free to take dependencies on these properties in your production environments now. For more information, see: [signInActivity resource type](/graph/api/resources/signinactivity).
+
+---
+
+### General Availability - Changing default accepted token version for new applications
+
+**Type:** Plan for change    
+**Service category:** Other    
+**Product capability:** Developer Experience    
+
+Beginning in August 2024, new Microsoft Entra applications created using any interface (including the Microsoft Entra admin center, Azure portal, Powershell/CLI, or the Microsoft Graph application API) has the default value of the `requestedAccessTokenVersion` property in the app registration set to 2. This capability is a change from the previous default of null` (meaning 1). This means that new resource applications receive v2 access tokens instead of v1 by default. This update improves the security of apps. For more information on differences between token versions, see: [Access tokens in the Microsoft identity platform](../identity-platform/access-tokens.md) and [Access token claims reference](../identity-platform/access-token-claims-reference.md).
+
+---
+
+### General Availability - Windows Account extension is now Microsoft Single Sign On
+
+**Type:** Changed feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** SSO    
+
+The Windows Account extension is now the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji) extension in docs and Chrome store. The Windows Account extension is updated to represent the new macOS compatibility. This capability is now known as the Microsoft Single Sign On (SSO) extension for Chrome, offering single sign-on and device identity features with the Enterprise SSO plug-in for Apple devices. This update is only a name change for the extension, there are no software changes to the extension itself.
+
+---
+
+### General Availability - New provisioning connectors in the Microsoft Entra Application Gallery - May 2024
+
+**Type:** New feature    
+**Service category:** App Provisioning    
+**Product capability:** Third Party Integration    
+
+Microsoft added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
+
+- [ClearView Trade](../identity/saas-apps/clearview-trade-provisioning-tutorial.md)
+
+For more information about how to better secure your organization by using automated user account provisioning, see: [What is app provisioning in Microsoft Entra ID?](../identity/app-provisioning/user-provisioning.md).
 
 ---
 
@@ -1354,147 +1491,3 @@ Earlier this month, the Microsoft Authentication Library team announced the rele
 To learn more about MSAL for Python, see: [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/).
 
 ---
-
-## June 2023
-
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - June 2023
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** Third Party Integration    
-      
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Headspace](~/identity/saas-apps/headspace-provisioning-tutorial.md)
-- [Humbol](~/identity/saas-apps/humbol-provisioning-tutorial.md)
-- [LUSID](~/identity/saas-apps/lusid-provisioning-tutorial.md)
-- [Markit Procurement Service](~/identity/saas-apps/markit-procurement-service-provisioning-tutorial.md)
-- [Moqups](~/identity/saas-apps/moqups-provisioning-tutorial.md)
-- [Notion](~/identity/saas-apps/notion-provisioning-tutorial.md)
-- [OpenForms](~/identity/saas-apps/openforms-provisioning-tutorial.md)
-- [SafeGuard Cyber](~/identity/saas-apps/safeguard-cyber-provisioning-tutorial.md)
-- [Uni-tel A/S](~/identity/saas-apps/uni-tel-as-provisioning-tutorial.md)
-- [Vault Platform](~/identity/saas-apps/vault-platform-provisioning-tutorial.md)
-- [V-Client](~/identity/saas-apps/v-client-provisioning-tutorial.md)
-- [Veritas Enterprise Vault.cloud SSO-SCIM](~/identity/saas-apps/veritas-provisioning-tutorial.md)
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
-
----
-
-### General Availability - Include/exclude Entitlement Management in Conditional Access policies
-
-**Type:** New feature       
-**Service category:** Entitlement Management                          
-**Product capability:** Entitlement Management                
-
-The Entitlement Management service can now be targeted in the Conditional Access policy for inclusion or exclusion of applications. To target the Entitlement Management service, select “Azure AD Identity Governance - Entitlement Management” in the cloud apps picker. The Entitlement Management app includes the entitlement management part of My Access, the Entitlement Management part of the Microsoft Entra and Azure portals, and the Entitlement Management part of MS Graph. For more information, see:  [Review your Conditional Access policies](~/id-governance/entitlement-management-external-users.md#review-your-conditional-access-policies).
-
----
-
-### General Availability - Azure Active Directory User and Group capabilities on Azure Mobile are now available
-
-**Type:** New feature       
-**Service category:** Azure Mobile App                             
-**Product capability:** End User Experiences                  
-
-The Azure Mobile app now includes a section for Azure Active Directory. Within Azure Active Directory on mobile, user can search for and view more details about user and groups. Additionally, permitted users can invite guest users to their active tenant, assign group membership and ownership for users, and view user sign-in logs. For more information, see: [Get the Azure mobile app](https://azure.microsoft.com/get-started/azure-portal/mobile-app/).
-
----
-
-### Plan for change - Modernizing Terms of Use Experiences
-
-**Type:** Plan for change         
-**Service category:** Terms of Use                               
-**Product capability:** AuthZ/Access Delegation                   
-
-Recently we announced the modernization of terms of use end-user experiences as part of ongoing service improvements. As previously communicated the end user experiences is updated with a new PDF viewer and are moving from https://account.activedirectory.windowsazure.com to https://myaccount.microsoft.com. 
-
-Starting today the modernized experience for viewing previously accepted terms of use is available via https://myaccount.microsoft.com/termsofuse/myacceptances. We encourage you to check out the modernized experience, which follows the same updated design pattern as the upcoming modernization of accepting or declining terms of use as part of the sign-in flow. We would appreciate your [feedback](https://forms.microsoft.com/r/NV0msbrqtF) before we begin to modernize the sign-in flow.
-
----
-
-### General Availability - Privileged Identity Management for Groups
-
-**Type:** New feature       
-**Service category:** Privileged Identity Management                               
-**Product capability:** Privileged Identity Management                 
-
-Privileged Identity Management for Groups is now generally available. With this feature, you have the ability to grant users just-in-time membership in a group, which in turn provides access to Azure Active Directory roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications. Through one activation, you can conveniently assign a combination of permissions across different applications and Role-Based Access Control systems.
-
-PIM for Groups offers can also be used for just-in-time ownership. As the owner of the group, you can manage group properties, including membership. For more information, see: [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md).
-
----
-
-### General Availability - Privileged Identity Management and Conditional Access integration 
-
-**Type:** New feature       
-**Service category:** Privileged Identity Management                               
-**Product capability:** Privileged Identity Management                    
-
-The Privileged Identity Management (PIM) integration with Conditional Access authentication context is generally available. You can require users to meet various requirements during role activation such as:
-
-- Have specific authentication method through [Authentication Strengths](~/identity/authentication/concept-authentication-strengths.md)
-- Activate from a compliant device 
-- Validate location based on GPS
-- Not have certain level of sign-in risk identified with Identity Protection
-- Meet other requirements defined in Conditional Access policies
-
-The integration is available for all providers: PIM for Azure AD roles, PIM for Azure resources, PIM for groups. For more information, see:
-- [Configure Azure AD role settings in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md)
-- [Configure Azure resource role settings in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings.md)
-- [Configure PIM for Groups settings](~/id-governance/privileged-identity-management/groups-role-settings.md)
-
----
-
-### General Availability - Updated look and feel for Per-user MFA
-
-**Type:** Plan for change    
-**Service category:** MFA                       
-**Product capability:** Identity Security & Protection              
-
-As part of ongoing service improvements, we're making updates to the per-user MFA admin configuration experience to align with the look and feel of Azure. This change doesn't include any changes to the core functionality and only includes visual improvements. For more information, see: [Enable per-user Microsoft Entra multifactor authentication to secure sign-in events](~/identity/authentication/howto-mfa-userstates.md).
-
----
-
-### General Availability - Converged Authentication Methods in US Gov cloud
-
-**Type:** New feature   
-**Service category:** MFA                      
-**Product capability:** User Authentication              
-
-The Converged Authentication Methods Policy enables you to manage all authentication methods used for MFA and SSPR in one policy and migrate off the legacy MFA and SSPR policies. This update also targets authentication methods to groups of users instead of enabling them for all users in the tenant. Customers should migrate management of authentication methods off the legacy MFA and SSPR policies before September 30, 2024. For more information, see: [Manage authentication methods for Azure AD](~/identity/authentication/concept-authentication-methods-manage.md).
-
----
-
-### General Availability - Support for Directory Extensions using Azure AD cloud sync
-
-**Type:** New feature  
-**Service category:** Provisioning  
-**Product capability:** Azure AD Connect cloud sync
-
-Hybrid IT Admins can now sync both Active Directory and Azure AD Directory Extensions using Azure AD Connect cloud sync. This new capability adds the ability to dynamically discover the schema for both Active Directory and Azure Active Directory, thereby, allowing customers to map the needed attributes using the attribute mapping experience of cloud sync. For more information, see [Directory extensions and custom attribute mapping in cloud sync](~/identity/hybrid/cloud-sync/custom-attribute-mapping.md).
-
----
-
-### Public Preview - Restricted Management Administrative Units
-
-**Type:** New feature   
-**Service category:** Directory Management                        
-**Product capability:** Access Control               
-
-Restricted Management Administrative Units allow you to restrict modification of users, security groups, and device in Azure AD so that only designated administrators can make changes. Global Administrators and other tenant-level administrators can't modify the users, security groups, or devices that are added to a restricted management admin unit. For more information, see: [Restricted management administrative units in Azure Active Directory (Preview)](~/identity/role-based-access-control/admin-units-restricted-management.md).
-
----
-
-### General Availability - Report suspicious activity integrated with Identity Protection
-
-**Type:** Changed feature   
-**Service category:** Identity Protection                        
-**Product capability:** Identity Security & Protection              
-
-Report suspicious activity is an updated implementation of the MFA fraud alert, where users can report a voice or phone app MFA prompt as suspicious. If enabled, users reporting prompts have their user risk set to high, enabling admins to use Identity Protection risk based policies or risk detection APIs to take remediation actions. Report suspicious activity operates in parallel with the legacy MFA fraud alert at this time. For more information, see: [Configure Microsoft Entra multifactor authentication settings](~/identity/authentication/howto-mfa-mfasettings.md).
-
----
-
-

@@ -78,7 +78,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
+> [!NOTE]
+> The [Greenhouse Client support team](https://www.greenhouse.io/contact) recommends configuring Entra ID side application settings for **IDP** initiated mode. Contact the Greenhouse Client support team for more details and to get the correct values mentioned below. 
+
+1. On the **Basic SAML Configuration** section enter the values for the following fields:
 
     a. In the **Identifier** text box, type the value:
     `greenhouse.io`
@@ -86,13 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern: 
     `https://<COMPANYNAME>.greenhouse.io/<ENTITY ID>/users/saml/consume`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
-
-    In the **Sign-on URL** text box, type the URL:
-    `https://app.greenhouse.io`
-
-	> [!NOTE]
-	> The value is not real. Update the value with the actual Reply URL. Contact [Greenhouse Client support team](https://www.greenhouse.io/contact) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+1. Leave the **Sign-on URL** text box empty. 
 
 4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
