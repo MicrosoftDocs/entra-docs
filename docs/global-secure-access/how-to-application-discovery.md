@@ -3,7 +3,7 @@ title: Application Discovery (Preview)
 description: Use Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 12/09/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -13,7 +13,7 @@ ms.reviewer: lirazbarak
 # Customer intent: As an administrator, I want to use Application discovery to detect the applications accessed by users and create separate private applications.
 ---
 # Application discovery (Preview)
-Application discovery allows administrators to gain visibility and insight about which applications are used in their corporate network, and who uses those applications.  
+Application discovery enables administrators to gain comprehensive visibility into application usage within their corporate network. By identifying which applications are accessed and by whom, administrators can create private applications with precise segmentation and least privilege access, which minimizes unnecessary access. 
 
 With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, in a way as you would with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a conditional access policy and set user assignments per application.  
 
@@ -40,7 +40,6 @@ The following columns are available for each application segment:
 - **Destination IP**: the IP of the application segment. 
 - **Transport protocol**: the transport protocol of the application segment. Application discovery currently supports Transmission Control Protocol (TCP) and User Datagram Protocol (UDP).   
 - **Destination port**: the port of the application segment.   
-- **Access type**: Application discovery currently supports only application segments that were accessed through Quick Access. 
 - **Users**: the number of users who accessed the application segment.   
 - **Transactions**: the number of transactions (connections) to the application segment.  
 - **Devices** - the number of devices that were used to access the application segment.  
