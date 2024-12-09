@@ -266,29 +266,31 @@ sections:
         answer: |
           If the service detects activity related to that recommendation for something marked as "completed" it changes automatically back to "active."
 
-  - name: Microsoft Entra diagnostic settings
+  - name: Microsoft service principal sign-in logs
     questions:
       - question: |
-          I enabled the `MicrosoftServicePrincipalSignInLogs` through diagnostic settings but I'm unsure what to do with this data.
+          I've enabled the `MicrosoftServicePrincipalSignInLogs` through diagnostic settings, but I'm unsure what to do with this data.
         answer: |
-          These logs provide visibility into service-to-service authentication, but in the unlikely scenario where an application is used to gain access into other resources, these logs could provide the information needed to pinpoint the source of the compromise.
-
-          We have released logs for Microsoft-owned applications to make token issuance authentications to customer-owned resources transparent. We don't expect or recommend customers take any action based on these logs. If you choose to block or control these applications, it might lead to unexpected issues that we can't help resolve. While having this data is beneficial, not enabling it should not negatively impact your security posture.
+          These logs provide visibility into service-to-service authentication, specifically for Microsoft-owned applications to keep token issuance authentications to customer-owned resources transparent. We have released logs for Microsoft-owned applications to make token issuance authentications to customer-owned resources transparent.
+          
+          In the unlikely scenario where an application is used to gain access into other resources, these logs could provide the information needed to pinpoint the source of the compromise.
 
       - question: |
-          Why are these these service-to-service authentication calls happening?
+          Where can I learn more about why these calls are happening?
         answer: |
-          The specific reasons behind Microsoft-owned applications requesting or issuing tokens are part of our system's design and can't be shared publicly. The logs are shared to maintain transparency and provide visibility into authentications that are occurring within the boundaries of our customers’ tenants. 
+          The specific reasons behind Microsoft-owned applications requesting or issuing tokens are part of our system's design and can't be shared publicly. The logs are shared to maintain transparency and provide visibility into authentications that are occurring within the boundaries of our customers' tenants. 
 
       - question: |
           Is this data essential for security investigations?
         answer: |
-          It's not likely that these logs will provide any actionable insights during a security investigation. 
+          We have categorized datasets from our Microsoft Entra log streams based on their importance for security investigations. This particular dataset is considered a much lower priority compared to others. While having this data is beneficial, not enabling it should not negatively impact your security posture.  
 
       - question: |
           What actions can I take on this data?
         answer: |
           We recommend being very cautious before making any changes to Microsoft-owned applications. These applications often have essential settings, like token issuance for billing applications. Disabling them could result in losing access to your account. Our internal security teams have implemented extensive security controls and access policies to keep these applications secure. We are confident in their security, and we strongly advise against making any additional changes to them.
 
+          If you choose to block or control these applications, it might lead to unexpected issues, and unfortunately, we won't be able to support or take responsibility for those problems. 
+        
 
 
