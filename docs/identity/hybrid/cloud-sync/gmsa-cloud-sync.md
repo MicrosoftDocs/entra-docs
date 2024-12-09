@@ -99,6 +99,15 @@ For steps on how to upgrade an existing agent to use a gMSA account see [group M
 
 For more information on how to prepare your Active Directory for group Managed Service Account, see [group Managed Service Accounts Overview](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
 
+## Troubleshooting
+
+If you encounter the problem
+```Error while creating group managed service account (gMSA). Error: Unable to install service account pGMSA_<hex-string>$ after 6 retries.'```
+this might be related to a mismatch of the encryption types of the gMSA and the computer account.
+
+Open the attribute editor of your computer account and the newly created gMSA and check that the attribute `msDS-SupportedEncryptionTypes` matches.
+If they don't match, replace the value of `msDS-SupportedEncryptionTypes` for the gMSA with the value from the server computer account. 
+
 
 ## Next steps
 
