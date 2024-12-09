@@ -15,7 +15,7 @@ ms.reviewer: lirazbarak
 # Application discovery (Preview)
 Application discovery enables administrators to gain comprehensive visibility into application usage within their corporate network. By identifying which applications are accessed and by whom, administrators can create private applications with precise segmentation and least privilege access, which minimizes unnecessary access. 
 
-With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, in a way as you would with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a conditional access policy and set user assignments per application.  
+With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, as you would with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a conditional access policy and set user assignments per application.  
 
 This article walks through the process of using Application discovery to detect which applications users access (through Quick Access) and creating separate private applications.
 
@@ -38,7 +38,7 @@ The administrator can adjust the time range, add other filters, and sort the app
 The following columns are available for each application segment: 
 - **Destination FQDN**: the FQDN of the application segment. 
 - **Destination IP**: the IP of the application segment. 
-- **Transport protocol**: the transport protocol of the application segment. Application discovery currently supports Transmission Control Protocol (TCP) and User Datagram Protocol (UDP).   
+- **Transport protocol**: the transport protocol of the application segment. Private Access currently supports Transmission Control Protocol (TCP) and User Datagram Protocol (UDP).   
 - **Destination port**: the port of the application segment.   
 - **Users**: the number of users who accessed the application segment.   
 - **Transactions**: the number of transactions (connections) to the application segment.  
