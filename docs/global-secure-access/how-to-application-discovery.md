@@ -1,5 +1,5 @@
 ---
-title: Application Discovery (Preview)
+title: Application Discovery (Preview) for Global Secure Access
 description: Use Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
@@ -12,7 +12,7 @@ ms.reviewer: lirazbarak
 
 # Customer intent: As an administrator, I want to use Application discovery to detect the applications accessed by users and create separate private applications.
 ---
-# Application discovery (Preview)
+# Application discovery (Preview) for Global Secure Access
 Application discovery enables administrators to gain comprehensive visibility into application usage within their corporate network. By identifying which applications are accessed and by whom, administrators can create private applications with precise segmentation and least privilege access, which minimizes unnecessary access. 
 
 With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, as you would with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a conditional access policy and set user assignments per application.  
@@ -29,7 +29,7 @@ This article walks through the process of using Application discovery to detect 
 To view a list of all the application segments in Quick Access that users accessed via the Global Secure Access client in the last 30 days:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Application discovery**.
-:::image type="content" source="media/how-to-application-discovery/application-dicovery-default-view.png" alt-text="Screenshot of Application discovery screen.":::
+:::image type="content" source="media/how-to-application-discovery/application-discovery-default-view.png" alt-text="Screenshot of Application discovery screen.":::
 
 By default, the **Application discovery** view sorts the application segments in descending order according to the number of users. This default sort order moves the most heavily used application segments to the top of the list, making them more visible to the administrator.  
 
@@ -53,10 +53,10 @@ Use Application discovery to create new Microsoft Entra ID applications based on
 1. From the Application discovery list, choose one or more application segments that correspond to an application that you would like to create.
 :::image type="content" source="media/how-to-application-discovery/select-application-segments.png" alt-text="Screenshot of the list of application segments with two segments selected.":::
     1. Often, one application uses one application segment. For example:
-        1. A file server, such as: `filesrv.contoso.com`, TCP, 445.
-        1. A portal, such as: `internalportal.contoso.com`, TCP, 443.
+        - A file server, such as: `filesrv.contoso.com`, TCP, 445.
+        - A portal, such as: `internalportal.contoso.com`, TCP, 443.
     1. However, sometimes a single application uses several ports, protocols, or spans across multiple servers (FQDNs/IPs). In this case, you can choose several application segments and even add others manually. For example:
-        1. Publishing ADDS services in a specific AD site: `dc1.contoso.com` and `dc2.contoso.com`, TCP, 88, 135, 137, 138, 389, 445, 464, 636, 3268, 3269 and a fixed high port for Netlogon `dc1.contoso.com` and `dc2.contoso.com`, UDP, 88, 123, 389, 464.  
+        - Publishing ADDS services in a specific AD site: `dc1.contoso.com` and `dc2.contoso.com`, TCP, 88, 135, 137, 138, 389, 445, 464, 636, 3268, 3269 and a fixed high port for Netlogon `dc1.contoso.com` and `dc2.contoso.com`, UDP, 88, 123, 389, 464.  
     1. For a comprehensive list of ADDS ports, see [How to configure a firewall for Active Directory domains and trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).  
 1. Select **Add to new application**. The **Create Global Secure Access application** screen opens, showing the selected application segments.
     1. Give the application a **Name** and select the corresponding **Connector Group**.
