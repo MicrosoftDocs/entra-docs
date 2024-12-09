@@ -24,15 +24,15 @@ The Connectors tab is used to manage all systems the sync engine is connected to
 ## Connector actions
 | Action | Comment |
 | --- | --- |
-| Create |Do not use. For connecting to additional AD forests, use the installation wizard. |
+| Create |Don't use. For connecting to additional AD forests, use the installation wizard. |
 | Properties |Used for domain and OU filtering. |
-| Delete |Do not use. |
+| Delete |Don't use. |
 | [Configure Run Profiles](#configure-run-profiles) |Except for domain filtering, nothing to configure here. You can use this action to see already configured run profiles. |
 | Run |Used to start a one-off run of a profile. |
 | Stop |Stops a Connector currently running a profile. |
-| Export Connector |Do not use. |
-| Import Connector |Do not use. |
-| Update Connector |Do not use. |
+| Export Connector |Don't use. |
+| Import Connector |Don't use. |
+| Update Connector |Don't use. |
 | Refresh Schema |Refreshes the cached schema. It is preferred to use the option in the installation wizard instead, since that also updates sync rules. |
 | [Search Connector Space](#search-connector-space) |Used to find objects and to Follow an object and its data through the system. |
 
@@ -50,7 +50,7 @@ The search connector space action is useful to find objects and troubleshoot dat
 
 Start by selecting a **scope**. You can search based on data (RDN, DN, Anchor, Sub-Tree), or state of the object (all other options).  
 ![Screenshot that shows the "Scope" drop-down menu.](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchscope.png)  
-If you for example do a Sub-Tree search, you get all objects in one OU.  
+If you, for example, do a Sub-Tree search, you get all objects in one OU.  
 ![Screenshot that shows an example of a "Sub-Tree" search.](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchsubtree.png)  
 From this grid you can select an object, select **properties**, and [follow it](tshoot-connect-object-not-syncing.md) from the source connector space, through the metaverse, and to the target connector space.
 
@@ -73,7 +73,7 @@ To resolve the issue, update the AD DS user account using the following:
 7. The User name indicates the AD DS account used for synchronization.
 8. Enter the new password of the AD DS account in the Password textbox
 ![Microsoft Entra Connect Sync Encryption Key Utility](./media/how-to-connect-sync-service-manager-ui-connectors/key6.png)
-9. Click OK to save the new password and restart the Synchronization Service to remove the old password from memory cache.
+9. Select OK to save the new password and restart the Synchronization Service to remove the old password from memory cache.
 
 
 
