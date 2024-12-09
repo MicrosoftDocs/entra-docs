@@ -1,19 +1,20 @@
 ---
 title: Manage custom security attributes for an application
-description: Assign, update, list, or remove custom security attributes for an application that has been registered with your Microsoft Entra tenant.
+description: Assign, update, list, or remove custom security attributes for an application that is registered with your Microsoft Entra tenant.
 
 author: omondiatieno
+manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: how-to
 
-ms.date: 11/15/2023
+ms.topic: how-to
+ms.date: 12/06/2024
 ms.author: jomondi
 ms.reviewer: rolyon
 zone_pivot_groups: enterprise-apps-all
 ms.custom: not-enterprise-apps
 
-#customer intent: As an administrator managing custom security attributes for applications in Microsoft Entra ID, I want to assign, update, list, or remove custom security attributes, so that I can define and manage access to enterprise applications based on business-specific attributes.
+#customer intent: As an IT admin troubleshooting issues with user access to Microsoft applications, I want to understand and troubleshoot errors that occur during the process of consenting to an application, so that I can successfully grant the necessary permissions and access the application.
 ---
 
 # Manage custom security attributes for an application
@@ -77,7 +78,7 @@ Undertake the following steps to assign custom security attributes through the M
 
 1. Find the custom security attribute assignment value you want to update.
 
-    Once you've assigned a custom security attribute to an application, you can only change the value of the custom security attribute. You can't change other properties of the custom security attribute, such as attribute set or custom security attribute name.
+    Once you assigned a custom security attribute to an application, you can only change the value of the custom security attribute. You can't change other properties of the custom security attribute, such as attribute set or custom security attribute name.
 
 1. Depending on the properties of the selected custom security attribute, you can update a single value, select a value from a predefined list, or update multiple values.
 

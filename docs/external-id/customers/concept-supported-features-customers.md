@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 10/07/2024
+ms.date: 12/03/2024
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -50,7 +50,7 @@ The following table compares the features available for look and feel customizat
 |---------|---------|---------|
 | **Company branding** | You can add [company branding](~/fundamentals/how-to-customize-branding.md) that applies to all these experiences to create a consistent sign-in experience for your users. | Same as workforce. [Learn more](how-to-customize-branding-customers.md) |
 | **Language customization** | [Customize the sign-in experience by browser language](~/fundamentals/how-to-customize-branding.md). | Same as workforce. [Learn more](how-to-customize-languages-customers.md) |
-| **Custom domain names** |  You can use [custom domains](~/fundamentals/add-custom-domain.yml) for administrative accounts only. | The [custom URL domain (preview)](concept-custom-url-domain.md) feature for external tenants lets you brand app sign-in endpoints with your own domain name.|
+| **Custom domain names** |  You can use [custom domains](~/fundamentals/add-custom-domain.yml) for administrative accounts only. | The [custom URL domain](concept-custom-url-domain.md) feature for external tenants lets you brand app sign-in endpoints with your own domain name.|
 | **Native authentication** for mobile apps| Not available |Microsoft Entra’s [native authentication](concept-native-authentication.md) allows you to have full control over the design of your mobile application sign-in experiences.|
 
 
@@ -70,7 +70,7 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-| **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>**For invited guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | **For self-service sign-up users (consumers, business customers)**</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation (preview)](./how-to-google-federation-customers.md)</br>- [Facebook federation (preview)](./how-to-facebook-federation-customers.md)</br>- [OIDC federation (preview)](./how-to-custom-oidc-federation-customers.md)<br></br>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):</br>- Microsoft Entra accounts </br>- Microsoft accounts </br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in) |
+| **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>**For invited guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | **For self-service sign-up users (consumers, business customers)**</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation (preview)](./how-to-google-federation-customers.md)</br>- [Facebook federation (preview)](./how-to-facebook-federation-customers.md)</br>- [Apple federation (preview)](./how-to-apple-federation-customers.md)</br>- [OIDC federation (preview)](./how-to-custom-oidc-federation-customers.md)<br></br>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):</br>- Microsoft Entra accounts </br>- Microsoft accounts </br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in) |
 |   **Authentication methods for MFA**  | **For internal users (employees and admins)** </br>- [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </br>**For guests (invited or self-service sign-up)** </br>- [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  **For self-service sign-up users (consumers, business customers) or invited users (preview)**</br>- [Email one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</br>- [SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication)    |
 
 ## Application registration
