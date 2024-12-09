@@ -162,7 +162,7 @@ For more information, see [Add your work or school account to the Microsoft Auth
 
 ### Guest access
 
-You can add a TAP as a sign-in method to an internal guest, but not other types of guests. An internal guest has user object **UserType** set to **Guest**. They have authentication methods registered in Microsoft Entra ID. For more information about internal guests and other guest accounts, see [B2B guest user properties](~/entra/external-id/user-properties).
+You can add a TAP as a sign-in method to an internal guest, but not other types of guests. An internal guest has user object **UserType** set to **Guest**. They have authentication methods registered in Microsoft Entra ID. For more information about internal guests and other guest accounts, see [B2B guest user properties](~/external-id/user-properties).
 
 If you try to add a TAP to an external guest account in the Microsoft Entra admin center or in Microsoft Graph, you get an error that says **Temporary Access Pass cannot be added to an external guest user.**
 
