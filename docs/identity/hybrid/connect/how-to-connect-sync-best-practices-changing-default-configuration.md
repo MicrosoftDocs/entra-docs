@@ -17,23 +17,23 @@ ms.author: billmath
 # Microsoft Entra Connect Sync: Best practices for changing the default configuration
 The purpose of this topic is to describe supported and unsupported changes to Microsoft Entra Connect Sync.
 
-The configuration created by Microsoft Entra Connect works “as is” for most environments that synchronize on-premises Active Directory with Microsoft Entra ID. However, in some cases, it is necessary to apply some changes to a configuration to satisfy a particular need or requirement.
+The configuration Microsoft Entra Connect creates works “as is” for most environments that synchronize on-premises Active Directory with Microsoft Entra ID. However, in some cases, it is necessary to apply some changes to a configuration to satisfy a particular need or requirement.
 
 ## Changes to the service account
 Microsoft Entra Connect Sync is running under a service account created by the installation wizard. This service account holds the encryption keys to the database used by sync. It is created with a 127 characters long password and the password is set to not expire.
 
 > [!WARNING]
-> If you change or reset the ADSync service account password, the Synchronization Service will not be able start correctly until you have abandoned the encryption key and reinitialized the ADSync service account password.
+> If you change or reset the ADSync service account password, the Synchronization Service won't start correctly until you've abandoned the encryption key and reinitialized the ADSync service account password.
 > To do this, see [Changing the ADSync service account password](how-to-connect-sync-change-serviceacct-pass.md).
 
 ## Changes to the scheduler
 Starting with the releases from build 1.1 (February 2016) you can configure the [scheduler](how-to-connect-sync-feature-scheduler.md) to have a different sync cycle than the default 30 minutes.
 
 ## Changes to Synchronization Rules
-The installation wizard provides a configuration that is supposed to work for the most common scenarios. In case you need to make changes to the configuration, then you must follow these rules to still have a supported configuration.
+The installation wizard provides a configuration that is supposed to work for the most common scenarios. In case you need to make changes to the configuration, then you must follow these rules to have a supported configuration.
 
 > [!WARNING]
-> If you make changes to the default sync rules then these changes will be overwritten the next time Microsoft Entra Connect is updated, resulting in unexpected and likely unwanted synchronization results.
+> If you make changes to the default sync rules then these changes are overwritten the next time Microsoft Entra Connect is updated, resulting in unexpected and likely unwanted synchronization results.
 
 * You can [change attribute flows](how-to-connect-sync-change-the-configuration.md#other-common-attribute-flow-changes) if the default direct attribute flows are not suitable for your organization.
 * If you want to [not flow an attribute](how-to-connect-sync-change-the-configuration.md#do-not-flow-an-attribute) and remove any existing attribute values in Microsoft Entra ID, then you need to create a rule for this scenario.
@@ -47,11 +47,11 @@ The installation wizard provides a configuration that is supposed to work for th
 ### Disable an unwanted Sync Rule
 Do not delete an out-of-box sync rule. It is recreated during next upgrade.
 
-In some cases, the installation wizard has produced a configuration that is not working for your topology. For example, if you have an account-resource forest topology but you have extended the schema in the account forest with the Exchange schema, then rules for Exchange are created for the account forest and the resource forest. In this case, you need to disable the Sync Rule for Exchange.
+In some cases, the installation wizard produces a configuration that is not working for your topology. For example, if you have an account-resource forest topology but you've extended the schema in the account forest with the Exchange schema, then rules for Exchange are created for the account forest and the resource forest. In this case, you need to disable the Sync Rule for Exchange.
 
 ![Disabled sync rule](./media/how-to-connect-sync-best-practices-changing-default-configuration/exchangedisabledrule.png)
 
-In the picture above, the installation wizard has found an old Exchange 2003 schema in the account forest. This schema extension was added before the resource forest was introduced in Fabrikam's environment. To ensure no attributes from the old Exchange implementation are synchronized, the sync rule should be disabled as shown.
+In the prior picture, the installation wizard found an old Exchange 2003 schema in the account forest. This schema extension was added before the resource forest was introduced in Fabrikam's environment. To ensure no attributes from the old Exchange implementation are synchronized, the sync rule should be disabled as shown.
 
 ### Change an out-of-box rule
 The only time you should change an out-of-box rule is when you need to change the join rule. If you need to change an attribute flow, then you should create a sync rule with higher precedence than the out-of-box rules. The only rule you practically need to clone is the rule **In from AD - User Join**. You can override all other rules with a higher precedence rule.
