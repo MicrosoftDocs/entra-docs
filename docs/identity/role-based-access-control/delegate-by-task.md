@@ -214,7 +214,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Configure and enable or disable sign-in risk policy| [Security Administrator](permissions-reference.md#security-administrator) |  |
 > | Configure and enable or disable user risk policy | [Security Administrator](permissions-reference.md#security-administrator) |  |
 > | Configure weekly digests | [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Dismiss all risk detections | [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Dismiss all risk detections |[Security Operator](/entra/identity/role-based-access-control/permissions-reference)|  |
 > | Fix or dismiss vulnerability | [Security Administrator](permissions-reference.md#security-administrator) |  |
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read all risk detections | [Security Reader](permissions-reference.md#security-reader) |  |
