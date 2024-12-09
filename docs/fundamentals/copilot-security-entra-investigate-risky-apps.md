@@ -32,7 +32,8 @@ Jason, an IT admin at Woodgrove Bank, is proactively trying to identify and unde
 ## Investigate 
 
 Jason starts his assessment and signs in to [Microsoft Copilot for Security](https://securitycopilot.microsoft.com/). In order to view application and service principal details, he signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) and needs an [Microsoft Entra role assignment](../identity/role-based-access-control/permissions-reference.md) of Application Administrator, Cloud Application Administrator, or similar Microsoft Entra administrator role that has permissions to manage application/workload identities in Microsoft Entra. 
-
+>[NOTE]
+>Identity admins using [Security Copilot as a part of the Microsoft Entra admin center](https://learn.microsoft.com/en-us/entra/fundamentals/copilot-security-entra#create-security-copilot-prompts-in-the-microsoft-entra-admin-center-preview), can choose from a set of App risk starter prompts that appear at the top of the Security Copilot window, and then select from suggested prompts that may appear after a response. App risk starter prompts will appear in application-related admin center blades: Enterprise applications, App Registrations, and Identity Protection Risky workload identities.
 ### Explore Microsoft Entra risky service principals 
 
 Jason begins by asking natural language questions to get a better picture of the risk "hot spots". This uses [ID Protection risky workload identity](../id-protection/concept-workload-identity-risk.md) data as an initial filter on the scale of apps in their tenant based on our Microsoft detections. These service principals carry an elevated risk of compromise.  
