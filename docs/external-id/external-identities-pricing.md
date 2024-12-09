@@ -109,5 +109,5 @@ To move your external tenant resources to the new subscription, use Azure Resour
 ## Next steps
 
 - See [Frequently asked questions](customers/faq-customers.md) about external tenants.
-- For the latest pricing information, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+- For the latest pricing information, see [Microsoft Entra External ID pricing](https://azure.microsoft.com/en-us/pricing/details/microsoft-entra-external-id/?msockid=3d7d486a53d8675628645d75521f6629).
 - For details about Azure Active Directory B2C billing, see [Billing model for Azure Active Directory B2C](/azure/active-directory-b2c/billing).
