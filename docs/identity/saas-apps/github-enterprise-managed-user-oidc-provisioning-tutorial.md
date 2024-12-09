@@ -114,7 +114,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 7. Select **Save**.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to GitHub Enterprise Managed User (OIDC)**.
+8. Under the **Mappings** section, select **Provision Microsoft Entra ID Users**.
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User (OIDC) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GitHub Enterprise Managed User (OIDC) for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GitHub Enterprise Managed User (OIDC) API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -132,7 +132,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |emails[type eq "home"].value|String|
    |emails[type eq "other"].value|String|
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to GitHub Enterprise Managed User (OIDC)**.
+10. Under the **Mappings** section, select **Provision Microsoft Entra ID Groups**.
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User (OIDC) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in GitHub Enterprise Managed User (OIDC) for update operations. Select the **Save** button to commit any changes.
 
