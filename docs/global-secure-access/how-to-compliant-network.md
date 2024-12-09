@@ -33,7 +33,6 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and interact with Conditional Access policies and named locations.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 

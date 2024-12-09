@@ -5,7 +5,7 @@ description: This article shows how to migrate a classic Conditional Access poli
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/30/2024
+ms.date: 12/04/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -44,7 +44,6 @@ To disable your classic policy, select **Disable** in the **Details** view.
 
 ![Disable classic policies](./media/policy-migration-mfa/14.png)
 
-## Related content
+## Next steps
 
-- [Conditional Access template policies](concept-conditional-access-policy-common.md)
-- [Classic Conditional Access policies and Microsoft Defender for Endpoint connector](/mem/intune/protect/advanced-threat-protection-configure)
+[Conditional Access template policies](concept-conditional-access-policy-common.md)

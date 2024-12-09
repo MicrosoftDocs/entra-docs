@@ -12,7 +12,7 @@ ms.author: owinfrey
 ---
 # Hide or delete an access package in entitlement management
 
-When you create access packages, they're discoverable by default. This means that if a policy allows a user to request the access package, they'll automatically see the access package listed in their My Access portal. However, you can change the **Hidden** setting so that the access package isn't listed in the user's My Access portal.
+When you create access packages, they're discoverable by default. This means that if a policy allows a user to request the access package, they'll automatically see the access package listed in their My Access portal. However, you can change the **Hidden** setting so that the access package isn't listed in the user's My Access portal. A user will only see the access packages from a given tenant in their My Access portal. Users can either use the organization/tenant switcher which is located on the top right of the My Access portal or a My Access portal link which inlcudes a tenant hint. For more information, see [Share link to request an access package](entitlement-management-access-package-settings.md).
 
 This article describes how to hide or delete an access package.
 

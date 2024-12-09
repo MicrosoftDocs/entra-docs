@@ -182,6 +182,20 @@ When deploying support for Kerberos SSO with Platform SSO, the standard Kerberos
 
 When deploying Kerberos support with Platform SSO, users do not need to interact with the Kerberos SSO extension menu extra to have Kerberos functionality work. Kerberos SSO functionality will still operate if the user does not sign into the menu bar extra and the menu bar extra reports "Not signed in". You may instruct users to ignore the menu bar extra when deploying with Platform SSO, per this article. Instead, make sure that you validate that kerberos functionality works as expected without interaction with the menu bar extra, as outlined in the [Testing Kerberos SSO](#testing-kerberos-sso) section of this article.
 
+### Browser Support for Kerberos SSO
+
+Some browsers require additional configuration to enable Kerberos SSO support, including if you are using Platform SSO to enable Kerberos on your macOS devices. When deploying Kerberos support on macOS, deploy the appropriate settings for each of the browsers you utilize to ensure they can interact with the macOS Kerberos SSO features:
+
+- Safari: supports Kerberos SSO by default
+- Microsoft Edge:
+    - Configure the **AuthNegotiateDelegateAllowlist** setting to include your on-premises Active Directory forest information: [AuthNegotiateDelegateAllowlist](/DeployEdge/microsoft-edge-policies#authnegotiatedelegateallowlist)
+    - Configure the **AuthServerAllowlist** setting to include your on-premises Active Directory forest information: [AuthServerAllowlist](/DeployEdge/microsoft-edge-policies#authserverallowlist)
+- Google Chrome
+    - Configure the **AuthNegotiateDelegateAllowlist** setting to include your on-premises Active Directory forest information: [AuthNegotiateDelegateAllowlist](https://chromeenterprise.google/policies/#AuthNegotiateDelegateAllowlist)
+    - Configure the **AuthServerAllowlist** setting to include your on-premises Active Directory forest information: [AuthServerAllowlist](https://chromeenterprise.google/policies/#AuthServerAllowlist)
+- Mozilla Firefox
+    - Configure the Mozilla Firefox **network.negotiate-auth.trusted-uris** and **network.automatic-ntlm-auth.trusted-uris** settings to enable Kerberos SSO support
+
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md)
