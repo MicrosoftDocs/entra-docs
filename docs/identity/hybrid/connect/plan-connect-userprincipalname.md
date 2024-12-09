@@ -52,7 +52,7 @@ To enable Alternate login ID with Microsoft Entra ID, no additional configuratio
 
 ![Screenshot that highlights User Principal Name list where you select the Alternate login ID attribute.](./media/plan-connect-userprincipalname/altloginid.png)  
 
-For more information, see [Configure Alternate login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id) and [Microsoft Entra login configuration](how-to-connect-install-custom.md#azure-ad-login-configuration)
+For more information, see [Configure Alternate login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id) and [Microsoft Entra login configuration](how-to-connect-install-custom.md#azure-ad-sign-in-configuration)
 
 ## Nonverified UPN Suffix
 If the on-premises UserPrincipalName attribute/Alternate login ID suffix is not verified with Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value is set to MOERA. Microsoft Entra ID calculates the MOERA from the Microsoft Entra MailNickName attribute and Microsoft Entra initial domain as &lt;MailNickName&gt;&#64;&lt;initial domain&gt;.
