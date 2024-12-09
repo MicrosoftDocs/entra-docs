@@ -258,7 +258,7 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
    `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
 
    > [!IMPORTANT]
-   > For customers that use the Azure for US Government or Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *AzureEnvironment* parameters for the required cloud. For example, specify *-AzureEnvironment USGovernment* or *-AzureEnvironment AzureChinaCloud*.
+   > For customers that use the Azure for US Government or Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *Environment* parameters for the required cloud. For example, specify *-Environment USGov* or *-Environment China*.  Envorinment options: USGov, USGovDoD, Germany, China, Global.   Example: Connect-MgGraph -Scopes Application.ReadWrite.All -Environment USGov -NoWelcome -Verbose -ErrorAction Stop.
    
    ```powershell
    .\AzureMfaNpsExtnConfigSetup.ps1
