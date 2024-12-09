@@ -92,7 +92,7 @@ items:
         items:
           - name: Understand Universal Conditional Access 
             href: concept-universal-conditional-access.md
-          - name: Microsoft traffic
+          - name: Internet traffic
             href: how-to-target-resource-microsoft-profile.md
       - name: Compliant network check
         href: how-to-compliant-network.md
