@@ -115,14 +115,14 @@ You export `msalConfig`, `REDIRECT_URI`, `TENANT_SUBDOMAIN`, `GRAPH_ME_ENDPOINT`
 
 The application authorities for external and workforce tenants looks different. Build them as shown below:
 
-#### [For workforce tenant](#tab/workforce-tenant)
+#### [Workforce tenant](#tab/workforce-tenant)
 
 ```javascript
 //Authority for workforce tenant
 authority: process.env.CLOUD_INSTANCE + process.env.TENANT_ID
 ```
 
-#### [For external tenant](#tab/external-tenant)
+#### [External tenant](#tab/external-tenant)
 
 ```javascript
 //Authority for external tenant
@@ -132,11 +132,11 @@ authority: process.env.AUTHORITY || `https://${TENANT_SUBDOMAIN}.ciamlogin.com/`
 
 ### Use custom URL domain (Optional)
 
-#### [For workforce tenant](#tab/workforce-tenant)
+#### [Workforce tenant](#tab/workforce-tenant)
 
 Workforce tenant doesn't support custom URL domains.
 
-#### [For external tenant](#tab/external-tenant)
+#### [External tenant](#tab/external-tenant)
 
 [!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)] 
 
@@ -482,7 +482,7 @@ The `/` route is the entry point to the application. It renders the *views/index
 
 The app's logout URI, `logoutUri` and authority metadata endpoint, `endpoint` for external and workforce tenants looks different. Build them as shown below:
 
-#### [For workforce tenant](#tab/workforce-tenant)
+#### [Workforce tenant](#tab/workforce-tenant)
 
 ```javascript
 //Logout URI for workforce tenant
@@ -492,7 +492,7 @@ const logoutUri = `${this.config.msalConfig.auth.authority}/oauth2/v2.0/logout?p
 const endpoint = `${this.config.msalConfig.auth.authority}/v2.0/.well-known/openid-configuration`;
 ```
 
-#### [For external tenant](#tab/external-tenant)
+#### [External tenant](#tab/external-tenant)
 
 ```javascript
 //Logout URI for external tenant
@@ -557,7 +557,7 @@ const givenName = req.session.account.idTokenClaims.given_name
 
 At this point, you can test your node web app.
 
-#### [For Workforce tenant](#tab/workforce-tenant)
+#### [Workforce tenant](#tab/workforce-tenant)
 
 1. Use the steps in [Create a new user](/entra/fundamentals/how-to-create-delete-users#create-a-new-user) to create a test user in the workforce tenant. If you don't have access to the tenant, ask your tenant admin to create the user for you.
 
@@ -577,7 +577,7 @@ At this point, you can test your node web app.
 
 After you're signed in successfully, you'll be redirected back to the application home page. 
 
-#### [For external tenant](#tab/external-tenant) 
+#### [External tenant](#tab/external-tenant) 
 
 1. In your terminal, make sure you're in the project folder that contains your web app such as `ciam-sign-in-node-express-web-app`.
 
