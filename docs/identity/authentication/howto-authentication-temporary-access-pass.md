@@ -19,9 +19,7 @@ Passwordless authentication methods like a passkey (FIDO2) let users sign in sec
 - Use existing Microsoft Entra multifactor authentication methods 
 - Use a Temporary Access Pass 
 
-A Temporary Access Pass (TAP) is a time-limited passcode that can be configured for single use or multiple sign-ins. Users can sign in with a TAP to onboard other passwordless authentication methods.
-
-A TAP also makes recovery easier when a user loses or forgets a strong authentication method like their FIDO2 security key, and they need to sign in to register a new strong authentication method.
+A Temporary Access Pass (TAP) is a time-limited passcode that can be configured for single use or multiple sign-ins. Users can sign in with a TAP to onboard other passwordless authentication methods. A TAP also makes recovery easier when a user loses or forgets a strong authentication method.
 
 This article shows you how to enable and use a TAP using the [Microsoft Entra admin center](https://entra.microsoft.com). You can also perform these actions using REST APIs. 
 
@@ -29,21 +27,21 @@ This article shows you how to enable and use a TAP using the [Microsoft Entra ad
 
 A TAP policy defines settings, such as the lifetime of passes created in the tenant, or the users and groups who can use a TAP to sign-in. 
 
-Before users can sign-in with a TAP, you need to enable this method in the authentication method policy and choose which users and groups can sign in by using a TAP.
+Before users can sign-in with a TAP, you need to enable this method in the Authentication methods policy and choose which users and groups can sign in by using a TAP.
 
-Although you can create a TAP for any user, only users included in the policy can sign-in with it. Those with at least the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role can update the TAP authentication method policy.
+Although you can create a TAP for any user, only users included in the policy can sign-in with it. You need the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role to update the TAP Authentication methods policy.
 
-To configure the TAP authentication method policy:
+To configure TAP in the Authentication methods policy:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** >  **Policies**.
 1. From the list of available authentication methods, select **Temporary Access Pass**.
 
-   :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/select-temporary-access-pass-policy.png" alt-text="Screenshot of how to manage Temporary Access Pass within the authentication method policy experience.":::
+   :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/select-temporary-access-pass-policy.png" alt-text="Screenshot of how to manage Temporary Access Pass within the Authentication methods policy experience.":::
 
 1. Click **Enable** and then select users to include or exclude from the policy. 
    
-   :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/enable-temporary-access-pass.png" alt-text="Screenshot of how to enable the Temporary Access Pass authentication method policy.":::
+   :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/enable-temporary-access-pass.png" alt-text="Screenshot of how to enable Temporary Access Pass in the Authentication methods policy.":::
 
 1. (Optional) Select **Configure** to modify the default Temporary Access Pass settings, such as setting maximum lifetime, or length, and click **Update**. 
 
@@ -63,11 +61,12 @@ To configure the TAP authentication method policy:
 
 ## Create a Temporary Access Pass
 
-After you enable a TAP policy, you can create TAPs for users in Microsoft Entra ID.  These following roles can perform various actions related to a TAP.
+After you enable a TAP policy, you can create a TAP policy for users in Microsoft Entra ID. The following roles can perform various actions related to a TAP.
 
-- Those assigned at least the Privileged Authentication Administrator role can create, delete, and view a TAP for admins and members (except themselves).
-- Authentication Administrators can create, delete, and view a TAP for members (except themselves).
-- Global Readers can view TAP details for the user (without reading the code itself).
+- [Privileged Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) can create, delete, and view a TAP for admins and members (except themselves).
+- [Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) can create, delete, and view a TAP for members (except themselves).
+- [Authentication Policy Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can enable TAP, include or exclude groups, and edit the Authentication methods policy.
+- [Global Readers](~/identity/role-based-access-control/permissions-reference.md#global-reader) can view TAP details for the user (without reading the code itself).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users**.
@@ -82,8 +81,9 @@ After you enable a TAP policy, you can create TAPs for users in Microsoft Entra 
    :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/add-method.png" alt-text="Screenshot of adding a method - Temporary Access Pass.":::
 
 1. Once added, the details of the TAP are shown. 
+
    > [!IMPORTANT]
-   >  Make a note of the actual TAP value, as you will provide this value to the user. You can't view this value after you select **Ok**.
+   > Make a note of the actual TAP value, as you will provide this value to the user. You can't view this value after you select **Ok**.
 
    :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/details.png" alt-text="Screenshot of Temporary Access Pass details.":::
 
