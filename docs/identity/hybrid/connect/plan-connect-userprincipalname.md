@@ -26,10 +26,10 @@ The following terminology is used in this article:
 |On-premises mailNickName attribute|An attribute in Active Directory, the value of which represents the alias of a user in an Exchange organization.|
 |On-premises mail attribute|An attribute in Active Directory, the value of which represents the email address of a user|
 |Primary SMTP Address|The primary email address of an Exchange recipient object. For example, SMTP:user\@contoso.com.|
-|Alternate sign-in ID|An on-premises attribute other than UserPrincipalName, such as mail attribute, used for sign-in.|
+|Alternate login ID|An on-premises attribute other than UserPrincipalName, such as mail attribute, used for login.|
 
 ## What is UserPrincipalName?
-UserPrincipalName is an attribute that is an Internet-style sign-in name for a user based on the Internet standard [RFC 822](https://www.ietf.org/rfc/rfc0822.txt). 
+UserPrincipalName is an attribute that is an Internet-style login name for a user based on the Internet standard [RFC 822](https://www.ietf.org/rfc/rfc0822.txt). 
 
 ### UPN format
 A UPN consists of a UPN prefix (the user account name) and a UPN suffix (a DNS domain name). The prefix is joined with the suffix using the "\@" symbol. For example, "someone\@example.com". A UPN must be unique among all security principal objects within a directory forest. 
@@ -37,28 +37,28 @@ A UPN consists of a UPN prefix (the user account name) and a UPN suffix (a DNS d
 <a name='upn-in-azure-ad-'></a>
 
 ## UPN in Microsoft Entra ID 
-The UPN is used by Microsoft Entra ID to allow users to sign-in. The UPN that a user can use, depends on whether or not the domain is verified. If the domain is verified, then a user with that suffix is allowed to sign-in to Microsoft Entra ID.  
+The UPN is used by Microsoft Entra ID to allow users to login. The UPN that a user can use, depends on whether or not the domain is verified. If the domain is verified, then a user with that suffix is allowed to login to Microsoft Entra ID.  
 
 The attribute is synchronized by Microsoft Entra Connect. During installation, you can view the domains that are verified and the ones that haven't not.
 
    ![Unverified domains](./media/plan-connect-userprincipalname/unverifieddomain.png) 
 
-## Alternate sign-in ID
+## Alternate login ID
 In some environments, end users may only be aware of their email address and not their UPN. The use of email address may be due to a corporate policy or an on-premises line-of-business application dependency.
 
-Alternate sign-in ID allows you to configure a sign-in experience where users can sign-in with an attribute other than their UPN, such as mail.
+Alternate login ID allows you to configure a login experience where users can login with an attribute other than their UPN, such as mail.
 
-To enable Alternate sign-in ID with Microsoft Entra ID, no additional configurations steps are needed when using Microsoft Entra Connect. Alternate ID can be configured directly from the wizard. See Microsoft Entra sign-in configuration for your users under the section Sync. Under the **User Principal Name** drop-down, select the attribute for Alternate sign-in ID.
+To enable Alternate login ID with Microsoft Entra ID, no additional configurations steps are needed when using Microsoft Entra Connect. Alternate ID can be configured directly from the wizard. See Microsoft Entra login configuration for your users under the section Sync. Under the **User Principal Name** drop-down, select the attribute for Alternate login ID.
 
-![Screenshot that highlights User Principal Name list where you select the Alternate sign-in ID attribute.](./media/plan-connect-userprincipalname/altloginid.png)  
+![Screenshot that highlights User Principal Name list where you select the Alternate login ID attribute.](./media/plan-connect-userprincipalname/altloginid.png)  
 
-For more information, see [Configure Alternate sign-in ID](/windows-server/identity/ad-fs/operations/configuring-alternate-sign-in-id) and [Microsoft Entra sign-in configuration](how-to-connect-install-custom.md#azure-ad-sign-in-configuration)
+For more information, see [Configure Alternate login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id) and [Microsoft Entra login configuration](how-to-connect-install-custom.md#azure-ad-login-configuration)
 
 ## Nonverified UPN Suffix
-If the on-premises UserPrincipalName attribute/Alternate sign-in ID suffix is not verified with Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value is set to MOERA. Microsoft Entra ID calculates the MOERA from the Microsoft Entra MailNickName attribute and Microsoft Entra initial domain as &lt;MailNickName&gt;&#64;&lt;initial domain&gt;.
+If the on-premises UserPrincipalName attribute/Alternate login ID suffix is not verified with Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value is set to MOERA. Microsoft Entra ID calculates the MOERA from the Microsoft Entra MailNickName attribute and Microsoft Entra initial domain as &lt;MailNickName&gt;&#64;&lt;initial domain&gt;.
 
 ## Verified UPN suffix
-If the on-premises UserPrincipalName attribute/Alternate sign-in ID suffix is verified with the Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value is going to be the same as the on-premises UserPrincipalName attribute/Alternate sign-in ID value.
+If the on-premises UserPrincipalName attribute/Alternate login ID suffix is verified with the Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value is going to be the same as the on-premises UserPrincipalName attribute/Alternate login ID value.
 
 <a name='azure-ad-mailnickname-attribute-value-calculation'></a>
 
@@ -70,13 +70,13 @@ When a user object is synchronized to a Microsoft Entra tenant for the first tim
 - On-premises mailNickName attribute
 - Prefix of primary SMTP address
 - Prefix of on-premises mail attribute
-- Prefix of on-premises userPrincipalName attribute/Alternate sign-in ID
+- Prefix of on-premises userPrincipalName attribute/Alternate login ID
 - Prefix of secondary smtp address
 
 When the updates to a user object are synchronized to the Microsoft Entra tenant, Microsoft Entra ID updates the MailNickName attribute value only in case there's an update to the on-premises mailNickName attribute value.
 
 > [!IMPORTANT]
-> Microsoft Entra ID recalculates the UserPrincipalName attribute value only in case an update to the on-premises UserPrincipalName attribute/Alternate sign-in ID value is synchronized to the Microsoft Entra tenant.
+> Microsoft Entra ID recalculates the UserPrincipalName attribute value only in case an update to the on-premises UserPrincipalName attribute/Alternate login ID value is synchronized to the Microsoft Entra tenant.
 > 
 > Whenever Microsoft Entra ID recalculates the UserPrincipalName attribute and the user has an Exchange license assigned, the new UserPrincipalName value is also added as a secondary smtp proxy address. 
 > 
