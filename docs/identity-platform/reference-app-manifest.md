@@ -574,7 +574,9 @@ Example:
 | :--- | :--- |
 | tags | String Array  |
 
-Custom strings that can be used to categorize and identify the application.
+Custom strings that can be used to categorize and identify the application. 
+
+Individual tags must be between 1 and 256 characters (inclusive). No whitespaces or duplicate tags are allowed. There is no specific limit on the number of tags that can be added, subject to general manifest size limits.
 
 Example:
 
