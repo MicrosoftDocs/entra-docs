@@ -41,6 +41,8 @@ The following table compares the general features and capabilities available in 
 | **Self-service password reset**    |   Allow users to reset their password using up to two authentication methods (see the next row for available methods).    |   Allow users to reset their password using email with one time passcode. [Learn more](how-to-enable-password-reset-customers.md).     |  
 | **Language customization**    | Customize the sign-in experience based on browser language when users authenticate into your corporate intranet or web-based applications.     |   Use languages to modify the strings displayed to your customers as part of the sign-in and sign-up process. [Learn more](concept-branding-customers.md).   |
 | **Custom attributes**    |    Use directory extension attributes to store more data in the Microsoft Entra directory for user objects, groups, tenant details, and service principals.    |   Use directory extension attributes to store more data in the customer directory for user objects. Create custom user attributes and add them to your sign-up user flow. [Learn more](how-to-define-custom-attributes.md).    |
+| **Pricing**    | [Monthly active users (MAU) pricing](../external-identities-pricing.md) for B2B collaboration external guests (UserType=Guest).      | [Monthly active users (MAU) pricing](../external-identities-pricing.md) for all users in the external tenant regardless of role or UserType.    |
+
 
 ## Look and feel customization
 

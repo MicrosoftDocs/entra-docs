@@ -100,9 +100,9 @@ Depending on how you created your external tenant, it might already be linked to
 
        :::image type="content" source="media/external-identities-pricing/billing-section-no-subscription.png" alt-text="Screenshot of how to upgrade and link a subscription.":::
 
-## Change the external tenant billing subscription
+## Change the subscription your external tenant is linked to
 
-You can move an external tenant to another subscription, as long as the subscription you want to use is in the same Microsoft Entra tenant as the current subscription. Moving to a subscription in a *different* Microsoft Entra tenant is not currently supported.
+You can move an external tenant to another subscription, as long as the subscription you want to use is in the same Microsoft Entra workforce tenant as the current subscription. Moving to a subscription in a *different* Microsoft Entra workforce tenant is not currently supported.
 
 To move your external tenant resources to the new subscription, use Azure Resource Manager as described in [Move Azure resources to a new resource group or subscription](/azure/azure-resource-manager/management/move-resource-group-and-subscription). Before you start, read the article to fully understand the limitations and requirements. The article also contains other critical information, such as a pre-move checklist and steps for validating the move operation.
 
