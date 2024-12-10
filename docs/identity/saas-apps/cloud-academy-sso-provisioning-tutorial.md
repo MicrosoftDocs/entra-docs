@@ -19,7 +19,7 @@ ms.author: thomasakelo
 
 # Tutorial: Configure QA for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both QA and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [QA](https://cloudacademy.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both QA and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [QA](https://www.qa.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities Supported
@@ -46,7 +46,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure QA to support provisioning with Microsoft Entra ID
 
-1. Login to [Sigma Computing](https://cloudacademy.com/) admin portal.
+1. Login to [QA](https://www.qa.com) admin portal.
 
 2. Click on **Dashboard** on the home page next to the profile icon.
 
@@ -69,7 +69,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
    >[!Note]
    >You can generate a new API Key as required. The old API Key will be marked as expired in the next **8 hours** to allow the time needed to update the configuration in the AD Portal.
 
-7. The Tenant URL is `https://cloudacademy.com/webhooks/ad/v1/scim` or `https://app.qa.com/webhooks/ad/v1/scim` based on where your company is registered. This value will be entered in the **Tenant URL** field in the Provisioning tab of your QA application.
+7. The Tenant URL is `https://app.qa.com/webhooks/ad/v1/scim`. This value will be entered in the **Tenant URL** field in the Provisioning tab of your QA application.
 
 <a name='step-3-add-cloud-academy---sso-from-the-azure-ad-application-gallery'></a>
 
