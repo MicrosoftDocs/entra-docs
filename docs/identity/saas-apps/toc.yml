@@ -570,7 +570,7 @@
         href: clickup-productivity-platform-tutorial.md
       - name: Clockwork Recruiting
         href: clockwork-recruiting-tutorial.md  
-      - name: Cloud Academy
+      - name: Cloud Academy(renamed QA)
         href: cloud-academy-sso-tutorial.md
       - name: Cloud Management Portal for Microsoft Azure
         href: newsignature-tutorial.md
@@ -3422,7 +3422,7 @@
         href: clearview-trade-provisioning-tutorial.md
       - name: Clebex
         href: clebex-provisioning-tutorial.md
-      - name: Cloud Academy - SSO
+      - name: Cloud Academy(renamed QA)
         href: cloud-academy-sso-provisioning-tutorial.md
       - name: Coda
         href: coda-provisioning-tutorial.md
