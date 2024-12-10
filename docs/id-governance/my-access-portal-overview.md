@@ -5,7 +5,7 @@ author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 10/23/2023
+ms.date: 12/10/2024
 
 
 ---
