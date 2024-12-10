@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 12/10/2024
 ms.subservice: hybrid
 ms.author: billmath
 
@@ -24,7 +24,7 @@ The following document provides the prerequisites for integrating with Active Di
 |-----|-----|
 |Windows server 2016 or greater that is or has:|• 4 GB RAM or more</br>• .NET 4.7.1 runtime or greater</br>• domain-joined</br>• PowerShell execution policy set to **Undefined** or **RemoteSigned**</br>• TLS 1.2 enabled</br>|
 |Active Directory|• On-premises AD that has a forest functional level 2003 or higher|
-|Microsoft Entra tenant|• A tenant in Azure that will be used to synchronize from on-premises|
+|Microsoft Entra tenant|• A tenant in Azure that's  used to synchronize from on-premises|
 
 For more information on the cloud sync prerequisites, see [Cloud sync prerequisites](cloud-sync/how-to-prerequisites.md).
 

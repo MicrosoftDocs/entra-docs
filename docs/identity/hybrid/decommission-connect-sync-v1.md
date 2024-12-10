@@ -9,7 +9,7 @@ editor: ''
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 12/10/2024
 ms.subservice: hybrid
 ms.author: billmath
 
@@ -20,7 +20,7 @@ ms.custom: docutune-disable
 
 The one-year advanced notice of Azure AD Connect V1's retirement was announced in August 2021.  As of August 31, 2022, all V1 versions went out of support and were subject to stop working unexpectedly at any point.
 
-On **October 1, 2023**, Microsoft Entra cloud services stopped accepting connections from Azure AD Connect V1 servers, and identities will no longer synchronize.
+On **October 1, 2023**, Microsoft Entra cloud services stopped accepting connections from Azure AD Connect V1 servers, and identities no longer synchronize.
 
 If you are still using Azure AD Connect V1 you must take action immediately.
 

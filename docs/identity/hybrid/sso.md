@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 12/10/2024
 ms.subservice: hybrid
 ms.author: billmath
 
@@ -19,7 +19,7 @@ Setting up single sign-on, depends on which synchronization tool you are using a
 
 ## Cloud sync
 
-After installing the Microsoft Entra Connect provisioning agent, you will need to configure single sign-on for cloud sync.  The following table provides a list of steps required for using single sign-on.
+After installing the Microsoft Entra Connect provisioning agent, you need to configure single sign-on for cloud sync.  The following table provides a list of steps required for using single sign-on.
   
 |Task|Description|
 |-----|-----|
