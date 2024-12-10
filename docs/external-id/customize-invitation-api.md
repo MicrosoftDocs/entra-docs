@@ -24,29 +24,37 @@ ms.collection: M365-identity-device-management
 
 The API offers the following capabilities:
 
-1. Invite an external user with *any* email address.
+1. The following JSON representation shows how to invite an external user with *any* email address.
 
     ```json
-    "invitedUserDisplayName": "Taylor"
+    {
+    "invitedUserDisplayName": "Taylor",
     "invitedUserEmailAddress": "taylor@fabrikam.com"
+    }
     ```
 
 2. Customize where you want your users to land after they accept their invitation.
 
     ```json
+    {
     "inviteRedirectUrl": "https://myapps.microsoft.com/"
+    }
     ```
 
 3. Choose to send the standard invitation mail through us.
 
     ```json
+    {
     "sendInvitationMessage": true
+    }
     ```
 
    with a message to the recipient that you can customize.
 
     ```json
+    {    
     "customizedMessageBody": "Hello Sam, let's collaborate!"
+    }
     ```
 
 4. And choose to cc: people you want to keep in the loop about your inviting this collaborator.
@@ -54,7 +62,9 @@ The API offers the following capabilities:
 5. Or completely customize your invitation and onboarding workflow by choosing not to send notifications through Microsoft Entra ID.
 
     ```json
+    {
     "sendInvitationMessage": false
+    }
     ```
 
    In this case, you get back a redemption URL from the API that you can embed in an email template, IM, or other distribution method of your choice.
@@ -62,7 +72,9 @@ The API offers the following capabilities:
 6. Finally, if you're an admin, you can choose to invite the user as member.
 
     ```json
+    { 
     "invitedUserType": "Member"
+    }
     ```
 
 ## Determine if a user was already invited to your directory
@@ -73,7 +85,9 @@ You can use the invitation API to determine if a user already exists in your res
 2. In the resource tenant, use the following get user query where {0} is the email address you're inviting:
 
    ```json
+    {
    “userPrincipalName eq '{0}' or mail eq '{0}' or proxyAddresses/any(x:x eq 'SMTP:{0}') or signInNames/any(x:x eq '{0}') or otherMails/any(x:x eq '{0}')"
+    }
    ```
 
 ## Authorization model
