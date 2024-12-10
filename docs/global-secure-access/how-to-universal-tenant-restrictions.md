@@ -24,25 +24,28 @@ The following table explains the steps taken at each point in the previous diagr
 | **1** | Contoso configures a **tenant restrictions v2 ** policy in their cross-tenant access settings to block all external accounts and external apps. Contoso enforces the policy using Global Secure Access universal tenant restrictions. |
 | **2** | A user with a Contoso-managed device tries to access a Microsoft Entra integrated app with an unsanctioned external identity. |
 | **3** | *Authentication plane protection:* Using Microsoft Entra ID, Contoso's policy blocks unsanctioned external accounts from accessing external tenants. | 
-| **4** | *Data plane protection:* If the user again tries to access an external unsanctioned application by copying an authentication response token they obtained outside of Contoso's network and pasting it into the device, they're blocked. The token mismatch triggers reauthentication and blocks access. For SharePoint Online, any attempt at anonymously accessing resources will be blocked. | 
+| **4** | *Data plane protection:* If the user again tries to access an external unsanctioned application by copying an authentication response token they obtained outside of Contoso's network and pasting it into the device, they're blocked. The token mismatch triggers reauthentication and blocks access. For SharePoint Online, any attempt at anonymously accessing resources will be blocked. For Teams, attempts to join meetings anonymously will be denied.| 
 
 Universal tenant restrictions help to prevent data exfiltration across browsers, devices, and networks in the following ways:
 
 - It enables Microsoft Entra ID, Microsoft Accounts, and Microsoft applications to look up and enforce the associated tenant restrictions v2 policy. This lookup enables consistent policy application. 
 - Works with all Microsoft Entra integrated third-party apps at the auth plane during sign in.
-- Works with Exchange, SharePoint, and Microsoft Graph for data plane protection (Preview)
+- Works with Exchange, SharePoint/OneDrive, Teams, and Microsoft Graph for data plane protection (Preview)
+
+## Universal Tenant Restrictions enforcement points
+### Authentication Plane
+Authentication plane enforcement happens at the time of Entra ID or Microsoft Account authentication. When the user is connected with the Global Secure Access client or via Remote Network connectivity, Tenant Restrictions v2 policy is checked to determine if authentication should be allowed. If the user is signing in to the tenant of their organization, tenant restrictions policy is not applied. If the user is signing in to a different tenant, policy is enforced. Any application that is integrated with Entra ID or uses Microsoft Account for authentication supports Universal Tenant Restrictions at the authentication plane.
+
+## Data Plane (Preview)
+Data plane enforcement is done by the resource provider (a Microsoft service that supports tenant restrictions) at the time that the data is accessed. Data plane protection ensures that imported authentication artifacts (for example, an access token obtained on another device, bypassing authentication plane enforcements defined in your Tenant Restrictions v2 policy) cannot be replayed from your organization's devices to exfiltrate data. Additionally, data plane protection prevents the user of anonymous access links in SharePoint/OneDrive for Business, and prevents the users from joining Teams meetings anonymously.
 
 ## Prerequisites
 
 * Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
    * The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
-   * The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
 * The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-
-### Known limitations
-
-- Data plane protection capabilities are in preview (authentication plane protection is generally available)
-- When you use Universal Tenant Restrictions and access the Microsoft Entra admin center to manage a partner tenant allowed by the Tenant Restrictions v2 policy, you may get authorization errors. To work around this issue, you need to add `?exp.msaljsoptedoutextensions=%7B%7D` query parameter to the Microsoft Entra admin center URL (for example, `https://entra.microsoft.com/?exp.msaljsoptedoutextensions=%7B%7D`).
+* [Microsoft traffic profile](concept-microsoft-traffic-profile.md) must be enabled and FQDNs/IP addresses of services that will have Universal Tenant Restrictions are set to 'Tunnel' mode.
+* [Global Secure Access clients](concept-clients.md) are deployed or [Remote Network connectivity](concept-remote-network-connectivity.md) is configured.
 
 ## Configure Tenant Restrictions v2 policy 
 
@@ -50,7 +53,7 @@ Before an organization can use universal tenant restrictions, they must configur
 
 For more information to configure these policies, see the article [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2).
 
-## Enable tagging for Tenant Restrictions v2
+## Enable Global Secure Access signaling for Tenant Restrictions
 
 Once you have created the tenant restriction v2 policies, you can utilize Global Secure Access to apply tagging for tenant restrictions v2. An administrator with both the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference) and [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) roles must take the following steps to enable enforcement with Global Secure Access.
 
@@ -96,6 +99,12 @@ Tenant restrictions are not enforced when a user (or a guest user) tries to acce
    1. In the same response, check the headers for the following information identifying that universal tenant restrictions were applied:
       1. `Restrict-Access-Confirm: 1`
       1. `x-ms-diagnostics: 2000020;reason="xms_trpid claim was not present but sec-tenant-restriction-access-policy header was in requres";error_category="insufficiant_claims"`
+
+### Known limitations
+
+- Data plane protection capabilities are in preview (authentication plane protection is generally available)
+- When you use Universal Tenant Restrictions and access the Microsoft Entra admin center to manage a partner tenant allowed by the Tenant Restrictions v2 policy, you may get authorization errors. To work around this issue, you need to add `?exp.msaljsoptedoutextensions=%7B%7D` query parameter to the Microsoft Entra admin center URL (for example, `https://entra.microsoft.com/?exp.msaljsoptedoutextensions=%7B%7D`).
+- When the Teams service blocks anonymous meeting join due to Universal Tenant Restrictions, a generic error message is presented in the Teams client application.
 
 ## Next steps
 - [Enable enhanced Global Secure Access signaling](how-to-source-ip-restoration.md#enable-global-secure-access-signaling-for-conditional-access)
