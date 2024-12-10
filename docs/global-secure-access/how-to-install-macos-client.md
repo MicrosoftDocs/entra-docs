@@ -19,7 +19,7 @@ This article describes how to download and install the Global Secure Access clie
 
 ## Prerequisites
 
-- A Mac device with an Intel, M1, M2, M3 or M4 processor, running macOS version 13 or newer.
+- A Mac device with an Intel, M1, M2, M3, or M4 processor, running macOS version 13 or newer.
 - A device registered to Microsoft Entra tenant using Company Portal.
 - A Microsoft Entra tenant onboarded to Global Secure Access.
 - Deployment of the [Microsoft Enterprise single sign-on (SSO) plug-in for Apple devices](../identity-platform/apple-sso-plugin.md) is recommended for SSO experience based on the user who is signed in to the company portal.   
