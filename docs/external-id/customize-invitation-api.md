@@ -5,7 +5,7 @@ description: Microsoft Entra B2B collaboration supports your cross-company relat
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 02/29/2024
+ms.date: 12/10/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -26,26 +26,26 @@ The API offers the following capabilities:
 
 1. Invite an external user with *any* email address.
 
-    ```
+    ```json
     "invitedUserDisplayName": "Taylor"
     "invitedUserEmailAddress": "taylor@fabrikam.com"
     ```
 
 2. Customize where you want your users to land after they accept their invitation.
 
-    ```
+    ```json
     "inviteRedirectUrl": "https://myapps.microsoft.com/"
     ```
 
 3. Choose to send the standard invitation mail through us.
 
-    ```
+    ```json
     "sendInvitationMessage": true
     ```
 
    with a message to the recipient that you can customize.
 
-    ```
+    ```json
     "customizedMessageBody": "Hello Sam, let's collaborate!"
     ```
 
@@ -53,7 +53,7 @@ The API offers the following capabilities:
 
 5. Or completely customize your invitation and onboarding workflow by choosing not to send notifications through Microsoft Entra ID.
 
-    ```
+    ```json
     "sendInvitationMessage": false
     ```
 
@@ -61,7 +61,7 @@ The API offers the following capabilities:
 
 6. Finally, if you're an admin, you can choose to invite the user as member.
 
-    ```
+    ```json
     "invitedUserType": "Member"
     ```
 
@@ -72,7 +72,7 @@ You can use the invitation API to determine if a user already exists in your res
 1. Make sure the user's email domain isn't part of your resource tenant's verified domain.
 2. In the resource tenant, use the following get user query where {0} is the email address you're inviting:
 
-   ```
+   ```json
    “userPrincipalName eq '{0}' or mail eq '{0}' or proxyAddresses/any(x:x eq 'SMTP:{0}') or signInNames/any(x:x eq '{0}') or otherMails/any(x:x eq '{0}')"
    ```
 
@@ -112,21 +112,20 @@ After you send an external user an invitation, you can use the **Get-MgBetaUser*
 * **externalUserState** indicates whether the invitation is **PendingAcceptance** or **Accepted**.
 * **externalUserStateChangeDateTime** shows the timestamp for the latest change to the **externalUserState** property.
 
-You can use the **Filter** option to filter the results by **externalUserState**. The example below shows how to filter results to show only users who have a pending invitation. The example also shows the **Format-List** option, which lets you specify the properties to display. 
- 
+You can use the **Filter** option to filter the results by **externalUserState**. The example below shows how to filter results to show only users who have a pending invitation. The example also shows the **Format-List** option, which lets you specify the properties to display.
 
 ```powershell
 Get-MgBetaUser -Filter "externalUserState eq 'PendingAcceptance'" | Format-List -Property DisplayName,UserPrincipalName,externalUserState,externalUserStateChangeDateTime
 ```
 
 > [!NOTE]
-> Make sure you have the latest version of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/overview) 
+> Make sure you have the latest version of the [Microsoft Graph PowerShell module](/powershell/microsoftgraph/overview)
 
 ## See also
 
 Check out the invitation API reference in [https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation](/graph/api/resources/invitation).
 
-## Next steps
+## Related content
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
 - [Add and invite guest users](add-users-administrator.yml)
