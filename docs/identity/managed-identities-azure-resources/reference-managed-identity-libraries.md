@@ -38,4 +38,4 @@ In cases where an Azure service built a client library on top of these libraries
 | Java | [Azure Identity client library for Java](/java/api/overview/azure/identity-readme#managed-identity-support) | [MSAL Java](/entra/msal/java/advanced/managed-identity) |
 | JavaScript | [Azure Identity client library for JavaScript](/javascript/api/overview/azure/identity-readme#managed-identity-support) | [MSAL JavaScript](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/managed-identity.md) |
 | Python | [Azure Identity client library for Python](/python/api/overview/azure/identity-readme#managed-identity-support) | [MSAL Python](/entra/msal/python/advanced/managed-identity) |
-| Go | Work in progress | Work in progress |
+| Go | [Azure Identity client library for Go](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity) | [MSAL Go](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go) |
