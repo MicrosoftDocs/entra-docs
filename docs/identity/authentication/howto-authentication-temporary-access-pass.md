@@ -152,9 +152,9 @@ For hybrid-joined devices, users must first authenticate with another method suc
 
 :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/windows-10-tap.png" alt-text="Screenshot of how to enter Temporary Access Pass when setting up Windows.":::
 
-### Passwordless phone sign-in
+### Using TAP with Microsoft Authenticator 
 
-Users can also use their TAP to register for passwordless phone sign-in directly from the Authenticator app. 
+Users can also use their TAP to register Microsoft Authenticator with their account. By adding a work or school account and signing in with a TAP users can register both passkeys and passwordless phone sign-in directly from the Authenticator app. 
 
 For more information, see [Add your work or school account to the Microsoft Authenticator app](https://support.microsoft.com/account-billing/add-your-work-or-school-account-to-the-microsoft-authenticator-app-43a73ab5-b4e8-446d-9e54-2a4cb8e4e93c).
 
@@ -164,9 +164,9 @@ For more information, see [Add your work or school account to the Microsoft Auth
 
 You can add a TAP as a sign-in method to an internal guest, but not other types of guests. An internal guest has user object **UserType** set to **Guest**. They have authentication methods registered in Microsoft Entra ID. For more information about internal guests and other guest accounts, see [B2B guest user properties](/entra/external-id/user-properties).
 
-If you try to add a TAP to an external guest account in the Microsoft Entra admin center or in Microsoft Graph, you get an error that says **Temporary Access Pass cannot be added to an external guest user.**
+If you try to add a TAP to an external guest account in the Microsoft Entra admin center or in Microsoft Graph, you will receive an error stating **Temporary Access Pass cannot be added to an external guest user.**
 
-Guest users can sign-in to a resource tenant with a TAP that was issued by their home tenant if the TAP meets the home tenant authentication requirement. If multifactor authentication (MFA) is required for the resource tenant, the guest user needs to perform MFA in order to gain access to the resource.
+External guest users can sign-in to a resource tenant with a TAP that was issued by their home tenant if the TAP meets the home tenant authentication requirements and Cross Tenant Access policies have been configured to trust MFA from the users home tenant, see [Manage cross-tenant access settings for B2B collaboration](/entra/external-id/cross-tenant-access-settings-b2b-collaboration). 
 
 ### Expiration
 
