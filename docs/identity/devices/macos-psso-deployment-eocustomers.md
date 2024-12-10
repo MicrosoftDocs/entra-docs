@@ -20,12 +20,12 @@ This document provides a comprehensive guidance for deploying macOS Platform Sin
 ## Prerequisites
 
 * Minimum version of macOS 13 Ventura (macOS 14 Sonoma or later recommended)
-* Users must be able to perform a multi-factor authentication during registration using one of the supported MFA methods in Entra ID.
+* Users must be able to perform a multifactor authentication during registration using one of the supported MFA methods in Entra ID.
     * [Microsoft Entra MFA](../authentication/concept-mfa-howitworks.md)
     * [Federated MFA](/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa)
     * [External Auth Methods](../authentication/how-to-authentication-external-method-manage.md)
 * [Microsoft Intune Company Portal app version 5.2408.0](/mem/intune/apps/apps-company-portal-macos) or later installed. This version is required before users are targeted for PSSO.
-* (Highly recommmended) Users are advised to [register a passkey on their mobile devices.](../authentication/how-to-register-passkey-mobile.md)
+* (Highly recommended) Users are advised to [register a passkey on their mobile devices.](../authentication/how-to-register-passkey-mobile.md)
 
 
 ## Authentication Method Selection
@@ -67,7 +67,7 @@ To use Platform SSO, the devices must be MDM-enrolled. If using Intune, use one 
 
     * Create a [Direct enrollment](/mem/intune/enrollment/device-enrollment-direct-enroll-macos) policy using Apple Configurator.
 
-* For personally-owned devices, create a [Device enrollment](/mem/intune/fundamentals/deployment-guide-enrollment-macos#byod-device-enrollment) policy. With this enrollment method, end users open the Company Portal app and sign in with their Microsoft Entra ID user account. When the successfully signed in, the enrollment policy applies.    
+* For personally owned devices, create a [Device enrollment](/mem/intune/fundamentals/deployment-guide-enrollment-macos#byod-device-enrollment) policy. With this enrollment method, end users open the Company Portal app and sign in with their Microsoft Entra ID user account. When the successfully signed in, the enrollment policy applies.    
 
 For new devices, we recommend you pre-create and configure all the necessary policies, including the enrollment policy. Then, when the devices enroll in Intune, the policies automatically apply.
 
