@@ -56,7 +56,7 @@ Or they can be included in the assertion as part of the `AttributeStatement` ele
 
 ## Using SAML 2.0 federated IdP 
 
-When an admin optionally configures their Microsoft Entra ID tenant to use a [federated IdP](~/identity/hybrid/connect/whatis-fed.md) using [SAMLP/SAML 2.0](~identity/hybrid/connect/how-to-connect-fed-saml-idp.md) federation, Microsoft Entra will redirect to the IdP for authentication, and expect a response that contains a SAML 2.0 assertion. The inbound MFA assertions must be present in the `AuthnContext` element of the `AuthnStatement`.
+When an admin optionally configures their Microsoft Entra ID tenant to use a [federated IdP](~/identity/hybrid/connect/whatis-fed.md) using [SAMLP/SAML 2.0](~/identity/hybrid/connect/how-to-connect-fed-saml-idp.md) federation, Microsoft Entra will redirect to the IdP for authentication, and expect a response that contains a SAML 2.0 assertion. The inbound MFA assertions must be present in the `AuthnContext` element of the `AuthnStatement`.
 
 ```xml
 <AuthnStatement AuthnInstant="2024-11-22T18:48:07.547Z">
