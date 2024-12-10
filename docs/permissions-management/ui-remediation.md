@@ -7,7 +7,7 @@ ms.service: entra-permissions-management
 
 ms.topic: how-to
 ms.date: 12/10/2024
-code ms.author: jfields
+ms.author: jfields
 ---
 
 # View roles/policies and requests for permission in the Remediation dashboard
