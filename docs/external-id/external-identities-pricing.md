@@ -23,7 +23,7 @@ This article outlines the pricing structure for Microsoft Entra External ID and 
 
 ## Monthly active users (MAU) billing model
 
-The Microsoft Entra External ID billing model applies to all external users, including:
+The Microsoft Entra External ID billing model applies to all external users, specifically:
 
 - B2B collaboration external guests in Microsoft Entra [workforce tenants](tenant-configurations.md#workforce-tenants). These are users who sign in with external credentials and whose **UserType** property is set to **Guest**.
 
