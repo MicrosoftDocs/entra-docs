@@ -1,7 +1,6 @@
 ---
 title: What is group-based licensing
 description: Learn about Microsoft Entra group-based licensing, including how it works, key features, and best practices.
-keywords: Azure AD licensing
 author: barclayn
 manager: amycolannino
 

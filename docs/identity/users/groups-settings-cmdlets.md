@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/15/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -22,7 +22,7 @@ This article contains instructions for using PowerShell cmdlets to create and up
 
 For more information on how to prevent nonadministrator users from creating security groups, set the `AllowedToCreateSecurityGroups` property to False as described in [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy).
 
-Microsoft 365 groups settings are configured using a Settings object and a SettingsTemplate object. Initially, you don't see any Settings objects in your directory, because your directory is configured with the default settings. To change the default settings, you must create a new settings object using a settings template. Settings templates are defined by Microsoft. There are several different settings templates. To configure Microsoft 365 group settings for your directory, you use the template named "Group.Unified". To configure Microsoft 365 group settings on a single group, use the template named "Group.Unified.Guest". This template is used to manage guest access to a Microsoft 365 group. 
+Microsoft 365 groups settings are configured using a Settings object and a SettingsTemplate object. Initially, you don't see any Settings objects in your directory, because your directory is configured with the default settings. To change the default settings, you must create a new settings object using a settings template. Settings templates are defined by Microsoft. There are several different settings templates. To configure Microsoft 365 group settings for your directory, you use the template named "Group.Unified". To configure Microsoft 365 group settings on a single group, use the template named "Group.Unified.Guest This template is used to manage guest access to a Microsoft 365 group. 
 
 The cmdlets are part of the [Microsoft Graph PowerShell](/powershell/microsoftgraph/) module. For instructions how to download and install the module on your computer, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
@@ -71,7 +71,7 @@ These steps create settings at directory level, which apply to all Microsoft 365
    5cf42378-d67d-4f36-ba46-e8b86229381d Password Rule       Settings ...
    ```
 
-1. To add a usage guideline URL, first you need to get the SettingsTemplate object that defines the usage guideline URL value; that is, the Group.Unified template:
+1. To add a usage guideline URL, first you need to get the SettingsTemplate object that defines the usage guideline URL value; that is, the Group. Unified template:
   
    ```powershell
    $TemplateId = (Get-MgBetaDirectorySettingTemplate | where { $_.DisplayName -eq "Group.Unified" }).Id
@@ -172,21 +172,21 @@ Here are the settings defined in the Group.Unified SettingsTemplate. Unless othe
 
 | **Setting** | **Description** |
 | --- | --- |
-|  <ul><li>EnableGroupCreation<li>Type: Boolean<li>Default: True |The flag indicating whether Microsoft 365 group creation is allowed in the directory by non-admin users. This setting does not require a Microsoft Entra ID P1 license.|
+|  <ul><li>EnableGroupCreation<li>Type: Boolean<li>Default: True |The flag indicating whether Microsoft 365 group creation is allowed in the directory by nonadmin users. This setting doesn't require a Microsoft Entra ID P1 license.|
 |  <ul><li>GroupCreationAllowedGroupId<li>Type: String<li>Default: "" |GUID of the security group for which the members are allowed to create Microsoft 365 groups even when EnableGroupCreation == false. |
 |  <ul><li>UsageGuidelinesUrl<li>Type: String<li>Default: "" |A link to the Group Usage Guidelines. |
-|  <ul><li>ClassificationDescriptions<li>Type: String<li>Default: "" | A comma-delimited list of classification descriptions. The value of ClassificationDescriptions is only valid in this format:<br>$setting["ClassificationDescriptions"] ="Classification:Description,Classification:Description"<br>where Classification matches an entry in the ClassificationList.<br>This setting does not apply when EnableMIPLabels == True.<br>Character limit for property ClassificationDescriptions is 300, and commas can't be escaped,
-|  <ul><li>DefaultClassification<li>Type: String<li>Default: "" | The classification that is to be used as the default classification for a group if none was specified.<br>This setting does not apply when EnableMIPLabels == True.|
+|  <ul><li>ClassificationDescriptions<li>Type: String<li>Default: "" | A comma-delimited list of classification descriptions. The value of ClassificationDescriptions is only valid in this format:<br>$setting["ClassificationDescriptions"] ="Classification:Description,Classification:Description"<br>where Classification matches an entry in the ClassificationList.<br>This setting doesn't apply when EnableMIPLabels == True.<br>Character limit for property ClassificationDescriptions is 300, and commas can't be escaped,
+|  <ul><li>DefaultClassification<li>Type: String<li>Default: "" | The classification that is to be used as the default classification for a group if none was specified.<br>This setting doesn't apply when EnableMIPLabels == True.|
 |  <ul><li>PrefixSuffixNamingRequirement<li>Type: String<li>Default: "" | String of a maximum length of 64 characters that defines the naming convention configured for Microsoft 365 groups. For more information, see [Enforce a naming policy for Microsoft 365 groups](groups-naming-policy.md). |
-| <ul><li>CustomBlockedWordsList<li>Type: String<li>Default: "" | Comma-separated string of phrases that users will not be permitted to use in group names or aliases. For more information, see [Enforce a naming policy for Microsoft 365 groups](groups-naming-policy.md). |
-| <ul><li>EnableMSStandardBlockedWords<li>Type: Boolean<li>Default: "False" | Deprecated. Do not use.
+| <ul><li>CustomBlockedWordsList<li>Type: String<li>Default: "" | Comma-separated string of phrases that users won't be permitted to use in group names or aliases. For more information, see [Enforce a naming policy for Microsoft 365 groups](groups-naming-policy.md). |
+| <ul><li>EnableMSStandardBlockedWords<li>Type: Boolean<li>Default: "False" | Deprecated. Don't use.
 |  <ul><li>AllowGuestsToBeGroupOwner<li>Type: Boolean<li>Default: False | Boolean indicating whether or not a guest user can be an owner of groups. |
-|  <ul><li>AllowGuestsToAccessGroups<li>Type: Boolean<li>Default: True | Boolean indicating whether or not a guest user can have access to Microsoft 365 groups content.  This setting does not require a Microsoft Entra ID P1 license.|
+|  <ul><li>AllowGuestsToAccessGroups<li>Type: Boolean<li>Default: True | Boolean indicating whether or not a guest user can have access to Microsoft 365 groups content.  This setting doesn't require a Microsoft Entra ID P1 license.|
 |  <ul><li>GuestUsageGuidelinesUrl<li>Type: String<li>Default: "" | The URL of a link to the guest usage guidelines. |
 |  <ul><li>AllowToAddGuests<li>Type: Boolean<li>Default: True | A boolean indicating whether or not is allowed to add guests to this directory. <br>This setting may be overridden and become read-only if *EnableMIPLabels* is set to *True* and a guest policy is associated with the sensitivity label assigned to the group.<br>If the AllowToAddGuests setting is set to False at the organization level, any AllowToAddGuests setting at the group level is ignored. If you want to enable guest access for only a few groups, you must set AllowToAddGuests to be true at the organization level, and then selectively disable it for specific groups. |
-|  <ul><li>ClassificationList<li>Type: String<li>Default: "" | A comma-delimited list of valid classification values that can be applied to Microsoft 365 groups. <br>This setting does not apply when EnableMIPLabels == True.|
+|  <ul><li>ClassificationList<li>Type: String<li>Default: "" | A comma-delimited list of valid classification values that can be applied to Microsoft 365 groups. <br>This setting doesn't apply when EnableMIPLabels == True.|
 |  <ul><li>EnableMIPLabels<li>Type: Boolean<li>Default: "False" |The flag indicating whether sensitivity labels published in Microsoft Purview compliance portal can be applied to Microsoft 365 groups. For more information, see [Assign Sensitivity Labels for Microsoft 365 groups](groups-assign-sensitivity-labels.md). |
-|  <ul><li>NewUnifiedGroupWritebackDefault<li>Type: Boolean<li>Default: "True" |The flag that allows an admin to create new Microsoft 365 groups without setting the groupWritebackConfiguration resource type in the request payload. This setting is applicable when group writeback is configured in Microsoft Entra Connect.  "NewUnifiedGroupWritebackDefault" is a global Microsoft 365 group setting. Default value is true. Updating the setting value to false will change the default writeback behavior for newly created Microsoft 365 groups, and will not change isEnabled property value for existing Microsoft 365 groups. Group admin will need to explicitly update the group isEnabled property value to change the writeback state for existing Microsoft 365 groups. |
+|  <ul><li>NewUnifiedGroupWritebackDefault<li>Type: Boolean<li>Default: "True" |The flag that allows an admin to create new Microsoft 365 groups without setting the groupWritebackConfiguration resource type in the request payload. This setting is applicable when group writeback is configured in Microsoft Entra Connect.  "NewUnifiedGroupWritebackDefault" is a global Microsoft 365 group setting. Default value is true. Updating the setting value to false will change the default writeback behavior for newly created Microsoft 365 groups, and won't change isEnabled property value for existing Microsoft 365 groups. Group admin needs to explicitly update the group isEnabled property value to change the writeback state for existing Microsoft 365 groups. |
 
 ## Example: Configure Guest policy for groups at the directory level
 
