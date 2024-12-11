@@ -150,7 +150,7 @@ Administrators might choose to make further changes to these policies by duplica
 
 Multifactor authentication completed via the recently announced [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) satisfies the MFA requirements of the Microsoft-managed policies.
 
-Multifactor authentication completed via federated IdP may satisfy Microsoft Entra ID MFA requirements depending on your tenant’s configuration of the IdP. For more information, see [Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP](/entra/identity/authentication/how-to-mfa-expected-inbound-assertions).
+When multifactor authentication is completed via a federated identity provider (IdP) it might satisfy Microsoft Entra ID MFA requirements depending on your configuration. For more information, see [Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP](/entra/identity/authentication/how-to-mfa-expected-inbound-assertions).
 
 ### What if I use Certificate-Based Authentication?
 
