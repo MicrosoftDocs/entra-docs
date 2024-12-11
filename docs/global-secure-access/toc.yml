@@ -92,7 +92,7 @@ items:
         items:
           - name: Understand Universal Conditional Access 
             href: concept-universal-conditional-access.md
-          - name: Microsoft traffic
+          - name: Internet traffic
             href: how-to-target-resource-microsoft-profile.md
       - name: Compliant network check
         href: how-to-compliant-network.md
@@ -129,7 +129,9 @@ items:
       - name: Configure per-app access
         href: how-to-configure-per-app-access.md
       - name: Configure Quick Access
-        href: how-to-configure-quick-access.md 
+        href: how-to-configure-quick-access.md
+      - name: Application Discovery
+        href: how-to-application-discovery.md
       - name: Configure Private Access with PIM
         href: how-to-configure-global-access-with-pim.md
       - name: Kerberos single sign-on (SSO)
